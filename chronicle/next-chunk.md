@@ -1,14 +1,15 @@
-# Next chunk — ★ Search G-7 bulk migration UNDERWAY · batches 1–5 DONE (33 entities) · accelerating
+# Next chunk — ★ Search G-7 bulk migration UNDERWAY · batches 1–6 DONE (44 entities · 159 claims) · accelerating
 
-**★ CURRENT STATE (2026-07-10).** Phases A–F COMPLETE + SEALED. **knowledge_version 319 · 1246 sealed claims · board 53/53 green.** Search build (G-7) bulk migration is ACTIVE. Search SOURCE now = **150 enriched claims · 41 entities** (landing = 41 browse cards). Mining is PAUSED at Immortality element A-Z **Mn-Manganese**.
+**★ CURRENT STATE (2026-07-10).** Phases A–F COMPLETE + SEALED. **knowledge_version 320 · 1246 sealed claims · board 53/53 green.** Search build (G-7) bulk migration is ACTIVE. Search SOURCE now = **159 enriched claims · 44 entities** (landing = 44 browse cards). Mining is PAUSED at Immortality element A-Z **Mn-Manganese**.
 
-## ★ Where we are — 5 golden-quality batches landed + signed off
+## ★ Where we are — 6 batches landed + signed off
 **B1** (6, 33 claims, 474bc7fd) minerals + Fluoride + 3 template refinements (patterns 9–11).
 **B2** (6, 15, df43ea5d) Copper/Chromium/Gold/Aluminum/Gallium/Krypton.
 **B3** (4 CONCEPT, 16, bedf1edc) Essential Nutrients, Vitamins, Amino Acids, Macronutrients.
 **B4** (10 TOPIC, 24, 7807196e) modality "delight" cluster (Light Therapy … Herbal Medicine).
 **B5** (7, 21) self-reliance/philosophy: Be Your Own Doctor, Hospital Dangers, Pregnancy & Birth, Longevity, **Cystic Fibrosis (condition, catalog_ref, stance-first)**, Sexual Health, Home Remedies. Includes the 4 charged/editorial claims Luneth reviewed + said include-all (vaccine-mandate politics, contraception verbatim, premature ejaculation, mosquito B1). **Related-enrichment pass:** the "max 3 related" was NOT a cap (renderRelated shows all; CSS wraps) — I'd just authored ~3. Now enriched with REAL links (canon nutrient→essential_nutrients, minerals→colloidal_minerals, modalities→be_your_own_doctor, air-treatment→negative_ion_therapy, + EXTRA map); distribution 4+ on 20 entities (max 6), thin left thin.
-**33 entities across 5 batches**, all 5 types (mineral, element, concept, topic, condition). Template proven; Luneth OK'd accelerating.
+**B6** (9 claims, 3 new topics) Somatic Therapies (osteopathy/reflexology/Rolfing), Faith & Energy Healing (faith healing/Christian Science), Naturopathy; + fold-ins cell-salts/Bach -> Homeopathy, megavitamin/orthomolecular -> Vitamins. FIRST batch to EDIT+RESEAL the corpus (kv 320): Luneth's faith-healing mystical-clause trim (WAL-CLM-LETS-000102) + Bodywork->Somatic Therapies rename.
+**44 entities across 6 batches**, all 5 types (mineral, element, concept, topic, condition). Template proven; Luneth OK'd accelerating.
 
 ## ★ The golden template (LOCKED — apply to EVERY entity)
 1. **Field home** = `eden/corpus/search-enrichment.json` (authored subject/also_about/facet/question/answer_short/topics [+ optional `see_also`]); everything DERIVES via `eden/tools/search_index_derive.py` → `search-index.json`. Registry = `eden/catalog/search-entities.json`.
@@ -34,8 +35,8 @@
 - safe_write scripting: edit ONE file multiple times → read once + apply all + write once ([[safe-write-crlf-flip]]).
 
 ## NEXT — CONTINUE BULK MIGRATION (accelerating; review in batches)
-~**72 non-epigenetics search-only claims remain**. Clusters:
-1. **Thin modality singles** (osteopathy, reflexology, Rolfing, naturopathy, megavitamin therapy, cell salts/Biochemics, Bach flower remedies, laying-on-of-hands/faith healing, Christian Science) → group into **Bodywork** + **Energy/Faith Healing** topics (a couple rich pages, not 9 thin ones).
+~**63 non-epigenetics search-only claims remain**. Clusters:
+1. ~~Thin modality singles~~ ✓ DONE (batch 6) → Somatic Therapies + Faith & Energy Healing + Naturopathy; cell-salts/Bach folded into Homeopathy, megavitamin/orthomolecular into Vitamins.
 2. **Remaining Immortality elements** (thin 1–2 claims): Cobalt (85/86, B12), Silver (31), Bromine (48), Cadmium (77), Cesium (95), Bismuth (46), Actinium (35), Helium (156/157), Hafnium (158), Holmium (172), Indium (185), Iridium (186), Lutetium (203), rare earths Dysprosium/Erbium/Europium (112/113/114), Gadolinium (137), Cerium (RARE-000112).
 3. Rare-earths book: tranquilizer/muscle-relaxant "unsuitable for elderly" lists (RARE 276/277/284) → a drug-safety-in-elderly concept.
 4. **When entities accumulate**: seal `search-entities.json` + `search-enrichment.json`; add index sharding (blueprint §7) if large.
@@ -48,7 +49,7 @@
 `derived_artifacts_fresh` (covers search-index.json) · `search_index_wellformed` (facet∈taxonomy · subject/also_about resolve · fields present · answer+verbatim non-empty · TS==Python taxonomy · canon_ref/catalog_ref · see_also same-subject + phrase-in-answer) + negative test `tools/test_search_index_wellformed.py` (13 cases) · `render_probe_search.js`.
 
 ## The paused mining roadmap (blueprint §7)
-G-4 finish Immortality (resume A-Z at Mn-Manganese) · G-5 DDDL re-mine · G-6 the 3 new books · **G-7 = the Search build (ACTIVE — bulk migration underway, 33 entities done)** · G-8 close-out + seal. Phases H (app completion) + I (design) after.
+G-4 finish Immortality (resume A-Z at Mn-Manganese) · G-5 DDDL re-mine · G-6 the 3 new books · **G-7 = the Search build (ACTIVE — bulk migration underway, 44 entities done)** · G-8 close-out + seal. Phases H (app completion) + I (design) after.
 
 ## Carried follow-ups (deferred; NOT blockers)
 Epigenetics concept (charged) · `search_density_report` + per-region question-inventory (Layer 2/3) · seal the 2 search source files once entities accumulate · index sharding at scale · lithium coverage target could derive · rare-earths/lets-play-doctor per-page accounting (G-8) · deep linguistic sweep + book purification (G-8, 2/6 pristine) · 3 parked claim notes · pre-existing eslint style debt in search.ts/schema.ts (not blocking).
