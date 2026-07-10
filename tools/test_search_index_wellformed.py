@@ -75,6 +75,12 @@ case("catalog_ref-with-name", mutate_reg=lambda r: r["diabetes"].__setitem__("di
 # 9) registry catalog_ref pointing at a slug that is not a catalog condition
 case("catalog_ref-not-condition", mutate_reg=lambda r: r.__setitem__("florbium", {"catalog_ref": True, "type": "condition", "synonyms": [], "related": []}), needle="catalog")
 
+# 10-12) see_also cross-reference gate (Option A, 2026-07-09)
+_present = sid._derive_answer(CLAIMS[A_CLAIM].get("claim_text", "")).split()[0]
+case("see_also-ghost-target", mutate_enr=lambda e: e[A_CLAIM].__setitem__("see_also", {"phrase": _present, "target": "WAL-CLM-NOPE-000000"}), needle="not an enriched claim")
+case("see_also-phantom-phrase", mutate_enr=lambda e: e[A_CLAIM].__setitem__("see_also", {"phrase": "zzzznotthere", "target": A_CLAIM}), needle="does not occur")
+case("see_also-cross-subject", mutate_enr=lambda e: e[A_CLAIM].__setitem__("see_also", {"phrase": _present, "target": "WAL-CLM-IMMORT-000159"}), needle="different subject")
+
 passed = sum(results)
 total = len(results)
 print(f"\n{passed}/{total} cases behaved as expected")

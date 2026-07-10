@@ -590,3 +590,31 @@
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* --- In-answer cross-reference (see_also) -----------------------------------
+   A solid-underline accent link inside an answer that jumps to another claim's
+   card on the same page (distinct from the .gloss dotted 'help' underline). The
+   target row briefly flashes so the eye lands on it. Luneth 2026-07-09. */
+#drawer-search-mount .sr-xref {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--ds-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+#drawer-search-mount .sr-xref:hover,
+#drawer-search-mount .sr-xref:focus-visible {
+  color: var(--ds-accent-deep);
+  outline: none;
+}
+#drawer-search-mount .sr-claim--flash {
+  animation: sr-claim-flash 1.4s ease-out;
+}
+@keyframes sr-claim-flash {
+  0%, 12% { background: var(--ds-accent-wash); }
+  100% { background: transparent; }
+}

@@ -109,6 +109,84 @@
       "related": [
         "epigenetics"
       ]
+    },
+    "iron": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "fe",
+        "ferrum"
+      ],
+      "related": [
+        "vitamin-c",
+        "anemia",
+        "copper"
+      ]
+    },
+    "iodine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "iodide"
+      ],
+      "related": [
+        "thyroid_disease",
+        "hypothyroidism",
+        "selenium"
+      ]
+    },
+    "germanium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ge",
+        "ge-132"
+      ],
+      "related": [
+        "cancer",
+        "selenium",
+        "lithium"
+      ]
+    },
+    "hydrogen": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "h2"
+      ],
+      "related": [
+        "oxygen",
+        "water",
+        "ph"
+      ]
+    },
+    "potassium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "potash",
+        "kalium"
+      ],
+      "related": [
+        "sodium",
+        "magnesium",
+        "lithium"
+      ]
+    },
+    "fluoride": {
+      "display_name": "Fluoride",
+      "type": "element",
+      "symbol": "F",
+      "synonyms": [
+        "fluorine",
+        "fluorspar",
+        "fluorite"
+      ],
+      "related": [
+        "calcium",
+        "osteoporosis",
+        "tooth_decay"
+      ]
     }
   }
 }

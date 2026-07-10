@@ -458,6 +458,11 @@
       "category": "medical"
     },
     {
+      "term": "fluorine",
+      "plain": "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
+      "category": "chemistry"
+    },
+    {
       "term": "fluorosis",
       "plain": "tooth or bone damage from excess fluoride",
       "category": "medical"

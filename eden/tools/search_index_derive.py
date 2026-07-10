@@ -109,6 +109,19 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
             errs.append(f'{cid}: derived answer is empty')
         if not str(c.get('verbatim', '')).strip():
             errs.append(f'{cid}: sealed verbatim is empty')
+        sa = a.get('see_also')
+        if sa is not None:
+            ph = str(sa.get('phrase', '')).strip() if isinstance(sa, dict) else ''
+            tgt = str(sa.get('target', '')).strip() if isinstance(sa, dict) else ''
+            if not ph or not tgt:
+                errs.append(f'{cid}: see_also must be an object with non-empty phrase + target')
+            else:
+                if tgt not in enr:
+                    errs.append(f'{cid}: see_also target {tgt!r} is not an enriched claim')
+                elif enr[tgt].get('subject') != subj:
+                    errs.append(f'{cid}: see_also target {tgt!r} is on a different subject (must be same entity page)')
+                if ph not in _derive_answer(c.get('claim_text', '')):
+                    errs.append(f'{cid}: see_also phrase {ph!r} does not occur in the answer')
 
     for slug, r in reg.items():
         if r.get('canon_ref'):
@@ -192,6 +205,8 @@ def build_index():
             'book_id': loc.get('book'),
             'topics': a.get('topics', []),
         }
+        if a.get('see_also'):
+            rec['see_also'] = a['see_also']
         # tier1_link means "this claim ALSO feeds the operational tier-1 tabs" — true ONLY for a
         # genuinely dual-home claim (NOT tagged search-only). A search-only claim may carry a
         # conditions array for search matching, but it is excluded from the operational indices

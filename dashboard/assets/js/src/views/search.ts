@@ -33,6 +33,7 @@ import {
   resolveQuery,
   type SearchResult,
 } from '../state/search.js';
+import { glossify } from './glossify.js';
 
 export interface DrawerHandle {
   open: () => void;
@@ -136,12 +137,28 @@ function topicTags(claim: SearchClaim): string {
   return `<div class="sr-claim__tags">${tags}</div>`;
 }
 
+/**
+ * The answer, glossified; if the claim carries an in-answer cross-reference, the first
+ * occurrence of its phrase becomes a link that jumps to the target claim's card (same page).
+ */
+function renderAnswer(claim: SearchClaim): string {
+  const xref = claim.see_also;
+  if (xref !== undefined && claim.answer.includes(xref.phrase)) {
+    const i = claim.answer.indexOf(xref.phrase);
+    const before = claim.answer.slice(0, i);
+    const after = claim.answer.slice(i + xref.phrase.length);
+    const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML(xref.target)}" title="Jump to the full answer">${escHTML(xref.phrase)}</button>`;
+    return glossify(before) + link + glossify(after);
+  }
+  return glossify(claim.answer);
+}
+
 /** The expandable innards shared by an entity-page row + (minus the summary) the Ask card. */
 function claimDetail(claim: SearchClaim): string {
   return `
       <div class="sr-claim__short">${escHTML(claim.answer_short)}</div>
-      <div class="sr-claim__answer">${escHTML(claim.answer)}</div>
-      <blockquote class="sr-claim__verbatim">“${escHTML(oneLine(claim.verbatim))}”</blockquote>
+      <div class="sr-claim__answer">${renderAnswer(claim)}</div>
+      <blockquote class="sr-claim__verbatim">“${glossify(oneLine(claim.verbatim))}”</blockquote>
       <div class="sr-claim__cite">${escHTML(composeCite(claim))}</div>
       ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
@@ -311,6 +328,10 @@ export function mount(container: HTMLElement): DrawerHandle {
     const body = container.querySelector<HTMLElement>('.sr-body');
     if (body !== null) {
       body.innerHTML = renderBody(result);
+      // Every repaint starts at the top: a fresh entity/landing must not inherit the
+      // previous view's scroll offset (replacing innerHTML alone does not reset it when
+      // the new content is at least as tall). Luneth 2026-07-09.
+      body.scrollTop = 0;
     }
   };
 
@@ -387,6 +408,25 @@ export function mount(container: HTMLElement): DrawerHandle {
     paintBody(true);
   };
 
+  /**
+   * Jump to another claim's card on the current page (an in-answer cross-reference): open it +
+   * any collapsed ancestor <details>, scroll it into view, and flash it so the eye lands on it.
+   */
+  const jumpToClaim = (id: string): void => {
+    const el = container.querySelector<HTMLElement>(`[data-sr-claim="${id}"]`);
+    if (el === null) {
+      return;
+    }
+    for (let d: HTMLElement | null = el; d !== null; d = d.parentElement) {
+      if (d instanceof HTMLDetailsElement) {
+        d.open = true;
+      }
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.add('sr-claim--flash');
+    setTimeout(() => el.classList.remove('sr-claim--flash'), 1400);
+  };
+
   // ─── Events ──────────────────────────────────────────────────────────────
 
   container.addEventListener('input', (ev: Event): void => {
@@ -404,6 +444,11 @@ export function mount(container: HTMLElement): DrawerHandle {
   container.addEventListener('click', (ev: Event): void => {
     const target = ev.target as HTMLElement | null;
     if (target === null) {
+      return;
+    }
+    const jumpEl = target.closest<HTMLElement>('[data-sr-jump]');
+    if (jumpEl !== null) {
+      jumpToClaim(jumpEl.getAttribute('data-sr-jump') ?? '');
       return;
     }
     const entBtn = target.closest<HTMLElement>('[data-sr-entity]');

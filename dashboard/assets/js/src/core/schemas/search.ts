@@ -73,6 +73,17 @@ export const Tier1LinkSchema = z.object({
 });
 export type Tier1Link = z.infer<typeof Tier1LinkSchema>;
 
+/**
+ * An in-answer cross-reference: `phrase` (which occurs in the answer) renders as a link that
+ * jumps to the `target` claim's card on the same entity page. Gated by search_index_wellformed
+ * (target is an enriched claim of the same subject; phrase occurs in the answer).
+ */
+export const SeeAlsoSchema = z.object({
+  phrase: z.string(),
+  target: z.string(),
+});
+export type SeeAlso = z.infer<typeof SeeAlsoSchema>;
+
 /** One faceted search claim (the de-blobbed record — answer, verbatim, cite are separate layers). */
 export const SearchClaimSchema = z.object({
   id: z.string(),
@@ -96,6 +107,7 @@ export const SearchClaimSchema = z.object({
   /** Routing handles for retrieval (search-topic:* space). */
   topics: z.array(z.string()),
   tier1_link: Tier1LinkSchema.optional(),
+  see_also: SeeAlsoSchema.optional(),
 }).passthrough();
 export type SearchClaim = z.infer<typeof SearchClaimSchema>;
 

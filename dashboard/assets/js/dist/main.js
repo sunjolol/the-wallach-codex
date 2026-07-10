@@ -14024,6 +14024,10 @@
     conditions: external_exports.array(external_exports.string()).optional(),
     symptoms: external_exports.array(external_exports.string()).optional()
   });
+  var SeeAlsoSchema = external_exports.object({
+    phrase: external_exports.string(),
+    target: external_exports.string()
+  });
   var SearchClaimSchema = external_exports.object({
     id: external_exports.string(),
     /** Primary entity slug this claim is about (→ the entity registry). */
@@ -14045,7 +14049,8 @@
     book_id: external_exports.string().nullable(),
     /** Routing handles for retrieval (search-topic:* space). */
     topics: external_exports.array(external_exports.string()),
-    tier1_link: Tier1LinkSchema.optional()
+    tier1_link: Tier1LinkSchema.optional(),
+    see_also: SeeAlsoSchema.optional()
   }).passthrough();
   var SearchBookMetaSchema = external_exports.object({
     title: external_exports.string(),
@@ -18150,6 +18155,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "fluorine",
+        plain: "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
+        category: "chemistry"
+      },
+      {
         term: "fluorosis",
         plain: "tooth or bone damage from excess fluoride",
         category: "medical"
@@ -18936,7 +18946,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return index().defByKey.get(key.toLowerCase()) ?? null;
   }
 
-  // assets/js/src/views/knowledge-corpus.ts
+  // assets/js/src/views/glossify.ts
   function escHTML3(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
@@ -18967,6 +18977,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     out += esc.slice(last);
     return out;
   }
+
+  // assets/js/src/views/knowledge-corpus.ts
+  function escHTML4(s) {
+    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
   function tileOf(snapshot, key) {
     if (snapshot === null) {
       return null;
@@ -18991,7 +19006,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const tone = status === "covered" || status === "trace" ? "kd-meter--ok" : status === "partial" || status === "gap" ? "kd-meter--warn" : "kd-meter--pending";
     return `
     <div class="kd-meter ${tone}">
-      <div class="kd-meter__nums"><strong>${escHTML3(fmtAmount(deliveredAmount))}</strong> / ${escHTML3(goal)} ${escHTML3(unit)}</div>
+      <div class="kd-meter__nums"><strong>${escHTML4(fmtAmount(deliveredAmount))}</strong> / ${escHTML4(goal)} ${escHTML4(unit)}</div>
       <div class="kd-meter__track"><span class="kd-meter__fill" style="width:${barPct}%"></span></div>
       <div class="kd-meter__cap">${pct}% OF WALLACH GOAL</div>
     </div>`;
@@ -19002,7 +19017,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const closeBtn = '<button class="kd-book-deep__close" data-kd-action="book-close" title="Close (Esc)">\xD7</button>';
     const head = `
     <div class="kd-book-deep__head">
-      <span class="kd-book-deep__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS \xB7 ${escHTML3(label)}</span>
+      <span class="kd-book-deep__eyebrow"><span class="pulse-dot"></span>FROM THE WALLACH CORPUS \xB7 ${escHTML4(label)}</span>
       <span class="kd-book-deep__count">${claims.length} CLAIM${claims.length === 1 ? "" : "S"}</span>
     </div>`;
     if (claims.length === 0) {
@@ -19018,7 +19033,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       const claimsHTML = (byKind.get(kind) ?? []).map(renderCorpusClaim).join("");
       return `
       <div class="kd-corpus__group">
-        <div class="kd-corpus__group-label">${escHTML3(corpusKindLabel(kind))}</div>
+        <div class="kd-corpus__group-label">${escHTML4(corpusKindLabel(kind))}</div>
         ${claimsHTML}
       </div>`;
     }).join("");
@@ -19066,9 +19081,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function glossCol(term) {
     const def = glossaryDef(term);
     if (def === null) {
-      return escHTML3(term);
+      return escHTML4(term);
     }
-    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML3(term)}: ${escHTML3(def)}" data-def="${escHTML3(def)}">${escHTML3(term)}</span>`;
+    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML4(term)}: ${escHTML4(def)}" data-def="${escHTML4(def)}">${escHTML4(term)}</span>`;
   }
   function fig81OwnRow(verbatim) {
     const lines = verbatim.split("\n");
@@ -19095,14 +19110,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return "";
     }
     const label = doseContextLabel(claim);
-    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML3(label)}</span>` : "";
+    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML4(label)}</span>` : "";
     return `
-      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML3(value)}</span></div>`;
+      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML4(value)}</span></div>`;
   }
   function renderRefHeader(label) {
     return `
       <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">${escHTML3(label)}</span>
+        <span class="kd-claim__legend-eyebrow">${escHTML4(label)}</span>
         <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
       </div>`;
   }
@@ -19119,7 +19134,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       ${isTable ? renderFig81Legend() : ""}
       ${refLabel !== null ? renderRefHeader(refLabel) : ""}
       <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
-      <div class="kd-claim__cite">CITED \xB7 ${escHTML3(getBookLabel(claim.book))}</div>
+      <div class="kd-claim__cite">CITED \xB7 ${escHTML4(getBookLabel(claim.book))}</div>
     </div>`;
   }
   function renderCorpusForEssential(c, whyHTML = "") {
@@ -19135,15 +19150,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       const claimsHTML = resolveClaims(ids).map(renderCorpusClaim).join("");
       return `
       <div class="kd-corpus__group">
-        <div class="kd-corpus__group-label">${escHTML3(corpusKindLabel(kind))}</div>
+        <div class="kd-corpus__group-label">${escHTML4(corpusKindLabel(kind))}</div>
         ${claimsHTML}
       </div>`;
     };
     const kinds = Object.keys(c.claims_by_kind).sort(corpusKindOrder);
     const doseHTML = kinds.filter((k) => k === "dose").map(renderGroup).join("");
     const restHTML = kinds.filter((k) => k !== "dose").map(renderGroup).join("");
-    const condChips = c.conditions_treated.map((s) => `<span class="kd-corpus__chip">${escHTML3(conditionDisplayName(s))}</span>`).join("");
-    const interactChips = c.interacts_with.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML3(essentialDisplayName(s))}</span>`).join("");
+    const condChips = c.conditions_treated.map((s) => `<span class="kd-corpus__chip">${escHTML4(conditionDisplayName(s))}</span>`).join("");
+    const interactChips = c.interacts_with.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML4(essentialDisplayName(s))}</span>`).join("");
     const books = c.books_cited.map((b) => getBookLabel(b)).join(" \xB7 ");
     return `
     <div class="kd-corpus">
@@ -19156,7 +19171,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       ${condChips.length > 0 ? `<div class="kd-corpus__sub">IMPLICATED CONDITIONS</div><div class="kd-corpus__chips">${condChips}</div>` : ""}
       ${interactChips.length > 0 ? `<div class="kd-corpus__sub">WORKS ALONGSIDE</div><div class="kd-corpus__chips">${interactChips}</div>` : ""}
       ${restHTML}
-      <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML3(books)}</div>
+      <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML4(books)}</div>
     </div>`;
   }
   var CORPUS_ROLE_PRIORITY = ["causes", "deficiency_signs", "toxicity_signs", "protocols", "doses", "prognosis"];
@@ -19187,10 +19202,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const ess = c.essentials_involved.slice(0, 6).map((s) => essentialDisplayName(s)).join(" \xB7 ");
     const cls = `kd-condition-row${c.slug === selectedSlug ? " is-selected" : ""}`;
     return `
-    <div class="${cls}" data-kd-condition="${escHTML3(c.slug)}" data-search="${escHTML3(conditionSearchKeywords(c))}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-condition="${escHTML4(c.slug)}" data-search="${escHTML4(conditionSearchKeywords(c))}" role="button" tabindex="0">
       <div class="kd-condition-row__body">
-        <h4 class="kd-condition-row__name">${escHTML3(c.display_name)}</h4>
-        <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML3(ess) : "\u2014 corpus entry \u2014"}</div>
+        <h4 class="kd-condition-row__name">${escHTML4(c.display_name)}</h4>
+        <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML4(ess) : "\u2014 corpus entry \u2014"}</div>
       </div>
       <div class="kd-condition-row__count">${c.claim_count}<small>claims</small></div>
     </div>`;
@@ -19223,8 +19238,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (slugs.length === 0) {
       return "";
     }
-    const chips = slugs.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML3(familiarEssentialName(s))}</span>`).join("");
-    return `<div class="kd-corpus__sub">${escHTML3(label)}</div><div class="kd-corpus__chips">${chips}</div>`;
+    const chips = slugs.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML4(familiarEssentialName(s))}</span>`).join("");
+    return `<div class="kd-corpus__sub">${escHTML4(label)}</div><div class="kd-corpus__chips">${chips}</div>`;
   }
   function conditionSynopsis(c) {
     const deficiency = essentialsInRoles(c, ["deficiency_signs", "causes"]);
@@ -19239,7 +19254,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   var UMBRELLA_TIP_MIN_CLAIMS = 15;
   function renderUmbrellaTip(childDisplayNames) {
-    const examples = childDisplayNames.slice(0, 2).map((n) => `<em>${escHTML3(n)}</em>`).join(", ");
+    const examples = childDisplayNames.slice(0, 2).map((n) => `<em>${escHTML4(n)}</em>`).join(", ");
     const eg = examples.length > 0 ? ` (e.g. ${examples})` : "";
     return `<p class="kd-condition-deep__umbrella-tip"><strong>Broad category</strong> \u2014 this collects every subtype. Search your specific type for a focused view${eg}.</p>`;
   }
@@ -19253,7 +19268,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       const claimsHTML = resolveClaims(ids).map((cl) => renderCorpusClaim(cl)).join("");
       return `
       <div class="kd-corpus__group">
-        <div class="kd-corpus__group-label">${escHTML3(corpusKindLabel(role))}</div>
+        <div class="kd-corpus__group-label">${escHTML4(corpusKindLabel(role))}</div>
         ${claimsHTML}
       </div>`;
     }).join("");
@@ -19275,15 +19290,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       <button class="kd-essential-deep__close" data-kd-action="condition-close" title="Close (Esc)">\xD7</button>
       <header class="kd-essential-deep__head">
         <div class="kd-essential-deep__name-block">
-          <h3 class="kd-essential-deep__name">${escHTML3(c.display_name)}</h3>
+          <h3 class="kd-essential-deep__name">${escHTML4(c.display_name)}</h3>
           <div class="kd-essential-deep__cat">CONDITION \xB7 ${c.claim_count} CLAIM${c.claim_count === 1 ? "" : "S"}</div>
         </div>
       </header>
       ${umbrellaTipHTML}
-      ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML3(synopsis)}</p>` : ""}
+      ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML4(synopsis)}</p>` : ""}
       ${chipRows}
       ${groupsHTML}
-      <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML3(books)}</div>
+      <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML4(books)}</div>
     </div>`;
   }
   function renderConditionsTab(selectedSlug) {
@@ -19314,14 +19329,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return '<span class="kd-book-row__count--queued">\u22EF</span><small>queued</small>';
   }
   function renderBookRow(b) {
-    const ed = b.edition !== void 0 && b.edition !== null && b.edition.length > 0 ? `${escHTML3(b.edition)} ED \xB7 ` : "";
-    const yr = b.year !== void 0 && b.year !== null ? escHTML3(String(b.year)) : "";
+    const ed = b.edition !== void 0 && b.edition !== null && b.edition.length > 0 ? `${escHTML4(b.edition)} ED \xB7 ` : "";
+    const yr = b.year !== void 0 && b.year !== null ? escHTML4(String(b.year)) : "";
     return `
-    <div class="kd-book-row" data-kd-book="${escHTML3(b.book_id)}" role="button" tabindex="0">
-      <div class="kd-book-row__spine"><span>${escHTML3(b.code ?? "")}</span></div>
+    <div class="kd-book-row" data-kd-book="${escHTML4(b.book_id)}" role="button" tabindex="0">
+      <div class="kd-book-row__spine"><span>${escHTML4(b.code ?? "")}</span></div>
       <div class="kd-book-row__body">
-        <h4 class="kd-book-row__title">${escHTML3(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML3(authorLabel(b.authors))} \xB7 ${ed}${yr}</div>
+        <h4 class="kd-book-row__title">${escHTML4(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML4(authorLabel(b.authors))} \xB7 ${ed}${yr}</div>
       </div>
       <div class="kd-book-row__count">${bookCountHTML(b.claim_count ?? 0)}</div>
     </div>`;
@@ -19329,10 +19344,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function renderPlannedRow(b) {
     return `
     <div class="kd-book-row kd-book-row--planned">
-      <div class="kd-book-row__spine"><span>${escHTML3(b.code ?? "")}</span></div>
+      <div class="kd-book-row__spine"><span>${escHTML4(b.code ?? "")}</span></div>
       <div class="kd-book-row__body">
-        <h4 class="kd-book-row__title">${escHTML3(b.title)}</h4>
-        <div class="kd-book-row__meta">${escHTML3(authorLabel(b.authors))} \xB7 COMING SOON</div>
+        <h4 class="kd-book-row__title">${escHTML4(b.title)}</h4>
+        <div class="kd-book-row__meta">${escHTML4(authorLabel(b.authors))} \xB7 COMING SOON</div>
       </div>
       <div class="kd-book-row__count kd-book-row__count--soon">\u2014<small>soon</small></div>
     </div>`;
@@ -54609,7 +54624,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
 
   // assets/js/src/views/knowledge-products.ts
-  function escHTML4(s) {
+  function escHTML5(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var cachedProducts = null;
@@ -54676,11 +54691,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const price = p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : "";
     const meta = [`${n} NUTRIENT${n === 1 ? "" : "S"}`, price].filter((s) => s.length > 0).join(" \xB7 ");
     return `
-    <div class="${cls}" data-kd-product="${escHTML4(p.product_id)}" data-search="${escHTML4(productSearchBlob(p))}" role="button" tabindex="0">
-      <div class="kd-product-row__icon">${escHTML4(p.name.charAt(0).toUpperCase())}</div>
+    <div class="${cls}" data-kd-product="${escHTML5(p.product_id)}" data-search="${escHTML5(productSearchBlob(p))}" role="button" tabindex="0">
+      <div class="kd-product-row__icon">${escHTML5(p.name.charAt(0).toUpperCase())}</div>
       <div class="kd-product-row__body">
-        <h4 class="kd-product-row__name">${escHTML4(p.name)}</h4>
-        <div class="kd-product-row__meta">${escHTML4(meta)}</div>
+        <h4 class="kd-product-row__name">${escHTML5(p.name)}</h4>
+        <div class="kd-product-row__meta">${escHTML5(meta)}</div>
       </div>
       <span class="kd-product-row__verdict kd-product-row__verdict--ok">VIEW</span>
     </div>`;
@@ -54728,7 +54743,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         continue;
       }
       const u = typeof unit === "string" ? ` ${unit}` : "";
-      bits.push(`${escHTML4(key.replace(/_/g, " "))}: ${escHTML4(String(amount))}${escHTML4(u)}`);
+      bits.push(`${escHTML5(key.replace(/_/g, " "))}: ${escHTML5(String(amount))}${escHTML5(u)}`);
     }
     return bits.length > 0 ? `<div class="kd-product-comp__macros">${bits.join(" \xB7 ")}</div>` : "";
   }
@@ -54738,14 +54753,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     const rows = nutrients.map((n) => {
       const amt = fmtAmt(n.amount);
-      const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML4(n.unit)}` : "";
-      const form = n.form !== void 0 && n.form.length > 0 ? ` <span class="kd-product-nut__form">${escHTML4(n.form)}</span>` : "";
+      const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML5(n.unit)}` : "";
+      const form = n.form !== void 0 && n.form.length > 0 ? ` <span class="kd-product-nut__form">${escHTML5(n.form)}</span>` : "";
       const dvRaw = n.pct_dv;
-      const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `<span class="kd-product-nut__dv">${escHTML4(String(dvRaw))}% DV</span>` : "";
-      const amtHTML = amt.length > 0 ? `${escHTML4(amt)}${unit}` : "";
+      const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `<span class="kd-product-nut__dv">${escHTML5(String(dvRaw))}% DV</span>` : "";
+      const amtHTML = amt.length > 0 ? `${escHTML5(amt)}${unit}` : "";
       return `
       <div class="kd-product-nut">
-        <span class="kd-product-nut__name">${escHTML4(n.name)}${form}</span>
+        <span class="kd-product-nut__name">${escHTML5(n.name)}${form}</span>
         <span class="kd-product-nut__amt">${amtHTML}${dv}</span>
       </div>`;
     }).join("");
@@ -54756,10 +54771,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return "";
     }
     const items = blends.map((b) => {
-      const name = b.name !== void 0 && b.name.length > 0 ? escHTML4(b.name) : "Proprietary Blend";
-      const total = b.total != null && b.total.amount != null ? ` \xB7 ${escHTML4(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML4(b.total.unit)}` : ""}` : "";
-      const cfu = b.total_cfu != null && b.total_cfu.amount != null ? ` \xB7 ${escHTML4(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML4(b.total_cfu.unit)}` : ""}` : "";
-      const labeled = b.as_labeled !== void 0 && b.as_labeled.length > 0 ? `<div class="kd-product-blend__labeled">${escHTML4(b.as_labeled)}</div>` : "";
+      const name = b.name !== void 0 && b.name.length > 0 ? escHTML5(b.name) : "Proprietary Blend";
+      const total = b.total != null && b.total.amount != null ? ` \xB7 ${escHTML5(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML5(b.total.unit)}` : ""}` : "";
+      const cfu = b.total_cfu != null && b.total_cfu.amount != null ? ` \xB7 ${escHTML5(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML5(b.total_cfu.unit)}` : ""}` : "";
+      const labeled = b.as_labeled !== void 0 && b.as_labeled.length > 0 ? `<div class="kd-product-blend__labeled">${escHTML5(b.as_labeled)}</div>` : "";
       return `
       <div class="kd-product-blend">
         <div class="kd-product-blend__head">${name}${total}${cfu}</div>
@@ -54769,17 +54784,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return `<div class="kd-product-comp__sub">BLENDS</div>${items}`;
   }
   function renderComponent(c, idx, total) {
-    const label = total > 1 ? `<div class="kd-product-comp__label">${escHTML4((c.role ?? c.form ?? `Part ${idx + 1}`).toUpperCase())}</div>` : "";
+    const label = total > 1 ? `<div class="kd-product-comp__label">${escHTML5((c.role ?? c.form ?? `Part ${idx + 1}`).toUpperCase())}</div>` : "";
     const servingBits = [];
     if (c.serving_size !== void 0 && c.serving_size.length > 0) {
-      servingBits.push(`SERVING \xB7 ${escHTML4(c.serving_size)}`);
+      servingBits.push(`SERVING \xB7 ${escHTML5(c.serving_size)}`);
     }
     if (c.servings_per_container !== null && c.servings_per_container !== void 0) {
-      servingBits.push(`${escHTML4(String(c.servings_per_container))} PER CONTAINER`);
+      servingBits.push(`${escHTML5(String(c.servings_per_container))} PER CONTAINER`);
     }
     const serving = servingBits.length > 0 ? `<div class="kd-product-comp__meta">${servingBits.join(" \xB7 ")}</div>` : "";
-    const directions = c.directions !== void 0 && c.directions.length > 0 ? `<p class="kd-product-comp__directions"><strong>Directions</strong> \xB7 ${escHTML4(c.directions)}</p>` : "";
-    const other = c.other_ingredients !== void 0 && c.other_ingredients.length > 0 ? `<div class="kd-product-comp__other"><span class="kd-product-comp__other-label">OTHER INGREDIENTS</span> ${escHTML4(c.other_ingredients.join(", "))}</div>` : "";
+    const directions = c.directions !== void 0 && c.directions.length > 0 ? `<p class="kd-product-comp__directions"><strong>Directions</strong> \xB7 ${escHTML5(c.directions)}</p>` : "";
+    const other = c.other_ingredients !== void 0 && c.other_ingredients.length > 0 ? `<div class="kd-product-comp__other"><span class="kd-product-comp__other-label">OTHER INGREDIENTS</span> ${escHTML5(c.other_ingredients.join(", "))}</div>` : "";
     return `
     <div class="kd-product-comp">
       ${label}${serving}${directions}${renderMacros(c.macros)}${renderNutrients(c.nutrients)}${renderBlends(c.blends)}${other}
@@ -54790,14 +54805,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (p === null) {
       return "";
     }
-    const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML4(p.sku)}` : "";
+    const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML5(p.sku)}` : "";
     const compsHTML = p.components.map((c, i) => renderComponent(c, i, p.components.length)).join("");
     return `
     <div class="kd-essential-deep kd-product-deep">
       <button class="kd-essential-deep__close" data-kd-action="product-close" title="Close (Esc)">\xD7</button>
       <header class="kd-essential-deep__head">
         <div class="kd-essential-deep__name-block">
-          <h3 class="kd-essential-deep__name">${escHTML4(p.name)}</h3>
+          <h3 class="kd-essential-deep__name">${escHTML5(p.name)}</h3>
           <div class="kd-essential-deep__cat">YOUNGEVITY PRODUCT${sku}</div>
         </div>
       </header>
@@ -54823,18 +54838,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return rankSources(target.slug, targetLowOf(target.target)).map((r) => ({ ...r, name: getProduct(r.productId)?.name ?? r.productId }));
   }
   function renderSourceRow(s, rank, isExtra) {
-    const amt = `${fmtNum(s.amount)} ${escHTML4(s.unit)}`;
+    const amt = `${fmtNum(s.amount)} ${escHTML5(s.unit)}`;
     const price = s.price !== null ? `$${fmtMoney(s.price)}` : "\u2014";
     const breadth = `${s.breadth} NUTRIENT${s.breadth === 1 ? "" : "S"}`;
     const cls = `kd-source${isExtra ? " kd-source--extra" : ""}`;
     return `
-    <div class="${cls}" data-kd-product="${escHTML4(s.productId)}" role="button" tabindex="0">
+    <div class="${cls}" data-kd-product="${escHTML5(s.productId)}" role="button" tabindex="0">
       <span class="kd-source__rank">${rank}</span>
       <span class="kd-source__body">
-        <span class="kd-source__name">${escHTML4(s.name)}</span>
-        <span class="kd-source__meta">${escHTML4(breadth)} \xB7 ${price}</span>
+        <span class="kd-source__name">${escHTML5(s.name)}</span>
+        <span class="kd-source__meta">${escHTML5(breadth)} \xB7 ${price}</span>
       </span>
-      <span class="kd-source__amt">${escHTML4(amt)}</span>
+      <span class="kd-source__amt">${escHTML5(amt)}</span>
     </div>`;
   }
   function renderEssentialSources(key) {
@@ -55000,7 +55015,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return "kd-essential-deep__status-pill--pending";
   }
-  function escHTML5(s) {
+  function escHTML6(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function hexSerial2(seed) {
@@ -55018,19 +55033,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     const rows = fam.acids.map((a) => `
       <li class="kd-omega__row">
-        <span class="kd-omega__abbr">${escHTML5(a.abbr)}</span>
+        <span class="kd-omega__abbr">${escHTML6(a.abbr)}</span>
         <div class="kd-omega__body">
-          <span class="kd-omega__name">${escHTML5(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ""}</span>
-          <span class="kd-omega__desc">${escHTML5(a.description)}</span>
+          <span class="kd-omega__name">${escHTML6(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ""}</span>
+          <span class="kd-omega__desc">${escHTML6(a.description)}</span>
         </div>
       </li>`).join("");
     return `
     <div class="kd-omega">
       <div class="kd-omega__head">
-        <span class="kd-omega__title">${escHTML5(fam.label)} \xB7 FATTY-ACID FORMS</span>
+        <span class="kd-omega__title">${escHTML6(fam.label)} \xB7 FATTY-ACID FORMS</span>
       </div>
       <ul class="kd-omega__list">${rows}</ul>
-      <div class="kd-omega__note">${escHTML5(FATTY_ACID_CLARITY.disclaimer)}</div>
+      <div class="kd-omega__note">${escHTML6(FATTY_ACID_CLARITY.disclaimer)}</div>
     </div>`;
   }
   function wtnNum(n) {
@@ -55047,7 +55062,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function wtnAmount(low, high, unit) {
     const val = high !== null && high !== low ? `${wtnNum(low)}\u2013${wtnNum(high)}` : wtnNum(low);
-    return `${val} ${escHTML5(unit)}`;
+    return `${val} ${escHTML6(unit)}`;
   }
   function whyThisNumberQualifies(td) {
     if (typeof td.low !== "number") {
@@ -55064,25 +55079,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const isRange = oHigh !== null && oHigh !== oLow;
     const scaled = typeof p.scale_factor === "number";
     const converted = p.factor_source !== void 0;
-    const detail = p.unit_detail !== void 0 ? ` ${escHTML5(p.unit_detail)}` : "";
+    const detail = p.unit_detail !== void 0 ? ` ${escHTML6(p.unit_detail)}` : "";
     const per100 = scaled ? " per 100 lb of body weight" : "";
-    const lead = leadName !== void 0 ? `<strong>${escHTML5(leadName)}</strong> \u2014 ` : "";
+    const lead = leadName !== void 0 ? `<strong>${escHTML6(leadName)}</strong> \u2014 ` : "";
     const stated = `${lead}Wallach lists <strong>${wtnAmount(oLow, oHigh, oUnit)}</strong>${per100}`;
     const steps = [];
     if (isRange) {
       const upperIsFinal = !scaled && !converted;
-      steps.push(upperIsFinal ? "target the upper end" : `target the upper (<strong>${wtnNum(upper)} ${escHTML5(oUnit)}</strong>)`);
+      steps.push(upperIsFinal ? "target the upper end" : `target the upper (<strong>${wtnNum(upper)} ${escHTML6(oUnit)}</strong>)`);
     }
     if (converted) {
-      steps.push(`convert to metric (${escHTML5(p.factor_source ?? "")})`);
+      steps.push(`convert to metric (${escHTML6(p.factor_source ?? "")})`);
     }
     if (scaled) {
       steps.push(`scale to a 154 lb reference body (\xD7${wtnNum(p.scale_factor ?? 1)})`);
     }
     if (p.rounding !== void 0 && (scaled || converted)) {
-      steps.push(`round to ${escHTML5(p.rounding)}`);
+      steps.push(`round to ${escHTML6(p.rounding)}`);
     }
-    const posted = `<strong>${wtnNum(finalVal)} ${escHTML5(finalUnit)}${detail}</strong>`;
+    const posted = `<strong>${wtnNum(finalVal)} ${escHTML6(finalUnit)}${detail}</strong>`;
     if (steps.length === 0) {
       return `${stated}.`;
     }
@@ -55094,19 +55109,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return "";
     }
     const unit = td.unit ?? "";
-    const detail = td.provenance?.unit_detail !== void 0 ? ` ${escHTML5(td.provenance.unit_detail)}` : "";
+    const detail = td.provenance?.unit_detail !== void 0 ? ` ${escHTML6(td.provenance.unit_detail)}` : "";
     const rows = [];
-    rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML5(unit)}${detail}</strong> daily${td.source !== void 0 ? ` \xB7 ${escHTML5(wtnBook(td.source))}` : ""}</div>`);
+    rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML6(unit)}${detail}</strong> daily${td.source !== void 0 ? ` \xB7 ${escHTML6(wtnBook(td.source))}` : ""}</div>`);
     const parts = td.parts;
     if (Array.isArray(parts) && parts.length > 1) {
       const items = parts.map((p) => `<li>${wtnChain(p.provenance ?? {}, p.unit, p.value, p.form ?? void 0)}</li>`).join("");
-      rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> Wallach states each form separately:<ul class="kd-why__parts-list">${items}</ul>Summed \u2192 <strong>${wtnNum(td.low)} ${escHTML5(unit)}${detail}</strong>.</div>`);
+      rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> Wallach states each form separately:<ul class="kd-why__parts-list">${items}</ul>Summed \u2192 <strong>${wtnNum(td.low)} ${escHTML6(unit)}${detail}</strong>.</div>`);
     } else if (td.provenance !== void 0) {
       rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> ${wtnChain(td.provenance, unit, td.low)}</div>`);
     }
     const earlier = td.other_claims ?? [];
     if (earlier.length > 0) {
-      const lines = earlier.map((o) => `Earlier, <strong>${escHTML5(wtnBook(o.source))}</strong> recommended <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>.`).join(" ");
+      const lines = earlier.map((o) => `Earlier, <strong>${escHTML6(wtnBook(o.source))}</strong> recommended <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>.`).join(" ");
       rows.push(`<div class="kd-why__older">${lines}</div>`);
       rows.push('<div class="kd-why__gloss">Wallach\u2019s guidance evolved across his books \u2014 we follow his most recent figure and keep the earlier one for context.</div>');
     }
@@ -55131,18 +55146,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const citation = stance?.citation;
     const wallachHTML = summary !== void 0 && summary.length > 0 ? `
       <div class="kd-essential-deep__sub">WALLACH SAYS</div>
-      <p class="kd-essential-deep__body">${escHTML5(summary)}</p>
-      ${citation !== void 0 ? `<div class="kd-essential-deep__source">CITED \xB7 <strong>${escHTML5(citation)}</strong></div>` : ""}` : "";
+      <p class="kd-essential-deep__body">${escHTML6(summary)}</p>
+      ${citation !== void 0 ? `<div class="kd-essential-deep__source">CITED \xB7 <strong>${escHTML6(citation)}</strong></div>` : ""}` : "";
     const sourcesHTML = renderEssentialSources(key);
     return `
     <div class="kd-essential-deep">
       <button class="kd-essential-deep__close" data-kd-action="essential-close" title="Close (Esc)">\xD7</button>
       <header class="kd-essential-deep__head">
         <div class="kd-essential-deep__sym-row">
-          <div class="kd-essential-deep__sym">${escHTML5(e.symbol)}</div>
+          <div class="kd-essential-deep__sym">${escHTML6(e.symbol)}</div>
           <div class="kd-essential-deep__name-block">
-            <h3 class="kd-essential-deep__name">${escHTML5(e.key)}</h3>
-            <div class="kd-essential-deep__cat">${escHTML5(e.catLabel)}${e.ref !== "" ? ` \xB7 ${escHTML5(e.ref)}` : ""}</div>
+            <h3 class="kd-essential-deep__name">${escHTML6(e.key)}</h3>
+            <div class="kd-essential-deep__cat">${escHTML6(e.catLabel)}${e.ref !== "" ? ` \xB7 ${escHTML6(e.ref)}` : ""}</div>
           </div>
         </div>
         <div class="kd-essential-deep__readout">
@@ -55164,18 +55179,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         const status = statusOf(snapshot, e.key);
         const stateClass = e.essential ? statusTileClass(status) : "kd-essential-tile--bonus";
         const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? " is-selected" : ""}`.trim();
-        const meta = e.essential ? `${escHTML5(e.catLabel)} \xB7 ${statusLabel(status)}` : `${escHTML5(e.catLabel)} \xB7 NON-ESSENTIAL`;
+        const meta = e.essential ? `${escHTML6(e.catLabel)} \xB7 ${statusLabel(status)}` : `${escHTML6(e.catLabel)} \xB7 NON-ESSENTIAL`;
         return `
-        <div class="${cls}" data-kd-essential="${escHTML5(e.key)}" role="button" tabindex="0">
-          <div class="kd-essential-tile__sym">${escHTML5(e.symbol)}</div>
-          <div class="kd-essential-tile__name">${escHTML5(e.name)}</div>
+        <div class="${cls}" data-kd-essential="${escHTML6(e.key)}" role="button" tabindex="0">
+          <div class="kd-essential-tile__sym">${escHTML6(e.symbol)}</div>
+          <div class="kd-essential-tile__name">${escHTML6(e.name)}</div>
           <div class="kd-essential-tile__meta">${meta}</div>
         </div>`;
       }).join("");
       const essentialN = group.items.filter((i) => i.essential).length;
       const bonusN = group.items.length - essentialN;
       return `
-      <div class="kd-section-head">${escHTML5(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
+      <div class="kd-section-head">${escHTML6(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
       <div class="kd-essentials-grid">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${groupsHTML}`;
@@ -55186,10 +55201,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function renderDoctrineTab() {
     return DOCTRINES.map((d) => `
     <div class="kd-doctrine-card${d.featured ? " featured" : ""}">
-      <div class="kd-doctrine-card__id">${escHTML5(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
-      <h4 class="kd-doctrine-card__title">${escHTML5(d.title)}</h4>
-      <p class="kd-doctrine-card__body">${escHTML5(d.body)}</p>
-      <div class="kd-doctrine-card__cite">${escHTML5(doctrineCite(d))}</div>
+      <div class="kd-doctrine-card__id">${escHTML6(d.id)}${d.featured ? " \xB7 CORNERSTONE" : ""}</div>
+      <h4 class="kd-doctrine-card__title">${escHTML6(d.title)}</h4>
+      <p class="kd-doctrine-card__body">${escHTML6(d.body)}</p>
+      <div class="kd-doctrine-card__cite">${escHTML6(doctrineCite(d))}</div>
     </div>`).join("");
   }
   function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedBook, selectedProduct) {
@@ -55218,8 +55233,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     ];
     const tabsHTML = tabs.map((t) => `
     <button class="kd-tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">
-      <span>${escHTML5(t.label)}</span>
-      <span class="kd-tab__count">${escHTML5(t.count)}</span>
+      <span>${escHTML6(t.label)}</span>
+      <span class="kd-tab__count">${escHTML6(t.count)}</span>
     </button>`).join("");
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
@@ -56209,7 +56224,7 @@ Two correctness fixes the batch forced (both gated + negative-tested):
 - catalog_ref in search_index_derive: condition entities pull display_name from eden/catalog/conditions.json (no duplication, mirrors canon_ref). validate() + the search_index_wellformed gate cover it; negative test grew to 10 cases (added catalog_ref-with-name, catalog_ref-not-condition).
 - tier1_link fires ONLY for non-search-only claims: a search-only modality claim (Color Therapy's color-map) can carry a conditions array for search matching, but must not show operational cross-links -- so the tier1/RELATED pills no longer flood a modality page.
 
-Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }];
+Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -56245,7 +56260,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML6(s) {
+  function escHTML7(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -56291,15 +56306,15 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML6(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML7(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML6(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML7(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML6(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML6(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML6(kindLabel(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML7(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML7(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML7(kindLabel(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML6(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML7(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -56373,9 +56388,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML6(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML6(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML6(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML7(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML7(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML7(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -56520,7 +56535,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML7(s) {
+  function escHTML8(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -56550,7 +56565,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML7(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML8(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -56561,13 +56576,13 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML7(slot.id)}" data-slot-num="${escHTML7(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML8(slot.id)}" data-slot-num="${escHTML8(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML7(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML7(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML7(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML8(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML8(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML8(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML7(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML8(slot.stamp)}</div>
     </article>
   `;
   }
@@ -56604,9 +56619,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML7(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML8(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML7(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML8(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -56669,13 +56684,13 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML7(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML7(item.heat)}"><span class="rec-item__tag-sign">${escHTML7(sign)}</span>${escHTML7(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML8(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML8(item.heat)}"><span class="rec-item__tag-sign">${escHTML8(sign)}</span>${escHTML8(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML7(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML8(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML7(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML7(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML8(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML8(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -56878,7 +56893,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML7(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML8(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -56970,7 +56985,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML8(s) {
+  function escHTML9(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -57015,19 +57030,19 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML8(n.name)}</span>
-      <span>${escHTML8(n.amount ?? "")}${escHTML8(n.unit ?? "")}</span>
+      <span>${escHTML9(n.name)}</span>
+      <span>${escHTML9(n.amount ?? "")}${escHTML9(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML8(brand)}</div>
-        <div class="scan-label__product">${escHTML8(product)}</div>
+        <div class="scan-label__brand">${escHTML9(brand)}</div>
+        <div class="scan-label__product">${escHTML9(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML8(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML9(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -57047,7 +57062,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML8(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML9(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -57109,9 +57124,9 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML8(s.name)}</div>
-        <div class="stage__sub">${escHTML8(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML8(s.ms)}</span>` : escHTML8(s.ms)}</div>
+        <div class="stage__name">${escHTML9(s.name)}</div>
+        <div class="stage__sub">${escHTML9(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML9(s.ms)}</span>` : escHTML9(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -57123,7 +57138,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML8(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML9(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -57134,17 +57149,17 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML8(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML9(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML8(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML8(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML9(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML9(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML8(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML8(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML8(row.tag.heat)}">${tagSignHTML}${escHTML8(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML9(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML9(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML9(row.tag.heat)}">${tagSignHTML}${escHTML9(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -57250,10 +57265,10 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML8(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML8(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML9(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML9(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML8(verdictText)}</span>
+      <span class="${pillClass}">${escHTML9(verdictText)}</span>
     </div>
   `;
   }
@@ -57568,6 +57583,80 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 6
       },
+      fluoride: {
+        display_name: "Fluoride",
+        type: "element",
+        synonyms: [
+          "fluorine",
+          "fluorspar",
+          "fluorite"
+        ],
+        related: [
+          "calcium",
+          "osteoporosis",
+          "tooth_decay"
+        ],
+        claim_count: 6,
+        symbol: "F"
+      },
+      germanium: {
+        display_name: "Germanium",
+        type: "nutrient",
+        synonyms: [
+          "ge",
+          "ge-132"
+        ],
+        related: [
+          "cancer",
+          "selenium",
+          "lithium"
+        ],
+        claim_count: 6,
+        symbol: "Ge"
+      },
+      hydrogen: {
+        display_name: "Hydrogen",
+        type: "nutrient",
+        synonyms: [
+          "h2"
+        ],
+        related: [
+          "oxygen",
+          "water",
+          "ph"
+        ],
+        claim_count: 5,
+        symbol: "H"
+      },
+      iodine: {
+        display_name: "Iodine",
+        type: "nutrient",
+        synonyms: [
+          "iodide"
+        ],
+        related: [
+          "thyroid_disease",
+          "hypothyroidism",
+          "selenium"
+        ],
+        claim_count: 6,
+        symbol: "I"
+      },
+      iron: {
+        display_name: "Iron",
+        type: "nutrient",
+        synonyms: [
+          "fe",
+          "ferrum"
+        ],
+        related: [
+          "vitamin-c",
+          "anemia",
+          "copper"
+        ],
+        claim_count: 5,
+        symbol: "Fe"
+      },
       mercury: {
         display_name: "Mercury",
         type: "element",
@@ -57583,6 +57672,21 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 13,
         symbol: "Hg"
+      },
+      potassium: {
+        display_name: "Potassium",
+        type: "nutrient",
+        synonyms: [
+          "potash",
+          "kalium"
+        ],
+        related: [
+          "sodium",
+          "magnesium",
+          "lithium"
+        ],
+        claim_count: 5,
+        symbol: "K"
       },
       wallach: {
         display_name: "Dr. Joel Wallach",
@@ -58075,6 +58179,399 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000116",
+        subject: "fluoride",
+        also_about: [],
+        facet: "basics",
+        question: "What is fluorine?",
+        answer_short: "The smallest, lightest and most reactive halogen ('salt former') - a pale-yellow gas so reactive it never occurs free, locked instead in minerals like fluorite.",
+        answer: "Fluorine is a halogen \u2014 the family Wallach calls the 'salt formers,' which also includes chlorine, bromine, iodine and astatine. These elements react by grabbing electrons from other atoms and readily combine with metals to make salts. Fluorine is the smallest, lightest and most reactive of the whole family \u2014 a pale-yellow gas whose molecules pair up into two atoms (diatomic), and so reactive it never occurs free in nature; it's found instead locked in minerals like fluorite (calcium fluoride, also called fluorspar).",
+        verbatim: "Fluorine is a member of the halogen family or \u201Csalt\nformers.\u201D The other members are chlorine, bromine, iodine\nand astatine. All halogen atoms react chemically by accepting\nelectrons from other atoms and easily combine with metals\nto form compounds known as salts. Fluorine is the smallest,\nlightest and most reactive member of the halogen family.",
+        page: 140,
+        book_id: "immortality",
+        topics: [
+          "halogen",
+          "fluorine",
+          "fluorite",
+          "reactivity"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000117",
+        subject: "fluoride",
+        also_about: [],
+        facet: "discovery",
+        question: "Who discovered fluorine, and what does its name mean?",
+        answer_short: "Henri Moissan won the 1906 Nobel Prize for first isolating pure fluorine (1886), after 75 years of effort; the name is Latin 'fluere,' to flow.",
+        answer: "The element's discovery. The French chemist Henri Moissan won the 1906 Nobel Prize for being the first to produce fluorine in its pure elemental form \u2014 the culmination of 75 years of effort by many chemists, with Moissan finally isolating it in 1886. The name comes from the Latin fluere, 'to flow.'",
+        verbatim: "The French chemist Henri Moissan won the Nobel\nPrize in 1906 for being the first to produce fluorine in its pure\nelemental form. The name fluorine is derived from the Latin\nword fluere, which translates to \u201Cto flow.\u201D",
+        page: 140,
+        book_id: "immortality",
+        topics: [
+          "moissan",
+          "nobel-prize",
+          "etymology"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000118",
+        subject: "fluoride",
+        also_about: [],
+        facet: "stance",
+        question: "Is fluoride an essential nutrient?",
+        answer_short: "Wallach says yes in trace amounts - before 1972 it was only 'considered' essential for tooth enamel, then Schwarz proved it essential for animals and humans.",
+        answer: "Wallach's stance on fluoride's essentiality. Before 1972 fluoride was only 'considered' essential in animals, based on its apparent benefit to tooth enamel in warding off cavities. Then in 1972, Schwarz proved that fluoride was in fact an essential mineral for both animals and humans. (Note: despite this, fluoride is not carried in this system's operational list of Wallach/Youngevity supplement essentials \u2014 see the full fluoride stance for why the picture is two-sided.)",
+        verbatim: "Prior to 1972, fluoride was considered essential in\nanimals because of its apparent benefit for tooth enamel in\nwarding off dental caries (\u201Ccavities\u201D). In 1972, Schwarz proved\nthat fluoride was in fact an essential mineral for animals and\nhumans.",
+        page: 141,
+        book_id: "immortality",
+        topics: [
+          "essentiality",
+          "schwarz",
+          "tooth-enamel"
+        ],
+        see_also: {
+          phrase: "the full fluoride stance",
+          target: "WAL-CLM-IMMORT-000124"
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000120",
+        subject: "fluoride",
+        also_about: [],
+        facet: "physiology",
+        question: "How much fluoride is in and around us?",
+        answer_short: "An adult skeleton can bank up to 2.6 g of fluoride, and the average American takes in ~4.4 mg a day from food, water, toothpaste and supplements combined.",
+        answer: "How much fluoride is in and around us. The skeleton of an adult man can hold up to 2.6 grams (2,600 mg) of fluoride in reserve, and the average American takes in about 4.4 mg per day from the combination of food, water, toothpaste and nutritional supplements.",
+        verbatim: "The skeletal reserves of fluoride in an adult man can\nreach 2.6 gm (2,600 mg); the average daily intake by Americans\nis 4.4 mg from combined sources of food, water, toothpaste\nand nutritional supplements.",
+        page: 141,
+        book_id: "immortality",
+        topics: [
+          "body-content",
+          "intake",
+          "skeleton"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000122",
+        subject: "fluoride",
+        also_about: [
+          "tooth_decay"
+        ],
+        facet: "sources",
+        question: "How widespread is water fluoridation?",
+        answer_short: "About 10,000 U.S. towns fluoridate water at 1 mg/L for 100 million people, reportedly cutting cavities 60-70% - but naturally high levels mottle children's teeth.",
+        answer: "The scale of U.S. water fluoridation and its trade-off. About 10,000 American towns and cities \u2014 serving 100 million people \u2014 add fluoride to municipal drinking water at 1 mg/L (one part per million), which has reportedly cut dental cavities by 60 to 70%. But in certain western U.S. states the natural fluoride runs high \u2014 10 to 45 ppm \u2014 with the visible result of mottled (fluorosis-stained) teeth in children.",
+        verbatim: "Approximately 10,000 American towns and cities\nserving a total of 100 million people have added fluoride to\ntheir municipal drinking water at the rate of 1 mg/L, which\nhas reportedly reduced dental caries by 60 to 70%. In certain\nwestern states in the U.S., there is an excess of fluoride,\nreaching levels of 10 to 45 ppm with a resultant mottling of\nteeth in children.",
+        page: 141,
+        book_id: "immortality",
+        topics: [
+          "water-fluoridation",
+          "dental-caries",
+          "fluorosis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000124",
+        subject: "fluoride",
+        also_about: [
+          "cancer",
+          "osteoporosis"
+        ],
+        facet: "big_question",
+        question: "Is fluoridated water safe?",
+        answer_short: "Wallach calls it 'still highly controversial' - laying out both the cavity benefit and the fluorosis, bone-fracture and cancer concerns without a flat verdict.",
+        answer: "Wallach's full stance on fluoride \u2014 why it sounds both essential and dangerous, made clear. WHAT IT IS: fluoride is the most reactive halogen and, per a 1972 study by Schwarz, a nutritionally essential trace mineral for animals and humans. ITS REAL BENEFIT: fluoride hardens tooth enamel \u2014 teeth rebuild it as acid-resistant fluorapatite, which fights the cavities caused by sugar-fed mouth bacteria; that is why it's in toothpaste, and water fluoridation (~1 mg/L) has reportedly cut cavities 60\u201370%. ITS REAL HARMS: fluoride is also toxic above trace levels \u2014 dental fluorosis (mottled teeth) at 2\u20137 ppm, osteosclerosis (abnormal bone hardening) at 8\u201320 ppm, and chronic systemic toxicity above 20\u201380 ppm/day over years \u2014 and Wallach cites studies (Yiamouyiannis & Burk 1977; the U.S. National Toxicology Program's 1990 rat study) tying fluoridation to excess cancer deaths and to oral, bone (osteosarcoma), thyroid and liver tumors. HOW IT'S BOTH \u2014 the reconciliation: the dose makes the poison. Fluoride is essential only in tiny amounts (the whole adult skeleton holds ~2.6 g; average intake ~4.4 mg/day), while the harms appear at higher, sustained exposure \u2014 so 'essential in trace' and 'toxic in excess' are the same mineral at different doses, not a contradiction. ON WATER FLUORIDATION: Wallach calls it 'still highly controversial' and presents both sides \u2014 the cavity benefit versus the fluorosis, bone and cancer concerns, even noting that studies disagree on whether fluoridated water reduces or increases bone fractures. In this passage he lays out the debate and flags the toxicity/cancer evidence rather than issuing a flat yes-or-no verdict on whether you should drink it.",
+        verbatim: "The universal fluoridation of drinking water is still\nhighly controversial. Some studies show that fluoridated\nwater helps reduce fractures from osteoporosis, while other\nstudies showed an increase in hip fractures.",
+        page: 141,
+        book_id: "immortality",
+        topics: [
+          "water-fluoridation",
+          "controversy",
+          "cancer",
+          "big-question"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000125",
+        subject: "iron",
+        also_about: [],
+        facet: "basics",
+        question: "What is iron, and where does it come from?",
+        answer_short: "Iron is the 4th most abundant element in Earth's crust \u2014 its ores opened the Iron Age (~1100 B.C.), and Earth's molten core is thought to be magnetized iron.",
+        answer: "How abundant iron is, and its place in human history. Iron is the fourth most abundant element in the Earth's crust and the second most abundant metal (after aluminum); its content is responsible for most soil color, and the planet's molten core is thought to be magnetized iron. Learning to smelt iron from its red-brown ores (mainly hematite and magnetite) was a milestone that opened the Iron Age (~1100 B.C.), giving humanity tools and weapons harder than those of the earlier Bronze Age; today iron makes up about 90% of all metal extracted from ore.",
+        verbatim: "Iron is the fourth most abundant element in the earth\u2019s\ncrust and is second only to aluminum as the most abundant\nmetal. The \u201Ccore\u201D or interior of the earth is theorized to be\nmade up of magnetized, molten iron.",
+        page: 142,
+        book_id: "immortality",
+        topics: [
+          "iron",
+          "iron-age",
+          "geochemistry"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000127",
+        subject: "iron",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why is carbon monoxide so deadly?",
+        answer_short: "Carbon monoxide binds the iron in hemoglobin ~200x more tightly than oxygen \u2014 crowding oxygen out of the blood, which is what makes it poisonous.",
+        answer: "Why carbon monoxide is so deadly \u2014 it hijacks iron's oxygen seat. Carbon monoxide, a gas produced by incomplete burning of fuel, binds to the iron in hemoglobin about 200 times more tightly than oxygen does. Because it clings so hard, it crowds oxygen out of the blood \u2014 which is what makes carbon monoxide poisoning dangerous.",
+        verbatim: "Carbon monoxide, a byproduct of imperfect\ncombustion, is bound to the hemoglobin iron 200 times more\ntightly than oxygen - this phenomenon can lead to \u201Ccarbon\nmonoxide poisoning!\u201D",
+        page: 143,
+        book_id: "immortality",
+        topics: [
+          "carbon-monoxide",
+          "hemoglobin",
+          "poisoning"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000128",
+        subject: "iron",
+        also_about: [],
+        facet: "physiology",
+        question: "How much iron is in your body, and where?",
+        answer_short: "A healthy adult carries 3-5 g of iron; ~60-70% is 'functional' (in hemoglobin, muscle and enzymes) and 30-40% is stored in marrow and liver.",
+        answer: "How much iron your body holds, and where it sits. A healthy adult carries about 3 to 5 grams of iron, and a newborn has nearly twice as much per kilogram of body weight as an adult. Roughly 60 to 70% is 'functional' iron doing active work \u2014 in hemoglobin, in muscle's oxygen-storing pigment myoglobin, and in the cell's respiratory enzymes \u2014 while 30 to 40% is held in reserve as storage iron (as ferritin and hemosiderin in the bone marrow and liver).",
+        verbatim: "In a healthy adult human there is three to five grams\nof iron, the newborn infant has nearly double the amount of\niron per kg than adults. Sixty to 70% of tissue iron is used as\nessential or functional iron, and 30 to 40% as storage iron.",
+        page: 143,
+        book_id: "immortality",
+        topics: [
+          "body-content",
+          "hemoglobin",
+          "ferritin"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000130",
+        subject: "iron",
+        also_about: [],
+        facet: "mechanism",
+        question: "What causes iron deficiency?",
+        answer_short: "Wallach's list: unsupplemented pregnancy, heavy periods, chronic infection or bleeding, low stomach acid, diarrhea, and poor absorption from high-fiber diets.",
+        answer: "What causes iron deficiency in the first place. Wallach lists the drivers: an unsupplemented pregnancy; painful or heavy menstruation (dysmenorrhea); chronic infections; low stomach acid (hypochlorhydria, e.g. from a salt-restricted diet); chronic diarrhea; ongoing blood loss (from cancer, ulcers, parasites, blood-thinning drugs, or other nutritional deficiencies); and poor absorption (from high-fat or high-fiber diets, or celiac disease).",
+        verbatim: "Iron deficiency can be the result of unsupplemented\npregnancy, dysmenorrhea, chronic infections, hypochlorhydria\n(low stomach acid from a salt-restricted diet), chronic diarrhea,\nchronic bleeding (i.e. cancer, ulcers, parasites, blood thinners,\nnutritional deficiencies, etc.) and impaired absorption (i.e.\nhigh fat diets, high fiber diets, celiac disease, etc.).",
+        page: 144,
+        book_id: "immortality",
+        topics: [
+          "iron-deficiency",
+          "causes",
+          "menstruation"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000132",
+        subject: "iron",
+        also_about: [
+          "vitamin-c"
+        ],
+        facet: "mechanism",
+        question: "What helps or blocks iron absorption?",
+        answer_short: "Stomach acid and vitamin C boost iron absorption; fiber and phytates block it \u2014 so Wallach says the 18 mg RDA is too low for vegans and high-fiber diets.",
+        answer: "What helps and hinders iron absorption \u2014 and why the standard allowance can fall short. Stomach acid (hydrochloric acid) is needed to absorb iron well, and vitamin C (ascorbic acid) increases absorption; clays and dietary fiber (phytates) reduce it. Because of that, Wallach argues the official RDA (Recommended Dietary Allowance) of 18 mg per day of metallic iron is too low for people eating high-fiber, high-phytate diets, such as vegans and vegetarians.",
+        verbatim: "Stomach hydrochloric acid is required for optimal\nabsorption of iron. Ascorbic acid increases the absorption of\niron; clays and dietary fiber (phytates) decrease the absorption\nof iron. The RDA of 18 mg per day as metallic iron is too low\nfor those individuals consuming high fiber, high phytate diets\n(vegans, vegetarians, etc.).",
+        page: 144,
+        book_id: "immortality",
+        topics: [
+          "absorption",
+          "vitamin-c",
+          "phytates",
+          "rda"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000138",
+        subject: "germanium",
+        also_about: [],
+        facet: "basics",
+        question: "What is germanium?",
+        answer_short: "A metalloid 'semiconductor' element predicted by Mendeleyev in 1871 and isolated in 1886 - 'doped' with a trace of arsenic or gallium, it makes transistors.",
+        answer: "Germanium \u2014 the semiconductor element. Its existence (as 'eka-silicon') was predicted by Mendeleyev's 1871 periodic table, but it was not actually isolated until 1886, by the German scientist Clemens Winkler. Germanium is a poor conductor of electricity, which makes it a semiconductor; adding tiny amounts of arsenic, gallium or antimony ('doping') sharply increases its conductivity, and doped germanium is used to make transistors \u2014 essentially micro-computers.",
+        verbatim: "The existence of the \u201Cmetalloid\u201D element germanium or\neka-silicon, had been predicted by Mendeleyev in his periodic\ntable in 1871, however, it was not until 1886 that Clemens\nWinkler, a German scientist, isolated the silicon-like element\ngermanium. Germanium is a poor conductor of electricity\nand therefore is relegated to a semi-conductor status.",
+        page: 146,
+        book_id: "immortality",
+        topics: [
+          "semiconductor",
+          "discovery",
+          "transistor"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000141",
+        subject: "germanium",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does germanium behave in the body?",
+        answer_short: "It accepts and passes electrons like a semiconductor; biologically Wallach calls it an 'electrical impulse initiator' in cells and a cofactor for oxygen use.",
+        answer: "How germanium behaves \u2014 from radios to cells. In the 1940s-50s, germanium diode crystals were used in do-it-yourself radio kits because the germanium atom readily accepts and transmits electrons, acting as a semiconductor. It is chemically close to silica and carbon, and biologically Wallach describes germanium as a highly effective 'electrical impulse initiator' inside cells and a metallic cofactor (helper mineral) for the body's use of oxygen.",
+        verbatim: "The germanium atom is structured so it accepts and\ntransmits electrons effectively acting as a semiconductor. It is\nnot too surprising that germanium is closely related to silica\nand carbon. Biologically, germanium is a highly effective\nelectrical impulse initiator intracellularly and acts as a metallic\ncofactor for oxygen utilization.",
+        page: 147,
+        book_id: "immortality",
+        topics: [
+          "semiconductor",
+          "electron-transfer",
+          "oxygen"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000142",
+        subject: "germanium",
+        also_about: [
+          "cancer"
+        ],
+        facet: "history",
+        question: "How was germanium's healing reputation discovered?",
+        answer_short: "In 1950 the Japanese chemist Dr. Kazuhiko Asai found germanium in fossilized plants, and Russian researchers soon attributed anti-cancer activity to it.",
+        answer: "The research that put germanium on the map (background, for information). In 1950 the Japanese chemist Dr. Kazuhiko Asai found traces of germanium in fossilized plant life, and Russian researchers soon attributed anti-cancer activity to germanium. This reports the Asai/Russian research that Wallach cites; germanium's operational deficiency-to-cancer link is carried separately by the germanium-deficiency claim.",
+        verbatim: "In 1950, Dr. Kazuhiko Asai, a Japanese chemist, found\ntraces of germanium in fossilized plantlife. Russian researchers\nquickly attributed anti-cancer activity to germanium.",
+        page: 147,
+        book_id: "immortality",
+        topics: [
+          "asai",
+          "research",
+          "anti-cancer"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000143",
+        subject: "germanium",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does germanium support the immune system?",
+        answer_short: "Asai tied germanium-rich herbs to healing; germanium boosts natural killer cells, interferon-gamma, macrophages and T-suppressor cells.",
+        answer: "How germanium supports immunity. Dr. Asai tied the healing power of certain herbs to their high germanium content (many are germanium-accumulating plants). Germanium is known to strengthen the immune system by boosting natural killer cells, lymphokines (immune-signaling proteins) such as interferon-gamma (IFN-\u03B3), macrophages, and T-suppressor cells.",
+        verbatim: "Dr. Asai was able to connect the healing properties of\ncertain herbs to relatively high levels of germanium. Many of\nthese herbs are germanium accumulator plants. Germanium\nis known to enhance the effectiveness of the immune\nsystem by stimulating the production of natural killer cells,\nlymphokines, such as IFN(\u03B3) interferon, macrophages, and T-suppressor cells.",
+        page: 147,
+        book_id: "immortality",
+        topics: [
+          "immune-system",
+          "natural-killer-cells",
+          "interferon"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000144",
+        subject: "germanium",
+        also_about: [],
+        facet: "sources",
+        question: "What is Ge-132, the germanium supplement?",
+        answer_short: "An organic, chelated germanium (carboxyethyl germanium sesquioxide) Asai made in 1967 - absorbed at ~30% and fully excreted within a week.",
+        answer: "Ge-132 \u2014 the organic germanium supplement. In 1967 Dr. Asai created Ge-132 (carboxyethyl germanium sesquioxide) through a hydrolysis reaction. As an organic, chelated form of germanium, Ge-132 is absorbed at about 30% efficiency, and the entire intake is completely excreted within one week.",
+        verbatim: "Asai synthesized Ge-132, carboxyethyl germanium\nsesquioxide, in 1967 by a hydrolysis reaction. This organic\ngermanium structure forms a cubic structure with three\nnegative oxygen ions at the base of a cubic triangle. As an\norganic or chelated form of germanium, Ge-132 is absorbed\nat the rate of 30% efficiency and the total intake is completely\nexcreted in one week.",
+        page: 147,
+        book_id: "immortality",
+        topics: [
+          "ge-132",
+          "supplement",
+          "organic-germanium"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000146",
+        subject: "germanium",
+        also_about: [
+          "lithium"
+        ],
+        facet: "history",
+        question: "Why are the 'Holy Waters' of Lourdes said to heal?",
+        answer_short: "Wallach's mineral explanation: the famous healing waters of Lourdes, France contain large amounts of germanium and lithium.",
+        answer: "Wallach's mineral explanation for the 'Holy Waters' of Lourdes. The famous healing waters of Lourdes, France \u2014 known worldwide for their reputed healing properties \u2014 contain large amounts of germanium and lithium, which Wallach points to as the natural source of their reputation.",
+        verbatim: "The \u201CHoly Waters\u201D at Lourdes, France, known world\nwide for their healing properties, contains large amounts of\ngermanium and lithium.",
+        page: 147,
+        book_id: "immortality",
+        topics: [
+          "lourdes",
+          "lithium",
+          "folklore"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000148",
+        subject: "hydrogen",
+        also_about: [],
+        facet: "discovery",
+        question: "Who discovered hydrogen?",
+        answer_short: "Henry Cavendish (1731-1810), who made the gas in 1766 - a brilliant, painfully shy recluse who never spoke to women and gave servants orders by written note.",
+        answer: "Who discovered hydrogen \u2014 and how odd he was. Hydrogen's identification as an element is credited to the English chemist Henry Cavendish (1731-1810), who first produced the gas in 1766 by dropping zinc into hydrochloric acid and recognized the 'inflammable air' as a distinct element (he also accurately calculated the gravitational constant G and the mass of the Earth). Cavendish was famously eccentric: frugal, shy and stuttering, he never spoke directly to women, gave his female servants instructions by written note, and would fire any he saw as he walked through his house.",
+        verbatim: "Cavendish, a frugal, shy, stuttering and eccentric\nscientist, was the son of an extremely wealthy English\naristocrat. Cavendish never spoke directly to women; he gave\ninstructions to his female servants by handwritten letters,\nand would summarily fire them if they came into his line of\nsight as he walked through his laboratory or house. He spent\n\n\nlittle of his great fortune and spent his entire life buried in his\nlaboratory \u201Cin the pursuit of knowledge.\u201D",
+        page: 149,
+        book_id: "immortality",
+        topics: [
+          "cavendish",
+          "discovery",
+          "history-of-science"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000149",
+        subject: "hydrogen",
+        also_about: [],
+        facet: "history",
+        question: "What does hydrogen have to do with the Hindenburg?",
+        answer_short: "Hydrogen's lightness made it the early lift gas for blimps - until a spark ignited the hydrogen-filled Hindenburg in 1937 and the industry switched to helium.",
+        answer: "Hydrogen, lifting power, and the Hindenburg. Hydrogen is lighter than air, so a hydrogen-filled balloon rises and drifts away \u2014 its low density gives it enormous lifting power, and it was once the main lift gas for manned balloons and blimps. That ended in 1937 when a spark from a grounded docking line set the hydrogen-filled German blimp Hindenburg on fire, prompting the airship industry to abandon flammable hydrogen and switch to non-flammable helium.",
+        verbatim: "Hydrogen was once the main lifting power for\nmanned balloons and \u201Cblimps.\u201D A discharge spark from a\ngrounded docking line set the hydrogen containing German\nblimp, Hindenburg, on fire in 1937, causing the \u201Clighter than\nair\u201D airship industry to abandon the gas and switch to the\nnon-flammable helium.",
+        page: 149,
+        book_id: "immortality",
+        topics: [
+          "hindenburg",
+          "lift-gas",
+          "helium"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000150",
+        subject: "hydrogen",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does hydrogen set the body's acid-base balance?",
+        answer_short: "Regulating acid-base balance is really regulating hydrogen-ion (H+) levels - healthy blood is held in a narrow pH band of 7.36-7.44 by homeostatic mechanisms.",
+        answer: "Hydrogen and the body's acid-base balance. Seventy percent of the human body is water, and hydrogen is a major constituent of water and of all organic molecules. Wallach's key point: regulating the body's acid-base balance is, in fact, regulating the hydrogen-ion (H+) levels of the fluids inside and around cells. The body holds this acidity within a narrow range through complex self-regulating (homeostatic) mechanisms \u2014 the pH of healthy blood runs from 7.36 to 7.44.",
+        verbatim: "The regulation of the acid-base balance in the\nhuman body is in fact the regulation of the hydrogen ion (H+)\nlevels of cellular and extracellular fluids.\n\nThe acidity of the body is critically regulated within\na narrow range by numerous and complex homeostatic\nmechanisms. The pH of healthy blood ranges from 7.36 to 7.44.",
+        page: 150,
+        book_id: "immortality",
+        topics: [
+          "ph",
+          "acid-base",
+          "hydrogen-ion",
+          "homeostasis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000152",
+        subject: "hydrogen",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does the body get rid of acid?",
+        answer_short: "The kidneys excrete metabolic hydrogen ions ~60% as ammonium and 40% as weak acids; the trace of free H+ left is what sets the urine's pH.",
+        answer: "How the body clears acid (hydrogen ions). Hydrogen ions come in two forms: volatile ones (carbonic acid) that the lungs breathe off as carbon dioxide and water, and non-volatile 'metabolic' ones made by normal metabolism or taken in as food. The body controls their level by dilution, chemical buffering (reacts in fractions of a second), breathing (minutes), and the kidneys (hours to days). The kidney excretes metabolic hydrogen ions in three forms: about 60% as ammonium, 40% as weak acids, and a trace as free hydrogen ions \u2014 and it is that free-ion amount that sets the urine's pH.",
+        verbatim: "Metabolic hydrogen ions must be excreted by the\nkidney in one of three forms: 60% as ammonium ions, 40% as\nweak acids, or trace amounts as free hydrogen ions. It is the\namount of free hydrogen ions in the urine that determines the\nurine\u2019s pH.",
+        page: 150,
+        book_id: "immortality",
+        topics: [
+          "kidney",
+          "excretion",
+          "urine-ph"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000154",
+        subject: "hydrogen",
+        also_about: [],
+        facet: "physiology",
+        question: "Where is hydrogen found in the body?",
+        answer_short: "Beyond water (70% of the body), hydrogen is a major part of nearly every biological molecule - carbohydrates, fats, proteins, enzymes, and DNA and RNA.",
+        answer: "Hydrogen in living molecules. Beyond fueling industry as hydrocarbons (the long carbon-hydrogen chains of natural gas and oil), hydrogen is a significant part of the molecules that make up living things \u2014 carbohydrates, sugars, fats, proteins, enzymes, and the genetic molecules DNA and RNA.",
+        verbatim: "Hydrogen is also a significant part of the molecules\nthat make up living organisms such as carbohydrate, sugar,\nfats, proteins, enzymes, DNA, RNA, etc.",
+        page: 151,
+        book_id: "immortality",
+        topics: [
+          "biomolecules",
+          "water",
+          "dna"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000159",
         subject: "mercury",
         also_about: [],
@@ -58358,6 +58855,198 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ]
       },
       {
+        id: "WAL-CLM-IMMORT-000173",
+        subject: "iodine",
+        also_about: [],
+        facet: "sources",
+        question: "Where is iodine found in nature?",
+        answer_short: "Thinly spread through rock, water and soil \u2014 large areas of crust are iodine-free (it binds to humus), while seaweeds concentrate it up to 1,500 ppm.",
+        answer: "Where iodine is found in nature. Iodine is spread thinly through rocks, water, soil and living things, and Wallach lists typical concentrations (in parts per million, ppm). Notably, large areas of the earth's crust are essentially iodine-free because iodine binds tightly to humus (decayed organic matter in soil), while seaweeds and marine plants concentrate it enormously (up to 1,500 ppm). In land animals it collects mainly in the thyroid gland and the hair.",
+        verbatim: "I-Iodine is found in igneous rocks at 0.5 ppm, shale at\n2.3 ppm, sandstone at 1.7 ppm, limestone at 1.2 ppm, fresh\nwater at 0.002 ppm, sea water at 0.06 ppm, soil at 5 ppm,\n(strongly bound in humus- large areas of earth are known to be\ndevoid of iodine), marine plants at 30 to 1,500 ppm; terrestrial\nplants at 0.42 ppm, marine animals at 1.0 to 150 ppm, and in\nterrestrial animals at 0.43 ppm (concentrates in the thyroid\ngland and hair).",
+        page: 158,
+        book_id: "immortality",
+        topics: [
+          "geochemistry",
+          "seaweed",
+          "humus"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000174",
+        subject: "iodine",
+        also_about: [],
+        facet: "basics",
+        question: "What is iodine, and how was it discovered?",
+        answer_short: "A violet-black solid that sublimes to a violet gas \u2014 the heaviest halogen. Courtois found it in 1811 in kelp; its name is Greek 'iodes,' violet-colored.",
+        answer: "What iodine is, and how it was discovered. Iodine is a violet-black solid that turns straight into a violet gas when warmed (it 'sublimes'); it is the heaviest and one of the most reactive members of the halogen family (the salt-forming elements that also include chlorine and fluorine). It was discovered in 1811 by the Frenchman Bernard Courtois, who saw a purple vapor rise when he added sulfuric acid to kelp \u2014 the color gave it its name, from the Greek 'iodes,' meaning 'violet-colored.' A drop of iodine turns starch (as in potato or flour) deep blue, a classic chemistry test.",
+        verbatim: "Iodine is a violet-black solid that vaporizes to give a\nviolet gas. It is found in sea weed and brine wells, in the sea,\nin the form of inorganic salts and organic iodides. It is the\nheaviest element in the halogen family and is highly reactive.\nIodine was discovered in 1811 by Bernard Courtois, who\nnoticed a purple vapor emanating from a sample of kelp\n\n\nto which he had added sulfuric acid. The color of the gas\ndetermined its name, translated from the Greek word iodes,\nmeaning \u201Cviolet-colored.\u201D A drop of iodine will turn starch a\ndeep blue (potato, flour, etc.).",
+        page: 158,
+        book_id: "immortality",
+        topics: [
+          "halogen",
+          "discovery",
+          "etymology",
+          "courtois"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000175",
+        subject: "iodine",
+        also_about: [],
+        facet: "sources",
+        question: "Where does commercial iodine come from?",
+        answer_short: "Extracted from sodium iodate in Chilean saltpeter, from burnt-seaweed ash historically, and from underground brine wells in Arkansas and Oklahoma.",
+        answer: "Where commercial iodine comes from. Wallach explains that iodine is extracted from sodium iodate found in 'saltpeter' (potassium nitrate) mined in Chile \u2014 once the world's largest iodine producer \u2014 and historically from the ashes of burnt seaweed. The ocean holds huge amounts, concentrated by seaweeds like the giant kelp off the California coast, and iodine is also drawn from natural underground brines (salty groundwater) in Arkansas and Oklahoma.",
+        verbatim: "Commercial quantities of iodine are extracted from\nsodium iodate, which is found in \u201Csaltpeter\u201D or potassium\nnitrate, mined in Chile. At one time Chile was one of the\nlargest producers of iodine. Historically iodine was extracted\nfrom the ashes of burnt seaweed. The ocean contains large\nquantities of iodine which concentrates in various kinds of\nseaweed, including the giant kelp that grows off the coast of\nCalifornia. Iodine can also be recovered from the natural brines\nfound in underground wells in Arkansas and Oklahoma.",
+        page: 159,
+        book_id: "immortality",
+        topics: [
+          "industrial",
+          "chile",
+          "kelp",
+          "brine"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000176",
+        subject: "iodine",
+        also_about: [],
+        facet: "uses",
+        question: "What is iodine used for?",
+        answer_short: "A classic wound antiseptic (iodine tincture) and water purifier; in medicine, radioactive iodine-131 treats thyroid cancer and an overactive thyroid.",
+        answer: "Everyday and medical uses of iodine. Historically, iodine's most common use was as an alcohol tincture \u2014 a topical antiseptic for minor cuts and scrapes \u2014 and because it kills bacteria, the military, campers and scouts still use iodine tablets to purify drinking water. In medicine, radioactive iodine-131 is used to treat thyroid cancer and hyperthyroidism (an overactive thyroid), and iodine-125 (paired with a radioactive form of palladium) is used to treat prostate cancer. These radioisotope treatments are standard medical practice that Wallach is describing, not a Wallach protocol.",
+        verbatim: "Historically, one of the most common uses of iodine\nwas in the form of an alcohol tincture, which was used as a\nwound antiseptic for treating minor lacerations and scrapes\nof the skin.\n\nBecause iodine kills bacteria, the military, campers and\nscouts use iodine tablets to \u201Cpurify\u201D water.\n\nIodine-131 is used by the medical trade to treat thyroid\ncancer and hyperthyroidism and iodine-125 along with an\nisotope of palladium is used to treat prostate cancer.",
+        page: 159,
+        book_id: "immortality",
+        topics: [
+          "antiseptic",
+          "water-purification",
+          "radioiodine"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000178",
+        subject: "iodine",
+        also_about: [],
+        facet: "physiology",
+        question: "How much iodine do we take in - and how much is safe?",
+        answer_short: "Americans average 170-250 mcg a day and can sweat out up to 146 mcg; metallic iodine isn't toxic even at 2,000 mcg/day long-term - a wide safety margin.",
+        answer: "How much iodine people get, lose and can safely tolerate. The average American takes in 170\u2013250 micrograms (mcg) of elemental iodine a day. The body loses a surprising amount through sweat \u2014 up to 146 mcg a day with only moderate exercise \u2014 which can deepen a shortfall. On the safety side, Wallach notes metallic iodine is not toxic even at long-term intakes up to 2,000 mcg a day, so there is a wide margin between a useful amount and a harmful one.",
+        verbatim: "The average American takes in 170-250 mcg/day of\nelemental iodine. Humans lose considerable amounts of\niodine in their sweat - a loss, of as much as 146 mcg/day, with\nonly moderate exercise. Metallic iodine is not toxic with long\nterm intakes of up to 2,000 mcg/day.",
+        page: 159,
+        book_id: "immortality",
+        topics: [
+          "intake",
+          "sweat-loss",
+          "toxicity",
+          "safety-margin"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000181",
+        subject: "iodine",
+        also_about: [
+          "thyroid_disease"
+        ],
+        facet: "mechanism",
+        question: "What does iodine do through the thyroid?",
+        answer_short: "Iodine builds thyroid hormones, which regulate digestion, heart rate, metabolism, temperature and weight - so ~1 million Americans have thyroid trouble.",
+        answer: "How common thyroid trouble is, and what the thyroid controls. Wallach notes that roughly one million Americans have either a hypothyroid (underactive) or hyperthyroid (overactive) thyroid condition. Thyroid hormones are wide-reaching regulators \u2014 they control digestion, heart rate, overall metabolism, body temperature, sweating, the nervous and reproductive systems, and body weight \u2014 which is why a struggling thyroid can cause such a broad mix of symptoms.",
+        verbatim: "Some one million Americans have either a hypothyroid\n(low, under active) or a hyperthyroid (overactive) condition.\nThyroid hormones control and regulate digestion, heart rate,\nmetabolism, body temperature, sweat gland activity, nervous\nand reproductive systems and body weight.",
+        page: 160,
+        book_id: "immortality",
+        topics: [
+          "thyroid",
+          "metabolism",
+          "hormones"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000187",
+        subject: "potassium",
+        also_about: [],
+        facet: "sources",
+        question: "Where is potassium found in nature?",
+        answer_short: "A positively charged mineral in all soils (highest in alkaline ones); marine plants concentrate it most (52,000 ppm), and in animals it fills the soft tissue.",
+        answer: "Where potassium is found in nature. Wallach lists typical concentrations (in parts per million, ppm) across rocks, water, soil, plants and animals \u2014 it is a major exchangeable cation (positively charged mineral) in all soils, especially alkaline ones, is concentrated heavily by marine plants (52,000 ppm), and in land animals collects highest in the soft tissue.",
+        verbatim: "K-Potassium is found in igneous rocks at 20,000 ppm,\nshale at 26,000 ppm, sandstone at 10,700 ppm, limestone at\n2,700 ppm, fresh water at 2.3 ppm, sea water at 380 ppm, soil\nat 14,000 ppm (a major exchangeable cation in all soils, but\nin highest amounts in alkaline soils), marine plants at 52,000\nppm, terrestrial plants at 14,000 ppm, marine animals at 5,000\nto 30,000 ppm, and terrestrial animals at 7,400 ppm (highest\nlevels are found in soft tissue).",
+        page: 163,
+        book_id: "immortality",
+        topics: [
+          "geochemistry",
+          "soil",
+          "marine-plants"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000188",
+        subject: "potassium",
+        also_about: [],
+        facet: "basics",
+        question: "What is potassium, chemically?",
+        answer_short: "A silver-white alkali metal so soft you can cut it with a knife - so reactive it's never found pure in nature; Davy first isolated it by electrolysis in 1807.",
+        answer: "What potassium is, chemically. It is a silver-white metal so soft it can be cut with a knife, and a member of the alkali-metal family alongside lithium and sodium \u2014 like them, it is so reactive it is never found as a pure metal in nature. It was first isolated by Sir Humphrey Davy in 1807 using electrolysis (passing an electric current to split it out of its compounds).",
+        verbatim: "Potassium is a silver-white metal with a characteristic\nputty or wax-like nature that is so soft that it can easily be cut\nwith a knife. It is a member of the family of alkali metals along\nwith the elements lithium and sodium, and like them is never\nfound as a pure metal in nature.",
+        page: 163,
+        book_id: "immortality",
+        topics: [
+          "alkali-metal",
+          "davy",
+          "electrolysis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000189",
+        subject: "potassium",
+        also_about: [],
+        facet: "physiology",
+        question: "Is your body slightly radioactive from potassium?",
+        answer_short: "A little: 0.012% of natural potassium is radioactive potassium-40, so the ~140 g in your body is a lifelong part of your background radiation.",
+        answer: "Potassium carries a natural radioactive isotope. Potassium-40 has a half-life of 1.25 billion years (the time for half of it to decay) and is used to date rocks \u2014 as it decays it becomes the noble gas argon, and measuring the argon has dated the oldest rocks on earth to 3.8 billion years. The human body holds about 140 grams of potassium, and since 0.012% of natural potassium is potassium-40, we each carry a small amount \u2014 a natural, life-long contributor to our background radiation.",
+        verbatim: "A naturally occurring radioactive isotope of potassium\nis potassium-40, which has a half-life of 1.25 billion years.\nPotassium-40 is used to date rocks. When potassium-40\ndecays, it becomes the noble gas argon. To determine the age\nof a rock, it is necessary to know how much argon is present\nin the rock. The oldest rocks on earth have been dated by this\nmethod as being 3.8 billion years old.\n\nThe human body contains approximately 140 grams of\npotassium and since the natural level of potassium-40 is 0.012\npercent, we all contain small amounts of this isotope - it is a\nnatural and life-long contributor to our background radiation\nload.",
+        page: 163,
+        book_id: "immortality",
+        topics: [
+          "potassium-40",
+          "radioactivity",
+          "background-radiation"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000190",
+        subject: "potassium",
+        also_about: [],
+        facet: "etymology",
+        question: "Where does the name 'potassium' come from?",
+        answer_short: "From 'potash' - the potassium-rich ash left when wood and plants are burned in pots; plants were humans' early mineral source, and it's still the main fertilizer.",
+        answer: "Potassium, plants, and the origin of its name. Almost all mined potassium chloride goes to plant fertilizer, and plants were humans' early source of the mineral \u2014 wood and plants were burned to make a potassium-rich ash called 'potash,' which is where the name potassium comes from. Notably, potassium is essential for plant growth while sodium is not, so plants preferentially take up potassium and let dissolved sodium wash to the oceans. The first 'chemical fertilizer' (NPK \u2014 nitrogen, phosphorus, potassium) was formulated in the 1700s by the German chemist Liebig.",
+        verbatim: "Almost all of the potassium chloride that is mined is\nused as plant fertilizer. In fact, plants (crops and trees) were\nthe early source of essential minerals including potassium for\nhumans. Wood and other plants were burned in pots or under\npots to produce a potassium-rich ash (\u201Cpotash\u201D).\n\nThe original \u201Cchemical fertilizer,\u201D first produced in the\n1700s by the German chemist Liebig, was made up of NPK\n(nitrogen, phosphorus and potassium) which he formulated\nafter the ash he produced by burning bread and then analyzing\nthe mineral content of the ash.\n\nThe name, potassium, has its origin from the term\npotash, from the early source of the element - wood ashes, the\nbyproduct of daily living, that was produced by heating and\ncooking with wood.",
+        page: 164,
+        book_id: "immortality",
+        topics: [
+          "potash",
+          "fertilizer",
+          "agriculture"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000191",
+        subject: "potassium",
+        also_about: [],
+        facet: "history",
+        question: "What is saltpeter?",
+        answer_short: "Potassium nitrate (KNO3) - 'saltpeter,' looks and tastes like salt, used for centuries as a preservative and fertilizer, and one of gunpowder's three ingredients.",
+        answer: "Saltpeter \u2014 the historic potassium compound. Potassium nitrate (KNO3), commonly called 'saltpeter' or 'rocksalt' (from the Greek 'petra,' rock), looks and tastes like table salt and has been used for centuries as a preservative and fertilizer. It is also one of the three ingredients of gunpowder, along with charcoal and sulfur.",
+        verbatim: "Potassium nitrate, KNO3, is an important compound\nthat has been used by many cultures for centuries. It is\ncommonly called \u201Csaltpeter\u201D or \u201Crocksalt.\u201D The name is taken\nfrom the Greek word petra, which translates to rock. It looks\nlike table salt and when dissolved in water, it tastes like salt.\n\nSaltpeter is commonly used as a preservative and\nfertilizer. Gunpowder is a mixture of saltpeter, charcoal and\nsulfur.",
+        page: 164,
+        book_id: "immortality",
+        topics: [
+          "saltpeter",
+          "gunpowder",
+          "preservative"
+        ]
+      },
+      {
         id: "WAL-CLM-LETS-000080",
         subject: "diabetes",
         also_about: [],
@@ -58575,7 +59264,7 @@ understandable why they don't test for it`,
   bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals };
 
   // assets/js/src/views/search.ts
-  function escHTML9(s) {
+  function escHTML10(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -58594,14 +59283,14 @@ understandable why they don't test for it`,
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML9(e.symbol);
+      return escHTML10(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML9(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML10(e.display_name.charAt(0));
   }
   function renderPill(slug) {
-    const name = escHTML9(displayName(slug));
+    const name = escHTML10(displayName(slug));
     if (getEntity(slug) !== null) {
-      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML9(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML10(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="sr-pill" title="Related to this">${name}</span>`;
   }
@@ -58634,26 +59323,37 @@ understandable why they don't test for it`,
     if (claim.topics.length === 0) {
       return "";
     }
-    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML9(t)}</span>`).join("");
+    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML10(t)}</span>`).join("");
     return `<div class="sr-claim__tags">${tags}</div>`;
+  }
+  function renderAnswer(claim) {
+    const xref = claim.see_also;
+    if (xref !== void 0 && claim.answer.includes(xref.phrase)) {
+      const i = claim.answer.indexOf(xref.phrase);
+      const before = claim.answer.slice(0, i);
+      const after = claim.answer.slice(i + xref.phrase.length);
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML10(xref.target)}" title="Jump to the full answer">${escHTML10(xref.phrase)}</button>`;
+      return glossify(before) + link + glossify(after);
+    }
+    return glossify(claim.answer);
   }
   function claimDetail(claim) {
     return `
-      <div class="sr-claim__short">${escHTML9(claim.answer_short)}</div>
-      <div class="sr-claim__answer">${escHTML9(claim.answer)}</div>
-      <blockquote class="sr-claim__verbatim">\u201C${escHTML9(oneLine(claim.verbatim))}\u201D</blockquote>
-      <div class="sr-claim__cite">${escHTML9(composeCite(claim))}</div>
+      <div class="sr-claim__short">${escHTML10(claim.answer_short)}</div>
+      <div class="sr-claim__answer">${renderAnswer(claim)}</div>
+      <blockquote class="sr-claim__verbatim">\u201C${glossify(oneLine(claim.verbatim))}\u201D</blockquote>
+      <div class="sr-claim__cite">${escHTML10(composeCite(claim))}</div>
       ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
   }
   function renderClaimRow(claim) {
     return `
-    <details class="sr-claim" data-sr-claim="${escHTML9(claim.id)}">
+    <details class="sr-claim" data-sr-claim="${escHTML10(claim.id)}">
       <summary class="sr-claim__summary">
         <span class="sr-claim__badge">?</span>
         <span class="sr-claim__qblock">
-          <span class="sr-claim__q">${escHTML9(claim.question)}</span>
-          <span class="sr-claim__preview">${escHTML9(claim.answer_short)}</span>
+          <span class="sr-claim__q">${escHTML10(claim.question)}</span>
+          <span class="sr-claim__preview">${escHTML10(claim.answer_short)}</span>
         </span>
         <span class="sr-claim__chev">\u203A</span>
       </summary>
@@ -58663,9 +59363,9 @@ understandable why they don't test for it`,
   function renderFacet(group) {
     const rows = group.claims.map(renderClaimRow).join("");
     return `
-    <details class="sr-facet" data-facet="${escHTML9(group.facet)}" open>
+    <details class="sr-facet" data-facet="${escHTML10(group.facet)}" open>
       <summary class="sr-facet__head">
-        <span class="sr-facet__label">${escHTML9(group.label)}</span>
+        <span class="sr-facet__label">${escHTML10(group.label)}</span>
         <span class="sr-facet__count">${group.claims.length}</span>
       </summary>
       <div class="sr-facet__body">${rows}</div>
@@ -58690,11 +59390,11 @@ understandable why they don't test for it`,
       return '<div class="sr-empty">\u2014 no entities in the index yet \u2014</div>';
     }
     const card = (e) => `
-    <button class="sr-ent-card" data-sr-entity="${escHTML9(e.slug)}">
+    <button class="sr-ent-card" data-sr-entity="${escHTML10(e.slug)}">
       <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
       <span class="sr-ent-card__idblock">
-        <span class="sr-ent-card__name">${escHTML9(e.display_name)}</span>
-        <span class="sr-ent-card__meta">${escHTML9(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
+        <span class="sr-ent-card__name">${escHTML10(e.display_name)}</span>
+        <span class="sr-ent-card__meta">${escHTML10(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
       </span>
       <span class="sr-ent-card__chev">\u203A</span>
     </button>`;
@@ -58712,7 +59412,7 @@ understandable why they don't test for it`,
     if (e === null || groups.length === 0) {
       return '<div class="sr-empty">\u2014 nothing to show for this entity yet \u2014</div>';
     }
-    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML9).join(", ")}` : "";
+    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML10).join(", ")}` : "";
     const facetsHTML = groups.map(renderFacet).join("");
     return `
     <div class="sr-entity">
@@ -58720,8 +59420,8 @@ understandable why they don't test for it`,
         <button class="sr-entity__back" data-sr-action="back" title="Back">\u2039 BACK</button>
         <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
         <div class="sr-entity__idblock">
-          <h3 class="sr-entity__name">${escHTML9(e.display_name)}</h3>
-          <div class="sr-entity__meta">${escHTML9(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML9(synLine)}</div>
+          <h3 class="sr-entity__name">${escHTML10(e.display_name)}</h3>
+          <div class="sr-entity__meta">${escHTML10(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML10(synLine)}</div>
         </div>
       </header>
       <div class="sr-facets">${facetsHTML}</div>
@@ -58732,9 +59432,9 @@ understandable why they don't test for it`,
     return `
     <div class="sr-ask">
       <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
-      <div class="sr-ask__q">${escHTML9(claim.question)}</div>
+      <div class="sr-ask__q">${escHTML10(claim.question)}</div>
       <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-entity="${escHTML9(claim.subject)}">MORE ON ${escHTML9(displayName(claim.subject).toUpperCase())} \u2192</button>
+      <button class="sr-ask__more" data-sr-entity="${escHTML10(claim.subject)}">MORE ON ${escHTML10(displayName(claim.subject).toUpperCase())} \u2192</button>
     </div>`;
   }
   function renderBody(result) {
@@ -58790,6 +59490,7 @@ understandable why they don't test for it`,
       const body = container.querySelector(".sr-body");
       if (body !== null) {
         body.innerHTML = renderBody(result);
+        body.scrollTop = 0;
       }
     };
     const syncSearchbar = () => {
@@ -58856,6 +59557,20 @@ understandable why they don't test for it`,
       syncSearchbar();
       paintBody(true);
     };
+    const jumpToClaim = (id) => {
+      const el = container.querySelector(`[data-sr-claim="${id}"]`);
+      if (el === null) {
+        return;
+      }
+      for (let d = el; d !== null; d = d.parentElement) {
+        if (d instanceof HTMLDetailsElement) {
+          d.open = true;
+        }
+      }
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      el.classList.add("sr-claim--flash");
+      setTimeout(() => el.classList.remove("sr-claim--flash"), 1400);
+    };
     container.addEventListener("input", (ev) => {
       const t = ev.target;
       if (t === null || !t.classList.contains("sr-searchbar__input")) {
@@ -58869,6 +59584,11 @@ understandable why they don't test for it`,
     container.addEventListener("click", (ev) => {
       const target = ev.target;
       if (target === null) {
+        return;
+      }
+      const jumpEl = target.closest("[data-sr-jump]");
+      if (jumpEl !== null) {
+        jumpToClaim(jumpEl.getAttribute("data-sr-jump") ?? "");
         return;
       }
       const entBtn = target.closest("[data-sr-entity]");

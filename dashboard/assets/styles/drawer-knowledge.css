@@ -1105,15 +1105,16 @@
 }
 
 /* ─── Glossary term tooltips (SESSION 39) ────────────────────────────────────
-   Dotted-underline glossary terms in claim summaries + Wallach verbatims; the
+   Dotted-underline glossary terms (emitted by the shared glossify(), used in BOTH the
+   Knowledge + Search drawers); the
    floating .gloss-tip is appended to <body> (so it escapes drawer clipping). */
-#drawer-knowledge-mount .gloss {
+.gloss {
   border-bottom: 1px dotted var(--ds-accent);
   cursor: help;
   transition: color 120ms ease, border-color 120ms ease;
 }
-#drawer-knowledge-mount .gloss:hover,
-#drawer-knowledge-mount .gloss:focus-visible {
+.gloss:hover,
+.gloss:focus-visible {
   color: var(--ds-accent-deep);
   border-bottom-color: var(--ds-accent-deep);
   outline: none;

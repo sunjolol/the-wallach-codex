@@ -523,6 +523,426 @@
         "selenium",
         "establishment-critique"
       ]
+    },
+    "WAL-CLM-IMMORT-000125": {
+      "subject": "iron",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is iron, and where does it come from?",
+      "answer_short": "Iron is the 4th most abundant element in Earth's crust — its ores opened the Iron Age (~1100 B.C.), and Earth's molten core is thought to be magnetized iron.",
+      "topics": [
+        "iron",
+        "iron-age",
+        "geochemistry"
+      ]
+    },
+    "WAL-CLM-IMMORT-000127": {
+      "subject": "iron",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why is carbon monoxide so deadly?",
+      "answer_short": "Carbon monoxide binds the iron in hemoglobin ~200x more tightly than oxygen — crowding oxygen out of the blood, which is what makes it poisonous.",
+      "topics": [
+        "carbon-monoxide",
+        "hemoglobin",
+        "poisoning"
+      ]
+    },
+    "WAL-CLM-IMMORT-000128": {
+      "subject": "iron",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How much iron is in your body, and where?",
+      "answer_short": "A healthy adult carries 3-5 g of iron; ~60-70% is 'functional' (in hemoglobin, muscle and enzymes) and 30-40% is stored in marrow and liver.",
+      "topics": [
+        "body-content",
+        "hemoglobin",
+        "ferritin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000130": {
+      "subject": "iron",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What causes iron deficiency?",
+      "answer_short": "Wallach's list: unsupplemented pregnancy, heavy periods, chronic infection or bleeding, low stomach acid, diarrhea, and poor absorption from high-fiber diets.",
+      "topics": [
+        "iron-deficiency",
+        "causes",
+        "menstruation"
+      ]
+    },
+    "WAL-CLM-IMMORT-000132": {
+      "subject": "iron",
+      "also_about": [
+        "vitamin-c"
+      ],
+      "facet": "mechanism",
+      "question": "What helps or blocks iron absorption?",
+      "answer_short": "Stomach acid and vitamin C boost iron absorption; fiber and phytates block it — so Wallach says the 18 mg RDA is too low for vegans and high-fiber diets.",
+      "topics": [
+        "absorption",
+        "vitamin-c",
+        "phytates",
+        "rda"
+      ]
+    },
+    "WAL-CLM-IMMORT-000173": {
+      "subject": "iodine",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is iodine found in nature?",
+      "answer_short": "Thinly spread through rock, water and soil — large areas of crust are iodine-free (it binds to humus), while seaweeds concentrate it up to 1,500 ppm.",
+      "topics": [
+        "geochemistry",
+        "seaweed",
+        "humus"
+      ]
+    },
+    "WAL-CLM-IMMORT-000174": {
+      "subject": "iodine",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is iodine, and how was it discovered?",
+      "answer_short": "A violet-black solid that sublimes to a violet gas — the heaviest halogen. Courtois found it in 1811 in kelp; its name is Greek 'iodes,' violet-colored.",
+      "topics": [
+        "halogen",
+        "discovery",
+        "etymology",
+        "courtois"
+      ]
+    },
+    "WAL-CLM-IMMORT-000175": {
+      "subject": "iodine",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where does commercial iodine come from?",
+      "answer_short": "Extracted from sodium iodate in Chilean saltpeter, from burnt-seaweed ash historically, and from underground brine wells in Arkansas and Oklahoma.",
+      "topics": [
+        "industrial",
+        "chile",
+        "kelp",
+        "brine"
+      ]
+    },
+    "WAL-CLM-IMMORT-000176": {
+      "subject": "iodine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is iodine used for?",
+      "answer_short": "A classic wound antiseptic (iodine tincture) and water purifier; in medicine, radioactive iodine-131 treats thyroid cancer and an overactive thyroid.",
+      "topics": [
+        "antiseptic",
+        "water-purification",
+        "radioiodine"
+      ]
+    },
+    "WAL-CLM-IMMORT-000178": {
+      "subject": "iodine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How much iodine do we take in - and how much is safe?",
+      "answer_short": "Americans average 170-250 mcg a day and can sweat out up to 146 mcg; metallic iodine isn't toxic even at 2,000 mcg/day long-term - a wide safety margin.",
+      "topics": [
+        "intake",
+        "sweat-loss",
+        "toxicity",
+        "safety-margin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000181": {
+      "subject": "iodine",
+      "also_about": [
+        "thyroid_disease"
+      ],
+      "facet": "mechanism",
+      "question": "What does iodine do through the thyroid?",
+      "answer_short": "Iodine builds thyroid hormones, which regulate digestion, heart rate, metabolism, temperature and weight - so ~1 million Americans have thyroid trouble.",
+      "topics": [
+        "thyroid",
+        "metabolism",
+        "hormones"
+      ]
+    },
+    "WAL-CLM-IMMORT-000138": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is germanium?",
+      "answer_short": "A metalloid 'semiconductor' element predicted by Mendeleyev in 1871 and isolated in 1886 - 'doped' with a trace of arsenic or gallium, it makes transistors.",
+      "topics": [
+        "semiconductor",
+        "discovery",
+        "transistor"
+      ]
+    },
+    "WAL-CLM-IMMORT-000141": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does germanium behave in the body?",
+      "answer_short": "It accepts and passes electrons like a semiconductor; biologically Wallach calls it an 'electrical impulse initiator' in cells and a cofactor for oxygen use.",
+      "topics": [
+        "semiconductor",
+        "electron-transfer",
+        "oxygen"
+      ]
+    },
+    "WAL-CLM-IMMORT-000142": {
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "history",
+      "question": "How was germanium's healing reputation discovered?",
+      "answer_short": "In 1950 the Japanese chemist Dr. Kazuhiko Asai found germanium in fossilized plants, and Russian researchers soon attributed anti-cancer activity to it.",
+      "topics": [
+        "asai",
+        "research",
+        "anti-cancer"
+      ]
+    },
+    "WAL-CLM-IMMORT-000143": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does germanium support the immune system?",
+      "answer_short": "Asai tied germanium-rich herbs to healing; germanium boosts natural killer cells, interferon-gamma, macrophages and T-suppressor cells.",
+      "topics": [
+        "immune-system",
+        "natural-killer-cells",
+        "interferon"
+      ]
+    },
+    "WAL-CLM-IMMORT-000144": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What is Ge-132, the germanium supplement?",
+      "answer_short": "An organic, chelated germanium (carboxyethyl germanium sesquioxide) Asai made in 1967 - absorbed at ~30% and fully excreted within a week.",
+      "topics": [
+        "ge-132",
+        "supplement",
+        "organic-germanium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000146": {
+      "subject": "germanium",
+      "also_about": [
+        "lithium"
+      ],
+      "facet": "history",
+      "question": "Why are the 'Holy Waters' of Lourdes said to heal?",
+      "answer_short": "Wallach's mineral explanation: the famous healing waters of Lourdes, France contain large amounts of germanium and lithium.",
+      "topics": [
+        "lourdes",
+        "lithium",
+        "folklore"
+      ]
+    },
+    "WAL-CLM-IMMORT-000148": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered hydrogen?",
+      "answer_short": "Henry Cavendish (1731-1810), who made the gas in 1766 - a brilliant, painfully shy recluse who never spoke to women and gave servants orders by written note.",
+      "topics": [
+        "cavendish",
+        "discovery",
+        "history-of-science"
+      ]
+    },
+    "WAL-CLM-IMMORT-000149": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "history",
+      "question": "What does hydrogen have to do with the Hindenburg?",
+      "answer_short": "Hydrogen's lightness made it the early lift gas for blimps - until a spark ignited the hydrogen-filled Hindenburg in 1937 and the industry switched to helium.",
+      "topics": [
+        "hindenburg",
+        "lift-gas",
+        "helium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000150": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does hydrogen set the body's acid-base balance?",
+      "answer_short": "Regulating acid-base balance is really regulating hydrogen-ion (H+) levels - healthy blood is held in a narrow pH band of 7.36-7.44 by homeostatic mechanisms.",
+      "topics": [
+        "ph",
+        "acid-base",
+        "hydrogen-ion",
+        "homeostasis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000152": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does the body get rid of acid?",
+      "answer_short": "The kidneys excrete metabolic hydrogen ions ~60% as ammonium and 40% as weak acids; the trace of free H+ left is what sets the urine's pH.",
+      "topics": [
+        "kidney",
+        "excretion",
+        "urine-ph"
+      ]
+    },
+    "WAL-CLM-IMMORT-000154": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Where is hydrogen found in the body?",
+      "answer_short": "Beyond water (70% of the body), hydrogen is a major part of nearly every biological molecule - carbohydrates, fats, proteins, enzymes, and DNA and RNA.",
+      "topics": [
+        "biomolecules",
+        "water",
+        "dna"
+      ]
+    },
+    "WAL-CLM-IMMORT-000187": {
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is potassium found in nature?",
+      "answer_short": "A positively charged mineral in all soils (highest in alkaline ones); marine plants concentrate it most (52,000 ppm), and in animals it fills the soft tissue.",
+      "topics": [
+        "geochemistry",
+        "soil",
+        "marine-plants"
+      ]
+    },
+    "WAL-CLM-IMMORT-000188": {
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is potassium, chemically?",
+      "answer_short": "A silver-white alkali metal so soft you can cut it with a knife - so reactive it's never found pure in nature; Davy first isolated it by electrolysis in 1807.",
+      "topics": [
+        "alkali-metal",
+        "davy",
+        "electrolysis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000189": {
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is your body slightly radioactive from potassium?",
+      "answer_short": "A little: 0.012% of natural potassium is radioactive potassium-40, so the ~140 g in your body is a lifelong part of your background radiation.",
+      "topics": [
+        "potassium-40",
+        "radioactivity",
+        "background-radiation"
+      ]
+    },
+    "WAL-CLM-IMMORT-000190": {
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name 'potassium' come from?",
+      "answer_short": "From 'potash' - the potassium-rich ash left when wood and plants are burned in pots; plants were humans' early mineral source, and it's still the main fertilizer.",
+      "topics": [
+        "potash",
+        "fertilizer",
+        "agriculture"
+      ]
+    },
+    "WAL-CLM-IMMORT-000191": {
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is saltpeter?",
+      "answer_short": "Potassium nitrate (KNO3) - 'saltpeter,' looks and tastes like salt, used for centuries as a preservative and fertilizer, and one of gunpowder's three ingredients.",
+      "topics": [
+        "saltpeter",
+        "gunpowder",
+        "preservative"
+      ]
+    },
+    "WAL-CLM-IMMORT-000116": {
+      "subject": "fluoride",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is fluorine?",
+      "answer_short": "The smallest, lightest and most reactive halogen ('salt former') - a pale-yellow gas so reactive it never occurs free, locked instead in minerals like fluorite.",
+      "topics": [
+        "halogen",
+        "fluorine",
+        "fluorite",
+        "reactivity"
+      ]
+    },
+    "WAL-CLM-IMMORT-000117": {
+      "subject": "fluoride",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered fluorine, and what does its name mean?",
+      "answer_short": "Henri Moissan won the 1906 Nobel Prize for first isolating pure fluorine (1886), after 75 years of effort; the name is Latin 'fluere,' to flow.",
+      "topics": [
+        "moissan",
+        "nobel-prize",
+        "etymology"
+      ]
+    },
+    "WAL-CLM-IMMORT-000118": {
+      "subject": "fluoride",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is fluoride an essential nutrient?",
+      "answer_short": "Wallach says yes in trace amounts - before 1972 it was only 'considered' essential for tooth enamel, then Schwarz proved it essential for animals and humans.",
+      "topics": [
+        "essentiality",
+        "schwarz",
+        "tooth-enamel"
+      ],
+      "see_also": {
+        "phrase": "the full fluoride stance",
+        "target": "WAL-CLM-IMMORT-000124"
+      }
+    },
+    "WAL-CLM-IMMORT-000120": {
+      "subject": "fluoride",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How much fluoride is in and around us?",
+      "answer_short": "An adult skeleton can bank up to 2.6 g of fluoride, and the average American takes in ~4.4 mg a day from food, water, toothpaste and supplements combined.",
+      "topics": [
+        "body-content",
+        "intake",
+        "skeleton"
+      ]
+    },
+    "WAL-CLM-IMMORT-000122": {
+      "subject": "fluoride",
+      "also_about": [
+        "tooth_decay"
+      ],
+      "facet": "sources",
+      "question": "How widespread is water fluoridation?",
+      "answer_short": "About 10,000 U.S. towns fluoridate water at 1 mg/L for 100 million people, reportedly cutting cavities 60-70% - but naturally high levels mottle children's teeth.",
+      "topics": [
+        "water-fluoridation",
+        "dental-caries",
+        "fluorosis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000124": {
+      "subject": "fluoride",
+      "also_about": [
+        "cancer",
+        "osteoporosis"
+      ],
+      "facet": "big_question",
+      "question": "Is fluoridated water safe?",
+      "answer_short": "Wallach calls it 'still highly controversial' - laying out both the cavity benefit and the fluorosis, bone-fracture and cancer concerns without a flat verdict.",
+      "topics": [
+        "water-fluoridation",
+        "controversy",
+        "cancer",
+        "big-question"
+      ]
     }
   }
 }
