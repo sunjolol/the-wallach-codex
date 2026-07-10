@@ -256,6 +256,25 @@
       ],
       "claim_count": 5
     },
+    "faith_healing": {
+      "display_name": "Faith & Energy Healing",
+      "type": "topic",
+      "synonyms": [
+        "faith healing",
+        "laying on of hands",
+        "spiritual healing",
+        "christian science",
+        "therapeutic touch",
+        "energy healing",
+        "positive thinking",
+        "prayer healing"
+      ],
+      "related": [
+        "be_your_own_doctor",
+        "longevity"
+      ],
+      "claim_count": 2
+    },
     "fluoride": {
       "display_name": "Fluoride",
       "type": "element",
@@ -362,14 +381,20 @@
       "synonyms": [
         "homeopathic",
         "like cures like",
-        "hahnemann"
+        "hahnemann",
+        "cell salts",
+        "schuessler cell salts",
+        "biochemics",
+        "bach flower remedies",
+        "bach remedies",
+        "tissue salts"
       ],
       "related": [
         "herbal_medicine",
         "naturopathy",
         "be_your_own_doctor"
       ],
-      "claim_count": 2
+      "claim_count": 4
     },
     "hospital_dangers": {
       "display_name": "Hospital Dangers",
@@ -544,6 +569,24 @@
       "claim_count": 13,
       "symbol": "Hg"
     },
+    "naturopathy": {
+      "display_name": "Naturopathy",
+      "type": "topic",
+      "synonyms": [
+        "naturopathic medicine",
+        "naturopathic physician",
+        "n.d.",
+        "first do no harm",
+        "natural hygiene"
+      ],
+      "related": [
+        "herbal_medicine",
+        "homeopathy",
+        "hydrotherapy",
+        "be_your_own_doctor"
+      ],
+      "claim_count": 1
+    },
     "negative_ion_therapy": {
       "display_name": "Negative Ion Therapy",
       "type": "topic",
@@ -612,6 +655,29 @@
       ],
       "claim_count": 1
     },
+    "somatic_therapies": {
+      "display_name": "Somatic Therapies",
+      "type": "topic",
+      "synonyms": [
+        "bodywork",
+        "osteopathy",
+        "reflexology",
+        "rolfing",
+        "structural integration",
+        "spinal manipulation",
+        "massage therapy",
+        "somatics",
+        "doctor of osteopathy",
+        "d.o."
+      ],
+      "related": [
+        "chiropractic",
+        "naturopathy",
+        "hydrotherapy",
+        "be_your_own_doctor"
+      ],
+      "claim_count": 3
+    },
     "urine_therapy": {
       "display_name": "Urine Therapy",
       "type": "topic",
@@ -650,13 +716,18 @@
         "vitamin",
         "fat-soluble",
         "water-soluble",
-        "flavanols"
+        "flavanols",
+        "megavitamin",
+        "megavitamin therapy",
+        "orthomolecular",
+        "orthomolecular medicine",
+        "pauling"
       ],
       "related": [
         "essential_nutrients",
         "vitamin-c"
       ],
-      "claim_count": 4
+      "claim_count": 5
     },
     "wallach": {
       "display_name": "Dr. Joel Wallach",
@@ -2741,6 +2812,57 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000090",
+      "subject": "somatic_therapies",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is osteopathy?",
+      "answer_short": "A manipulation-based healing art of body and spine, founded ~130 years ago by engineer Andrew Still after he lost all three children to orthodox medicine; today most D.O.s practice much like M.D.s.",
+      "answer": "Wallach describes osteopathy as a manipulation-based healing art (of body and spine) developed over 100 years ago by Andrew Still — an engineer who, after losing all three of his children to orthodox medicine during a meningitis outbreak, concluded that disease results from a mechanical breakdown of the body. He notes most modern Doctors of Osteopathy (D.O.s) are now hard to distinguish from M.D.s in the orthodox \"burn, cut and poison\" approach, though a few offer chelation therapy instead of rushing into bypass surgery.",
+      "verbatim": "Osteopathy originated as a type of manipulation of body and spine to heal disease.\nThis healing art was developed over 1 00 years\nago by Andrew Still (an engineer) after all three\nof his children died at the hands of \"orthodox\"\nmedicine during a meningitis outbreak",
+      "page": 67,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "osteopathy",
+        "andrew-still",
+        "manipulation"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000091",
+      "subject": "somatic_therapies",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What is reflexology, and how is it meant to work?",
+      "answer_short": "An ancient Chinese and East Indian system: 'zones' on the soles and palms map to the internal organs, so 10-30 minutes of thumb compression on a point is meant to treat the organ it stands for.",
+      "answer": "Wallach describes reflexology as an ancient Chinese and East Indian diagnostic and treatment system in which the soles of the feet and palms of the hands carry \"zones\" or \"points\" that represent the visceral (internal) organs and systems. Treatment is 10-30 minutes of compression massage with the thumb or index finger; it works particularly well for physiological or functional disease, and the practitioner searches the foot or hand for \"crystals\" or \"nodules\" to work out.",
+      "verbatim": "Reflexology is an ancient Chinese and\neast Indian diagnostic and treatment system.\nThe soles of the feet and palms of the hands\nare covered with \"zones\" or \"points\" that represent visceral organs and systems",
+      "page": 67,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "reflexology",
+        "zones",
+        "foot-massage"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000092",
+      "subject": "somatic_therapies",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is Rolfing (structural integration)?",
+      "answer_short": "A deep, uncomfortable connective-tissue massage devised by Ida Rolf to break down 'pathological' tissue and correct posture - said to leave patients half an inch to an inch taller.",
+      "answer": "Wallach describes Rolfing (structural integration) as a deep body-massage therapy — named after Ida Rolf, a biological-chemistry graduate of Barnard College (1920) — used to break down pathological connective tissue. Before-and-after photos track posture; treatments are very uncomfortable but most patients feel the gains are worth it, and releasing the muscles, ligaments and connective tissue makes patients half an inch to one inch taller.",
+      "verbatim": "Rolfing is a \"body therapy\" (structural\nintegration) and was named after Ida Rolf who\nwas a graduate of biological chemistry from\nBarnard College, New York in 1920.",
+      "page": 68,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "rolfing",
+        "structural-integration",
+        "posture"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000093",
       "subject": "aromatherapy",
       "also_about": [
@@ -2813,6 +2935,40 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000097",
+      "subject": "homeopathy",
+      "also_about": [],
+      "facet": "history",
+      "question": "What are Schuessler cell salts (Biochemics)?",
+      "answer_short": "A 19th-century system from Dr. Wilhelm Schuessler, who analyzed the ash of cremated bodies and found twelve mineral 'salts' he called essential to health; given in homeopathic (highly diluted) doses. Later workers added ~30 trace elements.",
+      "answer": "Wallach describes Biochemics (Schuessler Cell Salts), a 19th-century system of medical therapy devised by the physician and chemist Dr. Wilhelm Heinrich Schuessler. Schuessler based it on analyzing the ashes of cremated human bodies, in which he found twelve mineral 'salts' he considered basic and essential to human health. Influenced by the chemist Dr. Liebig, he held that the body's cells are composed of organic material, water, and 'salts.' In more recent times an additional 30 trace elements have been recognized and added to the original twelve cell salts. (Scope note: cell-salt therapy is a homeopathy-class system that classically uses homeopathic — highly diluted — doses; included here as Wallach's descriptive account of the modality, not as a dosing protocol.)",
+      "verbatim": "Biochemics (Schuessler Cell Salts) is\na system of medical therapy devised in the last\ncentury by a physician and chemist, Dr.\nWilhelm Heinrich Schuessler. He based his\n\"science\" on the analysis of the ashes of cremated human bodies. In these ashes Schuessler\nfound twelve (12) \"salts\" (minerals) basic and\nessential to human health",
+      "page": 54,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "cell-salts",
+        "schuessler",
+        "biochemics"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000098",
+      "subject": "homeopathy",
+      "also_about": [],
+      "facet": "history",
+      "question": "What are Bach flower remedies?",
+      "answer_short": "Homeopathic-style flower preparations from bacteriologist Edward Bach (1880-1936), who first collected sun-warmed flower dew; aimed at emotional imbalance rather than physical disease, taken as four drops four times a day.",
+      "answer": "Wallach describes Bach Flower Remedies, conceived by Edward Bach (1880-1936), who began his career as a bacteriologist at University College Hospital, London, and as pathologist and bacteriologist at the London Homeopathic Hospital. Bach initially collected sun-warmed dew from flowers, later expanding his 'remedies' to a homeopathic-like water preparation of flowers; traditionally the patient takes four drops of the diluted remedy four times per day. Wallach notes Bach's remedies were designed to address emotional imbalances rather than physical disease. (Scope note: Bach flower therapy is a homeopathy-class system using highly diluted preparations; included as Wallach's descriptive account of the modality.)",
+      "verbatim": "Bach Remedies (Bach Flower Remedies) were conceived by Edward Bach (1880-\n1936). Bach started his career as a bacteriologist in the University College Hospital in London and as the pathologist and bacteriologist\nto the London Homeopathic Hospital",
+      "page": 54,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "bach-flower-remedies",
+        "edward-bach",
+        "emotional-balance"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000099",
       "subject": "color_therapy",
       "also_about": [],
@@ -2862,6 +3018,40 @@
         "color-therapy",
         "techniques",
         "kilner-screen"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000102",
+      "subject": "faith_healing",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is faith healing (laying-on-of-hands)?",
+      "answer_short": "Using a person to mediate healing through belief - recorded in ancient China and Egypt and in Christianity today. Wallach notes 20-60% of patients improve on placebo when positive thought is induced.",
+      "answer": "Wallach describes laying-on-of-hands (spiritual and faith healers) as the use of a human being to mediate healing. 'Healers' were recorded in ancient China and Egypt, and appear in various forms today in Christianity. A spiritual healer works on the premise that whatever one believes can be made to happen by belief in God. Wallach notes that 'positive thinking' is practiced by Christians and alternative physicians alike — Robert Schuller considered positive thinking to be a form of prayer — and that twenty to sixty percent of patients will recover with placebos if positive thought is induced.",
+      "verbatim": "Laying-on-of-hands (spiritual and\nfaith healers) - the use of a human to mediate\nhealing. \"Healers\" were recorded in ancient\nChina, Egypt and in various forms today in\nChristianity.",
+      "page": 59,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "faith-healing",
+        "laying-on-of-hands",
+        "placebo"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000103",
+      "subject": "faith_healing",
+      "also_about": [],
+      "facet": "history",
+      "question": "Who are the Christian Scientists, and what is 'therapeutic touch'?",
+      "answer_short": "A Christian sect founded in 1879 by Mary Baker Eddy that holds 'healing is proof of God's love'; Wallach says they outlive other Westerners (and get lower insurance rates). Its modern nursing form is 'therapeutic touch.'",
+      "answer": "Wallach notes the Christian Scientists, a sect of orthodox Christians founded in 1879 by Mary Baker Eddy (Church of Christ, Scientist), who believed that 'healing is proof of God's love for man'; statistically Christian Scientists live longer than any group of western people and, as a result, have special lower insurance premiums. He adds that Kirlian photography shows a significant increase in the healer's hand 'aura' during laying-on-of-hands, and that a new-age form of laying-on-of-hands is 'therapeutic touch,' practiced by nurses and massage therapists on patients with poor circulation and debilitating diseases.",
+      "verbatim": "Christian Scientists are a sect of orthodox Christians founded in 1879 by Mary Baker\nEddy (Church of Christ, Scientists) who believed that \"healing is proof of God's love for\nman",
+      "page": 59,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "christian-science",
+        "mary-baker-eddy",
+        "therapeutic-touch"
       ]
     },
     {
@@ -3046,6 +3236,27 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000114",
+      "subject": "naturopathy",
+      "also_about": [
+        "herbal_medicine",
+        "homeopathy",
+        "hydrotherapy"
+      ],
+      "facet": "basics",
+      "question": "What is naturopathy?",
+      "answer_short": "A whole system of natural medicine (N.D.) built on 'FIRST DO NO HARM' and the body's own healing power - covering herbs, hydrotherapy, homeopathy, nutrition and natural childbirth, but not major surgery or most drugs.",
+      "answer": "Wallach describes naturopathy, practiced by naturopathic physicians (N.D.), as distinguished by its underlying principle — FIRST DO NO HARM. Naturopathic medicine recognizes the body's inherent healing ability and emphasizes the prevention of disease. Its scope of practice varies by state but, as taught, covers the full practice of medicine except major surgery and most prescription ('legend'/allopathic) drugs — including natural hygiene, botanical (herbal) medicine, physical medicine (hydrotherapy, heat, cold, manipulation), homeopathy, counseling, gynecology/obstetrics (natural childbirth), minor surgery, public health, immunization, and laboratory/clinical diagnosis. Wallach notes it is claimed Hippocrates was the father of modern naturopathic medicine since he was an herbalist.",
+      "verbatim": "Naturopathy is practiced by\nnaturopathic physicians (N.D.). What distinguishes naturopathic medicine is that its \"practice\" emerges from its underlying principle -\nFIRST DO NO HARM. Naturopathic medicine\nrecognizes an inherent healing ability of the\nbody. Naturopathic physicians emphasize\nthe prevention of disease",
+      "page": 67,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "naturopathy",
+        "first-do-no-harm",
+        "natural-medicine"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000115",
       "subject": "macrobiotics",
       "also_about": [
@@ -3082,6 +3293,27 @@
         "yin-yang",
         "diet",
         "balance"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000117",
+      "subject": "vitamins",
+      "also_about": [
+        "schizophrenia",
+        "depression",
+        "common_cold"
+      ],
+      "facet": "history",
+      "question": "What is megavitamin (orthomolecular) therapy?",
+      "answer_short": "Using vitamins at very high 'pharmacologic' doses - the 1968 'megavitamin theory' that Linus Pauling named 'orthomolecular medicine' and Abram Hoffer extended to psychiatry, reportedly for colds, depression and schizophrenia, though orthodoxy never endorsed it.",
+      "answer": "Wallach describes megavitamin therapy as one of the major friction points between 'orthodox' medical philosophy and the alternative healing arts. The 'megavitamin theory' was created in 1968 and became the center of what Dr. Linus Pauling (a double Nobel Prize winner) called 'orthomolecular medicine'; Dr. Abram Hoffer then created 'orthomolecular psychiatry.' Pauling and Hoffer used vitamins at 'pharmacologic' or 'therapeutic' ('mega') levels for a variety of conditions — including colds, alcoholism, hyperactivity, drug addiction, osteoarthritis, neuritis, schizophrenia, depression, various psychoses, and food allergies — with what they reported as excellent results, while the orthodox community declined to endorse the approach. (Note: these are Pauling and Hoffer's orthomolecular megadose protocols, presented here as Wallach's descriptive account of the modality — they are not Wallach's own dosing targets, and the specific megadoses are not surfaced as recommendations.)",
+      "verbatim": "Megavitamin therapy is one of the\nmajor friction points between \"orthodox\"\nmedical philosophy and alternative healing\narts. The \"megavitamin theory\" was created in\n1968 and was the center of what Dr. Linus\nPauling (double Nobel Prize winner) called\n\"orthomolecular medicine.\" Dr. Abram Hoffer\nthen created \"orthomolecular psychiatry.\"",
+      "page": 66,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "megavitamin",
+        "orthomolecular",
+        "pauling"
       ]
     },
     {

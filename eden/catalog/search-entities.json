@@ -315,7 +315,12 @@
         "vitamin",
         "fat-soluble",
         "water-soluble",
-        "flavanols"
+        "flavanols",
+        "megavitamin",
+        "megavitamin therapy",
+        "orthomolecular",
+        "orthomolecular medicine",
+        "pauling"
       ],
       "related": [
         "essential_nutrients",
@@ -413,7 +418,13 @@
       "synonyms": [
         "homeopathic",
         "like cures like",
-        "hahnemann"
+        "hahnemann",
+        "cell salts",
+        "schuessler cell salts",
+        "biochemics",
+        "bach flower remedies",
+        "bach remedies",
+        "tissue salts"
       ],
       "related": [
         "herbal_medicine",
@@ -596,6 +607,63 @@
       ],
       "related": [
         "herbal_medicine",
+        "be_your_own_doctor"
+      ]
+    },
+    "somatic_therapies": {
+      "display_name": "Somatic Therapies",
+      "type": "topic",
+      "synonyms": [
+        "bodywork",
+        "osteopathy",
+        "reflexology",
+        "rolfing",
+        "structural integration",
+        "spinal manipulation",
+        "massage therapy",
+        "somatics",
+        "doctor of osteopathy",
+        "d.o."
+      ],
+      "related": [
+        "chiropractic",
+        "naturopathy",
+        "hydrotherapy",
+        "be_your_own_doctor"
+      ]
+    },
+    "faith_healing": {
+      "display_name": "Faith & Energy Healing",
+      "type": "topic",
+      "synonyms": [
+        "faith healing",
+        "laying on of hands",
+        "spiritual healing",
+        "christian science",
+        "therapeutic touch",
+        "energy healing",
+        "positive thinking",
+        "prayer healing"
+      ],
+      "related": [
+        "be_your_own_doctor",
+        "longevity"
+      ]
+    },
+    "naturopathy": {
+      "display_name": "Naturopathy",
+      "type": "topic",
+      "synonyms": [
+        "naturopathic medicine",
+        "naturopathic physician",
+        "n.d.",
+        "first do no harm",
+        "natural hygiene"
+      ],
+      "related": [
+        "herbal_medicine",
+        "homeopathy",
+        "hydrotherapy",
         "be_your_own_doctor"
       ]
     }

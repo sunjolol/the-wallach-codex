@@ -1961,6 +1961,122 @@
         "pennyroyal",
         "vitamin-b1"
       ]
+    },
+    "WAL-CLM-LETS-000090": {
+      "subject": "somatic_therapies",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is osteopathy?",
+      "answer_short": "A manipulation-based healing art of body and spine, founded ~130 years ago by engineer Andrew Still after he lost all three children to orthodox medicine; today most D.O.s practice much like M.D.s.",
+      "topics": [
+        "osteopathy",
+        "andrew-still",
+        "manipulation"
+      ]
+    },
+    "WAL-CLM-LETS-000091": {
+      "subject": "somatic_therapies",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What is reflexology, and how is it meant to work?",
+      "answer_short": "An ancient Chinese and East Indian system: 'zones' on the soles and palms map to the internal organs, so 10-30 minutes of thumb compression on a point is meant to treat the organ it stands for.",
+      "topics": [
+        "reflexology",
+        "zones",
+        "foot-massage"
+      ]
+    },
+    "WAL-CLM-LETS-000092": {
+      "subject": "somatic_therapies",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is Rolfing (structural integration)?",
+      "answer_short": "A deep, uncomfortable connective-tissue massage devised by Ida Rolf to break down 'pathological' tissue and correct posture - said to leave patients half an inch to an inch taller.",
+      "topics": [
+        "rolfing",
+        "structural-integration",
+        "posture"
+      ]
+    },
+    "WAL-CLM-LETS-000102": {
+      "subject": "faith_healing",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is faith healing (laying-on-of-hands)?",
+      "answer_short": "Using a person to mediate healing through belief - recorded in ancient China and Egypt and in Christianity today. Wallach notes 20-60% of patients improve on placebo when positive thought is induced.",
+      "topics": [
+        "faith-healing",
+        "laying-on-of-hands",
+        "placebo"
+      ]
+    },
+    "WAL-CLM-LETS-000103": {
+      "subject": "faith_healing",
+      "also_about": [],
+      "facet": "history",
+      "question": "Who are the Christian Scientists, and what is 'therapeutic touch'?",
+      "answer_short": "A Christian sect founded in 1879 by Mary Baker Eddy that holds 'healing is proof of God's love'; Wallach says they outlive other Westerners (and get lower insurance rates). Its modern nursing form is 'therapeutic touch.'",
+      "topics": [
+        "christian-science",
+        "mary-baker-eddy",
+        "therapeutic-touch"
+      ]
+    },
+    "WAL-CLM-LETS-000114": {
+      "subject": "naturopathy",
+      "also_about": [
+        "herbal_medicine",
+        "homeopathy",
+        "hydrotherapy"
+      ],
+      "facet": "basics",
+      "question": "What is naturopathy?",
+      "answer_short": "A whole system of natural medicine (N.D.) built on 'FIRST DO NO HARM' and the body's own healing power - covering herbs, hydrotherapy, homeopathy, nutrition and natural childbirth, but not major surgery or most drugs.",
+      "topics": [
+        "naturopathy",
+        "first-do-no-harm",
+        "natural-medicine"
+      ]
+    },
+    "WAL-CLM-LETS-000097": {
+      "subject": "homeopathy",
+      "also_about": [],
+      "facet": "history",
+      "question": "What are Schuessler cell salts (Biochemics)?",
+      "answer_short": "A 19th-century system from Dr. Wilhelm Schuessler, who analyzed the ash of cremated bodies and found twelve mineral 'salts' he called essential to health; given in homeopathic (highly diluted) doses. Later workers added ~30 trace elements.",
+      "topics": [
+        "cell-salts",
+        "schuessler",
+        "biochemics"
+      ]
+    },
+    "WAL-CLM-LETS-000098": {
+      "subject": "homeopathy",
+      "also_about": [],
+      "facet": "history",
+      "question": "What are Bach flower remedies?",
+      "answer_short": "Homeopathic-style flower preparations from bacteriologist Edward Bach (1880-1936), who first collected sun-warmed flower dew; aimed at emotional imbalance rather than physical disease, taken as four drops four times a day.",
+      "topics": [
+        "bach-flower-remedies",
+        "edward-bach",
+        "emotional-balance"
+      ]
+    },
+    "WAL-CLM-LETS-000117": {
+      "subject": "vitamins",
+      "also_about": [
+        "schizophrenia",
+        "depression",
+        "common_cold"
+      ],
+      "facet": "history",
+      "question": "What is megavitamin (orthomolecular) therapy?",
+      "answer_short": "Using vitamins at very high 'pharmacologic' doses - the 1968 'megavitamin theory' that Linus Pauling named 'orthomolecular medicine' and Abram Hoffer extended to psychiatry, reportedly for colds, depression and schizophrenia, though orthodoxy never endorsed it.",
+      "topics": [
+        "megavitamin",
+        "orthomolecular",
+        "pauling"
+      ]
     }
   }
 }
