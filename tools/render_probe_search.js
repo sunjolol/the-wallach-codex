@@ -112,7 +112,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const navTest = await page.evaluate(async () => {
     const w = ms => new Promise(r => setTimeout(r, ms));
     const root = document.getElementById('drawer-search-mount');
-    const link = root.querySelector('.sr-related .sr-pill--link');
+    // Select the Calcium pill BY SLUG (not the first link): as more entities are authored,
+    // other related slugs also become clickable links, so a positional .sr-pill--link would
+    // grab the wrong pill and this assertion would silently break (2026-07-10 fix).
+    const link = root.querySelector('.sr-related .sr-pill--link[data-sr-entity="calcium"]');
     const linkText = link ? link.textContent.trim() : '';
     if (link) { link.click(); }
     await w(260);
