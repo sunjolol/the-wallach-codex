@@ -56257,7 +56257,15 @@ LUNETH REVIEW: signed off with one fix -- Carbon's related pills (Macronutrients
 
 CANON handling: cobalt, silver and carbon are canon essentials, so they are canon_ref entities (display_name + atomic symbol pulled from essentials-canon, never hand-typed). The grouped rare earths are canon too but ride the concept page (found by name via synonyms); no_hand_duplicated_canonical is unaffected -- it scans only conditions/symptoms by exact display_name, not the search source files.
 
-Files (DATA ONLY, no corpus reseal, knowledge_version stays 320): eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, and the rebuilt embeds (search-index.json = 52 entities / 181 claims). No schema/view/gate changes. Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (52-entity landing, 0 page errors); targeted headless dump of the grouped + canon + carbon pages (facet grouping, questions, composed cites including cerium's Rare-Earths cite, related links, Carbon gracefully showing no related section); all 22 new answer_short/question fields ASCII-clean. NEXT: 18 search-only claims remain and only 3 are non-deferred (rare-earths drug-safety-in-elderly, RARE 276/277/284); the other 15 are the deferred charged cluster (14 Epigenetics + 1 Immortality homosexuality/intersex). After the rare-earths concept the non-charged bulk migration is done -- then seal the 2 search source files + resume search-first mining at Immortality Mn-Manganese.` }];
+Files (DATA ONLY, no corpus reseal, knowledge_version stays 320): eden/corpus/search-enrichment.json, eden/catalog/search-entities.json, and the rebuilt embeds (search-index.json = 52 entities / 181 claims). No schema/view/gate changes. Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (52-entity landing, 0 page errors); targeted headless dump of the grouped + canon + carbon pages (facet grouping, questions, composed cites including cerium's Rare-Earths cite, related links, Carbon gracefully showing no related section); all 22 new answer_short/question fields ASCII-clean. NEXT: 18 search-only claims remain and only 3 are non-deferred (rare-earths drug-safety-in-elderly, RARE 276/277/284); the other 15 are the deferred charged cluster (14 Epigenetics + 1 Immortality homosexuality/intersex). After the rare-earths concept the non-charged bulk migration is done -- then seal the 2 search source files + resume search-first mining at Immortality Mn-Manganese.` }, { id: "lg_mrenpjxv_8wbses", ts: "2026-07-10T03:11:23.059924-05:00", surface: "search", kind: "round-close", summary: 'Search batch 8 (last non-charged cluster): Rare-Earths drugs-unsuitable-for-elderly -> one "Drug Safety in the Elderly" concept page (3 claims). MILESTONE: the non-charged bulk migration is COMPLETE; only 15 deferred charged claims remain. Pure data, no reseal.', detail: `I turned Wallach's table of drugs that are risky for older people (from Rare Earths: Forbidden Cures) into a single "Drug Safety in the Elderly" search page. It's a small batch but a milestone: with it, the whole non-charged part of the search migration is finished. The only thing left is a batch of sensitive/charged claims that Luneth wants to review one at a time, which he'll do in the morning with a fresh start.
+
+The page (concept, 3 claims, all under a Warnings section): (1) tranquilizers/sleeping pills part 1 -- Valium, Librium, Dalmane; (2) part 2 -- Miltown, Nembutal, Seconal; (3) muscle relaxants -- Flexeril, Norflex, Robaxin, Soma. Each pairs Wallach's "too long-acting / addictive -> drowsiness, confusion, falls in the elderly" warning with his mineral replacement (calcium, magnesium, lithium, chromium, vanadium; boron for the muscle relaxants), shown as also_about cross-link chips. No doses are stated -- the claims map mineral CLASSES, not amounts, so the source rule stays clean. A drug-name search like "valium" resolves to the page via synonyms. Related links are genuine: Be Your Own Doctor + Hospital Dangers (the question-your-meds / iatrogenic theme) and Colloidal Minerals + Essential Nutrients (the replacement angle) -- not padding.
+
+Data only, no corpus reseal (knowledge_version stays 320): eden/corpus/search-enrichment.json (181 -> 184 enriched claims) + eden/catalog/search-entities.json (52 -> 53 entities) + rebuilt embeds (search-index.json = 53 entities / 184 claims; dist re-inlined). No schema/view/gate changes.
+
+Verified: build OK; invariants 53/53 (0 new reds); render_probe_search PASS (53-entity landing, 0 page errors); targeted headless dump (three warnings render with the mineral chips, cite = Rare Earths: Forbidden Cures 1994 p.233, the "valium" synonym resolves to the page, related pills all clickable). Luneth signed off, then called it for the night.
+
+MILESTONE: the NON-CHARGED bulk migration is COMPLETE (8 batches, 53 entities, 184 enriched claims). Remaining = 15 DEFERRED CHARGED claims only -- 14 Epigenetics (homosexuality/intersex/teratology/quackbusters/longevity-cooking) + 1 Immortality homosexuality (IMMORT-000020) -- to be handled in a dedicated per-instance review with Luneth (fresh genesis, next session). After that review: seal the two search source files (search-enrichment.json + search-entities.json), consider index sharding, then resume search-first mining at Immortality Mn-Manganese.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57828,6 +57836,34 @@ Files (DATA ONLY, no corpus reseal, knowledge_version stays 320): eden/corpus/se
           "colloidal_minerals"
         ],
         claim_count: 6
+      },
+      drug_safety_elderly: {
+        display_name: "Drug Safety in the Elderly",
+        type: "concept",
+        synonyms: [
+          "drugs unsafe for elderly",
+          "medications to avoid in older adults",
+          "tranquilizers",
+          "sleeping pills",
+          "benzodiazepines",
+          "muscle relaxants",
+          "mineral replacement",
+          "valium",
+          "librium",
+          "dalmane",
+          "miltown",
+          "nembutal",
+          "seconal",
+          "flexeril",
+          "soma"
+        ],
+        related: [
+          "be_your_own_doctor",
+          "hospital_dangers",
+          "colloidal_minerals",
+          "essential_nutrients"
+        ],
+        claim_count: 3
       },
       essential_nutrients: {
         display_name: "Essential Nutrients",
@@ -61790,6 +61826,74 @@ deaths, blood clots, sterility`,
           "cerium",
           "rare-earth",
           "burns"
+        ]
+      },
+      {
+        id: "WAL-CLM-RARE-000276",
+        subject: "drug_safety_elderly",
+        also_about: [
+          "calcium",
+          "magnesium",
+          "lithium",
+          "chromium",
+          "vanadium"
+        ],
+        facet: "warning",
+        question: "Which tranquilizers and sleeping pills are risky for older adults?",
+        answer_short: "Wallach flags Valium (diazepam), Librium (chlordiazepoxide) and Dalmane (flurazepam) as too long-acting or addictive -- they cause drowsiness, confusion and falls in the elderly. His fix: address the underlying need with minerals (calcium, magnesium, lithium, chromium, vanadium) and cut sugar and caffeine.",
+        answer: "Wallach lists tranquilizers and sleeping aids regarded as unsuitable for older patients (part 1 of 2) \u2014 Diazepam (Valium), Chlordiazepoxide (Librium), and Flurazepam (Dalmane), all addictive and/or too long-acting and prone to cause falls \u2014 with the mineral replacement to address the underlying need instead: calcium, magnesium, lithium, chromium, and vanadium (while avoiding sugar, natural and processed, and caffeine).",
+        verbatim: "Tranquilizers & Sleeping Aids \u2014 Mineral Replacement: Ca, Mg, Li, Cr, Va (avoid sugar, natural and processed, and caffeine):\nDiazepam (Valium) - Tranquilizer. Addictive and too long-acting, causing drowsiness, confusion and falls.\nChlordiazepoxide (Librium) - Tranquilizer. Too long-acting causes falls.\nFlurazepam (Dalmane), a sleeping aid. Too long-acting, causes falls.",
+        page: 233,
+        book_id: "rare-earths",
+        topics: [
+          "tranquilizers",
+          "benzodiazepines",
+          "falls-in-elderly"
+        ]
+      },
+      {
+        id: "WAL-CLM-RARE-000277",
+        subject: "drug_safety_elderly",
+        also_about: [
+          "calcium",
+          "magnesium",
+          "lithium",
+          "chromium",
+          "vanadium"
+        ],
+        facet: "warning",
+        question: "What other tranquilizers and sleeping pills should older adults avoid?",
+        answer_short: "The second half of Wallach's list: Miltown (meprobamate), Nembutal (pentobarbital) and Seconal (secobarbital) -- all addictive, long-acting and fall-prone. Same mineral replacement: calcium, magnesium, lithium, chromium and vanadium.",
+        answer: "Wallach lists tranquilizers/sleeping aids unsuitable for older patients (part 2 of 2) \u2014 Meprobamate (Miltown, Deprol, Equagesic, Equanil), Pentobarbital (Nembutal), and Secobarbital (Seconal) \u2014 with the same mineral replacement: calcium, magnesium, lithium, chromium, and vanadium.",
+        verbatim: "Meprobamate (Miltown, Deprol, Equagesic, Equanil) - Tranquilizer, sometimes combined with an anti-depressant or pain reliever. Addictive, too long-acting, causes falls.\nPentobarbital (Nembutol) - Sedative. Addictive, long-acting, can cause falls.\nSecobarbitol (Seconal). Addictive, long acting, causes falls.",
+        page: 233,
+        book_id: "rare-earths",
+        topics: [
+          "sleeping-pills",
+          "barbiturates",
+          "falls-in-elderly"
+        ]
+      },
+      {
+        id: "WAL-CLM-RARE-000284",
+        subject: "drug_safety_elderly",
+        also_about: [
+          "calcium",
+          "magnesium",
+          "boron",
+          "lithium"
+        ],
+        facet: "warning",
+        question: "Which muscle relaxants are risky for older adults?",
+        answer_short: "Wallach flags Flexeril (cyclobenzaprine), Norflex (orphenadrine), Robaxin (methocarbamol) and Soma (carisoprodol) -- they cause dizziness, drowsiness, fainting and falls. His mineral replacement: calcium, magnesium, boron and lithium.",
+        answer: "Wallach lists muscle relaxants/spasm relievers unsuitable for older patients \u2014 Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls \u2014 with the mineral replacement: calcium, magnesium, boron, and lithium.",
+        verbatim: "Muscle Relaxants, Spasm Relievers \u2014 Mineral Replacement: Ca, Mg, B, Li:\nCyclobenzaprine (Flexeril) - Causes dizziness, drowsiness, fainting, falls.\nOrphenidrine (Norflex, Norgesic) - Causes dizziness, drowsiness, fainting, falls.\nMethocarbamol (Roboxin) - Causes dizziness, drowsiness, falls.\nCarisoprodol (Soma) - Potential for nervous system toxicity is greater than potential benefit.",
+        page: 233,
+        book_id: "rare-earths",
+        topics: [
+          "muscle-relaxants",
+          "falls-in-elderly",
+          "mineral-replacement"
         ]
       }
     ]

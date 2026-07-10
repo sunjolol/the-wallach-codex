@@ -2350,6 +2350,59 @@
         "simplest-atom",
         "abundance"
       ]
+    },
+    "WAL-CLM-RARE-000276": {
+      "subject": "drug_safety_elderly",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "lithium",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "warning",
+      "question": "Which tranquilizers and sleeping pills are risky for older adults?",
+      "answer_short": "Wallach flags Valium (diazepam), Librium (chlordiazepoxide) and Dalmane (flurazepam) as too long-acting or addictive -- they cause drowsiness, confusion and falls in the elderly. His fix: address the underlying need with minerals (calcium, magnesium, lithium, chromium, vanadium) and cut sugar and caffeine.",
+      "topics": [
+        "tranquilizers",
+        "benzodiazepines",
+        "falls-in-elderly"
+      ]
+    },
+    "WAL-CLM-RARE-000277": {
+      "subject": "drug_safety_elderly",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "lithium",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "warning",
+      "question": "What other tranquilizers and sleeping pills should older adults avoid?",
+      "answer_short": "The second half of Wallach's list: Miltown (meprobamate), Nembutal (pentobarbital) and Seconal (secobarbital) -- all addictive, long-acting and fall-prone. Same mineral replacement: calcium, magnesium, lithium, chromium and vanadium.",
+      "topics": [
+        "sleeping-pills",
+        "barbiturates",
+        "falls-in-elderly"
+      ]
+    },
+    "WAL-CLM-RARE-000284": {
+      "subject": "drug_safety_elderly",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "boron",
+        "lithium"
+      ],
+      "facet": "warning",
+      "question": "Which muscle relaxants are risky for older adults?",
+      "answer_short": "Wallach flags Flexeril (cyclobenzaprine), Norflex (orphenadrine), Robaxin (methocarbamol) and Soma (carisoprodol) -- they cause dizziness, drowsiness, fainting and falls. His mineral replacement: calcium, magnesium, boron and lithium.",
+      "topics": [
+        "muscle-relaxants",
+        "falls-in-elderly",
+        "mineral-replacement"
+      ]
     }
   }
 }

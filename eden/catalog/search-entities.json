@@ -800,6 +800,33 @@
         "climate"
       ],
       "related": []
+    },
+    "drug_safety_elderly": {
+      "display_name": "Drug Safety in the Elderly",
+      "type": "concept",
+      "synonyms": [
+        "drugs unsafe for elderly",
+        "medications to avoid in older adults",
+        "tranquilizers",
+        "sleeping pills",
+        "benzodiazepines",
+        "muscle relaxants",
+        "mineral replacement",
+        "valium",
+        "librium",
+        "dalmane",
+        "miltown",
+        "nembutal",
+        "seconal",
+        "flexeril",
+        "soma"
+      ],
+      "related": [
+        "be_your_own_doctor",
+        "hospital_dangers",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
     }
   }
 }
