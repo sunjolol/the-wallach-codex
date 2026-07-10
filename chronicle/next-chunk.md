@@ -8,11 +8,11 @@ The offline "Ask-Wallach" Search surface has a first real, validated slice. Lune
 - **Draft artifacts (NOT sealed):** `dashboard/assets/data/search/{mercury-slice.json (13 claims), search-entities.json (mercury registry)}` — verbatim+answer byte-faithful from the sealed corpus; faceting/question/answer_short authored. Registered in `eden/derived/MANIFEST.json` accounted (hand_authored, TO BE REPLACED by the derived index).
 - **Code:** `core/schemas/search.ts` (SEARCH_FACETS taxonomy + FACET_LABEL, in core/) · `state/search.ts` (offline retrieval + `window.wallachSearch`) · `views/search.ts` (sr-* drawer) · `assets/styles/drawer-search.css`. **Wired** via dashboard.html/main.ts/events.ts/schemas index. `dashboard.css` `.topbar__ask` = green-by-default (design-system `--ds-status-ok`), **one-class pivot to a plain orange matching button** (delete `topbar__ask--green`). `tools/render_probe_search.js` (21 checks, PASS).
 
-## Open format questions Luneth may still steer (asked; not blockers)
-1. **Strip the answer's topic-lead label** (e.g. "Mercury — the basics.") since `answer_short` already carries it? (I offered; awaiting his call.)
-2. **Facet label wording + order** (friendly "HOW IT WORKS" vs raw "MECHANISM"; should WARNINGS sit higher for a poison?).
-3. **Drawer vs. full workspace** for Search (currently a left drawer with EXPAND).
-4. The **Ask Wallach button**: green kept, or pivot to plain orange? (He's torn on green; the pivot is one class.)
+## Open format questions Luneth may still steer (not blockers)
+1. ~~Strip the answer's topic-lead label~~ — **RESOLVED (Luneth 2026-07-09): KEEP as-is** (reads fine; only shows on an expanded row). The migration must keep each `answer` **byte-faithful** to the sealed summary — do NOT strip the lead.
+2. **Facet label wording + order** (friendly "HOW IT WORKS" vs raw "MECHANISM"; should WARNINGS sit higher for a poison?) — still open, not yet raised.
+3. **Drawer vs. full workspace** for Search (currently a left drawer with EXPAND) — still open.
+4. The **Ask Wallach button**: green shipped by default; one-class pivot to plain orange (delete `topbar__ask--green`). Luneth OK to keep green for now.
 
 ## NEXT (the real build — after any format tweaks land)
 1. **Mass-migrate the 186 existing `search-only` claims** → the faceted template (script + review; split `claim_text` → answer, drop the "In his words:" tail, keep verbatim byte-faithful, assign subject/facet/question/answer_short — human-confirmed on ambiguous). Emit a draft for review, never silent.
