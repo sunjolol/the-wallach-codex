@@ -322,6 +322,135 @@
         "essential_nutrients",
         "omega-3"
       ]
+    },
+    "light_therapy": {
+      "display_name": "Light Therapy",
+      "type": "topic",
+      "synonyms": [
+        "uv therapy",
+        "ultraviolet therapy",
+        "infrared therapy",
+        "phototherapy"
+      ],
+      "related": [
+        "color_therapy",
+        "vitamin-d"
+      ]
+    },
+    "chiropractic": {
+      "display_name": "Chiropractic",
+      "type": "topic",
+      "synonyms": [
+        "chiropractor",
+        "spinal manipulation",
+        "subluxation"
+      ],
+      "related": [
+        "hydrotherapy"
+      ]
+    },
+    "aromatherapy": {
+      "display_name": "Aromatherapy",
+      "type": "topic",
+      "synonyms": [
+        "essential oils",
+        "aromatic oils"
+      ],
+      "related": [
+        "herbal_medicine",
+        "ayurveda"
+      ]
+    },
+    "ayurveda": {
+      "display_name": "Ayurveda",
+      "type": "topic",
+      "synonyms": [
+        "ayurvedic medicine",
+        "ayurvedic",
+        "dosha"
+      ],
+      "related": [
+        "herbal_medicine",
+        "homeopathy"
+      ]
+    },
+    "homeopathy": {
+      "display_name": "Homeopathy",
+      "type": "topic",
+      "synonyms": [
+        "homeopathic",
+        "like cures like",
+        "hahnemann"
+      ],
+      "related": [
+        "herbal_medicine",
+        "naturopathy"
+      ]
+    },
+    "hydrotherapy": {
+      "display_name": "Hydrotherapy",
+      "type": "topic",
+      "synonyms": [
+        "water therapy",
+        "medicinal baths",
+        "balneotherapy"
+      ],
+      "related": [
+        "chiropractic"
+      ]
+    },
+    "negative_ion_therapy": {
+      "display_name": "Negative Ion Therapy",
+      "type": "topic",
+      "synonyms": [
+        "negative ions",
+        "air ionization",
+        "ionizer"
+      ],
+      "related": [
+        "asthma"
+      ]
+    },
+    "urine_therapy": {
+      "display_name": "Urine Therapy",
+      "type": "topic",
+      "synonyms": [
+        "urotherapy",
+        "autoimmune urine therapy",
+        "uropathy"
+      ],
+      "related": [
+        "allergies",
+        "cancer"
+      ]
+    },
+    "macrobiotics": {
+      "display_name": "Macrobiotics",
+      "type": "topic",
+      "synonyms": [
+        "macrobiotic diet",
+        "brown rice diet",
+        "ohsawa"
+      ],
+      "related": [
+        "celiac_disease",
+        "diabetes"
+      ]
+    },
+    "herbal_medicine": {
+      "display_name": "Herbal Medicine",
+      "type": "topic",
+      "synonyms": [
+        "herbalism",
+        "herbal remedies",
+        "botanical medicine",
+        "phytotherapy"
+      ],
+      "related": [
+        "aromatherapy",
+        "ayurveda",
+        "homeopathy"
+      ]
     }
   }
 }

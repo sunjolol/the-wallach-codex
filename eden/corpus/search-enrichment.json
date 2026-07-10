@@ -1357,6 +1357,327 @@
         "kidney",
         "liver"
       ]
+    },
+    "WAL-CLM-LETS-000084": {
+      "subject": "light_therapy",
+      "also_about": [
+        "vitamin-d",
+        "eczema"
+      ],
+      "facet": "uses",
+      "question": "What does ultraviolet (UV) light therapy treat?",
+      "answer_short": "Wallach says UV light boosts vitamin D and the immune system, and treats sore throats, vaginitis, ringworm, athlete's foot and eczema.",
+      "topics": [
+        "ultraviolet",
+        "vitamin-d",
+        "skin"
+      ]
+    },
+    "WAL-CLM-LETS-000085": {
+      "subject": "light_therapy",
+      "also_about": [
+        "arthritis"
+      ],
+      "facet": "protocol",
+      "question": "How is infrared light therapy done?",
+      "answer_short": "A local immune boost - shine infrared (a heat lamp) on a trigger point through a 1 cm hole until it reddens, drawing in white cells to help chronic wounds, bedsores and arthritis.",
+      "topics": [
+        "infrared",
+        "trigger-point",
+        "immune"
+      ]
+    },
+    "WAL-CLM-LETS-000086": {
+      "subject": "light_therapy",
+      "also_about": [
+        "vitamin-d"
+      ],
+      "facet": "warning",
+      "question": "Is UV light therapy safe for the eyes?",
+      "answer_short": "Therapeutic UV is 'cool' (no heat) and helps skin diseases and arthritis while killing germs - but it can burn the eyes, so wear goggles or don't look at the lamp.",
+      "topics": [
+        "ultraviolet",
+        "eye-safety",
+        "germicidal"
+      ]
+    },
+    "WAL-CLM-LETS-000087": {
+      "subject": "light_therapy",
+      "also_about": [
+        "vitamin-d"
+      ],
+      "facet": "mechanism",
+      "question": "How does UV therapy actually work?",
+      "answer_short": "Its rays span 500-3,100 Angstroms, peaking at 2,537 - the wavelength that gives UV its germicidal, skin-reddening and vitamin-D-making power; visible light is only ~5% of the output.",
+      "topics": [
+        "uv-spectrum",
+        "angstrom",
+        "vitamin-d"
+      ]
+    },
+    "WAL-CLM-LETS-000088": {
+      "subject": "chiropractic",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is chiropractic?",
+      "answer_short": "A drug-free, surgery-free physical medicine holding that many ills come from 'subluxations' (misaligned vertebrae) pressing on spinal nerves - the West's most accepted alternative therapy.",
+      "topics": [
+        "subluxation",
+        "spine",
+        "drug-free"
+      ]
+    },
+    "WAL-CLM-LETS-000089": {
+      "subject": "chiropractic",
+      "also_about": [],
+      "facet": "history",
+      "question": "Where does chiropractic come from?",
+      "answer_short": "Spinal manipulation is ancient (Egypt, China, Babylon); it reached the West in 1895 when D.D. Palmer reportedly cured a janitor's deafness, and chiropractors won a 1987 antitrust case against the AMA.",
+      "topics": [
+        "palmer",
+        "history",
+        "ama"
+      ]
+    },
+    "WAL-CLM-LETS-000093": {
+      "subject": "aromatherapy",
+      "also_about": [
+        "acne"
+      ],
+      "facet": "basics",
+      "question": "What is aromatherapy?",
+      "answer_short": "Massage with plant essential oils (from roots, flowers, leaves, bark, resin); Wallach says they act as pesticides, fungicides and hormone-like agents and help scars, acne and stretch marks.",
+      "topics": [
+        "essential-oils",
+        "massage",
+        "skin"
+      ]
+    },
+    "WAL-CLM-LETS-000094": {
+      "subject": "aromatherapy",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "uses",
+      "question": "What are specific essential oils used for?",
+      "answer_short": "Wallach's list: Mexican yam for birth control, sarsaparilla for testosterone, peppermint for intestinal spasm, calamus to lower blood pressure, lemon as an expectorant, and hops/fennel for estrogens.",
+      "topics": [
+        "essential-oils",
+        "calamus",
+        "hormones"
+      ]
+    },
+    "WAL-CLM-LETS-000095": {
+      "subject": "ayurveda",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is Ayurveda, and how old is it?",
+      "answer_short": "Possibly the most ancient medical art - 'ayur' (life) + 'veda' (science), recorded ~1200 BC. 80-90% of Indians use it, and Wallach says the Greeks (even Pythagoras) learned medicine from the East Indians.",
+      "topics": [
+        "ancient",
+        "etymology",
+        "india"
+      ]
+    },
+    "WAL-CLM-LETS-000096": {
+      "subject": "ayurveda",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does Ayurveda explain health and disease?",
+      "answer_short": "The body is seven tissues (Dhatus) kept in balance by food, so 'wrong food' causes disease; it works with the energies Pitta, Kapha and Vaya and five elements, treating imbalances rather than diagnoses.",
+      "topics": [
+        "dhatus",
+        "dosha",
+        "five-elements"
+      ]
+    },
+    "WAL-CLM-LETS-000112": {
+      "subject": "homeopathy",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is homeopathy?",
+      "answer_short": "A system on two principles: 'like cures like' (a substance that causes symptoms in the healthy can cure a disease with those symptoms) and 'minimum dose' - using extremely diluted preparations.",
+      "topics": [
+        "like-cures-like",
+        "minimum-dose",
+        "dilution"
+      ]
+    },
+    "WAL-CLM-LETS-000113": {
+      "subject": "homeopathy",
+      "also_about": [],
+      "facet": "history",
+      "question": "Who founded homeopathy, and does the dilution really work?",
+      "answer_short": "Samuel Hahnemann, who found Cinchona bark gave healthy people malaria-like symptoms; oddly, more dilute often meant a stronger effect - though past about 12C not one molecule of the original remains.",
+      "topics": [
+        "hahnemann",
+        "dilution",
+        "avogadro"
+      ]
+    },
+    "WAL-CLM-LETS-000106": {
+      "subject": "hydrotherapy",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is hydrotherapy?",
+      "answer_short": "Healing with water - practiced since Roman times across all medicine, from sitz baths for hemorrhoids to whirlpools for injuries and mineral baths for arthritis; insurance often covers it if prescribed.",
+      "topics": [
+        "water",
+        "baths",
+        "roman"
+      ]
+    },
+    "WAL-CLM-LETS-000107": {
+      "subject": "hydrotherapy",
+      "also_about": [
+        "arthritis",
+        "hemorrhoids"
+      ],
+      "facet": "uses",
+      "question": "What are the different kinds of hydrotherapy?",
+      "answer_short": "Cold baths cut swelling; hot baths ease soreness; mineral baths help arthritis; steam baths detox heavy metals; sitz baths for hemorrhoids; epsom for edema; water fasts and colonics for detox.",
+      "topics": [
+        "baths",
+        "detox",
+        "colonic"
+      ]
+    },
+    "WAL-CLM-LETS-000108": {
+      "subject": "negative_ion_therapy",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is negative ion therapy?",
+      "answer_short": "Using negatively charged air particles to prevent and treat disease - abundant in forests and at the beach (300-1,000 per cubic meter) but low in AC'd rooms; too many POSITIVE ions bring anxiety and depression.",
+      "topics": [
+        "negative-ions",
+        "air",
+        "mood"
+      ]
+    },
+    "WAL-CLM-LETS-000109": {
+      "subject": "negative_ion_therapy",
+      "also_about": [
+        "asthma",
+        "allergies"
+      ],
+      "facet": "uses",
+      "question": "What does negative ion therapy do?",
+      "answer_short": "Six effects - it lowers heart rate/BP, deepens breathing, speeds respiratory cilia, boosts glands and steadies brain rhythm - and Wallach says it especially helps asthma, allergies and cystic fibrosis.",
+      "topics": [
+        "respiration",
+        "asthma",
+        "brain"
+      ]
+    },
+    "WAL-CLM-LETS-000110": {
+      "subject": "urine_therapy",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is urine therapy?",
+      "answer_short": "Injecting a patient's own urine back into them to boost immunity - the same idea as an allergist's shots; Wallach says MD allergists used it for 50 years until prepared allergens became profitable.",
+      "topics": [
+        "immune",
+        "allergy-shots",
+        "self-treatment"
+      ]
+    },
+    "WAL-CLM-LETS-000111": {
+      "subject": "urine_therapy",
+      "also_about": [
+        "allergies",
+        "cancer"
+      ],
+      "facet": "protocol",
+      "question": "How is urine therapy performed?",
+      "answer_short": "Urine is centrifuged and filtered to remove cells and bacteria, then 5-10 mL is injected under the skin (procaine stops any sting); Wallach cites use for allergies, asthma, migraine and arthritis.",
+      "topics": [
+        "injection",
+        "filtration",
+        "allergies"
+      ]
+    },
+    "WAL-CLM-LETS-000194": {
+      "subject": "urine_therapy",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "mechanism",
+      "question": "How do autoimmune urine and blood therapies work?",
+      "answer_short": "They rev the body's defenses against foreign substances - including cancer proteins - much the way allergy shots build tolerance to pollen.",
+      "topics": [
+        "immune",
+        "cancer",
+        "autoimmune"
+      ]
+    },
+    "WAL-CLM-LETS-000083": {
+      "subject": "macrobiotics",
+      "also_about": [
+        "celiac_disease"
+      ],
+      "facet": "stance",
+      "question": "Why does the macrobiotic (brown-rice) diet work?",
+      "answer_short": "Wallach's take: its successes come mostly from accidentally cutting gluten - people with hidden celiac disease finally absorb minerals, vitamins and fats. The value is nutritional, not the yin/yang theory.",
+      "topics": [
+        "gluten",
+        "celiac",
+        "brown-rice"
+      ]
+    },
+    "WAL-CLM-LETS-000115": {
+      "subject": "macrobiotics",
+      "also_about": [
+        "tuberculosis"
+      ],
+      "facet": "history",
+      "question": "Where did macrobiotics come from?",
+      "answer_short": "George Ohsawa created it in 1946 Japan, using it to heal his own tuberculosis, then opened a healing center and toured the world teaching a philosophy of health through eating.",
+      "topics": [
+        "ohsawa",
+        "japan",
+        "history"
+      ]
+    },
+    "WAL-CLM-LETS-000116": {
+      "subject": "macrobiotics",
+      "also_about": [
+        "diabetes",
+        "celiac_disease"
+      ],
+      "facet": "basics",
+      "question": "What is the macrobiotic diet?",
+      "answer_short": "An eating system built on balancing 'yin' (fruit, drinks, sweet) and 'yang' (meat, grains, dense) foods; reported to help food allergies, diabetes and - when wheat is dropped - grain sensitivity.",
+      "topics": [
+        "yin-yang",
+        "diet",
+        "balance"
+      ]
+    },
+    "WAL-CLM-LETS-000104": {
+      "subject": "herbal_medicine",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is herbal medicine?",
+      "answer_short": "An ancient system using plants to prevent and cure disease - the root of Chinese, Ayurvedic, American Indian and naturopathic medicine, traced back to Chinese pharmacopeias around 3000 BC.",
+      "topics": [
+        "plants",
+        "ancient",
+        "pharmacopeia"
+      ]
+    },
+    "WAL-CLM-LETS-000105": {
+      "subject": "herbal_medicine",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "stance",
+      "question": "Do real drugs come from herbs?",
+      "answer_short": "Yes - Wallach notes over 30% of orthodox pharmaceuticals derive from plants (digitalis from foxglove, the cancer drug vincristine from periwinkle), and praises herbs' relative safety and millennia of use.",
+      "topics": [
+        "pharmaceuticals",
+        "digitalis",
+        "safety"
+      ]
     }
   }
 }

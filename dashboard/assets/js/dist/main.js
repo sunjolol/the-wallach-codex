@@ -56224,7 +56224,7 @@ Two correctness fixes the batch forced (both gated + negative-tested):
 - catalog_ref in search_index_derive: condition entities pull display_name from eden/catalog/conditions.json (no duplication, mirrors canon_ref). validate() + the search_index_wellformed gate cover it; negative test grew to 10 cases (added catalog_ref-with-name, catalog_ref-not-condition).
 - tier1_link fires ONLY for non-search-only claims: a search-only modality claim (Color Therapy's color-map) can carry a conditions array for search matching, but must not show operational cross-links -- so the tier1/RELATED pills no longer flood a modality page.
 
-Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehujgp_1f7ol4", ts: "2026-07-10T00:27:18.025323-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 3: 4 general-nutrition CONCEPT entities (Essential Nutrients, Vitamins, Amino Acids, Macronutrients; 16 claims). First concept-type bulk batch; the 4 cross-link each other. Pure data migration, no code. Landing now 23 entities.", detail: "Shifted the bulk migration from single elements to broader CONCEPT entities -- the educational backbone of Wallach nutrition. Grouped 16 primer claims into four framework pages: Essential Nutrients, Vitamins, Amino Acids and Macronutrients. The nice part: these four reference each other, so the knowledge graph is starting to weave together into something a reader can wander through.\r\n\r\nWHAT: 16 sealed search-only primer claims -> 4 faceted concept entity pages (type=concept, non-canon display_name, nodes icon). Essential Nutrients: the 90 = 60 minerals + 16 vitamins + 12 amino acids + 3 essential fatty acids; the cannot-eat-your-way food-depletion stance (vitamins -37%, trace minerals -77%); the 4 hidden deficiency stages. Vitamins: definition + fat/water-soluble + flavanols; pregnancy birth-defect warning; the pill depletes B6. Amino Acids: Wallach 12 (vs mainstream 9) + what each makes. Macronutrients: carbs are NOT essential (stance); carbs/fats/proteins primers; 300 g/day protein is fine absent kidney/liver disease.\r\n\r\nGRAPH: also_about now cross-links the 4 to each other -- Essential Nutrients -> Vitamins + Amino Acids, Macronutrients -> Amino Acids -- all live pills, plus outward links (colloidal_minerals, selenium, omega-3, vitamin-b6, vitamin-b3, magnesium, birth_defects, kidney_disease, liver_disease).\r\n\r\nDATA ONLY: search-enrichment.json 89->105 enriched claims; search-entities.json 20->24 entities. No schema/view/gate changes -- the batch-1 template held for a new entity type.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (23-entity landing, 0 page errors), targeted headless PASS (concept nodes-icon with no atomic symbol; the intra-batch cross-link pills clickable). Luneth signed off.\r\n\r\nNEXT: remaining Immortality elements OR the Lets-Play-Doctor modality topic cluster (54 claims). ~113 non-epigenetics search-only claims remain; ~16 entities across 3 batches (near the end of the grounded first-few-dozen). Mining PAUSED at Immortality Mn-Manganese." }];
+Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }, { id: "lg_mrefuoom_7uhdfi", ts: "2026-07-09T23:31:25.558933-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 1: 6 element entities (Iron/Iodine/Germanium/Hydrogen/Potassium/Fluoride, 33 claims) + 3 template refinements: glossary tooltips in Search answers, scroll-to-top on nav, and a new see_also in-text cross-reference to another claim card.", detail: "Kicked off the real bulk migration of the Search knowledge base with a first, fully-polished batch of six element/mineral entities (Iron, Iodine, Germanium, Hydrogen, Potassium, Fluoride). Then folded in three fixes from Luneth's review that make EVERY entity better, not just these six: glossary tooltips now appear inside Search answers (a dotted-underline term like 'fluorine' explains itself on hover), clicking an entity always opens at the top, and a 'see the full fluoride stance'-style pointer is now a real clickable link that jumps down to that card and flashes it.\r\n\r\nWHAT: 33 sealed search-only claims -> 6 finished faceted entity pages. Iron/Iodine/Germanium/Hydrogen/Potassium are canon minerals (canon_ref, symbol from essentials-canon); Fluoride is the non-canon exemplar (display_name + symbol F) and the two-sided-controversy showcase (a stance facet + a big_question 'Is fluoridated water safe?').\r\n\r\nSOURCE: eden/corpus/search-enrichment.json 41->74 enriched claims (+the see_also on claim 118); eden/catalog/search-entities.json 8->14 entities.\r\n\r\nREFINEMENT 1 (glosses in Search): extracted glossify() into a shared views/glossify.ts (single source for Knowledge + Search); knowledge-corpus.ts imports it; search.ts glossifies answer+verbatim; .gloss CSS un-scoped from #drawer-knowledge-mount to global so the dotted underline renders in the Search drawer; added the fluorine term to glossary.json.\r\n\r\nREFINEMENT 2 (scroll-to-top): search.ts paintBody resets .sr-body.scrollTop=0 on every repaint (replacing innerHTML alone did not reset it when the new content was as tall).\r\n\r\nREFINEMENT 3 (see_also in-text cross-reference, shipped WITH its gate per R7): core/schemas/search.ts adds SeeAlsoSchema {phrase,target} + optional field; search_index_derive.py passes it through and validate() gates it (target is an enriched claim of the SAME subject; phrase must occur in the answer); search.ts renderAnswer splits the answer around the phrase into glossify(before)+link+glossify(after), and jumpToClaim opens the target + ancestor details, scrollIntoView, adds a flash class; drawer-search.css adds .sr-xref (solid-underline accent link, distinct from the dotted gloss) + a sr-claim-flash keyframe. tools/test_search_index_wellformed.py 10->13 negative cases (ghost-target, phantom-phrase, cross-subject all RED).\r\n\r\nVERIFIED: build OK (tsc clean + esbuild), invariants 53/53, render_probe_search + render_probe_knowledge PASS (0 page errors), negative test 13/13; targeted headless checks all PASS -- fluorine .gloss dotted underline in the Search drawer, scroll-reset before=400/after=0, and the see_also link rendering + click opening/flashing Big Questions claim 124. Luneth visually signed off the whole batch.\r\n\r\nNEXT: continue bulk migration at this quality (next cluster: Copper, Chromium, rare-earth trace minerals). Epigenetics deferred (charged content). Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehejh9_0bpa5h", ts: "2026-07-10T00:14:51.549811-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 2: 6 more element entities (Copper, Chromium, Gold, Aluminum, Krypton, Gallium; 15 claims). Pure data migration on the batch-1 template -- no code changes. Landing now 19 entities; cross-link pills self-upgraded.", detail: "Kept the Search bulk migration rolling at golden quality with a second batch of six element/mineral entities -- Copper, Chromium, Gold, Aluminum, Krypton, Gallium. This one was pure content authoring: the template from batch 1 held, so no code or gate changes were needed. Best part -- authoring these automatically turned three previously-grey cross-reference chips into live clickable links (the pill rule paying off with zero extra wiring).\r\n\r\nWHAT: 15 sealed search-only claims -> 6 faceted entity pages. Copper/Chromium/Gold/Aluminum/Gallium are canon (canon_ref, symbol from essentials-canon); Krypton is the non-canon noble gas (display_name + symbol Kr). Delight content: Krypton (Superman/kryptonite + Pauling predicting krypton-fluoride), Aluminum (the Alzheimer-myth as a big_question -- Wallach says no, a single faulty study), Gallium (the metal that melts in your hand + gallium-67 cancer medicine), Chromium (why trace chromium colors rubies and emeralds), Copper (copper-overload Kayser-Fleischer eye rings as a warning). Facet spreads: copper basics/physiology/warning, chromium mechanism/physiology/discovery, gold stance/uses, aluminum sources/big_question, krypton basics/discovery/history, gallium basics/uses.\r\n\r\nEMERGENT self-upgrade: the ONE pill rule (a slug pill is a clickable link iff it has an entity page) meant authoring these lit up cross-links that were plain chips before -- Gallium->Aluminum, Krypton->Fluoride, and Diabetes->Chromium are now clickable, no per-site wiring.\r\n\r\nDATA ONLY: eden/corpus/search-enrichment.json 74->89 enriched claims; eden/catalog/search-entities.json 14->20 entities. No schema/view/gate changes. Landing = 19 entities.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (19-entity landing, all types, 0 page errors), targeted headless check PASS (gallium/krypton/diabetes cross-link pills render as clickable links + Gallium->Aluminum click navigates). Luneth visually signed off.\r\n\r\nNEXT: continue bulk migration -- remaining Immortality element A-Z search-only claims (cobalt, silver, bromine, cadmium, cesium, bismuth, helium, hafnium, holmium, indium, iridium, lutetium, rare earths dysprosium/erbium/europium), then the Lets-Play-Doctor modality cluster (hydrotherapy, homeopathy, Ayurveda, reflexology -- topic exemplars) + Wallach philosophy claims. ~129 non-epigenetics search-only claims remain. Mining still PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrehujgp_1f7ol4", ts: "2026-07-10T00:27:18.025323-05:00", surface: "search", kind: "round-close", summary: "Search G-7 bulk migration batch 3: 4 general-nutrition CONCEPT entities (Essential Nutrients, Vitamins, Amino Acids, Macronutrients; 16 claims). First concept-type bulk batch; the 4 cross-link each other. Pure data migration, no code. Landing now 23 entities.", detail: "Shifted the bulk migration from single elements to broader CONCEPT entities -- the educational backbone of Wallach nutrition. Grouped 16 primer claims into four framework pages: Essential Nutrients, Vitamins, Amino Acids and Macronutrients. The nice part: these four reference each other, so the knowledge graph is starting to weave together into something a reader can wander through.\r\n\r\nWHAT: 16 sealed search-only primer claims -> 4 faceted concept entity pages (type=concept, non-canon display_name, nodes icon). Essential Nutrients: the 90 = 60 minerals + 16 vitamins + 12 amino acids + 3 essential fatty acids; the cannot-eat-your-way food-depletion stance (vitamins -37%, trace minerals -77%); the 4 hidden deficiency stages. Vitamins: definition + fat/water-soluble + flavanols; pregnancy birth-defect warning; the pill depletes B6. Amino Acids: Wallach 12 (vs mainstream 9) + what each makes. Macronutrients: carbs are NOT essential (stance); carbs/fats/proteins primers; 300 g/day protein is fine absent kidney/liver disease.\r\n\r\nGRAPH: also_about now cross-links the 4 to each other -- Essential Nutrients -> Vitamins + Amino Acids, Macronutrients -> Amino Acids -- all live pills, plus outward links (colloidal_minerals, selenium, omega-3, vitamin-b6, vitamin-b3, magnesium, birth_defects, kidney_disease, liver_disease).\r\n\r\nDATA ONLY: search-enrichment.json 89->105 enriched claims; search-entities.json 20->24 entities. No schema/view/gate changes -- the batch-1 template held for a new entity type.\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (23-entity landing, 0 page errors), targeted headless PASS (concept nodes-icon with no atomic symbol; the intra-batch cross-link pills clickable). Luneth signed off.\r\n\r\nNEXT: remaining Immortality elements OR the Lets-Play-Doctor modality topic cluster (54 claims). ~113 non-epigenetics search-only claims remain; ~16 entities across 3 batches (near the end of the grounded first-few-dozen). Mining PAUSED at Immortality Mn-Manganese." }, { id: "lg_mrej3gjz_jrfli1", ts: "2026-07-10T01:02:13.775769-05:00", surface: "search", kind: "round-close", summary: "Search G-7 batch 4: 10 healing-modality TOPIC entities, 24 claims -- Light Therapy, Chiropractic, Aromatherapy, Ayurveda, Homeopathy, Hydrotherapy, Negative Ion, Urine, Macrobiotics, Herbal Medicine. Modality cross-link web weaving; Color<->Light reconnected. 33 entities total.", detail: "Went bigger (Luneth OK-d accelerating): migrated 24 Lets-Play-Doctor modality claims into 10 topic pages -- the distinctive delight content, same flavor as Color Therapy. The knowledge graph is genuinely weaving now: these modalities link to each other, so a reader can wander from Herbal Medicine to Aromatherapy to Ayurveda. And a real-world proof landed mid-session -- the Negative Ion Therapy page taught Luneth something new enough that he went and bought an ion generator.\r\n\r\nWHAT: 24 sealed search-only modality claims -> 10 topic entity pages (type=topic). Light Therapy (UV+infrared; the UV-burns-eyes warning; Angstrom spectrum), Chiropractic (subluxations; Palmer 1895 + 1987 AMA antitrust), Aromatherapy, Ayurveda (Dhatus model; Greeks-learned-from-India), Homeopathy (like-cures-like; Hahnemann + Avogadro dilution puzzle), Hydrotherapy, Negative Ion Therapy, Urine Therapy (3 claims), Macrobiotics (3 claims; stance = it works by cutting gluten), Herbal Medicine (30% of drugs come from plants). Thin claims grouped sensibly (Light Therapy folds UV+infrared).\r\n\r\nGRAPH: modality also_about/related now cross-link each other -- Herbal Medicine <-> Aromatherapy/Ayurveda/Homeopathy, and Color Therapy <-> Light Therapy reconnected (color_therapy carried a dormant related:[light_therapy] that lit up the instant the entity was authored -- the ONE pill rule self-upgrading).\r\n\r\nVALIDATION: Luneth used the live app, hit Negative Ion Therapy (never heard of it), researched it, and bought a generator. Captured as memory search-delight-validated -- proof the search-first, capture-broadly, off-path-delight direction is paying off in real user behavior.\r\n\r\nDATA ONLY: search-enrichment.json 105->129 enriched claims; search-entities.json 24->34 entities. No code changes -- the batch-1 template held for a 4th entity flavor. 26 entities migrated across 4 batches (mineral, element, concept, topic).\r\n\r\nVERIFIED: build OK, invariants 53/53, render_probe_search PASS (33-entity landing, 0 page errors), targeted headless PASS (modality cross-link web clickable; Color<->Light reciprocal + navigation). Luneth signed off mid-use.\r\n\r\nNEXT: ~89 non-epigenetics search-only claims remain -- thin modality singles (osteopathy/reflexology/Rolfing/naturopathy/megavitamin/cell-salts/Bach-flower/faith-healing/Christian-Science), Wallach self-reliance/philosophy claims, remaining Immortality elements. Mining PAUSED at Immortality Mn-Manganese." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57540,6 +57540,33 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 2
       },
+      aromatherapy: {
+        display_name: "Aromatherapy",
+        type: "topic",
+        synonyms: [
+          "essential oils",
+          "aromatic oils"
+        ],
+        related: [
+          "herbal_medicine",
+          "ayurveda"
+        ],
+        claim_count: 2
+      },
+      ayurveda: {
+        display_name: "Ayurveda",
+        type: "topic",
+        synonyms: [
+          "ayurvedic medicine",
+          "ayurvedic",
+          "dosha"
+        ],
+        related: [
+          "herbal_medicine",
+          "homeopathy"
+        ],
+        claim_count: 2
+      },
       calcium: {
         display_name: "Calcium",
         type: "nutrient",
@@ -57554,6 +57581,19 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 8,
         symbol: "Ca"
+      },
+      chiropractic: {
+        display_name: "Chiropractic",
+        type: "topic",
+        synonyms: [
+          "chiropractor",
+          "spinal manipulation",
+          "subluxation"
+        ],
+        related: [
+          "hydrotherapy"
+        ],
+        claim_count: 2
       },
       cholesterol: {
         display_name: "Cholesterol",
@@ -57718,6 +57758,36 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         claim_count: 2,
         symbol: "Au"
       },
+      herbal_medicine: {
+        display_name: "Herbal Medicine",
+        type: "topic",
+        synonyms: [
+          "herbalism",
+          "herbal remedies",
+          "botanical medicine",
+          "phytotherapy"
+        ],
+        related: [
+          "aromatherapy",
+          "ayurveda",
+          "homeopathy"
+        ],
+        claim_count: 2
+      },
+      homeopathy: {
+        display_name: "Homeopathy",
+        type: "topic",
+        synonyms: [
+          "homeopathic",
+          "like cures like",
+          "hahnemann"
+        ],
+        related: [
+          "herbal_medicine",
+          "naturopathy"
+        ],
+        claim_count: 2
+      },
       hydrogen: {
         display_name: "Hydrogen",
         type: "nutrient",
@@ -57731,6 +57801,19 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 5,
         symbol: "H"
+      },
+      hydrotherapy: {
+        display_name: "Hydrotherapy",
+        type: "topic",
+        synonyms: [
+          "water therapy",
+          "medicinal baths",
+          "balneotherapy"
+        ],
+        related: [
+          "chiropractic"
+        ],
+        claim_count: 2
       },
       iodine: {
         display_name: "Iodine",
@@ -57775,6 +57858,35 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         claim_count: 3,
         symbol: "Kr"
       },
+      light_therapy: {
+        display_name: "Light Therapy",
+        type: "topic",
+        synonyms: [
+          "uv therapy",
+          "ultraviolet therapy",
+          "infrared therapy",
+          "phototherapy"
+        ],
+        related: [
+          "color_therapy",
+          "vitamin-d"
+        ],
+        claim_count: 4
+      },
+      macrobiotics: {
+        display_name: "Macrobiotics",
+        type: "topic",
+        synonyms: [
+          "macrobiotic diet",
+          "brown rice diet",
+          "ohsawa"
+        ],
+        related: [
+          "celiac_disease",
+          "diabetes"
+        ],
+        claim_count: 3
+      },
       macronutrients: {
         display_name: "Macronutrients",
         type: "concept",
@@ -57808,6 +57920,19 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         claim_count: 13,
         symbol: "Hg"
       },
+      negative_ion_therapy: {
+        display_name: "Negative Ion Therapy",
+        type: "topic",
+        synonyms: [
+          "negative ions",
+          "air ionization",
+          "ionizer"
+        ],
+        related: [
+          "asthma"
+        ],
+        claim_count: 2
+      },
       potassium: {
         display_name: "Potassium",
         type: "nutrient",
@@ -57822,6 +57947,20 @@ Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 
         ],
         claim_count: 5,
         symbol: "K"
+      },
+      urine_therapy: {
+        display_name: "Urine Therapy",
+        type: "topic",
+        synonyms: [
+          "urotherapy",
+          "autoimmune urine therapy",
+          "uropathy"
+        ],
+        related: [
+          "allergies",
+          "cancer"
+        ],
+        claim_count: 3
       },
       vitamins: {
         display_name: "Vitamins",
@@ -59795,6 +59934,208 @@ understandable why they don't test for it`,
         }
       },
       {
+        id: "WAL-CLM-LETS-000083",
+        subject: "macrobiotics",
+        also_about: [
+          "celiac_disease"
+        ],
+        facet: "stance",
+        question: "Why does the macrobiotic (brown-rice) diet work?",
+        answer_short: "Wallach's take: its successes come mostly from accidentally cutting gluten - people with hidden celiac disease finally absorb minerals, vitamins and fats. The value is nutritional, not the yin/yang theory.",
+        answer: `Wallach explains that the reported successes of the macrobiotic ("brown rice") diet are largely due to inadvertent gluten elimination: people who unknowingly have gluten sensitivity (celiac disease) benefit when they remove wheat from the diet, because their gut then begins to absorb the trace minerals, vitamins, and essential fatty acids it had been failing to take up. In his framework the diet's value is nutritional (resolving malabsorption), not the yin/yang theory behind it.`,
+        verbatim: "An explanation for increased health from the macrobiotic program\nis that individuals who are not aware that they\nhave gluten sensitivity (celiac disease) get\nbenefit from eliminating wheat from their diet\nand begin to absorb trace minerals, vitamins\nand essential fatty acids",
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "gluten",
+          "celiac",
+          "brown-rice"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000084",
+        subject: "light_therapy",
+        also_about: [
+          "vitamin-d",
+          "eczema"
+        ],
+        facet: "uses",
+        question: "What does ultraviolet (UV) light therapy treat?",
+        answer_short: "Wallach says UV light boosts vitamin D and the immune system, and treats sore throats, vaginitis, ringworm, athlete's foot and eczema.",
+        answer: "Wallach describes ultraviolet (UV) light therapy as stimulating vitamin D production and the immune system, and as a treatment for sore throats, vaginitis (vaginal inflammation), ringworm, athlete's foot (tinea pedis), and eczema.",
+        verbatim: "Light therapy uses ultra violet light to\nstimulate vitamin D production, stimulate the\nimmune system, treat sore throats, treat\nvaginitis, treat ring-worm, athletes foot and\neczema.",
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "ultraviolet",
+          "vitamin-d",
+          "skin"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000085",
+        subject: "light_therapy",
+        also_about: [
+          "arthritis"
+        ],
+        facet: "protocol",
+        question: "How is infrared light therapy done?",
+        answer_short: "A local immune boost - shine infrared (a heat lamp) on a trigger point through a 1 cm hole until it reddens, drawing in white cells to help chronic wounds, bedsores and arthritis.",
+        answer: "Wallach explains infrared light as a LOCAL immune stimulant: cover the area with cloth, cut a 1 cm hole over an acupuncture / trigger point, and shine infrared on it (a standard heat lamp works) until the point reddens. This draws an influx of white blood cells and antibodies, so any chronic process in the area benefits from the local immune surge \u2014 giving excellent results in chronic wounds, bedsores, and arthritis.",
+        verbatim: 'Infra red light is used as an immune\nstimulant - this is accomplished by covering\nthe area of interest with cloth and making a\n1cm hole over an acupuncture or trigger\n"point." Infra red light is then directed to the\nhole in the cloth and allowed to redden the\n"point." This produces an "acute" stimulation\nto the "point" which causes an influx of WBCs\nand antibodies - any chronic process in the\narea will benefit from this local immune surge!!!',
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "infrared",
+          "trigger-point",
+          "immune"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000086",
+        subject: "light_therapy",
+        also_about: [
+          "vitamin-d"
+        ],
+        facet: "warning",
+        question: "Is UV light therapy safe for the eyes?",
+        answer_short: "Therapeutic UV is 'cool' (no heat) and helps skin diseases and arthritis while killing germs - but it can burn the eyes, so wear goggles or don't look at the lamp.",
+        answer: 'Wallach notes ultraviolet (UV) light is germicidal, stimulates vitamin D production, and has healing effects for a variety of skin diseases and arthritis; therapeutic UV is "cool" and produces no local heat. CAUTION: UV can burn the eyes \u2014 wear protective goggles or avoid looking directly at the therapy lamp tube.',
+        verbatim: 'Ultra violet light is germicidal, stimulates\nthe production of vitamin D and has "healing"\neffects for a variety of skin diseases and arthritis. The nice thing about the ultra violet light\nused for therapy is that it is "cool" and does not\nproduce local heat. CAUTION IS REQUIRED\nTO PREVENT BURNING OF YOUR EYES -\nwear protective goggles or avoid looking directly at the therapy lamp tube',
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "ultraviolet",
+          "eye-safety",
+          "germicidal"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000087",
+        subject: "light_therapy",
+        also_about: [
+          "vitamin-d"
+        ],
+        facet: "mechanism",
+        question: "How does UV therapy actually work?",
+        answer_short: "Its rays span 500-3,100 Angstroms, peaking at 2,537 - the wavelength that gives UV its germicidal, skin-reddening and vitamin-D-making power; visible light is only ~5% of the output.",
+        answer: "Wallach details the ultraviolet (UV) therapy spectrum: visible light is only about five percent of the total output of UV therapy lamps; the UV ray spectrum ranges between 500 and 3,100 Angstrom units, and 2,537 Angstrom units is the peak intensity \u2014 the level that produces the germicidal, erythemic (skin-reddening), and vitamin-D-producing effects.",
+        verbatim: 'Visible light is only five percent of the\ntotal spectrum produced by ultra violet therapy\nlamps. The ultra violet ray spectrum ranges\nbetween 500 and 3100 Angstrom units - 2537\nAngstrom units is the "peak" intensity and is\nthe level that produces the germicidal,\nerythemic and vitamin D producing effects.',
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "uv-spectrum",
+          "angstrom",
+          "vitamin-d"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000088",
+        subject: "chiropractic",
+        also_about: [],
+        facet: "basics",
+        question: "What is chiropractic?",
+        answer_short: "A drug-free, surgery-free physical medicine holding that many ills come from 'subluxations' (misaligned vertebrae) pressing on spinal nerves - the West's most accepted alternative therapy.",
+        answer: 'Wallach describes chiropractic as a physical, drug-free and surgery-free form of medicine. Its philosophy holds that many diseases \u2014 especially physical discomfort and many visceral (internal-organ) malfunctions \u2014 are caused by "subluxations" (partial misalignments) of the vertebral joints pressing on spinal nerves. He notes chiropractic is the most accepted alternative therapy in the Western world, licensed in all 50 U.S. states with comprehensive insurance and Medicare coverage.',
+        verbatim: 'Chiropractic is a physical form of medicine that heals without the use of drugs or\nsurgery. Chiropractic philosophy believes\nthat many diseases, especially physical discomfort and many visceral malfunctions are\ncaused by "subluxations" of vertebral joints\npressing on spinal nerves',
+        page: 58,
+        book_id: "lets-play-doctor",
+        topics: [
+          "subluxation",
+          "spine",
+          "drug-free"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000089",
+        subject: "chiropractic",
+        also_about: [],
+        facet: "history",
+        question: "Where does chiropractic come from?",
+        answer_short: "Spinal manipulation is ancient (Egypt, China, Babylon); it reached the West in 1895 when D.D. Palmer reportedly cured a janitor's deafness, and chiropractors won a 1987 antitrust case against the AMA.",
+        answer: `Wallach lists chiropractic's four treatment goals: (1) restore normal posture; (2) restore optimal function to the spinal and pelvic joints; (3) correct visceral (internal-organ) malfunction by relieving pressure on spinal nerves; and (4) relieve pain by "reducing" subluxations. Spinal manipulation is ancient (Egyptians, Hindus, Chinese, Babylonians, Assyrians) and reached the West in 1895 when Daniel D. Palmer reportedly cured his janitor's deafness with neck manipulation; in 1987 chiropractors won a landmark U.S. antitrust case against the American Medical Association (AMA).`,
+        verbatim: 'The treatment goal of\nchiropractic is to:\n1) restore normal posture\n2) restore optimal function to\nspinal and pelvic joints\n3) correct visceral malfunction\nby relieving pressure on spinal\nnerves\n4) relieve pain by "reducing"\nsubluxations',
+        page: 58,
+        book_id: "lets-play-doctor",
+        topics: [
+          "palmer",
+          "history",
+          "ama"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000093",
+        subject: "aromatherapy",
+        also_about: [
+          "acne"
+        ],
+        facet: "basics",
+        question: "What is aromatherapy?",
+        answer_short: "Massage with plant essential oils (from roots, flowers, leaves, bark, resin); Wallach says they act as pesticides, fungicides and hormone-like agents and help scars, acne and stretch marks.",
+        answer: "Wallach describes aromatherapy as a combination of body and face massage using essential (aromatic) oils extracted from plants, practiced as a form of herbal medicine and/or beauty therapy. The plant 'essence' is drawn from different parts of the plant: roots (calamus), flowers (lavender), leaves (rosemary), bark (sandalwood), and resin (myrrh). Wallach states these oils function as pesticides, fungicides, bactericides, and hormone-like substances, and are excellent for treating scars, acne, and stretch marks.",
+        verbatim: "AROMATHERAPY is a combination of\nbody and face massages using essential aromatic oils extracted from plants. It is practiced\nas one form of herbal medicine and/or beauty\ntherapy",
+        page: 53,
+        book_id: "lets-play-doctor",
+        topics: [
+          "essential-oils",
+          "massage",
+          "skin"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000094",
+        subject: "aromatherapy",
+        also_about: [
+          "hypertension"
+        ],
+        facet: "uses",
+        question: "What are specific essential oils used for?",
+        answer_short: "Wallach's list: Mexican yam for birth control, sarsaparilla for testosterone, peppermint for intestinal spasm, calamus to lower blood pressure, lemon as an expectorant, and hops/fennel for estrogens.",
+        answer: "Wallach lists specific essential oils used in aromatherapy for particular effects: Mexican yam for birth control; sarsaparilla for testosterone; peppermint and cardamon (cardamom) as an intestinal antispasmodic; calamus to reduce blood pressure; lemon oil as an expectorant; and hops, anise seed, and fennel as sources of estrogens.",
+        verbatim: "BIRTH CONTROL           Mexican yam\nTESTOSTERONE            Sarsaparilla\nINTESTINAL              peppermint,\nANTISPASMODIC           cardamon\nREDUCE BLOOD            calamus\nPRESSURE\nEXPECTORANT             lemon oil\nESTROGENS               hops, anise seed,\nfennel",
+        page: 53,
+        book_id: "lets-play-doctor",
+        topics: [
+          "essential-oils",
+          "calamus",
+          "hormones"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000095",
+        subject: "ayurveda",
+        also_about: [],
+        facet: "history",
+        question: "What is Ayurveda, and how old is it?",
+        answer_short: "Possibly the most ancient medical art - 'ayur' (life) + 'veda' (science), recorded ~1200 BC. 80-90% of Indians use it, and Wallach says the Greeks (even Pythagoras) learned medicine from the East Indians.",
+        answer: "Wallach describes Ayurvedic medicine as possibly the most ancient of all medical arts. The word translates to 'life sciences' (ayur = life, veda = science) and is recorded in the Atharva Veda around 1200 BC; the 'Sambuta' encyclopedia of medicines was written about 500 BC. Eighty to ninety percent of people in India are treated with Ayurvedic medicine. Wallach notes that although Western medicine is generally thought to come from the Greeks, the Greeks learned it from the East Indians, and that Pythagoras, one of Hippocrates' early teachers, obtained his whole system from India.",
+        verbatim: 'AYURVEDIC MEDICINE is thought to\nbe the most ancient of all medical arts.\nAyurvedic medicine literally translates to "life\nsciences." Ayur = life, veda = science is recorded in the Arthavara veda 1200 BC',
+        page: 53,
+        book_id: "lets-play-doctor",
+        topics: [
+          "ancient",
+          "etymology",
+          "india"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000096",
+        subject: "ayurveda",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does Ayurveda explain health and disease?",
+        answer_short: "The body is seven tissues (Dhatus) kept in balance by food, so 'wrong food' causes disease; it works with the energies Pitta, Kapha and Vaya and five elements, treating imbalances rather than diagnoses.",
+        answer: "Wallach explains the Ayurvedic model of health: the human body is made up of seven tissues (Dhatus), and a person is healthy when the Dhatus are in balance. Food, after digestion, feeds the Dhatus, so any imbalance in food creates disease \u2014 Ayurvedic medicine places great emphasis on 'wrong food' as a cause of disease, while also recognizing that physical activity, sleep, sexual habits, climate, emotional status, surroundings, age, and gender influence disease. At the level of the individual mind it describes three activities (Rojas, Tamas, Satva) and the energies Pitta (heat), Kapha (phlegm/cold), and Vaya (air); the human being and the universe are composed of five elements or Bhutas (ether, air, fire, water, earth). Ayurveda treats 'imbalances' rather than arriving at a Western-style diagnosis.",
+        verbatim: 'Ayurveda expects the patient to take\npart in his own cure. According to Ayurveda,\nthe human body is made up of seven tissues or\nDhatus; if the Dhatus are in balance, the individual is healthy. Food after digestion feeds the\nDhatus; any imbalance in food creates disease\nin the Dhatus. Ayurvedic medicine puts great\nemphasis on "wrong food" as a cause of disease',
+        page: 54,
+        book_id: "lets-play-doctor",
+        topics: [
+          "dhatus",
+          "dosha",
+          "five-elements"
+        ]
+      },
+      {
         id: "WAL-CLM-LETS-000099",
         subject: "color_therapy",
         also_about: [],
@@ -59844,6 +60185,248 @@ understandable why they don't test for it`,
           "color-therapy",
           "techniques",
           "kilner-screen"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000104",
+        subject: "herbal_medicine",
+        also_about: [],
+        facet: "basics",
+        question: "What is herbal medicine?",
+        answer_short: "An ancient system using plants to prevent and cure disease - the root of Chinese, Ayurvedic, American Indian and naturopathic medicine, traced back to Chinese pharmacopeias around 3000 BC.",
+        answer: "Wallach describes herbal medicine as an ancient system of medicine that uses plants to prevent and cure disease. He notes that Traditional Chinese medicine, Ayurvedic medicine, American Indian medicine, American folk medicine, Eclectic medicine, and naturopathic medicine all have strong roots in herbal medicine, and traces its history back to the Chinese (large pharmacopeias around 3000 BC), the Persians (plants used medicinally some 6,000 years ago), the Assyrian king Asurbipal (a list of 250 plant drugs around 2500 BC), and Nicholas Culpeper's 'Complete Herbal' (1653).",
+        verbatim: "Herbal medicine is an ancient system\nof medicine that uses plants to prevent and\ncure disease. Traditional Chinese medicine,\nayurvedic medicine, American Indian medicine, American folk medicine, Eclectic medicine and naturopathic medicine all have strong\nroots in herbal medicine",
+        page: 59,
+        book_id: "lets-play-doctor",
+        topics: [
+          "plants",
+          "ancient",
+          "pharmacopeia"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000105",
+        subject: "herbal_medicine",
+        also_about: [
+          "cancer"
+        ],
+        facet: "stance",
+        question: "Do real drugs come from herbs?",
+        answer_short: "Yes - Wallach notes over 30% of orthodox pharmaceuticals derive from plants (digitalis from foxglove, the cancer drug vincristine from periwinkle), and praises herbs' relative safety and millennia of use.",
+        answer: "Wallach notes that even today more than thirty percent of 'orthodox' pharmaceuticals are derived from herbal compounds (for example digitalis and foxglove, and vincristine, a cancer therapy from the Madagascar periwinkle). He cites the seventeenth-century 'Doctrine of Signatures' (the theory that a plant or plant part resembling a human organ was a 'God-given clue' to its medicinal value) and says herbal medicines have the advantages of relative safety and thousands of years of experience.",
+        verbatim: `Even today, more than
+thirty percent of today's "orthodox" pharmaceuticals are derived from herbal compounds
+(i.e., digitalis, foxglove, and vincristine - a CA
+therapy from the Madagascar periwinkle`,
+        page: 59,
+        book_id: "lets-play-doctor",
+        topics: [
+          "pharmaceuticals",
+          "digitalis",
+          "safety"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000106",
+        subject: "hydrotherapy",
+        also_about: [],
+        facet: "basics",
+        question: "What is hydrotherapy?",
+        answer_short: "Healing with water - practiced since Roman times across all medicine, from sitz baths for hemorrhoids to whirlpools for injuries and mineral baths for arthritis; insurance often covers it if prescribed.",
+        answer: "Wallach describes hydrotherapy as a healing art that began in Roman times and is widely used today by all forms of healing arts, including 'orthodox' medicine. Medicinal baths take many forms \u2014 from sitz baths for hemorrhoids and whirlpool for muscle injuries to mineral baths for arthritis \u2014 and insurance companies will often pay for some form of hydrotherapy if it is prescribed by a licensed physician of any healing art.",
+        verbatim: 'Hydrotherapy began in Roman times\nand is widely used today by all forms of\nhealing arts including "orthodox" medicine.\nThe medicinal baths take many forms from\n"sitz" baths for hemorrhoids, whirlpool for\nmuscle injuries to mineral baths for arthritis.\nMany times insurance companies will pay for\nsome form of hydrotherapy if it is prescribed\nby a licensed physician of any healing art.',
+        page: 60,
+        book_id: "lets-play-doctor",
+        topics: [
+          "water",
+          "baths",
+          "roman"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000107",
+        subject: "hydrotherapy",
+        also_about: [
+          "arthritis",
+          "hemorrhoids"
+        ],
+        facet: "uses",
+        question: "What are the different kinds of hydrotherapy?",
+        answer_short: "Cold baths cut swelling; hot baths ease soreness; mineral baths help arthritis; steam baths detox heavy metals; sitz baths for hemorrhoids; epsom for edema; water fasts and colonics for detox.",
+        answer: "Wallach lists the forms hydrotherapy takes and what each is used for: cold bath reduces swelling; hot bath relieves soreness and improves circulation for chronic diseases and injuries; mineral bath for chronic disease such as arthritis; steam bath to detoxify heavy metals; sitz bath for hemorrhoids; epsom salt bath produces sweating, relieves edema and soreness, and cleans infected wounds; water fast for detoxification of food allergies (and as a prelude to diagnosing them); colonic irrigation for constipation and to detoxify patients with any chronic disease or liver ailment (infectious hepatitis being an exception); and 'knipping' \u2014 walking or jogging in knee-deep lake or ocean water to stimulate circulation and the immune system.",
+        verbatim: "1) cold bath - reduces swelling\n2) hot bath - relieves soreness\nand improves circulation for\nchronic diseases and injuries\n3) mineral bath - for chronic\ndisease - i.e., arthritis\n4) steam bath - detox heavy metals\n5) sitz bath - hemorrhoids\n6) epsom salt bath - produces",
+        page: 60,
+        book_id: "lets-play-doctor",
+        topics: [
+          "baths",
+          "detox",
+          "colonic"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000108",
+        subject: "negative_ion_therapy",
+        also_about: [],
+        facet: "basics",
+        question: "What is negative ion therapy?",
+        answer_short: "Using negatively charged air particles to prevent and treat disease - abundant in forests and at the beach (300-1,000 per cubic meter) but low in AC'd rooms; too many POSITIVE ions bring anxiety and depression.",
+        answer: "Wallach describes negative ion therapy as the use of negatively charged air particles to prevent and cure disease. Sources include 'negative ion generators' for home and office and spending time in forests, mountains, and at the seashore for 'free' supplies. Pure outside air holds about 300-1,000 negatively charged ions per cubic meter (higher at the beach), while air-conditioned office or classroom air typically has only 150-500. He notes that excessive levels of positive ions in the air produce anxiety, depression, and restlessness.",
+        verbatim: 'Negative ion therapy is the use of\nnegatively charged air particles to prevent and\ncure disease. Sources of negative ions include\n"negative ion generators" for home and office\nuse and frequenting forests, mountains and\nseashores for "free" supplies.',
+        page: 67,
+        book_id: "lets-play-doctor",
+        topics: [
+          "negative-ions",
+          "air",
+          "mood"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000109",
+        subject: "negative_ion_therapy",
+        also_about: [
+          "asthma",
+          "allergies"
+        ],
+        facet: "uses",
+        question: "What does negative ion therapy do?",
+        answer_short: "Six effects - it lowers heart rate/BP, deepens breathing, speeds respiratory cilia, boosts glands and steadies brain rhythm - and Wallach says it especially helps asthma, allergies and cystic fibrosis.",
+        answer: "Wallach lists six effects of negative ions: they (1) reduce heart rate and blood pressure, (2) increase respiratory volume, (3) increase ciliary beat in the respiratory epithelium, (4) increase the efficiency of the endocrine glands, (5) normalize brain rhythm, and (6) reverse the effects of positive ions. He says negative ion generators are particularly good for patients with inhalant allergies, asthma, respiratory disease, and cystic fibrosis, with two to four treatments per day of 45 minutes each (or overnight use) being typical.",
+        verbatim: "Negative ions 1) reduce heart rate and\nBP, 2) increase respiratory volume, 3) increase\nciliary beat in respiratory epithelium, 4) increase efficiency of endocrine glands, 5) normalize brain rhythm, 6) reverse effects of\npositive ions",
+        page: 67,
+        book_id: "lets-play-doctor",
+        topics: [
+          "respiration",
+          "asthma",
+          "brain"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000110",
+        subject: "urine_therapy",
+        also_about: [],
+        facet: "basics",
+        question: "What is urine therapy?",
+        answer_short: "Injecting a patient's own urine back into them to boost immunity - the same idea as an allergist's shots; Wallach says MD allergists used it for 50 years until prepared allergens became profitable.",
+        answer: "Wallach describes urine therapy as a method of improving a patient's immune system by injecting the patient's own urine back into him. He says the basis is the same principle the 'modern' allergist uses when injecting allergens to 'treat' allergies, that the technique is simple and can be done at home or via a naturopathic physician (N.D.), chiropractor (D.C.), or osteopath (D.O.), and that medical-doctor allergists used the technique for 50 years until pharmaceutical companies found they could make money with prepared allergens.",
+        verbatim: 'Urine therapy is a method of improving the patients immune system by injecting\nhis own urine back into him. The basis of the\ntherapy is exactly the same as the "modern"\nallergist uses when he injects allergens into the\npatient to "treat" allergies',
+        page: 68,
+        book_id: "lets-play-doctor",
+        topics: [
+          "immune",
+          "allergy-shots",
+          "self-treatment"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000111",
+        subject: "urine_therapy",
+        also_about: [
+          "allergies",
+          "cancer"
+        ],
+        facet: "protocol",
+        question: "How is urine therapy performed?",
+        answer_short: "Urine is centrifuged and filtered to remove cells and bacteria, then 5-10 mL is injected under the skin (procaine stops any sting); Wallach cites use for allergies, asthma, migraine and arthritis.",
+        answer: "Wallach explains how urine therapy is performed: the patient's urine is centrifuged and then filtered through a 'millipore' filter to remove any cells and bacteria, after which five to ten milliliters are injected subcutaneously (any burning can be eliminated by adding procaine to the filtered urine). He states the urine injection technique is very useful for allergies, asthma, migraine headache, and arthritis, and that a nonspecific increase in immune capacity has been recorded in cancer patients given urine therapy.",
+        verbatim: "The urine injection technique is very\nuseful for allergies, asthma, migraine headache and arthritis. A nonspecific increase in\nimmune capacity has been recorded in cancer\npatients given urine therapy",
+        page: 68,
+        book_id: "lets-play-doctor",
+        topics: [
+          "injection",
+          "filtration",
+          "allergies"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000112",
+        subject: "homeopathy",
+        also_about: [],
+        facet: "basics",
+        question: "What is homeopathy?",
+        answer_short: "A system on two principles: 'like cures like' (a substance that causes symptoms in the healthy can cure a disease with those symptoms) and 'minimum dose' - using extremely diluted preparations.",
+        answer: "Wallach describes homeopathy as a widely practiced medical art with two basic principles: (1) 'let like be cured by like' and (2) the principle of 'minimum dose.' Agents (herbs, chemicals, etc.) that produce certain symptoms in normal healthy people ('proving') are then used to cure diseases that produce those same 'proved' symptoms. (Scope note: homeopathy is a homeopathy-class system using highly diluted preparations; included here as Wallach's descriptive account of the modality, not as a dosing protocol.)",
+        verbatim: 'Homeopathy is a widely practiced\nmedical art that has two basic principles:\n1) "let like be cured by like"\n2) principle of "minimum dose"\nAgents (herbs, chemicals, etc.) produce certain symptoms in normal healthy humans\n("proved") - these agents are then used to cure\ndiseases that produce the "proved" symptoms',
+        page: 60,
+        book_id: "lets-play-doctor",
+        topics: [
+          "like-cures-like",
+          "minimum-dose",
+          "dilution"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000113",
+        subject: "homeopathy",
+        also_about: [],
+        facet: "history",
+        question: "Who founded homeopathy, and does the dilution really work?",
+        answer_short: "Samuel Hahnemann, who found Cinchona bark gave healthy people malaria-like symptoms; oddly, more dilute often meant a stronger effect - though past about 12C not one molecule of the original remains.",
+        answer: "Wallach recounts that Dr. Samuel Hahnemann, a physician from Leipzig, Germany, 'proved' that Cinchona bark (a malaria cure of the day) gave malaria-like symptoms to healthy people, and went on to 'prove' hundreds of medications and substances. Hahnemann found that very often the more dilute the preparation, the more dramatic the clinical effect \u2014 a long-controversial observation that Wallach notes a 1988 article in Nature magazine supported. Homeopathic dilutions are expressed as 'potencies' on decimal/centesimal scales (e.g. 1X/2X, 1C/2C, with European 1D/2D designations); at high dilutions (about 12C or 24X) not a single molecule of the original substance is likely to remain (Avogadro's Law).",
+        verbatim: 'Dr. Samuel Hahnemann, a physician\nfrom Leipzig, Germany, "proved" that Cinchona bark (a malaria cure of the day) gave\nmalaria symptoms to healthy people.\nHahnemann went on to "prove" hundreds of\nmedications and substances',
+        page: 60,
+        book_id: "lets-play-doctor",
+        topics: [
+          "hahnemann",
+          "dilution",
+          "avogadro"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000115",
+        subject: "macrobiotics",
+        also_about: [
+          "tuberculosis"
+        ],
+        facet: "history",
+        question: "Where did macrobiotics come from?",
+        answer_short: "George Ohsawa created it in 1946 Japan, using it to heal his own tuberculosis, then opened a healing center and toured the world teaching a philosophy of health through eating.",
+        answer: "Wallach recounts that macrobiotics originated in Japan in 1946, created by George Ohsawa, who developed the healing art to heal himself of tuberculosis (which he did) before opening a macrobiotic healing center in Hiyoshi, Japan, teaching from 1946 to 1952 and then taking a world lecture tour (Africa, India, Europe, the United States). Ohsawa taught a philosophy of life and eating habits meant to unify people through health practices.",
+        verbatim: "Macrobiotics originated in Japan in\n1946. George Ohsawa created this healing art\nto heal himself of tuberculosis (which he\ndid!!); after curing himself, he opened up a\nmacrobiotic healing center in Hiyoshi, Japan",
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "ohsawa",
+          "japan",
+          "history"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000116",
+        subject: "macrobiotics",
+        also_about: [
+          "diabetes",
+          "celiac_disease"
+        ],
+        facet: "basics",
+        question: "What is the macrobiotic diet?",
+        answer_short: "An eating system built on balancing 'yin' (fruit, drinks, sweet) and 'yang' (meat, grains, dense) foods; reported to help food allergies, diabetes and - when wheat is dropped - grain sensitivity.",
+        answer: "Wallach explains that macrobiotics is based on wholesome behavior and eating habits, with macrobiotic philosophy maintaining that all disease and illness is caused by an imbalance of 'yin' (feminine; drinks, fruit, sweet/sour/hot flavors, green/blue/purple) and 'yang' (masculine; meat, cereals, some vegetables, hard/dense, orange/yellow). The macrobiotic diet (popularly the 'brown rice' diet) has many reported successes with food allergies, emotional problems, chronic diseases such as diabetes, and increased health benefit for individuals with grain sensitivity (celiac disease) when wheat is eliminated and grains rebuilt to trace minerals, vitamins, and essential fatty acids.",
+        verbatim: 'Macrobiotics is based on wholesome\nbehavior and eating habits. Macrobiotic philosophy maintains that all disease and illness\nis caused by an imbalance of "yin" and "yang',
+        page: 66,
+        book_id: "lets-play-doctor",
+        topics: [
+          "yin-yang",
+          "diet",
+          "balance"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000194",
+        subject: "urine_therapy",
+        also_about: [
+          "cancer"
+        ],
+        facet: "mechanism",
+        question: "How do autoimmune urine and blood therapies work?",
+        answer_short: "They rev the body's defenses against foreign substances - including cancer proteins - much the way allergy shots build tolerance to pollen.",
+        answer: "Autoimmune urine and autoimmune blood therapies enhance the body's defense systems against foreign substances, including cancer proteins, in much the same way that allergy shots work against pollen allergies.",
+        verbatim: 'Autoimmune urine and autoimmune\nblood therapies enhance the bodies defense\nsystems against foreign substances including\ncancer proteins in much the same way the\n"allergy shots" do against pollen allergies.',
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "immune",
+          "cancer",
+          "autoimmune"
         ]
       }
     ]
