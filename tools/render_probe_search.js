@@ -58,8 +58,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       firstPreview: first ? (first.querySelector('.sr-claim__preview')?.textContent || '').length > 0 : false,
       firstVerbatim: first ? (first.querySelector('.sr-claim__verbatim')?.textContent || '').length > 0 : false,
       firstCite: first ? /IMMORTALITY/i.test(first.querySelector('.sr-claim__cite')?.textContent || '') : false,
-      related: root ? root.querySelectorAll('.sr-related__chip').length : 0,
-      tier1: root ? root.querySelectorAll('.sr-t1').length : 0,
+      related: root ? root.querySelectorAll('.sr-related .sr-pill').length : 0,
+      claimPills: root ? root.querySelectorAll('.sr-claim__related .sr-pill').length : 0,
+      linkPills: root ? root.querySelectorAll('.sr-pill--link').length : 0,
+      wheel: root ? root.querySelector('.sr-entity__sym svg.sr-icon-wheel') !== null : false,
     };
   });
 
@@ -74,7 +76,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const root = document.getElementById('drawer-search-mount');
     const cards = root ? [...root.querySelectorAll('.sr-ent-card')] : [];
     const slugs = cards.map(c => c.getAttribute('data-sr-entity'));
-    return { cardCount: cards.length, slugs, hasCalcium: slugs.includes('calcium'), hasMercury: slugs.includes('mercury') };
+    const want = ['mercury', 'calcium', 'cholesterol', 'diabetes', 'colloidal_minerals', 'color_therapy', 'wallach'];
+    return { cardCount: cards.length, slugs, allTypesPresent: want.every(s => slugs.includes(s)) };
   });
 
   // 3. Click the CALCIUM card -> Calcium entity page (the newly authored second entity).
@@ -82,8 +85,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(250);
   const calcium = await readEntity();
 
-  // 3b. Back button -> the landing again.
-  await page.evaluate(() => document.querySelector('#drawer-search-mount [data-sr-action="home"]')?.click());
+  // 3b. "‹ BACK" from a card opened off the landing pops back to the landing (empty nav stack).
+  await page.evaluate(() => document.querySelector('#drawer-search-mount [data-sr-action="back"]')?.click());
   await wait(200);
   const afterBack = await page.evaluate(() => {
     const root = document.getElementById('drawer-search-mount');
@@ -93,6 +96,32 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   // 4. Subject synonym query -> Mercury entity page.
   await setQuery('quicksilver');
   const mercury = await readEntity();
+
+  // 4b. Condition entity (Diabetes) — tier-1 dual-home chips MUST show (it's a real tier-1 claim).
+  await setQuery('diabetes');
+  const diabetes = await readEntity();
+  // 4c. Topic entity (Color Therapy) — search-only modality, so NO related pills even though a
+  // color-map claim carries a conditions array for search matching; also carries the color-wheel icon.
+  await setQuery('color therapy');
+  const colorTherapy = await readEntity();
+
+  // 4d. Unified pill rule + back-stack: Colloidal Minerals has a clickable RELATED pill (Calcium),
+  // clicking it navigates to Calcium, and "‹ BACK" returns to Colloidal Minerals.
+  await setQuery('colloidal minerals');
+  const colloidal = await readEntity();
+  const navTest = await page.evaluate(async () => {
+    const w = ms => new Promise(r => setTimeout(r, ms));
+    const root = document.getElementById('drawer-search-mount');
+    const link = root.querySelector('.sr-related .sr-pill--link');
+    const linkText = link ? link.textContent.trim() : '';
+    if (link) { link.click(); }
+    await w(260);
+    const afterClick = root.querySelector('.sr-entity__name')?.textContent?.trim() || '';
+    root.querySelector('.sr-entity__back')?.click();
+    await w(260);
+    const afterBack = root.querySelector('.sr-entity__name')?.textContent?.trim() || '';
+    return { linkText, afterClick, afterBack };
+  });
 
   // 5. Ask path — a typed QUESTION resolves to ONE Ask card (the vaccine/autism claim).
   await setQuery('do vaccines cause autism');
@@ -136,15 +165,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterTopbar = await drawerState();
 
-  const out = { boot, afterClick, landing, calcium, afterBack, mercury, ask, afterMore, noMatch, afterEsc, afterS, afterTopbar };
+  const out = { boot, afterClick, landing, calcium, afterBack, mercury, diabetes, colorTherapy, colloidal, navTest, ask, afterMore, noMatch, afterEsc, afterS, afterTopbar };
   console.log('SEARCH', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
   const checks = [
     ['drawer closed at boot', boot.open === false],
     ['rail Search opens the drawer', afterClick.open === true && afterClick.hasHead === true && afterClick.hasSearchbar === true],
-    ['landing lists >= 2 entity cards', landing.cardCount >= 2],
-    ['landing has both Calcium + Mercury cards', landing.hasCalcium === true && landing.hasMercury === true],
+    ['landing lists all 7 type exemplars', landing.cardCount >= 7 && landing.allTypesPresent === true],
     ['calcium card -> Calcium entity page', /CALCIUM/i.test(calcium.name)],
     ['calcium meta: NUTRIENT · 8 entries', /NUTRIENT/i.test(calcium.meta) && /8/.test(calcium.meta)],
     ['calcium: >= 4 facet sections', calcium.facetCount >= 4],
@@ -156,8 +184,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['synonym query "quicksilver" -> Mercury entity', /MERCURY/i.test(mercury.name)],
     ['mercury: all 13 claims as FAQ rows', mercury.claimCount === 13],
     ['mercury: multiple facet sections (>= 5)', mercury.facetCount >= 5],
-    ['mercury: dual-homed claim shows tier-1 chips', mercury.tier1 >= 1],
-    ['mercury: related chips render', mercury.related >= 1],
+    ['mercury: dual-home claim shows RELATED pills', mercury.claimPills >= 1],
+    ['mercury: entity-level related pills render', mercury.related >= 1],
+    ['condition entity (Diabetes) renders with RELATED pills', /DIABETES/i.test(diabetes.name) && diabetes.claimPills >= 1],
+    ['topic entity (Color Therapy) has NO per-claim related pills', /COLOR THERAPY/i.test(colorTherapy.name) && colorTherapy.claimPills === 0],
+    ['topic entity (Color Therapy) shows the color-wheel icon', colorTherapy.wheel === true],
+    ['concept (Colloidal Minerals) has a clickable RELATED pill', colloidal.linkPills >= 1],
+    ['clickable pill navigates (Colloidal → Calcium)', /CALCIUM/i.test(navTest.afterClick)],
+    ['BACK returns to the previous card (→ Colloidal Minerals)', /COLLOIDAL/i.test(navTest.afterBack)],
     ['ask: a question resolves to one Ask card', ask.shown === true],
     ['ask: card shows the vaccine/autism question', /vaccine/i.test(ask.q)],
     ['ask: card carries Wallach verbatim + composed cite', ask.hasVerbatim === true && ask.hasCite === true],
@@ -172,5 +206,5 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · Search drawer · browse landing (Calcium + Mercury) · Calcium + Mercury entity pages (faceted FAQ + verbatim + cite) · Ask card · rail/S/topbar entries');
+  console.log('PASS · Search drawer · 7-type browse landing · element/nutrient/substance/condition/concept/topic/person entity pages · dual-home chips (Diabetes) vs none (Color Therapy) · Ask card · rail/S/topbar entries');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

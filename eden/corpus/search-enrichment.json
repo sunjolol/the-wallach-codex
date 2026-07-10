@@ -270,6 +270,259 @@
         "celebrities",
         "anecdote"
       ]
+    },
+    "WAL-CLM-IMMORT-000006": {
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is cholesterol bad for you?",
+      "answer_short": "No — Wallach calls cholesterol an essential nutrient: it builds every cell membrane, all the steroid hormones, and the brain's myelin.",
+      "topics": [
+        "cholesterol",
+        "essential-nutrient",
+        "is-x-good-bad"
+      ]
+    },
+    "WAL-CLM-IMMORT-000054": {
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does cholesterol actually do in the body?",
+      "answer_short": "It's the raw material for vitamin D, bile acids, and the adrenal stress and sex hormones — so a cholesterol deficiency can worsen menopause and flatten libido.",
+      "topics": [
+        "cholesterol",
+        "hormones",
+        "vitamin-d"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000003": {
+      "subject": "diabetes",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "stance",
+      "question": "What actually causes type 2 diabetes?",
+      "answer_short": "Wallach's stance: type 2 diabetes isn't genetic — it's a chromium and vanadium deficiency, and correcting it prevents and even reverses the disease.",
+      "topics": [
+        "diabetes",
+        "chromium",
+        "vanadium",
+        "deficiency-thesis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000089": {
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does chromium deficiency lead to diabetes?",
+      "answer_short": "Chromium runs the body's blood-sugar handling; deficiency wrecks glucose tolerance (77% of 'normal' over-70s) — and Wallach cites the USDA that 90% of Americans are chromium-deficient.",
+      "topics": [
+        "chromium",
+        "blood-sugar",
+        "glucose-tolerance"
+      ]
+    },
+    "WAL-CLM-DDDL-000034": {
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does vanadium help with diabetes?",
+      "answer_short": "Vanadium mimics insulin — it makes the cell's insulin receptors more sensitive, helping the body handle glucose and carbohydrates.",
+      "topics": [
+        "vanadium",
+        "insulin",
+        "blood-sugar"
+      ]
+    },
+    "WAL-CLM-DDDL-000048": {
+      "subject": "diabetes",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach treat diabetes?",
+      "answer_short": "Start with chromium and vanadium at 250 mcg a day in the early stages — carefully, to avoid dropping blood sugar too fast ('insulin shock').",
+      "topics": [
+        "diabetes",
+        "chromium",
+        "vanadium",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-DDDL-000008": {
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "history",
+      "question": "How did Wallach first connect diabetes to a mineral deficiency?",
+      "answer_short": "From the autopsy table: he saw zoo marmosets, alligators and shrews die of diabetes caused by chromium and vanadium deficiency.",
+      "topics": [
+        "autopsy-evidence",
+        "chromium",
+        "vanadium",
+        "zoo-animals"
+      ]
+    },
+    "WAL-CLM-LETS-000080": {
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can a normal blood test miss diabetes?",
+      "answer_short": "Yes — a single fasting blood-sugar reading misses most diabetes and hypoglycemia; Wallach says only a six-hour glucose tolerance test reveals them.",
+      "topics": [
+        "diagnosis",
+        "glucose-tolerance-test",
+        "hypoglycemia"
+      ]
+    },
+    "WAL-CLM-IMMORT-000024": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is a colloidal mineral?",
+      "answer_short": "A mineral existing as ultra-fine particles (1–100 nanometers — 'nano-technology') suspended in liquid, too small to dissolve into single atoms the way salt does.",
+      "topics": [
+        "colloidal-minerals",
+        "nano-technology",
+        "mineral-forms"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000060": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why do different mineral forms absorb so differently?",
+      "answer_short": "Metallic minerals are only 8–12% absorbable (3–5% after 40), chelated better, and plant-derived colloidal the most usable — which is why Wallach calls it the most critical of the 90 nutrients.",
+      "topics": [
+        "mineral-bioavailability",
+        "metallic-minerals",
+        "absorption"
+      ]
+    },
+    "WAL-CLM-IMMORT-000023": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What are chelated minerals, and do they absorb better?",
+      "answer_short": "Chelated minerals wrap an amino acid around each mineral, absorbing ~40–65% — a 400% jump over metallic (8–12%); on a label they read as 'picolinate' or 'amino acid chelate.'",
+      "topics": [
+        "chelated-minerals",
+        "absorption",
+        "edta"
+      ]
+    },
+    "WAL-CLM-IMMORT-000025": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why can't you just swallow ground-up rock minerals?",
+      "answer_short": "Inorganic mineral particles are too large to cross the gut wall; only when amino acids convert them into absorbable 'crystalloids' can the intestine take them up.",
+      "topics": [
+        "absorption",
+        "crystalloid",
+        "active-transport"
+      ]
+    },
+    "WAL-CLM-IMMORT-000026": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Which form of colloidal mineral is best?",
+      "answer_short": "The plant-derived, living organic colloid — coated in a water-loving protein, up to 98% bioavailable — is the form Wallach favors over bare 'rock flour' or industrial versions.",
+      "topics": [
+        "colloidal-minerals",
+        "plant-derived",
+        "bioavailability"
+      ]
+    },
+    "WAL-CLM-LETS-000099": {
+      "subject": "color_therapy",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is color therapy?",
+      "answer_short": "Using colored lights or panels for a healing effect — recorded in ancient Egypt and used in Ayurvedic and Chinese medicine; Wallach frames it as a form of light therapy.",
+      "topics": [
+        "color-therapy",
+        "chromotherapy",
+        "light-therapy"
+      ]
+    },
+    "WAL-CLM-LETS-000100": {
+      "subject": "color_therapy",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What does each color treat in color therapy?",
+      "answer_short": "Wallach's color map: blue for blood pressure, fever, cuts and burns; red for low blood pressure; orange for stones; yellow for diabetes; green for ulcers, colds and breast cancer.",
+      "topics": [
+        "color-therapy",
+        "color-map",
+        "blue",
+        "green"
+      ]
+    },
+    "WAL-CLM-LETS-000101": {
+      "subject": "color_therapy",
+      "also_about": [],
+      "facet": "uses",
+      "question": "How is color therapy actually done?",
+      "answer_short": "Six techniques — the Kilner diagnostic screen, reading tissue colors, sun-charged salt bags, colored foods, 'rainbow' sun-charged water, and meditative color breathing.",
+      "topics": [
+        "color-therapy",
+        "techniques",
+        "kilner-screen"
+      ]
+    },
+    "WAL-CLM-IMMORT-000002": {
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "biography",
+      "question": "What makes Dr. Wallach's approach different?",
+      "answer_short": "20,000+ autopsies across 454 animal species plus 3,000 humans — a comparative-pathology record that led him to conclude 'natural causes' deaths were really nutritional deficiencies.",
+      "topics": [
+        "wallach-biography",
+        "autopsy-evidence",
+        "comparative-pathology"
+      ]
+    },
+    "WAL-CLM-IAIYH-000020": {
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "biography",
+      "question": "What are Dr. Wallach's credentials?",
+      "answer_short": "A 1991 Nobel Prize nomination for linking selenium to cystic fibrosis, two research medals, co-author of the DSHEA supplement law, and credit as an early founder of epigenetics.",
+      "topics": [
+        "wallach-biography",
+        "credentials",
+        "nobel-nomination",
+        "cystic-fibrosis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000005": {
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "history",
+      "question": "How did Wallach beat the FDA over omega-3?",
+      "answer_short": "After a long legal fight, on Sept 8, 2004 the FDA let his petition stand — allowing the claim that omega-3s cut heart-disease risk, which had been illegal to state for 65 years.",
+      "topics": [
+        "fda",
+        "omega-3",
+        "health-claim",
+        "vindication"
+      ]
+    },
+    "WAL-CLM-IMMORT-000010": {
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach agree with Linus Pauling?",
+      "answer_short": "Not on minerals — he corrects even the two-time Nobel laureate, who dismissed minerals as secondary and capped selenium at 15 mcg (today's safe limit is 200–1,000 mcg).",
+      "topics": [
+        "linus-pauling",
+        "minerals",
+        "selenium",
+        "establishment-critique"
+      ]
     }
   }
 }

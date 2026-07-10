@@ -20,9 +20,11 @@
 import searchIndexJson from '../../../data/search/search-index.json';
 import {
   FACET_LABEL,
+  FACET_ORDER_BY_TYPE,
   SEARCH_FACETS,
   type SearchClaim,
   type SearchEntity,
+  type SearchFacet,
   type SearchIndex,
   SearchIndexSchema,
 } from '../core/schemas/index.js';
@@ -70,8 +72,14 @@ export interface FacetGroup {
 }
 export function facetGroups(subject: string): FacetGroup[] {
   const claims = claimsForSubject(subject);
+  const e = getEntity(subject);
+  // Conditions (and any future type in FACET_ORDER_BY_TYPE) get a tailored section order;
+  // everything else uses the default SEARCH_FACETS order.
+  const order: readonly SearchFacet[] = (e !== null && FACET_ORDER_BY_TYPE[e.type] !== undefined)
+    ? FACET_ORDER_BY_TYPE[e.type] as readonly SearchFacet[]
+    : SEARCH_FACETS;
   const out: FacetGroup[] = [];
-  for (const facet of SEARCH_FACETS) {
+  for (const facet of order) {
     const inFacet = claims.filter(c => c.facet === facet);
     if (inFacet.length > 0) {
       out.push({ facet, label: FACET_LABEL[facet], claims: inFacet });

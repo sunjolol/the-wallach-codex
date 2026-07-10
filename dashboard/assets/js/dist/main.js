@@ -14000,7 +14000,24 @@
     warning: "WARNINGS",
     history: "HISTORY & LORE",
     big_question: "BIG QUESTIONS",
-    biography: "ABOUT WALLACH"
+    biography: "BIOGRAPHY"
+  };
+  var FACET_ORDER_BY_TYPE = {
+    condition: [
+      "stance",
+      "mechanism",
+      "protocol",
+      "warning",
+      "physiology",
+      "basics",
+      "sources",
+      "uses",
+      "history",
+      "big_question",
+      "biography",
+      "discovery",
+      "etymology"
+    ]
   };
   var Tier1LinkSchema = external_exports.object({
     essentials: external_exports.array(external_exports.string()).optional(),
@@ -56178,7 +56195,21 @@ APP repoint: core/schemas/search.ts (added book_id + SearchIndexSchema; SearchEn
 
 DISCOVERY worth remembering: 6 of Mercury's 13 claims are NOT tagged search-only -- they are dual-home tier-1 claims (they map real operational conditions like mercury_poisoning / multiple_sclerosis and render in the Knowledge tabs too). That is intended (dual-home is allowed), and it means the true search corpus is LARGER than the 186 search-only figure -- dual-home tier-1 claims belong to search entities as well. The validator's initial "must be search-only" rule was wrong and was removed; the real tier-1 boundary runs the other direction (search-only must not leak INTO the operational tabs -- search_only_indices_excluded, already live).
 
-Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derived_artifacts_fresh now covers search-index.json; data_artifacts_accounted = 16 flat assets/data + 9 derived), render_probe_search 27/27 with 0 page errors, negative test 8/8. Visually verified via headless screenshots and reviewed by Luneth across two rounds: Calcium + Mercury entity pages, browse landing (2 entity cards), WARNINGS-in-amber right after BASICS, wider drawer, and the right-padding fix. NEXT = author the next entity (Hydrogen suggested -- the other rich Immortality A-Z element) to the same standard, entity-by-entity with per-entity review. Mining stays PAUSED at Immortality Mn-Manganese (~char 309953, kept on the list).` }];
+Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derived_artifacts_fresh now covers search-index.json; data_artifacts_accounted = 16 flat assets/data + 9 derived), render_probe_search 27/27 with 0 page errors, negative test 8/8. Visually verified via headless screenshots and reviewed by Luneth across two rounds: Calcium + Mercury entity pages, browse landing (2 entity cards), WARNINGS-in-amber right after BASICS, wider drawer, and the right-padding fix. NEXT = author the next entity (Hydrogen suggested -- the other rich Immortality A-Z element) to the same standard, entity-by-entity with per-entity review. Mining stays PAUSED at Immortality Mn-Manganese (~char 309953, kept on the list).` }, { id: "lg_mredsvoc_4wn3jt", ts: "2026-07-09T22:34:02.076643-05:00", surface: "search", kind: "round-close", summary: "Search G-7: a golden-standard entity for all 7 entity types before bulk migration; per-type facet order, per-type icons + a color wheel, BIOGRAPHY label, and Also-Tier-1 renamed RELATED as one self-upgrading clickable-pill rule with back-navigation", detail: `Before mass-producing Search entities, we built ONE perfect example of every KIND of thing an entity can be, so we'd know how each should look and feel first. Now there are seven reference pages -- an element (Mercury), a nutrient (Calcium), a substance (Cholesterol), a condition (Diabetes), a concept (Colloidal Minerals), a topic (Color Therapy), and a person (Dr. Wallach) -- and each type earned small tailored touches: a disease page leads with Wallach's bold claim (its cause + cure) instead of a dry warning; every type has its own little icon (a person figure, a heartbeat line for a condition, a color wheel for Color Therapy); and the confusing "Also Tier-1" chips are now plain "Related" links that light up and become clickable the moment the thing they point to has its own page -- one rule everywhere, so nothing ever has to be wired up twice. Luneth signed off; next session we start producing entities in bulk while keeping the first few dozen at this same quality.
+
+Coverage exercise (Luneth's sequencing): one exemplar per entity TYPE before bulk migration, to lock the "template/feel/separation between types." Added 5 entities (search-enrichment 21->41 claims, registry 3->8): Cholesterol (substance, deliberately thin -- 2 claims), Diabetes (condition, curated 6 from 33 tier-1 claims), Colloidal Minerals (concept -- SWAPPED IN for Epigenetics, whose usable claims are the charged homosexuality/intersex content that per editorial policy needs Luneth's per-instance sign-off; epigenetics deferred to a dedicated reviewed pass), Color Therapy (topic, the delight content), Dr. Joel Wallach (person). DROPPED \`event\` as a standalone entity type -- events (Minamata, Iraq, Hindenburg) have no dedicated multi-claim subject and live as HISTORY facets inside other entities; 7 active types.
+
+Golden-standard polish (Luneth's 3 decisions + 3 follow-up requests):
+- Per-type facet ORDER: conditions lead stance -> mechanism -> protocol -> warning (FACET_ORDER_BY_TYPE in core/schemas/search.ts; state facetGroups reads it by entity type); elements/poisons keep basics -> warnings. A disease page's compelling content is the cause+cure, not a diagnostic caution.
+- Per-type ICONS: TYPE_ICON (substance molecule, condition ECG pulse, concept nodes, topic tag, person figure, nutrient droplet) + ENTITY_ICON bespoke override (color_therapy -> a full-color 6-segment SVG color wheel, the one deliberately-non-monochrome icon; drawer-search.css opts .sr-icon-wheel out of the mono stroke rule). tileGlyph = symbol ?? entity-icon ?? type-icon ?? first-letter. Answered Luneth's question: pure inline SVG is the RIGHT modern call (self-contained/offline/scalable), NOT a raster image.
+- BIOGRAPHY facet label (was the Wallach-specific "ABOUT WALLACH", which would be wrong on any other person entity).
+- "Also Tier-1" -> "RELATED" + ONE unified pill: renderPill(slug) is a clickable accent link iff getEntity(slug) != null, else a plain chip; used by BOTH the per-claim RELATED row and the per-entity RELATED list. Pills self-upgrade as entities are authored (Calcium is already orange/clickable on the Colloidal page; Chromium/Selenium grey until authored) -- structure decides, zero duplicated clickability logic. Plus a nav back-stack (gotoEntity pushes the current query, goBack pops -> previous card, landing when empty; a typed query resets the chain).
+
+Two correctness fixes the batch forced (both gated + negative-tested):
+- catalog_ref in search_index_derive: condition entities pull display_name from eden/catalog/conditions.json (no duplication, mirrors canon_ref). validate() + the search_index_wellformed gate cover it; negative test grew to 10 cases (added catalog_ref-with-name, catalog_ref-not-condition).
+- tier1_link fires ONLY for non-search-only claims: a search-only modality claim (Color Therapy's color-map) can carry a conditions array for search matching, but must not show operational cross-links -- so the tier1/RELATED pills no longer flood a modality page.
+
+Verified: build OK (tsc + esbuild), invariants 53/53, render_probe_search 35/35 with 0 page errors, negative test 10/10. All seven type pages, the color wheel, the self-upgrading pills, and BACK navigation visually verified via headless screenshots and signed off by Luneth. NEXT = BULK MIGRATION of the remaining ~180 search-only + dual-home claims into entities using these seven patterns -- Luneth: start bulking but STAY GROUNDED, keep the first few dozen at the golden-standard quality before accelerating. Mining still PAUSED at Immortality Mn-Manganese (~char 309953).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -57442,9 +57473,25 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
     schema_version: 1,
     _generated: "DERIVED by eden/tools/search_index_derive.py from the sealed pillars \u2014 do not hand-edit",
     books: {
+      "dddl-3e-2011": {
+        title: "Dead Doctors Don't Lie",
+        year: 2011
+      },
+      epigenetics: {
+        title: "Epigenetics: The Death of the Genetic Theory of Disease Transmission",
+        year: 2014
+      },
+      iaiyh: {
+        title: "It's All In Your Head",
+        year: 2020
+      },
       immortality: {
         title: "Immortality",
         year: 2008
+      },
+      "lets-play-doctor": {
+        title: "Let's Play Doctor",
+        year: 1995
       }
     },
     entities: {
@@ -57463,6 +57510,64 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
         claim_count: 8,
         symbol: "Ca"
       },
+      cholesterol: {
+        display_name: "Cholesterol",
+        type: "substance",
+        synonyms: [
+          "sterol"
+        ],
+        related: [
+          "vanadium",
+          "silicon",
+          "menopause"
+        ],
+        claim_count: 2
+      },
+      colloidal_minerals: {
+        display_name: "Colloidal Minerals",
+        type: "concept",
+        synonyms: [
+          "colloidal",
+          "plant-derived minerals",
+          "mineral bioavailability",
+          "chelated minerals"
+        ],
+        related: [
+          "chromium",
+          "calcium",
+          "selenium"
+        ],
+        claim_count: 5
+      },
+      color_therapy: {
+        display_name: "Color Therapy",
+        type: "topic",
+        synonyms: [
+          "chromotherapy",
+          "color healing",
+          "colour therapy"
+        ],
+        related: [
+          "light_therapy"
+        ],
+        claim_count: 3
+      },
+      diabetes: {
+        display_name: "Diabetes",
+        type: "condition",
+        synonyms: [
+          "type 2 diabetes",
+          "diabetes mellitus",
+          "adult-onset diabetes",
+          "blood sugar"
+        ],
+        related: [
+          "chromium",
+          "vanadium",
+          "hypoglycemia"
+        ],
+        claim_count: 6
+      },
       mercury: {
         display_name: "Mercury",
         type: "element",
@@ -57478,9 +57583,334 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
         ],
         claim_count: 13,
         symbol: "Hg"
+      },
+      wallach: {
+        display_name: "Dr. Joel Wallach",
+        type: "person",
+        synonyms: [
+          "joel wallach",
+          "dr wallach",
+          "joel d wallach"
+        ],
+        related: [
+          "epigenetics"
+        ],
+        claim_count: 4
       }
     },
     claims: [
+      {
+        id: "WAL-CLM-DDDL-000008",
+        subject: "diabetes",
+        also_about: [],
+        facet: "history",
+        question: "How did Wallach first connect diabetes to a mineral deficiency?",
+        answer_short: "From the autopsy table: he saw zoo marmosets, alligators and shrews die of diabetes caused by chromium and vanadium deficiency.",
+        answer: "Zoo marmosets and shrews died of diabetes attributed to chromium and vanadium deficiency (observed at autopsy).",
+        verbatim: "I saw marmosets, alligators, and\nshrews that died of diabetes, a chromium and vanadium deficiency.",
+        page: null,
+        book_id: "dddl-3e-2011",
+        topics: [
+          "autopsy-evidence",
+          "chromium",
+          "vanadium",
+          "zoo-animals"
+        ],
+        tier1_link: {
+          essentials: [
+            "chromium",
+            "vanadium"
+          ],
+          conditions: [
+            "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-DDDL-000034",
+        subject: "diabetes",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does vanadium help with diabetes?",
+        answer_short: "Vanadium mimics insulin \u2014 it makes the cell's insulin receptors more sensitive, helping the body handle glucose and carbohydrates.",
+        answer: "Vanadium functions like insulin, making cell-membrane insulin receptors more sensitive and aiding glucose/carbohydrate intolerance.",
+        verbatim: "Vanadium appears to function\nlike insulin by altering cell membrane function for ion transport.",
+        page: null,
+        book_id: "dddl-3e-2011",
+        topics: [
+          "vanadium",
+          "insulin",
+          "blood-sugar"
+        ],
+        tier1_link: {
+          essentials: [
+            "vanadium"
+          ],
+          conditions: [
+            "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-DDDL-000048",
+        subject: "diabetes",
+        also_about: [
+          "chromium",
+          "vanadium"
+        ],
+        facet: "protocol",
+        question: "How does Wallach treat diabetes?",
+        answer_short: "Start with chromium and vanadium at 250 mcg a day in the early stages \u2014 carefully, to avoid dropping blood sugar too fast ('insulin shock').",
+        answer: "Diabetes treatment starts with chromium and vanadium at 250 mcg/day in the initial stages to prevent insulin shock.",
+        verbatim: "Treatment of diabetes should include chromium and vanadium at 250\nmcg/day in the initial stages to prevent \u201Cinsulin shock\u201D",
+        page: null,
+        book_id: "dddl-3e-2011",
+        topics: [
+          "diabetes",
+          "chromium",
+          "vanadium",
+          "protocol"
+        ],
+        tier1_link: {
+          essentials: [
+            "chromium",
+            "vanadium"
+          ],
+          conditions: [
+            "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000003",
+        subject: "diabetes",
+        also_about: [
+          "chromium",
+          "vanadium"
+        ],
+        facet: "stance",
+        question: "What actually causes type 2 diabetes?",
+        answer_short: "Wallach's stance: type 2 diabetes isn't genetic \u2014 it's a chromium and vanadium deficiency, and correcting it prevents and even reverses the disease.",
+        answer: "Wallach teaches that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency, and that supplementing the 90 essential nutrients along with chromium and vanadium on an otherwise good diet will prevent and cure hypoglycemia, reactive hypoglycemia (which he equates with narcolepsy), hyperinsulinemia, and type 2 diabetes.",
+        verbatim: "Since 1958 it has been well documented that supplementation of the 90\nessential nutrients along with chromium and vanadium to an otherwise perfect\ndiet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),\nhyperinsulinemia, and type 2 diabetes.",
+        page: 568,
+        book_id: "epigenetics",
+        topics: [
+          "diabetes",
+          "chromium",
+          "vanadium",
+          "deficiency-thesis"
+        ],
+        tier1_link: {
+          essentials: [
+            "chromium",
+            "vanadium"
+          ],
+          conditions: [
+            "diabetes",
+            "hypoglycemia",
+            "reactive_hypoglycemia",
+            "narcolepsy",
+            "hyperinsulinemia"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000060",
+        subject: "colloidal_minerals",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why do different mineral forms absorb so differently?",
+        answer_short: "Metallic minerals are only 8\u201312% absorbable (3\u20135% after 40), chelated better, and plant-derived colloidal the most usable \u2014 which is why Wallach calls it the most critical of the 90 nutrients.",
+        answer: "Wallach describes three basic forms of minerals and their very different bioavailability. Metallic minerals (eggshell, oyster shell, calcium carbonate, dolomite, antacids such as Rolaids and Tums, and the gluconate/carbonate/oxide forms in most tablets) are, despite claims to the contrary, only 8 to 12 percent absorbable by humans -- dropping to roughly 3 to 5 percent after age 35 to 40. Chelated minerals (created by the livestock industry in the 1960s, the mineral wrapped in an amino acid such as EDTA) absorb better, and colloidal minerals -- ultra-fine plant-derived particles suspended in liquid -- are the most usable, which is why he calls plant-derived colloidal minerals the most critical of the 90 essential nutrients.",
+        verbatim: "Metallic minerals, despite wild claims to the contrary, are only eight percent\nto twelve percent biologically available to all vertebrates, including humans; after\nattaining the age of 35 to 40 years the absorptive availability to humans is\n\n\nreduced to somewhere around three to five percent.",
+        page: 646,
+        book_id: "epigenetics",
+        topics: [
+          "mineral-bioavailability",
+          "metallic-minerals",
+          "absorption"
+        ]
+      },
+      {
+        id: "WAL-CLM-IAIYH-000020",
+        subject: "wallach",
+        also_about: [],
+        facet: "biography",
+        question: "What are Dr. Wallach's credentials?",
+        answer_short: "A 1991 Nobel Prize nomination for linking selenium to cystic fibrosis, two research medals, co-author of the DSHEA supplement law, and credit as an early founder of epigenetics.",
+        answer: `Wallach's About-the-Author biography records the recognition his trace-mineral research has received: the 1988 Wooster Beach Gold Medal for a breakthrough in understanding the cause of cystic fibrosis, a 1991 Nobel Prize in Medicine nomination for linking selenium deficiency to cystic fibrosis, and the 2011 Klaus Schwarz Commemorative Medal for discovering the animal model of cystic fibrosis and elucidating its cause in humans. He is also credited as a co-author of the Dietary Supplement and Health Education Act \u2014 the law that keeps nutritional supplements legally categorized as food rather than pharmaceuticals. Accepting the Klaus Schwarz Medal, the awards committee wrote: "From a Historical perspective, Wallach is to be regarded as one of the first practitioners, if not founders, of epigenetics, the new research discipline that investigates heritable alterations in gene expression caused by mechanisms other than changes in DNA sequence."`,
+        verbatim: "From a\nHistorical perspective, Wallach is to be regarded as one of the first practitioners, if not\nfounders, of epigenetics, the new research discipline that investigates heritable alterations\nin gene expression caused by mechanisms other than changes in DNA sequence.",
+        page: 6,
+        book_id: "iaiyh",
+        topics: [
+          "wallach-biography",
+          "credentials",
+          "nobel-nomination",
+          "cystic-fibrosis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000002",
+        subject: "wallach",
+        also_about: [],
+        facet: "biography",
+        question: "What makes Dr. Wallach's approach different?",
+        answer_short: "20,000+ autopsies across 454 animal species plus 3,000 humans \u2014 a comparative-pathology record that led him to conclude 'natural causes' deaths were really nutritional deficiencies.",
+        answer: `Wallach's health framework is built on an unusually large base of comparative pathology. As a pathologist for a multi-institution research program - The Center for the Biology of Natural Systems, funded by the U.S. National Institutes of Health (NIH) along with several zoos and universities - he performed autopsies on a scale almost no one else has: more than 20,000 of them, spanning over 17,500 captive wild, laboratory, and domestic animals across more than 454 species, plus 3,000 humans for comparison. That vast cross-species record is what led him to his central claim - that creatures dying of so-called "natural causes" were really dying of nutritional deficiency diseases.`,
+        verbatim: "As a comparative pathologist, I (Wallach) performed\nmore than 20,000 autopsies of over 17,500 captive wild\nanimals, laboratory species and domestic animals, of over 454\nspecies and 3,000 humans for a comparison.",
+        page: 50,
+        book_id: "immortality",
+        topics: [
+          "wallach-biography",
+          "autopsy-evidence",
+          "comparative-pathology"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000005",
+        subject: "wallach",
+        also_about: [],
+        facet: "history",
+        question: "How did Wallach beat the FDA over omega-3?",
+        answer_short: "After a long legal fight, on Sept 8, 2004 the FDA let his petition stand \u2014 allowing the claim that omega-3s cut heart-disease risk, which had been illegal to state for 65 years.",
+        answer: 'For more than 65 years it was known that omega-3 essential fatty acids were needed to prevent disease - but because the U.S. Food and Drug Administration (FDA) had ruled the evidence "inconclusive," it was actually illegal to tell people that omega-3 supplements could lower their risk of stroke and sudden cardiac death. Wallach fought this: his company (Wellness Lifestyles, Inc.) petitioned the FDA for a qualified health claim, and after a hard-fought battle, won - on September 8, 2004 the FDA allowed the claim linking omega-3 fatty acids to reduced coronary heart disease risk (Docket No. 03Q-0401).',
+        verbatim: "To make a long story short, Wellness Lifestyles,\nInc (Wallach) filed a petition for an Amended Health\nClaim: Omega-3 Fatty Acids and Coronary Heart Disease\n(Co-Petitioner); Docket No. 03Q-0401; filed on 6/23/2003;\nqualified claim allowed by FDA on 9/8/2004.",
+        page: 61,
+        book_id: "immortality",
+        topics: [
+          "fda",
+          "omega-3",
+          "health-claim",
+          "vindication"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000006",
+        subject: "cholesterol",
+        also_about: [],
+        facet: "stance",
+        question: "Is cholesterol bad for you?",
+        answer_short: "No \u2014 Wallach calls cholesterol an essential nutrient: it builds every cell membrane, all the steroid hormones, and the brain's myelin.",
+        answer: "Is cholesterol bad for you? Wallach's answer is no - he calls it an essential nutrient. He points out that cholesterol is a necessary building block of the structural membranes of every cell, of all steroid hormones, and of the brain's myelin (the fatty insulating sheath around nerves) and nerve cells themselves. This counters the popular view of cholesterol as merely something to avoid.",
+        verbatim: "Cholesterol is an essential nutrient and an essential\ncomponent of the structural membranes of all cells, all steroid\nhormones and is a major component of brain (myelin) and\nnerve cells.",
+        page: 60,
+        book_id: "immortality",
+        topics: [
+          "cholesterol",
+          "essential-nutrient",
+          "is-x-good-bad"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000010",
+        subject: "wallach",
+        also_about: [],
+        facet: "stance",
+        question: "Does Wallach agree with Linus Pauling?",
+        answer_short: "Not on minerals \u2014 he corrects even the two-time Nobel laureate, who dismissed minerals as secondary and capped selenium at 15 mcg (today's safe limit is 200\u20131,000 mcg).",
+        answer: "Wallach corrects even Linus Pauling - the two-time Nobel laureate - on minerals. Pauling (author of The Nature of the Chemical Bond) treated minerals as secondary to vitamins, recommending only eight to eleven of them at minimal doses. His selenium advice is Wallach's example of how wrong this was: Pauling insisted selenium's safe upper limit was just 15 mcg, whereas today the recommended safe limit is 200 to 1,000 mcg for an adult.",
+        verbatim: "Linus Pauling, two time Nobel laureate, and author of the\ngreat work, The Nature of the Chemical Bond, relegated minerals\nto secondary importance to vitamins, recommending only eight\nto eleven minerals (calcium, magnesium, phosphorous, iron,\nzinc, copper, manganese, chromium, molybdenum, iodine and\nselenium) and then only at minimal doses - an example was\nselenium for which he insisted the upper safe limit was 15 mcg\n(today the recommended safe limit for selenium is 200 to 1,000\nmcg for an adult).",
+        page: 82,
+        book_id: "immortality",
+        topics: [
+          "linus-pauling",
+          "minerals",
+          "selenium",
+          "establishment-critique"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000023",
+        subject: "colloidal_minerals",
+        also_about: [],
+        facet: "mechanism",
+        question: "What are chelated minerals, and do they absorb better?",
+        answer_short: "Chelated minerals wrap an amino acid around each mineral, absorbing ~40\u201365% \u2014 a 400% jump over metallic (8\u201312%); on a label they read as 'picolinate' or 'amino acid chelate.'",
+        answer: "Chelated minerals - where an amino acid, protein, or enzyme is wrapped ('claw,' from the Latin) around each mineral - absorb far better than plain metallic ones: about 40-65%, which Wallach calls a 400% improvement over metallic minerals (8-12%). He notes the form was a 1940s livestock-industry invention (the original chelating agent, calcium EDTA, was a German pre-WWI antidote for arsenic and lead exposure, still used today for intravenous chelation of clogged arteries), and that you can spot chelated forms on a label as selenomethionine, chromium picolinate, or 'amino acid chelate.'",
+        verbatim: "Chelated minerals are approximately 40 to 65%\nbioavailable, a 400% increase over the availability of metallic\nminerals - certainly, a significant improvement over the\n\n\namounts elemental minerals that are absorbed.",
+        page: 88,
+        book_id: "immortality",
+        topics: [
+          "chelated-minerals",
+          "absorption",
+          "edta"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000024",
+        subject: "colloidal_minerals",
+        also_about: [],
+        facet: "basics",
+        question: "What is a colloidal mineral?",
+        answer_short: "A mineral existing as ultra-fine particles (1\u2013100 nanometers \u2014 'nano-technology') suspended in liquid, too small to dissolve into single atoms the way salt does.",
+        answer: "What is a colloidal mineral - and what does 'nano-technology' have to do with it? Wallach describes a colloid as a substance existing as ultra-fine particles suspended in a medium, so small (about a billion would fit in a hundredth of a cubic inch) that they don't dissolve into individual atoms the way salt does. He notes colloids keep their special qualities as long as the particles stay within a size range of about 1 to 100 nanometers - a range, he points out, known as 'nano-technology.'",
+        verbatim: "The interesting\nthing about colloids is that they remain heterogeneous, multiphasic and insoluble at different concentrations as long as a\nlarger number if not all of the particles are within a range of\nsizes of colloids (1nm to 100nm) known as \u201Cnano-technology.\u201D",
+        page: 91,
+        book_id: "immortality",
+        topics: [
+          "colloidal-minerals",
+          "nano-technology",
+          "mineral-forms"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000025",
+        subject: "colloidal_minerals",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why can't you just swallow ground-up rock minerals?",
+        answer_short: "Inorganic mineral particles are too large to cross the gut wall; only when amino acids convert them into absorbable 'crystalloids' can the intestine take them up.",
+        answer: "Why can't you just swallow ground-up rock minerals? Wallach's answer: inorganic mineral colloids are 'too large' to pass through the gut wall or cell walls into the bloodstream. But in the presence of amino acids (from protein-containing food), a small percentage of them get converted into chelated minerals and organic colloids that CAN be absorbed through the intestinal membranes - this absorbable state he calls a 'crystalloid.' He adds that almost all nutrients are actually taken up by 'active transport' (the intestinal cell reaching out with a pseudopodium, a finger-like projection, to engulf the particle), not by passively drifting through a membrane.",
+        verbatim: "In the presence of amino acids, a small\npercentage of the inorganic colloids form chelated minerals\nand organic colloids which are able to be dialyzed through the\nmucus membranes of the intestinal walls into the blood stream\n- this bio-available mineral state is known as a \u201Ccrystalloid.\u201D\n\nCrystalloids or organic colloids readily pass\nthrough cell walls, while inorganic colloids are \u201Ctoo large.\u201D",
+        page: 92,
+        book_id: "immortality",
+        topics: [
+          "absorption",
+          "crystalloid",
+          "active-transport"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000026",
+        subject: "colloidal_minerals",
+        also_about: [],
+        facet: "stance",
+        question: "Which form of colloidal mineral is best?",
+        answer_short: "The plant-derived, living organic colloid \u2014 coated in a water-loving protein, up to 98% bioavailable \u2014 is the form Wallach favors over bare 'rock flour' or industrial versions.",
+        answer: "Wallach classifies colloidal minerals into four forms that differ wildly in usability: (1) unprotected 'rock flour' - bare inorganic colloids from sea beds, clays and 'glacial milk,' which are really just metallic minerals and only feed plants (and only in healthy, microbe-rich soil); (2) organic mineral colloids from living systems (bacteria, fungi, green food crops, animals, humans) coated in a water-loving substance like gelatin, albumin or collagen - a 'crystalloid' with bioavailability up to 98%; (3) a carbon-coated form (a 10-12 carbon chain), the most stable natural type; and (4) an industrial form not found in nature, made by coating metallic colloids with sulfated castor oil. The second - the plant/living organic colloid - is the highly absorbable form his framework favors.",
+        verbatim: "The second type of mineral colloid is found in living\nsystems of bacteria, fungi, green plants (food crops), animals\nand humans and is coated with a water-loving (hydrophilic)\nsubstance such as gelatin, albuminoids or collagen. This\ncoating protects the now \u201Corganic mineral colloid\u201D and allows\nit to be a crystalloid for absorption, storage and physiological\nuses and thus maximizing its bioavailability up to 98%.",
+        page: 92,
+        book_id: "immortality",
+        topics: [
+          "colloidal-minerals",
+          "plant-derived",
+          "bioavailability"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000054",
+        subject: "cholesterol",
+        also_about: [],
+        facet: "mechanism",
+        question: "What does cholesterol actually do in the body?",
+        answer_short: "It's the raw material for vitamin D, bile acids, and the adrenal stress and sex hormones \u2014 so a cholesterol deficiency can worsen menopause and flatten libido.",
+        answer: "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable and can flatten sex drive in both men and women.",
+        verbatim: "Cholesterol is an essential part of the structure of cell walls,\nbrain and spinal cord (myelin), the raw material for the\nproduction of vitamin D in the human body, bile acids, adrenal\ncortical hormones, estrogens (a cholesterol deficiency makes\nmenopause a living hell), progesterone, and testosterone (a\ncholesterol deficiency will turn hubby into a TV watching\nsteer who is totally disinterested in sex).",
+        page: 112,
+        book_id: "immortality",
+        topics: [
+          "cholesterol",
+          "hormones",
+          "vitamin-d"
+        ],
+        tier1_link: {
+          conditions: [
+            "menopause",
+            "low_libido"
+          ]
+        }
+      },
       {
         id: "WAL-CLM-IMMORT-000062",
         subject: "calcium",
@@ -57617,6 +58047,32 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
           "celebrities",
           "anecdote"
         ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000089",
+        subject: "diabetes",
+        also_about: [],
+        facet: "mechanism",
+        question: "How does chromium deficiency lead to diabetes?",
+        answer_short: "Chromium runs the body's blood-sugar handling; deficiency wrecks glucose tolerance (77% of 'normal' over-70s) \u2014 and Wallach cites the USDA that 90% of Americans are chromium-deficient.",
+        answer: "Wallach ties chromium deficiency straight to the body's handling of blood sugar. Pregnant women run lower fasting plasma chromium than non-pregnant women, and the well-documented worsening of glucose tolerance during a 'normal' pregnancy reflects that deficiency \u2014 which, he says, often tips over into pregnancy-onset (gestational) diabetes. He frames it as widespread and worsening with age: one study found abnormal glucose tolerance in 77% of clinically 'normal' adults over 70, and he cites the USDA's Richard Anderson that 90% of all Americans are chromium-deficient.",
+        verbatim: "The fasting level of plasma chromium is lower in\npregnant women than in non-pregnant women. Increasing\nimpairment of glucose tolerance in \u201Cnormal\u201D pregnancy is\nwell documented and reflects a chromium deficiency that\noftentimes results in pregnancy onset diabetes. One study\ndemonstrated abnormal glucose tolerance in 77% of clinically\n\u201Cnormal\u201D adults over the age of 70. According to Richard\nAnderson of the USDA, \u201CNinety percent of all Americans are\ndeficient in chromium.\u201D",
+        page: 131,
+        book_id: "immortality",
+        topics: [
+          "chromium",
+          "blood-sugar",
+          "glucose-tolerance"
+        ],
+        tier1_link: {
+          essentials: [
+            "chromium"
+          ],
+          conditions: [
+            "diabetes",
+            "gestational_diabetes"
+          ]
+        }
       },
       {
         id: "WAL-CLM-IMMORT-000159",
@@ -57900,6 +58356,87 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
           "vaccines",
           "big-question"
         ]
+      },
+      {
+        id: "WAL-CLM-LETS-000080",
+        subject: "diabetes",
+        also_about: [],
+        facet: "warning",
+        question: "Can a normal blood test miss diabetes?",
+        answer_short: "Yes \u2014 a single fasting blood-sugar reading misses most diabetes and hypoglycemia; Wallach says only a six-hour glucose tolerance test reveals them.",
+        answer: 'Wallach teaches that a single fasting blood-sugar reading cannot detect most cases of diabetes or hypoglycemia; a six-hour glucose tolerance test (GTT) is required to reveal them. He notes conventional ("orthodox") doctors avoid the six-hour GTT \u2014 and often do not recognize hypoglycemia as a real condition at all \u2014 so they fail to test for it.',
+        verbatim: `detect diabetes and hypoglycemia when used
+to perform a six-hour glucose tolerance test
+(six-hour GTT). The simple fasting blood
+sugar alone cannot detect most cases of diabetes or hypoglycemia yet the"orthodox" doctor
+will continue to avoid the six-hour GTT because they don't know how to use it - they
+also do not believe in "hypoglycemia" so it is
+understandable why they don't test for it`,
+        page: 31,
+        book_id: "lets-play-doctor",
+        topics: [
+          "diagnosis",
+          "glucose-tolerance-test",
+          "hypoglycemia"
+        ],
+        tier1_link: {
+          conditions: [
+            "hypoglycemia",
+            "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-LETS-000099",
+        subject: "color_therapy",
+        also_about: [],
+        facet: "basics",
+        question: "What is color therapy?",
+        answer_short: "Using colored lights or panels for a healing effect \u2014 recorded in ancient Egypt and used in Ayurvedic and Chinese medicine; Wallach frames it as a form of light therapy.",
+        answer: "Wallach describes color therapy as the use of colored lights or panels to create a positive healing effect. It was originally recorded in the Greek Healing Temples of light and color at Heliopolis, Egypt, and is also used in Ayurvedic and Traditional Chinese medicine (the gem therapy of Ayurvedic medicine is a close parallel in theory and methodology). Wallach notes our response to color is emotional while our response to shape is intellectual; blue is the universally favored color, followed by red. He considers color therapy to be, in many ways, another form of light therapy.",
+        verbatim: "Color therapy is the use of colored\nlights or panels to create a positive healing\neffect. Color therapy was originally recorded\nin the Greek Healing Temples of light and\ncolor at Heliopolis, Egypt.",
+        page: 58,
+        book_id: "lets-play-doctor",
+        topics: [
+          "color-therapy",
+          "chromotherapy",
+          "light-therapy"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000100",
+        subject: "color_therapy",
+        also_about: [],
+        facet: "uses",
+        question: "What does each color treat in color therapy?",
+        answer_short: "Wallach's color map: blue for blood pressure, fever, cuts and burns; red for low blood pressure; orange for stones; yellow for diabetes; green for ulcers, colds and breast cancer.",
+        answer: "Wallach gives a color-by-color map of what each color is used to treat in color therapy. Blue reduces blood pressure and alleviates teething, boils, fever, inflammation, dysentery, colic, and jaundice, and heals cuts and burns. Red alleviates low blood pressure (hypotension) and certain forms of paralysis. Yellow/Violet alleviates anxiety and arthritis. Orange alleviates gallstones and kidney stones. Yellow is used for diabetes and constipation. Green is used for ulcers, colds, flu (influenza), and breast cancer.",
+        verbatim: '1) Blue reduces BP, alleviates\nteething, boils, fever, inflammation,\ndysentery, colic, jaundice and heals\ncuts and burns\n2) Red alleviates "hypo"tension and\ncertain forms of paralysis\n3) Yellow/Violet alleviates anxiety\nand arthritis\n4) Orange alleviates gallstones\n58\nand kidney stones\n5) Yellow - diabetes and constipation\n6) Green - ulcers, colds, flu,\nbreast cancer',
+        page: 58,
+        book_id: "lets-play-doctor",
+        topics: [
+          "color-therapy",
+          "color-map",
+          "blue",
+          "green"
+        ]
+      },
+      {
+        id: "WAL-CLM-LETS-000101",
+        subject: "color_therapy",
+        also_about: [],
+        facet: "uses",
+        question: "How is color therapy actually done?",
+        answer_short: "Six techniques \u2014 the Kilner diagnostic screen, reading tissue colors, sun-charged salt bags, colored foods, 'rainbow' sun-charged water, and meditative color breathing.",
+        answer: "Wallach lists six color-therapy techniques. (1) Kilner screen \u2014 a diagnostic tool of two glass plates holding a dicyanin (indigo/violet) solution, through which the therapist views the patient to determine which colors are needed. (2) Tissue colors \u2014 a diagnostic tool observing the color of the sclera (white of the eye), nails, urine, and stool. (3) Solar-chrome salt bags \u2014 a therapy tool: massaging the patient with colored salt in a cheesecloth sack 'charged' by sun or sunlamp exposure. (4) Food colors \u2014 a therapy tool: selecting colored food groups whose 'chemicals' (vitamins and minerals) the patient needs. (5) Rainbow healing \u2014 a therapy tool: water placed in colored glasses and exposed to sunlight, which the patient then drinks. (6) Color breathing \u2014 a therapy tool: a meditative style of retiring and awakening.",
+        verbatim: "Color therapy techniques include:\n1) Kilner screen - a diagnostic tool.\nConsists of two (2) plates of glass with a\nsolution of dicyanin (indigo/violet solution);\nthe color therapist views the patient through\nthe screen to determine which colors are\nneeded",
+        page: 59,
+        book_id: "lets-play-doctor",
+        topics: [
+          "color-therapy",
+          "techniques",
+          "kilner-screen"
+        ]
       }
     ]
   };
@@ -57929,8 +58466,10 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
   }
   function facetGroups(subject) {
     const claims = claimsForSubject(subject);
+    const e = getEntity(subject);
+    const order = e !== null && FACET_ORDER_BY_TYPE[e.type] !== void 0 ? FACET_ORDER_BY_TYPE[e.type] : SEARCH_FACETS;
     const out = [];
-    for (const facet of SEARCH_FACETS) {
+    for (const facet of order) {
       const inFacet = claims.filter((c) => c.facet === facet);
       if (inFacet.length > 0) {
         out.push({ facet, label: FACET_LABEL[facet], claims: inFacet });
@@ -58042,22 +58581,54 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
   function oneLine(s) {
     return s.replace(/\s+/g, " ").trim();
   }
-  function tier1Chips(claim) {
-    const link = claim.tier1_link;
-    if (link === void 0) {
+  var TYPE_ICON = {
+    substance: '<svg viewBox="0 0 24 24"><path d="M12 3l7.5 4.5v9L12 21l-7.5-4.5v-9z"/><circle cx="12" cy="12" r="2.2"/></svg>',
+    condition: '<svg viewBox="0 0 24 24"><path d="M2 12h4.5l2.5-6 4 13 2.5-7H22"/></svg>',
+    concept: '<svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><path d="M12 8.4 6.9 14.8M12 8.4l5.1 6.4M8.3 17h7.4"/></svg>',
+    topic: '<svg viewBox="0 0 24 24"><path d="M4 4h8l8 8-8 8-8-8z"/><circle cx="8" cy="8" r="1.4"/></svg>',
+    person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg>',
+    nutrient: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>'
+  };
+  var ENTITY_ICON = {
+    color_therapy: '<svg viewBox="0 0 24 24" class="sr-icon-wheel"><path fill="#e5484d" d="M12 12L12 3A9 9 0 0 1 19.79 7.5Z"/><path fill="#f5892a" d="M12 12L19.79 7.5A9 9 0 0 1 19.79 16.5Z"/><path fill="#ffc531" d="M12 12L19.79 16.5A9 9 0 0 1 12 21Z"/><path fill="#4ca259" d="M12 12L12 21A9 9 0 0 1 4.21 16.5Z"/><path fill="#4a7dff" d="M12 12L4.21 16.5A9 9 0 0 1 4.21 7.5Z"/><path fill="#9159f0" d="M12 12L4.21 7.5A9 9 0 0 1 12 3Z"/></svg>'
+  };
+  function tileGlyph(slug, e) {
+    if (typeof e.symbol === "string" && e.symbol.length > 0) {
+      return escHTML9(e.symbol);
+    }
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML9(e.display_name.charAt(0));
+  }
+  function renderPill(slug) {
+    const name = escHTML9(displayName(slug));
+    if (getEntity(slug) !== null) {
+      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML9(slug)}" title="Open ${name}">${name}</button>`;
+    }
+    return `<span class="sr-pill" title="Related to this">${name}</span>`;
+  }
+  function claimRelatedSlugs(claim) {
+    const seen = /* @__PURE__ */ new Set([claim.subject]);
+    const out = [];
+    const add = (slugs) => {
+      for (const s of slugs ?? []) {
+        if (!seen.has(s)) {
+          seen.add(s);
+          out.push(s);
+        }
+      }
+    };
+    add(claim.also_about);
+    add(claim.tier1_link?.essentials);
+    add(claim.tier1_link?.conditions);
+    add(claim.tier1_link?.symptoms);
+    return out;
+  }
+  function renderClaimRelated(claim) {
+    const slugs = claimRelatedSlugs(claim);
+    if (slugs.length === 0) {
       return "";
     }
-    const chips = [];
-    for (const slug of link.essentials ?? []) {
-      chips.push(`<span class="sr-t1 sr-t1--ess" title="Also an operational essential in Coverage/Knowledge">${escHTML9(displayName(slug))}</span>`);
-    }
-    for (const slug of link.conditions ?? []) {
-      chips.push(`<span class="sr-t1 sr-t1--cond" title="Also an indexed condition in Knowledge">${escHTML9(displayName(slug))}</span>`);
-    }
-    if (chips.length === 0) {
-      return "";
-    }
-    return `<div class="sr-claim__tier1"><span class="sr-claim__tier1-label">ALSO TIER-1</span>${chips.join("")}</div>`;
+    const pills = slugs.map(renderPill).join("");
+    return `<div class="sr-claim__related"><span class="sr-related__label">RELATED</span>${pills}</div>`;
   }
   function topicTags(claim) {
     if (claim.topics.length === 0) {
@@ -58072,7 +58643,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
       <div class="sr-claim__answer">${escHTML9(claim.answer)}</div>
       <blockquote class="sr-claim__verbatim">\u201C${escHTML9(oneLine(claim.verbatim))}\u201D</blockquote>
       <div class="sr-claim__cite">${escHTML9(composeCite(claim))}</div>
-      ${tier1Chips(claim)}
+      ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
   }
   function renderClaimRow(claim) {
@@ -58105,14 +58676,11 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
     if (e === null || e.related.length === 0) {
       return "";
     }
-    const chips = e.related.map((slug) => {
-      const known = getEntity(slug) !== null;
-      return known ? `<button class="sr-related__chip sr-related__chip--link" data-sr-entity="${escHTML9(slug)}" title="Open ${escHTML9(displayName(slug))}">${escHTML9(displayName(slug))}</button>` : `<span class="sr-related__chip" title="Related">${escHTML9(displayName(slug))}</span>`;
-    }).join("");
+    const pills = e.related.map(renderPill).join("");
     return `
     <div class="sr-related">
       <span class="sr-related__label">RELATED</span>
-      <div class="sr-related__chips">${chips}</div>
+      <div class="sr-related__chips">${pills}</div>
     </div>`;
   }
   function renderLanding(noMatch) {
@@ -58123,7 +58691,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
     }
     const card = (e) => `
     <button class="sr-ent-card" data-sr-entity="${escHTML9(e.slug)}">
-      <span class="sr-ent-card__sym">${escHTML9(e.symbol ?? e.display_name.charAt(0))}</span>
+      <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
       <span class="sr-ent-card__idblock">
         <span class="sr-ent-card__name">${escHTML9(e.display_name)}</span>
         <span class="sr-ent-card__meta">${escHTML9(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
@@ -58149,8 +58717,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
     return `
     <div class="sr-entity">
       <header class="sr-entity__head">
-        <button class="sr-entity__back" data-sr-action="home" title="Back to browse">\u2039 ALL</button>
-        <div class="sr-entity__sym">${escHTML9(e.symbol ?? e.display_name.charAt(0))}</div>
+        <button class="sr-entity__back" data-sr-action="back" title="Back">\u2039 BACK</button>
+        <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
         <div class="sr-entity__idblock">
           <h3 class="sr-entity__name">${escHTML9(e.display_name)}</h3>
           <div class="sr-entity__meta">${escHTML9(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML9(synLine)}</div>
@@ -58210,6 +58778,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
     let isExpanded = false;
     let query = "";
     let lastKey = "";
+    const navStack = [];
     const resultKey = (r) => `${r.mode}|${r.subject}|${r.claim?.id ?? ""}|${r.noMatch}`;
     const paintBody = (force) => {
       const result = resolveQuery(query);
@@ -58255,6 +58824,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
       isOpen = false;
       isExpanded = false;
       query = "";
+      navStack.length = 0;
       container.classList.remove("sr-open", "sr-expanded");
       container.innerHTML = "";
     };
@@ -58270,12 +58840,19 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
       container.classList.toggle("sr-expanded", isExpanded);
     };
     const gotoEntity = (slug) => {
+      navStack.push(query);
       query = displayName(slug);
+      syncSearchbar();
+      paintBody(true);
+    };
+    const goBack = () => {
+      query = navStack.pop() ?? "";
       syncSearchbar();
       paintBody(true);
     };
     const gotoHome = () => {
       query = "";
+      navStack.length = 0;
       syncSearchbar();
       paintBody(true);
     };
@@ -58285,6 +58862,7 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
         return;
       }
       query = t.value;
+      navStack.length = 0;
       container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
       paintBody(false);
     });
@@ -58305,8 +58883,8 @@ Verified: build OK (tsc + esbuild), invariants 53/53 (the new gate added; derive
           close();
         } else if (action === "expand") {
           toggleExpanded();
-        } else if (action === "home") {
-          gotoHome();
+        } else if (action === "back") {
+          goBack();
         } else if (action === "search-clear") {
           gotoHome();
           container.querySelector(".sr-searchbar__input")?.focus();

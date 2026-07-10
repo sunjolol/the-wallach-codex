@@ -70,6 +70,10 @@ case("ghost-claim", mutate_enr=lambda e: e.__setitem__("WAL-CLM-NOPE-999999", co
 case("canon_ref-with-name", mutate_reg=lambda r: r["calcium"].__setitem__("display_name", "Calcium"), needle="display_name")
 # 7) registry canon_ref pointing at a non-canon slug
 case("canon_ref-not-canon", mutate_reg=lambda r: r.__setitem__("florbium", {"canon_ref": True, "type": "nutrient", "synonyms": [], "related": []}), needle="canon")
+# 8) registry catalog_ref (condition) that hand-stores a display_name (no dup)
+case("catalog_ref-with-name", mutate_reg=lambda r: r["diabetes"].__setitem__("display_name", "Diabetes"), needle="display_name")
+# 9) registry catalog_ref pointing at a slug that is not a catalog condition
+case("catalog_ref-not-condition", mutate_reg=lambda r: r.__setitem__("florbium", {"catalog_ref": True, "type": "condition", "synonyms": [], "related": []}), needle="catalog")
 
 passed = sum(results)
 total = len(results)

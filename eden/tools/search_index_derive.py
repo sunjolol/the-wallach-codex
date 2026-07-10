@@ -61,8 +61,12 @@ def _canon():
     return {e['slug']: e for e in _load('eden/corpus/essentials-canon.json')['essentials']}
 
 
+def _conditions():
+    return _load('eden/catalog/conditions.json').get('conditions', {})
+
+
 def _condition_slugs():
-    return set(_load('eden/catalog/conditions.json').get('conditions', {}).keys())
+    return set(_conditions().keys())
 
 
 def validate(enr=None, reg=None, canon=None, claims_by_id=None):
@@ -76,7 +80,8 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
 
     canon_slugs = set(canon.keys())
     reg_slugs = set(reg.keys())
-    resolvable = canon_slugs | reg_slugs | _condition_slugs()
+    cond_slugs = _condition_slugs()
+    resolvable = canon_slugs | reg_slugs | cond_slugs
     errs = []
 
     for cid in sorted(enr.keys()):
@@ -111,10 +116,17 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
                 errs.append(f'registry {slug!r}: canon_ref but not an essentials-canon slug')
             if r.get('display_name'):
                 errs.append(f'registry {slug!r}: canon_ref must OMIT display_name (pulled from canon)')
+        if r.get('catalog_ref'):
+            if slug not in cond_slugs:
+                errs.append(f'registry {slug!r}: catalog_ref but not a catalog condition slug')
+            if r.get('display_name'):
+                errs.append(f'registry {slug!r}: catalog_ref must OMIT display_name (pulled from conditions)')
+        if r.get('canon_ref') and r.get('catalog_ref'):
+            errs.append(f'registry {slug!r}: cannot be both canon_ref and catalog_ref')
     return errs
 
 
-def _entity_record(slug, reg, canon, count):
+def _entity_record(slug, reg, canon, cond_names, count):
     r = reg.get(slug, {})
     if r.get('canon_ref'):
         ce = canon[slug]
@@ -128,6 +140,14 @@ def _entity_record(slug, reg, canon, count):
         if ce.get('symbol'):
             rec['symbol'] = ce['symbol']
         return rec
+    if r.get('catalog_ref'):
+        return {
+            'display_name': cond_names[slug],
+            'type': r.get('type', 'condition'),
+            'synonyms': r.get('synonyms', []),
+            'related': r.get('related', []),
+            'claim_count': count,
+        }
     rec = {
         'display_name': r['display_name'],
         'type': r.get('type', 'concept'),
@@ -145,6 +165,7 @@ def build_index():
     enr = _load('eden/corpus/search-enrichment.json')['enrichment']
     reg = _load('eden/catalog/search-entities.json')['entities']
     canon = _canon()
+    cond_names = {slug: e.get('display_name', slug) for slug, e in _conditions().items()}
     claims_by_id = _claims_by_id()
     books_meta = {b['book_id']: b for b in _load('eden/corpus/books-meta.json')['books']}
 
@@ -171,13 +192,18 @@ def build_index():
             'book_id': loc.get('book'),
             'topics': a.get('topics', []),
         }
+        # tier1_link means "this claim ALSO feeds the operational tier-1 tabs" — true ONLY for a
+        # genuinely dual-home claim (NOT tagged search-only). A search-only claim may carry a
+        # conditions array for search matching, but it is excluded from the operational indices
+        # (search_only_indices_excluded), so it gets no ALSO-TIER-1 chips.
         tier1 = {}
-        if c.get('essentials'):
-            tier1['essentials'] = c['essentials']
-        if c.get('conditions'):
-            tier1['conditions'] = c['conditions']
-        if c.get('symptoms'):
-            tier1['symptoms'] = c['symptoms']
+        if 'search-only' not in c.get('tags', []):
+            if c.get('essentials'):
+                tier1['essentials'] = c['essentials']
+            if c.get('conditions'):
+                tier1['conditions'] = c['conditions']
+            if c.get('symptoms'):
+                tier1['symptoms'] = c['symptoms']
         if tier1:
             rec['tier1_link'] = tier1
         claims.append(rec)
@@ -190,7 +216,7 @@ def build_index():
             b = books_meta[bid]
             books[bid] = {'title': b['title'], 'year': b['year']}
 
-    entities = {slug: _entity_record(slug, reg, canon, counts[slug]) for slug in sorted(counts.keys())}
+    entities = {slug: _entity_record(slug, reg, canon, cond_names, counts[slug]) for slug in sorted(counts.keys())}
 
     return {
         'schema_version': 1,

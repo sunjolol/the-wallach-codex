@@ -49,7 +49,20 @@ export const FACET_LABEL: Record<SearchFacet, string> = {
   warning: 'WARNINGS',
   history: 'HISTORY & LORE',
   big_question: 'BIG QUESTIONS',
-  biography: 'ABOUT WALLACH',
+  biography: 'BIOGRAPHY',
+};
+
+/**
+ * Per-entity-type facet DISPLAY order. A type absent here uses SEARCH_FACETS (the default order).
+ * Conditions lead with Wallach's thesis (stance) → how-it-works → what-to-do → warnings, because a
+ * disease page's compelling content is the cause + cure, not a diagnostic caution (Luneth 2026-07-09).
+ * Each ordering MUST list all 13 facets so none is ever dropped from an entity page.
+ */
+export const FACET_ORDER_BY_TYPE: Record<string, readonly SearchFacet[]> = {
+  condition: [
+    'stance', 'mechanism', 'protocol', 'warning', 'physiology', 'basics', 'sources',
+    'uses', 'history', 'big_question', 'biography', 'discovery', 'etymology',
+  ],
 };
 
 /** Dual-home pointer — the operational tier-1 slugs a search claim ALSO feeds (never leaks the other way). */

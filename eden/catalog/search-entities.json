@@ -43,6 +43,72 @@
         "osteoporosis",
         "vitamin-d"
       ]
+    },
+    "cholesterol": {
+      "display_name": "Cholesterol",
+      "type": "substance",
+      "synonyms": [
+        "sterol"
+      ],
+      "related": [
+        "vanadium",
+        "silicon",
+        "menopause"
+      ]
+    },
+    "diabetes": {
+      "catalog_ref": true,
+      "type": "condition",
+      "synonyms": [
+        "type 2 diabetes",
+        "diabetes mellitus",
+        "adult-onset diabetes",
+        "blood sugar"
+      ],
+      "related": [
+        "chromium",
+        "vanadium",
+        "hypoglycemia"
+      ]
+    },
+    "colloidal_minerals": {
+      "display_name": "Colloidal Minerals",
+      "type": "concept",
+      "synonyms": [
+        "colloidal",
+        "plant-derived minerals",
+        "mineral bioavailability",
+        "chelated minerals"
+      ],
+      "related": [
+        "chromium",
+        "calcium",
+        "selenium"
+      ]
+    },
+    "color_therapy": {
+      "display_name": "Color Therapy",
+      "type": "topic",
+      "synonyms": [
+        "chromotherapy",
+        "color healing",
+        "colour therapy"
+      ],
+      "related": [
+        "light_therapy"
+      ]
+    },
+    "wallach": {
+      "display_name": "Dr. Joel Wallach",
+      "type": "person",
+      "synonyms": [
+        "joel wallach",
+        "dr wallach",
+        "joel d wallach"
+      ],
+      "related": [
+        "epigenetics"
+      ]
     }
   }
 }

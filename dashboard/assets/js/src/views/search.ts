@@ -3,20 +3,19 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Slide-in-from-left overlay drawer (mirrors the Knowledge drawer chrome, own sr-*
- * namespace + drawer-search.css so nothing leaks). Three render modes on ONE surface
- * (blueprint §5):
- *   - LANDING (empty query): a browse grid of every registered entity (symbol · name ·
+ * namespace + drawer-search.css so nothing leaks). Three render modes on ONE surface:
+ *   - LANDING (empty query): a browse grid of every registered entity (icon · name ·
  *     type · claim count) — click a card to open its entity page.
- *   - ENTITY PAGE (query = a subject): a product-detail-style panel — header (symbol ·
- *     display_name · type · claim count · synonyms) then one collapsible section per FACET
- *     the entity has (BASICS · HOW IT WORKS · SOURCES …), each an FAQ list of question rows
- *     that expand to answer + verbatim + cite.
- *   - ASK ANSWER (query = a question): the demo's ask-result — a ? badge, the question,
- *     the short + full answer, an italic Wallach verbatim, a mono cite, and "MORE ON
- *     {SUBJECT}" back to the entity page.
+ *   - ENTITY PAGE (query = a subject): a product-detail-style panel — header then one
+ *     collapsible section per FACET (order tailored per entity type), each an FAQ list of
+ *     question rows that expand to answer + verbatim + cite + RELATED pills.
+ *   - ASK ANSWER (query = a question): the demo's ask-result card.
  *
- * Retrieval + data come from state/search.ts (pure, offline, no LLM) reading the ONE derived
- * search index. §00 Zod boundary: all reads pass through core/schemas/search before field access.
+ * ONE pill rule (renderPill): anywhere a slug is referenced (a claim's related entities, an
+ * entity's related list), the pill is CLICKABLE + navigable iff that slug resolves to an entity
+ * that has a page; otherwise it is a plain chip. So pills light up automatically as entities are
+ * authored — no per-site wiring, no duplication (the structure decides). A nav back-stack lets
+ * "‹ BACK" return to the previous card. Retrieval + data come from state/search.ts (offline, no LLM).
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -54,23 +53,79 @@ function oneLine(s: string): string {
   return s.replace(/\s+/g, ' ').trim();
 }
 
-/** A claim's dual-home chips — the operational tabs it also feeds (derived from the sealed claim). */
-function tier1Chips(claim: SearchClaim): string {
-  const link = claim.tier1_link;
-  if (link === undefined) {
+/**
+ * Per-type tile icons (author-vetted constant SVGs; monochrome line icons, inherit the tile
+ * color). Used for entities WITHOUT an atomic symbol — elements/minerals keep their symbol.
+ */
+const TYPE_ICON: Record<string, string> = {
+  substance: '<svg viewBox="0 0 24 24"><path d="M12 3l7.5 4.5v9L12 21l-7.5-4.5v-9z"/><circle cx="12" cy="12" r="2.2"/></svg>',
+  condition: '<svg viewBox="0 0 24 24"><path d="M2 12h4.5l2.5-6 4 13 2.5-7H22"/></svg>',
+  concept: '<svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><path d="M12 8.4 6.9 14.8M12 8.4l5.1 6.4M8.3 17h7.4"/></svg>',
+  topic: '<svg viewBox="0 0 24 24"><path d="M4 4h8l8 8-8 8-8-8z"/><circle cx="8" cy="8" r="1.4"/></svg>',
+  person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg>',
+  nutrient: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>',
+};
+
+/**
+ * Entity-SPECIFIC icon overrides (checked before the type icon) — for entities whose subject
+ * deserves a bespoke mark. Color Therapy gets a full-color 6-segment wheel (the one deliberately
+ * NOT monochrome; drawer-search.css opts .sr-icon-wheel out of the mono stroke rule). Luneth 2026-07-09.
+ */
+const ENTITY_ICON: Record<string, string> = {
+  color_therapy: '<svg viewBox="0 0 24 24" class="sr-icon-wheel"><path fill="#e5484d" d="M12 12L12 3A9 9 0 0 1 19.79 7.5Z"/><path fill="#f5892a" d="M12 12L19.79 7.5A9 9 0 0 1 19.79 16.5Z"/><path fill="#ffc531" d="M12 12L19.79 16.5A9 9 0 0 1 12 21Z"/><path fill="#4ca259" d="M12 12L12 21A9 9 0 0 1 4.21 16.5Z"/><path fill="#4a7dff" d="M12 12L4.21 16.5A9 9 0 0 1 4.21 7.5Z"/><path fill="#9159f0" d="M12 12L4.21 7.5A9 9 0 0 1 12 3Z"/></svg>',
+};
+
+/** The tile face: an atomic symbol if the entity has one, else a bespoke entity icon, else the
+ *  per-type icon, else a first letter. */
+function tileGlyph(slug: string, e: { symbol?: string | null | undefined; type: string; display_name: string }): string {
+  if (typeof e.symbol === 'string' && e.symbol.length > 0) {
+    return escHTML(e.symbol);
+  }
+  return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML(e.display_name.charAt(0));
+}
+
+/**
+ * The ONE pill primitive. A slug that resolves to an entity WITH a page becomes a clickable link
+ * (navigates via the shared data-sr-entity handler → nav push); otherwise a plain chip. displayName
+ * is the single source for the label. Used by both the per-claim RELATED row and the per-entity
+ * RELATED list, so every pill everywhere behaves identically with zero duplicated logic.
+ */
+function renderPill(slug: string): string {
+  const name = escHTML(displayName(slug));
+  if (getEntity(slug) !== null) {
+    return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML(slug)}" title="Open ${name}">${name}</button>`;
+  }
+  return `<span class="sr-pill" title="Related to this">${name}</span>`;
+}
+
+/** The entities a claim connects to: authored also_about + its dual-home tier-1 links, deduped,
+ *  minus the claim's own subject (no self-links). Ordered also_about → essentials → conditions → symptoms. */
+function claimRelatedSlugs(claim: SearchClaim): string[] {
+  const seen = new Set<string>([claim.subject]);
+  const out: string[] = [];
+  const add = (slugs: readonly string[] | undefined): void => {
+    for (const s of slugs ?? []) {
+      if (!seen.has(s)) {
+        seen.add(s);
+        out.push(s);
+      }
+    }
+  };
+  add(claim.also_about);
+  add(claim.tier1_link?.essentials);
+  add(claim.tier1_link?.conditions);
+  add(claim.tier1_link?.symptoms);
+  return out;
+}
+
+/** A claim's RELATED row — the cross-reference pills (was the confusing "ALSO TIER-1"). */
+function renderClaimRelated(claim: SearchClaim): string {
+  const slugs = claimRelatedSlugs(claim);
+  if (slugs.length === 0) {
     return '';
   }
-  const chips: string[] = [];
-  for (const slug of link.essentials ?? []) {
-    chips.push(`<span class="sr-t1 sr-t1--ess" title="Also an operational essential in Coverage/Knowledge">${escHTML(displayName(slug))}</span>`);
-  }
-  for (const slug of link.conditions ?? []) {
-    chips.push(`<span class="sr-t1 sr-t1--cond" title="Also an indexed condition in Knowledge">${escHTML(displayName(slug))}</span>`);
-  }
-  if (chips.length === 0) {
-    return '';
-  }
-  return `<div class="sr-claim__tier1"><span class="sr-claim__tier1-label">ALSO TIER-1</span>${chips.join('')}</div>`;
+  const pills = slugs.map(renderPill).join('');
+  return `<div class="sr-claim__related"><span class="sr-related__label">RELATED</span>${pills}</div>`;
 }
 
 function topicTags(claim: SearchClaim): string {
@@ -88,7 +143,7 @@ function claimDetail(claim: SearchClaim): string {
       <div class="sr-claim__answer">${escHTML(claim.answer)}</div>
       <blockquote class="sr-claim__verbatim">“${escHTML(oneLine(claim.verbatim))}”</blockquote>
       <div class="sr-claim__cite">${escHTML(composeCite(claim))}</div>
-      ${tier1Chips(claim)}
+      ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
 }
 
@@ -120,22 +175,17 @@ function renderFacet(group: FacetGroup): string {
     </details>`;
 }
 
+/** The entity-level RELATED list — curated cross-links for the whole entity (same pill rule). */
 function renderRelated(subject: string): string {
   const e = getEntity(subject);
   if (e === null || e.related.length === 0) {
     return '';
   }
-  const chips = e.related.map((slug) => {
-    // A related entity that IS in the registry is a clickable cross-link; otherwise a plain chip.
-    const known = getEntity(slug) !== null;
-    return known
-      ? `<button class="sr-related__chip sr-related__chip--link" data-sr-entity="${escHTML(slug)}" title="Open ${escHTML(displayName(slug))}">${escHTML(displayName(slug))}</button>`
-      : `<span class="sr-related__chip" title="Related">${escHTML(displayName(slug))}</span>`;
-  }).join('');
+  const pills = e.related.map(renderPill).join('');
   return `
     <div class="sr-related">
       <span class="sr-related__label">RELATED</span>
-      <div class="sr-related__chips">${chips}</div>
+      <div class="sr-related__chips">${pills}</div>
     </div>`;
 }
 
@@ -150,7 +200,7 @@ function renderLanding(noMatch: boolean): string {
   }
   const card = (e: EntitySummary): string => `
     <button class="sr-ent-card" data-sr-entity="${escHTML(e.slug)}">
-      <span class="sr-ent-card__sym">${escHTML(e.symbol ?? e.display_name.charAt(0))}</span>
+      <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
       <span class="sr-ent-card__idblock">
         <span class="sr-ent-card__name">${escHTML(e.display_name)}</span>
         <span class="sr-ent-card__meta">${escHTML(e.type.toUpperCase())} · ${e.claim_count} ENTR${e.claim_count === 1 ? 'Y' : 'IES'}</span>
@@ -177,8 +227,8 @@ function renderEntity(subject: string): string {
   return `
     <div class="sr-entity">
       <header class="sr-entity__head">
-        <button class="sr-entity__back" data-sr-action="home" title="Back to browse">‹ ALL</button>
-        <div class="sr-entity__sym">${escHTML(e.symbol ?? e.display_name.charAt(0))}</div>
+        <button class="sr-entity__back" data-sr-action="back" title="Back">‹ BACK</button>
+        <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
         <div class="sr-entity__idblock">
           <h3 class="sr-entity__name">${escHTML(e.display_name)}</h3>
           <div class="sr-entity__meta">${escHTML(e.type.toUpperCase())} · ${n} ENTR${n === 1 ? 'Y' : 'IES'}${escHTML(synLine)}</div>
@@ -245,6 +295,9 @@ export function mount(container: HTMLElement): DrawerHandle {
   let isExpanded = false;
   let query = '';
   let lastKey = '';
+  // Navigation back-stack: each entry is the query we were showing BEFORE a pill/card jump, so
+  // "‹ BACK" pops to the previous card (and to the landing when empty). One source of nav truth.
+  const navStack: string[] = [];
 
   const resultKey = (r: SearchResult): string => `${r.mode}|${r.subject}|${r.claim?.id ?? ''}|${r.noMatch}`;
 
@@ -296,6 +349,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     isOpen = false;
     isExpanded = false;
     query = '';
+    navStack.length = 0;
     container.classList.remove('sr-open', 'sr-expanded');
     container.innerHTML = '';
   };
@@ -312,15 +366,23 @@ export function mount(container: HTMLElement): DrawerHandle {
     container.classList.toggle('sr-expanded', isExpanded);
   };
 
-  /** Navigate to an entity page by setting the query to its display name (entityHit resolves it). */
+  /** Navigate to an entity page by its slug — push the current view so "‹ BACK" can return here. */
   const gotoEntity = (slug: string): void => {
+    navStack.push(query);
     query = displayName(slug);
     syncSearchbar();
     paintBody(true);
   };
-  /** Return to the browse landing. */
+  /** Pop one step back — to the previous card, or the landing when the stack is empty. */
+  const goBack = (): void => {
+    query = navStack.pop() ?? '';
+    syncSearchbar();
+    paintBody(true);
+  };
+  /** Reset to the browse landing (clears the nav chain). */
   const gotoHome = (): void => {
     query = '';
+    navStack.length = 0;
     syncSearchbar();
     paintBody(true);
   };
@@ -332,7 +394,9 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (t === null || !t.classList.contains('sr-searchbar__input')) {
       return;
     }
+    // A manually-typed query is a fresh search — reset the nav chain so BACK goes to the landing.
     query = (t as HTMLInputElement).value;
+    navStack.length = 0;
     container.querySelector('.sr-searchbar')?.classList.toggle('has-query', query.trim().length > 0);
     paintBody(false);
   });
@@ -356,8 +420,8 @@ export function mount(container: HTMLElement): DrawerHandle {
       else if (action === 'expand') {
         toggleExpanded();
       }
-      else if (action === 'home') {
-        gotoHome();
+      else if (action === 'back') {
+        goBack();
       }
       else if (action === 'search-clear') {
         gotoHome();

@@ -2,9 +2,25 @@
   "schema_version": 1,
   "_generated": "DERIVED by eden/tools/search_index_derive.py from the sealed pillars — do not hand-edit",
   "books": {
+    "dddl-3e-2011": {
+      "title": "Dead Doctors Don't Lie",
+      "year": 2011
+    },
+    "epigenetics": {
+      "title": "Epigenetics: The Death of the Genetic Theory of Disease Transmission",
+      "year": 2014
+    },
+    "iaiyh": {
+      "title": "It's All In Your Head",
+      "year": 2020
+    },
     "immortality": {
       "title": "Immortality",
       "year": 2008
+    },
+    "lets-play-doctor": {
+      "title": "Let's Play Doctor",
+      "year": 1995
     }
   },
   "entities": {
@@ -23,6 +39,64 @@
       "claim_count": 8,
       "symbol": "Ca"
     },
+    "cholesterol": {
+      "display_name": "Cholesterol",
+      "type": "substance",
+      "synonyms": [
+        "sterol"
+      ],
+      "related": [
+        "vanadium",
+        "silicon",
+        "menopause"
+      ],
+      "claim_count": 2
+    },
+    "colloidal_minerals": {
+      "display_name": "Colloidal Minerals",
+      "type": "concept",
+      "synonyms": [
+        "colloidal",
+        "plant-derived minerals",
+        "mineral bioavailability",
+        "chelated minerals"
+      ],
+      "related": [
+        "chromium",
+        "calcium",
+        "selenium"
+      ],
+      "claim_count": 5
+    },
+    "color_therapy": {
+      "display_name": "Color Therapy",
+      "type": "topic",
+      "synonyms": [
+        "chromotherapy",
+        "color healing",
+        "colour therapy"
+      ],
+      "related": [
+        "light_therapy"
+      ],
+      "claim_count": 3
+    },
+    "diabetes": {
+      "display_name": "Diabetes",
+      "type": "condition",
+      "synonyms": [
+        "type 2 diabetes",
+        "diabetes mellitus",
+        "adult-onset diabetes",
+        "blood sugar"
+      ],
+      "related": [
+        "chromium",
+        "vanadium",
+        "hypoglycemia"
+      ],
+      "claim_count": 6
+    },
     "mercury": {
       "display_name": "Mercury",
       "type": "element",
@@ -38,9 +112,334 @@
       ],
       "claim_count": 13,
       "symbol": "Hg"
+    },
+    "wallach": {
+      "display_name": "Dr. Joel Wallach",
+      "type": "person",
+      "synonyms": [
+        "joel wallach",
+        "dr wallach",
+        "joel d wallach"
+      ],
+      "related": [
+        "epigenetics"
+      ],
+      "claim_count": 4
     }
   },
   "claims": [
+    {
+      "id": "WAL-CLM-DDDL-000008",
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "history",
+      "question": "How did Wallach first connect diabetes to a mineral deficiency?",
+      "answer_short": "From the autopsy table: he saw zoo marmosets, alligators and shrews die of diabetes caused by chromium and vanadium deficiency.",
+      "answer": "Zoo marmosets and shrews died of diabetes attributed to chromium and vanadium deficiency (observed at autopsy).",
+      "verbatim": "I saw marmosets, alligators, and\nshrews that died of diabetes, a chromium and vanadium deficiency.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "autopsy-evidence",
+        "chromium",
+        "vanadium",
+        "zoo-animals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "diabetes"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000034",
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does vanadium help with diabetes?",
+      "answer_short": "Vanadium mimics insulin — it makes the cell's insulin receptors more sensitive, helping the body handle glucose and carbohydrates.",
+      "answer": "Vanadium functions like insulin, making cell-membrane insulin receptors more sensitive and aiding glucose/carbohydrate intolerance.",
+      "verbatim": "Vanadium appears to function\nlike insulin by altering cell membrane function for ion transport.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "vanadium",
+        "insulin",
+        "blood-sugar"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vanadium"
+        ],
+        "conditions": [
+          "diabetes"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000048",
+      "subject": "diabetes",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach treat diabetes?",
+      "answer_short": "Start with chromium and vanadium at 250 mcg a day in the early stages — carefully, to avoid dropping blood sugar too fast ('insulin shock').",
+      "answer": "Diabetes treatment starts with chromium and vanadium at 250 mcg/day in the initial stages to prevent insulin shock.",
+      "verbatim": "Treatment of diabetes should include chromium and vanadium at 250\nmcg/day in the initial stages to prevent “insulin shock”",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "diabetes",
+        "chromium",
+        "vanadium",
+        "protocol"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "diabetes"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000003",
+      "subject": "diabetes",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "stance",
+      "question": "What actually causes type 2 diabetes?",
+      "answer_short": "Wallach's stance: type 2 diabetes isn't genetic — it's a chromium and vanadium deficiency, and correcting it prevents and even reverses the disease.",
+      "answer": "Wallach teaches that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency, and that supplementing the 90 essential nutrients along with chromium and vanadium on an otherwise good diet will prevent and cure hypoglycemia, reactive hypoglycemia (which he equates with narcolepsy), hyperinsulinemia, and type 2 diabetes.",
+      "verbatim": "Since 1958 it has been well documented that supplementation of the 90\nessential nutrients along with chromium and vanadium to an otherwise perfect\ndiet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),\nhyperinsulinemia, and type 2 diabetes.",
+      "page": 568,
+      "book_id": "epigenetics",
+      "topics": [
+        "diabetes",
+        "chromium",
+        "vanadium",
+        "deficiency-thesis"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "diabetes",
+          "hypoglycemia",
+          "reactive_hypoglycemia",
+          "narcolepsy",
+          "hyperinsulinemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000060",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why do different mineral forms absorb so differently?",
+      "answer_short": "Metallic minerals are only 8–12% absorbable (3–5% after 40), chelated better, and plant-derived colloidal the most usable — which is why Wallach calls it the most critical of the 90 nutrients.",
+      "answer": "Wallach describes three basic forms of minerals and their very different bioavailability. Metallic minerals (eggshell, oyster shell, calcium carbonate, dolomite, antacids such as Rolaids and Tums, and the gluconate/carbonate/oxide forms in most tablets) are, despite claims to the contrary, only 8 to 12 percent absorbable by humans -- dropping to roughly 3 to 5 percent after age 35 to 40. Chelated minerals (created by the livestock industry in the 1960s, the mineral wrapped in an amino acid such as EDTA) absorb better, and colloidal minerals -- ultra-fine plant-derived particles suspended in liquid -- are the most usable, which is why he calls plant-derived colloidal minerals the most critical of the 90 essential nutrients.",
+      "verbatim": "Metallic minerals, despite wild claims to the contrary, are only eight percent\nto twelve percent biologically available to all vertebrates, including humans; after\nattaining the age of 35 to 40 years the absorptive availability to humans is\n\n\nreduced to somewhere around three to five percent.",
+      "page": 646,
+      "book_id": "epigenetics",
+      "topics": [
+        "mineral-bioavailability",
+        "metallic-minerals",
+        "absorption"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IAIYH-000020",
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "biography",
+      "question": "What are Dr. Wallach's credentials?",
+      "answer_short": "A 1991 Nobel Prize nomination for linking selenium to cystic fibrosis, two research medals, co-author of the DSHEA supplement law, and credit as an early founder of epigenetics.",
+      "answer": "Wallach's About-the-Author biography records the recognition his trace-mineral research has received: the 1988 Wooster Beach Gold Medal for a breakthrough in understanding the cause of cystic fibrosis, a 1991 Nobel Prize in Medicine nomination for linking selenium deficiency to cystic fibrosis, and the 2011 Klaus Schwarz Commemorative Medal for discovering the animal model of cystic fibrosis and elucidating its cause in humans. He is also credited as a co-author of the Dietary Supplement and Health Education Act — the law that keeps nutritional supplements legally categorized as food rather than pharmaceuticals. Accepting the Klaus Schwarz Medal, the awards committee wrote: \"From a Historical perspective, Wallach is to be regarded as one of the first practitioners, if not founders, of epigenetics, the new research discipline that investigates heritable alterations in gene expression caused by mechanisms other than changes in DNA sequence.\"",
+      "verbatim": "From a\nHistorical perspective, Wallach is to be regarded as one of the first practitioners, if not\nfounders, of epigenetics, the new research discipline that investigates heritable alterations\nin gene expression caused by mechanisms other than changes in DNA sequence.",
+      "page": 6,
+      "book_id": "iaiyh",
+      "topics": [
+        "wallach-biography",
+        "credentials",
+        "nobel-nomination",
+        "cystic-fibrosis"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000002",
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "biography",
+      "question": "What makes Dr. Wallach's approach different?",
+      "answer_short": "20,000+ autopsies across 454 animal species plus 3,000 humans — a comparative-pathology record that led him to conclude 'natural causes' deaths were really nutritional deficiencies.",
+      "answer": "Wallach's health framework is built on an unusually large base of comparative pathology. As a pathologist for a multi-institution research program - The Center for the Biology of Natural Systems, funded by the U.S. National Institutes of Health (NIH) along with several zoos and universities - he performed autopsies on a scale almost no one else has: more than 20,000 of them, spanning over 17,500 captive wild, laboratory, and domestic animals across more than 454 species, plus 3,000 humans for comparison. That vast cross-species record is what led him to his central claim - that creatures dying of so-called \"natural causes\" were really dying of nutritional deficiency diseases.",
+      "verbatim": "As a comparative pathologist, I (Wallach) performed\nmore than 20,000 autopsies of over 17,500 captive wild\nanimals, laboratory species and domestic animals, of over 454\nspecies and 3,000 humans for a comparison.",
+      "page": 50,
+      "book_id": "immortality",
+      "topics": [
+        "wallach-biography",
+        "autopsy-evidence",
+        "comparative-pathology"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000005",
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "history",
+      "question": "How did Wallach beat the FDA over omega-3?",
+      "answer_short": "After a long legal fight, on Sept 8, 2004 the FDA let his petition stand — allowing the claim that omega-3s cut heart-disease risk, which had been illegal to state for 65 years.",
+      "answer": "For more than 65 years it was known that omega-3 essential fatty acids were needed to prevent disease - but because the U.S. Food and Drug Administration (FDA) had ruled the evidence \"inconclusive,\" it was actually illegal to tell people that omega-3 supplements could lower their risk of stroke and sudden cardiac death. Wallach fought this: his company (Wellness Lifestyles, Inc.) petitioned the FDA for a qualified health claim, and after a hard-fought battle, won - on September 8, 2004 the FDA allowed the claim linking omega-3 fatty acids to reduced coronary heart disease risk (Docket No. 03Q-0401).",
+      "verbatim": "To make a long story short, Wellness Lifestyles,\nInc (Wallach) filed a petition for an Amended Health\nClaim: Omega-3 Fatty Acids and Coronary Heart Disease\n(Co-Petitioner); Docket No. 03Q-0401; filed on 6/23/2003;\nqualified claim allowed by FDA on 9/8/2004.",
+      "page": 61,
+      "book_id": "immortality",
+      "topics": [
+        "fda",
+        "omega-3",
+        "health-claim",
+        "vindication"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000006",
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is cholesterol bad for you?",
+      "answer_short": "No — Wallach calls cholesterol an essential nutrient: it builds every cell membrane, all the steroid hormones, and the brain's myelin.",
+      "answer": "Is cholesterol bad for you? Wallach's answer is no - he calls it an essential nutrient. He points out that cholesterol is a necessary building block of the structural membranes of every cell, of all steroid hormones, and of the brain's myelin (the fatty insulating sheath around nerves) and nerve cells themselves. This counters the popular view of cholesterol as merely something to avoid.",
+      "verbatim": "Cholesterol is an essential nutrient and an essential\ncomponent of the structural membranes of all cells, all steroid\nhormones and is a major component of brain (myelin) and\nnerve cells.",
+      "page": 60,
+      "book_id": "immortality",
+      "topics": [
+        "cholesterol",
+        "essential-nutrient",
+        "is-x-good-bad"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000010",
+      "subject": "wallach",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach agree with Linus Pauling?",
+      "answer_short": "Not on minerals — he corrects even the two-time Nobel laureate, who dismissed minerals as secondary and capped selenium at 15 mcg (today's safe limit is 200–1,000 mcg).",
+      "answer": "Wallach corrects even Linus Pauling - the two-time Nobel laureate - on minerals. Pauling (author of The Nature of the Chemical Bond) treated minerals as secondary to vitamins, recommending only eight to eleven of them at minimal doses. His selenium advice is Wallach's example of how wrong this was: Pauling insisted selenium's safe upper limit was just 15 mcg, whereas today the recommended safe limit is 200 to 1,000 mcg for an adult.",
+      "verbatim": "Linus Pauling, two time Nobel laureate, and author of the\ngreat work, The Nature of the Chemical Bond, relegated minerals\nto secondary importance to vitamins, recommending only eight\nto eleven minerals (calcium, magnesium, phosphorous, iron,\nzinc, copper, manganese, chromium, molybdenum, iodine and\nselenium) and then only at minimal doses - an example was\nselenium for which he insisted the upper safe limit was 15 mcg\n(today the recommended safe limit for selenium is 200 to 1,000\nmcg for an adult).",
+      "page": 82,
+      "book_id": "immortality",
+      "topics": [
+        "linus-pauling",
+        "minerals",
+        "selenium",
+        "establishment-critique"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000023",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What are chelated minerals, and do they absorb better?",
+      "answer_short": "Chelated minerals wrap an amino acid around each mineral, absorbing ~40–65% — a 400% jump over metallic (8–12%); on a label they read as 'picolinate' or 'amino acid chelate.'",
+      "answer": "Chelated minerals - where an amino acid, protein, or enzyme is wrapped ('claw,' from the Latin) around each mineral - absorb far better than plain metallic ones: about 40-65%, which Wallach calls a 400% improvement over metallic minerals (8-12%). He notes the form was a 1940s livestock-industry invention (the original chelating agent, calcium EDTA, was a German pre-WWI antidote for arsenic and lead exposure, still used today for intravenous chelation of clogged arteries), and that you can spot chelated forms on a label as selenomethionine, chromium picolinate, or 'amino acid chelate.'",
+      "verbatim": "Chelated minerals are approximately 40 to 65%\nbioavailable, a 400% increase over the availability of metallic\nminerals - certainly, a significant improvement over the\n\n\namounts elemental minerals that are absorbed.",
+      "page": 88,
+      "book_id": "immortality",
+      "topics": [
+        "chelated-minerals",
+        "absorption",
+        "edta"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000024",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is a colloidal mineral?",
+      "answer_short": "A mineral existing as ultra-fine particles (1–100 nanometers — 'nano-technology') suspended in liquid, too small to dissolve into single atoms the way salt does.",
+      "answer": "What is a colloidal mineral - and what does 'nano-technology' have to do with it? Wallach describes a colloid as a substance existing as ultra-fine particles suspended in a medium, so small (about a billion would fit in a hundredth of a cubic inch) that they don't dissolve into individual atoms the way salt does. He notes colloids keep their special qualities as long as the particles stay within a size range of about 1 to 100 nanometers - a range, he points out, known as 'nano-technology.'",
+      "verbatim": "The interesting\nthing about colloids is that they remain heterogeneous, multiphasic and insoluble at different concentrations as long as a\nlarger number if not all of the particles are within a range of\nsizes of colloids (1nm to 100nm) known as “nano-technology.”",
+      "page": 91,
+      "book_id": "immortality",
+      "topics": [
+        "colloidal-minerals",
+        "nano-technology",
+        "mineral-forms"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000025",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why can't you just swallow ground-up rock minerals?",
+      "answer_short": "Inorganic mineral particles are too large to cross the gut wall; only when amino acids convert them into absorbable 'crystalloids' can the intestine take them up.",
+      "answer": "Why can't you just swallow ground-up rock minerals? Wallach's answer: inorganic mineral colloids are 'too large' to pass through the gut wall or cell walls into the bloodstream. But in the presence of amino acids (from protein-containing food), a small percentage of them get converted into chelated minerals and organic colloids that CAN be absorbed through the intestinal membranes - this absorbable state he calls a 'crystalloid.' He adds that almost all nutrients are actually taken up by 'active transport' (the intestinal cell reaching out with a pseudopodium, a finger-like projection, to engulf the particle), not by passively drifting through a membrane.",
+      "verbatim": "In the presence of amino acids, a small\npercentage of the inorganic colloids form chelated minerals\nand organic colloids which are able to be dialyzed through the\nmucus membranes of the intestinal walls into the blood stream\n- this bio-available mineral state is known as a “crystalloid.”\n\nCrystalloids or organic colloids readily pass\nthrough cell walls, while inorganic colloids are “too large.”",
+      "page": 92,
+      "book_id": "immortality",
+      "topics": [
+        "absorption",
+        "crystalloid",
+        "active-transport"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000026",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Which form of colloidal mineral is best?",
+      "answer_short": "The plant-derived, living organic colloid — coated in a water-loving protein, up to 98% bioavailable — is the form Wallach favors over bare 'rock flour' or industrial versions.",
+      "answer": "Wallach classifies colloidal minerals into four forms that differ wildly in usability: (1) unprotected 'rock flour' - bare inorganic colloids from sea beds, clays and 'glacial milk,' which are really just metallic minerals and only feed plants (and only in healthy, microbe-rich soil); (2) organic mineral colloids from living systems (bacteria, fungi, green food crops, animals, humans) coated in a water-loving substance like gelatin, albumin or collagen - a 'crystalloid' with bioavailability up to 98%; (3) a carbon-coated form (a 10-12 carbon chain), the most stable natural type; and (4) an industrial form not found in nature, made by coating metallic colloids with sulfated castor oil. The second - the plant/living organic colloid - is the highly absorbable form his framework favors.",
+      "verbatim": "The second type of mineral colloid is found in living\nsystems of bacteria, fungi, green plants (food crops), animals\nand humans and is coated with a water-loving (hydrophilic)\nsubstance such as gelatin, albuminoids or collagen. This\ncoating protects the now “organic mineral colloid” and allows\nit to be a crystalloid for absorption, storage and physiological\nuses and thus maximizing its bioavailability up to 98%.",
+      "page": 92,
+      "book_id": "immortality",
+      "topics": [
+        "colloidal-minerals",
+        "plant-derived",
+        "bioavailability"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000054",
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does cholesterol actually do in the body?",
+      "answer_short": "It's the raw material for vitamin D, bile acids, and the adrenal stress and sex hormones — so a cholesterol deficiency can worsen menopause and flatten libido.",
+      "answer": "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable and can flatten sex drive in both men and women.",
+      "verbatim": "Cholesterol is an essential part of the structure of cell walls,\nbrain and spinal cord (myelin), the raw material for the\nproduction of vitamin D in the human body, bile acids, adrenal\ncortical hormones, estrogens (a cholesterol deficiency makes\nmenopause a living hell), progesterone, and testosterone (a\ncholesterol deficiency will turn hubby into a TV watching\nsteer who is totally disinterested in sex).",
+      "page": 112,
+      "book_id": "immortality",
+      "topics": [
+        "cholesterol",
+        "hormones",
+        "vitamin-d"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "menopause",
+          "low_libido"
+        ]
+      }
+    },
     {
       "id": "WAL-CLM-IMMORT-000062",
       "subject": "calcium",
@@ -177,6 +576,32 @@
         "celebrities",
         "anecdote"
       ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000089",
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does chromium deficiency lead to diabetes?",
+      "answer_short": "Chromium runs the body's blood-sugar handling; deficiency wrecks glucose tolerance (77% of 'normal' over-70s) — and Wallach cites the USDA that 90% of Americans are chromium-deficient.",
+      "answer": "Wallach ties chromium deficiency straight to the body's handling of blood sugar. Pregnant women run lower fasting plasma chromium than non-pregnant women, and the well-documented worsening of glucose tolerance during a 'normal' pregnancy reflects that deficiency — which, he says, often tips over into pregnancy-onset (gestational) diabetes. He frames it as widespread and worsening with age: one study found abnormal glucose tolerance in 77% of clinically 'normal' adults over 70, and he cites the USDA's Richard Anderson that 90% of all Americans are chromium-deficient.",
+      "verbatim": "The fasting level of plasma chromium is lower in\npregnant women than in non-pregnant women. Increasing\nimpairment of glucose tolerance in “normal” pregnancy is\nwell documented and reflects a chromium deficiency that\noftentimes results in pregnancy onset diabetes. One study\ndemonstrated abnormal glucose tolerance in 77% of clinically\n“normal” adults over the age of 70. According to Richard\nAnderson of the USDA, “Ninety percent of all Americans are\ndeficient in chromium.”",
+      "page": 131,
+      "book_id": "immortality",
+      "topics": [
+        "chromium",
+        "blood-sugar",
+        "glucose-tolerance"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium"
+        ],
+        "conditions": [
+          "diabetes",
+          "gestational_diabetes"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000159",
@@ -459,6 +884,81 @@
         "autism",
         "vaccines",
         "big-question"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000080",
+      "subject": "diabetes",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can a normal blood test miss diabetes?",
+      "answer_short": "Yes — a single fasting blood-sugar reading misses most diabetes and hypoglycemia; Wallach says only a six-hour glucose tolerance test reveals them.",
+      "answer": "Wallach teaches that a single fasting blood-sugar reading cannot detect most cases of diabetes or hypoglycemia; a six-hour glucose tolerance test (GTT) is required to reveal them. He notes conventional (\"orthodox\") doctors avoid the six-hour GTT — and often do not recognize hypoglycemia as a real condition at all — so they fail to test for it.",
+      "verbatim": "detect diabetes and hypoglycemia when used\nto perform a six-hour glucose tolerance test\n(six-hour GTT). The simple fasting blood\nsugar alone cannot detect most cases of diabetes or hypoglycemia yet the\"orthodox\" doctor\nwill continue to avoid the six-hour GTT because they don't know how to use it - they\nalso do not believe in \"hypoglycemia\" so it is\nunderstandable why they don't test for it",
+      "page": 31,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "diagnosis",
+        "glucose-tolerance-test",
+        "hypoglycemia"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hypoglycemia",
+          "diabetes"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000099",
+      "subject": "color_therapy",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is color therapy?",
+      "answer_short": "Using colored lights or panels for a healing effect — recorded in ancient Egypt and used in Ayurvedic and Chinese medicine; Wallach frames it as a form of light therapy.",
+      "answer": "Wallach describes color therapy as the use of colored lights or panels to create a positive healing effect. It was originally recorded in the Greek Healing Temples of light and color at Heliopolis, Egypt, and is also used in Ayurvedic and Traditional Chinese medicine (the gem therapy of Ayurvedic medicine is a close parallel in theory and methodology). Wallach notes our response to color is emotional while our response to shape is intellectual; blue is the universally favored color, followed by red. He considers color therapy to be, in many ways, another form of light therapy.",
+      "verbatim": "Color therapy is the use of colored\nlights or panels to create a positive healing\neffect. Color therapy was originally recorded\nin the Greek Healing Temples of light and\ncolor at Heliopolis, Egypt.",
+      "page": 58,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "color-therapy",
+        "chromotherapy",
+        "light-therapy"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000100",
+      "subject": "color_therapy",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What does each color treat in color therapy?",
+      "answer_short": "Wallach's color map: blue for blood pressure, fever, cuts and burns; red for low blood pressure; orange for stones; yellow for diabetes; green for ulcers, colds and breast cancer.",
+      "answer": "Wallach gives a color-by-color map of what each color is used to treat in color therapy. Blue reduces blood pressure and alleviates teething, boils, fever, inflammation, dysentery, colic, and jaundice, and heals cuts and burns. Red alleviates low blood pressure (hypotension) and certain forms of paralysis. Yellow/Violet alleviates anxiety and arthritis. Orange alleviates gallstones and kidney stones. Yellow is used for diabetes and constipation. Green is used for ulcers, colds, flu (influenza), and breast cancer.",
+      "verbatim": "1) Blue reduces BP, alleviates\nteething, boils, fever, inflammation,\ndysentery, colic, jaundice and heals\ncuts and burns\n2) Red alleviates \"hypo\"tension and\ncertain forms of paralysis\n3) Yellow/Violet alleviates anxiety\nand arthritis\n4) Orange alleviates gallstones\n58\nand kidney stones\n5) Yellow - diabetes and constipation\n6) Green - ulcers, colds, flu,\nbreast cancer",
+      "page": 58,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "color-therapy",
+        "color-map",
+        "blue",
+        "green"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000101",
+      "subject": "color_therapy",
+      "also_about": [],
+      "facet": "uses",
+      "question": "How is color therapy actually done?",
+      "answer_short": "Six techniques — the Kilner diagnostic screen, reading tissue colors, sun-charged salt bags, colored foods, 'rainbow' sun-charged water, and meditative color breathing.",
+      "answer": "Wallach lists six color-therapy techniques. (1) Kilner screen — a diagnostic tool of two glass plates holding a dicyanin (indigo/violet) solution, through which the therapist views the patient to determine which colors are needed. (2) Tissue colors — a diagnostic tool observing the color of the sclera (white of the eye), nails, urine, and stool. (3) Solar-chrome salt bags — a therapy tool: massaging the patient with colored salt in a cheesecloth sack 'charged' by sun or sunlamp exposure. (4) Food colors — a therapy tool: selecting colored food groups whose 'chemicals' (vitamins and minerals) the patient needs. (5) Rainbow healing — a therapy tool: water placed in colored glasses and exposed to sunlight, which the patient then drinks. (6) Color breathing — a therapy tool: a meditative style of retiring and awakening.",
+      "verbatim": "Color therapy techniques include:\n1) Kilner screen - a diagnostic tool.\nConsists of two (2) plates of glass with a\nsolution of dicyanin (indigo/violet solution);\nthe color therapist views the patient through\nthe screen to determine which colors are\nneeded",
+      "page": 59,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "color-therapy",
+        "techniques",
+        "kilner-screen"
       ]
     }
   ]
