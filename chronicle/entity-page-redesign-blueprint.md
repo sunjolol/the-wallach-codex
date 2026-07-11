@@ -32,7 +32,7 @@ Prove the vision with real demos BEFORE writing the master blueprint. Each demo 
 |---|---|---|
 | **D1 · Essential page** (Calcium) | the entity-page format for the EXPLORE intent | ✓ signed off |
 | **D2 · Condition page** (Osteoporosis, help-first) | the HELP-NOW intent; the format works on tier-1 claims (no search Q&A) | ✓ signed off |
-| **D3 · Knowledge-drawer overhaul** | the browse/navigation model, re-housed as a total overhaul of the KNOWLEDGE drawer — NOT a layout change (see §8.5) | in progress |
+| **D3 · Knowledge-drawer overhaul** | the browse/navigation model, re-housed as a total overhaul of the KNOWLEDGE drawer — NOT a layout change (see §8.5) | ✓ P1 signed off (5-tab drawer, 2026-07-10); P2/P3 pending |
 | **D4 · Coverage dashboard** | the operational home (the 90-essentials periodic table) handing off into essential pages | pending |
 | **D5 · Product page** (optional) | the entity format for a Youngevity product — the "best sources" click target | pending |
 
@@ -105,7 +105,7 @@ _Supersedes the earlier "full-screen master-detail" idea, which Luneth rejected.
 8. **Products** stays a tab (the click target from condition/essential "best sources"), but its DETAIL needs an overhaul to the clean/friendly browse-shell vibe ([[product-detail-panel-vision]]). Possibly temporary (legal), but a lower concern than the books.
 
 **Phases (of this demo-phase blueprint; each built to a visual sign-off gate):**
-- **P1 — the 900 px Knowledge drawer:** re-house browse-shell as a slide-in 900 px drawer with the 5 tabs, no in-drawer search, serif fix, 90-not-91. Reuse the real drawer chrome (`drawer-knowledge`/`drawer-shared`) where it helps.
+- **P1 — the 900 px Knowledge drawer — ✓ COMPLETE + SIGNED OFF (2026-07-10).** All 5 tabs built on the real shell + visually signed off: Home · Essentials · Conditions · Explore · Products (demo: `temporary/knowledge-drawer-prototype.html` @950px). Sticky in-room filter on Conditions + Products (pinned flush under the header via a `.sh-stick` shield with negative `top` covering the body's 16px padding band — Chromium pins sticky to the CONTENT-box top so margin can't lift it, only a negative `top`; symmetric ~12px gap above/below). First section-label per tab trimmed 15px via `.ep-seclabel--tight` (hero + between-section gaps untouched). Products = a flat list of 215 sorted by nutrient coverage, rows `name · covers N/90 · price`, green accent, detail deferred to P3. **Remaining before real build:** wire tiles/rows to OPEN the D1/D2 entity pages — `nav()` is still a placeholder that only switches tabs.
 - **P2 — the unified "Ask Wallach" search palette:** the `command-palette-v3` pattern — empty-state discovery + typed split results (Jump to / In the books) + the ranking/synonym upgrades. Reframe the Search rail item.
 - **P3 — Products detail overhaul:** the product page re-skinned to the browse-shell vibe.
 - P1–P3 all open the SAME signed-off entity pages (D1 essential / D2 condition).
