@@ -1,4 +1,4 @@
-# Next chunk — ★ UI-REDESIGN · D3 = KNOWLEDGE-DRAWER overhaul · P1 HOME TAB SIGNED OFF · wire remaining 4 tabs next · D1+D2 signed off · (search-seal + mining queued)
+# Next chunk — ★ UI-REDESIGN · D3 = KNOWLEDGE-DRAWER overhaul · P1 Home + Essentials tabs SIGNED OFF · 3 tabs left (Conditions · Explore · Products) · D1+D2 signed off · (search-seal + mining queued)
 
 **★ CURRENT STATE (2026-07-10) — two live threads.**
 
@@ -14,10 +14,11 @@
 - ONE consolidated **"Ask Wallach"** search (command-palette-v3 pattern, split results: Jump-to entities + In-the-books claims). Generative AI SHELVED (infeasible offline). Search + browse are COMPLEMENTARY, not redundant.
 - Phases: **P1 = the 900px drawer** (IN PROGRESS) → P2 = the unified Ask Wallach search → P3 = Products detail overhaul. All open the D1/D2 entity pages.
 
-**★ P1 STATE — HOME TAB SIGNED OFF (2026-07-10).** Demo: **`temporary/knowledge-drawer-prototype.html`**, widened to **950px**. Home tab COMPLETE + visually approved; the other 4 tabs are STILL STUBBED. Built on the REAL shell (dashboard.css + drawer-shared/drawer-knowledge.css).
+**★ P1 STATE — HOME + ESSENTIALS tabs SIGNED OFF (2026-07-10).** Demo: **`temporary/knowledge-drawer-prototype.html`**, widened to **950px**. Home + Essentials tabs COMPLETE + visually approved; **3 tabs still STUBBED: Conditions · Explore · Products.** Built on the REAL shell (dashboard.css + drawer-shared/drawer-knowledge.css).
   - **✓ FIXED — the Explore-chip bug:** they now carry real base pill styling inside `#drawer-knowledge-mount` (the `.sr-pill` base is scoped to `#drawer-search-mount`, so it never reached the knowledge context). Header also cleaned: dropped `· KN·07`, tab menu centered.
   - **✓ Essentials cards** made byte-identical to `browse-shell-prototype.html` (0-diff computed-style check), then polished per Luneth: natural-case Space-Grotesk names +1px, claims count +1px matching the name colour, cards widened so NOTHING wraps, sorted by claim count to top-18 (clean 2-gap grid), + a colour-key legend under the grid.
-  - **NEXT — wire the 4 remaining tabs** (Essentials · Conditions · Explore · Products) → the D1/D2 entity pages. Then P2 (unified Ask Wallach search) → P3 (Products detail).
+  - **✓ Essentials tab** built to match browse-shell's Essentials view: 6 category sections (3 mineral sub-groups + Vitamins/Amino/Fatty) via a ported slugs-only `GRID`, 91 tiles, 0 broken, 0 wraps; label NEVER says "91" (uses "The essentials"); omega-9 kept as the 91st at "0 claims". Reuses the approved cards. Dropped browse-shell's demo footer; no colour legend (subheads name the categories).
+  - **NEXT — wire the 3 remaining tabs** (Conditions · Explore · Products), then make tiles/rows actually OPEN the D1/D2 entity pages — `nav()` is currently a placeholder that only switches tabs. Then P2 (unified Ask Wallach search) → P3 (Products detail).
 
 **★ PROCESS LESSONS (this session degraded — Luneth frustrated; do better):** (1) When Luneth says "X isn't styled / doesn't match," pin down the EXACT element BEFORE touching anything — ASK if ambiguous (I misread "buttons" as the tab menu 3×; he meant the purple explore chips). (2) Reused `.sr-*` classes ONLY work under their mount id — verify scoping. (3) MEASURE, don't eyeball — zoom + computed-style diff per `.claude/rules/visual-verification.md`; do a real side-by-side vs his mockup. (4) Fix ONLY what was flagged; STOP over-correcting unrelated things. (5) Smallest chunk → show → confirm.
 
