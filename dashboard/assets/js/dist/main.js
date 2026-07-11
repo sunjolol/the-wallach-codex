@@ -56356,7 +56356,25 @@ Phases H0->H7 foundation-first: H0 content-store + per-entity generator + fake-f
 
 Luneth's 4 structural decisions (via AskUserQuestion): dedicated doc \xB7 foundation-first \xB7 claim-fit as foundation \xB7 build D4 directly (no separate demo).
 
-Also updated: OVERHAUL-BLUEPRINT \xA77 Phase H (points at the new doc; \xA75.2/\xA75.5 marked superseded), next-chunk.md (handoff now starts at H0). Verify: build OK, invariants 53/53 (docs-only chunk; no code/pillar/artifact touched). Execution begins at H0 next session.` }];
+Also updated: OVERHAUL-BLUEPRINT \xA77 Phase H (points at the new doc; \xA75.2/\xA75.5 marked superseded), next-chunk.md (handoff now starts at H0). Verify: build OK, invariants 53/53 (docs-only chunk; no code/pillar/artifact touched). Execution begins at H0 next session.` }, { id: "lg_mrgpoo2i_69xlh1", ts: "2026-07-11T13:42:13.338833-05:00", surface: "planning", kind: "incident", summary: "Corrected a stale value carried into the Phase-H blueprint: the drawer is 950px (as-built), not the pre-build 900px. Fixed 900\u2192950 across all planning docs + memory (sacred build-log untouched) + 3 wording fixes; verification caught a 5th nbsp-hidden instance I'd missed.", detail: `Plain: Luneth caught the Phase-H blueprint calling the Knowledge drawer "900px" \u2014 that was the pre-build planned size; during the D3-P1 demo build we refined it to 950px, and I'd copied the stale planning number instead of the as-built value. He was right to worry I'd carried other pre-build values forward too. I did a ground-truth diff \u2014 the signed-off prototypes ARE the truth \u2014 and fixed every stale width reference plus three smaller wording issues I'd flagged, so the next session builds off accurate info.
+
+WIDTH (900 -> 950), corrected everywhere the plan lives:
+- chronicle/phase-h-migration-blueprint.md:129 (H3 build instruction) \u2014 now "950px", with a parenthetical noting 900 was the refined-away pre-build decision.
+- chronicle/next-chunk.md:19, :21.
+- chronicle/entity-page-redesign-blueprint.md:95, :98, :108, :131.
+- memory entity-page-redesign-demo-phase.md (description + body \xD72) + MEMORY.md index line.
+- The SACRED append-only build-log 900px mentions (build-log.md:645/647) were LEFT UNTOUCHED \u2014 they are historical record of what was said at the time, never edited.
+
+THREE WORDING FIXES (the minor items I flagged in the report):
+1. blueprint L99 \u2014 the drawer-knowledge.css "420px / 4-tabs" header is CURRENTLY accurate (it describes today's live drawer); it only becomes a lying comment AFTER H6 rebuilds to 950px/5-tabs. Reworded from my inaccurate "a lying comment."
+2. blueprint L125 (H2) \u2014 namespace description was the muddled "sr-* content + kd-* chrome"; now correctly says re-implement the prototype's sr-*/ep-* classes in the real-build kd-*/pd-* namespace (migrate by re-implementing, not pasting).
+3. blueprint L129 (H3) \u2014 added the previously-omitted as-built breadcrumb behaviour: trail[0] = the ORIGIN TAB (not always Home), revisiting an entity already in the trail jumps back (truncates, loop-free), capped at CRUMB_MAX=6, tab re-synced on back-nav.
+
+HONEST NOTE (never poison the future): my FIRST report to Luneth missed a 5th stale spot \u2014 design-doc L98 "**900 px**" \u2014 because my detection grep matched a regular space while that line uses a NON-BREAKING space (U+00A0). The post-edit verification grep (nbsp-inclusive) caught it and I fixed it. Two lessons banked: (a) the prototype is ground truth, not the plan's own restatement (the root cause of the original 900/950 carry-forward); (b) width/whitespace audits must be nbsp-agnostic \u2014 a plain-space regex silently under-reports.
+
+MECHANISM: project-file edits via a validate-all-then-write safe_write.py script (each old-string asserted present exactly once before any write; \xA717-routed); the non-breaking-space strings built via chr(0xA0) in the script to avoid the untypeable-character trap; out-of-repo memory files via Edit with ASCII-only anchors.
+
+VERIFY: nbsp-inclusive grep across all planning docs + the memory dir shows 0 stale width refs outside the sacred build-log (+ one intentional explanatory mention at blueprint:129); "950" now consistent in all 3 plan docs (blueprint 3x, next-chunk 3x, design-doc 5x); build OK; invariants 53/53. No code/pillar/artifact changed \u2014 a docs-and-memory correction chunk. Next session starts fresh with genesis on accurate H0 info.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

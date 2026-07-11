@@ -96,7 +96,7 @@ The consolidated obsolescence list. Each item is deleted/replaced only AFTER its
 - CLAUDE.md "Architecture" — the "Surfaces:" sentence (blesses a standalone Search + separate ⌘K palette).
 - OVERHAUL-BLUEPRINT §5.2 (Knowledge = old flat drawer) + §5.5 (**re-opens the generative-LLM DECISION D4 — a landmine that kills the 350 MB offline budget; defuse UP FRONT in H0**).
 - `entity-page-redesign-blueprint.md` — freeze as design-origin; mark §4/§8.5 status resolved so a reader can't re-derive the already-rejected passes.
-- `drawer-knowledge.css` header (a lying "420px / 4-tabs" comment — a defect per typescript.md).
+- `drawer-knowledge.css` header comment (TODAY accurate: "420px / 4 tabs — Corpus·Essentials·Products·Doctrine"). H6 rewrites it to the as-built "950px / 5 tabs — Home·Essentials·Conditions·Explore·Products"; leaving it stale after the rebuild would make it a lying comment (a defect per typescript.md).
 - Memory files whose index line asserts the old Knowledge/Search model; rewrite `next-chunk.md`.
 
 ---
@@ -122,11 +122,11 @@ The enforcement floor + the data pipeline, so the surfaces cannot be built wrong
 - **Multi-agent:** fan out a per-entity fit re-check + adversarial verify once the derivation is fixed, to confirm the leak is gone corpus-wide (not just on the 2 exemplars).
 
 ### H2 · Entity page for real — essential + condition (data-driven)
-- Build the entity render in `views/knowledge.ts` (`sr-*` content + `kd-*` chrome) from the H0 artifact. REPLACE `renderEssentialDeep` + `renderConditionDeep`; delete the old deep-views + WALLACH-SAYS scaffold as the new lands.
+- Build the entity render in `views/knowledge.ts` from the H0 artifact, re-implementing the prototype's `sr-*`/`ep-*` classes in the real-build `kd-*`/`pd-*` namespace (migrate by re-implementing, NOT pasting). REPLACE `renderEssentialDeep` + `renderConditionDeep`; delete the old deep-views + WALLACH-SAYS scaffold as the new lands.
 - **Verify:** render probes (essential + condition) + Luneth visual sign-off. Adversarial "did any old render path or inline-prose leak survive" verify agent at close.
 
 ### H3 · The 5-tab drawer shell (Home · Essentials · Conditions · Explore · Products)
-- Build the 900px drawer + segmented tabs on the real shell. DELETE the Corpus tab + Doctrine tab + in-drawer per-tab search + `doctrine-data.json`/`doctrine.ts`/book-browser.
+- Build the **950px** drawer (the as-built demo width — the earlier "900px" was a pre-build decision refined to 950 during D3-P1) + segmented tabs on the real shell. Port the demo's in-drawer navigation: a **breadcrumb trail** replacing the single back button, `trail[0]` = the ORIGIN TAB (not always Home), re-visiting an entity already in the trail JUMPS BACK (truncates, loop-free), capped at `CRUMB_MAX=6`, tab re-synced on back-nav. DELETE the Corpus tab + Doctrine tab + in-drawer per-tab search + `doctrine-data.json`/`doctrine.ts`/book-browser.
 - **Verify:** drawer probe + visual sign-off.
 
 ### H4 · Ask-Wallach palette (unify the two searches)
