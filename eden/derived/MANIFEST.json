@@ -123,6 +123,20 @@
         "eden/catalog/conditions.json"
       ],
       "note": "The Search 'Ask-Wallach' index (state/search.ts esbuild JSON import). DERIVES from the two hand-authored SOURCE files -- search-enrichment.json (per-claim subject/facet/question/answer_short/also_about/topics) + the entity registry search-entities.json -- JOINED with the sealed claim (answer = claim_text minus the ' In his words:' tail, byte-faithful; verbatim; page; book_id; tier1_link from the claim's essentials/conditions/symptoms arrays) + books-meta (composed cite) + essentials-canon (canon entity display_name/symbol, so a canonical name is never hand-duplicated). build_index() hard-fails via validate() on a bad facet / subject not in registry-or-canon / unresolved also_about / missing authored field / empty derived answer-or-verbatim (validate() is shared with the search_index_wellformed invariant). Replaces the retired thin-slice drafts (mercury-slice.json + the hand search-entities.json under assets/data/search). Deterministic (sorted) so build_fn byte-compares to disk. G-7 entity-by-entity build: mercury (13) + calcium (8) are the first two entities."
+    },
+    {
+      "artifact": "dashboard/assets/data/entity-page-data.json",
+      "generator": "eden/tools/entity_page_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "dashboard/assets/data/corpus-embed.json",
+        "dashboard/assets/data/search/search-index.json",
+        "eden/corpus/essentials-canon.json",
+        "eden/catalog/conditions.json"
+      ],
+      "note": "GENERATED per-entity page view-model (Phase H0) for every essential + condition. LEAN: each record carries claim IDs + derived extras (co-occurrence related[], per-condition protocol_claim_ids, a derived one_liner, synonyms) but NOT claim text -- text/verbatim/citation resolve at render from corpus-embed + search-index (already loaded), so nothing is duplicated. Targets, live coverage %, and best-sources ranking stay in their own homes; this artifact does not carry them. Claims grouped by raw KIND (stable projection); the kind->colour category grouping + the essentials[]-union works-with/restore pills + hero prominence are DEFERRED to H1. Loose file in H0 (no view imports it yet -> zero bundle impact until H2). Deterministic (fixed ordering, no timestamp) so build_data() byte-compares to disk."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
