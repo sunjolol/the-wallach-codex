@@ -4,7 +4,7 @@
  *
  * Ranks the Youngevity products that deliver a given essential, best first, for the
  * Knowledge Essentials deep-dive "BEST SOURCES" list. Pure over the GENERATED
- * `product-recommender-data.json` (composition amount + breadth + retail price per
+ * `product-recommender-data.json` (composition amount + breadth + wholesale price per
  * candidate) + Zod-validated at the boundary — no DOM, no localStorage, no state.
  *
  * The match score (design locked with Luneth 2026-07-08, memory
@@ -48,7 +48,7 @@ export interface RankedSource {
   unit: string;
   /** Distinct essentials the product delivers. */
   breadth: number;
-  /** Indicative retail price (USD), or null if unpriced. */
+  /** Indicative wholesale price (USD), or null if unpriced. */
   price: number | null;
   /**
    * 0..1 keystone term. Saturating adequacy — min(1, delivered/target) — when a Wallach

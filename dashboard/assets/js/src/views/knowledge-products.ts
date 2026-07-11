@@ -120,7 +120,9 @@ function productSearchBlob(p: ProductDetail): string {
 function renderProductRow(p: ProductDetail, selected: string | null): string {
   const cls = `kd-product-row${p.product_id === selected ? ' is-selected' : ''}`;
   const n = countNutrients(p);
-  const price = (p.price != null && p.price.retail != null) ? `$${fmtMoney(p.price.retail)}` : '';
+  const price = (p.price != null && p.price.wholesale != null)
+    ? `$${fmtMoney(p.price.wholesale)}`
+    : (p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : '');
   const meta = [`${n} NUTRIENT${n === 1 ? '' : 'S'}`, price].filter(s => s.length > 0).join(' · ');
   return `
     <div class="${cls}" data-kd-product="${escHTML(p.product_id)}" data-search="${escHTML(productSearchBlob(p))}" role="button" tabindex="0">
@@ -153,11 +155,11 @@ function renderPrice(price: ProductDetail['price']): string {
     return '';
   }
   const items: string[] = [];
-  if (price.retail !== null && price.retail !== undefined) {
-    items.push(`<span class="kd-product-deep__price-item"><span class="kd-product-deep__price-label">RETAIL</span> $${fmtMoney(price.retail)}</span>`);
-  }
   if (price.wholesale !== null && price.wholesale !== undefined) {
     items.push(`<span class="kd-product-deep__price-item"><span class="kd-product-deep__price-label">WHOLESALE</span> $${fmtMoney(price.wholesale)}</span>`);
+  }
+  if (price.retail !== null && price.retail !== undefined) {
+    items.push(`<span class="kd-product-deep__price-item"><span class="kd-product-deep__price-label">RETAIL</span> $${fmtMoney(price.retail)}</span>`);
   }
   if (items.length === 0) {
     return '';

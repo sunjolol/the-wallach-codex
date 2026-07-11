@@ -5,10 +5,10 @@
  * Narrows `dashboard/assets/data/product-recommender-data.json` — the per-essential
  * ranking INPUTS the "best source of nutrient X" ranker scores at runtime
  * (state/recommender.ts). The artifact is GENERATED (eden/tools/recommender_derive.py)
- * from product composition + retail price; freshness-gated (derived_artifacts_fresh).
+ * from product composition + wholesale price; freshness-gated (derived_artifacts_fresh).
  *
  * §00.A: `amount` is what a product CONTAINS (composition) and `price` is a volatile
- * retail listing — recommender/display data, never a Wallach target. No Wallach number
+ * wholesale listing — recommender/display data, never a Wallach target. No Wallach number
  * lives here; the saturating-adequacy curve reads a target supplied at runtime, which is
  * an honest gap until corpus dose-mining lands.
  * ═══════════════════════════════════════════════════════════════════════════
@@ -23,7 +23,7 @@ export const RecommenderCandidateSchema = z.object({
   amount: z.number(),
   /** Distinct essentials this product delivers — the well-roundedness / anti-mono signal. */
   breadth: z.number().int().nonnegative(),
-  /** Indicative retail price (USD) — the value tuner; null when the product is unpriced. */
+  /** Indicative wholesale price (USD) — the value tuner; null when the product is unpriced. */
   price: z.number().nullable(),
 });
 

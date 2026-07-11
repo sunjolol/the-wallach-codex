@@ -5,7 +5,7 @@ Derives dashboard/assets/data/product-recommender-data.json -- the per-essential
 ranking INPUTS the "best source of nutrient X" recommender scores at runtime
 (state/recommender.ts). One row per (essential, product): how much of the essential
 the product delivers (composition), how many distinct essentials that product
-delivers (breadth), and an indicative retail price (the cost tuner).
+delivers (breadth), and an indicative wholesale price (the cost tuner).
 
 WHY inputs, not a score: the match-score weights (adequacy / breadth / value) are a
 transparent runtime tuner -- Luneth eyeballs real outputs and adjusts (memory
@@ -20,9 +20,12 @@ SOURCES + boundary (§00.A):
                canonical unit). Composition is what a product CONTAINS -- NEVER a
                Wallach target.
   - breadth <- the same composition rollup (distinct essentials a product delivers).
-  - price   <- prices.json retail (source:ygy, VOLATILE commercial data). A cost
-               tuner for the recommender ONLY -- it never touches the coverage math
-               and is never a target.
+  - price   <- prices.json WHOLESALE (source:ygy, VOLATILE commercial data). Wholesale
+               is the featured price app-wide (Luneth 2026-07-11): almost every product
+               sells online at the member/wholesale rate, so it best reflects the real
+               cost per dose. Retail (MSRP) stays in prices.json for reference. A cost
+               tuner for the recommender ONLY -- it never touches the coverage math and
+               is never a target.
 There is NO Wallach number in this file. The saturating-adequacy term
 (min(1, delivered / wallach_target)) that makes "best source" mean *enough* (not
 *most*) needs Wallach dose targets, which are all honest gaps until corpus
@@ -46,10 +49,12 @@ sys.path.insert(0, str(ROOT / "eden" / "tools"))
 import products_composition_derive as comp  # noqa: E402
 
 
-def _retail_by_product(products: dict, prices: dict) -> dict:
-    """product_id -> retail price (float) or None, joined by ygy_id (same join key
-    product_detail_derive uses). Retail only -- wholesale is a member price, not the
-    listing a shopper sees."""
+def _wholesale_by_product(products: dict, prices: dict) -> dict:
+    """product_id -> WHOLESALE price (float) or None, joined by ygy_id (same join key
+    product_detail_derive uses). Wholesale is the featured price app-wide (Luneth
+    2026-07-11): almost every product sells online at the member/wholesale rate, so it
+    best reflects the real cost per dose. Falls back to retail only if a product has no
+    wholesale figure (none do today -- kept so the derive never silently drops a price)."""
     out: dict = {}
     for pid, prod in products.items():
         ygy_id = prod.get("ygy_id")
@@ -57,8 +62,11 @@ def _retail_by_product(products: dict, prices: dict) -> dict:
         if ygy_id is not None:
             entry = prices.get(str(ygy_id))
             if isinstance(entry, dict):
+                w = entry.get("price_wholesale")
                 r = entry.get("price_retail")
-                if isinstance(r, (int, float)):
+                if isinstance(w, (int, float)):
+                    price = float(w)
+                elif isinstance(r, (int, float)):
                     price = float(r)
         out[pid] = price
     return out
@@ -71,7 +79,7 @@ def build_data() -> dict:
     composition = comp.build_data()["essentials"]
     products = json.loads(PRODUCTS_PATH.read_text(encoding="utf-8")).get("products", {})
     prices = json.loads(PRICES_PATH.read_text(encoding="utf-8")).get("prices", {})
-    retail = _retail_by_product(products, prices)
+    wholesale = _wholesale_by_product(products, prices)
 
     # Breadth: distinct essentials each product delivers, across the whole rollup.
     breadth: dict = {}
@@ -85,14 +93,14 @@ def build_data() -> dict:
         candidates = []
         for p in e["products"]:
             pid = p["product_id"]
-            price = retail.get(pid)
+            price = wholesale.get(pid)
             if price is not None:
                 priced_rows += 1
             candidates.append({
                 "product_id": pid,
                 "amount": p["amount"],          # already 4dp-rounded, canonical unit
                 "breadth": breadth.get(pid, 1),
-                "price": price,                 # retail float or null
+                "price": price,                 # wholesale float or null
             })
         # RAW deterministic order: amount DESC, product_id ASC (runtime re-sorts by
         # the match score; this keeps the artifact stable + reviewable).
@@ -107,7 +115,7 @@ def build_data() -> dict:
                 "Per-essential RANKING INPUTS for the cost-per-nutrient recommender "
                 "(state/recommender.ts scores these at runtime). Each candidate: "
                 "amount (composition, canonical unit -- what the product CONTAINS), "
-                "breadth (distinct essentials the product delivers), price (retail, "
+                "breadth (distinct essentials the product delivers), price (wholesale, "
                 "the cost tuner). GENERATED from eden/products/products.json + "
                 "prices.json via products_composition_derive -- never hand-edited (R1). "
                 "§00.A: composition + price are DISPLAY/recommender data, never a "
