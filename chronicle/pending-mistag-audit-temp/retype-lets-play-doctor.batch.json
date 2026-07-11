@@ -1,0 +1,11 @@
+{
+  "book": "lets-play-doctor",
+  "edits": [
+    {
+      "id": "WAL-CLM-LETS-000471",
+      "set": {
+        "kind": "deficiency_sign"
+      }
+    }
+  ]
+}
