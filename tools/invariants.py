@@ -2602,6 +2602,319 @@ def check_corpus_audit_gate():
     return True, f"corpus audit gate holding -- {count} claims vs freeze {frozen}; {note}"
 
 
+# ---------------------------------------------------------------------------
+# Phase H0 -- entity-page redesign migration: the enforcement FLOOR (migration
+# blueprint chronicle/phase-h-migration-blueprint.md section 2, gate rows 1-3).
+# Three gates landed BEFORE the surfaces so the app cannot be built with the
+# prototypes' shortcuts (inline prose, a hand-built entity map, demo scaffold).
+# Each is a thin path-binding wrapper over a param-taking _impl so
+# tools/test_<name>.py can drive the same logic against planted poison (the
+# committed negative test, per the amounts_wallach_only pattern).
+#
+# views_no_inline_prose + entity_render_is_projection are SURFACE-SCOPED to a
+# growing allowlist (mirroring _clean_surface_files): the lists are EMPTY in H0
+# because no entity surface exists yet (the render is built in H2), so both are
+# vacuously green on the real tree. Each migrated view is APPENDED to its list
+# in the SAME patch that cleans it (H2-H4). The negative tests prove the gates
+# FIRE regardless of the (currently empty) real scope. This is the honest
+# floor-first form (R7): the mechanism is live + tested now; its reach grows as
+# the surfaces land. no_stub_render_paths is active immediately (green today,
+# stays green) -- it blocks pasting prototype scaffold into any shipped view/css.
+# ---------------------------------------------------------------------------
+
+# The (growing) CLEAN-view surface. A file listed here is asserted prose-free --
+# every user-facing string lives in the view-copy content store via state/copy.ts
+# (R4). EMPTY in H0; H2/H3/H4 append each entity/drawer/palette view as migrated.
+_CLEAN_VIEW_FILES: tuple = ()
+
+# The entity-render view file(s). Asserted a PURE PROJECTION of the generated
+# entity-page artifact: no object literal keyed by a real entity id, no per-entity
+# content branch. EMPTY in H0 (the render is built in H2); H2 appends the file.
+_ENTITY_VIEW_FILES: tuple = ()
+
+# Prototype/demo scaffold markers that must NEVER reach a shipped view or css
+# (they live only in gitignored temporary/*.html). Distinctive enough not to
+# false-positive on legitimate view/css content (verified clean at H0 landing).
+_STUB_SCAFFOLD_TOKENS = (
+    "kn-stub", "sh-stub", "next chunk", "real build", "demo wires",
+    "PROTOTYPE", "exemplar",
+)
+
+
+def _shipped_view_css_files():
+    """git-tracked view (.ts) + style (.css) source -- where prototype scaffold
+    would be pasted. Truth anchor: committed bytes. Returns None if git is
+    unavailable so the caller fails open LOUDLY (never a silent green)."""
+    import subprocess
+    try:
+        r = subprocess.run(["git", "-C", str(ROOT), "ls-files",
+                            "dashboard/assets/js/src/views",
+                            "dashboard/assets/styles"],
+                           capture_output=True, text=True, timeout=30)
+    except Exception:
+        return None
+    out = []
+    for rel in r.stdout.splitlines():
+        if rel.endswith((".test.ts", ".spec.ts")):
+            continue
+        if rel.endswith((".ts", ".css")):
+            out.append(rel)
+    return out
+
+
+def _no_stub_render_paths_impl(files):
+    """RED if any (relpath, text) carries a prototype/demo scaffold token.
+    `files` = iterable of (relpath, text). Param-taking for the negative test."""
+    hits = []
+    for rel, text in files:
+        for tok in _STUB_SCAFFOLD_TOKENS:
+            if tok in text:
+                hits.append(f"{rel}:{tok}")
+                break
+    if hits:
+        return False, ("prototype/demo scaffold token in a shipped view/css (the migration must "
+                       "RE-IMPLEMENT the prototype, never paste it): " + ", ".join(hits[:6])
+                       + (" ..." if len(hits) > 6 else ""))
+    return True, f"no demo scaffold token in shipped views/styles ({len(_STUB_SCAFFOLD_TOKENS)} tokens guarded)"
+
+
+def check_no_stub_render_paths():
+    """Phase H0 gate: no prototype/demo scaffold (kn-stub / sh-stub / 'next chunk'
+    / 'real build' / 'demo wires' / PROTOTYPE / exemplar) survives into a shipped
+    view (.ts) or stylesheet (.css). The migration re-implements the prototypes'
+    design; it must never paste their scaffolding. Truth anchor: git-tracked
+    views/*.ts + styles/*.css bytes, scanned each run."""
+    rels = _shipped_view_css_files()
+    if rels is None:
+        return True, ("⚠ UNVERIFIED -- git unavailable; stub-scaffold guard could not run "
+                      "this pass (fail-open, not a silent green)")
+    files = []
+    for rel in rels:
+        try:
+            files.append((rel, (ROOT / rel).read_text(encoding="utf-8", errors="ignore")))
+        except Exception:
+            continue
+    return _no_stub_render_paths_impl(files)
+
+
+def _extract_ts_string_literals(src: str):
+    """Yield the CONTENT of every string / template literal in TS source, skipping
+    // and /* */ comments. A cheap backstop, not a parser -- mirrors
+    _max_inline_literal_elements' comment/string state machine but COLLECTS the
+    string bodies instead of discarding them."""
+    out = []
+    i, n = 0, len(src)
+    in_line = in_block = False
+    while i < n:
+        c = src[i]
+        nxt = src[i + 1] if i + 1 < n else ""
+        if in_line:
+            if c == "\n":
+                in_line = False
+            i += 1
+            continue
+        if in_block:
+            if c == "*" and nxt == "/":
+                in_block = False
+                i += 2
+                continue
+            i += 1
+            continue
+        if c == "/" and nxt == "/":
+            in_line = True
+            i += 2
+            continue
+        if c == "/" and nxt == "*":
+            in_block = True
+            i += 2
+            continue
+        if c in ('"', "'", "`"):
+            quote = c
+            i += 1
+            buf = []
+            while i < n:
+                ch = src[i]
+                if ch == "\\":
+                    buf.append(src[i:i + 2])
+                    i += 2
+                    continue
+                if ch == quote:
+                    break
+                buf.append(ch)
+                i += 1
+            out.append("".join(buf))
+            i += 1
+            continue
+        i += 1
+    return out
+
+
+def _looks_like_prose(s: str) -> bool:
+    """Same predicate as check_prose_contained's inner test: a string reads like a
+    sentence, not a label. HTML tags, ${...} interpolations, and &entities; are
+    stripped first so markup does not inflate the word count."""
+    txt = re.sub(r"<[^>]+>", " ", s)
+    txt = re.sub(r"\$\{[^}]*\}", " ", txt)
+    txt = re.sub(r"&[a-z]+;", " ", txt)
+    txt = txt.strip()
+    return len(txt.split()) >= 12 or (len(txt) > 40 and re.search(r"\. [A-Z]", txt) is not None)
+
+
+def _views_no_inline_prose_impl(files):
+    """RED if any (relpath, text) clean view file holds a prose-shaped string
+    literal. `files` = iterable of (relpath, text). User-facing prose belongs in
+    the view-copy content store (R4), referenced by id -- never inline in a view."""
+    files = list(files)
+    viol = []
+    for rel, text in files:
+        for lit in _extract_ts_string_literals(text):
+            if _looks_like_prose(lit):
+                viol.append(f"{rel}: {lit.strip()[:60]!r}")
+    if viol:
+        return False, ("prose-shaped string literal inline in a clean view (R4 -- move it to the "
+                       "view-copy store via state/copy.ts): " + "; ".join(viol[:6])
+                       + (" ..." if len(viol) > 6 else ""))
+    return True, f"no inline prose across {len(files)} clean view file(s) (surface grows H2-H4)"
+
+
+def check_views_no_inline_prose():
+    """Phase H0 gate (R4, the code-side complement of prose_contained): no
+    user-facing prose lives as a string literal inside a CLEAN view file -- it
+    belongs in the view-copy content store, referenced by id (state/copy.ts).
+    Surface-scoped: _CLEAN_VIEW_FILES is EMPTY in H0 and grows as each view is
+    migrated (H2-H4); the negative test proves the gate fires. Truth anchor: the
+    .ts bytes of the declared clean-view files, scanned each run."""
+    files = []
+    for rel in _CLEAN_VIEW_FILES:
+        p = ROOT / rel
+        if p.exists():
+            files.append((rel, p.read_text(encoding="utf-8")))
+    return _views_no_inline_prose_impl(files)
+
+
+def _entity_id_set():
+    """The real entity ids the entity view must NOT hardcode as content: canon
+    essential slugs + catalog condition ids + catalog symptom ids + product ids.
+    Missing pillar files are skipped (bootstrap-safe). Ids < 3 chars dropped so a
+    two-letter token can't masquerade as an ordinary key."""
+    import json as _j
+    ids = set()
+    canon = ROOT / "eden" / "corpus" / "essentials-canon.json"
+    if canon.exists():
+        for e in _j.loads(canon.read_text(encoding="utf-8")).get("essentials", []):
+            if isinstance(e, dict) and e.get("slug"):
+                ids.add(str(e["slug"]).lower())
+    for rel, key in (("eden/catalog/conditions.json", "conditions"),
+                     ("eden/catalog/symptoms.json", "symptoms")):
+        p = ROOT / rel
+        if p.exists():
+            d = _j.loads(p.read_text(encoding="utf-8")).get(key, {})
+            if isinstance(d, dict):
+                ids.update(str(k).lower() for k in d.keys())
+    prod = ROOT / "eden" / "products" / "products.json"
+    if prod.exists():
+        d = _j.loads(prod.read_text(encoding="utf-8")).get("products", {})
+        if isinstance(d, dict):
+            ids.update(str(k).lower() for k in d.keys())
+    return {i for i in ids if len(i) >= 3}
+
+
+def _strip_ts_comments(src: str) -> str:
+    """Remove // and /* */ comments but KEEP string/template bodies (an equality
+    branch like `slug === 'calcium'` needs its literal intact). String state is
+    tracked so a // inside a string is not mistaken for a comment."""
+    out = []
+    i, n = 0, len(src)
+    in_line = in_block = False
+    in_str = None
+    while i < n:
+        c = src[i]
+        nxt = src[i + 1] if i + 1 < n else ""
+        if in_line:
+            if c == "\n":
+                in_line = False
+                out.append(c)
+            i += 1
+            continue
+        if in_block:
+            if c == "*" and nxt == "/":
+                in_block = False
+                i += 2
+                continue
+            i += 1
+            continue
+        if in_str is not None:
+            out.append(c)
+            if c == "\\" and i + 1 < n:
+                out.append(nxt)
+                i += 2
+                continue
+            if c == in_str:
+                in_str = None
+            i += 1
+            continue
+        if c == "/" and nxt == "/":
+            in_line = True
+            i += 2
+            continue
+        if c == "/" and nxt == "*":
+            in_block = True
+            i += 2
+            continue
+        if c in ('"', "'", "`"):
+            in_str = c
+            out.append(c)
+            i += 1
+            continue
+        out.append(c)
+        i += 1
+    return "".join(out)
+
+
+def _entity_render_is_projection_impl(files, entity_ids):
+    """RED if an entity-view file hardcodes per-entity CONTENT: an object literal
+    keyed by a real entity id, or a `slug === 'entityid'` content branch. `files`
+    = iterable of (relpath, text); `entity_ids` = the real id set. Param-taking for
+    the negative test. Closes the sub-10-element hole views_state_no_inline_data
+    cannot see (a 2-key content map keyed by entity ids)."""
+    files = list(files)
+    key_re = re.compile(r"""(?:[{,]|^)\s*['"]?([A-Za-z][A-Za-z0-9_]*)['"]?\s*:""", re.M)
+    eq_re = re.compile(r"""===\s*['"]([A-Za-z0-9_]+)['"]|['"]([A-Za-z0-9_]+)['"]\s*===""")
+    viol = []
+    for rel, text in files:
+        src = _strip_ts_comments(text)
+        keyed = sorted({m.group(1).lower() for m in key_re.finditer(src)
+                        if m.group(1).lower() in entity_ids})
+        branched = sorted({(a or b).lower() for a, b in eq_re.findall(src)
+                           if (a or b).lower() in entity_ids})
+        if keyed:
+            viol.append(f"{rel}: object literal keyed by entity id(s) {keyed[:5]}")
+        if branched:
+            viol.append(f"{rel}: per-entity content branch on {branched[:5]}")
+    if viol:
+        return False, ("entity view is NOT a pure projection -- hardcoded per-entity content "
+                       "(must read from the generated entity-page artifact): " + "; ".join(viol[:6]))
+    return True, f"entity view is a pure projection across {len(files)} file(s) (surface grows in H2)"
+
+
+def check_entity_render_is_projection():
+    """Phase H0 gate (R1): the entity-render view is a PURE PROJECTION of the
+    generated entity-page artifact -- never a hand-built map keyed by entity ids,
+    never a per-entity content branch. Closes the sub-10-element hole
+    views_state_no_inline_data cannot see. Surface-scoped: _ENTITY_VIEW_FILES is
+    EMPTY in H0 (the render is built in H2) and grows in the same patch; the
+    negative test proves the gate fires. Truth anchor: the real entity-id sets
+    from the pillars x the entity-view .ts bytes, recomputed each run."""
+    ids = _entity_id_set()
+    files = []
+    for rel in _ENTITY_VIEW_FILES:
+        p = ROOT / rel
+        if p.exists():
+            files.append((rel, p.read_text(encoding="utf-8")))
+    return _entity_render_is_projection_impl(files, ids)
+
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -3026,6 +3339,30 @@ INVARIANTS = [
         truth_anchor="the live corpus shard claim count x frozen_claim_count in eden/tools/corpus-audit-status.json, recomputed each run",
         severity="critical",
         lesson_ref="Crack #4 (2026-07-06): the full 1203-claim audit owed before Phase G rested on a memory that could be forgotten. This codifies it -- mining new claims onto unaudited data is structurally blocked until sign-off. Harness: eden/tools/corpus_audit.py. memory: full-corpus-audit-before-phase-g",
+    ),
+    Invariant(
+        name="views_no_inline_prose",
+        description="Phase H0 / R4 code-side -- no user-facing prose lives as a string literal inside a CLEAN view file; it belongs in the view-copy content store (state/copy.ts), referenced by id. Surface-scoped: _CLEAN_VIEW_FILES is EMPTY in H0 and grows as each view is migrated (H2-H4); the negative test proves the gate fires",
+        check_fn=check_views_no_inline_prose,
+        truth_anchor="the .ts bytes of the declared clean-view files (_CLEAN_VIEW_FILES) scanned each run; a growing allowlist mirroring _clean_surface_files",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 2 gate row 1 -- the #1 R4 WISH (no inline view prose) becomes a live gate landed BEFORE the surfaces so they cannot be built with inline copy. Negative test: tools/test_views_no_inline_prose.py. Semantic 'is it the RIGHT prose' stays review.",
+    ),
+    Invariant(
+        name="entity_render_is_projection",
+        description="Phase H0 / R1 -- the entity-render view is a pure projection of the generated entity-page artifact: no object literal keyed by a real entity id, no per-entity content branch. Closes the sub-10-element hole views_state_no_inline_data cannot see. Surface-scoped (_ENTITY_VIEW_FILES): EMPTY in H0, grows in H2; negative test proves it fires",
+        check_fn=check_entity_render_is_projection,
+        truth_anchor="the real entity-id sets from the pillars (canon slugs + catalog condition/symptom ids + product ids) x the entity-view .ts bytes, recomputed each run",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 2 gate row 2 -- a hand-built {calcium:{...},osteoporosis:{...}} content map (2 keys) slips under the >10-element inline-data gate; this closes it. Negative test: tools/test_entity_render_is_projection.py.",
+    ),
+    Invariant(
+        name="no_stub_render_paths",
+        description="Phase H0 -- no prototype/demo scaffold token (kn-stub, sh-stub, 'next chunk', 'real build', 'demo wires', PROTOTYPE, exemplar) survives into a shipped view (.ts) or stylesheet (.css); the migration re-implements the prototypes' design, never pastes their scaffolding",
+        check_fn=check_no_stub_render_paths,
+        truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts + dashboard/assets/styles/*.css bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 2 gate row 3 (same mechanism as no_dead_legacy_paths) -- the demos inline prose+data+stubs for speed; this gate blocks copying a stub render path or demo mark into the app. Negative test: tools/test_no_stub_render_paths.py.",
     ),
 ]
 
