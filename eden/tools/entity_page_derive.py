@@ -1,18 +1,31 @@
 #!/usr/bin/env python3
-"""eden/tools/entity_page_derive.py — the per-entity page view-model (Phase H0).
+"""eden/tools/entity_page_derive.py — the per-entity page view-model (Phase H0 + H1).
 
 Projects the pillars into ONE lean per-entity record per essential + condition so the
 redesigned entity view (H2) reads a pure projection, never a hand-built map. LEAN by
 design: each record carries claim IDs + derived extras (co-occurrence related, per-
-condition protocol claims, a derived one-liner), NOT claim text — the text / verbatim /
-citation resolve at render from corpus-embed.json + search-index.json (already loaded).
-Targets (essentials-targets-data.json), live coverage % (regimen state), and best-sources
-ranking (recommender) stay where they already live; this artifact does not duplicate them.
+condition protocol claims, a derived one-liner, the pill relations), NOT claim text —
+the text / verbatim / citation resolve at render from corpus-embed.json + search-index.json
+(already loaded). Targets (essentials-targets-data.json), live coverage % (regimen state),
+and best-sources ranking (recommender) stay where they already live; this artifact does
+not duplicate them.
 
-DEFERRED to H1 (derivation-correctness, per the migration blueprint): the "works with" /
-"nutrients to restore" pills (the essentials[]-union fix), the kind->colour category
-grouping, and hero prominence. This artifact groups claims by raw KIND (a stable
-projection); H1 maps kinds into colour categories at render.
+H1 (derivation correctness, migration blueprint §4 H1 + §1.2) — LANDED here:
+  * works_with (essential pages) = genuine interaction partners (essentials sharing a
+    kind='interaction' claim), NOT the raw co-occurrence set (killing the "interacts with
+    41" inflation + the phantom pills).
+  * conditions (essential pages) / restore (condition pages) = the DIRECTED nutrient<->
+    condition relation `maps(E,C)`, which fixes the essentials[]-union leak: a pill appears
+    only when the essential genuinely maps to THIS entity, never via the flatten across a
+    multi-condition claim. maps(E,C) holds iff a claim links E,C where kind is a directed
+    prescription (protocol/dose — always) OR a focused nutrient<->condition tie
+    (deficiency_sign/prognosis) that is NOT a "shotgun" (>= SHOTGUN_ESS essentials AND
+    >= SHOTGUN_COND conditions — a many-to-many list whose per-pair mappings can't be
+    recovered, e.g. the 10x10 Rare-Earths deficiency list).
+  * PROMINENCE: protocol_claim_ids (the curated "what to do" source) excludes base-line-
+    program / dose-table reference rows — a table row is never a curated recommendation.
+The kind->colour category grouping stays at RENDER (view-copy kind_categories, gated by
+claim_category_mapping_total); this artifact groups claims by raw KIND (a stable projection).
 
 Deterministic (no timestamp; ordering is fixed) so build_data() byte-compares to disk
 under derived_artifacts_fresh. Exposes build_data()/write_data() per the MANIFEST contract.
@@ -42,6 +55,15 @@ FACET_CONDITION = ["stance", "mechanism", "protocol", "warning", "physiology", "
                    "sources", "uses", "history", "big_question", "biography", "discovery", "etymology"]
 RELATED_MAX = 8
 
+# ── H1 pill derivation — the directed nutrient<->condition relation ──
+# A "restore" pill (condition page) / "need help with a condition?" pill (essential page)
+# appears ONLY when the essential genuinely maps to the entity. Never the essentials[]-union
+# flatten across a multi-condition claim (the Audit-B leak).
+PILL_DIRECTED_KINDS = frozenset({"protocol", "dose"})           # a directed prescription — always maps
+PILL_ASSOC_KINDS = frozenset({"deficiency_sign", "prognosis"})  # focused nutrient<->condition tie — unless shotgun
+SHOTGUN_ESS = 3   # a claim with >= SHOTGUN_ESS essentials AND >= SHOTGUN_COND conditions is a
+SHOTGUN_COND = 3  # many-to-many "shotgun" list whose per-pair (E,C) mappings can't be recovered
+
 
 def _load(p):
     return json.loads(p.read_text(encoding="utf-8"))
@@ -66,6 +88,9 @@ def build_data() -> dict:
     embed_cond = embed["conditions"]               # slug -> {books_cited, claim_count, claims_by_role}
     si_entities = si["entities"]                    # slug -> {display_name, type, synonyms, related, symbol, ...}
     si_claims = si["claims"]                        # list of faceted search claims
+
+    ess_slugs = set(embed_ess.keys())
+    cond_slugs = set(embed_cond.keys())
 
     # ── search-claim index: PRIMARY subject slug -> [search claims] (the entity's own
     # "worth knowing" Q&A; also_about is a cross-link, not the entity's own content) ──
@@ -103,9 +128,9 @@ def build_data() -> dict:
         return None
 
     # ── co-occurrence graph over entity slugs (essentials + conditions) sharing a claim ──
+    # This is the SERENDIPITY signal (violet "keep exploring" + related-conditions), and is
+    # DELIBERATELY broad. It is NOT the pill relation — the therapeutic pills use maps() below.
     cooc: dict = {}
-    ess_slugs = set(embed_ess.keys())
-    cond_slugs = set(embed_cond.keys())
 
     def bump(a, b):
         cooc.setdefault(a, {})
@@ -125,6 +150,40 @@ def build_data() -> dict:
         items.sort(key=lambda t: (-t[1], t[0]))     # count desc, slug asc — deterministic
         return [o for o, _ in items[:RELATED_MAX]]
 
+    # ── H1: the DIRECTED nutrient<->condition relation `maps(E,C)` (the essentials[]-union fix) ──
+    def _is_shotgun(c):
+        return (len(c.get("essentials", [])) >= SHOTGUN_ESS
+                and len(c.get("conditions", [])) >= SHOTGUN_COND)
+
+    ess_conditions: dict = {}   # essential slug -> {condition slug}  (its "need help with?" pills)
+    cond_essentials: dict = {}  # condition slug -> {essential slug}  (its "nutrients to restore" pills)
+    for c in claims.values():
+        k = c.get("kind")
+        if k in PILL_DIRECTED_KINDS:
+            contributes = True            # directed prescription — always maps
+        elif k in PILL_ASSOC_KINDS:
+            contributes = not _is_shotgun(c)   # focused tie only; a shotgun list can't pair
+        else:
+            contributes = False           # mechanism/toxicity/interaction/definition/... are not restore ties
+        if not contributes:
+            continue
+        es = [e for e in c.get("essentials", []) if e in ess_slugs]
+        cs = [s for s in c.get("conditions", []) if s in cond_slugs]
+        for e in es:
+            for s in cs:
+                ess_conditions.setdefault(e, set()).add(s)
+                cond_essentials.setdefault(s, set()).add(e)
+
+    # ── H1: "works with" (essential pages) = genuine interaction partners, NOT co-occurrence ──
+    works_with: dict = {}
+    for c in claims.values():
+        if c.get("kind") == "interaction":
+            es = [e for e in c.get("essentials", []) if e in ess_slugs]
+            for e in es:
+                for e2 in es:
+                    if e2 != e:
+                        works_with.setdefault(e, set()).add(e2)
+
     # ── regroup a condition's claims (stored by role) into kind buckets ──
     def cond_record(ccorp):
         ids = []
@@ -140,21 +199,17 @@ def build_data() -> dict:
         return [{"kind": k, "claim_ids": by_kind[k]} for k in _ordered(by_kind, KIND_PRIORITY)]
 
     def protocol_claim_ids(slug):
-        """protocol + dose claims mapping this condition (protocol first) — the real
-        per-condition protocol summary source (replaces the generic boilerplate)."""
+        """protocol + non-table dose claims mapping this condition (protocol first) — the real
+        per-condition protocol summary source (replaces the generic boilerplate). PROMINENCE
+        rule (H1): a base-line-program / dose-table reference row is NOT a curated
+        recommendation, so it never auto-fills this curated primary slot (the fluoride-under-
+        'what to do' defect)."""
         out = [cid for cid, c in claims.items()
                if slug in c.get("conditions", []) and c.get("kind") == "protocol"]
         out += [cid for cid, c in claims.items()
-                if slug in c.get("conditions", []) and c.get("kind") == "dose"]
+                if slug in c.get("conditions", []) and c.get("kind") == "dose"
+                and not c.get("base_line_table")]
         return out
-
-    # ── conditions an essential maps to (its "need help with a condition?" pills) ──
-    conds_for_essential: dict = {}
-    for c in claims.values():
-        cs = [s for s in c.get("conditions", []) if s in cond_slugs]
-        for e in c.get("essentials", []):
-            if e in ess_slugs and cs:
-                conds_for_essential.setdefault(e, set()).update(cs)
 
     # ── ESSENTIALS (all canon entries; count of `essential:true` is the 90) ──
     essentials_out: dict = {}
@@ -178,8 +233,9 @@ def build_data() -> dict:
             "one_liner": one_liner(slug, cbk),
             "record": [{"kind": k, "claim_ids": cbk[k]} for k in _ordered(cbk, KIND_PRIORITY)],
             "search": search_sections(slug, "essential"),
-            "conditions": sorted(conds_for_essential.get(slug, set())),
-            "related": related(slug),
+            "conditions": sorted(ess_conditions.get(slug, set())),   # directed pills (H1)
+            "works_with": sorted(works_with.get(slug, set())),       # interaction partners (H1)
+            "related": related(slug),                                # co-occurrence (keep-exploring)
         }
 
     # ── CONDITIONS (every corpus-embed condition, i.e. those carrying claims) ──
@@ -199,6 +255,7 @@ def build_data() -> dict:
             "synonyms": si_ent.get("synonyms", []),
             "one_liner": one_liner(slug, cbk_for_ol),
             "protocol_claim_ids": protocol_claim_ids(slug),
+            "restore": sorted(cond_essentials.get(slug, set())),     # directed pills (H1)
             "record": cond_record(ccorp),
             "search": search_sections(slug, "condition"),
             "related_conditions": related(slug, only=cond_slugs),
@@ -207,9 +264,11 @@ def build_data() -> dict:
 
     return {
         "_meta": {
-            "_doc": "GENERATED per-entity page view-model (Phase H0). Lean: claim IDs + derived "
+            "_doc": "GENERATED per-entity page view-model (Phase H0 + H1). Lean: claim IDs + derived "
                     "extras only; text/verbatim/citation resolve at render from corpus-embed + "
-                    "search-index. Regenerate: python eden/tools/entity_page_derive.py.",
+                    "search-index. Pills are the DIRECTED maps(E,C) relation (H1 essentials[]-union "
+                    "fix); works_with is interaction-kind; protocol_claim_ids drops base-line-table "
+                    "rows (prominence). Regenerate: python eden/tools/entity_page_derive.py.",
             "counts": {"essentials": ess_count, "conditions": len(conditions_out)},
             "generated_from": ["corpus-embed.json", "search-index.json", "essentials-canon.json",
                                "catalog/conditions.json"],

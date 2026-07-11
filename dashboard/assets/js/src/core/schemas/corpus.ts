@@ -45,6 +45,8 @@ export const CorpusClaimSchema = z.object({
    * from the claim's source-ref tag. The view surfaces it as a labeled attribution header so the
    * ref is kept OUT of the reader-facing claim_text (front-facing-human-first). Absent when none. */
   source_table: z.string().optional(),
+  /** true for a Base-Line-Program / dose-TABLE reference row (Fig. 8-1); the entity page's prominence rule keeps such rows out of a curated primary slot. Projected from the claim's tags. */
+  base_line_table: z.boolean().optional(),
 }).passthrough();
 
 /** A deficiency-sign edge inside an essential entry. */

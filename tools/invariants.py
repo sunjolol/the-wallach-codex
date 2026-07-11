@@ -3038,6 +3038,137 @@ def check_view_category_not_hardcoded():
     return _view_category_not_hardcoded_impl(files)
 
 
+# ── H1 pill relation -- keep in sync with eden/tools/entity_page_derive.py (R9: a rule change
+# updates BOTH, with proof). entity_pills_justified recomputes the relation INDEPENDENTLY here
+# so it proves every posted pill is backed even if the generator's logic regressed
+# (derived_artifacts_fresh only proves the artifact matches the generator, not that the
+# generator is leak-free). ──
+_PILL_DIRECTED_KINDS = frozenset({"protocol", "dose"})           # directed prescription — always maps
+_PILL_ASSOC_KINDS = frozenset({"deficiency_sign", "prognosis"})  # focused tie — unless shotgun
+_PILL_SHOTGUN_ESS = 3
+_PILL_SHOTGUN_COND = 3
+_POSITIONAL_HERO_RE = re.compile(r"\b(?:claims|record|claim_ids)\s*\[\s*0\s*\]")
+
+
+def _pill_relation_from_claims(claims, ess_slugs, cond_slugs):
+    """Independently recompute the directed maps(E,C) + works_with relations from the corpus
+    projection. Returns (ess->conds, cond->essentials, ess->works_with) as slug->set."""
+    directed_ec: dict = {}
+    directed_ce: dict = {}
+    works: dict = {}
+    for c in claims.values():
+        k = c.get("kind")
+        es = [e for e in c.get("essentials", []) if e in ess_slugs]
+        cs = [s for s in c.get("conditions", []) if s in cond_slugs]
+        if k in _PILL_DIRECTED_KINDS:
+            contributes = True
+        elif k in _PILL_ASSOC_KINDS:
+            contributes = not (len(c.get("essentials", [])) >= _PILL_SHOTGUN_ESS
+                               and len(c.get("conditions", [])) >= _PILL_SHOTGUN_COND)
+        else:
+            contributes = False
+        if contributes:
+            for e in es:
+                for s in cs:
+                    directed_ec.setdefault(e, set()).add(s)
+                    directed_ce.setdefault(s, set()).add(e)
+        if k == "interaction":
+            for e in es:
+                for e2 in es:
+                    if e2 != e:
+                        works.setdefault(e, set()).add(e2)
+    return directed_ec, directed_ce, works
+
+
+def _entity_pills_justified_impl(artifact, embed):
+    """RED if any entity PILL lacks a qualifying source claim. `artifact` = entity-page-data
+    dict, `embed` = corpus-embed dict. Param-taking for the negative test."""
+    ess_slugs = set(embed.get("essentials", {}).keys())
+    cond_slugs = set(embed.get("conditions", {}).keys())
+    ec, ce, works = _pill_relation_from_claims(embed.get("claims", {}), ess_slugs, cond_slugs)
+    viol = []
+    for slug, rec in artifact.get("conditions", {}).items():
+        for e in rec.get("restore", []):
+            if e not in ce.get(slug, set()):
+                viol.append(f"condition {slug}: restore pill '{e}' has no directed maps() claim")
+    for slug, rec in artifact.get("essentials", {}).items():
+        for cslug in rec.get("conditions", []):
+            if cslug not in ec.get(slug, set()):
+                viol.append(f"essential {slug}: help-with pill '{cslug}' has no directed maps() claim")
+        for e2 in rec.get("works_with", []):
+            if e2 not in works.get(slug, set()):
+                viol.append(f"essential {slug}: works_with pill '{e2}' shares no interaction claim")
+    if viol:
+        return False, ("entity pill(s) NOT justified by a qualifying claim -- the essentials[]-union "
+                       "leak produces exactly this: " + "; ".join(viol[:6])
+                       + (f" (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    total = sum(len(r.get("restore", [])) for r in artifact.get("conditions", {}).values())
+    total += sum(len(r.get("conditions", [])) + len(r.get("works_with", []))
+                 for r in artifact.get("essentials", {}).values())
+    return True, f"all {total} entity pills trace to a qualifying directed/interaction claim (no union leak)"
+
+
+def check_entity_pills_justified():
+    """Phase H1 gate (R7 / migration blueprint §1.2 item (i)): every PILL on a generated entity
+    page (a condition's restore nutrients, an essential's help-with conditions + works-with
+    partners) traces to a qualifying source claim. The essentials[]-union leak produces exactly
+    an UNjustified pill -- a nutrient flattened in from a DIFFERENT condition in a multi-condition
+    claim -- so this gate recomputes the directed maps() + interaction relations INDEPENDENTLY
+    from the corpus projection and RED-flags any posted pill with no backing (defense in depth
+    beyond derived_artifacts_fresh, which only proves the artifact matches the generator). Truth
+    anchor: entity-page-data.json pills x an independent re-derivation from corpus-embed claims,
+    recomputed each run."""
+    artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
+                          .read_text(encoding="utf-8"))
+    embed = json.loads((ROOT / "dashboard" / "assets" / "data" / "corpus-embed.json")
+                       .read_text(encoding="utf-8"))
+    return _entity_pills_justified_impl(artifact, embed)
+
+
+def _no_positional_hero_impl(artifact, embed_claims, view_files):
+    """RED if a curated primary slot is auto-filled by a reference-table row, or an entity view
+    chooses its hero by array position. `artifact` = entity-page-data dict; `embed_claims` =
+    id->claim (carries base_line_table); `view_files` = iterable of (relpath, text).
+    Param-taking for the negative test."""
+    viol = []
+    conds = artifact.get("conditions", {})
+    for slug, rec in conds.items():
+        for cid in rec.get("protocol_claim_ids", []):
+            if embed_claims.get(cid, {}).get("base_line_table"):
+                viol.append(f"condition {slug}: base-line-table row {cid} in curated primary (protocol_claim_ids)")
+    view_files = list(view_files)
+    for rel, text in view_files:
+        src = _strip_ts_comments(text)
+        for m in _POSITIONAL_HERO_RE.finditer(src):
+            viol.append(f"{rel}: positional hero {m.group(0)!r} (choose the primary by explicit "
+                        "prominence, never array position)")
+    if viol:
+        return False, ("prominence rule broken (a reference-table row auto-filled a curated primary "
+                       "slot, or the hero is chosen by array position): " + "; ".join(viol[:6]))
+    return True, (f"prominence holds: no base-line-table row in any curated primary across {len(conds)} "
+                  f"conditions; no positional-hero pattern in {len(view_files)} entity-view file(s)")
+
+
+def check_no_positional_hero():
+    """Phase H1 gate (prominence, migration blueprint §1.2 item (iii)): the entity page's CURATED
+    PRIMARY 'what to do' slot is never auto-filled by a reference-table row, and the hero/primary
+    claim is never chosen by array position. DATA half (binds now): no condition's
+    protocol_claim_ids contains a base-line-program / dose-table claim. VIEW half (surface-scoped,
+    _ENTITY_VIEW_FILES EMPTY in H1 -> binds when the render lands in H2): no `claims[0]`/`record[0]`
+    hero pattern. Truth anchor: entity-page-data.json protocol_claim_ids x corpus-embed
+    base_line_table + the entity-view .ts bytes, recomputed each run."""
+    artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
+                          .read_text(encoding="utf-8"))
+    embed = json.loads((ROOT / "dashboard" / "assets" / "data" / "corpus-embed.json")
+                       .read_text(encoding="utf-8"))
+    files = []
+    for rel in _ENTITY_VIEW_FILES:
+        p = ROOT / rel
+        if p.exists():
+            files.append((rel, p.read_text(encoding="utf-8")))
+    return _no_positional_hero_impl(artifact, embed.get("claims", {}), files)
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -3510,6 +3641,22 @@ INVARIANTS = [
         truth_anchor="the entity-view .ts bytes (_ENTITY_VIEW_FILES) scanned each run for a standalone colour-family-word string literal",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 2 gate 'view_category_not_hardcoded' + section 1.2 item (ii)(2) -- colour is assigned via the total kind->category table, never a per-claim literal, so category logic stays single-source. Negative test: tools/test_view_category_not_hardcoded.py.",
+    ),
+    Invariant(
+        name="entity_pills_justified",
+        description="Phase H1 -- every PILL on a generated entity page (a condition's restore nutrients, an essential's help-with conditions + works-with partners) traces to a qualifying source claim. The essentials[]-union leak produces exactly an UNjustified pill (a nutrient flattened in from a DIFFERENT condition in a multi-condition claim); this gate recomputes the directed maps() + interaction relations independently and RED-flags any posted pill with no backing. Defense in depth beyond derived_artifacts_fresh (which only proves the artifact matches the generator)",
+        check_fn=check_entity_pills_justified,
+        truth_anchor="dashboard/assets/data/entity-page-data.json pills x an independent re-derivation from corpus-embed claims, recomputed each run",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 1.2 item (i) + section 4 H1 -- the systematic essentials[]-union fix, gated. The 5 D2 misfits (Zinc/Chromium/Selenium/Tin/Vanadium on osteoporosis) + the D1 phantom works-with pills leaked via a many-to-many shotgun claim; this proves no such pill survives. Negative test: tools/test_entity_pills_justified.py.",
+    ),
+    Invariant(
+        name="no_positional_hero",
+        description="Phase H1 (prominence) -- the entity page's curated primary 'what to do' slot is never auto-filled by a reference-table row (a base-line-program / dose-table claim in protocol_claim_ids), and the hero/primary is never chosen by array position. DATA half binds now; the VIEW half is surface-scoped (_ENTITY_VIEW_FILES EMPTY in H1 -> binds when the render lands in H2)",
+        check_fn=check_no_positional_hero,
+        truth_anchor="entity-page-data.json protocol_claim_ids x corpus-embed base_line_table + the entity-view .ts bytes scanned for a claims[0]/record[0] hero, recomputed each run",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 1.2 item (iii) + section 2 gate 'no-positional-hero' -- the fluoride base-line dose-table row was promoted into the default-open GREEN 'what to do' slot, contradicting the page's own 'avoid fluoride'. A table row is never a curated recommendation. Negative test: tools/test_no_positional_hero.py.",
     ),
 ]
 

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "_doc": "GENERATED per-entity page view-model (Phase H0). Lean: claim IDs + derived extras only; text/verbatim/citation resolve at render from corpus-embed + search-index. Regenerate: python eden/tools/entity_page_derive.py.",
+    "_doc": "GENERATED per-entity page view-model (Phase H0 + H1). Lean: claim IDs + derived extras only; text/verbatim/citation resolve at render from corpus-embed + search-index. Pills are the DIRECTED maps(E,C) relation (H1 essentials[]-union fix); works_with is interaction-kind; protocol_claim_ids drops base-line-table rows (prominence). Regenerate: python eden/tools/entity_page_derive.py.",
     "counts": {
       "essentials": 90,
       "conditions": 506
@@ -91,15 +91,10 @@
         }
       ],
       "conditions": [
-        "acidosis",
-        "alkalosis",
-        "arteriosclerosis",
-        "atherosclerosis",
         "cystitis",
-        "stroke",
-        "thrombosis",
         "urinary_tract_infection"
       ],
+      "works_with": [],
       "related": [
         "acidosis",
         "alkalosis",
@@ -154,6 +149,7 @@
         }
       ],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "nitrogen": {
@@ -197,6 +193,7 @@
         "infertility",
         "kwashiorkor"
       ],
+      "works_with": [],
       "related": [
         "edema",
         "infertility",
@@ -258,6 +255,7 @@
         "gangrene",
         "stroke"
       ],
+      "works_with": [],
       "related": [
         "cancer",
         "arteriosclerosis",
@@ -339,19 +337,12 @@
         "addisons_disease",
         "ageusia",
         "anorexia",
-        "blind_rage",
-        "congestive_heart_failure",
         "depression",
         "dermatitis",
-        "edema",
-        "heat_stroke",
-        "hyperactivity",
-        "hypertension",
         "hypotension",
-        "renal_failure",
-        "violent_behavior",
         "water_intoxication"
       ],
+      "works_with": [],
       "related": [
         "potassium",
         "addisons_disease",
@@ -510,7 +501,6 @@
       "search": [],
       "conditions": [
         "alcoholism",
-        "aneurysm",
         "angina",
         "anorexia",
         "anxiety",
@@ -530,20 +520,14 @@
         "bone_spurs",
         "bruxism",
         "bursitis",
-        "cancer",
         "cardiac_arrhythmia",
-        "cardiomyopathy",
         "cardiovascular_disease",
         "carpal_tunnel_syndrome",
-        "cataracts",
-        "celiac_disease",
         "convulsions",
         "crohns_disease",
-        "deafness",
         "dementia",
         "dental_calculus",
         "depression",
-        "diabetes",
         "dysmenorrhea",
         "dyspepsia",
         "enuresis",
@@ -554,14 +538,12 @@
         "growing_pains",
         "high_cholesterol",
         "hyperactivity",
-        "hypertension",
         "hypotension",
         "indigestion",
         "insomnia",
         "joint_pain",
         "kidney_disease",
         "kidney_stones",
-        "malabsorption",
         "menopause",
         "migraine",
         "mitral_valve_prolapse",
@@ -585,6 +567,9 @@
         "tinnitus",
         "torticollis",
         "vertigo"
+      ],
+      "works_with": [
+        "calcium"
       ],
       "related": [
         "calcium",
@@ -660,18 +645,9 @@
       "conditions": [
         "anorexia",
         "anxiety",
-        "arthritis",
-        "cardiomyopathy",
-        "enzootic_ataxia",
-        "goiter",
-        "hyperparathyroidism",
-        "hypertension",
-        "hypophosphatemia",
-        "keshan_disease",
-        "malabsorption",
-        "osteoporosis",
         "pica"
       ],
+      "works_with": [],
       "related": [
         "arthritis",
         "osteoporosis",
@@ -734,21 +710,13 @@
       "search": [],
       "conditions": [
         "anemia",
-        "aneurysm",
         "arthritis",
-        "bone_spurs",
         "brittle_nails",
-        "cancer",
-        "cardiomyopathy",
-        "cataracts",
         "collagen_disease",
-        "deafness",
-        "diabetes",
-        "hypertension",
         "lupus",
-        "osteoporosis",
         "sickle_cell_anemia"
       ],
+      "works_with": [],
       "related": [
         "arthritis",
         "calcium",
@@ -800,6 +768,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": [
         "sodium",
         "potassium"
@@ -915,8 +884,6 @@
       ],
       "conditions": [
         "acne",
-        "addisons_disease",
-        "cardiac_arrest",
         "cardiac_arrhythmia",
         "cardiac_failure",
         "colds",
@@ -930,6 +897,7 @@
         "muscle_cramps",
         "obesity"
       ],
+      "works_with": [],
       "related": [
         "magnesium",
         "calcium",
@@ -1146,10 +1114,8 @@
       "conditions": [
         "alcoholism",
         "anemia",
-        "aneurysm",
         "angina",
         "ankylosing_spondylitis",
-        "anorexia",
         "anxiety",
         "arthritis",
         "atrial_fibrillation",
@@ -1157,7 +1123,6 @@
         "backache",
         "bedwetting",
         "bells_palsy",
-        "birth_defects",
         "bladder_stones",
         "bleeding_gums",
         "body_odor",
@@ -1167,21 +1132,15 @@
         "bruxism",
         "bursitis",
         "calcium_deposits",
-        "cancer",
-        "cardiomyopathy",
         "cardiovascular_disease",
         "carpal_tunnel_syndrome",
-        "cataracts",
-        "celiac_disease",
         "compression_fractures",
         "convulsions",
         "crohns_disease",
-        "deafness",
         "degenerative_arthritis",
         "dementia",
         "depression",
         "dermatitis",
-        "diabetes",
         "dowagers_hump",
         "dysmenorrhea",
         "dyspepsia",
@@ -1198,19 +1157,15 @@
         "hypercalcemia",
         "hyperparathyroidism",
         "hypertension",
-        "hypochlorhydria",
         "indigestion",
         "insomnia",
         "joint_pain",
         "kidney_disease",
         "kidney_stones",
         "kyphosis",
-        "lactose_intolerance",
         "legg_perthes",
-        "liver_disease",
         "lordosis",
         "low_back_pain",
-        "malabsorption",
         "menieres_disease",
         "menopause",
         "muscle_cramps",
@@ -1227,13 +1182,11 @@
         "osteoporosis",
         "pagets_disease",
         "panic_attacks",
-        "peptic_ulcers",
         "periodontal_disease",
         "peripheral_neuropathy",
         "pica",
         "pms",
         "prolonged_clotting_time",
-        "psychosis",
         "pyorrhea",
         "raynauds_disease",
         "receding_gums",
@@ -1252,6 +1205,12 @@
         "tourette_syndrome",
         "trigeminal_neuralgia",
         "vertigo"
+      ],
+      "works_with": [
+        "copper",
+        "magnesium",
+        "selenium",
+        "zinc"
       ],
       "related": [
         "magnesium",
@@ -1317,17 +1276,10 @@
       ],
       "search": [],
       "conditions": [
-        "aneurysm",
         "arthritis",
-        "bone_spurs",
-        "cancer",
-        "cardiomyopathy",
-        "cataracts",
-        "deafness",
-        "diabetes",
-        "hypertension",
         "osteoporosis"
       ],
+      "works_with": [],
       "related": [
         "calcium",
         "magnesium",
@@ -1410,13 +1362,12 @@
       "conditions": [
         "anemia",
         "anorexia",
-        "birth_defects",
         "bush_sickness",
         "celiac_disease",
         "demyelination",
-        "hypochlorhydria",
         "pernicious_anemia"
       ],
+      "works_with": [],
       "related": [
         "vitamin-b12",
         "pernicious_anemia",
@@ -1586,38 +1537,27 @@
         "adhd",
         "alcoholism",
         "alzheimers",
-        "anemia",
-        "aneurysm",
         "anxiety",
-        "arthritis",
         "atherosclerosis",
         "atopic_dermatitis",
         "autism",
         "bedwetting",
         "bipolar_disorder",
         "blind_rage",
-        "bone_spurs",
-        "cancer",
         "cardiac_arrhythmia",
-        "cardiomyopathy",
         "cataracts",
         "chronic_fatigue_syndrome",
         "convulsions",
         "coronary_artery_disease",
-        "criminal_behavior",
         "crohns_disease",
-        "deafness",
         "dementia",
         "depression",
-        "dermatitis",
         "diabetes",
         "disagreeable_attitude",
         "eczema",
         "epilepsy",
-        "explosive_outbursts",
         "failure_to_thrive",
         "food_allergy",
-        "gestational_diabetes",
         "headache",
         "high_cholesterol",
         "high_triglycerides",
@@ -1625,7 +1565,6 @@
         "hyperinsulinemia",
         "hyperirritability",
         "hyperkinesis",
-        "hypertension",
         "hypoglycemia",
         "hysteria",
         "incontinence",
@@ -1634,29 +1573,25 @@
         "intermittent_claudication",
         "ketoacidosis",
         "ketosis",
-        "kidney_disease",
         "korsakoffs_syndrome",
         "kwashiorkor",
         "learning_disabilities",
-        "liver_disease",
         "memory_loss",
         "narcolepsy",
         "night_terrors",
         "obesity",
         "oligospermia",
         "organic_brain_syndrome",
-        "osteoporosis",
         "panic_attacks",
         "paranoia",
         "pellagra",
-        "peptic_ulcers",
         "peripheral_neuropathy",
         "pms",
         "prediabetes",
         "reactive_hypoglycemia",
-        "schizophrenia",
-        "violent_behavior"
+        "schizophrenia"
       ],
+      "works_with": [],
       "related": [
         "vanadium",
         "calcium",
@@ -1825,17 +1760,12 @@
         "autism",
         "birth_defects",
         "blind_rage",
-        "bone_spurs",
         "brittle_hair",
-        "cancer",
-        "cardiomyopathy",
-        "cataracts",
         "cerebellar_hypoplasia",
         "cerebral_palsy",
         "congenital_ataxia",
         "creutzfeldt_jakob_disease",
         "criminal_behavior",
-        "deafness",
         "degenerative_disc_disease",
         "dementia",
         "depression",
@@ -1845,20 +1775,16 @@
         "enzootic_ataxia",
         "explosive_outbursts",
         "glucose_intolerance",
-        "goiter",
-        "gout",
         "gray_hair",
         "hemochromatosis",
         "hemorrhoids",
         "hernia",
         "high_cholesterol",
-        "hypertension",
         "hyperthyroidism",
         "hypoglycemia",
         "hypothyroidism",
         "joint_pain",
         "kawasaki_disease",
-        "keshan_disease",
         "learning_disabilities",
         "leukopenia",
         "liver_cirrhosis",
@@ -1866,21 +1792,25 @@
         "mad_cow_disease",
         "menkes_syndrome",
         "neutropenia",
-        "osteoporosis",
         "phlebitis",
-        "pica",
         "psoriasis",
         "ptosis",
         "reactive_hypoglycemia",
         "respiratory_disease",
         "rheumatoid_arthritis",
-        "schizophrenia",
         "shwachman_syndrome",
         "spider_veins",
         "thyroid_disease",
         "varicose_veins",
         "violent_behavior",
         "vitiligo"
+      ],
+      "works_with": [
+        "calcium",
+        "iodine",
+        "iron",
+        "selenium",
+        "zinc"
       ],
       "related": [
         "zinc",
@@ -2002,6 +1932,7 @@
         "osteoarthritis",
         "osteoporosis"
       ],
+      "works_with": [],
       "related": [
         "selenium",
         "cancer",
@@ -2132,24 +2063,21 @@
         "angular_stomatitis",
         "anorexia",
         "aphthous_stomatitis",
-        "arthritis",
         "brittle_nails",
         "canker_sores",
-        "cirrhosis",
         "depression",
-        "diabetes",
         "dysmenorrhea",
         "dysphagia",
-        "heart_failure",
-        "liver_cirrhosis",
-        "liver_disease",
         "memory_loss",
         "menorrhagia",
         "nervous_heart",
         "obesity",
-        "pancreatic_fibrosis",
-        "pica",
-        "schizophrenia"
+        "pica"
+      ],
+      "works_with": [
+        "copper",
+        "vitamin-c",
+        "zinc"
       ],
       "related": [
         "zinc",
@@ -2282,19 +2210,15 @@
         }
       ],
       "conditions": [
-        "cardiomyopathy",
         "cretinism",
-        "enzootic_ataxia",
         "fibrocystic_breast_disease",
         "goiter",
-        "graves_disease",
         "hashimotos_disease",
-        "hyperthyroidism",
         "hypothyroidism",
-        "keshan_disease",
-        "pica",
-        "thyroid_disease",
         "wilsons_syndrome"
+      ],
+      "works_with": [
+        "copper"
       ],
       "related": [
         "goiter",
@@ -2385,7 +2309,6 @@
       ],
       "search": [],
       "conditions": [
-        "anorexia",
         "asthma",
         "atherosclerosis",
         "atopic_asthma",
@@ -2401,13 +2324,12 @@
         "infertility",
         "low_libido",
         "miscarriage",
-        "parkinsonism",
         "repetitive_motion_syndrome",
-        "schizophrenia",
         "tardive_dyskinesia",
         "tinnitus",
         "tmj"
       ],
+      "works_with": [],
       "related": [
         "asthma",
         "carpal_tunnel_syndrome",
@@ -2464,10 +2386,8 @@
         }
       ],
       "search": [],
-      "conditions": [
-        "arthritis",
-        "gout"
-      ],
+      "conditions": [],
+      "works_with": [],
       "related": [
         "arthritis",
         "copper",
@@ -2636,18 +2556,14 @@
       "conditions": [
         "adrenoleukodystrophy",
         "aids",
-        "alopecia",
         "als",
         "alzheimers",
         "amenorrhea",
         "anemia",
-        "aneurysm",
         "arsenic_toxicity",
         "arthritis",
         "autoimmune_disorders",
         "benign_prostatic_hyperplasia",
-        "birth_defects",
-        "bone_spurs",
         "cancer",
         "candidiasis",
         "cardiac_arrhythmia",
@@ -2660,17 +2576,13 @@
         "cor_pulmonale",
         "crohns_disease",
         "cystic_fibrosis",
-        "deafness",
         "dementia",
-        "diabetes",
         "dysmenorrhea",
         "dyspepsia",
-        "enzootic_ataxia",
         "fibrocystic_breast_disease",
         "food_allergy",
         "freckles",
         "gallstones",
-        "goiter",
         "growing_pains",
         "heart_attack",
         "heavy_metal_toxicity",
@@ -2678,7 +2590,6 @@
         "high_cholesterol",
         "high_triglycerides",
         "hiv_aids",
-        "hypertension",
         "immune_depression",
         "incontinence",
         "indigestion",
@@ -2688,7 +2599,6 @@
         "intermittent_claudication",
         "jaundice",
         "keshan_disease",
-        "kidney_disease",
         "korsakoffs_syndrome",
         "kwashiorkor",
         "lead_poisoning",
@@ -2706,12 +2616,9 @@
         "multiple_sclerosis",
         "muscle_cramps",
         "muscular_dystrophy",
-        "osteoporosis",
         "pancreatitis",
         "parkinsons_disease",
-        "pica",
         "plumbism",
-        "prostate_cancer",
         "psoriasis",
         "reyes_syndrome",
         "rheumatoid_arthritis",
@@ -2719,13 +2626,17 @@
         "sickle_cell_anemia",
         "sids",
         "stroke",
-        "sudden_cardiac_death",
         "tachycardia",
         "thrush",
         "tonsillitis",
         "torticollis",
         "wernicke_korsakoff_syndrome",
         "white_muscle_disease"
+      ],
+      "works_with": [
+        "calcium",
+        "copper",
+        "zinc"
       ],
       "related": [
         "vitamin-e",
@@ -2776,6 +2687,7 @@
       "conditions": [
         "cardiovascular_disease"
       ],
+      "works_with": [],
       "related": [
         "cardiovascular_disease"
       ]
@@ -2813,6 +2725,7 @@
         "arthritis",
         "osteoporosis"
       ],
+      "works_with": [],
       "related": [
         "arthritis",
         "calcium",
@@ -2914,41 +2827,28 @@
       ],
       "search": [],
       "conditions": [
-        "anemia",
-        "aneurysm",
         "anxiety",
-        "arthritis",
         "bedwetting",
         "bipolar_disorder",
-        "blind_rage",
-        "bone_spurs",
-        "cancer",
-        "cardiomyopathy",
         "cardiovascular_disease",
-        "cataracts",
         "coronary_artery_disease",
-        "deafness",
         "dementia",
         "depression",
         "diabetes",
         "disagreeable_attitude",
-        "explosive_outbursts",
         "high_cholesterol",
         "high_triglycerides",
         "hyperinsulinemia",
-        "hypertension",
         "hypoglycemia",
         "infertility",
         "insomnia",
         "korsakoffs_syndrome",
         "narcolepsy",
         "obesity",
-        "osteoporosis",
         "panic_attacks",
-        "reactive_hypoglycemia",
-        "schizophrenia",
-        "violent_behavior"
+        "reactive_hypoglycemia"
       ],
+      "works_with": [],
       "related": [
         "chromium",
         "diabetes",
@@ -3130,7 +3030,6 @@
         "amenorrhea",
         "anemia",
         "anencephaly",
-        "aneurysm",
         "anorexia",
         "anosmia",
         "aphthous_stomatitis",
@@ -3140,17 +3039,13 @@
         "bad_breath",
         "benign_prostatic_hyperplasia",
         "birth_defects",
-        "blind_rage",
         "body_odor",
         "boils",
-        "bone_spurs",
         "brittle_nails",
         "bronchitis",
         "bulimia",
-        "cancer",
         "candidiasis",
         "canker_sores",
-        "cardiomyopathy",
         "carpal_tunnel_syndrome",
         "cataracts",
         "cerebral_palsy",
@@ -3162,7 +3057,6 @@
         "cradle_cap",
         "crohns_disease",
         "dandruff",
-        "deafness",
         "dementia",
         "depression",
         "dermatitis",
@@ -3180,7 +3074,6 @@
         "herpes_simplex",
         "high_cholesterol",
         "hyperkinesis",
-        "hypertension",
         "hypoglycemia",
         "hypogonadism",
         "hypotension",
@@ -3201,7 +3094,6 @@
         "night_blindness",
         "omphalocele",
         "organic_brain_syndrome",
-        "osteoporosis",
         "paranoia",
         "pellagra",
         "peptic_ulcers",
@@ -3226,10 +3118,15 @@
         "tonsillitis",
         "umbilical_hernia",
         "varicose_veins",
-        "violent_behavior",
         "vitiligo",
         "white_spots_fingernails",
         "xerophthalmia"
+      ],
+      "works_with": [
+        "calcium",
+        "copper",
+        "iron",
+        "selenium"
       ],
       "related": [
         "vitamin-a",
@@ -3307,10 +3204,8 @@
           ]
         }
       ],
-      "conditions": [
-        "immune_depression",
-        "wounds"
-      ],
+      "conditions": [],
+      "works_with": [],
       "related": [
         "immune_depression",
         "wounds"
@@ -3357,10 +3252,8 @@
           ]
         }
       ],
-      "conditions": [
-        "birth_defects",
-        "cirrhosis"
-      ],
+      "conditions": [],
+      "works_with": [],
       "related": [
         "birth_defects",
         "cirrhosis"
@@ -3406,9 +3299,9 @@
       "search": [],
       "conditions": [
         "carpal_tunnel_syndrome",
-        "leukemia",
         "tmj"
       ],
+      "works_with": [],
       "related": [
         "carpal_tunnel_syndrome",
         "leukemia",
@@ -3477,6 +3370,7 @@
       "conditions": [
         "arthritis"
       ],
+      "works_with": [],
       "related": [
         "arthritis"
       ]
@@ -3512,6 +3406,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "beryllium": {
@@ -3545,6 +3440,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "bromine": {
@@ -3578,6 +3474,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "cerium": {
@@ -3602,6 +3499,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "cesium": {
@@ -3643,6 +3541,7 @@
         "lung_cancer",
         "sarcoma"
       ],
+      "works_with": [],
       "related": [
         "cancer",
         "colon_cancer",
@@ -3674,6 +3573,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "erbium": {
@@ -3700,6 +3600,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "europium": {
@@ -3733,6 +3634,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "gallium": {
@@ -3789,9 +3691,9 @@
       ],
       "conditions": [
         "brain_cancer",
-        "cancer",
         "dementia"
       ],
+      "works_with": [],
       "related": [
         "brain_cancer",
         "calcium",
@@ -3827,6 +3729,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "hafnium": {
@@ -3853,6 +3756,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "holmium": {
@@ -3879,6 +3783,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "lanthanum": {
@@ -3907,11 +3812,8 @@
         }
       ],
       "search": [],
-      "conditions": [
-        "candidiasis",
-        "chronic_fatigue",
-        "chronic_fatigue_syndrome"
-      ],
+      "conditions": [],
+      "works_with": [],
       "related": [
         "chronic_fatigue",
         "candidiasis",
@@ -4016,6 +3918,9 @@
         "infertility",
         "violent_behavior"
       ],
+      "works_with": [
+        "vitamin-b12"
+      ],
       "related": [
         "chromium",
         "vanadium",
@@ -4051,6 +3956,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "niobium": {
@@ -4077,6 +3983,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "neodymium": {
@@ -4103,6 +4010,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "nickel": {
@@ -4144,6 +4052,9 @@
         "anemia",
         "dermatitis"
       ],
+      "works_with": [
+        "vitamin-b12"
+      ],
       "related": [
         "anemia",
         "dermatitis",
@@ -4174,6 +4085,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "rubidium": {
@@ -4198,6 +4110,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "rhenium": {
@@ -4222,6 +4135,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "scandium": {
@@ -4246,6 +4160,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "samarium": {
@@ -4270,6 +4185,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "tin": {
@@ -4319,19 +4235,11 @@
       "search": [],
       "conditions": [
         "alopecia",
-        "aneurysm",
-        "arthritis",
-        "bone_spurs",
-        "cancer",
-        "cardiomyopathy",
-        "cataracts",
         "deafness",
-        "diabetes",
-        "hypertension",
         "male_pattern_baldness",
-        "osteoporosis",
         "tinnitus"
       ],
+      "works_with": [],
       "related": [
         "zinc",
         "calcium",
@@ -4365,6 +4273,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "terbium": {
@@ -4389,6 +4298,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "titanium": {
@@ -4413,6 +4323,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "thulium": {
@@ -4437,6 +4348,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "yttrium": {
@@ -4462,6 +4374,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "ytterbium": {
@@ -4486,6 +4399,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "zirconium": {
@@ -4510,6 +4424,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "vitamin-a": {
@@ -4625,7 +4540,6 @@
         "aids",
         "allergies",
         "alopecia",
-        "amenorrhea",
         "anencephaly",
         "anosmia",
         "arthritis",
@@ -4639,7 +4553,6 @@
         "cancer",
         "candidiasis",
         "canker_sores",
-        "carcinoma",
         "cervical_dysplasia",
         "chalazion",
         "conjunctivitis",
@@ -4656,7 +4569,6 @@
         "freckles",
         "gingivitis",
         "heart_attack",
-        "hydrocephalus",
         "ichthyosis",
         "immune_depression",
         "impetigo",
@@ -4703,6 +4615,7 @@
         "vitiligo",
         "xerophthalmia"
       ],
+      "works_with": [],
       "related": [
         "zinc",
         "selenium",
@@ -4788,6 +4701,7 @@
         "tachycardia",
         "wernicke_korsakoff_syndrome"
       ],
+      "works_with": [],
       "related": [
         "vitamin-b3",
         "chromium",
@@ -4863,6 +4777,7 @@
         "photophobia",
         "seborrheic_dermatitis"
       ],
+      "works_with": [],
       "related": [
         "vitamin-b6",
         "vitamin-b5",
@@ -4961,7 +4876,6 @@
         "hysteria",
         "insomnia",
         "learning_disabilities",
-        "liver_disease",
         "organic_brain_syndrome",
         "palpitations",
         "panic_attacks",
@@ -4973,6 +4887,7 @@
         "tachycardia",
         "tardive_dyskinesia"
       ],
+      "works_with": [],
       "related": [
         "vitamin-b6",
         "chromium",
@@ -5045,6 +4960,7 @@
         "muscle_cramps",
         "tachycardia"
       ],
+      "works_with": [],
       "related": [
         "vitamin-b6",
         "vitamin-b2",
@@ -5206,6 +5122,7 @@
         "tourette_syndrome",
         "vomiting"
       ],
+      "works_with": [],
       "related": [
         "omega-3",
         "zinc",
@@ -5312,6 +5229,7 @@
         "vitiligo",
         "weight_loss"
       ],
+      "works_with": [],
       "related": [
         "zinc",
         "vitamin-b12",
@@ -5430,6 +5348,10 @@
         "shingles",
         "spina_bifida",
         "vitiligo"
+      ],
+      "works_with": [
+        "lithium",
+        "nickel"
       ],
       "related": [
         "zinc",
@@ -5640,6 +5562,9 @@
         "tonsillitis",
         "varicose_veins"
       ],
+      "works_with": [
+        "iron"
+      ],
       "related": [
         "selenium",
         "zinc",
@@ -5712,18 +5637,12 @@
       "search": [],
       "conditions": [
         "angina",
-        "arteriosclerosis",
         "arthritis",
-        "athletes_foot",
         "bone_spurs",
         "convulsions",
-        "dermatitis",
         "diarrhea",
-        "eczema",
         "insomnia",
         "kidney_stones",
-        "liver_disease",
-        "menopause",
         "muscle_cramps",
         "myopia",
         "osteoarthritis",
@@ -5732,12 +5651,11 @@
         "periodontal_disease",
         "restless_leg_syndrome",
         "rickets",
-        "ringworm",
         "tetany",
         "tourette_syndrome",
-        "uterine_fibroids",
-        "vaginitis"
+        "uterine_fibroids"
       ],
+      "works_with": [],
       "related": [
         "rickets",
         "arthritis",
@@ -5885,7 +5803,6 @@
         "cancer",
         "candidiasis",
         "canker_sores",
-        "carcinoma",
         "cardiomyopathy",
         "cardiovascular_disease",
         "cataracts",
@@ -5942,6 +5859,7 @@
         "torticollis",
         "varicose_veins"
       ],
+      "works_with": [],
       "related": [
         "omega-3",
         "selenium",
@@ -6001,6 +5919,7 @@
         "nosebleeds",
         "osteoporosis"
       ],
+      "works_with": [],
       "related": [
         "vitamin-e",
         "ecchymosis",
@@ -6067,6 +5986,7 @@
         "seborrheic_dermatitis",
         "weight_loss"
       ],
+      "works_with": [],
       "related": [
         "depression",
         "dermatitis",
@@ -6143,6 +6063,7 @@
         "muscular_dystrophy",
         "tardive_dyskinesia"
       ],
+      "works_with": [],
       "related": [
         "omega-3",
         "vitamin-e",
@@ -6203,6 +6124,7 @@
         "liver_disease",
         "renal_failure"
       ],
+      "works_with": [],
       "related": [
         "chromium",
         "vitamin-b3",
@@ -6287,6 +6209,7 @@
         "peptic_ulcers",
         "varicose_veins"
       ],
+      "works_with": [],
       "related": [
         "vitamin-c",
         "zinc",
@@ -6343,14 +6266,10 @@
       ],
       "search": [],
       "conditions": [
-        "cancer",
         "cataracts",
-        "erectile_dysfunction",
-        "goiter",
-        "infertility",
-        "macular_degeneration",
-        "peripheral_arterial_disease"
+        "infertility"
       ],
+      "works_with": [],
       "related": [
         "selenium",
         "zinc",
@@ -6408,14 +6327,11 @@
       "search": [],
       "conditions": [
         "absence_attacks",
-        "cancer",
         "cataracts",
         "epilepsy",
-        "gallstones",
-        "goiter",
-        "macular_degeneration",
-        "peripheral_arterial_disease"
+        "gallstones"
       ],
+      "works_with": [],
       "related": [
         "arginine",
         "cancer",
@@ -6459,6 +6375,7 @@
         "arthritis",
         "rheumatoid_arthritis"
       ],
+      "works_with": [],
       "related": [
         "arthritis",
         "calcium",
@@ -6492,6 +6409,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "leucine": {
@@ -6525,6 +6443,7 @@
       "conditions": [
         "parkinsonism"
       ],
+      "works_with": [],
       "related": [
         "methionine",
         "omega-3",
@@ -6566,15 +6485,13 @@
       ],
       "search": [],
       "conditions": [
-        "aneurysm",
         "canker_sores",
         "cold_sores",
-        "hemorrhoids",
         "herpes_simplex",
         "kidney_disease",
-        "kidney_stones",
-        "varicose_veins"
+        "kidney_stones"
       ],
+      "works_with": [],
       "related": [
         "vitamin-a",
         "zinc",
@@ -6630,6 +6547,7 @@
         "muscular_dystrophy",
         "parkinsonism"
       ],
+      "works_with": [],
       "related": [
         "omega-3",
         "phenylalanine",
@@ -6689,6 +6607,7 @@
         "parkinsonism",
         "vitiligo"
       ],
+      "works_with": [],
       "related": [
         "omega-3",
         "chromium",
@@ -6722,6 +6641,7 @@
       ],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     },
     "tryptophan": {
@@ -6770,6 +6690,7 @@
         "insomnia",
         "raynauds_disease"
       ],
+      "works_with": [],
       "related": [
         "calcium",
         "phenylalanine",
@@ -6826,15 +6747,10 @@
       ],
       "search": [],
       "conditions": [
-        "cancer",
         "depression",
-        "goiter",
-        "hypothyroidism",
-        "macular_degeneration",
-        "parkinsonism",
-        "peripheral_arterial_disease",
-        "stress"
+        "parkinsonism"
       ],
+      "works_with": [],
       "related": [
         "arginine",
         "cancer",
@@ -6877,6 +6793,7 @@
       "conditions": [
         "inflammation"
       ],
+      "works_with": [],
       "related": [
         "flavonoids",
         "inflammation",
@@ -7040,7 +6957,6 @@
         "cardiovascular_disease",
         "cerebrovascular_disease",
         "chorea",
-        "convulsions",
         "cough",
         "cystic_fibrosis",
         "dandruff",
@@ -7054,7 +6970,6 @@
         "dysmenorrhea",
         "eczema",
         "epilepsy",
-        "failure_to_thrive",
         "fatty_liver",
         "fibrocystic_breast_disease",
         "food_allergy",
@@ -7069,7 +6984,6 @@
         "hypertension",
         "hypoglycemia",
         "hysteria",
-        "immune_depression",
         "incontinence",
         "infertility",
         "inflammation",
@@ -7107,6 +7021,7 @@
         "varicose_veins",
         "weight_loss"
       ],
+      "works_with": [],
       "related": [
         "vitamin-e",
         "selenium",
@@ -7168,24 +7083,21 @@
         "arthritis",
         "asthma",
         "bronchitis",
-        "convulsions",
         "cough",
         "cystic_fibrosis",
         "depression",
         "dermatitis",
         "diarrhea",
         "eczema",
-        "failure_to_thrive",
         "fatty_liver",
         "gallstones",
-        "immune_depression",
         "infertility",
         "kidney_disease",
-        "learning_disabilities",
         "liver_disease",
         "psoriasis",
         "stroke"
       ],
+      "works_with": [],
       "related": [
         "omega-3",
         "eczema",
@@ -7210,6 +7122,7 @@
       "record": [],
       "search": [],
       "conditions": [],
+      "works_with": [],
       "related": []
     }
   },
@@ -7225,6 +7138,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000118"
+      ],
+      "restore": [
+        "vitamin-c"
       ],
       "record": [
         {
@@ -7252,6 +7168,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000119"
       ],
+      "restore": [
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -7277,6 +7196,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000120"
+      ],
+      "restore": [
+        "choline",
+        "taurine",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -7306,6 +7230,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000121"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -7329,6 +7254,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000122"
+      ],
+      "restore": [
+        "vitamin-b12"
       ],
       "record": [
         {
@@ -7370,6 +7298,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -7406,6 +7335,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000123"
+      ],
+      "restore": [
+        "omega-3",
+        "omega-6",
+        "potassium",
+        "vitamin-a",
+        "vitamin-b6",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -7460,6 +7398,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -7500,6 +7441,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "sodium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -7536,6 +7480,11 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "chromium",
+        "copper",
+        "lithium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -7594,6 +7543,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000124"
       ],
+      "restore": [
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -7619,6 +7572,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -7660,6 +7616,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "sodium",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -7704,6 +7664,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000126"
       ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -7734,6 +7701,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000385"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -7759,6 +7727,18 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000127",
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "flavonoids",
+        "iron",
+        "magnesium",
+        "omega-3",
+        "phenylalanine",
+        "vitamin-b3",
+        "vitamin-b6",
+        "zinc"
       ],
       "record": [
         {
@@ -7808,6 +7788,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -7842,6 +7823,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000128"
+      ],
+      "restore": [
+        "flavonoids",
+        "omega-3",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -7891,6 +7879,20 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000131"
+      ],
+      "restore": [
+        "biotin",
+        "copper",
+        "inositol",
+        "omega-3",
+        "omega-6",
+        "tin",
+        "vitamin-a",
+        "vitamin-b2",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -7961,6 +7963,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000371"
       ],
+      "restore": [
+        "omega-3",
+        "phenylalanine",
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -8027,6 +8034,15 @@
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000356"
       ],
+      "restore": [
+        "choline",
+        "chromium",
+        "germanium",
+        "omega-3",
+        "selenium",
+        "vitamin-b1",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -8083,6 +8099,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000132"
       ],
+      "restore": [
+        "vitamin-b12"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -8109,6 +8128,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000133"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -8133,6 +8153,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000134",
         "WAL-CLM-LETS-000357"
+      ],
+      "restore": [
+        "iron",
+        "omega-3",
+        "selenium",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -8179,6 +8206,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000136"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -8203,6 +8231,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000135"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -8231,6 +8260,26 @@
       "one_liner": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies (impairing clotting, immune defense, and oxygen delivery). In his words: \"The Replacement of normal boney architecture, including the bone marrow cavity, with connective tissue. Resulting in reduced production of platelets, white blood cells, red blood cells, and stem cells that make antibodies.\"",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000137"
+      ],
+      "restore": [
+        "biotin",
+        "calcium",
+        "cobalt",
+        "copper",
+        "iron",
+        "methionine",
+        "nickel",
+        "omega-3",
+        "selenium",
+        "sulfur",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -8335,6 +8384,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000359"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -8374,6 +8429,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000138"
+      ],
+      "restore": [
+        "copper"
       ],
       "record": [
         {
@@ -8457,6 +8515,12 @@
         "WAL-CLM-DDDL-000076",
         "WAL-CLM-LETS-000139"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -8491,6 +8555,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "iron",
+        "vitamin-b2"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -8534,6 +8602,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -8579,6 +8650,24 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000140"
+      ],
+      "restore": [
+        "biotin",
+        "cobalt",
+        "iron",
+        "lithium",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "phosphorus",
+        "sodium",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -8664,6 +8753,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000140"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -8694,6 +8784,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000141"
+      ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {
@@ -8754,6 +8848,19 @@
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-LETS-000142"
       ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "magnesium",
+        "phosphorus",
+        "tryptophan",
+        "vanadium",
+        "vitamin-b1",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -8808,6 +8915,12 @@
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-LETS-000143"
       ],
+      "restore": [
+        "iron",
+        "vitamin-b12",
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -8843,6 +8956,9 @@
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-LETS-000144"
       ],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -8873,6 +8989,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000145",
         "WAL-CLM-RARE-000202"
+      ],
+      "restore": [
+        "magnesium",
+        "omega-3",
+        "oxygen",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -8956,6 +9078,29 @@
         "WAL-CLM-LETS-000419",
         "WAL-CLM-RARE-000096",
         "WAL-CLM-RARE-000279"
+      ],
+      "restore": [
+        "boron",
+        "calcium",
+        "copper",
+        "germanium",
+        "gold",
+        "histidine",
+        "lithium",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "strontium",
+        "sulfur",
+        "vitamin-a",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -9079,6 +9224,13 @@
         "WAL-CLM-LETS-000147",
         "WAL-CLM-RARE-000202"
       ],
+      "restore": [
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "omega-6",
+        "oxygen"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9147,6 +9299,10 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "chromium",
+        "manganese"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9203,6 +9359,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000149"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-b6",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -9241,6 +9402,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000147"
       ],
+      "restore": [
+        "magnesium",
+        "manganese",
+        "omega-3"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -9272,6 +9438,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000148"
       ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -9302,6 +9473,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9352,6 +9526,14 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000151"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "copper",
+        "lithium",
+        "magnesium",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -9411,6 +9593,14 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000150"
       ],
+      "restore": [
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -9442,6 +9632,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000152"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -9491,6 +9685,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000153"
       ],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -9515,6 +9712,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -9544,6 +9742,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000154"
+      ],
+      "restore": [
+        "vitamin-e"
       ],
       "record": [
         {
@@ -9575,6 +9776,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000266"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "magnesium",
+        "vanadium"
       ],
       "record": [
         {
@@ -9625,6 +9832,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000156"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -9655,6 +9863,12 @@
         "WAL-CLM-DDDL-000086",
         "WAL-CLM-LETS-000158",
         "WAL-CLM-LETS-000379"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "vitamin-b12"
       ],
       "record": [
         {
@@ -9728,6 +9942,13 @@
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-LETS-000157"
       ],
+      "restore": [
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9782,6 +10003,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b1"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9827,6 +10051,18 @@
       "one_liner": "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000159"
+      ],
+      "restore": [
+        "choline",
+        "chromium",
+        "lithium",
+        "omega-3",
+        "phenylalanine",
+        "vanadium",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -9906,6 +10142,15 @@
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000368",
         "WAL-CLM-RARE-000045"
+      ],
+      "restore": [
+        "copper",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b6",
+        "vitamin-b9",
+        "zinc"
       ],
       "record": [
         {
@@ -9992,6 +10237,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000161"
       ],
+      "restore": [
+        "calcium",
+        "magnesium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10028,6 +10277,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000162"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -10052,6 +10302,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000163"
+      ],
+      "restore": [
+        "vitamin-c",
+        "vitamin-k"
       ],
       "record": [
         {
@@ -10093,6 +10347,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000164"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -10142,6 +10403,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "biotin"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10185,6 +10449,11 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "chromium",
+        "copper",
+        "lithium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10242,6 +10511,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-a"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10274,6 +10546,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000165"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -10318,6 +10591,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000166"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10345,6 +10623,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000167"
+      ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -10388,6 +10671,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000168"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10422,6 +10711,13 @@
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000168"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -10487,6 +10783,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "gallium"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -10535,6 +10834,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -10585,6 +10885,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000169"
       ],
+      "restore": [
+        "omega-3",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10615,6 +10919,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000170"
       ],
+      "restore": [
+        "omega-3",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10640,6 +10948,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10683,6 +10994,14 @@
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000276"
       ],
+      "restore": [
+        "calcium",
+        "iron",
+        "omega-3",
+        "sulfur",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10715,6 +11034,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000172"
+      ],
+      "restore": [
+        "omega-3",
+        "omega-6",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -10765,6 +11091,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000173"
       ],
+      "restore": [
+        "flavonoids",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10814,6 +11145,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000174"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10840,6 +11176,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10880,6 +11219,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000175"
+      ],
+      "restore": [
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -10923,6 +11266,14 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000176"
       ],
+      "restore": [
+        "calcium",
+        "flavonoids",
+        "magnesium",
+        "vitamin-b12",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -10952,6 +11303,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "cobalt"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -10982,6 +11336,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -11042,6 +11399,17 @@
         "WAL-CLM-LETS-000344",
         "WAL-CLM-RARE-000125",
         "WAL-CLM-RARE-000202"
+      ],
+      "restore": [
+        "cesium",
+        "flavonoids",
+        "germanium",
+        "omega-3",
+        "oxygen",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -11195,6 +11563,14 @@
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000450"
       ],
+      "restore": [
+        "germanium",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -11239,6 +11615,16 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-LETS-000202"
+      ],
+      "restore": [
+        "iron",
+        "lysine",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b3",
+        "vitamin-b9",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -11286,6 +11672,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -11314,6 +11701,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -11339,6 +11727,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000203"
+      ],
+      "restore": [
+        "chromium",
+        "magnesium",
+        "potassium",
+        "selenium",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -11371,6 +11768,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "potassium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -11404,6 +11804,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000204"
+      ],
+      "restore": [
+        "omega-3",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -11482,6 +11887,15 @@
         "WAL-CLM-DDDL-000076",
         "WAL-CLM-LETS-000295"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "selenium",
+        "silica",
+        "vanadium",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -11537,6 +11951,15 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000205",
         "WAL-CLM-LETS-000383"
+      ],
+      "restore": [
+        "arsenic",
+        "calcium",
+        "magnesium",
+        "manganese",
+        "vitamin-b12",
+        "vitamin-b6",
+        "zinc"
       ],
       "record": [
         {
@@ -11606,6 +12029,22 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000207"
       ],
+      "restore": [
+        "arginine",
+        "chromium",
+        "flavonoids",
+        "inositol",
+        "selenium",
+        "taurine",
+        "vitamin-b1",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -11670,6 +12109,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000208"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -11696,6 +12136,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000209"
+      ],
+      "restore": [
+        "cobalt"
       ],
       "record": [
         {
@@ -11756,6 +12199,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -11805,6 +12251,11 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper",
+        "vitamin-b6",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -11866,6 +12317,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000211"
       ],
+      "restore": [
+        "choline",
+        "omega-3",
+        "selenium",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -11896,6 +12354,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000212"
       ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -11922,6 +12384,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000213"
+      ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {
@@ -11950,6 +12416,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000214"
+      ],
+      "restore": [
+        "vitamin-b2"
       ],
       "record": [
         {
@@ -11999,6 +12468,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000215"
       ],
+      "restore": [
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12028,6 +12500,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000216"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -12052,6 +12525,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000217"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -12075,6 +12549,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "manganese"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12117,6 +12594,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "manganese"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12160,6 +12640,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000220"
       ],
+      "restore": [
+        "choline",
+        "omega-3",
+        "selenium",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12191,6 +12677,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000272"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -12228,6 +12715,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000221"
       ],
+      "restore": [
+        "chromium",
+        "germanium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12260,6 +12751,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -12289,6 +12781,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000202"
+      ],
+      "restore": [
+        "oxygen"
       ],
       "record": [
         {
@@ -12327,6 +12822,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -12367,6 +12863,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12403,6 +12902,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12442,6 +12945,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000224"
       ],
+      "restore": [
+        "flavonoids",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12468,6 +12975,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000299"
+      ],
+      "restore": [
+        "flavonoids",
+        "lysine",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -12501,6 +13014,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000225"
       ],
+      "restore": [
+        "flavonoids",
+        "potassium",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12528,6 +13046,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000226"
+      ],
+      "restore": [
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -12572,6 +13093,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000227"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -12614,6 +13136,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "sulfur"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12653,6 +13178,9 @@
         "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-IMMORT-000096",
         "WAL-CLM-RARE-000125"
+      ],
+      "restore": [
+        "cesium"
       ],
       "record": [
         {
@@ -12705,6 +13233,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000094"
       ],
+      "restore": [
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12751,6 +13282,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12793,6 +13327,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper",
+        "manganese"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12838,6 +13376,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000228"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -12864,6 +13403,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000229"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-b1"
       ],
       "record": [
         {
@@ -12923,6 +13466,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000230"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12973,6 +13520,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000231"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -12999,6 +13547,14 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000233",
         "WAL-CLM-LETS-000277"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "magnesium",
+        "manganese",
+        "vitamin-b6",
+        "vitamin-d"
       ],
       "record": [
         {
@@ -13060,6 +13616,9 @@
         "WAL-CLM-DDDL-000054",
         "WAL-CLM-LETS-000234"
       ],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13087,6 +13646,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-a"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13132,6 +13694,10 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "chromium",
+        "vanadium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13183,6 +13749,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000235"
       ],
+      "restore": [
+        "omega-3",
+        "omega-6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13233,6 +13803,10 @@
         "WAL-CLM-DDDL-000055",
         "WAL-CLM-LETS-000237"
       ],
+      "restore": [
+        "vitamin-b6",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13264,6 +13838,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "iodine"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13295,6 +13872,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13338,6 +13918,10 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "copper",
+        "lithium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13399,6 +13983,17 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000238"
       ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "magnesium",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13445,6 +14040,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000239"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -13492,6 +14088,12 @@
       "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious degenerative diseases — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000240"
+      ],
+      "restore": [
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -13571,6 +14173,9 @@
         "WAL-CLM-LETS-000241",
         "WAL-CLM-RARE-000136"
       ],
+      "restore": [
+        "hydrogen"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13602,6 +14207,15 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000242",
         "WAL-CLM-LETS-000430"
+      ],
+      "restore": [
+        "biotin",
+        "omega-3",
+        "vitamin-a",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -13642,6 +14256,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000294"
+      ],
+      "restore": [
+        "manganese",
+        "tin"
       ],
       "record": [
         {
@@ -13698,6 +14316,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13738,6 +14359,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13793,6 +14417,28 @@
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000282"
+      ],
+      "restore": [
+        "calcium",
+        "choline",
+        "chromium",
+        "copper",
+        "gallium",
+        "germanium",
+        "lithium",
+        "magnesium",
+        "omega-3",
+        "oxygen",
+        "selenium",
+        "vanadium",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -13863,6 +14509,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "cobalt"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13894,6 +14543,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000177"
       ],
+      "restore": [
+        "magnesium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13919,6 +14571,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -13956,6 +14609,32 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "copper",
+        "iron",
+        "lithium",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "phenylalanine",
+        "potassium",
+        "sodium",
+        "tryptophan",
+        "tyrosine",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -14079,6 +14758,23 @@
         "WAL-CLM-LETS-000430",
         "WAL-CLM-LETS-000433"
       ],
+      "restore": [
+        "biotin",
+        "calcium",
+        "inositol",
+        "nickel",
+        "omega-3",
+        "omega-6",
+        "sodium",
+        "vitamin-a",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -14163,6 +14859,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -14218,6 +14917,18 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000280"
+      ],
+      "restore": [
+        "biotin",
+        "chromium",
+        "copper",
+        "flavonoids",
+        "inositol",
+        "omega-3",
+        "vanadium",
+        "vitamin-b12",
+        "vitamin-b3",
+        "zinc"
       ],
       "record": [
         {
@@ -14368,6 +15079,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000247"
       ],
+      "restore": [
+        "vitamin-b6",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -14398,6 +15114,16 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000248"
+      ],
+      "restore": [
+        "copper",
+        "omega-3",
+        "omega-6",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b9",
+        "vitamin-d",
+        "zinc"
       ],
       "record": [
         {
@@ -14459,6 +15185,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -14483,6 +15210,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000125"
+      ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vanadium",
+        "vitamin-b5"
       ],
       "record": [
         {
@@ -14533,6 +15266,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000251"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -14576,6 +15310,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -14626,6 +15363,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000368",
         "WAL-CLM-RARE-000045"
+      ],
+      "restore": [
+        "zinc"
       ],
       "record": [
         {
@@ -14683,6 +15423,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000253"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -14707,6 +15448,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000363"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -14734,6 +15476,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000254"
+      ],
+      "restore": [
+        "omega-3",
+        "vitamin-a",
+        "vitamin-b6",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -14765,6 +15514,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000255"
       ],
+      "restore": [
+        "vitamin-b9"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -14791,6 +15543,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000256"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -14834,6 +15587,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000257"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -14873,6 +15627,16 @@
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000357"
       ],
+      "restore": [
+        "calcium",
+        "iron",
+        "magnesium",
+        "omega-3",
+        "selenium",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -14911,6 +15675,12 @@
         "WAL-CLM-LETS-000259",
         "WAL-CLM-LETS-000321"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "selenium",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -14943,6 +15713,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "iron"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -14985,6 +15758,7 @@
         "WAL-CLM-LETS-000260",
         "WAL-CLM-LETS-000392"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -15016,6 +15790,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000261"
+      ],
+      "restore": [
+        "vitamin-c",
+        "vitamin-e",
+        "vitamin-k"
       ],
       "record": [
         {
@@ -15058,6 +15837,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000407"
       ],
+      "restore": [
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -15094,6 +15876,21 @@
         "WAL-CLM-LETS-000148",
         "WAL-CLM-LETS-000245",
         "WAL-CLM-LETS-000262"
+      ],
+      "restore": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "inositol",
+        "omega-3",
+        "omega-6",
+        "vitamin-a",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -15166,6 +15963,11 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "nitrogen",
+        "potassium",
+        "vitamin-b1"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -15217,6 +16019,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000264"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -15240,6 +16043,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000202"
+      ],
+      "restore": [
+        "oxygen"
       ],
       "record": [
         {
@@ -15278,6 +16084,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "prognosis",
@@ -15305,6 +16112,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000266"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -15334,6 +16145,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -15384,6 +16198,19 @@
         "WAL-CLM-LETS-000233",
         "WAL-CLM-LETS-000267"
       ],
+      "restore": [
+        "calcium",
+        "choline",
+        "chromium",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "taurine",
+        "vitamin-b12",
+        "vitamin-b6",
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -15418,6 +16245,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -15455,6 +16283,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000315"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -15488,6 +16317,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -15530,6 +16360,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000268"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -15553,6 +16384,9 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -15609,6 +16443,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000269"
       ],
+      "restore": [
+        "vitamin-b2"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -15659,6 +16496,12 @@
       "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; about 3% of daily calories should come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants. In his words: \"EFA deficiency in human infants results in a poor growth rate, lowered IQ, seizures, learning disabilities, eczema, asthma, and a lowered resistance to infectious diseases.\"",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000270"
+      ],
+      "restore": [
+        "chromium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b9"
       ],
       "record": [
         {
@@ -15718,6 +16561,14 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "biotin",
+        "choline",
+        "inositol",
+        "methionine",
+        "omega-3",
+        "omega-6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -15765,6 +16616,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000274"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -15791,6 +16643,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000169",
         "WAL-CLM-LETS-000275"
+      ],
+      "restore": [
+        "iodine",
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -15841,6 +16700,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b1",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -15891,6 +16754,7 @@
         "WAL-CLM-LETS-000271",
         "WAL-CLM-LETS-000278"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -15915,6 +16779,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000280"
+      ],
+      "restore": [
+        "chromium",
+        "flavonoids",
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -15965,6 +16838,11 @@
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000281"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -16020,6 +16898,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000282"
       ],
+      "restore": [
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -16049,6 +16934,14 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000283"
+      ],
+      "restore": [
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "taurine",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -16098,6 +16991,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000202"
       ],
+      "restore": [
+        "oxygen"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -16135,6 +17031,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -16165,6 +17062,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000284"
+      ],
+      "restore": [
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "zinc"
       ],
       "record": [
         {
@@ -16212,6 +17118,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -16242,6 +17149,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000398"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -16289,6 +17203,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000286"
+      ],
+      "restore": [
+        "calcium",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -16338,6 +17256,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper",
+        "potassium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -16385,6 +17307,9 @@
       "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid). In his words: \"To the classic list of essential amino acids, we would add arginine, taurine, and tyrosine. Over the long haul, these three amino acids help prevent certain specific diseases, respectively, these diseases are cancer and PAD, macular degeneration and goiter.\"",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000287"
+      ],
+      "restore": [
+        "iodine"
       ],
       "record": [
         {
@@ -16482,6 +17407,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000288"
       ],
+      "restore": [
+        "vitamin-b9"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -16518,6 +17446,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "diagnostic_pattern",
@@ -16548,6 +17477,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -16590,6 +17522,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000289"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "selenium",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -16620,6 +17559,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000291"
       ],
+      "restore": [
+        "omega-3",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -16647,6 +17590,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "iodine"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -16684,6 +17630,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000292"
       ],
+      "restore": [
+        "flavonoids",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -16711,6 +17661,14 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000293"
+      ],
+      "restore": [
+        "choline",
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -16757,6 +17715,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000317"
+      ],
+      "restore": [
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -16817,6 +17782,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -16853,6 +17821,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -16896,6 +17865,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000296"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -16918,6 +17888,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -16945,6 +17916,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000361",
         "WAL-CLM-LETS-000449"
+      ],
+      "restore": [
+        "selenium"
       ],
       "record": [
         {
@@ -16986,6 +17960,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17027,6 +18004,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17071,6 +18051,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000297"
+      ],
+      "restore": [
+        "copper",
+        "flavonoids"
       ],
       "record": [
         {
@@ -17129,6 +18113,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000298"
       ],
+      "restore": [
+        "germanium",
+        "selenium",
+        "vitamin-b12",
+        "vitamin-b9",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -17162,6 +18153,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17206,6 +18200,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000299"
       ],
+      "restore": [
+        "flavonoids",
+        "lysine",
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -17238,6 +18238,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000301"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -17262,6 +18263,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000302"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -17288,6 +18290,22 @@
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000219"
+      ],
+      "restore": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "copper",
+        "inositol",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "potassium",
+        "selenium",
+        "vanadium",
+        "vitamin-b3",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -17358,6 +18376,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000457"
       ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "selenium",
+        "vanadium",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17412,6 +18437,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17455,6 +18483,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000303"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -17482,6 +18511,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "choline"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17520,6 +18552,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -17551,6 +18584,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000304"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -17578,6 +18612,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000257",
         "WAL-CLM-LETS-000305"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "lithium",
+        "magnesium"
       ],
       "record": [
         {
@@ -17655,6 +18695,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17704,6 +18747,10 @@
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000003"
+      ],
+      "restore": [
+        "chromium",
+        "vanadium"
       ],
       "record": [
         {
@@ -17761,6 +18808,10 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "chromium",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17813,6 +18864,12 @@
         "WAL-CLM-LETS-000305",
         "WAL-CLM-LETS-000388"
       ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -17855,6 +18912,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -17905,6 +18965,10 @@
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000306"
+      ],
+      "restore": [
+        "calcium",
+        "omega-3"
       ],
       "record": [
         {
@@ -17984,6 +19048,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -18033,6 +19100,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -18072,6 +19140,15 @@
         "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "chromium",
+        "copper",
+        "manganese",
+        "omega-3",
+        "vanadium",
+        "vitamin-b3",
+        "zinc"
       ],
       "record": [
         {
@@ -18154,6 +19231,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -18188,6 +19268,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "potassium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -18216,6 +19299,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -18241,6 +19325,14 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000308"
+      ],
+      "restore": [
+        "magnesium",
+        "potassium",
+        "sodium",
+        "vitamin-b5",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -18293,6 +19385,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000218"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -18320,6 +19413,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000309"
+      ],
+      "restore": [
+        "copper",
+        "iodine"
       ],
       "record": [
         {
@@ -18386,6 +19483,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000310"
       ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -18414,6 +19517,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-a"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -18458,6 +19564,16 @@
       "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; about 3% of daily calories should come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants. In his words: \"EFA deficiency in human infants results in a poor growth rate, lowered IQ, seizures, learning disabilities, eczema, asthma, and a lowered resistance to infectious diseases.\"",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000311"
+      ],
+      "restore": [
+        "flavonoids",
+        "germanium",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b5",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -18523,6 +19639,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000314"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -18550,6 +19671,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000315"
+      ],
+      "restore": [
+        "zinc"
       ],
       "record": [
         {
@@ -18599,6 +19723,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000316"
       ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "selenium",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -18627,6 +19757,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000321"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -18659,6 +19795,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000317"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -18694,6 +19836,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000318"
       ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -18728,6 +19876,21 @@
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-LETS-000273",
         "WAL-CLM-LETS-000319"
+      ],
+      "restore": [
+        "arginine",
+        "chromium",
+        "germanium",
+        "lithium",
+        "manganese",
+        "nitrogen",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -18811,6 +19974,16 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000320"
       ],
+      "restore": [
+        "flavonoids",
+        "omega-3",
+        "phenylalanine",
+        "tryptophan",
+        "valine",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -18855,6 +20028,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000279"
+      ],
+      "restore": [
+        "flavonoids",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -18902,6 +20081,22 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000075",
         "WAL-CLM-LETS-000322"
+      ],
+      "restore": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "inositol",
+        "magnesium",
+        "phenylalanine",
+        "potassium",
+        "tryptophan",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b9",
+        "vitamin-d"
       ],
       "record": [
         {
@@ -18969,6 +20164,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000222"
       ],
+      "restore": [
+        "chromium",
+        "selenium",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -18999,6 +20201,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000323"
+      ],
+      "restore": [
+        "vitamin-b9"
       ],
       "record": [
         {
@@ -19044,6 +20249,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -19087,6 +20295,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000324"
       ],
+      "restore": [
+        "omega-3",
+        "vitamin-a",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -19117,6 +20330,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000325"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -19160,6 +20379,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000326"
+      ],
+      "restore": [
+        "calcium",
+        "copper",
+        "magnesium",
+        "vitamin-b6",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -19208,6 +20434,9 @@
       "one_liner": "Wallach maintains that dozens of human \"genetic\" diseases can in fact be prevented — and in early stages reversed or \"cured\" — with minerals, naming cystic fibrosis, muscular dystrophy and Kawasaki Disease as prime examples.",
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000007"
+      ],
+      "restore": [
+        "copper"
       ],
       "record": [
         {
@@ -19270,6 +20499,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-a"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -19301,6 +20533,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000328"
+      ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {
@@ -19351,6 +20587,11 @@
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000431"
       ],
+      "restore": [
+        "omega-3",
+        "vitamin-a",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -19380,6 +20621,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000330"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -19409,6 +20651,13 @@
         "WAL-CLM-DDDL-000073",
         "WAL-CLM-LETS-000373",
         "WAL-CLM-RARE-000048"
+      ],
+      "restore": [
+        "choline",
+        "methionine",
+        "omega-3",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -19474,6 +20723,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000331"
       ],
+      "restore": [
+        "chromium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -19503,6 +20755,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000331"
       ],
+      "restore": [
+        "chromium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -19531,6 +20786,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000332"
+      ],
+      "restore": [
+        "calcium",
+        "lysine",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "vitamin-a",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -19593,6 +20857,14 @@
         "WAL-CLM-DDDL-000088",
         "WAL-CLM-LETS-000161",
         "WAL-CLM-LETS-000332"
+      ],
+      "restore": [
+        "calcium",
+        "lysine",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b6",
+        "vitamin-d"
       ],
       "record": [
         {
@@ -19661,6 +20933,14 @@
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ],
+      "restore": [
+        "choline",
+        "chromium",
+        "selenium",
+        "vanadium",
+        "vitamin-b1",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -19713,6 +20993,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000334"
       ],
+      "restore": [
+        "chromium",
+        "nitrogen",
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -19752,6 +21037,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -19801,6 +21089,7 @@
         "WAL-CLM-LETS-000335",
         "WAL-CLM-LETS-000406"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -19826,6 +21115,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000337"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -19855,6 +21145,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000337"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -19895,6 +21186,7 @@
         "WAL-CLM-LETS-000303",
         "WAL-CLM-LETS-000338"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -19925,6 +21217,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000340",
         "WAL-CLM-RARE-000214"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -19973,6 +21269,13 @@
       "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; about 3% of daily calories should come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants. In his words: \"EFA deficiency in human infants results in a poor growth rate, lowered IQ, seizures, learning disabilities, eczema, asthma, and a lowered resistance to infectious diseases.\"",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "chromium",
+        "copper",
+        "omega-3",
+        "vitamin-b3",
+        "zinc"
       ],
       "record": [
         {
@@ -20043,6 +21346,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20085,6 +21391,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000341"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -20109,6 +21416,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000343"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -20137,6 +21445,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000344"
+      ],
+      "restore": [
+        "germanium",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -20176,6 +21490,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20209,6 +21526,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000345"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -20233,6 +21551,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000346"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -20261,6 +21580,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -20314,6 +21634,16 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000348"
+      ],
+      "restore": [
+        "choline",
+        "copper",
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -20386,6 +21716,22 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000348"
+      ],
+      "restore": [
+        "biotin",
+        "choline",
+        "copper",
+        "germanium",
+        "inositol",
+        "methionine",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-k"
       ],
       "record": [
         {
@@ -20474,6 +21820,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20521,6 +21870,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20568,6 +21920,9 @@
       "synonyms": [],
       "one_liner": "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable and can flatten sex drive in both men and women. In his words: \"Cholesterol is an essential part of the structure of cell walls, brain and spinal cord (myelin), the raw material for the production of vitamin D in the human body, bile acids, adrenal cortical hormones, estrogens (a cholesterol deficiency makes menopause a living hell), progesterone, and testosterone (a cholesterol deficiency will turn hubby into a TV watching steer who is totally disinterested in sex).\"",
       "protocol_claim_ids": [],
+      "restore": [
+        "manganese"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20617,6 +21972,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-IMMORT-000096"
       ],
+      "restore": [
+        "cesium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -20657,6 +22015,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000350"
+      ],
+      "restore": [
+        "omega-3",
+        "selenium",
+        "sulfur"
       ],
       "record": [
         {
@@ -20712,6 +22075,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000351"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -20735,6 +22099,7 @@
       "synonyms": [],
       "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid). In his words: \"To the classic list of essential amino acids, we would add arginine, taurine, and tyrosine. Over the long haul, these three amino acids help prevent certain specific diseases, respectively, these diseases are cancer and PAD, macular degeneration and goiter.\"",
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "definition",
@@ -20774,6 +22139,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20822,6 +22190,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20881,6 +22253,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "tin"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -20905,6 +22280,7 @@
       "synonyms": [],
       "one_liner": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people. (Note: in the book this entry's text is split by the two-column scan order; the reading order is reassembled here.)",
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "definition",
@@ -20935,6 +22311,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000353"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -20958,6 +22335,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000342"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -20998,6 +22380,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000355"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -21022,6 +22405,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000356"
+      ],
+      "restore": [
+        "choline",
+        "chromium",
+        "iron",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -21076,6 +22466,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -21124,6 +22517,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000358"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -21147,6 +22541,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000359"
+      ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "zinc"
       ],
       "record": [
         {
@@ -21185,6 +22585,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000360"
       ],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -21219,6 +22622,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000092",
         "WAL-CLM-LETS-000223"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -21277,6 +22684,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000357"
       ],
+      "restore": [
+        "iron",
+        "omega-3",
+        "selenium",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -21309,6 +22722,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -21342,6 +22756,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000361"
+      ],
+      "restore": [
+        "selenium"
       ],
       "record": [
         {
@@ -21405,6 +22822,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000364"
       ],
+      "restore": [
+        "flavonoids",
+        "magnesium",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -21453,6 +22875,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "diagnostic_pattern",
@@ -21494,6 +22917,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -21534,6 +22958,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000365"
+      ],
+      "restore": [
+        "manganese",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b9",
+        "zinc"
       ],
       "record": [
         {
@@ -21585,6 +23016,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000366"
       ],
+      "restore": [
+        "magnesium",
+        "omega-3",
+        "selenium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -21613,6 +23049,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000367"
       ],
+      "restore": [
+        "selenium",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -21640,6 +23080,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000369"
+      ],
+      "restore": [
+        "omega-3",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -21675,6 +23119,7 @@
         "WAL-CLM-LETS-000206",
         "WAL-CLM-LETS-000461"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -21707,6 +23152,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-LETS-000371"
+      ],
+      "restore": [
+        "omega-3",
+        "phenylalanine",
+        "selenium"
       ],
       "record": [
         {
@@ -21770,6 +23220,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000372"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -21797,6 +23248,15 @@
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000374"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "potassium",
+        "selenium",
+        "vitamin-b5",
+        "vitamin-d",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -21854,6 +23314,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -21900,6 +23363,13 @@
         "WAL-CLM-DDDL-000073",
         "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-LETS-000373"
+      ],
+      "restore": [
+        "choline",
+        "methionine",
+        "omega-3",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -21975,6 +23445,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22015,6 +23488,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22050,6 +23526,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000003"
+      ],
+      "restore": [
+        "chromium",
+        "vanadium"
       ],
       "record": [
         {
@@ -22099,6 +23579,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000375"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -22122,6 +23603,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000377"
+      ],
+      "restore": [
+        "iron",
+        "vitamin-b1"
       ],
       "record": [
         {
@@ -22150,6 +23635,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000378"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -22173,6 +23659,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b9"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22228,6 +23717,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000379"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "vitamin-b12"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -22262,6 +23757,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000379"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "vitamin-b12",
+        "vitamin-b2"
       ],
       "record": [
         {
@@ -22311,6 +23813,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "diagnostic_pattern",
@@ -22353,6 +23856,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22399,6 +23905,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000380"
+      ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {
@@ -22450,6 +23960,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000381"
       ],
+      "restore": [
+        "chromium"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -22476,6 +23989,14 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000382"
+      ],
+      "restore": [
+        "calcium",
+        "flavonoids",
+        "magnesium",
+        "vitamin-c",
+        "vitamin-e",
+        "vitamin-k"
       ],
       "record": [
         {
@@ -22528,6 +24049,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000384"
+      ],
+      "restore": [
+        "chromium",
+        "iron",
+        "omega-3",
+        "potassium",
+        "vanadium"
       ],
       "record": [
         {
@@ -22592,6 +24120,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000386"
       ],
+      "restore": [
+        "chromium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22647,6 +24178,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000387"
       ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -22677,6 +24212,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000363"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -22703,6 +24239,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -22725,6 +24262,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -22758,6 +24296,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "zinc"
       ],
       "record": [
         {
@@ -22801,6 +24345,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000389"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -22824,6 +24369,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000390"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -22855,6 +24404,12 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium",
+        "germanium",
+        "vitamin-a",
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22911,6 +24466,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -22961,6 +24519,11 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium",
+        "vitamin-a",
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -23017,6 +24580,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -23064,8 +24630,17 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000060",
         "WAL-CLM-IAIYH-000004",
-        "WAL-CLM-LETS-000391",
-        "WAL-CLM-LETS-000051"
+        "WAL-CLM-LETS-000391"
+      ],
+      "restore": [
+        "boron",
+        "calcium",
+        "germanium",
+        "magnesium",
+        "strontium",
+        "vitamin-a",
+        "vitamin-d",
+        "vitamin-k"
       ],
       "record": [
         {
@@ -23195,6 +24770,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -23235,6 +24811,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -23264,6 +24841,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000392"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -23299,6 +24877,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-IAIYH-000004",
         "WAL-CLM-LETS-000390"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -23347,6 +24929,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000393"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -23370,6 +24953,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000394"
+      ],
+      "restore": [
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -23397,6 +24985,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -23437,6 +25026,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -23468,6 +25058,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -23512,6 +25105,14 @@
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000078"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "magnesium",
+        "vanadium",
+        "vitamin-b3",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -23570,6 +25171,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -23627,6 +25235,7 @@
         "WAL-CLM-LETS-000395",
         "WAL-CLM-LETS-000465"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -23652,6 +25261,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000396"
+      ],
+      "restore": [
+        "leucine",
+        "methionine",
+        "omega-3",
+        "phenylalanine",
+        "tyrosine",
+        "vitamin-b1",
+        "vitamin-b6"
       ],
       "record": [
         {
@@ -23700,6 +25318,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -23755,6 +25376,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000346"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -23784,6 +25406,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "zinc"
       ],
       "record": [
         {
@@ -23836,6 +25464,12 @@
         "WAL-CLM-LETS-000397",
         "WAL-CLM-LETS-000458",
         "WAL-CLM-RARE-000102"
+      ],
+      "restore": [
+        "flavonoids",
+        "vitamin-a",
+        "vitamin-b6",
+        "zinc"
       ],
       "record": [
         {
@@ -23898,6 +25532,14 @@
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000398"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-d",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -23954,6 +25596,7 @@
       "synonyms": [],
       "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid). In his words: \"To the classic list of essential amino acids, we would add arginine, taurine, and tyrosine. Over the long haul, these three amino acids help prevent certain specific diseases, respectively, these diseases are cancer and PAD, macular degeneration and goiter.\"",
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "definition",
@@ -23989,6 +25632,11 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium",
+        "chromium",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24041,6 +25689,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000410"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -24072,6 +25725,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "cobalt",
+        "vitamin-b12"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24124,6 +25781,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000399"
       ],
+      "restore": [
+        "copper",
+        "omega-3",
+        "vitamin-c",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -24156,6 +25819,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b2"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24202,6 +25868,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000400"
+      ],
+      "restore": [
+        "calcium",
+        "iron",
+        "phosphorus"
       ],
       "record": [
         {
@@ -24272,6 +25943,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000401"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -24299,6 +25975,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000340"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-c"
       ],
       "record": [
         {
@@ -24333,6 +26013,16 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000402"
+      ],
+      "restore": [
+        "calcium",
+        "chromium",
+        "omega-3",
+        "vitamin-a",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -24397,6 +26087,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000403"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -24420,6 +26111,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000404"
+      ],
+      "restore": [
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -24448,6 +26143,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000405"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -24473,6 +26169,9 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "chromium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24528,6 +26227,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000407"
       ],
+      "restore": [
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -24559,6 +26261,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000407"
       ],
+      "restore": [
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -24588,6 +26293,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24630,6 +26338,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -24663,6 +26372,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000324"
+      ],
+      "restore": [
+        "omega-3",
+        "vitamin-a",
+        "vitamin-b6",
+        "zinc"
       ],
       "record": [
         {
@@ -24714,6 +26429,17 @@
         "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000409"
       ],
+      "restore": [
+        "copper",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24761,6 +26487,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b12"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24815,6 +26544,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -24864,6 +26596,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000236"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -24888,6 +26621,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000290",
         "WAL-CLM-LETS-000398"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -24938,6 +26678,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000408"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -24961,6 +26702,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000410"
+      ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -24993,6 +26739,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000411"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25021,6 +26768,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000412"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25045,6 +26793,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000414"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25068,6 +26817,13 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000415"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "omega-3",
+        "tryptophan",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -25098,6 +26854,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000003"
+      ],
+      "restore": [
+        "chromium",
+        "copper",
+        "vanadium"
       ],
       "record": [
         {
@@ -25147,6 +26908,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25195,6 +26959,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000416"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25218,6 +26983,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "inositol"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25266,6 +27034,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "manganese"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25314,6 +27085,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25356,6 +27130,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium",
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25401,6 +27179,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000417"
       ],
+      "restore": [
+        "selenium",
+        "vitamin-b12",
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -25429,6 +27212,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000418"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25454,6 +27238,19 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000419"
+      ],
+      "restore": [
+        "calcium",
+        "copper",
+        "histidine",
+        "magnesium",
+        "omega-3",
+        "selenium",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -25500,6 +27297,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000413",
         "WAL-CLM-LETS-000420"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-d"
       ],
       "record": [
         {
@@ -25553,6 +27355,11 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000421"
       ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -25591,6 +27398,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000422"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25615,6 +27423,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000423"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25639,6 +27448,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000354"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25663,6 +27473,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-IMMORT-000096"
+      ],
+      "restore": [
+        "cesium"
       ],
       "record": [
         {
@@ -25703,6 +27516,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000424"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25727,6 +27541,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000425"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25751,6 +27566,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000224"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -25775,6 +27591,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
+      ],
+      "restore": [
+        "chromium",
+        "omega-3",
+        "vitamin-b3",
+        "zinc"
       ],
       "record": [
         {
@@ -25833,6 +27655,10 @@
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000426"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -25896,6 +27722,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000427"
       ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "selenium",
+        "vitamin-e"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25946,6 +27778,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000428"
       ],
+      "restore": [
+        "vitamin-c"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -25994,6 +27829,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000429"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26020,6 +27856,16 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000237",
         "WAL-CLM-LETS-000430"
+      ],
+      "restore": [
+        "biotin",
+        "omega-3",
+        "vitamin-a",
+        "vitamin-b2",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -26072,6 +27918,9 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26128,6 +27977,12 @@
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000432"
       ],
+      "restore": [
+        "vitamin-b12",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -26160,6 +28015,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26200,6 +28058,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "selenium",
+        "sulfur"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26243,6 +28105,10 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "magnesium",
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26287,6 +28153,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000434"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26311,6 +28178,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000436"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26333,6 +28201,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26383,6 +28254,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000359"
+      ],
+      "restore": [
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "zinc"
       ],
       "record": [
         {
@@ -26435,6 +28312,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26481,6 +28361,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26523,6 +28406,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000435"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26545,6 +28429,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -26587,6 +28472,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -26634,6 +28522,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -26658,6 +28547,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000437"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26682,6 +28572,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000438"
+      ],
+      "restore": [
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -26721,6 +28615,15 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000439",
         "WAL-CLM-RARE-000202"
+      ],
+      "restore": [
+        "omega-3",
+        "omega-6",
+        "oxygen",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -26778,6 +28681,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000269"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26804,6 +28708,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -26835,6 +28740,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000441"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26859,6 +28765,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000442"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26883,6 +28790,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000443"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-b5"
       ],
       "record": [
         {
@@ -26932,6 +28845,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000444"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -26957,6 +28871,14 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000445"
+      ],
+      "restore": [
+        "choline",
+        "manganese",
+        "omega-3",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -27003,6 +28925,7 @@
       "synonyms": [],
       "one_liner": "Teeth discoloration with reduced enamel thickness is a common side effect of prolonged administration of tetracyclines during the second half of pregnancy or during early tooth development; affected teeth become brown or gray and fluoresce orange-green under ultraviolet light. Prevention is key; cosmetic capping is necessary if permanent teeth are affected.",
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "definition",
@@ -27027,6 +28950,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000447"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27069,6 +28993,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000448"
       ],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -27095,6 +29022,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000349"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27120,6 +29048,11 @@
       "synonyms": [],
       "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -27173,6 +29106,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000449"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27199,6 +29133,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -27239,6 +29174,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -27272,6 +29208,13 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000450"
       ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -27304,6 +29247,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -27345,6 +29289,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "copper"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -27395,6 +29342,15 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000451"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "tin",
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {
@@ -27458,6 +29414,11 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "arsenic",
+        "manganese",
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -27502,6 +29463,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "mechanism",
@@ -27526,6 +29488,12 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000260",
         "WAL-CLM-LETS-000452"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
       ],
       "record": [
         {
@@ -27561,6 +29529,9 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000453"
+      ],
+      "restore": [
+        "calcium"
       ],
       "record": [
         {
@@ -27617,6 +29588,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000453"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27644,6 +29616,12 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000454"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium",
+        "selenium",
+        "vitamin-e"
       ],
       "record": [
         {
@@ -27673,6 +29651,11 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium",
+        "vitamin-b6",
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -27718,6 +29701,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000455"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27742,6 +29726,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000456"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27767,6 +29752,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "calcium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -27823,6 +29811,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000411"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -27850,6 +29839,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000387"
+      ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {
@@ -27883,6 +29876,9 @@
         "WAL-CLM-IMMORT-000153",
         "WAL-CLM-RARE-000136"
       ],
+      "restore": [
+        "hydrogen"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -27911,6 +29907,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [],
       "record": [
         {
           "kind": "contraindication",
@@ -27944,6 +29941,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "vitamin-d"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -27987,6 +29987,7 @@
         "WAL-CLM-LETS-000252",
         "WAL-CLM-LETS-000459"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -28026,6 +30027,14 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000460"
+      ],
+      "restore": [
+        "copper",
+        "flavonoids",
+        "omega-3",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
       ],
       "record": [
         {
@@ -28085,6 +30094,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000013"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -28116,6 +30126,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000461"
+      ],
+      "restore": [
+        "calcium",
+        "magnesium"
       ],
       "record": [
         {
@@ -28180,6 +30194,10 @@
       "synonyms": [],
       "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
+      "restore": [
+        "copper",
+        "lithium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -28247,6 +30265,14 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000462"
       ],
+      "restore": [
+        "copper",
+        "phenylalanine",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b9",
+        "zinc"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -28297,6 +30323,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000265"
       ],
+      "restore": [
+        "vitamin-b6"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -28334,6 +30363,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000463"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -28357,6 +30387,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "sodium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -28387,6 +30420,11 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000249"
+      ],
+      "restore": [
+        "biotin",
+        "omega-3",
+        "vitamin-b9"
       ],
       "record": [
         {
@@ -28437,6 +30475,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000343"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -28465,6 +30504,10 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000015"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-b1"
       ],
       "record": [
         {
@@ -28514,6 +30557,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -28563,6 +30609,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000464"
       ],
+      "restore": [
+        "zinc"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -28587,6 +30636,9 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
+      "restore": [
+        "iodine"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -28621,6 +30673,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000466"
       ],
+      "restore": [],
       "record": [
         {
           "kind": "protocol",
@@ -28655,6 +30708,10 @@
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000380"
+      ],
+      "restore": [
+        "vitamin-a",
+        "zinc"
       ],
       "record": [
         {

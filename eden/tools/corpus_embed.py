@@ -96,6 +96,14 @@ def _slim_claim(c: dict) -> dict:
     label = _source_table_label(c.get("tags", []))
     if label:
         out["source_table"] = label
+    # base_line_table: a Base-Line-Program / dose-TABLE reference row (e.g. the Fig. 8-1
+    # supplement-program table). The entity page's PROMINENCE rule (H1) uses this to keep a
+    # reference-table row out of a curated primary slot -- a table row is not a curated
+    # recommendation (the fluoride-under-"what to do" defect). Same tags->display projection
+    # as source_table; the runtime needs the flag, not the raw tag list.
+    tags = c.get("tags", [])
+    if "base-line-program" in tags or "dose-table" in tags:
+        out["base_line_table"] = True
     return out
 
 
