@@ -1,17 +1,25 @@
-# Next chunk — ★ UI-REDESIGN DEMO PHASE active · D1+D2 signed off · RESUME AT D3 · (search-seal + mining queued behind it)
+# Next chunk — ★ UI-REDESIGN · D3 = KNOWLEDGE-DRAWER overhaul · P1 HOME TAB SIGNED OFF · wire remaining 4 tabs next · D1+D2 signed off · (search-seal + mining queued)
 
 **★ CURRENT STATE (2026-07-10) — two live threads.**
 
-## THREAD 1 (ACTIVE) — Entity-Page Redesign demo phase
-**★ READ FIRST for this work: `chronicle/entity-page-redesign-blueprint.md`** — the demo-phase blueprint (vision + every decision + the colour language; separate from the master OVERHAUL-BLUEPRINT, feeds its Phase H).
+## THREAD 1 (ACTIVE) — Entity-Page Redesign · D3 = the Knowledge drawer
+**★ READ FIRST: `chronicle/entity-page-redesign-blueprint.md` §8.5** — the CONVERGED D3 direction (after 2 REJECTED passes). Also memory [[entity-page-redesign-demo-phase]].
 
-The vision: **one presentation unit — the entity page — for every subject.** Search's delightful format (quick answer → operational card → colour-coded faceted claims → progressive disclosure → branching) generalized to essentials + conditions. Search = the front door; tabs = curated browse rooms into the same pages; the flat claims-dump is gone (claims tuck inside each page's "full record").
+**Vision:** one presentation unit — the entity page — for every subject; the faceted format generalized to essentials + conditions. **Colour language (LOCKED):** teal=science · orange=Wallach's positions (sparse) · green=what-to-do · amber=signs · violet=story/lore · red=cautions. Pills: conditions=orange · nutrients=green · explore=violet. Orange TEXT=deep, never bright; opened cards keep their own family colour.
 
-**Done + SIGNED OFF:** **D1 — Essential page (Calcium)** + **D2 — Condition page (Osteoporosis, help-first)**. Prototypes (self-contained, real app CSS + `.sr-*` classes + real data, gitignored) live in **`temporary/essential-page-prototype.html`** + **`temporary/condition-page-prototype.html`** — reopen from `file://`.
+**SIGNED OFF:** D1 (Essential/Calcium) `temporary/essential-page-prototype.html` · D2 (Condition/Osteoporosis, help-first) `temporary/condition-page-prototype.html`.
 
-**Colour language (LOCKED):** teal=science · orange=Wallach's positions (reserved, sparse) · green=what-to-do · amber=signs · violet=story/lore · red=cautions. Pills: conditions=orange · nutrients=green · explore=violet. Orange TEXT = deep (`--ds-accent-deep`), never bright; opened cards keep their own family colour.
+**D3 CONVERGED — NO layout change (blueprint §8.5):**
+- Knowledge stays a DRAWER, widened 420→**900px**, adopting the LOVED browse-shell inner design. **`temporary/browse-shell-prototype.html` = the reference Luneth approved the FEEL of** (his mockup = its Home). 5 tabs: **Home · Essentials · Conditions · Explore · Products** (DROP Corpus + Doctrine). Home = the FULL browse-shell home (hero "Everything Wallach taught, in one place" + **live-suggest search kept** + shelves). Elegant rounded segmented tab menu; the KNOWLEDGE header is a SUBTLE eyebrow, not a big title. **NEVER "91"** — tab reads "Essentials", counts say "90" ([[essentials-authority-graphic]]).
+- ONE consolidated **"Ask Wallach"** search (command-palette-v3 pattern, split results: Jump-to entities + In-the-books claims). Generative AI SHELVED (infeasible offline). Search + browse are COMPLEMENTARY, not redundant.
+- Phases: **P1 = the 900px drawer** (IN PROGRESS) → P2 = the unified Ask Wallach search → P3 = Products detail overhaul. All open the D1/D2 entity pages.
 
-**RESUME AT D3** — the browse + navigation shell (search front-door + curated storefront + moving between pages; proves it coheres into one app). Then **D4** (Coverage dashboard) → **D5** (Product page, optional) → **unified master blueprint** → **build (Phase H)**. Sign off each demo before advancing (visual-verification gate). Deferred follow-ups are in the blueprint §10 (loose-claim cleanup pass, product-DB wiring, coverage math, claim-badge-on-statements).
+**★ P1 STATE — HOME TAB SIGNED OFF (2026-07-10).** Demo: **`temporary/knowledge-drawer-prototype.html`**, widened to **950px**. Home tab COMPLETE + visually approved; the other 4 tabs are STILL STUBBED. Built on the REAL shell (dashboard.css + drawer-shared/drawer-knowledge.css).
+  - **✓ FIXED — the Explore-chip bug:** they now carry real base pill styling inside `#drawer-knowledge-mount` (the `.sr-pill` base is scoped to `#drawer-search-mount`, so it never reached the knowledge context). Header also cleaned: dropped `· KN·07`, tab menu centered.
+  - **✓ Essentials cards** made byte-identical to `browse-shell-prototype.html` (0-diff computed-style check), then polished per Luneth: natural-case Space-Grotesk names +1px, claims count +1px matching the name colour, cards widened so NOTHING wraps, sorted by claim count to top-18 (clean 2-gap grid), + a colour-key legend under the grid.
+  - **NEXT — wire the 4 remaining tabs** (Essentials · Conditions · Explore · Products) → the D1/D2 entity pages. Then P2 (unified Ask Wallach search) → P3 (Products detail).
+
+**★ PROCESS LESSONS (this session degraded — Luneth frustrated; do better):** (1) When Luneth says "X isn't styled / doesn't match," pin down the EXACT element BEFORE touching anything — ASK if ambiguous (I misread "buttons" as the tab menu 3×; he meant the purple explore chips). (2) Reused `.sr-*` classes ONLY work under their mount id — verify scoping. (3) MEASURE, don't eyeball — zoom + computed-style diff per `.claude/rules/visual-verification.md`; do a real side-by-side vs his mockup. (4) Fix ONLY what was flagged; STOP over-correcting unrelated things. (5) Smallest chunk → show → confirm.
 
 ## THREAD 2 (QUEUED) — Search G-7 + book mining
 **knowledge_version 320 · 1246 sealed claims · board 53/53 green.** Search G-7 migration is COMPLETE (56 entities / 198 enriched claims; batch 9 = the charged cluster, landed + committed `e632b204`). Outstanding, in order:
