@@ -14074,6 +14074,56 @@
     ui: external_exports.record(external_exports.string())
   });
 
+  // assets/js/src/core/schemas/entity-page.ts
+  var EntityKindGroupSchema = external_exports.object({
+    kind: external_exports.string(),
+    claim_ids: external_exports.array(external_exports.string())
+  });
+  var EntityFacetGroupSchema = external_exports.object({
+    facet: external_exports.string(),
+    claim_ids: external_exports.array(external_exports.string())
+  });
+  var EssentialPageSchema = external_exports.object({
+    type: external_exports.literal("essential"),
+    name: external_exports.string(),
+    symbol: external_exports.string().nullable(),
+    category: external_exports.string().nullable(),
+    is_essential: external_exports.boolean(),
+    claim_count: external_exports.number(),
+    books: external_exports.array(external_exports.string()),
+    synonyms: external_exports.array(external_exports.string()),
+    one_liner: external_exports.string().nullable(),
+    record: external_exports.array(EntityKindGroupSchema),
+    search: external_exports.array(EntityFacetGroupSchema),
+    /** DIRECTED maps(E,C) pills — conditions this essential is Wallach-tied to (H1). */
+    conditions: external_exports.array(external_exports.string()),
+    /** Genuine interaction-kind partners (H1) — NOT co-occurrence. */
+    works_with: external_exports.array(external_exports.string()),
+    /** Co-occurrence "keep exploring" graph (mixed essential + condition slugs). */
+    related: external_exports.array(external_exports.string())
+  });
+  var ConditionPageSchema = external_exports.object({
+    type: external_exports.literal("condition"),
+    name: external_exports.string(),
+    claim_count: external_exports.number(),
+    books: external_exports.array(external_exports.string()),
+    synonyms: external_exports.array(external_exports.string()),
+    one_liner: external_exports.string().nullable(),
+    /** Curated "what to do": protocol-kind then non-base-line-table dose claims (prominence). */
+    protocol_claim_ids: external_exports.array(external_exports.string()),
+    /** DIRECTED maps(E,C) pills — nutrients to restore for this condition (H1). */
+    restore: external_exports.array(external_exports.string()),
+    record: external_exports.array(EntityKindGroupSchema),
+    search: external_exports.array(EntityFacetGroupSchema),
+    related_conditions: external_exports.array(external_exports.string()),
+    related: external_exports.array(external_exports.string())
+  });
+  var EntityPageDataSchema = external_exports.object({
+    _meta: external_exports.unknown().optional(),
+    essentials: external_exports.record(EssentialPageSchema),
+    conditions: external_exports.record(ConditionPageSchema)
+  });
+
   // assets/js/src/core/nutrient-resolver.ts
   var MAP = NutrientResolverSchema.parse(nutrient_resolver_data_default);
   var FA_PATTERNS = MAP.fatty_acid_patterns.map(([slug, src]) => [slug, new RegExp(src)]);
@@ -56462,7 +56512,13 @@ Executed the ready-to-run runbook (chronicle/pending-mistag-audit-temp/), in ord
 
 Verification (both directions): board 61/61, 0 new red. entity_pills_justified independently re-derives the maps(E,C) relation and confirmed all 2578\u21922600 pills backed \u2014 the +22 is the recovery landing; no union leak reopened and nothing over-fired. render_probe_knowledge PASS (0 page errors; the conditions deep-dive already glosses the new "cardiomyopathy" condition). 11 recovery spot-checks against a hand-reimplemented copy of the invariant's pill relation: goiter\u2190copper (DDDL-000025/IMMORT-000180/RARE-000149), goiter\u2190iodine (incl. the split original IMMORT-000001), prostate_cancer\u2190selenium (IMMORT-000011), diabetes\u2190chromium (IMMORT-000089), hypertension\u2190calcium (IMMORT-000071), deafness\u2190manganese (EPIGEN-000010), aneurysm\u2190copper (IMMORT-000107/RARE-000120), and the 4 split conditions each backed by their new IMMORT-000211..214 claim.
 
-Decisions carried from the audit: RARE-000086 KEPT as-is (inferred pairings, \xA700.A); EPIGEN-000095 + IMMORT-000198 KEPT mechanism (verifier rejected). Source audit workflow wf_b814baa8-ca4; Luneth's review artifact ec860c9c-530a-4da0-91a1-56eeff196399; full 43-item detail recoverable from git commit e74ffbbc (the deleted execution dir). NEXT = H2 (the real data-driven entity view, blueprint \xA74).` }];
+Decisions carried from the audit: RARE-000086 KEPT as-is (inferred pairings, \xA700.A); EPIGEN-000095 + IMMORT-000198 KEPT mechanism (verifier rejected). Source audit workflow wf_b814baa8-ca4; Luneth's review artifact ec860c9c-530a-4da0-91a1-56eeff196399; full 43-item detail recoverable from git commit e74ffbbc (the deleted execution dir). NEXT = H2 (the real data-driven entity view, blueprint \xA74).` }, { id: "lg_mrgypk31_aft2tj", ts: "2026-07-11T17:54:51.373158-05:00", surface: "knowledge", kind: "milestone", summary: "Phase H2 chunk-1a: built the entity-page DATA BOUNDARY \u2014 Zod schema core/schemas/entity-page.ts + read boundary state/entity-page.ts + getSearchClaim(id); board 61/61, schema validated vs all 597 records. Next: the visible essential render (1b).", detail: `We started building the redesigned "entity page" \u2014 the one unified page format the app will use for every nutrient and every condition (Phase H2). This first step is just the plumbing: a typed data boundary so the page can safely read from the generated entity-page-data.json file. Nothing is visible on screen yet; the actual page is the next step, and it will stop for your visual sign-off.
+
+Chunk 1a of H2 (foundation-first). Added: (1) core/schemas/entity-page.ts \u2014 a Zod schema typing the lean artifact (essential + condition records, each holding claim IDs + the H1 directed relations conditions/restore/works_with, never claim text). (2) state/entity-page.ts \u2014 the read boundary getEssentialPage/getConditionPage, inline-JSON + validate-once + graceful-empty fallback, mirroring state/copy.ts. (3) getSearchClaim(id) in state/search.ts \u2014 a by-id Map over the search index (the artifact stores search[].claim_ids and there was no by-id accessor; record/protocol IDs still route to state/corpus.getClaim). (4) the entity-page barrel export in core/schemas/index.ts.
+
+Verified: typecheck + build clean (4548.9 KB); invariants 61/61 (0 new red); render_probe_knowledge PASS (0 page errors \u2014 no regression from touching search.ts/schemas). Defense-in-depth (\xA700.B #1 no-silent-failures): hand-validated the schema's required fields against every record in the artifact \u2014 all 91 essentials + 506 conditions match, 0 mismatches \u2014 so safeParse succeeds rather than silently degrading to EMPTY. Not yet wired to any render (dead code until chunk 1b imports it).
+
+Closing here at a session boundary by design: the render is the first real-build visual surface and deserves a fresh, focused pass. NEXT = chunk 1b \u2014 build views/entity-page.ts (the visible essential entity page from the signed-off D1 prototype) + its kd-ep-* CSS + bind the 3 view gates (append the file to _ENTITY_VIEW_FILES + _CLEAN_VIEW_FILES) + an essential render probe -> STOP for Luneth's visual sign-off. Full build recipe + resume pointers (incl. the 6-agent understand-sweep output path) are in chronicle/next-chunk.md.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

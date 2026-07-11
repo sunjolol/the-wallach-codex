@@ -114,6 +114,23 @@ export function composeCite(claim: SearchClaim): string {
   return claim.page !== null ? `${head} · P.${claim.page}` : head;
 }
 
+// ─── By-id claim lookup (the entity-page artifact stores search claim IDs) ──
+
+let claimByIdCache: Map<string, SearchClaim> | null = null;
+
+/**
+ * One search claim by its id — the entity-page view-model (state/entity-page) stores
+ * search[].claim_ids and resolves them here. Built once as a Map over the index claims;
+ * null when the id is absent (or corpus-only — a record id that never entered the search
+ * index). Callers must route record/protocol ids to state/corpus.getClaim, not here.
+ */
+export function getSearchClaim(id: string): SearchClaim | null {
+  if (claimByIdCache === null) {
+    claimByIdCache = new Map(index().claims.map(c => [c.id, c] as const));
+  }
+  return claimByIdCache.get(id) ?? null;
+}
+
 // ─── Retrieval (deterministic, offline) ────────────────────────────────────
 
 /** How a query resolved: the browse landing, an entity page, or a single best Ask answer. */
