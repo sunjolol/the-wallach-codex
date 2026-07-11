@@ -2950,6 +2950,94 @@ def check_kind_label_covers_corpus():
         ROOT / "eden" / "corpus" / "claims")
 
 
+_CATEGORY_FAMILIES = {"green", "teal", "amber", "orange", "violet", "red"}
+
+
+def _claim_category_mapping_total_impl(store_path, claims_dir):
+    """RED unless view-copy.json kind_categories maps EVERY distinct sealed claim.kind to
+    exactly one KNOWN colour family, with NO default branch: a sealed kind missing from the
+    map, a map entry for a kind not in the corpus, or a family outside the locked colour
+    language each RED. `store_path`, `claims_dir` are params so the negative test drives the
+    same logic against a tampered store."""
+    import json as _j
+    try:
+        cats = _j.loads(store_path.read_text(encoding="utf-8")).get("kind_categories", {})
+    except Exception as e:
+        return False, f"view-copy store unreadable ({e})"
+    kinds = set()
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        d = _j.loads(shard.read_text(encoding="utf-8"))
+        arr = d.get("claims", d) if isinstance(d, dict) else d
+        for c in arr:
+            k = c.get("kind")
+            if k:
+                kinds.add(k)
+    missing = sorted(k for k in kinds if k not in cats)
+    extra = sorted(k for k in cats if k not in kinds)
+    bad = sorted(f"{k}->{cats[k]}" for k in cats if cats[k] not in _CATEGORY_FAMILIES)
+    problems = []
+    if missing:
+        problems.append(f"{len(missing)} sealed kind(s) with NO colour category "
+                        f"(entity page would render no colour bar): {missing}")
+    if extra:
+        problems.append(f"{len(extra)} category entr(ies) for a kind NOT in the corpus "
+                        f"(map not pinned to reality): {extra}")
+    if bad:
+        problems.append(f"category outside the locked colour language "
+                        f"{sorted(_CATEGORY_FAMILIES)}: {bad}")
+    if problems:
+        return False, "kind->colour-category map is not TOTAL/exact: " + "; ".join(problems)
+    return True, (f"all {len(kinds)} sealed claim kinds map to exactly one of the "
+                  f"{len(_CATEGORY_FAMILIES)} colour families (no default branch)")
+
+
+def check_claim_category_mapping_total():
+    """Phase H1 gate (R7 / redesign colour language §6): the claim.kind -> colour-category map
+    in the view-copy content store (kind_categories) is TOTAL over the sealed corpus kinds and
+    exact -- every distinct sealed claim.kind maps to exactly one of the six locked colour
+    families (green/teal/amber/orange/violet/red), no default/fallback branch, no stale entry
+    for a vanished kind. So a new corpus kind can never silently render with a wrong/absent
+    colour. Truth anchor: distinct claim.kind in the sealed shards x view-copy.json
+    kind_categories keys+values, recomputed each run."""
+    return _claim_category_mapping_total_impl(
+        ROOT / "dashboard" / "assets" / "data" / "view-copy.json",
+        ROOT / "eden" / "corpus" / "claims")
+
+
+def _view_category_not_hardcoded_impl(files):
+    """RED if an entity-view file assigns a colour by a hardcoded family literal
+    ('green'/'teal'/'amber'/'orange'/'violet'/'red') instead of reading the kind->category map
+    (view-copy kind_categories via state/copy.ts::kindCategory). `files` = iterable of
+    (relpath, text); param-taking for the negative test. A string literal whose whole body IS a
+    family word is the tell -- the legitimate path never writes one (the family key flows from
+    the map; the CSS colour value lives in the stylesheet, not TS)."""
+    viol = []
+    for rel, text in files:
+        for lit in _extract_ts_string_literals(text):
+            if lit.strip().lower() in _CATEGORY_FAMILIES:
+                viol.append(f"{rel}: hardcoded colour-family literal {lit.strip()!r}")
+    if viol:
+        return False, ("entity view assigns a colour by a hardcoded family literal instead of the "
+                       "kind->category map (read it via state/copy.ts::kindCategory): "
+                       + "; ".join(viol[:6]))
+    return True, (f"no hardcoded colour-family literal across {len(files)} entity-view file(s) "
+                  "(surface grows in H2)")
+
+
+def check_view_category_not_hardcoded():
+    """Phase H1 gate (R7): the entity view reads a claim's colour CATEGORY from the map
+    (view-copy kind_categories via state/copy.ts::kindCategory) and never hardcodes a colour
+    family per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES is EMPTY in H1 (the render is
+    built in H2) and grows in the same patch; the negative test proves the gate fires. Truth
+    anchor: the entity-view .ts bytes scanned each run for a standalone family-word literal."""
+    files = []
+    for rel in _ENTITY_VIEW_FILES:
+        p = ROOT / rel
+        if p.exists():
+            files.append((rel, p.read_text(encoding="utf-8")))
+    return _view_category_not_hardcoded_impl(files)
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -3406,6 +3494,22 @@ INVARIANTS = [
         truth_anchor="distinct claim.kind values in the sealed claim shards x dashboard/assets/data/view-copy.json kind_labels keys, recomputed each run",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 2 (content-store) -- the 'centralize the display-label maps' item, gated per codify-don't-promise: the kind map cannot be exhaustively typed (claim.kind is an open z.string()), so a truth-anchored invariant proves coverage instead. Negative test: tools/test_kind_label_covers_corpus.py.",
+    ),
+    Invariant(
+        name="claim_category_mapping_total",
+        description="Phase H1 / redesign colour language §6 -- the claim.kind -> colour-category map (view-copy.json kind_categories) is TOTAL and exact over the sealed corpus kinds: every distinct sealed kind maps to exactly one of the six locked families (green/teal/amber/orange/violet/red), no default branch, no stale entry for a vanished kind. A new/dropped kind reddens the board rather than rendering a wrong/absent colour",
+        check_fn=check_claim_category_mapping_total,
+        truth_anchor="distinct claim.kind in the sealed claim shards x dashboard/assets/data/view-copy.json kind_categories keys+values, recomputed each run",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 2 gate 'claim_category_mapping_total' + section 1.2 item (ii) -- the kind->colour map must be total (no fallback) so a claim can never render with a mis-derived colour. Negative test: tools/test_claim_category_mapping_total.py.",
+    ),
+    Invariant(
+        name="view_category_not_hardcoded",
+        description="Phase H1 -- the entity view reads a claim's colour CATEGORY from the map (view-copy kind_categories via state/copy.ts::kindCategory), never a hardcoded family literal per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES is EMPTY in H1 (render built in H2), grows in the same patch; negative test proves it fires",
+        check_fn=check_view_category_not_hardcoded,
+        truth_anchor="the entity-view .ts bytes (_ENTITY_VIEW_FILES) scanned each run for a standalone colour-family-word string literal",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 2 gate 'view_category_not_hardcoded' + section 1.2 item (ii)(2) -- colour is assigned via the total kind->category table, never a per-claim literal, so category logic stays single-source. Negative test: tools/test_view_category_not_hardcoded.py.",
     ),
 ]
 

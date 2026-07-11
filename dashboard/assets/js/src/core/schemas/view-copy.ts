@@ -21,6 +21,12 @@ import { z } from 'zod';
 export const ViewCopySchema = z.object({
   /** claim.kind → uppercase display label (covers every sealed kind). */
   kind_labels: z.record(z.string()),
+  /**
+   * claim.kind → colour-category family (green/teal/amber/orange/violet/red), the locked
+   * colour language (redesign blueprint §6). TOTAL over the sealed kinds — gated by
+   * claim_category_mapping_total; state/copy.ts::kindCategory reads it.
+   */
+  kind_categories: z.record(z.string()),
   /** search facet → uppercase section header. */
   facet_labels: z.record(z.string()),
   /** generic chrome copy by id; grows as views migrate (H2-H4). */

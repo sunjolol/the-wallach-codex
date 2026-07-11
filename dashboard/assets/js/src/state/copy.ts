@@ -19,7 +19,7 @@
 import copyData from '../../../data/view-copy.json';
 import { type ViewCopy, ViewCopySchema } from '../core/schemas/index.js';
 
-const EMPTY: ViewCopy = { kind_labels: {}, facet_labels: {}, ui: {} };
+const EMPTY: ViewCopy = { kind_labels: {}, kind_categories: {}, facet_labels: {}, ui: {} };
 
 let cached: ViewCopy | null = null;
 
@@ -40,6 +40,17 @@ function slugLabel(slug: string): string {
 /** Uppercase display label for a claim.kind; falls back to the slug transform. */
 export function kindLabel(kind: string): string {
   return data().kind_labels[kind] ?? slugLabel(kind);
+}
+
+/**
+ * Colour-category family for a claim.kind (green/teal/amber/orange/violet/red), the
+ * locked colour language (redesign blueprint §6) — the ONE place a view learns a
+ * claim's colour, so a view never hardcodes a family literal (view_category_not_hardcoded).
+ * Falls back to '' (no family, a neutral card) for an unmapped kind; the map is TOTAL over
+ * the sealed kinds (claim_category_mapping_total), so the fallback is unreachable in practice.
+ */
+export function kindCategory(kind: string): string {
+  return data().kind_categories[kind] ?? '';
 }
 
 /** Uppercase section header for a search facet; falls back to the slug transform. */
