@@ -9635,15 +9635,15 @@
     "map",
     "set"
   ]);
-  var getParsedType = (data) => {
-    const t = typeof data;
+  var getParsedType = (data2) => {
+    const t = typeof data2;
     switch (t) {
       case "undefined":
         return ZodParsedType.undefined;
       case "string":
         return ZodParsedType.string;
       case "number":
-        return Number.isNaN(data) ? ZodParsedType.nan : ZodParsedType.number;
+        return Number.isNaN(data2) ? ZodParsedType.nan : ZodParsedType.number;
       case "boolean":
         return ZodParsedType.boolean;
       case "function":
@@ -9653,22 +9653,22 @@
       case "symbol":
         return ZodParsedType.symbol;
       case "object":
-        if (Array.isArray(data)) {
+        if (Array.isArray(data2)) {
           return ZodParsedType.array;
         }
-        if (data === null) {
+        if (data2 === null) {
           return ZodParsedType.null;
         }
-        if (data.then && typeof data.then === "function" && data.catch && typeof data.catch === "function") {
+        if (data2.then && typeof data2.then === "function" && data2.catch && typeof data2.catch === "function") {
           return ZodParsedType.promise;
         }
-        if (typeof Map !== "undefined" && data instanceof Map) {
+        if (typeof Map !== "undefined" && data2 instanceof Map) {
           return ZodParsedType.map;
         }
-        if (typeof Set !== "undefined" && data instanceof Set) {
+        if (typeof Set !== "undefined" && data2 instanceof Set) {
           return ZodParsedType.set;
         }
-        if (typeof Date !== "undefined" && data instanceof Date) {
+        if (typeof Date !== "undefined" && data2 instanceof Date) {
           return ZodParsedType.date;
         }
         return ZodParsedType.object;
@@ -9909,7 +9909,7 @@
 
   // node_modules/zod/v3/helpers/parseUtil.js
   var makeIssue = (params) => {
-    const { data, path, errorMaps, issueData } = params;
+    const { data: data2, path, errorMaps, issueData } = params;
     const fullPath = [...path, ...issueData.path || []];
     const fullIssue = {
       ...issueData,
@@ -9925,7 +9925,7 @@
     let errorMessage = "";
     const maps = errorMaps.filter((m) => !!m).slice().reverse();
     for (const map of maps) {
-      errorMessage = map(fullIssue, { data, defaultError: errorMessage }).message;
+      errorMessage = map(fullIssue, { data: data2, defaultError: errorMessage }).message;
     }
     return {
       ...issueData,
@@ -10127,13 +10127,13 @@
       const result = this._parse(input);
       return Promise.resolve(result);
     }
-    parse(data, params) {
-      const result = this.safeParse(data, params);
+    parse(data2, params) {
+      const result = this.safeParse(data2, params);
       if (result.success)
         return result.data;
       throw result.error;
     }
-    safeParse(data, params) {
+    safeParse(data2, params) {
       const ctx = {
         common: {
           issues: [],
@@ -10143,13 +10143,13 @@
         path: params?.path || [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data,
-        parsedType: getParsedType(data)
+        data: data2,
+        parsedType: getParsedType(data2)
       };
-      const result = this._parseSync({ data, path: ctx.path, parent: ctx });
+      const result = this._parseSync({ data: data2, path: ctx.path, parent: ctx });
       return handleResult(ctx, result);
     }
-    "~validate"(data) {
+    "~validate"(data2) {
       const ctx = {
         common: {
           issues: [],
@@ -10158,12 +10158,12 @@
         path: [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data,
-        parsedType: getParsedType(data)
+        data: data2,
+        parsedType: getParsedType(data2)
       };
       if (!this["~standard"].async) {
         try {
-          const result = this._parseSync({ data, path: [], parent: ctx });
+          const result = this._parseSync({ data: data2, path: [], parent: ctx });
           return isValid(result) ? {
             value: result.value
           } : {
@@ -10179,19 +10179,19 @@
           };
         }
       }
-      return this._parseAsync({ data, path: [], parent: ctx }).then((result) => isValid(result) ? {
+      return this._parseAsync({ data: data2, path: [], parent: ctx }).then((result) => isValid(result) ? {
         value: result.value
       } : {
         issues: ctx.common.issues
       });
     }
-    async parseAsync(data, params) {
-      const result = await this.safeParseAsync(data, params);
+    async parseAsync(data2, params) {
+      const result = await this.safeParseAsync(data2, params);
       if (result.success)
         return result.data;
       throw result.error;
     }
-    async safeParseAsync(data, params) {
+    async safeParseAsync(data2, params) {
       const ctx = {
         common: {
           issues: [],
@@ -10201,10 +10201,10 @@
         path: params?.path || [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data,
-        parsedType: getParsedType(data)
+        data: data2,
+        parsedType: getParsedType(data2)
       };
-      const maybeAsyncResult = this._parse({ data, path: ctx.path, parent: ctx });
+      const maybeAsyncResult = this._parse({ data: data2, path: ctx.path, parent: ctx });
       const result = await (isAsync(maybeAsyncResult) ? maybeAsyncResult : Promise.resolve(maybeAsyncResult));
       return handleResult(ctx, result);
     }
@@ -10225,8 +10225,8 @@
           ...getIssueProperties(val)
         });
         if (typeof Promise !== "undefined" && result instanceof Promise) {
-          return result.then((data) => {
-            if (!data) {
+          return result.then((data2) => {
+            if (!data2) {
               setError();
               return false;
             } else {
@@ -10292,7 +10292,7 @@
       this["~standard"] = {
         version: 1,
         vendor: "zod",
-        validate: (data) => this["~validate"](data)
+        validate: (data2) => this["~validate"](data2)
       };
     }
     optional() {
@@ -10752,7 +10752,7 @@
       return { status: status.value, value: input.data };
     }
     _regex(regex, validation, message) {
-      return this.refinement((data) => regex.test(data), {
+      return this.refinement((data2) => regex.test(data2), {
         validation,
         code: ZodIssueCode.invalid_string,
         ...errorUtil.errToObj(message)
@@ -12968,8 +12968,8 @@
         return INVALID;
       }
       const promisified = ctx.parsedType === ZodParsedType.promise ? ctx.data : Promise.resolve(ctx.data);
-      return OK(promisified.then((data) => {
-        return this._def.type.parseAsync(data, {
+      return OK(promisified.then((data2) => {
+        return this._def.type.parseAsync(data2, {
           path: ctx.path,
           errorMap: ctx.common.contextualErrorMap
         });
@@ -13163,12 +13163,12 @@
   var ZodDefault = class extends ZodType {
     _parse(input) {
       const { ctx } = this._processInputParams(input);
-      let data = ctx.data;
+      let data2 = ctx.data;
       if (ctx.parsedType === ZodParsedType.undefined) {
-        data = this._def.defaultValue();
+        data2 = this._def.defaultValue();
       }
       return this._def.innerType._parse({
-        data,
+        data: data2,
         path: ctx.path,
         parent: ctx
       });
@@ -13263,9 +13263,9 @@
   var ZodBranded = class extends ZodType {
     _parse(input) {
       const { ctx } = this._processInputParams(input);
-      const data = ctx.data;
+      const data2 = ctx.data;
       return this._def.type._parse({
-        data,
+        data: data2,
         path: ctx.path,
         parent: ctx
       });
@@ -13332,13 +13332,13 @@
   var ZodReadonly = class extends ZodType {
     _parse(input) {
       const result = this._def.innerType._parse(input);
-      const freeze = (data) => {
-        if (isValid(data)) {
-          data.value = Object.freeze(data.value);
+      const freeze = (data2) => {
+        if (isValid(data2)) {
+          data2.value = Object.freeze(data2.value);
         }
-        return data;
+        return data2;
       };
-      return isAsync(result) ? result.then((data) => freeze(data)) : freeze(result);
+      return isAsync(result) ? result.then((data2) => freeze(data2)) : freeze(result);
     }
     unwrap() {
       return this._def.innerType;
@@ -13351,26 +13351,26 @@
       ...processCreateParams(params)
     });
   };
-  function cleanParams(params, data) {
-    const p = typeof params === "function" ? params(data) : typeof params === "string" ? { message: params } : params;
+  function cleanParams(params, data2) {
+    const p = typeof params === "function" ? params(data2) : typeof params === "string" ? { message: params } : params;
     const p2 = typeof p === "string" ? { message: p } : p;
     return p2;
   }
   function custom(check, _params = {}, fatal) {
     if (check)
-      return ZodAny.create().superRefine((data, ctx) => {
-        const r = check(data);
+      return ZodAny.create().superRefine((data2, ctx) => {
+        const r = check(data2);
         if (r instanceof Promise) {
           return r.then((r2) => {
             if (!r2) {
-              const params = cleanParams(_params, data);
+              const params = cleanParams(_params, data2);
               const _fatal = params.fatal ?? fatal ?? true;
               ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
             }
           });
         }
         if (!r) {
-          const params = cleanParams(_params, data);
+          const params = cleanParams(_params, data2);
           const _fatal = params.fatal ?? fatal ?? true;
           ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
         }
@@ -13422,7 +13422,7 @@
   })(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
   var instanceOfType = (cls, params = {
     message: `Input not instance of ${cls.name}`
-  }) => custom((data) => data instanceof cls, params);
+  }) => custom((data2) => data2 instanceof cls, params);
   var stringType = ZodString.create;
   var numberType = ZodNumber.create;
   var nanType = ZodNaN.create;
@@ -13987,21 +13987,6 @@
     "biography"
   ];
   var SearchFacetSchema = external_exports.enum(SEARCH_FACETS);
-  var FACET_LABEL = {
-    basics: "BASICS",
-    discovery: "DISCOVERY",
-    etymology: "ETYMOLOGY",
-    physiology: "IN THE BODY",
-    mechanism: "HOW IT WORKS",
-    sources: "SOURCES & EXPOSURE",
-    uses: "USES",
-    stance: "WALLACH\u2019S STANCE",
-    protocol: "WHAT TO DO",
-    warning: "WARNINGS",
-    history: "HISTORY & LORE",
-    big_question: "BIG QUESTIONS",
-    biography: "BIOGRAPHY"
-  };
   var FACET_ORDER_BY_TYPE = {
     condition: [
       "stance",
@@ -14070,6 +14055,16 @@
     entities: external_exports.record(external_exports.string(), SearchEntitySchema),
     claims: external_exports.array(SearchClaimSchema)
   }).passthrough();
+
+  // assets/js/src/core/schemas/view-copy.ts
+  var ViewCopySchema = external_exports.object({
+    /** claim.kind → uppercase display label (covers every sealed kind). */
+    kind_labels: external_exports.record(external_exports.string()),
+    /** search facet → uppercase section header. */
+    facet_labels: external_exports.record(external_exports.string()),
+    /** generic chrome copy by id; grows as views migrate (H2-H4). */
+    ui: external_exports.record(external_exports.string())
+  });
 
   // assets/js/src/core/nutrient-resolver.ts
   var MAP = NutrientResolverSchema.parse(nutrient_resolver_data_default);
@@ -56393,7 +56388,7 @@ The three gates (tools/invariants.py, each = a thin path-binding check_* wrapper
 
 Negative tests (R7 "codify, don't promise" \u2014 a gate is only trusted once proven to FIRE): tools/test_no_stub_render_paths.py (9/9: baseline+clean GREEN, all 7 tokens RED), tools/test_views_no_inline_prose.py (5/5: baseline+clean GREEN, 3 prose classes RED incl. the real cornerstone-quote sentence), tools/test_entity_render_is_projection.py (6/6: premise calcium+osteoporosis in id set, baseline+clean GREEN, unquoted-map + quoted-map + eq-branch RED).
 
-Verify: PYTHONUTF8=1 python tools/invariants.py -> 56/56 (was 53) green; all 3 negative tests ALL PASS. node tools/build.mjs OK (re-inline the log embed). No dashboard .ts touched -> dist unaffected by the gates themselves; no render probe (no surface). The gates' real scope widens as views migrate in H2-H4.` }];
+Verify: PYTHONUTF8=1 python tools/invariants.py -> 56/56 (was 53) green; all 3 negative tests ALL PASS. node tools/build.mjs OK (re-inline the log embed). No dashboard .ts touched -> dist unaffected by the gates themselves; no render probe (no surface). The gates' real scope widens as views migrate in H2-H4.` }, { id: "lg_mrgrwk68_f795go", ts: "2026-07-11T14:44:20.768285-05:00", surface: "knowledge", kind: "milestone", summary: "Phase H0 chunk-3: the view-prose content store (view-copy.json + state/copy.ts) \u2014 single R4 home for kind/facet labels; FACET_LABEL moved in (single-source), search probe confirms byte-identical render; +kind_label_covers_corpus gate (board 56->57)", detail: "Built the single home for VIEW prose \u2014 the third foundation step of Phase H0. This is where all user-facing UI wording lives so a view file never hardcodes it (Charter R4).\n\nWhat it holds today: the display-label maps for the 14 claim kinds and the 13 search facets, plus an empty `ui` map that grows as views migrate (H2-H4). Values are byte-identical to what the app shows today, so H0 makes NO visual change: kind_labels == the old corpusKindLabel slug->UPPERCASE transform; facet_labels == the former core/schemas/search.ts FACET_LABEL literal (curly apostrophe preserved).\n\nProof that the store actually works (not just exists): moved the search facet labels OUT of code (deleted the FACET_LABEL literal from core, single-source per R3), repointed its one consumer (state/search.ts) to state/copy.ts::facetLabel, and the search render probe confirms every facet header renders the exact same words end-to-end through the built bundle (Calcium: IN THE BODY / HOW IT WORKS / WALLACH'S STANCE / HISTORY & LORE).\n\nNew gate + negative test (R7, codify-don't-promise): kind_label_covers_corpus asserts every distinct claim.kind in the sealed corpus (14 today) has a label in the store, so the entity page can never render a raw/blank kind header. claim.kind is an open z.string() so it can't be typed exhaustively \u2014 a truth-anchored invariant proves coverage instead. tools/test_kind_label_covers_corpus.py: baseline GREEN + 3 drop-label classes RED (4/4).\n\nFiles: NEW view-copy.json (hand-authored, on the prose_contained clean surface + MANIFEST accounted/hand_authored, like glossary.json/doctrine-data.json), NEW core/schemas/view-copy.ts (Zod), NEW state/copy.ts (kindLabel/facetLabel/ui accessors, degrade to the slug-transform / empty string so a view never shows undefined), barrel +view-copy, state/search.ts + core/schemas/search.ts repoint, invariants.py (+clean-surface entry, +gate).\n\nArchitecture note (the two homes, blueprint line 22): this store = AUTHORED view copy (labels/chrome). The GENERATED per-entity artifact (claim text, targets, composition, the derived hero one-liner) is chunk-4's job \u2014 different home. Per-entity hero prose is DERIVED from claims, not authored here, keeping the store small and avoiding 596 hand-written one-liners.\n\nVerify: tsc --noEmit exit 0; node tools/build.mjs OK; invariants 57/57 (was 56); kind-label negative test 4/4; render_probe_search + render_probe_knowledge + render_probe(coverage) all PASS, PAGE_ERRORS 0. Pre-existing eslint noise on SEARCH_FACETS/FACET_ORDER_BY_TYPE (content-identical core arrays, untouched, not a round-close gate) left as-is per REVIEW.md." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -62356,6 +62351,61 @@ deaths, blood clots, sterility`,
     ]
   };
 
+  // assets/data/view-copy.json
+  var view_copy_default = {
+    _purpose: "Single hand-authored home for VIEW prose (Charter R4): the claim-kind + search-facet display-label maps, plus generic UI chrome copy for the entity-page redesign. ID-referenced, single-copy, never inline in views/. Authored like glossary.json / doctrine-data.json, NOT a pillar projection (view copy has no Wallach source, carries no dose/number). kind_labels covers every distinct claim.kind in the sealed corpus (gated by kind_label_covers_corpus). facet_labels is the single home for the search-facet headers (the former core FACET_LABEL literal moved here). ui holds generic chrome copy and GROWS as each view is migrated (H2-H4).",
+    _note: "Values match the pre-redesign display exactly so H0 makes no visual change: kind_labels == the old corpusKindLabel slug->UPPER transform; facet_labels == the former core/schemas/search.ts FACET_LABEL byte-for-byte.",
+    kind_labels: {
+      protocol: "PROTOCOL",
+      mechanism: "MECHANISM",
+      definition: "DEFINITION",
+      deficiency_sign: "DEFICIENCY SIGN",
+      dose: "DOSE",
+      prevalence: "PREVALENCE",
+      toxicity_sign: "TOXICITY SIGN",
+      prognosis: "PROGNOSIS",
+      interaction: "INTERACTION",
+      diagnostic_pattern: "DIAGNOSTIC PATTERN",
+      quote: "QUOTE",
+      personal_anecdote: "PERSONAL ANECDOTE",
+      contraindication: "CONTRAINDICATION",
+      food_source: "FOOD SOURCE"
+    },
+    facet_labels: {
+      basics: "BASICS",
+      discovery: "DISCOVERY",
+      etymology: "ETYMOLOGY",
+      physiology: "IN THE BODY",
+      mechanism: "HOW IT WORKS",
+      sources: "SOURCES & EXPOSURE",
+      uses: "USES",
+      stance: "WALLACH\u2019S STANCE",
+      protocol: "WHAT TO DO",
+      warning: "WARNINGS",
+      history: "HISTORY & LORE",
+      big_question: "BIG QUESTIONS",
+      biography: "BIOGRAPHY"
+    },
+    ui: {}
+  };
+
+  // assets/js/src/state/copy.ts
+  var EMPTY2 = { kind_labels: {}, facet_labels: {}, ui: {} };
+  var cached3 = null;
+  function data() {
+    if (cached3 === null) {
+      const parsed = ViewCopySchema.safeParse(view_copy_default);
+      cached3 = parsed.success ? parsed.data : EMPTY2;
+    }
+    return cached3;
+  }
+  function slugLabel(slug) {
+    return slug.replace(/[_-]+/g, " ").toUpperCase();
+  }
+  function facetLabel(facet) {
+    return data().facet_labels[facet] ?? slugLabel(facet);
+  }
+
   // assets/js/src/state/search.ts
   var EMPTY_INDEX = { books: {}, entities: {}, claims: [] };
   var indexCache = null;
@@ -62387,7 +62437,7 @@ deaths, blood clots, sterility`,
     for (const facet of order) {
       const inFacet = claims.filter((c) => c.facet === facet);
       if (inFacet.length > 0) {
-        out.push({ facet, label: FACET_LABEL[facet], claims: inFacet });
+        out.push({ facet, label: facetLabel(facet), claims: inFacet });
       }
     }
     return out;

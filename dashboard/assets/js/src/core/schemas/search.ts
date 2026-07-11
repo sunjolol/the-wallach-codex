@@ -35,22 +35,12 @@ export const SEARCH_FACETS = [
 export const SearchFacetSchema = z.enum(SEARCH_FACETS);
 export type SearchFacet = z.infer<typeof SearchFacetSchema>;
 
-/** Human, uppercase section headers for the entity page — one per facet (short UI labels, not prose). */
-export const FACET_LABEL: Record<SearchFacet, string> = {
-  basics: 'BASICS',
-  discovery: 'DISCOVERY',
-  etymology: 'ETYMOLOGY',
-  physiology: 'IN THE BODY',
-  mechanism: 'HOW IT WORKS',
-  sources: 'SOURCES & EXPOSURE',
-  uses: 'USES',
-  stance: 'WALLACH’S STANCE',
-  protocol: 'WHAT TO DO',
-  warning: 'WARNINGS',
-  history: 'HISTORY & LORE',
-  big_question: 'BIG QUESTIONS',
-  biography: 'BIOGRAPHY',
-};
+/*
+ * FACET display labels moved to the view-copy content store (Phase H0, R4 single-source):
+ * dashboard/assets/data/view-copy.json `facet_labels`, read via state/copy.ts::facetLabel.
+ * SEARCH_FACETS (the closed set) + FACET_ORDER_BY_TYPE (display order) stay here -- they are
+ * structure, not display copy.
+ */
 
 /**
  * Per-entity-type facet DISPLAY order. A type absent here uses SEARCH_FACETS (the default order).

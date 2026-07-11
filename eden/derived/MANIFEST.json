@@ -138,6 +138,11 @@
       "reason": "Plain-language term glossary (a designated R4 prose store). Original prose content, not derived; structurally gated by glossary_wellformed."
     },
     {
+      "file": "dashboard/assets/data/view-copy.json",
+      "disposition": "hand_authored",
+      "reason": "The VIEW-prose content store (Phase H0, a designated R4 prose home): claim-kind + search-facet display-label maps + generic UI chrome copy. Authored UI text, not a pillar projection (no dose/number). On the clean surface (_CLEAN_SURFACE_STORES); kind_labels coverage gated by kind_label_covers_corpus."
+    },
+    {
       "file": "dashboard/assets/data/doctrine-data.json",
       "disposition": "hand_authored",
       "reason": "Knowledge>Doctrine cards (a designated R4 prose store, blueprint 2.4 #4). On the clean Charter surface for prose_contained + citations_reference_registry; original prose, not a pillar projection."

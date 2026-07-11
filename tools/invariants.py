@@ -2143,6 +2143,7 @@ _CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
 )
 _CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (blueprint §2.4)
     "dashboard/assets/data/doctrine-data.json",  # Knowledge>Doctrine cards (Phase E)
+    "dashboard/assets/data/view-copy.json",  # VIEW-prose store: kind/facet labels + UI chrome (Phase H0)
 )
 _CLEAN_SURFACE_LEGACY_DATA = (   # legacy hand-authored data now under the prose/citation gates (crack #3, 2026-07-06)
     "dashboard/assets/data/regimen-base-data.json",    # transitional HBSP composition (Pillar 2 in Phase F)
@@ -2915,6 +2916,40 @@ def check_entity_render_is_projection():
 
 
 
+def _kind_label_covers_corpus_impl(store_path, claims_dir):
+    """RED if a distinct claim.kind in the sealed corpus has no entry in the
+    view-copy content store's kind_labels map. `store_path`, `claims_dir` are
+    params so the negative test can drive the same logic against a tampered store."""
+    import json as _j
+    try:
+        labels = _j.loads(store_path.read_text(encoding="utf-8")).get("kind_labels", {})
+    except Exception as e:
+        return False, f"view-copy store unreadable ({e})"
+    kinds = set()
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        d = _j.loads(shard.read_text(encoding="utf-8"))
+        arr = d.get("claims", d) if isinstance(d, dict) else d
+        for c in arr:
+            k = c.get("kind")
+            if k:
+                kinds.add(k)
+    missing = sorted(k for k in kinds if k not in labels)
+    if missing:
+        return False, (f"{len(missing)} sealed claim kind(s) have NO display label in view-copy.json "
+                       f"kind_labels (the entity page would render a raw/blank header): {missing}")
+    return True, f"all {len(kinds)} sealed claim kinds have a view-copy display label"
+
+
+def check_kind_label_covers_corpus():
+    """Phase H0 (§00.B codify-don't-promise / R4): every distinct claim.kind present in
+    the sealed corpus has a display label in the view-copy content store, so the entity
+    page can never render a raw/blank kind header. Truth anchor: the distinct kinds in the
+    sealed claim shards x view-copy.json kind_labels keys, recomputed each run."""
+    return _kind_label_covers_corpus_impl(
+        ROOT / "dashboard" / "assets" / "data" / "view-copy.json",
+        ROOT / "eden" / "corpus" / "claims")
+
+
 INVARIANTS = [
     Invariant(
         name="safe_write_canary",
@@ -3363,6 +3398,14 @@ INVARIANTS = [
         truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts + dashboard/assets/styles/*.css bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 2 gate row 3 (same mechanism as no_dead_legacy_paths) -- the demos inline prose+data+stubs for speed; this gate blocks copying a stub render path or demo mark into the app. Negative test: tools/test_no_stub_render_paths.py.",
+    ),
+    Invariant(
+        name="kind_label_covers_corpus",
+        description="Phase H0 / R4 -- every distinct claim.kind in the sealed corpus (14 today) has a display label in the view-copy content store's kind_labels; a missing label would render a raw/blank kind header on the entity page",
+        check_fn=check_kind_label_covers_corpus,
+        truth_anchor="distinct claim.kind values in the sealed claim shards x dashboard/assets/data/view-copy.json kind_labels keys, recomputed each run",
+        severity="critical",
+        lesson_ref="Phase H migration blueprint section 2 (content-store) -- the 'centralize the display-label maps' item, gated per codify-don't-promise: the kind map cannot be exhaustively typed (claim.kind is an open z.string()), so a truth-anchored invariant proves coverage instead. Negative test: tools/test_kind_label_covers_corpus.py.",
     ),
 ]
 

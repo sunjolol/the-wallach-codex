@@ -19,7 +19,6 @@
 
 import searchIndexJson from '../../../data/search/search-index.json';
 import {
-  FACET_LABEL,
   FACET_ORDER_BY_TYPE,
   SEARCH_FACETS,
   type SearchClaim,
@@ -28,6 +27,7 @@ import {
   type SearchIndex,
   SearchIndexSchema,
 } from '../core/schemas/index.js';
+import { facetLabel } from './copy.js';
 
 const EMPTY_INDEX: SearchIndex = { books: {}, entities: {}, claims: [] };
 
@@ -82,7 +82,7 @@ export function facetGroups(subject: string): FacetGroup[] {
   for (const facet of order) {
     const inFacet = claims.filter(c => c.facet === facet);
     if (inFacet.length > 0) {
-      out.push({ facet, label: FACET_LABEL[facet], claims: inFacet });
+      out.push({ facet, label: facetLabel(facet), claims: inFacet });
     }
   }
   return out;

@@ -1,0 +1,36 @@
+{
+  "_purpose": "Single hand-authored home for VIEW prose (Charter R4): the claim-kind + search-facet display-label maps, plus generic UI chrome copy for the entity-page redesign. ID-referenced, single-copy, never inline in views/. Authored like glossary.json / doctrine-data.json, NOT a pillar projection (view copy has no Wallach source, carries no dose/number). kind_labels covers every distinct claim.kind in the sealed corpus (gated by kind_label_covers_corpus). facet_labels is the single home for the search-facet headers (the former core FACET_LABEL literal moved here). ui holds generic chrome copy and GROWS as each view is migrated (H2-H4).",
+  "_note": "Values match the pre-redesign display exactly so H0 makes no visual change: kind_labels == the old corpusKindLabel slug->UPPER transform; facet_labels == the former core/schemas/search.ts FACET_LABEL byte-for-byte.",
+  "kind_labels": {
+    "protocol": "PROTOCOL",
+    "mechanism": "MECHANISM",
+    "definition": "DEFINITION",
+    "deficiency_sign": "DEFICIENCY SIGN",
+    "dose": "DOSE",
+    "prevalence": "PREVALENCE",
+    "toxicity_sign": "TOXICITY SIGN",
+    "prognosis": "PROGNOSIS",
+    "interaction": "INTERACTION",
+    "diagnostic_pattern": "DIAGNOSTIC PATTERN",
+    "quote": "QUOTE",
+    "personal_anecdote": "PERSONAL ANECDOTE",
+    "contraindication": "CONTRAINDICATION",
+    "food_source": "FOOD SOURCE"
+  },
+  "facet_labels": {
+    "basics": "BASICS",
+    "discovery": "DISCOVERY",
+    "etymology": "ETYMOLOGY",
+    "physiology": "IN THE BODY",
+    "mechanism": "HOW IT WORKS",
+    "sources": "SOURCES & EXPOSURE",
+    "uses": "USES",
+    "stance": "WALLACH’S STANCE",
+    "protocol": "WHAT TO DO",
+    "warning": "WARNINGS",
+    "history": "HISTORY & LORE",
+    "big_question": "BIG QUESTIONS",
+    "biography": "BIOGRAPHY"
+  },
+  "ui": {}
+}
