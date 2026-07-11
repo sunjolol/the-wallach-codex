@@ -9892,28 +9892,14 @@
         "magnesium",
         "boron",
         "copper",
-        "sulfur",
-        "selenium",
-        "chromium",
-        "vanadium",
-        "zinc",
-        "tin"
+        "sulfur"
       ],
       "other_substances": [],
       "conditions": [
-        "osteoporosis",
-        "arthritis",
-        "hypertension",
-        "bone_spurs",
-        "cancer",
-        "diabetes",
-        "aneurysm",
-        "cardiomyopathy",
-        "cataracts",
-        "deafness"
+        "osteoporosis"
       ],
       "symptoms": [],
-      "claim_text": "Wallach maps common degenerative diseases of humans to their causal nutrient deficiencies: osteoporosis and arthritis (ankylosing spondylitis) to calcium, magnesium, boron, copper, and sulfur; hypertension and bone spurs/heel spurs/calcium deposits to calcium, magnesium, and boron; cancer, cardiomyopathy, and cataracts to selenium; diabetes to chromium, vanadium, and zinc; aneurysms to copper; and deafness to tin.",
+      "claim_text": "Wallach attributes osteoporosis to deficiency of calcium, magnesium, boron, copper, and sulfur.",
       "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
       "locator": {
         "book": "rare-earths",
@@ -10936,6 +10922,322 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-01T13:36:25+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000303",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "boron",
+        "copper",
+        "sulfur"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arthritis"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes arthritis to deficiency of calcium, magnesium, boron, copper, and sulfur.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000304",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "boron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "hypertension"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes hypertension to deficiency of calcium, magnesium, and boron.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000305",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "calcium",
+        "magnesium",
+        "boron"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "bone_spurs"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes bone spurs, heel spurs, and calcium deposits to deficiency of calcium, magnesium, and boron.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000306",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes cancer to selenium deficiency.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000307",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "chromium",
+        "vanadium",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "diabetes"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes diabetes to deficiency of chromium, vanadium, and zinc.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000308",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "aneurysm"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes aneurysms to copper deficiency.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000309",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cardiomyopathy"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes cardiomyopathy to selenium deficiency.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000310",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cataracts"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes cataracts to selenium deficiency.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000311",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "tin"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "deafness"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes deafness to tin deficiency.",
+      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": "Chapter 7",
+        "page": 169,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 473324
+      },
+      "dose": null,
+      "tags": [
+        "disease-deficiency-map",
+        "table-7-8"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T21:22:07+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

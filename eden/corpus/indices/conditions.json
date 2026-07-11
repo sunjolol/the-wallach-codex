@@ -779,7 +779,7 @@
         "WAL-CLM-IMMORT-000099",
         "WAL-CLM-LETS-000008",
         "WAL-CLM-RARE-000122",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000308"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -792,16 +792,10 @@
       ]
     },
     "essentials_involved": [
-      "boron",
       "calcium",
-      "chromium",
       "copper",
       "lysine",
-      "magnesium",
       "selenium",
-      "sulfur",
-      "tin",
-      "vanadium",
       "zinc"
     ],
     "other_substances_involved": [],
@@ -1164,7 +1158,7 @@
         "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000230",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000303"
       ],
       "definitions": [
         "WAL-CLM-LETS-000001",
@@ -1211,7 +1205,6 @@
       "selenium",
       "strontium",
       "sulfur",
-      "tin",
       "vanadium",
       "vitamin-a",
       "vitamin-b3",
@@ -2108,7 +2101,7 @@
         "WAL-CLM-IMMORT-000064",
         "WAL-CLM-IMMORT-000072",
         "WAL-CLM-LETS-000004",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000305"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2120,17 +2113,11 @@
     "essentials_involved": [
       "boron",
       "calcium",
-      "chromium",
       "copper",
       "magnesium",
-      "selenium",
-      "sulfur",
-      "tin",
-      "vanadium",
       "vitamin-c",
       "vitamin-d",
-      "vitamin-e",
-      "zinc"
+      "vitamin-e"
     ],
     "other_substances_involved": [
       "colloidal-minerals",
@@ -2505,7 +2492,7 @@
         "WAL-CLM-RARE-000231",
         "WAL-CLM-RARE-000241",
         "WAL-CLM-RARE-000270",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000306"
       ],
       "definitions": [
         "WAL-CLM-IMMORT-000058",
@@ -2543,19 +2530,15 @@
     },
     "essentials_involved": [
       "arginine",
-      "boron",
       "calcium",
       "cesium",
-      "chromium",
       "copper",
       "flavonoids",
       "gallium",
       "germanium",
-      "magnesium",
       "omega-3",
       "oxygen",
       "selenium",
-      "sulfur",
       "taurine",
       "tin",
       "tyrosine",
@@ -2762,7 +2745,7 @@
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000269",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000309"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -2776,18 +2759,12 @@
       ]
     },
     "essentials_involved": [
-      "boron",
       "calcium",
-      "chromium",
       "copper",
       "iodine",
-      "magnesium",
       "omega-3",
       "phosphorus",
       "selenium",
-      "sulfur",
-      "tin",
-      "vanadium",
       "vitamin-e",
       "zinc"
     ],
@@ -2895,7 +2872,7 @@
         "WAL-CLM-LETS-000029",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000227",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000310"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -2906,18 +2883,13 @@
     },
     "essentials_involved": [
       "arginine",
-      "boron",
       "calcium",
       "chromium",
       "copper",
       "flavonoids",
       "inositol",
-      "magnesium",
       "selenium",
-      "sulfur",
       "taurine",
-      "tin",
-      "vanadium",
       "vitamin-b1",
       "vitamin-b2",
       "vitamin-b3",
@@ -4077,24 +4049,15 @@
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000176",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000311"
       ],
       "protocols": [
         "WAL-CLM-LETS-000294"
       ]
     },
     "essentials_involved": [
-      "boron",
-      "calcium",
-      "chromium",
-      "copper",
-      "magnesium",
       "manganese",
-      "selenium",
-      "sulfur",
-      "tin",
-      "vanadium",
-      "zinc"
+      "tin"
     ],
     "other_substances_involved": [
       "hydrogen-peroxide",
@@ -4497,7 +4460,7 @@
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000043",
         "WAL-CLM-RARE-000257",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000307"
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
@@ -4528,18 +4491,12 @@
     },
     "essentials_involved": [
       "biotin",
-      "boron",
-      "calcium",
       "chromium",
       "copper",
       "flavonoids",
       "inositol",
       "iron",
-      "magnesium",
       "omega-3",
-      "selenium",
-      "sulfur",
-      "tin",
       "vanadium",
       "vitamin-b12",
       "vitamin-b3",
@@ -6730,7 +6687,7 @@
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-LETS-000004",
-        "WAL-CLM-RARE-000275"
+        "WAL-CLM-RARE-000304"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -6750,16 +6707,12 @@
     "essentials_involved": [
       "boron",
       "calcium",
-      "chromium",
       "copper",
       "magnesium",
       "omega-3",
       "phosphorus",
       "selenium",
       "sodium",
-      "sulfur",
-      "tin",
-      "vanadium",
       "zinc"
     ],
     "other_substances_involved": [
@@ -9943,7 +9896,6 @@
     "essentials_involved": [
       "boron",
       "calcium",
-      "chromium",
       "copper",
       "germanium",
       "magnesium",
@@ -9951,8 +9903,6 @@
       "selenium",
       "strontium",
       "sulfur",
-      "tin",
-      "vanadium",
       "vitamin-a",
       "vitamin-d",
       "vitamin-k",

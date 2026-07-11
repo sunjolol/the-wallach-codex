@@ -360,7 +360,7 @@
       "symbol": "Mg",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 86,
+      "claim_count": 89,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -387,7 +387,10 @@
             "WAL-CLM-IMMORT-000205",
             "WAL-CLM-LETS-000016",
             "WAL-CLM-RARE-000172",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000275",
+            "WAL-CLM-RARE-000303",
+            "WAL-CLM-RARE-000304",
+            "WAL-CLM-RARE-000305"
           ]
         },
         {
@@ -538,6 +541,7 @@
         "growing_pains",
         "high_cholesterol",
         "hyperactivity",
+        "hypertension",
         "hypotension",
         "indigestion",
         "insomnia",
@@ -576,10 +580,10 @@
         "vitamin-b6",
         "omega-3",
         "selenium",
-        "chromium",
         "vitamin-e",
+        "chromium",
         "vitamin-c",
-        "zinc"
+        "boron"
       ]
     },
     "phosphorus": {
@@ -665,7 +669,7 @@
       "symbol": "S",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 8,
+      "claim_count": 9,
       "books": [
         "lets-play-doctor",
         "rare-earths"
@@ -683,7 +687,8 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-RARE-000223",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000275",
+            "WAL-CLM-RARE-000303"
           ]
         },
         {
@@ -714,18 +719,19 @@
         "brittle_nails",
         "collagen_disease",
         "lupus",
+        "osteoporosis",
         "sickle_cell_anemia"
       ],
       "works_with": [],
       "related": [
-        "arthritis",
         "calcium",
-        "zinc",
-        "anemia",
-        "aneurysm",
-        "bone_spurs",
+        "arthritis",
         "boron",
-        "brittle_nails"
+        "copper",
+        "magnesium",
+        "anemia",
+        "brittle_nails",
+        "collagen_disease"
       ]
     },
     "chloride": {
@@ -915,7 +921,7 @@
       "symbol": "Ca",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 102,
+      "claim_count": 105,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -946,7 +952,10 @@
             "WAL-CLM-IMMORT-000072",
             "WAL-CLM-IMMORT-000076",
             "WAL-CLM-LETS-000004",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000275",
+            "WAL-CLM-RARE-000303",
+            "WAL-CLM-RARE-000304",
+            "WAL-CLM-RARE-000305"
           ]
         },
         {
@@ -1214,13 +1223,13 @@
       ],
       "related": [
         "magnesium",
-        "chromium",
         "omega-3",
         "vitamin-b6",
+        "chromium",
         "osteoporosis",
         "selenium",
         "vitamin-e",
-        "zinc"
+        "arthritis"
       ]
     },
     "boron": {
@@ -1229,7 +1238,7 @@
       "symbol": "B",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 9,
+      "claim_count": 12,
       "books": [
         "epigenetics",
         "immortality",
@@ -1248,7 +1257,10 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000275",
+            "WAL-CLM-RARE-000303",
+            "WAL-CLM-RARE-000304",
+            "WAL-CLM-RARE-000305"
           ]
         },
         {
@@ -1277,18 +1289,20 @@
       "search": [],
       "conditions": [
         "arthritis",
+        "bone_spurs",
+        "hypertension",
         "osteoporosis"
       ],
       "works_with": [],
       "related": [
         "calcium",
         "magnesium",
-        "arthritis",
         "copper",
+        "arthritis",
         "lithium",
         "osteoporosis",
-        "selenium",
-        "aneurysm"
+        "sulfur",
+        "bone_spurs"
       ]
     },
     "cobalt": {
@@ -1414,7 +1428,7 @@
             "WAL-CLM-LETS-000006",
             "WAL-CLM-RARE-000039",
             "WAL-CLM-RARE-000042",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000307"
           ]
         },
         {
@@ -1594,12 +1608,12 @@
       "works_with": [],
       "related": [
         "vanadium",
-        "calcium",
         "diabetes",
+        "calcium",
         "magnesium",
         "omega-3",
-        "selenium",
         "vitamin-b6",
+        "selenium",
         "vitamin-b3"
       ]
     },
@@ -1609,7 +1623,7 @@
       "symbol": "Cu",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 57,
+      "claim_count": 59,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1642,7 +1656,9 @@
             "WAL-CLM-RARE-000122",
             "WAL-CLM-RARE-000141",
             "WAL-CLM-RARE-000275",
-            "WAL-CLM-RARE-000302"
+            "WAL-CLM-RARE-000302",
+            "WAL-CLM-RARE-000303",
+            "WAL-CLM-RARE-000308"
           ]
         },
         {
@@ -1792,6 +1808,7 @@
         "mad_cow_disease",
         "menkes_syndrome",
         "neutropenia",
+        "osteoporosis",
         "phlebitis",
         "psoriasis",
         "ptosis",
@@ -1813,12 +1830,12 @@
         "zinc"
       ],
       "related": [
-        "zinc",
         "arthritis",
+        "zinc",
         "aneurysm",
-        "selenium",
         "calcium",
         "magnesium",
+        "selenium",
         "anemia",
         "cerebral_palsy"
       ]
@@ -2400,7 +2417,7 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 100,
+      "claim_count": 102,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2428,7 +2445,9 @@
             "WAL-CLM-RARE-000227",
             "WAL-CLM-RARE-000269",
             "WAL-CLM-RARE-000270",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000306",
+            "WAL-CLM-RARE-000309",
+            "WAL-CLM-RARE-000310"
           ]
         },
         {
@@ -2763,7 +2782,7 @@
             "WAL-CLM-RARE-000039",
             "WAL-CLM-RARE-000042",
             "WAL-CLM-RARE-000257",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000307"
           ]
         },
         {
@@ -2854,8 +2873,8 @@
         "diabetes",
         "lithium",
         "calcium",
-        "magnesium",
         "hypoglycemia",
+        "magnesium",
         "zinc",
         "copper"
       ]
@@ -2896,7 +2915,7 @@
             "WAL-CLM-RARE-000262",
             "WAL-CLM-RARE-000263",
             "WAL-CLM-RARE-000264",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000307"
           ]
         },
         {
@@ -4213,7 +4232,7 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000031",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000311"
           ]
         },
         {
@@ -4241,14 +4260,14 @@
       ],
       "works_with": [],
       "related": [
+        "deafness",
+        "omega-3",
         "zinc",
+        "alopecia",
         "calcium",
         "cancer",
-        "deafness",
         "magnesium",
-        "omega-3",
-        "alopecia",
-        "aneurysm"
+        "male_pattern_baldness"
       ]
     },
     "tantalum": {
@@ -8441,7 +8460,7 @@
             "WAL-CLM-IMMORT-000099",
             "WAL-CLM-LETS-000008",
             "WAL-CLM-RARE-000122",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000308"
           ]
         },
         {
@@ -8484,21 +8503,21 @@
         "arthritis",
         "varicose_veins",
         "anemia",
-        "cardiomyopathy",
         "hemorrhoids",
         "kawasaki_disease",
         "liver_cirrhosis",
-        "cancer"
+        "cardiomyopathy",
+        "hernia"
       ],
       "related": [
         "copper",
         "arthritis",
         "varicose_veins",
         "anemia",
-        "cardiomyopathy",
         "hemorrhoids",
         "kawasaki_disease",
-        "liver_cirrhosis"
+        "liver_cirrhosis",
+        "cardiomyopathy"
       ]
     },
     "angina": {
@@ -9122,7 +9141,7 @@
             "WAL-CLM-RARE-000122",
             "WAL-CLM-RARE-000223",
             "WAL-CLM-RARE-000230",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000303"
           ]
         },
         {
@@ -9191,10 +9210,10 @@
         "cancer",
         "anemia",
         "aneurysm",
-        "hypertension",
         "liver_disease",
-        "bone_spurs",
-        "osteoarthritis"
+        "hypertension",
+        "osteoarthritis",
+        "osteomalacia"
       ],
       "related": [
         "osteoporosis",
@@ -9203,8 +9222,8 @@
         "cancer",
         "anemia",
         "aneurysm",
-        "hypertension",
-        "liver_disease"
+        "liver_disease",
+        "hypertension"
       ]
     },
     "asthma": {
@@ -10713,6 +10732,7 @@
         "WAL-CLM-LETS-000168"
       ],
       "restore": [
+        "boron",
         "calcium",
         "magnesium",
         "vitamin-c",
@@ -10727,7 +10747,7 @@
             "WAL-CLM-IMMORT-000064",
             "WAL-CLM-IMMORT-000072",
             "WAL-CLM-LETS-000004",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000305"
           ]
         },
         {
@@ -10755,10 +10775,10 @@
         "osteoporosis",
         "tetany",
         "calcium_deposits",
-        "hypertension",
         "kidney_stones",
         "muscle_cramps",
-        "bells_palsy"
+        "bells_palsy",
+        "heel_spurs"
       ],
       "related": [
         "calcium",
@@ -10766,9 +10786,9 @@
         "osteoporosis",
         "tetany",
         "calcium_deposits",
-        "hypertension",
         "kidney_stones",
-        "muscle_cramps"
+        "muscle_cramps",
+        "bells_palsy"
       ]
     },
     "brain_cancer": {
@@ -11429,7 +11449,7 @@
             "WAL-CLM-RARE-000231",
             "WAL-CLM-RARE-000241",
             "WAL-CLM-RARE-000270",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000306"
           ]
         },
         {
@@ -11531,10 +11551,10 @@
       "related_conditions": [
         "arthritis",
         "osteoporosis",
-        "cardiomyopathy",
         "infertility",
         "liver_disease",
         "breast_cancer",
+        "cardiomyopathy",
         "colon_cancer",
         "dementia"
       ],
@@ -11543,10 +11563,10 @@
         "arthritis",
         "osteoporosis",
         "vitamin-a",
-        "cardiomyopathy",
         "germanium",
         "infertility",
-        "liver_disease"
+        "liver_disease",
+        "breast_cancer"
       ]
     },
     "candidiasis": {
@@ -11818,7 +11838,7 @@
             "WAL-CLM-EPIGEN-000033",
             "WAL-CLM-RARE-000227",
             "WAL-CLM-RARE-000269",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000309"
           ]
         },
         {
@@ -11853,23 +11873,23 @@
       "search": [],
       "related_conditions": [
         "cancer",
-        "aneurysm",
-        "cataracts",
-        "diabetes",
         "liver_cirrhosis",
         "liver_disease",
         "muscular_dystrophy",
-        "alzheimers"
+        "alzheimers",
+        "anemia",
+        "aneurysm",
+        "cataracts"
       ],
       "related": [
         "selenium",
         "cancer",
-        "aneurysm",
-        "cataracts",
-        "diabetes",
         "liver_cirrhosis",
         "liver_disease",
-        "muscular_dystrophy"
+        "muscular_dystrophy",
+        "alzheimers",
+        "anemia",
+        "aneurysm"
       ]
     },
     "cardiovascular_disease": {
@@ -12053,7 +12073,7 @@
             "WAL-CLM-LETS-000029",
             "WAL-CLM-LETS-000030",
             "WAL-CLM-RARE-000227",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000310"
           ]
         },
         {
@@ -12081,10 +12101,10 @@
         "cardiomyopathy",
         "aneurysm",
         "arthritis",
-        "diabetes",
-        "hypertension",
         "liver_cirrhosis",
-        "liver_disease"
+        "liver_disease",
+        "alopecia",
+        "als"
       ],
       "related": [
         "selenium",
@@ -12092,9 +12112,9 @@
         "cardiomyopathy",
         "aneurysm",
         "arthritis",
-        "zinc",
-        "calcium",
-        "chromium"
+        "liver_cirrhosis",
+        "liver_disease",
+        "vitamin-b2"
       ]
     },
     "catarrh": {
@@ -14267,7 +14287,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000099",
             "WAL-CLM-RARE-000176",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000311"
           ]
         },
         {
@@ -14942,7 +14962,7 @@
             "WAL-CLM-LETS-000006",
             "WAL-CLM-LETS-000043",
             "WAL-CLM-RARE-000257",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000307"
           ]
         },
         {
@@ -15051,10 +15071,10 @@
         "high_cholesterol",
         "depression",
         "hyperinsulinemia",
-        "arthritis",
-        "cancer",
-        "cardiomyopathy",
-        "coronary_artery_disease"
+        "coronary_artery_disease",
+        "high_triglycerides",
+        "infertility",
+        "learning_disabilities"
       ],
       "related": [
         "chromium",
@@ -15064,7 +15084,7 @@
         "depression",
         "hyperinsulinemia",
         "zinc",
-        "arthritis"
+        "coronary_artery_disease"
       ]
     },
     "diaper_rash": {
@@ -18967,7 +18987,9 @@
         "WAL-CLM-LETS-000306"
       ],
       "restore": [
+        "boron",
         "calcium",
+        "magnesium",
         "omega-3"
       ],
       "record": [
@@ -18977,7 +18999,7 @@
             "WAL-CLM-EPIGEN-000061",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-LETS-000004",
-            "WAL-CLM-RARE-000275"
+            "WAL-CLM-RARE-000304"
           ]
         },
         {
@@ -19018,22 +19040,22 @@
       "related_conditions": [
         "osteoporosis",
         "arthritis",
-        "bone_spurs",
-        "cancer",
         "insomnia",
         "kidney_stones",
         "osteomalacia",
-        "aneurysm"
+        "anorexia",
+        "bone_spurs",
+        "cancer"
       ],
       "related": [
         "calcium",
         "osteoporosis",
         "arthritis",
-        "bone_spurs",
-        "cancer",
         "insomnia",
         "kidney_stones",
-        "osteomalacia"
+        "osteomalacia",
+        "anorexia",
+        "bone_spurs"
       ]
     },
     "hyperthyroidism": {
@@ -24635,9 +24657,11 @@
       "restore": [
         "boron",
         "calcium",
+        "copper",
         "germanium",
         "magnesium",
         "strontium",
+        "sulfur",
         "vitamin-a",
         "vitamin-d",
         "vitamin-k"
