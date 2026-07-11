@@ -115,7 +115,7 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000004",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -188,7 +188,7 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000006",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -336,7 +336,7 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000010",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "manganese"
       ],
@@ -2013,7 +2013,7 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000051",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "lysine"
       ],

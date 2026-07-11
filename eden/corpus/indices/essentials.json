@@ -160,6 +160,8 @@
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000102",
         "WAL-CLM-LETS-000032",
+        "WAL-CLM-RARE-000003",
+        "WAL-CLM-RARE-000027",
         "WAL-CLM-RARE-000189"
       ],
       "definition": [
@@ -173,8 +175,6 @@
         "WAL-CLM-LETS-000066"
       ],
       "mechanism": [
-        "WAL-CLM-RARE-000003",
-        "WAL-CLM-RARE-000027",
         "WAL-CLM-RARE-000153",
         "WAL-CLM-RARE-000186",
         "WAL-CLM-RARE-000188"
@@ -318,7 +318,10 @@
     "claim_count": 89,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-DDDL-000053",
         "WAL-CLM-DDDL-000074",
+        "WAL-CLM-DDDL-000082",
+        "WAL-CLM-DDDL-000087",
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000204",
         "WAL-CLM-IMMORT-000205",
@@ -347,9 +350,6 @@
         "WAL-CLM-IMMORT-000206"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000053",
-        "WAL-CLM-DDDL-000082",
-        "WAL-CLM-DDDL-000087",
         "WAL-CLM-IMMORT-000207",
         "WAL-CLM-IMMORT-000209",
         "WAL-CLM-RARE-000098",
@@ -643,6 +643,7 @@
     "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-IMMORT-000213",
         "WAL-CLM-LETS-000023",
         "WAL-CLM-RARE-000208"
       ],
@@ -660,7 +661,6 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000052",
-        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-RARE-000209"
       ],
       "toxicity_sign": [
@@ -723,22 +723,15 @@
       "anorexia",
       "anxiety",
       "arthritis",
-      "cardiomyopathy",
-      "enzootic_ataxia",
-      "goiter",
       "hyperparathyroidism",
       "hypertension",
       "hypophosphatemia",
-      "keshan_disease",
       "malabsorption",
       "osteoporosis",
       "pica"
     ],
     "interacts_with": [
-      "calcium",
-      "copper",
-      "iodine",
-      "selenium"
+      "calcium"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -1028,13 +1021,16 @@
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
+        "WAL-CLM-DDDL-000087",
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-EPIGEN-000109",
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-IMMORT-000064",
+        "WAL-CLM-IMMORT-000071",
         "WAL-CLM-IMMORT-000072",
         "WAL-CLM-IMMORT-000076",
         "WAL-CLM-LETS-000004",
+        "WAL-CLM-RARE-000107",
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303",
         "WAL-CLM-RARE-000304",
@@ -1063,15 +1059,12 @@
       "mechanism": [
         "WAL-CLM-DDDL-000033",
         "WAL-CLM-DDDL-000052",
-        "WAL-CLM-DDDL-000087",
         "WAL-CLM-IMMORT-000021",
         "WAL-CLM-IMMORT-000068",
-        "WAL-CLM-IMMORT-000071",
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099",
         "WAL-CLM-RARE-000104",
         "WAL-CLM-RARE-000106",
-        "WAL-CLM-RARE-000107",
         "WAL-CLM-RARE-000108",
         "WAL-CLM-RARE-000153",
         "WAL-CLM-RARE-000170"
@@ -1428,7 +1421,8 @@
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000077",
         "WAL-CLM-IMMORT-000082",
-        "WAL-CLM-IMMORT-000083"
+        "WAL-CLM-IMMORT-000083",
+        "WAL-CLM-RARE-000115"
       ],
       "definition": [
         "WAL-CLM-IMMORT-000079"
@@ -1441,8 +1435,7 @@
         "WAL-CLM-DDDL-000044",
         "WAL-CLM-IMMORT-000080",
         "WAL-CLM-IMMORT-000081",
-        "WAL-CLM-RARE-000114",
-        "WAL-CLM-RARE-000115"
+        "WAL-CLM-RARE-000114"
       ]
     },
     "deficiency_signs": [],
@@ -1476,9 +1469,11 @@
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-IMMORT-000088",
+        "WAL-CLM-IMMORT-000089",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000118",
         "WAL-CLM-RARE-000307"
       ],
       "definition": [
@@ -1494,11 +1489,9 @@
         "WAL-CLM-LETS-000049"
       ],
       "mechanism": [
-        "WAL-CLM-IMMORT-000089",
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000117",
-        "WAL-CLM-RARE-000118",
         "WAL-CLM-RARE-000124",
         "WAL-CLM-RARE-000127",
         "WAL-CLM-RARE-000128"
@@ -1720,13 +1713,26 @@
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000003",
+        "WAL-CLM-DDDL-000004",
+        "WAL-CLM-DDDL-000025",
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000101",
+        "WAL-CLM-IMMORT-000102",
+        "WAL-CLM-IMMORT-000103",
+        "WAL-CLM-IMMORT-000107",
+        "WAL-CLM-IMMORT-000108",
         "WAL-CLM-IMMORT-000109",
+        "WAL-CLM-IMMORT-000180",
+        "WAL-CLM-IMMORT-000214",
         "WAL-CLM-LETS-000008",
+        "WAL-CLM-RARE-000051",
+        "WAL-CLM-RARE-000120",
         "WAL-CLM-RARE-000122",
+        "WAL-CLM-RARE-000123",
         "WAL-CLM-RARE-000141",
+        "WAL-CLM-RARE-000149",
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000302",
         "WAL-CLM-RARE-000303",
@@ -1747,28 +1753,15 @@
         "WAL-CLM-LETS-000050"
       ],
       "interaction": [
-        "WAL-CLM-DDDL-000025",
         "WAL-CLM-DDDL-000040",
         "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000004",
-        "WAL-CLM-IMMORT-000001",
         "WAL-CLM-IMMORT-000100",
-        "WAL-CLM-IMMORT-000101",
-        "WAL-CLM-IMMORT-000102",
-        "WAL-CLM-IMMORT-000103",
-        "WAL-CLM-IMMORT-000107",
-        "WAL-CLM-IMMORT-000108",
-        "WAL-CLM-IMMORT-000180",
-        "WAL-CLM-RARE-000051",
         "WAL-CLM-RARE-000119",
-        "WAL-CLM-RARE-000120",
         "WAL-CLM-RARE-000121",
-        "WAL-CLM-RARE-000123",
         "WAL-CLM-RARE-000128",
-        "WAL-CLM-RARE-000142",
-        "WAL-CLM-RARE-000149"
+        "WAL-CLM-RARE-000142"
       ],
       "personal_anecdote": [
         "WAL-CLM-IMMORT-000104"
@@ -1878,7 +1871,6 @@
       "hypothyroidism",
       "joint_pain",
       "kawasaki_disease",
-      "keshan_disease",
       "learning_disabilities",
       "leukopenia",
       "liver_cirrhosis",
@@ -1888,7 +1880,6 @@
       "neutropenia",
       "osteoporosis",
       "phlebitis",
-      "pica",
       "psoriasis",
       "ptosis",
       "reactive_hypoglycemia",
@@ -1916,7 +1907,6 @@
       "molybdenum",
       "omega-3",
       "phenylalanine",
-      "phosphorus",
       "selenium",
       "sodium",
       "sulfur",
@@ -2048,7 +2038,8 @@
         "WAL-CLM-EPIGEN-000083",
         "WAL-CLM-IMMORT-000129",
         "WAL-CLM-IMMORT-000131",
-        "WAL-CLM-LETS-000014"
+        "WAL-CLM-LETS-000014",
+        "WAL-CLM-RARE-000037"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
@@ -2064,7 +2055,6 @@
       ],
       "mechanism": [
         "WAL-CLM-IMMORT-000126",
-        "WAL-CLM-RARE-000037",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000130",
         "WAL-CLM-RARE-000131",
@@ -2219,9 +2209,14 @@
     "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-DDDL-000025",
         "WAL-CLM-EPIGEN-000093",
+        "WAL-CLM-IMMORT-000001",
+        "WAL-CLM-IMMORT-000177",
+        "WAL-CLM-IMMORT-000180",
         "WAL-CLM-IMMORT-000182",
         "WAL-CLM-LETS-000013",
+        "WAL-CLM-RARE-000149",
         "WAL-CLM-RARE-000150"
       ],
       "definition": [
@@ -2237,20 +2232,15 @@
         "WAL-CLM-LETS-000054"
       ],
       "interaction": [
-        "WAL-CLM-DDDL-000025",
         "WAL-CLM-IMMORT-000184"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000023",
-        "WAL-CLM-IMMORT-000001",
-        "WAL-CLM-IMMORT-000177",
         "WAL-CLM-IMMORT-000179",
-        "WAL-CLM-IMMORT-000180",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000145",
         "WAL-CLM-RARE-000147",
-        "WAL-CLM-RARE-000148",
-        "WAL-CLM-RARE-000149"
+        "WAL-CLM-RARE-000148"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
@@ -2379,17 +2369,13 @@
       }
     ],
     "conditions_treated": [
-      "cardiomyopathy",
       "cretinism",
-      "enzootic_ataxia",
       "fibrocystic_breast_disease",
       "goiter",
       "graves_disease",
       "hashimotos_disease",
       "hyperthyroidism",
       "hypothyroidism",
-      "keshan_disease",
-      "pica",
       "thyroid_disease",
       "wilsons_syndrome"
     ],
@@ -2398,7 +2384,6 @@
       "copper",
       "iron",
       "omega-3",
-      "phosphorus",
       "selenium",
       "tyrosine",
       "vitamin-a",
@@ -2423,6 +2408,8 @@
       ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000026",
+        "WAL-CLM-DDDL-000053",
+        "WAL-CLM-EPIGEN-000010",
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-LETS-000017",
         "WAL-CLM-RARE-000176"
@@ -2436,8 +2423,6 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000027",
-        "WAL-CLM-DDDL-000053",
-        "WAL-CLM-EPIGEN-000010",
         "WAL-CLM-RARE-000178"
       ],
       "prevalence": [
@@ -2593,12 +2578,21 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 102,
+    "claim_count": 103,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000006",
+        "WAL-CLM-DDDL-000030",
+        "WAL-CLM-DDDL-000071",
+        "WAL-CLM-EPIGEN-000004",
+        "WAL-CLM-EPIGEN-000006",
+        "WAL-CLM-IMMORT-000011",
+        "WAL-CLM-IMMORT-000211",
+        "WAL-CLM-IMMORT-000212",
         "WAL-CLM-LETS-000030",
+        "WAL-CLM-RARE-000004",
+        "WAL-CLM-RARE-000050",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000269",
         "WAL-CLM-RARE-000270",
@@ -2618,16 +2612,8 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000029",
-        "WAL-CLM-DDDL-000030",
-        "WAL-CLM-DDDL-000071",
-        "WAL-CLM-EPIGEN-000004",
-        "WAL-CLM-EPIGEN-000006",
-        "WAL-CLM-IMMORT-000001",
-        "WAL-CLM-IMMORT-000011",
         "WAL-CLM-LETS-000197",
-        "WAL-CLM-RARE-000004",
         "WAL-CLM-RARE-000010",
-        "WAL-CLM-RARE-000050",
         "WAL-CLM-RARE-000094",
         "WAL-CLM-RARE-000225",
         "WAL-CLM-RARE-000226"
@@ -2770,12 +2756,10 @@
       "dementia",
       "dysmenorrhea",
       "dyspepsia",
-      "enzootic_ataxia",
       "fibrocystic_breast_disease",
       "food_allergy",
       "freckles",
       "gallstones",
-      "goiter",
       "growing_pains",
       "heart_attack",
       "heavy_metal_toxicity",
@@ -2814,7 +2798,6 @@
       "osteoporosis",
       "pancreatitis",
       "parkinsons_disease",
-      "pica",
       "plumbism",
       "prostate_cancer",
       "psoriasis",
@@ -2853,7 +2836,6 @@
       "methionine",
       "omega-3",
       "oxygen",
-      "phosphorus",
       "potassium",
       "taurine",
       "vanadium",
@@ -3093,12 +3075,15 @@
         "WAL-CLM-DDDL-000042",
         "WAL-CLM-DDDL-000077",
         "WAL-CLM-DDDL-000079",
+        "WAL-CLM-DDDL-000084",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-LETS-000210",
         "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000044",
         "WAL-CLM-RARE-000262",
         "WAL-CLM-RARE-000263",
         "WAL-CLM-RARE-000264",
+        "WAL-CLM-RARE-000268",
         "WAL-CLM-RARE-000307"
       ],
       "diagnostic_pattern": [
@@ -3116,16 +3101,13 @@
       "mechanism": [
         "WAL-CLM-DDDL-000037",
         "WAL-CLM-DDDL-000038",
-        "WAL-CLM-DDDL-000084",
         "WAL-CLM-RARE-000010",
-        "WAL-CLM-RARE-000044",
         "WAL-CLM-RARE-000046",
         "WAL-CLM-RARE-000094",
         "WAL-CLM-RARE-000192",
         "WAL-CLM-RARE-000265",
         "WAL-CLM-RARE-000266",
-        "WAL-CLM-RARE-000267",
-        "WAL-CLM-RARE-000268"
+        "WAL-CLM-RARE-000267"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -3441,7 +3423,8 @@
     "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
-        "WAL-CLM-EPIGEN-000064"
+        "WAL-CLM-EPIGEN-000064",
+        "WAL-CLM-IMMORT-000027"
       ],
       "definition": [
         "WAL-CLM-RARE-000092"
@@ -3452,7 +3435,6 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000014",
-        "WAL-CLM-IMMORT-000027",
         "WAL-CLM-IMMORT-000028",
         "WAL-CLM-IMMORT-000029",
         "WAL-CLM-RARE-000091"
@@ -3480,9 +3462,11 @@
     "category": "mineral",
     "claim_count": 3,
     "claims_by_kind": {
+      "deficiency_sign": [
+        "WAL-CLM-IMMORT-000032"
+      ],
       "mechanism": [
         "WAL-CLM-EPIGEN-000065",
-        "WAL-CLM-IMMORT-000032",
         "WAL-CLM-RARE-000093"
       ]
     },
@@ -3876,7 +3860,9 @@
         "WAL-CLM-IMMORT-000200",
         "WAL-CLM-IMMORT-000201",
         "WAL-CLM-IMMORT-000202",
+        "WAL-CLM-RARE-000041",
         "WAL-CLM-RARE-000042",
+        "WAL-CLM-RARE-000161",
         "WAL-CLM-RARE-000163"
       ],
       "definition": [
@@ -3894,10 +3880,8 @@
         "WAL-CLM-RARE-000167"
       ],
       "mechanism": [
-        "WAL-CLM-RARE-000041",
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000128",
-        "WAL-CLM-RARE-000161",
         "WAL-CLM-RARE-000164"
       ],
       "prevalence": [
@@ -5354,6 +5338,7 @@
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000108",
+        "WAL-CLM-IMMORT-000008",
         "WAL-CLM-LETS-000027",
         "WAL-CLM-LETS-000210",
         "WAL-CLM-RARE-000237"
@@ -5361,9 +5346,6 @@
       "dose": [
         "WAL-CLM-EPIGEN-000116",
         "WAL-CLM-LETS-000063"
-      ],
-      "mechanism": [
-        "WAL-CLM-IMMORT-000008"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000055",
@@ -5787,6 +5769,7 @@
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
         "WAL-CLM-LETS-000035",
+        "WAL-CLM-RARE-000115",
         "WAL-CLM-RARE-000238"
       ],
       "dose": [
@@ -5802,8 +5785,7 @@
       "mechanism": [
         "WAL-CLM-DDDL-000044",
         "WAL-CLM-DDDL-000045",
-        "WAL-CLM-RARE-000114",
-        "WAL-CLM-RARE-000115"
+        "WAL-CLM-RARE-000114"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -7354,7 +7336,7 @@
     "category": "amino_acid",
     "claim_count": 4,
     "claims_by_kind": {
-      "mechanism": [
+      "deficiency_sign": [
         "WAL-CLM-EPIGEN-000051"
       ],
       "protocol": [
@@ -7679,7 +7661,8 @@
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
         "WAL-CLM-EPIGEN-000059",
-        "WAL-CLM-LETS-000011"
+        "WAL-CLM-LETS-000011",
+        "WAL-CLM-RARE-000111"
       ],
       "definition": [
         "WAL-CLM-DDDL-000063",
@@ -7688,8 +7671,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000064",
-        "WAL-CLM-RARE-000110",
-        "WAL-CLM-RARE-000111"
+        "WAL-CLM-RARE-000110"
       ],
       "protocol": [
         "WAL-CLM-EPIGEN-000016",
@@ -7960,7 +7942,8 @@
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
         "WAL-CLM-EPIGEN-000059",
-        "WAL-CLM-LETS-000011"
+        "WAL-CLM-LETS-000011",
+        "WAL-CLM-RARE-000111"
       ],
       "definition": [
         "WAL-CLM-DDDL-000063",
@@ -7969,8 +7952,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000064",
-        "WAL-CLM-RARE-000110",
-        "WAL-CLM-RARE-000111"
+        "WAL-CLM-RARE-000110"
       ]
     },
     "deficiency_signs": [

@@ -5,23 +5,16 @@
   "claims": [
     {
       "id": "WAL-CLM-IMMORT-000001",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
-        "iodine",
-        "selenium",
-        "phosphorus",
-        "copper"
+        "iodine"
       ],
       "other_substances": [],
       "conditions": [
-        "goiter",
-        "cardiomyopathy",
-        "keshan_disease",
-        "pica",
-        "enzootic_ataxia"
+        "goiter"
       ],
       "symptoms": [],
-      "claim_text": "Wallach documents that specific mineral deficiencies produced specific deficiency diseases in distinct geographic regions — each disease appeared wherever the local soil lacked that mineral. His examples: iodine deficiency caused goiter (a swollen thyroid) in communities far from the sea; selenium deficiency caused Keshan disease, a cardiomyopathy (disease of the heart muscle), in Keshan Province, China; phosphate deficiency caused pica (a compulsive craving to eat non-food substances) in South Africa; and copper deficiency caused enzootic ataxia (a copper-deficiency disorder of movement and coordination) in Australia. In his words: \"Iodine deficiency (goiter) occurred in communities living at a distance from the sea; Keshan disease (cardiomyopathy) caused by a selenium deficiency occurred in Keshan Province, China; phosphate deficiency (pica) was common in South Africa; copper deficiency (enzootic ataxia) was common in Australia, etc.\"",
+      "claim_text": "Wallach attributes goiter to iodine deficiency, occurring in communities living at a distance from the sea.",
       "verbatim": "Iodine deficiency (goiter) occurred in\ncommunities living at a distance from the sea; Keshan disease\n(cardiomyopathy) caused by a selenium deficiency occurred\nin Keshan Province, China; phosphate deficiency (pica) was\ncommon in South Africa; copper deficiency (enzootic ataxia)\nwas common in Australia, etc.",
       "locator": {
         "book": "immortality",
@@ -240,7 +233,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000008",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "vitamin-b6"
       ],
@@ -341,7 +334,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000011",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -886,7 +879,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000027",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "silver"
       ],
@@ -1055,7 +1048,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000032",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "aluminum"
       ],
@@ -2410,7 +2403,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000071",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "calcium"
       ],
@@ -3097,7 +3090,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000089",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "chromium"
       ],
@@ -3540,7 +3533,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000101",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -3575,7 +3568,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000102",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -3611,7 +3604,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000103",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -3750,7 +3743,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000107",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -3792,7 +3785,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000108",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -6220,7 +6213,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000177",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "iodine"
       ],
@@ -6327,7 +6320,7 @@
     },
     {
       "id": "WAL-CLM-IMMORT-000180",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "iodine",
         "copper"
@@ -7467,6 +7460,142 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-09T22:13:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000211",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "keshan_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes Keshan disease to a selenium deficiency, observed in Keshan Province, China.",
+      "verbatim": "Iodine deficiency (goiter) occurred in\ncommunities living at a distance from the sea; Keshan disease\n(cardiomyopathy) caused by a selenium deficiency occurred\nin Keshan Province, China; phosphate deficiency (pica) was\ncommon in South Africa; copper deficiency (enzootic ataxia)\nwas common in Australia, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 144701
+      },
+      "dose": null,
+      "tags": [
+        "deficiency",
+        "regional_disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T22:10:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000212",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cardiomyopathy"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes cardiomyopathy (Keshan disease) to a selenium deficiency.",
+      "verbatim": "Iodine deficiency (goiter) occurred in\ncommunities living at a distance from the sea; Keshan disease\n(cardiomyopathy) caused by a selenium deficiency occurred\nin Keshan Province, China; phosphate deficiency (pica) was\ncommon in South Africa; copper deficiency (enzootic ataxia)\nwas common in Australia, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 144701
+      },
+      "dose": null,
+      "tags": [
+        "deficiency",
+        "regional_disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T22:10:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000213",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "phosphorus"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "pica"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes pica to a phosphate (phosphorus) deficiency, common in South Africa.",
+      "verbatim": "Iodine deficiency (goiter) occurred in\ncommunities living at a distance from the sea; Keshan disease\n(cardiomyopathy) caused by a selenium deficiency occurred\nin Keshan Province, China; phosphate deficiency (pica) was\ncommon in South Africa; copper deficiency (enzootic ataxia)\nwas common in Australia, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 144701
+      },
+      "dose": null,
+      "tags": [
+        "deficiency",
+        "regional_disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T22:10:16+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000214",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "enzootic_ataxia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach attributes enzootic ataxia to a copper deficiency, common in Australia.",
+      "verbatim": "Iodine deficiency (goiter) occurred in\ncommunities living at a distance from the sea; Keshan disease\n(cardiomyopathy) caused by a selenium deficiency occurred\nin Keshan Province, China; phosphate deficiency (pica) was\ncommon in South Africa; copper deficiency (enzootic ataxia)\nwas common in Australia, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 144701
+      },
+      "dose": null,
+      "tags": [
+        "deficiency",
+        "regional_disease"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-11T22:10:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

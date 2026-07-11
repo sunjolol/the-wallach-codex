@@ -96,7 +96,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000004",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -805,7 +805,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000025",
-      "kind": "interaction",
+      "kind": "deficiency_sign",
       "essentials": [
         "iodine",
         "copper"
@@ -959,7 +959,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000030",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -1702,7 +1702,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000053",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "manganese",
         "magnesium"
@@ -2294,7 +2294,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000071",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -2674,7 +2674,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000082",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "magnesium"
       ],
@@ -2738,7 +2738,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000084",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "zinc"
       ],
@@ -2839,7 +2839,7 @@
     },
     {
       "id": "WAL-CLM-DDDL-000087",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "calcium",
         "magnesium"

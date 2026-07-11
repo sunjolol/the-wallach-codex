@@ -293,6 +293,8 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000102",
             "WAL-CLM-LETS-000032",
+            "WAL-CLM-RARE-000003",
+            "WAL-CLM-RARE-000027",
             "WAL-CLM-RARE-000189"
           ]
         },
@@ -311,8 +313,6 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-RARE-000003",
-            "WAL-CLM-RARE-000027",
             "WAL-CLM-RARE-000153",
             "WAL-CLM-RARE-000186",
             "WAL-CLM-RARE-000188"
@@ -339,6 +339,7 @@
         "anorexia",
         "depression",
         "dermatitis",
+        "heat_stroke",
         "hypotension",
         "water_intoxication"
       ],
@@ -381,7 +382,10 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000053",
             "WAL-CLM-DDDL-000074",
+            "WAL-CLM-DDDL-000082",
+            "WAL-CLM-DDDL-000087",
             "WAL-CLM-EPIGEN-000098",
             "WAL-CLM-IMMORT-000204",
             "WAL-CLM-IMMORT-000205",
@@ -467,9 +471,6 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000053",
-            "WAL-CLM-DDDL-000082",
-            "WAL-CLM-DDDL-000087",
             "WAL-CLM-IMMORT-000207",
             "WAL-CLM-IMMORT-000209",
             "WAL-CLM-RARE-000098",
@@ -611,6 +612,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000213",
             "WAL-CLM-LETS-000023",
             "WAL-CLM-RARE-000208"
           ]
@@ -625,7 +627,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000052",
-            "WAL-CLM-IMMORT-000001",
             "WAL-CLM-RARE-000209"
           ]
         },
@@ -659,8 +660,8 @@
         "anorexia",
         "anxiety",
         "calcium",
-        "cardiomyopathy",
-        "copper"
+        "hyperparathyroidism",
+        "hypertension"
       ]
     },
     "sulfur": {
@@ -945,13 +946,16 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000074",
+            "WAL-CLM-DDDL-000087",
             "WAL-CLM-EPIGEN-000061",
             "WAL-CLM-EPIGEN-000109",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-IMMORT-000064",
+            "WAL-CLM-IMMORT-000071",
             "WAL-CLM-IMMORT-000072",
             "WAL-CLM-IMMORT-000076",
             "WAL-CLM-LETS-000004",
+            "WAL-CLM-RARE-000107",
             "WAL-CLM-RARE-000275",
             "WAL-CLM-RARE-000303",
             "WAL-CLM-RARE-000304",
@@ -1036,15 +1040,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000033",
             "WAL-CLM-DDDL-000052",
-            "WAL-CLM-DDDL-000087",
             "WAL-CLM-IMMORT-000021",
             "WAL-CLM-IMMORT-000068",
-            "WAL-CLM-IMMORT-000071",
             "WAL-CLM-RARE-000098",
             "WAL-CLM-RARE-000099",
             "WAL-CLM-RARE-000104",
             "WAL-CLM-RARE-000106",
-            "WAL-CLM-RARE-000107",
             "WAL-CLM-RARE-000108",
             "WAL-CLM-RARE-000153",
             "WAL-CLM-RARE-000170"
@@ -1339,7 +1340,8 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000077",
             "WAL-CLM-IMMORT-000082",
-            "WAL-CLM-IMMORT-000083"
+            "WAL-CLM-IMMORT-000083",
+            "WAL-CLM-RARE-000115"
           ]
         },
         {
@@ -1348,8 +1350,7 @@
             "WAL-CLM-DDDL-000044",
             "WAL-CLM-IMMORT-000080",
             "WAL-CLM-IMMORT-000081",
-            "WAL-CLM-RARE-000114",
-            "WAL-CLM-RARE-000115"
+            "WAL-CLM-RARE-000114"
           ]
         },
         {
@@ -1425,9 +1426,11 @@
             "WAL-CLM-DDDL-000017",
             "WAL-CLM-EPIGEN-000062",
             "WAL-CLM-IMMORT-000088",
+            "WAL-CLM-IMMORT-000089",
             "WAL-CLM-LETS-000006",
             "WAL-CLM-RARE-000039",
             "WAL-CLM-RARE-000042",
+            "WAL-CLM-RARE-000118",
             "WAL-CLM-RARE-000307"
           ]
         },
@@ -1482,11 +1485,9 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000089",
             "WAL-CLM-RARE-000043",
             "WAL-CLM-RARE-000074",
             "WAL-CLM-RARE-000117",
-            "WAL-CLM-RARE-000118",
             "WAL-CLM-RARE-000124",
             "WAL-CLM-RARE-000127",
             "WAL-CLM-RARE-000128"
@@ -1572,6 +1573,7 @@
         "epilepsy",
         "failure_to_thrive",
         "food_allergy",
+        "gestational_diabetes",
         "headache",
         "high_cholesterol",
         "high_triglycerides",
@@ -1648,13 +1650,26 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000003",
+            "WAL-CLM-DDDL-000004",
+            "WAL-CLM-DDDL-000025",
             "WAL-CLM-EPIGEN-000063",
             "WAL-CLM-EPIGEN-000107",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000101",
+            "WAL-CLM-IMMORT-000102",
+            "WAL-CLM-IMMORT-000103",
+            "WAL-CLM-IMMORT-000107",
+            "WAL-CLM-IMMORT-000108",
             "WAL-CLM-IMMORT-000109",
+            "WAL-CLM-IMMORT-000180",
+            "WAL-CLM-IMMORT-000214",
             "WAL-CLM-LETS-000008",
+            "WAL-CLM-RARE-000051",
+            "WAL-CLM-RARE-000120",
             "WAL-CLM-RARE-000122",
+            "WAL-CLM-RARE-000123",
             "WAL-CLM-RARE-000141",
+            "WAL-CLM-RARE-000149",
             "WAL-CLM-RARE-000275",
             "WAL-CLM-RARE-000302",
             "WAL-CLM-RARE-000303",
@@ -1691,23 +1706,11 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000004",
-            "WAL-CLM-IMMORT-000001",
             "WAL-CLM-IMMORT-000100",
-            "WAL-CLM-IMMORT-000101",
-            "WAL-CLM-IMMORT-000102",
-            "WAL-CLM-IMMORT-000103",
-            "WAL-CLM-IMMORT-000107",
-            "WAL-CLM-IMMORT-000108",
-            "WAL-CLM-IMMORT-000180",
-            "WAL-CLM-RARE-000051",
             "WAL-CLM-RARE-000119",
-            "WAL-CLM-RARE-000120",
             "WAL-CLM-RARE-000121",
-            "WAL-CLM-RARE-000123",
             "WAL-CLM-RARE-000128",
-            "WAL-CLM-RARE-000142",
-            "WAL-CLM-RARE-000149"
+            "WAL-CLM-RARE-000142"
           ]
         },
         {
@@ -1735,7 +1738,6 @@
         {
           "kind": "interaction",
           "claim_ids": [
-            "WAL-CLM-DDDL-000025",
             "WAL-CLM-DDDL-000040",
             "WAL-CLM-RARE-000086"
           ]
@@ -1776,6 +1778,7 @@
         "autism",
         "birth_defects",
         "blind_rage",
+        "bone_spurs",
         "brittle_hair",
         "cerebellar_hypoplasia",
         "cerebral_palsy",
@@ -1791,6 +1794,7 @@
         "enzootic_ataxia",
         "explosive_outbursts",
         "glucose_intolerance",
+        "goiter",
         "gray_hair",
         "hemochromatosis",
         "hemorrhoids",
@@ -1824,7 +1828,6 @@
       ],
       "works_with": [
         "calcium",
-        "iodine",
         "iron",
         "selenium",
         "zinc"
@@ -1835,8 +1838,8 @@
         "aneurysm",
         "calcium",
         "magnesium",
-        "selenium",
         "anemia",
+        "selenium",
         "cerebral_palsy"
       ]
     },
@@ -1996,7 +1999,8 @@
             "WAL-CLM-EPIGEN-000083",
             "WAL-CLM-IMMORT-000129",
             "WAL-CLM-IMMORT-000131",
-            "WAL-CLM-LETS-000014"
+            "WAL-CLM-LETS-000014",
+            "WAL-CLM-RARE-000037"
           ]
         },
         {
@@ -2023,7 +2027,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-IMMORT-000126",
-            "WAL-CLM-RARE-000037",
             "WAL-CLM-RARE-000074",
             "WAL-CLM-RARE-000130",
             "WAL-CLM-RARE-000131",
@@ -2136,9 +2139,14 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000025",
             "WAL-CLM-EPIGEN-000093",
+            "WAL-CLM-IMMORT-000001",
+            "WAL-CLM-IMMORT-000177",
+            "WAL-CLM-IMMORT-000180",
             "WAL-CLM-IMMORT-000182",
             "WAL-CLM-LETS-000013",
+            "WAL-CLM-RARE-000149",
             "WAL-CLM-RARE-000150"
           ]
         },
@@ -2154,15 +2162,11 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000023",
-            "WAL-CLM-IMMORT-000001",
-            "WAL-CLM-IMMORT-000177",
             "WAL-CLM-IMMORT-000179",
-            "WAL-CLM-IMMORT-000180",
             "WAL-CLM-RARE-000074",
             "WAL-CLM-RARE-000145",
             "WAL-CLM-RARE-000147",
-            "WAL-CLM-RARE-000148",
-            "WAL-CLM-RARE-000149"
+            "WAL-CLM-RARE-000148"
           ]
         },
         {
@@ -2182,7 +2186,6 @@
         {
           "kind": "interaction",
           "claim_ids": [
-            "WAL-CLM-DDDL-000025",
             "WAL-CLM-IMMORT-000184"
           ]
         },
@@ -2234,9 +2237,7 @@
         "hypothyroidism",
         "wilsons_syndrome"
       ],
-      "works_with": [
-        "copper"
-      ],
+      "works_with": [],
       "related": [
         "goiter",
         "hypothyroidism",
@@ -2244,8 +2245,8 @@
         "hashimotos_disease",
         "graves_disease",
         "hyperthyroidism",
-        "selenium",
-        "cardiomyopathy"
+        "chromium",
+        "cretinism"
       ]
     },
     "manganese": {
@@ -2275,6 +2276,8 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000026",
+            "WAL-CLM-DDDL-000053",
+            "WAL-CLM-EPIGEN-000010",
             "WAL-CLM-EPIGEN-000099",
             "WAL-CLM-LETS-000017",
             "WAL-CLM-RARE-000176"
@@ -2300,8 +2303,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000027",
-            "WAL-CLM-DDDL-000053",
-            "WAL-CLM-EPIGEN-000010",
             "WAL-CLM-RARE-000178"
           ]
         },
@@ -2417,7 +2418,7 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 102,
+      "claim_count": 103,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2441,7 +2442,16 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000005",
             "WAL-CLM-DDDL-000006",
+            "WAL-CLM-DDDL-000030",
+            "WAL-CLM-DDDL-000071",
+            "WAL-CLM-EPIGEN-000004",
+            "WAL-CLM-EPIGEN-000006",
+            "WAL-CLM-IMMORT-000011",
+            "WAL-CLM-IMMORT-000211",
+            "WAL-CLM-IMMORT-000212",
             "WAL-CLM-LETS-000030",
+            "WAL-CLM-RARE-000004",
+            "WAL-CLM-RARE-000050",
             "WAL-CLM-RARE-000227",
             "WAL-CLM-RARE-000269",
             "WAL-CLM-RARE-000270",
@@ -2534,16 +2544,8 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000029",
-            "WAL-CLM-DDDL-000030",
-            "WAL-CLM-DDDL-000071",
-            "WAL-CLM-EPIGEN-000004",
-            "WAL-CLM-EPIGEN-000006",
-            "WAL-CLM-IMMORT-000001",
-            "WAL-CLM-IMMORT-000011",
             "WAL-CLM-LETS-000197",
-            "WAL-CLM-RARE-000004",
             "WAL-CLM-RARE-000010",
-            "WAL-CLM-RARE-000050",
             "WAL-CLM-RARE-000094",
             "WAL-CLM-RARE-000225",
             "WAL-CLM-RARE-000226"
@@ -2638,6 +2640,7 @@
         "pancreatitis",
         "parkinsons_disease",
         "plumbism",
+        "prostate_cancer",
         "psoriasis",
         "reyes_syndrome",
         "rheumatoid_arthritis",
@@ -2645,6 +2648,7 @@
         "sickle_cell_anemia",
         "sids",
         "stroke",
+        "sudden_cardiac_death",
         "tachycardia",
         "thrush",
         "tonsillitis",
@@ -2909,12 +2913,15 @@
             "WAL-CLM-DDDL-000042",
             "WAL-CLM-DDDL-000077",
             "WAL-CLM-DDDL-000079",
+            "WAL-CLM-DDDL-000084",
             "WAL-CLM-LETS-000044",
             "WAL-CLM-LETS-000210",
             "WAL-CLM-RARE-000042",
+            "WAL-CLM-RARE-000044",
             "WAL-CLM-RARE-000262",
             "WAL-CLM-RARE-000263",
             "WAL-CLM-RARE-000264",
+            "WAL-CLM-RARE-000268",
             "WAL-CLM-RARE-000307"
           ]
         },
@@ -3009,16 +3016,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000037",
             "WAL-CLM-DDDL-000038",
-            "WAL-CLM-DDDL-000084",
             "WAL-CLM-RARE-000010",
-            "WAL-CLM-RARE-000044",
             "WAL-CLM-RARE-000046",
             "WAL-CLM-RARE-000094",
             "WAL-CLM-RARE-000192",
             "WAL-CLM-RARE-000265",
             "WAL-CLM-RARE-000266",
-            "WAL-CLM-RARE-000267",
-            "WAL-CLM-RARE-000268"
+            "WAL-CLM-RARE-000267"
           ]
         },
         {
@@ -3189,7 +3193,8 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000064"
+            "WAL-CLM-EPIGEN-000064",
+            "WAL-CLM-IMMORT-000027"
           ]
         },
         {
@@ -3202,7 +3207,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000014",
-            "WAL-CLM-IMMORT-000027",
             "WAL-CLM-IMMORT-000028",
             "WAL-CLM-IMMORT-000029",
             "WAL-CLM-RARE-000091"
@@ -3223,7 +3227,9 @@
           ]
         }
       ],
-      "conditions": [],
+      "conditions": [
+        "immune_depression"
+      ],
       "works_with": [],
       "related": [
         "immune_depression",
@@ -3249,10 +3255,15 @@
       "one_liner": null,
       "record": [
         {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000032"
+          ]
+        },
+        {
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000065",
-            "WAL-CLM-IMMORT-000032",
             "WAL-CLM-RARE-000093"
           ]
         }
@@ -3271,7 +3282,10 @@
           ]
         }
       ],
-      "conditions": [],
+      "conditions": [
+        "birth_defects",
+        "cirrhosis"
+      ],
       "works_with": [],
       "related": [
         "birth_defects",
@@ -3870,7 +3884,9 @@
             "WAL-CLM-IMMORT-000200",
             "WAL-CLM-IMMORT-000201",
             "WAL-CLM-IMMORT-000202",
+            "WAL-CLM-RARE-000041",
             "WAL-CLM-RARE-000042",
+            "WAL-CLM-RARE-000161",
             "WAL-CLM-RARE-000163"
           ]
         },
@@ -3888,10 +3904,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-RARE-000041",
             "WAL-CLM-RARE-000043",
             "WAL-CLM-RARE-000128",
-            "WAL-CLM-RARE-000161",
             "WAL-CLM-RARE-000164"
           ]
         },
@@ -5020,6 +5034,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000039",
             "WAL-CLM-EPIGEN-000108",
+            "WAL-CLM-IMMORT-000008",
             "WAL-CLM-LETS-000027",
             "WAL-CLM-LETS-000210",
             "WAL-CLM-RARE-000237"
@@ -5075,12 +5090,6 @@
             "WAL-CLM-LETS-000445",
             "WAL-CLM-LETS-000458",
             "WAL-CLM-RARE-000286"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000008"
           ]
         }
       ],
@@ -5291,6 +5300,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000040",
             "WAL-CLM-LETS-000035",
+            "WAL-CLM-RARE-000115",
             "WAL-CLM-RARE-000238"
           ]
         },
@@ -5325,8 +5335,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000044",
             "WAL-CLM-DDDL-000045",
-            "WAL-CLM-RARE-000114",
-            "WAL-CLM-RARE-000115"
+            "WAL-CLM-RARE-000114"
           ]
         },
         {
@@ -6488,27 +6497,30 @@
       "one_liner": null,
       "record": [
         {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000051"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000202",
             "WAL-CLM-LETS-000299",
             "WAL-CLM-LETS-000332"
           ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000051"
-          ]
         }
       ],
       "search": [],
       "conditions": [
+        "aneurysm",
         "canker_sores",
         "cold_sores",
+        "hemorrhoids",
         "herpes_simplex",
         "kidney_disease",
-        "kidney_stones"
+        "kidney_stones",
+        "varicose_veins"
       ],
       "works_with": [],
       "related": [
@@ -6846,7 +6858,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000065",
             "WAL-CLM-EPIGEN-000059",
-            "WAL-CLM-LETS-000011"
+            "WAL-CLM-LETS-000011",
+            "WAL-CLM-RARE-000111"
           ]
         },
         {
@@ -6933,8 +6946,7 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000064",
-            "WAL-CLM-RARE-000110",
-            "WAL-CLM-RARE-000111"
+            "WAL-CLM-RARE-000110"
           ]
         },
         {
@@ -7074,15 +7086,15 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000065",
             "WAL-CLM-EPIGEN-000059",
-            "WAL-CLM-LETS-000011"
+            "WAL-CLM-LETS-000011",
+            "WAL-CLM-RARE-000111"
           ]
         },
         {
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000064",
-            "WAL-CLM-RARE-000110",
-            "WAL-CLM-RARE-000111"
+            "WAL-CLM-RARE-000110"
           ]
         },
         {
@@ -8325,6 +8337,7 @@
             "WAL-CLM-LETS-000014",
             "WAL-CLM-LETS-000027",
             "WAL-CLM-LETS-000035",
+            "WAL-CLM-RARE-000115",
             "WAL-CLM-RARE-000122",
             "WAL-CLM-RARE-000193",
             "WAL-CLM-RARE-000223",
@@ -8342,12 +8355,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000137"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-RARE-000115"
           ]
         },
         {
@@ -8450,15 +8457,20 @@
         "WAL-CLM-LETS-000138"
       ],
       "restore": [
-        "copper"
+        "copper",
+        "lysine"
       ],
       "record": [
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000004",
+            "WAL-CLM-EPIGEN-000051",
             "WAL-CLM-EPIGEN-000063",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000107",
             "WAL-CLM-LETS-000008",
+            "WAL-CLM-RARE-000120",
             "WAL-CLM-RARE-000122",
             "WAL-CLM-RARE-000308"
           ]
@@ -8472,11 +8484,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000004",
-            "WAL-CLM-EPIGEN-000051",
-            "WAL-CLM-IMMORT-000019",
-            "WAL-CLM-IMMORT-000107",
-            "WAL-CLM-RARE-000120"
+            "WAL-CLM-IMMORT-000019"
           ]
         },
         {
@@ -8713,7 +8721,8 @@
             "WAL-CLM-LETS-000044",
             "WAL-CLM-RARE-000172",
             "WAL-CLM-RARE-000235",
-            "WAL-CLM-RARE-000264"
+            "WAL-CLM-RARE-000264",
+            "WAL-CLM-RARE-000268"
           ]
         },
         {
@@ -8729,12 +8738,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000140"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-RARE-000268"
           ]
         }
       ],
@@ -9019,6 +9022,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000082",
             "WAL-CLM-IMMORT-000205"
           ]
         },
@@ -9034,12 +9038,6 @@
           "claim_ids": [
             "WAL-CLM-LETS-000145",
             "WAL-CLM-RARE-000202"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000082"
           ]
         },
         {
@@ -9133,6 +9131,7 @@
             "WAL-CLM-EPIGEN-000086",
             "WAL-CLM-IMMORT-000076",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000108",
             "WAL-CLM-IMMORT-000139",
             "WAL-CLM-LETS-000004",
             "WAL-CLM-LETS-000008",
@@ -9167,8 +9166,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000050",
             "WAL-CLM-DDDL-000052",
-            "WAL-CLM-IMMORT-000019",
-            "WAL-CLM-IMMORT-000108"
+            "WAL-CLM-IMMORT-000019"
           ]
         },
         {
@@ -9255,6 +9253,7 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000026",
+            "WAL-CLM-DDDL-000053",
             "WAL-CLM-EPIGEN-000059",
             "WAL-CLM-EPIGEN-000098",
             "WAL-CLM-EPIGEN-000099",
@@ -9268,12 +9267,6 @@
           "claim_ids": [
             "WAL-CLM-LETS-000147",
             "WAL-CLM-RARE-000202"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000053"
           ]
         },
         {
@@ -9972,6 +9965,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000084",
             "WAL-CLM-RARE-000264"
           ]
         },
@@ -9980,12 +9974,6 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000085",
             "WAL-CLM-LETS-000157"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000084"
           ]
         }
       ],
@@ -10091,6 +10079,7 @@
             "WAL-CLM-EPIGEN-000096",
             "WAL-CLM-IMMORT-000088",
             "WAL-CLM-IMMORT-000200",
+            "WAL-CLM-RARE-000161",
             "WAL-CLM-RARE-000163"
           ]
         },
@@ -10103,8 +10092,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000018",
-            "WAL-CLM-RARE-000161"
+            "WAL-CLM-IMMORT-000018"
           ]
         },
         {
@@ -10163,6 +10151,7 @@
         "WAL-CLM-RARE-000045"
       ],
       "restore": [
+        "aluminum",
         "copper",
         "magnesium",
         "vitamin-a",
@@ -10180,12 +10169,15 @@
             "WAL-CLM-EPIGEN-000031",
             "WAL-CLM-EPIGEN-000041",
             "WAL-CLM-EPIGEN-000107",
+            "WAL-CLM-IMMORT-000032",
             "WAL-CLM-LETS-000010",
             "WAL-CLM-LETS-000016",
             "WAL-CLM-LETS-000035",
             "WAL-CLM-LETS-000036",
             "WAL-CLM-LETS-000044",
             "WAL-CLM-LETS-000210",
+            "WAL-CLM-RARE-000044",
+            "WAL-CLM-RARE-000123",
             "WAL-CLM-RARE-000229",
             "WAL-CLM-RARE-000239",
             "WAL-CLM-RARE-000262",
@@ -10205,13 +10197,10 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000002",
-            "WAL-CLM-IMMORT-000032",
             "WAL-CLM-IMMORT-000080",
             "WAL-CLM-RARE-000015",
             "WAL-CLM-RARE-000016",
-            "WAL-CLM-RARE-000044",
-            "WAL-CLM-RARE-000047",
-            "WAL-CLM-RARE-000123"
+            "WAL-CLM-RARE-000047"
           ]
         },
         {
@@ -10262,15 +10251,15 @@
       ],
       "record": [
         {
-          "kind": "protocol",
+          "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-LETS-000161"
+            "WAL-CLM-DDDL-000087"
           ]
         },
         {
-          "kind": "mechanism",
+          "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-DDDL-000087"
+            "WAL-CLM-LETS-000161"
           ]
         }
       ],
@@ -10734,6 +10723,7 @@
       "restore": [
         "boron",
         "calcium",
+        "copper",
         "magnesium",
         "vitamin-c",
         "vitamin-d",
@@ -10746,6 +10736,7 @@
             "WAL-CLM-EPIGEN-000032",
             "WAL-CLM-IMMORT-000064",
             "WAL-CLM-IMMORT-000072",
+            "WAL-CLM-IMMORT-000108",
             "WAL-CLM-LETS-000004",
             "WAL-CLM-RARE-000305"
           ]
@@ -10754,12 +10745,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000168"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000108"
           ]
         },
         {
@@ -11436,6 +11421,7 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000012",
+            "WAL-CLM-DDDL-000030",
             "WAL-CLM-EPIGEN-000031",
             "WAL-CLM-EPIGEN-000033",
             "WAL-CLM-EPIGEN-000043",
@@ -11476,7 +11462,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000010",
-            "WAL-CLM-DDDL-000030",
             "WAL-CLM-DDDL-000036",
             "WAL-CLM-LETS-000180",
             "WAL-CLM-LETS-000181",
@@ -11835,7 +11820,9 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000005",
+            "WAL-CLM-EPIGEN-000006",
             "WAL-CLM-EPIGEN-000033",
+            "WAL-CLM-IMMORT-000212",
             "WAL-CLM-RARE-000227",
             "WAL-CLM-RARE-000269",
             "WAL-CLM-RARE-000309"
@@ -11851,8 +11838,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000010",
-            "WAL-CLM-EPIGEN-000006",
-            "WAL-CLM-IMMORT-000001",
             "WAL-CLM-IMMORT-000019"
           ]
         },
@@ -12226,12 +12211,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000099"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
+            "WAL-CLM-IMMORT-000099",
             "WAL-CLM-IMMORT-000107"
           ]
         }
@@ -12282,7 +12262,10 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000107",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000103",
+            "WAL-CLM-IMMORT-000107",
             "WAL-CLM-LETS-000210",
+            "WAL-CLM-RARE-000123",
             "WAL-CLM-RARE-000302"
           ]
         },
@@ -12296,10 +12279,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000002",
-            "WAL-CLM-IMMORT-000103",
-            "WAL-CLM-IMMORT-000107",
-            "WAL-CLM-RARE-000123"
+            "WAL-CLM-EPIGEN-000002"
           ]
         }
       ],
@@ -12842,18 +12822,20 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
-      "restore": [],
+      "restore": [
+        "aluminum"
+      ],
       "record": [
+        {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000032"
+          ]
+        },
         {
           "kind": "toxicity_sign",
           "claim_ids": [
             "WAL-CLM-IMMORT-000133"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000032"
           ]
         }
       ],
@@ -13950,14 +13932,14 @@
             "WAL-CLM-IMMORT-000200",
             "WAL-CLM-IMMORT-000202",
             "WAL-CLM-LETS-000008",
+            "WAL-CLM-RARE-000041",
             "WAL-CLM-RARE-000302"
           ]
         },
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000018",
-            "WAL-CLM-RARE-000041"
+            "WAL-CLM-IMMORT-000018"
           ]
         },
         {
@@ -14120,9 +14102,11 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000005",
+            "WAL-CLM-EPIGEN-000004",
             "WAL-CLM-EPIGEN-000033",
             "WAL-CLM-LETS-000011",
             "WAL-CLM-LETS-000030",
+            "WAL-CLM-RARE-000004",
             "WAL-CLM-RARE-000269"
           ]
         },
@@ -14130,13 +14114,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000240"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000004",
-            "WAL-CLM-RARE-000004"
           ]
         },
         {
@@ -14285,6 +14262,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000010",
             "WAL-CLM-EPIGEN-000099",
             "WAL-CLM-RARE-000176",
             "WAL-CLM-RARE-000311"
@@ -14299,7 +14277,6 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000010",
             "WAL-CLM-IAIYH-000012"
           ]
         }
@@ -14688,6 +14665,7 @@
             "WAL-CLM-LETS-000035",
             "WAL-CLM-LETS-000038",
             "WAL-CLM-LETS-000044",
+            "WAL-CLM-RARE-000161",
             "WAL-CLM-RARE-000163",
             "WAL-CLM-RARE-000172",
             "WAL-CLM-RARE-000233",
@@ -14714,8 +14692,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000018",
-            "WAL-CLM-RARE-000161"
+            "WAL-CLM-IMMORT-000018"
           ]
         },
         {
@@ -14816,6 +14793,7 @@
             "WAL-CLM-LETS-000032",
             "WAL-CLM-LETS-000041",
             "WAL-CLM-LETS-000044",
+            "WAL-CLM-RARE-000111",
             "WAL-CLM-RARE-000193",
             "WAL-CLM-RARE-000229",
             "WAL-CLM-RARE-000234",
@@ -14838,12 +14816,6 @@
             "WAL-CLM-LETS-000245",
             "WAL-CLM-LETS-000430",
             "WAL-CLM-LETS-000433"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-RARE-000111"
           ]
         }
       ],
@@ -14958,9 +14930,11 @@
             "WAL-CLM-EPIGEN-000045",
             "WAL-CLM-EPIGEN-000062",
             "WAL-CLM-IMMORT-000088",
+            "WAL-CLM-IMMORT-000089",
             "WAL-CLM-LETS-000003",
             "WAL-CLM-LETS-000006",
             "WAL-CLM-LETS-000043",
+            "WAL-CLM-RARE-000118",
             "WAL-CLM-RARE-000257",
             "WAL-CLM-RARE-000307"
           ]
@@ -14988,8 +14962,6 @@
             "WAL-CLM-DDDL-000010",
             "WAL-CLM-DDDL-000034",
             "WAL-CLM-IMMORT-000019",
-            "WAL-CLM-IMMORT-000089",
-            "WAL-CLM-RARE-000118",
             "WAL-CLM-RARE-000254"
           ]
         },
@@ -15391,6 +15363,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-RARE-000044",
             "WAL-CLM-RARE-000262"
           ]
         },
@@ -15405,8 +15378,7 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000002",
-            "WAL-CLM-RARE-000016",
-            "WAL-CLM-RARE-000044"
+            "WAL-CLM-RARE-000016"
           ]
         }
       ],
@@ -15925,6 +15897,7 @@
             "WAL-CLM-LETS-000019",
             "WAL-CLM-LETS-000021",
             "WAL-CLM-LETS-000044",
+            "WAL-CLM-RARE-000111",
             "WAL-CLM-RARE-000240"
           ]
         },
@@ -15934,12 +15907,6 @@
             "WAL-CLM-LETS-000148",
             "WAL-CLM-LETS-000245",
             "WAL-CLM-LETS-000262"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-RARE-000111"
           ]
         },
         {
@@ -16172,14 +16139,9 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000099"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000001",
-            "WAL-CLM-IMMORT-000101"
+            "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000101",
+            "WAL-CLM-IMMORT-000214"
           ]
         }
       ],
@@ -16192,7 +16154,7 @@
         "autism",
         "blind_rage",
         "brittle_hair",
-        "cardiomyopathy"
+        "cerebellar_hypoplasia"
       ],
       "related": [
         "copper",
@@ -17138,10 +17100,12 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
-      "restore": [],
+      "restore": [
+        "chromium"
+      ],
       "record": [
         {
-          "kind": "mechanism",
+          "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-IMMORT-000089"
           ]
@@ -17329,15 +17293,21 @@
         "WAL-CLM-LETS-000287"
       ],
       "restore": [
+        "copper",
         "iodine"
       ],
       "record": [
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000025",
             "WAL-CLM-EPIGEN-000093",
+            "WAL-CLM-IMMORT-000001",
+            "WAL-CLM-IMMORT-000177",
+            "WAL-CLM-IMMORT-000180",
             "WAL-CLM-IMMORT-000182",
             "WAL-CLM-LETS-000013",
+            "WAL-CLM-RARE-000149",
             "WAL-CLM-RARE-000150"
           ]
         },
@@ -17350,14 +17320,10 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000001",
             "WAL-CLM-IMMORT-000019",
-            "WAL-CLM-IMMORT-000177",
             "WAL-CLM-IMMORT-000179",
-            "WAL-CLM-IMMORT-000180",
             "WAL-CLM-RARE-000147",
-            "WAL-CLM-RARE-000148",
-            "WAL-CLM-RARE-000149"
+            "WAL-CLM-RARE-000148"
           ]
         },
         {
@@ -17371,12 +17337,6 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000183",
             "WAL-CLM-RARE-000151"
-          ]
-        },
-        {
-          "kind": "interaction",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000025"
           ]
         },
         {
@@ -17397,11 +17357,11 @@
         "hypothyroidism",
         "hashimotos_disease",
         "cancer",
-        "cardiomyopathy",
         "graves_disease",
         "hyperthyroidism",
         "macular_degeneration",
-        "aneurysm"
+        "aneurysm",
+        "arthritis"
       ],
       "related": [
         "iodine",
@@ -17410,8 +17370,8 @@
         "hashimotos_disease",
         "arginine",
         "cancer",
-        "cardiomyopathy",
-        "graves_disease"
+        "graves_disease",
+        "hyperthyroidism"
       ]
     },
     "gout": {
@@ -17747,6 +17707,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000030",
             "WAL-CLM-LETS-000030"
           ]
         },
@@ -17755,12 +17716,6 @@
           "claim_ids": [
             "WAL-CLM-LETS-000295",
             "WAL-CLM-LETS-000317"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000030"
           ]
         },
         {
@@ -17908,10 +17863,12 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
-      "restore": [],
+      "restore": [
+        "sodium"
+      ],
       "record": [
         {
-          "kind": "mechanism",
+          "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-RARE-000003",
             "WAL-CLM-RARE-000027"
@@ -18074,28 +18031,24 @@
       ],
       "restore": [
         "copper",
-        "flavonoids"
+        "flavonoids",
+        "lysine"
       ],
       "record": [
         {
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000046",
+            "WAL-CLM-EPIGEN-000051",
             "WAL-CLM-EPIGEN-000063",
-            "WAL-CLM-IMMORT-000099"
+            "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000107"
           ]
         },
         {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000297"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000051",
-            "WAL-CLM-IMMORT-000107"
           ]
         }
       ],
@@ -18998,7 +18951,9 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000061",
             "WAL-CLM-IMMORT-000063",
+            "WAL-CLM-IMMORT-000071",
             "WAL-CLM-LETS-000004",
+            "WAL-CLM-RARE-000107",
             "WAL-CLM-RARE-000304"
           ]
         },
@@ -19013,13 +18968,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000306"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000071",
-            "WAL-CLM-RARE-000107"
           ]
         },
         {
@@ -19446,6 +19394,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000093",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000177",
             "WAL-CLM-IMMORT-000182",
             "WAL-CLM-LETS-000013",
             "WAL-CLM-RARE-000150"
@@ -19460,8 +19409,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000023",
-            "WAL-CLM-IMMORT-000177"
+            "WAL-CLM-DDDL-000023"
           ]
         },
         {
@@ -19591,6 +19539,7 @@
         "flavonoids",
         "germanium",
         "selenium",
+        "silver",
         "vitamin-a",
         "vitamin-b5",
         "vitamin-c",
@@ -19605,6 +19554,7 @@
             "WAL-CLM-EPIGEN-000033",
             "WAL-CLM-EPIGEN-000038",
             "WAL-CLM-EPIGEN-000046",
+            "WAL-CLM-IMMORT-000027",
             "WAL-CLM-IMMORT-000139"
           ]
         },
@@ -19612,12 +19562,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000311"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000027"
           ]
         },
         {
@@ -20466,6 +20410,8 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000063",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000107",
+            "WAL-CLM-RARE-000051",
             "WAL-CLM-RARE-000122"
           ]
         },
@@ -20473,13 +20419,6 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000007"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000107",
-            "WAL-CLM-RARE-000051"
           ]
         },
         {
@@ -20691,6 +20630,9 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000071",
+            "WAL-CLM-EPIGEN-000006",
+            "WAL-CLM-IMMORT-000211",
             "WAL-CLM-LETS-000030",
             "WAL-CLM-RARE-000269"
           ]
@@ -20700,14 +20642,6 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000073",
             "WAL-CLM-LETS-000373"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000071",
-            "WAL-CLM-EPIGEN-000006",
-            "WAL-CLM-IMMORT-000001"
           ]
         }
       ],
@@ -20892,6 +20826,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-DDDL-000087",
             "WAL-CLM-EPIGEN-000032",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-IMMORT-000072"
@@ -20903,12 +20838,6 @@
             "WAL-CLM-DDDL-000088",
             "WAL-CLM-LETS-000161",
             "WAL-CLM-LETS-000332"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000087"
           ]
         },
         {
@@ -22168,12 +22097,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000099"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
+            "WAL-CLM-IMMORT-000099",
             "WAL-CLM-IMMORT-000102"
           ]
         }
@@ -23109,15 +23033,15 @@
       ],
       "record": [
         {
-          "kind": "protocol",
+          "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-LETS-000369"
+            "WAL-CLM-IMMORT-000008"
           ]
         },
         {
-          "kind": "mechanism",
+          "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000008"
+            "WAL-CLM-LETS-000369"
           ]
         }
       ],
@@ -23398,9 +23322,11 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000005",
+            "WAL-CLM-DDDL-000071",
             "WAL-CLM-EPIGEN-000033",
             "WAL-CLM-LETS-000030",
             "WAL-CLM-LETS-000041",
+            "WAL-CLM-RARE-000050",
             "WAL-CLM-RARE-000231",
             "WAL-CLM-RARE-000269"
           ]
@@ -23411,13 +23337,6 @@
             "WAL-CLM-DDDL-000073",
             "WAL-CLM-EPIGEN-000005",
             "WAL-CLM-LETS-000373"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000071",
-            "WAL-CLM-RARE-000050"
           ]
         },
         {
@@ -25761,13 +25680,8 @@
             "WAL-CLM-EPIGEN-000077",
             "WAL-CLM-IMMORT-000082",
             "WAL-CLM-IMMORT-000083",
+            "WAL-CLM-RARE-000115",
             "WAL-CLM-RARE-000238"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-RARE-000115"
           ]
         }
       ],
@@ -25905,9 +25819,11 @@
             "WAL-CLM-EPIGEN-000083",
             "WAL-CLM-IMMORT-000016",
             "WAL-CLM-IMMORT-000129",
+            "WAL-CLM-IMMORT-000213",
             "WAL-CLM-LETS-000004",
             "WAL-CLM-LETS-000014",
-            "WAL-CLM-LETS-000023"
+            "WAL-CLM-LETS-000023",
+            "WAL-CLM-RARE-000037"
           ]
         },
         {
@@ -25919,9 +25835,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000001",
             "WAL-CLM-RARE-000035",
-            "WAL-CLM-RARE-000037",
             "WAL-CLM-RARE-000040",
             "WAL-CLM-RARE-000211"
           ]
@@ -26362,12 +26276,19 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
-      "restore": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
+        {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000011"
+          ]
+        },
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000011",
             "WAL-CLM-LETS-000184",
             "WAL-CLM-LETS-000185"
           ]
@@ -28232,12 +28153,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000099"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
+            "WAL-CLM-IMMORT-000099",
             "WAL-CLM-IMMORT-000107"
           ]
         }
@@ -28732,10 +28648,12 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [],
-      "restore": [],
+      "restore": [
+        "selenium"
+      ],
       "record": [
         {
-          "kind": "mechanism",
+          "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000006"
           ]
@@ -30055,6 +29973,7 @@
       "restore": [
         "copper",
         "flavonoids",
+        "lysine",
         "omega-3",
         "vitamin-c",
         "vitamin-e",
@@ -30064,8 +29983,10 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000051",
             "WAL-CLM-EPIGEN-000063",
             "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000107",
             "WAL-CLM-RARE-000122"
           ]
         },
@@ -30074,13 +29995,6 @@
           "claim_ids": [
             "WAL-CLM-LETS-000399",
             "WAL-CLM-LETS-000460"
-          ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000051",
-            "WAL-CLM-IMMORT-000107"
           ]
         }
       ],
@@ -30229,6 +30143,7 @@
             "WAL-CLM-EPIGEN-000107",
             "WAL-CLM-IMMORT-000200",
             "WAL-CLM-IMMORT-000202",
+            "WAL-CLM-RARE-000041",
             "WAL-CLM-RARE-000163",
             "WAL-CLM-RARE-000302"
           ]
@@ -30237,7 +30152,6 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-IMMORT-000018",
-            "WAL-CLM-RARE-000041",
             "WAL-CLM-RARE-000127"
           ]
         },

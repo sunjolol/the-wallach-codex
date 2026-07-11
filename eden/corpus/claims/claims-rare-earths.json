@@ -65,7 +65,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000003",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "sodium"
       ],
@@ -99,7 +99,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000004",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -847,7 +847,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000027",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "sodium"
       ],
@@ -1173,7 +1173,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000037",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "iron"
       ],
@@ -1311,7 +1311,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000041",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "lithium"
       ],
@@ -1422,7 +1422,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000044",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "zinc"
       ],
@@ -1644,7 +1644,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000050",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "selenium"
       ],
@@ -1680,7 +1680,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000051",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -3619,7 +3619,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000107",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "calcium"
       ],
@@ -3762,7 +3762,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000111",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "omega-3",
         "omega-6"
@@ -3909,7 +3909,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000115",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "cobalt",
         "vitamin-b12"
@@ -4044,7 +4044,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000118",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "chromium"
       ],
@@ -4116,7 +4116,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000120",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -4235,7 +4235,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000123",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "copper"
       ],
@@ -5180,7 +5180,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000149",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "iodine",
         "copper"
@@ -5635,7 +5635,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000161",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "lithium"
       ],
@@ -9633,7 +9633,7 @@
     },
     {
       "id": "WAL-CLM-RARE-000268",
-      "kind": "mechanism",
+      "kind": "deficiency_sign",
       "essentials": [
         "zinc"
       ],
