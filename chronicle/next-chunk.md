@@ -1,7 +1,14 @@
 # Next chunk — ★ UI-REDESIGN · D3 KNOWLEDGE-DRAWER overhaul · P1 ✓ P2 ✓ P3 ✓ ALL SIGNED OFF (P3 = product detail page — coloured+linked label · green identity · WHOLESALE-featured, 2026-07-11) · ALL redesign demos D1–D3 DONE · NEXT = the unified master blueprint → build Phase H · (search-seal + mining still queued = Thread 2)
-**★ CURRENT STATE (2026-07-10) — two live threads.**
+**★ CURRENT STATE (2026-07-11) — Thread 1 (the redesign demos) is COMPLETE; the new active task is the MASTER BLUEPRINT.**
 
-## THREAD 1 (ACTIVE) — Entity-Page Redesign · D3 = the Knowledge drawer
+## ★ NEXT SESSION — THE UNIFIED MASTER BLUEPRINT (start here)
+ALL redesign demos are DONE + signed off — D1 (essential) · D2 (condition) · D3 drawer P1 (5-tab 900px drawer) · P2 (Ask-Wallach search) · P3 (product detail page). The next task is to AUTHOR THE UNIFIED MASTER BLUEPRINT: fold the demos into ONE shippable spec + phase plan that carries the redesign into the real app (OVERHAUL-BLUEPRINT **Phase H**). This is a big PLANNING effort with Luneth heavily in the loop — his words (2026-07-11): *"a lot to go over to ensure this ships properly, a lot of phases to plan out."* Go slow, plan thoroughly, decide the phase breakdown WITH him before building.
+- **It should cover:** the entity-page format as the universal presentation unit · each surface's role + flow (Coverage ⌘1 · Regimen ⌘2 · Scanner ⌘3 · Knowledge K · Search/Ask-Wallach · Journey J) · the migration from the gitignored `temporary/` prototypes to REAL `views/knowledge.ts` + `drawer-knowledge.css` (kd-* / pd-*) + the search view · **data-driven per-entity rendering** (today only 2 exemplars — Calcium, Osteoporosis — are hand-built; the real build must generate every entity page from the pillars) · whether D4 (Coverage dashboard) + D5 (Product page) still need demos · the WHOLESALE rule (already live, [[wholesale-featured-price]]) · what ships in what order.
+- **Read first:** `chronicle/entity-page-redesign-blueprint.md` (the demo-phase record + §8.5 the converged D3) · the signed-off prototypes in `temporary/` (`essential-page-prototype.html`, `condition-page-prototype.html`, `knowledge-drawer-prototype.html`) · `chronicle/OVERHAUL-BLUEPRINT.md` (Phase H = where this design spine lands) · memory [[entity-page-redesign-demo-phase]].
+- **Deliverable:** a master blueprint doc (location TBD with Luneth — likely folds into OVERHAUL-BLUEPRINT Phase H). Thread 2 (search-seal + book mining, below) continues independently.
+
+
+## THREAD 1 (✓ COMPLETE 2026-07-11 — all demos signed off; feeds the master blueprint above) — Entity-Page Redesign · D3 = the Knowledge drawer
 **★ READ FIRST: `chronicle/entity-page-redesign-blueprint.md` §8.5** — the CONVERGED D3 direction (after 2 REJECTED passes). Also memory [[entity-page-redesign-demo-phase]].
 
 **Vision:** one presentation unit — the entity page — for every subject; the faceted format generalized to essentials + conditions. **Colour language (LOCKED):** teal=science · orange=Wallach's positions (sparse) · green=what-to-do · amber=signs · violet=story/lore · red=cautions. Pills: conditions=orange · nutrients=green · explore=violet. Orange TEXT=deep, never bright; opened cards keep their own family colour.
