@@ -7,9 +7,13 @@ so the path is never lost (see `.claude/rules/logging-doctrine.md`). The
 machine source of truth is `log.jsonl` (one entry per line, never edited);
 this file is a generated human-readable view, **newest first**.
 
-_Showing the most recent 200 of 493 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
+_Showing the most recent 200 of 494 entries · full archive: [INDEX.md](INDEX.md) + `digests/`_
 
 ---
+
+## 2026-07-11 14:22 UTC-05:00 · round-close · planning
+Phase H0 chunk-1: defused the section-5.5 generative-LLM landmine in place + froze the redesign design-doc status (governance foundation; no app code)
+  ↳ Defused a latent "landmine" in the master blueprint and froze the redesign design-doc as origin-only — pure documentation hygiene, the first foundation step of Phase H0, no app code. The landmine: OVERHAUL-BLUEPRINT §5.5 still framed [DECISION D4] (bundle an offline LLM into Search) as an OPEN choice with "a bundled small model as a later opt-in." The redesign already SHELVED generative Ask-Wallach for feasibility (a local LLM = 0.5-2 GB, blowing the 350 MB offline-portability budget). A future reader landing on §5.5 alone would re-derive the rejected option. Fix = supersede §5.5 IN PLACE: a SUPERSEDED banner + rewrite the D4 bullet to read RESOLVED/retrieval-only/no-later-opt-in, pointing to redesign §8.5 decision #4 as the authority. §5.2 (old flat Knowledge drawer) likewise marked superseded. This is the H0 "defuse the §5.5 landmine up front" governance item. Froze chronicle/entity-page-redesign-blueprint.md: a top FROZEN banner (demo phase COMPLETE; live plan = phase-h-migration-blueprint.md) + flipped the §4 roadmap status cells (D3 all-signed-off, D4/D5 resolved-into-migration) + §11 "Next" resolved. So its stale "pending"/"in progress" markers can't be mistaken for live work. Scope discipline: CLAUDE.md's "Surfaces:" line (standalone Search + separate palette) is ALSO stale, but its reword is scheduled for H7 (delete-manifest §3) — done once the merged Ask-Wallach palette actually exists (H4), so editing it now would be premature. Deferred, not forgotten. Method: one transactional python pass, each anchor asserted to match exactly once (a drifted anchor fails loudly), then safe_write.safe_rewrite per file (§17). Both files are chronicle/ docs — not boot files, not sealed canonicals, and outside the no_operating_doc_contradiction scan (which only guards CLAUDE.md/REVIEW.md/.claude/rules). Verify: invariants 53/53 green; no build/bundle/probe affected (docs-only).
 
 ## 2026-07-11 13:42 UTC-05:00 · incident · planning
 Corrected a stale value carried into the Phase-H blueprint: the drawer is 950px (as-built), not the pre-build 900px. Fixed 900→950 across all planning docs + memory (sacred build-log untouched) + 3 wording fixes; verification caught a 5th nbsp-hidden instance I'd missed.
@@ -806,7 +810,3 @@ SESSION 42 CLOSE: DDDL purified to PRISTINE (book #2) across 3 commits — spec 
 ## 2026-07-02 17:02 UTC-05:00 · round-close · corpus
 SESSION 42 cont2: DDDL hyphen-wrap reflow (45) + final no-defer sweep. Fixed every remaining real defect (puss/Gadolinium/HistoriaAnimalicem/comma-spaces/I-5/150mg); left 1 unverifiable lab value flagged. kv253->254, board 38/38, book_purity 0.
   ↳ Added regex_replacements + hyphen_reflow (post-strip) to book_purify_apply.py. Rebuilt from original source. DDDL pristine with NO fixable defect baselined. NEXT = Immortality.
-
-## 2026-07-02 16:46 UTC-05:00 · round-close · corpus
-SESSION 42 cont: DDDL bullet-markers FIXED (no-defer). 68 OCR bullets ( '(' x55 + '<' x12 + 1 wrapped ) -> '• '; 2 real parens trimmed. kv252->253, board 38/38, space_in_paren 0 (fixed not allowlisted).
-  ↳ Scanner missed the '<' bullet siblings (not parens). Added regex_replacements (count-asserted, context-scoped) to book_purify_apply.py. Rebuilt from original source so spec stays original->pristine. NEXT no-defer item = 48 hyphen-wrap compounds.

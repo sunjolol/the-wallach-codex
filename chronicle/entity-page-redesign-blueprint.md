@@ -8,6 +8,8 @@ _A TEMPORARY, living record of the UI/UX redesign **demo phase** (opened 2026-07
 
 ---
 
+> **★ FROZEN 2026-07-11 — DEMO PHASE COMPLETE. This is the design-origin record, not the live plan.** All demos (D1 · D2 · D3-P1/P2/P3) are signed off; D4 (Coverage) + D5 (Product) are built DIRECTLY in the migration (no separate demo, Luneth 2026-07-11). The LIVE execution plan is `chronicle/phase-h-migration-blueprint.md` (Phase H, now executing at H0). Read THIS doc for WHAT a surface should look like + WHY each decision was made; read the migration blueprint for build order, deletes, and gates. Any status line below that still says "pending" / "in progress" is FROZEN origin — the migration blueprint is authoritative for status ("older loses").
+
 ## 1 · The problem that started this
 Luneth's tension: **Search feels delightful; the rest of the app feels like an ignorable wall.** He was torn — tempted to move EVERYTHING into Search, but worried that (a) noise would bury the good stuff, and (b) it would kill browsing/discovery (a delight in itself). Unresolved questions: what is Search FOR vs the Knowledge drawer (essentials/conditions)? Where does the full 1,246-claim database live, and how is it enjoyable to consume instead of "a massive unorganized list no one bothers checking"? He asked for a fresh, cohesive plan and explicitly told me NOT to defend the old ways.
 
@@ -32,9 +34,9 @@ Prove the vision with real demos BEFORE writing the master blueprint. Each demo 
 |---|---|---|
 | **D1 · Essential page** (Calcium) | the entity-page format for the EXPLORE intent | ✓ signed off |
 | **D2 · Condition page** (Osteoporosis, help-first) | the HELP-NOW intent; the format works on tier-1 claims (no search Q&A) | ✓ signed off |
-| **D3 · Knowledge-drawer overhaul** | the browse/navigation model, re-housed as a total overhaul of the KNOWLEDGE drawer — NOT a layout change (see §8.5) | ✓ P1 signed off (5-tab drawer, 2026-07-10); P2/P3 pending |
-| **D4 · Coverage dashboard** | the operational home (the 90-essentials periodic table) handing off into essential pages | pending |
-| **D5 · Product page** (optional) | the entity format for a Youngevity product — the "best sources" click target | pending |
+| **D3 · Knowledge-drawer overhaul** | the browse/navigation model, re-housed as a total overhaul of the KNOWLEDGE drawer — NOT a layout change (see §8.5) | ✓ ALL signed off — P1 (5-tab drawer) · P2 (Ask-Wallach palette) · P3 (product detail); feeds migration H2–H5 |
+| **D4 · Coverage dashboard** | the operational home (the 90-essentials periodic table) handing off into essential pages | ✓ resolved — built DIRECTLY in migration H5 (no separate demo, Luneth 2026-07-11) |
+| **D5 · Product page** (optional) | the entity format for a Youngevity product — the "best sources" click target | ✓ done (D3-P3 prototype signed off 2026-07-11) → migration H5 |
 
 Then → the **unified master blueprint** (codifies format · flows · each surface's role · migration) → **build for real** (this whole effort is the design spine of OVERHAUL-BLUEPRINT **Phase H**; the book-mining Phase G continues independently). Sign off each demo before advancing (visual-verification gate).
 
@@ -128,4 +130,4 @@ Impl target when built for real: `dashboard/assets/js/src/views/knowledge.ts` + 
 - **Coverage-count data gap** — a condition's "covers N/16" counts only the involved nutrients that HAVE recommender data (14/16 for osteoporosis; germanium + tin have none). Directionally honest; revisit if it matters.
 
 ## 11 · Next (resume in a NEW session)
-**D3 (Knowledge-drawer overhaul — 950px drawer (NOT full-screen), browse-shell inner design; §8.5)** → D4 (Coverage dashboard) → D5 (Product page) → then the **unified master blueprint** → then build (Phase H). D1+D2 signed off; D3 in progress — NO layout change (left rail stays).
+**✓ RESOLVED 2026-07-11 — the demo phase is complete and the unified master blueprint is authored.** All demos signed off; the live plan is `chronicle/phase-h-migration-blueprint.md` (Phase H), now EXECUTING at H0. _(Origin sequence, kept for history: D3 → D4 → D5 → master blueprint → build; D4/D5 fold into the migration build directly.)_

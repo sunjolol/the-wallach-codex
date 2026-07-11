@@ -158,7 +158,8 @@ Every surface is a READ-ONLY view of the pillars + the user's own localStorage. 
 - **Coverage math:** Σ(user regimen item nutrient amounts) ÷ Wallach-derived target, per essential. Targets Wallach-only (R2); products supply composition only.
 - **Gates:** `derived_artifacts_fresh`, `amounts_wallach_only`, `references_resolve`.
 
-### 5.2 · Knowledge (K) — education
+### 5.2 · Knowledge (K) — education  `[SUPERSEDED 2026-07-11 → phase-h-migration-blueprint.md + redesign §8.5]`
+> **SUPERSEDED — do not build from this section.** The flat essential/condition deep-dives are replaced by the universal ENTITY PAGE housed in a 950 px, 5-tab drawer (Home · Essentials · Conditions · Explore · Products). Build per `chronicle/phase-h-migration-blueprint.md` §4. The bullets below are the frozen pre-redesign origin — "older loses."
 - **Derives from:** corpus (claims + indices) via the generated embed — already the clean system.
 - **Renders:** essential/condition deep-dives, claims w/ verbatim + composed citation, glossary tooltips.
 - **Gates:** `derived_artifacts_fresh`, the mine gates.
@@ -175,11 +176,12 @@ Every surface is a READ-ONLY view of the pillars + the user's own localStorage. 
 - **THE WALL (Eden's purpose, vision 5a):** the scanner lets a user add ANY item to THEIR regimen, but it can NEVER modify the pillars. Architectural: the file:// browser has no fs-write; the scanner writes only localStorage via the chokepoint. Scanner-added items are MARKED user-provided so they never masquerade as Wallach/Youngevity canonical.
 - **Gates:** `corpus_runtime_purity` (offline OCR), `scanner_user_items_marked` (NEW — user items flagged, never enter pillars/indices), storage chokepoint.
 
-### 5.5 · Search — the offline helper agent
+### 5.5 · Search — the offline helper agent  `[SUPERSEDED 2026-07-11 → phase-h-migration-blueprint.md + redesign §8.5]`
+> **SUPERSEDED — do not build from this section.** The standalone Search drawer is retired: Search + the ⌘K command palette MERGE into ONE "Ask Wallach" retrieval palette (redesign §8.5 decision #3). **[DECISION D4] is RESOLVED, not open** — generative Ask-Wallach (a bundled offline LLM) is **SHELVED for feasibility**: it blows the 350 MB offline budget, so the engine is smart offline RETRIEVAL only — no generation, no "later opt-in" (redesign §8.5 decision #4 is the authority). Build per the migration blueprint §4 (H4). The bullets below are the frozen pre-redesign origin, kept for history.
 - **Derives from:** the full corpus — search is the LARGER consumer (the near-complete Wallach knowledge base), tier-1 the operational slice. Doctrine: `.claude/rules/search-corpus.md` + `chronicle/search-build-blueprint.md`.
 - **Renders:** natural-language Q&A over all-Wallach content, offline. The delight = off-path topics that don't fit the 90-essentials frame.
 - **Boundary:** READ-ONLY over corpus; search-only content NEVER feeds the operational tabs (`search_only_indices_excluded`, exists).
-- **[DECISION D4] — the engine:** a true bundled offline LLM (heavy ~GBs, complex, most "agent"-like) **vs.** smart offline retrieval + templated synthesis over the corpus (light, deterministic, never breaks, still impressive). *Recommend retrieval-first* to protect the "never breaks / fully portable" vision, with a bundled small model as a later opt-in.
+- **[DECISION D4 — RESOLVED 2026-07-11, retrieval-only]:** ~~bundled offline LLM vs. smart offline retrieval~~ → RESOLVED to smart offline retrieval + templated synthesis ONLY (light, deterministic, never breaks, fully portable). The bundled-LLM option is **SHELVED** — no generation, **no later opt-in** (kills the 350 MB budget; redesign §8.5 decision #4 is the authority). `corpus_runtime_purity` keeps it network-free.
 - **Gates:** `corpus_runtime_purity` (CRITICAL — the helper agent must never reach the network).
 
 ### 5.6 · Journey (J) — archaic, contained, LAST
