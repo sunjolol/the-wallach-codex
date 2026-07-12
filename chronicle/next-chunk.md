@@ -1,5 +1,7 @@
 # Next chunk — ★ PHASE H · Knowledge + Search overhaul · AUTHORITATIVE HANDOFF (2026-07-11)
 
+> ★★★ ACTIVE WORK (2026-07-12) — the Essentials-tab polish uncovered a trace/rare-mineral COVERAGE gap (rare-earths never tick covered; the PDM-vehicle rule is dead). Full investigation + Luneth-APPROVED product list (Tables 1 & 2) + the golden-standard math (600 mg Plant Derived Minerals = 100%) + §00.A evidence (RARE-000301) + open decisions are SAVED in **chronicle/mineral-coverage-investigation.md** — READ THAT FIRST. The Essentials-tab dot build is PAUSED pending the trace/rare coverage-math system. Also DONE + pushed this session: H2 Chunks 3/4a/4b/B1/5, the drawer bottom-bar removal, and the knowledge.ts eslint cleanup.
+
 **★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN NOTES.** If anything in `OVERHAUL-BLUEPRINT.md`, `phase-h-migration-blueprint.md`, `entity-page-redesign-blueprint.md`, or older next-chunk text conflicts with what's below, **THIS wins** ("older loses" — CLAUDE.md). Before touching the drawer, read this + memory **[[demo-vision-not-letter]]** + **[[search-is-ask-wallach-popup]]** (both load every session).
 
 ## ★ THE GOVERNING DOCTRINE — how to work (non-negotiable; Luneth reset this 2026-07-11)
