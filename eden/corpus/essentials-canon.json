@@ -25,6 +25,7 @@
     {
       "slug": "hydrogen",
       "display_name": "Hydrogen",
+      "common_name": "Hydrogen",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 1,
@@ -36,6 +37,7 @@
     {
       "slug": "carbon",
       "display_name": "Carbon",
+      "common_name": "Carbon",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 6,
@@ -47,6 +49,7 @@
     {
       "slug": "nitrogen",
       "display_name": "Nitrogen",
+      "common_name": "Nitrogen",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 7,
@@ -58,6 +61,7 @@
     {
       "slug": "oxygen",
       "display_name": "Oxygen",
+      "common_name": "Oxygen",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 8,
@@ -69,6 +73,7 @@
     {
       "slug": "sodium",
       "display_name": "Sodium",
+      "common_name": "Sodium",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 11,
@@ -80,6 +85,7 @@
     {
       "slug": "magnesium",
       "display_name": "Magnesium",
+      "common_name": "Magnesium",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 12,
@@ -91,6 +97,7 @@
     {
       "slug": "phosphorus",
       "display_name": "Phosphorus",
+      "common_name": "Phosphorus",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 15,
@@ -102,6 +109,7 @@
     {
       "slug": "sulfur",
       "display_name": "Sulfur",
+      "common_name": "Sulfur",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 16,
@@ -113,6 +121,7 @@
     {
       "slug": "chloride",
       "display_name": "Chloride",
+      "common_name": "Chloride",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 17,
@@ -124,6 +133,7 @@
     {
       "slug": "potassium",
       "display_name": "Potassium",
+      "common_name": "Potassium",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 19,
@@ -135,6 +145,7 @@
     {
       "slug": "calcium",
       "display_name": "Calcium",
+      "common_name": "Calcium",
       "category": "mineral",
       "subtype": "foundational",
       "atomic_number": 20,
@@ -146,6 +157,7 @@
     {
       "slug": "boron",
       "display_name": "Boron",
+      "common_name": "Boron",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 5,
@@ -157,6 +169,7 @@
     {
       "slug": "cobalt",
       "display_name": "Cobalt",
+      "common_name": "Cobalt",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 27,
@@ -168,6 +181,7 @@
     {
       "slug": "chromium",
       "display_name": "Chromium",
+      "common_name": "Chromium",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 24,
@@ -179,6 +193,7 @@
     {
       "slug": "copper",
       "display_name": "Copper",
+      "common_name": "Copper",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 29,
@@ -190,6 +205,7 @@
     {
       "slug": "germanium",
       "display_name": "Germanium",
+      "common_name": "Germanium",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 32,
@@ -201,6 +217,7 @@
     {
       "slug": "iron",
       "display_name": "Iron",
+      "common_name": "Iron",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 26,
@@ -212,6 +229,7 @@
     {
       "slug": "iodine",
       "display_name": "Iodine",
+      "common_name": "Iodine",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 53,
@@ -223,6 +241,7 @@
     {
       "slug": "manganese",
       "display_name": "Manganese",
+      "common_name": "Manganese",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 25,
@@ -234,6 +253,7 @@
     {
       "slug": "molybdenum",
       "display_name": "Molybdenum",
+      "common_name": "Molybdenum",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 42,
@@ -245,6 +265,7 @@
     {
       "slug": "selenium",
       "display_name": "Selenium",
+      "common_name": "Selenium",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 34,
@@ -256,6 +277,7 @@
     {
       "slug": "silica",
       "display_name": "Silica",
+      "common_name": "Silica",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 14,
@@ -267,6 +289,7 @@
     {
       "slug": "strontium",
       "display_name": "Strontium",
+      "common_name": "Strontium",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 38,
@@ -278,6 +301,7 @@
     {
       "slug": "vanadium",
       "display_name": "Vanadium",
+      "common_name": "Vanadium",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 23,
@@ -289,6 +313,7 @@
     {
       "slug": "zinc",
       "display_name": "Zinc",
+      "common_name": "Zinc",
       "category": "mineral",
       "subtype": "major_trace",
       "atomic_number": 30,
@@ -300,6 +325,7 @@
     {
       "slug": "silver",
       "display_name": "Silver",
+      "common_name": "Silver",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 47,
@@ -311,6 +337,7 @@
     {
       "slug": "aluminum",
       "display_name": "Aluminum",
+      "common_name": "Aluminum",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 13,
@@ -322,6 +349,7 @@
     {
       "slug": "arsenic",
       "display_name": "Arsenic",
+      "common_name": "Arsenic",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 33,
@@ -333,6 +361,7 @@
     {
       "slug": "gold",
       "display_name": "Gold",
+      "common_name": "Gold",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 79,
@@ -344,6 +373,7 @@
     {
       "slug": "barium",
       "display_name": "Barium",
+      "common_name": "Barium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 56,
@@ -355,6 +385,7 @@
     {
       "slug": "beryllium",
       "display_name": "Beryllium",
+      "common_name": "Beryllium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 4,
@@ -366,6 +397,7 @@
     {
       "slug": "bromine",
       "display_name": "Bromine",
+      "common_name": "Bromine",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 35,
@@ -377,6 +409,7 @@
     {
       "slug": "cerium",
       "display_name": "Cerium",
+      "common_name": "Cerium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 58,
@@ -388,6 +421,7 @@
     {
       "slug": "cesium",
       "display_name": "Cesium",
+      "common_name": "Cesium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 55,
@@ -399,6 +433,7 @@
     {
       "slug": "dysprosium",
       "display_name": "Dysprosium",
+      "common_name": "Dysprosium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 66,
@@ -410,6 +445,7 @@
     {
       "slug": "erbium",
       "display_name": "Erbium",
+      "common_name": "Erbium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 68,
@@ -421,6 +457,7 @@
     {
       "slug": "europium",
       "display_name": "Europium",
+      "common_name": "Europium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 63,
@@ -432,6 +469,7 @@
     {
       "slug": "gallium",
       "display_name": "Gallium",
+      "common_name": "Gallium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 31,
@@ -443,6 +481,7 @@
     {
       "slug": "gadolinium",
       "display_name": "Gadolinium",
+      "common_name": "Gadolinium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 64,
@@ -454,6 +493,7 @@
     {
       "slug": "hafnium",
       "display_name": "Hafnium",
+      "common_name": "Hafnium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 72,
@@ -465,6 +505,7 @@
     {
       "slug": "holmium",
       "display_name": "Holmium",
+      "common_name": "Holmium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 67,
@@ -476,6 +517,7 @@
     {
       "slug": "lanthanum",
       "display_name": "Lanthanum",
+      "common_name": "Lanthanum",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 57,
@@ -487,6 +529,7 @@
     {
       "slug": "lithium",
       "display_name": "Lithium",
+      "common_name": "Lithium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 3,
@@ -498,6 +541,7 @@
     {
       "slug": "lutetium",
       "display_name": "Lutetium",
+      "common_name": "Lutetium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 71,
@@ -509,6 +553,7 @@
     {
       "slug": "niobium",
       "display_name": "Niobium",
+      "common_name": "Niobium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 41,
@@ -520,6 +565,7 @@
     {
       "slug": "neodymium",
       "display_name": "Neodymium",
+      "common_name": "Neodymium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 60,
@@ -531,6 +577,7 @@
     {
       "slug": "nickel",
       "display_name": "Nickel",
+      "common_name": "Nickel",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 28,
@@ -542,6 +589,7 @@
     {
       "slug": "praseodymium",
       "display_name": "Praseodymium",
+      "common_name": "Praseodymium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 59,
@@ -553,6 +601,7 @@
     {
       "slug": "rubidium",
       "display_name": "Rubidium",
+      "common_name": "Rubidium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 37,
@@ -564,6 +613,7 @@
     {
       "slug": "rhenium",
       "display_name": "Rhenium",
+      "common_name": "Rhenium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 75,
@@ -575,6 +625,7 @@
     {
       "slug": "scandium",
       "display_name": "Scandium",
+      "common_name": "Scandium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 21,
@@ -586,6 +637,7 @@
     {
       "slug": "samarium",
       "display_name": "Samarium",
+      "common_name": "Samarium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 62,
@@ -597,6 +649,7 @@
     {
       "slug": "tin",
       "display_name": "Tin",
+      "common_name": "Tin",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 50,
@@ -608,6 +661,7 @@
     {
       "slug": "tantalum",
       "display_name": "Tantalum",
+      "common_name": "Tantalum",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 73,
@@ -619,6 +673,7 @@
     {
       "slug": "terbium",
       "display_name": "Terbium",
+      "common_name": "Terbium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 65,
@@ -630,6 +685,7 @@
     {
       "slug": "titanium",
       "display_name": "Titanium",
+      "common_name": "Titanium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 22,
@@ -641,6 +697,7 @@
     {
       "slug": "thulium",
       "display_name": "Thulium",
+      "common_name": "Thulium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 69,
@@ -652,6 +709,7 @@
     {
       "slug": "yttrium",
       "display_name": "Yttrium",
+      "common_name": "Yttrium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 39,
@@ -663,6 +721,7 @@
     {
       "slug": "ytterbium",
       "display_name": "Ytterbium",
+      "common_name": "Ytterbium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 70,
@@ -674,6 +733,7 @@
     {
       "slug": "zirconium",
       "display_name": "Zirconium",
+      "common_name": "Zirconium",
       "category": "mineral",
       "subtype": "rare_trace",
       "atomic_number": 40,
@@ -685,6 +745,7 @@
     {
       "slug": "vitamin-a",
       "display_name": "Retinol",
+      "common_name": "Vitamin A",
       "category": "vitamin",
       "subtype": null,
       "letter": "A",
@@ -695,6 +756,7 @@
     {
       "slug": "vitamin-b1",
       "display_name": "Thiamine",
+      "common_name": "Vitamin B1",
       "category": "vitamin",
       "subtype": null,
       "letter": "B1",
@@ -705,6 +767,7 @@
     {
       "slug": "vitamin-b2",
       "display_name": "Riboflavin",
+      "common_name": "Vitamin B2",
       "category": "vitamin",
       "subtype": null,
       "letter": "B2",
@@ -715,6 +778,7 @@
     {
       "slug": "vitamin-b3",
       "display_name": "Niacin",
+      "common_name": "Niacin",
       "category": "vitamin",
       "subtype": null,
       "letter": "B3",
@@ -725,6 +789,7 @@
     {
       "slug": "vitamin-b5",
       "display_name": "Pantothenic Acid",
+      "common_name": "Vitamin B5",
       "category": "vitamin",
       "subtype": null,
       "letter": "B5",
@@ -735,6 +800,7 @@
     {
       "slug": "vitamin-b6",
       "display_name": "Pyridoxine",
+      "common_name": "Vitamin B6",
       "category": "vitamin",
       "subtype": null,
       "letter": "B6",
@@ -745,6 +811,7 @@
     {
       "slug": "vitamin-b9",
       "display_name": "Folate",
+      "common_name": "Folate",
       "category": "vitamin",
       "subtype": null,
       "letter": "B9",
@@ -755,6 +822,7 @@
     {
       "slug": "vitamin-b12",
       "display_name": "Cobalamin",
+      "common_name": "Vitamin B12",
       "category": "vitamin",
       "subtype": null,
       "letter": "B12",
@@ -765,6 +833,7 @@
     {
       "slug": "vitamin-c",
       "display_name": "Ascorbic Acid",
+      "common_name": "Vitamin C",
       "category": "vitamin",
       "subtype": null,
       "letter": "C",
@@ -775,6 +844,7 @@
     {
       "slug": "vitamin-d",
       "display_name": "Cholecalciferol",
+      "common_name": "Vitamin D",
       "category": "vitamin",
       "subtype": null,
       "letter": "D3",
@@ -785,6 +855,7 @@
     {
       "slug": "vitamin-e",
       "display_name": "Tocopherol",
+      "common_name": "Vitamin E",
       "category": "vitamin",
       "subtype": null,
       "letter": "E",
@@ -795,6 +866,7 @@
     {
       "slug": "vitamin-k",
       "display_name": "Phylloquinone",
+      "common_name": "Vitamin K",
       "category": "vitamin",
       "subtype": null,
       "letter": "K",
@@ -805,6 +877,7 @@
     {
       "slug": "biotin",
       "display_name": "Biotin",
+      "common_name": "Biotin",
       "category": "vitamin",
       "subtype": null,
       "letter": "H",
@@ -815,6 +888,7 @@
     {
       "slug": "choline",
       "display_name": "Choline",
+      "common_name": "Choline",
       "category": "vitamin",
       "subtype": null,
       "letter": "Ch",
@@ -825,6 +899,7 @@
     {
       "slug": "inositol",
       "display_name": "Inositol",
+      "common_name": "Inositol",
       "category": "vitamin",
       "subtype": null,
       "letter": "In",
@@ -835,6 +910,7 @@
     {
       "slug": "flavonoids",
       "display_name": "Flavonoids",
+      "common_name": "Flavonoids",
       "category": "vitamin",
       "subtype": null,
       "letter": "Fl",
@@ -845,6 +921,7 @@
     {
       "slug": "arginine",
       "display_name": "Arginine",
+      "common_name": "Arginine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Arg",
@@ -855,6 +932,7 @@
     {
       "slug": "taurine",
       "display_name": "Taurine",
+      "common_name": "Taurine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Tau",
@@ -865,6 +943,7 @@
     {
       "slug": "histidine",
       "display_name": "Histidine",
+      "common_name": "Histidine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "His",
@@ -875,6 +954,7 @@
     {
       "slug": "isoleucine",
       "display_name": "Isoleucine",
+      "common_name": "Isoleucine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Ile",
@@ -885,6 +965,7 @@
     {
       "slug": "leucine",
       "display_name": "Leucine",
+      "common_name": "Leucine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Leu",
@@ -895,6 +976,7 @@
     {
       "slug": "lysine",
       "display_name": "Lysine",
+      "common_name": "Lysine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Lys",
@@ -905,6 +987,7 @@
     {
       "slug": "methionine",
       "display_name": "Methionine",
+      "common_name": "Methionine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Met",
@@ -915,6 +998,7 @@
     {
       "slug": "phenylalanine",
       "display_name": "Phenylalanine",
+      "common_name": "Phenylalanine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Phe",
@@ -925,6 +1009,7 @@
     {
       "slug": "threonine",
       "display_name": "Threonine",
+      "common_name": "Threonine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Thr",
@@ -935,6 +1020,7 @@
     {
       "slug": "tryptophan",
       "display_name": "Tryptophan",
+      "common_name": "Tryptophan",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Trp",
@@ -945,6 +1031,7 @@
     {
       "slug": "tyrosine",
       "display_name": "Tyrosine",
+      "common_name": "Tyrosine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Tyr",
@@ -955,6 +1042,7 @@
     {
       "slug": "valine",
       "display_name": "Valine",
+      "common_name": "Valine",
       "category": "amino_acid",
       "subtype": null,
       "abbr": "Val",
@@ -965,6 +1053,7 @@
     {
       "slug": "omega-3",
       "display_name": "Omega-3",
+      "common_name": "Omega-3",
       "category": "fatty_acid",
       "subtype": null,
       "layout_key": "Omega-3 (Alpha-Linolenic Acid / ALA)",
@@ -974,6 +1063,7 @@
     {
       "slug": "omega-6",
       "display_name": "Omega-6",
+      "common_name": "Omega-6",
       "category": "fatty_acid",
       "subtype": null,
       "layout_key": "Omega-6 (Linoleic Acid / LA)",
@@ -983,6 +1073,7 @@
     {
       "slug": "omega-9",
       "display_name": "Omega-9",
+      "common_name": "Omega-9",
       "category": "fatty_acid",
       "subtype": "conditional",
       "layout_key": "Omega-9 (Oleic Acid / OA)",
