@@ -128,7 +128,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const root = document.getElementById('drawer-knowledge-mount');
     return {
       productShown: root.querySelector('.kd-product-deep') !== null,
-      onProductsTab: /Products/i.test(root.querySelector('.kd-tab.active')?.textContent || ''),
+      onProductsTab: /Products/i.test(root.querySelector('.kd-knh__tab.active')?.textContent || ''),
     };
   });
 

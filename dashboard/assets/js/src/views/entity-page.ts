@@ -346,14 +346,26 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
     coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span></div>`;
   }
-  // Best sources: the recommender ranking, rendered in the demo's ep-src row style.
+  // Best sources: the recommender ranking, in the demo's ep-src row style. Faithful to
+  // the canonical demo (temporary/knowledge-drawer-prototype.html · essentialPageHTML):
+  // show the top 5, but if the best-value product ranks 6th or lower, swap it into the
+  // last visible slot so its "best value" tag is ALWAYS shown, never buried in "Show all".
   const sources = rankedSourcesForEssential(layoutKey);
   const bestId = bestValueProductId(sources);
+  const bestIdx = bestId !== null ? sources.findIndex(s => s.productId === bestId) : -1;
   const TOP = 5;
-  const head = sources.slice(0, TOP).map(s => srcRow(s, s.productId === bestId)).join('');
-  const rest = sources.slice(TOP);
+  const visible = sources.slice(0, TOP);
+  if (bestIdx >= TOP) {
+    const bestRow = sources[bestIdx];
+    if (bestRow !== undefined && visible.length === TOP) {
+      visible[TOP - 1] = bestRow;
+    }
+  }
+  const visibleIds = new Set(visible.map(s => s.productId));
+  const rest = sources.filter(s => !visibleIds.has(s.productId));
+  const head = visible.map(s => srcRow(s, s.productId === bestId)).join('');
   const more = rest.length > 0
-    ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => srcRow(s, s.productId === bestId)).join('')}</div></details>`
+    ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => srcRow(s, false)).join('')}</div></details>`
     : '';
   const sourcesHTML = sources.length > 0
     ? `<hr class="kd-ep-op__div">

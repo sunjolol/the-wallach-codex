@@ -2633,6 +2633,8 @@ def check_corpus_audit_gate():
 # (R4). EMPTY in H0; H2/H3/H4 append each entity/drawer/palette view as migrated.
 _CLEAN_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
+    "dashboard/assets/js/src/views/knowledge-home.ts",
+    "dashboard/assets/js/src/views/knowledge-explore.ts",
 )
 
 # The entity-render view file(s). Asserted a PURE PROJECTION of the generated

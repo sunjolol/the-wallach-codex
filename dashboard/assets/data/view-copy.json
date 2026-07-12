@@ -55,6 +55,12 @@
     "ep_no_target": "No Wallach maintenance number for this one yet — an honest gap until his dose tables are fully mined.",
     "ep_coverage_of_target": "of Wallach's daily target",
     "ep_non_essential": "NON-ESSENTIAL — the body can synthesize this, so it is not one of the 90. Shown for completeness; Youngevity includes it for cardiovascular balance and absorption.",
-    "ep_empty_record": "No sealed Wallach claims for this one yet — the corpus is still being built out."
+    "ep_empty_record": "No sealed Wallach claims for this one yet — the corpus is still being built out.",
+    "kd_tab_home": "Home",
+    "kd_tab_essentials": "Essentials",
+    "kd_tab_conditions": "Conditions",
+    "kd_tab_explore": "Explore",
+    "kd_tab_products": "Products",
+    "kd_mark": "KNOWLEDGE"
   }
 }

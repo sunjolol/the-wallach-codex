@@ -33,7 +33,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const el = document.getElementById('drawer-knowledge-mount');
     return {
       open: el ? el.classList.contains('kd-open') : null,
-      hasHead: el ? el.querySelector('.kd-head') !== null : null,
+      hasHead: el ? el.querySelector('.kd-knh') !== null : null,
     };
   });
 
@@ -45,32 +45,15 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(300);
   const afterClick = await drawerState();
 
-  // 2b. Corpus tab (default on open) — books driven by the sealed corpus, NOT a
-  //     hard-coded list; real per-book claim counts; planned books 'coming soon'.
-  const corpus = await page.evaluate(() => {
+  // 2b. Tab bar — the 5 vision tabs (Home / Essentials / Conditions / Explore /
+  //     Products), Home active by default; Corpus + Doctrine removed as tabs.
+  const tabBar = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const rows = root ? [...root.querySelectorAll('.kd-book-row:not(.kd-book-row--planned)')] : [];
-    const planned = root ? [...root.querySelectorAll('.kd-book-row--planned')] : [];
-    const dddl = rows.find(r => /Dead Doctors/i.test(r.querySelector('.kd-book-row__title')?.textContent || ''));
-    return {
-      bookCount: rows.length,
-      plannedCount: planned.length,
-      dddlShowsClaims: dddl ? /\d+\s*claims/i.test(dddl.querySelector('.kd-book-row__count')?.textContent || '') : false,
-      fakeCites: rows.some(r => /CITES|CHAPTERS/i.test(r.textContent || '')),
-    };
+    const tabs = root ? [...root.querySelectorAll('.kd-knh__tab')].map(t => (t.textContent || '').trim()) : [];
+    const active = root ? (root.querySelector('.kd-knh__tab.active')?.textContent || '').trim() : '';
+    const homeShown = root ? root.querySelector('.kd-home') !== null : false;
+    return { tabs, active, homeShown };
   });
-
-  // 2c. Book browser -- a book row opens all its tier-1 claims (incl. the
-  //     composition/dose tables that carry no essential/condition), then closes.
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-book="rare-earths"]')?.click());
-  await wait(300);
-  const bookOpen = await page.evaluate(() => {
-    const bd = document.querySelector('#drawer-knowledge-mount .kd-book-deep');
-    const claims = bd ? [...bd.querySelectorAll('.kd-claim')] : [];
-    return { shown: bd !== null, claimCount: claims.length };
-  });
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-action="book-close"]')?.click());
-  await wait(200);
 
   // 3. Switch to the Products tab; list ALL products (no 30 cap), each clickable.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
@@ -200,7 +183,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const chipToProduct = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
     const d = root ? root.querySelector('.kd-product-deep') : null;
-    const active = root ? (root.querySelector('.kd-tab.active')?.textContent || '') : '';
+    const active = root ? (root.querySelector('.kd-knh__tab.active')?.textContent || '') : '';
     return { productShown: d !== null, onProductsTab: /Products/i.test(active) };
   });
   chipToProduct.srcCount = magSources.count;
@@ -311,29 +294,6 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { total: all.length, visible: all.filter(r => !r.classList.contains('kd-hidden')).length };
   });
 
-  // 4f. Doctrine tab — the app-guarantee cards read from the doctrine-data.json
-  //     prose store (Phase E). Assert: 4 cards (the 3 Wallach health cards dropped),
-  //     DOCT·01 the featured cornerstone, cites COMPOSED ("ENFORCED BY <real gate>"),
-  //     and NO retired "lecture corpus" / dead-invariant text survives.
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="doctrine"]')?.click());
-  await wait(300);
-  const doctrine = await page.evaluate(() => {
-    const root = document.getElementById('drawer-knowledge-mount');
-    const cards = root ? [...root.querySelectorAll('.kd-doctrine-card')] : [];
-    const cites = cards.map(c => (c.querySelector('.kd-doctrine-card__cite')?.textContent || '').trim());
-    const ids = cards.map(c => (c.querySelector('.kd-doctrine-card__id')?.textContent || '').trim());
-    const bodies = cards.map(c => c.querySelector('.kd-doctrine-card__body')?.textContent || '').join(' ');
-    const featured = root ? root.querySelector('.kd-doctrine-card.featured') : null;
-    return {
-      count: cards.length,
-      allCitesComposed: cites.length > 0 && cites.every(t => /^ENFORCED BY /.test(t)),
-      featuredCornerstone: featured ? /CORNERSTONE/.test(featured.querySelector('.kd-doctrine-card__id')?.textContent || '') : false,
-      hasLectureText: /lecture/i.test(bodies + ' ' + cites.join(' ') + ' ' + ids.join(' ')),
-      hasDeadInvariant: /check_no_unsourced_claims|check_regimen_state_mutation_routing/.test(cites.join(' ')),
-      citeSample: cites[0] || '',
-    };
-  });
-
   // 5. Esc closes.
   await page.keyboard.press('Escape');
   await wait(200);
@@ -344,18 +304,17 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, tabBar, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
   const checks = [
     ['drawer closed at boot', boot.open === false],
     ['rail K opens drawer', afterClick.open === true && afterClick.hasHead === true],
-    ['corpus: in-housed books rendered', corpus.bookCount >= 1],
-    ['corpus: DDDL shows a real claim count', corpus.dddlShowsClaims === true],
-    ['corpus: no fabricated CITES/CHAPTERS', corpus.fakeCites === false],
-    ['corpus: coming-soon books shown', corpus.plannedCount >= 1],
-    ['corpus: book row opens a claim browser (rare-earths)', bookOpen.shown === true && bookOpen.claimCount > 0],
+    ['tab bar: exactly the 5 vision tabs', tabBar.tabs.length === 5 && ['Home','Essentials','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t))],
+    ['tab bar: Corpus + Doctrine removed', !tabBar.tabs.includes('Corpus') && !tabBar.tabs.includes('Doctrine')],
+    ['tab bar: Home is the default active tab', tabBar.active === 'Home'],
+    ['home: tab renders its container', tabBar.homeShown === true],
     ['products count parsed from head', products.count > 0],
     ['products: ALL listed (no 30 cap)', products.rowCount === products.count && products.rowCount >= 200],
     ['products: every row is clickable', products.clickable === products.rowCount],
@@ -384,11 +343,6 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['search: content match surfaces Anosmia (title lacks "smell")', search.anosmiaVisible === true && search.anosmiaTitleHasSmell === false],
     ['search: deep-view live-highlights the matched term (smell)', highlight.deepShown === true && highlight.markCount >= 1 && highlight.allSmell === true],
     ['search: clearing restores all rows', searchClear.visible === searchClear.total && searchClear.total === search.total],
-    ['doctrine: 4 app-guarantee cards (health cards dropped)', doctrine.count === 4],
-    ['doctrine: DOCT·01 is the featured cornerstone', doctrine.featuredCornerstone === true],
-    ['doctrine: cites COMPOSED from real gates (ENFORCED BY …)', doctrine.allCitesComposed === true],
-    ['doctrine: no retired lecture-corpus text', doctrine.hasLectureText === false],
-    ['doctrine: no dead-invariant cite', doctrine.hasDeadInvariant === false],
     ['products search: composition match narrows rows (boron via blends)', prodSearch.visible > 0 && prodSearch.visible < prodSearch.total && prodSearch.matchedByComposition === true],
     ['products search: clear (×) affordance appears while querying', prodSearch.hasQueryClass === true && prodSearch.clearVisible === true],
     ['products search: clear button resets the filter in one click', prodClear.visible === prodClear.total && prodClear.inputEmpty === true],

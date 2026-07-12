@@ -2,9 +2,9 @@
  * views/knowledge.ts — Knowledge drawer (overlay)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Slide-in-from-left overlay drawer, 420px starting width, EXPAND grows to
- * fill the workspace area. Renders 4 tabs: Corpus / Essentials / Products /
- * Doctrine.
+ * Slide-in-from-left overlay drawer, 950px starting width, EXPAND grows to
+ * fill the workspace area. Renders 5 tabs: Home / Essentials / Conditions /
+ * Explore / Products.
  *
  * The Essentials tab is layout-driven: it walks the SAME presentation layout
  * the Coverage periodic table uses (coverage-layout-data.json) for symbols +
@@ -24,17 +24,13 @@
  */
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
-import doctrineData from '../../../data/doctrine-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
   CoverageLayoutSchema,
-  type DoctrineCard,
-  DoctrineSchema,
   type LayoutSection,
   type LayoutTile,
 } from '../core/schemas/index.js';
 import {
-  listBooks,
   listConditions,
 } from '../state/corpus.js';
 import {
@@ -42,9 +38,12 @@ import {
   type CoverageStatus,
   getOrCompute,
 } from '../state/coverage.js';
-import { renderConditionsTab, renderCorpusTab } from './knowledge-corpus.js';
+import { ui } from '../state/copy.js';
+import { renderConditionsTab } from './knowledge-corpus.js';
 import { productCount, renderProductsTab } from './knowledge-products.js';
 import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
+import { renderHomeTab } from './knowledge-home.js';
+import { renderExploreTab, exploreEntities } from './knowledge-explore.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
@@ -55,19 +54,7 @@ export interface DrawerHandle {
   isOpen: () => boolean;
 }
 
-type Tab = 'corpus' | 'essentials' | 'conditions' | 'products' | 'doctrine';
-
-// Doctrines — the app's OWN operating-guarantee cards (source-rule, §17, §31,
-// sealed-canonical), read from the designated prose store (doctrine-data.json,
-// blueprint §2.4 prose home #4) + Zod-validated at the boundary. The prose +
-// enforcement refs live in the store, never inline here (R4); the view composes
-// each card's cite from enforced_by + tier, so no citation is hand-typed (R3). The
-// Wallach HEALTH-doctrine cards (former PDM / BTT / trace-mineral) were dropped
-// pending Phase-G mining — they must trace to real corpus claim IDs (see the
-// store's _note). (Books are NOT hard-coded either: the Corpus tab is driven by the
-// sealed corpus via state/corpus.ts — listBooks() = books-meta + REAL per-book
-// claim counts; no fabricated cite totals ever — §00.A/anti-fakery.)
-const DOCTRINES: DoctrineCard[] = DoctrineSchema.parse(doctrineData).doctrines;
+type Tab = 'home' | 'essentials' | 'conditions' | 'explore' | 'products';
 
 // ─── Essentials layout (shared with the Coverage periodic table) ───────────
 
@@ -192,10 +179,6 @@ function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
 }
 
-function hexSerial(seed: number): string {
-  return ((seed * 0x9E3779B9) >>> 0).toString(16).toUpperCase().padStart(4, '0').slice(0, 4);
-}
-
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
@@ -232,69 +215,42 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
   return `${deepHTML}${groupsHTML}`;
 }
 
-/**
- * Compose a card's enforcement line from its REAL gate/hook names — never a
- * hand-typed citation (R3): "ENFORCED BY <gate> · <gate> · <tier>". This is the
- * app-doctrine analogue of composing a book cite from book_id.
- */
-function doctrineCite(d: DoctrineCard): string {
-  return `ENFORCED BY ${[...d.enforced_by, d.tier].join(' · ')}`;
-}
-
-function renderDoctrineTab(): string {
-  return DOCTRINES.map(d => `
-    <div class="kd-doctrine-card${d.featured ? ' featured' : ''}">
-      <div class="kd-doctrine-card__id">${escHTML(d.id)}${d.featured ? ' · CORNERSTONE' : ''}</div>
-      <h4 class="kd-doctrine-card__title">${escHTML(d.title)}</h4>
-      <p class="kd-doctrine-card__body">${escHTML(d.body)}</p>
-      <div class="kd-doctrine-card__cite">${escHTML(doctrineCite(d))}</div>
-    </div>`).join('');
-}
-
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null, selectedProduct: string | null): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null): string {
   switch (tab) {
-    case 'corpus': return renderCorpusTab(selectedBook);
+    case 'home': return renderHomeTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return renderConditionsTab(selectedCondition);
+    case 'explore': return renderExploreTab();
     case 'products': return renderProductsTab(selectedProduct);
-    case 'doctrine': return renderDoctrineTab();
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedBook: string | null, selectedProduct: string | null): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null): string {
   const snapshot = getOrCompute();
   const productsCount = productCount();
   const tabs = [
-    { id: 'corpus' as Tab, label: 'Corpus', count: `${listBooks().length} BOOKS` },
-    { id: 'essentials' as Tab, label: 'Essentials', count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
-    { id: 'conditions' as Tab, label: 'Conditions', count: `${listConditions().length} INDEXED` },
-    { id: 'products' as Tab, label: 'Products', count: `${productsCount} KNOWN` },
-    { id: 'doctrine' as Tab, label: 'Doctrine', count: `${DOCTRINES.length} RULES` },
+    { id: 'home' as Tab, label: ui('kd_tab_home'), count: '' },
+    { id: 'essentials' as Tab, label: ui('kd_tab_essentials'), count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
+    { id: 'conditions' as Tab, label: ui('kd_tab_conditions'), count: `${listConditions().length} INDEXED` },
+    { id: 'explore' as Tab, label: ui('kd_tab_explore'), count: `${exploreEntities().length} TOPICS` },
+    { id: 'products' as Tab, label: ui('kd_tab_products'), count: `${productsCount} KNOWN` },
   ];
-  const tabsHTML = tabs.map(t => `
-    <button class="kd-tab${t.id === activeTab ? ' active' : ''}" data-kd-tab="${t.id}">
-      <span>${escHTML(t.label)}</span>
-      <span class="kd-tab__count">${escHTML(t.count)}</span>
-    </button>`).join('');
+  const tabsHTML = tabs.map(t => `<button class="kd-knh__tab${t.id === activeTab ? ' active' : ''}" data-kd-tab="${t.id}">${escHTML(t.label)}</button>`).join('');
 
   return `
     <span class="ds-scan-line" aria-hidden="true"></span>
-    <header class="kd-head">
-      <div>
-        <div class="kd-eyebrow"><span class="pulse-dot"></span>DRAWER · <span class="ds-cipher" data-cipher-set="hexa">KN·${hexSerial(activeTab.length * 7)}</span></div>
-        <h2 class="kd-title">Knowledge</h2>
-        <div class="kd-sub">// the corpus, the essentials, the conditions, the products, the doctrine</div>
-      </div>
-      <button class="kd-close" data-kd-action="close" title="Close (Esc)">×</button>
+    <header class="kd-knh">
+      <div class="kd-knh__mark"><span class="kd-knh__g">❡</span><b>${escHTML(ui('kd_mark'))}</b></div>
+      <nav class="kd-knh__tabs">${tabsHTML}</nav>
+      <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">×</button></div>
     </header>
-    <div class="kd-tabs">${tabsHTML}</div>
-    <div class="kd-search">
+    ${activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products' ? `<div class="kd-search">
       <span class="kd-search-icon">⌕</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">×</button>
       <span class="kd-search-kbd">/</span>
-    </div>
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedBook, selectedProduct)}</div>
+    </div>` : ''}
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
@@ -312,11 +268,11 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
  * rows / product rows / doctrine cards), so the query targets each by class.
  */
 const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
-  corpus: '.kd-book-row',
+  home: '.kd-home',
   essentials: '.kd-essential-tile',
   conditions: '.kd-condition-row',
+  explore: '.kd-explore-chip',
   products: '.kd-product-row',
-  doctrine: '.kd-doctrine-card',
 };
 
 /**
@@ -400,15 +356,14 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
 export function mount(container: HTMLElement): DrawerHandle {
   let isOpen = false;
   let isExpanded = false;
-  let activeTab: Tab = 'corpus';
+  let activeTab: Tab = 'home';
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
-  let selectedBook: string | null = null;
   let selectedProduct: string | null = null;
   let searchQuery = '';
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedBook, selectedProduct);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -438,9 +393,9 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
     isOpen = false;
     isExpanded = false;
+    activeTab = 'home';
     selectedEssential = null;
     selectedCondition = null;
-    selectedBook = null;
     selectedProduct = null;
     container.classList.remove('kd-open', 'kd-expanded');
     container.innerHTML = '';
@@ -470,7 +425,6 @@ export function mount(container: HTMLElement): DrawerHandle {
         activeTab = next;
         selectedEssential = null;
         selectedCondition = null;
-        selectedBook = null;
         selectedProduct = null;
         searchQuery = '';
         render();
@@ -488,13 +442,6 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (condEl !== null) {
       const k = condEl.getAttribute('data-kd-condition');
       selectedCondition = (k !== null && k === selectedCondition) ? null : k;
-      render();
-      return;
-    }
-    const bookEl = target.closest<HTMLElement>('[data-kd-book]');
-    if (bookEl !== null) {
-      const k = bookEl.getAttribute('data-kd-book');
-      selectedBook = (k !== null && k === selectedBook) ? null : k;
       render();
       return;
     }
@@ -526,10 +473,6 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'condition-close') {
         selectedCondition = null;
-        render();
-      }
-      else if (action === 'book-close') {
-        selectedBook = null;
         render();
       }
       else if (action === 'product-close') {

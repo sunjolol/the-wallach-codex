@@ -4,7 +4,7 @@
  * Knowledge-SPECIFIC styling only. The shared drawer chrome (head · tabs ·
  * search · body · footer · close · action · eyebrow · empty) lives in
  * drawer-shared.css, which targets both kd-* and jd-* and MUST load before this
- * file. Here: the panel starting width (420px) + the four Knowledge tabs
+ * file. Here: the panel starting width (950px) + the four Knowledge tabs
  * (Corpus / Essentials / Products / Doctrine).
  *
  * Ported from dashboard/components/drawer-knowledge-v3-PROPOSAL.html. The mockup
@@ -18,8 +18,25 @@
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── PANEL WIDTH (the chrome base lives in drawer-shared.css) ────────────── */
-#drawer-knowledge-mount.kd-open { width: 520px; }
+#drawer-knowledge-mount.kd-open { width: 950px; }
 #drawer-knowledge-mount.kd-expanded { width: calc(100vw - 220px); }
+
+/* ─── HEADER — compact single row (mark · pill-group tabs · close), a pristine
+       re-creation of the signed-off demo's .knh. Knowledge-specific: it REPLACES
+       the shared .kd-head/.kd-tabs block+grid chrome for this drawer (the shared
+       rules still style Journey's jd-* shell). ────────────────────────────────── */
+#drawer-knowledge-mount .kd-knh { display: flex; align-items: center; gap: var(--ds-space-5); padding: var(--ds-space-4) var(--ds-space-7); border-bottom: 1px solid var(--ds-rule-soft); position: relative; flex: 0 0 auto; }
+#drawer-knowledge-mount .kd-knh::after { content: ''; position: absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom: -1px; height: 1px; background: linear-gradient(to right, transparent, var(--ds-accent) 8%, transparent 22%, transparent 100%); }
+#drawer-knowledge-mount .kd-knh__mark { flex: 1 1 0; display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.75rem; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); white-space: nowrap; }
+#drawer-knowledge-mount .kd-knh__g { color: var(--ds-accent); font-size: 1rem; }
+#drawer-knowledge-mount .kd-knh__mark b { color: var(--ds-ink-soft); font-weight: 600; }
+#drawer-knowledge-mount .kd-knh__tabs { flex: 0 0 auto; display: inline-flex; background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 5px; gap: 3px; box-shadow: inset 0 1px 2px rgba(26, 22, 18, .06); }
+#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-knh__tab:hover { color: var(--ds-ink); background: var(--ds-paper); }
+#drawer-knowledge-mount .kd-knh__tab.active { background: var(--ds-paper); color: var(--ds-accent-deep); box-shadow: 0 2px 6px rgba(26, 22, 18, .18), 0 0 0 1px var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-knh__end { flex: 1 1 0; display: flex; justify-content: flex-end; }
+#drawer-knowledge-mount .kd-knh__close { flex: 0 0 auto; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); background: none; color: var(--ds-ink-soft); cursor: pointer; font-size: 18px; line-height: 1; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-knh__close:hover { border-color: var(--ds-ink); color: var(--ds-ink); }
 
 /* ─── SECTION HEADERS — used across all four content tabs ─────────────────── */
 #drawer-knowledge-mount .kd-section-head {
