@@ -1,0 +1,613 @@
+/**
+ * views/entity-page.ts — the unified ENTITY PAGE render (Phase H2)
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * The single presentation unit for an essential (Phase H2 chunk 1b; conditions +
+ * products follow). A PURE PROJECTION of the generated entity-page artifact
+ * (state/entity-page) joined with the sealed corpus + search index at render time
+ * — this view holds no canonical value as a literal (§00.B single-source, R1) and
+ * no per-entity content branch (entity_render_is_projection).
+ *
+ * Section order: back · hero · lede · "At a glance" (Wallach target + why-this-number
+ * + live coverage bar + best sources) · "Worth knowing" (search facet cards) ·
+ * "Need help with a condition?" (orange condition pills) · "Works with" (green
+ * nutrient pills) · "The full record" (kind groups + keyword filter) · "Keep
+ * exploring" (violet pills). Colour is data-driven: record kinds carry the family
+ * from state/copy::kindCategory in a data-family attr; search facets map to a family
+ * in CSS by data-facet — the family word is NEVER a TS literal (view_category_not_hardcoded).
+ *
+ * Mounts inside #drawer-knowledge-mount as the essential deep-view (kd-ep-*), so the
+ * drawer chrome + the reused kd-claim__dose|legend + kd-omega rules from
+ * drawer-knowledge.css apply. The "at a glance" card joins the live coverage tile
+ * (tileOf) + the recommender ranking (rankedSourcesForEssential); it imports state/ +
+ * knowledge-corpus/products but NEVER views/knowledge.ts (a cycle). The lede + the short
+ * "why this number" hover come from the user-approved entity-copy store (state/entity-copy),
+ * never auto-derived.
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+import fattyAcidClarityData from '../../../data/fatty-acid-clarity-data.json';
+import {
+  type CorpusClaim,
+  type EssentialPage,
+  FattyAcidClaritySchema,
+  SEARCH_FACETS,
+  type SearchClaim,
+} from '../core/schemas/index.js';
+import type { CoverageSnapshot, CoverageStatus, CoverageTile } from '../state/coverage.js';
+import { facetLabel, kindCategory, kindLabel, ui } from '../state/copy.js';
+import {
+  conditionDisplayName,
+  essentialDisplayName,
+  getBookLabel,
+  getCondition,
+  getEssentialByLayoutKey,
+  getEssentialBySlug,
+  humanizeSlug,
+  resolveClaims,
+} from '../state/corpus.js';
+import { getEssentialPage } from '../state/entity-page.js';
+import { essentialLede, essentialWhy } from '../state/entity-copy.js';
+import { glossaryDef } from '../state/glossary.js';
+import { composeCite, getSearchClaim } from '../state/search.js';
+import { glossify } from './glossify.js';
+import { tileOf } from './knowledge-corpus.js';
+import { rankedSourcesForEssential, type RankedSourceRow } from './knowledge-products.js';
+
+// The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
+// quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
+// so a bare " inside a regex reads to it as a string start and swallows the map below.
+function escHTML(s: unknown): string {
+  return String(s ?? '').replace(/[&<>\x22\x27]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
+}
+
+// ─── Claim primitives (owned copy; the knowledge-corpus originals retire later) ──
+// Faithful port of the dose / Fig-8-1 / table-header rendering so a dose claim shows
+// a scannable value + column legend instead of an unlabeled run of numbers. The dose
+// + legend fragments keep the kd-claim__* class names so the perfected drawer-knowledge.css
+// rules apply verbatim (the entity card itself is the new kd-ep-claim namespace).
+
+/** Collapse a book verbatim's hard line-wraps into one clean line. */
+function collapseWS(s: string): string {
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+/** A short "50 mg / daily" dose label, or '' when no structured dose. */
+function formatDose(dose: CorpusClaim['dose']): string {
+  if (dose === null || dose === undefined) {
+    return '';
+  }
+  const amount = (typeof dose.amount === 'number' || typeof dose.amount === 'string') ? String(dose.amount) : '';
+  const unit = typeof dose.unit === 'string' ? dose.unit : '';
+  const period = typeof dose.period === 'string' ? dose.period : '';
+  const head = [amount, unit].filter(s => s.length > 0).join(' ');
+  if (head.length === 0) {
+    return '';
+  }
+  return period.length > 0 ? `${head} / ${period}` : head;
+}
+
+// A row of Wallach's Fig. 8-1 base-line dose table (Let's Play Doctor, ch. 8), keyed
+// off the dose atom's for_condition the derive step projects into the embed.
+const FIG_8_1_FOR_CONDITION = 'base-line supplement program (true supplement need)';
+function isFig81Row(claim: CorpusClaim): boolean {
+  return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION;
+}
+
+/** A legend column header wrapped as a glossary tooltip (definition from the lexicon). */
+function glossCol(term: string): string {
+  const def = glossaryDef(term);
+  if (def === null) {
+    return escHTML(term);
+  }
+  return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML(term)}: ${escHTML(def)}" data-def="${escHTML(def)}">${escHTML(term)}</span>`;
+}
+
+/** The column legend for a Fig. 8-1 dose-table row — Wallach's own header names, glossed. */
+function renderFig81Legend(): string {
+  const cols = ['RDA', 'True Supplement Need', '30-Day Pharmacologic'].map(glossCol).join(' · ');
+  return `
+      <div class="kd-claim__legend" role="note">
+        <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
+        <span class="kd-claim__legend-cols">Nutrient · ${cols}</span>
+      </div>`;
+}
+
+/** The clicked nutrient's OWN row from a Fig. 8-1 verbatim (drops the bled next row + footnotes). */
+function fig81OwnRow(verbatim: string): string {
+  const lines = verbatim.split('\n');
+  const kept: string[] = [lines[0] ?? ''];
+  for (let i = 1; i < lines.length; i++) {
+    const t = (lines[i] ?? '').trim();
+    if (t.length === 0 || /^[A-Z]/.test(t) || t.startsWith('*')) {
+      break;
+    }
+    kept.push(lines[i] ?? '');
+  }
+  return kept.join('\n');
+}
+
+/** The context label for a dose value — WHAT the number is. Sealed data only (§00.A). */
+function doseContextLabel(claim: CorpusClaim): string {
+  if (isFig81Row(claim)) {
+    return 'True Supplement Need';
+  }
+  const fc = (claim.dose?.for_condition ?? '').trim();
+  return fc.replace(/\s*\([^)]*\)\s*$/, '').trim();
+}
+
+/** The dose card at the head of a dose claim: bold VALUE + a label naming what it is. */
+function renderDoseBlock(claim: CorpusClaim): string {
+  const value = formatDose(claim.dose);
+  if (value.length === 0) {
+    return '';
+  }
+  const label = doseContextLabel(claim);
+  const labelHTML = label.length > 0
+    ? `<span class="kd-claim__dose-label">${escHTML(label)}</span>`
+    : '';
+  return `
+      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML(value)}</span></div>`;
+}
+
+/** Attribution header for a claim whose paraphrase named an internal Table/Figure/page. */
+function renderRefHeader(label: string): string {
+  return `
+      <div class="kd-claim__legend" role="note">
+        <span class="kd-claim__legend-eyebrow">${escHTML(label)}</span>
+        <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
+      </div>`;
+}
+
+// ─── Two card renderers ─────────────────────────────────────────────────────
+
+/** Truncate a paraphrase for the collapsed summary line, on a word boundary. */
+function truncate(s: string, max: number): string {
+  if (s.length <= max) {
+    return s;
+  }
+  return s.slice(0, max).replace(/\s+\S*$/, '') + '…';
+}
+
+/**
+ * A search Q&A card ("?" badge): question → answer_short preview → full answer +
+ * Wallach's exact words + the composed citation + topic tags. Resolves a SearchClaim.
+ */
+function renderSearchCard(claim: SearchClaim): string {
+  const cite = composeCite(claim);
+  const tags = claim.topics.map(t => `<span class="kd-ep-tag">#${escHTML(t)}</span>`).join('');
+  const preview = claim.answer_short.length > 0 ? `<span class="kd-ep-claim__preview">${escHTML(claim.answer_short)}</span>` : '';
+  const short = claim.answer_short.length > 0 ? `<div class="kd-ep-claim__short">${escHTML(claim.answer_short)}</div>` : '';
+  return `<details class="kd-ep-claim">
+    <summary class="kd-ep-claim__summary">
+      <span class="kd-ep-claim__badge">?</span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML(claim.question)}</span>${preview}</span>
+      <span class="kd-ep-claim__chev">▸</span>
+    </summary>
+    <div class="kd-ep-claim__body">
+      ${short}
+      <div class="kd-ep-claim__answer">${escHTML(claim.answer)}</div>
+      <blockquote class="kd-ep-claim__verbatim">“${escHTML(collapseWS(claim.verbatim))}”</blockquote>
+      ${cite.length > 0 ? `<div class="kd-ep-claim__cite">— Dr. Joel Wallach · ${escHTML(cite)}</div>` : ''}
+      ${tags.length > 0 ? `<div class="kd-ep-claim__tags">${tags}</div>` : ''}
+    </div>
+  </details>`;
+}
+
+/**
+ * A record/statement card (neutral § badge): the truncated paraphrase summary →
+ * full paraphrase + optional dose card / table header + Wallach's exact words +
+ * citation. Resolves a CorpusClaim.
+ */
+function renderRecordClaim(claim: CorpusClaim): string {
+  const isTable = isFig81Row(claim);
+  const refLabel = (!isTable && typeof claim.source_table === 'string' && claim.source_table.length > 0)
+    ? claim.source_table
+    : null;
+  const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
+  const verbatimCls = isTable ? 'kd-ep-claim__verbatim kd-ep-claim__verbatim--rows' : 'kd-ep-claim__verbatim';
+  return `<details class="kd-ep-claim">
+    <summary class="kd-ep-claim__summary">
+      <span class="kd-ep-claim__badge">?</span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML(truncate(claim.claim_text, 116))}</span></span>
+      <span class="kd-ep-claim__chev">▸</span>
+    </summary>
+    <div class="kd-ep-claim__body">
+      <div class="kd-ep-claim__answer">${glossify(claim.claim_text)}</div>
+      ${renderDoseBlock(claim)}
+      ${isTable ? renderFig81Legend() : ''}
+      ${refLabel !== null ? renderRefHeader(refLabel) : ''}
+      <blockquote class="${verbatimCls}">${glossify(shownVerbatim)}</blockquote>
+      <div class="kd-ep-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>
+    </div>
+  </details>`;
+}
+
+// ─── Status presentation (small pure mappers; kept local to avoid a knowledge.ts cycle) ──
+
+function statusLabel(s: CoverageStatus): string {
+  switch (s) {
+    case 'covered':
+    case 'trace':
+      return 'COVERED';
+    case 'partial':
+      return 'PARTIAL';
+    case 'gap':
+      return 'GAP';
+    default:
+      return 'PENDING';
+  }
+}
+
+function statusPillClass(s: CoverageStatus): string {
+  if (s === 'covered' || s === 'trace') {
+    return 'kd-essential-deep__status-pill--ok';
+  }
+  if (s === 'partial' || s === 'gap') {
+    return 'kd-essential-deep__status-pill--warn';
+  }
+  return 'kd-essential-deep__status-pill--pending';
+}
+
+/** Group-thousands a Wallach target number for display (1500 → "1,500"). */
+function fmtTarget(n: number): string {
+  if (!Number.isFinite(n)) {
+    return '0';
+  }
+  const r = n >= 100 ? Math.round(n) : Math.round(n * 10) / 10;
+  return r.toLocaleString('en-US');
+}
+
+// ─── Section building blocks ────────────────────────────────────────────────
+
+/** A section divider label + optional muted hint (short chrome copy; not prose). */
+function seclabel(label: string, hint?: string): string {
+  const h = (hint !== undefined && hint.length > 0) ? `<span class="kd-ep-seclabel__hint">${escHTML(hint)}</span>` : '';
+  return `<div class="kd-ep-seclabel">${escHTML(label)}${h}</div>`;
+}
+
+/** One navigable pill — a data-attr hook the drawer's existing click handler routes on. */
+function pill(display: string, attr: string, val: string, cls: string): string {
+  return `<button class="kd-ep-pill ${cls}" type="button" ${attr}="${escHTML(val)}">${escHTML(display)}</button>`;
+}
+
+/** A cloud of pills: the first `showN` inline, the rest behind a native "show all" toggle. */
+function pillCloud(pills: string[], showN: number): string {
+  const head = pills.slice(0, showN).join('');
+  const rest = pills.slice(showN);
+  const more = rest.length > 0
+    ? `<details class="kd-ep-more"><summary>Show all ${pills.length}</summary><div class="kd-ep-more__body kd-ep-cloud">${rest.join('')}</div></details>`
+    : '';
+  return `<div class="kd-ep-cloud">${head}</div>${more}`;
+}
+
+/** Replace the {n} token in a store lead with a pluralized count phrase. */
+function leadWithCount(id: string, n: number, noun: string): string {
+  const raw = ui(id);
+  if (raw.length === 0) {
+    return '';
+  }
+  return raw.replace('{n}', `${n} ${noun}${n === 1 ? '' : 's'}`);
+}
+
+// ─── "At a glance" — Wallach target + why-this-number + live coverage + best sources ──
+
+/** The lowest cost-per-delivered-unit product among the ranked sources (the "best value" tag). */
+function bestValueProductId(sources: RankedSourceRow[]): string | null {
+  let best: string | null = null;
+  let bestCpu = Infinity;
+  for (const s of sources) {
+    if (s.price === null || s.amount <= 0) {
+      continue;
+    }
+    const cpu = s.price / s.amount;
+    if (cpu < bestCpu) {
+      bestCpu = cpu;
+      best = s.productId;
+    }
+  }
+  return best;
+}
+
+/** One best-source row (the demo's ep-src style) — clickable to the product detail panel. */
+function srcRow(s: RankedSourceRow, isBest: boolean): string {
+  const price = s.price !== null ? `$${s.price.toFixed(2)}` : '—';
+  const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : '';
+  return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML(s.productId)}">
+      <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
+      <span class="kd-ep-src__nm">${escHTML(s.name)}${tag}</span>
+      <span class="kd-ep-src__amt">${fmtTarget(s.amount)} ${escHTML(s.unit)}</span>
+      <span class="kd-ep-src__pr">${price}</span>
+      <span class="kd-ep-src__chev">›</span>
+    </button>`;
+}
+
+function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus): string {
+  const ivt = tile?.intakeVsTarget ?? null;
+  const why = slug !== null ? essentialWhy(slug) : '';
+  const whyHTML = why.length > 0
+    ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML(why)}</span></span>`
+    : '';
+  const targetHTML = ivt !== null
+    ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? '–' + fmtTarget(ivt.targetHigh) : ''}<small> ${escHTML(ivt.unit)}</small></div>`
+    : `<div class="kd-ep-gap">${escHTML(ui('ep_no_target'))}</div>`;
+  // Coverage: the demo's ep-bar fed by REAL regimen delivery vs the Wallach target; a
+  // trace essential (no numeric target) falls back to the covered/not-covered pill.
+  let coverageHTML: string;
+  if (ivt !== null) {
+    const pct = Math.max(0, Math.round((tile?.fillPercent ?? 0) * 100));
+    const barPct = Math.min(100, pct);
+    coverageHTML = `<div class="kd-ep-k">Your coverage</div>
+        <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML(ivt.unit)}</small></div>
+        <div class="kd-ep-bar"><i style="width:${barPct}%"></i></div>
+        <div class="kd-ep-sub">${pct}% ${escHTML(ui('ep_coverage_of_target'))}</div>`;
+  }
+  else {
+    coverageHTML = `<div class="kd-ep-k">Your coverage</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span></div>`;
+  }
+  // Best sources: the recommender ranking, rendered in the demo's ep-src row style.
+  const sources = rankedSourcesForEssential(layoutKey);
+  const bestId = bestValueProductId(sources);
+  const TOP = 5;
+  const head = sources.slice(0, TOP).map(s => srcRow(s, s.productId === bestId)).join('');
+  const rest = sources.slice(TOP);
+  const more = rest.length > 0
+    ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => srcRow(s, s.productId === bestId)).join('')}</div></details>`
+    : '';
+  const sourcesHTML = sources.length > 0
+    ? `<hr class="kd-ep-op__div">
+      <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
+      ${head}${more}`
+    : '';
+  return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">Wallach daily target</div>
+        ${targetHTML}
+        ${whyHTML}
+      </div>
+      <div>
+        ${coverageHTML}
+      </div>
+    </div>
+    ${sourcesHTML}
+  </div>`;
+}
+
+// ─── "Worth knowing" — the faceted search cards ─────────────────────────────
+
+function renderFacetGroups(page: EssentialPage): string {
+  if (page.search.length === 0) {
+    return '';
+  }
+  const order = SEARCH_FACETS as readonly string[];
+  const groups = [...page.search].sort((a, b) => order.indexOf(a.facet) - order.indexOf(b.facet));
+  const html = groups.map((g) => {
+    const cards = g.claim_ids.map((id) => {
+      const c = getSearchClaim(id);
+      return c !== null ? renderSearchCard(c) : '';
+    }).join('');
+    if (cards.length === 0) {
+      return '';
+    }
+    return `<details class="kd-ep-facet" data-facet="${escHTML(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
+      <div class="kd-ep-facet__body">${cards}</div>
+    </details>`;
+  }).join('');
+  if (html.length === 0) {
+    return '';
+  }
+  return seclabel('Worth knowing', 'tap a question') + html;
+}
+
+// ─── "The full record" — every claim, grouped by kind, keyword-filterable ────
+
+// Actionable first (green), then signs (amber), then the science; the rest fall
+// after alphabetically. Short list (<= 10) so it stays out of views_state_no_inline_data.
+const RECORD_KIND_ORDER = ['dose', 'protocol', 'deficiency_sign', 'toxicity_sign', 'mechanism', 'definition', 'prognosis'];
+function recordKindRank(k: string): number {
+  const i = RECORD_KIND_ORDER.indexOf(k);
+  return i === -1 ? RECORD_KIND_ORDER.length : i;
+}
+
+function renderRecord(page: EssentialPage): string {
+  if (page.record.length === 0) {
+    return '';
+  }
+  const groups = [...page.record].sort((a, b) => {
+    const ra = recordKindRank(a.kind);
+    const rb = recordKindRank(b.kind);
+    return ra !== rb ? ra - rb : (a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0);
+  });
+  const kindsHTML = groups.map((g) => {
+    const claims = resolveClaims(g.claim_ids);
+    if (claims.length === 0) {
+      return '';
+    }
+    const cards = claims.map(renderRecordClaim).join('');
+    return `<details class="kd-ep-kind" data-family="${escHTML(kindCategory(g.kind))}">
+      <summary><span class="kd-ep-kind__label">${escHTML(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
+      <div class="kd-ep-kind__body">${cards}</div>
+    </details>`;
+  }).join('');
+  const total = page.claim_count;
+  return seclabel('The full record', 'every claim · advanced')
+    + `<details class="kd-ep-record" open>
+        <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} claims</span><span class="kd-ep-facet__count">${total}</span></summary>
+        <div class="kd-ep-record__body">
+          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">⌕</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} claims by keyword…"></div>
+          <div class="kd-ep-record-note">${escHTML(ui('ep_record_note'))}</div>
+          ${kindsHTML}
+        </div>
+      </details>`;
+}
+
+// ─── Pill sections (conditions · works-with · keep-exploring) ────────────────
+
+function renderConditionSection(page: EssentialPage): string {
+  if (page.conditions.length === 0) {
+    return '';
+  }
+  const pills = page.conditions.map(slug => pill(conditionDisplayName(slug), 'data-kd-condition', slug, 'kd-ep-pill--cond'));
+  const lead = leadWithCount('ep_conditions_lead', page.conditions.length, 'condition');
+  return seclabel('Need help with a condition?')
+    + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML(lead)}</p>` : '')
+    + pillCloud(pills, 12);
+}
+
+function renderWorksWithSection(page: EssentialPage): string {
+  if (page.works_with.length === 0) {
+    return '';
+  }
+  const pills = page.works_with.map((slug) => {
+    const lk = getEssentialBySlug(slug)?.layout_key ?? slug;
+    return pill(essentialDisplayName(slug), 'data-kd-essential', lk, 'kd-ep-pill--nut');
+  });
+  const lead = leadWithCount('ep_works_with_lead', page.works_with.length, 'nutrient');
+  return seclabel('Works with')
+    + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML(lead)}</p>` : '')
+    + pillCloud(pills, 12);
+}
+
+function renderRelatedSection(page: EssentialPage): string {
+  if (page.related.length === 0) {
+    return '';
+  }
+  const pills = page.related.map((slug) => {
+    const ess = getEssentialBySlug(slug);
+    if (ess !== null) {
+      return pill(essentialDisplayName(slug), 'data-kd-essential', ess.layout_key, 'kd-ep-pill--explore');
+    }
+    const cond = getCondition(slug);
+    if (cond !== null) {
+      return pill(cond.display_name, 'data-kd-condition', slug, 'kd-ep-pill--explore');
+    }
+    return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML(humanizeSlug(slug))}</span>`;
+  }).join('');
+  return seclabel('Keep exploring') + `<div class="kd-ep-cloud">${pills}</div>`;
+}
+
+// ─── Omega fatty-acid clarity (general reference, marked NOT a Wallach claim) ──
+// Kept from the prior deep-view so an omega essential still names its fatty-acid forms
+// (the source graphic mislabeled Omega-9). Only renders for an omega; Calcium etc. skip it.
+
+const FATTY_ACID_CLARITY = FattyAcidClaritySchema.parse(fattyAcidClarityData);
+const OMEGA_BY_FAMILY = new Map(FATTY_ACID_CLARITY.omegas.map(o => [o.family, o] as const));
+
+function renderOmegaClarity(name: string): string {
+  const m = /^Omega-([369])\b/.exec(name);
+  const digit = m?.[1];
+  if (digit === undefined) {
+    return '';
+  }
+  const fam = OMEGA_BY_FAMILY.get(`omega-${digit}`);
+  if (fam === undefined) {
+    return '';
+  }
+  const rows = fam.acids.map(a => `
+      <li class="kd-omega__row">
+        <span class="kd-omega__abbr">${escHTML(a.abbr)}</span>
+        <div class="kd-omega__body">
+          <span class="kd-omega__name">${escHTML(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ''}</span>
+          <span class="kd-omega__desc">${escHTML(a.description)}</span>
+        </div>
+      </li>`).join('');
+  return `
+    <div class="kd-omega">
+      <div class="kd-omega__head">
+        <span class="kd-omega__title">${escHTML(fam.label)} · FATTY-ACID FORMS</span>
+      </div>
+      <ul class="kd-omega__list">${rows}</ul>
+      <div class="kd-omega__note">${escHTML(FATTY_ACID_CLARITY.disclaimer)}</div>
+    </div>`;
+}
+
+// ─── The page ───────────────────────────────────────────────────────────────
+
+/** The back affordance — the drawer's existing essential-close handler returns to the grid. */
+function backButton(): string {
+  return '<button class="kd-ep-back" data-kd-action="essential-close" type="button">‹ All essentials</button>';
+}
+
+/**
+ * Render the essential entity page. `layoutKey` is the Coverage/Knowledge join key
+ * (e.g. 'Calcium'); the coverage meter + best sources join by it, while the page
+ * body projects the slug-keyed artifact. `whyHTML` is the why-this-number box
+ * computed in knowledge.ts (kept there to avoid an entity-page → knowledge cycle).
+ */
+export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapshot | null): string {
+  const corpusEss = getEssentialByLayoutKey(layoutKey);
+  const slug = corpusEss?.slug ?? null;
+  const page = slug !== null ? getEssentialPage(slug) : null;
+  const tile = tileOf(snapshot, layoutKey);
+  const status: CoverageStatus = tile?.status ?? '';
+  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status);
+
+  if (page === null) {
+    // Graceful fallback: an essential with no sealed page record yet (e.g. the
+    // non-essential 91st). Coverage meter + sources still join by layoutKey.
+    const nm = escHTML(corpusEss?.display_name ?? layoutKey);
+    return `<div class="kd-essential-deep kd-ep">
+      ${backButton()}
+      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div></div>
+      ${seclabel('At a glance', 'the essentials, in one place')}
+      ${glanceHTML}
+      <div class="kd-ep-empty">${escHTML(ui('ep_empty_record'))}</div>
+    </div>`;
+  }
+
+  const metaBits = [escHTML(page.category ?? ''), `${page.claim_count} claims`, `${page.books.length} books`]
+    .filter(s => s.length > 0).join(' · ');
+  const synonyms = page.synonyms.length > 0 ? ` · also: ${escHTML(page.synonyms.join(', '))}` : '';
+  const nonEss = page.is_essential ? '' : `<div class="kd-ep-flag">${escHTML(ui('ep_non_essential'))}</div>`;
+  const ledeText = slug !== null ? essentialLede(slug) : '';
+  const lede = ledeText.length > 0
+    ? `<p class="kd-ep-lede">${escHTML(ledeText)}</p>`
+    : '';
+
+  return `<div class="kd-essential-deep kd-ep">
+    ${backButton()}
+    <div class="kd-ep-hero">
+      ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML(page.symbol)}</div>` : ''}
+      <div class="kd-ep-hero__idblock">
+        <h1 class="kd-ep-hero__name">${escHTML(page.name)}</h1>
+        <div class="kd-ep-hero__meta">${metaBits}${synonyms}</div>
+      </div>
+    </div>
+    ${nonEss}
+    ${lede}
+    ${seclabel('At a glance', 'the essentials, in one place')}
+    ${glanceHTML}
+    ${renderOmegaClarity(page.name)}
+    ${renderFacetGroups(page)}
+    ${renderConditionSection(page)}
+    ${renderWorksWithSection(page)}
+    ${renderRecord(page)}
+    ${renderRelatedSection(page)}
+  </div>`;
+}
+
+/**
+ * Filter the open "full record" in place against a keyword (delegated from the drawer's
+ * input handler): hide non-matching claim cards, hide + collapse a group with no match,
+ * and open a group that has one. A pure DOM toggle — no re-render, so scroll survives.
+ */
+export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
+  const q = rawQuery.trim().toLowerCase();
+  scope.querySelectorAll<HTMLElement>('.kd-ep-kind').forEach((group) => {
+    let any = false;
+    group.querySelectorAll<HTMLElement>('.kd-ep-claim').forEach((card) => {
+      const match = q.length === 0 || (card.textContent ?? '').toLowerCase().includes(q);
+      card.classList.toggle('kd-hidden', !match);
+      if (match) {
+        any = true;
+      }
+    });
+    group.classList.toggle('kd-hidden', q.length > 0 && !any);
+    if (q.length > 0 && any) {
+      (group as HTMLDetailsElement).open = true;
+    }
+  });
+}

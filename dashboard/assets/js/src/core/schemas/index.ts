@@ -27,3 +27,4 @@ export * from './recommender.js';
 export * from './search.js';
 export * from './view-copy.js';
 export * from './entity-page.js';
+export * from './entity-copy.js';

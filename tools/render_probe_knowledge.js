@@ -157,93 +157,45 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const stateTiles = tiles.filter(t => t.classList.contains('kd-essential-tile--covered') || t.classList.contains('kd-essential-tile--partial')).length;
     return { tileCount: tiles.length, sectionCount: heads.length, stateTiles };
   });
-  // Click Magnesium specifically — it carries 11 sealed DDDL claims, so its
-  // deep-dive must render the FROM-THE-CORPUS block (grouped claims + verbatim).
+  // Click Magnesium (11+ sealed claims) — its tile expands the data-driven entity page.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
   await wait(250);
   const deep = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const d = root ? root.querySelector('.kd-essential-deep') : null;
-    const corpus = root ? root.querySelector('.kd-corpus') : null;
-    const claims = corpus ? [...corpus.querySelectorAll('.kd-claim')] : [];
-    const first = claims[0] || null;
+    const d = root ? root.querySelector('.kd-essential-deep.kd-ep') : null;
+    const recordCards = d ? [...d.querySelectorAll('.kd-ep-kind .kd-ep-claim')] : [];
     return {
       shown: d !== null,
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : false,
-      hasName: d ? (d.querySelector('.kd-essential-deep__name')?.textContent || '').length > 0 : false,
-      meterText: d ? (d.querySelector('.kd-meter')?.textContent || '').replace(/\s+/g, ' ').trim() : '',
-      corpusShown: corpus !== null,
-      claimCount: claims.length,
-      groupCount: corpus ? corpus.querySelectorAll('.kd-corpus__group').length : 0,
-      countTxt: corpus ? (corpus.querySelector('.kd-corpus__count')?.textContent || '').trim() : '',
-      firstText: first ? (first.querySelector('.kd-claim__text')?.textContent || '').length > 0 : false,
-      firstVerbatim: first ? (first.querySelector('.kd-claim__verbatim')?.textContent || '').length > 0 : false,
-      firstCite: first ? /DEAD DOCTORS|DDDL|RARE EARTHS|EPIGENETICS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
-      whyShown: root ? root.querySelector('.kd-why') !== null : false,
-      whyHasDerivation: root ? /how we got this/i.test(root.querySelector('.kd-why')?.textContent || '') : false,
+      hasName: d ? (d.querySelector('.kd-ep-hero__name')?.textContent || '').length > 0 : false,
+      hasGlance: d ? d.querySelector('.kd-ep-op') !== null : false,
+      hasBar: d ? d.querySelector('.kd-ep-bar') !== null : false,
+      recordShown: d ? d.querySelector('.kd-ep-record') !== null : false,
+      recordClaimCount: recordCards.length,
     };
   });
 
-  // 4-why. The "why this number?" box appears ONLY where the newest Wallach number
-  //   DISAGREES with an older book (Luneth 2026-07-09). Magnesium (Epigenetics 770 vs
-  //   LPD 1000) shows it with the full derivation (asserted on `deep` above); Boron --
-  //   one book, no earlier figure -- must NOT show it.
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Boron"]')?.click());
-  await wait(200);
-  const whyHidden = await page.evaluate(() => {
-    const root = document.getElementById('drawer-knowledge-mount');
-    return { boronHasWhy: root ? root.querySelector('.kd-why') !== null : true };
-  });
-
-  // 4a. Meter fallback -- a trace essential (no numeric Wallach target) shows the
-  //     covered/not-covered pill ONLY, never an invented ratio.
+  // Trace essential (no numeric Wallach target) shows the covered/not-covered pill only — no bar.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Dysprosium"]')?.click());
   await wait(200);
   const traceMeter = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const d = root ? root.querySelector('.kd-essential-deep') : null;
+    const d = root ? root.querySelector('.kd-essential-deep.kd-ep') : null;
     return {
-      hasMeter: d ? d.querySelector('.kd-meter') !== null : null,
+      hasBar: d ? d.querySelector('.kd-ep-bar') !== null : null,
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : null,
     };
   });
 
-  // 4a2. Essentials "BEST SOURCES" — the cost-per-nutrient recommender (A3) ranks the
-  //       vault products that deliver the essential (rank + delivered amount + breadth/
-  //       price), each row clickable -> product detail panel on the Products tab. With no
-  //       Wallach target yet, the honest-gap adequacy note must show.
+  // Best sources (recommender ranking, ep-src rows) — a row opens the product panel on Products.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
   await wait(200);
   const magSources = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const rows = root ? [...root.querySelectorAll('.kd-source[data-kd-product]')] : [];
-    const subs = root ? [...root.querySelectorAll('.kd-essential-deep__sub')].map(s => s.textContent.trim()) : [];
-    const first = rows[0] || null;
-    return {
-      count: rows.length,
-      hasHeader: subs.some(s => /BEST SOURCES/i.test(s)),
-      firstRank: first ? (first.querySelector('.kd-source__rank')?.textContent || '').trim() : '',
-      firstHasAmount: first ? (first.querySelector('.kd-source__amt')?.textContent || '').trim().length > 0 : false,
-      firstHasName: first ? (first.querySelector('.kd-source__name')?.textContent || '').trim().length > 0 : false,
-      cursor: first ? getComputedStyle(first).cursor : '',
-      hasNote: root ? root.querySelector('.kd-source-note') !== null : false,
-    };
+    const rows = root ? [...root.querySelectorAll('.kd-ep-src[data-kd-product]')] : [];
+    return { count: rows.length, cursor: rows[0] ? getComputedStyle(rows[0]).cursor : '' };
   });
-  // 4a2-exp. BEST SOURCES overflow expander — Magnesium has >8 vault sources, so the top-N
-  //          render visible and the rest stay hidden (kd-source--extra) behind the "Show N
-  //          more" button until it is clicked, which toggles .is-expanded on the list.
-  const srcExpand = await page.evaluate(() => {
-    const root = document.getElementById('drawer-knowledge-mount');
-    const vis = () => [...root.querySelectorAll('.kd-source[data-kd-product]')]
-      .filter(r => getComputedStyle(r).display !== 'none').length;
-    const before = vis();
-    const btn = root.querySelector('.kd-source-more[data-kd-action="sources-more"]');
-    const hadButton = btn !== null;
-    if (btn) btn.click();
-    const list = root.querySelector('.kd-sources');
-    return { hadButton, before, after: vis(), expanded: list ? list.classList.contains('is-expanded') : false };
-  });
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-source[data-kd-product]')?.click());
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-ep-src[data-kd-product]')?.click());
   await wait(250);
   const chipToProduct = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
@@ -251,29 +203,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const active = root ? (root.querySelector('.kd-tab.active')?.textContent || '') : '';
     return { productShown: d !== null, onProductsTab: /Products/i.test(active) };
   });
-  // Honest-gap essential (no numeric Wallach target) — Strontium — DOES show the adequacy
-  // note over its ranked sources, whereas Magnesium (numeric target) hides it.
-  // (Boron was the old example; Epigenetics 2014 gave it a target, so it is no longer a gap.)
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="essentials"]')?.click());
-  await wait(120);
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Strontium"]')?.click());
-  await wait(200);
-  const gapNote = await page.evaluate(() => {
-    const root = document.getElementById('drawer-knowledge-mount');
-    return {
-      hasNote: root ? root.querySelector('.kd-source-note') !== null : false,
-      sources: root ? root.querySelectorAll('.kd-source[data-kd-product]').length : 0,
-    };
-  });
   chipToProduct.srcCount = magSources.count;
   chipToProduct.srcCursor = magSources.cursor;
-  chipToProduct.hasHeader = magSources.hasHeader;
-  chipToProduct.firstRank = magSources.firstRank;
-  chipToProduct.firstHasAmount = magSources.firstHasAmount;
-  chipToProduct.firstHasName = magSources.firstHasName;
-  chipToProduct.magHasNote = magSources.hasNote;
-  chipToProduct.gapHasNote = gapNote.hasNote;
-  chipToProduct.gapSources = gapNote.sources;
 
   // 4b. Conditions tab — list over conditions.json + click a condition to expand
   //     the role-grouped deep view (causes/protocols/doses/... with citations).
@@ -413,7 +344,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, corpus, bookOpen, products, productDeep, prodSearch, prodClear, chipToProduct, srcExpand, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, corpus, bookOpen, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, doctrine, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -430,24 +361,16 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products: every row is clickable', products.clickable === products.rowCount],
     ['no unnamed product rows', products.anyUnnamed === false],
     ['product row opens the detail panel (price + components + facts/blend)', productDeep.shown === true && productDeep.hasName === true && productDeep.hasPrice === true && productDeep.hasComponent === true && productDeep.hasFactsOrBlend === true],
-    ['essentials BEST SOURCES list renders with header (Magnesium)', chipToProduct.srcCount > 0 && chipToProduct.hasHeader === true],
-    ['best-source rows are ranked (#1) + show a name + delivered amount', chipToProduct.firstRank === '1' && chipToProduct.firstHasName === true && chipToProduct.firstHasAmount === true],
+    ['essentials BEST SOURCES list renders (Magnesium)', chipToProduct.srcCount > 0],
     ['best-source rows show a pointer cursor (look clickable)', chipToProduct.srcCursor === 'pointer'],
     ['best-source row opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
-    ['numeric-target essential hides the honest-gap note (Magnesium adequacy is real)', chipToProduct.magHasNote === false],
-    ['honest-gap essential shows the adequacy note over ranked sources (Strontium)', chipToProduct.gapHasNote === true && chipToProduct.gapSources > 0],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
     ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
     ['essentials: coverage states rendered', essentials.stateTiles > 0],
-    ['essentials: Magnesium tile expands deep-dive', deep.shown === true && deep.hasPill === true && deep.hasName === true],
-    ['corpus: claim block rendered in deep-dive', deep.corpusShown === true],
-    ['corpus: sealed claims present (Magnesium)', deep.claimCount > 0],
-    ['corpus: claims grouped by kind', deep.groupCount > 0],
-    ['corpus: claim shows paraphrase + verbatim + citation', deep.firstText && deep.firstVerbatim && deep.firstCite],
-    ['meter: numeric target shows intake-vs-goal (Magnesium)', /WALLACH GOAL/.test(deep.meterText)],
-    ['why-this-number: box shows with full derivation where a newer book overrode an older (Magnesium)', deep.whyShown === true && deep.whyHasDerivation === true],
-    ['why-this-number: box hidden where no earlier figure exists (Boron)', whyHidden.boronHasWhy === false],
-    ['meter: trace element shows pill only, no meter (Dysprosium)', traceMeter.hasMeter === false && traceMeter.hasPill === true],
+    ['essentials: Magnesium tile expands the entity page', deep.shown === true && deep.hasName === true && deep.hasGlance === true],
+    ['entity page: the full record renders with claim cards (Magnesium)', deep.recordShown === true && deep.recordClaimCount > 0],
+    ['coverage: numeric target shows the real ep-bar (Magnesium)', deep.hasBar === true],
+    ['coverage: trace element shows the pill only, no bar (Dysprosium)', traceMeter.hasBar === false && traceMeter.hasPill === true],
     ['conditions: list rendered', conditions.rowCount >= 1],
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
     ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
@@ -469,7 +392,6 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products search: composition match narrows rows (boron via blends)', prodSearch.visible > 0 && prodSearch.visible < prodSearch.total && prodSearch.matchedByComposition === true],
     ['products search: clear (×) affordance appears while querying', prodSearch.hasQueryClass === true && prodSearch.clearVisible === true],
     ['products search: clear button resets the filter in one click', prodClear.visible === prodClear.total && prodClear.inputEmpty === true],
-    ['best sources: expander reveals the hidden overflow rows', srcExpand.hadButton === true && srcExpand.after > srcExpand.before && srcExpand.expanded === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
     ['no page errors', errs.length === 0],

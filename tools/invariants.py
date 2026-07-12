@@ -2144,6 +2144,7 @@ _CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
 _CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (blueprint §2.4)
     "dashboard/assets/data/doctrine-data.json",  # Knowledge>Doctrine cards (Phase E)
     "dashboard/assets/data/view-copy.json",  # VIEW-prose store: kind/facet labels + UI chrome (Phase H0)
+    "dashboard/assets/data/entity-copy.json",  # per-entity approved lede + why-this-number (Phase H2)
 )
 _CLEAN_SURFACE_LEGACY_DATA = (   # legacy hand-authored data now under the prose/citation gates (crack #3, 2026-07-06)
     "dashboard/assets/data/regimen-base-data.json",    # transitional HBSP composition (Pillar 2 in Phase F)
@@ -2162,6 +2163,7 @@ _PROSE_HOME_KEYS = {
     "resolution", "_note", "rationale", "file", "authors", "sealed_at",
     "duration", "for_condition", "form",                       # dose free descriptors
     "body",                                                    # doctrine-store prose home (§2.4 #4)
+    "lede", "why",                                             # entity-copy approved lede + why-this-number (Phase H2)
     "_prose_container",                                        # a leaf under a _PROSE_CONTAINER_KEYS subtree (crack #3)
 }
 
@@ -2182,13 +2184,16 @@ def _clean_surface_files():
     return files
 
 
-_PROSE_CONTAINER_KEYS = {"antiListNotes"}  # a whole subtree that IS one designated prose
+_PROSE_CONTAINER_KEYS = {"antiListNotes", "ui"}  # whole subtrees that ARE one designated prose
 # home (its leaves are contained prose keyed by an entity name, not fact fields). Crack #3
 # (2026-07-06): scanner-corpus-data keeps its Wallach food-guidance PROSE in antiListNotes,
 # cleanly apart from the antiList fact arrays; recognize it so the fact arrays stay gated
 # while the contained prose gets its one home. (That prose still carries hand-authored
 # Wallach health claims + inline book-refs -- a Phase E/F scanner-rework item to source into
 # corpus claims; tracked in the blueprint, not gated here.)
+# "ui" (H2): the view-copy VIEW-prose store's chrome-copy subtree -- its ep_* leads/notes
+# are sentence-shaped prose BY DESIGN (R4's "one compartment" for view copy), so the whole
+# ui{} subtree is a prose home, never a fact field. Only view-copy.json carries a top-level "ui".
 
 
 def _walk_strings(obj, key=None, in_prose=False):
@@ -2626,12 +2631,16 @@ def check_corpus_audit_gate():
 # The (growing) CLEAN-view surface. A file listed here is asserted prose-free --
 # every user-facing string lives in the view-copy content store via state/copy.ts
 # (R4). EMPTY in H0; H2/H3/H4 append each entity/drawer/palette view as migrated.
-_CLEAN_VIEW_FILES: tuple = ()
+_CLEAN_VIEW_FILES: tuple = (
+    "dashboard/assets/js/src/views/entity-page.ts",
+)
 
 # The entity-render view file(s). Asserted a PURE PROJECTION of the generated
 # entity-page artifact: no object literal keyed by a real entity id, no per-entity
 # content branch. EMPTY in H0 (the render is built in H2); H2 appends the file.
-_ENTITY_VIEW_FILES: tuple = ()
+_ENTITY_VIEW_FILES: tuple = (
+    "dashboard/assets/js/src/views/entity-page.ts",
+)
 
 # Prototype/demo scaffold markers that must NEVER reach a shipped view or css
 # (they live only in gitignored temporary/*.html). Distinctive enough not to

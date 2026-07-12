@@ -25,18 +25,15 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import doctrineData from '../../../data/doctrine-data.json';
-import fattyAcidClarityData from '../../../data/fatty-acid-clarity-data.json';
 import { on as onEvent } from '../core/events.js';
 import {
   CoverageLayoutSchema,
   type DoctrineCard,
   DoctrineSchema,
-  FattyAcidClaritySchema,
   type LayoutSection,
   type LayoutTile,
 } from '../core/schemas/index.js';
 import {
-  getEssentialByLayoutKey,
   listBooks,
   listConditions,
 } from '../state/corpus.js';
@@ -44,10 +41,10 @@ import {
   type CoverageSnapshot,
   type CoverageStatus,
   getOrCompute,
-  getTargets,
 } from '../state/coverage.js';
-import { renderConditionsTab, renderCorpusForEssential, renderCorpusTab, renderIntakeMeter, tileOf } from './knowledge-corpus.js';
-import { productCount, renderEssentialSources, renderProductsTab } from './knowledge-products.js';
+import { renderConditionsTab, renderCorpusTab } from './knowledge-corpus.js';
+import { productCount, renderProductsTab } from './knowledge-products.js';
+import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
@@ -75,12 +72,6 @@ const DOCTRINES: DoctrineCard[] = DoctrineSchema.parse(doctrineData).doctrines;
 // ─── Essentials layout (shared with the Coverage periodic table) ───────────
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
-
-// Omega fatty-acid CLARITY explainer (GENERAL reference, NOT a Wallach claim) — shown on each
-// omega essential's deep-dive so the naming stays unambiguous (the source 90-nutrients graphic
-// mislabeled Omega-9 as "Arachidonic"; it is Oleic Acid). Prose lives in the store (R4).
-const FATTY_ACID_CLARITY = FattyAcidClaritySchema.parse(fattyAcidClarityData);
-const OMEGA_BY_FAMILY = new Map(FATTY_ACID_CLARITY.omegas.map(o => [o.family, o] as const));
 
 /** One essential as the drawer grid + deep-dive render it. */
 interface EssentialView {
@@ -157,9 +148,6 @@ function buildEssentialGroups(): EssentialGroup[] {
 }
 
 const ESS_GROUPS = buildEssentialGroups();
-const ESS_BY_KEY = new Map<string, EssentialView>(
-  ESS_GROUPS.flatMap(g => g.items.map(i => [i.key, i] as const)),
-);
 /** The 90 — count of essential tiles (Omega-9 and any other non-essential excluded). */
 const ESS_ESSENTIAL_COUNT = ESS_GROUPS.reduce((n, g) => n + g.items.filter(i => i.essential).length, 0);
 
@@ -198,16 +186,6 @@ function statusLabel(s: CoverageStatus): string {
   }
 }
 
-function statusPillClass(s: CoverageStatus): string {
-  if (s === 'covered' || s === 'trace') {
-    return 'kd-essential-deep__status-pill--ok';
-  }
-  if (s === 'partial' || s === 'gap') {
-    return 'kd-essential-deep__status-pill--warn';
-  }
-  return 'kd-essential-deep__status-pill--pending';
-}
-
 // ─── Render helpers ────────────────────────────────────────────────────────
 
 function escHTML(s: unknown): string {
@@ -220,254 +198,11 @@ function hexSerial(seed: number): string {
 
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
-/**
- * Per-omega clarity alert for the deep-dive: lists the family's fatty acids (primary +
- * additional forms) with a plain description. GENERAL reference, explicitly marked NOT a
- * Wallach claim (§00.A: clearly-marked non-Wallach educational context). Empty for non-omegas.
- */
-function renderOmegaClarity(key: string): string {
-  const m = /^Omega-([369])\b/.exec(key);
-  const digit = m?.[1];
-  if (digit === undefined) {
-    return '';
-  }
-  const fam = OMEGA_BY_FAMILY.get(`omega-${digit}`);
-  if (fam === undefined) {
-    return '';
-  }
-  const rows = fam.acids.map(a => `
-      <li class="kd-omega__row">
-        <span class="kd-omega__abbr">${escHTML(a.abbr)}</span>
-        <div class="kd-omega__body">
-          <span class="kd-omega__name">${escHTML(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ''}</span>
-          <span class="kd-omega__desc">${escHTML(a.description)}</span>
-        </div>
-      </li>`).join('');
-  return `
-    <div class="kd-omega">
-      <div class="kd-omega__head">
-        <span class="kd-omega__title">${escHTML(fam.label)} · FATTY-ACID FORMS</span>
-      </div>
-      <ul class="kd-omega__list">${rows}</ul>
-      <div class="kd-omega__note">${escHTML(FATTY_ACID_CLARITY.disclaimer)}</div>
-    </div>`;
-}
-
-// ─── "Why this number?" — the target's provenance, collapsed under the meter ─
-// Appears under ONE condition (Luneth 2026-07-09): the posted number comes from
-// Epigenetics (2014) AND an earlier Let's Play Doctor (1995) figure it contradicts
-// still exists -- i.e. Wallach's newest dose table overrode his oldest. No older
-// figure, a non-Epigenetics newest source, or a tie where the two books agree ->
-// no box (the old always-on box merely restated the number). When it DOES show it
-// walks the full derivation like Vitamin A: Wallach's stated range, every unit
-// conversion / body-weight scaling / rounding step, the earlier figure(s), and the
-// "his guidance evolved" gloss -- nothing left unexplained. Reads the derived
-// target's parts/other_claims/provenance fields (eden/tools/targets_derive.py).
-// Micro-copy is inline here (the full R4 prose store is a Phase E/F WISH; matches
-// the kd-source-note pattern).
-interface WTNRange { low: number; high: number | null; unit: string }
-interface WTNProvenance {
-  body_weight_basis?: string;
-  unit_detail?: string;
-  original_low?: number;
-  original_high?: number | null;
-  original_unit?: string;
-  upper_taken?: number;
-  scale_factor?: number;
-  rounding?: string;
-  factor?: number;
-  factor_source?: string;
-}
-interface WTNPart { form?: string | null; value: number; unit: string; range?: WTNRange; provenance?: WTNProvenance }
-interface WTNOther { low: number; high: number | null; unit: string; source?: string; book?: string; year?: number }
-interface WallachTargetDetail {
-  low?: number;
-  unit?: string;
-  source?: string;
-  range?: WTNRange;
-  parts?: WTNPart[];
-  other_claims?: WTNOther[];
-  provenance?: WTNProvenance;
-}
-
-function wtnNum(n: number): string {
-  return n.toLocaleString('en-US', { maximumFractionDigits: 2 });
-}
-
-// "Wallach — Epigenetics: The Death of ... (Wallach, 2014)" -> "Epigenetics (2014)"
-function wtnBook(src: string | undefined): string {
-  if (src === undefined) {
-    return '';
-  }
-  const yr = src.match(/\((?:Wallach,\s*)?(\d{4})\)/);
-  const stripped = src
-    .replace(/^Wallach\s*[—-]\s*/, '')
-    .replace(/\s*\((?:Wallach,\s*)?\d{4}\)/, '');
-  const title = (stripped.split(':')[0] ?? stripped).trim();
-  return (yr !== null) ? `${title} (${yr[1]})` : title;
-}
-
-function wtnAmount(low: number, high: number | null, unit: string): string {
-  const val = (high !== null && high !== low) ? `${wtnNum(low)}–${wtnNum(high)}` : wtnNum(low);
-  return `${val} ${escHTML(unit)}`;
-}
-
-// The box shows ONLY when Epigenetics (2014) posts a number that CONTRADICTS an
-// earlier Let's Play Doctor (1995) figure. A tie (both books state the same amount
-// in the same unit) is not a contradiction -> no box; nor is a non-Epigenetics
-// newest source or an essential with no earlier LPD figure at all.
-function whyThisNumberQualifies(td: WallachTargetDetail): boolean {
-  // Show the box wherever the posted (newest-book) number DISAGREES with an earlier
-  // figure Wallach gave in another book -- that is the number that needs explaining,
-  // whatever the newer book is (Epigenetics, Immortality, DDDL...). No earlier figure,
-  // or every earlier figure MATCHES the posted one (a tie), means nothing changed
-  // across the books, so no box (Luneth 2026-07-09).
-  if (typeof td.low !== 'number') {
-    return false;
-  }
-  // Each book's comparable figure is its UPPER (we always target the upper); the box
-  // shows unless every earlier book's upper matches the posted number in the same unit.
-  const posted = td.low;
-  return (td.other_claims ?? []).some(o => !(o.unit === td.unit && (o.high ?? o.low) === posted));
-}
-
-// One derivation chain: what Wallach's newest book states -> the transforms we apply
-// -> the posted number. Parts (Vitamin A) render one chain each with a lead form name.
-// Covers every transform shape in eden/tools/targets_derive.py: upper-of-range,
-// IU->metric conversion, per-100-lb body-weight scaling, rounding, and combinations.
-function wtnChain(p: WTNProvenance, finalUnit: string, finalVal: number, leadName?: string): string {
-  const oUnit = p.original_unit ?? finalUnit;
-  const oLow = typeof p.original_low === 'number' ? p.original_low : finalVal;
-  const oHigh = typeof p.original_high === 'number' ? p.original_high : null;
-  const upper = typeof p.upper_taken === 'number' ? p.upper_taken : (oHigh ?? oLow);
-  const isRange = oHigh !== null && oHigh !== oLow;
-  const scaled = typeof p.scale_factor === 'number';
-  const converted = p.factor_source !== undefined;
-  const detail = p.unit_detail !== undefined ? ` ${escHTML(p.unit_detail)}` : '';
-  const per100 = scaled ? ' per 100 lb of body weight' : '';
-  const lead = leadName !== undefined ? `<strong>${escHTML(leadName)}</strong> — ` : '';
-  const stated = `${lead}Wallach lists <strong>${wtnAmount(oLow, oHigh, oUnit)}</strong>${per100}`;
-
-  const steps: string[] = [];
-  if (isRange) {
-    const upperIsFinal = !scaled && !converted;
-    steps.push(upperIsFinal
-      ? 'target the upper end'
-      : `target the upper (<strong>${wtnNum(upper)} ${escHTML(oUnit)}</strong>)`);
-  }
-  if (converted) {
-    steps.push(`convert to metric (${escHTML(p.factor_source ?? '')})`);
-  }
-  if (scaled) {
-    steps.push(`scale to a 154 lb reference body (×${wtnNum(p.scale_factor ?? 1)})`);
-  }
-  if (p.rounding !== undefined && (scaled || converted)) {
-    steps.push(`round to ${escHTML(p.rounding)}`);
-  }
-
-  const posted = `<strong>${wtnNum(finalVal)} ${escHTML(finalUnit)}${detail}</strong>`;
-  if (steps.length === 0) {
-    return `${stated}.`;
-  }
-  const joined = steps.length === 1
-    ? (steps[0] ?? '')
-    : `${steps.slice(0, -1).join(', ')}, then ${steps[steps.length - 1] ?? ''}`;
-  return `${stated}; we ${joined} → ${posted}.`;
-}
-
-function renderWhyThisNumber(td: WallachTargetDetail | undefined): string {
-  if (td === undefined || typeof td.low !== 'number' || !whyThisNumberQualifies(td)) {
-    return '';
-  }
-  const unit = td.unit ?? '';
-  const detail = td.provenance?.unit_detail !== undefined ? ` ${escHTML(td.provenance.unit_detail)}` : '';
-  const rows: string[] = [];
-
-  // The answer, up top.
-  rows.push(`<div class="kd-why__posted"><strong>${wtnNum(td.low)} ${escHTML(unit)}${detail}</strong> daily${td.source !== undefined ? ` · ${escHTML(wtnBook(td.source))}` : ''}</div>`);
-
-  // The full derivation. Parts (Vitamin A) get one chain each + a summed total;
-  // everything else is a single chain.
-  const parts = td.parts;
-  if (Array.isArray(parts) && parts.length > 1) {
-    const items = parts
-      .map(p => `<li>${wtnChain(p.provenance ?? {}, p.unit, p.value, p.form ?? undefined)}</li>`)
-      .join('');
-    rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> Wallach states each form separately:<ul class="kd-why__parts-list">${items}</ul>Summed → <strong>${wtnNum(td.low)} ${escHTML(unit)}${detail}</strong>.</div>`);
-  }
-  else if (td.provenance !== undefined) {
-    rows.push(`<div class="kd-why__derivation"><span class="kd-why__how">how we got this</span> ${wtnChain(td.provenance, unit, td.low)}</div>`);
-  }
-
-  // The earlier figure(s) this newest number superseded -- the reason the box exists.
-  const earlier = td.other_claims ?? [];
-  if (earlier.length > 0) {
-    const lines = earlier
-      .map(o => `Earlier, <strong>${escHTML(wtnBook(o.source))}</strong> recommended <strong>${wtnAmount(o.low, o.high, o.unit)}</strong>.`)
-      .join(' ');
-    rows.push(`<div class="kd-why__older">${lines}</div>`);
-    rows.push('<div class="kd-why__gloss">Wallach’s guidance evolved across his books — we follow his most recent figure and keep the earlier one for context.</div>');
-  }
-
-  return `
-    <details class="kd-why">
-      <summary class="kd-why__summary">why this number?</summary>
-      <div class="kd-why__body">${rows.join('')}</div>
-    </details>`;
-}
-
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
-  const e = ESS_BY_KEY.get(key);
-  if (e === undefined) {
-    return '';
-  }
-  const corpusEss = getEssentialByLayoutKey(key);
-  const status = statusOf(snapshot, key);
-  const target = getTargets().find(t => t.name === key);
-  const td = (target as { target?: unknown } | undefined)?.target as WallachTargetDetail | undefined;
-  const corpusHTML = corpusEss !== null ? renderCorpusForEssential(corpusEss, renderWhyThisNumber(td)) : renderWhyThisNumber(td);
-  const stance = target?.wallach_stance;
-  const summary = stance?.summary;
-  const citation = stance?.citation;
-
-  // Phase C2 (2026-07-05): the "WALLACH SAYS" stance box is DROPPED for now. Its old
-  // data (knowledge/essentials-targets.json) carried lecture citations, Youngevity
-  // stances, and hand-typed cites (the poison this overhaul purges), so derived targets
-  // no longer ship a wallach_stance. Per Luneth, a per-essential stance is re-authored
-  // MANUALLY once every book is mined; this render (styling remembered) lights up the
-  // moment a target carries wallach_stance again. Until then it renders nothing — the
-  // clean sealed corpus claims below (corpusHTML) are the deep-dive's education.
-  const wallachHTML = (summary !== undefined && summary.length > 0)
-    ? `
-      <div class="kd-essential-deep__sub">WALLACH SAYS</div>
-      <p class="kd-essential-deep__body">${escHTML(summary)}</p>
-      ${citation !== undefined ? `<div class="kd-essential-deep__source">CITED · <strong>${escHTML(citation)}</strong></div>` : ''}`
-    : '';
-
-  const sourcesHTML = renderEssentialSources(key);
-
-  return `
-    <div class="kd-essential-deep">
-      <button class="kd-essential-deep__close" data-kd-action="essential-close" title="Close (Esc)">×</button>
-      <header class="kd-essential-deep__head">
-        <div class="kd-essential-deep__sym-row">
-          <div class="kd-essential-deep__sym">${escHTML(e.symbol)}</div>
-          <div class="kd-essential-deep__name-block">
-            <h3 class="kd-essential-deep__name">${escHTML(e.key)}</h3>
-            <div class="kd-essential-deep__cat">${escHTML(e.catLabel)}${e.ref !== '' ? ` · ${escHTML(e.ref)}` : ''}</div>
-          </div>
-        </div>
-        <div class="kd-essential-deep__readout">
-          <span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span>
-          ${renderIntakeMeter(tileOf(snapshot, key), status)}
-        </div>
-      </header>
-      ${e.essential ? '' : '<div class="kd-essential-deep__flag"><strong>NON-ESSENTIAL</strong> · the body can synthesize this, so it is not one of the 90. Shown for completeness — Youngevity includes it (Ultimate EFA Plus) for cardiovascular balance + optimal absorption.</div>'}
-      ${renderOmegaClarity(e.key)}
-      ${wallachHTML}
-      ${corpusHTML}
-      ${sourcesHTML}
-    </div>`;
+  // The essential deep-view IS the data-driven entity page now (H2). Its lede + the short
+  // "why this number" hover come from the user-approved entity-copy store inside
+  // entity-page.ts; there is nothing to compute here.
+  return renderEssentialPage(key, snapshot);
 }
 
 function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
@@ -843,7 +578,18 @@ export function mount(container: HTMLElement): DrawerHandle {
   // active tab's rows in place (the box was rendered but unwired before).
   const inputHandler = (ev: Event): void => {
     const t = ev.target as HTMLElement | null;
-    if (t === null || !t.classList.contains('kd-search-input')) {
+    if (t === null) {
+      return;
+    }
+    // The entity page's full-record filter is a separate box; filter in place.
+    if (t.classList.contains('kd-ep-filter')) {
+      const recordBody = container.querySelector<HTMLElement>('.kd-body');
+      if (recordBody !== null) {
+        applyRecordFilter(recordBody, (t as HTMLInputElement).value);
+      }
+      return;
+    }
+    if (!t.classList.contains('kd-search-input')) {
       return;
     }
     searchQuery = (t as HTMLInputElement).value;
