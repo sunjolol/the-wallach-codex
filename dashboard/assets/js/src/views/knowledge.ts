@@ -29,6 +29,7 @@ import {
   type LayoutSection,
   type LayoutTile,
 } from '../core/schemas/index.js';
+import { ui } from '../state/copy.js';
 import {
   listConditions,
 } from '../state/corpus.js';
@@ -37,12 +38,11 @@ import {
   type CoverageStatus,
   getOrCompute,
 } from '../state/coverage.js';
-import { ui } from '../state/copy.js';
-import { renderConditionsTab } from './knowledge-corpus.js';
-import { productCount, renderProductsTab } from './knowledge-products.js';
 import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
+import { renderConditionsTab } from './knowledge-corpus.js';
+import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
-import { renderExploreTab, exploreEntities } from './knowledge-explore.js';
+import { productCount, renderProductsTab } from './knowledge-products.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
@@ -242,12 +242,14 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">×</button></div>
     </header>
-    ${activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products' ? `<div class="kd-search">
+    ${activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products'
+      ? `<div class="kd-search">
       <span class="kd-search-icon">⌕</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">×</button>
       <span class="kd-search-kbd">/</span>
-    </div>` : ''}
+    </div>`
+      : ''}
     <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
 }
 
