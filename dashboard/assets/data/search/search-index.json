@@ -30,6 +30,7 @@
   "entities": {
     "aluminum": {
       "display_name": "Aluminum",
+      "common_name": "Aluminum",
       "type": "nutrient",
       "synonyms": [
         "al",
@@ -139,6 +140,7 @@
     },
     "calcium": {
       "display_name": "Calcium",
+      "common_name": "Calcium",
       "type": "nutrient",
       "synonyms": [
         "ca"
@@ -156,6 +158,7 @@
     },
     "carbon": {
       "display_name": "Carbon",
+      "common_name": "Carbon",
       "type": "nutrient",
       "synonyms": [
         "c",
@@ -199,6 +202,7 @@
     },
     "chromium": {
       "display_name": "Chromium",
+      "common_name": "Chromium",
       "type": "nutrient",
       "synonyms": [
         "cr"
@@ -214,6 +218,7 @@
     },
     "cobalt": {
       "display_name": "Cobalt",
+      "common_name": "Cobalt",
       "type": "nutrient",
       "synonyms": [
         "co",
@@ -264,6 +269,7 @@
     },
     "copper": {
       "display_name": "Copper",
+      "common_name": "Copper",
       "type": "nutrient",
       "synonyms": [
         "cu",
@@ -392,6 +398,7 @@
     },
     "gallium": {
       "display_name": "Gallium",
+      "common_name": "Gallium",
       "type": "nutrient",
       "synonyms": [
         "ga",
@@ -409,6 +416,7 @@
     },
     "germanium": {
       "display_name": "Germanium",
+      "common_name": "Germanium",
       "type": "nutrient",
       "synonyms": [
         "ge",
@@ -426,6 +434,7 @@
     },
     "gold": {
       "display_name": "Gold",
+      "common_name": "Gold",
       "type": "nutrient",
       "synonyms": [
         "au",
@@ -545,6 +554,7 @@
     },
     "hydrogen": {
       "display_name": "Hydrogen",
+      "common_name": "Hydrogen",
       "type": "nutrient",
       "synonyms": [
         "h2"
@@ -592,6 +602,7 @@
     },
     "iodine": {
       "display_name": "Iodine",
+      "common_name": "Iodine",
       "type": "nutrient",
       "synonyms": [
         "iodide"
@@ -608,6 +619,7 @@
     },
     "iron": {
       "display_name": "Iron",
+      "common_name": "Iron",
       "type": "nutrient",
       "synonyms": [
         "fe",
@@ -776,6 +788,7 @@
     },
     "potassium": {
       "display_name": "Potassium",
+      "common_name": "Potassium",
       "type": "nutrient",
       "synonyms": [
         "potash",
@@ -877,6 +890,7 @@
     },
     "silver": {
       "display_name": "Silver",
+      "common_name": "Silver",
       "type": "nutrient",
       "synonyms": [
         "ag",

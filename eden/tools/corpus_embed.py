@@ -140,6 +140,7 @@ def build_embed() -> dict:
         essentials[slug] = {
             "slug": slug,
             "display_name": entry["display_name"],
+            "common_name": ce.get("common_name", entry["display_name"]),
             "layout_key": ce.get("layout_key", entry["display_name"]),
             "category": entry["category"],
             "symbol": ce.get("symbol", ""),

@@ -60,6 +60,8 @@ export const CorpusDeficiencySignSchema = z.object({
 export const CorpusEssentialSchema = z.object({
   slug: z.string(),
   display_name: z.string(),
+  /** Friendly front-facing label (common_name); display_name stays the scientific identity. */
+  common_name: z.string(),
   layout_key: z.string(),
   category: z.string(),
   symbol: z.string(),

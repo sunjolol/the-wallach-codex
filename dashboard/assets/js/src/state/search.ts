@@ -52,7 +52,7 @@ export function getEntity(slug: string): SearchEntity | null {
 export function displayName(slug: string): string {
   const e = getEntity(slug);
   if (e !== null) {
-    return e.display_name;
+    return e.common_name ?? e.display_name;
   }
   return slug.replace(/[_-]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 }

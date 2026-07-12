@@ -16,6 +16,7 @@
     "hydrogen": {
       "type": "essential",
       "name": "Hydrogen",
+      "scientific_name": "Hydrogen",
       "symbol": "H",
       "category": "mineral",
       "is_essential": true,
@@ -109,6 +110,7 @@
     "carbon": {
       "type": "essential",
       "name": "Carbon",
+      "scientific_name": "Carbon",
       "symbol": "C",
       "category": "mineral",
       "is_essential": true,
@@ -155,6 +157,7 @@
     "nitrogen": {
       "type": "essential",
       "name": "Nitrogen",
+      "scientific_name": "Nitrogen",
       "symbol": "N",
       "category": "mineral",
       "is_essential": true,
@@ -203,6 +206,7 @@
     "oxygen": {
       "type": "essential",
       "name": "Oxygen",
+      "scientific_name": "Oxygen",
       "symbol": "O",
       "category": "mineral",
       "is_essential": true,
@@ -270,6 +274,7 @@
     "sodium": {
       "type": "essential",
       "name": "Sodium",
+      "scientific_name": "Sodium",
       "symbol": "Na",
       "category": "mineral",
       "is_essential": true,
@@ -358,6 +363,7 @@
     "magnesium": {
       "type": "essential",
       "name": "Magnesium",
+      "scientific_name": "Magnesium",
       "symbol": "Mg",
       "category": "mineral",
       "is_essential": true,
@@ -590,6 +596,7 @@
     "phosphorus": {
       "type": "essential",
       "name": "Phosphorus",
+      "scientific_name": "Phosphorus",
       "symbol": "P",
       "category": "mineral",
       "is_essential": true,
@@ -667,6 +674,7 @@
     "sulfur": {
       "type": "essential",
       "name": "Sulfur",
+      "scientific_name": "Sulfur",
       "symbol": "S",
       "category": "mineral",
       "is_essential": true,
@@ -738,6 +746,7 @@
     "chloride": {
       "type": "essential",
       "name": "Chloride",
+      "scientific_name": "Chloride",
       "symbol": "Cl",
       "category": "mineral",
       "is_essential": true,
@@ -784,6 +793,7 @@
     "potassium": {
       "type": "essential",
       "name": "Potassium",
+      "scientific_name": "Potassium",
       "symbol": "K",
       "category": "mineral",
       "is_essential": true,
@@ -919,6 +929,7 @@
     "calcium": {
       "type": "essential",
       "name": "Calcium",
+      "scientific_name": "Calcium",
       "symbol": "Ca",
       "category": "mineral",
       "is_essential": true,
@@ -1236,6 +1247,7 @@
     "boron": {
       "type": "essential",
       "name": "Boron",
+      "scientific_name": "Boron",
       "symbol": "B",
       "category": "mineral",
       "is_essential": true,
@@ -1309,6 +1321,7 @@
     "cobalt": {
       "type": "essential",
       "name": "Cobalt",
+      "scientific_name": "Cobalt",
       "symbol": "Co",
       "category": "mineral",
       "is_essential": true,
@@ -1397,6 +1410,7 @@
     "chromium": {
       "type": "essential",
       "name": "Chromium",
+      "scientific_name": "Chromium",
       "symbol": "Cr",
       "category": "mineral",
       "is_essential": true,
@@ -1622,6 +1636,7 @@
     "copper": {
       "type": "essential",
       "name": "Copper",
+      "scientific_name": "Copper",
       "symbol": "Cu",
       "category": "mineral",
       "is_essential": true,
@@ -1846,6 +1861,7 @@
     "germanium": {
       "type": "essential",
       "name": "Germanium",
+      "scientific_name": "Germanium",
       "symbol": "Ge",
       "category": "mineral",
       "is_essential": true,
@@ -1967,6 +1983,7 @@
     "iron": {
       "type": "essential",
       "name": "Iron",
+      "scientific_name": "Iron",
       "symbol": "Fe",
       "category": "mineral",
       "is_essential": true,
@@ -2113,6 +2130,7 @@
     "iodine": {
       "type": "essential",
       "name": "Iodine",
+      "scientific_name": "Iodine",
       "symbol": "I",
       "category": "mineral",
       "is_essential": true,
@@ -2252,6 +2270,7 @@
     "manganese": {
       "type": "essential",
       "name": "Manganese",
+      "scientific_name": "Manganese",
       "symbol": "Mn",
       "category": "mineral",
       "is_essential": true,
@@ -2362,6 +2381,7 @@
     "molybdenum": {
       "type": "essential",
       "name": "Molybdenum",
+      "scientific_name": "Molybdenum",
       "symbol": "Mo",
       "category": "mineral",
       "is_essential": true,
@@ -2415,6 +2435,7 @@
     "selenium": {
       "type": "essential",
       "name": "Selenium",
+      "scientific_name": "Selenium",
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
@@ -2675,6 +2696,7 @@
     "silica": {
       "type": "essential",
       "name": "Silica",
+      "scientific_name": "Silica",
       "symbol": "Si",
       "category": "mineral",
       "is_essential": true,
@@ -2718,6 +2740,7 @@
     "strontium": {
       "type": "essential",
       "name": "Strontium",
+      "scientific_name": "Strontium",
       "symbol": "Sr",
       "category": "mineral",
       "is_essential": true,
@@ -2758,6 +2781,7 @@
     "vanadium": {
       "type": "essential",
       "name": "Vanadium",
+      "scientific_name": "Vanadium",
       "symbol": "V",
       "category": "mineral",
       "is_essential": true,
@@ -2886,6 +2910,7 @@
     "zinc": {
       "type": "essential",
       "name": "Zinc",
+      "scientific_name": "Zinc",
       "symbol": "Zn",
       "category": "mineral",
       "is_essential": true,
@@ -3165,6 +3190,7 @@
     "silver": {
       "type": "essential",
       "name": "Silver",
+      "scientific_name": "Silver",
       "symbol": "Ag",
       "category": "mineral",
       "is_essential": true,
@@ -3239,6 +3265,7 @@
     "aluminum": {
       "type": "essential",
       "name": "Aluminum",
+      "scientific_name": "Aluminum",
       "symbol": "Al",
       "category": "mineral",
       "is_essential": true,
@@ -3295,6 +3322,7 @@
     "arsenic": {
       "type": "essential",
       "name": "Arsenic",
+      "scientific_name": "Arsenic",
       "symbol": "As",
       "category": "mineral",
       "is_essential": true,
@@ -3346,6 +3374,7 @@
     "gold": {
       "type": "essential",
       "name": "Gold",
+      "scientific_name": "Gold",
       "symbol": "Au",
       "category": "mineral",
       "is_essential": true,
@@ -3411,6 +3440,7 @@
     "barium": {
       "type": "essential",
       "name": "Barium",
+      "scientific_name": "Barium",
       "symbol": "Ba",
       "category": "mineral",
       "is_essential": true,
@@ -3445,6 +3475,7 @@
     "beryllium": {
       "type": "essential",
       "name": "Beryllium",
+      "scientific_name": "Beryllium",
       "symbol": "Be",
       "category": "mineral",
       "is_essential": true,
@@ -3479,6 +3510,7 @@
     "bromine": {
       "type": "essential",
       "name": "Bromine",
+      "scientific_name": "Bromine",
       "symbol": "Br",
       "category": "mineral",
       "is_essential": true,
@@ -3513,6 +3545,7 @@
     "cerium": {
       "type": "essential",
       "name": "Cerium",
+      "scientific_name": "Cerium",
       "symbol": "Ce",
       "category": "mineral",
       "is_essential": true,
@@ -3538,6 +3571,7 @@
     "cesium": {
       "type": "essential",
       "name": "Cesium",
+      "scientific_name": "Cesium",
       "symbol": "Cs",
       "category": "mineral",
       "is_essential": true,
@@ -3585,6 +3619,7 @@
     "dysprosium": {
       "type": "essential",
       "name": "Dysprosium",
+      "scientific_name": "Dysprosium",
       "symbol": "Dy",
       "category": "mineral",
       "is_essential": true,
@@ -3612,6 +3647,7 @@
     "erbium": {
       "type": "essential",
       "name": "Erbium",
+      "scientific_name": "Erbium",
       "symbol": "Er",
       "category": "mineral",
       "is_essential": true,
@@ -3639,6 +3675,7 @@
     "europium": {
       "type": "essential",
       "name": "Europium",
+      "scientific_name": "Europium",
       "symbol": "Eu",
       "category": "mineral",
       "is_essential": true,
@@ -3673,6 +3710,7 @@
     "gallium": {
       "type": "essential",
       "name": "Gallium",
+      "scientific_name": "Gallium",
       "symbol": "Ga",
       "category": "mineral",
       "is_essential": true,
@@ -3741,6 +3779,7 @@
     "gadolinium": {
       "type": "essential",
       "name": "Gadolinium",
+      "scientific_name": "Gadolinium",
       "symbol": "Gd",
       "category": "mineral",
       "is_essential": true,
@@ -3768,6 +3807,7 @@
     "hafnium": {
       "type": "essential",
       "name": "Hafnium",
+      "scientific_name": "Hafnium",
       "symbol": "Hf",
       "category": "mineral",
       "is_essential": true,
@@ -3795,6 +3835,7 @@
     "holmium": {
       "type": "essential",
       "name": "Holmium",
+      "scientific_name": "Holmium",
       "symbol": "Ho",
       "category": "mineral",
       "is_essential": true,
@@ -3822,6 +3863,7 @@
     "lanthanum": {
       "type": "essential",
       "name": "Lanthanum",
+      "scientific_name": "Lanthanum",
       "symbol": "La",
       "category": "mineral",
       "is_essential": true,
@@ -3856,6 +3898,7 @@
     "lithium": {
       "type": "essential",
       "name": "Lithium",
+      "scientific_name": "Lithium",
       "symbol": "Li",
       "category": "mineral",
       "is_essential": true,
@@ -3968,6 +4011,7 @@
     "lutetium": {
       "type": "essential",
       "name": "Lutetium",
+      "scientific_name": "Lutetium",
       "symbol": "Lu",
       "category": "mineral",
       "is_essential": true,
@@ -3995,6 +4039,7 @@
     "niobium": {
       "type": "essential",
       "name": "Niobium",
+      "scientific_name": "Niobium",
       "symbol": "Nb",
       "category": "mineral",
       "is_essential": true,
@@ -4022,6 +4067,7 @@
     "neodymium": {
       "type": "essential",
       "name": "Neodymium",
+      "scientific_name": "Neodymium",
       "symbol": "Nd",
       "category": "mineral",
       "is_essential": true,
@@ -4049,6 +4095,7 @@
     "nickel": {
       "type": "essential",
       "name": "Nickel",
+      "scientific_name": "Nickel",
       "symbol": "Ni",
       "category": "mineral",
       "is_essential": true,
@@ -4099,6 +4146,7 @@
     "praseodymium": {
       "type": "essential",
       "name": "Praseodymium",
+      "scientific_name": "Praseodymium",
       "symbol": "Pr",
       "category": "mineral",
       "is_essential": true,
@@ -4124,6 +4172,7 @@
     "rubidium": {
       "type": "essential",
       "name": "Rubidium",
+      "scientific_name": "Rubidium",
       "symbol": "Rb",
       "category": "mineral",
       "is_essential": true,
@@ -4149,6 +4198,7 @@
     "rhenium": {
       "type": "essential",
       "name": "Rhenium",
+      "scientific_name": "Rhenium",
       "symbol": "Re",
       "category": "mineral",
       "is_essential": true,
@@ -4174,6 +4224,7 @@
     "scandium": {
       "type": "essential",
       "name": "Scandium",
+      "scientific_name": "Scandium",
       "symbol": "Sc",
       "category": "mineral",
       "is_essential": true,
@@ -4199,6 +4250,7 @@
     "samarium": {
       "type": "essential",
       "name": "Samarium",
+      "scientific_name": "Samarium",
       "symbol": "Sm",
       "category": "mineral",
       "is_essential": true,
@@ -4224,6 +4276,7 @@
     "tin": {
       "type": "essential",
       "name": "Tin",
+      "scientific_name": "Tin",
       "symbol": "Sn",
       "category": "mineral",
       "is_essential": true,
@@ -4287,6 +4340,7 @@
     "tantalum": {
       "type": "essential",
       "name": "Tantalum",
+      "scientific_name": "Tantalum",
       "symbol": "Ta",
       "category": "mineral",
       "is_essential": true,
@@ -4312,6 +4366,7 @@
     "terbium": {
       "type": "essential",
       "name": "Terbium",
+      "scientific_name": "Terbium",
       "symbol": "Tb",
       "category": "mineral",
       "is_essential": true,
@@ -4337,6 +4392,7 @@
     "titanium": {
       "type": "essential",
       "name": "Titanium",
+      "scientific_name": "Titanium",
       "symbol": "Ti",
       "category": "mineral",
       "is_essential": true,
@@ -4362,6 +4418,7 @@
     "thulium": {
       "type": "essential",
       "name": "Thulium",
+      "scientific_name": "Thulium",
       "symbol": "Tm",
       "category": "mineral",
       "is_essential": true,
@@ -4387,6 +4444,7 @@
     "yttrium": {
       "type": "essential",
       "name": "Yttrium",
+      "scientific_name": "Yttrium",
       "symbol": "Y",
       "category": "mineral",
       "is_essential": true,
@@ -4413,6 +4471,7 @@
     "ytterbium": {
       "type": "essential",
       "name": "Ytterbium",
+      "scientific_name": "Ytterbium",
       "symbol": "Yb",
       "category": "mineral",
       "is_essential": true,
@@ -4438,6 +4497,7 @@
     "zirconium": {
       "type": "essential",
       "name": "Zirconium",
+      "scientific_name": "Zirconium",
       "symbol": "Zr",
       "category": "mineral",
       "is_essential": true,
@@ -4462,7 +4522,8 @@
     },
     "vitamin-a": {
       "type": "essential",
-      "name": "Retinol",
+      "name": "Vitamin A",
+      "scientific_name": "Retinol",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -4662,7 +4723,8 @@
     },
     "vitamin-b1": {
       "type": "essential",
-      "name": "Thiamine",
+      "name": "Vitamin B1",
+      "scientific_name": "Thiamine",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -4748,7 +4810,8 @@
     },
     "vitamin-b2": {
       "type": "essential",
-      "name": "Riboflavin",
+      "name": "Vitamin B2",
+      "scientific_name": "Riboflavin",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -4825,6 +4888,7 @@
     "vitamin-b3": {
       "type": "essential",
       "name": "Niacin",
+      "scientific_name": "Niacin",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -4934,7 +4998,8 @@
     },
     "vitamin-b5": {
       "type": "essential",
-      "name": "Pantothenic Acid",
+      "name": "Vitamin B5",
+      "scientific_name": "Pantothenic Acid",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5007,7 +5072,8 @@
     },
     "vitamin-b6": {
       "type": "essential",
-      "name": "Pyridoxine",
+      "name": "Vitamin B6",
+      "scientific_name": "Pyridoxine",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5165,6 +5231,7 @@
     "vitamin-b9": {
       "type": "essential",
       "name": "Folate",
+      "scientific_name": "Folate",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5271,7 +5338,8 @@
     },
     "vitamin-b12": {
       "type": "essential",
-      "name": "Cobalamin",
+      "name": "Vitamin B12",
+      "scientific_name": "Cobalamin",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5394,7 +5462,8 @@
     },
     "vitamin-c": {
       "type": "essential",
-      "name": "Ascorbic Acid",
+      "name": "Vitamin C",
+      "scientific_name": "Ascorbic Acid",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5606,7 +5675,8 @@
     },
     "vitamin-d": {
       "type": "essential",
-      "name": "Cholecalciferol",
+      "name": "Vitamin D",
+      "scientific_name": "Cholecalciferol",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5697,7 +5767,8 @@
     },
     "vitamin-e": {
       "type": "essential",
-      "name": "Tocopherol",
+      "name": "Vitamin E",
+      "scientific_name": "Tocopherol",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5901,7 +5972,8 @@
     },
     "vitamin-k": {
       "type": "essential",
-      "name": "Phylloquinone",
+      "name": "Vitamin K",
+      "scientific_name": "Phylloquinone",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -5962,6 +6034,7 @@
     "biotin": {
       "type": "essential",
       "name": "Biotin",
+      "scientific_name": "Biotin",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -6029,6 +6102,7 @@
     "choline": {
       "type": "essential",
       "name": "Choline",
+      "scientific_name": "Choline",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -6106,6 +6180,7 @@
     "inositol": {
       "type": "essential",
       "name": "Inositol",
+      "scientific_name": "Inositol",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -6167,6 +6242,7 @@
     "flavonoids": {
       "type": "essential",
       "name": "Flavonoids",
+      "scientific_name": "Flavonoids",
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
@@ -6252,6 +6328,7 @@
     "arginine": {
       "type": "essential",
       "name": "Arginine",
+      "scientific_name": "Arginine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6312,6 +6389,7 @@
     "taurine": {
       "type": "essential",
       "name": "Taurine",
+      "scientific_name": "Taurine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6374,6 +6452,7 @@
     "histidine": {
       "type": "essential",
       "name": "Histidine",
+      "scientific_name": "Histidine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6418,6 +6497,7 @@
     "isoleucine": {
       "type": "essential",
       "name": "Isoleucine",
+      "scientific_name": "Isoleucine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6443,6 +6523,7 @@
     "leucine": {
       "type": "essential",
       "name": "Leucine",
+      "scientific_name": "Leucine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6485,6 +6566,7 @@
     "lysine": {
       "type": "essential",
       "name": "Lysine",
+      "scientific_name": "Lysine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6537,6 +6619,7 @@
     "methionine": {
       "type": "essential",
       "name": "Methionine",
+      "scientific_name": "Methionine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6593,6 +6676,7 @@
     "phenylalanine": {
       "type": "essential",
       "name": "Phenylalanine",
+      "scientific_name": "Phenylalanine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6653,6 +6737,7 @@
     "threonine": {
       "type": "essential",
       "name": "Threonine",
+      "scientific_name": "Threonine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6678,6 +6763,7 @@
     "tryptophan": {
       "type": "essential",
       "name": "Tryptophan",
+      "scientific_name": "Tryptophan",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6736,6 +6822,7 @@
     "tyrosine": {
       "type": "essential",
       "name": "Tyrosine",
+      "scientific_name": "Tyrosine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6796,6 +6883,7 @@
     "valine": {
       "type": "essential",
       "name": "Valine",
+      "scientific_name": "Valine",
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
@@ -6839,6 +6927,7 @@
     "omega-3": {
       "type": "essential",
       "name": "Omega-3",
+      "scientific_name": "Omega-3",
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
@@ -7067,6 +7156,7 @@
     "omega-6": {
       "type": "essential",
       "name": "Omega-6",
+      "scientific_name": "Omega-6",
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
@@ -7143,6 +7233,7 @@
     "omega-9": {
       "type": "essential",
       "name": "Omega-9",
+      "scientific_name": "Omega-9",
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": false,

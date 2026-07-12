@@ -134,9 +134,10 @@ export function conditionDisplayName(slug: string): string {
   return getCondition(slug)?.display_name ?? humanizeSlug(slug);
 }
 
-/** Display name for an essential slug, slug fallback if absent. */
+/** Friendly display name for an essential slug (common_name), else scientific, else slug. */
 export function essentialDisplayName(slug: string): string {
-  return getEssentialBySlug(slug)?.display_name ?? humanizeSlug(slug);
+  const e = getEssentialBySlug(slug);
+  return e?.common_name ?? e?.display_name ?? humanizeSlug(slug);
 }
 
 /** snake_case / kebab-case slug → Title Case label. */

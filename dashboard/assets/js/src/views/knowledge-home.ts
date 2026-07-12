@@ -60,7 +60,7 @@ function hintChip(h: { kind: 'essential' | 'condition'; slug: string }): string 
     if (e === null) {
       return '';
     }
-    return `<button class="sh-hint" type="button" data-kd-essential="${escHTML(e.layout_key)}">${escHTML(e.display_name)}</button>`;
+    return `<button class="sh-hint" type="button" data-kd-essential="${escHTML(e.layout_key)}">${escHTML(e.common_name)}</button>`;
   }
   return `<button class="sh-hint" type="button" data-kd-condition="${escHTML(h.slug)}">${escHTML(conditionDisplayName(h.slug))}</button>`;
 }
@@ -109,7 +109,8 @@ function homeMatches(query: string): HomeMatch[] {
   const out: HomeMatch[] = [];
   for (const e of listEssentialPages()) {
     const nm = e.name.toLowerCase();
-    if (nm.includes(q) || spaced(e.slug).includes(q)) {
+    const sci = e.scientific_name.toLowerCase();
+    if (nm.includes(q) || sci.includes(q) || spaced(e.slug).includes(q)) {
       const c = getEssentialBySlug(e.slug);
       if (c === null) {
         continue;

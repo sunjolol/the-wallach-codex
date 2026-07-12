@@ -223,7 +223,8 @@ def build_data() -> dict:
         si_ent = si_entities.get(slug, {})
         essentials_out[slug] = {
             "type": "essential",
-            "name": e.get("display_name", slug),
+            "name": e.get("common_name") or e.get("display_name", slug),
+            "scientific_name": e.get("display_name", slug),
             "symbol": e.get("symbol"),
             "category": e.get("category"),
             "is_essential": e.get("essential") is not False,

@@ -31,7 +31,10 @@ export const EntityFacetGroupSchema = z.object({
 /** An essential's page view-model — entity-page-data.json → essentials[slug]. */
 export const EssentialPageSchema = z.object({
   type: z.literal('essential'),
+  // `name` carries the FRIENDLY name (common_name, e.g. 'Vitamin A') — the H1 label.
   name: z.string(),
+  /** Scientific name (e.g. 'Retinol') — the entity-page "also known as" detail; == name when no split. */
+  scientific_name: z.string(),
   symbol: z.string().nullable(),
   category: z.string().nullable(),
   is_essential: z.boolean(),

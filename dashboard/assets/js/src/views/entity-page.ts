@@ -560,7 +560,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   if (page === null) {
     // Graceful fallback: an essential with no sealed page record yet (e.g. the
     // non-essential 91st). Coverage meter + sources still join by layoutKey.
-    const nm = escHTML(corpusEss?.display_name ?? layoutKey);
+    const nm = escHTML(corpusEss?.common_name ?? layoutKey);
     return `<div class="kd-essential-deep kd-ep">
       ${backButton()}
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div></div>
@@ -573,6 +573,11 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const metaBits = [escHTML(page.category ?? ''), `${page.claim_count} claims`, `${page.books.length} books`]
     .filter(s => s.length > 0).join(' · ');
   const synonyms = page.synonyms.length > 0 ? ` · also: ${escHTML(page.synonyms.join(', '))}` : '';
+  // Friendly name is the H1 (page.name = common_name); the scientific name shows as a
+  // muted subtitle only when it differs (Vitamin A -> Retinol; omitted for Calcium).
+  const sciSub = page.scientific_name !== page.name
+    ? `<div class="kd-ep-hero__sci">${escHTML(page.scientific_name)}</div>`
+    : '';
   const nonEss = page.is_essential ? '' : `<div class="kd-ep-flag">${escHTML(ui('ep_non_essential'))}</div>`;
   const ledeText = slug !== null ? essentialLede(slug) : '';
   const lede = ledeText.length > 0
@@ -585,6 +590,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML(page.symbol)}</div>` : ''}
       <div class="kd-ep-hero__idblock">
         <h1 class="kd-ep-hero__name">${escHTML(page.name)}</h1>
+        ${sciSub}
         <div class="kd-ep-hero__meta">${metaBits}${synonyms}</div>
       </div>
     </div>

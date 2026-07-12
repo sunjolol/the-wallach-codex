@@ -145,6 +145,7 @@ def _entity_record(slug, reg, canon, cond_names, count):
         ce = canon[slug]
         rec = {
             'display_name': ce['display_name'],
+            'common_name': ce.get('common_name', ce['display_name']),
             'type': r.get('type', 'nutrient'),
             'synonyms': r.get('synonyms', []),
             'related': r.get('related', []),

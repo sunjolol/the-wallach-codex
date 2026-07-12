@@ -111,6 +111,8 @@ export type SearchBookMeta = z.infer<typeof SearchBookMetaSchema>;
 /** One registry entity (display + retrieval facets + derived claim count). */
 export const SearchEntitySchema = z.object({
   display_name: z.string(),
+  /** Friendly name for essential-type entities (canon common_name); absent for others. */
+  common_name: z.string().optional(),
   type: z.enum(['element', 'nutrient', 'substance', 'condition', 'concept', 'topic', 'person', 'event']),
   symbol: z.string().optional(),
   synonyms: z.array(z.string()),

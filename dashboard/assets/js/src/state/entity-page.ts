@@ -55,6 +55,7 @@ export function getConditionPage(slug: string): ConditionPage | null {
 export interface EssentialSummary {
   slug: string;
   name: string;
+  scientific_name: string;
   symbol: string;
   category: string;
   claim_count: number;
@@ -72,6 +73,7 @@ export function listEssentialPages(): EssentialSummary[] {
   return Object.entries(data().essentials).map(([slug, e]) => ({
     slug,
     name: e.name,
+    scientific_name: e.scientific_name,
     symbol: e.symbol ?? '',
     category: e.category ?? '',
     claim_count: e.claim_count,

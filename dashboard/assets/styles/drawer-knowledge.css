@@ -1368,6 +1368,7 @@
 }
 #drawer-knowledge-mount .kd-ep-hero__idblock { min-width: 0; }
 #drawer-knowledge-mount .kd-ep-hero__name { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-2xl); font-weight: 700; color: var(--ds-ink); margin: 0 0 4px; line-height: 1; }
+#drawer-knowledge-mount .kd-ep-hero__sci { font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-xs); color: var(--ds-ink-soft); margin: 0 0 6px; line-height: 1.2; }
 #drawer-knowledge-mount .kd-ep-hero__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); }
 
 /* lede + flags */
