@@ -3452,7 +3452,15 @@
         "kindle_location": null,
         "char_offset": 1414509
       },
-      "dose": null,
+      "dose": {
+        "amount": "1",
+        "unit": "fl oz",
+        "period": "daily",
+        "form": "liquid plant-derived colloidal minerals",
+        "duration": null,
+        "for_condition": "daily plant-derived colloidal mineral supplement program",
+        "per_body_weight": "100lb"
+      },
       "tags": [
         "epigenetics",
         "ch18",

@@ -142,6 +142,11 @@
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
   "accounted": [
     {
+      "file": "dashboard/assets/data/trace-mineral-vehicles.json",
+      "disposition": "hand_authored",
+      "reason": "Trace/rare-mineral coverage — the CURATED one-off-rules layer (Luneth-approved 2026-07-12; chronicle/mineral-coverage-investigation.md): per-product group (A/B/C/D) + mode (amount feeds the Sigma-mg metric / present = present-but-unquantified) for the plant-derived-mineral coverage system, plus the goal model + the tunable Group-B factor. Editorial JUDGMENT only — NO amounts (those stay sourced from the sealed Products pillar, joined in by eden/tools/pdm_coverage_derive.py), so no Wallach/composition number is hand-typed here. Hand-authored, not a pillar projection; product-id keys resolve against the pillar at derive time."
+    },
+    {
       "file": "dashboard/assets/data/home-curation.json",
       "disposition": "hand_authored",
       "reason": "Home-tab curated selections — the SPECIAL curated front-door surface (Luneth 2026-07-12; the home-page-curation philosophy). Currently the Explore-preview topic pick: a hand-tuned selection of topic/concept entities, explicitly temporary (may later flip to a top-N-by-claims formula). Editorial UI config, NOT canonical health data and NOT a pillar projection; no generator. Slugs are nav keys resolved against the search entity index at render (an unresolved slug is skipped)."
