@@ -76,9 +76,11 @@ export function renderTopicPage(slug: string): string {
       <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join('')}</div>
     </details>`).join('');
   return `<div class="kt-page kd-ep">
-    <button class="kt-back" type="button" data-kd-action="topic-close">${escHTML(ui('kt_back'))}</button>
     <header class="kt-hero">
-      <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML(e.type)} · ${escHTML(ui('kt_kicker'))}</span>
+      <div class="kt-hero__top">
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML(e.type)} · ${escHTML(ui('kt_kicker'))}</span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML(ui('kt_back'))}</button>
+      </div>
       <div class="kt-title">${symHTML}<h1>${escHTML(e.common_name ?? e.display_name)}</h1></div>
       ${lede.length > 0 ? `<p class="kt-lede">${escHTML(lede)}</p>` : ''}
       ${relBlock}

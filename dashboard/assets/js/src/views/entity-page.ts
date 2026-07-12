@@ -563,8 +563,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     // non-essential 91st). Coverage meter + sources still join by layoutKey.
     const nm = escHTML(corpusEss?.common_name ?? layoutKey);
     return `<div class="kd-essential-deep kd-ep">
-      ${backButton()}
-      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div></div>
+      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel('At a glance', 'the essentials, in one place')}
       ${glanceHTML}
       <div class="kd-ep-empty">${escHTML(ui('ep_empty_record'))}</div>
@@ -586,7 +585,6 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     : '';
 
   return `<div class="kd-essential-deep kd-ep">
-    ${backButton()}
     <div class="kd-ep-hero">
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML(page.symbol)}</div>` : ''}
       <div class="kd-ep-hero__idblock">
@@ -594,6 +592,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
         ${sciSub}
         <div class="kd-ep-hero__meta">${metaBits}${synonyms}</div>
       </div>
+      ${backButton()}
     </div>
     ${nonEss}
     ${lede}

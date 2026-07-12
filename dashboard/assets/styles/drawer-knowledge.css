@@ -1354,10 +1354,13 @@
   border-radius: var(--ds-radius-xs); cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-knowledge-mount .kd-ep-back:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+/* Back sits top-right of the hero line (closing = top-right), no extra vertical row (Luneth 2026-07-12). */
+#drawer-knowledge-mount .kd-ep-hero .kd-ep-back { margin-left: auto; align-self: flex-start; }
+#drawer-knowledge-mount .kt-hero__top { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); }
 
 /* hero */
 #drawer-knowledge-mount .kd-ep-hero {
-  display: flex; align-items: center; gap: var(--ds-space-4); margin-top: var(--ds-space-3);
+  display: flex; align-items: center; gap: var(--ds-space-4); margin-top: var(--ds-space-1);
   padding-bottom: var(--ds-space-4); border-bottom: 1px solid var(--ds-rule);
 }
 #drawer-knowledge-mount .kd-ep-hero__sym {
@@ -1440,8 +1443,7 @@
 #drawer-knowledge-mount .kd-ep-facet[data-facet="biography"] { --kd-ep-fam: var(--fam-story); }
 
 #drawer-knowledge-mount .kt-page { padding: 2px 2px 40px; }
-#drawer-knowledge-mount .kt-back { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); background: transparent; border: none; padding: 6px 0; cursor: pointer; }
-#drawer-knowledge-mount .kt-back:hover { text-decoration: underline; }
+/* (.kt-back retired — the topic back button now uses .kd-ep-back, top-right of the hero) */
 #drawer-knowledge-mount .kt-hero { padding: 6px 0 18px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: 6px; }
 #drawer-knowledge-mount .kt-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--fam-story); font-weight: 600; }
 #drawer-knowledge-mount .kt-kicker__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fam-story); }
@@ -1467,7 +1469,7 @@
 #drawer-knowledge-mount .kd-explore-chip:hover { background: var(--fam-story); color: #fff; }
 #drawer-knowledge-mount .kd-ep-facet__head { display: flex; align-items: center; gap: var(--ds-space-3); padding: var(--ds-space-3) 0; cursor: pointer; list-style: none; user-select: none; }
 #drawer-knowledge-mount .kd-ep-facet__head::-webkit-details-marker { display: none; }
-#drawer-knowledge-mount .kd-ep-facet__head::before { content: '▸'; font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); color: var(--kd-ep-fam); transition: transform var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-ep-facet__head::before { content: '▸'; font-family: var(--ds-font-mono); font-size: 0.95rem; line-height: 1; color: var(--kd-ep-fam); transition: transform var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-ep-facet[open] > .kd-ep-facet__head::before,
 #drawer-knowledge-mount .kd-ep-record[open] > .kd-ep-facet__head::before { transform: rotate(90deg); }
 #drawer-knowledge-mount .kd-ep-facet__label { flex: 1; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink); }

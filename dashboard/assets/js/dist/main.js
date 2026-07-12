@@ -17745,7 +17745,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kh_conditions_link: "browse all {n} \u2192",
       kt_kicker: "Explore",
       kt_related: "Related",
-      kt_back: "\u2190 All topics",
+      kt_back: "\u2039 All topics",
       kt_meta: "{n} sourced {noun}",
       kt_meta_full: "{n} sourced {noun} \xB7 from {books}",
       kt_type_topic: "Therapies & ideas",
@@ -90942,8 +90942,7 @@ deaths, blood clots, sterility`,
     if (page === null) {
       const nm = escHTML6(corpusEss?.common_name ?? layoutKey);
       return `<div class="kd-essential-deep kd-ep">
-      ${backButton()}
-      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div></div>
+      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel("At a glance", "the essentials, in one place")}
       ${glanceHTML}
       <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
@@ -90956,7 +90955,6 @@ deaths, blood clots, sterility`,
     const ledeText = slug !== null ? essentialLede(slug) : "";
     const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML6(ledeText)}</p>` : "";
     return `<div class="kd-essential-deep kd-ep">
-    ${backButton()}
     <div class="kd-ep-hero">
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML6(page.symbol)}</div>` : ""}
       <div class="kd-ep-hero__idblock">
@@ -90964,6 +90962,7 @@ deaths, blood clots, sterility`,
         ${sciSub}
         <div class="kd-ep-hero__meta">${metaBits}${synonyms}</div>
       </div>
+      ${backButton()}
     </div>
     ${nonEss}
     ${lede}
@@ -91155,9 +91154,11 @@ deaths, blood clots, sterility`,
       <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
     </details>`).join("");
     return `<div class="kt-page kd-ep">
-    <button class="kt-back" type="button" data-kd-action="topic-close">${escHTML8(ui("kt_back"))}</button>
     <header class="kt-hero">
-      <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML8(e.type)} \xB7 ${escHTML8(ui("kt_kicker"))}</span>
+      <div class="kt-hero__top">
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML8(e.type)} \xB7 ${escHTML8(ui("kt_kicker"))}</span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML8(ui("kt_back"))}</button>
+      </div>
       <div class="kt-title">${symHTML}<h1>${escHTML8(e.common_name ?? e.display_name)}</h1></div>
       ${lede.length > 0 ? `<p class="kt-lede">${escHTML8(lede)}</p>` : ""}
       ${relBlock}
@@ -92723,7 +92724,13 @@ Files: NEW views/knowledge-topic.ts (renderTopicPage \u2014 hero + related pills
 
 Verified: build 0 (tsc) \xB7 new files eslint-clean \xB7 invariants 61/61 (new view gate-scanned: prose-contained, pure projection, no positional hero, no hardcoded colour) \xB7 render_probe_knowledge PASS (5 groups / 40 chips / Mercury 7 facets / 13 cards / lede + cite) \xB7 render_probe_search PASS (regression) \xB7 0 page errors \xB7 screenshots (Explore grid, Mercury collapsed, one card expanded \u2192 answer/verbatim/"\u2014 Dr. Joel Wallach \xB7 IMMORTALITY (2008) \xB7 P.154") \xB7 Luneth sign-off.
 
-Deferrals: Home "Explore" preview (Chunk 4b \u2014 now unblocked, next); related-pill cross-routing to nutrient/condition pages (static now, not dead); the search-side CHARGED gate (Explore browse is exempt; Thread 2).` }];
+Deferrals: Home "Explore" preview (Chunk 4b \u2014 now unblocked, next); related-pill cross-routing to nutrient/condition pages (static now, not dead); the search-side CHARGED gate (Explore browse is exempt; Thread 2).` }, { id: "lg_mri1cgu5_n5r83e", ts: "2026-07-12T11:56:25.661374-05:00", surface: "knowledge", kind: "round-close", summary: "Explore/entity-page polish (Luneth notes): back button \u2192 top-right of the hero (topic + essential), bigger facet arrows, count kept a bare number, essentials hero top-space tightened. Logged deviation: the Explore topic page is a NEW surface the demo never designed.", detail: `Four polish tweaks Luneth asked for after seeing the real topic pages, plus a deviation note for the next session. The back button on both the Explore topic page and the essential entity page moved from its own row to the top-right of the hero line (sharing one pill style); the facet expand arrows (BASICS/WARNINGS/\u2026) got ~40% bigger so they read as a control; "N CLAIMS" was trialed in the count pill then reverted to a bare number; and the essentials hero top-margin was tightened 12px\u21924px to remove the blank space left when the back button moved out of that row. The Explore/topic pages use .kt-hero and were deliberately untouched by the margin change.
+
+\u2605 DEVIATIONS FROM THE DEMO (Luneth asked this be logged so the next session knows): the canonical demo never designed a topic page \u2014 its topic pills just switch to the Explore tab. So the whole Explore topic-page experience (hero + faceted Wallach Q&A + related pills, Mercury exemplar) is a NEW surface designed fresh + signed off 2026-07-12, not a demo re-creation. The back-button-top-right + bigger-arrow + all-13-facet-colours refinements also evolve the essential entity page past its earlier sign-off. Facet order = the app canonical order (warnings 2nd), not the mockup's; cards are collapsed-by-default.
+
+Files: views/entity-page.ts (backButton inside .kd-ep-hero; count \u2192 bare number). views/knowledge-topic.ts (back button \u2192 .kt-hero__top flex row, .kd-ep-back style; count \u2192 bare number). drawer-knowledge.css (.kd-ep-hero .kd-ep-back top-right via margin-left:auto+align-self; .kt-hero__top; .kt-back retired; facet arrow 0.95rem; count uppercase reverted; .kd-ep-hero margin-top \u2192 --ds-space-1). view-copy.json (kt_back \u2192 "\u2039 All topics").
+
+Verified: build 0 (tsc) \xB7 eslint-clean \xB7 invariants 61/61 \xB7 render_probe_knowledge PASS \xB7 0 page errors \xB7 screenshots (Mercury topic + Calcium essential). Deferrals: Home "Explore" preview (Chunk 4b) next.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
