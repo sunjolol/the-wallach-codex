@@ -50,3 +50,39 @@ export function getEssentialPage(slug: string): EssentialPage | null {
 export function getConditionPage(slug: string): ConditionPage | null {
   return data().conditions[slug] ?? null;
 }
+
+/** Lean summary of one essential for the Home tab's search + shelves. */
+export interface EssentialSummary {
+  slug: string;
+  name: string;
+  symbol: string;
+  category: string;
+  claim_count: number;
+}
+
+/** Lean summary of one condition for the Home tab's search + shelves. */
+export interface ConditionSummary {
+  slug: string;
+  name: string;
+  claim_count: number;
+}
+
+/** Every essential as a lean list summary (slug-keyed order). Home search/shelves read this. */
+export function listEssentialPages(): EssentialSummary[] {
+  return Object.entries(data().essentials).map(([slug, e]) => ({
+    slug,
+    name: e.name,
+    symbol: e.symbol ?? '',
+    category: e.category ?? '',
+    claim_count: e.claim_count,
+  }));
+}
+
+/** Every condition as a lean list summary — the mirror of listEssentialPages. */
+export function listConditionPages(): ConditionSummary[] {
+  return Object.entries(data().conditions).map(([slug, c]) => ({
+    slug,
+    name: c.name,
+    claim_count: c.claim_count,
+  }));
+}

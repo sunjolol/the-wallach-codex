@@ -61,6 +61,12 @@
     "kd_tab_conditions": "Conditions",
     "kd_tab_explore": "Explore",
     "kd_tab_products": "Products",
-    "kd_mark": "KNOWLEDGE"
+    "kd_mark": "KNOWLEDGE",
+    "kh_hero_headline": "Everything Wallach taught, in one place.",
+    "kh_hero_sub": "Search {claims} sourced claims from {books} of Dr. Joel Wallach’s books — or browse the essentials, {conditions} conditions, and the topics in between.",
+    "kh_hero_placeholder": "Try “selenium”, “osteoporosis”, or “colloidal minerals”…",
+    "kh_search_empty": "No match — try a broader word.",
+    "kh_group_essentials": "Essentials",
+    "kh_group_conditions": "Conditions"
   }
 }

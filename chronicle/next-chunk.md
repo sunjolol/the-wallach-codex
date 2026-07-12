@@ -17,20 +17,23 @@
 - Hero "sourced claims" count = **1,259** (full corpus); all 1,259 get wired into search over time (a goal, not an overstatement).
 - Drawer = **950px** (900 / 520 / 420 all RETIRED). Tabs = **Home · Essentials · Conditions · Explore · Products** — a compact centered **PILL** menu, **label-only** (no count sub-lines), **Home default**, **close reopens Home**. **Corpus + Doctrine are DROPPED as front-facing tabs** (their book/doctrine DATA stays back-end for citations; `doctrine-data.json` is PARKED, not deleted — it's manifest-tracked).
 
-## ★ CURRENT STATE (2026-07-11) — board 61/61, all clean
-**Chunk 1 — DONE + committed (`22f12a34`) + Luneth-signed-off:**
-- Drawer width → **950px**.
-- Menu re-created to match the demo: a compact **`.kd-knh`** header (`❡ KNOWLEDGE · [Home·Essentials·Conditions·Explore·Products] pill group · ×`), replacing the old big-title + wrapping 4-column tab grid. Label-only. Corpus/Doctrine removed as tabs.
-- Best-sources best-value fix (`views/entity-page.ts`): the cheapest-per-unit product is always swapped into the visible top-5 (demo parity).
-- New files: `views/knowledge-home.ts` + `views/knowledge-explore.ts` (tab shells; `exploreEntities()` = `entityList()` minus nutrient/condition).
-- Verified: build 0 · invariants 61/61 · `render_probe_knowledge` PASS · `render_probe_entity` PASS · 0 page errors.
+## ★ CURRENT STATE (2026-07-12) — board 61/61, all clean
+**Chunk 1 — DONE + committed (`22f12a34`) + signed-off:** drawer 950px; compact `.kd-knh` pill header (Home·Essentials·Conditions·Explore·Products, label-only, Corpus/Doctrine dropped as tabs); best-sources best-value fix.
+**Chunk 2 — DONE + signed-off (2026-07-12):** the Home HERO, re-created from the demo on real data.
+- Headline + subcopy with LIVE counts (1,259 claims · 6 books · 506 conditions; counts = `{tokens}` in `view-copy.json`, substituted in-view). Curated placeholder kept as-is.
+- **Working live-suggest** (`renderHomeSuggestions`, `views/knowledge-home.ts`): type → grouped Essentials/Conditions results (best-match-first, capped 10, first-active), ↑/↓ + Enter + Esc + click-outside; dot colour via `[data-kd-essential]`/`[data-kd-condition]` (no colour literal). New `state/entity-page.ts` accessors `listEssentialPages`/`listConditionPages` over entity-page-data.
+- `views/knowledge.ts`: delegated input+keydown for `.kh-search` (panel-only repaint keeps focus); `data-kd-essential/-condition` clicks now switch to their tab (mirrors the product branch) → hero results + cross-link pills open the entity page.
+- 4 hint chips (Calcium · Arthritis · Selenium · Depression, all navigable; demo 'mercury' topic dropped, vitamin-d→selenium pending friendly names). "1 claim"/"N claims" singular rule applied.
+- Verified: build 0 · invariants 61/61 · both render probes PASS · 0 page errors · screenshots + Luneth sign-off.
 
-## ★ NEXT — chunk 2+: Home + Explore tab CONTENT (each ends in a Luneth visual STOP + round-close)
-Build the Home body (`renderHomeTab()` in `views/knowledge-home.ts`) to match the demo's `vHome` vision, one section at a time:
-- **Chunk 2 — the hero:** headline + subcopy with LIVE counts (books 6 · conditions 506 · claims 1,259) + a live-suggest search box (wire to `state/search.ts` `resolveQuery`/`entityList`) + quick-hint chips. All copy → `ui()` keys.
-- **Chunk 3 — "The essentials":** top-18 tiles by claim count (add a trivial `listEssentials()` to `state/corpus.ts`, a mirror of `listConditions()`) + the category colour legend; tile → the essential's page.
-- **Chunk 4 — "Common conditions" + "Explore" cloud:** top-8 conditions (`listConditions()`) + top-14 topic chips (`entityList()` topic/concept); wire nav.
-- **Chunk 5 — the Explore tab:** `renderExploreTab()` — 5 type-groups over `exploreEntities()`; chip → that entity's page **in the Knowledge drawer**.
+## ★ HOME-PAGE PHILOSOPHY (Luneth 2026-07-11 — governs chunks 3-5; memory [[home-page-curation-philosophy]])
+Home is a SPECIAL curated "enticing" surface. Curated (hand-tuned, allowed): search placeholder · suggested-topic chips (placeholder now → top-5 topics by entries eventually) · Explore preview list (Luneth hand-picks; keep the demo's). Everything else = PURE FORMULA: Home "essentials"/"conditions" previews = most→least claims; Essentials tab = by category; Explore tab = **alphabetical grouped by category** (demo was random); Products = most→least coverage + a **NEW alphabetical-sort option**. Curation is NOT a prose-leak excuse.
+
+## ★ NEXT — foundational display-name fix, THEN Home shelves (each ends in a Luneth visual STOP + round-close)
+- **NEXT (foundational, app-wide) — human-friendly display names.** Vitamins store the SCIENTIFIC name as `display_name` (Cholecalciferol/Retinol/Ascorbic Acid/Cobalamin); Luneth wants the FRIENDLY form ("Vitamin D") front-facing EVERYWHERE (hero, shelves, entity-page H1, search), with the scientific name in the click-into detail view (progressive disclosure — simple first). Investigate the source (`layout_key` carries "Vitamin D (…)"; essentials-canon may need a friendly field). Land this BEFORE the essentials shelf so it displays correctly. Fold in app-wide "1 claim" pluralization. See memory [[synonyms-internal-display-human]].
+- **Chunk 3 — Home "The essentials" shelf:** top-18 essentials by claim count (FORMULA, real data) + category colour legend; tile → the essential's page. Do NOT add to the demo's structure.
+- **Chunk 4 — Home "Common conditions" + "Explore" preview:** top-8 conditions by claim count (formula) + the curated Explore topic-chip cloud (Luneth's hand-picked list); wire nav (conditions navigate today; topics await topic entity-pages).
+- **Chunk 5 — the Explore tab:** `renderExploreTab()` — type-groups over `exploreEntities()`, **alphabetical within each category**; chip → that entity's page in the Knowledge drawer (needs topic entity-pages).
 
 Re-derive each section's structure from the DEMO (`vHome`/`vExplore` in the canonical demo) — that is the source of truth. Reading: memory [[demo-vision-not-letter]] · [[search-is-ask-wallach-popup]] · [[entity-page-redesign-demo-phase]]; `.claude/rules/visual-verification.md`.
 

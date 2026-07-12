@@ -17622,6 +17622,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const tail = [ed, yr].filter((s) => s.length > 0).join(" ");
     return tail.length > 0 ? `${b.title} (${tail})` : b.title;
   }
+  function listBooks() {
+    const yearOf = (b) => {
+      const y = typeof b.year === "number" ? b.year : Number.parseInt(String(b.year ?? ""), 10);
+      return Number.isNaN(y) ? -Infinity : y;
+    };
+    return Object.values(corpus().books).sort((a, b) => {
+      const ya = yearOf(a);
+      const yb = yearOf(b);
+      if (ya !== yb) {
+        return yb - ya;
+      }
+      return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
+    });
+  }
 
   // assets/data/view-copy.json
   var view_copy_default = {
@@ -17687,7 +17701,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_tab_conditions: "Conditions",
       kd_tab_explore: "Explore",
       kd_tab_products: "Products",
-      kd_mark: "KNOWLEDGE"
+      kd_mark: "KNOWLEDGE",
+      kh_hero_headline: "Everything Wallach taught, in one place.",
+      kh_hero_sub: "Search {claims} sourced claims from {books} of Dr. Joel Wallach\u2019s books \u2014 or browse the essentials, {conditions} conditions, and the topics in between.",
+      kh_hero_placeholder: "Try \u201Cselenium\u201D, \u201Costeoporosis\u201D, or \u201Ccolloidal minerals\u201D\u2026",
+      kh_search_empty: "No match \u2014 try a broader word.",
+      kh_group_essentials: "Essentials",
+      kh_group_conditions: "Conditions"
     }
   };
 
@@ -85480,6 +85500,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function getEssentialPage(slug) {
     return data2().essentials[slug] ?? null;
   }
+  function listEssentialPages() {
+    return Object.entries(data2().essentials).map(([slug, e]) => ({
+      slug,
+      name: e.name,
+      symbol: e.symbol ?? "",
+      category: e.category ?? "",
+      claim_count: e.claim_count
+    }));
+  }
+  function listConditionPages() {
+    return Object.entries(data2().conditions).map(([slug, c]) => ({
+      slug,
+      name: c.name,
+      claim_count: c.claim_count
+    }));
+  }
 
   // assets/data/entity-copy.json
   var entity_copy_default = {
@@ -90789,8 +90825,106 @@ deaths, blood clots, sterility`,
   }
 
   // assets/js/src/views/knowledge-home.ts
+  function escHTML7(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function fmt(n) {
+    return n.toLocaleString("en-US");
+  }
+  var SEARCH_SVG = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>';
+  var HINTS = [
+    { kind: "essential", slug: "calcium" },
+    { kind: "condition", slug: "arthritis" },
+    { kind: "essential", slug: "selenium" },
+    { kind: "condition", slug: "depression" }
+  ];
+  function hintChip(h) {
+    if (h.kind === "essential") {
+      const e = getEssentialBySlug(h.slug);
+      if (e === null) {
+        return "";
+      }
+      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML7(e.layout_key)}">${escHTML7(e.display_name)}</button>`;
+    }
+    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML7(h.slug)}">${escHTML7(conditionDisplayName(h.slug))}</button>`;
+  }
   function renderHomeTab() {
-    return '<div class="kd-home"></div>';
+    const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
+    const sub = ui("kh_hero_sub").replace("{claims}", fmt(claims)).replace("{books}", fmt(listBooks().length)).replace("{conditions}", fmt(listConditions().length));
+    const hints = HINTS.map(hintChip).join("");
+    return `<div class="kd-home">
+    <section class="sh-hero">
+      <h1>${escHTML7(ui("kh_hero_headline"))}</h1>
+      <p>${escHTML7(sub)}</p>
+      <div class="sh-hero__search">
+        <div class="sh-search">
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML7(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
+          <div class="sh-search__results"></div>
+        </div>
+        <div class="sh-hero__hints">${hints}</div>
+      </div>
+    </section>
+  </div>`;
+  }
+  function homeMatches(query) {
+    const q = query.trim().toLowerCase();
+    if (q.length === 0) {
+      return [];
+    }
+    const spaced = (s) => s.replace(/[-_]/g, " ");
+    const out = [];
+    for (const e of listEssentialPages()) {
+      const nm = e.name.toLowerCase();
+      if (nm.includes(q) || spaced(e.slug).includes(q)) {
+        const c = getEssentialBySlug(e.slug);
+        if (c === null) {
+          continue;
+        }
+        out.push({ kind: "essential", name: e.name, navAttr: "data-kd-essential", navVal: c.layout_key, claimCount: e.claim_count, startsWith: nm.startsWith(q) });
+      }
+    }
+    for (const cnd of listConditionPages()) {
+      const nm = cnd.name.toLowerCase();
+      if (nm.includes(q) || spaced(cnd.slug).includes(q)) {
+        out.push({ kind: "condition", name: cnd.name, navAttr: "data-kd-condition", navVal: cnd.slug, claimCount: cnd.claim_count, startsWith: nm.startsWith(q) });
+      }
+    }
+    return out;
+  }
+  function byRelevance(a, b) {
+    if (a.startsWith !== b.startsWith) {
+      return a.startsWith ? -1 : 1;
+    }
+    return a.name.localeCompare(b.name);
+  }
+  function resRow(m, active) {
+    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML7(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML7(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
+  }
+  function renderHomeSuggestions(query) {
+    const matches = homeMatches(query);
+    if (matches.length === 0) {
+      return `<div class="sh-res__empty">${escHTML7(ui("kh_search_empty"))}</div>`;
+    }
+    const shown = [
+      ...matches.filter((m) => m.kind === "essential").sort(byRelevance),
+      ...matches.filter((m) => m.kind === "condition").sort(byRelevance)
+    ].slice(0, 10);
+    let html = "";
+    let idx = 0;
+    const group = (label, kind) => {
+      const rows = shown.filter((m) => m.kind === kind);
+      if (rows.length === 0) {
+        return;
+      }
+      html += `<div class="sh-res__group">${escHTML7(label)}</div>`;
+      for (const m of rows) {
+        html += resRow(m, idx === 0);
+        idx += 1;
+      }
+    };
+    group(ui("kh_group_essentials"), "essential");
+    group(ui("kh_group_conditions"), "condition");
+    return html;
   }
 
   // assets/js/src/views/knowledge-explore.ts
@@ -90929,7 +91063,7 @@ deaths, blood clots, sterility`,
         return "PENDING";
     }
   }
-  function escHTML7(s) {
+  function escHTML8(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function renderEssentialDeep(key, snapshot) {
@@ -90942,18 +91076,18 @@ deaths, blood clots, sterility`,
         const status = statusOf(snapshot, e.key);
         const stateClass = e.essential ? statusTileClass(status) : "kd-essential-tile--bonus";
         const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? " is-selected" : ""}`.trim();
-        const meta = e.essential ? `${escHTML7(e.catLabel)} \xB7 ${statusLabel2(status)}` : `${escHTML7(e.catLabel)} \xB7 NON-ESSENTIAL`;
+        const meta = e.essential ? `${escHTML8(e.catLabel)} \xB7 ${statusLabel2(status)}` : `${escHTML8(e.catLabel)} \xB7 NON-ESSENTIAL`;
         return `
-        <div class="${cls}" data-kd-essential="${escHTML7(e.key)}" role="button" tabindex="0">
-          <div class="kd-essential-tile__sym">${escHTML7(e.symbol)}</div>
-          <div class="kd-essential-tile__name">${escHTML7(e.name)}</div>
+        <div class="${cls}" data-kd-essential="${escHTML8(e.key)}" role="button" tabindex="0">
+          <div class="kd-essential-tile__sym">${escHTML8(e.symbol)}</div>
+          <div class="kd-essential-tile__name">${escHTML8(e.name)}</div>
           <div class="kd-essential-tile__meta">${meta}</div>
         </div>`;
       }).join("");
       const essentialN = group.items.filter((i) => i.essential).length;
       const bonusN = group.items.length - essentialN;
       return `
-      <div class="kd-section-head">${escHTML7(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
+      <div class="kd-section-head">${escHTML8(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
       <div class="kd-essentials-grid">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${groupsHTML}`;
@@ -90982,11 +91116,11 @@ deaths, blood clots, sterility`,
       { id: "explore", label: ui("kd_tab_explore"), count: `${exploreEntities().length} TOPICS` },
       { id: "products", label: ui("kd_tab_products"), count: `${productsCount} KNOWN` }
     ];
-    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML7(t.label)}</button>`).join("");
+    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML8(t.label)}</button>`).join("");
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="kd-knh">
-      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML7(ui("kd_mark"))}</b></div>
+      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML8(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
@@ -91119,6 +91253,9 @@ deaths, blood clots, sterility`,
       if (target === null) {
         return;
       }
+      if (target.closest(".sh-search") === null) {
+        container.querySelector(".sh-search__results")?.classList.remove("open");
+      }
       const tabBtn = target.closest("[data-kd-tab]");
       if (tabBtn !== null) {
         const next = tabBtn.getAttribute("data-kd-tab");
@@ -91136,6 +91273,9 @@ deaths, blood clots, sterility`,
       if (essEl !== null) {
         const k = essEl.getAttribute("data-kd-essential");
         selectedEssential = k !== null && k === selectedEssential ? null : k;
+        if (selectedEssential !== null) {
+          activeTab = "essentials";
+        }
         render();
         return;
       }
@@ -91143,6 +91283,9 @@ deaths, blood clots, sterility`,
       if (condEl !== null) {
         const k = condEl.getAttribute("data-kd-condition");
         selectedCondition = k !== null && k === selectedCondition ? null : k;
+        if (selectedCondition !== null) {
+          activeTab = "conditions";
+        }
         render();
         return;
       }
@@ -91207,6 +91350,20 @@ deaths, blood clots, sterility`,
       if (t === null) {
         return;
       }
+      if (t.classList.contains("kh-search")) {
+        const panel = container.querySelector(".sh-search__results");
+        if (panel !== null) {
+          const q = t.value;
+          if (q.trim().length === 0) {
+            panel.innerHTML = "";
+            panel.classList.remove("open");
+          } else {
+            panel.innerHTML = renderHomeSuggestions(q);
+            panel.classList.add("open");
+          }
+        }
+        return;
+      }
       if (t.classList.contains("kd-ep-filter")) {
         const recordBody = container.querySelector(".kd-body");
         if (recordBody !== null) {
@@ -91225,6 +91382,44 @@ deaths, blood clots, sterility`,
       }
     };
     container.addEventListener("input", inputHandler);
+    const keydownHandler = (ev) => {
+      const t = ev.target;
+      if (t === null || !t.classList.contains("kh-search")) {
+        return;
+      }
+      const key = ev.key;
+      const panel = container.querySelector(".sh-search__results");
+      if (panel === null || !panel.classList.contains("open")) {
+        return;
+      }
+      const items = Array.from(panel.querySelectorAll(".sh-res"));
+      if (items.length === 0) {
+        if (key === "Escape") {
+          panel.classList.remove("open");
+        }
+        return;
+      }
+      const cur = items.findIndex((el) => el.classList.contains("active"));
+      if (key === "ArrowDown" || key === "ArrowUp") {
+        ev.preventDefault();
+        const nextIdx = key === "ArrowDown" ? Math.min((cur < 0 ? -1 : cur) + 1, items.length - 1) : Math.max((cur < 0 ? items.length : cur) - 1, 0);
+        items.forEach((el) => el.classList.remove("active"));
+        const chosen = items[nextIdx];
+        if (chosen !== void 0) {
+          chosen.classList.add("active");
+          chosen.scrollIntoView({ block: "nearest" });
+        }
+      } else if (key === "Enter") {
+        ev.preventDefault();
+        (cur >= 0 ? items[cur] : items[0])?.click();
+      } else if (key === "Escape") {
+        ev.preventDefault();
+        ev.stopPropagation();
+        panel.classList.remove("open");
+        t.blur();
+      }
+    };
+    container.addEventListener("keydown", keydownHandler);
     on("regimen:changed", () => {
       if (isOpen) {
         render();
@@ -92209,7 +92404,13 @@ OPEN ISSUES for next session (full detail in chronicle/next-chunk.md): (1) THE i
 
 Files: views/knowledge.ts \u2014 Tab union home|essentials|conditions|explore|products, default + close reopen 'home', renderTab/renderShell dispatch, selectedBook fully purged, header restructured to .kd-knh (mark \xB7 nav.kd-knh__tabs pill group \xB7 close), tab labels + KNOWLEDGE mark via ui(); NEW views/knowledge-home.ts (renderHomeTab shell) + views/knowledge-explore.ts (renderExploreTab shell + exploreEntities() = entityList() minus nutrient/condition, the Explore projection used by the tab count); drawer-knowledge.css \u2014 #drawer-knowledge-mount.kd-open 520\u2192950px, fixed the 420px lying comment, new .kd-knh* block (verbatim re-creation of the demo .knh header CSS, scoped to Knowledge; Journey keeps the shared .kd-head/.kd-tabs chrome, rebuilt later); views/entity-page.ts \u2014 renderAtAGlance swaps the best-value row into the visible top-5 (demo parity); view-copy.json \u2014 added ui.kd_tab_* + kd_mark, dropped kd_sub; invariants.py \u2014 _CLEAN_VIEW_FILES += knowledge-home/explore (their prose is gated); render_probe_knowledge.js \u2014 corpus/doctrine tab tests replaced by a 5-vision-tab assertion + .kd-knh__tab selectors; render_probe_entity.js \u2014 .kd-knh__tab.active selector.
 
-Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_entity PASS, 0 page errors. Luneth decisions this session: demo = vision-not-letter (never copy its code/data/prose; PROVE, never assert); tab labels only (no counts); Home default; close reopens Home; hero "sourced claims" target = 1,259 (full corpus, all made searchable eventually); topic pages live IN the Knowledge drawer (Search becomes "Ask Wallach" = a popup only; Explore = the new home for today's search topics); doctrine-data.json parked, not deleted (manifest-tracked). Deferred: Home + Explore CONTENT (hero+search, essentials tiles, conditions, explore cloud) = chunks 2-5.` }];
+Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_entity PASS, 0 page errors. Luneth decisions this session: demo = vision-not-letter (never copy its code/data/prose; PROVE, never assert); tab labels only (no counts); Home default; close reopens Home; hero "sourced claims" target = 1,259 (full corpus, all made searchable eventually); topic pages live IN the Knowledge drawer (Search becomes "Ask Wallach" = a popup only; Explore = the new home for today's search topics); doctrine-data.json parked, not deleted (manifest-tracked). Deferred: Home + Explore CONTENT (hero+search, essentials tiles, conditions, explore cloud) = chunks 2-5.` }, { id: "lg_mrhbvuom_q8dumr", ts: "2026-07-12T00:03:40.054517-05:00", surface: "knowledge", kind: "round-close", summary: "Knowledge Home hero shipped (H2 chunk 2, signed-off): welcome headline + live counts (1,259 claims \xB7 6 books \xB7 506 conditions) + working type-to-search over essentials+conditions (keyboard+click) + 4 chips \u2014 re-created from the demo on real data.", detail: `The Home tab of the Knowledge drawer got its real front door: a big welcome headline, a line with the live corpus counts, a search box that suggests matching essentials and conditions as you type (works with the arrow keys, Enter, and clicking), and four quick-tap chips. I rebuilt it from scratch to match the signed-off demo, on the app's real data \u2014 nothing copied from the demo, and every visible word is stored in one contained place so prose can't leak into the code.
+
+Files: views/knowledge-home.ts (pristine rewrite \u2014 renderHomeTab hero + renderHomeSuggestions live-suggest over listEssentialPages+listConditionPages, best-match-first, grouped Essentials then Conditions, capped at 10, first row pre-highlighted; per-file escHTML copied with its scanner-safety comment). views/knowledge.ts (delegated input handler + a NEW keydown handler for the .kh-search box, both repainting ONLY the results panel so the input keeps focus mid-type; data-kd-essential / data-kd-condition clicks now also switch to their tab \u2014 mirroring the existing product branch \u2014 so hero results AND cross-link pills land on the entity page; click-outside dismiss). state/entity-page.ts (listEssentialPages / listConditionPages lean summaries over entity-page-data). assets/data/view-copy.json (6 kh_* ui keys; the 3 counts are {tokens} substituted in-view, never stored as numbers). assets/styles/drawer-knowledge.css (.sh-* hero/search/results/hint rooted at #drawer-knowledge-mount; --fam-* declared on .kd-home; result-dot colour derived from the [data-kd-essential]/[data-kd-condition] nav attribute \u2014 no colour literal in TS, per view_category_not_hardcoded).
+
+Nav contract: the hero emits the LIVE drawer contract (data-kd-essential=<layout_key> via getEssentialBySlug, data-kd-condition=<slug>), NOT the demo's data-nav. Verified: build 0 \xB7 invariants 61/61 \xB7 render_probe_knowledge PASS \xB7 render_probe_entity PASS (cross-nav to Copper OK) \xB7 0 page errors \xB7 headless screenshots of the hero + live-suggest (cal \u2192 essentials+conditions, arth \u2192 conditions) \xB7 Luneth visual sign-off. Applied his singular rule to the result meta (1 claim / N claims).
+
+Deferrals + next: topics stay out of the live-suggest + hints until topic entity-pages exist (dropped the demo's 'mercury' hint, swapped vitamin-d\u2192selenium for a clean name). NEXT foundational piece = app-wide human-friendly display names: vitamins currently store the SCIENTIFIC name as display_name (Cholecalciferol / Retinol / Ascorbic Acid / Cobalamin) \u2014 Luneth wants the friendly form ("Vitamin D") front-facing everywhere, with the scientific name in the click-into detail view (progressive disclosure). Also deferred: app-wide "1 claim" propagation to the entity/condition surfaces, and pre-existing knowledge.ts lint (import order + one ternary) that predates this chunk.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -92245,7 +92446,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML8(s) {
+  function escHTML9(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -92291,15 +92492,15 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML8(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML9(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML8(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML9(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML8(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML8(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML8(kindLabel2(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML9(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML9(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML9(kindLabel2(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML8(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML9(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -92373,9 +92574,9 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML8(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML8(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML8(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML9(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML9(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML9(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -92520,7 +92721,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML9(s) {
+  function escHTML10(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -92550,7 +92751,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML9(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML10(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -92561,13 +92762,13 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML9(slot.id)}" data-slot-num="${escHTML9(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML10(slot.id)}" data-slot-num="${escHTML10(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML9(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML9(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML9(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML10(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML10(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML10(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML9(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML10(slot.stamp)}</div>
     </article>
   `;
   }
@@ -92604,9 +92805,9 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML9(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML10(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML9(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML10(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -92669,13 +92870,13 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML9(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML9(item.heat)}"><span class="rec-item__tag-sign">${escHTML9(sign)}</span>${escHTML9(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML10(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML10(item.heat)}"><span class="rec-item__tag-sign">${escHTML10(sign)}</span>${escHTML10(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML9(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML10(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML9(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML9(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML10(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML10(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -92878,7 +93079,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML9(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML10(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -92970,7 +93171,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML10(s) {
+  function escHTML11(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -93015,19 +93216,19 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML10(n.name)}</span>
-      <span>${escHTML10(n.amount ?? "")}${escHTML10(n.unit ?? "")}</span>
+      <span>${escHTML11(n.name)}</span>
+      <span>${escHTML11(n.amount ?? "")}${escHTML11(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML10(brand)}</div>
-        <div class="scan-label__product">${escHTML10(product)}</div>
+        <div class="scan-label__brand">${escHTML11(brand)}</div>
+        <div class="scan-label__product">${escHTML11(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML10(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML11(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -93047,7 +93248,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML10(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML11(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -93109,9 +93310,9 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML10(s.name)}</div>
-        <div class="stage__sub">${escHTML10(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML10(s.ms)}</span>` : escHTML10(s.ms)}</div>
+        <div class="stage__name">${escHTML11(s.name)}</div>
+        <div class="stage__sub">${escHTML11(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML11(s.ms)}</span>` : escHTML11(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -93123,7 +93324,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML10(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML11(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -93134,17 +93335,17 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML10(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML11(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML10(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML10(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML11(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML11(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML10(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML10(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML10(row.tag.heat)}">${tagSignHTML}${escHTML10(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML11(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML11(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML11(row.tag.heat)}">${tagSignHTML}${escHTML11(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -93250,10 +93451,10 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML10(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML10(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML11(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML11(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML10(verdictText)}</span>
+      <span class="${pillClass}">${escHTML11(verdictText)}</span>
     </div>
   `;
   }
@@ -93469,7 +93670,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   }
 
   // assets/js/src/views/search.ts
-  function escHTML11(s) {
+  function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -93488,14 +93689,14 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML11(e.symbol);
+      return escHTML12(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML11(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML12(e.display_name.charAt(0));
   }
   function renderPill(slug) {
-    const name = escHTML11(displayName(slug));
+    const name = escHTML12(displayName(slug));
     if (getEntity(slug) !== null) {
-      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML11(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML12(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="sr-pill" title="Related to this">${name}</span>`;
   }
@@ -93528,7 +93729,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     if (claim.topics.length === 0) {
       return "";
     }
-    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML11(t)}</span>`).join("");
+    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML12(t)}</span>`).join("");
     return `<div class="sr-claim__tags">${tags}</div>`;
   }
   function renderAnswer(claim) {
@@ -93537,28 +93738,28 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
       const i = claim.answer.indexOf(xref.phrase);
       const before = claim.answer.slice(0, i);
       const after = claim.answer.slice(i + xref.phrase.length);
-      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML11(xref.target)}" title="Jump to the full answer">${escHTML11(xref.phrase)}</button>`;
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML12(xref.target)}" title="Jump to the full answer">${escHTML12(xref.phrase)}</button>`;
       return glossify(before) + link + glossify(after);
     }
     return glossify(claim.answer);
   }
   function claimDetail(claim) {
     return `
-      <div class="sr-claim__short">${escHTML11(claim.answer_short)}</div>
+      <div class="sr-claim__short">${escHTML12(claim.answer_short)}</div>
       <div class="sr-claim__answer">${renderAnswer(claim)}</div>
       <blockquote class="sr-claim__verbatim">\u201C${glossify(oneLine(claim.verbatim))}\u201D</blockquote>
-      <div class="sr-claim__cite">${escHTML11(composeCite(claim))}</div>
+      <div class="sr-claim__cite">${escHTML12(composeCite(claim))}</div>
       ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
   }
   function renderClaimRow(claim) {
     return `
-    <details class="sr-claim" data-sr-claim="${escHTML11(claim.id)}">
+    <details class="sr-claim" data-sr-claim="${escHTML12(claim.id)}">
       <summary class="sr-claim__summary">
         <span class="sr-claim__badge">?</span>
         <span class="sr-claim__qblock">
-          <span class="sr-claim__q">${escHTML11(claim.question)}</span>
-          <span class="sr-claim__preview">${escHTML11(claim.answer_short)}</span>
+          <span class="sr-claim__q">${escHTML12(claim.question)}</span>
+          <span class="sr-claim__preview">${escHTML12(claim.answer_short)}</span>
         </span>
         <span class="sr-claim__chev">\u203A</span>
       </summary>
@@ -93568,9 +93769,9 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
   function renderFacet(group) {
     const rows = group.claims.map(renderClaimRow).join("");
     return `
-    <details class="sr-facet" data-facet="${escHTML11(group.facet)}" open>
+    <details class="sr-facet" data-facet="${escHTML12(group.facet)}" open>
       <summary class="sr-facet__head">
-        <span class="sr-facet__label">${escHTML11(group.label)}</span>
+        <span class="sr-facet__label">${escHTML12(group.label)}</span>
         <span class="sr-facet__count">${group.claims.length}</span>
       </summary>
       <div class="sr-facet__body">${rows}</div>
@@ -93595,11 +93796,11 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
       return '<div class="sr-empty">\u2014 no entities in the index yet \u2014</div>';
     }
     const card = (e) => `
-    <button class="sr-ent-card" data-sr-entity="${escHTML11(e.slug)}">
+    <button class="sr-ent-card" data-sr-entity="${escHTML12(e.slug)}">
       <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
       <span class="sr-ent-card__idblock">
-        <span class="sr-ent-card__name">${escHTML11(e.display_name)}</span>
-        <span class="sr-ent-card__meta">${escHTML11(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
+        <span class="sr-ent-card__name">${escHTML12(e.display_name)}</span>
+        <span class="sr-ent-card__meta">${escHTML12(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
       </span>
       <span class="sr-ent-card__chev">\u203A</span>
     </button>`;
@@ -93617,7 +93818,7 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     if (e === null || groups.length === 0) {
       return '<div class="sr-empty">\u2014 nothing to show for this entity yet \u2014</div>';
     }
-    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML11).join(", ")}` : "";
+    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML12).join(", ")}` : "";
     const facetsHTML = groups.map(renderFacet).join("");
     return `
     <div class="sr-entity">
@@ -93625,8 +93826,8 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
         <button class="sr-entity__back" data-sr-action="back" title="Back">\u2039 BACK</button>
         <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
         <div class="sr-entity__idblock">
-          <h3 class="sr-entity__name">${escHTML11(e.display_name)}</h3>
-          <div class="sr-entity__meta">${escHTML11(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML11(synLine)}</div>
+          <h3 class="sr-entity__name">${escHTML12(e.display_name)}</h3>
+          <div class="sr-entity__meta">${escHTML12(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML12(synLine)}</div>
         </div>
       </header>
       <div class="sr-facets">${facetsHTML}</div>
@@ -93637,9 +93838,9 @@ Gates: build 0, invariants 61/61, render_probe_knowledge PASS, render_probe_enti
     return `
     <div class="sr-ask">
       <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
-      <div class="sr-ask__q">${escHTML11(claim.question)}</div>
+      <div class="sr-ask__q">${escHTML12(claim.question)}</div>
       <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-entity="${escHTML11(claim.subject)}">MORE ON ${escHTML11(displayName(claim.subject).toUpperCase())} \u2192</button>
+      <button class="sr-ask__more" data-sr-entity="${escHTML12(claim.subject)}">MORE ON ${escHTML12(displayName(claim.subject).toUpperCase())} \u2192</button>
     </div>`;
   }
   function renderBody(result) {

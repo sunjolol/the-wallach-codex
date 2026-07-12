@@ -42,7 +42,7 @@ import { ui } from '../state/copy.js';
 import { renderConditionsTab } from './knowledge-corpus.js';
 import { productCount, renderProductsTab } from './knowledge-products.js';
 import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
-import { renderHomeTab } from './knowledge-home.js';
+import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
 import { renderExploreTab, exploreEntities } from './knowledge-explore.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
@@ -418,6 +418,11 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (target === null) {
       return;
     }
+    // Home live-suggest: any click outside the hero search box dismisses its dropdown
+    // (the box lives only on the Home tab, so this is a harmless no-op elsewhere).
+    if (target.closest('.sh-search') === null) {
+      container.querySelector('.sh-search__results')?.classList.remove('open');
+    }
     const tabBtn = target.closest<HTMLElement>('[data-kd-tab]');
     if (tabBtn !== null) {
       const next = tabBtn.getAttribute('data-kd-tab') as Tab | null;
@@ -435,6 +440,11 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (essEl !== null) {
       const k = essEl.getAttribute('data-kd-essential');
       selectedEssential = (k !== null && k === selectedEssential) ? null : k;
+      // Opening an essential surfaces it on the Essentials tab, so a click from the
+      // Home hero or a cross-link pill lands on the page (mirrors the product branch).
+      if (selectedEssential !== null) {
+        activeTab = 'essentials';
+      }
       render();
       return;
     }
@@ -442,6 +452,10 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (condEl !== null) {
       const k = condEl.getAttribute('data-kd-condition');
       selectedCondition = (k !== null && k === selectedCondition) ? null : k;
+      // Same as essentials: land the condition on its own tab (Home hero / cross-links).
+      if (selectedCondition !== null) {
+        activeTab = 'conditions';
+      }
       render();
       return;
     }
@@ -524,6 +538,23 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (t === null) {
       return;
     }
+    // Home hero live-suggest: repaint ONLY the results panel (not a full drawer
+    // re-render) so the input keeps focus mid-type. Empty query closes the panel.
+    if (t.classList.contains('kh-search')) {
+      const panel = container.querySelector<HTMLElement>('.sh-search__results');
+      if (panel !== null) {
+        const q = (t as HTMLInputElement).value;
+        if (q.trim().length === 0) {
+          panel.innerHTML = '';
+          panel.classList.remove('open');
+        }
+        else {
+          panel.innerHTML = renderHomeSuggestions(q);
+          panel.classList.add('open');
+        }
+      }
+      return;
+    }
     // The entity page's full-record filter is a separate box; filter in place.
     if (t.classList.contains('kd-ep-filter')) {
       const recordBody = container.querySelector<HTMLElement>('.kd-body');
@@ -543,6 +574,53 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
   };
   container.addEventListener('input', inputHandler);
+
+  // Home hero live-suggest keyboard control: arrows move the highlight, Enter opens
+  // the highlighted entity, Escape dismisses. Delegated so it survives re-renders;
+  // acts only when the hero search input is focused AND its dropdown is open, so it
+  // never swallows the drawer's global Escape-to-close.
+  const keydownHandler = (ev: Event): void => {
+    const t = ev.target as HTMLElement | null;
+    if (t === null || !t.classList.contains('kh-search')) {
+      return;
+    }
+    const key = (ev as KeyboardEvent).key;
+    const panel = container.querySelector<HTMLElement>('.sh-search__results');
+    if (panel === null || !panel.classList.contains('open')) {
+      return;
+    }
+    const items = Array.from(panel.querySelectorAll<HTMLElement>('.sh-res'));
+    if (items.length === 0) {
+      if (key === 'Escape') {
+        panel.classList.remove('open');
+      }
+      return;
+    }
+    const cur = items.findIndex(el => el.classList.contains('active'));
+    if (key === 'ArrowDown' || key === 'ArrowUp') {
+      ev.preventDefault();
+      const nextIdx = key === 'ArrowDown'
+        ? Math.min((cur < 0 ? -1 : cur) + 1, items.length - 1)
+        : Math.max((cur < 0 ? items.length : cur) - 1, 0);
+      items.forEach(el => el.classList.remove('active'));
+      const chosen = items[nextIdx];
+      if (chosen !== undefined) {
+        chosen.classList.add('active');
+        chosen.scrollIntoView({ block: 'nearest' });
+      }
+    }
+    else if (key === 'Enter') {
+      ev.preventDefault();
+      (cur >= 0 ? items[cur] : items[0])?.click();
+    }
+    else if (key === 'Escape') {
+      ev.preventDefault();
+      ev.stopPropagation();
+      panel.classList.remove('open');
+      (t as HTMLInputElement).blur();
+    }
+  };
+  container.addEventListener('keydown', keydownHandler);
 
   // Re-render if regimen changes (Products tab + Essentials status reflect it).
   onEvent('regimen:changed', () => {
