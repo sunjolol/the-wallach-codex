@@ -142,6 +142,11 @@
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
   "accounted": [
     {
+      "file": "dashboard/assets/data/home-curation.json",
+      "disposition": "hand_authored",
+      "reason": "Home-tab curated selections — the SPECIAL curated front-door surface (Luneth 2026-07-12; the home-page-curation philosophy). Currently the Explore-preview topic pick: a hand-tuned selection of topic/concept entities, explicitly temporary (may later flip to a top-N-by-claims formula). Editorial UI config, NOT canonical health data and NOT a pillar projection; no generator. Slugs are nav keys resolved against the search entity index at render (an unresolved slug is skipped)."
+    },
+    {
       "file": "dashboard/assets/data/versions-data.json",
       "disposition": "hand_authored",
       "reason": "App version/changelog history, hand-maintained. Not a projection of the pillars; no generator."

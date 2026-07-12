@@ -26,6 +26,7 @@ import { ui } from '../state/copy.js';
 import { conditionDisplayName, getEssentialBySlug, listBooks, listConditions } from '../state/corpus.js';
 import { essentialGlyph } from '../state/coverage.js';
 import { type ConditionSummary, type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
+import { homeExploreTopics } from '../state/home-curation.js';
 
 // The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
 // quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
@@ -116,7 +117,30 @@ function renderConditionsShelf(): string {
     <div class="sh-condgrid">${top.map(condRow).join('')}</div>`;
 }
 
-/** The Home landing tab — hero (Chunk 2) + "The essentials" shelf (Chunk 3) + "Common conditions" (Chunk 4). */
+// ─── "Explore" preview shelf (Chunk 4b) ───────────────
+
+/** One Explore chip → opens that topic's page on the Explore tab (data-kd-topic; knowledge.ts). */
+function exploreChip(e: { slug: string; display_name: string }): string {
+  return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML(e.slug)}">${escHTML(e.display_name)}</button>`;
+}
+
+/**
+ * The Home "Explore" preview — the curated topic-chip cloud (Home is the SPECIAL
+ * curated surface, the home-page-curation philosophy). The selection is a hand-pick in
+ * home-curation.json (currently the demo's featured 14 topic/concept entities), rendered
+ * A-Z by name; a chip opens that topic's faceted page on the Explore tab, and the header
+ * link jumps to the full Explore index. Empty curation renders nothing (graceful).
+ */
+function renderExploreShelf(): string {
+  const topics = homeExploreTopics();
+  if (topics.length === 0) {
+    return '';
+  }
+  return `<div class="ep-seclabel">${escHTML(ui('kh_explore_label'))} <span class="ep-seclabel__hint">${escHTML(ui('kh_explore_hint'))}</span><a data-kd-tab="explore">${escHTML(ui('kh_explore_link'))}</a></div>
+    <div class="kd-explore-cloud">${topics.map(exploreChip).join('')}</div>`;
+}
+
+/** The Home landing tab — hero (Chunk 2) + essentials (Chunk 3) + conditions (Chunk 4a) + Explore preview (Chunk 4b). */
 export function renderHomeTab(): string {
   const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
   const sub = ui('kh_hero_sub')
@@ -138,6 +162,7 @@ export function renderHomeTab(): string {
     </section>
     ${renderEssentialsShelf()}
     ${renderConditionsShelf()}
+    ${renderExploreShelf()}
   </div>`;
 }
 

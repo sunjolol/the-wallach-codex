@@ -9635,15 +9635,15 @@
     "map",
     "set"
   ]);
-  var getParsedType = (data4) => {
-    const t = typeof data4;
+  var getParsedType = (data5) => {
+    const t = typeof data5;
     switch (t) {
       case "undefined":
         return ZodParsedType.undefined;
       case "string":
         return ZodParsedType.string;
       case "number":
-        return Number.isNaN(data4) ? ZodParsedType.nan : ZodParsedType.number;
+        return Number.isNaN(data5) ? ZodParsedType.nan : ZodParsedType.number;
       case "boolean":
         return ZodParsedType.boolean;
       case "function":
@@ -9653,22 +9653,22 @@
       case "symbol":
         return ZodParsedType.symbol;
       case "object":
-        if (Array.isArray(data4)) {
+        if (Array.isArray(data5)) {
           return ZodParsedType.array;
         }
-        if (data4 === null) {
+        if (data5 === null) {
           return ZodParsedType.null;
         }
-        if (data4.then && typeof data4.then === "function" && data4.catch && typeof data4.catch === "function") {
+        if (data5.then && typeof data5.then === "function" && data5.catch && typeof data5.catch === "function") {
           return ZodParsedType.promise;
         }
-        if (typeof Map !== "undefined" && data4 instanceof Map) {
+        if (typeof Map !== "undefined" && data5 instanceof Map) {
           return ZodParsedType.map;
         }
-        if (typeof Set !== "undefined" && data4 instanceof Set) {
+        if (typeof Set !== "undefined" && data5 instanceof Set) {
           return ZodParsedType.set;
         }
-        if (typeof Date !== "undefined" && data4 instanceof Date) {
+        if (typeof Date !== "undefined" && data5 instanceof Date) {
           return ZodParsedType.date;
         }
         return ZodParsedType.object;
@@ -9909,7 +9909,7 @@
 
   // node_modules/zod/v3/helpers/parseUtil.js
   var makeIssue = (params) => {
-    const { data: data4, path, errorMaps, issueData } = params;
+    const { data: data5, path, errorMaps, issueData } = params;
     const fullPath = [...path, ...issueData.path || []];
     const fullIssue = {
       ...issueData,
@@ -9925,7 +9925,7 @@
     let errorMessage = "";
     const maps = errorMaps.filter((m) => !!m).slice().reverse();
     for (const map of maps) {
-      errorMessage = map(fullIssue, { data: data4, defaultError: errorMessage }).message;
+      errorMessage = map(fullIssue, { data: data5, defaultError: errorMessage }).message;
     }
     return {
       ...issueData,
@@ -10127,13 +10127,13 @@
       const result = this._parse(input);
       return Promise.resolve(result);
     }
-    parse(data4, params) {
-      const result = this.safeParse(data4, params);
+    parse(data5, params) {
+      const result = this.safeParse(data5, params);
       if (result.success)
         return result.data;
       throw result.error;
     }
-    safeParse(data4, params) {
+    safeParse(data5, params) {
       const ctx = {
         common: {
           issues: [],
@@ -10143,13 +10143,13 @@
         path: params?.path || [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data: data4,
-        parsedType: getParsedType(data4)
+        data: data5,
+        parsedType: getParsedType(data5)
       };
-      const result = this._parseSync({ data: data4, path: ctx.path, parent: ctx });
+      const result = this._parseSync({ data: data5, path: ctx.path, parent: ctx });
       return handleResult(ctx, result);
     }
-    "~validate"(data4) {
+    "~validate"(data5) {
       const ctx = {
         common: {
           issues: [],
@@ -10158,12 +10158,12 @@
         path: [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data: data4,
-        parsedType: getParsedType(data4)
+        data: data5,
+        parsedType: getParsedType(data5)
       };
       if (!this["~standard"].async) {
         try {
-          const result = this._parseSync({ data: data4, path: [], parent: ctx });
+          const result = this._parseSync({ data: data5, path: [], parent: ctx });
           return isValid(result) ? {
             value: result.value
           } : {
@@ -10179,19 +10179,19 @@
           };
         }
       }
-      return this._parseAsync({ data: data4, path: [], parent: ctx }).then((result) => isValid(result) ? {
+      return this._parseAsync({ data: data5, path: [], parent: ctx }).then((result) => isValid(result) ? {
         value: result.value
       } : {
         issues: ctx.common.issues
       });
     }
-    async parseAsync(data4, params) {
-      const result = await this.safeParseAsync(data4, params);
+    async parseAsync(data5, params) {
+      const result = await this.safeParseAsync(data5, params);
       if (result.success)
         return result.data;
       throw result.error;
     }
-    async safeParseAsync(data4, params) {
+    async safeParseAsync(data5, params) {
       const ctx = {
         common: {
           issues: [],
@@ -10201,10 +10201,10 @@
         path: params?.path || [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data: data4,
-        parsedType: getParsedType(data4)
+        data: data5,
+        parsedType: getParsedType(data5)
       };
-      const maybeAsyncResult = this._parse({ data: data4, path: ctx.path, parent: ctx });
+      const maybeAsyncResult = this._parse({ data: data5, path: ctx.path, parent: ctx });
       const result = await (isAsync(maybeAsyncResult) ? maybeAsyncResult : Promise.resolve(maybeAsyncResult));
       return handleResult(ctx, result);
     }
@@ -10225,8 +10225,8 @@
           ...getIssueProperties(val)
         });
         if (typeof Promise !== "undefined" && result instanceof Promise) {
-          return result.then((data4) => {
-            if (!data4) {
+          return result.then((data5) => {
+            if (!data5) {
               setError();
               return false;
             } else {
@@ -10292,7 +10292,7 @@
       this["~standard"] = {
         version: 1,
         vendor: "zod",
-        validate: (data4) => this["~validate"](data4)
+        validate: (data5) => this["~validate"](data5)
       };
     }
     optional() {
@@ -10752,7 +10752,7 @@
       return { status: status.value, value: input.data };
     }
     _regex(regex, validation, message) {
-      return this.refinement((data4) => regex.test(data4), {
+      return this.refinement((data5) => regex.test(data5), {
         validation,
         code: ZodIssueCode.invalid_string,
         ...errorUtil.errToObj(message)
@@ -12968,8 +12968,8 @@
         return INVALID;
       }
       const promisified = ctx.parsedType === ZodParsedType.promise ? ctx.data : Promise.resolve(ctx.data);
-      return OK(promisified.then((data4) => {
-        return this._def.type.parseAsync(data4, {
+      return OK(promisified.then((data5) => {
+        return this._def.type.parseAsync(data5, {
           path: ctx.path,
           errorMap: ctx.common.contextualErrorMap
         });
@@ -13163,12 +13163,12 @@
   var ZodDefault = class extends ZodType {
     _parse(input) {
       const { ctx } = this._processInputParams(input);
-      let data4 = ctx.data;
+      let data5 = ctx.data;
       if (ctx.parsedType === ZodParsedType.undefined) {
-        data4 = this._def.defaultValue();
+        data5 = this._def.defaultValue();
       }
       return this._def.innerType._parse({
-        data: data4,
+        data: data5,
         path: ctx.path,
         parent: ctx
       });
@@ -13263,9 +13263,9 @@
   var ZodBranded = class extends ZodType {
     _parse(input) {
       const { ctx } = this._processInputParams(input);
-      const data4 = ctx.data;
+      const data5 = ctx.data;
       return this._def.type._parse({
-        data: data4,
+        data: data5,
         path: ctx.path,
         parent: ctx
       });
@@ -13332,13 +13332,13 @@
   var ZodReadonly = class extends ZodType {
     _parse(input) {
       const result = this._def.innerType._parse(input);
-      const freeze = (data4) => {
-        if (isValid(data4)) {
-          data4.value = Object.freeze(data4.value);
+      const freeze = (data5) => {
+        if (isValid(data5)) {
+          data5.value = Object.freeze(data5.value);
         }
-        return data4;
+        return data5;
       };
-      return isAsync(result) ? result.then((data4) => freeze(data4)) : freeze(result);
+      return isAsync(result) ? result.then((data5) => freeze(data5)) : freeze(result);
     }
     unwrap() {
       return this._def.innerType;
@@ -13351,26 +13351,26 @@
       ...processCreateParams(params)
     });
   };
-  function cleanParams(params, data4) {
-    const p = typeof params === "function" ? params(data4) : typeof params === "string" ? { message: params } : params;
+  function cleanParams(params, data5) {
+    const p = typeof params === "function" ? params(data5) : typeof params === "string" ? { message: params } : params;
     const p2 = typeof p === "string" ? { message: p } : p;
     return p2;
   }
   function custom(check, _params = {}, fatal) {
     if (check)
-      return ZodAny.create().superRefine((data4, ctx) => {
-        const r = check(data4);
+      return ZodAny.create().superRefine((data5, ctx) => {
+        const r = check(data5);
         if (r instanceof Promise) {
           return r.then((r2) => {
             if (!r2) {
-              const params = cleanParams(_params, data4);
+              const params = cleanParams(_params, data5);
               const _fatal = params.fatal ?? fatal ?? true;
               ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
             }
           });
         }
         if (!r) {
-          const params = cleanParams(_params, data4);
+          const params = cleanParams(_params, data5);
           const _fatal = params.fatal ?? fatal ?? true;
           ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
         }
@@ -13422,7 +13422,7 @@
   })(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
   var instanceOfType = (cls, params = {
     message: `Input not instance of ${cls.name}`
-  }) => custom((data4) => data4 instanceof cls, params);
+  }) => custom((data5) => data5 instanceof cls, params);
   var stringType = ZodString.create;
   var numberType = ZodNumber.create;
   var nanType = ZodNaN.create;
@@ -14140,6 +14140,12 @@
     essentials: external_exports.record(external_exports.string(), EntityCopyEntrySchema),
     conditions: external_exports.record(external_exports.string(), EntityCopyEntrySchema)
   }).passthrough();
+
+  // assets/js/src/core/schemas/home-curation.ts
+  var HomeCurationSchema = external_exports.object({
+    /** Curated Home "Explore" preview: entity slugs (topic/concept), resolved + A-Z at render. */
+    explore_preview: external_exports.array(external_exports.string())
+  });
 
   // assets/js/src/core/nutrient-resolver.ts
   var MAP = NutrientResolverSchema.parse(nutrient_resolver_data_default);
@@ -17743,6 +17749,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kh_conditions_label: "Common conditions",
       kh_conditions_hint: "what Wallach wrote most about",
       kh_conditions_link: "browse all {n} \u2192",
+      kh_explore_label: "Explore",
+      kh_explore_hint: "the rabbit holes \u2014 therapies, elements, big questions",
+      kh_explore_link: "see all topics \u2192",
       kt_kicker: "Explore",
       kt_related: "Related",
       kt_back: "\u2039 All topics",
@@ -90994,6 +91003,49 @@ deaths, blood clots, sterility`,
     });
   }
 
+  // assets/data/home-curation.json
+  var home_curation_default = {
+    _purpose: "Home-tab curated selections \u2014 the SPECIAL curated front-door surface (Luneth hand-picks; the home-page-curation philosophy). Editorial UI config, NOT canonical health data and NOT a pillar projection, so it lives here hand-authored (manifest 'accounted') rather than derived. Slugs are nav keys resolved against the search entity index at render; order here is free (the view sorts A-Z by display name). Explicitly temporary \u2014 may later flip to a top-N-by-claims formula.",
+    explore_preview: [
+      "amino_acids",
+      "aromatherapy",
+      "ayurveda",
+      "chiropractic",
+      "colloidal_minerals",
+      "color_therapy",
+      "essential_nutrients",
+      "homeopathy",
+      "hydrotherapy",
+      "light_therapy",
+      "macronutrients",
+      "negative_ion_therapy",
+      "vaccines",
+      "vitamins"
+    ]
+  };
+
+  // assets/js/src/state/home-curation.ts
+  var EMPTY5 = { explore_preview: [] };
+  var cached6 = null;
+  function data4() {
+    if (cached6 === null) {
+      const parsed = HomeCurationSchema.safeParse(home_curation_default);
+      cached6 = parsed.success ? parsed.data : EMPTY5;
+    }
+    return cached6;
+  }
+  function homeExploreTopics() {
+    const bySlug = new Map(entityList().map((e) => [e.slug, e]));
+    const out = [];
+    for (const slug of data4().explore_preview) {
+      const e = bySlug.get(slug);
+      if (e !== void 0) {
+        out.push(e);
+      }
+    }
+    return out.sort((a, b) => a.display_name.localeCompare(b.display_name));
+  }
+
   // assets/js/src/views/knowledge-home.ts
   function escHTML7(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -91041,6 +91093,17 @@ deaths, blood clots, sterility`,
     return `<div class="ep-seclabel">${escHTML7(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML7(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML7(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
   }
+  function exploreChip(e) {
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML7(e.slug)}">${escHTML7(e.display_name)}</button>`;
+  }
+  function renderExploreShelf() {
+    const topics = homeExploreTopics();
+    if (topics.length === 0) {
+      return "";
+    }
+    return `<div class="ep-seclabel">${escHTML7(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML7(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML7(ui("kh_explore_link"))}</a></div>
+    <div class="kd-explore-cloud">${topics.map(exploreChip).join("")}</div>`;
+  }
   function renderHomeTab() {
     const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
     const sub = ui("kh_hero_sub").replace("{claims}", fmt(claims)).replace("{books}", fmt(listBooks().length)).replace("{conditions}", fmt(listConditions().length));
@@ -91059,6 +91122,7 @@ deaths, blood clots, sterility`,
     </section>
     ${renderEssentialsShelf()}
     ${renderConditionsShelf()}
+    ${renderExploreShelf()}
   </div>`;
   }
   function homeMatches(query) {
@@ -92730,7 +92794,20 @@ Deferrals: Home "Explore" preview (Chunk 4b \u2014 now unblocked, next); related
 
 Files: views/entity-page.ts (backButton inside .kd-ep-hero; count \u2192 bare number). views/knowledge-topic.ts (back button \u2192 .kt-hero__top flex row, .kd-ep-back style; count \u2192 bare number). drawer-knowledge.css (.kd-ep-hero .kd-ep-back top-right via margin-left:auto+align-self; .kt-hero__top; .kt-back retired; facet arrow 0.95rem; count uppercase reverted; .kd-ep-hero margin-top \u2192 --ds-space-1). view-copy.json (kt_back \u2192 "\u2039 All topics").
 
-Verified: build 0 (tsc) \xB7 eslint-clean \xB7 invariants 61/61 \xB7 render_probe_knowledge PASS \xB7 0 page errors \xB7 screenshots (Mercury topic + Calcium essential). Deferrals: Home "Explore" preview (Chunk 4b) next.` }];
+Verified: build 0 (tsc) \xB7 eslint-clean \xB7 invariants 61/61 \xB7 render_probe_knowledge PASS \xB7 0 page errors \xB7 screenshots (Mercury topic + Calcium essential). Deferrals: Home "Explore" preview (Chunk 4b) next.` }, { id: "lg_mri2tqqh_3h5buz", ts: "2026-07-12T12:37:51.257381-05:00", surface: "knowledge", kind: "round-close", summary: "Home 'Explore' preview shelf (Chunk 4b): 14 hand-picked topic chips, A-Z, via new hand-authored home-curation.json \u2014 the curated third Home shelf, Luneth-signed-off", detail: `The Home tab of the Knowledge drawer now has its third and final browse shelf \u2014 "Explore" \u2014 a cloud of 14 topic chips (Amino Acids through Vitamins) that Luneth hand-picked, shown A-Z. Clicking a chip opens that topic's page on the Explore tab. This completes the Home landing surface: hero, then The essentials, Common conditions, and Explore.
+
+The one design decision: Home is the SPECIAL curated surface, so its shelves aren't all the same. The essentials + conditions shelves are pure formula (top-N by claim count); the Explore preview is a deliberate hand-pick. We nearly used a formula here too, but a claim-count ranking would have put charged topics (Homosexuality #4, Intersex #11) on the front door \u2014 which is precisely why Home is curated rather than formulaic. Luneth chose the demo's featured 14 topic/concept entities as his pick and asked for A-Z order.
+
+Technical:
+- NEW dashboard/assets/data/home-curation.json \u2014 hand-authored Home curation config (explore_preview = 14 entity slugs). Editorial UI config, NOT canonical health data and NOT a pillar projection, so it lives hand-authored + is registered in eden/derived/MANIFEST.json under \`accounted\` (disposition hand_authored + reason). Explicitly temporary: may later flip to a top-N-by-claims formula by swapping the one accessor.
+- NEW core/schemas/home-curation.ts \u2014 HomeCurationSchema (Zod), the defense-in-depth boundary; a bad/absent store degrades to empty (preview renders nothing rather than throwing).
+- NEW state/home-curation.ts \u2014 homeExploreTopics(): reads the curated slugs, resolves each against the search entity index (state/search::entityList), returns EntitySummary[] sorted A-Z by display_name. A slug that resolves to nothing (a future hand-edit typo) is silently skipped (graceful degradation, \xA700.B #7). Order is a formula, so the JSON slug order is free.
+- schemas/index.ts \u2014 barrel export of the new schema.
+- views/knowledge-home.ts \u2014 renderExploreShelf(): the ep-seclabel header (label + hint + "see all topics \u2192" link via data-kd-tab) + a .kd-explore-cloud of .kd-explore-chip chips. Reuses the Explore tab's existing chip styling (single-source, NO new CSS) and the already-wired data-kd-topic nav (a chip click switches to the Explore tab and opens the topic page \u2014 NO new nav code in knowledge.ts). exploreChip uses a minimal structural param type (no cross-module type import, avoids import-sort churn). Added after the conditions shelf in renderHomeTab.
+- view-copy.json \u2014 3 new UI chrome keys: kh_explore_label "Explore", kh_explore_hint "the rabbit holes \u2014 therapies, elements, big questions", kh_explore_link "see all topics \u2192" (prose stays contained, R4).
+- tools/render_probe_knowledge.js \u2014 new assertion: the Home Explore preview renders curated topic chips (count 10\u201320, guarding against a regression that dumps the full set), all carrying data-kd-topic, in A-Z order.
+
+Verified: build OK (tsc clean) \xB7 invariants 61/61 (0 new reds; data_artifacts_accounted now 20 files = 10 derived + 12 hand-authored) \xB7 render_probe_knowledge PASS with homeExplore {count:14, allNav:true, sortedAZ:true} and 0 page errors \xB7 eslint clean \xB7 headless screenshot + Luneth "Looks great" visual sign-off. Deferrals: none.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

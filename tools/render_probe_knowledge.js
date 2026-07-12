@@ -67,6 +67,19 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 2d. Home "Explore" preview — curated topic chips (data-kd-topic), A-Z by name.
+  const homeExplore = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const chips = root ? [...root.querySelectorAll('.kd-home .kd-explore-cloud .kd-explore-chip')] : [];
+    const names = chips.map(c => (c.textContent || '').trim());
+    const sorted = names.slice().sort((a, b) => a.localeCompare(b));
+    return {
+      count: chips.length,
+      allNav: chips.length > 0 && chips.every(c => (c.getAttribute('data-kd-topic') || '').length > 0),
+      sortedAZ: names.join('|') === sorted.join('|'),
+    };
+  });
+
   // 3. Switch to the Products tab; list ALL products (no 30 cap), each clickable.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
   await wait(300);
@@ -344,7 +357,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, tabBar, homeConds, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic };
+  const out = { boot, afterClick, tabBar, homeConds, homeExplore, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -391,6 +404,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products search: clear button resets the filter in one click', prodClear.visible === prodClear.total && prodClear.inputEmpty === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
+    ['home: Explore preview = curated topic chips, A-Z, navigable', homeExplore.count >= 10 && homeExplore.count <= 20 && homeExplore.allNav === true && homeExplore.sortedAZ === true],
     ['explore: type-grouped chips render (Mercury present)', explore.groups >= 4 && explore.chips >= 30 && explore.hasMercury === true],
     ['explore: a chip opens the faceted topic page (Mercury, 5+ facets, 8+ cards)', topic.shown === true && topic.title === 'Mercury' && topic.facets >= 5 && topic.cards >= 8],
     ['topic page: hero lede + Wallach-cited claim cards', topic.hasLede === true && topic.hasCite === true],
