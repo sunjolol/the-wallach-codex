@@ -215,17 +215,17 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
   return `${deepHTML}${groupsHTML}`;
 }
 
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
   switch (tab) {
     case 'home': return renderHomeTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return renderConditionsTab(selectedCondition);
-    case 'explore': return renderExploreTab();
+    case 'explore': return renderExploreTab(selectedTopic);
     case 'products': return renderProductsTab(selectedProduct);
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
   const snapshot = getOrCompute();
   const productsCount = productCount();
   const tabs = [
@@ -250,7 +250,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">×</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ''}
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct)}</div>
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
@@ -360,10 +360,11 @@ export function mount(container: HTMLElement): DrawerHandle {
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
   let selectedProduct: string | null = null;
+  let selectedTopic: string | null = null;
   let searchQuery = '';
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -397,6 +398,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedEssential = null;
     selectedCondition = null;
     selectedProduct = null;
+    selectedTopic = null;
     container.classList.remove('kd-open', 'kd-expanded');
     container.innerHTML = '';
   };
@@ -431,6 +433,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedEssential = null;
         selectedCondition = null;
         selectedProduct = null;
+        selectedTopic = null;
         searchQuery = '';
         render();
       }
@@ -455,6 +458,17 @@ export function mount(container: HTMLElement): DrawerHandle {
       // Same as essentials: land the condition on its own tab (Home hero / cross-links).
       if (selectedCondition !== null) {
         activeTab = 'conditions';
+      }
+      render();
+      return;
+    }
+    const topicEl = target.closest<HTMLElement>('[data-kd-topic]');
+    if (topicEl !== null) {
+      const k = topicEl.getAttribute('data-kd-topic');
+      selectedTopic = (k !== null && k === selectedTopic) ? null : k;
+      // A topic opens on the Explore tab (chip grid <-> topic page), mirroring conditions.
+      if (selectedTopic !== null) {
+        activeTab = 'explore';
       }
       render();
       return;
@@ -491,6 +505,10 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'product-close') {
         selectedProduct = null;
+        render();
+      }
+      else if (action === 'topic-close') {
+        selectedTopic = null;
         render();
       }
       else if (action === 'sources-more') {

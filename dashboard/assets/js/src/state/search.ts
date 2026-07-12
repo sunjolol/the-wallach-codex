@@ -64,6 +64,20 @@ export function claimsForSubject(subject: string): SearchClaim[] {
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }
 
+/** Distinct book titles a subject's claims cite (for the entity-page meta line), sorted. */
+export function booksForSubject(subject: string): string[] {
+  const titles = new Set<string>();
+  for (const c of claimsForSubject(subject)) {
+    if (c.book_id !== null) {
+      const b = index().books[c.book_id];
+      if (b !== undefined) {
+        titles.add(b.title);
+      }
+    }
+  }
+  return [...titles].sort();
+}
+
 /** One entity page's claims, grouped into the facet sections it actually has (canonical order). */
 export interface FacetGroup {
   facet: string;

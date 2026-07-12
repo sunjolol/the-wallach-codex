@@ -174,7 +174,7 @@ function truncate(s: string, max: number): string {
  * A search Q&A card ("?" badge): question → answer_short preview → full answer +
  * Wallach's exact words + the composed citation + topic tags. Resolves a SearchClaim.
  */
-function renderSearchCard(claim: SearchClaim): string {
+export function renderSearchCard(claim: SearchClaim): string {
   const cite = composeCite(claim);
   const tags = claim.topics.map(t => `<span class="kd-ep-tag">#${escHTML(t)}</span>`).join('');
   const preview = claim.answer_short.length > 0 ? `<span class="kd-ep-claim__preview">${escHTML(claim.answer_short)}</span>` : '';

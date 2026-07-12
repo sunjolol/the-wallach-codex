@@ -17742,7 +17742,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kh_legend_fatty_acid: "Fatty acids",
       kh_conditions_label: "Common conditions",
       kh_conditions_hint: "what Wallach wrote most about",
-      kh_conditions_link: "browse all {n} \u2192"
+      kh_conditions_link: "browse all {n} \u2192",
+      kt_kicker: "Explore",
+      kt_related: "Related",
+      kt_back: "\u2190 All topics",
+      kt_meta: "{n} sourced {noun}",
+      kt_meta_full: "{n} sourced {noun} \xB7 from {books}",
+      kt_type_topic: "Therapies & ideas",
+      kt_type_concept: "Big concepts",
+      kt_type_element: "Elements",
+      kt_type_substance: "Substances",
+      kt_type_person: "People"
     }
   };
 
@@ -90420,6 +90430,18 @@ deaths, blood clots, sterility`,
   function claimsForSubject(subject) {
     return index2().claims.filter((c) => c.subject === subject).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   }
+  function booksForSubject(subject) {
+    const titles = /* @__PURE__ */ new Set();
+    for (const c of claimsForSubject(subject)) {
+      if (c.book_id !== null) {
+        const b = index2().books[c.book_id];
+        if (b !== void 0) {
+          titles.add(b.title);
+        }
+      }
+    }
+    return [...titles].sort();
+  }
   function facetGroups(subject) {
     const claims = claimsForSubject(subject);
     const e = getEntity(subject);
@@ -91102,12 +91124,82 @@ deaths, blood clots, sterility`,
     return html;
   }
 
+  // assets/js/src/views/knowledge-topic.ts
+  function escHTML8(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function relPill(slug) {
+    const e = getEntity(slug);
+    const navigable = e !== null && e.type !== "nutrient" && e.type !== "condition";
+    const name = displayName(slug);
+    return navigable ? `<button class="kt-pill" type="button" data-kd-topic="${escHTML8(slug)}">${escHTML8(name)}</button>` : `<span class="kt-pill kt-pill--static">${escHTML8(name)}</span>`;
+  }
+  function renderTopicPage(slug) {
+    const e = getEntity(slug);
+    if (e === null) {
+      return "";
+    }
+    const groups = facetGroups(slug);
+    const [ledeClaim] = groups.find((g) => g.facet === "basics")?.claims ?? [];
+    const lede = ledeClaim?.answer_short ?? "";
+    const sym = e.symbol ?? "";
+    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML8(sym)}</span>` : "";
+    const rels = e.related.map(relPill).join("");
+    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML8(ui("kt_related"))}</span>${rels}</div>` : "";
+    const nClaims = groups.reduce((n, g) => n + g.claims.length, 0);
+    const books = booksForSubject(slug);
+    const noun = plural(nClaims, "claim");
+    const meta = books.length > 0 ? ui("kt_meta_full").replace("{n}", String(nClaims)).replace("{noun}", noun).replace("{books}", books.join(", ")) : ui("kt_meta").replace("{n}", String(nClaims)).replace("{noun}", noun);
+    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML8(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML8(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
+      <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
+    </details>`).join("");
+    return `<div class="kt-page kd-ep">
+    <button class="kt-back" type="button" data-kd-action="topic-close">${escHTML8(ui("kt_back"))}</button>
+    <header class="kt-hero">
+      <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML8(e.type)} \xB7 ${escHTML8(ui("kt_kicker"))}</span>
+      <div class="kt-title">${symHTML}<h1>${escHTML8(e.common_name ?? e.display_name)}</h1></div>
+      ${lede.length > 0 ? `<p class="kt-lede">${escHTML8(lede)}</p>` : ""}
+      ${relBlock}
+      <div class="kt-meta">${escHTML8(meta)}</div>
+    </header>
+    ${facetsHTML}
+  </div>`;
+  }
+
   // assets/js/src/views/knowledge-explore.ts
+  function escHTML9(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  var EXPLORE_TYPES = [
+    { type: "topic", key: "kt_type_topic" },
+    { type: "concept", key: "kt_type_concept" },
+    { type: "element", key: "kt_type_element" },
+    { type: "substance", key: "kt_type_substance" },
+    { type: "person", key: "kt_type_person" }
+  ];
   function exploreEntities() {
     return entityList().filter((e) => e.type !== "nutrient" && e.type !== "condition");
   }
-  function renderExploreTab() {
-    return '<div class="kd-explore"></div>';
+  function chip(e) {
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML9(e.slug)}">${escHTML9(e.display_name)}</button>`;
+  }
+  function renderExploreTab(selectedTopic) {
+    if (selectedTopic !== null) {
+      const page = renderTopicPage(selectedTopic);
+      if (page.length > 0) {
+        return page;
+      }
+    }
+    const all = exploreEntities();
+    const groups = EXPLORE_TYPES.map(({ type, key }) => {
+      const inType = all.filter((e) => e.type === type).sort((a, b) => a.display_name.localeCompare(b.display_name));
+      if (inType.length === 0) {
+        return "";
+      }
+      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML9(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
+    }).join("");
+    return `<div class="kd-explore">${groups}</div>`;
   }
 
   // assets/js/src/views/search-highlight.ts
@@ -91238,7 +91330,7 @@ deaths, blood clots, sterility`,
         return "PENDING";
     }
   }
-  function escHTML8(s) {
+  function escHTML10(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function renderEssentialDeep(key, snapshot) {
@@ -91251,23 +91343,23 @@ deaths, blood clots, sterility`,
         const status = statusOf(snapshot, e.key);
         const stateClass = e.essential ? statusTileClass(status) : "kd-essential-tile--bonus";
         const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? " is-selected" : ""}`.trim();
-        const meta = e.essential ? `${escHTML8(e.catLabel)} \xB7 ${statusLabel2(status)}` : `${escHTML8(e.catLabel)} \xB7 NON-ESSENTIAL`;
+        const meta = e.essential ? `${escHTML10(e.catLabel)} \xB7 ${statusLabel2(status)}` : `${escHTML10(e.catLabel)} \xB7 NON-ESSENTIAL`;
         return `
-        <div class="${cls}" data-kd-essential="${escHTML8(e.key)}" role="button" tabindex="0">
-          <div class="kd-essential-tile__sym">${escHTML8(e.symbol)}</div>
-          <div class="kd-essential-tile__name">${escHTML8(e.name)}</div>
+        <div class="${cls}" data-kd-essential="${escHTML10(e.key)}" role="button" tabindex="0">
+          <div class="kd-essential-tile__sym">${escHTML10(e.symbol)}</div>
+          <div class="kd-essential-tile__name">${escHTML10(e.name)}</div>
           <div class="kd-essential-tile__meta">${meta}</div>
         </div>`;
       }).join("");
       const essentialN = group.items.filter((i) => i.essential).length;
       const bonusN = group.items.length - essentialN;
       return `
-      <div class="kd-section-head">${escHTML8(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
+      <div class="kd-section-head">${escHTML10(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
       <div class="kd-essentials-grid">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${groupsHTML}`;
   }
-  function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedProduct) {
+  function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic) {
     switch (tab) {
       case "home":
         return renderHomeTab();
@@ -91276,12 +91368,12 @@ deaths, blood clots, sterility`,
       case "conditions":
         return renderConditionsTab(selectedCondition);
       case "explore":
-        return renderExploreTab();
+        return renderExploreTab(selectedTopic);
       case "products":
         return renderProductsTab(selectedProduct);
     }
   }
-  function renderShell2(activeTab, selectedKey, selectedCondition, selectedProduct) {
+  function renderShell2(activeTab, selectedKey, selectedCondition, selectedProduct, selectedTopic) {
     const snapshot = getOrCompute();
     const productsCount = productCount();
     const tabs = [
@@ -91291,11 +91383,11 @@ deaths, blood clots, sterility`,
       { id: "explore", label: ui("kd_tab_explore"), count: `${exploreEntities().length} TOPICS` },
       { id: "products", label: ui("kd_tab_products"), count: `${productsCount} KNOWN` }
     ];
-    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML8(t.label)}</button>`).join("");
+    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML10(t.label)}</button>`).join("");
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="kd-knh">
-      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML8(ui("kd_mark"))}</b></div>
+      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML10(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
@@ -91305,7 +91397,7 @@ deaths, blood clots, sterility`,
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ""}
-    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct)}</div>
+    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>
     <footer class="kd-footer">
       <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">\u2295</span>PIN</button>
       <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">\u2197</span>SHARE</button>
@@ -91376,9 +91468,10 @@ deaths, blood clots, sterility`,
     let selectedEssential = null;
     let selectedCondition = null;
     let selectedProduct = null;
+    let selectedTopic = null;
     let searchQuery = "";
     const render = () => {
-      container.innerHTML = renderShell2(activeTab, selectedEssential, selectedCondition, selectedProduct);
+      container.innerHTML = renderShell2(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic);
       if (searchQuery.length > 0) {
         const input = container.querySelector(".kd-search-input");
         if (input !== null) {
@@ -91409,6 +91502,7 @@ deaths, blood clots, sterility`,
       selectedEssential = null;
       selectedCondition = null;
       selectedProduct = null;
+      selectedTopic = null;
       container.classList.remove("kd-open", "kd-expanded");
       container.innerHTML = "";
     };
@@ -91439,6 +91533,7 @@ deaths, blood clots, sterility`,
           selectedEssential = null;
           selectedCondition = null;
           selectedProduct = null;
+          selectedTopic = null;
           searchQuery = "";
           render();
         }
@@ -91460,6 +91555,16 @@ deaths, blood clots, sterility`,
         selectedCondition = k !== null && k === selectedCondition ? null : k;
         if (selectedCondition !== null) {
           activeTab = "conditions";
+        }
+        render();
+        return;
+      }
+      const topicEl = target.closest("[data-kd-topic]");
+      if (topicEl !== null) {
+        const k = topicEl.getAttribute("data-kd-topic");
+        selectedTopic = k !== null && k === selectedTopic ? null : k;
+        if (selectedTopic !== null) {
+          activeTab = "explore";
         }
         render();
         return;
@@ -91489,6 +91594,9 @@ deaths, blood clots, sterility`,
           render();
         } else if (action === "product-close") {
           selectedProduct = null;
+          render();
+        } else if (action === "topic-close") {
+          selectedTopic = null;
           render();
         } else if (action === "sources-more") {
           const list = actionEl.closest(".kd-essential-deep")?.querySelector(".kd-sources");
@@ -92609,7 +92717,13 @@ Files: state/entity-page.ts (ConditionSummary + listConditionPages carry nutrien
 
 Verified: build 0 (tsc) \xB7 eslint 0 errors on touched TS \xB7 invariants 61/61 \xB7 render_probe_knowledge PASS \xB7 0 page errors \xB7 new assertions confirm count=8, allNav true, firstMeta "64 claims \xB7 9 nutrients" \xB7 headless screenshot confirmed the 8-row grid (Cancer 64\xB79 \u2192 Anorexia 28\xB716) below the essentials shelf \xB7 Luneth "approve \u2014 ship it" sign-off.
 
-Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Luneth-chosen); topic entity-pages do not exist yet, so topic/Explore nav stays future work.` }];
+Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Luneth-chosen); topic entity-pages do not exist yet, so topic/Explore nav stays future work.` }, { id: "lg_mrhzu5n6_5o5zns", ts: "2026-07-12T11:14:11.730367-05:00", surface: "knowledge", kind: "round-close", summary: "Explore topic pages + chip grid (Chunk B1, Luneth-signed-off): the Explore tab lists 40 off-path subjects as type-grouped chips; a chip opens a full faceted knowledge page (hero + colour-coded facets + Wallach's Q&A / verbatim / citation), reusing the app's shared claim card.", detail: `The Explore tab now works. It lists all 40 non-tier-1 subjects (therapies, big concepts, elements, a substance, Dr. Wallach) as chips grouped by type, alphabetical; clicking one opens a full faceted knowledge page \u2014 a hero (name + one-line lede + related pills) over Wallach's Q&A grouped by facet (Basics / Warnings / How-it-works / \u2026), colour-coded, each card expanding to his exact quote + citation. It re-creates the signed-off topic-page mockup on real data, reusing the app's existing faceted claim-card renderer so Explore pages and essential/condition pages show Wallach's words identically. The data + card layer already existed; B1 added the hero, chip grid, and drawer wiring.
+
+Files: NEW views/knowledge-topic.ts (renderTopicPage \u2014 hero + related pills + facetGroups()\u2192kd-ep-facet, reusing entity-page.ts::renderSearchCard [now exported]; lede chosen by FACET not array position \u2192 no_positional_hero stays green). NEW views/knowledge-explore.ts (renderExploreTab(selectedTopic) \u2014 type-grouped alphabetical chips, or the topic page when selected). views/knowledge.ts (selectedTopic state + data-kd-topic nav mirroring conditions + topic-close + threaded through renderTab/renderShell/resets). state/search.ts (+booksForSubject). views/entity-page.ts (export renderSearchCard). drawer-knowledge.css (kt-* hero + kd-explore chips + the 8 remaining facet colours extending the original 5 to all 13 \u2014 enriches both surfaces; Luneth chose keep-everywhere). view-copy.json (11 contained kt_* prose keys). invariants.py (knowledge-topic.ts in _CLEAN_VIEW_FILES + _ENTITY_VIEW_FILES). render_probe_knowledge.js (Explore + topic assertions).
+
+Verified: build 0 (tsc) \xB7 new files eslint-clean \xB7 invariants 61/61 (new view gate-scanned: prose-contained, pure projection, no positional hero, no hardcoded colour) \xB7 render_probe_knowledge PASS (5 groups / 40 chips / Mercury 7 facets / 13 cards / lede + cite) \xB7 render_probe_search PASS (regression) \xB7 0 page errors \xB7 screenshots (Explore grid, Mercury collapsed, one card expanded \u2192 answer/verbatim/"\u2014 Dr. Joel Wallach \xB7 IMMORTALITY (2008) \xB7 P.154") \xB7 Luneth sign-off.
+
+Deferrals: Home "Explore" preview (Chunk 4b \u2014 now unblocked, next); related-pill cross-routing to nutrient/condition pages (static now, not dead); the search-side CHARGED gate (Explore browse is exempt; Thread 2).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -92645,7 +92759,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML9(s) {
+  function escHTML11(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -92691,15 +92805,15 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML9(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML11(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML9(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML11(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML9(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML9(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML9(kindLabel2(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML11(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML11(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML11(kindLabel2(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML9(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML11(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -92773,9 +92887,9 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML9(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML9(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML9(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML11(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML11(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML11(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -92920,7 +93034,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML10(s) {
+  function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -92950,7 +93064,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML10(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML12(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -92961,13 +93075,13 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML10(slot.id)}" data-slot-num="${escHTML10(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML12(slot.id)}" data-slot-num="${escHTML12(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML10(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML10(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML10(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML12(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML12(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML12(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML10(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML12(slot.stamp)}</div>
     </article>
   `;
   }
@@ -93004,9 +93118,9 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML10(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML12(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML10(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML12(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -93069,13 +93183,13 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML10(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML10(item.heat)}"><span class="rec-item__tag-sign">${escHTML10(sign)}</span>${escHTML10(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML12(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML12(item.heat)}"><span class="rec-item__tag-sign">${escHTML12(sign)}</span>${escHTML12(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML10(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML12(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML10(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML10(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML12(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML12(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -93278,7 +93392,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML10(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML12(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -93370,7 +93484,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML11(s) {
+  function escHTML13(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -93415,19 +93529,19 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML11(n.name)}</span>
-      <span>${escHTML11(n.amount ?? "")}${escHTML11(n.unit ?? "")}</span>
+      <span>${escHTML13(n.name)}</span>
+      <span>${escHTML13(n.amount ?? "")}${escHTML13(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML11(brand)}</div>
-        <div class="scan-label__product">${escHTML11(product)}</div>
+        <div class="scan-label__brand">${escHTML13(brand)}</div>
+        <div class="scan-label__product">${escHTML13(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML11(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML13(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -93447,7 +93561,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML11(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML13(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -93509,9 +93623,9 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML11(s.name)}</div>
-        <div class="stage__sub">${escHTML11(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML11(s.ms)}</span>` : escHTML11(s.ms)}</div>
+        <div class="stage__name">${escHTML13(s.name)}</div>
+        <div class="stage__sub">${escHTML13(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML13(s.ms)}</span>` : escHTML13(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -93523,7 +93637,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML11(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML13(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -93534,17 +93648,17 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML11(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML13(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML11(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML11(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML13(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML13(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML11(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML11(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML11(row.tag.heat)}">${tagSignHTML}${escHTML11(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML13(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML13(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML13(row.tag.heat)}">${tagSignHTML}${escHTML13(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -93650,10 +93764,10 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML11(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML11(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML13(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML13(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML11(verdictText)}</span>
+      <span class="${pillClass}">${escHTML13(verdictText)}</span>
     </div>
   `;
   }
@@ -93869,7 +93983,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   }
 
   // assets/js/src/views/search.ts
-  function escHTML12(s) {
+  function escHTML14(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -93888,14 +94002,14 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML12(e.symbol);
+      return escHTML14(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML12(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML14(e.display_name.charAt(0));
   }
   function renderPill(slug) {
-    const name = escHTML12(displayName(slug));
+    const name = escHTML14(displayName(slug));
     if (getEntity(slug) !== null) {
-      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML12(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML14(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="sr-pill" title="Related to this">${name}</span>`;
   }
@@ -93928,7 +94042,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     if (claim.topics.length === 0) {
       return "";
     }
-    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML12(t)}</span>`).join("");
+    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML14(t)}</span>`).join("");
     return `<div class="sr-claim__tags">${tags}</div>`;
   }
   function renderAnswer(claim) {
@@ -93937,28 +94051,28 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
       const i = claim.answer.indexOf(xref.phrase);
       const before = claim.answer.slice(0, i);
       const after = claim.answer.slice(i + xref.phrase.length);
-      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML12(xref.target)}" title="Jump to the full answer">${escHTML12(xref.phrase)}</button>`;
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML14(xref.target)}" title="Jump to the full answer">${escHTML14(xref.phrase)}</button>`;
       return glossify(before) + link + glossify(after);
     }
     return glossify(claim.answer);
   }
   function claimDetail(claim) {
     return `
-      <div class="sr-claim__short">${escHTML12(claim.answer_short)}</div>
+      <div class="sr-claim__short">${escHTML14(claim.answer_short)}</div>
       <div class="sr-claim__answer">${renderAnswer(claim)}</div>
       <blockquote class="sr-claim__verbatim">\u201C${glossify(oneLine(claim.verbatim))}\u201D</blockquote>
-      <div class="sr-claim__cite">${escHTML12(composeCite(claim))}</div>
+      <div class="sr-claim__cite">${escHTML14(composeCite(claim))}</div>
       ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
   }
   function renderClaimRow(claim) {
     return `
-    <details class="sr-claim" data-sr-claim="${escHTML12(claim.id)}">
+    <details class="sr-claim" data-sr-claim="${escHTML14(claim.id)}">
       <summary class="sr-claim__summary">
         <span class="sr-claim__badge">?</span>
         <span class="sr-claim__qblock">
-          <span class="sr-claim__q">${escHTML12(claim.question)}</span>
-          <span class="sr-claim__preview">${escHTML12(claim.answer_short)}</span>
+          <span class="sr-claim__q">${escHTML14(claim.question)}</span>
+          <span class="sr-claim__preview">${escHTML14(claim.answer_short)}</span>
         </span>
         <span class="sr-claim__chev">\u203A</span>
       </summary>
@@ -93968,9 +94082,9 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
   function renderFacet(group) {
     const rows = group.claims.map(renderClaimRow).join("");
     return `
-    <details class="sr-facet" data-facet="${escHTML12(group.facet)}" open>
+    <details class="sr-facet" data-facet="${escHTML14(group.facet)}" open>
       <summary class="sr-facet__head">
-        <span class="sr-facet__label">${escHTML12(group.label)}</span>
+        <span class="sr-facet__label">${escHTML14(group.label)}</span>
         <span class="sr-facet__count">${group.claims.length}</span>
       </summary>
       <div class="sr-facet__body">${rows}</div>
@@ -93995,11 +94109,11 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
       return '<div class="sr-empty">\u2014 no entities in the index yet \u2014</div>';
     }
     const card = (e) => `
-    <button class="sr-ent-card" data-sr-entity="${escHTML12(e.slug)}">
+    <button class="sr-ent-card" data-sr-entity="${escHTML14(e.slug)}">
       <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
       <span class="sr-ent-card__idblock">
-        <span class="sr-ent-card__name">${escHTML12(e.display_name)}</span>
-        <span class="sr-ent-card__meta">${escHTML12(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
+        <span class="sr-ent-card__name">${escHTML14(e.display_name)}</span>
+        <span class="sr-ent-card__meta">${escHTML14(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
       </span>
       <span class="sr-ent-card__chev">\u203A</span>
     </button>`;
@@ -94017,7 +94131,7 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     if (e === null || groups.length === 0) {
       return '<div class="sr-empty">\u2014 nothing to show for this entity yet \u2014</div>';
     }
-    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML12).join(", ")}` : "";
+    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML14).join(", ")}` : "";
     const facetsHTML = groups.map(renderFacet).join("");
     return `
     <div class="sr-entity">
@@ -94025,8 +94139,8 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
         <button class="sr-entity__back" data-sr-action="back" title="Back">\u2039 BACK</button>
         <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
         <div class="sr-entity__idblock">
-          <h3 class="sr-entity__name">${escHTML12(e.display_name)}</h3>
-          <div class="sr-entity__meta">${escHTML12(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML12(synLine)}</div>
+          <h3 class="sr-entity__name">${escHTML14(e.display_name)}</h3>
+          <div class="sr-entity__meta">${escHTML14(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML14(synLine)}</div>
         </div>
       </header>
       <div class="sr-facets">${facetsHTML}</div>
@@ -94037,9 +94151,9 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     return `
     <div class="sr-ask">
       <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
-      <div class="sr-ask__q">${escHTML12(claim.question)}</div>
+      <div class="sr-ask__q">${escHTML14(claim.question)}</div>
       <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-entity="${escHTML12(claim.subject)}">MORE ON ${escHTML12(displayName(claim.subject).toUpperCase())} \u2192</button>
+      <button class="sr-ask__more" data-sr-entity="${escHTML14(claim.subject)}">MORE ON ${escHTML14(displayName(claim.subject).toUpperCase())} \u2192</button>
     </div>`;
   }
   function renderBody(result) {
@@ -94494,15 +94608,15 @@ Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Lunet
     btn.addEventListener("click", () => toggleDrawer("search"));
   }
   function wireProfileChip() {
-    const chip = document.querySelector(".rail__profile");
-    if (chip === null) {
+    const chip2 = document.querySelector(".rail__profile");
+    if (chip2 === null) {
       return;
     }
-    chip.style.cursor = "pointer";
-    chip.setAttribute("role", "button");
-    chip.setAttribute("tabindex", "0");
-    chip.addEventListener("click", () => showProfilePanel());
-    chip.addEventListener("keydown", (ev) => {
+    chip2.style.cursor = "pointer";
+    chip2.setAttribute("role", "button");
+    chip2.setAttribute("tabindex", "0");
+    chip2.addEventListener("click", () => showProfilePanel());
+    chip2.addEventListener("keydown", (ev) => {
       if (ev.key === "Enter" || ev.key === " ") {
         ev.preventDefault();
         showProfilePanel();

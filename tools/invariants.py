@@ -2635,6 +2635,7 @@ _CLEAN_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
     "dashboard/assets/js/src/views/knowledge-home.ts",
     "dashboard/assets/js/src/views/knowledge-explore.ts",
+    "dashboard/assets/js/src/views/knowledge-topic.ts",
 )
 
 # The entity-render view file(s). Asserted a PURE PROJECTION of the generated
@@ -2642,6 +2643,7 @@ _CLEAN_VIEW_FILES: tuple = (
 # content branch. EMPTY in H0 (the render is built in H2); H2 appends the file.
 _ENTITY_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
+    "dashboard/assets/js/src/views/knowledge-topic.ts",
 )
 
 # Prototype/demo scaffold markers that must NEVER reach a shipped view or css

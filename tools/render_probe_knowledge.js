@@ -306,6 +306,34 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { total: all.length, visible: all.filter(r => !r.classList.contains('kd-hidden')).length };
   });
 
+  // 4f. Explore tab — the off-path index renders type-grouped chips; a chip opens that
+  //     entity's faceted topic page (hero + colour-coded facets + the shared claim cards).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="explore"]')?.click());
+  await wait(300);
+  const explore = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    return {
+      groups: root.querySelectorAll('.kd-explore-group').length,
+      chips: root.querySelectorAll('.kd-explore-chip').length,
+      hasMercury: !!root.querySelector('[data-kd-topic="mercury"]'),
+    };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-topic="mercury"]')?.click());
+  await wait(300);
+  const topic = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const kt = root.querySelector('.kt-page');
+    const firstCard = kt ? kt.querySelector('.kd-ep-claim') : null;
+    return {
+      shown: kt !== null,
+      title: kt ? (kt.querySelector('.kt-title h1')?.textContent || '') : '',
+      facets: root.querySelectorAll('.kt-page .kd-ep-facet').length,
+      cards: root.querySelectorAll('.kt-page .kd-ep-claim').length,
+      hasLede: kt ? (kt.querySelector('.kt-lede')?.textContent || '').length > 0 : false,
+      hasCite: firstCard ? /IMMORTALITY|RARE EARTHS|DEAD DOCTORS|PLAY DOCTOR|EPIGENETICS|YOUR HEAD/i.test(firstCard.querySelector('.kd-ep-claim__cite')?.textContent || '') : false,
+    };
+  });
+
   // 5. Esc closes.
   await page.keyboard.press('Escape');
   await wait(200);
@@ -316,7 +344,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, tabBar, homeConds, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, tabBar, homeConds, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -363,6 +391,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products search: clear button resets the filter in one click', prodClear.visible === prodClear.total && prodClear.inputEmpty === true],
     ['Esc closes drawer', afterEsc.open === false],
     ['bare K reopens drawer', afterK.open === true],
+    ['explore: type-grouped chips render (Mercury present)', explore.groups >= 4 && explore.chips >= 30 && explore.hasMercury === true],
+    ['explore: a chip opens the faceted topic page (Mercury, 5+ facets, 8+ cards)', topic.shown === true && topic.title === 'Mercury' && topic.facets >= 5 && topic.cards >= 8],
+    ['topic page: hero lede + Wallach-cited claim cards', topic.hasLede === true && topic.hasCite === true],
     ['no page errors', errs.length === 0],
   ];
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
