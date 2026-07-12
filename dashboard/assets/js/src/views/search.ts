@@ -20,6 +20,7 @@
  */
 
 import type { SearchClaim } from '../core/schemas/index.js';
+import { plural } from '../core/format.js';
 import {
   claimCount,
   composeCite,
@@ -299,7 +300,7 @@ function renderShell(): string {
     </div>
     <div class="sr-body"></div>
     <footer class="sr-footer">
-      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? 'Y' : 'IES'} · ${totals.claims} ENTRIES</span>
+      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? 'Y' : 'IES'} · ${totals.claims} ${plural(totals.claims, 'ENTRY', 'ENTRIES')}</span>
       <span class="sr-footer__spacer"></span>
       <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">⤢</span>EXPAND</button>
     </footer>`;

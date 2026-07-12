@@ -24,6 +24,7 @@ import type {
   CorpusPlannedBook,
 } from '../core/schemas/index.js';
 import type { CoverageSnapshot, CoverageStatus, CoverageTile } from '../state/coverage.js';
+import { plural } from '../core/format.js';
 import {
   conditionDisplayName,
   essentialDisplayName,
@@ -405,7 +406,7 @@ function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): st
         <h4 class="kd-condition-row__name">${escHTML(c.display_name)}</h4>
         <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML(ess) : '— corpus entry —'}</div>
       </div>
-      <div class="kd-condition-row__count">${c.claim_count}<small>claims</small></div>
+      <div class="kd-condition-row__count">${c.claim_count}<small>${plural(c.claim_count, 'claim')}</small></div>
     </div>`;
 }
 
@@ -587,7 +588,7 @@ function authorLabel(authors: string[] | undefined): string {
 /** The count cell: real claim total, or a muted 'queued' for un-mined in-housed books. */
 function bookCountHTML(n: number): string {
   if (n > 0) {
-    return `${n}<small>claims</small>`;
+    return `${n}<small>${plural(n, 'claim')}</small>`;
   }
   return '<span class="kd-book-row__count--queued">⋯</span><small>queued</small>';
 }
@@ -638,7 +639,7 @@ export function renderCorpusTab(selectedBook: string | null): string {
       <p class="kd-featured-citation__quote">The body needs 60 minerals, 16 vitamins, 12 amino acids, and 2 essential fatty acids — 90 essentials total. Plant-derived minerals are the only delivery vehicle that the body absorbs as nature intended.</p>
       <div class="kd-featured-citation__attr"><strong>Wallach</strong> · Dead Doctors Don\'t Lie · ch. 1 · paraphrase per primary corpus</div>
     </div>
-    <div class="kd-section-head">PRIMARY CORPUS · WALLACH · ${books.length} BOOKS · ${totalClaims} CLAIMS</div>
+    <div class="kd-section-head">PRIMARY CORPUS · WALLACH · ${books.length} ${plural(books.length, 'BOOK', 'BOOKS')} · ${totalClaims} ${plural(totalClaims, 'CLAIM', 'CLAIMS')}</div>
     ${booksHTML}
     ${plannedHTML}`;
 }

@@ -27,6 +27,7 @@
  */
 
 import fattyAcidClarityData from '../../../data/fatty-acid-clarity-data.json';
+import { plural } from '../core/format.js';
 import {
   type CorpusClaim,
   type EssentialPage,
@@ -447,9 +448,9 @@ function renderRecord(page: EssentialPage): string {
   const total = page.claim_count;
   return seclabel('The full record', 'every claim · advanced')
     + `<details class="kd-ep-record" open>
-        <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} claims</span><span class="kd-ep-facet__count">${total}</span></summary>
+        <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, 'claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
-          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">⌕</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} claims by keyword…"></div>
+          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">⌕</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} ${plural(total, 'claim')} by keyword…"></div>
           <div class="kd-ep-record-note">${escHTML(ui('ep_record_note'))}</div>
           ${kindsHTML}
         </div>
@@ -570,7 +571,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     </div>`;
   }
 
-  const metaBits = [escHTML(page.category ?? ''), `${page.claim_count} claims`, `${page.books.length} books`]
+  const metaBits = [escHTML(page.category ?? ''), `${page.claim_count} ${plural(page.claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`]
     .filter(s => s.length > 0).join(' · ');
   const synonyms = page.synonyms.length > 0 ? ` · also: ${escHTML(page.synonyms.join(', '))}` : '';
   // Friendly name is the H1 (page.name = common_name); the scientific name shows as a

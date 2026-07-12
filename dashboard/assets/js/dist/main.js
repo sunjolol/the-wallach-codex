@@ -17745,6 +17745,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return data().ui[id] ?? "";
   }
 
+  // assets/js/src/core/format.ts
+  function plural(n, one, many = `${one}s`) {
+    return n === 1 ? one : many;
+  }
+
   // assets/data/glossary.json
   var glossary_default = {
     _doc: "Plain-language term glossary for the Knowledge drawer tooltip layer (SESSION 39). Each entry gives a SHORT, plain-language definition of a medical/technical term so no reader is left not understanding a word (memory: term-gloss-standard). These are GENERAL descriptive reference definitions (standard medical terminology), NOT Wallach health claims or numeric targets -- they carry no \xA700.A source obligation and must never assert a dose, target, or verdict. 'term' is matched case-insensitively on word boundaries; 'aliases' catch morphological variants. Seeded set; grows under the jargon_terms_glossed invariant guard.",
@@ -19167,7 +19172,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         <h4 class="kd-condition-row__name">${escHTML4(c.display_name)}</h4>
         <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML4(ess) : "\u2014 corpus entry \u2014"}</div>
       </div>
-      <div class="kd-condition-row__count">${c.claim_count}<small>claims</small></div>
+      <div class="kd-condition-row__count">${c.claim_count}<small>${plural(c.claim_count, "claim")}</small></div>
     </div>`;
   }
   function familiarEssentialName(slug) {
@@ -90801,9 +90806,9 @@ deaths, blood clots, sterility`,
     }).join("");
     const total = page.claim_count;
     return seclabel("The full record", "every claim \xB7 advanced") + `<details class="kd-ep-record" open>
-        <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} claims</span><span class="kd-ep-facet__count">${total}</span></summary>
+        <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, "claim")}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
-          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} claims by keyword\u2026"></div>
+          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} ${plural(total, "claim")} by keyword\u2026"></div>
           <div class="kd-ep-record-note">${escHTML6(ui("ep_record_note"))}</div>
           ${kindsHTML}
         </div>
@@ -90894,7 +90899,7 @@ deaths, blood clots, sterility`,
       <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
     </div>`;
     }
-    const metaBits = [escHTML6(page.category ?? ""), `${page.claim_count} claims`, `${page.books.length} books`].filter((s) => s.length > 0).join(" \xB7 ");
+    const metaBits = [escHTML6(page.category ?? ""), `${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
     const synonyms = page.synonyms.length > 0 ? ` \xB7 also: ${escHTML6(page.synonyms.join(", "))}` : "";
     const sciSub = page.scientific_name !== page.name ? `<div class="kd-ep-hero__sci">${escHTML6(page.scientific_name)}</div>` : "";
     const nonEss = page.is_essential ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
@@ -92537,7 +92542,11 @@ NEXT SESSION (propagation): corpus_embed.py + entity_page_derive.py (+ coverage_
 
 Derives: entity_page_derive.py (essential name\u2192common_name, +scientific_name), corpus_embed.py (+common_name on the essentials node), search_index_derive.py (+common_name on canon_ref entities) \u2192 build_embeds regenerated corpus-embed/entity-page-data/search-index (10 artifacts run; 3 changed). Schemas: entity-page (+scientific_name required), corpus (+common_name required), search (+common_name optional \u2014 heterogeneous entity types). State: essentialDisplayName\u2192common_name (else display_name else humanize); EssentialSummary + listEssentialPages now carry scientific_name; search displayName prefers common_name. Views: hint chip + entity-page fallback H1 \u2192 common_name; the entity-page H1 is friendly automatically via the repointed page.name; live-suggest now ALSO matches scientific_name so typing "retinol" still finds Vitamin A (prevents a search regression from the name repoint); new .kd-ep-hero__sci muted-italic subtitle rendered ONLY when scientific\u2260friendly (so Calcium/omegas show nothing extra) \u2014 styled in drawer-knowledge.css with design tokens. renderOmegaClarity still keyed on page.name, safe because omegas keep common_name==display_name.
 
-Verified: tsc/build 0, invariants 61/61, render_probe_knowledge PASS, render_probe (coverage) PASS, 0 page errors, headless screenshots confirmed the friendly H1 "Vitamin A" + italic "Retinol" subtitle + friendly live-suggest (Vitamin A/B1/B12/...). Luneth signed off both open design calls: the subtitle stays label-less; the compact Essentials/Coverage periodic tiles stay scientific (out of the stated scope this pass \u2014 only the 10 vitamins would differ, and the vitamin tile already carries a letter glyph). Deferred: app-wide claim/entry pluralization (next chunk); coverage_layout_derive + targets_derive left untouched; legacy Search-drawer view direct name reads wired forward-correct (displayName central switch) but the view sites not churned since zero search entity diverges today.` }];
+Verified: tsc/build 0, invariants 61/61, render_probe_knowledge PASS, render_probe (coverage) PASS, 0 page errors, headless screenshots confirmed the friendly H1 "Vitamin A" + italic "Retinol" subtitle + friendly live-suggest (Vitamin A/B1/B12/...). Luneth signed off both open design calls: the subtitle stays label-less; the compact Essentials/Coverage periodic tiles stay scientific (out of the stated scope this pass \u2014 only the 10 vitamins would differ, and the vitamin tile already carries a letter glyph). Deferred: app-wide claim/entry pluralization (next chunk); coverage_layout_derive + targets_derive left untouched; legacy Search-drawer view direct name reads wired forward-correct (displayName central switch) but the view sites not churned since zero search entity diverges today.` }, { id: "lg_mrhusalz_qx9c8k", ts: "2026-07-12T08:52:46.775820-05:00", surface: "knowledge", kind: "round-close", summary: "App-wide '1 claim/claims' pluralization: new core/format.ts::plural() single-sources the rule; count cells read '1 claim \xB7 1 book' not '1 claims'. Board 61/61, probes + a dedicated singular probe PASS. Completes the friendly display-name task.", detail: `Counts across the app now read grammatically. Before, a nutrient with a single claim in a single book showed "1 claims \xB7 1 books"; now it shows "1 claim \xB7 1 book". A single tiny helper does the singular/plural rule so no screen has to spell it out (and get it wrong) again.
+
+NEW core/format.ts \u2014 plural(n, one, many = one+'s'): returns the count-appropriate noun form; irregular plurals pass their form explicitly (e.g. plural(n, 'ENTRY', 'ENTRIES')). Pure, dependency-free, in the core layer so any view can import it. Applied at every hardcoded-plural site: views/entity-page.ts (hero meta "N claims" + "N books"; record summary "All N claims"; filter placeholder "Filter these N claims"), views/knowledge-corpus.ts (condition-row count cell, book-row count cell \u2014 both noun-only inside <small> \u2014 and the corpus section head "N BOOKS \xB7 N CLAIMS"), views/search.ts (footer "N ENTRIES", which was inconsistent with its already-guarded ENTITY/ENTRIES siblings). The new import sits after the parent-TYPE imports so perfectionist/sort-imports stays clean for it.
+
+Verified: tsc/build 0, invariants 61/61, render_probe_knowledge + render_probe_search PASS, 0 page errors, and a dedicated singular probe PASS \u2014 Cerium (1 claim, 1 book) renders "mineral \xB7 1 claim \xB7 1 book", "All 1 claim", "Filter these 1 claim by keyword\u2026"; Oxygen (10 claims, 1 book) renders "10 claims \xB7 1 book" (mixed handled); the abscess condition row (1 claim) renders "1 claim". Left as-is: "Show all N sources" (only ever renders at \u22656, never singular). Not touched: pre-existing perfectionist/jsdoc lint on the legacy search.ts / knowledge-corpus.ts views (deferred debt, not introduced here). This completes the friendly display-name propagation task (foundation + propagation + pluralization).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -94001,7 +94010,7 @@ Verified: tsc/build 0, invariants 61/61, render_probe_knowledge PASS, render_pro
     </div>
     <div class="sr-body"></div>
     <footer class="sr-footer">
-      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? "Y" : "IES"} \xB7 ${totals.claims} ENTRIES</span>
+      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? "Y" : "IES"} \xB7 ${totals.claims} ${plural(totals.claims, "ENTRY", "ENTRIES")}</span>
       <span class="sr-footer__spacer"></span>
       <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">\u2922</span>EXPAND</button>
     </footer>`;
