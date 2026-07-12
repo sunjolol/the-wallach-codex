@@ -41,16 +41,16 @@
  *   manual items, minus removed, with override scaling) → resolve each label
  *   nutrient to a canon slug + sum into the target's per-essential mg/IU totals
  *   (unit-convert + scale) → classify each essential against its Wallach target.
- *   The PDM aggregate-vehicle rule (trace_pdm): a trace_pdm mineral is `trace`
- *   (covered by presence) iff a plant-derived-mineral vehicle is in the stack —
- *   binary, not graduated.
+ *   The 33 trace_pdm rare-earths have no per-mineral dose; they share ONE graduated
+ *   verdict from the plant-derived-mineral aggregate (Σ vehicle mg / the ~924 mg
+ *   goal — pdm-coverage-data.json), computed once per recompute (pdmAggregate).
  *
  *   Faithful to legacy thresholds (numeric: ok ≥ 0.95·low, warn ≥ 0.30·low,
  *   else gap) with ONE deliberate deviation: a numeric target with low ≤ 0 and
  *   zero delivery reports '' (pending) rather than legacy's 'ok' — legacy would
  *   mark it covered with nothing delivered, an §00.A overclaim.
  *
- *   Status buckets map legacy → view: ok→covered (numeric) / trace (trace_pdm),
+ *   Status buckets map legacy → view: ok→covered (numeric),
  *   warn→partial, gap→gap, diet→covered, mute→'' (pending, rendered grey).
  *   Empty regimen ⇒ numeric targets are `gap`, the rest pending — the truthful
  *   bare state. recompute() re-runs on every `regimen:changed`.
@@ -59,6 +59,7 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import essentialsTargetsData from '../../../data/essentials-targets-data.json';
+import pdmCoverageData from '../../../data/pdm-coverage-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { emit, on } from '../core/events.js';
 import { resolveSlug } from '../core/nutrient-resolver.js';
@@ -69,6 +70,7 @@ import {
   type Essential,
   EssentialsDataSchema,
   type LayoutTile,
+  PdmCoverageSchema,
   RegimenNutrientSchema,
 } from '../core/schemas/index.js';
 import { onChange } from '../core/storage.js';
@@ -90,8 +92,13 @@ export type TileCategory =
   | 'fatty-acids'
   | 'other';
 
-/** Live status bucket for one essential. '' = pending / no target (rendered grey). */
-export type CoverageStatus = 'covered' | 'partial' | 'trace' | 'gap' | '';
+/**
+ * Live status bucket for one essential. '' = pending / no target (rendered grey).
+ * 'present' = a trace/rare vehicle is in the stack but its mg is not derivable
+ * (present-but-unquantified — the hollow dot). 'trace' is retained for back-compat
+ * (readers treat it as covered) but is no longer produced.
+ */
+export type CoverageStatus = 'covered' | 'partial' | 'trace' | 'gap' | 'present' | '';
 
 export interface CoverageTile {
   tileId: TileId;
@@ -110,9 +117,10 @@ export interface CoverageTile {
   aggregateVehicle: boolean;
   /**
    * Numeric intake-vs-Wallach-target readout for the deep-dive meter, in the
-   * target's own display unit. `null` when the target is non-numeric (trace /
-   * dietary / collective) -- there Wallach states no number, so the covered/
-   * not-covered pill is the only honest readout and the view falls back to it.
+   * target's own display unit. `null` when the target is non-numeric with no
+   * aggregate (dietary / unspecified). EXCEPTION: trace_pdm tiles carry the shared
+   * plant-derived-mineral aggregate (Σ vehicle mg vs the ~924 mg goal) here
+   * whenever any PDM source is in the stack.
    */
   intakeVsTarget: {
     deliveredAmount: number;
@@ -361,6 +369,86 @@ function readScale(item: RegimenItem, overrides: OverridesMap): number {
   return 1;
 }
 
+// ─── Trace/rare-mineral aggregate (PDM coverage) ───────────────────────────
+// The 33 trace_pdm rare-earths have no individual Wallach dose; they are covered
+// as ONE group by plant-derived-mineral intake — Σ(vehicle mg) / goal. Goal +
+// per-product vehicle mg are GENERATED (pdm_coverage_derive.py) from the sealed
+// pillar (composition) + the curated judgment + Wallach's sealed dose claim.
+const PDM = PdmCoverageSchema.parse(pdmCoverageData);
+const PDM_GOAL = PDM.goal.maintenance_mg;
+
+let cachedPdmByName: Map<string, { mg: number; present: boolean }> | null = null;
+function pdmByName(): Map<string, { mg: number; present: boolean }> {
+  if (cachedPdmByName === null) {
+    const m = new Map<string, { mg: number; present: boolean }>();
+    for (const rec of Object.values(PDM.products)) {
+      const nm = rec.canonical_name.toLowerCase();
+      if (nm !== '') {
+        m.set(nm, { mg: rec.pdm_mg, present: rec.present });
+      }
+    }
+    cachedPdmByName = m;
+  }
+  return cachedPdmByName;
+}
+
+interface PdmDelivery {
+  totalMg: number;
+  present: boolean;
+  sources: string[];
+}
+
+/**
+ * Aggregate plant-derived-mineral delivery across the effective regimen: sum each
+ * item's vehicle mg (serving-scaled), OR-ing the present-but-unquantified flag.
+ * Matched by canonical name (the same join the auto-heal uses). This ONE aggregate
+ * scores all 33 trace_pdm tiles (they have no per-mineral delivery of their own).
+ */
+function pdmAggregate(items: RegimenItem[], overrides: OverridesMap): PdmDelivery {
+  const map = pdmByName();
+  let totalMg = 0;
+  let present = false;
+  const sources: string[] = [];
+  for (const item of items) {
+    const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';
+    const rec = map.get(name);
+    if (rec === undefined) {
+      continue;
+    }
+    const display = typeof item.label.name === 'string' && item.label.name !== '' ? item.label.name : 'Unknown';
+    if (rec.mg > 0) {
+      totalMg += rec.mg * readScale(item, overrides);
+      if (!sources.includes(display)) {
+        sources.push(display);
+      }
+    }
+    else if (rec.present) {
+      present = true;
+      if (!sources.includes(display)) {
+        sources.push(display);
+      }
+    }
+  }
+  return { totalMg, present, sources };
+}
+
+/** The shared trace_pdm verdict from the aggregate (mirrors numericStatus thresholds). */
+function pdmStatusOf(p: PdmDelivery): CoverageStatus {
+  if (PDM_GOAL <= 0) {
+    return '';
+  }
+  if (p.totalMg >= PDM_GOAL * 0.95) {
+    return 'covered';
+  }
+  if (p.totalMg >= PDM_GOAL * 0.30) {
+    return 'partial';
+  }
+  if (p.totalMg > 0) {
+    return 'gap';
+  }
+  return p.present ? 'present' : '';
+}
+
 /**
  * Sum every regimen item's label nutrients into per-essential mg/IU totals.
  * Each label nutrient resolves to a canon slug via the registry resolver, then
@@ -421,9 +509,6 @@ function accumulate(
 
 // ─── Classification (legacy classifyLive port) ─────────────────────────────
 
-const PDM_TRACE = /\bbtt\b|tangerine|plant.derived|humic|colloidal|utt/;
-const PDM_COLLECTIVE = /\bbtt\b|tangerine|utt|amino/;
-
 function numericStatus(target: CoverageTarget, d: Delivery): CoverageStatus {
   const isIU = (target.unit ?? '').toLowerCase() === 'iu';
   const current = isIU ? d.totalIU : d.totalMg;
@@ -443,7 +528,7 @@ function numericStatus(target: CoverageTarget, d: Delivery): CoverageStatus {
   return 'gap';
 }
 
-function classify(target: CoverageTarget | null, d: Delivery): CoverageStatus {
+function classify(target: CoverageTarget | null, d: Delivery, pdmStatus: CoverageStatus): CoverageStatus {
   const hasSrc = d.sources.length > 0;
   const kind = target?.kind;
   if (target === null || kind === undefined || kind === 'unspecified') {
@@ -453,9 +538,11 @@ function classify(target: CoverageTarget | null, d: Delivery): CoverageStatus {
     return hasSrc ? 'covered' : '';
   }
   if (kind === 'trace_pdm' || kind === 'wallach_collective') {
-    const stack = d.sources.join(' | ').toLowerCase();
-    const re = kind === 'trace_pdm' ? PDM_TRACE : PDM_COLLECTIVE;
-    return re.test(stack) ? 'trace' : '';
+    // The 33 trace_pdm rare-earths share ONE verdict from the plant-derived-mineral
+    // aggregate (Σ vehicle mg / goal), computed once per recompute — not per mineral
+    // (no product label itemizes a rare earth). silver/tin/cobalt carry their own
+    // Wallach dose → kind 'wallach' → the numeric path below, never here.
+    return pdmStatus;
   }
   if (kind === 'dietary_with_clinical_lever') {
     if (target.low !== undefined && target.low > 0) {
@@ -490,15 +577,32 @@ export function recompute(): CoverageSnapshot {
   const targets = readTargets();
   const bySlug = buildBySlug(targets);
   const overrides = loadRgOverrides();
-  const delivery = accumulate(loadEffectiveRegimen(), overrides, targets, bySlug);
+  const items = loadEffectiveRegimen();
+  const delivery = accumulate(items, overrides, targets, bySlug);
+  const pdm = pdmAggregate(items, overrides);
+  const pdmStatus = pdmStatusOf(pdm);
 
   const tiles: CoverageTile[] = targets.map((entry) => {
     const target = CoverageTargetSchema.safeParse(entry.target);
     const t = target.success ? target.data : null;
     const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
-    const status = classify(t, d);
+    const status = classify(t, d, pdmStatus);
+    const isPdm = t?.kind === 'trace_pdm' || t?.kind === 'wallach_collective';
     let intakeVsTarget: CoverageTile['intakeVsTarget'] = null;
-    if (t !== null && typeof t.low === 'number' && t.low > 0) {
+    if (isPdm) {
+      // The rare-earth group reads Σ vehicle mg against the ONE shared goal (the meter
+      // the inner page shows) — no per-mineral number exists. Null when nothing
+      // plant-derived is in the stack, so the view stays quiet on a bare regimen.
+      if (pdm.totalMg > 0) {
+        intakeVsTarget = {
+          deliveredAmount: Math.round(pdm.totalMg * 10) / 10,
+          targetLow: PDM_GOAL,
+          targetHigh: PDM_GOAL,
+          unit: 'mg',
+        };
+      }
+    }
+    else if (t !== null && typeof t.low === 'number' && t.low > 0) {
       intakeVsTarget = {
         deliveredAmount: deliveredInUnit(d, t.unit),
         targetLow: t.low,
@@ -513,9 +617,9 @@ export function recompute(): CoverageSnapshot {
       name: entry.name,
       status,
       covered: status === 'covered' || status === 'trace',
-      fillPercent: deliveryRatio(t, status, d),
-      coveredBy: d.sources,
-      aggregateVehicle: status === 'trace',
+      fillPercent: isPdm ? (PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0) : deliveryRatio(t, status, d),
+      coveredBy: isPdm ? pdm.sources : d.sources,
+      aggregateVehicle: isPdm && status === 'covered',
       intakeVsTarget,
     };
   });

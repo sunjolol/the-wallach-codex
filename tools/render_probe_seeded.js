@@ -3,22 +3,21 @@
 // Usage: node tools/render_probe_seeded.js
 //
 // Companion to tools/render_probe.js (which checks the EMPTY-regimen render).
-// This one seeds localStorage `lcRegimen_v1` with a known one-item regimen
-// BEFORE the dashboard boots, then asserts the live coverage classifier
-// (state/coverage.ts — the native port of legacy classifyLive/computeLiveCoverage)
-// lights up every status bucket correctly against the WALLACH-ONLY targets
-// (Phase C2 poison purge — numeric targets are Wallach dose claims, not Youngevity):
+// This one seeds localStorage `lcRegimen_v1` with a known regimen BEFORE the
+// dashboard boots, then asserts the live coverage classifier (state/coverage.ts)
+// lights up every status bucket correctly against the WALLACH-ONLY targets:
 //
 //   Vitamin C  2000 mg  -> covered  (numeric, >= 0.95 * Wallach low 1000 mg)
-//   Zinc         10 mg  -> gap      (numeric, ~22% of the Wallach UPPER 46 mg — Epigenetics
-//                                    2014, scaled to 154 lb; below the partial threshold)
-//   Boron         3 mg  -> partial  (numeric, ~33% of the Wallach UPPER 9.2 mg — Epigenetics
-//                                    2014 filled this former gap; scaled to 154 lb)
-//   Aluminum   0.05 mg  -> trace    (trace_pdm + a PDM vehicle in the source name)
+//   Zinc         10 mg  -> gap      (numeric, ~22% of the Wallach UPPER 46 mg, 154 lb)
+//   Boron         3 mg  -> partial  (numeric, ~33% of the Wallach UPPER 9.2 mg, 154 lb)
+//   Aluminum / Yttrium  -> covered  (trace_pdm: the 33 rare-earths share ONE verdict
+//                                     from the plant-derived-mineral aggregate —
+//                                     Σ vehicle mg / the 924 mg goal; here 1200 mg
+//                                     (Plant Derived Minerals 600 mg x2) >= 0.95*924)
 //
-// The seed item is named "Beyond Tangy Tangerine 2.5" so it matches the PDM
-// aggregate-vehicle regex (DOCT-02). Exits non-zero on any mismatch so it can
-// gate the build->test loop. Requires puppeteer (in node_modules).
+// The trace/rare aggregate (pdm-coverage-data.json) matches a regimen item to its
+// vehicle mg by EXACT canonical name, so the second seed item uses the pillar name
+// "Plant Derived Minerals(TM)". Exits non-zero on any mismatch. Requires puppeteer.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -29,17 +28,33 @@ for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modul
 }
 if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); process.exit(2); }
 
-const SEED = { items: [{
-  id: 9001,
-  label: { name: 'Beyond Tangy Tangerine 2.5', nutrients: [
-    { name: 'Vitamin C', amount: 2000, unit: 'mg' },
-    { name: 'Zinc', amount: 10, unit: 'mg' },
-    { name: 'Boron', amount: 3, unit: 'mg' },
-    { name: 'Aluminum', amount: 0.05, unit: 'mg' },
-  ] },
-  addedDate: '2026-06-21',
-  provenance: 'user_manual',
-}] };
+const SEED = { items: [
+  {
+    id: 9001,
+    label: { name: 'Beyond Tangy Tangerine 2.5', nutrients: [
+      { name: 'Vitamin C', amount: 2000, unit: 'mg' },
+      { name: 'Zinc', amount: 10, unit: 'mg' },
+      { name: 'Boron', amount: 3, unit: 'mg' },
+    ] },
+    addedDate: '2026-06-21',
+    provenance: 'user_manual',
+  },
+  {
+    // EXACT pillar canonical names so the trace/rare aggregate fires. Two 600 mg PDM
+    // sources => 1200 mg >= 0.95 * 924 => the whole 33-mineral group goes covered.
+    // (One 600 mg serving alone is ~65% = partial — the honest per-serving behavior.)
+    id: 9002,
+    label: { name: 'Plant Derived Minerals™', nutrients: [] },
+    addedDate: '2026-06-21',
+    provenance: 'user_manual',
+  },
+  {
+    id: 9003,
+    label: { name: 'Majestic Earth® Mineral STX™', nutrients: [] },
+    addedDate: '2026-06-21',
+    provenance: 'user_manual',
+  },
+] };
 
 (async () => {
   const browser = await pup.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
@@ -48,7 +63,7 @@ const SEED = { items: [{
   page.on('pageerror', e => pageErrors.push(e.message));
 
   // Hide the HBSP base foundation (negative ids) so this exercises the live
-  // classifier in isolation on the seeded item alone.
+  // classifier in isolation on the seeded items alone.
   await page.evaluateOnNewDocument((seed) => {
     try {
       localStorage.setItem('lcRegimen_v1', JSON.stringify(seed));
@@ -67,7 +82,7 @@ const SEED = { items: [{
     const statusOf = (nm) => {
       const t = all.find(x => (x.querySelector('.tile__name') || {}).textContent === nm);
       if (!t) return '(no tile)';
-      return ['covered', 'partial', 'trace', 'gap'].find(s => t.classList.contains(s)) || '';
+      return ['covered', 'partial', 'trace', 'gap', 'present'].find(s => t.classList.contains(s)) || '';
     };
     return {
       seedErr: window.__seedErr || null,
@@ -75,7 +90,7 @@ const SEED = { items: [{
       coveredStat: (document.querySelector('.coverage-stat__num') || {}).textContent,
       covered: cls('covered'), partial: cls('partial'), trace: cls('trace'), gap: cls('gap'),
       VitaminC: statusOf('ASCORBIC ACID'), Zinc: statusOf('ZINC'),
-      Boron: statusOf('BORON'), Aluminum: statusOf('ALUMINUM'),
+      Boron: statusOf('BORON'), Aluminum: statusOf('ALUMINUM'), Yttrium: statusOf('YTTRIUM'),
     };
   });
 
@@ -87,13 +102,14 @@ const SEED = { items: [{
     ['no seed error', info.seedErr === null],
     ['Vitamin C covered (>= 0.95 * Wallach 1000mg)', info.VitaminC === 'covered'],
     ['Zinc gap (~22% of Wallach upper 46mg — Epigenetics)', info.Zinc === 'gap'],
-    ['Boron partial (~33% of Wallach upper 9.2mg — Epigenetics filled the gap)', info.Boron === 'partial'],
-    ['Aluminum trace', info.Aluminum === 'trace'],
-    ['coveredStat >= 2', Number(info.coveredStat) >= 2],
+    ['Boron partial (~33% of Wallach upper 9.2mg — Epigenetics)', info.Boron === 'partial'],
+    ['Aluminum covered via the PDM aggregate (1200mg >= 0.95*924)', info.Aluminum === 'covered'],
+    ['Yttrium covered via the SAME shared group verdict', info.Yttrium === 'covered'],
+    ['coveredStat >= 30 (the 33-mineral rare-earth group flipped covered)', Number(info.coveredStat) >= 30],
     ['no page errors', pageErrors.length === 0],
   ];
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · classifier lights covered + partial + gap + trace correctly');
+  console.log('PASS · classifier lights covered + partial + gap + the trace/rare group aggregate');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

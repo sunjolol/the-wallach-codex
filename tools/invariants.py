@@ -1456,6 +1456,105 @@ def check_amounts_wallach_only():
     return _amounts_wallach_only_impl(embed, canon_p, claims_dir)
 
 
+def check_pdm_goal_wallach_sourced():
+    """Charter R2 / §00.A — the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach
+    dose expressed in mg via product composition. Two layers (§00.B #2/#11), recomputed here
+    INDEPENDENTLY of pdm_coverage_derive so a derive bug cannot slip both:
+
+      TRACE (the anchor) — goal.source_claim_id resolves to a sealed corpus claim carrying a
+        `dose` with an amount + per_body_weight (a real Wallach dose, not a hand-set number).
+      CHAIN (the recompute) — re-run the documented transform from source: dose_amount x
+        (reference-product vehicle mg / serving fl oz, read from the SEALED pillar) x (154 / per_bw),
+        byte-compare to goal.maintenance_mg; therapeutic = maintenance x the config multiplier.
+
+    A fabricated goal, one sourced from a non-dose claim, or an arithmetic drift all go RED. The
+    reference product's mg is COMPOSITION (§00.A lets composition feed the math); only the
+    per-body-weight DOSE is a Wallach amount, and it must trace to the sealed claim."""
+    import json as _json
+    import re as _re
+    art = ROOT / "dashboard/assets/data/pdm-coverage-data.json"
+    cfg = ROOT / "dashboard/assets/data/trace-mineral-vehicles.json"
+    pillar = ROOT / "eden/products/products.json"
+    claims_dir = ROOT / "eden/corpus/claims"
+    if not (art.exists() and cfg.exists() and pillar.exists() and claims_dir.exists()):
+        return True, "pdm-coverage / config / pillar / corpus not installed (bootstrap-guard)"
+
+    data = _json.loads(art.read_text(encoding="utf-8"))
+    config = _json.loads(cfg.read_text(encoding="utf-8"))
+    goal = data.get("goal", {})
+    gm = config.get("goal_model", {})
+    cid = goal.get("source_claim_id")
+    if not cid:
+        return False, "goal.source_claim_id missing (the goal must cite a Wallach dose claim)"
+
+    def _num(v):
+        if isinstance(v, bool):
+            return None
+        if isinstance(v, (int, float)):
+            return float(v)
+        if isinstance(v, str):
+            m = _re.match(r"\s*([\d.]+)", v)
+            return float(m.group(1)) if m else None
+        return None
+
+    claim = None
+    for shard in claims_dir.glob("claims-*.json"):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if c.get("id") == cid:
+                claim = c
+                break
+        if claim is not None:
+            break
+    if claim is None:
+        return False, f"goal.source_claim_id {cid} not found in the sealed corpus"
+    dose = claim.get("dose") or {}
+    dose_amt = _num(dose.get("amount"))
+    per_bw = _num((dose.get("per_body_weight") or "").replace("lb", ""))
+    if dose_amt is None or not per_bw:
+        return False, f"{cid} carries no usable Wallach dose (amount/per_body_weight) — cannot anchor the goal"
+
+    ref_id = gm.get("reference_composition_product_id")
+    prods = _json.loads(pillar.read_text(encoding="utf-8")).get("products", {})
+    ref = prods.get(ref_id)
+    if ref is None:
+        return False, f"reference product {ref_id!r} not in the pillar"
+    serv = " ".join(str(c.get("serving_size") or "") for c in ref.get("components", []))
+    mo = _re.search(r"([\d.]+)\s*fl\s*oz", serv, _re.IGNORECASE)
+    if not mo:
+        return False, f"{ref_id} serving_size {serv!r} states no fl oz — cannot anchor mg/oz"
+    serv_oz = float(mo.group(1))
+    patterns = [p.lower() for p in config.get("vehicle_name_patterns", [])]
+
+    def _to_mg(a, u):
+        u = (u or "mg").lower()
+        return a / 1000.0 if u.startswith("mcg") else (a * 1000.0 if u == "g" else a)
+
+    ref_mg = 0.0
+    for comp in ref.get("components", []):
+        for nut in comp.get("nutrients", []):
+            a = _num(nut.get("amount"))
+            if a is not None and any(p in (nut.get("name") or "").lower() for p in patterns):
+                ref_mg += _to_mg(a, nut.get("unit"))
+        for bl in comp.get("blends", []):
+            tot = bl.get("total") or {}
+            a = _num(tot.get("amount"))
+            if a is not None and any(p in (bl.get("name") or "").lower() for p in patterns):
+                ref_mg += _to_mg(a, tot.get("unit"))
+    if ref_mg <= 0 or serv_oz <= 0:
+        return False, f"reference {ref_id}: mg={ref_mg} serv_oz={serv_oz} — cannot form the goal"
+
+    mult = float(gm.get("therapeutic_multiplier", 2))
+    exp_maint = round(dose_amt * (ref_mg / serv_oz) * 154 / per_bw, 2)
+    exp_ther = round(exp_maint * mult, 2)
+    if goal.get("maintenance_mg") != exp_maint:
+        return False, (f"goal.maintenance_mg {goal.get('maintenance_mg')} != recompute {exp_maint} "
+                       f"(dose {dose_amt} x {ref_mg:.0f}/{serv_oz} mg/oz x 154/{per_bw:.0f})")
+    if goal.get("therapeutic_mg") != exp_ther:
+        return False, f"goal.therapeutic_mg {goal.get('therapeutic_mg')} != maintenance x {mult} = {exp_ther}"
+    return True, (f"trace/rare goal {exp_maint}mg maint / {exp_ther}mg therapeutic traces to Wallach dose "
+                  f"{cid} ({dose_amt:.0f} {dose.get('unit')}/{per_bw:.0f}lb) x {ref_mg:.0f}mg/oz composition x 154lb")
+
+
 def check_nutrient_resolver_parity():
     """A2 / §00.B #3 -- the runtime IDENTITY resolver == the Python source of truth.
     The Coverage matcher (core/nutrient-resolver.ts) resolves label names to canon slugs
@@ -3382,6 +3481,14 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase C / Charter R2 (2026-07-05) -- the poison purge: targets used to sum Youngevity Healthy Body Start Pak labels, letting Youngevity define recommended amounts; now every number is a Wallach dose claim carrying its source_claim_id. memory: wallach-drives-recommendations-youngevity-composition",
+    ),
+    Invariant(
+        name="pdm_goal_wallach_sourced",
+        description="the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach dose expressed in mg via composition (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim, and maintenance/therapeutic recompute from that dose x the reference product's pillar composition x 154 lb — a fabricated or non-Wallach-sourced goal is RED",
+        check_fn=check_pdm_goal_wallach_sourced,
+        truth_anchor="pdm-coverage-data.json goal x the sealed dose claim (eden/corpus/claims/*) x the reference product composition (eden/products/products.json), recomputed each run independently of pdm_coverage_derive",
+        severity="critical",
+        lesson_ref="Trace/rare coverage build (2026-07-12) — the 33 rare-earths are scored against Wallach's colloidal-mineral dose (1 fl oz/100 lb, WAL-CLM-EPIGEN-000089) expressed in mg via composition; this gate proves that goal is a Wallach dose, not a Youngevity target (source-rule review 2026-07-12). memory: trace-rare-mineral-coverage-investigation",
     ),
     Invariant(
         name="nutrient_resolver_parity",

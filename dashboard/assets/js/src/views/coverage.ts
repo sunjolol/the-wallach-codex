@@ -19,7 +19,7 @@
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
 import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
-import { type CoverageSnapshot, essentialCount, getOrCompute } from '../state/coverage.js';
+import { type CoverageSnapshot, type CoverageStatus, essentialCount, getOrCompute } from '../state/coverage.js';
 import { loadEffectiveRegimen, loadRgUserGoals } from '../state/regimen.js';
 
 export interface MountHandle {
@@ -30,8 +30,6 @@ export interface MountHandle {
 // ─── Tile layout — the v3.2 periodic-table-of-essentials structure ────────
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
-
-type CoverageStatus = 'covered' | 'partial' | 'trace' | 'gap' | '';
 
 // ─── Render helpers ───────────────────────────────────────────────────────
 

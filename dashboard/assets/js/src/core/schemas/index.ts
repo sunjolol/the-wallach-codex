@@ -29,3 +29,4 @@ export * from './view-copy.js';
 export * from './entity-page.js';
 export * from './entity-copy.js';
 export * from './home-curation.js';
+export * from './pdm-coverage.js';
