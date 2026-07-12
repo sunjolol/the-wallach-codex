@@ -63,10 +63,18 @@
     "kd_tab_products": "Products",
     "kd_mark": "KNOWLEDGE",
     "kh_hero_headline": "Everything Wallach taught, in one place.",
-    "kh_hero_sub": "Search {claims} sourced claims from {books} of Dr. Joel Wallach’s books — or browse the essentials, {conditions} conditions, and the topics in between.",
+    "kh_hero_sub": "Search {claims} sourced claims from {books} of Dr. Joel Wallach’s books — or{br}browse the essentials, {conditions} conditions, and the topics in between.",
     "kh_hero_placeholder": "Try “selenium”, “osteoporosis”, or “colloidal minerals”…",
     "kh_search_empty": "No match — try a broader word.",
     "kh_group_essentials": "Essentials",
-    "kh_group_conditions": "Conditions"
+    "kh_group_conditions": "Conditions",
+    "kh_essentials_label": "The essentials",
+    "kh_essentials_hint": "the body's required inputs",
+    "kh_essentials_link": "open the full table →",
+    "kh_legend_label": "colour key",
+    "kh_legend_mineral": "Minerals",
+    "kh_legend_vitamin": "Vitamins",
+    "kh_legend_amino_acid": "Amino acids",
+    "kh_legend_fatty_acid": "Fatty acids"
   }
 }

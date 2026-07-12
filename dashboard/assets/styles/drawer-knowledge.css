@@ -1543,3 +1543,26 @@
 #drawer-knowledge-mount .sh-hero__hints{ margin-top:var(--ds-space-3); display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
 #drawer-knowledge-mount .sh-hint{ font-family:var(--ds-font-mono); font-size:9px; color:var(--ds-ink-soft); border:1px dashed var(--ds-rule); border-radius:var(--ds-radius-pill); padding:.25rem .6rem; cursor:pointer; background:none; }
 #drawer-knowledge-mount .sh-hint:hover{ border-color:var(--ds-accent); color:var(--ds-accent-deep); }
+
+/* Home "The essentials" shelf (Chunk 3): section label + tile grid + colour legend */
+#drawer-knowledge-mount .ep-seclabel{ display:flex; align-items:center; gap:var(--ds-space-3); margin:var(--ds-space-6) 0 var(--ds-space-3); font-family:var(--ds-font-display-interface); font-size:var(--ds-text-xs); font-weight:700; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink); }
+#drawer-knowledge-mount .ep-seclabel::after{ content:''; flex:1; height:1px; background:var(--ds-rule-soft); }
+#drawer-knowledge-mount .ep-seclabel--tight{ margin-top:calc(var(--ds-space-6) - 15px); }
+#drawer-knowledge-mount .ep-seclabel__hint{ font-family:var(--ds-font-mono); font-size:9px; font-weight:400; letter-spacing:var(--ds-track-wide); text-transform:none; color:var(--ds-ink-faint); }
+#drawer-knowledge-mount .ep-seclabel a{ font-family:var(--ds-font-mono); font-size:9px; font-weight:400; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-accent-deep); text-decoration:none; cursor:pointer; }
+#drawer-knowledge-mount .ep-seclabel a:hover{ text-decoration:underline; }
+#drawer-knowledge-mount .sh-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(80px,1fr)); gap:6px; }
+#drawer-knowledge-mount .sh-tile{ position:relative; display:flex; flex-direction:column; gap:2px; padding:.5rem .55rem; cursor:pointer; background:var(--ds-paper-deep); border:1px solid var(--ds-rule); border-radius:var(--ds-radius-sm); text-align:left; text-decoration:none; color:var(--ds-ink); overflow:hidden; transition:border-color var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .sh-tile::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--cat); }
+#drawer-knowledge-mount .sh-tile:hover{ border-color:var(--cat); transform:translateY(-2px); box-shadow:0 8px 20px -10px rgba(0,0,0,.3); }
+#drawer-knowledge-mount .sh-tile__sym{ font-family:var(--ds-font-display-interface); font-weight:700; font-size:1.15rem; line-height:1; color:var(--ds-ink); }
+#drawer-knowledge-mount .sh-tile__nm{ font-family:var(--ds-font-sans); font-size:calc(var(--ds-text-micro) + 1px); color:var(--ds-ink-medium); line-height:1.15; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+#drawer-knowledge-mount .sh-tile__ct{ margin-top:auto; font-family:var(--ds-font-mono); font-size:10px; color:var(--ds-ink-medium); }
+#drawer-knowledge-mount .sh-tile[data-cat="mineral"], #drawer-knowledge-mount .ep-legend__sw[data-cat="mineral"]{ --cat:var(--fam-science); }
+#drawer-knowledge-mount .sh-tile[data-cat="vitamin"], #drawer-knowledge-mount .ep-legend__sw[data-cat="vitamin"]{ --cat:var(--ds-accent); }
+#drawer-knowledge-mount .sh-tile[data-cat="amino_acid"], #drawer-knowledge-mount .ep-legend__sw[data-cat="amino_acid"]{ --cat:var(--fam-action); }
+#drawer-knowledge-mount .sh-tile[data-cat="fatty_acid"], #drawer-knowledge-mount .ep-legend__sw[data-cat="fatty_acid"]{ --cat:var(--fam-story); }
+#drawer-knowledge-mount .ep-legend{ display:flex; flex-wrap:wrap; align-items:center; gap:var(--ds-space-4); margin-top:var(--ds-space-3); padding-top:var(--ds-space-3); border-top:1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .ep-legend__lbl{ font-family:var(--ds-font-mono); font-size:9px; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-faint); }
+#drawer-knowledge-mount .ep-legend__item{ display:inline-flex; align-items:center; gap:7px; font-family:var(--ds-font-mono); font-size:9px; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-soft); }
+#drawer-knowledge-mount .ep-legend__sw{ width:3px; height:14px; border-radius:2px; flex:0 0 auto; background:var(--cat); }

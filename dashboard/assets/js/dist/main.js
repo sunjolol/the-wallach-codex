@@ -14586,6 +14586,22 @@
   function essentialCount() {
     return layoutTiles().filter((t) => t.essential !== false).length;
   }
+  var tileByKey = null;
+  function tileIndex() {
+    if (tileByKey === null) {
+      tileByKey = new Map(layoutTiles().map((t) => [t.key, t]));
+    }
+    return tileByKey;
+  }
+  function essentialGlyph(layoutKey) {
+    const t = tileIndex().get(layoutKey);
+    const g = t?.sym ?? t?.letter ?? t?.abbr;
+    if (g !== void 0 && g.length > 0) {
+      return g;
+    }
+    const omega = /^Omega-([369])\b/.exec(layoutKey);
+    return omega !== null ? `\u03C9${omega[1]}` : "";
+  }
   function readTargets() {
     const result = EssentialsDataSchema.safeParse(essentials_targets_data_default);
     return result.success ? result.data.essentials : [];
@@ -17711,11 +17727,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_tab_products: "Products",
       kd_mark: "KNOWLEDGE",
       kh_hero_headline: "Everything Wallach taught, in one place.",
-      kh_hero_sub: "Search {claims} sourced claims from {books} of Dr. Joel Wallach\u2019s books \u2014 or browse the essentials, {conditions} conditions, and the topics in between.",
+      kh_hero_sub: "Search {claims} sourced claims from {books} of Dr. Joel Wallach\u2019s books \u2014 or{br}browse the essentials, {conditions} conditions, and the topics in between.",
       kh_hero_placeholder: "Try \u201Cselenium\u201D, \u201Costeoporosis\u201D, or \u201Ccolloidal minerals\u201D\u2026",
       kh_search_empty: "No match \u2014 try a broader word.",
       kh_group_essentials: "Essentials",
-      kh_group_conditions: "Conditions"
+      kh_group_conditions: "Conditions",
+      kh_essentials_label: "The essentials",
+      kh_essentials_hint: "the body's required inputs",
+      kh_essentials_link: "open the full table \u2192",
+      kh_legend_label: "colour key",
+      kh_legend_mineral: "Minerals",
+      kh_legend_vitamin: "Vitamins",
+      kh_legend_amino_acid: "Amino acids",
+      kh_legend_fatty_acid: "Fatty acids"
     }
   };
 
@@ -90956,7 +90980,7 @@ deaths, blood clots, sterility`,
   var HINTS = [
     { kind: "essential", slug: "calcium" },
     { kind: "condition", slug: "arthritis" },
-    { kind: "essential", slug: "selenium" },
+    { kind: "essential", slug: "vitamin-d" },
     { kind: "condition", slug: "depression" }
   ];
   function hintChip(h) {
@@ -90969,6 +90993,19 @@ deaths, blood clots, sterility`,
     }
     return `<button class="sh-hint" type="button" data-kd-condition="${escHTML7(h.slug)}">${escHTML7(conditionDisplayName(h.slug))}</button>`;
   }
+  var LEGEND_CATS = ["mineral", "vitamin", "amino_acid", "fatty_acid"];
+  function shelfTile(e) {
+    const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
+    const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
+    return `<button class="sh-tile" data-cat="${escHTML7(e.category)}" data-kd-essential="${escHTML7(layoutKey)}" title="${escHTML7(e.name)}"><span class="sh-tile__sym">${escHTML7(glyph)}</span><span class="sh-tile__nm">${escHTML7(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, "claim")}</span></button>`;
+  }
+  function renderEssentialsShelf() {
+    const top = listEssentialPages().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 18);
+    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML7(ui(`kh_legend_${cat}`))}</span>`).join("");
+    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML7(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML7(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML7(ui("kh_essentials_link"))}</a></div>
+    <div class="sh-grid">${top.map(shelfTile).join("")}</div>
+    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML7(ui("kh_legend_label"))}</span>${legend}</div>`;
+  }
   function renderHomeTab() {
     const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
     const sub = ui("kh_hero_sub").replace("{claims}", fmt(claims)).replace("{books}", fmt(listBooks().length)).replace("{conditions}", fmt(listConditions().length));
@@ -90976,7 +91013,7 @@ deaths, blood clots, sterility`,
     return `<div class="kd-home">
     <section class="sh-hero">
       <h1>${escHTML7(ui("kh_hero_headline"))}</h1>
-      <p>${escHTML7(sub)}</p>
+      <p>${escHTML7(sub).replace("{br}", "<br>")}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
           <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML7(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
@@ -90985,6 +91022,7 @@ deaths, blood clots, sterility`,
         <div class="sh-hero__hints">${hints}</div>
       </div>
     </section>
+    ${renderEssentialsShelf()}
   </div>`;
   }
   function homeMatches(query) {
@@ -92546,7 +92584,11 @@ Verified: tsc/build 0, invariants 61/61, render_probe_knowledge PASS, render_pro
 
 NEW core/format.ts \u2014 plural(n, one, many = one+'s'): returns the count-appropriate noun form; irregular plurals pass their form explicitly (e.g. plural(n, 'ENTRY', 'ENTRIES')). Pure, dependency-free, in the core layer so any view can import it. Applied at every hardcoded-plural site: views/entity-page.ts (hero meta "N claims" + "N books"; record summary "All N claims"; filter placeholder "Filter these N claims"), views/knowledge-corpus.ts (condition-row count cell, book-row count cell \u2014 both noun-only inside <small> \u2014 and the corpus section head "N BOOKS \xB7 N CLAIMS"), views/search.ts (footer "N ENTRIES", which was inconsistent with its already-guarded ENTITY/ENTRIES siblings). The new import sits after the parent-TYPE imports so perfectionist/sort-imports stays clean for it.
 
-Verified: tsc/build 0, invariants 61/61, render_probe_knowledge + render_probe_search PASS, 0 page errors, and a dedicated singular probe PASS \u2014 Cerium (1 claim, 1 book) renders "mineral \xB7 1 claim \xB7 1 book", "All 1 claim", "Filter these 1 claim by keyword\u2026"; Oxygen (10 claims, 1 book) renders "10 claims \xB7 1 book" (mixed handled); the abscess condition row (1 claim) renders "1 claim". Left as-is: "Show all N sources" (only ever renders at \u22656, never singular). Not touched: pre-existing perfectionist/jsdoc lint on the legacy search.ts / knowledge-corpus.ts views (deferred debt, not introduced here). This completes the friendly display-name propagation task (foundation + propagation + pluralization).` }];
+Verified: tsc/build 0, invariants 61/61, render_probe_knowledge + render_probe_search PASS, 0 page errors, and a dedicated singular probe PASS \u2014 Cerium (1 claim, 1 book) renders "mineral \xB7 1 claim \xB7 1 book", "All 1 claim", "Filter these 1 claim by keyword\u2026"; Oxygen (10 claims, 1 book) renders "10 claims \xB7 1 book" (mixed handled); the abscess condition row (1 claim) renders "1 claim". Left as-is: "Show all N sources" (only ever renders at \u22656, never singular). Not touched: pre-existing perfectionist/jsdoc lint on the legacy search.ts / knowledge-corpus.ts views (deferred debt, not introduced here). This completes the friendly display-name propagation task (foundation + propagation + pluralization).` }, { id: "lg_mrhwc1po_3ib9ll", ts: "2026-07-12T09:36:07.980332-05:00", surface: "knowledge", kind: "round-close", summary: "Home 'The essentials' shelf (Chunk 3, Luneth 'perfect match'): the 18 most-cited essentials as the demo's periodic tile grid \u2014 glyph + friendly name + claim count, category-coloured edges + legend, tile\u2192page. New essentialGlyph accessor. Board 61/61, probe PASS.", detail: `The Knowledge Home tab now has its first browse shelf under the search box: "The essentials" \u2014 the 18 most-cited nutrients laid out as a periodic-style tile grid (Zinc, Calcium, Selenium, Magnesium, Omega-3, Vitamin C \u2026). Each tile shows a compact glyph, the friendly name, and its claim count, with a category-coloured left edge and a colour key beneath. Click a tile to open that essential's page. It's a fresh re-creation of the signed-off demo on the real data \u2014 Luneth signed off with "perfect match".
+
+Files: state/coverage.ts \u2014 new essentialGlyph(layoutKey) accessor + a built-once tileByKey index over the periodic layout: returns the mineral chemical symbol / vitamin letter / amino three-letter abbr, and derives \u03C93/\u03C96/\u03C99 for the fatty acids (which carry no short code); '' fallback. views/knowledge-home.ts \u2014 renderEssentialsShelf() + shelfTile() over listEssentialPages() sorted by claim_count desc, sliced to 18 (pure formula, most-to-least, per the Home-page philosophy); LEGEND_CATS const drives the 4-item colour key; wired into renderHomeTab. Hero fixes in the same file: the subcopy now breaks after "or" (a {br} token in the copy survives escHTML and is swapped for a real <br> in-view \u2014 controlled markup, rest stays escaped), and the Vitamin D hint chip is restored (it renders friendly now, so the temporary Selenium chip was dropped). assets/data/view-copy.json \u2014 8 contained copy keys (kh_essentials_label/hint/link + kh_legend_{label,mineral,vitamin,amino_acid,fatty_acid}); no inline prose in the view. assets/styles/drawer-knowledge.css \u2014 .ep-seclabel / .sh-grid / .sh-tile / .sh-tile__{sym,nm,ct} / .ep-legend re-created from the demo's EXACT extracted values, rooted at #drawer-knowledge-mount; the tile + legend swatch colour is a single --cat var keyed off data-cat (no colour literal in TS), matching the demo's four families (mineral\u2192science-teal, vitamin\u2192accent-orange, amino\u2192action-green, fatty\u2192story-violet).
+
+Two judgment calls Luneth approved: (a) the compact tile glyphs are sourced from the canonical coverage-layout periodic data (reused the data, re-created the render) rather than a crude 2-letter name slice \u2014 so Niacin shows B3, Folate B9, Tryptophan would show Trp; (b) no amino acid lands in the top-18 (aminos have low claim counts) but all four categories stay in the colour key. First render was close but off on 4 details I had guessed (I could not extract the demo's base rules earlier, so I inferred them); pulling the exact demo bytes fixed the seclabel font/size (display-interface/text-xs, not mono/micro), the card fill (paper-deep/rule, not paper/rule-soft), the 2-line name clamp, the subcopy <br>, and the Vitamin D hint. Verified: tsc/build 0, eslint 0 errors on touched files, invariants 61/61, render_probe_knowledge PASS, 0 page errors, measured grid 10 cols / 901px / overflowX 0, headless screenshots before + after the fixes. Next: Chunk 4 \u2014 Home "Common conditions" + the curated "Explore" preview.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

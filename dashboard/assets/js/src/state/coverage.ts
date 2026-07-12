@@ -186,6 +186,30 @@ export function essentialCount(): number {
   return layoutTiles().filter(t => t.essential !== false).length;
 }
 
+/** Layout tile by its `key` (= layout_key / canonical name) — built once. */
+let tileByKey: Map<string, LayoutTile> | null = null;
+function tileIndex(): Map<string, LayoutTile> {
+  if (tileByKey === null) {
+    tileByKey = new Map(layoutTiles().map(t => [t.key, t]));
+  }
+  return tileByKey;
+}
+
+/**
+ * The compact tile glyph for an essential, by its layout_key: the chemical
+ * symbol (minerals), vitamin letter, or amino abbreviation from the periodic
+ * layout; ω3/ω6/ω9 for the fatty acids (no short code in the layout); '' if none.
+ */
+export function essentialGlyph(layoutKey: string): string {
+  const t = tileIndex().get(layoutKey);
+  const g = t?.sym ?? t?.letter ?? t?.abbr;
+  if (g !== undefined && g.length > 0) {
+    return g;
+  }
+  const omega = /^Omega-([369])\b/.exec(layoutKey);
+  return omega !== null ? `ω${omega[1]}` : '';
+}
+
 // ─── Targets DB read (Zod-validated at the boundary) ───────────────────────
 
 /** Zod-validate the build-inlined Wallach targets DB (`{ essentials: [...] }`). */

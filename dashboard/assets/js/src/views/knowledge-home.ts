@@ -21,9 +21,11 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import { plural } from '../core/format.js';
 import { ui } from '../state/copy.js';
 import { conditionDisplayName, getEssentialBySlug, listBooks, listConditions } from '../state/corpus.js';
-import { listConditionPages, listEssentialPages } from '../state/entity-page.js';
+import { essentialGlyph } from '../state/coverage.js';
+import { type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
 
 // The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
 // quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
@@ -49,7 +51,7 @@ const SEARCH_SVG = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><pat
 const HINTS: ReadonlyArray<{ kind: 'essential' | 'condition'; slug: string }> = [
   { kind: 'essential', slug: 'calcium' },
   { kind: 'condition', slug: 'arthritis' },
-  { kind: 'essential', slug: 'selenium' },
+  { kind: 'essential', slug: 'vitamin-d' },
   { kind: 'condition', slug: 'depression' },
 ];
 
@@ -65,7 +67,35 @@ function hintChip(h: { kind: 'essential' | 'condition'; slug: string }): string 
   return `<button class="sh-hint" type="button" data-kd-condition="${escHTML(h.slug)}">${escHTML(conditionDisplayName(h.slug))}</button>`;
 }
 
-/** The Home landing tab — the hero (Chunk 2); browse shelves land in later chunks. */
+// ─── "The essentials" shelf (Chunk 3) ──────────────────────────
+
+// The 4 category families in the demo's legend order; the tile + swatch colour
+// is driven by data-cat via CSS (no colour literal in TS).
+const LEGEND_CATS = ['mineral', 'vitamin', 'amino_acid', 'fatty_acid'] as const;
+
+/** One essential tile: category-coloured edge, compact glyph, friendly name, claim count. */
+function shelfTile(e: EssentialSummary): string {
+  const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
+  const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
+  return `<button class="sh-tile" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(layoutKey)}" title="${escHTML(e.name)}"><span class="sh-tile__sym">${escHTML(glyph)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, 'claim')}</span></button>`;
+}
+
+/**
+ * The Home "The essentials" shelf — the top-18 essentials by claim count (pure
+ * formula, most-to-least, per the Home-page philosophy), the demo's tile grid, and
+ * the category colour legend. A tile opens the essential's page via the drawer's
+ * data-kd-essential contract.
+ */
+function renderEssentialsShelf(): string {
+  const top = listEssentialPages().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 18);
+  const legend = LEGEND_CATS.map(cat =>
+    `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML(ui(`kh_legend_${cat}`))}</span>`).join('');
+  return `<div class="ep-seclabel ep-seclabel--tight">${escHTML(ui('kh_essentials_label'))} <span class="ep-seclabel__hint">${escHTML(ui('kh_essentials_hint'))}</span><a data-kd-tab="essentials">${escHTML(ui('kh_essentials_link'))}</a></div>
+    <div class="sh-grid">${top.map(shelfTile).join('')}</div>
+    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML(ui('kh_legend_label'))}</span>${legend}</div>`;
+}
+
+/** The Home landing tab — hero (Chunk 2) + "The essentials" shelf (Chunk 3). */
 export function renderHomeTab(): string {
   const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
   const sub = ui('kh_hero_sub')
@@ -76,7 +106,7 @@ export function renderHomeTab(): string {
   return `<div class="kd-home">
     <section class="sh-hero">
       <h1>${escHTML(ui('kh_hero_headline'))}</h1>
-      <p>${escHTML(sub)}</p>
+      <p>${escHTML(sub).replace('{br}', '<br>')}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
           <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML(ui('kh_hero_placeholder'))}" autocomplete="off"></div>
@@ -85,6 +115,7 @@ export function renderHomeTab(): string {
         <div class="sh-hero__hints">${hints}</div>
       </div>
     </section>
+    ${renderEssentialsShelf()}
   </div>`;
 }
 
