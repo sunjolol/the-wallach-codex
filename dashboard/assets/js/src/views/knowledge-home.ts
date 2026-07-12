@@ -25,7 +25,7 @@ import { plural } from '../core/format.js';
 import { ui } from '../state/copy.js';
 import { conditionDisplayName, getEssentialBySlug, listBooks, listConditions } from '../state/corpus.js';
 import { essentialGlyph } from '../state/coverage.js';
-import { type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
+import { type ConditionSummary, type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
 
 // The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
 // quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
@@ -95,7 +95,28 @@ function renderEssentialsShelf(): string {
     <div class="ep-legend"><span class="ep-legend__lbl">${escHTML(ui('kh_legend_label'))}</span>${legend}</div>`;
 }
 
-/** The Home landing tab — hero (Chunk 2) + "The essentials" shelf (Chunk 3). */
+// ─── "Common conditions" shelf (Chunk 4) ───────────────────────
+
+/** One condition row: friendly name + "N claims · M nutrients"; opens the condition's page. */
+function condRow(c: ConditionSummary): string {
+  return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML(c.slug)}"><span class="sh-condrow__nm">${escHTML(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, 'claim')} · ${c.nutrient_count} ${plural(c.nutrient_count, 'nutrient')}</span></button>`;
+}
+
+/**
+ * The Home "Common conditions" shelf — the top-8 conditions by claim count (pure
+ * formula, most-to-least, per the Home-page philosophy), the demo's condition-row
+ * grid. A row opens the condition's page via the drawer's data-kd-condition
+ * contract; the section link jumps to the full Conditions tab.
+ */
+function renderConditionsShelf(): string {
+  const conds = listConditionPages();
+  const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
+  const link = ui('kh_conditions_link').replace('{n}', fmt(conds.length));
+  return `<div class="ep-seclabel">${escHTML(ui('kh_conditions_label'))} <span class="ep-seclabel__hint">${escHTML(ui('kh_conditions_hint'))}</span><a data-kd-tab="conditions">${escHTML(link)}</a></div>
+    <div class="sh-condgrid">${top.map(condRow).join('')}</div>`;
+}
+
+/** The Home landing tab — hero (Chunk 2) + "The essentials" shelf (Chunk 3) + "Common conditions" (Chunk 4). */
 export function renderHomeTab(): string {
   const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
   const sub = ui('kh_hero_sub')
@@ -116,6 +137,7 @@ export function renderHomeTab(): string {
       </div>
     </section>
     ${renderEssentialsShelf()}
+    ${renderConditionsShelf()}
   </div>`;
 }
 

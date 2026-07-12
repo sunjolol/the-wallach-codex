@@ -55,6 +55,18 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { tabs, active, homeShown };
   });
 
+  // 2c. Home "Common conditions" shelf — top-8 condition rows by claim count, each
+  //     carrying data-kd-condition (opens its page); header links to the Conditions tab.
+  const homeConds = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const rows = root ? [...root.querySelectorAll('.kd-home .sh-condgrid .sh-condrow')] : [];
+    return {
+      count: rows.length,
+      allNav: rows.length > 0 && rows.every(r => (r.getAttribute('data-kd-condition') || '').length > 0),
+      firstMeta: rows[0] ? (rows[0].querySelector('.sh-condrow__ct')?.textContent || '') : '',
+    };
+  });
+
   // 3. Switch to the Products tab; list ALL products (no 30 cap), each clickable.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
   await wait(300);
@@ -304,7 +316,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, tabBar, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
+  const out = { boot, afterClick, tabBar, homeConds, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -315,6 +327,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['tab bar: Corpus + Doctrine removed', !tabBar.tabs.includes('Corpus') && !tabBar.tabs.includes('Doctrine')],
     ['tab bar: Home is the default active tab', tabBar.active === 'Home'],
     ['home: tab renders its container', tabBar.homeShown === true],
+    ['home: Common conditions shelf shows top-8 rows', homeConds.count === 8],
+    ['home: every condition row carries the nav attr', homeConds.allNav === true],
+    ['home: condition row meta = "N claims · M nutrients"', /\d+ claims? · \d+ nutrients?/.test(homeConds.firstMeta)],
     ['products count parsed from head', products.count > 0],
     ['products: ALL listed (no 30 cap)', products.rowCount === products.count && products.rowCount >= 200],
     ['products: every row is clickable', products.clickable === products.rowCount],

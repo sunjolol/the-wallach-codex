@@ -1566,3 +1566,11 @@
 #drawer-knowledge-mount .ep-legend__lbl{ font-family:var(--ds-font-mono); font-size:9px; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-faint); }
 #drawer-knowledge-mount .ep-legend__item{ display:inline-flex; align-items:center; gap:7px; font-family:var(--ds-font-mono); font-size:9px; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-soft); }
 #drawer-knowledge-mount .ep-legend__sw{ width:3px; height:14px; border-radius:2px; flex:0 0 auto; background:var(--cat); }
+
+/* Home "Common conditions" shelf — condition rows, most-cited first (Chunk 4). Re-created from the demo. */
+#drawer-knowledge-mount .sh-condgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:6px; }
+#drawer-knowledge-mount .sh-condrow{ display:flex; align-items:center; gap:var(--ds-space-2); padding:.55rem .75rem; cursor:pointer; background:var(--ds-paper-deep); border:1px solid var(--ds-rule-soft); border-radius:var(--ds-radius-sm); text-align:left; color:var(--ds-ink); border-left:3px solid var(--ds-accent); transition:border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .sh-condrow:hover{ background:var(--ds-paper); border-color:var(--ds-accent); }
+#drawer-knowledge-mount .sh-condrow__nm{ font-family:var(--ds-font-display-interface); font-size:var(--ds-text-sm); font-weight:600; color:var(--ds-ink); }
+#drawer-knowledge-mount .sh-condrow:hover .sh-condrow__nm{ color:var(--ds-accent-deep); }
+#drawer-knowledge-mount .sh-condrow__ct{ margin-left:auto; font-family:var(--ds-font-mono); font-size:0.625rem; color:var(--ds-ink-soft); white-space:nowrap; }

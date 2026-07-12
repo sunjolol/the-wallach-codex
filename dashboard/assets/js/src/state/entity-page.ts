@@ -66,6 +66,8 @@ export interface ConditionSummary {
   slug: string;
   name: string;
   claim_count: number;
+  /** How many nutrients Wallach ties to the condition — the restore (maps E,C) list length. */
+  nutrient_count: number;
 }
 
 /** Every essential as a lean list summary (slug-keyed order). Home search/shelves read this. */
@@ -86,5 +88,6 @@ export function listConditionPages(): ConditionSummary[] {
     slug,
     name: c.name,
     claim_count: c.claim_count,
+    nutrient_count: c.restore.length,
   }));
 }

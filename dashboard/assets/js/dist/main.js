@@ -17739,7 +17739,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kh_legend_mineral: "Minerals",
       kh_legend_vitamin: "Vitamins",
       kh_legend_amino_acid: "Amino acids",
-      kh_legend_fatty_acid: "Fatty acids"
+      kh_legend_fatty_acid: "Fatty acids",
+      kh_conditions_label: "Common conditions",
+      kh_conditions_hint: "what Wallach wrote most about",
+      kh_conditions_link: "browse all {n} \u2192"
     }
   };
 
@@ -85642,7 +85645,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return Object.entries(data2().conditions).map(([slug, c]) => ({
       slug,
       name: c.name,
-      claim_count: c.claim_count
+      claim_count: c.claim_count,
+      nutrient_count: c.restore.length
     }));
   }
 
@@ -91006,6 +91010,16 @@ deaths, blood clots, sterility`,
     <div class="sh-grid">${top.map(shelfTile).join("")}</div>
     <div class="ep-legend"><span class="ep-legend__lbl">${escHTML7(ui("kh_legend_label"))}</span>${legend}</div>`;
   }
+  function condRow(c) {
+    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML7(c.slug)}"><span class="sh-condrow__nm">${escHTML7(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
+  }
+  function renderConditionsShelf() {
+    const conds = listConditionPages();
+    const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
+    const link = ui("kh_conditions_link").replace("{n}", fmt(conds.length));
+    return `<div class="ep-seclabel">${escHTML7(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML7(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML7(link)}</a></div>
+    <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
+  }
   function renderHomeTab() {
     const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
     const sub = ui("kh_hero_sub").replace("{claims}", fmt(claims)).replace("{books}", fmt(listBooks().length)).replace("{conditions}", fmt(listConditions().length));
@@ -91023,6 +91037,7 @@ deaths, blood clots, sterility`,
       </div>
     </section>
     ${renderEssentialsShelf()}
+    ${renderConditionsShelf()}
   </div>`;
   }
   function homeMatches(query) {
@@ -92588,7 +92603,13 @@ Verified: tsc/build 0, invariants 61/61, render_probe_knowledge + render_probe_s
 
 Files: state/coverage.ts \u2014 new essentialGlyph(layoutKey) accessor + a built-once tileByKey index over the periodic layout: returns the mineral chemical symbol / vitamin letter / amino three-letter abbr, and derives \u03C93/\u03C96/\u03C99 for the fatty acids (which carry no short code); '' fallback. views/knowledge-home.ts \u2014 renderEssentialsShelf() + shelfTile() over listEssentialPages() sorted by claim_count desc, sliced to 18 (pure formula, most-to-least, per the Home-page philosophy); LEGEND_CATS const drives the 4-item colour key; wired into renderHomeTab. Hero fixes in the same file: the subcopy now breaks after "or" (a {br} token in the copy survives escHTML and is swapped for a real <br> in-view \u2014 controlled markup, rest stays escaped), and the Vitamin D hint chip is restored (it renders friendly now, so the temporary Selenium chip was dropped). assets/data/view-copy.json \u2014 8 contained copy keys (kh_essentials_label/hint/link + kh_legend_{label,mineral,vitamin,amino_acid,fatty_acid}); no inline prose in the view. assets/styles/drawer-knowledge.css \u2014 .ep-seclabel / .sh-grid / .sh-tile / .sh-tile__{sym,nm,ct} / .ep-legend re-created from the demo's EXACT extracted values, rooted at #drawer-knowledge-mount; the tile + legend swatch colour is a single --cat var keyed off data-cat (no colour literal in TS), matching the demo's four families (mineral\u2192science-teal, vitamin\u2192accent-orange, amino\u2192action-green, fatty\u2192story-violet).
 
-Two judgment calls Luneth approved: (a) the compact tile glyphs are sourced from the canonical coverage-layout periodic data (reused the data, re-created the render) rather than a crude 2-letter name slice \u2014 so Niacin shows B3, Folate B9, Tryptophan would show Trp; (b) no amino acid lands in the top-18 (aminos have low claim counts) but all four categories stay in the colour key. First render was close but off on 4 details I had guessed (I could not extract the demo's base rules earlier, so I inferred them); pulling the exact demo bytes fixed the seclabel font/size (display-interface/text-xs, not mono/micro), the card fill (paper-deep/rule, not paper/rule-soft), the 2-line name clamp, the subcopy <br>, and the Vitamin D hint. Verified: tsc/build 0, eslint 0 errors on touched files, invariants 61/61, render_probe_knowledge PASS, 0 page errors, measured grid 10 cols / 901px / overflowX 0, headless screenshots before + after the fixes. Next: Chunk 4 \u2014 Home "Common conditions" + the curated "Explore" preview.` }];
+Two judgment calls Luneth approved: (a) the compact tile glyphs are sourced from the canonical coverage-layout periodic data (reused the data, re-created the render) rather than a crude 2-letter name slice \u2014 so Niacin shows B3, Folate B9, Tryptophan would show Trp; (b) no amino acid lands in the top-18 (aminos have low claim counts) but all four categories stay in the colour key. First render was close but off on 4 details I had guessed (I could not extract the demo's base rules earlier, so I inferred them); pulling the exact demo bytes fixed the seclabel font/size (display-interface/text-xs, not mono/micro), the card fill (paper-deep/rule, not paper/rule-soft), the 2-line name clamp, the subcopy <br>, and the Vitamin D hint. Verified: tsc/build 0, eslint 0 errors on touched files, invariants 61/61, render_probe_knowledge PASS, 0 page errors, measured grid 10 cols / 901px / overflowX 0, headless screenshots before + after the fixes. Next: Chunk 4 \u2014 Home "Common conditions" + the curated "Explore" preview.` }, { id: "lg_mrhxbqkp_vaz1n2", ts: "2026-07-12T10:03:53.161770-05:00", surface: "knowledge", kind: "round-close", summary: 'Home "Common conditions" shelf (Chunk 4a, Luneth-signed-off): top-8 conditions by claim count, re-created from the demo on real data; the Explore preview is deferred to a topic-pipeline chunk next.', detail: `The Home tab's second browse shelf: the 8 conditions Wallach wrote about most, each row showing the name + "N claims \xB7 M nutrients", accent-edged, click to open the condition's page. Pure top-8-by-claim-count formula on real data, re-created faithfully from the signed-off demo \u2014 no old code, no demo data. The "Explore" half of Chunk 4 was deliberately left out: the 56 real topics have no app-side derived artifact and no topic entity-pages yet, so faithful chips are impossible today. Luneth chose to build that topic pipeline as the next chunk \u2014 it unblocks both the Home Explore preview and the Explore tab at once.
+
+Files: state/entity-page.ts (ConditionSummary + listConditionPages carry nutrient_count = the condition's restore-list length, Wallach's H1 "nutrients to restore for this condition"). views/knowledge-home.ts (new renderConditionsShelf + condRow over listConditionPages sorted by claim_count desc, top-8; nav via the live data-kd-condition contract; header "browse all {n} \u2192" via data-kd-tab="conditions"; app-wide plural()). assets/data/view-copy.json (3 contained prose keys kh_conditions_label/hint/link \u2014 {n} = live 506 substituted in-view; zero inline prose). assets/styles/drawer-knowledge.css (.sh-condgrid + .sh-condrow/.sh-condrow__nm/__ct re-created from the demo's exact values, scoped under #drawer-knowledge-mount). tools/render_probe_knowledge.js (new Home conditions-shelf assertions).
+
+Verified: build 0 (tsc) \xB7 eslint 0 errors on touched TS \xB7 invariants 61/61 \xB7 render_probe_knowledge PASS \xB7 0 page errors \xB7 new assertions confirm count=8, allNav true, firstMeta "64 claims \xB7 9 nutrients" \xB7 headless screenshot confirmed the 8-row grid (Cancer 64\xB79 \u2192 Anorexia 28\xB716) below the essentials shelf \xB7 Luneth "approve \u2014 ship it" sign-off.
+
+Deferrals: the Explore preview \u2192 the topic-data pipeline chunk (next, Luneth-chosen); topic entity-pages do not exist yet, so topic/Explore nav stays future work.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

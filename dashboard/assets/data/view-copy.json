@@ -75,6 +75,9 @@
     "kh_legend_mineral": "Minerals",
     "kh_legend_vitamin": "Vitamins",
     "kh_legend_amino_acid": "Amino acids",
-    "kh_legend_fatty_acid": "Fatty acids"
+    "kh_legend_fatty_acid": "Fatty acids",
+    "kh_conditions_label": "Common conditions",
+    "kh_conditions_hint": "what Wallach wrote most about",
+    "kh_conditions_link": "browse all {n} →"
   }
 }
