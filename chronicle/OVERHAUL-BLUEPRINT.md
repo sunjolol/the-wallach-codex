@@ -1,5 +1,7 @@
 # THE WALLACH CODEX — OVERHAUL BLUEPRINT
 
+> **★ PHASE H (Knowledge + Search redesign): the CURRENT state + doctrine live in `chronicle/next-chunk.md` + memory [[demo-vision-not-letter]] + [[search-is-ask-wallach-popup]], which OVERRIDE any older Phase-H / design notes here or in the sub-blueprints.** The demo is VISION-only (re-create pristine on real data; never copy its code/data/prose). Retired: "900px", the old Knowledge tab set, "reuse/port old components", "cross-surface to Search".
+
 _The complete plan. Built and verified in full BEFORE any implementation (Luneth's mandate 2026-07-05). This supersedes genesis/02-clarifications-and-plan.md as the active plan._
 
 **STATUS: LOCKED IN FULL — 2026-07-05.** All 8 sections verified by Luneth. Implementation begins at **Phase A** (Section 7) — the governance reset + noise purge, which also executes the Section 8 operating-file audit. Phase C's honest-gap trade-off (Wallach-only targets, empty where no claim exists yet) explicitly accepted.
