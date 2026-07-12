@@ -19,7 +19,6 @@
 
 /* ─── PANEL WIDTH (the chrome base lives in drawer-shared.css) ────────────── */
 #drawer-knowledge-mount.kd-open { width: 950px; }
-#drawer-knowledge-mount.kd-expanded { width: calc(100vw - 220px); }
 
 /* ─── HEADER — compact single row (mark · pill-group tabs · close), a pristine
        re-creation of the signed-off demo's .knh. Knowledge-specific: it REPLACES

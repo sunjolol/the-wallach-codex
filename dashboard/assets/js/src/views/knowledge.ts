@@ -2,9 +2,8 @@
  * views/knowledge.ts — Knowledge drawer (overlay)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Slide-in-from-left overlay drawer, 950px starting width, EXPAND grows to
- * fill the workspace area. Renders 5 tabs: Home / Essentials / Conditions /
- * Explore / Products.
+ * Slide-in-from-left overlay drawer, 950px wide. Renders 5 tabs: Home /
+ * Essentials / Conditions / Explore / Products.
  *
  * The Essentials tab is layout-driven: it walks the SAME presentation layout
  * the Coverage periodic table uses (coverage-layout-data.json) for symbols +
@@ -50,7 +49,6 @@ export interface DrawerHandle {
   open: () => void;
   close: () => void;
   toggle: () => void;
-  toggleExpanded: () => void;
   isOpen: () => boolean;
 }
 
@@ -250,14 +248,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">×</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ''}
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>
-    <footer class="kd-footer">
-      <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">⊕</span>PIN</button>
-      <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">↗</span>SHARE</button>
-      <button class="kd-action" data-kd-action="cite"><span class="kd-action__glyph">⌑</span>CITE</button>
-      <span class="kd-action__spacer"></span>
-      <button class="kd-action kd-action--expand" data-kd-action="expand"><span class="kd-action__glyph">⤢</span>EXPAND</button>
-    </footer>`;
+    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
 }
 
 // ─── Search (per-tab DOM filter) ──────────────────────────────
@@ -355,7 +346,6 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
 
 export function mount(container: HTMLElement): DrawerHandle {
   let isOpen = false;
-  let isExpanded = false;
   let activeTab: Tab = 'home';
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
@@ -393,13 +383,12 @@ export function mount(container: HTMLElement): DrawerHandle {
       return;
     }
     isOpen = false;
-    isExpanded = false;
     activeTab = 'home';
     selectedEssential = null;
     selectedCondition = null;
     selectedProduct = null;
     selectedTopic = null;
-    container.classList.remove('kd-open', 'kd-expanded');
+    container.classList.remove('kd-open');
     container.innerHTML = '';
   };
   const toggle = (): void => {
@@ -409,10 +398,6 @@ export function mount(container: HTMLElement): DrawerHandle {
     else {
       open();
     }
-  };
-  const toggleExpanded = (): void => {
-    isExpanded = !isExpanded;
-    container.classList.toggle('kd-expanded', isExpanded);
   };
 
   const clickHandler = (ev: Event): void => {
@@ -491,9 +476,6 @@ export function mount(container: HTMLElement): DrawerHandle {
       const action = actionEl.getAttribute('data-kd-action');
       if (action === 'close') {
         close();
-      }
-      else if (action === 'expand') {
-        toggleExpanded();
       }
       else if (action === 'essential-close') {
         selectedEssential = null;
@@ -651,7 +633,6 @@ export function mount(container: HTMLElement): DrawerHandle {
     open,
     close,
     toggle,
-    toggleExpanded,
     isOpen: () => isOpen,
   };
 }

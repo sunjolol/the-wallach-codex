@@ -91462,14 +91462,7 @@ deaths, blood clots, sterility`,
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ""}
-    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>
-    <footer class="kd-footer">
-      <button class="kd-action" data-kd-action="pin"><span class="kd-action__glyph">\u2295</span>PIN</button>
-      <button class="kd-action" data-kd-action="share"><span class="kd-action__glyph">\u2197</span>SHARE</button>
-      <button class="kd-action" data-kd-action="cite"><span class="kd-action__glyph">\u2311</span>CITE</button>
-      <span class="kd-action__spacer"></span>
-      <button class="kd-action kd-action--expand" data-kd-action="expand"><span class="kd-action__glyph">\u2922</span>EXPAND</button>
-    </footer>`;
+    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
   }
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
@@ -91528,7 +91521,6 @@ deaths, blood clots, sterility`,
   }
   function mount3(container) {
     let isOpen = false;
-    let isExpanded = false;
     let activeTab = "home";
     let selectedEssential = null;
     let selectedCondition = null;
@@ -91562,13 +91554,12 @@ deaths, blood clots, sterility`,
         return;
       }
       isOpen = false;
-      isExpanded = false;
       activeTab = "home";
       selectedEssential = null;
       selectedCondition = null;
       selectedProduct = null;
       selectedTopic = null;
-      container.classList.remove("kd-open", "kd-expanded");
+      container.classList.remove("kd-open");
       container.innerHTML = "";
     };
     const toggle = () => {
@@ -91577,10 +91568,6 @@ deaths, blood clots, sterility`,
       } else {
         open();
       }
-    };
-    const toggleExpanded = () => {
-      isExpanded = !isExpanded;
-      container.classList.toggle("kd-expanded", isExpanded);
     };
     const clickHandler = (ev) => {
       const target = ev.target;
@@ -91649,8 +91636,6 @@ deaths, blood clots, sterility`,
         const action = actionEl.getAttribute("data-kd-action");
         if (action === "close") {
           close();
-        } else if (action === "expand") {
-          toggleExpanded();
         } else if (action === "essential-close") {
           selectedEssential = null;
           render();
@@ -91777,7 +91762,6 @@ deaths, blood clots, sterility`,
       open,
       close,
       toggle,
-      toggleExpanded,
       isOpen: () => isOpen
     };
   }
@@ -92807,7 +92791,7 @@ Technical:
 - view-copy.json \u2014 3 new UI chrome keys: kh_explore_label "Explore", kh_explore_hint "the rabbit holes \u2014 therapies, elements, big questions", kh_explore_link "see all topics \u2192" (prose stays contained, R4).
 - tools/render_probe_knowledge.js \u2014 new assertion: the Home Explore preview renders curated topic chips (count 10\u201320, guarding against a regression that dumps the full set), all carrying data-kd-topic, in A-Z order.
 
-Verified: build OK (tsc clean) \xB7 invariants 61/61 (0 new reds; data_artifacts_accounted now 20 files = 10 derived + 12 hand-authored) \xB7 render_probe_knowledge PASS with homeExplore {count:14, allNav:true, sortedAZ:true} and 0 page errors \xB7 eslint clean \xB7 headless screenshot + Luneth "Looks great" visual sign-off. Deferrals: none.` }];
+Verified: build OK (tsc clean) \xB7 invariants 61/61 (0 new reds; data_artifacts_accounted now 20 files = 10 derived + 12 hand-authored) \xB7 render_probe_knowledge PASS with homeExplore {count:14, allNav:true, sortedAZ:true} and 0 page errors \xB7 eslint clean \xB7 headless screenshot + Luneth "Looks great" visual sign-off. Deferrals: none.` }, { id: "lg_mri3ai2i_3xz61c", ts: "2026-07-12T12:50:53.178987-05:00", surface: "knowledge", kind: "round-close", summary: "Removed the Knowledge drawer's bottom action bar (PIN/SHARE/CITE/EXPAND) + its dead wiring/CSS \u2014 Knowledge only (Journey/Search untouched). PIN/SHARE/CITE were dead scaffold fighting the offline-only design; EXPAND dropped by choice. Luneth-signed-off.", detail: 'The Knowledge drawer used to carry a persistent bar along its bottom with PIN, SHARE, CITE and EXPAND buttons. That bar is now gone. Underneath, PIN/SHARE/CITE were dead \u2014 they had no click handler at all, pure demo scaffold that shipped inert. Beyond being dead, SHARE and CITE fight what this app is: an offline-only, single-user, local-data instrument. SHARE presupposes a network + a recipient + an identity, none of which exist here (the honest "share" is JSON export or an OS screenshot); CITE is redundant because every claim already renders its Wallach book + page on the card. PIN is the only one with real local-first DNA (saving/bookmarking), but a global dead button is the wrong form \u2014 if we ever want it, it should be a per-entity star feeding a "Saved" view, built deliberately. EXPAND was the one wired button (it widened the 950px drawer), but Luneth chose to drop it too: 950px is already generous and a fixed width is simpler chrome.\n\nScope: Knowledge drawer ONLY. Journey (which is a planned full overhaul) and Search keep their own footers untouched \u2014 Journey\'s holds real actions (LOG EVENT + EXPORT), Search\'s holds a live count.\n\nTechnical:\n- views/knowledge.ts \u2014 removed the <footer class="kd-footer"> markup (the 4 buttons + spacer) and every trace of its wiring: the toggleExpanded() function, the isExpanded state variable, the `expand` branch in the action handler, and the toggleExpanded member on the DrawerHandle interface + the bridge return object. In close(), dropped the now-unused kd-expanded from the classList.remove call. Fixed the file-header comment that still said "950px starting width, EXPAND grows to fill the workspace area" (a drifted comment is a defect, \xA700.B).\n- drawer-knowledge.css \u2014 removed the dead `#drawer-knowledge-mount.kd-expanded { width: calc(100vw - 220px); }` width rule.\n- drawer-shared.css \u2014 the footer/action CSS is SHARED with Journey via grouped selectors, so I stripped ONLY the `#drawer-knowledge-mount .kd-footer / .kd-action / .kd-action:hover / .kd-action__glyph / .kd-action__spacer` selectors from the 5 shared rules, keeping every `#drawer-journey-mount .jd-*` selector so Journey is visually unchanged.\n- Kept `is-expanded` entirely \u2014 that is the best-sources "show more sources" toggle in the essentials deep-dive, a different mechanism from the EXPAND button.\n\nRemoval method: a single rule-5 safe_write script that read knowledge.ts once, applied every edit in memory with count assertions (exactly-one-occurrence), removed the glyph-bearing footer via regex (so the \u2295 \u2197 \u2311 \u2922 glyphs never had to be hand-typed), asserted no stray toggleExpanded/isExpanded/kd-expanded/kd-footer/class="kd-action" remained, then rewrote once; the two CSS files the same way.\n\nVerified: build OK (tsc clean) \xB7 invariants 61/61 (0 new reds) \xB7 render_probe_knowledge PASS + 0 page errors \xB7 bundle greps confirm kd-footer=0 and SHARE/CITE fully gone from dist/main.js while Journey/Search footers (jd-/sr-) remain (4 occurrences) \xB7 headless screenshot + Luneth "Looks great" visual sign-off.\n\nDeferral (honest): knowledge.ts carries 6 PRE-EXISTING eslint errors \u2014 import ordering at lines 40-45 and a one-line ternary at 245. These predate this change (the diff touches none of those lines) and exist because the project\'s round-close gate is invariants/build/probe, not a full eslint pass, so knowledge.ts was never linted to zero. This removal introduced zero new lint errors. Left the pre-existing ones untouched to avoid unrelated churn; flagged as a separate background cleanup task.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

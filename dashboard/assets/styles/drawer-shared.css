@@ -265,8 +265,7 @@
 }
 
 /* ─── FOOTER + ACTIONS (the primary/expand variant is per-drawer) ────────── */
-#drawer-journey-mount .jd-footer,
-#drawer-knowledge-mount .kd-footer {
+#drawer-journey-mount .jd-footer {
   padding: var(--ds-space-3) var(--ds-space-4);
   background: var(--ds-paper-darker);
   border-top: 1px solid var(--ds-rule);
@@ -274,8 +273,7 @@
   gap: var(--ds-space-2);
   align-items: center;
 }
-#drawer-journey-mount .jd-action,
-#drawer-knowledge-mount .kd-action {
+#drawer-journey-mount .jd-action {
   background: transparent;
   border: 1px solid var(--ds-rule);
   color: var(--ds-ink);
@@ -292,9 +290,6 @@
   gap: var(--ds-space-2);
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
 }
-#drawer-journey-mount .jd-action:hover,
-#drawer-knowledge-mount .kd-action:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
-#drawer-journey-mount .jd-action__glyph,
-#drawer-knowledge-mount .kd-action__glyph { font-family: var(--ds-font-mono); color: var(--ds-tech); }
-#drawer-journey-mount .jd-action__spacer,
-#drawer-knowledge-mount .kd-action__spacer { flex: 1; }
+#drawer-journey-mount .jd-action:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+#drawer-journey-mount .jd-action__glyph { font-family: var(--ds-font-mono); color: var(--ds-tech); }
+#drawer-journey-mount .jd-action__spacer { flex: 1; }
