@@ -165,6 +165,11 @@
       "reason": "Home-tab curated selections — the SPECIAL curated front-door surface (Luneth 2026-07-12; the home-page-curation philosophy). Currently the Explore-preview topic pick: a hand-tuned selection of topic/concept entities, explicitly temporary (may later flip to a top-N-by-claims formula). Editorial UI config, NOT canonical health data and NOT a pillar projection; no generator. Slugs are nav keys resolved against the search entity index at render (an unresolved slug is skipped)."
     },
     {
+      "file": "dashboard/assets/data/foods-curation.json",
+      "disposition": "hand_authored",
+      "reason": "Foods & Absorption tab curated selections -- the SPECIAL curated persuasive landing (the home-page-curation philosophy; mirrors home-curation.json). hero_claims are the sealed crown-jewel search-claim IDs anchoring the two-pronged thesis; the REMOVE/EAT good-vs-bad-foods contrast lands here as remove[]/eat[] topic-slug lists in a later chunk. Editorial UI config, NOT canonical health data and NOT a pillar projection; no generator. IDs/slugs are resolved against the search index at render (an unresolved one is skipped)."
+    },
+    {
       "file": "dashboard/assets/data/versions-data.json",
       "disposition": "hand_authored",
       "reason": "App version/changelog history, hand-maintained. Not a projection of the pillars; no generator."

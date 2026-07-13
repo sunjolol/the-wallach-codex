@@ -9899,15 +9899,15 @@
     "map",
     "set"
   ]);
-  var getParsedType = (data5) => {
-    const t = typeof data5;
+  var getParsedType = (data6) => {
+    const t = typeof data6;
     switch (t) {
       case "undefined":
         return ZodParsedType.undefined;
       case "string":
         return ZodParsedType.string;
       case "number":
-        return Number.isNaN(data5) ? ZodParsedType.nan : ZodParsedType.number;
+        return Number.isNaN(data6) ? ZodParsedType.nan : ZodParsedType.number;
       case "boolean":
         return ZodParsedType.boolean;
       case "function":
@@ -9917,22 +9917,22 @@
       case "symbol":
         return ZodParsedType.symbol;
       case "object":
-        if (Array.isArray(data5)) {
+        if (Array.isArray(data6)) {
           return ZodParsedType.array;
         }
-        if (data5 === null) {
+        if (data6 === null) {
           return ZodParsedType.null;
         }
-        if (data5.then && typeof data5.then === "function" && data5.catch && typeof data5.catch === "function") {
+        if (data6.then && typeof data6.then === "function" && data6.catch && typeof data6.catch === "function") {
           return ZodParsedType.promise;
         }
-        if (typeof Map !== "undefined" && data5 instanceof Map) {
+        if (typeof Map !== "undefined" && data6 instanceof Map) {
           return ZodParsedType.map;
         }
-        if (typeof Set !== "undefined" && data5 instanceof Set) {
+        if (typeof Set !== "undefined" && data6 instanceof Set) {
           return ZodParsedType.set;
         }
-        if (typeof Date !== "undefined" && data5 instanceof Date) {
+        if (typeof Date !== "undefined" && data6 instanceof Date) {
           return ZodParsedType.date;
         }
         return ZodParsedType.object;
@@ -10173,7 +10173,7 @@
 
   // node_modules/zod/v3/helpers/parseUtil.js
   var makeIssue = (params) => {
-    const { data: data5, path, errorMaps, issueData } = params;
+    const { data: data6, path, errorMaps, issueData } = params;
     const fullPath = [...path, ...issueData.path || []];
     const fullIssue = {
       ...issueData,
@@ -10189,7 +10189,7 @@
     let errorMessage = "";
     const maps = errorMaps.filter((m) => !!m).slice().reverse();
     for (const map of maps) {
-      errorMessage = map(fullIssue, { data: data5, defaultError: errorMessage }).message;
+      errorMessage = map(fullIssue, { data: data6, defaultError: errorMessage }).message;
     }
     return {
       ...issueData,
@@ -10391,13 +10391,13 @@
       const result = this._parse(input);
       return Promise.resolve(result);
     }
-    parse(data5, params) {
-      const result = this.safeParse(data5, params);
+    parse(data6, params) {
+      const result = this.safeParse(data6, params);
       if (result.success)
         return result.data;
       throw result.error;
     }
-    safeParse(data5, params) {
+    safeParse(data6, params) {
       const ctx = {
         common: {
           issues: [],
@@ -10407,13 +10407,13 @@
         path: params?.path || [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data: data5,
-        parsedType: getParsedType(data5)
+        data: data6,
+        parsedType: getParsedType(data6)
       };
-      const result = this._parseSync({ data: data5, path: ctx.path, parent: ctx });
+      const result = this._parseSync({ data: data6, path: ctx.path, parent: ctx });
       return handleResult(ctx, result);
     }
-    "~validate"(data5) {
+    "~validate"(data6) {
       const ctx = {
         common: {
           issues: [],
@@ -10422,12 +10422,12 @@
         path: [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data: data5,
-        parsedType: getParsedType(data5)
+        data: data6,
+        parsedType: getParsedType(data6)
       };
       if (!this["~standard"].async) {
         try {
-          const result = this._parseSync({ data: data5, path: [], parent: ctx });
+          const result = this._parseSync({ data: data6, path: [], parent: ctx });
           return isValid(result) ? {
             value: result.value
           } : {
@@ -10443,19 +10443,19 @@
           };
         }
       }
-      return this._parseAsync({ data: data5, path: [], parent: ctx }).then((result) => isValid(result) ? {
+      return this._parseAsync({ data: data6, path: [], parent: ctx }).then((result) => isValid(result) ? {
         value: result.value
       } : {
         issues: ctx.common.issues
       });
     }
-    async parseAsync(data5, params) {
-      const result = await this.safeParseAsync(data5, params);
+    async parseAsync(data6, params) {
+      const result = await this.safeParseAsync(data6, params);
       if (result.success)
         return result.data;
       throw result.error;
     }
-    async safeParseAsync(data5, params) {
+    async safeParseAsync(data6, params) {
       const ctx = {
         common: {
           issues: [],
@@ -10465,10 +10465,10 @@
         path: params?.path || [],
         schemaErrorMap: this._def.errorMap,
         parent: null,
-        data: data5,
-        parsedType: getParsedType(data5)
+        data: data6,
+        parsedType: getParsedType(data6)
       };
-      const maybeAsyncResult = this._parse({ data: data5, path: ctx.path, parent: ctx });
+      const maybeAsyncResult = this._parse({ data: data6, path: ctx.path, parent: ctx });
       const result = await (isAsync(maybeAsyncResult) ? maybeAsyncResult : Promise.resolve(maybeAsyncResult));
       return handleResult(ctx, result);
     }
@@ -10489,8 +10489,8 @@
           ...getIssueProperties(val)
         });
         if (typeof Promise !== "undefined" && result instanceof Promise) {
-          return result.then((data5) => {
-            if (!data5) {
+          return result.then((data6) => {
+            if (!data6) {
               setError();
               return false;
             } else {
@@ -10556,7 +10556,7 @@
       this["~standard"] = {
         version: 1,
         vendor: "zod",
-        validate: (data5) => this["~validate"](data5)
+        validate: (data6) => this["~validate"](data6)
       };
     }
     optional() {
@@ -11016,7 +11016,7 @@
       return { status: status.value, value: input.data };
     }
     _regex(regex, validation, message) {
-      return this.refinement((data5) => regex.test(data5), {
+      return this.refinement((data6) => regex.test(data6), {
         validation,
         code: ZodIssueCode.invalid_string,
         ...errorUtil.errToObj(message)
@@ -13232,8 +13232,8 @@
         return INVALID;
       }
       const promisified = ctx.parsedType === ZodParsedType.promise ? ctx.data : Promise.resolve(ctx.data);
-      return OK(promisified.then((data5) => {
-        return this._def.type.parseAsync(data5, {
+      return OK(promisified.then((data6) => {
+        return this._def.type.parseAsync(data6, {
           path: ctx.path,
           errorMap: ctx.common.contextualErrorMap
         });
@@ -13427,12 +13427,12 @@
   var ZodDefault = class extends ZodType {
     _parse(input) {
       const { ctx } = this._processInputParams(input);
-      let data5 = ctx.data;
+      let data6 = ctx.data;
       if (ctx.parsedType === ZodParsedType.undefined) {
-        data5 = this._def.defaultValue();
+        data6 = this._def.defaultValue();
       }
       return this._def.innerType._parse({
-        data: data5,
+        data: data6,
         path: ctx.path,
         parent: ctx
       });
@@ -13527,9 +13527,9 @@
   var ZodBranded = class extends ZodType {
     _parse(input) {
       const { ctx } = this._processInputParams(input);
-      const data5 = ctx.data;
+      const data6 = ctx.data;
       return this._def.type._parse({
-        data: data5,
+        data: data6,
         path: ctx.path,
         parent: ctx
       });
@@ -13596,13 +13596,13 @@
   var ZodReadonly = class extends ZodType {
     _parse(input) {
       const result = this._def.innerType._parse(input);
-      const freeze = (data5) => {
-        if (isValid(data5)) {
-          data5.value = Object.freeze(data5.value);
+      const freeze = (data6) => {
+        if (isValid(data6)) {
+          data6.value = Object.freeze(data6.value);
         }
-        return data5;
+        return data6;
       };
-      return isAsync(result) ? result.then((data5) => freeze(data5)) : freeze(result);
+      return isAsync(result) ? result.then((data6) => freeze(data6)) : freeze(result);
     }
     unwrap() {
       return this._def.innerType;
@@ -13615,26 +13615,26 @@
       ...processCreateParams(params)
     });
   };
-  function cleanParams(params, data5) {
-    const p = typeof params === "function" ? params(data5) : typeof params === "string" ? { message: params } : params;
+  function cleanParams(params, data6) {
+    const p = typeof params === "function" ? params(data6) : typeof params === "string" ? { message: params } : params;
     const p2 = typeof p === "string" ? { message: p } : p;
     return p2;
   }
   function custom(check, _params = {}, fatal) {
     if (check)
-      return ZodAny.create().superRefine((data5, ctx) => {
-        const r = check(data5);
+      return ZodAny.create().superRefine((data6, ctx) => {
+        const r = check(data6);
         if (r instanceof Promise) {
           return r.then((r2) => {
             if (!r2) {
-              const params = cleanParams(_params, data5);
+              const params = cleanParams(_params, data6);
               const _fatal = params.fatal ?? fatal ?? true;
               ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
             }
           });
         }
         if (!r) {
-          const params = cleanParams(_params, data5);
+          const params = cleanParams(_params, data6);
           const _fatal = params.fatal ?? fatal ?? true;
           ctx.addIssue({ code: "custom", ...params, fatal: _fatal });
         }
@@ -13686,7 +13686,7 @@
   })(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
   var instanceOfType = (cls, params = {
     message: `Input not instance of ${cls.name}`
-  }) => custom((data5) => data5 instanceof cls, params);
+  }) => custom((data6) => data6 instanceof cls, params);
   var stringType = ZodString.create;
   var numberType = ZodNumber.create;
   var nanType = ZodNaN.create;
@@ -14409,6 +14409,12 @@
   var HomeCurationSchema = external_exports.object({
     /** Curated Home "Explore" preview: entity slugs (topic/concept), resolved + A-Z at render. */
     explore_preview: external_exports.array(external_exports.string())
+  });
+
+  // assets/js/src/core/schemas/foods-curation.ts
+  var FoodsCurationSchema = external_exports.object({
+    /** Curated crown-jewel claim IDs anchoring the landing's two-pronged thesis, in curated order. */
+    hero_claims: external_exports.array(external_exports.string())
   });
 
   // assets/js/src/core/schemas/pdm-coverage.ts
@@ -17917,7 +17923,23 @@
       kt_type_concept: "Big concepts",
       kt_type_element: "Elements",
       kt_type_substance: "Substances",
-      kt_type_person: "People"
+      kt_type_person: "People",
+      kd_tab_foods: "Absorption",
+      kd_foods_kicker: "The second prong",
+      kd_foods_hl1: "You are not what you eat.",
+      kd_foods_hl2: "You are what you absorb.",
+      kd_foods_deck: "Getting all 90 essential nutrients is only half of Dr. Wallach\u2019s model. The other half \u2014 just as important \u2014 is removing the foods that keep your gut from absorbing them.",
+      kd_foods_stat_num: "115M",
+      kd_foods_stat_lead: "Americans are gluten-intolerant \u2014 about one in three.",
+      kd_foods_stat_cite: "Mayo Clinic study (2009), cited by Wallach \xB7 Epigenetics",
+      kd_foods_villi_title: "What gluten does to your gut",
+      kd_foods_villi_ok_title: "Healthy gut",
+      kd_foods_villi_ok_cap: "Tall, dense villi \u2014 a vast surface area that pulls nutrients in.",
+      kd_foods_villi_bad_title: "Gluten-damaged gut",
+      kd_foods_villi_bad_cap: "Flattened, blunted villi \u2014 nutrients slide past, unabsorbed.",
+      kd_foods_villi_note: "This is the second prong in one picture: gluten gradually wears down the villi that do the absorbing, so even a flawless 90-nutrient regimen underperforms until the gut heals.",
+      kd_foods_villi_cite: "Dr. Joel Wallach \xB7 Epigenetics (2014)",
+      kd_foods_words_label: "In his own words"
     }
   };
 
@@ -92934,6 +92956,116 @@ deaths, blood clots, sterility`,
     return `<div class="kd-explore">${groups}</div>`;
   }
 
+  // assets/data/foods-curation.json
+  var foods_curation_default = {
+    _purpose: "Foods & Absorption tab curation -- the SPECIAL curated persuasive landing (the home-page-curation philosophy: this surface is hand-tuned; every other tab is pure formula). Editorial UI config, NOT canonical health data and NOT a pillar projection -- no generator, no Wallach source-rule obligation. hero_claims are the sealed crown-jewel search-claim IDs that anchor the landing's two-pronged thesis (resolved against the search index at render; a missing id is skipped). The two-column REMOVE/EAT good-vs-bad-foods contrast will be added here as remove[]/eat[] topic-slug lists in a later chunk, each still opening its own book-cited topic page.",
+    hero_claims: [
+      "WAL-CLM-EPIGEN-000140",
+      "WAL-CLM-EPIGEN-000141",
+      "WAL-CLM-EPIGEN-000142"
+    ]
+  };
+
+  // assets/js/src/state/foods-curation.ts
+  var EMPTY5 = { hero_claims: [] };
+  var cached6 = null;
+  function data4() {
+    if (cached6 === null) {
+      const parsed = FoodsCurationSchema.safeParse(foods_curation_default);
+      cached6 = parsed.success ? parsed.data : EMPTY5;
+    }
+    return cached6;
+  }
+  function foodsThesisClaims() {
+    const out = [];
+    for (const id of data4().hero_claims) {
+      const c = getSearchClaim(id);
+      if (c !== null) {
+        out.push(c);
+      }
+    }
+    return out;
+  }
+
+  // assets/js/src/views/knowledge-foods.ts
+  function escHTML9(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function facetSections(claims) {
+    return SEARCH_FACETS.map((facet) => {
+      const inFacet = claims.filter((c) => c.facet === facet);
+      if (inFacet.length === 0) {
+        return "";
+      }
+      return `<details class="kd-ep-facet" data-facet="${escHTML9(facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML9(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
+      <div class="kd-ep-facet__body">${inFacet.map(renderSearchCard).join("")}</div>
+    </details>`;
+    }).join("");
+  }
+  function villus(cx, baseY, w, h) {
+    const top = baseY - h;
+    const r = w / 2;
+    return `M${cx - r} ${baseY} L${cx - r} ${top + r} Q${cx - r} ${top} ${cx} ${top} Q${cx + r} ${top} ${cx + r} ${top + r} L${cx + r} ${baseY} Z`;
+  }
+  function villiArt(healthy) {
+    const baseY = 106;
+    const n = 7;
+    const startX = 24;
+    const gap = 26;
+    const w = healthy ? 14 : 17;
+    const h = healthy ? 78 : 17;
+    let vs = "";
+    for (let i = 0; i < n; i += 1) {
+      vs += `<path class="kd-foods-villi__v" d="${villus(startX + i * gap, baseY, w, h)}" />`;
+    }
+    let dots = "";
+    for (let i = 0; i < 6; i += 1) {
+      const cx = startX + 13 + i * gap;
+      const cy = healthy ? 44 + i % 3 * 16 : 13 + i % 2 * 9;
+      dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${cy}" r="3.1" />`;
+    }
+    return `<svg class="kd-foods-villi__art" viewBox="0 0 200 116" role="img" aria-hidden="true"><line class="kd-foods-villi__wall" x1="8" y1="${baseY}" x2="192" y2="${baseY}" />${vs}${dots}</svg>`;
+  }
+  function renderFoodsTab() {
+    const thesis = foodsThesisClaims();
+    return `<div class="kt-page kd-ep kd-foods">
+    <header class="kd-foods-hero">
+      <span class="kd-foods-hero__kicker">${escHTML9(ui("kd_foods_kicker"))}</span>
+      <h1 class="kd-foods-hero__h"><span class="l1">${escHTML9(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML9(ui("kd_foods_hl2"))}</span></h1>
+      <p class="kd-foods-hero__deck">${escHTML9(ui("kd_foods_deck"))}</p>
+    </header>
+
+    <div class="kd-foods-stat">
+      <div class="kd-foods-stat__num">${escHTML9(ui("kd_foods_stat_num"))}</div>
+      <div class="kd-foods-stat__body">
+        <div class="kd-foods-stat__lead">${escHTML9(ui("kd_foods_stat_lead"))}</div>
+        <div class="kd-foods-stat__cite">${escHTML9(ui("kd_foods_stat_cite"))}</div>
+      </div>
+    </div>
+
+    <section class="kd-foods-villi">
+      <h2 class="kd-foods-villi__hd">${escHTML9(ui("kd_foods_villi_title"))}</h2>
+      <div class="kd-foods-villi__grid">
+        <div class="kd-foods-villi__panel kd-foods-villi__panel--ok">
+          <div class="kd-foods-villi__t">${escHTML9(ui("kd_foods_villi_ok_title"))}</div>
+          ${villiArt(true)}
+          <div class="kd-foods-villi__cap">${escHTML9(ui("kd_foods_villi_ok_cap"))}</div>
+        </div>
+        <div class="kd-foods-villi__panel kd-foods-villi__panel--bad">
+          <div class="kd-foods-villi__t">${escHTML9(ui("kd_foods_villi_bad_title"))}</div>
+          ${villiArt(false)}
+          <div class="kd-foods-villi__cap">${escHTML9(ui("kd_foods_villi_bad_cap"))}</div>
+        </div>
+      </div>
+      <p class="kd-foods-villi__note">${escHTML9(ui("kd_foods_villi_note"))}<cite>${escHTML9(ui("kd_foods_villi_cite"))}</cite></p>
+    </section>
+
+    <div class="kd-ep-seclabel">${escHTML9(ui("kd_foods_words_label"))}</div>
+    ${facetSections(thesis)}
+  </div>`;
+  }
+
   // assets/data/home-curation.json
   var home_curation_default = {
     _purpose: "Home-tab curated selections \u2014 the SPECIAL curated front-door surface (Luneth hand-picks; the home-page-curation philosophy). Editorial UI config, NOT canonical health data and NOT a pillar projection, so it lives here hand-authored (manifest 'accounted') rather than derived. Slugs are nav keys resolved against the search entity index at render; order here is free (the view sorts A-Z by display name). Explicitly temporary \u2014 may later flip to a top-N-by-claims formula.",
@@ -92956,19 +93088,19 @@ deaths, blood clots, sterility`,
   };
 
   // assets/js/src/state/home-curation.ts
-  var EMPTY5 = { explore_preview: [] };
-  var cached6 = null;
-  function data4() {
-    if (cached6 === null) {
+  var EMPTY6 = { explore_preview: [] };
+  var cached7 = null;
+  function data5() {
+    if (cached7 === null) {
       const parsed = HomeCurationSchema.safeParse(home_curation_default);
-      cached6 = parsed.success ? parsed.data : EMPTY5;
+      cached7 = parsed.success ? parsed.data : EMPTY6;
     }
-    return cached6;
+    return cached7;
   }
   function homeExploreTopics() {
     const bySlug = new Map(entityList().map((e) => [e.slug, e]));
     const out = [];
-    for (const slug of data4().explore_preview) {
+    for (const slug of data5().explore_preview) {
       const e = bySlug.get(slug);
       if (e !== void 0) {
         out.push(e);
@@ -92978,7 +93110,7 @@ deaths, blood clots, sterility`,
   }
 
   // assets/js/src/views/knowledge-home.ts
-  function escHTML9(s) {
+  function escHTML10(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function fmt(n) {
@@ -92997,42 +93129,42 @@ deaths, blood clots, sterility`,
       if (e === null) {
         return "";
       }
-      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML9(e.layout_key)}">${escHTML9(e.common_name)}</button>`;
+      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML10(e.layout_key)}">${escHTML10(e.common_name)}</button>`;
     }
-    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML9(h.slug)}">${escHTML9(conditionDisplayName(h.slug))}</button>`;
+    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML10(h.slug)}">${escHTML10(conditionDisplayName(h.slug))}</button>`;
   }
   var LEGEND_CATS = ["mineral", "vitamin", "amino_acid", "fatty_acid"];
   function shelfTile(e) {
     const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
     const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
-    return `<button class="sh-tile" data-cat="${escHTML9(e.category)}" data-kd-essential="${escHTML9(layoutKey)}" title="${escHTML9(e.name)}"><span class="sh-tile__sym">${escHTML9(glyph)}</span><span class="sh-tile__nm">${escHTML9(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, "claim")}</span></button>`;
+    return `<button class="sh-tile" data-cat="${escHTML10(e.category)}" data-kd-essential="${escHTML10(layoutKey)}" title="${escHTML10(e.name)}"><span class="sh-tile__sym">${escHTML10(glyph)}</span><span class="sh-tile__nm">${escHTML10(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, "claim")}</span></button>`;
   }
   function renderEssentialsShelf() {
     const top = listEssentialPages().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 18);
-    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML9(ui(`kh_legend_${cat}`))}</span>`).join("");
-    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML9(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML9(ui("kh_essentials_link"))}</a></div>
+    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML10(ui(`kh_legend_${cat}`))}</span>`).join("");
+    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML10(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML10(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML10(ui("kh_essentials_link"))}</a></div>
     <div class="sh-grid">${top.map(shelfTile).join("")}</div>
-    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML9(ui("kh_legend_label"))}</span>${legend}</div>`;
+    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML10(ui("kh_legend_label"))}</span>${legend}</div>`;
   }
   function condRow(c) {
-    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML9(c.slug)}"><span class="sh-condrow__nm">${escHTML9(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
+    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML10(c.slug)}"><span class="sh-condrow__nm">${escHTML10(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
   }
   function renderConditionsShelf() {
     const conds = listConditionPages();
     const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
     const link = ui("kh_conditions_link").replace("{n}", fmt(conds.length));
-    return `<div class="ep-seclabel">${escHTML9(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML9(link)}</a></div>
+    return `<div class="ep-seclabel">${escHTML10(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML10(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML10(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
   }
   function exploreChip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML9(e.slug)}">${escHTML9(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML10(e.slug)}">${escHTML10(e.display_name)}</button>`;
   }
   function renderExploreShelf() {
     const topics = homeExploreTopics();
     if (topics.length === 0) {
       return "";
     }
-    return `<div class="ep-seclabel">${escHTML9(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML9(ui("kh_explore_link"))}</a></div>
+    return `<div class="ep-seclabel">${escHTML10(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML10(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML10(ui("kh_explore_link"))}</a></div>
     <div class="kd-explore-cloud">${topics.map(exploreChip).join("")}</div>`;
   }
   function renderHomeTab() {
@@ -93041,11 +93173,11 @@ deaths, blood clots, sterility`,
     const hints = HINTS.map(hintChip).join("");
     return `<div class="kd-home">
     <section class="sh-hero">
-      <h1>${escHTML9(ui("kh_hero_headline"))}</h1>
-      <p>${escHTML9(sub).replace("{br}", "<br>")}</p>
+      <h1>${escHTML10(ui("kh_hero_headline"))}</h1>
+      <p>${escHTML10(sub).replace("{br}", "<br>")}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
-          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML9(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML10(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
           <div class="sh-search__results"></div>
         </div>
         <div class="sh-hero__hints">${hints}</div>
@@ -93089,12 +93221,12 @@ deaths, blood clots, sterility`,
     return a.name.localeCompare(b.name);
   }
   function resRow(m, active) {
-    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML9(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML9(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
+    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML10(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML10(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
   }
   function renderHomeSuggestions(query) {
     const matches = homeMatches(query);
     if (matches.length === 0) {
-      return `<div class="sh-res__empty">${escHTML9(ui("kh_search_empty"))}</div>`;
+      return `<div class="sh-res__empty">${escHTML10(ui("kh_search_empty"))}</div>`;
     }
     const shown = [
       ...matches.filter((m) => m.kind === "essential").sort(byRelevance),
@@ -93107,7 +93239,7 @@ deaths, blood clots, sterility`,
       if (rows.length === 0) {
         return;
       }
-      html += `<div class="sh-res__group">${escHTML9(label)}</div>`;
+      html += `<div class="sh-res__group">${escHTML10(label)}</div>`;
       for (const m of rows) {
         html += resRow(m, idx === 0);
         idx += 1;
@@ -93245,7 +93377,7 @@ deaths, blood clots, sterility`,
     }
     return "uncovered";
   }
-  function escHTML10(s) {
+  function escHTML11(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function renderEssentialDeep(key, snapshot) {
@@ -93262,16 +93394,16 @@ deaths, blood clots, sterility`,
   var COV_STATES = ["covered", "partial", "uncovered", "present"];
   function renderEssentialsTab(snapshot, selectedKey) {
     const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : "";
-    const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML10(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML10(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
+    const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML11(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML11(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
     const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
         const dot = dotState(statusOf(snapshot, e.key), e.symbol);
         const sel = e.key === selectedKey ? " is-selected" : "";
-        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML10(e.category)}" data-kd-essential="${escHTML10(e.key)}" title="${escHTML10(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML10(e.symbol)}</span><span class="sh-tile__nm">${escHTML10(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML10(plural(e.claimCount, "claim"))}</span></button>`;
+        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML11(e.category)}" data-kd-essential="${escHTML11(e.key)}" title="${escHTML11(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML11(e.symbol)}</span><span class="sh-tile__nm">${escHTML11(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML11(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
       const key = SEC_LABEL_KEY[group.label];
       const label = key !== void 0 ? ui(key) : group.label;
-      return `<div class="sh-subhead">${escHTML10(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
+      return `<div class="sh-subhead">${escHTML11(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${legendHTML}${groupsHTML}`;
   }
@@ -93279,6 +93411,8 @@ deaths, blood clots, sterility`,
     switch (tab) {
       case "home":
         return renderHomeTab();
+      case "foods":
+        return renderFoodsTab();
       case "essentials":
         return renderEssentialsTab(snapshot, selectedKey);
       case "conditions":
@@ -93294,16 +93428,17 @@ deaths, blood clots, sterility`,
     const productsCount = productCount();
     const tabs = [
       { id: "home", label: ui("kd_tab_home"), count: "" },
+      { id: "foods", label: ui("kd_tab_foods"), count: "" },
       { id: "essentials", label: ui("kd_tab_essentials"), count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
       { id: "conditions", label: ui("kd_tab_conditions"), count: `${listConditions().length} INDEXED` },
       { id: "explore", label: ui("kd_tab_explore"), count: `${exploreEntities().length} TOPICS` },
       { id: "products", label: ui("kd_tab_products"), count: `${productsCount} KNOWN` }
     ];
-    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML10(t.label)}</button>`).join("");
+    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML11(t.label)}</button>`).join("");
     return `
     <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="kd-knh">
-      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML10(ui("kd_mark"))}</b></div>
+      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML11(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
@@ -93317,6 +93452,7 @@ deaths, blood clots, sterility`,
   }
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
+    foods: ".kd-foods-topic",
     essentials: ".sh-tile",
     conditions: ".kd-condition-row",
     explore: ".kd-explore-chip",
@@ -94723,7 +94859,13 @@ Verified: corpus_seal final gate PASS; search_index_derive --check VALID; PYTHON
 
 \xA700.A + charged content: every verbatim is byte-exact from the sealed Epigenetics text (a "raw" book, so mined_pages_clean does not apply); no charged content anywhere. Discovery worth logging: the purest IAIYH dual-prong quote ("Absorption is essential and so avoiding the bad foods AND gluten (wheat, barley, rye, oats) is imperative to get maximum benefit") already lives inside sealed claim IAIYH-000004 \u2014 so it can be surfaced later by enrichment alone, no new mining.
 
-Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's ruling to NOT surface the GiG-branded flyer images), then bulk enrichment of the ~219 existing on-theme claims, then Phase 2 \u2014 the dedicated Foods & Absorption Knowledge tab (the live persuasive surface Luneth will judge live), then Part A (the persistent absorption caveat across coverage surfaces) and the Coverage-tab overhaul. Guardrail: persuade via one great surface + rare load-bearing pointers, never saturate (memory persuade-dont-shove-restraint).` }, { id: "lg_mrj3ad78_y2wkf7", ts: "2026-07-13T05:38:33.044791-05:00", surface: "knowledge", kind: "round-close", summary: "Mined + sealed 39 good/bad-foods claims from the books (re-articulated, no flyer images) across 10 new food topics; the diet stance is now peppered through the corpus + live in Explore. knowledge_version 327, board 62/62.", detail: "Mined and sealed Wallach's good-foods / bad-foods positions from his books, so the diet doctrine is now woven across the corpus rather than sitting in a couple of pages. A fan-out of 8 book-searchers drafted every distinct good/bad-food stance Wallach makes \u2014 re-articulated FROM THE BOOKS (not the third-party GiG-branded flyers, per Luneth's ruling) \u2014 I reviewed all 45 drafts for faithfulness, deduped to 39, and sealed them. The app now has faceted Explore pages for Cooking Oils & Fried Foods, Phytates & Oxalates, Sugar & Caffeine, Soft Drinks & Carbonation, Eggs, Salt, Meat, Dairy, Processed & Cured Meats, Cruciferous Vegetables & Goitrogens, and Water \u2014 each a colour-coded page of cited Wallach cards. Luneth authorized the seal and asked to close the session out.\n\nPipeline: the good-bad-foods-mine workflow (8 theme agents, each grepping + reading the 6 book texts and drafting near-exact verbatims with honest gap-flagging) -> a full 45-claim review digest -> consolidate_foods.py: dropped 3 exact/near-exact duplicates (same passage mined under two subjects), deferred 3 rare-earths quotes whose narrow-column OCR hyphenates mid-word (poly-\\n\\nunsaturated, defi-\\nciency), and folded thin subjects (oxalates->phytates, saturated_fat->cholesterol, caffeine->sugar, gluten-free-grains->gluten). corpus_extract finalize per book snapped every verbatim to exact book bytes; 5 initial snap-failures were fixed by scoping the verbatim to a clean sub-span past an OCR line-break hyphen (e.g. 'High intakes of vegetable oils ... quickest route to a heart attack and cancer.' ending before 'The polyun-saturated'). corpus_seal (user-authorized) promoted 39 claims at knowledge_version 326. wire_foods.py then added 10 new search entities and 39 enrichment rows (subject/facet/question/answer_short/topics), matching each plan entry to its sealed claim id by claim_text; build_embeds regenerated search-index.json.\n\nGate-driven corrections (the board caught real issues): (1) search_index_wellformed flagged IMMORT-000215 with facet 'definition' \u2014 that is a claim KIND, not one of the 13 facets; remapped to 'basics'. (2) claim_text_term_gloss (critical) flagged two claims using a bare 'ALS'; expanded both to 'ALS (Lou Gehrig's disease)' (matching the existing corpus convention) via mine_batch on DDDL-000102 + EPIGEN-000154, then RESEALED at knowledge_version 327. (3) jargon_terms_glossed flagged 'goiterogenic' (Wallach's spelling in a byte-faithful quote); added it as an alias of the existing glossary 'goitrogenic' entry rather than a new entry. Also, the 5 dual-home tier-1 claims (mapping achlorhydria / fibromyalgia / biotin / B12 / hypothyroidism into the operational tabs) were trimmed to only the conditions their verbatim actually names, to stay clear of verbatim_names_mapped_conditions.\n\nVerified: corpus_verify PASS (1301 claims); search_index_derive --check VALID; invariants 62/62; render_probe_knowledge PASS (Explore now 53 chips, 0 page errors); screenshot-verified the Cooking Oils & Fried Foods page (6 cards across amber WARNINGS + blue HOW-IT-WORKS facets, all book-cited, cross-links to Cholesterol/Selenium/Vitamin-E/Processed-Meats). Every claim is byte-cited from the sealed books; no charged content; no fabricated numbers.\n\nDeferrals: 3 rare-earths quotes (eggs-for-menopause, the anti-cholesterol 'paranoia' quote, the See-Food 'killers' no-oils list) will be recaptured during the rare-earths source-purification pass, since that book's narrow two-column layout hyphenates words across line breaks. OCR artifacts remain in a few raw-book verbatims (B,, for B12, 'essential pd', 'sugarin') \u2014 the primary reader-facing text (claim_text/answer_short) is clean; the verbatim blemishes are flagged for the purification pass. NEXT: build the dedicated Foods & Absorption tab (Part B \u2014 the live persuasive surface Luneth will judge live), bulk-enrich the ~180 remaining on-theme claims into these entities, then Part A (the persistent absorption caveat across coverage surfaces, governed by persuade-dont-shove restraint) and the Coverage-tab overhaul." }];
+Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's ruling to NOT surface the GiG-branded flyer images), then bulk enrichment of the ~219 existing on-theme claims, then Phase 2 \u2014 the dedicated Foods & Absorption Knowledge tab (the live persuasive surface Luneth will judge live), then Part A (the persistent absorption caveat across coverage surfaces) and the Coverage-tab overhaul. Guardrail: persuade via one great surface + rare load-bearing pointers, never saturate (memory persuade-dont-shove-restraint).` }, { id: "lg_mrj3ad78_y2wkf7", ts: "2026-07-13T05:38:33.044791-05:00", surface: "knowledge", kind: "round-close", summary: "Mined + sealed 39 good/bad-foods claims from the books (re-articulated, no flyer images) across 10 new food topics; the diet stance is now peppered through the corpus + live in Explore. knowledge_version 327, board 62/62.", detail: "Mined and sealed Wallach's good-foods / bad-foods positions from his books, so the diet doctrine is now woven across the corpus rather than sitting in a couple of pages. A fan-out of 8 book-searchers drafted every distinct good/bad-food stance Wallach makes \u2014 re-articulated FROM THE BOOKS (not the third-party GiG-branded flyers, per Luneth's ruling) \u2014 I reviewed all 45 drafts for faithfulness, deduped to 39, and sealed them. The app now has faceted Explore pages for Cooking Oils & Fried Foods, Phytates & Oxalates, Sugar & Caffeine, Soft Drinks & Carbonation, Eggs, Salt, Meat, Dairy, Processed & Cured Meats, Cruciferous Vegetables & Goitrogens, and Water \u2014 each a colour-coded page of cited Wallach cards. Luneth authorized the seal and asked to close the session out.\n\nPipeline: the good-bad-foods-mine workflow (8 theme agents, each grepping + reading the 6 book texts and drafting near-exact verbatims with honest gap-flagging) -> a full 45-claim review digest -> consolidate_foods.py: dropped 3 exact/near-exact duplicates (same passage mined under two subjects), deferred 3 rare-earths quotes whose narrow-column OCR hyphenates mid-word (poly-\\n\\nunsaturated, defi-\\nciency), and folded thin subjects (oxalates->phytates, saturated_fat->cholesterol, caffeine->sugar, gluten-free-grains->gluten). corpus_extract finalize per book snapped every verbatim to exact book bytes; 5 initial snap-failures were fixed by scoping the verbatim to a clean sub-span past an OCR line-break hyphen (e.g. 'High intakes of vegetable oils ... quickest route to a heart attack and cancer.' ending before 'The polyun-saturated'). corpus_seal (user-authorized) promoted 39 claims at knowledge_version 326. wire_foods.py then added 10 new search entities and 39 enrichment rows (subject/facet/question/answer_short/topics), matching each plan entry to its sealed claim id by claim_text; build_embeds regenerated search-index.json.\n\nGate-driven corrections (the board caught real issues): (1) search_index_wellformed flagged IMMORT-000215 with facet 'definition' \u2014 that is a claim KIND, not one of the 13 facets; remapped to 'basics'. (2) claim_text_term_gloss (critical) flagged two claims using a bare 'ALS'; expanded both to 'ALS (Lou Gehrig's disease)' (matching the existing corpus convention) via mine_batch on DDDL-000102 + EPIGEN-000154, then RESEALED at knowledge_version 327. (3) jargon_terms_glossed flagged 'goiterogenic' (Wallach's spelling in a byte-faithful quote); added it as an alias of the existing glossary 'goitrogenic' entry rather than a new entry. Also, the 5 dual-home tier-1 claims (mapping achlorhydria / fibromyalgia / biotin / B12 / hypothyroidism into the operational tabs) were trimmed to only the conditions their verbatim actually names, to stay clear of verbatim_names_mapped_conditions.\n\nVerified: corpus_verify PASS (1301 claims); search_index_derive --check VALID; invariants 62/62; render_probe_knowledge PASS (Explore now 53 chips, 0 page errors); screenshot-verified the Cooking Oils & Fried Foods page (6 cards across amber WARNINGS + blue HOW-IT-WORKS facets, all book-cited, cross-links to Cholesterol/Selenium/Vitamin-E/Processed-Meats). Every claim is byte-cited from the sealed books; no charged content; no fabricated numbers.\n\nDeferrals: 3 rare-earths quotes (eggs-for-menopause, the anti-cholesterol 'paranoia' quote, the See-Food 'killers' no-oils list) will be recaptured during the rare-earths source-purification pass, since that book's narrow two-column layout hyphenates words across line breaks. OCR artifacts remain in a few raw-book verbatims (B,, for B12, 'essential pd', 'sugarin') \u2014 the primary reader-facing text (claim_text/answer_short) is clean; the verbatim blemishes are flagged for the purification pass. NEXT: build the dedicated Foods & Absorption tab (Part B \u2014 the live persuasive surface Luneth will judge live), bulk-enrich the ~180 remaining on-theme claims into these entities, then Part A (the persistent absorption caveat across coverage surfaces, governed by persuade-dont-shove restraint) and the Coverage-tab overhaul." }, { id: "lg_mrj7afec_enlr30", ts: "2026-07-13T07:30:34.356122-05:00", surface: "knowledge", kind: "round-close", summary: `Built the Absorption tab \u2014 Wallach's diet/absorption "second prong" as a special, persuasive Knowledge surface (editorial hero + 115M stat + healthy-vs-damaged villi diagram + his own words). Built calm first, rebuilt richer; Luneth signed off.`, detail: `Wallach's model has two inseparable halves: get all 90 essential nutrients, AND remove the foods (above all gluten) that stop your gut from absorbing them. The app tracked the first half exhaustively and never surfaced the second \u2014 a lifelong follower couldn't tell if it even knew. This ships the fix: a dedicated, deliberately beautiful "Absorption" tab in the Knowledge drawer that makes the second prong impossible to miss.
+
+New 6th Knowledge sub-tab (id "foods", label "Absorption", 2nd in the strip), a curated persuasive landing built as a pure projection (R1). New files: dashboard/assets/data/foods-curation.json (editorial curation config; hero_claims = the 3 sealed crown-jewel search claims EPIGEN-000140 mantra / -000141 Mayo-115M prevalence / -000142 two-prong fix; registered hand_authored in eden/derived/MANIFEST.json, data_artifacts_accounted now 23) + core/schemas/foods-curation.ts (Zod) + state/foods-curation.ts (resolves hero_claims via getSearchClaim, graceful-empty) + views/knowledge-foods.ts. renderFoodsTab: an editorial hero (two-line Playfair display headline, accent-italic line 2, serif deck) -> a dark ink stat panel (oversized accent 115M, sourced to EPIGEN-000141) -> an SVG villi figure (two panels, healthy tall dense villi vs gluten-flattened stubs + drifting nutrient dots, generated parametrically) -> the 3 crown jewels via the shared renderSearchCard grouped by facet. Wiring in views/knowledge.ts (Tab union + renderTab case + tabs[] + KD_SEARCH_ITEM_SELECTOR). New .kd-foods-* rules in drawer-knowledge.css (hero/stat/villi; SVG fill/stroke via CSS classes because var() does not resolve in SVG presentation attributes). Framing prose in view-copy.json ui block (contained, R4).
+
+Iteration (the visual-verification loop working): chunk 1 was a calm/consistent scaffold; Luneth judged it too plain and "missable"; chunk 2 rebuilt it into this editorial+illustrated design and he signed off ("MUCH MUCH better", 2026-07-13). Probe render_probe_knowledge.js: tab-count 5->6 (label "Absorption", shortened from "Foods & Absorption" which overflowed the strip) + a Foods block asserting hero headline + deck + stat + 2 villi figures + 3 facet-grouped Wallach-cited cards. Verified: build green (tsc --noEmit + esbuild), invariants 62/62 (views_no_inline_prose + prose_contained clean), render probe PASS, PAGE_ERRORS 0, collapsed+expanded screenshots reviewed.
+
+Deferred (queued, not lost): chunk 3 = the REMOVE<->EAT good/bad-foods contrast (same editorial language; the good/bad classification grounded per-claim, ambiguous ones \u2014 dairy/salt/cruciferous/water \u2014 surfaced to Luneth, not guessed); the poached-eggs EPIGEN-000155 missing-outcome fix batched into a diet-vein outcome-audit reseal (rule: state-the-outcome-when-known); Part A = the cross-app absorption caveat (restraint: one great surface + rare load-bearing pointers); the Coverage-tab overhaul.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -94759,7 +94901,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML11(s) {
+  function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -94805,15 +94947,15 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML11(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML12(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML11(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML12(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML11(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML11(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML11(kindLabel2(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML12(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML12(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML12(kindLabel2(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML11(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML12(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -94887,9 +95029,9 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML11(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML11(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML11(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML12(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML12(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML12(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -95034,7 +95176,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML12(s) {
+  function escHTML13(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -95064,7 +95206,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML12(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML13(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -95075,13 +95217,13 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML12(slot.id)}" data-slot-num="${escHTML12(slot.num)}">
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML13(slot.id)}" data-slot-num="${escHTML13(slot.num)}">
       ${scanLine}
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML12(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML12(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML12(slot.name)}</h3>
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML13(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML13(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML13(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML12(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML13(slot.stamp)}</div>
     </article>
   `;
   }
@@ -95118,9 +95260,9 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML12(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML13(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML12(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML13(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -95183,13 +95325,13 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML12(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML12(item.heat)}"><span class="rec-item__tag-sign">${escHTML12(sign)}</span>${escHTML12(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML13(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML13(item.heat)}"><span class="rec-item__tag-sign">${escHTML13(sign)}</span>${escHTML13(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML12(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML13(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML12(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML12(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML13(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML13(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -95392,7 +95534,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML12(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML13(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -95484,7 +95626,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML13(s) {
+  function escHTML14(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -95529,19 +95671,19 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML13(n.name)}</span>
-      <span>${escHTML13(n.amount ?? "")}${escHTML13(n.unit ?? "")}</span>
+      <span>${escHTML14(n.name)}</span>
+      <span>${escHTML14(n.amount ?? "")}${escHTML14(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML13(brand)}</div>
-        <div class="scan-label__product">${escHTML13(product)}</div>
+        <div class="scan-label__brand">${escHTML14(brand)}</div>
+        <div class="scan-label__product">${escHTML14(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML13(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML14(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -95561,7 +95703,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML13(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML14(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -95623,9 +95765,9 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML13(s.name)}</div>
-        <div class="stage__sub">${escHTML13(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML13(s.ms)}</span>` : escHTML13(s.ms)}</div>
+        <div class="stage__name">${escHTML14(s.name)}</div>
+        <div class="stage__sub">${escHTML14(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML14(s.ms)}</span>` : escHTML14(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -95637,7 +95779,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML13(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML14(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -95648,17 +95790,17 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML13(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML14(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML13(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML13(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML14(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML14(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML13(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML13(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML13(row.tag.heat)}">${tagSignHTML}${escHTML13(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML14(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML14(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML14(row.tag.heat)}">${tagSignHTML}${escHTML14(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -95764,10 +95906,10 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML13(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML13(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML14(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML14(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML13(verdictText)}</span>
+      <span class="${pillClass}">${escHTML14(verdictText)}</span>
     </div>
   `;
   }
@@ -95983,7 +96125,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   }
 
   // assets/js/src/views/search.ts
-  function escHTML14(s) {
+  function escHTML15(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -96002,14 +96144,14 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML14(e.symbol);
+      return escHTML15(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML14(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML15(e.display_name.charAt(0));
   }
   function renderPill(slug) {
-    const name = escHTML14(displayName(slug));
+    const name = escHTML15(displayName(slug));
     if (getEntity(slug) !== null) {
-      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML14(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="sr-pill" title="Related to this">${name}</span>`;
   }
@@ -96042,7 +96184,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     if (claim.topics.length === 0) {
       return "";
     }
-    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML14(t)}</span>`).join("");
+    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML15(t)}</span>`).join("");
     return `<div class="sr-claim__tags">${tags}</div>`;
   }
   function renderAnswer(claim) {
@@ -96051,28 +96193,28 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
       const i = claim.answer.indexOf(xref.phrase);
       const before = claim.answer.slice(0, i);
       const after = claim.answer.slice(i + xref.phrase.length);
-      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML14(xref.target)}" title="Jump to the full answer">${escHTML14(xref.phrase)}</button>`;
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML15(xref.target)}" title="Jump to the full answer">${escHTML15(xref.phrase)}</button>`;
       return glossify(before) + link + glossify(after);
     }
     return glossify(claim.answer);
   }
   function claimDetail(claim) {
     return `
-      <div class="sr-claim__short">${escHTML14(claim.answer_short)}</div>
+      <div class="sr-claim__short">${escHTML15(claim.answer_short)}</div>
       <div class="sr-claim__answer">${renderAnswer(claim)}</div>
       <blockquote class="sr-claim__verbatim">\u201C${glossify(oneLine(claim.verbatim))}\u201D</blockquote>
-      <div class="sr-claim__cite">${escHTML14(composeCite(claim))}</div>
+      <div class="sr-claim__cite">${escHTML15(composeCite(claim))}</div>
       ${renderClaimRelated(claim)}
       ${topicTags(claim)}`;
   }
   function renderClaimRow(claim) {
     return `
-    <details class="sr-claim" data-sr-claim="${escHTML14(claim.id)}">
+    <details class="sr-claim" data-sr-claim="${escHTML15(claim.id)}">
       <summary class="sr-claim__summary">
         <span class="sr-claim__badge">?</span>
         <span class="sr-claim__qblock">
-          <span class="sr-claim__q">${escHTML14(claim.question)}</span>
-          <span class="sr-claim__preview">${escHTML14(claim.answer_short)}</span>
+          <span class="sr-claim__q">${escHTML15(claim.question)}</span>
+          <span class="sr-claim__preview">${escHTML15(claim.answer_short)}</span>
         </span>
         <span class="sr-claim__chev">\u203A</span>
       </summary>
@@ -96082,9 +96224,9 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
   function renderFacet(group) {
     const rows = group.claims.map(renderClaimRow).join("");
     return `
-    <details class="sr-facet" data-facet="${escHTML14(group.facet)}" open>
+    <details class="sr-facet" data-facet="${escHTML15(group.facet)}" open>
       <summary class="sr-facet__head">
-        <span class="sr-facet__label">${escHTML14(group.label)}</span>
+        <span class="sr-facet__label">${escHTML15(group.label)}</span>
         <span class="sr-facet__count">${group.claims.length}</span>
       </summary>
       <div class="sr-facet__body">${rows}</div>
@@ -96109,11 +96251,11 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
       return '<div class="sr-empty">\u2014 no entities in the index yet \u2014</div>';
     }
     const card = (e) => `
-    <button class="sr-ent-card" data-sr-entity="${escHTML14(e.slug)}">
+    <button class="sr-ent-card" data-sr-entity="${escHTML15(e.slug)}">
       <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
       <span class="sr-ent-card__idblock">
-        <span class="sr-ent-card__name">${escHTML14(e.display_name)}</span>
-        <span class="sr-ent-card__meta">${escHTML14(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
+        <span class="sr-ent-card__name">${escHTML15(e.display_name)}</span>
+        <span class="sr-ent-card__meta">${escHTML15(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
       </span>
       <span class="sr-ent-card__chev">\u203A</span>
     </button>`;
@@ -96131,7 +96273,7 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     if (e === null || groups.length === 0) {
       return '<div class="sr-empty">\u2014 nothing to show for this entity yet \u2014</div>';
     }
-    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML14).join(", ")}` : "";
+    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML15).join(", ")}` : "";
     const facetsHTML = groups.map(renderFacet).join("");
     return `
     <div class="sr-entity">
@@ -96139,8 +96281,8 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
         <button class="sr-entity__back" data-sr-action="back" title="Back">\u2039 BACK</button>
         <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
         <div class="sr-entity__idblock">
-          <h3 class="sr-entity__name">${escHTML14(e.display_name)}</h3>
-          <div class="sr-entity__meta">${escHTML14(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML14(synLine)}</div>
+          <h3 class="sr-entity__name">${escHTML15(e.display_name)}</h3>
+          <div class="sr-entity__meta">${escHTML15(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML15(synLine)}</div>
         </div>
       </header>
       <div class="sr-facets">${facetsHTML}</div>
@@ -96151,9 +96293,9 @@ Next: the good-foods/bad-foods mine (re-articulated from the books per Luneth's 
     return `
     <div class="sr-ask">
       <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
-      <div class="sr-ask__q">${escHTML14(claim.question)}</div>
+      <div class="sr-ask__q">${escHTML15(claim.question)}</div>
       <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-entity="${escHTML14(claim.subject)}">MORE ON ${escHTML14(displayName(claim.subject).toUpperCase())} \u2192</button>
+      <button class="sr-ask__more" data-sr-entity="${escHTML15(claim.subject)}">MORE ON ${escHTML15(displayName(claim.subject).toUpperCase())} \u2192</button>
     </div>`;
   }
   function renderBody(result) {

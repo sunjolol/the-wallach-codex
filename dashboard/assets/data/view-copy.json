@@ -111,6 +111,22 @@
     "kt_type_concept": "Big concepts",
     "kt_type_element": "Elements",
     "kt_type_substance": "Substances",
-    "kt_type_person": "People"
+    "kt_type_person": "People",
+    "kd_tab_foods": "Absorption",
+    "kd_foods_kicker": "The second prong",
+    "kd_foods_hl1": "You are not what you eat.",
+    "kd_foods_hl2": "You are what you absorb.",
+    "kd_foods_deck": "Getting all 90 essential nutrients is only half of Dr. Wallach’s model. The other half — just as important — is removing the foods that keep your gut from absorbing them.",
+    "kd_foods_stat_num": "115M",
+    "kd_foods_stat_lead": "Americans are gluten-intolerant — about one in three.",
+    "kd_foods_stat_cite": "Mayo Clinic study (2009), cited by Wallach · Epigenetics",
+    "kd_foods_villi_title": "What gluten does to your gut",
+    "kd_foods_villi_ok_title": "Healthy gut",
+    "kd_foods_villi_ok_cap": "Tall, dense villi — a vast surface area that pulls nutrients in.",
+    "kd_foods_villi_bad_title": "Gluten-damaged gut",
+    "kd_foods_villi_bad_cap": "Flattened, blunted villi — nutrients slide past, unabsorbed.",
+    "kd_foods_villi_note": "This is the second prong in one picture: gluten gradually wears down the villi that do the absorbing, so even a flawless 90-nutrient regimen underperforms until the gut heals.",
+    "kd_foods_villi_cite": "Dr. Joel Wallach · Epigenetics (2014)",
+    "kd_foods_words_label": "In his own words"
   }
 }

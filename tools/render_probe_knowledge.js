@@ -80,6 +80,29 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 2e. Foods & Absorption tab -- the curated "second prong" landing: a hero with the
+  //     mantra lede + the two-pronged thesis rendered as the three sealed crown-jewel
+  //     claim cards, facet-grouped (basics teal, protocol green) and Wallach-cited.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="foods"]')?.click());
+  await wait(300);
+  const foods = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const pageEl = root ? root.querySelector('.kd-foods') : null;
+    const cards = pageEl ? [...pageEl.querySelectorAll('.kd-ep-claim')] : [];
+    const cites = cards.map(c => c.querySelector('.kd-ep-claim__cite')?.textContent || '');
+    return {
+      shown: pageEl !== null,
+      headlineLen: pageEl ? (pageEl.querySelector('.kd-foods-hero__h')?.textContent || '').length : 0,
+      hasDeck: pageEl ? (pageEl.querySelector('.kd-foods-hero__deck')?.textContent || '').length > 0 : false,
+      hasStat: pageEl ? pageEl.querySelector('.kd-foods-stat__num') !== null : false,
+      villiArts: pageEl ? pageEl.querySelectorAll('.kd-foods-villi__art').length : 0,
+      villiFingers: pageEl ? pageEl.querySelectorAll('.kd-foods-villi__v').length : 0,
+      facets: pageEl ? pageEl.querySelectorAll('.kd-ep-facet').length : 0,
+      cards: cards.length,
+      allCited: cards.length > 0 && cites.every(c => /EPIGENETICS|DEAD DOCTORS|RARE EARTHS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(c)),
+    };
+  });
+
   // 3. Switch to the Products tab; list ALL products (no 30 cap), each clickable.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="products"]')?.click());
   await wait(300);
@@ -363,14 +386,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, tabBar, homeConds, homeExplore, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic };
+  const out = { boot, afterClick, tabBar, homeConds, homeExplore, foods, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
   const checks = [
     ['drawer closed at boot', boot.open === false],
     ['rail K opens drawer', afterClick.open === true && afterClick.hasHead === true],
-    ['tab bar: exactly the 5 vision tabs', tabBar.tabs.length === 5 && ['Home','Essentials','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t))],
+    ['tab bar: exactly the 6 tabs incl. Absorption', tabBar.tabs.length === 6 && ['Home','Absorption','Essentials','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t))],
     ['tab bar: Corpus + Doctrine removed', !tabBar.tabs.includes('Corpus') && !tabBar.tabs.includes('Doctrine')],
     ['tab bar: Home is the default active tab', tabBar.active === 'Home'],
     ['home: tab renders its container', tabBar.homeShown === true],
@@ -417,6 +440,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['explore: type-grouped chips render (Mercury present)', explore.groups >= 4 && explore.chips >= 30 && explore.hasMercury === true],
     ['explore: a chip opens the faceted topic page (Mercury, 5+ facets, 8+ cards)', topic.shown === true && topic.title === 'Mercury' && topic.facets >= 5 && topic.cards >= 8],
     ['topic page: hero lede + Wallach-cited claim cards', topic.hasLede === true && topic.hasCite === true],
+    ['foods: rich landing renders (hero headline + deck + stat + 2 villi figures)', foods.shown === true && foods.headlineLen > 12 && foods.hasDeck === true && foods.hasStat === true && foods.villiArts === 2 && foods.villiFingers >= 12],
+    ['foods: two-pronged thesis = 3 crown-jewel cards, facet-grouped + Wallach-cited', foods.cards === 3 && foods.facets >= 2 && foods.allCited === true],
     ['no page errors', errs.length === 0],
   ];
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);

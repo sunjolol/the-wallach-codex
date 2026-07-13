@@ -45,6 +45,7 @@ import { listEssentialPages } from '../state/entity-page.js';
 import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
 import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
+import { renderFoodsTab } from './knowledge-foods.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
 import { productCount, renderProductsTab } from './knowledge-products.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
@@ -56,7 +57,7 @@ export interface DrawerHandle {
   isOpen: () => boolean;
 }
 
-type Tab = 'home' | 'essentials' | 'conditions' | 'explore' | 'products';
+type Tab = 'home' | 'foods' | 'essentials' | 'conditions' | 'explore' | 'products';
 
 // ─── Essentials layout (shared with the Coverage periodic table) ───────────
 
@@ -230,6 +231,7 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
 function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
   switch (tab) {
     case 'home': return renderHomeTab();
+    case 'foods': return renderFoodsTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return renderConditionsTab(selectedCondition);
     case 'explore': return renderExploreTab(selectedTopic);
@@ -242,6 +244,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
   const productsCount = productCount();
   const tabs = [
     { id: 'home' as Tab, label: ui('kd_tab_home'), count: '' },
+    { id: 'foods' as Tab, label: ui('kd_tab_foods'), count: '' },
     { id: 'essentials' as Tab, label: ui('kd_tab_essentials'), count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
     { id: 'conditions' as Tab, label: ui('kd_tab_conditions'), count: `${listConditions().length} INDEXED` },
     { id: 'explore' as Tab, label: ui('kd_tab_explore'), count: `${exploreEntities().length} TOPICS` },
@@ -276,6 +279,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
  */
 const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
   home: '.kd-home',
+  foods: '.kd-foods-topic',
   essentials: '.sh-tile',
   conditions: '.kd-condition-row',
   explore: '.kd-explore-chip',
