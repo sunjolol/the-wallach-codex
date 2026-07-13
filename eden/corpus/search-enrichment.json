@@ -2701,6 +2701,51 @@
         "asthma",
         "essential-fatty-acids"
       ]
+    },
+    "WAL-CLM-EPIGEN-000140": {
+      "subject": "absorption",
+      "also_about": [
+        "gluten",
+        "hypochlorhydria"
+      ],
+      "facet": "basics",
+      "question": "Is it what you eat, or what you absorb?",
+      "answer_short": "Wallach flips the old adage: your health isn't decided by what you eat but by what you actually absorb — the cornerstone of his two-pronged model (supply the 90, and fix the gut so they get in).",
+      "topics": [
+        "you-are-what-you-absorb",
+        "mantra",
+        "two-prong"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000141": {
+      "subject": "gluten",
+      "also_about": [
+        "celiac_disease"
+      ],
+      "facet": "basics",
+      "question": "How common is gluten intolerance?",
+      "answer_short": "About a third of Americans — some 115 million people — are gluten intolerant per a 2009 Mayo Clinic study Wallach cites, and far more in high-grain communities.",
+      "topics": [
+        "gluten-intolerance",
+        "prevalence",
+        "mayo-clinic"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000142": {
+      "subject": "gluten",
+      "also_about": [
+        "absorption",
+        "essential_nutrients"
+      ],
+      "facet": "protocol",
+      "question": "If gluten damaged my gut, what's the fix?",
+      "answer_short": "Two prongs together: go fully gluten-free AND supply the 90 essential nutrients (plus therapeutic doses of what you're most short on). Wallach says the combination resolves many chronic problems.",
+      "topics": [
+        "gluten-free",
+        "the-90",
+        "two-prong",
+        "gut-repair"
+      ]
     }
   }
 }
