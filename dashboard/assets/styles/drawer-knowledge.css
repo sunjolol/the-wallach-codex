@@ -1620,10 +1620,12 @@
 #drawer-knowledge-mount .sh-subhead:first-of-type{ margin-top:var(--ds-space-2); }
 #drawer-knowledge-mount .sh-grid--wide{ grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); }
 #drawer-knowledge-mount .sh-tile.is-selected{ border-color:var(--ds-accent); box-shadow:0 0 0 1px var(--ds-accent), 0 4px 12px -3px rgba(255, 126, 60, 0.28); }
-#drawer-knowledge-mount .kd-cov-dot{ width:9px; height:9px; border-radius:50%; display:inline-block; flex:0 0 auto; }
+#drawer-knowledge-mount .kd-cov-dot{ width:6px; height:6px; border-radius:50%; box-sizing:border-box; display:inline-block; flex:0 0 auto; }
 #drawer-knowledge-mount .sh-tile > .kd-cov-dot{ position:absolute; top:5px; right:5px; }
 #drawer-knowledge-mount .kd-cov-dot--covered{ background:var(--ds-status-ok); }
 #drawer-knowledge-mount .kd-cov-dot--partial{ background:var(--ds-status-warn); }
 #drawer-knowledge-mount .kd-cov-dot--uncovered{ background:var(--ds-status-err); }
 #drawer-knowledge-mount .kd-cov-dot--present{ background:transparent; border:1.5px solid var(--ds-status-info, var(--ds-tech)); }
 #drawer-knowledge-mount .kd-cov-legend{ margin:0 0 var(--ds-space-3); padding-top:0; border-top:none; }
+/* Legend dots sit ~1px low when centered to the text line-box; nudge up onto the uppercase cap-height center. */
+#drawer-knowledge-mount .kd-cov-legend .kd-cov-dot{ position:relative; top:-1px; }
