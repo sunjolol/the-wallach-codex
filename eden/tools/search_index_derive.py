@@ -136,6 +136,12 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
                 errs.append(f'registry {slug!r}: catalog_ref must OMIT display_name (pulled from conditions)')
         if r.get('canon_ref') and r.get('catalog_ref'):
             errs.append(f'registry {slug!r}: cannot be both canon_ref and catalog_ref')
+        ic = r.get('intro_claim')
+        if ic is not None:
+            if ic not in enr:
+                errs.append(f'registry {slug!r}: intro_claim {ic!r} is not an enriched claim')
+            elif enr[ic].get('subject') != slug:
+                errs.append(f'registry {slug!r}: intro_claim {ic!r} is on a different subject (must be this entity\'s own claim)')
     return errs
 
 
@@ -171,6 +177,11 @@ def _entity_record(slug, reg, canon, cond_names, count):
     }
     if r.get('symbol'):
         rec['symbol'] = r['symbol']
+    # Optional hand-picked lede claim: names the claim whose answer_short is this entity page's
+    # "at a glance" intro when the facet-priority default is not the best overview (validated in
+    # validate() to be this entity's OWN enriched claim). Read by state/search.ts::entityLede.
+    if r.get('intro_claim'):
+        rec['intro_claim'] = r['intro_claim']
     return rec
 
 

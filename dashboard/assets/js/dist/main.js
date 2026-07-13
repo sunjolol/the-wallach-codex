@@ -14272,6 +14272,38 @@
       "etymology"
     ]
   };
+  var INTRO_ORDER_DEFAULT = [
+    "basics",
+    "stance",
+    "uses",
+    "mechanism",
+    "physiology",
+    "sources",
+    "discovery",
+    "etymology",
+    "history",
+    "protocol",
+    "big_question",
+    "biography",
+    "warning"
+  ];
+  var INTRO_ORDER_BY_TYPE = {
+    person: [
+      "basics",
+      "biography",
+      "history",
+      "stance",
+      "discovery",
+      "uses",
+      "mechanism",
+      "physiology",
+      "sources",
+      "protocol",
+      "big_question",
+      "etymology",
+      "warning"
+    ]
+  };
   var Tier1LinkSchema = external_exports.object({
     essentials: external_exports.array(external_exports.string()).optional(),
     conditions: external_exports.array(external_exports.string()).optional(),
@@ -14318,7 +14350,10 @@
     synonyms: external_exports.array(external_exports.string()),
     related: external_exports.array(external_exports.string()),
     /** Derived count of claims whose subject is this entity (index-time, for the header readout). */
-    claim_count: external_exports.number()
+    claim_count: external_exports.number(),
+    /** Optional hand-picked lede claim id — the entity page's "at a glance" intro when the facet-priority
+     *  default is not the best overview (state/search::entityLede); derive-validated to be this entity's own claim. */
+    intro_claim: external_exports.string().optional()
   }).passthrough();
   var SearchIndexSchema = external_exports.object({
     books: external_exports.record(external_exports.string(), SearchBookMetaSchema),
@@ -17925,6 +17960,7 @@
       kt_kicker: "Explore",
       kt_related: "Related",
       kt_back: "\u2039 All topics",
+      kt_back_generic: "\u2039 Go back",
       kt_meta: "{n} sourced {noun}",
       kt_meta_full: "{n} sourced {noun} \xB7 from {books}",
       kt_type_topic: "Therapies & ideas",
@@ -50976,7 +51012,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "menopause",
           "macronutrients"
         ],
-        claim_count: 5
+        claim_count: 5,
+        intro_claim: "WAL-CLM-EPIGEN-000151"
       },
       chromium: {
         display_name: "Chromium",
@@ -51765,7 +51802,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "poultry",
           "fish"
         ],
-        claim_count: 9
+        claim_count: 9,
+        intro_claim: "WAL-CLM-IMMORT-000229"
       },
       potassium: {
         display_name: "Potassium",
@@ -53258,7 +53296,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         also_about: [],
         facet: "physiology",
         question: "Does Wallach consider cholesterol essential, and what happens if you're deficient?",
-        answer_short: "Yes \u2014 he treats cholesterol as essential and ties a deficiency to Alzheimer's, type-2 diabetes, erectile dysfunction, low-T, miserable menopause and adrenal exhaustion.",
+        answer_short: "Wallach treats cholesterol as vital, and argues its deficiency produces specific disease states \u2014 among them Alzheimer's disease, type 2 diabetes, erectile dysfunction, low testosterone, menopause symptoms and adrenal exhaustion.",
         answer: "In his essential-nutrient tables Wallach lists cholesterol alongside the three essential fatty acids and, though it isn't classed as a 'classic' essential nutrient, argues its deficiency produces specific disease states \u2014 among them Alzheimer's disease, type 2 diabetes, erectile dysfunction, low testosterone, menopause symptoms and adrenal exhaustion.",
         verbatim: "Cholesterol?\nwhile not generally considered a classic essential pd, its deficiency does result in disease states (e..,\nAlzheimer\u2019s disease, type 2 diabetes, erectile dysfunction, low-T, menopause, adrenal exhaustion, etc)",
         page: 600,
@@ -53906,7 +53944,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         facet: "stance",
         question: "Does Dr. Wallach think beef and red meat are good for you?",
-        answer_short: "Yes. He calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
+        answer_short: "Wallach calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
         answer: "Wallach calls red meat an unequaled source of animal protein and essential lipids; the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
         verbatim: "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines. Medium rare and me- \ndium are the safe way to eat beef. Steak Tartar is a half pound of raw, \nfreshly ground sirloin, served with chopped onions, pepper corns \nand topped with a raw egg - it doesn\u2019t get any better than this!",
         page: null,
@@ -56600,7 +56638,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         facet: "stance",
         question: "Does Wallach think pork is healthy, or should it be avoided?",
-        answer_short: "Wallach classes pork as a red meat and points out that every long-lived people on earth eats it, so pork counts as legitimate animal protein, not something to shun.",
+        answer_short: "Wallach counts pork as a legitimate red meat \u2014 he points out that every long-lived people on earth eats it, so it is sound animal protein, not a food to shun.",
         answer: "Wallach classes pork as a red meat and notes that every long-lived people on earth eats it, so pork counts as legitimate animal protein rather than something to shun.",
         verbatim: "In\nfact all long lived peoples on earth eat red meat (including\npork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy.",
         page: null,
@@ -58047,7 +58085,7 @@ deaths, blood clots, sterility`,
         also_about: [],
         facet: "stance",
         question: "Does Wallach think salt is bad for you?",
-        answer_short: "No -- Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
+        answer_short: "Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
         answer: "Wallach argues that salt is not a health hazard but a necessity -- the universal, most widely used food supplement and condiment, craved by humans as one of the most dominating natural instincts -- so vital that old Dutch criminal law used a saltless diet of bread and water as a dreaded punishment.",
         verbatim: "in the old criminal law of Holland, a par-\nticularly terrible and much feared punish-\nment was to restrict criminals to a diet of\nbread and water without salt!!!\n\nSalt is known as the universal and most\nwidely used food supplement and condi-\nment. So great is the human craving for salt,\nand the relish of it that we are led to con-\nsider that a love of it is one of the most\ndominating of our natural instincts and that\nsalt itself is in fact necessary to the health\nand even the life of man.",
         page: null,
@@ -58244,6 +58282,36 @@ deaths, blood clots, sterility`,
       }
     }
     return out;
+  }
+  function softClamp(s, max) {
+    if (s.length <= max) {
+      return s;
+    }
+    const cut = s.slice(0, max);
+    const lastSpace = cut.lastIndexOf(" ");
+    const body = (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s.,;:—-]+$/, "");
+    return `${body}\u2026`;
+  }
+  var LEDE_MAX = 340;
+  function entityLede(subject) {
+    const e = getEntity(subject);
+    if (e !== null && e.intro_claim !== void 0) {
+      const picked = getSearchClaim(e.intro_claim);
+      if (picked !== null && picked.subject === subject) {
+        return softClamp(picked.answer_short, LEDE_MAX);
+      }
+    }
+    const order = e !== null && INTRO_ORDER_BY_TYPE[e.type] !== void 0 ? INTRO_ORDER_BY_TYPE[e.type] : INTRO_ORDER_DEFAULT;
+    let best = null;
+    let bestRank = order.length;
+    for (const c of claimsForSubject(subject)) {
+      const rank = order.indexOf(c.facet);
+      if (rank >= 0 && rank < bestRank) {
+        bestRank = rank;
+        best = c;
+      }
+    }
+    return best !== null ? softClamp(best.answer_short, LEDE_MAX) : "";
   }
   function entityList() {
     const ents = index2().entities;
@@ -94597,53 +94665,8 @@ deaths, blood clots, sterility`,
     });
   }
 
-  // assets/js/src/views/knowledge-topic.ts
-  function escHTML7(s) {
-    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  }
-  function relPill(slug) {
-    const e = getEntity(slug);
-    const navigable = e !== null && e.type !== "nutrient" && e.type !== "condition";
-    const name = displayName(slug);
-    return navigable ? `<button class="kt-pill" type="button" data-kd-topic="${escHTML7(slug)}">${escHTML7(name)}</button>` : `<span class="kt-pill kt-pill--static">${escHTML7(name)}</span>`;
-  }
-  function renderTopicPage(slug) {
-    const e = getEntity(slug);
-    if (e === null) {
-      return "";
-    }
-    const groups = facetGroups(slug);
-    const [ledeClaim] = groups.find((g) => g.facet === "basics")?.claims ?? [];
-    const lede = ledeClaim?.answer_short ?? "";
-    const sym = e.symbol ?? "";
-    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML7(sym)}</span>` : "";
-    const rels = e.related.map(relPill).join("");
-    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML7(ui("kt_related"))}</span>${rels}</div>` : "";
-    const nClaims = groups.reduce((n, g) => n + g.claims.length, 0);
-    const books = booksForSubject(slug);
-    const noun = plural(nClaims, "claim");
-    const meta = books.length > 0 ? ui("kt_meta_full").replace("{n}", String(nClaims)).replace("{noun}", noun).replace("{books}", books.join(", ")) : ui("kt_meta").replace("{n}", String(nClaims)).replace("{noun}", noun);
-    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML7(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML7(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
-      <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
-    </details>`).join("");
-    return `<div class="kt-page kd-ep">
-    <header class="kt-hero">
-      <div class="kt-hero__top">
-        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML7(e.type)} \xB7 ${escHTML7(ui("kt_kicker"))}</span>
-        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML7(ui("kt_back"))}</button>
-      </div>
-      <div class="kt-title">${symHTML}<h1>${escHTML7(e.common_name ?? e.display_name)}</h1></div>
-      ${lede.length > 0 ? `<p class="kt-lede">${escHTML7(lede)}</p>` : ""}
-      ${relBlock}
-      <div class="kt-meta">${escHTML7(meta)}</div>
-    </header>
-    ${facetsHTML}
-  </div>`;
-  }
-
   // assets/js/src/views/knowledge-explore.ts
-  function escHTML8(s) {
+  function escHTML7(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var EXPLORE_TYPES = [
@@ -94657,22 +94680,16 @@ deaths, blood clots, sterility`,
     return entityList().filter((e) => e.type !== "nutrient" && e.type !== "condition");
   }
   function chip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML8(e.slug)}">${escHTML8(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML7(e.slug)}">${escHTML7(e.display_name)}</button>`;
   }
-  function renderExploreTab(selectedTopic) {
-    if (selectedTopic !== null) {
-      const page = renderTopicPage(selectedTopic);
-      if (page.length > 0) {
-        return page;
-      }
-    }
+  function renderExploreTab() {
     const all = exploreEntities();
     const groups = EXPLORE_TYPES.map(({ type, key }) => {
       const inType = all.filter((e) => e.type === type).sort((a, b) => a.display_name.localeCompare(b.display_name));
       if (inType.length === 0) {
         return "";
       }
-      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML8(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
+      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML7(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
     }).join("");
     return `<div class="kd-explore">${groups}</div>`;
   }
@@ -94780,17 +94797,17 @@ deaths, blood clots, sterility`,
   }
 
   // assets/js/src/views/knowledge-foods.ts
-  function escHTML9(s) {
+  function escHTML8(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function withVilliGloss(raw) {
-    const def = escHTML9(ui("kd_foods_villi_gloss"));
-    return escHTML9(raw).replace(/\b(villi)\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
+    const def = escHTML8(ui("kd_foods_villi_gloss"));
+    return escHTML8(raw).replace(/\b(villi)\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
   }
   function sectionHeader(num, kicker, headingHTML, extra) {
-    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML9(kicker)}</div>` : "";
+    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML8(kicker)}</div>` : "";
     return `<header class="kd-foods-sec${extra}">
-      <span class="kd-foods-sec__num">${escHTML9(num)}</span>
+      <span class="kd-foods-sec__num">${escHTML8(num)}</span>
       <div class="kd-foods-sec__body">
         ${kickerHTML}
         ${headingHTML}
@@ -94803,8 +94820,8 @@ deaths, blood clots, sterility`,
       if (inFacet.length === 0) {
         return "";
       }
-      return `<details class="kd-ep-facet" data-facet="${escHTML9(facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML9(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML8(facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML8(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
       <div class="kd-ep-facet__body">${inFacet.map(renderSearchCard).join("")}</div>
     </details>`;
     }).join("");
@@ -94857,8 +94874,8 @@ deaths, blood clots, sterility`,
     const cap = healthy ? ui("kd_foods_villi_ok_cap") : ui("kd_foods_villi_bad_cap");
     return `<div class="kd-foods-villi__panel kd-foods-villi__panel--${kind}">
       <div class="kd-foods-villi__top">
-        <div class="kd-foods-villi__t">${escHTML9(title)}</div>
-        <div class="kd-foods-villi__metric">${escHTML9(metric)}</div>
+        <div class="kd-foods-villi__t">${escHTML8(title)}</div>
+        <div class="kd-foods-villi__metric">${escHTML8(metric)}</div>
       </div>
       ${villiArt(healthy)}
       <div class="kd-foods-villi__cap">${withVilliGloss(cap)}</div>
@@ -94877,20 +94894,20 @@ deaths, blood clots, sterility`,
     }
     const text = fixQuoteGlyph(collapseWS3(q.claim.verbatim));
     const idx = text.indexOf(q.highlightFrom);
-    const body = idx >= 0 ? `${escHTML9(text.slice(0, idx))}<mark class="ds-mark">${escHTML9(text.slice(idx))}</mark>` : escHTML9(text);
+    const body = idx >= 0 ? `${escHTML8(text.slice(0, idx))}<mark class="ds-mark">${escHTML8(text.slice(idx))}</mark>` : escHTML8(text);
     const page = q.claim.page !== null ? `Page \xB7 ${q.claim.page}` : "";
     return `<div class="ds-pull-quote-wrap kd-foods-pq">
       <blockquote class="ds-pull-quote">
-        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML9(page)}</span>` : ""}
+        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML8(page)}</span>` : ""}
         <p>${body}</p>
-        <footer>${escHTML9(ui("kd_foods_villi_cite"))}</footer>
+        <footer>${escHTML8(ui("kd_foods_villi_cite"))}</footer>
       </blockquote>
     </div>`;
   }
   function foodItem(c, kind) {
-    return `<button class="kd-foods-item kd-foods-item--${escHTML9(kind)}" type="button" data-kd-topic="${escHTML9(c.slug)}">
-      <span class="kd-foods-item__nm">${escHTML9(c.name)}</span>
-      <span class="kd-foods-item__why">${escHTML9(c.why)}</span>
+    return `<button class="kd-foods-item kd-foods-item--${escHTML8(kind)}" type="button" data-kd-topic="${escHTML8(c.slug)}">
+      <span class="kd-foods-item__nm">${escHTML8(c.name)}</span>
+      <span class="kd-foods-item__why">${escHTML8(c.why)}</span>
       <span class="kd-foods-item__go" aria-hidden="true">&rarr;</span>
     </button>`;
   }
@@ -94901,26 +94918,26 @@ deaths, blood clots, sterility`,
     return `<div class="kt-page kd-ep kd-foods">
     <header class="kd-foods-hero">
       <div class="kd-foods-eyebrow">
-        <span class="kd-foods-eyebrow__l">${escHTML9(ui("kd_foods_eyebrow_l"))}</span>
+        <span class="kd-foods-eyebrow__l">${escHTML8(ui("kd_foods_eyebrow_l"))}</span>
         <span class="kd-foods-eyebrow__rule"></span>
-        <span class="kd-foods-eyebrow__r">${escHTML9(ui("kd_foods_eyebrow_r"))}</span>
+        <span class="kd-foods-eyebrow__r">${escHTML8(ui("kd_foods_eyebrow_r"))}</span>
       </div>
       <div class="kd-foods-corner">
-        <div class="kd-foods-brand">${escHTML9(ui("kd_foods_readout_2"))}</div>
-        <div class="kd-foods-scan">${escHTML9(ui("kd_foods_scan"))}</div>
+        <div class="kd-foods-brand">${escHTML8(ui("kd_foods_readout_2"))}</div>
+        <div class="kd-foods-scan">${escHTML8(ui("kd_foods_scan"))}</div>
       </div>
-      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML9(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML9(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
-      <p class="kd-foods-hero__deck">${escHTML9(ui("kd_foods_deck"))}</p>
+      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML8(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML8(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
+      <p class="kd-foods-hero__deck">${escHTML8(ui("kd_foods_deck"))}</p>
     </header>
 
     <div class="ds-pull-stat kd-foods-stat">
-      <span class="ds-pull-stat__readout">${escHTML9(ui("kd_foods_stat_readout"))}</span>
-      <div class="ds-pull-stat__num">${escHTML9(ui("kd_foods_stat_num"))}</div>
-      <div class="ds-pull-stat__body">${escHTML9(ui("kd_foods_stat_body"))}<small>${escHTML9(ui("kd_foods_stat_small"))}</small></div>
+      <span class="ds-pull-stat__readout">${escHTML8(ui("kd_foods_stat_readout"))}</span>
+      <div class="ds-pull-stat__num">${escHTML8(ui("kd_foods_stat_num"))}</div>
+      <div class="ds-pull-stat__body">${escHTML8(ui("kd_foods_stat_body"))}<small>${escHTML8(ui("kd_foods_stat_small"))}</small></div>
     </div>
 
     <section class="kd-foods-villi">
-      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML9(ui("kd_foods_villi_title"))}</h2>`, "")}
+      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_villi_title"))}</h2>`, "")}
       <p class="kd-foods-villi__intro">${withVilliGloss(ui("kd_foods_villi_explain"))}</p>
       <div class="kd-foods-villi__grid">
         ${villiPanel(false)}
@@ -94930,26 +94947,26 @@ deaths, blood clots, sterility`,
     </section>
 
     <section class="kd-foods-contrast">
-      ${sectionHeader("03", ui("kd_foods_sec03_kicker"), `<h2 class="ds-h-section">${escHTML9(ui("kd_foods_contrast_hd"))}</h2>`, "")}
+      ${sectionHeader("03", ui("kd_foods_sec03_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_contrast_hd"))}</h2>`, "")}
       <div class="kd-foods-contrast__grid">
         <div class="kd-foods-col kd-foods-col--remove">
-          <div class="kd-foods-col__hd">${escHTML9(ui("kd_foods_col_remove"))}</div>
+          <div class="kd-foods-col__hd">${escHTML8(ui("kd_foods_col_remove"))}</div>
           ${remove.map((c) => foodItem(c, "remove")).join("")}
         </div>
         <div class="kd-foods-col kd-foods-col--eat">
-          <div class="kd-foods-col__hd">${escHTML9(ui("kd_foods_col_eat"))}</div>
+          <div class="kd-foods-col__hd">${escHTML8(ui("kd_foods_col_eat"))}</div>
           ${eat.map((c) => foodItem(c, "eat")).join("")}
         </div>
       </div>
       <div class="kd-foods-form">
-        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML9(ui("kd_foods_form_hd"))}</div>
+        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML8(ui("kd_foods_form_hd"))}</div>
         <div class="kd-foods-form__grid">
           ${conditional.map((c) => foodItem(c, "form")).join("")}
         </div>
       </div>
     </section>
 
-    <div class="kd-ep-seclabel">${escHTML9(ui("kd_foods_words_label"))}</div>
+    <div class="kd-ep-seclabel">${escHTML8(ui("kd_foods_words_label"))}</div>
     ${facetSections(foodsThesisClaims())}
   </div>`;
   }
@@ -94998,7 +95015,7 @@ deaths, blood clots, sterility`,
   }
 
   // assets/js/src/views/knowledge-home.ts
-  function escHTML10(s) {
+  function escHTML9(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function fmt(n) {
@@ -95017,42 +95034,42 @@ deaths, blood clots, sterility`,
       if (e === null) {
         return "";
       }
-      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML10(e.layout_key)}">${escHTML10(e.common_name)}</button>`;
+      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML9(e.layout_key)}">${escHTML9(e.common_name)}</button>`;
     }
-    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML10(h.slug)}">${escHTML10(conditionDisplayName(h.slug))}</button>`;
+    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML9(h.slug)}">${escHTML9(conditionDisplayName(h.slug))}</button>`;
   }
   var LEGEND_CATS = ["mineral", "vitamin", "amino_acid", "fatty_acid"];
   function shelfTile(e) {
     const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
     const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
-    return `<button class="sh-tile" data-cat="${escHTML10(e.category)}" data-kd-essential="${escHTML10(layoutKey)}" title="${escHTML10(e.name)}"><span class="sh-tile__sym">${escHTML10(glyph)}</span><span class="sh-tile__nm">${escHTML10(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, "claim")}</span></button>`;
+    return `<button class="sh-tile" data-cat="${escHTML9(e.category)}" data-kd-essential="${escHTML9(layoutKey)}" title="${escHTML9(e.name)}"><span class="sh-tile__sym">${escHTML9(glyph)}</span><span class="sh-tile__nm">${escHTML9(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, "claim")}</span></button>`;
   }
   function renderEssentialsShelf() {
     const top = listEssentialPages().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 18);
-    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML10(ui(`kh_legend_${cat}`))}</span>`).join("");
-    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML10(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML10(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML10(ui("kh_essentials_link"))}</a></div>
+    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML9(ui(`kh_legend_${cat}`))}</span>`).join("");
+    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML9(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML9(ui("kh_essentials_link"))}</a></div>
     <div class="sh-grid">${top.map(shelfTile).join("")}</div>
-    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML10(ui("kh_legend_label"))}</span>${legend}</div>`;
+    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML9(ui("kh_legend_label"))}</span>${legend}</div>`;
   }
   function condRow(c) {
-    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML10(c.slug)}"><span class="sh-condrow__nm">${escHTML10(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
+    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML9(c.slug)}"><span class="sh-condrow__nm">${escHTML9(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
   }
   function renderConditionsShelf() {
     const conds = listConditionPages();
     const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
     const link = ui("kh_conditions_link").replace("{n}", fmt(conds.length));
-    return `<div class="ep-seclabel">${escHTML10(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML10(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML10(link)}</a></div>
+    return `<div class="ep-seclabel">${escHTML9(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML9(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
   }
   function exploreChip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML10(e.slug)}">${escHTML10(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML9(e.slug)}">${escHTML9(e.display_name)}</button>`;
   }
   function renderExploreShelf() {
     const topics = homeExploreTopics();
     if (topics.length === 0) {
       return "";
     }
-    return `<div class="ep-seclabel">${escHTML10(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML10(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML10(ui("kh_explore_link"))}</a></div>
+    return `<div class="ep-seclabel">${escHTML9(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML9(ui("kh_explore_link"))}</a></div>
     <div class="kd-explore-cloud">${topics.map(exploreChip).join("")}</div>`;
   }
   function renderHomeTab() {
@@ -95061,11 +95078,11 @@ deaths, blood clots, sterility`,
     const hints = HINTS.map(hintChip).join("");
     return `<div class="kd-home">
     <section class="sh-hero">
-      <h1>${escHTML10(ui("kh_hero_headline"))}</h1>
-      <p>${escHTML10(sub).replace("{br}", "<br>")}</p>
+      <h1>${escHTML9(ui("kh_hero_headline"))}</h1>
+      <p>${escHTML9(sub).replace("{br}", "<br>")}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
-          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML10(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML9(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
           <div class="sh-search__results"></div>
         </div>
         <div class="sh-hero__hints">${hints}</div>
@@ -95109,12 +95126,12 @@ deaths, blood clots, sterility`,
     return a.name.localeCompare(b.name);
   }
   function resRow(m, active) {
-    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML10(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML10(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
+    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML9(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML9(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
   }
   function renderHomeSuggestions(query) {
     const matches = homeMatches(query);
     if (matches.length === 0) {
-      return `<div class="sh-res__empty">${escHTML10(ui("kh_search_empty"))}</div>`;
+      return `<div class="sh-res__empty">${escHTML9(ui("kh_search_empty"))}</div>`;
     }
     const shown = [
       ...matches.filter((m) => m.kind === "essential").sort(byRelevance),
@@ -95127,7 +95144,7 @@ deaths, blood clots, sterility`,
       if (rows.length === 0) {
         return;
       }
-      html += `<div class="sh-res__group">${escHTML10(label)}</div>`;
+      html += `<div class="sh-res__group">${escHTML9(label)}</div>`;
       for (const m of rows) {
         html += resRow(m, idx === 0);
         idx += 1;
@@ -95136,6 +95153,50 @@ deaths, blood clots, sterility`,
     group(ui("kh_group_essentials"), "essential");
     group(ui("kh_group_conditions"), "condition");
     return html;
+  }
+
+  // assets/js/src/views/knowledge-topic.ts
+  function escHTML10(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function relPill(slug) {
+    const e = getEntity(slug);
+    const navigable = e !== null && e.type !== "nutrient" && e.type !== "condition";
+    const name = displayName(slug);
+    return navigable ? `<button class="kt-pill" type="button" data-kd-topic="${escHTML10(slug)}">${escHTML10(name)}</button>` : `<span class="kt-pill kt-pill--static">${escHTML10(name)}</span>`;
+  }
+  function renderTopicPage(slug, fromExplore) {
+    const e = getEntity(slug);
+    if (e === null) {
+      return "";
+    }
+    const groups = facetGroups(slug);
+    const lede = entityLede(slug);
+    const sym = e.symbol ?? "";
+    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML10(sym)}</span>` : "";
+    const rels = e.related.map(relPill).join("");
+    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML10(ui("kt_related"))}</span>${rels}</div>` : "";
+    const nClaims = groups.reduce((n, g) => n + g.claims.length, 0);
+    const books = booksForSubject(slug);
+    const noun = plural(nClaims, "claim");
+    const meta = books.length > 0 ? ui("kt_meta_full").replace("{n}", String(nClaims)).replace("{noun}", noun).replace("{books}", books.join(", ")) : ui("kt_meta").replace("{n}", String(nClaims)).replace("{noun}", noun);
+    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML10(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML10(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
+      <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
+    </details>`).join("");
+    return `<div class="kt-page kd-ep">
+    <header class="kt-hero">
+      <div class="kt-hero__top">
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML10(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML10(ui("kt_kicker"))}</button></span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML10(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
+      </div>
+      <div class="kt-title">${symHTML}<h1>${escHTML10(e.common_name ?? e.display_name)}</h1></div>
+      ${lede.length > 0 ? `<p class="kt-lede">${escHTML10(lede)}</p>` : ""}
+      ${relBlock}
+      <div class="kt-meta">${escHTML10(meta)}</div>
+    </header>
+    ${facetsHTML}
+  </div>`;
   }
 
   // assets/js/src/views/search-highlight.ts
@@ -95296,6 +95357,12 @@ deaths, blood clots, sterility`,
     return `${deepHTML}${legendHTML}${groupsHTML}`;
   }
   function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic) {
+    if (selectedTopic !== null) {
+      const page = renderTopicPage(selectedTopic, tab === "explore");
+      if (page.length > 0) {
+        return page;
+      }
+    }
     switch (tab) {
       case "home":
         return renderHomeTab();
@@ -95306,7 +95373,7 @@ deaths, blood clots, sterility`,
       case "conditions":
         return renderConditionsTab(selectedCondition);
       case "explore":
-        return renderExploreTab(selectedTopic);
+        return renderExploreTab();
       case "products":
         return renderProductsTab(selectedProduct);
     }
@@ -95330,7 +95397,7 @@ deaths, blood clots, sterility`,
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
-    ${activeTab === "essentials" || activeTab === "conditions" || activeTab === "products" ? `<div class="kd-search">
+    ${(activeTab === "essentials" || activeTab === "conditions" || activeTab === "products") && selectedTopic === null ? `<div class="kd-search">
       <span class="kd-search-icon">\u2315</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
@@ -95490,9 +95557,6 @@ deaths, blood clots, sterility`,
       if (topicEl !== null) {
         const k = topicEl.getAttribute("data-kd-topic");
         selectedTopic = k !== null && k === selectedTopic ? null : k;
-        if (selectedTopic !== null) {
-          activeTab = "explore";
-        }
         render();
         return;
       }
@@ -95522,6 +95586,14 @@ deaths, blood clots, sterility`,
           render();
         } else if (action === "topic-close") {
           selectedTopic = null;
+          render();
+        } else if (action === "explore-home") {
+          activeTab = "explore";
+          selectedTopic = null;
+          selectedEssential = null;
+          selectedCondition = null;
+          selectedProduct = null;
+          searchQuery = "";
           render();
         } else if (action === "sources-more") {
           const list = actionEl.closest(".kd-essential-deep")?.querySelector(".kd-sources");
@@ -96773,7 +96845,9 @@ Pull-quote: the villi note is now a REAL sourced .ds-pull-quote \u2014 Wallach's
 
 Files: knowledge-foods.ts \xB7 alien-flavor.ts \xB7 foods-curation.{ts,json}+schema \xB7 main.ts \xB7 drawer-knowledge.css \xB7 view-copy.json \xB7 dashboard.html \xB7 assets/fonts/Fantocrypt.ttf \xB7 render_probe_knowledge.js. Verified: build OK \xB7 render_probe_knowledge PASS \xB7 invariants 62/62 \xB7 every chunk screenshot-verified with Luneth as the gate. The temporary handoff (chronicle/next-chunk.md) + the design memory were updated with the durable choices. Deferred: contrast\u2192"03", propagate the alien flavour font (approved), EPIGEN-000158 source reseal. knowledge_version unchanged (no corpus mining/reseal this session).` }, { id: "lg_mrjnyou0_etnu64", ts: "2026-07-13T15:17:20.184093-05:00", surface: "knowledge-absorption-corpus", kind: "round-close", summary: `Mined 56 Wallach food/diet claims (butter/beef/chicken/pork/eggs/fish) + added Hell's Kitchen as sealed book #7; rebuilt the Absorption "put these in" cards to lead with accurate general stances (retired the misleading "eat meat 3-6x/day" card); finished the tab's visual pass.`, detail: `We taught the app what Dr. Wallach actually says about everyday foods \u2014 butter, beef, chicken, pork, eggs and fish \u2014 so people can look each one up, and we added his book "Hell's Kitchen" as a 7th trusted source. On the Absorption page, the "put these in" cards used to lead with a line that read like "eat meat 3-6 times a day" (true only for a narrow diabetes case, absurd out of context); now each food leads with Wallach's actual general stance, and clicking a card opens its full page. We also finished the page's visual polish. Two honesty catches worth noting: one "beef" claim turned out to be Wallach quoting a vegetarian author (not his own view) and was removed, and an "eat breakfast" claim was removed per Luneth's rule against endorsing morning-eating.
 
-TECHNICAL: 56 new sealed search claims across 7 books (corpus knowledge_version 328 -> 331 across 4 seal cycles). Hell's Kitchen registered in books-meta (book_id hells-kitchen, "Causes, Prevention and Cure of Obesity, Diabetes and Metabolic Syndrome", 3rd ed Jan 2015, Wallach + Ma Lan; LF-hash 7c9159e0; locator chapter_page) + mining-coverage (incomplete, food-topic vein). Search layer: 56 enrichment records + 7 new entities (butter/beef/chicken/pork/fish + salmon/tuna Explore topics) in search-enrichment.json / catalog/search-entities.json; cross-food claims (rebellious-eaters, 462%-cancer, steak-tartare) homed once + multi-surfaced via also_about; salmon/tuna cross-linked onto the mercury/germanium/oil fish claims. Dual-homing: butter -> arteriosclerosis/atherosclerosis/stroke/xerophthalmia/cerebrovascular/rickets + vitamin-a/d/k; 12 condition dual-homes reconciled to verbatim_names_mapped_conditions (6 verbatims widened to name the condition + char_offsets recomputed, 6 mappings dropped as not-named). Curation: dashboard/assets/data/foods-curation.json eat=[butter,beef,chicken,pork,eggs,salt] (generic "meat" card retired -> umbrella topic only); state/foods-curation.ts foodsEat facet order protocol-first -> STANCE-first (no card opens with a dose) + a ~200-char teaser() cap (full answer lives on the linked topic page). Content quality pass (Luneth flagged terse/AI-shorthand summaries): 16 summaries rewritten with source-verified specifics (Okinawa WHO-1996 longest-lived, 78/86 life-expectancy, 5/10,000 centenarians; Amish 4% obesity / 6% diabetes; rickets +400% 1995-2011; CF 1-in-2,500) + a spelled-numbers->numerals UX pass; 3 removed (beef-7 misattributed Ellen Buchman Ewald quote caught by a source-attribution scan; pork-9 empty; eggs-7 literal "Breakfast should always be eaten"). Visual pass: scrapped the shimmering Fantocrypt alien-flavour text (deleted views/alien-flavor.ts + its main.ts wiring + the @font-face + Fantocrypt.ttf) for a static blue "THE FIRST STEP" in the FIG-01 mono; +spacing (space-5->space-7) and larger font on the villi pull-quote; contrast section -> demo "03" numbered header (retired the last FIG-NN kicker + dead secKicker/CSS); "THE PREMISE" aligned to the 02/03 kicker column (136px) with a left rule; 01 hero lifted 10px. Verify: corpus_verify PASS (kv=331, 1357 claims, 7 books, hashes match), invariants 62/62, render_probe_knowledge PASS, build OK. Deferred: HK txt de-hyphenation of OCR line-wrap hyphens in the mined spans (source-purification pass); salmon/tuna remain thin Explore topics (Wallach lacks prep/sourcing specifics); persistent absorption caveat + Coverage-tab overhaul still in the backlog.` }];
+TECHNICAL: 56 new sealed search claims across 7 books (corpus knowledge_version 328 -> 331 across 4 seal cycles). Hell's Kitchen registered in books-meta (book_id hells-kitchen, "Causes, Prevention and Cure of Obesity, Diabetes and Metabolic Syndrome", 3rd ed Jan 2015, Wallach + Ma Lan; LF-hash 7c9159e0; locator chapter_page) + mining-coverage (incomplete, food-topic vein). Search layer: 56 enrichment records + 7 new entities (butter/beef/chicken/pork/fish + salmon/tuna Explore topics) in search-enrichment.json / catalog/search-entities.json; cross-food claims (rebellious-eaters, 462%-cancer, steak-tartare) homed once + multi-surfaced via also_about; salmon/tuna cross-linked onto the mercury/germanium/oil fish claims. Dual-homing: butter -> arteriosclerosis/atherosclerosis/stroke/xerophthalmia/cerebrovascular/rickets + vitamin-a/d/k; 12 condition dual-homes reconciled to verbatim_names_mapped_conditions (6 verbatims widened to name the condition + char_offsets recomputed, 6 mappings dropped as not-named). Curation: dashboard/assets/data/foods-curation.json eat=[butter,beef,chicken,pork,eggs,salt] (generic "meat" card retired -> umbrella topic only); state/foods-curation.ts foodsEat facet order protocol-first -> STANCE-first (no card opens with a dose) + a ~200-char teaser() cap (full answer lives on the linked topic page). Content quality pass (Luneth flagged terse/AI-shorthand summaries): 16 summaries rewritten with source-verified specifics (Okinawa WHO-1996 longest-lived, 78/86 life-expectancy, 5/10,000 centenarians; Amish 4% obesity / 6% diabetes; rickets +400% 1995-2011; CF 1-in-2,500) + a spelled-numbers->numerals UX pass; 3 removed (beef-7 misattributed Ellen Buchman Ewald quote caught by a source-attribution scan; pork-9 empty; eggs-7 literal "Breakfast should always be eaten"). Visual pass: scrapped the shimmering Fantocrypt alien-flavour text (deleted views/alien-flavor.ts + its main.ts wiring + the @font-face + Fantocrypt.ttf) for a static blue "THE FIRST STEP" in the FIG-01 mono; +spacing (space-5->space-7) and larger font on the villi pull-quote; contrast section -> demo "03" numbered header (retired the last FIG-NN kicker + dead secKicker/CSS); "THE PREMISE" aligned to the 02/03 kicker column (136px) with a left rule; 01 hero lifted 10px. Verify: corpus_verify PASS (kv=331, 1357 claims, 7 books, hashes match), invariants 62/62, render_probe_knowledge PASS, build OK. Deferred: HK txt de-hyphenation of OCR line-wrap hyphens in the mined spans (source-purification pass); salmon/tuna remain thin Explore topics (Wallach lacks prep/sourcing specifics); persistent absorption caveat + Coverage-tab overhaul still in the backlog.` }, { id: "lg_mrjv8bee_7zukwg", ts: "2026-07-13T18:40:46.646781-05:00", surface: "knowledge", kind: "round-close", summary: 'Topic pages: Absorption food cards now open as an overlay with a "Go back" button, the kicker "Explore" links to the all-topics grid, and every topic finally shows an at-a-glance intro; plus 4 food-summary fixes and a new gated intro_claim pointer.', detail: `The Knowledge drawer's topic pages got the three fixes Luneth asked for. (1) When you click a food card on the Absorption tab, the page now opens ON TOP of Absorption, so the back button reads "Go back" and returns you there -- before, it dumped you in the Explore grid. (2) The word "Explore" in every topic's little header is now a link that jumps to the all-topics list. (3) Every topic now shows a one-line intro at the top (29 of 58 had none); it's pulled from that topic's single best Wallach claim, so it's real and sourced, never invented. Then Luneth polished four food intros: beef and salt lost their awkward "Yes."/"No." openers, cholesterol now leads with Wallach's deficiency->disease point, and pork's over-reaching Amish summary was swapped for his clean "legitimate red meat" stance.
+
+Mechanism: topic pages now render as a SHELL-LEVEL OVERLAY in views/knowledge.ts -- activeTab is no longer clobbered to 'explore', so the origin tab stays active and the back button/label follow it (tab==='explore' -> "All topics", else -> "Go back", new kt_back_generic copy). renderExploreTab() is grid-only; renderTopicPage(slug, fromExplore) threads the origin. A new explore-home action + .kt-kicker__link make the kicker "Explore" always jump to the grid. state/search::entityLede() derives every topic's lede from a type-aware facet priority (INTRO_ORDER_DEFAULT / _BY_TYPE[person] in core/schemas) -- basics-first, biography for people, biography+warning sunk for others (so fish does not front its FDA-petition biography) -- soft-clamped at 340 chars so chicken/pork's 650-char stance can't become an essay. A new OPTIONAL, derive-VALIDATED intro_claim pointer on a search entity overrides the derived pick with a named OWN-subject claim (cholesterol -> EPIGEN-000151, pork -> IMMORT-000229); search_index_derive.validate() REDs the board if the pointer is not that entity's own enriched claim (negative-gated). Content faithfulness: beef HELLS-000001 + salt RARE-000312 were opener trims only (verbatims unchanged); cholesterol was REPOINTED because its Weston-Price stance verbatim could not carry the deficiency->disease line, whereas EPIGEN-000151's verbatim literally lists Alzheimer's, type-2 diabetes, ED, low-T, menopause and adrenal exhaustion; pork was repointed away from the Amish claim whose 4%/6%/wood-ashes summary over-reached its thin sealed verbatim (that verbatim only says the Amish eat meat 3x/day). Gates: build clean (tsc+esbuild), invariants 62/62 (derived_artifacts_fresh + search_index_wellformed confirm the re-derived index and the new intro_claim check), render_probe_knowledge PASS with 4 NEW assertions (foods->"Go back"+returns-to-Absorption, explore->"All topics", kicker link->grid, a no-basics food shows a derived intro), 6 hero screenshots reviewed. Deferred: expand the Hell's Kitchen Amish verbatim from source if we want that pork angle back (source-purification backlog); the Playfair lowercase-t readability font swap -- a 5-font specimen mockup was delivered, awaiting Luneth's pick.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

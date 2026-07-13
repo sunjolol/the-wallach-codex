@@ -387,7 +387,43 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       cards: root.querySelectorAll('.kt-page .kd-ep-claim').length,
       hasLede: kt ? (kt.querySelector('.kt-lede')?.textContent || '').length > 0 : false,
       hasCite: firstCard ? /IMMORTALITY|RARE EARTHS|DEAD DOCTORS|PLAY DOCTOR|EPIGENETICS|YOUR HEAD/i.test(firstCard.querySelector('.kd-ep-claim__cite')?.textContent || '') : false,
+      back: kt ? (kt.querySelector('.kd-ep-back')?.textContent || '').trim() : '',
+      hasKickerLink: kt ? kt.querySelector('.kt-kicker__link[data-kd-action="explore-home"]') !== null : false,
     };
+  });
+
+  // 4g. The kicker "Explore" link is a general jump back to the all-topics grid (independent of origin).
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kt-kicker__link')?.click());
+  await wait(200);
+  const kickerBack = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    return { onGrid: root.querySelector('.kt-page') === null && root.querySelectorAll('.kd-explore-chip').length > 0 };
+  });
+
+  // 4h. A topic opened from an Absorption CARD is an overlay ON the Absorption tab: its back button
+  //     reads "Go back" (not "All topics") and returns THERE, and a no-'basics' food (beef) still
+  //     shows a derived at-a-glance intro lede.
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="foods"]')?.click());
+  await wait(250);
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-foods-item[data-kd-topic="beef"]')?.click());
+  await wait(250);
+  const foodsTopic = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const kt = root.querySelector('.kt-page');
+    return {
+      shown: kt !== null,
+      title: kt ? (kt.querySelector('.kt-title h1')?.textContent || '') : '',
+      back: kt ? (kt.querySelector('.kd-ep-back')?.textContent || '').trim() : '',
+      ledeLen: kt ? (kt.querySelector('.kt-lede')?.textContent || '').length : 0,
+    };
+  });
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-ep-back')?.click());
+  await wait(200);
+  const foodsBack = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    // The Absorption landing itself carries .kt-page, so distinguish it from a topic overlay by the
+    // topic-only .kt-hero (absent on the Absorption landing, which uses .kd-foods-hero).
+    return { onFoods: root.querySelector('.kd-foods') !== null && root.querySelector('.kt-hero') === null };
   });
 
   // 5. Esc closes.
@@ -400,7 +436,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, tabBar, homeConds, homeExplore, foods, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic };
+  const out = { boot, afterClick, tabBar, homeConds, homeExplore, foods, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic, kickerBack, foodsTopic, foodsBack };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -454,6 +490,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['explore: type-grouped chips render (Mercury present)', explore.groups >= 4 && explore.chips >= 30 && explore.hasMercury === true],
     ['explore: a chip opens the faceted topic page (Mercury, 5+ facets, 8+ cards)', topic.shown === true && topic.title === 'Mercury' && topic.facets >= 5 && topic.cards >= 8],
     ['topic page: hero lede + Wallach-cited claim cards', topic.hasLede === true && topic.hasCite === true],
+    ['topic (from Explore): back label = "All topics" + kicker "Explore" link present', /All topics/i.test(topic.back) && topic.hasKickerLink === true],
+    ['kicker "Explore" link jumps back to the all-topics grid', kickerBack.onGrid === true],
+    ['topic (from Absorption card): overlay w/ derived intro lede (beef has no basics claim)', foodsTopic.shown === true && foodsTopic.title === 'Beef' && foodsTopic.ledeLen > 0],
+    ['topic (from Absorption): back label = "Go back" + returns to Absorption', /Go back/i.test(foodsTopic.back) && foodsBack.onFoods === true],
     ['foods: rich landing renders (3-colour lockup + orange subject + 3 numbered headers + pull-stat + 2 villi scans + villi gloss)', foods.shown === true && foods.headlineLen > 12 && foods.hasDeck === true && foods.hasEyebrow === true && foods.hasBrand === true && foods.hasScan === true && foods.noScuffedPulse === true && foods.hasOrangeSubject === true && foods.hasSecHeaders === true && foods.hasExplain === true && foods.hasVilliTerm === true && foods.hasPullQuote === true && foods.hasStat === true && foods.villiArts === 2 && foods.villiFingers >= 14 && foods.villiDots === 12],
     ['foods: two-pronged thesis = 3 crown-jewel cards, facet-grouped + Wallach-cited', foods.cards === 3 && foods.facets >= 2 && foods.allCited === true],
     ['foods: REMOVE/EAT contrast (5/6) + form strip (4) render, all topic-linked', foods.removeItems === 5 && foods.eatItems === 6 && foods.formItems === 4 && foods.itemsLinked === true],

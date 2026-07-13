@@ -105,6 +105,7 @@
     "kt_kicker": "Explore",
     "kt_related": "Related",
     "kt_back": "‹ All topics",
+    "kt_back_generic": "‹ Go back",
     "kt_meta": "{n} sourced {noun}",
     "kt_meta_full": "{n} sourced {noun} · from {books}",
     "kt_type_topic": "Therapies & ideas",

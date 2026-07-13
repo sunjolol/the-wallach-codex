@@ -312,7 +312,8 @@
         "menopause",
         "macronutrients"
       ],
-      "claim_count": 5
+      "claim_count": 5,
+      "intro_claim": "WAL-CLM-EPIGEN-000151"
     },
     "chromium": {
       "display_name": "Chromium",
@@ -1101,7 +1102,8 @@
         "poultry",
         "fish"
       ],
-      "claim_count": 9
+      "claim_count": 9,
+      "intro_claim": "WAL-CLM-IMMORT-000229"
     },
     "potassium": {
       "display_name": "Potassium",
@@ -2594,7 +2596,7 @@
       "also_about": [],
       "facet": "physiology",
       "question": "Does Wallach consider cholesterol essential, and what happens if you're deficient?",
-      "answer_short": "Yes — he treats cholesterol as essential and ties a deficiency to Alzheimer's, type-2 diabetes, erectile dysfunction, low-T, miserable menopause and adrenal exhaustion.",
+      "answer_short": "Wallach treats cholesterol as vital, and argues its deficiency produces specific disease states — among them Alzheimer's disease, type 2 diabetes, erectile dysfunction, low testosterone, menopause symptoms and adrenal exhaustion.",
       "answer": "In his essential-nutrient tables Wallach lists cholesterol alongside the three essential fatty acids and, though it isn't classed as a 'classic' essential nutrient, argues its deficiency produces specific disease states — among them Alzheimer's disease, type 2 diabetes, erectile dysfunction, low testosterone, menopause symptoms and adrenal exhaustion.",
       "verbatim": "Cholesterol?\nwhile not generally considered a classic essential pd, its deficiency does result in disease states (e..,\nAlzheimer’s disease, type 2 diabetes, erectile dysfunction, low-T, menopause, adrenal exhaustion, etc)",
       "page": 600,
@@ -3242,7 +3244,7 @@
       ],
       "facet": "stance",
       "question": "Does Dr. Wallach think beef and red meat are good for you?",
-      "answer_short": "Yes. He calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
+      "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
       "answer": "Wallach calls red meat an unequaled source of animal protein and essential lipids; the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
       "verbatim": "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines. Medium rare and me- \ndium are the safe way to eat beef. Steak Tartar is a half pound of raw, \nfreshly ground sirloin, served with chopped onions, pepper corns \nand topped with a raw egg - it doesn’t get any better than this!",
       "page": null,
@@ -5936,7 +5938,7 @@
       ],
       "facet": "stance",
       "question": "Does Wallach think pork is healthy, or should it be avoided?",
-      "answer_short": "Wallach classes pork as a red meat and points out that every long-lived people on earth eats it, so pork counts as legitimate animal protein, not something to shun.",
+      "answer_short": "Wallach counts pork as a legitimate red meat — he points out that every long-lived people on earth eats it, so it is sound animal protein, not a food to shun.",
       "answer": "Wallach classes pork as a red meat and notes that every long-lived people on earth eats it, so pork counts as legitimate animal protein rather than something to shun.",
       "verbatim": "In\nfact all long lived peoples on earth eat red meat (including\npork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy.",
       "page": null,
@@ -7365,7 +7367,7 @@
       "also_about": [],
       "facet": "stance",
       "question": "Does Wallach think salt is bad for you?",
-      "answer_short": "No -- Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
+      "answer_short": "Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
       "answer": "Wallach argues that salt is not a health hazard but a necessity -- the universal, most widely used food supplement and condiment, craved by humans as one of the most dominating natural instincts -- so vital that old Dutch criminal law used a saltless diet of bread and water as a dreaded punishment.",
       "verbatim": "in the old criminal law of Holland, a par-\nticularly terrible and much feared punish-\nment was to restrict criminals to a diet of\nbread and water without salt!!!\n\nSalt is known as the universal and most\nwidely used food supplement and condi-\nment. So great is the human craving for salt,\nand the relish of it that we are led to con-\nsider that a love of it is one of the most\ndominating of our natural instincts and that\nsalt itself is in fact necessary to the health\nand even the life of man.",
       "page": null,

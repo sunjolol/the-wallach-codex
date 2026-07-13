@@ -20,7 +20,7 @@
 
 import { plural } from '../core/format.js';
 import { ui } from '../state/copy.js';
-import { booksForSubject, displayName, facetGroups, getEntity } from '../state/search.js';
+import { booksForSubject, displayName, entityLede, facetGroups, getEntity } from '../state/search.js';
 import { renderSearchCard } from './entity-page.js';
 
 // Hex escapes \x22 \x27 for " and ' (the clean-view prose scanner has no regex parser;
@@ -48,16 +48,16 @@ function relPill(slug: string): string {
  * (canonical facet order + labels come from state/search::facetGroups). Returns ''
  * for an unknown slug so the caller degrades to the chip grid.
  */
-export function renderTopicPage(slug: string): string {
+export function renderTopicPage(slug: string, fromExplore: boolean): string {
   const e = getEntity(slug);
   if (e === null) {
     return '';
   }
   const groups = facetGroups(slug);
-  // Lede = the "basics" facet's one-line answer — a reviewed, byte-faithful line chosen
-  // by FACET (semantic), never by array position, and never a hand-written per-topic string.
-  const [ledeClaim] = groups.find(g => g.facet === 'basics')?.claims ?? [];
-  const lede = ledeClaim?.answer_short ?? '';
+  // Lede = the entity's "at a glance" intro — the answer_short of its highest-priority facet
+  // (basics-first, else a food's stance / a person's biography), so EVERY topic shows one, not
+  // only those with a 'basics' claim. Semantic-priority, byte-faithful, soft-clamped in state.
+  const lede = entityLede(slug);
   const sym = e.symbol ?? '';
   const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML(sym)}</span>` : '';
   const rels = e.related.map(relPill).join('');
@@ -78,8 +78,8 @@ export function renderTopicPage(slug: string): string {
   return `<div class="kt-page kd-ep">
     <header class="kt-hero">
       <div class="kt-hero__top">
-        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML(e.type)} · ${escHTML(ui('kt_kicker'))}</span>
-        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML(ui('kt_back'))}</button>
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML(e.type)} · <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML(ui('kt_kicker'))}</button></span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML(fromExplore ? ui('kt_back') : ui('kt_back_generic'))}</button>
       </div>
       <div class="kt-title">${symHTML}<h1>${escHTML(e.common_name ?? e.display_name)}</h1></div>
       ${lede.length > 0 ? `<p class="kt-lede">${escHTML(lede)}</p>` : ''}

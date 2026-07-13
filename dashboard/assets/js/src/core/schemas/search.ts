@@ -55,6 +55,28 @@ export const FACET_ORDER_BY_TYPE: Record<string, readonly SearchFacet[]> = {
   ],
 };
 
+/**
+ * Per-entity-type facet priority for the entity-page LEDE — the one-line "at a glance" intro
+ * (Phase H2 follow-up, 2026-07-13). The lede is the answer_short of the highest-priority facet
+ * a topic actually has, chosen by SEMANTIC priority (never array position), so EVERY topic shows
+ * an intro even without a 'basics' claim. Default leads with the "what/why is it" facets and
+ * SINKS biography + warning: a non-person's biography claim is about a PERSON's involvement, not
+ * an overview (e.g. fish's FDA-omega-3-petition biography must not front the fish page), and a
+ * bare warning makes a poor first impression. People invert it — a person's biography IS their
+ * overview. Each list is total over SEARCH_FACETS so a lede always resolves when any claim
+ * exists. Lives in core (exempt from views_state_no_inline_data).
+ */
+export const INTRO_ORDER_DEFAULT: readonly SearchFacet[] = [
+  'basics', 'stance', 'uses', 'mechanism', 'physiology', 'sources', 'discovery',
+  'etymology', 'history', 'protocol', 'big_question', 'biography', 'warning',
+];
+export const INTRO_ORDER_BY_TYPE: Record<string, readonly SearchFacet[]> = {
+  person: [
+    'basics', 'biography', 'history', 'stance', 'discovery', 'uses', 'mechanism',
+    'physiology', 'sources', 'protocol', 'big_question', 'etymology', 'warning',
+  ],
+};
+
 /** Dual-home pointer — the operational tier-1 slugs a search claim ALSO feeds (never leaks the other way). */
 export const Tier1LinkSchema = z.object({
   essentials: z.array(z.string()).optional(),
@@ -119,6 +141,9 @@ export const SearchEntitySchema = z.object({
   related: z.array(z.string()),
   /** Derived count of claims whose subject is this entity (index-time, for the header readout). */
   claim_count: z.number(),
+  /** Optional hand-picked lede claim id — the entity page's "at a glance" intro when the facet-priority
+   *  default is not the best overview (state/search::entityLede); derive-validated to be this entity's own claim. */
+  intro_claim: z.string().optional(),
 }).passthrough();
 export type SearchEntity = z.infer<typeof SearchEntitySchema>;
 

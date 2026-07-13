@@ -7,8 +7,8 @@
  * front-facing home for what used to live only in the search surface. A pristine
  * re-creation of the signed-off demo's Explore vision, projected from the REAL
  * search entity index (state/search.ts::entityList). A chip opens that entity's
- * faceted page (views/knowledge-topic.ts) via the drawer's data-kd-topic contract;
- * with a selected topic the tab shows that page instead of the grid.
+ * faceted page (views/knowledge-topic.ts), rendered as a shell-level overlay
+ * (views/knowledge.ts) on top of whatever tab opened it, via the data-kd-topic contract.
  *
  * PURE PROJECTION (R1): no per-entity literal. Type-group headers come from the
  * view-copy content store (R4) via ui(); entity NAMES are data (escaped).
@@ -19,7 +19,6 @@
 
 import { ui } from '../state/copy.js';
 import { entityList, type EntitySummary } from '../state/search.js';
-import { renderTopicPage } from './knowledge-topic.js';
 
 // Hex escapes \x22 \x27 for " and ' (clean-view prose scanner has no regex parser).
 function escHTML(s: unknown): string {
@@ -49,17 +48,11 @@ function chip(e: EntitySummary): string {
 }
 
 /**
- * The Explore tab. With a selected topic it renders that entity's page; otherwise the
- * off-path index — every non-tier-1 entity as a chip, grouped by type, alphabetical
- * within each group (Home-page philosophy), each chip opening its page in the drawer.
+ * The Explore tab GRID: the off-path index — every non-tier-1 entity as a chip, grouped by type,
+ * alphabetical within each group (Home-page philosophy), each chip opening its faceted page (a
+ * shell-level overlay in views/knowledge.ts) via the drawer's data-kd-topic contract.
  */
-export function renderExploreTab(selectedTopic: string | null): string {
-  if (selectedTopic !== null) {
-    const page = renderTopicPage(selectedTopic);
-    if (page.length > 0) {
-      return page;
-    }
-  }
+export function renderExploreTab(): string {
   const all = exploreEntities();
   const groups = EXPLORE_TYPES.map(({ type, key }) => {
     const inType = all

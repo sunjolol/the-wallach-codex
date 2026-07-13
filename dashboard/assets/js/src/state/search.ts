@@ -20,6 +20,8 @@
 import searchIndexJson from '../../../data/search/search-index.json';
 import {
   FACET_ORDER_BY_TYPE,
+  INTRO_ORDER_BY_TYPE,
+  INTRO_ORDER_DEFAULT,
   SEARCH_FACETS,
   type SearchClaim,
   type SearchEntity,
@@ -100,6 +102,55 @@ export function facetGroups(subject: string): FacetGroup[] {
     }
   }
   return out;
+}
+
+/**
+ * Trim to <= max on a word boundary and add an ellipsis; returns s unchanged when it already fits.
+ * Trailing punctuation/dash/whitespace before the cut is dropped so the ellipsis reads clean.
+ */
+function softClamp(s: string, max: number): string {
+  if (s.length <= max) {
+    return s;
+  }
+  const cut = s.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  const body = (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s.,;:—-]+$/, '');
+  return `${body}…`;
+}
+
+/**
+ * The one-line "at a glance" intro for an entity page (Phase H2 follow-up, 2026-07-13). Every topic
+ * gets one: the answer_short of its highest-priority available facet (semantic priority via
+ * INTRO_ORDER_*, never array position), so a topic with no 'basics' claim still leads with a sensible
+ * overview — a food's stance, a person's biography — instead of a blank hero. Soft-clamped so an
+ * unusually long summary (chicken/pork stance run 650+) can't turn the hero into an essay; everything
+ * under the ceiling renders byte-faithful. '' when the entity has no claims at all.
+ */
+const LEDE_MAX = 340;
+export function entityLede(subject: string): string {
+  const e = getEntity(subject);
+  // A hand-picked lede claim wins when the facet-priority default is not the best overview for a
+  // topic (e.g. cholesterol's "deficiency → disease states" line, or pork's clean red-meat stance):
+  // derive-validated to be this entity's OWN enriched claim, so it stays faithful + traceable (R1/§00.A).
+  if (e !== null && e.intro_claim !== undefined) {
+    const picked = getSearchClaim(e.intro_claim);
+    if (picked !== null && picked.subject === subject) {
+      return softClamp(picked.answer_short, LEDE_MAX);
+    }
+  }
+  const order: readonly SearchFacet[] = (e !== null && INTRO_ORDER_BY_TYPE[e.type] !== undefined)
+    ? INTRO_ORDER_BY_TYPE[e.type] as readonly SearchFacet[]
+    : INTRO_ORDER_DEFAULT;
+  let best: SearchClaim | null = null;
+  let bestRank = order.length;
+  for (const c of claimsForSubject(subject)) {
+    const rank = order.indexOf(c.facet);
+    if (rank >= 0 && rank < bestRank) {
+      bestRank = rank;
+      best = c;
+    }
+  }
+  return best !== null ? softClamp(best.answer_short, LEDE_MAX) : '';
 }
 
 /** The browse landing: every registered entity (slug + display + type + count), slug-sorted. */

@@ -59,7 +59,8 @@
         "silicon",
         "menopause",
         "macronutrients"
-      ]
+      ],
+      "intro_claim": "WAL-CLM-EPIGEN-000151"
     },
     "diabetes": {
       "catalog_ref": true,
@@ -1230,7 +1231,8 @@
         "eggs",
         "poultry",
         "fish"
-      ]
+      ],
+      "intro_claim": "WAL-CLM-IMMORT-000229"
     },
     "fish": {
       "display_name": "Fish",

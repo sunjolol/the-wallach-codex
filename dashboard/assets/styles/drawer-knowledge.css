@@ -1446,6 +1446,9 @@
 #drawer-knowledge-mount .kt-hero { padding: 6px 0 18px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: 6px; }
 #drawer-knowledge-mount .kt-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--fam-story); font-weight: 600; }
 #drawer-knowledge-mount .kt-kicker__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fam-story); }
+/* "Explore" in the kicker is a link to the all-topics grid (a general jump, distinct from the origin-aware back button). Inherits the kicker's mono/tracking/uppercase; a dotted underline signals it's clickable. */
+#drawer-knowledge-mount .kt-kicker__link { font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kt-kicker__link:hover { color: var(--ds-accent-deep); text-decoration-style: solid; }
 #drawer-knowledge-mount .kt-title { display: flex; align-items: baseline; gap: 12px; margin: 10px 0 0; }
 #drawer-knowledge-mount .kt-title h1 { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: 2.1rem; line-height: 1.05; margin: 0; letter-spacing: -0.01em; color: var(--ds-ink); }
 #drawer-knowledge-mount .kt-sym { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: 1rem; color: var(--ds-ink-soft); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 2px 8px; }

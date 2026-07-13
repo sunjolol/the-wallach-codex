@@ -2770,7 +2770,7 @@
       "also_about": [],
       "facet": "stance",
       "question": "Does Wallach think salt is bad for you?",
-      "answer_short": "No -- Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
+      "answer_short": "Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
       "topics": [
         "salt",
         "salt-necessity",
@@ -3075,7 +3075,7 @@
       "also_about": [],
       "facet": "physiology",
       "question": "Does Wallach consider cholesterol essential, and what happens if you're deficient?",
-      "answer_short": "Yes — he treats cholesterol as essential and ties a deficiency to Alzheimer's, type-2 diabetes, erectile dysfunction, low-T, miserable menopause and adrenal exhaustion.",
+      "answer_short": "Wallach treats cholesterol as vital, and argues its deficiency produces specific disease states — among them Alzheimer's disease, type 2 diabetes, erectile dysfunction, low testosterone, menopause symptoms and adrenal exhaustion.",
       "topics": [
         "cholesterol-deficiency",
         "essential-nutrient",
@@ -3526,7 +3526,7 @@
       ],
       "facet": "stance",
       "question": "Does Wallach think pork is healthy, or should it be avoided?",
-      "answer_short": "Wallach classes pork as a red meat and points out that every long-lived people on earth eats it, so pork counts as legitimate animal protein, not something to shun.",
+      "answer_short": "Wallach counts pork as a legitimate red meat — he points out that every long-lived people on earth eats it, so it is sound animal protein, not a food to shun.",
       "topics": [
         "red meat",
         "longevity",
@@ -4108,7 +4108,7 @@
       ],
       "facet": "stance",
       "question": "Does Dr. Wallach think beef and red meat are good for you?",
-      "answer_short": "Yes. He calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
+      "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
       "topics": [
         "red meat",
         "protein",

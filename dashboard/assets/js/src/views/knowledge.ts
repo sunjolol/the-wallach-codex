@@ -48,6 +48,7 @@ import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
 import { renderFoodsTab } from './knowledge-foods.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
 import { productCount, renderProductsTab } from './knowledge-products.js';
+import { renderTopicPage } from './knowledge-topic.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
 export interface DrawerHandle {
@@ -229,12 +230,23 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
 }
 
 function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
+  // A selected topic is an OVERLAY page on top of whatever tab opened it: the topic renders
+  // full-body while the origin tab stays active, so the back button (top-right) returns you there
+  // — foods → the Absorption grid, explore → the all-topics grid. An unknown slug degrades to the
+  // origin tab's own content. `tab === 'explore'` is the only "you're already in the topics index"
+  // origin, so it alone gets the "All topics" back label; every other origin gets "Go back".
+  if (selectedTopic !== null) {
+    const page = renderTopicPage(selectedTopic, tab === 'explore');
+    if (page.length > 0) {
+      return page;
+    }
+  }
   switch (tab) {
     case 'home': return renderHomeTab();
     case 'foods': return renderFoodsTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return renderConditionsTab(selectedCondition);
-    case 'explore': return renderExploreTab(selectedTopic);
+    case 'explore': return renderExploreTab();
     case 'products': return renderProductsTab(selectedProduct);
   }
 }
@@ -259,7 +271,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">×</button></div>
     </header>
-    ${activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products'
+    ${(activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products') && selectedTopic === null
       ? `<div class="kd-search">
       <span class="kd-search-icon">⌕</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
@@ -471,10 +483,9 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (topicEl !== null) {
       const k = topicEl.getAttribute('data-kd-topic');
       selectedTopic = (k !== null && k === selectedTopic) ? null : k;
-      // A topic opens on the Explore tab (chip grid <-> topic page), mirroring conditions.
-      if (selectedTopic !== null) {
-        activeTab = 'explore';
-      }
+      // A topic renders as a full-body OVERLAY on top of whatever tab opened it (activeTab is left
+      // untouched) so the back button returns you there — an Absorption card → back to Absorption,
+      // an Explore chip → back to the all-topics grid (renderTab picks the label from the origin tab).
       render();
       return;
     }
@@ -511,6 +522,17 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'topic-close') {
         selectedTopic = null;
+        render();
+      }
+      else if (action === 'explore-home') {
+        // The kicker "Explore" link — a general "jump to the all-topics grid" affordance, independent
+        // of how you reached the topic (unlike the origin-aware back button). Clears every selection.
+        activeTab = 'explore';
+        selectedTopic = null;
+        selectedEssential = null;
+        selectedCondition = null;
+        selectedProduct = null;
+        searchQuery = '';
         render();
       }
       else if (action === 'sources-more') {
