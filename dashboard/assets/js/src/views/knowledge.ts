@@ -24,6 +24,7 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on as onEvent } from '../core/events.js';
+import { plural } from '../core/format.js';
 import {
   CoverageLayoutSchema,
   type LayoutSection,
@@ -31,13 +32,16 @@ import {
 } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
 import {
+  getEssentialBySlug,
   listConditions,
 } from '../state/corpus.js';
 import {
   type CoverageSnapshot,
   type CoverageStatus,
+  essentialGlyph,
   getOrCompute,
 } from '../state/coverage.js';
+import { listEssentialPages } from '../state/entity-page.js';
 import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
 import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
@@ -58,83 +62,92 @@ type Tab = 'home' | 'essentials' | 'conditions' | 'explore' | 'products';
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
-/** One essential as the drawer grid + deep-dive render it. */
-interface EssentialView {
-  /** Canonical name — join key into the CoverageSnapshot + targets DB. */
-  key: string;
-  /** Abbreviated display name (uppercase). */
-  name: string;
-  /** Chemical symbol / vitamin letter / amino abbr / section code. */
-  symbol: string;
-  /** Granular category label (FOUNDATIONAL / RARE TRACE / VITAMIN / …). */
-  catLabel: string;
-  /** Reference token (#24 atomic, or V·01 code) for the deep-dive head. */
-  ref: string;
-  /** Broad section title (MINERALS / VITAMINS / …). */
-  section: string;
-  /** False for non-essential nutrients shown but not counted in the 90 (Omega-9). */
-  essential: boolean;
+/** Category the sh-tile uses for its edge colour (data-cat, CSS-driven). */
+function sectionCat(section: LayoutSection): 'mineral' | 'vitamin' | 'amino_acid' | 'fatty_acid' {
+  switch (section.tileClass) {
+    case 'tile--vitamin': return 'vitamin';
+    case 'tile--amino': return 'amino_acid';
+    case 'tile--fat': return 'fatty_acid';
+    case 'tile': return 'mineral';
+  }
 }
 
 function tileSymbol(t: LayoutTile): string {
   return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
 }
 
-function tileRef(t: LayoutTile): string {
-  if (t.num !== undefined) {
-    return `#${t.num}`;
+/** One tile as the demo's sh-tile grid renders it (symbol + name + claim count + coverage dot). */
+interface EssentialTile {
+  /** Canonical name — join key into the CoverageSnapshot. */
+  key: string;
+  /** Display name (uppercase, from the layout). */
+  name: string;
+  /** Chemical symbol / vitamin letter / amino abbr. */
+  symbol: string;
+  /** Nutrient family — drives the sh-tile edge colour via data-cat (CSS). */
+  category: 'mineral' | 'vitamin' | 'amino_acid' | 'fatty_acid';
+  /** Sealed claim count, joined from the per-essential entity pages. */
+  claimCount: number;
+  /** False for the shown-not-counted non-essential (Omega-9). */
+  essential: boolean;
+}
+
+/** One subsection = a demo sh-subhead + its sh-tile grid (the 6 the demo shows). */
+interface EssentialSubsection {
+  label: string;
+  /** vitamins/aminos/fats use the wider tile grid (demo). */
+  wide: boolean;
+  items: EssentialTile[];
+}
+
+/** layout_key → friendly common_name + sealed claim count (the per-essential entity pages). */
+interface EssMeta {
+  name: string;
+  claimCount: number;
+}
+const ESS_META: Map<string, EssMeta> = (() => {
+  const m = new Map<string, EssMeta>();
+  for (const e of listEssentialPages()) {
+    const lk = getEssentialBySlug(e.slug)?.layout_key;
+    if (lk !== undefined) {
+      m.set(lk, { name: e.name, claimCount: e.claim_count });
+    }
   }
-  return t.code ?? '';
-}
+  return m;
+})();
 
-function sectionCatLabel(section: LayoutSection): string {
-  switch (section.tileClass) {
-    case 'tile--vitamin':
-      return 'VITAMIN';
-    case 'tile--amino':
-      return 'AMINO ACID';
-    case 'tile--fat':
-      return 'FATTY ACID';
-    case 'tile':
-      return 'MINERAL';
-    default:
-      return 'MINERAL';
-  }
-}
-
-interface EssentialGroup {
-  title: string;
-  sub: string;
-  items: EssentialView[];
-}
-
-/** Flatten the layout into render groups (one per section) + a key→view map. */
-function buildEssentialGroups(): EssentialGroup[] {
-  return LAYOUT.sections.map((section) => {
-    const items: EssentialView[] = [];
-    const pushTile = (t: LayoutTile, catLabel: string): void => {
-      items.push({ key: t.key, name: t.name, symbol: tileSymbol(t), catLabel, ref: tileRef(t), section: section.title, essential: t.essential !== false });
+/** Flatten the layout into the demo's 6 subsections (minerals split 3 ways + vitamins/aminos/fats). */
+function buildSubsections(): EssentialSubsection[] {
+  const out: EssentialSubsection[] = [];
+  const toTile = (t: LayoutTile, cat: EssentialTile['category']): EssentialTile => {
+    const meta = ESS_META.get(t.key);
+    return {
+      key: t.key,
+      name: meta?.name ?? t.name,
+      symbol: essentialGlyph(t.key) || tileSymbol(t),
+      category: cat,
+      claimCount: meta?.claimCount ?? 0,
+      essential: t.essential !== false,
     };
+  };
+  for (const section of LAYOUT.sections) {
+    const cat = sectionCat(section);
+    const wide = cat !== 'mineral';
     if (section.subsections !== undefined) {
       for (const sub of section.subsections) {
-        for (const t of sub.tiles) {
-          pushTile(t, sub.label);
-        }
+        out.push({ label: sub.label, wide, items: sub.tiles.map(t => toTile(t, cat)) });
       }
     }
     else if (section.tiles !== undefined) {
-      const label = sectionCatLabel(section);
-      for (const t of section.tiles) {
-        pushTile(t, label);
-      }
+      out.push({ label: section.title, wide, items: section.tiles.map(t => toTile(t, cat)) });
     }
-    return { title: section.title, sub: section.sub, items };
-  });
+  }
+  return out;
 }
 
-const ESS_GROUPS = buildEssentialGroups();
+const ESS_SUBSECTIONS = buildSubsections();
 /** The 90 — count of essential tiles (Omega-9 and any other non-essential excluded). */
-const ESS_ESSENTIAL_COUNT = ESS_GROUPS.reduce((n, g) => n + g.items.filter(i => i.essential).length, 0);
+const ESS_ESSENTIAL_COUNT = ESS_SUBSECTIONS.reduce((n, g) => n + g.items.filter(i => i.essential).length, 0);
 
 // ─── Status → presentation ─────────────────────────────────────────────────
 
@@ -145,30 +158,29 @@ function statusOf(snapshot: CoverageSnapshot | null, key: string): CoverageStatu
   return snapshot.tiles.find(t => t.name === key)?.status ?? '';
 }
 
-function statusTileClass(s: CoverageStatus): string {
-  if (s === 'covered' || s === 'trace') {
-    return 'kd-essential-tile--covered';
-  }
-  if (s === 'partial' || s === 'gap') {
-    return 'kd-essential-tile--partial';
-  }
-  return '';
-}
+// The 4 organic building blocks (hydrogen, carbon, nitrogen, oxygen) are present in
+// air/water/food by default (Luneth) — a '' (no-dose) status reads covered, not absent.
+const FOUNDATIONAL_PRESENT: ReadonlySet<string> = new Set(['H', 'C', 'N', 'O']);
 
-function statusLabel(s: CoverageStatus): string {
-  switch (s) {
-    case 'covered':
-    case 'trace':
-      return 'COVERED';
-    case 'partial':
-      return 'PARTIAL';
-    case 'gap':
-      return 'GAP';
-    case '':
-      return 'PENDING';
-    default:
-      return 'PENDING';
+/**
+ * The tile's coverage-dot state. green covered · yellow partial · red uncovered/absent ·
+ * hollow-blue present-but-unquantified. A no-dose foundational element (H/C/N/O) with no
+ * numeric status reads covered (present by default); everything else with no delivery is absent.
+ */
+function dotState(status: CoverageStatus, symbol: string): string {
+  if (status === 'covered' || status === 'trace') {
+    return 'covered';
   }
+  if (status === 'partial') {
+    return 'partial';
+  }
+  if (status === 'present') {
+    return 'present';
+  }
+  if (status === '' && FOUNDATIONAL_PRESENT.has(symbol)) {
+    return 'covered';
+  }
+  return 'uncovered';
 }
 
 // ─── Render helpers ────────────────────────────────────────────────────────
@@ -186,31 +198,33 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
   return renderEssentialPage(key, snapshot);
 }
 
+/** The demo's friendly sh-subhead wording (view-copy), keyed by the layout's own label. */
+const SEC_LABEL_KEY: Record<string, string> = {
+  'FOUNDATIONAL': 'kd_esssec_structural',
+  'MAJOR TRACE': 'kd_esssec_electrolytes',
+  'RARE TRACE': 'kd_esssec_trace',
+  'VITAMINS': 'kd_esssec_vitamins',
+  'AMINO ACIDS': 'kd_esssec_amino',
+  'FATTY ACIDS': 'kd_esssec_fatty',
+};
+
+/** The 4 coverage-dot states, in legend order. */
+const COV_STATES = ['covered', 'partial', 'uncovered', 'present'] as const;
+
 function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
   const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : '';
-  const groupsHTML = ESS_GROUPS.map((group) => {
+  const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML(ui('kd_covlegend_label'))}</span>${COV_STATES.map(s => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML(ui(`kd_covlegend_${s}`))}</span>`).join('')}</div>`;
+  const groupsHTML = ESS_SUBSECTIONS.map((group) => {
     const tilesHTML = group.items.map((e) => {
-      const status = statusOf(snapshot, e.key);
-      const stateClass = e.essential ? statusTileClass(status) : 'kd-essential-tile--bonus';
-      const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? ' is-selected' : ''}`.trim();
-      const meta = e.essential
-        ? `${escHTML(e.catLabel)} · ${statusLabel(status)}`
-        : `${escHTML(e.catLabel)} · NON-ESSENTIAL`;
-      return `
-        <div class="${cls}" data-kd-essential="${escHTML(e.key)}" role="button" tabindex="0">
-          <div class="kd-essential-tile__sym">${escHTML(e.symbol)}</div>
-          <div class="kd-essential-tile__name">${escHTML(e.name)}</div>
-          <div class="kd-essential-tile__meta">${meta}</div>
-        </div>`;
+      const dot = dotState(statusOf(snapshot, e.key), e.symbol);
+      const sel = e.key === selectedKey ? ' is-selected' : '';
+      return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(e.key)}" title="${escHTML(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML(e.symbol)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML(plural(e.claimCount, 'claim'))}</span></button>`;
     }).join('');
-    const essentialN = group.items.filter(i => i.essential).length;
-    const bonusN = group.items.length - essentialN;
-    return `
-      <div class="kd-section-head">${escHTML(group.title)} · ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ''}</div>
-      <div class="kd-essentials-grid">${tilesHTML}</div>`;
+    const key = SEC_LABEL_KEY[group.label];
+    const label = key !== undefined ? ui(key) : group.label;
+    return `<div class="sh-subhead">${escHTML(label)}</div><div class="sh-grid${group.wide ? ' sh-grid--wide' : ''}">${tilesHTML}</div>`;
   }).join('');
-
-  return `${deepHTML}${groupsHTML}`;
+  return `${deepHTML}${legendHTML}${groupsHTML}`;
 }
 
 function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
@@ -262,7 +276,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
  */
 const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
   home: '.kd-home',
-  essentials: '.kd-essential-tile',
+  essentials: '.sh-tile',
   conditions: '.kd-condition-row',
   explore: '.kd-explore-chip',
   products: '.kd-product-row',
@@ -298,8 +312,8 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
       head.classList.toggle('kd-hidden', active && !headHasMatch);
     }
   };
-  body.querySelectorAll<HTMLElement>(`.kd-section-head, ${selector}`).forEach((node) => {
-    if (node.classList.contains('kd-section-head')) {
+  body.querySelectorAll<HTMLElement>(`.kd-section-head, .sh-subhead, ${selector}`).forEach((node) => {
+    if (node.classList.contains('kd-section-head') || node.classList.contains('sh-subhead')) {
       commitHead();
       head = node;
       headHasMatch = false;

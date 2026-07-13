@@ -17777,6 +17777,11 @@
     };
   }
 
+  // assets/js/src/core/format.ts
+  function plural(n, one, many = `${one}s`) {
+    return n === 1 ? one : many;
+  }
+
   // assets/data/view-copy.json
   var view_copy_default = {
     _purpose: "Single hand-authored home for VIEW prose (Charter R4): the claim-kind + search-facet display-label maps, the claim-kind -> colour-category map (the LOCKED colour language, redesign blueprint \xA76), plus generic UI chrome copy for the entity-page redesign. ID-referenced, single-copy, never inline in views/. Authored like glossary.json / doctrine-data.json, NOT a pillar projection (view copy has no Wallach source, carries no dose/number). kind_labels + kind_categories cover every distinct claim.kind in the sealed corpus (gated by kind_label_covers_corpus + claim_category_mapping_total). facet_labels is the single home for the search-facet headers (the former core FACET_LABEL literal moved here). ui holds generic chrome copy and GROWS as each view is migrated (H2-H4).",
@@ -17856,6 +17861,17 @@
       kh_legend_vitamin: "Vitamins",
       kh_legend_amino_acid: "Amino acids",
       kh_legend_fatty_acid: "Fatty acids",
+      kd_covlegend_label: "coverage",
+      kd_covlegend_covered: "covered",
+      kd_covlegend_partial: "partial",
+      kd_covlegend_uncovered: "uncovered",
+      kd_covlegend_present: "present",
+      kd_esssec_structural: "Structural & bulk minerals",
+      kd_esssec_electrolytes: "Electrolytes & major minerals",
+      kd_esssec_trace: "Trace & rare-earth minerals",
+      kd_esssec_vitamins: "Vitamins",
+      kd_esssec_amino: "Amino acids",
+      kd_esssec_fatty: "Essential fatty acids",
       kh_conditions_label: "Common conditions",
       kh_conditions_hint: "what Wallach wrote most about",
       kh_conditions_link: "browse all {n} \u2192",
@@ -18135,73 +18151,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       }
       return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
     });
-  }
-
-  // assets/data/fatty-acid-clarity-data.json
-  var fatty_acid_clarity_data_default = {
-    _purpose: "Designated CLARITY prose store for the omega fatty-acid explainer alert on the essentials deep-dive (views/knowledge.ts). GENERAL reference for clarity -- NOT a Wallach claim and NOT doctrine (SS00.A: clearly-marked non-Wallach educational context is permitted; it is visually + textually marked as such). Added 2026-07-08 after the 90-nutrients graphic was found to MISLABEL Omega-9 as 'Arachidonic' (arachidonic is Omega-6; Omega-9 is Oleic Acid); this store keeps the omega naming unambiguous so the confusion never recurs. Hand-authored, MANIFEST-accounted; Zod-validated at the boundary; never inline in code. GLA is Gamma-Linolenic Acid (the correct name; 'gamma linoleic' is a common misnomer).",
-    disclaimer: "General reference for clarity \u2014 not a Wallach claim, not medical advice.",
-    omegas: [
-      {
-        family: "omega-3",
-        label: "Omega-3",
-        acids: [
-          {
-            abbr: "ALA",
-            name: "Alpha-Linolenic Acid",
-            primary: true,
-            description: "Found mostly in plant foods; supports cardiovascular health and helps combat inflammation."
-          },
-          {
-            abbr: "EPA",
-            name: "Eicosapentaenoic Acid",
-            primary: false,
-            description: "Supports several physiological roles and may play a role against inflammation."
-          },
-          {
-            abbr: "DHA",
-            name: "Docosahexaenoic Acid",
-            primary: false,
-            description: "Found mostly in seafood; a structural part of every cell and concentrated in the brain."
-          }
-        ]
-      },
-      {
-        family: "omega-6",
-        label: "Omega-6",
-        acids: [
-          {
-            abbr: "LA",
-            name: "Linoleic Acid",
-            primary: true,
-            description: "Works alongside omega-3 fatty acids to support brain function and normal growth and development."
-          },
-          {
-            abbr: "GLA",
-            name: "Gamma-Linolenic Acid",
-            primary: false,
-            description: "Some evidence it may help with blood pressure and overall inflammation."
-          }
-        ]
-      },
-      {
-        family: "omega-9",
-        label: "Omega-9",
-        acids: [
-          {
-            abbr: "OA",
-            name: "Oleic Acid",
-            primary: true,
-            description: "An omega-9 fatty acid linked to a lower risk of coronary heart disease."
-          }
-        ]
-      }
-    ]
-  };
-
-  // assets/js/src/core/format.ts
-  function plural(n, one, many = `${one}s`) {
-    return n === 1 ? one : many;
   }
 
   // assets/data/entity-page-data.json
@@ -49022,6 +48971,68 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       nutrient_count: c.restore.length
     }));
   }
+
+  // assets/data/fatty-acid-clarity-data.json
+  var fatty_acid_clarity_data_default = {
+    _purpose: "Designated CLARITY prose store for the omega fatty-acid explainer alert on the essentials deep-dive (views/knowledge.ts). GENERAL reference for clarity -- NOT a Wallach claim and NOT doctrine (SS00.A: clearly-marked non-Wallach educational context is permitted; it is visually + textually marked as such). Added 2026-07-08 after the 90-nutrients graphic was found to MISLABEL Omega-9 as 'Arachidonic' (arachidonic is Omega-6; Omega-9 is Oleic Acid); this store keeps the omega naming unambiguous so the confusion never recurs. Hand-authored, MANIFEST-accounted; Zod-validated at the boundary; never inline in code. GLA is Gamma-Linolenic Acid (the correct name; 'gamma linoleic' is a common misnomer).",
+    disclaimer: "General reference for clarity \u2014 not a Wallach claim, not medical advice.",
+    omegas: [
+      {
+        family: "omega-3",
+        label: "Omega-3",
+        acids: [
+          {
+            abbr: "ALA",
+            name: "Alpha-Linolenic Acid",
+            primary: true,
+            description: "Found mostly in plant foods; supports cardiovascular health and helps combat inflammation."
+          },
+          {
+            abbr: "EPA",
+            name: "Eicosapentaenoic Acid",
+            primary: false,
+            description: "Supports several physiological roles and may play a role against inflammation."
+          },
+          {
+            abbr: "DHA",
+            name: "Docosahexaenoic Acid",
+            primary: false,
+            description: "Found mostly in seafood; a structural part of every cell and concentrated in the brain."
+          }
+        ]
+      },
+      {
+        family: "omega-6",
+        label: "Omega-6",
+        acids: [
+          {
+            abbr: "LA",
+            name: "Linoleic Acid",
+            primary: true,
+            description: "Works alongside omega-3 fatty acids to support brain function and normal growth and development."
+          },
+          {
+            abbr: "GLA",
+            name: "Gamma-Linolenic Acid",
+            primary: false,
+            description: "Some evidence it may help with blood pressure and overall inflammation."
+          }
+        ]
+      },
+      {
+        family: "omega-9",
+        label: "Omega-9",
+        acids: [
+          {
+            abbr: "OA",
+            name: "Oleic Acid",
+            primary: true,
+            description: "An omega-9 fatty acid linked to a lower risk of coronary heart disease."
+          }
+        ]
+      }
+    ]
+  };
 
   // assets/data/entity-copy.json
   var entity_copy_default = {
@@ -91665,81 +91676,80 @@ deaths, blood clots, sterility`,
 
   // assets/js/src/views/knowledge.ts
   var LAYOUT3 = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  function sectionCat(section) {
+    switch (section.tileClass) {
+      case "tile--vitamin":
+        return "vitamin";
+      case "tile--amino":
+        return "amino_acid";
+      case "tile--fat":
+        return "fatty_acid";
+      case "tile":
+        return "mineral";
+    }
+  }
   function tileSymbol(t) {
     return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
   }
-  function tileRef(t) {
-    if (t.num !== void 0) {
-      return `#${t.num}`;
+  var ESS_META = (() => {
+    const m = /* @__PURE__ */ new Map();
+    for (const e of listEssentialPages()) {
+      const lk = getEssentialBySlug(e.slug)?.layout_key;
+      if (lk !== void 0) {
+        m.set(lk, { name: e.name, claimCount: e.claim_count });
+      }
     }
-    return t.code ?? "";
-  }
-  function sectionCatLabel(section) {
-    switch (section.tileClass) {
-      case "tile--vitamin":
-        return "VITAMIN";
-      case "tile--amino":
-        return "AMINO ACID";
-      case "tile--fat":
-        return "FATTY ACID";
-      case "tile":
-        return "MINERAL";
-      default:
-        return "MINERAL";
-    }
-  }
-  function buildEssentialGroups() {
-    return LAYOUT3.sections.map((section) => {
-      const items = [];
-      const pushTile = (t, catLabel) => {
-        items.push({ key: t.key, name: t.name, symbol: tileSymbol(t), catLabel, ref: tileRef(t), section: section.title, essential: t.essential !== false });
+    return m;
+  })();
+  function buildSubsections() {
+    const out = [];
+    const toTile = (t, cat) => {
+      const meta = ESS_META.get(t.key);
+      return {
+        key: t.key,
+        name: meta?.name ?? t.name,
+        symbol: essentialGlyph(t.key) || tileSymbol(t),
+        category: cat,
+        claimCount: meta?.claimCount ?? 0,
+        essential: t.essential !== false
       };
+    };
+    for (const section of LAYOUT3.sections) {
+      const cat = sectionCat(section);
+      const wide = cat !== "mineral";
       if (section.subsections !== void 0) {
         for (const sub of section.subsections) {
-          for (const t of sub.tiles) {
-            pushTile(t, sub.label);
-          }
+          out.push({ label: sub.label, wide, items: sub.tiles.map((t) => toTile(t, cat)) });
         }
       } else if (section.tiles !== void 0) {
-        const label = sectionCatLabel(section);
-        for (const t of section.tiles) {
-          pushTile(t, label);
-        }
+        out.push({ label: section.title, wide, items: section.tiles.map((t) => toTile(t, cat)) });
       }
-      return { title: section.title, sub: section.sub, items };
-    });
+    }
+    return out;
   }
-  var ESS_GROUPS = buildEssentialGroups();
-  var ESS_ESSENTIAL_COUNT = ESS_GROUPS.reduce((n, g) => n + g.items.filter((i) => i.essential).length, 0);
+  var ESS_SUBSECTIONS = buildSubsections();
+  var ESS_ESSENTIAL_COUNT = ESS_SUBSECTIONS.reduce((n, g) => n + g.items.filter((i) => i.essential).length, 0);
   function statusOf(snapshot, key) {
     if (snapshot === null) {
       return "";
     }
     return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
   }
-  function statusTileClass(s) {
-    if (s === "covered" || s === "trace") {
-      return "kd-essential-tile--covered";
+  var FOUNDATIONAL_PRESENT = /* @__PURE__ */ new Set(["H", "C", "N", "O"]);
+  function dotState(status, symbol) {
+    if (status === "covered" || status === "trace") {
+      return "covered";
     }
-    if (s === "partial" || s === "gap") {
-      return "kd-essential-tile--partial";
+    if (status === "partial") {
+      return "partial";
     }
-    return "";
-  }
-  function statusLabel2(s) {
-    switch (s) {
-      case "covered":
-      case "trace":
-        return "COVERED";
-      case "partial":
-        return "PARTIAL";
-      case "gap":
-        return "GAP";
-      case "":
-        return "PENDING";
-      default:
-        return "PENDING";
+    if (status === "present") {
+      return "present";
     }
+    if (status === "" && FOUNDATIONAL_PRESENT.has(symbol)) {
+      return "covered";
+    }
+    return "uncovered";
   }
   function escHTML10(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -91747,28 +91757,29 @@ deaths, blood clots, sterility`,
   function renderEssentialDeep(key, snapshot) {
     return renderEssentialPage(key, snapshot);
   }
+  var SEC_LABEL_KEY = {
+    "FOUNDATIONAL": "kd_esssec_structural",
+    "MAJOR TRACE": "kd_esssec_electrolytes",
+    "RARE TRACE": "kd_esssec_trace",
+    "VITAMINS": "kd_esssec_vitamins",
+    "AMINO ACIDS": "kd_esssec_amino",
+    "FATTY ACIDS": "kd_esssec_fatty"
+  };
+  var COV_STATES = ["covered", "partial", "uncovered", "present"];
   function renderEssentialsTab(snapshot, selectedKey) {
     const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : "";
-    const groupsHTML = ESS_GROUPS.map((group) => {
+    const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML10(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML10(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
+    const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
-        const status = statusOf(snapshot, e.key);
-        const stateClass = e.essential ? statusTileClass(status) : "kd-essential-tile--bonus";
-        const cls = `kd-essential-tile ${stateClass}${e.key === selectedKey ? " is-selected" : ""}`.trim();
-        const meta = e.essential ? `${escHTML10(e.catLabel)} \xB7 ${statusLabel2(status)}` : `${escHTML10(e.catLabel)} \xB7 NON-ESSENTIAL`;
-        return `
-        <div class="${cls}" data-kd-essential="${escHTML10(e.key)}" role="button" tabindex="0">
-          <div class="kd-essential-tile__sym">${escHTML10(e.symbol)}</div>
-          <div class="kd-essential-tile__name">${escHTML10(e.name)}</div>
-          <div class="kd-essential-tile__meta">${meta}</div>
-        </div>`;
+        const dot = dotState(statusOf(snapshot, e.key), e.symbol);
+        const sel = e.key === selectedKey ? " is-selected" : "";
+        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML10(e.category)}" data-kd-essential="${escHTML10(e.key)}" title="${escHTML10(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML10(e.symbol)}</span><span class="sh-tile__nm">${escHTML10(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML10(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
-      const essentialN = group.items.filter((i) => i.essential).length;
-      const bonusN = group.items.length - essentialN;
-      return `
-      <div class="kd-section-head">${escHTML10(group.title)} \xB7 ${essentialN}${bonusN > 0 ? ` + ${bonusN}` : ""}</div>
-      <div class="kd-essentials-grid">${tilesHTML}</div>`;
+      const key = SEC_LABEL_KEY[group.label];
+      const label = key !== void 0 ? ui(key) : group.label;
+      return `<div class="sh-subhead">${escHTML10(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
     }).join("");
-    return `${deepHTML}${groupsHTML}`;
+    return `${deepHTML}${legendHTML}${groupsHTML}`;
   }
   function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic) {
     switch (tab) {
@@ -91812,7 +91823,7 @@ deaths, blood clots, sterility`,
   }
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
-    essentials: ".kd-essential-tile",
+    essentials: ".sh-tile",
     conditions: ".kd-condition-row",
     explore: ".kd-explore-chip",
     products: ".kd-product-row"
@@ -91832,8 +91843,8 @@ deaths, blood clots, sterility`,
         head.classList.toggle("kd-hidden", active && !headHasMatch);
       }
     };
-    body.querySelectorAll(`.kd-section-head, ${selector}`).forEach((node) => {
-      if (node.classList.contains("kd-section-head")) {
+    body.querySelectorAll(`.kd-section-head, .sh-subhead, ${selector}`).forEach((node) => {
+      if (node.classList.contains("kd-section-head") || node.classList.contains("sh-subhead")) {
         commitHead();
         head = node;
         headHasMatch = false;
@@ -93162,7 +93173,7 @@ Technical (chunks 3-5 of the trace/rare back-end build \u2014 the calculation, g
 - NEW invariant pdm_goal_wallach_sourced (Charter R2 / \xA700.A, critical): TRACE (goal.source_claim_id resolves to a sealed claim carrying a real dose) + CHAIN (recompute maintenance = dose_amount x reference-product-mg/serving-fl-oz x 154/per_bw, independently of the derive, byte-compare; therapeutic = maintenance x multiplier). Proven to REDDEN on poison by a tamper negative test (set 924->999 -> RED with the arithmetic shown -> regenerate -> GREEN). Board 61 -> 62.
 - render_probe_seeded.js rewritten to assert the NEW behavior (was testing the removed regex): Vitamin C covered, Zinc gap, Boron partial (numeric, unchanged) + two 600 mg PDM sources -> Aluminum + Yttrium covered via the shared group verdict, coveredStat >= 30. The scaling_factor field is stripped by the regimen schema on load, so the probe seeds two real products instead (a useful finding logged here).
 - Verified: node tools/build.mjs 0 \xB7 invariants 62/62 \xB7 render_probe_seeded / _knowledge / _adopt PASS \xB7 render_probe (empty) exit 0 \xB7 eslint clean (state/coverage.ts, views/coverage.ts, core/schemas/pdm-coverage.ts).
-- Deferrals: (1) the Essentials-tab finish \u2014 demo-faithful sh-tile + corner coverage dot + a Home-style dot legend \u2014 is chunk 6 and STOPS for Luneth's visual sign-off. (2) The trace/rare INNER-page design (the "covered as a group" explanation + the 924 math reveal + the therapeutic tier) is a later per-element conversation; the therapeutic 1848 is derived + carried in the data but not displayed yet. (3) Cal Toddy label reconciliation (Cal_Toddy_Facts.png) still owed before its status is trustworthy (currently present-only).` }];
+- Deferrals: (1) the Essentials-tab finish \u2014 demo-faithful sh-tile + corner coverage dot + a Home-style dot legend \u2014 is chunk 6 and STOPS for Luneth's visual sign-off. (2) The trace/rare INNER-page design (the "covered as a group" explanation + the 924 math reveal + the therapeutic tier) is a later per-element conversation; the therapeutic 1848 is derived + carried in the data but not displayed yet. (3) Cal Toddy label reconciliation (Cal_Toddy_Facts.png) still owed before its status is trustworthy (currently present-only).` }, { id: "lg_mrihd6le_bfry1n", ts: "2026-07-12T19:24:52.898844-05:00", surface: "knowledge", kind: "round-close", summary: "Essentials tab \u2192 demo sh-tile + coverage dot + legend (chunk 6). First try failed the VISUAL gate (structural probe passed, never LOOKED); redone via Python CSS extraction + screenshot-verify. Fixed --fam scope + friendly names. Board 62/62.", detail: "Plain: the Essentials tab now looks like the signed-off demo (compact category-coloured tiles, friendly names, claim counts) with the new coverage dot on each tile + a legend. The important lesson from this chunk is about METHOD, not the tab: my first attempt failed because I ran a structural probe and assumed it looked right without ever looking at it. Luneth rejected it. The fix was to extract the demo's exact CSS with Python, find the real bugs, translate to clean code, and then actually screenshot the result and compare it to the demo. It matched on the second try.\n\nTechnical (chunk 6 of the trace/rare build \u2014 the visible Essentials-tab finish):\n- THE METHOD (record this \u2014 it is how to replicate a demo page correctly, and it is why the Home tab went right the first time):\n  1. Extract the demo's EXACT CSS/JS with PYTHON, never grep (grep truncates the demo's 600KB inlined long lines) and never infer a base rule.\n  2. Translate the demo's bad code into clean app code \u2014 adopt only styles/fonts, reuse existing app tokens, do NOT copy the demo's code/data and do NOT bloat the build with walls of CSS.\n  3. VISUALLY VERIFY: screenshot the rendered surface (puppeteer, headless) -> Read the PNG -> compare to the demo. A DOM/structural render-probe (tile counts, \"dots exist\") is NOT a visual check; it will pass on a surface that looks completely wrong.\n- Two real bugs the extraction surfaced: (1) CSS-variable SCOPE \u2014 --fam-science/action/story were defined on `#drawer-knowledge-mount .kd-ep` (the entity page), so `.sh-tile` in the grid never inherited them and every non-vitamin category bar was transparent (vitamins used the global --ds-accent). Fix: broaden the definition to `#drawer-knowledge-mount`. Also fixes the same latent bug on the Home essentials shelf. (2) tile NAMES used the layout UPPERCASE display name, not the friendly common_name -> switched to common_name + essentialGlyph (mirrors the Home shelf shelfTile).\n- Build: renderEssentialsTab rebuilt on the demo's 6 sh-subhead subsections (its mineral grouping is IDENTICAL to coverage-layout's 11/14/35 split \u2014 verified by extracting the demo GRID), sh-tile grid, a corner kd-cov-dot (covered/partial/uncovered/present; H/C/N/O forced green), a top dot-legend reusing ep-legend, and the demo's friendly labels via 6 kd_esssec_* view-copy keys. CSS: --fam scope broadened, sh-subhead ink-faint, sh-grid--wide 120px, new kd-cov-dot/legend/is-selected. Probe updated to the sh-tile/sh-subhead structure.\n- Verified: build 0 \xB7 invariants 62/62 \xB7 render_probe_knowledge PASS (0 page errors) \xB7 eslint clean \xB7 screenshot-compared to the demo. Luneth: \"good enough\", a few small tweaks he will make himself.\n- Open: Luneth's tweaks; naming (canon Niacin/Folate/Vitamin D vs demo Vitamin B3/B9/D3); the demo's mid-dose-group mislabel kept 1:1; the trace/rare INNER-page design (covered-as-a-group + the 924 math + therapeutic 1848) is deferred to per-element design; Cal Toddy label fix; Group-B factor default 1.0." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

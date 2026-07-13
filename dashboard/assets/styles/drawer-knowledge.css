@@ -1338,8 +1338,8 @@
  * every kd-* family together later. Colour families are the brighter D1 hues;
  * violet is the only new hue — sealed design-system.css is untouched.
  * ═══════════════════════════════════════════════════════════════════════════ */
-#drawer-knowledge-mount .kd-ep {
-  --fam-science: #2f9dba;   /* teal   — the science */
+#drawer-knowledge-mount {
+  --fam-science: #2f9dba;   /* teal   — the science (also the sh-tile category stripe) */
   --fam-action:  #5aa82c;   /* green  — what to do / works-with */
   --fam-signs:   #d69a24;   /* amber  — signs / cautions */
   --fam-story:   #8a52d6;   /* violet — story / lore */
@@ -1615,3 +1615,15 @@
 #drawer-knowledge-mount .sh-condrow__nm{ font-family:var(--ds-font-display-interface); font-size:var(--ds-text-sm); font-weight:600; color:var(--ds-ink); }
 #drawer-knowledge-mount .sh-condrow:hover .sh-condrow__nm{ color:var(--ds-accent-deep); }
 #drawer-knowledge-mount .sh-condrow__ct{ margin-left:auto; font-family:var(--ds-font-mono); font-size:0.625rem; color:var(--ds-ink-soft); white-space:nowrap; }
+/* -- Essentials tab: demo sh-subhead sections + coverage dot + dot legend (chunk 6) -- */
+#drawer-knowledge-mount .sh-subhead{ font-family:var(--ds-font-mono); font-size:var(--ds-text-micro); letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-faint); margin:var(--ds-space-4) 0 var(--ds-space-2); }
+#drawer-knowledge-mount .sh-subhead:first-of-type{ margin-top:var(--ds-space-2); }
+#drawer-knowledge-mount .sh-grid--wide{ grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); }
+#drawer-knowledge-mount .sh-tile.is-selected{ border-color:var(--ds-accent); box-shadow:0 0 0 1px var(--ds-accent), 0 4px 12px -3px rgba(255, 126, 60, 0.28); }
+#drawer-knowledge-mount .kd-cov-dot{ width:9px; height:9px; border-radius:50%; display:inline-block; flex:0 0 auto; }
+#drawer-knowledge-mount .sh-tile > .kd-cov-dot{ position:absolute; top:5px; right:5px; }
+#drawer-knowledge-mount .kd-cov-dot--covered{ background:var(--ds-status-ok); }
+#drawer-knowledge-mount .kd-cov-dot--partial{ background:var(--ds-status-warn); }
+#drawer-knowledge-mount .kd-cov-dot--uncovered{ background:var(--ds-status-err); }
+#drawer-knowledge-mount .kd-cov-dot--present{ background:transparent; border:1.5px solid var(--ds-status-info, var(--ds-tech)); }
+#drawer-knowledge-mount .kd-cov-legend{ margin:0 0 var(--ds-space-3); padding-top:0; border-top:none; }

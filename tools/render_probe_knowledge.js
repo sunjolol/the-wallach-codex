@@ -160,10 +160,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(300);
   const essentials = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const tiles = root ? [...root.querySelectorAll('.kd-essential-tile')] : [];
-    const heads = root ? [...root.querySelectorAll('.kd-section-head')].map(e => e.textContent.trim()) : [];
-    const stateTiles = tiles.filter(t => t.classList.contains('kd-essential-tile--covered') || t.classList.contains('kd-essential-tile--partial')).length;
-    return { tileCount: tiles.length, sectionCount: heads.length, stateTiles };
+    const tiles = root ? [...root.querySelectorAll('.sh-tile')] : [];
+    const heads = root ? [...root.querySelectorAll('.sh-subhead')].map(e => e.textContent.trim()) : [];
+    const withDot = tiles.filter(t => t.querySelector('.kd-cov-dot')).length;
+    const stateTiles = tiles.filter(t => t.querySelector('.kd-cov-dot--covered, .kd-cov-dot--partial')).length;
+    return { tileCount: tiles.length, sectionCount: heads.length, withDot, stateTiles };
   });
   // Click Magnesium (11+ sealed claims) — its tile expands the data-driven entity page.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
@@ -380,7 +381,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['best-source rows show a pointer cursor (look clickable)', chipToProduct.srcCursor === 'pointer'],
     ['best-source row opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
-    ['essentials: every section present (>= 4 heads)', essentials.sectionCount >= 4],
+    ['essentials: 6 demo subsections', essentials.sectionCount >= 6],
+    ['essentials: every tile has a coverage dot', essentials.withDot === essentials.tileCount && essentials.tileCount > 0],
     ['essentials: coverage states rendered', essentials.stateTiles > 0],
     ['essentials: Magnesium tile expands the entity page', deep.shown === true && deep.hasName === true && deep.hasGlance === true],
     ['entity page: the full record renders with claim cards (Magnesium)', deep.recordShown === true && deep.recordClaimCount > 0],
