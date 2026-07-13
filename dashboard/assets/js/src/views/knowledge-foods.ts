@@ -4,19 +4,24 @@
  *
  * A curated, PERSUASIVE landing for Wallach's diet / absorption teaching -- the half of
  * his model that says the 90 essential nutrients only work if the gut can absorb them.
- * Designed to feel special and pull the reader in (Luneth 2026-07-13): an editorial hero,
- * a high-contrast prevalence stat, and an illustrated villi diagram (healthy vs
- * gluten-damaged) that shows WHY absorption fails -- then the sealed crown-jewel claims
- * "in his own words". Restraint still governs the TONE (persuade through Wallach's own
- * evidence, never nag); the richness is visual, not a lecture.
+ * Designed to feel special and pull the reader in (Luneth 2026-07-13): an editorial hero
+ * with alien-tech chrome (a pulsing corpus readout + an accent-notch eyebrow rule), a
+ * .ds-pull-stat kill-shot (the 115M prevalence beat), an illustrated villi "scan" (damaged
+ * left, healthy right -- thin square bars on a faint tech-grid, pulsing nutrient dots) that
+ * shows WHY absorption fails, then a REMOVE <-> EAT good/bad-foods contrast (+ a "form, not
+ * the food" strip), then the sealed crown-jewel claims "in his own words". Restraint governs
+ * the TONE (persuade through Wallach's own evidence, never nag); the richness is visual.
  *
- * PURE PROJECTION (R1): no canonical value or per-topic literal. The thesis claims come
- * from the curation config (state/foods-curation.ts) resolved against the search index,
- * rendered with the SHARED faceted claim card (views/entity-page.ts). Prose is contained
- * (R4): every framing string comes from the view-copy store via ui()/the facet label;
- * Wallach's words are data (escaped). The villi figure is a decorative SVG (no data); its
- * caption + the prevalence stat are framing that faithfully surface sealed claims
- * (EPIGEN-000141 prevalence + the gluten->villi mechanism), each attributed on screen.
+ * Reference for the visual language: dashboard/components/trace-mineral-tile-detail.html
+ * (design-system.css primitives -- .ds-pull-stat / .ds-pulse / mono readouts / accent-notch
+ * rules), translated to clean code -- NOT copied. The "L-corner crosshair" flourishes there
+ * are deliberately omitted (Luneth: they read as messy).
+ *
+ * PURE PROJECTION (R1): no canonical value or per-topic literal. Thesis claims + food cards
+ * come from the curation config (state/foods-curation.ts) resolved against the search index;
+ * each food's "why" is a sealed claim's answer (never hand-authored). Prose is contained (R4):
+ * framing strings come from view-copy via ui()/the facet label; Wallach's words are data
+ * (escaped). The villi figure is a decorative SVG. Food cards route via data-kd-topic.
  *
  * Layer: views/ -- reads state/ + a sibling view's card renderer, never localStorage.
  * ===========================================================================
@@ -24,7 +29,7 @@
 
 import { SEARCH_FACETS, type SearchClaim } from '../core/schemas/index.js';
 import { facetLabel, ui } from '../state/copy.js';
-import { foodsThesisClaims } from '../state/foods-curation.js';
+import { type FoodCard, foodsConditional, foodsEat, foodsRemove, foodsThesisClaims } from '../state/foods-curation.js';
 import { renderSearchCard } from './entity-page.js';
 
 // Hex escapes \x22 \x27 for " and ' (the clean-view prose scanner has no regex parser;
@@ -51,79 +56,132 @@ function facetSections(claims: SearchClaim[]): string {
   }).join('');
 }
 
-/** One villus (intestinal finger) as a rounded-top path from the gut-wall baseline. */
-function villus(cx: number, baseY: number, w: number, h: number): string {
-  const top = baseY - h;
-  const r = w / 2;
-  return `M${cx - r} ${baseY} L${cx - r} ${top + r} Q${cx - r} ${top} ${cx} ${top} Q${cx + r} ${top} ${cx + r} ${top + r} L${cx + r} ${baseY} Z`;
-}
-
 /**
- * The villi figure: healthy = tall dense fingers (large surface area, nutrients pulled in);
- * damaged = short blunted stubs (nutrients drift past). Decorative (aria-hidden); colours
- * come from CSS classes (var() does not resolve inside SVG presentation attributes).
+ * The villi "scan" figure: healthy = tall dense square bars (large surface area, nutrients
+ * pulled in among them); damaged = short stubs (nutrients drift high above, unabsorbed). A
+ * faint tech-grid + baseline ticks fill the negative space; nutrient dots pulse (staggered).
+ * Decorative (aria-hidden); colours come from CSS classes (var() does not resolve in SVG
+ * presentation attributes).
  */
 function villiArt(healthy: boolean): string {
-  const baseY = 106;
-  const n = 7;
-  const startX = 24;
-  const gap = 26;
-  const w = healthy ? 14 : 17;
-  const h = healthy ? 78 : 17;
+  const W = 220;
+  const baseY = 108;
+  const marginX = 16;
+  const n = 9;
+  const usable = W - marginX * 2;
+  const barW = 12;
+  const gap = (usable - barW) / (n - 1);
+  const h = healthy ? 74 : 13;
+  let grid = '';
+  for (let x = marginX; x <= W - marginX; x += 22) {
+    grid += `<line class="kd-foods-villi__gridline" x1="${x}" y1="20" x2="${x}" y2="${baseY}" />`;
+  }
+  for (let y = 20; y < baseY; y += 22) {
+    grid += `<line class="kd-foods-villi__gridline" x1="${marginX}" y1="${y}" x2="${W - marginX}" y2="${y}" />`;
+  }
   let vs = '';
   for (let i = 0; i < n; i += 1) {
-    vs += `<path class="kd-foods-villi__v" d="${villus(startX + i * gap, baseY, w, h)}" />`;
+    const x = (marginX + i * gap).toFixed(1);
+    vs += `<rect class="kd-foods-villi__v" x="${x}" y="${baseY - h}" width="${barW}" height="${h}" />`;
   }
+  const wall = `<line class="kd-foods-villi__wall" x1="${marginX}" y1="${baseY}" x2="${W - marginX}" y2="${baseY}" />`;
+  let ticks = '';
+  for (let x = marginX; x <= W - marginX; x += 11) {
+    ticks += `<line class="kd-foods-villi__tick" x1="${x}" y1="${baseY}" x2="${x}" y2="${baseY + 4}" />`;
+  }
+  const dotY = healthy ? 64 : 28;
   let dots = '';
   for (let i = 0; i < 6; i += 1) {
-    const cx = startX + 13 + i * gap;
-    const cy = healthy ? 44 + (i % 3) * 16 : 13 + (i % 2) * 9;
-    dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${cy}" r="3.1" />`;
+    const cx = (30 + i * ((usable - 28) / 5)).toFixed(1);
+    dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${dotY}" r="4.5" style="animation-delay:${(i * 0.25).toFixed(2)}s" />`;
   }
-  return `<svg class="kd-foods-villi__art" viewBox="0 0 200 116" role="img" aria-hidden="true"><line class="kd-foods-villi__wall" x1="8" y1="${baseY}" x2="192" y2="${baseY}" />${vs}${dots}</svg>`;
+  return `<svg class="kd-foods-villi__art" viewBox="0 0 ${W} 132" role="img" aria-hidden="true">${grid}${vs}${wall}${ticks}${dots}</svg>`;
+}
+
+/** One healthy/damaged villi panel (title + metric readout + the scan figure + caption). */
+function villiPanel(healthy: boolean): string {
+  const kind = healthy ? 'ok' : 'bad';
+  const title = healthy ? ui('kd_foods_villi_ok_title') : ui('kd_foods_villi_bad_title');
+  const metric = healthy ? ui('kd_foods_villi_ok_metric') : ui('kd_foods_villi_bad_metric');
+  const cap = healthy ? ui('kd_foods_villi_ok_cap') : ui('kd_foods_villi_bad_cap');
+  return `<div class="kd-foods-villi__panel kd-foods-villi__panel--${kind}">
+      <div class="kd-foods-villi__top">
+        <div class="kd-foods-villi__t">${escHTML(title)}</div>
+        <div class="kd-foods-villi__metric">${escHTML(metric)}</div>
+      </div>
+      ${villiArt(healthy)}
+      <div class="kd-foods-villi__cap">${escHTML(cap)}</div>
+    </div>`;
+}
+
+/** One good/bad-food card -> opens that food's topic page (shared data-kd-topic contract). */
+function foodItem(c: FoodCard, kind: string): string {
+  return `<button class="kd-foods-item kd-foods-item--${escHTML(kind)}" type="button" data-kd-topic="${escHTML(c.slug)}">
+      <span class="kd-foods-item__nm">${escHTML(c.name)}</span>
+      <span class="kd-foods-item__why">${escHTML(c.why)}</span>
+      <span class="kd-foods-item__go" aria-hidden="true">→</span>
+    </button>`;
 }
 
 /**
- * The Absorption landing (chunk 2 -- the elevated visual thesis): editorial hero (mantra
- * headline + two-prong deck) -> the prevalence stat -> the villi mechanism figure -> the
- * three sealed crown-jewel claims "in his own words". The REMOVE <-> EAT good/bad-foods
- * contrast is the next chunk.
+ * The Absorption landing: alien-tech hero -> the .ds-pull-stat prevalence kill-shot -> the
+ * villi "scan" (damaged left, healthy right) -> the REMOVE <-> EAT good/bad-foods contrast
+ * (+ the "form, not the food" strip) -> the three sealed crown-jewel claims "in his own words".
  */
 export function renderFoodsTab(): string {
-  const thesis = foodsThesisClaims();
+  const remove = foodsRemove();
+  const eat = foodsEat();
+  const conditional = foodsConditional();
   return `<div class="kt-page kd-ep kd-foods">
     <header class="kd-foods-hero">
-      <span class="kd-foods-hero__kicker">${escHTML(ui('kd_foods_kicker'))}</span>
+      <div class="kd-foods-readout">
+        <span><span class="ds-pulse tech live"></span>${escHTML(ui('kd_foods_readout_1'))}</span>
+        <span>${escHTML(ui('kd_foods_readout_2'))}</span>
+      </div>
+      <div class="kd-foods-eyebrow">
+        <span class="kd-foods-eyebrow__l">${escHTML(ui('kd_foods_eyebrow_l'))}</span>
+        <span class="kd-foods-eyebrow__rule"></span>
+      </div>
       <h1 class="kd-foods-hero__h"><span class="l1">${escHTML(ui('kd_foods_hl1'))}</span><span class="l2">${escHTML(ui('kd_foods_hl2'))}</span></h1>
       <p class="kd-foods-hero__deck">${escHTML(ui('kd_foods_deck'))}</p>
     </header>
 
-    <div class="kd-foods-stat">
-      <div class="kd-foods-stat__num">${escHTML(ui('kd_foods_stat_num'))}</div>
-      <div class="kd-foods-stat__body">
-        <div class="kd-foods-stat__lead">${escHTML(ui('kd_foods_stat_lead'))}</div>
-        <div class="kd-foods-stat__cite">${escHTML(ui('kd_foods_stat_cite'))}</div>
-      </div>
+    <div class="ds-pull-stat kd-foods-stat">
+      <span class="ds-pull-stat__readout">${escHTML(ui('kd_foods_stat_readout'))}</span>
+      <div class="ds-pull-stat__num">${escHTML(ui('kd_foods_stat_num'))}</div>
+      <div class="ds-pull-stat__body">${escHTML(ui('kd_foods_stat_body'))}<small>${escHTML(ui('kd_foods_stat_small'))}</small></div>
     </div>
 
     <section class="kd-foods-villi">
-      <h2 class="kd-foods-villi__hd">${escHTML(ui('kd_foods_villi_title'))}</h2>
+      <h2 class="kd-foods-hd">${escHTML(ui('kd_foods_villi_title'))}</h2>
       <div class="kd-foods-villi__grid">
-        <div class="kd-foods-villi__panel kd-foods-villi__panel--ok">
-          <div class="kd-foods-villi__t">${escHTML(ui('kd_foods_villi_ok_title'))}</div>
-          ${villiArt(true)}
-          <div class="kd-foods-villi__cap">${escHTML(ui('kd_foods_villi_ok_cap'))}</div>
-        </div>
-        <div class="kd-foods-villi__panel kd-foods-villi__panel--bad">
-          <div class="kd-foods-villi__t">${escHTML(ui('kd_foods_villi_bad_title'))}</div>
-          ${villiArt(false)}
-          <div class="kd-foods-villi__cap">${escHTML(ui('kd_foods_villi_bad_cap'))}</div>
-        </div>
+        ${villiPanel(false)}
+        ${villiPanel(true)}
       </div>
       <p class="kd-foods-villi__note">${escHTML(ui('kd_foods_villi_note'))}<cite>${escHTML(ui('kd_foods_villi_cite'))}</cite></p>
     </section>
 
+    <section class="kd-foods-contrast">
+      <h2 class="kd-foods-hd">${escHTML(ui('kd_foods_contrast_hd'))}</h2>
+      <div class="kd-foods-contrast__grid">
+        <div class="kd-foods-col kd-foods-col--remove">
+          <div class="kd-foods-col__hd">${escHTML(ui('kd_foods_col_remove'))}</div>
+          ${remove.map(c => foodItem(c, 'remove')).join('')}
+        </div>
+        <div class="kd-foods-col kd-foods-col--eat">
+          <div class="kd-foods-col__hd">${escHTML(ui('kd_foods_col_eat'))}</div>
+          ${eat.map(c => foodItem(c, 'eat')).join('')}
+        </div>
+      </div>
+      <div class="kd-foods-form">
+        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML(ui('kd_foods_form_hd'))}</div>
+        <div class="kd-foods-form__grid">
+          ${conditional.map(c => foodItem(c, 'form')).join('')}
+        </div>
+      </div>
+    </section>
+
     <div class="kd-ep-seclabel">${escHTML(ui('kd_foods_words_label'))}</div>
-    ${facetSections(thesis)}
+    ${facetSections(foodsThesisClaims())}
   </div>`;
 }

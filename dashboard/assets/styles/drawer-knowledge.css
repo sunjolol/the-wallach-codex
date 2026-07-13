@@ -1459,38 +1459,69 @@
 #drawer-knowledge-mount .kt-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 14px; }
 /* ═══════════════════════════ ABSORPTION tab · the "second prong" landing (diet/absorption) ═══════════════════════════ */
 #drawer-knowledge-mount .kd-foods { --fam-science: #2f9dba; --fam-action: #5aa82c; --fam-story: #8a52d6; padding-bottom: 40px; }
-#drawer-knowledge-mount .kd-foods-hero { padding: 8px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
-#drawer-knowledge-mount .kd-foods-hero__kicker { display: inline-flex; align-items: center; gap: 9px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); font-weight: 600; }
-#drawer-knowledge-mount .kd-foods-hero__kicker::before { content: ''; width: 20px; height: 2px; background: var(--ds-accent); }
+#drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 34px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-foods-readout { position: absolute; top: 6px; right: 0; text-align: right; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-tech-dim); line-height: 1.5; }
+#drawer-knowledge-mount .kd-foods-readout span { display: block; }
+#drawer-knowledge-mount .kd-foods-readout .ds-pulse { margin-right: 5px; width: 6px; height: 6px; }
+#drawer-knowledge-mount .kd-foods-eyebrow { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: var(--ds-space-4); max-width: 78%; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 600; letter-spacing: var(--ds-track-widest); text-transform: uppercase; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-foods-eyebrow__r { color: var(--ds-accent-deep); font-family: var(--ds-font-sans); font-weight: 700; letter-spacing: var(--ds-track-wide); white-space: nowrap; }
+#drawer-knowledge-mount .kd-foods-eyebrow__rule { height: 1px; background: linear-gradient(to right, var(--ds-rule) 0%, var(--ds-rule) 55%, var(--ds-accent) 60%, var(--ds-accent) 70%, var(--ds-rule) 75%, var(--ds-rule) 100%); }
 #drawer-knowledge-mount .kd-foods-hero__h { font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.06; letter-spacing: -0.015em; margin: 14px 0 0; color: var(--ds-ink); }
 #drawer-knowledge-mount .kd-foods-hero__h .l1 { display: block; }
 #drawer-knowledge-mount .kd-foods-hero__h .l2 { display: block; color: var(--ds-accent); font-style: italic; }
 #drawer-knowledge-mount .kd-foods-hero__deck { font-family: var(--ds-font-serif); font-size: 1rem; line-height: 1.6; color: var(--ds-ink-medium); max-width: 60ch; margin: 16px 0 0; }
-#drawer-knowledge-mount .kd-foods-stat { display: flex; align-items: center; gap: var(--ds-space-5); margin: var(--ds-space-5) 0; padding: var(--ds-space-5) var(--ds-space-6); background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%); border-radius: var(--ds-radius-lg); box-shadow: var(--ds-elev-2); }
-#drawer-knowledge-mount .kd-foods-stat__num { flex: 0 0 auto; font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(2.6rem, 6vw, 3.6rem); line-height: 0.9; letter-spacing: -0.02em; color: var(--ds-accent-bright); }
-#drawer-knowledge-mount .kd-foods-stat__body { flex: 1; min-width: 0; }
-#drawer-knowledge-mount .kd-foods-stat__lead { font-family: var(--ds-font-display-interface); font-weight: 600; font-size: 1.05rem; line-height: 1.35; color: var(--ds-paper-light); }
-#drawer-knowledge-mount .kd-foods-stat__cite { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-tech-dim); margin-top: 7px; }
+#drawer-knowledge-mount .kd-foods-stat { margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-foods-stat .ds-pull-stat__num { font-size: clamp(2.8rem, 7vw, 4.6rem); }
+#drawer-knowledge-mount .kd-foods-stat .ds-pull-stat__body { font-size: var(--ds-text-lg); }
 #drawer-knowledge-mount .kd-foods-villi { margin: var(--ds-space-6) 0; }
 #drawer-knowledge-mount .kd-foods-villi__hd { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: 1.15rem; color: var(--ds-ink); margin: 0 0 var(--ds-space-3); }
 #drawer-knowledge-mount .kd-foods-villi__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); }
-#drawer-knowledge-mount .kd-foods-villi__panel { background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); padding: var(--ds-space-4); }
-#drawer-knowledge-mount .kd-foods-villi__panel--ok { border-top: 3px solid var(--fam-action); }
-#drawer-knowledge-mount .kd-foods-villi__panel--bad { border-top: 3px solid var(--ds-status-err); }
-#drawer-knowledge-mount .kd-foods-villi__t { display: inline-flex; align-items: center; gap: 7px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-weight: 600; }
-#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__t { color: var(--fam-action); }
-#drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__t { color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-villi__panel { position: relative; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); padding: var(--ds-space-4); overflow: hidden; }
+#drawer-knowledge-mount .kd-foods-villi__panel--ok { border-top: 2px solid var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-villi__panel--bad { border-top: 2px solid var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-villi__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
+#drawer-knowledge-mount .kd-foods-villi__t { display: inline-flex; align-items: center; gap: 7px; font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-weight: 700; }
 #drawer-knowledge-mount .kd-foods-villi__t::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
-#drawer-knowledge-mount .kd-foods-villi__art { width: 100%; height: auto; display: block; margin: var(--ds-space-3) 0; }
-#drawer-knowledge-mount .kd-foods-villi__v { stroke-width: 1.4; stroke-linejoin: round; }
-#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__v { fill: var(--ds-hl-mint); stroke: var(--fam-action); }
-#drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__v { fill: var(--ds-hl-rose); stroke: var(--ds-status-err); }
-#drawer-knowledge-mount .kd-foods-villi__dot { fill: var(--ds-accent); }
+#drawer-knowledge-mount .kd-foods-villi__metric { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-weight: 600; }
+#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__t, #drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__metric { color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__t, #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__metric { color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-villi__art { width: 100%; height: auto; display: block; margin: var(--ds-space-3) 0 var(--ds-space-2); }
+#drawer-knowledge-mount .kd-foods-villi__gridline { stroke: var(--ds-tech); stroke-width: 0.5; opacity: 0.16; }
+#drawer-knowledge-mount .kd-foods-villi__v { stroke-width: 0.9; }
+#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__v { fill: color-mix(in srgb, var(--fam-action) 16%, transparent); stroke: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__v { fill: color-mix(in srgb, var(--ds-status-err) 15%, transparent); stroke: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-villi__wall { stroke: var(--ds-ink-soft); stroke-width: 1.1; }
+#drawer-knowledge-mount .kd-foods-villi__tick { stroke: var(--ds-ink-faint); stroke-width: 0.8; }
+#drawer-knowledge-mount .kd-foods-villi__dot { animation: kd-foods-dot 2.6s ease-in-out infinite; }
+#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__dot { fill: var(--ds-accent); }
 #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__dot { fill: var(--ds-ink-faint); }
-#drawer-knowledge-mount .kd-foods-villi__wall { stroke: var(--ds-ink-soft); stroke-width: 1.6; stroke-linecap: round; }
+@keyframes kd-foods-dot { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 #drawer-knowledge-mount .kd-foods-villi__cap { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: 1.45; }
 #drawer-knowledge-mount .kd-foods-villi__note { font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.6; margin-top: var(--ds-space-4); padding-left: var(--ds-space-4); border-left: 2px solid var(--ds-accent); }
 #drawer-knowledge-mount .kd-foods-villi__note cite { display: block; font-style: normal; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 6px; }
+#drawer-knowledge-mount .kd-foods-hd { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: 1.15rem; color: var(--ds-ink); margin: 0 0 var(--ds-space-3); }
+#drawer-knowledge-mount .kd-foods-contrast { margin: var(--ds-space-6) 0; }
+#drawer-knowledge-mount .kd-foods-contrast__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); align-items: start; }
+#drawer-knowledge-mount .kd-foods-col__hd { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; margin-bottom: var(--ds-space-3); color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-foods-col__hd::before { content: ''; width: 10px; height: 10px; border-radius: 2px; background: currentColor; }
+#drawer-knowledge-mount .kd-foods-col--remove .kd-foods-col__hd { color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-col--eat .kd-foods-col__hd { color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-item { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; width: 100%; text-align: left; padding: 0.55rem 0.75rem; margin-bottom: 8px; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-rule); border-radius: var(--ds-radius-sm); cursor: pointer; position: relative; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-foods-item:hover { background: var(--ds-paper-deep); transform: translateX(2px); }
+#drawer-knowledge-mount .kd-foods-item--remove { border-left-color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-item--remove:hover { border-color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-item--eat { border-left-color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-item--eat:hover { border-color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-item--form { border-left-color: var(--ds-status-warn); }
+#drawer-knowledge-mount .kd-foods-item--form:hover { border-color: var(--ds-status-warn); }
+#drawer-knowledge-mount .kd-foods-item__nm { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: var(--ds-text-sm); color: var(--ds-ink); padding-right: 16px; }
+#drawer-knowledge-mount .kd-foods-item__why { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: 1.4; }
+#drawer-knowledge-mount .kd-foods-item__go { position: absolute; top: 0.55rem; right: 0.7rem; font-family: var(--ds-font-mono); color: var(--ds-ink-faint); opacity: 0; transition: opacity var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-foods-item:hover .kd-foods-item__go { opacity: 1; }
+#drawer-knowledge-mount .kd-foods-form { margin-top: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-foods-form__hd { color: var(--ds-status-warn); }
+#drawer-knowledge-mount .kd-foods-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-3); }
+#drawer-knowledge-mount .kd-foods-form__grid .kd-foods-item { margin-bottom: 0; }
 
 #drawer-knowledge-mount .kd-explore { --fam-story: #8a52d6; padding: 6px 0 30px; }
 #drawer-knowledge-mount .kd-explore-group { margin-top: var(--ds-space-5); }

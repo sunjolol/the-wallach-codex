@@ -4,5 +4,8 @@
     "WAL-CLM-EPIGEN-000140",
     "WAL-CLM-EPIGEN-000141",
     "WAL-CLM-EPIGEN-000142"
-  ]
+  ],
+  "remove": ["gluten", "dietary_oils", "sugar", "carbonated_beverages", "processed_meat"],
+  "eat": ["eggs", "meat", "salt"],
+  "conditional": ["dairy", "water", "cruciferous_vegetables", "phytates"]
 }

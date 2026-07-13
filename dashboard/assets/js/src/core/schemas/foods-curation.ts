@@ -1,16 +1,17 @@
 /**
- * core/schemas/foods-curation.ts -- the Foods & Absorption tab curation-config schema
+ * core/schemas/foods-curation.ts -- the Absorption tab curation-config schema
  * ===========================================================================
  *
- * Validates dashboard/assets/data/foods-curation.json -- the hand-authored home for
- * the Foods & Absorption tab's SPECIAL curated selections (the home-page-curation
- * philosophy; mirrors home-curation.ts). Consumed via state/foods-curation.ts
- * (esbuild JSON import + parse at load); a bad/absent store degrades to empty so the
- * landing simply renders no thesis cards rather than throwing.
+ * Validates dashboard/assets/data/foods-curation.json -- the hand-authored home for the
+ * Absorption tab's SPECIAL curated selections (the home-page-curation philosophy; mirrors
+ * home-curation.ts). Consumed via state/foods-curation.ts (esbuild JSON import + parse at
+ * load); a bad/absent store degrades to empty so the landing renders nothing rather than
+ * throwing.
  *
  * Editorial UI config, NOT a Wallach fact -- no dose, no number -- so it carries no
- * source-rule obligation. hero_claims are sealed-claim IDs, resolved against the
- * search index at render (an unresolved id is skipped).
+ * source-rule obligation. hero_claims are sealed-claim IDs; remove/eat/conditional are the
+ * good/bad-foods classification (entity slugs), each resolved against the search index at
+ * render (an unresolved id/slug is skipped).
  * ===========================================================================
  */
 
@@ -20,5 +21,11 @@ import { z } from 'zod';
 export const FoodsCurationSchema = z.object({
   /** Curated crown-jewel claim IDs anchoring the landing's two-pronged thesis, in curated order. */
   hero_claims: z.array(z.string()),
+  /** Foods to take out (bad) -- entity slugs, in display order. */
+  remove: z.array(z.string()).default([]),
+  /** Foods to favor (good) -- entity slugs, in display order. */
+  eat: z.array(z.string()).default([]),
+  /** Conditional foods (stance turns on the form/context) -- entity slugs, in display order. */
+  conditional: z.array(z.string()).default([]),
 });
 export type FoodsCuration = z.infer<typeof FoodsCurationSchema>;

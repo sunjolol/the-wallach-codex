@@ -1,30 +1,32 @@
 /**
- * state/foods-curation.ts -- read boundary for the Foods & Absorption curation config
+ * state/foods-curation.ts -- read boundary for the Absorption tab curation config
  * ===========================================================================
  *
- * Surfaces dashboard/assets/data/foods-curation.json to the Foods & Absorption view:
- * the SPECIAL curated selections (the home-page-curation philosophy -- a hand-tuned
- * persuasive landing, every other tab pure formula). Today that is the crown-jewel
- * thesis claims; the view imports the RESOLVED claims here, never the raw IDs.
+ * Surfaces dashboard/assets/data/foods-curation.json to the Absorption view: the SPECIAL
+ * curated selections (the home-page-curation philosophy -- a hand-tuned persuasive landing,
+ * every other tab pure formula). The view imports RESOLVED claims + food cards here, never
+ * the raw IDs/slugs.
  *
- * The offline file:// app cannot fetch(), so the store is inlined at build via
- * esbuild JSON import and validated ONCE through the Zod boundary; a bad/absent
- * store reads as empty and the thesis renders nothing (graceful, never throws).
+ * The offline file:// app cannot fetch(), so the store is inlined at build via esbuild JSON
+ * import and validated ONCE through the Zod boundary; a bad/absent store reads as empty and
+ * the surface degrades gracefully (never throws).
  *
- * Pure reads only. Editorial UI config, not a Wallach claim/number -- no source-rule
- * obligation.
+ * The good/bad-foods classification (remove/eat/conditional) is the ONLY editorial call here;
+ * each food's one-line "why" is pulled LIVE from its own sealed claim (a faceted answer, chosen
+ * by facet priority), so no health prose is hand-authored -- the classification points, the
+ * corpus speaks. Pure reads only; no source-rule obligation on the slug lists themselves.
  * ===========================================================================
  */
 
 import curationData from '../../../data/foods-curation.json';
 import { type FoodsCuration, FoodsCurationSchema, type SearchClaim } from '../core/schemas/index.js';
-import { getSearchClaim } from './search.js';
+import { claimsForSubject, displayName, getSearchClaim } from './search.js';
 
-const EMPTY: FoodsCuration = { hero_claims: [] };
+const EMPTY: FoodsCuration = { hero_claims: [], remove: [], eat: [], conditional: [] };
 
 let cached: FoodsCuration | null = null;
 
-/** Parse + cache once (bad/absent data -> empty; the thesis then renders nothing). */
+/** Parse + cache once (bad/absent data -> empty; the surface then renders nothing). */
 function data(): FoodsCuration {
   if (cached === null) {
     const parsed = FoodsCurationSchema.safeParse(curationData);
@@ -34,10 +36,8 @@ function data(): FoodsCuration {
 }
 
 /**
- * The curated crown-jewel claims that anchor the Foods landing's two-pronged thesis,
- * in curated order (mantra -> prevalence -> fix). Each id is resolved against the search
- * index; an id that resolves to nothing (a typo, or a claim not in the search index) is
- * silently skipped -- graceful degradation, never a broken card.
+ * The curated crown-jewel claims that anchor the landing's two-pronged thesis, in curated
+ * order (mantra -> prevalence -> fix). An id that resolves to nothing is silently skipped.
  */
 export function foodsThesisClaims(): SearchClaim[] {
   const out: SearchClaim[] = [];
@@ -48,4 +48,56 @@ export function foodsThesisClaims(): SearchClaim[] {
     }
   }
   return out;
+}
+
+/** One good/bad-food card: the entity name + a one-line "why" taken from its own sealed claim. */
+export interface FoodCard {
+  slug: string;
+  name: string;
+  why: string;
+}
+
+/**
+ * Pick a subject's most on-point one-line answer by facet priority (e.g. a REMOVE food leads
+ * with its warning/mechanism; an EAT food with its protocol), falling back to its first claim.
+ * The text is a sealed claim's answer_short -- faithful, never hand-authored.
+ */
+/**
+ * The card shows a claim's answer WITHOUT its question, so a leading "Yes -- "/"No -- "
+ * (which answers the hidden question) reads oddly standing alone -- drop it.
+ */
+function cleanWhy(s: string): string {
+  return s.replace(/^(?:yes|no)\s*[—–-]+\s*/i, '');
+}
+
+function pickWhy(slug: string, order: readonly string[]): string {
+  const claims = claimsForSubject(slug);
+  for (const facet of order) {
+    const hit = claims.find(c => c.facet === facet);
+    if (hit !== undefined) {
+      return cleanWhy(hit.answer_short);
+    }
+  }
+  return cleanWhy(claims[0]?.answer_short ?? '');
+}
+
+function cards(slugs: readonly string[], order: readonly string[]): FoodCard[] {
+  return slugs
+    .map(slug => ({ slug, name: displayName(slug), why: pickWhy(slug, order) }))
+    .filter(c => c.why.length > 0);
+}
+
+/** Foods to take out (bad) -- led by the warning/mechanism claim. */
+export function foodsRemove(): FoodCard[] {
+  return cards(data().remove, ['warning', 'mechanism', 'physiology']);
+}
+
+/** Foods to favor (good) -- led by the protocol/use/stance claim. */
+export function foodsEat(): FoodCard[] {
+  return cards(data().eat, ['protocol', 'uses', 'stance']);
+}
+
+/** Conditional foods -- Wallach's stance turns on the FORM/context; led by the stance/warning. */
+export function foodsConditional(): FoodCard[] {
+  return cards(data().conditional, ['stance', 'warning', 'protocol', 'basics']);
 }

@@ -14414,7 +14414,13 @@
   // assets/js/src/core/schemas/foods-curation.ts
   var FoodsCurationSchema = external_exports.object({
     /** Curated crown-jewel claim IDs anchoring the landing's two-pronged thesis, in curated order. */
-    hero_claims: external_exports.array(external_exports.string())
+    hero_claims: external_exports.array(external_exports.string()),
+    /** Foods to take out (bad) -- entity slugs, in display order. */
+    remove: external_exports.array(external_exports.string()).default([]),
+    /** Foods to favor (good) -- entity slugs, in display order. */
+    eat: external_exports.array(external_exports.string()).default([]),
+    /** Conditional foods (stance turns on the form/context) -- entity slugs, in display order. */
+    conditional: external_exports.array(external_exports.string()).default([])
   });
 
   // assets/js/src/core/schemas/pdm-coverage.ts
@@ -17476,7 +17482,7 @@
     if (checkins.length === 0) {
       return `${entry}<div class="jd-empty">\u2014 no check-ins yet \xB7 they stay private on this device \u2014</div>`;
     }
-    const cards = checkins.map((c) => {
+    const cards2 = checkins.map((c) => {
       const d = new Date(c.loggedAt);
       const valid = !Number.isNaN(d.getTime());
       const day = valid ? String(d.getDate()) : "\xB7\xB7";
@@ -17501,7 +17507,7 @@
       </div>
     </div>`;
     }).join("");
-    return entry + cards;
+    return entry + cards2;
   }
   function renderMilestones() {
     const milestones = listMilestones();
@@ -17925,21 +17931,31 @@
       kt_type_substance: "Substances",
       kt_type_person: "People",
       kd_tab_foods: "Absorption",
-      kd_foods_kicker: "The second prong",
+      kd_foods_eyebrow_l: "The second prong",
+      kd_foods_eyebrow_r: "Diet & Absorption",
+      kd_foods_readout_1: "Wallach \xB7 Corpus",
+      kd_foods_readout_2: "Prong 2 of 2",
       kd_foods_hl1: "You are not what you eat.",
       kd_foods_hl2: "You are what you absorb.",
       kd_foods_deck: "Getting all 90 essential nutrients is only half of Dr. Wallach\u2019s model. The other half \u2014 just as important \u2014 is removing the foods that keep your gut from absorbing them.",
+      kd_foods_stat_readout: "// Mayo Clinic \xB7 2009",
       kd_foods_stat_num: "115M",
-      kd_foods_stat_lead: "Americans are gluten-intolerant \u2014 about one in three.",
-      kd_foods_stat_cite: "Mayo Clinic study (2009), cited by Wallach \xB7 Epigenetics",
+      kd_foods_stat_body: "Americans are gluten-intolerant \u2014 about one in three.",
+      kd_foods_stat_small: "Cited by Wallach \xB7 Epigenetics",
       kd_foods_villi_title: "What gluten does to your gut",
       kd_foods_villi_ok_title: "Healthy gut",
+      kd_foods_villi_ok_metric: "Absorb \u2191",
       kd_foods_villi_ok_cap: "Tall, dense villi \u2014 a vast surface area that pulls nutrients in.",
       kd_foods_villi_bad_title: "Gluten-damaged gut",
+      kd_foods_villi_bad_metric: "Absorb \u2193",
       kd_foods_villi_bad_cap: "Flattened, blunted villi \u2014 nutrients slide past, unabsorbed.",
       kd_foods_villi_note: "This is the second prong in one picture: gluten gradually wears down the villi that do the absorbing, so even a flawless 90-nutrient regimen underperforms until the gut heals.",
       kd_foods_villi_cite: "Dr. Joel Wallach \xB7 Epigenetics (2014)",
-      kd_foods_words_label: "In his own words"
+      kd_foods_words_label: "In his own words",
+      kd_foods_contrast_hd: "What to change on your plate",
+      kd_foods_col_remove: "Take these out",
+      kd_foods_col_eat: "Put these in",
+      kd_foods_form_hd: "Sometimes it\u2019s the form, not the food"
     }
   };
 
@@ -92693,16 +92709,16 @@ deaths, blood clots, sterility`,
     const order = SEARCH_FACETS;
     const groups = [...page.search].sort((a, b) => order.indexOf(a.facet) - order.indexOf(b.facet));
     const html = groups.map((g) => {
-      const cards = g.claim_ids.map((id) => {
+      const cards2 = g.claim_ids.map((id) => {
         const c = getSearchClaim(id);
         return c !== null ? renderSearchCard(c) : "";
       }).join("");
-      if (cards.length === 0) {
+      if (cards2.length === 0) {
         return "";
       }
       return `<details class="kd-ep-facet" data-facet="${escHTML6(g.facet)}" open>
       <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML6(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
-      <div class="kd-ep-facet__body">${cards}</div>
+      <div class="kd-ep-facet__body">${cards2}</div>
     </details>`;
     }).join("");
     if (html.length === 0) {
@@ -92731,10 +92747,10 @@ deaths, blood clots, sterility`,
       if (claims.length === 0) {
         return "";
       }
-      const cards = claims.map(renderRecordClaim).join("");
+      const cards2 = claims.map(renderRecordClaim).join("");
       return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML6(kindCategory(g.kind))}">
       <summary><span class="kd-ep-kind__label">${escHTML6(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
-      <div class="kd-ep-kind__body">${cards}</div>
+      <div class="kd-ep-kind__body">${cards2}</div>
     </details>`;
     }).join("");
     return seclabel("The full record", "every claim \xB7 advanced") + `<details class="kd-ep-record" open>
@@ -92963,11 +92979,14 @@ deaths, blood clots, sterility`,
       "WAL-CLM-EPIGEN-000140",
       "WAL-CLM-EPIGEN-000141",
       "WAL-CLM-EPIGEN-000142"
-    ]
+    ],
+    remove: ["gluten", "dietary_oils", "sugar", "carbonated_beverages", "processed_meat"],
+    eat: ["eggs", "meat", "salt"],
+    conditional: ["dairy", "water", "cruciferous_vegetables", "phytates"]
   };
 
   // assets/js/src/state/foods-curation.ts
-  var EMPTY5 = { hero_claims: [] };
+  var EMPTY5 = { hero_claims: [], remove: [], eat: [], conditional: [] };
   var cached6 = null;
   function data4() {
     if (cached6 === null) {
@@ -92986,6 +93005,31 @@ deaths, blood clots, sterility`,
     }
     return out;
   }
+  function cleanWhy(s) {
+    return s.replace(/^(?:yes|no)\s*[—–-]+\s*/i, "");
+  }
+  function pickWhy(slug, order) {
+    const claims = claimsForSubject(slug);
+    for (const facet of order) {
+      const hit = claims.find((c) => c.facet === facet);
+      if (hit !== void 0) {
+        return cleanWhy(hit.answer_short);
+      }
+    }
+    return cleanWhy(claims[0]?.answer_short ?? "");
+  }
+  function cards(slugs, order) {
+    return slugs.map((slug) => ({ slug, name: displayName(slug), why: pickWhy(slug, order) })).filter((c) => c.why.length > 0);
+  }
+  function foodsRemove() {
+    return cards(data4().remove, ["warning", "mechanism", "physiology"]);
+  }
+  function foodsEat() {
+    return cards(data4().eat, ["protocol", "uses", "stance"]);
+  }
+  function foodsConditional() {
+    return cards(data4().conditional, ["stance", "warning", "protocol", "basics"]);
+  }
 
   // assets/js/src/views/knowledge-foods.ts
   function escHTML9(s) {
@@ -93003,66 +93047,116 @@ deaths, blood clots, sterility`,
     </details>`;
     }).join("");
   }
-  function villus(cx, baseY, w, h) {
-    const top = baseY - h;
-    const r = w / 2;
-    return `M${cx - r} ${baseY} L${cx - r} ${top + r} Q${cx - r} ${top} ${cx} ${top} Q${cx + r} ${top} ${cx + r} ${top + r} L${cx + r} ${baseY} Z`;
-  }
   function villiArt(healthy) {
-    const baseY = 106;
-    const n = 7;
-    const startX = 24;
-    const gap = 26;
-    const w = healthy ? 14 : 17;
-    const h = healthy ? 78 : 17;
+    const W = 220;
+    const baseY = 108;
+    const marginX = 16;
+    const n = 9;
+    const usable = W - marginX * 2;
+    const barW = 12;
+    const gap = (usable - barW) / (n - 1);
+    const h = healthy ? 74 : 13;
+    let grid = "";
+    for (let x = marginX; x <= W - marginX; x += 22) {
+      grid += `<line class="kd-foods-villi__gridline" x1="${x}" y1="20" x2="${x}" y2="${baseY}" />`;
+    }
+    for (let y = 20; y < baseY; y += 22) {
+      grid += `<line class="kd-foods-villi__gridline" x1="${marginX}" y1="${y}" x2="${W - marginX}" y2="${y}" />`;
+    }
     let vs = "";
     for (let i = 0; i < n; i += 1) {
-      vs += `<path class="kd-foods-villi__v" d="${villus(startX + i * gap, baseY, w, h)}" />`;
+      const x = (marginX + i * gap).toFixed(1);
+      vs += `<rect class="kd-foods-villi__v" x="${x}" y="${baseY - h}" width="${barW}" height="${h}" />`;
     }
+    const wall = `<line class="kd-foods-villi__wall" x1="${marginX}" y1="${baseY}" x2="${W - marginX}" y2="${baseY}" />`;
+    let ticks = "";
+    for (let x = marginX; x <= W - marginX; x += 11) {
+      ticks += `<line class="kd-foods-villi__tick" x1="${x}" y1="${baseY}" x2="${x}" y2="${baseY + 4}" />`;
+    }
+    const dotY = healthy ? 64 : 28;
     let dots = "";
     for (let i = 0; i < 6; i += 1) {
-      const cx = startX + 13 + i * gap;
-      const cy = healthy ? 44 + i % 3 * 16 : 13 + i % 2 * 9;
-      dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${cy}" r="3.1" />`;
+      const cx = (30 + i * ((usable - 28) / 5)).toFixed(1);
+      dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${dotY}" r="4.5" style="animation-delay:${(i * 0.25).toFixed(2)}s" />`;
     }
-    return `<svg class="kd-foods-villi__art" viewBox="0 0 200 116" role="img" aria-hidden="true"><line class="kd-foods-villi__wall" x1="8" y1="${baseY}" x2="192" y2="${baseY}" />${vs}${dots}</svg>`;
+    return `<svg class="kd-foods-villi__art" viewBox="0 0 ${W} 132" role="img" aria-hidden="true">${grid}${vs}${wall}${ticks}${dots}</svg>`;
+  }
+  function villiPanel(healthy) {
+    const kind = healthy ? "ok" : "bad";
+    const title = healthy ? ui("kd_foods_villi_ok_title") : ui("kd_foods_villi_bad_title");
+    const metric = healthy ? ui("kd_foods_villi_ok_metric") : ui("kd_foods_villi_bad_metric");
+    const cap = healthy ? ui("kd_foods_villi_ok_cap") : ui("kd_foods_villi_bad_cap");
+    return `<div class="kd-foods-villi__panel kd-foods-villi__panel--${kind}">
+      <div class="kd-foods-villi__top">
+        <div class="kd-foods-villi__t">${escHTML9(title)}</div>
+        <div class="kd-foods-villi__metric">${escHTML9(metric)}</div>
+      </div>
+      ${villiArt(healthy)}
+      <div class="kd-foods-villi__cap">${escHTML9(cap)}</div>
+    </div>`;
+  }
+  function foodItem(c, kind) {
+    return `<button class="kd-foods-item kd-foods-item--${escHTML9(kind)}" type="button" data-kd-topic="${escHTML9(c.slug)}">
+      <span class="kd-foods-item__nm">${escHTML9(c.name)}</span>
+      <span class="kd-foods-item__why">${escHTML9(c.why)}</span>
+      <span class="kd-foods-item__go" aria-hidden="true">\u2192</span>
+    </button>`;
   }
   function renderFoodsTab() {
-    const thesis = foodsThesisClaims();
+    const remove = foodsRemove();
+    const eat = foodsEat();
+    const conditional = foodsConditional();
     return `<div class="kt-page kd-ep kd-foods">
     <header class="kd-foods-hero">
-      <span class="kd-foods-hero__kicker">${escHTML9(ui("kd_foods_kicker"))}</span>
+      <div class="kd-foods-readout">
+        <span><span class="ds-pulse tech live"></span>${escHTML9(ui("kd_foods_readout_1"))}</span>
+        <span>${escHTML9(ui("kd_foods_readout_2"))}</span>
+      </div>
+      <div class="kd-foods-eyebrow">
+        <span class="kd-foods-eyebrow__l">${escHTML9(ui("kd_foods_eyebrow_l"))}</span>
+        <span class="kd-foods-eyebrow__rule"></span>
+      </div>
       <h1 class="kd-foods-hero__h"><span class="l1">${escHTML9(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML9(ui("kd_foods_hl2"))}</span></h1>
       <p class="kd-foods-hero__deck">${escHTML9(ui("kd_foods_deck"))}</p>
     </header>
 
-    <div class="kd-foods-stat">
-      <div class="kd-foods-stat__num">${escHTML9(ui("kd_foods_stat_num"))}</div>
-      <div class="kd-foods-stat__body">
-        <div class="kd-foods-stat__lead">${escHTML9(ui("kd_foods_stat_lead"))}</div>
-        <div class="kd-foods-stat__cite">${escHTML9(ui("kd_foods_stat_cite"))}</div>
-      </div>
+    <div class="ds-pull-stat kd-foods-stat">
+      <span class="ds-pull-stat__readout">${escHTML9(ui("kd_foods_stat_readout"))}</span>
+      <div class="ds-pull-stat__num">${escHTML9(ui("kd_foods_stat_num"))}</div>
+      <div class="ds-pull-stat__body">${escHTML9(ui("kd_foods_stat_body"))}<small>${escHTML9(ui("kd_foods_stat_small"))}</small></div>
     </div>
 
     <section class="kd-foods-villi">
-      <h2 class="kd-foods-villi__hd">${escHTML9(ui("kd_foods_villi_title"))}</h2>
+      <h2 class="kd-foods-hd">${escHTML9(ui("kd_foods_villi_title"))}</h2>
       <div class="kd-foods-villi__grid">
-        <div class="kd-foods-villi__panel kd-foods-villi__panel--ok">
-          <div class="kd-foods-villi__t">${escHTML9(ui("kd_foods_villi_ok_title"))}</div>
-          ${villiArt(true)}
-          <div class="kd-foods-villi__cap">${escHTML9(ui("kd_foods_villi_ok_cap"))}</div>
-        </div>
-        <div class="kd-foods-villi__panel kd-foods-villi__panel--bad">
-          <div class="kd-foods-villi__t">${escHTML9(ui("kd_foods_villi_bad_title"))}</div>
-          ${villiArt(false)}
-          <div class="kd-foods-villi__cap">${escHTML9(ui("kd_foods_villi_bad_cap"))}</div>
-        </div>
+        ${villiPanel(false)}
+        ${villiPanel(true)}
       </div>
       <p class="kd-foods-villi__note">${escHTML9(ui("kd_foods_villi_note"))}<cite>${escHTML9(ui("kd_foods_villi_cite"))}</cite></p>
     </section>
 
+    <section class="kd-foods-contrast">
+      <h2 class="kd-foods-hd">${escHTML9(ui("kd_foods_contrast_hd"))}</h2>
+      <div class="kd-foods-contrast__grid">
+        <div class="kd-foods-col kd-foods-col--remove">
+          <div class="kd-foods-col__hd">${escHTML9(ui("kd_foods_col_remove"))}</div>
+          ${remove.map((c) => foodItem(c, "remove")).join("")}
+        </div>
+        <div class="kd-foods-col kd-foods-col--eat">
+          <div class="kd-foods-col__hd">${escHTML9(ui("kd_foods_col_eat"))}</div>
+          ${eat.map((c) => foodItem(c, "eat")).join("")}
+        </div>
+      </div>
+      <div class="kd-foods-form">
+        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML9(ui("kd_foods_form_hd"))}</div>
+        <div class="kd-foods-form__grid">
+          ${conditional.map((c) => foodItem(c, "form")).join("")}
+        </div>
+      </div>
+    </section>
+
     <div class="kd-ep-seclabel">${escHTML9(ui("kd_foods_words_label"))}</div>
-    ${facetSections(thesis)}
+    ${facetSections(foodsThesisClaims())}
   </div>`;
   }
 
@@ -94865,7 +94959,15 @@ New 6th Knowledge sub-tab (id "foods", label "Absorption", 2nd in the strip), a 
 
 Iteration (the visual-verification loop working): chunk 1 was a calm/consistent scaffold; Luneth judged it too plain and "missable"; chunk 2 rebuilt it into this editorial+illustrated design and he signed off ("MUCH MUCH better", 2026-07-13). Probe render_probe_knowledge.js: tab-count 5->6 (label "Absorption", shortened from "Foods & Absorption" which overflowed the strip) + a Foods block asserting hero headline + deck + stat + 2 villi figures + 3 facet-grouped Wallach-cited cards. Verified: build green (tsc --noEmit + esbuild), invariants 62/62 (views_no_inline_prose + prose_contained clean), render probe PASS, PAGE_ERRORS 0, collapsed+expanded screenshots reviewed.
 
-Deferred (queued, not lost): chunk 3 = the REMOVE<->EAT good/bad-foods contrast (same editorial language; the good/bad classification grounded per-claim, ambiguous ones \u2014 dairy/salt/cruciferous/water \u2014 surfaced to Luneth, not guessed); the poached-eggs EPIGEN-000155 missing-outcome fix batched into a diet-vein outcome-audit reseal (rule: state-the-outcome-when-known); Part A = the cross-app absorption caveat (restraint: one great surface + rare load-bearing pointers); the Coverage-tab overhaul.` }];
+Deferred (queued, not lost): chunk 3 = the REMOVE<->EAT good/bad-foods contrast (same editorial language; the good/bad classification grounded per-claim, ambiguous ones \u2014 dairy/salt/cruciferous/water \u2014 surfaced to Luneth, not guessed); the poached-eggs EPIGEN-000155 missing-outcome fix batched into a diet-vein outcome-audit reseal (rule: state-the-outcome-when-known); Part A = the cross-app absorption caveat (restraint: one great surface + rare load-bearing pointers); the Coverage-tab overhaul.` }, { id: "lg_mrj8zr9x_d09xcu", ts: "2026-07-13T08:18:15.765631-05:00", surface: "knowledge", kind: "round-close", summary: "Absorption tab: added the good-vs-bad-foods contrast (grounded per-claim: 5 out / 3 in / 4 conditional) + a visual pass (.ds-pull-stat 115M, high-tech villi scan, hero chrome). Design is WIP \u2014 Luneth wants a design-notes session next; logged light on purpose.", detail: `Extended the new Absorption tab: a two-column "take these out / put these in" good-vs-bad-foods contrast (plus an amber "sometimes it's the form, not the food" group for the genuinely conditional ones \u2014 dairy, water, cruciferous, phytates), and a visual polish pass toward the design bar Luneth set. He's happy it keeps improving but says the visual style still misses a lot and needs a dedicated design-notes session next \u2014 so this is committed as a checkpoint, and the design specifics are logged LIGHT on purpose (NOT canonical yet).
+
+Chunks 3\u20134 on the Absorption sub-tab (id foods). Chunk 3 (REMOVE<->EAT): foods-curation.json gained remove[]/eat[]/conditional[] slug lists (5/3/4); state/foods-curation.ts foodsRemove/foodsEat/foodsConditional resolve each to a FoodCard {slug,name,why} where "why" = the food's OWN sealed claim answer_short chosen by facet priority (warning/mechanism for remove; protocol/uses/stance for eat; stance/warning for conditional), with a leading "Yes/No \u2014" stripped (cleanWhy). Classification grounded per-claim, NOT guessed: clear-remove = gluten/dietary_oils/sugar/carbonated_beverages/processed_meat; clear-eat = eggs/meat/salt (salt is PRO \u2014 the raw material for stomach acid, salt-restriction causes malabsorption); conditional = dairy (whole yes / pasteurized no), water (filtered yes / distilled no), cruciferous (goitrogens \u2014 thyroid caution), phytates (soak/sprout, take minerals apart). Food cards route via the existing data-kd-topic (opens on the Explore tab \u2014 an OPEN question for Luneth).
+
+Chunk 4 (visual pass, per Luneth's notes + the trace-mineral-tile-detail.html reference): hero gained a pulsing top-right mono readout + an accent-notch eyebrow rule (the reference's blue L-corner brackets deliberately OMITTED \u2014 Luneth dislikes them); the 115M panel was rebuilt on the real design-system .ds-pull-stat primitive (animated accent glow + radar rings + readout + glowing num + body/small); the villi were swapped (damaged LEFT / healthy RIGHT) and redesigned as a high-tech "scan" \u2014 thin 0.9px SQUARE bars (was rounded), a faint tech-grid + baseline ticks filling the negative space, pulsing 9px nutrient dots in aligned rows (healthy nestled among the villi, damaged drifting high), and "Absorb \u2191/\u2193" metric readouts, labels +~17%. New .kd-foods-* CSS; kd_foods_* view-copy keys; render_probe_knowledge.js Foods checks extended (eyebrow/readout/.ds-pull-stat/villi dots). Pure projection (R1) maintained throughout.
+
+Verified: build green (tsc --noEmit + esbuild), invariants 62/62, render probe PASS, PAGE_ERRORS 0, collapsed + detail screenshots reviewed each iteration. NO corpus reseal \u2014 knowledge_version stays 327.
+
+Handoff: next-chunk.md fully rewritten so nothing is lost \u2014 backlog = (1) perfect the tab design from Luneth's incoming notes (WIP; memory visual-design-bar-and-principles); (2) 3 deferred Qs (food-card routing in-tab vs Explore; keep the "form" bucket; --\u2192\u2014 dash cleanup in some food whys); (3) the poached-eggs EPIGEN-000155 missing-outcome fix + a diet-vein OUTCOME AUDIT reseal (rule state-the-outcome-when-known); (4) bulk-enrich the ~180 on-theme claims into the thin food topics; (5) Part A absorption caveat (restraint \u2014 one great pointer); (6) Coverage-tab overhaul; then resume Phase-H. Two memories added this session: visual-design-bar-and-principles (the design bar + principles, WIP-flagged), state-the-outcome-when-known (show a case study's result when the book states one).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
