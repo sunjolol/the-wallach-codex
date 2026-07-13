@@ -1,48 +1,38 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-13, end of session)
 
-> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN NOTES ("older loses"). Board **62/62**, knowledge_version **327** (unchanged — no corpus reseal this session). The **Absorption tab** got a large design build + refinement pass this session, all committed + pushed. Luneth (2026-07-13): "still more after this" — expect continued Absorption refinement next session.
+> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN NOTES ("older loses"). Board **62/62**, knowledge_version **331** (bumped this session by the food-mining seals). This session SHIPPED the Absorption diet food-mining + the tab's visual pass — committed + pushed (**171e3af9**). **Luneth is REVIEWING it now** and will likely bring follow-up tweaks.
 >
-> This file is the **temporary** rolling handoff (current per-element design state + what's next); it is pruned as work lands. DURABLE principles live in the memory files (read at genesis), NOT here and NOT in CLAUDE.md/rules.
+> This file is the **temporary** rolling handoff (current state + what's next); DURABLE principles live in the memory files (read at genesis), NOT here.
 
-## ★★★★ THE ABSORPTION TAB — CURRENT DESIGN (do NOT make Luneth re-explain these)
-The Knowledge drawer's 6th tab (`views/knowledge-foods.ts`, tab id `foods`, label "Absorption"): a curated persuasive landing. **Every choice below is SIGNED OFF this session** unless marked NEXT.
+## ★★★★ WHAT JUST SHIPPED (2026-07-13 · commit 171e3af9)
+The Absorption tab (`views/knowledge-foods.ts`, Knowledge drawer 6th tab, id `foods`) is now a persuasive landing backed by REAL mined food claims.
+- **Hell's Kitchen added as sealed book #7** — `book_id` **hells-kitchen** ("Causes, Prevention and Cure of Obesity, Diabetes and Metabolic Syndrome", 3rd ed Jan 2015, Wallach + Ma Lan). Registered in `books-meta.json` + `eden/tools/mining-coverage.json` (incomplete, food-topic vein). Source = `eden/corpus/books/hk.txt` (Internet-Archive scan; page markers "HELLS KITCHEN NNN"; locator chapter_page). **Only lightly mined** (food topics), NOT a full mine.
+- **56 new sealed search claims** (kv 328→331 over 4 seal cycles) for butter/beef/chicken/pork/eggs/fish across all 7 books + **7 new search-entities** (butter/beef/chicken/pork/fish + **salmon/tuna** as thin Explore topics). Enrichment in `eden/corpus/search-enrichment.json`; entities in `eden/catalog/search-entities.json`. Butter dual-homes to arteriosclerosis/atherosclerosis/stroke/xerophthalmia/cerebrovascular/rickets + vit A/D/K.
+- **"Put these in" cards** = Butter · Beef · Chicken · Pork · Eggs · Salt (`dashboard/assets/data/foods-curation.json` `eat[]`); the generic "Meat & Animal Foods (3–6×/day)" card is **RETIRED** (`meat` survives as an umbrella topic only). `state/foods-curation.ts` `foodsEat()` now leads with the **stance** facet (never a dose) and caps the card `why` to a ~200-char **`teaser()`** — the full answer lives on the linked topic page.
+- **Visual pass done**: static blue **THE FIRST STEP** in the FIG-01 mono (the Fantocrypt alien-flavour shimmer is SCRAPPED — `views/alien-flavor.ts` + `Fantocrypt.ttf` + the @font-face DELETED); villi pull-quote +spacing (space-5→space-7) + larger font; contrast **"03"** numbered header (last FIG-NN kicker + dead `secKicker`/CSS retired); "THE PREMISE" aligned to the 02/03 kicker column (136px) with a left rule; 01 hero lifted 10px.
+- **Quality pass** (Luneth flagged terse/AI-shorthand summaries): 16 summaries redone with source-VERIFIED numbers (Okinawa 78/86 + 5/10,000, Amish 4%/6%, rickets +400%, CF 1-in-2,500); numerals-over-spelled-words sweep; **3 removed** — beef-7 (verbatim was Wallach QUOTING vegetarian author Ellen Buchman Ewald, not his view — caught by a misattribution scan; see [[verbatim-can-misattribute-third-party]]), pork-9 (empty), eggs-7 (literal "Breakfast should always be eaten" — see [[no-endorse-morning-eating]]).
 
-**Numbered section headers (demo style)** — the section-divider system (reusable `sectionHeader(num, kicker, headingHTML, extra)`): a big orange display number (4.5rem / 900 / track-tight) + an OPTIONAL dash-accented `.ds-kicker` + the heading. **NO L-corner brackets** (removed for good — Luneth dislikes them, do not re-add). Modelled on the demo `trace-mineral-tile-detail.html` "02 / The pivot / Not quantity. Absorption." header.
-- **01 = hero.** No kicker. The "01" rides UP next to the BLACK "You are not what you eat." line (off-aligned; `align-items:start` + `-0.22em` num margin) — deliberately NOT beside the orange line below ("too much orange"). See [[accent-text-fills-space]].
-- **02 = villi.** Kicker "The mechanism"; heading "What gluten does to your gut" in `.ds-h-section`.
-- **03 = contrast (NEXT — not done):** the contrast section still shows the OLD `FIG·02 // GOOD FOODS & BAD FOODS` kicker; convert it to a "03" demo header next (the last FIG·NN label to retire).
+## ★ AWAITING LUNETH'S REVIEW (do NOT re-litigate; wait for his notes)
+- He is reviewing the shipped work now. ONE thing he asked to sanity-check: the **~200-char card `teaser()` cap** (`state/foods-curation.ts`) — tune if he wants cards longer/shorter.
+- The **topic pages** (butter/beef/chicken/pork/eggs/fish/salmon/tuna) now carry the full rich summaries — a card → topic click shows the payoff.
+- Expect follow-up tweaks to the Absorption cards / topic-page summaries; apply his notes, don't assume.
 
-**Hero chrome (top → bottom):**
-- Eyebrow rule row: `THE PREMISE ——◆—— ABSORBABILITY` (orange right, `--ds-accent`). ("THE PREMISE" replaced "THE SECOND PRONG" this session.)
-- **Alien corner lockup** (top-right, under the rule): the `wallach-corp // v1.0` brand in the **Fantocrypt alien font**, then `FIG·01` (dark, IDENTICAL to the demo SCAN·041: mono / micro / track-wider / `--ds-ink` / 600). Three-colour effect: orange `--ds-accent` + blue `--ds-tech` + dark `--ds-ink`.
-- Playfair headline (`.kd-foods-hero__h`), then the deck (`max-width: 64ch` — wraps exactly after "The other half —").
+## ★ NEXT — Absorption/diet follow-ups + deferred purification
+1. **HK txt de-hyphenation** — the mined HK (+ a few other-book) spans keep OCR line-wrap hyphens in stored verbatims (e.g. "car- bohydrate", "symp- tom", "un- processed"). Deferred source-purification: correct the .txt in-span → `corpus_resnap` → USER-authorized reseal. [[dehyphenation-reflow-method]] [[book-source-purification-campaign]].
+2. **Salmon/tuna** stay thin Explore topics (Wallach lacks prep/sourcing specifics — no wild/farmed, smoked/frozen, albacore/light). Fine as-is unless Luneth pastes more source.
+3. Bulk-enrich the ~180 on-theme diet claims into the food entities (no new seal).
 
-**Fantocrypt alien-flavour text** (`views/alien-flavor.ts`, wired in `main.ts`): flavour text that can't reliably be real, useful text renders as unreadable alien glyphs (signal: "flavour, not info"). GENTLE shimmer — **800ms tick, 1–3 letters morph, lowercase, separators held** (a fast every-letter shimmer "spazzed out"). Dials: `TICK_MS`, `MAX_MORPH`. **Luneth APPROVED propagating this to other flavour spots — queued, NOT done.**
-
-**Villi "scan"** (parametric SVG in `knowledge-foods.ts`): rounded finger-shaped villi with deterministic organic jitter (no Math.random → probe-stable). Nutrient dots share the same x-columns AND are **centred on the grid (y=64, both panels)** for a clean side-by-side read — damaged (grey) float above the stubby villi, healthy (orange) nestle among the tall ones. "villi" is a `.gloss` hover-term (bold orange). A **full-width plain-language intro** sits ABOVE the two panels; the pull-quote sits below.
-
-**The pull-quote** (`.ds-pull-quote` / `.kd-foods-pq`): the REAL sealed Wallach verbatim **EPIGEN-000158 (Epigenetics p.598)** — gluten = a "contact enteritis" — corpus-sourced via `foodsVilliQuote()` (synced R1; page from the claim). Giant orange quote glyph, textured `.ds-mark` highlighter (needs `#ds-filter-rough` SVG, added to `dashboard.html`), `PAGE · 598` accent, footer cite. Font-size reduced so line 1 doesn't wrap on "proteins". **OCR fix:** the sealed verbatim's broken closing-quote glyph is normalised for DISPLAY only (`fixQuoteGlyph`; words byte-identical) — **FIXME: purify at source in the next reseal.**
-
-**Files:** `views/knowledge-foods.ts` · `views/alien-flavor.ts` · `state/foods-curation.ts` + `core/schemas/foods-curation.ts` + `dashboard/assets/data/foods-curation.json` (`villi_quote` = claim id + highlight_from) · `.kd-foods-*` in `drawer-knowledge.css` · `kd_foods_*` in `view-copy.json` · `#ds-filter-rough` in `dashboard.html` · `assets/fonts/Fantocrypt.ttf` (license unverified → [[legal-copyright-pass-at-end]]) · `render_probe_knowledge.js`.
-
-## ★ NEXT — continue the Absorption tab (Luneth has more)
-1. **Contrast → "03" demo header** (+ decide the `FIG·02` fate — drop or convert).
-2. **Propagate the Fantocrypt alien-flavour text** to other flavour accents (Luneth-approved, queued).
-3. **Purify EPIGEN-000158's broken quote at source** (correct the `.txt` → `corpus_resnap` → USER-ONLY reseal) so the display `fixQuoteGlyph` can retire.
-4. Whatever refinements Luneth brings next ("still more after this").
-
-## ★ BACKLOG — after the Absorption design settles (nothing lost)
+## ★ BACKLOG (still valid, unchanged by this session)
 - **Part A — persistent absorption caveat** across Coverage / Essentials / entity pages (ONE great pointer; restraint [[persuade-dont-shove-restraint]]).
 - **Coverage-tab OVERHAUL** to Knowledge-tab quality; fix the 2 fake coverage numbers (goal-card proportional fake + regimen-slot hardcoded literals). In scope (Luneth 2026-07-12).
 - **Content pass (reseal):** poached-eggs EPIGEN-000155 missing-outcome + a diet-vein OUTCOME AUDIT ([[state-the-outcome-when-known]]); normalise `--`→`—` dashes in diet `answer_short`s.
-- **Bulk-enrich the ~180 on-theme diet claims** into the food entities (no seal).
 - **THEN resume Phase-H** (entity-page + Search overhaul) per `chronicle/OVERHAUL-BLUEPRINT.md`.
 - Trace/rare small owed (therapeutic-note seal · Cal Toddy label · Group-B factor) — 2026-07-12, still valid.
-- THREAD 2 (after diet/absorption): Search G-7 + book mining (SEAL the 2 unsealed search files; resume Immortality A-Z at Mn-Manganese; charged-treatise capture; lay-topic tagging; port the P2 CHARGED gate).
+- THREAD 2: Search G-7 + book mining — **SEAL the 2 still-unsealed search files** (`search-enrichment.json` + `catalog/search-entities.json` are edited-but-not-golden-sealed); resume Immortality A-Z at Mn-Manganese; charged-treatise capture; lay-topic tagging; port the P2 CHARGED gate.
 
 ## ★ KEY DOCTRINE (memory files are authoritative — read at genesis)
-- Design bar + HOW: [[visual-design-bar-and-principles]] (mesh art+UX; fill negative space PURPOSEFULLY; NO L-brackets; Fantocrypt for flavour; numbered headers). Reference = `dashboard/components/trace-mineral-tile-detail.html` (translate GOOD design → clean code, NEVER copy) + the "Empower" calibration anchor (`dashboard/design-wisdom/references/`).
-- [[accent-text-fills-space]] — accent text FILLS negative space; content rides alongside, NEVER pushed to a separate line to avoid "clashing".
-- [[narrate-named-steps]] — announce named file/step actions AS you do them (Luneth follows your steps to give feedback).
+- Design bar + HOW: [[visual-design-bar-and-principles]] (mesh art+UX; fill negative space PURPOSEFULLY; NO L-brackets; numbered demo headers). Reference = `dashboard/components/trace-mineral-tile-detail.html` (translate GOOD design → clean code, NEVER copy).
+- [[accent-text-fills-space]] — accent text FILLS negative space; content rides alongside, NEVER pushed to a separate line.
+- [[narrate-named-steps]] — announce named file/step actions AS you do them.
 - Verify visually every chunk — screenshot + LOOK ([[screenshot-verify-visual-chunks]]); Luneth is the sign-off gate.
-- Round-close: build → invariants → probe → build-log → Creator's Log → **rebuild** (re-inline the log embed) → commit + push ([[creators-log-append-gotchas]] [[log-embed-build-inline]]).
+- Round-close: build → invariants → probe → build-log → Creator's Log → **rebuild** → commit + push ([[creators-log-append-gotchas]] [[log-embed-build-inline]]).
