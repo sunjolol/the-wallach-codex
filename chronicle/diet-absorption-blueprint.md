@@ -4,6 +4,8 @@ _Authored 2026-07-12 (Luneth mandate, end of session). This is the next session'
 
 > ★★★ Luneth's words: "diet is CRUCIAL and JUST AS IMPORTANT as getting all 90 itself — it is a dual, two-pronged attack that can NOT be separated from each other." Propagate it across the ENTIRE app so it can NEVER be missed. This is "a total overhaul without the total overhaul" — surface a stance that already exists in sealed content, everywhere, so NO ONE can EVER misunderstand it.
 
+> ★ **UPDATE 2026-07-12 (locked with Luneth; SUPERSEDES any conflicting text below):** (1) **NO flyer images** — the sealed Good/Bad-Foods JPGs carry Gluten-Intolerance-Group branding + GiG-sourced lists; **re-articulate the good/bad foods FROM THE BOOKS**, every food claim Wallach-book-cited (a flyer is NOT a valid §00.A cite source — books only). The flyers remain sealed EVIDENCE the stance is real, not displayed content. (2) Foods home = a dedicated **Foods & Absorption tab** in Knowledge **+** backing Explore pages. (3) Real vein = **302 lines / 342 occurrences** (the 283 undercounted). (4) Charged content (homosexuality/intersex) OUT of all diet content; scope verbatims, stop+ask if inseparable. (5) Scope: exhaustive on DISTINCT stances, dedup repeats. **PROGRESS (committed + pushed):** the pilot (Gluten + Nutrient Absorption Explore pages) + the crown-jewel seal (mantra / Mayo-115M stat / two-prong fix, knowledge_version 325). DUAL-HOME confirmed — enrich a sealed tier-1 claim → searchable AND operational, so most of "pepper the stance" = enrich the ~219 existing on-theme claims (no seal). Restraint governs every design call: [[persuade-dont-shove-restraint]].
+
 ---
 
 ## 1. The stance (what the app must convey)
@@ -39,9 +41,9 @@ This stance is stated **constantly across the entire Wallach corpus**, yet the a
   - **Epigenetics ~L12998:** "Gluten intolerance, over time, produces a gradual loss of villi from the small [intestine]."
   - **Epigenetics ~L12991:** "almost a full third of Americans (115 million) suffer from gluten intolerance."
   - **Epigenetics ~L17773:** "Wallach put Crider on a gluten-free diet, eliminated all inflammatory foods…"
-- **Sealed graphics (Luneth's flyers, already in the pillar):** `eden/graphics/Bad-Foods-Front.jpg`, `Bad-Foods-Back.jpg`, `Good-Foods-Front.jpg`, `Good-Foods-Back.jpg` (sealed, golden-hashed). The Bad-Foods flyer already articulates the stance: gluten/oats destroy the villi that absorb nutrients; phytates bind minerals (take minerals 2–3 hrs from phytate meals); oxidized oils inflame; carbonation neutralizes stomach acid (kills absorption); well-done meat / deli meats / fried foods; potato skins; wheat/barley/rye. The Good-Foods flyer is the counterpart. These are the ready-made content spine.
+- **Sealed graphics (Luneth's flyers, already in the pillar):** `eden/graphics/Bad-Foods-Front.jpg`, `Bad-Foods-Back.jpg`, `Good-Foods-Front.jpg`, `Good-Foods-Back.jpg` (sealed, golden-hashed). The Bad-Foods flyer already articulates the stance: gluten/oats destroy the villi that absorb nutrients; phytates bind minerals (take minerals 2–3 hrs from phytate meals); oxidized oils inflame; carbonation neutralizes stomach acid (kills absorption); well-done meat / deli meats / fried foods; potato skins; wheat/barley/rye. The Good-Foods flyer is the counterpart. This flyer inventory is a useful CHECKLIST of which good/bad-food stances to FIND + re-articulate FROM THE BOOKS (we do NOT display the flyer images — see the UPDATE banner).
 
-So every displayed diet/absorption claim can cite a Wallach book or the sealed flyer — no §00.A stretch.
+So every displayed diet/absorption claim cites a Wallach BOOK (the flyers are NOT a valid cite source — see the UPDATE banner) — no §00.A stretch.
 
 ---
 
@@ -57,7 +59,7 @@ Wherever coverage is shown (Coverage tab ⌘1, the Essentials tab, entity pages,
 
 ### Part B — A dedicated "Foods & Absorption" section (the contained deep-dive)
 A viewable guide (likely a new Knowledge tab, or an Explore/Knowledge surface — decide with Luneth) that:
-- Surfaces the sealed Good/Bad-Foods flyers.
+- Re-articulates the good/bad foods FROM THE BOOKS (NO flyer images — see the UPDATE banner).
 - Presents the re-mined book citations (all the gluten / absorption / food stances) in modern, structured, **persuasive** UX — not a wall of text; designed to educate AND convince.
 - Drives the lifestyle change home in a contained place, so Part A can stay small.
 
