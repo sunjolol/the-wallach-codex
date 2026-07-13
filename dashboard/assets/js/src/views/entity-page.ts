@@ -35,7 +35,7 @@ import {
   SEARCH_FACETS,
   type SearchClaim,
 } from '../core/schemas/index.js';
-import type { CoverageSnapshot, CoverageStatus, CoverageTile } from '../state/coverage.js';
+import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
 import { facetLabel, kindCategory, kindLabel, ui } from '../state/copy.js';
 import {
   conditionDisplayName,
@@ -323,7 +323,13 @@ function srcRow(s: RankedSourceRow, isBest: boolean): string {
     </button>`;
 }
 
-function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus): string {
+function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null): string {
+  // Rare-earth GROUP tiles carry no per-element dose — the 33 trace_pdm minerals share ONE
+  // meter (Σ plant-derived vehicle mg vs the 924 mg Wallach group goal). Render the group
+  // treatment, not the per-element target/pending logic.
+  if (tile?.pdmGroup === true && snapshot?.pdmGroup != null) {
+    return renderPdmGroupGlance(snapshot.pdmGroup);
+  }
   const ivt = tile?.intakeVsTarget ?? null;
   const why = slug !== null ? essentialWhy(slug) : '';
   const whyHTML = why.length > 0
@@ -340,7 +346,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
     const barPct = Math.min(100, pct);
     coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML(ivt.unit)}</small></div>
-        <div class="kd-ep-bar"><i style="width:${barPct}%"></i></div>
+        <div class="kd-ep-bar${barFillClass(status)}"><i style="width:${barPct}%"></i></div>
         <div class="kd-ep-sub">${pct}% ${escHTML(ui('ep_coverage_of_target'))}</div>`;
   }
   else {
@@ -382,6 +388,97 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
       </div>
       <div>
         ${coverageHTML}
+      </div>
+    </div>
+    ${sourcesHTML}
+  </div>`;
+}
+
+// ─── Rare-earth GROUP "at a glance" (the 33 trace_pdm minerals, scored as one) ──
+
+/** Green fill once the goal is met (covered), else the default orange "in progress". */
+function barFillClass(s: CoverageStatus): string {
+  return (s === 'covered' || s === 'trace') ? ' kd-ep-bar--met' : '';
+}
+
+/** Fill {token} placeholders in a copy-store string (the numbers come from data, never the store). */
+function fillTokens(id: string, tokens: Record<string, string>): string {
+  let raw = ui(id);
+  for (const [k, v] of Object.entries(tokens)) {
+    raw = raw.replace(`{${k}}`, v);
+  }
+  return raw;
+}
+
+function pdmVerdictWord(s: CoverageStatus): string {
+  if (s === 'covered' || s === 'trace') {
+    return 'covered';
+  }
+  if (s === 'partial') {
+    return 'partial';
+  }
+  if (s === 'gap') {
+    return 'below goal';
+  }
+  return 'not covered';
+}
+
+function pdmSrcRow(s: { productId: string; name: string; mg: number }): string {
+  return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML(s.productId)}">
+      <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
+      <span class="kd-ep-src__nm">${escHTML(s.name)}</span>
+      <span class="kd-ep-src__amt">${fmtTarget(s.mg)} mg</span>
+      <span class="kd-ep-src__chev">›</span>
+    </button>`;
+}
+
+/**
+ * The rare-earth group treatment: no per-element dose exists, so all 33 trace_pdm minerals
+ * show the ONE shared meter (Σ vehicle mg vs the 924 mg group goal) + the group explanation.
+ */
+function renderPdmGroupGlance(g: PdmGroupSummary): string {
+  const prov = pdmGoalProvenance();
+  const pct = Math.max(0, Math.round((g.goalMg > 0 ? g.deliveredMg / g.goalMg : 0) * 100));
+  const barPct = Math.min(100, pct);
+  const tip = fillTokens('kd_ep_pdm_calc_tip', {
+    dose: `${fmtTarget(prov.doseAmount)} ${prov.doseUnit}`,
+    perbw: `${fmtTarget(prov.perBwLb)} lb`,
+    refmg: `${fmtTarget(prov.refMg)} mg`,
+    bw: `${fmtTarget(prov.bodyWeightLb)} lb`,
+    goal: `${fmtTarget(g.goalMg)} mg`,
+  });
+  const src = rankedPdmSources();
+  const TOP = 5;
+  const head = src.slice(0, TOP).map(s => pdmSrcRow(s)).join('');
+  const rest = src.slice(TOP);
+  const more = rest.length > 0
+    ? `<details class="kd-ep-more"><summary>Show all ${src.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => pdmSrcRow(s)).join('')}</div></details>`
+    : '';
+  const sourcesHTML = src.length > 0
+    ? `<hr class="kd-ep-op__div">
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_pdm_srclabel'))}</div>
+      ${head}${more}`
+    : '';
+  return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_pdm_targetlabel'))}</div>
+        <div class="kd-ep-v">${fmtTarget(g.goalMg)}<small> mg / day</small></div>
+        <span class="kd-ep-why">${escHTML(ui('kd_ep_pdm_calc_q'))}<span class="kd-ep-tip">${escHTML(tip)}</span></span>
+      </div>
+      <div>
+        <div class="kd-ep-k">Your coverage <span class="kd-ep-pdm-tag">${escHTML(ui('kd_ep_pdm_grouptag'))}</span></div>
+        <div class="kd-ep-v">${fmtTarget(g.deliveredMg)}<small> / ${fmtTarget(g.goalMg)} mg</small></div>
+        <div class="kd-ep-bar${barFillClass(g.status)}"><i style="width:${barPct}%"></i></div>
+        <div class="kd-ep-sub">${pct}% ${escHTML(ui('kd_ep_pdm_covof'))} — ${escHTML(pdmVerdictWord(g.status))}</div>
+      </div>
+    </div>
+    <div class="kd-ep-pdm-note">${escHTML(ui('kd_ep_pdm_note'))}</div>
+    <div class="kd-ep-pdm-thera">
+      <svg class="kd-ep-pdm-thera__mark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.01"/></svg>
+      <div>
+        <div class="kd-ep-pdm-thera__label">${escHTML(ui('kd_ep_pdm_thera_label'))}</div>
+        <div class="kd-ep-pdm-thera__body">${escHTML(ui('kd_ep_pdm_thera'))}</div>
       </div>
     </div>
     ${sourcesHTML}
@@ -434,18 +531,21 @@ function renderRecord(page: EssentialPage): string {
     const rb = recordKindRank(b.kind);
     return ra !== rb ? ra - rb : (a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0);
   });
+  const total = page.claim_count;
+  // Few total claims (< 20) => expand every kind group by default; collapsing a 2-claim group
+  // is pointless friction (Luneth). Large records stay collapsed so they remain scannable.
+  const openKinds = total < 20 ? ' open' : '';
   const kindsHTML = groups.map((g) => {
     const claims = resolveClaims(g.claim_ids);
     if (claims.length === 0) {
       return '';
     }
     const cards = claims.map(renderRecordClaim).join('');
-    return `<details class="kd-ep-kind" data-family="${escHTML(kindCategory(g.kind))}">
+    return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML(kindCategory(g.kind))}">
       <summary><span class="kd-ep-kind__label">${escHTML(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
       <div class="kd-ep-kind__body">${cards}</div>
     </details>`;
   }).join('');
-  const total = page.claim_count;
   return seclabel('The full record', 'every claim · advanced')
     + `<details class="kd-ep-record" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, 'claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
@@ -556,7 +656,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const page = slug !== null ? getEssentialPage(slug) : null;
   const tile = tileOf(snapshot, layoutKey);
   const status: CoverageStatus = tile?.status ?? '';
-  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status);
+  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot);
 
   if (page === null) {
     // Graceful fallback: an essential with no sealed page record yet (e.g. the

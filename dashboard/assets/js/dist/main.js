@@ -14979,6 +14979,20 @@
   }
   var PDM = PdmCoverageSchema.parse(pdm_coverage_data_default);
   var PDM_GOAL = PDM.goal.maintenance_mg;
+  function rankedPdmSources() {
+    return Object.entries(PDM.products).filter(([, r]) => r.pdm_mg > 0).map(([productId, r]) => ({ productId, name: r.canonical_name, mg: r.pdm_mg })).sort((a, b) => b.mg - a.mg);
+  }
+  function pdmGoalProvenance() {
+    const p = PDM.goal.provenance ?? {};
+    return {
+      doseAmount: Number(p["wallach_dose_amount"] ?? 1),
+      doseUnit: String(p["wallach_dose_unit"] ?? "fl oz"),
+      perBwLb: Number(p["wallach_dose_per_body_weight_lb"] ?? 100),
+      refMg: Number(p["reference_mg_per_fl_oz"] ?? 0),
+      bodyWeightLb: Number(p["body_weight_lb"] ?? 154),
+      goalMg: PDM_GOAL
+    };
+  }
   var cachedPdmByName = null;
   function pdmByName() {
     if (cachedPdmByName === null) {
@@ -15159,7 +15173,7 @@
           unit: t.unit ?? "mg"
         };
       }
-      return {
+      const base = {
         tileId: buildTileId(entry.name),
         category: catFromTarget(entry.category),
         symbol: "",
@@ -15171,6 +15185,7 @@
         aggregateVehicle: isPdm && status === "covered",
         intakeVsTarget
       };
+      return { ...base, pdmGroup: isPdm };
     });
     const byCategory = {};
     for (const tile of tiles) {
@@ -15186,6 +15201,12 @@
     const totalCount = countedTiles.length;
     cachedSnapshot = {
       tiles,
+      pdmGroup: {
+        deliveredMg: Math.round(pdm.totalMg * 10) / 10,
+        goalMg: PDM_GOAL,
+        status: pdmStatus,
+        sources: pdm.sources
+      },
       coveredCount,
       totalCount,
       computedAt: (/* @__PURE__ */ new Date()).toISOString(),
@@ -17867,11 +17888,20 @@
       kd_covlegend_uncovered: "uncovered",
       kd_covlegend_present: "present",
       kd_esssec_structural: "Structural & bulk minerals",
-      kd_esssec_electrolytes: "Electrolytes & major minerals",
+      kd_esssec_electrolytes: "Essential trace minerals",
       kd_esssec_trace: "Trace & rare-earth minerals",
       kd_esssec_vitamins: "Vitamins",
       kd_esssec_amino: "Amino acids",
       kd_esssec_fatty: "Essential fatty acids",
+      kd_ep_pdm_targetlabel: "Wallach daily target \xB7 group",
+      kd_ep_pdm_grouptag: "Rare Earth Minerals",
+      kd_ep_pdm_calc_q: "how is this calculated?",
+      kd_ep_pdm_calc_tip: "Wallach doses plant-derived colloidal minerals at {dose} per {perbw} of body weight, daily. One fl oz carries about {refmg} of mineral solids; for a {bw} reference adult that works out to {goal}.",
+      kd_ep_pdm_covof: "of the rare-earth group goal",
+      kd_ep_pdm_note: "Rare-earth minerals are never itemized on a supplement label. Wallach's thesis is that plant-derived colloidal minerals deliver the whole spectrum together \u2014 60 to 72 minerals in one complex, every rare earth included \u2014 so they're scored as one group against this goal, not one mineral at a time.",
+      kd_ep_pdm_thera_label: "30-day therapeutic use",
+      kd_ep_pdm_thera: "For a serious illness, Wallach doubles the base-line dose for about 30 days, then drops back to it. Take the doubled amount as two servings a few hours apart rather than all at once, so more is absorbed instead of flushed out.",
+      kd_ep_pdm_srclabel: "Best plant-derived-mineral sources",
       kh_conditions_label: "Common conditions",
       kh_conditions_hint: "what Wallach wrote most about",
       kh_conditions_link: "browse all {n} \u2192",
@@ -91122,7 +91152,10 @@ deaths, blood clots, sterility`,
       <span class="kd-ep-src__chev">\u203A</span>
     </button>`;
   }
-  function renderAtAGlance(layoutKey, slug, tile, status) {
+  function renderAtAGlance(layoutKey, slug, tile, status, snapshot) {
+    if (tile?.pdmGroup === true && snapshot?.pdmGroup != null) {
+      return renderPdmGroupGlance(snapshot.pdmGroup);
+    }
     const ivt = tile?.intakeVsTarget ?? null;
     const why = slug !== null ? essentialWhy(slug) : "";
     const whyHTML = why.length > 0 ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML6(why)}</span></span>` : "";
@@ -91133,7 +91166,7 @@ deaths, blood clots, sterility`,
       const barPct = Math.min(100, pct);
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML6(ivt.unit)}</small></div>
-        <div class="kd-ep-bar"><i style="width:${barPct}%"></i></div>
+        <div class="kd-ep-bar${barFillClass(status)}"><i style="width:${barPct}%"></i></div>
         <div class="kd-ep-sub">${pct}% ${escHTML6(ui("ep_coverage_of_target"))}</div>`;
     } else {
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
@@ -91166,6 +91199,80 @@ deaths, blood clots, sterility`,
       </div>
       <div>
         ${coverageHTML}
+      </div>
+    </div>
+    ${sourcesHTML}
+  </div>`;
+  }
+  function barFillClass(s) {
+    return s === "covered" || s === "trace" ? " kd-ep-bar--met" : "";
+  }
+  function fillTokens(id, tokens) {
+    let raw = ui(id);
+    for (const [k, v] of Object.entries(tokens)) {
+      raw = raw.replace(`{${k}}`, v);
+    }
+    return raw;
+  }
+  function pdmVerdictWord(s) {
+    if (s === "covered" || s === "trace") {
+      return "covered";
+    }
+    if (s === "partial") {
+      return "partial";
+    }
+    if (s === "gap") {
+      return "below goal";
+    }
+    return "not covered";
+  }
+  function pdmSrcRow(s) {
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(s.productId)}">
+      <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
+      <span class="kd-ep-src__nm">${escHTML6(s.name)}</span>
+      <span class="kd-ep-src__amt">${fmtTarget(s.mg)} mg</span>
+      <span class="kd-ep-src__chev">\u203A</span>
+    </button>`;
+  }
+  function renderPdmGroupGlance(g) {
+    const prov = pdmGoalProvenance();
+    const pct = Math.max(0, Math.round((g.goalMg > 0 ? g.deliveredMg / g.goalMg : 0) * 100));
+    const barPct = Math.min(100, pct);
+    const tip2 = fillTokens("kd_ep_pdm_calc_tip", {
+      dose: `${fmtTarget(prov.doseAmount)} ${prov.doseUnit}`,
+      perbw: `${fmtTarget(prov.perBwLb)} lb`,
+      refmg: `${fmtTarget(prov.refMg)} mg`,
+      bw: `${fmtTarget(prov.bodyWeightLb)} lb`,
+      goal: `${fmtTarget(g.goalMg)} mg`
+    });
+    const src = rankedPdmSources();
+    const TOP = 5;
+    const head = src.slice(0, TOP).map((s) => pdmSrcRow(s)).join("");
+    const rest = src.slice(TOP);
+    const more = rest.length > 0 ? `<details class="kd-ep-more"><summary>Show all ${src.length} sources</summary><div class="kd-ep-more__body">${rest.map((s) => pdmSrcRow(s)).join("")}</div></details>` : "";
+    const sourcesHTML = src.length > 0 ? `<hr class="kd-ep-op__div">
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML6(ui("kd_ep_pdm_srclabel"))}</div>
+      ${head}${more}` : "";
+    return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_pdm_targetlabel"))}</div>
+        <div class="kd-ep-v">${fmtTarget(g.goalMg)}<small> mg / day</small></div>
+        <span class="kd-ep-why">${escHTML6(ui("kd_ep_pdm_calc_q"))}<span class="kd-ep-tip">${escHTML6(tip2)}</span></span>
+      </div>
+      <div>
+        <div class="kd-ep-k">Your coverage <span class="kd-ep-pdm-tag">${escHTML6(ui("kd_ep_pdm_grouptag"))}</span></div>
+        <div class="kd-ep-v">${fmtTarget(g.deliveredMg)}<small> / ${fmtTarget(g.goalMg)} mg</small></div>
+        <div class="kd-ep-bar${barFillClass(g.status)}"><i style="width:${barPct}%"></i></div>
+        <div class="kd-ep-sub">${pct}% ${escHTML6(ui("kd_ep_pdm_covof"))} \u2014 ${escHTML6(pdmVerdictWord(g.status))}</div>
+      </div>
+    </div>
+    <div class="kd-ep-pdm-note">${escHTML6(ui("kd_ep_pdm_note"))}</div>
+    <div class="kd-ep-pdm-thera">
+      <svg class="kd-ep-pdm-thera__mark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.01"/></svg>
+      <div>
+        <div class="kd-ep-pdm-thera__label">${escHTML6(ui("kd_ep_pdm_thera_label"))}</div>
+        <div class="kd-ep-pdm-thera__body">${escHTML6(ui("kd_ep_pdm_thera"))}</div>
       </div>
     </div>
     ${sourcesHTML}
@@ -91209,18 +91316,19 @@ deaths, blood clots, sterility`,
       const rb = recordKindRank(b.kind);
       return ra !== rb ? ra - rb : a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0;
     });
+    const total = page.claim_count;
+    const openKinds = total < 20 ? " open" : "";
     const kindsHTML = groups.map((g) => {
       const claims = resolveClaims(g.claim_ids);
       if (claims.length === 0) {
         return "";
       }
       const cards = claims.map(renderRecordClaim).join("");
-      return `<details class="kd-ep-kind" data-family="${escHTML6(kindCategory(g.kind))}">
+      return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML6(kindCategory(g.kind))}">
       <summary><span class="kd-ep-kind__label">${escHTML6(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
       <div class="kd-ep-kind__body">${cards}</div>
     </details>`;
     }).join("");
-    const total = page.claim_count;
     return seclabel("The full record", "every claim \xB7 advanced") + `<details class="kd-ep-record" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, "claim")}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
@@ -91304,7 +91412,7 @@ deaths, blood clots, sterility`,
     const page = slug !== null ? getEssentialPage(slug) : null;
     const tile = tileOf(snapshot, layoutKey);
     const status = tile?.status ?? "";
-    const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status);
+    const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot);
     if (page === null) {
       const nm = escHTML6(corpusEss?.common_name ?? layoutKey);
       return `<div class="kd-essential-deep kd-ep">
@@ -93188,7 +93296,19 @@ Confirmed / no change needed:
 
 Verification: node tools/build.mjs OK; invariants 62/62; render_probe_knowledge PASS (0 page errors; 91 essential tiles, all with a coverage dot, 26 in a live state); before/after screenshots compared at 9 -> 7 -> 6px (legend + tile grid).
 
-Deferrals: none for this chunk. Still queued in next-chunk.md: trace/rare INNER-page design, Cal Toddy label reconciliation, Group-B tunable factor default.` }];
+Deferrals: none for this chunk. Still queued in next-chunk.md: trace/rare INNER-page design, Cal Toddy label reconciliation, Group-B tunable factor default.` }, { id: "lg_mrim7szg_z72nfd", ts: "2026-07-12T21:40:40.060182-05:00", surface: "knowledge", kind: "round-close", summary: "Trace/rare INNER page shipped: 924 group goal, green-when-met bar, therapeutic alert, section-label fix, auto-expand <20. Plus a MAJOR blind spot recorded as top priority next: Wallach's diet/absorption stance is as vital as the 90 essentials, yet never surfaced.", detail: `Shipped the trace/rare-mineral INNER page and, along the way, caught a big blind spot that becomes the next session's whole focus.
+
+The inner page: clicking a rare-earth mineral used to show a dead "PENDING / no Wallach number." It now shows the real group-coverage treatment \u2014 a 924 mg/day group target, a "how is this calculated?" hover, your summed plant-derived-mineral mg vs 924 with a bar that turns green when the goal is met (orange while in progress), a "Rare Earth Minerals" tag, a plain "scored as one group, not one mineral at a time" note, best sources ranked by mg, and a subtle "30-day therapeutic use" alert box. Plus three UX fixes Luneth asked for: the mislabeled mineral section is now "Essential trace minerals," few-claim pages auto-expand their claim groups, and a wrong number in the note ("60-77 elements") was corrected to Wallach's own "60 to 72 minerals" and clarified as the whole mineral spectrum (rare earths are a subset), not a rare-earth count.
+
+Files: state/coverage.ts (CoverageTile.pdmGroup flag; PdmGroupSummary on the snapshot; rankedPdmSources(); pdmGoalProvenance(); tile literal split base+spread to stay under the views_state_no_inline_data 10-element gate after the 11th field). views/entity-page.ts (renderPdmGroupGlance group branch; barFillClass green-when-met on ALL coverage bars per Luneth's convention; auto-expand kind groups when page.claim_count < 20). drawer-knowledge.css (.kd-ep-bar--met green; .kd-ep-pdm-tag/note; the .kd-ep-pdm-thera alert box: accent left-stripe + accent-wash bg + info mark). view-copy.json (section-label fix + all new pdm copy + the two note rewords). tools/render_probe_knowledge.js (trace assertion rewritten for the group treatment; added record auto-expand checks both directions).
+
+Verified: build OK, tsc clean, invariants 62/62, render_probe_knowledge PASS, screenshot-verified every chunk.
+
+Decisions locked with Luneth this session: (A) therapeutic tier shown as a soft, reworded note, no hard 1,848 number; (B) group called "Rare Earth Minerals"; (C) coverage bars green when met / orange in progress; (D) "how is this calculated?" as a hover. \xA700.A: the 924 goal is cited (EPIGEN-000089) + gated; the therapeutic alert is book-grounded educational prose (the doubling is Wallach verbatim in DDDL/LPD; "serious illness" is Luneth's owned generalization; spacing/absorption is grounded practice + general biology).
+
+THE BLIND SPOT (why this session matters beyond the code): Luneth revealed that Wallach's stance is a TWO-PRONGED, inseparable model \u2014 get all 90 essentials AND remove bad foods (esp. gluten: wheat/barley/rye/oats) so the body can ABSORB them ("you are not what you eat, you are what you absorb"). This is JUST AS important as the 90 essentials. It is stated CONSTANTLY across the corpus (283 gluten/celiac/leaky-gut/malabsorption/villi hits) and there are sealed Good/Bad-Foods flyers \u2014 yet the app NEVER surfaced it, across many sessions, so a lifelong Wallach follower couldn't tell if the app even knew about it. That is a massive, repeated error. It is now recorded as the next session's TOP-PRIORITY, full-focus workstream: propagate the diet/absorption stance across the app (a persistent absorption caveat everywhere coverage shows + a dedicated Foods & Absorption section), and re-mine ALL books for EVERY food/absorption stance, using modern persuasive UX. Full plan: chronicle/diet-absorption-blueprint.md.
+
+Deferrals on trace/rare: therapeutic-note formal seal (offered), Cal Toddy label reconciliation, source-row prices + 600 mg tie-ordering.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

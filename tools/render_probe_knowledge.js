@@ -181,10 +181,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       hasBar: d ? d.querySelector('.kd-ep-bar') !== null : false,
       recordShown: d ? d.querySelector('.kd-ep-record') !== null : false,
       recordClaimCount: recordCards.length,
+      recordKindsCollapsed: d ? [...d.querySelectorAll('.kd-ep-kind')].some(k => !k.open) : null,
     };
   });
 
-  // Trace essential (no numeric Wallach target) shows the covered/not-covered pill only — no bar.
+  // Rare-earth GROUP essential (trace_pdm, no per-element dose) shows the shared group meter
+  // (Σ vehicle mg vs the 924 mg goal) + the "rare-earth group" tag + the group note — NOT a pill.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Dysprosium"]')?.click());
   await wait(200);
   const traceMeter = await page.evaluate(() => {
@@ -192,7 +194,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const d = root ? root.querySelector('.kd-essential-deep.kd-ep') : null;
     return {
       hasBar: d ? d.querySelector('.kd-ep-bar') !== null : null,
+      hasGroupTag: d ? d.querySelector('.kd-ep-pdm-tag') !== null : null,
+      hasNote: d ? d.querySelector('.kd-ep-pdm-note') !== null : null,
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : null,
+      recordKindsOpen: d ? ([...d.querySelectorAll('.kd-ep-kind')].length > 0 && [...d.querySelectorAll('.kd-ep-kind')].every(k => k.open)) : null,
     };
   });
 
@@ -387,7 +392,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['essentials: Magnesium tile expands the entity page', deep.shown === true && deep.hasName === true && deep.hasGlance === true],
     ['entity page: the full record renders with claim cards (Magnesium)', deep.recordShown === true && deep.recordClaimCount > 0],
     ['coverage: numeric target shows the real ep-bar (Magnesium)', deep.hasBar === true],
-    ['coverage: trace element shows the pill only, no bar (Dysprosium)', traceMeter.hasBar === false && traceMeter.hasPill === true],
+    ['coverage: rare-earth group shows the shared group meter + tag + note, no pill (Dysprosium)', traceMeter.hasBar === true && traceMeter.hasGroupTag === true && traceMeter.hasNote === true && traceMeter.hasPill === false],
+    ['record: few-claim entity auto-expands its kind groups (Dysprosium, 2 claims)', traceMeter.recordKindsOpen === true],
+    ['record: large entity keeps kind groups collapsed (Magnesium, 89 claims)', deep.recordKindsCollapsed === true],
     ['conditions: list rendered', conditions.rowCount >= 1],
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
     ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],

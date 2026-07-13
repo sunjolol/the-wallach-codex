@@ -128,10 +128,26 @@ export interface CoverageTile {
     targetHigh: number;
     unit: string;
   } | null;
+  /** True for a trace_pdm / wallach_collective rare-earth-group tile (scored as one group). */
+  pdmGroup: boolean;
+}
+
+/**
+ * The ONE shared rare-earth-group readout every trace_pdm tile points at: the sum of the
+ * regimen's plant-derived vehicle mg vs the Wallach maintenance goal (924 mg). null before
+ * the first recompute. §00.A: goalMg is a Wallach dose expressed in mg via composition.
+ */
+export interface PdmGroupSummary {
+  deliveredMg: number;
+  goalMg: number;
+  status: CoverageStatus;
+  sources: string[];
 }
 
 export interface CoverageSnapshot {
   tiles: CoverageTile[];
+  /** The shared rare-earth-group meter (all trace_pdm tiles reference this one readout). */
+  pdmGroup: PdmGroupSummary | null;
   coveredCount: number;
   totalCount: number;
   computedAt: string;
@@ -377,6 +393,41 @@ function readScale(item: RegimenItem, overrides: OverridesMap): number {
 const PDM = PdmCoverageSchema.parse(pdmCoverageData);
 const PDM_GOAL = PDM.goal.maintenance_mg;
 
+/**
+ * Rare-earth-group best sources: plant-derived-mineral products ranked by vehicle mg
+ * (highest first — Luneth: "factor recommendations by highest amounts first"). pdm_mg is
+ * product COMPOSITION, never a target; present-only vehicles (no derivable mg) are excluded.
+ */
+export function rankedPdmSources(): { productId: string; name: string; mg: number }[] {
+  return Object.entries(PDM.products)
+    .filter(([, r]) => r.pdm_mg > 0)
+    .map(([productId, r]) => ({ productId, name: r.canonical_name, mg: r.pdm_mg }))
+    .sort((a, b) => b.mg - a.mg);
+}
+
+/**
+ * The goal's derivation numbers (provenance) for the "how is this calculated?" hover —
+ * read straight from the sealed pillar+claim projection, never re-typed in a view (R3).
+ */
+export function pdmGoalProvenance(): {
+  doseAmount: number;
+  doseUnit: string;
+  perBwLb: number;
+  refMg: number;
+  bodyWeightLb: number;
+  goalMg: number;
+} {
+  const p = (PDM.goal as { provenance?: Record<string, number | string> }).provenance ?? {};
+  return {
+    doseAmount: Number(p['wallach_dose_amount'] ?? 1),
+    doseUnit: String(p['wallach_dose_unit'] ?? 'fl oz'),
+    perBwLb: Number(p['wallach_dose_per_body_weight_lb'] ?? 100),
+    refMg: Number(p['reference_mg_per_fl_oz'] ?? 0),
+    bodyWeightLb: Number(p['body_weight_lb'] ?? 154),
+    goalMg: PDM_GOAL,
+  };
+}
+
 let cachedPdmByName: Map<string, { mg: number; present: boolean }> | null = null;
 function pdmByName(): Map<string, { mg: number; present: boolean }> {
   if (cachedPdmByName === null) {
@@ -610,7 +661,7 @@ export function recompute(): CoverageSnapshot {
         unit: t.unit ?? 'mg',
       };
     }
-    return {
+    const base = {
       tileId: buildTileId(entry.name),
       category: catFromTarget(entry.category),
       symbol: '',
@@ -622,6 +673,7 @@ export function recompute(): CoverageSnapshot {
       aggregateVehicle: isPdm && status === 'covered',
       intakeVsTarget,
     };
+    return { ...base, pdmGroup: isPdm };
   });
 
   // Tally by category.
@@ -640,6 +692,12 @@ export function recompute(): CoverageSnapshot {
   const totalCount = countedTiles.length;
   cachedSnapshot = {
     tiles,
+    pdmGroup: {
+      deliveredMg: Math.round(pdm.totalMg * 10) / 10,
+      goalMg: PDM_GOAL,
+      status: pdmStatus,
+      sources: pdm.sources,
+    },
     coveredCount,
     totalCount,
     computedAt: new Date().toISOString(),
