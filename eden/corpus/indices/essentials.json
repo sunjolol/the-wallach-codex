@@ -315,7 +315,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 89,
+    "claim_count": 90,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000053",
@@ -345,6 +345,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000133",
         "WAL-CLM-LETS-000056"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000007"
       ],
       "interaction": [
         "WAL-CLM-IMMORT-000206"
@@ -600,6 +603,7 @@
       "copper",
       "flavonoids",
       "histidine",
+      "iodine",
       "iron",
       "lithium",
       "lysine",
@@ -631,6 +635,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -1017,7 +1022,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 105,
+    "claim_count": 106,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1050,6 +1055,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000128",
         "WAL-CLM-LETS-000046"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000007"
       ],
       "interaction": [
         "WAL-CLM-IMMORT-000206",
@@ -1320,6 +1328,7 @@
       "germanium",
       "histidine",
       "inositol",
+      "iodine",
       "iron",
       "lithium",
       "lysine",
@@ -1356,6 +1365,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -1706,7 +1716,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 59,
+    "claim_count": 60,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1757,6 +1767,7 @@
         "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
+        "WAL-CLM-EPIGEN-000166",
         "WAL-CLM-IMMORT-000100",
         "WAL-CLM-RARE-000119",
         "WAL-CLM-RARE-000121",
@@ -1935,7 +1946,7 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000012",
@@ -1949,6 +1960,7 @@
         "WAL-CLM-RARE-000012"
       ],
       "food_source": [
+        "WAL-CLM-DDDL-000114",
         "WAL-CLM-IMMORT-000145",
         "WAL-CLM-RARE-000013"
       ],
@@ -2206,7 +2218,7 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000025",
@@ -2230,6 +2242,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000131",
         "WAL-CLM-LETS-000054"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000007"
       ],
       "interaction": [
         "WAL-CLM-IMMORT-000184"
@@ -2380,18 +2395,23 @@
       "wilsons_syndrome"
     ],
     "interacts_with": [
+      "calcium",
       "chromium",
       "copper",
       "iron",
+      "magnesium",
       "omega-3",
       "selenium",
       "tyrosine",
       "vitamin-a",
-      "vitamin-e"
+      "vitamin-d",
+      "vitamin-e",
+      "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -2578,8 +2598,11 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 104,
+    "claim_count": 109,
     "claims_by_kind": {
+      "contraindication": [
+        "WAL-CLM-EPIGEN-000177"
+      ],
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000006",
@@ -2604,6 +2627,11 @@
         "WAL-CLM-EPIGEN-000136",
         "WAL-CLM-LETS-000065",
         "WAL-CLM-RARE-000048"
+      ],
+      "food_source": [
+        "WAL-CLM-EPIGEN-000168",
+        "WAL-CLM-EPIGEN-000171",
+        "WAL-CLM-HELLS-000007"
       ],
       "interaction": [
         "WAL-CLM-IMMORT-000164",
@@ -2632,6 +2660,7 @@
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-EPIGEN-000015",
+        "WAL-CLM-EPIGEN-000172",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000144",
@@ -2738,6 +2767,7 @@
       "anemia",
       "aneurysm",
       "arsenic_toxicity",
+      "arteriosclerosis",
       "arthritis",
       "autoimmune_disorders",
       "benign_prostatic_hyperplasia",
@@ -2850,12 +2880,14 @@
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
+      "vitamin-d",
       "vitamin-e",
       "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -3070,7 +3102,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 110,
+    "claim_count": 111,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -3095,6 +3127,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000139",
         "WAL-CLM-LETS-000077"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000007"
       ],
       "interaction": [
         "WAL-CLM-DDDL-000040",
@@ -3384,6 +3419,7 @@
       "flavonoids",
       "germanium",
       "inositol",
+      "iodine",
       "iron",
       "lithium",
       "lysine",
@@ -3409,11 +3445,13 @@
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
+      "vitamin-d",
       "vitamin-e"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -3488,7 +3526,7 @@
     "display_name": "Arsenic",
     "canon_slug": "arsenic",
     "category": "mineral",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-IMMORT-000037"
@@ -3499,6 +3537,7 @@
       "mechanism": [
         "WAL-CLM-EPIGEN-000066",
         "WAL-CLM-IMMORT-000038",
+        "WAL-CLM-IMMORT-000226",
         "WAL-CLM-RARE-000094",
         "WAL-CLM-RARE-000095"
       ]
@@ -3510,6 +3549,7 @@
       "tmj"
     ],
     "interacts_with": [
+      "choline",
       "selenium",
       "zinc"
     ],
@@ -4360,7 +4400,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 65,
+    "claim_count": 71,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -4373,7 +4413,15 @@
         "WAL-CLM-EPIGEN-000111",
         "WAL-CLM-LETS-000071"
       ],
+      "food_source": [
+        "WAL-CLM-EPIGEN-000162",
+        "WAL-CLM-EPIGEN-000167",
+        "WAL-CLM-EPIGEN-000175",
+        "WAL-CLM-HELLS-000007",
+        "WAL-CLM-IMMORT-000221"
+      ],
       "mechanism": [
+        "WAL-CLM-EPIGEN-000164",
         "WAL-CLM-LETS-000196"
       ],
       "protocol": [
@@ -4597,12 +4645,15 @@
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
+      "vitamin-d",
       "vitamin-e",
       "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -5766,7 +5817,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -5781,7 +5832,8 @@
         "WAL-CLM-RARE-000014"
       ],
       "food_source": [
-        "WAL-CLM-IMMORT-000219"
+        "WAL-CLM-IMMORT-000219",
+        "WAL-CLM-IMMORT-000232"
       ],
       "interaction": [
         "WAL-CLM-RARE-000167",
@@ -6280,19 +6332,28 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 11,
+    "claim_count": 16,
     "claims_by_kind": {
       "contraindication": [
-        "WAL-CLM-DDDL-000083"
+        "WAL-CLM-DDDL-000083",
+        "WAL-CLM-DDDL-000106"
       ],
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
       ],
+      "definition": [
+        "WAL-CLM-EPIGEN-000165"
+      ],
       "dose": [
         "WAL-CLM-EPIGEN-000119",
         "WAL-CLM-LETS-000074"
+      ],
+      "food_source": [
+        "WAL-CLM-EPIGEN-000162",
+        "WAL-CLM-EPIGEN-000170",
+        "WAL-CLM-HELLS-000007"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000068"
@@ -6358,6 +6419,7 @@
       "arteriosclerosis",
       "arthritis",
       "bone_spurs",
+      "cerebrovascular_disease",
       "convulsions",
       "diarrhea",
       "insomnia",
@@ -6378,12 +6440,18 @@
     ],
     "interacts_with": [
       "calcium",
+      "iodine",
       "magnesium",
-      "omega-3"
+      "omega-3",
+      "selenium",
+      "vitamin-a",
+      "vitamin-e",
+      "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6392,7 +6460,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 71,
+    "claim_count": 72,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6403,6 +6471,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000120",
         "WAL-CLM-LETS-000075"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000007"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000098",
@@ -6670,12 +6741,14 @@
       "vitamin-b6",
       "vitamin-b9",
       "vitamin-c",
+      "vitamin-d",
       "vitamin-k",
       "zinc"
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6684,7 +6757,7 @@
     "display_name": "Phylloquinone",
     "canon_slug": "vitamin-k",
     "category": "vitamin",
-    "claim_count": 8,
+    "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6695,6 +6768,10 @@
       "dose": [
         "WAL-CLM-EPIGEN-000121",
         "WAL-CLM-LETS-000076"
+      ],
+      "food_source": [
+        "WAL-CLM-EPIGEN-000163",
+        "WAL-CLM-EPIGEN-000176"
       ],
       "protocol": [
         "WAL-CLM-LETS-000261",
@@ -6898,7 +6975,7 @@
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000044",
@@ -6907,6 +6984,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000124",
         "WAL-CLM-LETS-000048"
+      ],
+      "mechanism": [
+        "WAL-CLM-IMMORT-000226"
       ],
       "protocol": [
         "WAL-CLM-LETS-000120",
@@ -6937,6 +7017,7 @@
       "absence_attacks",
       "alzheimers",
       "bipolar_disorder",
+      "carpal_tunnel_syndrome",
       "cerebrovascular_disease",
       "chorea",
       "dementia",
@@ -6950,9 +7031,11 @@
       "liver_disease",
       "memory_loss",
       "muscular_dystrophy",
-      "tardive_dyskinesia"
+      "tardive_dyskinesia",
+      "tmj"
     ],
     "interacts_with": [
+      "arsenic",
       "calcium",
       "chromium",
       "copper",
@@ -6978,6 +7061,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -7666,7 +7750,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 84,
+    "claim_count": 87,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -7679,11 +7763,16 @@
         "WAL-CLM-IMMORT-000053",
         "WAL-CLM-RARE-000109"
       ],
+      "food_source": [
+        "WAL-CLM-HELLS-000007"
+      ],
       "mechanism": [
         "WAL-CLM-DDDL-000064",
+        "WAL-CLM-LETS-000488",
         "WAL-CLM-RARE-000110"
       ],
       "protocol": [
+        "WAL-CLM-DDDL-000113",
         "WAL-CLM-EPIGEN-000016",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000125",
@@ -7938,6 +8027,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"

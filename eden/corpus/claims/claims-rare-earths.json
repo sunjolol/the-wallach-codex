@@ -11311,6 +11311,173 @@
       "extracted_at": "2026-07-13T10:02:54+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000314",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his See-Food Diet free-radical-elimination list, Wallach gives a flat cooking directive — no margarine; cook with butter, ghee, mutton fat, or water — putting butter on his approved-fats shortlist for the kitchen. In his words: \"use butter, ghee, mutton fat or water for cooking\".",
+      "verbatim": "No margarine (use butter, ghee,\n\nmutton fat or water for cooking)",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1123545
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000315",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "echinacea",
+        "goldenseal",
+        "bismuth"
+      ],
+      "conditions": [
+        "influenza"
+      ],
+      "symptoms": [],
+      "claim_text": "Yes. Wallach holds up chicken soup — with the herbs echinacea and goldenseal plus a dose of bismuth — as the safe, effective nutritional way to handle the flu (which he frames as dehydration and diarrhea). His cautionary contrast is George Washington, who had influenza but was killed by his doctors, not the illness: in a little over 12 hours they drained him of 80 to 90 ounces of blood (6 pints), dosed him with calomel (mercury) and emetic tartar (antimony), and blistered his skin and throat, until Washington himself begged to be allowed to die in peace. The lesson Wallach draws is blunt — a grandmother's bowl of chicken soup would have served the 'Father of our Country' better than the best physicians of his day. In his words: \"chicken soup, some herbs (Echinacia, Goldenseal) and bismuth would have been a safe and effective approach\"",
+      "verbatim": "A classic example of the philosophy of\nthe allopath in the face of a disease that\ncan be relieved or cured by nutrition is the\nmedical abuse of President George Wash-\nington who was suffering from influenza\n(dehydration and diarrhea) - chicken soup,\nsome herbs (Echinacia, Goldenseal) and\nbismuth would have been a safe and effec-\ntive approach for the Father of our Coun-\ntry",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 138926
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000316",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists chicken among the primary food sources of dietary fats/lipids — the animal fats (with pork, fish, beef and lamb) that supply energy alongside plant oils, nuts, seeds and dairy. In his words: \"animal fat (i.e - pork, chicken, fish, beef, lamb, etc.)\"",
+      "verbatim": "The primary food sources of\nlipids are butter, flax seed oil, olive oil, ani-\nmal fat (i.e - pork, chicken, fish, beef, lamb,\netc.), nuts, seeds, whole grains, olives, avo-\ncados, egg yolks, dairy products, etc.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 731529
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000317",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "cholesterol"
+      ],
+      "conditions": [
+        "menopause"
+      ],
+      "symptoms": [],
+      "claim_text": "Because cholesterol is the raw material the body uses to make estrogen, Wallach says eating 2 eggs every morning supplies that raw material and lets a woman slip through menopause almost symptom-free. In his words: \"eat two eggs every morning to slip through menopause almost symptom free\"",
+      "verbatim": "a cholesterol defi-\nciency makes going through menapause a\nliving hell so eat two eggs every morning\nto slip through menopause almost symp-\ntom free",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 734680
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "eggs",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000318",
+      "kind": "toxicity_sign",
+      "essentials": [],
+      "other_substances": [
+        "lead"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Canned tuna carries nearly double the lead of fresh tuna, because the sealant on the can seams leaches lead into the food. In his words: \"canned tuna has nearly double the level of lead as fresh tuna\"",
+      "verbatim": "One\nstudy showed that canned tuna has nearly\ndouble the level of lead as fresh tuna.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 702823
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

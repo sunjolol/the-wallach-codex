@@ -1137,6 +1137,163 @@
         "absorption",
         "carbonated_beverages"
       ]
+    },
+    "butter": {
+      "display_name": "Butter",
+      "type": "substance",
+      "synonyms": [
+        "butter",
+        "ghee",
+        "clarified butter",
+        "grass-fed butter",
+        "butterfat",
+        "dairy fat"
+      ],
+      "related": [
+        "cholesterol",
+        "vitamin-a",
+        "vitamin-d",
+        "vitamin-k",
+        "eggs",
+        "margarine"
+      ]
+    },
+    "beef": {
+      "display_name": "Beef",
+      "type": "substance",
+      "synonyms": [
+        "beef",
+        "red meat",
+        "steak",
+        "sirloin",
+        "roast beef",
+        "beef liver",
+        "steak tartare",
+        "ground beef",
+        "beef cattle"
+      ],
+      "related": [
+        "meat",
+        "pork",
+        "eggs",
+        "vitamin-a",
+        "copper"
+      ]
+    },
+    "chicken": {
+      "display_name": "Chicken",
+      "type": "substance",
+      "synonyms": [
+        "chicken",
+        "poultry",
+        "chicken soup",
+        "drumstick",
+        "chicken drumstick",
+        "fried chicken",
+        "pollo",
+        "hen",
+        "chicken bone"
+      ],
+      "related": [
+        "meat",
+        "fish",
+        "eggs",
+        "pork",
+        "beef"
+      ]
+    },
+    "pork": {
+      "display_name": "Pork",
+      "type": "substance",
+      "synonyms": [
+        "pork",
+        "pig",
+        "pigs",
+        "swine",
+        "pork chop",
+        "pork chops",
+        "ham",
+        "bacon",
+        "sausage",
+        "bologna",
+        "salami",
+        "pepperoni",
+        "pastrami",
+        "deli meat",
+        "deli meats",
+        "processed meat",
+        "cured meat"
+      ],
+      "related": [
+        "beef",
+        "meat",
+        "eggs",
+        "poultry",
+        "fish"
+      ]
+    },
+    "fish": {
+      "display_name": "Fish",
+      "type": "concept",
+      "synonyms": [
+        "fish",
+        "seafood",
+        "tuna",
+        "salmon",
+        "cod",
+        "cod liver oil",
+        "cod-liver oil",
+        "fish oil",
+        "salmon oil",
+        "shark",
+        "swordfish",
+        "anchovies",
+        "shellfish",
+        "marine fish",
+        "fish liver"
+      ],
+      "related": [
+        "omega-3",
+        "selenium",
+        "vitamin-d",
+        "vitamin-a",
+        "cholesterol",
+        "meat"
+      ]
+    },
+    "salmon": {
+      "display_name": "Salmon",
+      "type": "substance",
+      "synonyms": [
+        "salmon",
+        "salmon oil",
+        "wild salmon",
+        "smoked salmon",
+        "cold-water fish"
+      ],
+      "related": [
+        "fish",
+        "omega-3",
+        "cholesterol",
+        "tuna"
+      ]
+    },
+    "tuna": {
+      "display_name": "Tuna",
+      "type": "substance",
+      "synonyms": [
+        "tuna",
+        "canned tuna",
+        "albacore",
+        "tuna steak",
+        "bluefin"
+      ],
+      "related": [
+        "fish",
+        "mercury",
+        "selenium",
+        "germanium"
+      ]
     }
   }
 }

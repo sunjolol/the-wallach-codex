@@ -3469,6 +3469,293 @@
       "extracted_at": "2026-07-13T10:02:54+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000106",
+      "kind": "contraindication",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "cerebrovascular_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "The one cautionary note: for cerebrovascular disease (where Wallach calls vitamin D angiotoxic and a driver of arterial calcification) he says hold total vitamin D under 400 IU/day, and flags butter — alongside animal fat, cholesterol, milk, cereals, supplements and sunshine — as a notable dietary vitamin D contributor that makes staying under the cap difficult. In his words: \"Reduce the amount of vitamin D intake to a maximum of 400 IU/day\".",
+      "verbatim": "Reduce the amount of vitamin D intake to a maximum of 400 IU/day (this\nis a real toughie when you consider animal fat, cholesterol, milk, butter,\nvarious prepared cereals and snack bars, supplements, and sunshine).\nOptimal levels of all nutrients including magnesium can also prevent\n“malignant calcification.”\nTreatment of cerebrovascular disease",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 684586
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000107",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach classes butter first among the primary food sources of dietary fat (lipids), alongside flax and olive oil, animal fat, nuts, seeds and egg yolks; fats supply energy at 9 calories per gram — roughly double carbohydrate — as both immediate and stored fuel. This is butter's baseline identity as a concentrated dietary-fat source. In his words: \"The primary food sources of lipids are butter, flax seed oil, olive oil, animal fat\".",
+      "verbatim": "The primary food\nsources of lipids are butter, flax seed oil, olive oil, animal fat, nuts, seeds,\nwhole grains, olives, avocados, egg yolks, dairy, etc. Fats serve as a source\nof immediate or stored energy. A gram of fat contains 9 calories per gram\ncompared with 4.5 calories per gram.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 488435
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000108",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Yes — emphatically. In Wallach's analysis of the Hunza, the people he holds up as relatively disease-free and living well past 100, butter is a daily staple, not an afterthought: they put it in their tea and used it as a cooking shortening, and it sits among their core fat sources alongside whole milk, ghee, apricot oil and animal fats. He offers this as evidence that real animal fats like butter belong in a healthy traditional diet — the opposite of the processed substitutes modern medicine pushed in their place. In his words: \"Fat sources include whole milk, butter, ghee, apricot oil, and animal fats.\"",
+      "verbatim": "Fat sources include whole milk, butter, ghee, apricot oil, and animal fats.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 330587
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000109",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "For menopause, Wallach's protocol has the person eat red meat once each day, plus 2 eggs daily and a monthly liver flush, on top of the base-line supplement program with calcium and magnesium. In his words: \"red meat once each day\"",
+      "verbatim": "Eat two eggs\nevery day, red meat once each day, and the liver flush at least once per\nmonth. Use the base line supplement program, plus calcium and magnesium\nat 2,000 mg and 1,000 mg per day",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 695101
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "beef",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000110",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach tells some people to cut back on red meat because it is heavy in phosphorus relative to calcium; for phosphorus-driven bone conditions like Paget's disease he says to reduce or eliminate red meat to correct the calcium/phosphorus ratio. In his words: \"reduce or eliminate red meat intake\"",
+      "verbatim": "Treatment of Paget’s Disease should include a vigorous effort to correct the\ndietary calcium/phosphorus ratio, reduce or eliminate red meat intake, avoid\nphosphate containing soft drinks, avoid all phosphate containing\nsupplements",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 891339
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "beef",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000111",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach credits the longer average lifespan of Mormons and Seventh-Day Adventists partly to their avoidance of fried foods, and he lists fried pork first among the fried foods to skip. In his words: \"fried foods (i.e. pork, catfish, shrimp, lard shortening, etc)\"",
+      "verbatim": "Mormons and Seventh Day Adventists live to be 82\nyears of age on the average because they avoid caffeine (i.e. coffee, soft\ndrinks, tea, iced tea, etc.), alcohol, smoking, and fried foods (i.e. pork,\ncatfish, shrimp, lard shortening, etc).",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 287395
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "pork",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000112",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Whole egg tops Wallach's protein-quality chart with a chemical score of 100 and 94% utilization, higher than human milk, cow's milk, or soybean, making it his benchmark for usable protein. In his words: \"Whole egg 100 94\"",
+      "verbatim": "The availability and usability of N from various foods are\nquite different and must be considered when choosing N sources.\nNitrogen/Protein Utilization Values of Common Foods\nNitrogen Source (Protein) Chemical Score % Utilization\nWhole egg 100 94\nHuman milk 100 87\nCow’s milk 95 82\nSoy bean 74 65",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 559521
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "eggs",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000113",
+      "kind": "protocol",
+      "essentials": [
+        "omega-3"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's dietary protocol pairs avoiding fried foods and margarine with a high intake of flax or fish oil (cod-liver or salmon oil) at 5 grams 3 times a day, which he says raises the survival rate by 50 percent. In his words: \"a relatively high consumption of flaxseed oil or fish oil (cod liver oil or salmon oil) at 5 gm t.i.d. will increase your survival rate by 50 percent\"",
+      "verbatim": "It is known that avoidance of fried foods and margarine\nand a relatively high consumption of flaxseed oil or fish oil (cod liver oil or\nsalmon oil) at 5 gm t.i.d. will increase your survival rate by 50 percent.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 868427
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000114",
+      "kind": "food_source",
+      "essentials": [
+        "germanium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Yes, but only a trace — and it is not a reason to eat tuna. Germanium is a trace element Wallach prizes as an immune booster (it stimulates natural killer cells, interferon and macrophages) and an oxygen-utilization cofactor, with deficiency showing up as weakened immunity, arthritis, osteoporosis, low energy and cancer. But tuna carries only about 2.3 ppm of germanium — actually less than ordinary beans at 4.67 ppm, and hundreds of times less than the germanium-rich foods like garlic, ginseng and shiitake mushrooms (100 to 2,000 ppm). So fish is a minor incidental source at best, and tuna in particular is a large predator fish that concentrates mercury — making it a poor way to chase germanium. In his words: \"tuna—2.3 ppm\"",
+      "verbatim": "Food plants and animals contain small amounts of germanium (i.e. beans—\n4.67 ppm, tuna—2.3 ppm).",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 533344
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

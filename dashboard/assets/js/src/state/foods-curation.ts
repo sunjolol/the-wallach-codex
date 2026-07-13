@@ -70,15 +70,34 @@ function cleanWhy(s: string): string {
   return s.replace(/^(?:yes|no)\s*[—–-]+\s*/i, '');
 }
 
+/**
+ * The card 'why' is a TEASER -- the full rich answer lives on the topic page the card links
+ * to, so on the small card we cap to ~200 chars, cutting at the last sentence end (or word
+ * boundary) so every card stays a uniform few lines instead of dumping a whole paragraph.
+ */
+function teaser(s: string): string {
+  const CAP = 200;
+  if (s.length <= CAP) {
+    return s;
+  }
+  const slice = s.slice(0, CAP);
+  const sent = Math.max(slice.lastIndexOf('. '), slice.lastIndexOf('! '), slice.lastIndexOf('? '));
+  if (sent >= 120) {
+    return slice.slice(0, sent + 1);
+  }
+  const sp = slice.lastIndexOf(' ');
+  return `${slice.slice(0, sp > 0 ? sp : CAP)}…`;
+}
+
 function pickWhy(slug: string, order: readonly string[]): string {
   const claims = claimsForSubject(slug);
   for (const facet of order) {
     const hit = claims.find(c => c.facet === facet);
     if (hit !== undefined) {
-      return cleanWhy(hit.answer_short);
+      return teaser(cleanWhy(hit.answer_short));
     }
   }
-  return cleanWhy(claims[0]?.answer_short ?? '');
+  return teaser(cleanWhy(claims[0]?.answer_short ?? ''));
 }
 
 function cards(slugs: readonly string[], order: readonly string[]): FoodCard[] {
@@ -92,9 +111,9 @@ export function foodsRemove(): FoodCard[] {
   return cards(data().remove, ['warning', 'mechanism', 'physiology']);
 }
 
-/** Foods to favor (good) -- led by the protocol/use/stance claim. */
+/** Foods to favor (good) -- led by the general STANCE claim (then uses/basics/protocol), so a card never opens with an extreme dose. */
 export function foodsEat(): FoodCard[] {
-  return cards(data().eat, ['protocol', 'uses', 'stance']);
+  return cards(data().eat, ['stance', 'uses', 'basics', 'protocol']);
 }
 
 /** Conditional foods -- Wallach's stance turns on the FORM/context; led by the stance/warning. */

@@ -6,14 +6,15 @@
  * his model that says the 90 essential nutrients only work if the gut can absorb them.
  * Designed to feel special and pull the reader in (Luneth 2026-07-13): an editorial hero
  * whose corner type-lockup is a THREE-COLOUR artistic effect (dark scan-id + blue
- * WALLACH-CORP // v1.0 brand + bright-orange subject, calibrated to the "Empower" alien-tech
+ * THE FIRST STEP tag + bright-orange subject, calibrated to the "Empower" alien-tech
  * reference), a .ds-pull-stat kill-shot (the 115M prevalence beat), an illustrated villi
  * "scan" (damaged left, healthy right -- ROUNDED finger-shaped bars on a faint tech-grid,
  * organically jittered heights, and nutrient dots x-matched across both panels so the eye
  * reads the difference side-to-side), then a REMOVE <-> EAT good/bad-foods contrast, then
- * the sealed crown-jewel claims "in his own words". The three-colour scan motif recurs as a
- * per-section kicker (Fig·01 // ...) so the whole tab reads as one instrument, not just the
- * top. Restraint governs the TONE (persuade through Wallach's own evidence, never nag).
+ * the sealed crown-jewel claims "in his own words". The three-colour scan motif anchors the
+ * hero corner lockup; the body then breaks into demo-style numbered chapters (01 hero / 02
+ * villi / 03 contrast) so the whole tab reads as one instrument, not just the top. Restraint
+ * governs the TONE (persuade through Wallach's own evidence, never nag).
  *
  * Reference for the visual language: the "Empower" calibration anchor (design-wisdom/
  * references/futuristic-tech-reference-empower-by-niteangel-depthcore.md) -- orange as a
@@ -56,11 +57,6 @@ function withVilliGloss(raw: string): string {
   const def = escHTML(ui('kd_foods_villi_gloss'));
   return escHTML(raw).replace(/\b(villi)\b/gi, m =>
     `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
-}
-
-/** The recurring three-colour scan kicker (dark id // blue sep // orange subject). */
-function secKicker(scanKey: string, subKey: string): string {
-  return `<div class="kd-foods-kicker"><span class="kd-foods-kicker__scan">${escHTML(ui(scanKey))}</span><span class="kd-foods-kicker__sep">//</span><span class="kd-foods-kicker__sub">${escHTML(ui(subKey))}</span></div>`;
 }
 
 /**
@@ -220,7 +216,7 @@ function foodItem(c: FoodCard, kind: string): string {
 }
 
 /**
- * The Absorption landing: alien-tech hero -> the .ds-pull-stat prevalence kill-shot -> the
+ * The Absorption landing: editorial hero -> the .ds-pull-stat prevalence kill-shot -> the
  * villi "scan" (damaged left, healthy right) -> the REMOVE <-> EAT good/bad-foods contrast
  * (+ the "form, not the food" strip) -> the three sealed crown-jewel claims "in his own words".
  */
@@ -236,7 +232,7 @@ export function renderFoodsTab(): string {
         <span class="kd-foods-eyebrow__r">${escHTML(ui('kd_foods_eyebrow_r'))}</span>
       </div>
       <div class="kd-foods-corner">
-        <div class="kd-foods-brand" data-alien="${escHTML(ui('kd_foods_readout_2'))}" aria-hidden="true">${escHTML(ui('kd_foods_readout_2'))}</div>
+        <div class="kd-foods-brand">${escHTML(ui('kd_foods_readout_2'))}</div>
         <div class="kd-foods-scan">${escHTML(ui('kd_foods_scan'))}</div>
       </div>
       ${sectionHeader('01', '', `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML(ui('kd_foods_hl1'))}</span><span class="l2">${escHTML(ui('kd_foods_hl2'))}</span></h1>`, ' kd-foods-sec--hero')}
@@ -260,8 +256,7 @@ export function renderFoodsTab(): string {
     </section>
 
     <section class="kd-foods-contrast">
-      ${secKicker('kd_foods_contrast_kicker_scan', 'kd_foods_contrast_kicker_sub')}
-      <h2 class="kd-foods-hd">${escHTML(ui('kd_foods_contrast_hd'))}</h2>
+      ${sectionHeader('03', ui('kd_foods_sec03_kicker'), `<h2 class="ds-h-section">${escHTML(ui('kd_foods_contrast_hd'))}</h2>`, '')}
       <div class="kd-foods-contrast__grid">
         <div class="kd-foods-col kd-foods-col--remove">
           <div class="kd-foods-col__hd">${escHTML(ui('kd_foods_col_remove'))}</div>

@@ -6251,6 +6251,553 @@
       "extracted_at": "2026-07-13T10:02:55+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000162",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-a",
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Citing Weston Price, Wallach names butter as a leading source of fat-soluble vitamins (A and D) — traditional diets delivered roughly 10 times these versus the modern American diet — and those fat-soluble vitamins are the catalysts required for efficient mineral absorption, making butter an absorption-enabler rather than a food to shun. In his words: \"at least ten times the fat-soluble vitamins from animal foods such as butter, fish eggs, shellfish, organ meats, and animal fats\".",
+      "verbatim": "they provided at least\nfour times the water-soluble vitamins, calcium and other minerals, and at least\nten times the fat-soluble vitamins from animal foods such as butter, fish eggs,\nshellfish, organ meats, and animal fats—the very cholesterol-rich foods now\nshunned by the American public as unhealthful.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 357221
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000163",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-k"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach (via Price) says butter carries \"Activator X\" — now thought to be vitamin K2 — but specifically butter made from the milk of cows grazing rapidly-growing green spring and fall grass, a pointed endorsement of real, grass-fed, seasonal butter as a source of a hard-to-get fat-soluble nutrient. In his words: \"butter made from milk from cows that eat rapidly growing green grass in the Spring and Fall.\"",
+      "verbatim": "Dr. Price discovered an additional fat-soluble nutrient, which he labeled\n“Activator X,\" that is present in fish livers and shellfish, organ meats, and butter\nmade from milk from cows that eat rapidly growing green grass in the Spring and\nFall.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 357938
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000164",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "xerophthalmia"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach recounts the discovery of vitamin A: lab animals on a lard-only fat diet developed deficiency with xerophthalmia (dry, diseased eyes) that was corrected by adding butter, egg yolk and cod liver oil, and WWI-era human xerophthalmia was traced directly to reduced access to dietary butter — losing butter caused the eye disease. In his words: \"xerophthalmia in humans was the result of a decrease in access to dietary butter.\"",
+      "verbatim": "A prominent deficiency symptom of this restricted experimental diet was\nxerophthalmia. Clinical and experimental vitamin A deficiencies were recognized\nas being related in WWI, when it became obvious that xerophthalmia in humans\nwas the result of a decrease in access to dietary butter.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1066903
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000165",
+      "kind": "definition",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "rickets"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen. In his words: \"treated his rickets patients with cod liver oil, sunshine, and butter\".",
+      "verbatim": "Armand Trousseau, a\nFrench physician, treated his rickets patients with cod liver oil, sunshine, and\nbutter—proving to himself that diet and sunshine played a vital role in the cause,\nprevention, and cure of rickets.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1071351
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000166",
+      "kind": "mechanism",
+      "essentials": [
+        "copper"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "mad_cow_disease"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach argues you cannot catch mad cow disease from beef, because BSE and CJD are copper-deficiency diseases rather than infections: every attempt to transmit them by injecting infected tissue failed Koch's postulates. In his words: \"BSE and CJD are therefore copper deficiency diseases and are not infectious\"",
+      "verbatim": "Despite the mass of accumulated biochemical and structural information\ndescribing prions, Koch's Postulates have not been fulfilled because transmission\nattempts from positively diagnosed cattle and humans to susceptible species\nhave universally failed. BSE and CJD are therefore copper deficiency diseases and\nare not infectious",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 441522
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "beef",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000167",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "night_blindness"
+      ],
+      "symptoms": [],
+      "claim_text": "Beef liver is a rich vitamin A source; Wallach notes the ancient Egyptians cured night blindness around 1,000 BC with beef-liver-juice extracts, which worked because vitamin A, stored in the liver, corrects the deficiency. In his words: \"vitamin A is primarily stored in the liver of all species\"",
+      "verbatim": "The ancient Egyptians cured night blindness in 1,000 BC by applying extracts\nof beef liver juice to the eyes and faces of the afflicted individual. We know today\nthat night blindness is caused by a deficiency of vitamin A and that vitamin A is\nprimarily stored in the liver of all species.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 619523
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "beef",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000168",
+      "kind": "food_source",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "muscular_dystrophy"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach does name pork chops as the first of the 'muscle meats' — the meats where, as he puts it, muscle meat is 'King' — alongside beef steak, lamb chops, roasts, ground red meat, chicken and turkey. But his actual point about muscular dystrophy (what veterinarians call white muscle disease) is that it has nothing to do with eating too little meat: he frames MD as a simple selenium-deficiency disease that is fully preventable and curable with extra selenium, a full 90-essential-nutrient program, and a gluten-free diet — the same selenium supplementation that 'wiped out' the disease in farm animals. He even warns that a gluten-damaged gut can't absorb selenium even when it's in the food ('you are not what you eat, you are what you absorb'). So pork is a fine muscle-meat protein, but eating pork is not his prescription for building muscle or beating MD — supplementing selenium is. In his words: \"muscle (meat) is “King” (.e., pork chops, beef steak, lamb chops, roasts, ground red meat, chicken, turkey, etc.)\"",
+      "verbatim": "muscular dystrophy) where muscle\n\n(meat) is “King” (.e., pork chops, beef steak, lamb chops, roasts, ground red meat,\nchicken, turkey, etc.)",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1000545
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "pork",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000169",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "As a standing rule Wallach says to avoid processed meats such as sausage, deli slices, bologna, salami and pepperoni because of their nitrates, nitrites, and gluten-laden fillers. In his words: \"Avoid the consumption of processed meats containing nitrates and nitrites and gluten-laden fillers\"",
+      "verbatim": "Avoid the consumption of processed meats containing nitrates\nand nitrites and gluten-laden fillers (e.g., deli slices, sandwich\nmeats, sausage, bologna, salami, pepperoni, jerky, hamburger\npatties, meatloaf, meat balls, canned meats, etc.)",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1389527
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "pork",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000170",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-d"
+      ],
+      "other_substances": [
+        "cholesterol"
+      ],
+      "conditions": [
+        "rickets"
+      ],
+      "symptoms": [],
+      "claim_text": "Yes. Wallach calls egg yolks a good dietary source of vitamin D, and he treats the fear of their cholesterol as actively harmful. He blames 3 things for bringing rickets back in the industrialized world — heavy sunscreen use, the cholesterol-scare that made parents avoid egg yolks, and pediatricians telling parents to skip children's vitamin and mineral supplements — and points to a reported 400 percent rise in childhood rickets between 1995 and 2011 as the result. He labels the resurgence a 'physician-caused disease.' In his words: \"fear of cholesterol in egg yolks (a good source of vitamin D)\"",
+      "verbatim": "rickets reappeared in children in the industrialized world with a\nreported increase of 400 percent between 1995 and 2011. This is a result of\nfears of increased risk of skin cancer from skin exposure to the sun as well as\n\nwidespread use of sun screens, fear of cholesterol in egg yolks (a good source\nof vitamin D), and instructions from pediatricians to avoit\n\n\nsupplementation of\nvitamins and minerals to children because of overdose concerns.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 637303
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "eggs",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000171",
+      "kind": "food_source",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Selenium. Wallach names eggs as one of the everyday food sources of selenium — alongside liver, kidneys, and some high-selenium rice — and he calls this trace element the key to both preventing and curing cystic fibrosis. In his telling CF is not a genetic disease at all but a selenium deficiency during the first 3 months of pregnancy. He notes it strikes about 1 in every 2,500 American children, is usually fatal in infancy with fewer than half of victims living past age 21, yet insists it is essentially 100 percent curable when caught within 30 days of birth — which is why he treats selenium-bearing foods like eggs as genuinely protective. In his words: \"selenium, a trace element found in liver, eggs, kidneys and some varieties of high selenium rice.\"",
+      "verbatim": "Wallach says the key to its prevention and cure is selenium, a trace\nelement found in liver, eggs, kidneys and some varieties of high selenium\nrice.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1380059
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "eggs",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000172",
+      "kind": "protocol",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "multiple_sclerosis"
+      ],
+      "symptoms": [],
+      "claim_text": "For multiple sclerosis, Wallach prescribes 6-8 eggs per day to supply the raw materials that maintain and repair the brain's myelin, paired with all 90 essential nutrients and antioxidants including selenium. In his words: \"add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin\"",
+      "verbatim": "multiple sclerosis (MS) simultaneously. The disease syndrome can\nbe reversed by dealing with both diseases. To stop the ongoing\ninflammatory damage to the myelin of the brain (that occurs in MS)\nwith a dietary change, add 6-8 eggs per day to provide raw materials\nto help support maintenance and repair of the myelin and supplement\nwith all 90 essential nutrients with a special emphasis on antioxidants,\nincluding selenium.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1028004
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "eggs",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000173",
+      "kind": "toxicity_sign",
+      "essentials": [],
+      "other_substances": [
+        "mercury"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit around 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in. In his words: \"Mercury in fish is present as methyl mercury\"",
+      "verbatim": "Mercury in fish is present as methyl mercury. People who rarely eat fish have\nvery low levels of mercury (2-5 ug/kg); moderate fish consumers have 10 ug/kg;\nhigh fish consumers (especially if they eat the large predator fish such as shark,\ntuna, or swordfish) will typically have higher levels of up to 400 ug/kg.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1246563
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000174",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "rickets"
+      ],
+      "symptoms": [],
+      "claim_text": "Cod-liver oil earned its reputation as a rickets cure among Scottish fishermen long before doctors accepted it; the French physician Trousseau confirmed it with cod-liver oil, sunshine, and butter while orthodox medicine still hunted for a 'rickets germ.' In his words: \"Cod liver oil, the Scottish fisherman's treatment for rickets\"",
+      "verbatim": "Cod liver oil, the Scottish fisherman's treatment for rickets, continued to be\n\nused by the lay community throughout the 19th century. Armand Trousseau, a\nFrench physician, treated his rickets patients with cod liver oil, sunshine, and\nbutter—proving to himself that diet and sunshine played a vital role in the cause,\nprevention, and cure of rickets.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1071216
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000175",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Yes — fish liver is one of the richest sources of preformed vitamin A, the ready-to-use form called retinol, with cod-liver oil the classic example. Wallach draws the useful line here: this animal-derived retinol is already active, unlike the carotene (provitamin A) your body has to convert out of brightly pigmented plants. The same early vitamin-A research pointed to butter and egg yolk alongside cod-liver oil as the animal foods that reversed the deficiency — so fish sits with butter and eggs among the top preformed-A foods. In his words: \"Retinol, a primary alcohol, is present in high concentrations of marine fish liver (cod liver oil, etc.)\"",
+      "verbatim": "Retinol, a primary alcohol, is present in\nhigh concentrations of marine fish liver (cod liver oil, etc.).",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1067465
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000176",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-k"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Yes, and it matters more than it first sounds. Fish livers and shellfish are one of the few sources of the fat-soluble factor Weston Price named 'Activator X' — now believed to be vitamin K2 — which every healthy traditional culture had in its diet. Its importance is all about absorption: Price found that the fat-soluble vitamins A, D and Activator X act as the catalysts that let the body actually take up minerals and use protein, and that without them a person cannot absorb minerals no matter how abundant they are in the food. Those primitive diets supplied roughly 10 times the fat-soluble vitamins of the modern American diet — which is a large part of why they were so free of degenerative disease. In his words: \"present in fish livers and shellfish, organ meats, and butter\"",
+      "verbatim": "Dr. Price discovered an additional fat-soluble nutrient, which he labeled\n“Activator X,\" that is present in fish livers and shellfish, organ meats, and butter\nmade from milk from cows that eat rapidly growing green grass in the Spring and\nFall. All primitive cultures had a source of Activator X, now thought to be vitamin\nK,, in their diets.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 357938
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000177",
+      "kind": "contraindication",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "arteriosclerosis",
+        "cardiomyopathy",
+        "cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach warns that a high intake of polyunsaturated oils including fish oil, if you are selenium-deficient, raises the risk of birth defects, arteriosclerosis, cardiomyopathy, sudden heart death, and cancer — because the unprotected oils go rancid in your cells. In his words: \"concurrent with a selenium deficiency will increase the risk and rate of birth defects\"",
+      "verbatim": "High intake of dietary polyunsaturated oils (such as olive oil, coconut\noil, fish oil, etc,), salad dressings, margarine, and cooking oils concurrent with a\nselenium deficiency will increase the risk and rate of birth defects (such as cystic\nfibrosis, muscular dystrophy, etc), arteriosclerosis, cardiomyopathy, sudden heart\ndeath, and cancer.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1303252
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "fish",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

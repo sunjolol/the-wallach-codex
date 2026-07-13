@@ -156,6 +156,21 @@
         }
       ],
       "reviewed_empty": {}
+    },
+    "hells-kitchen": {
+      "mining_status": "incomplete",
+      "coverage_basis": "chapter_page",
+      "veins": [
+        {
+          "name": "Diet/absorption food topics (butter, beef, chicken, pork, eggs, fish)",
+          "kind": "search-topic",
+          "region": "food arguments + meal-plan/recipe context across the book",
+          "home": "search (Explore) + dual-home to conditions/essentials",
+          "status": "in-progress",
+          "progress": "Food-topic claims mined for the Absorption tab (2026-07-13). NOT a full mine; recipes/meal-plans reviewed, non-food veins not yet mined."
+        }
+      ],
+      "reviewed_empty": {}
     }
   }
 }

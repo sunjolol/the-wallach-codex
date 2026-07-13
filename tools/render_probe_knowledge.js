@@ -99,8 +99,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       hasScan: pageEl ? (pageEl.querySelector('.kd-foods-scan')?.textContent || '').length > 0 : false,
       noScuffedPulse: pageEl ? pageEl.querySelector('.kd-foods-hero .ds-pulse') === null : false,
       hasOrangeSubject: pageEl ? (pageEl.querySelector('.kd-foods-eyebrow__r')?.textContent || '').length > 0 : false,
-      hasKickers: pageEl ? pageEl.querySelectorAll('.kd-foods-kicker').length >= 1 : false,
-      hasSecHeaders: pageEl ? (pageEl.querySelectorAll('.kd-foods-sec').length >= 2 && [...pageEl.querySelectorAll('.kd-foods-sec__num')].map(n => (n.textContent || '').trim()).join(',').includes('01')) : false,
+      hasSecHeaders: pageEl ? (pageEl.querySelectorAll('.kd-foods-sec').length >= 3 && ['01','02','03'].every(k => [...pageEl.querySelectorAll('.kd-foods-sec__num')].map(n => (n.textContent || '').trim()).includes(k))) : false,
       hasExplain: pageEl ? (pageEl.querySelector('.kd-foods-villi__intro')?.textContent || '').length > 40 : false,
       hasVilliTerm: pageEl ? pageEl.querySelector('.kd-foods-term.gloss[data-def]') !== null : false,
       hasPullQuote: pageEl ? (pageEl.querySelector('.kd-foods-pq .ds-pull-quote') !== null && pageEl.querySelector('.kd-foods-pq mark.ds-mark') !== null && (pageEl.querySelector('.kd-foods-pq__page')?.textContent || '').includes('598')) : false,
@@ -455,9 +454,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['explore: type-grouped chips render (Mercury present)', explore.groups >= 4 && explore.chips >= 30 && explore.hasMercury === true],
     ['explore: a chip opens the faceted topic page (Mercury, 5+ facets, 8+ cards)', topic.shown === true && topic.title === 'Mercury' && topic.facets >= 5 && topic.cards >= 8],
     ['topic page: hero lede + Wallach-cited claim cards', topic.hasLede === true && topic.hasCite === true],
-    ['foods: rich landing renders (3-colour lockup + orange subject + 2 kickers + pull-stat + 2 villi scans + villi gloss)', foods.shown === true && foods.headlineLen > 12 && foods.hasDeck === true && foods.hasEyebrow === true && foods.hasBrand === true && foods.hasScan === true && foods.noScuffedPulse === true && foods.hasOrangeSubject === true && foods.hasKickers === true && foods.hasSecHeaders === true && foods.hasExplain === true && foods.hasVilliTerm === true && foods.hasPullQuote === true && foods.hasStat === true && foods.villiArts === 2 && foods.villiFingers >= 14 && foods.villiDots === 12],
+    ['foods: rich landing renders (3-colour lockup + orange subject + 3 numbered headers + pull-stat + 2 villi scans + villi gloss)', foods.shown === true && foods.headlineLen > 12 && foods.hasDeck === true && foods.hasEyebrow === true && foods.hasBrand === true && foods.hasScan === true && foods.noScuffedPulse === true && foods.hasOrangeSubject === true && foods.hasSecHeaders === true && foods.hasExplain === true && foods.hasVilliTerm === true && foods.hasPullQuote === true && foods.hasStat === true && foods.villiArts === 2 && foods.villiFingers >= 14 && foods.villiDots === 12],
     ['foods: two-pronged thesis = 3 crown-jewel cards, facet-grouped + Wallach-cited', foods.cards === 3 && foods.facets >= 2 && foods.allCited === true],
-    ['foods: REMOVE/EAT contrast (5/3) + form strip (4) render, all topic-linked', foods.removeItems === 5 && foods.eatItems === 3 && foods.formItems === 4 && foods.itemsLinked === true],
+    ['foods: REMOVE/EAT contrast (5/6) + form strip (4) render, all topic-linked', foods.removeItems === 5 && foods.eatItems === 6 && foods.formItems === 4 && foods.itemsLinked === true],
     ['no page errors', errs.length === 0],
   ];
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);

@@ -7774,6 +7774,429 @@
       "extracted_at": "2026-07-13T09:57:24+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000220",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "arteriosclerosis",
+        "atherosclerosis",
+        "stroke"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach flips the conventional wisdom: the hydrogenated and partially-hydrogenated vegetable oils (margarine) once sold as the safe substitute for butter to prevent arteriosclerosis, atherosclerosis and stroke are now known to directly CAUSE those very diseases — vindicating real butter over its processed replacement. In his words: \"once touted by the medical trade as a safe substitute for butter in the prevention of arteriosclerosis, atherosclerosis and stroke, are now known to be the direct cause of these diseases.\"",
+      "verbatim": "Hydrogenated and partially hydrogenated vegetable\noils, once touted by the medical trade as a safe substitute for\nbutter in the prevention of arteriosclerosis, atherosclerosis and\nstroke, are now known to be the direct cause of these diseases.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 273747
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000221",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-a"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In a food vitamin-A table, Wallach lists butter at 165 IU per teaspoon — and margarine only matches that number when it is artificially FORTIFIED, underscoring that butter carries the vitamin natively while margarine must have it added back. In his words: \"Butter, 1 tsp 165\".",
+      "verbatim": "Orange, 1 medium 300\nButter, 1 tsp 165\nMargarine, fortified, 1 tsp 165\nApple, 1 medium 140",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 133839
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "butter",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000222",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach flatly rejects the vegan line — he says red meat is healthy and that every long-lived population on earth eats it. In his words, all long-lived peoples eat red meat (pork, beef, goat, lamb), plus poultry, fish, eggs and dairy, and vegans 'lie to themselves' when they insist the world's healthiest people avoid animal products. His warning is concrete: strict vegans who don't supplement minerals correctly tend, within 5 years, to develop grey hair, receding gums, periodontal disease, arthritis, osteoporosis, anemia, hypertension, chronic fatigue, even cancer and liver cirrhosis — because an unsupplemented plant diet leaves them 51 to 57 of the body's essential minerals short (plants can't manufacture minerals). In his words: \"all long lived peoples on earth eat red meat (including pork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy\"",
+      "verbatim": "Vegans as a group tend to lie to themselves and\nconvince themselves (and try to convince others) that all of\nthe long-lived people on earth do not eat animal products. In\nfact all long lived peoples on earth eat red meat (including\npork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89321
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "beef",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000223",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach is firmly against going vegan and puts chicken squarely inside a healthy, long-life diet. His core claim: every long-lived population on earth eats animal foods — red meat (pork, beef, goat, lamb), poultry, fish, eggs and dairy — and no vegan, he says, has ever lived to 100 or raised a thriving colony of healthy kids on the diet. Unsupplemented strict vegans, he warns, tend to develop grey hair, receding gums, osteoporosis, anemia, arthritis and even cancer within 5 years, and he points to vegan crusader Linda McCartney, who died at 56 of breast cancer. So poultry isn't something to avoid — it's part of what he sees as a longevity diet, not a food to apologize for. In his words: \"all long lived peoples on earth eat red meat (including pork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy.\"",
+      "verbatim": "Vegans as a group tend to lie to themselves and\nconvince themselves (and try to convince others) that all of\nthe long-lived people on earth do not eat animal products. In\nfact all long lived peoples on earth eat red meat (including\npork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89321
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000224",
+      "kind": "contraindication",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach groups commercial FRIED chicken with French fries, fried seafood, high-fructose corn syrup, soft drinks and white flour as things the world's longest-lived Blue Zone peoples simply have no access to — framing the frying and processing, not the chicken itself, as the food of ill health. In his words: \"commercial French fries, fried chicken, fried fish, fried shrimp, fried clams, high fructose corn syrup, soft drinks, white flour, etc.\"",
+      "verbatim": "One of the unintended benefits of the Blues Zones is\nthat they are remote and have little or no access to doctors,\npharmaceuticals, commercial French fries, fried chicken, fried\nfish, fried shrimp, fried clams, high fructose corn syrup, soft\ndrinks, white flour, etc.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 714434
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000225",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach offers a kitchen demonstration that bone is a protein framework mineralized with calcium, not solid rock: soak a chicken drumstick bone in a quart of vinegar for 2 weeks and the acid leaches out the calcium, leaving the rubbery protein matrix behind. In his words: \"put a chicken “drumstick” bone in a quart of vinegar for two weeks and the calcium will be leached out of the bone leaving the protein matrix.\"",
+      "verbatim": "To extract the calcium from a bone and reveal the\nprotein matrix, put a chicken “drumstick” bone in a quart of\nvinegar for two weeks and the calcium will be leached out of\nthe bone leaving the protein matrix.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 215455
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000226",
+      "kind": "mechanism",
+      "essentials": [
+        "arsenic",
+        "choline"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "carpal_tunnel_syndrome",
+        "tmj"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach uses poultry as the model: arsenic plus the B-vitamin choline prevents 100% of perosis ('slipped tendon') in chickens, and the same arsenic deficiency in humans shows up as carpal tunnel syndrome, temporomandibular jaw-joint pain (TMJ) and other repetitive-motion joint diseases. In his words: \"Arsenic in combination with the B-vitamin choline prevents 100% of perosis (“slipped tendon”) in poultry.\"",
+      "verbatim": "Arsenic in combination with the B-vitamin choline\nprevents 100% of perosis (“slipped tendon”) in poultry. Arsenic\ndeficiency in humans results in a “carpal tunnel syndrome,”\n“TMJ,” and other “repetitive motion” type degenerative joint\ndiseases and minute traces stimulate the production of red\nblood cells.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 180816
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000227",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Relaying Taoist Chinese tradition, Wallach notes poultry (with vegetables and fish) is held to nourish the heart, lungs and kidneys under the five-element organ correspondences. In his words: \"foods that nourish these organs include poultry, vegetables and fish.\"",
+      "verbatim": "According to the Tao, the heart is related to\nfire, the lungs to metal, the kidneys to water and foods that\nnourish these organs include poultry, vegetables and fish.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 723411
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000228",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach defines a 'pollo-vegetarian' as really an omnivore who eats poultry (chicken) on top of grains, vegetables, fruit and nuts — part of his point that most self-described vegetarians actually eat animal foods. In his words: \"omnivores, who, eat poultry in addition to grains vegetables, fruit and nuts.\"",
+      "verbatim": "Pollo-vegetarians - omnivores, who, eat poultry in\naddition to grains vegetables, fruit and nuts.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 87878
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "chicken",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000229",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach classes pork as a red meat and notes that every long-lived people on earth eats it, so pork counts as legitimate animal protein rather than something to shun. In his words: \"all long lived peoples on earth eat red meat (including pork, beef, goat, lamb, etc.)\"",
+      "verbatim": "In\nfact all long lived peoples on earth eat red meat (including\npork, beef, goat, lamb, etc.), poultry, fish, eggs and dairy.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 89489
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "pork",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000230",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "nitrates",
+        "nitrites"
+      ],
+      "conditions": [
+        "thyroid_disease",
+        "goiter"
+      ],
+      "symptoms": [],
+      "claim_text": "The nitrates and nitrites cured into ham, bacon, sausage and other processed pork act as goitrogens, interfering with normal thyroid metabolism and capable of producing thyroid disease. In his words: \"These substances include nitrates and nitrites (i.e. ham, bacon, sausage, bologna, salami, pastrami, pepperoni, jerky, deli-meats, etc.)\"",
+      "verbatim": "Goiter\n\n===== Screenshot (94) =====\n \n\n\nMany foods and food additives are known\n\n“goitrogens” because they interfere with the normal thyroid\n\nmetabolism and produce thyroid disease. These substances\n\ninclude nitrates and nitrites (i.e. ham, bacon, sausage, bologna,\nsalami, pastrami, pepperoni, jerky, deli-meats, etc.) and\ncruciferous vegetables (i.e. broccoli, Brussel sprouts, cabbage,\ncauliflower, etc.).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 292072
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "pork",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000231",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Yes — and they may be the best example there is. Wallach points to the Okinawans, whom the World Health Organization ranked in 1996 as the longest-lived people in the entire industrialized world, and boiled pork is a staple of their roughly 1,500-calorie daily diet. He puts their life expectancy at 78 years for men and 86 for women, with a documented centenarian rate of 5 per 10,000 people — and, citing the 25-year Okinawa Centenarian Study, he credits their lifestyle and mineral-rich diet, not their genes, for that longevity. Their table alongside the pork includes chicken, eggs, dried minnows, miso and fish soup, tofu, sea and garden vegetables, kelp, garlic, purple sweet potatoes and bitter melon. In his words: \"consists of boiled pork, chicken, eggs, dried minnows, miso and fish soup\"",
+      "verbatim": "The Okinawan diet contains an average of 1,500 calories and\nconsists of boiled pork, chicken, eggs, dried minnows, miso\nand fish soup, tofu, many types of garden and sea vegetables,\nsea weed, kelp, onions, garlic, daikon, greens, purple sweet\npotatoes, bitter melon and tubers grown in their own gardens;",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 626478
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "pork",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000232",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists eggs among the rich dietary sources of vitamin B12, alongside liver, kidney, whole milk, cheese, and muscle meats, which matters because vegans risk B12 deficiency without such foods. In his words: \"eggs, cheese and muscle meats are rich sources.\"",
+      "verbatim": "Vitamin B,, is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 126121
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "eggs",
+        "food-topic"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T19:58:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

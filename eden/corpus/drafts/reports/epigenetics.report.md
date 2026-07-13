@@ -1,184 +1,141 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_19 claim(s) drafted 2026-07-13T10:02:55+00:00. Review then run corpus_seal.py to promote._
+_16 claim(s) drafted 2026-07-13T19:58:29+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: contraindication×1, deficiency_sign×1, definition×2, interaction×1, mechanism×7, protocol×4, quote×3
+Kinds: contraindication×1, definition×2, food_source×8, mechanism×2, protocol×2, toxicity_sign×1
 
-### WAL-CLM-EPIGEN-000143 · mechanism
-- **essentials:** calcium · **conditions:** — · **symptoms:** —
-- **claim:** Wallach warns that phytic acid — a phosphorus-bearing compound concentrated in nuts, the bran of grains, seeds, and especially oatmeal and whole wheat — binds dietary calcium into calcium phytate, an insoluble complex the body cannot absorb, so a high-phytate diet is itself a cause of calcium deficiency. In his words: "a high phytate consumption (phytic acid is a phosphorus containing acid compound found in raw vegetables, nuts, bran of grains and seeds as well as the stems of many plants, especially oatmeal and whole wheat that combine with Ca to form calcium phytate which is insoluble and thus unavailable to humans) all result in a Ca deficiency."
-- **verbatim** (offset 1194148): “a high
-phytate consumption (phytic acid is a phosphorus containing acid compound
-found in raw vegetables, nuts, bran of grains and seeds as well as the stems of
-many plants, especially oatmeal and whole wheat that combine with Ca to form
-calcium phytate which is insoluble and thus unavailable to humans) all result
-
-in a Ca deficiency.”
-
-### WAL-CLM-EPIGEN-000144 · mechanism
-- **essentials:** calcium · **conditions:** — · **symptoms:** —
-- **claim:** Beyond phytates, Wallach names oxalic acid as a second mineral-blocker: in rhubarb, spinach, chard, and greens it binds calcium into an insoluble calcium oxalate that the body cannot absorb, and he adds that fiber itself further blocks calcium on its own. In his words: "Oxalic acid in rhubarb, spinach, chard, and greens combine with Ca to form an insoluble calcium oxalate which is not absorbed; fiber itself, besides the phytate content, prevents Ca absorption;"
-- **verbatim** (offset 1194485): “Oxalic acid in rhubarb, spinach, chard, and greens combine
-with Ca to form an insoluble calcium oxalate which is not absorbed; fiber
-itself, besides the phytate content, prevents Ca absorption;”
-
-### WAL-CLM-EPIGEN-000145 · protocol
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Among the shared traits Wallach lists for healthy, non-industrialized traditional diets, he notes that seeds, grains, and nuts are soaked, sprouted, and fermented before they are eaten (alongside diets rich in fermented vegetables, fruit, drinks, dairy, meats, and condiments). In his words: "5. Primitive and traditional tribal diets have diets rich in fermented vegetables, fruit, drinks, dairy products, meats, and condiments. 6. Seeds, grains, and nuts are soaked, sprouted, and fermented."
-- **verbatim** (offset 360586): “5. Primitive and traditional tribal diets have diets rich in fermented
-
-vegetables, fruit, drinks, dairy products, meats, and condiments.
-6. Seeds, grains, and nuts are soaked, sprouted, and fermented.”
-
-### WAL-CLM-EPIGEN-000146 · mechanism
-- **essentials:** calcium · **conditions:** — · **symptoms:** —
-- **claim:** In his newest book Wallach restates that overdoing caffeine draws calcium out of the body's bone reserves, listing it among the diet factors that undermine calcium status. In his words: "...result in a decreased efficiency of absorption and retention; excess of consumption of caffeine will leach Ca from bone reserves."
-- **verbatim** (offset 1194775): “result in
-a decreased efficiency of absorption and retention; excess of consumption of
-caffeine will leach Ca from bone reserves.”
-
-### WAL-CLM-EPIGEN-000147 · mechanism
-- **essentials:** calcium, phosphorus · **conditions:** — · **symptoms:** —
-- **claim:** Wallach says the ideal dietary calcium-to-phosphorus ratio is 2:1, but modern diets are so phosphorus-heavy that you can only reach it by supplementing calcium and avoiding high-phosphorus junk food such as soft drinks. In his words: "Ideally, the Ca:P ratio in the diets of all vertebrates including humans should be 2:1; however, this ideal ratio is not found naturally in the human diet without proper supplementation and avoidance of high P junk food (such as soft drinks, etc)."
-- **verbatim** (offset 1197485): “Ideally, the Ca:P ratio in the diets of all vertebrates including humans should
-be 2:1; however, this ideal ratio is not found naturally in the human diet without
-proper supplementation and avoidance of high P junk food (such as soft drinks,
-etc).”
-
-### WAL-CLM-EPIGEN-000148 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach attributes the brain lesions and chemical derailment of a whole family of neurological diseases largely to free-radical damage from everyday foods: regular consumption of gluten, fried foods, burnt animal fat, oxidized dietary oils, nitrate/nitrite-processed meats, and excess mono- or polyunsaturated oils (his prevention step is 4-6 eggs a day scrambled in butter plus the 90 essential nutrients). In his words: "Free radical damage resulting from the regular consumption of gluten, fried foods, burnt animal fat, oxidized dietary oils, processed meats containing nitrates, and other nitrites and excessive mono or polyunsaturated oils."
-- **verbatim** (offset 542366): “Free radical damage resulting from the regular consumption of
-gluten, fried foods, burnt animal fat, oxidized dietary oils, processed
-meats containing nitrates, and other nitrites and excessive mono
-or polyunsaturated oils.”
-
-### WAL-CLM-EPIGEN-000149 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** After 17,500 animal and 3,000 human autopsies, Wallach concluded that beyond nutritional deficiency, a leading cause of disease is self-inflicted: eating too many fried and overcooked (burnt) foods, overusing dietary oils (margarines, salad dressings, cooking oils, canned fish packed in oil), and eating nitrate-preserved processed meats, all of which raise the daily load of trans fatty acids, heterocyclic amines and acrylamides. In his words: "eating too many fried and overcooked (burnt) foods by the overuse of dietary oils, including margarines, salad dressings, cooking oils, as well as the consumption of canned fish packed in oils and processed meats preserved with nitrates and nitrites—all of which increased the daily load of dietary trans fatty acids, heterocyclic amines, and acrylamides!"
-- **verbatim** (offset 814638): “eating too many fried and overcooked (burnt) foods by
-the overuse of dietary oils, including margarines, salad dressings, cooking oils,
-as well as the consumption of canned fish packed in oils and processed meats
-preserved with nitrates and nitrites—all of which increased the daily load of
-dietary trans fatty acids, heterocyclic amines, and acrylamides!”
-
-### WAL-CLM-EPIGEN-000150 · mechanism
-- **essentials:** selenium · **conditions:** — · **symptoms:** —
-- **claim:** Recounting the rhesus-monkey colony where his selenium research began, Wallach explains that adding corn oil to the animals' ration threw off its nutrient balance because corn oil raises the body's selenium requirement, so even with selenium in the feed the added oil produced a relative deficiency that harmed the pregnant and nursing females and their offspring. In his words: "In this case, corn oil was notorious for increasing the need for selenium. Even if there was selenium in the pellets, the added oil created a relative deficiency."
-- **verbatim** (offset 876032): “the extra oil threw the nutrient balance
-of the commercially prepared ration completely off. In this case, corn oil was
-
-notorious for increasing the need for selenium. Even if there was selenium in the
-
-
-pellets, the added oil created a relative deficiency.”
-
-### WAL-CLM-EPIGEN-000151 · deficiency_sign
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In his essential-nutrient tables Wallach lists cholesterol alongside the three essential fatty acids and, though it isn't classed as a 'classic' essential nutrient, argues its deficiency produces specific disease states — among them Alzheimer's disease, type 2 diabetes, erectile dysfunction, low testosterone, menopause symptoms and adrenal exhaustion. In his words: "while not generally considered a classic essential pd, its deficiency does result in disease states (e.., Alzheimer’s disease, type 2 diabetes, erectile dysfunction, low-T, menopause, adrenal exhaustion, etc)"
-- **verbatim** (offset 1058243): “Cholesterol?
-while not generally considered a classic essential pd, its deficiency does result in disease states (e..,
-Alzheimer’s disease, type 2 diabetes, erectile dysfunction, low-T, menopause, adrenal exhaustion, etc)”
-
-### WAL-CLM-EPIGEN-000152 · quote
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Building his diet philosophy on Weston Price's fieldwork, Wallach holds that the cholesterol-rich animal foods modern Americans avoid — butter, fish eggs, shellfish, organ meats and animal fats — actually supplied traditional peoples roughly ten times the fat-soluble vitamins (A, D, and Price's 'Activator X') of the modern diet, and are wrongly shunned as unhealthful. In his words: "at least ten times the fat-soluble vitamins from animal foods such as butter, fish eggs, shellfish, organ meats, and animal fats—the very cholesterol-rich foods now shunned by the American public as unhealthful."
-- **verbatim** (offset 357174): “by comparison to the American diet of his day, they provided at least
+### WAL-CLM-EPIGEN-000162 · food_source
+- **essentials:** vitamin-a, vitamin-d · **conditions:** — · **symptoms:** —
+- **claim:** Citing Weston Price, Wallach names butter as a leading source of fat-soluble vitamins (A and D) — traditional diets delivered roughly 10 times these versus the modern American diet — and those fat-soluble vitamins are the catalysts required for efficient mineral absorption, making butter an absorption-enabler rather than a food to shun. In his words: "at least ten times the fat-soluble vitamins from animal foods such as butter, fish eggs, shellfish, organ meats, and animal fats".
+- **verbatim** (offset 357221): “they provided at least
 four times the water-soluble vitamins, calcium and other minerals, and at least
 ten times the fat-soluble vitamins from animal foods such as butter, fish eggs,
 shellfish, organ meats, and animal fats—the very cholesterol-rich foods now
 shunned by the American public as unhealthful.”
 
-### WAL-CLM-EPIGEN-000153 · quote
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Documenting the traits of the healthy traditional diets he endorses (via Weston Price), Wallach notes that total fat ran from 30 to 80 percent of calories, yet only about four percent of calories came from polyunsaturated oils; the great majority of fat calories were saturated and monounsaturated — the opposite of the modern seed-oil-heavy diet. In his words: "Total fat content of traditional tribal diets varied between 30 to 80 percent of calories; however, only four percent of calories came from polyunsaturated oils that were found in whole grains, legumes, nuts, fish, animal fats, and vegetables. The remainder of the fat calories was in the form of saturated and monounsaturated fatty acids."
-- **verbatim** (offset 360792): “Total fat content of traditional tribal diets varied between 30 to 80
-percent of calories; however, only four percent of calories came from
-polyunsaturated oils that were found in whole grains, legumes, nuts,
-fish, animal fats, and vegetables. The remainder of the fat calories was
-in the form of saturated and monounsaturated fatty acids.”
+### WAL-CLM-EPIGEN-000163 · food_source
+- **essentials:** vitamin-k · **conditions:** — · **symptoms:** —
+- **claim:** Wallach (via Price) says butter carries "Activator X" — now thought to be vitamin K2 — but specifically butter made from the milk of cows grazing rapidly-growing green spring and fall grass, a pointed endorsement of real, grass-fed, seasonal butter as a source of a hard-to-get fat-soluble nutrient. In his words: "butter made from milk from cows that eat rapidly growing green grass in the Spring and Fall."
+- **verbatim** (offset 357938): “Dr. Price discovered an additional fat-soluble nutrient, which he labeled
+“Activator X," that is present in fish livers and shellfish, organ meats, and butter
+made from milk from cows that eat rapidly growing green grass in the Spring and
+Fall.”
 
-### WAL-CLM-EPIGEN-000154 · protocol
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** For the basal-ganglia degenerative diseases (MS, ALS, Parkinson's-type), Wallach says to be obsessive about diet and eat four to six eggs a day per 100 lb of body weight, cooked gently -- poached, soft-boiled, or scrambled in butter -- along with all 90 nutrients and heavy antioxidants. In his words: "Consume four to six eggs per day (poached, soft boiled, and scrambled in butter) per 100 pounds of body weight"
-- **verbatim** (offset 543154): “To prevent, and in many cases resolve, this family of basal-ganglia deficiency
-diseases one should be obsessive about proper dietary changes. Consume four
-to six eggs per day (poached, soft boiled, and scrambled in butter) per 100
-pounds of body weight, supplement with all 90 essential nutrients and additional
-antioxidants to levels in excess of 100,000 ORAC points per day.”
+### WAL-CLM-EPIGEN-000164 · mechanism
+- **essentials:** vitamin-a · **conditions:** xerophthalmia · **symptoms:** —
+- **claim:** Wallach recounts the discovery of vitamin A: lab animals on a lard-only fat diet developed deficiency with xerophthalmia (dry, diseased eyes) that was corrected by adding butter, egg yolk and cod liver oil, and WWI-era human xerophthalmia was traced directly to reduced access to dietary butter — losing butter caused the eye disease. In his words: "xerophthalmia in humans was the result of a decrease in access to dietary butter."
+- **verbatim** (offset 1066903): “A prominent deficiency symptom of this restricted experimental diet was
+xerophthalmia. Clinical and experimental vitamin A deficiencies were recognized
+as being related in WWI, when it became obvious that xerophthalmia in humans
+was the result of a decrease in access to dietary butter.”
 
-### WAL-CLM-EPIGEN-000155 · protocol
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Treating a Parkinson's patient, Wallach had him avoid the cooked-fat toxins (trans fats, heterocyclic amines, acrylamides) and eat at least twelve to fourteen poached eggs a day to supply the raw material to rebuild myelin. In his words: "he was instructed to eat at least twelve to fourteen poached eggs each day to provide raw materials for the rebuilding of myelin"
-- **verbatim** (offset 960584): “Dietrich was admonished to avoid
-trans-fatty acids, heterocyclic amines, and acrylamides to stop ongoing damage,
-and he was instructed to eat at least twelve to fourteen poached eggs each day to
-provide raw materials for the rebuilding of myelin.”
+### WAL-CLM-EPIGEN-000165 · definition
+- **essentials:** vitamin-d · **conditions:** rickets · **symptoms:** —
+- **claim:** Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen. In his words: "treated his rickets patients with cod liver oil, sunshine, and butter".
+- **verbatim** (offset 1071351): “Armand Trousseau, a
+French physician, treated his rickets patients with cod liver oil, sunshine, and
+butter—proving to himself that diet and sunshine played a vital role in the cause,
+prevention, and cure of rickets.”
 
-### WAL-CLM-EPIGEN-000156 · quote
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach (via Weston Price) blames the degenerative diseases of modern people on the 'displacing foods of modern commerce' -- sugar, white flour, pasteurized milk, low-fat foods and vegetable oils -- which by implication defends whole, full-fat, unprocessed dairy. In his words: "the displacing foods of modern commerce, including sugar, white flour, pasteurized milk, low-fat foods, vegetable oils"
-- **verbatim** (offset 358968): “their fine bodies, ease of reproduction, emotional stability, and freedom
-from degenerative diseases typical of the civilized moderns subsisting on the
-displacing foods of modern commerce, including sugar, white flour, pasteurized
-milk, low-fat foods, vegetable oils, and convenience items filled with extenders
-and additives.”
+### WAL-CLM-EPIGEN-000166 · mechanism
+- **essentials:** copper · **conditions:** mad_cow_disease · **symptoms:** —
+- **claim:** Wallach argues you cannot catch mad cow disease from beef, because BSE and CJD are copper-deficiency diseases rather than infections: every attempt to transmit them by injecting infected tissue failed Koch's postulates. In his words: "BSE and CJD are therefore copper deficiency diseases and are not infectious"
+- **verbatim** (offset 441522): “Despite the mass of accumulated biochemical and structural information
+describing prions, Koch's Postulates have not been fulfilled because transmission
+attempts from positively diagnosed cattle and humans to susceptible species
+have universally failed. BSE and CJD are therefore copper deficiency diseases and
+are not infectious”
 
-### WAL-CLM-EPIGEN-000157 · contraindication
+### WAL-CLM-EPIGEN-000167 · food_source
+- **essentials:** vitamin-a · **conditions:** night_blindness · **symptoms:** —
+- **claim:** Beef liver is a rich vitamin A source; Wallach notes the ancient Egyptians cured night blindness around 1,000 BC with beef-liver-juice extracts, which worked because vitamin A, stored in the liver, corrects the deficiency. In his words: "vitamin A is primarily stored in the liver of all species"
+- **verbatim** (offset 619523): “The ancient Egyptians cured night blindness in 1,000 BC by applying extracts
+of beef liver juice to the eyes and faces of the afflicted individual. We know today
+that night blindness is caused by a deficiency of vitamin A and that vitamin A is
+primarily stored in the liver of all species.”
+
+### WAL-CLM-EPIGEN-000168 · food_source
+- **essentials:** selenium · **conditions:** muscular_dystrophy · **symptoms:** —
+- **claim:** Wallach does name pork chops as the first of the 'muscle meats' — the meats where, as he puts it, muscle meat is 'King' — alongside beef steak, lamb chops, roasts, ground red meat, chicken and turkey. But his actual point about muscular dystrophy (what veterinarians call white muscle disease) is that it has nothing to do with eating too little meat: he frames MD as a simple selenium-deficiency disease that is fully preventable and curable with extra selenium, a full 90-essential-nutrient program, and a gluten-free diet — the same selenium supplementation that 'wiped out' the disease in farm animals. He even warns that a gluten-damaged gut can't absorb selenium even when it's in the food ('you are not what you eat, you are what you absorb'). So pork is a fine muscle-meat protein, but eating pork is not his prescription for building muscle or beating MD — supplementing selenium is. In his words: "muscle (meat) is “King” (.e., pork chops, beef steak, lamb chops, roasts, ground red meat, chicken, turkey, etc.)"
+- **verbatim** (offset 1000565): “where muscle
+
+(meat) is “King” (.e., pork chops, beef steak, lamb chops, roasts, ground red meat,
+chicken, turkey, etc.)”
+
+### WAL-CLM-EPIGEN-000169 · protocol
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In his prevention program Wallach says to avoid nitrate- and nitrite-cured, gluten-filler processed meats by name -- deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats. In his words: "Avoid the consumption of processed meats containing nitrates and nitrites and gluten-laden fillers (e.g., deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meat balls, canned meats, etc.)"
+- **claim:** As a standing rule Wallach says to avoid processed meats such as sausage, deli slices, bologna, salami and pepperoni because of their nitrates, nitrites, and gluten-laden fillers. In his words: "Avoid the consumption of processed meats containing nitrates and nitrites and gluten-laden fillers"
 - **verbatim** (offset 1389527): “Avoid the consumption of processed meats containing nitrates
 and nitrites and gluten-laden fillers (e.g., deli slices, sandwich
 meats, sausage, bologna, salami, pepperoni, jerky, hamburger
 patties, meatloaf, meat balls, canned meats, etc.)”
 
-### WAL-CLM-EPIGEN-000158 · definition
+### WAL-CLM-EPIGEN-000170 · food_source
+- **essentials:** vitamin-d · **conditions:** rickets · **symptoms:** —
+- **claim:** Yes. Wallach calls egg yolks a good dietary source of vitamin D, and he treats the fear of their cholesterol as actively harmful. He blames 3 things for bringing rickets back in the industrialized world — heavy sunscreen use, the cholesterol-scare that made parents avoid egg yolks, and pediatricians telling parents to skip children's vitamin and mineral supplements — and points to a reported 400 percent rise in childhood rickets between 1995 and 2011 as the result. He labels the resurgence a 'physician-caused disease.' In his words: "fear of cholesterol in egg yolks (a good source of vitamin D)"
+- **verbatim** (offset 637526): “widespread use of sun screens, fear of cholesterol in egg yolks (a good source
+of vitamin D), and instructions from pediatricians to avoit
+
+
+supplementation of
+vitamins and minerals to children because of overdose concerns.”
+
+### WAL-CLM-EPIGEN-000171 · food_source
+- **essentials:** selenium · **conditions:** cystic_fibrosis · **symptoms:** —
+- **claim:** Selenium. Wallach names eggs as one of the everyday food sources of selenium — alongside liver, kidneys, and some high-selenium rice — and he calls this trace element the key to both preventing and curing cystic fibrosis. In his telling CF is not a genetic disease at all but a selenium deficiency during the first 3 months of pregnancy. He notes it strikes about 1 in every 2,500 American children, is usually fatal in infancy with fewer than half of victims living past age 21, yet insists it is essentially 100 percent curable when caught within 30 days of birth — which is why he treats selenium-bearing foods like eggs as genuinely protective. In his words: "selenium, a trace element found in liver, eggs, kidneys and some varieties of high selenium rice."
+- **verbatim** (offset 1380059): “Wallach says the key to its prevention and cure is selenium, a trace
+element found in liver, eggs, kidneys and some varieties of high selenium
+rice.”
+
+### WAL-CLM-EPIGEN-000172 · protocol
+- **essentials:** selenium · **conditions:** multiple_sclerosis · **symptoms:** —
+- **claim:** For multiple sclerosis, Wallach prescribes 6-8 eggs per day to supply the raw materials that maintain and repair the brain's myelin, paired with all 90 essential nutrients and antioxidants including selenium. In his words: "add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin"
+- **verbatim** (offset 1028112): “To stop the ongoing
+inflammatory damage to the myelin of the brain (that occurs in MS)
+with a dietary change, add 6-8 eggs per day to provide raw materials
+to help support maintenance and repair of the myelin and supplement
+with all 90 essential nutrients with a special emphasis on antioxidants,
+including selenium.”
+
+### WAL-CLM-EPIGEN-000173 · toxicity_sign
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach identifies the gluten grains as wheat, barley, rye, and oats -- the 'small-grain' cereals whose proteins provoke gluten intolerance (note he lumps oats in with the others). He is careful to distinguish this from a true allergy: it is not an allergy to those grain proteins but an intolerance, so eating gluten produces a 'contact enteritis' on the gut lining, much as poison ivy causes contact dermatitis on the skin. In his words: "Gluten intolerance is not an allergy to wheat, barley, rye, or oat proteins. However, when a person is intolerant of small-grain proteins, the consumption of gluten will produce a “contact enteritis""
-- **verbatim** (offset 1055297): “Gluten intolerance
-is not an allergy to wheat, barley, rye, or oat proteins. However, when a person
-is intolerant of small-grain proteins, the consumption of gluten will produce a
-“contact enteritis"”
+- **claim:** Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit around 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in. In his words: "Mercury in fish is present as methyl mercury"
+- **verbatim** (offset 1246563): “Mercury in fish is present as methyl mercury. People who rarely eat fish have
+very low levels of mercury (2-5 ug/kg); moderate fish consumers have 10 ug/kg;
+high fish consumers (especially if they eat the large predator fish such as shark,
+tuna, or swordfish) will typically have higher levels of up to 400 ug/kg.”
 
-### WAL-CLM-EPIGEN-000159 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach points out that gluten intolerance is nothing new -- a negative reaction to eating grain that Egyptian and Greek physicians already recognized thousands of years ago, long before modern medicine named celiac disease. In his words: "Gluten intolerance, as a negative reaction to grain consumption, was recognized by the Egyptians and Greek physicians thousands of years ago."
-- **verbatim** (offset 1055155): “Gluten intolerance, as a negative reaction to grain consumption, was recognized
-by the Egyptians and Greek physicians thousands of years ago.”
+### WAL-CLM-EPIGEN-000174 · definition
+- **essentials:** — · **conditions:** rickets · **symptoms:** —
+- **claim:** Cod-liver oil earned its reputation as a rickets cure among Scottish fishermen long before doctors accepted it; the French physician Trousseau confirmed it with cod-liver oil, sunshine, and butter while orthodox medicine still hunted for a 'rickets germ.' In his words: "Cod liver oil, the Scottish fisherman's treatment for rickets"
+- **verbatim** (offset 1071216): “Cod liver oil, the Scottish fisherman's treatment for rickets, continued to be
 
-### WAL-CLM-EPIGEN-000160 · interaction
-- **essentials:** iodine · **conditions:** — · **symptoms:** —
-- **claim:** Wallach classifies cruciferous vegetables as dietary goitrogens — foods that interfere with normal thyroid metabolism and function. In his newest book (2014) he names cabbage, broccoli, cauliflower, Brussels sprouts and kale, grouping them alongside dietary and waterborne nitrates, gluten intolerance, pituitary problems and general nutritional deficiencies as things that disrupt the thyroid. In his words: "Many foods and food additives are known to be “goitrogens” because they interfere with the normal thyroid metabolism and function including:
+used by the lay community throughout the 19th century. Armand Trousseau, a
+French physician, treated his rickets patients with cod liver oil, sunshine, and
+butter—proving to himself that diet and sunshine played a vital role in the cause,
+prevention, and cure of rickets.”
 
-Dietary nitrates (e.g,, deli slices, sandwich meats, etc.)
-Water borne nitrates
+### WAL-CLM-EPIGEN-000175 · food_source
+- **essentials:** vitamin-a · **conditions:** — · **symptoms:** —
+- **claim:** Yes — fish liver is one of the richest sources of preformed vitamin A, the ready-to-use form called retinol, with cod-liver oil the classic example. Wallach draws the useful line here: this animal-derived retinol is already active, unlike the carotene (provitamin A) your body has to convert out of brightly pigmented plants. The same early vitamin-A research pointed to butter and egg yolk alongside cod-liver oil as the animal foods that reversed the deficiency — so fish sits with butter and eggs among the top preformed-A foods. In his words: "Retinol, a primary alcohol, is present in high concentrations of marine fish liver (cod liver oil, etc.)"
+- **verbatim** (offset 1067465): “Retinol, a primary alcohol, is present in
+high concentrations of marine fish liver (cod liver oil, etc.).”
 
-Cruciferous vegetables (e.g., cabbage, broccoli, cauliflower, Brussel sprouts, kale, etc.)
+### WAL-CLM-EPIGEN-000176 · food_source
+- **essentials:** vitamin-k · **conditions:** — · **symptoms:** —
+- **claim:** Yes, and it matters more than it first sounds. Fish livers and shellfish are one of the few sources of the fat-soluble factor Weston Price named 'Activator X' — now believed to be vitamin K2 — which every healthy traditional culture had in its diet. Its importance is all about absorption: Price found that the fat-soluble vitamins A, D and Activator X act as the catalysts that let the body actually take up minerals and use protein, and that without them a person cannot absorb minerals no matter how abundant they are in the food. Those primitive diets supplied roughly 10 times the fat-soluble vitamins of the modern American diet — which is a large part of why they were so free of degenerative disease. In his words: "present in fish livers and shellfish, organ meats, and butter"
+- **verbatim** (offset 357938): “Dr. Price discovered an additional fat-soluble nutrient, which he labeled
+“Activator X," that is present in fish livers and shellfish, organ meats, and butter
+made from milk from cows that eat rapidly growing green grass in the Spring and
+Fall. All primitive cultures had a source of Activator X, now thought to be vitamin
+K,, in their diets.”
 
-Gluten intolerance
-
-Pituitary problems
-
-General nutritional deficiencies"
-- **verbatim** (offset 1253027): “Many foods and food additives are known to be “goitrogens” because they
-interfere with the normal thyroid metabolism and function including:
-
-Dietary nitrates (e.g,, deli slices, sandwich meats, etc.)
-Water borne nitrates
-
-Cruciferous vegetables (e.g., cabbage, broccoli, cauliflower, Brussel sprouts,
-kale, etc.)
-
-Gluten intolerance
-
-Pituitary problems
-
-General nutritional deficiencies”
-
-### WAL-CLM-EPIGEN-000161 · protocol
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach says to drink clean, slightly alkaline water (pH about 7.5 to 8.5) - but NOT during meals, because alkaline water at mealtime neutralizes the stomach acid you need to break food down. In his words: "Drink clean water (slightly alkaline: ie., 7.5 to 8.5), however, do not drink alkaline water during meals as it will neutralize the essential acid environment of the stomach."
-- **verbatim** (offset 1389348): “Drink clean water (slightly alkaline: ie., 7.5 to 8.5), however, do
-not drink alkaline water during meals as it will neutralize the
-essential acid environment of the stomach.”
+### WAL-CLM-EPIGEN-000177 · contraindication
+- **essentials:** selenium · **conditions:** arteriosclerosis, cardiomyopathy, cancer · **symptoms:** —
+- **claim:** Wallach warns that a high intake of polyunsaturated oils including fish oil, if you are selenium-deficient, raises the risk of birth defects, arteriosclerosis, cardiomyopathy, sudden heart death, and cancer — because the unprotected oils go rancid in your cells. In his words: "concurrent with a selenium deficiency will increase the risk and rate of birth defects"
+- **verbatim** (offset 1303252): “High intake of dietary polyunsaturated oils (such as olive oil, coconut
+oil, fish oil, etc,), salad dressings, margarine, and cooking oils concurrent with a
+selenium deficiency will increase the risk and rate of birth defects (such as cystic
+fibrosis, muscular dystrophy, etc), arteriosclerosis, cardiomyopathy, sudden heart
+death, and cancer.”
 

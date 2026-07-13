@@ -877,16 +877,19 @@
   },
   "bismuth": {
     "display_name": "Bismuth",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-EPIGEN-000071"
       ],
       "protocol": [
-        "WAL-CLM-RARE-000285"
+        "WAL-CLM-RARE-000285",
+        "WAL-CLM-RARE-000315"
       ]
     },
-    "conditions_treated": [],
+    "conditions_treated": [
+      "influenza"
+    ],
     "books_cited": [
       "epigenetics",
       "rare-earths"
@@ -1804,18 +1807,27 @@
   },
   "cholesterol": {
     "display_name": "Cholesterol",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-IMMORT-000054"
+      ],
+      "food_source": [
+        "WAL-CLM-EPIGEN-000170"
+      ],
+      "protocol": [
+        "WAL-CLM-RARE-000317"
       ]
     },
     "conditions_treated": [
       "low_libido",
-      "menopause"
+      "menopause",
+      "rickets"
     ],
     "books_cited": [
-      "immortality"
+      "epigenetics",
+      "immortality",
+      "rare-earths"
     ]
   },
   "chondroitin": {
@@ -2668,7 +2680,7 @@
   },
   "echinacea": {
     "display_name": "Echinacea",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000119",
@@ -2677,7 +2689,8 @@
         "WAL-CLM-LETS-000225",
         "WAL-CLM-LETS-000279",
         "WAL-CLM-LETS-000314",
-        "WAL-CLM-LETS-000318"
+        "WAL-CLM-LETS-000318",
+        "WAL-CLM-RARE-000315"
       ]
     },
     "conditions_treated": [
@@ -2690,7 +2703,8 @@
       "influenza"
     ],
     "books_cited": [
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "edta": {
@@ -3633,14 +3647,15 @@
   },
   "goldenseal": {
     "display_name": "Goldenseal",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000279",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000403"
+        "WAL-CLM-LETS-000403",
+        "WAL-CLM-RARE-000315"
       ]
     },
     "conditions_treated": [
@@ -3651,7 +3666,8 @@
       "poison_ivy"
     ],
     "books_cited": [
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "gout-weed": {
@@ -4546,7 +4562,7 @@
   },
   "lead": {
     "display_name": "Lead",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000212"
@@ -4560,6 +4576,9 @@
       ],
       "protocol": [
         "WAL-CLM-RARE-000214"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-RARE-000318"
       ]
     },
     "conditions_treated": [
@@ -5001,7 +5020,7 @@
   },
   "mercury": {
     "display_name": "Mercury",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-RARE-000137",
@@ -5009,7 +5028,8 @@
         "WAL-CLM-RARE-000139"
       ],
       "toxicity_sign": [
-        "WAL-CLM-EPIGEN-000091"
+        "WAL-CLM-EPIGEN-000091",
+        "WAL-CLM-EPIGEN-000173"
       ]
     },
     "conditions_treated": [
@@ -5333,13 +5353,17 @@
   },
   "nitrates": {
     "display_name": "Nitrates",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "interaction": [
         "WAL-CLM-IMMORT-000184"
+      ],
+      "mechanism": [
+        "WAL-CLM-IMMORT-000230"
       ]
     },
     "conditions_treated": [
+      "goiter",
       "thyroid_disease"
     ],
     "books_cited": [
@@ -5348,13 +5372,17 @@
   },
   "nitrites": {
     "display_name": "Nitrites",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "interaction": [
         "WAL-CLM-IMMORT-000184"
+      ],
+      "mechanism": [
+        "WAL-CLM-IMMORT-000230"
       ]
     },
     "conditions_treated": [
+      "goiter",
       "thyroid_disease"
     ],
     "books_cited": [

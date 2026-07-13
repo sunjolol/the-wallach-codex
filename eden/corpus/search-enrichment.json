@@ -3382,6 +3382,849 @@
         "phosphorus",
         "osteoporosis"
       ]
+    },
+    "WAL-CLM-IMMORT-000220": {
+      "subject": "butter",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is butter or margarine better for your heart?",
+      "answer_short": "Wallach flips the conventional wisdom: the hydrogenated and partially-hydrogenated vegetable oils (margarine) sold as the safe substitute for butter to prevent arteriosclerosis, atherosclerosis and stroke are now known to be a direct cause of those very diseases — vindicating real butter over its processed replacement.",
+      "topics": [
+        "margarine",
+        "trans-fats",
+        "heart-disease",
+        "hydrogenated-oils"
+      ]
+    },
+    "WAL-CLM-IMMORT-000221": {
+      "subject": "butter",
+      "also_about": [
+        "vitamin-a"
+      ],
+      "facet": "sources",
+      "question": "How much vitamin A is actually in butter?",
+      "answer_short": "In a food vitamin-A table, Wallach lists butter at 165 IU per teaspoon — and notably, margarine only matches that number when it is artificially fortified, underscoring that butter carries the vitamin natively while margarine must have it added back.",
+      "topics": [
+        "vitamin-a",
+        "margarine",
+        "food-table",
+        "fortification"
+      ]
+    },
+    "WAL-CLM-IMMORT-000222": {
+      "subject": "beef",
+      "also_about": [
+        "meat",
+        "pork"
+      ],
+      "facet": "stance",
+      "question": "Does Wallach think red meat like beef is healthy, or should I avoid it like the vegans say?",
+      "answer_short": "Wallach flatly rejects the vegan line — he says red meat is healthy and that every long-lived population on earth eats it. In his words, all long-lived peoples eat red meat (pork, beef, goat, lamb), plus poultry, fish, eggs and dairy, and vegans 'lie to themselves' when they insist the world's healthiest people avoid animal products. His warning is concrete: strict vegans who don't supplement minerals correctly tend, within 5 years, to develop grey hair, receding gums, periodontal disease, arthritis, osteoporosis, anemia, hypertension, chronic fatigue, even cancer and liver cirrhosis — because an unsupplemented plant diet leaves them 51 to 57 of the body's essential minerals short (plants can't manufacture minerals).",
+      "topics": [
+        "red meat",
+        "vegan",
+        "longevity",
+        "diet"
+      ]
+    },
+    "WAL-CLM-IMMORT-000223": {
+      "subject": "chicken",
+      "also_about": [
+        "meat",
+        "fish",
+        "eggs",
+        "pork",
+        "beef"
+      ],
+      "facet": "stance",
+      "question": "Does Wallach think chicken and other poultry belong in a healthy diet, or should we go vegan?",
+      "answer_short": "Wallach is firmly against going vegan and puts chicken squarely inside a healthy, long-life diet. His core claim: every long-lived population on earth eats animal foods — red meat (pork, beef, goat, lamb), poultry, fish, eggs and dairy — and no vegan, he says, has ever lived to 100 or raised a thriving colony of healthy kids on the diet. Unsupplemented strict vegans, he warns, tend to develop grey hair, receding gums, osteoporosis, anemia, arthritis and even cancer within 5 years, and he points to vegan crusader Linda McCartney, who died at 56 of breast cancer. So poultry isn't something to avoid — it's part of what he sees as a longevity diet, not a food to apologize for.",
+      "topics": [
+        "longevity",
+        "veganism",
+        "animal-foods",
+        "diet"
+      ]
+    },
+    "WAL-CLM-IMMORT-000224": {
+      "subject": "chicken",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is fried chicken okay to eat?",
+      "answer_short": "Wallach lumps commercial fried chicken in with French fries, fried seafood, high-fructose corn syrup, soft drinks and white flour as things the world's longest-lived ('Blue Zone') peoples have no access to — the frying and processing is the problem, framing fried chicken as a food of ill health.",
+      "topics": [
+        "fried-foods",
+        "blue-zones",
+        "processed-food",
+        "diet"
+      ]
+    },
+    "WAL-CLM-IMMORT-000225": {
+      "subject": "chicken",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "How can I actually see that bone is made of both calcium and protein?",
+      "answer_short": "Wallach's kitchen demonstration: soak a chicken drumstick bone in a quart of vinegar for 2 weeks and the acid leaches out the calcium, leaving behind the rubbery protein matrix — showing bone is a protein framework mineralized with calcium, not solid rock.",
+      "topics": [
+        "bone",
+        "calcium",
+        "protein",
+        "demonstration"
+      ]
+    },
+    "WAL-CLM-IMMORT-000226": {
+      "subject": "chicken",
+      "also_about": [
+        "arsenic",
+        "choline"
+      ],
+      "facet": "physiology",
+      "question": "What can chickens teach us about human joint disease like carpal tunnel?",
+      "answer_short": "Wallach uses poultry as the model: arsenic plus the B-vitamin choline prevents 100% of perosis ('slipped tendon') in chickens, and the same arsenic deficiency in humans shows up as carpal tunnel syndrome, TMJ and other repetitive-motion joint diseases.",
+      "topics": [
+        "arsenic",
+        "carpal-tunnel",
+        "joint-disease",
+        "choline"
+      ]
+    },
+    "WAL-CLM-IMMORT-000227": {
+      "subject": "chicken",
+      "also_about": [
+        "fish"
+      ],
+      "facet": "history",
+      "question": "How has chicken been viewed in traditional healing systems?",
+      "answer_short": "Relaying Taoist Chinese tradition, Wallach notes poultry (with vegetables and fish) is held to nourish the heart, lungs and kidneys under the five-element organ correspondences.",
+      "topics": [
+        "tao",
+        "traditional-medicine",
+        "organs",
+        "diet"
+      ]
+    },
+    "WAL-CLM-IMMORT-000228": {
+      "subject": "chicken",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "What is a pollo-vegetarian?",
+      "answer_short": "Wallach defines a 'pollo-vegetarian' as really an omnivore who eats poultry (chicken) on top of grains, vegetables, fruit and nuts — part of his point that most self-described vegetarians actually eat animal foods.",
+      "topics": [
+        "vegetarianism",
+        "definition",
+        "omnivore"
+      ]
+    },
+    "WAL-CLM-IMMORT-000229": {
+      "subject": "pork",
+      "also_about": [
+        "beef",
+        "meat",
+        "eggs"
+      ],
+      "facet": "stance",
+      "question": "Does Wallach think pork is healthy, or should it be avoided?",
+      "answer_short": "Wallach classes pork as a red meat and points out that every long-lived people on earth eats it, so pork counts as legitimate animal protein, not something to shun.",
+      "topics": [
+        "red meat",
+        "longevity",
+        "animal protein",
+        "dietary stance"
+      ]
+    },
+    "WAL-CLM-IMMORT-000230": {
+      "subject": "pork",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does Wallach warn against ham, bacon, and sausage?",
+      "answer_short": "The nitrates and nitrites cured into ham, bacon, sausage and other processed pork act as goitrogens, interfering with normal thyroid metabolism and capable of producing thyroid disease.",
+      "topics": [
+        "processed pork",
+        "goitrogens",
+        "thyroid",
+        "nitrates"
+      ]
+    },
+    "WAL-CLM-IMMORT-000231": {
+      "subject": "pork",
+      "also_about": [
+        "eggs",
+        "fish"
+      ],
+      "facet": "sources",
+      "question": "Do any famously long-lived people eat pork?",
+      "answer_short": "Yes — and they may be the best example there is. Wallach points to the Okinawans, whom the World Health Organization ranked in 1996 as the longest-lived people in the entire industrialized world, and boiled pork is a staple of their roughly 1,500-calorie daily diet. He puts their life expectancy at 78 years for men and 86 for women, with a documented centenarian rate of 5 per 10,000 people — and, citing the 25-year Okinawa Centenarian Study, he credits their lifestyle and mineral-rich diet, not their genes, for that longevity. Their table alongside the pork includes chicken, eggs, dried minnows, miso and fish soup, tofu, sea and garden vegetables, kelp, garlic, purple sweet potatoes and bitter melon.",
+      "topics": [
+        "okinawa",
+        "longevity",
+        "boiled pork",
+        "traditional diet"
+      ]
+    },
+    "WAL-CLM-IMMORT-000232": {
+      "subject": "eggs",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "sources",
+      "question": "Are eggs a good source of vitamin B12?",
+      "answer_short": "Wallach lists eggs among the rich dietary sources of vitamin B12, alongside liver, kidney, whole milk, cheese, and muscle meats, relevant because vegans risk B12 deficiency without it.",
+      "topics": [
+        "vitamin-b12",
+        "food-source",
+        "vegan",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000162": {
+      "subject": "butter",
+      "also_about": [
+        "cholesterol",
+        "eggs",
+        "fish"
+      ],
+      "facet": "sources",
+      "question": "What vitamins does butter give you, and why do they matter?",
+      "answer_short": "Citing Weston Price, Wallach names butter as a leading source of fat-soluble vitamins A and D — traditional diets delivered about 10 times these versus the modern American diet. Those fat-soluble vitamins are the catalysts required for efficient mineral absorption; without them you cannot absorb minerals no matter how abundant. Butter is therefore an absorption-enabler, not a food to shun.",
+      "topics": [
+        "fat-soluble-vitamins",
+        "absorption",
+        "weston-price",
+        "cholesterol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000163": {
+      "subject": "butter",
+      "also_about": [
+        "vitamin-k"
+      ],
+      "facet": "sources",
+      "question": "Is grass-fed butter different, and what special nutrient does it contain?",
+      "answer_short": "Wallach (via Price) says butter carries \"Activator X\" — now thought to be vitamin K2 — but specifically butter made from the milk of cows grazing rapidly-growing green spring and fall grass. It is a pointed endorsement of real, grass-fed, seasonal butter as a source of a hard-to-get fat-soluble nutrient.",
+      "topics": [
+        "grass-fed",
+        "activator-x",
+        "vitamin-k2",
+        "weston-price"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000164": {
+      "subject": "butter",
+      "also_about": [
+        "vitamin-a",
+        "eggs"
+      ],
+      "facet": "discovery",
+      "question": "Can a lack of butter actually cause disease?",
+      "answer_short": "Wallach recounts the discovery of vitamin A: lab animals on lard-only fat developed deficiency with xerophthalmia (dry, diseased eyes) that was corrected by adding butter, egg yolk and cod liver oil. In humans, WWI-era xerophthalmia was traced directly to reduced access to dietary butter — losing butter caused the eye disease.",
+      "topics": [
+        "vitamin-a-deficiency",
+        "xerophthalmia",
+        "eye-health",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000165": {
+      "subject": "butter",
+      "also_about": [
+        "vitamin-d"
+      ],
+      "facet": "uses",
+      "question": "Has butter been used to treat a disease?",
+      "answer_short": "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine, AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets. Butter appears as part of a real historical therapeutic regimen.",
+      "topics": [
+        "rickets",
+        "vitamin-d",
+        "trousseau",
+        "medical-history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000166": {
+      "subject": "beef",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Can you catch mad cow disease from eating beef, according to Wallach?",
+      "answer_short": "Wallach says no. He argues BSE ('mad cow') and CJD are actually copper-deficiency diseases, not infections, because every attempt to transmit them by injecting infected brain tissue failed to satisfy Koch's postulates.",
+      "topics": [
+        "mad cow",
+        "bse",
+        "cjd",
+        "copper deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000167": {
+      "subject": "beef",
+      "also_about": [
+        "vitamin-a"
+      ],
+      "facet": "history",
+      "question": "What is beef liver good for, and is there a history behind it?",
+      "answer_short": "Beef liver is a rich vitamin A source; Wallach notes the ancient Egyptians cured night blindness around 1,000 BC with beef-liver-juice extracts, which worked because vitamin A, stored in the liver, fixes the deficiency.",
+      "topics": [
+        "beef liver",
+        "vitamin a",
+        "night blindness",
+        "history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000168": {
+      "subject": "pork",
+      "also_about": [
+        "beef",
+        "chicken"
+      ],
+      "facet": "sources",
+      "question": "Is pork good for building muscle or for muscular dystrophy?",
+      "answer_short": "Wallach does name pork chops as the first of the 'muscle meats' — the meats where, as he puts it, muscle meat is 'King' — alongside beef steak, lamb chops, roasts, ground red meat, chicken and turkey. But his actual point about muscular dystrophy (what veterinarians call white muscle disease) is that it has nothing to do with eating too little meat: he frames MD as a simple selenium-deficiency disease that is fully preventable and curable with extra selenium, a full 90-essential-nutrient program, and a gluten-free diet — the same selenium supplementation that 'wiped out' the disease in farm animals. He even warns that a gluten-damaged gut can't absorb selenium even when it's in the food ('you are not what you eat, you are what you absorb'). So pork is a fine muscle-meat protein, but eating pork is not his prescription for building muscle or beating MD — supplementing selenium is.",
+      "topics": [
+        "muscular dystrophy",
+        "muscle meat",
+        "selenium",
+        "protein"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000169": {
+      "subject": "pork",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What kinds of pork or meat products does Wallach tell people to avoid?",
+      "answer_short": "As a standing rule Wallach says to avoid processed meats such as sausage, deli slices, bologna, salami and pepperoni because of their nitrates, nitrites, and gluten-laden fillers.",
+      "topics": [
+        "processed meat",
+        "avoidance",
+        "nitrates",
+        "gluten fillers"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000170": {
+      "subject": "eggs",
+      "also_about": [
+        "cholesterol",
+        "vitamin-d"
+      ],
+      "facet": "sources",
+      "question": "Are egg yolks a good source of vitamin D, and is avoiding them harmful?",
+      "answer_short": "Yes. Wallach calls egg yolks a good dietary source of vitamin D, and he treats the fear of their cholesterol as actively harmful. He blames 3 things for bringing rickets back in the industrialized world — heavy sunscreen use, the cholesterol-scare that made parents avoid egg yolks, and pediatricians telling parents to skip children's vitamin and mineral supplements — and points to a reported 400 percent rise in childhood rickets between 1995 and 2011 as the result. He labels the resurgence a 'physician-caused disease.'",
+      "topics": [
+        "vitamin-d",
+        "rickets",
+        "cholesterol",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000171": {
+      "subject": "eggs",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "sources",
+      "question": "What nutrient do eggs supply that Wallach ties to disease prevention?",
+      "answer_short": "Selenium. Wallach names eggs as one of the everyday food sources of selenium — alongside liver, kidneys, and some high-selenium rice — and he calls this trace element the key to both preventing and curing cystic fibrosis. In his telling CF is not a genetic disease at all but a selenium deficiency during the first 3 months of pregnancy. He notes it strikes about 1 in every 2,500 American children, is usually fatal in infancy with fewer than half of victims living past age 21, yet insists it is essentially 100 percent curable when caught within 30 days of birth — which is why he treats selenium-bearing foods like eggs as genuinely protective.",
+      "topics": [
+        "selenium",
+        "cystic-fibrosis",
+        "trace-minerals",
+        "food-source"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000172": {
+      "subject": "eggs",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "How many eggs does Wallach recommend for multiple sclerosis?",
+      "answer_short": "For multiple sclerosis, Wallach prescribes 6-8 eggs per day to supply the raw materials that maintain and repair the brain's myelin, paired with all 90 essential nutrients and antioxidants including selenium.",
+      "topics": [
+        "multiple-sclerosis",
+        "myelin",
+        "protocol",
+        "selenium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000173": {
+      "subject": "fish",
+      "also_about": [
+        "mercury",
+        "selenium",
+        "tuna"
+      ],
+      "facet": "warning",
+      "question": "Is it safe to eat a lot of fish — what about mercury?",
+      "answer_short": "Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit around 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in.",
+      "topics": [
+        "mercury",
+        "food-safety",
+        "seafood",
+        "toxins"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000174": {
+      "subject": "fish",
+      "also_about": [
+        "vitamin-d",
+        "butter"
+      ],
+      "facet": "history",
+      "question": "Where did cod liver oil's reputation as a cure come from?",
+      "answer_short": "Scottish fishermen used cod-liver oil to prevent and cure rickets long before doctors accepted it; the French physician Trousseau confirmed it with cod-liver oil, sunshine, and butter — while orthodox medicine kept hunting for a 'rickets germ.'",
+      "topics": [
+        "cod-liver-oil",
+        "rickets",
+        "history",
+        "vitamin-d"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000175": {
+      "subject": "fish",
+      "also_about": [
+        "vitamin-a"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in vitamin A — is fish one?",
+      "answer_short": "Yes — fish liver is one of the richest sources of preformed vitamin A, the ready-to-use form called retinol, with cod-liver oil the classic example. Wallach draws the useful line here: this animal-derived retinol is already active, unlike the carotene (provitamin A) your body has to convert out of brightly pigmented plants. The same early vitamin-A research pointed to butter and egg yolk alongside cod-liver oil as the animal foods that reversed the deficiency — so fish sits with butter and eggs among the top preformed-A foods.",
+      "topics": [
+        "vitamin-a",
+        "retinol",
+        "cod-liver-oil",
+        "food-source"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000176": {
+      "subject": "fish",
+      "also_about": [
+        "vitamin-k",
+        "butter"
+      ],
+      "facet": "sources",
+      "question": "Do fish contain vitamin K / the fat-soluble 'Activator X'?",
+      "answer_short": "Yes, and it matters more than it first sounds. Fish livers and shellfish are one of the few sources of the fat-soluble factor Weston Price named 'Activator X' — now believed to be vitamin K2 — which every healthy traditional culture had in its diet. Its importance is all about absorption: Price found that the fat-soluble vitamins A, D and Activator X act as the catalysts that let the body actually take up minerals and use protein, and that without them a person cannot absorb minerals no matter how abundant they are in the food. Those primitive diets supplied roughly 10 times the fat-soluble vitamins of the modern American diet — which is a large part of why they were so free of degenerative disease.",
+      "topics": [
+        "vitamin-k",
+        "activator-x",
+        "fish-liver",
+        "food-source"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000177": {
+      "subject": "fish",
+      "also_about": [
+        "selenium",
+        "omega-3"
+      ],
+      "facet": "warning",
+      "question": "Can fish oil ever be harmful?",
+      "answer_short": "Wallach warns that a high intake of polyunsaturated oils including fish oil, if you're selenium-deficient, raises the risk of birth defects, arteriosclerosis, cardiomyopathy, sudden heart death, and cancer — because the unprotected oils go rancid in your cells.",
+      "topics": [
+        "fish-oil",
+        "selenium",
+        "rancidity",
+        "warning"
+      ]
+    },
+    "WAL-CLM-RARE-000314": {
+      "subject": "butter",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What should I cook with instead of margarine or vegetable oil?",
+      "answer_short": "In his See-Food Diet free-radical-elimination list, Wallach gives a flat cooking directive: no margarine — cook with butter, ghee, mutton fat, or water instead. Butter is on his approved-fats shortlist for the kitchen.",
+      "topics": [
+        "cooking-fats",
+        "margarine",
+        "free-radicals",
+        "see-food-diet"
+      ]
+    },
+    "WAL-CLM-RARE-000315": {
+      "subject": "chicken",
+      "also_about": [
+        "bismuth"
+      ],
+      "facet": "uses",
+      "question": "Is chicken soup actually useful when you're sick with the flu?",
+      "answer_short": "Yes. Wallach holds up chicken soup — with the herbs echinacea and goldenseal plus a dose of bismuth — as the safe, effective nutritional way to handle the flu (which he frames as dehydration and diarrhea). His cautionary contrast is George Washington, who had influenza but was killed by his doctors, not the illness: in a little over 12 hours they drained him of 80 to 90 ounces of blood (6 pints), dosed him with calomel (mercury) and emetic tartar (antimony), and blistered his skin and throat, until Washington himself begged to be allowed to die in peace. The lesson Wallach draws is blunt — a grandmother's bowl of chicken soup would have served the 'Father of our Country' better than the best physicians of his day.",
+      "topics": [
+        "influenza",
+        "chicken-soup",
+        "herbs",
+        "nutrition-vs-medicine"
+      ]
+    },
+    "WAL-CLM-RARE-000316": {
+      "subject": "chicken",
+      "also_about": [
+        "pork",
+        "fish",
+        "beef",
+        "butter"
+      ],
+      "facet": "sources",
+      "question": "What nutrients does chicken provide — is it a source of dietary fat?",
+      "answer_short": "Wallach lists chicken among the primary food sources of dietary fats/lipids (with pork, fish, beef and lamb), the animal fats that supply energy alongside plant oils, nuts and dairy.",
+      "topics": [
+        "dietary-fat",
+        "lipids",
+        "food-sources"
+      ]
+    },
+    "WAL-CLM-RARE-000317": {
+      "subject": "eggs",
+      "also_about": [
+        "cholesterol"
+      ],
+      "facet": "protocol",
+      "question": "Can eating eggs help with menopause symptoms?",
+      "answer_short": "Because cholesterol is the raw material the body uses to make estrogen, Wallach says eating 2 eggs every morning supplies that raw material and lets a woman slip through menopause almost symptom-free.",
+      "topics": [
+        "menopause",
+        "cholesterol",
+        "estrogen",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-RARE-000318": {
+      "subject": "fish",
+      "also_about": [
+        "tuna"
+      ],
+      "facet": "warning",
+      "question": "Is canned tuna worse than fresh tuna?",
+      "answer_short": "Canned tuna carries nearly double the lead of fresh tuna, because the sealant used on can seams leaches lead into the food.",
+      "topics": [
+        "lead",
+        "canned-tuna",
+        "food-safety",
+        "toxins"
+      ]
+    },
+    "WAL-CLM-DDDL-000106": {
+      "subject": "butter",
+      "also_about": [
+        "vitamin-d",
+        "cholesterol"
+      ],
+      "facet": "warning",
+      "question": "Is there ever a reason to cut back on butter?",
+      "answer_short": "Yes — the one cautionary note. For cerebrovascular disease (where Wallach calls vitamin D angiotoxic and a driver of arterial calcification), he says hold total vitamin D under 400 IU/day, and flags butter — alongside animal fat, cholesterol, milk, cereals, supplements and sunshine — as a notable dietary vitamin D contributor that makes staying under the cap difficult.",
+      "topics": [
+        "vitamin-d",
+        "cerebrovascular-disease",
+        "arterial-calcification",
+        "caution"
+      ]
+    },
+    "WAL-CLM-DDDL-000107": {
+      "subject": "butter",
+      "also_about": [
+        "eggs"
+      ],
+      "facet": "basics",
+      "question": "What is butter, nutritionally — what does it give the body?",
+      "answer_short": "Wallach classes butter first among the primary food sources of dietary fat (lipids), alongside flax and olive oil, animal fat, nuts, seeds and egg yolks. Fats supply energy at 9 calories per gram — roughly double carbohydrate — as both immediate and stored fuel. This is butter's baseline identity: a concentrated dietary-fat source.",
+      "topics": [
+        "dietary-fat",
+        "lipids",
+        "energy",
+        "food-basics"
+      ]
+    },
+    "WAL-CLM-DDDL-000108": {
+      "subject": "butter",
+      "also_about": [],
+      "facet": "history",
+      "question": "Did the long-lived, disease-free cultures Wallach admires eat butter?",
+      "answer_short": "Yes — emphatically. In Wallach's analysis of the Hunza, the people he holds up as relatively disease-free and living well past 100, butter is a daily staple, not an afterthought: they put it in their tea and used it as a cooking shortening, and it sits among their core fat sources alongside whole milk, ghee, apricot oil and animal fats. He offers this as evidence that real animal fats like butter belong in a healthy traditional diet — the opposite of the processed substitutes modern medicine pushed in their place.",
+      "topics": [
+        "hunza",
+        "longevity",
+        "traditional-diet",
+        "animal-fats"
+      ]
+    },
+    "WAL-CLM-DDDL-000109": {
+      "subject": "beef",
+      "also_about": [
+        "eggs"
+      ],
+      "facet": "protocol",
+      "question": "How much red meat does Wallach recommend eating during menopause?",
+      "answer_short": "For menopause, Wallach's protocol includes eating red meat once each day, plus 2 eggs daily and a monthly liver flush, on top of the base-line supplements and calcium/magnesium.",
+      "topics": [
+        "menopause",
+        "red meat",
+        "protocol",
+        "diet"
+      ]
+    },
+    "WAL-CLM-DDDL-000110": {
+      "subject": "beef",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does Wallach tell some people to cut back on red meat?",
+      "answer_short": "Because red meat is heavy in phosphorus relative to calcium; for bone/phosphorus-driven conditions like Paget's disease he says to reduce or eliminate red meat to correct the calcium/phosphorus ratio, the same logic that recurs for periodontal disease, triglycerides and hypertension.",
+      "topics": [
+        "calcium phosphorus ratio",
+        "red meat",
+        "pagets disease",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-DDDL-000111": {
+      "subject": "pork",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is fried pork bad for you according to Wallach?",
+      "answer_short": "Wallach credits the longer average lifespan of Mormons and Seventh-Day Adventists partly to their avoidance of fried foods, and he lists fried pork first among the fried foods to skip.",
+      "topics": [
+        "fried food",
+        "longevity",
+        "avoidance"
+      ]
+    },
+    "WAL-CLM-DDDL-000112": {
+      "subject": "eggs",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is egg a high-quality protein compared to other foods?",
+      "answer_short": "Whole egg tops Wallach's protein chart with a chemical score of 100 and 94% utilization, higher than human milk, cow's milk, or soybean, making it his benchmark for usable protein.",
+      "topics": [
+        "protein",
+        "protein-quality",
+        "nutrition",
+        "food-comparison"
+      ]
+    },
+    "WAL-CLM-DDDL-000113": {
+      "subject": "fish",
+      "also_about": [
+        "omega-3",
+        "salmon"
+      ],
+      "facet": "protocol",
+      "question": "Does fish oil help multiple sclerosis, and how much?",
+      "answer_short": "For MS, Wallach says avoiding fried foods and margarine plus a high intake of flax or fish oil (cod-liver or salmon oil) at 5 grams 3 times a day raises the survival rate by 50 percent.",
+      "topics": [
+        "fish-oil",
+        "omega-3",
+        "protocol",
+        "dose"
+      ]
+    },
+    "WAL-CLM-DDDL-000114": {
+      "subject": "fish",
+      "also_about": [
+        "germanium",
+        "tuna"
+      ],
+      "facet": "sources",
+      "question": "Does fish contain germanium?",
+      "answer_short": "Yes, but only a trace — and it is not a reason to eat tuna. Germanium is a trace element Wallach prizes as an immune booster (it stimulates natural killer cells, interferon and macrophages) and an oxygen-utilization cofactor, with deficiency showing up as weakened immunity, arthritis, osteoporosis, low energy and cancer. But tuna carries only about 2.3 ppm of germanium — actually less than ordinary beans at 4.67 ppm, and hundreds of times less than the germanium-rich foods like garlic, ginseng and shiitake mushrooms (100 to 2,000 ppm). So fish is a minor incidental source at best, and tuna in particular is a large predator fish that concentrates mercury — making it a poor way to chase germanium.",
+      "topics": [
+        "germanium",
+        "tuna",
+        "trace-mineral",
+        "food-source"
+      ]
+    },
+    "WAL-CLM-LETS-000484": {
+      "subject": "beef",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is there any condition where Wallach says to avoid beef entirely?",
+      "answer_short": "Yes. For lupus (SLE), Wallach explicitly says to avoid beef, along with dairy and alfalfa, as part of treatment.",
+      "topics": [
+        "lupus",
+        "sle",
+        "avoid beef",
+        "autoimmune"
+      ]
+    },
+    "WAL-CLM-LETS-000485": {
+      "subject": "beef",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is it dangerous to eat rare or undercooked beef?",
+      "answer_short": "Wallach warns that rare beef can transmit toxoplasmosis, especially dangerous for pregnant women because it can cause fetal birth defects such as brain damage, blindness and mental retardation.",
+      "topics": [
+        "rare beef",
+        "toxoplasmosis",
+        "pregnancy",
+        "birth defects"
+      ]
+    },
+    "WAL-CLM-LETS-000486": {
+      "subject": "pork",
+      "also_about": [
+        "eggs"
+      ],
+      "facet": "warning",
+      "question": "Can eating pork trigger a gallbladder attack?",
+      "answer_short": "Yes. Wallach says pork ranks close behind eggs and onions as a food that precipitates gallbladder attacks.",
+      "topics": [
+        "gallbladder",
+        "trigger food",
+        "gallstones"
+      ]
+    },
+    "WAL-CLM-LETS-000487": {
+      "subject": "pork",
+      "also_about": [
+        "beef",
+        "fish"
+      ],
+      "facet": "warning",
+      "question": "Can you get parasites or tapeworms from pork?",
+      "answer_short": "Yes. Wallach warns that raw pork is one of the foods that transmits tapeworm; the encysted larvae hatch in the gut and latch onto the intestinal wall.",
+      "topics": [
+        "tapeworm",
+        "parasites",
+        "raw pork",
+        "food safety"
+      ]
+    },
+    "WAL-CLM-LETS-000488": {
+      "subject": "fish",
+      "also_about": [
+        "omega-3",
+        "cholesterol",
+        "salmon"
+      ],
+      "facet": "mechanism",
+      "question": "How does fish oil help cholesterol / heart health?",
+      "answer_short": "The EPA in fish oil (and flax oil) raises protective HDL cholesterol — the fraction that ferries cholesterol to the liver for disposal — while refined sugar drives HDL down to dangerous levels.",
+      "topics": [
+        "fish-oil",
+        "hdl",
+        "cholesterol",
+        "epa"
+      ]
+    },
+    "WAL-CLM-HELLS-000001": {
+      "subject": "beef",
+      "also_about": [
+        "eggs"
+      ],
+      "facet": "stance",
+      "question": "Does Dr. Wallach think beef and red meat are good for you?",
+      "answer_short": "Yes. He calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
+      "topics": [
+        "red meat",
+        "protein",
+        "steak tartare",
+        "cooking"
+      ]
+    },
+    "WAL-CLM-HELLS-000002": {
+      "subject": "beef",
+      "also_about": [
+        "pork"
+      ],
+      "facet": "warning",
+      "question": "Is it dangerous to eat beef cooked well done?",
+      "answer_short": "Wallach cites a study of 930 women where eating beef and pork very well done raised breast-cancer risk 462% versus medium-rare; his point is that it is not the fat that harms you but how you cook it, because burnt animal fat becomes heterocyclic amines, powerful carcinogens.",
+      "topics": [
+        "well done meat",
+        "heterocyclic amines",
+        "breast cancer",
+        "cooking"
+      ]
+    },
+    "WAL-CLM-HELLS-000003": {
+      "subject": "beef",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does fattening beef cattle explain human obesity in Wallach's view?",
+      "answer_short": "Wallach's 'Feedlot Syndrome' analogy: ranchers fatten beef cattle on a constant stream of carbohydrate feed plus mineral-deficient conditions that keep the animal ravenously hungry, growing a 40-lb calf to 900-1,100 lb in a year; the same carb-heavy, mineral-poor setup, he argues, is fattening humans.",
+      "topics": [
+        "feedlot syndrome",
+        "obesity",
+        "carbohydrates",
+        "metabolic syndrome"
+      ]
+    },
+    "WAL-CLM-HELLS-000004": {
+      "subject": "pork",
+      "also_about": [
+        "beef",
+        "meat",
+        "eggs"
+      ],
+      "facet": "stance",
+      "question": "Does eating a lot of pork cause obesity and diabetes?",
+      "answer_short": "Not on its own, in Wallach's view. He points to the Old Order Amish, who eat pork, beef, goat and mutton 3 times a day plus heavy whole milk, butter and cheese — by his account consuming more sugar, fat, red meat and dairy than anyone in North America — and yet post an obesity rate of just 4% and a type-II diabetes rate of just 6%, only about a tenth and a half, respectively, of their 'modern' neighbors in the very same county. He credits that gap not to their meat-heavy diet, and not even to their hard farm labor (the horses do most of the work), but to the essential minerals in the wood ashes they spread on their garden soil every single morning.",
+      "topics": [
+        "amish",
+        "obesity",
+        "diabetes",
+        "mineral deficiency"
+      ]
+    },
+    "WAL-CLM-HELLS-000005": {
+      "subject": "eggs",
+      "also_about": [
+        "beef",
+        "butter",
+        "chicken",
+        "salt"
+      ],
+      "facet": "stance",
+      "question": "Are eggs actually bad for you, like doctors say?",
+      "answer_short": "Wallach cites a Scientific American longevity summary: the patients who followed doctors' advice to the letter didn't reach 100, while the 'rebellious' ones who ate salt, eggs, red meat, butter and chicken skin did.",
+      "topics": [
+        "longevity",
+        "contrarian-diet",
+        "eggs",
+        "doctors"
+      ]
+    },
+    "WAL-CLM-HELLS-000006": {
+      "subject": "eggs",
+      "also_about": [],
+      "facet": "history",
+      "question": "How did eggs help cure pellagra historically?",
+      "answer_short": "Pellagra turned out to be a dietary deficiency disease — a lack of vitamin B3 (niacin) — and eggs were part of the fix. Wallach recounts how a U.S. Public Health Service researcher noticed that in orphanages and mental asylums the residents came down with pellagra while the staff, who ate a wider variety of food, stayed well. When eggs and milk were simply added to the sufferers' diets, the pellagra disappeared. That result pointed to a missing dietary factor rather than the infection that most people of the era assumed, and it is Wallach's illustration that nutrient-dense foods like eggs can reverse a 'disease' that was really malnutrition.",
+      "topics": [
+        "pellagra",
+        "history",
+        "deficiency-disease",
+        "nutrient-density"
+      ]
+    },
+    "WAL-CLM-HELLS-000007": {
+      "subject": "fish",
+      "also_about": [
+        "selenium",
+        "omega-3",
+        "calcium",
+        "zinc",
+        "iodine"
+      ],
+      "facet": "sources",
+      "question": "Why does Wallach point to small fish as a near-complete food?",
+      "answer_short": "Because a small fish eaten whole packs nearly a complete diet into one food. Wallach points to the ancient Andean society of Norte Chico, whose primary protein was small fish — anchovies netted from the mineral-rich Humboldt Current — and notes that this single food supplied high-quality protein, a broad spread of minerals (calcium, zinc, selenium, magnesium, iodine), the fat-soluble vitamins A, D and E, and the essential fatty acids all at once. The 'small' and 'whole' are the point: you eat the entire fish, bones included, which is where the calcium and full mineral load come from — something a fillet of large fish can't give you. (In this passage Wallach names only the anchovy as his example; he doesn't list other small-fish species or shellfish here.)",
+      "topics": [
+        "whole-fish",
+        "nutrient-density",
+        "minerals",
+        "essential-fatty-acids"
+      ]
+    },
+    "WAL-CLM-HELLS-000008": {
+      "subject": "fish",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "biography",
+      "question": "Did Wallach have a hand in the official omega-3 / heart-health claim?",
+      "answer_short": "Yes — and it was more than a footnote. Wallach was a co-petitioner on the FDA petition (Docket No. 03Q-0401, filed 6/23/2003) that won the qualified health claim linking omega-3 fatty acids to reduced coronary heart disease risk, which the FDA allowed on 9/8/2004. It matters because it was one front in Wallach's larger legal war against the FDA — waged with First Amendment attorney Jonathan Emord — to force the agency to let supplement makers state health benefits that were actually proven. The same campaign carried his solo selenium-and-cancer claim (approved 4/28/2003); as he tells it, after losing every battle before the 1994 DSHEA Act, his side won every one that followed. So the official omega-3 heart-health language products can now use is partly his doing.",
+      "topics": [
+        "omega-3",
+        "fda",
+        "health-claim",
+        "biography"
+      ]
     }
   }
 }

@@ -367,10 +367,11 @@
       "symbol": "Mg",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 89,
+      "claim_count": 90,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -502,6 +503,12 @@
           ]
         },
         {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000007"
+          ]
+        },
+        {
           "kind": "interaction",
           "claim_ids": [
             "WAL-CLM-IMMORT-000206"
@@ -590,7 +597,7 @@
         "vitamin-e",
         "chromium",
         "vitamin-c",
-        "boron"
+        "zinc"
       ]
     },
     "phosphorus": {
@@ -933,10 +940,11 @@
       "symbol": "Ca",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 105,
+      "claim_count": 106,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -1084,6 +1092,12 @@
             "WAL-CLM-LETS-000079",
             "WAL-CLM-RARE-000082",
             "WAL-CLM-RARE-000083"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000007"
           ]
         },
         {
@@ -1640,7 +1654,7 @@
       "symbol": "Cu",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 59,
+      "claim_count": 60,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1721,6 +1735,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000166",
             "WAL-CLM-IMMORT-000100",
             "WAL-CLM-RARE-000119",
             "WAL-CLM-RARE-000121",
@@ -1865,7 +1880,7 @@
       "symbol": "Ge",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 20,
+      "claim_count": 21,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1920,6 +1935,7 @@
         {
           "kind": "food_source",
           "claim_ids": [
+            "WAL-CLM-DDDL-000114",
             "WAL-CLM-IMMORT-000145",
             "WAL-CLM-RARE-000013"
           ]
@@ -2134,10 +2150,11 @@
       "symbol": "I",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 26,
+      "claim_count": 27,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -2202,6 +2219,12 @@
           ]
         },
         {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000007"
+          ]
+        },
+        {
           "kind": "interaction",
           "claim_ids": [
             "WAL-CLM-IMMORT-000184"
@@ -2263,8 +2286,8 @@
         "hashimotos_disease",
         "graves_disease",
         "hyperthyroidism",
-        "chromium",
-        "cretinism"
+        "omega-3",
+        "selenium"
       ]
     },
     "manganese": {
@@ -2439,10 +2462,11 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 104,
+      "claim_count": 109,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -2498,6 +2522,7 @@
             "WAL-CLM-DDDL-000085",
             "WAL-CLM-EPIGEN-000005",
             "WAL-CLM-EPIGEN-000015",
+            "WAL-CLM-EPIGEN-000172",
             "WAL-CLM-LETS-000126",
             "WAL-CLM-LETS-000137",
             "WAL-CLM-LETS-000144",
@@ -2578,6 +2603,20 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000007",
             "WAL-CLM-DDDL-000072"
+          ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000177"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000168",
+            "WAL-CLM-EPIGEN-000171",
+            "WAL-CLM-HELLS-000007"
           ]
         },
         {
@@ -2915,10 +2954,11 @@
       "symbol": "Zn",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 110,
+      "claim_count": 111,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -3056,6 +3096,12 @@
           "claim_ids": [
             "WAL-CLM-RARE-000083",
             "WAL-CLM-RARE-000129"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000007"
           ]
         },
         {
@@ -3327,7 +3373,7 @@
       "symbol": "As",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "epigenetics",
         "immortality",
@@ -3347,6 +3393,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000066",
             "WAL-CLM-IMMORT-000038",
+            "WAL-CLM-IMMORT-000226",
             "WAL-CLM-RARE-000094",
             "WAL-CLM-RARE-000095"
           ]
@@ -3366,9 +3413,10 @@
       "works_with": [],
       "related": [
         "carpal_tunnel_syndrome",
+        "tmj",
+        "choline",
         "leukemia",
         "selenium",
-        "tmj",
         "zinc"
       ]
     },
@@ -4528,10 +4576,12 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 65,
+      "claim_count": 71,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -4625,7 +4675,18 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000164",
             "WAL-CLM-LETS-000196"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000162",
+            "WAL-CLM-EPIGEN-000167",
+            "WAL-CLM-EPIGEN-000175",
+            "WAL-CLM-HELLS-000007",
+            "WAL-CLM-IMMORT-000221"
           ]
         }
       ],
@@ -5344,7 +5405,7 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 35,
+      "claim_count": 36,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5410,7 +5471,8 @@
         {
           "kind": "food_source",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000219"
+            "WAL-CLM-IMMORT-000219",
+            "WAL-CLM-IMMORT-000232"
           ]
         },
         {
@@ -5687,15 +5749,16 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 11,
+      "claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor",
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
+      "one_liner": "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen. In his words: \"treated his rickets patients with cod liver oil, sunshine, and butter\".",
       "record": [
         {
           "kind": "dose",
@@ -5735,7 +5798,22 @@
         {
           "kind": "contraindication",
           "claim_ids": [
-            "WAL-CLM-DDDL-000083"
+            "WAL-CLM-DDDL-000083",
+            "WAL-CLM-DDDL-000106"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000165"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000162",
+            "WAL-CLM-EPIGEN-000170",
+            "WAL-CLM-HELLS-000007"
           ]
         }
       ],
@@ -5763,13 +5841,13 @@
       "works_with": [],
       "related": [
         "rickets",
-        "arthritis",
         "calcium",
         "magnesium",
+        "arthritis",
         "arteriosclerosis",
+        "omega-3",
         "osteomalacia",
-        "osteoporosis",
-        "restless_leg_syndrome"
+        "osteoporosis"
       ]
     },
     "vitamin-e": {
@@ -5779,10 +5857,11 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 71,
+      "claim_count": 72,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -5883,6 +5962,12 @@
           "kind": "prognosis",
           "claim_ids": [
             "WAL-CLM-DDDL-000072"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000007"
           ]
         }
       ],
@@ -5985,7 +6070,7 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 8,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -6016,6 +6101,13 @@
           "claim_ids": [
             "WAL-CLM-LETS-000261",
             "WAL-CLM-LETS-000382"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000163",
+            "WAL-CLM-EPIGEN-000176"
           ]
         }
       ],
@@ -6121,9 +6213,10 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 14,
+      "claim_count": 15,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -6157,6 +6250,12 @@
             "WAL-CLM-LETS-000293",
             "WAL-CLM-LETS-000356",
             "WAL-CLM-LETS-000373"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000226"
           ]
         }
       ],
@@ -6946,10 +7045,11 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 84,
+      "claim_count": 87,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -6969,6 +7069,7 @@
         {
           "kind": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000113",
             "WAL-CLM-EPIGEN-000016",
             "WAL-CLM-LETS-000123",
             "WAL-CLM-LETS-000125",
@@ -7050,6 +7151,7 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000064",
+            "WAL-CLM-LETS-000488",
             "WAL-CLM-RARE-000110"
           ]
         },
@@ -7059,6 +7161,12 @@
             "WAL-CLM-DDDL-000063",
             "WAL-CLM-IMMORT-000053",
             "WAL-CLM-RARE-000109"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000007"
           ]
         }
       ],
@@ -9108,9 +9216,10 @@
     "arteriosclerosis": {
       "type": "condition",
       "name": "Arteriosclerosis",
-      "claim_count": 8,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -9152,7 +9261,8 @@
         {
           "kind": "contraindication",
           "claim_ids": [
-            "WAL-CLM-DDDL-000083"
+            "WAL-CLM-DDDL-000083",
+            "WAL-CLM-EPIGEN-000177"
           ]
         },
         {
@@ -9160,28 +9270,34 @@
           "claim_ids": [
             "WAL-CLM-LETS-000001"
           ]
+        },
+        {
+          "kind": "quote",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000220"
+          ]
         }
       ],
       "search": [],
       "related_conditions": [
         "cancer",
         "stroke",
+        "atherosclerosis",
         "arthritis",
         "asthma",
-        "atherosclerosis",
+        "cardiomyopathy",
         "circulatory_disease",
-        "cystic_fibrosis",
-        "dementia"
+        "cystic_fibrosis"
       ],
       "related": [
         "cancer",
-        "magnesium",
         "stroke",
+        "atherosclerosis",
+        "magnesium",
         "vitamin-d",
         "arthritis",
         "asthma",
-        "atherosclerosis",
-        "circulatory_disease"
+        "cardiomyopathy"
       ]
     },
     "arthritis": {
@@ -9410,7 +9526,7 @@
     "atherosclerosis": {
       "type": "condition",
       "name": "Atherosclerosis",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -9443,6 +9559,12 @@
           "kind": "definition",
           "claim_ids": [
             "WAL-CLM-RARE-000116"
+          ]
+        },
+        {
+          "kind": "quote",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000220"
           ]
         }
       ],
@@ -10243,7 +10365,7 @@
     "birth_defects": {
       "type": "condition",
       "name": "Birth Defects",
-      "claim_count": 28,
+      "claim_count": 29,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -10310,6 +10432,12 @@
             "WAL-CLM-RARE-000015",
             "WAL-CLM-RARE-000016",
             "WAL-CLM-RARE-000047"
+          ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-LETS-000485"
           ]
         },
         {
@@ -10940,9 +11068,10 @@
     "breast_cancer": {
       "type": "condition",
       "name": "Breast Cancer",
-      "claim_count": 4,
+      "claim_count": 5,
       "books": [
         "dddl-3e-2011",
+        "hells-kitchen",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -10953,6 +11082,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-HELLS-000002",
             "WAL-CLM-LETS-000184",
             "WAL-CLM-LETS-000187"
           ]
@@ -11493,7 +11623,7 @@
     "cancer": {
       "type": "condition",
       "name": "Cancer",
-      "claim_count": 64,
+      "claim_count": 65,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11610,7 +11740,8 @@
           "kind": "contraindication",
           "claim_ids": [
             "WAL-CLM-DDDL-000061",
-            "WAL-CLM-DDDL-000091"
+            "WAL-CLM-DDDL-000091",
+            "WAL-CLM-EPIGEN-000177"
           ]
         },
         {
@@ -11645,10 +11776,10 @@
       "related_conditions": [
         "arthritis",
         "osteoporosis",
+        "cardiomyopathy",
         "infertility",
         "liver_disease",
         "breast_cancer",
-        "cardiomyopathy",
         "colon_cancer",
         "dementia"
       ],
@@ -11657,10 +11788,10 @@
         "arthritis",
         "osteoporosis",
         "vitamin-a",
+        "cardiomyopathy",
         "germanium",
         "infertility",
-        "liver_disease",
-        "breast_cancer"
+        "liver_disease"
       ]
     },
     "candidiasis": {
@@ -11906,7 +12037,7 @@
     "cardiomyopathy": {
       "type": "condition",
       "name": "Cardiomyopathy",
-      "claim_count": 13,
+      "claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11955,6 +12086,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000007",
             "WAL-CLM-RARE-000077"
+          ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000177"
           ]
         },
         {
@@ -12051,7 +12188,7 @@
     "carpal_tunnel_syndrome": {
       "type": "condition",
       "name": "Carpal Tunnel Syndrome",
-      "claim_count": 9,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12096,7 +12233,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IAIYH-000017"
+            "WAL-CLM-IAIYH-000017",
+            "WAL-CLM-IMMORT-000226"
           ]
         },
         {
@@ -12124,8 +12262,8 @@
         "asthma",
         "congenital_ataxia",
         "vitamin-b6",
-        "chondrodystrophy",
-        "chondromalacia"
+        "arsenic",
+        "chondrodystrophy"
       ]
     },
     "cataracts": {
@@ -12417,8 +12555,9 @@
     "cerebrovascular_disease": {
       "type": "condition",
       "name": "Cerebrovascular Disease",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -12439,6 +12578,12 @@
           "claim_ids": [
             "WAL-CLM-LETS-000211"
           ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000106"
+          ]
         }
       ],
       "search": [],
@@ -12448,6 +12593,7 @@
         "omega-3",
         "selenium",
         "vitamin-c",
+        "vitamin-d",
         "vitamin-e"
       ]
     },
@@ -17019,7 +17165,7 @@
     "gallstones": {
       "type": "condition",
       "name": "Gallstones",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
         "lets-play-doctor"
       ],
@@ -17047,6 +17193,12 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000283"
+          ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-LETS-000486"
           ]
         }
       ],
@@ -17390,7 +17542,7 @@
     "goiter": {
       "type": "condition",
       "name": "Goiter",
-      "claim_count": 19,
+      "claim_count": 20,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -17433,6 +17585,7 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000019",
             "WAL-CLM-IMMORT-000179",
+            "WAL-CLM-IMMORT-000230",
             "WAL-CLM-RARE-000147",
             "WAL-CLM-RARE-000148"
           ]
@@ -20099,14 +20252,16 @@
     "influenza": {
       "type": "condition",
       "name": "Influenza",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [
-        "WAL-CLM-LETS-000279"
+        "WAL-CLM-LETS-000279",
+        "WAL-CLM-RARE-000315"
       ],
       "restore": [
         "flavonoids",
@@ -20118,7 +20273,8 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-LETS-000279"
+            "WAL-CLM-LETS-000279",
+            "WAL-CLM-RARE-000315"
           ]
         }
       ],
@@ -22196,8 +22352,9 @@
     "mad_cow_disease": {
       "type": "condition",
       "name": "Mad Cow Disease",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
+        "epigenetics",
         "immortality"
       ],
       "synonyms": [],
@@ -22212,6 +22369,12 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000099",
             "WAL-CLM-IMMORT-000102"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000166"
           ]
         }
       ],
@@ -22670,17 +22833,19 @@
     "menopause": {
       "type": "condition",
       "name": "Menopause",
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [],
       "one_liner": "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable and can flatten sex drive in both men and women. In his words: \"Cholesterol is an essential part of the structure of cell walls, brain and spinal cord (myelin), the raw material for the production of vitamin D in the human body, bile acids, adrenal cortical hormones, estrogens (a cholesterol deficiency makes menopause a living hell), progesterone, and testosterone (a cholesterol deficiency will turn hubby into a TV watching steer who is totally disinterested in sex).\"",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000092",
-        "WAL-CLM-LETS-000223"
+        "WAL-CLM-LETS-000223",
+        "WAL-CLM-RARE-000317"
       ],
       "restore": [
         "calcium",
@@ -22691,7 +22856,8 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000092",
-            "WAL-CLM-LETS-000223"
+            "WAL-CLM-LETS-000223",
+            "WAL-CLM-RARE-000317"
           ]
         },
         {
@@ -23199,7 +23365,7 @@
     "multiple_sclerosis": {
       "type": "condition",
       "name": "Multiple Sclerosis",
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "epigenetics",
         "immortality",
@@ -23210,6 +23376,7 @@
       "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000015",
+        "WAL-CLM-EPIGEN-000172",
         "WAL-CLM-LETS-000371"
       ],
       "restore": [
@@ -23235,6 +23402,7 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000015",
+            "WAL-CLM-EPIGEN-000172",
             "WAL-CLM-LETS-000371"
           ]
         },
@@ -23258,8 +23426,8 @@
       ],
       "related": [
         "als",
-        "parkinsons_disease",
         "selenium",
+        "parkinsons_disease",
         "cardiomyopathy",
         "liver_cirrhosis",
         "liver_disease",
@@ -23409,7 +23577,7 @@
     "muscular_dystrophy": {
       "type": "condition",
       "name": "Muscular Dystrophy",
-      "claim_count": 15,
+      "claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -23464,6 +23632,12 @@
           "claim_ids": [
             "WAL-CLM-LETS-000001",
             "WAL-CLM-RARE-000049"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000168"
           ]
         }
       ],
@@ -23949,7 +24123,7 @@
     "night_blindness": {
       "type": "condition",
       "name": "Night Blindness",
-      "claim_count": 4,
+      "claim_count": 5,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -23977,6 +24151,12 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000380"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000167"
           ]
         }
       ],
@@ -25452,9 +25632,10 @@
     "pellagra": {
       "type": "condition",
       "name": "Pellagra",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -25481,6 +25662,12 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000388"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000006"
           ]
         }
       ],
@@ -27344,14 +27531,14 @@
     "rickets": {
       "type": "condition",
       "name": "Rickets",
-      "claim_count": 6,
+      "claim_count": 9,
       "books": [
         "epigenetics",
         "lets-play-doctor",
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
+      "one_liner": "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen. In his words: \"treated his rickets patients with cod liver oil, sunshine, and butter\".",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000413",
         "WAL-CLM-LETS-000420"
@@ -27376,6 +27563,19 @@
           "claim_ids": [
             "WAL-CLM-LETS-000413",
             "WAL-CLM-LETS-000420"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000165",
+            "WAL-CLM-EPIGEN-000174"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000170"
           ]
         }
       ],
@@ -28655,7 +28855,7 @@
     "stroke": {
       "type": "condition",
       "name": "Stroke",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -28698,14 +28898,20 @@
             "WAL-CLM-LETS-000439",
             "WAL-CLM-RARE-000202"
           ]
+        },
+        {
+          "kind": "quote",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000220"
+          ]
         }
       ],
       "search": [],
       "related_conditions": [
         "arteriosclerosis",
         "asthma",
-        "acne",
         "atherosclerosis",
+        "acne",
         "bronchitis",
         "cancer",
         "circulatory_disease",
@@ -28714,9 +28920,9 @@
       "related": [
         "arteriosclerosis",
         "asthma",
+        "atherosclerosis",
         "omega-3",
         "acne",
-        "atherosclerosis",
         "bronchitis",
         "cancer",
         "circulatory_disease"
@@ -28891,7 +29097,7 @@
     "tapeworms": {
       "type": "condition",
       "name": "Tapeworms",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -28906,6 +29112,12 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000444"
+          ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-LETS-000487"
           ]
         }
       ],
@@ -29336,7 +29548,7 @@
     "thyroid_disease": {
       "type": "condition",
       "name": "Thyroid Disease",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
         "immortality",
         "rare-earths"
@@ -29355,6 +29567,12 @@
           ]
         },
         {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000230"
+          ]
+        },
+        {
           "kind": "interaction",
           "claim_ids": [
             "WAL-CLM-IMMORT-000184"
@@ -29366,21 +29584,21 @@
         "anemia",
         "aneurysm",
         "arthritis",
+        "goiter",
         "hernia",
         "kawasaki_disease",
         "liver_cirrhosis",
-        "liver_disease",
-        "varicose_veins"
+        "liver_disease"
       ],
       "related": [
         "anemia",
         "aneurysm",
         "arthritis",
         "copper",
+        "goiter",
         "hernia",
         "iodine",
-        "kawasaki_disease",
-        "liver_cirrhosis"
+        "kawasaki_disease"
       ]
     },
     "tinnitus": {
@@ -29459,7 +29677,7 @@
     "tmj": {
       "type": "condition",
       "name": "Tmj",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -29484,6 +29702,12 @@
             "WAL-CLM-IMMORT-000037",
             "WAL-CLM-RARE-000176"
           ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000226"
+          ]
         }
       ],
       "search": [],
@@ -29503,9 +29727,9 @@
         "congenital_ataxia",
         "manganese",
         "repetitive_motion_syndrome",
+        "arsenic",
         "chondrodystrophy",
-        "chondromalacia",
-        "convulsions"
+        "chondromalacia"
       ]
     },
     "tongue_atrophy": {
@@ -29772,7 +29996,7 @@
     "toxoplasmosis": {
       "type": "condition",
       "name": "Toxoplasmosis",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -29788,11 +30012,21 @@
           "claim_ids": [
             "WAL-CLM-LETS-000456"
           ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-LETS-000485"
+          ]
         }
       ],
       "search": [],
-      "related_conditions": [],
-      "related": []
+      "related_conditions": [
+        "birth_defects"
+      ],
+      "related": [
+        "birth_defects"
+      ]
     },
     "trigeminal_neuralgia": {
       "type": "condition",
@@ -30748,7 +30982,7 @@
     "xerophthalmia": {
       "type": "condition",
       "name": "Xerophthalmia",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -30778,6 +31012,12 @@
           "claim_ids": [
             "WAL-CLM-LETS-000328",
             "WAL-CLM-LETS-000380"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000164"
           ]
         }
       ],
