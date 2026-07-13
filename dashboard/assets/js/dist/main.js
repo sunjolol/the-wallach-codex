@@ -50381,6 +50381,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       }
     },
     entities: {
+      absorption: {
+        display_name: "Nutrient Absorption",
+        type: "concept",
+        synonyms: [
+          "nutrient absorption",
+          "malabsorption",
+          "bioavailability",
+          "assimilation",
+          "you are what you absorb",
+          "gut absorption"
+        ],
+        related: [
+          "gluten",
+          "hypochlorhydria",
+          "phytates",
+          "digestion",
+          "colloidal_minerals",
+          "essential_nutrients"
+        ],
+        claim_count: 4
+      },
       aluminum: {
         display_name: "Aluminum",
         common_name: "Aluminum",
@@ -50784,6 +50805,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         claim_count: 6,
         symbol: "Ge"
+      },
+      gluten: {
+        display_name: "Gluten",
+        type: "substance",
+        synonyms: [
+          "wheat gluten",
+          "gliadin",
+          "gluten intolerance",
+          "gluten sensitivity",
+          "gluten-free",
+          "gluten enteropathy"
+        ],
+        related: [
+          "celiac_disease",
+          "absorption",
+          "villi",
+          "wheat",
+          "malabsorption",
+          "phytates"
+        ],
+        claim_count: 2
       },
       gold: {
         display_name: "Gold",
@@ -51378,6 +51420,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         }
       },
       {
+        id: "WAL-CLM-DDDL-000021",
+        subject: "absorption",
+        also_about: [
+          "iron",
+          "vitamin-c",
+          "phytates"
+        ],
+        facet: "sources",
+        question: "What helps or blocks iron absorption?",
+        answer_short: "Vitamin C sharply increases iron absorption, while clays and phytates work the other way and decrease it \u2014 so what you eat alongside a mineral changes how much you actually take up.",
+        answer: "Ascorbic acid (vitamin C) increases iron absorption; clays and phytates decrease it.",
+        verbatim: "Ascorbic acid increases the absorption of iron;\nclays and phytates decrease the absorption of iron.",
+        page: null,
+        book_id: "dddl-3e-2011",
+        topics: [
+          "iron",
+          "vitamin-c",
+          "phytates",
+          "bioavailability"
+        ],
+        tier1_link: {
+          essentials: [
+            "iron",
+            "vitamin-c"
+          ]
+        }
+      },
+      {
         id: "WAL-CLM-DDDL-000034",
         subject: "diabetes",
         also_about: [],
@@ -51429,6 +51499,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           ],
           conditions: [
             "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-DDDL-000053",
+        subject: "absorption",
+        also_about: [
+          "asthma",
+          "malabsorption"
+        ],
+        facet: "stance",
+        question: "Are some 'diseases' really just malabsorption?",
+        answer_short: "Wallach reframes conditions like asthma as malabsorption diseases \u2014 the real problem isn't the lungs but a gut failing to absorb essential fatty acids, manganese, and magnesium.",
+        answer: "Asthma is a malabsorption disease featuring essential fatty acid, manganese, and magnesium deficiencies.",
+        verbatim: "Asthma is a\ndisease of malabsorption with essential fatty acid deficiencies and\ndeficiencies of manganese and magnesium.",
+        page: null,
+        book_id: "dddl-3e-2011",
+        topics: [
+          "malabsorption",
+          "asthma",
+          "essential-fatty-acids"
+        ],
+        tier1_link: {
+          essentials: [
+            "manganese",
+            "magnesium"
+          ],
+          conditions: [
+            "asthma"
           ]
         }
       },
@@ -51734,6 +51833,64 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "diet",
           "county-survey"
         ]
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000029",
+        subject: "absorption",
+        also_about: [
+          "hypochlorhydria",
+          "cobalt"
+        ],
+        facet: "mechanism",
+        question: "How does low stomach acid block absorption?",
+        answer_short: "Stomach acid \u2014 made from ordinary salt \u2014 is required to absorb vitamin B12, activate the protein enzyme pepsin, and take up minerals. When acid runs low (hypochlorhydria), absorption fails.",
+        answer: "Wallach explains that low stomach acid (hypochlorhydria) undermines digestion and nutrient absorption. The acid-manufacturing chief cells of the stomach make hydrochloric acid from sodium chloride (table salt), and that stomach acid is needed to keep the stomach environment sterile -- below a pH of 2.0, preventing the overgrowth of bacteria, viruses, yeast, and fungus, gastric fermentation, and reflux -- to activate the 'intrinsic factor' required for vitamin B12 absorption, to activate the protein-digesting enzyme pepsin, and to facilitate the absorption of minerals. When stomach acid is too low, the absorption of vitamin B12, proteins, and minerals fails.",
+        verbatim: "There are two major issues that have to be considered to ensure optimal\nabsorption: hypochlorhydria (i.e,, low stomach acid levels) and gluten intolerance:\n\nHypochlorhydria\n\nThe raw material for the Chief Cells, the acid-manufacturing cells of the\nstomach, to make hydrochloric acid is NaCl, which is salt. Stomach acid is\nrequired to keep the stomach environment sterile and free of bacteria, viruses,\nyeast, and fungus.",
+        page: 596,
+        book_id: "epigenetics",
+        topics: [
+          "hypochlorhydria",
+          "stomach-acid",
+          "b12",
+          "intrinsic-factor"
+        ],
+        tier1_link: {
+          conditions: [
+            "hypochlorhydria"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000030",
+        subject: "gluten",
+        also_about: [
+          "celiac_disease",
+          "malabsorption"
+        ],
+        facet: "mechanism",
+        question: "Why is gluten so damaging to the gut?",
+        answer_short: "Wallach frames gluten not as an allergy but a 'contact enteritis' \u2014 like poison ivy, but on the gut lining \u2014 that gradually destroys the intestinal villi and leaves you unable to absorb nutrients.",
+        answer: "Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten.",
+        verbatim: "includes celiac disease (wheat allergy that occurs concurrently with contact\nenteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory\nbowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,\ngastritis, bloating, and reflux.\n\nThe gradual and progressive loss of intestinal villi as a result of contact\nenteritis produces a kaleidoscope of nutritional-deficiency diseases as a result\nof malabsorption",
+        page: 598,
+        book_id: "epigenetics",
+        topics: [
+          "contact-enteritis",
+          "gluten-free",
+          "leaky-gut",
+          "villi"
+        ],
+        tier1_link: {
+          conditions: [
+            "celiac_disease",
+            "diverticulitis",
+            "irritable_bowel_syndrome",
+            "colitis",
+            "crohns_disease",
+            "bloating",
+            "malabsorption"
+          ]
+        }
       },
       {
         id: "WAL-CLM-EPIGEN-000060",
@@ -52455,6 +52612,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "muscle",
           "nerves"
         ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000068",
+        subject: "absorption",
+        also_about: [
+          "calcium",
+          "celiac_disease",
+          "hypochlorhydria",
+          "phytates"
+        ],
+        facet: "mechanism",
+        question: "What blocks calcium from being absorbed?",
+        answer_short: "It depends on the form and the gut: a metallic calcium pill may be only 1\u20133% absorbed, and phytates in grains, low stomach acid, celiac damage, sugar and carbonation all drive it lower.",
+        answer: "How well calcium is absorbed depends heavily on its form and the gut environment. It is taken up mainly in the duodenum while the contents are still acidic; once the intestine turns alkaline, absorption falls off. Plain metallic calcium may be only 1-3% absorbed, whereas an organically bound, plant-derived colloidal or water-soluble chelated form can reach up to 98%. Wallach lists the causes of a calcium deficiency as: too little vitamin D; low stomach acid (hypochlorhydria, which can follow a salt-restricted diet); lactose intolerance; celiac disease; a high-fat or low-protein diet; and heavy fiber and phytate intake. Phytic acid (in grain bran, oatmeal, whole wheat) and oxalic acid (in rhubarb, spinach, chard, mustard greens) each bind calcium into insoluble, unabsorbable salts, and excess sugar, carbonation and caffeine leach stored calcium from the bones.",
+        verbatim: "Causes of a calcium deficiency can include, a\ndeficiency or lack of vitamin D; the lack of stomach acid\nor hypochlorhydria can result from a restricted NaCl (salt)\nintake; lactose intolerance; celiac disease; high fat diet; low\nprotein diet; and a high fiber and phytate consumption.",
+        page: 121,
+        book_id: "immortality",
+        topics: [
+          "calcium",
+          "phytates",
+          "bioavailability",
+          "celiac"
+        ],
+        tier1_link: {
+          essentials: [
+            "calcium"
+          ],
+          conditions: [
+            "celiac_disease",
+            "lactose_intolerance",
+            "hypochlorhydria"
+          ]
+        }
       },
       {
         id: "WAL-CLM-IMMORT-000069",
@@ -54584,6 +54774,33 @@ therapy from the Madagascar periwinkle`,
           "cancer",
           "autoimmune"
         ]
+      },
+      {
+        id: "WAL-CLM-LETS-000209",
+        subject: "gluten",
+        also_about: [
+          "celiac_disease",
+          "malabsorption"
+        ],
+        facet: "protocol",
+        question: "What does celiac disease do to absorption, and can the gut heal?",
+        answer_short: "Wheat gluten can destroy up to 70% of the intestine's absorptive surface (90% by age 45\u201350). Wallach says removing the offending grain lets the gut repair over about 90 days.",
+        answer: "Celiac disease is a loss of the small-intestine villi and scarring of the supporting tissue that can destroy up to 70% (and by age 45-50 up to 90%) of the absorptive surface, classically from a wheat-gluten sensitivity \u2014 though cow's-milk albumen and soy protein cause the same damage. Wallach calls it the basic cause of many diseases through malabsorption (diabetes from chromium and vanadium, cancer from zinc, vitamin A and selenium, and muscular dystrophy and cystic fibrosis from selenium). Diagnosis and treatment use the pulse test for allergies and then eliminating or rotating the offending allergen (especially wheat, cow's milk, and soy); it takes about 90 days to repair the injured gut.",
+        verbatim: "Diagnosis and treatment of celiac disease includes using the pulse test for allergies (i.e.,\nwhole wheat is great unless your allergic to\nit!!!) especially wheat, cow's milk and soy\nproducts and eliminating and/or rotating the\noffending allergen - it takes 90 days to repair\nthe injured gut which means there is great\nhope if you take the effort to see if, in fact, you\nare sensitive to wheat, cow's milk or soy",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "celiac",
+          "villi",
+          "90-day-gut-repair",
+          "gluten-free",
+          "pulse-test"
+        ],
+        tier1_link: {
+          conditions: [
+            "celiac_disease"
+          ]
+        }
       },
       {
         id: "WAL-CLM-LETS-000232",
@@ -93308,7 +93525,22 @@ Decisions locked with Luneth this session: (A) therapeutic tier shown as a soft,
 
 THE BLIND SPOT (why this session matters beyond the code): Luneth revealed that Wallach's stance is a TWO-PRONGED, inseparable model \u2014 get all 90 essentials AND remove bad foods (esp. gluten: wheat/barley/rye/oats) so the body can ABSORB them ("you are not what you eat, you are what you absorb"). This is JUST AS important as the 90 essentials. It is stated CONSTANTLY across the corpus (283 gluten/celiac/leaky-gut/malabsorption/villi hits) and there are sealed Good/Bad-Foods flyers \u2014 yet the app NEVER surfaced it, across many sessions, so a lifelong Wallach follower couldn't tell if the app even knew about it. That is a massive, repeated error. It is now recorded as the next session's TOP-PRIORITY, full-focus workstream: propagate the diet/absorption stance across the app (a persistent absorption caveat everywhere coverage shows + a dedicated Foods & Absorption section), and re-mine ALL books for EVERY food/absorption stance, using modern persuasive UX. Full plan: chronicle/diet-absorption-blueprint.md.
 
-Deferrals on trace/rare: therapeutic-note formal seal (offered), Cal Toddy label reconciliation, source-row prices + 600 mg tie-ordering.` }];
+Deferrals on trace/rare: therapeutic-note formal seal (offered), Cal Toddy label reconciliation, source-row prices + 600 mg tie-ordering.` }, { id: "lg_mriolqga_1mtd8c", ts: "2026-07-12T22:47:29.194318-05:00", surface: "knowledge", kind: "round-close", summary: "Diet & Absorption kickoff: first two searchable topic pages (Gluten + Nutrient Absorption) surface Wallach's second prong, built from already-sealed claims (no new seal). Pilot pattern signed off by Luneth.", detail: `Kicked off the top-priority Diet & Absorption workstream with a small pilot to prove the pattern before the big mine. Two new searchable topic pages \u2014 "Gluten" and "Nutrient Absorption" \u2014 now make Wallach's second prong (remove the bad foods so the body can absorb the 90 essentials) visible in the app for the first time. Built entirely from claims already sealed in the corpus, so nothing new had to be sealed and the change is safe + additive. Luneth signed off on the voice + structure (his real feedback waits for a live look).
+
+Approach: enrich already-sealed claims into new search entities rather than re-mine \u2014 the fast, zero-risk way to surface a stance the corpus already holds. Confirmed by reading eden/tools/search_index_derive.py that DUAL-HOME is real: validate() deliberately has no "must be search-only" check (lines 93-96), so an enriched tier-1 claim renders in Explore AND stays operational (tier1_link is emitted for non-search-only claims). The stale note in search-enrichment.json that implied enrichment requires search-only is wrong.
+
+Files (both UNSEALED source files, written via safe_write \xA717 through a transactional staging script):
+- eden/catalog/search-entities.json: +3 entities \u2014 gluten (substance), absorption (concept, display "Nutrient Absorption"), phytates (concept).
+- eden/corpus/search-enrichment.json: +6 enrichment rows keyed by already-sealed claim ids:
+  \xB7 Gluten page: EPIGEN-000030 (contact-enteritis mechanism) + LETS-000209 (celiac villi-loss, 70-90% surface loss, ~90-day gut repair; protocol).
+  \xB7 Nutrient Absorption page: EPIGEN-000029 (hypochlorhydria/low stomach acid mechanism) + IMMORT-000068 (calcium form + gut pH, phytate/celiac blockers; mechanism) + DDDL-000021 (vitamin C vs clays/phytates; sources) + DDDL-000053 (asthma reframed as a malabsorption disease; stance).
+(LETS-000083 was already enriched under subject "macrobiotics", so the Gluten page has 2 cards; Nutrient Absorption has 4.)
+
+Derive + verify: build_embeds regenerated search-index.json (327 KB); node tools/build.mjs rebuilt the bundle. search_index_derive --check VALID; PYTHONUTF8=1 python tools/invariants.py 62/62; render_probe_knowledge PASS (Explore now 42 chips including gluten + absorption, topic pages render faceted + book-cited, 0 page errors). Screenshot-verified both pages via a puppeteer probe: colour-coded facets (mechanism blue, protocol green, sources teal, stance orange), resolved related-pill cross-links (Gluten <-> Nutrient Absorption navigable), correct book meta lines, faithful plain-modern voice.
+
+\xA700.A + charged-content: every card traces to a sealed Wallach book claim; no fabricated content (the derive only re-homes sealed claims). Charged content kept out per Luneth's ruling \u2014 keep homosexuality/intersex out of the diet/gluten/absorption content, and stop + ask if they ever cannot be cleanly separated; the EPIGEN-000030 verbatim was already scoped to end at "malabsorption", before the charged disease-list clause.
+
+Deferrals: (a) the topic-page hero lede is blank on both pages until a basics-facet opener is mined ("What is gluten?" / "What is absorption?" \u2014 the "you are what you absorb" mantra + the Mayo "115 million / one-third" stat), which needs the new-claim + corpus-seal pass. (b) Next: the exhaustive enrich-then-mine across all 6 books (scope decision: exhaustive on distinct stances, dedup the near-identical celiac-type-change repeats), then Phase 2 the dedicated Foods & Absorption Knowledge tab (the live persuasive surface Luneth will judge live), then Part A the persistent absorption caveat across coverage surfaces, then the Coverage-tab overhaul. Governing guardrail: persuade via one great surface + rare load-bearing pointers, never saturate (memory persuade-dont-shove-restraint).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

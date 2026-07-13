@@ -884,6 +884,63 @@
         "essential_nutrients",
         "hospital_dangers"
       ]
+    },
+    "gluten": {
+      "display_name": "Gluten",
+      "type": "substance",
+      "synonyms": [
+        "wheat gluten",
+        "gliadin",
+        "gluten intolerance",
+        "gluten sensitivity",
+        "gluten-free",
+        "gluten enteropathy"
+      ],
+      "related": [
+        "celiac_disease",
+        "absorption",
+        "villi",
+        "wheat",
+        "malabsorption",
+        "phytates"
+      ]
+    },
+    "absorption": {
+      "display_name": "Nutrient Absorption",
+      "type": "concept",
+      "synonyms": [
+        "nutrient absorption",
+        "malabsorption",
+        "bioavailability",
+        "assimilation",
+        "you are what you absorb",
+        "gut absorption"
+      ],
+      "related": [
+        "gluten",
+        "hypochlorhydria",
+        "phytates",
+        "digestion",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "phytates": {
+      "display_name": "Phytates",
+      "type": "concept",
+      "synonyms": [
+        "phytate",
+        "phytic acid",
+        "anti-nutrient",
+        "mineral blockers"
+      ],
+      "related": [
+        "absorption",
+        "calcium",
+        "iron",
+        "zinc",
+        "gluten"
+      ]
     }
   }
 }

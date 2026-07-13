@@ -2602,6 +2602,105 @@
         "diet",
         "county-survey"
       ]
+    },
+    "WAL-CLM-EPIGEN-000030": {
+      "subject": "gluten",
+      "also_about": [
+        "celiac_disease",
+        "malabsorption"
+      ],
+      "facet": "mechanism",
+      "question": "Why is gluten so damaging to the gut?",
+      "answer_short": "Wallach frames gluten not as an allergy but a 'contact enteritis' — like poison ivy, but on the gut lining — that gradually destroys the intestinal villi and leaves you unable to absorb nutrients.",
+      "topics": [
+        "contact-enteritis",
+        "gluten-free",
+        "leaky-gut",
+        "villi"
+      ]
+    },
+    "WAL-CLM-LETS-000209": {
+      "subject": "gluten",
+      "also_about": [
+        "celiac_disease",
+        "malabsorption"
+      ],
+      "facet": "protocol",
+      "question": "What does celiac disease do to absorption, and can the gut heal?",
+      "answer_short": "Wheat gluten can destroy up to 70% of the intestine's absorptive surface (90% by age 45–50). Wallach says removing the offending grain lets the gut repair over about 90 days.",
+      "topics": [
+        "celiac",
+        "villi",
+        "90-day-gut-repair",
+        "gluten-free",
+        "pulse-test"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000029": {
+      "subject": "absorption",
+      "also_about": [
+        "hypochlorhydria",
+        "cobalt"
+      ],
+      "facet": "mechanism",
+      "question": "How does low stomach acid block absorption?",
+      "answer_short": "Stomach acid — made from ordinary salt — is required to absorb vitamin B12, activate the protein enzyme pepsin, and take up minerals. When acid runs low (hypochlorhydria), absorption fails.",
+      "topics": [
+        "hypochlorhydria",
+        "stomach-acid",
+        "b12",
+        "intrinsic-factor"
+      ]
+    },
+    "WAL-CLM-IMMORT-000068": {
+      "subject": "absorption",
+      "also_about": [
+        "calcium",
+        "celiac_disease",
+        "hypochlorhydria",
+        "phytates"
+      ],
+      "facet": "mechanism",
+      "question": "What blocks calcium from being absorbed?",
+      "answer_short": "It depends on the form and the gut: a metallic calcium pill may be only 1–3% absorbed, and phytates in grains, low stomach acid, celiac damage, sugar and carbonation all drive it lower.",
+      "topics": [
+        "calcium",
+        "phytates",
+        "bioavailability",
+        "celiac"
+      ]
+    },
+    "WAL-CLM-DDDL-000021": {
+      "subject": "absorption",
+      "also_about": [
+        "iron",
+        "vitamin-c",
+        "phytates"
+      ],
+      "facet": "sources",
+      "question": "What helps or blocks iron absorption?",
+      "answer_short": "Vitamin C sharply increases iron absorption, while clays and phytates work the other way and decrease it — so what you eat alongside a mineral changes how much you actually take up.",
+      "topics": [
+        "iron",
+        "vitamin-c",
+        "phytates",
+        "bioavailability"
+      ]
+    },
+    "WAL-CLM-DDDL-000053": {
+      "subject": "absorption",
+      "also_about": [
+        "asthma",
+        "malabsorption"
+      ],
+      "facet": "stance",
+      "question": "Are some 'diseases' really just malabsorption?",
+      "answer_short": "Wallach reframes conditions like asthma as malabsorption diseases — the real problem isn't the lungs but a gut failing to absorb essential fatty acids, manganese, and magnesium.",
+      "topics": [
+        "malabsorption",
+        "asthma",
+        "essential-fatty-acids"
+      ]
     }
   }
 }
