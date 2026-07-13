@@ -101,3 +101,13 @@ export function foodsEat(): FoodCard[] {
 export function foodsConditional(): FoodCard[] {
   return cards(data().conditional, ['stance', 'warning', 'protocol', 'basics']);
 }
+
+/** The featured villi pull-quote: the resolved sealed claim + the phrase to highlight from, or null. */
+export function foodsVilliQuote(): { claim: SearchClaim; highlightFrom: string } | null {
+  const q = data().villi_quote;
+  if (q === undefined) {
+    return null;
+  }
+  const claim = getSearchClaim(q.id);
+  return claim !== null ? { claim, highlightFrom: q.highlight_from } : null;
+}

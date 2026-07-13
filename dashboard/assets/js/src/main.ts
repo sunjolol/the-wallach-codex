@@ -31,6 +31,7 @@ import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
 import * as searchView from './views/search.js';
 import { initGlossTooltip } from './views/gloss-tooltip.js';
+import { initAlienFlavor } from './views/alien-flavor.js';
 
 /*
  * Reference all unused imports so they're held by the bundler (scaffolds
@@ -341,6 +342,7 @@ function bootstrap(): void {
   wireDrawerKeys();
   wireJourneyAutoDerive();
   initGlossTooltip();
+  initAlienFlavor();
 
   /*
    * Default landing: Coverage (the new view). Defer one tick so legacy JS

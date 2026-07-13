@@ -7,5 +7,6 @@
   ],
   "remove": ["gluten", "dietary_oils", "sugar", "carbonated_beverages", "processed_meat"],
   "eat": ["eggs", "meat", "salt"],
-  "conditional": ["dairy", "water", "cruciferous_vegetables", "phytates"]
+  "conditional": ["dairy", "water", "cruciferous_vegetables", "phytates"],
+  "villi_quote": { "id": "WAL-CLM-EPIGEN-000158", "highlight_from": "the consumption of gluten" }
 }

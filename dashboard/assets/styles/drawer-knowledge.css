@@ -1459,17 +1459,47 @@
 #drawer-knowledge-mount .kt-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 14px; }
 /* ═══════════════════════════ ABSORPTION tab · the "second prong" landing (diet/absorption) ═══════════════════════════ */
 #drawer-knowledge-mount .kd-foods { --fam-science: #2f9dba; --fam-action: #5aa82c; --fam-story: #8a52d6; padding-bottom: 40px; }
-#drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 34px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
-#drawer-knowledge-mount .kd-foods-readout { position: absolute; top: 6px; right: 0; text-align: right; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-tech-dim); line-height: 1.5; }
-#drawer-knowledge-mount .kd-foods-readout span { display: block; }
-#drawer-knowledge-mount .kd-foods-readout .ds-pulse { margin-right: 5px; width: 6px; height: 6px; }
-#drawer-knowledge-mount .kd-foods-eyebrow { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: var(--ds-space-4); max-width: 78%; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 600; letter-spacing: var(--ds-track-widest); text-transform: uppercase; color: var(--ds-ink-soft); }
-#drawer-knowledge-mount .kd-foods-eyebrow__r { color: var(--ds-accent-deep); font-family: var(--ds-font-sans); font-weight: 700; letter-spacing: var(--ds-track-wide); white-space: nowrap; }
-#drawer-knowledge-mount .kd-foods-eyebrow__rule { height: 1px; background: linear-gradient(to right, var(--ds-rule) 0%, var(--ds-rule) 55%, var(--ds-accent) 60%, var(--ds-accent) 70%, var(--ds-rule) 75%, var(--ds-rule) 100%); }
-#drawer-knowledge-mount .kd-foods-hero__h { font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.06; letter-spacing: -0.015em; margin: 14px 0 0; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 30px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
+/* Fantocrypt -- an "alien language" display face used ONLY as a decorative flavour accent:
+   text that carries no real info (the WALLACH-CORP brand stamp) renders as unreadable alien
+   glyphs, signalling to the eye "this is flavour, not information" (Luneth 2026-07-13). Declared
+   HERE (not the sealed design-system.css) so it stays local to the drawer -- promote to a
+   --ds-font-* token if it spreads. */
+@font-face { font-family: 'Fantocrypt'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/Fantocrypt.ttf') format('truetype'); }
+/* The corner lockup below the rule: the alien callsign then the dark scan-id, right-aligned. */
+#drawer-knowledge-mount .kd-foods-corner { text-align: right; margin-top: 5px; }
+/* WALLACH-CORP brand stamp -- the alien Fantocrypt "callsign" that shimmers (alien-flavor.ts).
+   No-caps + extra tracking so the glyphs read as a LIVING alien inscription, not a text glitch. */
+#drawer-knowledge-mount .kd-foods-brand { font-family: 'Fantocrypt', var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.2em; text-transform: lowercase; color: var(--ds-tech); line-height: 1.5; }
+/* FIG-01 scan-id -- matches the FIG-02 section kicker's number style exactly (mono / micro /
+   track-wider / uppercase / --ds-ink / weight 600) so the two FIG labels read as one system
+   (Luneth 2026-07-13, superseding the demo-SCAN-041 tracking). Dropped 3px below the callsign. */
+#drawer-knowledge-mount .kd-foods-scan { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink); font-weight: 600; line-height: 1.5; margin-top: 3px; }
+#drawer-knowledge-mount .kd-foods-eyebrow { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--ds-space-5); font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 500; letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-foods-eyebrow__l { white-space: nowrap; }
+#drawer-knowledge-mount .kd-foods-eyebrow__r { color: var(--ds-accent); font-family: var(--ds-font-sans); font-weight: 600; letter-spacing: var(--ds-track-wider); white-space: nowrap; }
+#drawer-knowledge-mount .kd-foods-eyebrow__rule { height: 1px; background: linear-gradient(to right, var(--ds-rule) 0%, var(--ds-rule) 60%, var(--ds-accent) 65%, var(--ds-accent) 72%, var(--ds-rule) 76%, var(--ds-rule) 100%); }
+/* The recurring scan kicker -- the same three-colour lockup shrunk to a per-section tag, so
+   the whole tab reads as one instrument (dark id // blue sep // orange subject). */
+#drawer-knowledge-mount .kd-foods-kicker { display: flex; align-items: center; gap: 7px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 600; letter-spacing: var(--ds-track-wider); text-transform: uppercase; margin-bottom: 7px; }
+#drawer-knowledge-mount .kd-foods-kicker__scan { color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-foods-kicker__sep { color: var(--ds-tech); }
+#drawer-knowledge-mount .kd-foods-kicker__sub { color: var(--ds-accent); }
+#drawer-knowledge-mount .kd-foods-hero__h { font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.06; letter-spacing: -0.015em; margin: 0; color: var(--ds-ink); }
+/* Demo-style numbered section header: big display number w/ tech L-brackets | kicker + heading. */
+#drawer-knowledge-mount .kd-foods-sec { display: grid; grid-template-columns: auto 1fr; gap: var(--ds-space-5); align-items: end; margin: 0 0 var(--ds-space-4); }
+#drawer-knowledge-mount .kd-foods-sec--hero { align-items: start; margin-top: -4px; }
+#drawer-knowledge-mount .kd-foods-sec--hero .kd-foods-sec__num { margin-top: -0.22em; line-height: 0.82; }
+#drawer-knowledge-mount .kd-foods-sec__num { position: relative; font-family: var(--ds-font-display); font-size: 4.5rem; font-weight: 900; line-height: 1; color: var(--ds-accent); letter-spacing: var(--ds-track-tight); }
+#drawer-knowledge-mount .kd-foods-sec__body { padding-bottom: var(--ds-space-2); min-width: 0; }
+#drawer-knowledge-mount .kd-foods-sec__body .ds-kicker { margin-bottom: var(--ds-space-2); }
+/* Pull-quote body: smaller than the .ds-pull-quote default so the first line does not wrap on "proteins". */
+#drawer-knowledge-mount .kd-foods-pq .ds-pull-quote { font-size: clamp(1.05rem, 1.5vw, 1.35rem); }
+/* Plain-language chart intro -- FULL WIDTH (no max-width) so it does not wrap mid-page. */
+#drawer-knowledge-mount .kd-foods-villi__intro { font-family: var(--ds-font-serif); font-size: 1.05rem; line-height: 1.6; color: var(--ds-ink-medium); margin: 0 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-foods-hero__h .l1 { display: block; }
 #drawer-knowledge-mount .kd-foods-hero__h .l2 { display: block; color: var(--ds-accent); font-style: italic; }
-#drawer-knowledge-mount .kd-foods-hero__deck { font-family: var(--ds-font-serif); font-size: 1rem; line-height: 1.6; color: var(--ds-ink-medium); max-width: 60ch; margin: 16px 0 0; }
+#drawer-knowledge-mount .kd-foods-hero__deck { font-family: var(--ds-font-serif); font-size: 1rem; line-height: 1.6; color: var(--ds-ink-medium); max-width: 64ch; margin: 16px 0 0; }
 #drawer-knowledge-mount .kd-foods-stat { margin: var(--ds-space-5) 0; }
 #drawer-knowledge-mount .kd-foods-stat .ds-pull-stat__num { font-size: clamp(2.8rem, 7vw, 4.6rem); }
 #drawer-knowledge-mount .kd-foods-stat .ds-pull-stat__body { font-size: var(--ds-text-lg); }
@@ -1487,7 +1517,12 @@
 #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__t, #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__metric { color: var(--ds-status-err); }
 #drawer-knowledge-mount .kd-foods-villi__art { width: 100%; height: auto; display: block; margin: var(--ds-space-3) 0 var(--ds-space-2); }
 #drawer-knowledge-mount .kd-foods-villi__gridline { stroke: var(--ds-tech); stroke-width: 0.5; opacity: 0.16; }
-#drawer-knowledge-mount .kd-foods-villi__v { stroke-width: 0.9; }
+#drawer-knowledge-mount .kd-foods-villi__v { stroke-width: 0.9; stroke-linejoin: round; }
+/* The "villi" feature term reuses the shared .gloss tooltip wiring (class="gloss" ->
+   document-delegated hover-box) but Luneth wants it louder than a dotted gloss: bold,
+   bright-orange, SOLID underline. Deliberately UNSCOPED (no #id) so the global .gloss:hover
+   (specificity 0,2,0) still wins the hover colour-deepen over this base rule. */
+.kd-foods-term { font-weight: 700; color: var(--ds-accent); border-bottom: 1.5px solid var(--ds-accent); }
 #drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__v { fill: color-mix(in srgb, var(--fam-action) 16%, transparent); stroke: var(--fam-action); }
 #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__v { fill: color-mix(in srgb, var(--ds-status-err) 15%, transparent); stroke: var(--ds-status-err); }
 #drawer-knowledge-mount .kd-foods-villi__wall { stroke: var(--ds-ink-soft); stroke-width: 1.1; }
@@ -1499,6 +1534,9 @@
 #drawer-knowledge-mount .kd-foods-villi__cap { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: 1.45; }
 #drawer-knowledge-mount .kd-foods-villi__note { font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.6; margin-top: var(--ds-space-4); padding-left: var(--ds-space-4); border-left: 2px solid var(--ds-accent); }
 #drawer-knowledge-mount .kd-foods-villi__note cite { display: block; font-style: normal; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 6px; }
+/* Featured pull-quote under the villi scan (design-system .ds-pull-quote). The page rides top-right (like the demo's PQ accent) in the tech-blue mono; the citation footer inherits from .ds-pull-quote. */
+#drawer-knowledge-mount .kd-foods-pq { margin: var(--ds-space-5) 0 var(--ds-space-6); }
+#drawer-knowledge-mount .kd-foods-pq__page { position: absolute; top: 0.7rem; right: 0.9rem; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-tech); letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-style: normal; }
 #drawer-knowledge-mount .kd-foods-hd { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: 1.15rem; color: var(--ds-ink); margin: 0 0 var(--ds-space-3); }
 #drawer-knowledge-mount .kd-foods-contrast { margin: var(--ds-space-6) 0; }
 #drawer-knowledge-mount .kd-foods-contrast__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); align-items: start; }

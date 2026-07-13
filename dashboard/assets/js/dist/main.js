@@ -11259,12 +11259,12 @@
       ...processCreateParams(params)
     });
   };
-  function floatSafeRemainder(val, step) {
+  function floatSafeRemainder(val, step2) {
     const valDecCount = (val.toString().split(".")[1] || "").length;
-    const stepDecCount = (step.toString().split(".")[1] || "").length;
+    const stepDecCount = (step2.toString().split(".")[1] || "").length;
     const decCount = valDecCount > stepDecCount ? valDecCount : stepDecCount;
     const valInt = Number.parseInt(val.toFixed(decCount).replace(".", ""));
-    const stepInt = Number.parseInt(step.toFixed(decCount).replace(".", ""));
+    const stepInt = Number.parseInt(step2.toFixed(decCount).replace(".", ""));
     return valInt % stepInt / 10 ** decCount;
   }
   var ZodNumber = class _ZodNumber extends ZodType {
@@ -14420,7 +14420,9 @@
     /** Foods to favor (good) -- entity slugs, in display order. */
     eat: external_exports.array(external_exports.string()).default([]),
     /** Conditional foods (stance turns on the form/context) -- entity slugs, in display order. */
-    conditional: external_exports.array(external_exports.string()).default([])
+    conditional: external_exports.array(external_exports.string()).default([]),
+    /** Featured pull-quote under the villi scan: a sealed search-claim id + the substring to highlight from (to the end). */
+    villi_quote: external_exports.object({ id: external_exports.string(), highlight_from: external_exports.string() }).optional()
   });
 
   // assets/js/src/core/schemas/pdm-coverage.ts
@@ -17931,10 +17933,10 @@
       kt_type_substance: "Substances",
       kt_type_person: "People",
       kd_tab_foods: "Absorption",
-      kd_foods_eyebrow_l: "The second prong",
-      kd_foods_eyebrow_r: "Diet & Absorption",
-      kd_foods_readout_1: "Wallach \xB7 Corpus",
-      kd_foods_readout_2: "Prong 2 of 2",
+      kd_foods_eyebrow_l: "The premise",
+      kd_foods_eyebrow_r: "Absorbability",
+      kd_foods_readout_2: "WALLACH-CORP // v1.0",
+      kd_foods_scan: "Fig\xB701",
       kd_foods_hl1: "You are not what you eat.",
       kd_foods_hl2: "You are what you absorb.",
       kd_foods_deck: "Getting all 90 essential nutrients is only half of Dr. Wallach\u2019s model. The other half \u2014 just as important \u2014 is removing the foods that keep your gut from absorbing them.",
@@ -17942,17 +17944,24 @@
       kd_foods_stat_num: "115M",
       kd_foods_stat_body: "Americans are gluten-intolerant \u2014 about one in three.",
       kd_foods_stat_small: "Cited by Wallach \xB7 Epigenetics",
+      kd_foods_sec02_kicker: "The mechanism",
       kd_foods_villi_title: "What gluten does to your gut",
+      kd_foods_villi_kicker_scan: "Fig\xB701",
+      kd_foods_villi_kicker_sub: "Villus scan",
       kd_foods_villi_ok_title: "Healthy gut",
       kd_foods_villi_ok_metric: "Absorb \u2191",
       kd_foods_villi_ok_cap: "Tall, dense villi \u2014 a vast surface area that pulls nutrients in.",
       kd_foods_villi_bad_title: "Gluten-damaged gut",
       kd_foods_villi_bad_metric: "Absorb \u2193",
       kd_foods_villi_bad_cap: "Flattened, blunted villi \u2014 nutrients slide past, unabsorbed.",
+      kd_foods_villi_gloss: "The millions of tiny finger-like projections lining the small intestine. Their vast surface area is where nutrients are absorbed into the blood \u2014 flatten them (as gluten can) and absorption collapses.",
       kd_foods_villi_note: "This is the second prong in one picture: gluten gradually wears down the villi that do the absorbing, so even a flawless 90-nutrient regimen underperforms until the gut heals.",
+      kd_foods_villi_explain: "In plain terms: gluten inflames and wears down the gut\u2019s absorbing surface \u2014 the tiny finger-like villi below. Stubby ones can\u2019t catch the passing nutrients; tall, dense ones reach up and pull them into your blood.",
       kd_foods_villi_cite: "Dr. Joel Wallach \xB7 Epigenetics (2014)",
       kd_foods_words_label: "In his own words",
-      kd_foods_contrast_hd: "What to change on your plate",
+      kd_foods_contrast_kicker_scan: "Fig\xB702",
+      kd_foods_contrast_kicker_sub: "Good foods & bad foods",
+      kd_foods_contrast_hd: "What to change in your diet",
       kd_foods_col_remove: "Take these out",
       kd_foods_col_eat: "Put these in",
       kd_foods_form_hd: "Sometimes it\u2019s the form, not the food"
@@ -92982,7 +92991,8 @@ deaths, blood clots, sterility`,
     ],
     remove: ["gluten", "dietary_oils", "sugar", "carbonated_beverages", "processed_meat"],
     eat: ["eggs", "meat", "salt"],
-    conditional: ["dairy", "water", "cruciferous_vegetables", "phytates"]
+    conditional: ["dairy", "water", "cruciferous_vegetables", "phytates"],
+    villi_quote: { id: "WAL-CLM-EPIGEN-000158", highlight_from: "the consumption of gluten" }
   };
 
   // assets/js/src/state/foods-curation.ts
@@ -93030,10 +93040,35 @@ deaths, blood clots, sterility`,
   function foodsConditional() {
     return cards(data4().conditional, ["stance", "warning", "protocol", "basics"]);
   }
+  function foodsVilliQuote() {
+    const q = data4().villi_quote;
+    if (q === void 0) {
+      return null;
+    }
+    const claim = getSearchClaim(q.id);
+    return claim !== null ? { claim, highlightFrom: q.highlight_from } : null;
+  }
 
   // assets/js/src/views/knowledge-foods.ts
   function escHTML9(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function withVilliGloss(raw) {
+    const def = escHTML9(ui("kd_foods_villi_gloss"));
+    return escHTML9(raw).replace(/\b(villi)\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
+  }
+  function secKicker(scanKey, subKey) {
+    return `<div class="kd-foods-kicker"><span class="kd-foods-kicker__scan">${escHTML9(ui(scanKey))}</span><span class="kd-foods-kicker__sep">//</span><span class="kd-foods-kicker__sub">${escHTML9(ui(subKey))}</span></div>`;
+  }
+  function sectionHeader(num, kicker, headingHTML, extra) {
+    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML9(kicker)}</div>` : "";
+    return `<header class="kd-foods-sec${extra}">
+      <span class="kd-foods-sec__num">${escHTML9(num)}</span>
+      <div class="kd-foods-sec__body">
+        ${kickerHTML}
+        ${headingHTML}
+      </div>
+    </header>`;
   }
   function facetSections(claims) {
     return SEARCH_FACETS.map((facet) => {
@@ -93047,6 +93082,9 @@ deaths, blood clots, sterility`,
     </details>`;
     }).join("");
   }
+  var BAR_JIT = [1, 0.82, 1.13, 0.9, 1.06, 0.78, 1.15, 0.87, 0.98];
+  var DOT_X = [0.05, 0.22, 0.39, 0.55, 0.72, 0.9];
+  var DOT_JY = [-4, 3, -2, 4, -3, 2];
   function villiArt(healthy) {
     const W = 220;
     const baseY = 108;
@@ -93055,7 +93093,8 @@ deaths, blood clots, sterility`,
     const usable = W - marginX * 2;
     const barW = 12;
     const gap = (usable - barW) / (n - 1);
-    const h = healthy ? 74 : 13;
+    const domeR = barW / 2;
+    const baseH = healthy ? 72 : 15;
     let grid = "";
     for (let x = marginX; x <= W - marginX; x += 22) {
       grid += `<line class="kd-foods-villi__gridline" x1="${x}" y1="20" x2="${x}" y2="${baseY}" />`;
@@ -93065,19 +93104,22 @@ deaths, blood clots, sterility`,
     }
     let vs = "";
     for (let i = 0; i < n; i += 1) {
-      const x = (marginX + i * gap).toFixed(1);
-      vs += `<rect class="kd-foods-villi__v" x="${x}" y="${baseY - h}" width="${barW}" height="${h}" />`;
+      const x = marginX + i * gap;
+      const h = baseH * BAR_JIT[i];
+      const topStraight = baseY - h + domeR;
+      vs += `<path class="kd-foods-villi__v" d="M${x.toFixed(1)} ${baseY} L${x.toFixed(1)} ${topStraight.toFixed(1)} A${domeR} ${domeR} 0 0 1 ${(x + barW).toFixed(1)} ${topStraight.toFixed(1)} L${(x + barW).toFixed(1)} ${baseY} Z" />`;
     }
     const wall = `<line class="kd-foods-villi__wall" x1="${marginX}" y1="${baseY}" x2="${W - marginX}" y2="${baseY}" />`;
     let ticks = "";
     for (let x = marginX; x <= W - marginX; x += 11) {
       ticks += `<line class="kd-foods-villi__tick" x1="${x}" y1="${baseY}" x2="${x}" y2="${baseY + 4}" />`;
     }
-    const dotY = healthy ? 64 : 28;
+    const dotBaseY = 64;
     let dots = "";
-    for (let i = 0; i < 6; i += 1) {
-      const cx = (30 + i * ((usable - 28) / 5)).toFixed(1);
-      dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${dotY}" r="4.5" style="animation-delay:${(i * 0.25).toFixed(2)}s" />`;
+    for (let i = 0; i < DOT_X.length; i += 1) {
+      const cx = (marginX + DOT_X[i] * usable).toFixed(1);
+      const cy = (dotBaseY + DOT_JY[i]).toFixed(1);
+      dots += `<circle class="kd-foods-villi__dot" cx="${cx}" cy="${cy}" r="4.5" style="animation-delay:${(i * 0.25).toFixed(2)}s" />`;
     }
     return `<svg class="kd-foods-villi__art" viewBox="0 0 ${W} 132" role="img" aria-hidden="true">${grid}${vs}${wall}${ticks}${dots}</svg>`;
   }
@@ -93092,14 +93134,37 @@ deaths, blood clots, sterility`,
         <div class="kd-foods-villi__metric">${escHTML9(metric)}</div>
       </div>
       ${villiArt(healthy)}
-      <div class="kd-foods-villi__cap">${escHTML9(cap)}</div>
+      <div class="kd-foods-villi__cap">${withVilliGloss(cap)}</div>
+    </div>`;
+  }
+  function collapseWS3(s) {
+    return s.replace(/\s+/g, " ").trim();
+  }
+  function fixQuoteGlyph(s) {
+    return s.replace(/"(\s*)$/, "\u201D$1");
+  }
+  function villiPullQuote() {
+    const q = foodsVilliQuote();
+    if (q === null) {
+      return "";
+    }
+    const text = fixQuoteGlyph(collapseWS3(q.claim.verbatim));
+    const idx = text.indexOf(q.highlightFrom);
+    const body = idx >= 0 ? `${escHTML9(text.slice(0, idx))}<mark class="ds-mark">${escHTML9(text.slice(idx))}</mark>` : escHTML9(text);
+    const page = q.claim.page !== null ? `Page \xB7 ${q.claim.page}` : "";
+    return `<div class="ds-pull-quote-wrap kd-foods-pq">
+      <blockquote class="ds-pull-quote">
+        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML9(page)}</span>` : ""}
+        <p>${body}</p>
+        <footer>${escHTML9(ui("kd_foods_villi_cite"))}</footer>
+      </blockquote>
     </div>`;
   }
   function foodItem(c, kind) {
     return `<button class="kd-foods-item kd-foods-item--${escHTML9(kind)}" type="button" data-kd-topic="${escHTML9(c.slug)}">
       <span class="kd-foods-item__nm">${escHTML9(c.name)}</span>
       <span class="kd-foods-item__why">${escHTML9(c.why)}</span>
-      <span class="kd-foods-item__go" aria-hidden="true">\u2192</span>
+      <span class="kd-foods-item__go" aria-hidden="true">&rarr;</span>
     </button>`;
   }
   function renderFoodsTab() {
@@ -93108,15 +93173,16 @@ deaths, blood clots, sterility`,
     const conditional = foodsConditional();
     return `<div class="kt-page kd-ep kd-foods">
     <header class="kd-foods-hero">
-      <div class="kd-foods-readout">
-        <span><span class="ds-pulse tech live"></span>${escHTML9(ui("kd_foods_readout_1"))}</span>
-        <span>${escHTML9(ui("kd_foods_readout_2"))}</span>
-      </div>
       <div class="kd-foods-eyebrow">
         <span class="kd-foods-eyebrow__l">${escHTML9(ui("kd_foods_eyebrow_l"))}</span>
         <span class="kd-foods-eyebrow__rule"></span>
+        <span class="kd-foods-eyebrow__r">${escHTML9(ui("kd_foods_eyebrow_r"))}</span>
       </div>
-      <h1 class="kd-foods-hero__h"><span class="l1">${escHTML9(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML9(ui("kd_foods_hl2"))}</span></h1>
+      <div class="kd-foods-corner">
+        <div class="kd-foods-brand" data-alien="${escHTML9(ui("kd_foods_readout_2"))}" aria-hidden="true">${escHTML9(ui("kd_foods_readout_2"))}</div>
+        <div class="kd-foods-scan">${escHTML9(ui("kd_foods_scan"))}</div>
+      </div>
+      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML9(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML9(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
       <p class="kd-foods-hero__deck">${escHTML9(ui("kd_foods_deck"))}</p>
     </header>
 
@@ -93127,15 +93193,17 @@ deaths, blood clots, sterility`,
     </div>
 
     <section class="kd-foods-villi">
-      <h2 class="kd-foods-hd">${escHTML9(ui("kd_foods_villi_title"))}</h2>
+      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML9(ui("kd_foods_villi_title"))}</h2>`, "")}
+      <p class="kd-foods-villi__intro">${withVilliGloss(ui("kd_foods_villi_explain"))}</p>
       <div class="kd-foods-villi__grid">
         ${villiPanel(false)}
         ${villiPanel(true)}
       </div>
-      <p class="kd-foods-villi__note">${escHTML9(ui("kd_foods_villi_note"))}<cite>${escHTML9(ui("kd_foods_villi_cite"))}</cite></p>
+      ${villiPullQuote()}
     </section>
 
     <section class="kd-foods-contrast">
+      ${secKicker("kd_foods_contrast_kicker_scan", "kd_foods_contrast_kicker_sub")}
       <h2 class="kd-foods-hd">${escHTML9(ui("kd_foods_contrast_hd"))}</h2>
       <div class="kd-foods-contrast__grid">
         <div class="kd-foods-col kd-foods-col--remove">
@@ -94967,7 +95035,17 @@ Chunk 4 (visual pass, per Luneth's notes + the trace-mineral-tile-detail.html re
 
 Verified: build green (tsc --noEmit + esbuild), invariants 62/62, render probe PASS, PAGE_ERRORS 0, collapsed + detail screenshots reviewed each iteration. NO corpus reseal \u2014 knowledge_version stays 327.
 
-Handoff: next-chunk.md fully rewritten so nothing is lost \u2014 backlog = (1) perfect the tab design from Luneth's incoming notes (WIP; memory visual-design-bar-and-principles); (2) 3 deferred Qs (food-card routing in-tab vs Explore; keep the "form" bucket; --\u2192\u2014 dash cleanup in some food whys); (3) the poached-eggs EPIGEN-000155 missing-outcome fix + a diet-vein OUTCOME AUDIT reseal (rule state-the-outcome-when-known); (4) bulk-enrich the ~180 on-theme claims into the thin food topics; (5) Part A absorption caveat (restraint \u2014 one great pointer); (6) Coverage-tab overhaul; then resume Phase-H. Two memories added this session: visual-design-bar-and-principles (the design bar + principles, WIP-flagged), state-the-outcome-when-known (show a case study's result when the book states one).` }];
+Handoff: next-chunk.md fully rewritten so nothing is lost \u2014 backlog = (1) perfect the tab design from Luneth's incoming notes (WIP; memory visual-design-bar-and-principles); (2) 3 deferred Qs (food-card routing in-tab vs Explore; keep the "form" bucket; --\u2192\u2014 dash cleanup in some food whys); (3) the poached-eggs EPIGEN-000155 missing-outcome fix + a diet-vein OUTCOME AUDIT reseal (rule state-the-outcome-when-known); (4) bulk-enrich the ~180 on-theme claims into the thin food topics; (5) Part A absorption caveat (restraint \u2014 one great pointer); (6) Coverage-tab overhaul; then resume Phase-H. Two memories added this session: visual-design-bar-and-principles (the design bar + principles, WIP-flagged), state-the-outcome-when-known (show a case study's result when the book states one).` }, { id: "lg_mrjggdhd_1ks9ao", ts: "2026-07-13T11:47:08.353277-05:00", surface: "knowledge", kind: "round-close", summary: "Absorption tab: big design pass from Luneth's live notes \u2014 demo-style numbered chapters (01/02), a Fantocrypt alien-flavour hero lockup, a clean grid-centred villi comparison, and Wallach's own words as a real sourced .ds-pull-quote (EPIGEN-000158, Epigenetics p.598).", detail: `Closed a big design + refinement pass on the Absorption tab (the diet/absorption "second prong"), built live from Luneth's notes across the session and signed off chunk-by-chunk. It now reads as a polished, digestible landing \u2014 the framework's second half finally has a surface worthy of it.
+
+Numbered demo-style section headers (reusable sectionHeader): big orange display number + optional dash-accented .ds-kicker + heading, NO L-corner brackets (retired \u2014 Luneth dislikes them). 01 = hero (no kicker; the number rides UP beside the black headline line, off-aligned, away from the orange \u2014 accent FILLS space); 02 = villi ("The mechanism" / "What gluten does to your gut", .ds-h-section). The contrast section still shows the old FIG\xB702 kicker \u2192 becomes "03" next.
+
+Hero: eyebrow "THE PREMISE \u2014\u2014\u25C6\u2014\u2014 ABSORBABILITY"; a three-colour corner lockup where WALLACH-CORP // v1.0 renders in a NEW alien display font (Fantocrypt.ttf) \u2014 flavour text that can't be reliable, useful text becomes unreadable alien glyphs ("flavour, not info"), animated as a GENTLE shimmer (views/alien-flavor.ts: 800ms tick, 1\u20133 letters morph, lowercase \u2014 a fast every-letter shimmer "spazzed out") \u2014 plus a dark FIG\xB701 styled IDENTICAL to the demo's SCAN\xB7041. Deck max-width:64ch (wraps after "The other half \u2014").
+
+Villi scan: rounded finger villi (deterministic jitter, probe-stable); nutrient dots re-centred on the grid (y=64 both panels) so the damaged-vs-healthy comparison reads at a glance; "villi" is a .gloss hover-term; a full-width plain-language intro sits above the panels.
+
+Pull-quote: the villi note is now a REAL sourced .ds-pull-quote \u2014 Wallach's verbatim EPIGEN-000158 (Epigenetics p.598, "contact enteritis"), resolved via foodsVilliQuote() (synced, R1; PAGE\xB7598 from the claim), with the textured .ds-mark highlighter (new #ds-filter-rough SVG in dashboard.html) and a reduced font-size so line 1 doesn't wrap on "proteins". \xA700.A honoured: the exact verbatim is used; only the OCR broken-quote GLYPH is normalised for display (words byte-identical) \u2014 FIXME to purify at source in the next reseal.
+
+Files: knowledge-foods.ts \xB7 alien-flavor.ts \xB7 foods-curation.{ts,json}+schema \xB7 main.ts \xB7 drawer-knowledge.css \xB7 view-copy.json \xB7 dashboard.html \xB7 assets/fonts/Fantocrypt.ttf \xB7 render_probe_knowledge.js. Verified: build OK \xB7 render_probe_knowledge PASS \xB7 invariants 62/62 \xB7 every chunk screenshot-verified with Luneth as the gate. The temporary handoff (chronicle/next-chunk.md) + the design memory were updated with the durable choices. Deferred: contrast\u2192"03", propagate the alien flavour font (approved), EPIGEN-000158 source reseal. knowledge_version unchanged (no corpus mining/reseal this session).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -96663,6 +96741,46 @@ Handoff: next-chunk.md fully rewritten so nothing is lost \u2014 backlog = (1) p
     window.addEventListener("scroll", hide, true);
   }
 
+  // assets/js/src/views/alien-flavor.ts
+  var LOWER = "abcdefghijklmnopqrstuvwxyz";
+  var TICK_MS = 800;
+  var MAX_MORPH = 3;
+  var wired2 = false;
+  function step(el) {
+    const base = el.getAttribute("data-alien");
+    if (base === null || base.length === 0) {
+      return;
+    }
+    const letters = [];
+    for (let i = 0; i < base.length; i += 1) {
+      if (/[a-z]/i.test(base.charAt(i))) {
+        letters.push(i);
+      }
+    }
+    if (letters.length === 0) {
+      return;
+    }
+    let cur = (el.textContent ?? "").split("");
+    if (cur.length !== base.length) {
+      cur = base.toLowerCase().split("");
+    }
+    const k = 1 + Math.floor(Math.random() * MAX_MORPH);
+    for (let j = 0; j < k; j += 1) {
+      const pos = letters[Math.floor(Math.random() * letters.length)];
+      cur[pos] = LOWER.charAt(Math.floor(Math.random() * LOWER.length));
+    }
+    el.textContent = cur.join("");
+  }
+  function initAlienFlavor() {
+    if (wired2) {
+      return;
+    }
+    wired2 = true;
+    setInterval(() => {
+      document.querySelectorAll(".kd-foods-brand[data-alien]").forEach(step);
+    }, TICK_MS);
+  }
+
   // assets/js/src/main.ts
   var mounted = {};
   function hideAllNewMounts() {
@@ -96886,6 +97004,7 @@ Handoff: next-chunk.md fully rewritten so nothing is lost \u2014 backlog = (1) p
     wireDrawerKeys();
     wireJourneyAutoDerive();
     initGlossTooltip();
+    initAlienFlavor();
     setTimeout(() => navigateTo("coverage"), 0);
   }
   if (document.readyState === "loading") {

@@ -27,5 +27,7 @@ export const FoodsCurationSchema = z.object({
   eat: z.array(z.string()).default([]),
   /** Conditional foods (stance turns on the form/context) -- entity slugs, in display order. */
   conditional: z.array(z.string()).default([]),
+  /** Featured pull-quote under the villi scan: a sealed search-claim id + the substring to highlight from (to the end). */
+  villi_quote: z.object({ id: z.string(), highlight_from: z.string() }).optional(),
 });
 export type FoodsCuration = z.infer<typeof FoodsCurationSchema>;
