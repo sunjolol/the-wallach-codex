@@ -2578,7 +2578,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 103,
+    "claim_count": 104,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000005",
@@ -2612,6 +2612,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000029",
+        "WAL-CLM-DDDL-000098",
         "WAL-CLM-LETS-000197",
         "WAL-CLM-RARE-000010",
         "WAL-CLM-RARE-000094",
@@ -2757,6 +2758,7 @@
       "dysmenorrhea",
       "dyspepsia",
       "fibrocystic_breast_disease",
+      "fibromyalgia",
       "food_allergy",
       "freckles",
       "gallstones",
@@ -5764,7 +5766,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 34,
+    "claim_count": 35,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -5777,6 +5779,9 @@
         "WAL-CLM-IMMORT-000084",
         "WAL-CLM-LETS-000072",
         "WAL-CLM-RARE-000014"
+      ],
+      "food_source": [
+        "WAL-CLM-IMMORT-000219"
       ],
       "interaction": [
         "WAL-CLM-RARE-000167",
@@ -6387,7 +6392,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 70,
+    "claim_count": 71,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6400,6 +6405,7 @@
         "WAL-CLM-LETS-000075"
       ],
       "mechanism": [
+        "WAL-CLM-DDDL-000098",
         "WAL-CLM-LETS-000196",
         "WAL-CLM-RARE-000010"
       ],
@@ -6751,7 +6757,7 @@
     "display_name": "Biotin",
     "canon_slug": "biotin",
     "category": "vitamin",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000042",
@@ -6761,6 +6767,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000122",
         "WAL-CLM-LETS-000045"
+      ],
+      "mechanism": [
+        "WAL-CLM-IMMORT-000218"
       ],
       "protocol": [
         "WAL-CLM-LETS-000430"
@@ -6880,6 +6889,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

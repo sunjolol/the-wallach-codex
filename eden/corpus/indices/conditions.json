@@ -78,12 +78,13 @@
   },
   "achlorhydria": {
     "display_name": "Achlorhydria",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000035"
       ],
       "protocols": [
+        "WAL-CLM-DDDL-000095",
         "WAL-CLM-LETS-000122"
       ]
     },
@@ -96,6 +97,7 @@
       "gentian"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -5426,9 +5428,10 @@
   },
   "fibromyalgia": {
     "display_name": "Fibromyalgia",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-DDDL-000098",
         "WAL-CLM-IAIYH-000017"
       ],
       "deficiency_signs": [
@@ -5437,11 +5440,13 @@
       ]
     },
     "essentials_involved": [
+      "selenium",
       "vitamin-b1",
       "vitamin-e"
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "dddl-3e-2011",
       "epigenetics",
       "iaiyh"
     ]
@@ -6896,7 +6901,7 @@
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000023"
@@ -6913,6 +6918,7 @@
         "WAL-CLM-DDDL-000024"
       ],
       "protocols": [
+        "WAL-CLM-DDDL-000103",
         "WAL-CLM-LETS-000309"
       ]
     },

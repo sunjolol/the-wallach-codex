@@ -2746,6 +2746,642 @@
         "two-prong",
         "gut-repair"
       ]
+    },
+    "WAL-CLM-DDDL-000095": {
+      "subject": "salt",
+      "also_about": [
+        "achlorhydria",
+        "absorption"
+      ],
+      "facet": "protocol",
+      "question": "Why does Wallach say to salt your food?",
+      "answer_short": "Salt (NaCl) is the raw material for stomach acid; salt-restricted diets breed achlorhydria and failed absorption -- so his treatment starts with salting your food to taste.",
+      "topics": [
+        "salt",
+        "stomach-acid",
+        "hydrochloric-acid",
+        "achlorhydria",
+        "salt-restricted-diet",
+        "betaine-hcl"
+      ]
+    },
+    "WAL-CLM-RARE-000312": {
+      "subject": "salt",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach think salt is bad for you?",
+      "answer_short": "No -- Wallach calls salt a craved necessity and the universal food condiment; a saltless bread-and-water diet was once a dreaded Dutch punishment.",
+      "topics": [
+        "salt",
+        "salt-necessity",
+        "sodium",
+        "food-condiment",
+        "salt-craving",
+        "anti-low-salt"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000143": {
+      "subject": "phytates",
+      "also_about": [
+        "calcium",
+        "absorption"
+      ],
+      "facet": "mechanism",
+      "question": "Why does Wallach say phytates in nuts, grains, and seeds block calcium?",
+      "answer_short": "Phytic acid in nuts, grain bran, seeds, oatmeal and whole wheat binds calcium into insoluble calcium phytate the body can't absorb.",
+      "topics": [
+        "phytic-acid",
+        "calcium-phytate",
+        "mineral-binding",
+        "nuts",
+        "grain-bran",
+        "oatmeal"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000144": {
+      "subject": "phytates",
+      "also_about": [
+        "calcium",
+        "absorption"
+      ],
+      "facet": "mechanism",
+      "question": "Which foods does Wallach say block calcium with oxalic acid?",
+      "answer_short": "Oxalic acid in rhubarb, spinach, chard and greens binds calcium into insoluble calcium oxalate that isn't absorbed; fiber blocks it too.",
+      "topics": [
+        "oxalic-acid",
+        "calcium-oxalate",
+        "rhubarb",
+        "spinach",
+        "chard",
+        "greens"
+      ]
+    },
+    "WAL-CLM-IMMORT-000215": {
+      "subject": "phytates",
+      "also_about": [
+        "calcium",
+        "iron",
+        "zinc"
+      ],
+      "facet": "basics",
+      "question": "What are phytates, and which minerals do they block?",
+      "answer_short": "Phytic acid (inositol hexaphosphate) in whole grains and raw vegetables interferes with absorbing calcium, iron, zinc and other nutrients.",
+      "topics": [
+        "phytic-acid",
+        "inositol",
+        "inositol-hexaphosphate",
+        "whole-grains",
+        "raw-vegetables",
+        "anti-nutrient"
+      ]
+    },
+    "WAL-CLM-LETS-000482": {
+      "subject": "phytates",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "warning",
+      "question": "Can phytates block even supplemented calcium?",
+      "answer_short": "Yes — Wallach calls phytates a natural chelating substance in plants that can make even supplemented calcium unavailable.",
+      "topics": [
+        "phytates",
+        "chelating-substance",
+        "supplemented-calcium-blocked",
+        "vegetarian-diet",
+        "calcium-availability",
+        "bad-foods"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000145": {
+      "subject": "phytates",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Does Wallach say to soak or sprout nuts, grains, and seeds?",
+      "answer_short": "In healthy traditional diets, Wallach notes seeds, grains, and nuts are soaked, sprouted, and fermented before eating.",
+      "topics": [
+        "soaking",
+        "sprouting",
+        "fermenting",
+        "nuts",
+        "seeds",
+        "grains"
+      ]
+    },
+    "WAL-CLM-IMMORT-000216": {
+      "subject": "phytates",
+      "also_about": [
+        "calcium",
+        "absorption",
+        "colloidal_minerals"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach say to get enough calcium despite phytates?",
+      "answer_short": "Avoid high-phosphorus/phytate foods (raw vegetables, colas) as much as possible and supplement with plant-derived colloidal and chelated calcium.",
+      "topics": [
+        "calcium-phosphorus-ratio",
+        "avoid-phytates",
+        "raw-vegetables",
+        "colloidal-minerals",
+        "chelated-calcium",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-IMMORT-000217": {
+      "subject": "sugar",
+      "also_about": [
+        "calcium",
+        "absorption"
+      ],
+      "facet": "mechanism",
+      "question": "Does sugar, soda, and caffeine affect my calcium and bones?",
+      "answer_short": "Excess sugar, carbonation and caffeine both cut calcium absorption and leach stored calcium out of the bones.",
+      "topics": [
+        "sugar",
+        "carbonation",
+        "caffeine",
+        "calcium-leaching",
+        "mineral-absorption",
+        "bone-loss"
+      ]
+    },
+    "WAL-CLM-LETS-000483": {
+      "subject": "carbonated_beverages",
+      "also_about": [
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "warning",
+      "question": "Are carbonated soft drinks bad for you, even diet soda?",
+      "answer_short": "Cut sugar and caffeine, and drop soft drinks; even diet sodas are full of phosphates that drive osteoporosis.",
+      "topics": [
+        "soft-drinks",
+        "diet-soda",
+        "phosphates",
+        "osteoporosis",
+        "sugar",
+        "caffeine"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000146": {
+      "subject": "sugar",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "Does caffeine leach calcium from your bones?",
+      "answer_short": "Too much caffeine pulls calcium out of the body's bone reserves.",
+      "topics": [
+        "caffeine",
+        "calcium-leaching",
+        "bone-loss",
+        "coffee",
+        "tea",
+        "mineral-absorption"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000147": {
+      "subject": "carbonated_beverages",
+      "also_about": [
+        "calcium",
+        "phosphorus"
+      ],
+      "facet": "mechanism",
+      "question": "Why does Wallach say soft drinks throw off your calcium-phosphorus balance?",
+      "answer_short": "Diet calcium-to-phosphorus should be 2:1; soft drinks are high-phosphorus junk food that wrecks the balance.",
+      "topics": [
+        "calcium-phosphorus-ratio",
+        "soft-drinks",
+        "phosphorus",
+        "junk-food",
+        "calcium",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-RARE-000313": {
+      "subject": "sugar",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "physiology",
+      "question": "Why do I crave sugar and soft drinks?",
+      "answer_short": "Craving soft drinks and sweets is a sign of chromium and vanadium deficiency, not real hunger.",
+      "topics": [
+        "sugar-craving",
+        "soft-drinks",
+        "chromium",
+        "vanadium",
+        "mineral-deficiency",
+        "pica"
+      ]
+    },
+    "WAL-CLM-DDDL-000096": {
+      "subject": "dietary_oils",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does Wallach say heated vegetable and cooking oils are dangerous?",
+      "answer_short": "Heating or hydrogenating polyunsaturated oils turns them into trans fats and free-radical damage; with low selenium that's 'the quickest route to a heart attack and cancer.'",
+      "topics": [
+        "vegetable-oil",
+        "cooking-oil",
+        "salad-dressing",
+        "trans-fat",
+        "free-radicals",
+        "rancid-fat"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000148": {
+      "subject": "dietary_oils",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does Wallach connect fried foods and oxidized oils to brain and nerve diseases?",
+      "answer_short": "He blames free-radical brain damage on regular gluten, fried foods, burnt animal fat, oxidized dietary oils, nitrate-processed meats, and excess mono/polyunsaturated oils.",
+      "topics": [
+        "free-radicals",
+        "fried-foods",
+        "oxidized-oils",
+        "burnt-animal-fat",
+        "polyunsaturated-oils",
+        "brain-damage"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000149": {
+      "subject": "dietary_oils",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What does Wallach say overusing dietary oils and eating fried foods does to the body?",
+      "answer_short": "He calls it self-destruction: too many fried/burnt foods and overused margarines, salad dressings and cooking oils load the body with trans fats, heterocyclic amines and acrylamides.",
+      "topics": [
+        "fried-foods",
+        "overcooked-food",
+        "margarine",
+        "salad-dressing",
+        "cooking-oil",
+        "trans-fat"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000150": {
+      "subject": "dietary_oils",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "mechanism",
+      "question": "Why does Wallach say vegetable oils like corn oil worsen selenium deficiency?",
+      "answer_short": "Corn oil is 'notorious for increasing the need for selenium' — extra dietary oil creates a relative selenium deficiency even when selenium is otherwise present in the diet.",
+      "topics": [
+        "corn-oil",
+        "seed-oil",
+        "selenium",
+        "relative-deficiency",
+        "polyunsaturated-oils"
+      ]
+    },
+    "WAL-CLM-DDDL-000097": {
+      "subject": "dietary_oils",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What causes age spots (liver spots), and how does Wallach treat them?",
+      "answer_short": "Age spots are rancid fat (ceroid lipofuscin / trans fatty acids) from cell walls surfacing in the skin — a cancer and heart-disease red flag; he cuts all fried foods and vegetable oils.",
+      "topics": [
+        "age-spots",
+        "liver-spots",
+        "rancid-fat",
+        "ceroid-lipofuscin",
+        "trans-fat",
+        "vegetable-oil"
+      ]
+    },
+    "WAL-CLM-DDDL-000098": {
+      "subject": "dietary_oils",
+      "also_about": [
+        "selenium",
+        "vitamin-e",
+        "fibromyalgia"
+      ],
+      "facet": "mechanism",
+      "question": "What does Wallach say causes fibromyalgia?",
+      "answer_short": "He calls fibromyalgia a multiple-deficiency disease driven by a high intake of fried foods and vegetable oils plus low selenium, vitamin E and sulfur amino acids.",
+      "topics": [
+        "fibromyalgia",
+        "fried-foods",
+        "vegetable-oil",
+        "margarine",
+        "selenium",
+        "vitamin-e"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000151": {
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does Wallach consider cholesterol essential, and what happens if you're deficient?",
+      "answer_short": "Yes — he treats cholesterol as essential and ties a deficiency to Alzheimer's, type-2 diabetes, erectile dysfunction, low-T, miserable menopause and adrenal exhaustion.",
+      "topics": [
+        "cholesterol-deficiency",
+        "essential-nutrient",
+        "alzheimers",
+        "type-2-diabetes",
+        "erectile-dysfunction",
+        "low-testosterone"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000152": {
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach think cholesterol-rich animal foods like butter and organ meats are healthy?",
+      "answer_short": "Yes — citing Weston Price, he says butter, fish eggs, organ meats and animal fats give about ten times the fat-soluble vitamins and are wrongly shunned as unhealthful.",
+      "topics": [
+        "animal-fats",
+        "butter",
+        "organ-meats",
+        "egg",
+        "fat-soluble-vitamins",
+        "weston-price"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000153": {
+      "subject": "cholesterol",
+      "also_about": [],
+      "facet": "stance",
+      "question": "How much fat did healthy traditional diets contain, according to Wallach?",
+      "answer_short": "Per Weston Price, traditional diets were 30-80% fat, but only about 4% of calories came from polyunsaturated oils — the rest was saturated and monounsaturated fat.",
+      "topics": [
+        "saturated-fat",
+        "monounsaturated-fat",
+        "polyunsaturated-oils",
+        "traditional-diet",
+        "weston-price",
+        "fat-calories"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000154": {
+      "subject": "eggs",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How many eggs a day does Wallach recommend, and how should they be cooked?",
+      "answer_short": "Four to six eggs per day per 100 lb of body weight -- poached, soft-boiled, or scrambled in butter (never fried).",
+      "topics": [
+        "eggs",
+        "how-many-eggs",
+        "egg-cooking",
+        "poached-eggs",
+        "dose-per-body-weight",
+        "neurological-disease-diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000155": {
+      "subject": "eggs",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Why did Wallach tell a Parkinson's patient to eat a dozen-plus poached eggs a day?",
+      "answer_short": "To rebuild myelin -- 12 to 14 poached eggs daily supply the raw materials, while avoiding trans fats, heterocyclic amines and acrylamides.",
+      "topics": [
+        "eggs",
+        "poached-eggs",
+        "myelin",
+        "parkinsons",
+        "heterocyclic-amines",
+        "acrylamides"
+      ]
+    },
+    "WAL-CLM-DDDL-000099": {
+      "subject": "eggs",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How does Wallach say to cook eggs, and how much red meat, for Alzheimer's?",
+      "answer_short": "Soft-scrambled (not fried) eggs every day and 72 oz of red meat each month, to replace cholesterol needed to rebuild myelin.",
+      "topics": [
+        "eggs",
+        "soft-scrambled",
+        "red-meat",
+        "cholesterol",
+        "myelin",
+        "alzheimers"
+      ]
+    },
+    "WAL-CLM-IMMORT-000218": {
+      "subject": "eggs",
+      "also_about": [
+        "biotin"
+      ],
+      "facet": "mechanism",
+      "question": "Why does Wallach warn against eating raw egg whites?",
+      "answer_short": "Raw egg white contains avidin, which binds biotin in the gut; about 24 raw whites can cause a biotin deficiency (cooking denatures it).",
+      "topics": [
+        "eggs",
+        "raw-egg-white",
+        "avidin",
+        "biotin",
+        "egg-cooking",
+        "nutrient-absorption"
+      ]
+    },
+    "WAL-CLM-DDDL-000100": {
+      "subject": "eggs",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Are fried eggs bad, according to Wallach?",
+      "answer_short": "Yes -- Wallach says fried eggs precipitate 93% of gallbladder attacks (with fried onions, fried potatoes and pork close behind).",
+      "topics": [
+        "eggs",
+        "fried-eggs",
+        "gallbladder",
+        "gallstones",
+        "egg-cooking",
+        "fried-foods"
+      ]
+    },
+    "WAL-CLM-DDDL-000101": {
+      "subject": "meat",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How often does Wallach say to eat meat, eggs and poultry for blood sugar?",
+      "answer_short": "Three to six times a day (cutting sugar and refined carbs) to stabilize blood sugar early in diabetes therapy.",
+      "topics": [
+        "meat",
+        "eggs",
+        "poultry",
+        "blood-sugar",
+        "diabetes",
+        "protein-frequency"
+      ]
+    },
+    "WAL-CLM-DDDL-000102": {
+      "subject": "meat",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Why does Wallach say eggs and red meat are critical for MS, and what foods should be avoided?",
+      "answer_short": "Myelin is almost pure cholesterol, so eggs and red meat are vital; avoid fried foods and margarine and use fish/flax oil.",
+      "topics": [
+        "meat",
+        "red-meat",
+        "eggs",
+        "cholesterol",
+        "myelin",
+        "multiple-sclerosis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000219": {
+      "subject": "dairy",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "sources",
+      "question": "What are Wallach's best food sources of vitamin B12, and is pasteurized milk as good?",
+      "answer_short": "Fresh whole milk, eggs, cheese, muscle meats, liver and kidney; pasteurized and evaporated milk lose 40-90% of their B12.",
+      "topics": [
+        "dairy",
+        "whole-milk",
+        "vitamin-b12",
+        "cheese",
+        "eggs",
+        "muscle-meat"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000156": {
+      "subject": "dairy",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What does Wallach think of pasteurized milk and low-fat foods?",
+      "answer_short": "He counts pasteurized milk and low-fat foods among the harmful 'displacing foods of modern commerce', favoring full-fat whole foods.",
+      "topics": [
+        "dairy",
+        "pasteurized-milk",
+        "low-fat-foods",
+        "full-fat",
+        "processed-foods",
+        "weston-price"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000157": {
+      "subject": "processed_meat",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Which processed meats does Wallach say to avoid?",
+      "answer_short": "Deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats.",
+      "topics": [
+        "processed-meat",
+        "deli-meat",
+        "sausage",
+        "bologna",
+        "salami",
+        "pepperoni"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000158": {
+      "subject": "gluten",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Which grains contain the gluten Wallach says to avoid?",
+      "answer_short": "Wheat, barley, rye, and oats -- the 'small-grain' proteins. Wallach calls the reaction an intolerance (a 'contact enteritis'), not a true allergy.",
+      "topics": [
+        "gluten",
+        "grains",
+        "wheat",
+        "barley",
+        "rye",
+        "oats"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000159": {
+      "subject": "gluten",
+      "also_about": [],
+      "facet": "history",
+      "question": "How long has gluten intolerance been recognized?",
+      "answer_short": "It is not new: Wallach says Egyptian and Greek physicians recognized this bad reaction to grain thousands of years ago.",
+      "topics": [
+        "gluten",
+        "gluten-intolerance",
+        "history",
+        "ancient-medicine",
+        "grains"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000160": {
+      "subject": "cruciferous_vegetables",
+      "also_about": [
+        "iodine",
+        "hypothyroidism",
+        "goiter"
+      ],
+      "facet": "warning",
+      "question": "Are cruciferous vegetables like broccoli and kale bad for the thyroid?",
+      "answer_short": "Wallach lists cruciferous vegetables — cabbage, broccoli, cauliflower, Brussels sprouts, kale — as goitrogens that interfere with normal thyroid metabolism.",
+      "topics": [
+        "cruciferous-vegetables",
+        "goitrogens",
+        "thyroid",
+        "hypothyroidism",
+        "goiter",
+        "iodine"
+      ]
+    },
+    "WAL-CLM-DDDL-000103": {
+      "subject": "cruciferous_vegetables",
+      "also_about": [
+        "iodine",
+        "hypothyroidism",
+        "goiter"
+      ],
+      "facet": "protocol",
+      "question": "Should people with hypothyroidism avoid cabbage and other cruciferous vegetables?",
+      "answer_short": "Wallach's hypothyroidism protocol begins by eliminating all goitrogenic foods such as nitrates and cabbage, then adds thyroid support.",
+      "topics": [
+        "hypothyroidism",
+        "goitrogens",
+        "cruciferous-vegetables",
+        "cabbage",
+        "thyroid",
+        "goiter"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000161": {
+      "subject": "water",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Is alkaline water good, and when should you drink it?",
+      "answer_short": "Drink clean, slightly alkaline water (7.5-8.5) - but not with meals, since it neutralizes the stomach acid you need to digest.",
+      "topics": [
+        "alkaline-water",
+        "stomach-acid",
+        "digestion",
+        "drinking-water",
+        "water-quality",
+        "when-to-drink-water"
+      ]
+    },
+    "WAL-CLM-DDDL-000104": {
+      "subject": "water",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Should you drink distilled water or filtered water?",
+      "answer_short": "Drink filtered water, not distilled - distilled water is 'hungry' and leaches minerals from your bones over long-term use.",
+      "topics": [
+        "distilled-water",
+        "filtered-water",
+        "water-quality",
+        "bone-loss",
+        "demineralization",
+        "osteoporosis"
+      ]
+    },
+    "WAL-CLM-DDDL-000105": {
+      "subject": "carbonated_beverages",
+      "also_about": [
+        "osteoporosis"
+      ],
+      "facet": "warning",
+      "question": "Are carbonated soft drinks bad for you?",
+      "answer_short": "Yes - Wallach says all carbonated soft drinks are loaded with phosphates that cause osteoporosis over the long haul.",
+      "topics": [
+        "carbonated-drinks",
+        "soft-drinks",
+        "soda",
+        "phosphates",
+        "phosphorus",
+        "osteoporosis"
+      ]
     }
   }
 }

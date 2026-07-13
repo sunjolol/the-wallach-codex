@@ -663,10 +663,10 @@
       "related": [
         "arthritis",
         "osteoporosis",
+        "calcium",
         "pica",
         "anorexia",
         "anxiety",
-        "calcium",
         "hyperparathyroidism",
         "hypertension"
       ]
@@ -1236,12 +1236,12 @@
       "related": [
         "magnesium",
         "omega-3",
+        "osteoporosis",
         "vitamin-b6",
         "chromium",
-        "osteoporosis",
         "selenium",
         "vitamin-e",
-        "arthritis"
+        "zinc"
       ]
     },
     "boron": {
@@ -2119,8 +2119,8 @@
       "related": [
         "zinc",
         "anemia",
-        "omega-3",
         "calcium",
+        "omega-3",
         "copper",
         "pica",
         "vitamin-b12",
@@ -2439,7 +2439,7 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 103,
+      "claim_count": 104,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2565,6 +2565,7 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000029",
+            "WAL-CLM-DDDL-000098",
             "WAL-CLM-LETS-000197",
             "WAL-CLM-RARE-000010",
             "WAL-CLM-RARE-000094",
@@ -3184,7 +3185,7 @@
         "vitamin-e",
         "vitamin-b6",
         "vitamin-b9",
-        "copper"
+        "calcium"
       ]
     },
     "silver": {
@@ -5343,7 +5344,7 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 34,
+      "claim_count": 35,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5404,6 +5405,12 @@
             "WAL-CLM-DDDL-000044",
             "WAL-CLM-DDDL-000045",
             "WAL-CLM-RARE-000114"
+          ]
+        },
+        {
+          "kind": "food_source",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000219"
           ]
         },
         {
@@ -5772,7 +5779,7 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 70,
+      "claim_count": 71,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5867,6 +5874,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-DDDL-000098",
             "WAL-CLM-LETS-000196",
             "WAL-CLM-RARE-000010"
           ]
@@ -5960,8 +5968,8 @@
       ],
       "works_with": [],
       "related": [
-        "omega-3",
         "selenium",
+        "omega-3",
         "vitamin-c",
         "zinc",
         "vitamin-a",
@@ -6038,9 +6046,10 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -6066,6 +6075,12 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000430"
+          ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000218"
           ]
         }
       ],
@@ -7368,13 +7383,15 @@
     "achlorhydria": {
       "type": "condition",
       "name": "Achlorhydria",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [
+        "WAL-CLM-DDDL-000095",
         "WAL-CLM-LETS-000122"
       ],
       "restore": [
@@ -7390,6 +7407,7 @@
         {
           "kind": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000095",
             "WAL-CLM-LETS-000122"
           ]
         }
@@ -16765,8 +16783,9 @@
     "fibromyalgia": {
       "type": "condition",
       "name": "Fibromyalgia",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "iaiyh"
       ],
@@ -16788,6 +16807,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-DDDL-000098",
             "WAL-CLM-IAIYH-000017"
           ]
         }
@@ -16805,13 +16825,13 @@
       ],
       "related": [
         "dementia",
+        "vitamin-e",
         "alzheimers",
         "anemia",
         "anorexia",
         "atrial_fibrillation",
         "beriberi",
-        "cancer",
-        "cardiomyopathy"
+        "cancer"
       ]
     },
     "flatulence": {
@@ -19462,7 +19482,7 @@
     "hypothyroidism": {
       "type": "condition",
       "name": "Hypothyroidism",
-      "claim_count": 9,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -19473,6 +19493,7 @@
       "synonyms": [],
       "one_liner": null,
       "protocol_claim_ids": [
+        "WAL-CLM-DDDL-000103",
         "WAL-CLM-LETS-000309"
       ],
       "restore": [
@@ -19494,6 +19515,7 @@
         {
           "kind": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000103",
             "WAL-CLM-LETS-000309"
           ]
         },
@@ -24783,8 +24805,8 @@
         "insomnia"
       ],
       "related": [
-        "arthritis",
         "calcium",
+        "arthritis",
         "cancer",
         "hypertension",
         "osteomalacia",

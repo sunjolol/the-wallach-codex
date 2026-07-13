@@ -11240,6 +11240,77 @@
       "extracted_at": "2026-07-11T21:22:07+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000312",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach argues that salt is not a health hazard but a necessity -- the universal, most widely used food supplement and condiment, craved by humans as one of the most dominating natural instincts -- so vital that old Dutch criminal law used a saltless diet of bread and water as a dreaded punishment. In his words: \"salt itself is in fact necessary to the health and even the life of man.\"",
+      "verbatim": "in the old criminal law of Holland, a par-\nticularly terrible and much feared punish-\nment was to restrict criminals to a diet of\nbread and water without salt!!!\n\nSalt is known as the universal and most\nwidely used food supplement and condi-\nment. So great is the human craving for salt,\nand the relish of it that we are led to con-\nsider that a love of it is one of the most\ndominating of our natural instincts and that\nsalt itself is in fact necessary to the health\nand even the life of man.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 90647
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "salt",
+        "salt-necessity",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T10:02:54+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000313",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach frames the craving for sweets and soft drinks as a sign of mineral deficiency rather than real appetite: he says chromium and vanadium deficiency shows up as a thirst that reaches for soft drinks before water and a hunger for sugar-laden carbs, with the 'munchies' and candy/chocolate cravings being telltale signs. In his words: \"Chromium and vanadium deficiencies are manifested by thirst for liquid (soft drinks being the usual first choice and water the last) and hunger for carbohydrates (i.e.- soft drinks, coffee and tea with added sugar, alcohol, pasta, desserts, bread, etc,).\"",
+      "verbatim": "Chromium and vanadium deficiencies are manifested by thirst for liquid (soft drinks being the usual first choice and water the last) and hunger for carbohydrates (i.e.- soft drinks, coffee and tea with added sugar, alcohol, pasta, desserts, bread, etc,). The “munchies”, cravings for alcohol and candy cravings (especially chocolate) are sure signs of a chromium and vanadium deficiency.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 205866
+      },
+      "dose": null,
+      "tags": [
+        "rare-earths",
+        "bad-foods",
+        "sugar",
+        "soft-drinks",
+        "chromium",
+        "vanadium",
+        "deficiency-sign",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T10:02:54+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

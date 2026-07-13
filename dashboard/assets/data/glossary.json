@@ -350,7 +350,10 @@
     {
       "term": "goitrogenic",
       "plain": "capable of causing goiter (thyroid enlargement)",
-      "category": "medical"
+      "category": "medical",
+      "aliases": [
+        "goiterogenic"
+      ]
     },
     {
       "term": "carcinogenic",

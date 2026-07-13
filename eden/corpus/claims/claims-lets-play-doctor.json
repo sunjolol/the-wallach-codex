@@ -19082,6 +19082,80 @@
       "extracted_at": "2026-06-29T19:01:40+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000482",
+      "kind": "definition",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cautions that even a mostly-vegetarian diet aiming for the right calcium-to-phosphorus ratio is undermined by phytates, which he describes as a natural chelating (mineral-grabbing) substance in plants that can make even supplemented calcium unavailable to the body. In his words: \"A vegetarian diet gets close but is complicated by “phytates” (a natural chelating substance found in plants) which makes even supplemented calcium unavailable.\"",
+      "verbatim": "A vegetarian diet gets close but is complicated by \"phytates\" (a natural chelating substance found in plants) which makes even supplemented calcium unavailable.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 179399
+      },
+      "dose": null,
+      "tags": [
+        "lets-play-doctor",
+        "phytates",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000483",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [
+        "osteoporosis"
+      ],
+      "symptoms": [],
+      "claim_text": "In his weight-loss guidance Wallach tells people to cut sugar in every form (solid or liquid) and caffeine (which drops blood sugar and drives hunger), and to drop carbonated soft drinks entirely, noting that even diet ('one calorie') sodas are loaded with phosphates that cause osteoporosis over time. In his words: \"avoid sugar in all forms (i.e., solids as well as liquids), avoid caffeine (caffeine lowers blood sugar and makes you hungry!!!), avoid carbonated soft drinks (even the one calorie varieties are loaded with phosphates which will cause osteoporosis over the long haul...\"",
+      "verbatim": "avoid sugarin\nall forms (i.e., solids as well as liquids), avoid\ncaffeine (caffeine lowers blood sugar and\nmakes you hungry!!!), avoid carbonated soft\ndrinks (even the one calorie varieties are loaded\nwith phosphates which will cause osteoporosis\nover the long haul",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 408640
+      },
+      "dose": null,
+      "tags": [
+        "lets-play-doctor",
+        "bad-foods",
+        "soft-drinks",
+        "diet-soda",
+        "phosphates",
+        "osteoporosis",
+        "sugar",
+        "caffeine",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

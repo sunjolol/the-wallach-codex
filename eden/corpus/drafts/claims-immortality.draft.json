@@ -7598,6 +7598,182 @@
       "extracted_at": "2026-07-11T22:10:16+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000215",
+      "kind": "definition",
+      "essentials": [
+        "calcium",
+        "iron",
+        "zinc"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that phytates are phytic acid — chemically inositol hexaphosphate — found abundantly in whole grains and raw vegetables, and that this same compound interferes with the absorption of calcium, iron, zinc and other nutrients, making it a required nutrient on one hand and a dietary negative on the other. In his words: \"It occurs abundantly in diets containing whole grains and raw vegetables as inositol phospholipids and as phytic acid (inositol hexaphosphate or “phytates”). Phytic acid interferes with the absorption of calcium, iron, zinc and other nutrients - on one hand a required nutrient and on the other a negative in the diet.\"",
+      "verbatim": "It\noccurs abundantly in diets containing whole grains and\nraw vegetables as inositol phospholipids and as phytic acid\n(inositol hexaphosphate or “phytates”).\n\n\n \n\nPhytic acid interferes with the absorption of calcium,\niron, zinc and other nutrients - on one hand a required nutrient\nand on the other a negative in the diet.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 47,
+        "kindle_location": null,
+        "char_offset": 129342
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "phytates",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000216",
+      "kind": "protocol",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Because phytate/high-phosphorus foods block calcium and make the ideal 2:1 calcium-to-phosphorus ratio unreachable from food alone, Wallach's practical answer is substitution rather than timing: avoid high-phosphorus foods such as raw vegetables (phytates) and colas as much as possible, and supplement instead with highly absorbable plant-derived colloidal and chelated calcium. In his words: \"The only possible way to approach the 2:1 ideal is to avoid as much as possible the food items containing high levels of phosphorous (i.e. - raw vegetables (phytates), colas, etc.) and supplement with plant derived colloidal and chelated calcium.\"",
+      "verbatim": "The only\npossible way to approach the 2:1 ideal is to avoid as much as\npossible the food items containing high levels of phosphorous\n(i.e. - raw vegetables (phytates), colas, etc.) and supplement\nwith plant derived colloidal and chelated calcium.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 74,
+        "kindle_location": null,
+        "char_offset": 221861
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "phytates",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000217",
+      "kind": "mechanism",
+      "essentials": [
+        "calcium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach warns that heavy intake of sugar, carbonation, and caffeine (from coffee, tea, colas) works against calcium two ways at once: it lowers how efficiently calcium is absorbed AND pulls stored calcium back out of the bones. In his words: \"Excesses of sugar, carbonation and caffeine from coffee, tea, colas, etc. will reduce the efficiency of absorption and will leach stored calcium from the bones.\"",
+      "verbatim": "Excesses of sugar, carbonation and\ncaffeine from coffee, tea, colas, etc. will reduce the efficiency\nof absorption and will leach stored calcium from the bones.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 73,
+        "kindle_location": null,
+        "char_offset": 218260
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "bad-foods",
+        "sugar",
+        "carbonation",
+        "caffeine",
+        "calcium-leaching",
+        "absorption",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000218",
+      "kind": "mechanism",
+      "essentials": [
+        "biotin"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that raw egg whites contain avidin, which binds biotin in the gut and blocks its absorption -- it takes about 24 raw egg whites to create a biotin deficiency, which is an argument for cooking eggs rather than eating whites raw. In his words: \"Avidin, a material found in egg white, combines with biotin in the intestine making it unavailable for absorption\"",
+      "verbatim": "Originally biotin deficiency was\nobserved in chicks and rats that were fed raw egg whites, which\nit was learned later, contained an “egg-white-injury” factor.\n\nAvidin, a material found in egg white, combines with\nbiotin in the intestine making it unavailable for absorption.\nIt takes 24 raw egg whites to contribute enough avidin to\ncreate a biotin deficiency in humans.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 46,
+        "kindle_location": null,
+        "char_offset": 127250
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "eggs",
+        "biotin",
+        "raw-egg-white",
+        "cooking-method"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000219",
+      "kind": "food_source",
+      "essentials": [
+        "vitamin-b12"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists fresh whole milk, eggs, cheese and muscle meats (along with liver and kidney) as rich sources of vitamin B12, and warns that pasteurized and evaporated milk have lost 40 to 90 percent of their B12. In his words: \"fresh whole milk, eggs, cheese and muscle meats are rich sources. Pasteurized and evaporated milk have lost 40 to 90% of vitamin B,,\"",
+      "verbatim": "Vitamin B,, is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources. Pasteurized\nand evaporated milk have lost 40 to 90% of vitamin B,,.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 46,
+        "kindle_location": null,
+        "char_offset": 126121
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "good-animal-foods",
+        "dairy",
+        "vitamin-b12",
+        "whole-milk"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-13T09:57:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

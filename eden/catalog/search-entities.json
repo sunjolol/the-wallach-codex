@@ -941,6 +941,202 @@
         "zinc",
         "gluten"
       ]
+    },
+    "salt": {
+      "display_name": "Salt",
+      "type": "substance",
+      "synonyms": [
+        "table salt",
+        "sodium chloride",
+        "nacl",
+        "sea salt",
+        "salt-restricted diet",
+        "low-salt diet",
+        "salting your food"
+      ],
+      "related": [
+        "sodium",
+        "chloride",
+        "hypochlorhydria",
+        "achlorhydria",
+        "absorption"
+      ]
+    },
+    "sugar": {
+      "display_name": "Sugar & Caffeine",
+      "type": "substance",
+      "synonyms": [
+        "sugar",
+        "refined sugar",
+        "sweets",
+        "caffeine",
+        "coffee",
+        "sugar cravings",
+        "carbohydrates"
+      ],
+      "related": [
+        "carbonated_beverages",
+        "chromium",
+        "vanadium",
+        "calcium",
+        "absorption"
+      ]
+    },
+    "carbonated_beverages": {
+      "display_name": "Soft Drinks & Carbonation",
+      "type": "concept",
+      "synonyms": [
+        "carbonated beverages",
+        "soft drinks",
+        "soda",
+        "pop",
+        "cola",
+        "diet soda",
+        "phosphates",
+        "phosphoric acid"
+      ],
+      "related": [
+        "sugar",
+        "calcium",
+        "phosphorus",
+        "osteoporosis",
+        "absorption"
+      ]
+    },
+    "dietary_oils": {
+      "display_name": "Cooking Oils & Fried Foods",
+      "type": "concept",
+      "synonyms": [
+        "dietary oils",
+        "vegetable oils",
+        "seed oils",
+        "cooking oil",
+        "fried foods",
+        "trans fats",
+        "rancid fat",
+        "margarine",
+        "oxidized oils",
+        "free radicals"
+      ],
+      "related": [
+        "cholesterol",
+        "selenium",
+        "vitamin-e",
+        "processed_meat"
+      ]
+    },
+    "eggs": {
+      "display_name": "Eggs",
+      "type": "substance",
+      "synonyms": [
+        "egg",
+        "eggs",
+        "egg yolk",
+        "egg white",
+        "poached eggs",
+        "soft-boiled eggs"
+      ],
+      "related": [
+        "cholesterol",
+        "biotin",
+        "meat",
+        "dietary_oils"
+      ]
+    },
+    "meat": {
+      "display_name": "Meat & Animal Foods",
+      "type": "concept",
+      "synonyms": [
+        "meat",
+        "red meat",
+        "beef",
+        "poultry",
+        "organ meats",
+        "liver",
+        "shellfish",
+        "animal fats"
+      ],
+      "related": [
+        "cholesterol",
+        "eggs",
+        "dairy",
+        "vitamin-a",
+        "vitamin-d"
+      ]
+    },
+    "dairy": {
+      "display_name": "Milk & Dairy",
+      "type": "concept",
+      "synonyms": [
+        "dairy",
+        "milk",
+        "whole milk",
+        "raw milk",
+        "pasteurized milk",
+        "cheese",
+        "butter"
+      ],
+      "related": [
+        "cholesterol",
+        "vitamin-b12",
+        "meat",
+        "eggs"
+      ]
+    },
+    "processed_meat": {
+      "display_name": "Processed & Cured Meats",
+      "type": "concept",
+      "synonyms": [
+        "processed meat",
+        "deli meat",
+        "lunch meat",
+        "bacon",
+        "hot dogs",
+        "sausage",
+        "nitrates",
+        "nitrites",
+        "cured meat"
+      ],
+      "related": [
+        "dietary_oils",
+        "meat",
+        "gluten"
+      ]
+    },
+    "cruciferous_vegetables": {
+      "display_name": "Cruciferous Vegetables & Goitrogens",
+      "type": "concept",
+      "synonyms": [
+        "cruciferous vegetables",
+        "goitrogens",
+        "cabbage",
+        "broccoli",
+        "cauliflower",
+        "kale",
+        "brussels sprouts"
+      ],
+      "related": [
+        "iodine",
+        "hypothyroidism",
+        "gluten"
+      ]
+    },
+    "water": {
+      "display_name": "Water",
+      "type": "concept",
+      "synonyms": [
+        "water",
+        "filtered water",
+        "distilled water",
+        "tap water",
+        "alkaline water",
+        "drinking water"
+      ],
+      "related": [
+        "fluoride",
+        "absorption",
+        "carbonated_beverages"
+      ]
     }
   }
 }
