@@ -320,11 +320,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
    other three sections use positional codes (V-01 / AA-01 / F-01).
    ═════════════════════════════════════════════════════════════════════════ */
 
-.essentials-host {
-  position: relative;
-  overflow: hidden;
-  padding: var(--ds-space-3) 0;
-}
+
 
 .essentials-section { margin-bottom: var(--ds-space-7); }
 .essentials-section:last-child { margin-bottom: 0; }
@@ -503,23 +499,28 @@ body { margin: 0; background: var(--ds-paper-deep); }
    tiles would look absurd on web (Luneth said so explicitly) — the depth comes from an
    inset shadow + a hairline registration grid, which is the FEEL without the costume. */
 .essentials-host {
+  /* position/overflow host the .ds-scan-line sweep (merged in from the pre-plate-language
+     block that used to sit above — two .essentials-host declarations were shadowing each
+     other, the same duplicate-block bug purged from .tile this round). */
+  position: relative;
+  overflow: hidden;
   background: var(--ds-paper-darker);
   border-radius: var(--ds-radius-md);
   padding: var(--ds-space-4);
   box-shadow:
     inset 0 2px 5px rgba(26, 22, 18, 0.10),
     inset 0 0 0 1px var(--ds-rule);
+  /* The registration grid is DELIBERATELY at the edge of perception — rule-soft on
+     paper-darker is a ~3-value delta, and that is the point: it should register as texture,
+     never as a pattern competing with 91 plates. This matches the signed-off
+     coverage-plates-PROPOSAL.html byte-for-byte. A background-blend-mode: multiply was added
+     here after sign-off (my call, not asked for) to "fix" the subtlety; it made the grid
+     dominate the surface. Subtlety was never the defect. Do not re-strengthen this. */
   background-image:
     linear-gradient(var(--ds-rule-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--ds-rule-soft) 1px, transparent 1px);
   background-size: 26px 26px;
   background-position: -1px -1px;
-  /* The multiply blend is what makes this read at all: rule-soft (#e8dfc6) painted flat on
-     paper-darker (#ebe2c4) is a ~3-value delta and vanished. Multiplied, it resolves to
-     ~#d5c598 — a machined backplane that is present but quiet. Using --ds-rule here instead
-     multiplied down to ~#c3b182 and the grid VIBRATED behind 91 plates; the blend does the
-     work, so the colour stays soft. */
-  background-blend-mode: multiply;
 }
 
 /* Per-section grid densities — SIZING CONTRACT, unchanged. */
