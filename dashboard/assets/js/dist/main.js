@@ -17262,11 +17262,17 @@
 
   // assets/js/src/views/coverage.ts
   var LAYOUT2 = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  function tileFor(key, snapshot) {
+    return snapshot?.tiles.find((t) => t.name === key);
+  }
   function tileStatusFor(key, snapshot) {
-    if (snapshot === null) {
-      return "";
+    return tileFor(key, snapshot)?.status ?? "";
+  }
+  function tileFillPercent(tile) {
+    if (tile === void 0 || tile.status !== "partial") {
+      return null;
     }
-    return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
+    return Math.max(0, Math.min(100, Math.round(tile.fillPercent * 100)));
   }
   function escHTML(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
@@ -17278,8 +17284,11 @@
     })[c]);
   }
   function renderTile(spec, tileClass, snapshot) {
-    const status = tileStatusFor(spec.key, snapshot);
+    const tile = tileFor(spec.key, snapshot);
+    const status = tile?.status ?? "";
     const cls = `${tileClass} ${status}`.trim();
+    const fill = tileFillPercent(tile);
+    const fillAttr = fill === null ? "" : ` style="--fill: ${fill}%"`;
     let inner = "";
     if (spec.num !== void 0) {
       inner += `<span class="tile__num">${spec.num}</span>`;
@@ -17300,7 +17309,7 @@
     if (spec.hint !== void 0) {
       inner += `<span class="tile__hint">${escHTML(spec.hint)}</span>`;
     }
-    return `<div class="${cls}">${inner}</div>`;
+    return `<div class="${cls}"${fillAttr}>${inner}</div>`;
   }
   function renderSection(spec, snapshot) {
     let bodyHTML = "";
@@ -96880,7 +96889,29 @@ VERIFIED: tsc --noEmit clean \xB7 eslint exit 0 across the 3 touched files (hand
 
 TWO PROCESS LESSONS, both of which cost real time. A bash heredoc wrote literal 0x08 backspace bytes where \\b belonged, silently turning the new gate into a no-op \u2014 caught only because the negative test existed, which is precisely the argument for R7. Then invariants.py turned out to be CRLF while safe_write requires LF payloads (write-discipline rule 4); \xA717's write-verify correctly REFUSED the corrupting write rather than landing it. Both reinforce the standing rule: stage payloads with the Write tool, never a heredoc.
 
-DEFERRED, named rather than silent: Phase 2 = the plate-language visual overhaul (A/B signed off \u2014 variant A, behind an A<->B toggle). Phase 2b = eden/catalog/goals.json mapping each goal to its condition slugs, joined through corpus/indices/essentials.json's conditions_treated (already derived from sealed Wallach claims) to produce real per-goal coverage off the same snapshot \u2014 a feasibility probe derives 27 real members for bone/skeletal, against the hand-typed 14. Also owed: dead CSS (.periodic, .periodic-host, .tile.spacer, the trace family), the duplicate .tile block (declared twice 13 lines apart, the second silently overriding aspect-ratio + padding), ambient chrome duplicated across dashboard.css and workspace-coverage.css, pre-futurist Chakra-Petch/Bruno-Ace @font-face plus :root token overrides still sitting in workspace-coverage.css, drifted "Playfair stays" comments, gap styling missing on vitamin/amino/fat tiles (a vitamin in deficit renders identical to a pending one), the present status having zero Coverage CSS, CoverageTile.coveredBy/aggregateVehicle dead but kept (plausibly wanted for a "what's covering this" UI), views/regimen.ts SLOT_PLACEHOLDERS with fake coverage 31/47/18/54, and the drawer missing its coverage:recomputed subscription.` }];
+DEFERRED, named rather than silent: Phase 2 = the plate-language visual overhaul (A/B signed off \u2014 variant A, behind an A<->B toggle). Phase 2b = eden/catalog/goals.json mapping each goal to its condition slugs, joined through corpus/indices/essentials.json's conditions_treated (already derived from sealed Wallach claims) to produce real per-goal coverage off the same snapshot \u2014 a feasibility probe derives 27 real members for bone/skeletal, against the hand-typed 14. Also owed: dead CSS (.periodic, .periodic-host, .tile.spacer, the trace family), the duplicate .tile block (declared twice 13 lines apart, the second silently overriding aspect-ratio + padding), ambient chrome duplicated across dashboard.css and workspace-coverage.css, pre-futurist Chakra-Petch/Bruno-Ace @font-face plus :root token overrides still sitting in workspace-coverage.css, drifted "Playfair stays" comments, gap styling missing on vitamin/amino/fat tiles (a vitamin in deficit renders identical to a pending one), the present status having zero Coverage CSS, CoverageTile.coveredBy/aggregateVehicle dead but kept (plausibly wanted for a "what's covering this" UI), views/regimen.ts SLOT_PLACEHOLDERS with fake coverage 31/47/18/54, and the drawer missing its coverage:recomputed subscription.` }, { id: "lg_mrkqen8d_7vldy9", ts: "2026-07-14T09:13:30.013720-05:00", surface: "coverage", kind: "round-close", summary: "Coverage Phase 2 \u2014 the plate language: covered essentials now LIFT off a machined substrate as white green-rimmed plates (orange was the app's own chrome colour, so the win was camouflaged); partial shows its real delivered\xF7target fill; purged 6 dead selector families", detail: `Coverage's states used to read as noise, and there was a precise reason. "Covered" was painted in the SAME orange the whole app uses for its ambient chrome \u2014 the scan line, the border travel, the buttons, the scrollbar, the pulse dot, the section numbers. The win state was camouflaged in brand paint. Meanwhile "gap" was --ds-status-warn amber (#c79830), sitting right beside that orange (#ff7e3c) on the colour wheel, so the win and the problem were the same colour family. "Partial" was #fffbf2 on #faf5e8 \u2014 a four-value delta, which is to say invisible. Nothing could feel satisfying because nothing was distinguishable.
+
+Now coverage IS elevation. A covered essential's plate lifts off a recessed machined substrate \u2014 white, green-rimmed, carrying the white top-light \u2014 the way the plates lift off the underwiring in Luneth's Empower calibration reference. Sizing, fonts, grid and placement are byte-identical; only colour and depth changed, exactly per the contract he set.
+
+GREEN WAS NEVER AN INVENTION. The Knowledge drawer ALREADY spoke green/amber/red/blue for these exact states (drawer-knowledge.css .kd-cov-dot--*). Coverage was the outlier teaching a contradictory language for one snapshot, and --ds-status-ok was already sitting in the sealed token set, unused by this surface. Luneth's "I'm thinking green" was the rest of his own app. Equally: removing orange from 90 tiles RESTORES the reference's rule rather than breaking it \u2014 the reference says "bright orange as a signal accent, not a wash," and painting 90 tiles orange WAS the wash. Orange now rides the winner as a signal tick and owns interaction/hover.
+
+THE STATES. Dormant = sunk into the substrate, quiet and unlit \u2014 a fresh start must be restful, never a wall of red (Luneth was explicit). Gap = the same recess plus ONE 3px amber edge tick: a signal, not an alarm. Partial = mid-lift with a green FILL LEVEL whose height is the snapshot's real fillPercent (delivered \xF7 Wallach target) \u2014 a number computed on every recompute since Phase C and thrown away by every consumer until now; verified rendering live at 42%. Present = lifted but hollow with a tech-blue rim, matching the drawer (it previously had ZERO Coverage CSS and rendered identical to pending). Covered = fully lifted, white\u2192ok-wash, ok-bright rim, green drop shadow.
+
+CARD TYPES. One shared plate chassis, four silhouettes via clip-path chamfers \u2014 vitamin cuts the top-right, amino the bottom-left, fat both, mineral stays square. Straight off the reference plates, at zero layout cost.
+
+Variant A (Luneth's pick) is live behind a one-value toggle (--cov-strip-mode / [data-covered-variant='b']), verified flipping live. Kept deliberately: the A/B was judged on a mockup, and the real page at 90-tile density is the only honest test of whether the saturated strip becomes a wall.
+
+The green scale (--ds-ok-deep/-bright/-wash, mirroring the accent scale's shape) is declared LOCALLY here, NOT in the sealed design-system.css \u2014 the same interim pattern type-futurist.css used for the Unbounded pivot. It folds into the sealed canonical with the pending font fold-in, under Luneth's sign-off and a golden re-seal.
+
+DEAD CODE PURGED, each proven dead before removal: the DUPLICATE .tile block (declared twice, 13 lines apart, the second silently resetting aspect-ratio and padding \u2014 a bug hiding in plain sight); .periodic and .periodic-host (match no element; the view renders .essentials-host from data \u2014 they survive only in the read-only v3.2 mockup this sheet was lifted from in June 2026); .tile.spacer (not a member of CoverageStatus, therefore unreachable); the entire .trace family (state/coverage.ts stopped producing it); the Chakra Petch x3 + Bruno Ace @font-face blocks, dead since the futurist pivot (verified by checking all 35 font-family declarations resolve to no retired face); three drifted comments still asserting Playfair/Chakra Petch; and a plainly wrong fact \u2014 a comment claiming "the 92 Wallach essentials," when it is 90 essentials across 91 tiles. Gap styling now covers vitamin/amino/fat, which it never did: a vitamin in deficit used to render identical to a pending one.
+
+TWO DEFECTS FOUND BY LOOKING, which no probe caught. The computed-style probe cheerfully confirmed every rule was "applied" while the page still looked wrong. (1) The orange tick was pinned to top/right:0, exactly where the vitamin and fat chamfers SLICED it into a glitch-looking sliver \u2014 now inset 13px past the deepest chamfer. (2) The substrate grid was invisible (rule-soft on paper-darker is a ~3-value delta); the first fix over-corrected to --ds-rule + multiply and the grid VIBRATED behind 91 plates \u2014 a textbook pin-the-exact-element-dont-overcorrect miss \u2014 settling at rule-soft + multiply (~#d5c598). Screenshots are the gate; exit codes are not.
+
+VERIFIED: tsc clean, eslint exit 0, build exit 0, invariants 64/64, render probes coverage + seeded + knowledge + adopt all exit 0, A/B toggle verified flipping live, and screenshot-verified at 3x on the real page.
+
+NOT DONE UNTIL LUNETH LOOKS. The visual-verification gate is his eyes, not my confidence \u2014 this entry records the work, not an approval.
+
+DEFERRED: Phase 2b (eden/catalog/goals.json \u2192 conditions_treated \u2192 real per-goal coverage; the probe derives 27 real bone/skeletal members against the mockup's hand-typed 14); ambient chrome still duplicated across dashboard.css + workspace-coverage.css; views/regimen.ts SLOT_PLACEHOLDERS fake coverage 31/47/18/54; the drawer missing its coverage:recomputed subscription; CoverageTile.coveredBy/aggregateVehicle dead but kept as plausibly wanted.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

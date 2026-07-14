@@ -12,7 +12,7 @@
  *   2. SKIPPED — .app-shell / .app-rail / .app-topbar already styled by
  *      dashboard.css. Pulling them in would collide.
  *   3. Coverage workspace styles — .coverage-grid, .coverage-hero,
- *      .coverage-stat, .periodic, .tile, .essentials-* etc.
+ *      .coverage-stat, .tile, .essentials-* etc.
  *
  * Load order in dashboard.html: AFTER dashboard.css
  * so workspace styles win on the new coverage mount.
@@ -20,44 +20,21 @@
 
 /* ─── Block 1: shared chrome (fonts, tokens, ds-* decorations) ───────── */
 /* ═══════════════════════════════════════════════════════════════════════════
- * NEW FONTS — proposed for design-system.css.
- * Falls back gracefully until user drops the font files.
+ * WORKSPACE DISPLAY TOKENS
+ * ═══════════════════════════════════════════════════════════════════════════
+ * The Chakra Petch + Bruno Ace @font-face blocks that stood here were removed on
+ * 2026-07-14: the futurist pivot (type-futurist.css, 2026-07-13) moved every display
+ * surface to Unbounded, so no rule in this file resolved to either face any more —
+ * they were dead declarations the browser could still be asked to fetch.
+ *
+ * The two tokens below survive because rules here DO read them, but note they are
+ * local to this file — the sealed design-system.css never declared them. Folding them
+ * into the sealed canonical is part of the pending font fold-in (which needs Luneth's
+ * sign-off + a golden re-seal); until then this file names their live faces.
  * ═══════════════════════════════════════════════════════════════════════════ */
-@font-face {
-  font-family: 'Chakra Petch';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Chakra Petch';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../fonts/ChakraPetch-SemiBold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Chakra Petch';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Bruno Ace';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/BrunoAce-Regular.ttf') format('truetype');
-}
-
-/* Local design tokens specific to this preview's typography pivot.
-   Once approved, these become --ds-font-display-interface and
-   --ds-font-display-artifact in design-system.css. */
 :root {
-  --ds-font-display-interface: 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
-  --ds-font-display-artifact:  'Bruno Ace', 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-interface: 'Unbounded', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-artifact:  'Unbounded', 'Space Grotesk', system-ui, sans-serif;
 }
 
 /* Lock the viewport — no page-level scroll. Workspace scrolls internally
@@ -259,7 +236,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
   content: '';
   width: 16px; height: 1px; background: var(--ds-accent);
 }
-/* HERO TITLE — Chakra Petch (interface display, not Playfair) */
+/* HERO TITLE — the interface display face (Unbounded, via type-futurist.css) */
 .coverage-hero__title {
   font-family: var(--ds-font-display-interface);
   font-size: clamp(1.8rem, 2.4vw, 2.4rem);
@@ -334,21 +311,13 @@ body { margin: 0; background: var(--ds-paper-deep); }
   position: relative;
 }
 
-/* The periodic table host — wraps a .ds-scan-line for the sweeping motion */
-.periodic-host {
-  position: relative;
-  overflow: hidden;
-  padding: var(--ds-space-3) 0;
-  margin-bottom: var(--ds-space-3);
-}
-
-
 /* ════ ESSENTIALS — 4-SECTION FUNCTIONAL GRID ═══════════════════════════════
-   Replaces the chemistry-only periodic table with the 92 Wallach essentials
+   Replaces the chemistry-only periodic table with Wallach's 90 essentials
    organized by function: 60 Minerals · 16 Vitamins · 12 Amino Acids · 3 Fatty
-   Acids. Each section has its own header, divider, grid density, and tile
-   variant. Playfair Display alchemy intent stays in the Minerals section
-   only (mineral symbols use the chemistry serif).
+   Acids (91 TILES — Omega-9 renders for completeness but is essential:false in the
+   layout and excluded from the count; the old "92" here was simply wrong). Each section has its own header, divider, grid density, and tile
+   variant. Mineral tiles carry the real atomic number + symbol from canon; the
+   other three sections use positional codes (V-01 / AA-01 / F-01).
    ═════════════════════════════════════════════════════════════════════════ */
 
 .essentials-host {
@@ -470,186 +439,336 @@ body { margin: 0; background: var(--ds-paper-deep); }
   margin-left: auto;
 }
 
-/* Per-section grid densities */
+/* ═══════════════════════════════════════════════════════════════════════════
+ * THE PLATE LANGUAGE — coverage states as physical depth (2026-07-14)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * WHY THIS REPLACED THE OLD STATE COLOURS (Luneth: "it all reads as noise and none of
+ * it feels satisfying when something is covered"). The old system was diagnosed, not
+ * guessed:
+ *
+ *   1. COVERED was --ds-accent orange — the SAME hue the whole app paints its ambient
+ *      chrome in (scan line, border travel, buttons, scrollbar, pulse dot, section
+ *      numbers). The win state was camouflaged in brand paint, so it could not read as
+ *      an achievement.
+ *   2. GAP was --ds-status-warn amber (#c79830) — adjacent on the wheel to that orange
+ *      (#ff7e3c). Win and problem were the same colour family. That is the "noise".
+ *   3. PARTIAL was --ds-paper-light (#fffbf2) on --ds-paper (#faf5e8) — imperceptible.
+ *   4. The Knowledge drawer ALREADY spoke green/amber/red/blue for these exact states
+ *      (drawer-knowledge.css .kd-cov-dot--*). Coverage was the outlier, and the two
+ *      surfaces taught contradictory colour languages for one snapshot.
+ *
+ * So green here is not a new invention — it is the app's own existing covered colour,
+ * and --ds-status-ok was already in the sealed token set, unused by this surface.
+ *
+ * THE IDEA — "lifted off the underwiring" (Luneth, from the Empower calibration
+ * reference, design-wisdom/references/): coverage IS elevation. The substrate is a
+ * recessed machined field; a covered plate RISES out of it — whitest, highest, green-
+ * rimmed, carrying the white top-light those reference plates have. Depth does the
+ * talking, so orange stops being a state and returns to being the signal accent the
+ * reference calls for ("bright orange as a signal accent, not a wash"). Painting 90
+ * tiles orange WAS the wash; this restores the reference's own rule.
+ *
+ * Sizing, fonts, grid, and placement are UNCHANGED by contract — only colour + depth.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* PROPOSED green scale — mirrors the accent scale's shape exactly (deep/base/bright/
+     soft/wash). The sealed design-system.css declares only --ds-status-ok + -ok-soft;
+     these three complete it. Declared HERE and not in the sealed file on purpose: same
+     pattern type-futurist.css used for the Unbounded pivot — prototype in the workspace
+     sheet, fold into the sealed canonical with Luneth's sign-off + a golden re-seal.
+     INTERIM BY DESIGN. */
+  --ds-ok-deep:   #3d6129;
+  --ds-ok-bright: #7cb356;
+  --ds-ok-wash:   #eef5e6;
+
+  /* ── COVERED TREATMENT TOGGLE (Luneth chose A, 2026-07-14) ─────────────────
+     A = SATURATED: the green fills the name strip. Loud, unmissable.
+     B = RESTRAINED: luminosity + lift + a rim carry it; the strip stays quiet.
+     Flip by setting --cov-strip-mode to 0 (B) — one value, no other edit. Kept live
+     because the A/B was judged on a mockup, and the real page at 90-tile density is
+     the only honest test. */
+  --cov-strip-mode: 1;                       /* 1 = A (saturated) · 0 = B (restrained) */
+  --cov-strip-bg:   var(--ds-status-ok);
+  --cov-strip-fg:   #ffffff;
+}
+:root:has(.coverage-grid[data-covered-variant='b']) {
+  --cov-strip-mode: 0;
+  --cov-strip-bg: transparent;
+  --cov-strip-fg: var(--ds-ok-deep);
+}
+
+/* ── THE SUBSTRATE — the "underwiring" the plates lift off ──────────────────
+   Recessed, warm, faintly machined. NOT dark: literal dark tubing/wiring under the
+   tiles would look absurd on web (Luneth said so explicitly) — the depth comes from an
+   inset shadow + a hairline registration grid, which is the FEEL without the costume. */
+.essentials-host {
+  background: var(--ds-paper-darker);
+  border-radius: var(--ds-radius-md);
+  padding: var(--ds-space-4);
+  box-shadow:
+    inset 0 2px 5px rgba(26, 22, 18, 0.10),
+    inset 0 0 0 1px var(--ds-rule);
+  background-image:
+    linear-gradient(var(--ds-rule-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ds-rule-soft) 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: -1px -1px;
+  /* The multiply blend is what makes this read at all: rule-soft (#e8dfc6) painted flat on
+     paper-darker (#ebe2c4) is a ~3-value delta and vanished. Multiplied, it resolves to
+     ~#d5c598 — a machined backplane that is present but quiet. Using --ds-rule here instead
+     multiplied down to ~#c3b182 and the grid VIBRATED behind 91 plates; the blend does the
+     work, so the colour stays soft. */
+  background-blend-mode: multiply;
+}
+
+/* Per-section grid densities — SIZING CONTRACT, unchanged. */
 .essentials-grid--minerals { display: grid; grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px; }
 .essentials-grid--vitamins { display: grid; grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px; }
 .essentials-grid--aminos   { display: grid; grid-template-columns: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px; }
 .essentials-grid--fats     { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-3); }
 
-
-/* VITAMIN TILE — mineral format: code top-left, Playfair letter centered, name
-   strip at the bottom. Same sizing/placement as .tile (Playfair stays on the
-   letter glyph — the "discovered substance" lineage shared with minerals). */
-.tile--vitamin {
-  aspect-ratio: auto;
-  min-height: 80px;
-  background: var(--ds-paper-deep);
-  border: 1px solid var(--ds-rule-soft);
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;   /* code top · letter mid · name bottom — mineral format */
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  padding: 5px 5px 0;
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-.tile--vitamin .tile__code {
-  font-family: var(--ds-font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ds-ink-soft);
-  letter-spacing: 0.03em;
-}
-.tile--vitamin .tile__letter {
-  font-family: var(--ds-font-display);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ds-ink);
-  line-height: 1;
-  text-align: center;
-  margin-top: 1px;
-}
-.tile--vitamin .tile__name {
-  font-family: var(--ds-font-sans);
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.15;
-  overflow-wrap: anywhere;
-  background: var(--ds-paper-darker);
-  border-top: 1px solid var(--ds-rule-soft);
-  margin: auto -5px 0;                /* strip bleeds to tile edges — kills L/R gap */
-  padding: 4px 2px 4px;
-  border-radius: 0 0 1px 1px;
-}
-.tile--vitamin.covered .tile__name {
-  background: var(--ds-accent-soft);
-  border-color: var(--ds-accent);
-  color: var(--ds-accent-deep);
-}
-.tile--vitamin.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
-.tile--vitamin.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
-.tile--vitamin:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
-.tile--vitamin.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
-.tile--vitamin.covered .tile__letter, .tile--vitamin.covered .tile__code, .tile--vitamin.covered .tile__name { color: var(--ds-accent-deep); }
-
-
-/* AMINO ACID TILE — mineral format: code top-left, 3-letter abbr centered, name strip bottom */
-.tile--amino {
-  aspect-ratio: auto;
-  min-height: 80px;
-  background: var(--ds-paper-deep);
-  border: 1px solid var(--ds-rule-soft);
-  border-radius: 2px;
-  padding: 5px 5px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;   /* code top · abbr mid · name bottom — mineral format */
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-.tile--amino .tile__code {
-  font-family: var(--ds-font-mono);
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--ds-ink-soft);
-  letter-spacing: 0.03em;
-}
-.tile--amino .tile__abbr {
-  font-family: var(--ds-font-display);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ds-ink);
-  line-height: 1;
-  text-align: center;
-  margin-top: 1px;
-}
-.tile--amino .tile__name {
-  font-family: var(--ds-font-sans);
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.15;
-  overflow-wrap: anywhere;
-  background: var(--ds-paper-darker);
-  border-top: 1px solid var(--ds-rule-soft);
-  margin: auto -5px 0;                /* strip bleeds to tile edges — kills L/R gap */
-  padding: 4px 2px 4px;
-  border-radius: 0 0 1px 1px;
-}
-.tile--amino.covered .tile__name {
-  background: var(--ds-accent-soft);
-  border-color: var(--ds-accent);
-  color: var(--ds-accent-deep);
-}
-.tile--amino.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
-.tile--amino.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
-.tile--amino:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
-.tile--amino.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
-.tile--amino.covered .tile__abbr, .tile--amino.covered .tile__code, .tile--amino.covered .tile__name { color: var(--ds-accent-deep); }
-
-
-/* FATTY ACID TILE — bigger statement tiles. Only 3 of these, so each gets
-   editorial-card weight rather than dense-grid tile weight. */
+/* ── THE PLATE CHASSIS — one shared body for all four families ──────────────
+   Previously .tile / .tile--vitamin / .tile--amino each re-declared a byte-identical
+   chassis (and .tile was declared TWICE, 13 lines apart, the second silently resetting
+   aspect-ratio + padding). One chassis, four silhouettes.
+   DEFAULT = DORMANT: sunk INTO the substrate. Quiet, unlit, never alarming — at a fresh
+   start most plates are dormant, so this state must be restful by design. */
+.tile,
+.tile--vitamin,
+.tile--amino,
 .tile--fat {
-  background: var(--ds-paper-deep);
-  border: 1px solid var(--ds-rule-soft);
-  border-radius: var(--ds-radius-sm);
-  padding: var(--ds-space-4) var(--ds-space-5);
+  position: relative;
+  min-height: 80px;
+  padding: 5px 5px 0;
   display: flex;
   flex-direction: column;
-  gap: var(--ds-space-2);
+  justify-content: space-between;
+  border: 0;
+  border-radius: var(--ds-radius-xs);
   cursor: pointer;
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-  position: relative;
   overflow: hidden;
-  min-height: 92px;
+  background: var(--ds-paper-deep);
+  box-shadow:
+    inset 0 1px 3px rgba(26, 22, 18, 0.10),
+    inset 0 0 0 1px var(--ds-rule-soft);
+  transition:
+    transform var(--ds-motion-base) var(--ds-ease-out),
+    box-shadow var(--ds-motion-base) var(--ds-ease-out),
+    background var(--ds-motion-base) var(--ds-ease-out);
 }
-.tile--fat .tile__code {
+
+/* ── FAMILY SILHOUETTES — chamfered corners, straight off the reference plates.
+   The only per-family difference, and it costs zero layout: sizing is identical. */
+.tile--vitamin { clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%); }
+.tile--amino   { clip-path: polygon(0 0, 100% 0, 100% 100%, 9px 100%, 0 calc(100% - 9px)); }
+.tile--fat {
+  min-height: 92px;
+  padding: var(--ds-space-4) var(--ds-space-5);
+  gap: var(--ds-space-2);
+  clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 11px 100%, 0 calc(100% - 11px));
+}
+
+/* ── THE FILL LEVEL — real data made visible.
+   Height = --fill = delivered ÷ Wallach target, emitted per-tile by the view from the
+   snapshot's fillPercent (which every consumer previously discarded). Only `partial`
+   carries one. */
+.tile::before,
+.tile--vitamin::before,
+.tile--amino::before,
+.tile--fat::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--fill, 0);
+  background: linear-gradient(180deg, rgba(124, 179, 86, 0.18) 0%, rgba(91, 138, 63, 0.30) 100%);
+  pointer-events: none;
+  z-index: 0;
+  transition: height var(--ds-motion-slow, 0.5s) var(--ds-ease-out);
+}
+.tile > *,
+.tile--vitamin > *,
+.tile--amino > *,
+.tile--fat > * { position: relative; z-index: 1; }
+
+/* ── GLYPHS + LABEL STRIP — sizing/typography unchanged from the v3 contract.
+   The old comments here asserted a serif alchemy-reference lineage for these glyphs. That
+   went stale on 2026-07-13, when type-futurist.css remapped --ds-font-display to Unbounded
+   app-wide: the glyphs render futurist, not serif. A drifted comment deceives the next
+   reader and wastes an auditor's time, so it is deleted rather than carried forward. */
+.tile__num,
+.tile__code {
   font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
+  font-size: 10px;
+  font-weight: 600;
   color: var(--ds-ink-faint);
+  letter-spacing: 0.03em;
+}
+.tile__sym,
+.tile__letter,
+.tile__abbr {
+  font-family: var(--ds-font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ds-ink-soft);
+  line-height: 1;
+  text-align: center;
+  margin-top: 1px;
+}
+.tile__name {
+  font-family: var(--ds-font-sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--ds-ink-soft);
+  text-align: center;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+  background: transparent;
+  border-top: 1px solid var(--ds-rule-soft);
+  margin: auto -5px 0;
+  padding: 4px 2px;
+  border-radius: 0 0 1px 1px;
+}
+
+/* ── GAP — a Wallach target exists, nothing is delivered.
+   ONE amber signal tick on the leading edge, NOT a red flood: at a bare start most
+   numeric targets are gaps, and a wall of alarm on first open is exactly what Luneth
+   ruled out. Previously this styling existed ONLY for mineral .tile — a vitamin, amino
+   or fat in deficit rendered identical to a pending one. Now every family gets it. */
+.tile.gap,
+.tile--vitamin.gap,
+.tile--amino.gap,
+.tile--fat.gap {
+  background: var(--ds-paper-deep);
+  box-shadow:
+    inset 0 1px 3px rgba(26, 22, 18, 0.10),
+    inset 0 0 0 1px var(--ds-rule-soft),
+    inset 3px 0 0 var(--ds-status-warn);
+}
+.tile.gap .tile__sym,
+.tile--vitamin.gap .tile__letter,
+.tile--amino.gap .tile__abbr { color: var(--ds-ink-soft); }
+
+/* ── PRESENT — in the stack but unquantified (the PDM present-but-underivable verdict).
+   Lifted, but HOLLOW: it is here, we cannot measure it. Previously this status had ZERO
+   CSS on Coverage — a present tile rendered byte-identical to a pending one, while the
+   drawer showed it as a distinct hollow ring. Matches the drawer's tech-blue language. */
+.tile.present,
+.tile--vitamin.present,
+.tile--amino.present,
+.tile--fat.present {
+  background: var(--ds-paper-light);
+  transform: translateY(-1px);
+  box-shadow:
+    var(--ds-elev-1),
+    inset 0 0 0 1px var(--ds-status-info);
+}
+.tile.present .tile__sym,
+.tile--vitamin.present .tile__letter,
+.tile--amino.present .tile__abbr { color: var(--ds-status-info); }
+.tile.present .tile__name,
+.tile--vitamin.present .tile__name,
+.tile--amino.present .tile__name,
+.tile--fat.present .tile__name { color: var(--ds-status-info); border-top-color: var(--ds-status-info); }
+
+/* ── PARTIAL — the plate is RISING. Mid-lift, and the green fill climbs to its real ratio. */
+.tile.partial,
+.tile--vitamin.partial,
+.tile--amino.partial,
+.tile--fat.partial {
+  background: var(--ds-paper-light);
+  transform: translateY(-1px);
+  box-shadow: var(--ds-elev-1);
+}
+.tile.partial .tile__sym,
+.tile--vitamin.partial .tile__letter,
+.tile--amino.partial .tile__abbr { color: var(--ds-ink-medium); }
+.tile.partial .tile__name,
+.tile--vitamin.partial .tile__name,
+.tile--amino.partial .tile__name,
+.tile--fat.partial .tile__name { color: var(--ds-ink-soft); border-top-color: var(--ds-rule); }
+
+/* ── COVERED — FULLY LIFTED off the substrate. The satisfaction beat.
+   Whitest + highest + a crisp green rim + the white top-light from the reference plates. */
+.tile.covered,
+.tile--vitamin.covered,
+.tile--amino.covered,
+.tile--fat.covered {
+  background: linear-gradient(180deg, #ffffff 0%, #fdfff9 55%, var(--ds-ok-wash) 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 0 0 1px var(--ds-ok-bright),
+    0 12px 22px -11px rgba(61, 97, 41, 0.42),
+    0 3px 8px -3px rgba(26, 22, 18, 0.10);
+}
+.tile.covered .tile__num,
+.tile.covered .tile__code,
+.tile--vitamin.covered .tile__code,
+.tile--amino.covered .tile__code,
+.tile--fat.covered .tile__code { color: var(--ds-status-ok); }
+.tile.covered .tile__sym,
+.tile--vitamin.covered .tile__letter,
+.tile--amino.covered .tile__abbr { color: var(--ds-ok-deep); }
+.tile.covered .tile__name,
+.tile--vitamin.covered .tile__name,
+.tile--amino.covered .tile__name,
+.tile--fat.covered .tile__name {
+  background: var(--cov-strip-bg);
+  color: var(--cov-strip-fg);
+  border-top-color: var(--ds-status-ok);
+}
+/* The painted signal stripe: orange rides the WINNER as an accent, rather than being the
+   state. This is the reference's orange-on-white flow-line, at interface scale. */
+.tile.covered::after,
+.tile--vitamin.covered::after,
+.tile--amino.covered::after,
+.tile--fat.covered::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  /* Inset past the deepest chamfer (fats cut 11px) so the mark clears every family's
+     silhouette. Pinned to right:0 it was sliced by the vitamin/fat clip-path and read as
+     a glitch rather than a mark. */
+  right: 13px;
+  width: 14px;
+  height: 3px;
+  background: var(--ds-accent);
+  border-radius: 0 0 2px 2px;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+/* ── FATTY-ACID overrides — the 3 statement tiles keep their editorial layout,
+   NOT the label-strip pattern the dense grids use. */
+.tile--fat .tile__code {
+  font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wider);
   text-transform: uppercase;
   display: flex;
   align-items: center;
   gap: var(--ds-space-2);
 }
-.tile--fat .tile__code::before {
-  content: '';
-  width: 8px; height: 1px; background: var(--ds-accent);
-}
+.tile--fat .tile__code::before { content: ''; width: 8px; height: 1px; background: var(--ds-accent); }
 .tile--fat .tile__name {
   font-family: var(--ds-font-display-interface);
   font-size: var(--ds-text-lg);
-  font-weight: 700;
   color: var(--ds-ink);
   letter-spacing: 0.02em;
-  text-transform: uppercase;
   line-height: 1.05;
-  /* Explicit reset — fatty-acid tiles use the bigger-statement layout,
-     NOT the label-strip pattern that minerals/vitamins/aminos use. */
   background: none;
   border: 0;
-  border-top: 0;
-  margin-top: auto;            /* push to bottom, no strip needed */
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+  margin: auto 0 0;
   padding: 0;
   width: auto;
   border-radius: 0;
+  text-align: left;
 }
+.tile--fat.covered .tile__name { background: none; color: var(--ds-ok-deep); }
 .tile--fat .tile__hint {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -659,104 +778,24 @@ body { margin: 0; background: var(--ds-paper-deep); }
   margin-top: auto;
   font-variant-numeric: tabular-nums;
 }
+.tile--fat.covered .tile__hint { color: var(--ds-status-ok); }
+
+/* ── HOVER — orange is the INTERACTION accent now that it is no longer a state. */
+.tile:hover,
+.tile--vitamin:hover,
+.tile--amino:hover,
 .tile--fat:hover {
-  transform: translateY(-1px);
-  border-color: var(--ds-accent);
-  box-shadow: 0 6px 14px -3px rgba(255,126,60,0.25);
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 0 1px var(--ds-accent),
+    var(--ds-glow-accent-sm);
 }
-.tile--fat.covered {
-  background: linear-gradient(135deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%);
-  border-color: var(--ds-accent);
-}
-.tile--fat.covered .tile__name,
-.tile--fat.covered .tile__code,
-.tile--fat.covered .tile__hint { color: var(--ds-accent-deep); }
-
-
-/* ════ PERIODIC TABLE (Playfair stays here — alchemy intent) ════════════════ */
-.periodic {
-  display: grid;
-  grid-template-columns: repeat(18, 1fr);
-  gap: 4px;
-}
-.tile {
-  aspect-ratio: 1 / 1.05;
-  background: var(--ds-paper-deep);
-  border: 1px solid var(--ds-rule-soft);
-  border-radius: 2px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 4px 5px;
-  cursor: pointer;
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-.tile {
-  aspect-ratio: auto;                 /* full names — grow to fit, never clip */
-  min-height: 80px;
-  padding: 5px 5px 0;                 /* no bottom padding — label fills it */
-  overflow: hidden;                   /* clips the horizontal bleed strip only */
-}
-.tile__num {
-  font-family: var(--ds-font-mono);
-  font-size: 10px;                    /* was 7 — ~40% bigger */
-  font-weight: 600;                   /* bolder */
-  color: var(--ds-ink-soft);
-  letter-spacing: 0.03em;
-}
-/* TILE SYMBOL — Playfair Display STAYS (alchemy reference, intentional) */
-.tile__sym {
-  font-family: var(--ds-font-display);
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ds-ink);
-  line-height: 1;
-  text-align: center;
-  margin-top: 1px;
-}
-/* TILE NAME — now a proper bold label strip filling the tile bottom.
-   Read at a glance, scan-friendly. Subtle bg tint defines the zone. */
-.tile__name {
-  font-family: var(--ds-font-sans);
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--ds-ink);
-  text-align: center;
-  letter-spacing: 0.025em;
-  line-height: 1.15;
-  text-transform: uppercase;
-  overflow-wrap: anywhere;            /* long element names wrap, never clip */
-  background: var(--ds-paper-darker);
-  border-top: 1px solid var(--ds-rule-soft);
-  margin: auto -5px 0;                /* strip pinned to the tile bottom */
-  padding: 4px 2px 4px;
-  border-radius: 0 0 1px 1px;
-}
-/* Covered tile gets a tinted label strip — signals the state clearly */
-.tile.covered .tile__name {
-  background: var(--ds-accent-soft);
-  border-color: var(--ds-accent);
-  color: var(--ds-accent-deep);
-}
-.tile.partial .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); }
-.tile.trace .tile__name { background: var(--ds-paper); border-color: var(--ds-rule-bright); color: var(--ds-ink-soft); }
-.tile.gap .tile__name { background: var(--ds-status-warn-soft); border-color: var(--ds-status-warn); color: var(--ds-status-warn); }
-.tile:hover { transform: translateY(-1px); border-color: var(--ds-accent); box-shadow: 0 4px 10px -2px rgba(255,126,60,0.25); }
-.tile.covered { background: linear-gradient(180deg, var(--ds-accent-soft) 0%, var(--ds-accent-wash) 100%); border-color: var(--ds-accent); }
-.tile.covered .tile__num { color: var(--ds-accent-deep); }
-.tile.covered .tile__sym { color: var(--ds-accent-deep); }
-.tile.covered .tile__name { color: var(--ds-accent-deep); }
-.tile.partial { background: var(--ds-paper-light); border-color: var(--ds-rule-bright); }
-.tile.trace { background: var(--ds-paper); border: 1px dashed var(--ds-rule-bright); opacity: 0.85; }
-.tile.gap { background: var(--ds-paper-deep); border: 1px dashed var(--ds-status-warn); }
-.tile.gap .tile__sym { color: var(--ds-status-warn); }
-.tile.spacer { background: transparent; border: 0; cursor: default; pointer-events: none; }
-.tile.spacer:hover { transform: none; box-shadow: none; }
 
 .legend {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--ds-space-5);
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -767,11 +806,23 @@ body { margin: 0; background: var(--ds-paper-deep); }
   border-top: 1px solid var(--ds-rule-soft);
 }
 .legend__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); }
-.legend__sw { width: 12px; height: 12px; border-radius: 2px; }
-.legend__sw.covered { background: var(--ds-accent-soft); border: 1px solid var(--ds-accent); }
-.legend__sw.partial { background: var(--ds-paper-light); border: 1px solid var(--ds-rule-bright); }
-.legend__sw.trace { background: var(--ds-paper); border: 1px dashed var(--ds-rule-bright); }
-.legend__sw.gap { background: var(--ds-paper-deep); border: 1px dashed var(--ds-status-warn); }
+/* Each swatch is the real plate treatment in miniature — a legend that renders a
+   different language than the thing it explains is just another lie. */
+.legend__sw { width: 13px; height: 13px; border-radius: var(--ds-radius-xs); flex: 0 0 auto; }
+.legend__sw.covered {
+  background: linear-gradient(180deg, #ffffff, var(--ds-ok-wash));
+  box-shadow: 0 0 0 1px var(--ds-ok-bright), 0 3px 6px -3px rgba(61, 97, 41, 0.5);
+}
+.legend__sw.partial { background: var(--ds-paper-light); box-shadow: var(--ds-elev-1); }
+.legend__sw.present { background: var(--ds-paper-light); box-shadow: 0 0 0 1px var(--ds-status-info); }
+.legend__sw.gap {
+  background: var(--ds-paper-deep);
+  box-shadow: inset 0 0 0 1px var(--ds-rule-soft), inset 3px 0 0 var(--ds-status-warn);
+}
+.legend__sw.pending {
+  background: var(--ds-paper-deep);
+  box-shadow: inset 0 1px 3px rgba(26, 22, 18, 0.12), inset 0 0 0 1px var(--ds-rule-soft);
+}
 
 
 /* ════ GOALS STRIP ═════════════════════════════════════════════════════════ */
@@ -966,7 +1017,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
   color: var(--ds-accent-deep);
 }
 .regimen-item__body { flex: 1; min-width: 0; }
-/* ITEM NAME — Chakra Petch (was Playfair) */
+/* ITEM NAME — the interface display face (Unbounded, via type-futurist.css) */
 .regimen-item__name {
   font-family: var(--ds-font-display-interface);
   font-size: var(--ds-text-sm);

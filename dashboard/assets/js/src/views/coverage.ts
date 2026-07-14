@@ -21,7 +21,7 @@ import { on } from '../core/events.js';
 import { plural } from '../core/format.js';
 import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
-import { type CoverageSnapshot, type CoverageStatus, essentialCount, getOrCompute } from '../state/coverage.js';
+import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
 import { loadEffectiveRegimen, loadRgUserGoals } from '../state/regimen.js';
 
 export interface MountHandle {
@@ -35,16 +35,35 @@ const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
 // ─── Render helpers ───────────────────────────────────────────────────────
 
+/**
+ * The snapshot's tile for a layout key. `key` is the canonical essential name and snapshot
+ * tiles are keyed the same, so this is a direct join. The snapshot owns the authoritative
+ * verdict (state/coverage.ts::classify) — the view renders it, never re-derives it.
+ */
+function tileFor(key: string, snapshot: CoverageSnapshot | null): CoverageTile | undefined {
+  return snapshot?.tiles.find(t => t.name === key);
+}
+
 function tileStatusFor(key: string, snapshot: CoverageSnapshot | null): CoverageStatus {
-  if (snapshot === null) {
-    return '';
+  return tileFor(key, snapshot)?.status ?? '';
+}
+
+/**
+ * The plate's fill height, as a --fill percentage for the CSS to render.
+ *
+ * This is REAL data, not decoration: `fillPercent` is delivered ÷ the Wallach target, already
+ * computed on every recompute (state/coverage.ts::deliveryRatio) and — until now — thrown away
+ * by every consumer. A partial plate whose fill sits at 40% is stating a measured fact.
+ *
+ * Only `partial` gets a fill: `covered` is expressed by the plate's own lift + rim (a fill bar
+ * at 100% would just be noise), and fillPercent can exceed 1 when items stack, so it is clamped
+ * — an over-delivered essential is still simply covered.
+ */
+function tileFillPercent(tile: CoverageTile | undefined): number | null {
+  if (tile === undefined || tile.status !== 'partial') {
+    return null;
   }
-  /*
-   * `key` is the canonical essential name; snapshot tiles are keyed the same.
-   * The snapshot owns the authoritative status (state/coverage.ts classify) —
-   * the view renders it directly, no re-derivation.
-   */
-  return snapshot.tiles.find(t => t.name === key)?.status ?? '';
+  return Math.max(0, Math.min(100, Math.round(tile.fillPercent * 100)));
 }
 
 function escHTML(s: unknown): string {
@@ -58,8 +77,13 @@ function escHTML(s: unknown): string {
 }
 
 function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnapshot | null): string {
-  const status = tileStatusFor(spec.key, snapshot);
+  const tile = tileFor(spec.key, snapshot);
+  const status = tile?.status ?? '';
   const cls = `${tileClass} ${status}`.trim();
+  // --fill is a COMPUTED per-tile value (delivered ÷ target), so it cannot live in the
+  // stylesheet; it is the one thing the plate needs from the snapshot beyond its status.
+  const fill = tileFillPercent(tile);
+  const fillAttr = fill === null ? '' : ` style="--fill: ${fill}%"`;
   let inner = '';
   if (spec.num !== undefined) {
     inner += `<span class="tile__num">${spec.num}</span>`;
@@ -80,7 +104,7 @@ function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnaps
   if (spec.hint !== undefined) {
     inner += `<span class="tile__hint">${escHTML(spec.hint)}</span>`;
   }
-  return `<div class="${cls}">${inner}</div>`;
+  return `<div class="${cls}"${fillAttr}>${inner}</div>`;
 }
 
 function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): string {
