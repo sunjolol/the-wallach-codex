@@ -144,6 +144,8 @@
     "kd_foods_contrast_hd": "What to change in your diet",
     "kd_foods_col_remove": "Take these out",
     "kd_foods_col_eat": "Put these in",
-    "kd_foods_form_hd": "Sometimes it’s the form, not the food"
+    "kd_foods_form_hd": "Sometimes it’s the form, not the food",
+    "cov_goal_pending": "Coverage pending · essentials not yet mapped",
+    "cov_rail_empty": "No items yet — add one to start building coverage."
   }
 }

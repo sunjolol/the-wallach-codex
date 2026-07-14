@@ -15142,6 +15142,12 @@
     }
     return "gap";
   }
+  var FOUNDATIONAL_PRESENT_SLUGS = /* @__PURE__ */ new Set([
+    "hydrogen",
+    "carbon",
+    "nitrogen",
+    "oxygen"
+  ]);
   function classify(target, d, pdmStatus) {
     const hasSrc = d.sources.length > 0;
     const kind = target?.kind;
@@ -15188,7 +15194,8 @@
       const target = CoverageTargetSchema.safeParse(entry.target);
       const t = target.success ? target.data : null;
       const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
-      const status = classify(t, d, pdmStatus);
+      const classified = classify(t, d, pdmStatus);
+      const status = classified === "" && FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug) ? "covered" : classified;
       const isPdm = t?.kind === "trace_pdm" || t?.kind === "wallach_collective";
       let intakeVsTarget = null;
       if (isPdm) {
@@ -17069,6 +17076,190 @@
     w.lcParseLabel = parseLabel;
   }
 
+  // assets/js/src/core/format.ts
+  function plural(n, one, many = `${one}s`) {
+    return n === 1 ? one : many;
+  }
+
+  // assets/data/view-copy.json
+  var view_copy_default = {
+    _purpose: "Single hand-authored home for VIEW prose (Charter R4): the claim-kind + search-facet display-label maps, the claim-kind -> colour-category map (the LOCKED colour language, redesign blueprint \xA76), plus generic UI chrome copy for the entity-page redesign. ID-referenced, single-copy, never inline in views/. Authored like glossary.json / doctrine-data.json, NOT a pillar projection (view copy has no Wallach source, carries no dose/number). kind_labels + kind_categories cover every distinct claim.kind in the sealed corpus (gated by kind_label_covers_corpus + claim_category_mapping_total). facet_labels is the single home for the search-facet headers (the former core FACET_LABEL literal moved here). ui holds generic chrome copy and GROWS as each view is migrated (H2-H4).",
+    _note: "Values match the pre-redesign display exactly so H0 makes no visual change: kind_labels == the old corpusKindLabel slug->UPPER transform; facet_labels == the former core/schemas/search.ts FACET_LABEL byte-for-byte. kind_categories added in H1 (derivation-correctness): the semantic colour FAMILY per kind per the locked colour language -- green = what-to-do (protocol/dose), teal = the-science (mechanism/definition/diagnostics/interaction/food-source), amber = signs (deficiency/toxicity), orange = Wallach's-positions (prevalence/prognosis/quote), violet = story/lore (personal-anecdote), red = cautions (contraindication). \xA76 fixes 11 of the 14 kinds explicitly; quote->orange, personal_anecdote->violet, food_source->teal are H1 defaults pending Luneth review. The concrete CSS --sr-facet-accent value for each family lives in the stylesheet (H2/H6), never here (colour value = presentation, family key = semantics).",
+    kind_labels: {
+      protocol: "PROTOCOL",
+      mechanism: "MECHANISM",
+      definition: "DEFINITION",
+      deficiency_sign: "DEFICIENCY SIGN",
+      dose: "DOSE",
+      prevalence: "PREVALENCE",
+      toxicity_sign: "TOXICITY SIGN",
+      prognosis: "PROGNOSIS",
+      interaction: "INTERACTION",
+      diagnostic_pattern: "DIAGNOSTIC PATTERN",
+      quote: "QUOTE",
+      personal_anecdote: "PERSONAL ANECDOTE",
+      contraindication: "CONTRAINDICATION",
+      food_source: "FOOD SOURCE"
+    },
+    kind_categories: {
+      protocol: "green",
+      dose: "green",
+      mechanism: "teal",
+      definition: "teal",
+      diagnostic_pattern: "teal",
+      interaction: "teal",
+      food_source: "teal",
+      deficiency_sign: "amber",
+      toxicity_sign: "amber",
+      prevalence: "orange",
+      prognosis: "orange",
+      quote: "orange",
+      personal_anecdote: "violet",
+      contraindication: "red"
+    },
+    facet_labels: {
+      basics: "BASICS",
+      discovery: "DISCOVERY",
+      etymology: "ETYMOLOGY",
+      physiology: "IN THE BODY",
+      mechanism: "HOW IT WORKS",
+      sources: "SOURCES & EXPOSURE",
+      uses: "USES",
+      stance: "WALLACH\u2019S STANCE",
+      protocol: "WHAT TO DO",
+      warning: "WARNINGS",
+      history: "HISTORY & LORE",
+      big_question: "BIG QUESTIONS",
+      biography: "BIOGRAPHY"
+    },
+    ui: {
+      ep_conditions_lead: "In Wallach's framework this nutrient is part of the protocol for {n} \u2014 open any for its full write-up, or search your own.",
+      ep_works_with_lead: "Nutrients rarely work alone \u2014 Wallach names {n} this one partners with.",
+      ep_record_note: "Grouped by type \u2014 open a group, then a claim, for Wallach's exact words and citation.",
+      ep_no_target: "No Wallach maintenance number for this one yet \u2014 an honest gap until his dose tables are fully mined.",
+      ep_coverage_of_target: "of Wallach's daily target",
+      ep_non_essential: "NON-ESSENTIAL \u2014 the body can synthesize this, so it is not one of the 90. Shown for completeness; Youngevity includes it for cardiovascular balance and absorption.",
+      ep_empty_record: "No sealed Wallach claims for this one yet \u2014 the corpus is still being built out.",
+      kd_tab_home: "Home",
+      kd_tab_essentials: "Essentials",
+      kd_tab_conditions: "Conditions",
+      kd_tab_explore: "Explore",
+      kd_tab_products: "Products",
+      kd_mark: "KNOWLEDGE",
+      kh_hero_headline: "Everything Wallach taught, in one place.",
+      kh_hero_sub: "Search {claims} sourced claims from {books} of Dr. Joel Wallach\u2019s books \u2014 or{br}browse the essentials, {conditions} conditions, and the topics in between.",
+      kh_hero_placeholder: "Try \u201Cselenium\u201D, \u201Costeoporosis\u201D, or \u201Ccolloidal minerals\u201D\u2026",
+      kh_search_empty: "No match \u2014 try a broader word.",
+      kh_group_essentials: "Essentials",
+      kh_group_conditions: "Conditions",
+      kh_essentials_label: "The essentials",
+      kh_essentials_hint: "the body's required inputs",
+      kh_essentials_link: "open the full table \u2192",
+      kh_legend_label: "colour key",
+      kh_legend_mineral: "Minerals",
+      kh_legend_vitamin: "Vitamins",
+      kh_legend_amino_acid: "Amino acids",
+      kh_legend_fatty_acid: "Fatty acids",
+      kd_covlegend_label: "coverage",
+      kd_covlegend_covered: "covered",
+      kd_covlegend_partial: "partial",
+      kd_covlegend_uncovered: "uncovered",
+      kd_covlegend_present: "present",
+      kd_esssec_structural: "Structural & bulk minerals",
+      kd_esssec_electrolytes: "Essential trace minerals",
+      kd_esssec_trace: "Trace & rare-earth minerals",
+      kd_esssec_vitamins: "Vitamins",
+      kd_esssec_amino: "Amino acids",
+      kd_esssec_fatty: "Essential fatty acids",
+      kd_ep_pdm_targetlabel: "Wallach daily target \xB7 group",
+      kd_ep_pdm_grouptag: "Rare Earth Minerals",
+      kd_ep_pdm_calc_q: "how is this calculated?",
+      kd_ep_pdm_calc_tip: "Wallach doses plant-derived colloidal minerals at {dose} per {perbw} of body weight, daily. One fl oz carries about {refmg} of mineral solids; for a {bw} reference adult that works out to {goal}.",
+      kd_ep_pdm_covof: "of the rare-earth group goal",
+      kd_ep_pdm_note: "Rare-earth minerals are never itemized on a supplement label. Wallach's thesis is that plant-derived colloidal minerals deliver the whole spectrum together \u2014 60 to 72 minerals in one complex, every rare earth included \u2014 so they're scored as one group against this goal, not one mineral at a time.",
+      kd_ep_pdm_thera_label: "30-day therapeutic use",
+      kd_ep_pdm_thera: "For a serious illness, Wallach doubles the base-line dose for about 30 days, then drops back to it. Take the doubled amount as two servings a few hours apart rather than all at once, so more is absorbed instead of flushed out.",
+      kd_ep_pdm_srclabel: "Best plant-derived-mineral sources",
+      kh_conditions_label: "Common conditions",
+      kh_conditions_hint: "what Wallach wrote most about",
+      kh_conditions_link: "browse all {n} \u2192",
+      kh_explore_label: "Explore",
+      kh_explore_hint: "the rabbit holes \u2014 therapies, elements, big questions",
+      kh_explore_link: "see all topics \u2192",
+      kt_kicker: "Explore",
+      kt_related: "Related",
+      kt_back: "\u2039 All topics",
+      kt_back_generic: "\u2039 Go back",
+      kt_meta: "{n} sourced {noun}",
+      kt_meta_full: "{n} sourced {noun} \xB7 from {books}",
+      kt_type_topic: "Therapies & ideas",
+      kt_type_concept: "Big concepts",
+      kt_type_element: "Elements",
+      kt_type_substance: "Substances",
+      kt_type_person: "People",
+      kd_tab_foods: "Absorption",
+      kd_foods_eyebrow_l: "The premise",
+      kd_foods_eyebrow_r: "Absorbability",
+      kd_foods_readout_2: "The first step",
+      kd_foods_scan: "Fig\xB701",
+      kd_foods_hl1: "You are not what you eat.",
+      kd_foods_hl2: "You are what you absorb.",
+      kd_foods_deck: "Getting all 90 essential nutrients is only half of Dr. Wallach\u2019s model. The other half \u2014 just as important \u2014 is removing the foods that keep your gut from absorbing them.",
+      kd_foods_stat_readout: "// Mayo Clinic \xB7 2009",
+      kd_foods_stat_num: "115M",
+      kd_foods_stat_body: "Americans are gluten-intolerant \u2014 about one in three.",
+      kd_foods_stat_small: "Cited by Wallach \xB7 Epigenetics",
+      kd_foods_sec02_kicker: "The mechanism",
+      kd_foods_villi_title: "What gluten does to your gut",
+      kd_foods_villi_kicker_scan: "Fig\xB701",
+      kd_foods_villi_kicker_sub: "Villus scan",
+      kd_foods_villi_ok_title: "Healthy gut",
+      kd_foods_villi_ok_metric: "Absorb \u2191",
+      kd_foods_villi_ok_cap: "Tall, dense villi \u2014 a vast surface area that pulls nutrients in.",
+      kd_foods_villi_bad_title: "Gluten-damaged gut",
+      kd_foods_villi_bad_metric: "Absorb \u2193",
+      kd_foods_villi_bad_cap: "Flattened, blunted villi \u2014 nutrients slide past, unabsorbed.",
+      kd_foods_villi_gloss: "The millions of tiny finger-like projections lining the small intestine. Their vast surface area is where nutrients are absorbed into the blood \u2014 flatten them (as gluten can) and absorption collapses.",
+      kd_foods_villi_note: "This is the second prong in one picture: gluten gradually wears down the villi that do the absorbing, so even a flawless 90-nutrient regimen underperforms until the gut heals.",
+      kd_foods_villi_explain: "In plain terms: gluten inflames and wears down the gut\u2019s absorbing surface \u2014 the tiny finger-like villi below. Stubby ones can\u2019t catch the passing nutrients; tall, dense ones reach up and pull them into your blood.",
+      kd_foods_villi_cite: "Dr. Joel Wallach \xB7 Epigenetics (2014)",
+      kd_foods_words_label: "In his own words",
+      kd_foods_sec03_kicker: "The fix",
+      kd_foods_contrast_hd: "What to change in your diet",
+      kd_foods_col_remove: "Take these out",
+      kd_foods_col_eat: "Put these in",
+      kd_foods_form_hd: "Sometimes it\u2019s the form, not the food",
+      cov_goal_pending: "Coverage pending \xB7 essentials not yet mapped",
+      cov_rail_empty: "No items yet \u2014 add one to start building coverage."
+    }
+  };
+
+  // assets/js/src/state/copy.ts
+  var EMPTY = { kind_labels: {}, kind_categories: {}, facet_labels: {}, ui: {} };
+  var cached = null;
+  function data() {
+    if (cached === null) {
+      const parsed = ViewCopySchema.safeParse(view_copy_default);
+      cached = parsed.success ? parsed.data : EMPTY;
+    }
+    return cached;
+  }
+  function slugLabel(slug) {
+    return slug.replace(/[_-]+/g, " ").toUpperCase();
+  }
+  function kindLabel(kind) {
+    return data().kind_labels[kind] ?? slugLabel(kind);
+  }
+  function kindCategory(kind) {
+    return data().kind_categories[kind] ?? "";
+  }
+  function facetLabel(facet) {
+    return data().facet_labels[facet] ?? slugLabel(facet);
+  }
+  function ui(id) {
+    return data().ui[id] ?? "";
+  }
+
   // assets/js/src/views/coverage.ts
   var LAYOUT2 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   function tileStatusFor(key, snapshot) {
@@ -17160,11 +17351,13 @@
     <section class="coverage-hero ds-border-travel">
       <header class="coverage-hero__head">
         <div>
-          <div class="coverage-hero__kicker">Your essentials \xB7 <span class="ds-cipher" data-cipher-set="numfrac">${essentialCount()}</span> minerals + vitamins + amino acids + fats</div>
-          <h2 class="coverage-hero__title">
-            THE WHOLE PICTURE
-            <em>// what you're absorbing, what you're missing</em>
-          </h2>
+          <!-- NO .ds-cipher on essentialCount(): the cipher engine scrambles the glyphs it wraps
+               and only restores the true value every 5th tick, so wrapping a REAL canon-derived
+               number rendered Wallach's 90 as 30/80/94 four seconds in five (measured 2026-07-14).
+               The cipher is decorative chrome and may only ever wrap a static decorative literal;
+               gated by views_no_ciphered_data. -->
+          <div class="coverage-hero__kicker">Your essentials \xB7 ${essentialCount()} minerals + vitamins + amino acids + fats</div>
+          <h2 class="coverage-hero__title">THE WHOLE PICTURE</h2>
         </div>
         <div class="coverage-stat">
           <span class="coverage-stat__num">${covered}</span>
@@ -17179,25 +17372,24 @@
       <div class="legend">
         <span class="legend__item"><span class="legend__sw covered"></span> COVERED</span>
         <span class="legend__item"><span class="legend__sw partial"></span> PARTIAL</span>
-        <span class="legend__item"><span class="legend__sw trace"></span> TRACE \xB7 VIA AGGREGATE VEHICLE</span>
+        <span class="legend__item"><span class="legend__sw present"></span> PRESENT \xB7 NOT QUANTIFIED</span>
         <span class="legend__item"><span class="legend__sw gap"></span> GAP \xB7 ATTENTION</span>
+        <span class="legend__item"><span class="legend__sw pending"></span> NO WALLACH TARGET</span>
       </div>
     </section>
   `;
   }
-  function renderGoalsStrip(snapshot) {
+  function renderGoalsStrip() {
     const userGoals = loadRgUserGoals() ?? [];
     const activeGoals = userGoals.length > 0 ? LAYOUT2.goals.filter((g) => userGoals.includes(g.id)) : LAYOUT2.goals.slice(0, 3);
     const cardsHTML = activeGoals.map((g, i) => {
       const num = String(i + 1).padStart(2, "0");
-      const covered = snapshot !== null ? Math.min(g.total, Math.round(snapshot.coveredCount / snapshot.totalCount * g.total)) : 0;
-      const pct = Math.round(covered / g.total * 100);
       return `
-      <div class="goal-card">
+      <div class="goal-card goal-card--pending">
         <div class="goal-card__kicker">GOAL \xB7 ${num}</div>
         <div class="goal-card__name">${escHTML(g.name)}</div>
-        <div class="goal-card__bar"><div class="goal-card__bar-fill" style="width: ${pct}%"></div></div>
-        <div class="goal-card__progress">${pct}% \xB7 ${covered} / ${g.total} essentials covered</div>
+        <div class="goal-card__bar goal-card__bar--pending"></div>
+        <div class="goal-card__progress">${escHTML(ui("cov_goal_pending"))}</div>
       </div>
     `;
     }).join("");
@@ -17213,38 +17405,39 @@
   `;
   }
   function renderRail() {
-    const items = loadEffectiveRegimen().slice(0, 8);
-    const itemsHTML = items.map((item) => {
+    const allItems = loadEffectiveRegimen();
+    const RAIL_DISPLAY_CAP = 8;
+    const shown = allItems.slice(0, RAIL_DISPLAY_CAP);
+    const overflow = allItems.length - shown.length;
+    const itemsHTML = shown.map((item) => {
       const labelName = (item.label.name || "?").toString();
       const icon = labelName.charAt(0).toUpperCase();
+      const nutrientCount = item.label.nutrients?.length ?? 0;
       return `
       <div class="regimen-item">
         <div class="regimen-item__icon">${escHTML(icon)}</div>
         <div class="regimen-item__body">
           <p class="regimen-item__name">${escHTML(labelName)}</p>
-          <span class="regimen-item__meta">DAILY</span>
+          <span class="regimen-item__meta">${nutrientCount} ${escHTML(plural(nutrientCount, "nutrient"))}</span>
         </div>
-        <span class="regimen-item__count">${item.label.nutrients?.length ?? 0}</span>
+        <span class="regimen-item__count">${nutrientCount}</span>
       </div>
     `;
-    }).join("") || '<div class="regimen-item"><div class="regimen-item__body"><p class="regimen-item__name">\u2014 no items \u2014</p></div></div>';
+    }).join("") || `<div class="regimen-item"><div class="regimen-item__body"><p class="regimen-item__name">${escHTML(ui("cov_rail_empty"))}</p></div></div>`;
+    const overflowHTML = overflow > 0 ? `<div class="regimen-rail__overflow">+ ${overflow} more</div>` : "";
     return `
     <aside class="regimen-rail">
       <header class="regimen-rail__head">
-        <div class="regimen-rail__eyebrow"><span class="pulse-dot"></span>CURRENT SLOT \xB7 <span class="ds-cipher" data-cipher-set="hexa">02\xB7F71D</span></div>
+        <div class="regimen-rail__eyebrow"><span class="pulse-dot"></span>CURRENT REGIMEN</div>
         <h3 class="regimen-rail__slot-name">DAILY PROTOCOL</h3>
         <div class="regimen-rail__slot-meta">
-          <span><strong>${items.length}</strong> items</span>
-          <span>\xB7</span>
-          <span>Slot <strong>2 of 5</strong></span>
-          <span>\xB7</span>
-          <span>Synced</span>
+          <span><strong>${allItems.length}</strong> ${escHTML(plural(allItems.length, "item"))}</span>
         </div>
       </header>
-      <div class="regimen-rail__list">${itemsHTML}</div>
+      <div class="regimen-rail__list">${itemsHTML}${overflowHTML}</div>
       <div class="regimen-rail__actions">
-        <button class="ds-btn-ghost" style="flex: 1;">MANAGE</button>
-        <button class="ds-btn-primary" style="flex: 1;">ADD ITEM</button>
+        <button class="ds-btn-ghost regimen-rail__manage">MANAGE</button>
+        <button class="ds-btn-primary regimen-rail__add">ADD ITEM</button>
       </div>
     </aside>
   `;
@@ -17311,7 +17504,7 @@
       <div class="coverage-grid">
         <div class="coverage-main">
           ${renderHero(snapshot)}
-          ${renderGoalsStrip(snapshot)}
+          ${renderGoalsStrip()}
         </div>
         ${renderRail()}
       </div>
@@ -17831,188 +18024,6 @@
       toggleExpanded,
       isOpen: () => isOpen
     };
-  }
-
-  // assets/js/src/core/format.ts
-  function plural(n, one, many = `${one}s`) {
-    return n === 1 ? one : many;
-  }
-
-  // assets/data/view-copy.json
-  var view_copy_default = {
-    _purpose: "Single hand-authored home for VIEW prose (Charter R4): the claim-kind + search-facet display-label maps, the claim-kind -> colour-category map (the LOCKED colour language, redesign blueprint \xA76), plus generic UI chrome copy for the entity-page redesign. ID-referenced, single-copy, never inline in views/. Authored like glossary.json / doctrine-data.json, NOT a pillar projection (view copy has no Wallach source, carries no dose/number). kind_labels + kind_categories cover every distinct claim.kind in the sealed corpus (gated by kind_label_covers_corpus + claim_category_mapping_total). facet_labels is the single home for the search-facet headers (the former core FACET_LABEL literal moved here). ui holds generic chrome copy and GROWS as each view is migrated (H2-H4).",
-    _note: "Values match the pre-redesign display exactly so H0 makes no visual change: kind_labels == the old corpusKindLabel slug->UPPER transform; facet_labels == the former core/schemas/search.ts FACET_LABEL byte-for-byte. kind_categories added in H1 (derivation-correctness): the semantic colour FAMILY per kind per the locked colour language -- green = what-to-do (protocol/dose), teal = the-science (mechanism/definition/diagnostics/interaction/food-source), amber = signs (deficiency/toxicity), orange = Wallach's-positions (prevalence/prognosis/quote), violet = story/lore (personal-anecdote), red = cautions (contraindication). \xA76 fixes 11 of the 14 kinds explicitly; quote->orange, personal_anecdote->violet, food_source->teal are H1 defaults pending Luneth review. The concrete CSS --sr-facet-accent value for each family lives in the stylesheet (H2/H6), never here (colour value = presentation, family key = semantics).",
-    kind_labels: {
-      protocol: "PROTOCOL",
-      mechanism: "MECHANISM",
-      definition: "DEFINITION",
-      deficiency_sign: "DEFICIENCY SIGN",
-      dose: "DOSE",
-      prevalence: "PREVALENCE",
-      toxicity_sign: "TOXICITY SIGN",
-      prognosis: "PROGNOSIS",
-      interaction: "INTERACTION",
-      diagnostic_pattern: "DIAGNOSTIC PATTERN",
-      quote: "QUOTE",
-      personal_anecdote: "PERSONAL ANECDOTE",
-      contraindication: "CONTRAINDICATION",
-      food_source: "FOOD SOURCE"
-    },
-    kind_categories: {
-      protocol: "green",
-      dose: "green",
-      mechanism: "teal",
-      definition: "teal",
-      diagnostic_pattern: "teal",
-      interaction: "teal",
-      food_source: "teal",
-      deficiency_sign: "amber",
-      toxicity_sign: "amber",
-      prevalence: "orange",
-      prognosis: "orange",
-      quote: "orange",
-      personal_anecdote: "violet",
-      contraindication: "red"
-    },
-    facet_labels: {
-      basics: "BASICS",
-      discovery: "DISCOVERY",
-      etymology: "ETYMOLOGY",
-      physiology: "IN THE BODY",
-      mechanism: "HOW IT WORKS",
-      sources: "SOURCES & EXPOSURE",
-      uses: "USES",
-      stance: "WALLACH\u2019S STANCE",
-      protocol: "WHAT TO DO",
-      warning: "WARNINGS",
-      history: "HISTORY & LORE",
-      big_question: "BIG QUESTIONS",
-      biography: "BIOGRAPHY"
-    },
-    ui: {
-      ep_conditions_lead: "In Wallach's framework this nutrient is part of the protocol for {n} \u2014 open any for its full write-up, or search your own.",
-      ep_works_with_lead: "Nutrients rarely work alone \u2014 Wallach names {n} this one partners with.",
-      ep_record_note: "Grouped by type \u2014 open a group, then a claim, for Wallach's exact words and citation.",
-      ep_no_target: "No Wallach maintenance number for this one yet \u2014 an honest gap until his dose tables are fully mined.",
-      ep_coverage_of_target: "of Wallach's daily target",
-      ep_non_essential: "NON-ESSENTIAL \u2014 the body can synthesize this, so it is not one of the 90. Shown for completeness; Youngevity includes it for cardiovascular balance and absorption.",
-      ep_empty_record: "No sealed Wallach claims for this one yet \u2014 the corpus is still being built out.",
-      kd_tab_home: "Home",
-      kd_tab_essentials: "Essentials",
-      kd_tab_conditions: "Conditions",
-      kd_tab_explore: "Explore",
-      kd_tab_products: "Products",
-      kd_mark: "KNOWLEDGE",
-      kh_hero_headline: "Everything Wallach taught, in one place.",
-      kh_hero_sub: "Search {claims} sourced claims from {books} of Dr. Joel Wallach\u2019s books \u2014 or{br}browse the essentials, {conditions} conditions, and the topics in between.",
-      kh_hero_placeholder: "Try \u201Cselenium\u201D, \u201Costeoporosis\u201D, or \u201Ccolloidal minerals\u201D\u2026",
-      kh_search_empty: "No match \u2014 try a broader word.",
-      kh_group_essentials: "Essentials",
-      kh_group_conditions: "Conditions",
-      kh_essentials_label: "The essentials",
-      kh_essentials_hint: "the body's required inputs",
-      kh_essentials_link: "open the full table \u2192",
-      kh_legend_label: "colour key",
-      kh_legend_mineral: "Minerals",
-      kh_legend_vitamin: "Vitamins",
-      kh_legend_amino_acid: "Amino acids",
-      kh_legend_fatty_acid: "Fatty acids",
-      kd_covlegend_label: "coverage",
-      kd_covlegend_covered: "covered",
-      kd_covlegend_partial: "partial",
-      kd_covlegend_uncovered: "uncovered",
-      kd_covlegend_present: "present",
-      kd_esssec_structural: "Structural & bulk minerals",
-      kd_esssec_electrolytes: "Essential trace minerals",
-      kd_esssec_trace: "Trace & rare-earth minerals",
-      kd_esssec_vitamins: "Vitamins",
-      kd_esssec_amino: "Amino acids",
-      kd_esssec_fatty: "Essential fatty acids",
-      kd_ep_pdm_targetlabel: "Wallach daily target \xB7 group",
-      kd_ep_pdm_grouptag: "Rare Earth Minerals",
-      kd_ep_pdm_calc_q: "how is this calculated?",
-      kd_ep_pdm_calc_tip: "Wallach doses plant-derived colloidal minerals at {dose} per {perbw} of body weight, daily. One fl oz carries about {refmg} of mineral solids; for a {bw} reference adult that works out to {goal}.",
-      kd_ep_pdm_covof: "of the rare-earth group goal",
-      kd_ep_pdm_note: "Rare-earth minerals are never itemized on a supplement label. Wallach's thesis is that plant-derived colloidal minerals deliver the whole spectrum together \u2014 60 to 72 minerals in one complex, every rare earth included \u2014 so they're scored as one group against this goal, not one mineral at a time.",
-      kd_ep_pdm_thera_label: "30-day therapeutic use",
-      kd_ep_pdm_thera: "For a serious illness, Wallach doubles the base-line dose for about 30 days, then drops back to it. Take the doubled amount as two servings a few hours apart rather than all at once, so more is absorbed instead of flushed out.",
-      kd_ep_pdm_srclabel: "Best plant-derived-mineral sources",
-      kh_conditions_label: "Common conditions",
-      kh_conditions_hint: "what Wallach wrote most about",
-      kh_conditions_link: "browse all {n} \u2192",
-      kh_explore_label: "Explore",
-      kh_explore_hint: "the rabbit holes \u2014 therapies, elements, big questions",
-      kh_explore_link: "see all topics \u2192",
-      kt_kicker: "Explore",
-      kt_related: "Related",
-      kt_back: "\u2039 All topics",
-      kt_back_generic: "\u2039 Go back",
-      kt_meta: "{n} sourced {noun}",
-      kt_meta_full: "{n} sourced {noun} \xB7 from {books}",
-      kt_type_topic: "Therapies & ideas",
-      kt_type_concept: "Big concepts",
-      kt_type_element: "Elements",
-      kt_type_substance: "Substances",
-      kt_type_person: "People",
-      kd_tab_foods: "Absorption",
-      kd_foods_eyebrow_l: "The premise",
-      kd_foods_eyebrow_r: "Absorbability",
-      kd_foods_readout_2: "The first step",
-      kd_foods_scan: "Fig\xB701",
-      kd_foods_hl1: "You are not what you eat.",
-      kd_foods_hl2: "You are what you absorb.",
-      kd_foods_deck: "Getting all 90 essential nutrients is only half of Dr. Wallach\u2019s model. The other half \u2014 just as important \u2014 is removing the foods that keep your gut from absorbing them.",
-      kd_foods_stat_readout: "// Mayo Clinic \xB7 2009",
-      kd_foods_stat_num: "115M",
-      kd_foods_stat_body: "Americans are gluten-intolerant \u2014 about one in three.",
-      kd_foods_stat_small: "Cited by Wallach \xB7 Epigenetics",
-      kd_foods_sec02_kicker: "The mechanism",
-      kd_foods_villi_title: "What gluten does to your gut",
-      kd_foods_villi_kicker_scan: "Fig\xB701",
-      kd_foods_villi_kicker_sub: "Villus scan",
-      kd_foods_villi_ok_title: "Healthy gut",
-      kd_foods_villi_ok_metric: "Absorb \u2191",
-      kd_foods_villi_ok_cap: "Tall, dense villi \u2014 a vast surface area that pulls nutrients in.",
-      kd_foods_villi_bad_title: "Gluten-damaged gut",
-      kd_foods_villi_bad_metric: "Absorb \u2193",
-      kd_foods_villi_bad_cap: "Flattened, blunted villi \u2014 nutrients slide past, unabsorbed.",
-      kd_foods_villi_gloss: "The millions of tiny finger-like projections lining the small intestine. Their vast surface area is where nutrients are absorbed into the blood \u2014 flatten them (as gluten can) and absorption collapses.",
-      kd_foods_villi_note: "This is the second prong in one picture: gluten gradually wears down the villi that do the absorbing, so even a flawless 90-nutrient regimen underperforms until the gut heals.",
-      kd_foods_villi_explain: "In plain terms: gluten inflames and wears down the gut\u2019s absorbing surface \u2014 the tiny finger-like villi below. Stubby ones can\u2019t catch the passing nutrients; tall, dense ones reach up and pull them into your blood.",
-      kd_foods_villi_cite: "Dr. Joel Wallach \xB7 Epigenetics (2014)",
-      kd_foods_words_label: "In his own words",
-      kd_foods_sec03_kicker: "The fix",
-      kd_foods_contrast_hd: "What to change in your diet",
-      kd_foods_col_remove: "Take these out",
-      kd_foods_col_eat: "Put these in",
-      kd_foods_form_hd: "Sometimes it\u2019s the form, not the food"
-    }
-  };
-
-  // assets/js/src/state/copy.ts
-  var EMPTY = { kind_labels: {}, kind_categories: {}, facet_labels: {}, ui: {} };
-  var cached = null;
-  function data() {
-    if (cached === null) {
-      const parsed = ViewCopySchema.safeParse(view_copy_default);
-      cached = parsed.success ? parsed.data : EMPTY;
-    }
-    return cached;
-  }
-  function slugLabel(slug) {
-    return slug.replace(/[_-]+/g, " ").toUpperCase();
-  }
-  function kindLabel(kind) {
-    return data().kind_labels[kind] ?? slugLabel(kind);
-  }
-  function kindCategory(kind) {
-    return data().kind_categories[kind] ?? "";
-  }
-  function facetLabel(facet) {
-    return data().facet_labels[facet] ?? slugLabel(facet);
-  }
-  function ui(id) {
-    return data().ui[id] ?? "";
   }
 
   // assets/data/corpus-embed.json
@@ -95296,8 +95307,7 @@ deaths, blood clots, sterility`,
     }
     return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
   }
-  var FOUNDATIONAL_PRESENT = /* @__PURE__ */ new Set(["H", "C", "N", "O"]);
-  function dotState(status, symbol) {
+  function dotState(status) {
     if (status === "covered" || status === "trace") {
       return "covered";
     }
@@ -95306,9 +95316,6 @@ deaths, blood clots, sterility`,
     }
     if (status === "present") {
       return "present";
-    }
-    if (status === "" && FOUNDATIONAL_PRESENT.has(symbol)) {
-      return "covered";
     }
     return "uncovered";
   }
@@ -95332,7 +95339,7 @@ deaths, blood clots, sterility`,
     const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML11(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML11(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
     const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
-        const dot = dotState(statusOf(snapshot, e.key), e.symbol);
+        const dot = dotState(statusOf(snapshot, e.key));
         const sel = e.key === selectedKey ? " is-selected" : "";
         return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML11(e.category)}" data-kd-essential="${escHTML11(e.key)}" title="${escHTML11(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML11(e.symbol)}</span><span class="sh-tile__nm">${escHTML11(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML11(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
@@ -96851,7 +96858,29 @@ FONT SURVEY resolved (no code change): Unbounded + Space Grotesk ship no true it
 
 COVERAGE OVERHAUL scoped (next major task \u2014 Luneth directs FIRST): north star = a SINGLE SOURCE OF TRUTH for every periodic-table coverage calculation. Verified fragmentation: the goal-cards compute a global-ratio proportional FAKE (coveredCount/totalCount x total -> every goal shows the same ~10%) instead of the real per-essential tile snapshot. Two fake numbers to kill (goal-card %, regimen-rail "Slot 2 of 5" hardcoded literal); header deck synth-italic to drop. THEN return to the still-unfinished Knowledge-drawer Conditions + Products tabs.
 
-3 new durable memories written: prove-completion-dont-narrate-it (verify, don't narrate completion; UI-removal != code-deletion), standards-exception-to-ask-not-assume (nuanced standard-breaks are opt-in via ask; real-vs-fake needs an approval pass), live-supersedes-demo-log-micro-deltas (live refined surface > stale demo; log the deltas).` }];
+3 new durable memories written: prove-completion-dont-narrate-it (verify, don't narrate completion; UI-removal != code-deletion), standards-exception-to-ask-not-assume (nuanced standard-breaks are opt-in via ask; real-vs-fake needs an approval pass), live-supersedes-demo-log-micro-deltas (live refined surface > stale demo; log the deltas).` }, { id: "lg_mrkpvkwn_wzd151", ts: "2026-07-14T08:58:40.535454-05:00", surface: "coverage", kind: "round-close", summary: "Coverage Phase 1 \u2014 code truth: purged every fabricated number (a decorative cipher rendered Wallach's 90 as 30/80/94), promoted the H/C/N/O rule into state so Coverage + the drawer stop disagreeing (9/90 \u2192 13/90), shipped views_no_ciphered_data (board 64/64)", detail: `The Coverage page was showing numbers that were simply invented, and the two tabs that display the same data disagreed with each other. This round strips every made-up figure, makes the two tabs agree by construction, and adds a permanent gate so a whole CLASS of this bug can never ship again. No design change yet \u2014 that is Phase 2, waiting on Luneth's sign-off.
+
+The worst one was almost invisible: a decorative animation was fabricating Wallach's headline number. The .ds-cipher "tech readout" effect scrambles one glyph per second and only restores the true text every 5th tick. It had been wrapped around essentialCount() \u2014 the real, canon-derived count of the 90 essentials. Measured live before the fix, the hero read: 80, 90, 30, 90, 90, 91, 90, 94. Users saw "your essentials \xB7 30" four seconds in five. The number's SOURCE was impeccable \u2014 every source-side gate was green and blind, because the corruption happened at RENDER. That is a failure mode this project had never gated.
+
+FAKES REMOVED (each verified live before + after):
+1. Hero kicker ciphering essentialCount() -> now a stable 90 across 6 samples.
+2. Goal cards fabricated BOTH numbers. The denominator (g.total = 14/13/11/12/18/10) is hand-typed editorial chrome in coverage-layout-skeleton.json with no Wallach source and no membership list; the numerator scaled the GLOBAL covered ratio by that total (views/coverage.ts:171), so all three cards tracked one number \u2014 live they read 7% / 8% / 9% against a real 9/90. Replaced with an honest-gap placeholder (blueprint \xA77.1) pending the Phase-2b derivation. Luneth's direction: the goals feature is REAL and unbuilt, not decoration to delete \u2014 the mockup shipped a feature's shell filled with fiction.
+3. Rail chrome: "Slot 2 of 5", the "02\xB7F71D" serial, "Synced", and per-item "DAILY" all deleted \u2014 no slot system exists anywhere (rgSlot is only a storage-event prefix filter).
+4. Rail item count read the .slice(0,8)-TRUNCATED array length, so a 12-item regimen displayed "8 items". Now reads the full regimen; the slice is a display cap with a "+N more" overflow.
+5. The legend taught TRACE (which state/coverage.ts stopped producing) and omitted PRESENT (which it does produce) \u2014 a legend documenting impossible states teaches a fiction.
+6. The synth-italic hero deck dropped, matching the futurist pivot.
+
+SINGLE SOURCE OF TRUTH \u2014 the divergence Luneth suspected was real, and my own verifier caught me claiming otherwise. Mid-session I told him Coverage and the Knowledge drawer already shared one source. An adversarial verify agent refuted it: views/knowledge.ts:165 held FOUNDATIONAL_PRESENT = Set(['H','C','N','O']), promoting those four to green "covered" inside the drawer's dot mapper. Coverage rendered the same four blank. Two surfaces disagreed about 4 essentials over ONE snapshot. The rule is Luneth's own (H/C/N/O are in air/water/food by default) \u2014 it was simply living in a view instead of the state layer. Promoted into state/coverage.ts::recompute, keyed by canon slug. The hero stat corrected 9/90 -> 13/90: the drawer's verdict was always the intended one; Coverage was the surface lying. dotState() is now pure presentation and decides nothing. The rest of the architecture audited clean \u2014 the 0.95/0.30 thresholds exist at exactly four lines, all inside state/coverage.ts.
+
+NEW GATE views_no_ciphered_data (critical; board 63 -> 64): a .ds-cipher span may wrap view-local chrome but NEVER a value imported from state/ or core/. CLAUDE.md's own data-flow boundary (pillars -> generators -> core/ -> state/ -> views/) IS the rule: anything crossing that line is data, anything view-local is chrome. Charter R2 row updated in the same patch (R7).
+
+R9 REFINEMENT, shipped with the misfire it fixes: the first cut banned ALL interpolation inside a cipher span. Run against the real tree it immediately found four more sites \u2014 and they were LEGITIMATE (hexSerial hashes in journey/search; static placeholder serials + OCR timings in regimen/scanner \u2014 all view-local chrome). Rather than baseline an exception or weaken the rule, the check was TIGHTENED to the import-boundary rule, which is both sharper and more honest. Those four sparing cases are pinned in the negative test so the refinement cannot silently regress. The test is 8 cases: fires on nested, wrapped, and chained data access; spares chrome.
+
+VERIFIED: tsc --noEmit clean \xB7 eslint exit 0 across the 3 touched files (hand-fixed; never --fix) \xB7 build.mjs exit 0 \xB7 invariants 64/64, zero failures \xB7 render probes coverage + seeded + knowledge + entity all exit 0 \xB7 a live DOM scan confirms zero fake strings survive.
+
+TWO PROCESS LESSONS, both of which cost real time. A bash heredoc wrote literal 0x08 backspace bytes where \\b belonged, silently turning the new gate into a no-op \u2014 caught only because the negative test existed, which is precisely the argument for R7. Then invariants.py turned out to be CRLF while safe_write requires LF payloads (write-discipline rule 4); \xA717's write-verify correctly REFUSED the corrupting write rather than landing it. Both reinforce the standing rule: stage payloads with the Write tool, never a heredoc.
+
+DEFERRED, named rather than silent: Phase 2 = the plate-language visual overhaul (A/B signed off \u2014 variant A, behind an A<->B toggle). Phase 2b = eden/catalog/goals.json mapping each goal to its condition slugs, joined through corpus/indices/essentials.json's conditions_treated (already derived from sealed Wallach claims) to produce real per-goal coverage off the same snapshot \u2014 a feasibility probe derives 27 real members for bone/skeletal, against the hand-typed 14. Also owed: dead CSS (.periodic, .periodic-host, .tile.spacer, the trace family), the duplicate .tile block (declared twice 13 lines apart, the second silently overriding aspect-ratio + padding), ambient chrome duplicated across dashboard.css and workspace-coverage.css, pre-futurist Chakra-Petch/Bruno-Ace @font-face plus :root token overrides still sitting in workspace-coverage.css, drifted "Playfair stays" comments, gap styling missing on vitamin/amino/fat tiles (a vitamin in deficit renders identical to a pending one), the present status having zero Coverage CSS, CoverageTile.coveredBy/aggregateVehicle dead but kept (plausibly wanted for a "what's covering this" UI), views/regimen.ts SLOT_PLACEHOLDERS with fake coverage 31/47/18/54, and the drawer missing its coverage:recomputed subscription.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

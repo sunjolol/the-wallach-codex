@@ -579,6 +579,24 @@ function numericStatus(target: CoverageTarget, d: Delivery): CoverageStatus {
   return 'gap';
 }
 
+/**
+ * The 4 organic building blocks (hydrogen · carbon · nitrogen · oxygen) are present in
+ * air/water/food by default (Luneth), so a '' (no-dose) status reads covered, not absent.
+ *
+ * PROMOTED to the state layer 2026-07-14. It previously lived ONLY in views/knowledge.ts
+ * (as a symbol set applied inside the drawer's dot mapper), which meant the drawer painted
+ * H/C/N/O green while Coverage rendered the same four tiles blank — two surfaces disagreeing
+ * about 4 essentials over ONE snapshot. A coverage verdict is a state decision, never a view
+ * decision; both surfaces now inherit this from the snapshot. Keyed by canon slug (not the
+ * display symbol) so it joins the same way every other target does.
+ */
+const FOUNDATIONAL_PRESENT_SLUGS: ReadonlySet<string> = new Set([
+  'hydrogen',
+  'carbon',
+  'nitrogen',
+  'oxygen',
+]);
+
 function classify(target: CoverageTarget | null, d: Delivery, pdmStatus: CoverageStatus): CoverageStatus {
   const hasSrc = d.sources.length > 0;
   const kind = target?.kind;
@@ -637,7 +655,12 @@ export function recompute(): CoverageSnapshot {
     const target = CoverageTargetSchema.safeParse(entry.target);
     const t = target.success ? target.data : null;
     const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
-    const status = classify(t, d, pdmStatus);
+    // The foundational-present rule runs HERE (not inside classify) because it keys off the
+    // essential's identity, not its target/delivery — classify() only sees the target + delivery.
+    const classified = classify(t, d, pdmStatus);
+    const status: CoverageStatus = (classified === '' && FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug))
+      ? 'covered'
+      : classified;
     const isPdm = t?.kind === 'trace_pdm' || t?.kind === 'wallach_collective';
     let intakeVsTarget: CoverageTile['intakeVsTarget'] = null;
     if (isPdm) {

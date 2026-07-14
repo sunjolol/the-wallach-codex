@@ -2772,6 +2772,122 @@ def _shipped_view_css_files():
     return out
 
 
+# Any <span ...>...</span> in a rendered template. The class is checked as a TOKEN below
+# rather than inside this pattern: attribute order varies, ds-cipher is often one class
+# among several, and folding that into the regex is where the escaping bugs live.
+_SPAN_RE = re.compile(r"<span(?P<attrs>[^>]*)>(?P<content>.*?)</span>", re.DOTALL)
+_CLASS_ATTR_RE = re.compile(r'class\s*=\s*"(?P<cls>[^"]*)"')
+
+
+def _has_cipher_class(attrs: str) -> bool:
+    """True if the span's class list carries ds-cipher as a whole token."""
+    m = _CLASS_ATTR_RE.search(attrs)
+    return m is not None and "ds-cipher" in m.group("cls").split()
+
+
+# Identifiers a view imports FROM the state/core layers. Per CLAUDE.md's data flow
+# (pillars -> generators -> core/ -> state/ -> views/), anything crossing that boundary IS
+# real data; anything defined locally in the view is chrome. That boundary is the gate's rule.
+_DATA_IMPORT_RE = re.compile(
+    r"import\s*\{(?P<names>[^}]*)\}\s*from\s*['\"][^'\"]*/(?:state|core)/[^'\"]*['\"]",
+    re.DOTALL,
+)
+_IDENT_RE = re.compile(r"[A-Za-z_$][A-Za-z0-9_$]*")
+
+
+def _data_layer_identifiers(text: str) -> set:
+    """Names this view pulls in from state/ or core/ -- i.e. the real-data surface."""
+    names = set()
+    for m in _DATA_IMPORT_RE.finditer(text):
+        for raw in m.group("names").split(","):
+            ident = raw.replace("type ", " ").strip()
+            if " as " in ident:
+                ident = ident.split(" as ")[-1].strip()
+            if ident:
+                names.add(ident)
+    return names
+
+
+def _ciphered_data_refs(content: str, data_names: set) -> set:
+    """Data-layer identifiers referenced inside a .ds-cipher span's interpolations."""
+    hits = set()
+    depth, buf = 0, []
+    i = 0
+    while i < len(content):
+        if content.startswith("${", i):
+            depth += 1
+            i += 2
+            continue
+        if depth and content[i] == "}":
+            depth -= 1
+            if depth == 0:
+                expr = "".join(buf)
+                buf = []
+                hits |= {t for t in _IDENT_RE.findall(expr) if t in data_names}
+            i += 1
+            continue
+        if depth:
+            buf.append(content[i])
+        i += 1
+    return hits
+
+
+def _no_ciphered_data_impl(files):
+    """RED if any (relpath, text) renders a .ds-cipher span whose content carries a
+    ${...} interpolation. `files` = iterable of (relpath, text). Param-taking for the
+    negative test."""
+    hits = []
+    files = list(files)
+    for rel, text in files:
+        data_names = _data_layer_identifiers(text)
+        for m in _SPAN_RE.finditer(text):
+            if not _has_cipher_class(m.group("attrs")):
+                continue
+            content = m.group("content")
+            if "${" not in content:
+                continue
+            refs = _ciphered_data_refs(content, data_names)
+            if refs:
+                snippet = content.strip()[:50].replace("\n", " ")
+                hits.append(f"{rel}:'{snippet}' (data: {', '.join(sorted(refs))})")
+    if hits:
+        return False, ("a .ds-cipher span scrambles a STATE/CORE-sourced value -- the cipher "
+                       "engine overwrites the glyphs it wraps and restores the truth only every "
+                       "5th tick, so real data renders WRONG ~80% of the time. The cipher may "
+                       "wrap view-local chrome only, never data: " + ", ".join(hits[:6])
+                       + (" ..." if len(hits) > 6 else ""))
+    return True, f"no .ds-cipher span scrambles a state/core-sourced value across {len(files)} scanned view file(s)"
+
+
+def check_views_no_ciphered_data():
+    """§00.A -- the decorative .ds-cipher glyph-scrambler may never wrap REAL data.
+
+    WHY THIS EXISTS (2026-07-14): views/coverage.ts wrapped essentialCount() -- the
+    canon-derived count of Wallach's 90 essentials -- in .ds-cipher. The engine
+    (views/coverage.ts::startCipherEngine) replaces a random character every 1s tick and
+    only restores the true text every 5th tick, so the app's headline fact rendered as
+    30 / 80 / 94 four seconds in five. Measured live before the fix:
+    ["80","90","30","90","90","91","90","94"]. A decorative animation was fabricating a
+    health number -- exactly what §00.A forbids, arrived at by a route no existing gate
+    watched (the number's SOURCE was impeccable; its RENDER was not).
+
+    The rule: .ds-cipher wraps static decorative chrome only. Any ${...} inside a
+    .ds-cipher span is RED. Truth anchor: the shipped view .ts bytes, scanned each run."""
+    rels = _shipped_view_css_files()
+    if rels is None:
+        return True, ("⚠ UNVERIFIED -- git unavailable; ciphered-data guard could not run "
+                      "this pass (fail-open, not a silent green)")
+    files = []
+    for rel in rels:
+        if not rel.endswith(".ts"):
+            continue
+        try:
+            files.append((rel, (ROOT / rel).read_text(encoding="utf-8", errors="ignore")))
+        except Exception:
+            continue
+    return _no_ciphered_data_impl(files)
+
+
 def _no_stub_render_paths_impl(files):
     """RED if any (relpath, text) carries a prototype/demo scaffold token.
     `files` = iterable of (relpath, text). Param-taking for the negative test."""
@@ -3803,6 +3919,14 @@ INVARIANTS = [
         truth_anchor="the real entity-id sets from the pillars (canon slugs + catalog condition/symptom ids + product ids) x the entity-view .ts bytes, recomputed each run",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 2 gate row 2 -- a hand-built {calcium:{...},osteoporosis:{...}} content map (2 keys) slips under the >10-element inline-data gate; this closes it. Negative test: tools/test_entity_render_is_projection.py.",
+    ),
+    Invariant(
+        name="views_no_ciphered_data",
+        description="§00.A -- the decorative .ds-cipher glyph-scrambler never wraps interpolated data. It rewrites a random character every 1s tick and restores the truth only every 5th, so wrapping a real number renders it WRONG ~80% of the time. Found live 2026-07-14: the hero kicker ciphered essentialCount(), rendering Wallach's 90 as 30/80/94. Any ${...} inside a .ds-cipher span is RED",
+        check_fn=check_views_no_ciphered_data,
+        truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
+        severity="critical",
+        lesson_ref="A number with an impeccable SOURCE can still be fabricated at RENDER time -- no existing gate watched the presentation layer for this. Negative test: tools/test_views_no_ciphered_data.py.",
     ),
     Invariant(
         name="no_stub_render_paths",

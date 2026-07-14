@@ -18,7 +18,9 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
+import { plural } from '../core/format.js';
 import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
+import { ui } from '../state/copy.js';
 import { type CoverageSnapshot, type CoverageStatus, essentialCount, getOrCompute } from '../state/coverage.js';
 import { loadEffectiveRegimen, loadRgUserGoals } from '../state/regimen.js';
 
@@ -126,6 +128,14 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
   `;
 }
 
+/**
+ * The hero: the periodic-table field + the headline stat + the legend.
+ *
+ * The LEGEND states the vocabulary the engine actually speaks. It previously taught TRACE —
+ * which state/coverage.ts stopped producing (zero trace returns remain) — and omitted PRESENT,
+ * which IS produced (the PDM present-but-unquantified verdict). A legend documenting impossible
+ * states teaches the user a fiction, so it now lists exactly the five statuses classify() emits.
+ */
 function renderHero(snapshot: CoverageSnapshot | null): string {
   const total = snapshot?.totalCount ?? essentialCount();
   const covered = snapshot?.coveredCount ?? 0;
@@ -134,11 +144,13 @@ function renderHero(snapshot: CoverageSnapshot | null): string {
     <section class="coverage-hero ds-border-travel">
       <header class="coverage-hero__head">
         <div>
-          <div class="coverage-hero__kicker">Your essentials · <span class="ds-cipher" data-cipher-set="numfrac">${essentialCount()}</span> minerals + vitamins + amino acids + fats</div>
-          <h2 class="coverage-hero__title">
-            THE WHOLE PICTURE
-            <em>// what you're absorbing, what you're missing</em>
-          </h2>
+          <!-- NO .ds-cipher on essentialCount(): the cipher engine scrambles the glyphs it wraps
+               and only restores the true value every 5th tick, so wrapping a REAL canon-derived
+               number rendered Wallach's 90 as 30/80/94 four seconds in five (measured 2026-07-14).
+               The cipher is decorative chrome and may only ever wrap a static decorative literal;
+               gated by views_no_ciphered_data. -->
+          <div class="coverage-hero__kicker">Your essentials · ${essentialCount()} minerals + vitamins + amino acids + fats</div>
+          <h2 class="coverage-hero__title">THE WHOLE PICTURE</h2>
         </div>
         <div class="coverage-stat">
           <span class="coverage-stat__num">${covered}</span>
@@ -153,14 +165,36 @@ function renderHero(snapshot: CoverageSnapshot | null): string {
       <div class="legend">
         <span class="legend__item"><span class="legend__sw covered"></span> COVERED</span>
         <span class="legend__item"><span class="legend__sw partial"></span> PARTIAL</span>
-        <span class="legend__item"><span class="legend__sw trace"></span> TRACE · VIA AGGREGATE VEHICLE</span>
+        <span class="legend__item"><span class="legend__sw present"></span> PRESENT · NOT QUANTIFIED</span>
         <span class="legend__item"><span class="legend__sw gap"></span> GAP · ATTENTION</span>
+        <span class="legend__item"><span class="legend__sw pending"></span> NO WALLACH TARGET</span>
       </div>
     </section>
   `;
 }
 
-function renderGoalsStrip(snapshot: CoverageSnapshot | null): string {
+/**
+ * The goals strip — AWAITING ITS DATA (2026-07-14).
+ *
+ * WHAT WAS HERE: a per-goal "N / M essentials covered" readout in which BOTH numbers were
+ * fabricated. The denominator (`g.total` = 14/13/11/…) is hand-typed editorial chrome in
+ * coverage-layout-skeleton.json with no Wallach source and no membership list; the numerator
+ * scaled the GLOBAL covered ratio by that total, so every card rendered the same percentage
+ * up to rounding (live: 7% / 8% / 9% against a real 9/90). The goal's own id was never
+ * consulted — no per-goal computation was possible, because a goal is only {id, name, total}.
+ *
+ * WHY NO NUMBER NOW: §00.A / R2 — a health figure with no source is never shown. The honest
+ * gap (blueprint §7.1) is to show the goal and say the coverage is not computed yet, rather
+ * than print a confident fiction. This is a REAL feature awaiting real data, not decoration.
+ *
+ * NEXT CHUNK wires it live: eden/catalog/goals.json maps each goal to its CONDITION slugs;
+ * corpus/indices/essentials.json already carries per-essential `conditions_treated` derived
+ * from sealed Wallach claims; goal members = essentials whose conditions_treated intersect the
+ * goal's conditions; goal coverage = those members ∩ the snapshot's covered tiles — the SAME
+ * snapshot the tiles and the drawer read. (Probe 2026-07-14: bone/skeletal derives 27 real
+ * members from the corpus — the hand-typed 14 was not even close.)
+ */
+function renderGoalsStrip(): string {
   const userGoals = loadRgUserGoals() ?? [];
   const activeGoals = userGoals.length > 0
     ? LAYOUT.goals.filter(g => userGoals.includes(g.id))
@@ -168,16 +202,12 @@ function renderGoalsStrip(snapshot: CoverageSnapshot | null): string {
 
   const cardsHTML = activeGoals.map((g, i) => {
     const num = String(i + 1).padStart(2, '0');
-    const covered = snapshot !== null
-      ? Math.min(g.total, Math.round((snapshot.coveredCount / snapshot.totalCount) * g.total))
-      : 0;
-    const pct = Math.round((covered / g.total) * 100);
     return `
-      <div class="goal-card">
+      <div class="goal-card goal-card--pending">
         <div class="goal-card__kicker">GOAL · ${num}</div>
         <div class="goal-card__name">${escHTML(g.name)}</div>
-        <div class="goal-card__bar"><div class="goal-card__bar-fill" style="width: ${pct}%"></div></div>
-        <div class="goal-card__progress">${pct}% · ${covered} / ${g.total} essentials covered</div>
+        <div class="goal-card__bar goal-card__bar--pending"></div>
+        <div class="goal-card__progress">${escHTML(ui('cov_goal_pending'))}</div>
       </div>
     `;
   }).join('');
@@ -194,40 +224,58 @@ function renderGoalsStrip(snapshot: CoverageSnapshot | null): string {
   `;
 }
 
+/**
+ * The regimen rail — every value here is now READ, never asserted (2026-07-14).
+ *
+ * STRIPPED as fabricated chrome: "CURRENT SLOT · 02·F71D" (a decorative hex literal dressed as
+ * a live slot serial), "Slot 2 of 5" (no slot system exists anywhere — regimen.ts holds a single
+ * REGIMEN_KEY and never enumerates 5 slots), "Synced" (reflected no sync state and could never
+ * say anything else), and the per-item "DAILY" frequency (hardcoded regardless of the item's
+ * real schedule). "DAILY PROTOCOL" survives as an honest static HEADING — it names the surface,
+ * it does not claim to be read from state.
+ *
+ * FIXED: the item count reported the .slice(0, 8)-TRUNCATED array length, so a 12-item regimen
+ * displayed "8 items". The count now reads the full regimen; the slice is a display cap only.
+ */
 function renderRail(): string {
-  const items = loadEffectiveRegimen().slice(0, 8);
-  const itemsHTML = items.map((item) => {
+  const allItems = loadEffectiveRegimen();
+  const RAIL_DISPLAY_CAP = 8;
+  const shown = allItems.slice(0, RAIL_DISPLAY_CAP);
+  const overflow = allItems.length - shown.length;
+
+  const itemsHTML = shown.map((item) => {
     const labelName = (item.label.name || '?').toString();
     const icon = labelName.charAt(0).toUpperCase();
+    const nutrientCount = item.label.nutrients?.length ?? 0;
     return `
       <div class="regimen-item">
         <div class="regimen-item__icon">${escHTML(icon)}</div>
         <div class="regimen-item__body">
           <p class="regimen-item__name">${escHTML(labelName)}</p>
-          <span class="regimen-item__meta">DAILY</span>
+          <span class="regimen-item__meta">${nutrientCount} ${escHTML(plural(nutrientCount, 'nutrient'))}</span>
         </div>
-        <span class="regimen-item__count">${(item.label.nutrients?.length ?? 0)}</span>
+        <span class="regimen-item__count">${nutrientCount}</span>
       </div>
     `;
-  }).join('') || '<div class="regimen-item"><div class="regimen-item__body"><p class="regimen-item__name">— no items —</p></div></div>';
+  }).join('') || `<div class="regimen-item"><div class="regimen-item__body"><p class="regimen-item__name">${escHTML(ui('cov_rail_empty'))}</p></div></div>`;
+
+  const overflowHTML = overflow > 0
+    ? `<div class="regimen-rail__overflow">+ ${overflow} more</div>`
+    : '';
 
   return `
     <aside class="regimen-rail">
       <header class="regimen-rail__head">
-        <div class="regimen-rail__eyebrow"><span class="pulse-dot"></span>CURRENT SLOT · <span class="ds-cipher" data-cipher-set="hexa">02·F71D</span></div>
+        <div class="regimen-rail__eyebrow"><span class="pulse-dot"></span>CURRENT REGIMEN</div>
         <h3 class="regimen-rail__slot-name">DAILY PROTOCOL</h3>
         <div class="regimen-rail__slot-meta">
-          <span><strong>${items.length}</strong> items</span>
-          <span>·</span>
-          <span>Slot <strong>2 of 5</strong></span>
-          <span>·</span>
-          <span>Synced</span>
+          <span><strong>${allItems.length}</strong> ${escHTML(plural(allItems.length, 'item'))}</span>
         </div>
       </header>
-      <div class="regimen-rail__list">${itemsHTML}</div>
+      <div class="regimen-rail__list">${itemsHTML}${overflowHTML}</div>
       <div class="regimen-rail__actions">
-        <button class="ds-btn-ghost" style="flex: 1;">MANAGE</button>
-        <button class="ds-btn-primary" style="flex: 1;">ADD ITEM</button>
+        <button class="ds-btn-ghost regimen-rail__manage">MANAGE</button>
+        <button class="ds-btn-primary regimen-rail__add">ADD ITEM</button>
       </div>
     </aside>
   `;
@@ -303,7 +351,7 @@ export function mount(container: HTMLElement): MountHandle {
       <div class="coverage-grid">
         <div class="coverage-main">
           ${renderHero(snapshot)}
-          ${renderGoalsStrip(snapshot)}
+          ${renderGoalsStrip()}
         </div>
         ${renderRail()}
       </div>

@@ -160,16 +160,16 @@ function statusOf(snapshot: CoverageSnapshot | null, key: string): CoverageStatu
   return snapshot.tiles.find(t => t.name === key)?.status ?? '';
 }
 
-// The 4 organic building blocks (hydrogen, carbon, nitrogen, oxygen) are present in
-// air/water/food by default (Luneth) — a '' (no-dose) status reads covered, not absent.
-const FOUNDATIONAL_PRESENT: ReadonlySet<string> = new Set(['H', 'C', 'N', 'O']);
-
 /**
  * The tile's coverage-dot state. green covered · yellow partial · red uncovered/absent ·
- * hollow-blue present-but-unquantified. A no-dose foundational element (H/C/N/O) with no
- * numeric status reads covered (present by default); everything else with no delivery is absent.
+ * hollow-blue present-but-unquantified.
+ *
+ * PURE PRESENTATION — this maps an ALREADY-DECIDED status to a dot class and decides nothing
+ * itself. The foundational-present rule (H/C/N/O read covered) moved to state/coverage.ts on
+ * 2026-07-14: holding it here made the drawer disagree with Coverage about 4 essentials over
+ * the same snapshot. Coverage verdicts belong to the state layer.
  */
-function dotState(status: CoverageStatus, symbol: string): string {
+function dotState(status: CoverageStatus): string {
   if (status === 'covered' || status === 'trace') {
     return 'covered';
   }
@@ -178,9 +178,6 @@ function dotState(status: CoverageStatus, symbol: string): string {
   }
   if (status === 'present') {
     return 'present';
-  }
-  if (status === '' && FOUNDATIONAL_PRESENT.has(symbol)) {
-    return 'covered';
   }
   return 'uncovered';
 }
@@ -218,7 +215,7 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
   const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML(ui('kd_covlegend_label'))}</span>${COV_STATES.map(s => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML(ui(`kd_covlegend_${s}`))}</span>`).join('')}</div>`;
   const groupsHTML = ESS_SUBSECTIONS.map((group) => {
     const tilesHTML = group.items.map((e) => {
-      const dot = dotState(statusOf(snapshot, e.key), e.symbol);
+      const dot = dotState(statusOf(snapshot, e.key));
       const sel = e.key === selectedKey ? ' is-selected' : '';
       return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(e.key)}" title="${escHTML(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML(e.symbol)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML(plural(e.claimCount, 'claim'))}</span></button>`;
     }).join('');
