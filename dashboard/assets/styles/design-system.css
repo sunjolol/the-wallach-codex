@@ -313,6 +313,13 @@
   }
   *, *::before, *::after {
     animation-duration: 0.01s !important;
+    /* Duration alone does NOT stop an `infinite` animation — it ACCELERATES it. Without
+       this cap the ambient loops ran at ~100Hz under a reduce preference: a strobe served
+       to precisely the users who asked for less motion. Measured headless 2026-07-14 —
+       7 painted offenders (ds-scan-sweep, ds-numeric-glow, ds-stat-pulse, ds-travel-top,
+       ds-travel-bottom, 2x ds-pulse-animate). Capping iterations lands each on its 100%
+       keyframe; all seven end states are benign (off-screen, opacity 0, or static). */
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01s !important;
   }
 }
