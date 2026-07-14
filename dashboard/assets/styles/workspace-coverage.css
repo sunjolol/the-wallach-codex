@@ -20,21 +20,57 @@
 
 /* ─── Block 1: shared chrome (fonts, tokens, ds-* decorations) ───────── */
 /* ═══════════════════════════════════════════════════════════════════════════
- * WORKSPACE DISPLAY TOKENS
+ * WORKSPACE DISPLAY FONTS + TOKENS
  * ═══════════════════════════════════════════════════════════════════════════
- * The Chakra Petch + Bruno Ace @font-face blocks that stood here were removed on
- * 2026-07-14: the futurist pivot (type-futurist.css, 2026-07-13) moved every display
- * surface to Unbounded, so no rule in this file resolved to either face any more —
- * they were dead declarations the browser could still be asked to fetch.
+ * ⚠ THESE TWO TOKENS ARE APP-WIDE, NOT LOCAL TO COVERAGE. This sheet loads globally, so
+ * this :root block is the ONLY definition of --ds-font-display-interface /
+ * --ds-font-display-artifact anywhere (the sealed design-system.css never declared them).
+ * 89 rules across 6 stylesheets read them — drawer-knowledge (34), drawer-search (13),
+ * drawer-journey (7), drawer-shared (4), dashboard (4), this file (9).
  *
- * The two tokens below survive because rules here DO read them, but note they are
- * local to this file — the sealed design-system.css never declared them. Folding them
- * into the sealed canonical is part of the pending font fold-in (which needs Luneth's
- * sign-off + a golden re-seal); until then this file names their live faces.
+ * DO NOT REPOINT THESE WITHOUT CHECKING THE TOKEN'S READERS. On 2026-07-14 they were
+ * repointed to Unbounded and these @font-face blocks deleted, on the belief the faces were
+ * dead. They were not — every one of those 89 rules silently flipped, and the Knowledge
+ * drawer + side menus regressed badly. The "proof" that the faces were unused was circular:
+ * it grepped font-family declarations, which resolve THROUGH these very tokens. Grepping a
+ * face NAME can never prove a token-indirected face is unused. Grep the token's readers.
+ *
+ * Chakra Petch is the sharp-angled geometric interface face (Luneth, 2026-07-14: it is the
+ * one with "the good geometry we discussed"). Unbounded is applied per-element where wanted,
+ * never by hijacking these tokens.
  * ═══════════════════════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Bruno Ace';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/BrunoAce-Regular.ttf') format('truetype');
+}
+
 :root {
-  --ds-font-display-interface: 'Unbounded', 'Space Grotesk', system-ui, sans-serif;
-  --ds-font-display-artifact:  'Unbounded', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-interface: 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
+  --ds-font-display-artifact:  'Bruno Ace', 'Chakra Petch', 'Space Grotesk', system-ui, sans-serif;
 }
 
 /* Lock the viewport — no page-level scroll. Workspace scrolls internally
@@ -236,7 +272,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
   content: '';
   width: 16px; height: 1px; background: var(--ds-accent);
 }
-/* HERO TITLE — the interface display face (Unbounded, via type-futurist.css) */
+/* HERO TITLE — Chakra Petch (interface display) */
 .coverage-hero__title {
   font-family: var(--ds-font-display-interface);
   font-size: clamp(1.8rem, 2.4vw, 2.4rem);
@@ -373,7 +409,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
   font-size: 1.15em;
 }
 
-/* Section divider — broken hairline with signal-accent dash + corner registration marks */
+/* Section divider — broken hairline with a signal-accent dash.
+   The blue --ds-tech corner L-brackets that sat on each end were removed 2026-07-14
+   (Luneth: "remove all of the blue L shapes"); they also contradicted the project design
+   bar, which rules out L-brackets outright. */
 .essentials-section__divider {
   position: relative;
   height: 1px;
@@ -383,21 +422,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
     var(--ds-accent) 30%, var(--ds-accent) 36%,
     transparent 38%, transparent 100%);
   margin-bottom: var(--ds-space-4);
-}
-.essentials-section__divider::before,
-.essentials-section__divider::after {
-  content: '';
-  position: absolute;
-  width: 6px; height: 6px;
-  border: 1px solid var(--ds-tech);
-}
-.essentials-section__divider::before {
-  left: 0; top: -3px;
-  border-right: 0; border-bottom: 0;
-}
-.essentials-section__divider::after {
-  right: 0; top: -3px;
-  border-left: 0; border-bottom: 0;
 }
 
 /* SUB-SECTION — mini label that breaks a section into navigable groups
@@ -559,15 +583,24 @@ body { margin: 0; background: var(--ds-paper-deep); }
     background var(--ds-motion-base) var(--ds-ease-out);
 }
 
-/* ── FAMILY SILHOUETTES — chamfered corners, straight off the reference plates.
-   The only per-family difference, and it costs zero layout: sizing is identical. */
-.tile--vitamin { clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 0 100%); }
-.tile--amino   { clip-path: polygon(0 0, 100% 0, 100% 100%, 9px 100%, 0 calc(100% - 9px)); }
+/* ── FAMILY SILHOUETTES — one rounded corner per family, mirroring the reference plates.
+   The only per-family difference; sizing is identical, so layout is untouched.
+
+   WHY RADIUS AND NOT A CHAMFER: these were clip-path chamfers until 2026-07-14, and their
+   diagonals rendered with NO border — clip-path cannot carry one. An inset ring follows the
+   border-box rectangle, so a clipped diagonal is always bare; that is a CSS limitation, not
+   a tunable value, and every workaround (4x drop-shadow outline, layered rim/surface
+   elements, per-state multi-layer gradients) is either costly across 91 tiles or needs a DOM
+   wrapper. A radius carries the inset ring perfectly, so every family now has an unbroken
+   rim — and it is CLOSER to the source: the Empower plates are rounded, not chamfered. The
+   chamfer was invented here, not observed there. */
+.tile--vitamin { border-radius: var(--ds-radius-xs) 9px var(--ds-radius-xs) var(--ds-radius-xs); }
+.tile--amino   { border-radius: var(--ds-radius-xs) var(--ds-radius-xs) var(--ds-radius-xs) 9px; }
 .tile--fat {
   min-height: 92px;
   padding: var(--ds-space-4) var(--ds-space-5);
   gap: var(--ds-space-2);
-  clip-path: polygon(0 0, calc(100% - 11px) 0, 100% 11px, 100% 100%, 11px 100%, 0 calc(100% - 11px));
+  border-radius: var(--ds-radius-xs) 11px var(--ds-radius-xs) 11px;
 }
 
 /* ── THE FILL LEVEL — real data made visible.
@@ -701,9 +734,13 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .tile--fat.covered {
   background: linear-gradient(180deg, #ffffff 0%, #fdfff9 55%, var(--ds-ok-wash) 100%);
   transform: translateY(-2px);
+  /* ORDER IS LOad-BEARING: box-shadow paints first-listed on TOP. The rim must precede the
+     white top-light, or the light paints over the rim's top edge and the plate renders with
+     no top border (the 2026-07-14 bug). The light is offset to y=1..2 with a -1px spread so
+     it sits UNDER the rim rather than fighting it. */
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.95),
     inset 0 0 0 1px var(--ds-ok-bright),
+    inset 0 2px 0 -1px rgba(255, 255, 255, 0.95),
     0 12px 22px -11px rgba(61, 97, 41, 0.42),
     0 3px 8px -3px rgba(26, 22, 18, 0.10);
 }
@@ -732,9 +769,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
   content: '';
   position: absolute;
   top: 0;
-  /* Inset past the deepest chamfer (fats cut 11px) so the mark clears every family's
-     silhouette. Pinned to right:0 it was sliced by the vitamin/fat clip-path and read as
-     a glitch rather than a mark. */
+  /* Inset past the deepest corner radius (fats round 11px) so the mark never collides with
+     the rounding. It was originally pinned to right:0 and got sliced into a glitch-looking
+     sliver by the old chamfers. */
   right: 13px;
   width: 14px;
   height: 3px;
@@ -787,9 +824,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .tile--amino:hover,
 .tile--fat:hover {
   transform: translateY(-3px);
+  /* Same ordering rule as .covered — the accent rim must sit above the top-light. */
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.8),
     inset 0 0 0 1px var(--ds-accent),
+    inset 0 2px 0 -1px rgba(255, 255, 255, 0.8),
     var(--ds-glow-accent-sm);
 }
 
@@ -1018,7 +1056,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
   color: var(--ds-accent-deep);
 }
 .regimen-item__body { flex: 1; min-width: 0; }
-/* ITEM NAME — the interface display face (Unbounded, via type-futurist.css) */
+/* ITEM NAME — Chakra Petch (interface display) */
 .regimen-item__name {
   font-family: var(--ds-font-display-interface);
   font-size: var(--ds-text-sm);
@@ -1105,4 +1143,27 @@ body { margin: 0; background: var(--ds-paper-deep); }
   .essentials-grid--minerals, .essentials-grid--vitamins, .essentials-grid--aminos {
     grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));   /* smaller tiles fit more per row */
   }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * UNBOUNDED CARVE-OUTS — the exact surfaces Luneth kept futurist (2026-07-14)
+ * ═══════════════════════════════════════════════════════════════════════════
+ * Unbounded is opted in ONE SELECTOR AT A TIME, deliberately. It must never be applied by
+ * repointing --ds-font-display-interface: that token is read by 89 rules across 6
+ * stylesheets (drawer-knowledge alone has 34), so changing it reskins the entire app
+ * silently. That is precisely what happened this day and had to be reverted.
+ *
+ * var(--ds-font-display) resolves to Unbounded via type-futurist.css, which loads last and
+ * owns that token; --ds-font-display-interface stays Chakra Petch for everything else.
+ *
+ * NOT in this list, on Luneth's explicit instruction: .goal-card__name ("bone & skeletal")
+ * and .goal-card__progress — "those were better before".
+ * ═══════════════════════════════════════════════════════════════════════════ */
+.essentials-section__title,   /* 01 MINERALS · 02 VITAMINS · 03 AMINO ACIDS · 04 FATTY ACIDS */
+.regimen-rail__slot-name,     /* DAILY PROTOCOL */
+.regimen-item__name,          /* BTT 2.5 CANISTER + every product name */
+.goals-strip__title,          /* YOUR GOALS */
+.goals-strip__add {           /* + ADD GOAL */
+  font-family: var(--ds-font-display);
 }
