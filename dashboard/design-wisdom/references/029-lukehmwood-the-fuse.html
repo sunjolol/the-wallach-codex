@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design Wisdom #029 — The Fuse — random-walk circuit traces</title>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  Design Wisdom Reference #029 — lukehmwood-the-fuse
+═══════════════════════════════════════════════════════════════════════════════
+  Title:         The Fuse — random-walk circuit traces
+  Source URL:    https://codepen.io/lukehmwood/pen/eYZxWXQ
+  Author:        lukehmwood (CodePen)
+  Captured:      2026-07-14
+  Code captured: 2026-07-14 (manual paste from user — codepen.io returned HTTP 403 to fetch,
+                 so THIS PASTE IS THE ONLY COPY. Link rot already applies.)
+  Categories:    effects, generative, alive-random, phazon
+  Formats:       HTML=HTML · CSS=CSS · JS=JS
+
+  USER NOTES (verbatim):
+  ──────────────────────────────────────────────────────────────────────────────
+  "I love all the tiny details and how it feels alien and alive, the only thing I don't like is the purple accents"
+
+  CONTEXT:
+  ──────────────────────────────────────────────────────────────────────────────
+  One of 5 references Luneth supplied 2026-07-14 for the PHAZON direction — a
+  Metroid-Prime-inspired theme where the interface reads as dark technological plates
+  over a living luminous substrate, the energy showing through the seams. Full
+  direction + what was learned: learnings/2026-07-14-phazon-direction.md
+  The mockup built from these: applications/phazon/
+
+  WHAT MAKES IT WORK:
+  ──────────────────────────────────────────────────────────────────────────────
+  Builds SVG-path strings by picking RANDOMLY from 8 segment generators (h / h- / v / v- / 4 diagonals), then animates a dash offset. The 'alive' quality is genuine per-segment randomness — a random WALK, not a loop. Angular + fine + numerous: 'tiny details' means small and many, not one large gesture.
+
+  ASSEMBLY NEEDED:
+  ──────────────────────────────────────────────────────────────────────────────
+  Wrap CSS in <style> and JS in <script>. No external deps. Should run as-is once wrapped.
+
+  ⚠ RAW PASTE — PRESERVED BYTE-EXACT, NOT ASSEMBLED. Luneth: "All I did was copy HTML
+  box > CSS box > JS box - I did not code these, just put exactly what was in those 3
+  boxes in each case, so <script> <css> and other tags will largely be missing and it
+  won't function until they're added."
+  Unlike references #001-#028 (which were assembled into runnable documents), the source
+  below sits inside <pre> exactly as pasted. Splitting a concatenated paste into
+  HTML/CSS/JS is guesswork, and guessing wrong would corrupt the ONLY copy of the source.
+  Byte-exact and honestly labelled beats runnable and silently wrong.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<style>
+  body { background: #12161c; color: #cfe6f5; font: 12px/1.5 ui-monospace, Menlo, monospace; margin: 0; padding: 24px; }
+  h1 { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: #6ec8ff; }
+  p { color: #8aa0b4; max-width: 90ch; }
+  pre { background: #0a0d12; border: 1px solid #223; border-radius: 4px; padding: 16px; overflow: auto; white-space: pre-wrap; word-break: break-word; }
+</style>
+</head>
+<body>
+<h1>#029 — The Fuse — random-walk circuit traces</h1>
+<p><b>lukehmwood</b> · <a href="https://codepen.io/lukehmwood/pen/eYZxWXQ" style="color:#6ec8ff">codepen.io/lukehmwood/pen/eYZxWXQ</a></p>
+<p>User note: &ldquo;I love all the tiny details and how it feels alien and alive, the only thing I don&#x27;t like is the purple accents&rdquo;</p>
+<p>Raw 3-box paste below, byte-exact. See the HTML comment in this file's source for the mechanism, the assembly it needs, and the gotchas.</p>
+<pre>  &lt;canvas id=&quot;lines&quot;&gt;&lt;/canvas&gt;
+  &lt;h1&gt;The Fus&lt;span class=&quot;last&quot;&gt;e&lt;/span&gt;&lt;/h1&gt;
+  
+  
+  
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: &quot;Roboto&quot;;
+  font-weight: 100;
+}
+
+body {
+  font-size: 18px;
+  color: hsla(210deg, 100%, 100%, 1);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 1.5em;
+  font-size: clamp(1em, 5vw, 4em);
+  animation: breath 10000ms ease-in-out infinite alternate;
+}
+h1 &gt; .last {
+  letter-spacing: 0;
+}
+
+@keyframes breath {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: hsla(240deg, 20%, 20%, 1);
+}
+
+
+
+
+(function global() {
+  const canvas = document.getElementById(&quot;lines&quot;);
+  const ctx = canvas.getContext(&quot;2d&quot;);
+  let width;
+  let height;
+  class Line {
+    constructor(origin, size, length, color, style = &quot;pattern&quot;) {
+      this.size = size;
+      this.origin = origin;
+      this.length = length;
+      this.color = color;
+      this.style = style;
+      this.origin = `M${origin.x},${origin.y}`;
+      this.offSet = 0;
+      this.line = null;
+      this.offSetSpeed = length / size;
+    }
+    getColorString() {
+      return `hsla(${this.color.h}deg,${this.color.s}%,${this.color.l}%,${this.color.a})`;
+    }
+    generators() {
+      return [
+        {
+          line: `h${this.size}`,
+          mag: this.size
+        },
+        {
+          line: `h-${this.size}`,
+          mag: this.size
+        },
+        {
+          line: `v${this.size}`,
+          mag: this.size
+        },
+        {
+          line: `v-${this.size}`,
+          mag: this.size
+        },
+        {
+          line: `l${this.size},${this.size}`,
+          mag: Math.hypot(this.size, this.size)
+        },
+        {
+          line: `l${this.size}-${this.size}`,
+          mag: Math.hypot(this.size, this.size)
+        },
+        {
+          line: `l-${this.size},${this.size}`,
+          mag: Math.hypot(this.size, this.size)
+        },
+        {
+          line: `l-${this.size}-${this.size}`,
+          mag: Math.hypot(this.size, this.size)
+        }
+      ];
+    }
+    generate() {
+      let segments = this.generators(this.size);
+      let path = this.origin;
+      let mag = 0;
+      let fragment;
+      let i;
+      for (i = 0; i &lt; this.length; i += 1) {
+        fragment = segments[(Math.random() * segments.length) | 0];
+        path += ` ${fragment.line}`;
+        mag += fragment.mag;
+      }
+      this.line = {
+        path,
+        mag
+      };
+      return this;
+    }
+    renderStyle(style) {
+      if (style === &quot;glitches&quot;) {
+        ctx.lineDashOffset = this.line.mag + this.offSet;
+        ctx.setLineDash([
+          this.size ** 1.5,
+          (this.line.mag / this.length) * this.size ** 2
+        ]);
+        this.offSet += 20;
+        // this.size / (this.size ** 2);
+        ctx.lineWidth = 2;
+        return this;
+      }
+      if (style === &quot;pattern&quot;) {
+        ctx.lineDashOffset = this.line.mag - this.offSet;
+        ctx.setLineDash([this.line.mag, this.line.mag]);
+        this.offSet += 10;
+        //this.size / (this.size ** 100);
+        ctx.lineWidth = 0.2;
+      }
+    }
+    mutatePath() {
+      let lineFragment = this.line.path.split(&quot; &quot;).slice(1);
+      let generator = this.generators();
+      lineFragment[(Math.random() * lineFragment.length) | 0] =
+        generator[(Math.random() * generator.length) | 0].line;
+      this.line.path = `${this.line.path.split(&quot; &quot;)[0]} ${lineFragment.join(
+        &quot; &quot;
+      )}`;
+    }
+    draw() {
+      !this.line &amp;&amp; this.generate();
+
+      ctx.strokeStyle = this.getColorString();
+      this.renderStyle(this.style);
+      ctx.lineCap = &quot;round&quot;;
+      ctx.lineJoin = &quot;round&quot;;
+      ctx.stroke(new Path2D(this.line.path));
+      return this;
+    }
+  }
+  function clear() {
+    ctx.fillStyle = `hsla(200deg, 20%, 10%, 0.3)`;
+    ctx.fillRect(0, 0, width, height);
+  }
+  function generateLines(amount) {
+    let lines = [];
+    let styles = [
+      {
+        size: 1.25,
+        style: &quot;pattern&quot;,
+        color: { h: 210, s: 100, l: 70, a: 0.5 }
+      },
+      { size: 2.5, style: &quot;pattern&quot;, color: { h: 190, s: 90, l: 50, a: 0.3 } },
+      { size: 5, style: &quot;pattern&quot;, color: { h: 210, s: 70, l: 60, a: 0.2 } },
+      { size: 10, style: &quot;pattern&quot;, color: { h: 310, s: 80, l: 55, a: 0.15 } },
+      { size: 20, style: &quot;pattern&quot;, color: { h: 200, s: 25, l: 35, a: 0.12 } },
+      { size: 20, style: &quot;pattern&quot;, color: { h: 210, s: 20, l: 40, a: 0.12 } },
+      { size: 40, style: &quot;pattern&quot;, color: { h: 190, s: 40, l: 50, a: 0.12 } },
+      { size: 80, style: &quot;pattern&quot;, color: { h: 220, s: 50, l: 60, a: 0.12 } },
+      { size: 40, style: &quot;glitches&quot;, color: { h: 300, s: 100, l: 50, a: 0.3 } },
+      { size: 20, style: &quot;glitches&quot;, color: { h: 210, s: 100, l: 50, a: 0.3 } },
+      { size: 60, style: &quot;glitches&quot;, color: { h: 30, s: 100, l: 50, a: 0.3 } }
+    ];
+    for (let i = 0; i &lt; amount; i += 1) {
+      let style = styles[(Math.random() ** 2 * styles.length) | 0];
+      lines.push(
+        new Line(
+          { x: width * 0.5, y: height * 0.5 },
+          style.size,
+          500 + Math.random() * 1000,
+          style.color,
+          style.style
+        )
+      );
+    }
+    return lines;
+  }
+  let id;
+  function resize() {
+    id = cancelAnimationFrame(id);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+    const lines = generateLines(40);
+    function update() {
+      if (!(id % 3)) {
+        clear();
+        lines.forEach((line) =&gt; {
+          line.draw();
+          if (!(id % 5) &amp;&amp; Math.random() &gt; 0.95) {
+            line.mutatePath();
+          }
+        });
+      }
+      id = requestAnimationFrame(update);
+    }
+    id = requestAnimationFrame(update);
+  }
+  window.addEventListener(&quot;resize&quot;, resize, {
+    passive: true
+  });
+  resize();
+})();
+</pre>
+</body>
+</html>

@@ -145,7 +145,7 @@
     "kd_foods_col_remove": "Take these out",
     "kd_foods_col_eat": "Put these in",
     "kd_foods_form_hd": "Sometimes it’s the form, not the food",
-    "cov_goal_pending": "Coverage pending · essentials not yet mapped",
-    "cov_rail_empty": "No items yet — add one to start building coverage."
+    "cov_rail_empty": "No items yet — add one to start building coverage.",
+    "cov_console_q": "What are you here for?"
   }
 }

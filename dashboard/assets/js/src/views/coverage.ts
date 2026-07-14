@@ -198,52 +198,53 @@ function renderHero(snapshot: CoverageSnapshot | null): string {
 }
 
 /**
- * The goals strip — AWAITING ITS DATA (2026-07-14).
+ * The console — goals FIRST, and the light's only home.
  *
- * WHAT WAS HERE: a per-goal "N / M essentials covered" readout in which BOTH numbers were
- * fabricated. The denominator (`g.total` = 14/13/11/…) is hand-typed editorial chrome in
- * coverage-layout-skeleton.json with no Wallach source and no membership list; the numerator
- * scaled the GLOBAL covered ratio by that total, so every card rendered the same percentage
- * up to rounding (live: 7% / 8% / 9% against a real 9/90). The goal's own id was never
- * consulted — no per-goal computation was possible, because a goal is only {id, name, total}.
+ * Luneth 2026-07-14: the goals section "is a VERY important section because it's where the
+ * user starts, it feels like it should be the first thing you see so the flow is clearer",
+ * and the old cards "use a TON of space to list your goals in an unhelpful way". So: chips
+ * above the table instead of cards below it.
  *
- * WHY NO NUMBER NOW: §00.A / R2 — a health figure with no source is never shown. The honest
- * gap (blueprint §7.1) is to show the goal and say the coverage is not computed yet, rather
- * than print a confident fiction. This is a REAL feature awaiting real data, not decoration.
+ * ★ THE CHIPS CARRY NO RATIO, DELIBERATELY. A per-goal "N / M covered" needs real membership
+ * — eden/catalog/goals.json (goal -> condition slugs) intersected with each essential's
+ * corpus-derived `conditions_treated` — and goals.json does not exist yet. The previous goal
+ * cards fabricated BOTH numbers (a hand-typed denominator with no Wallach source, and a
+ * numerator that just scaled the GLOBAL ratio, so all three cards showed one number). Typing
+ * a plausible ratio in to make this comparison look finished would re-commit exactly that.
+ * The ratio ships with the derivation.
  *
- * NEXT CHUNK wires it live: eden/catalog/goals.json maps each goal to its CONDITION slugs;
- * corpus/indices/essentials.json already carries per-essential `conditions_treated` derived
- * from sealed Wallach claims; goal members = essentials whose conditions_treated intersect the
- * goal's conditions; goal coverage = those members ∩ the snapshot's covered tiles — the SAME
- * snapshot the tiles and the drawer read. (Probe 2026-07-14: bone/skeletal derives 27 real
- * members from the corpus — the hand-typed 14 was not even close.)
+ * The stat here is the REAL snapshot (state/coverage.ts) — the same numbers the plates and
+ * the drawer read, never re-derived. No .ds-cipher: gated by views_no_ciphered_data.
  */
-function renderGoalsStrip(): string {
+function renderConsole(snapshot: CoverageSnapshot | null): string {
   const userGoals = loadRgUserGoals() ?? [];
-  const activeGoals = userGoals.length > 0
-    ? LAYOUT.goals.filter(g => userGoals.includes(g.id))
-    : LAYOUT.goals.slice(0, 3);
+  const active = new Set(userGoals);
+  const total = snapshot?.totalCount ?? essentialCount();
+  const covered = snapshot?.coveredCount ?? 0;
 
-  const cardsHTML = activeGoals.map((g, i) => {
-    const num = String(i + 1).padStart(2, '0');
-    return `
-      <div class="goal-card goal-card--pending">
-        <div class="goal-card__kicker">GOAL · ${num}</div>
-        <div class="goal-card__name">${escHTML(g.name)}</div>
-        <div class="goal-card__bar goal-card__bar--pending"></div>
-        <div class="goal-card__progress">${escHTML(ui('cov_goal_pending'))}</div>
-      </div>
-    `;
+  const chips = LAYOUT.goals.map((g) => {
+    const on = active.has(g.id) ? ' is-active' : '';
+    return `<button class="goal-chip${on}" type="button" data-goal-id="${escHTML(g.id)}">${escHTML(g.name)}</button>`;
   }).join('');
 
   return `
-    <section class="goals-strip">
-      <header class="goals-strip__head">
-        <h3 class="goals-strip__title">YOUR GOALS</h3>
-        <span class="goals-strip__count">${activeGoals.length} ACTIVE · ${LAYOUT.goals.length} AVAILABLE</span>
-        <button class="goals-strip__add">+ ADD GOAL</button>
-      </header>
-      <div class="goals-row">${cardsHTML}</div>
+    <section class="coverage-console">
+      <div class="coverage-console__body">
+        <div class="coverage-console__head">
+          <div>
+            <div class="coverage-console__kicker">// what you're absorbing, what you're missing</div>
+            <h2 class="coverage-console__q">${escHTML(ui('cov_console_q'))}</h2>
+          </div>
+
+        </div>
+        <div class="console-chips">
+          ${chips}
+          <button class="goal-chip goal-chip--add" type="button" data-goal-add>+ ADD GOAL</button>
+        </div>
+        <div class="coverage-console__stat">
+          <strong>${covered}</strong> / ${total} essentials covered
+        </div>
+      </div>
     </section>
   `;
 }
@@ -372,12 +373,14 @@ export function mount(container: HTMLElement): MountHandle {
   const render = (): void => {
     const snapshot = getOrCompute();
     container.innerHTML = `
-      <div class="coverage-grid">
-        <div class="coverage-main">
-          ${renderHero(snapshot)}
-          ${renderGoalsStrip()}
+      <div class="coverage-workspace">
+        ${renderConsole(snapshot)}
+        <div class="coverage-grid">
+          <div class="coverage-main">
+            ${renderHero(snapshot)}
+          </div>
+          ${renderRail()}
         </div>
-        ${renderRail()}
       </div>
     `;
   };

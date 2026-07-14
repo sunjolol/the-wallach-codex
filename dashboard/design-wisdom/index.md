@@ -550,3 +550,15 @@ _References can carry multiple tags._
 
 - ✓ #028 Solid library of fundamental text styles (nxworld)
 
+### `phazon` (5)
+
+_Captured 2026-07-14 for the PHAZON theme exploration — a Metroid-Prime-inspired direction where
+the interface reads as dark technological plates over a living luminous substrate, energy showing
+through the seams. Exploration is PARKED; the direction, the lessons and the mockup are recorded in
+`learnings/2026-07-14-phazon-direction.md` and `applications/phazon/`._
+
+- ✓ #029 The Fuse — random-walk circuit traces (lukehmwood) — "tiny details ... alien and alive"; dislikes the purple
+- ✓ #030 Brownian tendrils bounded by a circle (louflan) — ★ "a living organism trying to get out not some loop"
+- ✓ #031 Plasma sphere — domain-warped FBM with voids + particles (sabosugi) — the "fusion reactor behind glass" idea; ⚠ three.js is scaffolding, the effect is a shader
+- ✓ #032 Gooey plasma set (Fieve) — ★ "Plasma-2 is my definite favorite"; ⚠⚠ its two apparent filter BUGS are the effect — never "fix" them
+- ✓ #033 Radial wave rays (towc) — "a bit too colorful, could be a cool window effect"

@@ -38,7 +38,7 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     const txt = s => { const el = document.querySelector(s); return el ? el.textContent.trim() : null; };
     return {
       tiles: q('.tile'), vit: q('.tile--vitamin'), amino: q('.tile--amino'), fat: q('.tile--fat'),
-      sections: q('.essentials-section'), goals: q('.goal-card'),
+      sections: q('.essentials-section'), goals: q('.goal-chip:not(.goal-chip--add)'),
       coveredStat: txt('.coverage-stat__num'),
       totalStat: txt('.coverage-stat__den'),
       statusCovered: q('.tile.covered, .tile--vitamin.covered, .tile--amino.covered, .tile--fat.covered'),

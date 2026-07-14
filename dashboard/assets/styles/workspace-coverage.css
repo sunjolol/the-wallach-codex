@@ -864,94 +864,127 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 
-/* ════ GOALS STRIP ═════════════════════════════════════════════════════════ */
-.goals-strip {
-  background: var(--ds-paper);
-  border-radius: var(--ds-radius-md);
-  padding: var(--ds-space-5) var(--ds-space-6);
-  box-shadow: var(--ds-elev-1);
-}
-.goals-strip__head {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-3);
-  margin-bottom: var(--ds-space-4);
-}
-.goals-strip__title {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-md);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0;
-}
-.goals-strip__count {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-accent);
-  margin-left: auto;
-}
-.goals-strip__add {
-  background: transparent;
-  border: 1px dashed var(--ds-accent);
-  color: var(--ds-accent-deep);
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-xs);
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--ds-radius-pill);
-  cursor: pointer;
-  font-weight: 600;
-}
-.goals-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--ds-space-3);
-}
-.goal-card {
-  background: var(--ds-paper-deep);
-  border-radius: var(--ds-radius-sm);
-  padding: var(--ds-space-4);
-  border-left: 3px solid var(--ds-accent);
+/* ════ THE CONSOLE — goals first ═══════════════════════════════════════════
+   Replaces the GOALS STRIP (deleted 2026-07-14), which sat BELOW the 91-plate table: goals
+   were the last thing you saw despite being where a new user starts, and three cards spent
+   ~214px to say three words each.
+
+   THE CONSOLE CARRIES NO LIGHT. An A/B luminous band lived here briefly and was rejected
+   (Luneth 2026-07-14: "I don't like either. It comes off as corny and distracting"); the
+   plasma work that followed it — a status-bar porthole, a gooey CSS strip, a WebGL window —
+   was then pulled OUT of the live dashboard entirely at his call and moved to an isolated
+   mockup under temporary/, because the theme it implies (a phazon-infected, fully dark
+   interface) is far too large a change to test on the live surface. Nothing of it remains
+   here; this console is paper, and the goals-first UX work it belongs to is PAUSED, not
+   reverted. */
+
+.coverage-workspace {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-space-2);
+  gap: var(--ds-space-6);
+  padding: var(--ds-space-7);
 }
-.goal-card__kicker {
+
+/* The workspace now owns the outer padding the grid used to carry, so the console sits flush
+   above the grid at the same inset without double-padding. */
+.coverage-workspace .coverage-grid {
+  padding: 0;
+}
+
+.coverage-console {
+  position: relative;
+  background: var(--ds-paper);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-elev-1);
+  padding: var(--ds-space-5) var(--ds-space-6);
+}
+
+.coverage-console__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-4);
+}
+
+.coverage-console__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-4);
+  flex-wrap: wrap;
+}
+
+/* Luneth's item 3: "// what you're absorbing, what you're missing" returns as an ORANGE
+   aesthetic accent in a distinct face/size, because the top area "looks boring". Mono + wide
+   tracking sets it apart from every display-face heading around it. */
+.coverage-console__kicker {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
+  text-transform: lowercase;
+  color: var(--ds-accent);
 }
-.goal-card__name {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-md);
+
+.coverage-console__q {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-lg);
   font-weight: 700;
-  color: var(--ds-ink);
   letter-spacing: 0.01em;
   text-transform: uppercase;
+  color: var(--ds-ink);
+  margin: 0;
 }
-.goal-card__bar {
-  height: 6px;
-  background: var(--ds-paper);
-  border-radius: 999px;
-  overflow: hidden;
-  border: 1px solid var(--ds-rule-soft);
+
+.console-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
 }
-.goal-card__bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--ds-accent-hot), var(--ds-accent), var(--ds-accent-bright));
+
+/* A chip carries the goal NAME only. It deliberately shows NO ratio: real membership needs
+   eden/catalog/goals.json (goal -> condition slugs), which does not exist yet, and a
+   plausible-looking number typed in to make a surface feel finished is the exact defect this
+   page spent two sessions deleting. The ratio ships with the derivation. */
+.goal-chip {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-xs);
+  font-weight: 600;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: var(--ds-radius-pill);
+  cursor: pointer;
+  background: var(--ds-paper-light);
+  color: var(--ds-ink-medium);
+  border: 1px solid var(--ds-rule);
+  transition: background var(--ds-motion-fast), color var(--ds-motion-fast), border-color var(--ds-motion-fast);
 }
-.goal-card__progress {
+
+.goal-chip:hover {
+  background: var(--ds-accent-wash);
+  border-color: var(--ds-accent);
+  color: var(--ds-accent-deep);
+}
+
+.goal-chip--add {
+  background: transparent;
+  color: var(--ds-accent-deep);
+  border-style: dashed;
+  border-color: var(--ds-accent);
+}
+
+.coverage-console__stat {
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-2);
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-mini);
-  color: var(--ds-ink-soft);
   letter-spacing: var(--ds-track-wide);
+  color: var(--ds-ink-soft);
+}
+
+.coverage-console__stat strong {
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-md);
+  color: var(--ds-ink);
 }
 
 

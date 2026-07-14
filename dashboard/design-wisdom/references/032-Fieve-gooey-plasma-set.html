@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design Wisdom #032 — Gooey plasma set (Plasma, Plasma-2, Fill, Black-Hole)</title>
+<!--
+═══════════════════════════════════════════════════════════════════════════════
+  Design Wisdom Reference #032 — Fieve-gooey-plasma-set
+═══════════════════════════════════════════════════════════════════════════════
+  Title:         Gooey plasma set (Plasma, Plasma-2, Fill, Black-Hole)
+  Source URL:    https://codepen.io/Fieve/pen/bogzQW
+  Author:        Fieve (CodePen)
+  Captured:      2026-07-14
+  Code captured: 2026-07-14 (manual paste from user — codepen.io returned HTTP 403 to fetch,
+                 so THIS PASTE IS THE ONLY COPY. Link rot already applies.)
+  Categories:    effects, svg-filter, gooey-metaball, phazon
+  Formats:       HTML=HTML · CSS=SCSS · JS=none
+
+  USER NOTES (verbatim):
+  ──────────────────────────────────────────────────────────────────────────────
+  "same as previous, Plasma-2 is my definite favorite of options on this one"
+
+  CONTEXT:
+  ──────────────────────────────────────────────────────────────────────────────
+  One of 5 references Luneth supplied 2026-07-14 for the PHAZON direction — a
+  Metroid-Prime-inspired theme where the interface reads as dark technological plates
+  over a living luminous substrate, the energy showing through the seams. Full
+  direction + what was learned: learnings/2026-07-14-phazon-direction.md
+  The mockup built from these: applications/phazon/
+
+  WHAT MAKES IT WORK:
+  ──────────────────────────────────────────────────────────────────────────────
+  ★★ TWO APPARENT BUGS IN #gooey-plasma-2 ARE THE ENTIRE EFFECT — DO NOT 'FIX' THEM.
+    (1) feColorMatrix computes result="goo" and NOTHING EVER READS IT. feDisplacementMap runs
+        on in="blur" — the SOFT gaussian, not the hard-edged goo. That softness is the
+        marbled-liquid look.
+    (2) feBlend in="gooey" names a result that DOES NOT EXIST (it is "goo"). An unresolvable
+        `in` falls back to SourceGraphic, so it overlay-blends the crisp source back over the
+        displaced mass. THAT OVERLAY IS THE VEINING.
+  Both were 'corrected' on 2026-07-14 and the effect died to a flat one-colour bean. Proven by
+  rendering a faithful replica against Luneth's screenshot: exact match. THE RENDER IS THE
+  ARBITER, NOT THE CODE'S APPARENT INTENT.
+  ⚠ Also scale-sensitive: the metaball merge depends on the RATIO of blur:bubble:spacing, so
+  fixed-px values over-merge when small and fall apart into unmerged pebbles when large.
+
+  ASSEMBLY NEEDED:
+  ──────────────────────────────────────────────────────────────────────────────
+  ⚠ CSS is SCSS (nesting + @for loops + $vars) — needs compilation. A hand-compiled RUNNABLE replica of Plasma-2 alone exists at applications/phazon/plasma-2-faithful-replica.html; it was verified against Luneth's own screenshot (exact match).
+
+  ⚠ RAW PASTE — PRESERVED BYTE-EXACT, NOT ASSEMBLED. Luneth: "All I did was copy HTML
+  box > CSS box > JS box - I did not code these, just put exactly what was in those 3
+  boxes in each case, so <script> <css> and other tags will largely be missing and it
+  won't function until they're added."
+  Unlike references #001-#028 (which were assembled into runnable documents), the source
+  below sits inside <pre> exactly as pasted. Splitting a concatenated paste into
+  HTML/CSS/JS is guesswork, and guessing wrong would corrupt the ONLY copy of the source.
+  Byte-exact and honestly labelled beats runnable and silently wrong.
+═══════════════════════════════════════════════════════════════════════════════
+-->
+<style>
+  body { background: #12161c; color: #cfe6f5; font: 12px/1.5 ui-monospace, Menlo, monospace; margin: 0; padding: 24px; }
+  h1 { font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: #6ec8ff; }
+  p { color: #8aa0b4; max-width: 90ch; }
+  pre { background: #0a0d12; border: 1px solid #223; border-radius: 4px; padding: 16px; overflow: auto; white-space: pre-wrap; word-break: break-word; }
+</style>
+</head>
+<body>
+<h1>#032 — Gooey plasma set (Plasma, Plasma-2, Fill, Black-Hole)</h1>
+<p><b>Fieve</b> · <a href="https://codepen.io/Fieve/pen/bogzQW" style="color:#6ec8ff">codepen.io/Fieve/pen/bogzQW</a></p>
+<p>User note: &ldquo;same as previous, Plasma-2 is my definite favorite of options on this one&rdquo;</p>
+<p>Raw 3-box paste below, byte-exact. See the HTML comment in this file's source for the mechanism, the assembly it needs, and the gotchas.</p>
+<pre>&lt;div&gt;
+
+
+&lt;h1&gt;PLASMA&lt;/h1&gt;
+&lt;!-- Plasma --&gt;
+&lt;svg width=&quot;0&quot; height=&quot;0&quot;&gt;
+ &lt;filter id=&quot;gooey-plasma&quot;&gt;
+      &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;20&quot; result=&quot;blur&quot;/&gt;
+      &lt;feColorMatrix in=&quot;blur&quot; mode=&quot;matrix&quot; values=&quot;1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16&quot; result=&quot;goo&quot; /&gt;
+  &lt;/filter&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;plasma&quot;&gt;
+  &lt;div class=&quot;gooey-container&quot;&gt;
+    &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--/Plasma --&gt;
+
+  
+&lt;/div&gt;
+&lt;div&gt;
+  
+  
+&lt;h1&gt;PLASMA-2&lt;/h1&gt;
+&lt;!-- Plasma-2 --&gt;
+&lt;svg width=&quot;0&quot; height=&quot;0&quot;&gt;
+ &lt;filter id=&quot;gooey-plasma-2&quot;&gt;
+      &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;20&quot; result=&quot;blur&quot;/&gt;
+      &lt;feColorMatrix in=&quot;blur&quot; mode=&quot;matrix&quot; values=&quot;1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16&quot; result=&quot;goo&quot; /&gt;
+       &lt;feTurbulence baseFrequency=&quot;0.03&quot; numOctaves=&quot;1&quot; /&gt;
+  
+       &lt;feDisplacementMap id=&quot;displacement&quot; in=&quot;blur&quot; scale=&quot;50&quot; xChannelSelector=&quot;B&quot; yChannelSelector=&quot;G&quot; /&gt;
+            
+       &lt;feBlend id=&quot;blend-mode&quot; in=&quot;gooey&quot; mode=&quot;overlay&quot; /&gt;
+  &lt;/filter&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;plasma-2&quot;&gt;
+  &lt;ul class=&quot;gooey-container&quot;&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!--/Plasma-2 --&gt;
+
+  
+&lt;/div&gt;
+&lt;div&gt;
+  
+  
+&lt;h1&gt;FILL&lt;/h1&gt;
+&lt;!-- Fill --&gt;
+&lt;svg width=&quot;0&quot; height=&quot;0&quot;&gt;
+ &lt;filter id=&quot;gooey-fill&quot;&gt;
+      &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;20&quot; result=&quot;blur&quot;/&gt;
+      &lt;feColorMatrix in=&quot;blur&quot; mode=&quot;matrix&quot; values=&quot;1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16&quot; result=&quot;goo&quot; /&gt;
+  &lt;/filter&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;fill&quot;&gt;
+  &lt;div class=&quot;gooey-container&quot;&gt;
+    &lt;span class=&quot;level&quot;&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--/Fill --&gt;
+
+  
+  
+&lt;/div&gt;
+&lt;div&gt;
+  
+  
+&lt;h1&gt;FILL 2&lt;/h1&gt;
+&lt;!-- Fill 2--&gt;
+&lt;svg width=&quot;0&quot; height=&quot;0&quot;&gt;
+ &lt;filter id=&quot;gooey-fill-2&quot;&gt;
+      &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;20&quot; result=&quot;blur&quot;/&gt;
+      &lt;feColorMatrix in=&quot;blur&quot; mode=&quot;matrix&quot; values=&quot;1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16&quot; result=&quot;goo&quot; /&gt;
+       &lt;feTurbulence baseFrequency=&quot;0.03&quot; numOctaves=&quot;1&quot; /&gt;
+       &lt;feDisplacementMap id=&quot;displacement&quot; in=&quot;blur&quot; scale=&quot;50&quot; xChannelSelector=&quot;B&quot; yChannelSelector=&quot;G&quot; /&gt;
+       &lt;feBlend id=&quot;blend-mode&quot; in=&quot;gooey&quot; mode=&quot;exclusion&quot; /&gt;
+  &lt;/filter&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;fill-2&quot;&gt;
+  &lt;div class=&quot;gooey-container&quot;&gt;
+    &lt;span class=&quot;level&quot;&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;bubble&quot;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--/Fill 2 --&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  
+  
+&lt;h1&gt;BLACK-HOLE&lt;/h1&gt;
+&lt;!-- Black-Hole --&gt;
+&lt;svg width=&quot;0&quot; height=&quot;0&quot;&gt;
+ &lt;filter id=&quot;gooey-black-hole&quot;&gt;
+      &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;20&quot; result=&quot;blur&quot;/&gt;
+      &lt;feColorMatrix in=&quot;blur&quot; mode=&quot;matrix&quot; values=&quot;1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -16&quot; result=&quot;goo&quot; /&gt;
+  &lt;/filter&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;black-hole&quot;&gt;
+  &lt;ul class=&quot;gooey-container&quot;&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;bubble&quot;&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!--/Black-Hole --&gt;
+&lt;/div&gt;
+
+
+
+// Generic non-effect-related CSS
+body {
+  margin      : 50px 0;
+  padding     : 0;
+  font-size   : 0;
+  font-family : &#x27;Nova Flat&#x27;;
+  background  : #190a25;
+  color       : white;
+  text-align  : center;
+  
+  h1 {
+    display        : block;
+    height         : 25px;
+    font-size      : 12px;
+  }
+  
+  &gt; div {
+    display        : inline-block;
+    width          : 25%;
+    min-width      : 500px;
+    margin-bottom  : 50px;
+    &gt; div{
+      margin : 0 auto;
+      //filter:invert(1) hue-rotate(70deg);
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+//////////////////////////////// PLASMA ///////////////////////////////
+///////////////////////////////////////////////////////////////////////
+@keyframes plasma{
+  0%   { transform : scale(6) translate3d( 20px,0,0); }
+  50%  { transform : scale(1) translate3d(-60px,0,0); }
+  100% { transform : scale(6) translate3d( 20px,0,0); }
+}
+
+.plasma{
+  backface-visibility: hidden;
+  z-index: 20;
+  position      : relative;
+  width         : 250px;
+  height        : 250px;
+  padding       : 0;
+  border-radius : 50%;
+  overflow      : hidden;
+  box-shadow    : 0 0 30px 0 #8140ff inset;
+  
+  .gooey-container {
+    filter        : url(#gooey-plasma);
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    transform     : translate(-50%,-50%);
+    width         : 300px;
+    height        : 300px;
+    padding       : 0;
+    margin        : 0;
+    box-shadow    : 0 0 0 20px #ff4081 inset;
+    border-radius : 50%;
+    overflow      : hidden;
+    
+    .bubble {
+      display    : block;
+      position   : absolute;
+      top        : 50%;
+      left       : 50%;
+      width      : 100%;
+      text-align : right;
+
+      &amp;:before{
+        content       : &quot;&quot;;
+        display       : inline-block;
+        background    : #ff4081;
+        width         : 30px;
+        height        : 30px;
+        border-radius : 50%;
+        transform     : scale(6) translate3d(20px,0,0);
+        box-shadow    : 0 0 15px 0 #0000ff inset,
+                        0 0 10px 0 #0000ff inset;
+      }
+    }
+    @for $i from 1 through 6 {
+      .bubble:nth-child(#{$i}) {
+        transform : translate(-50%,-50%) rotate(60deg*$i);
+      }
+      .bubble:nth-child(#{$i}):before {
+        animation : plasma 3s+($i/2) linear .25s*$i infinite;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+/////////////////////////////// PLASMA-2 //////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+@keyframes plasma-2{
+  0%  { transform:scale(1) translate3d( 60px,0,0) }
+  50% { transform:scale(2) translate3d(-60px,0,0) }
+  100%{ transform:scale(1) translate3d( 60px,0,0) }
+}
+
+.plasma-2{
+  backface-visibility: hidden;
+  z-index: 20;
+  position      : relative;
+  overflow      : hidden;
+  border-radius : 50%;
+  width         : 250px;
+  height        : 250px;
+  padding       : 0;
+  box-shadow    : 0 0 30px 0 #00ddff inset;
+  
+  .gooey-container {
+    overflow      : hidden;
+    border-radius : 50%;
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    transform     : translate(-50%,-50%);
+    filter        : url(#gooey-plasma-2);
+    width         : 300px;
+    height        : 300px;
+    padding       : 0;
+    margin        : 0;
+    box-shadow    : 0 0 0 20px #0099ff inset;
+    
+    .bubble {
+      display    : block;
+      position   : absolute;
+      top        : 50%;
+      left       : 50%;
+      width      : 100%;
+      text-align : right;
+
+      &amp;:before{
+        content       : &quot;&quot;;
+        display       : inline-block;
+        background    : #4081ff;
+        width         : 50px;
+        height        : 50px;
+        border-radius : 50%;
+        transform     :scale(1) translate3d(75px,0,0);
+        box-shadow    : 0 0 10px 5px #00ffff inset,
+                        0 0 10px 0 #81ff00 inset;
+      }
+    }
+    @for $i from 1 through 6 {
+      .bubble:nth-child(#{$i}) {
+        transform : translate(-50%,-50%) rotate(60deg*$i);
+      }
+      .bubble:nth-child(#{$i}):before {
+        animation : plasma-2 5s*($i / 2) ease .5s/$i infinite;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////// FILL ////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+@keyframes fill-level{
+  0%   { transform : translate3d(-413px, -53px,0) rotate(45deg) } 
+  15%  { transform : translate3d(-393px, -73px,0) rotate(25deg) } 
+  30%  { transform : translate3d(-343px,-123px,0) rotate(45deg) }
+  45%  { transform : translate3d(-283px,-183px,0) rotate(55deg) }
+  60%  { transform : translate3d(-263px,-203px,0) rotate(45deg) }
+  75%  { transform : translate3d(-243px,-223px,0) rotate(35deg) }
+  90%  { transform : translate3d(-223px,-243px,0) rotate(45deg) }
+  100% { transform : translate3d(-203px,-263px,0) rotate(55deg) }
+}
+
+.fill{
+  backface-visibility: hidden;
+  z-index       : 20;
+  position      : relative;
+  width         : 250px;
+  height        : 250px;
+  padding       : 0;
+  border-radius : 50% 50% 50% 50%;
+  overflow      : hidden;
+  transform     : rotate(-45deg);
+  box-shadow    : 0 0 30px 0 #0000ff inset;
+  
+  .gooey-container {
+    filter        : url(#gooey-fill);
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    transform     : translate(-50%,-50%);
+    width         : 300px;
+    height        : 300px;
+    padding       : 0;
+    margin        : 0;
+    box-shadow    : 0 0 0 18px #0000ff inset;
+    border-radius : 50% 0 50% 50%; 
+    overflow      : hidden;
+    
+    .level, .bubble {
+      background : #ff4081;
+    }
+    
+    .level{
+      display          : block;
+      margin           : 0 auto;
+      position         : absolute;
+      top              : 300px;
+      left             : 50%;
+      width            : 500px; 
+      height           : 350px;
+      text-align       : center;
+      transform-origin : 50% 0;
+      transform        : translate3d(-413px, -53px,0) rotate(45deg);
+      animation        : fill-level 5s linear infinite;
+      box-shadow       : 0 0 100px 0 #0000ff inset, 
+                         0 0 200px 0 #0000ff inset;
+    }
+    @keyframes fill-bubbles{
+      0%   { transform : translate3d(-100px,-20px,0) rotate(  0deg)} 
+      50%  { transform : translate3d( 100px,-40px,0) rotate(180deg)}
+      100% { transform : translate3d(-100px,-20px,0) rotate(360deg)}
+    }
+    .bubble {
+      content       : &quot;&quot;;
+      display       : inline-block;
+      width         : 100px;
+      height        : 100px;
+      border-radius : 50%;
+      transform-origin : 50% 50%;
+      transform     : rotate(0deg) translate3d(0,0,0);
+      box-shadow    : 0 0 30px 20px #0000ff inset;
+    }
+    @for $i from 1 through 8 {
+      .bubble:nth-child(#{$i}) {
+        animation : fill-bubbles 3s*($i / 2) ease .5s/$i infinite;
+      }
+    }
+  }
+}
+
+.fill-2{
+  backface-visibility: hidden;
+  z-index       : 20;
+  position      : relative;
+  width         : 250px;
+  height        : 250px;
+  padding       : 0;
+  border-radius : 50% 50% 50% 50%;
+  overflow      : hidden;
+  transform     : rotate(-45deg);
+  box-shadow    : 0 0 30px 0 #ff0000 inset;
+  
+  .gooey-container {
+    filter        : url(#gooey-fill-2);
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    transform     : translate(-50%,-50%);
+    width         : 300px;
+    height        : 300px;
+    padding       : 0;
+    margin        : 0;
+    box-shadow    : 0 0 0 18px #0000ff inset;
+    border-radius : 50% 0 50% 50%; 
+    overflow      : hidden;
+    
+    .level, .bubble {
+      background : #ff4081;
+    }
+    
+    .level{
+      display          : block;
+      margin           : 0 auto;
+      position         : absolute;
+      top              : 300px;
+      left             : 50%;
+      width            : 500px; 
+      height           : 350px;
+      text-align       : center;
+      transform-origin : 50% 0;
+      transform        : translate3d(-413px, -53px,0) rotate(45deg);
+      animation        : fill-level 5s linear infinite;
+      box-shadow       : 0 0 100px 0 #0000ff inset, 
+                         0 0 200px 0 #0000ff inset;
+    }
+    @keyframes fill-bubbles{
+      0%   { transform : translate3d(-100px,-20px,0) rotate(  0deg)} 
+      50%  { transform : translate3d( 100px,-40px,0) rotate(180deg)}
+      100% { transform : translate3d(-100px,-20px,0) rotate(360deg)}
+    }
+    .bubble {
+      content       : &quot;&quot;;
+      display       : inline-block;
+      width         : 100px;
+      height        : 100px;
+      border-radius : 50%;
+      transform-origin : 50% 50%;
+      transform     : rotate(0deg) translate3d(0,0,0);
+      box-shadow    : 0 0 30px 20px #0000ff inset;
+    }
+    @for $i from 1 through 8 {
+      .bubble:nth-child(#{$i}) {
+        animation : fill-bubbles 3s*($i / 2) ease .5s/$i infinite;
+      }
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////
+////////////////////////////// BLACK-HOLE /////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+@keyframes black-hole{
+  0%  { transform:scale(1) translate3d( 75px,0,0) }
+  50% { transform:scale(4) translate3d( 55px,0,0) }
+  100%{ transform:scale(1) translate3d( 75px,0,0) }
+}
+@keyframes black-hole-rotate{
+  0%   { transform: translate(-50%,-50%) rotate(  0deg) skew(3deg)}
+  50%  { transform: translate(-50%,-50%) rotate(180deg) skew(0deg)}
+  100% { transform: translate(-50%,-50%) rotate(360deg) skew(3deg)}
+}
+
+.black-hole{
+  backface-visibility: hidden;
+  z-index: 20;
+  position      : relative;
+  overflow      : hidden;
+  border-radius : 50%;
+  width         : 250px;
+  height        : 250px;
+  padding       : 0;
+  box-shadow    : 0 0 30px 0 #0000ff inset;
+  
+  .gooey-container {
+    overflow      : hidden;
+    border-radius : 50%;
+    position      : absolute;
+    top           : 50%;
+    left          : 50%;
+    transform     : translate(-50%,-50%) rotate(0deg) skew(5deg);
+    filter        : url(#gooey-black-hole);
+    width         : 300px;
+    height        : 300px;
+    padding       : 0;
+    margin        : 0;
+    box-shadow    : 0 0 0 22px #9900ff inset;
+    animation     : black-hole-rotate 5s ease infinite;
+    
+    .bubble {
+      display    : block;
+      position   : absolute;
+      top        : 50%;
+      left       : 50%;
+      width      : 100%;
+      text-align : right;
+
+      &amp;:before{
+        content       : &quot;&quot;;
+        display       : inline-block;
+        background    : #ff4081;
+        width         : 100px;
+        height        : 100px;
+        border-radius : 50%;
+        transform     : scale(1) translate3d(75px,0,0);
+        box-shadow    : 0 0 10px 0 #0000ff inset,
+                        0 0 10px 0 #0000ff inset;
+      }
+    }
+    @for $i from 1 through 6 {
+      .bubble:nth-child(#{$i}) {
+        transform : translate(-50%,-50%) rotate(60deg*$i);
+      }
+      .bubble:nth-child(#{$i}):before {
+        animation : black-hole 1s*($i) ease .5s*$i infinite;
+      }
+    }
+  }
+}
+
+</pre>
+</body>
+</html>

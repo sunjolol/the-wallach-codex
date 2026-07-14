@@ -16935,8 +16935,8 @@
       kd_foods_col_remove: "Take these out",
       kd_foods_col_eat: "Put these in",
       kd_foods_form_hd: "Sometimes it\u2019s the form, not the food",
-      cov_goal_pending: "Coverage pending \xB7 essentials not yet mapped",
-      cov_rail_empty: "No items yet \u2014 add one to start building coverage."
+      cov_rail_empty: "No items yet \u2014 add one to start building coverage.",
+      cov_console_q: "What are you here for?"
     }
   };
 
@@ -17094,28 +17094,33 @@
     </section>
   `;
   }
-  function renderGoalsStrip() {
+  function renderConsole(snapshot) {
     const userGoals = loadRgUserGoals() ?? [];
-    const activeGoals = userGoals.length > 0 ? LAYOUT2.goals.filter((g) => userGoals.includes(g.id)) : LAYOUT2.goals.slice(0, 3);
-    const cardsHTML = activeGoals.map((g, i) => {
-      const num = String(i + 1).padStart(2, "0");
-      return `
-      <div class="goal-card goal-card--pending">
-        <div class="goal-card__kicker">GOAL \xB7 ${num}</div>
-        <div class="goal-card__name">${escHTML(g.name)}</div>
-        <div class="goal-card__bar goal-card__bar--pending"></div>
-        <div class="goal-card__progress">${escHTML(ui("cov_goal_pending"))}</div>
-      </div>
-    `;
+    const active = new Set(userGoals);
+    const total = snapshot?.totalCount ?? essentialCount();
+    const covered = snapshot?.coveredCount ?? 0;
+    const chips = LAYOUT2.goals.map((g) => {
+      const on2 = active.has(g.id) ? " is-active" : "";
+      return `<button class="goal-chip${on2}" type="button" data-goal-id="${escHTML(g.id)}">${escHTML(g.name)}</button>`;
     }).join("");
     return `
-    <section class="goals-strip">
-      <header class="goals-strip__head">
-        <h3 class="goals-strip__title">YOUR GOALS</h3>
-        <span class="goals-strip__count">${activeGoals.length} ACTIVE \xB7 ${LAYOUT2.goals.length} AVAILABLE</span>
-        <button class="goals-strip__add">+ ADD GOAL</button>
-      </header>
-      <div class="goals-row">${cardsHTML}</div>
+    <section class="coverage-console">
+      <div class="coverage-console__body">
+        <div class="coverage-console__head">
+          <div>
+            <div class="coverage-console__kicker">// what you're absorbing, what you're missing</div>
+            <h2 class="coverage-console__q">${escHTML(ui("cov_console_q"))}</h2>
+          </div>
+
+        </div>
+        <div class="console-chips">
+          ${chips}
+          <button class="goal-chip goal-chip--add" type="button" data-goal-add>+ ADD GOAL</button>
+        </div>
+        <div class="coverage-console__stat">
+          <strong>${covered}</strong> / ${total} essentials covered
+        </div>
+      </div>
     </section>
   `;
   }
@@ -17216,12 +17221,14 @@
     const render = () => {
       const snapshot = getOrCompute();
       container.innerHTML = `
-      <div class="coverage-grid">
-        <div class="coverage-main">
-          ${renderHero(snapshot)}
-          ${renderGoalsStrip()}
+      <div class="coverage-workspace">
+        ${renderConsole(snapshot)}
+        <div class="coverage-grid">
+          <div class="coverage-main">
+            ${renderHero(snapshot)}
+          </div>
+          ${renderRail()}
         </div>
-        ${renderRail()}
       </div>
     `;
     };
@@ -96633,7 +96640,27 @@ A PROCESS BUG WORTH RECORDING \u2014 it bit twice in this one chunk. write-disci
 
 VERIFIED. build exit 0 \xB7 tsc clean \xB7 invariants 64/64, 0 new reds (data_artifacts_accounted now 11 derived + 12 accounted, was 13) \xB7 vitest 17/17 across 4 files \xB7 render probes coverage + seeded + adopt + reduced_motion all exit 0 \xB7 zero surviving references to regimen-base-data / regimenBaseData / loadBaseRegimen / wallach_hbsp_default in any shipped code, data or gate (grep-audited; the only mentions left are two deliberate "retired 2026-07-14" notes marking the supersession, per logging-doctrine rule 5).
 
-NEXT. The goals-first UX + the A/B living-light build \u2014 which this unblocks, because the light needed the real empty state to be lit BY.` }];
+NEXT. The goals-first UX + the A/B living-light build \u2014 which this unblocks, because the light needed the real empty state to be lit BY.` }, { id: "lg_mrl0wrek_o0nf02", ts: "2026-07-14T14:07:31.388975-05:00", surface: "design-wisdom", kind: "design-decision", summary: "PHAZON detour parked: fully reverted from the live app (16-token grep-proven) and recorded in design-wisdom (5 refs #029-033 byte-exact, the full direction, the mockup). One carry-forward: a toggleable dark theme. Back to the goals-first UX overhaul.", detail: `We spent a long stretch trying to give the dashboard a Metroid-style "phazon" look \u2014 glowing alien energy running under the interface. It kept missing, and by the end the reason was clear: the idea only works on a fully dark theme, which is far too big a change to test on the live dashboard. So everything we tried is now removed from the app (and proven removed, not just claimed), the whole idea plus all five of Luneth's code references plus the mockup we built are filed in the design library so nothing is lost, and we are back to exactly where we were on the goals-first UX overhaul. One thing survives: a dark theme is now a planned toggleable option for later.
+
+Luneth: "let's leave this as a reference for later ... let's wrap here and set up for a new session where we pick up exactly where we left off before this adventure we just took."
+
+REVERTED FROM LIVE. The plasma work only ever touched three files, so main.ts + dashboard.css + dashboard.html were git-checkout-ed back to 86cbadda BYTE-FOR-BYTE rather than hand-unpicked \u2014 no chance of a missed fragment \u2014 and views/plasma-window.ts deleted. Proven gone by grepping 16 tokens across src/styles/html: plasma-strip, plasma-window, plasma-bubble, mountPlasmaWindow, ds-filter-plasma, ds-filter-goo, gooey, reactor, mountReactor, data-reactor, light-mesh, mountMesh, MeshVariant, data-light-mode, coverage-console__mesh, plasma-2 \u2014 ALL GONE. The only survivors are one deliberate comment recording WHY it was removed (logging-doctrine rule 5: mark the supersession, never silently carry) and "Meshimakobus", a mushroom in a nutrient fixture. The bundle's 17 "plasma" and 3 "reactor" hits are Wallach's own corpus \u2014 Mycoplasma, plasma lipoproteins, fasting plasma chromium, gold-198 made "in a nuclear reactor". Data, not code. Also corrected a comment left citing views/reactor.ts after that file was deleted: a comment naming a deleted structure is the Charter's own named defect.
+
+RECORDED IN design-wisdom/, NOT temporary/ \u2014 temporary/ is gitignored and everything in it would have been lost on the next clean. The 5 references are filed as #029-#033 following the library's existing convention (numbered file, metadata header, verbatim user notes, references-data.json entry: 28 -> 33; index.md gains a phazon section). codepen.io returned HTTP 403 to fetch, so Luneth's pastes are the ONLY copy \u2014 link rot already applies, which is exactly the reason this library exists. Each is preserved byte-exact inside <pre> rather than assembled into a runnable document like #001-#028: splitting a concatenated 3-box paste is guesswork, and guessing wrong would corrupt the only copy of the source \u2014 the precise failure that wrecked this session. Byte-exactness verified per file.
+
+ALSO PRESERVED. design-wisdom/learnings/2026-07-14-phazon-direction.md carries Luneth's full vision verbatim, the read of his five Metroid images, the bet that worked, the four rejected attempts with the reason each failed, and the lessons. applications/phazon/ holds the working mockup, a byte-faithful Plasma-2 replica verified against Luneth's own screenshot, and two renders of what it actually looked like.
+
+IMAGES OWED BY LUNETH. applications/phazon/images/README.md has five named empty slots for his Metroid reference images. Claude cannot save chat attachments to disk \u2014 said plainly rather than silently skipped. Detailed descriptions stand in until he drops the files in.
+
+THE ONE CARRY-FORWARD. A toggleable dark theme. Cream stays the default; dark becomes an option resembling the mockup; every element eventually gets a dark counterpart so the user picks. NOT started and not a now-task \u2014 it is a constraint on how new elements get built (prefer a token over a hardcoded colour so the eventual toggle is a swap, not a retrofit).
+
+WHY THE THEME NEEDS DARK \u2014 the expensive lesson. Cyan on --ds-paper #faf5e8 is physically impossible: light ADDS luminance, paper sits at ~96%, so there is no headroom and a "glow" on cream renders as grey haze. Every on-cream attempt failed for that reason, not for want of tuning.
+
+PASS-OFF REWRITTEN. chronicle/next-chunk.md points at the goals-first UX overhaul and records that the tree is DIRTY ON PURPOSE: the console (goals promoted above the table as chips, plus the orange kicker line Luneth wanted back) is board-green but NOT visually signed off \u2014 decide with him whether to commit as-is. It also carries the five real defects found and left unfixed: the recommender's boron/silver unit bug (which blocks the goal-recommendations work), the wholly-fabricated topbar and footer chrome, nutrientToGoalMap's 13 untraced Wallach doses (poison-in-waiting, and the tempting shortcut for goal chips \u2014 must not be used), the 4.9x-blown JS size budget, and main.ts's 3 pre-existing lint errors.
+
+TWO NEW MEMORIES. webgl-headless-context-loss: --use-gl=swiftshader silently loses the WebGL context, so every screenshot comes back identical, getAttribLocation returns -1 for attributes that plainly exist, and the canvas renders flat white \u2014 all while linkProgram still reports success and drawArrays still fires. Use --use-angle=swiftshader. The general lesson is bigger than WebGL: when N different edits produce byte-identical output, suspect the INSTRUMENT, not the code. I "fixed" a working shader three times chasing that phantom, and the same class of error bit twice more in the same session. safe-write-multi-edit-clobber: two edits to the same file in one safe_rewrite script each read from disk, so the last write silently clobbers the first \u2014 chain onto one in-memory copy. It ate an import removal (caught by tsc) and 2 of 3 invariants.py comment edits (caught by nothing, because comments have no gate).
+
+VERIFIED. build exit 0 \xB7 invariants 64/64, 0 new reds \xB7 tsc clean \xB7 render probes coverage + reduced_motion exit 0 \xB7 the 16-token removal grep \xB7 byte-exactness of all 5 references \xB7 temporary/ scratch cleaned.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
