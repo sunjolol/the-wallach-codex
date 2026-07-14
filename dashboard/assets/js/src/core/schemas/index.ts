@@ -10,7 +10,6 @@
 export * from './corpus.js';
 export * from './coverage-layout.js';
 export * from './coverage-status.js';
-export * from './doctrine.js';
 export * from './glossary.js';
 export * from './goals.js';
 export * from './journey.js';

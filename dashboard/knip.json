@@ -1,0 +1,16 @@
+{
+  "entry": [
+    "assets/js/src/main.ts",
+    "assets/js/src/**/*.test.ts"
+  ],
+  "project": [
+    "assets/js/src/**/*.ts"
+  ],
+  "ignore": [
+    "assets/js/dist/**"
+  ],
+  "ignoreDependencies": [
+    "esbuild"
+  ],
+  "ignoreExportsUsedInFile": true
+}

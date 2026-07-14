@@ -24,7 +24,6 @@ import {
   type CorpusEmbed,
   CorpusEmbedSchema,
   type CorpusEssential,
-  type CorpusPlannedBook,
 } from '../core/schemas/index.js';
 
 const EMPTY_CORPUS: CorpusEmbed = {
@@ -56,18 +55,6 @@ export function knowledgeVersion(): number {
 /** A single claim atom by id, or null if absent. */
 export function getClaim(id: string): CorpusClaim | null {
   return corpus().claims[id] ?? null;
-}
-
-/**
- * Every TIER-1 claim of one book, in stable id order — the book browser's data.
- * Tier-2 (search-only) claims are held back here too: they are excluded from the
- * operational indices and stay reserved for the future Ask-Wallach search, so a
- * plain book browse must not surface them.
- */
-export function getClaimsForBook(bookId: string): CorpusClaim[] {
-  return Object.values(corpus().claims)
-    .filter(c => c.book === bookId && (c.tier ?? 1) === 1)
-    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }
 
 /** Resolve a list of claim ids to atoms, dropping any unknown id (stable order). */
@@ -173,29 +160,4 @@ export function listBooks(): CorpusBook[] {
     }
     return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
   });
-}
-
-/**
- * Books paired with their corpus id (the embed keys `books` by id, which
- * `listBooks` drops). The book browser needs the id to join to claims via
- * `getClaimsForBook`. Same newest-first ordering as `listBooks`.
- */
-export function listBooksWithId(): Array<CorpusBook & { book_id: string }> {
-  return Object.entries(corpus().books)
-    .map(([book_id, b]) => ({ ...b, book_id }))
-    .sort((a, b) => {
-      const ya = typeof a.year === 'number' ? a.year : Number.parseInt(String(a.year ?? ''), 10);
-      const yb = typeof b.year === 'number' ? b.year : Number.parseInt(String(b.year ?? ''), 10);
-      const na = Number.isNaN(ya) ? -Infinity : ya;
-      const nb = Number.isNaN(yb) ? -Infinity : yb;
-      if (na !== nb) {
-        return nb - na;
-      }
-      return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
-    });
-}
-
-/** Planned (not-yet-in-housed) books — shown 'coming soon' in the Corpus tab. */
-export function listPlannedBooks(): CorpusPlannedBook[] {
-  return corpus().planned_books;
 }

@@ -2228,10 +2228,10 @@ def check_substance_triage_accounted(buffer_path=None, coverage_path=None):
 #     COMPOSITION-ONLY (Phase F/A1) with its own dedicated gate no_product_marketing_prose;
 #   * what remains WISH -- the legacy view scaffold (views/regimen.ts + views/knowledge.ts
 #     placeholders) still carries hand-typed cites + inline educational prose.
-# CLEANED (Phase E, 2026-07-05): views/knowledge.ts DOCTRINES -- the 4 app-guarantee
-# cards moved to the doctrine-data.json prose store (now ON the clean surface below,
-# _CLEAN_SURFACE_STORES) with enforced_by composed from real gate names; the 3 Wallach
-# health cards dropped pending Phase-G mining (same pattern as the WALLACH SAYS box).
+# REMOVED (2026-07-13): the Knowledge>Doctrine tab + its doctrine-data.json prose store were
+# dead (the tab was cut long ago; nothing rendered or imported the store) and were purged in
+# the dead-code sweep -- schema (core/schemas/doctrine.ts), barrel export, data file, MANIFEST
+# entry, and this gate's entry for it are all gone.
 # The FULL R4 (verbatim = a claim POINTER + a single-copy per-essential prose
 # store, blueprint Q3) also only becomes meaningful once clean post-mining stances
 # exist -- likewise WISH. None of that is sold as guarded here.
@@ -2241,7 +2241,6 @@ _CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
     "dashboard/assets/data/coverage-layout-data.json",
 )
 _CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (blueprint §2.4)
-    "dashboard/assets/data/doctrine-data.json",  # Knowledge>Doctrine cards (Phase E)
     "dashboard/assets/data/view-copy.json",  # VIEW-prose store: kind/facet labels + UI chrome (Phase H0)
     "dashboard/assets/data/entity-copy.json",  # per-entity approved lede + why-this-number (Phase H2)
 )
@@ -2261,7 +2260,6 @@ _PROSE_HOME_KEYS = {
     "hash_note", "source", "_source", "description", "question",
     "resolution", "_note", "rationale", "file", "authors", "sealed_at",
     "duration", "for_condition", "form",                       # dose free descriptors
-    "body",                                                    # doctrine-store prose home (§2.4 #4)
     "lede", "why",                                             # entity-copy approved lede + why-this-number (Phase H2)
     "_prose_container",                                        # a leaf under a _PROSE_CONTAINER_KEYS subtree (crack #3)
 }
@@ -2320,8 +2318,7 @@ def check_citations_reference_registry():
     derived projection, so a title in a fact field is a hand-typed citation. Prose homes
     (verbatim/claim_text/...) are allowlisted: Wallach may name a book in his own words. The
     claim->book_id substring is also gated by corpus_verify #2 (this makes the rule explicit +
-    extends it to titles). NOW COVERED (Phase E): the doctrine-data.json prose store (its cards'
-    enforced_by names real gates, no book title). OUT of scope (WISH, Phase E/F -- do NOT sell as
+    extends it to titles). OUT of scope (WISH, Phase E/F -- do NOT sell as
     guarded): inline view prose (e.g. views/regimen.ts). The legacy DATA embeds (regimen-base /
     scanner / ocr) are now COVERED after crack #3 widened the surface (2026-07-06). Truth-anchored on books-meta titles + book_ids x the
     clean-surface bytes, recomputed each run."""
@@ -3281,7 +3278,84 @@ def check_no_positional_hero():
     return _no_positional_hero_impl(artifact, embed.get("claims", {}), files)
 
 
+# --- Dead-code gate (forever-fix, 2026-07-13) ------------------------------
+# knip (dashboard/knip.json, configured with the real entry graph: main.ts + tests) is run here
+# as a board gate so an orphaned export/file/type can never ship silently again -- the exact
+# failure that left the removed Corpus + Doctrine tab code in the tree through multiple hand
+# "audits" (the detector sat in package.json but was never wired to enforcement).
+_KNIP_BASELINE = ROOT / "dashboard" / "knip-baseline.json"
+
+
+def _knip_run():
+    """Run knip's JSON reporter from dashboard/; parsed dict, or None if the toolchain is absent."""
+    import subprocess, shutil
+    dash = ROOT / "dashboard"
+    if not (dash / "node_modules" / "knip").exists():
+        return None
+    npx = shutil.which("npx") or shutil.which("npx.cmd")
+    if npx is None:
+        return None
+    try:
+        res = subprocess.run([npx, "knip", "--reporter", "json"], cwd=str(dash),
+                             capture_output=True, text=True, timeout=180)
+    except Exception:
+        return None
+    try:
+        return json.loads(res.stdout)  # knip exits nonzero WHEN issues exist; JSON is still on stdout
+    except Exception:
+        return None
+
+
+def _knip_dead_keys(data):
+    """Stable <kind>|<file>|<symbol> keys for every dead-code finding (line/col excluded so a key
+    survives edits above it). Covers unused files + exports + types + enum members + duplicates."""
+    keys = set()
+    for f in data.get("files", []) or []:
+        keys.add(f"file|{f}|")
+    for iss in data.get("issues", []) or []:
+        rel = iss.get("file", "")
+        for kind in ("exports", "types", "duplicates"):
+            for e in iss.get(kind, []) or []:
+                name = e.get("name") if isinstance(e, dict) else str(e)
+                keys.add(f"{kind}|{rel}|{name}")
+        for enum_name in (iss.get("enumMembers") or {}):
+            keys.add(f"enumMembers|{rel}|{enum_name}")
+    return keys
+
+
+def check_no_new_dead_code():
+    """Forever-gate for dead code (2026-07-13). knip analyses the real import graph (main.ts +
+    tests); this gate RED-flags any unused file/export/type NOT frozen in the ratchet baseline
+    (dashboard/knip-baseline.json), so a removed feature can never leave orphaned code behind
+    unnoticed again. The baseline is the known migration-scaffolding debt and may only SHRINK; a
+    baseline key knip no longer reports is 'resolved' (noted, never fatal). Degrades to a non-fatal
+    SKIP when node/knip is absent, so the pillar-only board still runs. Truth-anchored on knip's
+    own graph analysis, recomputed each run."""
+    data = _knip_run()
+    if data is None:
+        return True, "knip/node unavailable -- dead-code gate SKIPPED (run `npm ci` in dashboard/ to enforce)"
+    current = _knip_dead_keys(data)
+    if not _KNIP_BASELINE.exists():
+        return False, "dashboard/knip-baseline.json missing -- generate it before enforcing"
+    baseline = set(json.loads(_KNIP_BASELINE.read_text(encoding="utf-8")).get("accepted", []))
+    new_dead = sorted(current - baseline)
+    if new_dead:
+        show = "; ".join(new_dead[:6]) + (f" (+{len(new_dead) - 6} more)" if len(new_dead) > 6 else "")
+        return False, f"NEW dead code not in knip-baseline.json ({len(new_dead)}): {show}"
+    resolved = len(baseline - current)
+    tail = f"; {resolved} baseline key(s) resolved -- prune when convenient" if resolved else ""
+    return True, f"no new dead code -- {len(current)} known item(s), all baselined{tail}"
+
+
 INVARIANTS = [
+    Invariant(
+        name="no_new_dead_code",
+        description="knip (real entry graph) finds zero unused file/export/type beyond the ratchet baseline -- a removed feature can't leave orphaned code silently",
+        check_fn=check_no_new_dead_code,
+        truth_anchor="npx knip --reporter json over dashboard/ vs dashboard/knip-baseline.json",
+        severity="critical",
+        lesson_ref="2026-07-13 dead-code incident -- Corpus/Doctrine tab code survived removal + multiple audits because knip was configured-but-unenforced",
+    ),
     Invariant(
         name="safe_write_canary",
         description="safe_write must round-trip a known payload byte-equal via os.read",

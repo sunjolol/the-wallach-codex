@@ -190,11 +190,6 @@
       "reason": "Per-entity APPROVED lede + short why-this-number copy (a designated R4 prose home, Phase H2). Hand-authored and user-approved one at a time (never auto-derived); an entity absent here shows no lede/why. On the clean surface (_CLEAN_SURFACE_STORES) with lede/why as prose homes."
     },
     {
-      "file": "dashboard/assets/data/doctrine-data.json",
-      "disposition": "hand_authored",
-      "reason": "Knowledge>Doctrine cards (a designated R4 prose store, blueprint 2.4 #4). On the clean Charter surface for prose_contained + citations_reference_registry; original prose, not a pillar projection."
-    },
-    {
       "file": "dashboard/assets/data/coverage-layout-skeleton.json",
       "disposition": "hand_authored",
       "reason": "The hand-authored arrangement/chrome skeleton for the Coverage periodic table (section+subsection chrome, per-tile codes/letters/abbrs/hints, the goals block, tile key refs). The canon-owned fields (name; mineral sym/num) are filled from essentials-canon by coverage_layout_derive.py into the derived coverage-layout-data.json. Editorial UI arrangement, not canonical health data (crack #1 fix, Phase E 2026-07-06)."
