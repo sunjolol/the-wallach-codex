@@ -195,11 +195,6 @@
       "reason": "The hand-authored arrangement/chrome skeleton for the Coverage periodic table (section+subsection chrome, per-tile codes/letters/abbrs/hints, the goals block, tile key refs). The canon-owned fields (name; mineral sym/num) are filled from essentials-canon by coverage_layout_derive.py into the derived coverage-layout-data.json. Editorial UI arrangement, not canonical health data (crack #1 fix, Phase E 2026-07-06)."
     },
     {
-      "file": "dashboard/assets/data/regimen-base-data.json",
-      "disposition": "hand_authored",
-      "reason": "Transitional HBSP base-foundation COMPOSITION (Youngevity label data, composition-only per the source rule -- never a target). Replaced by the Products pillar (eden/products/) in Phase F."
-    },
-    {
       "file": "dashboard/assets/data/scanner-corpus-data.json",
       "disposition": "hand_authored",
       "reason": "Scanner reference data (dietary baselines used as a subtractive coverage input, not a recommended target). Reworked with the Products pillar / scanner finalize in Phase E/F."

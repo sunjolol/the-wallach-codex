@@ -14057,7 +14057,7 @@
     addedDate: external_exports.string(),
     // ISO YYYY-MM-DD
     provenance: external_exports.string()
-    // user_scanned | user_manual | wishlist_promoted (USER) · wallach_hbsp_default (base HBSP default, data-only). Gated by scanner_user_items_marked (§5.4 wall).
+    // user_scanned | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked (§5.4 wall). The wallach_hbsp_default token retired with the base-seed removal (2026-07-14) — nothing mints it now.
   });
   var RegimenSchema = external_exports.object({
     items: external_exports.array(RegimenItemSchema)
@@ -14523,292 +14523,6 @@
     return null;
   }
 
-  // assets/data/regimen-base-data.json
-  var regimen_base_data_default = {
-    _purpose: "Default HBSP foundation stack (Wallach Healthy Body Start Pak 2.5: BTT 2.5 + Beyond Osteo FX + Ultimate EFA Plus). Migrated VERBATIM from legacy-dashboard.js REGIMEN_BASE_DATA.recommended (YGY label data). Merged as the base layer of the effective regimen so a fresh dashboard demos real coverage; user-removable via rgRemoved (negative ids).",
-    _source: "legacy-dashboard.js REGIMEN_BASE_DATA.recommended",
-    items: [
-      {
-        id: -1,
-        label: {
-          name: "BTT 2.5 Canister",
-          dose_text: "2 scoops (15g) daily",
-          nutrients: [
-            {
-              name: "Vitamin A (beta-carotene)",
-              amount: 810,
-              unit: "mcg RAE",
-              form: "retinyl palmitate (46%) + beta-carotene (54%)",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin C",
-              amount: 1e3,
-              unit: "mg",
-              form: "ascorbic acid",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin D3",
-              amount: 18.8,
-              unit: "mcg",
-              form: "cholecalciferol",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin E",
-              amount: 100,
-              unit: "mg",
-              form: "d-alpha tocopheryl acetate",
-              alignment: "partial"
-            },
-            {
-              name: "Vitamin B1 (Thiamine)",
-              amount: 30,
-              unit: "mg",
-              form: "thiamine mononitrate",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin B2 (Riboflavin)",
-              amount: 30,
-              unit: "mg",
-              form: "riboflavin",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin B3 (Niacin)",
-              amount: 40,
-              unit: "mg NE",
-              form: "niacinamide",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin B6 (Pyridoxine)",
-              amount: 30,
-              unit: "mg",
-              form: "pyridoxine HCl",
-              alignment: "partial"
-            },
-            {
-              name: "Folic Acid (Folate)",
-              amount: 400,
-              unit: "mcg DFE",
-              form: "calcium-L-5-methylfolate",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin B12 (Cobalamin)",
-              amount: 500,
-              unit: "mcg",
-              form: "methylcobalamin",
-              alignment: "aligned"
-            },
-            {
-              name: "Biotin",
-              amount: 600,
-              unit: "mcg",
-              form: "biotin",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin B5 (Pantothenic Acid)",
-              amount: 150,
-              unit: "mg",
-              form: "D-calcium pantothenate",
-              alignment: "aligned"
-            },
-            {
-              name: "Choline",
-              amount: 25,
-              unit: "mg",
-              form: "choline bitartrate",
-              alignment: "partial"
-            },
-            {
-              name: "Calcium",
-              amount: 130,
-              unit: "mg",
-              form: "Ca gluconate/ascorbate/citrate",
-              alignment: "partial"
-            },
-            {
-              name: "Iron",
-              amount: 1,
-              unit: "mg",
-              form: "ferrous gluconate",
-              alignment: "partial"
-            },
-            {
-              name: "Magnesium",
-              amount: 20,
-              unit: "mg",
-              form: "Mg gluconate and oxide",
-              alignment: "partial"
-            },
-            {
-              name: "Zinc",
-              amount: 2,
-              unit: "mg",
-              form: "zinc gluconate",
-              alignment: "partial"
-            },
-            {
-              name: "Selenium",
-              amount: 100,
-              unit: "mcg",
-              form: "selenomethionine",
-              alignment: "aligned"
-            },
-            {
-              name: "Copper",
-              amount: 1,
-              unit: "mg",
-              form: "copper gluconate",
-              alignment: "partial"
-            },
-            {
-              name: "Chromium",
-              amount: 200,
-              unit: "mcg",
-              form: "chromium chelate",
-              alignment: "partial"
-            },
-            {
-              name: "Potassium",
-              amount: 100,
-              unit: "mg",
-              form: "K gluconate and citrate",
-              alignment: "aligned"
-            },
-            {
-              name: "Boron",
-              amount: 1,
-              unit: "mg",
-              form: "boron citrate",
-              alignment: "aligned"
-            },
-            {
-              name: "Vitamin K (Menaquinone = K2)",
-              amount: 30,
-              unit: "mcg",
-              form: "menaquinone-7 (K2 MK-7)",
-              alignment: "aligned"
-            }
-          ]
-        },
-        addedDate: "2026-06-21",
-        provenance: "wallach_hbsp_default"
-      },
-      {
-        id: -2,
-        label: {
-          name: "Beyond Osteo FX Powder",
-          dose_text: "1 scoop (12.8 g) daily",
-          nutrients: [
-            {
-              name: "Vitamin D3",
-              amount: 25,
-              unit: "mcg",
-              form: "cholecalciferol",
-              alignment: "aligned"
-            },
-            {
-              name: "Calcium",
-              amount: 1200,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "aligned"
-            },
-            {
-              name: "Phosphorus",
-              amount: 600,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "aligned"
-            },
-            {
-              name: "Magnesium",
-              amount: 300,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "aligned"
-            },
-            {
-              name: "Zinc",
-              amount: 5,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "partial"
-            },
-            {
-              name: "Copper",
-              amount: 0.1,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "partial"
-            },
-            {
-              name: "Sulfur",
-              amount: 250,
-              unit: "mg",
-              form: "MSM",
-              alignment: "aligned"
-            },
-            {
-              name: "Strontium",
-              amount: 500,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "aligned"
-            },
-            {
-              name: "Boron",
-              amount: 1,
-              unit: "mg",
-              form: "unspecified",
-              alignment: "aligned"
-            }
-          ]
-        },
-        addedDate: "2026-06-21",
-        provenance: "wallach_hbsp_default"
-      },
-      {
-        id: -3,
-        label: {
-          name: "Ultimate EFA Plus",
-          dose_text: "1 softgel daily",
-          nutrients: [
-            {
-              name: "Omega-3 (Alpha-Linolenic Acid / ALA)",
-              amount: 585,
-              unit: "mg",
-              form: "ALA 300 + EPA 171 + DHA 114 (per softgel)",
-              alignment: "aligned"
-            },
-            {
-              name: "Omega-6 (Linoleic Acid / LA)",
-              amount: 122,
-              unit: "mg",
-              form: "Linoleic 103 + GLA 19 (per softgel)",
-              alignment: "aligned"
-            },
-            {
-              name: "Omega-9 (Oleic Acid / OA)",
-              amount: 120,
-              unit: "mg",
-              form: "Oleic",
-              alignment: "aligned"
-            }
-          ]
-        },
-        addedDate: "2026-06-21",
-        provenance: "wallach_hbsp_default"
-      }
-    ]
-  };
-
   // assets/js/src/state/regimen.ts
   var REGIMEN_KEY = "lcRegimen_v1";
   var RG_OVERRIDES_KEY = "rgOverrides_v1";
@@ -14841,18 +14555,10 @@
   function loadRgUserGoals() {
     return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
   }
-  var cachedBase = null;
-  function loadBaseRegimen() {
-    if (cachedBase === null) {
-      const parsed = RegimenSchema.safeParse(regimen_base_data_default);
-      cachedBase = parsed.success ? parsed.data.items : [];
-    }
-    return cachedBase;
-  }
   function loadEffectiveRegimen() {
     const removed = loadRgRemoved();
     const byId = /* @__PURE__ */ new Map();
-    for (const item of [...loadBaseRegimen(), ...loadRegimen().items, ...loadRgManual()]) {
+    for (const item of [...loadRegimen().items, ...loadRgManual()]) {
       if (removed.has(item.id)) {
         continue;
       }
@@ -96911,7 +96617,23 @@ VERIFIED: tsc clean, eslint exit 0, build exit 0, invariants 64/64, render probe
 
 NOT DONE UNTIL LUNETH LOOKS. The visual-verification gate is his eyes, not my confidence \u2014 this entry records the work, not an approval.
 
-DEFERRED: Phase 2b (eden/catalog/goals.json \u2192 conditions_treated \u2192 real per-goal coverage; the probe derives 27 real bone/skeletal members against the mockup's hand-typed 14); ambient chrome still duplicated across dashboard.css + workspace-coverage.css; views/regimen.ts SLOT_PLACEHOLDERS fake coverage 31/47/18/54; the drawer missing its coverage:recomputed subscription; CoverageTile.coveredBy/aggregateVehicle dead but kept as plausibly wanted.` }, { id: "lg_mrkr0gi7_x5e5w0", ts: "2026-07-14T09:30:27.727793-05:00", surface: "coverage", kind: "round-close", summary: "Grid fix \u2014 reverted the substrate to the signed-off proposal. I added background-blend-mode:multiply AFTER sign-off on my own judgement, making the faint grid dominate. Removed; live now computed-style-MATCHES the proposal. Also merged a duplicate .essentials-host block.", detail: '[2026-07-14 09:26 CDT] Coverage tab / grid fix \u2014 revert the substrate to the signed-off proposal \xB7 The faint grid behind the tiles was way too strong and made the page hard to look at. It is now back to the barely-there texture Luneth actually approved. Luneth: "The grid background is CRAZY distracting. It\'s way too prominent and doesn\'t look like the mockup that has the very subtle grid." He was right AND he had the receipt \u2014 he pointed straight at dashboard/components/coverage-plates-PROPOSAL.html, the artifact he signed off, which declares `linear-gradient(var(--ds-rule-soft) 1px, transparent 1px)` with NO blend mode. \xB7 ROOT CAUSE (mine, not a drift): during Phase 2 I judged the grid "invisible" against --ds-paper-darker (a ~3-value delta) and, unprompted, added `background-blend-mode: multiply` AFTER the sign-off \u2014 which resolved the grid to ~#d5c598 and made it dominate the surface. Subtlety was never the defect; it was the design. This is the inverse of live-supersedes-demo: the demo was never superseded, I simply overrode a signed-off artifact on my own aesthetic judgement. The approved file IS the spec (replicate-demo-not-blueprint-notes). \xB7 FIXED: removed the single `background-blend-mode: multiply` declaration \u2014 nothing else touched (pin-the-exact-element-dont-overcorrect; he said fix the grid FIRST and only). Also MERGED a duplicate `.essentials-host` block I had left behind (the stale pre-plate-language one, position/overflow/padding, shadowed by my new one) \u2014 the exact duplicate-declaration bug this round purged from .tile, reintroduced by me in the same round. `.essentials-host` now declared exactly 1x; `background-blend-mode` declarations now 0. \xB7 VERIFIED OBJECTIVELY, not by eye: a headless computed-style diff (scratchpad grid_diff.js) loads the LIVE page + the signed-off proposal side by side and compares getComputedStyle on .essentials-host \u2014 backgroundColor / backgroundImage / backgroundBlendMode / backgroundSize ALL MATCH; live blend mode reads "normal, normal". Board 64/64, render_probe exit 0, build exit 0. Screenshot re-checked at 1600x1100 + 3x. \xB7 LESSON (durable): a signed-off demo is the visual spec \u2014 do not "improve" it between sign-off and ship. If something in an approved artifact looks wrong to me, SAY SO and ask; never silently correct it. \xB7 PROCESS: three separate self-inflicted assertion failures this round, all the same shape \u2014 my own explanatory comment contained the literal string the assertion searched for ("Playfair Display STAYS", "Bruno Ace", "background-blend-mode"), so the guard tripped on its own prose. Correct form: test the DECLARATION (a stripped line starting with `prop:`), never the bare substring. Plus a 4th heredoc escaping break (\\n eaten). Standing rule reinforced: stage payloads with the Write tool, never a bash heredoc.' }, { id: "lg_mrksvld4_amqaav", ts: "2026-07-14T10:22:39.976402-05:00", surface: "coverage", kind: "round-close", summary: "REVERTED an app-wide font regression I caused: repointing --ds-font-display-interface (read by 89 rules across 6 sheets) + deleting the Chakra Petch @font-face reskinned the whole app. My proof was circular. Also fixed the plate top-border, chamfer borders, blue L-brackets.", detail: `[2026-07-14 09:52 CDT] Coverage / app-wide FONT REGRESSION REVERTED + plate border fixes (Luneth items 1, 2, 4, 7) \xB7 I broke the fonts across the ENTIRE app and it is now undone. In Phase 2 I "cleaned up" what I believed were dead font declarations; they were not dead, and the Knowledge drawer + side menus regressed badly. Also fixed: covered/hover plates had no top border, the omega tiles' diagonal had no border, and the blue L-brackets are gone. \xB7 ITEM 7 \u2014 THE BIG ONE (app-wide regression, my fault): workspace-coverage.css declares --ds-font-display-interface + --ds-font-display-artifact at :root, and that sheet loads GLOBALLY \u2014 it is the ONLY definition of those tokens anywhere (the sealed design-system.css never declared them). I repointed both to Unbounded and DELETED the Chakra Petch x3 + Bruno Ace @font-face blocks, believing the faces dead. 89 rules across 6 stylesheets read those tokens \u2014 drawer-knowledge 34, drawer-search 13, drawer-journey 7, drawer-shared 4, dashboard 4, workspace-coverage 9 \u2014 so every one silently flipped to Unbounded, and deleting the @font-face made Chakra Petch un-loadable entirely. WHY MY "PROOF" WAS WORTHLESS: I verified "all 35 font-family declarations resolve to no retired face" \u2014 but they resolve THROUGH the token I had just rewritten. The check was circular. Grepping a face NAME can never prove a token-indirected face is unused; the only honest check greps the TOKEN's READERS, which I did not do until Luneth reported it. REVERTED byte-for-byte: both @font-face families + both token values restored; verified computed at :root (--ds-font-display-interface = 'Chakra Petch', \u2026 / --ds-font-display-artifact = 'Bruno Ace', \u2026) and document.fonts.check() confirms both faces load again. One revert fixed all 89 rules, because they all read the token. \xB7 Then applied Luneth's KEEP list as PER-ELEMENT carve-outs (never by hijacking the token again): .essentials-section__title (01 MINERALS / 02 VITAMINS / 03 AMINO ACIDS / 04 FATTY ACIDS), .regimen-rail__slot-name (DAILY PROTOCOL), .regimen-item__name (BTT 2.5 CANISTER + all product names), .goals-strip__title (YOUR GOALS), .goals-strip__add (+ ADD GOAL) \u2192 var(--ds-font-display) = Unbounded. Element-card glyphs already resolve to Unbounded via --ds-font-display and needed no rule. DELIBERATELY EXCLUDED per his instruction: .goal-card__name ("bone & skeletal") + .goal-card__progress \u2014 "those were better before". Verified by computed-style audit: 01 MINERALS/tile sym/DAILY PROTOCOL/BTT/YOUR GOALS/ADD GOAL = Unbounded; BONE & SKELETAL + hero title + rail + topbar = Chakra Petch. \xB7 NOTE FOR THE RECORD (memory correction): Luneth clarified he had been calling CHAKRA PETCH "Space Grotesk" all along \u2014 Chakra Petch is the sharp-angled geometric face he liked ("geometry doesn't even make sense for space grotesk because it doesn't have sharp angles"). The [[futurist-type-direction]] memory + next-chunk note claiming "Space Grotesk KEPT as the body face (geometry matches)" is therefore built on a misnaming and must be re-examined before any further type work. \xB7 ITEM 1 \u2014 covered/hover plates had NO top border. NOT a clipping bug (a probe walked every ancestor: nothing clips; tile tops sit 93px inside .essentials-host). CAUSE: box-shadow paints FIRST-LISTED ON TOP, and I listed the white "top-light" (inset 0 1px 0) BEFORE the rim (inset 0 0 0 1px) \u2014 the light painted straight over the rim's top edge and erased it. My own Empower top-light ate my own rim. FIXED: rim first, then the light tucked to y=1..2 via a -1px spread so both read. Same fix on :hover (where it was worse \u2014 the accent rim carries the interaction). \xB7 ITEM 2 \u2014 the omega/vitamin/amino diagonals had no border. CAUSE: clip-path CANNOT carry a border \u2014 an inset ring follows the border-box RECTANGLE, so a clipped diagonal is always bare. That is a CSS limitation, not a tunable value; every workaround (4x drop-shadow outline, layered rim/surface elements, per-state multi-layer gradients) is either costly across 91 tiles or needs a DOM wrapper. FIXED by expressing the family silhouette as border-radius instead (vitamin 9px top-right, amino 9px bottom-left, fat 11px both) \u2014 an inset ring follows a radius perfectly, so every family now has an unbroken rim. This is also CLOSER TO THE SOURCE: the Empower reference plates are ROUNDED, not chamfered; the chamfer was invented here, not observed there. \xB7 ITEM 4 \u2014 removed the blue L-brackets (.essentials-section__divider::before/::after: 6x6px --ds-tech squares with two borders zeroed). They also always contradicted the project design bar, which rules out L-brackets outright. VERIFIED: a computed scan of every element + pseudo under .coverage-grid finds 0 elements painted --ds-tech (#5fa4bd); the only blue left is the intended --ds-status-info 'present' rim. \xB7 VERIFIED: build exit 0 \xB7 invariants 64/64 \xB7 render probes coverage + seeded + knowledge all exit 0 \xB7 computed font audit across coverage/shell \xB7 computed token audit at :root \xB7 document.fonts.check() for both restored faces. \xB7 STILL OPEN (Luneth items 3, 5, 6 \u2014 the TOP BAR, deferred to its own design chunk): re-add "// what you're absorbing, what you're missing" as an ORANGE aesthetic accent with a distinct font/size/style; "COVERAGE" title too distracting (colour/size vs reverting its font); and a TOTAL top-bar overhaul \u2014 too much clutter/repeated text, "Ask Wallach" reads as an afterthought (it was), remove it entirely or make it genuinely good. He explicitly granted creative freedom here, citing the knowledge drawer + Absorption tab as the bar. He also has further over-arching notes coming.` }, { id: "lg_mrktmft6_k76yej", ts: "2026-07-14T10:43:32.490930-05:00", surface: "session", kind: "session-end", summary: "Session wrap \u2014 rewrote the pass-off on CURRENT truth; corrected the Chakra-Petch/Space-Grotesk misnaming that made the body-face decision unreliable; added 2 memories (grep the token's readers; a signed-off demo is the spec); stamped both demos SUPERSEDED; compacted the index.", detail: `[2026-07-14 10:14 CDT] Session wrap \u2014 pristine pass-off + memory correction + demo supersession \xB7 Cleaning the desk so the next session starts on CURRENT truth and inherits no stale claims. Luneth: "be SURE you keep the pass-off and our working files pristine, no old poison or wrong info throwing us off in the future, always using CURRENT standards/decisions which often deviate from the demos." \xB7 REWROTE chronicle/next-chunk.md end-to-end: this session's 4 commits recorded; the NEXT task named (Luneth's over-arching Coverage notes FIRST, then the top-bar overhaul = his items 3/5/6, creative freedom granted, Knowledge-drawer + Absorption tab named as the bar); Phase 2b goals-derivation architecture written down with its feasibility probe (bone/skeletal derives 27 real members via corpus conditions_treated vs the hand-typed 14) AND its honest caveat (61/91 essentials carry >=1 conditions_treated; 30 have none yet). \xB7 \u2605 MEMORY CORRECTION (doctrine-change-reconcile-all-surfaces): Luneth revealed he had been calling CHAKRA PETCH "Space Grotesk" all along. The prior font survey's conclusion "Space Grotesk KEPT as the body face (geometry matches)" was therefore made under a misnaming and is UNRELIABLE \u2014 the body-face question is re-opened, NOT re-decided by me. Rewrote [[futurist-type-direction]] with the correction + the VERIFIED-COMPUTED live token table (display=Unbounded, display-interface=Chakra Petch, display-artifact=Bruno Ace, sans/serif=Space Grotesk, mono=JetBrains Mono) so prose can never again outrank the measured state. Grepped repo + memory to zero: the only surviving instance of the old claim is an explicit "\u2026is UNRELIABLE" quote marking it superseded (rule 5 \u2014 mark, never silently carry). \xB7 TWO NEW MEMORIES: [[token-indirection-grep-the-readers]] (\u2605\u2605 never repoint/delete behind a CSS token until you grep the TOKEN'S READERS \u2014 grepping the value name is CIRCULAR; this is how I reskinned 89 rules across 6 sheets and shipped a green check that measured nothing) and [[signed-off-demo-is-the-spec]] (\u2605\u2605 never "improve" an approved demo between sign-off and ship; if it looks wrong, SAY SO and ask \u2014 distinguishes itself from live-supersedes-demo, which only applies when the LIVE surface moved on WITH Luneth). \xB7 DEMO SUPERSESSION: stamped both Coverage proposals with a SUPERSEDED-IN-PART banner naming every delta (chamfers RETIRED -> border-radius because clip-path cannot carry a border; variant A DECIDED; demo statuses are FAKE; the covered box-shadow ORDER is only correct in the live file) while flagging the ONE thing still authoritative in them \u2014 the subtle substrate grid, the receipt Luneth used to prove I had over-strengthened it after sign-off. KEPT not deleted: destroying a sign-off record is worse than staleness. \xB7 MEMORY INDEX COMPACTED under the hook's 17.1KB load limit: 20739 -> 16773 bytes, ALL 115 entries intact, 0 broken links. Caught + hand-repaired 7 hooks my automated trim cut mid-phrase \u2014 worst was futurist-type-direction, which had lost its "\u26A0 UNSETTLED" warning entirely (the exact silent poison this wrap exists to prevent). \xB7 VERIFIED: build exit 0 \xB7 invariants 64/64 \xB7 render probes coverage + seeded + knowledge + entity all exit 0 \xB7 memory links all resolve \xB7 both proposals stamped.` }, { id: "lg_mrkwprqy_wpaeyd", ts: "2026-07-14T12:10:06.778958-05:00", surface: "design-system", kind: "incident", summary: "Reduced-motion block was strobing the app at ~100Hz for the users who asked for LESS motion \u2014 capped duration but never iteration-count; 7 painted offenders measured, fixed in one line, gated by a new render probe + proven with a negative test", detail: 'Anyone whose computer is set to "reduce motion" was getting a strobing page instead of a calm one \u2014 the exact opposite of what they asked for. The rule that was supposed to quiet our animations only capped how LONG each loop lasts, never how MANY times it repeats. So a 10-second loop told to take 0.01 seconds did not stop; it ran a hundred times per second. Seven things on screen were flashing. The fix is one line. The more important part is the new probe that makes it impossible to reintroduce \u2014 this bug was invisible to every gate we had, because the CSS said the right thing and did the opposite, so reading the code could never have caught it. Only measuring the real browser could.\n\nCAUSE. design-system.css:307-318, the `@media (prefers-reduced-motion: reduce)` block, set `animation-duration: 0.01s !important` and `transition-duration: 0.01s !important` \u2014 and never set `animation-iteration-count`. Capping duration does not stop an `infinite` animation; it accelerates it 1000x. Measured headless (puppeteer, emulateMediaFeatures prefers-reduced-motion=reduce, verified honored by the browser): 7 PAINTED offenders at ~100Hz \u2014 ds-scan-sweep on .ds-scan-line (the worst: ramps opacity 0->0.35 while sweeping top from -3% to 103% across .essentials-host), ds-numeric-glow on .coverage-stat__num (the hero 13/90), ds-stat-pulse on .coverage-stat::before, ds-travel-top/-bottom on .coverage-hero::before/::after, and ds-pulse-animate on both .topbar__ask-dot and .topbar__workspace-tag::before. WCAG 2.3.1 puts the flash threshold at 3/sec. Honest severity: the scan-line is a real flash hazard (position + opacity over a large host); the other six are luminance shimmers on small or soft elements \u2014 genuinely wrong, not the same class. I am not going to inflate them.\n\nFIX. One declaration \u2014 `animation-iteration-count: 1 !important` \u2014 inside the same block. design-system.css is SEALED; user sign-off is Luneth 2026-07-14 ("1. Yes"). Golden re-sealed cdf0ebd4... -> 37c338b7..., with the CSS written BEFORE the golden so design_system_write_protection\'s mtime rule (css_mtime > seal_mtime + 1 = violation) holds. Verified all 7 land on a benign 100% keyframe: off-screen (ds-travel-* at left/right 130%), opacity 0 (ds-scan-sweep at top 103%), or static (ds-numeric-glow 40px/0.4, ds-pulse-animate opacity 1, ds-stat-pulse opacity 0.32). Nothing is stranded mid-animation.\n\nR7 \u2014 THE GATE SHIPS IN THE SAME PATCH. New tools/render_probe_reduced_motion.js, anchored to the RENDERED computed style in a real browser under the real media feature (\xA700.B #11 \u2014 pin to a truth that cannot drift). Deliberately NOT a CSS-text grep: the source declared the right intent and did the opposite, which is precisely why no existing gate saw it, and a grep would be satisfied by a reworded rule or a comment. It generalises \u2014 any future animation added anywhere that loops fast under a reduce preference reddens this probe. PASS 2 is the anti-degenerate half: deleting every animation would trivially satisfy PASS 1, so the probe also asserts the ambient motion still runs for normal users.\n\nR9 \u2014 NEGATIVE TEST. A gate that has never gone red proves nothing. Reintroduced the bug via safe_write: probe FAILED, exit 1, all 7 offenders named at ~100Hz. Restored the fix: probe PASSED, exit 0. The CSS round-tripped byte-identical (sha256 == golden: True).\n\nA MEASUREMENT LESSON WORTH KEEPING. My first probe found only 5 offenders. getComputedStyle(el) with no pseudo argument never sees ::before/::after \u2014 and 4 of the 7 live entirely on pseudo-elements. A pseudo-blind animation scan undercounts by more than half. The shipped probe scans element + ::before + ::after.\n\nVERIFIED. build exit 0 \xB7 invariants 64/64, 0 new reds (design_system_hash_integrity + design_system_write_protection both green on the new seal) \xB7 render_probe.js exit 0 with the coverage DOM unchanged (tiles 60/16/12/3, covered 14, partial 12, gap 20, stat 13/90) \xB7 render_probe_reduced_motion.js exit 0 \xB7 normal-motion regression probe: all 7 ambient animations still at authored duration + infinite. On that last one \u2014 my regression probe reported a FAIL for ds-numeric-glow because I had hardcoded 3s as its expected duration; the CSS authors it at 4s (workspace-coverage.css:330). My expectation was wrong, not the code. Recording that rather than quietly correcting the constant.\n\nCONTEXT. Found while surveying Coverage for Luneth\'s over-arching UX notes (goals-first flow, top-bar overhaul, the living-light mesh). This is not a Coverage change and does not touch that work, which continues next.' }];
+DEFERRED: Phase 2b (eden/catalog/goals.json \u2192 conditions_treated \u2192 real per-goal coverage; the probe derives 27 real bone/skeletal members against the mockup's hand-typed 14); ambient chrome still duplicated across dashboard.css + workspace-coverage.css; views/regimen.ts SLOT_PLACEHOLDERS fake coverage 31/47/18/54; the drawer missing its coverage:recomputed subscription; CoverageTile.coveredBy/aggregateVehicle dead but kept as plausibly wanted.` }, { id: "lg_mrkr0gi7_x5e5w0", ts: "2026-07-14T09:30:27.727793-05:00", surface: "coverage", kind: "round-close", summary: "Grid fix \u2014 reverted the substrate to the signed-off proposal. I added background-blend-mode:multiply AFTER sign-off on my own judgement, making the faint grid dominate. Removed; live now computed-style-MATCHES the proposal. Also merged a duplicate .essentials-host block.", detail: '[2026-07-14 09:26 CDT] Coverage tab / grid fix \u2014 revert the substrate to the signed-off proposal \xB7 The faint grid behind the tiles was way too strong and made the page hard to look at. It is now back to the barely-there texture Luneth actually approved. Luneth: "The grid background is CRAZY distracting. It\'s way too prominent and doesn\'t look like the mockup that has the very subtle grid." He was right AND he had the receipt \u2014 he pointed straight at dashboard/components/coverage-plates-PROPOSAL.html, the artifact he signed off, which declares `linear-gradient(var(--ds-rule-soft) 1px, transparent 1px)` with NO blend mode. \xB7 ROOT CAUSE (mine, not a drift): during Phase 2 I judged the grid "invisible" against --ds-paper-darker (a ~3-value delta) and, unprompted, added `background-blend-mode: multiply` AFTER the sign-off \u2014 which resolved the grid to ~#d5c598 and made it dominate the surface. Subtlety was never the defect; it was the design. This is the inverse of live-supersedes-demo: the demo was never superseded, I simply overrode a signed-off artifact on my own aesthetic judgement. The approved file IS the spec (replicate-demo-not-blueprint-notes). \xB7 FIXED: removed the single `background-blend-mode: multiply` declaration \u2014 nothing else touched (pin-the-exact-element-dont-overcorrect; he said fix the grid FIRST and only). Also MERGED a duplicate `.essentials-host` block I had left behind (the stale pre-plate-language one, position/overflow/padding, shadowed by my new one) \u2014 the exact duplicate-declaration bug this round purged from .tile, reintroduced by me in the same round. `.essentials-host` now declared exactly 1x; `background-blend-mode` declarations now 0. \xB7 VERIFIED OBJECTIVELY, not by eye: a headless computed-style diff (scratchpad grid_diff.js) loads the LIVE page + the signed-off proposal side by side and compares getComputedStyle on .essentials-host \u2014 backgroundColor / backgroundImage / backgroundBlendMode / backgroundSize ALL MATCH; live blend mode reads "normal, normal". Board 64/64, render_probe exit 0, build exit 0. Screenshot re-checked at 1600x1100 + 3x. \xB7 LESSON (durable): a signed-off demo is the visual spec \u2014 do not "improve" it between sign-off and ship. If something in an approved artifact looks wrong to me, SAY SO and ask; never silently correct it. \xB7 PROCESS: three separate self-inflicted assertion failures this round, all the same shape \u2014 my own explanatory comment contained the literal string the assertion searched for ("Playfair Display STAYS", "Bruno Ace", "background-blend-mode"), so the guard tripped on its own prose. Correct form: test the DECLARATION (a stripped line starting with `prop:`), never the bare substring. Plus a 4th heredoc escaping break (\\n eaten). Standing rule reinforced: stage payloads with the Write tool, never a bash heredoc.' }, { id: "lg_mrksvld4_amqaav", ts: "2026-07-14T10:22:39.976402-05:00", surface: "coverage", kind: "round-close", summary: "REVERTED an app-wide font regression I caused: repointing --ds-font-display-interface (read by 89 rules across 6 sheets) + deleting the Chakra Petch @font-face reskinned the whole app. My proof was circular. Also fixed the plate top-border, chamfer borders, blue L-brackets.", detail: `[2026-07-14 09:52 CDT] Coverage / app-wide FONT REGRESSION REVERTED + plate border fixes (Luneth items 1, 2, 4, 7) \xB7 I broke the fonts across the ENTIRE app and it is now undone. In Phase 2 I "cleaned up" what I believed were dead font declarations; they were not dead, and the Knowledge drawer + side menus regressed badly. Also fixed: covered/hover plates had no top border, the omega tiles' diagonal had no border, and the blue L-brackets are gone. \xB7 ITEM 7 \u2014 THE BIG ONE (app-wide regression, my fault): workspace-coverage.css declares --ds-font-display-interface + --ds-font-display-artifact at :root, and that sheet loads GLOBALLY \u2014 it is the ONLY definition of those tokens anywhere (the sealed design-system.css never declared them). I repointed both to Unbounded and DELETED the Chakra Petch x3 + Bruno Ace @font-face blocks, believing the faces dead. 89 rules across 6 stylesheets read those tokens \u2014 drawer-knowledge 34, drawer-search 13, drawer-journey 7, drawer-shared 4, dashboard 4, workspace-coverage 9 \u2014 so every one silently flipped to Unbounded, and deleting the @font-face made Chakra Petch un-loadable entirely. WHY MY "PROOF" WAS WORTHLESS: I verified "all 35 font-family declarations resolve to no retired face" \u2014 but they resolve THROUGH the token I had just rewritten. The check was circular. Grepping a face NAME can never prove a token-indirected face is unused; the only honest check greps the TOKEN's READERS, which I did not do until Luneth reported it. REVERTED byte-for-byte: both @font-face families + both token values restored; verified computed at :root (--ds-font-display-interface = 'Chakra Petch', \u2026 / --ds-font-display-artifact = 'Bruno Ace', \u2026) and document.fonts.check() confirms both faces load again. One revert fixed all 89 rules, because they all read the token. \xB7 Then applied Luneth's KEEP list as PER-ELEMENT carve-outs (never by hijacking the token again): .essentials-section__title (01 MINERALS / 02 VITAMINS / 03 AMINO ACIDS / 04 FATTY ACIDS), .regimen-rail__slot-name (DAILY PROTOCOL), .regimen-item__name (BTT 2.5 CANISTER + all product names), .goals-strip__title (YOUR GOALS), .goals-strip__add (+ ADD GOAL) \u2192 var(--ds-font-display) = Unbounded. Element-card glyphs already resolve to Unbounded via --ds-font-display and needed no rule. DELIBERATELY EXCLUDED per his instruction: .goal-card__name ("bone & skeletal") + .goal-card__progress \u2014 "those were better before". Verified by computed-style audit: 01 MINERALS/tile sym/DAILY PROTOCOL/BTT/YOUR GOALS/ADD GOAL = Unbounded; BONE & SKELETAL + hero title + rail + topbar = Chakra Petch. \xB7 NOTE FOR THE RECORD (memory correction): Luneth clarified he had been calling CHAKRA PETCH "Space Grotesk" all along \u2014 Chakra Petch is the sharp-angled geometric face he liked ("geometry doesn't even make sense for space grotesk because it doesn't have sharp angles"). The [[futurist-type-direction]] memory + next-chunk note claiming "Space Grotesk KEPT as the body face (geometry matches)" is therefore built on a misnaming and must be re-examined before any further type work. \xB7 ITEM 1 \u2014 covered/hover plates had NO top border. NOT a clipping bug (a probe walked every ancestor: nothing clips; tile tops sit 93px inside .essentials-host). CAUSE: box-shadow paints FIRST-LISTED ON TOP, and I listed the white "top-light" (inset 0 1px 0) BEFORE the rim (inset 0 0 0 1px) \u2014 the light painted straight over the rim's top edge and erased it. My own Empower top-light ate my own rim. FIXED: rim first, then the light tucked to y=1..2 via a -1px spread so both read. Same fix on :hover (where it was worse \u2014 the accent rim carries the interaction). \xB7 ITEM 2 \u2014 the omega/vitamin/amino diagonals had no border. CAUSE: clip-path CANNOT carry a border \u2014 an inset ring follows the border-box RECTANGLE, so a clipped diagonal is always bare. That is a CSS limitation, not a tunable value; every workaround (4x drop-shadow outline, layered rim/surface elements, per-state multi-layer gradients) is either costly across 91 tiles or needs a DOM wrapper. FIXED by expressing the family silhouette as border-radius instead (vitamin 9px top-right, amino 9px bottom-left, fat 11px both) \u2014 an inset ring follows a radius perfectly, so every family now has an unbroken rim. This is also CLOSER TO THE SOURCE: the Empower reference plates are ROUNDED, not chamfered; the chamfer was invented here, not observed there. \xB7 ITEM 4 \u2014 removed the blue L-brackets (.essentials-section__divider::before/::after: 6x6px --ds-tech squares with two borders zeroed). They also always contradicted the project design bar, which rules out L-brackets outright. VERIFIED: a computed scan of every element + pseudo under .coverage-grid finds 0 elements painted --ds-tech (#5fa4bd); the only blue left is the intended --ds-status-info 'present' rim. \xB7 VERIFIED: build exit 0 \xB7 invariants 64/64 \xB7 render probes coverage + seeded + knowledge all exit 0 \xB7 computed font audit across coverage/shell \xB7 computed token audit at :root \xB7 document.fonts.check() for both restored faces. \xB7 STILL OPEN (Luneth items 3, 5, 6 \u2014 the TOP BAR, deferred to its own design chunk): re-add "// what you're absorbing, what you're missing" as an ORANGE aesthetic accent with a distinct font/size/style; "COVERAGE" title too distracting (colour/size vs reverting its font); and a TOTAL top-bar overhaul \u2014 too much clutter/repeated text, "Ask Wallach" reads as an afterthought (it was), remove it entirely or make it genuinely good. He explicitly granted creative freedom here, citing the knowledge drawer + Absorption tab as the bar. He also has further over-arching notes coming.` }, { id: "lg_mrktmft6_k76yej", ts: "2026-07-14T10:43:32.490930-05:00", surface: "session", kind: "session-end", summary: "Session wrap \u2014 rewrote the pass-off on CURRENT truth; corrected the Chakra-Petch/Space-Grotesk misnaming that made the body-face decision unreliable; added 2 memories (grep the token's readers; a signed-off demo is the spec); stamped both demos SUPERSEDED; compacted the index.", detail: `[2026-07-14 10:14 CDT] Session wrap \u2014 pristine pass-off + memory correction + demo supersession \xB7 Cleaning the desk so the next session starts on CURRENT truth and inherits no stale claims. Luneth: "be SURE you keep the pass-off and our working files pristine, no old poison or wrong info throwing us off in the future, always using CURRENT standards/decisions which often deviate from the demos." \xB7 REWROTE chronicle/next-chunk.md end-to-end: this session's 4 commits recorded; the NEXT task named (Luneth's over-arching Coverage notes FIRST, then the top-bar overhaul = his items 3/5/6, creative freedom granted, Knowledge-drawer + Absorption tab named as the bar); Phase 2b goals-derivation architecture written down with its feasibility probe (bone/skeletal derives 27 real members via corpus conditions_treated vs the hand-typed 14) AND its honest caveat (61/91 essentials carry >=1 conditions_treated; 30 have none yet). \xB7 \u2605 MEMORY CORRECTION (doctrine-change-reconcile-all-surfaces): Luneth revealed he had been calling CHAKRA PETCH "Space Grotesk" all along. The prior font survey's conclusion "Space Grotesk KEPT as the body face (geometry matches)" was therefore made under a misnaming and is UNRELIABLE \u2014 the body-face question is re-opened, NOT re-decided by me. Rewrote [[futurist-type-direction]] with the correction + the VERIFIED-COMPUTED live token table (display=Unbounded, display-interface=Chakra Petch, display-artifact=Bruno Ace, sans/serif=Space Grotesk, mono=JetBrains Mono) so prose can never again outrank the measured state. Grepped repo + memory to zero: the only surviving instance of the old claim is an explicit "\u2026is UNRELIABLE" quote marking it superseded (rule 5 \u2014 mark, never silently carry). \xB7 TWO NEW MEMORIES: [[token-indirection-grep-the-readers]] (\u2605\u2605 never repoint/delete behind a CSS token until you grep the TOKEN'S READERS \u2014 grepping the value name is CIRCULAR; this is how I reskinned 89 rules across 6 sheets and shipped a green check that measured nothing) and [[signed-off-demo-is-the-spec]] (\u2605\u2605 never "improve" an approved demo between sign-off and ship; if it looks wrong, SAY SO and ask \u2014 distinguishes itself from live-supersedes-demo, which only applies when the LIVE surface moved on WITH Luneth). \xB7 DEMO SUPERSESSION: stamped both Coverage proposals with a SUPERSEDED-IN-PART banner naming every delta (chamfers RETIRED -> border-radius because clip-path cannot carry a border; variant A DECIDED; demo statuses are FAKE; the covered box-shadow ORDER is only correct in the live file) while flagging the ONE thing still authoritative in them \u2014 the subtle substrate grid, the receipt Luneth used to prove I had over-strengthened it after sign-off. KEPT not deleted: destroying a sign-off record is worse than staleness. \xB7 MEMORY INDEX COMPACTED under the hook's 17.1KB load limit: 20739 -> 16773 bytes, ALL 115 entries intact, 0 broken links. Caught + hand-repaired 7 hooks my automated trim cut mid-phrase \u2014 worst was futurist-type-direction, which had lost its "\u26A0 UNSETTLED" warning entirely (the exact silent poison this wrap exists to prevent). \xB7 VERIFIED: build exit 0 \xB7 invariants 64/64 \xB7 render probes coverage + seeded + knowledge + entity all exit 0 \xB7 memory links all resolve \xB7 both proposals stamped.` }, { id: "lg_mrkwprqy_wpaeyd", ts: "2026-07-14T12:10:06.778958-05:00", surface: "design-system", kind: "incident", summary: "Reduced-motion block was strobing the app at ~100Hz for the users who asked for LESS motion \u2014 capped duration but never iteration-count; 7 painted offenders measured, fixed in one line, gated by a new render probe + proven with a negative test", detail: 'Anyone whose computer is set to "reduce motion" was getting a strobing page instead of a calm one \u2014 the exact opposite of what they asked for. The rule that was supposed to quiet our animations only capped how LONG each loop lasts, never how MANY times it repeats. So a 10-second loop told to take 0.01 seconds did not stop; it ran a hundred times per second. Seven things on screen were flashing. The fix is one line. The more important part is the new probe that makes it impossible to reintroduce \u2014 this bug was invisible to every gate we had, because the CSS said the right thing and did the opposite, so reading the code could never have caught it. Only measuring the real browser could.\n\nCAUSE. design-system.css:307-318, the `@media (prefers-reduced-motion: reduce)` block, set `animation-duration: 0.01s !important` and `transition-duration: 0.01s !important` \u2014 and never set `animation-iteration-count`. Capping duration does not stop an `infinite` animation; it accelerates it 1000x. Measured headless (puppeteer, emulateMediaFeatures prefers-reduced-motion=reduce, verified honored by the browser): 7 PAINTED offenders at ~100Hz \u2014 ds-scan-sweep on .ds-scan-line (the worst: ramps opacity 0->0.35 while sweeping top from -3% to 103% across .essentials-host), ds-numeric-glow on .coverage-stat__num (the hero 13/90), ds-stat-pulse on .coverage-stat::before, ds-travel-top/-bottom on .coverage-hero::before/::after, and ds-pulse-animate on both .topbar__ask-dot and .topbar__workspace-tag::before. WCAG 2.3.1 puts the flash threshold at 3/sec. Honest severity: the scan-line is a real flash hazard (position + opacity over a large host); the other six are luminance shimmers on small or soft elements \u2014 genuinely wrong, not the same class. I am not going to inflate them.\n\nFIX. One declaration \u2014 `animation-iteration-count: 1 !important` \u2014 inside the same block. design-system.css is SEALED; user sign-off is Luneth 2026-07-14 ("1. Yes"). Golden re-sealed cdf0ebd4... -> 37c338b7..., with the CSS written BEFORE the golden so design_system_write_protection\'s mtime rule (css_mtime > seal_mtime + 1 = violation) holds. Verified all 7 land on a benign 100% keyframe: off-screen (ds-travel-* at left/right 130%), opacity 0 (ds-scan-sweep at top 103%), or static (ds-numeric-glow 40px/0.4, ds-pulse-animate opacity 1, ds-stat-pulse opacity 0.32). Nothing is stranded mid-animation.\n\nR7 \u2014 THE GATE SHIPS IN THE SAME PATCH. New tools/render_probe_reduced_motion.js, anchored to the RENDERED computed style in a real browser under the real media feature (\xA700.B #11 \u2014 pin to a truth that cannot drift). Deliberately NOT a CSS-text grep: the source declared the right intent and did the opposite, which is precisely why no existing gate saw it, and a grep would be satisfied by a reworded rule or a comment. It generalises \u2014 any future animation added anywhere that loops fast under a reduce preference reddens this probe. PASS 2 is the anti-degenerate half: deleting every animation would trivially satisfy PASS 1, so the probe also asserts the ambient motion still runs for normal users.\n\nR9 \u2014 NEGATIVE TEST. A gate that has never gone red proves nothing. Reintroduced the bug via safe_write: probe FAILED, exit 1, all 7 offenders named at ~100Hz. Restored the fix: probe PASSED, exit 0. The CSS round-tripped byte-identical (sha256 == golden: True).\n\nA MEASUREMENT LESSON WORTH KEEPING. My first probe found only 5 offenders. getComputedStyle(el) with no pseudo argument never sees ::before/::after \u2014 and 4 of the 7 live entirely on pseudo-elements. A pseudo-blind animation scan undercounts by more than half. The shipped probe scans element + ::before + ::after.\n\nVERIFIED. build exit 0 \xB7 invariants 64/64, 0 new reds (design_system_hash_integrity + design_system_write_protection both green on the new seal) \xB7 render_probe.js exit 0 with the coverage DOM unchanged (tiles 60/16/12/3, covered 14, partial 12, gap 20, stat 13/90) \xB7 render_probe_reduced_motion.js exit 0 \xB7 normal-motion regression probe: all 7 ambient animations still at authored duration + infinite. On that last one \u2014 my regression probe reported a FAIL for ds-numeric-glow because I had hardcoded 3s as its expected duration; the CSS authors it at 4s (workspace-coverage.css:330). My expectation was wrong, not the code. Recording that rather than quietly correcting the constant.\n\nCONTEXT. Found while surveying Coverage for Luneth\'s over-arching UX notes (goals-first flow, top-bar overhaul, the living-light mesh). This is not a Coverage change and does not touch that work, which continues next.' }, { id: "lg_mrkx4zdx_xdrhya", ts: "2026-07-14T12:21:56.517277-05:00", surface: "regimen", kind: "design-decision", summary: "Removed the HBSP starter-pack pre-fill \u2014 a fresh dashboard no longer credits a new user with 3 products they never agreed to; true empty state is 4/90, not 13/90 (Luneth's override; nothing lost, all 3 live in the Products pillar)", detail: `A brand-new user was being silently credited with three products they had never heard of and never agreed to \u2014 Wallach's Healthy Body Start Pak (BTT 2.5, Beyond Osteo FX, Ultimate EFA Plus). It was a demo seed carried over from the old dashboard, merged straight into the real stack, so nothing downstream could tell it apart from something the user actually took: the hero stat, the rail count and the coverage classifier all inherited it. A fresh dashboard now shows the true empty state \u2014 4/90, not 13/90. Nothing is lost: all three products live in the sealed Products pillar, so the pak can be RECOMMENDED (which is what it always should have been) instead of silently pre-installed.
+
+LUNETH'S CALL (2026-07-14): "let's over-ride this old decision and do a fresh dashboard for a new user, adding the 'starter pack' has caused multiple issues anyway so let's just forget that."
+
+WHY IT WAS SAFE. Verified the three seed products exist in eden/products/ with richer data than the seed carried, by name+id match: BTT 2.5 Canister -> beyond-tangy-tangerine-2-5-canister, Beyond Osteo FX Powder -> beyond-osteo-fx-powder, Ultimate EFA Plus -> ultimate-efa-plus. The manifest had already called the file transitional \u2014 "Replaced by the Products pillar (eden/products/) in Phase F" \u2014 and Phase F shipped, so this deletion was overdue rather than new.
+
+REMOVED. dashboard/assets/data/regimen-base-data.json (git rm). state/regimen.ts: the regimenBaseData import, loadBaseRegimen(), cachedBase, and the base term in loadEffectiveRegimen's merge \u2014 now [...loadRegimen().items, ...loadRgManual()]. The docstring is rewritten to say WHY there is no base layer, so nobody helpfully re-adds one.
+
+RECONCILED \u2014 no gate or comment may cite a deleted structure. eden/derived/MANIFEST.json's \`accounted\` entry dropped (a stale accounted entry whose file is gone is explicitly RED under data_artifacts_accounted \u2014 that gate would have caught me had I forgotten). invariants.py: _CLEAN_SURFACE_LEGACY_DATA member removed, plus 5 comments corrected across the crack-#3 narrative, citations_reference_registry, prose_contained and the \xA75.4 wall \u2014 every one described the gate's CURRENT scope and drifted the instant the artifact went. core/schemas/regimen.ts: the provenance comment retires the now-unmintable wallach_hbsp_default token. core/schemas/scanner-corpus.ts: stopped citing the deleted file as a pattern example. render_probe_seeded.js: dropped its rgRemoved_v1 = [-1,-2,-3] base-hiding (now a no-op) and the comment explaining it.
+
+MEASURED \u2014 the whole point. Fresh coverage 13/90 -> 4/90; covered 14->4, partial 12->0, gap 20->37. The surviving 4 are hydrogen/carbon/nitrogen/oxygen (FOUNDATIONAL_PRESENT_SLUGS, present in any diet) \u2014 the honest floor. render_probe_adopt's baseline moved 13->4 and still cascades (4 -> 10 on adopting a scanned product). render_probe_seeded still lights 38 covered / 1 partial / 35 gap; the seeded items ARE the stack now.
+
+A PROCESS BUG WORTH RECORDING \u2014 it bit twice in this one chunk. write-discipline rule 5's "temp python script -> safe_rewrite per file" has a trap I walked straight into: my stage() helper re-read each file FROM DISK per edit, so two edits to the SAME file each computed from the original text and the LAST write silently clobbered the first. It ate the regimen.ts import removal \u2014 caught immediately by tsc ("'regimenBaseData' is declared but its value is never read") \u2014 and 2 of 3 invariants.py edits, which NO gate caught because they were comments; only a manual grep audit found them. Multiple edits to one file MUST chain onto a single in-memory copy. Worth noting the shape that DID work: the first run hit a bad anchor and aborted having written nothing, exactly as validate-all-then-write is meant to.
+
+VERIFIED. build exit 0 \xB7 tsc clean \xB7 invariants 64/64, 0 new reds (data_artifacts_accounted now 11 derived + 12 accounted, was 13) \xB7 vitest 17/17 across 4 files \xB7 render probes coverage + seeded + adopt + reduced_motion all exit 0 \xB7 zero surviving references to regimen-base-data / regimenBaseData / loadBaseRegimen / wallach_hbsp_default in any shipped code, data or gate (grep-audited; the only mentions left are two deliberate "retired 2026-07-14" notes marking the supersession, per logging-doctrine rule 5).
+
+NEXT. The goals-first UX + the A/B living-light build \u2014 which this unblocks, because the light needed the real empty state to be lit BY.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

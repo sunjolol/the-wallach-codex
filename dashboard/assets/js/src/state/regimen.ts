@@ -23,7 +23,6 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import regimenBaseData from '../../../data/regimen-base-data.json';
 import { emit } from '../core/events.js';
 import {
   type OverridesMap,
@@ -84,35 +83,27 @@ export function loadRgUserGoals(): string[] | null {
   return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
 }
 
-// ─── Effective regimen (base foundation + user stack) ──────────────────────
-
-let cachedBase: RegimenItem[] | null = null;
+// ─── Effective regimen (the user's own stack) ─────────────────────────────
 
 /**
- * The default HBSP foundation stack (BTT 2.5 + Beyond Osteo FX + Ultimate EFA
- * Plus), migrated verbatim from legacy REGIMEN_BASE_DATA (YGY label data). Always
- * present so a fresh dashboard demos real coverage; users hide entries via the
- * §31 removed-set (the base items carry negative synthetic ids). Validated once
- * at the Zod boundary, then cached.
- */
-export function loadBaseRegimen(): RegimenItem[] {
-  if (cachedBase === null) {
-    const parsed = RegimenSchema.safeParse(regimenBaseData);
-    cachedBase = parsed.success ? parsed.data.items : [];
-  }
-  return cachedBase;
-}
-
-/**
- * The effective stack coverage + rails read from: base foundation + committed +
- * manual, deduped by id, minus the removed-set. The migrated, slimmed successor
- * to legacy getUnifiedRegimenItems (its recommendations / wishlist / adopted
- * machinery is the Regimen-surface migration's concern, not this).
+ * The user's effective stack — committed + manual, deduped by id, minus the removed-set.
+ *
+ * THERE IS NO BASE LAYER, deliberately (2026-07-14). Until now this merged a pre-applied
+ * HBSP foundation (BTT 2.5 + Beyond Osteo FX + Ultimate EFA Plus, synthetic negative ids)
+ * because a fresh dashboard "should demo real coverage". But a seed is indistinguishable
+ * from the user's own stack once merged: the app told a first-run user they owned three
+ * products they had never heard of, and every downstream number inherited it — the hero
+ * stat, the rail count, the classifier. True zero coverage is 4/90 (the foundational
+ * present-in-any-diet elements), not 13/90.
+ *
+ * The HBSP itself is real Wallach guidance and is NOT lost: all three products live in the
+ * sealed Products pillar, so it belongs in the RECOMMENDER as an earned suggestion — never
+ * as a silent pre-fill the user never agreed to.
  */
 export function loadEffectiveRegimen(): RegimenItem[] {
   const removed = loadRgRemoved();
   const byId = new Map<number, RegimenItem>();
-  for (const item of [...loadBaseRegimen(), ...loadRegimen().items, ...loadRgManual()]) {
+  for (const item of [...loadRegimen().items, ...loadRgManual()]) {
     if (removed.has(item.id)) {
       continue;
     }

@@ -11,7 +11,7 @@
  * author the data (Luneth owns the corpus).
  *
  * This is the NEW-data pattern (esbuild JSON import + Schema.parse at load),
- * same as coverage-layout-data.json / regimen-base-data.json.
+ * same as coverage-layout-data.json.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 

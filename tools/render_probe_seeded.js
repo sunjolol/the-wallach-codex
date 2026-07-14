@@ -62,12 +62,12 @@ const SEED = { items: [
   const pageErrors = [];
   page.on('pageerror', e => pageErrors.push(e.message));
 
-  // Hide the HBSP base foundation (negative ids) so this exercises the live
-  // classifier in isolation on the seeded items alone.
+  // The seeded items ARE the whole stack: the HBSP base foundation was removed
+  // 2026-07-14, so there is no longer a base layer to hide (this used to write
+  // rgRemoved_v1 = [-1,-2,-3] to suppress the pre-applied seed).
   await page.evaluateOnNewDocument((seed) => {
     try {
       localStorage.setItem('lcRegimen_v1', JSON.stringify(seed));
-      localStorage.setItem('rgRemoved_v1', JSON.stringify([-1, -2, -3]));
     }
     catch (e) { window.__seedErr = String(e); }
   }, SEED);

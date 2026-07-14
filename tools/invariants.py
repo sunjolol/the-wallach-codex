@@ -2223,8 +2223,9 @@ def check_substance_triage_accounted(buffer_path=None, coverage_path=None):
 #   * the prose-carrying legacy embeds (essentials-benefits-data,
 #     essentials-best-supplements, goal-recommendations-data, ingredients-embed,
 #     ingredients-quickref-data) were DELETED (blueprint §3.2/§6); scanner-corpus-data,
-#     ocr-dict-data, regimen-base-data were brought ONTO the clean surface
-#     (_CLEAN_SURFACE_LEGACY_DATA, crack #3); and regimen-label-lookup is now
+#     ocr-dict-data were brought ONTO the clean surface (_CLEAN_SURFACE_LEGACY_DATA,
+#     crack #3; regimen-base-data was a third member until the base-seed removal deleted
+#     the artifact outright, 2026-07-14); and regimen-label-lookup is now
 #     COMPOSITION-ONLY (Phase F/A1) with its own dedicated gate no_product_marketing_prose;
 #   * what remains WISH -- the legacy view scaffold (views/regimen.ts + views/knowledge.ts
 #     placeholders) still carries hand-typed cites + inline educational prose.
@@ -2245,7 +2246,6 @@ _CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (b
     "dashboard/assets/data/entity-copy.json",  # per-entity approved lede + why-this-number (Phase H2)
 )
 _CLEAN_SURFACE_LEGACY_DATA = (   # legacy hand-authored data now under the prose/citation gates (crack #3, 2026-07-06)
-    "dashboard/assets/data/regimen-base-data.json",    # transitional HBSP composition (Pillar 2 in Phase F)
     "dashboard/assets/data/scanner-corpus-data.json",  # scanner dietary baselines (Phase E/F)
     "dashboard/assets/data/ocr-dict-data.json",        # OCR normalization dictionary (Phase E/F)
 )
@@ -2319,8 +2319,9 @@ def check_citations_reference_registry():
     (verbatim/claim_text/...) are allowlisted: Wallach may name a book in his own words. The
     claim->book_id substring is also gated by corpus_verify #2 (this makes the rule explicit +
     extends it to titles). OUT of scope (WISH, Phase E/F -- do NOT sell as
-    guarded): inline view prose (e.g. views/regimen.ts). The legacy DATA embeds (regimen-base /
-    scanner / ocr) are now COVERED after crack #3 widened the surface (2026-07-06). Truth-anchored on books-meta titles + book_ids x the
+    guarded): inline view prose (e.g. views/regimen.ts). The legacy DATA embeds (scanner / ocr)
+    are now COVERED after crack #3 widened the surface (2026-07-06; regimen-base was a third
+    until its artifact was deleted 2026-07-14). Truth-anchored on books-meta titles + book_ids x the
     clean-surface bytes, recomputed each run."""
     meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
     if not meta_p.exists():
@@ -2354,7 +2355,7 @@ def check_citations_reference_registry():
 def check_prose_contained():
     """Charter R4 -- prose lives in ONE designated compartment, never in a fact field. LIVE teeth
     over the CLEAN Charter surface (corpus claims + canon + catalog + the corpus-derived
-    targets/coverage-layout artifacts + the legacy regimen-base/scanner/ocr data, crack #3):
+    targets/coverage-layout artifacts + the legacy scanner/ocr data, crack #3):
     no prose-shaped string appears under a NON-prose key.
     Prose-shaped = >= 12 words OR a sentence boundary ('. X') in a > 40-char value. The designated
     prose/descriptor homes (_PROSE_HOME_KEYS: claim_text, verbatim, file-metadata prose, dose
@@ -2450,8 +2451,9 @@ def check_no_hand_duplicated_canonical():
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
 # NEVER masquerade as Wallach/Youngevity canonical, nor leak into a sealed pillar or a
-# generated artifact. Three USER provenance tokens are the wall's subject; the base
-# HBSP default (wallach_hbsp_default) is DATA-only (regimen-base-data), never minted in code.
+# generated artifact. Three USER provenance tokens are the wall's subject. (The
+# wallach_hbsp_default token retired 2026-07-14 with the regimen-base-data seed -- no
+# non-user provenance is minted in code or data now.)
 _USER_PROVENANCE = ("user_scanned", "user_manual", "wishlist_promoted")
 _PROV_RE = re.compile(r"provenance:\s*['\"]([^'\"]+)['\"]")
 
@@ -2464,8 +2466,7 @@ def check_scanner_user_items_marked():
       (A) FLAGGED -- RegimenItemSchema requires `provenance`, and every provenance
           LITERAL in the app source is a recognized USER token (user_scanned /
           user_manual / wishlist_promoted). No view/state code mints a regimen item
-          marked as anything canonical (the base HBSP default's wallach_hbsp_default
-          lives ONLY in the regimen-base-data artifact, never minted in code).
+          marked as anything canonical.
       (B) CONTAINED -- no USER token appears in a sealed pillar (eden/corpus,
           eden/catalog) or an operational generated artifact (assets/data/*.json),
           proving a scanned/user item never got baked into canonical data. The
