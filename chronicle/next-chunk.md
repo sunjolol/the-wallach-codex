@@ -6,8 +6,12 @@
 
 **Resume the Coverage UX overhaul, exactly where it paused.** There is UNCOMMITTED work in the tree (below) — read it before touching anything. Luneth's remaining asks, in his order.
 
-### The tree is DIRTY on purpose — the paused UX work
-Uncommitted, working, board-green, NOT yet visually signed off:
+### The paused UX work — COMMITTED in 11b4f044, but NOT visually signed off
+⚠ CORRECTION (same-chunk, rule 5): an earlier draft of this file said the tree was "dirty on
+purpose". It is not — the wrap commit's `git add -A` swept the console work in with it. That is
+harmless (it is board-green and preserved rather than at risk), but it means **the console
+shipped WITHOUT Luneth's visual sign-off**. Show it to him before building further on it; if he
+dislikes it, revert to 86cbadda's `views/coverage.ts` + `workspace-coverage.css`. What landed:
 - `views/coverage.ts` — the goals strip is replaced by **the CONSOLE**: goals promoted ABOVE the table as compact chips (his ask: "it feels like it should be the first thing you see"), plus the orange kicker line he wanted back ("// what you're absorbing, what you're missing").
 - `workspace-coverage.css` — the console block; the old `.goals-strip` / `.goal-card` CSS is deleted.
 - `view-copy.json` — `+cov_console_q`, `−cov_goal_pending`.
