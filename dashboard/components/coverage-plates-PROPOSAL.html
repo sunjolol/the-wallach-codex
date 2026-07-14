@@ -1,4 +1,34 @@
-<!doctype html><html><head><meta charset="utf-8">
+<!doctype html>
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     ⚠ SUPERSEDED IN PART — 2026-07-14. THE SHIPPED SURFACE IS THE TRUTH.
+     ═══════════════════════════════════════════════════════════════════════════
+     This file is the SIGN-OFF RECORD for the Coverage plate language, kept as the receipt.
+     It is NOT the current spec. Where it disagrees with the live app, THE LIVE APP WINS.
+
+     DELTAS vs shipped (dashboard/assets/styles/workspace-coverage.css):
+       1. CHAMFERS ARE RETIRED. This demo cuts corners with `clip-path: polygon(...)`.
+          Shipped uses `border-radius` (vitamin 9px TR / amino 9px BL / fat 11px both),
+          because clip-path CANNOT carry a border — an inset ring follows the border-box
+          rectangle, so every clipped diagonal rendered bare. Rounded is also closer to the
+          Empower reference, whose plates are rounded, not chamfered.
+       2. VARIANT A WON. The A/B question in coverage-covered-ab-PROPOSAL.html is DECIDED:
+          A (saturated green name-strip). Live behind `--cov-strip-mode` /
+          `[data-covered-variant='b']` on `.coverage-grid`.
+       3. STATUSES HERE ARE FAKE. The tile states in this demo are a deterministic demo
+          spread for style judgement — NOT real coverage. The live surface reads the
+          authoritative snapshot (state/coverage.ts).
+       4. The covered plate's box-shadow ORDER matters and is only correct in the live file:
+          the rim must be listed BEFORE the white top-light, or the light paints over the
+          rim's top edge and erases it.
+
+     STILL AUTHORITATIVE HERE — the one thing to copy, not re-judge:
+       · THE SUBSTRATE GRID. `linear-gradient(var(--ds-rule-soft) 1px, transparent 1px)` with
+         NO blend mode. Deliberately at the edge of perception. A `background-blend-mode:
+         multiply` was added to the live file after sign-off and made the grid dominate the
+         page; Luneth pointed at THIS file to prove the subtle version was the approved one.
+         Do not re-strengthen it.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<html><head><meta charset="utf-8">
 <title>Coverage plate language — proposal</title>
 <style>
 @font-face{font-family:'Unbounded';font-weight:200 900;font-display:swap;src:url('../assets/fonts/Unbounded-VariableFont_wght.ttf') format('truetype');}
