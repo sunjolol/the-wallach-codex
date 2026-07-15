@@ -7045,7 +7045,7 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 87,
+      "claim_count": 88,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -7057,6 +7057,12 @@
       "synonyms": [],
       "one_liner": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000115"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [
@@ -7283,7 +7289,7 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 9,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -7294,6 +7300,12 @@
       "synonyms": [],
       "one_liner": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; about 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000115"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [

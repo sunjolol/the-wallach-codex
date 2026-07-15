@@ -3756,6 +3756,50 @@
       "extracted_at": "2026-07-13T19:58:30+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000115",
+      "kind": "dose",
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Essential fatty acids are required every day at 3% of total daily calorie intake, or 9 g per day when supplemented in capsule form. The 9 g is one combined amount for the essential fatty acids together, not 9 g of each.",
+      "verbatim": "Essential fatty acids are a\nmust and should be consumed at the rate of 3 percent of your total daily\ncalorie consumption or supplemented at the rate of 9 grams per day in\ncapsule form.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 609931
+      },
+      "dose": {
+        "amount": 9,
+        "unit": "g",
+        "period": "daily",
+        "form": null,
+        "duration": null,
+        "for_condition": null,
+        "collective_group": "essential-fatty-acids"
+      },
+      "tags": [
+        "dddl-3e-2011",
+        "oils-fats-cholesterol",
+        "efa",
+        "maintenance-dose",
+        "collective-dose"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-15T06:46:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

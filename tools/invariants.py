@@ -1456,6 +1456,81 @@ def check_amounts_wallach_only():
     return _amounts_wallach_only_impl(embed, canon_p, claims_dir)
 
 
+def _collective_doses_not_fanned_impl(embed_p, claims_dir):
+    """Charter R2 (the half amounts_wallach_only is STRUCTURALLY BLIND TO).
+
+    THE HOLE THIS CLOSES, proven on real data 2026-07-15 before it was written:
+    Wallach states ONE amount for a CATEGORY -- "Essential fatty acids ... supplemented at
+    the rate of 9 grams per day in capsule form" (DDDL 3e 2011, WAL-CLM-DDDL-000115). That
+    claim maps BOTH omega-3 and omega-6, because his EFAs ARE those two. Fanned out
+    per-slug, one 9 g claim posts 9 g to omega-3 AND 9 g to omega-6 -- 18 g of board target
+    from a 9 g source. amounts_wallach_only certified exactly that as GREEN: "all 40 numeric
+    coverage target(s) trace to a Wallach dose claim AND recompute exactly from its
+    documented transform chain (R2 clean)". Both targets DO trace, and both DO recompute --
+    R2 audits each essential in ISOLATION, so a shared budget split across two of them is
+    invisible to it by construction. Every existing gate passed while the number was double
+    what Wallach wrote.
+
+    THE CHECK: for every sealed dose claim carrying `dose.collective_group`, NO essential in
+    essentials-targets-data.json may carry a NUMERIC target sourced from it. The shared
+    budget belongs in its own group artifact under its own recomputing goal gate (the
+    pdm_goal_wallach_sourced shape); a number on a member essential is the fan-out.
+
+    Anchored to the SEALED claims, not to the derive's opinion of them (SS00.B #11): a
+    targets_derive bug that starts fanning again cannot also silence this, because the truth
+    is read from eden/corpus/claims/* independently.
+
+    Deliberately NOT "any dose mapping >1 essential is collective": the cobalt/vitamin-b12
+    dose (WAL-CLM-IMMORT-000084, "250-400 mcg") maps two slugs because ONE substance carries
+    two names, which is a different relation and legitimately fans. Collectivity is a stated
+    fact on the claim, not an inference from arity."""
+    import json as _json
+    if not (embed_p.exists() and claims_dir.exists()):
+        return True, "targets embed / corpus not installed (bootstrap-guard)"
+
+    collective = {}
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if c.get("kind") != "dose":
+                continue
+            dz = c.get("dose") or {}
+            if dz.get("collective_group"):
+                collective[c["id"]] = {"group": dz["collective_group"],
+                                       "amount": dz.get("amount"), "unit": dz.get("unit"),
+                                       "members": list(c.get("essentials", []))}
+    if not collective:
+        return True, "no collective dose claims sealed (vacuously clean)"
+
+    data = _json.loads(embed_p.read_text(encoding="utf-8"))
+    bad = []
+    for e in data.get("essentials", []):
+        t = e.get("target") or {}
+        cid = t.get("source_claim_id")
+        if cid not in collective:
+            continue
+        low = t.get("low")
+        if isinstance(low, (int, float)):
+            c = collective[cid]
+            bad.append(f"{e.get('slug')}: numeric target {low} {t.get('unit')} sourced from COLLECTIVE "
+                       f"claim {cid} ({c['amount']} {c['unit']} shared across {c['members']}) — "
+                       f"one shared budget fanned into a per-essential number")
+    if bad:
+        return False, ("collective dose(s) fanned into per-essential targets (R2 / the 18 g bug): "
+                       + "; ".join(bad))
+    n = sum(len(v["members"]) for v in collective.values())
+    return True, (f"{len(collective)} collective dose claim(s) covering {n} essential(s) carry NO "
+                  f"per-essential number (the shared budget is not fanned out)")
+
+
+def check_collective_doses_not_fanned():
+    """Charter R2 wrapper -- see _collective_doses_not_fanned_impl for the full contract.
+    Thin path-binding shell so a negative test can drive the same logic on planted data."""
+    return _collective_doses_not_fanned_impl(
+        ROOT / "dashboard/assets/data/essentials-targets-data.json",
+        ROOT / "eden/corpus/claims",
+    )
+
+
 def check_pdm_goal_wallach_sourced():
     """Charter R2 / §00.A — the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach
     dose expressed in mg via product composition. Two layers (§00.B #2/#11), recomputed here
@@ -3672,6 +3747,14 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase C / Charter R2 (2026-07-05) -- the poison purge: targets used to sum Youngevity Healthy Body Start Pak labels, letting Youngevity define recommended amounts; now every number is a Wallach dose claim carrying its source_claim_id. memory: wallach-drives-recommendations-youngevity-composition",
+    ),
+    Invariant(
+        name="collective_doses_not_fanned",
+        description="Charter R2, the half amounts_wallach_only is structurally blind to: a Wallach dose stated for a GROUP (dose.collective_group — e.g. 'essential fatty acids ... 9 grams per day', WAL-CLM-DDDL-000115, which maps BOTH omega-3 and omega-6) must NEVER be fanned into a per-essential number. Fanned out, one 9 g claim posts 9 g to EACH omega = 18 g of board target from a 9 g source — and R2 certifies it GREEN, because it audits each essential in isolation and both targets genuinely trace and recompute. A numeric target sourced from a collective claim is RED",
+        check_fn=check_collective_doses_not_fanned,
+        truth_anchor="eden/corpus/claims/* sealed dose claims carrying dose.collective_group x essentials-targets-data.json target.source_claim_id + target.low, read independently of targets_derive so a derive that starts fanning again cannot silence its own gate",
+        severity="critical",
+        lesson_ref="Omega EFA target (2026-07-15) — PROVEN before the gate was written: with the 9 g claim sealed, the derive emitted omega-3=9 g AND omega-6=9 g (18 g total) and amounts_wallach_only returned 'all 40 numeric coverage target(s) trace ... (R2 clean)'. Every existing gate passed while the number was double what Wallach wrote. chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
     ),
     Invariant(
         name="pdm_goal_wallach_sourced",

@@ -34,7 +34,7 @@ The other AI asserted: *"He does not appear (in publicly available transcripts, 
 
 ## The ruling: 9 grams per day, collective across omega-3 + omega-6
 
-**Dead Doctors Don't Lie, 3rd ed. (2011), lines 9107–9109** — verbatim:
+**Dead Doctors Don't Lie, 3rd ed. (2011), lines 9106–9109** (char_offset 609931, 184 chars, unique in the book) — verbatim:
 
 > "Essential fatty acids are a must and should be consumed at the rate of 3 percent of your total daily calorie consumption **or supplemented at the rate of 9 grams per day in capsule form.**"
 

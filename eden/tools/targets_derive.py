@@ -120,14 +120,57 @@ def _book_display(books_meta: dict, book_id: str) -> str:
     return f"{b['title']} (Wallach{', ' + str(yr) if yr else ''})"
 
 
+def _collective_doses(claims: list) -> dict:
+    """slug -> the COLLECTIVE dose record covering it (one shared budget, not a per-slug amount).
+
+    THE BUG THIS EXISTS TO PREVENT (proven, 2026-07-15). Wallach states ONE amount for a
+    CATEGORY: "Essential fatty acids ... supplemented at the rate of 9 grams per day in
+    capsule form" (DDDL 3e 2011, WAL-CLM-DDDL-000115). That claim maps BOTH omega-3 and
+    omega-6, because his EFAs ARE those two ("only two (linoleic and linolenic) are
+    designated as Essential Fatty Acids"). Fanned out per-slug by _maintenance_doses, one
+    9 g claim posts 9 g to omega-3 AND 9 g to omega-6 -- an 18 g board target from a 9 g
+    source. amounts_wallach_only certifies that GREEN: both targets trace to a real sealed
+    Wallach claim and both recompute exactly from the documented chain, so R2 -- which
+    audits each essential in isolation -- is blind to it by construction.
+
+    THE MARKER IS A FACT ABOUT THE CLAIM, NOT A MODELLING FLAG: dose.collective_group
+    records that Wallach's amount applies to the named group AS A WHOLE. Contrast the
+    cobalt/vitamin-b12 dose (WAL-CLM-IMMORT-000084, "250-400 mcg"), which maps two slugs
+    because ONE substance carries two names -- that one is NOT collective and still fans.
+    Hence an explicit marker rather than "any dose mapping >1 essential".
+
+    The shared budget is NOT a per-essential target and never becomes one here; it is
+    projected into its own group artifact (the pdm-coverage-data.json shape), whose goal
+    carries its own independently-recomputing R2 gate. Enforced by
+    collective_doses_not_fanned -- a mechanism ships with its gate (R7).
+    """
+    out = {}
+    for c in claims:
+        if c.get("kind") != "dose":
+            continue
+        dz = c.get("dose") or {}
+        group = dz.get("collective_group")
+        if not group or dz.get("amount") is None:
+            continue
+        for slug in c.get("essentials", []):
+            out[slug] = {"id": c["id"], "group": group, "book": c["locator"]["book"]}
+    return out
+
+
 def _maintenance_doses(claims: list, books_meta: dict) -> dict:
-    """slug -> list of maintenance dose records (parsed range + year + form + per_bw)."""
+    """slug -> list of maintenance dose records (parsed range + year + form + per_bw).
+
+    Collective doses (dose.collective_group) are EXCLUDED: one shared budget must never be
+    fanned into an independent per-essential number. See _collective_doses.
+    """
     out = collections.defaultdict(list)
     for c in claims:
         if c.get("kind") != "dose":
             continue
         dz = c.get("dose") or {}
         if dz.get("amount") is None:
+            continue
+        if dz.get("collective_group"):
             continue
         pr = _cond_priority(dz.get("for_condition"))
         if pr is None:
@@ -175,6 +218,7 @@ def build_data() -> dict:
     books_meta = {b["book_id"]: b for b in
                   json.loads((CORPUS / "books-meta.json").read_text(encoding="utf-8"))["books"]}
     doses = _maintenance_doses(claims, books_meta)
+    collective = _collective_doses(claims)
 
     essentials = []
     for e in canon:
@@ -232,6 +276,20 @@ def build_data() -> dict:
                     "low": d["low"], "high": d["high"], "unit": d["unit"],
                     "source": _book_display(books_meta, d["book"]),
                 } for d in others]
+        elif slug in collective:
+            # Wallach DID state an amount, but for the GROUP as a whole — so this
+            # essential has no number of its own and the honest-gap wording below would
+            # be a lie. NO numeric `low` is emitted here ON PURPOSE: the shared budget
+            # lives in the group artifact under its own R2 gate, and a number posted here
+            # would be the 18 g fan-out this branch exists to prevent.
+            cg = collective[slug]
+            target = {
+                "kind": "wallach_collective",
+                "collective_group": cg["group"],
+                "source_claim_id": cg["id"],
+                "source": f"Wallach — {_book_display(books_meta, cg['book'])} — one shared amount "
+                          f"for the {cg['group'].replace('-', ' ')} group, not a per-essential amount",
+            }
         else:
             target = {
                 "kind": e.get("coverage_kind", "unspecified"),
