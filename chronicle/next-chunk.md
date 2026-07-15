@@ -48,7 +48,48 @@ Also settled: **MANAGE and ADD ITEM both DIE**, replaced by one `FULL REGIMEN �
 fine, and I agree this is better."* An ADD ITEM that navigates instead of adding is the PROFILE
 lesson inverted — a label is a promise.
 
-### ★★★ NEXT ORDER — blueprint §12, sequence 2: **P1 + P2 (the pillar passes)**
+### ★★★ NEXT ORDER (updated 2026-07-15 ~19:00 CDT — P1/P2 DEAD, P4/P5 DONE)
+
+**Done this session:** blueprint signed off · D6→D7 · D5→D8 · cracks 1/2/3 · P4 · P5.
+**~~P1~~ ~~P2~~ DROPPED** (see the D7/D8 rows above — no pillar is touched by any of this work).
+
+1. **COBALT → shares B12's verdict.** ★ **DECIDED by Luneth 2026-07-15, NOT IMPLEMENTED.**
+   Cobalt carries a **400 mcg ELEMENTAL target that Wallach's own text denies**
+   (`immortality.txt:5882-5884`: *"the requirement is for a cobalt complex known as
+   cyanocobalamine or vitamin B12. A pure cobalt requirement is only found in some bacteria
+   and algae"*; only ruminants use elemental cobalt). The "250–400 mcg" in
+   `WAL-CLM-IMMORT-000084` is a **B12 dose** — the RDA beside it ("3 to 4 mcg") is the B12
+   RDA; there is no cobalt RDA. B12 already has its own target (`WAL-CLM-EPIGEN-000117`).
+   - ★ **THIS OVERTURNS A DOCUMENTED DECISION.** `eden/tools/targets_derive.py:137-140`
+     excluded cobalt from `collective_group`, reasoning it *"maps two slugs because ONE
+     substance carries two names."* **That premise is FALSE** — cobalt is an ELEMENT inside a
+     MOLECULE (*"a single cobalt atom is the central metal component of vitamin B12"*), so
+     400 mcg of B12 carries ~4% of that as cobalt, not 400 mcg. **Correct that docstring in
+     the same patch** or the next session re-derives the old answer from it.
+   - **Needs:** a sealed-pillar edit (Luneth's seal sign-off) + the EFA-pattern group
+     machinery (`efa_coverage_derive.py` → `efa-coverage-data.json` → `coverage.ts:732` is
+     the template) + a gate. **Its own chunk — do not start it at the end of a session.**
+   - **Fails safe meanwhile:** the target is ~23× too high, so the field UNDER-states cobalt.
+     Never falsely green.
+2. **P3 — slots in state.** The last blueprint prerequisite. Does NOT block the demo.
+3. **THE DEMO** — the daily-protocol rail at 0 / few / many + 1-click add/remove + dose edit.
+   Nothing blocks it (the demo is a standalone prototype in `temporary/`, sharing no code
+   with the live app). **Luneth's visual sign-off is the gate.**
+4. **Refresh persistence** (the name) — small live work, §31 `saveUserProfile`.
+
+### ★★★★ NEW: `chronicle/essential-special-cases.md` — THE CLARITY-PASS REGISTRY
+**Luneth, 2026-07-15: "any special cases NEED to be visible and easily understood by the user
+when they click into an element view — doesn't need to be done now but these 'special cases'
+need to be logged and remembered so we can apply them in a later 'clarity pass'."**
+That file is the DENOMINATOR for that pass — 8 registered behaviours (phosphorus' zero target ·
+H·C·N·O fiat · omega-9's zero claims · the EFA shared budget · cobalt · the PDM 34 · silver+tin ·
+the 53 honest gaps), each with its source and what the user must be told. **Only 38 of 91
+essentials behave "normally"; the page explains NONE of the rest today.** ★ Rule 1 of that file:
+**a new special case lands there in the SAME CHUNK that creates it** — one that exists in code
+but not in the list is invisible to the pass by construction. `fatty-acid-clarity-data.json` is
+the existing prototype for the content store.
+
+### ~~OLD NEXT ORDER — superseded by the list above~~
 - **P1 — mine `directions` + maxima from the 245 images in `temporary/labels/`** → Products pillar →
   re-seal. **NEEDS LUNETH'S SEAL SIGN-OFF.** Why it blocks: `directions` (the per-day count) exists
   for **22 of 221 components (10%)**; `serving_size` is 221/221 but that is only the UNIT. Without
