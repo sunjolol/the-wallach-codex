@@ -38,9 +38,49 @@ describe('recommender: cost-per-nutrient ranking', () => {
     }
   });
 
-  it('switches to saturating adequacy when a target is supplied (capped at 1)', () => {
+  it('IGNORES a target passed without its unit — fail-safe, never a guessed compare', () => {
+    // 2026-07-15: the unit is REQUIRED for target-based adequacy. Omitting it used to mean
+    // "assume the units match", which is exactly how boron divided mcg by mg. Now it falls
+    // back to the potency proxy and SAYS SO via adequacyIsTarget:false.
+    const ranked = rankSources(SLUG, 55);
+    for (const r of ranked) {
+      expect(r.adequacyIsTarget).toBe(false);
+    }
+  });
+
+  it('reconciles units before dividing — a mcg target vs mcg candidates', () => {
+    const target = 55;
+    const ranked = rankSources(SLUG, target, 'mcg');
+    for (const r of ranked) {
+      expect(r.adequacyIsTarget).toBe(true);
+      expect(r.adequacy).toBeCloseTo(Math.min(1, r.amount / target), 10);
+    }
+  });
+
+  it('a mg-stated target of the SAME magnitude scales 1000x — the boron/silver bug, pinned', () => {
+    // 0.055 mg === 55 mcg. Both must yield IDENTICAL adequacy. Pre-fix the mg form divided
+    // mcg amounts by 0.055 and saturated everything at 1.0 — boron's exact failure.
+    const inMcg = rankSources(SLUG, 55, 'mcg');
+    const inMg = rankSources(SLUG, 0.055, 'mg');
+    expect(inMg.length).toBe(inMcg.length);
+    for (let i = 0; i < inMcg.length; i++) {
+      expect(inMg[i]!.productId).toBe(inMcg[i]!.productId);
+      expect(inMg[i]!.adequacy).toBeCloseTo(inMcg[i]!.adequacy, 10);
+    }
+    // and the bug's signature — NOT everything pinned to 1.0
+    expect(inMg.some(r => r.adequacy < 1)).toBe(true);
+  });
+
+  it('refuses a cross-family (IU vs mass) target rather than compare nonsense', () => {
+    const ranked = rankSources(SLUG, 55, 'IU');
+    for (const r of ranked) {
+      expect(r.adequacyIsTarget).toBe(false);
+    }
+  });
+
+  it('switches to saturating adequacy when a target + unit is supplied (capped at 1)', () => {
     const target = 55; // mcg — below several sources, so some saturate at 1
-    const ranked = rankSources(SLUG, target);
+    const ranked = rankSources(SLUG, target, 'mcg');
     let sawSaturated = false;
     for (const r of ranked) {
       expect(r.adequacyIsTarget).toBe(true);

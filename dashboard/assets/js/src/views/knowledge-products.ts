@@ -302,6 +302,23 @@ function targetLowOf(target: unknown): number | null {
 }
 
 /**
+ * `target.low`'s unit. MUST travel with the number into rankSources: the Wallach target's
+ * unit and the Youngevity candidates' unit genuinely disagree on boron (mg vs mcg) and
+ * silver (mcg vs mg), and passing the amount alone made the ranker divide mg by mcg.
+ * Returning null is safe by construction — rankSources then falls back to the potency
+ * proxy rather than guessing the units match.
+ */
+function targetUnitOf(target: unknown): string | null {
+  if (target !== null && typeof target === 'object' && 'unit' in target) {
+    const unit = (target as { unit?: unknown }).unit;
+    if (typeof unit === 'string' && unit.length > 0) {
+      return unit;
+    }
+  }
+  return null;
+}
+
+/**
  * The vault products that deliver essential `key`, RANKED best-first by the match score
  * (state/recommender.rankSources), with each product's display name joined in. `key` is
  * the deep-dive layout name; its canon slug + any Wallach target come from getTargets.
@@ -311,7 +328,7 @@ export function rankedSourcesForEssential(key: string): RankedSourceRow[] {
   if (target === undefined) {
     return [];
   }
-  return rankSources(target.slug, targetLowOf(target.target))
+  return rankSources(target.slug, targetLowOf(target.target), targetUnitOf(target.target))
     .map(r => ({ ...r, name: getProduct(r.productId)?.name ?? r.productId }));
 }
 

@@ -14,9 +14,11 @@
  *
  * The KEYSTONE is SATURATING ADEQUACY — min(1, delivered/target) — so "best source"
  * means *enough* of the nutrient, not *most* of it (full credit at the target, ~zero
- * reward beyond → no over-dose bias). That needs a Wallach dose target, which is an
- * honest gap for every essential until corpus dose-mining (blueprint task b). Until a
- * target is supplied, the keystone falls back to amount-POTENCY (delivered / best-in-set):
+ * reward beyond → no over-dose bias). That needs a Wallach dose target. CORRECTED
+ * 2026-07-15: this read "an honest gap for every essential until corpus dose-mining",
+ * which is STALE — 34 essentials now carry a numeric target and views/knowledge-products.ts
+ * passes it. The gap is real but PARTIAL. Where no target exists, the keystone falls back
+ * to amount-POTENCY (delivered / best-in-set):
  * an honest "more is provisionally better" proxy that ranks by composition alone. §00.A:
  * potency is a composition ratio, NEVER a coverage verdict — it does not claim "enough".
  *
@@ -28,6 +30,7 @@
 
 import recommenderData from '../../../data/product-recommender-data.json';
 import { RecommenderDataSchema } from '../core/schemas/index.js';
+import { toMg } from '../core/units.js';
 
 // ─── Weights + curves (the tuner) ──────────────────────────────────────────
 const W_ADEQ = 0.6; // keystone: adequacy (or the potency proxy until targets exist)
@@ -69,19 +72,43 @@ function breadthScore(n: number): number {
 /**
  * Rank the products that deliver `slug` (a canon essential slug), best first.
  *
- * @param slug      Canon essential slug (the recommender artifact's key).
- * @param targetLow The Wallach maintenance amount for the essential in its canonical unit,
- *                  when one has been mined. Given it, the keystone is saturating adequacy;
- *                  pass null (today's honest gap) to fall back to the amount-potency proxy.
+ * @param slug       Canon essential slug (the recommender artifact's key).
+ * @param targetLow  The Wallach maintenance amount, when one has been mined. Given it (WITH
+ *                   its unit), the keystone is saturating adequacy; pass null (an honest gap
+ *                   for the essentials with no Wallach number) for the amount-potency proxy.
+ * @param targetUnit `targetLow`'s unit — REQUIRED to get target-based adequacy.
+ *
+ *   ★ WHY targetUnit IS NOT OPTIONAL-BY-CONVENIENCE (2026-07-15). The target's unit comes
+ *   from Wallach; the candidates' unit comes from Youngevity labels. THEY DISAGREE: measured
+ *   across the 34 essentials carrying both, 2 mismatch — boron (target mg, candidates mcg)
+ *   and silver (target mcg, candidates mg). This function used to divide the two raw numbers,
+ *   so boron's adequacy saturated at 1.0 for EVERY candidate (truth ≈0.16–0.54) and silver's
+ *   read ~0.0001 (truth ≈0.10). Adequacy is the 0.6 keystone, so the ranking silently
+ *   collapsed to breadth+price on exactly those two.
+ *   FAIL-SAFE, NOT FAIL-QUIET: a target passed WITHOUT its unit cannot be reconciled, so it
+ *   falls back to the proxy and reports `adequacyIsTarget: false` rather than guessing that
+ *   the units happen to match. Same for an IU/mg family clash. Wrong-but-plausible is the
+ *   failure mode this whole codebase exists to refuse.
  */
-export function rankSources(slug: string, targetLow: number | null = null): RankedSource[] {
+export function rankSources(
+  slug: string,
+  targetLow: number | null = null,
+  targetUnit: string | null = null,
+): RankedSource[] {
   const entry = DATA.essentials[slug];
   if (entry === undefined || entry.candidates.length === 0) {
     return [];
   }
   const { unit, candidates } = entry;
   const maxAmount = candidates.reduce((m, c) => (c.amount > m ? c.amount : m), 0);
-  const useTarget = targetLow !== null && targetLow > 0;
+  // A target is only usable if it is positive AND its unit reconciles with the candidates'
+  // into the same family. Probe with amount 1: toMg reports the FAMILY ('mg' | 'iu'), and a
+  // cross-family compare (an IU target vs an mg candidate) is meaningless, not merely scaled.
+  const tgtProbe = (targetLow !== null && targetLow > 0 && targetUnit !== null)
+    ? toMg(1, targetUnit, slug)
+    : null;
+  const candProbe = toMg(1, unit, slug);
+  const useTarget = tgtProbe !== null && tgtProbe.u === candProbe.u;
 
   // Value = cost per unit delivered (price/amount), lower is better, min-max inverted to
   // 0..1 across the priced candidates. A low-weight BAND tuner — it nudges near-ties, it
@@ -95,8 +122,11 @@ export function rankSources(slug: string, targetLow: number | null = null): Rank
   const maxCpu = cpus.length > 0 ? Math.max(...cpus) : 0;
 
   const ranked: RankedSource[] = candidates.map((c) => {
-    const adequacy = (targetLow !== null && targetLow > 0)
-      ? Math.min(1, c.amount / targetLow)
+    // Reconcile BOTH sides into the common family before dividing — never raw/raw.
+    // state/coverage.ts has always done this (`toMg(lowRaw, target.unit)`); this ranker
+    // did not, 20 lines away, which is what produced the boron/silver corruption.
+    const adequacy = useTarget
+      ? Math.min(1, toMg(c.amount, unit, slug).v / toMg(targetLow as number, targetUnit as string, slug).v)
       : (maxAmount > 0 ? c.amount / maxAmount : 0);
     const bScore = breadthScore(c.breadth);
     const cpu = cpuOf(c.price, c.amount);
