@@ -1,70 +1,131 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~07:00 CDT, overnight audit-fix session)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~16:30 CDT, element-doctrine session)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
 > Board **69/69** — but read the next line before you repeat that number to anyone.
 >
-> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** `genesis` now prints the board as
+> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** `genesis` prints the board as
 > `69/69 · 18 external / 17 consistency / 32 structural / 2 meta`. Only the **external** gates
 > check anything outside our own files. The rest prove our files agree with each other. **A green
 > board means NOTHING DRIFTED. It does not mean anything is RIGHT.** Do not report the total to
 > Luneth as a statement about Wallach — that is exactly how this project spent three weeks
 > confidently wrong, and Claude did it again at the top of the 2026-07-15 session.
 
-## ★★★★ START HERE — what Luneth is waiting on
+## ★★★★ START HERE — the element system is SEALED. Do not re-open it.
 
-He went to sleep at ~02:00 CDT 2026-07-15 with: *"I want every single issue you discovered fixed
-(as in not just things removed and call it a day, but fix the issues they caused in the first
-place)"*, after answering four scoping questions. **The audit half is DONE and pushed** (6 commits,
-`aa894aea` → `325b30b2`). **What remains is the VISUAL half he deliberately reserved for his own
-eyes.**
+**Luneth's words, 2026-07-15: "close out the essentials doctrine cleanly and FINALLY — NEVER to be
+touched again, I want no more mishaps with the element system once we seal it for good."**
 
-1. **SHOW HIM THE TWO FLAGGED ITEMS FIRST** (both in `## ★ NEEDS LUNETH'S CALL` below). One is a
-   ratchet loosening made while he slept. He may want it reverted.
-2. **THEN the Coverage mineral REGROUP — his explicit decision, not yours to re-open.** He chose
-   *"Regroup by dose structure"*: the 33 that share one PDM dose vs the 27 that carry their own
-   Wallach doses. This replaces the invented FOUNDATIONAL / MAJOR TRACE / RARE TRACE tiers.
-   **NOT BUILT.** It is the biggest visual change on the board and needs his eyes.
-3. **His 9 original Coverage notes** are still open except the two non-visual ones (done — see
-   below). Re-read them in the 2026-07-15 transcript; they are his words, not a summary.
+The 60 minerals are now split by **what Wallach tells you to DO**, never by importance:
 
-## ★★★★ THE TIERS ARE AN INVENTION — settled, do not re-litigate
+| | group | n | rule |
+|---|---|---|---|
+| A | **FOUNDATIONAL** | 5 | H · C · N · O · **P** — nothing to take |
+| B | **INDIVIDUALLY DOSED** | 21 | carries a sealed Wallach dose claim |
+| C | **PLANT DERIVED** | 34 | no individual amount; ONE shared verdict |
 
-**Wallach never enumerates them. This is proven from two independent directions.**
+Ordering: FOUNDATIONAL atomic (H C N O P); B + C **A→Z by symbol** (Luneth's UX call — the tile
+shows the symbol big). Names are **his**, chosen 2026-07-15 after he rejected three proposals.
 
-- He names three categories **exactly once** in the entire corpus (`immortality.txt:3760-3766`):
-  *"There are three major categories of minerals known in human and animal nutrition: Major
-  minerals / Trace minerals / Rare earths"* — then a chapter break. He never refers to the triad
-  again and **never assigns a single element to any of them.**
-- The words **"foundational", "major trace", "rare trace" appear ZERO times** in all 7 books, in
-  any sense.
-- **All four of his A-Z element sections are explicitly FLAT**, in his own words: *"presented in
-  alphabetical order according to the chemical symbols of each"* (`immortality:4350`, `dddl:6928`,
-  `rare-earths:21696`, `epigenetics:21637`). In *Rare Earths* a heading literally reads "THE
-  PERIODIC TABLE OF: METALS, MINERALS, TRACE MINERALS & RARE EARTHS" — over a flat list.
-- **His own authority graphic prints all 60 minerals FLAT, A-Z, three columns of 20, no grouping.**
-- His categories are **not even mutually exclusive**: Lanthanum + Yttrium appear in his trace list
-  (`immortality:10970-71`) AND his rare-earths enumeration (`:10983-94`), ~20 lines apart.
-- **Where ours came from:** `dashboard/components/workspace-coverage-v3.2-PROPOSAL.html` — a UI
-  design mockup — → `views/coverage.ts` → `coverage-layout-data.json` → the canon bootstrap
-  2026-06-24, three days later. The canon's own `provenance` field says so. The tell: `rare_trace`
-  order is alphabetical **by atomic symbol** (Ag, Al, As, Au…), which is how a list is lifted off a
-  rendered table.
+**NEXT SESSION = the Coverage demo work he deferred for session budget**, in his order:
+sticky goal strip · name-input hardening · refresh persistence (no re-prompt for a named user) ·
+click-to-rename in the profile · the topbar treatment (blue + glowing dot + "Codex V4.00") ·
+**Unbounded** on "Ask Wallach" · the chrome reword. Reference: `temporary/coverage-D-personalized.html`.
 
-**The skeleton — not the canon — is what decides Silver is "rare trace"**
-(`coverage-layout-skeleton.json:102`). `canon.subtype` is **proven-dead data**: flipping three
-subtypes yields a byte-identical artifact. `coverage_layout_derive.py` never reads it. Deleting it
-is a CANON write, which Luneth reserved — **staged for him, not done.**
+## ★★★★ THE TIERS WERE AN INVENTION — settled, BUILT OUT, do not re-litigate
 
-## ★ NEEDS LUNETH'S CALL (2 items, both flagged loudly)
+The old FOUNDATIONAL / MAJOR TRACE / RARE TRACE tiers came from
+`dashboard/components/workspace-coverage-v3.2-PROPOSAL.html` — a **UI mockup** — and the canon's own
+`provenance` field says so: *"Bootstrapped 2026-06-24 from coverage-layout-data.json"*. The tell:
+`rare_trace` order was alphabetical **by atomic symbol** (Ag, Al, As, Au…), i.e. lifted off a
+rendered table. Those three phrases appear **ZERO times** in all 7 books (re-run de-hyphenated and
+line-break-bridged). **Gone as of `56145a4e`.**
 
-1. **A RATCHET LOOSENING.** `knip-baseline.json` says *"This list may only SHRINK"*; I appended one
-   entry (`state/profile.ts|saveUserProfile`) because the §31 name-writer has no caller until the
-   arrival/rename UI lands. Recorded in a `_ratchet_additions` block inside the baseline with the
-   three options I had. **He may reject it** — revert the key and drop `saveUserProfile` until its
-   UI exists.
+**★ THE AFFIRMATIVE KILL — better than an absence.** `hk.txt:7312-7314`: *"The concentration of
+trace elements in tissue or requirement levels does not represent their relative importance as an
+essential nutrient."* A dose-ranked hierarchy asserts exactly what he denies. Cite THIS, not the
+zero-hit grep, if anyone reopens it.
+
+**★ MEMBERSHIP IS BOOK-ANCHORED (new, 2026-07-15).** Our 60 diff to **ZERO** against Wallach's own
+**"Table 12-5. The 60 Essential Elements, Metals and Minerals"** (`rare-earths-forbidden-cures.txt:35469`)
+— three columns of twenty, flat, alphabetical. Corroborated by a second independent 60-list at
+`epigenetics.txt:19570`. Nobody had ever checked the table against a book table; it passed clean.
+
+**★ CORRECTIONS the adversarial audit forced on Claude's OWN claims — do not repeat the old ones:**
+- ✗ "He names the categories exactly once." **FALSE** — the triad appears ≥6× (`rare-earths:2030, 20781`,
+  `dddl:2057`, `epigenetics:15222, 19572, 21536`). Only the FORMAL enumeration is unique to `immortality:3760`.
+- ✗ "He never assigns a single element to any of them." **FALSE** — *Immortality*'s A-Z systematically
+  header-tags rare earths (`Ce-Cerium, a rare earth, is found in`, `:5760` … ytterbium `:10233`) =
+  **15 of our 60**. He also pointedly calls scandium *"a rare element"* (`:9514`) — NOT a rare earth,
+  deviating from standard chemistry on purpose.
+- ✗ "Where he enumerates, the basis is never nutritional." **FALSE** — `epigenetics:19570` and
+  *Let's Play Doctor*'s FIG. 8-1 both are. **But both are FLAT and alphabetical**, which is what
+  rescues the headline.
+- ★ **"Rare earth" is a TAG on 15 tiles, never a group name.** 19 of the 34 in PLANT DERIVED are not
+  rare earths by his own tagging. Naming that group "rare earths" would repeat the original sin one
+  layer down. **Do not rename it back** — the group is defined by having NO INDIVIDUAL DOSE.
+
+**⚠ LIVE LANDMINE — `canon.subtype` still says `foundational` on 11 elements** while the page's
+FOUNDATIONAL is 5. It is **proven-dead data** (nothing reads it; `coverage_layout_derive.py` never
+touches it), so no gate can see the contradiction. Deleting it is a CANON write = Luneth's signature.
+**Offered 2026-07-15; he did not answer. Re-offer it, do not drift into it.**
+
+## ★★★★ HOW PLANT DERIVED LIGHTS — the keystone. Never decompose the bottle.
+
+**The 924 mg goal was NEVER a sum of the 34 elements.** `WAL-CLM-EPIGEN-000089` doses the **BOTTLE**,
+in fluid ounces — verbatim *"Liquid Plant Derived Coloidal Minerals One Ounce/ 100 pounds/day PPM"*.
+The 600 is only **Majestic Earth's concentration** (mg solids per fl oz): 1 fl oz × 600 × (154÷100 lb)
+= **924 mg**. §00.A-clean by construction — Wallach supplies the dose, the Youngevity label supplies
+only the concentration (composition, never a target).
+
+**So PDM products containing all 60 + extras breaks NOTHING.** He doses the bottle; we measure the
+bottle. **No per-element derivation is needed, possible, or wanted — permanently.** If a future session
+starts trying to derive per-element mg from a PDM label, it has misunderstood this paragraph.
+
+**Two channels (`81fac90d`), gated by `tools/render_probe_pdm_presence.js` (12 checks, 3 worlds):**
+1. **The group meter owns "covered"** — Σ(vehicle mg) ÷ 924. A 25 mg third-party product = 2.7% = gap,
+   **not** green. It is a RATIO, not a flag — present/not-present for the vehicle would be a REGRESSION
+   (it throws away the only quantified statement we have). Luneth was tempted by it; he was talked out
+   of it on this reasoning.
+2. **The presence floor never reaches "covered"** — a scanned item naming ONE of the 34 ("Cerium 2 mg")
+   lifts that tile to `present` only. Wallach states no individual amount, so nothing can be measured
+   as met (§00.A). It lifts **only the empty state**; any measured verdict outranks it.
+   ★ Probe **case A is a real negative control** — it re-runs the pre-fix world and asserts CERIUM === ''.
+
+**Youngevity is preferred STRUCTURALLY, not by favouritism** — his dose is in FLUID OUNCES, so
+converting it needs a product with a known mg/fl oz. A competitor listing all 34 exactly would light 34
+tiles `present` and move the meter zero: the honest answer, not a bug. `lets-play-doctor:3793`:
+*"The most efficient way to get mineral supplements is in the plant derived colloidal liquid form."*
+
+## ★★★★ PHOSPHORUS — settled, do not re-open
+
+In FOUNDATIONAL, green. Wallach's base-line gives it **True Supplement Need 0.0** — the only nutrient
+in the whole table with no recommended amount (`WAL-CLM-LETS-000061`) — because the diet already
+floods you with it (*"rich in phosphorous… found in just about everything we eat"*, `dddl:7408`).
+
+**★ The render fix is NOT fiat and that is the point.** Phosphorus is deliberately NOT in
+`FOUNDATIONAL_PRESENT_SLUGS` (whose 4 members are forced covered on Luneth's say-so, cited "(Luneth)").
+`classify()` returns covered when `target.low === 0` — a zero target is MET by taking none. So
+phosphorus is the ONE foundational element whose green traces to a sealed Wallach claim. Precision
+checked: it is the only essential of 91 with `low == 0`; 53 carry no `low` key (undefined !== 0) and
+keep the old pending branch.
+
+**★ FIG. 8-1's columns are `Nutrient | RDA | True Supplement Need | 30-Day Pharmacologic`** — a header
+OCR-wrapped across `lets-play-doctor:3755-3756`, which is why it went unread for weeks. **The "800 mg"
+beside phosphorus is the GOVERNMENT RDA he argues against — NEVER a Wallach number.** Proven 3 ways:
+four rows carry `?` in column 1; column 2 sits BELOW column 1 twice (vitamin D 275 vs 400; phosphorus
+0 vs 800); and `3682-3685` says RDA-level supplements *"will not prevent serious disease"*.
+**No RDA ever reached a target** — all 33 fig-8-1 claims took column 2, verified row by row. All 33
+summaries now carry a clause naming the column order (`e0774559`, kv=335). Luneth offered deletion;
+labelling was kept because the them-vs-Wallach contrast IS his reason for capturing RDAs.
+
+## ★ NEEDS LUNETH'S CALL (1 open)
+
+1. ~~**A RATCHET LOOSENING** (`knip-baseline.json`, `state/profile.ts|saveUserProfile`)~~ — ✓ **APPROVED
+   2026-07-15**: *"it looks like a consistency issue that would only help us, I see no reason not to
+   approve it."* Retire the `_ratchet_additions` key when the arrival/rename UI gives it a caller.
 2. **`design-system.golden.sha256` is computed over RAW CRLF bytes**, while every corpus golden is
-   LF-normalized/clone-stable per `corpus_seal.py`. So `design_system_hash_integrity` **would RED on
-   a fresh clone.** Fixing it means re-sealing a sealed canonical = his signature. Not touched.
+   LF-normalized/clone-stable per `corpus_seal.py`. So `design_system_hash_integrity` **would RED on a
+   fresh clone.** Fixing it means re-sealing a sealed canonical = his signature. **Still not touched.**
 
 ## ★★★ WHAT LANDED OVERNIGHT (6 commits, all pushed)
 
