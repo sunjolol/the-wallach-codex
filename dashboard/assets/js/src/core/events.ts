@@ -29,7 +29,8 @@ export type EventName =
   | 'eden:hash-mismatch'
   | 'storage:pressure-warn'
   | 'rail:navigate'
-  | 'log:entry-added';
+  | 'log:entry-added'
+  | 'profile:changed';
 
 /** Payload shape per event name. Add a case here when adding an event. */
 export interface EventPayloads {
@@ -43,6 +44,10 @@ export interface EventPayloads {
   'storage:pressure-warn': { bytesUsed: number; bytesLimit: number };
   'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' | 'journey' };
   'log:entry-added': { id: string; kind: string };
+  /** The user named themselves, or chose to browse. Fired by the state/profile.ts
+   *  chokepoint; the name is painted in three slots (topbar · profile tab · avatar
+   *  initial), so a silent write would leave two of them stale. */
+  'profile:changed': { name: string | null; browsing: boolean };
 }
 
 export type EventHandler<E extends EventName> = (payload: EventPayloads[E]) => void;

@@ -19,6 +19,7 @@ import { installRecomputeTrigger } from './state/coverage.js';
 import * as goalsState from './state/goals.js';
 import * as journeyState from './state/journey.js';
 import * as ocrState from './state/ocr.js';
+import * as profileState from './state/profile.js';
 import * as regimenState from './state/regimen.js';
 import * as scannerState from './state/scanner.js';
 
@@ -336,6 +337,7 @@ function bootstrap(): void {
 
   wireRail();
   wireProfileChip();
+  wireProfileIdentity();
   wireTopbarSearch();
   mountDrawers();
   wireDrawerKeys();
@@ -348,6 +350,40 @@ function bootstrap(): void {
    */
   setTimeout(() => navigateTo('coverage'), 0);
 }
+
+
+/**
+ * Paint the rail's identity slot from persisted state.
+ *
+ * The shell used to hardcode the string "Luneth" (and the avatar "L") straight into
+ * dashboard.html. That is a value living in the markup where nothing can reach it: it
+ * cannot reflect a user's choice, it cannot be re-rendered, and it is wrong for every
+ * user who is not Luneth. Luneth 2026-07-15: the browsing default is "You" on the profile
+ * tab, "Codex" in the top-left brand slot -- both derived in ONE place
+ * (state/profile.ts::displayName) so the two slots cannot drift apart.
+ *
+ * Subscribes to `profile:changed` so a later name change repaints without the caller
+ * having to remember to (§31: the cascade is the discipline).
+ */
+function wireProfileIdentity(): void {
+  const paint = (): void => {
+    const p = profileState.loadUserProfile();
+    const nameEl = document.getElementById('railProfileName');
+    const avEl = document.getElementById('railAvatar');
+    if (nameEl !== null) {
+      // textContent, never innerHTML: the name is the app's only free-text field, and
+      // escape-by-default is what actually stops script injection here (the Zod schema
+      // is the second layer, not the first). See core/schemas/profile.ts.
+      nameEl.textContent = profileState.displayName(p, 'profile');
+    }
+    if (avEl !== null) {
+      avEl.textContent = profileState.displayInitial(p);
+    }
+  };
+  paint();
+  events.on('profile:changed', paint);
+}
+
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', bootstrap);
