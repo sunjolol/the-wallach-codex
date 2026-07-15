@@ -25,6 +25,17 @@ UNQUOTED_MAP = "const PAGES = { calcium: { name: 'Calcium' }, osteoporosis: { na
 QUOTED_MAP = "const PAGES = { 'calcium': { name: 'Calcium' } };"
 EQ_BRANCH = "function hero(slug){ if (slug === 'calcium') return special(); return generic(slug); }"
 
+# HYPHENATED + DIGIT-LEADING POISON (added 2026-07-15, R9 -- the cases that caught the gate asleep).
+# Until today BOTH regexes capped at [A-Za-z0-9_] with no hyphen, so 208 of the 947 real entity ids
+# (22%) were invisible: `slug === 'omega-9'` passed GREEN while `slug === 'calcium'` reddened. This
+# test never noticed because EVERY exemplar above -- calcium, osteoporosis -- is in the visible set.
+# A negative test whose poison is drawn only from the cases the gate can already see proves nothing
+# about the ones it cannot. Two ids also START WITH A DIGIT, which a letter-only opener would still
+# have missed, so DIGIT_MAP is not redundant with EQ_HYPHEN.
+EQ_HYPHEN = "function hero(slug){ if (slug === 'omega-9') return special(); return generic(slug); }"
+HYPHEN_MAP = "const PAGES = { 'omega-9': { name: 'Omega-9' } };"
+DIGIT_MAP = "const PAGES = { '18-and-20-daily-super-blend': { name: 'Blend' } };"
+
 # clean: a pure projection -- no entity id appears as a literal key or branch
 CLEAN = ("function render(slug, data){ const rec = data[slug];\n"
          "  return `<h1>${rec.name}</h1>` + rec.claims.map(renderClaim).join(''); }")
@@ -54,6 +65,18 @@ def main():
     results.append(case("unquoted_map", UNQUOTED_MAP, expect_red=True))
     results.append(case("quoted_map", QUOTED_MAP, expect_red=True))
     results.append(case("eq_branch", EQ_BRANCH, expect_red=True))
+    # the hyphen/digit blind spot, closed 2026-07-15
+    results.append(case("eq_hyphen", EQ_HYPHEN, expect_red=True))
+    results.append(case("hyphen_map", HYPHEN_MAP, expect_red=True))
+    results.append(case("digit_map", DIGIT_MAP, expect_red=True))
+    # SWEEP: no hyphenated id may be a free pass ever again. Asserts the WHOLE class,
+    # not one exemplar -- a single sample is what let 208 ids through for weeks.
+    hy = sorted(i for i in IDS if "-" in i)
+    missed = [i for i in hy
+              if impl([("v.ts", f"function r(s){{ if (s === '{i}') return x(); return p(s); }}")], IDS)[0]]
+    print(f"  [sweep] all {len(hy)} hyphenated ids redden -> {len(hy) - len(missed)}/{len(hy)}"
+          + (f" MISSED: {missed[:5]}" if missed else ""))
+    results.append(not missed)
     passed = all(results)
     print(f"\n{'ALL PASS' if passed else 'FAILED'} ({sum(results)}/{len(results)})")
     return 0 if passed else 1

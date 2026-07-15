@@ -371,12 +371,26 @@ export function liveNutrients(item: RegimenItem): unknown[] {
   return vaultNutrientsByName().get(name) ?? snapshot;
 }
 
-/** Resolve an item's serving/dose scaling factor (override → item → label.servings → 1). */
+/**
+ * Resolve an item's serving/dose scaling factor: override → label.servings → 1.
+ *
+ * WHY THERE IS NO ITEM-LEVEL CANDIDATE (removed 2026-07-15): this read
+ * `(item as Record<string, unknown>)['scaling_factor']` between the two below,
+ * and it could NEVER fire. `RegimenItemSchema` is a plain `z.object()`
+ * (core/schemas/regimen.ts) — Zod STRIPS unknown keys — so an item-level
+ * `scaling_factor` is gone before readScale is ever called. Proven at runtime,
+ * not argued: parsing `{…, scaling_factor: 7}` yields `undefined` for it while
+ * `label.servings` survives, because `RegimenLabelSchema` alone is
+ * `.passthrough()`. The old JSDoc advertised that dead step as a working
+ * fallback ("override → item → label.servings"), which is why two probe
+ * attempts were silently eaten seeding `item.scaling_factor` and wondering why
+ * every dose graded identically. If an item-level factor is ever wanted, the
+ * schema must opt in first — do not re-add the read.
+ */
 function readScale(item: RegimenItem, overrides: OverridesMap): number {
   const ov = overrides[String(item.id)];
   const candidates: unknown[] = [
     ov?.['scaling_factor'],
-    (item as Record<string, unknown>)['scaling_factor'],
     (item.label as Record<string, unknown>)['servings'],
   ];
   for (const c of candidates) {

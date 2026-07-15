@@ -3956,8 +3956,18 @@ def _entity_render_is_projection_impl(files, entity_ids):
     the negative test. Closes the sub-10-element hole views_state_no_inline_data
     cannot see (a 2-key content map keyed by entity ids)."""
     files = list(files)
-    key_re = re.compile(r"""(?:[{,]|^)\s*['"]?([A-Za-z][A-Za-z0-9_]*)['"]?\s*:""", re.M)
-    eq_re = re.compile(r"""===\s*['"]([A-Za-z0-9_]+)['"]|['"]([A-Za-z0-9_]+)['"]\s*===""")
+    # HYPHENS + DIGIT-LEADING IDS ARE LOAD-BEARING (fixed 2026-07-15, R9).
+    # These classes were [A-Za-z][A-Za-z0-9_]* / [A-Za-z0-9_]+ -- no hyphen -- so
+    # 208 of the 947 real entity ids (22%) could NOT be matched: `slug === 'omega-9'`
+    # sailed through GREEN while `slug === 'calcium'` reddened. A per-entity branch on
+    # any hyphenated id was a free pass, i.e. the gate enforced R1 on 78% of its own
+    # surface and said nothing about the rest. The class must ALSO open with
+    # [A-Za-z0-9], not [A-Za-z]: two real ids start with a digit
+    # ('18-and-20-daily-super-blend', '3-0-rise-and-restore'), and a letter-only
+    # opener would still have missed exactly those. Not a false-positive risk: a
+    # capture only violates if it is IN entity_ids.
+    key_re = re.compile(r"""(?:[{,]|^)\s*['"]?([A-Za-z0-9][A-Za-z0-9_-]*)['"]?\s*:""", re.M)
+    eq_re = re.compile(r"""===\s*['"]([A-Za-z0-9_-]+)['"]|['"]([A-Za-z0-9_-]+)['"]\s*===""")
     viol = []
     for rel, text in files:
         src = _strip_ts_comments(text)
