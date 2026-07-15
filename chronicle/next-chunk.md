@@ -1,6 +1,8 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-14, Coverage-demo session wrap)
 
-> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses"). Board **64/64** green. **The live app was NOT touched this session — `dashboard/` + `eden/` are byte-identical to HEAD, verified.** All work is a demo under gitignored `temporary/`. **NEXT = Luneth's visual pass on `temporary/coverage-D-personalized.html`, then decide what ships to live.**
+> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses"). Board **64/64** green. **NEXT = omegas → Coverage-demo polish → integration** (Luneth's order — see START HERE).
+>
+> The Coverage redesign is a DEMO under gitignored `temporary/` and is NOT built live. The session shipped exactly ONE live change, explicitly authorised: the `goals[].total` purge (`886fb4a2`). Everything else in `dashboard/` + `eden/` is untouched.
 
 ## ★★★★ START HERE NEXT SESSION — Luneth's order, verbatim
 
