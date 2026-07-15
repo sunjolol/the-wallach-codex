@@ -26,7 +26,7 @@ for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modul
 }
 if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); process.exit(2); }
 
-const EFA_MG_PER_SOFTGEL = 707;   // ALA 300 + LA 103 + GLA 19 + EPA 171 + DHA 114 (oleic EXCLUDED)
+const OIL_MG_PER_SOFTGEL = 1000;  // Ultimate EFA Plus: 1 g of oil per softgel (label total_fat)
 const GOAL_MG = 9000;             // Wallach's 9 g, unit-changed
 
 // The dose multiplier MUST ride on label.servings. readScale (coverage.ts:374) tries
@@ -47,12 +47,13 @@ const SEED_MINERALS = { items: [
   item(9002, 'Plant Derived Minerals™', 1),
   item(9003, 'Majestic Earth® Mineral STX™', 1),
 ] };
-// One softgel = 707 mg = 7.9% of 9000 -> under the 30% partial floor -> 'gap'.
+// One softgel = 1000 mg = 11.1% of 9000 -> under the 30% partial floor -> 'gap'.
 const SEED_EFA_1 = { items: [item(9101, 'Ultimate EFA Plus™ - 90 soft gels', 1)] };
-// 6 softgels = 4242 mg = 47% -> 'partial' (the practitioner maintenance heuristic).
+// 6 softgels = 6000 mg = 66.7% -> 'partial'.
 const SEED_EFA_6 = { items: [item(9101, 'Ultimate EFA Plus™ - 90 soft gels', 6)] };
-// 13 softgels = 9191 mg >= 95% of 9000 -> 'covered' (what Wallach's number costs in softgels).
-const SEED_EFA_13 = { items: [item(9101, 'Ultimate EFA Plus™ - 90 soft gels', 13)] };
+// 9 softgels = 9000 mg = 100% -> 'covered'. This IS Wallach's dose: '9 grams per day in
+// capsule form', taken 3 at a time t.i.d. per his divided-dose rule.
+const SEED_EFA_9 = { items: [item(9101, 'Ultimate EFA Plus™ - 90 soft gels', 9)] };
 
 async function run(browser, seed) {
   const page = await browser.newPage();
@@ -102,22 +103,22 @@ const ok = (cond, msg) => { console.log((cond ? '  PASS  ' : '  FAIL  ') + msg);
   // ── CASE 2: the EFA meter grades a real EFA source ───────────────────────
   const one = await run(browser, SEED_EFA_1);
   const six = await run(browser, SEED_EFA_6);
-  const thirteen = await run(browser, SEED_EFA_13);
+  const nine = await run(browser, SEED_EFA_9);
   console.log('EFA_1  ', JSON.stringify(one.info));
   console.log('EFA_6  ', JSON.stringify(six.info));
-  console.log('EFA_13 ', JSON.stringify(thirteen.info));
-  const pct = n => Math.round((n * EFA_MG_PER_SOFTGEL / GOAL_MG) * 1000) / 10;
+  console.log('EFA_9  ', JSON.stringify(nine.info));
+  const pct = n => Math.round((n * OIL_MG_PER_SOFTGEL / GOAL_MG) * 1000) / 10;
   ok(one.info.o3 === 'gap', `1 softgel = ${pct(1)}% -> omega-3 'gap' (got '${one.info.o3}')`);
   ok(six.info.o3 === 'partial', `6 softgels = ${pct(6)}% -> omega-3 'partial' (got '${six.info.o3}')`);
-  ok(thirteen.info.o3 === 'covered', `13 softgels = ${pct(13)}% -> omega-3 'covered' (got '${thirteen.info.o3}')`);
+  ok(nine.info.o3 === 'covered', `9 softgels = ${pct(9)}% -> omega-3 'covered' — Wallach's dose exactly (got '${nine.info.o3}')`);
 
   // ── CASE 3: omega-3 and omega-6 SHARE one verdict (that is the point) ────
   ok(six.info.o3 === six.info.o6,
      `omega-3 and omega-6 share ONE verdict ('${six.info.o3}' vs '${six.info.o6}') — Wallach states one amount for both`);
 
   // ── CASE 4: omega-9 is not a member and never takes an EFA verdict ───────
-  ok(thirteen.info.o9 !== 'partial' && thirteen.info.o9 !== 'gap',
-     `omega-9 takes no EFA verdict at 13 softgels (got '${thirteen.info.o9}') — Wallach never names oleic acid an EFA`);
+  ok(nine.info.o9 !== 'partial' && nine.info.o9 !== 'gap',
+     `omega-9 takes no EFA verdict at 9 softgels (got '${nine.info.o9}') — Wallach never names oleic acid an EFA`);
 
   await browser.close();
   console.log(fails ? `\n${fails} FAILURE(S)` : '\nPASS · the EFA group meter grades omega-3 + omega-6 as one group, and minerals do not touch them');

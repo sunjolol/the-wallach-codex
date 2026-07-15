@@ -9,8 +9,15 @@
  * the essential fatty acids as a CATEGORY ("supplemented at the rate of 9 grams per
  * day in capsule form", WAL-CLM-DDDL-000115), and his EFAs are exactly two: "only
  * two (linoleic and linolenic) are designated as Essential Fatty Acids". So they are
- * scored as ONE group — the sum of each regimen product's efa_mg over
+ * scored as ONE group — the sum of each regimen product's efa_oil_mg over
  * goal.maintenance_mg — exactly as the 33 trace_pdm rare-earths share the PDM meter.
+ *
+ * ★ efa_oil_mg is OIL mass, not the sum of the named fatty acids. Wallach writes
+ * "essential fatty acids AS FLAXSEED OIL at 9 grams per day" — his 9 g counts oil,
+ * not molecules, so 9 one-gram softgels IS his dose. Summing the named acids (827 mg
+ * of a 1 g softgel) would demand ~12.7 softgels and silently make his requirement 40%
+ * harder than he wrote it. A product only appears here if it NAMES an EFA, so a
+ * coconut-oil capsule (all fat, no EFA) can never cover the omegas.
  *
  * ★ omega-9 is NOT a member. Wallach never names oleic acid an essential fatty acid,
  * so a product's oleic mg is deliberately absent from efa_mg: crediting it would
@@ -36,7 +43,7 @@ export const EfaCoverageSchema = z.object({
   }).passthrough(),
   products: z.record(z.object({
     canonical_name: z.string(),
-    efa_mg: z.number(),
+    efa_oil_mg: z.number(),
     by_member: z.record(z.number()),
   }).passthrough()),
 }).passthrough();

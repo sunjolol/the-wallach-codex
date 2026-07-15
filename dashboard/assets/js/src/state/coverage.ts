@@ -491,9 +491,12 @@ function pdmAggregate(items: RegimenItem[], overrides: OverridesMap): PdmDeliver
 // essential fatty acids as a CATEGORY ("supplemented at the rate of 9 grams per day
 // in capsule form", WAL-CLM-DDDL-000115), and his EFAs are exactly two — "only two
 // (linoleic and linolenic) are designated as Essential Fatty Acids". So they share
-// ONE meter, Σ(regimen efa_mg) / goal, exactly as the 33 rare-earths share the PDM
-// meter. The goal + per-product mg are GENERATED (efa_coverage_derive.py) from the
-// sealed pillars; omega-9 is NOT a member (Wallach never names oleic acid an EFA).
+// ONE meter, Σ(regimen efa_oil_mg) / goal, exactly as the 33 rare-earths share the
+// PDM meter. The goal + per-product mg are GENERATED (efa_coverage_derive.py) from
+// the sealed pillars; omega-9 is NOT a member (Wallach never names oleic acid an EFA).
+// ★ The measure is OIL mass: Wallach writes "essential fatty acids AS FLAXSEED OIL at
+// 9 grams per day", so 9 one-gram softgels IS his dose. Summing the named acids would
+// demand ~12.7 and make his requirement 40% harder than he wrote it.
 const EFA: EfaCoverage = EfaCoverageSchema.parse(efaCoverageData);
 const EFA_GOAL = EFA.goal.maintenance_mg;
 
@@ -504,7 +507,7 @@ function efaByName(): Map<string, number> {
     for (const rec of Object.values(EFA.products)) {
       const nm = rec.canonical_name.toLowerCase();
       if (nm !== '') {
-        m.set(nm, rec.efa_mg);
+        m.set(nm, rec.efa_oil_mg);
       }
     }
     cachedEfaByName = m;

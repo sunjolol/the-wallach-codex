@@ -53,6 +53,7 @@ import nutrient_resolve as nr  # noqa: E402
 GROUP = "essential-fatty-acids"
 MEMBERS = ("omega-3", "omega-6")   # Wallach's two designated EFAs; omega-9 is NOT one
 G_TO_MG = 1000.0
+KCAL_PER_G_FAT = 9.0   # Atwater factor — a physical constant (like the IU factors), never a Wallach amount
 
 
 class DeriveError(RuntimeError):
@@ -88,11 +89,11 @@ def _rows(prod):
     return out
 
 
-def _efa_mg(prod):
-    """Per-serving mg of Wallach's two EFAs. Identity via the ONE resolver; unit via its
-    to_canonical (fatty acids canonicalise to mg). Non-scalar label values ('<20') and
-    unconvertible units return None from to_canonical and are skipped, never guessed."""
-    total = 0.0
+def _members_present(prod):
+    """slug -> mg of each of Wallach's two EFAs this serving names. Identity via the ONE
+    resolver (R3). This is the GUARD, not the measure: a product only counts toward the EFA
+    goal if its oil actually carries an essential fatty acid, so a coconut-oil capsule (all
+    fat, no EFA) can never 'cover' the omegas."""
     by_member = {}
     for name, form, amount, unit in _rows(prod):
         slug = nr.resolve(name, form)
@@ -103,10 +104,55 @@ def _efa_mg(prod):
             continue
         mg, cu = conv
         if cu != "mg":
-            raise DeriveError(f"{slug} canonical unit {cu!r} is not mg — the goal math assumes mg")
-        total += mg
+            raise DeriveError(f"{slug} canonical unit {cu!r} is not mg")
         by_member[slug] = round(by_member.get(slug, 0.0) + mg, 4)
-    return round(total, 4), by_member
+    return by_member
+
+
+def _efa_oil_mg(prod):
+    """Per-serving mg of EFA-BEARING OIL — the quantity Wallach's 9 g actually measures.
+
+    ★ WHY OIL MASS AND NOT THE SUM OF THE NAMED FATTY ACIDS. Wallach uses "9 grams per day"
+    and "essential fatty acids AS FLAXSEED OIL at 9 grams per day" (DDDL L9477) / "oral
+    flaxseed oil at the rate of 9 grams per day" (L9234) INTERCHANGEABLY. Flax oil is only
+    ~73% essential fatty acids, so when he says 9 grams of flax oil meets the requirement he
+    is plainly counting OIL, not molecules. Summing the named acids instead (827 mg of a 1 g
+    softgel) demands ~12.7 g of oil to reach 9 g of molecules — 40% MORE than he asked for.
+    Making his requirement harder because a stricter reading feels more defensible is the same
+    error as re-deriving his 3%-of-calories against an FDA 2,000-kcal basis: it overrules a
+    number he wrote. (Claude shipped exactly that on 2026-07-15 and Luneth caught it: he had
+    already ruled "9 sounds much better to me", and the derive shipped 13.)
+
+    THE MEASURE: the label's own `total_fat` — these are oil softgels, and flax oil is ~100%
+    fat, so total_fat IS the oil. Verified against the labels: omega 1 g == its 1000 mg blend
+    total exactly; ultimate-multi-efa 0.5 g == 500 mg exactly; reverse 2 g ~ 2400 mg.
+
+    THE '<1 g' FALLBACK: some labels round total_fat to "<1", which is not a scalar. Those
+    resolve via calories_from_fat / 9 — the Atwater factor for fat (9 kcal/g), a PHYSICAL
+    constant in the same class as the IU factors this project already pins, not a Wallach
+    amount and not an invented one. A component with neither is skipped, never guessed.
+    """
+    total = 0.0
+    for comp in prod.get("components", []) or []:
+        macros = comp.get("macros") or {}
+        tf = (macros.get("total_fat") or {})
+        amount, unit = tf.get("amount"), tf.get("unit")
+        grams = None
+        if isinstance(amount, (int, float)) and not isinstance(amount, bool):
+            u = (unit or "g").strip().lower()
+            if u == "g":
+                grams = float(amount)
+            elif u == "mg":
+                grams = float(amount) / 1000.0
+        if grams is None:
+            # non-scalar total_fat ("<1") -> the label's own calories, via the Atwater factor
+            cff = (macros.get("calories_from_fat") or {}).get("amount")
+            if isinstance(cff, (int, float)) and not isinstance(cff, bool):
+                grams = float(cff) / KCAL_PER_G_FAT
+        if grams is None or grams <= 0:
+            continue
+        total += grams * 1000.0
+    return round(total, 4)
 
 
 def build_data() -> dict:
@@ -122,12 +168,15 @@ def build_data() -> dict:
     products = {}
     pillar = json.loads(PRODUCTS_PATH.read_text(encoding="utf-8"))["products"]
     for pid, prod in sorted(pillar.items()):
-        mg, by_member = _efa_mg(prod)
-        if mg <= 0:
-            continue
+        by_member = _members_present(prod)
+        if not by_member:
+            continue          # the guard: no EFA named -> its fat is not EFA-bearing oil
+        oil_mg = _efa_oil_mg(prod)
+        if oil_mg <= 0:
+            continue          # names an EFA but states no fat mass -> not measurable, not guessed
         products[pid] = {
             "canonical_name": prod.get("name"),
-            "efa_mg": mg,
+            "efa_oil_mg": oil_mg,
             "by_member": by_member,
         }
 
@@ -136,8 +185,12 @@ def build_data() -> dict:
             "Essential-fatty-acid coverage metric. GENERATED by eden/tools/efa_coverage_derive.py "
             "from the sealed Products pillar (composition mg) + the sealed Wallach dose claim (goal). "
             "Read by state/coverage.ts: omega-3 + omega-6 are scored as ONE group, "
-            "Sigma(regimen product efa_mg) / goal.maintenance_mg, because Wallach states ONE amount "
-            "for the essential fatty acids as a category. omega-9 is EXCLUDED — he never names oleic "
+            "Sigma(regimen product efa_oil_mg) / goal.maintenance_mg, because Wallach states ONE amount "
+            "for the essential fatty acids as a category. The measure is OIL mass (the label's total_fat), "
+            "because Wallach writes 'essential fatty acids AS FLAXSEED OIL at 9 grams per day' — his 9 g "
+            "counts oil, not molecules; summing the named acids instead would demand ~12.7 g of oil and "
+            "silently make his requirement 40% harder. A product only counts if it NAMES an EFA, so a "
+            "coconut-oil capsule can never cover the omegas. omega-9 is EXCLUDED — he never names oleic "
             "acid an essential fatty acid. Never hand-edit; run eden/tools/build_embeds.py."
         ),
         "goal": {
@@ -172,8 +225,10 @@ def validate(d: dict) -> list:
     if list(g.get("members") or []) != list(MEMBERS):
         errs.append(f"goal.members {g.get('members')!r} != {list(MEMBERS)}")
     for pid, r in (d.get("products") or {}).items():
-        if not isinstance(r.get("efa_mg"), (int, float)) or r["efa_mg"] <= 0:
-            errs.append(f"{pid}: efa_mg {r.get('efa_mg')!r} is not a positive number")
+        if not isinstance(r.get("efa_oil_mg"), (int, float)) or r["efa_oil_mg"] <= 0:
+            errs.append(f"{pid}: efa_oil_mg {r.get('efa_oil_mg')!r} is not a positive number")
+        if not (r.get("by_member") or {}):
+            errs.append(f"{pid}: no EFA member named — its fat is not EFA-bearing oil and must not count")
         stray = set(r.get("by_member") or {}) - set(MEMBERS)
         if stray:
             errs.append(f"{pid}: by_member carries non-EFA slug(s) {sorted(stray)}")
@@ -198,4 +253,4 @@ if __name__ == "__main__":
     n = write_data()
     print(f"OK  wrote efa-coverage-data.json ({n} B) · goal {d['goal']['maintenance_mg']}mg "
           f"({d['goal']['provenance']['wallach_dose_amount']} {d['goal']['provenance']['wallach_dose_unit']}) "
-          f"from {d['goal']['source_claim_id']} · {len(d['products'])} EFA-bearing product(s)")
+          f"from {d['goal']['source_claim_id']} · {len(d['products'])} EFA-bearing product(s) [oil-mass basis]")
