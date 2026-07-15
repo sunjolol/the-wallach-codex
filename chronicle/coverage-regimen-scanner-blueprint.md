@@ -17,7 +17,8 @@ Findable, so they are never re-litigated or buried. Each is his, not mine.
 | D3 | Save model | **Autosave everywhere.** The slot IS the live state. No draft mode, no save button. |
 | D4 | Slot identity on Coverage | **The rail shows the active slot's name, read-only. Switching happens in Regimen only.** |
 | D5 | Food & drink vs supplements | **Add a real `category` field to the Products pillar** (hand-set, sealed). Claude proposes assignments from the labels; Luneth reviews. |
-| D6 | The 199 undirected components | **Mine the 245 label images first.** Sourced defaults end-to-end before the dose system ships. |
+| ~~D6~~ | ~~The 199 undirected components~~ | ~~Mine the 245 label images first.~~ **SUPERSEDED 2026-07-15, same day — BLOCKED BY DATA.** The directions are not on those images (§2). |
+| **D7** | The 199 undirected components (D6's replacement) | **Default to ONE serving size** — recorded 221/221. *"most users will change the defaults anyway and we'll make it clear it's MEANT to be changed to more realistic numbers"* (Luneth). Keep the 22 real directions where they exist. |
 
 **Prior locked rules this blueprint inherits and must not break:**
 - **A goal may change what you LOOK AT or are RECOMMENDED. It may NEVER change what you're MEASURED AGAINST.** The denominator is always 90.
@@ -42,7 +43,18 @@ Everything below was verified this session against the real data, not inferred.
 
 **The proof that D1 is right.** Ultimate EFA Plus's label reads *"Take 1 softgel three times daily"* = 3/day. Wallach's own figure is **9 g/day**. The label under-delivers by 3× against Wallach **on the one product he explicitly doses**. A label serving is calibrated to RDA-era logic; a Wallach target is not. That gap, multiplied across a stack, IS the endless-recommendation problem in Luneth's #3.
 
-**The label images.** 245 in `temporary/labels/` — the same source the pillar already mined `serving_size` from at 100%. The directions pass simply was not taken. ⚠ `temporary/` is gitignored and has been swept before: the sealed data survives a sweep, re-mineability does not.
+**The label images — ⚠ CORRECTED 2026-07-15, same day.** This originally read *"the directions pass simply was not taken."* **That was FALSE, and it is what made D6 look feasible.** The 245 images in `temporary/labels/` are **supplement-facts panels ONLY**. The directions live on a part of the physical label that was never photographed.
+
+**Proven, with a negative control** (a null from a blind instrument proves nothing, so the instrument was checked first):
+- **Control:** `ult-efa-plus-90_suppfacts1-1020.jpg` reads *"DIRECTIONS: Take 1 softgel three times daily…"* — byte-matching the stored `directions`. The reading works.
+- **Then the gap:** Beyond Osteo FX, ACV Gummy, and Beyond Hot Chocolate panels have **no DIRECTIONS block at all** — Supplement Facts + Other Ingredients only. 3 of 3 sampled.
+- **No filename in the 245 suggests a directions / usage / back panel.** The 28 unreferenced files are alternate crops of the same supp-facts panels.
+- **The 22 that DO carry directions are simply the ones where that text shared the crop** (EFA prints it above the Facts box).
+- **The 11 MB `temporary/ygy-products-full/` scrape does not rescue it:** 6 real DIRECTIONS blocks, not 199. The "140 mentions of `direction`" are CSS icon classes (`.icon-directions::before`).
+
+⚠ `temporary/` is gitignored and has been swept before: the sealed data survives a sweep, re-mineability does not.
+
+**Measured accuracy of D7's default** (the 21 components where BOTH `serving_size` and real `directions` are known — so this is fact, not estimate): **1 serving/day is correct for 8/21 (38%)** · **under-counts 13/21 (62%) by 2–4×** · **over-counts 0/21 — NEVER**. Every miss is conservative, so the field understates the user and can never paint a tile green that is not. That asymmetry is why D7 is safe. The pattern behind the misses — a serving already spanning multiple units (`3 chewable tablets`, `9 capsules`) means once-a-day, a single-unit serving (`1 capsule`, `1 softgel`) usually means 2–3× a day — is **recorded but deliberately NOT turned into a rule**: inferring a dose from a 21-row pattern is precisely how the mineral tiers happened.
 
 **The rail geometry** (measured headless at two viewports):
 
@@ -97,7 +109,7 @@ A regimen item's dose is **servings per day**. The default is set by the first r
 |---|---|---|---|
 | 1 | **Wallach's product dose** — a sealed claim dosing the vehicle | PDM only (1 fl oz/100 lb → 1.54 fl oz @ 154 lb) | unchanged |
 | 2 | **Label directions** — "Take 1 softgel three times daily" | 22 of 221 (10%) | ~all |
-| 3 | **Honest gap** — 1 serving/day, rendered as *your setting*, never as a recommendation | 199 of 221 (90%) | residual only |
+| 3 | **ONE serving size/day** (D7) — rendered as *your setting*, never as a recommendation | 199 of 221 (90%) | **unchanged — this is the PRIMARY path, not a residue** |
 
 **Rung 3 is not a recommendation and must never be styled as one.** It is a neutral starting point the user owns. Presenting an unsourced "1/day" as guidance is precisely how the mineral tiers stayed sealed and green for three weeks.
 
@@ -121,7 +133,9 @@ A regimen item's dose is **servings per day**. The default is set by the first r
 | **Short** — present but under Wallach's target | **Prompt a dose increase**, capped at the label's stated maximum. Never a purchase. |
 | **At/over target** | Nothing. |
 
-**The list terminates when no essential is at zero.** It then flips from "add this" to "you own enough products; these doses are short." That is the answer to *"more items keep appearing"* — the list was endless because label-calibrated doses can never reach Wallach-calibrated targets, so every essential looked perpetually unfilled. Rung 1/2 defaults plus the zero/short split closes it.
+**The list terminates when no essential is at zero.** It then flips from "add this" to "you own enough products; these doses are short." That is the answer to *"more items keep appearing"*.
+
+⚠ **CORRECTED 2026-07-15 (same day).** This read "Rung 1/2 defaults plus the zero/short split closes it." **The split closes it ALONE — the dose default is irrelevant to it.** Whether you take 1 serving or 3, BTT moves the same ~40 essentials off zero, so **the zero-set is identical regardless of the default** and the list terminates either way. The dose default buys only (a) day-one coverage accuracy and (b) a ceiling for the "take more" prompt. Neither is load-bearing on #3. This overstatement is what made D6 look like a blocker when it never was.
 
 **With no goals set**, recommendations rank by breadth across all 90 — honest and still useful. A goal reorders the list; it never changes the field's denominator (the locked rule).
 
@@ -208,7 +222,7 @@ Full rebuild. The concept was good; the execution demanded too much human correc
 
 | # | Work | Why it blocks | Needs |
 |---|---|---|---|
-| **P1** | **Mine `directions` + maxima from the 245 label images** → Products pillar → re-seal | D6. Rung 2 is the dose workhorse; at 10% coverage the ladder falls to an unsourced default for 90% of components | Luneth's seal sign-off |
+| ~~P1~~ | ~~Mine `directions` + maxima from the 245 images~~ | **DROPPED — the data does not exist to mine (§2). Superseded by D7.** Nothing blocks on it. | — |
 | **P2** | **Add `category` to all 215** → Products pillar → re-seal | D5. §7's grouping has no data today, and `form` cannot honestly stand in | Claude proposes from labels; Luneth reviews + signs the seal |
 | **P3** | **Extend `state/regimen.ts` for slots** — schema, chokepoints, gate | §3. The slot system does not exist in state | — |
 | **P4** | **Fix `coveredBy`** — rename to `contributesTo`, add a real covered-by join, negative test proving a 1%-contributor is excluded | §2. The rail's entire job is this join. A misnamed field is a trap for the next session, exactly like the tiers were | — |
