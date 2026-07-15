@@ -1574,7 +1574,7 @@
       ],
       "symptoms": [],
       "claim_text": "Wallach cites a Chinese selenium trial: supplementing children with 1 mg sodium selenite three times a week dropped Keshan Disease incidence from 13/1,000 to 1/1,000 over three years (vs unchanged 13/1,000 on placebo), and larger studies confirmed selenium is specific for preventing Keshan disease.",
-      "verbatim": "At the end of a three year study, the rate of KSD in the selenium supplemented group dropped from 13/1,000 children to 1/1,000 children; the rate of KSD in the control group remained at 13/1,000.",
+      "verbatim": "From 1974 to 1977, preschool and school-age children were divided into two groups. Group one was made up of 36,603 children whose diets were supplemented with 1 mg sodium selenite orally three times per week; group two was a control group of 9,430 children given a sugar tablet placebo. At the end of a three year study, the rate of KSD in the selenium supplemented group dropped from 13/1,000 children to 1/1,000 children; the rate of KSD in the control group remained at 13/1,000.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -1582,7 +1582,7 @@
         "page": 152,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 430967
+        "char_offset": 430680
       },
       "dose": {
         "amount": 1,

@@ -6,6 +6,15 @@ Generates dashboard/assets/data/pdm-coverage-data.json — read by state/coverag
 dose. Those 33 carry no individual Wallach dose; instead they are covered collectively by any
 plant-derived-mineral source in the regimen, measured Sigma(vehicle mg) / goal.
 
+WHY 33 AND NOT 35 (the canon says 35 -- this is not a drift, and an auditor misread it
+2026-07-15, so it is spelled out here). essentials-canon carries coverage_kind == trace_pdm
+on 35 minerals, but that field is only the FALLBACK. targets_derive.py overrides it to
+kind 'wallach' for any essential that HAS its own sealed Wallach dose claim -- which cobalt
+and tin do. So the SHIPPED artifact, and therefore the runtime grouping, is 33. The number
+that matters is the derived target.kind (33), never the canon fallback (35); state/coverage.ts
+branches on target.kind alone. Silver is a third boundary case: it renders inside the
+RARE TRACE section but carries its own 400 mcg dose, so it is not in the group either.
+
 TWO INPUTS, joined here (derive-don't-duplicate, R1):
   - eden/products/products.json (SEALED pillar) — the COMPOSITION: each vehicle product's
     per-serving plant-derived / trace-mineral mg (a quantified nutrient row or a blend total).

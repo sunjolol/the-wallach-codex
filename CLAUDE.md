@@ -25,7 +25,7 @@ A single-HTML, offline-first health-coverage dashboard for Dr. Joel Wallach's fr
 Ranked. Every other rule yields to these. Behavioral rules under `.claude/rules/` are sub-directives.
 
 **§00.A — Wallach source-of-truth mandate (100 / 100).**
-Every numeric target, dose, deficiency sign, and health claim traces to a Wallach allowlist primary — his BOOKS only (`dddl` · `rbs` · `eps` · `lets-play-doctor` · `immortality` · `iaiyh`; no lectures/transcripts, Luneth 2026-07-05), plus `ygy` for Youngevity composition. **Wallach drives every recommended amount / dose / range; Youngevity products contribute composition only — NEVER a target** (no Youngevity-derived amounts; the old "two-role split" was poison and is retired). Book citations reference the sealed registry (`eden/corpus/books-meta.json`), never hand-typed. No outside source contradicts Wallach without explicit user review. Purpose: (a) one durable source of truth — the project's reason for existing; (b) legal defensibility — every claim attributable, not invented; (c) one consistent voice across surfaces. Sealed canonical data lives in the `eden/` pillars. Detail: `.claude/rules/source-rule.md`. Enforcement (per the blueprint): `amounts_wallach_only` + `citations_reference_registry`.
+Every numeric target, dose, deficiency sign, and health claim traces to a Wallach allowlist primary — his BOOKS only — the **7** registered in the sealed registry `eden/corpus/books-meta.json` (the registry is the truth; ids: `dddl-3e-2011` · `rare-earths` · `lets-play-doctor` · `epigenetics` · `immortality` · `iaiyh` · `hells-kitchen`); no lectures/transcripts, Luneth 2026-07-05, plus `ygy` for Youngevity composition. **Wallach drives every recommended amount / dose / range; Youngevity products contribute composition only — NEVER a target** (no Youngevity-derived amounts; the old "two-role split" was poison and is retired). Book citations reference the sealed registry (`eden/corpus/books-meta.json`), never hand-typed. No outside source contradicts Wallach without explicit user review. Purpose: (a) one durable source of truth — the project's reason for existing; (b) legal defensibility — every claim attributable, not invented; (c) one consistent voice across surfaces. Sealed canonical data lives in the `eden/` pillars. Detail: `.claude/rules/source-rule.md`. Enforcement (per the blueprint): `amounts_wallach_only` + `citations_reference_registry`.
 
 **§00.B — Engineering standard of an elite open-source maintainer (99 / 100).**
 Operational consequences (detail: `.claude/rules/engineering-doctrine.md` + the Charter, `.claude/rules/charter.md` (blueprint §1 is the design origin)):
@@ -60,7 +60,7 @@ views/   ──imports──▶  state/   ──imports──▶  core/
 
 Path aliases: `@core/*`, `@state/*`, `@views/*`. Cross-layer relative imports are banned by lint.
 
-**Data flow (every surface):** `pillars (eden/) → generators (eden/tools/) → assets/data/*.json → core/ → state/ → views/`. No view holds a canonical value as a literal; no artifact under `assets/data/` is hand-edited.
+**Data flow (every surface):** `pillars (eden/) → generators (eden/tools/) → assets/data/*.json → core/ → state/ → views/`. No view holds a canonical value as a literal. **Roughly HALF of `assets/data/` is derived; the other half is hand-authored.** 12 files are DERIVED from the pillars and byte-gated (`derived_artifacts_fresh`); 11 are HAND-AUTHORED (curation layers, R4 prose stores, the Coverage skeleton) and are gated only for REGISTRATION — `data_artifacts_accounted` proves every file is declared in `eden/derived/MANIFEST.json` with a disposition + reason, but nothing proves a hand-authored file is CORRECT. **Corrected 2026-07-15:** this line read `no artifact under assets/data/ is hand-edited`, which was false for 11 of 23 files.
 
 ---
 
@@ -129,7 +129,7 @@ dashboard/                                  ← the app (pure views over generat
 ├── assets/
 │   ├── styles/{design-system.css + *.golden.sha256, dashboard.css, …}
 │   ├── fonts/                              ← 7 in-housed TTF families (SIL OFL 1.1)
-│   ├── data/*.json                         ← GENERATED from the pillars · never hand-edited
+│   ├── data/*.json                         ← 12 GENERATED + gated · 11 HAND-AUTHORED (MANIFEST-registered)
 │   ├── vendor/tesseract/                   ← 22 MB offline OCR (gitignored)
 │   └── js/{src/{core,state,views}/, dist/main.js}  ← dist GENERATED
 ├── package.json · tsconfig.json · eslint.config.js
@@ -152,7 +152,7 @@ tools/{build.mjs, genesis.py (the `genesis` boot script), invariants.py, safe_wr
 
 - **§00 / §17 / §31** — Prime directives · Write discipline · Chokepoint discipline.
 - **Pillar** — One of the three sealed, hand-edited data sources under `eden/`: Corpus · Products · Catalog. Everything else is generated from them.
-- **Generated artifact** — Any file derived from the pillars (all `assets/data/*.json`, indices, the bundle). Never hand-edited; a freshness gate proves it matches source.
+- **Generated artifact** — A file DERIVED from the pillars (12 of the `assets/data/*.json` files, plus the indices + the bundle). Never hand-edited; `derived_artifacts_fresh` regenerates it and byte-compares. **NOT every `assets/data` file is one** — 11 are hand-authored (curation, prose stores, the Coverage skeleton), each registered in `eden/derived/MANIFEST.json` with a reason. A hand-authored artifact is gated for REGISTRATION, never for correctness. Corrected 2026-07-15.
 - **The Charter** — The R1–R9 enforceable rules + their machine gates; permanent home `.claude/rules/charter.md` (blueprint §1 is the design origin). A rule with no gate is a labeled WISH.
 - **Sealed canonical** — File with a `*.golden.sha256` sibling. User-only writer.
 - **Eden** — The three sealed pillars under `eden/`. Every Wallach / Youngevity number originates here.

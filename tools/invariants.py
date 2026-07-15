@@ -37,6 +37,8 @@ import os
 import pathlib
 import random
 import re
+import unicodedata
+from decimal import Decimal
 import subprocess
 import sys
 from dataclasses import dataclass, field
@@ -1444,6 +1446,313 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
                        "(R2 poison / broken chain): " + "; ".join(viol[:8]))
     return True, (f"all {numeric} numeric coverage target(s) trace to a Wallach dose claim AND "
                   "recompute exactly from its documented transform chain (R2 clean)")
+
+
+# ---------------------------------------------------------------------------
+# R2 / §00.A -- dose_amount_in_verbatim (2026-07-15)
+# ---------------------------------------------------------------------------
+# THE HOLE THIS CLOSES. Until 2026-07-15 nothing in the repo tied a claim's
+# structured `dose.amount` to the book text. amounts_wallach_only anchors a
+# target's provenance to the CLAIM's dose field -- which is ours, and was
+# unverified. corpus_integrity proves the VERBATIM is a substring of the book,
+# but never that the number we EXTRACTED matches the number printed beside it.
+# So the chain ran airtight from the rendered target back to the claim, and
+# then stopped. PROVEN 2026-07-15: a planted 10x sodium fabrication
+# (3,300 -> 33,000 mg) passed the whole board GREEN while the claim's own
+# verbatim still read "3,300 mg". This gate is that missing link.
+#
+# THE THREE ADVERSARIAL BREAKS that shaped the design (each is now a pinned
+# case in tools/test_dose_amount_in_verbatim.py -- do not weaken without one):
+#   1. CROSS-ROW BLEED. A verbatim span often carries the NEXT nutrient's table
+#      row. A naive presence check accepts any number in the span, so choline's
+#      600 could be "proven" by chromium's row. 37 of 86 spans name >1 nutrient.
+#   2. UNIT SWAP. LETS-000048 choline 600 mg re-tagged `mcg` (a 1000x UNDER-dose
+#      -- the invisible failure: an understated target silently marks a user
+#      covered) passed, because chromium's row supplies "300 to 600 mcg".
+#      LETS-000073 vitamin C mg->IU passed off vitamin D's row. Adjacency-capture
+#      does NOT fix this: 600 is adjacent to mg AND mcg. Row identity does.
+#   3. IN-ROW COLUMN BLEED. The base-line table row is
+#      NAME | RDA | true-supplement-need | pharmacologic, and dose.amount is the
+#      2nd column -- so sodium 3,300 -> 1,100 (its own RDA) is a 3x understatement
+#      that presence-checking can never see.
+#
+# HOW IT ANSWERS THEM: scope first, then check.
+#   * Row scoping -- slice the span on NUTRIENT-NAME boundaries, not newlines.
+#     Table rows are sometimes space-joined on one line; prose is hard-wrapped
+#     mid-phrase ("Twenty to 30 mg ... for\ngermanium."), so a newline split
+#     SEVERS a dose from its subject. The discriminator is the follow-test: a
+#     name heads a table row iff a number (or a "?" placeholder) follows it,
+#     optionally past a form parenthetical -- "Vitamin A (retinol) 2,500 IU".
+#     In prose a name is followed by a word ("chromium and vanadium at 250 mcg"),
+#     which fails the test and leaves the span whole. Fail-safe by construction:
+#     every ambiguity falls back to the FULL span, which is only ever looser.
+#   * Positional column check -- where for_condition names the column, index it
+#     and compare numerically + by unit. Verified against real data: 30 rows
+#     column-checked, ZERO false-fires (a RED here would mean the rule is wrong,
+#     not the corpus).
+#
+# NO BASELINE EXCEPTION. The original spec wanted one for LETS-000061
+# (phosphorus 0 / "PHOSPHORUS 800 mg 0.0 0.0"). An adversary proved that would
+# NEUTER THE WHOLE GATE: .claude/invariant-baseline.json is INVARIANT-scoped
+# (stop_round_close.py::_tolerated returns a set of invariant NAMES), so one
+# entry tolerates all 86 claims. Handled in-gate instead: a unitless column is
+# accepted ONLY when the amount is zero (0 mg == 0 mcg; Wallach's "0.0" means no
+# supplemental need). A non-zero unitless column is unverifiable -> fail closed.
+#
+# Truth anchor: the claim's own verbatim bytes, which corpus_integrity
+# independently pins to the sealed book .txt. The two compose -- R5 proves the
+# quote is the book's, this proves the number is the quote's, and
+# amounts_wallach_only proves the target is the number's.
+_DOSE_UNIT_SYN = {
+    "mg":    r"(?:mg|milligrams?)",
+    "mcg":   r"(?:mcg|ug|µg|micrograms?)",
+    "IU":    r"(?:IU)",
+    "g":     r"(?:g|gm|grams?)",
+    "fl oz": r"(?:fl\.?\s*oz|ounces?|oz)",
+}
+_DOSE_UNIT_ALT = r"(?:mcg|mg|IU|gm|grams?|milligrams?|micrograms?|ug|µg|g)"
+
+# Standalone numerals ONLY. 'hundred'/'thousand' are deliberately ABSENT: a
+# per-token map turns "five hundred mcg" into "5 100 mcg", which BOTH destroys
+# the real 500 (false-fire) and manufactures a 100 that was never printed (miss).
+# Zero compound numerals exist in the corpus today; _DOSE_COMPOUND detects one
+# arriving from a future mine and bails to the full span rather than lying.
+_DOSE_NUM_WORDS = {
+    "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6,
+    "seven": 7, "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12,
+    "thirteen": 13, "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17,
+    "eighteen": 18, "nineteen": 19, "twenty": 20, "thirty": 30, "forty": 40,
+    "fifty": 50, "sixty": 60, "seventy": 70, "eighty": 80, "ninety": 90,
+}
+_DOSE_COMPOUND = re.compile(
+    r"\b(" + "|".join(_DOSE_NUM_WORDS) + r")[\s-]+(hundred|thousand)\b", re.I)
+_DOSE_WORD_RE = re.compile(r"\b(" + "|".join(_DOSE_NUM_WORDS) + r")\b", re.I)
+_DOSE_DASHES = "‐‑‒–—―−"
+_DOSE_FOLLOW = re.compile(r"\s*(?:\([^)]*\)\s*)?(?:\?|\d)")
+_DOSE_PGROUP = re.compile(
+    r"(\?)|((?:\d+(?:\.\d+)?)(?:\s*(?:-|to)\s*(?:\d+(?:\.\d+)?))?)\s*("
+    + _DOSE_UNIT_ALT + r")?\b", re.I)
+
+# Spelling variants the canon's display/common names do not carry. Every entry is
+# a real token observed in a sealed verbatim; keep it tiny and evidence-backed.
+_DOSE_ALIASES = {
+    "sulfur": ["sulphur"],
+    "vitamin-b9": ["folacin", "folate", "folic acid"],
+    "vitamin-b3": ["niacin", "niacinamide"],
+}
+
+# for_condition -> the 0-based value-column (after the name) that dose.amount MUST be.
+# The Let's Play Doctor base-line table prints NAME | RDA | true-need | pharmacologic.
+_DOSE_COLUMN_OF = {"base-line supplement program (true supplement need)": 1}
+
+
+def _dose_prep(s):
+    """Returns (normalized, compound_present)."""
+    s = unicodedata.normalize("NFKC", s)
+    for d in _DOSE_DASHES:
+        s = s.replace(d, "-")
+    s = re.sub(r"\s+", " ", s).strip()
+    prev = None
+    while prev != s:                       # loop: 1,234,567 needs >1 pass
+        prev = s
+        s = re.sub(r"(?<=\d),(?=\d{3}\b)", "", s)
+    if _DOSE_COMPOUND.search(s):
+        return s, True
+    return _DOSE_WORD_RE.sub(lambda m: str(_DOSE_NUM_WORDS[m.group(1).lower()]), s), False
+
+
+def _dose_numlit(p):
+    """A number literal with DIGIT BOUNDARIES. The lookarounds are load-bearing, not
+    cosmetic: without them `0\\s*mg` matches the trailing 0 of "800 mg" (a real
+    false-pass in the first prototype), and they are what stops a planted 3300 from
+    matching inside a verbatim's 33000."""
+    d = Decimal(p)
+    if d == d.to_integral_value():
+        core = r"%d(?:\.0+)?" % int(d)
+    else:
+        core = re.escape(str(d.normalize())) + r"0*"
+    return r"(?<![\d.])(?:" + core + r")(?![\d.])"
+
+
+def _dose_components(amount):
+    """Split an amount into numeric components. Non-canonical ('050') -> RED, so a
+    malformed amount cannot enter the pillar and Decimal-normalize into looking fine."""
+    raw, _ = _dose_prep(str(amount))
+    parts = re.split(r"\s*(?:-|/|\bto\b)\s*", raw)
+    out = []
+    for p in parts:
+        p = p.strip()
+        if not re.fullmatch(r"(?:0|[1-9]\d*)(?:\.\d+)?", p):
+            return None, p
+        out.append(p)
+    return out, None
+
+
+def _dose_name_pattern(t):
+    """Build from TOKENS. Never do surgery on an re.escape'd string: re.escape escapes
+    the space, so a naive .replace(' ', r'\\s+') yields a pattern matching a literal
+    backslash (this cost a full regression pass on 2026-07-15). Canon says
+    'Vitamin B12'; the book prints 'VITAMIN B-12' -- separators must be flexible."""
+    parts = re.findall(r"[A-Za-z]+|\d+", t)
+    if not parts:
+        return None
+    return r"\b" + r"[-\s]*".join(re.escape(p) for p in parts) + r"\b"
+
+
+def _dose_name_res(canon):
+    out = {}
+    for e in canon.get("essentials", []):
+        toks = [e.get("display_name"), e.get("common_name")]
+        toks = [t for t in toks if t] + _DOSE_ALIASES.get(e["slug"], [])
+        pats = [_dose_name_pattern(t) for t in sorted(set(toks), key=len, reverse=True)]
+        res = [re.compile(p, re.I) for p in pats if p]
+        if res:
+            out[e["slug"]] = res
+    return out
+
+
+def _dose_name_hits(text, res_by_slug):
+    hits = []
+    for slug, res in res_by_slug.items():
+        for r in res:
+            for m in r.finditer(text):
+                hits.append((m.start(), m.end(), slug))
+    hits.sort(key=lambda h: (h[0], -(h[1] - h[0])))
+    out = []
+    for h in hits:
+        if out and h[0] < out[-1][1]:
+            continue                       # nested/overlapping name; keep the longer
+        out.append(h)
+    return out
+
+
+def _dose_scope(claim, res_by_slug):
+    """(scope_text, kind). Every ambiguous path returns the FULL span -- scoping may
+    only ever TIGHTEN, never invent a narrower window that hides a real mismatch."""
+    vb, compound = _dose_prep(claim.get("verbatim") or "")
+    if compound:
+        return vb, "full-compound"
+    ess = claim.get("essentials") or []
+    if len(ess) != 1:
+        return vb, "full-multi"
+    led = [h for h in _dose_name_hits(vb, res_by_slug)
+           if _DOSE_FOLLOW.match(vb[h[1]:h[1] + 24])]
+    mine = []
+    for i, (s, e, slug) in enumerate(led):
+        if slug != ess[0]:
+            continue
+        end = led[i + 1][0] if i + 1 < len(led) else len(vb)
+        mine.append(vb[s:end].strip())
+    positional = _DOSE_COLUMN_OF.get((claim.get("dose") or {}).get("for_condition")) is not None
+    # >=2 led names == a real table. A positional claim is a table row BY DECLARATION,
+    # so one led name suffices -- that is how "ZINC 15 mg 25 mg 150 mg * <prose>" is
+    # still column-checked despite naming only one nutrient.
+    if len(led) < 2 and not positional:
+        return vb, "full-prose"
+    if len(mine) > 1:
+        form = (claim.get("dose") or {}).get("form")
+        if form:
+            f = [m for m in mine if re.search(re.escape(form), m, re.I)]
+            if len(f) == 1:
+                return f[0], "row+form"
+    if len(mine) == 1:
+        return mine[0], "row"
+    return vb, "full-norow"
+
+
+def _dose_row_groups(row, res_for_slug):
+    body = row
+    for r in res_for_slug:
+        m = r.match(body)
+        if m:
+            body = body[m.end():]
+            break
+    out = []
+    for m in _DOSE_PGROUP.finditer(body):
+        if m.group(1):
+            out.append(("?", None))
+        elif m.group(2):
+            out.append((m.group(2).strip(), m.group(3)))
+    return out
+
+
+def _dose_check_one(claim, res_by_slug):
+    """(ok, why). Params so the negative test can drive planted claims."""
+    dose = claim.get("dose") or {}
+    amt, unit = dose.get("amount"), dose.get("unit")
+    if amt is None or unit is None:
+        return False, "dose has no amount/unit"
+    if unit not in _DOSE_UNIT_SYN:
+        return False, "unknown unit %r (fail-closed: extend the table deliberately)" % unit
+    comps, bad = _dose_components(amt)
+    if comps is None:
+        return False, "non-canonical amount component %r" % bad
+    scope, kind = _dose_scope(claim, res_by_slug)
+    U = _DOSE_UNIT_SYN[unit]
+    SEP = r"\s*(?:-|to|/|and|,)\s*"
+
+    idx = _DOSE_COLUMN_OF.get(dose.get("for_condition"))
+    if idx is not None and kind in ("row", "row+form"):
+        ess = (claim.get("essentials") or [None])[0]
+        gs = _dose_row_groups(scope, res_by_slug.get(ess, []))
+        if len(gs) > idx and gs[idx][0] != "?":
+            val, gu = gs[idx]
+            got, _ = _dose_components(val)
+            if got is not None:
+                same = (len(comps) == len(got)
+                        and all(Decimal(a) == Decimal(b) for a, b in zip(comps, got)))
+                if not same:
+                    return False, ("column-%d mismatch: the row's own column reads %s %s, "
+                                   "dose says %s %s" % (idx, val, gu or "(no unit)", amt, unit))
+                if gu is None:
+                    if all(Decimal(x) == 0 for x in comps):
+                        return True, "col0/" + kind
+                    return False, ("column-%d has no unit; cannot verify %s %s"
+                                   % (idx, amt, unit))
+                if not re.fullmatch(U, gu, re.I):
+                    return False, ("column-%d unit mismatch: the row reads %s, dose says %s"
+                                   % (idx, gu, unit))
+                return True, "col/" + kind
+
+    inner = (r"(?:\s*" + U + r"\b)?" + SEP).join(_dose_numlit(c) for c in comps)
+    if re.search(inner + r"\s*" + U + r"\b", scope, re.I):
+        return True, "A/" + kind
+    # Rule B: per-component, ONLY for '/'-joined escalating schedules (RARE-000096's
+    # "10 mg initially, 25 mg second week and 50 mg per week"). Gated to '/' so it can
+    # never silently loosen a RANGE into two independent scattered matches.
+    if "/" in str(amt):
+        if all(re.search(_dose_numlit(c) + r"\s*" + U + r"\b", scope, re.I) for c in comps):
+            return True, "B/" + kind
+    return False, "amount %s %s is NOT in this claim's own verbatim (scope=%s)" % (amt, unit, kind)
+
+
+def _dose_amount_in_verbatim_impl(claims, canon):
+    res = _dose_name_res(canon)
+    bad, checked = [], 0
+    for c in claims:
+        if not (c.get("dose") or {}).get("amount") is not None:
+            continue
+        checked += 1
+        ok, why = _dose_check_one(c, res)
+        if not ok:
+            bad.append("%s: %s" % (c.get("id"), why))
+    if bad:
+        return False, ("%d of %d dose claim(s) FABRICATED or mis-transcribed -- the number "
+                       "is not in the claim's own verbatim: " % (len(bad), checked)
+                       + "; ".join(bad[:4]) + (" ..." if len(bad) > 4 else ""))
+    return True, ("all %d structured dose(s) match their own verbatim bytes, unit-adjacent "
+                  "and row-scoped (R2: the claim->book link)" % checked)
+
+
+def check_dose_amount_in_verbatim():
+    """Charter R2 / §00.A -- see the block comment above for the full contract, the three
+    adversarial breaks that shaped it, and what it does NOT check."""
+    canon = json.loads((ROOT / "eden/corpus/essentials-canon.json").read_text(encoding="utf-8"))
+    claims = []
+    for p in sorted((ROOT / "eden/corpus/claims").glob("*.json")):
+        d = json.loads(p.read_text(encoding="utf-8"))
+        claims.extend(d.get("claims", d) if isinstance(d, dict) else d)
+    return _dose_amount_in_verbatim_impl(claims, canon)
 
 
 def check_amounts_wallach_only():
@@ -2885,7 +3194,9 @@ def check_corpus_audit_gate():
 
 # The (growing) CLEAN-view surface. A file listed here is asserted prose-free --
 # every user-facing string lives in the view-copy content store via state/copy.ts
-# (R4). EMPTY in H0; H2/H3/H4 append each entity/drawer/palette view as migrated.
+# (R4). NOT empty -- 4 views are migrated + BINDING as of Phase H1; H2/H3/H4 append the
+# rest. (Corrected 2026-07-15: this read "EMPTY in H0" long after the surface grew, which
+# UNDERSELLS a live gate -- a reader could delete it as vacuous. Read the tuple, not this.)
 _CLEAN_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
     "dashboard/assets/js/src/views/knowledge-home.ts",
@@ -2895,7 +3206,8 @@ _CLEAN_VIEW_FILES: tuple = (
 
 # The entity-render view file(s). Asserted a PURE PROJECTION of the generated
 # entity-page artifact: no object literal keyed by a real entity id, no per-entity
-# content branch. EMPTY in H0 (the render is built in H2); H2 appends the file.
+# content branch. NOT empty -- 2 views are BINDING as of Phase H1. (Corrected 2026-07-15:
+# read "EMPTY in H0" while the tuple already held 2 real files.)
 _ENTITY_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
     "dashboard/assets/js/src/views/knowledge-topic.ts",
@@ -3166,8 +3478,9 @@ def check_views_no_inline_prose():
     """Phase H0 gate (R4, the code-side complement of prose_contained): no
     user-facing prose lives as a string literal inside a CLEAN view file -- it
     belongs in the view-copy content store, referenced by id (state/copy.ts).
-    Surface-scoped: _CLEAN_VIEW_FILES is EMPTY in H0 and grows as each view is
-    migrated (H2-H4); the negative test proves the gate fires. Truth anchor: the
+    Surface-scoped: _CLEAN_VIEW_FILES holds the views migrated so far (4, BINDING
+    as of 2026-07-15) and grows as each remaining view is migrated (H2-H4); the negative
+    test proves the gate fires. NOT vacuous -- read the tuple, not this line. Truth anchor: the
     .ts bytes of the declared clean-view files, scanned each run."""
     files = []
     for rel in _CLEAN_VIEW_FILES:
@@ -3286,9 +3599,9 @@ def check_entity_render_is_projection():
     """Phase H0 gate (R1): the entity-render view is a PURE PROJECTION of the
     generated entity-page artifact -- never a hand-built map keyed by entity ids,
     never a per-entity content branch. Closes the sub-10-element hole
-    views_state_no_inline_data cannot see. Surface-scoped: _ENTITY_VIEW_FILES is
-    EMPTY in H0 (the render is built in H2) and grows in the same patch; the
-    negative test proves the gate fires. Truth anchor: the real entity-id sets
+    views_state_no_inline_data cannot see. Surface-scoped: _ENTITY_VIEW_FILES holds
+    the entity views built so far (2, BINDING as of 2026-07-15) and grows in the same
+    patch; the negative test proves the gate fires. NOT vacuous -- read the tuple. Truth anchor: the real entity-id sets
     from the pillars x the entity-view .ts bytes, recomputed each run."""
     ids = _entity_id_set()
     files = []
@@ -3411,8 +3724,8 @@ def _view_category_not_hardcoded_impl(files):
 def check_view_category_not_hardcoded():
     """Phase H1 gate (R7): the entity view reads a claim's colour CATEGORY from the map
     (view-copy kind_categories via state/copy.ts::kindCategory) and never hardcodes a colour
-    family per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES is EMPTY in H1 (the render is
-    built in H2) and grows in the same patch; the negative test proves the gate fires. Truth
+    family per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES holds 2 real entity views and
+    BINDS on them as of 2026-07-15; it grows in the same patch as each new view. NOT vacuous. Truth
     anchor: the entity-view .ts bytes scanned each run for a standalone family-word literal."""
     files = []
     for rel in _ENTITY_VIEW_FILES:
@@ -3538,7 +3851,7 @@ def check_no_positional_hero():
     PRIMARY 'what to do' slot is never auto-filled by a reference-table row, and the hero/primary
     claim is never chosen by array position. DATA half (binds now): no condition's
     protocol_claim_ids contains a base-line-program / dose-table claim. VIEW half (surface-scoped,
-    _ENTITY_VIEW_FILES EMPTY in H1 -> binds when the render lands in H2): no `claims[0]`/`record[0]`
+    _ENTITY_VIEW_FILES holds 2 real views, BINDING as of 2026-07-15): no `claims[0]`/`record[0]`
     hero pattern. Truth anchor: entity-page-data.json protocol_claim_ids x corpus-embed
     base_line_table + the entity-view .ts bytes, recomputed each run."""
     artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
@@ -3830,6 +4143,14 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
         severity="critical",
         lesson_ref="Blueprint Phase C / Charter R2 (2026-07-05) -- the poison purge: targets used to sum Youngevity Healthy Body Start Pak labels, letting Youngevity define recommended amounts; now every number is a Wallach dose claim carrying its source_claim_id. memory: wallach-drives-recommendations-youngevity-composition",
+    ),
+    Invariant(
+        name="dose_amount_in_verbatim",
+        description="every claim's structured dose.amount is literally present in that claim's OWN verbatim -- unit-adjacent, scoped to the claim's own table row, and (where for_condition names the column) at the right column index. The link R2 was missing: amounts_wallach_only anchors a target to the CLAIM's dose field, which is ours; this anchors that field to the book text",
+        check_fn=check_dose_amount_in_verbatim,
+        truth_anchor="the claim's own verbatim bytes -- which corpus_integrity independently pins to the sealed book .txt. R5 proves the quote is the book's; this proves the number is the quote's; amounts_wallach_only proves the target is the number's. Recomputed each run.",
+        severity="critical",
+        lesson_ref="2026-07-15 (Luneth-authorized): PROVEN by experiment that a planted 10x sodium fabrication (3,300 -> 33,000 mg) passed the ENTIRE board green while the claim's verbatim still read '3,300 mg' -- nothing tied dose.amount to the book. Adversaries then broke the first design 3 ways (cross-row bleed 72/86; a 1000x choline mg->mcg swap off chromium's row; in-row column bleed), all closed by row-scoping + positional column checks and pinned in tools/test_dose_amount_in_verbatim.py. The board was excellent at proving nothing DRIFTED and weak at proving anything is RIGHT; this is the first gate that reads Wallach's printed number.",
     ),
     Invariant(
         name="collective_doses_not_fanned",
@@ -4145,7 +4466,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_positional_hero",
-        description="Phase H1 (prominence) -- the entity page's curated primary 'what to do' slot is never auto-filled by a reference-table row (a base-line-program / dose-table claim in protocol_claim_ids), and the hero/primary is never chosen by array position. DATA half binds now; the VIEW half is surface-scoped (_ENTITY_VIEW_FILES EMPTY in H1 -> binds when the render lands in H2)",
+        description="Phase H1 (prominence) -- the entity page's curated primary 'what to do' slot is never auto-filled by a reference-table row (a base-line-program / dose-table claim in protocol_claim_ids), and the hero/primary is never chosen by array position. DATA half binds now; the VIEW half is surface-scoped (_ENTITY_VIEW_FILES holds 2 real views and BINDS on them as of 2026-07-15)",
         check_fn=check_no_positional_hero,
         truth_anchor="entity-page-data.json protocol_claim_ids x corpus-embed base_line_table + the entity-view .ts bytes scanned for a claims[0]/record[0] hero, recomputed each run",
         severity="critical",
