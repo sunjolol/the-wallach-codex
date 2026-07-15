@@ -66,9 +66,46 @@ lesson inverted — a label is a promise.
      MOLECULE (*"a single cobalt atom is the central metal component of vitamin B12"*), so
      400 mcg of B12 carries ~4% of that as cobalt, not 400 mcg. **Correct that docstring in
      the same patch** or the next session re-derives the old answer from it.
-   - **Needs:** a sealed-pillar edit (Luneth's seal sign-off) + the EFA-pattern group
-     machinery (`efa_coverage_derive.py` → `efa-coverage-data.json` → `coverage.ts:732` is
-     the template) + a gate. **Its own chunk — do not start it at the end of a session.**
+   - ⚠⚠ **DO NOT USE THE EFA PATTERN. An earlier draft of this handoff said to — that was
+     WRONG and is corrected here before anyone acted on it.** Traced through the real code
+     2026-07-15:
+     - `targets_derive.py:229-296` branches `if lst: … elif slug in collective: … else:`,
+       where `lst = doses.get(slug)` comes from `_maintenance_doses`, which **EXCLUDES**
+       collectives.
+     - **vitamin-b12 IS SAFE** — it keeps its OWN dose (`WAL-CLM-EPIGEN-000117`), so `lst` is
+       non-empty and it takes the FIRST branch. Tagging the cobalt claim cannot disturb it.
+     - **But cobalt would land in `elif slug in collective`** → `kind: "wallach_collective"`
+       with NO numeric `low` → `coverage.ts:732` looks for its meter, finds no
+       `'b12-cobalt'` case, and **`return ''` → STATUSLESS.**
+     - **That is option (b) — the honest-gap answer Luneth explicitly did NOT choose.** So
+       `collective_group` ALONE gives the wrong outcome. It is necessary (it stops the 400 mcg
+       elemental fan-out) but NOT sufficient.
+     - ★ **AND it plants a DEAD ALIAS:** `_collective_doses` fans over `c["essentials"]`, so
+       **vitamin-b12 gets a `collective` entry that the `elif` guarantees is never read.** If
+       B12's EPIGEN claim ever moves, b12 silently falls into the collective branch and goes
+       statusless. `coverage.ts:725-731` records this exact failure happening once already:
+       *"A dead alias is not inert; it is a loaded branch waiting for someone to feed it"* —
+       a dead `essential-fatty-acids` alias, once fed, rendered OMEGA-3/6 `covered` off two
+       plant-derived MINERAL products with ZERO fatty acids. **Do not leave b12 in that map.**
+   - **THE SHAPE THAT ACTUALLY FITS — a MIRROR, not a group (proposal, needs a design call):**
+     cobalt/B12 is NOT a shared budget. EFA = two members summing into ONE budget (9 g); PDM =
+     34 members sharing ONE vehicle dose. **Cobalt is neither: it has no independent delivery
+     at all**, because Wallach says elemental cobalt is unusable by humans. So a product
+     listing "Cobalt 2 mcg" must contribute NOTHING — there is no sum to take.
+     The faithful model is: **cobalt's verdict := vitamin-b12's verdict.** Suggested shape —
+     `target.kind: "mirrors"` + `mirrors_slug: "vitamin-b12"` + `source_claim_id:
+     WAL-CLM-IMMORT-000084`, and `coverage.ts` returns the mirrored slug's status.
+     **This is a NEW mechanism, so per R7 it ships its gate in the same patch:**
+     `mirrors_resolve` (the mirrored slug exists + is not itself a mirror → no cycles) and a
+     negative test proving a mirrored tile moves ONLY with its source and never off its own
+     elemental amount.
+   - **Also required in the SAME patch:** correct `targets_derive.py:137-140`'s docstring (its
+     "ONE substance carries two names" reasoning is the false premise this whole fix
+     overturns) + add the cobalt entry to `chronicle/essential-special-cases.md` §5's status.
+   - **Needs Luneth's SEAL SIGN-OFF** — the claim lives in the sealed corpus (§17 rule 6).
+   - **Verify with:** `render_probe_seeded.js` + a new case asserting cobalt tracks B12 (seed
+     B12-bearing product → both light; seed an elemental-cobalt-only product → cobalt does
+     NOT light). Plant the negative control FIRST — the pre-fix world must reproduce.
    - **Fails safe meanwhile:** the target is ~23× too high, so the field UNDER-states cobalt.
      Never falsely green.
 2. **P3 — slots in state.** The last blueprint prerequisite. Does NOT block the demo.
