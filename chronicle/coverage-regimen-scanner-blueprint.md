@@ -226,12 +226,14 @@ Full rebuild. The concept was good; the execution demanded too much human correc
 | ~~P1~~ | ~~Mine `directions` + maxima from the 245 images~~ | **DROPPED — the data does not exist to mine (§2). Superseded by D7.** Nothing blocks on it. | — |
 | ~~P2~~ | ~~Add `category` to all 215~~ | **DROPPED — reversed by D8.** An outside rule replaces it; no pillar change, nothing blocks. | — |
 | **P3** | **Extend `state/regimen.ts` for slots** — schema, chokepoints, gate | §3. The slot system does not exist in state | — |
-| **P4** | **Fix `coveredBy`** — rename to `contributesTo`, add a real covered-by join, negative test proving a 1%-contributor is excluded | §2. The rail's entire job is this join. A misnamed field is a trap for the next session, exactly like the tiers were | — |
-| **P5** | **Fix `rankSources` unit reconciliation** | §5. Adequacy is the 0.6 keystone and is currently broken for any unit-mismatched essential | — |
+| ~~P4~~ | ~~Fix `coveredBy`~~ | ✓ **DONE 2026-07-15 — but SCOPED DOWN on a finding.** The rename landed (`contributesTo`). The "add a real covered-by join" half was **dropped**: `coveredBy` had exactly TWO occurrences in the whole repo — its declaration and its assignment — so **nothing read it**. Building a join no consumer wants, in a shape the rail has not yet asked for, is speculation. The trap is gone; the join gets derived when the rail defines what it needs. | — |
+| ~~P5~~ | ~~Fix `rankSources` unit reconciliation~~ | ✓ **DONE 2026-07-15.** Scope was exactly 2 of 34 (boron mg-vs-mcg, silver mcg-vs-mg). All 19 boron candidates read adequacy **1.0000** — the 0.6 keystone was a CONSTANT, so ranking collapsed to breadth+price; now 0.054–0.544. Silver 0.0001 → 0.1000. The converter was promoted to `core/units.ts` because `boundaries` forbids state→state, and duplicating it would break R3. | — |
 
 ★ **BOTH PILLAR PASSES ARE GONE (2026-07-15, same day).** P1 died on data that does not exist; P2 was reversed as not worth the cost. **No sealed canonical is touched by this work at all**, and the three survivors are pure code — so nothing here needs a seal sign-off. The demo is three steps away, not five.
 
-**Sequence check:** P4 and P5 are live defects the rail and the recommender would otherwise be built on top of; P3 is the state the whole slot system hangs from. None of the three depends on the other two, so they can land in any order.
+**Sequence check — UPDATED 2026-07-15.** P4 + P5 are **DONE**. **P3 (slots in state) is the only prerequisite left**, and even it does not block the DEMO — the demo is a standalone prototype in `temporary/` that shares no code with the live app. P3 blocks the LIVE build only.
+
+★ **A gate this work earned but did not ship (R7 — labelled, not promised):** `recommender_target_units_reconcile`. `rankSources` now FAILS SAFE on an unreconcilable unit pair, but nothing proves the two artifacts stay reconcilable as they drift. The code is honest; the gate is a WISH.
 
 ---
 

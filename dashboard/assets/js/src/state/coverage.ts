@@ -112,8 +112,26 @@ export interface CoverageTile {
   covered: boolean;
   /** Ratio of Wallach target met (0..>1, can exceed 1 with stacking; 1 for trace/dietary). */
   fillPercent: number;
-  /** Regimen item display names contributing to this tile. */
-  coveredBy: string[];
+  /**
+   * Regimen item display names that CONTRIBUTED A NONZERO AMOUNT to this tile.
+   *
+   * ★ RENAMED FROM `coveredBy` 2026-07-15 (P4) — the old name was a lie the doc
+   * comment above it quietly contradicted, and a name is what a reader skims.
+   * This is NOT "the products that cover this tile":
+   *   - accumulate() pushes a source after ANY nonzero delivery — there is no
+   *     status check (see the push beside `d.totalMg += conv.v`);
+   *   - the tile assembly attaches this to EVERY tile regardless of status.
+   * So a product supplying 1% of a target sits in a GAP tile's list. Three
+   * independent design reviews each built "this item covers these tiles" on the
+   * old name and each fabricated a status; that is what the rename prevents.
+   *
+   * If a genuine covered-by join is ever needed, DERIVE it (`status === 'covered'`
+   * ∧ these contributors) — do not read this field as if it already were one.
+   * Deliberately NOT built today: nothing consumes it yet, and the Coverage rail
+   * that will needs a per-ITEM→tiles projection, which is a different shape. See
+   * chronicle/coverage-regimen-scanner-blueprint.md §5.
+   */
+  contributesTo: string[];
   /** Whether this tile is closed via the PDM aggregate-vehicle rule. */
   aggregateVehicle: boolean;
   /**
@@ -812,7 +830,7 @@ export function recompute(): CoverageSnapshot {
       status,
       covered: status === 'covered' || status === 'trace',
       fillPercent: isPdm ? (PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0) : deliveryRatio(t, status, d),
-      coveredBy: isPdm ? pdm.sources : d.sources,
+      contributesTo: isPdm ? pdm.sources : d.sources,
       aggregateVehicle: isPdm && status === 'covered',
       intakeVsTarget,
     };
