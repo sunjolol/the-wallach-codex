@@ -1,22 +1,133 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15, omega session wrap)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~07:00 CDT, overnight audit-fix session)
 
-> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses"). Board **66/66** green. **NEXT = the Coverage tab re-design — Luneth has notes to share; finish the demo 100%, THEN build it live.**
+> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
+> Board **69/69** — but read the next line before you repeat that number to anyone.
 >
-> The Coverage redesign is still a DEMO under gitignored `temporary/` and is NOT built live. **The omegas are DONE** (sealed · gated · measured · probed) — that half of the old handoff is closed. Everything below the START HERE section is the still-live design record.
+> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** `genesis` now prints the board as
+> `69/69 · 18 external / 17 consistency / 32 structural / 2 meta`. Only the **external** gates
+> check anything outside our own files. The rest prove our files agree with each other. **A green
+> board means NOTHING DRIFTED. It does not mean anything is RIGHT.** Do not report the total to
+> Luneth as a statement about Wallach — that is exactly how this project spent three weeks
+> confidently wrong, and Claude did it again at the top of the 2026-07-15 session.
 
-## ★★★★ START HERE NEXT SESSION — Luneth's order, verbatim
+## ★★★★ START HERE — what Luneth is waiting on
 
-> *"I'd like to close this session out then get back to the coverage tab re-design in a new session, I have some notes for that I want to share so we can finish it 100% then start to build it live"*
+He went to sleep at ~02:00 CDT 2026-07-15 with: *"I want every single issue you discovered fixed
+(as in not just things removed and call it a day, but fix the issues they caused in the first
+place)"*, after answering four scoping questions. **The audit half is DONE and pushed** (6 commits,
+`aa894aea` → `325b30b2`). **What remains is the VISUAL half he deliberately reserved for his own
+eyes.**
 
-1. **ASK LUNETH FOR HIS COVERAGE NOTES.** He has them and they gate everything. Do not start guessing at the demo.
-2. **FINISH `temporary/coverage-D-personalized.html` to 100%** against those notes. His visual pass was never completed.
-3. **THEN integrate D into `dashboard/`.** Not before 1 + 2.
+1. **SHOW HIM THE TWO FLAGGED ITEMS FIRST** (both in `## ★ NEEDS LUNETH'S CALL` below). One is a
+   ratchet loosening made while he slept. He may want it reverted.
+2. **THEN the Coverage mineral REGROUP — his explicit decision, not yours to re-open.** He chose
+   *"Regroup by dose structure"*: the 33 that share one PDM dose vs the 27 that carry their own
+   Wallach doses. This replaces the invented FOUNDATIONAL / MAJOR TRACE / RARE TRACE tiers.
+   **NOT BUILT.** It is the biggest visual change on the board and needs his eyes.
+3. **His 9 original Coverage notes** are still open except the two non-visual ones (done — see
+   below). Re-read them in the 2026-07-15 transcript; they are his words, not a summary.
 
-**Tile width was fixed + signed off 2026-07-15** (`0853eacd`): the grid is `repeat(auto-fill, 100px)` + `gap: 9px`. Luneth: *"you got it plenty close enough. Looks good as is."* ⚠ The in-file comment's OLD math (1208px / 12 columns) was measured at a bare 1920 with no scrollbar — his real layout viewport is **1905**, the host content box is **1193px**, and 100px is the WIDEST track that still fits 11 columns (101 drops to 10 and orphans the FOUNDATIONAL row's 11th tile). Residual: right inset 27px vs left 24px — 3px, accepted. AMINO ACIDS still orphans `Val` alone on row 2 — pre-existing, Luneth: *"we can't fix this without breaking something else."*
+## ★★★★ THE TIERS ARE AN INVENTION — settled, do not re-litigate
 
-★ **A LESSON THAT COST REAL TIME THIS SESSION** — `justify-content: space-between` fills the row exactly and is the obvious fix. It is a TRAP: a 4x isolated-ring pixel test proved fractional track POSITION alone reproduces the 1fr ring defect (right edge 8.00 device px vs the left's 12.00) even with an integer WIDTH. **Integer POSITION, not merely integer width, is what keeps the ring even.** Do not "improve" the grid with space-between.
+**Wallach never enumerates them. This is proven from two independent directions.**
+
+- He names three categories **exactly once** in the entire corpus (`immortality.txt:3760-3766`):
+  *"There are three major categories of minerals known in human and animal nutrition: Major
+  minerals / Trace minerals / Rare earths"* — then a chapter break. He never refers to the triad
+  again and **never assigns a single element to any of them.**
+- The words **"foundational", "major trace", "rare trace" appear ZERO times** in all 7 books, in
+  any sense.
+- **All four of his A-Z element sections are explicitly FLAT**, in his own words: *"presented in
+  alphabetical order according to the chemical symbols of each"* (`immortality:4350`, `dddl:6928`,
+  `rare-earths:21696`, `epigenetics:21637`). In *Rare Earths* a heading literally reads "THE
+  PERIODIC TABLE OF: METALS, MINERALS, TRACE MINERALS & RARE EARTHS" — over a flat list.
+- **His own authority graphic prints all 60 minerals FLAT, A-Z, three columns of 20, no grouping.**
+- His categories are **not even mutually exclusive**: Lanthanum + Yttrium appear in his trace list
+  (`immortality:10970-71`) AND his rare-earths enumeration (`:10983-94`), ~20 lines apart.
+- **Where ours came from:** `dashboard/components/workspace-coverage-v3.2-PROPOSAL.html` — a UI
+  design mockup — → `views/coverage.ts` → `coverage-layout-data.json` → the canon bootstrap
+  2026-06-24, three days later. The canon's own `provenance` field says so. The tell: `rare_trace`
+  order is alphabetical **by atomic symbol** (Ag, Al, As, Au…), which is how a list is lifted off a
+  rendered table.
+
+**The skeleton — not the canon — is what decides Silver is "rare trace"**
+(`coverage-layout-skeleton.json:102`). `canon.subtype` is **proven-dead data**: flipping three
+subtypes yields a byte-identical artifact. `coverage_layout_derive.py` never reads it. Deleting it
+is a CANON write, which Luneth reserved — **staged for him, not done.**
+
+## ★ NEEDS LUNETH'S CALL (2 items, both flagged loudly)
+
+1. **A RATCHET LOOSENING.** `knip-baseline.json` says *"This list may only SHRINK"*; I appended one
+   entry (`state/profile.ts|saveUserProfile`) because the §31 name-writer has no caller until the
+   arrival/rename UI lands. Recorded in a `_ratchet_additions` block inside the baseline with the
+   three options I had. **He may reject it** — revert the key and drop `saveUserProfile` until its
+   UI exists.
+2. **`design-system.golden.sha256` is computed over RAW CRLF bytes**, while every corpus golden is
+   LF-normalized/clone-stable per `corpus_seal.py`. So `design_system_hash_integrity` **would RED on
+   a fresh clone.** Fixing it means re-sealing a sealed canonical = his signature. Not touched.
+
+## ★★★ WHAT LANDED OVERNIGHT (6 commits, all pushed)
+
+- **`dose_amount_in_verbatim`** (NEW, critical) — **the cornerstone hole.** Nothing ever tied a
+  claim's `dose.amount` to the book text; a planted 10x sodium fabrication (3,300→33,000 mg) passed
+  the WHOLE board green while the verbatim still read "3,300 mg". Adversaries broke the first design
+  3 ways (cross-row bleed 72/86; a **1000x choline mg→mcg swap** off chromium's row; in-row column
+  bleed) — all closed by row-scoping + positional column checks. **Zero baseline exceptions**: the
+  spec's proposed one would have neutered the whole gate (the baseline is INVARIANT-scoped).
+  It found **1 real defect** on its first run (`WAL-CLM-RARE-000048`, verbatim span cut one sentence
+  short of its own dose) — fixed, re-sealed at **kv=333**.
+- **`charter_gates_present` verified 2 of 9 rules** while reporting all 9 (per-row WISH exemption).
+  Now 9/9.
+- **3 "critical" design gates could never fail** — they read a mode from `tacitus/feature-flags.json`,
+  a file and a directory that **do not exist**; the bare `except` returned "warn" and every
+  violation became a PASS. Knob deleted. `write_protection`'s mtime check replaced with a **git
+  anchor** (it now catches an agent editing the css AND re-sealing the golden — which
+  `hash_integrity` is blind to by construction).
+- **`regimen_state_mutation_routing` (§31) RESTORED** — gone since 2026-07-05 "to return in Phase C";
+  Phase C landed the SAME DAY and nobody noticed for 10 days while CLAUDE.md asserted §31 flatly.
+- **`essentials_canon_matches_graphic`** (NEW) — the canon's membership now has its first anchor
+  outside our app. **It matched the graphic EXACTLY, zero diff, first run.** The membership was
+  right all along; it just was never proven — which is precisely why nobody caught that it had no
+  anchor.
+- **`collective_doses_not_fanned`** fail-open closed (it only caught fan-outs someone remembered to
+  annotate).
+- **Doctrine trimmed, nothing added:** the duplicate R1-R9 table deleted from the blueprint; the
+  Charter's R2 scope corrected (its gate reads **38 of 91** essentials, not "every amount"); the
+  Charter's stale-in-BOTH-directions fixed; the rotted 2026-06-24 "CONFIRMED" verdict corrected
+  (all 3 evidence legs dead — though **the conclusion, 90, is true and externally anchored** at
+  `dddl:4196`; it was right by luck, not by its reasoning).
+- **Profile:** `dashboard.html` hardcoded the name **"Luneth"** into the markup — now real state,
+  defaulting to **"You"** (profile tab) / **"Codex"** (brand slot) per his call. Name input hardened.
+
+## ★★ THE COVERAGE DEFECTS — diagnosed, NOT fixed (view-layer only)
+
+- **The 33-amplified cards.** The group scoring **IS live and works** — probe: 1× PDM flips all 33
+  to `partial` together, 2× to `covered`. Nothing was falsely claimed; commit `db8d7c41` explicitly
+  said *"Nothing new is visible on the tab yet."* The defect: `views/coverage.ts::renderTile`
+  (79-107) reads only `tile.status` and **never reads `tile.pdmGroup`** — which
+  `state/coverage.ts:798` already puts on every tile and `views/entity-page.ts:330` already consumes
+  correctly. With no PDM in the stack the ONE shared verdict is `''`, which renders as a bare
+  `.tile` — identical to a genuinely unmined essential. **One group verdict amplified 33×.**
+- **Absence-as-state is the styling root cause.** "NO WALLACH NUMBER YET" has **no class** — it is
+  the ABSENCE of one, so it cannot be styled independently of the chassis. 50 tiles share it and
+  render two ways: 33 PDM at **2.67:1** contrast vs 17 (phosphorus, strontium, 12 aminos, 3 omegas)
+  at **1.11:1** — imperceptible. Luneth's "aminos and omegas have no borders" is a MEASUREMENT.
+  "NOT COVERED" (37) is actually 100% consistent; the "some have left borders" he saw is Silver+Tin.
+- **The legend lies.** Its swatches hand-duplicate the tile treatments (R3) and both have drifted
+  (`pending` alpha .12 vs the tile's .10; `gap` dropped its depth layer). The swatch for "NO WALLACH
+  NUMBER YET" matches **17 of 50** tiles. `.is-foundation` wears 36% of the field with **no legend
+  entry**. The comment at `workspace-coverage.css:848` — *"a legend that renders a different language
+  than the thing it explains is just another lie"* — is now itself the lie.
+- **A loaded gun:** `.is-foundation`'s `!important` box-shadow and `.gap` share a CSS channel. It
+  fires on 0 tiles today ONLY because no PDM element has a Wallach number yet.
+- **Silver + Tin are NOT bugs.** They carry their own Wallach doses (400 mcg / 500 mcg) and
+  correctly render individually inside RARE TRACE. Already adjudicated.
+- **Legend arithmetic is SOUND** (4+0+0+37+49 = 90; 91 shown; the +1 is omega-9).
+
 
 ---
+
+_Everything below is the still-live design record from prior sessions, carried forward unchanged._
 
 ## ★★★★ THE OMEGAS ARE DONE — do not re-open the decision
 
