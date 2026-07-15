@@ -324,7 +324,7 @@ function srcRow(s: RankedSourceRow, isBest: boolean): string {
 }
 
 function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null): string {
-  // Rare-earth GROUP tiles carry no per-element dose — the 33 trace_pdm minerals share ONE
+  // Plant-derived GROUP tiles carry no per-element dose — the 34 trace_pdm minerals share ONE
   // meter (Σ plant-derived vehicle mg vs the 924 mg Wallach group goal). Render the group
   // treatment, not the per-element target/pending logic.
   if (tile?.pdmGroup === true && snapshot?.pdmGroup != null) {
@@ -394,7 +394,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   </div>`;
 }
 
-// ─── Rare-earth GROUP "at a glance" (the 33 trace_pdm minerals, scored as one) ──
+// ─── Plant-derived GROUP "at a glance" (the 34 trace_pdm minerals, scored as one) ──
 
 /** Green fill once the goal is met (covered), else the default orange "in progress". */
 function barFillClass(s: CoverageStatus): string {
@@ -433,7 +433,7 @@ function pdmSrcRow(s: { productId: string; name: string; mg: number }): string {
 }
 
 /**
- * The rare-earth group treatment: no per-element dose exists, so all 33 trace_pdm minerals
+ * The plant-derived group treatment: no per-element dose exists, so all 34 trace_pdm minerals
  * show the ONE shared meter (Σ vehicle mg vs the 924 mg group goal) + the group explanation.
  */
 function renderPdmGroupGlance(g: PdmGroupSummary): string {

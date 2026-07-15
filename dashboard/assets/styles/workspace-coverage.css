@@ -425,7 +425,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 /* SUB-SECTION — mini label that breaks a section into navigable groups
-   (e.g. Minerals: Foundational / Major Trace / Rare Trace). Lighter
+   (Minerals: Foundational / Individually Dosed / Plant Derived). Lighter
    visual weight than the main section header — a guide-mark, not a divider. */
 .essentials-subsection { margin-bottom: var(--ds-space-4); }
 .essentials-subsection:last-child { margin-bottom: 0; }

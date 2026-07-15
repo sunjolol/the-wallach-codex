@@ -199,9 +199,9 @@ function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): st
 
 /** The demo's friendly sh-subhead wording (view-copy), keyed by the layout's own label. */
 const SEC_LABEL_KEY: Record<string, string> = {
-  'FOUNDATIONAL': 'kd_esssec_structural',
-  'MAJOR TRACE': 'kd_esssec_electrolytes',
-  'RARE TRACE': 'kd_esssec_trace',
+  'FOUNDATIONAL': 'kd_esssec_foundational',
+  'INDIVIDUALLY DOSED': 'kd_esssec_dosed',
+  'PLANT DERIVED': 'kd_esssec_plantderived',
   'VITAMINS': 'kd_esssec_vitamins',
   'AMINO ACIDS': 'kd_esssec_amino',
   'FATTY ACIDS': 'kd_esssec_fatty',

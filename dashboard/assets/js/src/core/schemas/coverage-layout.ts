@@ -52,7 +52,7 @@ export const LayoutTileSchema = z.object({
 });
 export type LayoutTile = z.infer<typeof LayoutTileSchema>;
 
-/** A labelled run of tiles inside a section (minerals: foundational/major/rare). */
+/** A labelled run of tiles inside a section (minerals: foundational/individually-dosed/plant-derived). */
 export const LayoutSubsectionSchema = z.object({
   rank: z.string(),
   label: z.string(),

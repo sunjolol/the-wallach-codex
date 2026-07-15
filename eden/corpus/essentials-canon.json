@@ -296,7 +296,7 @@
       "symbol": "Sr",
       "layout_key": "Strontium",
       "essential": true,
-      "coverage_kind": "unspecified"
+      "coverage_kind": "trace_pdm"
     },
     {
       "slug": "vanadium",

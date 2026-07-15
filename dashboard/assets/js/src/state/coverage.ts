@@ -41,7 +41,7 @@
  *   manual items, minus removed, with override scaling) → resolve each label
  *   nutrient to a canon slug + sum into the target's per-essential mg/IU totals
  *   (unit-convert + scale) → classify each essential against its Wallach target.
- *   The 33 trace_pdm rare-earths have no per-mineral dose; they share ONE graduated
+ *   The 34 trace_pdm plant-derived minerals have no per-mineral dose; they share ONE graduated
  *   verdict from the plant-derived-mineral aggregate (Σ vehicle mg / the ~924 mg
  *   goal — pdm-coverage-data.json), computed once per recompute (pdmAggregate).
  *
@@ -87,9 +87,6 @@ import {
 export type TileId = string;
 
 export type TileCategory =
-  | 'foundational'
-  | 'major-trace'
-  | 'rare-trace'
   | 'vitamins'
   | 'aminos'
   | 'fatty-acids'
@@ -162,9 +159,12 @@ export interface CoverageSnapshot {
 
 /**
  * Map the targets-DB coarse category to our TileCategory. Mineral subsection
- * granularity (foundational / major-trace / rare-trace) lives in the layout,
- * not the targets DB, so minerals collapse to `other` here — `byCategory` is a
- * tally aid, not a render source (views read the layout for section grouping).
+ * granularity (FOUNDATIONAL / INDIVIDUALLY DOSED / PLANT DERIVED) lives in the
+ * layout, not the targets DB, so minerals collapse to `other` here — `byCategory`
+ * is a tally aid, not a render source (views read the layout for section grouping).
+ * The union carried 'foundational' | 'major-trace' | 'rare-trace' until 2026-07-15;
+ * nothing ever emitted them (this function collapses every mineral to 'other'), and
+ * they named a tier scheme Wallach never wrote. Removed rather than renamed.
  */
 function catFromTarget(raw: string): TileCategory {
   switch (raw) {
@@ -388,8 +388,8 @@ function readScale(item: RegimenItem, overrides: OverridesMap): number {
   return 1;
 }
 
-// ─── Trace/rare-mineral aggregate (PDM coverage) ───────────────────────────
-// The 33 trace_pdm rare-earths have no individual Wallach dose; they are covered
+// ─── Plant-derived mineral aggregate (PDM coverage) ────────────────────────
+// The 34 trace_pdm minerals have no individual Wallach dose; they are covered
 // as ONE group by plant-derived-mineral intake — Σ(vehicle mg) / goal. Goal +
 // per-product vehicle mg are GENERATED (pdm_coverage_derive.py) from the sealed
 // pillar (composition) + the curated judgment + Wallach's sealed dose claim.
@@ -456,7 +456,7 @@ interface PdmDelivery {
  * Aggregate plant-derived-mineral delivery across the effective regimen: sum each
  * item's vehicle mg (serving-scaled), OR-ing the present-but-unquantified flag.
  * Matched by canonical name (the same join the auto-heal uses). This ONE aggregate
- * scores all 33 trace_pdm tiles (they have no per-mineral delivery of their own).
+ * scores all 34 trace_pdm tiles (they have no per-mineral delivery of their own).
  */
 function pdmAggregate(items: RegimenItem[], overrides: OverridesMap): PdmDelivery {
   const map = pdmByName();
@@ -491,7 +491,7 @@ function pdmAggregate(items: RegimenItem[], overrides: OverridesMap): PdmDeliver
 // essential fatty acids as a CATEGORY ("supplemented at the rate of 9 grams per day
 // in capsule form", WAL-CLM-DDDL-000115), and his EFAs are exactly two — "only two
 // (linoleic and linolenic) are designated as Essential Fatty Acids". So they share
-// ONE meter, Σ(regimen efa_oil_mg) / goal, exactly as the 33 rare-earths share the
+// ONE meter, Σ(regimen efa_oil_mg) / goal, exactly as the 34 plant-derived minerals share the
 // PDM meter. The goal + per-product mg are GENERATED (efa_coverage_derive.py) from
 // the sealed pillars; omega-9 is NOT a member (Wallach never names oleic acid an EFA).
 // ★ The measure is OIL mass: Wallach writes "essential fatty acids AS FLAXSEED OIL at
@@ -687,10 +687,12 @@ function classify(
     return hasSrc ? 'covered' : '';
   }
   if (kind === 'trace_pdm') {
-    // The 33 trace_pdm rare-earths share ONE verdict from the plant-derived-mineral
+    // The 34 trace_pdm minerals share ONE verdict from the plant-derived-mineral
     // aggregate (Σ vehicle mg / goal), computed once per recompute — not per mineral
-    // (no product label itemizes a rare earth). silver/tin/cobalt carry their own
+    // (no product label itemizes them individually). silver/tin/cobalt carry their own
     // Wallach dose → kind 'wallach' → the numeric path below, never here.
+    // NOT "the rare earths": 19 of the 34 are not, by Wallach's own tagging. The group
+    // is defined by having no individual dose — see pdm_coverage_derive.py's docstring.
     return pdmStatus;
   }
   if (kind === 'wallach_collective') {

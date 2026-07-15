@@ -11,7 +11,7 @@
         {
           "rank": "A",
           "label": "FOUNDATIONAL",
-          "hint": "structural + macro · atomic order",
+          "hint": "air · water · food · no amount stated",
           "tiles": [
             {
               "key": "Hydrogen"
@@ -24,37 +24,25 @@
             },
             {
               "key": "Oxygen"
-            },
-            {
-              "key": "Sodium"
-            },
-            {
-              "key": "Magnesium"
-            },
-            {
-              "key": "Phosphorus"
-            },
-            {
-              "key": "Sulfur"
-            },
-            {
-              "key": "Chloride"
-            },
-            {
-              "key": "Potassium"
-            },
-            {
-              "key": "Calcium"
             }
           ]
         },
         {
           "rank": "B",
-          "label": "MAJOR TRACE",
-          "hint": "mid-dose essentials · A→Z",
+          "label": "INDIVIDUALLY DOSED",
+          "hint": "Wallach names an amount · A→Z",
           "tiles": [
             {
+              "key": "Silver"
+            },
+            {
               "key": "Boron"
+            },
+            {
+              "key": "Calcium"
+            },
+            {
+              "key": "Chloride"
             },
             {
               "key": "Cobalt"
@@ -66,13 +54,19 @@
               "key": "Copper"
             },
             {
-              "key": "Germanium"
-            },
-            {
               "key": "Iron"
             },
             {
+              "key": "Germanium"
+            },
+            {
               "key": "Iodine"
+            },
+            {
+              "key": "Potassium"
+            },
+            {
+              "key": "Magnesium"
             },
             {
               "key": "Manganese"
@@ -81,13 +75,22 @@
               "key": "Molybdenum"
             },
             {
+              "key": "Sodium"
+            },
+            {
+              "key": "Phosphorus"
+            },
+            {
+              "key": "Sulfur"
+            },
+            {
               "key": "Selenium"
             },
             {
               "key": "Silica"
             },
             {
-              "key": "Strontium"
+              "key": "Tin"
             },
             {
               "key": "Vanadium"
@@ -99,12 +102,9 @@
         },
         {
           "rank": "C",
-          "label": "RARE TRACE",
-          "hint": "PDM aggregate spectrum · A→Z",
+          "label": "PLANT DERIVED",
+          "hint": "no individual amount · one shared verdict",
           "tiles": [
-            {
-              "key": "Silver"
-            },
             {
               "key": "Aluminum"
             },
@@ -184,7 +184,7 @@
               "key": "Samarium"
             },
             {
-              "key": "Tin"
+              "key": "Strontium"
             },
             {
               "key": "Tantalum"

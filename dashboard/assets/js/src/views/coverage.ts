@@ -8,7 +8,7 @@
  *
  * Visual contract:
  *   - .coverage-grid 2-col: coverage-main (essentials + goals) + regimen-rail
- *   - 4 sections: Minerals (60, w/ 3 subsections), Vitamins (16), Aminos (12), Fats (3)
+ *   - 4 sections: Minerals (60, w/ 3 subsections: 4/22/34), Vitamins (16), Aminos (12), Fats (3)
  *   - .ds-cipher cycling glyph engine for tech-readout chrome
  *   - .ds-scan-line + .ds-border-travel ambient animations
  *

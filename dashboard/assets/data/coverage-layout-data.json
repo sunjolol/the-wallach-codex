@@ -10,7 +10,7 @@
         {
           "rank": "A",
           "label": "FOUNDATIONAL",
-          "hint": "structural + macro · atomic order",
+          "hint": "air · water · food · no amount stated",
           "tiles": [
             {
               "key": "Hydrogen",
@@ -35,61 +35,37 @@
               "name": "OXYGEN",
               "num": 8,
               "sym": "O"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "INDIVIDUALLY DOSED",
+          "hint": "Wallach names an amount · A→Z",
+          "tiles": [
+            {
+              "key": "Silver",
+              "name": "SILVER",
+              "num": 47,
+              "sym": "Ag"
             },
             {
-              "key": "Sodium",
-              "name": "SODIUM",
-              "num": 11,
-              "sym": "Na"
-            },
-            {
-              "key": "Magnesium",
-              "name": "MAGNESIUM",
-              "num": 12,
-              "sym": "Mg"
-            },
-            {
-              "key": "Phosphorus",
-              "name": "PHOSPHORUS",
-              "num": 15,
-              "sym": "P"
-            },
-            {
-              "key": "Sulfur",
-              "name": "SULFUR",
-              "num": 16,
-              "sym": "S"
-            },
-            {
-              "key": "Chloride",
-              "name": "CHLORIDE",
-              "num": 17,
-              "sym": "Cl"
-            },
-            {
-              "key": "Potassium",
-              "name": "POTASSIUM",
-              "num": 19,
-              "sym": "K"
+              "key": "Boron",
+              "name": "BORON",
+              "num": 5,
+              "sym": "B"
             },
             {
               "key": "Calcium",
               "name": "CALCIUM",
               "num": 20,
               "sym": "Ca"
-            }
-          ]
-        },
-        {
-          "rank": "B",
-          "label": "MAJOR TRACE",
-          "hint": "mid-dose essentials · A→Z",
-          "tiles": [
+            },
             {
-              "key": "Boron",
-              "name": "BORON",
-              "num": 5,
-              "sym": "B"
+              "key": "Chloride",
+              "name": "CHLORIDE",
+              "num": 17,
+              "sym": "Cl"
             },
             {
               "key": "Cobalt",
@@ -110,22 +86,34 @@
               "sym": "Cu"
             },
             {
-              "key": "Germanium",
-              "name": "GERMANIUM",
-              "num": 32,
-              "sym": "Ge"
-            },
-            {
               "key": "Iron",
               "name": "IRON",
               "num": 26,
               "sym": "Fe"
             },
             {
+              "key": "Germanium",
+              "name": "GERMANIUM",
+              "num": 32,
+              "sym": "Ge"
+            },
+            {
               "key": "Iodine",
               "name": "IODINE",
               "num": 53,
               "sym": "I"
+            },
+            {
+              "key": "Potassium",
+              "name": "POTASSIUM",
+              "num": 19,
+              "sym": "K"
+            },
+            {
+              "key": "Magnesium",
+              "name": "MAGNESIUM",
+              "num": 12,
+              "sym": "Mg"
             },
             {
               "key": "Manganese",
@@ -140,6 +128,24 @@
               "sym": "Mo"
             },
             {
+              "key": "Sodium",
+              "name": "SODIUM",
+              "num": 11,
+              "sym": "Na"
+            },
+            {
+              "key": "Phosphorus",
+              "name": "PHOSPHORUS",
+              "num": 15,
+              "sym": "P"
+            },
+            {
+              "key": "Sulfur",
+              "name": "SULFUR",
+              "num": 16,
+              "sym": "S"
+            },
+            {
               "key": "Selenium",
               "name": "SELENIUM",
               "num": 34,
@@ -152,10 +158,10 @@
               "sym": "Si"
             },
             {
-              "key": "Strontium",
-              "name": "STRONTIUM",
-              "num": 38,
-              "sym": "Sr"
+              "key": "Tin",
+              "name": "TIN",
+              "num": 50,
+              "sym": "Sn"
             },
             {
               "key": "Vanadium",
@@ -173,15 +179,9 @@
         },
         {
           "rank": "C",
-          "label": "RARE TRACE",
-          "hint": "PDM aggregate spectrum · A→Z",
+          "label": "PLANT DERIVED",
+          "hint": "no individual amount · one shared verdict",
           "tiles": [
-            {
-              "key": "Silver",
-              "name": "SILVER",
-              "num": 47,
-              "sym": "Ag"
-            },
             {
               "key": "Aluminum",
               "name": "ALUMINUM",
@@ -339,10 +339,10 @@
               "sym": "Sm"
             },
             {
-              "key": "Tin",
-              "name": "TIN",
-              "num": 50,
-              "sym": "Sn"
+              "key": "Strontium",
+              "name": "STRONTIUM",
+              "num": 38,
+              "sym": "Sr"
             },
             {
               "key": "Tantalum",

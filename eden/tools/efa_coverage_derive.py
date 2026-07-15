@@ -3,7 +3,7 @@
 
 Generates dashboard/assets/data/efa-coverage-data.json — read by state/coverage.ts to score
 omega-3 + omega-6 as ONE GROUP against Wallach's single EFA amount. Mirrors
-pdm_coverage_derive.py, which solves the identical shape for the 33 trace_pdm rare-earths.
+pdm_coverage_derive.py, which solves the identical shape for the 34 trace_pdm plant-derived minerals.
 
 WHY A GROUP AT ALL. Wallach states ONE amount for the essential fatty acids as a CATEGORY:
 "Essential fatty acids are a must and should be consumed at the rate of 3 percent of your total
