@@ -1,4 +1,4 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~16:15 CDT, seal-fix + Coverage-demo session)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~18:05 CDT, Coverage/Regimen/Scanner BLUEPRINT session)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
 > Board **69/69** — but read the next line before you repeat that number to anyone.
@@ -26,20 +26,112 @@ The 60 minerals are now split by **what Wallach tells you to DO**, never by impo
 Ordering: FOUNDATIONAL atomic (H C N O P); B + C **A→Z by symbol** (Luneth's UX call — the tile
 shows the symbol big). Names are **his**, chosen 2026-07-15 after he rejected three proposals.
 
-## ★★★★ NEXT SESSION = THE "DAILY PROTOCOL" RAIL (Luneth's own scoping, 2026-07-15)
+## ★★★★ THE BLUEPRINT IS SIGNED OFF — `chronicle/coverage-regimen-scanner-blueprint.md`
 
-His words at sign-off: *"The only thing missing now is the 'daily protocol' appearance/logistics
-(what does it look like with tons of items, with few items, how does 'add item/manage' work, what
-does it link to etc. — lots to figure out there but that's a separate session)."*
+**Luneth, 2026-07-15: "Signed off. … Good to go."** The rail question is CLOSED — it turned out to be
+one surface of a three-surface problem, and he authored the whole concept (Coverage ↔ Regimen ↔
+Scanner) rather than the rail alone. **READ THAT BLUEPRINT — it is the authority for all three
+surfaces. Do not re-derive any of it from this file or from a demo.**
 
-The regimen rail on the right of `temporary/coverage-D-personalized.html` is the LAST unresolved
-surface of the Coverage redesign. Open questions HE named, none answered yet:
-- what it looks like with MANY items vs FEW (today the demo only ever shows the empty state:
-  "Nothing here yet · ADD OR SCAN A PRODUCT TO LIGHT THE FIELD")
-- what **ADD ITEM** does · what **MANAGE** does · where each links
-- the rail is the CAUSATION behind every lit tile (see the SUPERSEDED table — he killed the idea of
-  cutting it: *"I see no way to divorce this from the coverage page"*), so its density behaviour is
-  what makes the whole field legible.
+**His SIX locked calls (blueprint §1 — never re-litigate):**
+
+| | Question | His call |
+|---|---|---|
+| D1 | Default dose source | **Wallach's dose where a sealed claim doses the PRODUCT; label directions otherwise.** NOT the RDA. |
+| D2 | Scanner spine | **Identify-not-transcribe for the 215 known; paste-or-type for third-party. OCR assists, never load-bearing.** |
+| D3 | Save model | **Autosave everywhere.** The slot IS live state. No draft, no save button. |
+| D4 | Slot identity on Coverage | **Rail shows the active slot's NAME, read-only. Switching lives in Regimen.** |
+| D5 | Food & drink vs supplements | **Add a real `category` field to the Products pillar.** Claude proposes; Luneth reviews + seals. |
+| D6 | The 199 undirected components | **Mine the 245 label images FIRST.** Sourced defaults before the dose system ships. |
+
+Also settled: **MANAGE and ADD ITEM both DIE**, replaced by one `FULL REGIMEN →`. Luneth: *"this is
+fine, and I agree this is better."* An ADD ITEM that navigates instead of adding is the PROFILE
+lesson inverted — a label is a promise.
+
+### ★★★ NEXT ORDER — blueprint §12, sequence 2: **P1 + P2 (the pillar passes)**
+- **P1 — mine `directions` + maxima from the 245 images in `temporary/labels/`** → Products pillar →
+  re-seal. **NEEDS LUNETH'S SEAL SIGN-OFF.** Why it blocks: `directions` (the per-day count) exists
+  for **22 of 221 components (10%)**; `serving_size` is 221/221 but that is only the UNIT. Without
+  P1 the dose ladder falls to an unsourced "1/day" for 90% of components.
+- **P2 — add `category` to all 215** → pillar → re-seal. **NEEDS HIS REVIEW + SEAL.** `form` exists
+  (capsule 64 · powder 41 · liquid 37 · tablet 16 · softgel 7 …) but **form is NOT category** — a
+  powder can be either.
+- Then **P4** (`coveredBy` → `contributesTo` + a real join), **P5** (`rankSources` unit
+  reconciliation), **P3** (slots in state), then the DEMO (his visual sign-off gates it).
+- ★ He was OFFERED the demo-first path (build on the honest rung-3 gap, pillars after) and did NOT
+  take it. Do not assume it — ask before resequencing.
+
+### ★★ THE MEASURED FACTS THE BLUEPRINT RESTS ON (do not re-measure, do not assume)
+- **1,358 claims · 86 carry a numeric dose · EXACTLY ONE doses a product vehicle** (PDM, 1 fl oz/100
+  lb, `WAL-CLM-EPIGEN-000089`). So D1's "Wallach's dose" governs **PDM and nothing else** — for the
+  other 214 he doses the nutrients INSIDE them, never the bottle.
+- **The proof D1 is right:** Ultimate EFA Plus's label says *"Take 1 softgel three times daily"* =
+  3/day. Wallach's figure is **9 g/day**. The label under-delivers **3×** against him on the one
+  product he explicitly doses. A label serving is RDA-era calibrated; a Wallach target is not. THAT
+  GAP IS why the recommendation list never terminated (Luneth's #3).
+- **You cannot back-solve servings from his targets.** BTT = ~47 nutrients at 47 ratios; solving for
+  calcium wants 8 scoops and delivers 10× the selenium. The label's serving is the manufacturer's
+  SAFETY ENVELOPE and the only honest per-product number. This is why rung 2 is the workhorse.
+- **⚠ `coveredBy` IS A MISNOMER — it means "contributed a nonzero amount to".** `coverage.ts:628-630`
+  pushes a source after ANY nonzero contribution (no status check); `:828` attaches it to EVERY tile
+  regardless of status. A product delivering 1% sits in a GAP tile's `coveredBy`. **The rail's whole
+  job is the join this field only appears to provide.** Three independent audit agents died on it;
+  verified firsthand. → P4.
+- **The zero state is 5, not 4.** H·C·N·O are fiat (`FOUNDATIONAL_PRESENT_SLUGS`, cited "(Luneth)");
+  phosphorus classifies covered independently via `target.low === 0` and traces to a sealed claim.
+  **`state/regimen.ts:96` still says "4/90" and is STALE** — the signed-off demo already says 5.
+- **Rail geometry, measured:** column is fixed 340px (demo) / 380px (live), **290px usable inner
+  width**; list budget ~594px at 1440×900 (~774 at 1920) → 8–10 rows. Field gets **7 tile columns at
+  1440, 11 at 1920** — the signed-off "11 columns" exists only at ~1920; the rail's fixed width is
+  the tax. Products: max **3** components (nothing explodes), longest name **69 chars**, **33% exceed
+  30 chars**; names front-load identity + back-load packaging → truncate from the END.
+- **The live app ALREADY HAS a rail** — `coverage.ts::renderRail()` → `.regimen-rail`, styled
+  (`workspace-coverage.css:992-1126`), reads real state, caps at 8 + "+N more". The demo's
+  `.rail-panel` is a DIFFERENT, simpler thing. Reconciling the two is part of the build.
+- **Everything on the Coverage rail is inert** — `coverage.ts::mount()` installs NO click listener at
+  all. MANAGE, ADD ITEM **and both goal chips** are dead markup.
+- **Only TWO routes mint a regimen item**, both §31: Regimen's vault picker (`user_manual`) and
+  Scanner adopt (`user_scanned`). **`addItem` accepts ONLY exact matches against the 215-product
+  vault** — so there is NO path to add a custom third-party product except scanning. That blocks
+  Luneth's "their own brands / ultimate freedom" and is an actionable gap in the blueprint.
+
+### ★★ SCORCHED EARTH — scoped precisely (Luneth called it; the boundary is Claude's)
+`views/regimen.ts` + `views/scanner.ts` **BURN**. **`state/regimen.ts` does NOT** — it is the five
+§31 chokepoints under a CRITICAL invariant (`regimen_state_mutation_routing`); it **extends** for
+slots. Burning it takes a gate down with it.
+- **The Regimen tab has NO STYLESHEET and never had one** — 68 of its 72 classes have no rule in ANY
+  of the 8 sheets the shell links; its CSS is still trapped in the unextracted
+  `dashboard/components/workspace-regimen-v3-PROPOSAL.html`. It renders as browser-default HTML.
+  **No render probe drives it**, which is why nobody caught it. This is the exact "unstyled drawer
+  drift" `visual-verification.md` was written about. → blueprint gate `render_probe_regimen`.
+- It is also mostly FABRICATED demo data, flagged by a LOUD NOTE in its own file: 5 fake cartridges,
+  4 fake recommendations, 2 fake wishlist items. SAVE/DUPLICATE/IMPORT/EXPORT/VAULT are silent no-ops
+  on `window.*` globals that do not exist. **The slot system does not exist in state at all.**
+- **The Command Palette does not exist** — `views/palette.mount` throws; ⌘K is bound to nothing.
+
+### ★ THE SCANNER PREMISE THAT HAD TO BE CORRECTED (do not let it come back)
+Luneth: *"you recently read the labels of all YGY products with a 99%+ accuracy rate, so it tells me
+it's probably possible to make the scanner work much better."* **That was CLAUDE — a large
+multimodal model — not Tesseract.js.** The app is offline-first, no network, no backend, forever;
+there is no Claude in that browser. Tesseract is classical OCR and will never approach it. D2 exists
+because of this. Any future design assuming otherwise is built on something that is not there.
+
+### ★ STILL OPEN (blueprint §13)
+- **The `covered`-tile ring bug** — REAL, confirmed from Luneth's screenshots: phosphorus gets the
+  goal tick but NO ring (single or multi) while Ca/Mg/B ring correctly. Demo-layer CSS conflict on
+  `.covered`. **Not yet diagnosed.**
+- **Card ordering in the aside** — measured: with 3 goals, `.recs` opens to 373px and pushes DAILY
+  PROTOCOL to top 551 / bottom 895 at a 900px fold. What you TAKE currently sits under what you could
+  BUY. Demo-time call for Luneth.
+- **Refresh persistence** (the name) — LIVE work, routes through §31 `saveUserProfile`.
+
+### ⚠ THE PROCESS LESSON FROM THIS SESSION — the expensive one
+Asked to design the rail, Claude ran an 18-agent / 345-tool-call audit and came back proposing to
+retire a whole tab. **Luneth: "You're going too deep without consulting me first, finding problems
+that aren't actually problems, wait for my feedback before doing anything else."** He was right, and
+the correction is [[directives-are-guidelines-stay-balanced]] again: he points at ONE thing, Claude
+escalates it into a demolition. The audit's facts were real and are now load-bearing above — but the
+SIZE was the defect, and the fix was to stop and ask. **Consult first. Scope to what he asked for.**
 
 ### ✓ SIGNED OFF 2026-07-15 — the rest of the Coverage demo is DONE. Do not redo it.
 Luneth: *"Looks good, let's sign off on this as good to go."* All screenshot-verified, zero page
