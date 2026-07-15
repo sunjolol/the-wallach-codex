@@ -443,47 +443,27 @@ def check_no_product_marketing_prose():
 # ---------------------------------------------------------------------------
 # Design System v3 invariants (Round 160 — Phase 0)
 # ---------------------------------------------------------------------------
-# Three paired daily invariants guard the design system. All three honor a
-# 'mode' knob in tacitus/feature-flags.json[design_system_enforcement].
-# Modes:
-#   'off'   — checks skipped (always PASS, payload notes mode)
-#   'warn'  — violations PASS but payload notes findings (initial state)
-#   'error' — violations FAIL with critical/warning severity per invariant
+# Three paired daily invariants guard the design system. They ENFORCE.
 #
-# Promotion criteria from 'warn' to 'error' are documented in the feature
-# flag itself. Initial Phase 0 ships in 'warn' mode.
+# THE MODE KNOB WAS DELETED 2026-07-15. All three read a 'mode' from
+# tacitus/feature-flags.json[design_system_enforcement] -- a file, and a whole
+# tacitus/ directory, that DOES NOT EXIST. The lookup hit a bare `except` and
+# returned "warn", and in warn mode _ds_finalize() converted every violation into
+# a PASS. So three invariants declared severity="critical" were STRUCTURALLY
+# INCAPABLE of reddening the board. Proven: forging a hash mismatch returned
+# (True, "WARN (1 finding(s)) -- ...does not match golden..."). The header even
+# claimed "promotion criteria ... are documented in the feature flag itself" --
+# documented in a file that never existed. invariants.py was the only reader.
+# A knob whose off-switch is a missing file is not a knob, it is a disarm.
 
 
-def _design_system_mode():
-    """Read the design_system_enforcement mode from tacitus/feature-flags.json.
-    Returns one of: 'off', 'warn', 'error'. Defaults to 'warn' if unreadable."""
-    try:
-        flags_path = ROOT / "tacitus" / "feature-flags.json"
-        with open(flags_path, encoding="utf-8") as f:
-            data = json.load(f)
-        flag = data.get("flags", {}).get("design_system_enforcement", {})
-        if not flag.get("enabled", True):
-            return "off"
-        return flag.get("mode", "warn")
-    except Exception:
-        return "warn"
-
-
-def _ds_finalize(violations, mode, success_msg):
-    """Helper: convert a violations list + mode into (passed, msg).
-    Violations + 'off' → PASS with skipped note.
-    Violations + 'warn' → PASS with WARN-prefixed payload.
-    Violations + 'error' → FAIL with payload.
-    No violations → always PASS with success_msg."""
+def _ds_finalize(violations, success_msg):
+    """Violations -> FAIL. No violations -> PASS. No mode, no escape hatch (2026-07-15)."""
     if not violations:
         return True, success_msg
     payload = "; ".join(violations[:5])
     if len(violations) > 5:
         payload += f" (+{len(violations)-5} more)"
-    if mode == "off":
-        return True, f"skipped (mode=off) — would have surfaced: {payload}"
-    if mode == "warn":
-        return True, f"WARN ({len(violations)} finding(s)) — {payload}"
     return False, f"{len(violations)} violation(s) — {payload}"
 
 
@@ -494,10 +474,6 @@ def check_no_external_style_resources():
 
     Currently-allowed external (explicit carve-out): cdn.jsdelivr.net/npm/tesseract
     (Scanner OCR — TODO: in-house in a future round)."""
-    mode = _design_system_mode()
-    if mode == "off":
-        return True, "skipped (mode=off)"
-
     import re as _re
     EXTERNAL_PATTERNS = [
         (r"fonts\.googleapis\.com", "Google Fonts CSS"),
@@ -544,7 +520,6 @@ def check_no_external_style_resources():
 
     return _ds_finalize(
         violations,
-        mode,
         "no external style/font/script resources detected — portability rule clean",
     )
 
@@ -553,19 +528,11 @@ def check_design_system_hash_integrity():
     """Verify design-system.css matches design-system.golden.sha256.
     If the golden hash file doesn't exist yet (pre-sealing), informational
     PASS — the file hasn't been sealed for protection yet."""
-    mode = _design_system_mode()
-    if mode == "off":
-        return True, "skipped (mode=off)"
-
     css_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.css"
     hash_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.golden.sha256"
 
     if not css_path.exists():
-        return _ds_finalize(
-            ["design-system.css missing — Phase 0 ship incomplete"],
-            mode,
-            "",
-        )
+        return _ds_finalize(["design-system.css missing — Phase 0 ship incomplete"], "")
 
     if not hash_path.exists():
         return True, "design-system.golden.sha256 not yet present — file unsealed (expected during early migration rounds)"
@@ -575,42 +542,71 @@ def check_design_system_hash_integrity():
     if actual != expected:
         return _ds_finalize(
             [f"design-system.css hash {actual[:16]}... does not match golden {expected[:16]}..."],
-            mode,
-            "",
-        )
+            "")
     return True, f"design-system.css matches golden hash ({expected[:16]}...)"
 
 
 def check_design_system_write_protection():
-    """When sealed (golden hash present), verify design-system.css has not
-    been modified since the sealing time. Modifications after sealing are
-    user-only-writer violations."""
-    mode = _design_system_mode()
-    if mode == "off":
-        return True, "skipped (mode=off)"
+    """design-system.css is a SEALED CANONICAL (user-only writer). This gate anchors the
+    GOLDEN ITSELF to git: the working golden must equal the git-committed golden.
 
-    css_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.css"
+    WHY THIS, AND NOT THE OBVIOUS THING. hash_integrity proves css == golden. It is
+    structurally BLIND to the tamper that actually matters: an agent edits the css AND
+    re-seals the golden -- both files move together, hash_integrity stays green, and the
+    user's sole-writer rule is broken invisibly. Only an anchor OUTSIDE the pair can see
+    that (§00.B #11: stale-to-stale equality is not truth; the same lesson that produced
+    creators_log_append_only's git anchor). git is that outside: HEAD's golden is a value
+    the working tree cannot rewrite without a commit the user can see.
+
+    A legitimate re-seal is a USER act and lands as a committed golden change -- so this
+    goes green the moment the user commits their re-seal, and RED only while a golden is
+    changed-but-uncommitted. That is the correct shape: it does not forbid re-sealing, it
+    forbids re-sealing SILENTLY.
+
+    REPLACED 2026-07-15 (R9 -- re-codified with proof, not loosened). The old check compared
+    MTIMES: `css_mtime > seal_mtime + 1`. Two defects, both fatal:
+      (1) mtime is a LYING INSTRUMENT -- it moves on a touch, a git checkout, a no-op save.
+          It was reporting a live "violation" (css touched 2 min after the golden was
+          written) while the content hash MATCHED. The finding was noise.
+      (2) it was strictly REDUNDANT with hash_integrity anyway: if the content is equal no
+          write happened, and if it differs hash_integrity already REDs. It could never
+          contribute a finding that gate did not already have.
+    And the warn-mode escape hatch (also deleted 2026-07-15) meant nobody ever noticed it
+    was firing, because "OK [critical]" was printed above the violation text.
+
+    NOT covered (WISH, R7 -- do not sell as guarded): whether a committed golden change was
+    genuinely authored BY the user. git proves a re-seal is visible + deliberate; it cannot
+    prove who typed it. The pre_write_guard hook (which blocks any write to a file carrying
+    a *.golden.sha256 sibling) is the enforcement half; this is the audit half.
+    Truth anchor: `git show HEAD:<golden>` vs the working golden, recomputed each run."""
     hash_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.golden.sha256"
+    css_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.css"
+    rel = "dashboard/assets/styles/design-system.golden.sha256"
 
     if not hash_path.exists():
-        return True, "no golden hash present — file unsealed, write-protection not yet active (expected during early migration rounds)"
-
+        return True, "no golden hash present — file unsealed, write-protection not yet active"
     if not css_path.exists():
-        return _ds_finalize(
-            ["design-system.css missing entirely"],
-            mode,
-            "",
-        )
-    seal_mtime = hash_path.stat().st_mtime
-    css_mtime = css_path.stat().st_mtime
+        return _ds_finalize(["design-system.css missing entirely"], "")
 
-    if css_mtime > seal_mtime + 1:  # +1s tolerance for write-then-seal sequence
-        violations = [
-            f"design-system.css modified ({datetime.datetime.fromtimestamp(css_mtime).isoformat(timespec='seconds')}) "
-            f"AFTER golden hash sealed ({datetime.datetime.fromtimestamp(seal_mtime).isoformat(timespec='seconds')})"
-        ]
-        return _ds_finalize(violations, mode, "")
-    return True, "design-system.css unmodified since sealing — write protection holding"
+    working = hash_path.read_text(encoding="utf-8").strip().split()[0]
+    try:
+        out = subprocess.run(["git", "show", f"HEAD:{rel}"], cwd=str(ROOT),
+                             capture_output=True, text=True, timeout=20)
+    except Exception as e:
+        return _ds_finalize([f"cannot reach the git anchor ({e}) — fail closed"], "")
+    if out.returncode != 0:
+        # Not yet committed: nothing to anchor against. Say so plainly rather than
+        # pretending the seal is verified (this is the honest bootstrap path, not a pass).
+        return True, f"golden not yet committed — no git anchor to compare (unverified, not proven)"
+    committed = out.stdout.strip().split()[0] if out.stdout.strip() else ""
+    if working != committed:
+        return _ds_finalize(
+            [f"design-system.golden.sha256 CHANGED but not committed: working "
+             f"{working[:16]}... vs HEAD {committed[:16]}... — the seal was moved. A re-seal "
+             f"is the user's act and must be committed deliberately; an agent re-sealing to "
+             f"match its own css edit is exactly what this catches"], "")
+    return True, (f"golden matches its git anchor ({committed[:16]}...) — the seal has not "
+                  f"been silently moved")
 
 
 def check_dashboard_dist_fresh():
@@ -1765,6 +1761,17 @@ def check_amounts_wallach_only():
     return _amounts_wallach_only_impl(embed, canon_p, claims_dir)
 
 
+# Slug sets where ONE substance legitimately carries >1 canon name, so a single dose DOES
+# fan to both. This is the ONLY exemption from collective_doses_not_fanned's fail-closed
+# arity check -- every entry needs a stated reason, and adding one is a deliberate act.
+#   cobalt/vitamin-b12: cobalt is the metal atom at the centre of the cobalamin molecule;
+#   Wallach's "250-400 mcg" is one intake described by both names, not a split budget
+#   (WAL-CLM-IMMORT-000084, WAL-CLM-RARE-000014).
+_SAME_SUBSTANCE_SLUGS = (
+    frozenset({"cobalt", "vitamin-b12"}),
+)
+
+
 def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     """Charter R2 (the half amounts_wallach_only is STRUCTURALLY BLIND TO).
 
@@ -1790,9 +1797,22 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     is read from eden/corpus/claims/* independently.
 
     Deliberately NOT "any dose mapping >1 essential is collective": the cobalt/vitamin-b12
-    dose (WAL-CLM-IMMORT-000084, "250-400 mcg") maps two slugs because ONE substance carries
-    two names, which is a different relation and legitimately fans. Collectivity is a stated
-    fact on the claim, not an inference from arity."""
+    dose maps two slugs because ONE substance carries two names (cobalt is the metal atom at
+    the centre of cobalamin), which is a different relation and legitimately fans.
+    Collectivity is a stated fact on the claim, not an inference from arity.
+
+    THE FAIL-OPEN, CLOSED 2026-07-15 (R9). The check keyed ENTIRELY on `dose.collective_group`
+    -- a HAND-AUTHORED annotation -- and returned "no collective dose claims sealed (vacuously
+    clean)" when it found none. So the gate protected against fan-out only for claims someone
+    had REMEMBERED to annotate: mine a new shared-budget dose, forget the field, and the gate
+    says clean while the target doubles. The gate's own reason for existing (a 9 g EFA claim
+    posting 18 g of board target) was an annotation nobody had needed to write yet.
+
+    Now every dose claim mapping >1 essential must be EITHER annotated collective OR a
+    declared same-substance pair (_SAME_SUBSTANCE_SLUGS below). Neither -> RED. The corpus has
+    exactly 3 such claims today (1 collective, 2 cobalt/B12), so this costs nothing now and
+    fails CLOSED on the next multi-essential dose mined -- forcing a deliberate call at mine
+    time instead of a silent fan-out discovered weeks later."""
     import json as _json
     if not (embed_p.exists() and claims_dir.exists()):
         return True, "targets embed / corpus not installed (bootstrap-guard)"
@@ -1807,8 +1827,33 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
                 collective[c["id"]] = {"group": dz["collective_group"],
                                        "amount": dz.get("amount"), "unit": dz.get("unit"),
                                        "members": list(c.get("essentials", []))}
+    # FAIL CLOSED: a multi-essential dose claim that is neither annotated collective nor a
+    # declared same-substance pair is UNCLASSIFIED -- it may be a silent fan-out. Checked
+    # BEFORE the `not collective` early-return, which is exactly where the old hole was.
+    unclassified = []
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if c.get("kind") != "dose":
+                continue
+            es = set(c.get("essentials") or [])
+            if len(es) < 2:
+                continue
+            if (c.get("dose") or {}).get("collective_group"):
+                continue
+            if any(es <= pair for pair in _SAME_SUBSTANCE_SLUGS):
+                continue
+            unclassified.append(f"{c['id']} maps {sorted(es)}")
+    if unclassified:
+        return False, (
+            f"{len(unclassified)} dose claim(s) map >1 essential but declare NEITHER "
+            f"dose.collective_group NOR a known same-substance pair — a shared Wallach "
+            f"budget fanned per-slug doubles the board target and every other gate passes: "
+            + "; ".join(unclassified[:4]))
+
     if not collective:
-        return True, "no collective dose claims sealed (vacuously clean)"
+        return True, ("no collective dose claims sealed; "
+                      f"{len(_SAME_SUBSTANCE_SLUGS)} same-substance pair(s) declared and every "
+                      "multi-essential dose claim is classified (fails closed on the next one)")
 
     data = _json.loads(embed_p.read_text(encoding="utf-8"))
     bad = []
@@ -3035,22 +3080,71 @@ def check_data_artifacts_accounted():
                   f"(freshness-gated) + {len(accounted)} hand-authored/externally-gated (each with a reason)")
 
 
-def check_charter_gates_present():
+def _charter_name_is_wished(name, status_cell):
+    """Is THIS gate name honestly labeled a WISH? STATUS-cell only, clause-scoped, per-name.
+
+    A WISH clause runs from a `WISH` marker to the next LIVE / PARTIAL / LANDED marker (or
+    end of cell); the name must appear INSIDE such a clause. TWO loosenings were removed
+    here on 2026-07-15 (R9: re-codify with proof, never loosen silently). Both were caught
+    by tools/test_charter_gates_present.py, which measures the gate rather than trusting it:
+
+    (1) PER-ROW -> PER-NAME. The old test was `"WISH" in status_cell or "WISH" in gate_cell`,
+        so ANY rule whose status prose merely MENTIONED the word excused EVERY gate name in
+        its column. Measured: a planted fake gate was caught in 2 of 9 rules (22%) while the
+        gate reported "all 9 Charter rules name real gates or are labeled WISH" -- a message
+        that counted ROWS PARSED, not GATES CHECKED. R7's own gate committed the exact
+        failure R7 exists to prevent.
+    (2) STATUS-CELL ONLY. Scanning the GATE cell as well still let R7 through, because R7's
+        own gate cell ENDS with the word WISH ("...neither exists nor is labeled WISH") -- a
+        fake planted after it landed inside the clause. Status-only is the right semantics
+        anyway: the STATUS column is where LIVE/PARTIAL/WISH live; the GATE column only
+        NAMES gates. It costs nothing (0 gates are excused by that path today) and closes a
+        seam where a rule could hide a fake gate behind trailing prose.
+
+    Params are cells, not a file, so the negative test can drive planted rows.
+    """
+    marker = re.compile(r"\b(LIVE|PARTIAL|LANDED)\b")
+    tok = re.compile(r"`" + re.escape(name) + r"`")
+    for m in re.finditer(r"WISH", status_cell):
+        tail = status_cell[m.end():]
+        nxt = marker.search(tail)
+        clause = tail[:nxt.start()] if nxt else tail
+        if tok.search(clause):
+            return True
+    return False
+
+
+def _charter_gates_present_impl(charter_text, live):
     """Charter R7 (the meta-gate) -- 'codify, don't promise': every gate the Charter presents
     as its proof must actually EXIST, or the rule must be labeled WISH (crack #2 fix,
     2026-07-06). Parses the R1-R9 rule table in .claude/rules/charter.md; for each
     backtick-quoted gate name in a rule's GATE column, that name must be (a) a live invariant
     here, (b) a known non-invariant enforcement mechanism (a verify tool / hook / lint rule),
-    or (c) the rule's STATUS cell must contain 'WISH' (an honestly-labeled promise). A Charter
-    that names a gate which neither exists nor is labeled WISH is overselling its enforcement
-    -- RED. This is the gate that keeps the Charter from lying about its own gates.
+    or (c) that GATE NAME must itself be marked WISH (an honestly-labeled promise).
+
+    TIGHTENED 2026-07-15 (R9: a misfiring gate is fixed by re-codifying, never a silent
+    loosening). The exemption used to be PER-ROW: `is_wish = "WISH" in status_cell or "WISH"
+    in gate_cell`, so ANY rule whose status prose merely CONTAINED the word "WISH" had EVERY
+    gate name in its column skipped from existence-checking. R2 was exempt not because it was
+    unenforced but because its status says a gate "LANDED" and uses the word in passing.
+    Measured by negative control: a planted fake gate name was caught in R6 and R9 ONLY --
+    2 of 9 rules, 22%. The gate then reported "all 9 Charter rules name real gates or are
+    labeled WISH", which READS as verification of 9 and WAS verification of 2. The meta-gate
+    whose entire purpose is "the Charter can no longer oversell its own enforcement" was
+    overselling its own enforcement by 350%. This is the exact failure mode R7 exists to
+    prevent, committed by R7's own gate.
+
+    Now the exemption is PER-NAME and clause-scoped: a gate name is excused only if it appears
+    inside a WISH clause (the run of text from a `WISH` marker to the next LIVE / PARTIAL /
+    LANDED marker), so a rule may honestly label ONE gate a wish while its siblings stay
+    checked. The message now reports gates checked vs excused, not just rule rows parsed.
+
     NOT covered (WISH, not sold as guarded): SEMANTIC verification that a present gate actually
-    ENFORCES its rule -- no non-gaming machine check exists; that rests on review. Truth-anchored
-    on the charter.md table x the live invariant names, recomputed each run."""
-    charter = ROOT / ".claude" / "rules" / "charter.md"
-    if not charter.exists():
-        return True, ".claude/rules/charter.md missing (bootstrap-guard)"
-    live = {i.name for i in INVARIANTS}
+    ENFORCES its rule -- no non-gaming machine check exists; that rests on review. Also not
+    covered: the Charter's PROSE outside the R1-R9 table (this parses rule rows only; a stale
+    "future gate" claim in the How-to-use prose is invisible here -- that is how charter.md:29
+    called a LIVE critical gate "future" until 2026-07-15). Truth-anchored on the charter.md
+    table x the live invariant names, recomputed each run."""
     KNOWN_MECHANISMS = {
         "corpus_verify", "catalog_verify", "book_purity", "mine", "mine_batch",
         "stop_round_close", "pre_write_guard", "post_write_verify", "pre_bash_guard",
@@ -3061,8 +3155,8 @@ def check_charter_gates_present():
             "layout_key", "for_condition", "review_state", "other_substances", "umbrella_of",
             "canon_slug", "display_name", "knowledge_version", "coverage_kind"}
     tok_re = re.compile(r"`([a-z][a-z0-9_]*(?:-[a-z0-9_]+)*)`")
-    viol, rows = [], 0
-    for line in charter.read_text(encoding="utf-8").splitlines():
+    viol, rows, checked, excused = [], 0, 0, 0
+    for line in charter_text.splitlines():
         s = line.strip()
         if not re.match(r"\|\s*R[0-9]\b", s):
             continue
@@ -3072,14 +3166,15 @@ def check_charter_gates_present():
             continue
         rows += 1
         rule_id, gate_cell, status_cell = cells[0], cells[2], cells[3]
-        is_wish = "WISH" in status_cell or "WISH" in gate_cell
         for m in tok_re.finditer(gate_cell):
             name = m.group(1)
             if name in SKIP or ("_" not in name and "-" not in name):
                 continue  # not gate-shaped (a plain word) or a known field id
             if name in live or name in KNOWN_MECHANISMS:
+                checked += 1
                 continue
-            if is_wish:
+            if _charter_name_is_wished(name, status_cell):
+                excused += 1
                 continue
             viol.append(f"{rule_id}: Gate names `{name}`, which is neither a live gate nor "
                         f"labeled WISH (the Charter oversells its enforcement)")
@@ -3087,8 +3182,19 @@ def check_charter_gates_present():
         viol.append(f"parsed {rows} rule rows, expected 9 (charter.md R1-R9 table drift?)")
     if viol:
         return False, "Charter gate honesty broken (R7): " + "; ".join(viol[:6])
-    return True, (f"all {rows} Charter rules name real gates or are labeled WISH "
-                  f"({len(live)} live invariants cross-checked)")
+    return True, (f"{rows} Charter rules parsed: {checked} named gate(s) verified to exist, "
+                  f"{excused} labeled WISH per-name ({len(live)} live invariants cross-checked)")
+
+
+
+def check_charter_gates_present():
+    """Charter R7 meta-gate wrapper -- see _charter_gates_present_impl for the full contract
+    and the 2026-07-15 per-row -> per-name tightening."""
+    charter = ROOT / ".claude" / "rules" / "charter.md"
+    if not charter.exists():
+        return True, ".claude/rules/charter.md missing (bootstrap-guard)"
+    return _charter_gates_present_impl(charter.read_text(encoding="utf-8"),
+                                       {i.name for i in INVARIANTS})
 
 
 def check_exceptions_justified():

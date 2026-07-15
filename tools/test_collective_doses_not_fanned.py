@@ -131,6 +131,58 @@ def control_r2_is_blind():
     return good
 
 
+def unannotated_multi_essential_fails_closed():
+    """THE FAIL-OPEN, PINNED (2026-07-15). The gate used to key ENTIRELY on the hand-authored
+    `dose.collective_group` field and early-return "no collective dose claims sealed
+    (vacuously clean)" when it found none. So it protected only against fan-outs someone had
+    REMEMBERED to annotate -- mine a new shared-budget dose, forget the field, and the gate
+    reports clean while the board target doubles. The 9 g EFA claim that MADE this gate
+    necessary was, itself, an annotation nobody had needed to write yet.
+
+    Now a dose claim mapping >1 essential must be EITHER annotated collective OR a declared
+    same-substance pair. This plants an UNANNOTATED two-essential dose (the exact shape of the
+    original bug, minus the annotation) and asserts RED."""
+    import tempfile as _tf
+    d = Path(_tf.mkdtemp(prefix="cdnf_unann_"))
+    (d / "claims-planted.json").write_text(json.dumps({"claims": [{
+        "id": "WAL-CLM-PLANT-000001", "kind": "dose",
+        "essentials": ["omega-3", "omega-6"],
+        "verbatim": "Essential fatty acids ... 9 grams per day in capsule form.",
+        "dose": {"amount": 9, "unit": "g", "period": "daily"},   # <-- NO collective_group
+    }]}, ensure_ascii=False), encoding="utf-8")
+    p2 = d / "targets.json"
+    p2.write_text(json.dumps({"essentials": []}, ensure_ascii=False), encoding="utf-8")
+    ok, msg = impl(p2, d)
+    good = not ok
+    print(f"  [unannotated_multi] expect RED   -> {'RED' if not ok else 'GREEN'} | {msg[:62]}")
+    if not good:
+        print("    FAIL: an unannotated multi-essential dose claim must RED — the gate is "
+              "fail-OPEN again and only catches fan-outs someone remembered to label")
+    return good
+
+
+def same_substance_pair_still_allowed():
+    """The fail-closed check must NOT over-fire on cobalt/vitamin-b12: ONE substance carrying
+    two canon names (cobalt is the metal atom at the centre of cobalamin), so a single dose
+    legitimately fans to both. If this REDs, the arity check has become a blanket ban and the
+    corpus's 2 real cobalt/B12 claims are collateral."""
+    import tempfile as _tf
+    d = Path(_tf.mkdtemp(prefix="cdnf_same_"))
+    (d / "claims-planted.json").write_text(json.dumps({"claims": [{
+        "id": "WAL-CLM-PLANT-000002", "kind": "dose",
+        "essentials": ["cobalt", "vitamin-b12"],
+        "verbatim": "a vitamin B12/cobalt intake of 250 to 400 mcg/day",
+        "dose": {"amount": "250-400", "unit": "mcg", "period": "daily"},
+    }]}, ensure_ascii=False), encoding="utf-8")
+    p2 = d / "targets.json"
+    p2.write_text(json.dumps({"essentials": []}, ensure_ascii=False), encoding="utf-8")
+    ok, msg = impl(p2, d)
+    print(f"  [same_substance   ] expect GREEN -> {'GREEN' if ok else 'RED'} | {msg[:62]}")
+    if not ok:
+        print(f"    FAIL: {msg}")
+    return ok
+
+
 def main():
     print("  --- the real board (must stay GREEN) ---")
     real_ok, real_msg = impl(EMBED, CLAIMS)
@@ -143,6 +195,8 @@ def main():
         case("fanned_one", HALF_FANNED, expect_red=True, expect_named="omega-3"),
         case("label_derived", LABEL_DERIVED, expect_red=True, expect_named="3510"),
         control_r2_is_blind(),
+        unannotated_multi_essential_fails_closed(),
+        same_substance_pair_still_allowed(),
     ]
     passed = all(results)
     print(f"\n{'ALL PASS' if passed else 'FAILED'} ({sum(results)}/{len(results)})")
