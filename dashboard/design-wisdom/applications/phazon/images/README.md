@@ -1,29 +1,33 @@
-# Phazon reference images — ⚠ SLOTS AWAITING FILES
+# Phazon reference images — ✓ SUPPLIED (they live in `design-wisdom/references/`)
 
-Luneth supplied 5 Metroid Prime images in chat on 2026-07-14 as the visual north star for the
-phazon direction. **They are NOT in this folder yet, and Claude cannot put them here** — chat
-image attachments are visible to the model but there is no path from an attachment to disk.
-**Luneth must save them into this folder manually.**
+**Luneth supplied all 5 on 2026-07-14. They are NOT in this folder and should not be moved here.**
 
-Until then the descriptions below are the only record. They are deliberately detailed, because
-if the images are never saved this text is all that survives.
+> Luneth, 2026-07-14: *"I moved them there because you once again referenced a folder I have no
+> access to, leave them where I put them, that's a better place for any design references anyway."*
 
-## The slots
+He is right, and the library agrees with him: `references/` is where design references belong.
+This folder keeps only the APPLICATION notes (how the direction was applied); the source images
+live with every other reference.
 
-| Filename to save as | What it is | Why it matters |
-|---|---|---|
-| `01-dark-samus.png` | Dark Samus, full body. Near-black/dark-blue armour with **glowing cyan veins** running through the limbs and torso; clusters of bright cyan orbs/pods embedded in both shoulders; a cyan glow bleeding out around the whole silhouette. | The **infection** read. Energy is INSIDE the armour and escapes at the seams. The shoulder pods are the direct model for a "covered" tile: a dark cell lit from within. |
-| `02-phazon-arm-cannon.png` | The arm cannon, close. Hard dark angular plates **floating on a bright churning blue liquid** visible in every gap between them. The liquid is turbulent, veined, alive; the plates are inert. | The clearest statement of **"phazon UNDERNEATH the technological elements powering everything"**. Plates over substrate, energy in the joins. This is the whole theme in one object. |
-| `03-kneeling-figure.png` | Dark armoured figure kneeling, cyan light **bursting outward in shafts** from its core against a near-black scene. | The energy as a POWER SOURCE — light escaping a container under pressure. Also: how much darkness the composition needs for the cyan to read. |
-| `04-phazon-suit-statue.png` | Painted PVC statue of the Samus Phazon Suit. **Translucent blue cannon** with visible internal glow; metallic dark body; a small ORANGE vent glowing on the leg. | Proof the theme tolerates a warm accent: the orange leg vent against the blue cannon. Relevant because the live app's accent is `--ds-accent: #ff7e3c` — the mockup keeps amber for "gap" tiles on the same logic. |
-| `05-phazon-landscape.png` | Dark rocky alien landscape, **rivers and waterfalls of glowing blue phazon** running through near-black stone, mushroom-shaped structures, lightning. | The theme at ENVIRONMENT scale — the substrate as a whole world, not an effect. Dark dominates; the energy is the exception threading through it. |
+## Where they are — verified 1:1 against the slot descriptions (2026-07-14)
 
-## The through-line
+| File | Slot it fills | What it is | Why it matters |
+|---|---|---|---|
+| `../../../references/phazon-1.jpg` | dark-samus | Dark Samus, full body. Near-black/blue armour with **glowing cyan veins** through limbs and torso; clusters of bright cyan orbs embedded in both shoulders; cyan glow bleeding around the silhouette. | The **infection** read. Energy is INSIDE the armour and escapes at the seams. The shoulder pods are the direct model for a "covered" tile: a dark cell lit from within. |
+| `../../../references/phazon-2.jpg` | phazon-arm-cannon | The arm cannon, close. Hard dark angular plates **floating on a bright churning blue liquid** visible in every gap. The liquid is turbulent, veined, alive; the plates are inert. | The clearest statement of **"phazon UNDERNEATH the technological elements powering everything"**. Plates over substrate, energy in the joins. The whole theme in one object. |
+| `../../../references/phazon-3.jpg` | kneeling-figure | Dark armoured figure kneeling, cyan light **bursting outward in shafts** from its core against near-black. | The energy as a POWER SOURCE — light escaping a container under pressure. Also: how much darkness the composition needs for the cyan to read. |
+| `../../../references/phazon-4.jpg` | phazon-suit-statue | Painted PVC statue of the Samus Phazon Suit. **Translucent blue cannon** with internal glow; metallic dark body; a small ORANGE vent glowing on the leg. | Proof the theme tolerates a warm accent: the orange leg vent against the blue cannon. The live app's accent is `--ds-accent: #ff7e3c`, and the mockup keeps amber for "gap" tiles on the same logic. |
+| `../../../references/phazon-5.jpg` | phazon-landscape | Dark rocky alien landscape, **rivers and waterfalls of glowing blue phazon** through near-black stone, mushroom-shaped structures, lightning. | The theme at ENVIRONMENT scale — the substrate as a whole world, not an effect. Dark dominates; the energy is the exception threading through it. |
 
-All five: **dark hard-edged plates/rock/armour over a living luminous substrate, energy
-escaping at the seams.** The plates are technological, angular, dead. The energy is organic,
-flowing, alive. The tension between them IS the aesthetic — and the darkness is the default,
-never the light.
+The mapping was verified by opening the files, not assumed from the filenames.
 
-Full direction: `../../../learnings/2026-07-14-phazon-direction.md`
-The mockup built from it: `../phazon-dashboard-mockup.html` + `../render-phazon-1.png`
+## Status of the direction
+
+**PARKED — do not reopen.** Fully reverted from the live app on 2026-07-14 and grep-proven gone
+(16 tokens). The full direction + every lesson: `../../learnings/2026-07-14-phazon-direction.md`.
+The one thing carried forward is a toggleable **dark theme** as a future option — see the memory
+`dark-theme-is-a-planned-toggle`. Cream stays default.
+
+**Why the theme needs dark (the expensive lesson):** cyan on `--ds-paper #faf5e8` is physically
+impossible — light ADDS luminance and paper sits at ~96%, so there is no headroom and a "glow" on
+cream renders as grey haze. Every on-cream attempt failed for that reason, not for want of tuning.

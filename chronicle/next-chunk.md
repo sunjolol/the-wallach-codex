@@ -6,7 +6,7 @@
 
 **The Coverage redesign is LOCKED as a demo, not yet built live.** Read `temporary/coverage-D-personalized.html` (open it — it is interactive). It is the agreed vision. Nothing in `dashboard/` implements it yet.
 
-⚠ **`temporary/` IS GITIGNORED.** The demo is NOT in git and will not survive a clean. If Luneth signs it off, MOVE it to `dashboard/components/` (the tracked home for design-mockup references) before relying on it. **Ask him first — this is unresolved as of the wrap.**
+⚠ **`temporary/` IS GITIGNORED — and it HAS been swept before** (the 2026-07-14 build-log: *"temporary/ scratch cleaned … relocated or deleted"*). **`temporary/coverage-D-personalized.html` IS PROTECTED. DO NOT DELETE IT** — Luneth: *"it needs to survive until we are completely done with it (probably at the very very end of this project)."* `temporary/README.md` marks it in place; this line is the committed backup of that instruction. Do NOT relocate it either — it resolves the real stylesheets via `../dashboard/assets/styles/…`, so moving it breaks it silently (renders unstyled, looks like the design failed). Luneth declined moving it to `dashboard/components/`: not needed on GitHub, just needs to survive.
 
 ---
 
