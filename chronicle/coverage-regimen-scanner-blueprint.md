@@ -16,7 +16,8 @@ Findable, so they are never re-litigated or buried. Each is his, not mine.
 | D2 | Scanner spine | **Identify-not-transcribe for the 215 known products; paste-or-type for third-party. OCR assists, never load-bearing.** |
 | D3 | Save model | **Autosave everywhere.** The slot IS the live state. No draft mode, no save button. |
 | D4 | Slot identity on Coverage | **The rail shows the active slot's name, read-only. Switching happens in Regimen only.** |
-| D5 | Food & drink vs supplements | **Add a real `category` field to the Products pillar** (hand-set, sealed). Claude proposes assignments from the labels; Luneth reviews. |
+| ~~D5~~ | ~~Food & drink vs supplements~~ | ~~Add a real `category` field to the Products pillar.~~ **REVERSED 2026-07-15, same day — not worth the cost (see D8).** |
+| **D8** | Food & drink vs supplements (D5's replacement) | **ALL Eden/YGY products are "supplements" by a simple OUTSIDE rule.** No pillar field, no re-seal, no per-product judgment. Luneth: *"this will be way too much work for way too little gain… realistically 210 out of the 215 products are likely supplements, with only the sports drinks being considered food items… lets us move forward quickly with relatively high accuracy."* **Provisional** ("for the time being"). |
 | ~~D6~~ | ~~The 199 undirected components~~ | ~~Mine the 245 label images first.~~ **SUPERSEDED 2026-07-15, same day — BLOCKED BY DATA.** The directions are not on those images (§2). |
 | **D7** | The 199 undirected components (D6's replacement) | **Default to ONE serving size** — recorded 221/221. *"most users will change the defaults anyway and we'll make it clear it's MEANT to be changed to more realistic numbers"* (Luneth). Keep the 22 real directions where they exist. |
 
@@ -184,7 +185,7 @@ Full rebuild to current standards (Coverage + knowledge-drawer presentation). Lu
 - *"revert"* → the **trash bin** (below).
 - *experimenting without committing* → **duplicate the slot**.
 
-**The item list, below the cards**, grouped by **`category`** (D5 — a new sealed pillar field; today it does not exist and `form` cannot honestly stand in). Per item: add / remove / modify inline. This is the **main** management surface — the Coverage rail is the simplified mirror.
+**The item list, below the cards**, grouped under **Supplements** for every Eden/YGY item, by D8's outside rule — **not** a pillar field, and nothing is invented in the data. A user's OWN scanned/manual items are the natural home of any future food & drink bucket, and `provenance` already tells the two apart. **Known imprecision, accepted on the record:** ~5 of 215 (the sports drinks) are really food. It affects no number, no dose and no tile — only which heading an item sits under — which is exactly why it is not worth a pillar change. Per item: add / remove / modify inline. This is the **main** management surface — the Coverage rail is the simplified mirror.
 
 **The trash bin.** Recovers the last 20 removed items *and* deleted slots. This is the honest home of today's ever-growing removed-id set.
 
@@ -223,12 +224,14 @@ Full rebuild. The concept was good; the execution demanded too much human correc
 | # | Work | Why it blocks | Needs |
 |---|---|---|---|
 | ~~P1~~ | ~~Mine `directions` + maxima from the 245 images~~ | **DROPPED — the data does not exist to mine (§2). Superseded by D7.** Nothing blocks on it. | — |
-| **P2** | **Add `category` to all 215** → Products pillar → re-seal | D5. §7's grouping has no data today, and `form` cannot honestly stand in | Claude proposes from labels; Luneth reviews + signs the seal |
+| ~~P2~~ | ~~Add `category` to all 215~~ | **DROPPED — reversed by D8.** An outside rule replaces it; no pillar change, nothing blocks. | — |
 | **P3** | **Extend `state/regimen.ts` for slots** — schema, chokepoints, gate | §3. The slot system does not exist in state | — |
 | **P4** | **Fix `coveredBy`** — rename to `contributesTo`, add a real covered-by join, negative test proving a 1%-contributor is excluded | §2. The rail's entire job is this join. A misnamed field is a trap for the next session, exactly like the tiers were | — |
 | **P5** | **Fix `rankSources` unit reconciliation** | §5. Adequacy is the 0.6 keystone and is currently broken for any unit-mismatched essential | — |
 
-**P1 and P2 are pillar changes** — sealed canonicals, user-only writer, explicit sign-off in the same patch.
+★ **BOTH PILLAR PASSES ARE GONE (2026-07-15, same day).** P1 died on data that does not exist; P2 was reversed as not worth the cost. **No sealed canonical is touched by this work at all**, and the three survivors are pure code — so nothing here needs a seal sign-off. The demo is three steps away, not five.
+
+**Sequence check:** P4 and P5 are live defects the rail and the recommender would otherwise be built on top of; P3 is the state the whole slot system hangs from. None of the three depends on the other two, so they can land in any order.
 
 ---
 
@@ -271,8 +274,8 @@ Every rule above that can be machine-checked ships its gate in the same patch as
 | `slot_invariants` | ≥1 slot · activeSlot resolves · ≤4 · deleting the active slot promotes | NEW |
 | `recommendations_not_stored` | no derived list in LS or any artifact | NEW |
 | `dose_default_sourced` | every default = a claim id, a `directions` field, or an explicit rung-3 flag | NEW |
-| `product_category_complete` | all 215 carry a category (post-P2) | NEW |
-| `product_directions_accounted` | every component has directions OR a reason (post-P1) | NEW |
+| ~~`product_category_complete`~~ | ~~all 215 carry a category~~ — **DROPPED with P2/D8** (no field to gate) | — |
+| ~~`product_directions_accounted`~~ | ~~directions OR a reason~~ — **DROPPED with P1/D7** (the data does not exist) | — |
 | `render_probe_regimen` | the tab renders **and is styled** — a DOM probe would not have caught 68 unstyled classes | NEW |
 | `render_probe_scanner` | paste → parse → register → adopt, end to end | NEW |
 | `render_probe_coverage_add_remove` | `+` → field relights → remove → recommendation returns | NEW |
@@ -285,13 +288,13 @@ Every rule above that can be machine-checked ships its gate in the same patch as
 ## §12 — Sequence
 
 1. **This blueprint** — signed off by Luneth. ← *we are here*
-2. **P1** (mine directions) + **P2** (categories) — pillar passes, his seal sign-off.
+2. ~~**P1** (mine directions) + **P2** (categories) — pillar passes.~~ **BOTH DROPPED 2026-07-15** — P1 is impossible (the directions are not on the images); P2 is reversed by D8. No pillar is touched.
 3. **P4** + **P5** — the two live defects the rail and the recommender stand on.
 4. **P3** — slots in state.
 5. **The demo** — Coverage rail at 0 / few / many, the Regimen slot system, the Scanner paste path. Screenshot-verified; **his visual sign-off is the gate**.
 6. **Live build** — surface by surface, one to 100% before the next.
 
-**If the demo is wanted sooner**, it can be built on the honest rung-3 gap and the pillar passes can follow — this project's established "machinery over current data, numbers corrected at the end" pattern. That is Luneth's call to make, not an assumption to act on.
+⚠ **This paragraph is now MOOT** — it offered a demo-first path "if the pillar passes are wanted later." There are no pillar passes. The rung-3 default (now D7) is not a stopgap to be corrected later; it IS the design.
 
 ---
 
