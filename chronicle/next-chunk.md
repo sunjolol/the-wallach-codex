@@ -26,10 +26,67 @@ The 60 minerals are now split by **what Wallach tells you to DO**, never by impo
 Ordering: FOUNDATIONAL atomic (H C N O P); B + C **A→Z by symbol** (Luneth's UX call — the tile
 shows the symbol big). Names are **his**, chosen 2026-07-15 after he rejected three proposals.
 
-**NEXT SESSION = the Coverage demo work he deferred for session budget**, in his order:
-sticky goal strip · name-input hardening · refresh persistence (no re-prompt for a named user) ·
-click-to-rename in the profile · the topbar treatment (blue + glowing dot + "Codex V4.00") ·
-**Unbounded** on "Ask Wallach" · the chrome reword. Reference: `temporary/coverage-D-personalized.html`.
+## ★★★★ NEXT SESSION = THE "DAILY PROTOCOL" RAIL (Luneth's own scoping, 2026-07-15)
+
+His words at sign-off: *"The only thing missing now is the 'daily protocol' appearance/logistics
+(what does it look like with tons of items, with few items, how does 'add item/manage' work, what
+does it link to etc. — lots to figure out there but that's a separate session)."*
+
+The regimen rail on the right of `temporary/coverage-D-personalized.html` is the LAST unresolved
+surface of the Coverage redesign. Open questions HE named, none answered yet:
+- what it looks like with MANY items vs FEW (today the demo only ever shows the empty state:
+  "Nothing here yet · ADD OR SCAN A PRODUCT TO LIGHT THE FIELD")
+- what **ADD ITEM** does · what **MANAGE** does · where each links
+- the rail is the CAUSATION behind every lit tile (see the SUPERSEDED table — he killed the idea of
+  cutting it: *"I see no way to divorce this from the coverage page"*), so its density behaviour is
+  what makes the whole field legible.
+
+### ✓ SIGNED OFF 2026-07-15 — the rest of the Coverage demo is DONE. Do not redo it.
+Luneth: *"Looks good, let's sign off on this as good to go."* All screenshot-verified, zero page
+errors. `temporary/coverage-D-personalized.html` (GITIGNORED — see the protection rule below):
+- **Minerals RE-GROUPED to match live**: FOUNDATIONAL 5 (H C N O P, covered) · INDIVIDUALLY DOSED 21
+  (gap) · PLANT DERIVED 34 (the shared ring). GENERATED from `coverage-layout-data.json`, not
+  hand-typed. Ledger 5+0+0+37+48 = 90 counted · 91 shown. Grid untouched (11 cols × 100px, gap 9px).
+  ★ **His "inconsistent borders" complaint FIXED ITSELF** — measured: each group now returns exactly
+  ONE distinct computed look. gold-left-border = `.gap` (has a Wallach number, you're under it) ·
+  ring = PLANT DERIVED · plain = no number. The invented tiers had SCATTERED those three treatments
+  across all three groups (6 gap in FOUNDATIONAL, 13 in MAJOR TRACE, 2 in RARE TRACE), which is
+  exactly why it read as random. **Zero style rules were touched.**
+- **Sticky goal strip** — proven: after a 585px scroll the strip sits at 68px == the workspace top.
+  ★ The scroller is `main.app-workspace`, NOT the document (`documentElement.scrollHeight <=
+  innerHeight` — the document never scrolls). A document-relative sticky here is a silent no-op.
+- **"Ask Wallach" → Unbounded** via `--ds-font-display` (type-futurist.css:28 repoints it off
+  Playfair and loads last, so it wins). Do not hardcode the family.
+- **Brand stack** — `● WALLACH CODEX` (blue `--ds-tech` #5fa4bd + the 8px glowing dot, both already
+  in dashboard.css:76-77) / `PROFILE` / `CORPUS · 1,358 ENTRIES`.
+  ★ "PROFILE" (not "You" — he rejected that: *"reads as incoherent, there's nothing in this top left
+  section that is personalized"*) was chosen *"since that at least indicates it's clickable"*. **The
+  word is a PROMISE and the click is wired** — brand slot, profile row and avatar all open an inline
+  rename in place. If that ever breaks, the label becomes chrome that lies.
+  ⚠ **`1,358` IS HARDCODED IN THE DEMO.** It is real today (corpus-embed claims, kv=336) but **MUST
+  DERIVE when this lands in live** — a count that is true today and frozen forever is a lie with a
+  delay, i.e. `EDEN v1 · sealed 8E594A01` all over again. Warning is in the markup.
+  ★ He first picked "CORPUS · 336 ENTRIES" off my ambiguous "CORPUS 336" label. **336 is the SEAL
+  VERSION, not a count** — caught before it shipped. Do not relabel a version as a count.
+- **"Friend" retired** → brand `Profile` / profile `You` / avatar `Y` when unnamed.
+- **Name inputs hardened + ATTACKED** (12 payloads: script tag, img onerror, svg onload, attribute
+  break-out, `javascript:`, template literal, `__proto__`, RTL override, zero-width, control chars,
+  500-char overflow, plus a unicode name that must SURVIVE). All neutralised: 0 elements created, 0
+  execution, no dialogs; `José-Ann O'Neil` intact. ★ **The real defence is the SINK, not the filter**:
+  every render goes through `.textContent`, which does not parse HTML. `sanitizeName()` is layer two
+  and earns its place on what textContent does not care about but a human does (bidi spoofing,
+  invisible padding, control chars that would corrupt the LS round-trip in live). It is an ALLOWLIST.
+  Both entry points share ONE sanitizer + ONE commit path, deliberately, so they cannot drift.
+- **Brand-name overflow FIXED** (`overflow-wrap: anywhere`). ★ Found by RENDERING, not reading: an
+  unbroken 18-char name painted straight through the rail edge while
+  `getBoundingClientRect().right` reported "no bleed" — the BOX is 171px, the GLYPHS ran to 294px.
+  `scrollWidth > clientWidth` is the honest signal. [[the-instrument-lies-before-the-eye]] again.
+
+### Still open from his note list (1)
+- **Refresh persistence** — *"On the live version (not the demo) let's remember to add a memory
+  element so if someone picks their name and starts without being a 'guest', they don't have to re-do
+  the prompt on refresh."* **LIVE work, not demo.** Routes through §31 (`saveUserProfile` already
+  exists; `knip-baseline`'s `_ratchet_additions` key retires when this gives it a caller).
 
 ## ★★★★ THE TIERS WERE AN INVENTION — settled, BUILT OUT, do not re-litigate
 
@@ -224,6 +281,31 @@ labelling was kept because the them-vs-Wallach contrast IS his reason for captur
   ⚠ **RETRACTED from this bullet:** "The swatch for 'NO WALLACH NUMBER YET' matches **17 of 50**
   tiles" (rests on the dead 33-vs-17 split above) and "`.is-foundation` wears 36% of the field with
   **no legend entry**" (the class does not exist — see below).
+- ⚠⚠ **THE RETRACTION BELOW IS ITSELF WRONG — CORRECTED 2026-07-15 (third pass). READ THIS FIRST.**
+  `.is-foundation` **EXISTS.** It is in `temporary/coverage-D-personalized.html` — 3 hits, including
+  the `!important` box-shadow (`.is-foundation { box-shadow: 0 0 0 1.5px var(--ds-ink-faint)
+  !important; }`) and the `paintField()` line that applies it to PDM tiles with no goal hits.
+  **WHY EVERY LEG OF THE RETRACTION MISSED IT, AND WHY THAT IS THE REAL LESSON:** every leg was a
+  `git`-scoped command — `git grep`, `git log -S`, and greps limited to `dashboard/`. **`.gitignore:17`
+  ignores `temporary/`.** So the method could not see the demo *by construction*, and the demo is the
+  exact file Luneth was looking at when he wrote the original note. `git grep` over "ALL tracked files"
+  is not "all files" — it is a set that structurally excludes the prototypes this project keeps its
+  design truth in.
+  **What was TRUE in the retraction:** the class is not in `dashboard/` — not in the css, ts, html,
+  data, or `dist/main.js`. The live app's tile status-class set really is exactly
+  `.covered .partial .pending .present .gap`. So the ORIGINAL bullet's claim — that `.is-foundation`
+  and `.gap` share a CSS channel *in the app* — was still wrong, and the app has no such collision.
+  **What was FALSE:** "No such class. No such rule. It never existed in the app at any point in
+  history." It exists, it is live in the demo today, and the original note was almost certainly ABOUT
+  the demo.
+  ★ **THE DURABLE RULE:** before declaring something a fabrication, check whether your search could
+  have seen it. A negative result from a blind instrument is not evidence of absence. Scope-check the
+  tool before trusting the null — the retraction was written with the same confidence as the
+  fabrication it was correcting, and was equally unearned. (2026-07-15: the demo's `.is-foundation`
+  is now the PLANT DERIVED group's ring — 34 tiles, uniform, working, and screenshot-verified.)
+  ---
+  _The original (partly-wrong) retraction, preserved verbatim below because its dashboard-scoped
+  evidence is still valid and its lesson still stands:_
 - ⚠ **RETRACTED 2026-07-15 — THE "LOADED GUN" WAS A FABRICATION.** The bullet read:
   *"`.is-foundation`'s `!important` box-shadow and `.gap` share a CSS channel. It fires on 0 tiles
   today ONLY because no PDM element has a Wallach number yet."* **No such class. No such rule. No such
