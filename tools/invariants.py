@@ -58,6 +58,23 @@ class Invariant:
     check_fn: Callable
     truth_anchor: str
     severity: str                 # 'critical' | 'warning' | 'info'
+    # WHAT this gate anchors to. NO DEFAULT, deliberately: a new invariant that does not
+    # declare its anchor class fails at import, so this can never be forgotten the way a
+    # documentation rule would be. Added 2026-07-15 because "67/67 green" was being read --
+    # and reported to the user at every session boot -- as a statement about WALLACH, when
+    # most of the board only ever proved our files agree with each other. A single integer
+    # laundered bookkeeping into confidence. The board is excellent at proving nothing
+    # DRIFTED and weak at proving anything is RIGHT; the score must say which.
+    #   'external'    — anchored to something OUTSIDE our own hand-maintained data: Wallach's
+    #                   book bytes, a known physical constant, or git-committed history. Only
+    #                   these can catch a value that is WRONG BUT CONSISTENT with our files.
+    #   'consistency' — our file A vs our file B (derived == regenerate(source), embed ==
+    #                   ledger, hash == golden). Catches DRIFT. Cannot catch a value that was
+    #                   wrong when it was written: it would be wrong in both places.
+    #   'structural'  — shape/wellformedness only (parses, resolves, no prose in a fact
+    #                   field). Says nothing about whether a value is correct.
+    #   'meta'        — checks a DOCUMENT about the gates, or guards a currently-empty set.
+    anchor_class: str
     lesson_ref: str = ""
     cadence: str = "daily"        # 'daily' | 'weekly'
 
@@ -1738,6 +1755,113 @@ def _dose_amount_in_verbatim_impl(claims, canon):
                        + "; ".join(bad[:4]) + (" ..." if len(bad) > 4 else ""))
     return True, ("all %d structured dose(s) match their own verbatim bytes, unit-adjacent "
                   "and row-scoped (R2: the claim->book link)" % checked)
+
+
+# ---------------------------------------------------------------------------
+# §31 -- regimen_state_mutation_routing (RESTORED 2026-07-15)
+# ---------------------------------------------------------------------------
+# This gate was REMOVED 2026-07-05 (commit fca48c9d, the Phase-A legacy sever) and slated
+# to "return in Phase C". Phase C landed the SAME DAY. Phase F is done and the project is
+# in G/H. It was orphaned for ten days while CLAUDE.md went on stating flatly that "user
+# state persists to localStorage through the §31 chokepoint only" -- an unqualified claim
+# in the file loaded at every session boot, resting on a WARN-level lint rule and nothing
+# else. chokepoint-discipline.md was scrupulously honest about the gap (labeled WISH, R7);
+# the operating contract was not. That gap between an honest rule file and a confident
+# CLAUDE.md is the same disease as every other finding this session.
+#
+# WHAT IT CHECKS NOW, and why not what the old one checked. The old gate's stated contract
+# was "every regimen LS key is registered in LS_SCHEMAS". LS_SCHEMAS DOES NOT EXIST -- it
+# died with the legacy dashboard. Restoring that check verbatim would have re-introduced a
+# gate asserting a structure that is gone (exactly what no_operating_doc_contradiction
+# guards docs against). So this gates the contract that is actually TRUE today:
+#   (1) the five named chokepoints exist in state/regimen.ts;
+#   (2) each one EMITS the typed `regimen:changed` event (the cascade the doctrine promises
+#       -- a silent writer would leave every subscriber stale);
+#   (3) each regimen LS key is written from exactly ONE chokepoint (no second writer);
+#   (4) `localStorage` is touched ONLY in core/storage.ts (the lint says this at WARN --
+#       a warning does not fail a build, so it was never enforcement);
+#   (5) no view writes storage directly.
+# The real localStorage API surface. Deliberately NOT r"\blocalStorage\s*\." -- see the note
+# in _regimen_state_mutation_routing_impl: that pattern matches the period ending a sentence
+# in a code comment.
+_LS_API_RE = re.compile(
+    r"\blocalStorage\s*(?:\.\s*(?:getItem|setItem|removeItem|clear|key|length)\b|\[)")
+
+
+_S31_CHOKEPOINTS = {
+    "persistRegimen":   "REGIMEN_KEY",
+    "saveRgOverride":   "RG_OVERRIDES_KEY",
+    "saveRgManual":     "RG_MANUAL_KEY",
+    "saveRgRemoved":    "RG_REMOVED_KEY",
+    "saveRgUserGoals":  "RG_USER_GOALS_KEY",
+}
+
+
+def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
+    """Params are source strings so the negative test can drive planted code."""
+    viol = []
+
+    # (1)+(2)+(3): each chokepoint exists, emits, and owns its key.
+    for fn, key in _S31_CHOKEPOINTS.items():
+        m = re.search(r"export function " + fn + r"\b", regimen_src)
+        if not m:
+            viol.append(f"chokepoint `{fn}` is MISSING from state/regimen.ts")
+            continue
+        # the function body: from its signature to the next top-level `export function`
+        rest = regimen_src[m.start():]
+        nxt = re.search(r"\nexport function ", rest[1:])
+        body = rest[: nxt.start() + 1] if nxt else rest
+        if "emit('regimen:changed'" not in body and 'emit("regimen:changed"' not in body:
+            viol.append(f"`{fn}` does not emit `regimen:changed` — a silent write leaves "
+                        f"every subscriber stale (the §31 cascade is the whole point)")
+        if key not in body:
+            viol.append(f"`{fn}` does not write its own key `{key}`")
+
+    # (3b): no key is written from more than one place.
+    for fn, key in _S31_CHOKEPOINTS.items():
+        writes = re.findall(r"\bset\(\s*" + key + r"\b", regimen_src)
+        if len(writes) > 1:
+            viol.append(f"`{key}` is written {len(writes)}x — a second writer bypasses the "
+                        f"single chokepoint for that slot")
+
+    # (4): localStorage confined to core/storage.ts. Match the real LS API surface, NOT a
+    # bare `localStorage.` -- the first cut used r"\blocalStorage\s*\." and RED-flagged FIVE
+    # INNOCENT FILES by matching the FULL STOP in prose: "Pure reads only -- no mutation, no
+    # localStorage. The corpus is canonical". Three of those comments were promising exactly
+    # the opposite of the violation they were accused of. Caught 2026-07-15 only by reading
+    # the flagged lines instead of trusting the gate's first output (memory:
+    # the-instrument-lies-before-the-eye). An over-firing gate teaches people to switch gates
+    # off, which is worse than the hole it guards.
+    for rel, src in view_srcs:
+        if _LS_API_RE.search(src):
+            viol.append(f"{rel} touches localStorage directly — the §31/§17 chokepoint is "
+                        f"core/storage.ts alone")
+    if not re.search(r"localStorage\.setItem", storage_src):
+        viol.append("core/storage.ts no longer writes localStorage — the chokepoint moved; "
+                    "this gate is now pointing at the wrong file and must be re-anchored")
+    return (False, "§31 routing broken: " + "; ".join(viol[:5])) if viol else (
+        True, f"all {len(_S31_CHOKEPOINTS)} regimen chokepoints exist, each emits "
+              f"`regimen:changed` and owns exactly one LS key; localStorage confined to "
+              f"core/storage.ts across {len(view_srcs)} scanned file(s)")
+
+
+def check_regimen_state_mutation_routing():
+    """§31 chokepoint discipline -- see the block comment above for the full contract and
+    why this does NOT restore the old LS_SCHEMAS check (that registry no longer exists)."""
+    src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
+    reg = src_dir / "state" / "regimen.ts"
+    sto = src_dir / "core" / "storage.ts"
+    if not (reg.exists() and sto.exists()):
+        return True, "dashboard src not installed (bootstrap-guard)"
+    others = []
+    for pth in sorted(src_dir.rglob("*.ts")):
+        if pth == sto:
+            continue          # the one file allowed to touch localStorage
+        if pth.name.endswith(".test.ts"):
+            continue
+        others.append((pth.relative_to(ROOT).as_posix(), pth.read_text(encoding="utf-8")))
+    return _regimen_state_mutation_routing_impl(
+        reg.read_text(encoding="utf-8"), sto.read_text(encoding="utf-8"), others)
 
 
 def check_dose_amount_in_verbatim():
@@ -4044,6 +4168,7 @@ def check_no_new_dead_code():
 INVARIANTS = [
     Invariant(
         name="no_new_dead_code",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="knip (real entry graph) finds zero unused file/export/type beyond the ratchet baseline -- a removed feature can't leave orphaned code silently",
         check_fn=check_no_new_dead_code,
         truth_anchor="npx knip --reporter json over dashboard/ vs dashboard/knip-baseline.json",
@@ -4052,6 +4177,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="safe_write_canary",
+        anchor_class="external",  # os.read readback bypasses the Python text cache — an independent read, not our own belief about the write
         description="safe_write must round-trip a known payload byte-equal via os.read",
         check_fn=check_safe_write_canary,
         truth_anchor="tools/canaries/safe-write-probe.txt readback via os.read",
@@ -4060,6 +4186,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="tools_py_parse",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="All .py files in tools/ must parse via ast",
         check_fn=check_tools_py_parse,
         truth_anchor="Python ast.parse",
@@ -4068,6 +4195,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="tools_no_null_bytes",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="All .py files in tools/ must contain zero NUL bytes",
         check_fn=check_tools_no_null_bytes,
         truth_anchor="byte-level scan via Path.read_bytes()",
@@ -4076,6 +4204,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="critical_json_parse",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="All JSON files in schemas/ and dashboard/assets/data must parse",
         check_fn=check_critical_json_parse,
         truth_anchor="json.loads",
@@ -4084,6 +4213,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="views_state_no_inline_data",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="§00.B — no array/object literal > 10 elements in views/ or state/ (canonical data lives in assets/data/ behind Zod)",
         check_fn=check_views_state_no_inline_data,
         truth_anchor="dashboard/assets/js/src/{views,state}/**/*.ts literal scan",
@@ -4092,6 +4222,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="cross_platform_python",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Scan tools/*.py for cross-platform anti-patterns (encoding-less open, %-I strftime, utcnow, python3 literal)",
         check_fn=check_cross_platform_python,
         truth_anchor="v3.9 brain pitfall on cross-platform Python — five rules codified in Round 74",
@@ -4100,6 +4231,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_native_dialogs",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="dashboard.html must not use native alert() / confirm() / prompt() — route through showLcModal / showQuietToast",
         check_fn=check_no_native_dialogs,
         truth_anchor="dashboard.html scan for unparenthesized alert/confirm/prompt call sites",
@@ -4108,6 +4240,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_product_marketing_prose",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="the product surfaces are composition-only -- the slim vault (regimen-label-lookup.json) under a strict key-allowlist + the rich display artifact (product-detail-data.json) scanned for any marketing-prose key anywhere; prose can never re-enter (R7)",
         check_fn=check_no_product_marketing_prose,
         truth_anchor="strict key-allowlist over regimen-label-lookup.json + recursive marketing-key scan over product-detail-data.json (both generated), recomputed each run",
@@ -4116,6 +4249,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_external_style_resources",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="dashboard.html + dashboard/assets/styles/*.css + tacitus/dashboard/index.html must not import external fonts/CSS/scripts (Tesseract.js in-housed Round 161 sealing)",
         check_fn=check_no_external_style_resources,
         truth_anchor="static regex scan against fonts.googleapis.com / fonts.gstatic.com / cdn.jsdelivr.net / cdnjs / unpkg / pro.fontawesome.com / external <link>+<script>+@import",
@@ -4124,22 +4258,25 @@ INVARIANTS = [
     ),
     Invariant(
         name="design_system_hash_integrity",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="dashboard/assets/styles/design-system.css hash matches design-system.golden.sha256 (sealed Round 161)",
         check_fn=check_design_system_hash_integrity,
-        truth_anchor="SHA-256 of design-system.css vs golden file (sealed cdf0ebd4d7e55305...)",
+        truth_anchor="raw-byte SHA-256 of design-system.css vs the golden file. (Corrected 2026-07-15: this field named a stale hash, cdf0ebd4..., that has not been the golden for some time; the live golden is 37c338b7... Do not hardcode a hash in prose — read the file.)",
         severity="critical",
         lesson_ref="Round 161 sealing — Eden pattern applied to design tokens; math doesn't lie",
     ),
     Invariant(
         name="design_system_write_protection",
+        anchor_class="external",  # git-committed golden — the anchor OUTSIDE the css/golden pair
         description="design-system.css must not be modified after the golden hash sealing time (user-only-writer rule, sealed Round 161)",
         check_fn=check_design_system_write_protection,
-        truth_anchor="mtime(design-system.css) vs mtime(design-system.golden.sha256) — modifications after seal are violations",
+        truth_anchor="`git show HEAD:dashboard/assets/styles/design-system.golden.sha256` vs the working golden — git-committed history is the anchor OUTSIDE the css/golden pair, so an agent that edits the css AND re-seals cannot hide it (hash_integrity is blind to that by construction). Fails closed if git is unreachable. (Corrected 2026-07-15: this field still advertised the deleted mtime comparison.)",
         severity="critical",
         lesson_ref="Round 161 sealing — Eden write-protection pattern applied; agent reads only, user writes only",
     ),
     Invariant(
         name="dashboard_dist_fresh",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="dashboard/assets/js/dist/main.js must be newer than every src/**/*.ts file (build artifact is the runtime contract)",
         check_fn=check_dashboard_dist_fresh,
         truth_anchor="mtime(dist/main.js) vs max(mtime(src/**/*.ts)) — stale dist means the runtime is behind the source",
@@ -4148,6 +4285,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_well_formed",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="every line of chronicle/creators-log/log.jsonl is a schema-valid Creator's Log entry (id/ts/surface/kind/summary, allowlisted kind, summary<=280)",
         check_fn=check_creators_log_well_formed,
         truth_anchor="tools/creators_log.py::verify_file() applied to chronicle/creators-log/log.jsonl — the same validator the CLI writer uses",
@@ -4156,6 +4294,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_append_only",
+        anchor_class="external",  # git-committed history: the working tree cannot rewrite HEAD without a commit the user can see
         description="the Creator's Log ledger is append-only — committed entries are never deleted, truncated, edited, or reordered (sacred covenant)",
         check_fn=check_creators_log_append_only,
         truth_anchor="git show HEAD:chronicle/creators-log/log.jsonl must be a line-prefix of the working file — git-committed history is the immutable anchor",
@@ -4164,6 +4303,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="build_log_append_only",
+        anchor_class="external",  # git-committed history
         description="chronicle/build-log.md is append-only — committed lines are never deleted, truncated, edited, or reordered (hardened 2026-07-04; appends always allowed)",
         check_fn=check_build_log_append_only,
         truth_anchor="git show HEAD:chronicle/build-log.md must be a line-prefix of the working file — git-committed history is the immutable anchor",
@@ -4172,6 +4312,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_dead_legacy_paths",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="no live code/data/active-doc references a severed pre-Eden legacy path (wallach-books, books-clean, wallach-refresh, transcripts-clean, podcast-transcripts, wallach-topic-notes, youngevity-product-notes, health-resources, catalog-index, corpus-index)",
         check_fn=check_no_dead_legacy_paths,
         truth_anchor="git ls-files contents scanned each run; immutable history (chronicle/, genesis/, dist/, legacy-dashboard.js, the embedded Creator's-Log/versions blocks) allowlisted -- it records the past, it is not a live reference",
@@ -4180,6 +4321,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_operating_doc_contradiction",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="no operating doc (CLAUDE.md, .claude/rules/*.md, REVIEW.md) names an overhaul-DELETED structure (legacy dashboard js/css/host, the wild-west-mode rule) as live, nor points at a non-existent .claude/rules/*.md; the semantic 'contradicts the Charter's substance' half is a labeled WISH resting on the rules-audit discipline (R7)",
         check_fn=check_no_operating_doc_contradiction,
         truth_anchor="operating-doc bytes + os-level existence of every cited .claude/rules/*.md, scanned each run; living/planning docs (chronicle/, the blueprint, genesis/, next-chunk) are OUT of scope -- they narrate the deletions in past/planning tense",
@@ -4188,6 +4330,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_digest_synced",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="LOG.md equals the deterministic render of log.jsonl (the human view never drifts from the canonical ledger)",
         check_fn=check_creators_log_digest_synced,
         truth_anchor="tools/creators_log.py::render_digest() vs chronicle/creators-log/LOG.md",
@@ -4196,6 +4339,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_embed_synced",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="the dashboard build-time embed (dashboard/assets/data/creators-log-embed.json) equals the canonical ledger parsed to a JSON array (the in-app Creator's Log never drifts from log.jsonl)",
         check_fn=check_creators_log_embed_synced,
         truth_anchor="json.loads(dashboard/assets/data/creators-log-embed.json) == tools/creators_log.py::read_entries() over chronicle/creators-log/log.jsonl",
@@ -4204,6 +4348,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_bundle_synced",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="the BUILT bundle the browser loads (dashboard/assets/js/dist/main.js) carries the CURRENT ledger head — esbuild inlines the embed at build, so a log append without a rebuild leaves the in-app Profile log silently stale",
         check_fn=check_creators_log_bundle_synced,
         truth_anchor="the newest chronicle/creators-log/log.jsonl entry id appears verbatim in dashboard/assets/js/dist/main.js (the esbuild-inlined artifact the file:// app actually loads) — checks the BUILT artifact, not a source-vs-source pair",
@@ -4212,6 +4357,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="creators_log_archive_synced",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="the navigable archive (chronicle/creators-log/INDEX.md + digests/YYYY-MM.md) matches what regenerates from log.jsonl — full-history human fidelity (LOG.md is the recent-window view)",
         check_fn=check_creators_log_archive_synced,
         truth_anchor="tools/creators_log.py::render_index()/render_month() vs INDEX.md + digests/*.md; month set derived from log.jsonl",
@@ -4220,6 +4366,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="corpus_integrity",
+        anchor_class="external",  # Wallach's book .txt bytes + golden hashes
         description="eden/corpus sealed claim graph is coherent — verbatim substrings real, book hashes anchored, slugs in canon, indices an honest derivation (delegates to corpus_verify.py; BOOTSTRAP passes pre-seal)",
         check_fn=check_corpus_integrity,
         truth_anchor="eden/tools/corpus_verify.py — substring/hash checks over eden/corpus/books bytes + *.golden.sha256; deterministic, cannot lie",
@@ -4228,6 +4375,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="corpus_runtime_purity",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="dashboard dist/main.js carries no LLM / external-network markers — the LLM lives only at extraction time; the shipped app is pure offline-static",
         check_fn=check_corpus_runtime_purity,
         truth_anchor="grep of dashboard/assets/js/dist/main.js for LLM-SDK + API-endpoint markers",
@@ -4236,6 +4384,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="derived_artifacts_fresh",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="every GENERATED data artifact in eden/derived/MANIFEST.json equals a fresh run of its one pure generator over the sealed pillars (R1 / blueprint D2) — a hand-edit or stale build of any listed artifact is RED; generalizes the retired corpus_embed_synced, grows through Phase C",
         check_fn=check_derived_artifacts_fresh,
         truth_anchor="for each manifest artifact: json.loads(on-disk) == generator.build_fn() re-derived from the sealed pillars each run (no stale-to-stale compare)",
@@ -4244,6 +4393,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="amounts_wallach_only",
+        anchor_class="external",  # known physical constants (0.3 / 0.025 / 0.67, 154/100) + the sealed claim dose. NOTE: only the CONSTANTS are external; the base amount rests on dose_amount_in_verbatim
         description="every numeric coverage target in essentials-targets-data.json carries a source_claim_id resolving to a sealed Wallach dose claim that maps the essential (Charter R2 / §00.A) -- a Youngevity-sourced or unsourced amount is RED (the poison purge)",
         check_fn=check_amounts_wallach_only,
         truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
@@ -4252,6 +4402,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="dose_amount_in_verbatim",
+        anchor_class="external",  # the claim's own verbatim bytes, which corpus_integrity pins to the book
         description="every claim's structured dose.amount is literally present in that claim's OWN verbatim -- unit-adjacent, scoped to the claim's own table row, and (where for_condition names the column) at the right column index. The link R2 was missing: amounts_wallach_only anchors a target to the CLAIM's dose field, which is ours; this anchors that field to the book text",
         check_fn=check_dose_amount_in_verbatim,
         truth_anchor="the claim's own verbatim bytes -- which corpus_integrity independently pins to the sealed book .txt. R5 proves the quote is the book's; this proves the number is the quote's; amounts_wallach_only proves the target is the number's. Recomputed each run.",
@@ -4259,7 +4410,17 @@ INVARIANTS = [
         lesson_ref="2026-07-15 (Luneth-authorized): PROVEN by experiment that a planted 10x sodium fabrication (3,300 -> 33,000 mg) passed the ENTIRE board green while the claim's verbatim still read '3,300 mg' -- nothing tied dose.amount to the book. Adversaries then broke the first design 3 ways (cross-row bleed 72/86; a 1000x choline mg->mcg swap off chromium's row; in-row column bleed), all closed by row-scoping + positional column checks and pinned in tools/test_dose_amount_in_verbatim.py. The board was excellent at proving nothing DRIFTED and weak at proving anything is RIGHT; this is the first gate that reads Wallach's printed number.",
     ),
     Invariant(
+        name="regimen_state_mutation_routing",
+        anchor_class="structural",  # shape + wellformedness only -- proves the five named writers exist and emit, not that what they write is correct
+        description="§31: the five regimen chokepoints (persistRegimen, saveRgOverride, saveRgManual, saveRgRemoved, saveRgUserGoals) each exist, each EMIT the typed `regimen:changed` cascade, and each own exactly one LS key; localStorage is touched only in core/storage.ts and never by a view. RESTORED 2026-07-15 after 10 days orphaned",
+        check_fn=check_regimen_state_mutation_routing,
+        truth_anchor="the .ts bytes of state/regimen.ts + core/storage.ts + every other src/**/*.ts, scanned each run. NOT the old LS_SCHEMAS check -- that registry died with the legacy dashboard, and restoring it would assert a structure that no longer exists",
+        severity="critical",
+        lesson_ref="Removed 2026-07-05 (fca48c9d) 'to return in Phase C'. Phase C landed the SAME DAY; Phase F finished; nobody noticed for 10 days. Meanwhile CLAUDE.md:43 stated flatly that user state persists 'through the §31 chokepoint only' -- unqualified, in the file loaded at every boot -- while the only actual enforcement was an ESLint rule at WARN, which does not fail anything. chokepoint-discipline.md WAS honest (labeled WISH per R7); the operating contract was not. A gate promised 'next phase' is a gate nobody re-checks: the phase passes and the promise stays.",
+    ),
+    Invariant(
         name="collective_doses_not_fanned",
+        anchor_class="external",  # the sealed dose claims, read independently of the derive
         description="Charter R2, the half amounts_wallach_only is structurally blind to: a Wallach dose stated for a GROUP (dose.collective_group — e.g. 'essential fatty acids ... 9 grams per day', WAL-CLM-DDDL-000115, which maps BOTH omega-3 and omega-6) must NEVER be fanned into a per-essential number. Fanned out, one 9 g claim posts 9 g to EACH omega = 18 g of board target from a 9 g source — and R2 certifies it GREEN, because it audits each essential in isolation and both targets genuinely trace and recompute. A numeric target sourced from a collective claim is RED",
         check_fn=check_collective_doses_not_fanned,
         truth_anchor="eden/corpus/claims/* sealed dose claims carrying dose.collective_group x essentials-targets-data.json target.source_claim_id + target.low, read independently of targets_derive so a derive that starts fanning again cannot silence its own gate",
@@ -4268,6 +4429,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="efa_goal_wallach_sourced",
+        anchor_class="external",  # the sealed collective dose claim, recomputed independently
         description="the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is Wallach's own number in a different unit (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim whose dose.collective_group matches and whose essentials ARE goal.members, and maintenance_mg recomputes exactly from that dose x 1000 (g->mg). ★ No calorie basis appears in the chain BY DESIGN — Wallach states both the 3%-of-calories rate AND the finished 9 g supplement figure, so nothing is supplied here; re-deriving 3% against the FDA 2,000-kcal standard would yield 6.67 g and OVERRULE the number he wrote. A fabricated goal, a members/claim mismatch, or arithmetic drift is RED",
         check_fn=check_efa_goal_wallach_sourced,
         truth_anchor="efa-coverage-data.json goal x the sealed collective dose claim (eden/corpus/claims/*), recomputed each run independently of efa_coverage_derive",
@@ -4276,6 +4438,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="pdm_goal_wallach_sourced",
+        anchor_class="external",  # the sealed dose claim + reference product composition
         description="the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach dose expressed in mg via composition (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim, and maintenance/therapeutic recompute from that dose x the reference product's pillar composition x 154 lb — a fabricated or non-Wallach-sourced goal is RED",
         check_fn=check_pdm_goal_wallach_sourced,
         truth_anchor="pdm-coverage-data.json goal x the sealed dose claim (eden/corpus/claims/*) x the reference product composition (eden/products/products.json), recomputed each run independently of pdm_coverage_derive",
@@ -4284,6 +4447,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="nutrient_resolver_parity",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="A2 / SS00.B #3 -- the runtime identity resolver (core/nutrient-resolver.ts, reading nutrient-resolver-data.json) == the Python source of truth nutrient_resolve.resolve(): the committed parity fixture is FRESH vs live resolve() AND an artifact-driven resolver reproduces resolve() on every distinct pillar substance name; with the vitest (TS == fixture) this proves the TS runtime matcher == the Python resolver (one resolution truth, no drift across the boundary)",
         check_fn=check_nutrient_resolver_parity,
         truth_anchor="every distinct (name,form) in eden/products/products.json -> nutrient_resolve.resolve() re-derived each run, compared to the committed core/__fixtures__/nutrient-resolver-fixture.json AND to an artifact-driven resolver over nutrient-resolver-data.json",
@@ -4292,6 +4456,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="search_only_indices_excluded",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="tier-2 'search-only' claims (Ch7 modality survey: color/light therapy, aromatherapy, faith-healing, etc.) never appear in the operational conditions/symptoms/essentials/other-substances indices that drive the Knowledge-drawer tabs -- they feed the offline search feature ONLY",
         check_fn=check_search_only_indices_excluded,
         truth_anchor="claim `search-only` tag (eden/corpus/claims/*) vs claim ids referenced by the sealed indices (eden/corpus/indices/*); independent of corpus_derive's own filter",
@@ -4300,6 +4465,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="search_index_wellformed",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="every enriched search claim is structured (facet in the closed taxonomy, subject resolves to registry/canon, also_about resolves, answer+verbatim non-empty); TS/Python facet taxonomy in sync",
         check_fn=check_search_index_wellformed,
         truth_anchor="eden/corpus/search-enrichment.json x registry/canon/conditions via search_index_derive.validate() + the TS schema SEARCH_FACETS literal",
@@ -4308,6 +4474,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="verbatim_names_mapped_conditions",
+        anchor_class="external",  # the book-anchored verbatim
         description="every claim shown under a condition names that condition (or a registered synonym) in its verbatim; NEW violations beyond the remediation baseline block the board",
         check_fn=check_verbatim_names_mapped_conditions,
         truth_anchor="sealed shard verbatims x derived conditions index (what surfaces under a condition), name-or-synonym via the Catalog pillar (eden/catalog/conditions.json); allowlist eden/tools/verbatim-audit-baseline.json",
@@ -4316,6 +4483,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="verbatim_over_soft_limit",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="informational: lists every verbatim over the 500 soft-limit (up to the 1200 hard ceiling) so allowed over-length excerpts stay visible for review; never fails (hard ceiling is corpus_verify #2)",
         check_fn=check_verbatim_over_soft_limit,
         truth_anchor="sealed shard verbatim lengths",
@@ -4324,6 +4492,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="umbrella_proxy_named",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="informational: lists every umbrella condition accepted as named-by-proxy because the verbatim names a child subtype (leukemia->cancer) via the Catalog pillar (eden/catalog/conditions.json, umbrella_of); keeps a human eye on each exception; never fails",
         check_fn=check_umbrella_proxy_named,
         truth_anchor="the Catalog pillar umbrella_of (eden/catalog/conditions.json) x sealed shard verbatims x conditions index",
@@ -4332,6 +4501,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="references_resolve",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole. The substance (other_substances) half is now ACTIVE (Phase F): every claim substance must resolve to eden/catalog/nutrients.json, else RED",
         check_fn=check_references_resolve,
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
@@ -4340,6 +4510,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="product_registry_resolves",
+        anchor_class="external",  # a known identity/unit-conversion value bank, re-derived
         description="every quantified Product-DB substance resolves to an essential (one of the 91) OR is classified as a botanical, the botanical vocabulary collapses to ZERO surface-form collisions, and a bank of known identity + unit-conversion values holds -- proves eden/catalog/nutrients.json + nutrient_resolve keep the Products pillar machine-readable (Phase F chunk 2)",
         check_fn=check_product_registry_resolves,
         truth_anchor="deterministic re-run of eden/tools/nutrient_resolve.py over the sealed products.json x catalog/nutrients.json each run (exit 0 = all resolve/classify + zero collisions + known values); no stale-to-stale comparison",
@@ -4348,6 +4519,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="products_verify",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="the Products pillar (eden/products/products.json) is structurally sound + prose-contained: every record shape valid, amounts are composition (never a Wallach target), and the only long free-text token is a blend's bounded as_labeled (R4/R5). A malformed record or leaked prose is RED",
         check_fn=check_products_verify,
         truth_anchor="deterministic re-run of eden/tools/products_verify.py over the sealed products.json each run (exit 0 = clean); no stale-to-stale comparison",
@@ -4356,6 +4528,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="products_hash_integrity",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="Eden's wall for the Products pillar: products.json's LF-content hash matches its *.golden.sha256 (written by the USER-approved products_seal.py). Bootstrap-safe pre-seal; after sealing, any drift = RED, so the scanner/user path can never silently rewrite the sealed composition",
         check_fn=check_products_hash_integrity,
         truth_anchor="math -- deterministic LF-normalized SHA-256 of products.json vs the locked golden, recomputed each run (clone/CRLF-stable)",
@@ -4364,6 +4537,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="catalog_integrity",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="the Catalog pillar (eden/catalog/{conditions,symptoms}.json) is structurally sound: counts match, every umbrella_of child resolves, slugs are well-formed, and (when sealed) golden hashes hold",
         check_fn=check_catalog_integrity,
         truth_anchor="deterministic re-parse of eden/catalog/* + the essentials-canon slug set + golden hashes (LF-normalized), recomputed each run via eden/tools/catalog_verify.py; 0=sealed&healthy, 2=bootstrap, 1=fail",
@@ -4372,6 +4546,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="book_source_clean",
+        anchor_class="external",  # deterministic re-scan of the book .txt bytes
         description="every source book marked 'pristine' in eden/tools/purity-status.json scans to 0 unresolved defects (book_purity.py after its per-book baseline) -- a purified book's .txt can never silently regress; raw/purifying books listed informationally",
         check_fn=check_book_source_clean,
         truth_anchor="deterministic re-scan of the sealed book .txt each run (book_purity detectors + per-book purity-baselines allowlist); no stale-to-stale comparison",
@@ -4380,6 +4555,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="mined_pages_clean",
+        anchor_class="external",  # the book .txt bytes at each claim locator
         description="every screenshot page carrying a sealed claim (in a purifying/pristine campaign book) is free of high-confidence OCR defects in its source .txt (tight punctuation-spacing + gibberish classes); FP-heavy classes + reading-order scrambles are out of scope",
         check_fn=check_mined_pages_clean,
         truth_anchor="sealed claim locator.screenshot x deterministic book_purity detectors, re-scanned each run; genuine FPs triaged in eden/tools/mined-page-triage.json",
@@ -4388,6 +4564,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="mining_coverage_accounted",
+        anchor_class="external",  # screenshot markers in the book .txt — a text position we did not author
         description="every book flagged mining_status:'complete' in eden/tools/mining-coverage.json accounts for every source page (screenshot books, auto-derived from locator.char_offset->nearest marker) or section (chapter books) with a claim OR a reviewed-empty+reason; 'incomplete' books reported informationally only -- makes WHOLESALE under-mining a red board at completion, not an invisible dropped thread",
         check_fn=check_mining_coverage_accounted,
         truth_anchor="sealed claim locator.char_offset -> nearest ===== Screenshot(N) ===== marker in the book .txt (one text-position basis, NOT the inconsistent locator.screenshot), re-derived each run vs the book's marker set; reviewed-empty reasons per the exceptions_justified pattern",
@@ -4396,6 +4573,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="substance_triage_accounted",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="the source-anchored substance triage buffer (eden/tools/substance-triage-buffer.json) is accounted for: valid JSON, unique ids, required fields, a resolved/rejected entry carries a reason, and -- the teeth -- NO entry stays 'pending' under a book flagged mining_status:'complete' in mining-coverage.json. Pending entries under an INCOMPLETE book are informational only. The relief valve for references_resolve's strict substance half; NEVER trusted as a source (registry stays nutrients.json). Missing/empty buffer = pass",
         check_fn=check_substance_triage_accounted,
         truth_anchor="eden/tools/substance-triage-buffer.json x the mining-coverage.json completion flags, recomputed each run -- the gate NEVER reads the buffer for resolution (single registry, no drift), only for accounting; no stale-to-stale comparison",
@@ -4404,6 +4582,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="graphics_integrity",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="the sacred hand-made Wallach graphics (eden/graphics) match their sealed manifest hashes (delegates to graphics_verify.py; BOOTSTRAP passes pre-seal)",
         check_fn=check_graphics_integrity,
         truth_anchor="eden/tools/graphics_verify.py — raw-byte sha256 of each image vs graphics-manifest.json; manifest vs golden",
@@ -4412,6 +4591,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="claim_text_term_gloss",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="front-facing claim_text carries no garbled/obsolete botanical form or obscure common name that has a simpler approved alternative (eden/tools/term-gloss-lexicon.json); listed defects are also absent from verbatims",
         check_fn=check_claim_text_term_gloss,
         truth_anchor="eden/tools/term-gloss-lexicon.json {defects, common_swaps} scanned against every sealed claim_text (+ verbatim for defects)",
@@ -4420,6 +4600,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="glossary_wellformed",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="dashboard/assets/data/glossary.json parses; every entry has term+plain+category; terms unique; NO definition asserts a number/dose (plain-language reference only)",
         check_fn=check_glossary_wellformed,
         truth_anchor="dashboard/assets/data/glossary.json structural scan",
@@ -4428,6 +4609,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="jargon_terms_glossed",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="every medical-jargon word (latinate -osis/-itis/-emia/... minus common-word + botanical-fragment skips) in a claim_text has a plain-language entry in glossary.json; warns to force coverage growth",
         check_fn=check_jargon_terms_glossed,
         truth_anchor="_JARGON_SUFFIX matches in every sealed claim_text vs glossary.json keys+aliases",
@@ -4436,6 +4618,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="citations_reference_registry",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="on the CLEAN Charter surface (corpus claims + canon + catalog + corpus-derived targets/coverage-layout), every claim's locator.book resolves to a books-meta book_id and no fact field carries a hand-typed book TITLE -- book refs are IDs, display citations are composed from the sealed registry (Charter R3, the overhaul-trigger anti-drift gate). Legacy embeds + views are a labeled WISH (Phase E/F)",
         check_fn=check_citations_reference_registry,
         truth_anchor="eden/corpus/books-meta.json titles + book_ids x the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data), recomputed each run; prose homes allowlisted",
@@ -4444,6 +4627,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="prose_contained",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="on the CLEAN Charter surface, no prose-shaped string (>=12 words or a sentence boundary) appears under a NON-prose key -- prose lives in ONE designated compartment (claim_text/verbatim + file-metadata + dose descriptors), never in a fact field (Charter R4). Full R4 (verbatim=pointer + per-essential prose store) + legacy embeds/views are a labeled WISH",
         check_fn=check_prose_contained,
         truth_anchor="the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data) x the _PROSE_HOME_KEYS allowlist, recomputed each run",
@@ -4452,6 +4636,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="internal_refs_out_of_prose",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="front-facing-human-first / Charter R4 -- NO internal book navigation ref (Table/Fig/page N) appears in any claim_text (the reader-facing summary); provenance rides on the source-ref tag (surfaced as a labeled header) + the verbatim quote, never the summary prose. The 44 Rare-Earths/Immortality table claims + the 33 Base-Line dose summaries were cleaned; any ref left in a claim_text is RED",
         check_fn=check_internal_refs_out_of_prose,
         truth_anchor="every sealed claim's claim_text, recomputed each run",
@@ -4460,6 +4645,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_hand_duplicated_canonical",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="the 90/91 canonical essential display_names live ONLY in essentials-canon.json among hand-edited files -- no other hand-edited pillar file (catalog conditions/symptoms) re-stores one as a field value (Charter R3, 'no value hand-written twice'); derived copies (corpus-embed) are exempt, gated fresh by derived_artifacts_fresh",
         check_fn=check_no_hand_duplicated_canonical,
         truth_anchor="essentials-canon.json display_names x every string leaf of the other hand-edited pillar files (catalog conditions/symptoms), recomputed each run",
@@ -4468,6 +4654,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="scanner_user_items_marked",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Eden's WALL (blueprint §5.4): a user/scanner-added regimen item is provenance-marked user-provided (user_scanned/user_manual/wishlist_promoted) so it can never masquerade as Wallach/Youngevity canonical, and no user token ever appears in a sealed pillar or an operational generated artifact -- the scanner writes only the user's localStorage, never a pillar",
         check_fn=check_scanner_user_items_marked,
         truth_anchor="dashboard/assets/js/src provenance literals + RegimenItemSchema x a user-token scan of eden/{corpus,catalog}/*.json & dashboard/assets/data/*.json (excl. append-only creators-log narrative), recomputed each run",
@@ -4476,6 +4663,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="data_artifacts_accounted",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="Charter R1 completeness half -- every dashboard/assets/data/*.json is registered in eden/derived/MANIFEST.json, either in `artifacts` (derived + freshness-gated) or in `accounted` (hand-authored/externally-gated, each with a disposition + reason); a data file in neither list is RED (no silent hand-maintained artifact can ship)",
         check_fn=check_data_artifacts_accounted,
         truth_anchor="the on-disk glob of dashboard/assets/data/*.json x the MANIFEST.json artifacts+accounted registries, recomputed each run",
@@ -4484,6 +4672,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="charter_gates_present",
+        anchor_class="meta",  # checks a document about the gates / guards a currently-empty set
         description="Charter R7 meta-gate -- every gate named in the R1-R9 table's Gate column in .claude/rules/charter.md must be a live invariant, a known enforcement mechanism (verify tool/hook/lint), or the rule must be labeled WISH; a named gate that neither exists nor is WISH means the Charter oversells its enforcement = RED",
         check_fn=check_charter_gates_present,
         truth_anchor="the parsed charter.md R1-R9 rule table (Gate + Status columns) x the live invariant name set + a fixed mechanism allowlist, recomputed each run",
@@ -4492,6 +4681,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="exceptions_justified",
+        anchor_class="meta",  # checks a document about the gates / guards a currently-empty set
         description="Charter R9 -- every tolerated failure in .claude/invariant-baseline.json is a justification object {invariant, reason, test}; a bare-string or reason-less/test-less exception is a silent loosening = RED. Empty baseline is vacuously clean but the gate stands for the next exception",
         check_fn=check_exceptions_justified,
         truth_anchor="the tolerated_failures list in .claude/invariant-baseline.json x the live invariant names, recomputed each run; paired reader stop_round_close.py tolerates the same entries by their `invariant` name",
@@ -4500,6 +4690,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="corpus_audit_gate",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="Charter R8 / the mandatory pre-Phase-G full-corpus audit made STRUCTURAL: while eden/tools/corpus-audit-status.json has phase_g_unlocked=false, the live claim count may not exceed frozen_claim_count -- new claims cannot be mined onto unaudited data (RED the instant they are). Green while count==freeze (audit owed, Phase G locked); unblocks on audit sign-off",
         check_fn=check_corpus_audit_gate,
         truth_anchor="the live corpus shard claim count x frozen_claim_count in eden/tools/corpus-audit-status.json, recomputed each run",
@@ -4508,6 +4699,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="views_no_inline_prose",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Phase H0 / R4 code-side -- no user-facing prose lives as a string literal inside a CLEAN view file; it belongs in the view-copy content store (state/copy.ts), referenced by id. Surface-scoped: _CLEAN_VIEW_FILES is EMPTY in H0 and grows as each view is migrated (H2-H4); the negative test proves the gate fires",
         check_fn=check_views_no_inline_prose,
         truth_anchor="the .ts bytes of the declared clean-view files (_CLEAN_VIEW_FILES) scanned each run; a growing allowlist mirroring _clean_surface_files",
@@ -4516,6 +4708,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="entity_render_is_projection",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Phase H0 / R1 -- the entity-render view is a pure projection of the generated entity-page artifact: no object literal keyed by a real entity id, no per-entity content branch. Closes the sub-10-element hole views_state_no_inline_data cannot see. Surface-scoped (_ENTITY_VIEW_FILES): EMPTY in H0, grows in H2; negative test proves it fires",
         check_fn=check_entity_render_is_projection,
         truth_anchor="the real entity-id sets from the pillars (canon slugs + catalog condition/symptom ids + product ids) x the entity-view .ts bytes, recomputed each run",
@@ -4524,6 +4717,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="views_no_ciphered_data",
+        anchor_class="external",  # catches RENDER-TIME fabrication — a value with perfect provenance mangled at draw time, which every source-side gate is blind to
         description="§00.A -- the decorative .ds-cipher glyph-scrambler never wraps interpolated data. It rewrites a random character every 1s tick and restores the truth only every 5th, so wrapping a real number renders it WRONG ~80% of the time. Found live 2026-07-14: the hero kicker ciphered essentialCount(), rendering Wallach's 90 as 30/80/94. Any ${...} inside a .ds-cipher span is RED",
         check_fn=check_views_no_ciphered_data,
         truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
@@ -4532,6 +4726,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_stub_render_paths",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Phase H0 -- no prototype/demo scaffold token (kn-stub, sh-stub, 'next chunk', 'real build', 'demo wires', PROTOTYPE, exemplar) survives into a shipped view (.ts) or stylesheet (.css); the migration re-implements the prototypes' design, never pastes their scaffolding",
         check_fn=check_no_stub_render_paths,
         truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts + dashboard/assets/styles/*.css bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
@@ -4540,6 +4735,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="kind_label_covers_corpus",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="Phase H0 / R4 -- every distinct claim.kind in the sealed corpus (14 today) has a display label in the view-copy content store's kind_labels; a missing label would render a raw/blank kind header on the entity page",
         check_fn=check_kind_label_covers_corpus,
         truth_anchor="distinct claim.kind values in the sealed claim shards x dashboard/assets/data/view-copy.json kind_labels keys, recomputed each run",
@@ -4548,6 +4744,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="claim_category_mapping_total",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="Phase H1 / redesign colour language §6 -- the claim.kind -> colour-category map (view-copy.json kind_categories) is TOTAL and exact over the sealed corpus kinds: every distinct sealed kind maps to exactly one of the six locked families (green/teal/amber/orange/violet/red), no default branch, no stale entry for a vanished kind. A new/dropped kind reddens the board rather than rendering a wrong/absent colour",
         check_fn=check_claim_category_mapping_total,
         truth_anchor="distinct claim.kind in the sealed claim shards x dashboard/assets/data/view-copy.json kind_categories keys+values, recomputed each run",
@@ -4556,6 +4753,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="view_category_not_hardcoded",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Phase H1 -- the entity view reads a claim's colour CATEGORY from the map (view-copy kind_categories via state/copy.ts::kindCategory), never a hardcoded family literal per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES is EMPTY in H1 (render built in H2), grows in the same patch; negative test proves it fires",
         check_fn=check_view_category_not_hardcoded,
         truth_anchor="the entity-view .ts bytes (_ENTITY_VIEW_FILES) scanned each run for a standalone colour-family-word string literal",
@@ -4564,6 +4762,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="entity_pills_justified",
+        anchor_class="external",  # an independent re-derivation from corpus-embed claims
         description="Phase H1 -- every PILL on a generated entity page (a condition's restore nutrients, an essential's help-with conditions + works-with partners) traces to a qualifying source claim. The essentials[]-union leak produces exactly an UNjustified pill (a nutrient flattened in from a DIFFERENT condition in a multi-condition claim); this gate recomputes the directed maps() + interaction relations independently and RED-flags any posted pill with no backing. Defense in depth beyond derived_artifacts_fresh (which only proves the artifact matches the generator)",
         check_fn=check_entity_pills_justified,
         truth_anchor="dashboard/assets/data/entity-page-data.json pills x an independent re-derivation from corpus-embed claims, recomputed each run",
@@ -4572,6 +4771,7 @@ INVARIANTS = [
     ),
     Invariant(
         name="no_positional_hero",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Phase H1 (prominence) -- the entity page's curated primary 'what to do' slot is never auto-filled by a reference-table row (a base-line-program / dose-table claim in protocol_claim_ids), and the hero/primary is never chosen by array position. DATA half binds now; the VIEW half is surface-scoped (_ENTITY_VIEW_FILES holds 2 real views and BINDS on them as of 2026-07-15)",
         check_fn=check_no_positional_hero,
         truth_anchor="entity-page-data.json protocol_claim_ids x corpus-embed base_line_table + the entity-view .ts bytes scanned for a claims[0]/record[0] hero, recomputed each run",
@@ -4591,6 +4791,45 @@ def list_invariants(weekly: bool = False):
     if weekly:
         return list(INVARIANTS)
     return [i for i in INVARIANTS if i.cadence == "daily"]
+
+
+def _anchor_class_report(by_class):
+    """The honest half of the score.
+
+    "67/67 green" is a true sentence that was doing a false job. It was reported at every
+    session boot and read -- by the user, and restated by the agent -- as a statement about
+    WALLACH. It never was. Most of the board proves our files agree with each other, which
+    is a statement about our bookkeeping. On 2026-07-15 a planted 10x sodium fabrication
+    passed all 66 gates green, because not one of them read Wallach's printed number.
+
+    A single integer cannot carry that distinction, so it stops being the whole story here.
+    This prints what each pass actually rests on. It is not a smaller number for its own
+    sake -- consistency and structural gates catch real regressions and are worth keeping --
+    it is a labelled one, so nobody (including the agent) can spend structural passes as if
+    they were evidence about the source."""
+    order = ("external", "consistency", "structural", "meta")
+    gloss = {
+        "external":    "anchored OUTSIDE our own data (book bytes · physical constants · git). "
+                       "The only class that can catch a value that is WRONG BUT CONSISTENT.",
+        "consistency": "our file A vs our file B. Catches DRIFT; blind to a value that was "
+                       "wrong when written -- it would be wrong in both places.",
+        "structural":  "shape + wellformedness only. Says nothing about whether a value is right.",
+        "meta":        "checks a document about the gates, or guards a currently-empty set.",
+    }
+    lines = ["", "  what the board actually anchors to:"]
+    for k in order:
+        if k not in by_class:
+            continue
+        ok, bad = by_class[k]
+        tot = ok + bad
+        flag = "" if not bad else f"  <-- {bad} FAILING"
+        lines.append(f"    {k:12} {ok:>2}/{tot:<2} {gloss[k]}{flag}")
+    ext_ok, ext_bad = by_class.get("external", (0, 0))
+    tot = sum(a + b for a, b in by_class.values())
+    lines.append("")
+    lines.append(f"  {ext_ok + ext_bad} of {tot} gates bear on truth outside our own files. "
+                 f"A green board means NOTHING DRIFTED. It does not mean anything is RIGHT.")
+    return "\n".join(lines)
 
 
 def main():
@@ -4631,6 +4870,7 @@ def main():
         sys.exit(0)
 
     n_pass = n_fail = 0
+    by_class = {}
     for i in chosen:
         try:
             passed, msg = i.check_fn()
@@ -4643,9 +4883,12 @@ def main():
             passed, msg = False, f"check raised: {e}"
             status = "ERR "
             n_fail += 1
+        p_, f_ = by_class.get(i.anchor_class, (0, 0))
+        by_class[i.anchor_class] = (p_ + (1 if passed else 0), f_ + (0 if passed else 1))
         print(f"{status} [{i.severity:8}] {i.name}: {msg}")
 
     print(f"\n{n_pass}/{n_pass + n_fail} passed ({n_fail} failed)")
+    print(_anchor_class_report(by_class))
     sys.exit(0 if n_fail == 0 else 1)
 
 

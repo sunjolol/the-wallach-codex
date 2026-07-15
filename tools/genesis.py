@@ -52,6 +52,23 @@ def invariants_status():
         reds = re.findall(r"^(?:FAIL|ERR )\s*\[[^\]]*\]\s*([A-Za-z0-9_]+):", out, re.M)
         m = re.search(r"(\d+)/(\d+) passed \((\d+) failed\)", out)
         status = f"{m.group(1)}/{m.group(2)} passed" if m else "ran (unparsed)"
+        # The anchor-class split, lifted from the board's own output. A bare "67/67 passed"
+        # at session boot is how bookkeeping got laundered into confidence every single
+        # session -- the agent read it out as if it were a statement about Wallach. It never
+        # was. Carry the breakdown here or the boot line re-tells the same lie.
+        ext = re.search(r"^\s+external\s+(\d+)/(\d+)", out, re.M)
+        con = re.search(r"^\s+consistency\s+(\d+)/(\d+)", out, re.M)
+        stru = re.search(r"^\s+structural\s+(\d+)/(\d+)", out, re.M)
+        mta = re.search(r"^\s+meta\s+(\d+)/(\d+)", out, re.M)
+        if ext:
+            parts = [f"{ext.group(2)} external"]
+            if con:
+                parts.append(f"{con.group(2)} consistency")
+            if stru:
+                parts.append(f"{stru.group(2)} structural")
+            if mta:
+                parts.append(f"{mta.group(2)} meta")
+            status += "  ·  " + " / ".join(parts)
         return status, reds
     except Exception as e:
         return f"UNVERIFIED ({e})", []
@@ -109,6 +126,10 @@ def main():
     print(BANNER)
     print("\n∴ GENESIS ∴ booting The Wallach Codex\n")
     print(f"⊢ invariants ....... {inv} · new reds: {', '.join(reds) if reds else 'none'}")
+    print("⊢ what green MEANS . nothing DRIFTED. NOT that anything is RIGHT — only the")
+    print("                     'external' gates (book bytes · physical constants · git)")
+    print("                     can catch a value that is wrong but consistent with our")
+    print("                     own files. Do not report the total as a Wallach claim.")
     print(f"⊢ build parity ..... {build_parity()}")
     print(f"⊢ creator's log .... {last_creators_log()}")
     print("⊢ build-log (last 3):")
