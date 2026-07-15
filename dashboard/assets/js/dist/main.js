@@ -15002,6 +15002,9 @@
       return hasSrc ? "covered" : "";
     }
     if (kind === "trace_pdm") {
+      if (pdmStatus === "" && d.sources.length > 0) {
+        return "present";
+      }
       return pdmStatus;
     }
     if (kind === "wallach_collective") {
@@ -97158,7 +97161,29 @@ NO VALUE WAS PARSED, deliberately. The clause names the COLUMN, never a figure. 
 
 WHY GLOSS RATHER THAN DELETE. Luneth said "delete the RDA entirely if needed". But his own stated reason for capturing RDAs is the them-vs-Wallach contrast \u2014 the RDA says 800, Wallach says 0, and that gap IS the argument. Deleting the column destroys the point he collected it for; labelling it keeps the contrast and kills the ambiguity. Deletion remains available if he prefers it.
 
-VERIFIED: corpus_seal PASS at kv=335; build OK; invariants 69/69 with zero new reds; dose_amount_in_verbatim OK (86 doses still match their own verbatim bytes, unit-adjacent and row-scoped); prose_contained OK across 16 clean-surface files.` }];
+VERIFIED: corpus_seal PASS at kv=335; build OK; invariants 69/69 with zero new reds; dose_amount_in_verbatim OK (86 doses still match their own verbatim bytes, unit-adjacent and row-scoped); prose_contained OK across 16 clean-surface files.` }, { id: "lg_mrmh9av7_gl7n6j", ts: "2026-07-15T14:32:56.515256-05:00", surface: "coverage", kind: "milestone", summary: "Element doctrine closed. Scan a single rare earth and its tile now says 'present' instead of lying empty \u2014 but never green, because Wallach never dosed them individually. The 600mg scare was void: his dose is of the BOTTLE, so we never decompose it.", detail: `The element doctrine is closed. If you scan a supplement naming ONE rare earth with an exact amount \u2014 "Cerium 2 mg" \u2014 that tile used to render completely empty, as though you had none. It now reads "present": you are getting some and we say so. It never turns green, because Wallach never gave a per-element number to measure it against. Green stays earned only by the plant-derived bottle he actually doses.
+
+\u2605 THE KEYSTONE, and it voids the problem Luneth raised: the 924 mg goal was NEVER a sum of the 34 elements. His dose claim (WAL-CLM-EPIGEN-000089) doses the BOTTLE, in fluid ounces \u2014 verbatim "Liquid Plant Derived Coloidal Minerals One Ounce/ 100 pounds/day PPM". The 600 is simply Majestic Earth's CONCENTRATION, the mg of mineral solids in one fl oz. So 1 fl oz \xD7 600 mg/fl oz \xD7 (154 \xF7 100 lb) = 924 mg. That is \xA700.A-clean by construction: Wallach supplies the dose, the Youngevity label supplies only the concentration \u2014 composition feeding the math, never a target.
+
+Which means the discovery that PDM products contain all 60 elements plus extras breaks NOTHING. We never decompose the bottle. He doses the bottle; we measure the bottle. Apples to apples. No per-element derivation is needed, possible, or wanted \u2014 permanently, and that is the sentence that seals this.
+
+Luneth's threshold worry was likewise already solved and he had talked himself out of the right answer: a 25 mg third-party product reads 25/924 = 2.7% = gap, not green. The meter is a RATIO, not a flag. Adopting present/not-present for the vehicle \u2014 his tempting instinct \u2014 would have been the actual regression, because it would have thrown away the only quantified statement we have.
+
+THE CHANGE: state/coverage.ts classify()'s trace_pdm branch returned pdmStatus and ignored \`d\`, the per-element delivery, entirely. Now: if (pdmStatus === '' && d.sources.length > 0) return 'present'. Three properties, each asserted rather than reasoned about:
+  1. FLOOR FIRES \u2014 per-element, only for the element actually named.
+  2. CEILING HOLDS \u2014 'present' can never become 'covered'. Wallach states no individual amount for any of the 34, and you cannot be measured as meeting a number that does not exist (\xA700.A).
+  3. METER WINS \u2014 the floor lifts ONLY the empty state. Any measured verdict (covered/partial/gap) outranks an unmeasurable "you have some". This matches pdmStatusOf's existing ladder, where 'present' is already exactly what a vehicle-in-stack-but-unquantified produces.
+
+NEW GATE: tools/render_probe_pdm_presence.js \u2014 12 checks across three seeded worlds.
+  \u2605 Case A is a REAL negative control: it re-runs the PRE-FIX world (no cerium scan) and asserts CERIUM === ''. If the floor ever begins firing unconditionally, the probe goes red. A test that cannot reproduce the bug it guards proves nothing \u2014 and this session produced five lying instruments, so the control was written first.
+  Case B proves the floor is per-element: cerium present, yttrium and gold still empty, exactly ONE tile lifted, and cerium never reaches covered.
+  Case C seeds the same scan PLUS 2 \xD7 600 mg of real vehicle and proves the group verdict wins: cerium goes covered WITH the other 33, not present.
+
+WHY YOUNGEVITY STAYS PREFERRED \u2014 structurally, not by favouritism. Recording it so nobody "fixes" it later: Wallach's dose is in FLUID OUNCES of liquid colloidal minerals, so the only way to convert it into a number is a product with a known mg/fl oz. Majestic Earth is the reference because its label is the one we hold. A third-party product listing all 34 with exact amounts would light 34 tiles 'present' and move the meter by zero \u2014 that is not a bug, it is the honest answer, because Wallach dosed none of them individually. His own footnote (lets-play-doctor:3793): "The most efficient way to get mineral supplements is in the plant derived colloidal liquid form."
+
+VERIFIED: tsc clean; build OK; invariants 69/69 with zero new reds; all 8 render probes exit 0 (render_probe, _seeded, _knowledge, _entity, _omega, _scan, _adopt, _pdm_presence).
+
+DEFERRED to next session at Luneth's call (session budget): the Coverage demo updates \u2014 sticky goals, name-input hardening, refresh persistence, click-to-rename, the topbar treatment, Unbounded on Ask Wallach, the chrome reword, and phosphorus's optional custom page.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

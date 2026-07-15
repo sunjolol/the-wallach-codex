@@ -693,6 +693,25 @@ function classify(
     // Wallach dose → kind 'wallach' → the numeric path below, never here.
     // NOT "the rare earths": 19 of the 34 are not, by Wallach's own tagging. The group
     // is defined by having no individual dose — see pdm_coverage_derive.py's docstring.
+    //
+    // ── CHANNEL 2: the presence floor ──────────────────────────────────────────
+    // A scanned/manual item can name ONE of the 34 with an exact amount ("Cerium 2 mg").
+    // It moves the vehicle meter by ZERO — correctly, because a cerium capsule is not a
+    // plant-derived vehicle and Wallach's dose is of the BOTTLE ("Liquid Plant Derived
+    // Coloidal Minerals One Ounce/ 100 pounds/day", WAL-CLM-EPIGEN-000089). But the user
+    // IS getting cerium, and rendering that tile empty is a lie of omission.
+    //
+    // The ceiling is 'present' and it can NEVER be 'covered': Wallach states no individual
+    // amount for any of the 34, and you cannot be covered against a number that does not
+    // exist (§00.A). Only the vehicle meter can promote a tile to covered.
+    //
+    // It lifts ONLY the empty state. Any real verdict (covered/partial/gap) wins, because
+    // that is a measured ratio against Wallach's own dose and it outranks an unmeasurable
+    // "you have some". Consistent with pdmStatusOf's ladder, where 'present' is already what
+    // a vehicle-in-stack-but-unquantified produces.
+    if (pdmStatus === '' && d.sources.length > 0) {
+      return 'present';
+    }
     return pdmStatus;
   }
   if (kind === 'wallach_collective') {
