@@ -15,7 +15,6 @@ Any deviation = verify failure = seal refused._
   "pending_adjudications": [ { "id", "slot", "question", "status", "resolve_in", "affects_slug" } ],
   "essentials": [
     { "slug": "magnesium", "display_name": "Magnesium", "category": "mineral",
-      "subtype": "foundational|major_trace|rare_trace|null",
       "atomic_number": 12, "symbol": "Mg", "layout_key": "Magnesium", "essential": true,
       "provisional": false, "provisional_note": "<only if provisional>" }
   ]
@@ -24,6 +23,16 @@ Any deviation = verify failure = seal refused._
 
 - `total` MUST equal 90. `slug` is unique, lowercase, `[a-z0-9-]+`.
 - Sealed once for life. Every `essentials` slug used in any claim or index MUST appear here.
+- **`subtype` was DELETED 2026-07-15 — do not re-add it.** It encoded a
+  `foundational|major_trace|rare_trace` mineral tiering that was bootstrapped from a UI mockup
+  (`workspace-coverage-v3.2-PROPOSAL.html`), never from Wallach: those three phrases appear ZERO
+  times across all 7 books, and Hell's Kitchen affirmatively DENIES the premise — *"The
+  concentration of trace elements in tissue or requirement levels does not represent their relative
+  importance as an essential nutrient"* (`hk.txt:7312-7314`). Nothing ever read the field (proven
+  2026-07-15: zero readers in `src/`, `eden/tools/`, `tools/`, `schemas/`; zero occurrences in all
+  23 derived artifacts and in `dist/main.js`). The page's element grouping — FOUNDATIONAL 5 /
+  INDIVIDUALLY DOSED 21 / PLANT DERIVED 34 — is owned by the coverage layout and keyed off what
+  Wallach tells you to DO, never by importance. It is not this pillar's business.
 - `pending_adjudications` records open canon questions (Cysteine↔Taurine, Fluoride) so the
   canon never silently encodes an unverified choice; resolved in the Phase-δ corpus audit.
 

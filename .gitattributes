@@ -10,3 +10,11 @@ eden/corpus/**/*.golden.sha256 text eol=lf
 
 # Sealed graphics are binary; file_sha256 = raw bytes. Never EOL-convert them.
 eden/graphics/*.jpg binary
+
+# The other sealed canonical: design-system.css (+ its golden). Added 2026-07-15.
+# Its gate now LF-normalizes before hashing, so this pin is DEFENCE IN DEPTH, not the fix —
+# it keeps the working tree from diverging from the LF blob git already stores. The seal was
+# broken precisely because nothing pinned this path: the css sat CRLF on disk, the golden
+# recorded that CRLF digest, and git had never stored those bytes.
+dashboard/assets/styles/*.css text eol=lf
+dashboard/assets/styles/*.golden.sha256 text eol=lf

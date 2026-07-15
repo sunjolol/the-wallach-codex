@@ -85,11 +85,39 @@ class Invariant:
 
 
 def _file_hash(path) -> str:
-    """SHA-256 of file content (empty string if file missing)."""
+    """SHA-256 of RAW file bytes (empty string if file missing).
+
+    Correct for BINARY sealed canonicals (eden/graphics/*.jpg — `.gitattributes` marks them
+    `binary`, so git never EOL-converts them and raw bytes are clone-stable by construction).
+    WRONG for a sealed TEXT file: see _lf_file_hash below."""
     p = pathlib.Path(path)
     if not p.exists():
         return ""
     return hashlib.sha256(p.read_bytes()).hexdigest()
+
+
+def _lf_file_hash(path) -> str:
+    """SHA-256 of LF-NORMALIZED UTF-8 content (empty string if file missing).
+
+    The hash for a sealed TEXT canonical. Matches eden/tools/{corpus,catalog,products}_seal.py's
+    lf_sha256() — one hash for the same content regardless of the working tree's line endings.
+
+    WHY THIS EXISTS (2026-07-15). design_system_hash_integrity used _file_hash (raw bytes) on
+    design-system.css. The css is CRLF in this working tree but git stores the blob LF
+    (`git ls-files --eol` -> `i/lf w/crlf`), and core.autocrlf=input does not convert on
+    checkout. So the golden held 37c338b7... — the hash of a byte sequence GIT HAS NEVER
+    STORED — and the gate was green ONLY on the machine that sealed it. Any fresh clone
+    computes 037d0e3e... and REDs a critical gate, reading as seal TAMPERING rather than an
+    EOL artifact. Every other sealed-text gate (corpus/catalog/products) already LF-normalized;
+    this one was the sole holdout. Re-sealed to the LF digest in the same patch.
+
+    NOT a loosening (R9): the digest still changes on any real content edit. It stops changing
+    only for a difference git itself does not record."""
+    p = pathlib.Path(path)
+    if not p.exists():
+        return ""
+    text = p.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(text).hexdigest()
 
 
 def _read_via_os(path) -> bytes:
@@ -544,7 +572,11 @@ def check_no_external_style_resources():
 def check_design_system_hash_integrity():
     """Verify design-system.css matches design-system.golden.sha256.
     If the golden hash file doesn't exist yet (pre-sealing), informational
-    PASS — the file hasn't been sealed for protection yet."""
+    PASS — the file hasn't been sealed for protection yet.
+
+    Hashes LF-NORMALIZED content (_lf_file_hash), matching every other sealed-text gate.
+    See _lf_file_hash for why: until 2026-07-15 this hashed RAW bytes, so the golden recorded
+    a CRLF digest git had never stored and this critical gate would RED on any fresh clone."""
     css_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.css"
     hash_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.golden.sha256"
 
@@ -555,12 +587,22 @@ def check_design_system_hash_integrity():
         return True, "design-system.golden.sha256 not yet present — file unsealed (expected during early migration rounds)"
 
     expected = hash_path.read_text(encoding="utf-8").strip().split()[0]
-    actual = _file_hash(css_path)
+    actual = _lf_file_hash(css_path)
     if actual != expected:
+        # Name the EOL suspect explicitly. A bare "hash mismatch" on a SEALED CANONICAL reads
+        # as tampering, and that misdiagnosis is expensive; if the raw-byte digest matches the
+        # golden while the LF digest does not, the golden is a stale pre-2026-07-15 raw seal,
+        # not an edit. Say which it is instead of making the next reader guess.
+        hint = ""
+        if _file_hash(css_path) == expected:
+            hint = (" — NOTE: the golden matches this file's RAW-BYTE hash but not its "
+                    "LF-normalized hash, so this is a stale raw-byte seal (pre-2026-07-15), "
+                    "NOT a content edit. Re-seal to the LF digest.")
         return _ds_finalize(
-            [f"design-system.css hash {actual[:16]}... does not match golden {expected[:16]}..."],
+            [f"design-system.css hash {actual[:16]}... does not match golden "
+             f"{expected[:16]}...{hint}"],
             "")
-    return True, f"design-system.css matches golden hash ({expected[:16]}...)"
+    return True, f"design-system.css matches golden hash ({expected[:16]}..., LF-normalized)"
 
 
 def check_design_system_write_protection():
@@ -4369,7 +4411,7 @@ INVARIANTS = [
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
         description="dashboard/assets/styles/design-system.css hash matches design-system.golden.sha256 (sealed Round 161)",
         check_fn=check_design_system_hash_integrity,
-        truth_anchor="raw-byte SHA-256 of design-system.css vs the golden file. (Corrected 2026-07-15: this field named a stale hash, cdf0ebd4..., that has not been the golden for some time; the live golden is 37c338b7... Do not hardcode a hash in prose — read the file.)",
+        truth_anchor="LF-normalized SHA-256 of design-system.css vs the golden file, recomputed each run. Do not hardcode a hash in prose — read the file. (Corrected 2026-07-15 TWICE: this field first named a stale hash, cdf0ebd4..., long dead; it then said 'raw-byte', which was accurate but was itself the defect — raw-byte hashing anchored the seal to a CRLF working tree git never stored, so the gate was green only on the sealing machine and would RED on any fresh clone. Now LF-normalized, matching every other sealed-text gate.)",
         severity="critical",
         lesson_ref="Round 161 sealing — Eden pattern applied to design tokens; math doesn't lie",
     ),

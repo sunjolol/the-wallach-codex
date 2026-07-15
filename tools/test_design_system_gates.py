@@ -29,8 +29,10 @@ Run:  PYTHONUTF8=1 python tools/test_design_system_gates.py
 
 Exit 0 = every forgery reddens; non-zero = a critical gate stopped biting."""
 import importlib.util
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -61,15 +63,69 @@ for n, fn in (("hash_integrity", inv.check_design_system_hash_integrity),
 print()
 
 # 1. THE EXPERIMENT that exposed the disarm: forge a content hash mismatch.
-_real_hash = inv._file_hash
-inv._file_hash = lambda p: FAKE
+#    Patches _lf_file_hash, NOT _file_hash: since 2026-07-15 the gate hashes LF-normalized
+#    content. Patching the old name would leave the gate calling the REAL function, so this
+#    case would go GREEN against expect=RED and the suite would fail loudly (verified).
+_real_hash = inv._lf_file_hash
+inv._lf_file_hash = lambda p: FAKE
 try:
     ok, msg = inv.check_design_system_hash_integrity()
     case("forged_hash_mismatch", ok, msg, True,
          "THE case: pre-2026-07-15 this returned (True, 'WARN (1 finding(s)) ...'). If it "
          "is GREEN again, the warn-mode escape hatch is back and a critical gate is fake")
 finally:
-    inv._file_hash = _real_hash
+    inv._lf_file_hash = _real_hash
+
+# 1b. R9 PROOF that the 2026-07-15 EOL fix is a TIGHTENING, not a loosening. The PAIR is the
+#     point: the gate must ignore line endings and NOTHING else.
+#
+#     THE BUG IT GUARDS: the gate hashed RAW bytes. design-system.css is CRLF in this working
+#     tree but git stores the blob LF (`git ls-files --eol` -> `i/lf w/crlf`; core.autocrlf=
+#     input does not convert on checkout). So the golden recorded the digest of a byte
+#     sequence git had NEVER stored: green on the sealing machine, RED on every fresh clone —
+#     a critical gate reading as TAMPERING of a sealed canonical when nothing was tampered
+#     with. These cases run against real temp files through the gate's own function.
+_tmp = Path(tempfile.mkdtemp(prefix="ds_eol_"))
+_css_bytes = (ROOT / "dashboard" / "assets" / "styles" / "design-system.css").read_bytes()
+_as_lf = _css_bytes.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+_as_crlf = _as_lf.replace(b"\n", b"\r\n")
+
+_f_lf = _tmp / "lf.css"
+_f_lf.write_bytes(_as_lf)
+_f_crlf = _tmp / "crlf.css"
+_f_crlf.write_bytes(_as_crlf)
+
+_golden = (ROOT / "dashboard" / "assets" / "styles"
+           / "design-system.golden.sha256").read_text(encoding="utf-8").strip().split()[0]
+
+# 1b-i. EOL-AGNOSTIC: identical content under both line endings must hash identically, and
+#       must equal the sealed golden. This is the case the PRE-FIX gate fails.
+case("eol_agnostic",
+     inv._lf_file_hash(_f_lf) == inv._lf_file_hash(_f_crlf) == _golden, "", False,
+     "the fix's whole claim: ONE digest for the same content regardless of EOL, equal to the "
+     "golden. If this REDs, the seal is anchored to one machine's line endings again and "
+     "every fresh clone REDs a critical gate")
+
+# 1b-ii. NEGATIVE CONTROL — the load-bearing half. A real content edit (one byte, NOT an EOL
+#        byte) must STILL move the digest. Without this, "ignores line endings" could be
+#        satisfied by a function that ignores everything. A test that cannot reproduce the
+#        bug it guards proves nothing.
+_f_edit = _tmp / "edited.css"
+_f_edit.write_bytes(_as_lf.replace(b"}", b"} ", 1))  # one added space inside real css
+case("content_edit_still_caught",
+     inv._lf_file_hash(_f_edit) != inv._lf_file_hash(_f_lf), "", False,
+     "R9: the EOL fix must not loosen the seal. A one-byte NON-EOL edit must still change the "
+     "digest, or LF-normalizing has quietly disarmed the gate it was meant to repair")
+
+# 1b-iii. The raw-byte hasher must remain RAW — eden/graphics/*.jpg are binary and marked
+#         `binary` in .gitattributes; LF-normalizing a JPEG's hash would corrupt that seal.
+#         _file_hash keeps a live caller (the graphics gate), so prove it did not drift.
+case("file_hash_still_raw",
+     inv._file_hash(_f_lf) != inv._file_hash(_f_crlf), "", False,
+     "_file_hash must still see EOL differences: it hashes the binary graphics canonicals, "
+     "where raw bytes ARE the truth. If it stopped distinguishing, the split was botched")
+
+shutil.rmtree(_tmp, ignore_errors=True)
 
 # 2. NEW COVERAGE: a silent re-seal (css edited AND golden moved together) is invisible to
 #    hash_integrity by construction; only the git anchor catches it.
