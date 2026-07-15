@@ -11,7 +11,7 @@
         {
           "rank": "A",
           "label": "FOUNDATIONAL",
-          "hint": "air · water · food · no amount stated",
+          "hint": "air · water · food · nothing to take",
           "tiles": [
             {
               "key": "Hydrogen"
@@ -24,6 +24,9 @@
             },
             {
               "key": "Oxygen"
+            },
+            {
+              "key": "Phosphorus"
             }
           ]
         },
@@ -76,9 +79,6 @@
             },
             {
               "key": "Sodium"
-            },
-            {
-              "key": "Phosphorus"
             },
             {
               "key": "Sulfur"

@@ -10,7 +10,7 @@
         {
           "rank": "A",
           "label": "FOUNDATIONAL",
-          "hint": "air · water · food · no amount stated",
+          "hint": "air · water · food · nothing to take",
           "tiles": [
             {
               "key": "Hydrogen",
@@ -35,6 +35,12 @@
               "name": "OXYGEN",
               "num": 8,
               "sym": "O"
+            },
+            {
+              "key": "Phosphorus",
+              "name": "PHOSPHORUS",
+              "num": 15,
+              "sym": "P"
             }
           ]
         },
@@ -132,12 +138,6 @@
               "name": "SODIUM",
               "num": 11,
               "sym": "Na"
-            },
-            {
-              "key": "Phosphorus",
-              "name": "PHOSPHORUS",
-              "num": 15,
-              "sym": "P"
             },
             {
               "key": "Sulfur",

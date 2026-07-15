@@ -120,7 +120,7 @@
           {
             rank: "A",
             label: "FOUNDATIONAL",
-            hint: "air \xB7 water \xB7 food \xB7 no amount stated",
+            hint: "air \xB7 water \xB7 food \xB7 nothing to take",
             tiles: [
               {
                 key: "Hydrogen",
@@ -145,6 +145,12 @@
                 name: "OXYGEN",
                 num: 8,
                 sym: "O"
+              },
+              {
+                key: "Phosphorus",
+                name: "PHOSPHORUS",
+                num: 15,
+                sym: "P"
               }
             ]
           },
@@ -242,12 +248,6 @@
                 name: "SODIUM",
                 num: 11,
                 sym: "Na"
-              },
-              {
-                key: "Phosphorus",
-                name: "PHOSPHORUS",
-                num: 15,
-                sym: "P"
               },
               {
                 key: "Sulfur",
@@ -15015,6 +15015,9 @@
         return numericStatus(target, d);
       }
       return hasSrc ? "covered" : "";
+    }
+    if (target.low === 0) {
+      return "covered";
     }
     return numericStatus(target, d);
   }
@@ -97119,7 +97122,29 @@ THE PHOSPHORUS BLOCKER IS ANSWERED, and it changes the design. FIG. 8-1's column
 
 THE TARGET PIPELINE IS CLEAN \u2014 all 33 fig-8-1 claims took column 2, verified mechanically row by row; zero took the RDA. Proven a real column read rather than "pick the biggest number" by the two rows where column 2 is SMALLER (vitamin D 275, phosphorus 0).
 
-BUT A REAL \xA700.A EXPOSURE WAS FOUND ONE LAYER DOWNSTREAM, on a surface nobody was looking at. All 33 verbatims are FLATTENED, HEADER-LESS table rows that carry the unlabeled RDA as their first number \u2014 "PHOSPHORUS 800 mg 0.0 0.0", "CALCIUM 800 mg 2,000 mg 2,000 to 5,000 mg". Those literal bytes were confirmed present in dashboard/assets/data/corpus-embed.json AND in the built dist/main.js. Per the quote-sync mechanism, per-claim verbatim is FRONT-FACING. So a user reading that quote under a Wallach attribution sees "PHOSPHORUS 800 mg" with nothing marking 800 as the RDA he attacks \u2014 the disambiguating header is not in the verbatim. A government RDA, rendered under Wallach's name. amounts_wallach_only is blind to it by construction: it reads essentials[].target.low and never inspects verbatim text. This is the flattened-many-to-many-table-claim failure mode again, and the standing rule is SPLIT, never loosen: each verbatim must carry its column header. All 33 share the defect, so fixing the phosphorus row alone would be under-fixing. NOT APPLIED \u2014 claims are a sealed pillar and this needs Luneth's sign-off.` }];
+BUT A REAL \xA700.A EXPOSURE WAS FOUND ONE LAYER DOWNSTREAM, on a surface nobody was looking at. All 33 verbatims are FLATTENED, HEADER-LESS table rows that carry the unlabeled RDA as their first number \u2014 "PHOSPHORUS 800 mg 0.0 0.0", "CALCIUM 800 mg 2,000 mg 2,000 to 5,000 mg". Those literal bytes were confirmed present in dashboard/assets/data/corpus-embed.json AND in the built dist/main.js. Per the quote-sync mechanism, per-claim verbatim is FRONT-FACING. So a user reading that quote under a Wallach attribution sees "PHOSPHORUS 800 mg" with nothing marking 800 as the RDA he attacks \u2014 the disambiguating header is not in the verbatim. A government RDA, rendered under Wallach's name. amounts_wallach_only is blind to it by construction: it reads essentials[].target.low and never inspects verbatim text. This is the flattened-many-to-many-table-claim failure mode again, and the standing rule is SPLIT, never loosen: each verbatim must carry its column header. All 33 share the defect, so fixing the phosphorus row alone would be under-fixing. NOT APPLIED \u2014 claims are a sealed pillar and this needs Luneth's sign-off.` }, { id: "lg_mrmg65vn_trg0uf", ts: "2026-07-15T14:02:30.467708-05:00", surface: "coverage", kind: "incident", summary: 'Phosphorus is foundational now \u2014 Wallach says take none, so the table stops implying you have a gap. And a correction: my last entry said phosphorus rendered "not covered". It never did. I read that off a screenshot and never checked the DOM.', detail: `Phosphorus moved into FOUNDATIONAL. The mineral table now reads 5 / 21 / 34. Wallach assigns phosphorus a supplement need of 0.0 \u2014 the only nutrient in his entire base-line program with no recommended amount \u2014 and separately holds that the American diet is "rich in phosphorous, which is found in just about everything we eat" (dddl:7408). That is exactly the FOUNDATIONAL story: hydrogen, carbon, nitrogen and oxygen are the air-and-water ones; phosphorus is the food one. Nothing to take. It needed no new category, which is what Luneth explicitly ruled out.
+
+\u2605 A CORRECTION TO MY OWN PREVIOUS ENTRY (lg_mrmflcr5_lnvlsv, 14:05). That entry \u2014 and the commit body, and what I told Luneth in chat \u2014 said phosphorus "renders NOT COVERED off a low:0.0 target". THAT WAS FALSE. It rendered STATUSLESS (''), which paints identically to "NO WALLACH NUMBER YET" \u2014 no border at all. I asserted a left border from a 2x screenshot and never read the DOM.
+
+The proof I should have run first: numericStatus (state/coverage.ts:643-646) short-circuits \`if (low <= 0) return current > 0 ? 'covered' : ''\`, so an explicit zero could never reach the 'gap' branch. And the independent confirmation arrived by accident \u2014 after the fix, statusCovered went 4 -> 5 while statusGap STAYED at 37. Had phosphorus been a gap, gap would have dropped to 36. The arithmetic caught what my eye invented.
+
+This is the same failure I spent the whole day correcting in other people's work: the handoff's fabricated \`.is-foundation\`, its unreproducible 2.67:1 contrast figure, my own broken CRLF check, my own broken rare-earth extractor that called calcium a rare earth. Five instruments lied in one session and four of them were mine. The lesson is not "be careful with screenshots" \u2014 it is that a claim about rendered state must come from the DOM or from arithmetic that cannot flatter me, never from looking.
+
+WHY NOT LUNETH'S FIRST IDEA. He proposed a present/not-present flip: green if phosphorus appears at all in your regimen. He withdrew it once the reasoning was laid out, and it was worth laying out \u2014 lighting the tile green when you ADD phosphorus rewards supplementing it, which is the exact opposite of Wallach's 0.0. It would have re-created the push-to-supplement it was designed to cure.
+
+THE RENDER FIX IS DELIBERATELY NOT FIAT. Phosphorus is NOT added to FOUNDATIONAL_PRESENT_SLUGS, whose four members are forced 'covered' on Luneth's say-so and are cited "(Luneth)" in the code. Instead classify() now returns 'covered' when target.low === 0: a target of zero is MET by taking none \u2014 you cannot be under 30% of zero. So phosphorus becomes the ONE foundational element whose "covered" traces to a sealed Wallach claim (WAL-CLM-LETS-000061) rather than to fiat. The headline is now 5/90, and the fifth is the only one of the five with a book behind it.
+
+PRECISION CHECKED RATHER THAN ASSUMED: \`target.low === 0\` fires on an EXPLICIT zero only. Phosphorus is the only essential of the 91 with low == 0; 53 carry no \`low\` key at all, and undefined !== 0, so they keep numericStatus's existing pending branch untouched. Its \xA700.A comment \u2014 "no defined floor + nothing delivered \u21D2 pending, never a free covered" \u2014 remains true of the case it was actually written for. A stated floor of zero and an absent floor are different facts; the old code conflated them via \`target.low ?? 0\`.
+
+Also reworded the FOUNDATIONAL hint from "air \xB7 water \xB7 food \xB7 no amount stated" to "\xB7 nothing to take", because "no amount stated" is FALSE of phosphorus \u2014 it states 0.0. What unites the five is that there is nothing to take, not that Wallach is silent.
+
+\u2605 AN \xA700.A EXPOSURE FOUND, NOT FIXED, AWAITING SIGN-OFF. FIG. 8-1's header is Nutrient | RDA | True Supplement Need | 30-Day Pharmacologic Daily Dose \u2014 four columns, OCR-wrapped across lets-play-doctor:3755-3756, which is why nobody had read it. So the "800 mg" in \`PHOSPHORUS 800 mg 0.0 0.0\` is the GOVERNMENT RDA Wallach argues against, not a second Wallach number. Luneth's premise that "Wallach states BOTH 0 and a daily amount of X" does not hold \u2014 there is no X, and the alert box he proposed would have printed a government RDA under Wallach's name. Three proofs: four rows carry "?" in column 1 (SELENIUM ? 200 mcg 500 to 3,000 mcg) and Wallach would never write "?" as his own figure; column 2 sits BELOW column 1 twice (vitamin D 275 vs RDA 400, phosphorus 0 vs 800), impossible if column 1 were his floor; and 3682-3685 says RDA-level supplements "will not prevent serious disease".
+
+The target pipeline is CLEAN \u2014 all 33 fig-8-1 claims took column 2, verified row by row; zero took the RDA, and the two rows where his figure is SMALLER prove it was a real column read rather than "pick the biggest number". But all 33 verbatims are flattened, header-less rows carrying the unlabeled RDA as their first number, and those literal bytes were confirmed present in corpus-embed.json AND in the built dist/main.js. Verbatim is front-facing, so a user sees "PHOSPHORUS 800 mg" under a Wallach attribution with nothing marking 800 as the number he attacks. amounts_wallach_only is blind to it by construction \u2014 it reads target.low and never inspects verbatim text. Flattened many-to-many table claim: SPLIT so each verbatim carries its column header, never loosen. All 33 share the defect. Claims are a sealed pillar; this waits for Luneth.
+
+VERIFIED: tsc clean; build OK; invariants 69/69 zero new reds; render_probe, render_probe_seeded, render_probe_knowledge, render_probe_entity, render_probe_omega all exit 0; DOM read of every subsection label/count/hint with the silent-fallback control clean; 2x screenshot reviewed.
+
+DEFERRED: phosphorus's custom page (omega-9 style). Its content is already mined and is genuinely two-sided \u2014 essential, "more functions in the human than any other mineral" (dddl:8523), a real 13-sign deficiency list (lets-play-doctor:2319-2332), and still 0.0. One honesty constraint for whoever builds it: Wallach never writes "phosphorus needs no supplement because X" anywhere in seven books. The famous line \u2014 "it gets little or no attention from nutritionists because it is widely available in all foods" (4 of 7 books; softened to "many foods" in the 2014 Epigenetics, the newest) \u2014 explains why NUTRITIONISTS ignore it. Quoting both facts is honest; welding them into his stated rationale is not.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

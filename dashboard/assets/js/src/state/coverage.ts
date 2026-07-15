@@ -716,6 +716,19 @@ function classify(
     }
     return hasSrc ? 'covered' : '';
   }
+  // A target of ZERO is Wallach saying "take none", and it is MET by taking none. You cannot
+  // be under 30% of zero, so numericStatus would post 'gap' and tell the user to close a gap
+  // he says does not exist. The only such row in his base-line program is PHOSPHORUS: FIG. 8-1
+  // reads `PHOSPHORUS 800 mg 0.0 0.0` — RDA 800 | True Supplement Need 0.0 | pharmacologic 0.0
+  // (lets-play-doctor:3775 → WAL-CLM-LETS-000061). ★ The 800 is the RDA COLUMN — the number
+  // Wallach argues against, NOT a second Wallach amount. Proven by the four rows carrying '?'
+  // in that column and by the two rows where his own figure sits BELOW it (vitamin D 275 vs
+  // 400; phosphorus 0 vs 800). Never surface the 800 as a target (§00.A).
+  // This is why phosphorus renders in FOUNDATIONAL and is NOT in FOUNDATIONAL_PRESENT_SLUGS:
+  // its 'covered' traces to a sealed Wallach claim, not to the "(Luneth)" breathing fiat.
+  if (target.low === 0) {
+    return 'covered';
+  }
   // Numeric: hbsp · wallach · wallach_clinical · any kind carrying low/unit.
   return numericStatus(target, d);
 }
