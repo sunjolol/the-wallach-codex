@@ -18,17 +18,16 @@ _Status legend: `[DRAFT]` written, awaiting Luneth verification · `[LOCKED]` ve
 
 Every rule names its **gate** — the code that proves it. A rule with no gate is labeled `WISH`, never sold as a guarantee (R7).
 
-| # | Rule | Gate (the proof) |
-|---|---|---|
-| R1 | Only the two sources (Wallach Corpus, Youngevity Product DB) + the Catalog are hand-editable. Every shipped artifact is generated from them. | Generated files carry a content hash; invariant fails if any generated file ≠ regenerate-from-source. Write-guard blocks edits to generated paths. |
-| R2 | Wallach-only for every recommended amount/range/dose. Youngevity = composition only, never a target. | `amounts_wallach_only`: every amount carries a `source_claim_id` → a Wallach claim; a Youngevity-sourced amount = RED. One-time poison sweep across all kept files. |
-| R3 | One source per fact, referenced by ID. No value hand-written twice. | `references_resolve` (every ID resolves) + `no_hand_duplicated_canonical` (derived copies only). |
-| R4 | Prose is contained: summaries/descriptions/alert-boxes/glosses live in ONE compartment, attached to their entity by ID, single-copy — never inline in code, never in a fact field. | `prose_contained`: prose only in designated prose fields; scan fails if prose-shaped text appears in code or fact fields. |
-| R5 | The mining gate: a record cannot land unless it passes every structural check. | `mine` pipeline: verbatim⊆source · citation∈registry · mappings∈catalog · prose-contained · units-sane · amount-has-wallach-source. Fail → cannot seal → board RED. |
-| R6 | Logs are sacred + append-only. Deletion structurally blocked; override = the 3-part ALL-CAPS ritual only. BUILD→TEST→LOG→REPEAT is sacred. | `creators_log_append_only` (exists) extended to every sacred log. Round-close + stop hook enforce the cycle. |
-| R7 | Codify, don't promise. Every enforceable rule ships its gate in the same patch. Unenforceable items are labeled `WISH`. | The Charter's own gate column; an empty gate cell renders as a visible `WISH`. |
-| R8 | No poison left behind. Everything kept is re-audited against R1–R6; violations purged, not grandfathered. | Migration runs every preserved file through the gates; board can't go green with a violation present. |
-| R9 | Refinements are codified too. A misfiring gate is fixed by re-codifying with proof — tighten the check, or add an auditable, versioned exception with a reason + a test. Never a silent loosening. | Exceptions live in a baseline data file, each with reason + test; an invariant fails on an unjustified exception. Refinement ships with the misfire it fixes. |
+**The R1–R9 table lives in ONE place: `.claude/rules/charter.md`.** Read it there.
+
+_A copy of the table used to sit here. It was **deleted 2026-07-15** — not because it was
+wrong to write, but because two present-tense rule tables are two places to sound
+authoritative, and only one of them was being maintained. They had already drifted: this
+copy's R2 gate cell read "One-time poison sweep across all kept files" (unscoped, ALL
+files) while the real gate reads ONE artifact and only 38 of 91 essentials. Both files
+declared the rule file authoritative on disagreement — which makes the copy dead weight at
+best and a second, staler answer at worst. R3 is "one source per fact, referenced by ID";
+a rulebook that duplicates itself is not entitled to an exemption from its own R3._
 
 ---
 
