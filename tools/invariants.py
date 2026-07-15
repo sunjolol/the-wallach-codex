@@ -1864,6 +1864,114 @@ def check_regimen_state_mutation_routing():
         reg.read_text(encoding="utf-8"), sto.read_text(encoding="utf-8"), others)
 
 
+# ---------------------------------------------------------------------------
+# essentials_canon_matches_graphic (2026-07-15) -- THE MEMBERSHIP ANCHOR
+# ---------------------------------------------------------------------------
+# THE HOLE THIS CLOSES. essentials-canon.json's MEMBERSHIP -- which 91 substances are the
+# 90 essentials -- had no anchor outside our own app. Its own `provenance` field says it
+# plainly: "Bootstrapped 2026-06-24 from dashboard/assets/data/coverage-layout-data.json".
+# Traced back one more link, that layout came from
+# dashboard/components/workspace-coverage-v3.2-PROPOSAL.html -- a UI DESIGN MOCKUP, dated
+# three days before the canon. The tell: the canon's mineral order inside the invented
+# rare_trace tier is alphabetical BY ATOMIC SYMBOL (Ag, Al, As, Au, Ba, Be), which is how a
+# list is lifted off a rendered table, not authored from a source.
+#
+# Every existing gate was blind to this BY CONSTRUCTION. corpus_integrity + the golden
+# hashes prove the canon has not CHANGED (§00.B #11: stale-to-stale equality is not truth --
+# sealing a fabrication makes it permanent, not correct). derived_artifacts_fresh proved the
+# layout regenerates from the canon, which was guaranteed: the canon was bootstrapped FROM
+# that artifact, so "zero diff" proved ring consistency, not truth. graphics_integrity
+# sha256s the JPG but cannot read membership out of an image.
+#
+# THE ANCHOR CHAIN this establishes:
+#   sealed JPG bytes  ->  the transcription (bound by source.file_sha256)  ->  the canon
+#      graphics_integrity          THIS GATE (both halves)            THIS GATE
+#
+# WHAT IS NOT PROVEN, and cannot be (R7 -- label it, do not sell it): that the transcription
+# is an accurate READING of the image. No machine checks that; it is human-verifiable by
+# opening the JPG. That is a real limit. It is still strictly better than the mockup: a
+# misread is visible to anyone who looks, whereas the mockup ancestry was invisible for
+# three weeks under a green board.
+#
+# SCOPE: MEMBERSHIP ONLY -- which slugs, and how many per category. Deliberately NOT the
+# parenthetical sub-names: the graphic prints "Omega 3 (Linoleic)" / "Omega 6 (Linolenic)"
+# (swapped vs standard biochemistry) and "Omega 9 (Arachidonic)" where the canon says Oleic.
+# That divergence is adjudicated in chronicle/contradictions/2026-07-08-omega9-arachidonic-
+# correction.md. Widening this gate to sub-names would re-litigate a settled ruling.
+#
+# The graphic ALSO independently corroborates that the app's mineral TIERS are invented: it
+# prints all 60 minerals as one flat A-Z list, with no grouping of any kind.
+def _essentials_canon_matches_graphic_impl(canon, transcription, jpg_sha):
+    viol = []
+    src = transcription.get("source", {})
+
+    # (1) the transcription must be bound to the EXACT image it claims to transcribe.
+    # Without this the transcription is just another hand-typed file that can drift from
+    # its own source -- i.e. the bug this gate exists to fix, one level up.
+    claimed = src.get("file_sha256")
+    if not claimed:
+        viol.append("transcription declares no source.file_sha256 — it is not bound to any image")
+    elif jpg_sha and claimed != jpg_sha:
+        viol.append(f"the graphic CHANGED since transcription: jpg is {jpg_sha[:16]}... but the "
+                    f"transcription was taken from {claimed[:16]}... — re-read the image, do not "
+                    f"re-point the hash")
+
+    # (2) canon membership == the graphic's membership, per category.
+    want = {
+        "mineral":    {m.lower() for m in transcription.get("minerals", [])},
+        "vitamin":    {v["canon_slug"] for v in transcription.get("vitamins", [])},
+        "amino_acid": {a["canon_slug"] for a in transcription.get("amino_acids", [])},
+        "fatty_acid": {f["canon_slug"] for f in transcription.get("fatty_acids", [])},
+    }
+    for cat in ("mineral", "vitamin", "amino_acid", "fatty_acid"):
+        rows = [e for e in canon.get("essentials", []) if e.get("category") == cat]
+        # minerals are matched on display_name (the graphic prints element names); the other
+        # three on slug (the graphic prints labels + its own typos, mapped in the fixture).
+        got = ({e["display_name"].lower() for e in rows} if cat == "mineral"
+               else {e["slug"] for e in rows})
+        missing, extra = want[cat] - got, got - want[cat]
+        if missing:
+            viol.append(f"{cat}: in the GRAPHIC but NOT the canon: {sorted(missing)[:6]}")
+        if extra:
+            viol.append(f"{cat}: in the CANON but NOT the graphic: {sorted(extra)[:6]}")
+
+    # (3) the declared counts must match both sides -- catches a transcription that lists 59
+    # minerals while claiming 60.
+    tc = transcription.get("counts", {})
+    for cat, key in (("mineral", "minerals"), ("vitamin", "vitamins"),
+                     ("amino_acid", "amino_acids"), ("fatty_acid", "fatty_acids")):
+        n_canon = len([e for e in canon.get("essentials", []) if e.get("category") == cat])
+        if tc.get(key) != n_canon:
+            viol.append(f"count drift on {key}: transcription says {tc.get(key)}, canon has {n_canon}")
+        if tc.get(key) != len(want[cat]):
+            viol.append(f"transcription's own {key} count ({tc.get(key)}) != the {len(want[cat])} "
+                        f"it actually lists")
+    if viol:
+        return False, ("the canon's membership does NOT match the sealed authority graphic: "
+                       + "; ".join(viol[:4]))
+    return True, (f"canon membership matches the sealed authority graphic "
+                  f"({tc.get('minerals')} minerals · {tc.get('vitamins')} vitamins · "
+                  f"{tc.get('amino_acids')} aminos · {tc.get('fatty_acids')} fatty acids = "
+                  f"{tc.get('total')}, {tc.get('essential')} essential), transcription bound to "
+                  f"the image bytes. NOTE: proves membership, not that the transcription READS "
+                  f"the image correctly — verify that by eye")
+
+
+def check_essentials_canon_matches_graphic():
+    """The membership anchor -- see the block comment above for the loop this breaks and the
+    one thing it deliberately does NOT prove."""
+    canon_p = ROOT / "eden/corpus/essentials-canon.json"
+    tr_p = ROOT / "eden/graphics/90-nutrients-front.transcription.json"
+    jpg_p = ROOT / "eden/graphics/90-nutrients-front.jpg"
+    if not (canon_p.exists() and tr_p.exists()):
+        return True, "canon / graphic transcription not installed (bootstrap-guard)"
+    jpg_sha = _file_hash(jpg_p) if jpg_p.exists() else ""
+    return _essentials_canon_matches_graphic_impl(
+        json.loads(canon_p.read_text(encoding="utf-8")),
+        json.loads(tr_p.read_text(encoding="utf-8")),
+        jpg_sha)
+
+
 def check_dose_amount_in_verbatim():
     """Charter R2 / §00.A -- see the block comment above for the full contract, the three
     adversarial breaks that shaped it, and what it does NOT check."""
@@ -4408,6 +4516,15 @@ INVARIANTS = [
         truth_anchor="the claim's own verbatim bytes -- which corpus_integrity independently pins to the sealed book .txt. R5 proves the quote is the book's; this proves the number is the quote's; amounts_wallach_only proves the target is the number's. Recomputed each run.",
         severity="critical",
         lesson_ref="2026-07-15 (Luneth-authorized): PROVEN by experiment that a planted 10x sodium fabrication (3,300 -> 33,000 mg) passed the ENTIRE board green while the claim's verbatim still read '3,300 mg' -- nothing tied dose.amount to the book. Adversaries then broke the first design 3 ways (cross-row bleed 72/86; a 1000x choline mg->mcg swap off chromium's row; in-row column bleed), all closed by row-scoping + positional column checks and pinned in tools/test_dose_amount_in_verbatim.py. The board was excellent at proving nothing DRIFTED and weak at proving anything is RIGHT; this is the first gate that reads Wallach's printed number.",
+    ),
+    Invariant(
+        name="essentials_canon_matches_graphic",
+        anchor_class="external",  # the sealed authority GRAPHIC -- the first anchor the canon's membership has ever had outside our own app
+        description="essentials-canon.json's MEMBERSHIP (which 91 substances, and how many per category) matches a byte-bound transcription of the sealed authority graphic (eden/graphics/90-nutrients-front.jpg — Luneth's ruling: THE 90/91 source). Membership only; the fatty-acid sub-names deliberately diverge per an adjudicated contradiction report",
+        check_fn=check_essentials_canon_matches_graphic,
+        truth_anchor="the sealed JPG's raw bytes -> the transcription bound to them via source.file_sha256 -> the canon. graphics_integrity seals the image; this gate binds the transcription to the image AND the canon to the transcription. NOT proven (R7): that the transcription READS the image correctly — human-verifiable only, by opening the JPG",
+        severity="critical",
+        lesson_ref="2026-07-15: the canon's membership + tier partition + mineral symbols were bootstrapped from dashboard/components/workspace-coverage-v3.2-PROPOSAL.html — a UI DESIGN MOCKUP — three days before the canon existed; the canon's own provenance field said so in plain text and nobody read it. The tell: rare_trace order is alphabetical BY ATOMIC SYMBOL, which is how a list is lifted off a rendered table. Every gate was blind BY CONSTRUCTION: corpus_integrity proves the canon hasn't CHANGED (sealing a fabrication makes it permanent, not correct), derived_artifacts_fresh proved the layout regenerates from the canon — guaranteed, since the canon came FROM that artifact — and graphics_integrity sha256s the JPG but cannot read membership out of an image. The membership turned out to be RIGHT (zero diff on all 4 categories, first run), which is exactly why nobody caught that it had no anchor. The graphic also prints all 60 minerals FLAT, A-Z, with no tiers — independent corroboration that FOUNDATIONAL/MAJOR TRACE/RARE TRACE is invention.",
     ),
     Invariant(
         name="regimen_state_mutation_routing",
