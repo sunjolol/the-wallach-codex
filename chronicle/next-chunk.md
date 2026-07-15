@@ -1,16 +1,68 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-14, Coverage-demo session wrap)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15, omega session wrap)
 
-> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses"). Board **64/64** green. **NEXT = omegas → Coverage-demo polish → integration** (Luneth's order — see START HERE).
+> ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses"). Board **66/66** green. **NEXT = the Coverage tab re-design — Luneth has notes to share; finish the demo 100%, THEN build it live.**
 >
-> The Coverage redesign is a DEMO under gitignored `temporary/` and is NOT built live. The session shipped exactly ONE live change, explicitly authorised: the `goals[].total` purge (`886fb4a2`). Everything else in `dashboard/` + `eden/` is untouched.
+> The Coverage redesign is still a DEMO under gitignored `temporary/` and is NOT built live. **The omegas are DONE** (sealed · gated · measured · probed) — that half of the old handoff is closed. Everything below the START HERE section is the still-live design record.
 
 ## ★★★★ START HERE NEXT SESSION — Luneth's order, verbatim
 
-> *"pick up with the omegas and some more finishing touches on our coverage page demo before we start integrating that"*
+> *"I'd like to close this session out then get back to the coverage tab re-design in a new session, I have some notes for that I want to share so we can finish it 100% then start to build it live"*
 
-1. **THE OMEGAS** (a chip is queued for it). ★ **STEP ONE IS TO ASK LUNETH FOR HIS NUMBERS** — he has Wallach's definitive daily amounts and said *"I have full breakdowns of Wallach's recommended amounts but I don't want to get into that right now."* §00.A forbids an amount without a BOOK primary, so this cannot start without him. Measured state: `omega-3` 87 claims / 94 conditions (healthy); `omega-6` 9 claims / 23 conditions, mapped to NO cognition condition; **`omega-9` ZERO claims** — it can never light under any goal. If his amounts are book-sourced they also become real numeric targets (the omegas currently show an honest gap), which puts them under `amounts_wallach_only` — expect that gate to re-run the whole transform chain and be strict.
-2. **FINISHING TOUCHES on the Coverage DEMO** — still `temporary/coverage-D-personalized.html`, still NOT live. His visual pass was not completed before the wrap; he has notes coming.
-3. **THEN integration** — porting D into `dashboard/`. Not before 1 + 2.
+1. **ASK LUNETH FOR HIS COVERAGE NOTES.** He has them and they gate everything. Do not start guessing at the demo.
+2. **FINISH `temporary/coverage-D-personalized.html` to 100%** against those notes. His visual pass was never completed.
+3. **THEN integrate D into `dashboard/`.** Not before 1 + 2.
+
+**Tile width was fixed + signed off 2026-07-15** (`0853eacd`): the grid is `repeat(auto-fill, 100px)` + `gap: 9px`. Luneth: *"you got it plenty close enough. Looks good as is."* ⚠ The in-file comment's OLD math (1208px / 12 columns) was measured at a bare 1920 with no scrollbar — his real layout viewport is **1905**, the host content box is **1193px**, and 100px is the WIDEST track that still fits 11 columns (101 drops to 10 and orphans the FOUNDATIONAL row's 11th tile). Residual: right inset 27px vs left 24px — 3px, accepted. AMINO ACIDS still orphans `Val` alone on row 2 — pre-existing, Luneth: *"we can't fix this without breaking something else."*
+
+★ **A LESSON THAT COST REAL TIME THIS SESSION** — `justify-content: space-between` fills the row exactly and is the obvious fix. It is a TRAP: a 4x isolated-ring pixel test proved fractional track POSITION alone reproduces the 1fr ring defect (right edge 8.00 device px vs the left's 12.00) even with an integer WIDTH. **Integer POSITION, not merely integer width, is what keeps the ring even.** Do not "improve" the grid with space-between.
+
+---
+
+## ★★★★ THE OMEGAS ARE DONE — do not re-open the decision
+
+**Locked, sealed, and gated 2026-07-15.** Full record: `chronicle/contradictions/2026-07-15-omega-efa-target-source.md`. Commits `4dd12b06` (decision) · `85b095fc` (seal + fan-out gate) · `e23330b2` (group meter).
+
+- **The number: 9 g/day of essential fatty acids**, COLLECTIVE across omega-3 + omega-6. `WAL-CLM-DDDL-000115`, sealed at kv=332. Source: Dead Doctors Don't Lie 3e (2011) **L9106-9109** @ char_offset **609931** — *"Essential fatty acids are a must and should be consumed at the rate of 3 percent of your total daily calorie consumption or supplemented at the rate of 9 grams per day in capsule form."*
+- **omega-9 gets NO number, permanently.** Wallach names three PUFAs and oleic acid is not among them ("only two (linoleic and linolenic) are designated as Essential Fatty Acids", DDDL L7171-7174 + Immortality L5189-5196). Its ZERO claims are his actual position, NOT a mining gap. It stays on the board for a reason Luneth labelled honestly as aesthetic (*"3 is a better number than 2… purely a mental/aesthetics/design thing"*) and earns a **custom detail page** explaining why it is there. **NOT BUILT YET.**
+- **Delivery: 9 softgels/day, 3 at a time t.i.d.** — Wallach's OWN divided-dose rule (Let's Play Doctor L4166-4174: *"in divided doses t.i.d. … to keep blood levels elevated for at least 12 hours per day"*). Luneth's hard-won headache rule ("never more than 3 at a time, never without a solid meal") IS that rule.
+- **Therapeutic tier: 15 g/day** (his `5 gm t.i.d.`, 81 occurrences, all inside condition protocols) — excluded from targets by `targets_derive._cond_priority`.
+- ★ **THE DURABLE RULE this established:** **supply a reference ONLY when Wallach's own words cannot produce a number; NEVER to replace a number he already wrote.** Minerals give only a rate ("per 100 lbs") so ×1.54 must be supplied. EFA gives the rate AND the finished figure, so nothing is supplied — plugging in the FDA 2,000-kcal standard yields 6.67 g and OVERRULES his 9 g.
+- ★ **"2,700 calories" is CLAUDE'S back-inference, NOT a Wallach claim.** Never cite it as sourced.
+- **The basis call (flippable):** the goal counts EFA **milligrams** (ALA+EPA+DHA+LA+GLA = 707/softgel), so 100% = 12.7 softgels. `total_fat` (→9 softgels) would credit saturated fat toward an EFA goal; `Total Omega` (→10.9) would credit oleic. 9 g of EFA ≈ **one tablespoon of flaxseed oil** — what Wallach actually tells people to take. The softgel is a ~20× more expensive tablespoon.
+
+**Live behaviour (proven by `tools/render_probe_omega.js`):** 1 softgel = 7.9% gap · **6 = 47.1% PARTIAL** · 13 = 102.1% covered · omega-3 + omega-6 share ONE verdict · minerals leave the omegas dark.
+
+### Omega work still open (NOT blocking the Coverage re-design)
+- **The 62-claim EFA re-map.** 62 sealed claims name EFA/flaxseed in the verbatim but map omega-3 WITHOUT omega-6 (omega-6 has only 10 claims). ★ **NEEDS LUNETH'S PER-CLAIM CRITERIA** — 66 of them are lets-play-doctor protocols, and "flaxseed oil" appearing in a protocol is not automatically a claim ABOUT omega-6. A blanket batch would be exactly the fiat the Charter exists to stop. This is what would close the omega-6 cognition gap.
+- **The front-facing explainer** Luneth asked for (*"bring it front-facing when you click into the omega tabs"*) + **omega-9's custom page**. ★ **THERE IS NO COVERAGE TILE CLICK** — `views/coverage.ts:107` emits an inert `<div>`; the ONLY route to an essential page is the Knowledge drawer (`data-kd-essential` → `knowledge.ts:456`). That navigation must be BUILT, and it lands naturally with the Coverage re-design. A per-omega alert store already exists: `fatty-acid-clarity-data.json` (from the 2026-07-08 arachidonic correction), rendered in the entity-page deep-dive.
+- **The 6 "5 mg" EFA misprints** (DDDL ×2, Let's Play Doctor ×4) — `5 mg t.i.d.` against the books' own 56× `5 gm t.i.d.`, a 1000× error reused across both books. ★ **NEEDS LUNETH'S PRINTED PAGES** — we only have a PDF for Hell's Kitchen.
+- **Hell's Kitchen doc reconciliation** — APPROVED by Luneth, NOT started. 7 books are sealed; CLAUDE.md §00.A + `source-rule.md` enumerate only 6. `hells-kitchen` (Wallach + Ma Lan, 3rd ed 2015) is sealed with a content hash and already cited by omega-3's `food_source` claim. Also `books-roadmap.json` STILL lists it as "planned / not yet in-housed", which the Knowledge tab renders as "coming soon" — so the app would advertise a book whose claims already ship.
+
+---
+
+## ★★★★ CRACKS FOUND 2026-07-15 — flagged, NOT fixed (each its own chunk)
+
+- ★ **`eden_hash_integrity` DOES NOT EXIST** (deleted Phase F/A1; tombstone `tools/invariants.py:357-359`) — but **`charter.md` R1 still advertises it as LIVE**. `charter_gates_present` cannot catch it for TWO independent reasons: it scans only the **Gate** column (cells[2]) while the dead name sits in the **Status** column (cells[3]), AND R1's PARTIAL status contains the word "WISH", which waives every gate name in that row. The meta-gate whose whole job is stopping the Charter from overselling its own enforcement is blind here.
+- ★ **`readScale` (coverage.ts:374) has an UNREACHABLE branch.** Its 2nd candidate `item.scaling_factor` can never fire: `RegimenItemSchema` is a plain `z.object()` (NOT `.passthrough()`), so Zod STRIPS the field before readScale sees it. Only `overrides.scaling_factor` and `label.servings` work. Dead code that reads like a working feature — it silently ate two probe attempts this session.
+- ★ **`entity_render_is_projection` cannot see hyphenated slugs.** Proven by running the impl directly: `slug === 'calcium'` → RED, `slug === 'omega-9'` → GREEN. **15 of 91 canon slugs are hyphenated.** A per-slug omega-9 branch would pass the board while violating R1/R3. R9 says tighten the gate with a negative test; it does not license the branch.
+- **cobalt's 400 mcg** derives from `WAL-CLM-IMMORT-000084`, a dose claim mapping BOTH cobalt and vitamin-b12 ("250-400 mcg") — a B12 dose whose full amount was fanned onto cobalt. Gate-green today; carries no `collective_group` so the new gate does not touch it. May be correct (cobalamin carries cobalt) or the same class of error. **The book passage was not read — worth a look, not a guess.**
+- **Zero probe coverage outside what exists**: `render_probe_entity` hardcodes Calcium, `render_probe_knowledge` uses Magnesium/Dysprosium. `render_probe_omega.js` (NEW) is the only omega coverage.
+
+---
+
+## ★★★★ THE INSTRUMENT LIED SIX TIMES THIS SESSION — the single most expensive pattern
+
+Every one produced a confident falsehood that a control or a second measurement caught. **When output contradicts the eye, suspect the tool.** [[the-instrument-lies-before-the-eye]] [[prove-completion-dont-narrate-it]]
+
+1. **The grid comment** claimed 1208px/12 columns — measured at a viewport with no scrollbar. Luneth's screen never had it.
+2. **Ring-test v1** called the KNOWN-buggy 1fr config "symmetric" and the known-good baseline "ASYMMETRIC" — exactly backwards. It was measuring the NEIGHBOUR's ring (at gap 5 the two rings touch). **Only the negative control exposed it.**
+3. **A workflow-output parse** returned zeros for every field because the payload is wrapped in a `result` key — `.get()` silently returned empty defaults, and "0 misprints found" read as a clean bill of health.
+4. **A screenshot clip** sheared the tiles: the grid lives in a scrollable container, so page-coordinate clips + `captureBeyondViewport` point at the wrong band. Use `scrollIntoView` + viewport coords + `captureBeyondViewport:false`.
+5. **Two probe seeds** (`item.servings`, then `item.scaling_factor`) were silently dropped by Zod, so every dose graded identically and the meter looked broken when the probe was.
+6. **A "0 g fan-out" simulation** returned RED and looked like a catch — it was RED because the claim was an unsealed DRAFT, not because the gate saw the bug. **False comfort.** Sealing it into a throwaway corpus proved the gate says GREEN on an 18 g assertion.
+
+★ **A test that cannot reproduce a KNOWN bug proves nothing.** Plant the control first.
+
 
 **The Coverage redesign is LOCKED as a demo, not yet built live.** Open `temporary/coverage-D-personalized.html` — it is interactive (type a name, pick goals, hover a goal chip). It is the agreed vision. **Nothing in `dashboard/` implements it.**
 
