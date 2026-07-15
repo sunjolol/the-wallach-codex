@@ -6,7 +6,14 @@
 
 **The Coverage redesign is LOCKED as a demo, not yet built live.** Read `temporary/coverage-D-personalized.html` (open it — it is interactive). It is the agreed vision. Nothing in `dashboard/` implements it yet.
 
-⚠ **`temporary/` IS GITIGNORED — and it HAS been swept before** (the 2026-07-14 build-log: *"temporary/ scratch cleaned … relocated or deleted"*). **`temporary/coverage-D-personalized.html` IS PROTECTED. DO NOT DELETE IT** — Luneth: *"it needs to survive until we are completely done with it (probably at the very very end of this project)."* `temporary/README.md` marks it in place; this line is the committed backup of that instruction. Do NOT relocate it either — it resolves the real stylesheets via `../dashboard/assets/styles/…`, so moving it breaks it silently (renders unstyled, looks like the design failed). Luneth declined moving it to `dashboard/components/`: not needed on GitHub, just needs to survive.
+⚠ **`temporary/` IS GITIGNORED — and it HAS been swept before** (the 2026-07-14 build-log: *"temporary/ scratch cleaned … relocated or deleted"*). `temporary/README.md` marks the protected files in place; **this section is the committed backup of that instruction**, because that README is itself unrecoverable.
+
+**★ THE RULE (Luneth, 2026-07-14): a prototype survives until the redesign it is the reference FOR has actually shipped.** Not until it looks finished — until it *ships*. PROTECTED today:
+- **`temporary/coverage-D-personalized.html`** — the locked Coverage vision. The live app implements NONE of it. Freed when the Coverage rebuild ships + is signed off.
+- **`temporary/knowledge-drawer-prototype.html`** — ★ **cited by `chronicle/entity-page-redesign-blueprint.md`, an ACTIVE blueprint.** Deleting it silently breaks a live plan's only visual source. Luneth: *"we haven't even finished the knowledge drawer re-design yet, so this file is still needed for reference."* Freed when that redesign is finished.
+- **`temporary/topic-page-prototype.html`** — same class; kept on the rule, not on a citation.
+
+Do NOT relocate them either — they resolve the real stylesheets via `../dashboard/assets/styles/…`, so a move breaks them **silently** (renders unstyled, reads as a bad design rather than a broken path). Luneth declined moving D to `dashboard/components/`: not needed on GitHub, just needs to survive.
 
 ---
 

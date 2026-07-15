@@ -718,33 +718,27 @@
     goals: [
       {
         id: "bone-skeletal",
-        name: "BONE & SKELETAL",
-        total: 14
+        name: "BONE & SKELETAL"
       },
       {
         id: "energy-metabolism",
-        name: "ENERGY & METABOLISM",
-        total: 13
+        name: "ENERGY & METABOLISM"
       },
       {
         id: "cognition",
-        name: "COGNITION",
-        total: 11
+        name: "COGNITION"
       },
       {
         id: "hormones-strength",
-        name: "HORMONES & STRENGTH",
-        total: 12
+        name: "HORMONES & STRENGTH"
       },
       {
         id: "longevity-anti-aging",
-        name: "LONGEVITY & ANTI-AGING",
-        total: 18
+        name: "LONGEVITY & ANTI-AGING"
       },
       {
         id: "cardiovascular",
-        name: "CARDIOVASCULAR",
-        total: 10
+        name: "CARDIOVASCULAR"
       }
     ]
   };
@@ -13872,8 +13866,7 @@
   });
   var LayoutGoalSchema = external_exports.object({
     id: external_exports.string(),
-    name: external_exports.string(),
-    total: external_exports.number()
+    name: external_exports.string()
   });
   var CoverageLayoutSchema = external_exports.object({
     sections: external_exports.array(LayoutSectionSchema),
@@ -96680,7 +96673,25 @@ THE "THIN RIGHT BORDER" WAS A GRID BUG. 1fr divided 1208px by 13 into fractional
 
 FOUND, NOT FIXED. Silver + tin sit inside "RARE TRACE \xB7 35" but are NOT rare-earths \u2014 own Wallach doses (400 mcg / 500 mcg) while the other 33 share one. omega-9 has ZERO claims and can never light under any goal; omega-6 has 9 and maps to no cognition condition (chip queued; Luneth has Wallach's definitive amounts). goals[].total (14/13/11/12/18/10) is hand-typed, unsourced, read by no view, contradicts nutrientToGoalMap, and rides inside the MANIFEST-gated coverage-layout-data.json \u2014 an integrity gate certifying fabricated data as fresh (chip queued; Luneth: "it sounds serious"). Unchanged: the recommender's boron/silver UNIT BUG, the 4.9x-blown JS size budget, main.ts's 3 lint errors. Noted-not-actioned per Luneth: the app OPENS on the mirror (Coverage is the default), which is why someone bolted a goal-selector onto a scoreboard \u2014 the door already exists in Knowledge Home.
 
-VERIFIED: invariants 64/64 (0 new reds) \xB7 dashboard/ + eden/ byte-identical to HEAD \xB7 every claim measured from the live artifact or sealed data, never asserted \xB7 a 36-agent design panel (5 grounding readers, 6 divergent directions, 4 adversarial judges each, 1 synthesis) whose anti-fakery lens vetoed 2 directions outright and caught 4 factual errors in Claude's own brief. DEFERRED: Luneth's visual pass, then what ships live. \u26A0 temporary/ IS GITIGNORED \u2014 if D is signed off it must move to dashboard/components/ or it dies on the next clean.` }];
+VERIFIED: invariants 64/64 (0 new reds) \xB7 dashboard/ + eden/ byte-identical to HEAD \xB7 every claim measured from the live artifact or sealed data, never asserted \xB7 a 36-agent design panel (5 grounding readers, 6 divergent directions, 4 adversarial judges each, 1 synthesis) whose anti-fakery lens vetoed 2 directions outright and caught 4 factual errors in Claude's own brief. DEFERRED: Luneth's visual pass, then what ships live. \u26A0 temporary/ IS GITIGNORED \u2014 if D is signed off it must move to dashboard/components/ or it dies on the next clean.` }, { id: "lg_mrllbrfy_86jeno", ts: "2026-07-14T23:39:03.598786-05:00", surface: "coverage", kind: "round-close", summary: "Purged goals[].total \u2014 six hand-typed unsourced numbers riding inside a MANIFEST-gated artifact, so an integrity gate was certifying fabricated data as fresh. Deleted not made optional: a per-goal total IS the denominator the locked rule forbids. The goals themselves stay.", detail: `Deleted six invented numbers that an integrity gate was certifying as trustworthy.
+
+Each of the six Coverage goals carried a \`total\` \u2014 BONE & SKELETAL 14, ENERGY & METABOLISM 13, COGNITION 11, HORMONES & STRENGTH 12, LONGEVITY & ANTI-AGING 18, CARDIOVASCULAR 10. Nobody derived those; somebody typed them. No source_claim_id, no Wallach claim, no derivation, and they contradicted the only membership map in the repo (scanner-corpus's nutrientToGoalMap implies 6/6/13/6/3/4). The goal CARDS that rendered them were deleted 2026-07-14 \u2014 so the numbers outlived their own consumer and kept riding the derive into coverage-layout-data.json, which is MANIFEST-gated by derived_artifacts_fresh. A gate whose whole job is proving an artifact trustworthy was reporting green over fabricated data, because it can only prove the artifact matches its SOURCE; it cannot know the source was invented. R8 ("no poison left behind") in its purest form. Luneth called it on sight: "it sounds serious."
+
+WHY DELETED, NOT MADE OPTIONAL. \`total\` IS the denominator the surface's new rule forbids. The rule locked this session: a goal may change what you LOOK AT, or what you're RECOMMENDED \u2014 never what you're MEASURED AGAINST; the denominator is always 90. A per-goal total is a denominator waiting for a numerator \u2014 the exact seed of the deleted goal cards ("bone & skeletal 3 / 14" asserts bone health IS 14 things, a subset, inverting the thesis). An optional fabricated field is still fabricated, and z.number().optional() would have left the trap armed for whoever builds goals next.
+
+THE GOALS THEMSELVES STAY. This is the narrow half of a decision that was itself corrected this session: Claude argued goals must leave Coverage entirely and tagged it "Recommended"; Luneth accepted, then reversed, and the corpus proved him right (512 conditions; 768 of 1,357 sealed claims map one; Let's Play Doctor IS a condition-to-protocol book). An EARLIER version of the queued task for this very purge still carried that dead decision \u2014 it told a future session "the goals array may be dead" \u2014 and was withdrawn and rewritten before it could do damage. Chips are handoff artifacts and rot exactly like handoff docs do.
+
+CHECKED BEFORE CUTTING, because "nothing reads it" is a claim and not a fact. Grepped every \`.total\` in src/: every surviving hit belongs to product-detail, scanner alignment, coverage's byCategory bucket, knowledge-products or regimen \u2014 none to LayoutGoal. state/goals.ts looked like a collision and is not: it owns wallachGoals_v1 + the Journey milestone ledger in localStorage, unrelated to LAYOUT.goals.
+
+TOUCHED: coverage-layout-skeleton.json (total dropped from all 6; id + name remain) \xB7 core/schemas/coverage-layout.ts (LayoutGoalSchema loses \`total: z.number()\`, which was REQUIRED and Zod-parsed at boot; the docstring records WHY it is gone and why real membership derives from the corpus rather than being stored) \xB7 coverage-layout-data.json regenerated.
+
+VERIFIED: zero "total" strings survive in the derived artifact (string-level, not key-level) \xB7 the 6 goals now carry exactly {id, name} \xB7 tsc clean \xB7 build exit 0 \xB7 invariants 64/64 with derived_artifacts_fresh re-proving the regenerated artifact byte-for-byte \xB7 render_probe.js exit 0 reporting goals:6 and 0 page errors, so the boot-time Zod parse survives the deletion.
+
+ALSO \u2014 PRESERVATION, after Luneth asked the right question ("is there any risk of it being deleted?"). There was: temporary/ is gitignored AND has been swept before (the build-log records "temporary/ scratch cleaned \u2026 relocated or deleted"), so the locked Coverage vision was one routine cleanup from destruction. temporary/README.md now marks the protected files in place; chronicle/next-chunk.md carries the committed backup, since that README is itself unrecoverable. THE RULE Luneth set: a prototype survives until the redesign it is the reference FOR has actually SHIPPED \u2014 not until it looks finished. Protected: coverage-D-personalized.html; knowledge-drawer-prototype.html (cited by chronicle/entity-page-redesign-blueprint.md, an ACTIVE blueprint \u2014 "we haven't even finished the knowledge drawer re-design yet"); topic-page-prototype.html. All three resolve real stylesheets via ../dashboard/assets/styles/, so relocating them breaks them SILENTLY \u2014 unstyled, reading as a bad design rather than a broken path.
+
+Luneth's 5 phazon reference images committed into design-wisdom/references/ where HE put them; the applications/phazon/images/README.md that still demanded he "save them into this folder manually" is corrected. He was right that references/ is the better home and that the previous session invented a folder rather than using the one the library already had. Slot-to-file mapping VERIFIED by opening the images, not inferred from filenames.
+
+DEFERRED: the omega enrichment stays queued \u2014 its first step is asking Luneth for Wallach's daily amounts (00.A forbids an amount without a book primary) and he said he does not want to get into that yet. His visual pass on demo D remains the open gate on everything downstream.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

@@ -398,33 +398,27 @@
   "goals": [
     {
       "id": "bone-skeletal",
-      "name": "BONE & SKELETAL",
-      "total": 14
+      "name": "BONE & SKELETAL"
     },
     {
       "id": "energy-metabolism",
-      "name": "ENERGY & METABOLISM",
-      "total": 13
+      "name": "ENERGY & METABOLISM"
     },
     {
       "id": "cognition",
-      "name": "COGNITION",
-      "total": 11
+      "name": "COGNITION"
     },
     {
       "id": "hormones-strength",
-      "name": "HORMONES & STRENGTH",
-      "total": 12
+      "name": "HORMONES & STRENGTH"
     },
     {
       "id": "longevity-anti-aging",
-      "name": "LONGEVITY & ANTI-AGING",
-      "total": 18
+      "name": "LONGEVITY & ANTI-AGING"
     },
     {
       "id": "cardiovascular",
-      "name": "CARDIOVASCULAR",
-      "total": 10
+      "name": "CARDIOVASCULAR"
     }
   ]
 }

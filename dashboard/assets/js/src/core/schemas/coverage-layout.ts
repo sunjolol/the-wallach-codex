@@ -73,11 +73,24 @@ export const LayoutSectionSchema = z.object({
 });
 export type LayoutSection = z.infer<typeof LayoutSectionSchema>;
 
-/** A goal ring/definition (bone, cognition, longevity, …). */
+/**
+ * A goal ring/definition (bone, cognition, …).
+ *
+ * NO `total`. It was six hand-typed, unsourced numbers (14/13/11/12/18/10) that no view
+ * ever read — the goal cards that rendered them were deleted 2026-07-14 — yet they rode
+ * the derive into the MANIFEST-gated artifact, so `derived_artifacts_fresh` was certifying
+ * fabricated data as "fresh" (R8: no poison left behind). They also contradicted the only
+ * membership map in the repo (scanner-corpus's nutrientToGoalMap implies 6/6/13/6/3/4).
+ *
+ * It is DELETED rather than made optional: a per-goal total is a DENOMINATOR, and the rule
+ * this surface is now built on forbids one — a goal may change what you LOOK AT, or what
+ * you're RECOMMENDED, but never what you're MEASURED AGAINST. The denominator is always 90.
+ * Real membership derives from the corpus (`conditions_treated` ∩ a goal's conditions) and
+ * will live in eden/catalog/goals.json, gated by references_resolve. It is never stored here.
+ */
 export const LayoutGoalSchema = z.object({
   id: z.string(),
   name: z.string(),
-  total: z.number(),
 });
 export type LayoutGoal = z.infer<typeof LayoutGoalSchema>;
 
