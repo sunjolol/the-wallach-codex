@@ -60,6 +60,7 @@
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import essentialsTargetsData from '../../../data/essentials-targets-data.json';
 import pdmCoverageData from '../../../data/pdm-coverage-data.json';
+import efaCoverageData from '../../../data/efa-coverage-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { emit, on } from '../core/events.js';
 import { resolveSlug } from '../core/nutrient-resolver.js';
@@ -71,6 +72,8 @@ import {
   EssentialsDataSchema,
   type LayoutTile,
   PdmCoverageSchema,
+  type EfaCoverage,
+  EfaCoverageSchema,
   RegimenNutrientSchema,
 } from '../core/schemas/index.js';
 import { onChange } from '../core/storage.js';
@@ -483,6 +486,75 @@ function pdmAggregate(items: RegimenItem[], overrides: OverridesMap): PdmDeliver
   return { totalMg, present, sources };
 }
 
+// ─── Essential-fatty-acid aggregate (EFA coverage) ─────────────────────────
+// omega-3 + omega-6 have no individual Wallach dose: he states ONE amount for the
+// essential fatty acids as a CATEGORY ("supplemented at the rate of 9 grams per day
+// in capsule form", WAL-CLM-DDDL-000115), and his EFAs are exactly two — "only two
+// (linoleic and linolenic) are designated as Essential Fatty Acids". So they share
+// ONE meter, Σ(regimen efa_mg) / goal, exactly as the 33 rare-earths share the PDM
+// meter. The goal + per-product mg are GENERATED (efa_coverage_derive.py) from the
+// sealed pillars; omega-9 is NOT a member (Wallach never names oleic acid an EFA).
+const EFA: EfaCoverage = EfaCoverageSchema.parse(efaCoverageData);
+const EFA_GOAL = EFA.goal.maintenance_mg;
+
+let cachedEfaByName: Map<string, number> | null = null;
+function efaByName(): Map<string, number> {
+  if (cachedEfaByName === null) {
+    const m = new Map<string, number>();
+    for (const rec of Object.values(EFA.products)) {
+      const nm = rec.canonical_name.toLowerCase();
+      if (nm !== '') {
+        m.set(nm, rec.efa_mg);
+      }
+    }
+    cachedEfaByName = m;
+  }
+  return cachedEfaByName;
+}
+
+interface EfaDelivery {
+  totalMg: number;
+  sources: string[];
+}
+
+/**
+ * Aggregate essential-fatty-acid delivery across the effective regimen: sum each
+ * item's EFA mg (serving-scaled), matched by canonical name — the same join the PDM
+ * aggregate and the auto-heal use. This ONE aggregate scores both omega tiles.
+ */
+function efaAggregate(items: RegimenItem[], overrides: OverridesMap): EfaDelivery {
+  const map = efaByName();
+  let totalMg = 0;
+  const sources: string[] = [];
+  for (const item of items) {
+    const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';
+    const mg = map.get(name);
+    if (mg === undefined || mg <= 0) {
+      continue;
+    }
+    totalMg += mg * readScale(item, overrides);
+    const display = typeof item.label.name === 'string' && item.label.name !== '' ? item.label.name : 'Unknown';
+    if (!sources.includes(display)) {
+      sources.push(display);
+    }
+  }
+  return { totalMg, sources };
+}
+
+/** The shared EFA verdict from the aggregate (mirrors the pdm/numericStatus thresholds). */
+function efaStatusOf(e: EfaDelivery): CoverageStatus {
+  if (EFA_GOAL <= 0) {
+    return '';
+  }
+  if (e.totalMg >= EFA_GOAL * 0.95) {
+    return 'covered';
+  }
+  if (e.totalMg >= EFA_GOAL * 0.30) {
+    return 'partial';
+  }
+  return e.totalMg > 0 ? 'gap' : '';
+}
+
 /** The shared trace_pdm verdict from the aggregate (mirrors numericStatus thresholds). */
 function pdmStatusOf(p: PdmDelivery): CoverageStatus {
   if (PDM_GOAL <= 0) {
@@ -597,7 +669,12 @@ const FOUNDATIONAL_PRESENT_SLUGS: ReadonlySet<string> = new Set([
   'oxygen',
 ]);
 
-function classify(target: CoverageTarget | null, d: Delivery, pdmStatus: CoverageStatus): CoverageStatus {
+function classify(
+  target: CoverageTarget | null,
+  d: Delivery,
+  pdmStatus: CoverageStatus,
+  efaStatus: CoverageStatus,
+): CoverageStatus {
   const hasSrc = d.sources.length > 0;
   const kind = target?.kind;
   if (target === null || kind === undefined || kind === 'unspecified') {
@@ -606,12 +683,27 @@ function classify(target: CoverageTarget | null, d: Delivery, pdmStatus: Coverag
   if (kind === 'dietary') {
     return hasSrc ? 'covered' : '';
   }
-  if (kind === 'trace_pdm' || kind === 'wallach_collective') {
+  if (kind === 'trace_pdm') {
     // The 33 trace_pdm rare-earths share ONE verdict from the plant-derived-mineral
     // aggregate (Σ vehicle mg / goal), computed once per recompute — not per mineral
     // (no product label itemizes a rare earth). silver/tin/cobalt carry their own
     // Wallach dose → kind 'wallach' → the numeric path below, never here.
     return pdmStatus;
+  }
+  if (kind === 'wallach_collective') {
+    // ★ THIS BRANCH WAS 'trace_pdm || wallach_collective' AND IT WAS A BEARTRAP.
+    // wallach_collective was a DEAD alias — no target carried it — so it sat here
+    // harmlessly routing to the RARE-EARTH mineral meter. The moment targets_derive
+    // started emitting it for the omegas (2026-07-15), seeding two plant-derived
+    // MINERAL products with ZERO fatty acids rendered OMEGA-3 and OMEGA-6 as
+    // "covered" — proven with a DOM probe, not reasoned about. A dead alias is not
+    // inert; it is a loaded branch waiting for someone to feed it.
+    // Every collective group MUST route to its own meter, keyed by the group the
+    // claim names. No group => no verdict, never a neighbouring group's.
+    if (target.collective_group === 'essential-fatty-acids') {
+      return efaStatus;
+    }
+    return '';
   }
   if (kind === 'dietary_with_clinical_lever') {
     if (target.low !== undefined && target.low > 0) {
@@ -650,6 +742,8 @@ export function recompute(): CoverageSnapshot {
   const delivery = accumulate(items, overrides, targets, bySlug);
   const pdm = pdmAggregate(items, overrides);
   const pdmStatus = pdmStatusOf(pdm);
+  const efa = efaAggregate(items, overrides);
+  const efaStatus = efaStatusOf(efa);
 
   const tiles: CoverageTile[] = targets.map((entry) => {
     const target = CoverageTargetSchema.safeParse(entry.target);
@@ -657,11 +751,13 @@ export function recompute(): CoverageSnapshot {
     const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
     // The foundational-present rule runs HERE (not inside classify) because it keys off the
     // essential's identity, not its target/delivery — classify() only sees the target + delivery.
-    const classified = classify(t, d, pdmStatus);
+    const classified = classify(t, d, pdmStatus, efaStatus);
     const status: CoverageStatus = (classified === '' && FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug))
       ? 'covered'
       : classified;
-    const isPdm = t?.kind === 'trace_pdm' || t?.kind === 'wallach_collective';
+    // NOT `|| wallach_collective` — that alias fed the omegas into the rare-earth
+    // meter (see classify). trace_pdm is the ONLY kind the PDM aggregate scores.
+    const isPdm = t?.kind === 'trace_pdm';
     let intakeVsTarget: CoverageTile['intakeVsTarget'] = null;
     if (isPdm) {
       // The rare-earth group reads Σ vehicle mg against the ONE shared goal (the meter

@@ -1531,6 +1531,89 @@ def check_collective_doses_not_fanned():
     )
 
 
+def check_efa_goal_wallach_sourced():
+    """Charter R2 / §00.A — the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is
+    Wallach's own number in a different unit. Recomputed here INDEPENDENTLY of
+    efa_coverage_derive so a derive bug cannot slip both (§00.B #2/#11):
+
+      TRACE (the anchor) — goal.source_claim_id resolves to a sealed corpus dose claim whose
+        dose carries collective_group == goal.collective_group and a scalar amount (a real
+        Wallach dose, not a hand-set number), and whose essentials ARE goal.members.
+      CHAIN (the recompute) — re-run the documented transform from source: amount x 1000
+        (g -> mg, a unit change of the figure Wallach wrote), byte-compare to
+        goal.maintenance_mg.
+
+    ★ WHY NO CALORIE BASIS APPEARS ANYWHERE IN THAT CHAIN, and why this gate would RED if one
+    did: Wallach states BOTH the rate ("3 percent of your total daily calorie consumption") AND
+    the finished supplement figure ("or supplemented at the rate of 9 grams per day in capsule
+    form") in one sentence. Because he did the conversion himself, nothing here supplies a
+    reference. Re-deriving 3% against the FDA 2,000-kcal label standard yields 6.67 g — which
+    CONTRADICTS his stated 9 g, so the assumption would not fill a gap, it would overrule him
+    with an FDA convention. That is the same violation class as the Youngevity-label route
+    (source-rule review 2026-07-15). The rule this encodes: supply a reference ONLY when
+    Wallach's own words cannot produce a number, NEVER to replace one he wrote.
+
+    A fabricated goal, one sourced from a non-collective or non-dose claim, a members/claim
+    mismatch, or an arithmetic drift all go RED."""
+    import json as _json
+    art = ROOT / "dashboard/assets/data/efa-coverage-data.json"
+    claims_dir = ROOT / "eden/corpus/claims"
+    if not (art.exists() and claims_dir.exists()):
+        return True, "efa-coverage / corpus not installed (bootstrap-guard)"
+
+    data = _json.loads(art.read_text(encoding="utf-8"))
+    goal = data.get("goal", {})
+    cid = goal.get("source_claim_id")
+    if not cid:
+        return False, "goal.source_claim_id missing (the goal must cite a Wallach dose claim)"
+
+    claim = None
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if c.get("id") == cid:
+                claim = c
+                break
+        if claim:
+            break
+    if claim is None:
+        return False, f"goal.source_claim_id {cid} resolves to no sealed claim"
+    if claim.get("kind") != "dose":
+        return False, f"{cid} is kind={claim.get('kind')!r}, not a dose claim"
+
+    dz = claim.get("dose") or {}
+    grp = goal.get("collective_group")
+    if dz.get("collective_group") != grp:
+        return False, (f"{cid} dose.collective_group {dz.get('collective_group')!r} != goal "
+                       f"collective_group {grp!r} — the goal must cite the claim that states it")
+    members = list(goal.get("members") or [])
+    if sorted(claim.get("essentials", [])) != sorted(members):
+        return False, (f"{cid} maps essentials {sorted(claim.get('essentials', []))} but the goal "
+                       f"claims members {sorted(members)} — the group must be exactly who the claim covers")
+
+    amount, unit = dz.get("amount"), dz.get("unit")
+    if not isinstance(amount, (int, float)) or isinstance(amount, bool):
+        return False, f"{cid} dose.amount {amount!r} is not a scalar Wallach amount"
+    if unit != "g":
+        return False, f"{cid} dose.unit {unit!r} is not 'g' — the g->mg chain does not apply"
+
+    expect = round(float(amount) * 1000.0, 4)
+    posted = goal.get("maintenance_mg")
+    if not isinstance(posted, (int, float)) or round(float(posted), 4) != expect:
+        return False, (f"goal.maintenance_mg {posted!r} != {expect} recomputed from {cid} "
+                       f"({amount} {unit} x 1000) — fabricated or drifted")
+
+    prov = goal.get("provenance") or {}
+    if prov.get("wallach_dose_amount") != amount or prov.get("wallach_dose_unit") != unit:
+        return False, (f"goal.provenance ({prov.get('wallach_dose_amount')!r} "
+                       f"{prov.get('wallach_dose_unit')!r}) is not anchored to {cid}'s dose "
+                       f"({amount!r} {unit!r})")
+
+    n = len(data.get("products") or {})
+    return True, (f"EFA goal {posted} mg recomputes exactly from {cid} ({amount} {unit} x 1000, a unit "
+                  f"change of Wallach's own figure — no calorie or weight reference supplied); "
+                  f"members {members} == the claim's essentials; {n} EFA-bearing product(s) scored")
+
+
 def check_pdm_goal_wallach_sourced():
     """Charter R2 / §00.A — the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach
     dose expressed in mg via product composition. Two layers (§00.B #2/#11), recomputed here
@@ -3755,6 +3838,14 @@ INVARIANTS = [
         truth_anchor="eden/corpus/claims/* sealed dose claims carrying dose.collective_group x essentials-targets-data.json target.source_claim_id + target.low, read independently of targets_derive so a derive that starts fanning again cannot silence its own gate",
         severity="critical",
         lesson_ref="Omega EFA target (2026-07-15) — PROVEN before the gate was written: with the 9 g claim sealed, the derive emitted omega-3=9 g AND omega-6=9 g (18 g total) and amounts_wallach_only returned 'all 40 numeric coverage target(s) trace ... (R2 clean)'. Every existing gate passed while the number was double what Wallach wrote. chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
+    ),
+    Invariant(
+        name="efa_goal_wallach_sourced",
+        description="the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is Wallach's own number in a different unit (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim whose dose.collective_group matches and whose essentials ARE goal.members, and maintenance_mg recomputes exactly from that dose x 1000 (g->mg). ★ No calorie basis appears in the chain BY DESIGN — Wallach states both the 3%-of-calories rate AND the finished 9 g supplement figure, so nothing is supplied here; re-deriving 3% against the FDA 2,000-kcal standard would yield 6.67 g and OVERRULE the number he wrote. A fabricated goal, a members/claim mismatch, or arithmetic drift is RED",
+        check_fn=check_efa_goal_wallach_sourced,
+        truth_anchor="efa-coverage-data.json goal x the sealed collective dose claim (eden/corpus/claims/*), recomputed each run independently of efa_coverage_derive",
+        severity="critical",
+        lesson_ref="Omega EFA target (2026-07-15) — Wallach states ONE amount for the essential fatty acids as a category (9 g/day, WAL-CLM-DDDL-000115); omega-3 + omega-6 share it as a group, omega-9 is excluded because he never names oleic acid an EFA. The rule this encodes: supply a reference ONLY when Wallach's own words cannot produce a number, NEVER to replace one he wrote. chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
     ),
     Invariant(
         name="pdm_goal_wallach_sourced",

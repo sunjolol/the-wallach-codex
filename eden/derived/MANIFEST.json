@@ -17,6 +17,19 @@
       "note": "The trace/rare-mineral coverage metric (state/coverage.ts esbuild JSON import): goal (Wallach colloidal-mineral dose expressed in mg via composition; cites WAL-CLM-EPIGEN-000089) + per-product plant-derived-mineral vehicle mg. DERIVES from the sealed Products pillar (composition mg) + the curated trace-mineral-vehicles.json (judgment: group/mode/factors/goal-model) + the sealed dose claim (goal). The 33 trace_pdm minerals are scored as ONE group (Sigma regimen pdm_mg / goal.maintenance_mg). build_data() hard-fails via validate() on a missing product or a zero-mg amount-mode product (a silently-missed vehicle pattern). §00.A: composition feeds the math; the goal is a Wallach dose, not a Youngevity target (source-rule review 2026-07-12). Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
     },
     {
+      "artifact": "dashboard/assets/data/efa-coverage-data.json",
+      "generator": "eden/tools/efa_coverage_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/products/products.json",
+        "eden/corpus/claims/claims-dddl-3e-2011.json",
+        "eden/catalog/nutrients.json"
+      ],
+      "note": "The essential-fatty-acid coverage metric (state/coverage.ts esbuild JSON import): goal (Wallach's ONE EFA amount, 9 g -> 9000 mg, a unit change of his own figure; cites WAL-CLM-DDDL-000115) + per-product EFA mg. DERIVES from the sealed Products pillar (composition mg) + the sealed collective dose claim (goal), with identity delegated to nutrient_resolve.resolve() so no fatty-acid name list is duplicated here (R3). omega-3 + omega-6 are scored as ONE group (Sigma regimen efa_mg / goal.maintenance_mg) because Wallach states one amount for the category -- fanned out per-slug it silently asserts 18 g, which amounts_wallach_only certifies GREEN (see collective_doses_not_fanned). omega-9 is EXCLUDED: he never names oleic acid an essential fatty acid. build_data() hard-fails via validate() on a non-positive goal, a wrong member set, or a stray non-EFA slug. SS00.A: composition feeds the math; the goal is a Wallach dose, not a Youngevity target (source-rule review 2026-07-15). Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
+    },
+    {
       "artifact": "dashboard/assets/data/corpus-embed.json",
       "generator": "eden/tools/corpus_embed.py",
       "build_fn": "build_embed",

@@ -17,12 +17,21 @@ import { z } from 'zod';
 
 /** A Wallach target as the coverage classifier needs it (`essentials-targets-data`). */
 export const CoverageTargetSchema = z.object({
-  /** trace_pdm · hbsp · dietary · wallach · wallach_clinical · dietary_with_clinical_lever · unspecified · … */
+  /** trace_pdm · hbsp · dietary · wallach · wallach_clinical · wallach_collective · dietary_with_clinical_lever · unspecified · … */
   kind: z.string().optional(),
   /** Lower bound of the Wallach target in `unit`. */
   low: z.number().optional(),
   high: z.number().optional(),
   unit: z.string().optional(),
+  /**
+   * For kind 'wallach_collective': the group whose ONE shared Wallach amount covers this
+   * essential (e.g. 'essential-fatty-acids' — his 9 g/day covers omega-3 + omega-6 together).
+   * Such a target carries NO `low` on purpose: the shared budget lives in that group's own
+   * artifact, and a per-essential number would be the fan-out collective_doses_not_fanned
+   * exists to stop. TYPED, not left to passthrough, because classify() routes on it — an
+   * untyped read here once sent the omegas into the rare-earth mineral meter.
+   */
+  collective_group: z.string().optional(),
 }).passthrough();
 export type CoverageTarget = z.infer<typeof CoverageTargetSchema>;
 
