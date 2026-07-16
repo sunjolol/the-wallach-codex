@@ -48,6 +48,91 @@ Also settled: **MANAGE and ADD ITEM both DIE**, replaced by one `FULL REGIMEN �
 fine, and I agree this is better."* An ADD ITEM that navigates instead of adding is the PROFILE
 lesson inverted — a label is a promise.
 
+## ★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE (Luneth, 2026-07-16, session close)
+
+**His words:** *"Yes, let's ship this live (and do so carefully) — this demo feels a LOT better
+coded than previous demos but we still shouldn't blindly copy code since some of it will need to
+be adapted to work on the live surface (such as increasing dosage changing counts) — so let's make
+sure the live surface works/looks exactly like the demo but without carrying over bad code, doing
+everything properly with good engineering/coding standards (translating a demo into real, solid
+code)."*
+
+**THE SOURCE OF TRUTH IS `temporary/coverage-E-rail.html`** (GITIGNORED, protected in
+`temporary/README.md`; screenshots in `temporary/shots-E-fixed/`). It is SIGNED OFF. Demo D is the
+untouched fallback. **The spec is blueprint §6**; the demo is what it looks like.
+
+### ★ THE RULE FOR THIS BUILD — re-create, do not transplant ([[demo-vision-not-letter]])
+The demo is the DESIGN TRUTH, not a code donor. Its state is a plain array; live state is the P3
+slot document. Re-create the surface **pristine on real data + real state**, and PROVE it — do not
+lift demo JS. What must be ADAPTED rather than copied:
+- **The dose stepper is INERT in the demo and MUST WORK LIVE — his named example** ("increasing
+  dosage changing counts"). The prototype has no per-serving amounts, so its stepper only moves a
+  number; he declined a note because *"we already know it will work when coded live"*. LIVE: dose =
+  servings/day must scale the delivered amounts, recompute coverage, and MOVE THE COUNTS. It routes
+  through `saveRgOverride` → `writeSlotDoc` → `regimen:changed` → recompute (P3 shipped that spine).
+  ⚠ `readScale` (`state/coverage.ts:~390`) already reads `overrides[String(item.id)].scaling_factor`
+  — that is the hook; the demo's `--goalCount`-style shortcuts are NOT.
+- **The demo's status model is BINARY** (a product "supplies" a tile → covered). The live classifier
+  is amount-based and can land on `partial`. Do NOT port the binary rule. **Never invent a
+  dose→coverage curve** — the live math already exists.
+- **The live app ALREADY HAS a rail**: `coverage.ts::renderRail()` → `.regimen-rail`, 380px, styled
+  (`workspace-coverage.css:992-1126`), caps at 8 + "+N more", and is **completely inert**
+  (`mount()` installs NO click listener). The demo's `.rail-panel` is a DIFFERENT, simpler thing.
+  **Reconciling the two is the build**, not a copy-paste.
+- **Every mutation routes through the P3 §31 chokepoints** (`saveRgManual` / `saveRgOverride` /
+  `saveRgRemoved` → the private `writeSlotDoc` → `rgSlots_v1`). `regimen_state_mutation_routing` +
+  `slot_invariants` are CRITICAL gates and will catch a stray write.
+- **D4:** the rail shows the ACTIVE SLOT'S NAME, read-only. No switcher — switching lives in Regimen.
+- **Escape by default:** the demo interpolates product names into `innerHTML`. Live, names go through
+  `textContent` (§00.B #5). Do not carry the demo's string-concat rendering across.
+
+### ★ WHAT THE DEMO SETTLED — build these, do not re-litigate
+Recs FIRST in the aside · `FULL REGIMEN →` is ONE primary-orange button (MANAGE + ADD ITEM are DEAD)
+· rows: name truncated FROM THE END, quiet `EDEN`/`YOURS` mark, inline dose stepper, 1-click remove
+· the signed-off empty-state copy · list scrolls INSIDE the panel, head + button pinned (8–10 rows at
+1440×900) · a `+` on each rec card = 1-click add; adding removes it from the list · the rec explainer
+is a TWO-STAGE HOVER (card → dotted underline; numbers → the text), no standing paragraph, copy =
+*"your goal nutrients per $10 spent"* · **covered tiles: NO ring, NO glow, NO slit** — goal membership
+is a hover-only discoverable · the ring means **"a goal nutrient you have NOT covered"**.
+★ Governing rule: [[field-shows-gaps-not-wins]] — **the field is a MAP OF GAPS, not a scoreboard.**
+
+### ★★★★ NEW REQUIREMENT, RAISED AT SESSION CLOSE — EXCLUDE KIDS' PRODUCTS (NOT YET BUILT)
+**His words (2026-07-16):** *"Let's make sure no kids products ever get recommended as items —
+'Kid's Toddy', 'Ultra Body Toddy' and stuff like that (probably around 20 products in total) — they
+are good but no adult is ever going to take those and they're better as a database item to be
+discovered in the products tab of the knowledge drawer, so let's exclude them as popping up on the
+coverage page (or anywhere for that matter including under conditions and element detail view —
+besides the products database) — reason being is those formulas are for kids, and kids will never
+use our app."*
+
+- **SCOPE:** excluded from EVERY recommendation/suggestion surface — Coverage recommendations,
+  condition pages, element/entity detail views. **The ONLY place they may appear is the products
+  database (the Knowledge drawer's Products tab)**, where they stay discoverable.
+- **⚠ THIS IS LIVE TODAY, NOT HYPOTHETICAL.** In demo E with 3 goals, **`Kid's Toddy™` ranked #1**
+  (7.1 / $10 — it wins on value precisely because it is cheap) and `Ultra Body Toddy™` also surfaced
+  in the top 4. The real recommender uses the same score, so it will do the same thing. He has been
+  holding this note *because he kept seeing them*.
+- **★ THE OPEN DECISION (his call, ASK — do not assume):** there is NO `category` field on the
+  Products pillar — **D5 proposed one and he REVERSED it (D8)** as *"way too much work for way too
+  little gain"*. So how are the ~20 identified?
+  (a) a **hand-authored curation list** (a new `assets/data/*.json`, MANIFEST-registered with a
+      reason, like the other 11 hand-authored artifacts) — cheap, no pillar re-seal, matches the D8
+      precedent; or
+  (b) an **`audience`/`kids` field on the Products pillar** — needs his review + SEAL SIGN-OFF (§00.A).
+  ⚠ Do NOT infer kids-ness from the NAME with a regex ("Kid's", "Toddy") — `Ultra Body Toddy` and
+  `Beyond Tangy Tangerine` are ADULT products that share the "Toddy"/family naming. A name heuristic
+  would silently exclude adult products and silently miss kids ones. **The list must be explicit and
+  reviewed by him.**
+- **★ IT MUST BE GATED (R7):** a gate proving no excluded product can reach a recommendation surface,
+  + a negative test. An exclusion that rests on one `filter()` call is one refactor from regressing.
+- **★ AND IT MUST NOT LIE:** the exclusion is a CURATION decision, not a Wallach claim. It changes
+  what we SHOW, never a target or a composition. Label it as ours.
+
+### ★ SHIPPED THIS SESSION (all pushed; board 72/72)
+`efc02964` P3 slots in state · `fecfcd92` the rail demo + the covered-ring bug (a pseudo-element
+collision, diagnosed + fixed) + the orange slit removed live · `208ba9f5` the goal-slit experiment
+tried + reverted, which produced [[field-shows-gaps-not-wins]].
+
 ### ★★★ NEXT ORDER (updated 2026-07-15 ~21:40 CDT — P1/P2 DEAD, P3/P4/P5 DONE, ✓ COBALT SHIPPED)
 
 **Done this session:** blueprint signed off · D6→D7 · D5→D8 · cracks 1/2/3 · P4 · P5 · **COBALT (shipped + signed off, kv=337, `823b8823`)**.
