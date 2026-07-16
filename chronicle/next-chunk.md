@@ -36,7 +36,24 @@ come back I can review the work and make changes or approve it if it's good to g
 a duplicate home (R3). Same principle he approved (hand curation · no pillar · no seal · he rewrites
 the list), less machinery.
 
-### ★★ TWO JUDGMENT CALLS AWAITING HIS RULING (both flagged, neither hidden)
+### ★ HIS VISUAL REVIEW — 3 fixes, all shipped + signed off by sight (2026-07-16 evening)
+He reviewed the live page and raised exactly three things. All fixed; he approved everything
+else explicitly: *"there's a bunch of other small differences also but IGNORE those, I like the
+live better and the ways it's different better."* **Do not "restore" the live surface toward the
+demo on any other axis — the LIVE refined surface now SUPERSEDES the demo where they diverge.**
+1. **The topbar** (`fac0c7f0`) — Claude ported the nameplate MARKUP but skipped its CSS as
+   "shell scope", so it rendered as a default `<h1>`. Half a port. Now a zero-delta computed
+   match. → [[port-markup-and-css-together]]
+2. **The sticky strip painted over an open drawer** (`4167bd63`) — `z-index: 20` came from a
+   demo with NO DRAWERS. Now 5, ladder documented, both halves gated.
+3. **The surround was too dark** — the box was never the problem (rgb(235,226,196) in BOTH);
+   the SURROUND was DARKER than the box it contains. Scoped fix; **the topbar keeps its veil
+   tint deliberately — he said "I prefer the live color"**. Do not delete
+   `.app-workspace::before`; it is viewport-fixed and the topbar's (249,244,231) depends on it.
+
+### ★★ TWO JUDGMENT CALLS AWAITING HIS RULING — NEITHER BLOCKS ANYTHING
+_Raised 2026-07-16; he deferred them to the next session on purpose. Both are already SHIPPED
+in their current form, gated, and reversible — they are RULINGS, not open work._
 1. **STRONTIUM — the demo's own data contradicts the demo's own stated rule.** Its comment says the
    plant-derived 34 "can never be 'named for' a goal" (no individual Wallach amount — one shared
    verdict); its baked MEMBERSHIP then rings STRONTIUM under stronger-bones + less-joint-pain. The

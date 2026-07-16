@@ -897,6 +897,28 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .coverage-workspace {
   display: flex;
   flex-direction: column;
+  /* ── THE SURROUND (Luneth, 2026-07-16: "the background behind each of the boxes is too
+     dark, give it the same color as the demo"). MEASURED, in real pixels, not eyeballed:
+     the surround painted rgb(242,231,207) live vs rgb(250,245,232) in the demo, while the
+     tan box itself is rgb(235,226,196) in BOTH — the box was never the problem.
+     ★ THE ACTUAL DEFECT was inverted figure/ground: live's SURROUND (242,231,207) was
+     DARKER than the box interior it contains (242,234,211), so the field read as a dim
+     panel sunk into a dimmer page. In the demo the box is darker than its surround, which
+     is the way round a raised plate has to be.
+     TWO causes, both handled here: .app-workspace paints --ds-paper-deep, and
+     .app-workspace::before is a viewport-FIXED radial veil that tints whatever is under it.
+     ★ WHY SCOPED HERE AND NOT ON .app-workspace (which is what the demo does): the veil is
+     `position:fixed; inset:0`, so it covers the TOPBAR too — that is why live's topbar reads
+     (249,244,231) where the demo's reads (250,245,232). Luneth kept the live topbar
+     explicitly ("I prefer the live color"), so the veil must SURVIVE. z-index 1 lifts this
+     workspace above the veil (z:0) without deleting it, leaving the topbar's tint intact and
+     every other tab untouched. Doing it the demo's way would have silently changed both.
+     ★ The stacking context this opens is SAFE and was re-measured: .goalstrip (z5) stays
+     above .coverage-grid (z1) inside it, and the drawers (z10) are OUTSIDE this element, so
+     they still cover the strip — see render_probe_coverage_add_remove. */
+  background: var(--ds-paper);
+  position: relative;
+  z-index: 1;
 }
 
 /* The workspace now owns the outer padding the grid used to carry, so the console sits flush

@@ -98753,6 +98753,29 @@ NEGATIVE CONTROLS RUN. Each reproduces a REAL bug, not a hypothetical one:
   \xB7 position:sticky -> static -> REDs both sticky checks \u2014 my own bug, reproduced on demand.
 A probe that cannot reproduce the bug it was written for proves nothing; these can.
 
+Board 75/75. 10/10 render probes. No pillar touched.` }, { id: "lg_mro1lxl0_5vbzgr", ts: "2026-07-16T16:50:24.324102-05:00", surface: "coverage", kind: "design-decision", summary: "The surround behind the tan boxes now EXACTLY matches the demo (250,245,232); the topbar is untouched. Measured: the box was never the problem \u2014 the surround was DARKER than the box it contains. Scoped so the viewport-fixed veil survives on the topbar he kept.", detail: `Luneth: "The background behind each of the boxes is too dark, give it the same color as the demo... (NOT the top bar background color - that one is slightly different too but I prefer the live color)."
+
+Plain version: the page around the big tan panel was a muddy tan. It is now the same light cream as the demo, and the top bar is untouched exactly as he asked.
+
+The measurement changed the diagnosis, which is the part worth recording. I sampled real pixels from both pages rather than trusting my eye, and the tan box itself is rgb(235,226,196) in BOTH live and demo \u2014 the box was never the problem. The difference was the SURROUND: rgb(242,231,207) live against rgb(250,245,232) in the demo.
+
+And that exposed the actual defect, which is more interesting than "too dark": the surround (242,231,207) was DARKER than the box interior it contains (242,234,211). Inverted figure/ground \u2014 a raised plate sitting on a dimmer page. That is what reads as muddy. In the demo the box is darker than its surround, which is the way round a raised plate has to be.
+
+There were two causes: .app-workspace paints --ds-paper-deep, and .app-workspace::before is a viewport-fixed radial veil that tints whatever sits under it.
+
+The fix is deliberately NOT the demo's. The demo sets .app-workspace to --ds-paper and kills the veil outright. But that veil is position:fixed with inset:0, so it covers the TOPBAR too \u2014 it is exactly why live's topbar reads (249,244,231) where the demo's reads (250,245,232). Luneth kept the live topbar explicitly, so the veil had to survive. Scoping instead \u2014 .coverage-workspace gets background:var(--ds-paper), position:relative, z-index:1 \u2014 lifts the Coverage workspace above the veil without deleting it. The topbar keeps its tint, every other tab is untouched, and the surround becomes an exact match. Doing it the demo's way would have silently changed both things he asked me not to touch.
+
+TECHNICAL RECORD
+
+VERIFIED by sampling the same pixels in live and demo screenshots:
+  surround (left of box)      (250,245,232) vs (250,245,232)  EXACT
+  surround (above box)        (235,226,196) vs (235,226,196)  EXACT
+  inside box (between tiles)  (242,234,211) vs (242,234,211)  EXACT
+  goalstrip band              (250,245,232) vs (250,245,232)  EXACT
+  topbar                      (249,244,231) vs (250,245,232)  delta (-1,-1,-1) = the veil, PRESERVED ON PURPOSE
+
+The z-index:1 opens a new stacking context on .coverage-workspace, so I re-measured rather than assumed: .goalstrip (z5) still sits above .coverage-grid (z1) inside it, and the drawers (z10) live OUTSIDE this element so they still cover the strip. Both facts are pinned by render_probe_coverage_add_remove's 27 checks, which pass. Geometry unchanged: 6 cols / 776px at 1440, 11 cols / 1256px at 1920.
+
 Board 75/75. 10/10 render probes. No pillar touched.` }];
 
   // assets/js/src/state/log.ts
