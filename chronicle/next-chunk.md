@@ -80,9 +80,24 @@ lesson inverted — a label is a promise.
      verbatim**. The ruling traces to Wallach's words, not our summary. Verified before writing:
      byte-present · unique in the book (so the offset cannot be ambiguous) · offset lands exactly.
 2. ~~**P3 — slots in state.**~~ ✓ **DONE + PUSHED 2026-07-16 (`efc02964`).** ONE atomic slot document (`rgSlots_v1` = {slots×1–4, activeSlot, trash×≤20}) written by ONE private `writeSlotDoc`; lazy non-destructive migration from the 4 legacy keys (hidden items recovered INTO trash); the 5 legacy chokepoints kept by name + re-pointed to the active slot; 6 slot ops (add/duplicate/delete/rename/setActive/restoreFromTrash), each `{ok}|{ok:false,reason}`; `importSlot` deferred to §7. GATES: `regimen_state_mutation_routing` re-codified (brace-aware, so the private writer can't be swallowed) + NEW `slot_invariants` (static) + NEW `render_probe_slots.js` (runtime) + 2 negative tests (16 + 10 cases). Board 72/72. **THE DEMO is now the next order — nothing blocks it; your visual sign-off is the gate.** ⚠ 2 pre-existing probe fails (`render_probe_scanner`, `render_probe_journey`) proven identical at HEAD via git stash — legacy-host DOM checks, NOT P3.
-3. **THE DEMO** — the daily-protocol rail at 0 / few / many + 1-click add/remove + dose edit.
-   Nothing blocks it (the demo is a standalone prototype in `temporary/`, sharing no code
-   with the live app). **Luneth's visual sign-off is the gate.**
+3. ~~**THE DEMO**~~ ✓ **BUILT + SIGNED OFF 2026-07-16 (`fecfcd92`).** Luneth: *"Looks great,
+   this works pretty much exactly as I intended."* → **`temporary/coverage-E-rail.html`**
+   (GITIGNORED — demo D untouched as the locked fallback; both registered in
+   `temporary/README.md`; screenshots in `temporary/shots-E-fixed/`). Rail at 0/few/many ·
+   inline dose · 1-click add (the `+` on a rec card) / remove · ONE `FULL REGIMEN →` ·
+   the field relights live (3 products: 5→29 covered; 11: →36) · denominator never moves.
+   **HIS DECISIONS, all settled — do not re-litigate:** aside order = **RECS FIRST** (he saw
+   both; the toggle stays in the demo) · `FULL REGIMEN →` stays **primary orange** (he
+   overruled my "reads inverted for a navigation action") · the rec explainer is a
+   **two-stage hover** (card → dotted underline; numbers → the text), the standing paragraph
+   is deleted · dose stepper is **deliberately inert** in the demo (no per-serving amounts in
+   the prototype data; he declined a note — do NOT invent a dose→coverage curve to make it
+   look alive) · the **orange slit** on covered tiles is deleted, in the LIVE stylesheet ·
+   **covered tiles take NO goal ring** ("too busy, doesn't mesh with the green") — they still
+   highlight on goal hover via the opacity channel.
+   ★ **THE NEXT ORDER IS THE LIVE BUILD.** He asked to start it 2026-07-16 ("which will happen
+   today, Lord willing"). He also has **one more visual experiment** he expects to revert —
+   build it behind a one-class/one-var toggle ([[loose-visual-instruction-easy-pivot]]).
 4. **Refresh persistence** (the name) — small live work, §31 `saveUserProfile`.
 **✓ The two cracks found during cobalt are FIXED (2026-07-15, same session):**
 - ~~`views_state_no_inline_data` mis-scoped~~ ✓ **TIGHTENED (R9).** It counted a record's FIELDS
@@ -190,12 +205,29 @@ there is no Claude in that browser. Tesseract is classical OCR and will never ap
 because of this. Any future design assuming otherwise is built on something that is not there.
 
 ### ★ STILL OPEN (blueprint §13)
-- **The `covered`-tile ring bug** — REAL, confirmed from Luneth's screenshots: phosphorus gets the
-  goal tick but NO ring (single or multi) while Ca/Mg/B ring correctly. Demo-layer CSS conflict on
-  `.covered`. **Not yet diagnosed.**
-- **Card ordering in the aside** — measured: with 3 goals, `.recs` opens to 373px and pushes DAILY
-  PROTOCOL to top 551 / bottom 895 at a 900px fold. What you TAKE currently sits under what you could
-  BUY. Demo-time call for Luneth.
+- ~~**The `covered`-tile ring bug**~~ ✓ **DIAGNOSED + FIXED 2026-07-16 (`fecfcd92`).**
+  ⚠ **THIS ENTRY'S OWN PREMISE WAS WRONG — do not carry it forward.** It said "demo-layer CSS
+  conflict on `.covered`". It was a **PSEUDO-ELEMENT COLLISION**: `.tile.covered::after` is the
+  status TICK (a 14x3 accent slit, `workspace-coverage.css:765`) and the goal ring was ALSO
+  `::after`. Both selectors are **(0,2,1) — identical specificity** — so the cascade MERGED them
+  per-property instead of one winning: the ring won `background`+`inset`, the tick won
+  `width:14px`+`height:3px`, and an absolutely-positioned box given BOTH `inset` and an explicit
+  size is over-constrained → it resolved to THE TICK'S SIZE. The ring was painting the correct
+  gradient at **14x5px** the whole time. MEASURED: PHOSPHORUS (covered+2 goals) = 14x5 with the
+  goal gradient; COBALT (gap+1 goal) = 105x85, correct.
+  ★ **AND THE SECOND HALF OF THE OLD CLAIM WAS ALSO FALSE:** "while Ca/Mg/B ring correctly" —
+  they were never fixed, they simply were not COVERED yet. The bug fired on covered ∧ goal-mapped,
+  and phosphorus was the only such tile at the time. The rail flipped 21 tiles to covered at once
+  and broke all 21 rings together, which is what finally made it diagnosable.
+  FIX: the ring got its own element (`.tile__ring`) — the design's own rule, "goals own the EDGE,
+  status owns the INTERIOR, two channels, no collision". **Then Luneth removed the ring from
+  covered tiles entirely anyway** (too busy against the green), so the ring now marks only
+  goal nutrients you have NOT covered — a to-do marker. The glow went with it, which ALSO
+  restored the covered plate's own rim+top-light that the `!important` glow had been silently
+  replacing on every covered+goal tile.
+- ~~**Card ordering in the aside**~~ ✓ **SETTLED 2026-07-16: RECS FIRST.** He was shown both (a
+  `body.protocol-first` toggle is still in demo E) plus the measurement — recs-first starts the
+  protocol 449px down and runs it past the fold at MANY — and chose to keep recs on top anyway.
 - **Refresh persistence** (the name) — LIVE work, routes through §31 `saveUserProfile`.
 
 ### ⚠ THE PROCESS LESSON FROM THIS SESSION — the expensive one
