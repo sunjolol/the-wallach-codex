@@ -96,12 +96,20 @@ is a TWO-STAGE HOVER (card → dotted underline; numbers → the text), no stand
 is a hover-only discoverable · the ring means **"a goal nutrient you have NOT covered"**.
 ★ Governing rule: [[field-shows-gaps-not-wins]] — **the field is a MAP OF GAPS, not a scoreboard.**
 
-### ~~★★★★ EXCLUDE KIDS' PRODUCTS~~ ✓ **SHIPPED + GATED 2026-07-16 (`ca0b9a52`, board 73/73)**
+### ~~★★★★ EXCLUDE KIDS' PRODUCTS~~ ✓ **SHIPPED + GATED + SIGNED OFF 2026-07-16 (board 73/73)**
+
+> ★★ **THE LIST IS 2, NOT 4 AND NOT ~20** — `kids-toddy` · `kidsprinklz`. Luneth OVERRULED a proposed 4.
+> **THE TEST IS THE FORMULA, NOT THE ADVERTISING.** `cheri-mins` + `strawberry-kiwi-mins` carry
+> explicitly kid-directed copy but **ARE the adult Plant Derived Minerals formula** — same chemistry,
+> adult label — so an adult can take them. His words: *"cheri-mins and strawberry-kiwi-mins are not
+> kids products."* **Do NOT re-add them by re-reading that marketing copy** — that is exactly the
+> mistake he corrected. Claude had even written "kid-MARKETED, not kid-formulated" into the evidence
+> field for both and excluded them anyway: the analysis was right, the conclusion did not follow it.
 
 **Do not re-open the mechanism, and DO NOT go hunting for ~16 more products.** Full record:
 memory [[no-kids-products-recommended]] (rewritten) + the build-log line + the Creator's Log entry.
 
-- **THE LIST IS 4, NOT ~20** — `kids-toddy` · `kidsprinklz` · `cheri-mins` · `strawberry-kiwi-mins`,
+- **THE LIST IS 2** (see the ruling above) — `kids-toddy` · `kidsprinklz`,
   in `dashboard/assets/data/kids-exclusion.json` (hand-authored curation, MANIFEST `accounted`;
   no pillar touched, matching D8). **"Toddy" is a DRINK NAME, not "toddler"** — `Ultra Body Toddy`
   and `Cal Toddy` are **ADULT** and are NOT excluded. The old "~20" estimate and the naming of
@@ -140,9 +148,9 @@ memory [[no-kids-products-recommended]] (rewritten) + the build-log line + the C
   41 rows removed across 25 essentials.
 - **HONEST LIMIT (R7):** the gate anchors the PLUMBING, never the MEMBERSHIP. It cannot prove a 5th
   kids product isn't unlisted — that rests on the two sweeps + Luneth's review.
-- ⚠ **STILL PENDING: Luneth has not yet signed off on the LIST itself** (the mechanism + the
-  approach he approved explicitly). If he adds/removes one, it is a one-line edit to
-  `kids-exclusion.json` — the gate re-resolves it automatically.
+  **★ SIGNED OFF 2026-07-16:** *"kids-toddy, kisprinklz only (cheri-mins and strawberry-kiwi-mins are
+  not kids products.) - good to commit/push/seal/etc. and close out the session"*. **The list is
+  CLOSED.** (Nothing to seal — no pillar was touched; a curation artifact has no seal step.)
 
 ### ★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE (unchanged; NOW UNBLOCKED)
 The kids work above was the one thing gating it — the rail's recommendation cards inherit the

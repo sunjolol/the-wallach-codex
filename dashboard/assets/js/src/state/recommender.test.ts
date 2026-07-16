@@ -155,9 +155,9 @@ describe('recommender: kids products are excluded from recommendations, never fr
     // The ANTI-CIRCULARITY anchor. Every assertion below is driven BY the list, so an
     // emptied list would make them all vacuously true. This case is what makes them mean
     // something: the list must actually be populated, with the 2026-07-16 audit's findings.
-    expect(KIDS.length).toBeGreaterThanOrEqual(4);
+    expect(KIDS.length).toBeGreaterThanOrEqual(2);
     expect(KIDS).toContain('kids-toddy');
-    expect(KIDS).toContain('cheri-mins'); // the copy-only find — no kid token in its name
+    expect(KIDS).toContain('kidsprinklz');
   });
 
   it('never returns a kids product from rankSources, on ANY essential', () => {
