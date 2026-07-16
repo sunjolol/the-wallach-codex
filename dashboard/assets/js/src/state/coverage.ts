@@ -132,6 +132,14 @@ export interface CoverageTile {
    * chronicle/coverage-regimen-scanner-blueprint.md §5.
    */
   contributesTo: string[];
+  /**
+   * For a 'mirrors' tile: the DISPLAY NAME of the essential whose verdict this tile carries
+   * (null otherwise). Set by the mirrors pass in getOrCompute; views render the explanation
+   * off this rather than re-deriving the relationship.
+   */
+  mirrorsOf: string | null;
+  /** For a 'mirrors' tile: the canon SLUG of the mirrored essential (null otherwise). */
+  mirrorsSlug: string | null;
   /** Whether this tile is closed via the PDM aggregate-vehicle rule. */
   aggregateVehicle: boolean;
   /**
@@ -677,6 +685,15 @@ const FOUNDATIONAL_PRESENT_SLUGS: ReadonlySet<string> = new Set([
   'oxygen',
 ]);
 
+/**
+ * Canon slug -> the display name the layout uses ('' when unknown). Views need this to name
+ * an essential they only hold a slug for (a dose card's applies_to, a mirror's CTA) without
+ * hand-mapping slugs to names in the view layer (R3 — one source per fact).
+ */
+export function essentialNameOf(slug: string): string {
+  return readTargets().find(e => e.slug === slug)?.name ?? '';
+}
+
 function classify(
   target: CoverageTarget | null,
   d: Delivery,
@@ -688,14 +705,31 @@ function classify(
   if (target === null || kind === undefined || kind === 'unspecified') {
     return hasSrc ? 'covered' : '';
   }
+  if (kind === 'mirrors') {
+    // A mirror has NO verdict of its own, ever. Its real status is written by the mirrors
+    // pass in getOrCompute once the essential it mirrors has been classified.
+    //
+    // ★ RETURNING '' HERE IS THE SAFETY PROPERTY, not an oversight. If that pass is removed,
+    // reordered, or throws, the tile goes STATUSLESS — never falsely green. It also means a
+    // product listing "Cobalt 2 mcg" moves this tile by ZERO, which is the §00.A point:
+    // Wallach states no elemental cobalt amount, so there is nothing to measure it against.
+    // Note a mirrors target carries no `low`, so it cannot reach numericStatus' `low <= 0 ⇒
+    // covered on any delivery` branch either. Two independent reasons it cannot fail green.
+    return '';
+  }
   if (kind === 'dietary') {
     return hasSrc ? 'covered' : '';
   }
   if (kind === 'trace_pdm') {
     // The 34 trace_pdm minerals share ONE verdict from the plant-derived-mineral
     // aggregate (Σ vehicle mg / goal), computed once per recompute — not per mineral
-    // (no product label itemizes them individually). silver/tin/cobalt carry their own
-    // Wallach dose → kind 'wallach' → the numeric path below, never here.
+    // (no product label itemizes them individually). silver/tin carry their own Wallach
+    // dose → kind 'wallach' → the numeric path below, never here.
+    // ★ COBALT WAS NAMED HERE UNTIL 2026-07-15 and it was wrong twice over: its "own Wallach
+    // dose" was a B12 dose misread as elemental cobalt, and once that was deleted the canon's
+    // fallback would have dropped it into THIS branch — where the meter would have rendered
+    // it COVERED off a plant-derived bottle carrying zero B12, while the B12 tile beside it
+    // read GAP. It is kind 'mirrors' now and never reaches here.
     // NOT "the rare earths": 19 of the 34 are not, by Wallach's own tagging. The group
     // is defined by having no individual dose — see pdm_coverage_derive.py's docstring.
     //
@@ -834,7 +868,47 @@ export function recompute(): CoverageSnapshot {
       aggregateVehicle: isPdm && status === 'covered',
       intakeVsTarget,
     };
-    return { ...base, pdmGroup: isPdm };
+    // pdmGroup/mirrorsOf/mirrorsSlug sit here rather than in `base` because all three are
+    // resolved at ASSEMBLY time (the mirrors pass below writes the latter two), not from this
+    // essential's own target/delivery like every field above.
+    return { ...base, pdmGroup: isPdm, mirrorsOf: null, mirrorsSlug: null };
+  });
+
+  // ── MIRRORS — second pass ─────────────────────────────────────────────────
+  // An essential with target.kind 'mirrors' states no amount of its own; Wallach's position
+  // is that its requirement is met through another essential, so it carries that verdict.
+  //
+  // WHY A PASS AND NOT A classify() BRANCH: classify() sees one target + one delivery. A
+  // mirror needs a DIFFERENT essential's finished verdict, which does not exist until every
+  // non-mirror tile is classified. Keeping it out here preserves classify()'s property that a
+  // verdict is a pure function of that essential's own inputs — the thing that lets a reader
+  // reason about one tile in isolation.
+  //
+  // Runs BEFORE the tallies below on purpose: `covered` feeds byCategory + coveredCount, so a
+  // mirror must settle before it is counted, or the headline stat disagrees with the tile.
+  //
+  // Single hop, no cycles: mirrors_resolve (tools/invariants.py) proves the named slug exists
+  // and is not itself a mirror, so this cannot chain or loop. Every lookup below fails CLOSED
+  // (leaves the tile statusless) rather than guessing.
+  const nameBySlug = new Map(targets.map(e => [e.slug, e.name]));
+  const statusByName = new Map(tiles.map(t => [t.name, t.status]));
+  targets.forEach((entry, i) => {
+    const parsed = CoverageTargetSchema.safeParse(entry.target);
+    if (!parsed.success || parsed.data.kind !== 'mirrors') {
+      return;
+    }
+    const srcSlug = parsed.data.mirrors_slug;
+    const srcName = srcSlug !== undefined ? nameBySlug.get(srcSlug) : undefined;
+    const srcStatus = srcName !== undefined ? statusByName.get(srcName) : undefined;
+    const tile = tiles[i];
+    if (srcName === undefined || srcStatus === undefined || tile === undefined) {
+      return;
+    }
+    tile.status = srcStatus;
+    tile.covered = srcStatus === 'covered' || srcStatus === 'trace';
+    tile.fillPercent = tiles.find(t => t.name === srcName)?.fillPercent ?? 0;
+    tile.mirrorsOf = srcName;
+    tile.mirrorsSlug = srcSlug ?? null;
   });
 
   // Tally by category.

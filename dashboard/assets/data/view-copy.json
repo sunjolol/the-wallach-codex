@@ -146,6 +146,16 @@
     "kd_foods_col_eat": "Put these in",
     "kd_foods_form_hd": "Sometimes it’s the form, not the food",
     "cov_rail_empty": "No items yet — add one to start building coverage.",
-    "cov_console_q": "What are you here for?"
+    "cov_console_q": "What are you here for?",
+    "kd_ep_mirror_targetlabel": "Wallach daily target",
+    "kd_ep_mirror_notarget": "None — and that is deliberate",
+    "kd_ep_mirror_via": "via {name}",
+    "kd_ep_mirror_covlabel": "Your coverage",
+    "kd_ep_mirror_covof": "of your {name} target",
+    "kd_ep_mirror_cta": "See the dosage",
+    "kd_claim_dose_appliesto": "for {name}",
+    "kd_ep_mirror_lead": "No target — on purpose.",
+    "kd_ep_mirror_body": "Wallach's requirement is for the cobalt COMPLEX — vitamin B12 — not for cobalt itself. His own supplement table lists B12 at 400 mcg and no cobalt at all. So your cobalt rides on your B12, and cobalt listed on a label counts for nothing here.",
+    "kd_ep_mirror_foot": "He does call cobalt a cofactor for the thyroid hormone thyroxin — but puts no number on it."
   }
 }

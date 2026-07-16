@@ -1634,6 +1634,22 @@
 #drawer-knowledge-mount .kd-ep-pdm-thera__label { font-family: var(--ds-font-mono); font-size: 9px; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); margin-bottom: var(--ds-space-1); }
 #drawer-knowledge-mount .kd-ep-pdm-thera__body { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.5; }
 #drawer-knowledge-mount .kd-ep-pdm-note { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.5; margin-top: var(--ds-space-4); padding-top: var(--ds-space-3); border-top: 1px dashed var(--ds-rule); }
+/* ── THE MIRROR treatment (cobalt → B12): a SHORT weighted explanation + a real destination.
+   Replaced a 11-line uniform-grey paragraph + a default list-row button (Luneth 2026-07-15:
+   "a wall of text is the opposite of clarity" / the CTA was "so basic and bad"). The fix is
+   hierarchy, not more words: an Unbounded lead states the verdict, the body carries the WHY at
+   full ink weight, the nuance drops to a footnote, and the CTA becomes an accent bar that
+   spans the column — the old one left the right half empty for no reason. */
+#drawer-knowledge-mount .kd-ep-mirror { margin-top: var(--ds-space-4); padding-top: var(--ds-space-3); border-top: 1px dashed var(--ds-rule); }
+#drawer-knowledge-mount .kd-ep-mirror__lead { font-family: var(--ds-font-display); font-size: var(--ds-text-base); font-weight: 700; letter-spacing: -0.015em; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-ep-mirror__body { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); font-weight: 500; line-height: 1.55; color: var(--ds-ink); margin-top: var(--ds-space-2); max-width: 62ch; }
+#drawer-knowledge-mount .kd-ep-mirror__foot { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); font-weight: 400; line-height: 1.45; color: var(--ds-ink-soft); margin-top: var(--ds-space-2); max-width: 62ch; }
+#drawer-knowledge-mount .kd-ep-mirror__cta { display: flex; align-items: center; gap: var(--ds-space-3); width: 100%; margin-top: var(--ds-space-4); padding: .8rem 1.1rem; text-align: left; background: var(--ds-accent); border: 0; border-radius: var(--ds-radius-sm); cursor: pointer; box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 2px 10px rgba(200, 85, 42, .20); transition: background var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-ep-mirror__cta:hover { background: var(--ds-accent-hot); transform: translateY(-1px); box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 4px 14px rgba(200, 85, 42, .30); }
+#drawer-knowledge-mount .kd-ep-mirror__cta:active { transform: translateY(0); }
+#drawer-knowledge-mount .kd-ep-mirror__cta-nm { font-family: var(--ds-font-display); font-size: var(--ds-text-sm); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: #fff; }
+#drawer-knowledge-mount .kd-ep-mirror__cta-go { margin-left: auto; font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .92); }
+#drawer-knowledge-mount .kd-ep-mirror__cta-chev { font-family: var(--ds-font-mono); font-size: var(--ds-text-lg); line-height: 1; color: #fff; }
 /* best-source rows (clickable to the product detail panel) */
 #drawer-knowledge-mount .kd-ep-src { display: flex; align-items: center; gap: var(--ds-space-3); width: 100%; text-align: left; padding: .5rem .7rem; margin-bottom: 5px; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-sm); cursor: pointer; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-ep-src:hover { border-color: var(--ds-accent); background: var(--ds-paper-deep); transform: translateX(2px); }

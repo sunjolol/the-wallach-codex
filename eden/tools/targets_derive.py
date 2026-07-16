@@ -134,10 +134,26 @@ def _collective_doses(claims: list) -> dict:
     audits each essential in isolation -- is blind to it by construction.
 
     THE MARKER IS A FACT ABOUT THE CLAIM, NOT A MODELLING FLAG: dose.collective_group
-    records that Wallach's amount applies to the named group AS A WHOLE. Contrast the
-    cobalt/vitamin-b12 dose (WAL-CLM-IMMORT-000084, "250-400 mcg"), which maps two slugs
-    because ONE substance carries two names -- that one is NOT collective and still fans.
-    Hence an explicit marker rather than "any dose mapping >1 essential".
+    records that Wallach's amount applies to the named group AS A WHOLE. A second, DIFFERENT
+    fact is dose.applies_to: the claim maps several essentials but the AMOUNT is only one of
+    theirs. Hence explicit markers rather than "any dose mapping >1 essential".
+
+    ★ CORRECTED 2026-07-15 -- THIS DOCSTRING WAS THE BUG. It read: "Contrast the
+    cobalt/vitamin-b12 dose (WAL-CLM-IMMORT-000084, '250-400 mcg'), which maps two slugs
+    because ONE substance carries two names -- that one is NOT collective and still fans."
+    THAT PREMISE IS FALSE, and it fanned a B12 dose onto cobalt as a 400 mcg ELEMENTAL cobalt
+    target for weeks under a green board. Cobalt is an ATOM INSIDE a MOLECULE ("a single cobalt
+    atom is the central metal component of vitamin B12", immortality.txt:5859-5861) -- a
+    PART-OF relation, not the IDENTITY relation "two names for one substance". 400 mcg of B12
+    carries ~4% of that mass as cobalt, not 400 mcg.
+    THE PROOF IT IS A B12 NUMBER, from Wallach's own dose table (epigenetics.txt:27219-27259):
+    the VITAMIN section carries "Vitamin B12 (methylcobalamin) 400 mcg" (:27229) and the
+    MINERAL section (:27245-27259) lists 14 minerals with NO COBALT ROW. The RDA he contrasts
+    it against ("3 to 4 mcg") is the B12 RDA -- there is no cobalt RDA -- and the claim's own
+    verbatim closes "supplement with the optimum levels of B12". No book states an elemental
+    cobalt amount (all 7 swept, 183 occurrences).
+    Both claims now carry dose.applies_to = ["vitamin-b12"], so the amount reaches B12 alone.
+    Full evidence + Luneth's ruling: chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md
 
     The shared budget is NOT a per-essential target and never becomes one here; it is
     projected into its own group artifact (the pdm-coverage-data.json shape), whose goal
@@ -162,6 +178,13 @@ def _maintenance_doses(claims: list, books_meta: dict) -> dict:
 
     Collective doses (dose.collective_group) are EXCLUDED: one shared budget must never be
     fanned into an independent per-essential number. See _collective_doses.
+
+    dose.applies_to NARROWS the fan: when present, the amount reaches ONLY the listed slugs.
+    A claim may legitimately be ABOUT several essentials while stating a number for just one
+    of them -- Wallach's "B12/cobalt" passages are the case that forced this (the claim is his
+    richest cobalt text AND its 250-400 mcg is a B12 dose). Without this, mapping == dosing,
+    and the only way to stop the fan would be to delete cobalt's mapping and with it the
+    content on cobalt's page. See the docstring above for the proof and the evidence doc.
     """
     out = collections.defaultdict(list)
     for c in claims:
@@ -179,7 +202,10 @@ def _maintenance_doses(claims: list, books_meta: dict) -> dict:
         if low is None:
             continue
         year = (books_meta.get(c["locator"]["book"], {}) or {}).get("year") or 0
+        applies = dz.get("applies_to")
         for slug in c.get("essentials", []):
+            if applies is not None and slug not in applies:
+                continue  # the claim maps this essential, but the NUMBER is not its number
             out[slug].append({
                 "id": c["id"], "book": c["locator"]["book"], "year": year,
                 "low": low, "high": high, "unit": dz.get("unit"),
@@ -291,10 +317,24 @@ def build_data() -> dict:
                           f"for the {cg['group'].replace('-', ' ')} group, not a per-essential amount",
             }
         else:
+            kind = e.get("coverage_kind", "unspecified")
             target = {
-                "kind": e.get("coverage_kind", "unspecified"),
+                "kind": kind,
                 "source": "Wallach framework — no maintenance amount stated (honest gap; blueprint §7.1)",
             }
+            if kind == "mirrors":
+                # This essential states NO amount of its own and never will: Wallach's
+                # position is that its requirement is met through ANOTHER essential. So it
+                # posts no number (nothing to invent) and inherits that essential's verdict.
+                # The routing is the canon's (a MODELLING field -- trace_pdm / dietary /
+                # unspecified are our vocabulary, not Wallach's words), so the pillar owns it
+                # and no slug is hardcoded here (R1/R3). Gated by mirrors_resolve.
+                target["mirrors_slug"] = e["mirrors_slug"]
+                target["source"] = (
+                    "Wallach framework — no separate amount is stated for this essential; "
+                    "his position is that the requirement is met through "
+                    f"{e['mirrors_slug'].replace('-', ' ')}, so it carries that verdict"
+                )
 
         essentials.append({"name": name, "slug": slug, "category": category, "target": target})
 

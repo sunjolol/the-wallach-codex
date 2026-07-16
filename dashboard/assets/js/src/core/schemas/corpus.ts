@@ -24,6 +24,15 @@ export const CorpusDoseSchema = z.object({
   form: z.string().nullable().optional(),
   duration: z.string().nullable().optional(),
   for_condition: z.string().nullable().optional(),
+  /**
+   * The essentials this AMOUNT is for, when the claim maps more than it doses. Wallach's
+   * "B12/cobalt" passages are the case: the claim is his richest cobalt text, but the
+   * 250-400 mcg is a vitamin-B12 amount (his own table lists B12 at 400 mcg and has no
+   * cobalt line). TYPED, not left to passthrough — the dose card ROUTES on it, and an
+   * untyped read of a routing field is how the omegas once reached the mineral meter.
+   * Enforced end-to-end by collective_doses_not_fanned.
+   */
+  applies_to: z.array(z.string()).nullable().optional(),
 }).passthrough();
 
 /** One slim claim atom — the runtime-needed projection of a sealed claim. */

@@ -17,7 +17,7 @@ import { z } from 'zod';
 
 /** A Wallach target as the coverage classifier needs it (`essentials-targets-data`). */
 export const CoverageTargetSchema = z.object({
-  /** trace_pdm · hbsp · dietary · wallach · wallach_clinical · wallach_collective · dietary_with_clinical_lever · unspecified · … */
+  /** trace_pdm · hbsp · dietary · wallach · wallach_clinical · wallach_collective · dietary_with_clinical_lever · mirrors · unspecified · … */
   kind: z.string().optional(),
   /** Lower bound of the Wallach target in `unit`. */
   low: z.number().optional(),
@@ -32,6 +32,21 @@ export const CoverageTargetSchema = z.object({
    * untyped read here once sent the omegas into the rare-earth mineral meter.
    */
   collective_group: z.string().optional(),
+  /**
+   * For kind 'mirrors': the slug of the essential whose verdict this one carries.
+   *
+   * Wallach states NO amount for a mirroring essential and his position is that its
+   * requirement is met through the named one — cobalt is the case: "the requirement is for a
+   * cobalt complex known as cyanocobalamine or vitamin B12" (immortality.txt:5882-5885), and
+   * no book states an elemental cobalt amount (all 7 swept). So the target carries NO `low`
+   * on purpose: there is no number to post, and inventing one is the exact bug this replaced
+   * (a 400 mcg elemental cobalt target fanned off a B12 dose).
+   *
+   * ★ TYPED, not left to passthrough — for the same reason collective_group above is: state/
+   * coverage.ts ROUTES on it, and an untyped routing read here once sent the omegas into the
+   * rare-earth mineral meter. Resolution + no-cycle proof: mirrors_resolve (tools/invariants.py).
+   */
+  mirrors_slug: z.string().optional(),
 }).passthrough();
 export type CoverageTarget = z.infer<typeof CoverageTargetSchema>;
 

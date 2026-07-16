@@ -2038,12 +2038,111 @@ def check_amounts_wallach_only():
 # Slug sets where ONE substance legitimately carries >1 canon name, so a single dose DOES
 # fan to both. This is the ONLY exemption from collective_doses_not_fanned's fail-closed
 # arity check -- every entry needs a stated reason, and adding one is a deliberate act.
-#   cobalt/vitamin-b12: cobalt is the metal atom at the centre of the cobalamin molecule;
-#   Wallach's "250-400 mcg" is one intake described by both names, not a split budget
-#   (WAL-CLM-IMMORT-000084, WAL-CLM-RARE-000014).
-_SAME_SUBSTANCE_SLUGS = (
-    frozenset({"cobalt", "vitamin-b12"}),
-)
+#
+# ★ EMPTY SINCE 2026-07-15, AND ITS ONLY EVER ENTRY WAS A FABRICATION (R9 -- a tightening,
+# never a loosening). It read:
+#     cobalt/vitamin-b12: cobalt is the metal atom at the centre of the cobalamin molecule;
+#     Wallach's "250-400 mcg" is one intake described by both names, not a split budget.
+# That reason REFUTES ITSELF: "the metal atom at the centre of" is a PART-OF relation; "one
+# intake described by both names" is an IDENTITY relation. An atom inside a molecule is not
+# the molecule -- 400 mcg of B12 carries ~4% of that mass as cobalt. The carve-out let a B12
+# dose post a 400 mcg ELEMENTAL COBALT target, and because the exemption lived HERE, the gate
+# built to catch exactly that class reported green while it happened.
+# Both claims now carry dose.applies_to = ["vitamin-b12"] (the amount is B12's), so they map
+# one dosed essential each and need no exemption. Evidence + Luneth's ruling:
+# chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md
+#
+# THE LESSON, for whoever is tempted to add the next entry: an exemption is a claim about the
+# WORLD, not a build fix. This one was chemistry nobody checked against the books, written
+# into gate source where no reviewer looks for chemistry. If you cannot cite a Wallach
+# verbatim for the identity, there is no identity -- split the claim or use applies_to.
+_SAME_SUBSTANCE_SLUGS = ()
+
+
+def _mirrors_resolve_impl(embed_p, canon_p):
+    """R7 gate for the 'mirrors' target kind (Phase: cobalt, 2026-07-15).
+
+    A mirroring essential states NO Wallach amount and carries another essential's verdict
+    instead (cobalt -> vitamin-b12: "the requirement is for a cobalt complex known as
+    cyanocobalamine or vitamin B12", immortality.txt:5882-5885; no book states an elemental
+    cobalt amount). state/coverage.ts resolves it in a second pass. This proves the resolution
+    can never be ambiguous, circular, or silently wrong.
+
+    FIVE CHECKS, all anchored to the SEALED canon rather than to the derive's opinion of it
+    (SS00.B #11), so a targets_derive bug cannot also silence this:
+      1. kind 'mirrors' carries a non-empty mirrors_slug -- else the view has nothing to point
+         at and the tile falls statusless with no explanation.
+      2. mirrors_slug RESOLVES to a real canon essential. A typo'd slug would leave the tile
+         permanently blank and look exactly like an unmined essential.
+      3. The mirrored essential is NOT itself a mirror -> no chains, no cycles. coverage.ts
+         does a SINGLE hop; a chain would silently truncate rather than error.
+      4. A mirrors target posts NO numeric `low`. This is the R2 half: the whole defect was a
+         number on this tile. If one ever reappears, amounts_wallach_only would not see it
+         (it skips non-numeric targets and would then start auditing a fabricated one), so
+         this is the only gate watching.
+      5. The canon and the artifact AGREE on which essentials mirror -- a hand-edited artifact
+         cannot introduce a mirror the pillar never declared.
+
+    ★ WHAT THIS GATE DOES NOT PROVE, stated plainly (R7 honesty): that cobalt SHOULD mirror
+    B12. That is an editorial call by Luneth on a source that says it BOTH ways -- Wallach also
+    writes that cobalt is "also required as a necessary cofactor for the production of the
+    thyroid hormone thyroxin" (immortality.txt:5946-5947, in 3 books). This gate is structural
+    only; it cannot catch a wrong mirror, only an unresolvable one. The reasoning is recorded
+    in chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md, not certified here.
+    """
+    import json as _json
+    if not (embed_p.exists() and canon_p.exists()):
+        return True, "targets embed / canon not installed (bootstrap-guard)"
+
+    canon = _json.loads(canon_p.read_text(encoding="utf-8"))
+    ess = canon.get("essentials", canon) if isinstance(canon, dict) else canon
+    by_slug = {e["slug"]: e for e in ess if isinstance(e, dict) and e.get("slug")}
+    canon_mirrors = {s for s, e in by_slug.items() if e.get("coverage_kind") == "mirrors"}
+
+    data = _json.loads(embed_p.read_text(encoding="utf-8"))
+    problems = []
+    art_mirrors = set()
+    for entry in data.get("essentials", []):
+        t = entry.get("target") or {}
+        if t.get("kind") != "mirrors":
+            continue
+        slug = entry.get("slug")
+        art_mirrors.add(slug)
+        tgt = t.get("mirrors_slug")
+        if not tgt:                                                       # 1
+            problems.append(f"{slug}: kind 'mirrors' with no mirrors_slug")
+            continue
+        if tgt not in by_slug:                                            # 2
+            problems.append(f"{slug}: mirrors_slug {tgt!r} resolves to no canon essential")
+            continue
+        if by_slug[tgt].get("coverage_kind") == "mirrors":                # 3
+            problems.append(f"{slug}: mirrors {tgt!r}, which is ITSELF a mirror (chain/cycle)")
+        if isinstance(t.get("low"), (int, float)):                        # 4
+            problems.append(
+                f"{slug}: mirrors target posts a numeric low={t['low']} — a mirroring essential "
+                f"has NO Wallach amount by definition; this is the 400 mcg defect returning")
+
+    if art_mirrors != canon_mirrors:                                      # 5
+        problems.append(
+            f"canon/artifact disagree on which essentials mirror: canon={sorted(canon_mirrors)} "
+            f"artifact={sorted(art_mirrors)}")
+
+    if problems:
+        return False, "mirrors: " + "; ".join(problems[:4])
+    if not canon_mirrors:
+        return True, "no mirroring essentials declared (vacuously clean; fails closed on the first)"
+    pairs = ", ".join(f"{s}->{by_slug[s].get('mirrors_slug')}" for s in sorted(canon_mirrors))
+    return True, (f"{len(canon_mirrors)} mirroring essential(s) resolve to a real non-mirror "
+                  f"essential and post no number ({pairs})")
+
+
+def check_mirrors_resolve():
+    """R7 wrapper -- see _mirrors_resolve_impl. Thin path-binding shell so a negative test can
+    drive the same logic on planted data."""
+    return _mirrors_resolve_impl(
+        ROOT / "dashboard/assets/data/essentials-targets-data.json",
+        ROOT / "eden/corpus/essentials-canon.json",
+    )
 
 
 def _collective_doses_not_fanned_impl(embed_p, claims_dir):
@@ -2070,10 +2169,12 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     targets_derive bug that starts fanning again cannot also silence this, because the truth
     is read from eden/corpus/claims/* independently.
 
-    Deliberately NOT "any dose mapping >1 essential is collective": the cobalt/vitamin-b12
-    dose maps two slugs because ONE substance carries two names (cobalt is the metal atom at
-    the centre of cobalamin), which is a different relation and legitimately fans.
-    Collectivity is a stated fact on the claim, not an inference from arity.
+    Deliberately NOT "any dose mapping >1 essential is collective": collectivity is a stated
+    fact on the claim, not an inference from arity. A dose may map several essentials and
+    still not be collective -- but then its amount belongs to a SUBSET, which the claim states
+    via dose.applies_to (targets_derive._maintenance_doses honours it) rather than fanning.
+    ★ This paragraph used to cite cobalt/vitamin-b12 as a legitimate fan ("ONE substance
+    carries two names"). That was FALSE and it was the bug -- see _SAME_SUBSTANCE_SLUGS above.
 
     THE FAIL-OPEN, CLOSED 2026-07-15 (R9). The check keyed ENTIRELY on `dose.collective_group`
     -- a HAND-AUTHORED annotation -- and returned "no collective dose claims sealed (vacuously
@@ -2105,6 +2206,7 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     # declared same-substance pair is UNCLASSIFIED -- it may be a silent fan-out. Checked
     # BEFORE the `not collective` early-return, which is exactly where the old hole was.
     unclassified = []
+    scoped = {}   # claim_id -> (applies_to set, mapped-but-undosed set)
     for shard in sorted(claims_dir.glob("claims-*.json")):
         for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
             if c.get("kind") != "dose":
@@ -2112,7 +2214,27 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
             es = set(c.get("essentials") or [])
             if len(es) < 2:
                 continue
-            if (c.get("dose") or {}).get("collective_group"):
+            dz = c.get("dose") or {}
+            if dz.get("collective_group"):
+                continue
+            ap = dz.get("applies_to")
+            if ap is not None:
+                # THE THIRD CLASSIFICATION (2026-07-15): the claim is ABOUT several essentials
+                # but the AMOUNT is only some of theirs. Like collective_group this is a STATED
+                # FACT on the claim, never inferred from arity — and it is validated here, not
+                # trusted: a malformed applies_to must not become a way to silence the gate.
+                aps = set(ap)
+                if not aps:
+                    unclassified.append(f"{c['id']}: dose.applies_to is EMPTY (states nothing)")
+                elif not aps <= es:
+                    unclassified.append(
+                        f"{c['id']}: dose.applies_to {sorted(aps - es)} not among its essentials")
+                elif aps == es:
+                    unclassified.append(
+                        f"{c['id']}: dose.applies_to lists EVERY mapped essential — that is a fan-out "
+                        f"with extra steps; drop it, or declare collective_group if the amount is shared")
+                else:
+                    scoped[c["id"]] = (aps, es - aps)
                 continue
             if any(es <= pair for pair in _SAME_SUBSTANCE_SLUGS):
                 continue
@@ -2124,9 +2246,31 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
             f"budget fanned per-slug doubles the board target and every other gate passes: "
             + "; ".join(unclassified[:4]))
 
+    # applies_to ENFORCED, not merely accepted: an essential the claim maps but does NOT dose
+    # may carry no numeric target sourced from it. Without this the marker would be a comment
+    # — the derive could ignore it and the gate would still say clean. Anchored to the sealed
+    # claims + the artifact, independently of targets_derive (§00.B #11).
+    if scoped:
+        art = _json.loads(embed_p.read_text(encoding="utf-8")) if embed_p.exists() else {}
+        leaked = []
+        for e in art.get("essentials", []):
+            t = e.get("target") or {}
+            cid = t.get("source_claim_id")
+            if cid not in scoped:
+                continue
+            aps, undosed = scoped[cid]
+            if e.get("slug") in undosed and isinstance(t.get("low"), (int, float)):
+                leaked.append(
+                    f"{e.get('slug')}: numeric target {t['low']} {t.get('unit')} sourced from {cid}, "
+                    f"whose dose.applies_to says the amount is {sorted(aps)}'s — the fan-out the "
+                    f"marker exists to stop")
+        if leaked:
+            return False, "applies_to declared but NOT honoured: " + "; ".join(leaked[:3])
+
     if not collective:
         return True, ("no collective dose claims sealed; "
-                      f"{len(_SAME_SUBSTANCE_SLUGS)} same-substance pair(s) declared and every "
+                      f"{len(_SAME_SUBSTANCE_SLUGS)} same-substance pair(s) declared, "
+                      f"{len(scoped)} applies_to-scoped claim(s) honoured, and every "
                       "multi-essential dose claim is classified (fails closed on the next one)")
 
     data = _json.loads(embed_p.read_text(encoding="utf-8"))
@@ -2147,7 +2291,8 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
                        + "; ".join(bad))
     n = sum(len(v["members"]) for v in collective.values())
     return True, (f"{len(collective)} collective dose claim(s) covering {n} essential(s) carry NO "
-                  f"per-essential number (the shared budget is not fanned out)")
+                  f"per-essential number (the shared budget is not fanned out); "
+                  f"{len(scoped)} applies_to-scoped claim(s) dose only the essential(s) they name")
 
 
 def check_collective_doses_not_fanned():
@@ -4595,6 +4740,15 @@ INVARIANTS = [
         truth_anchor="eden/corpus/claims/* sealed dose claims carrying dose.collective_group x essentials-targets-data.json target.source_claim_id + target.low, read independently of targets_derive so a derive that starts fanning again cannot silence its own gate",
         severity="critical",
         lesson_ref="Omega EFA target (2026-07-15) — PROVEN before the gate was written: with the 9 g claim sealed, the derive emitted omega-3=9 g AND omega-6=9 g (18 g total) and amounts_wallach_only returned 'all 40 numeric coverage target(s) trace ... (R2 clean)'. Every existing gate passed while the number was double what Wallach wrote. chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
+    ),
+    Invariant(
+        name="mirrors_resolve",
+        anchor_class="external",  # the sealed canon's routing, read independently of the derive
+        description="R7 gate for the 'mirrors' target kind: an essential that states NO Wallach amount and carries ANOTHER essential's verdict (cobalt -> vitamin-b12 — 'the requirement is for a cobalt complex known as cyanocobalamine or vitamin B12', immortality.txt:5882-5885; no book states an elemental cobalt amount, all 7 swept). Proves the mirror (1) names a slug, (2) that resolves in the sealed canon, (3) that is not ITSELF a mirror (no chain/cycle — coverage.ts does a single hop), (4) posts NO numeric low (the R2 half: a number here IS the 400 mcg defect returning, and amounts_wallach_only cannot see it because it skips non-numeric targets), and (5) that canon + artifact agree on WHICH essentials mirror. STRUCTURAL ONLY: it cannot prove cobalt SHOULD mirror B12 — that is Luneth's editorial call on a two-sided source, recorded in the contradictions doc, not certified here",
+        check_fn=check_mirrors_resolve,
+        truth_anchor="eden/corpus/essentials-canon.json (sealed) coverage_kind + mirrors_slug x essentials-targets-data.json target.kind/mirrors_slug/low, read independently of targets_derive so a derive bug cannot silence its own gate",
+        severity="critical",
+        lesson_ref="Cobalt (2026-07-15). The 400 mcg elemental cobalt target came from a B12 dose fanned across a claim mapping both slugs, and the exemption that allowed it lived in invariants.py itself ('cobalt is the metal atom at the centre of the cobalamin molecule; ... one intake described by both names') — a self-refuting chemistry assertion in gate source, where no reviewer looks for chemistry. THREE successive fixes were proposed on premises the books refuted; the mirror is the fourth and its premise is that Wallach answers this BOTH ways, so the call was escalated rather than assumed. chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md",
     ),
     Invariant(
         name="efa_goal_wallach_sourced",

@@ -35,7 +35,7 @@ import {
   SEARCH_FACETS,
   type SearchClaim,
 } from '../core/schemas/index.js';
-import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
+import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
 import { facetLabel, kindCategory, kindLabel, ui } from '../state/copy.js';
 import {
   conditionDisplayName,
@@ -132,6 +132,15 @@ function fig81OwnRow(verbatim: string): string {
 function doseContextLabel(claim: CorpusClaim): string {
   if (isFig81Row(claim)) {
     return 'True Supplement Need';
+  }
+  // applies_to WINS over for_condition: when a claim maps several essentials but doses only
+  // some, WHOSE number this is outranks what it is for. Without this the card renders a naked
+  // "250-400 mcg / daily" on cobalt's page — directly contradicting the alert above it, which
+  // says Wallach states no cobalt amount. The target was already gone; the CARD still lied.
+  const applies = claim.dose?.applies_to;
+  if (Array.isArray(applies) && applies.length > 0) {
+    const names = applies.map(sl => essentialNameOf(sl) || sl).join(' + ');
+    return fillTokens('kd_claim_dose_appliesto', { name: names });
   }
   const fc = (claim.dose?.for_condition ?? '').trim();
   return fc.replace(/\s*\([^)]*\)\s*$/, '').trim();
@@ -330,6 +339,14 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   if (tile?.pdmGroup === true && snapshot?.pdmGroup != null) {
     return renderPdmGroupGlance(snapshot.pdmGroup);
   }
+  // A MIRROR states no amount of its own — Wallach's requirement for it is met through another
+  // essential. Render the explanation IN PLACE of the target box: a tile with no number and no
+  // reason is indistinguishable from one we simply have not mined yet, and that ambiguity is
+  // what this treatment exists to remove (Luneth 2026-07-15: the special case must be
+  // impossible to misread, so nobody supplements against a goal we never stated).
+  if (tile?.mirrorsOf != null && tile.mirrorsOf.length > 0) {
+    return renderMirrorGlance(tile);
+  }
   const ivt = tile?.intakeVsTarget ?? null;
   const why = slug !== null ? essentialWhy(slug) : '';
   const whyHTML = why.length > 0
@@ -430,6 +447,53 @@ function pdmSrcRow(s: { productId: string; name: string; mg: number }): string {
       <span class="kd-ep-src__amt">${fmtTarget(s.mg)} mg</span>
       <span class="kd-ep-src__chev">›</span>
     </button>`;
+}
+
+/**
+ * The MIRROR treatment: this essential has no Wallach amount and never will, because his
+ * position is that its requirement is met through another essential. Replaces the target box
+ * with (a) an explicit "no target, deliberately" statement, (b) the mirrored coverage bar, and
+ * (c) the alert + a jump to the essential that actually carries the dose.
+ *
+ * §00.A: every sentence in the alert is Wallach's position, held single-copy in view-copy.json
+ * (R4) — nothing here invents an amount, and the bar reads the mirrored tile's fill, never a
+ * cobalt number. Cobalt is the only case today; the treatment keys off target.kind, not a slug.
+ */
+function renderMirrorGlance(tile: CoverageTile): string {
+  const src = tile.mirrorsOf ?? '';
+  // The layout key carries the disambiguating parenthetical ("Vitamin B12 (Cobalamin)") because
+  // it must be unique across 91 essentials. In running copy that reads as noise, so the short
+  // form is used for display only — same essential, same slug, just not shouted twice.
+  const short = src.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  const pct = Math.max(0, Math.round(tile.fillPercent * 100));
+  const barPct = Math.min(100, pct);
+  const cta = src.length > 0
+    ? `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="${escHTML(src)}">
+        <span class="kd-ep-mirror__cta-nm">${escHTML(short)}</span>
+        <span class="kd-ep-mirror__cta-go">${escHTML(ui('kd_ep_mirror_cta'))}</span>
+        <span class="kd-ep-mirror__cta-chev" aria-hidden="true">›</span>
+      </button>`
+    : '';
+  return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_mirror_targetlabel'))}</div>
+        <div class="kd-ep-gap">${escHTML(ui('kd_ep_mirror_notarget'))}</div>
+      </div>
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_mirror_covlabel'))} <span class="kd-ep-pdm-tag">${escHTML(fillTokens('kd_ep_mirror_via', { name: short }))}</span></div>
+        <div class="kd-ep-v">${pct}<small>%</small></div>
+        <div class="kd-ep-bar${barFillClass(tile.status)}"><i style="width:${barPct}%"></i></div>
+        <div class="kd-ep-sub">${escHTML(fillTokens('kd_ep_mirror_covof', { name: short }))}</div>
+      </div>
+    </div>
+    <div class="kd-ep-mirror">
+      <div class="kd-ep-mirror__lead">${escHTML(ui('kd_ep_mirror_lead'))}</div>
+      <div class="kd-ep-mirror__body">${escHTML(ui('kd_ep_mirror_body'))}</div>
+      <div class="kd-ep-mirror__foot">${escHTML(ui('kd_ep_mirror_foot'))}</div>
+      ${cta}
+    </div>
+  </div>`;
 }
 
 /**
