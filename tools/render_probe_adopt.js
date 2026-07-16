@@ -4,7 +4,7 @@
 //
 // Drives the core value path: scan a label, click the product-level
 // "ADD TO REGIMEN" action on the verdict card, and assert that
-//   - the scanned product lands in rgManualItems_v1 (provenance 'user_scanned');
+//   - the scanned product lands in the active slot inside rgSlots_v1 (provenance 'user_scanned');
 //   - the verdict button confirms (text + disabled);
 //   - covered tiles on the Coverage surface increase (the §31 saveRgManual →
 //     regimen:changed → coverage recompute cascade).
@@ -75,11 +75,19 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 
   // Click the product-level ADD TO REGIMEN action and read the result.
   const adopt = await page.evaluate(() => {
-    const before = JSON.parse(localStorage.getItem('rgManualItems_v1') || '[]').length;
+    // P3: the adopt path (§31 saveRgManual) now writes the ACTIVE SLOT inside rgSlots_v1, not the
+    // retired rgManualItems_v1 key. Read the active slot's items to assert the write landed.
+    const activeItems = () => {
+      const doc = JSON.parse(localStorage.getItem('rgSlots_v1') || 'null');
+      if (!doc || !Array.isArray(doc.slots)) { return []; }
+      const active = doc.slots.find(s => s.id === doc.activeSlot);
+      return active ? active.items : [];
+    };
+    const before = activeItems().length;
     const btn = document.querySelector('#workspace-scanner-mount [data-sc-action="adopt-product"]');
     const btnFound = btn !== null;
     if (btnFound) { btn.click(); }
-    const after = JSON.parse(localStorage.getItem('rgManualItems_v1') || '[]');
+    const after = activeItems();
     const last = after[after.length - 1] || null;
     return {
       btnFound,

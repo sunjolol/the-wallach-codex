@@ -99,6 +99,9 @@
     }
     return set(key, result.data);
   }
+  function getRaw(key) {
+    return localStorage.getItem(key);
+  }
   function onChange(handler) {
     installNativeListener();
     subscribers2.add(handler);
@@ -14166,6 +14169,46 @@
   var RgManualSchema = external_exports.array(RegimenItemSchema);
   var RgRemovedSchema = external_exports.array(external_exports.number());
   var RgUserGoalsSchema = external_exports.array(external_exports.string());
+  var SLOT_NAME_MAX = 40;
+  var SLOT_NAME_FORBIDDEN = /[\u0000-\u001F\u007F-\u009F\u202A-\u202E\u2066-\u2069]/;
+  var SLOT_NAME_INVISIBLE_ONLY = /^[\s\u200B-\u200D\u2060]*$/;
+  var SlotNameSchema = external_exports.string().transform((s) => s.trim()).refine((s) => !SLOT_NAME_INVISIBLE_ONLY.test(s), {
+    message: "A slot name needs at least one visible character."
+  }).refine((s) => s.length <= SLOT_NAME_MAX, {
+    message: `A slot name can be at most ${SLOT_NAME_MAX} characters.`
+  }).refine((s) => !SLOT_NAME_FORBIDDEN.test(s), {
+    message: "A slot name cannot contain control characters."
+  });
+  var SlotSchema = external_exports.object({
+    id: external_exports.string(),
+    name: SlotNameSchema,
+    items: external_exports.array(RegimenItemSchema),
+    overrides: OverridesMapSchema,
+    createdAt: external_exports.string(),
+    // ISO YYYY-MM-DD
+    editedAt: external_exports.string()
+    // ISO YYYY-MM-DD
+  });
+  var TrashEntrySchema = external_exports.object({
+    item: RegimenItemSchema,
+    slotId: external_exports.string(),
+    removedAt: external_exports.string()
+    // ISO YYYY-MM-DD
+  });
+  var SlotDocSchema = external_exports.object({
+    version: external_exports.literal(1),
+    slots: external_exports.array(SlotSchema).min(1).max(4),
+    activeSlot: external_exports.string(),
+    trash: external_exports.array(TrashEntrySchema).max(20)
+  }).superRefine((doc, ctx) => {
+    if (!doc.slots.some((s) => s.id === doc.activeSlot)) {
+      ctx.addIssue({
+        code: external_exports.ZodIssueCode.custom,
+        message: `activeSlot '${doc.activeSlot}' does not resolve to any slot`,
+        path: ["activeSlot"]
+      });
+    }
+  });
 
   // assets/js/src/core/schemas/scanner-corpus.ts
   var DietaryBaselineEntrySchema = external_exports.object({
@@ -14661,11 +14704,15 @@
   }
 
   // assets/js/src/state/regimen.ts
+  var RG_SLOTS_KEY = "rgSlots_v1";
+  var RG_USER_GOALS_KEY = "rgUserGoals_v1";
   var REGIMEN_KEY = "lcRegimen_v1";
   var RG_OVERRIDES_KEY = "rgOverrides_v1";
   var RG_MANUAL_KEY = "rgManualItems_v1";
   var RG_REMOVED_KEY = "rgRemoved_v1";
-  var RG_USER_GOALS_KEY = "rgUserGoals_v1";
+  var MAX_SLOTS = 4;
+  var MAX_TRASH = 20;
+  var DEFAULT_SLOT_ID = "default";
   function fireLegacyTrigger(label) {
     const w = window;
     if (typeof w.triggerRegimenRerender === "function") {
@@ -14676,50 +14723,279 @@
       }
     }
   }
-  function loadRegimen() {
+  function today() {
+    return (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+  }
+  function newSlotId() {
+    return `slot_${Date.now().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`;
+  }
+  function capTrash(entries) {
+    return entries.slice(0, MAX_TRASH);
+  }
+  function getActiveSlot(doc) {
+    const found = doc.slots.find((s) => s.id === doc.activeSlot);
+    if (found !== void 0) {
+      return found;
+    }
+    const first = doc.slots[0];
+    if (first !== void 0) {
+      return first;
+    }
+    throw new Error("[state/regimen] slot document has no slots \u2014 schema invariant violated");
+  }
+  function withActiveSlot(doc, fn) {
+    return { ...doc, slots: doc.slots.map((s) => s.id === doc.activeSlot ? fn(s) : s) };
+  }
+  function readLegacyRegimen() {
     return getValidated(REGIMEN_KEY, RegimenSchema) ?? { items: [] };
   }
-  function loadRgOverrides() {
-    return getValidated(RG_OVERRIDES_KEY, OverridesMapSchema) ?? {};
-  }
-  function loadRgManual() {
+  function readLegacyManual() {
     return getValidated(RG_MANUAL_KEY, RgManualSchema) ?? [];
   }
+  function readLegacyOverrides() {
+    return getValidated(RG_OVERRIDES_KEY, OverridesMapSchema) ?? {};
+  }
+  function readLegacyRemoved() {
+    return new Set(getValidated(RG_REMOVED_KEY, RgRemovedSchema) ?? []);
+  }
+  function migrateFromLegacy() {
+    const hidden = readLegacyRemoved();
+    const byId = /* @__PURE__ */ new Map();
+    for (const item of [...readLegacyRegimen().items, ...readLegacyManual()]) {
+      byId.set(item.id, item);
+    }
+    const all = [...byId.values()];
+    const live = all.filter((i) => !hidden.has(i.id));
+    const now = today();
+    const trash = capTrash(
+      all.filter((i) => hidden.has(i.id)).map((item) => ({ item, slotId: DEFAULT_SLOT_ID, removedAt: now }))
+    );
+    return {
+      version: 1,
+      slots: [{
+        id: DEFAULT_SLOT_ID,
+        name: "Default",
+        items: live,
+        overrides: readLegacyOverrides(),
+        createdAt: now,
+        editedAt: now
+      }],
+      activeSlot: DEFAULT_SLOT_ID,
+      trash
+    };
+  }
+  function loadSlotDoc() {
+    if (getRaw(RG_SLOTS_KEY) !== null) {
+      const doc = getValidated(RG_SLOTS_KEY, SlotDocSchema);
+      if (doc !== null) {
+        return doc;
+      }
+      console.warn("[state/regimen] rgSlots_v1 present but failed validation \u2014 rebuilding a Default slot from the legacy keys (auto-heal).");
+    }
+    const migrated = migrateFromLegacy();
+    writeSlotDoc(migrated, { emit: false });
+    return migrated;
+  }
+  function writeSlotDoc(doc, opts) {
+    const res = setValidated(RG_SLOTS_KEY, doc, SlotDocSchema);
+    if (!res.ok) {
+      console.warn(`[state/regimen] slot document write failed (${res.reason ?? "unknown"}).`);
+      return res;
+    }
+    if (opts?.emit !== false) {
+      fireLegacyTrigger("slotDoc");
+      emit("regimen:changed", { slotId: RG_SLOTS_KEY, reason: opts?.reason ?? "restore" });
+    }
+    return res;
+  }
+  function loadRgOverrides() {
+    return getActiveSlot(loadSlotDoc()).overrides;
+  }
+  function loadRgManual() {
+    return getActiveSlot(loadSlotDoc()).items;
+  }
   function loadRgRemoved() {
-    const arr = getValidated(RG_REMOVED_KEY, RgRemovedSchema);
-    return new Set(arr ?? []);
+    const doc = loadSlotDoc();
+    const activeId = getActiveSlot(doc).id;
+    return new Set(doc.trash.filter((e) => e.slotId === activeId).map((e) => e.item.id));
   }
   function loadRgUserGoals() {
     return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
   }
   function loadEffectiveRegimen() {
-    const removed = loadRgRemoved();
-    const byId = /* @__PURE__ */ new Map();
-    for (const item of [...loadRegimen().items, ...loadRgManual()]) {
-      if (removed.has(item.id)) {
-        continue;
-      }
-      byId.set(item.id, item);
-    }
-    return [...byId.values()];
+    return getActiveSlot(loadSlotDoc()).items;
+  }
+  function persistRegimen(r, _sourceLabel = "persistRegimen") {
+    const doc = loadSlotDoc();
+    writeSlotDoc(withActiveSlot(doc, (s) => ({ ...s, items: r.items, editedAt: today() })), { reason: "restore" });
   }
   function saveRgOverride(id, patch) {
-    const all = loadRgOverrides();
+    const doc = loadSlotDoc();
     const key = String(id);
-    all[key] = { ...all[key] ?? {}, ...patch };
-    set(RG_OVERRIDES_KEY, all);
-    fireLegacyTrigger(`saveRgOverride:${id}`);
-    emit("regimen:changed", { slotId: RG_OVERRIDES_KEY, reason: "dose-edit" });
+    writeSlotDoc(
+      withActiveSlot(doc, (s) => ({
+        ...s,
+        overrides: { ...s.overrides, [key]: { ...s.overrides[key] ?? {}, ...patch } },
+        editedAt: today()
+      })),
+      { reason: "dose-edit" }
+    );
   }
   function saveRgManual(items) {
-    set(RG_MANUAL_KEY, items);
-    fireLegacyTrigger("saveRgManual");
-    emit("regimen:changed", { slotId: RG_MANUAL_KEY, reason: "add" });
+    const doc = loadSlotDoc();
+    writeSlotDoc(withActiveSlot(doc, (s) => ({ ...s, items, editedAt: today() })), { reason: "add" });
   }
   function saveRgRemoved(setOfIds) {
-    set(RG_REMOVED_KEY, [...setOfIds]);
-    fireLegacyTrigger("saveRgRemoved");
-    emit("regimen:changed", { slotId: RG_REMOVED_KEY, reason: "remove" });
+    const doc = loadSlotDoc();
+    const slot = getActiveSlot(doc);
+    const toTrash = slot.items.filter((i) => setOfIds.has(i.id));
+    const remaining = slot.items.filter((i) => !setOfIds.has(i.id));
+    const now = today();
+    const newEntries = toTrash.map((item) => ({ item, slotId: slot.id, removedAt: now }));
+    const movedIds = new Set(toTrash.map((i) => i.id));
+    const keptOld = doc.trash.filter((e) => !movedIds.has(e.item.id));
+    const next = {
+      ...doc,
+      slots: doc.slots.map((s) => s.id === slot.id ? { ...s, items: remaining, editedAt: now } : s),
+      trash: capTrash([...newEntries, ...keptOld])
+    };
+    writeSlotDoc(next, { reason: "remove" });
+  }
+  function saveRgUserGoals(goalsArray) {
+    const cleaned = Array.isArray(goalsArray) ? goalsArray.filter((g) => typeof g === "string" && g.length > 0) : [];
+    set(RG_USER_GOALS_KEY, cleaned);
+    fireLegacyTrigger("saveRgUserGoals");
+    emit("regimen:changed", { slotId: RG_USER_GOALS_KEY, reason: "add" });
+  }
+  function loadSlots() {
+    return loadSlotDoc();
+  }
+  function addSlot(name) {
+    const doc = loadSlotDoc();
+    if (doc.slots.length >= MAX_SLOTS) {
+      return { ok: false, reason: `You can have at most ${MAX_SLOTS} regimen slots. Delete one first.` };
+    }
+    const resolvedName = name ?? `Slot ${doc.slots.length + 1}`;
+    const checked = SlotNameSchema.safeParse(resolvedName);
+    if (!checked.success) {
+      return { ok: false, reason: checked.error.issues[0]?.message ?? "That slot name cannot be used." };
+    }
+    const now = today();
+    const slot = { id: newSlotId(), name: checked.data, items: [], overrides: {}, createdAt: now, editedAt: now };
+    const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: "add" });
+    return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: "That slot could not be saved to this device." };
+  }
+  function duplicateSlot(id) {
+    const doc = loadSlotDoc();
+    if (doc.slots.length >= MAX_SLOTS) {
+      return { ok: false, reason: `You can have at most ${MAX_SLOTS} regimen slots. Delete one first.` };
+    }
+    const src = doc.slots.find((s) => s.id === id);
+    if (src === void 0) {
+      return { ok: false, reason: "That slot no longer exists." };
+    }
+    const resolvedName = `${src.name} copy`.slice(0, 40);
+    const checked = SlotNameSchema.safeParse(resolvedName);
+    const now = today();
+    const slot = {
+      id: newSlotId(),
+      name: checked.success ? checked.data : `Slot ${doc.slots.length + 1}`,
+      items: src.items.map((i) => ({ ...i })),
+      overrides: structuredClone(src.overrides),
+      createdAt: now,
+      editedAt: now
+    };
+    const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: "add" });
+    return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: "That slot could not be saved to this device." };
+  }
+  function deleteSlot(id) {
+    const doc = loadSlotDoc();
+    if (doc.slots.length <= 1) {
+      return { ok: false, reason: "This is your only regimen slot \u2014 it can\u2019t be deleted." };
+    }
+    const target = doc.slots.find((s) => s.id === id);
+    if (target === void 0) {
+      return { ok: false, reason: "That slot no longer exists." };
+    }
+    const survivors = doc.slots.filter((s) => s.id !== id);
+    const promoted = survivors[0];
+    if (promoted === void 0) {
+      return { ok: false, reason: "That slot could not be deleted." };
+    }
+    const now = today();
+    const trashed = target.items.map((item) => ({ item, slotId: id, removedAt: now }));
+    const next = {
+      ...doc,
+      slots: survivors,
+      activeSlot: doc.activeSlot === id ? promoted.id : doc.activeSlot,
+      trash: capTrash([...trashed, ...doc.trash])
+    };
+    const res = writeSlotDoc(next, { reason: "remove" });
+    return res.ok ? { ok: true } : { ok: false, reason: "That slot could not be deleted." };
+  }
+  function renameSlot(id, name) {
+    const doc = loadSlotDoc();
+    const target = doc.slots.find((s) => s.id === id);
+    if (target === void 0) {
+      return { ok: false, reason: "That slot no longer exists." };
+    }
+    const checked = SlotNameSchema.safeParse(name);
+    if (!checked.success) {
+      return { ok: false, reason: checked.error.issues[0]?.message ?? "That slot name cannot be used." };
+    }
+    const next = {
+      ...doc,
+      slots: doc.slots.map((s) => s.id === id ? { ...s, name: checked.data, editedAt: today() } : s)
+    };
+    const res = writeSlotDoc(next, { reason: "restore" });
+    return res.ok ? { ok: true, slotId: id } : { ok: false, reason: "That name could not be saved." };
+  }
+  function setActiveSlot(id) {
+    const doc = loadSlotDoc();
+    if (!doc.slots.some((s) => s.id === id)) {
+      return { ok: false, reason: "That slot no longer exists." };
+    }
+    if (doc.activeSlot === id) {
+      return { ok: true, slotId: id };
+    }
+    const res = writeSlotDoc({ ...doc, activeSlot: id }, { reason: "restore" });
+    return res.ok ? { ok: true, slotId: id } : { ok: false, reason: "That slot could not be activated." };
+  }
+  function restoreFromTrash(itemId) {
+    const doc = loadSlotDoc();
+    const entry = doc.trash.find((e) => e.item.id === itemId);
+    if (entry === void 0) {
+      return { ok: false, reason: "That item is not in the trash." };
+    }
+    const trash = doc.trash.filter((e) => e !== entry);
+    const now = today();
+    const next = {
+      ...doc,
+      slots: doc.slots.map((s) => {
+        if (s.id !== doc.activeSlot) {
+          return s;
+        }
+        const already = s.items.some((i) => i.id === itemId);
+        return already ? s : { ...s, items: [...s.items, entry.item], editedAt: now };
+      }),
+      trash
+    };
+    const res = writeSlotDoc(next, { reason: "add" });
+    return res.ok ? { ok: true } : { ok: false, reason: "That item could not be restored." };
+  }
+  function installBridges() {
+    window.persistRegimen = persistRegimen;
+    window.saveRgOverride = saveRgOverride;
+    window.saveRgManual = saveRgManual;
+    window.saveRgRemoved = saveRgRemoved;
+    window.saveRgUserGoals = saveRgUserGoals;
+    window.loadSlots = loadSlots;
+    window.addSlot = addSlot;
+    window.duplicateSlot = duplicateSlot;
+    window.deleteSlot = deleteSlot;
+    window.renameSlot = renameSlot;
+    window.setActiveSlot = setActiveSlot;
+    window.restoreFromTrash = restoreFromTrash;
   }
 
   // assets/js/src/state/coverage.ts
@@ -97415,7 +97691,7 @@ FIX 3 \u2014 THE LABEL CONTRADICTED THE SEALED DOCTRINE. pdm_coverage_derive.py 
 
 A HOOK FALSE-POSITIVE, diagnosed not assumed: post_write_verify fired "invariants.py: vanished after write" \u2014 it had parsed MY OWN stdout line as a safe_write OK line and looked for a bare invariants.py at the repo root, which never existed. Verified rather than waved off: 330,648 B, safe_write check OK, ast.parse clean.
 
-VERIFIED: corpus_seal PASS kv=338 \xB7 every other draft byte-identical to its shard pre-seal \xB7 build_embeds regenerated entity-page-data.json, which derived_artifacts_fresh had CAUGHT as stale (the gate did its job) \xB7 build 0 \xB7 invariants 71/71 zero new reds \xB7 tsc clean \xB7 8/8 + 8/8 negative tests \xB7 SEVEN render probes exit 0.` }];
+VERIFIED: corpus_seal PASS kv=338 \xB7 every other draft byte-identical to its shard pre-seal \xB7 build_embeds regenerated entity-page-data.json, which derived_artifacts_fresh had CAUGHT as stale (the gate did its job) \xB7 build 0 \xB7 invariants 71/71 zero new reds \xB7 tsc clean \xB7 8/8 + 8/8 negative tests \xB7 SEVEN render probes exit 0.` }, { id: "lg_mrn9yt6o_92ld4d", ts: "2026-07-16T03:56:35.904270-05:00", surface: "state", kind: "round-close", summary: "P3: the app can now hold up to 4 separate saved regimens, each with its own products + doses, switchable, with an undoable trash bin \u2014 built as ONE atomic storage document so a switch/delete/undo can never half-happen and corrupt a user's data. Board 71->72.", detail: "P3 is done: the app can now hold up to 4 separate saved regimens \u2014 each with its own products and doses \u2014 and switch between them, and removing an item is now an undoable trash bin instead of a permanent hide. This was the last piece of plumbing the signed-off Coverage/Regimen/Scanner blueprint needed before the demo. Nothing visual changed yet; this is the storage engine underneath, and it is governed entirely by automated gates (no visual sign-off owed for P3 \u2014 the demo is where your eyes are the gate).\n\nTHE ONE LOAD-BEARING DECISION: regimen state lives in ONE atomic localStorage document (rgSlots_v1 = {slots[], activeSlot, trash[]}) written by ONE private function (writeSlotDoc). localStorage has no transaction across keys, so a single key is the only way a slot switch / delete / remove / restore can be all-or-nothing \u2014 a second key for the trash would put a torn-write data-loss window on the everyday remove path. Chosen after an 11-agent adversarial workflow (3 candidate designs \xD7 3 judge lenses + synthesis): the one-key document won on engineering-doctrine (atomic ops, single source of truth) AND blueprint fidelity; the two-key and roster-only rivals were rejected (torn-write data-loss / unforced under-delivery of the signed-off \xA73 model).\n\nWHAT CHANGED. core/schemas/regimen.ts: NEW SlotSchema/TrashEntrySchema/SlotDocSchema (+ a bounded, control/bidi-safe SlotNameSchema); the Zod schema enforces >=1/<=4 slots, <=20 trash, and activeSlot-always-resolves at BOTH the read and write boundary, so a torn or hand-edited document cannot be read back as valid \u2014 a null read re-synthesises a clean Default (auto-heal). state/regimen.ts: the private writeSlotDoc is the sole setValidated(rgSlots_v1) writer + the emit; a lazy, non-destructive read-time migration rebuilds a Default slot from the four legacy keys (reproducing the old effective-stack math), recovers any hidden items INTO the trash, and leaves the legacy keys inert on disk (rollback safety); the five legacy chokepoints keep their exact names + signatures (so the burning views compile) but re-point into the active slot; saveRgRemoved/loadRgRemoved became trash adapters; NEW slot ops addSlot/duplicateSlot/deleteSlot/renameSlot/setActiveSlot/restoreFromTrash, each returning {ok}|{ok:false,reason} \u2014 a refusal is never a silent drop. main.ts: wired installBridges() into bootstrap \u2014 it was DEAD CODE (defined but never called), so window.* was undefined; the runtime slot probe needs it.\n\nGATES (R7 \u2014 codify, don't promise; shipped in the same patch). regimen_state_mutation_routing was RE-CODIFIED for the new N-ops\u21921-writer\u21921-key model: the old 1-fn\u21941-key\u2194direct-set() model would have MISFIRED on the correct single-source design two ways (R9), the worst being that its body slice ran to the next `export function`, so the private writeSlotDoc got swallowed into whichever export preceded it \u2014 a placement-dependent false pass. The new gate uses a length-preserving comment/string blanker + paren-then-brace body matching so a reorder of functions cannot change what it proves. NEW slot_invariants (static) proves the guard CODE exists (schema bounds, addSlot's cap-refusal, deleteSlot's last-refusal + activeSlot promotion); the runtime BEHAVIOUR is proven by the NEW render_probe_slots.js \u2014 the honest static/runtime split, because a Python-reads-TS gate cannot observe runtime state and selling static presence as runtime correctness is exactly the mineral-tiers failure.\n\nVERIFIED. build exit 0 (tsc clean) \xB7 invariants 72/72 zero new reds (71\u219272) \xB7 no_operating_doc_contradiction clean \xB7 test_regimen_state_mutation_routing 16/16 (incl. the swallow_guard pin: a gutted chokepoint sitting right before the private writer correctly REDs, proving the old text-slice's false-pass is gone) \xB7 test_slot_invariants 10/10 \xB7 render_probe_slots PASS (fresh boot = exactly 1 Default slot; the 5th add refused WITH a reason; deleting the active slot promotes the lowest-numbered survivor and activeSlot still resolves; the last slot cannot be deleted; a remove\u2192restore trash round-trip works) \xB7 all 10 core render probes PASS. render_probe_scanner + render_probe_journey FAIL, but PROVEN pre-existing (identical FAIL at HEAD via git stash \u2014 legacy-host DOM checks, nothing to do with P3).\n\nDEFERRALS (labelled, not silent): importSlot + whole-SLOT trash recovery \u2192 \xA77 (the Regimen-view rebuild, where the delete-slot + import UI actually lands \u2014 building them now would be machinery with no P3 caller, the P4 anti-speculation lesson); the SlotNameSchema intentionally near-duplicates profile.ts's name safety rather than importing it, flagged in a NOTE, to be consolidated when \xA77 grows a second free-text surface. Docs reconciled to the slot model (CLAUDE.md, chokepoint-discipline.md, domain-glossary.md, blueprint \xA711/\xA79/\xA712) so no operating surface still asserts the old \"five chokepoints are the only writers\" contract." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -99326,6 +99602,11 @@ VERIFIED: corpus_seal PASS kv=338 \xB7 every other draft byte-identical to its s
       installRecomputeTrigger();
     } catch (e) {
       console.warn("[main] installRecomputeTrigger threw:", e);
+    }
+    try {
+      installBridges();
+    } catch (e) {
+      console.warn("[main] installBridges threw:", e);
     }
     wireRail();
     wireProfileChip();

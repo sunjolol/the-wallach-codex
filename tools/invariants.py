@@ -1881,13 +1881,27 @@ def _dose_amount_in_verbatim_impl(claims, canon):
 # died with the legacy dashboard. Restoring that check verbatim would have re-introduced a
 # gate asserting a structure that is gone (exactly what no_operating_doc_contradiction
 # guards docs against). So this gates the contract that is actually TRUE today:
-#   (1) the five named chokepoints exist in state/regimen.ts;
-#   (2) each one EMITS the typed `regimen:changed` event (the cascade the doctrine promises
-#       -- a silent writer would leave every subscriber stale);
-#   (3) each regimen LS key is written from exactly ONE chokepoint (no second writer);
-#   (4) `localStorage` is touched ONLY in core/storage.ts (the lint says this at WARN --
-#       a warning does not fail a build, so it was never enforcement);
-#   (5) no view writes storage directly.
+#   (1) the five legacy chokepoints still EXIST as export functions (API preserved so the
+#       burning views keep compiling -- blueprint P3 "extends the five, does not replace them");
+#   (2) regimen state has exactly ONE writer -- setValidated(RG_SLOTS_KEY, ...) appears once,
+#       in the private writeSlotDoc -- and that writer EMITS the typed `regimen:changed`
+#       cascade (a silent writer would leave every subscriber stale);
+#   (3) the four slot-backed chokepoints DELEGATE to writeSlotDoc (route through the one
+#       writer); saveRgUserGoals is the one GLOBAL chokepoint (its own key + a direct emit);
+#   (4) the four RETIRED keys (lcRegimen/rgOverrides/rgManual/rgRemoved) are never WRITTEN --
+#       they are read once by the migration, then inert;
+#   (5) `localStorage` is touched ONLY in core/storage.ts, and no view writes storage directly.
+#
+# P3 RE-CODIFICATION (2026-07-16, R9 -- tighten with proof, never silently loosen). The old
+# gate's 1-fn<->1-key<->direct-`set()` model does not fit N-ops -> one private writer -> one
+# key. Two of its clauses would have MISFIRED on the correct single-source design: clause 3a
+# (`if key not in body`) demanded each chokepoint NAME its key constant, which a delegating op
+# does not; and the body slice ran to the next `\nexport function`, so the private
+# `function writeSlotDoc` got SWALLOWED into whichever export textually preceded it -- a
+# placement-dependent false match, the exact fragility R9 exists to kill. The new impl uses a
+# length-preserving comment/string blanker + paren-then-brace body matching (below), so a
+# reorder of functions cannot change what it proves. tools/test_regimen_state_mutation_routing.py
+# pins both the good delegating shape and every real violation.
 # The real localStorage API surface. Deliberately NOT r"\blocalStorage\s*\." -- see the note
 # in _regimen_state_mutation_routing_impl: that pattern matches the period ending a sentence
 # in a code comment.
@@ -1895,43 +1909,162 @@ _LS_API_RE = re.compile(
     r"\blocalStorage\s*(?:\.\s*(?:getItem|setItem|removeItem|clear|key|length)\b|\[)")
 
 
-_S31_CHOKEPOINTS = {
-    "persistRegimen":   "REGIMEN_KEY",
-    "saveRgOverride":   "RG_OVERRIDES_KEY",
-    "saveRgManual":     "RG_MANUAL_KEY",
-    "saveRgRemoved":    "RG_REMOVED_KEY",
-    "saveRgUserGoals":  "RG_USER_GOALS_KEY",
-}
+# The five legacy chokepoints whose EXPORT must survive (API preservation, blueprint P3).
+_S31_LEGACY_CHOKEPOINTS = (
+    "persistRegimen", "saveRgOverride", "saveRgManual", "saveRgRemoved", "saveRgUserGoals",
+)
+# The four that delegate to writeSlotDoc (saveRgUserGoals is the GLOBAL exception).
+_S31_SLOT_BACKED = ("persistRegimen", "saveRgOverride", "saveRgManual", "saveRgRemoved")
+# The keys retired by the slot migration -- read once at migration, never written again.
+_S31_RETIRED_KEYS = ("REGIMEN_KEY", "RG_OVERRIDES_KEY", "RG_MANUAL_KEY", "RG_REMOVED_KEY")
+
+
+def _blank_noncode(s):
+    """Blank comment/string/template CONTENT with spaces, preserving length + newlines.
+
+    So a later brace/paren match sees only STRUCTURAL brackets -- not a `{` inside a comment,
+    a reason string, or a template `${...}` expression. Length preservation means the indices
+    it returns still address the ORIGINAL source (where the event-name string is intact)."""
+    res = []
+    i, n = 0, len(s)
+    state = "code"  # code | line | block | sq | dq | tmpl
+    while i < n:
+        c = s[i]
+        nxt = s[i + 1] if i + 1 < n else ""
+        if state == "code":
+            if c == "/" and nxt == "/":
+                res.append("  "); i += 2; state = "line"; continue
+            if c == "/" and nxt == "*":
+                res.append("  "); i += 2; state = "block"; continue
+            if c == "'":
+                res.append(c); i += 1; state = "sq"; continue
+            if c == '"':
+                res.append(c); i += 1; state = "dq"; continue
+            if c == "`":
+                res.append(c); i += 1; state = "tmpl"; continue
+            res.append(c); i += 1; continue
+        if state == "line":
+            if c == "\n":
+                res.append("\n"); i += 1; state = "code"; continue
+            res.append("\t" if c == "\t" else " "); i += 1; continue
+        if state == "block":
+            if c == "*" and nxt == "/":
+                res.append("  "); i += 2; state = "code"; continue
+            res.append("\n" if c == "\n" else " "); i += 1; continue
+        # inside a string/template
+        quote = "'" if state == "sq" else ('"' if state == "dq" else "`")
+        if c == "\\":
+            res.append("  "); i += 2; continue
+        if c == quote:
+            res.append(c); i += 1; state = "code"; continue
+        res.append("\n" if c == "\n" else " "); i += 1; continue
+    return "".join(res)
+
+
+def _ts_fn_span(blanked, header_regex):
+    """(start, end) of a function's `{...}` body on BLANKED source, or None.
+
+    Paren-match the parameter list first, THEN take the first `{` after it -- so an inline
+    param type like `opts?: { emit?: boolean }` (writeSlotDoc) is not mistaken for the body."""
+    m = re.search(header_regex, blanked)
+    if not m:
+        return None
+    p = blanked.find("(", m.end())
+    if p == -1:
+        return None
+    depth, q = 0, None
+    for j in range(p, len(blanked)):
+        ch = blanked[j]
+        if ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+            if depth == 0:
+                q = j
+                break
+    if q is None:
+        return None
+    b = blanked.find("{", q)
+    if b == -1:
+        return None
+    depth = 0
+    for j in range(b, len(blanked)):
+        ch = blanked[j]
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return (b, j + 1)
+    return None
 
 
 def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
-    """Params are source strings so the negative test can drive planted code."""
+    """Params are source strings so the negative test can drive planted code.
+    See the block comment above for the full P3 contract + why the model changed."""
     viol = []
+    blanked = _blank_noncode(regimen_src)
 
-    # (1)+(2)+(3): each chokepoint exists, emits, and owns its key.
-    for fn, key in _S31_CHOKEPOINTS.items():
-        m = re.search(r"export function " + fn + r"\b", regimen_src)
-        if not m:
-            viol.append(f"chokepoint `{fn}` is MISSING from state/regimen.ts")
+    def body(header_regex):
+        sp = _ts_fn_span(blanked, header_regex)
+        if sp is None:
+            return None, None
+        b, e = sp
+        return regimen_src[b:e], blanked[b:e]  # (original, blanked)
+
+    # (4) the retired keys are never WRITTEN (read-only via getValidated after migration).
+    for key in _S31_RETIRED_KEYS:
+        w = re.findall(r"\bset(?:Validated)?\(\s*" + key + r"\b", blanked)
+        if w:
+            viol.append(f"retired key `{key}` is WRITTEN {len(w)}x -- after the slot migration "
+                        f"it must be read-only (getValidated), never a write target")
+
+    # (2) exactly ONE writer of the slot document, through the Zod boundary.
+    slot_writes = re.findall(r"\bsetValidated\(\s*RG_SLOTS_KEY\b", blanked)
+    if len(slot_writes) == 0:
+        viol.append("no setValidated(RG_SLOTS_KEY, ...) -- the single slot-doc writer is missing")
+    elif len(slot_writes) > 1:
+        viol.append(f"RG_SLOTS_KEY is written {len(slot_writes)}x -- a second writer bypasses the "
+                    f"single chokepoint; ALL mutation must route through writeSlotDoc")
+    if re.search(r"\bset\(\s*RG_SLOTS_KEY\b", blanked):
+        viol.append("RG_SLOTS_KEY is written via raw set() -- the slot doc must go through "
+                    "setValidated (the Zod write boundary), not the unchecked fast path")
+
+    # (2) the one writer EMITS the cascade.
+    w_orig, w_blank = body(r"function\s+writeSlotDoc\b")
+    if w_orig is None:
+        viol.append("private writer writeSlotDoc not found -- the single-writer spine is gone")
+    else:
+        if "emit(" not in w_blank:
+            viol.append("writeSlotDoc does not call emit() -- a silent write leaves every "
+                        "subscriber stale (the cascade IS the discipline)")
+        elif "regimen:changed" not in w_orig:
+            viol.append("writeSlotDoc emits, but not the `regimen:changed` event")
+
+    # (1)+(3) the five legacy chokepoints survive; the four slot-backed ones DELEGATE.
+    for fn in _S31_LEGACY_CHOKEPOINTS:
+        b_orig, b_blank = body(r"export\s+function\s+" + fn + r"\b")
+        if b_orig is None:
+            viol.append(f"chokepoint `{fn}` is MISSING from state/regimen.ts (its export must "
+                        f"survive -- the burning views still import it)")
             continue
-        # the function body: from its signature to the next top-level `export function`
-        rest = regimen_src[m.start():]
-        nxt = re.search(r"\nexport function ", rest[1:])
-        body = rest[: nxt.start() + 1] if nxt else rest
-        if "emit('regimen:changed'" not in body and 'emit("regimen:changed"' not in body:
-            viol.append(f"`{fn}` does not emit `regimen:changed` — a silent write leaves "
-                        f"every subscriber stale (the §31 cascade is the whole point)")
-        if key not in body:
-            viol.append(f"`{fn}` does not write its own key `{key}`")
+        if fn in _S31_SLOT_BACKED:
+            if "writeSlotDoc(" not in b_blank:
+                viol.append(f"`{fn}` does not route through writeSlotDoc -- every regimen "
+                            f"mutation must reach the single writer")
+        else:  # saveRgUserGoals -- the GLOBAL chokepoint (its own key + a direct emit)
+            if "RG_USER_GOALS_KEY" not in b_blank:
+                viol.append("`saveRgUserGoals` does not write its own key RG_USER_GOALS_KEY")
+            if "emit(" not in b_blank or "regimen:changed" not in b_orig:
+                viol.append("`saveRgUserGoals` does not emit `regimen:changed`")
 
-    # (3b): no key is written from more than one place.
-    for fn, key in _S31_CHOKEPOINTS.items():
-        writes = re.findall(r"\bset\(\s*" + key + r"\b", regimen_src)
-        if len(writes) > 1:
-            viol.append(f"`{key}` is written {len(writes)}x — a second writer bypasses the "
-                        f"single chokepoint for that slot")
+    # (3) the global goals key has exactly one writer.
+    goals_writes = re.findall(r"\bset(?:Validated)?\(\s*RG_USER_GOALS_KEY\b", blanked)
+    if len(goals_writes) != 1:
+        viol.append(f"RG_USER_GOALS_KEY is written {len(goals_writes)}x -- expected exactly one "
+                    f"writer (saveRgUserGoals)")
 
-    # (4): localStorage confined to core/storage.ts. Match the real LS API surface, NOT a
+    # (5) localStorage confined to core/storage.ts. Match the real LS API surface, NOT a
     # bare `localStorage.` -- the first cut used r"\blocalStorage\s*\." and RED-flagged FIVE
     # INNOCENT FILES by matching the FULL STOP in prose: "Pure reads only -- no mutation, no
     # localStorage. The corpus is canonical". Three of those comments were promising exactly
@@ -1941,14 +2074,15 @@ def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
     # off, which is worse than the hole it guards.
     for rel, src in view_srcs:
         if _LS_API_RE.search(src):
-            viol.append(f"{rel} touches localStorage directly — the §31/§17 chokepoint is "
+            viol.append(f"{rel} touches localStorage directly -- the S31/S17 chokepoint is "
                         f"core/storage.ts alone")
     if not re.search(r"localStorage\.setItem", storage_src):
-        viol.append("core/storage.ts no longer writes localStorage — the chokepoint moved; "
+        viol.append("core/storage.ts no longer writes localStorage -- the chokepoint moved; "
                     "this gate is now pointing at the wrong file and must be re-anchored")
-    return (False, "§31 routing broken: " + "; ".join(viol[:5])) if viol else (
-        True, f"all {len(_S31_CHOKEPOINTS)} regimen chokepoints exist, each emits "
-              f"`regimen:changed` and owns exactly one LS key; localStorage confined to "
+    return (False, "S31 routing broken: " + "; ".join(viol[:5])) if viol else (
+        True, f"slot model: 1 writer (setValidated RG_SLOTS_KEY, emits regimen:changed); all "
+              f"{len(_S31_LEGACY_CHOKEPOINTS)} legacy chokepoints survive + route correctly; "
+              f"{len(_S31_RETIRED_KEYS)} retired keys write-free; localStorage confined to "
               f"core/storage.ts across {len(view_srcs)} scanned file(s)")
 
 
@@ -1969,6 +2103,103 @@ def check_regimen_state_mutation_routing():
         others.append((pth.relative_to(ROOT).as_posix(), pth.read_text(encoding="utf-8")))
     return _regimen_state_mutation_routing_impl(
         reg.read_text(encoding="utf-8"), sto.read_text(encoding="utf-8"), others)
+
+
+# ---------------------------------------------------------------------------
+# slot_invariants (NEW 2026-07-16, P3) -- the slot system's structural guards
+# ---------------------------------------------------------------------------
+# HONEST STATIC/RUNTIME SPLIT (R7). A Python gate reading TS SOURCE can prove the
+# enforcing CODE EXISTS; it cannot observe runtime state. So this STATIC gate proves:
+#   - SlotDocSchema enforces >=1 slot (.min(1)), <=4 (.max(4)), <=20 trash (.max(20)),
+#     and activeSlot-resolves (a superRefine naming activeSlot) -- at the Zod boundary,
+#     so a torn/hand-edited document cannot be READ BACK as valid;
+#   - writeSlotDoc re-validates on WRITE (setValidated(..., SlotDocSchema));
+#   - addSlot has a cap-refusal branch (MAX_SLOTS -> {ok:false}), never a silent drop;
+#   - deleteSlot refuses the last slot (length <= 1 -> {ok:false}) AND reassigns activeSlot
+#     (promotes a survivor).
+# The runtime BEHAVIOUR (the 5th add is actually refused; deleting the active slot actually
+# promotes the lowest survivor) is proven by tools/render_probe_slots.js on the real file://
+# app. If that probe is NOT on the round-close board, invariants 2 + 4 rest on it as a WISH,
+# never sold as statically gated (the mineral-tiers lesson: a green static check is not proof
+# the code runs correctly).
+
+
+def _slot_invariants_impl(schema_src, regimen_src):
+    """Params are source strings so the negative test can drive planted code."""
+    viol = []
+
+    # --- schema half: the runtime guards EXIST on SlotDocSchema ---
+    si = schema_src.find("SlotDocSchema = z")
+    sj = schema_src.find("// Inferred types", si) if si != -1 else -1
+    doc = schema_src[si:sj] if (si != -1 and sj != -1) else ""
+    if not doc:
+        viol.append("SlotDocSchema definition not found in core/schemas/regimen.ts")
+    else:
+        if ".min(1)" not in doc:
+            viol.append("SlotDocSchema.slots missing .min(1) -- the >=1-slot invariant is not "
+                        "enforced at the Zod boundary")
+        if ".max(4)" not in doc:
+            viol.append("SlotDocSchema.slots missing .max(4) -- the <=4-slot cap is not "
+                        "enforced at the Zod boundary")
+        if ".max(20)" not in doc:
+            viol.append("SlotDocSchema.trash missing .max(20) -- the trash ring cap is not "
+                        "enforced at the Zod boundary")
+        if "superRefine" not in doc or "activeSlot" not in doc:
+            viol.append("SlotDocSchema has no superRefine naming activeSlot -- a document whose "
+                        "activeSlot does not resolve could be read back as valid")
+
+    # --- state half: the refusal + promotion CODE exists ---
+    blanked = _blank_noncode(regimen_src)
+
+    def body(header_regex):
+        sp = _ts_fn_span(blanked, header_regex)
+        if sp is None:
+            return None
+        b, e = sp
+        return blanked[b:e]
+
+    w = body(r"function\s+writeSlotDoc\b")
+    if w is None:
+        viol.append("writeSlotDoc not found -- the single-writer spine is gone")
+    elif "setValidated(" not in w or "SlotDocSchema" not in w:
+        viol.append("writeSlotDoc does not write through setValidated(..., SlotDocSchema) -- "
+                    "the write boundary is not re-validating the document")
+
+    a = body(r"export\s+function\s+addSlot\b")
+    if a is None:
+        viol.append("addSlot not found")
+    elif "MAX_SLOTS" not in a or "ok: false" not in a:
+        viol.append("addSlot has no cap-refusal branch (MAX_SLOTS check returning {ok:false}) -- "
+                    "the 5th add could be silently dropped")
+
+    d = body(r"export\s+function\s+deleteSlot\b")
+    if d is None:
+        viol.append("deleteSlot not found")
+    else:
+        if "ok: false" not in d or ("<= 1" not in d and "<=1" not in d):
+            viol.append("deleteSlot has no last-slot refusal (length <= 1 -> {ok:false}) -- the "
+                        "only regimen slot could be deleted")
+        if "activeSlot" not in d:
+            viol.append("deleteSlot does not reassign activeSlot -- deleting the active slot "
+                        "could leave activeSlot dangling")
+
+    return (False, "slot invariants unenforced: " + "; ".join(viol[:5])) if viol else (
+        True, "SlotDocSchema enforces >=1/<=4 slots + <=20 trash + activeSlot-resolves (Zod, both "
+              "boundaries); addSlot refuses the 5th with a reason; deleteSlot refuses the last + "
+              "promotes a survivor. Runtime BEHAVIOUR proven by render_probe_slots.js (R7: this "
+              "static gate proves the guards EXIST, not that they RUN)")
+
+
+def check_slot_invariants():
+    """P3 slot-system structural guards -- see the block comment above for the static/runtime
+    split and why the runtime half rests on render_probe_slots.js."""
+    src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
+    schema = src_dir / "core" / "schemas" / "regimen.ts"
+    reg = src_dir / "state" / "regimen.ts"
+    if not (schema.exists() and reg.exists()):
+        return True, "dashboard src not installed (bootstrap-guard)"
+    return _slot_invariants_impl(
+        schema.read_text(encoding="utf-8"), reg.read_text(encoding="utf-8"))
 
 
 # ---------------------------------------------------------------------------
@@ -4855,11 +5086,20 @@ INVARIANTS = [
     Invariant(
         name="regimen_state_mutation_routing",
         anchor_class="structural",  # shape + wellformedness only -- proves the five named writers exist and emit, not that what they write is correct
-        description="§31: the five regimen chokepoints (persistRegimen, saveRgOverride, saveRgManual, saveRgRemoved, saveRgUserGoals) each exist, each EMIT the typed `regimen:changed` cascade, and each own exactly one LS key; localStorage is touched only in core/storage.ts and never by a view. RESTORED 2026-07-15 after 10 days orphaned",
+        description="§31 slot model (P3): regimen state lives in ONE atomic document (rgSlots_v1) with ONE writer (private writeSlotDoc via setValidated, which EMITS regimen:changed). The five legacy chokepoints (persistRegimen, saveRgOverride, saveRgManual, saveRgRemoved, saveRgUserGoals) still EXIST as exports so the burning views compile; the four slot-backed ones DELEGATE to writeSlotDoc; saveRgUserGoals is the one GLOBAL chokepoint (own key + direct emit). The four retired keys (lcRegimen/rgOverrides/rgManual/rgRemoved) are never written. localStorage is touched only in core/storage.ts and never by a view",
         check_fn=check_regimen_state_mutation_routing,
         truth_anchor="the .ts bytes of state/regimen.ts + core/storage.ts + every other src/**/*.ts, scanned each run. NOT the old LS_SCHEMAS check -- that registry died with the legacy dashboard, and restoring it would assert a structure that no longer exists",
         severity="critical",
-        lesson_ref="Removed 2026-07-05 (fca48c9d) 'to return in Phase C'. Phase C landed the SAME DAY; Phase F finished; nobody noticed for 10 days. Meanwhile CLAUDE.md:43 stated flatly that user state persists 'through the §31 chokepoint only' -- unqualified, in the file loaded at every boot -- while the only actual enforcement was an ESLint rule at WARN, which does not fail anything. chokepoint-discipline.md WAS honest (labeled WISH per R7); the operating contract was not. A gate promised 'next phase' is a gate nobody re-checks: the phase passes and the promise stays.",
+        lesson_ref="Removed 2026-07-05 (fca48c9d) 'to return in Phase C'. Phase C landed the SAME DAY; Phase F finished; nobody noticed for 10 days. Meanwhile CLAUDE.md:43 stated flatly that user state persists 'through the §31 chokepoint only' -- unqualified, in the file loaded at every boot -- while the only actual enforcement was an ESLint rule at WARN, which does not fail anything. chokepoint-discipline.md WAS honest (labeled WISH per R7); the operating contract was not. A gate promised 'next phase' is a gate nobody re-checks: the phase passes and the promise stays. P3 (2026-07-16) re-codified this gate for the single-writer slot model -- setValidated(RG_SLOTS_KEY) is the one writer, the four slot-backed chokepoints delegate, the four old keys are retired write-free -- with brace-aware body matching so the private writer can no longer be swallowed into a neighbouring export (the placement-dependent misfire R9 exists to kill).",
+    ),
+    Invariant(
+        name="slot_invariants",
+        anchor_class="structural",  # proves the slot-system guard CODE exists; the runtime behaviour is render_probe_slots.js
+        description="P3 slot system: SlotDocSchema enforces >=1 slot, <=4 slots, <=20 trash entries, and activeSlot-always-resolves at the Zod boundary (read AND write); writeSlotDoc re-validates on write; addSlot refuses the 5th slot with a reason; deleteSlot refuses the last slot and reassigns activeSlot (promotes a survivor). STATIC: proves the enforcing code EXISTS; the runtime behaviour is proven by render_probe_slots.js (R7)",
+        check_fn=check_slot_invariants,
+        truth_anchor="the .ts bytes of core/schemas/regimen.ts (the SlotDocSchema guards) + state/regimen.ts (the addSlot/deleteSlot refusal + promotion code), scanned each run. NOT proof the code RUNS correctly -- that is render_probe_slots.js on the real file:// app (labelled WISH here per R7 if that probe is off the board)",
+        severity="critical",
+        lesson_ref="P3 (2026-07-16). Blueprint invariants 1-4 (>=1 slot, activeSlot resolves, <=4 slots refused-with-reason, mutations route S31) each become a gate (R7 codify-don't-promise). The static half is here; invariants 2+4 (promote-on-delete-active, activeSlot resolves after a delete) genuinely need the runtime probe -- a Python-reads-TS gate cannot observe them, and selling static presence as runtime correctness is exactly the mineral-tiers failure.",
     ),
     Invariant(
         name="collective_doses_not_fanned",

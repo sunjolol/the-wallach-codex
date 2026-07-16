@@ -96,7 +96,7 @@ goals:      [slug]                                                      (existin
 4. **Every mutation routes through a §31 chokepoint** and emits `regimen:changed`. Extends the existing five; does not replace them.
 5. **Nothing derived is stored.** Recommendations, coverage, and contribution are computed at read time.
 
-**Scorched earth, scoped precisely:** `views/regimen.ts` and `views/scanner.ts` burn — they are ancient, they carry fabricated demo data flagged in their own files, and 68 of the Regimen view's 72 classes have no CSS in any stylesheet the shell links. **`state/regimen.ts` does NOT burn.** It is the five §31 chokepoints under a critical invariant (`regimen_state_mutation_routing`). It **extends** for slots. Burning it takes a gate down with it.
+**Scorched earth, scoped precisely:** `views/regimen.ts` and `views/scanner.ts` burn — they are ancient, they carry fabricated demo data flagged in their own files, and 68 of the Regimen view's 72 classes have no CSS in any stylesheet the shell links. **`state/regimen.ts` does NOT burn.** It is the five §31 chokepoints under a critical invariant (`regimen_state_mutation_routing`). It **extended** for slots in P3 (done 2026-07-16). Burning it takes a gate down with it.
 
 **Removal = trash, not hide.** Today removal is a soft-delete into an ever-growing `rgRemoved_v1` id-set. That mechanism becomes the trash bin honestly: remove → item moves to trash (recoverable) → the ring buffer caps at 20 → beyond 20 it purges. One concept, one store, no unbounded leak.
 
@@ -225,7 +225,7 @@ Full rebuild. The concept was good; the execution demanded too much human correc
 |---|---|---|---|
 | ~~P1~~ | ~~Mine `directions` + maxima from the 245 images~~ | **DROPPED — the data does not exist to mine (§2). Superseded by D7.** Nothing blocks on it. | — |
 | ~~P2~~ | ~~Add `category` to all 215~~ | **DROPPED — reversed by D8.** An outside rule replaces it; no pillar change, nothing blocks. | — |
-| **P3** | **Extend `state/regimen.ts` for slots** — schema, chokepoints, gate | §3. The slot system does not exist in state | — |
+| ~~P3~~ | ~~Extend `state/regimen.ts` for slots — schema, chokepoints, gate~~ | ✓ **DONE 2026-07-16** — slot document + single writer (`writeSlotDoc`) + read-time migration landed; gated by `regimen_state_mutation_routing` (re-codified) + `slot_invariants` + `render_probe_slots.js` | — |
 | ~~P4~~ | ~~Fix `coveredBy`~~ | ✓ **DONE 2026-07-15 — but SCOPED DOWN on a finding.** The rename landed (`contributesTo`). The "add a real covered-by join" half was **dropped**: `coveredBy` had exactly TWO occurrences in the whole repo — its declaration and its assignment — so **nothing read it**. Building a join no consumer wants, in a shape the rail has not yet asked for, is speculation. The trap is gone; the join gets derived when the rail defines what it needs. | — |
 | ~~P5~~ | ~~Fix `rankSources` unit reconciliation~~ | ✓ **DONE 2026-07-15.** Scope was exactly 2 of 34 (boron mg-vs-mcg, silver mcg-vs-mg). All 19 boron candidates read adequacy **1.0000** — the 0.6 keystone was a CONSTANT, so ranking collapsed to breadth+price; now 0.054–0.544. Silver 0.0001 → 0.1000. The converter was promoted to `core/units.ts` because `boundaries` forbids state→state, and duplicating it would break R3. | — |
 
@@ -272,8 +272,8 @@ Every rule above that can be machine-checked ships its gate in the same patch as
 
 | Gate | Proves | Status |
 |---|---|---|
-| `regimen_state_mutation_routing` | all mutations route §31, one writer per key | **LIVE** — extend to slot chokepoints |
-| `slot_invariants` | ≥1 slot · activeSlot resolves · ≤4 · deleting the active slot promotes | NEW |
+| `regimen_state_mutation_routing` | all mutations route §31, one writer for the slot doc | **LIVE** — re-codified for the slot model (P3, 2026-07-16), brace-aware body match |
+| `slot_invariants` | ≥1 slot · activeSlot resolves · ≤4 · deleting the active slot promotes | **LIVE** (P3, 2026-07-16) — static half; runtime behaviour = `render_probe_slots.js` |
 | `recommendations_not_stored` | no derived list in LS or any artifact | NEW |
 | `dose_default_sourced` | every default = a claim id, a `directions` field, or an explicit rung-3 flag | NEW |
 | ~~`product_category_complete`~~ | ~~all 215 carry a category~~ — **DROPPED with P2/D8** (no field to gate) | — |
@@ -292,7 +292,7 @@ Every rule above that can be machine-checked ships its gate in the same patch as
 1. **This blueprint** — signed off by Luneth. ← *we are here*
 2. ~~**P1** (mine directions) + **P2** (categories) — pillar passes.~~ **BOTH DROPPED 2026-07-15** — P1 is impossible (the directions are not on the images); P2 is reversed by D8. No pillar is touched.
 3. **P4** + **P5** — the two live defects the rail and the recommender stand on.
-4. **P3** — slots in state.
+4. ~~**P3** — slots in state.~~ ✓ **DONE 2026-07-16.**
 5. **The demo** — Coverage rail at 0 / few / many, the Regimen slot system, the Scanner paste path. Screenshot-verified; **his visual sign-off is the gate**.
 6. **Live build** — surface by surface, one to 100% before the next.
 

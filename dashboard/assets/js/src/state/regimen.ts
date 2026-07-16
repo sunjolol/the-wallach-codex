@@ -2,24 +2,49 @@
  * state/regimen.ts — regimen state + the §31 chokepoint discipline
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * THE ONLY MODULE that mutates regimen LS keys (when consumers go through
- * the public API). Every other module imports the chokepoints from here.
+ * THE ONLY MODULE that mutates regimen state. Every write of regimen
+ * localStorage flows through the single private writer `writeSlotDoc`; the
+ * public §31 chokepoints (and the new slot ops) delegate to it. Every other
+ * module imports the chokepoints from here.
  *
- * Round 150 §31 doctrine: every write fires the typed `regimen:changed`
- * event so subscribers (views) re-render. Cross-IIFE legacy callers via
- * window.persistRegimen etc. route through this module after main.ts
- * installs the bridges.
+ * P3 (2026-07-16) — SLOTS. Regimen state moved from five independent legacy
+ * keys into ONE atomic slot document (`rgSlots_v1`):
  *
- * §00 Zod boundaries: every read goes through `getValidated` so bad LS
- * data never enters typed-land. Schemas live in core/schemas/regimen
- * (single source of truth — `type Regimen = z.infer<typeof RegimenSchema>`).
+ *     { version:1, slots:[{id,name,items[],overrides{},createdAt,editedAt}]×1–4,
+ *       activeSlot, trash:[{item,slotId,removedAt}]×≤20 }
  *
- * LS keys this module owns:
- *   'lcRegimen_v1'       — the committed regimen items array
- *   'rgOverrides_v1'     — per-item dose overrides (id → patch)
- *   'rgManualItems_v1'   — manually-added items array
- *   'rgRemoved_v1'       — hidden item id set (serialized as array)
- *   'rgUserGoals_v1'     — user-selected goal keys array
+ * WHY ONE KEY (the load-bearing decision): localStorage has no cross-key
+ * transaction — core/storage.ts::set is atomic-verify per SINGLE key only. With
+ * the whole of regimen state in one JSON value, a slot switch / delete / remove
+ * / restore is one verified setItem: all-or-nothing. Splitting trash (or the
+ * active pointer) into a second key would put a torn-write data-loss window on
+ * the live remove path (engineering-doctrine #4 atomic ops, #9 reversibility).
+ *
+ * THE FIVE LEGACY CHOKEPOINTS SURVIVE by name + signature + emit (blueprint §3
+ * invariant 4: "extends the existing five; does not replace them"), so the views
+ * that still import them (views/regimen.ts, views/scanner.ts) compile unchanged
+ * even though they burn at §7/§8. Only their STORAGE moved into the active slot.
+ * `saveRgRemoved`/`loadRgRemoved` are now trash adapters; `persistRegimen`
+ * (0 callers) is kept for the gate + bridge. These shims are transitional — they
+ * retire when those views burn, at which point the slot ops become the only API.
+ *
+ * MIGRATION is lazy, read-time, non-destructive: the first read with no
+ * rgSlots_v1 rebuilds a Default slot from the legacy keys (reproducing the old
+ * effective-stack math exactly), recovers any currently-hidden items INTO the
+ * trash (never dropped), and leaves the legacy keys inert on disk (rollback +
+ * one render probe asserts they survive).
+ *
+ * §00 Zod boundaries: every read passes through getValidated; every write
+ * through setValidated (SlotDocSchema enforces ≥1 slot · ≤4 · ≤20 trash ·
+ * activeSlot resolves, at BOTH boundaries). Bad LS data never enters typed-land.
+ *
+ * LS keys this module owns / touches:
+ *   'rgSlots_v1'         — THE slot document (the only regimen write target)
+ *   'rgUserGoals_v1'     — user-selected goal keys (GLOBAL, not per-slot; own key)
+ *   'lcRegimen_v1'       — LEGACY, read once at migration, then inert
+ *   'rgOverrides_v1'     — LEGACY, read once at migration, then inert
+ *   'rgManualItems_v1'   — LEGACY, read once at migration, then inert
+ *   'rgRemoved_v1'       — LEGACY, read once at migration, then inert
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -33,19 +58,37 @@ import {
   RgManualSchema,
   RgRemovedSchema,
   RgUserGoalsSchema,
+  type Slot,
+  type SlotDoc,
+  SlotDocSchema,
+  SlotNameSchema,
 } from '../core/schemas/index.js';
-import { getValidated, set } from '../core/storage.js';
+import { getRaw, getValidated, set, setValidated, type WriteResult } from '../core/storage.js';
 
 // ─── LS key constants ─────────────────────────────────────────────────────
+export const RG_SLOTS_KEY = 'rgSlots_v1';
+export const RG_USER_GOALS_KEY = 'rgUserGoals_v1';
+// Legacy keys — read once by the migration, never written again. Kept as
+// exported constants so the migration + the §31 gate can name them.
 export const REGIMEN_KEY = 'lcRegimen_v1';
 export const RG_OVERRIDES_KEY = 'rgOverrides_v1';
 export const RG_MANUAL_KEY = 'rgManualItems_v1';
 export const RG_REMOVED_KEY = 'rgRemoved_v1';
-export const RG_USER_GOALS_KEY = 'rgUserGoals_v1';
+
+// ─── Slot limits (the §3 invariants, as constants the gate can find) ───────
+export const MAX_SLOTS = 4;
+export const MAX_TRASH = 20;
+export const DEFAULT_SLOT_ID = 'default';
 
 // ─── Re-export inferred types so callers can `import type { Regimen } from '@state/regimen'` ─
-export type { OverridesMap, Regimen, RegimenItem };
+export type { OverridesMap, Regimen, RegimenItem, Slot, SlotDoc };
 export type OverridePatch = Record<string, unknown>;
+
+/** Result of a refusable slot operation — never a silent drop (doctrine #1, #8). */
+export type SlotOpResult = { ok: true; slotId?: string } | { ok: false; reason: string };
+
+/** The typed `regimen:changed` reasons (mirror core/events EventPayloads). */
+type RegimenChangeReason = 'dose-edit' | 'add' | 'remove' | 'restore';
 
 // ─── Helper: invoke legacy's triggerRegimenRerender if present ────────────
 function fireLegacyTrigger(label: string): void {
@@ -60,92 +103,233 @@ function fireLegacyTrigger(label: string): void {
   }
 }
 
-// ─── Read helpers — every read passes through a Zod boundary ──────────────
+// ─── Small pure helpers ────────────────────────────────────────────────────
 
-export function loadRegimen(): Regimen {
-  return getValidated(REGIMEN_KEY, RegimenSchema) ?? { items: [] };
+/** Today as ISO YYYY-MM-DD. */
+function today(): string {
+  return new Date().toISOString().slice(0, 10);
 }
 
-export function loadRgOverrides(): OverridesMap {
+/** A fresh unique slot id. Date+random so two creations in the same ms differ. */
+function newSlotId(): string {
+  return `slot_${Date.now().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`;
+}
+
+/** Newest-first ring cap for the trash buffer. */
+function capTrash(entries: SlotDoc['trash']): SlotDoc['trash'] {
+  return entries.slice(0, MAX_TRASH);
+}
+
+/**
+ * The active slot. SlotDocSchema's superRefine guarantees `activeSlot` resolves
+ * and `.min(1)` guarantees a slot exists, but TS can't see those runtime facts,
+ * so this stays total and fails LOUD on the impossible (doctrine #1).
+ */
+function getActiveSlot(doc: SlotDoc): Slot {
+  const found = doc.slots.find(s => s.id === doc.activeSlot);
+  if (found !== undefined) {
+    return found;
+  }
+  const first = doc.slots[0];
+  if (first !== undefined) {
+    return first;
+  }
+  throw new Error('[state/regimen] slot document has no slots — schema invariant violated');
+}
+
+/** Return a NEW doc with the active slot replaced by `fn(activeSlot)`. Pure. */
+function withActiveSlot(doc: SlotDoc, fn: (slot: Slot) => Slot): SlotDoc {
+  return { ...doc, slots: doc.slots.map(s => (s.id === doc.activeSlot ? fn(s) : s)) };
+}
+
+// ─── Legacy readers (migration only — never the public read path) ──────────
+// These read the retired per-key stores through their own Zod schemas. They are
+// SEPARATE from the public loaders below (which read the active slot) so the
+// migration can rebuild the Default slot without recursing into itself.
+
+function readLegacyRegimen(): Regimen {
+  return getValidated(REGIMEN_KEY, RegimenSchema) ?? { items: [] };
+}
+function readLegacyManual(): RegimenItem[] {
+  return getValidated(RG_MANUAL_KEY, RgManualSchema) ?? [];
+}
+function readLegacyOverrides(): OverridesMap {
   return getValidated(RG_OVERRIDES_KEY, OverridesMapSchema) ?? {};
+}
+function readLegacyRemoved(): Set<number> {
+  return new Set(getValidated(RG_REMOVED_KEY, RgRemovedSchema) ?? []);
+}
+
+/**
+ * Build a Default slot from the legacy keys, reproducing the OLD
+ * loadEffectiveRegimen exactly (committed ∪ manual, deduped by id, minus the
+ * hidden set) — except the hidden items are recovered INTO the trash rather
+ * than dropped (data preservation: the user can restore them).
+ */
+function migrateFromLegacy(): SlotDoc {
+  const hidden = readLegacyRemoved();
+  const byId = new Map<number, RegimenItem>();
+  for (const item of [...readLegacyRegimen().items, ...readLegacyManual()]) {
+    byId.set(item.id, item);
+  }
+  const all = [...byId.values()];
+  const live = all.filter(i => !hidden.has(i.id));
+  const now = today();
+  const trash = capTrash(
+    all.filter(i => hidden.has(i.id)).map(item => ({ item, slotId: DEFAULT_SLOT_ID, removedAt: now })),
+  );
+  return {
+    version: 1,
+    slots: [{
+      id: DEFAULT_SLOT_ID,
+      name: 'Default',
+      items: live,
+      overrides: readLegacyOverrides(),
+      createdAt: now,
+      editedAt: now,
+    }],
+    activeSlot: DEFAULT_SLOT_ID,
+    trash,
+  };
+}
+
+// ─── The slot document: the ONE reader + the ONE writer ────────────────────
+
+/**
+ * Load the slot document, migrating from the legacy keys on first read.
+ *
+ * A present-but-invalid document (corruption / hand-edit) is treated as absent
+ * and rebuilt from the legacy keys (auto-heal, graceful degradation #7) — but
+ * LOUDLY, so a real corruption is not silent. Absent (normal first boot) is silent.
+ */
+function loadSlotDoc(): SlotDoc {
+  if (getRaw(RG_SLOTS_KEY) !== null) {
+    const doc = getValidated(RG_SLOTS_KEY, SlotDocSchema);
+    if (doc !== null) {
+      return doc;
+    }
+    console.warn('[state/regimen] rgSlots_v1 present but failed validation — '
+      + 'rebuilding a Default slot from the legacy keys (auto-heal).');
+  }
+  const migrated = migrateFromLegacy();
+  // Persist once WITHOUT emitting: a read must not fire the render cascade.
+  writeSlotDoc(migrated, { emit: false });
+  return migrated;
+}
+
+/**
+ * THE SOLE WRITER of regimen state. Every chokepoint and slot op ends here.
+ *
+ * setValidated re-checks SlotDocSchema at the write boundary (defense in depth
+ * #2), so a bug that produced a >4-slot or dangling-activeSlot document fails
+ * LOUD instead of persisting. On success, fires the typed cascade (§31) — unless
+ * the caller opts out (the migration, which persists during a read).
+ */
+function writeSlotDoc(doc: SlotDoc, opts?: { emit?: boolean; reason?: RegimenChangeReason }): WriteResult {
+  const res = setValidated(RG_SLOTS_KEY, doc, SlotDocSchema);
+  if (!res.ok) {
+    // Never report success on an unverified/invalid write (#1: no silent failures).
+    console.warn(`[state/regimen] slot document write failed (${res.reason ?? 'unknown'}).`);
+    return res;
+  }
+  if (opts?.emit !== false) {
+    fireLegacyTrigger('slotDoc');
+    emit('regimen:changed', { slotId: RG_SLOTS_KEY, reason: opts?.reason ?? 'restore' });
+  }
+  return res;
+}
+
+// ─── Read helpers — every read goes through the active slot ────────────────
+
+export function loadRgOverrides(): OverridesMap {
+  return getActiveSlot(loadSlotDoc()).overrides;
 }
 
 export function loadRgManual(): RegimenItem[] {
-  return getValidated(RG_MANUAL_KEY, RgManualSchema) ?? [];
+  return getActiveSlot(loadSlotDoc()).items;
 }
 
+/** The set of item ids currently in the active slot's trash (the "removed" set). */
 export function loadRgRemoved(): Set<number> {
-  const arr = getValidated(RG_REMOVED_KEY, RgRemovedSchema);
-  return new Set(arr ?? []);
+  const doc = loadSlotDoc();
+  const activeId = getActiveSlot(doc).id;
+  return new Set(doc.trash.filter(e => e.slotId === activeId).map(e => e.item.id));
 }
 
+/** User-selected goals — GLOBAL, its own key, unchanged by the slot system. */
 export function loadRgUserGoals(): string[] | null {
   return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
 }
 
-// ─── Effective regimen (the user's own stack) ─────────────────────────────
+// ─── Effective regimen (the user's own stack = the active slot's items) ────
 
 /**
- * The user's effective stack — committed + manual, deduped by id, minus the removed-set.
+ * The user's effective stack — the active slot's items.
  *
- * THERE IS NO BASE LAYER, deliberately (2026-07-14). Until now this merged a pre-applied
- * HBSP foundation (BTT 2.5 + Beyond Osteo FX + Ultimate EFA Plus, synthetic negative ids)
- * because a fresh dashboard "should demo real coverage". But a seed is indistinguishable
- * from the user's own stack once merged: the app told a first-run user they owned three
- * products they had never heard of, and every downstream number inherited it — the hero
- * stat, the rail count, the classifier. True zero coverage is 4/90 (the foundational
- * present-in-any-diet elements), not 13/90.
- *
- * The HBSP itself is real Wallach guidance and is NOT lost: all three products live in the
- * sealed Products pillar, so it belongs in the RECOMMENDER as an earned suggestion — never
- * as a silent pre-fill the user never agreed to.
+ * THERE IS NO BASE LAYER, deliberately (2026-07-14): a fresh dashboard is true
+ * zero coverage, not a synthetic HBSP pre-fill. Under the slot model the slot's
+ * `items[]` IS the effective stack directly — removal moves an item to the trash,
+ * so it is no longer in `items`, and there is no separate hide-set to subtract.
  */
 export function loadEffectiveRegimen(): RegimenItem[] {
-  const removed = loadRgRemoved();
-  const byId = new Map<number, RegimenItem>();
-  for (const item of [...loadRegimen().items, ...loadRgManual()]) {
-    if (removed.has(item.id)) {
-      continue;
-    }
-    byId.set(item.id, item);
-  }
-  return [...byId.values()];
+  return getActiveSlot(loadSlotDoc()).items;
 }
 
-// ─── Chokepoints (THE 5 §31-protected mutation paths) ──────────────────────
+// ─── The five §31 chokepoints (storage re-pointed into the active slot) ────
 
-/** Atomically save the regimen + fire the §31 cascade. */
-export function persistRegimen(r: Regimen, sourceLabel = 'persistRegimen'): void {
-  set(REGIMEN_KEY, r);
-  fireLegacyTrigger(sourceLabel);
-  emit('regimen:changed', { slotId: REGIMEN_KEY, reason: 'restore' });
+/** Atomically replace the active slot's items + fire the §31 cascade. */
+export function persistRegimen(r: Regimen, _sourceLabel = 'persistRegimen'): void {
+  const doc = loadSlotDoc();
+  writeSlotDoc(withActiveSlot(doc, s => ({ ...s, items: r.items, editedAt: today() })), { reason: 'restore' });
 }
 
 /** Update an item-specific override (dose, scaling, etc.) by item ID. */
 export function saveRgOverride(id: number | string, patch: OverridePatch): void {
-  const all = loadRgOverrides();
+  const doc = loadSlotDoc();
   const key = String(id);
-  all[key] = { ...(all[key] ?? {}), ...patch };
-  set(RG_OVERRIDES_KEY, all);
-  fireLegacyTrigger(`saveRgOverride:${id}`);
-  emit('regimen:changed', { slotId: RG_OVERRIDES_KEY, reason: 'dose-edit' });
+  writeSlotDoc(
+    withActiveSlot(doc, s => ({
+      ...s,
+      overrides: { ...s.overrides, [key]: { ...(s.overrides[key] ?? {}), ...patch } },
+      editedAt: today(),
+    })),
+    { reason: 'dose-edit' },
+  );
 }
 
-/** Save the manual-items list (items added by user, not from scanner/wishlist). */
+/** Save the active slot's item list (add/replace — the manual + scanned add path). */
 export function saveRgManual(items: RegimenItem[]): void {
-  set(RG_MANUAL_KEY, items);
-  fireLegacyTrigger('saveRgManual');
-  emit('regimen:changed', { slotId: RG_MANUAL_KEY, reason: 'add' });
+  const doc = loadSlotDoc();
+  writeSlotDoc(withActiveSlot(doc, s => ({ ...s, items, editedAt: today() })), { reason: 'add' });
 }
 
-/** Save the removed-items hide set (serialized as array). */
+/**
+ * Move the active slot's items whose id ∈ `setOfIds` into the trash.
+ *
+ * Adapter for the legacy remove path (views/regimen.ts's read-add-write on the
+ * hide-set): the id-set BECOMES the trash bin (blueprint §3 "one concept, one
+ * store"). Idempotent — an id already in the trash (or a stale/negative seed id
+ * that exists in no layer) is a harmless no-op; a re-removal dedupes by item id,
+ * newer removal winning (§10).
+ */
 export function saveRgRemoved(setOfIds: Set<number>): void {
-  set(RG_REMOVED_KEY, [...setOfIds]);
-  fireLegacyTrigger('saveRgRemoved');
-  emit('regimen:changed', { slotId: RG_REMOVED_KEY, reason: 'remove' });
+  const doc = loadSlotDoc();
+  const slot = getActiveSlot(doc);
+  const toTrash = slot.items.filter(i => setOfIds.has(i.id));
+  const remaining = slot.items.filter(i => !setOfIds.has(i.id));
+  const now = today();
+  const newEntries = toTrash.map(item => ({ item, slotId: slot.id, removedAt: now }));
+  const movedIds = new Set(toTrash.map(i => i.id));
+  const keptOld = doc.trash.filter(e => !movedIds.has(e.item.id)); // dedupe: newer removal wins
+  const next: SlotDoc = {
+    ...doc,
+    slots: doc.slots.map(s => (s.id === slot.id ? { ...s, items: remaining, editedAt: now } : s)),
+    trash: capTrash([...newEntries, ...keptOld]),
+  };
+  writeSlotDoc(next, { reason: 'remove' });
 }
 
-/** Save user-selected goals (cleaned of non-string entries per legacy). */
+/** Save user-selected goals (GLOBAL key — cleaned of non-string entries per legacy). */
 export function saveRgUserGoals(goalsArray: unknown): void {
   const cleaned = Array.isArray(goalsArray)
     ? goalsArray.filter((g): g is string => typeof g === 'string' && g.length > 0)
@@ -155,7 +339,152 @@ export function saveRgUserGoals(goalsArray: unknown): void {
   emit('regimen:changed', { slotId: RG_USER_GOALS_KEY, reason: 'add' });
 }
 
-// ─── Bridge installation (cross-IIFE legacy compat) ───────────────────────
+// ─── Slot operations (P3 — the new §31 mutation surface) ───────────────────
+// Each returns {ok,reason?} where refusable (never a silent drop) and delegates
+// to writeSlotDoc (the single writer + cascade). importSlot is deferred to §7
+// (it is the untrusted-JSON surface that belongs with the import/export UI and
+// has no P3 caller — building it now would be speculation, the P4 lesson).
+
+/** Read the current slot document (for a view/probe to enumerate slots). */
+export function loadSlots(): SlotDoc {
+  return loadSlotDoc();
+}
+
+/** Add a new empty slot. Refused at MAX_SLOTS, with a reason. */
+export function addSlot(name?: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  if (doc.slots.length >= MAX_SLOTS) {
+    return { ok: false, reason: `You can have at most ${MAX_SLOTS} regimen slots. Delete one first.` };
+  }
+  const resolvedName = name ?? `Slot ${doc.slots.length + 1}`;
+  const checked = SlotNameSchema.safeParse(resolvedName);
+  if (!checked.success) {
+    return { ok: false, reason: checked.error.issues[0]?.message ?? 'That slot name cannot be used.' };
+  }
+  const now = today();
+  const slot: Slot = { id: newSlotId(), name: checked.data, items: [], overrides: {}, createdAt: now, editedAt: now };
+  const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: 'add' });
+  return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: 'That slot could not be saved to this device.' };
+}
+
+/** Duplicate a slot (its items + overrides) as a new slot. Refused at MAX_SLOTS. */
+export function duplicateSlot(id: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  if (doc.slots.length >= MAX_SLOTS) {
+    return { ok: false, reason: `You can have at most ${MAX_SLOTS} regimen slots. Delete one first.` };
+  }
+  const src = doc.slots.find(s => s.id === id);
+  if (src === undefined) {
+    return { ok: false, reason: 'That slot no longer exists.' };
+  }
+  const resolvedName = `${src.name} copy`.slice(0, 40);
+  const checked = SlotNameSchema.safeParse(resolvedName);
+  const now = today();
+  const slot: Slot = {
+    id: newSlotId(),
+    name: checked.success ? checked.data : `Slot ${doc.slots.length + 1}`,
+    items: src.items.map(i => ({ ...i })),
+    overrides: structuredClone(src.overrides),
+    createdAt: now,
+    editedAt: now,
+  };
+  const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: 'add' });
+  return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: 'That slot could not be saved to this device.' };
+}
+
+/**
+ * Delete a slot. Refuses the last slot (there is always a regimen, invariant 1).
+ * If the active slot is deleted, promotes the lowest-numbered survivor (the first
+ * in creation order, invariant 2). The deleted slot's items go to the trash so a
+ * whole-slot delete never destroys user data (reversibility #9); whole-SLOT
+ * recovery UI is a §7 deliverable.
+ */
+export function deleteSlot(id: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  if (doc.slots.length <= 1) {
+    return { ok: false, reason: 'This is your only regimen slot — it can’t be deleted.' };
+  }
+  const target = doc.slots.find(s => s.id === id);
+  if (target === undefined) {
+    return { ok: false, reason: 'That slot no longer exists.' };
+  }
+  const survivors = doc.slots.filter(s => s.id !== id);
+  const promoted = survivors[0];
+  if (promoted === undefined) {
+    return { ok: false, reason: 'That slot could not be deleted.' }; // unreachable (length ≥ 2 above)
+  }
+  const now = today();
+  const trashed = target.items.map(item => ({ item, slotId: id, removedAt: now }));
+  const next: SlotDoc = {
+    ...doc,
+    slots: survivors,
+    activeSlot: doc.activeSlot === id ? promoted.id : doc.activeSlot,
+    trash: capTrash([...trashed, ...doc.trash]),
+  };
+  const res = writeSlotDoc(next, { reason: 'remove' });
+  return res.ok ? { ok: true } : { ok: false, reason: 'That slot could not be deleted.' };
+}
+
+/** Rename a slot. Rejects an unsafe name with a reason (never silently repairs). */
+export function renameSlot(id: string, name: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  const target = doc.slots.find(s => s.id === id);
+  if (target === undefined) {
+    return { ok: false, reason: 'That slot no longer exists.' };
+  }
+  const checked = SlotNameSchema.safeParse(name);
+  if (!checked.success) {
+    return { ok: false, reason: checked.error.issues[0]?.message ?? 'That slot name cannot be used.' };
+  }
+  const next: SlotDoc = {
+    ...doc,
+    slots: doc.slots.map(s => (s.id === id ? { ...s, name: checked.data, editedAt: today() } : s)),
+  };
+  const res = writeSlotDoc(next, { reason: 'restore' });
+  return res.ok ? { ok: true, slotId: id } : { ok: false, reason: 'That name could not be saved.' };
+}
+
+/** Switch the active slot. Refuses an id that does not resolve. */
+export function setActiveSlot(id: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  if (!doc.slots.some(s => s.id === id)) {
+    return { ok: false, reason: 'That slot no longer exists.' };
+  }
+  if (doc.activeSlot === id) {
+    return { ok: true, slotId: id };
+  }
+  const res = writeSlotDoc({ ...doc, activeSlot: id }, { reason: 'restore' });
+  return res.ok ? { ok: true, slotId: id } : { ok: false, reason: 'That slot could not be activated.' };
+}
+
+/**
+ * Restore a trashed item (by its item id) into the active slot. Removes the
+ * first matching trash entry; skips re-adding if the id is already present.
+ */
+export function restoreFromTrash(itemId: number): SlotOpResult {
+  const doc = loadSlotDoc();
+  const entry = doc.trash.find(e => e.item.id === itemId);
+  if (entry === undefined) {
+    return { ok: false, reason: 'That item is not in the trash.' };
+  }
+  const trash = doc.trash.filter(e => e !== entry);
+  const now = today();
+  const next: SlotDoc = {
+    ...doc,
+    slots: doc.slots.map((s) => {
+      if (s.id !== doc.activeSlot) {
+        return s;
+      }
+      const already = s.items.some(i => i.id === itemId);
+      return already ? s : { ...s, items: [...s.items, entry.item], editedAt: now };
+    }),
+    trash,
+  };
+  const res = writeSlotDoc(next, { reason: 'add' });
+  return res.ok ? { ok: true } : { ok: false, reason: 'That item could not be restored.' };
+}
+
+// ─── Bridge installation (cross-IIFE compat + probe/DOM-handler reach) ─────
 
 declare global {
   interface Window {
@@ -164,12 +493,22 @@ declare global {
     saveRgManual?: typeof saveRgManual;
     saveRgRemoved?: typeof saveRgRemoved;
     saveRgUserGoals?: typeof saveRgUserGoals;
+    loadSlots?: typeof loadSlots;
+    addSlot?: typeof addSlot;
+    duplicateSlot?: typeof duplicateSlot;
+    deleteSlot?: typeof deleteSlot;
+    renameSlot?: typeof renameSlot;
+    setActiveSlot?: typeof setActiveSlot;
+    restoreFromTrash?: typeof restoreFromTrash;
   }
 }
 
 /**
  * Install window.* bridges so DOM handlers and headless render-probes can reach
- * the §31 chokepoint helpers (the migrated native implementations).
+ * the §31 chokepoints + slot ops. Called once from main.ts::bootstrap.
+ *
+ * WAS DEAD CODE until P3: defined but never invoked, so window.* was undefined.
+ * The runtime slot probe drives these, so bootstrap now installs them.
  */
 export function installBridges(): void {
   window.persistRegimen = persistRegimen;
@@ -177,4 +516,11 @@ export function installBridges(): void {
   window.saveRgManual = saveRgManual;
   window.saveRgRemoved = saveRgRemoved;
   window.saveRgUserGoals = saveRgUserGoals;
+  window.loadSlots = loadSlots;
+  window.addSlot = addSlot;
+  window.duplicateSlot = duplicateSlot;
+  window.deleteSlot = deleteSlot;
+  window.renameSlot = renameSlot;
+  window.setActiveSlot = setActiveSlot;
+  window.restoreFromTrash = restoreFromTrash;
 }

@@ -1,25 +1,33 @@
 #!/usr/bin/env python3
-"""Negative test for regimen_state_mutation_routing (§31 chokepoint discipline).
+r"""Negative test for regimen_state_mutation_routing (§31 chokepoint discipline, P3 slot model).
 
 Proof artifact (§00.B "codify, don't promise" / R7). This gate was REMOVED 2026-07-05
 (fca48c9d) "to return in Phase C". Phase C landed the SAME DAY; Phase F finished; nobody
-noticed for ten days. Meanwhile CLAUDE.md stated flatly that user state persists "through
-the §31 chokepoint only" -- unqualified, in the file loaded at every session boot -- while
-the only actual enforcement was an ESLint rule at WARN, which fails nothing. A gate
-promised "next phase" is a gate nobody re-checks: the phase passes and the promise stays.
+noticed for ten days while CLAUDE.md stated flatly that user state persists "through the §31
+chokepoint only" -- unqualified, in the file loaded at every boot -- while the only actual
+enforcement was an ESLint rule at WARN, which fails nothing. A gate promised "next phase" is a
+gate nobody re-checks.
 
-CASE 'prose_mentions_localStorage' is the load-bearing one, and it pins MY OWN bug. The
-first cut of the scan used r"\\blocalStorage\\s*\\." and RED-flagged FIVE INNOCENT FILES by
-matching the FULL STOP in a comment:
+P3 (2026-07-16) RE-CODIFIED the gate for the slot model: regimen state now lives in ONE atomic
+document (rgSlots_v1) written by ONE private writer (writeSlotDoc via setValidated), which the
+public chokepoints delegate to. The old 1-fn<->1-key<->direct-set() model did not fit. Two of
+the old gate's clauses would have MISFIRED on the correct single-source design (R9):
+  - clause 3a `if key not in body` demanded each chokepoint NAME its key constant -- a
+    delegating op does not;
+  - the body slice ran to the next `\nexport function`, so a NON-exported `function
+    writeSlotDoc` was SWALLOWED into whichever export textually preceded it -- a
+    placement-dependent false match.
 
-    "Pure reads only -- no mutation, no localStorage. The corpus is canonical"
+CASE 'swallow_guard' is the load-bearing R9 pin: a gutted saveRgRemoved sitting IMMEDIATELY
+before the private writeSlotDoc must still RED. The old text-slice would have found
+`writeSlotDoc(` inside the swallowed definition line and FALSE-PASSED it. If this case ever
+goes GREEN, the brace-aware body matching has regressed to text-slicing.
 
-Three of those comments were promising exactly the opposite of the violation they were
-accused of. If that case ever REDs again, the scan has gone back to matching prose -- and
-an over-firing gate teaches people to switch gates off, which is worse than the hole.
+CASE 'prose_mentions_localStorage' pins MY OWN earlier bug (2026-07-15): a scan of
+r"\blocalStorage\s*\." matched the FULL STOP in a comment "no localStorage. The corpus is
+canonical" and RED-flagged five innocent files. If it REDs again, the scan is matching prose.
 
 Run:  PYTHONUTF8=1 python tools/test_regimen_state_mutation_routing.py
-
 Exit 0 = every case behaves; non-zero = §31 routing stopped being enforced."""
 import importlib.util
 import sys
@@ -31,34 +39,54 @@ inv = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(inv)
 impl = inv._regimen_state_mutation_routing_impl
 
-# A minimal, self-contained regimen.ts mirroring the real chokepoint shape, so the test
-# cannot rot when the real file is refactored.
+# A minimal, self-contained regimen.ts mirroring the real P3 delegating shape: one private
+# writer, the five legacy chokepoints delegating (four to writeSlotDoc, saveRgUserGoals to its
+# own global key), and the retired keys read-only. Kept small so it cannot rot when the real
+# file is refactored.
 GOOD_REGIMEN = """
+export const RG_SLOTS_KEY = 'rgSlots_v1';
+export const RG_USER_GOALS_KEY = 'rgUserGoals_v1';
 export const REGIMEN_KEY = 'lcRegimen_v1';
 export const RG_OVERRIDES_KEY = 'rgOverrides_v1';
 export const RG_MANUAL_KEY = 'rgManualItems_v1';
 export const RG_REMOVED_KEY = 'rgRemoved_v1';
-export const RG_USER_GOALS_KEY = 'rgUserGoals_v1';
+
+function writeSlotDoc(doc: SlotDoc, opts?: { emit?: boolean; reason?: string }): WriteResult {
+  const res = setValidated(RG_SLOTS_KEY, doc, SlotDocSchema);
+  if (opts?.emit !== false) {
+    emit('regimen:changed', { slotId: RG_SLOTS_KEY, reason: opts?.reason ?? 'restore' });
+  }
+  return res;
+}
+
+function migrate(): SlotDoc {
+  // The migration reads the retired keys once; it never writes them.
+  const a = getValidated(REGIMEN_KEY, RegimenSchema);
+  const b = getValidated(RG_OVERRIDES_KEY, OverridesMapSchema);
+  const c = getValidated(RG_MANUAL_KEY, RgManualSchema);
+  const d = getValidated(RG_REMOVED_KEY, RgRemovedSchema);
+  return build(a, b, c, d);
+}
 
 export function persistRegimen(r: Regimen): void {
-  set(REGIMEN_KEY, r);
-  emit('regimen:changed', { slotId: REGIMEN_KEY, reason: 'restore' });
+  writeSlotDoc(withActiveSlot(loadSlotDoc(), s => ({ ...s, items: r.items })), { reason: 'restore' });
 }
 export function saveRgOverride(id: number, patch: OverridePatch): void {
-  set(RG_OVERRIDES_KEY, all);
-  emit('regimen:changed', { slotId: RG_OVERRIDES_KEY, reason: 'dose-edit' });
+  writeSlotDoc(withActiveSlot(loadSlotDoc(), s => ({ ...s })), { reason: 'dose-edit' });
 }
 export function saveRgManual(items: RegimenItem[]): void {
-  set(RG_MANUAL_KEY, items);
-  emit('regimen:changed', { slotId: RG_MANUAL_KEY, reason: 'add' });
+  writeSlotDoc(withActiveSlot(loadSlotDoc(), s => ({ ...s, items })), { reason: 'add' });
 }
 export function saveRgRemoved(setOfIds: Set<number>): void {
-  set(RG_REMOVED_KEY, [...setOfIds]);
-  emit('regimen:changed', { slotId: RG_REMOVED_KEY, reason: 'remove' });
+  writeSlotDoc(loadSlotDoc(), { reason: 'remove' });
 }
 export function saveRgUserGoals(goalsArray: unknown): void {
   set(RG_USER_GOALS_KEY, cleaned);
   emit('regimen:changed', { slotId: RG_USER_GOALS_KEY, reason: 'add' });
+}
+export function addSlot(name?: string): SlotOpResult {
+  writeSlotDoc({ ...loadSlotDoc() }, { reason: 'add' });
+  return { ok: true };
 }
 """
 GOOD_STORAGE = "export function set(k, v) { localStorage.setItem(k, JSON.stringify(v)); }"
@@ -69,71 +97,128 @@ CASES = []
 def case(name, reg, sto, views, want_green, why):
     ok, msg = impl(reg, sto, views)
     good = (ok == want_green)
-    print("%s %-28s expect=%-5s got=%-5s  %s"
+    print("%s %-30s expect=%-5s got=%-5s  %s"
           % ("ok  " if good else "FAIL", name, "GREEN" if want_green else "RED",
-             "GREEN" if ok else "RED", msg[:60]))
+             "GREEN" if ok else "RED", msg[:56]))
     if not good:
         CASES.append((name, why, msg))
 
 
 # --- the real tree must be green -------------------------------------------------------
 ok, msg = inv.check_regimen_state_mutation_routing()
-print("%s %-28s expect=GREEN got=%-5s  %s"
-      % ("ok  " if ok else "FAIL", "real_tree", "GREEN" if ok else "RED", msg[:60]))
+print("%s %-30s expect=GREEN got=%-5s  %s"
+      % ("ok  " if ok else "FAIL", "real_tree", "GREEN" if ok else "RED", msg[:56]))
 if not ok:
     CASES.append(("real_tree", "the gate must pass on the real tree or it is unusable", msg))
 print()
 
 case("baseline_good", GOOD_REGIMEN, GOOD_STORAGE, [], True,
-     "the planted-good shape must pass, or every RED below is meaningless")
+     "the planted-good delegating shape must pass, or every RED below is meaningless")
 
 # --- THE OVER-FIRE PIN -----------------------------------------------------------------
 case("prose_mentions_localStorage", GOOD_REGIMEN, GOOD_STORAGE,
-     [("state/corpus.ts", "/** Pure reads only — no mutation, no localStorage. The corpus is canonical. */\n"
+     [("state/corpus.ts", "/** Pure reads only -- no mutation, no localStorage. The corpus is canonical. */\n"
                           "export function readCorpus() { return EMBED; }")], True,
      "MY OWN BUG (2026-07-15): r'\\blocalStorage\\s*\\.' matched the FULL STOP in this exact "
-     "comment and RED-flagged 5 innocent files, three of which were promising the opposite "
-     "of the violation. If this REDs, the scan is matching prose again")
+     "comment. If this REDs, the scan is matching prose again")
+
+# --- THE R9 SWALLOW GUARD (the load-bearing case) --------------------------------------
+SWALLOW = GOOD_REGIMEN.replace(
+    "export function saveRgRemoved(setOfIds: Set<number>): void {\n"
+    "  writeSlotDoc(loadSlotDoc(), { reason: 'remove' });\n"
+    "}",
+    # saveRgRemoved gutted to a no-op, placed (as in the real file) before writeSlotDoc's def
+    # by moving a copy of the private writer to sit right after it:
+    "export function saveRgRemoved(setOfIds: Set<number>): void {\n"
+    "  const x = setOfIds; // forgot to persist -- no writeSlotDoc call\n"
+    "}\n"
+    "function writeSlotDocTwin(doc: SlotDoc): WriteResult {\n"
+    "  return setValidatedTwin(doc);\n"
+    "}")
+case("swallow_guard", SWALLOW, GOOD_STORAGE, [], False,
+     "THE R9 PIN: a gutted saveRgRemoved sitting right before a private writer must RED. The "
+     "OLD text-slice ran to the next `export function`, swallowing the private writer whose "
+     "definition line contains `writeSlotDoc(` -> false GREEN. Brace-aware matching extracts "
+     "only saveRgRemoved's true body (no writeSlotDoc call) -> RED. If GREEN, we regressed")
 
 # --- real violations must RED ----------------------------------------------------------
+case("chokepoint_not_delegating",
+     GOOD_REGIMEN.replace(
+         "export function saveRgManual(items: RegimenItem[]): void {\n"
+         "  writeSlotDoc(withActiveSlot(loadSlotDoc(), s => ({ ...s, items })), { reason: 'add' });\n"
+         "}",
+         "export function saveRgManual(items: RegimenItem[]): void {\n"
+         "  const nope = items; // does not route through the single writer\n"
+         "}"),
+     GOOD_STORAGE, [], False,
+     "a chokepoint that does not call writeSlotDoc bypasses the single writer -- the mutation "
+     "never persists + the cascade never fires")
+
+case("second_writer_of_slot_doc",
+     GOOD_REGIMEN + "\nexport function sneak(d: SlotDoc): void { setValidated(RG_SLOTS_KEY, d, SlotDocSchema); }",
+     GOOD_STORAGE, [], False,
+     "a second setValidated(RG_SLOTS_KEY) means the slot doc no longer has ONE writer")
+
+case("writer_missing",
+     GOOD_REGIMEN.replace("setValidated(RG_SLOTS_KEY, doc, SlotDocSchema)", "returnStub(doc)"),
+     GOOD_STORAGE, [], False,
+     "no setValidated(RG_SLOTS_KEY) at all -- the single-writer spine is gone")
+
+case("writer_no_emit",
+     GOOD_REGIMEN.replace(
+         "  if (opts?.emit !== false) {\n"
+         "    emit('regimen:changed', { slotId: RG_SLOTS_KEY, reason: opts?.reason ?? 'restore' });\n"
+         "  }\n", ""),
+     GOOD_STORAGE, [], False,
+     "THE §31 POINT: a writer that does not emit leaves every subscriber stale -- the cascade "
+     "IS the discipline")
+
+case("raw_set_of_slot_doc",
+     GOOD_REGIMEN.replace("setValidated(RG_SLOTS_KEY, doc, SlotDocSchema)", "set(RG_SLOTS_KEY, doc)"),
+     GOOD_STORAGE, [], False,
+     "the slot doc must go through setValidated (the Zod write boundary), not the unchecked set()")
+
+case("retired_key_written",
+     GOOD_REGIMEN.replace("return build(a, b, c, d);", "set(REGIMEN_KEY, a); return build(a, b, c, d);"),
+     GOOD_STORAGE, [], False,
+     "a write to a retired key means the migration is not one-way -- the legacy store is live again")
+
+case("chokepoint_missing",
+     GOOD_REGIMEN.replace("export function saveRgRemoved", "function saveRgRemoved"),
+     GOOD_STORAGE, [], False,
+     "a chokepoint that stops being exported breaks the views that import it (API preservation)")
+
+case("goals_no_emit",
+     GOOD_REGIMEN.replace(
+         "  set(RG_USER_GOALS_KEY, cleaned);\n"
+         "  emit('regimen:changed', { slotId: RG_USER_GOALS_KEY, reason: 'add' });",
+         "  set(RG_USER_GOALS_KEY, cleaned);"),
+     GOOD_STORAGE, [], False,
+     "saveRgUserGoals is the one GLOBAL chokepoint; if it does not emit, a goal change leaves "
+     "every subscriber stale")
+
 case("view_writes_storage", GOOD_REGIMEN, GOOD_STORAGE,
      [("views/coverage.ts", "export function r() { localStorage.setItem('x', '1'); }")], False,
-     "a view writing localStorage directly bypasses §31 entirely — the doctrine's whole claim")
+     "a view writing localStorage directly bypasses §31 entirely")
 
 case("view_reads_storage", GOOD_REGIMEN, GOOD_STORAGE,
-     [("views/coverage.ts", "const v = localStorage.getItem('lcRegimen_v1');")], False,
-     "reads must route through core/storage.ts::getValidated (the Zod boundary) — a raw read "
-     "is an untyped value crossing into typed-land")
+     [("views/coverage.ts", "const v = localStorage.getItem('rgSlots_v1');")], False,
+     "reads must route through core/storage.ts::getValidated (the Zod boundary)")
 
 case("bracket_access", GOOD_REGIMEN, GOOD_STORAGE,
-     [("state/x.ts", "const v = localStorage['lcRegimen_v1'];")], False,
+     [("state/x.ts", "const v = localStorage['rgSlots_v1'];")], False,
      "bracket access is the obvious way around a dot-only scan")
-
-case("chokepoint_missing", GOOD_REGIMEN.replace("export function saveRgRemoved", "function saveRgRemoved"),
-     GOOD_STORAGE, [], False,
-     "a chokepoint that stops being exported is no longer the named writer")
-
-case("silent_write_no_emit", GOOD_REGIMEN.replace(
-        "  set(RG_MANUAL_KEY, items);\n  emit('regimen:changed', { slotId: RG_MANUAL_KEY, reason: 'add' });",
-        "  set(RG_MANUAL_KEY, items);"),
-     GOOD_STORAGE, [], False,
-     "THE §31 POINT: a write that does not emit leaves every subscriber stale. The cascade "
-     "IS the discipline — a silent writer is the bug the doctrine exists to prevent")
-
-case("second_writer_for_key", GOOD_REGIMEN + "\nexport function sneak() { set(RG_MANUAL_KEY, x); }",
-     GOOD_STORAGE, [], False,
-     "a second writer for a slot means the slot no longer has ONE chokepoint")
 
 case("chokepoint_moved", GOOD_REGIMEN, "export function set(k, v) { /* moved */ }", [], False,
      "if core/storage.ts stops writing localStorage the chokepoint moved and this gate is "
-     "pointing at the wrong file — it must say so, not pass")
+     "pointing at the wrong file -- it must say so, not pass")
 
 print()
 if CASES:
-    print("%d CASE(S) FAILED — §31 routing is not enforced:" % len(CASES))
+    print("%d CASE(S) FAILED -- §31 routing is not enforced:" % len(CASES))
     for n, why, msg in CASES:
         print("  %s: %s" % (n, why))
-        print("     got: %s" % msg[:130])
+        print("     got: %s" % msg[:150])
     sys.exit(1)
-print("all cases behave — the five chokepoints are the only regimen writers, each emits.")
+print("all cases behave -- the single writer is the only regimen mutation path, and it emits.")
 sys.exit(0)

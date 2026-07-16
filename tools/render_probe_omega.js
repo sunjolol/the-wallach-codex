@@ -60,7 +60,10 @@ async function run(browser, seed) {
   const errs = [];
   page.on('pageerror', e => errs.push(e.message));
   await page.evaluateOnNewDocument((s) => {
-    try { localStorage.setItem('lcRegimen_v1', JSON.stringify(s)); }
+    // P3: clear first — this probe reuses ONE browser across 4 worlds, and the slot migration
+    // now PERSISTS rgSlots_v1 on first read, so a prior world's slot would otherwise survive and
+    // the next world would grade the stale stack (mirrors render_probe_pdm_presence.js).
+    try { localStorage.clear(); localStorage.setItem('lcRegimen_v1', JSON.stringify(s)); }
     catch (e) { window.__seedErr = String(e); }
   }, seed);
   const url = 'file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/');

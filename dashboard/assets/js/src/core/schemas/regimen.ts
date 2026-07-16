@@ -9,6 +9,12 @@
  * Schemas are the single source of truth for BOTH runtime validation AND
  * static types — `z.infer<typeof RegimenSchema>` gives you the TS type for
  * free, no parallel interface definitions to drift.
+ *
+ * P3 (2026-07-16) added the SLOT DOCUMENT (`SlotDocSchema`, LS key rgSlots_v1):
+ * the single-key, single-writer home for the 1–4 named regimen slots, the
+ * active-slot pointer, and the trash ring buffer. The legacy per-key schemas
+ * below are KEPT — the P3 migration reads them once to build the Default slot,
+ * and they remain the shape a rollback re-reads. See state/regimen.ts.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -46,6 +52,108 @@ export const RgRemovedSchema = z.array(z.number());
 /** User-selected goal keys as stored in 'rgUserGoals_v1'. */
 export const RgUserGoalsSchema = z.array(z.string());
 
+// ─── Slot document (P3, LS key 'rgSlots_v1') ──────────────────────────────────
+
+/**
+ * Hard ceiling for a slot's display name.
+ *
+ * A slot name is a user free-text field painted into chrome, so it carries the
+ * SAME real risks as the profile name (unbounded paste → LS-quota DoS that
+ * corrupts the user's regimen; control chars + bidi overrides that make a
+ * rendered name read differently from its bytes; newlines breaking a one-line
+ * slot). Escape-by-default at the render sink (`textContent`) is still the first
+ * defence against script injection; this is the second layer — a bound with a
+ * rejection PATH, never a silent truncation (engineering-doctrine #1, #8).
+ *
+ * NOTE: intentionally mirrors core/schemas/profile.ts's name safety rather than
+ * importing it — the rename UI is out of P3 scope (the Regimen view burns at §7),
+ * so P3 does not yet earn a shared text-safety module. If §7 grows a second
+ * free-text surface, consolidate the two into one core primitive then. The
+ * near-duplication is flagged here so it is fixed by intent, not discovered by drift.
+ */
+export const SLOT_NAME_MAX = 40;
+
+/** C0/C1 controls (newlines included) + Unicode bidi overrides. */
+// eslint-disable-next-line no-control-regex
+const SLOT_NAME_FORBIDDEN = /[\u0000-\u001F\u007F-\u009F\u202A-\u202E\u2066-\u2069]/;
+/** Whitespace + zero-width padding: invisible, so it cannot be consented to. */
+const SLOT_NAME_INVISIBLE_ONLY = /^[\s\u200B-\u200D\u2060]*$/;
+
+/**
+ * A slot's display name. Rejects (never silently repairs): empty/whitespace/
+ * invisible-only, over SLOT_NAME_MAX, any control char or bidi override.
+ */
+export const SlotNameSchema = z
+  .string()
+  .transform(s => s.trim())
+  .refine(s => !SLOT_NAME_INVISIBLE_ONLY.test(s), {
+    message: 'A slot name needs at least one visible character.',
+  })
+  .refine(s => s.length <= SLOT_NAME_MAX, {
+    message: `A slot name can be at most ${SLOT_NAME_MAX} characters.`,
+  })
+  .refine(s => !SLOT_NAME_FORBIDDEN.test(s), {
+    message: 'A slot name cannot contain control characters.',
+  });
+
+/**
+ * One regimen slot — the §3 state model. `items` + `overrides` are the SAME
+ * shapes the legacy per-key stores used, reused verbatim so the coverage
+ * consumers (which read only the return TYPES of the loaders) are untouched.
+ */
+export const SlotSchema = z.object({
+  id: z.string(),
+  name: SlotNameSchema,
+  items: z.array(RegimenItemSchema),
+  overrides: OverridesMapSchema,
+  createdAt: z.string(), // ISO YYYY-MM-DD
+  editedAt: z.string(), // ISO YYYY-MM-DD
+});
+
+/**
+ * A trashed regimen ITEM (P3 trash is items-only, matching §3's literal
+ * {item, slotId, removedAt} shape). Deleted-SLOT recovery is deferred to the
+ * Regimen-view rebuild (§7), where the delete-slot UI that would produce it
+ * actually lands — building the discriminated union now would be machinery with
+ * no P3 caller (the P4 anti-speculation lesson).
+ */
+export const TrashEntrySchema = z.object({
+  item: RegimenItemSchema,
+  slotId: z.string(),
+  removedAt: z.string(), // ISO YYYY-MM-DD
+});
+
+/**
+ * THE SLOT DOCUMENT — the whole of regimen state in ONE atomic LS value.
+ *
+ * WHY ONE KEY. localStorage has no cross-key transaction (core/storage.ts::set
+ * is atomic-verify per SINGLE key only). Holding {slots, activeSlot, trash} in
+ * one JSON value means a slot switch, delete, remove-to-trash, or restore is one
+ * verified setItem — all-or-nothing. A second key for trash would put a torn-write
+ * data-loss window on the live remove path (doctrine #4 atomic ops, #9 reversibility).
+ *
+ * The runtime invariants are enforced HERE, at both read (getValidated) and write
+ * (setValidated): ≥1 slot (.min(1)), ≤4 (.max(4)), ≤20 trash (.max(20)), and
+ * activeSlot always resolves (the superRefine). A torn or hand-edited document
+ * cannot be read back as valid — a null read re-synthesizes a clean Default (auto-heal).
+ */
+export const SlotDocSchema = z
+  .object({
+    version: z.literal(1),
+    slots: z.array(SlotSchema).min(1).max(4),
+    activeSlot: z.string(),
+    trash: z.array(TrashEntrySchema).max(20),
+  })
+  .superRefine((doc, ctx) => {
+    if (!doc.slots.some(s => s.id === doc.activeSlot)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `activeSlot '${doc.activeSlot}' does not resolve to any slot`,
+        path: ['activeSlot'],
+      });
+    }
+  });
+
 // Inferred types (so consumers can `import type { Regimen } from '@core/schemas/regimen'`)
 export type RegimenLabel = z.infer<typeof RegimenLabelSchema>;
 export type RegimenItem = z.infer<typeof RegimenItemSchema>;
@@ -54,3 +162,5 @@ export type OverridesMap = z.infer<typeof OverridesMapSchema>;
 export type RgManual = z.infer<typeof RgManualSchema>;
 export type RgRemoved = z.infer<typeof RgRemovedSchema>;
 export type RgUserGoals = z.infer<typeof RgUserGoalsSchema>;
+export type Slot = z.infer<typeof SlotSchema>;
+export type SlotDoc = z.infer<typeof SlotDocSchema>;

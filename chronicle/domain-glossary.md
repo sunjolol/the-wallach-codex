@@ -85,8 +85,8 @@ Defined in `state/regimen.ts`; each emits a typed `regimen:changed` event:
 - **§17** — Corruption discipline: all project-file writes route through
   `tools/safe_write.py` (atomic write + readback verify). Direct Edit/Write is
   hook-blocked. Born from six silent-corruption incidents in one day.
-- **§31** — Chokepoint discipline: the five helpers above are the only writers to
-  regimen state.
+- **§31** — Chokepoint discipline: a single writer (`writeSlotDoc`) that the five legacy helpers +
+  the P3 slot ops delegate to is the only writer of regimen state.
 - **Round / Chunk** — A closed unit of work that ends with the round-close ritual.
 - **Round-close ritual** — A chunk is not "done" until: (1) build exits 0,
   (2) `vitest run state/**` exits 0, (3) invariants ≥ baseline, (4) a

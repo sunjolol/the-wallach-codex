@@ -335,6 +335,16 @@ function bootstrap(): void {
     console.warn('[main] installRecomputeTrigger threw:', e);
   }
 
+  // Install the §31 bridges (window.* chokepoints + slot ops) so DOM handlers
+  // and headless probes can reach them. This was dead code until P3 — defined in
+  // state/regimen.ts but never called — so window.addSlot etc. were undefined.
+  try {
+    regimenState.installBridges();
+  }
+  catch (e) {
+    console.warn('[main] installBridges threw:', e);
+  }
+
   wireRail();
   wireProfileChip();
   wireProfileIdentity();
