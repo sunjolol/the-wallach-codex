@@ -96,7 +96,76 @@ is a TWO-STAGE HOVER (card → dotted underline; numbers → the text), no stand
 is a hover-only discoverable · the ring means **"a goal nutrient you have NOT covered"**.
 ★ Governing rule: [[field-shows-gaps-not-wins]] — **the field is a MAP OF GAPS, not a scoreboard.**
 
-### ★★★★ NEW REQUIREMENT, RAISED AT SESSION CLOSE — EXCLUDE KIDS' PRODUCTS (NOT YET BUILT)
+### ~~★★★★ EXCLUDE KIDS' PRODUCTS~~ ✓ **SHIPPED + GATED 2026-07-16 (`ca0b9a52`, board 73/73)**
+
+**Do not re-open the mechanism, and DO NOT go hunting for ~16 more products.** Full record:
+memory [[no-kids-products-recommended]] (rewritten) + the build-log line + the Creator's Log entry.
+
+- **THE LIST IS 4, NOT ~20** — `kids-toddy` · `kidsprinklz` · `cheri-mins` · `strawberry-kiwi-mins`,
+  in `dashboard/assets/data/kids-exclusion.json` (hand-authored curation, MANIFEST `accounted`;
+  no pillar touched, matching D8). **"Toddy" is a DRINK NAME, not "toddler"** — `Ultra Body Toddy`
+  and `Cal Toddy` are **ADULT** and are NOT excluded. The old "~20" estimate and the naming of
+  Ultra Body Toddy both rested on that misreading. ★ **LUNETH CORRECTED HIMSELF** when shown the
+  label: *"I misunderstood what 'toddy' means, I figured it means toddler - that is wrong, it
+  apparently is a type of drink, that is my mistake. Good catch. I only want the explicitly kids
+  products removed."* **This entry's OLD premise (UBT = kids) is DEAD.**
+- **KEPT, NOT EXCLUDED** (examined — do not re-audit): `bone-building-formula` ("teens and young
+  adult women") · `sta-clear` ("teenagers and adults") · `ultimate-multi-efa` ("adults and
+  children"). Each names adults outright; his rule is "only the explicitly kids products".
+- **★★ THE EVIDENCE IS NOT ON THE LABELS AND NOT IN THE NAMES** — this refuted Claude's own
+  premise mid-chunk, via an adversarial verifier. All 217 label images were READ (Claude
+  multimodal, 0 unreadable) and **only `kids-toddy`'s panel is identifiable** (it doses BY AGE
+  BAND — two %DV columns "Ages 1-3"/"Ages ≥4" + a 1,000-calorie child basis; the only such panel).
+  **The other 3 exist only in Youngevity's MARKETING COPY** — `temporary/phase-f-tools/products_manifest.json`
+  field `description` (432 entries; **all 215 products matched by SKU**, so no blind spot). It is
+  **gitignored** → `git grep` is blind to it ([[null-result-needs-a-scope-check]]).
+  `cheri-mins` + `strawberry-kiwi-mins` **ARE the adult Plant Derived Minerals formula** —
+  chemically identical, adult-looking labels, **kid-MARKETED not kid-formulated**, with no kid
+  token in either name. The pillar itself encodes NOTHING (no audience/category/description;
+  `directions` on 22/221, and the only 2 mentioning children are BTT + CM Cream, both ADULT).
+- **A name regex is REJECTED on measurement:** it finds 5, of which **3 are false**
+  (`Kidney & Bladder Support` → "**Kid**ney"; `FlexeoPlus` → "grand**kid**s", a product FOR
+  grandparents; the Toddys), and **misses 2 real ones**.
+- **★★ THE ASYMMETRY IS THE REQUIREMENT — do not "fix" it into consistency.**
+  `rankSources` **FILTERS** (the one function every rec surface funnels through — Coverage recs ·
+  condition pages · `entity-page.ts:377`'s BEST SOURCES). `essentialSlugsByProduct` **DELIBERATELY
+  DOES NOT** (the Products-**tab** database path). Both read the SAME artifact → **read-time**
+  filter, never derive-time: stripping kids from `product-recommender-data.json` would erase them
+  from the Products tab too ([[derive-elegance-is-not-user-truth]]).
+- **GATED:** `kids_products_not_recommended` (critical) + `tools/test_kids_products_not_recommended.py`
+  (12 cases). Proves both halves, that every id resolves in the sealed pillar (a typo silently
+  un-excludes → RED), and **anti-vacuity**. The test pins **the over-fix** (filtering the Products
+  tab) as RED on purpose. **Proof it fires:** calcium raw 53 → filtered 51 and `render_probe_entity`
+  reports `srcCount:51` live; `render_probe_knowledge` reports products `count:215` — DB untouched.
+  41 rows removed across 25 essentials.
+- **HONEST LIMIT (R7):** the gate anchors the PLUMBING, never the MEMBERSHIP. It cannot prove a 5th
+  kids product isn't unlisted — that rests on the two sweeps + Luneth's review.
+- ⚠ **STILL PENDING: Luneth has not yet signed off on the LIST itself** (the mechanism + the
+  approach he approved explicitly). If he adds/removes one, it is a one-line edit to
+  `kids-exclusion.json` — the gate re-resolves it automatically.
+
+### ★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE (unchanged; NOW UNBLOCKED)
+The kids work above was the one thing gating it — the rail's recommendation cards inherit the
+filtered ranker for free. Everything in the section below still stands. ★ **Facts measured
+2026-07-16 that the live build must not re-derive:**
+- **`.tile__ring` DOES NOT EXIST LIVE.** It is demo-only. The live `renderTile`
+  (`views/coverage.ts:79-108`) emits **no goal-membership channel at all**; `.tile[data-goals]`
+  appears once, inside a CSS *comment* (`workspace-coverage.css:774`). The next-chunk line saying
+  "the ring got its own element" describes **the demo**, not the app.
+- **`coveredBy` is now `contributesTo`** (renamed by P4, 2026-07-15). The old line numbers
+  (628-630 / 828) are STALE; the substance still holds.
+- **`renderRail` still emits MANAGE + ADD ITEM** (`views/coverage.ts:302-303`) — both must die,
+  replaced by ONE `FULL REGIMEN →`. It reads `loadEffectiveRegimen()` directly, caps at 8
+  (`RAIL_DISPLAY_CAP`), and its `.regimen-rail__overflow` div has **NO CSS rule anywhere**.
+  The header count correctly reads the FULL length, not the slice.
+- **Zero click listeners exist on the whole surface** — `mount()` installs only two event-bus
+  subscriptions. The dose stepper will be the FIRST interactive control on Coverage.
+- **`h3.regimen-rail__slot-name` is the static literal "DAILY PROTOCOL"**, not read from state —
+  D4 wants the ACTIVE SLOT'S NAME there, read-only.
+- **There is no `.pending` tile class** — pending IS the default chassis. (`.legend__sw.pending`
+  exists and hand-replicates the look; the tile never carries it.)
+
+### ★★★★ ~~NEW REQUIREMENT~~ — the original note, kept for the record
 **His words (2026-07-16):** *"Let's make sure no kids products ever get recommended as items —
 'Kid's Toddy', 'Ultra Body Toddy' and stuff like that (probably around 20 products in total) — they
 are good but no adult is ever going to take those and they're better as a database item to be
