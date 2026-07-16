@@ -1,10 +1,10 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~18:05 CDT, Coverage/Regimen/Scanner BLUEPRINT session)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~22:30 CDT — cobalt SHIPPED + its 3 follow-ups CLOSED)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
-> Board **69/69** — but read the next line before you repeat that number to anyone.
+> Board **71/71** (was 69 — `mirrors_resolve` + `pdm_group_not_named_rare_earths` landed
+> 2026-07-15). Corpus sealed at **kv=338**. Read the next line before you repeat that number.
 >
-> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** `genesis` prints the board as
-> `69/69 · 18 external / 17 consistency / 32 structural / 2 meta`. Only the **external** gates
+> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** Only the **external** gates
 > check anything outside our own files. The rest prove our files agree with each other. **A green
 > board means NOTHING DRIFTED. It does not mean anything is RIGHT.** Do not report the total to
 > Luneth as a statement about Wallach — that is exactly how this project spent three weeks
@@ -72,30 +72,43 @@ lesson inverted — a label is a promise.
      code. `coverage.ts:720` returns `pdmStatus` with **no ceiling**, so the plant-derived
      bottle alone (600 mg × 1.54 = 924 mg = 100%) renders **COBALT COVERED while B12 reads
      GAP**. `render_probe_mirror.js` **world 4** exists solely to keep that dead.
-   - **★ STILL OPEN — its own chunk:** the keystone sentence for the B12-only side, *"A pure
-     cobalt requirement is only found in some bacteria and algae"*, **is in NO sealed claim's
-     verbatim.** It lives only as our own `claim_text` prose on `WAL-CLM-RARE-000114`, whose
-     attached verbatim does not support it. **The ruling rests on it — MINE IT.**
+   - ~~the keystone sentence is unmined~~ ✓ **MINED + SEALED 2026-07-15 (kv=338).**
+     `WAL-CLM-IMMORT-000233` (definition · cobalt + vitamin-b12 · no dose ·
+     `immortality.txt` @229062, p128/screenshot 77) now carries *"The essentiality of cobalt is
+     unusual in that the requirement is for a cobalt complex known as cyanocobalamine or vitamin
+     B12. A pure cobalt requirement is only found in some bacteria and algae…"* as a **sealed
+     verbatim**. The ruling traces to Wallach's words, not our summary. Verified before writing:
+     byte-present · unique in the book (so the offset cannot be ambiguous) · offset lands exactly.
 2. **P3 — slots in state.** The last blueprint prerequisite. Does NOT block the demo.
 3. **THE DEMO** — the daily-protocol rail at 0 / few / many + 1-click add/remove + dose edit.
    Nothing blocks it (the demo is a standalone prototype in `temporary/`, sharing no code
    with the live app). **Luneth's visual sign-off is the gate.**
 4. **Refresh persistence** (the name) — small live work, §31 `saveUserProfile`.
-
-**★ Two cracks found during cobalt, flagged NOT fixed (each its own chunk):**
-- **`views_state_no_inline_data` is mis-scoped + sitting at its boundary.** Its heuristic counts
-  an object literal's keys, so it counts the tile STRUCT as "inline data"; the struct was at
-  exactly 10 (the limit) and the 2 new mirror fields tripped it. Worked around by moving the
-  assembly-time fields into the return spread — **the next tile field trips it again.** The
-  gate should distinguish a data blob from a struct (R9: tighten with a test, never loosen).
-- **The PDM copy contradicts the sealed doctrine.** `view-copy.json` says
-  `kd_ep_pdm_grouptag: "Rare Earth Minerals"` and `kd_ep_pdm_covof: "of the rare-earth group
-  goal"`, while `pdm_coverage_derive.py`'s docstring says **do not rename it back** — *"19 of
-  these 34 are not rare earths by Wallach's own tagging … defined by HAVING NO INDIVIDUAL
-  WALLACH DOSE, never by chemistry."* The USER-FACING label is the one that got it wrong.
-- Also stale, noted while editing: `pdm_coverage_derive.py:19` reads "FOUNDATIONAL 4 /
-  INDIVIDUALLY DOSED 22 / PLANT DERIVED 34" — already wrong before cobalt (phosphorus made it
-  5/21/34) and now 5/20/34 + 1 mirror. Prose only; no gate reads it.
+**✓ The two cracks found during cobalt are FIXED (2026-07-15, same session):**
+- ~~`views_state_no_inline_data` mis-scoped~~ ✓ **TIGHTENED (R9).** It counted a record's FIELDS
+  like a data blob's elements, so the tile struct at exactly 10 fields tripped a critical RED.
+  Now: array literals always count (the 2026-06-21 91-tile-spec incident case — unchanged, the
+  load-bearing half); object literals count only when ≥ half their top-level values are literal
+  constants. Proven by `tools/test_views_state_no_inline_data.py` (8 cases): every DATA case the
+  rule was written for still fires; only shape cases stopped. **Not a loosening — the test IS the
+  proof.** Honest limit in its docstring: a half-computed blob would slip.
+- ~~The PDM copy contradicted the doctrine~~ ✓ **FIXED + GATED.** `view-copy.json` said "Rare
+  Earth Minerals" / "of the rare-earth group goal" while `pdm_coverage_derive.py` said *do not
+  rename it back* — the code comment governed the code, **nothing governed the label**, so the
+  one surface a user sees carried the invention for the whole campaign. Now "Plant Derived" /
+  "of the plant-derived group goal", and **NEW gate `pdm_group_not_named_rare_earths`** (warning)
+  scans the group's NAME fields + layout labels. Negative control: the exact pre-fix copy REDs.
+  Scoped to LABELS only — passing prose mentions are legitimate (he really does tag 15 of the 60).
+- ⚠ **Still stale, NOT fixed:** `pdm_coverage_derive.py:19`'s prose reads "FOUNDATIONAL 4 /
+  INDIVIDUALLY DOSED 22 / PLANT DERIVED 34". It was already wrong before cobalt (phosphorus made
+  it 5/21/34) and is now **5 / 20 / 34 + 1 mirror**. Prose only; no gate reads it. Fix it in the
+  session that next touches that file.
+- ⚠ **`post_write_verify` false-positives on your own echo lines.** A helper script printing
+  `OK <file> — <msg>` is parsed as a safe_write OK line, and the hook then hunts a bare `<file>`
+  at the repo root and reports "vanished after write". Bit once this session on `invariants.py`
+  (which is `tools/invariants.py` and was intact: 330 KB, `safe_write check` OK, `ast.parse`
+  clean). **Do not use `OK <name> — …` as a print prefix in staging scripts.**
+  → [[post-write-verify-ok-line-collision]]
 ### ★★★★ NEW: `chronicle/essential-special-cases.md` — THE CLARITY-PASS REGISTRY
 **Luneth, 2026-07-15: "any special cases NEED to be visible and easily understood by the user
 when they click into an element view — doesn't need to be done now but these 'special cases'

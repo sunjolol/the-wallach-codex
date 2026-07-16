@@ -1339,7 +1339,7 @@
       "symbol": "Co",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 11,
+      "claim_count": 12,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1383,7 +1383,8 @@
         {
           "kind": "definition",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000079"
+            "WAL-CLM-IMMORT-000079",
+            "WAL-CLM-IMMORT-000233"
           ]
         }
       ],
@@ -5405,7 +5406,7 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 36,
+      "claim_count": 37,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5414,7 +5415,7 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
+      "one_liner": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. He describes the arrangement as a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12. In his words: \"The essentiality of cobalt is unusual in that the requirement is for a cobalt complex known as cyanocobalamine or vitamin B12. A pure cobalt requirement is only found in some bacteria and algae.\"",
       "record": [
         {
           "kind": "dose",
@@ -5466,6 +5467,12 @@
             "WAL-CLM-DDDL-000044",
             "WAL-CLM-DDDL-000045",
             "WAL-CLM-RARE-000114"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000233"
           ]
         },
         {
@@ -5525,8 +5532,8 @@
         "magnesium",
         "vitamin-c",
         "omega-3",
-        "anemia",
-        "cobalt"
+        "cobalt",
+        "anemia"
       ]
     },
     "vitamin-c": {

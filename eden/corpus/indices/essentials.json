@@ -1426,7 +1426,7 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000077",
@@ -1435,7 +1435,8 @@
         "WAL-CLM-RARE-000115"
       ],
       "definition": [
-        "WAL-CLM-IMMORT-000079"
+        "WAL-CLM-IMMORT-000079",
+        "WAL-CLM-IMMORT-000233"
       ],
       "dose": [
         "WAL-CLM-IMMORT-000084",
@@ -5817,13 +5818,16 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 36,
+    "claim_count": 37,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
         "WAL-CLM-LETS-000035",
         "WAL-CLM-RARE-000115",
         "WAL-CLM-RARE-000238"
+      ],
+      "definition": [
+        "WAL-CLM-IMMORT-000233"
       ],
       "dose": [
         "WAL-CLM-EPIGEN-000117",

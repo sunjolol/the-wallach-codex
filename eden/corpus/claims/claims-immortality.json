@@ -8200,6 +8200,42 @@
    "extracted_at": "2026-07-13T19:58:29+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000233",
+   "kind": "definition",
+   "essentials": [
+    "cobalt",
+    "vitamin-b12"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. He describes the arrangement as a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12. In his words: \"The essentiality of cobalt is unusual in that the requirement is for a cobalt complex known as cyanocobalamine or vitamin B12. A pure cobalt requirement is only found in some bacteria and algae.\"",
+   "verbatim": "The essentiality\nof cobalt is unusual in that the requirement is for a cobalt\n\ncomplex known as cyanocobalamine or vitamin B12. A pure\ncobalt requirement is only found in some bacteria and algae\nand the need for B12 cobalt is thought by some to represent a\nsymbiotic relationship between microbes which generate and\nmanufacture B12 from elemental cobalt and vertebrates that\nrequire B12.",
+   "locator": {
+    "book": "immortality",
+    "scheme": "screenshot",
+    "chapter": null,
+    "page": 128,
+    "screenshot": 77,
+    "kindle_location": null,
+    "char_offset": 229062
+   },
+   "dose": null,
+   "tags": [
+    "cobalt",
+    "vitamin-b12",
+    "essentiality",
+    "cobalt-complex",
+    "keystone"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-07-15T21:00:00+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

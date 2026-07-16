@@ -710,12 +710,41 @@ def check_dashboard_dist_fresh():
 # ---------------------------------------------------------------------------
 
 def _max_inline_literal_elements(src: str) -> int:
-    """Heuristic scan for the largest array/object literal in TS source, by
-    top-level element count. Ignores string + comment content and () call args.
-    Not a parser — a cheap backstop for the §00.B 'no inline data' rule.
-    Returns the max element estimate (top-level commas + 1) found."""
+    """Heuristic scan for the largest DATA literal in TS source, by top-level element count.
+    Ignores string + comment content and () call args. Not a parser — a cheap backstop for the
+    §00.B 'no inline data' rule. Returns the max element estimate (top-level commas + 1).
+
+    ★ TIGHTENED 2026-07-15 (R9) — IT COUNTED STRUCTS AS DATA. Every `{...}` was measured by its
+    top-level comma count, so a RECORD SHAPE scored the same as a data blob. state/coverage.ts's
+    tile object sat at exactly 10 — the limit — purely because it has 10 fields; adding the two
+    cobalt mirror fields tripped a §00.B "inline data" RED on a struct containing no data at all.
+    That is a misfire, and the rule it enforces does not say "no object may have 11 fields".
+
+    THE DISTINCTION NOW DRAWN, and why it is the right one. The rule exists to stop CANONICAL
+    DATA living in views/state (the 2026-06-21 incident: 91 hardcoded tile specs in
+    views/coverage.ts slipped past lint across two rounds). Those specs looked like
+    `[{ name: 'Calcium', sym: 'Ca', num: 20 }, ...]` — every value a literal constant. A struct
+    looks like `{ tileId: buildTileId(x), status: classify(...), covered: s === 'covered' }` —
+    every value an expression computed at runtime. So:
+      - ARRAY literals always count. A long array in views/state is data by construction, and
+        the incident case was an array. Unchanged, deliberately — this is the load-bearing half.
+      - OBJECT literals count ONLY when at least HALF their top-level values are literal
+        constants (string/number/boolean/null). A record of computed expressions is a shape,
+        not a payload, and moving it to assets/data/ would be nonsense.
+    Proven by tools/test_views_state_no_inline_data.py: the 91-spec blob the rule was WRITTEN
+    for still REDs (both as an array and as a >10-key literal map), while the tile struct passes.
+    NOT a loosening — the data cases it was built to catch all still fire; only the shape cases
+    it was never aimed at stop firing.
+
+    KNOWN LIMIT (honest, per R7): the 50% threshold is a heuristic, not a parser. A blob whose
+    values are half computed (`{ name: 'Calcium', target: TARGETS.ca }` × 40) would slip. The
+    array half catches the realistic shape of that mistake, and `derived_artifacts_fresh` +
+    `data_artifacts_accounted` are the real defence for canonical data. This is a backstop.
+    """
     max_elems = 0
-    stack = []  # entries: [bracket_char, comma_count, dirty_since_comma, count_this]
+    # frame: [bracket, commas, dirty_since_comma, count_this, vals_total, vals_literal,
+    #         key_colon_seen_since_comma, expecting_value]
+    stack = []
     in_str = None
     in_line_comment = False
     in_block_comment = False
@@ -743,31 +772,67 @@ def _max_inline_literal_elements(src: str) -> int:
             i += 1
         elif c in ('"', "'", '`'):
             if stack:
+                _note_value(stack[-1], is_literal=True)
                 stack[-1][2] = True
             in_str = c
         elif c in "[{(":
             if stack:
+                # An object/array/call STARTING a value means the value is not a scalar literal.
+                _note_value(stack[-1], is_literal=False)
                 stack[-1][2] = True
             count_this = True
             if c == "{" and not stack:
                 stmt = src[src.rfind(";", 0, i) + 1:i]
                 if re.match(r"\s*(?:import|export)\b", stmt) and "=" not in stmt:
                     count_this = False
-            stack.append([c, 0, False, count_this])
+            stack.append([c, 0, False, count_this, 0, 0, False, False])
         elif c in "]})":
             if stack:
-                ch, commas, dirty, count_this = stack.pop()
+                fr = stack.pop()
+                ch, commas, dirty, count_this = fr[0], fr[1], fr[2], fr[3]
+                vals_total, vals_literal = fr[4], fr[5]
                 if ch in "[{" and count_this:
-                    elems = commas + (1 if dirty else 0)
-                    if elems > max_elems:
-                        max_elems = elems
+                    if ch == "{":
+                        # DATA MAP vs STRUCT: a payload's values are literal constants; a
+                        # record's are expressions. No key:value pairs at all (a shorthand
+                        # struct, or a block) is likewise not a payload.
+                        is_data = vals_total > 0 and vals_literal * 2 >= vals_total
+                    else:
+                        is_data = True  # array literal — always measured
+                    if is_data:
+                        elems = commas + (1 if dirty else 0)
+                        if elems > max_elems:
+                            max_elems = elems
         elif c == "," and stack and stack[-1][0] in "[{":
             stack[-1][1] += 1
             stack[-1][2] = False
+            stack[-1][6] = False   # next colon in this frame is a KEY colon again
+            stack[-1][7] = False
+        elif c == ":" and stack and stack[-1][0] == "{" and not stack[-1][6]:
+            # The FIRST colon after a comma is the key's. Later colons at the same depth are
+            # ternaries (`x: isPdm ? a : b`) and must not be read as another key.
+            stack[-1][6] = True
+            stack[-1][7] = True
+            stack[-1][2] = True
         elif (not c.isspace()) and stack:
+            if c.isdigit() or src.startswith(("true", "false", "null"), i):
+                _note_value(stack[-1], is_literal=True)
+            else:
+                _note_value(stack[-1], is_literal=False)
             stack[-1][2] = True
         i += 1
     return max_elems
+
+
+def _note_value(frame, is_literal):
+    """Classify the first token of a `{` frame's value as a literal constant or an expression.
+    No-op unless that frame is awaiting a value (i.e. we just passed its key colon)."""
+    if frame[0] != "{" or not frame[7]:
+        return
+    frame[4] += 1
+    if is_literal:
+        frame[5] += 1
+    frame[7] = False
 
 
 def check_views_state_no_inline_data():
@@ -2057,6 +2122,70 @@ def check_amounts_wallach_only():
 # into gate source where no reviewer looks for chemistry. If you cannot cite a Wallach
 # verbatim for the identity, there is no identity -- split the claim or use applies_to.
 _SAME_SUBSTANCE_SLUGS = ()
+
+
+def _pdm_group_not_named_rare_earths_impl(copy_p, layout_p):
+    """The PLANT DERIVED group may not be LABELLED "rare earth(s)" on any user-facing surface.
+
+    NOT pedantry — it is the original sin one layer down. The group is defined by HAVING NO
+    INDIVIDUAL WALLACH DOSE, never by chemistry: Wallach header-tags exactly 15 of the 60 as
+    rare earths in Immortality's A-Z (cerium :5760 ... ytterbium :10233) and pointedly calls
+    scandium "a rare element" (:9514), NOT a rare earth. So 19 of the 34 in this group are not
+    rare earths by his OWN tagging, and naming the group after them asserts a chemical
+    hierarchy he does not hold -- the same invention as the deleted FOUNDATIONAL / MAJOR TRACE
+    / RARE TRACE tiers (killed 56145a4e). The affirmative kill is his own sentence,
+    hk.txt:7312-7314: "The concentration of trace elements in tissue or requirement levels does
+    not represent their relative importance as an essential nutrient."
+
+    WHY THIS GATE EXISTS AT ALL (2026-07-15): pdm_coverage_derive.py's docstring has said "do
+    not rename it back" since the group was created -- and the USER-FACING copy said "Rare Earth
+    Minerals" and "of the rare-earth group goal" the whole time. A rule with no gate is a WISH
+    (R7), and this one had already been broken on the only surface a user can see. The code
+    comment governed the code; nothing governed the label.
+
+    SCOPE, deliberately narrow: only the group's NAME/LABEL fields (the grouptag chip, the
+    coverage-of caption, the layout section labels). Prose that MENTIONS rare earths in passing
+    is legitimate and untouched -- Wallach really does tag 15 of them that way.
+    """
+    import json as _json
+    if not copy_p.exists():
+        return True, "view-copy not installed (bootstrap-guard)"
+
+    bad = []
+    ui = (_json.loads(copy_p.read_text(encoding="utf-8")) or {}).get("ui", {})
+    for key in ("kd_ep_pdm_grouptag", "kd_ep_pdm_covof", "kd_ep_pdm_targetlabel"):
+        val = str(ui.get(key, ""))
+        if "rare earth" in val.lower() or "rare-earth" in val.lower():
+            bad.append(f"view-copy.json ui.{key} = {val!r}")
+
+    if layout_p.exists():
+        layout = _json.loads(layout_p.read_text(encoding="utf-8"))
+        def _walk(o):
+            if isinstance(o, dict):
+                lab = str(o.get("label", ""))
+                if lab and ("rare earth" in lab.lower() or "rare-earth" in lab.lower()):
+                    bad.append(f"coverage-layout label = {lab!r}")
+                for v in o.values():
+                    _walk(v)
+            elif isinstance(o, list):
+                for v in o:
+                    _walk(v)
+        _walk(layout)
+
+    if bad:
+        return False, ("the plant-derived group is LABELLED 'rare earth' on a user-facing "
+                       "surface — 19 of its 34 are not rare earths by Wallach's own tagging; "
+                       "the group is defined by having no individual dose: " + "; ".join(bad[:3]))
+    return True, ("the plant-derived group's user-facing labels name it by its DEFINITION "
+                  "(no individual Wallach dose), not by a chemistry Wallach does not assert")
+
+
+def check_pdm_group_not_named_rare_earths():
+    """Thin path-binding shell so a negative test can drive the impl on planted copy."""
+    return _pdm_group_not_named_rare_earths_impl(
+        ROOT / "dashboard/assets/data/view-copy.json",
+        ROOT / "dashboard/assets/data/coverage-layout-data.json",
+    )
 
 
 def _mirrors_resolve_impl(embed_p, canon_p):
@@ -4740,6 +4869,15 @@ INVARIANTS = [
         truth_anchor="eden/corpus/claims/* sealed dose claims carrying dose.collective_group x essentials-targets-data.json target.source_claim_id + target.low, read independently of targets_derive so a derive that starts fanning again cannot silence its own gate",
         severity="critical",
         lesson_ref="Omega EFA target (2026-07-15) — PROVEN before the gate was written: with the 9 g claim sealed, the derive emitted omega-3=9 g AND omega-6=9 g (18 g total) and amounts_wallach_only returned 'all 40 numeric coverage target(s) trace ... (R2 clean)'. Every existing gate passed while the number was double what Wallach wrote. chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
+    ),
+    Invariant(
+        name="pdm_group_not_named_rare_earths",
+        anchor_class="consistency",  # our copy vs our own sealed doctrine — see the honesty note
+        description="The PLANT DERIVED group may not be LABELLED 'rare earth(s)' on any user-facing surface (the grouptag chip, the coverage-of caption, the layout section labels). The group is defined by HAVING NO INDIVIDUAL WALLACH DOSE, never by chemistry: Wallach header-tags exactly 15 of the 60 as rare earths in Immortality's A-Z and pointedly calls scandium 'a rare element' (:9514), NOT a rare earth — so 19 of the 34 are not rare earths by his own tagging, and naming the group after them re-commits the invented-tier sin one layer down. Prose that MENTIONS rare earths in passing is legitimate and out of scope",
+        check_fn=check_pdm_group_not_named_rare_earths,
+        truth_anchor="dashboard/assets/data/view-copy.json ui.kd_ep_pdm_* label fields + coverage-layout-data.json section labels. HONEST LIMIT: this is a CONSISTENCY anchor, not an external one — it pins our copy to our own doctrine. The doctrine itself is anchored externally (hk.txt:7312-7314, immortality.txt:5760-10233), but this check cannot read the books; it can only stop the label drifting back",
+        severity="warning",
+        lesson_ref="2026-07-15 — pdm_coverage_derive.py's docstring said 'do not rename it back' from the day the group was created, and the USER-FACING copy said 'Rare Earth Minerals' + 'of the rare-earth group goal' the entire time. The code comment governed the code; NOTHING governed the label, so the one surface a user can actually see carried the invention the whole campaign existed to delete. Found in passing during the cobalt fix. A rule with no gate is a WISH (R7) — and this WISH had already been broken where it mattered most.",
     ),
     Invariant(
         name="mirrors_resolve",
