@@ -99,13 +99,29 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 
 /* ─── Topbar ────────────────────────────────────────────────────────────── */
 
-.app-topbar { grid-area: topbar; background: var(--ds-paper); border-bottom: 1px solid var(--ds-rule-soft); padding: var(--ds-space-4) var(--ds-space-7); display: grid; grid-template-columns: auto 1fr 380px; gap: var(--ds-space-6); align-items: center; position: relative; }
+/* ★ THREE COLUMNS: nameplate | flexible spacer | Ask Wallach at the FAR RIGHT (the demo's
+   `auto minmax(0,1fr) auto`). WAS `auto 1fr 380px` — that 380px third column was sized for
+   the telemetry block ("SYNCED · CODEX v3.27"), which is DELETED as fabricated chrome. With
+   only two items left, the button landed at the START of the 1fr middle column and floated in
+   the middle of the bar. minmax(0,1fr) — not 1fr — so a long deck can shrink instead of
+   pushing the button off. The empty <span> in dashboard.html IS the spacer; it is not stray. */
+.app-topbar { grid-area: topbar; background: var(--ds-paper); border-bottom: 1px solid var(--ds-rule-soft); padding: var(--ds-space-4) var(--ds-space-7); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--ds-space-5); align-items: center; position: relative; }
 .app-topbar::after { content:''; position:absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom:-1px; height:1px; background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%); }
-.topbar__breadcrumb { display:flex; align-items:center; gap: var(--ds-space-3); }
-.topbar__workspace-tag { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-widest); text-transform: uppercase; color: var(--ds-tech); font-weight: 600; display:flex; align-items:center; gap: var(--ds-space-2); }
-.topbar__workspace-tag::before { content:''; width:6px; height:6px; background: var(--ds-accent); border-radius:50%; animation: ds-pulse-animate 2s ease-in-out infinite; }
-.topbar__title { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xl); font-weight: 700; color: var(--ds-ink); letter-spacing: 0.01em; text-transform: uppercase; margin: 0; padding-left: var(--ds-space-3); border-left: 1px solid var(--ds-rule); }
-.topbar__sub { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); margin-left: var(--ds-space-3); }
+/* ── THE NAMEPLATE (ported from the signed-off demo, 2026-07-16) ───────────────────────
+   Replaces .topbar__workspace-tag / .topbar__title / .topbar__sub, whose markup is DELETED:
+   "WS·01" was a serial for a workspace-numbering scheme that does not exist, and a ds-cipher
+   scrambled the word COVERAGE beside a real <h1> already saying it.
+
+   ★ The name is SMALL and uppercase (1.05rem), not a display heading. It sits on ONE baseline
+   with the rule and the deck — a nameplate, not a title block. Shipping the markup without
+   these rules (which happened first, and Luneth caught it on sight) falls back to the browser
+   <h1> default: huge, title-case, no rule. Markup without its CSS is the unstyled-drawer
+   drift, and it is exactly what .claude/rules/visual-verification.md exists to stop. */
+.topbar__breadcrumb { display: flex; align-items: baseline; gap: var(--ds-space-4); min-width: 0; }
+.np__name { font-family: var(--ds-font-display-interface); font-size: 1.05rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink); margin: 0; white-space: nowrap; }
+/* 34px hairline: 12px of accent, then rule. The one flash of orange in the nameplate. */
+.np__rule { flex: 0 0 auto; width: 34px; height: 1px; background: linear-gradient(90deg, var(--ds-accent) 0 12px, var(--ds-rule) 12px 100%); align-self: center; }
+.np__deck { font-family: var(--ds-font-sans); font-size: .8rem; color: var(--ds-ink-soft); white-space: nowrap; }
 /* "Ask Wallach" — the topbar entry to the Search drawer. An inviting pill with GREEN
    accents by default (the design-system --ds-status-ok). QUICK PIVOT: delete the
    `topbar__ask--green` class in dashboard.html and it falls back to the interface orange
@@ -132,7 +148,11 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .topbar__ask-kbd { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ask-accent-deep); border: 1px solid var(--ask-accent); border-radius: var(--ds-radius-xs); padding: 1px 6px; opacity: 0.85; }
 /* GREEN accents (default). Delete this class in the HTML for a plain matching (orange) button. */
 .topbar__ask--green { --ask-accent: var(--ds-status-ok); --ask-accent-deep: var(--ds-status-ok); --ask-wash: var(--ds-status-ok-soft); --ask-soft: var(--ds-status-ok-soft); }
-.topbar__telemetry { justify-self: end; display:flex; align-items:center; gap: var(--ds-space-4); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
+/* ── ASK WALLACH — Luneth 2026-07-15: "pretty easy to miss, let's use the Unbounded font
+   which I think will make this pop more". --ds-font-display IS Unbounded (type-futurist.css
+   repoints it off Playfair and loads LAST, so it wins — do not hardcode the family). Scoped
+   to the LABEL only: the dot, the kbd, and the button's own colour/border are untouched. */
+.topbar__ask-label { font-family: var(--ds-font-display); font-weight: 600; letter-spacing: .01em; }
 .telemetry__item { display:inline-flex; align-items:center; gap: var(--ds-space-1); }
 .telemetry__item strong { color: var(--ds-ink); font-weight: 600; }
 .telemetry__item .pulse-dot { width:6px; height:6px; border-radius:50%; background: var(--ds-status-ok); margin-right:4px; box-shadow: 0 0 6px var(--ds-status-ok-soft); }
