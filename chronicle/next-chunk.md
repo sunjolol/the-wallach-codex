@@ -1,7 +1,7 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~22:30 CDT — cobalt SHIPPED + its 3 follow-ups CLOSED)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
-> Board **71/71** (was 69 — `mirrors_resolve` + `pdm_group_not_named_rare_earths` landed
+> Board **72/72** (P3's `slot_invariants` landed 2026-07-16; was 69 — `mirrors_resolve` + `pdm_group_not_named_rare_earths` landed
 > 2026-07-15). Corpus sealed at **kv=338**. Read the next line before you repeat that number.
 >
 > **THE NUMBER IS NOT WHAT YOU THINK IT IS.** Only the **external** gates
@@ -48,7 +48,7 @@ Also settled: **MANAGE and ADD ITEM both DIE**, replaced by one `FULL REGIMEN �
 fine, and I agree this is better."* An ADD ITEM that navigates instead of adding is the PROFILE
 lesson inverted — a label is a promise.
 
-### ★★★ NEXT ORDER (updated 2026-07-15 ~21:40 CDT — P1/P2 DEAD, P4/P5 DONE, ✓ COBALT SHIPPED)
+### ★★★ NEXT ORDER (updated 2026-07-15 ~21:40 CDT — P1/P2 DEAD, P3/P4/P5 DONE, ✓ COBALT SHIPPED)
 
 **Done this session:** blueprint signed off · D6→D7 · D5→D8 · cracks 1/2/3 · P4 · P5 · **COBALT (shipped + signed off, kv=337, `823b8823`)**.
 **~~P1~~ ~~P2~~ DROPPED** (see the D7/D8 rows above — no pillar is touched by any of this work).
@@ -79,7 +79,7 @@ lesson inverted — a label is a promise.
      B12. A pure cobalt requirement is only found in some bacteria and algae…"* as a **sealed
      verbatim**. The ruling traces to Wallach's words, not our summary. Verified before writing:
      byte-present · unique in the book (so the offset cannot be ambiguous) · offset lands exactly.
-2. **P3 — slots in state.** The last blueprint prerequisite. Does NOT block the demo.
+2. ~~**P3 — slots in state.**~~ ✓ **DONE + PUSHED 2026-07-16 (`efc02964`).** ONE atomic slot document (`rgSlots_v1` = {slots×1–4, activeSlot, trash×≤20}) written by ONE private `writeSlotDoc`; lazy non-destructive migration from the 4 legacy keys (hidden items recovered INTO trash); the 5 legacy chokepoints kept by name + re-pointed to the active slot; 6 slot ops (add/duplicate/delete/rename/setActive/restoreFromTrash), each `{ok}|{ok:false,reason}`; `importSlot` deferred to §7. GATES: `regimen_state_mutation_routing` re-codified (brace-aware, so the private writer can't be swallowed) + NEW `slot_invariants` (static) + NEW `render_probe_slots.js` (runtime) + 2 negative tests (16 + 10 cases). Board 72/72. **THE DEMO is now the next order — nothing blocks it; your visual sign-off is the gate.** ⚠ 2 pre-existing probe fails (`render_probe_scanner`, `render_probe_journey`) proven identical at HEAD via git stash — legacy-host DOM checks, NOT P3.
 3. **THE DEMO** — the daily-protocol rail at 0 / few / many + 1-click add/remove + dose edit.
    Nothing blocks it (the demo is a standalone prototype in `temporary/`, sharing no code
    with the live app). **Luneth's visual sign-off is the gate.**
