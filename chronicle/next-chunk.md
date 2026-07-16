@@ -48,72 +48,54 @@ Also settled: **MANAGE and ADD ITEM both DIE**, replaced by one `FULL REGIMEN �
 fine, and I agree this is better."* An ADD ITEM that navigates instead of adding is the PROFILE
 lesson inverted — a label is a promise.
 
-### ★★★ NEXT ORDER (updated 2026-07-15 ~19:00 CDT — P1/P2 DEAD, P4/P5 DONE)
+### ★★★ NEXT ORDER (updated 2026-07-15 ~21:40 CDT — P1/P2 DEAD, P4/P5 DONE, ✓ COBALT SHIPPED)
 
-**Done this session:** blueprint signed off · D6→D7 · D5→D8 · cracks 1/2/3 · P4 · P5.
+**Done this session:** blueprint signed off · D6→D7 · D5→D8 · cracks 1/2/3 · P4 · P5 · **COBALT (shipped + signed off, kv=337, `823b8823`)**.
 **~~P1~~ ~~P2~~ DROPPED** (see the D7/D8 rows above — no pillar is touched by any of this work).
 
-1. **COBALT → shares B12's verdict.** ★ **DECIDED by Luneth 2026-07-15, NOT IMPLEMENTED.**
-   Cobalt carries a **400 mcg ELEMENTAL target that Wallach's own text denies**
-   (`immortality.txt:5882-5884`: *"the requirement is for a cobalt complex known as
-   cyanocobalamine or vitamin B12. A pure cobalt requirement is only found in some bacteria
-   and algae"*; only ruminants use elemental cobalt). The "250–400 mcg" in
-   `WAL-CLM-IMMORT-000084` is a **B12 dose** — the RDA beside it ("3 to 4 mcg") is the B12
-   RDA; there is no cobalt RDA. B12 already has its own target (`WAL-CLM-EPIGEN-000117`).
-   - ★ **THIS OVERTURNS A DOCUMENTED DECISION.** `eden/tools/targets_derive.py:137-140`
-     excluded cobalt from `collective_group`, reasoning it *"maps two slugs because ONE
-     substance carries two names."* **That premise is FALSE** — cobalt is an ELEMENT inside a
-     MOLECULE (*"a single cobalt atom is the central metal component of vitamin B12"*), so
-     400 mcg of B12 carries ~4% of that as cobalt, not 400 mcg. **Correct that docstring in
-     the same patch** or the next session re-derives the old answer from it.
-   - ⚠⚠ **DO NOT USE THE EFA PATTERN. An earlier draft of this handoff said to — that was
-     WRONG and is corrected here before anyone acted on it.** Traced through the real code
-     2026-07-15:
-     - `targets_derive.py:229-296` branches `if lst: … elif slug in collective: … else:`,
-       where `lst = doses.get(slug)` comes from `_maintenance_doses`, which **EXCLUDES**
-       collectives.
-     - **vitamin-b12 IS SAFE** — it keeps its OWN dose (`WAL-CLM-EPIGEN-000117`), so `lst` is
-       non-empty and it takes the FIRST branch. Tagging the cobalt claim cannot disturb it.
-     - **But cobalt would land in `elif slug in collective`** → `kind: "wallach_collective"`
-       with NO numeric `low` → `coverage.ts:732` looks for its meter, finds no
-       `'b12-cobalt'` case, and **`return ''` → STATUSLESS.**
-     - **That is option (b) — the honest-gap answer Luneth explicitly did NOT choose.** So
-       `collective_group` ALONE gives the wrong outcome. It is necessary (it stops the 400 mcg
-       elemental fan-out) but NOT sufficient.
-     - ★ **AND it plants a DEAD ALIAS:** `_collective_doses` fans over `c["essentials"]`, so
-       **vitamin-b12 gets a `collective` entry that the `elif` guarantees is never read.** If
-       B12's EPIGEN claim ever moves, b12 silently falls into the collective branch and goes
-       statusless. `coverage.ts:725-731` records this exact failure happening once already:
-       *"A dead alias is not inert; it is a loaded branch waiting for someone to feed it"* —
-       a dead `essential-fatty-acids` alias, once fed, rendered OMEGA-3/6 `covered` off two
-       plant-derived MINERAL products with ZERO fatty acids. **Do not leave b12 in that map.**
-   - **THE SHAPE THAT ACTUALLY FITS — a MIRROR, not a group (proposal, needs a design call):**
-     cobalt/B12 is NOT a shared budget. EFA = two members summing into ONE budget (9 g); PDM =
-     34 members sharing ONE vehicle dose. **Cobalt is neither: it has no independent delivery
-     at all**, because Wallach says elemental cobalt is unusable by humans. So a product
-     listing "Cobalt 2 mcg" must contribute NOTHING — there is no sum to take.
-     The faithful model is: **cobalt's verdict := vitamin-b12's verdict.** Suggested shape —
-     `target.kind: "mirrors"` + `mirrors_slug: "vitamin-b12"` + `source_claim_id:
-     WAL-CLM-IMMORT-000084`, and `coverage.ts` returns the mirrored slug's status.
-     **This is a NEW mechanism, so per R7 it ships its gate in the same patch:**
-     `mirrors_resolve` (the mirrored slug exists + is not itself a mirror → no cycles) and a
-     negative test proving a mirrored tile moves ONLY with its source and never off its own
-     elemental amount.
-   - **Also required in the SAME patch:** correct `targets_derive.py:137-140`'s docstring (its
-     "ONE substance carries two names" reasoning is the false premise this whole fix
-     overturns) + add the cobalt entry to `chronicle/essential-special-cases.md` §5's status.
-   - **Needs Luneth's SEAL SIGN-OFF** — the claim lives in the sealed corpus (§17 rule 6).
-   - **Verify with:** `render_probe_seeded.js` + a new case asserting cobalt tracks B12 (seed
-     B12-bearing product → both light; seed an elemental-cobalt-only product → cobalt does
-     NOT light). Plant the negative control FIRST — the pre-fix world must reproduce.
-   - **Fails safe meanwhile:** the target is ~23× too high, so the field UNDER-states cobalt.
-     Never falsely green.
+1. ~~**COBALT → shares B12's verdict.**~~ ✓ **SHIPPED + SIGNED OFF 2026-07-15 (`823b8823`, kv=337).**
+   The fabricated 400 mcg elemental target is GONE; cobalt is `target.kind: "mirrors"` →
+   vitamin-b12 and posts no number. Gated by **`mirrors_resolve`** (critical, board now **70**)
+   + `tools/test_mirrors_resolve.py` (8 cases) + `tools/render_probe_mirror.js` (5 worlds).
+   Full record: `chronicle/essential-special-cases.md` §5 +
+   `chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md`.
+   **Do not re-open it.** Three things the next session must NOT re-derive:
+   - **The old handoff's premise was WRONG** ("cobalt has no independent delivery; elemental
+     cobalt is unusable by humans"). The book refutes it in the same chapter —
+     `immortality.txt:5946-5947` *"Cobalt is **also** required as a necessary cofactor for the
+     production of the thyroid hormone thyroxin"* (3 books) · `:5906-5908` metallic cobalt
+     absorbed *"in humans"* · `:5915-5917` *"Plant derived cobalt is very bioavailable"* ·
+     `:5972-5975` soil cobalt *"prevents and cures"* deficiency in *"animals and people"*.
+     **The source is TWO-SIDED.** Luneth ruled on it; that ruling is the authority, not a
+     re-reading of one half.
+   - **`trace_pdm` IS NOT THE ANSWER** even though the canon used to say so and it needs zero
+     code. `coverage.ts:720` returns `pdmStatus` with **no ceiling**, so the plant-derived
+     bottle alone (600 mg × 1.54 = 924 mg = 100%) renders **COBALT COVERED while B12 reads
+     GAP**. `render_probe_mirror.js` **world 4** exists solely to keep that dead.
+   - **★ STILL OPEN — its own chunk:** the keystone sentence for the B12-only side, *"A pure
+     cobalt requirement is only found in some bacteria and algae"*, **is in NO sealed claim's
+     verbatim.** It lives only as our own `claim_text` prose on `WAL-CLM-RARE-000114`, whose
+     attached verbatim does not support it. **The ruling rests on it — MINE IT.**
 2. **P3 — slots in state.** The last blueprint prerequisite. Does NOT block the demo.
 3. **THE DEMO** — the daily-protocol rail at 0 / few / many + 1-click add/remove + dose edit.
    Nothing blocks it (the demo is a standalone prototype in `temporary/`, sharing no code
    with the live app). **Luneth's visual sign-off is the gate.**
 4. **Refresh persistence** (the name) — small live work, §31 `saveUserProfile`.
 
+**★ Two cracks found during cobalt, flagged NOT fixed (each its own chunk):**
+- **`views_state_no_inline_data` is mis-scoped + sitting at its boundary.** Its heuristic counts
+  an object literal's keys, so it counts the tile STRUCT as "inline data"; the struct was at
+  exactly 10 (the limit) and the 2 new mirror fields tripped it. Worked around by moving the
+  assembly-time fields into the return spread — **the next tile field trips it again.** The
+  gate should distinguish a data blob from a struct (R9: tighten with a test, never loosen).
+- **The PDM copy contradicts the sealed doctrine.** `view-copy.json` says
+  `kd_ep_pdm_grouptag: "Rare Earth Minerals"` and `kd_ep_pdm_covof: "of the rare-earth group
+  goal"`, while `pdm_coverage_derive.py`'s docstring says **do not rename it back** — *"19 of
+  these 34 are not rare earths by Wallach's own tagging … defined by HAVING NO INDIVIDUAL
+  WALLACH DOSE, never by chemistry."* The USER-FACING label is the one that got it wrong.
+- Also stale, noted while editing: `pdm_coverage_derive.py:19` reads "FOUNDATIONAL 4 /
+  INDIVIDUALLY DOSED 22 / PLANT DERIVED 34" — already wrong before cobalt (phosphorus made it
+  5/21/34) and now 5/20/34 + 1 mirror. Prose only; no gate reads it.
 ### ★★★★ NEW: `chronicle/essential-special-cases.md` — THE CLARITY-PASS REGISTRY
 **Luneth, 2026-07-15: "any special cases NEED to be visible and easily understood by the user
 when they click into an element view — doesn't need to be done now but these 'special cases'
