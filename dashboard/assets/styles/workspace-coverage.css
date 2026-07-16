@@ -760,8 +760,21 @@ body { margin: 0; background: var(--ds-paper-deep); }
   color: var(--cov-strip-fg);
   border-top-color: var(--ds-status-ok);
 }
-/* The painted signal stripe: orange rides the WINNER as an accent, rather than being the
-   state. This is the reference's orange-on-white flow-line, at interface scale. */
+/* ── THE ORANGE SLIT IS GONE (Luneth, 2026-07-16). It used to paint a 14x3 accent stripe on
+   the top edge of every covered tile — "orange rides the WINNER as an accent, rather than
+   being the state." He called it: the covered state already says covered THREE ways (the
+   green plate, the green rim, the green name strip), and the tile EDGE belongs to goal
+   membership, not to status. The slit was status borrowing the edge.
+
+   The declaration is removed rather than the rule, per his exact instruction, so the box is
+   now transparent and paints nothing. The rule is INERT — kept only because he asked for the
+   one declaration; say the word and it goes entirely.
+
+   ★ This is also what made the ring bug so hard to see: `.tile.covered::after` and the demo's
+   goal ring `.tile[data-goals]::after` are the SAME pseudo-element at IDENTICAL specificity
+   (0,2,1), so they merged per-property and the tick's width/height collapsed the ring to
+   14x5px on every covered+goal tile. The ring now owns its own element; this rule no longer
+   collides with anything either way. */
 .tile.covered::after,
 .tile--vitamin.covered::after,
 .tile--amino.covered::after,
@@ -769,13 +782,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
   content: '';
   position: absolute;
   top: 0;
-  /* Inset past the deepest corner radius (fats round 11px) so the mark never collides with
-     the rounding. It was originally pinned to right:0 and got sliced into a glitch-looking
-     sliver by the old chamfers. */
   right: 13px;
   width: 14px;
   height: 3px;
-  background: var(--ds-accent);
   border-radius: 0 0 2px 2px;
   opacity: 0.9;
   z-index: 2;
