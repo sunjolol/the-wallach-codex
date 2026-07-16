@@ -98729,6 +98729,30 @@ Also deleted the four now-dead rules (.topbar__title, .topbar__workspace-tag, .t
 
 Proven with the tool, not my eyes: a computed-style diff of live against the demo at 1920 returns ZERO deltas on every property \u2014 grid tracks 561.594/827.812/182.594, np__name at x=260 (16.8px, 700, uppercase, Chakra Petch), np__rule at x=371 (34px), np__deck at x=421 (400px), the ask button at x=1697/right=1880 (the far right), and the label in Unbounded. That last one is his 2026-07-15 call ("pretty easy to miss, let's use the Unbounded font"), and the family is NOT hardcoded \u2014 type-futurist.css repoints --ds-font-display off Playfair and loads last, so the token wins.
 
+Board 75/75. 10/10 render probes. No pillar touched.` }, { id: "lg_mro166ha_7e1s99", ts: "2026-07-16T16:38:09.358020-05:00", surface: "coverage", kind: "incident", summary: "The sticky goal strip painted OVER an open drawer: its z-index came from the demo, which has no drawers. 20 -> 5, ladder documented. My first cut fixed the z-index by silently DELETING the sticky \u2014 only the measurement caught it. Both halves gated + negative-controlled.", detail: `Luneth opened the Search drawer and the row of goal chips stayed painted on top of it. Plain version: a drawer is supposed to take over the screen, and the sticky goals strip refused to get out of its way.
+
+The cause is a clean example of a live-only integration gap. The strip's stacking number (z-index 20) came verbatim from the signed-off demo \u2014 and the demo has no drawers at all. In the demo that 20 only ever had to beat the field, so it was never tested against an overlay. Live, the Search and Knowledge drawers mount at z-index 10, and .app-workspace is position:relative with z-index:auto, which means it creates no stacking context at all \u2014 so the strip's 20 competed directly against the drawers, and won.
+
+I measured it rather than reasoned about it: with the drawer open, elementFromPoint over the strip returned SPAN.goalstrip__eyebrow with hitIsInsideDrawer=false. The strip was not merely visible on top of the drawer, it was clickable over it.
+
+The fix is z-index 20 -> 5, and I wrote the whole ladder into the stylesheet where the next reader will actually find it: the field's grid is 1 (and it is a stacking context, so everything inside it \u2014 rings at 3, tiles at 2 \u2014 is confined and 5 clears the lot), the strip is 5, the drawers are 10, the arrival veil is 60. The principle is one line: workspace chrome lives BELOW an overlay.
+
+The part worth recording is that my FIRST cut of this fix broke the sticky, and did it invisibly. The new comment prose landed outside the already-closed comment block with an orphan */, so the CSS parser dropped the declarations and the strip fell to position:static. I had fixed the z-index by deleting the sticky \u2014 repaired one half by breaking the other. Nothing errored. The board stayed green. The only thing that caught it was reading the computed style back and seeing "static" where "sticky" was expected. That is the whole argument for measuring instead of trusting the edit.
+
+TECHNICAL RECORD
+
+GATED (R7). The two facts pull in OPPOSITE directions \u2014 the strip must sit ABOVE the field so hover-focus survives a scroll, and BELOW a drawer so an overlay owns the screen \u2014 which is exactly why both are pinned rather than one. render_probe_coverage_add_remove goes 22 -> 27 checks:
+  \xB7 the goal strip STICKS to the workspace top after a 585px scroll (== 68px, the measured workspace top)
+  \xB7 the field does not scroll THROUGH the strip (the background guard)
+  \xB7 the Search drawer opens
+  \xB7 an open drawer COVERS the strip (the hit target is inside #drawer-search-mount)
+  \xB7 the strip is STILL position:sticky \u2014 so a future z-index fix cannot pay for itself with the sticky, the way mine just tried to
+
+NEGATIVE CONTROLS RUN. Each reproduces a REAL bug, not a hypothetical one:
+  \xB7 z-index restored to the demo's 20 -> REDs "an open drawer COVERS the sticky goal strip" \u2014 Luneth's reported bug, reproduced on demand.
+  \xB7 position:sticky -> static -> REDs both sticky checks \u2014 my own bug, reproduced on demand.
+A probe that cannot reproduce the bug it was written for proves nothing; these can.
+
 Board 75/75. 10/10 render probes. No pillar touched.` }];
 
   // assets/js/src/state/log.ts

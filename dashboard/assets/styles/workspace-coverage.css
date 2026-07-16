@@ -1248,8 +1248,28 @@ body { margin: 0; background: var(--ds-paper-deep); }
      would silently never fire — the classic sticky no-op.
      The background is required, not decoration: without it the tiles scroll THROUGH
      the chips. var(--ds-paper) is the workspace's own fill (measured rgb(250,245,232)
-     == #faf5e8), so the strip reads as part of the page rather than a floating bar. */
-  position: sticky; top: 0; z-index: 20;
+     == #faf5e8), so the strip reads as part of the page rather than a floating bar.
+
+     ★ z-index 5, NOT the demo's 20 — a LIVE-ONLY correction (Luneth, 2026-07-16: "when you
+     open a drawer the sticky goals doesn't get covered"). The demo has NO DRAWERS, so its 20
+     was chosen against nothing: it only ever had to beat the field. Live, the Search (S) and
+     Knowledge (K) drawers mount at z-index 10, and .app-workspace is `position:relative` with
+     `z-index:auto` — so it creates NO stacking context, and the strip's 20 competed DIRECTLY
+     against the drawers and won. Measured, not reasoned: with the drawer open,
+     elementFromPoint over the strip returned SPAN.goalstrip__eyebrow — the strip was not
+     merely visible on top of the drawer, it was CLICKABLE over it.
+     THE LADDER (workspace chrome must live BELOW an overlay):
+        1  .coverage-grid — a stacking context, so the whole field (rings z3, tiles z2) is
+                            CONFINED inside it; 5 clears all of it
+        5  .goalstrip     — workspace chrome
+       10  the drawers    — overlays (drawer-search.css, drawer-shared.css)
+       60  .wc-veil       — the arrival veil, above everything
+     Gated by render_probe_coverage_add_remove: with a drawer open the strip must not be the
+     hit target, AND it must still be `sticky` — the first cut of this fix put the prose above
+     OUTSIDE the closed comment, so the parser dropped the declarations and silently made the
+     strip `position: static`. It fixed the z-index by DELETING the sticky. Only the
+     measurement caught it. */
+  position: sticky; top: 0; z-index: 5;
   background: var(--ds-paper);
   box-shadow: 0 1px 0 var(--ds-rule-soft), 0 10px 18px -14px rgba(26, 22, 18, .30);
 }

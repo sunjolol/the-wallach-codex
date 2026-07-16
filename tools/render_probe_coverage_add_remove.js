@@ -121,6 +121,44 @@ const readState = () => {
   const kidHit = kidIds.filter(k => allRecs.includes(k.replace(/-/g, ' ')));
   checks.push(['no excluded kids product appears in any rec list', kidHit.length === 0]);
 
+  // ── THE STICKY STRIP vs AN OVERLAY (Luneth, 2026-07-16: "when you open a drawer the
+  //    sticky goals doesn't get covered"). TWO facts, and they pull in OPPOSITE directions —
+  //    which is exactly why both are pinned here. The strip must sit ABOVE the field (so
+  //    hover-focus survives a scroll) and BELOW a drawer (an overlay owns the screen).
+  //    The demo has NO DRAWERS, so its z-index 20 was chosen against nothing and shipped a
+  //    strip that was not merely visible over the drawer but CLICKABLE over it.
+  //    ★ AND: the first fix set z-index correctly while silently DELETING the sticky (the new
+  //    prose landed outside the closed comment, so the CSS parser dropped the declarations and
+  //    the strip fell to position:static). It fixed one half by breaking the other, and only a
+  //    measurement caught it. Hence both halves are asserted, forever.
+  const wsTop = await page.evaluate(() => Math.round(document.querySelector('.app-workspace').getBoundingClientRect().top));
+  await page.evaluate(() => { document.querySelector('.app-workspace').scrollTop = 585; });
+  await new Promise(r => setTimeout(r, 350));
+  const stuck = await page.evaluate(() => Math.round(document.querySelector('.goalstrip').getBoundingClientRect().top));
+  checks.push(['the goal strip STICKS to the workspace top after a 585px scroll', stuck === wsTop]);
+  const bleed = await page.evaluate(() => {
+    const r = document.querySelector('.goalstrip').getBoundingClientRect();
+    const e = document.elementFromPoint(r.left + 400, r.top + r.height / 2);
+    return e ? e.className.toString() : '';
+  });
+  checks.push(['the field does not scroll THROUGH the strip', !bleed.includes('tile')]);
+  await page.evaluate(() => { document.querySelector('.app-workspace').scrollTop = 0; });
+  await new Promise(r => setTimeout(r, 250));
+
+  await page.keyboard.press('s');
+  await new Promise(r => setTimeout(r, 600));
+  const drawer = await page.evaluate(() => {
+    const open = !!document.querySelector('#drawer-search-mount.sr-open');
+    const gs = document.querySelector('.goalstrip');
+    const r = gs.getBoundingClientRect();
+    const e = document.elementFromPoint(r.left + 80, r.top + r.height / 2);
+    return { open, inDrawer: e ? !!e.closest('#drawer-search-mount') : false,
+             sticky: getComputedStyle(gs).position };
+  });
+  checks.push(['the Search drawer opens', drawer.open]);
+  checks.push(['an open drawer COVERS the sticky goal strip', drawer.inDrawer]);
+  checks.push(['the strip is STILL position:sticky (the fix must not delete it)', drawer.sticky === 'sticky']);
+
   checks.push(['no page errors', pageErrors.length === 0]);
 
   console.log('STATES', JSON.stringify({ s0, s1, s2, s3, s4 }, null, 1));
