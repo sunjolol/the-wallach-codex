@@ -1,8 +1,10 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-15 ~22:30 CDT — cobalt SHIPPED + its 3 follow-ups CLOSED)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-16 ~10:55 CDT — kids exclusion SHIPPED + SIGNED OFF; the live Coverage build is NEXT and UNBLOCKED)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
-> Board **72/72** (P3's `slot_invariants` landed 2026-07-16; was 69 — `mirrors_resolve` + `pdm_group_not_named_rare_earths` landed
-> 2026-07-15). Corpus sealed at **kv=338**. Read the next line before you repeat that number.
+> Board **73/73** (`kids_products_not_recommended` landed 2026-07-16; was 72 — `slot_invariants`
+> landed earlier the same day; 69 before `mirrors_resolve` + `pdm_group_not_named_rare_earths`,
+> 2026-07-15). Corpus sealed at **kv=338** (untouched — the kids work touched NO pillar).
+> Read the next line before you repeat that number.
 >
 > **THE NUMBER IS NOT WHAT YOU THINK IT IS.** Only the **external** gates
 > check anything outside our own files. The rest prove our files agree with each other. **A green
