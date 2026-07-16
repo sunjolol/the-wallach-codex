@@ -15,6 +15,7 @@ import * as events from './core/events.js';
 import * as sourceRule from './core/source-rule.js';
 import * as storage from './core/storage.js';
 
+import * as corpusState from './state/corpus.js';
 import { installRecomputeTrigger } from './state/coverage.js';
 import * as goalsState from './state/goals.js';
 import * as journeyState from './state/journey.js';
@@ -32,6 +33,7 @@ import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
 import * as searchView from './views/search.js';
 import { initGlossTooltip } from './views/gloss-tooltip.js';
+import * as welcomeView from './views/welcome.js';
 
 /*
  * Reference all unused imports so they're held by the bundler (scaffolds
@@ -348,6 +350,7 @@ function bootstrap(): void {
   wireRail();
   wireProfileChip();
   wireProfileIdentity();
+  wireWelcome();
   wireTopbarSearch();
   mountDrawers();
   wireDrawerKeys();
@@ -380,6 +383,7 @@ function wireProfileIdentity(): void {
     const p = profileState.loadUserProfile();
     const nameEl = document.getElementById('railProfileName');
     const avEl = document.getElementById('railAvatar');
+    const brandEl = document.getElementById('railBrandName');
     if (nameEl !== null) {
       // textContent, never innerHTML: the name is the app's only free-text field, and
       // escape-by-default is what actually stops script injection here (the Zod schema
@@ -389,9 +393,46 @@ function wireProfileIdentity(): void {
     if (avEl !== null) {
       avEl.textContent = profileState.displayInitial(p);
     }
+    const subEl = document.getElementById('railBrandSub');
+    if (subEl !== null) {
+      // Derived from the sealed corpus at boot — see state/corpus.ts::claimCount.
+      subEl.textContent = `Corpus · ${corpusState.claimCount().toLocaleString()} entries`;
+    }
+    if (brandEl !== null) {
+      // The BRAND slot (2026-07-16). It hardcoded the literal "LUNETH" in dashboard.html
+      // — a value living in markup where nothing can reach it, and wrong for every user who
+      // is not Luneth. displayName's 'brand' slot existed for exactly this and had no
+      // caller; both slots derive from ONE place so they cannot drift apart.
+      brandEl.textContent = profileState.displayName(p, 'brand');
+    }
   };
   paint();
   events.on('profile:changed', paint);
+}
+
+/**
+ * The arrival veil — mounted ONLY when the user has never been asked (state/profile.ts's
+ * tri-state). Also re-openable as a goal picker: the Coverage strip's "+ ADD" fires
+ * `wallach:open-welcome`, because a button labelled "+ ADD" that adds nothing is the
+ * PROFILE lesson inverted — a label is a promise.
+ */
+function wireWelcome(): void {
+  const host = document.getElementById('welcomeHost');
+  if (host === null) {
+    return;
+  }
+  // NO onDone re-render callback, deliberately: the veil's exit writes through the §31
+  // chokepoints (saveUserProfile → 'profile:changed', saveRgUserGoals → 'regimen:changed'),
+  // and both surfaces already subscribe. The cascade IS the discipline — a manual re-render
+  // here would be a second, ad-hoc path doing what the chokepoint does for free, and it
+  // would rot the moment the event contract changed.
+  const open = (): void => {
+    welcomeView.mount(host);
+  };
+  if (welcomeView.shouldShowWelcome()) {
+    open();
+  }
+  window.addEventListener('wallach:open-welcome', open);
 }
 
 

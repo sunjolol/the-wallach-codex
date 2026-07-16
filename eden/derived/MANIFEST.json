@@ -78,9 +78,12 @@
       "compare": "json",
       "inputs": [
         "dashboard/assets/data/coverage-layout-skeleton.json",
-        "eden/corpus/essentials-canon.json"
+        "eden/corpus/essentials-canon.json",
+        "eden/corpus/claims",
+        "eden/catalog/conditions.json",
+        "dashboard/assets/data/essentials-targets-data.json"
       ],
-      "note": "The Coverage periodic-table layout (state/coverage.ts esbuild JSON import). Editorial arrangement/chrome + tile key refs come from the hand-authored coverage-layout-skeleton.json; each tile's canonical identity -- name (canon display_name uppercased) and, for minerals, sym+num -- is filled from essentials-canon, so the table can never drift from the pillar (crack #1 deferred half, Phase E 2026-07-06). Replaces the old hand-typed coverage-layout-data (91 names + 60 symbols were re-stored by hand)."
+      "note": "The Coverage periodic-table layout (state/coverage.ts esbuild JSON import). Editorial arrangement/chrome + tile key refs come from the hand-authored coverage-layout-skeleton.json; each tile's canonical identity -- name (canon display_name uppercased) and, for minerals, sym+num -- is filled from essentials-canon, so the table can never drift from the pillar (crack #1 deferred half, Phase E 2026-07-06). Replaces the old hand-typed coverage-layout-data (91 names + 60 symbols were re-stored by hand). GOAL MEMBERSHIP (2026-07-16, the live Coverage build): the skeleton's goals block holds only the CURATION ({id, name, conditions[]} -- ours, editorial, explicitly NOT a Wallach claim; Luneth authors the real set and the 14 shipped are a placeholder he rewrites); each goal's `members` DERIVES here by intersecting the sealed claims against the goal's Catalog condition slugs, so membership is Wallach's and can never be hand-typed (R3) or rot as mining adds claims. search-only claims are excluded (the goal strip is an OPERATIONAL surface). Excluded from membership: the 34 trace_pdm (no individual Wallach amount -- one shared verdict, so a goal can never name one; read from essentials-targets-data's target.kind, the semantic fact) and the 4 fiat-covered foundational slugs (H/C/N/O -- nothing to take, so no goal to set; phosphorus is NOT excluded, its covered traces to a sealed claim). The derive HARD-FAILS on an unresolvable condition slug, a non-canon essential, or a goal with zero members. NO per-goal `total` -- membership is what you LOOK AT, a total is a DENOMINATOR and the denominator is always 90. Gated by goal_members_actionable."
     },
     {
       "artifact": "eden/derived/product-composition.json",

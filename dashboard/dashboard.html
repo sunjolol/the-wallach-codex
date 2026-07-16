@@ -50,9 +50,14 @@
   <!-- SYSTEM RAIL ── new chrome from v3 mockups -->
   <aside class="app-rail">
     <div class="rail__brand">
-      <div class="rail__brand-mark"><span class="ds-cipher" data-cipher-set="hexa">WSC·1AB7</span></div>
-      <div class="rail__brand-name">LUNETH</div>
-      <div class="rail__brand-sub">v3.27 · CODEX</div>
+      <!-- "WSC·1AB7" was a decorative hex serial dressed as a real one; the whole
+           fabricated-chrome family died with demo D. The product's actual name replaces it. -->
+      <div class="rail__brand-mark">Wallach Codex</div>
+      <div class="rail__brand-name" id="railBrandName">Codex</div>
+      <!-- DERIVED at boot from the sealed corpus, never typed: a count that is true today
+           and frozen forever is a lie with a delay ("EDEN v1 · sealed 8E594A01" all over
+           again). Was "v3.27 · CODEX" — the BRAIN's version, not the app's. -->
+      <div class="rail__brand-sub" id="railBrandSub"></div>
     </div>
     <div class="rail__section">
       <div class="rail__section-label">Workspaces</div>
@@ -81,20 +86,23 @@
 
   <!-- TOPBAR -->
   <header class="app-topbar">
+    <!-- THE NAMEPLATE (demo D/E). "WS·01" was fabricated chrome — a workspace serial for a
+         workspace-numbering scheme that does not exist — and the ds-cipher scrambled the
+         word COVERAGE beside a real <h1> saying the same thing. The deck replaces the
+         "// where you are, what you're missing" tagline with what the surface IS. -->
     <div class="topbar__breadcrumb">
-      <span class="topbar__workspace-tag">WS·01 · <span class="ds-cipher" data-cipher-set="alphanum">COVERAGE</span></span>
-      <h1 class="topbar__title">COVERAGE</h1>
-      <span class="topbar__sub">// where you are, what you're missing</span>
+      <h1 class="np__name">Coverage</h1>
+      <span class="np__rule" aria-hidden="true"></span>
+      <span class="np__deck">Every essential Wallach named, measured against what you take.</span>
     </div>
     <button class="topbar__ask topbar__ask--green" data-topbar-ask type="button" aria-label="Ask Wallach — open Search">
       <span class="topbar__ask-dot" aria-hidden="true"></span>
       <span class="topbar__ask-label">Ask Wallach</span>
       <span class="topbar__ask-kbd">S</span>
     </button>
-    <div class="topbar__telemetry">
-      <span class="telemetry__item"><span class="pulse-dot"></span> SYNCED</span>
-      <span class="telemetry__item">CODEX <strong>v3.27</strong></span>
-    </div>
+    <!-- TELEMETRY DELETED (demo D). "SYNCED" is impossible in an app with no network and no
+         backend — it reflected no sync state and could never say anything else. "CODEX
+         v3.27" was the BRAIN's version, not the app's. Both were chrome asserting a fact. -->
   </header>
 
   <!-- WORKSPACE — hosts the workspace mount slots -->
@@ -107,14 +115,12 @@
 
   </main>
 
-  <!-- FOOTER (telemetry) -->
-  <footer class="app-footer">
-    <span class="footer__item"><span class="dot"></span><strong>READY</strong> · all systems</span>
-    <span class="footer__item">EDEN <strong>v1</strong> · sealed <span class="ds-cipher" data-cipher-set="hexa">8E594A01</span></span>
-    <span class="footer__item">BUILD <strong>v3</strong> · native</span>
-    <span class="footer__spacer"></span>
-    <span class="footer__signature">// RENDERED WITH WALLACH·SYS v3.27</span>
-  </footer>
+  <!-- FOOTER DELETED (demo D — "all 4 items were fabricated"). For the record, because a
+       future session must not "restore" it: "READY · all systems" reported no system;
+       "BUILD v3 · native" — build.mjs stamps no version; "// RENDERED WITH WALLACH·SYS
+       v3.27" named a product that does not exist; and "EDEN v1 · sealed 8E594A01" was a
+       MOCKUP LITERAL matching NONE of the 8 real goldens — a fake seal hash on a project
+       whose entire thesis is that seals are real. -->
 
   <!-- OVERLAY MOUNT SLOTS — drawers + palette mount here in Round 5 -->
   <div id="drawer-search-mount"></div>
@@ -125,6 +131,11 @@
   <div id="palette-mount"></div>
 
 </div>
+
+<!-- The arrival veil's host. EMPTY in the markup on purpose: the veil is state-driven
+     (views/welcome.ts mounts it only when state/profile.ts has never been asked), so it can
+     never be a wall that shows up for a user who already answered. -->
+<div id="welcomeHost"></div>
 
 <!-- IIFE format (not type="module") so opening dashboard.html via file:// works.
      The build script emits IIFE; hand-bundled fallback is IIFE too. -->

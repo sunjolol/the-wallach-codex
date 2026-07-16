@@ -887,11 +887,16 @@ body { margin: 0; background: var(--ds-paper-deep); }
    here; this console is paper, and the goals-first UX work it belongs to is PAUSED, not
    reverted. */
 
+/* ★ NO PADDING, and no gap. This is a BARE mount wrapper: in the signed-off demo the
+   goalstrip and .cov-d are direct children of .app-workspace, and .cov-d owns the page
+   padding. Keeping the old padding here PADDED THE PAGE TWICE (40px + 40px each side = 160px
+   eaten), which cost the field 80px and, at 1920, a WHOLE COLUMN — 10 where the demo renders
+   11. Measured against the demo itself rather than argued: demo E is 776px/6 cols at 1440 and
+   1256px/11 at 1920; live matched only after this rule stopped competing with .cov-d.
+   The vertical rhythm belongs to .goalstrip + .cov-d, exactly as the demo has it. */
 .coverage-workspace {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-space-6);
-  padding: var(--ds-space-7);
 }
 
 /* The workspace now owns the outer padding the grid used to carry, so the console sits flush
@@ -1209,3 +1214,458 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .goals-strip__add {           /* + ADD GOAL */
   font-family: var(--ds-font-display);
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   THE COVERAGE WORKSPACE — ported 2026-07-16 from the signed-off demo
+   (temporary/coverage-E-rail.html) when the live build shipped.
+
+   The demo linked THIS stylesheet and layered these rules on top of it; they now live
+   here, where they belong. Ported verbatim, comments included: the comments record
+   decisions (the ::after ring collision, covered-takes-no-ring, why the grid uses integer
+   tracks) that cost real debugging and must never be re-derived from scratch.
+
+   NOT ported, on purpose: the demo's own "MOCKUP-ONLY" shell block, the dead :root goal
+   palette (the live palette is core/goal-display.ts — one home), the shell nameplate /
+   Ask-Wallach chrome, and the not-yet-built inline rename.
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── THE GOAL STRIP — your goals, not a question ──────────────────────────
+   This is the thing Luneth wanted "up top". It is NOT the old console: it does not
+   ask, it REPORTS what you already told the welcome screen, and every chip does
+   something (hover = focus). It carries no count — that is the whole discipline. */
+.goalstrip {
+  display: flex; align-items: center; gap: var(--ds-space-4);
+  padding: var(--ds-space-4) var(--ds-space-7);
+  flex-wrap: wrap;
+  /* STICKY — Luneth 2026-07-15: "make goals at the top sticky so you can continue to
+     hover to highlight as you scroll down". Hover-focus is the strip's whole job, and
+     it was unreachable the moment you scrolled to the tile you wanted to look at.
+     MEASURED, not assumed: the scroller is main.app-workspace (overflow-y:auto,
+     scrollHeight 1701 > clientHeight 1132) and .goalstrip is its DIRECT child, so
+     top:0 pins to the workspace. The document itself does not scroll at all here
+     (documentElement.scrollHeight <= innerHeight), so a document-relative sticky
+     would silently never fire — the classic sticky no-op.
+     The background is required, not decoration: without it the tiles scroll THROUGH
+     the chips. var(--ds-paper) is the workspace's own fill (measured rgb(250,245,232)
+     == #faf5e8), so the strip reads as part of the page rather than a floating bar. */
+  position: sticky; top: 0; z-index: 20;
+  background: var(--ds-paper);
+  box-shadow: 0 1px 0 var(--ds-rule-soft), 0 10px 18px -14px rgba(26, 22, 18, .30);
+}
+.goalstrip__eyebrow {
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider); text-transform: uppercase;
+  color: var(--ds-ink-faint); white-space: nowrap;
+}
+.gchip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 13px; border-radius: 100px; cursor: pointer;
+  border: 1px solid var(--ds-rule);
+  background: var(--ds-paper-light);
+  font-family: var(--ds-font-display-interface);
+  font-size: .72rem; font-weight: 600; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--ds-ink-medium);
+  transition: border-color .16s, box-shadow .16s, color .16s;
+}
+.gchip:hover { border-color: var(--gc); color: var(--ds-ink); box-shadow: 0 0 0 2px color-mix(in srgb, var(--gc) 22%, transparent); }
+.gchip__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gc); flex: 0 0 auto; }
+.gchip--add { color: var(--ds-ink-faint); border-style: dashed; }
+
+
+
+/* ── THE GRID — integer columns, and both of Luneth's notes fall out of one change.
+   WAS: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px
+   -> 1fr divided 1208px by 13 into FRACTIONAL widths at FRACTIONAL positions
+      (88.297px @ left 1123.766). The ring then straddled half-pixels and the browser
+      rounded each edge independently, so one side — usually the right — lost a subpixel.
+      That is the "thinner right border" on Mg / Ca / Se: not a ring bug, a GRID bug.
+      It only showed on gradient tiles because that is where the ring is visible at all.
+   NOW: a fixed 100px column + a 9px gap.
+
+   ★ CORRECTION 2026-07-15 — the paragraph above measured a bare 1920 viewport and
+   forgot the SCROLLBAR. Luneth's maximized 1920 window has a ~15px classic scrollbar,
+   so the layout viewport is 1905 and this host's content box is 1193px, NOT 1208. At
+   1193 a 92px track fits ELEVEN columns, not twelve: 11*92 + 10*9 = 1102, stranding
+   91px on the right. So the "5px slack, it still fills the width" claim described a
+   viewport that does not exist on his machine, and what he actually saw was a dead
+   strip almost a full tile wide. The tiles never reached the right edge.
+
+   Why 100px — it is the WIDEST track that still fits 11 columns in 1193 (101px drops
+   to 10). ★ 2026-07-15: one leg of this reasoning DIED and the conclusion survives
+   anyway. It used to add "which wraps the 11-tile FOUNDATIONAL row and orphans one";
+   FOUNDATIONAL is now 5 tiles, so no row-wrap argument rides on it. 100px is kept on
+   its OTHER two legs, which the re-group does not touch:
+     · integer track -> integer positions -> the ring rasterises evenly on all 4 sides
+     · CHOLECALCIFEROL measures 86.27px inside an 88px label box at a 92px tile: 1.73px
+       of air TOTAL, under 1px a side, and the tightest label of all 88 by 6x. That is
+       the "too tight against the edges" Luneth flagged. At 100px it gets 9.73px, which
+       lands on PHYLLOQUINONE's 10.79px — the next-tightest label, i.e. the field's own
+       normal rather than an invented target.
+     · every section keeps the row shape it has at 92px
+     · 11*100 + 10*9 = 1190 of 1193 -> 3px residual, so the right inset is 27px vs the
+       left's 24px. Not pixel-exact, and 1193 has no integer 11-column solution that is
+       (W=93/G=17 fills exactly but leaves D3 tight at 2.73px of air).
+
+   ★ WHY NOT justify-content: space-between — it fills 1193 EXACTLY and is the obvious
+   fix, but it is a TRAP. It buys the exact fill with fractional track POSITIONS, and a
+   4x pixel test of the isolated ring shows that alone reproduces the 1fr defect: the
+   right edge drops to 8.00 device px against the left's 12.00, while integer positions
+   read 12.00/12.00 on both. Integer POSITION — not merely integer width — is what keeps
+   the ring even; both edges sharing one fractional offset does NOT save it. Verified
+   against a 1fr negative control that correctly read 12.00/7.67. 3px of residual is the
+   price of a ring that is crisp on every edge, and it is 3px instead of 91. */
+.essentials-grid--minerals,
+.essentials-grid--vitamins,
+.essentials-grid--aminos {
+  grid-template-columns: repeat(auto-fill, 100px) !important;
+  gap: 9px !important;
+}
+
+
+/* ── THE RING — goal membership. A tile can be NOT COVERED and be NAMED at the
+   same time without either statement corrupting the other: status owns the tile
+   INTERIOR, goals own its EDGE.
+
+   ★ ONE GEOMETRY FOR BOTH (Luneth 2026-07-14: "the gradient borders should have the
+   same thickness and glow the single goal tiles do"). They diverged because single used
+   box-shadow (spread OUTSIDE the border-box) and multi used border-image (INSIDE it,
+   since box-sizing:border-box) — same 2.5px, opposite sides of the edge, so they read as
+   different weights and only one glowed. Now BOTH ride the same ::after ring; a single
+   goal is just a gradient with one colour.
+
+   ★ AND IT IS ROUND AGAIN. The first ::after attempt failed because .tile sets
+   overflow:hidden to clip its --fill bar — which clipped the ring too. But the fill is a
+   BOTTOM-anchored bar: give it its own bottom radius and the tile no longer needs to clip
+   anything. overflow:visible then frees ::after, and a masked pseudo-element DOES respect
+   border-radius (border-image never did — that was the square-corner artifact). */
+.tile[data-goals], .tile--vitamin[data-goals],
+.tile--amino[data-goals], .tile--fat[data-goals] {
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── THE GLOW STOPS WHERE THE RING STOPS (see the covered rule below). It is the ring's
+   halo, not a second signal: without a ring it is a coloured smudge around a green plate.
+   ★ Scoping it off `.covered` also hands the covered plate back its OWN box-shadow — the
+   green rim + white top-light — which this !important glow had been silently REPLACING on
+   every covered+goal tile since the ring was built. Nobody had noticed, because until the
+   rail landed there was almost never a covered tile carrying a goal. */
+.tile[data-goals]:not(.covered), .tile--vitamin[data-goals]:not(.covered),
+.tile--amino[data-goals]:not(.covered), .tile--fat[data-goals]:not(.covered) {
+  box-shadow: 0 0 14px -3px var(--ringGlow, transparent) !important;
+}
+/* The fill bar clips itself, so the tile doesn't have to clip everything. */
+.tile[data-goals]::before, .tile--vitamin[data-goals]::before,
+.tile--amino[data-goals]::before, .tile--fat[data-goals]::before {
+  border-radius: 0 0 var(--ds-radius-xs) var(--ds-radius-xs);
+}
+/* ★ THE RING IS ITS OWN ELEMENT — it used to be ::after, and that was the bug.
+   `.tile.covered::after` is ALREADY the status TICK (a 14x3 accent bar,
+   workspace-coverage.css:765-782). An element has exactly ONE ::after, and the two rules
+   match at IDENTICAL specificity — .tile.covered::after and .tile[data-goals]::after are
+   both (0,2,1) — so the cascade MERGED them per-property instead of one winning: the ring
+   won `background` + `inset` (it is later in source), the tick won `width:14px` +
+   `height:3px` + `opacity:.9`, and an absolutely-positioned box with both `inset` and an
+   explicit width/height is over-constrained, so it resolved to the TICK'S SIZE. The ring was
+   painting the right gradient at 14x5 px.
+
+   MEASURED, not guessed (the instrument lies before the eye):
+     PHOSPHORUS (covered + 2 goals) ::after = 14x5,   goal gradient, opacity .9   <- collapsed
+     COBALT     (gap + 1 goal)      ::after = 105x85, goal gradient, opacity 1    <- correct
+     HYDROGEN   (covered, no goal)  ::after = 14x3,   accent, no mask             <- the tick
+   21 of the field's tiles were covered AND goal-mapped, so 21 rings were collapsed at once.
+   That is why the demo made this loud: the rail flips ~30 tiles to covered, and every one of
+   them that carried a goal lost its ring simultaneously.
+
+   THE FIX IS THE DESIGN'S OWN RULE. The signed-off vision says: "goal membership on the tile
+   EDGE; status owns the tile INTERIOR — two channels, no collision." They were sharing one
+   channel. Giving the ring a real element restores BOTH: status keeps its tick everywhere,
+   goals keep their ring everywhere, at every status. Resetting the leaked properties on
+   ::after instead was rejected — it would have silently deleted the covered tick from exactly
+   the goal-mapped tiles, trading a visible bug for an invisible one. */
+.tile > .tile__ring, .tile--vitamin > .tile__ring,
+.tile--amino > .tile__ring, .tile--fat > .tile__ring {
+  position: absolute;
+  inset: -2.5px;
+  border-radius: 4px;
+  background: var(--ringPaint);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  padding: 2.5px;
+  pointer-events: none;
+  z-index: 3;
+}
+/* The segmented variant is GONE — Luneth chose the gradient (2026-07-14). Keeping a dead
+   toggle would leave two answers on screen to a question he already settled. */
+
+
+/* ── THE X — Luneth asked where the space comes from. Answer: it is ALWAYS
+   there, just invisible. Reserving the slot means revealing it costs 0px of
+   layout shift, and hiding it until hover means 5 chips don't wear 5 permanent
+   X's. A confirm-delete MODE was considered and rejected: removing a goal is one
+   click to undo (+ ADD), so it is not destructive enough to earn a mode. */
+.gchip__x {
+  width: 12px; margin-right: -3px;
+  opacity: 0; transition: opacity .14s, color .14s;
+  color: var(--ds-ink-faint); font-size: .8rem; line-height: 1;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.gchip:hover .gchip__x { opacity: 1; }
+.gchip__x:hover { color: var(--ds-status-err); }
+
+
+/* ── BASED ON YOUR GOALS — the loop closes here.
+   goals -> products -> adopt -> tiles light -> the ledger moves. Each card wears the
+   SAME gradient language as the plates, so "this product serves 3 of your goals" is
+   said once, in one vocabulary, in two places.
+   ★ HONESTY: "supplies N" is a count of what the PRODUCT contains, never "N of M" —
+   no denominator, so it cannot become the goal card we deleted. Price is WHOLESALE
+   (the featured price). */
+.recs { margin-bottom: var(--ds-space-5); }
+.recs__head { display: flex; align-items: baseline; gap: var(--ds-space-3); margin-bottom: var(--ds-space-4); }
+.recs__eyebrow { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); }
+.recs__title { font-family: var(--ds-font-display); font-size: 1rem; font-weight: 700; color: var(--ds-ink); margin: 0; }
+.rec {
+  position: relative; display: block; width: 100%; text-align: left;
+  padding: 11px 13px; margin-bottom: 7px; cursor: pointer;
+  background: var(--ds-paper-light);
+  border: 2px solid transparent;
+  border-image: var(--recRing) 1;
+  border-radius: 0;
+  transition: transform .12s;
+}
+.rec:hover { transform: translateX(2px); }
+.rec__name { font-family: var(--ds-font-display); font-size: .8rem; font-weight: 700; color: var(--ds-ink); line-height: 1.25; margin-bottom: 5px; }
+.rec__meta { display: flex; align-items: baseline; gap: 9px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; color: var(--ds-ink-soft); }
+.rec__price { color: var(--ds-ink); font-weight: 700; }
+.rec__val { color: var(--ds-status-ok); font-weight: 700; }
+.rec__dots { display: inline-flex; gap: 3px; margin-left: auto; }
+.rec__dot { width: 6px; height: 6px; border-radius: 50%; }
+.recs__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .05em; margin-top: 8px; line-height: 1.5; }
+
+
+
+
+/* ── FOUNDATION — the PLANT DERIVED block ─────────────────────────────────
+   Luneth's call: a THIRD state, not an absence. These 34 can never be "named for"
+   a goal because Wallach never itemises them — he doses the BOTTLE (one ounce per
+   100 lb/day), not the elements. So they render as always-required rather than as
+   unrelated-to-you. That costs nothing and stops the field implying 34 essentials
+   don't matter.
+   ★ 2026-07-15 — was "the PDM rare-earth block ... these 33". Both were wrong.
+   (a) 33 -> 34: STRONTIUM belongs here (trace_pdm, no individual amount); it used to
+       sit in the invented MAJOR TRACE tier.
+   (b) "rare-earth" is a MISNOMER for this group. Wallach tags ~15 of the 60 as rare
+       earths in Immortality's A-Z; 19 of these 34 are NOT rare earths by his own
+       tagging. The group is defined by having NO INDIVIDUAL DOSE — nothing else. */
+.is-foundation {
+  box-shadow: 0 0 0 1.5px var(--ds-ink-faint) !important;
+  border-radius: var(--ds-radius-xs);
+}
+
+/* ── BRAND NAME OVERFLOW — a long name PAINTS OUTSIDE THE RAIL without this.
+   Found 2026-07-15 by rendering an 18-char name, not by reading the CSS. Names with a
+   space ("Maximilian Alexand") wrap on their own; an unbroken one ("Wolfeschlegelstei")
+   has NO break opportunity, so the glyphs run past the rail edge into the workspace.
+   ★ THE MEASUREMENT LIED AND THE SCREENSHOT DID NOT: getBoundingClientRect().right
+   reported 195 vs the rail's 220 — "no bleed" — because the BOX is 171px wide while the
+   TEXT overflows it. scrollWidth 294 > clientWidth 171 is the honest signal, and the
+   screenshot showed it plainly. Trust the pixels.
+   `anywhere` (not `break-word`) so it also breaks mid-token when there is no space; the
+   18-char cap then bounds it to 2 lines at line-height 1.1. */
+.rail__brand-name { overflow-wrap: anywhere; }
+
+
+/* ── FOCUS — hover a goal. TRANSIENT, therefore safe: a fade that lasts as long as
+   your cursor cannot teach you that anything is unimportant. */
+.focusing .tile, .focusing .tile--vitamin, .focusing .tile--amino, .focusing .tile--fat { transition: opacity .18s; }
+.focusing .tile:not(.is-focus), .focusing .tile--vitamin:not(.is-focus),
+.focusing .tile--amino:not(.is-focus), .focusing .tile--fat:not(.is-focus) { opacity: .22; }
+
+
+/* ── LEDGER (denominator is ALWAYS 90 — no goal may touch it) ───────────── */
+.ledger { display: flex; align-items: center; flex-wrap: wrap; gap: var(--ds-space-5); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
+.ledger__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); }
+.ledger__item.is-dark { opacity: .32; filter: saturate(.2); }
+.ledger__n { font-weight: 700; color: var(--ds-ink); font-size: .72rem; letter-spacing: 0; }
+.ledger__item.is-dark .ledger__n { color: var(--ds-ink-soft); }
+.ledger__recon { margin-left: auto; color: var(--ds-ink-faint); }
+.ledger__recon b { color: var(--ds-ink-soft); font-weight: 500; }
+
+.cov-d { padding: var(--ds-space-5) var(--ds-space-7) var(--ds-space-7); }
+.cov-d .coverage-grid { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: var(--ds-space-5); padding: 0; }
+.cov-d .essentials-host { padding: var(--ds-space-5); box-shadow: inset 0 2px 5px rgba(26,22,18,.10), inset 0 0 0 1px var(--ds-rule), 0 1px 0 rgba(255,255,255,.7); }
+.ledger-bar { margin-top: var(--ds-space-5); padding-top: var(--ds-space-4); border-top: 1px solid var(--ds-rule); display: flex; align-items: center; gap: var(--ds-space-5); flex-wrap: wrap; }
+.ledger-bar__eyebrow { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); white-space: nowrap; }
+
+
+/* ── THE RAIL — restored. It is the CAUSATION behind every lit tile: the reason
+   this field says what it says. Honest at zero items. ──────────────────── */
+.rail-panel { background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); padding: var(--ds-space-5); align-self: start; position: sticky; top: var(--ds-space-5); }
+.rail-panel__eyebrow { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); }
+.rail-panel__title { font-family: var(--ds-font-display); font-size: 1rem; font-weight: 700; color: var(--ds-ink); margin: 6px 0 3px; }
+.rail-panel__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-soft); letter-spacing: .08em; }
+.rail-empty { margin-top: var(--ds-space-5); padding: var(--ds-space-5); border: 1px dashed var(--ds-rule); border-radius: var(--ds-radius-sm); text-align: center; }
+.rail-empty p { margin: 0 0 4px; font-family: var(--ds-font-sans); font-size: .82rem; color: var(--ds-ink-medium); }
+.rail-empty small { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; }
+.rail-panel__actions { display: flex; gap: 8px; margin-top: var(--ds-space-5); }
+.rail-panel__actions button { flex: 1; }
+
+
+/* ── WELCOME ──────────────────────────────────────────────────────────────
+   Luneth: unskippable, blurs the field behind it, takes a NAME + at least one goal
+   OR "just browsing". The escape hatch is what keeps this an invitation rather than
+   a wall — nobody is ever locked out, and the copy invites instead of interrogating
+   ("what are you here for?" was the actual complaint, all along). */
+.wc-veil { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(26,22,18,.30); backdrop-filter: blur(9px) saturate(.9); }
+.wc { width: min(760px, 92vw); max-height: 90vh; overflow: auto; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: 6px; box-shadow: 0 40px 90px -20px rgba(26,22,18,.5); padding: var(--ds-space-7); }
+.wc__kicker { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-accent); }
+.wc__h { font-family: var(--ds-font-display); font-size: 1.9rem; font-weight: 800; color: var(--ds-ink); margin: 8px 0 6px; letter-spacing: -.01em; }
+.wc__deck { font-family: var(--ds-font-sans); font-size: .92rem; color: var(--ds-ink-soft); margin: 0 0 var(--ds-space-6); line-height: 1.5; }
+.wc__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); display: block; margin-bottom: 8px; }
+.wc__name { width: 100%; padding: 11px 14px; border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); background: var(--ds-paper-light); font-family: var(--ds-font-display-interface); font-size: 1rem; color: var(--ds-ink); }
+.wc__name:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
+.wc__count { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); float: right; }
+.wc__goals { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--ds-space-6); }
+.wc-goal { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 100px; cursor: pointer; border: 1px solid var(--ds-rule); background: var(--ds-paper-light); font-family: var(--ds-font-display-interface); font-size: .78rem; font-weight: 600; color: var(--ds-ink-medium); transition: all .14s; }
+.wc-goal:hover { border-color: var(--ds-ink-faint); color: var(--ds-ink); }
+.wc-goal__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ds-rule); flex: 0 0 auto; transition: background .14s; }
+.wc-goal.is-on { border-color: var(--gc); color: var(--ds-ink); background: color-mix(in srgb, var(--gc) 8%, var(--ds-paper-light)); }
+.wc-goal.is-on .wc-goal__dot { background: var(--gc); }
+.wc-goal.is-full { opacity: .4; cursor: not-allowed; }
+.wc__foot { display: flex; align-items: center; gap: var(--ds-space-4); border-top: 1px solid var(--ds-rule-soft); padding-top: var(--ds-space-5); }
+.wc__browse { background: none; border: 0; cursor: pointer; font-family: var(--ds-font-sans); font-size: .82rem; color: var(--ds-ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+.wc__go { margin-left: auto; }
+.wc__go:disabled { opacity: .35; cursor: not-allowed; }
+
+
+/* ── THE DAILY-PROTOCOL RAIL (blueprint §6) ────────────────────────────────
+   Its job is unchanged: the CAUSATION behind every lit tile. What is NEW here is
+   that it now carries the stack itself — rows, an inline dose, a 1-click remove —
+   and ONE button. MANAGE + ADD ITEM both died: adding is 1-click from a
+   recommendation card and removing is 1-click per row, so both were redundant as
+   named, and "ADD ITEM" that navigates instead of adding is a label that lies.
+   Measured budget: 290px inner width, ~594px of list at 1440x900 => 8-10 rows. */
+.rail-panel__head { border-bottom: 1px solid var(--ds-rule-soft); padding-bottom: var(--ds-space-4); }
+.rail-panel__slot { color: var(--ds-ink); font-weight: 700; }
+
+/* The list scrolls INSIDE the panel; the head + the button stay pinned. Without a
+   max-height the panel outgrows the viewport and its `position: sticky` silently
+   stops sticking — the exact failure the geometry pass measured for. */
+.rail-list { max-height: calc(100vh - 330px); overflow-y: auto; overscroll-behavior: contain; margin-right: calc(var(--ds-space-3) * -1); padding-right: var(--ds-space-3); }
+.rail-list::-webkit-scrollbar { width: 6px; }
+.rail-list::-webkit-scrollbar-thumb { background: var(--ds-rule); border-radius: 3px; }
+
+.rl-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 8px; padding: 9px 0; border-bottom: 1px solid var(--ds-rule-soft); }
+.rl-row:last-child { border-bottom: 0; }
+/* Names front-load identity and back-load packaging ("- 60 tablets", "[QTY: 60]"),
+   so truncating from the END is safe: 52 of 155 real names exceed 30 chars. */
+.rl-row__name { grid-column: 1; min-width: 0; font-family: var(--ds-font-display); font-size: .78rem; font-weight: 700; color: var(--ds-ink); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rl-row__x { grid-column: 2; grid-row: 1; align-self: start; background: none; border: 0; cursor: pointer; padding: 0 0 0 6px; font-size: .72rem; line-height: 1.3; color: var(--ds-ink-faint); transition: color .14s; }
+.rl-row__x:hover { color: var(--ds-status-warn); }
+.rl-row__foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; }
+
+/* The Eden-vs-your-own mark. Deliberately QUIET — Luneth: "not a strong one." */
+.rl-src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .08em; color: var(--ds-ink-faint); }
+.rl-src.is-own { color: var(--ds-tech); }
+
+.rl-dose { margin-left: auto; display: inline-flex; align-items: center; gap: 1px; }
+.rl-dose__b { width: 17px; height: 17px; display: grid; place-items: center; padding: 0; cursor: pointer; background: var(--ds-paper); border: 1px solid var(--ds-rule); color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: .7rem; line-height: 1; border-radius: 2px; transition: border-color .14s, color .14s; }
+.rl-dose__b:hover { border-color: var(--ds-ink-faint); color: var(--ds-ink); }
+.rl-dose__b:disabled { opacity: .3; cursor: not-allowed; }
+.rl-dose__n { min-width: 15px; text-align: center; font-family: var(--ds-font-mono); font-size: .72rem; font-weight: 700; color: var(--ds-ink); }
+.rl-dose__u { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; }
+
+.rail-panel__full { width: 100%; }
+
+/* The + is the discoverability of 1-click add — NOT a second button that lies. The
+   whole card is the target; the glyph says what the click does. */
+.rec { padding-right: 30px; }
+.rec__add { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); width: 18px; height: 18px; display: grid; place-items: center; border: 1px solid var(--ds-rule); border-radius: 50%; color: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: .78rem; line-height: 1; transition: background .14s, color .14s, border-color .14s; }
+.rec:hover .rec__add { background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-paper); }
+
+
+
+/* §13 — the aside's card order is an OPEN question: recs above the protocol puts
+   "what you could buy" over "what you take" and pushes the protocol to the fold at
+   1440x900. One class flips it, so it can be judged rather than argued. */
+body.protocol-first #aside { display: flex; flex-direction: column; }
+body.protocol-first #aside .rail-panel { order: 1; }
+body.protocol-first #aside .recs { order: 2; margin-bottom: 0; margin-top: var(--ds-space-5); }
+
+
+/* ── THE EXPLAINER IS A HOVER NOW (Luneth 2026-07-16). It used to be a permanent
+   four-line paragraph under the cards explaining the ranking score. It earned its space
+   once — the first time you read it — and then it was just weight, sitting under every
+   card forever. TWO-STAGE DISCLOSURE, his design:
+     1. hover the CARD  -> the dotted underline appears, saying "there is more here"
+     2. hover the TEXT  -> the explanation itself
+   The underline is deliberately NOT always-on: his call, and he is right — a permanent
+   dotted rule under every number is the same clutter in a thinner font.
+   Implemented with a following-sibling selector (`~`) rather than :has(), so it does not
+   rest on a selector the offline browser might not ship. */
+.rec__meta { position: relative; }
+.rec__q { border-bottom: 1px dotted transparent; transition: border-color .14s; cursor: help; }
+.rec:hover .rec__q { border-bottom-color: var(--ds-ink-faint); }
+.rec__tip {
+  position: absolute; top: calc(100% + 9px); left: 0; right: 0; z-index: 40;
+  padding: 9px 11px; border-radius: 3px;
+  background: var(--ds-ink); color: rgba(255, 255, 255, .88);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  line-height: 1.6; letter-spacing: .04em; text-align: left; white-space: normal;
+  box-shadow: 0 12px 30px -10px rgba(26, 22, 18, .6);
+  opacity: 0; visibility: hidden; transition: opacity .14s; pointer-events: none;
+}
+.rec__q:hover ~ .rec__tip { opacity: 1; visibility: visible; }
+/* ★ THE HOVERED CARD MUST BE LIFTED, or the tooltip paints UNDER the cards below it.
+   `.rec:hover` applies `transform: translateX(2px)`, and a transform CREATES A STACKING
+   CONTEXT — which traps the tooltip inside the hovered card, so its z-index:40 is scoped to
+   that card and the later siblings (painted after it in DOM order) cover it. Raising the
+   hovered card raises its tooltip with it.
+   ★ CAUGHT BY LOOKING, NOT BY MEASURING: the probe read visibility:visible, opacity:1 and
+   "fits the viewport" — every one of them TRUE — while the thing was occluded. Computed
+   style cannot see occlusion. The probe now does an elementFromPoint hit-test as well. */
+.rec:hover { z-index: 41; }
+
+/* ★★ TRIED AND REVERTED 2026-07-16 — THE GOAL SLIT, and the rule it taught. Luneth wanted the
+   old orange slit back on covered tiles, re-purposed to show WHICH goals a covered nutrient
+   serves: 14px per goal, up to 5, centred, gradient when multi-colour. It was built, measured
+   (width = 14px x goals, real multi-colour blends, clean revert) and looked at — then he cut it:
+   "I'm being far too explicit with this and trying to do 'everything at once' which risks
+   'doing nothing because people just check out mentally due to all the noise'."
+
+   ★ THE DURABLE RULE HE STATED, which outranks the experiment and should govern this whole
+   surface: **"the main thing people need to focus on is what they're NOT getting — that is much
+   more in-line with the goals of the app (to help people get healthier and fix deficiencies)."**
+   The field is not a scoreboard for wins. It is a map of gaps. Every pixel spent decorating a
+   COVERED tile is spent arguing against that, which is why the covered tile keeps getting
+   quieter with each pass — the orange slit went, the ring went, the glow went, and the goal
+   slit did not survive either. Goal↔essential membership stays exactly where he put it: a
+   DISCOVERABLE, revealed by hovering a goal (the opacity channel), not a permanent badge.
+   Do not re-add a standing mark to covered tiles without re-opening this with him first. */
+
+
+/* ── COVERED TAKES NO RING (Luneth, 2026-07-16, after sitting with it): "it's just too busy
+   now and doesn't mesh well with the green style for covered. Let's remove that ring entirely
+   for covered nutrients (but they still highlight if you hover a goal)."
+
+   It is the same instinct that killed the orange slit an hour earlier, and it is right: a
+   covered plate ALREADY says covered three ways — green plate, green rim, green name strip —
+   so wrapping it in a coloured gradient is a fourth voice arguing with the first three. The
+   ring earns its keep on tiles that have nothing else to say.
+
+   ★ THE HIGHLIGHT SURVIVES UNTOUCHED, exactly as he asked, because goal-hover is a SEPARATE
+   CHANNEL: it fades every non-member to opacity .22 (`.focusing .tile:not(.is-focus)`), it
+   does not paint members. So a covered tile still stands out when you hover its goal — it is
+   the rest of the field that recedes. Nothing in this rule touches that.
+
+   ★ WHY CSS AND NOT JS: status changes (add/remove a product) run through paintStatus, which
+   does NOT re-run paintField — so a JS guard would leave a stale ring on a tile that just
+   turned covered. A declarative rule cannot go stale: the moment `.covered` lands, the ring
+   is gone, whichever paint put it there. */
+.tile.covered > .tile__ring, .tile--vitamin.covered > .tile__ring,
+.tile--amino.covered > .tile__ring, .tile--fat.covered > .tile__ring { display: none; }
+

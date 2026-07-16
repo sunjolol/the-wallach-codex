@@ -1,16 +1,31 @@
 /**
- * views/coverage.ts — Coverage workspace view (v3.2 mockup parity)
+ * views/coverage.ts — the Coverage workspace
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Renders the periodic-table-of-essentials workspace per the v3.2 mockup
- * (dashboard/components/workspace-coverage-v3.2-PROPOSAL.html). Subscribes
- * to coverage:recomputed for live updates as regimen mutations cascade.
+ * The field (every essential Wallach named) + the rail (the CAUSATION behind every lit
+ * tile). RE-CREATED 2026-07-16 from the signed-off demo `temporary/coverage-E-rail.html`
+ * on real data + real state — never transplanted. Luneth: "we still shouldn't blindly copy
+ * code since some of it will need to be adapted to work on the live surface (such as
+ * increasing dosage changing counts)".
  *
- * Visual contract:
- *   - .coverage-grid 2-col: coverage-main (essentials + goals) + regimen-rail
- *   - 4 sections: Minerals (60, w/ 3 subsections: 4/22/34), Vitamins (16), Aminos (12), Fats (3)
- *   - .ds-cipher cycling glyph engine for tech-readout chrome
- *   - .ds-scan-line + .ds-border-travel ambient animations
+ * WHAT IS ADAPTED, NOT COPIED — the demo is DESIGN TRUTH, not a code donor:
+ *   · The demo's dose stepper is INERT (its prototype data has no per-serving amounts).
+ *     LIVE IT MUST MOVE THE COUNTS — Luneth's named example. It routes
+ *     saveRgOverride(id, {scaling_factor}) → writeSlotDoc → 'regimen:changed' → recompute;
+ *     state/coverage.ts::readScale already multiplies every delivered mg by that factor.
+ *     No dose→coverage curve is invented here: the live math already exists.
+ *   · The demo's status model is BINARY (a product "supplies" a tile → covered). The live
+ *     classifier is amount-based and lands on partial/present too. The binary rule is NOT
+ *     ported; every verdict is read from the snapshot.
+ *   · The demo interpolates product names into innerHTML. Here every NAME is written with
+ *     .textContent (§00.B #5, escape by default) — the sink, not a filter, is the defence.
+ *   · The demo's `+ ADD` chip has no handler at all. An inert button labelled "+ ADD" is
+ *     the PROFILE lesson inverted (a label is a promise), so it opens the arrival veil as
+ *     a goal picker.
+ *
+ * THE GOAL RULE, inherited and unbreakable: a goal may change what you LOOK AT, or what
+ * you're RECOMMENDED. It may NEVER change what you're MEASURED AGAINST. The denominator is
+ * always 90 — the ledger is byte-identical before goals, after goals, and during hover.
  *
  * §17 lesson: corruption recovery for this file is `git checkout HEAD -- ...`.
  * ═══════════════════════════════════════════════════════════════════════════
@@ -19,27 +34,25 @@
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
 import { plural } from '../core/format.js';
-import { CoverageLayoutSchema, type LayoutSection, type LayoutTile } from '../core/schemas/index.js';
+import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
+import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutTile, type RegimenItem } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
-import { loadEffectiveRegimen, loadRgUserGoals } from '../state/regimen.js';
+import { type CoverageRec, productIdsForNames, rankProductsForCoverage, vaultEntry } from '../state/recommender.js';
+import { loadEffectiveRegimen, loadRgManual, loadRgUserGoals, loadSlots, saveRgManual, saveRgOverride, saveRgRemoved, saveRgUserGoals } from '../state/regimen.js';
 
 export interface MountHandle {
   update: () => void;
   unmount: () => void;
 }
 
-// ─── Tile layout — the v3.2 periodic-table-of-essentials structure ────────
-
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
-// ─── Render helpers ───────────────────────────────────────────────────────
+/** The rail shows 4 recommendation cards (measured: the aside's budget at 1440×900). */
+const REC_LIMIT = 4;
 
-/**
- * The snapshot's tile for a layout key. `key` is the canonical essential name and snapshot
- * tiles are keyed the same, so this is a direct join. The snapshot owns the authoritative
- * verdict (state/coverage.ts::classify) — the view renders it, never re-derives it.
- */
+// ─── Read helpers ─────────────────────────────────────────────────────────
+
 function tileFor(key: string, snapshot: CoverageSnapshot | null): CoverageTile | undefined {
   return snapshot?.tiles.find(t => t.name === key);
 }
@@ -48,17 +61,6 @@ function tileStatusFor(key: string, snapshot: CoverageSnapshot | null): Coverage
   return tileFor(key, snapshot)?.status ?? '';
 }
 
-/**
- * The plate's fill height, as a --fill percentage for the CSS to render.
- *
- * This is REAL data, not decoration: `fillPercent` is delivered ÷ the Wallach target, already
- * computed on every recompute (state/coverage.ts::deliveryRatio) and — until now — thrown away
- * by every consumer. A partial plate whose fill sits at 40% is stating a measured fact.
- *
- * Only `partial` gets a fill: `covered` is expressed by the plate's own lift + rim (a fill bar
- * at 100% would just be noise), and fillPercent can exceed 1 when items stack, so it is clamped
- * — an over-delivered essential is still simply covered.
- */
 function tileFillPercent(tile: CoverageTile | undefined): number | null {
   if (tile === undefined || tile.status !== 'partial') {
     return null;
@@ -76,14 +78,91 @@ function escHTML(s: unknown): string {
   }[c] as string));
 }
 
-function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnapshot | null): string {
+/**
+ * The user's chosen goals, resolved against the layout and capped at MAX_GOALS.
+ *
+ * Resolved (not trusted): a stored goal id that no longer exists in the layout is DROPPED,
+ * because Luneth re-authors the goal list and a stale id must degrade to "not selected"
+ * rather than render a chip with no members. Order follows the user's pick order, which is
+ * what indexes the hue.
+ */
+function activeGoals(): LayoutGoal[] {
+  const chosen = loadRgUserGoals() ?? [];
+  const byId = new Map(LAYOUT.goals.map(g => [g.id, g]));
+  const out: LayoutGoal[] = [];
+  for (const id of chosen) {
+    const g = byId.get(id);
+    if (g !== undefined && !out.some(o => o.id === g.id)) {
+      out.push(g);
+    }
+    if (out.length >= MAX_GOALS) {
+      break;
+    }
+  }
+  return out;
+}
+
+/** canon slug → the layout label the tiles are keyed by (tiles carry the display name). */
+function slugToTileKey(): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const sec of LAYOUT.sections) {
+    const tiles = sec.subsections !== undefined ? sec.subsections.flatMap(s => s.tiles) : (sec.tiles ?? []);
+    for (const t of tiles) {
+      if (t.slug !== undefined) {
+        m.set(t.slug, t.name);
+      }
+    }
+  }
+  return m;
+}
+
+// ─── The field ────────────────────────────────────────────────────────────
+
+/**
+ * One tile. `data-tile` carries the layout key so the goal-hover pass can find it without
+ * re-deriving anything, and the RING IS A REAL CHILD ELEMENT (`.tile__ring`) — never
+ * ::after.
+ *
+ * ★ WHY THE RING IS ITS OWN ELEMENT (the 2026-07-16 bug, do not undo): `.tile.covered::after`
+ * is ALREADY the status tick. An element has exactly ONE ::after, and `.tile.covered::after`
+ * and `.tile[data-goals]::after` are both specificity (0,2,1) — so the cascade MERGED them
+ * per-property instead of one winning, and the ring rendered at the TICK'S 14×5px. Goals own
+ * the EDGE, status owns the INTERIOR: two channels, no collision.
+ *
+ * ★ COVERED TAKES NO RING (Luneth, 2026-07-16) — enforced in CSS
+ * (`.tile.covered > .tile__ring { display: none }`), NOT by skipping the element here, so
+ * `data-goals` survives on covered tiles and goal-HOVER still highlights them. The ring
+ * marks a goal nutrient you have NOT covered: a to-do marker, not a badge.
+ */
+function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string {
   const tile = tileFor(spec.key, snapshot);
   const status = tile?.status ?? '';
-  const cls = `${tileClass} ${status}`.trim();
-  // --fill is a COMPUTED per-tile value (delivered ÷ target), so it cannot live in the
-  // stylesheet; it is the one thing the plate needs from the snapshot beyond its status.
+  const hitIdx = goals
+    .map((g, i) => (spec.slug !== undefined && g.members.includes(spec.slug) ? i : -1))
+    .filter(i => i >= 0);
+
+  const cls = [tileClass, status, hitIdx.length > 1 ? 'tile--blend' : ''].filter(Boolean).join(' ');
   const fill = tileFillPercent(tile);
-  const fillAttr = fill === null ? '' : ` style="--fill: ${fill}%"`;
+
+  const styles: string[] = [];
+  if (fill !== null) {
+    styles.push(`--fill: ${fill}%`);
+  }
+  if (hitIdx.length > 0) {
+    const cols = hitIdx.map(i => GOAL_HUES[i] ?? GOAL_HUES[0]);
+    // ONE geometry: a single goal is a gradient with one colour, so single and multi are
+    // identical in weight and offset — only the paint differs.
+    const paint = cols.length === 1
+      ? `linear-gradient(${cols[0]}, ${cols[0]})`
+      : `linear-gradient(115deg, ${cols.join(', ')})`;
+    styles.push(`--ringPaint: ${paint}`);
+    // A gradient cannot cast a gradient shadow and an averaged one reads grey, so the glow
+    // takes the FIRST goal's hue.
+    styles.push(`--ringGlow: ${String(cols[0])}aa`);
+  }
+  const styleAttr = styles.length > 0 ? ` style="${escHTML(styles.join('; '))}"` : '';
+  const goalsAttr = hitIdx.length > 0 ? ` data-goals="${hitIdx.length}"` : '';
+
   let inner = '';
   if (spec.num !== undefined) {
     inner += `<span class="tile__num">${spec.num}</span>`;
@@ -104,10 +183,13 @@ function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnaps
   if (spec.hint !== undefined) {
     inner += `<span class="tile__hint">${escHTML(spec.hint)}</span>`;
   }
-  return `<div class="${cls}"${fillAttr}>${inner}</div>`;
+  if (hitIdx.length > 0) {
+    inner += '<span class="tile__ring" aria-hidden="true"></span>';
+  }
+  return `<div class="${cls}" data-tile="${escHTML(spec.name)}"${goalsAttr}${styleAttr}>${inner}</div>`;
 }
 
-function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): string {
+function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string {
   let bodyHTML = '';
   let allTiles: LayoutTile[] = [];
   if (spec.subsections !== undefined) {
@@ -120,14 +202,14 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
           <span class="essentials-subsection__hint">${escHTML(sub.hint)}</span>
         </div>
         <div class="${spec.gridClass}">
-          ${sub.tiles.map(t => renderTile(t, spec.tileClass, snapshot)).join('')}
+          ${sub.tiles.map(t => renderTile(t, spec.tileClass, snapshot, goals)).join('')}
         </div>
       </div>
     `).join('');
     allTiles = spec.subsections.flatMap(s => s.tiles);
   }
   else if (spec.tiles !== undefined) {
-    bodyHTML = `<div class="${spec.gridClass}">${spec.tiles.map(t => renderTile(t, spec.tileClass, snapshot)).join('')}</div>`;
+    bodyHTML = `<div class="${spec.gridClass}">${spec.tiles.map(t => renderTile(t, spec.tileClass, snapshot, goals)).join('')}</div>`;
     allTiles = spec.tiles;
   }
 
@@ -153,218 +235,336 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null): 
 }
 
 /**
- * The hero: the periodic-table field + the headline stat + the legend.
+ * The ledger — the colour key, with a live count per status and the reconciliation line.
  *
- * The LEGEND states the vocabulary the engine actually speaks. It previously taught TRACE —
- * which state/coverage.ts stopped producing (zero trace returns remain) — and omitted PRESENT,
- * which IS produced (the PDM present-but-unquantified verdict). A legend documenting impossible
- * states teaches the user a fiction, so it now lists exactly the five statuses classify() emits.
+ * ★ THIS IS THE DENOMINATOR'S ONLY HOME, and it must be byte-identical before goals, after
+ * goals, and during a goal hover. It counts the WHOLE field, never the goal subset. The old
+ * goal cards' sin was never the goal, it was the denominator ("bone & skeletal 3/14"
+ * asserts bone health IS 14 things, inverting Wallach's thesis).
+ *
+ * The wording is the signed-off demo's: "GAP · ATTENTION" → "NOT COVERED" (gap read as a
+ * hole in OUR data; it means Wallach gave a number and you are under it) and "NO WALLACH
+ * TARGET" → "NO WALLACH NUMBER YET".
  */
-function renderHero(snapshot: CoverageSnapshot | null): string {
-  const total = snapshot?.totalCount ?? essentialCount();
-  const covered = snapshot?.coveredCount ?? 0;
-  const sections = LAYOUT.sections.map(s => renderSection(s, snapshot)).join('');
+function renderLedger(snapshot: CoverageSnapshot | null): string {
+  const layoutTiles = LAYOUT.sections.flatMap(sec =>
+    (sec.subsections !== undefined ? sec.subsections.flatMap(s => s.tiles) : (sec.tiles ?? [])));
+  // ★ THE LEDGER COUNTS THE COUNTED, NOT THE SHOWN. omega-9 is `essential: false` — it is on
+  // the board for a reason Luneth labelled honestly as aesthetic ("3 is a better number than
+  // 2"), and Wallach names only two EFAs, so it can never carry a verdict. Counting all 91
+  // here made the five numbers sum to 91 while the reconciliation line beside them read "90
+  // counted" — a ledger contradicting itself two inches apart. essentialCount() has always
+  // filtered it; this must agree, or the two disagree on screen.
+  const countedKeys = new Set(layoutTiles.filter(t => t.essential !== false).map(t => t.key));
+  const tiles = (snapshot?.tiles ?? []).filter(t => countedKeys.has(t.name));
+  const n = (s: CoverageStatus): number => tiles.filter(t => t.status === s).length;
+  const counted = snapshot?.totalCount ?? essentialCount();
+  const shown = layoutTiles.length;
+  const rows: [string, string, number][] = [
+    ['covered', ui('cov_ledger_covered'), n('covered')],
+    ['partial', ui('cov_ledger_partial'), n('partial')],
+    ['present', ui('cov_ledger_present'), n('present')],
+    ['gap', ui('cov_ledger_gap'), n('gap')],
+    ['pending', ui('cov_ledger_pending'), tiles.filter(t => t.status === '').length],
+  ];
   return `
-    <section class="coverage-hero ds-border-travel">
-      <header class="coverage-hero__head">
-        <div>
-          <!-- NO .ds-cipher on essentialCount(): the cipher engine scrambles the glyphs it wraps
-               and only restores the true value every 5th tick, so wrapping a REAL canon-derived
-               number rendered Wallach's 90 as 30/80/94 four seconds in five (measured 2026-07-14).
-               The cipher is decorative chrome and may only ever wrap a static decorative literal;
-               gated by views_no_ciphered_data. -->
-          <div class="coverage-hero__kicker">Your essentials · ${essentialCount()} minerals + vitamins + amino acids + fats</div>
-          <h2 class="coverage-hero__title">THE WHOLE PICTURE</h2>
-        </div>
-        <div class="coverage-stat">
-          <span class="coverage-stat__num">${covered}</span>
-          <span class="coverage-stat__den">/ ${total}</span>
-          <span class="coverage-stat__label">essentials<br>covered</span>
-        </div>
-      </header>
-      <div class="essentials-host">
-        <span class="ds-scan-line" aria-hidden="true"></span>
-        ${sections}
+    <div class="ledger-bar">
+      <span class="ledger-bar__eyebrow">${escHTML(ui('cov_ledger_eyebrow'))}</span>
+      <div class="ledger">
+        ${rows.map(([sw, label, count]) => `
+          <span class="ledger__item${count === 0 ? ' is-dark' : ''}">
+            <span class="legend__sw ${sw}"></span>
+            <span class="ledger__label">${escHTML(label)}</span>
+            <span class="ledger__n">${count}</span>
+          </span>`).join('')}
+        <span class="ledger__recon"><b>${counted}</b> counted · <b>${shown}</b> shown</span>
       </div>
-      <div class="legend">
-        <span class="legend__item"><span class="legend__sw covered"></span> COVERED</span>
-        <span class="legend__item"><span class="legend__sw partial"></span> PARTIAL</span>
-        <span class="legend__item"><span class="legend__sw present"></span> PRESENT · NOT QUANTIFIED</span>
-        <span class="legend__item"><span class="legend__sw gap"></span> GAP · ATTENTION</span>
-        <span class="legend__item"><span class="legend__sw pending"></span> NO WALLACH TARGET</span>
-      </div>
+    </div>
+  `;
+}
+
+function renderField(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string {
+  const sections = LAYOUT.sections.map(s => renderSection(s, snapshot, goals)).join('');
+  return `
+    <section class="essentials-host ds-border-travel">
+      <span class="ds-scan-line" aria-hidden="true"></span>
+      ${sections}
+      ${renderLedger(snapshot)}
     </section>
   `;
 }
 
-/**
- * The console — goals FIRST, and the light's only home.
- *
- * Luneth 2026-07-14: the goals section "is a VERY important section because it's where the
- * user starts, it feels like it should be the first thing you see so the flow is clearer",
- * and the old cards "use a TON of space to list your goals in an unhelpful way". So: chips
- * above the table instead of cards below it.
- *
- * ★ THE CHIPS CARRY NO RATIO, DELIBERATELY. A per-goal "N / M covered" needs real membership
- * — eden/catalog/goals.json (goal -> condition slugs) intersected with each essential's
- * corpus-derived `conditions_treated` — and goals.json does not exist yet. The previous goal
- * cards fabricated BOTH numbers (a hand-typed denominator with no Wallach source, and a
- * numerator that just scaled the GLOBAL ratio, so all three cards showed one number). Typing
- * a plausible ratio in to make this comparison look finished would re-commit exactly that.
- * The ratio ships with the derivation.
- *
- * The stat here is the REAL snapshot (state/coverage.ts) — the same numbers the plates and
- * the drawer read, never re-derived. No .ds-cipher: gated by views_no_ciphered_data.
- */
-function renderConsole(snapshot: CoverageSnapshot | null): string {
-  const userGoals = loadRgUserGoals() ?? [];
-  const active = new Set(userGoals);
-  const total = snapshot?.totalCount ?? essentialCount();
-  const covered = snapshot?.coveredCount ?? 0;
-
-  const chips = LAYOUT.goals.map((g) => {
-    const on = active.has(g.id) ? ' is-active' : '';
-    return `<button class="goal-chip${on}" type="button" data-goal-id="${escHTML(g.id)}">${escHTML(g.name)}</button>`;
-  }).join('');
-
-  return `
-    <section class="coverage-console">
-      <div class="coverage-console__body">
-        <div class="coverage-console__head">
-          <div>
-            <div class="coverage-console__kicker">// what you're absorbing, what you're missing</div>
-            <h2 class="coverage-console__q">${escHTML(ui('cov_console_q'))}</h2>
-          </div>
-
-        </div>
-        <div class="console-chips">
-          ${chips}
-          <button class="goal-chip goal-chip--add" type="button" data-goal-add>+ ADD GOAL</button>
-        </div>
-        <div class="coverage-console__stat">
-          <strong>${covered}</strong> / ${total} essentials covered
-        </div>
-      </div>
-    </section>
-  `;
-}
+// ─── The goal strip ───────────────────────────────────────────────────────
 
 /**
- * The regimen rail — every value here is now READ, never asserted (2026-07-14).
- *
- * STRIPPED as fabricated chrome: "CURRENT SLOT · 02·F71D" (a decorative hex literal dressed as
- * a live slot serial), "Slot 2 of 5" (no slot system exists anywhere — regimen.ts holds a single
- * REGIMEN_KEY and never enumerates 5 slots), "Synced" (reflected no sync state and could never
- * say anything else), and the per-item "DAILY" frequency (hardcoded regardless of the item's
- * real schedule). "DAILY PROTOCOL" survives as an honest static HEADING — it names the surface,
- * it does not claim to be read from state.
- *
- * FIXED: the item count reported the .slice(0, 8)-TRUNCATED array length, so a 12-item regimen
- * displayed "8 items". The count now reads the full regimen; the slice is a display cap only.
+ * The strip REPORTS your goals; it never asks. Hover a chip = TRANSIENT focus (fade the
+ * others) — it cannot teach that anything is unimportant, because it lasts exactly as long
+ * as the cursor does. The X is revealed on hover with ZERO layout shift (the space is always
+ * reserved); a confirm-delete mode was rejected — the action is one click to undo.
  */
-function renderRail(): string {
-  const allItems = loadEffectiveRegimen();
-  const RAIL_DISPLAY_CAP = 8;
-  const shown = allItems.slice(0, RAIL_DISPLAY_CAP);
-  const overflow = allItems.length - shown.length;
-
-  const itemsHTML = shown.map((item) => {
-    const labelName = (item.label.name || '?').toString();
-    const icon = labelName.charAt(0).toUpperCase();
-    const nutrientCount = item.label.nutrients?.length ?? 0;
+function renderGoalStrip(goals: LayoutGoal[]): string {
+  if (goals.length === 0) {
     return `
-      <div class="regimen-item">
-        <div class="regimen-item__icon">${escHTML(icon)}</div>
-        <div class="regimen-item__body">
-          <p class="regimen-item__name">${escHTML(labelName)}</p>
-          <span class="regimen-item__meta">${nutrientCount} ${escHTML(plural(nutrientCount, 'nutrient'))}</span>
-        </div>
-        <span class="regimen-item__count">${nutrientCount}</span>
+      <div class="goalstrip">
+        <span class="goalstrip__eyebrow">${escHTML(ui('cov_goals_eyebrow'))}</span>
+        <button class="gchip gchip--add" type="button" data-goal-add>${escHTML(ui('cov_goals_add'))}</button>
+        <span class="goalstrip__eyebrow goalstrip__eyebrow--end">${escHTML(ui('cov_goals_none'))}</span>
       </div>
     `;
-  }).join('') || `<div class="regimen-item"><div class="regimen-item__body"><p class="regimen-item__name">${escHTML(ui('cov_rail_empty'))}</p></div></div>`;
-
-  const overflowHTML = overflow > 0
-    ? `<div class="regimen-rail__overflow">+ ${overflow} more</div>`
+  }
+  const chips = goals.map((g, i) => `
+    <span class="gchip" data-goal="${escHTML(g.id)}" style="--gc: ${escHTML(GOAL_HUES[i] ?? GOAL_HUES[0])}">
+      <span class="gchip__dot"></span>${escHTML(g.name)}
+      <button class="gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}">✕</button>
+    </span>`).join('');
+  const addChip = goals.length < MAX_GOALS
+    ? `<button class="gchip gchip--add" type="button" data-goal-add>${escHTML(ui('cov_goals_add'))}</button>`
     : '';
-
   return `
-    <aside class="regimen-rail">
-      <header class="regimen-rail__head">
-        <div class="regimen-rail__eyebrow"><span class="pulse-dot"></span>CURRENT REGIMEN</div>
-        <h3 class="regimen-rail__slot-name">DAILY PROTOCOL</h3>
-        <div class="regimen-rail__slot-meta">
-          <span><strong>${allItems.length}</strong> ${escHTML(plural(allItems.length, 'item'))}</span>
-        </div>
-      </header>
-      <div class="regimen-rail__list">${itemsHTML}${overflowHTML}</div>
-      <div class="regimen-rail__actions">
-        <button class="ds-btn-ghost regimen-rail__manage">MANAGE</button>
-        <button class="ds-btn-primary regimen-rail__add">ADD ITEM</button>
-      </div>
-    </aside>
+    <div class="goalstrip">
+      <span class="goalstrip__eyebrow">${escHTML(ui('cov_goals_eyebrow'))}</span>
+      ${chips}${addChip}
+      <span class="goalstrip__eyebrow goalstrip__eyebrow--end">${escHTML(ui('cov_goals_hint'))}</span>
+    </div>
   `;
 }
 
-// ─── Cipher animation engine ──────────────────────────────────────────────
+// ─── The aside: recommendations, then the protocol ────────────────────────
 
-const CIPHER_SETS: Record<string, string> = {
-  hexa: '0123456789ABCDEF',
-  alphanum: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  numfrac: '0123456789',
-  time: '0123456789:·DHMS',
-};
-
-let cipherInterval: number | null = null;
-let cipherTickCount = 0;
-
-function startCipherEngine(container: HTMLElement): void {
-  if (cipherInterval !== null) {
-    return;
+/**
+ * What the recommender should target.
+ *
+ * With goals: the union of their members (the demo's rule — the card's copy is "your goal
+ * nutrients per $10 spent", not "your UNCOVERED goal nutrients"). With none: the field's
+ * current gaps, so a goal-less user still gets an honest, useful list ranked by breadth
+ * across all 90 (blueprint §5).
+ */
+function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string[] {
+  if (goals.length > 0) {
+    return [...new Set(goals.flatMap(g => g.members))];
   }
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
-  }
-  cipherInterval = window.setInterval(() => {
-    cipherTickCount += 1;
-    const elements = Array.from(container.querySelectorAll<HTMLElement>('.ds-cipher'));
-    for (const el of elements) {
-      let original = el.dataset['cipherOriginal'];
-      if (original === undefined) {
-        original = el.textContent ?? '';
-        el.dataset['cipherOriginal'] = original;
-        const setKey = el.dataset['cipherSet'] ?? 'alphanum';
-        el.dataset['cipherSetResolved'] = CIPHER_SETS[setKey] ?? CIPHER_SETS['alphanum'] ?? '';
-      }
-      const set = el.dataset['cipherSetResolved'] ?? '';
-      if (cipherTickCount % 5 === 0) {
-        el.textContent = original;
-        continue;
-      }
-      if (original.length === 0 || set.length === 0) {
-        continue;
-      }
-      const chars = original.split('');
-      const i = Math.floor(Math.random() * chars.length);
-      const charAt = chars[i];
-      if (charAt === undefined) {
-        continue;
-      }
-      if (!/[A-Z0-9·:]/i.test(charAt)) {
-        continue;
-      }
-      const newChar = set[Math.floor(Math.random() * set.length)] ?? charAt;
-      chars[i] = newChar;
-      el.textContent = chars.join('');
-    }
-  }, 1000);
+  const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key, slug]));
+  return (snapshot?.tiles ?? [])
+    .filter(t => t.status === 'gap')
+    .map(t => keyToSlug.get(t.name))
+    .filter((s): s is string => s !== undefined);
 }
 
-function stopCipherEngine(): void {
-  if (cipherInterval !== null) {
-    window.clearInterval(cipherInterval);
-    cipherInterval = null;
+/** The rec cards, built as DOM (names via textContent — §00.B #5, never innerHTML). */
+function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], goalMode: boolean): void {
+  host.replaceChildren();
+  const head = document.createElement('div');
+  head.className = 'recs__head';
+  const eyebrow = document.createElement('span');
+  eyebrow.className = 'recs__eyebrow';
+  eyebrow.textContent = ui(goalMode ? 'cov_recs_goal_eyebrow' : 'cov_recs_nogoal_eyebrow');
+  head.appendChild(eyebrow);
+  host.appendChild(head);
+
+  if (recs.length === 0) {
+    const note = document.createElement('p');
+    note.className = 'recs__note';
+    note.textContent = ui(goalMode ? 'cov_recs_done_goals' : 'cov_recs_done_field');
+    host.appendChild(note);
+    return;
   }
+
+  const hueOf = (id: string): string => {
+    const i = goals.findIndex(g => g.id === id);
+    return GOAL_HUES[i] ?? GOAL_HUES[0];
+  };
+
+  for (const r of recs) {
+    const cols = r.goalIds.map(hueOf);
+    const ring = cols.length === 0
+      ? 'linear-gradient(var(--ds-rule), var(--ds-rule))'
+      : cols.length === 1
+        ? `linear-gradient(${cols[0]}, ${cols[0]})`
+        : `linear-gradient(140deg, ${cols.join(', ')})`;
+
+    const card = document.createElement('button');
+    card.className = 'rec';
+    card.type = 'button';
+    card.dataset['recAdd'] = r.productId;
+    card.style.setProperty('--recRing', ring);
+
+    const name = document.createElement('div');
+    name.className = 'rec__name';
+    name.textContent = r.name; // the product name — a text node, never parsed as HTML
+    card.appendChild(name);
+
+    const meta = document.createElement('div');
+    meta.className = 'rec__meta';
+    const price = document.createElement('span');
+    price.className = 'rec__price';
+    price.textContent = `$${r.price.toFixed(2)}`;
+    const supplies = document.createElement('span');
+    supplies.className = 'rec__q';
+    supplies.textContent = `supplies ${r.supplies}`;
+    const val = document.createElement('span');
+    val.className = 'rec__val rec__q';
+    val.textContent = `${r.perTenDollars.toFixed(1)} / $10`;
+    const dots = document.createElement('span');
+    dots.className = 'rec__dots';
+    for (const c of cols) {
+      const d = document.createElement('span');
+      d.className = 'rec__dot';
+      d.style.background = c;
+      dots.appendChild(d);
+    }
+    // The explainer is a TWO-STAGE HOVER (card → dotted underline; numbers → the text).
+    // No standing paragraph — Luneth deleted it.
+    const tip = document.createElement('span');
+    tip.className = 'rec__tip';
+    tip.textContent = ui('cov_rec_tip');
+    meta.append(price, supplies, val, dots, tip);
+    card.appendChild(meta);
+
+    const add = document.createElement('span');
+    add.className = 'rec__add';
+    add.textContent = '+';
+    card.appendChild(add);
+    host.appendChild(card);
+  }
+}
+
+/**
+ * The protocol rows. Name truncated FROM THE END (names back-load packaging — measured: 33%
+ * exceed 30 chars, longest 69), a quiet EDEN/YOURS mark, an inline dose stepper, 1-click
+ * remove.
+ *
+ * ★ NO "this item covers N tiles" claim. The field is six inches away and would contradict
+ * any fabricated count.
+ */
+function buildRailRows(host: HTMLElement, items: ReturnType<typeof loadEffectiveRegimen>): void {
+  host.replaceChildren();
+  if (items.length === 0) {
+    const empty = document.createElement('div');
+    empty.className = 'rail-empty';
+    const p = document.createElement('p');
+    p.textContent = ui('cov_rail_empty');
+    const small = document.createElement('small');
+    small.textContent = ui('cov_rail_empty_sub');
+    empty.append(p, small);
+    host.appendChild(empty);
+    return;
+  }
+
+  for (const item of items) {
+    const id = String(item.id);
+    const label = typeof item.label.name === 'string' ? item.label.name : '?';
+    const dose = readItemDose(item);
+
+    const row = document.createElement('div');
+    row.className = 'rl-row';
+    row.dataset['rowId'] = id;
+
+    const nameEl = document.createElement('div');
+    nameEl.className = 'rl-row__name';
+    nameEl.textContent = label; // text node — the product name is never parsed as HTML
+    nameEl.title = label;
+    row.appendChild(nameEl);
+
+    const x = document.createElement('button');
+    x.className = 'rl-row__x';
+    x.type = 'button';
+    x.dataset['rowRemove'] = id;
+    x.setAttribute('aria-label', `Remove ${label}`);
+    x.textContent = '✕';
+    row.appendChild(x);
+
+    const foot = document.createElement('div');
+    foot.className = 'rl-row__foot';
+    const src = document.createElement('span');
+    const own = item.provenance === 'user_scanned';
+    src.className = `rl-src${own ? ' is-own' : ''}`;
+    src.textContent = own ? 'YOURS' : 'EDEN';
+    foot.appendChild(src);
+
+    const doseEl = document.createElement('span');
+    doseEl.className = 'rl-dose';
+    const minus = document.createElement('button');
+    minus.className = 'rl-dose__b';
+    minus.type = 'button';
+    minus.dataset['doseDown'] = id;
+    minus.setAttribute('aria-label', 'Fewer');
+    minus.textContent = '−';
+    minus.disabled = dose <= 1;
+    const nEl = document.createElement('span');
+    nEl.className = 'rl-dose__n';
+    nEl.textContent = formatDose(dose);
+    const plus = document.createElement('button');
+    plus.className = 'rl-dose__b';
+    plus.type = 'button';
+    plus.dataset['doseUp'] = id;
+    plus.setAttribute('aria-label', 'More');
+    plus.textContent = '+';
+    const unit = document.createElement('span');
+    unit.className = 'rl-dose__u';
+    unit.textContent = '/day';
+    doseEl.append(minus, nEl, plus, unit);
+    foot.appendChild(doseEl);
+
+    row.appendChild(foot);
+    host.appendChild(row);
+  }
+}
+
+/**
+ * The item's current servings/day. Mirrors state/coverage.ts::readScale's resolution order
+ * (override → label.servings → 1) so the number the stepper SHOWS is the number the coverage
+ * math USES — if these two ever disagree, the rail is lying about the field.
+ *
+ * ⚠ Deliberately does NOT read `item.scaling_factor`: RegimenItemSchema is a plain z.object()
+ * so Zod STRIPS it before any reader sees it. readScale documents the same dead branch. Do
+ * not "restore" it here without opting the schema in first.
+ */
+function readItemDose(item: ReturnType<typeof loadEffectiveRegimen>[number]): number {
+  const slots = loadSlots();
+  const active = slots.slots.find(s => s.id === slots.activeSlot);
+  const ov = active?.overrides[String(item.id)] as { scaling_factor?: unknown } | undefined;
+  const candidates: unknown[] = [ov?.scaling_factor, (item.label as Record<string, unknown>)['servings']];
+  for (const c of candidates) {
+    const n = typeof c === 'number' ? c : typeof c === 'string' ? Number.parseFloat(c) : Number.NaN;
+    if (Number.isFinite(n) && n > 0) {
+      return n;
+    }
+  }
+  return 1;
+}
+
+/**
+ * Servings/day for display. INTEGER STEPS, but a SOURCED FRACTIONAL DEFAULT is allowed
+ * (Luneth, 2026-07-16) — Plant Derived Minerals is the ONE product Wallach doses by name
+ * (1 fl oz/100 lb = 1.54 servings at 154 lb), and a pure-integer control could not express
+ * his own number for it. So 1.54 shows as "1.54"; 2 shows as "2", not "2.00".
+ */
+function formatDose(n: number): string {
+  return Number.isInteger(n) ? String(n) : String(Number(n.toFixed(2)));
+}
+
+function renderRail(items: ReturnType<typeof loadEffectiveRegimen>): string {
+  const slots = loadSlots();
+  const active = slots.slots.find(s => s.id === slots.activeSlot);
+  // D4: the ACTIVE SLOT'S NAME, read-only. No switcher — switching lives in Regimen. It is
+  // here so a user with four slots can never wonder which one they just changed. It is READ,
+  // never asserted: the old markup hardcoded "DAILY PROTOCOL" as if it were state.
+  const slotName = (active?.name ?? 'Default').toUpperCase();
+  return `
+    <div class="rail-panel">
+      <div class="rail-panel__head">
+        <div class="rail-panel__eyebrow">${escHTML(ui('cov_rail_eyebrow'))}</div>
+        <h3 class="rail-panel__title">${escHTML(ui('cov_rail_title'))}</h3>
+        <div class="rail-panel__meta">
+          <span class="rail-panel__slot">${escHTML(slotName)}</span> · ${items.length} ${escHTML(plural(items.length, 'ITEM').toUpperCase())}
+        </div>
+      </div>
+      <div class="rail-list" data-rail-list></div>
+      <div class="rail-panel__actions">
+        <button class="ds-btn-primary rail-panel__full" type="button" data-full-regimen>${escHTML(ui('cov_rail_full'))}</button>
+      </div>
+    </div>
+  `;
 }
 
 // ─── Mount ────────────────────────────────────────────────────────────────
@@ -372,21 +572,123 @@ function stopCipherEngine(): void {
 export function mount(container: HTMLElement): MountHandle {
   const render = (): void => {
     const snapshot = getOrCompute();
+    const goals = activeGoals();
+    const items = loadEffectiveRegimen();
+
     container.innerHTML = `
       <div class="coverage-workspace">
-        ${renderConsole(snapshot)}
-        <div class="coverage-grid">
-          <div class="coverage-main">
-            ${renderHero(snapshot)}
+        ${renderGoalStrip(goals)}
+        <div class="cov-d">
+          <div class="coverage-grid">
+            ${renderField(snapshot, goals)}
+            <aside class="cov-aside">
+              <div class="recs" data-recs></div>
+              ${renderRail(items)}
+            </aside>
           </div>
-          ${renderRail()}
         </div>
       </div>
     `;
+
+    // The two name-bearing regions are built as DOM, not markup, so every product name is a
+    // text node (§00.B #5). They are filled AFTER the shell so the shell can stay a template.
+    const railList = container.querySelector<HTMLElement>('[data-rail-list]');
+    if (railList !== null) {
+      buildRailRows(railList, items);
+    }
+    const recsHost = container.querySelector<HTMLElement>('[data-recs]');
+    if (recsHost !== null) {
+      // A RegimenItem has no product_id — its identity is label.name (see
+      // recommender.ts::productIdsForNames). Reading a product_id here silently owned
+      // nothing.
+      const owned = productIdsForNames(
+        items.map(i => (typeof i.label.name === 'string' ? i.label.name : '')).filter(Boolean),
+      );
+      const recs = rankProductsForCoverage({
+        want: wantedSlugs(snapshot, goals),
+        owned,
+        goals: goals.map(g => ({ id: g.id, members: g.members })),
+        limit: REC_LIMIT,
+      });
+      buildRecs(recsHost, recs, goals, goals.length > 0);
+    }
+  };
+
+  // ONE delegated listener on the container — the view re-renders by replacing innerHTML, so
+  // per-element handlers would be destroyed on every cascade (and re-binding them on each
+  // render is how listener leaks start).
+  const onClick = (ev: Event): void => {
+    const t = ev.target as HTMLElement | null;
+    if (t === null) {
+      return;
+    }
+    const remove = t.closest<HTMLElement>('[data-goal-remove]');
+    if (remove !== null) {
+      const id = remove.dataset['goalRemove'] ?? '';
+      saveRgUserGoals((loadRgUserGoals() ?? []).filter(g => g !== id));
+      return;
+    }
+    if (t.closest('[data-goal-add]') !== null) {
+      // The veil IS the goal picker — an inert "+ ADD" would be a label that lies.
+      window.dispatchEvent(new CustomEvent('wallach:open-welcome'));
+      return;
+    }
+    const rowRemove = t.closest<HTMLElement>('[data-row-remove]');
+    if (rowRemove !== null) {
+      // saveRgRemoved takes NUMERIC ids (the slot's items are numbered); the dataset is
+      // always a string, so the parse is the boundary. A non-numeric id is dropped rather
+      // than sent as NaN, which would match nothing and silently no-op.
+      const n = Number.parseInt(rowRemove.dataset['rowRemove'] ?? '', 10);
+      if (Number.isFinite(n)) {
+        saveRgRemoved(new Set([n]));
+      }
+      return;
+    }
+    const up = t.closest<HTMLElement>('[data-dose-up]');
+    const down = t.closest<HTMLElement>('[data-dose-down]');
+    if (up !== null || down !== null) {
+      bumpDose((up ?? down)?.dataset[up !== null ? 'doseUp' : 'doseDown'] ?? '', up !== null ? 1 : -1);
+      return;
+    }
+    const rec = t.closest<HTMLElement>('[data-rec-add]');
+    if (rec !== null) {
+      addVaultProduct(rec.dataset['recAdd'] ?? '');
+      return;
+    }
+    if (t.closest('[data-full-regimen]') !== null) {
+      window.dispatchEvent(new CustomEvent('wallach:navigate', { detail: { to: 'regimen' } }));
+    }
+  };
+
+  /**
+   * Goal HOVER = transient focus. Delegated on the container for the same reason as click.
+   * It only ever adds/removes a class — it never touches state, so it cannot change a
+   * verdict or a count.
+   */
+  const onHover = (ev: Event): void => {
+    const t = ev.target as HTMLElement | null;
+    const chip = t?.closest<HTMLElement>('.gchip[data-goal]') ?? null;
+    const body = document.body;
+    const tiles = container.querySelectorAll<HTMLElement>('.tile, .tile--vitamin, .tile--amino, .tile--fat');
+    if (chip === null) {
+      body.classList.remove('focusing');
+      tiles.forEach(x => x.classList.remove('is-focus'));
+      return;
+    }
+    const goal = LAYOUT.goals.find(g => g.id === chip.dataset['goal']);
+    if (goal === undefined) {
+      return;
+    }
+    const keys = new Set(goal.members.map(s => slugToTileKey().get(s)).filter(Boolean));
+    body.classList.add('focusing');
+    tiles.forEach(x => x.classList.toggle('is-focus', keys.has(x.dataset['tile'] ?? '')));
   };
 
   render();
-  startCipherEngine(container);
+
+  container.addEventListener('click', onClick);
+  container.addEventListener('mouseover', onHover);
+  container.addEventListener('mouseout', onHover);
 
   const unsubCoverage = on('coverage:recomputed', () => render());
   const unsubRegimen = on('regimen:changed', () => render());
@@ -396,8 +698,75 @@ export function mount(container: HTMLElement): MountHandle {
     unmount: () => {
       unsubCoverage();
       unsubRegimen();
-      stopCipherEngine();
+      container.removeEventListener('click', onClick);
+      container.removeEventListener('mouseover', onHover);
+      container.removeEventListener('mouseout', onHover);
+      document.body.classList.remove('focusing');
       container.innerHTML = '';
     },
   };
+}
+
+/**
+ * The dose stepper — Luneth's named "increasing dosage changing counts".
+ *
+ * Whole-serving steps, floored at 1. It writes through the §31 chokepoint
+ * (saveRgOverride → writeSlotDoc → 'regimen:changed'), which cascades a recompute; the view
+ * re-renders off the event, so the counts MOVE. Nothing here computes coverage — the scale
+ * is handed to the engine and the engine decides.
+ *
+ * ★ Stepping from a sourced fractional default (PDM's 1.54) yields 2.54, not 2: the step is
+ * relative, so the user's Wallach-sourced starting point is preserved rather than silently
+ * rounded away. Floor is 1 because a 0/day item is a REMOVED item, and removal has its own
+ * one-click control that routes to the trash (an item at 0 would be invisible on the field
+ * but still in the slot — a state with no honest rendering).
+ */
+/**
+ * The rec card's `+` — 1-click add. Luneth: discoverability of 1-click add is solved by a
+ * `+` on each card, not by a second button that lies.
+ *
+ * Routes through §31 (saveRgManual → writeSlotDoc → 'regimen:changed'), which cascades the
+ * recompute; the view re-renders off the event, so the field relights and the product leaves
+ * its own recommendation list. It mints the SAME RegimenItem shape as views/regimen.ts's
+ * vault picker — provenance 'user_manual', because a vault-matched add IS an Eden product,
+ * not the user's own scanned item (that distinction is what the EDEN/YOURS mark reads).
+ *
+ * §10 edge rule: adding an item ALREADY in the slot raises its dose instead of creating a
+ * duplicate row. Two rows for one product would double-count it on the field.
+ */
+function addVaultProduct(productId: string): void {
+  if (productId === '') {
+    return;
+  }
+  const entry = vaultEntry(productId);
+  if (entry === null) {
+    return; // unresolvable id — do nothing rather than mint an item with a slug for a name
+  }
+  const current = loadEffectiveRegimen();
+  const existing = current.find(i =>
+    typeof i.label.name === 'string'
+    && i.label.name.trim().toLowerCase() === entry.name.trim().toLowerCase());
+  if (existing !== undefined) {
+    bumpDose(String(existing.id), 1);
+    return;
+  }
+  const item: RegimenItem = {
+    id: Date.now(),
+    label: { name: entry.name, nutrients: entry.nutrients },
+    addedDate: new Date().toISOString().slice(0, 10),
+    provenance: 'user_manual',
+  };
+  saveRgManual([...loadRgManual(), item]);
+}
+
+function bumpDose(id: string, delta: number): void {
+  if (id === '') {
+    return;
+  }
+  const item = loadEffectiveRegimen().find(i => String(i.id) === id);
+  if (item === undefined) {
+    return;
+  }
+  const next = Math.max(1, readItemDose(item) + delta);
+  saveRgOverride(id, { scaling_factor: next });
 }

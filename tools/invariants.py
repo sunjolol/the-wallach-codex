@@ -2550,6 +2550,179 @@ def _kids_products_not_recommended_impl(excl_p, products_p, rec_src_p, rec_data_
                   f"Products-tab database path) deliberately does not")
 
 
+def _goal_members_actionable_impl(layout_p, targets_p, derive_p, coverage_ts_p):
+    """R7 gate for GOAL MEMBERSHIP (the live Coverage build, 2026-07-16).
+
+    A goal RING means "a goal nutrient you have NOT covered" -- a to-do marker. So a goal may
+    only name an essential the user can actually ACT on individually. Two classes cannot be,
+    and both are asserted here because NOTHING else watches them:
+
+      1. The PLANT DERIVED 34 (target.kind == 'trace_pdm'). Wallach states no individual
+         amount for these; they share ONE verdict off the colloidal-mineral bottle, so a ring
+         on one is a to-do the user cannot do. The signed-off demo states the rule in its own
+         words ("Wallach never itemises these, so they can never be 'named for' a goal").
+      2. The fiat-covered FOUNDATIONAL 4 (H/C/N/O) -- forced covered because you breathe.
+         Nothing to take, so there is no goal to set. PHOSPHORUS is deliberately NOT in this
+         class: its covered traces to a sealed Wallach claim (target.low == 0), not to the
+         fiat, so it stays goal-nameable exactly as the demo has it.
+
+    THE CHECK THAT EARNS THIS GATE'S KEEP is #3: coverage_layout_derive.py must MIRROR
+    state/coverage.ts's FOUNDATIONAL_PRESENT_SLUGS, because Python cannot import TypeScript
+    and the list is therefore written twice. A silent drift there would quietly change which
+    essentials a goal may name, on a green board, with no other check watching -- the exact
+    shape of every expensive failure in this project. R3 by ENFORCEMENT, since it cannot be
+    R3 by construction.
+    """
+    import json as _json
+    import re as _re
+
+    problems = []
+    layout = _json.loads(layout_p.read_text(encoding="utf-8"))
+    targets = _json.loads(targets_p.read_text(encoding="utf-8"))
+    derive_src = derive_p.read_text(encoding="utf-8")
+    cov_src = coverage_ts_p.read_text(encoding="utf-8")
+
+    pdm = {e["slug"] for e in targets["essentials"]
+           if (e.get("target") or {}).get("kind") == "trace_pdm"}
+
+    # 3. The mirrored fiat list must MATCH coverage.ts's FOUNDATIONAL_PRESENT_SLUGS.
+    m = _re.search(r"FOUNDATIONAL_PRESENT_SLUGS[^=]*=\s*new Set\(\[(.*?)\]\)", cov_src, _re.S)
+    if m is None:
+        problems.append("state/coverage.ts: FOUNDATIONAL_PRESENT_SLUGS not found -- the fiat "
+                        "set moved or was renamed; the derive's mirror can no longer be checked")
+        ts_fiat = set()
+    else:
+        ts_fiat = set(_re.findall(r"'([a-z0-9-]+)'", m.group(1)))
+    m2 = _re.search(r"FIAT_COVERED_SLUGS\s*=\s*frozenset\(\{(.*?)\}\)", derive_src, _re.S)
+    if m2 is None:
+        problems.append("coverage_layout_derive.py: FIAT_COVERED_SLUGS not found")
+        py_fiat = set()
+    else:
+        py_fiat = set(_re.findall(r'"([a-z0-9-]+)"', m2.group(1)))
+    if ts_fiat and py_fiat and ts_fiat != py_fiat:
+        problems.append(
+            f"FIAT DRIFT: coverage_layout_derive.FIAT_COVERED_SLUGS {sorted(py_fiat)} != "
+            f"state/coverage.ts FOUNDATIONAL_PRESENT_SLUGS {sorted(ts_fiat)} -- one list "
+            "changed and the other did not; goal membership silently diverges from the field")
+
+    goals = layout.get("goals", [])
+    if not goals:
+        problems.append("coverage-layout-data.json carries NO goals -- anti-vacuity: a gate "
+                        "over an empty set certifies nothing")
+
+    # canon slugs actually on the board, for the resolution check
+    tiles = []
+    for sec in layout.get("sections", []):
+        tiles += sec.get("tiles") or [t for s in sec.get("subsections", []) for t in s["tiles"]]
+    board = {t["slug"] for t in tiles if "slug" in t}
+
+    for g in goals:
+        gid = g.get("id", "?")
+        members = g.get("members") or []
+        if not members:
+            problems.append(f"goal {gid!r}: ZERO members -- an empty chip highlights nothing")
+        # 1 + 2: no unactionable member
+        for bad, why in ((pdm, "trace_pdm (no individual Wallach amount -- one shared verdict)"),
+                         (py_fiat, "fiat-covered (nothing to take, so no goal to set)")):
+            hit = sorted(set(members) & bad)
+            if hit:
+                problems.append(f"goal {gid!r} names UNACTIONABLE member(s) {hit} -- {why}")
+        # every member must be a real tile on the board
+        stray = sorted(set(members) - board)
+        if stray:
+            problems.append(f"goal {gid!r} names member(s) not on the board: {stray}")
+        # NO per-goal total, ever: membership is what you LOOK AT; a total is a DENOMINATOR,
+        # and the denominator is always 90.
+        if "total" in g:
+            problems.append(f"goal {gid!r} carries a `total` -- a per-goal denominator is "
+                            "forbidden (a goal may never change what you are MEASURED against)")
+
+    if problems:
+        return False, "; ".join(problems[:6])
+    return True, (f"{len(goals)} goals: every member is actionable "
+                  f"(no trace_pdm, no fiat-covered), resolves on the board, and carries no "
+                  f"per-goal total; the derive's fiat list matches coverage.ts "
+                  f"({sorted(py_fiat)})")
+
+
+def check_goal_members_actionable():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _goal_members_actionable_impl(
+        ROOT / "dashboard/assets/data/coverage-layout-data.json",
+        ROOT / "dashboard/assets/data/essentials-targets-data.json",
+        ROOT / "eden/tools/coverage_layout_derive.py",
+        ROOT / "dashboard/assets/js/src/state/coverage.ts",
+    )
+
+
+def _recommendations_not_stored_impl(src_dir, data_dir):
+    """R7 gate (blueprint SS5/SS11): a recommendation list is DERIVED, never STORED.
+
+    This is not a performance rule. It is what makes Luneth's #4 structurally true rather
+    than defended-against: "remove an item -> it reappears in recommendations" is not a
+    feature anyone codes, because there is no stored list to fall out of sync. His
+    goal -> add -> remove-goal -> remove-item loop CANNOT exist if the list is a pure
+    function of (goals, active slot, product DB).
+
+    Checks:
+      1. No localStorage key looks like a stored recommendation list.
+      2. No assets/data artifact is a stored recommendation list.
+      3. The ranker is PURE: state/recommender.ts must not import storage or touch
+         localStorage -- if it could persist, the rule would rest on it choosing not to.
+    """
+    import re as _re
+
+    def _strip_comments(s):
+        """Comments are PROSE, not code. Scanning them for 'localStorage' fired on this very
+        module's docstring, which says the ranker touches no localStorage -- the gate reading
+        its own denial as the offence. R9: tightened with the case pinned in the test, never
+        loosened."""
+        s = _re.sub(r"/\*[\s\S]*?\*/", "", s)
+        return _re.sub(r"//[^\n]*", "", s)
+
+    problems = []
+    rec_src = _strip_comments((src_dir / "state/recommender.ts").read_text(encoding="utf-8"))
+
+    # 3. purity of the ranker -- real ACCESS (localStorage.foo / localStorage[...]), not the word
+    if _re.search(r"\blocalStorage\s*[.\[]", rec_src):
+        problems.append("state/recommender.ts touches localStorage -- the ranker must be pure")
+    if _re.search(r"from\s+'[^']*core/storage", rec_src):
+        problems.append("state/recommender.ts imports core/storage -- the ranker must be pure")
+
+    # 1. no LS key that stores recommendations.
+    # ★ 'recommend', NOT 'rec': the first cut matched any "rec" substring and fired on
+    # scanner.ts's `lcRecentScans_v1` -- RECENT SCANS, a legitimate recoverable buffer that has
+    # nothing to do with recommendations (blueprint SS8: "a new scan never silently destroys the
+    # last"). Over-firing on a real feature is how a gate gets deleted instead of fixed. R9:
+    # tightened + the case pinned in tools/test_recommendations_not_stored.py.
+    KEY_RE = _re.compile(r"""['"]([A-Za-z0-9_]*[Rr]ecommend[A-Za-z0-9_]*_v\d+)['"]""")
+    for p in sorted(src_dir.rglob("*.ts")):
+        for k in KEY_RE.findall(_strip_comments(p.read_text(encoding="utf-8"))):
+            problems.append(f"{p.relative_to(src_dir)}: localStorage-shaped key {k!r} "
+                            "looks like a STORED recommendation list")
+
+    # 2. no artifact that stores recommendations
+    for p in sorted(data_dir.glob("*.json")):
+        if _re.search(r"recommendation", p.name, _re.I) and "recommender-data" not in p.name:
+            problems.append(f"assets/data/{p.name}: an artifact named like a stored "
+                            "recommendation list")
+
+    if problems:
+        return False, "; ".join(problems[:5])
+    return True, ("recommendations are derived, never stored: no rec-shaped LS key, no "
+                  "rec-list artifact, and the ranker is pure (no storage import, no "
+                  "localStorage). product-recommender-data.json is RANKING INPUT "
+                  "(composition + price), not a stored list")
+
+
+def check_recommendations_not_stored():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _recommendations_not_stored_impl(
+        ROOT / "dashboard/assets/js/src",
+        ROOT / "dashboard/assets/data",
+    )
+
+
 def check_kids_products_not_recommended():
     """Thin path-binding shell so a negative test can drive the impl on planted copies."""
     return _kids_products_not_recommended_impl(
@@ -5259,6 +5432,24 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/view-copy.json ui.kd_ep_pdm_* label fields + coverage-layout-data.json section labels. HONEST LIMIT: this is a CONSISTENCY anchor, not an external one — it pins our copy to our own doctrine. The doctrine itself is anchored externally (hk.txt:7312-7314, immortality.txt:5760-10233), but this check cannot read the books; it can only stop the label drifting back",
         severity="warning",
         lesson_ref="2026-07-15 — pdm_coverage_derive.py's docstring said 'do not rename it back' from the day the group was created, and the USER-FACING copy said 'Rare Earth Minerals' + 'of the rare-earth group goal' the entire time. The code comment governed the code; NOTHING governed the label, so the one surface a user can actually see carried the invention the whole campaign existed to delete. Found in passing during the cobalt fix. A rule with no gate is a WISH (R7) — and this WISH had already been broken where it mattered most.",
+    ),
+    Invariant(
+        name="goal_members_actionable",
+        anchor_class="consistency",  # our derive vs our canon/targets vs our TS — see the honest limit
+        description="A goal may only name an essential the user can ACT on individually, because the ring MEANS 'a goal nutrient you have NOT covered' — a to-do marker. Asserts that no goal's derived `members` contains (a) a trace_pdm essential (the PLANT DERIVED 34 state no individual Wallach amount and share ONE verdict off the colloidal bottle, so a ring on one is a to-do nobody can do) or (b) a fiat-covered foundational slug (H/C/N/O — nothing to take, so no goal to set; PHOSPHORUS is deliberately NOT in that class, its covered traces to a sealed claim via target.low==0). Also: every member resolves to a real tile on the board, no goal is empty, and NO goal carries a `total` — membership is what you LOOK AT, a total is a DENOMINATOR, and the denominator is always 90. ★ THE CHECK THAT EARNS ITS KEEP: coverage_layout_derive.py's FIAT_COVERED_SLUGS must MATCH state/coverage.ts's FOUNDATIONAL_PRESENT_SLUGS — Python cannot import TypeScript, so that list is written twice, and this is the only thing watching the seam",
+        check_fn=check_goal_members_actionable,
+        truth_anchor="dashboard/assets/data/coverage-layout-data.json goals[].members × essentials-targets-data.json target.kind (for trace_pdm) × eden/tools/coverage_layout_derive.py FIAT_COVERED_SLUGS × dashboard/assets/js/src/state/coverage.ts FOUNDATIONAL_PRESENT_SLUGS. HONEST LIMIT (R7): CONSISTENCY, not external. It proves membership obeys the rule and that the two fiat lists agree; it CANNOT prove the goal SET is right — the 14 goals are OUR curation (Wallach enumerates no 'goals'), a placeholder Luneth re-authors. Only their enforcement is mechanical",
+        severity="critical",
+        lesson_ref="2026-07-16 — the live Coverage build. The signed-off demo STATES this rule in its own comment ('Wallach never itemises these, so they can never be named for a goal') and its own baked MEMBERSHIP then BREAKS it: STRONTIUM (a trace_pdm element) is listed under stronger-bones + less-joint-pain, off the real claim WAL-CLM-DDDL-000032. The claim is genuine; the demo's data simply was not filtered. We follow the demo's STATED rule over its generated data (demo = vision, not letter) and the delta is logged for Luneth. ★ The FIAT-DRIFT check exists because the H/C/N/O list is duplicated across a language boundary — the exact silent-divergence shape that let the mineral tiers sit sealed and green for three weeks. R3 by enforcement, since it cannot be R3 by construction.",
+    ),
+    Invariant(
+        name="recommendations_not_stored",
+        anchor_class="structural",  # code shape + artifact naming
+        description="A recommendation list is DERIVED at read time, never STORED (blueprint §5/§11). Not a performance rule: it is what makes Luneth's #4 structurally true rather than defended-against — 'remove an item → it reappears in recommendations' is not a feature anyone codes, because there is no stored list to fall out of sync, and his goal→add→remove-goal→remove-item loop CANNOT exist when the list is a pure function of (goals, active slot, product DB). Asserts no rec-shaped localStorage key anywhere in src/, no rec-list artifact in assets/data/, and that state/recommender.ts is PURE (no localStorage, no core/storage import) — if the ranker COULD persist, the rule would rest on it choosing not to",
+        check_fn=check_recommendations_not_stored,
+        truth_anchor="dashboard/assets/js/src/**/*.ts SOURCE (key shapes + the ranker's imports) × dashboard/assets/data/*.json (artifact names). HONEST LIMIT (R7): it proves nothing is stored under a rec-SHAPED name — a stored list under an unrelated key would slip. product-recommender-data.json is deliberately exempt: it is RANKING INPUT (composition + wholesale price), not a stored list",
+        severity="warning",
+        lesson_ref="2026-07-16 — the live Coverage build. The rule was authored in the blueprint (§5, §11) and shipped with its gate in the same patch (R7) rather than as a WISH, because the failure is invisible: a cached rec list would look identical on screen the moment it was written and only diverge later, which is exactly the class of bug the user reports as 'items keep coming back'.",
     ),
     Invariant(
         name="kids_products_not_recommended",

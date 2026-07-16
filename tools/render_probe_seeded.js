@@ -87,7 +87,15 @@ const SEED = { items: [
     return {
       seedErr: window.__seedErr || null,
       seeded: !!localStorage.getItem('lcRegimen_v1'),
-      coveredStat: (document.querySelector('.coverage-stat__num') || {}).textContent,
+      // The COVERED count now comes from the LEDGER, not a hero stat.
+      // ★ WHY THIS MOVED (2026-07-16, the live Coverage build): this read
+      // `.coverage-stat__num` — the big "N / 90" headline. Demo D DELETED that stat
+      // deliberately: "covered" is four incommensurable regimes (wallach 38 · trace_pdm 33 ·
+      // dietary_with_clinical_lever 13 · dietary 3 …), so one fraction printed a count of
+      // four different kinds of thing as a single number, twice, 200px apart. The
+      // DISTRIBUTION (the ledger) replaces the ratio. Same fact, live element — the
+      // assertion below is unchanged and still fires on the same threshold.
+      coveredStat: (document.querySelector('.ledger__item .ledger__n') || {}).textContent,
       covered: cls('covered'), partial: cls('partial'), trace: cls('trace'), gap: cls('gap'),
       VitaminC: statusOf('ASCORBIC ACID'), Zinc: statusOf('ZINC'),
       Boron: statusOf('BORON'), Aluminum: statusOf('ALUMINUM'), Yttrium: statusOf('YTTRIUM'),

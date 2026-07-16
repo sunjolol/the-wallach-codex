@@ -1,9 +1,9 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-16 ~10:55 CDT — kids exclusion SHIPPED + SIGNED OFF; the live Coverage build is NEXT and UNBLOCKED)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-16 ~16:30 CDT — ★ THE COVERAGE PAGE IS SHIPPED LIVE; it awaits Luneth's VISUAL SIGN-OFF)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES ("older loses").
-> Board **73/73** (`kids_products_not_recommended` landed 2026-07-16; was 72 — `slot_invariants`
-> landed earlier the same day; 69 before `mirrors_resolve` + `pdm_group_not_named_rare_earths`,
-> 2026-07-15). Corpus sealed at **kv=338** (untouched — the kids work touched NO pillar).
+> Board **75/75** (`goal_members_actionable` + `recommendations_not_stored` landed 2026-07-16;
+> was 73 — `kids_products_not_recommended` earlier the same day; `slot_invariants` before that).
+> Corpus sealed at **kv=338** (untouched — the Coverage build touched NO pillar).
 > Read the next line before you repeat that number.
 >
 > **THE NUMBER IS NOT WHAT YOU THINK IT IS.** Only the **external** gates
@@ -12,21 +12,110 @@
 > Luneth as a statement about Wallach — that is exactly how this project spent three weeks
 > confidently wrong, and Claude did it again at the top of the 2026-07-15 session.
 
-## ★★★★ START HERE — the element system is SEALED. Do not re-open it.
+## ★★★★ START HERE — THE COVERAGE PAGE IS LIVE. Your visual sign-off is the only gate left.
 
-**Luneth's words, 2026-07-15: "close out the essentials doctrine cleanly and FINALLY — NEVER to be
-touched again, I want no more mishaps with the element system once we seal it for good."**
+**Built 2026-07-16 while Luneth was away, on his explicit instruction:** *"I'm leaving for a while
+and would like you to build the live coverage page while I'm away. Ask any questions you're going
+to need to know to build it properly (if any) before I leave so there's no interruptions and when I
+come back I can review the work and make changes or approve it if it's good to go."*
 
-The 60 minerals are now split by **what Wallach tells you to DO**, never by importance:
+**HOW TO LOOK AT IT:** open `dashboard/dashboard.html` from `file://`. Screenshots:
+`temporary/shots-live-coverage/` (00-welcome · 01-field-empty-1440 · 02-field-3items-1440 ·
+02-field-3items-1920 · 03-field-many-1440 · 04-goal-hover-1440).
 
-| | group | n | rule |
-|---|---|---|---|
-| A | **FOUNDATIONAL** | 5 | H · C · N · O · **P** — nothing to take |
-| B | **INDIVIDUALLY DOSED** | 21 | carries a sealed Wallach dose claim |
-| C | **PLANT DERIVED** | 34 | no individual amount; ONE shared verdict |
+### ★ HIS FOUR PRE-DEPARTURE CALLS — all built as answered, do not re-litigate
+| | Question | His call |
+|---|---|---|
+| G1 | Where goal data lives | **Hand-authored curation, NOT a sealed pillar** — no seal ceremony, he rewrites the list freely. The 14 are a PLACEHOLDER; the machinery does not change when the list does. |
+| G2 | Welcome overlay | **IN SCOPE** — Welcome + name + refresh persistence (closes his open item #4). |
+| G3 | Tile click | **Leave tiles inert** — match the demo. Do not invent a destination. |
+| G4 | PDM's fractional dose | **Integer steps, but a SOURCED FRACTIONAL DEFAULT is allowed** — PDM seeds at 1.54/day (Wallach's own 1 fl oz/100 lb at 154 lb), the one product he doses by name. |
 
-Ordering: FOUNDATIONAL atomic (H C N O P); B + C **A→Z by symbol** (Luneth's UX call — the tile
-shows the symbol big). Names are **his**, chosen 2026-07-15 after he rejected three proposals.
+★ **G1 landed in the SKELETON, not a new artifact** — `coverage-layout-skeleton.json` already owned
+"the goals block" and already derives through a gated generator. A second goals file would have been
+a duplicate home (R3). Same principle he approved (hand curation · no pillar · no seal · he rewrites
+the list), less machinery.
+
+### ★★ TWO JUDGMENT CALLS AWAITING HIS RULING (both flagged, neither hidden)
+1. **STRONTIUM — the demo's own data contradicts the demo's own stated rule.** Its comment says the
+   plant-derived 34 "can never be 'named for' a goal" (no individual Wallach amount — one shared
+   verdict); its baked MEMBERSHIP then rings STRONTIUM under stronger-bones + less-joint-pain. The
+   underlying claim is REAL (`WAL-CLM-DDDL-000032`: *"Strontium deficiency is associated with certain
+   calcium- and boron-resistant forms of osteoporosis and arthritis"*). **We follow the STATED rule
+   over the generated data** (demo = vision, not letter) and `goal_members_actionable` REDs on it.
+   **Flip in one line:** `EXCLUDE_PLANT_DERIVED = False` in `eden/tools/coverage_layout_derive.py`.
+2. **The fabricated chrome was DELETED** (the footer incl. `EDEN v1 · sealed 8E594A01` — a mockup
+   literal matching **none** of the 8 real goldens — plus `SYNCED`, `CODEX v3.27`, `WS·01`,
+   `WSC·1AB7`). Demo D killed all of it and it is fabrication, so it went. **But it is SHELL, which
+   every tab shares** — the deliberate scope call is his to overrule.
+
+### ★ WHAT IS DELIBERATELY NOT BUILT (do not read as an oversight)
+- **The inline rename-in-place** (demo D's brand/profile click-to-rename). The profile chip still
+  opens the Creator's Log panel; changing that is its own decision.
+- **`dose_default_sourced`** stays a **labelled WISH (R7)**: the rail READS the dose, it does not
+  ASSIGN the default. The gate belongs with the dose-ladder work that gives rung 3 its explicit flag.
+- **Tile → entity navigation** (his G3 call).
+- `size-limit` still absent from the round-close (pre-existing; the bundle is 4.9× over budget).
+- `main.ts`'s **4 pre-existing lint errors** left as found — baseline-verified at HEAD via `git stash`.
+
+### ★★ FIVE BUGS FOUND IN FLIGHT — every one caught by a probe / lint / measurement, NONE by reading
+Recorded because each is a shape that will recur:
+1. **The vault parse read the ROOT, not `.products`** → every rec card would have rendered a raw
+   slug (`reverse`) instead of `ReVERSE!®`. **tsc could not see it** — the values are `unknown`
+   either way. Caught by a lint rule flagging the now-unnecessary type assertion.
+2. **`owned` read `label.product_id` — A FIELD THAT DOES NOT EXIST.** A live RegimenItem's identity
+   is `label.name`. So `owned` was ALWAYS empty and a product you had just added stayed top of its
+   own rec list. Typechecked fine (the label is a passthrough object). Caught by the probe.
+3. **The `+` dispatched an event nothing listened to** — it did nothing. The exact "a label is a
+   promise" failure Claude had just criticised the demo for.
+4. **The ledger counted all 91** and summed to 91 beside its own line reading "90 counted"
+   (omega-9 is `essential:false`). Caught by reading the probe's own output.
+5. **DOUBLE PADDING** (`.coverage-workspace` + `.cov-d`, 40px each side twice) ate 80px and cost a
+   **whole column at 1920** (10 vs the demo's 11). Caught by measuring the box chain — and the first
+   column measurement LIED (it counted the FOUNDATIONAL subsection, which only has 5 tiles).
+
+### ★★ MEASURED FACTS — do not re-derive, and note where the OLD handoff was stale
+- **Geometry now matches the signed-off demo EXACTLY**, measured against the demo itself, not argued:
+  **6 cols / field 776px @1440** · **11 cols / field 1256px @1920** · tiles 100×80 · rail 340px.
+  ⚠ **The old handoff's "7 tile columns at 1440" is DEMO D** (92px tiles). **Demo E — the signed-off
+  one — uses 100px and renders 6 at 1440.** 11 at 1920 was right.
+- **The rec list byte-matches the demo's screenshot** on real data: ReVERSE!® $89.95/19/2.1 ·
+  Ultimate Classic $48.95/17/3.5 · BTT 2.5 $69.95/17/2.4 · BTT 2.0 $85.95/17/2.0.
+- **The dose stepper MOVES THE COUNTS** (his named requirement): 1→2→3→4 takes covered 10→20→24→27
+  and returns to **exactly** 10. `readScale` (override → `label.servings` → 1) already multiplies
+  every delivered mg; the stepper just writes `saveRgOverride(id, {scaling_factor})`.
+- **The ring is MEASURED, not eyeballed:** 15 covered+goal tiles → `display:none`, 0×0. 9 gap+goal →
+  105×85. Covered `::after` is still **14×3** (the status tick) — the pseudo-element collision has
+  not returned. ★ Claude's EYE said covered tiles were ringed; the measurement said no. The eye lost.
+- **`Kid's Toddy™` ranked #1 in the demo and NEVER appears live** — the kids filter works. `Ultra
+  Body Toddy™` DOES appear and is CORRECT (an adult drink; "Toddy" is not "toddler").
+- **The demo's `+ ADD` chip has NO handler at all** — dead markup there. Live it opens the veil as a
+  goal picker.
+- **The demo's `--g1..--g5` CSS palette is DEAD** (0 `var()` uses). The real palette is the JS array,
+  now `core/goal-display.ts`. It was NOT ported — it would be a second home for one fact.
+
+### ★ WHAT SHIPPED (files)
+`coverage-layout-skeleton.json` (goals: 6 stale SHOUTY → the demo's 14, `{id,name,conditions[]}`) ·
+`eden/tools/coverage_layout_derive.py` (derives `members[]` + tile `slug`; hard-fails on an
+unresolvable slug / non-canon essential / zero-member goal) · `MANIFEST.json` (5 inputs declared) ·
+`core/schemas/coverage-layout.ts` · `state/recommender.ts` (**NEW** `rankProductsForCoverage` —
+rankSources is PER-ESSENTIAL and is NOT this; + `vaultEntry`, `productIdsForNames`) ·
+`state/corpus.ts` (**NEW** `claimCount()` — the rail's count DERIVES; the demo's hardcoded 1,358 is
+already stale at **1,359**) · `views/coverage.ts` (re-created) · **NEW** `views/welcome.ts` ·
+**NEW** `core/goal-display.ts` · `main.ts` · `dashboard.html` · `workspace-coverage.css` ·
+`view-copy.json` (+28 keys; `cov_console_q` RETIRED — it was the "What are you here for?" copy he
+called rude) · **NEW** `tools/test_goal_members_actionable.py` (9) ·
+**NEW** `tools/test_recommendations_not_stored.py` (7) ·
+**NEW** `tools/render_probe_coverage_add_remove.js` (22).
+
+⚠ **`render_probe_seeded` was RE-POINTED, not loosened:** it read `.coverage-stat__num`, the big
+"N / 90" hero stat that demo D **deliberately deleted** ("covered" is four incommensurable regimes,
+so one fraction printed four kinds of thing as one number). It now reads the LEDGER. Same fact, same
+threshold, live element.
+
+---
+
+_Everything below is the carried record: the ORDER AS GIVEN + the design decisions that governed this build. The live build has SHIPPED; read the top of this file first._
 
 ## ★★★★ THE BLUEPRINT IS SIGNED OFF — `chronicle/coverage-regimen-scanner-blueprint.md`
 
@@ -50,7 +139,7 @@ Also settled: **MANAGE and ADD ITEM both DIE**, replaced by one `FULL REGIMEN �
 fine, and I agree this is better."* An ADD ITEM that navigates instead of adding is the PROFILE
 lesson inverted — a label is a promise.
 
-## ★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE (Luneth, 2026-07-16, session close)
+## ~~★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE~~ ✓ **SHIPPED 2026-07-16** (see the top of this file). The section below is the ORDER AS GIVEN, kept because its rules governed the build:
 
 **His words:** *"Yes, let's ship this live (and do so carefully) — this demo feels a LOT better
 coded than previous demos but we still shouldn't blindly copy code since some of it will need to
@@ -154,7 +243,7 @@ memory [[no-kids-products-recommended]] (rewritten) + the build-log line + the C
   not kids products.) - good to commit/push/seal/etc. and close out the session"*. **The list is
   CLOSED.** (Nothing to seal — no pillar was touched; a curation artifact has no seal step.)
 
-### ★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE (unchanged; NOW UNBLOCKED)
+### ~~★★★★ THE NEXT ORDER — SHIP THE COVERAGE SURFACE LIVE~~ ✓ **SHIPPED 2026-07-16**
 The kids work above was the one thing gating it — the rail's recommendation cards inherit the
 filtered ranker for free. Everything in the section below still stands. ★ **Facts measured
 2026-07-16 that the live build must not re-derive:**

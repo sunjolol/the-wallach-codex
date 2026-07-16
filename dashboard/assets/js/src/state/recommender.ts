@@ -29,7 +29,8 @@
  */
 
 import recommenderData from '../../../data/product-recommender-data.json';
-import { RecommenderDataSchema } from '../core/schemas/index.js';
+import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
+import { ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
 import { toMg } from '../core/units.js';
 import { isExcludedFromRecommendations } from './kids-exclusion.js';
 
@@ -222,4 +223,253 @@ export function essentialSlugsByProduct(): Map<string, string[]> {
   }
   productEssentialsCache = m;
   return m;
+}
+
+// ─── The Coverage rail's recommender (2026-07-16, the live Coverage build) ───
+//
+// rankSources answers "what is the best source of ONE essential?" (the Knowledge deep-dive's
+// BEST SOURCES). The Coverage rail asks a DIFFERENT question — "given everything I'm missing,
+// what ONE product should I add next?" — so it needs a cross-essential ranker. That did not
+// exist; this is it. Same score SHAPE (W_ADEQ/W_BREADTH/W_VALUE, saturating breadth) so the
+// two rankers speak one language (blueprint §5), RE-CREATED from the signed-off demo's
+// paintRecs on real state rather than lifted from it.
+//
+// ★ WHAT "ADEQUACY" MEANS HERE, and why it is NOT rankSources' adequacy. rankSources compares
+// a delivered AMOUNT to a Wallach target (min(1, delivered/target)) — a per-essential
+// quantity. This ranker compares a COUNT: how many of the essentials you want does this
+// product reach, relative to the best product in the set. There is no Wallach number in it and
+// it never claims one — a breadth-of-hit ratio, not a coverage verdict (§00.A: composition and
+// price are display/recommender inputs, never a target).
+//
+// ★ FILTERED FOR KIDS ON PURPOSE, AND FIRST. Every rec surface funnels through the kids
+// exclusion (Luneth 2026-07-16). The index below is built from already-filtered candidates so
+// an excluded product cannot define the yardstick (bestSupply/bestValue) the survivors are
+// scored against — the same ordering rankSources uses, for the same reason. The Products TAB
+// path (essentialSlugsByProduct) stays deliberately UNfiltered; that asymmetry IS the
+// requirement, and `kids_products_not_recommended` asserts both halves.
+
+// The vault's root is { _meta, products: { id: entry } } — the NAMES live under `products`,
+// not at the root. Mirrors state/coverage.ts:337's read of the same artifact, including its
+// root-fallback for the flat shape. Parsing the root and indexing it directly (the first cut
+// here) silently resolved EVERY id to undefined, so every rec card would have rendered its
+// raw product slug: a bug tsc cannot see, because the values are `unknown` either way.
+const VAULT = ProductsLookupSchema.parse(
+  (regimenLabelLookup as { products?: unknown }).products ?? regimenLabelLookup,
+);
+
+/** One recommendation card on the Coverage rail. */
+export interface CoverageRec {
+  productId: string;
+  /** Display name, read from the generated product vault (never hand-typed). */
+  name: string;
+  /** Wholesale price (USD) — the featured price everywhere, per Luneth's standing rule. */
+  price: number;
+  /** How many of the WANTED essentials this product reaches. The card's "supplies N". */
+  supplies: number;
+  /** Distinct essentials the product delivers overall (the breadth term's input). */
+  breadth: number;
+  /** Which of the ACTIVE goals this product touches — the card's coloured dots. */
+  goalIds: string[];
+  score: number;
+  /** `supplies` per $10 — the card's DISPLAYED value figure, not the sort key. */
+  perTenDollars: number;
+}
+
+interface ProductAgg {
+  essentials: Set<string>;
+  breadth: number;
+  price: number;
+}
+
+/**
+ * product_id → display name, from the same generated vault state/coverage.ts reads.
+ *
+ * The vault's values are mixed shapes (single entry / array of entries), which is why the
+ * schema types them `unknown` and each value is validated on read. An unresolvable id falls
+ * back to the id itself rather than throwing: a rec card with a raw slug is ugly and visible;
+ * a crashed rail is not (graceful degradation, #7). Every one of the 155 recommender
+ * product_ids resolves today — verified 2026-07-16 — so the fallback is a guard, not a path.
+ */
+function productName(productId: string): string {
+  const raw = VAULT[productId];
+  const entry = ProductEntrySchema.safeParse(Array.isArray(raw) ? raw[0] : raw);
+  if (!entry.success) {
+    return productId;
+  }
+  return entry.data.canonical_name ?? entry.data.name ?? productId;
+}
+
+/**
+ * A vault product by id — the add path's source for the item's label.
+ *
+ * Lives here because this module already parses the vault, and a second parse elsewhere
+ * would be a second home for one fact (R3). The Coverage rail's `+` needs a NAME and the
+ * nutrient rows to mint a RegimenItem, exactly as views/regimen.ts::addItem does from the
+ * picker — the two add paths must produce the same shape or the field disagrees with itself.
+ */
+export function vaultEntry(productId: string): { name: string; nutrients: unknown[] } | null {
+  const raw = VAULT[productId];
+  const parsed = ProductEntrySchema.safeParse(Array.isArray(raw) ? raw[0] : raw);
+  if (!parsed.success) {
+    return null;
+  }
+  const name = parsed.data.canonical_name ?? parsed.data.name;
+  if (name === undefined || name === '') {
+    return null;
+  }
+  return { name, nutrients: parsed.data.nutrients ?? [] };
+}
+
+/**
+ * canonical_name (lowercased) → product_id.
+ *
+ * ★ WHY NAME IS THE JOIN, and it is not a shortcut: a live RegimenItem carries NO
+ * product_id. Its identity IS `label.name` — that is what views/regimen.ts::addItem matches
+ * the vault on, and what state/coverage.ts's auto-heal re-resolves composition by. The rail
+ * asked "which products do I already own?" and the first cut here read `label.product_id`,
+ * a field that does not exist — so `owned` was ALWAYS empty and a product you had just added
+ * stayed at the top of its own recommendation list. Caught by the probe, not by tsc: the
+ * label is a passthrough object, so the read typechecked and silently returned undefined.
+ */
+let nameToIdCache: Map<string, string> | null = null;
+function nameToId(): Map<string, string> {
+  if (nameToIdCache !== null) {
+    return nameToIdCache;
+  }
+  const m = new Map<string, string>();
+  for (const id of Object.keys(VAULT)) {
+    const e = vaultEntry(id);
+    if (e !== null) {
+      m.set(e.name.trim().toLowerCase(), id);
+    }
+  }
+  nameToIdCache = m;
+  return m;
+}
+
+/** product_ids for the given regimen item NAMES (unresolvable names are simply not owned). */
+export function productIdsForNames(names: readonly string[]): string[] {
+  const idx = nameToId();
+  return names
+    .map(n => idx.get(n.trim().toLowerCase()))
+    .filter((x): x is string => x !== undefined);
+}
+
+let coverageIndexCache: Map<string, ProductAgg> | null = null;
+
+/**
+ * product_id → {essentials it delivers, breadth, price}, KID-FILTERED. Memoized (the data is
+ * immutable). Inverted from the same artifact rankSources reads. `breadth` and `price` repeat
+ * identically on every candidate row for a product — the derive emits them per-product — so
+ * the first row wins and the rest agree by construction.
+ */
+function coverageIndex(): Map<string, ProductAgg> {
+  if (coverageIndexCache !== null) {
+    return coverageIndexCache;
+  }
+  const m = new Map<string, ProductAgg>();
+  for (const [slug, entry] of Object.entries(DATA.essentials)) {
+    for (const c of entry.candidates) {
+      if (isExcludedFromRecommendations(c.product_id)) {
+        continue;
+      }
+      const agg = m.get(c.product_id);
+      if (agg === undefined) {
+        m.set(c.product_id, {
+          essentials: new Set([slug]),
+          breadth: c.breadth,
+          price: c.price ?? 0,
+        });
+      }
+      else {
+        agg.essentials.add(slug);
+      }
+    }
+  }
+  coverageIndexCache = m;
+  return m;
+}
+
+/**
+ * Rank products for the Coverage rail — "what should I add next?", best first.
+ *
+ * @param input        The query.
+ * @param input.want   The essential slugs to target. With goals set, the union of their
+ *                     members; with none, the field's current gaps (blueprint §5: no goals →
+ *                     rank by breadth across all 90 — honest and still useful).
+ * @param input.owned  product_ids already in the active slot. They LEAVE the list — which is
+ *                     what makes it terminate with no stored list to fall out of sync (§5,
+ *                     Luneth's #4: "remove an item → it reappears" is not a feature anyone
+ *                     had to code).
+ * @param input.goals  The ACTIVE goals + their members, for the card's dots. Empty in
+ *                     no-goal mode.
+ * @param input.limit  Cards to return (the rail shows 4).
+ *
+ * Pure: no DOM, no localStorage, no stored output — `recommendations_not_stored` gates that a
+ * recommendation list is never persisted.
+ */
+export function rankProductsForCoverage(input: {
+  want: readonly string[];
+  owned?: readonly string[];
+  goals?: readonly { id: string; members: readonly string[] }[];
+  limit?: number;
+}): CoverageRec[] {
+  const want = new Set(input.want);
+  const owned = new Set(input.owned ?? []);
+  const goals = input.goals ?? [];
+  const limit = input.limit ?? 4;
+  if (want.size === 0) {
+    return [];
+  }
+
+  const rows: Omit<CoverageRec, 'score' | 'perTenDollars'>[] = [];
+  for (const [productId, agg] of coverageIndex()) {
+    if (owned.has(productId)) {
+      continue;
+    }
+    let supplies = 0;
+    for (const slug of agg.essentials) {
+      if (want.has(slug)) {
+        supplies += 1;
+      }
+    }
+    if (supplies === 0) {
+      continue;
+    }
+    rows.push({
+      productId,
+      name: productName(productId),
+      price: agg.price,
+      supplies,
+      breadth: agg.breadth,
+      goalIds: goals.filter(g => g.members.some(m => agg.essentials.has(m))).map(g => g.id),
+    });
+  }
+  if (rows.length === 0) {
+    return [];
+  }
+
+  // Both relative terms are derived AFTER filtering (kids + owned), on purpose: an excluded or
+  // already-owned product must not define the yardstick the survivors are scored against.
+  const bestSupply = rows.reduce((m, r) => (r.supplies > m ? r.supplies : m), 0);
+  const perDollar = (r: { supplies: number; price: number }): number =>
+    (r.price > 0 ? r.supplies / r.price : 0);
+  const bestValue = rows.reduce((m, r) => {
+    const v = perDollar(r);
+    return v > m ? v : m;
+  }, 0);
+
+  const scored: CoverageRec[] = rows.map((r) => {
+    const adequacy = bestSupply > 0 ? r.supplies / bestSupply : 0;
+    const value = bestValue > 0 ? perDollar(r) / bestValue : 0;
+    return {
+      ...r,
+      score: W_ADEQ * adequacy + W_BREADTH * breadthScore(r.breadth) + W_VALUE * value,
+      perTenDollars: perDollar(r) * 10,
+    };
+  });
+  // Tie-break on product_id so the order is DETERMINISTIC — Array.sort is not stable across
+  // equal scores, and a probe asserting the rec list must not flake.
+  scored.sort((a, b) => (b.score - a.score) || a.productId.localeCompare(b.productId));
+  return scored.slice(0, limit);
 }

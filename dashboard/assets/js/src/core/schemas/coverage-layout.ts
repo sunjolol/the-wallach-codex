@@ -26,6 +26,13 @@ export const LayoutTileSchema = z.object({
    * the stable identity used to look up live status.
    */
   key: z.string().min(1),
+  /**
+   * Canon essential slug — the join key for GOAL MEMBERSHIP (goals carry slugs, tiles
+   * render display names, and the two DIVERGE for 16 of 91: canon `vitamin-c` renders
+   * `ASCORBIC ACID`). Derived from canon, never hand-typed. A name-based join here
+   * silently dropped every vitamin from every goal once already.
+   */
+  slug: z.string().min(1),
   /** Atomic number (minerals). */
   num: z.number().optional(),
   /** Chemical symbol (minerals). */
@@ -74,23 +81,38 @@ export const LayoutSectionSchema = z.object({
 export type LayoutSection = z.infer<typeof LayoutSectionSchema>;
 
 /**
- * A goal ring/definition (bone, cognition, …).
+ * A goal ring/definition (stronger bones, less joint pain, …).
  *
- * NO `total`. It was six hand-typed, unsourced numbers (14/13/11/12/18/10) that no view
- * ever read — the goal cards that rendered them were deleted 2026-07-14 — yet they rode
- * the derive into the MANIFEST-gated artifact, so `derived_artifacts_fresh` was certifying
- * fabricated data as "fresh" (R8: no poison left behind). They also contradicted the only
- * membership map in the repo (scanner-corpus's nutrientToGoalMap implies 6/6/13/6/3/4).
+ * `members` = the canon essential slugs this goal highlights. STILL NO `total`, and the
+ * distinction is the whole doctrine: MEMBERSHIP is what you LOOK AT; a TOTAL is what you
+ * are MEASURED AGAINST. A goal may change the first and may never change the second — the
+ * denominator is always 90. So `members.length` must never be rendered as a fraction
+ * ("bone 3/14" asserts that bone health IS 14 things, which inverts Wallach's thesis that
+ * you need all 90 regardless). The old `total` was six hand-typed unsourced numbers no view
+ * read, riding the derive into a MANIFEST-gated artifact so `derived_artifacts_fresh`
+ * certified fabricated data as "fresh" (R8). It is deleted, not optional.
  *
- * It is DELETED rather than made optional: a per-goal total is a DENOMINATOR, and the rule
- * this surface is now built on forbids one — a goal may change what you LOOK AT, or what
- * you're RECOMMENDED, but never what you're MEASURED AGAINST. The denominator is always 90.
- * Real membership derives from the corpus (`conditions_treated` ∩ a goal's conditions) and
- * will live in eden/catalog/goals.json, gated by references_resolve. It is never stored here.
+ * WHERE THESE COME FROM (2026-07-16, the live Coverage build):
+ * - `id`/`name`/`conditions` are CURATION, hand-authored in coverage-layout-skeleton.json.
+ *   Ours, explicitly not a Wallach claim — he enumerates no "goals". Luneth authors the real
+ *   set; the 14 shipped today are a placeholder he rewrites (the machinery does not change).
+ * - `members` is DERIVED, never hand-stored (R3): coverage_layout_derive.py intersects the
+ *   sealed claims against each goal's Catalog condition slugs. The goal SET is ours; the
+ *   MEMBERSHIP is Wallach's.
+ * ! Supersedes this comment's old prediction that membership "will live in
+ *   eden/catalog/goals.json, gated by references_resolve". It does not: the Catalog is a
+ *   SEALED pillar, so a goals file there needs a seal sign-off per write-discipline rule 6,
+ *   and the goal list is editorial curation that Luneth re-authors freely — sealing it would
+ *   make every edit a ceremony. The skeleton (hand-authored, MANIFEST-registered, no seal) is
+ *   the home; the derive is the gate.
  */
 export const LayoutGoalSchema = z.object({
   id: z.string(),
   name: z.string(),
+  /** Sealed-Catalog condition slugs. The derive hard-fails on one that does not resolve. */
+  conditions: z.array(z.string()).min(1),
+  /** Canon essential slugs, derived. The derive hard-fails on a goal with zero. */
+  members: z.array(z.string()).min(1),
 });
 export type LayoutGoal = z.infer<typeof LayoutGoalSchema>;
 

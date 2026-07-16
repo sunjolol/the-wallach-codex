@@ -15,30 +15,35 @@
             {
               "key": "Hydrogen",
               "name": "HYDROGEN",
+              "slug": "hydrogen",
               "num": 1,
               "sym": "H"
             },
             {
               "key": "Carbon",
               "name": "CARBON",
+              "slug": "carbon",
               "num": 6,
               "sym": "C"
             },
             {
               "key": "Nitrogen",
               "name": "NITROGEN",
+              "slug": "nitrogen",
               "num": 7,
               "sym": "N"
             },
             {
               "key": "Oxygen",
               "name": "OXYGEN",
+              "slug": "oxygen",
               "num": 8,
               "sym": "O"
             },
             {
               "key": "Phosphorus",
               "name": "PHOSPHORUS",
+              "slug": "phosphorus",
               "num": 15,
               "sym": "P"
             }
@@ -52,126 +57,147 @@
             {
               "key": "Silver",
               "name": "SILVER",
+              "slug": "silver",
               "num": 47,
               "sym": "Ag"
             },
             {
               "key": "Boron",
               "name": "BORON",
+              "slug": "boron",
               "num": 5,
               "sym": "B"
             },
             {
               "key": "Calcium",
               "name": "CALCIUM",
+              "slug": "calcium",
               "num": 20,
               "sym": "Ca"
             },
             {
               "key": "Chloride",
               "name": "CHLORIDE",
+              "slug": "chloride",
               "num": 17,
               "sym": "Cl"
             },
             {
               "key": "Cobalt",
               "name": "COBALT",
+              "slug": "cobalt",
               "num": 27,
               "sym": "Co"
             },
             {
               "key": "Chromium",
               "name": "CHROMIUM",
+              "slug": "chromium",
               "num": 24,
               "sym": "Cr"
             },
             {
               "key": "Copper",
               "name": "COPPER",
+              "slug": "copper",
               "num": 29,
               "sym": "Cu"
             },
             {
               "key": "Iron",
               "name": "IRON",
+              "slug": "iron",
               "num": 26,
               "sym": "Fe"
             },
             {
               "key": "Germanium",
               "name": "GERMANIUM",
+              "slug": "germanium",
               "num": 32,
               "sym": "Ge"
             },
             {
               "key": "Iodine",
               "name": "IODINE",
+              "slug": "iodine",
               "num": 53,
               "sym": "I"
             },
             {
               "key": "Potassium",
               "name": "POTASSIUM",
+              "slug": "potassium",
               "num": 19,
               "sym": "K"
             },
             {
               "key": "Magnesium",
               "name": "MAGNESIUM",
+              "slug": "magnesium",
               "num": 12,
               "sym": "Mg"
             },
             {
               "key": "Manganese",
               "name": "MANGANESE",
+              "slug": "manganese",
               "num": 25,
               "sym": "Mn"
             },
             {
               "key": "Molybdenum",
               "name": "MOLYBDENUM",
+              "slug": "molybdenum",
               "num": 42,
               "sym": "Mo"
             },
             {
               "key": "Sodium",
               "name": "SODIUM",
+              "slug": "sodium",
               "num": 11,
               "sym": "Na"
             },
             {
               "key": "Sulfur",
               "name": "SULFUR",
+              "slug": "sulfur",
               "num": 16,
               "sym": "S"
             },
             {
               "key": "Selenium",
               "name": "SELENIUM",
+              "slug": "selenium",
               "num": 34,
               "sym": "Se"
             },
             {
               "key": "Silica",
               "name": "SILICA",
+              "slug": "silica",
               "num": 14,
               "sym": "Si"
             },
             {
               "key": "Tin",
               "name": "TIN",
+              "slug": "tin",
               "num": 50,
               "sym": "Sn"
             },
             {
               "key": "Vanadium",
               "name": "VANADIUM",
+              "slug": "vanadium",
               "num": 23,
               "sym": "V"
             },
             {
               "key": "Zinc",
               "name": "ZINC",
+              "slug": "zinc",
               "num": 30,
               "sym": "Zn"
             }
@@ -185,204 +211,238 @@
             {
               "key": "Aluminum",
               "name": "ALUMINUM",
+              "slug": "aluminum",
               "num": 13,
               "sym": "Al"
             },
             {
               "key": "Arsenic",
               "name": "ARSENIC",
+              "slug": "arsenic",
               "num": 33,
               "sym": "As"
             },
             {
               "key": "Gold",
               "name": "GOLD",
+              "slug": "gold",
               "num": 79,
               "sym": "Au"
             },
             {
               "key": "Barium",
               "name": "BARIUM",
+              "slug": "barium",
               "num": 56,
               "sym": "Ba"
             },
             {
               "key": "Beryllium",
               "name": "BERYLLIUM",
+              "slug": "beryllium",
               "num": 4,
               "sym": "Be"
             },
             {
               "key": "Bromine",
               "name": "BROMINE",
+              "slug": "bromine",
               "num": 35,
               "sym": "Br"
             },
             {
               "key": "Cerium",
               "name": "CERIUM",
+              "slug": "cerium",
               "num": 58,
               "sym": "Ce"
             },
             {
               "key": "Cesium",
               "name": "CESIUM",
+              "slug": "cesium",
               "num": 55,
               "sym": "Cs"
             },
             {
               "key": "Dysprosium",
               "name": "DYSPROSIUM",
+              "slug": "dysprosium",
               "num": 66,
               "sym": "Dy"
             },
             {
               "key": "Erbium",
               "name": "ERBIUM",
+              "slug": "erbium",
               "num": 68,
               "sym": "Er"
             },
             {
               "key": "Europium",
               "name": "EUROPIUM",
+              "slug": "europium",
               "num": 63,
               "sym": "Eu"
             },
             {
               "key": "Gallium",
               "name": "GALLIUM",
+              "slug": "gallium",
               "num": 31,
               "sym": "Ga"
             },
             {
               "key": "Gadolinium",
               "name": "GADOLINIUM",
+              "slug": "gadolinium",
               "num": 64,
               "sym": "Gd"
             },
             {
               "key": "Hafnium",
               "name": "HAFNIUM",
+              "slug": "hafnium",
               "num": 72,
               "sym": "Hf"
             },
             {
               "key": "Holmium",
               "name": "HOLMIUM",
+              "slug": "holmium",
               "num": 67,
               "sym": "Ho"
             },
             {
               "key": "Lanthanum",
               "name": "LANTHANUM",
+              "slug": "lanthanum",
               "num": 57,
               "sym": "La"
             },
             {
               "key": "Lithium",
               "name": "LITHIUM",
+              "slug": "lithium",
               "num": 3,
               "sym": "Li"
             },
             {
               "key": "Lutetium",
               "name": "LUTETIUM",
+              "slug": "lutetium",
               "num": 71,
               "sym": "Lu"
             },
             {
               "key": "Niobium",
               "name": "NIOBIUM",
+              "slug": "niobium",
               "num": 41,
               "sym": "Nb"
             },
             {
               "key": "Neodymium",
               "name": "NEODYMIUM",
+              "slug": "neodymium",
               "num": 60,
               "sym": "Nd"
             },
             {
               "key": "Nickel",
               "name": "NICKEL",
+              "slug": "nickel",
               "num": 28,
               "sym": "Ni"
             },
             {
               "key": "Praseodymium",
               "name": "PRASEODYMIUM",
+              "slug": "praseodymium",
               "num": 59,
               "sym": "Pr"
             },
             {
               "key": "Rubidium",
               "name": "RUBIDIUM",
+              "slug": "rubidium",
               "num": 37,
               "sym": "Rb"
             },
             {
               "key": "Rhenium",
               "name": "RHENIUM",
+              "slug": "rhenium",
               "num": 75,
               "sym": "Re"
             },
             {
               "key": "Scandium",
               "name": "SCANDIUM",
+              "slug": "scandium",
               "num": 21,
               "sym": "Sc"
             },
             {
               "key": "Samarium",
               "name": "SAMARIUM",
+              "slug": "samarium",
               "num": 62,
               "sym": "Sm"
             },
             {
               "key": "Strontium",
               "name": "STRONTIUM",
+              "slug": "strontium",
               "num": 38,
               "sym": "Sr"
             },
             {
               "key": "Tantalum",
               "name": "TANTALUM",
+              "slug": "tantalum",
               "num": 73,
               "sym": "Ta"
             },
             {
               "key": "Terbium",
               "name": "TERBIUM",
+              "slug": "terbium",
               "num": 65,
               "sym": "Tb"
             },
             {
               "key": "Titanium",
               "name": "TITANIUM",
+              "slug": "titanium",
               "num": 22,
               "sym": "Ti"
             },
             {
               "key": "Thulium",
               "name": "THULIUM",
+              "slug": "thulium",
               "num": 69,
               "sym": "Tm"
             },
             {
               "key": "Yttrium",
               "name": "YTTRIUM",
+              "slug": "yttrium",
               "num": 39,
               "sym": "Y"
             },
             {
               "key": "Ytterbium",
               "name": "YTTERBIUM",
+              "slug": "ytterbium",
               "num": 70,
               "sym": "Yb"
             },
             {
               "key": "Zirconium",
               "name": "ZIRCONIUM",
+              "slug": "zirconium",
               "num": 40,
               "sym": "Zr"
             }
@@ -401,97 +461,113 @@
           "key": "Vitamin A (Retinol / beta-carotene)",
           "code": "V·01",
           "letter": "A",
-          "name": "RETINOL"
+          "name": "RETINOL",
+          "slug": "vitamin-a"
         },
         {
           "key": "Vitamin B1 (Thiamine)",
           "code": "V·02",
           "letter": "B1",
-          "name": "THIAMINE"
+          "name": "THIAMINE",
+          "slug": "vitamin-b1"
         },
         {
           "key": "Vitamin B2 (Riboflavin)",
           "code": "V·03",
           "letter": "B2",
-          "name": "RIBOFLAVIN"
+          "name": "RIBOFLAVIN",
+          "slug": "vitamin-b2"
         },
         {
           "key": "Vitamin B3 (Niacin)",
           "code": "V·04",
           "letter": "B3",
-          "name": "NIACIN"
+          "name": "NIACIN",
+          "slug": "vitamin-b3"
         },
         {
           "key": "Vitamin B5 (Pantothenic Acid)",
           "code": "V·05",
           "letter": "B5",
-          "name": "PANTOTHENIC ACID"
+          "name": "PANTOTHENIC ACID",
+          "slug": "vitamin-b5"
         },
         {
           "key": "Vitamin B6 (Pyridoxine)",
           "code": "V·06",
           "letter": "B6",
-          "name": "PYRIDOXINE"
+          "name": "PYRIDOXINE",
+          "slug": "vitamin-b6"
         },
         {
           "key": "Folic Acid (Folate)",
           "code": "V·07",
           "letter": "B9",
-          "name": "FOLATE"
+          "name": "FOLATE",
+          "slug": "vitamin-b9"
         },
         {
           "key": "Vitamin B12 (Cobalamin)",
           "code": "V·08",
           "letter": "B12",
-          "name": "COBALAMIN"
+          "name": "COBALAMIN",
+          "slug": "vitamin-b12"
         },
         {
           "key": "Vitamin C (Ascorbic Acid)",
           "code": "V·09",
           "letter": "C",
-          "name": "ASCORBIC ACID"
+          "name": "ASCORBIC ACID",
+          "slug": "vitamin-c"
         },
         {
           "key": "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)",
           "code": "V·10",
           "letter": "D3",
-          "name": "CHOLECALCIFEROL"
+          "name": "CHOLECALCIFEROL",
+          "slug": "vitamin-d"
         },
         {
           "key": "Vitamin E (Tocopherol)",
           "code": "V·11",
           "letter": "E",
-          "name": "TOCOPHEROL"
+          "name": "TOCOPHEROL",
+          "slug": "vitamin-e"
         },
         {
           "key": "Vitamin K (Phylloquinone)",
           "code": "V·12",
           "letter": "K",
-          "name": "PHYLLOQUINONE"
+          "name": "PHYLLOQUINONE",
+          "slug": "vitamin-k"
         },
         {
           "key": "Biotin",
           "code": "V·13",
           "letter": "H",
-          "name": "BIOTIN"
+          "name": "BIOTIN",
+          "slug": "biotin"
         },
         {
           "key": "Choline",
           "code": "V·14",
           "letter": "Ch",
-          "name": "CHOLINE"
+          "name": "CHOLINE",
+          "slug": "choline"
         },
         {
           "key": "Inositol",
           "code": "V·15",
           "letter": "In",
-          "name": "INOSITOL"
+          "name": "INOSITOL",
+          "slug": "inositol"
         },
         {
           "key": "Flavonoids / Bioflavonoids",
           "code": "V·16",
           "letter": "Fl",
-          "name": "FLAVONOIDS"
+          "name": "FLAVONOIDS",
+          "slug": "flavonoids"
         }
       ]
     },
@@ -506,73 +582,85 @@
           "key": "Arginine",
           "code": "AA·01",
           "abbr": "Arg",
-          "name": "ARGININE"
+          "name": "ARGININE",
+          "slug": "arginine"
         },
         {
           "key": "Histidine",
           "code": "AA·02",
           "abbr": "His",
-          "name": "HISTIDINE"
+          "name": "HISTIDINE",
+          "slug": "histidine"
         },
         {
           "key": "Isoleucine",
           "code": "AA·03",
           "abbr": "Ile",
-          "name": "ISOLEUCINE"
+          "name": "ISOLEUCINE",
+          "slug": "isoleucine"
         },
         {
           "key": "Leucine",
           "code": "AA·04",
           "abbr": "Leu",
-          "name": "LEUCINE"
+          "name": "LEUCINE",
+          "slug": "leucine"
         },
         {
           "key": "Lysine",
           "code": "AA·05",
           "abbr": "Lys",
-          "name": "LYSINE"
+          "name": "LYSINE",
+          "slug": "lysine"
         },
         {
           "key": "Methionine",
           "code": "AA·06",
           "abbr": "Met",
-          "name": "METHIONINE"
+          "name": "METHIONINE",
+          "slug": "methionine"
         },
         {
           "key": "Phenylalanine",
           "code": "AA·07",
           "abbr": "Phe",
-          "name": "PHENYLALANINE"
+          "name": "PHENYLALANINE",
+          "slug": "phenylalanine"
         },
         {
           "key": "Taurine",
           "code": "AA·08",
           "abbr": "Tau",
-          "name": "TAURINE"
+          "name": "TAURINE",
+          "slug": "taurine"
         },
         {
           "key": "Threonine",
           "code": "AA·09",
           "abbr": "Thr",
-          "name": "THREONINE"
+          "name": "THREONINE",
+          "slug": "threonine"
         },
         {
           "key": "Tryptophan",
           "code": "AA·10",
           "abbr": "Trp",
-          "name": "TRYPTOPHAN"
+          "name": "TRYPTOPHAN",
+          "slug": "tryptophan"
         },
         {
           "key": "Tyrosine",
           "code": "AA·11",
           "abbr": "Tyr",
-          "name": "TYROSINE"
+          "name": "TYROSINE",
+          "slug": "tyrosine"
         },
         {
           "key": "Valine",
           "code": "AA·12",
           "abbr": "Val",
-          "name": "VALINE"
+          "name": "VALINE",
+          "slug": "valine"
         }
       ]
     },
@@ -587,48 +675,436 @@
           "key": "Omega-3 (Alpha-Linolenic Acid / ALA)",
           "code": "F·01",
           "hint": "n-3 · alpha-linolenic (ALA)",
-          "name": "OMEGA-3"
+          "name": "OMEGA-3",
+          "slug": "omega-3"
         },
         {
           "key": "Omega-6 (Linoleic Acid / LA)",
           "code": "F·02",
           "hint": "n-6 · linoleic (LA)",
-          "name": "OMEGA-6"
+          "name": "OMEGA-6",
+          "slug": "omega-6"
         },
         {
           "key": "Omega-9 (Oleic Acid / OA)",
           "code": "F·03",
           "hint": "n-9 · oleic (OA)",
           "essential": false,
-          "name": "OMEGA-9"
+          "name": "OMEGA-9",
+          "slug": "omega-9"
         }
       ]
     }
   ],
   "goals": [
     {
-      "id": "bone-skeletal",
-      "name": "BONE & SKELETAL"
+      "id": "stronger-bones",
+      "name": "Stronger bones",
+      "conditions": [
+        "osteoporosis",
+        "osteopenia",
+        "bone_pain",
+        "bone_spurs",
+        "degenerative_disc_disease",
+        "osteofibrosis"
+      ],
+      "members": [
+        "boron",
+        "calcium",
+        "copper",
+        "germanium",
+        "magnesium",
+        "phosphorus",
+        "selenium",
+        "sulfur",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "vitamin-k",
+        "zinc"
+      ]
     },
     {
-      "id": "energy-metabolism",
-      "name": "ENERGY & METABOLISM"
+      "id": "less-joint-pain",
+      "name": "Less joint pain",
+      "conditions": [
+        "arthritis",
+        "rheumatoid_arthritis",
+        "osteoarthritis",
+        "degenerative_arthritis",
+        "joint_pain",
+        "heel_spurs"
+      ],
+      "members": [
+        "boron",
+        "calcium",
+        "chromium",
+        "copper",
+        "germanium",
+        "histidine",
+        "iron",
+        "magnesium",
+        "molybdenum",
+        "omega-3",
+        "omega-6",
+        "phosphorus",
+        "selenium",
+        "sulfur",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ]
     },
     {
-      "id": "cognition",
-      "name": "COGNITION"
+      "id": "more-energy",
+      "name": "More energy",
+      "conditions": [
+        "chronic_fatigue",
+        "chronic_fatigue_syndrome",
+        "hypothyroidism",
+        "anemia"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "cobalt",
+        "copper",
+        "germanium",
+        "iodine",
+        "iron",
+        "methionine",
+        "omega-3",
+        "selenium",
+        "sulfur",
+        "tyrosine",
+        "vanadium",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
     },
     {
-      "id": "hormones-strength",
-      "name": "HORMONES & STRENGTH"
+      "id": "sharper-thinking",
+      "name": "Sharper thinking",
+      "conditions": [
+        "dementia",
+        "alzheimers",
+        "memory_loss",
+        "learning_disabilities",
+        "organic_brain_syndrome"
+      ],
+      "members": [
+        "calcium",
+        "choline",
+        "chromium",
+        "copper",
+        "germanium",
+        "iron",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vanadium",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-b3",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
     },
     {
-      "id": "longevity-anti-aging",
-      "name": "LONGEVITY & ANTI-AGING"
+      "id": "better-mood",
+      "name": "Better mood",
+      "conditions": [
+        "depression",
+        "anxiety",
+        "bipolar_disorder"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "choline",
+        "chromium",
+        "copper",
+        "iron",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "phenylalanine",
+        "phosphorus",
+        "potassium",
+        "sodium",
+        "tryptophan",
+        "tyrosine",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-c",
+        "zinc"
+      ]
     },
     {
-      "id": "cardiovascular",
-      "name": "CARDIOVASCULAR"
+      "id": "healthy-heart",
+      "name": "A healthy heart",
+      "conditions": [
+        "cardiovascular_disease",
+        "arteriosclerosis",
+        "atherosclerosis",
+        "high_cholesterol",
+        "hypertension",
+        "heart_attack",
+        "congestive_heart_failure"
+      ],
+      "members": [
+        "biotin",
+        "boron",
+        "calcium",
+        "chromium",
+        "copper",
+        "inositol",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "phosphorus",
+        "potassium",
+        "selenium",
+        "silica",
+        "sodium",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "better-sleep",
+      "name": "Better sleep",
+      "conditions": [
+        "insomnia"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "inositol",
+        "magnesium",
+        "phenylalanine",
+        "potassium",
+        "tryptophan",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b9",
+        "vitamin-d"
+      ]
+    },
+    {
+      "id": "stronger-immunity",
+      "name": "Stronger immunity",
+      "conditions": [
+        "immune_depression"
+      ],
+      "members": [
+        "flavonoids",
+        "germanium",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "silver",
+        "vitamin-a",
+        "vitamin-b5",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "skin-and-hair",
+      "name": "Healthy skin & hair",
+      "conditions": [
+        "dermatitis",
+        "eczema",
+        "alopecia",
+        "gray_hair",
+        "psoriasis",
+        "acne"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "copper",
+        "inositol",
+        "omega-3",
+        "omega-6",
+        "potassium",
+        "selenium",
+        "sodium",
+        "tin",
+        "vitamin-a",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "blood-sugar",
+      "name": "Blood-sugar balance",
+      "conditions": [
+        "diabetes",
+        "hypoglycemia",
+        "gestational_diabetes"
+      ],
+      "members": [
+        "biotin",
+        "chromium",
+        "copper",
+        "flavonoids",
+        "inositol",
+        "iron",
+        "manganese",
+        "omega-3",
+        "vanadium",
+        "vitamin-b12",
+        "vitamin-b3",
+        "zinc"
+      ]
+    },
+    {
+      "id": "hormones-fertility",
+      "name": "Hormones & fertility",
+      "conditions": [
+        "infertility",
+        "impotence",
+        "low_libido",
+        "menopause"
+      ],
+      "members": [
+        "arginine",
+        "calcium",
+        "chromium",
+        "germanium",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "muscle-strength",
+      "name": "Muscle & strength",
+      "conditions": [
+        "muscular_dystrophy",
+        "muscle_cramps",
+        "muscle_twitches"
+      ],
+      "members": [
+        "calcium",
+        "choline",
+        "magnesium",
+        "methionine",
+        "omega-3",
+        "potassium",
+        "selenium",
+        "vitamin-b5",
+        "vitamin-d",
+        "vitamin-e"
+      ]
+    },
+    {
+      "id": "digestion",
+      "name": "Better digestion",
+      "conditions": [
+        "crohns_disease",
+        "diarrhea",
+        "malabsorption"
+      ],
+      "members": [
+        "calcium",
+        "chromium",
+        "copper",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "phosphorus",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "healthy-weight",
+      "name": "A healthy weight",
+      "conditions": [
+        "obesity",
+        "anorexia"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "cobalt",
+        "iron",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "omega-6",
+        "phosphorus",
+        "potassium",
+        "sodium",
+        "vanadium",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "zinc"
+      ]
     }
   ]
 }

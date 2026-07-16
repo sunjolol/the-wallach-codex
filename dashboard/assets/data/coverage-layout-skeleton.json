@@ -397,28 +397,142 @@
   ],
   "goals": [
     {
-      "id": "bone-skeletal",
-      "name": "BONE & SKELETAL"
+      "id": "stronger-bones",
+      "name": "Stronger bones",
+      "conditions": [
+        "osteoporosis",
+        "osteopenia",
+        "bone_pain",
+        "bone_spurs",
+        "degenerative_disc_disease",
+        "osteofibrosis"
+      ]
     },
     {
-      "id": "energy-metabolism",
-      "name": "ENERGY & METABOLISM"
+      "id": "less-joint-pain",
+      "name": "Less joint pain",
+      "conditions": [
+        "arthritis",
+        "rheumatoid_arthritis",
+        "osteoarthritis",
+        "degenerative_arthritis",
+        "joint_pain",
+        "heel_spurs"
+      ]
     },
     {
-      "id": "cognition",
-      "name": "COGNITION"
+      "id": "more-energy",
+      "name": "More energy",
+      "conditions": [
+        "chronic_fatigue",
+        "chronic_fatigue_syndrome",
+        "hypothyroidism",
+        "anemia"
+      ]
     },
     {
-      "id": "hormones-strength",
-      "name": "HORMONES & STRENGTH"
+      "id": "sharper-thinking",
+      "name": "Sharper thinking",
+      "conditions": [
+        "dementia",
+        "alzheimers",
+        "memory_loss",
+        "learning_disabilities",
+        "organic_brain_syndrome"
+      ]
     },
     {
-      "id": "longevity-anti-aging",
-      "name": "LONGEVITY & ANTI-AGING"
+      "id": "better-mood",
+      "name": "Better mood",
+      "conditions": [
+        "depression",
+        "anxiety",
+        "bipolar_disorder"
+      ]
     },
     {
-      "id": "cardiovascular",
-      "name": "CARDIOVASCULAR"
+      "id": "healthy-heart",
+      "name": "A healthy heart",
+      "conditions": [
+        "cardiovascular_disease",
+        "arteriosclerosis",
+        "atherosclerosis",
+        "high_cholesterol",
+        "hypertension",
+        "heart_attack",
+        "congestive_heart_failure"
+      ]
+    },
+    {
+      "id": "better-sleep",
+      "name": "Better sleep",
+      "conditions": [
+        "insomnia"
+      ]
+    },
+    {
+      "id": "stronger-immunity",
+      "name": "Stronger immunity",
+      "conditions": [
+        "immune_depression"
+      ]
+    },
+    {
+      "id": "skin-and-hair",
+      "name": "Healthy skin & hair",
+      "conditions": [
+        "dermatitis",
+        "eczema",
+        "alopecia",
+        "gray_hair",
+        "psoriasis",
+        "acne"
+      ]
+    },
+    {
+      "id": "blood-sugar",
+      "name": "Blood-sugar balance",
+      "conditions": [
+        "diabetes",
+        "hypoglycemia",
+        "gestational_diabetes"
+      ]
+    },
+    {
+      "id": "hormones-fertility",
+      "name": "Hormones & fertility",
+      "conditions": [
+        "infertility",
+        "impotence",
+        "low_libido",
+        "menopause"
+      ]
+    },
+    {
+      "id": "muscle-strength",
+      "name": "Muscle & strength",
+      "conditions": [
+        "muscular_dystrophy",
+        "muscle_cramps",
+        "muscle_twitches"
+      ]
+    },
+    {
+      "id": "digestion",
+      "name": "Better digestion",
+      "conditions": [
+        "crohns_disease",
+        "diarrhea",
+        "malabsorption"
+      ]
+    },
+    {
+      "id": "healthy-weight",
+      "name": "A healthy weight",
+      "conditions": [
+        "obesity",
+        "anorexia"
+      ]
     }
   ]
 }
