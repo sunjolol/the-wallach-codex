@@ -2655,6 +2655,138 @@ def check_goal_members_actionable():
     )
 
 
+def _pdm_group_goals_wallach_sourced_impl(layout_p, claims_dir):
+    """R7/R2 gate for GROUP goal membership (the plant-derived dots, 2026-07-16).
+
+    THE RULE: the plant-derived 34 can never be named INDIVIDUALLY by a goal (Wallach states
+    no per-element amount -- that half is `goal_members_actionable`). But he DOES prescribe the
+    colloidal-mineral COMPLEX by name for named conditions, so a goal may name the GROUP:
+    coverage-layout-data.json's `goals[].groups`. This gate proves every such claim of ours is
+    HIS, and that we dropped none of his.
+
+    WHY IT RE-DERIVES INSTEAD OF TRUSTING THE ARTIFACT (§00.B #11): it recomputes membership
+    from the SEALED CLAIMS ITSELF and byte-compares to the posted `groups`. It deliberately
+    does NOT import coverage_layout_derive -- a gate that asks the derive whether the derive was
+    right is a derive bug silencing its own alarm.
+
+    Checks, and each one's failure mode:
+      1. OVER-CLAIM -- a goal posts `groups` with no sealed claim naming the complex for any of
+         its conditions. This is the dangerous direction: it would put a health attribution on
+         the field that Wallach never made (§00.A).
+      2. UNDER-CLAIM -- a sealed claim names the complex for a goal's condition but the goal
+         posts no `groups`. Silent, invisible on screen, and exactly how a real Wallach
+         attribution rots out of the app as mining continues.
+      3. DANGLING -- a `groups` id with no matching subsection `id` in the layout. The dots
+         would bind to nothing and render nowhere.
+      4. ANTI-VACUITY -- if NO goal names the group, checks 1-3 pass trivially forever. A gate
+         that cannot fail proves nothing.
+
+    ★ THE PHRASE IS THE POINT, and the negative test pins it: `colloidal minerals` (plural, the
+    COMPLEX) matches; `colloidal calcium` / `colloidal selenium` / `colloidal tin` (a SINGLE
+    element, which belongs to the INDIVIDUALLY DOSED 21) must NOT. Reading the claim's OWN
+    verbatim -- not a window around it, and not its `other_substances` tag -- is what makes
+    neighbouring-entry bleed impossible: that bleed produced 9 of 12 false positives when this
+    was settled by reading, and it silently corrupted four character-window instruments that
+    each returned a different answer.
+
+    ★ HONEST LIMIT (R7, labelled not hidden): matching the WORDS does not prove the STANCE. A
+    verbatim reading "colloidal minerals are useless for X" would satisfy this gate. That half
+    rests on the mining review + the adversarial read, and no non-gaming machine check exists
+    for it. This gate proves PROVENANCE, never MEANING.
+    """
+    import json as _json
+    import re as _re
+
+    problems = []
+    layout = _json.loads(layout_p.read_text(encoding="utf-8"))
+
+    # The layout's own subsection ids — a `groups` entry must resolve to one.
+    sub_ids = {
+        s["id"]
+        for sec in layout.get("sections", [])
+        for s in (sec.get("subsections") or [])
+        if s.get("id")
+    }
+
+    GROUP_RE = _re.compile(r"colloidal\s+minerals?", _re.I)
+
+    def dehy(s):
+        """Rejoin print line-wraps ("colloi-\\ndal min-\\nerals") before matching. Without this
+        the gate silently UNDER-matches every hyphenated occurrence and would red-flag a real
+        attribution as an over-claim — a false alarm that gets a gate deleted."""
+        return _re.sub(r"\s+", " ", _re.sub(r"-\s*\n\s*", "", s or "")).strip()
+
+    # Recompute from the sealed pillar, independently of the derive.
+    claims = []
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        claims.extend(_json.loads(shard.read_text(encoding="utf-8")).get("claims", []))
+    group_claims = [
+        c for c in claims
+        if "search-only" not in (c.get("tags") or [])
+        and GROUP_RE.search(dehy(c.get("verbatim")))
+    ]
+
+    posted = 0
+    for g in layout.get("goals", []):
+        conds = set(g.get("conditions") or [])
+        supporting = sorted(
+            c["id"] for c in group_claims if set(c.get("conditions") or []) & conds
+        )
+        groups = g.get("groups") or []
+        if groups:
+            posted += 1
+        # 3. dangling id
+        for gid in groups:
+            if gid not in sub_ids:
+                problems.append(
+                    f"goal {g['id']!r} names group {gid!r}, which is not a subsection id in "
+                    f"the layout ({sorted(sub_ids)}) — the dots would bind to nothing"
+                )
+        # 1. over-claim
+        if groups and not supporting:
+            problems.append(
+                f"goal {g['id']!r} posts groups={groups} but NO sealed claim names the "
+                f"colloidal-mineral complex for any of its conditions {sorted(conds)} — a "
+                f"health attribution Wallach did not make (§00.A)"
+            )
+        # 2. under-claim
+        if supporting and not groups:
+            problems.append(
+                f"goal {g['id']!r} posts no groups, but sealed claim(s) {supporting} name the "
+                f"colloidal-mineral complex for its conditions — a real Wallach attribution "
+                f"dropped silently"
+            )
+
+    # 4. anti-vacuity
+    if not group_claims:
+        problems.append(
+            "NO sealed claim names the colloidal-mineral complex — the corpus half of this "
+            "gate is vacuous and every check above passes trivially"
+        )
+    elif posted == 0:
+        problems.append(
+            f"{len(group_claims)} sealed claim(s) name the complex but NO goal posts `groups` — "
+            "the rule is switched off and this gate would pass forever"
+        )
+
+    if problems:
+        return False, "; ".join(problems)
+    return True, (
+        f"{posted} of {len(layout.get('goals', []))} goals name the plant-derived group, each "
+        f"traced to a sealed claim whose OWN verbatim says 'colloidal minerals' "
+        f"({len(group_claims)} such claims); no goal over- or under-claims; every group id "
+        f"resolves to a layout subsection. PROVENANCE only — never the stance (R7)"
+    )
+
+
+def check_pdm_group_goals_wallach_sourced():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _pdm_group_goals_wallach_sourced_impl(
+        ROOT / "dashboard/assets/data/coverage-layout-data.json",
+        ROOT / "eden/corpus/claims",
+    )
+
+
 def _recommendations_not_stored_impl(src_dir, data_dir):
     """R7 gate (blueprint SS5/SS11): a recommendation list is DERIVED, never STORED.
 
@@ -5441,6 +5573,15 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/coverage-layout-data.json goals[].members × essentials-targets-data.json target.kind (for trace_pdm) × eden/tools/coverage_layout_derive.py FIAT_COVERED_SLUGS × dashboard/assets/js/src/state/coverage.ts FOUNDATIONAL_PRESENT_SLUGS. HONEST LIMIT (R7): CONSISTENCY, not external. It proves membership obeys the rule and that the two fiat lists agree; it CANNOT prove the goal SET is right — the 14 goals are OUR curation (Wallach enumerates no 'goals'), a placeholder Luneth re-authors. Only their enforcement is mechanical",
         severity="critical",
         lesson_ref="2026-07-16 — the live Coverage build. The signed-off demo STATES this rule in its own comment ('Wallach never itemises these, so they can never be named for a goal') and its own baked MEMBERSHIP then BREAKS it: STRONTIUM (a trace_pdm element) is listed under stronger-bones + less-joint-pain, off the real claim WAL-CLM-DDDL-000032. The claim is genuine; the demo's data simply was not filtered. We follow the demo's STATED rule over its generated data (demo = vision, not letter) and the delta is logged for Luneth. ★ The FIAT-DRIFT check exists because the H/C/N/O list is duplicated across a language boundary — the exact silent-divergence shape that let the mineral tiers sit sealed and green for three weeks. R3 by enforcement, since it cannot be R3 by construction.",
+    ),
+    Invariant(
+        name="pdm_group_goals_wallach_sourced",
+        anchor_class="external",  # recomputed from the SEALED claims, independently of the derive
+        description="every goal that names the plant-derived GROUP (coverage-layout-data.json goals[].groups) traces to a sealed Wallach claim whose OWN verbatim says 'colloidal minerals' and maps one of the goal's conditions; the converse too (a dropped attribution REDs), plus every group id resolves to a layout subsection and the rule is non-vacuous. HONEST LIMIT (R7): proves PROVENANCE, never the STANCE — a verbatim saying the complex is USELESS for X would satisfy it",
+        check_fn=check_pdm_group_goals_wallach_sourced,
+        truth_anchor="eden/corpus/claims/*.json sealed verbatims (themselves book-anchored by corpus_verify's verbatim-at-char_offset check) x coverage-layout-data.json goals[].groups, recomputed each run WITHOUT importing coverage_layout_derive so a derive bug cannot silence its own gate",
+        severity="critical",
+        lesson_ref="2026-07-16 — Luneth: 'can we attribute specific benefits to the group as a whole?' Wallach prescribes the colloidal-mineral COMPLEX by name for 9 of the 14 goals, so the GROUP is goal-nameable even though the 34 individually are not (goal_members_actionable). The rule reads his OWN verbatim, not our `other_substances` tag: the tag over-includes single-element colloidals (colloidal CALCIUM/SELENIUM/TIN) and can be flat wrong (LETS-000152 carries it from a window that bled into BALDNESS's 'Colloidal tin'). Neighbouring-entry bleed produced 9 of 12 false positives under a 76-agent adversarial read and corrupted four character-window instruments that each returned a different answer (11/10/8 goals); reading the claim's own verbatim makes it impossible by construction. The repair that made this possible: 9 verbatims were truncated at the ~500 soft limit, cutting Wallach's colloidal sentence out of his own quote (kv=339).",
     ),
     Invariant(
         name="recommendations_not_stored",

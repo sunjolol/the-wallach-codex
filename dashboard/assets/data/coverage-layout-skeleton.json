@@ -101,6 +101,7 @@
           ]
         },
         {
+          "id": "plant-derived",
           "rank": "C",
           "label": "PLANT DERIVED",
           "hint": "no individual amount · one shared verdict",

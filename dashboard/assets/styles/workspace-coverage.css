@@ -451,6 +451,51 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .essentials-subsection__count {
   color: var(--ds-accent-deep);
   font-weight: 700;
+  /* Breathing room before the group dots (Luneth, 2026-07-16). Harmless on the two subsections
+     with no dots: their `hint` is `margin-left: auto`, so this only eats 3px of auto space and
+     nothing moves. */
+  margin-right: 3px;
+}
+/* ★ THE GROUP GOAL-DOTS — one dot per goal that names the plant-derived run (Luneth, 2026-07-16).
+   Wallach prescribes the colloidal-mineral COMPLEX by name for 9 of the 14 goals but states no
+   per-element amount, so the 34 share ONE verdict and the GROUP is the unit: mark the run, not
+   the 34 tiles ("having ALL tiles light up on every goal will make the goal system feel cheap
+   and pointless").
+   DOTS, not one gradient bar (which is what shipped first and was replaced): a gradient merges
+   N goals into a blob that cannot be decomposed, so hovering a goal cannot isolate its share.
+   Each dot is its own element carrying data-goal, so the hover TEACHES the indicator instead of
+   needing a legend.
+   They are SOLID, not hollow rings like .tile__ring: the label is a line of type, not a box,
+   and a ring drawn around text reads as a badge — which the field's rule forbids (a goal mark
+   is a to-do, never a win). */
+.essentials-subsection__goaldots {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  align-self: center;
+  flex: none;
+  /* Optical alignment against the uppercase mono label (Luneth, 2026-07-16): centring on the
+     flex line sits the dots a touch high against the cap-height, so nudge them down. */
+  margin-top: 2px;
+}
+.essentials-subsection__goaldot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dotPaint);
+  flex: none;
+  transition: opacity .18s, transform .18s;
+}
+/* Hovering a goal chip isolates ITS dot — the same `focusing` channel the tiles use
+   (.focusing .tile:not(.is-focus) { opacity: .22 }), so one hover reads as one idea across the
+   whole field. A goal with no dot focuses nothing, which is the honest answer. */
+.focusing .essentials-subsection__goaldot:not(.is-focus) { opacity: .22; }
+.focusing .essentials-subsection__goaldot.is-focus { transform: scale(1.35); }
+/* Covered takes no dots — the same rule as .tile.covered > .tile__ring, and hidden the same way
+   (CSS, not by skipping the element) so data-goal survives for the hover pass. A dot means
+   "a goal nutrient group you have NOT covered". */
+.essentials-subsection.covered > .essentials-subsection__label > .essentials-subsection__goaldots {
+  display: none;
 }
 .essentials-subsection__hint {
   color: var(--ds-ink-faint);
@@ -1484,8 +1529,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rec__meta { display: flex; align-items: baseline; gap: 9px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; color: var(--ds-ink-soft); }
 .rec__price { color: var(--ds-ink); font-weight: 700; }
 .rec__val { color: var(--ds-status-ok); font-weight: 700; }
-.rec__dots { display: inline-flex; gap: 3px; margin-left: auto; }
-.rec__dot { width: 6px; height: 6px; border-radius: 50%; }
+/* .rec__dots / .rec__dot DELETED 2026-07-16 with the goal dots they styled (see the WHY in
+   views/coverage.ts::buildRecs). The card's goal colour survives as the BORDER — `--recRing`
+   on `.rec` above — which is the channel Luneth kept. */
 .recs__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .05em; margin-top: 8px; line-height: 1.5; }
 
 

@@ -35,7 +35,7 @@ import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { on } from '../core/events.js';
 import { plural } from '../core/format.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
-import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutTile, type RegimenItem } from '../core/schemas/index.js';
+import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutSubsection, type LayoutTile, type RegimenItem } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage, vaultEntry } from '../state/recommender.js';
@@ -189,16 +189,73 @@ function renderTile(spec: LayoutTile, tileClass: string, snapshot: CoverageSnaps
   return `<div class="${cls}" data-tile="${escHTML(spec.name)}"${goalsAttr}${styleAttr}>${inner}</div>`;
 }
 
+/**
+ * Is this whole subsection covered? Drives the `covered` class that hides the group dots, the
+ * same rule tiles follow ("covered takes no ring" — a goal mark is a to-do, not a badge).
+ *
+ * EVERY tile must be covered, not most: for the plant-derived 34 that is exactly right and not
+ * a strict-by-accident choice — they share ONE verdict off the colloidal-mineral bottle, so
+ * they flip together and "all" is the only state that ever occurs. `every` on an empty list is
+ * vacuously true, hence the length guard: an empty run is not a covered run.
+ */
+function subCovered(sub: LayoutSubsection, snapshot: CoverageSnapshot | null): boolean {
+  return sub.tiles.length > 0
+    && sub.tiles.every(t => tileStatusFor(t.key, snapshot) === 'covered');
+}
+
+/**
+ * A subsection's GROUP goal-dots: ONE DOT PER GOAL that names the run — never a ring per tile.
+ *
+ * ★ WHY THE GROUP AND NOT 34 RINGS (Luneth's ruling, 2026-07-16): the plant-derived 34 share
+ * ONE verdict off the colloidal-mineral bottle, so the group IS the unit — there is exactly one
+ * thing to do about all 34. Ringing them individually would light 34 of 91 tiles on 9 of the 14
+ * goals (~37% of the field on nearly every goal), and "having ALL tiles light up on every goal
+ * will make the goal system feel cheap and pointless" (his words). The dots ride the LABEL,
+ * which already reads "PLANT DERIVED · 34", so they read as a property of the run.
+ *
+ * ★ WHY DOTS AND NOT ONE GRADIENT BAR (Luneth, 2026-07-16 — this REPLACED a bar I shipped
+ * first): a gradient MERGES N goals into one blob that cannot be decomposed, so it can never
+ * answer "which goal is this for?" and needs a legend to mean anything. Separable dots can:
+ * each carries `data-goal`, so hovering a goal chip isolates ITS dot (see onHover) and the
+ * hover TEACHES what the indicator means instead of documenting it.
+ *
+ * ★ AND WHY THIS IS NOT THE REC-CARD DOTS DELETED THE SAME DAY — the distinction is MEASURED,
+ * not aesthetic, so do not "unify" the two: the rec dots lit ~100% of the time (every product
+ * touches every goal), so they never varied and encoded nothing. These VARY — 9 of 14 goals
+ * name the group, so on a 5-goal pick all five dots light only 6.3% of the time and the modal
+ * case is 3 of 5. A dot here is a fact about YOUR goals; a dot there was a constant.
+ *
+ * Hues come from GOAL_HUES by PICK order — the same index the tile ring uses, so one colour
+ * means one goal everywhere on the field.
+ */
+function renderGroupDots(sub: LayoutSubsection, goals: LayoutGoal[]): string {
+  if (sub.id === undefined) {
+    return '';
+  }
+  const hits = goals
+    .map((g, i) => ({ g, i }))
+    .filter(({ g }) => (g.groups ?? []).includes(sub.id as string));
+  if (hits.length === 0) {
+    return '';
+  }
+  const dots = hits.map(({ g, i }) =>
+    `<span class="essentials-subsection__goaldot" data-goal="${escHTML(g.id)}"`
+    + ` style="--dotPaint: ${escHTML(GOAL_HUES[i] ?? GOAL_HUES[0])}"`
+    + ` title="${escHTML(g.name)}"></span>`).join('');
+  return `<span class="essentials-subsection__goaldots" data-goals="${hits.length}">${dots}</span>`;
+}
+
 function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string {
   let bodyHTML = '';
   let allTiles: LayoutTile[] = [];
   if (spec.subsections !== undefined) {
     bodyHTML = spec.subsections.map(sub => `
-      <div class="essentials-subsection">
+      <div class="essentials-subsection${subCovered(sub, snapshot) ? ' covered' : ''}"${sub.id !== undefined ? ` data-sub="${escHTML(sub.id)}"` : ''}>
         <div class="essentials-subsection__label">
           <span class="essentials-subsection__rank">${escHTML(sub.rank)}</span>
           ${escHTML(sub.label)}
           <span class="essentials-subsection__count">· ${sub.tiles.length}</span>
+          ${renderGroupDots(sub, goals)}
           <span class="essentials-subsection__hint">${escHTML(sub.hint)}</span>
         </div>
         <div class="${spec.gridClass}">
@@ -374,6 +431,27 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
     return GOAL_HUES[i] ?? GOAL_HUES[0];
   };
 
+  /**
+   * `cols` paints the card's BORDER only. The per-goal DOTS were deleted 2026-07-16.
+   *
+   * ★ WHY, measured rather than argued: the dots were a dead channel. `goalIds` (state/
+   * recommender.ts) lights a goal when the product delivers ANY ONE of its members — so 66 of
+   * 155 products lit ALL 14 goals, and every top-4 rec card lit all 5 picked goals. Identical
+   * rows carry no information.
+   *
+   * ★ AND THE OBVIOUS FIX DOES NOT WORK — do not re-propose it: a %-of-target threshold was
+   * measured at 10 / 25 / 50 AND 100 % of the Wallach target, and all four top cards still lit
+   * all five goals at every level. The ranker rewards breadth, so the products that REACH this
+   * list are broad multis, and a broad multi genuinely delivers a full target of SOMETHING in
+   * every goal. Weighting by contribution was measured too: the three broad multis land at
+   * 0.29–0.54 on every goal — five near-identical dots. The fact does not vary, so no encoding
+   * can show variation.
+   *
+   * Luneth's call (2026-07-16): drop the dots, keep the border EXACTLY as it works today —
+   * "ANY recommendation is going to be good for ANY goal in 95%+ of cases", so the border is
+   * decorative + mostly-true and earns its keep where five identical dots did not. `goalIds`'
+   * ANY-member rule is therefore deliberately UNCHANGED: it is a border tint, not a claim.
+   */
   for (const r of recs) {
     const cols = r.goalIds.map(hueOf);
     const ring = cols.length === 0
@@ -404,20 +482,12 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
     const val = document.createElement('span');
     val.className = 'rec__val rec__q';
     val.textContent = `${r.perTenDollars.toFixed(1)} / $10`;
-    const dots = document.createElement('span');
-    dots.className = 'rec__dots';
-    for (const c of cols) {
-      const d = document.createElement('span');
-      d.className = 'rec__dot';
-      d.style.background = c;
-      dots.appendChild(d);
-    }
     // The explainer is a TWO-STAGE HOVER (card → dotted underline; numbers → the text).
     // No standing paragraph — Luneth deleted it.
     const tip = document.createElement('span');
     tip.className = 'rec__tip';
     tip.textContent = ui('cov_rec_tip');
-    meta.append(price, supplies, val, dots, tip);
+    meta.append(price, supplies, val, tip);
     card.appendChild(meta);
 
     const add = document.createElement('span');
@@ -670,9 +740,15 @@ export function mount(container: HTMLElement): MountHandle {
     const chip = t?.closest<HTMLElement>('.gchip[data-goal]') ?? null;
     const body = document.body;
     const tiles = container.querySelectorAll<HTMLElement>('.tile, .tile--vitamin, .tile--amino, .tile--fat');
+    // The group dots focus on the SAME hover as the tiles. This is what earns dots over one
+    // gradient bar (Luneth, 2026-07-16): hovering a goal isolates ITS dot, so the hover TEACHES
+    // what the mark means. A merged gradient could never do this — there is no per-goal element
+    // in it to isolate.
+    const dots = container.querySelectorAll<HTMLElement>('.essentials-subsection__goaldot');
     if (chip === null) {
       body.classList.remove('focusing');
       tiles.forEach(x => x.classList.remove('is-focus'));
+      dots.forEach(x => x.classList.remove('is-focus'));
       return;
     }
     const goal = LAYOUT.goals.find(g => g.id === chip.dataset['goal']);
@@ -682,6 +758,9 @@ export function mount(container: HTMLElement): MountHandle {
     const keys = new Set(goal.members.map(s => slugToTileKey().get(s)).filter(Boolean));
     body.classList.add('focusing');
     tiles.forEach(x => x.classList.toggle('is-focus', keys.has(x.dataset['tile'] ?? '')));
+    // A goal Wallach never names the complex for has NO dot here, so nothing focuses — which is
+    // itself the honest answer ("this group does nothing for that goal"), not a missing state.
+    dots.forEach(x => x.classList.toggle('is-focus', x.dataset['goal'] === goal.id));
   };
 
   render();

@@ -61,6 +61,13 @@ export type LayoutTile = z.infer<typeof LayoutTileSchema>;
 
 /** A labelled run of tiles inside a section (minerals: foundational/individually-dosed/plant-derived). */
 export const LayoutSubsectionSchema = z.object({
+  /**
+   * Stable identity, present only where a subsection is addressable as a WHOLE — today just
+   * `plant-derived`, which a goal may name via `LayoutGoal.groups`. Optional because the
+   * other subsections are pure chrome with nothing to bind to; matching on `label` or `rank`
+   * instead would make a display string ("PLANT DERIVED") load-bearing.
+   */
+  id: z.string().optional(),
   rank: z.string(),
   label: z.string(),
   hint: z.string(),
@@ -113,6 +120,22 @@ export const LayoutGoalSchema = z.object({
   conditions: z.array(z.string()).min(1),
   /** Canon essential slugs, derived. The derive hard-fails on a goal with zero. */
   members: z.array(z.string()).min(1),
+  /**
+   * Subsection ids this goal names AS A WHOLE — today only `plant-derived`. Derived, never
+   * hand-stored: coverage_layout_derive.py emits it when a sealed claim whose OWN VERBATIM
+   * says "colloidal minerals" maps one of the goal's conditions (9 of the 14 today).
+   *
+   * ★ WHY A GROUP AND NOT 34 MEMBERS (Luneth's ruling, 2026-07-16): the plant-derived 34 have
+   * no individual Wallach amount and share ONE verdict off the colloidal-mineral bottle, so a
+   * ring on strontium is a to-do nobody can act on — they stay OUT of `members`
+   * (EXCLUDE_PLANT_DERIVED). But Wallach prescribes the COMPLEX by name for these conditions,
+   * and the group is one thing you CAN do. One member, one marker. Ringing all 34 would light
+   * 37% of the field on 9 of 14 goals and make the goal system read as noise.
+   *
+   * OMITTED, never empty, on the 5 goals where he never names the complex (more energy,
+   * better sleep, blood-sugar, digestion, healthy weight) — an honest gap.
+   */
+  groups: z.array(z.string()).optional(),
 });
 export type LayoutGoal = z.infer<typeof LayoutGoalSchema>;
 

@@ -204,6 +204,7 @@
           ]
         },
         {
+          "id": "plant-derived",
           "rank": "C",
           "label": "PLANT DERIVED",
           "hint": "no individual amount · one shared verdict",
@@ -723,6 +724,9 @@
         "vitamin-e",
         "vitamin-k",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -760,6 +764,9 @@
         "vitamin-d",
         "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -826,6 +833,9 @@
         "vitamin-c",
         "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -862,6 +872,9 @@
         "vitamin-b6",
         "vitamin-c",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -899,6 +912,9 @@
         "vitamin-d",
         "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -942,6 +958,9 @@
         "vitamin-c",
         "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -976,6 +995,9 @@
         "vitamin-c",
         "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -1025,6 +1047,9 @@
         "vitamin-d",
         "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -1046,6 +1071,9 @@
         "vitamin-b5",
         "vitamin-d",
         "vitamin-e"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {

@@ -27,6 +27,7 @@ regenerates the on-disk artifact via safe_write (used by build_embeds.py).
 """
 import copy
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent.parent
@@ -128,8 +129,66 @@ def _unactionable_slugs() -> set:
     return out
 
 
+# ── The plant-derived GROUP as a goal member (2026-07-16, Luneth's ruling) ────────────
+#
+# The PLANT DERIVED 34 can never be named INDIVIDUALLY (see EXCLUDE_PLANT_DERIVED above):
+# Wallach states no per-element amount and they share ONE verdict off the colloidal-mineral
+# bottle, so a ring on strontium is a to-do nobody can do. But he DOES prescribe the COMPLEX
+# AS A WHOLE for named conditions, in his own words -- and a goal may name THAT. One member,
+# one marker, one thing to actually do: take the bottle.
+#
+#   groups(goal) contains GROUP_ID  iff  some sealed claim whose OWN VERBATIM says
+#                                        "colloidal minerals" maps >=1 of the goal's conditions
+#
+# ★ WHY THE VERBATIM AND NOT `other_substances: colloidal-minerals` (the obvious choice, and
+#   the wrong one -- measured 2026-07-16, do not "simplify" this back):
+#   1. THE TAG OVER-INCLUDES. It sits on claims where Wallach named a SINGLE colloidal
+#      ELEMENT -- "plant derived colloidal CALCIUM" (insomnia, LETS-000322), "plant derived
+#      colloidal SELENIUM" (cardiomyopathy, -000204), "liquid colloidal calcium, magnesium and
+#      potassium" (muscle cramps, -000374). Those are INDIVIDUALLY DOSED 21 members, not the
+#      group. "colloidal minerals" does not match any of them -- that is the whole point of
+#      the phrase, and the negative test pins all three.
+#   2. THE TAG CAN BE WRONG. LETS-000152 (backache) carries it only because the miner's
+#      window bled into the NEXT entry, where "Colloidal tin" appears under BALDNESS.
+#   3. Reading the claim's OWN verbatim makes neighbouring-entry bleed IMPOSSIBLE BY
+#      CONSTRUCTION. That bleed is not hypothetical: it produced 9 of the 12 rejections when
+#      this question was settled by READING all 28 candidate passages under a 76-agent
+#      adversarial panel (2026-07-16), and it silently corrupted four earlier character-window
+#      instruments that each returned a different answer (11 / 10 / 8 goals).
+#      That panel is this rule's VALIDATION, not its source: the rule independently
+#      reproduces the panel's 9 goals from the sealed corpus alone.
+#
+# ★ HONEST LIMIT (R7): matching the WORDS does not prove the STANCE. A verbatim reading
+#   "colloidal minerals are useless for X" would match this rule. The adversarial read covered
+#   that for today's claims; no non-gaming gate can. This half rests on review, and says so
+#   rather than pretending the gate is stronger than it is.
+GROUP_ID = "plant-derived"
+_GROUP_RE = re.compile(r"colloidal\s+minerals?", re.I)
+
+
+def _dehyphenate(s: str) -> str:
+    """Rejoin print line-wraps before matching.
+
+    The books are OCR'd from print and hyphenate across lines -- "colloi-\\ndal min-\\nerals",
+    "Plant de-\\nrived". A verbatim is byte-faithful to that, so matching the raw text would
+    silently MISS every wrapped occurrence (LETS-000419's "Plant de-rived colloidal minerals
+    have proved great benifit here." is exactly this shape). Silent under-matching is the
+    dangerous direction here: it drops a real Wallach attribution with no error.
+    """
+    return re.sub(r"\s+", " ", re.sub(r"-\s*\n\s*", "", s or "")).strip()
+
+
+def _group_claims(claims: list) -> list:
+    """Sealed claims whose OWN verbatim names the plant-derived mineral COMPLEX."""
+    return [
+        c for c in claims
+        if SEARCH_ONLY_TAG not in (c.get("tags") or [])
+        and _GROUP_RE.search(_dehyphenate(c.get("verbatim")))
+    ]
+
+
 def _derive_goals(skel_goals: list, cbk: dict) -> list:
-    """Curation (id/name/conditions) + the sealed claims -> each goal's `members`.
+    """Curation (id/name/conditions) + the sealed claims -> each goal's `members` + `groups`.
 
     Hard-fails (never silently drops) on: an unresolvable condition slug, an unknown essential
     slug, or a goal that ends up with zero members. A goal with no members would render an
@@ -139,6 +198,7 @@ def _derive_goals(skel_goals: list, cbk: dict) -> list:
     catalog = set(json.loads(CONDITIONS.read_text(encoding="utf-8"))["conditions"].keys())
     unactionable = _unactionable_slugs()
     claims = _sealed_claims()
+    group_claims = _group_claims(claims)
 
     out = []
     for g in skel_goals:
@@ -167,6 +227,12 @@ def _derive_goals(skel_goals: list, cbk: dict) -> list:
             )
         entry = {k: copy.deepcopy(v) for k, v in g.items()}
         entry["members"] = sorted(members)
+        # `groups` is OMITTED, never emitted empty: 5 of the 14 goals (more energy, better
+        # sleep, blood-sugar, digestion, healthy weight) have NO claim where Wallach names the
+        # complex for their conditions, and an absent key renders nothing rather than an empty
+        # marker. An honest gap, exactly like the 53 essentials with no stated amount.
+        if any(set(c.get("conditions") or []) & conds for c in group_claims):
+            entry["groups"] = [GROUP_ID]
         out.append(entry)
     return out
 
