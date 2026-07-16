@@ -1,0 +1,25 @@
+{
+  "_purpose": "Products never offered as a RECOMMENDATION, because they are formulated for children (Luneth 2026-07-16: \"no adult is ever going to take those… kids will never use our app\"). Editorial CURATION config — OURS, not a Wallach claim and not a pillar projection — so it lives here hand-authored (manifest 'accounted') rather than derived. It changes only what we SHOW; it never touches a target, a dose, or a composition.",
+  "_scope": "Excluded from EVERY recommendation/suggestion surface: the Coverage recommendations, condition pages, and the element/entity detail view's BEST SOURCES. The ONE place they remain fully present is the products database (the Knowledge drawer's Products tab), where they stay discoverable — that surface reads essentialSlugsByProduct(), which is deliberately NOT filtered. Enforced by the `kids_products_not_recommended` invariant.",
+  "_evidence_note": "Identified from Youngevity's own product copy + label panels — NEVER from the product NAME. A name heuristic was rejected because it both over- and under-fires: 'Kidney & Bladder Support' matches 'kid'; 'FlexeoPlus' says 'grandkids' (a product FOR grandparents); 'Toddy' is a drink name, not 'toddler' (Ultra Body Toddy and Cal Toddy are ADULT); and cheri-mins / strawberry-kiwi-mins carry NO kid token in their names at all. Verified 2026-07-16 by reading all 217 label images (only kids-toddy's panel is age-banded) and sweeping all 215 marketing descriptions (which is where 3 of the 4 are identifiable).",
+  "_names_deliberately_absent": "Only product_id is stored. The display name lives in the Products pillar and is resolved from it; re-storing it here would be a second home for a pillar fact that silently drifts if Youngevity renames a product (R3). The gate resolves every id below against eden/products/products.json and REDs on an unknown one — a typo cannot silently un-exclude a kids product.",
+  "excluded": [
+    {
+      "product_id": "kids-toddy",
+      "evidence": "Label doses by AGE BAND — two %DV columns, \"1/2 fl. oz. (Ages 1-3)\" and \"1 fl. oz. (Ages >=4)\", with the child-calorie footnote \"based on a 1,000 calorie diet for children 1-3 years of age\". The only age-banded panel among all 217 labels. YGY copy: designed to support \"your child's development from their first year\" through \"their early teen years\"."
+    },
+    {
+      "product_id": "kidsprinklz",
+      "evidence": "YGY copy is explicitly child-directed: \"Do your kids HATE taking their vitamins?\" and \"formulated to provide children with a variety of nutrients needed for healthy growth\". Its LABEL is single-column on the ordinary adult 2,000-calorie basis, so the panel alone does not settle it (read + arithmetically checked against both FDA DV tables 2026-07-16 — it matches the ages-4+ table 12/12). The copy is the evidence."
+    },
+    {
+      "product_id": "cheri-mins",
+      "evidence": "YGY copy is explicitly child-directed: \"ensure the kids get the essential nutrients they need to grow and thrive\", \"No more tantrums\", \"let them get back to playtime\". Label is adult-looking (single %DV column, 2,000-calorie basis) because the formula IS the adult Plant Derived Minerals composition — kid-marketed, not kid-formulated. Unfindable by label or by name; identified from the copy alone."
+    },
+    {
+      "product_id": "strawberry-kiwi-mins",
+      "evidence": "YGY copy is explicitly child-directed — the same kid-marketed copy as cheri-mins (\"ensure the kids get the essential nutrients\", \"No more tantrums\", \"back to playtime\"), plus \"parents want to make sure their kids are getting nutrients\". Same adult-looking label + same Plant Derived Minerals composition. Unfindable by label or by name."
+    }
+  ],
+  "_considered_and_kept": "Three DUAL-AUDIENCE products were reviewed and deliberately NOT excluded, because Luneth's rule is \"only the explicitly kids products\" and each names adults outright: bone-building-formula (\"helps teens and young adult women\"), sta-clear (\"formulated for teenagers and adults\"), ultimate-multi-efa (\"the optimal health of adults and children\"). Recorded here so a future session sees they were examined, not missed."
+}

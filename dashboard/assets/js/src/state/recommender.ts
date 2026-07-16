@@ -31,6 +31,7 @@
 import recommenderData from '../../../data/product-recommender-data.json';
 import { RecommenderDataSchema } from '../core/schemas/index.js';
 import { toMg } from '../core/units.js';
+import { isExcludedFromRecommendations } from './kids-exclusion.js';
 
 // ─── Weights + curves (the tuner) ──────────────────────────────────────────
 const W_ADEQ = 0.6; // keystone: adequacy (or the potency proxy until targets exist)
@@ -99,7 +100,22 @@ export function rankSources(
   if (entry === undefined || entry.candidates.length === 0) {
     return [];
   }
-  const { unit, candidates } = entry;
+  const { unit } = entry;
+  // ★ THE KIDS FILTER — the ONE chokepoint for every recommendation surface (Luneth
+  // 2026-07-16). Every rec path (Coverage recs · condition pages · the element/entity
+  // detail view's BEST SOURCES) funnels through rankSources, so filtering here covers
+  // all of them; the Products TAB reads essentialSlugsByProduct() instead and is
+  // deliberately left whole, because kids products must stay discoverable in the
+  // database. See state/kids-exclusion.ts for why this is a read-time filter and not
+  // a derive-time one (both consumers share this artifact).
+  // FILTERED FIRST, ON PURPOSE: maxAmount (the potency-proxy denominator) and the
+  // min/max cost-per-unit band below are computed over the candidate SET, so an
+  // excluded product must be gone before they are derived — otherwise a kids product
+  // it no longer ranks would still silently skew every surviving product's score.
+  const candidates = entry.candidates.filter(c => !isExcludedFromRecommendations(c.product_id));
+  if (candidates.length === 0) {
+    return [];
+  }
   const maxAmount = candidates.reduce((m, c) => (c.amount > m ? c.amount : m), 0);
   // A target is only usable if it is positive AND its unit reconciles with the candidates'
   // into the same family. Probe with amount 1: toMg reports the FAMILY ('mg' | 'iu'), and a
@@ -154,10 +170,18 @@ export function rankSources(
   return ranked;
 }
 
-/** True when the essential has at least one rankable (quantified) source in the vault. */
+/**
+ * True when the essential has at least one RECOMMENDABLE (quantified) source in the vault.
+ *
+ * Kid-excluded candidates do not count — this predicate must agree with rankSources or
+ * it lies: an essential whose only source is a kids product would otherwise report
+ * `true` here while rankSources returns [], and a caller would render an empty
+ * "BEST SOURCES" block it was told existed.
+ */
 export function hasSources(slug: string): boolean {
   const entry = DATA.essentials[slug];
-  return entry !== undefined && entry.candidates.length > 0;
+  return entry !== undefined
+    && entry.candidates.some(c => !isExcludedFromRecommendations(c.product_id));
 }
 
 // ─── Product → delivered-essentials index (for the Products-tab search) ──────
@@ -171,6 +195,14 @@ let productEssentialsCache: Map<string, string[]> | null = null;
  * the ones delivered THROUGH a blend (e.g. boron, vanadium) that never appear in the
  * printed label text. Canonical + auto-widening: as composition mining adds candidates,
  * the search index grows with zero view changes. Memoized (the data is immutable).
+ *
+ * ★ DELIBERATELY NOT KID-FILTERED — do not "fix" this to match rankSources.
+ * This is the PRODUCTS DATABASE path, and kids products must stay discoverable there.
+ * Luneth 2026-07-16: they are "better as a database item to be discovered in the
+ * products tab of the knowledge drawer" — excluded from being RECOMMENDED, never
+ * hidden from the catalogue. rankSources filters; this does not. That asymmetry IS
+ * the requirement, and `kids_products_not_recommended` asserts BOTH halves — adding a
+ * filter here would turn the gate RED, on purpose.
  */
 export function essentialSlugsByProduct(): Map<string, string[]> {
   if (productEssentialsCache !== null) {

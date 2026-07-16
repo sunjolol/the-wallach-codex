@@ -11,6 +11,7 @@
 
 import { describe, expect, it } from 'vitest';
 import { essentialSlugsByProduct, hasSources, rankSources } from './recommender.js';
+import { excludedProductIds } from './kids-exclusion.js';
 
 const SLUG = 'selenium'; // 33 quantified vault sources — a stable, well-populated essential
 
@@ -128,5 +129,86 @@ describe('recommender: product → delivered-essentials index', () => {
 
   it('is memoized — returns a stable reference', () => {
     expect(essentialSlugsByProduct()).toBe(essentialSlugsByProduct());
+  });
+});
+
+/**
+ * The kids exclusion (Luneth 2026-07-16) — the BEHAVIOURAL half.
+ *
+ * `kids_products_not_recommended` is a STATIC gate: it proves the filter code exists and is
+ * wired the right way round. It cannot prove the filter RUNS. That is the mineral-tiers
+ * lesson (sealed, green, and wrong for three weeks) and the reason slot_invariants ships
+ * beside a render probe. These tests run it against the REAL artifact.
+ *
+ * NEGATIVE CONTROL BY CONSTRUCTION: each case asserts the excluded product is a genuine
+ * candidate in the underlying data (via the unfiltered Products-tab index) and THEN absent
+ * from the ranking. Without that first half, a passing test could just mean "kids-toddy
+ * delivers no calcium" — proving nothing (memory: negative-control-or-it-proves-nothing).
+ */
+describe('recommender: kids products are excluded from recommendations, never from the DB', () => {
+  // Read the REAL list rather than re-typing it: a hardcoded copy here would be a second
+  // home for the curation list (R3) that silently goes stale the day a 5th product is added
+  // — the test would then pass while the new product went unchecked.
+  const KIDS = excludedProductIds();
+
+  it('anchors on the known list — non-empty, and containing the audited products', () => {
+    // The ANTI-CIRCULARITY anchor. Every assertion below is driven BY the list, so an
+    // emptied list would make them all vacuously true. This case is what makes them mean
+    // something: the list must actually be populated, with the 2026-07-16 audit's findings.
+    expect(KIDS.length).toBeGreaterThanOrEqual(4);
+    expect(KIDS).toContain('kids-toddy');
+    expect(KIDS).toContain('cheri-mins'); // the copy-only find — no kid token in its name
+  });
+
+  it('never returns a kids product from rankSources, on ANY essential', () => {
+    const idx = essentialSlugsByProduct();
+    const slugs = new Set<string>();
+    for (const k of KIDS) {
+      for (const s of idx.get(k) ?? []) {
+        slugs.add(s);
+      }
+    }
+    // The control: these products ARE in the data, on real essentials — so the assertion
+    // below is testing a live branch, not an empty set.
+    expect(slugs.size).toBeGreaterThan(0);
+
+    for (const slug of slugs) {
+      const ranked = rankSources(slug).map(r => r.productId);
+      for (const k of KIDS) {
+        expect(ranked).not.toContain(k);
+      }
+    }
+  });
+
+  it('still lists kids products in the Products-tab index (the database stays whole)', () => {
+    const idx = essentialSlugsByProduct();
+    // Luneth: they are "better as a database item to be discovered in the products tab".
+    // Excluded from being RECOMMENDED, never hidden from the catalogue.
+    const present = KIDS.filter(k => (idx.get(k) ?? []).length > 0);
+    expect(present.length).toBeGreaterThan(0);
+    expect(present).toContain('kids-toddy');
+  });
+
+  it('does not let an excluded product skew the surviving products\' scores', () => {
+    // The proxy denominator (max amount) and the cost-per-unit band are derived from the
+    // candidate SET, so the filter must apply BEFORE they are computed. If kids-toddy were
+    // the top amount for a slug and were filtered afterwards, every surviving product's
+    // adequacy would still be measured against a product that is never shown.
+    const idx = essentialSlugsByProduct();
+    const slug = (idx.get('kids-toddy') ?? [])[0];
+    expect(slug).toBeDefined();
+    const ranked = rankSources(slug!);
+    expect(ranked.length).toBeGreaterThan(0);
+    // Proxy adequacy is delivered/best-in-set, so SOME surviving product must score exactly
+    // 1 — proving the denominator came from the filtered set, not the raw one.
+    const top = Math.max(...ranked.map(r => r.adequacy));
+    expect(top).toBeCloseTo(1, 10);
+  });
+
+  it('hasSources agrees with rankSources (never claims a source it would not return)', () => {
+    const idx = essentialSlugsByProduct();
+    for (const slug of new Set([...(idx.get('kids-toddy') ?? [])])) {
+      expect(hasSources(slug)).toBe(rankSources(slug).length > 0);
+    }
   });
 });

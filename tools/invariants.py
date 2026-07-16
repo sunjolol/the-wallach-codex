@@ -2419,6 +2419,147 @@ def check_pdm_group_not_named_rare_earths():
     )
 
 
+def _fn_body(src, name):
+    """Return the brace-balanced body of `export function <name>(...)`, or None.
+
+    Brace-aware ON PURPOSE (the same R9 lesson as regimen_state_mutation_routing): a naive
+    "next N lines" window lets a neighbouring function's code be read as this one's, so a
+    filter living in the WRONG function would satisfy a lazy scan. We find the header, walk
+    to its opening brace, then count depth to the matching close.
+    """
+    import re as _re
+    m = _re.search(r"export\s+function\s+" + _re.escape(name) + r"\s*\(", src)
+    if not m:
+        return None
+    i = src.find("{", m.end())
+    if i < 0:
+        return None
+    depth, j = 0, i
+    while j < len(src):
+        if src[j] == "{":
+            depth += 1
+        elif src[j] == "}":
+            depth -= 1
+            if depth == 0:
+                return src[i:j + 1]
+        j += 1
+    return None
+
+
+def _kids_products_not_recommended_impl(excl_p, products_p, rec_src_p, rec_data_p):
+    """Kids-formulated products may NEVER reach a recommendation surface — and MUST stay in the DB.
+
+    Luneth, 2026-07-16: "no kids products ever get recommended as items ... they are good but
+    no adult is ever going to take those and they're better as a database item to be discovered
+    in the products tab of the knowledge drawer ... kids will never use our app."
+
+    THE ASYMMETRY IS THE REQUIREMENT, so this gate asserts BOTH halves:
+      rankSources (every rec surface funnels through it)      MUST filter.
+      essentialSlugsByProduct (the Products-tab database path) MUST NOT.
+    Filtering the second would "fix" the first into a violation — hiding kids products from the
+    catalogue he explicitly wants them discoverable in. Both directions are RED here.
+
+    WHY IT IS NOT A DERIVE-TIME FILTER (and why this gate reads SOURCE, not just data): both
+    consumers read the same generated product-recommender-data.json, so stripping kids products
+    from the artifact would erase them from the Products tab too — elegant in the derive, a lie
+    on the screen (memory: derive-elegance-is-not-user-truth). The exclusion is therefore a
+    read-time filter, which means it is exactly one careless refactor from vanishing. Hence a gate.
+
+    THE FAIL-OPEN TRAP THIS CLOSES: every failure mode here is SILENT and looks like success —
+    a typo'd product_id, a dropped filter, an empty list. Nothing goes red on screen; kids
+    products simply start being recommended again. So an unresolvable id is RED (never skipped),
+    and the anti-vacuity check below refuses to certify a filter that is filtering nothing.
+
+    SCOPE / HONEST LIMIT (R7): this proves the PLUMBING — the list resolves and the filter is
+    wired the right way round. It CANNOT prove the list is COMPLETE. That a 5th kids product
+    isn't sitting unlisted in the pillar rests on the 2026-07-16 sweep (all 217 label images +
+    all 215 marketing descriptions) and on Luneth's review — not on this check. Membership is a
+    curation judgment; only its enforcement is mechanical.
+    """
+    import json as _json
+    if not excl_p.exists():
+        return False, "kids-exclusion.json is MISSING — the do-not-recommend list cannot be enforced"
+
+    doc = _json.loads(excl_p.read_text(encoding="utf-8"))
+    excluded = doc.get("excluded")
+    if not isinstance(excluded, list) or not excluded:
+        return False, ("kids-exclusion.json has an empty/absent `excluded` list — this FAILS OPEN "
+                       "(every kids product silently returns to the ranking while the UI looks fine)")
+
+    ids = [e.get("product_id") for e in excluded if isinstance(e, dict)]
+    if any((not isinstance(i, str)) or not i for i in ids):
+        return False, "kids-exclusion.json has an entry with a missing/blank product_id"
+    if len(set(ids)) != len(ids):
+        return False, "kids-exclusion.json lists a duplicate product_id"
+
+    # (a) Every id must resolve against the sealed pillar. A typo here would silently
+    #     un-exclude a kids product — the exact fail-open this list exists to prevent.
+    if products_p.exists():
+        pillar = (_json.loads(products_p.read_text(encoding="utf-8")) or {}).get("products", {})
+        unknown = [i for i in ids if i not in pillar]
+        if unknown:
+            return False, ("kids-exclusion.json names product_id(s) that do NOT resolve in the "
+                           "sealed Products pillar — a typo silently un-excludes a kids product: "
+                           + ", ".join(sorted(unknown)[:4]))
+
+    # (b)+(c) The two halves of the boundary, read from SOURCE.
+    if not rec_src_p.exists():
+        return False, "state/recommender.ts is MISSING — cannot verify the recommendation filter"
+    src = rec_src_p.read_text(encoding="utf-8")
+
+    if "isExcludedFromRecommendations" not in src:
+        return False, ("state/recommender.ts does not import/apply isExcludedFromRecommendations — "
+                       "the kids exclusion is NOT wired into the recommender at all")
+
+    rank_body = _fn_body(src, "rankSources")
+    if rank_body is None:
+        return False, "state/recommender.ts: could not locate `export function rankSources` to verify the filter"
+    if "isExcludedFromRecommendations" not in rank_body:
+        return False, ("state/recommender.ts::rankSources does NOT filter through "
+                       "isExcludedFromRecommendations — kids products can reach EVERY recommendation "
+                       "surface (Coverage recs, condition pages, the element detail view's BEST SOURCES)")
+
+    idx_body = _fn_body(src, "essentialSlugsByProduct")
+    if idx_body is None:
+        return False, ("state/recommender.ts: could not locate `export function essentialSlugsByProduct` "
+                       "to verify the Products-tab path is left whole")
+    if "isExcludedFromRecommendations" in idx_body:
+        return False, ("state/recommender.ts::essentialSlugsByProduct FILTERS kids products — that is "
+                       "the Products-tab DATABASE path, where Luneth requires them to stay "
+                       "discoverable. Excluded from being RECOMMENDED, never hidden from the catalogue")
+
+    # (d) ANTI-VACUITY. If no excluded product is even a candidate, the filter is filtering
+    #     nothing and this gate would certify a dead branch as green (memory:
+    #     negative-control-or-it-proves-nothing — a check that cannot fail proves nothing).
+    live = []
+    if rec_data_p.exists():
+        rec = (_json.loads(rec_data_p.read_text(encoding="utf-8")) or {}).get("essentials", {})
+        for slug, entry in rec.items():
+            for c in (entry or {}).get("candidates", []):
+                if c.get("product_id") in ids:
+                    live.append(c.get("product_id"))
+        if not live:
+            return False, ("no excluded product appears as a recommender candidate — the kids filter "
+                           "is a DEAD BRANCH and this gate would be certifying nothing. Either the "
+                           "recommender data changed shape or the ids drifted")
+
+    n_live = len(set(live))
+    return True, (f"{len(ids)} kids product(s) excluded from every recommendation surface, all "
+                  f"resolving in the sealed pillar ({n_live} live as recommender candidates, so the "
+                  f"filter is load-bearing); rankSources filters, essentialSlugsByProduct (the "
+                  f"Products-tab database path) deliberately does not")
+
+
+def check_kids_products_not_recommended():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _kids_products_not_recommended_impl(
+        ROOT / "dashboard/assets/data/kids-exclusion.json",
+        ROOT / "eden/products/products.json",
+        ROOT / "dashboard/assets/js/src/state/recommender.ts",
+        ROOT / "dashboard/assets/data/product-recommender-data.json",
+    )
+
+
 def _mirrors_resolve_impl(embed_p, canon_p):
     """R7 gate for the 'mirrors' target kind (Phase: cobalt, 2026-07-15).
 
@@ -5118,6 +5259,15 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/view-copy.json ui.kd_ep_pdm_* label fields + coverage-layout-data.json section labels. HONEST LIMIT: this is a CONSISTENCY anchor, not an external one — it pins our copy to our own doctrine. The doctrine itself is anchored externally (hk.txt:7312-7314, immortality.txt:5760-10233), but this check cannot read the books; it can only stop the label drifting back",
         severity="warning",
         lesson_ref="2026-07-15 — pdm_coverage_derive.py's docstring said 'do not rename it back' from the day the group was created, and the USER-FACING copy said 'Rare Earth Minerals' + 'of the rare-earth group goal' the entire time. The code comment governed the code; NOTHING governed the label, so the one surface a user can actually see carried the invention the whole campaign existed to delete. Found in passing during the cobalt fix. A rule with no gate is a WISH (R7) — and this WISH had already been broken where it mattered most.",
+    ),
+    Invariant(
+        name="kids_products_not_recommended",
+        anchor_class="structural",  # code shape + our list vs the sealed pillar — see the honest limit
+        description="Kids-formulated products may NEVER be offered as a RECOMMENDATION, and MUST stay discoverable in the Products database (Luneth 2026-07-16: 'no kids products ever get recommended as items ... they are good but no adult is ever going to take those and they're better as a database item to be discovered in the products tab ... kids will never use our app'). THE ASYMMETRY IS THE REQUIREMENT, so BOTH halves are asserted: state/recommender.ts::rankSources — the one function every rec surface funnels through (Coverage recs, condition pages, the element/entity detail view's BEST SOURCES) — MUST filter through isExcludedFromRecommendations; essentialSlugsByProduct, the Products-TAB database path, MUST NOT (filtering it would hide them from the catalogue he wants them found in). Also proves every excluded product_id resolves in the sealed pillar (a typo silently un-excludes) and that at least one is a live recommender candidate (anti-vacuity — a filter over nothing certifies nothing). Function bodies are matched BRACE-AWARE so a filter in a neighbouring function cannot satisfy the scan",
+        check_fn=check_kids_products_not_recommended,
+        truth_anchor="dashboard/assets/data/kids-exclusion.json product_ids x eden/products/products.json (sealed pillar) for resolution, x dashboard/assets/data/product-recommender-data.json for liveness, x dashboard/assets/js/src/state/recommender.ts SOURCE for the wiring. HONEST LIMIT (R7): this anchors the PLUMBING, not the MEMBERSHIP. It cannot prove the list is COMPLETE — that no 5th kids product sits unlisted rests on the 2026-07-16 sweep (all 217 label images + all 215 marketing descriptions) and Luneth's review. Curation is a judgment; only its enforcement is mechanical",
+        severity="critical",
+        lesson_ref="2026-07-16 — LIVE, not hypothetical: in demo E with 3 goals Kid's Toddy ranked #1 (it wins on value precisely because it is cheap) and the real recommender uses the same score. The identification is why this is a curated list and not a rule: the Products pillar has NO audience/category field (D8 reversed adding one), and 3 of the 4 kids products are invisible to every channel except Youngevity's marketing copy — cheri-mins + strawberry-kiwi-mins are the ADULT Plant Derived Minerals formula with adult-looking single-column labels, carrying no kid token in their names at all. A name regex was rejected on measurement, not taste: it over-fires ('Kidney & Bladder Support' matches 'kid'; FlexeoPlus says 'grandkids' and is FOR grandparents; 'Toddy' is a drink, not 'toddler' — Ultra Body Toddy and Cal Toddy are adult) and under-fires (it finds 5, of which 3 are false positives, and misses 2 real ones). Luneth himself read 'toddy' as 'toddler' and named Ultra Body Toddy for exclusion; the label refuted it and he corrected the premise.",
     ),
     Invariant(
         name="mirrors_resolve",

@@ -29,5 +29,6 @@ export * from './entity-page.js';
 export * from './entity-copy.js';
 export * from './home-curation.js';
 export * from './foods-curation.js';
+export * from './kids-exclusion.js';
 export * from './pdm-coverage.js';
 export * from './efa-coverage.js';
