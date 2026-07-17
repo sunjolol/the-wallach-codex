@@ -327,31 +327,24 @@
   },
   "alcoholism": {
     "display_name": "Alcoholism",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000129"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000127",
         "WAL-CLM-LETS-000388"
       ]
     },
     "essentials_involved": [
-      "calcium",
       "chromium",
-      "flavonoids",
       "iron",
-      "magnesium",
       "omega-3",
-      "phenylalanine",
       "vitamin-b3",
-      "vitamin-b6",
       "zinc"
     ],
     "other_substances_involved": [
       "betaine-hcl",
-      "catechin",
       "pancreatic-enzymes"
     ],
     "books_cited": [
@@ -500,10 +493,9 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 10,
+    "claim_count": 9,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000044",
         "WAL-CLM-RARE-000227",
@@ -538,7 +530,6 @@
       "vasopressin"
     ],
     "books_cited": [
-      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
@@ -556,22 +547,6 @@
       "vitamin-b12"
     ],
     "other_substances_involved": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "amebiasis": {
-    "display_name": "Amebiasis",
-    "claim_count": 1,
-    "claims_by_role": {
-      "protocols": [
-        "WAL-CLM-LETS-000133"
-      ]
-    },
-    "essentials_involved": [],
-    "other_substances_involved": [
-      "metronidazole"
-    ],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -653,10 +628,9 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 37,
+    "claim_count": 36,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000020",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000036",
@@ -762,7 +736,7 @@
   },
   "aneurysm": {
     "display_name": "Aneurysm",
-    "claim_count": 14,
+    "claim_count": 13,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-IMMORT-000104"
@@ -786,9 +760,6 @@
       ],
       "prognosis": [
         "WAL-CLM-RARE-000077"
-      ],
-      "protocols": [
-        "WAL-CLM-LETS-000138"
       ]
     },
     "essentials_involved": [
@@ -1721,7 +1692,7 @@
   },
   "bipolar_disorder": {
     "display_name": "Bipolar Disorder",
-    "claim_count": 11,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018"
@@ -1737,9 +1708,6 @@
       "definitions": [
         "WAL-CLM-RARE-000029",
         "WAL-CLM-RARE-000116"
-      ],
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
       ],
       "protocols": [
         "WAL-CLM-LETS-000159"
@@ -2095,12 +2063,11 @@
   },
   "bone_spurs": {
     "display_name": "Bone Spurs",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-IMMORT-000064",
-        "WAL-CLM-IMMORT-000072",
         "WAL-CLM-IMMORT-000108",
         "WAL-CLM-LETS-000004",
         "WAL-CLM-RARE-000305"
@@ -2424,11 +2391,10 @@
   },
   "calcium_deposits": {
     "display_name": "Calcium Deposits",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000064",
-        "WAL-CLM-IMMORT-000072"
+        "WAL-CLM-IMMORT-000064"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -2737,7 +2703,7 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 14,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2747,7 +2713,6 @@
         "WAL-CLM-EPIGEN-000177"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000006",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-IMMORT-000212",
@@ -3026,36 +2991,18 @@
   },
   "cerebrovascular_disease": {
     "display_name": "Cerebrovascular Disease",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-DDDL-000106"
-      ],
-      "protocols": [
-        "WAL-CLM-LETS-000211"
       ]
     },
     "essentials_involved": [
-      "choline",
-      "omega-3",
-      "selenium",
-      "vitamin-c",
-      "vitamin-d",
-      "vitamin-e"
+      "vitamin-d"
     ],
-    "other_substances_involved": [
-      "centrophenoxine",
-      "edta-chelation",
-      "hydergine",
-      "hydrogen-peroxide",
-      "lecithin",
-      "lucidril",
-      "piracetam",
-      "vasopressin"
-    ],
+    "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011",
-      "lets-play-doctor"
+      "dddl-3e-2011"
     ]
   },
   "cervical_dysplasia": {
@@ -3954,10 +3901,9 @@
   },
   "cystic_fibrosis": {
     "display_name": "Cystic Fibrosis",
-    "claim_count": 11,
+    "claim_count": 10,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000004",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-LETS-000011",
@@ -3985,7 +3931,6 @@
       "flaxseed-oil"
     ],
     "books_cited": [
-      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
@@ -4116,10 +4061,9 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 20,
+    "claim_count": 19,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000035",
         "WAL-CLM-EPIGEN-000037",
@@ -4178,7 +4122,6 @@
       "vasopressin"
     ],
     "books_cited": [
-      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
@@ -4240,7 +4183,7 @@
   },
   "depression": {
     "display_name": "Depression",
-    "claim_count": 45,
+    "claim_count": 44,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000018"
@@ -4287,8 +4230,7 @@
         "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
-        "WAL-CLM-IMMORT-000168",
-        "WAL-CLM-LETS-000081"
+        "WAL-CLM-IMMORT-000168"
       ],
       "prevalence": [
         "WAL-CLM-RARE-000160"
@@ -4442,7 +4384,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 31,
+    "claim_count": 29,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -4450,8 +4392,7 @@
       "causes": [
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-DDDL-000034",
-        "WAL-CLM-IMMORT-000019",
-        "WAL-CLM-RARE-000254"
+        "WAL-CLM-IMMORT-000019"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000022"
@@ -4484,7 +4425,6 @@
       "protocols": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000049",
-        "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000280"
@@ -4989,7 +4929,7 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 15,
+    "claim_count": 14,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000065",
@@ -5009,8 +4949,7 @@
       ],
       "protocols": [
         "WAL-CLM-LETS-000148",
-        "WAL-CLM-LETS-000245",
-        "WAL-CLM-LETS-000262"
+        "WAL-CLM-LETS-000245"
       ]
     },
     "essentials_involved": [
@@ -5023,36 +4962,16 @@
       "vitamin-a",
       "vitamin-b3",
       "vitamin-b5",
-      "vitamin-b9",
-      "vitamin-c",
       "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
-      "aloe-vera",
-      "araroba",
       "betaine-hcl",
-      "burdock",
       "colloidal-minerals",
-      "comfrey",
-      "dermese",
       "digestive-enzymes",
-      "english-walnut",
-      "european-snakeroot",
-      "german-chamomile",
-      "high-mallow",
-      "hounds-tongue",
       "interlipids",
-      "labrador-tea",
-      "linseed-oil",
-      "marigold",
-      "oak",
       "paba",
-      "pancreatic-enzymes",
-      "pansy",
-      "pulse-test",
-      "urine-therapy",
-      "wild-strawberry"
+      "pulse-test"
     ],
     "books_cited": [
       "dddl-3e-2011",
@@ -5282,11 +5201,8 @@
   },
   "explosive_outbursts": {
     "display_name": "Explosive Outbursts",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-RARE-000127"
-      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-RARE-000302"
@@ -5297,8 +5213,7 @@
     },
     "essentials_involved": [
       "chromium",
-      "copper",
-      "vanadium"
+      "copper"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -5504,11 +5419,8 @@
   },
   "food_allergy": {
     "display_name": "Food Allergy",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
-      ],
       "protocols": [
         "WAL-CLM-LETS-000280"
       ]
@@ -6171,11 +6083,10 @@
   },
   "heel_spurs": {
     "display_name": "Heel Spurs",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000064",
-        "WAL-CLM-IMMORT-000072"
+        "WAL-CLM-IMMORT-000064"
       ]
     },
     "essentials_involved": [
@@ -6510,7 +6421,7 @@
   },
   "hyperactivity": {
     "display_name": "Hyperactivity",
-    "claim_count": 12,
+    "claim_count": 11,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
@@ -6522,9 +6433,6 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
-      ],
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
       ],
       "prognosis": [
         "WAL-CLM-RARE-000215"
@@ -6581,7 +6489,7 @@
   },
   "hyperinsulinemia": {
     "display_name": "Hyperinsulinemia",
-    "claim_count": 5,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
@@ -6590,9 +6498,6 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
-      ],
-      "protocols": [
-        "WAL-CLM-EPIGEN-000003"
       ]
     },
     "essentials_involved": [
@@ -6778,11 +6683,8 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 17,
+    "claim_count": 14,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-RARE-000254"
-      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000062",
@@ -6798,14 +6700,12 @@
         "WAL-CLM-RARE-000116"
       ],
       "diagnostics": [
-        "WAL-CLM-LETS-000080",
-        "WAL-CLM-LETS-000081"
+        "WAL-CLM-LETS-000080"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000046"
       ],
       "protocols": [
-        "WAL-CLM-EPIGEN-000003",
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000388"
       ]
@@ -7213,10 +7113,9 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 25,
+    "claim_count": 24,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000031",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-EPIGEN-000062",
@@ -7658,7 +7557,7 @@
   },
   "keshan_disease": {
     "display_name": "Keshan Disease",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000071",
@@ -7671,7 +7570,6 @@
         "WAL-CLM-RARE-000048"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000073",
         "WAL-CLM-LETS-000373"
       ]
     },
@@ -7770,13 +7668,12 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000087",
         "WAL-CLM-EPIGEN-000032",
-        "WAL-CLM-IMMORT-000063",
-        "WAL-CLM-IMMORT-000072"
+        "WAL-CLM-IMMORT-000063"
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
@@ -8226,7 +8123,7 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 12,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010"
@@ -8235,7 +8132,6 @@
         "WAL-CLM-DDDL-000022"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000044",
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-IMMORT-000099",
@@ -8281,7 +8177,7 @@
   },
   "liver_disease": {
     "display_name": "Liver Disease",
-    "claim_count": 27,
+    "claim_count": 26,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -8293,7 +8189,6 @@
         "WAL-CLM-DDDL-000022"
       ],
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000034",
         "WAL-CLM-EPIGEN-000040",
         "WAL-CLM-EPIGEN-000042",
@@ -8922,20 +8817,6 @@
       "rare-earths"
     ]
   },
-  "milk_allergy": {
-    "display_name": "Milk Allergy",
-    "claim_count": 1,
-    "claims_by_role": {
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
-      ]
-    },
-    "essentials_involved": [],
-    "other_substances_involved": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "minamata_disease": {
     "display_name": "Minamata Disease",
     "claim_count": 2,
@@ -8958,10 +8839,9 @@
   },
   "miscarriage": {
     "display_name": "Miscarriage",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-RARE-000176"
       ],
@@ -8982,7 +8862,6 @@
       "cramp-bark"
     ],
     "books_cited": [
-      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
@@ -9184,10 +9063,9 @@
   },
   "muscular_dystrophy": {
     "display_name": "Muscular Dystrophy",
-    "claim_count": 16,
+    "claim_count": 14,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-DDDL-000071",
         "WAL-CLM-EPIGEN-000033",
         "WAL-CLM-LETS-000030",
@@ -9208,7 +9086,6 @@
         "WAL-CLM-DDDL-000072"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000073",
         "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-LETS-000373"
       ]
@@ -9265,22 +9142,17 @@
   },
   "narcolepsy": {
     "display_name": "Narcolepsy",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000088"
-      ],
-      "protocols": [
-        "WAL-CLM-EPIGEN-000003"
       ]
     },
     "essentials_involved": [
-      "chromium",
-      "vanadium"
+      "chromium"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "epigenetics",
       "immortality"
     ]
   },
@@ -9431,20 +9303,6 @@
     ],
     "books_cited": [
       "epigenetics",
-      "lets-play-doctor"
-    ]
-  },
-  "neurosis": {
-    "display_name": "Neurosis",
-    "claim_count": 1,
-    "claims_by_role": {
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
-      ]
-    },
-    "essentials_involved": [],
-    "other_substances_involved": [],
-    "books_cited": [
       "lets-play-doctor"
     ]
   },
@@ -9834,7 +9692,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 33,
+    "claim_count": 32,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
@@ -9850,7 +9708,6 @@
         "WAL-CLM-EPIGEN-000032",
         "WAL-CLM-EPIGEN-000061",
         "WAL-CLM-IMMORT-000063",
-        "WAL-CLM-IMMORT-000072",
         "WAL-CLM-IMMORT-000076",
         "WAL-CLM-IMMORT-000139",
         "WAL-CLM-LETS-000004",
@@ -10143,15 +10000,12 @@
   },
   "paranoia": {
     "display_name": "Paranoia",
-    "claim_count": 5,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000010",
         "WAL-CLM-LETS-000044",
         "WAL-CLM-RARE-000264"
-      ],
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
       ],
       "protocols": [
         "WAL-CLM-LETS-000388"
@@ -10613,7 +10467,7 @@
   },
   "pms": {
     "display_name": "Premenstrual Syndrome (PMS)",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000061",
@@ -10622,9 +10476,6 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
-      ],
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
       ],
       "protocols": [
         "WAL-CLM-LETS-000388",
@@ -10722,7 +10573,7 @@
   },
   "prediabetes": {
     "display_name": "Prediabetes",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
@@ -10730,9 +10581,6 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000116"
-      ],
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
       ]
     },
     "essentials_involved": [
@@ -10742,7 +10590,6 @@
     "books_cited": [
       "epigenetics",
       "immortality",
-      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -10848,13 +10695,12 @@
   },
   "psoriasis": {
     "display_name": "Psoriasis",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000059"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000262",
         "WAL-CLM-LETS-000409"
       ]
     },
@@ -10865,31 +10711,13 @@
       "selenium",
       "vitamin-a",
       "vitamin-b9",
-      "vitamin-c",
       "vitamin-e",
       "zinc"
     ],
     "other_substances_involved": [
-      "aloe-vera",
-      "araroba",
       "betaine-hcl",
-      "burdock",
-      "comfrey",
-      "dermese",
-      "english-walnut",
-      "european-snakeroot",
-      "german-chamomile",
-      "high-mallow",
-      "hounds-tongue",
-      "labrador-tea",
       "lecithin",
-      "linseed-oil",
-      "marigold",
-      "oak",
-      "pancreatic-enzymes",
-      "pansy",
-      "urine-therapy",
-      "wild-strawberry"
+      "pancreatic-enzymes"
     ],
     "books_cited": [
       "epigenetics",
@@ -10898,13 +10726,10 @@
   },
   "psychosis": {
     "display_name": "Psychosis",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000035"
-      ],
-      "diagnostics": [
-        "WAL-CLM-LETS-000081"
       ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000005"
@@ -11096,20 +10921,16 @@
   },
   "reactive_hypoglycemia": {
     "display_name": "Reactive Hypoglycemia",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107"
-      ],
-      "protocols": [
-        "WAL-CLM-EPIGEN-000003"
       ]
     },
     "essentials_involved": [
       "chromium",
-      "copper",
-      "vanadium"
+      "copper"
     ],
     "other_substances_involved": [],
     "books_cited": [
@@ -11747,10 +11568,9 @@
   },
   "sids": {
     "display_name": "Sids",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-LETS-000016",
         "WAL-CLM-RARE-000270"
       ]
@@ -11761,7 +11581,6 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -12231,27 +12050,6 @@
       "acetaminophen",
       "aspirin",
       "german-chamomile"
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "testicular_atrophy": {
-    "display_name": "Testicular Atrophy",
-    "claim_count": 1,
-    "claims_by_role": {
-      "protocols": [
-        "WAL-CLM-LETS-000448"
-      ]
-    },
-    "essentials_involved": [
-      "zinc"
-    ],
-    "other_substances_involved": [
-      "colloidal-minerals",
-      "ginseng",
-      "saw-palmetto",
-      "testosterone"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -12900,11 +12698,10 @@
   },
   "violent_behavior": {
     "display_name": "Violent Behavior",
-    "claim_count": 10,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-IMMORT-000018",
-        "WAL-CLM-RARE-000127"
+        "WAL-CLM-IMMORT-000018"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000107",
@@ -13097,10 +12894,9 @@
   },
   "white_muscle_disease": {
     "display_name": "White Muscle Disease",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-DDDL-000005",
         "WAL-CLM-RARE-000269"
       ],
       "prognosis": [

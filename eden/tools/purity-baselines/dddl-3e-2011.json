@@ -1,5 +1,5 @@
 {
-  "_doc": "Reviewed-OK allowlist for book_purity.py — dddl-3e-2011 (SESSION 42). Residual after the audited purification spec: spell_ok = domain terms/proper nouns/citation sources/legit variants (not OCR typos); reviewed_ok = non-spell keeps (hyphen compounds, decade/age alphanumerics, CamelCase brands, kept bare numbers). Genuine defects were FIXED in the spec, not allowlisted.",
+  "_doc": "Reviewed-OK allowlist for book_purity.py — dddl-3e-2011 (SESSION 42). Residual after the audited purification spec: spell_ok = domain terms/proper nouns/citation sources/legit variants (not OCR typos); reviewed_ok = non-spell keeps (hyphen compounds, decade/age alphanumerics, CamelCase brands, kept bare numbers). Genuine defects were FIXED in the spec, not allowlisted. — 2026-07-17: added 'amebiasis'. It is a real medical term (amebic dysentery caused by Entamoeba histolytica) that the book itself DEFINES at dddl line 9243: 'AMEBIASIS is an amebic dysentery caused by Entamoeba hystolytica'; 'entamoeba' was already allowlisted from the same sentence. It had never needed an entry because book_purity resolves terms against the CORPUS vocabulary too, and WAL-CLM-LETS-000133 carried it — that claim was PURGED 2026-07-17 (it copied a corrupted pediatric metronidazole dose), which silently shrank the vocabulary and reddened book_source_clean on a DIFFERENT book. Not an OCR defect; not a regression in the .txt.",
   "spell_ok": [
     "aaa",
     "abdullah",
@@ -43,6 +43,7 @@
     "alveolysis",
     "ama",
     "amblyomma",
+    "amebiasis",
     "ameobic",
     "americanum",
     "americum",

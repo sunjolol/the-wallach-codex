@@ -682,40 +682,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000021",
-   "kind": "mechanism",
-   "essentials": [
-    "calcium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Are common calcium pills a good deal? Wallach says no - metallic mineral supplements like calcium carbonate are barely absorbed (about 8-12% in the young, falling to 3-5% after age 35-40). Worked example: a 1,000mg calcium carbonate tablet is only 400mg of actual (elemental) calcium, and at roughly a 10% absorption rate you net just ~80mg usable - so to truly get 2,000mg of usable calcium you'd have to swallow about 25 tablets a day (a 100-count bottle would last only 4 days). In his words: \"Two 1,000 mg calcium carbonate capsules or tablets do not give you 2,000 mg of calcium - they only supply 800 mg of elemental calcium and at a 10% availability rate you will net only 80 mg of available calcium. Therefore, to get 2,000 mg of usable calcium from a 1,000 mg capsule or tablet of calcium carbonate, you would have to take 25 capsules each day!\"",
-   "verbatim": "Two 1,000 mg calcium carbonate capsules or tablets do not\ngive you 2,000 mg of calcium - they only supply 800 mg of\nelemental calcium and at a 10% availability rate you will net\nonly 80 mg of available calcium. Therefore, to get 2,000 mg of\nusable calcium from a 1,000 mg capsule or tablet of calcium\ncarbonate, you would have to take 25 capsules each day!",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 87,
-    "screenshot": 56,
-    "kindle_location": null,
-    "char_offset": 158528
-   },
-   "dose": null,
-   "tags": [
-    "calcium",
-    "mineral-forms",
-    "metallic",
-    "bioavailability"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T14:49:34+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000022",
    "kind": "definition",
    "essentials": [
@@ -1273,39 +1239,6 @@
     "arsenic",
     "cancer",
     "leukemia"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T16:02:19+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000039",
-   "kind": "definition",
-   "essentials": [
-    "gold"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Gold is one of the 60 minerals Wallach counts as essential, and the biological clue he points to is where and how the body holds it: in the mammalian liver, gold occurs as a colloid - the same ultra-fine, absorbable particle state his framework says the body actually uses minerals in (as opposed to un-absorbable 'metallic' gold). He also notes gold concentrates in the horsetail plant (Equisetum arvense). Importantly, in this passage he documents gold's presence and colloidal form in the body rather than naming a specific gold-deficiency disease - so it is evidence that gold belongs among the essential, tissue-resident elements, not a stated function. In his words: \"...in mammalian liver gold forms a colloid.\"",
-   "verbatim": "marine animals at 0.0003 to 0.008 ppm, terrestrial\nanimals at 0.00023 ppm, and in mammalian liver gold forms a\ncolloid.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 101,
-    "screenshot": 63,
-    "kindle_location": null,
-    "char_offset": 183495
-   },
-   "dose": null,
-   "tags": [
-    "gold",
-    "essential-mineral",
-    "colloidal-minerals"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -1985,39 +1918,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000060",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach sorts vitamins into three classes. (1) Fat-soluble - A, D, E and K - work in fat metabolism and cannot be absorbed on a very low-fat diet; people who have had their gallbladder removed should take ox bile to supply the bile salts needed to absorb fats and fat-soluble vitamins. (2) Water-soluble - the ten B vitamins plus vitamin C - act as cofactors that help cells turn food into energy. (3) Flavanols - the bioflavonoids (polyphenols / epicatechins) - which he counts as a third vitamin category. Flavanols in dark chocolate, he notes, help keep capillaries strong, lower blood pressure and improve blood flow. In his words: \"Flavanols found in dark chocolate, participate in maintaining the strength of capillaries, lower blood pressure, improve blood flow via increased production of nitric oxide (a molecule used by the vascular endothelium to signal the surrounding muscle to relax) and have vitamin C-like functions.\"",
-   "verbatim": "Flavanols found in dark chocolate, participate in\nmaintaining the strength of capillaries, lower blood pressure,\nimprove blood flow via increased production of nitric oxide\n(a molecule used by the vascular endothelium to signal\nthe surrounding muscle to relax) and have vitamin C-like\nfunctions",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 115,
-    "screenshot": 70,
-    "kindle_location": null,
-    "char_offset": 208955
-   },
-   "dose": null,
-   "tags": [
-    "search-only",
-    "vitamins",
-    "flavanols",
-    "dark-chocolate",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T17:32:25+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000061",
    "kind": "definition",
    "essentials": [
@@ -2430,48 +2330,6 @@
     "mccarron",
     "salt-sensitive",
     "deficiency"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T20:53:49+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000072",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "calcium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "kidney_stones",
-    "bone_spurs",
-    "heel_spurs",
-    "calcium_deposits",
-    "osteoporosis"
-   ],
-   "symptoms": [],
-   "claim_text": "When the body loses too much calcium in the urine — as happens in osteoporosis, an overactive parathyroid, or a diet heavy in phosphorus and phytates — that lost calcium precipitates into kidney stones, bone spurs and calcium deposits. Wallach says bone and heel spurs and calcium deposits reliably form at the insertion sites of tendons and ligaments during a raging, progressive osteoporosis, and that these spurs, deposits and the elevated blood calcium of hyperparathyroidism can be reversed and eliminated by supplementing with significant amounts of chelated and colloidal calcium. In his words: \"In cases of excess urine loss of calcium (osteoporosis, hyperactive parathyroid glands, excess dietary phosphorus and phytates, etc.), kidney stones, bone spurs and calcium deposits will develop. Bone and heel spurs and calcium deposits always develop at the sites of insertions of tendons and ligaments during a raging and progressive osteoporosis. Bone spurs, heel spurs, calcium deposits and the elevated blood calcium of hyperparathyroidism can be reversed and eliminated by supplementing with significant amounts of chelated and colloidal chelates of calcium.\"",
-   "verbatim": "In\ncases of excess urine loss of calcium (osteoporosis, hyperactive\nparathyroid glands, excess dietary phosphorus and phytates,\netc.), kidney stones, bone spurs and calcium deposits will\ndevelop.\n\nBone and heel spurs and calcium deposits always\ndevelop at the sites of insertions of tendons and ligaments\nduring a raging\nand progressive osteoporosis. Bone spurs,\nheel spurs, calcium deposits and the elevated blood calcium\nof hyperparathyroidism can be reversed and eliminated by\nsupplementing with significant amounts of chelated and\ncolloidal chelates of calcium.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 122,
-    "screenshot": 74,
-    "kindle_location": null,
-    "char_offset": 220316
-   },
-   "dose": null,
-   "tags": [
-    "calcium",
-    "deficiency",
-    "kidney-stones",
-    "bone-spurs",
-    "reversible",
-    "treatment"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -6102,41 +5960,6 @@
     "iodine",
     "geology",
     "halogen"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T22:57:48+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000174",
-   "kind": "definition",
-   "essentials": [
-    "iodine"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "What iodine is, and how it was discovered. Iodine is a violet-black solid that turns straight into a violet gas when warmed (it 'sublimes'); it is the heaviest and one of the most reactive members of the halogen family (the salt-forming elements that also include chlorine and fluorine). It was discovered in 1811 by the Frenchman Bernard Courtois, who saw a purple vapor rise when he added sulfuric acid to kelp — the color gave it its name, from the Greek 'iodes,' meaning 'violet-colored.' A drop of iodine turns starch (as in potato or flour) deep blue, a classic chemistry test.",
-   "verbatim": "Iodine is a violet-black solid that vaporizes to give a\nviolet gas. It is found in sea weed and brine wells, in the sea,\nin the form of inorganic salts and organic iodides. It is the\nheaviest element in the halogen family and is highly reactive.\nIodine was discovered in 1811 by Bernard Courtois, who\nnoticed a purple vapor emanating from a sample of kelp\n\n\nto which he had added sulfuric acid. The color of the gas\ndetermined its name, translated from the Greek word iodes,\nmeaning “violet-colored.” A drop of iodine will turn starch a\ndeep blue (potato, flour, etc.).",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 158,
-    "screenshot": 92,
-    "kindle_location": null,
-    "char_offset": 288043
-   },
-   "dose": null,
-   "tags": [
-    "search-only",
-    "iodine",
-    "chemistry",
-    "discovery",
-    "etymology"
    ],
    "confidence": "high",
    "review_state": "draft",

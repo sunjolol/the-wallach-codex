@@ -194,47 +194,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-HELLS-000007",
-      "kind": "food_source",
-      "essentials": [
-        "calcium",
-        "zinc",
-        "selenium",
-        "magnesium",
-        "iodine",
-        "vitamin-a",
-        "vitamin-d",
-        "vitamin-e",
-        "omega-3"
-      ],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Because a small fish eaten whole packs nearly a complete diet into one food. Wallach points to the ancient Andean society of Norte Chico, whose primary protein was small fish — anchovies netted from the mineral-rich Humboldt Current — and notes that this single food supplied high-quality protein, a broad spread of minerals (calcium, zinc, selenium, magnesium, iodine), the fat-soluble vitamins A, D and E, and the essential fatty acids all at once. The 'small' and 'whole' are the point: you eat the entire fish, bones included, which is where the calcium and full mineral load come from — something a fillet of large fish can't give you. (In this passage Wallach names only the anchovy as his example; he doesn't list other small-fish species or shellfish here.) In his words: \"minerals (i.e. - calcium, zinc, selenium, magnesium, iodine, etc.), vitamins (A, D, E, etc.) and the essential fatty acids\"",
-      "verbatim": "The Andean diet dominated by small fish, would provide high \nquality protein, minerals (i.e. - calcium, zinc, selenium, magnesium, \niodine, etc.), vitamins (A, D, E, etc.) and the essential fatty acids.",
-      "locator": {
-        "book": "hells-kitchen",
-        "scheme": "chapter_page",
-        "chapter": null,
-        "page": null,
-        "screenshot": null,
-        "kindle_location": null,
-        "char_offset": 81518
-      },
-      "dose": null,
-      "tags": [
-        "hells-kitchen",
-        "fish",
-        "food-topic"
-      ],
-      "confidence": "medium",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-13T19:58:30+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-HELLS-000008",
       "kind": "quote",
       "essentials": [],

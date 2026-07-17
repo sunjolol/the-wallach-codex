@@ -73,47 +73,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-EPIGEN-000003",
-      "kind": "protocol",
-      "essentials": [
-        "chromium",
-        "vanadium"
-      ],
-      "other_substances": [],
-      "conditions": [
-        "diabetes",
-        "hypoglycemia",
-        "reactive_hypoglycemia",
-        "narcolepsy",
-        "hyperinsulinemia"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach teaches that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency, and that supplementing the 90 essential nutrients along with chromium and vanadium on an otherwise good diet will prevent and cure hypoglycemia, reactive hypoglycemia (which he equates with narcolepsy), hyperinsulinemia, and type 2 diabetes. In his words: \"Since 1958 it has been well documented that supplementation of the 90 essential nutrients along with chromium and vanadium to an otherwise perfect diet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy), hyperinsulinemia, and type 2 diabetes.\"",
-      "verbatim": "Since 1958 it has been well documented that supplementation of the 90\nessential nutrients along with chromium and vanadium to an otherwise perfect\ndiet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),\nhyperinsulinemia, and type 2 diabetes.",
-      "locator": {
-        "book": "epigenetics",
-        "scheme": "screenshot",
-        "chapter": "Epigenetic Manifestations of Disease",
-        "page": 568,
-        "screenshot": 549,
-        "kindle_location": null,
-        "char_offset": 987906
-      },
-      "dose": null,
-      "tags": [
-        "epigenetics",
-        "ch17",
-        "genetic-diseases-reframed",
-        "minerals"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-30T16:38:34+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000004",
       "kind": "deficiency_sign",
       "essentials": [
@@ -2676,40 +2635,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-EPIGEN-000068",
-      "kind": "mechanism",
-      "essentials": [
-        "boron"
-      ],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach classifies boron as an essential mineral for bone metabolism -- needed for the efficient use of calcium and magnesium and for the proper functioning of the ovaries, testes, and adrenal glands. He notes boron was only universally accepted as essential for humans around 1990, and that within eight days of boron supplementation women lost 40 percent less calcium, 33 percent less magnesium, and less phosphorus through their urine, while blood estradiol and testosterone in both men and women nearly doubled -- to levels comparable with estrogen-replacement therapy. He frames boron as central to maintaining bone and normal sex-hormone levels.",
-      "verbatim": "Boron is essential for bone metabolism, including the efficient use of calcium\nand magnesium and for the proper functioning of the ovaries, testes",
-      "locator": {
-        "book": "epigenetics",
-        "scheme": "screenshot",
-        "chapter": "18",
-        "page": null,
-        "screenshot": "601",
-        "kindle_location": null,
-        "char_offset": 1163356
-      },
-      "dose": null,
-      "tags": [
-        "epigenetics",
-        "ch18",
-        "minerals",
-        "boron"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-30T22:35:27+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000069",
       "kind": "mechanism",
       "essentials": [
@@ -3399,49 +3324,13 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-EPIGEN-000088",
-      "kind": "definition",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Epigenetics closes its nutrition chapter with Wallach's recommended daily multiple vitamin and mineral intake, given per 100 pounds of body weight for adults and children -- the operational target amounts behind his 90-essential-nutrient program. His mineral recommendations are: boron 1 to 6 milligrams, calcium 600 to 1,000 milligrams, chromium 200 to 400 micrograms, copper 1 to 2 milligrams, iodine 50 to 150 micrograms, iron 15 to 30 milligrams, magnesium 250 to 500 milligrams, manganese 3 to 5 milligrams, molybdenum 10 to 25 micrograms, potassium (which the U.S. Food and Drug Administration restricts to 99 milligrams per supplement), selenium 100 to 200 micrograms, silica 1 to 25 milligrams, vanadium 50 to 100 micrograms, and zinc 15 to 30 milligrams. The same table's vitamin figures include vitamin K 60 to 300 micrograms, niacinamide (niacin) 10 to 30 milligrams, biotin 100 to 300 micrograms, folic acid 400 micrograms, choline 10 to 100 milligrams, inositol 10 to 100 milligrams, and bioflavonoids 1,000 to 5,000 milligrams.",
-      "verbatim": "Minerals Range for adults and children/100 pounds\nBoron 1 - 6 mg\nCalcium 600 - 1,000 mg",
-      "locator": {
-        "book": "epigenetics",
-        "scheme": "screenshot",
-        "chapter": "18",
-        "page": null,
-        "screenshot": "675",
-        "kindle_location": null,
-        "char_offset": 1414037
-      },
-      "dose": null,
-      "tags": [
-        "epigenetics",
-        "ch18",
-        "daily-intake",
-        "recommended-amounts",
-        "minerals",
-        "vitamins",
-        "dose-table",
-        "90-essentials"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-01T00:44:03+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000089",
       "kind": "definition",
       "essentials": [],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In the same recommendations section of Epigenetics, Wallach gives the mineral profile of liquid plant-derived colloidal minerals -- the supplement form he considers the most bioavailable -- dosed at one ounce per 100 pounds of body weight per day, each mineral listed by concentration in parts-per-million. The profile spans all roughly 60 minerals, including every rare earth: tantalum 0.6, lutetium 0.05, ytterbium 0.2, thulium 0.02, erbium 0.1, holmium 0.1, dysprosium 0.5, terbium 0.1, gadolinium 0.1, europium 0.1, samarium 0.8, neodymium 0.8, praseodymium 0.4, cerium 4.0, lanthanum 2.0, scandium 0.1 and yttrium 40; the trace metals barium 0.3, cesium 0.1, tin 0.03, cadmium 0.1, silver 0.2, molybdenum 0.04, niobium 0.02, zirconium 0.2, strontium 14.0, rubidium 0.8, gallium 0.1, titanium 1.0 and lithium 100; plus the major and minor minerals iron 43, zinc 47, manganese 36, nickel 30, cobalt 9, copper 20, chromium 0.4, vanadium 0.1, selenium 0.9, germanium under 0.01, iodine 0.1, bromine 0.2, fluorine 5.0, boron 0.2 and beryllium 0.1, with the bulk electrolytes (calcium, potassium, sodium, sulfur, silicon, magnesium, chlorine, phosphorus) in the gram-per-liter range. Like the Humic Shale analysis in Rare Earths, this table is direct evidence that Wallach's colloidal supplement delivers the complete mineral spectrum -- every rare earth included -- not just the handful found in conventional multivitamins.",
+      "claim_text": "In the supplement-recommendation section of Epigenetics -- following his vitamin and mineral daily-dose tables -- Wallach lists liquid plant-derived colloidal minerals at one ounce per 100 pounds of body weight per day. He gives the product's mineral profile as a table of concentrations in parts-per-million, covering the rare-earth elements alongside the trace and bulk minerals.",
       "verbatim": "Liquid Plant Derived Coloidal Minerals One Ounce/ 100 pounds/day PPM",
       "locator": {
         "book": "epigenetics",
@@ -3467,9 +3356,7 @@
         "colloidal-minerals",
         "composition",
         "rare-earths-content",
-        "60-minerals",
-        "plant-derived",
-        "bioavailability"
+        "plant-derived"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -5904,38 +5791,6 @@
         "screenshot": 569,
         "kindle_location": null,
         "char_offset": 1058243
-      },
-      "dose": null,
-      "tags": [
-        "epigenetics",
-        "oils-fats-cholesterol",
-        "good-fats",
-        "search-only"
-      ],
-      "confidence": "medium",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-13T10:02:55+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000152",
-      "kind": "quote",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Building his diet philosophy on Weston Price's fieldwork, Wallach holds that the cholesterol-rich animal foods modern Americans avoid — butter, fish eggs, shellfish, organ meats and animal fats — actually supplied traditional peoples roughly ten times the fat-soluble vitamins (A, D, and Price's 'Activator X') of the modern diet, and are wrongly shunned as unhealthful. In his words: \"at least ten times the fat-soluble vitamins from animal foods such as butter, fish eggs, shellfish, organ meats, and animal fats—the very cholesterol-rich foods now shunned by the American public as unhealthful.\"",
-      "verbatim": "by comparison to the American diet of his day, they provided at least\nfour times the water-soluble vitamins, calcium and other minerals, and at least\nten times the fat-soluble vitamins from animal foods such as butter, fish eggs,\nshellfish, organ meats, and animal fats—the very cholesterol-rich foods now\nshunned by the American public as unhealthful.",
-      "locator": {
-        "book": "epigenetics",
-        "scheme": "screenshot",
-        "chapter": null,
-        "page": 203,
-        "screenshot": 374,
-        "kindle_location": null,
-        "char_offset": 357174
       },
       "dose": null,
       "tags": [

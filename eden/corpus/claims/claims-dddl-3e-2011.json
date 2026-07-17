@@ -34,36 +34,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-DDDL-000002",
-      "kind": "quote",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "The corrective action is supplementation with plant derived colloidal minerals.",
-      "verbatim": "took positive\naction to enhance their own lives and the lives of others by supplementing\nwith plant derived colloidal minerals.",
-      "locator": {
-        "book": "dddl-3e-2011",
-        "scheme": "chapter_page",
-        "chapter": null,
-        "page": null,
-        "screenshot": null,
-        "kindle_location": null,
-        "char_offset": 1323
-      },
-      "dose": null,
-      "tags": [
-        "plant-derived-colloidal-minerals",
-        "framing"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-24T17:27:11+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-DDDL-000003",
       "kind": "deficiency_sign",
       "essentials": [
@@ -115,48 +85,6 @@
         "screenshot": null,
         "kindle_location": null,
         "char_offset": 62491
-      },
-      "dose": null,
-      "tags": [],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-24T17:27:11+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-DDDL-000005",
-      "kind": "deficiency_sign",
-      "essentials": [
-        "selenium"
-      ],
-      "other_substances": [],
-      "conditions": [
-        "cystic_fibrosis",
-        "sids",
-        "muscular_dystrophy",
-        "cardiomyopathy",
-        "white_muscle_disease",
-        "alzheimers",
-        "anemia",
-        "liver_cirrhosis",
-        "infertility",
-        "miscarriage",
-        "dementia",
-        "liver_disease"
-      ],
-      "symptoms": [],
-      "claim_text": "Selenium deficiency causes infertility, miscarriages, cystic fibrosis of the pancreas, sudden infant death syndrome (SIDS), liver cirrhosis, white muscle disease, muscular dystrophy, anemia, encephalomalacia (Alzheimer's disease), cardiomyopathy, and mulberry heart disease.",
-      "verbatim": "Selenium deficiency causes infertility,\nmiscarriages, cystic fibrosis of the pancreas, Sudden Infant Death\nSyndrome in animals, liver cirrhosis, stiff lamb disease, white muscle\ndisease, muscular dystrophy, anemias, encephalomalacia (Alzheimer’s\ndisease), cardiomyopathy heart disease, and mulberry heart disease.",
-      "locator": {
-        "book": "dddl-3e-2011",
-        "scheme": "chapter_page",
-        "chapter": null,
-        "page": null,
-        "screenshot": null,
-        "kindle_location": null,
-        "char_offset": 59847
       },
       "dose": null,
       "tags": [],
@@ -2357,48 +2285,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-DDDL-000073",
-      "kind": "protocol",
-      "essentials": [
-        "selenium",
-        "vitamin-e"
-      ],
-      "other_substances": [],
-      "conditions": [
-        "muscular_dystrophy",
-        "keshan_disease"
-      ],
-      "symptoms": [],
-      "claim_text": "Muscular dystrophy / Keshan disease treatment uses selenium (oral colloidal, intravenous or intramuscular) at 50-1,000 mcg/day by weight plus vitamin E intramuscular at 80 mg/day.",
-      "verbatim": "Treatment of MD and/or Keshan disease includes the use of selenium orally\n(plant derived colloidal minerals), IV or IM at 50-1,000 mcg per day (based\non weight), vitamin E IM at 80 mg per day",
-      "locator": {
-        "book": "dddl-3e-2011",
-        "scheme": "chapter_page",
-        "chapter": null,
-        "page": null,
-        "screenshot": null,
-        "kindle_location": null,
-        "char_offset": 872697
-      },
-      "dose": {
-        "amount": "50-1000",
-        "unit": "mcg",
-        "period": "daily",
-        "form": "selenium",
-        "duration": null,
-        "for_condition": "muscular dystrophy"
-      },
-      "tags": [
-        "protocol"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-24T18:00:30+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-DDDL-000074",
       "kind": "deficiency_sign",
       "essentials": [
@@ -3506,37 +3392,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-DDDL-000107",
-      "kind": "food_source",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach classes butter first among the primary food sources of dietary fat (lipids), alongside flax and olive oil, animal fat, nuts, seeds and egg yolks; fats supply energy at 9 calories per gram — roughly double carbohydrate — as both immediate and stored fuel. This is butter's baseline identity as a concentrated dietary-fat source. In his words: \"The primary food sources of lipids are butter, flax seed oil, olive oil, animal fat\".",
-      "verbatim": "The primary food\nsources of lipids are butter, flax seed oil, olive oil, animal fat, nuts, seeds,\nwhole grains, olives, avocados, egg yolks, dairy, etc. Fats serve as a source\nof immediate or stored energy. A gram of fat contains 9 calories per gram\ncompared with 4.5 calories per gram.",
-      "locator": {
-        "book": "dddl-3e-2011",
-        "scheme": "chapter_page",
-        "chapter": null,
-        "page": null,
-        "screenshot": null,
-        "kindle_location": null,
-        "char_offset": 488435
-      },
-      "dose": null,
-      "tags": [
-        "dddl-3e-2011",
-        "butter",
-        "food-topic"
-      ],
-      "confidence": "medium",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-13T19:58:30+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-DDDL-000108",
       "kind": "definition",
       "essentials": [],
@@ -3682,39 +3537,6 @@
       "tags": [
         "dddl-3e-2011",
         "eggs",
-        "food-topic"
-      ],
-      "confidence": "medium",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-13T19:58:30+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-DDDL-000113",
-      "kind": "protocol",
-      "essentials": [
-        "omega-3"
-      ],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach's dietary protocol pairs avoiding fried foods and margarine with a high intake of flax or fish oil (cod-liver or salmon oil) at 5 grams 3 times a day, which he says raises the survival rate by 50 percent. In his words: \"a relatively high consumption of flaxseed oil or fish oil (cod liver oil or salmon oil) at 5 gm t.i.d. will increase your survival rate by 50 percent\"",
-      "verbatim": "It is known that avoidance of fried foods and margarine\nand a relatively high consumption of flaxseed oil or fish oil (cod liver oil or\nsalmon oil) at 5 gm t.i.d. will increase your survival rate by 50 percent.",
-      "locator": {
-        "book": "dddl-3e-2011",
-        "scheme": "chapter_page",
-        "chapter": null,
-        "page": null,
-        "screenshot": null,
-        "kindle_location": null,
-        "char_offset": 868427
-      },
-      "dose": null,
-      "tags": [
-        "dddl-3e-2011",
-        "fish",
         "food-topic"
       ],
       "confidence": "medium",

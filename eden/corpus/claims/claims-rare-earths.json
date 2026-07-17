@@ -2134,7 +2134,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach drives the iatrogenic toll home by comparison: Dr. Sidney Wolfe (Public Citizen) put hospital-negligence deaths at 300,000 Americans a year (possibly 600,000), versus the 56,000 US troops lost over the entire 10-year Vietnam War — i.e. safer on the battlefield than in an American hospital.",
+   "claim_text": "Wallach drives the iatrogenic toll home by comparison: Dr. Sidney Wolfe (Public Citizen) put hospital-negligence deaths at 300,000 Americans a year. Wallach calls Wolfe's figure conservative -- Nader's group used mortality numbers supplied by the medical profession -- and himself speculates the real number could be double, 600,000. He sets it against the 56,000 US troops lost over the entire 10-year Vietnam War: safer on the battlefield than in an American hospital.",
    "verbatim": "To appreciate how big a figure 300,000 dead is, we have to compare Wolfes figures of Americans killed by “friendly fire” in American hospitals with our U.S. military losses in Vietnam over the course of the 10 year war where we lost 56,000 for an average loss of 5,600 per year",
    "locator": {
     "book": "rare-earths",
@@ -4373,45 +4373,6 @@
     "sociability",
     "criminal-behavior",
     "framework"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-25T07:09:43+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-RARE-000127",
-   "kind": "mechanism",
-   "essentials": [
-    "chromium",
-    "vanadium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "explosive_outbursts",
-    "violent_behavior"
-   ],
-   "symptoms": [],
-   "claim_text": "Wallach explains the mechanism behind rage and explosive behavior: while awake, a brain low in fuel (blood sugar) becomes very irritable, explosively reactive, and can be vicious because the normal civilized social restraints fall away. Chromium and vanadium, which stabilize blood sugar, are the relevant nutrients.",
-   "verbatim": "the brain low in fuel is very irritable, explosively reactive and can be very vicious because there are no longer any civilized social restraints which translates into Dr. Jekyll and Mr.Hyde explosive behavior,",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": "Chapter 6",
-    "page": 99,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 315787
-   },
-   "dose": null,
-   "tags": [
-    "chromium",
-    "vanadium",
-    "hypoglycemia",
-    "explosive-behavior",
-    "blood-sugar"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -9116,44 +9077,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-RARE-000254",
-   "kind": "mechanism",
-   "essentials": [
-    "vanadium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "diabetes",
-    "hypoglycemia"
-   ],
-   "symptoms": [],
-   "claim_text": "Wallach reports that vanadium stimulates glucose (blood sugar) oxidation and transport in fat cells and glycogen (animal starch) synthesis in the liver and muscle, while inhibiting liver gluconeogenesis (the production of glucose from fat) and the absorption of glucose from the gut.",
-   "verbatim": "glucose tolerance problems (i.e. -\nhypoglycemia, hyperinsulinemia and dia-\nbetes) by making the cell membrane insulin\nreceptors more sensitive to insulin. Several\ncultures including American Indians, Hispan-\nics and Hawaiians have an increased rate of\ndiabetes",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": "Chapter 11",
-    "page": 412,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 960402
-   },
-   "dose": null,
-   "tags": [
-    "vanadium",
-    "glucose-metabolism",
-    "glycogen",
-    "gluconeogenesis",
-    "insulin"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T03:06:43+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-RARE-000255",
    "kind": "mechanism",
    "essentials": [
@@ -10233,43 +10156,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-RARE-000284",
-   "kind": "protocol",
-   "essentials": [
-    "calcium",
-    "magnesium",
-    "boron",
-    "lithium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach lists muscle relaxants/spasm relievers unsuitable for older patients — Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls — with the mineral replacement: calcium, magnesium, boron, and lithium.",
-   "verbatim": "Muscle Relaxants, Spasm Relievers — Mineral Replacement: Ca, Mg, B, Li:\nCyclobenzaprine (Flexeril) - Causes dizziness, drowsiness, fainting, falls.\nOrphenidrine (Norflex, Norgesic) - Causes dizziness, drowsiness, fainting, falls.\nMethocarbamol (Roboxin) - Causes dizziness, drowsiness, falls.\nCarisoprodol (Soma) - Potential for nervous system toxicity is greater than potential benefit.",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": "Chapter 9",
-    "page": 233,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 601386
-   },
-   "dose": null,
-   "tags": [
-    "pill-mills",
-    "drug-mineral-replacement",
-    "table-9-1",
-    "search-only"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T17:55:49+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-RARE-000285",
    "kind": "protocol",
    "essentials": [
@@ -10414,42 +10300,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-RARE-000289",
-   "kind": "definition",
-   "essentials": [
-    "erbium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In Rare Earths: Forbidden Cures, Wallach catalogs erbium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 2.8 parts-per-million in igneous rock, down to trace levels in sea water, accumulating up to 46 parts-per-million in land plants (hickory, Carya species) and, in land animals, primarily in bone. He records no specific deficiency disease here; the value is completeness -- this is erbium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals present in living tissue.",
-   "verbatim": "Er - Erbium, a Rare Earth, is found in\nigneous rock at 2.8 ppm; shale at 1.9 ppm;\nsandstone at 1 ppm; limestone at 0.36 ppm;\nland plants up to 46 ppm in Carya spp.;\nmarine animals at 0.02 to 0.04 ppm and\nland animals primarily in bone.",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": "Chapter 11",
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 791915
-   },
-   "dose": null,
-   "tags": [
-    "rare-earths",
-    "chapter-11",
-    "rare-earth",
-    "erbium",
-    "distribution",
-    "completeness-backfill"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-01T00:45:30+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-RARE-000290",
    "kind": "definition",
    "essentials": [
@@ -10547,42 +10397,6 @@
     "chapter-11",
     "rare-earth",
     "holmium",
-    "distribution",
-    "completeness-backfill"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-01T00:45:30+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-RARE-000293",
-   "kind": "definition",
-   "essentials": [
-    "lutetium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In Rare Earths: Forbidden Cures, Wallach catalogs lutetium (the book spells it 'Lurecium') -- a rare-earth element -- in his periodic-table survey. His entry records only its natural distribution: 0.5 parts-per-million in igneous rocks down to trace levels, up to 4.5 parts-per-million in land plants, and, in land animals, 0.00012 parts-per-million in soft tissue and 0.08 in bone. He records no specific deficiency disease here; the value is completeness -- this is lutetium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals present in living tissue.",
-   "verbatim": "Lu- Lurecium, a Rare Earth, is found\nin igneous rocks at 0.5 ppm; shale at 0.33\nppm; sandstone at 0.096 ppm; limestone\nat 0.067 ppm; land plants at up to 4.5 ppm\nby Carya spp.; marine animals at 0.003\nppm; land animals at 0.00012 ppm in soft\ntissue and 0.08 ppm in bone.",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": "Chapter 11",
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 842019
-   },
-   "dose": null,
-   "tags": [
-    "rare-earths",
-    "chapter-11",
-    "rare-earth",
-    "lutetium",
     "distribution",
     "completeness-backfill"
    ],

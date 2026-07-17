@@ -1,30 +1,57 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-17 02:50 CDT)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-17 03:25 CDT)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **76/76**. Corpus sealed at **kv=343**, **1363 claims**. **NOTHING WAS PURGED** — the audit staged only.
->
-> **THE AUDIT IS DONE. Luneth's decision is the gate.** Full report: `temporary/audit-2026-07-17/REPORT.md`.
-> Read it before touching the corpus.
+> Board **76/76**. Corpus sealed at **kv=344**, **1336 claims**. **THE PURGE IS DONE.**
+> Full audit report: `temporary/audit-2026-07-17/REPORT.md`.
 
 ---
 
-# ★★★★ THE ANSWER: 29 proven bad — NOT 300+, and NOT a single number
+# ★★★★ DONE: 27 purged, 2 rewritten. NEXT: "we will examine the others" (Luneth)
 
-Luneth authorized a full corpus accuracy audit to run overnight, unattended, 2026-07-17. It ran.
-All **1363/1363** claims audited, 0 missing, 0 malformed. Four passes, 331 agents, ~30M tokens.
-All evidence: `temporary/audit-2026-07-17/` (gitignored, 5.5 MB).
+The overnight audit read all 1363 claims (4 passes, 331 agents, ~30M tokens). Luneth gave the word
+2026-07-17 and the purge executed: **1363 → 1336 claims, kv=343 → 344.**
 
-| | count | trust |
+- **27 PURGED.** dddl −5, epigenetics −4, hells-kitchen −1, immortality −5, lets-play-doctor −7, rare-earths −5.
+- **2 REWRITTEN, not purged** (his ruling — the defect was fixable framing on correct source):
+  - `WAL-CLM-EPIGEN-000089` — **its dose backs the LIVE trace/rare coverage goal** (pdm-coverage-data.json,
+    924 mg maintenance) and the dose is CORRECT and in its own verbatim. claim_text 1423 → 381; the
+    corrupt table transcription + editorial tail are gone. **Do not purge this claim.**
+  - `WAL-CLM-RARE-000065` — misattributed a 600,000 figure to Dr. Sidney Wolfe / Public Citizen when it
+    is Wallach's own conjecture. Reattributed. A real living person; attribution matters.
+- **8 authored Search Q&A** removed with their claims. **0 purged ids remain** in any corpus artifact or in
+  `dist/main.js`; they survive ONLY in `creators-log-embed.json` — exactly his instruction.
+
+## ★★ TWO CATCHES FROM THE PURGE — both would have shipped damage
+
+**1. The blast radius in the audit report was INCOMPLETE.** It enumerated index/Q&A fallout but never
+checked the coverage-GOAL artifacts. 089 — the audit's own negative control, a PROVEN-bad claim — is the
+`source_claim_id` for the live trace/rare goal. Purging it would have reddened `pdm_goal_wallach_sourced`
+(critical) and stripped the Coverage denominator, **to delete a dose that is right.**
+→ **Before any future purge: check `pdm-coverage-data.json`, `efa-coverage-data.json`, and
+`essentials-targets-data.json` for `source_claim_id`, not just the indices.**
+
+**2. ★ THE VOCABULARY CASCADE — purging a claim can redden a purity gate on a DIFFERENT BOOK.**
+`book_source_clean` went RED on dddl (a book untouched) flagging "amebiasis". `book_purity` resolves terms
+against english + **CORPUS** + domain, and the corpus vocabulary is **derived from the claims**.
+`WAL-CLM-LETS-000133` was the ONLY claim in 7 books carrying that word. Fixed by allowlisting the term with
+its justification in `eden/tools/purity-baselines/dddl-3e-2011.json` (a real term the book itself defines;
+`entamoeba` was already allowlisted from the same sentence). **Expect this on every future purge.**
+
+---
+
+## ★ WHAT LUNETH SAID NEXT: "once done we will examine the others"
+
+| set | count | where |
 |---|---:|---|
-| **Survived a determined attempt to destroy it** | **29** | **high — purge these** |
-| Needs only a closing editorial sentence stripped | **65** | high — keep the claim (ruling 4) |
-| Flag fell to the skeptic | **70** | contested — mostly a design error of MINE |
-| Est. defects still hiding in the "clean" pile | **~93** | measured (7.8% of 1263), not guessed |
-| Needs a page image | **6** | backlog |
+| **Contested** — the skeptic refuted the flag | **70** | `verdicts-final.jsonl`, `passes` field contains `refuted` |
+| **Editorial tails** — strip one sentence, keep the claim (ruling 4) | **65** | `strip-tail-set.json` |
+| **Est. still unfound** in the "clean" pile | **~98** | measured: 7.8% of 90 CLEAN re-read had a real defect |
+| **Backlog** — needs a page image | **6** | `backlog-set.json` |
 
-**The single number does not exist.** The first pass said 109; a skeptic pass overturned **43.5%** of its
-flags. When the instrument disagrees with itself that often, the output is a graded list, not a count.
-**29 is a FLOOR** (the hunt pass found defects in 7 of 90 "clean" claims).
+**★ The ~98 need a RE-RUN WITH WHOLE-BOOK SCOPING** (see the lesson below) — that is the single highest-value
+next move on accuracy, because the first pass could not see past its own window.
+
+---
 
 ## ★★ THE LESSON THAT COST THE MOST — do not rebuild this mistake
 
@@ -51,11 +78,7 @@ animals**"; our claim says the unqualified human "SIDS"), `EPIGEN-000089` (the c
 
 ## WHAT LUNETH MUST DECIDE (do not act without his word)
 
-1. **Purge the 29?** Script staged, **dry-run by default**: `temporary/audit-2026-07-17/tools/purge_staged.py`
-   (`--execute` writes drafts + the enrichment sidecar via safe_write). Then the deliberate steps:
-   `corpus_verify` → `corpus_seal` → `corpus_embed` → `search_index_derive` → `entity_page_derive` →
-   `build.mjs` → `invariants.py`. **NO resnap** — a pure delete moves no offsets.
-   Blast radius: **8 authored Search Q&A** die; pages dropping to zero are enumerated in REPORT.md.
+1. ~~Purge the 29~~ **DONE 2026-07-17** — 27 purged, 089 + 065 rewritten on his ruling.
 2. **Strip the 65 editorial tails?** Cheap, saves the claims, exactly ruling 4. `strip-tail-set.json`.
 3. **`IMMORT-000060`** — the page prints *"nitric acid"*; our `.txt` says *"nitric oxide"*. **Our source text
    diverges from the book at the word level**, so `corpus_integrity` is green against a `.txt` that no longer
@@ -109,6 +132,11 @@ and writes CRLF on Windows, so stage LF and CRLF is preserved.
 **silently reformatted five pillars**. Detect the indent; refuse to write if you cannot reproduce the bytes.
 
 **4. `books-meta.json` field is `content_sha256`, not `sha256`.** Books have no `.golden.sha256` sibling.
+
+**4b. ★ PURGING A CLAIM SHRINKS THE CORPUS VOCABULARY** → `book_purity`'s speller can then flag a real word
+in ANY book's .txt → `book_source_clean` RED on a book you never touched. Root-cause it (which purged claim
+carried the word?) and allowlist the term WITH its citation; never baseline it blind. Hit 2026-07-17
+("amebiasis", from purging `WAL-CLM-LETS-000133`).
 
 **5. Claims live in TWO files.** Sealed shard (`eden/corpus/claims/`, golden-protected) carries
 `claim_text`/`verbatim`/`about`/`locator`/`tags`. The sidecar `eden/corpus/search-enrichment.json` (NOT
@@ -166,9 +194,11 @@ doctrine. It currently contradicts the ruling above.
 
 **The plant-derived group expansion (5 → 20 claims).** Research preserved at
 `temporary/plant-derived-research-2026-07-17/` (26 files, ~2.8M tokens, every quote byte-verified).
-★★ One of its 11 ACCEPTs — `WAL-CLM-EPIGEN-000089` — is **PROVEN BAD** (page image: copper 2.0 not 20,
-yurium 4.0 not 40, lithium 10.0 not 100, chlorine 8.0 not 80; 53 minerals not "roughly 60"). **Re-validate
-every draft against `verdicts-final.jsonl` before landing any.**
+★★ One of its 11 ACCEPTs — `WAL-CLM-EPIGEN-000089` — was **PROVEN BAD** and has been **REWRITTEN**
+(2026-07-17): its corrupt table transcription is gone (page image: copper 2.0 not 20, yurium 4.0 not 40,
+lithium 10.0 not 100, chlorine 8.0 not 80; 53 minerals not "roughly 60"). Its DOSE was always correct and
+now backs the trace/rare coverage goal. **Re-validate every remaining draft against `verdicts-final.jsonl`
+before landing any** — the disease was inside the vetted slate.
 
 **Regimen + Scanner rebuilds** — `chronicle/coverage-regimen-scanner-blueprint.md` signed off;
 `views/regimen.ts` + `views/scanner.ts` still burn.

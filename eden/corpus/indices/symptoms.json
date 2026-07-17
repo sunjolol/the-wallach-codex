@@ -497,14 +497,6 @@
       "rare-earths"
     ]
   },
-  "catatonia": {
-    "display_name": "Catatonia",
-    "claim_count": 1,
-    "likely_deficiencies": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "cheilosis": {
     "display_name": "Cheilosis",
     "claim_count": 3,
@@ -1772,7 +1764,7 @@
   },
   "hallucinations": {
     "display_name": "Hallucinations",
-    "claim_count": 3,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -2048,14 +2040,6 @@
         "appears_in_books": 1
       }
     ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "hysteria": {
-    "display_name": "Hysteria",
-    "claim_count": 1,
-    "likely_deficiencies": [],
     "books_cited": [
       "lets-play-doctor"
     ]
@@ -2673,14 +2657,6 @@
       "rare-earths"
     ]
   },
-  "mania": {
-    "display_name": "Mania",
-    "claim_count": 1,
-    "likely_deficiencies": [],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "memory_loss": {
     "display_name": "Memory Loss",
     "claim_count": 1,
@@ -3275,14 +3251,6 @@
         "appears_in_books": 1
       }
     ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "night_terrors": {
-    "display_name": "Night Terrors",
-    "claim_count": 1,
-    "likely_deficiencies": [],
     "books_cited": [
       "lets-play-doctor"
     ]

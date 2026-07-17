@@ -189,7 +189,7 @@
         "eggs",
         "margarine"
       ],
-      "claim_count": 10
+      "claim_count": 9
     },
     "cadmium": {
       "display_name": "Cadmium",
@@ -312,7 +312,7 @@
         "menopause",
         "macronutrients"
       ],
-      "claim_count": 5,
+      "claim_count": 4,
       "intro_claim": "WAL-CLM-EPIGEN-000151"
     },
     "chromium": {
@@ -468,7 +468,7 @@
         "hypoglycemia",
         "colloidal_minerals"
       ],
-      "claim_count": 6
+      "claim_count": 5
     },
     "dietary_oils": {
       "display_name": "Cooking Oils & Fried Foods",
@@ -519,7 +519,7 @@
         "colloidal_minerals",
         "essential_nutrients"
       ],
-      "claim_count": 3
+      "claim_count": 2
     },
     "eggs": {
       "display_name": "Eggs",
@@ -603,7 +603,7 @@
         "cholesterol",
         "meat"
       ],
-      "claim_count": 11
+      "claim_count": 9
     },
     "fluoride": {
       "display_name": "Fluoride",
@@ -861,7 +861,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 6,
+      "claim_count": 5,
       "symbol": "I"
     },
     "iron": {
@@ -1360,7 +1360,7 @@
         "essential_nutrients",
         "vitamin-c"
       ],
-      "claim_count": 5
+      "claim_count": 4
     },
     "wallach": {
       "display_name": "Dr. Joel Wallach",
@@ -1818,26 +1818,6 @@
       }
     },
     {
-      "id": "WAL-CLM-DDDL-000107",
-      "subject": "butter",
-      "also_about": [
-        "eggs"
-      ],
-      "facet": "basics",
-      "question": "What is butter, nutritionally — what does it give the body?",
-      "answer_short": "Wallach classes butter first among the primary food sources of dietary fat (lipids), alongside flax and olive oil, animal fat, nuts, seeds and egg yolks. Fats supply energy at 9 calories per gram — roughly double carbohydrate — as both immediate and stored fuel. This is butter's baseline identity: a concentrated dietary-fat source.",
-      "answer": "Wallach classes butter first among the primary food sources of dietary fat (lipids), alongside flax and olive oil, animal fat, nuts, seeds and egg yolks; fats supply energy at 9 calories per gram — roughly double carbohydrate — as both immediate and stored fuel. This is butter's baseline identity as a concentrated dietary-fat source.",
-      "verbatim": "The primary food\nsources of lipids are butter, flax seed oil, olive oil, animal fat, nuts, seeds,\nwhole grains, olives, avocados, egg yolks, dairy, etc. Fats serve as a source\nof immediate or stored energy. A gram of fat contains 9 calories per gram\ncompared with 4.5 calories per gram.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "dietary-fat",
-        "lipids",
-        "energy",
-        "food-basics"
-      ]
-    },
-    {
       "id": "WAL-CLM-DDDL-000108",
       "subject": "butter",
       "also_about": [],
@@ -1927,32 +1907,6 @@
         "nutrition",
         "food-comparison"
       ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000113",
-      "subject": "fish",
-      "also_about": [
-        "omega-3",
-        "salmon"
-      ],
-      "facet": "protocol",
-      "question": "Does fish oil help multiple sclerosis, and how much?",
-      "answer_short": "For MS, Wallach says avoiding fried foods and margarine plus a high intake of flax or fish oil (cod-liver or salmon oil) at 5 grams 3 times a day raises the survival rate by 50 percent.",
-      "answer": "Wallach's dietary protocol pairs avoiding fried foods and margarine with a high intake of flax or fish oil (cod-liver or salmon oil) at 5 grams 3 times a day, which he says raises the survival rate by 50 percent.",
-      "verbatim": "It is known that avoidance of fried foods and margarine\nand a relatively high consumption of flaxseed oil or fish oil (cod liver oil or\nsalmon oil) at 5 gm t.i.d. will increase your survival rate by 50 percent.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "fish-oil",
-        "omega-3",
-        "protocol",
-        "dose"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "omega-3"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-DDDL-000114",
@@ -2070,40 +2024,6 @@
         "mineral-toddy",
         "trace-only"
       ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000003",
-      "subject": "diabetes",
-      "also_about": [
-        "chromium",
-        "vanadium"
-      ],
-      "facet": "stance",
-      "question": "What actually causes type 2 diabetes?",
-      "answer_short": "Wallach's stance: type 2 diabetes isn't genetic — it's a chromium and vanadium deficiency, and correcting it prevents and even reverses the disease.",
-      "answer": "Wallach teaches that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency, and that supplementing the 90 essential nutrients along with chromium and vanadium on an otherwise good diet will prevent and cure hypoglycemia, reactive hypoglycemia (which he equates with narcolepsy), hyperinsulinemia, and type 2 diabetes.",
-      "verbatim": "Since 1958 it has been well documented that supplementation of the 90\nessential nutrients along with chromium and vanadium to an otherwise perfect\ndiet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),\nhyperinsulinemia, and type 2 diabetes.",
-      "page": 568,
-      "book_id": "epigenetics",
-      "topics": [
-        "diabetes",
-        "chromium",
-        "vanadium",
-        "deficiency-thesis"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "chromium",
-          "vanadium"
-        ],
-        "conditions": [
-          "diabetes",
-          "hypoglycemia",
-          "reactive_hypoglycemia",
-          "narcolepsy",
-          "hyperinsulinemia"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000008",
@@ -2699,26 +2619,6 @@
         "type-2-diabetes",
         "erectile-dysfunction",
         "low-testosterone"
-      ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000152",
-      "subject": "cholesterol",
-      "also_about": [],
-      "facet": "stance",
-      "question": "Does Wallach think cholesterol-rich animal foods like butter and organ meats are healthy?",
-      "answer_short": "Yes — citing Weston Price, he says butter, fish eggs, organ meats and animal fats give about ten times the fat-soluble vitamins and are wrongly shunned as unhealthful.",
-      "answer": "Building his diet philosophy on Weston Price's fieldwork, Wallach holds that the cholesterol-rich animal foods modern Americans avoid — butter, fish eggs, shellfish, organ meats and animal fats — actually supplied traditional peoples roughly ten times the fat-soluble vitamins (A, D, and Price's 'Activator X') of the modern diet, and are wrongly shunned as unhealthful.",
-      "verbatim": "by comparison to the American diet of his day, they provided at least\nfour times the water-soluble vitamins, calcium and other minerals, and at least\nten times the fat-soluble vitamins from animal foods such as butter, fish eggs,\nshellfish, organ meats, and animal fats—the very cholesterol-rich foods now\nshunned by the American public as unhealthful.",
-      "page": 203,
-      "book_id": "epigenetics",
-      "topics": [
-        "animal-fats",
-        "butter",
-        "organ-meats",
-        "egg",
-        "fat-soluble-vitamins",
-        "weston-price"
       ]
     },
     {
@@ -3459,43 +3359,6 @@
       }
     },
     {
-      "id": "WAL-CLM-HELLS-000007",
-      "subject": "fish",
-      "also_about": [
-        "selenium",
-        "omega-3",
-        "calcium",
-        "zinc",
-        "iodine"
-      ],
-      "facet": "sources",
-      "question": "Why does Wallach point to small fish as a near-complete food?",
-      "answer_short": "Because a small fish eaten whole packs nearly a complete diet into one food. Wallach points to the ancient Andean society of Norte Chico, whose primary protein was small fish — anchovies netted from the mineral-rich Humboldt Current — and notes that this single food supplied high-quality protein, a broad spread of minerals (calcium, zinc, selenium, magnesium, iodine), the fat-soluble vitamins A, D and E, and the essential fatty acids all at once. The 'small' and 'whole' are the point: you eat the entire fish, bones included, which is where the calcium and full mineral load come from — something a fillet of large fish can't give you. (In this passage Wallach names only the anchovy as his example; he doesn't list other small-fish species or shellfish here.)",
-      "answer": "Because a small fish eaten whole packs nearly a complete diet into one food. Wallach points to the ancient Andean society of Norte Chico, whose primary protein was small fish — anchovies netted from the mineral-rich Humboldt Current — and notes that this single food supplied high-quality protein, a broad spread of minerals (calcium, zinc, selenium, magnesium, iodine), the fat-soluble vitamins A, D and E, and the essential fatty acids all at once. The 'small' and 'whole' are the point: you eat the entire fish, bones included, which is where the calcium and full mineral load come from — something a fillet of large fish can't give you. (In this passage Wallach names only the anchovy as his example; he doesn't list other small-fish species or shellfish here.)",
-      "verbatim": "The Andean diet dominated by small fish, would provide high \nquality protein, minerals (i.e. - calcium, zinc, selenium, magnesium, \niodine, etc.), vitamins (A, D, E, etc.) and the essential fatty acids.",
-      "page": null,
-      "book_id": "hells-kitchen",
-      "topics": [
-        "whole-fish",
-        "nutrient-density",
-        "minerals",
-        "essential-fatty-acids"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "calcium",
-          "zinc",
-          "selenium",
-          "magnesium",
-          "iodine",
-          "vitamin-a",
-          "vitamin-d",
-          "vitamin-e",
-          "omega-3"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-HELLS-000008",
       "subject": "fish",
       "also_about": [
@@ -4132,23 +3995,6 @@
         "definition",
         "coenzymes",
         "organic-compounds"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000060",
-      "subject": "vitamins",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "What are the different kinds of vitamins?",
-      "answer_short": "Three classes: fat-soluble (A, D, E, K - need fat/bile to absorb), water-soluble (the B's and C, cell-energy cofactors), and flavanols (the dark-chocolate bioflavonoids).",
-      "answer": "Wallach sorts vitamins into three classes. (1) Fat-soluble - A, D, E and K - work in fat metabolism and cannot be absorbed on a very low-fat diet; people who have had their gallbladder removed should take ox bile to supply the bile salts needed to absorb fats and fat-soluble vitamins. (2) Water-soluble - the ten B vitamins plus vitamin C - act as cofactors that help cells turn food into energy. (3) Flavanols - the bioflavonoids (polyphenols / epicatechins) - which he counts as a third vitamin category. Flavanols in dark chocolate, he notes, help keep capillaries strong, lower blood pressure and improve blood flow.",
-      "verbatim": "Flavanols found in dark chocolate, participate in\nmaintaining the strength of capillaries, lower blood pressure,\nimprove blood flow via increased production of nitric oxide\n(a molecule used by the vascular endothelium to signal\nthe surrounding muscle to relax) and have vitamin C-like\nfunctions",
-      "page": 115,
-      "book_id": "immortality",
-      "topics": [
-        "fat-soluble",
-        "water-soluble",
-        "flavanols"
       ]
     },
     {
@@ -5412,24 +5258,6 @@
         "geochemistry",
         "seaweed",
         "humus"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000174",
-      "subject": "iodine",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is iodine, and how was it discovered?",
-      "answer_short": "A violet-black solid that sublimes to a violet gas — the heaviest halogen. Courtois found it in 1811 in kelp; its name is Greek 'iodes,' violet-colored.",
-      "answer": "What iodine is, and how it was discovered. Iodine is a violet-black solid that turns straight into a violet gas when warmed (it 'sublimes'); it is the heaviest and one of the most reactive members of the halogen family (the salt-forming elements that also include chlorine and fluorine). It was discovered in 1811 by the Frenchman Bernard Courtois, who saw a purple vapor rise when he added sulfuric acid to kelp — the color gave it its name, from the Greek 'iodes,' meaning 'violet-colored.' A drop of iodine turns starch (as in potato or flour) deep blue, a classic chemistry test.",
-      "verbatim": "Iodine is a violet-black solid that vaporizes to give a\nviolet gas. It is found in sea weed and brine wells, in the sea,\nin the form of inorganic salts and organic iodides. It is the\nheaviest element in the halogen family and is highly reactive.\nIodine was discovered in 1811 by Bernard Courtois, who\nnoticed a purple vapor emanating from a sample of kelp\n\n\nto which he had added sulfuric acid. The color of the gas\ndetermined its name, translated from the Greek word iodes,\nmeaning “violet-colored.” A drop of iodine will turn starch a\ndeep blue (potato, flour, etc.).",
-      "page": 158,
-      "book_id": "immortality",
-      "topics": [
-        "halogen",
-        "discovery",
-        "etymology",
-        "courtois"
       ]
     },
     {
@@ -7428,28 +7256,6 @@
         "sleeping-pills",
         "barbiturates",
         "falls-in-elderly"
-      ]
-    },
-    {
-      "id": "WAL-CLM-RARE-000284",
-      "subject": "drug_safety_elderly",
-      "also_about": [
-        "calcium",
-        "magnesium",
-        "boron",
-        "lithium"
-      ],
-      "facet": "warning",
-      "question": "Which muscle relaxants are risky for older adults?",
-      "answer_short": "Wallach flags Flexeril (cyclobenzaprine), Norflex (orphenadrine), Robaxin (methocarbamol) and Soma (carisoprodol) -- they cause dizziness, drowsiness, fainting and falls. His mineral replacement: calcium, magnesium, boron and lithium.",
-      "answer": "Wallach lists muscle relaxants/spasm relievers unsuitable for older patients — Cyclobenzaprine (Flexeril), Orphenidrine (Norflex, Norgesic), Methocarbamol (Robaxin), and Carisoprodol (Soma), causing dizziness, drowsiness, fainting and falls — with the mineral replacement: calcium, magnesium, boron, and lithium.",
-      "verbatim": "Muscle Relaxants, Spasm Relievers — Mineral Replacement: Ca, Mg, B, Li:\nCyclobenzaprine (Flexeril) - Causes dizziness, drowsiness, fainting, falls.\nOrphenidrine (Norflex, Norgesic) - Causes dizziness, drowsiness, fainting, falls.\nMethocarbamol (Roboxin) - Causes dizziness, drowsiness, falls.\nCarisoprodol (Soma) - Potential for nervous system toxicity is greater than potential benefit.",
-      "page": 233,
-      "book_id": "rare-earths",
-      "topics": [
-        "muscle-relaxants",
-        "falls-in-elderly",
-        "mineral-replacement"
       ]
     },
     {
