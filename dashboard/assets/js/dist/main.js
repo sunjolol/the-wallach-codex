@@ -99213,7 +99213,37 @@ matches the page, so whoever mines it next reads the truth.
 NEXT: the 70 contested claims, the 65 editorial tails, the ~98 estimated unfound defects (which need a
 re-run with WHOLE-BOOK scoping for absence claims), and IMMORT-000060 \u2014 the same class as this fix but in
 the OPPOSITE direction: there our .txt says "nitric oxide" where the page prints "nitric acid", i.e. our
-source "corrected" the book on a point of fact, not spelling.` }];
+source "corrected" the book on a point of fact, not spelling.` }, { id: "lg_mrp06eal_ehpkpv", ts: "2026-07-17T08:58:06.045434-05:00", surface: "corpus", kind: "session-end", summary: "Session closed for a fresh one on 'the others'. Audit + purge + source-fix landed: 1336 claims at kv=345, board 76/76. The number was 29, not 300+ \u2014 and the biggest error found was the audit's own scoping, which cost 43.5% of its flags", detail: `Session closed at Luneth's instruction, to open a fresh one for "the others." Everything is committed and pushed; board 76/76; corpus sealed at kv=345 with 1336 claims; working tree clean.
+
+What this session was asked to do: audit all 1,363 corpus claims for accuracy overnight, unattended, and have a count ready in the morning. That happened. What it actually produced is more useful than a count, and less flattering.
+
+THE THREE THINGS THAT LANDED
+
+1. The audit. All 1363 claims read \u2014 not sampled, because misframing is invisible to any mechanical scan. Four passes, 331 agents, ~30M subagent tokens: a deterministic mechanical scan, a semantic pass over every claim, an image pass reading real page photographs, and an adversarial pass that attacked the audit's own verdicts. Every artifact is at temporary/audit-2026-07-17/ (5.5 MB, gitignored) including all 312 raw agent verdict files and the 12 tools.
+
+2. The purge. 27 claims deleted on his word; 2 rewritten instead because their defect was fixable framing sitting on correct Wallach source. 1363 \u2192 1336, kv 343 \u2192 344. Zero purged ids remain in any corpus artifact or in dist/main.js \u2014 they survive only in this log, which is exactly his instruction.
+
+3. The source fix. The Epigenetics colloidal-mineral table's dropped decimals are corrected in the sealed book text, kv 344 \u2192 345. My reading of the page came out byte-identical on 14/14 rows to the rare-earths reprint of the same assay, which had been corrected from a separate photograph. Two books, two photos, one result.
+
+THE HONEST HEADLINE
+
+The number he asked for does not exist. The audit found 109 bad claims; a skeptic pass whose only job was to destroy those flags overturned 43.5% of them. What survives is a graded list: 29 proven (27 purged, 2 rewritten), 65 needing one editorial sentence stripped, ~98 more estimated still hiding in the "clean" pile (measured, 7.8% of 90 re-read), and ~70 genuinely arguable.
+
+And the single biggest error found tonight was mine, not the corpus's. To avoid the whole-book-search trap that caused the original disaster, I scoped every auditor to the claim's own \xB13500-char window \u2014 right for proving a number IS Wallach's, exactly wrong for proving one ISN'T. A 7,000-char window cannot prove a 1.5MB book never says something, and Wallach repeats himself constantly. Half the refutations found the "invented" text elsewhere in the same book. Four claims I reported to him mid-session as damning fabrications \u2014 the tuna/mercury editorial, the 1512 Monster of Ravenna, the manganese/deafness prevention, the 90/16/12/3 framework \u2014 are all in the books. On one of them the first-pass agent appended its own warning ("worth a page check") and my aggregation dropped the caveat. It flagged its uncertainty and I lost it.
+
+That lesson is now the spine of the handoff and of the memory span-presence-is-not-evidence: "he said X here" is span-scoped; "he never said X" needs the whole corpus, or it is not evidence.
+
+WHAT THE PROCESS CAUGHT THAT NARRATION WOULD NOT HAVE
+
+Both near-misses came from staging and dry-running instead of executing on his word alone. First: my own audit report's blast radius was incomplete \u2014 it enumerated emptied pages and lost Q&A but never checked the coverage GOALS, and EPIGEN-000089 (the audit's own negative control, a proven-bad claim) turned out to be the source of the live 924 mg trace/rare goal, with a dose that is CORRECT. Purging it would have reddened a critical gate to delete a right number. Second: after sealing, a purity gate went red on a book I never touched \u2014 book_purity resolves words against the CORPUS vocabulary, which is built from the claims, so deleting the only claim carrying "amebiasis" broke a gate in a different book. Root-caused and allowlisted with its citation, not baselined.
+
+FOR THE NEXT SESSION
+
+chronicle/next-chunk.md is rewritten as the authoritative handoff and points at the actual job: the ~98 unfound (highest value; needs a REDESIGNED pass with whole-book scoping for absence claims \u2014 do not just re-run the old one), the 65 editorial tails (cheap, saves claims, ruling 4), the 70 contested (judgment calls, do with him), and IMMORT-000060's word-level .txt divergence ("nitric acid" on the page vs "nitric oxide" in our source \u2014 a factual change, NOT the same class as the Flourine\u2192Fluorine spelling normalization that landed tonight).
+
+Also carried forward: the claim_text numbers gate is designed, measured and negative-tested but NOT shipped (114 claims would fail \u2014 the real migration debt, his call); the phase1 scanner has a known false-alarm on line-wrapped spans; agent uncertainty must survive aggregation; and epigenetics is still \`raw\` with 3362 unresolved defects \u2014 one table was fixed, not the book.
+
+Commits this session: 12033a5f (audit), 839e9524 (report consistency), b7d5a58e (purge 27 + rewrite 2), cb1b721a (Epigenetics table fix). All pushed to the private origin.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
