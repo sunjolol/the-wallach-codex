@@ -8119,8 +8119,8 @@
         "carpal_tunnel_syndrome"
       ],
       "symptoms": [],
-      "claim_text": "Carpal tunnel syndrome is compression of the median nerve at the wrist by the shrinking circular wrist ligament, causing radiating pain in the palm and wrist. Rather than the conventional wrist surgery, Wallach's treatment is vitamin B-6 at 75 mg three times daily, zinc at 50 mg three times daily, and cartilage at 5 mg three times daily.",
-      "verbatim": "Treatment includes B-6 at 75 mg t.i.d., zinc at\n50 mg t.i.d. and cartilage at 5 mg t.i.d.",
+      "claim_text": "Carpal tunnel syndrome is compression of the median nerve at the wrist by the shrinking circular wrist ligament, causing radiating pain in the palm and wrist. Rather than the conventional wrist surgery, Wallach's treatment is vitamin B-6 at 75 mg three times daily, zinc at 50 mg three times daily, and cartilage at 5 grams three times daily.",
+      "verbatim": "Treatment includes B-6 at 75 mg t.i.d., zinc at\n50 mg t.i.d. and cartilage at 5 gm t.i.d.",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
@@ -17734,7 +17734,7 @@
       ],
       "symptoms": [],
       "claim_text": "Tonsillitis is an inflamed sore throat caused by viruses or Streptococcus organisms. Treatment should include hydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance, vitamin A at 25,000-300,000 IU per day as beta carotene, zinc at 50 mg three times a day, selenium at 25-1,000 mcg per day, and herbs including green hellebore (Veratrum viride), marshmallow (Althaea officinalis), flaxseed (Linum usitatissimum), German chamomile (Matricaria chamomilla), marjoram (Origanum vulgare), and garden sage (Salvia officinalis).",
-      "verbatim": "Treatment of tonsillitis should include hydrogen peroxide mouthwash and gargle, vitamin\nC to bowel tolerance, vitamin C at 25,000-\n300,000 IU per day as beta carotene, zinc at 50\nmg t.i.d., selenium at 25-1,000 mcg per day,\nherbs to include green hellebore (Verataim\nviride), marshmallow (Althaea\nofficinalis), flaxseed (Linum usitatissimum),\nGerman chamomile (Matricaria chamomilla),\nmarjoram (Origanum vulgare) garden sage\n(Salvia officinalis",
+      "verbatim": "Treatment of tonsillitis should include hydrogen peroxide mouthwash and gargle, vitamin\nC to bowel tolerance, vitamin A at 25,000-\n300,000 IU per day as beta carotene, zinc at 50\nmg t.i.d., selenium at 25-1,000 mcg per day,\nherbs to include green hellebore (Verataim\nviride), marshmallow (Althaea\nofficinalis), flaxseed (Linum usitatissimum),\nGerman chamomile (Matricaria chamomilla),\nmarjoram (Origanum vulgare) garden sage\n(Salvia officinalis",
       "locator": {
         "book": "lets-play-doctor",
         "scheme": "chapter_page",
