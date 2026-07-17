@@ -1,7 +1,7 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-17 03:25 CDT)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **76/76**. Corpus sealed at **kv=344**, **1336 claims**. **THE PURGE IS DONE.**
+> Board **76/76**. Corpus sealed at **kv=345**, **1336 claims**. **THE PURGE IS DONE. The Epigenetics table is FIXED.**
 > Full audit report: `temporary/audit-2026-07-17/REPORT.md`.
 
 ---
@@ -36,6 +36,30 @@ against english + **CORPUS** + domain, and the corpus vocabulary is **derived fr
 `WAL-CLM-LETS-000133` was the ONLY claim in 7 books carrying that word. Fixed by allowlisting the term with
 its justification in `eden/tools/purity-baselines/dddl-3e-2011.json` (a real term the book itself defines;
 `entamoeba` was already allowlisted from the same sentence). **Expect this on every future purge.**
+
+---
+
+## ★ ALSO DONE 2026-07-17: the Epigenetics source table is CORRECTED
+
+The OCR's dropped decimals in the colloidal-mineral table (Epigenetics p.818, the corruption behind
+089's 10× errors) are **fixed in the sealed book source**. kv=344 → 345.
+
+- `Yurium 40`→**`Yttrium 4.0`** · `Copper 20`→**`2.0`** · `Lithium 100`→**`10.0`** · `Chlorine 80`→**`8.0`**
+  · `Boron 02`→**`0.2`** · `Todine o1`→**`Iodine 0.1`**; the five mangled `Igm/L`/`—Agm/L`/`= igm/L`
+  cells → `1gm/L`; `Zine`→`Zinc`, `Tron`→`Iron`, `Mineral Cone.`→`Mineral Conc.`; book typos normalized
+  to match rare-earths (`Dysrosium`→`Dysprosium`, `Flourine`→`Fluorine`).
+- **Independent cross-book confirmation:** my correction (from the Epigenetics photo alone) came out
+  **byte-identical on 14/14 rows** to the rare-earths reprint of the same assay, which was corrected
+  earlier from ITS own photo. Two books, two photos, one result.
+- **The header line is UNTOUCHED and correct** — the page itself prints "Coloidal"; our .txt is
+  byte-faithful, and that line is 089's sealed verbatim.
+- **The trap did not fire, and was CHECKED:** 0 claims sit after the table, so 0 offsets moved; resnap
+  reported 0 relocated / 0 healed / 0 BROKEN; an explicit shard-vs-draft field diff over all 173
+  epigenetics claims showed NO DRIFT before sealing.
+- **★ HONEST SCOPE:** epigenetics is STILL `raw` in purity-status.json with **3362 unresolved** defects
+  (mostly PDF hyphen-wraps). **This fixed ONE TABLE, not the book.** `book_source_clean` only gates
+  `pristine` books (iaiyh, dddl), so the green board is honest. Full Epigenetics purification is still
+  a separate campaign.
 
 ---
 
@@ -83,6 +107,9 @@ animals**"; our claim says the unqualified human "SIDS"), `EPIGEN-000089` (the c
 3. **`IMMORT-000060`** — the page prints *"nitric acid"*; our `.txt` says *"nitric oxide"*. **Our source text
    diverges from the book at the word level**, so `corpus_integrity` is green against a `.txt` that no longer
    matches the page. Logged correction, or silent drift? **If the latter, there may be more.**
+   ★ NOTE the asymmetry vs the Epigenetics fix just landed: normalizing `Flourine`→`Fluorine` is a SPELLING
+   fix with an unambiguous referent (precedent-approved). `nitric acid`→`nitric oxide` names a DIFFERENT
+   CHEMICAL — that is a factual change to what Wallach said, not a normalization. Do not treat them alike.
 4. **`RARE-000065`** — contested misattribution to a **real named person**: Dr. Sidney Wolfe / Public Citizen
    credited with a 600,000 figure that is Wallach's own conjecture. One pass says clean, one says defect,
    and they were **not independent** (the second read the first's reasoning). Names a living person.

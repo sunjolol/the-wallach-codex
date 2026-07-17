@@ -27265,21 +27265,21 @@ INA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, 
 Liquid Plant Derived Coloidal Minerals One Ounce/ 100 pounds/day PPM
 
 
-Mineral Cone. Mineral Cone Mineral Cone Mineral Cone
-Tantalum 0.6 Lutetium = 0.05. Ytterbium 0.2 Thulium 0.02
-Erbium 0.1 Holmium 0.1_—Dysrosium 0.5 — Terbium 0.1
-Gadolinium 0.1 Europium 0.1. Samarium 0.8 Neodymium 0.8
-Praseodymium 0.4 — Cerium 4.0 Lanthanum 2.0 Barium 0.3
-Cesium 0.1 Todine o1 Tin 0.03 Cadmium 0.1
+Mineral Conc. Mineral Conc Mineral Conc Mineral Conc
+Tantalum 0.6 Lutetium 0.05 Ytterbium 0.2 Thulium 0.02
+Erbium 0.1 Holmium 0.1 Dysprosium 0.5 Terbium 0.1
+Gadolinium 0.1 Europium 0.1 Samarium 0.8 Neodymium 0.8
+Praseodymium 0.4 Cerium 4.0 Lanthanum 2.0 Barium 0.3
+Cesium 0.1 Iodine 0.1 Tin 0.03 Cadmium 0.1
 Silver 0.2 Molybdenum 0.04 Niobium 0.02 Zirconium 0.2
-Yurium 40 Strontium 14.0 Rubidium 0.8 Bromine 0.2
-Selenium 0.9 Germanium <0.01 Gallium 0.1 Zine 47.0
-Copper 20 Nickel 30.0 Cobalt 9.0. Tron 43.0
-Manganese 36.0 Chromium 0.4 Vanadium 0.1 Titanium — 1.0
-Scandium 0.1. Calcium —Agm/L Potassium = igm/L Chlorine 80
-Sulfur Igm/L Phosphorus 12.0 Silicon Igm/L Magnesium 1gm/L
-Sodium Igm/L Flourine 5.0 Boron 02 Beryllium 0.1
-Lithium 100
+Yttrium 4.0 Strontium 14.0 Rubidium 0.8 Bromine 0.2
+Selenium 0.9 Germanium <0.01 Gallium 0.1 Zinc 47.0
+Copper 2.0 Nickel 30.0 Cobalt 9.0 Iron 43.0
+Manganese 36.0 Chromium 0.4 Vanadium 0.1 Titanium 1.0
+Scandium 0.1 Calcium 1gm/L Potassium 1gm/L Chlorine 8.0
+Sulfur 1gm/L Phosphorus 12.0 Silicon 1gm/L Magnesium 1gm/L
+Sodium 1gm/L Fluorine 5.0 Boron 0.2 Beryllium 0.1
+Lithium 10.0
 
 The Peart
 
