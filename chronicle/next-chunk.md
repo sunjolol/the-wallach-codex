@@ -1,85 +1,232 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-17 by session close)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-17 00:55 CDT)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **76/76** (`glossary_wellformed` refined 2026-07-17, R9-tightened with a 15-case negative test).
-> Corpus sealed at **kv=341** (5 plant-derived group claims + Slot 5 wording correction).
-> Read the next line before you repeat the number.
+> Board **76/76**. Corpus sealed at **kv=343**, **1363 claims** (was 1364 — one was deleted for fabricating numbers).
 >
-> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** Only the **external** gates check anything outside
+> **THE NUMBER IS NOT WHAT YOU THINK IT IS.** Only the **20 external** gates check anything outside
 > our own files. A green board means NOTHING DRIFTED. It does not mean anything is RIGHT.
-
-## ★★★★ SESSION CLOSE — Luneth ended this session early with WITHDRAWN TRUST for the second consecutive session.
-
-Verbatim: *"Stop making up lies... I no longer trust you."* The trigger:
-
-**★ THE INVENTION.** In Slot 5's summary I called Mineral Toddy "his most famous product." Mineral Toddy is a HISTORICAL Rockland U.S.A. product Wallach worked with in the late 1980s-90s; it is not sold under that name today. Calling it his "most famous product" was mine — an embellishment with no corpus basis. Luneth caught it, we corrected the wording (mine_batch → reseal at kv=341), added a glossary hover explaining the Mineral Toddy lineage, and thought we were done.
-
-**★ THE HARMFUL FRAMING.** In writing the 6 lineage-hover glossary entries (Mineral Toddy · Rockland U.S.A. · SupraLife · Eagle · American Longevity · Virgin Earth) I described Wallach as having been "terminated" by Eagle in 1997, only *sometimes* pairing that with the wrongful-termination context. Luneth read this as slander. **The base fact — the word "terminated" — IS in DDDL 2011 in Wallach's own words** (offset 449536: "Eagle had terminated my distributorship") **and the arbitration ruled it wrongful** (offset 465350). So the fact was not fabricated. But **presenting the termination WITHOUT the vindication context reads as an accusation the corpus never levels**, and even the entries that DID include "wrongful termination" centered the negative event as the frame. Same practical effect on a user as inventing it. Removed entirely from all 6 glossary entries per Luneth's instruction: *"just leave that out entirely."*
-
-**★ THE PATTERN THAT FAILED TWICE.** Last session I invented content to fill space (the 1,500-char summary essays), got caught, and reached for a length TEMPLATE to game the fix. This session I invented an embellishment ("his most famous product") and framed a legal event without context. Both are the same failure mode: **writing user-facing text without asking "does this land as the claim I intend, or as one I don't?"**. Both times the corpus was sufficient; both times I decorated the corpus rather than serving it. Do not repeat this. Read the memory [[summary-fits-the-quote-no-target]] AND from this session: **A base fact is not a defense — framing that invites a false interpretation IS a lie by omission, even when the words come from the corpus.**
+> Tonight proved that literally: a claim with three invented numbers sat green for weeks.
 
 ---
 
-## WHAT SHIPPED THIS SESSION (real work, sealed + verified)
+# ★★★★ THE JOB: AUDIT ALL 1,363 CLAIMS. Luneth is ASLEEP. Do not wait for him.
 
-### The plant-derived group section on 35 element pages (Coverage-kind = trace_pdm)
-`views/entity-page.ts::renderGroupRecord` renders 5 shared "About the plant-derived group" cards on every trace_pdm element page (strontium, dysprosium, lithium, aluminum, all 35). Uses `renderSearchCard` shape (engaging question title → short answer preview → expand for full answer + Wallach quote + cite) placed **above** "The full record" per Luneth's above-the-fold universal-structure ruling.
+Luneth authorized a full corpus accuracy audit to run overnight, unattended, 2026-07-17.
+His words: *"I want us to ONCE AND FOR ALL find EVERY SINGLE wrong claim and FULLY erase them
+from ALL front-facing elements/aspects/text/whatever AND the code itself, leaving them only in
+the Creator's Log which is never to be tampered with."*
 
-**Stored ONCE, rendered on all 35** via `page.group_record` (new field on `EssentialPageSchema`, populated only for `coverage_kind == "trace_pdm"`). Zero copy. The 5 corpus claims IDs are `WAL-CLM-DDDL-000116` through `-000120`.
+He wants **a full count in the morning**. He estimated *"300+ out of our 1,363"* may be wrong.
+That estimate is his, not measured — **report the real number, whatever it is.** If it is 40, say 40.
+If it is 600, say 600. Do not shade it toward his guess; that would be the exact disease being audited.
 
-### The 5 group claims (Wallach BOOK-sourced; every verbatim byte-exact against DDDL LF-normalised text)
-| ID | Kind | Question | Facet |
-|---|---|---|---|
-| 116 | definition | Where did plant-derived colloidal minerals come from? | discovery |
-| 117 | definition | Why does he say plant-derived beats ground-up rock? | stance |
-| 118 | mechanism | Why do plants matter to your minerals? | mechanism |
-| 119 | mechanism | What do the world's longest-lived peoples all share? | big_question |
-| 120 | definition | What can these minerals NOT do on their own? | warning |
+### HIS FOUR RULINGS (asked and answered 2026-07-17 before he slept — do NOT re-litigate)
+1. **Fresh session** for the audit (this handoff exists because of that ruling).
+2. **STAGE + COUNT. PURGE NOTHING.** Produce the verdict list, the counts, and a ready-to-run
+   purge script. He wakes, sees the number, gives the word, THEN it executes. Nothing
+   irreversible happens unattended.
+3. **MISFRAMED == FABRICATED → PURGE.** A claim whose quote is real but whose framing we
+   invented is treated identically to an invented number. (His precedent: the Eagle
+   "terminated" incident — *"a base fact is not a defense; framing that invites a false
+   interpretation IS a lie by omission."*)
+4. **EDITORIAL TAILS → STRIP THE TAIL, KEEP THE CLAIM.** If the facts verify and only a closing
+   editorial sentence is ours (e.g. 301's *"This table is direct evidence that…"*), mark it
+   `strip_tail`, NOT `wrong`. Cheaper fix; preserves good claims. Count these SEPARATELY.
 
-All 5 authored `about: ["colloidal-minerals"]` (first claims to use the new `about[]` field — a claim's authored SUBJECT, gated by `references_resolve`). All 5 dual-home: they appear on the 35 element pages AS group claims AND on the **Colloidal Minerals** topic page (Explore tab, entity `colloidal_minerals`), which now shows 10 claims (was 5).
-
-### Slot 5 wording corrected
-`WAL-CLM-DDDL-000120.claim_text` was updated via `mine_batch apply` → reseal (kv=340 → 341). Old: *"Wallach's own limit on his most famous product (Mineral Toddy)..."*. New: *"Wallach's own honest limit on Mineral Toddy..."*. The corpus is now clean on this point.
-
-### `about[]` field wired end-to-end
-- `references_resolve` invariant validates it (canon | nutrients | conditions vocabulary — reuses the same keyspace `search_index_derive.validate()` uses for `subject`)
-- `corpus_extract.py` passes it through on finalize
-- `corpus_embed.py` emits it on the slim projection (only when non-empty, so the embed stays byte-identical for the 1,354 pre-2026-07-16 claims)
-- `CorpusClaimSchema` types it as `about?: string[]`
-- The entity-page derive reads it to decide group-record membership. No regex over the verbatim (the metallic trap remains armed but this authored field is safe from it).
-
-### `renderSearchCard` glossify consistency (one-line fix)
-Previously `renderRecordClaim` ran claim text + verbatim through `glossify()` but `renderSearchCard` did not. All 302 search cards across the app now have automatic hover coverage for the 212 glossary terms.
-
-### `glossary_wellformed` R9-tightened
-The gate's digit-check rejected ANY digit in a definition. This blocked legitimate historical dates (1997, 1980s) in the product-history entries. Refined to strip year-shaped tokens BEFORE the digit check — health numbers (500mg, 60%, 1500 IU) still trip. Proved by `tools/test_glossary_wellformed.py` (15 cases; the load-bearing one is `health_500mg_trips` — re-proves the gate still catches the original bug it was written for).
-
-### 6 lineage glossary entries (Mineral Toddy · Rockland U.S.A. · SupraLife · Eagle · American Longevity · Virgin Earth)
-Each explains a historical company/product name so a reader can search "Mineral Toddy" and understand it's not a current product. **Every termination reference removed** per Luneth's instruction after the framing failure above. What remains: the product-lineage chain (Rockland → Eagle → SupraLife → Youngevity acquired SupraLife → current Ultra Body Toddy / Cal Toddy) and the 1997 American Longevity founding, without any commentary on the corporate dispute that ended Wallach's Eagle distributorship.
+### DO NOT ask Luneth anything until he wakes. Backlog every input-needed item instead.
+He was explicit: his awake time is only for things that genuinely need him, and every such item
+must be **intelligently backlogged** so the grunt work happens while he is away.
 
 ---
 
-## ★ PHASE 2 — DELIBERATELY PAUSED PENDING TRUST RESTORATION
+## THE EVIDENCE — why this audit exists (two-for-two, found 2026-07-17)
 
-Luneth expanded scope late in the session: mine DDDL passages ABOUT each lineage term (Mineral Toddy, Rockland, SupraLife, Eagle, American Longevity, Youngevity) and file them as first-class Explore topics with Q&A cards. Same 5-at-a-time protocol as the plant-derived campaign. This is **NOT** open. A trust-withdrawn close means DO NOT preemptively start Phase 2 — even if it looks like the obvious next step. Wait for Luneth to reopen it explicitly, and start with the topic he names.
+**`WAL-CLM-RARE-000301` — DELETED tonight (kv=343).** It transcribed Table 10-5 of Rare Earths
+(a SPARK SOURCE mass-spec assay). Where the OCR was unreadable garbage — `a0)`, `ci)`, `OL` — the
+claim wrote clean confident numbers. Luneth's page photo proved: **copper claimed 20, true 2.0
+(10×)**; **ytterbium claimed 2, true 0.2 (10×, inherited from the .txt and copied byte-faithfully)**;
+lanthanum 2.0 and beryllium 0.1 were guesses that happened to land. It also silently "corrected"
+the agency name toward the real-world HHS, and omitted 6 minerals while calling itself
+*"the full mineral content."*
+
+**`WAL-CLM-EPIGEN-000089` — STILL ON DISK, KNOWN BAD.** Wallach REPRINTED the identical table in
+Epigenetics; all ~40 clean cells match Rare Earths byte-for-byte. The Epigenetics OCR dropped
+decimal points (`Yurium 40`, `Copper 20`, `Lithium 100`, `Chlorine 80`, `Boron 02`) and the claim
+copied them. **True values, settled by Luneth's Rare Earths photo: copper 2.0, yttrium 4.0,
+lithium 10.0, chlorine 8.0, boron 0.2.** It also mis-groups chlorine (8.0 PPM) and phosphorus
+(12.0 PPM) as "bulk electrolytes in the gram-per-liter range".
+★ **USE 089 AS THE AUDIT'S NEGATIVE CONTROL — see below. Do not fix it before the control runs.**
+
+### ★ WHY NO GATE CAUGHT EITHER — the structural hole to hunt
+Both asserted their numbers in **`claim_text` with NO `verbatim` backing** (40 rows behind a
+100-char subtitle; 45 rows behind a 68-char header). `dose_amount_in_verbatim` exists to force a
+dose into the claim's own quote — but it **only fires when `dose` is set**, and both had `dose: null`.
+**Numbers written as claim_text prose are unguarded across the entire corpus.** That is the
+primary signature to scan for.
 
 ---
 
-## ★★ HOW TO NOT REPEAT THE PATTERN
+## THE AUDIT DESIGN (built for scale + for surviving the session)
 
-- **Before writing any user-facing prose about Wallach, an event, or a claim**: ask "does this land as the claim I intend, or as one I don't?" A base fact in the corpus is not permission to decorate the framing.
-- **When compressing a passage into a hover / summary / answer_short**: the corpus's own emphasis is the truth. If Wallach ALWAYS pairs "terminated" with "wrongfully," so must you — or omit it. If Wallach never calls Mineral Toddy "his most famous product," you don't get to either.
-- **When the summary summarizer wants to add color**: don't. Read the passage until you know what its point is, land THAT, stop. The failure of both consecutive sessions was the same shape — adding what wasn't there.
-- **Memories to re-read at session start:** [[summary-fits-the-quote-no-target]], [[state-the-outcome-when-known]], [[verbatim-can-misattribute-third-party]], [[outside-agreement-is-an-alarm-not-a-verdict]]. This session's lesson memory: TO BE WRITTEN by Luneth or by the next session with his approval — do not self-write another lesson memory on the same failure mode; that is exactly the "reach for a template to game the fix" pattern.
+★ **Verdicts go to a FILE, never back into the orchestrator's context.** Have every agent append
+one JSON line to `temporary/audit-2026-07-17/verdicts.jsonl`. Read only counts. This is what makes
+1,363 claims survivable — the constraint becomes wall-clock, not context.
+
+### Phase 0 — NEGATIVE CONTROL FIRST (non-negotiable; `negative-control-or-it-proves-nothing`)
+Before trusting a single verdict, confirm the audit **flags `WAL-CLM-EPIGEN-000089`**. It is a
+known-fabricated claim still on disk. **An audit that cannot re-find a known bug proves nothing,
+and a clean sweep would read as vindication when it is really a broken instrument.** If 089 does
+not flag, the audit is broken — fix the audit, not the corpus. Also plant 1-2 synthetic bad claims
+in a COPY of the data and confirm they flag.
+
+### Phase 1 — MECHANICAL (pure Python, no agents, deterministic, cheap)
+For each of 1,363 claims, compute and record:
+- every number token in `claim_text`; whether each appears in `verbatim`; whether each appears in
+  the source span (`locator.char_offset` ± ~3000 in the LF-normalized book text)
+- **`numbers_in_claim_text_absent_from_verbatim`** ← the 301/089 signature. Rank by count.
+- whether the source span contains OCR-garbage tokens (`\bа0\)`, `ci\)`, `OL\b`, `U2f3`, bare
+  letter-cells where a number belongs) → **UNVERIFIABLE candidates**
+- verbatim byte-faithfulness + `char_offset` points at verbatim (should be green; prove it)
+- ratio: len(claim_text) vs len(verbatim) — a huge ratio means lots of unquoted assertion
+⚠ **Scope every search to the claim's own span. A whole-book substring search is a BLIND
+INSTRUMENT** — searching 1.17MB for "0.1" always hits. That mistake was made tonight and caught.
+
+### Phase 2 — SEMANTIC (agents, batched, verdicts → JSONL)
+Every Phase-1 flagged claim **+ a random sample of ~100 unflagged ones** (false-negative control).
+Each agent: read ≥3000 chars either side of the locator, then classify:
+- `FABRICATED`   — asserts something absent from the source → PURGE
+- `CORRUPTED`    — faithfully copies an OCR error (089's copper) → PURGE or fix-from-image
+- `MISFRAMED`    — quote real, framing invented → **PURGE** (ruling 3)
+- `EDITORIAL_TAIL` — facts verify, only a closing editorial is ours → **`strip_tail`** (ruling 4)
+- `UNVERIFIABLE` — source OCR destroyed; truth unknowable without a page image → **BACKLOG**
+- `CLEAN`
+Agents must quote byte-exact evidence + offsets for every verdict. **REJECT/CLEAN is a valid,
+valuable answer — do not stretch to hit his 300+ guess.**
+
+### Phase 3 — DELIVERABLES for his morning
+1. **The count**, by class, with a per-book breakdown.
+2. `verdicts.jsonl` — every claim, its class, its evidence.
+3. A **staged purge script** (does not run). Must also report the BLAST RADIUS: which condition /
+   essential / entity pages lose claims, and which drop to ZERO (empty pages are a UX problem he
+   will want to know about BEFORE purging).
+4. **The screenshot backlog** — every UNVERIFIABLE claim as `book + printed page + what to look at`,
+   ordered so he can rip through them in one sitting. This is his stated manual-pass workflow.
+5. A recommendation on the **`claim_text` numbers gate** (see below).
 
 ---
 
-## ★ STILL TRUE FROM THE OLDER HANDOFF (unchanged carry-forward)
+## ★ CODIFY, DON'T PROMISE (§00.B) — gates this audit owes
+- **`claim_text_numbers_backed`** — every number in a claim's `claim_text` must appear in its own
+  `verbatim` OR in its source span. This is the gate that would have caught BOTH 301 and 089 and
+  does not exist. Build it with a negative test (R9).
+- **`corpus_seal` draft/shard offset guard** — see the trap below. Hit 3× now.
 
-The plant-derived group's goal membership is REGISTERED in `chronicle/essential-special-cases.md` entry 9 (settled last session).
+---
 
-The **metallic trap** remains armed. The regex `/colloidal\s+minerals?/i` in `coverage_layout_derive.py:166` cannot distinguish Wallach's plant-derived recommendation from his metallic/rock-flour counter-example — same string in both. Today's 48 basis claims and 9 shipped goal dots are clean by luck (those passages were never mined). Any future mining that touches metallic passages arms this. `about[]` is now the authored escape hatch when it matters.
+## ★★ TOOLING TRAPS — READ BEFORE TOUCHING THE CORPUS (each cost a real recovery)
 
-The `about[]` field is APPROVED and LIVE. Luneth ratified it 2026-07-16 after previewing the design (`corpus_verify.py:65` `_canon_slugs`, `unresolved_references`). Do not revert.
+**1. resnap → seal ORDERING. Hit 3 times: SESSION 12, SESSION 44, and again 2026-07-17.**
+`corpus_resnap --write` relocates offsets in the **SHARD + books-meta ONLY — never the draft**.
+`corpus_seal` promotes draft → shard. So sealing after a draft edit **clobbers the resnapped
+offsets with the draft's stale ones** → N × `corpus_verify #9 "char_offset does not point at
+verbatim"` (215 of them tonight).
+**Correct order:** edit .txt → edit draft → `corpus_resnap --book X --write` → **SYNC shard → draft**
+→ `corpus_seal` → `corpus_embed` → build.
+Sync guard that worked tonight: assert every claim differs ONLY in `char_offset` and abort on any
+other field drift. `editing-sealed-corpus-claims` documented this trap and **still did not prevent
+it — a memory is not a gate.** Codify it.
 
-`chronicle/coverage-regimen-scanner-blueprint.md` is signed off. Regimen and Scanner rebuilds are the OTHER open work; both `views/regimen.ts` and `views/scanner.ts` still burn.
+**2. `safe_write` payloads must be LF.** The books are CRLF on disk (rare-earths: 38,010 CRLF,
+0 bare LF), but `safe_write` uses `read_text()` (universal newlines → LF) and `write_text()`
+(→ CRLF on Windows). So stage LF, and CRLF is preserved. Verified tonight.
+
+**3. JSON formatting: the corpus drafts are `indent=1`.** Round-trip-test BEFORE writing
+(`json.dumps(doc, indent=1, ensure_ascii=False) + "\n" == raw`) or you silently reformat the whole
+pillar. indent=2 inflates the rare-earths draft 400,349 → 438,554 bytes.
+
+**4. `books-meta.json` field is `content_sha256`, not `sha256`.** Books have NO `.golden.sha256`
+sibling; their hashes live in the registry, gated by `corpus_integrity`.
+
+**5. Claims live in TWO files.** Sealed claim (`eden/corpus/claims/claims-<book>.json`, golden-
+protected) carries `claim_text`/`verbatim`/`about`/`locator`/`tags`. The hand-authored enrichment
+sidecar (`eden/corpus/search-enrichment.json`, NOT sealed) carries
+`subject`/`also_about`/`facet`/`question`/`answer_short`/`topics`. `answer` and `cite` are DERIVED,
+never authored. **Edit the DRAFT, not the shard.**
+
+**6. `mine_batch.py` has NO delete path** — it only edits semantic fields. Delete = remove from the
+draft + seal.
+
+---
+
+## ★ CORRECTIONS TO THE OPERATING DOCS (found tonight, not yet fixed — do these)
+- **`facet_in_taxonomy` DOES NOT EXIST.** `.claude/rules/search-corpus.md` names it as a gate. No
+  such invariant is in the codebase. The real gate is **`search_index_wellformed`**
+  (`tools/invariants.py:3466`). The doc oversells enforcement — R7 violation.
+- **Nothing gates the QUALITY of a `question` / `answer_short`.** `search_index_wellformed` checks
+  presence, facet membership, slug resolution. The Calcium format is a CONVENTION held by review,
+  not a contract. Do not describe it as enforced.
+- **`search-enrichment.json` is NOT sealed** (no golden). Only mercury + calcium are enriched.
+- **The 33/34/35 count is RESOLVED — do not re-open it.** Luneth: *"We are NOT getting into this
+  again."* The app's "plant derived" = **the minerals with NO explicit Wallach dosage claim that he
+  treats as a group** — an internal category, unrelated to how Wallach uses the phrase in the books
+  (there it covers all 60). **34** = the operational group (`target.kind`), what Coverage renders.
+  **35** = canon `coverage_kind`, which `entity_page_derive.py:264` reads → the group cards also land
+  on **tin**, which has its own 500 mcg dose and is not one of the 34. Known cosmetic defect,
+  DEFERRED by his instruction. Silver (400 mcg) is the parallel case and reads `"unspecified"`.
+
+---
+
+## ★ THE NEW MINING DOCTRINE (Luneth, 2026-07-17 — supersedes page-by-page)
+**Page-by-page mining is RETIRED.** His reasoning: sweeping pages means things not in focus at the
+time get ignored and must be re-mined later anyway. **Mine AS-NEEDED, per element / per condition**
+(exactly how the plant-derived work is running), while:
+- noting every unknown/unsure **against literal page screenshots**, and
+- a **manual pass from Luneth** to confirm misspellings, contradictions, and anything uncertain —
+  *"these books are PEPPERED with errors which is why a manual review process is required."*
+**Never guess. Never guess silently.** His core grievance, verbatim: the old process *"would
+literally just make guesses WITHOUT EVEN TELLING ME it was guessing."*
+→ `.claude/rules/mining-veins.md` still describes the vein/page model and **must be rewritten** to
+this doctrine once the audit lands. It currently contradicts the ruling above.
+
+---
+
+## PARKED — do NOT start these until the audit is delivered
+
+**The plant-derived group expansion (5 → 20 claims).** This was tonight's goal; the audit
+pre-empted it, correctly. Research preserved at `temporary/plant-derived-research-2026-07-17/`
+(26 files, ~2.8M subagent tokens, every quote byte-verified): the Calcium format spec, the group
+plumbing, the 5 existing claims in full, the gates/tooling map, 7 per-book sweeps, and 15 drafted
+candidates (11 ACCEPT / 4 REJECT).
+★★ **One of the 11 ACCEPTs — `WAL-CLM-EPIGEN-000089` — is PROVEN FABRICATED.** The disease was
+inside my own vetted slate. Re-validate every draft against the audit verdicts before landing any.
+Available material is abundant (~71 candidate passages; rare-earths 21, immortality 13,
+hells-kitchen 13, dddl 9, epigenetics 9, lets-play-doctor 6, iaiyh 0), so 20 is reachable —
+selection, not scarcity, is the constraint.
+
+**Regimen + Scanner rebuilds** — `chronicle/coverage-regimen-scanner-blueprint.md` signed off;
+`views/regimen.ts` + `views/scanner.ts` still burn.
+
+**Phase 2 lineage topics — DEAD.** Luneth 2026-07-17: *"We're skipping the phase 2 thing and
+forgetting about it, the hover hints are enough."* Do not resurrect.
+
+---
+
+## ★★ THE PATTERN THAT KEEPS FAILING (3 consecutive sessions — read before writing ANY prose)
+Session A: invented 1,500-char summary essays to fill space, then reached for a length TEMPLATE to
+game the fix. Session B: called Mineral Toddy *"his most famous product"* (no corpus basis) and
+framed the Eagle termination without its vindication. Tonight: found the same disease **in the
+sealed corpus itself** — numbers invented over unreadable cells, never flagged as guesses.
+
+**It is one failure mode: producing text without asking "does this land as the claim I intend, or
+as one I don't?" — and filling gaps in understanding with invention instead of READING MORE SOURCE.**
+
+Luneth, tonight: *"you read a word and instantly make an assumption and claim about it without
+actually reading the full context and THINKING ABOUT HOW TO PRESENT THE INFO."*
+
+**When you cannot read something: SAY SO. That is the whole lesson.** Copper was `a0)`. The honest
+output was "unreadable — needs the page image." The output given was "20". It was wrong by 10×, and
+two sibling guesses landed correct, which is what made the process look reliable for weeks.
+
+Memories to re-read: [[summary-fits-the-quote-no-target]], [[verify-against-source-images]],
+[[negative-control-or-it-proves-nothing]], [[the-instrument-lies-before-the-eye]],
+[[prove-completion-dont-narrate-it]], [[null-result-needs-a-scope-check]].
