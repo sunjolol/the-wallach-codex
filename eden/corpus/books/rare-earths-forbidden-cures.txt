@@ -20817,21 +20817,21 @@ US Department of Human Services.
 
 Concentration in PPM (unless otherwise specified)
 
-Mineral Con. Mineral Conc. Mineral Conc. Mineral Conc.
-Tantalum 0.6 Lutetium 0.05 Ytterbium 2 Thulium 0.02
-Erbium 0.1 Holmium 0.1 Dysrosium 0.5 Terbium 0.1
-Gadolinium 0.1 Eropium 0.1 Samanum 0.8 Neodymium 0.8
-Prascodymium 04 Cerium 4.0 Lanthanum ci) Barium 0.3
-Cesium 0.1 lodine 0.1 Tin 0.03 Cadmium 0.1
+Mineral Conc. Mineral Conc. Mineral Conc. Mineral Conc.
+Tantalum 0.6 Lutetium 0.05 Ytterbium 0.2 Thulium 0.02
+Erbium 0.1 Holmium 0.1 Dysprosium 0.5 Terbium 0.1
+Gadolinium 0.1 Europium 0.1 Samarium 0.8 Neodymium 0.8
+Praseodymium 0.4 Cerium 4.0 Lanthanum 2.0 Barium 0.3
+Cesium 0.1 Iodine 0.1 Tin 0.03 Cadmium 0.1
 Silver 0.2 Molybdenum 0.04 Niobium 0.02 Zirconium 0.2
-Yunum 4.0 Stronuum 14.0 Rubidium 0.8 Bromine 0.2
+Yttrium 4.0 Strontium 14.0 Rubidium 0.8 Bromine 0.2
 Selenium 0.9 Germanium <0.01 Gallium 0.1 Zinc 47.0
-Copper a0) Nickel 30.0 Cobalt 9.0 Iron 43.0
+Copper 2.0 Nickel 30.0 Cobalt 9.0 Iron 43.0
 Manganese 36.0 Chromium 0.4 Vanadium 0.1 Titanium 1.0
-Scandium 0.1 Calcium lgm/L Potassium Igm/L — Chlonne 8.0
-Sultur Igm/L Phosphorus U2f3) Silicon Igm/L Magnesium — |gm/L
-Sodium lgm/L Flounne 5.0 Boron 0.2 Beryllium OL
-Lithum 10.0
+Scandium 0.1 Calcium 1gm/L Potassium 1gm/L Chlorine 8.0
+Sulfur 1gm/L Phosphorus 12.0 Silicon 1gm/L Magnesium 1gm/L
+Sodium 1gm/L Fluorine 5.0 Boron 0.2 Beryllium 0.1
+Lithium 10.0
 
 * WAL INC, Golden, Colorado 80403 (4/87)
 
