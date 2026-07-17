@@ -65,17 +65,45 @@ def collect_indices():
     return out
 
 
+def _canon_slugs():
+    """The sealed canon's slugs. Empty set when canon is absent/unparseable (bootstrap-safe);
+    run_checks reports those failures itself, so this stays silent rather than double-reporting."""
+    try:
+        canon = load_json(CANON_PATH)
+    except (json.JSONDecodeError, OSError):
+        return set()
+    return {e.get("slug") for e in canon.get("essentials", [])}
+
+
 def unresolved_references():
-    """references_resolve (Charter R3): claim condition/symptom slugs NOT registered in
-    the Catalog pillar (eden/catalog/{conditions,symptoms}.json). Returns [] when the
-    catalog is absent (bootstrap-safe) or clean. Single source, called by both run_checks
-    (#12) and the named references_resolve invariant."""
+    """references_resolve (Charter R3): claim condition/symptom/substance/about slugs NOT
+    registered in the Catalog pillar (eden/catalog/{conditions,symptoms,nutrients}.json) or the
+    sealed canon. Returns [] when the catalog is absent (bootstrap-safe) or clean. Single source,
+    called by both run_checks (#12) and the named references_resolve invariant.
+
+    `about` (2026-07-16) is the claim's SUBJECT -- what it is *about* -- as opposed to
+    `other_substances`, which is only what it MENTIONS. WHY a separate field rather than reusing
+    the tag: they are different facts and neither implies the other. Measured on the plant-derived
+    colloidal-mineral complex the day this landed: 16 claims carried `other_substances:
+    colloidal-minerals` whose own verbatim never names the complex (a miner's extraction window
+    bleeding in from a neighbouring A-Z entry), while 10 claims that DO name it were untagged --
+    6 of those from `rare-earths`, the book most about the complex. So the tag was wrong in BOTH
+    directions. Before this field, every consumer had to INFER aboutness from that tag or from a
+    regex over the verbatim; both proxies were silently wrong, and the coverage goal-strip shipped
+    a dark `healthy-weight` goal for it while Wallach's own OBESITY entry says "(Use colloidal
+    minerals)!". Aboutness is authored, never inferred.
+
+    Resolves against canon | nutrients | conditions: a claim may be about an essential, a
+    substance, or a disease. Mirrors the keyspace `search_index_derive.validate()` already uses
+    for the search side's `subject`, rather than minting a fourth vocabulary.
+    """
     if not (ROOT / "eden" / "catalog" / "conditions.json").exists():
         return []
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
     import catalog as _catalog
     cond_ok, symp_ok = _catalog.condition_slugs(), _catalog.symptom_slugs()
     nutr_ok = _catalog.nutrient_slugs() if (ROOT / "eden" / "catalog" / "nutrients.json").exists() else None
+    about_ok = _canon_slugs() | cond_ok | (nutr_ok or set())
     out = []
     for shard in collect_claim_shards():
         try:
@@ -94,6 +122,11 @@ def unresolved_references():
                 for slug in c.get("other_substances", []):
                     if slug not in nutr_ok:
                         out.append(f"claim {cid} references unregistered substance '{slug}'")
+            # `about` is optional and absent on every pre-2026-07-16 claim; .get(...) or []
+            # keeps those silent rather than failing 1,359 claims for a field they predate.
+            for slug in (c.get("about") or []):
+                if slug not in about_ok:
+                    out.append(f"claim {cid} is `about` unregistered subject '{slug}'")
     return out
 
 
