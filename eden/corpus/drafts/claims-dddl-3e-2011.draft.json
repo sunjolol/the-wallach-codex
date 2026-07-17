@@ -3800,6 +3800,181 @@
       "extracted_at": "2026-07-15T06:46:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000116",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's origin story for plant-derived colloidal minerals. He credits a specific product — Mineral Toddy, made by a company called Rockland U.S.A. — that he came across at Hospital Santa Monica. What made it work, he says, was where it came from: a prehistoric deposit of buried plant matter that had never turned into oil, coal, or stone. That escape from geological compression is why the minerals in it were still in the form the original plants had made them, ready for the body to use, rather than trapped back inside rock.",
+      "verbatim": "Mineral Toddy was produced by Rockland U.S.A. from a unique prehistoric\nplant deposit that had never been compressed into oil or coal. It had never\nbeen fossilized or petrified.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 362975
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-group",
+        "dddl-3e-2011"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-17T03:11:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000117",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Two claims about the same liquid, side by side. First: it carries 77 different minerals — more than the 60 Wallach counts as essential to a human body, so a single bottle covers the full essential spectrum and then some. Second: up to 98% of what you swallow is 'bio-available,' meaning the body can actually absorb and use it rather than pass it straight through. Both, in his framing, follow from the same fact: these minerals were built by living plants, not milled out of rock. A mineral's usefulness, to him, depends on which of those two things made it.",
+      "verbatim": "The value of this tea colored liquid was that it\ncontained 77 minerals in the plant derived colloidal form. Because they\nwere plant derived colloidal minerals instead of from ground up rocks, they\nwere up to 98 percent bio-available.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 363153
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-group",
+        "dddl-3e-2011"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-17T03:11:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000118",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The single step at the heart of Wallach's whole mineral framework — and the reason he cares about the source. Rock ground into fine dust and suspended in water is real minerals, but in a form that living cells can't take in. Plants can. Their roots pull those rock minerals up from the soil and rebuild them inside their own cells into a different chemical form — the form every living cell of every plant, animal, and human is actually built out of. So a mineral in a rock and the same mineral in a piece of broccoli, he argues, are not the same nutrient. A plant is the factory that does the one step your body can't do for itself, which is why he says the source matters.",
+      "verbatim": "Plants, including wild forms and crops such as grains, vegetables, fruits,\nand nuts, take up these inorganic metallic colloids and convert them into\nintracellular (within the cell) organically bound plant colloids. These\norganic plant colloids are the form of minerals found in and used by all\nliving cells of plants, animals, and humans.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 338080
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-group",
+        "dddl-3e-2011"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-17T03:11:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000119",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "'Age Beaters' is Wallach's shorthand for the eight unrelated long-lived cultures he tracks — populations where reaching 100+ in good health is common rather than exceptional. What ties them together, he argues, is not genes or altitude but geography: each settled in a high arid valley below a glacier and built canals to bring the glacier's mineral-rich meltwater to their fields, where their crops converted those minerals into plant-derived form. That, he says, is what explains the shared longevity — and why he calls plant-derived colloidal minerals, flatly, the Fountain of Youth.",
+      "verbatim": "It is the plant derived colloidal minerals in their grains,\nvegetables, fruits, and nuts that are their common threads giving the Age Beaters their health and longevity. It is the plant derived colloidal\nminerals that are in fact the Fountain of Youth!",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 294693
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-group",
+        "dddl-3e-2011"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-17T03:11:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000120",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [
+        "colloidal-minerals"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's own honest limit on Mineral Toddy, stated a few sentences after listing what it fixed. The colloidal liquid, he says, carries every mineral only in tiny amounts. That is enough for the 'trace' minerals — ones the body needs only in tiny amounts anyway — but not the 'major' ones the body needs by the gram: calcium, magnesium, manganese, zinc, potassium. To reach even the mainstream Recommended Daily Allowances for those, the liquid has to be paired with a separate source. In the same passage he mixed it into calcium-fortified orange juice to fill exactly that gap. On his own account the colloidal minerals were never meant as a stand-alone mineral supplement — a piece of the picture, not the whole picture.",
+      "verbatim": "The colloidal\nminerals were all present in trace amounts. They required an additional\nsource of the major minerals and electrolytes such as calcium, magnesium,\nmanganese, zinc, and potassium to even come close to the published RDAs.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 365842
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-group",
+        "dddl-3e-2011"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-17T03:11:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     }
   ]
 }

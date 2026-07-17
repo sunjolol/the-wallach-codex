@@ -56,6 +56,11 @@ export const CorpusClaimSchema = z.object({
   source_table: z.string().optional(),
   /** true for a Base-Line-Program / dose-TABLE reference row (Fig. 8-1); the entity page's prominence rule keeps such rows out of a curated primary slot. Projected from the claim's tags. */
   base_line_table: z.boolean().optional(),
+  /** The claim's SUBJECT (canon | nutrient | condition slug), authored not inferred (R3 ·
+   * references_resolve gates it). Absent on every pre-2026-07-16 claim; the derive uses it to
+   * route group claims (`about: colloidal-minerals`) onto the 34 plant-derived element pages
+   * without re-inferring aboutness from a fragile regex (metallic-trap-safe). */
+  about: z.array(z.string()).optional(),
 }).passthrough();
 
 /** A deficiency-sign edge inside an essential entry. */

@@ -104,6 +104,14 @@ def _slim_claim(c: dict) -> dict:
     tags = c.get("tags", [])
     if "base-line-program" in tags or "dose-table" in tags:
         out["base_line_table"] = True
+    # `about` (R3 · references_resolve): the claim's SUBJECT (canon | nutrient | condition slug).
+    # Absent on every pre-2026-07-16 claim; emit only when present so the embed stays byte-identical
+    # for the older 1,354 claims. The entity-page derive reads this to route group claims
+    # (about: colloidal-minerals) onto the 34 plant-derived element pages without re-inferring
+    # aboutness from a fragile regex (the metallic trap — the string "colloidal minerals" appears
+    # in Wallach's recommendation AND in his counter-example, so word-matching cannot distinguish).
+    if c.get("about"):
+        out["about"] = c["about"]
     return out
 
 

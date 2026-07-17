@@ -3625,12 +3625,32 @@ def check_claim_text_term_gloss():
                   f"({len(abbrevs)} obscure abbreviations explained in-claim)")
 
 
+# A HEALTH number (dose, %, IU count) has no legitimate home in a glossary definition — the
+# gate exists to catch that smuggling. Historical dates (1997, 1980s, "June 15, 1997") ARE
+# legitimate in product-history entries and are NOT health claims. Strip year-shaped tokens
+# BEFORE the digit check so real health numbers still trip but dates pass. Extended 2026-07-17
+# (R9) for the Mineral-Toddy / SupraLife / Rockland lineage entries; proved by
+# tools/test_glossary_wellformed.py (7-case negative test).
+_GLOSSARY_DATE_TOKEN = re.compile(
+    r"\b(?:19|20)\d{2}s?\b"                         # 1997, 1990s
+    r"|\b\d{1,2}(?=[,\s]+(?:19|20)\d{2})\b"         # 15 in "June 15, 1997" (comma OR space)
+    r"|\b\d{2}s\b"                                  # 80s, 90s
+)
+
+
+def _glossary_definition_has_smuggled_number(plain):
+    """True iff `plain` still contains a digit after every year-shaped token is stripped.
+    Extracted so the negative test in tools/test_glossary_wellformed.py can drive it directly."""
+    return bool(re.search(r"\d", _GLOSSARY_DATE_TOKEN.sub("", plain)))
+
+
 def check_glossary_wellformed():
     """Glossary integrity (SESSION 39 Phase 1): dashboard/assets/data/glossary.json parses,
     every entry has a non-empty term + plain definition + category, terms are unique, and NO
-    definition asserts a number/dose (the glossary is plain-language reference ONLY, never a
-    Wallach claim or target -- keeps it clear of the §00.A source rule). memory:
-    term-gloss-standard."""
+    definition asserts a health number/dose (the glossary is plain-language reference ONLY,
+    never a Wallach claim or target -- keeps it clear of the §00.A source rule). Historical
+    dates in product-history entries pass; health numbers still trip
+    (_glossary_definition_has_smuggled_number). memory: term-gloss-standard."""
     p = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
     if not p.exists():
         return True, "glossary.json not installed (bootstrap-guard)"
@@ -3655,11 +3675,11 @@ def check_glossary_wellformed():
             problems.append(f"{name}: empty definition")
         if not (t.get("category") or "").strip():
             problems.append(f"{name}: missing category")
-        if re.search(r"\d", t.get("plain", "")):
-            problems.append(f"{name}: definition has a digit (glossary must not assert numbers)")
+        if _glossary_definition_has_smuggled_number(t.get("plain", "")):
+            problems.append(f"{name}: definition has a health number (glossary must not assert doses/percentages/IU counts)")
     if problems:
         return False, f"{len(problems)} glossary problem(s): {'; '.join(problems[:6])}"
-    return True, f"glossary.json well-formed -- {len(terms)} plain-language definitions, no numeric assertions"
+    return True, f"glossary.json well-formed -- {len(terms)} plain-language definitions, no smuggled health numbers"
 
 
 _JARGON_SUFFIX = re.compile(

@@ -196,8 +196,8 @@ export function renderSearchCard(claim: SearchClaim): string {
     </summary>
     <div class="kd-ep-claim__body">
       ${short}
-      <div class="kd-ep-claim__answer">${escHTML(claim.answer)}</div>
-      <blockquote class="kd-ep-claim__verbatim">“${escHTML(collapseWS(claim.verbatim))}”</blockquote>
+      <div class="kd-ep-claim__answer">${glossify(claim.answer)}</div>
+      <blockquote class="kd-ep-claim__verbatim">“${glossify(collapseWS(claim.verbatim))}”</blockquote>
       ${cite.length > 0 ? `<div class="kd-ep-claim__cite">— Dr. Joel Wallach · ${escHTML(cite)}</div>` : ''}
       ${tags.length > 0 ? `<div class="kd-ep-claim__tags">${tags}</div>` : ''}
     </div>
@@ -586,6 +586,73 @@ function recordKindRank(k: string): number {
   return i === -1 ? RECORD_KIND_ORDER.length : i;
 }
 
+/**
+ * GROUP-CLAIM propagation (plant-derived / trace_pdm only). Claims authored
+ * `about: [colloidal-minerals]` describe the plant-derived complex AS A WHOLE, not any single
+ * element. They render on all 34 plant-derived entity pages, stored ONCE (never copied 34x),
+ * in a distinct section clearly labelled as SHARED so a reader does not mistake them for
+ * strontium-specific content.
+ *
+ * ABOVE-THE-FOLD STRUCTURE (Luneth 2026-07-17): "any entry above The Full Record" MUST use
+ * the engaging Question → Short Answer → expand for full answer + Wallach quote card — the
+ * same shape Calcium's Worth-Knowing uses (renderSearchCard). We prefer the search-card path,
+ * which requires the claim to have been enriched (search-enrichment.json entry with question +
+ * answer_short + facet). A group claim that lacks enrichment gracefully falls back to the
+ * corpus-shape card so a future addition never silently disappears — but the audible signal is
+ * "enrich, or the card reads flat." Silent no-op on essentials that carry no group_record
+ * (every non-trace_pdm slug).
+ */
+function renderGroupRecord(page: EssentialPage): string {
+  const gr = page.group_record;
+  if (gr === undefined || gr.length === 0) {
+    return '';
+  }
+  const groups = [...gr].sort((a, b) => {
+    const ra = recordKindRank(a.kind);
+    const rb = recordKindRank(b.kind);
+    return ra !== rb ? ra - rb : (a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0);
+  });
+  let total = 0;
+  const kindsHTML = groups.map((g) => {
+    // Prefer the search-enriched shape for the above-the-fold card format (question + short
+    // answer). Any id without enrichment falls back to the corpus-shape card so a future
+    // unenriched addition still renders — never silently vanishes.
+    const cards = g.claim_ids.map((id) => {
+      const sc = getSearchClaim(id);
+      if (sc !== null) {
+        total += 1;
+        return renderSearchCard(sc);
+      }
+      const cc = resolveClaims([id])[0];
+      if (cc === undefined) {
+        return '';
+      }
+      total += 1;
+      return renderRecordClaim(cc);
+    }).filter(s => s.length > 0).join('');
+    if (cards.length === 0) {
+      return '';
+    }
+    return `<details class="kd-ep-kind" open data-family="${escHTML(kindCategory(g.kind))}">
+      <summary><span class="kd-ep-kind__label">${escHTML(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${g.claim_ids.length}</span></summary>
+      <div class="kd-ep-kind__body">${cards}</div>
+    </details>`;
+  }).join('');
+  if (total === 0) {
+    return '';
+  }
+  // "shared across the 34" is the single line that makes the propagation legible — without it, a
+  // reader on strontium's page could read "Wallach says the complex fixes obesity" as a claim
+  // Wallach made specifically about STRONTIUM (the confusion Luneth flagged).
+  return seclabel('About the plant-derived group', 'shared across the 34 plant-derived elements')
+    + `<details class="kd-ep-record kd-ep-record--group" open>
+        <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${total} ${plural(total, 'group claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
+        <div class="kd-ep-record__body">
+          ${kindsHTML}
+        </div>
+      </details>`;
+}
+
 function renderRecord(page: EssentialPage): string {
   if (page.record.length === 0) {
     return '';
@@ -766,6 +833,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}
+    ${renderGroupRecord(page)}
     ${renderRecord(page)}
     ${renderRelatedSection(page)}
   </div>`;

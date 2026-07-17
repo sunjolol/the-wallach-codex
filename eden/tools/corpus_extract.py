@@ -162,7 +162,7 @@ def cmd_finalize(args) -> int:
             errors.append(f"{ctx}: snapped verbatim length {len(exact)} outside 60-1200")
             continue
         seq += 1
-        claims.append({
+        claim = {
             "id": f"WAL-CLM-{short}-{seq:06d}",
             "kind": kind,
             "essentials": rc.get("essentials", []),
@@ -183,7 +183,13 @@ def cmd_finalize(args) -> int:
             "review_state": "draft",
             "superseded_by": None,
             "extracted_at": now, "reviewed_at": None, "reviewed_by": None,
-        })
+        }
+        # `about` is the claim's SUBJECT (Charter R3 · references_resolve validates the slug against
+        # canon | nutrients | conditions). Emit only when non-empty so pre-2026-07-16 claims stay shaped
+        # exactly as before and the field never appears as noise on claims that don't need it.
+        if rc.get("about"):
+            claim["about"] = rc["about"]
+        claims.append(claim)
 
     if errors:
         print(f"FINALIZE FAILED — {len(errors)} error(s), nothing written:")

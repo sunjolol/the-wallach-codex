@@ -211,6 +211,26 @@ def build_data() -> dict:
                 and not c.get("base_line_table")]
         return out
 
+    # ── GROUP-CLAIM PROPAGATION for the plant-derived (trace_pdm) essentials ──
+    # A claim authored `about: [colloidal-minerals]` names its SUBJECT explicitly (R3 · authored,
+    # not inferred from a fragile regex over the verbatim — the metallic trap makes word-matching
+    # unsafe here: Wallach uses the same "colloidal minerals" string for both his recommendation
+    # and his rock-flour counter-example). Every such claim propagates onto every trace_pdm element
+    # page as a SHARED group record, stored once (never copied 34x) and rendered in a distinct
+    # section so a user does not read it as strontium-specific content. The Colloidal Minerals
+    # topic page (Explore) is a separate home fed by search-enrichment.json — not this artifact.
+    group_by_kind: dict = {}
+    for cid, cc in claims.items():
+        if "colloidal-minerals" in (cc.get("about") or []):
+            k = cc.get("kind")
+            if k:
+                group_by_kind.setdefault(k, []).append(cid)
+    # deterministic ordering — the derive byte-compares under derived_artifacts_fresh
+    for k in group_by_kind:
+        group_by_kind[k].sort()
+    group_record = [{"kind": k, "claim_ids": group_by_kind[k]}
+                    for k in _ordered(group_by_kind, KIND_PRIORITY)]
+
     # ── ESSENTIALS (all canon entries; count of `essential:true` is the 90) ──
     essentials_out: dict = {}
     ess_count = 0
@@ -221,7 +241,7 @@ def build_data() -> dict:
         ecorp = embed_ess.get(slug, {})
         cbk = ecorp.get("claims_by_kind", {})
         si_ent = si_entities.get(slug, {})
-        essentials_out[slug] = {
+        rec = {
             "type": "essential",
             "name": e.get("common_name") or e.get("display_name", slug),
             "scientific_name": e.get("display_name", slug),
@@ -238,6 +258,12 @@ def build_data() -> dict:
             "works_with": sorted(works_with.get(slug, set())),       # interaction partners (H1)
             "related": related(slug),                                # co-occurrence (keep-exploring)
         }
+        # Group claims render ONLY on plant-derived (trace_pdm) tiles; every other essential omits
+        # the field entirely (schema is .optional()) so the artifact stays byte-identical for the
+        # 56 non-trace_pdm essentials.
+        if e.get("coverage_kind") == "trace_pdm" and group_record:
+            rec["group_record"] = group_record
+        essentials_out[slug] = rec
 
     # ── CONDITIONS (every corpus-embed condition, i.e. those carrying claims) ──
     conditions_out: dict = {}

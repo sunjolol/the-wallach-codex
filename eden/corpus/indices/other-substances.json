@@ -1945,10 +1945,17 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 53,
+    "claim_count": 58,
     "claims_by_kind": {
       "definition": [
+        "WAL-CLM-DDDL-000116",
+        "WAL-CLM-DDDL-000117",
+        "WAL-CLM-DDDL-000120",
         "WAL-CLM-LETS-000352"
+      ],
+      "mechanism": [
+        "WAL-CLM-DDDL-000118",
+        "WAL-CLM-DDDL-000119"
       ],
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -2071,6 +2078,7 @@
       "white_spots_fingernails"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },

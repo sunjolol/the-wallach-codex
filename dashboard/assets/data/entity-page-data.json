@@ -2817,6 +2817,23 @@
         "arthritis",
         "calcium",
         "osteoporosis"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "vanadium": {
@@ -3365,6 +3382,23 @@
       "related": [
         "birth_defects",
         "cirrhosis"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "arsenic": {
@@ -3419,6 +3453,23 @@
         "leukemia",
         "selenium",
         "zinc"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "gold": {
@@ -3485,6 +3536,23 @@
       "works_with": [],
       "related": [
         "arthritis"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "barium": {
@@ -3520,7 +3588,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "beryllium": {
       "type": "essential",
@@ -3555,7 +3640,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "bromine": {
       "type": "essential",
@@ -3590,7 +3692,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "cerium": {
       "type": "essential",
@@ -3616,7 +3735,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "cesium": {
       "type": "essential",
@@ -3664,6 +3800,23 @@
         "colon_cancer",
         "lung_cancer",
         "sarcoma"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "dysprosium": {
@@ -3692,7 +3845,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "erbium": {
       "type": "essential",
@@ -3720,7 +3890,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "europium": {
       "type": "essential",
@@ -3755,7 +3942,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "gallium": {
       "type": "essential",
@@ -3824,6 +4028,23 @@
         "germanium",
         "lithium",
         "oxygen"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "gadolinium": {
@@ -3852,7 +4073,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "hafnium": {
       "type": "essential",
@@ -3880,7 +4118,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "holmium": {
       "type": "essential",
@@ -3908,7 +4163,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "lanthanum": {
       "type": "essential",
@@ -3943,6 +4215,23 @@
         "chronic_fatigue",
         "candidiasis",
         "chronic_fatigue_syndrome"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "lithium": {
@@ -4056,6 +4345,23 @@
         "magnesium",
         "violent_behavior",
         "blind_rage"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "lutetium": {
@@ -4084,7 +4390,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "niobium": {
       "type": "essential",
@@ -4112,7 +4435,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "neodymium": {
       "type": "essential",
@@ -4140,7 +4480,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "nickel": {
       "type": "essential",
@@ -4191,6 +4548,23 @@
         "iron",
         "vitamin-b12",
         "zinc"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "praseodymium": {
@@ -4217,7 +4591,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "rubidium": {
       "type": "essential",
@@ -4243,7 +4634,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "rhenium": {
       "type": "essential",
@@ -4269,7 +4677,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "scandium": {
       "type": "essential",
@@ -4295,7 +4720,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "samarium": {
       "type": "essential",
@@ -4321,7 +4763,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "tin": {
       "type": "essential",
@@ -4385,6 +4844,23 @@
         "cancer",
         "magnesium",
         "male_pattern_baldness"
+      ],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
       ]
     },
     "tantalum": {
@@ -4411,7 +4887,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "terbium": {
       "type": "essential",
@@ -4437,7 +4930,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "titanium": {
       "type": "essential",
@@ -4463,7 +4973,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "thulium": {
       "type": "essential",
@@ -4489,7 +5016,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "yttrium": {
       "type": "essential",
@@ -4516,7 +5060,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "ytterbium": {
       "type": "essential",
@@ -4542,7 +5103,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "zirconium": {
       "type": "essential",
@@ -4568,7 +5146,24 @@
       "search": [],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [],
+      "group_record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000118",
+            "WAL-CLM-DDDL-000119"
+          ]
+        },
+        {
+          "kind": "definition",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000120"
+          ]
+        }
+      ]
     },
     "vitamin-a": {
       "type": "essential",

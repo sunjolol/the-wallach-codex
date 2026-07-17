@@ -1222,6 +1222,52 @@
       "term": "Zumbani",
       "plain": "an African medicinal herb (Lippia javanica) used as a tonic for vitality and potency",
       "category": "nutrition"
+    },
+    {
+      "term": "Mineral Toddy",
+      "plain": "Historical name (1980s-90s) for the plant-derived colloidal mineral liquid Wallach built his framework around. Made by Rockland U.S.A. (Elmer Heinrich) from a prehistoric plant deposit. Distributed through Eagle, which was renamed SupraLife International in 1998. Wallach founded American Longevity in 1997 (today's Youngevity). Youngevity later acquired SupraLife; today's direct descendants in the Youngevity line are Ultra Body Toddy and Cal Toddy.",
+      "category": "product-history",
+      "aliases": [
+        "Rockland Mineral Toddy",
+        "the Toddy"
+      ]
+    },
+    {
+      "term": "Rockland U.S.A.",
+      "plain": "The historical manufacturer of Mineral Toddy - the company that mined a prehistoric plant deposit and produced the original plant-derived colloidal mineral liquid Wallach adopted at Hospital Santa Monica. Elmer Heinrich ran it and continued supplying Wallach's American Longevity line (later Youngevity) from 1997 onward.",
+      "category": "product-history",
+      "aliases": [
+        "Rockland"
+      ]
+    },
+    {
+      "term": "SupraLife",
+      "plain": "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
+      "category": "product-history",
+      "aliases": [
+        "Supralife",
+        "SupraLife International"
+      ]
+    },
+    {
+      "term": "Eagle",
+      "plain": "Wallach's original distributor company - the one that recruited him after his 'Dead Doctors Don't Lie' lecture reached its distributors. Renamed itself SupraLife International in 1998.",
+      "category": "product-history",
+      "aliases": [
+        "Soaring Eagle"
+      ]
+    },
+    {
+      "term": "American Longevity",
+      "plain": "The name Youngevity was founded under, in March 1997. Wallach called Elmer Heinrich at Rockland the day the company opened and secured mineral supply for the new line. American Longevity paid its first commissions on June 15, 1997, and later renamed to Youngevity.",
+      "category": "product-history",
+      "aliases": []
+    },
+    {
+      "term": "Virgin Earth",
+      "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
+      "category": "product-history",
+      "aliases": []
     }
   ]
 }
