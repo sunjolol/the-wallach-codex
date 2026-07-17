@@ -4008,7 +4008,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach describes Biochemics (Schuessler Cell Salts), a 19th-century system of medical therapy devised by the physician and chemist Dr. Wilhelm Heinrich Schuessler. Schuessler based it on analyzing the ashes of cremated human bodies, in which he found twelve mineral 'salts' he considered basic and essential to human health. Influenced by the chemist Dr. Liebig, he held that the body's cells are composed of organic material, water, and 'salts.' In more recent times an additional 30 trace elements have been recognized and added to the original twelve cell salts. (Scope note: cell-salt therapy is a homeopathy-class system that classically uses homeopathic — highly diluted — doses; included here as Wallach's descriptive account of the modality, not as a dosing protocol.)",
+      "claim_text": "Wallach describes Biochemics (Schuessler Cell Salts), a 19th-century system of medical therapy devised by the physician and chemist Dr. Wilhelm Heinrich Schuessler. Schuessler based it on analyzing the ashes of cremated human bodies, in which he found twelve mineral 'salts' he considered basic and essential to human health. Influenced by the chemist Dr. Liebig, he held that the body's cells are composed of organic material, water, and 'salts.' In more recent times an additional 30 trace elements have been recognized and added to the original twelve cell salts.",
       "verbatim": "Biochemics (Schuessler Cell Salts) is\na system of medical therapy devised in the last\ncentury by a physician and chemist, Dr.\nWilhelm Heinrich Schuessler. He based his\n\"science\" on the analysis of the ashes of cremated human bodies. In these ashes Schuessler\nfound twelve (12) \"salts\" (minerals) basic and\nessential to human health",
       "locator": {
         "book": "lets-play-doctor",
@@ -4950,7 +4950,7 @@
         "achlorhydria"
       ],
       "symptoms": [],
-      "claim_text": "For achlorhydria (loss of stomach acid, common with aging and stress, affecting over 75% of people past age 50, and which untreated leads to vitamin B-12, calcium, and protein deficiencies plus new food allergies), Wallach's treatment is betaine hydrochloride (betaine HCl) 75-250 mg taken 15-20 minutes before each meal; in its absence, 1-2 oz of vinegar with gentian (Gentian) before meals; plant-derived colloidal minerals also help the stomach produce acid.",
+      "claim_text": "For achlorhydria (loss of stomach acid, common with aging and stress, with 75% of people over age 50 requiring supplementation, and which untreated leads to vitamin B-12, calcium, and protein deficiencies plus new food allergies), Wallach's treatment is betaine hydrochloride (betaine HCl) 75-250 mg taken 15-20 minutes before each meal; in its absence, 1-2 oz of vinegar with gentian (Gentian) before meals; plant-derived colloidal minerals also help the stomach produce acid.",
       "verbatim": "Failure to deal\nwith achlorhydria will result in B-12, calcium\nand protein deficiencies and the onset of new\nfood allergies as a result of absorption of\npartially digested polypeptides (relatively large\nprotein fragments).\nTreatment includes supplementation of\nbetaine HCl at the rate of 75-250 mg 15-20\nminutes before each meal. In the absence of\nbetaine HCl 1-2 oz. of vinegar with English",
       "locator": {
         "book": "lets-play-doctor",
@@ -5117,7 +5117,7 @@
         "aids"
       ],
       "symptoms": [],
-      "claim_text": "For AIDS (acquired immune deficiency syndrome, thought to be caused by the HIV virus), Wallach stresses prevention as the 'magic bullet' (avoid intravenous recreational drugs, unsafe sex, and contaminated blood). Once contracted, he recommends a vigorous program of anti-viral medications (Ribavirin and Isoprinosin) and immune support (Levamisol, hydrazine sulfate), plus vitamin C to bowel tolerance, vitamin A 300,000 IU per day as beta carotene, zinc 50 mg three times daily, adrenal cortical extract (ACE) 10 drops three times daily sublingually, selenium 1000 mcg per day orally or by injection, vitamin E 1000 IU per day, herbs such as garlic, evening primrose oil, and goldenseal, and injectable thymus.",
+      "claim_text": "For AIDS (autoimmune deficiency syndrome), Wallach stresses prevention as the 'magic bullet' (avoid intravenous recreational drugs, unsafe sex, and contaminated blood). Once contracted, he recommends a vigorous program of anti-viral medications (Ribavirin and Isoprinosin) and immune support (Levamisol, hydrazine sulfate), plus vitamin C to bowel tolerance, vitamin A 300,000 IU per day as beta carotene, zinc 50 mg three times daily, adrenal cortical extract (ACE) 10 drops three times daily sublingually, selenium 1000 mcg per day orally or by injection, vitamin E 1000 IU per day, herbs such as garlic, evening primrose oil, and goldenseal, and injectable thymus.",
       "verbatim": "Once AIDS is contracted, a vigorous\nprogram ofanti-viral medicationsO.e., Ribavirin\nand Isoprinosin) and immune support\n(Levamisol , hydrazine sulfate) are indicated.\nVitamin C to bowel tolerance, 300,000 IU of\nvitamin A per day as beta carotene, 50 mg zinc\nt.i.d., ACE (adrenal cortical extract) 10 drops\nt.i.d. sublingual, selenium 1000 mcg/day orally",
       "locator": {
         "book": "lets-play-doctor",
@@ -14289,7 +14289,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach defines 'metabolic therapy' as the resolving or curing of disease processes by correcting the whole-body metabolism through nutrition, herbs, homeopathy, acupuncture, manipulation and hydrotherapy. (Captured for the search corpus as a general definition of his therapeutic approach.)",
+      "claim_text": "Wallach defines 'metabolic therapy' as the resolving or curing of disease processes by correcting the whole-body metabolism through nutrition, herbs, homeopathy, acupuncture, manipulation and hydrotherapy.",
       "verbatim": "METABOLIC THERAPY: is the resolving or\ncuring of disease processes by conecting the\nwhole body metabolism through nutrition,\nherbs, homeopathy, acupuncture, manipulation and hydrotherapy",
       "locator": {
         "book": "lets-play-doctor",
@@ -15342,7 +15342,7 @@
         "ornithosis"
       ],
       "symptoms": [],
-      "claim_text": "Ornithosis (parrot fever, also called psittacosis) is an infectious disease caused by the bacterium Chlamydia psittaci. It is caught by inhaling contaminated dust from the feathers, cage bedding, or droppings of infected birds — parrots, parakeets, lovebirds, canaries, and pigeons — and produces an 'atypical pneumonia.' Symptoms include fever, chills, weakness, loss of appetite, and a dry cough that becomes productive; early on it can be mistaken for flu, Legionnaires' disease, or Q fever, so exposure to birds (especially sick ones) is the key diagnostic clue, confirmed by a blood test. Treatment is the antibiotic tetracycline by mouth at 250-500 milligrams four times a day for 10-14 days, with the cough controlled by codeine and strict, enforced bed rest — untreated, parrot fever can be fatal.",
+      "claim_text": "Ornithosis (parrot fever) is an infectious disease caused by the bacterium Chlamydia psittaci. It is caught by inhaling contaminated dust from the feathers, cage bedding, or droppings of infected birds — parrots, parakeets, lovebirds, canaries, and pigeons — and produces an 'atypical pneumonia.' Symptoms include fever, chills, weakness, loss of appetite, and a dry cough that becomes productive; early on it can be mistaken for flu, Legionnaires' disease, or Q fever, so exposure to birds (especially sick ones) is the key diagnostic clue, confirmed by a blood test. Treatment is the antibiotic tetracycline by mouth at 250-500 milligrams four times a day for 10-14 days, with the cough controlled by codeine and strict, enforced bed rest — untreated, parrot fever can be fatal.",
       "verbatim": "tetracycline orally at 250-500 mg q.i.d. for 10-\n14 days; the cough should be controlled with\ncodeine and strict bed rest should be enforced",
       "locator": {
         "book": "lets-play-doctor",
@@ -15760,7 +15760,7 @@
         "varicose_veins"
       ],
       "symptoms": [],
-      "claim_text": "Phlebitis (varicose veins) is most common in the hemorrhoidal veins and the veins of the legs; constipation and a static, upright standing position are the primary causes. Treatment should include drinking eight glasses of water a day and two heaping tablespoons of nutritional fiber in a glass of water at bedtime, vitamin E at 800-1,200 IU per day, B-complex at 50 milligrams of each three times a day, vitamin C to bowel tolerance, copper at 2 milligrams per day, essential fatty acids at 5 grams three times a day, and herbs including arnica (Arnica montana), comfrey (Symphytum officinale), rue (Ruta graveolens), yellow sweet clover (Melilotus officinalis), and cascara sagrada (Rhamnus purshianus). [The book's printed 'copper at 2 gm' is corrected here to 2 mg — copper at 2 grams is toxic and is a clear typeset error for the standard 2 mg dose.]",
+      "claim_text": "Phlebitis (varicose veins) is most common in the hemorrhoidal veins and the veins of the legs; constipation and a static, upright standing position are the primary causes. Treatment should include drinking eight glasses of water a day and two heaping tablespoons of nutritional fiber in a glass of water at bedtime, vitamin E at 800-1,200 IU per day, B-complex at 50 milligrams of each three times a day, vitamin C to bowel tolerance, copper at 2 milligrams per day, essential fatty acids at 5 grams three times a day, and herbs including arnica (Arnica montana), comfrey (Symphytum officinale), rue (Ruta graveolens), yellow sweet clover (Melilotus officinalis), and cascara sagrada (Rhamnus purshianus).",
       "verbatim": "at bedtime, vitamin E at 800-1,200 IU/day, B-complex at 50 mg each t.i.d., vitamin C to\nbowel tolerance, copper at 2 mg per day,\nessential fatty acids at 5 gm t.i.d., and herbs\nincluding arnica (Arnica montana), comfrey\n(Symphytum officinale), rue (Ruta graveolens),\nyellow sweet clover (Melilotus officinalis) and\ncascara sagrada (Rhamnus purshiana",
       "locator": {
         "book": "lets-play-doctor",
