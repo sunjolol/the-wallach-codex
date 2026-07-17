@@ -64,6 +64,39 @@ how many OTHERS are truncated mid-passage.** That is an open question, not a kno
 6. **`pdm_coverage_derive.py:19`'s prose is STALE** ("FOUNDATIONAL 4 / INDIVIDUALLY DOSED 22 /
    PLANT DERIVED 34"; actually 5 / 20 / 34 + 1 mirror). Prose only, no gate reads it. Fix in the
    session that next touches that file.
+7. **★ NEW (2026-07-16) — `coverage_layout_derive.py:143-159`'s rationale comment is FACTUALLY
+   FALSE on its headline example**, and the same false story is repeated in
+   `test_pdm_group_goals_wallach_sourced.py` case 5's docstring and (until now) in this handoff.
+   The comment says LETS-000152 (backache) carries the `colloidal-minerals` tag *"only because the
+   miner's window bled into the NEXT entry, where 'Colloidal tin' appears under BALDNESS."*
+   **The book refutes it.** `lets-play-doctor-fourth-edition-1995.txt` char **185050** — INSIDE the
+   backache entry (184706-185771) — reads *"plant derived colloidal minerals have been reported to
+   prevent and reverse back problems without surgery"*, **721 chars BEFORE** the BALDNESS heading
+   (185771). So on LETS-000152 the **TAG is RIGHT** and the **VERBATIM rule UNDER-matches**: the
+   claim's `char_offset` (185383) lands *after* Wallach's colloidal sentence and truncates it out.
+   The comment states **backwards which instrument errs**. Same shape as item 1 (LETS-000243).
+   ★ Its second example is false too: -000204's tag is `colloidal-selenium`, not
+   `colloidal-minerals` — a tag rule would never have matched it.
+   ✓ **The verbatim rule itself still stands** on the surviving evidence (LETS-000322 insomnia,
+   -000374 muscle_cramps are genuine over-inclusions), and **no shipped dot is wrong** — backache
+   and cardiomyopathy are in no goal's conditions. **What is broken is the recorded WHY**, in three
+   places at once. A drifted comment is a defect (§00.B · `typescript.md` rule 1). Fix the comment,
+   the docstring, and case 5's synthetic world together.
+8. **★ NEW (2026-07-16) — `test_pdm_group_goals_wallach_sourced.py` case 4 does not test what it
+   claims to test.** It is labelled *"★ THE CASE THAT EARNS THE GATE"* — the proof that reading the
+   verbatim beats reading `other_substances` — but the fixture factory (`:95-96`) never emits an
+   `other_substances` key, so the case **cannot distinguish tag from verbatim**. Mutation-tested:
+   a tag-reading mutant behaves IDENTICALLY under case 4 (and 7 of the 10). The suite still kills
+   the mutant, but only via cases 6 + 10 — **both by accident**. R9: tighten case 4 to actually
+   plant the tag it claims to defeat.
+9. **★ NEW (2026-07-16) — the gate's `external` classification is TRANSITIVE, not direct.**
+   `pdm_group_goals_wallach_sourced` reads only our own files; its book-anchoring is inherited from
+   `corpus_verify` being green in the same session. It follows house precedent (`invariants.py:5516`
+   sets it), but "20 external" is the number Luneth is told the green MEANS — so whether transitive
+   externality counts is his call. Its honest-limit note also omits that the goal→`conditions`
+   mapping it joins through is OUR curation with no external anchor; the sibling
+   `goal_members_actionable` discloses exactly that limit, this one does not (R7: sold marginally
+   above its enforcement).
 
 ### ★★★ THE PROCESS LESSONS FROM THIS SESSION — the expensive ones
 - **FOUR character-window instruments each returned a DIFFERENT answer** to "how many goals?"
@@ -146,7 +179,20 @@ work for way too little gain"*) · D6→**D7 REVERSED** (P1/P2 pillar work DROPP
 into an element view — doesn't need to be done now but these 'special cases' need to be logged and
 remembered so we can apply them in a later 'clarity pass'."** ★ Rule 1: **a new special case lands
 there in the SAME CHUNK that creates it.**
-⚠ **OWED — NOT YET REGISTERED (do this first next session):** the plant-derived GROUP's goal
-membership is a new special case. A user clicking STRONTIUM sees a tile with no individual
-target that nonetheless belongs to two goals *as part of a group*. That behaviour is invisible to
-the clarity pass until it is in that file.
+✓ **REGISTERED 2026-07-16 — entry 9.** The plant-derived GROUP's goal membership is now in that
+file, with every fact MEASURED rather than inherited.
+
+★ **THE SENTENCE THAT USED TO SIT HERE WAS FALSE IN BOTH HALVES** — recorded so no session
+re-inherits it. It read: *"A user clicking STRONTIUM sees a tile with no individual target that
+nonetheless belongs to two goals as part of a group."*
+- **Strontium's individual goal membership is 0, not 2** (0 of 14 goals name it; negative control —
+  the same matcher finds calcium in 12). **The group names 9, not 2.** The "two" was a real number
+  read off the **WRONG PATH**: `WAL-CLM-DDDL-000032` maps osteoporosis + arthritis → stronger-bones
+  + less-joint-pain, which is strontium's **COUNTERFACTUAL** membership if `EXCLUDE_PLANT_DERIVED`
+  were `False` — precisely what the flag suppresses. Copying it forward would have sent the clarity
+  pass to register the wrong behaviour on the wrong element.
+- **"A user clicking STRONTIUM sees…" — they see nothing of the sort.** The dots render on the
+  PLANT DERIVED **subsection label** only, never on a tile, and **the Coverage tile click is
+  INERT**. Group goal-membership is absent from the entity page entirely. The real debt is bigger
+  than the sentence implied: the surface where the question gets asked is silent, and the surface
+  that answers it is one 7×7 px dot on a heading spanning 34 tiles.

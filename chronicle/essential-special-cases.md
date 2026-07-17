@@ -71,6 +71,19 @@ Of the 91 essentials on the board, **only 38 behave "normally"** — a Wallach n
 - **★ Absence-as-state is a known styling root cause** — the state has NO class; it is the ABSENCE of one, so it cannot be styled independently of the chassis.
 - **User must be told:** the difference between "Wallach gave no number" and "you are not covered". Today they are visually indistinguishable from each other in the worst way — one is about OUR data, the other about YOUR stack.
 
+### 9 · THE 34 PLANT DERIVED, AGAIN — goal-nameable ONLY as a group, and the element page never says so (REGISTERED 2026-07-16)
+
+_Entry 6 registers what the 34 are MEASURED against (one shared verdict). This entry registers what they are NAMED BY (goals). Different behaviour, same 34 — both are owed to the clarity pass._
+
+- **Behaviour:** no member of the 34 can be named by a goal **individually** — `goals[].members` never contains one. The GROUP enters instead: **9 of the 14 goals** carry `groups: ["plant-derived"]`, rendered as **one dot per naming goal** on the PLANT DERIVED **subsection label**. Hovering a goal chip isolates its dot.
+- **The 9 that name the group:** stronger-bones · less-joint-pain · sharper-thinking · better-mood · healthy-heart · stronger-immunity · skin-and-hair · hormones-fertility · muscle-strength.
+  **The 5 that do not** — no dot, an honest gap, **do not "fill" them**: more-energy · better-sleep · blood-sugar ("Blood-sugar balance") · digestion ("Better digestion") · healthy-weight ("A healthy weight").
+- **Why the group is nameable at all:** Luneth's question (2026-07-16) — *does Wallach attribute benefits to the plant-derived COMPLEX as a whole?* He does, for 9 of the 14 goals, in his own words. The rule reads the claim's **OWN VERBATIM** (`_GROUP_RE = /colloidal\s+minerals?/i` over de-hyphenated text, search-only excluded — `eden/tools/coverage_layout_derive.py:181-187`), never the `other_substances` tag. 48 of 1,359 sealed claims match. Gated by `pdm_group_goals_wallach_sourced` (critical).
+- **Why the individual stays excluded:** `EXCLUDE_PLANT_DERIVED = True` (`coverage_layout_derive.py:68`) subtracts every `target.kind == "trace_pdm"` slug from `goals[].members` (`:224`). **Scope, measured:** it removes them from **goal membership ONLY** — all 34 remain tiles on the board, keep their `trace_pdm` target entry, and the denominator is always 90. Gated by `goal_members_actionable`.
+- **★ THE USER-FACING HOLE — the whole reason this is registered.** A member's group goal-membership is visible in **exactly ONE place in the app**: a 7×7 px dot on the PLANT DERIVED subsection label. It is **absent from the element's own entity page**, and the Coverage tile click that would take you there is **inert**. So a user asking *"why is strontium here, what is it for?"* has **no path to the answer**: the surface that would explain it never mentions goals, and the surface that shows goals is a dot on a heading spanning 34 tiles.
+- **★ STRONTIUM IS THE WORKED EXAMPLE — and the handoff got it wrong. Do not re-inherit the error.** `chronicle/next-chunk.md` said strontium *"belongs to two goals as part of a group."* **Both halves are false.** Its individual membership is **0** (measured: 0 of 14 goals name it; negative control — the same matcher finds calcium in 12), and the group names **9**, not 2. The "two" is a real number off the **wrong path**: `WAL-CLM-DDDL-000032` (*"Deficiencies of strontium are associated with certain types of Ca and boron resistant osteoporosis and arthritis"*) maps osteoporosis + arthritis → stronger-bones + less-joint-pain — strontium's **counterfactual** membership if `EXCLUDE_PLANT_DERIVED` were `False`, i.e. exactly what the flag suppresses. ★ The signed-off demo's baked data has this same bug (it lists strontium under both goals while its own stated rule forbids it); **we follow the demo's RULE, not its data** (`coverage_layout_derive.py:46-57`).
+- **User must be told:** (a) these 34 are **required**, but Wallach never itemises them — so no goal can name one *by itself*; (b) what he names is the **complex as a whole**, for 9 of the 14 goals; (c) the 5 goals with no dot are an **honest silence**, not a failure of the element. ★ The telling has to land on the **entity page**, because that is where the question gets asked and today that page is silent on all three.
+
 ---
 
 ## Scoreboard — how much of the board is a special case
@@ -82,6 +95,7 @@ Of the 91 essentials on the board, **only 38 behave "normally"** — a Wallach n
 | Green by fiat (H·C·N·O) | 4 |
 | Green by a zero target (phosphorus) | 1 |
 | One shared verdict (PLANT DERIVED) | 34 |
+| Goal-nameable only as a GROUP, never individually (PLANT DERIVED) | 34 |
 | One shared budget (omega-3 + omega-6) | 2 |
 | Zero claims by his position (omega-9) | 1 |
 | Shares another essential's verdict (cobalt) | 1 |
