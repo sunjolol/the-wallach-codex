@@ -1911,7 +1911,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Isoleucine is a hydrophobic, branched-chain amino acid that is both glucogenic and ketogenic. Wallach explains that after transamination its carbon skeleton can be converted to succinyl coenzyme A and fed into the citric-acid (Krebs) cycle for oxidation or routed to oxaloacetate for gluconeogenesis (glucose production), while its acetyl coenzyme A portion -- which mammals cannot convert back to carbohydrate -- is used to make ketone bodies or fatty acids. In his words: 'Isoleucine is both a glucogenic and ketogenic amino acid. Following transamination with alphaketogluterate, the carbon skeleton can be converted into Succinyl CoA, and then fed into the tricarboxylic acid (TCA) cycle for oxidation, or converted into oxaloacetate for gluconeogenesis (ie, glucogenic).'",
+      "claim_text": "Isoleucine is a hydrophobic amino acid that is both glucogenic and ketogenic. Wallach explains that after transamination its carbon skeleton can be converted to succinyl coenzyme A and fed into the citric-acid (Krebs) cycle for oxidation or routed to oxaloacetate for gluconeogenesis (glucose production), while its acetyl coenzyme A portion -- which mammals cannot convert back to carbohydrate -- is used to make ketone bodies or fatty acids. In his words: 'Isoleucine is both a glucogenic and ketogenic amino acid. Following transamination with alphaketogluterate, the carbon skeleton can be converted into Succinyl CoA, and then fed into the tricarboxylic acid (TCA) cycle for oxidation, or converted into oxaloacetate for gluconeogenesis (ie, glucogenic).'",
       "verbatim": "Isoleucine is both a glucogenic and ketogenic amino acid. Following\ntransamination with alphaketogluterate, the carbon skeleton can be converted\ninto Succinyl CoA, and then fed into the TCA cycle for oxidation, or converted\ninto oxaloacetate for gluconeogenesis (ie, glucogenic).",
       "locator": {
         "book": "epigenetics",
@@ -3374,7 +3374,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In Epigenetics, Wallach's entry for hafnium -- a trace metal -- gives only its natural distribution: its concentration in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, soil, and marine and land plants and animals. He assigns it no specific human deficiency disease or nutritional function here. This is consistent with how little is individually established for many of the trace and rare-earth minerals, which Wallach treats broadly as life-supporting elements while saying little element-by-element.",
+      "claim_text": "In Epigenetics, Wallach's entry for hafnium -- a trace metal -- gives only its natural distribution: its concentration in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, soil, and marine and land plants and animals. He assigns it no specific human deficiency disease or nutritional function here.",
       "verbatim": "Hf - Hafnium is found in igneous rocks at 3 ppm; shale at 2.8 ppm; sandstone\nat 3.4 ppm; limestone at 0.5 ppm",
       "locator": {
         "book": "epigenetics",
@@ -3445,7 +3445,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In Epigenetics, Wallach's entry for holmium -- a rare-earth metal -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably concentrated in hickory, Carya species), and marine and land animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here -- reflecting how little is individually established for the rare-earth trace minerals, which Wallach treats broadly as life-supporting while saying little element-by-element.",
+      "claim_text": "In Epigenetics, Wallach's entry for holmium -- a rare-earth metal -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably concentrated in hickory, Carya species), and marine and land animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here.",
       "verbatim": "Ho - Holmium, a Rare Earth, is found in igneous rocks at 1.2 ppm; in shale at\n0.6 ppm; sandstone at 0.51 ppm; limestone at 0.17 ppm",
       "locator": {
         "book": "epigenetics",
@@ -3641,7 +3641,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In Epigenetics, Wallach's entry for lutetium (spelled 'Lutecium' in the book) -- a rare-earth element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably hickory, Carya species) and animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here, reflecting how little is individually established for the rare-earth trace minerals, which Wallach treats broadly as life-supporting while saying little element-by-element.",
+      "claim_text": "In Epigenetics, Wallach's entry for lutetium (spelled 'Lutecium' in the book) -- a rare-earth element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably hickory, Carya species) and animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here.",
       "verbatim": "Lu - Lutecium, a rare earth element, is found in igneous rocks at 0.5 ppm; shale\nat 0.33 ppm; sandstone at 0.096 ppm",
       "locator": {
         "book": "epigenetics",
@@ -5813,7 +5813,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Documenting the traits of the healthy traditional diets he endorses (via Weston Price), Wallach notes that total fat ran from 30 to 80 percent of calories, yet only about four percent of calories came from polyunsaturated oils; the great majority of fat calories were saturated and monounsaturated — the opposite of the modern seed-oil-heavy diet. In his words: \"Total fat content of traditional tribal diets varied between 30 to 80 percent of calories; however, only four percent of calories came from polyunsaturated oils that were found in whole grains, legumes, nuts, fish, animal fats, and vegetables. The remainder of the fat calories was in the form of saturated and monounsaturated fatty acids.\"",
+      "claim_text": "Documenting the traits of the healthy traditional diets he endorses (via Weston Price), Wallach notes that total fat ran from 30 to 80 percent of calories, yet only about four percent of calories came from polyunsaturated oils; the great majority of fat calories were saturated and monounsaturated. In his words: \"Total fat content of traditional tribal diets varied between 30 to 80 percent of calories; however, only four percent of calories came from polyunsaturated oils that were found in whole grains, legumes, nuts, fish, animal fats, and vegetables. The remainder of the fat calories was in the form of saturated and monounsaturated fatty acids.\"",
       "verbatim": "Total fat content of traditional tribal diets varied between 30 to 80\npercent of calories; however, only four percent of calories came from\npolyunsaturated oils that were found in whole grains, legumes, nuts,\nfish, animal fats, and vegetables. The remainder of the fat calories was\nin the form of saturated and monounsaturated fatty acids.",
       "locator": {
         "book": "epigenetics",
@@ -6012,7 +6012,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach points out that gluten intolerance is nothing new -- a negative reaction to eating grain that Egyptian and Greek physicians already recognized thousands of years ago, long before modern medicine named celiac disease. In his words: \"Gluten intolerance, as a negative reaction to grain consumption, was recognized by the Egyptians and Greek physicians thousands of years ago.\"",
+      "claim_text": "Wallach points out that gluten intolerance is nothing new -- a negative reaction to eating grain that Egyptian and Greek physicians already recognized thousands of years ago. In his words: \"Gluten intolerance, as a negative reaction to grain consumption, was recognized by the Egyptians and Greek physicians thousands of years ago.\"",
       "verbatim": "Gluten intolerance, as a negative reaction to grain consumption, was recognized\nby the Egyptians and Greek physicians thousands of years ago.",
       "locator": {
         "book": "epigenetics",
@@ -6117,7 +6117,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Citing Weston Price, Wallach names butter as a leading source of fat-soluble vitamins (A and D) — traditional diets delivered roughly 10 times these versus the modern American diet — and those fat-soluble vitamins are the catalysts required for efficient mineral absorption, making butter an absorption-enabler rather than a food to shun. In his words: \"at least ten times the fat-soluble vitamins from animal foods such as butter, fish eggs, shellfish, organ meats, and animal fats\".",
+      "claim_text": "Citing Weston Price, Wallach names butter as a leading source of fat-soluble vitamins (A and D) — traditional diets delivered at least 10 times these versus the modern American diet — and those fat-soluble vitamins are the catalysts required for efficient mineral absorption, making butter an absorption-enabler rather than a food to shun. In his words: \"at least ten times the fat-soluble vitamins from animal foods such as butter, fish eggs, shellfish, organ meats, and animal fats\".",
       "verbatim": "they provided at least\nfour times the water-soluble vitamins, calcium and other minerals, and at least\nten times the fat-soluble vitamins from animal foods such as butter, fish eggs,\nshellfish, organ meats, and animal fats—the very cholesterol-rich foods now\nshunned by the American public as unhealthful.",
       "locator": {
         "book": "epigenetics",
@@ -6593,7 +6593,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Yes, and it matters more than it first sounds. Fish livers and shellfish are one of the few sources of the fat-soluble factor Weston Price named 'Activator X' — now believed to be vitamin K2 — which every healthy traditional culture had in its diet. Its importance is all about absorption: Price found that the fat-soluble vitamins A, D and Activator X act as the catalysts that let the body actually take up minerals and use protein, and that without them a person cannot absorb minerals no matter how abundant they are in the food. Those primitive diets supplied roughly 10 times the fat-soluble vitamins of the modern American diet — which is a large part of why they were so free of degenerative disease. In his words: \"present in fish livers and shellfish, organ meats, and butter\"",
+      "claim_text": "Yes, and it matters more than it first sounds. Fish livers and shellfish are one of the few sources of the fat-soluble factor Weston Price named 'Activator X' — now believed to be vitamin K2 — which every healthy traditional culture had in its diet. The fat-soluble vitamins matter for absorption: Price found that A and D act as the catalysts that let the body actually take up minerals and use protein, and that without them a person cannot absorb minerals no matter how abundant they are in the food. Those primitive diets supplied at least 10 times the fat-soluble vitamins of the modern American diet — which is a large part of why they were so free of degenerative disease. In his words: \"present in fish livers and shellfish, organ meats, and butter\"",
       "verbatim": "Dr. Price discovered an additional fat-soluble nutrient, which he labeled\n“Activator X,\" that is present in fish livers and shellfish, organ meats, and butter\nmade from milk from cows that eat rapidly growing green grass in the Spring and\nFall. All primitive cultures had a source of Activator X, now thought to be vitamin\nK,, in their diets.",
       "locator": {
         "book": "epigenetics",
