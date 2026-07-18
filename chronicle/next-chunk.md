@@ -1,8 +1,21 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-18, session close)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-18, session 2 close)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **76/76**. Corpus sealed at **kv=353**, **1335 claims** — **UNCHANGED this session. Nothing was edited, nothing sealed. The whole session was READ-ONLY.**
-> Luneth chose the full bulk faithfulness sweep, in batches. Batch 1 finished; batch 2 was **STOPPED BY HIM PART-WAY** — weekly usage jumped 60% → 85%. Everything recovered is saved below.
+> Board **77/77** (new gate `term_gloss_ratified_present`). Corpus sealed at **kv=354**, **1335 claims** — 27 claim_texts edited + sealed this session (no adds, no purges).
+> **Weekly usage ~89–92%, ceiling 93% (his). NO AGENT FLEETS. Deterministic Python only until the weekly resets.**
+
+# ★★★★ PARKED BUT NOT FORGOTTEN — his explicit words, 2026-07-18
+He wants the corpus **pristine before** moving to the plant-derived mineral enrichment + the Regimen/Scanner rebuilds, and he set the bar: **"96.9% precision isn't good enough, I want 99%"** — while refusing to spend millions of tokens getting there. He is eager for the next tasks but **will not cut corners on quote fidelity**. Nothing below is optional; it is deferred for budget, not dropped.
+
+| Parked item | Count | Where | Note |
+|---|---|---|---|
+| Hedge instances, tier **weak** | 38 inst / 33 claims | `temporary/audit-2026-07-17/hedge-candidates.json` | number found only in a ±3500 book window — the flat occurrence may be a DIFFERENT mention ([[span-presence-is-not-evidence]]). Needs per-instance source-sentence checking, NOT window matching. |
+| Hedge instances, tier **range** | 9 inst / 8 claims | same file | "about 7.5 to 8.5" where the source states the span flat |
+| Hedge instances, tier **date** | 10 inst / 5 claims | same file | "around 1,000 BC" — era approximation; probably legitimate, confirm and close |
+| Ratification queue | **149** | see the table below | 36 worth-a-look + 8 controls + 23 batch-1 + 82 batch-2 |
+| Never-audited claims | 127 | `bulk-sweep/never-audited-ids.json` | ~11M tokens at the measured rate — the last hole in the sweep denominator |
+
+**The hedge scan is reusable and free** — `scratchpad/hedgescan.py` + `hedgetier.py` (regenerate any time; deterministic regex, zero agents). Positive control re-found all 4 agent-discovered instances; tier-1 precision measured 31/32.
 
 ---
 
@@ -22,17 +35,23 @@
 ## ★ THE BUG THAT COST THE VERIFICATIONS (fix before resuming)
 Batch 2 was fired as ONE workflow of 830 items. In a `pipeline()`, stage-2 agents join the SAME concurrency queue as stage-1 agents — so with 830 audits queued ahead of them, **every verify agent starved and none ever got a slot.** Batch 1 (209 items) worked only because its queue drained. **Never again put more items in one pipeline run than you are willing to lose the second stage of.** Cap a run at ~200 items, or run the stages as separate workflows.
 
-## ★ THE CHEAP NEXT STEP (do this first, it is small)
-**Verify the 101 batch-2 candidates** — verify-stage ONLY, ~101 agents, a small fraction of a sweep. Feed each candidate's `claim_id` + `concern` + `proposed_edit` (all in `batch2-PARTIAL-results.json` → `unverified_flag_detail[]`) to the adversarial verifier prompt in the saved script. Expect ~12 to be reverted. Survivors join the ratification queue.
+## ★ THE CHEAP NEXT STEP — ✅ DONE 2026-07-18 (do not redo)
+The 101 batch-2 candidates were verified: **101/101, 0 lost, 83 keep / 18 revert / 0 escalate**, 7.82M tokens, 8.8 min. Verifier prompt byte-identical to batch 1 (632/632). Run as a SINGLE-STAGE parallel, which structurally prevents the starvation bug. Results: `bulk-sweep/batch2-VERIFIED-results.json`.
 
 ## ★ THE RATIFICATION QUEUE (his review, small batches, EXACTLY like the 39)
 | Set | Count | State |
 |---|---|---|
-| Prior session's worth-a-look + bulk-sample | **45** | ratify-ready |
+| Prior session's worth-a-look (36) + bulk-sample (8) | **44** | ratify-ready |
 | Batch 1 | **23** | ratify-ready |
-| Batch 2 candidates | **~89** | need the verify pass first |
-| **Total** | **~157** | |
-★ `WAL-CLM-EPIGEN-000008` (charged content — homosexuality) is in the 45. **He reads that one himself before it is touched.**
+| Batch 2 (verified survivors) | **82** | ratify-ready |
+| **Total** | **149** | |
+★ `WAL-CLM-EPIGEN-000008` (charged content — homosexuality) is in the 44. **He reads that one himself before it is touched.**
+
+### ★★ TWO FIXES WERE PULLED AS FALSE — the lesson, not just the count
+`WAL-CLM-EPIGEN-000097` (hickory/*Carya*) and `WAL-CLM-LETS-000253` (horseweed/*Erigeron*) each proposed **deleting a Luneth-ratified gloss** from `eden/tools/term-gloss-lexicon.json` `common_swaps` (SESSION 39). The auditors' reasoning — "Wallach never wrote that word" — is TRUE and is exactly WHY the gloss exists: the book prints bare Latin. Both are annotated `PULLED` in place, never deleted.
+**Neither tripped any gate**: `claim_text_term_gloss` matches the FROM-string literally, and both fixes produced near-variants. They would have shipped on a green board. **Now gated** by `term_gloss_ratified_present` (critical) + `tools/test_term_gloss_ratified_present.py` (11/11, both real edits as load-bearing cases).
+**Recall correction:** EPIGEN-000097 is not a defect, so the positive control's denominator is 8 — **recall is 7/8, not 7/9**, and batch 1 declining to flag it was CORRECT behaviour scored as a miss. **The control set itself held a false positive.**
+★ **Before ratifying ANY batch, re-run the lexicon collision scan** — all 151 pending fixes were scanned and exactly these 2 collided; a new batch must be scanned the same way.
 
 ## ★ MEASURED COST (ground future estimates in this, do not re-guess)
 **~87k tokens per claim** (batch 1: 18.2M / 209 claims, 242 agents, 0 errors, 12.5 min). Batch 2 burned ~55M for 703 audits before being stopped. **The 127 never-audited claims would cost ~11M.** The original 85M full-sweep estimate was accurate; what was NOT anticipated is that 85M is ~25% of a weekly budget. [[workflow-token-budget-guard]]

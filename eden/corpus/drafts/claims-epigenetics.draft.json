@@ -5448,7 +5448,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach cites a 2009 Mayo Clinic study finding that thirty-one percent of Americans -- almost a full third, some 115 million people -- suffer from gluten intolerance, a prevalence he says runs far higher in high-grain communities. In his words: \"According to a 2009 study published by the Mayo Clinic, thirty-one percent, almost a full third of Americans (115 million), suffer from gluten intolerance.\"",
+      "claim_text": "Wallach cites a 2009 Mayo Clinic study finding that thirty-one percent of Americans -- almost a full third, 115 million people -- suffer from gluten intolerance, a prevalence he says runs far higher in high-grain communities. In his words: \"According to a 2009 study published by the Mayo Clinic, thirty-one percent, almost a full third of Americans (115 million), suffer from gluten intolerance.\"",
       "verbatim": "According to a 2009 study published by the Mayo Clinic, thirty-one percent,\nalmost a full third of Americans (115 million), suffer from gluten intolerance.",
       "locator": {
         "book": "epigenetics",
@@ -6494,7 +6494,7 @@
       ],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit around 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in. In his words: \"Mercury in fish is present as methyl mercury\"",
+      "claim_text": "Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in. In his words: \"Mercury in fish is present as methyl mercury\"",
       "verbatim": "Mercury in fish is present as methyl mercury. People who rarely eat fish have\nvery low levels of mercury (2-5 ug/kg); moderate fish consumers have 10 ug/kg;\nhigh fish consumers (especially if they eat the large predator fish such as shark,\ntuna, or swordfish) will typically have higher levels of up to 400 ug/kg.",
       "locator": {
         "book": "epigenetics",

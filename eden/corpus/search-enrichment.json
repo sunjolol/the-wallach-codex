@@ -343,7 +343,7 @@
       ],
       "facet": "sources",
       "question": "Does fish contain germanium?",
-      "answer_short": "Yes, but only a trace — and it is not a reason to eat tuna. Germanium is a trace element Wallach prizes as an immune booster (it stimulates natural killer cells, interferon and macrophages) and an oxygen-utilization cofactor, with deficiency showing up as weakened immunity, arthritis, osteoporosis, low energy and cancer. But tuna carries only about 2.3 ppm of germanium — actually less than ordinary beans at 4.67 ppm, and hundreds of times less than the germanium-rich foods like garlic, ginseng and shiitake mushrooms (100 to 2,000 ppm). So fish is a minor incidental source at best, and tuna in particular is a large predator fish that concentrates mercury — making it a poor way to chase germanium.",
+      "answer_short": "Yes, but only a trace — and it is not a reason to eat tuna. Germanium is a trace element Wallach prizes as an immune booster (it stimulates natural killer cells, interferon and macrophages) and an oxygen-utilization cofactor, with deficiency showing up as weakened immunity, arthritis, osteoporosis, low energy and cancer. But tuna carries only 2.3 ppm of germanium — actually less than ordinary beans at 4.67 ppm, and hundreds of times less than the germanium-rich foods like garlic, ginseng and shiitake mushrooms (100 to 2,000 ppm). So fish is a minor incidental source at best, and tuna in particular is a large predator fish that concentrates mercury — making it a poor way to chase germanium.",
       "topics": [
         "germanium",
         "tuna",
@@ -682,7 +682,7 @@
       ],
       "facet": "basics",
       "question": "How common is gluten intolerance?",
-      "answer_short": "About a third of Americans — some 115 million people — are gluten intolerant per a 2009 Mayo Clinic study Wallach cites, and far more in high-grain communities.",
+      "answer_short": "About a third of Americans — 115 million people — are gluten intolerant per a 2009 Mayo Clinic study Wallach cites, and far more in high-grain communities.",
       "topics": [
         "gluten-intolerance",
         "prevalence",
@@ -1165,7 +1165,7 @@
       ],
       "facet": "warning",
       "question": "Is it safe to eat a lot of fish — what about mercury?",
-      "answer_short": "Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit around 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in.",
+      "answer_short": "Wallach's answer is nuanced, not a blanket 'avoid fish.' The mercury in fish is methyl mercury, and it bioaccumulates the more fish you eat — the real offenders being the large predator fish: shark, tuna, and swordfish. He lays the body-burden out in plain tiers: people who rarely eat fish carry very little mercury (about 2-5 ug/kg), moderate eaters sit 10 ug/kg, and heavy eaters of those big predators can climb to 400 ug/kg — on the order of 100 times the occasional eater. So the caution is aimed at loading up on the large predators, not at fish generally. Wallach also points to the protection built into his own framework: selenium and mercury are mutual antagonists, so keeping selenium adequate defends the body against the mercury it does take in.",
       "topics": [
         "mercury",
         "food-safety",
@@ -2883,7 +2883,7 @@
       ],
       "facet": "mechanism",
       "question": "Why does Wallach warn against eating raw egg whites?",
-      "answer_short": "Raw egg white contains avidin, which binds biotin in the gut; about 24 raw whites can cause a biotin deficiency (cooking denatures it).",
+      "answer_short": "Raw egg white contains avidin, which binds biotin in the gut; 24 raw whites can cause a biotin deficiency (cooking denatures it).",
       "topics": [
         "eggs",
         "raw-egg-white",
@@ -3082,7 +3082,7 @@
       ],
       "facet": "sources",
       "question": "Do any famously long-lived people eat pork?",
-      "answer_short": "Yes — and they may be the best example there is. Wallach points to the Okinawans, whom the World Health Organization ranked in 1996 as the longest-lived people in the entire industrialized world, and boiled pork is a staple of their roughly 1,500-calorie daily diet. He puts their life expectancy at 78 years for men and 86 for women, with a documented centenarian rate of 5 per 10,000 people — and, citing the 25-year Okinawa Centenarian Study, he credits their lifestyle and mineral-rich diet, not their genes, for that longevity. Their table alongside the pork includes chicken, eggs, dried minnows, miso and fish soup, tofu, sea and garden vegetables, kelp, garlic, purple sweet potatoes and bitter melon.",
+      "answer_short": "Yes — and they may be the best example there is. Wallach points to the Okinawans, whom the World Health Organization ranked in 1996 as the longest-lived people in the entire industrialized world, and boiled pork is a staple of their 1,500-calorie daily diet. He puts their life expectancy at 78 years for men and 86 for women, with a documented centenarian rate of 5 per 10,000 people — and, citing the 25-year Okinawa Centenarian Study, he credits their lifestyle and mineral-rich diet, not their genes, for that longevity. Their table alongside the pork includes chicken, eggs, dried minnows, miso and fish soup, tofu, sea and garden vegetables, kelp, garlic, purple sweet potatoes and bitter melon.",
       "topics": [
         "okinawa",
         "longevity",
@@ -3599,7 +3599,7 @@
       ],
       "facet": "protocol",
       "question": "What does celiac disease do to absorption, and can the gut heal?",
-      "answer_short": "Wheat gluten can destroy up to 70% of the intestine's absorptive surface (90% by age 45–50). Wallach says removing the offending grain lets the gut repair over about 90 days.",
+      "answer_short": "Wheat gluten can destroy up to 70% of the intestine's absorptive surface (90% by age 45–50). Wallach says removing the offending grain lets the gut repair over 90 days.",
       "topics": [
         "celiac",
         "villi",
