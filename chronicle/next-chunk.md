@@ -4,6 +4,32 @@
 > Board **77/77** (new gate `term_gloss_ratified_present`). Corpus sealed at **kv=354**, **1335 claims** — 27 claim_texts edited + sealed this session (no adds, no purges).
 > **Weekly usage ~89–92%, ceiling 93% (his). NO AGENT FLEETS. Deterministic Python only until the weekly resets.**
 
+# ★★★★ THE REVIEW ARTIFACT (his ruling surface)
+**https://claude.ai/code/artifact/31349afe-da57-4912-8d23-a1783bfa5603** — 149 queue cards (each with a Claude verdict + priority) above the original 162 sweep findings; his earlier rulings are seeded in. Rebuild it with `scratchpad/genpage.py` + `verdicts.py`, then republish to the SAME url. Decisions live in his browser localStorage (`wallach_adjudication_v1`); he exports and pastes them back.
+
+# ★★★★ THE PATH TO 99% — measured 2026-07-18, do not re-guess
+He asked whether ruling on the artifact gets the corpus to his 99% bar. **It does not — it lands at ~97.3%.** The binding constraint is RECALL, not the queue.
+
+| Measured input | Value |
+|---|---|
+| flag rate (batch 1 ID-ordered 13.0%, batch 2 randomized 14.4%) | **13.5%** |
+| survives the adversarial skeptic (23/26 + 83/101) | **83%** |
+| recall, positive control, corrected for the EPIGEN-000097 false positive | **7/8 = 87.5%** |
+| ⇒ TRUE defect rate | **12.9%** |
+
+**If he rules and we apply all 149:** ~19 defects still hiding in the 1208 audited claims (the 1-in-8 one pass misses) + ~16 in the 127 never-audited = **~36 claims ≈ 2.7% residual ⇒ ~97.3%**.
+
+**To actually reach 99%, three steps, not one:**
+1. Rule + apply the 149 (the artifact).
+2. Audit the **127 never-audited** claims (~11M tokens at the measured rate).
+3. **A SECOND INDEPENDENT PASS** over already-audited claims. Two passes lift recall 87.5% → 98.4%, dropping the residual to **~2 claims ≈ 0.18% ⇒ ~99.8%**. This is the step that actually buys the bar.
+
+★ Step 3 can be TARGETED, not uniform — per-book flag rates are very uneven: **IMMORT 27.5% · DDDL 21.7% · EPIGEN 16.7% · LETS 11.7% · RARE 8.5%**. Weight the second pass to Immortality + DDDL for most of the value.
+
+★ **Temper the number in his favour:** across 903+ claims on three independent lenses there are **ZERO dangerous defects** — no fabricated dose, no wrong number, no inversion. Every flag has been minor-fidelity. The 99% bar is about polish; the safety floor already holds.
+
+★ **NOT on the artifact** (so "rule the page" ≠ "done"): the 57 parked hedge instances, the 127 never-audited claims, and the 87 worth-a-look findings he never ruled (they default to leave-as-is).
+
 # ★★★★ PARKED BUT NOT FORGOTTEN — his explicit words, 2026-07-18
 He wants the corpus **pristine before** moving to the plant-derived mineral enrichment + the Regimen/Scanner rebuilds, and he set the bar: **"96.9% precision isn't good enough, I want 99%"** — while refusing to spend millions of tokens getting there. He is eager for the next tasks but **will not cut corners on quote fidelity**. Nothing below is optional; it is deferred for budget, not dropped.
 
