@@ -2,7 +2,37 @@
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
 > Board **76/76**. Corpus sealed at **kv=353**, **1335 claims**. Working tree clean + pushed (last commit `cdd4d04c`).
-> The ~98 accuracy sweep AND **ALL 39 of its adjudicated rulings are DONE** (this session). **No open ruling work remains.**
+> The ~98 sweep + **ALL 39 rulings are DONE**. Corpus UNCHANGED since (kv=353, 1335 claims, board 76/76). **NEW: a later autonomous pass surfaced 45 minor fidelity fixes + measured a 6% residual defect rate — ALL AWAITING YOUR REVIEW (next section). Nothing sealed.**
+
+---
+
+# ★★★★ PENDING YOUR REVIEW — autonomous adjudication + confidence audit (2026-07-17 evening)
+While Luneth was away, an autonomous pass ran two adversarially-verified workflows (READ-ONLY, nothing sealed). **Deliverables (force-committed for durability): `temporary/audit-2026-07-17/CONFIDENCE-REPORT.md` (the answer) · `worth-a-look-REPORT.md` + `worth-a-look-adjudication.json` (the 36) · `bulk-sample-fixes.json` (the 9).**
+
+## The confidence answer (Luneth asked "are the claims reasonably pristine?")
+**Yes for building forward.** A fresh audit of 150 RANDOM never-flagged bulk claims found a **6.0% residual defect rate** (9/150, 95% CI ~3-11%), **0 false alarms, ZERO dangerous defects** (no fabrications, wrong doses, or inversions). Every defect is minor-fidelity (injected true-in-world word, dropped hedge, gloss). The scary classes are swept; a bounded ~6% minor-polish tail remains. It re-confirmed safety values (silver = 400 mcg, etc.) as faithful.
+
+## The 45 ratify-ready fixes (his review -> then execute small-batch EXACTLY like the 39)
+- **36 from the 123 worth-a-look** — each has adjudicator + adversarial-verifier agreement; exact before->after + `proposed_edit` in `worth-a-look-adjudication.json` -> `confirmed_changes[]`.
+- **9 from the 150 bulk sample** — `bulk-sample-fixes.json` -> `fixes[]`.
+- ALL the SAME classes Luneth already ruled on (injected descriptor / qualifier-shift / misattribution). Process: propose batch -> his approval -> mine_batch -> USER seal. Any fix on an ENRICHED claim must also fix the sidecar ([[purge-cleans-shard-and-enrichment]]).
+
+## Special flags inside the 45
+- **WARNING: `WAL-CLM-EPIGEN-000008` (charged content — homosexuality)** is among the 36; the fix improves source-fidelity but READ IT CAREFULLY per the charged-content policy before approving.
+- **4 need a page-image glance** (unresolvable from text): worth-a-look `IMMORT-000092`, `LETS-000243`; sample `EPIGEN-000026`, `RARE-000083`.
+- **2 near-misses** the verifier reverted -> leave-as-is (`LETS-000136`, `LETS-000293`) — no action needed.
+
+## Also surfaced (NOT claim edits — feeds SOURCE PURIFICATION, axis-2)
+**13 source-`.txt` OCR corruptions** where the claim is FINE but the sealed book text has an OCR defect (e.g. tin "1.99 |ng/gm" -> "µg/gm", "vitamin B, 2" -> "B12"). Listed in `worth-a-look-adjudication.json` -> `source_corruption_worklist[]`. These need the resnap->reseal SOURCE process, not a claim edit.
+
+## The open DECISION (Luneth's — a genuine cost tradeoff; the autonomous pass PAUSED here)
+1. **Ratify the 45 + call it done** — apply his approved subset, treat corpus as reasonably pristine.
+2. **Full bulk faithfulness sweep** (~1,100 remaining claims, same validated harness) -> ~66 more minor fixes, faithfulness-pristine. **Cost ~85M tokens** — declined to auto-fire per [[workflow-token-budget-guard]] (~24M already spent this session; the 32M ~98 sweep already "blew the cap" once).
+3. **Bigger sample** (~+350 claims, ~25M) -> tighter estimate + ~20 more fixes.
+4. **Source page-read** for the 3 raw books (epigenetics / lets-play-doctor / rare-earths) — the axis-2 lever; needs his camera for lets + rare.
+
+## The validated harness (to resume any of the above)
+The adjudication workflow WORKS: 161 agents, 0 errors, precise (0 false alarms on the sample). Pattern: one small payload file per claim + a `general-purpose` agent reads its file and adjudicates against the source span, then an adversarial verifier tries to REFUTE any proposed change (defaults to revert). Scripts live under `.claude/projects/<session>/workflows/scripts/worth-a-look-adjudication-*.js` + `bulk-sample-faithfulness-audit-*.js`; payloads regenerate from `handoff-v2/merged-results.json` (worth-a-look) or the corpus (sample). ★ TRAP: Workflow `args` arrive as a STRING — `JSON.parse` defensively at the top. ★ Page-image reading was DELIBERATELY not automated (fabrication risk — the pass FLAGS "needs image" instead of guessing).
 
 ---
 
