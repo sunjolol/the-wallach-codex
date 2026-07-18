@@ -1900,20 +1900,6 @@
         "anecdote"
       ]
     },
-    "WAL-CLM-IMMORT-000077": {
-      "subject": "cadmium",
-      "also_about": [
-        "zinc"
-      ],
-      "facet": "warning",
-      "question": "Why is cadmium toxic?",
-      "answer_short": "It is a non-essential heavy metal that piles up in the kidneys, and tobacco concentrates it -- so smokers and bystanders breathe it in. The danger is that cadmium mimics zinc and can shove it out of zinc-dependent enzymes.",
-      "topics": [
-        "cadmium",
-        "heavy-metal",
-        "zinc-antagonist"
-      ]
-    },
     "WAL-CLM-IMMORT-000085": {
       "subject": "cobalt",
       "also_about": [

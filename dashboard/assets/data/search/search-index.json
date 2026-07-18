@@ -191,22 +191,6 @@
       ],
       "claim_count": 9
     },
-    "cadmium": {
-      "display_name": "Cadmium",
-      "type": "element",
-      "synonyms": [
-        "cd",
-        "heavy metal",
-        "cadmium toxicity"
-      ],
-      "related": [
-        "zinc",
-        "mercury",
-        "obscure_elements"
-      ],
-      "claim_count": 1,
-      "symbol": "Cd"
-    },
     "calcium": {
       "display_name": "Calcium",
       "common_name": "Calcium",
@@ -4165,25 +4149,6 @@
         "osteoporosis",
         "celebrities",
         "anecdote"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000077",
-      "subject": "cadmium",
-      "also_about": [
-        "zinc"
-      ],
-      "facet": "warning",
-      "question": "Why is cadmium toxic?",
-      "answer_short": "It is a non-essential heavy metal that piles up in the kidneys, and tobacco concentrates it -- so smokers and bystanders breathe it in. The danger is that cadmium mimics zinc and can shove it out of zinc-dependent enzymes.",
-      "answer": "Cadmium is a non-essential heavy metal, and Wallach frames it mainly as a toxin. It accumulates in kidney tissue, and because tobacco concentrates it, both smokers and people around second-hand smoke inhale dangerous cadmium ashes. Its chemistry closely mimics zinc's — which is the crux of its toxicity: cadmium can replace zinc in zinc-dependent enzyme reactions, displacing the essential mineral.",
-      "verbatim": "Cadmium functions in nature by stimulating the\nhatching of nematode (round worm) cysts. Cadmium-bound\nproteins have been isolated from molluscs and horse kidneys\n- cadmium is known for its ability to replace zinc in zinc\ndependent enzyme reactions.",
-      "page": 124,
-      "book_id": "immortality",
-      "topics": [
-        "cadmium",
-        "heavy-metal",
-        "zinc-antagonist"
       ]
     },
     {

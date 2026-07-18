@@ -2482,40 +2482,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-IMMORT-000077",
-      "kind": "toxicity_sign",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Cadmium is a non-essential heavy metal, and Wallach frames it mainly as a toxin. It accumulates in kidney tissue, and because tobacco concentrates it, both smokers and people around second-hand smoke inhale dangerous cadmium ashes. Its chemistry closely mimics zinc's — which is the crux of its toxicity: cadmium can replace zinc in zinc-dependent enzyme reactions, displacing the essential mineral. In his words: \"Cadmium functions in nature by stimulating the hatching of nematode (round worm) cysts. Cadmium-bound proteins have been isolated from molluscs and horse kidneys - cadmium is known for its ability to replace zinc in zinc dependent enzyme reactions.\"",
-      "verbatim": "Cadmium functions in nature by stimulating the\nhatching of nematode (round worm) cysts. Cadmium-bound\nproteins have been isolated from molluscs and horse kidneys\n- cadmium is known for its ability to replace zinc in zinc\ndependent enzyme reactions.",
-      "locator": {
-        "book": "immortality",
-        "scheme": "screenshot",
-        "chapter": null,
-        "page": 124,
-        "screenshot": 75,
-        "kindle_location": null,
-        "char_offset": 223487
-      },
-      "dose": null,
-      "tags": [
-        "search-only",
-        "cadmium",
-        "toxicity",
-        "heavy-metal",
-        "zinc-antagonist",
-        "smoking"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-03T21:07:35+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-IMMORT-000078",
       "kind": "definition",
       "essentials": [
