@@ -1,40 +1,44 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-17 ~19:35 CDT, session close)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-18, session close)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **76/76**. Corpus sealed at **kv=353**, **1335 claims**. Working tree clean + pushed (last commit `cdd4d04c`).
-> The ~98 sweep + **ALL 39 rulings are DONE**. Corpus UNCHANGED since (kv=353, 1335 claims, board 76/76). **NEW: a later autonomous pass surfaced 45 minor fidelity fixes + measured a 6% residual defect rate — ALL AWAITING YOUR REVIEW (next section). Nothing sealed.**
+> Board **76/76**. Corpus sealed at **kv=353**, **1335 claims** — **UNCHANGED this session. Nothing was edited, nothing sealed. The whole session was READ-ONLY.**
+> Luneth chose the full bulk faithfulness sweep, in batches. Batch 1 finished; batch 2 was **STOPPED BY HIM PART-WAY** — weekly usage jumped 60% → 85%. Everything recovered is saved below.
 
 ---
 
-# ★★★★ PENDING YOUR REVIEW — autonomous adjudication + confidence audit (2026-07-17 evening)
-While Luneth was away, an autonomous pass ran two adversarially-verified workflows (READ-ONLY, nothing sealed). **Deliverables (force-committed for durability): `temporary/audit-2026-07-17/CONFIDENCE-REPORT.md` (the answer) · `worth-a-look-REPORT.md` + `worth-a-look-adjudication.json` (the 36) · `bulk-sample-fixes.json` (the 9).**
+# ★★★★ PENDING YOUR REVIEW — the bulk faithfulness sweep (2026-07-18)
+**Deliverables (all under `temporary/audit-2026-07-17/bulk-sweep/`):** `batch1-results.json` (23 ratify-ready fixes) · `batch2-PARTIAL-results.json` (101 UNVERIFIED candidates) · `batch2-audited-ids.json` (703) · `never-audited-ids.json` (127) · `batch1-raw.json`.
 
-## The confidence answer (Luneth asked "are the claims reasonably pristine?")
-**Yes for building forward.** A fresh audit of 150 RANDOM never-flagged bulk claims found a **6.0% residual defect rate** (9/150, 95% CI ~3-11%), **0 false alarms, ZERO dangerous defects** (no fabrications, wrong doses, or inversions). Every defect is minor-fidelity (injected true-in-world word, dropped hedge, gloss). The scary classes are swept; a bounded ~6% minor-polish tail remains. It re-confirmed safety values (silver = 400 mcg, etc.) as faithful.
+## What the sweep measured (facts, not estimates)
+- **Recall is 7/9, measured for the first time.** The 9 confirmed-defective-but-unfixed claims from the prior 150-sample were re-injected into batch 1 as a POSITIVE CONTROL. The harness caught 7. The prior "validated" label rested on **precision** (0 false alarms) and nobody had ever measured recall. **Consequence: every defect rate ever quoted for this corpus — including the headline 6.0% — is a FLOOR, not an estimate, and one sweep pass cannot reach "pristine."** Both misses were marginal (a "hickory" gloss for *Carya*; an injected doctrine sentence in LETS-000476).
+- **The real flag rate is ~13–14%, not 6%.** Batch 1 (ID-ordered) flagged 26/200 = 13.0%; batch 2 (randomized, seed 20260717) flagged 101/703 = 14.4%. **The two agree, which kills the ordering-artifact hypothesis** — the earlier 6.0% was low because recall was unmeasured and the sample was smaller. After adversarial verification, expect ~11–12% confirmed.
+- **Still ZERO dangerous defects, on the third independent lens.** Across 903 claims audited this session: **0 purge recommendations**, 0 fabricated numbers, 0 wrong doses, 0 inversions. Every single flag is `rewrite`, minor-fidelity class (injected true-in-world descriptor, dropped hedge, misattribution).
+- **Per-book flag rate (batch 2, randomized — the trustworthy one):** IMMORT 27.5% · DDDL 21.7% · EPIGEN 16.7% · LETS 11.7% · RARE 8.5%. Immortality's mineral-HISTORY narrative is the worst stretch: narrative/historical claims invite outside-world glossing far more than dose/protocol claims do.
 
-## The 45 ratify-ready fixes (his review -> then execute small-batch EXACTLY like the 39)
-- **36 from the 123 worth-a-look** — each has adjudicator + adversarial-verifier agreement; exact before->after + `proposed_edit` in `worth-a-look-adjudication.json` -> `confirmed_changes[]`.
-- **9 from the 150 bulk sample** — `bulk-sample-fixes.json` -> `fixes[]`.
-- ALL the SAME classes Luneth already ruled on (injected descriptor / qualifier-shift / misattribution). Process: propose batch -> his approval -> mine_batch -> USER seal. Any fix on an ENRICHED claim must also fix the sidecar ([[purge-cleans-shard-and-enrichment]]).
+## The state of the two result sets
+1. **Batch 1 — 23 CONFIRMED fixes, ratify-ready.** 200 fresh claims, adjudicated AND adversarially verified (3 further flags were reverted by the verifier). 21 medium-confidence, 2 high. **10 sit on ENRICHED claims** → the `search-enrichment.json` sidecar must be fixed too ([[purge-cleans-shard-and-enrichment]]). 7 came back `needs_page_image` (5 EPIGEN, 3 IAIYH) — page shots are ON DISK for both books, resolve them rather than backlogging him.
+2. **Batch 2 — 101 CANDIDATES, *not* ratify-ready.** 703 of 830 audited, then stopped. **ZERO adversarial verifications ran.** 43 are on enriched claims; 21 high / 78 medium / 2 low confidence.
 
-## Special flags inside the 45
-- **WARNING: `WAL-CLM-EPIGEN-000008` (charged content — homosexuality)** is among the 36; the fix improves source-fidelity but READ IT CAREFULLY per the charged-content policy before approving.
-- **4 need a page-image glance** (unresolvable from text): worth-a-look `IMMORT-000092`, `LETS-000243`; sample `EPIGEN-000026`, `RARE-000083`.
-- **2 near-misses** the verifier reverted -> leave-as-is (`LETS-000136`, `LETS-000293`) — no action needed.
+## ★ THE BUG THAT COST THE VERIFICATIONS (fix before resuming)
+Batch 2 was fired as ONE workflow of 830 items. In a `pipeline()`, stage-2 agents join the SAME concurrency queue as stage-1 agents — so with 830 audits queued ahead of them, **every verify agent starved and none ever got a slot.** Batch 1 (209 items) worked only because its queue drained. **Never again put more items in one pipeline run than you are willing to lose the second stage of.** Cap a run at ~200 items, or run the stages as separate workflows.
 
-## Also surfaced (NOT claim edits — feeds SOURCE PURIFICATION, axis-2)
-**13 source-`.txt` OCR corruptions** where the claim is FINE but the sealed book text has an OCR defect (e.g. tin "1.99 |ng/gm" -> "µg/gm", "vitamin B, 2" -> "B12"). Listed in `worth-a-look-adjudication.json` -> `source_corruption_worklist[]`. These need the resnap->reseal SOURCE process, not a claim edit.
+## ★ THE CHEAP NEXT STEP (do this first, it is small)
+**Verify the 101 batch-2 candidates** — verify-stage ONLY, ~101 agents, a small fraction of a sweep. Feed each candidate's `claim_id` + `concern` + `proposed_edit` (all in `batch2-PARTIAL-results.json` → `unverified_flag_detail[]`) to the adversarial verifier prompt in the saved script. Expect ~12 to be reverted. Survivors join the ratification queue.
 
-## The open DECISION (Luneth's — a genuine cost tradeoff; the autonomous pass PAUSED here)
-1. **Ratify the 45 + call it done** — apply his approved subset, treat corpus as reasonably pristine.
-2. **Full bulk faithfulness sweep** (~1,100 remaining claims, same validated harness) -> ~66 more minor fixes, faithfulness-pristine. **Cost ~85M tokens** — declined to auto-fire per [[workflow-token-budget-guard]] (~24M already spent this session; the 32M ~98 sweep already "blew the cap" once).
-3. **Bigger sample** (~+350 claims, ~25M) -> tighter estimate + ~20 more fixes.
-4. **Source page-read** for the 3 raw books (epigenetics / lets-play-doctor / rare-earths) — the axis-2 lever; needs his camera for lets + rare.
+## ★ THE RATIFICATION QUEUE (his review, small batches, EXACTLY like the 39)
+| Set | Count | State |
+|---|---|---|
+| Prior session's worth-a-look + bulk-sample | **45** | ratify-ready |
+| Batch 1 | **23** | ratify-ready |
+| Batch 2 candidates | **~89** | need the verify pass first |
+| **Total** | **~157** | |
+★ `WAL-CLM-EPIGEN-000008` (charged content — homosexuality) is in the 45. **He reads that one himself before it is touched.**
 
-## The validated harness (to resume any of the above)
-The adjudication workflow WORKS: 161 agents, 0 errors, precise (0 false alarms on the sample). Pattern: one small payload file per claim + a `general-purpose` agent reads its file and adjudicates against the source span, then an adversarial verifier tries to REFUTE any proposed change (defaults to revert). Scripts live under `.claude/projects/<session>/workflows/scripts/worth-a-look-adjudication-*.js` + `bulk-sample-faithfulness-audit-*.js`; payloads regenerate from `handoff-v2/merged-results.json` (worth-a-look) or the corpus (sample). ★ TRAP: Workflow `args` arrive as a STRING — `JSON.parse` defensively at the top. ★ Page-image reading was DELIBERATELY not automated (fabrication risk — the pass FLAGS "needs image" instead of guessing).
+## ★ MEASURED COST (ground future estimates in this, do not re-guess)
+**~87k tokens per claim** (batch 1: 18.2M / 209 claims, 242 agents, 0 errors, 12.5 min). Batch 2 burned ~55M for 703 audits before being stopped. **The 127 never-audited claims would cost ~11M.** The original 85M full-sweep estimate was accurate; what was NOT anticipated is that 85M is ~25% of a weekly budget. [[workflow-token-budget-guard]]
 
----
+## ★ THE SWEEP HARNESS (validated, reusable)
+Payload generator: `scratchpad/mkbulk.py` (regenerate any time — writes one `<claim_id>.json` per claim with claim_text + verbatim + ±3500-char sealed source span; **it verifies the verbatim is present in every span**, 1039/1039 clean). Workflow script: `.claude/projects/<session>/workflows/scripts/bulk-faithfulness-sweep-batch-wf_b4d57910-868.js`. ★ TRAP: Workflow `args` may arrive as a STRING — `JSON.parse` defensively (the script already does). ★ Prompts are BYTE-FROZEN — the precision figure was measured on those exact words; rewriting them voids the only validation there is. ★ Page-image reading is deliberately NOT automated (fabrication risk); the harness FLAGS `needs_page_image` instead of guessing.
 
 # ★★★★ THE RULING CAMPAIGN IS COMPLETE (do not redo)
 The full 2026-07-17 whole-corpus accuracy sweep is executed end to end. **All 39 rulings Luneth adjudicated are applied** — 37 rewrites + 1 purge (`WAL-CLM-IMMORT-000077` cadmium) + 1 keep (`WAL-CLM-IMMORT-000061`, no-op) — across 7 reviewed batches, each PROPOSED for his review and sealed only with his authorization (small-batch mandate honored throughout). Corpus went **1336 → 1335 claims** (the one purge) and **kv 345 → 353** (8 seals).
