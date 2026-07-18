@@ -3625,6 +3625,97 @@ def check_claim_text_term_gloss():
                   f"({len(abbrevs)} obscure abbreviations explained in-claim)")
 
 
+# --- the OTHER direction: a ratified gloss REMOVED --------------------------------
+# check_claim_text_term_gloss guards one way only -- the superseded FROM-string must not
+# REAPPEAR. It is blind to the ratified TO-side gloss being DELETED, and the literal
+# FROM-key match misses any near-variant. Measured 2026-07-18: two pending audit fixes
+# proposed stripping ratified glosses ("land plants (notably Carya species)" dropping
+# hickory; "Canadian fleabane (Erigeron canadensis)" dropping horseweed) and NEITHER
+# tripped the existing gate -- both would have landed on a green 76/76 board. The audits
+# flagged each gloss as "an outside-world word Wallach never used", which is true and is
+# precisely WHY Luneth ratified it: the book prints bare Latin.
+# Extracted as helpers so tools/test_term_gloss_ratified_present.py can drive them directly.
+def _term_gloss_tokens(s):
+    return set(re.findall(r"[A-Za-z][A-Za-z'-]{3,}", s or ""))
+
+
+def _term_gloss_ratified_rules(swaps):
+    """(anchors, required, banned) per swap that anchors a ratified common name to a Latin genus.
+
+    anchors  -- genus tokens surviving BOTH sides of the swap (Carya, Erigeron)
+    required -- the ratified common name the swap ADDS (hickory, horseweed)
+    banned   -- the superseded common name, only where the swap renames it in front of a
+                binomial; the no-parenthesis entries are already covered by the FROM-key check.
+    """
+    rules = []
+    for frm, to in swaps.items():
+        ft, tt = _term_gloss_tokens(frm), _term_gloss_tokens(to)
+        anchors = sorted(w for w in (ft & tt) if w[:1].isupper() and len(w) >= 4)
+        dropped = {w for w in (ft - tt) if w.islower()}
+        # a near-variant of a superseded token (canadensis vs canadense) is a binomial
+        # spelling correction, NOT the ratified common name -- do not require it
+        required = sorted(w for w in (tt - ft) if w.islower()
+                          and not any(w[:7] == d[:7] for d in dropped))
+        if not anchors or not required:
+            continue
+        banned = None
+        if "(" in frm and "(" in to:
+            fp, tp = frm.split("(")[0].strip(), to.split("(")[0].strip()
+            if fp.lower() != tp.lower():
+                banned = fp
+        rules.append((anchors, required, banned))
+    return rules
+
+
+def _term_gloss_scan_ratified(rules, claims):
+    """claims = iterable of (claim_id, claim_text). Returns deduped violation strings."""
+    seen, out = set(), []
+    for cid, ct in claims:
+        low = (ct or "").lower()
+        for anchors, required, banned in rules:
+            if any(a in (ct or "") for a in anchors) and not any(r in low for r in required):
+                v = f"{cid} gloss-removed:{required[0]!r} (anchor {anchors[0]!r})"
+                if v not in seen:
+                    seen.add(v)
+                    out.append(v)
+            if banned and banned.lower() in low:
+                v = f"{cid} superseded-name:{banned!r}"
+                if v not in seen:
+                    seen.add(v)
+                    out.append(v)
+    return out
+
+
+def check_term_gloss_ratified_present():
+    """A Luneth-ratified term gloss may not be silently REMOVED from claim_text.
+
+    Complement to check_claim_text_term_gloss (which only blocks the superseded form from
+    reappearing). Where a common_swaps entry attaches a ratified common name to a Latin genus,
+    any claim_text naming that genus must still carry the common name, and the superseded
+    common name must not return under a corrected binomial. R9: this is the tightening that
+    ships with the misfire it fixes.
+    memory: term-gloss-standard, the-green-board-means-nothing-drifted."""
+    lex_path = ROOT / "eden" / "tools" / "term-gloss-lexicon.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    shards = sorted(claims_dir.glob("claims-*.json"))
+    if not shards or not lex_path.exists():
+        return True, "eden/corpus or term-gloss lexicon not installed (bootstrap-guard)"
+    lex = json.loads(lex_path.read_text(encoding="utf-8"))
+    rules = _term_gloss_ratified_rules(lex.get("common_swaps", {}))
+    if not rules:
+        return True, "no genus-anchored ratified gloss in the lexicon (vacuously clean)"
+    claims = [(c["id"], c.get("claim_text") or "")
+              for sh in shards
+              for c in json.loads(sh.read_text(encoding="utf-8")).get("claims", [])]
+    violations = _term_gloss_scan_ratified(rules, claims)
+    if violations:
+        sample = "; ".join(violations[:8])
+        return False, (f"{len(violations)} ratified gloss removal(s) -- an approved common name "
+                       f"was stripped from claim_text: {sample}{' ...' if len(violations) > 8 else ''}")
+    return True, (f"ratified glosses intact -- {len(rules)} genus-anchored rule(s) "
+                  f"({', '.join(r[1][0] for r in rules)}) upheld across {len(claims)} claims")
+
+
 # A HEALTH number (dose, %, IU count) has no legitimate home in a glossary definition — the
 # gate exists to catch that smuggling. Historical dates (1997, 1980s, "June 15, 1997") ARE
 # legitimate in product-history entries and are NOT health claims. Strip year-shaped tokens
@@ -5800,6 +5891,15 @@ INVARIANTS = [
         truth_anchor="eden/tools/term-gloss-lexicon.json {defects, common_swaps} scanned against every sealed claim_text (+ verbatim for defects)",
         severity="critical",
         lesson_ref="SESSION 39 (2026-07-02) -- Luneth mandate: every reader-facing term gets a minimal common gloss (common-word-first) and source nomenclature defects get fixed; enforce so summaries never drift back into a fixed loop; memory term-gloss-standard + perfect-entry-no-deferral",
+    ),
+    Invariant(
+        name="term_gloss_ratified_present",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="a Luneth-ratified common-name gloss may not be REMOVED from claim_text: where a common_swaps entry anchors a common name to a Latin genus, any claim naming that genus still carries the name, and the superseded name does not return under a corrected binomial",
+        check_fn=check_term_gloss_ratified_present,
+        truth_anchor="eden/tools/term-gloss-lexicon.json common_swaps -> genus-anchored rules, scanned against every sealed claim_text",
+        severity="critical",
+        lesson_ref="2026-07-18 bulk-sweep verify pass -- two pending audit fixes proposed stripping ratified glosses (EPIGEN-000097 hickory/Carya, LETS-000253 horseweed/Erigeron) and NEITHER tripped claim_text_term_gloss, whose literal FROM-key match misses near-variants; both would have landed on a green 76/76 board. R9 tightening shipped with the misfire it fixes; negative test tools/test_term_gloss_ratified_present.py",
     ),
     Invariant(
         name="glossary_wellformed",

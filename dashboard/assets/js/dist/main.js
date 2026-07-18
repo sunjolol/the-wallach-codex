@@ -99295,7 +99295,32 @@ MY PROCESS ERROR, stated plainly. Luneth approved the sweep with one condition -
 
 Verification: PYTHONUTF8=1 python tools/invariants.py -> 76/76 passed, 0 failed. Corpus unchanged at kv=353, 1335 claims.
 
-Deferred, all awaiting his small-batch review: verify the 101 batch-2 candidates (~101 agents, small); 127 claims never audited (~11M at the measured ~87k tokens/claim); ratification queue now ~157 fixes (45 from the prior session + 23 from batch 1 + ~89 pending verification). WAL-CLM-EPIGEN-000008 is charged content and he reads it himself before it is touched.` }];
+Deferred, all awaiting his small-batch review: verify the 101 batch-2 candidates (~101 agents, small); 127 claims never audited (~11M at the measured ~87k tokens/claim); ratification queue now ~157 fixes (45 from the prior session + 23 from batch 1 + ~89 pending verification). WAL-CLM-EPIGEN-000008 is charged content and he reads it himself before it is touched.` }, { id: "lg_mrqg2r91_unid45", ts: "2026-07-18T09:10:56.245170-05:00", surface: "corpus", kind: "milestone", summary: "Verified the 101 orphaned batch-2 findings (83 kept, 18 reverted) and caught two fixes in the review queue that would have deleted Luneth-ratified plant glosses on a green board; shipped the gate that blocks that class + scanned the corpus for added hedges", detail: `Two things happened. First, the leftover job: when the big batch-2 sweep was stopped, 101 of its findings had never been double-checked by a skeptic, so I ran just that check. 83 held up, 18 were thrown out as over-eager rewrites of claims that were actually fine.
+
+Second, and more important: while sorting the survivors I found that TWO fixes already sitting in the review queue were themselves wrong. Both wanted to delete a plant nickname -- "hickory" for the genus Carya, "horseweed" for Erigeron -- on the grounds that Wallach never wrote those words. That is true, and it is exactly why Luneth approved adding them back in SESSION 39: the book prints bare Latin, which means nothing to a reader. The existing guard did not catch either one, because it only watches for the OLD wording coming back, not the approved wording being removed -- so both would have shipped on a fully green 77-gate board. I built the missing gate and proved it with a test that uses those two real fixes as its load-bearing cases.
+
+I also want to be straight about my own mistake in this chunk. My first check was a quick "is this word in the source text?" test, and it told me two of the 18 reverts were wrong. Both times it was MY test that was wrong, not the reverts -- one word was a Luneth-approved gloss, the other was Wallach's own word sitting just outside the text window I was searching. I nearly reported two invented findings. Absence from a window proves no more than presence in one.
+
+TECHNICAL RECORD
+
+Verify pass: 101/101 agents, 0 lost, 0 errors, 7.82M tokens, 8.8 min. Verifier prompt + schema byte-identical to the batch-1 harness (632/632 bytes, diff-confirmed) so batch 1 and batch 2 remain comparable. Run as a SINGLE-STAGE parallel rather than a pipeline, structurally preventing the starvation bug that cost batch 2 its verifications (830 stage-1 audits had held the entire concurrency queue). Verdicts 83 keep / 18 revert / 0 escalate; revert rate 17.8 pct vs batch 1's 11.5 pct. Output: temporary/audit-2026-07-17/bulk-sweep/batch2-VERIFIED-results.json.
+
+Queue correction (both PULLED and annotated in place, never deleted):
+- WAL-CLM-LETS-000253 (batch-2 keeps) -- strips ratified swap "Canadian fleabane (Erigeron canadense)" -> "horseweed (Erigeron canadensis)".
+- WAL-CLM-EPIGEN-000097 (the 9-claim positive control) -- strips ratified swap "land plants (Carya species)" -> "land plants (hickory, Carya species)".
+Queue 151 -> 149. Full-queue scan covered all 151 pending fixes (36 worth-a-look + 9 controls + 23 batch-1 + 83 batch-2); exactly these 2 collided.
+
+Recall correction: EPIGEN-000097 is not a defect, so the positive control's denominator is 8, not 9. Measured recall is 7/8, and batch 1 declining to flag it was CORRECT behaviour that was scored as a miss. The control set itself held a false positive.
+
+New gate: tools/invariants.py::check_term_gloss_ratified_present (critical, structural), with helpers _term_gloss_ratified_rules / _term_gloss_scan_ratified extracted so the test drives them directly. Rule: where a common_swaps entry anchors a ratified common name to a Latin genus, any claim_text naming that genus must still carry the common name, and the superseded common name may not return under a corrected binomial. This closes the direction check_claim_text_term_gloss never covered -- it matches the FROM-string literally, so "land plants (notably Carya species)" and "Canadian fleabane (Erigeron canadensis)" both slipped past it. Negative test tools/test_term_gloss_ratified_present.py: 11/11, both real proposed_edits as load-bearing cases, 5 must-stay-silent sparing cases (R9 -- tighten, never over-fire), plus a live-corpus-clean assertion.
+
+Hedge scan (Luneth ruling 2026-07-18: our summaries adding "about" to a number Wallach states flat is a DEFECT class, not house style). Deterministic regex, zero agents, per his token constraint. 89 instances across 70 claims, stratified: tier1 32 instances / 28 claims (number verbatim-checked, a real measurement, not a range -- the source states it flat in the very words the claim quotes), range 9, date 10, weak 38 (number found only in a +/-3500 book window, where a flat occurrence may be a DIFFERENT mention -- proximity is not evidence). Demoted candidates are kept and reviewable, not dropped. Positive control: the scan re-found all 4 instances the agents had found. Precision spot-check 5/5 genuine; the strongest signal is RARE-000205, where within one sentence it flagged "about 700" (source: "of which 700 grams") and SPARED "roughly 800" (source: "about 800 grams" -- Wallach's own hedge). Most severe single case: IMMORT-000147, where Wallach wrote "a whopping 93 pct" and the claim renders it "about 93 pct", turning an intensifier into a hedge. Output: temporary/audit-2026-07-17/hedge-candidates.json.
+
+Verifications: node tools/build.mjs OK (6145.1 KB); PYTHONUTF8=1 python tools/invariants.py 77/77 (was 76/76 -- the new gate); negative test 11/11.
+
+Corpus UNTOUCHED: kv=353, 1335 claims. Nothing edited, nothing sealed. Every corpus change remains Luneth's to ratify.
+
+Deferred: his manual review of the 149-item queue and the 28 tier-1 hedge claims, in small batches per the standing mandate.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
