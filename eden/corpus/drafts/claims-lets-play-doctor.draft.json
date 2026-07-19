@@ -2818,7 +2818,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg. The quoted row runs in column order — RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose — but the RDA column for selenium is printed as \"?\", so the row carries only Wallach's two figures. Where the table does print an RDA, Wallach reprints it only to argue against it; it is never his recommendation.",
       "verbatim": "SELENIUM ? 200 mcg 500 to 3,000 mcg\nSODIUM 1,100 mg 3,300 mg 300 to 3,000 mg",
       "locator": {
         "book": "lets-play-doctor",
@@ -3058,7 +3058,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 20,000 to 300,000 IU, taken as beta-carotene. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 300,000 IU, taken as beta-carotene. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "VITAMIN A 5,000 IU 20,000 IU - 300,000 IU\n(beta carotene)\nVITAMIN B-12 3 mcg 200 mcg 1,000 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -8082,7 +8082,7 @@
         "cardiomyopathy"
       ],
       "symptoms": [],
-      "claim_text": "Cardiomyopathy (Keshan disease, or muscular dystrophy of the heart) is recognized by the World Health Organization as a selenium-deficiency disease, and is the kind of heart failure that makes a patient a transplant candidate in conventional medicine — yet Wallach notes about $1 per month of selenium would prevent it. It is the same disease veterinarians call 'mulberry heart' in pigs and 'white muscle disease' in livestock, eliminated in animals with selenium. Treatment of early cardiomyopathy is selenium at 350 micrograms three times daily or 1,000 micrograms by intramuscular injection, plant-derived colloidal selenium, vitamin E at 1,200 international units per day, and essential fatty acids at 5 grams three times daily.",
+      "claim_text": "Cardiomyopathy (Keshan disease, or muscular dystrophy of the heart) is recognized by the World Health Organization as a selenium-deficiency disease, and is the kind of heart disease that makes a patient a transplant candidate in conventional medicine — yet Wallach notes about $1 per month of selenium would prevent it. It is the same disease veterinarians call 'mulberry heart' in pigs and 'white muscle disease' in livestock, eliminated in animals with selenium. Treatment of early cardiomyopathy includes selenium at 350 micrograms three times daily or 1,000 micrograms by intramuscular injection, plant-derived colloidal selenium, vitamin E at 1,200 international units per day, and essential fatty acids at 5 grams three times daily.",
       "verbatim": "The treatment of early cardiomyopathy includes selenium at 350 mcg t.i.d. or 1,000 mcg\nIM, plant derived colloidal selenium, vitamin\nE at 1,200 IU/day and essential fatty acids at 5\ngm t.i.d",
       "locator": {
         "book": "lets-play-doctor",
@@ -8154,7 +8154,7 @@
         "motion_sickness"
       ],
       "symptoms": [],
-      "claim_text": "Motion sickness (carsickness, sea sickness, air sickness) arises when repetitive angular and linear movement occur together, producing nausea and vomiting. Wallach offers no nutrient protocol here; prevention is the use of scopolamine transdermal patches (worn behind the ear) or Dramamine, both available at the pharmacy without a prescription.",
+      "claim_text": "Motion sickness (carsickness, sea sickness, air sickness) is common in some individuals when repetitive angular and linear movement occur at the same time, producing nausea and vomiting. Wallach offers no nutrient protocol here; prevention includes the use of scopolamine transdermal patches (which can be worn behind the ear) or Dramamine, both of which can be purchased at the pharmacy without a prescription.",
       "verbatim": "Prevention of motion sickness includes the\nuse of scopolamine transdermal patches (can\nbe worn behind the ear) or Dramamine (both\nmedications can be purchased at the pharmacy without a prescription",
       "locator": {
         "book": "lets-play-doctor",
@@ -9844,7 +9844,7 @@
         "weight_loss"
       ],
       "symptoms": [],
-      "claim_text": "Dieting (weight loss) succeeds on basic habits, per Wallach: avoid caffeine (it drops blood sugar 30-90 minutes later and creates hunger pangs); drink eight glasses of water daily (thirst is often mistaken for hunger); diagnose contributing problems — food allergies (pulse test), hypoglycemia (six-hour glucose tolerance test), or hypothyroidism (basal body temperature); don't skip meals (eat breakfast like a queen, lunch like a princess, dinner like a pauper) and keep a meal schedule; exercise in moderation on a schedule; take before-meal fiber such as oat-bran diet tabs with water 30 minutes before meals to curb appetite; don't forget the base-line supplements and plant-derived colloidal minerals; take essential fatty acids as flaxseed oil at 5 gm three times daily to normalize fat metabolism; and use thyroid (starting around 3 grains, adjusting as needed) if basal body temperature is low (below 98.7°F).",
+      "claim_text": "Dieting (weight loss) succeeds on basic habits, per Wallach: avoid caffeine (it drops blood sugar 30-90 minutes later and creates hunger pangs); drink eight glasses of water daily (thirst is often mistaken for hunger); diagnose contributing problems — food allergies (pulse test), hypoglycemia (six-hour glucose tolerance test), or hypothyroidism (basal body temperature); don't skip meals (eat breakfast like a queen, lunch like a princess, dinner like a pauper) and keep a meal schedule; exercise in moderation on a schedule; take before-meal fiber such as oat-bran diet tabs with water 30 minutes before meals to curb appetite; don't forget the base-line supplements and plant-derived colloidal minerals; take essential fatty acids as flaxseed oil at 5 gm three times daily to normalize fat metabolism; and use thyroid (start with 3 grains, cutting back or adding as needed) if basal body temperature is low (below 98.7°F).",
       "verbatim": "Essential fatty acids in the form of flaxseed\noil at 5 gm t.i.d. will help regulate and normalize fat metabolism",
       "locator": {
         "book": "lets-play-doctor",
