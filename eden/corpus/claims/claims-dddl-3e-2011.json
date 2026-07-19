@@ -2134,7 +2134,7 @@
         "menopause"
       ],
       "symptoms": [],
-      "claim_text": "Cholesterol is structural to cell walls and myelin and is the raw material for vitamin D, bile acids, and the steroid hormones (estrogen, progesterone, testosterone).",
+      "claim_text": "Cholesterol is structural to cell walls and to the brain and spinal cord (myelin), and is the raw material for vitamin D, bile acids, adrenal cortical hormones, estrogen, progesterone, and testosterone.",
       "verbatim": "Cholesterol is an essential part\nof the structure of cell walls, brain and spinal cord (myelin), the raw\nmaterial for the production of vitamin D in the human body, bile acids,\nadrenal cortical hormones, estrogen (a cholesterol deficiency makes\nmenopause a living hell), progesterone, and testosterone",
       "locator": {
         "book": "dddl-3e-2011",
@@ -3259,7 +3259,7 @@
         "hypothyroidism"
       ],
       "symptoms": [],
-      "claim_text": "For an underactive thyroid, Wallach's first dietary step is to cut out goitrogenic foods — explicitly including cruciferous vegetables like cabbage — before adding thyroid support. In his words: \"Treatment of hypothyroidism includes eliminating all goiterogenic substances such as nitrates, cabbage, etc. Supplement with U.S. Armour thyroid at 1 to 3 grains each morning.\"",
+      "claim_text": "For an underactive thyroid, Wallach's first dietary step is to cut out goitrogenic foods — including cruciferous vegetables like cabbage — before adding thyroid support. In his words: \"Treatment of hypothyroidism includes eliminating all goiterogenic substances such as nitrates, cabbage, etc. Supplement with U.S. Armour thyroid at 1 to 3 grains each morning.\"",
       "verbatim": "Treatment of hypothyroidism includes eliminating all goiterogenic\nsubstances such as nitrates, cabbage, etc. Supplement with U.S. Armour\nthyroid at 1 to 3 grains each morning.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -3398,7 +3398,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Yes — emphatically. In Wallach's analysis of the Hunza, the people he holds up as relatively disease-free and living well past 100, butter is a daily staple, not an afterthought: they put it in their tea and used it as a cooking shortening, and it sits among their core fat sources alongside whole milk, ghee, apricot oil and animal fats. He offers this as evidence that real animal fats like butter belong in a healthy traditional diet — the opposite of the processed substitutes modern medicine pushed in their place. In his words: \"Fat sources include whole milk, butter, ghee, apricot oil, and animal fats.\"",
+      "claim_text": "Yes — emphatically. In Wallach's account of the Hunza, the people he describes as relatively disease-free and living well past a hundred, butter is a staple rather than an afterthought: they put it in their tea and use it as a cooking shortening, and it sits among their core fat sources alongside whole milk, ghee, apricot oil and animal fats. He lists those fat sources as one of the 14 Hunza practices that contribute to their longevity. In his words: \"Fat sources include whole milk, butter, ghee, apricot oil, and animal fats.\"",
       "verbatim": "Fat sources include whole milk, butter, ghee, apricot oil, and animal fats.",
       "locator": {
         "book": "dddl-3e-2011",
@@ -3772,7 +3772,7 @@
       ],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's own honest limit on Mineral Toddy, stated a few sentences after listing what it fixed. The colloidal liquid, he says, carries every mineral only in tiny amounts. That is enough for the 'trace' minerals — ones the body needs only in tiny amounts anyway — but not the 'major' ones the body needs by the gram: calcium, magnesium, manganese, zinc, potassium. To reach even the mainstream Recommended Daily Allowances for those, the liquid has to be paired with a separate source. In the same passage he mixed it into calcium-fortified orange juice to fill exactly that gap. On his own account the colloidal minerals were never meant as a stand-alone mineral supplement — a piece of the picture, not the whole picture.",
+      "claim_text": "Wallach's own honest limit on Mineral Toddy, stated a few sentences after listing what it fixed. The colloidal liquid, he says, carries every mineral only in trace amounts. That is enough for the trace minerals the body needs in tiny amounts, but to even come close to the mainstream Recommended Daily Allowances it has to be paired with a separate source of what he calls the \"major minerals and electrolytes\": calcium, magnesium, manganese, zinc, and potassium. In the same passage he put the minerals in calcium-enriched orange juice, which both masked their harsh astringent taste and provided a significant amount of additional calcium — one of those lacking majors. On his own account the colloidal minerals were never meant as a stand-alone mineral supplement — a piece of the picture, not the whole picture.",
       "verbatim": "The colloidal\nminerals were all present in trace amounts. They required an additional\nsource of the major minerals and electrolytes such as calcium, magnesium,\nmanganese, zinc, and potassium to even come close to the published RDAs.",
       "locator": {
         "book": "dddl-3e-2011",

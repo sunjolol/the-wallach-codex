@@ -1877,7 +1877,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Histidine, an amino acid with an imidazole side chain, is a coordinating ligand of metalloproteins and part of the catalytic sites of certain enzymes (acting in catalytic triads and as a proton shuttle). Wallach notes histidine is required for hemoglobin in helices E and F, where it stabilizes oxyhemoglobin and destabilizes carbon-monoxide hemoglobin -- so that carbon monoxide binds hemoglobin far less tightly (about 200 times stronger) than it binds free heme (about 20,000 times stronger). In his words: 'Histidine is also required for haemoglobin in helices E and F. Histidine supports the stabilization of oxyhaemoglobin and the destabilization of CO (carbon monoxide) haemoglobin.'",
+      "claim_text": "Histidine, an amino acid with an imidazole side chain, is a coordinating ligand of metalloproteins and part of the catalytic sites of certain enzymes (acting in catalytic triads and as a proton shuttle). Wallach notes histidine is required for hemoglobin in helices E and F, where it stabilizes oxyhemoglobin and destabilizes carbon-monoxide hemoglobin -- so that carbon monoxide binds hemoglobin far less tightly (less than 200 times stronger) than it binds free heme (20,000 times stronger). In his words: 'Histidine is also required for haemoglobin in helices E and F. Histidine supports the stabilization of oxyhaemoglobin and the destabilization of CO (carbon monoxide) haemoglobin.'",
       "verbatim": "Histidine is also required\nfor haemoglobin in helices E and F. Histidine supports the stabilization of\noxyhaemoglobin and the destabilization of CO (carbon monoxide) haemoglobin.",
       "locator": {
         "book": "epigenetics",
@@ -1945,7 +1945,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Leucine, a branched-chain amino acid, has major roles in the liver, adipose tissue, and muscle, where it is used to synthesize sterols, and it is solely responsible for the synthesis of muscle proteins -- a catalyst for muscle growth that also activates the mammalian target of rapamycin (mTOR) kinase regulating cell growth. Wallach notes that leucine toxicity, as in decompensated Maple Syrup Urine Disease, produces delirium and neurologic compromise and can be life-threatening, and that excessive leucine intake can produce a clinical pellagra (the 'four Ds': diarrhea, dermatitis, dementia, and death). In his words: 'Leucine is solely responsible for the synthesis of muscle proteins.'",
+      "claim_text": "Leucine, a branched-chain amino acid, has major roles in the liver, adipose tissue, and muscle; in muscle and adipose tissue it is used to synthesize sterols, and it is solely responsible for the synthesis of muscle proteins -- a catalyst for muscle growth that also activates the mammalian target of rapamycin (mTOR) kinase regulating cell growth. Wallach notes that leucine toxicity, as in decompensated Maple Syrup Urine Disease, produces delirium and neurologic compromise and can be life-threatening, and that excessive leucine intake can produce a clinical pellagra (the 'four Ds': diarrhea, dermatitis, dementia, and death). In his words: 'Leucine is solely responsible for the synthesis of muscle proteins.'",
       "verbatim": "Leucine is solely responsible\n\nfor the synthesis of muscle proteins.",
       "locator": {
         "book": "epigenetics",
@@ -2021,7 +2021,7 @@
         "liver_disease"
       ],
       "symptoms": [],
-      "claim_text": "Methionine is a sulfur-containing amino acid whose derivative S-adenosyl methionine serves as the body's main methyl donor, and it is an intermediate in the biosynthesis of cysteine, carnitine, taurine, lecithin, and phosphatidylcholine. Wallach reports that laboratory rats fed a methionine-free diet developed steatohepatitis (fatty liver disease), anemia, and lost two-thirds of their body weight over five weeks -- all of which were resolved by methionine supplementation. In his words: 'Laboratory rats fed a methionine-free diet developed steatohepatitis (fatty liver disease), anemia, and lost two thirds of their body weight over five weeks. Supplementation with methionine resolved all of the disease problems of the study group.'",
+      "claim_text": "Methionine is a sulfur-containing amino acid whose derivative S-adenosyl methionine serves as a methyl donor, and it is an intermediate in the biosynthesis of cysteine, carnitine, taurine, lecithin, and phosphatidylcholine. Wallach reports that laboratory rats fed a methionine-free diet developed steatohepatitis (fatty liver disease), anemia, and lost two-thirds of their body weight over five weeks -- all of which were resolved by methionine supplementation. In his words: 'Laboratory rats fed a methionine-free diet developed steatohepatitis (fatty liver disease), anemia, and lost two thirds of their body weight over five weeks. Supplementation with methionine resolved all of the disease problems of the study group.'",
       "verbatim": "Laboratory rats fed a methionine-free diet developed steatohepatitis (fatty\nliver disease), anemia, and lost two thirds of their body weight over five weeks.\nSupplementation with methionine resolved all of the disease problems of the\nstudy group.",
       "locator": {
         "book": "epigenetics",
@@ -2575,7 +2575,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach presents arsenic as an essential trace element -- required for survivability of the newborn and for neonatal growth -- not merely the notorious poison of popular reputation. He notes arsenic promotes growth in chicks and tadpoles, that in combination with choline it prevents perosis ('slipped tendon') in poultry, and that its role in human physiology lies in methyl-group metabolism and polyamine synthesis. He distinguishes organically-bound arsenic, which is far safer, from metallic arsenic, which is about 65 times more toxic, and recounts that low-dose arsenic trioxide is an approved, effective therapy for acute promyelocytic leukemia, a blood and bone-marrow cancer, with 'Fowler's solution' historically used for psoriasis.",
+      "claim_text": "Wallach presents arsenic as an essential trace element -- known to be essential for survivability of the newborn and for neonatal growth. He notes arsenic promotes the growth rate of chicks, that the growth and metamorphosis of tadpoles is enhanced by its presence, that in combination with choline it prevents 100 percent of perosis ('slipped tendon') in poultry, and that its role in human physiology lies in methyl-group metabolism and polyamine synthesis. He distinguishes organically-bound arsenic from metallic arsenic, which carries 65 times greater toxicity potential, and recounts that low doses of arsenic trioxide are effective against acute promyelocytic leukemia, a cancer of the blood and bone marrow, with FDA approval of the compound in 2000 and 'Fowler's solution' used for psoriasis.",
       "verbatim": "Arsenic promotes the growth rate of chicks at 90 to 120 ppm. The rate of\ngrowth and metamorphosis of tadpoles is enhanced by the presence of arsenic.",
       "locator": {
         "book": "epigenetics",
@@ -2677,7 +2677,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Although beryllium appears on Wallach's list of essential minerals, the stance he records here is a safety caution: pure powdered beryllium and its compounds must be handled with care because of the risk of acute beryllium disease or chemical pneumonitis (first reported in Europe in 1933 and in the United States in 1943), and chronic berylliosis resembles pulmonary sarcoidosis.",
+      "claim_text": "Although beryllium appears on Wallach's list of essential minerals, the stance he records here is a safety caution: pure powdered beryllium and its compounds should be handled with care because of the risk of acute beryllium disease or chemical pneumonitis (first reported in Europe in 1933 and in the United States in 1943), and chronic berylliosis resembles pulmonary sarcoidosis.",
       "verbatim": "Pure powdered beryllium and its compounds should be handled with care\nbecause of the potential for acute beryllium disease or chemical pneumonitis",
       "locator": {
         "book": "epigenetics",
@@ -3882,7 +3882,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In Epigenetics, Wallach's entry for niobium -- a canon trace element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, land plants and marine animals. He assigns it no specific human deficiency disease or nutritional function here, consistent with how little is individually established for the trace and rare-earth minerals, which Wallach treats broadly as life-supporting while saying little element-by-element.",
+      "claim_text": "In Epigenetics, Wallach's entry for niobium -- a canon trace element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, land plants and marine animals. He assigns it no deficiency disease or nutritional function in this entry.",
       "verbatim": "Nb - Niobium is found in igneous rocks at 20 ppm; shale at 11 ppm; sandstone at\n0.05 ppm; limestone 0.3 ppm",
       "locator": {
         "book": "epigenetics",
@@ -4125,7 +4125,7 @@
         "panic_attacks"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's calcium-deficiency disease table also lists neuropathy (including Bell's palsy and trigeminal neuralgia), tetany (whole-body cramping progressing to convulsions), and panic attacks with hyperirritability, each sharing the same nutrient-deficiency causes as calcium-deficiency osteoporosis.",
+      "claim_text": "Wallach's calcium-deficiency disease table also lists neuropathy (including Bell's palsy and trigeminal neuralgia), tetany (a total-body \"cramp\" or convulsion), and panic attack (hyperirritability), each carrying the same complicating factors as calcium-deficiency osteoporosis.",
       "verbatim": "Neuropathy (Bell’s palsy, trigeminal neuralgia, sciatica, restless leg, etc.) : Same as osteoporosis\n\nTetany (total body “cramp” or convulsion, NSH, etc.) : Same as osteoporosis\n\nPanic attack (hyperirritability) : Same as osteoporosis",
       "locator": {
         "book": "epigenetics",
@@ -5613,7 +5613,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his newest book Wallach restates that overdoing caffeine draws calcium out of the body's bone reserves, listing it among the diet factors that undermine calcium status. In his words: \"...result in a decreased efficiency of absorption and retention; excess of consumption of caffeine will leach Ca from bone reserves.\"",
+      "claim_text": "In Epigenetics Wallach states that overdoing caffeine draws calcium out of the body's bone reserves, listing it among the factors that undermine calcium status. In his words: \"...result in a decreased efficiency of absorption and retention; excess of consumption of caffeine will leach Ca from bone reserves.\"",
       "verbatim": "result in\na decreased efficiency of absorption and retention; excess of consumption of\ncaffeine will leach Ca from bone reserves.",
       "locator": {
         "book": "epigenetics",
@@ -5878,7 +5878,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Treating a Parkinson's patient, Wallach had him avoid the cooked-fat toxins (trans fats, heterocyclic amines, acrylamides) and eat at least twelve to fourteen poached eggs a day to supply the raw material to rebuild myelin. In his words: \"he was instructed to eat at least twelve to fourteen poached eggs each day to provide raw materials for the rebuilding of myelin\"",
+      "claim_text": "Treating a Parkinson's patient, Wallach had him avoid trans-fatty acids, heterocyclic amines, and acrylamides to stop ongoing damage, and eat at least twelve to fourteen poached eggs a day to supply the raw materials to rebuild myelin. In his words: \"he was instructed to eat at least twelve to fourteen poached eggs each day to provide raw materials for the rebuilding of myelin\"",
       "verbatim": "Dietrich was admonished to avoid\ntrans-fatty acids, heterocyclic amines, and acrylamides to stop ongoing damage,\nand he was instructed to eat at least twelve to fourteen poached eggs each day to\nprovide raw materials for the rebuilding of myelin.",
       "locator": {
         "book": "epigenetics",
