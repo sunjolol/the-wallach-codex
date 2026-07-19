@@ -1,7 +1,7 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-19)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77**. Corpus sealed at **kv=356**, **1335 claims** — 23 claim_texts edited + sealed 2026-07-19 (no adds, no purges) on top of the 27 from 2026-07-18.
+> Board **77/77**. Corpus sealed at **kv=357**, **1335 claims** — 32 claim_texts edited + sealed 2026-07-19 (no adds, no purges) on top of the 27 from 2026-07-18.
 > **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
 
 # ★★★★ THE REVIEW ARTIFACT (his ruling surface)
@@ -17,18 +17,22 @@ He pasted 63 decisions. **Only 24 were his.** The build before this one merged a
 ★ Harness: `scratchpad/test_export.js` (20 checks, puppeteer, node needs the repo's absolute `node_modules/puppeteer` path). Two NEGATIVE CONTROLS earn the pass — a CHANGED applied ruling still exports (proves value-comparison, not blanket suppression), and the old DOM-scrape path reproduces the exact polluted count (proves the diagnosis instead of assuming it). Run it after any page change.
 
 # ★★★★ WHERE THE QUEUE STANDS
+★ Decided cards now render in their OWN `DECIDED` tier on the page, filter default-OFF — he asked that settled work leave his working list. Full detail intact; declutter, not deletion.
+
 | | |
 |---|---|
 | Queue cards total | **149** |
-| Ruled + SEALED (kv 356) | **23** (cards 1–24 minus LETS-000071) |
-| Ruled but HELD | **1** — `WAL-CLM-LETS-000071` |
-| **Still unruled** | **125** — his next paste starts at card 25 (`WAL-CLM-IAIYH-000010`) |
-| Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **62** |
+| Ruled + SEALED (kv 357) | **32** (cards 1–33 minus IMMORT-000221) |
+| Ruled but HELD | **1** — `WAL-CLM-IMMORT-000221`, awaiting his approval of a new summary (drafted in chat 2026-07-19; it draws the margarine contrast from IMMORT-000220 + RARE-000314, i.e. from OUTSIDE this claim's own span — disclosed to him) |
+| **Still unruled** | **116** — his next paste starts at card 34 (`WAL-CLM-IMMORT-000227`). ALL 9 SAFETY cards are cleared. |
+| Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **71** |
 
-## ★★ HELD, NEEDS HIS CAMERA — `WAL-CLM-LETS-000071` (vitamin A)
-He read the printed Fig. 8-1 as leaving Vitamin A's **RDA cell blank** — *"the ONLY item on this table that has NO number, no question mark, nothing"* — which shifts every column left and makes the True Supplement Need **5,000 IU**, not 20,000. Our `.txt` encodes no blank (`VITAMIN A 5,000 IU 20,000 IU - 300,000 IU`), so `dose_amount_in_verbatim` RED-flagged 5,000 against column 2's 20,000. **The gate is working as designed** — its own note says the base-line row is `NAME | RDA | TSN | pharmacologic`.
+## ★★ SETTLED 2026-07-19 — `WAL-CLM-LETS-000071` (vitamin A). HE WAS RIGHT; THE GATE WAS WRONG.
+He ruled this THREE times and I reverted it twice, siding with `dose_amount_in_verbatim`. His photo of the printed Fig. 8-1 settled it: the VITAMIN A row's **RDA cell is blank**, so its two printed values are the True Supplement Need **5,000 IU** and the pharmacologic **20,000-300,000 IU**. Dose is now 5,000 IU, sealed at kv 357.
 
-**Declined to move a 4x vitamin A dose on a reading the source cannot support.** Reverted to the `.txt`-consistent text + dose 20,000 IU; it stays in `pending.json`. `lets-play-doctor` is one of the two books whose pages cannot be read here ([[page-images-exist-for-three-books]]). **Needs a photo of that row.** If his reading holds, the fix is a source-transcription correction that represents the empty cell — NOT a claim-only edit — then `corpus_resnap` + the offset-ordering trap.
+★★ **The gate was MIS-PARSING, not catching an error.** Two faults: VITAMIN A is the table's only under-filled row (every other row prints three values; unknown RDAs print "?"), and its range REPEATS the unit ("20,000 IU - 300,000 IU"), so the group parser split one column into two and the under-filled row looked full. R9 fix shipped WITH tests (`tools/test_dose_amount_in_verbatim.py`, 20 -> 23 cases, both directions pinned: true value GREEN, fabricated RED, neighbour-row RED). Full-row column checks are unchanged, so sodium 3,300 -> 1,100 still REDs.
+
+★★★ **THE LESSON, because it cost him two rounds and a shout:** when a gate and the human who owns the source disagree, **suspect the gate** ([[the-instrument-lies-before-the-eye]]). This gate's own comment says *"a RED here would mean the rule is wrong, not the corpus"* — the code said so and I still read it as authority.
 
 ## ★★ SOURCE-RULE REVIEW — closed without an override
 His `LETS-000065` note asked us to supply the real government RDA where Wallach printed "?". Flagged `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]` — §00.A bars *"conventional comparison values surfaced to the user"*, and the RDAs already in the corpus are legal ONLY because Wallach reprints them himself. **He took the non-breaching alternative**, so the three-confirm protocol stopped at step 1 and no outside number entered the corpus. Full record: `chronicle/contradictions/2026-07-19-government-rda-for-unlisted-nutrients.md`.
