@@ -1,7 +1,7 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-19)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77**. Corpus sealed at **kv=357**, **1335 claims** — 32 claim_texts edited + sealed 2026-07-19 (no adds, no purges) on top of the 27 from 2026-07-18.
+> Board **77/77**. Corpus sealed at **kv=358**, **1335 claims** — 33 claim_texts edited + sealed 2026-07-19 (no adds, no purges) on top of the 27 from 2026-07-18.
 > **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
 
 # ★★★★ THE REVIEW ARTIFACT (his ruling surface)
@@ -22,10 +22,10 @@ He pasted 63 decisions. **Only 24 were his.** The build before this one merged a
 | | |
 |---|---|
 | Queue cards total | **149** |
-| Ruled + SEALED (kv 357) | **32** (cards 1–33 minus IMMORT-000221) |
-| Ruled but HELD | **1** — `WAL-CLM-IMMORT-000221`, awaiting his approval of a new summary (drafted in chat 2026-07-19; it draws the margarine contrast from IMMORT-000220 + RARE-000314, i.e. from OUTSIDE this claim's own span — disclosed to him) |
+| Ruled + SEALED (kv 358) | **33** (cards 1–33, all sealed) |
+| Ruled but HELD | **0** — nothing pending. IMMORT-000221 (butter/margarine) was sealed at kv 358 with HIS OWN summary; see the doctrine note below. |
 | **Still unruled** | **116** — his next paste starts at card 34 (`WAL-CLM-IMMORT-000227`). ALL 9 SAFETY cards are cleared. |
-| Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **71** |
+| Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **72** |
 
 ## ★★ SETTLED 2026-07-19 — `WAL-CLM-LETS-000071` (vitamin A). HE WAS RIGHT; THE GATE WAS WRONG.
 He ruled this THREE times and I reverted it twice, siding with `dose_amount_in_verbatim`. His photo of the printed Fig. 8-1 settled it: the VITAMIN A row's **RDA cell is blank**, so its two printed values are the True Supplement Need **5,000 IU** and the pharmacologic **20,000-300,000 IU**. Dose is now 5,000 IU, sealed at kv 357.
@@ -33,6 +33,13 @@ He ruled this THREE times and I reverted it twice, siding with `dose_amount_in_v
 ★★ **The gate was MIS-PARSING, not catching an error.** Two faults: VITAMIN A is the table's only under-filled row (every other row prints three values; unknown RDAs print "?"), and its range REPEATS the unit ("20,000 IU - 300,000 IU"), so the group parser split one column into two and the under-filled row looked full. R9 fix shipped WITH tests (`tools/test_dose_amount_in_verbatim.py`, 20 -> 23 cases, both directions pinned: true value GREEN, fabricated RED, neighbour-row RED). Full-row column checks are unchanged, so sodium 3,300 -> 1,100 still REDs.
 
 ★★★ **THE LESSON, because it cost him two rounds and a shout:** when a gate and the human who owns the source disagree, **suspect the gate** ([[the-instrument-lies-before-the-eye]]). This gate's own comment says *"a RED here would mean the rule is wrong, not the corpus"* — the code said so and I still read it as authority.
+
+## ★★ SETTLED 2026-07-19 — `WAL-CLM-IMMORT-000221` (butter/margarine) + the SUMMARY DOCTRINE it taught
+Sealed at kv 358 with **his own summary, byte-for-byte**. The lesson is bigger than the claim, and it corrected a mistake I made repeatedly this session:
+
+★★★ **A summary EXISTS to supply the context a quote lacks. Going outside the claim's own span is the JOB, not a risk to flag.** Wallach reproduces a USDA table (not his) that lists butter and fortified margarine at the SAME 165 IU. Quote-only, a reader concludes he thinks they are interchangeable — the opposite of his position. His words: *"we add the caveat despite it being slightly off topic because it is an important distinction to make when no context is available to make sense of the quote. THE WHOLE POINT OF THE SUMMARIES IN THE FIRST PLACE, OTHERWISE WE JUST QUOTE WALLACH DIRECTLY EVERY TIME."*
+
+★ The line that still holds (not a licence to wander): cross-claim context is legitimate when it is **Wallach's OWN documented position**, verified against real claims (here IMMORT-000220 + RARE-000314). Outside-WORLD facts he never stated remain a defect. The sidecar had carried the injected version (*"butter carries the vitamin natively while margarine must have it added back"*) — that was the actual defect, now replaced. Memory: [[summary-supplies-missing-context]].
 
 ## ★★ SOURCE-RULE REVIEW — closed without an override
 His `LETS-000065` note asked us to supply the real government RDA where Wallach printed "?". Flagged `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]` — §00.A bars *"conventional comparison values surfaced to the user"*, and the RDAs already in the corpus are legal ONLY because Wallach reprints them himself. **He took the non-breaching alternative**, so the three-confirm protocol stopped at step 1 and no outside number entered the corpus. Full record: `chronicle/contradictions/2026-07-19-government-rda-for-unlisted-nutrients.md`.
