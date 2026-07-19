@@ -1664,6 +1664,10 @@ _DOSE_ALIASES = {
 # for_condition -> the 0-based value-column (after the name) that dose.amount MUST be.
 # The Let's Play Doctor base-line table prints NAME | RDA | true-need | pharmacologic.
 _DOSE_COLUMN_OF = {"base-line supplement program (true supplement need)": 1}
+# Fig. 8-1 prints RDA | true-supplement-need | pharmacologic. A row yielding fewer
+# groups than this has a blank cell and cannot be positionally indexed (see
+# _dose_row_groups). VITAMIN A is the only such row in the table.
+_DOSE_BASELINE_COLS = 3
 
 
 def _dose_prep(s):
@@ -1787,13 +1791,26 @@ def _dose_row_groups(row, res_for_slug):
         if m:
             body = body[m.end():]
             break
-    out = []
+    raw = []
     for m in _DOSE_PGROUP.finditer(body):
         if m.group(1):
-            out.append(("?", None))
+            raw.append(("?", None, m.start(), m.end()))
         elif m.group(2):
-            out.append((m.group(2).strip(), m.group(3)))
-    return out
+            raw.append((m.group(2).strip(), m.group(3), m.start(), m.end()))
+    # MERGE a unit-repeated range into the ONE column it actually is. Fig. 8-1 prints
+    # "VITAMIN A ... 20,000 IU - 300,000 IU": the unit repeats on both sides, so the naive
+    # scan sees two columns where the page shows one, and an UNDER-FILLED row then looks full.
+    # Every other range prints its unit once ("500 to 3,000 mcg", "2 - 5 mg") and is unaffected.
+    out = []
+    for g in raw:
+        val, unit, a, b = g
+        if out and unit is not None and out[-1][1] == unit and val != "?" and out[-1][0] != "?":
+            gap = body[out[-1][3]:a]
+            if re.fullmatch(r"\s*(?:-|to)\s*", gap, re.I):
+                out[-1] = (out[-1][0] + " - " + val, unit, out[-1][2], b)
+                continue
+        out.append(g)
+    return [(v, u) for v, u, _a, _b in out]
 
 
 def _dose_check_one(claim, res_by_slug):
@@ -1815,7 +1832,11 @@ def _dose_check_one(claim, res_by_slug):
     if idx is not None and kind in ("row", "row+form"):
         ess = (claim.get("essentials") or [None])[0]
         gs = _dose_row_groups(scope, res_by_slug.get(ess, []))
-        if len(gs) > idx and gs[idx][0] != "?":
+        # An UNDER-FILLED row (fewer groups than the table has columns) has a blank cell, so
+        # which column a value sits in is unknowable -- positional indexing would compare the
+        # wrong cell and RED-flag a true value, as it did for VITAMIN A (blank RDA). Fall
+        # through to the row-scoped presence check: the gate's documented fail-safe.
+        if len(gs) >= _DOSE_BASELINE_COLS and len(gs) > idx and gs[idx][0] != "?":
             val, gu = gs[idx]
             got, _ = _dose_components(val)
             if got is not None:

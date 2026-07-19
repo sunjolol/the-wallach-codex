@@ -74,6 +74,11 @@ VB_VITC = "VITAMIN C 60 mg 1,000 mg 10,000 mg\nVITAMIN D 400 IU 275 IU 1,000 IU"
 VB_VITA = ("Vitamin A (retinol) 2,500 - 5,000 IU\n"
            "Vitamin A (beta-carotene) 5,000 - 25,000 IU")
 VB_PHOS = "PHOSPHORUS 800 mg 0.0 0.0"
+# Fig. 8-1's VITAMIN A row, byte-faithful: the ONLY row in that table whose RDA cell is
+# BLANK (confirmed against the printed page, 2026-07-19). Its two printed values are the
+# true-supplement-need 5,000 IU and the pharmacologic 20,000-300,000 IU -- and its range
+# REPEATS the unit, which used to split one column into two and make the row look full.
+VB_VITA_BASELINE = "VITAMIN A 5,000 IU 20,000 IU - 300,000 IU (beta carotene)\nVITAMIN B-12 3 mcg 200 mcg 1,000 mcg"
 VB_SILVER = ("Humans can\nconsume 400 mcg of silver per day. A silver “deficiency” "
              "results in an\nimpaired immune system.")
 VB_GERM = ("Twenty to 30 mg per day is the recommended maintenance dose for\n"
@@ -145,6 +150,23 @@ CASES = [
      "and FAILED -- correctly: 5,000 is retinol's OWN range top. The gate was right and "
      "the test was wrong. Kept as a caution: pick a value that exists ONLY in the "
      "neighbour, or you are testing nothing.)"),
+    # --- the 2026-07-19 UNDER-FILLED ROW refinement (R9) ------------------------------
+    # Luneth ruled this three times and I reverted it twice, siding with a gate that was
+    # MISPARSING the row. The printed page settled it: the RDA cell is blank, so 5,000 IU is
+    # the true-supplement-need, not the RDA. Positional indexing read column 1 as 20,000 and
+    # RED-flagged a true value.
+    ("UNDERFILLED_true", claim("T-VAB", ["vitamin-a"], 5000, "IU", VB_VITA_BASELINE, BASE), True,
+     "the real Fig. 8-1 VITAMIN A row: blank RDA cell, so the true-supplement-need IS 5,000 IU. "
+     "Was RED before the fix -- the gate compared the wrong cell"),
+    ("UNDERFILLED_fabricated", claim("T-VAB", ["vitamin-a"], 7500, "IU", VB_VITA_BASELINE, BASE),
+     False,
+     "THE OTHER HALF. A value that appears NOWHERE in that same under-filled row must still be "
+     "caught. Without this case the suite would also pass a gate the refinement had blinded"),
+    ("UNDERFILLED_neighbour", claim("T-VAB", ["vitamin-a"], 200, "mcg", VB_VITA_BASELINE, BASE),
+     False,
+     "cross-row bleed still blocked on an under-filled row: 200 mcg is the VITAMIN B-12 row's "
+     "true-supplement-need, in the same span. Row scoping survives the fallback"),
+
     ("range_low_collapse", claim("T-VA", ["vitamin-a"], 2500, "IU", VB_VITA,
                                  "daily multiple", "retinol"), False,
      "retinol '2500-5000' collapsed to the scalar LOW end -- a real understatement, since "

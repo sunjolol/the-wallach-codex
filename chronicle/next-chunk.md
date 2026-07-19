@@ -1,11 +1,48 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-18, session 2 close)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-19)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77** (new gate `term_gloss_ratified_present`). Corpus sealed at **kv=354**, **1335 claims** — 27 claim_texts edited + sealed this session (no adds, no purges).
-> **Weekly usage ~89–92%, ceiling 93% (his). NO AGENT FLEETS. Deterministic Python only until the weekly resets.**
+> Board **77/77**. Corpus sealed at **kv=356**, **1335 claims** — 23 claim_texts edited + sealed 2026-07-19 (no adds, no purges) on top of the 27 from 2026-07-18.
+> **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
 
 # ★★★★ THE REVIEW ARTIFACT (his ruling surface)
-**https://claude.ai/code/artifact/31349afe-da57-4912-8d23-a1783bfa5603** — 149 queue cards (each with a Claude verdict + priority) above the original 162 sweep findings; his earlier rulings are seeded in. Rebuild it with `scratchpad/genpage.py` + `verdicts.py`, then republish to the SAME url. Decisions live in his browser localStorage (`wallach_adjudication_v1`); he exports and pastes them back.
+**https://claude.ai/code/artifact/31349afe-da57-4912-8d23-a1783bfa5603** — 149 queue cards (each with a Claude verdict + priority) above the original 162 sweep findings. Rebuild with `scratchpad/genpage.py` (session `fdd34631-…`), republish to the SAME url. Decisions live in his browser localStorage (`wallach_adjudication_v1`); he exports and pastes them back.
+
+## ★★ THE EXPORT BUG HE CAUGHT — 2026-07-19, and the rule that prevents it recurring
+He pasted 63 decisions. **Only 24 were his.** The build before this one merged a `SEED` of 39 already-applied rulings into the decision store; `syncAll()` PRESSED their buttons, and the exporter scrapes the DOM — so a seeded ruling and a fresh click were physically indistinguishable. The first `save()` persisted them, so the pollution outlived the page that made it. Had he not noticed, 39 rulings he never made that session would have been re-applied on his authority.
+
+**Fixed:** two disjoint maps — `applied.json` (badge-only, never pressed, NEVER exported) and `pending.json` (recovery baseline, browser always wins) — plus a migration deleting any localStorage record byte-identical to its APPLIED original. Export reads the store and cross-checks the DOM, reporting drift instead of shipping it. Note field is an uncapped auto-growing `<textarea>` (was `<input maxlength="500">`, which he called asinine — he is the only user; do not ration his notes).
+
+★★ **THE STANDING RULE: the moment a ruling is SEALED, move it from `pending.json` to `applied.json` and republish.** A sealed ruling left in PENDING re-exports on his next paste and gets re-applied. This is the whole bug; it recurs by omission, not by code.
+
+★ Harness: `scratchpad/test_export.js` (20 checks, puppeteer, node needs the repo's absolute `node_modules/puppeteer` path). Two NEGATIVE CONTROLS earn the pass — a CHANGED applied ruling still exports (proves value-comparison, not blanket suppression), and the old DOM-scrape path reproduces the exact polluted count (proves the diagnosis instead of assuming it). Run it after any page change.
+
+# ★★★★ WHERE THE QUEUE STANDS
+| | |
+|---|---|
+| Queue cards total | **149** |
+| Ruled + SEALED (kv 356) | **23** (cards 1–24 minus LETS-000071) |
+| Ruled but HELD | **1** — `WAL-CLM-LETS-000071` |
+| **Still unruled** | **125** — his next paste starts at card 25 (`WAL-CLM-IAIYH-000010`) |
+| Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **62** |
+
+## ★★ HELD, NEEDS HIS CAMERA — `WAL-CLM-LETS-000071` (vitamin A)
+He read the printed Fig. 8-1 as leaving Vitamin A's **RDA cell blank** — *"the ONLY item on this table that has NO number, no question mark, nothing"* — which shifts every column left and makes the True Supplement Need **5,000 IU**, not 20,000. Our `.txt` encodes no blank (`VITAMIN A 5,000 IU 20,000 IU - 300,000 IU`), so `dose_amount_in_verbatim` RED-flagged 5,000 against column 2's 20,000. **The gate is working as designed** — its own note says the base-line row is `NAME | RDA | TSN | pharmacologic`.
+
+**Declined to move a 4x vitamin A dose on a reading the source cannot support.** Reverted to the `.txt`-consistent text + dose 20,000 IU; it stays in `pending.json`. `lets-play-doctor` is one of the two books whose pages cannot be read here ([[page-images-exist-for-three-books]]). **Needs a photo of that row.** If his reading holds, the fix is a source-transcription correction that represents the empty cell — NOT a claim-only edit — then `corpus_resnap` + the offset-ordering trap.
+
+## ★★ SOURCE-RULE REVIEW — closed without an override
+His `LETS-000065` note asked us to supply the real government RDA where Wallach printed "?". Flagged `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]` — §00.A bars *"conventional comparison values surfaced to the user"*, and the RDAs already in the corpus are legal ONLY because Wallach reprints them himself. **He took the non-breaching alternative**, so the three-confirm protocol stopped at step 1 and no outside number entered the corpus. Full record: `chronicle/contradictions/2026-07-19-government-rda-for-unlisted-nutrients.md`.
+
+★ The alternative needed correcting as it was implemented: explaining "?" as *"no RDA established"* is **FALSE for selenium** (US RDA set 1989, six years before this 1995 edition) — the fix would have reproduced the exact defect class it was fixing. The shipped text reports only what the table prints. **The rule is unchanged; any future proposal re-runs the protocol from step 1.**
+
+## ★★ THE PREVENTION/CURE HUNT (his `DDDL-000066` order) — and the scanner that failed first
+He called `DDDL-000066` the most dangerous summary yet and ordered a corpus-wide hunt. **The first scanner missed the very claim it was built for.** It hunted *invented* promises; the real defect is a **DELETED QUALIFIER** — Wallach wrote *"help prevent"*, we wrote *"preventing"*, turning a hedge into an absolute cancer-prevention claim. The mirror of [[added-hedge-is-a-defect]], in the dangerous direction.
+
+Re-aimed with `DDDL-000066` as a hard-assert positive control (`scratchpad/scan2.py`, deterministic, free to re-run):
+- **qualifier-drop, corpus-wide: 3** — 1 cancer-related, and it is his. The other 2 are false positives (`LETS-000335` keeps "can be used"; `RARE-000047` "preventable" ≡ "can be prevented").
+- **prevent/cure with no such word in the quote: 106**, 6 cancer-related — 4 mechanical senses ("prevent refilling" a cyst), and `DDDL-000056` + `LETS-000391` **cleared against the sealed source as Wallach's own words**.
+
+★ **NOT a proof of absence.** Both detectors are narrow and a paraphrase that drops a hedge without reusing his verb slips both. Stated so nobody later reads "3 found" as "3 exist".
 
 # ★★★★ THE PATH TO 99% — measured 2026-07-18, do not re-guess
 He asked whether ruling on the artifact gets the corpus to his 99% bar. **It does not — it lands at ~97.3%.** The binding constraint is RECALL, not the queue.

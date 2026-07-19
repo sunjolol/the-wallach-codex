@@ -3058,7 +3058,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 20,000 IU and a 30-day pharmacologic daily dose of 300,000 IU, taken as beta-carotene. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin A a True Supplement Need (daily maintenance target) of 5,000 IU and a 30-day pharmacologic daily dose of 20,000 to 300,000 IU, taken as beta-carotene. The quoted row runs in column order — the government RDA (no amount listed for Vitamin A), then Wallach's True Supplement Need, then his 30-day pharmacologic dose. Where the table does print an RDA, Wallach reprints it only to argue against it; it is never his recommendation.",
       "verbatim": "VITAMIN A 5,000 IU 20,000 IU - 300,000 IU\n(beta carotene)\nVITAMIN B-12 3 mcg 200 mcg 1,000 mcg",
       "locator": {
         "book": "lets-play-doctor",
@@ -3070,7 +3070,7 @@
         "char_offset": 140106
       },
       "dose": {
-        "amount": 20000,
+        "amount": 5000,
         "unit": "IU",
         "period": "daily",
         "form": "beta carotene",

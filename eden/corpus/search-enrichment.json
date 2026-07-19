@@ -1412,7 +1412,7 @@
       ],
       "facet": "basics",
       "question": "How many essential amino acids are there?",
-      "answer_short": "Wallach counts 12 the body can't make (mainstream says 9; he adds tyrosine, arginine, taurine, histidine). Miss any for long and a specific deficiency disease follows.",
+      "answer_short": "Wallach counts 12 the body can't make. Miss any for long and a specific deficiency disease follows.",
       "topics": [
         "essential-amino-acids",
         "protein",
@@ -2232,7 +2232,7 @@
       ],
       "facet": "uses",
       "question": "Is gallium used in cancer medicine?",
-      "answer_short": "Yes - gallium-67 (78-hour half-life), one of medicine's first man-made isotopes, gathers in cancers like melanoma, letting it treat them with little harm to nearby tissue.",
+      "answer_short": "Yes - gallium-67 (78-hour half-life), one of medicine's first man-made isotopes, gathers in cancers like melanoma, letting it treat them without damage to surrounding tissues.",
       "topics": [
         "gallium-67",
         "melanoma",
