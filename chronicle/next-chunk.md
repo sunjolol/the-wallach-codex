@@ -1,8 +1,10 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-19)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-20)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77**. Corpus sealed at **kv=361**, **1335 claims**. Two of his ratification pastes are fully applied this session: 33 fixes (2026-07-19 first pass, kv->358) + 45 more (second pass = 38 sealed claim_texts + 7 keeps, kv 358->361). No adds, no purges.
+> Board **77/77**. Corpus sealed at **kv=363**, **1335 claims**. His **2026-07-20** ratification paste (**54 rulings**) is fully applied: Seal 1 (45 claim_text + 6 search-answer sidecar mirror-fixes, kv 361->362, `d065cb83`) + Seal 2 (2 LETS source-.txt garble fixes via the resnap flow, kv 362->363, `338d321a`) + 7 keeps (6 straight + RARE-000143 VERIFIED genuinely his stance via same-book RARE-000086). No adds, no purges. The review page was republished (applied.json 117->171, pending empty). The prior 2026-07-19 pastes (33+45) were applied last session (kv->361).
 > **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
+>
+> ★ **2026-07-20 session was 100% deterministic** — no agent fleets, budget freeze fully honored. The whole 54-ruling paste was applied with plain Python + safe_write + resnap. If the weekly has reset, the fleet-dependent PATH-TO-99% steps below reopen; re-check first.
 
 # ★★★★ THE REVIEW ARTIFACT (his ruling surface)
 **https://claude.ai/code/artifact/31349afe-da57-4912-8d23-a1783bfa5603** — 149 queue cards (each with a Claude verdict + priority) above the original 162 sweep findings. Rebuild with `scratchpad/genpage.py` (session `fdd34631-…`), republish to the SAME url. Decisions live in his browser localStorage (`wallach_adjudication_v1`); he exports and pastes them back.
@@ -22,10 +24,10 @@ He pasted 63 decisions. **Only 24 were his.** The build before this one merged a
 | | |
 |---|---|
 | Queue cards total | **149** |
-| Ruled + SEALED (kv 361) | **78** (both pastes; render in the page's DECIDED tier, filter default-off) |
-| Ruled but HELD | **0** — nothing pending. Last cleared: DDDL-000027 (manganese) + LETS-000061 (phosphorus why-0), both drafted from his own span and sealed at kv 361 on his approval. |
-| **Still unruled** | **71** — the working list on the page. ALL 9 SAFETY cards are cleared. `applied.json` holds **117**; `pending.json` is empty. |
-| Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **72** |
+| Ruled + SEALED (kv 363) | **132** (all pastes; render in the page's DECIDED tier, filter default-off) |
+| Ruled but HELD | **0** — nothing pending. |
+| **Still unruled** | **17** — the working list on the page: **15 low + 2 hold/your-call**. ALL safety/high/standard cards are cleared. `applied.json` holds **171**; `pending.json` is empty. |
+| Prior campaign, applied | 39 (2026-07-17) folded in → `applied.json` now holds **171** total |
 
 ## ★★ SETTLED 2026-07-19 — `WAL-CLM-LETS-000071` (vitamin A). HE WAS RIGHT; THE GATE WAS WRONG.
 He ruled this THREE times and I reverted it twice, siding with `dose_amount_in_verbatim`. His photo of the printed Fig. 8-1 settled it: the VITAMIN A row's **RDA cell is blank**, so its two printed values are the True Supplement Need **5,000 IU** and the pharmacologic **20,000-300,000 IU**. Dose is now 5,000 IU, sealed at kv 357.
