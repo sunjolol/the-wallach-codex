@@ -2407,7 +2407,7 @@
       ],
       "facet": "basics",
       "question": "What is helium?",
-      "answer_short": "The lightest noble gas -- so inert it forms no compounds and occurs pure in nature. After hydrogen it is the 2nd most abundant element in the universe (~7% of atoms). It was the first element found off Earth: seen in the sun's spectrum in 1868 and named from Greek Helios, 'sun.'",
+      "answer_short": "The lightest noble gas -- so inert it forms no compounds and occurs pure in nature. After hydrogen it is the 2nd most abundant element in the universe (~7% of atoms). It was discovered on the sun before it was found on Earth -- seen in the sun's spectrum in 1868 and named from Greek Helios, 'sun.'",
       "topics": [
         "helium",
         "noble-gas",
@@ -2727,7 +2727,7 @@
       "also_about": [],
       "facet": "basics",
       "question": "What is potassium, chemically?",
-      "answer_short": "A silver-white alkali metal so soft you can cut it with a knife - so reactive it's never found pure in nature; Davy first isolated it by electrolysis in 1807.",
+      "answer_short": "A silver-white alkali metal so soft you can cut it with a knife - and is never found pure in nature; Davy first isolated it by electrolysis in 1807.",
       "topics": [
         "alkali-metal",
         "davy",
@@ -2801,7 +2801,7 @@
       ],
       "facet": "history",
       "question": "Can krypton form compounds - didn't Pauling predict it?",
-      "answer_short": "Yes - though noble gases were thought inert, Linus Pauling used quantum mechanics in 1933 to predict krypton fluoride; Neil Bartlett proved him right by making KrF2 in 1966.",
+      "answer_short": "Yes - though krypton was thought inert, Linus Pauling used quantum mechanics in 1933 to predict krypton fluoride; Neil Bartlett proved him right by making KrF2 in 1966.",
       "topics": [
         "pauling",
         "krypton-fluoride",
@@ -3066,7 +3066,7 @@
       "also_about": [],
       "facet": "mechanism",
       "question": "Why does Wallach warn against ham, bacon, and sausage?",
-      "answer_short": "The nitrates and nitrites cured into ham, bacon, sausage and other processed pork act as goitrogens, interfering with normal thyroid metabolism and capable of producing thyroid disease.",
+      "answer_short": "The nitrates and nitrites cured into processed meats such as ham, bacon, and sausage act as goitrogens, interfering with normal thyroid metabolism and capable of producing thyroid disease.",
       "topics": [
         "processed pork",
         "goitrogens",
@@ -3205,7 +3205,7 @@
       "also_about": [],
       "facet": "history",
       "question": "Where does chiropractic come from?",
-      "answer_short": "Spinal manipulation is ancient (Egypt, China, Babylon); it reached the West in 1895 when D.D. Palmer reportedly cured a janitor's deafness, and chiropractors won a 1987 antitrust case against the AMA.",
+      "answer_short": "Spinal manipulation is ancient (Egypt, China, Babylon); it reached the West in 1895 when D.D. Palmer cured a janitor's deafness, and chiropractors won a 1987 antitrust case against the AMA.",
       "topics": [
         "palmer",
         "history",
@@ -3637,7 +3637,7 @@
       "also_about": [],
       "facet": "stance",
       "question": "What is Wallach's stance on vaccine mandates?",
-      "answer_short": "He calls immunization 'the greatest interface between government and freedom of choice,' opposes compulsory school mandates, defends the religious exemption, and says some experts blame certain vaccine programs for catastrophic diseases.",
+      "answer_short": "He calls immunization 'the greatest interface between government and freedom of choice,' opposes compulsory school mandates, defends the religious exemption, and warns that many vaccination programs have carried catastrophic diseases.",
       "topics": [
         "vaccine-mandates",
         "medical-freedom",

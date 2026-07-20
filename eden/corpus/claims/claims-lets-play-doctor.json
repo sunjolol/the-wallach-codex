@@ -20,7 +20,7 @@
         "cancer"
       ],
       "symptoms": [],
-      "claim_text": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious degenerative diseases — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
+      "claim_text": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "verbatim": "Food supplements at RDA\nlevels are better than nothing but will not\nprevent serious disease (i.e., arthritis,\nosteoporosis, arteriosclerosis, senile dementia,\nmuscular dystrophy, cystic fibrosis, pyorrhea,\nheart attack, cancer, etc.).",
       "locator": {
         "book": "lets-play-doctor",
@@ -743,7 +743,7 @@
         "muscle_atrophy",
         "pancreatic_atrophy"
       ],
-      "claim_text": "Wallach lists the signs of manganese deficiency: ataxia (loss of coordination), atherosclerosis, dizziness, hearing loss, high cholesterol, hypoglycemia (low blood sugar), muscle atrophy, pancreatic atrophy, and tinnitus (ringing in the ears).",
+      "claim_text": "Wallach lists the signs of manganese deficiency: ataxia (loss of coordination), atherosclerosis, dizziness, hearing loss, high cholesterol, hypoglycemia (low blood sugar), \"muscle therapy\" (printed thus in the source — an apparent misprint whose intended term is unclear), pancreatic atrophy, and tinnitus (ringing in the ears).",
       "verbatim": "MANGANESE DEFICIENCY\nataxia\natherosclerosis\ndizziness\nhearing loss\nhypercholesterolemia\nhypoglycemia\nmuscle therapy\npancreatic atrophy\ntinnitus",
       "locator": {
         "book": "lets-play-doctor",
@@ -3490,7 +3490,7 @@
         "malabsorption"
       ],
       "symptoms": [],
-      "claim_text": "Wallach explains that the reported successes of the macrobiotic (\"brown rice\") diet are largely due to inadvertent gluten elimination: people who unknowingly have gluten sensitivity (celiac disease) benefit when they remove wheat from the diet, because their gut then begins to absorb the trace minerals, vitamins, and essential fatty acids it had been failing to take up. In his framework the diet's value is nutritional (resolving malabsorption), not the yin/yang theory behind it.",
+      "claim_text": "Wallach offers one explanation for the reported successes of the macrobiotic (\"brown rice\") diet: inadvertent gluten elimination. People who are not aware that they have gluten sensitivity (celiac disease) get benefit from eliminating wheat from their diet and begin to absorb trace minerals, vitamins, and essential fatty acids. The explanation he gives is nutritional — resolving malabsorption — rather than the yin/yang imbalance that macrobiotic philosophy holds to be the cause of all disease.",
       "verbatim": "An explanation for increased health from the macrobiotic program\nis that individuals who are not aware that they\nhave gluten sensitivity (celiac disease) get\nbenefit from eliminating wheat from their diet\nand begin to absorb trace minerals, vitamins\nand essential fatty acids",
       "locator": {
         "book": "lets-play-doctor",
@@ -3727,7 +3727,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach lists chiropractic's four treatment goals: (1) restore normal posture; (2) restore optimal function to the spinal and pelvic joints; (3) correct visceral (internal-organ) malfunction by relieving pressure on spinal nerves; and (4) relieve pain by \"reducing\" subluxations. Spinal manipulation is ancient (Egyptians, Hindus, Chinese, Babylonians, Assyrians) and reached the West in 1895 when Daniel D. Palmer reportedly cured his janitor's deafness with neck manipulation; in 1987 chiropractors won a landmark U.S. antitrust case against the American Medical Association (AMA).",
+      "claim_text": "Wallach lists chiropractic's four treatment goals: (1) restore normal posture; (2) restore optimal function to the spinal and pelvic joints; (3) correct visceral (internal-organ) malfunction by relieving pressure on spinal nerves; and (4) relieve pain by \"reducing\" subluxations. Manipulation is an ancient healing art (Egyptians, Hindus, Traditional Chinese Medicine, Babylonians, Assyrians) and reached the western world in 1895 when Daniel D. Palmer cured his janitor's deafness with cervical (neck) manipulation; in 1987 chiropractors won a landmark U.S. antitrust case against the American Medical Association (AMA).",
       "verbatim": "The treatment goal of\nchiropractic is to:\n1) restore normal posture\n2) restore optimal function to\nspinal and pelvic joints\n3) correct visceral malfunction\nby relieving pressure on spinal\nnerves\n4) relieve pain by \"reducing\"\nsubluxations",
       "locator": {
         "book": "lets-play-doctor",
@@ -4613,7 +4613,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach recounts that Dr. Samuel Hahnemann, a physician from Leipzig, Germany, 'proved' that Cinchona bark (a malaria cure of the day) gave malaria-like symptoms to healthy people, and went on to 'prove' hundreds of medications and substances. Hahnemann found that very often the more dilute the preparation, the more dramatic the clinical effect — a long-controversial observation that Wallach notes a 1988 article in Nature magazine supported. Homeopathic dilutions are expressed as 'potencies' on decimal/centesimal scales (e.g. 1X/2X, 1C/2C, with European 1D/2D designations); at high dilutions (about 12C or 24X) not a single molecule of the original substance is likely to remain (Avogadro's Law).",
+      "claim_text": "Wallach recounts that Dr. Samuel Hahnemann, a physician from Leipzig, Germany, 'proved' that Cinchona bark (a malaria cure of the day) gave malaria symptoms to healthy people, and went on to 'prove' hundreds of medications and substances. Hahnemann found that very often the more dilute the preparation, the more dramatic the clinical effect — a long-controversial observation that Wallach notes a 1988 article in Nature magazine supported. Homeopathic dilutions are expressed as 'potencies' on decimal/centesimal scales (e.g. 1X/2X, 1C/2C, with European 1D/2D designations); at a 12C dilution there may be one molecule of the original substance or none (Avogadro's Law), yet Wallach says the 'remedy' still has a homeopathic medical effect.",
       "verbatim": "Dr. Samuel Hahnemann, a physician\nfrom Leipzig, Germany, \"proved\" that Cinchona bark (a malaria cure of the day) gave\nmalaria symptoms to healthy people.\nHahnemann went on to \"prove\" hundreds of\nmedications and substances",
       "locator": {
         "book": "lets-play-doctor",
@@ -5198,7 +5198,7 @@
       "symptoms": [
         "allergic_shiners"
       ],
-      "claim_text": "Allergic shiners -- the purplish-black discolorations under the lower eyelids -- are a reliable diagnostic sign of allergies; they appear within minutes of ingesting or inhaling an allergen and can take 12 hours to three days to fade after avoidance. Wallach notes their diagnostic value (for example in a hyperactive child, heart disease, or cancer); avoidance of the allergen is the only 'cure.'",
+      "claim_text": "Allergic shiners -- the purplish-black discolorations under the lower eyelids -- are a good diagnostic tool for allergies; they appear within minutes of ingesting or inhaling an allergen and may take as much as 12 hours to three days to fade after avoidance. Wallach notes their diagnostic value (for example in a hyperactive child, heart disease, or cancer); avoidance of the allergen or allergens is the only 'cure' for allergic shiners.",
       "verbatim": "ALLERGIC SHINERS: are the purplish/ black\ndiscolorations under the lower eyelids of individuals with allergies. They will appear within\nminutes of ingestion or inhalation of an allergen. Allergic shiners may take as much as 12\nhours to three days to disappear after avoidance of allergenic substance. Allergic shiners\nare a good diagnostic tool (i.e. , allergic shiners\nin a hyperactive child, heart disease, cancer,\netc.). Avoidance of the allergen or allergens is\nthe only \"cure",
       "locator": {
         "book": "lets-play-doctor",
@@ -5825,7 +5825,7 @@
         "rheumatoid_arthritis"
       ],
       "symptoms": [],
-      "claim_text": "Wallach calls arthritis a complex of nutritional deficiencies (with rheumatoid arthritis driven by chronic Mycoplasma infection), not an unknown disease. He stresses a dietary calcium/phosphorus ratio of 2:1 (hard to reach unsupplemented; meat-heavy diets worsen calcium loss). Treatment: calcium 2000 mg/day (more if eating meat 2-3x/day); magnesium 800-1000 mg/day; cartilage or chondroitin sulfate 1000 mg three times daily; for rheumatoid arthritis add tetracycline 250 mg four times daily or hydrogen peroxide for the Mycoplasma; intravenous chelation with EDTA and hydrogen peroxide; vitamin C to bowel tolerance; vitamin B-6 100 mg twice daily; vitamin B-3 450 mg twice daily as time-release capsules; vitamin E 1000 IU/day; copper 2 mg/day (a copper bracelet may help); selenium 300 mcg/day; zinc 50 mg three times daily; and plant-derived colloidal minerals. Rotation elimination diets, autoimmune urine therapy, topical dimethyl sulfoxide (DMSO)/pain gels, and herbs (licorice, poison ivy, alfalfa) are useful adjuncts.",
+      "claim_text": "Wallach calls arthritis a complex of nutritional deficiencies (with rheumatoid arthritis driven by chronic Mycoplasma infection), not an unknown disease. He stresses a dietary calcium/phosphorus ratio of 2:1 (ideal, yet impossible to attain unsupplemented; meat-heavy diets worsen calcium loss). Treatment: calcium 2000 mg/day (more if eating meat 2-3x/day); magnesium 800-1000 mg/day; cartilage or chondroitin sulfate 1000 mg three times daily; for rheumatoid arthritis add tetracycline 250 mg four times daily or hydrogen peroxide for the Mycoplasma; intravenous chelation with EDTA and hydrogen peroxide; vitamin C to bowel tolerance; vitamin B-6 100 mg twice daily; vitamin B-3 450 mg twice daily as time-release capsules; vitamin E 1000 IU/day; copper 2 mg/day (a copper bracelet may help); selenium 300 mcg/day; zinc 50 mg three times daily; and plant-derived colloidal minerals. Rotation elimination diets, autoimmune urine therapy, topical dimethyl sulfoxide (DMSO)/pain gels, and herbs (licorice, poison ivy, alfalfa) are useful adjuncts.",
       "verbatim": "Treatment of arthritis should include calcium at 2000 mg/day and more if you eat meat two or three times per day; magnesium at 800-1000 mg/day; cartilage or chondroitin sulfate at 1000 mg t.i.d.; for rheumatoid arthritis, add tetracycline at 250 mg q.i.d. or H2O2 to deal with the Mycoplasma. IV chelation with EDTA and H2O2 is very helpful! Vitamin C to bowel tolerance, B-6 100 mg b.i.d.; B-3 450 mg b.i.d. as time-release capsules. Vitamin E at 1000 IU/day. Copper at 2 mg/day (may be absorbed from a copper bracelet); selenium 300 mcg/day; zinc 50 mg t.i.d.; plant derived colloidal minerals are 98% absorbable and give excellent results!",
       "locator": {
         "book": "lets-play-doctor",
@@ -5911,7 +5911,7 @@
         "eczema"
       ],
       "symptoms": [],
-      "claim_text": "Wallach places atopic dermatitis (eczema) within the 'atopic' syndrome (with asthma, hair loss, and lowered immunity) -- a malabsorption of essential fatty acids, often with chromium malabsorption causing PMS-like symptoms, hypoglycemia, or diabetes, usually from a celiac-type change in the small-intestine lining rather than dietary lack. Treatment: a rotation elimination diet (a pulse test usually reveals cow's milk, wheat, or soy as culprits); autoimmune therapy; essential fatty acids as flaxseed oil 1 tablespoon twice daily; and vitamin E 1000 IU/day. If malabsorption is severe, the fatty acids may be given as intravenous interlipids.",
+      "claim_text": "Wallach places atopic dermatitis (eczema) within the 'atopic' syndrome (with asthma, hair loss, and lowered immunity) -- a malabsorption of essential fatty acids, which can also involve chromium malabsorption causing PMS-like symptoms, hypoglycemia, or diabetes, usually from a celiac-type change in the small-intestine lining rather than dietary lack. Treatment: a rotation elimination diet (a pulse test usually reveals cow's milk, wheat, or soy as culprits); autoimmune therapy; essential fatty acids as flaxseed oil 1 tablespoon twice daily; and vitamin E 1000 IU/day. If malabsorption is severe, the fatty acids may be given as intravenous interlipids.",
       "verbatim": "Treatment should include a rotation elimination diet (usually a pulse test will reveal cow's milk, wheat or soy products to be the culprits); autoimmune therapy is very useful; supplementation should include essential fatty acids as flaxseed oil at 1 tbsp. b.i.d., vitamin E at 1000 IU/day. If malabsorption is a major problem, the fatty acids may be taken as interlipids IV.",
       "locator": {
         "book": "lets-play-doctor",
@@ -6276,7 +6276,7 @@
         "benign_prostatic_hyperplasia"
       ],
       "symptoms": [],
-      "claim_text": "Benign prostatic hyperplasia (enlargement of the prostate gland) is the most common infirmity of aging in men; the enlarging gland squeezes the bladder neck, producing urinary frequency and urgency. Wallach's protocol is zinc at 50 mg three times daily, essential fatty acids as flaxseed oil 1 tablespoon three times daily, a high-fiber diet including pumpkin seeds and alfalfa, vitamin A as beta carotene 300,000 IU/day, vitamin C to bowel tolerance, chlorophyll (best from alfalfa), the amino acids glycine, alanine, and glutamic acid at 5 grams each daily for 90 days, hydrogen peroxide (20 drops per oz of aloe juice) 1 oz twice daily, cranberry juice 2 pints/day, saw palmetto (Serenoa serrulata), and selenium 250 mcg three times daily.",
+      "claim_text": "Benign prostatic hyperplasia (enlargement of the prostate gland) is perhaps the most common infirmity of aging in men; the enlarging gland squeezes the bladder neck, producing urinary frequency and urgency. Wallach's protocol is zinc at 50 mg three times daily, essential fatty acids as flaxseed oil 1 tablespoon three times daily, a high-fiber diet including pumpkin seeds and alfalfa, vitamin A as beta carotene 300,000 IU/day, vitamin C to bowel tolerance, chlorophyll (best from alfalfa), the amino acids glycine, alanine, and glutamic acid at 5 grams each daily for 90 days, hydrogen peroxide (20 drops per oz of aloe juice) 1 oz twice daily, cranberry juice 2 pints/day, saw palmetto (Serenoa serrulata), and selenium 250 mcg three times daily.",
       "verbatim": "Benign prostatic hypertrophy is treated with\nzinc at 50 mg t.i.d., essential fatty acids as\nflaxseed oil at 1 tbsp. t.i.d., high fiber diets\nincluding pumpkin seeds and alfalfa, 300,000\nIU vitamin A as beta carotene per day, vitamin\nC to bowel tolerance, chlorophyll (best source\nis alfalfa), amino acids (glycine, alanine and\nglutamic acid) at five grams each daily for 90\ndays",
       "locator": {
         "book": "lets-play-doctor",
@@ -7044,7 +7044,7 @@
         "bursitis"
       ],
       "symptoms": [],
-      "claim_text": "Bursitis is inflammation of the bursal sacs that cushion tendons where they pass over joints (shoulder, 'housemaid's knee,' 'miner's elbow,' bunions), often flaring after overwork of an out-of-shape joint. Wallach's treatment is topical pain gels, dimethyl sulfoxide (DMSO), or eucalyptus liniments to increase circulation and remove the swelling that causes the pain; orally, vitamin B-12 at 1000 mcg/day, vitamin C to bowel tolerance, bioflavonoids 1200 mg/day, rutin 50 mg three times daily, vitamin E at 800-1200 IU/day, calcium and magnesium at 2000 mg and 1000 mg per day, gelatin, cartilage 5 grams three times daily, and alfalfa, plus plant-derived colloidal minerals.",
+      "claim_text": "Bursitis is inflammation of the bursal sacs that cushion tendons where they pass over joints (shoulder, 'housemaid's knee,' 'miner's elbow,' bunions); overwork of an out-of-shape joint can bring on a flare-up. Wallach's treatment is topical pain gels, dimethyl sulfoxide (DMSO), or eucalyptus liniments to increase circulation and remove the swelling that causes the pain; orally, vitamin B-12 at 1000 mcg/day, vitamin C to bowel tolerance, bioflavonoids 1200 mg/day, rutin 50 mg three times daily, vitamin E at 800-1200 IU/day, calcium and magnesium at 2000 mg and 1000 mg per day, gelatin, cartilage 5 grams three times daily, and alfalfa, plus plant-derived colloidal minerals.",
       "verbatim": "Oral support includes B-12 at 1,000 mcg/day,\nvitamin C to bowel tolerance, bioflavonoids\n1,200 mg/day, rutin 50 mg t.i.d., vitamin E at\n800-1,200 IU/day, calcium and magnesium at\n2,000 mg and 1,000 mg per day respectively,\ngelatin, cartilage 5 gm t.i.d. and alfalfa. Be sure\nto include plant derived colloidal minerals in\nyour bursitis program.",
       "locator": {
         "book": "lets-play-doctor",
@@ -8350,7 +8350,7 @@
         "cervical_dysplasia"
       ],
       "symptoms": [],
-      "claim_text": "Cervical dysplasia is a precancerous change in the surface cells of the uterine cervix that Wallach identifies as a manifestation of chronic vitamin A deficiency, diagnosed by Pap smear or biopsy. Treatment is painting the affected surface with Lugol's Solution (an iodine preparation) plus oral beta carotene equivalent to 300,000 international units of vitamin A per day, oral zinc at 50 mg three times daily, and the base-line nutritional supplement.",
+      "claim_text": "Cervical dysplasia is considered a precancerous change in the surface cells of the uterine cervix that Wallach identifies as a manifestation of chronic vitamin A deficiency, diagnosed by Pap smear or biopsy. Treatment is painting the affected surface with Lugol's Solution (an iodine preparation) plus oral beta carotene equivalent to 300,000 international units of vitamin A per day, oral zinc at 50 mg three times daily, and the base-line nutritional supplement.",
       "verbatim": "Treatment ofcervical dysplasia is accomplished\nby painting the affected surface with Lugol's\nSolution (an iodine preparation) and oral\nsupplementation ofbeta carotene at an equivalent of 300,000 IU of vitamin A per day and oral\nzinc at 50 mg t.i.d. Don't forget the base line\nnutritional supplement here",
       "locator": {
         "book": "lets-play-doctor",
@@ -8567,7 +8567,7 @@
         "hypothermia"
       ],
       "symptoms": [],
-      "claim_text": "Hypothermia is the lowering of body or limb temperature to subnormal levels long enough to approach frostbite, with severe numbness and possible loss of function; prevention is dressing properly for the weather. Wallach's treatment is rapid warming in warm water and/or warm enemas, and electric blankets if available (placed underneath as well as on top).",
+      "claim_text": "Hypothermia is the lowering of body or limb temperature to subnormal levels long enough to approach frostbite; severe numbness and loss of function may occur, and prevention is dressing properly for the weather. Wallach's treatment includes rapid warming in warm water and/or warm enemas, and electric blankets if available (placed underneath as well as on top).",
       "verbatim": "Treatment includes rapid warming in warm\nwater and/or warm enemas, electric blankets\nif available (underneath as well as on top).",
       "locator": {
         "book": "lets-play-doctor",
@@ -9667,7 +9667,7 @@
         "eczema"
       ],
       "symptoms": [],
-      "claim_text": "Dermatitis (atopic dermatitis, eczema, and dermatitis herpetiformis) is a common skin disease that Wallach says is treated incorrectly with cortisone or prednisone creams; about 97% of these patients have wheat-gluten food allergies and many are sensitive to cow's milk, with the same lesions occurring in the small-intestine lining and causing serious, immune-depleting malabsorption (a precursor to diabetes, cancer, arthritis, and birth defects). His treatment for all three forms is a gluten-free and cow's-milk-free diet, a pulse test on frequently eaten foods, essential fatty acids at 5 gm four times daily, para-aminobenzoic acid (PABA) at 200 mg four times daily, betaine HCl and digestive enzymes at 75-200 mg each three times daily before meals, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times daily, and colloidal minerals on top of the base-line supplement program; healing the intestinal lesions takes 60-90 days.",
+      "claim_text": "Dermatitis (atopic dermatitis, eczema, and dermatitis herpetiformis) is a common skin disease that Wallach says is treated incorrectly with cortisone or prednisone creams; 97% of these patients have wheat-gluten food allergies and almost as many are sensitive to cow's milk, with the same lesions occurring in the small-intestine lining and causing serious, life-threatening, immune-depleting malabsorption (a precursor to diabetes, cancer, arthritis, and birth defects). His treatment for all three forms is a gluten-free and cow's-milk-free diet, a pulse test on frequently eaten foods, essential fatty acids at 5 gm four times daily, para-aminobenzoic acid (PABA) at 200 mg four times daily, betaine HCl and digestive enzymes at 75-200 mg each three times daily before meals, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times daily, and colloidal minerals on top of the base-line supplement program; healing the intestinal lesions takes 60-90 days.",
       "verbatim": "Treatment of all three of the above manifestations of dermatitis should include a gluten free\nand cow's milk free diet. It is also pmdent to\ndo a \"pulse test\" on frequently consumed\nfoods to determine if they are also affecting\nyou. The supplementation of essential fatty\nacids are 5 gm q. i. d. ,PABA at 200 mg q.i.d. and\n113\nbetaine HC1 and digestive enzymes at 75-200\nmg each t.i.d. before meals should be added\non top of the base line supplement program.\nHave patience, it will take 60-90 days to heal\nthe intestinal lesions to the point where you\ncan absorb nutrients efficiently. Vitamin A at\n300,000 IU/day as beta carotene and zinc at 50\nmg t.i.d. and colloidal minerals.",
       "locator": {
         "book": "lets-play-doctor",
@@ -12285,7 +12285,7 @@
         "immune_depression"
       ],
       "symptoms": [],
-      "claim_text": "Immune depression (immune exhaustion) is caused by a chronic process — unrelenting stress, chronic allergies, or chronic infections — that exhausts the immune system so it can no longer protect against invaders such as Epstein-Barr virus, candidiasis, food allergies, arthritis, and cancer; 'anergy' is a state of exhaustion so deep that diagnostic skin tests fail to react even with overwhelming disease. Wallach notes that cortisone, prednisone, and chemotherapy themselves cause immune depression. Treatment of the depressed immune system: vitamin C to bowel tolerance; zinc at 50 milligrams three times daily; vitamin A at 300,000 international units per day as beta carotene; adrenal cortical extract (sublingual, intramuscular, or intravenous); germanium at 50 milligrams orally or intramuscularly daily; acupuncture; homeopathy; ginseng (Panax ginseng); selenium at 1,000 micrograms per day; and plant-derived colloidal minerals.",
+      "claim_text": "Immune depression (immune exhaustion) is caused by a chronic process — unrelenting stress, chronic allergies, or chronic infections — that exhausts the immune system so it can no longer protect against invaders such as Epstein-Barr virus, candidiasis, food allergies, arthritis, and cancer; 'anergy' is a state of exhaustion so deep that you may not react to diagnostic tests even when you have an overwhelming disease. Wallach notes that cortisone, prednisone, and chemotherapy themselves cause immune depression. Treatment of the depressed immune system: vitamin C to bowel tolerance; zinc at 50 milligrams three times daily; vitamin A at 300,000 international units per day as beta carotene; adrenal cortical extract (sublingual, intramuscular, or intravenous); germanium at 50 milligrams orally or intramuscularly daily; acupuncture; homeopathy; ginseng (Panax ginseng); selenium at 1,000 micrograms per day; and plant-derived colloidal minerals.",
       "verbatim": "Treatment of a depressed immune system\nincludes vitamin C to bowel tolerance, zinc at\n50 mg t.i.d., vitamin A at 300,000 IU/day as\nbeta carotene, ACE (adrenal cortical extract)\nsublingual, IM or EV, germanium at 50 mg\norally or IM daily, acupuncture, homeopathy,\nherbs to include ginseng (Panax ginseng),\nselenium at 1,000 mcg/day and plant derived\ncolloidal minerals.",
       "locator": {
         "book": "lets-play-doctor",
@@ -12315,7 +12315,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In this entry Wallach frames immunization (vaccination) as, in his words, 'perhaps the greatest interface between government and freedom of choice' in personal health care. He objects to compulsory school-entry vaccination mandates and to states treating refusal as grounds for a child-abuse charge, defends the religious exemption, and asserts that some experts believe certain vaccination programs have carried catastrophic diseases. This is captured for the search corpus as Wallach's political/editorial opinion — it is commentary, not a deficiency-treatment protocol, so it does not appear in the operational condition indices.",
+      "claim_text": "In this entry Wallach frames immunization (vaccination) as, in his words, 'perhaps the greatest interface between government and freedom of choice' in personal health care. He objects to compulsory school-entry vaccination mandates and to states treating refusal as grounds for a child-abuse charge, defends the religious exemption, and asserts outright that many vaccination programs have been the carrier for many catastrophic diseases — adding that some experts believe AIDS itself was originally spread through vaccination programs. This is captured for the search corpus as Wallach's political/editorial opinion — it is commentary, not a deficiency-treatment protocol, so it does not appear in the operational condition indices.",
       "verbatim": "IMMUNIZATION (vaccination): is perhaps\nthe greatest interface between government\nand freedom of choice in your own health\ncare!!!",
       "locator": {
         "book": "lets-play-doctor",
@@ -14555,7 +14555,7 @@
         "morning_sickness"
       ],
       "symptoms": [],
-      "claim_text": "Morning sickness is the nausea that occurs in the first three months of pregnancy as progesterone levels rise. Wallach says eating a complex-carbohydrate or protein snack on awakening relieves much of the nausea. He also suggests herbal teas of dogwood (Cornus sericea) and mint (Mentha sativa); vitamin B-6 together with a B-complex at 25 milligrams three times a day; essential fatty acids (omega-3) at 1,000 milligrams three times a day; and the baseline nutritional supplement program.",
+      "claim_text": "Morning sickness is the nausea that occurs in the first three months of pregnancy because of rising progesterone levels. Wallach says eating a complex-carbohydrate or protein snack on awakening relieves much of the nausea. He also suggests herbal teas of dogwood (Cornus sericea) and mint (Mentha sativa); vitamin B-6 together with a B-complex at 25 milligrams three times a day; essential fatty acids at 1,000 milligrams three times a day; and the baseline nutritional supplement program.",
       "verbatim": "MORNING SICKNESS: is a nausea that occurs in the first three months of pregnancy\nbecause of rising progesterone levels. Having\na complex carbohydrate or protein snack upon\nawakening will relieve much of the nausea;\nherbal tea such as dogwood (Cornus sericea)\nand mint (Mentha sativa); B-6 and B-complex\nat 25 mg t.i.d., essential fatty acids at 1,000 mg\nt.i.d. and the base line nutritional supplement",
       "locator": {
         "book": "lets-play-doctor",
@@ -16253,7 +16253,7 @@
         "rabies"
       ],
       "symptoms": [],
-      "claim_text": "Rabies (hydrophobia) is a highly dangerous viral disease transmitted through the blood, tissue (including transplanted corneas, livers, kidneys, or hearts), urine, or saliva of infected animals or people. Besides bites from rabid bats, foxes, skunks, and unvaccinated dogs, Wallach notes many fatal cases follow tissue transplants, because rabies in humans is a progressive paralytic disease often misdiagnosed as stroke. He also points out the incubation period is about fourteen days, so if a biting pet has been healthy for three weeks or more, rabies is an impossible diagnosis. Treatment should be started quickly if it is to succeed, and includes the well-known 'rabies shots' every day for ten days plus respiratory support in a hospital setting; high-risk research personnel can get preventive vaccination.",
+      "claim_text": "Rabies (hydrophobia) is a highly dangerous viral disease transmitted through the blood, tissue (including transplanted corneas, livers, kidneys, or hearts), urine, or saliva of infected animals or people. Besides bites from rabid bats, foxes, skunks, and unvaccinated dogs, Wallach notes many fatal cases follow tissue transplants, because rabies in humans is a progressive paralytic disease often misdiagnosed as stroke. He also points out the incubation period is fourteen days, so if you have had the biting pet for three weeks or more, rabies is an impossible diagnosis. Treatment should be started quickly if it is to succeed, and includes the well-known 'rabies shots' every day for ten days plus respiratory support in a hospital setting; high-risk research personnel can get preventive vaccination.",
       "verbatim": "Treatment of rabies should be instituted quickly if success can be anticipated;\ntreatment includes the well known \"rabies\nshots\" every day for ten days and respiratory\nsupport in a hospital setting",
       "locator": {
         "book": "lets-play-doctor",
@@ -16289,7 +16289,7 @@
         "rickets"
       ],
       "symptoms": [],
-      "claim_text": "Rachitic rosary is the bead-like swelling at the junction of the ribs and rib cartilage, seen almost exclusively in small children kept indoors without an oral source of vitamin D; it is easily felt on examination. Wallach treats it as a sign of rickets (vitamin D deficiency). Treatment should include oral vitamin D at 400-1,000 IU per day plus the baseline nutritional supplement program including calcium and magnesium; once the abnormal bony changes normalize, drop the vitamin D dose to 250-400 IU per day, and afford daily sun exposure for at least 30 minutes.",
+      "claim_text": "Rachitic rosary is the beading at the junction of the ribs and rib cartilage, seen exclusively in small children kept indoors without an oral source of vitamin D; it is easily felt on examination. Wallach treats it as a sign of rickets (vitamin D deficiency). Treatment should include oral vitamin D at 400-1,000 IU per day plus the baseline nutritional supplement program including calcium and magnesium; once the abnormal bony changes normalize, drop the vitamin D dose to 250-400 IU per day, and afford daily sun exposure for at least 30 minutes.",
       "verbatim": "RACHITIC ROSARY (rickets): is the \"bead\ning\" of the junction between the ribs and the\nrib cartilage. This is exclusively a malady of\nsmall children who are kept indoors and are\nnot getting an oral source of vitamin D. The\nrachitic \"rosary\" is easilypalpated.\nTreatment of the rachitic \"rosary\" should include oral vitamin D at 400-1,000 IU per day\nand the base line nutritional supplement program including calcium and magnesium. After the abnormal bony changes become normal, the vitamin D dose should be dropped to\n250-400 IU per day; afford daily exposure to\nsun for at least 30 minutes",
       "locator": {
         "book": "lets-play-doctor",
@@ -18526,7 +18526,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach cites statistics on the impairment of orthodox physicians as a reason to be cautious about specialist care. Per Stephen C. Scheiber, Medical Doctor (in 'The Impaired Physician'), 22,600 to 33,600 physicians are alcoholics, recovering alcoholics, or soon to be alcoholics, and alcoholism often goes hand in hand with drug abuse. A Harvard study, he says, found that 59% of physicians and 78% of medical students use psychoactive drugs (usually marijuana and cocaine) and that 40% of orthodox doctors get high with friends on a regular basis; he adds that the United States loses the equivalent of seven medical-school graduating classes each year to drug addiction, alcoholism and suicide, and (per 'Medicine On Trial') that patients visit these physicians 45 to 100 million times a year.",
+      "claim_text": "Wallach cites statistics on the impairment of orthodox physicians as a reason to be cautious about specialist care. Per Stephen C. Scheiber, Medical Doctor (in 'The Impaired Physician'), 22,600 to 33,600 physicians are alcoholics, recovering alcoholics, or soon to be alcoholics, and alcoholism often goes hand in hand with drug abuse. A Harvard study, he says, found that 59% of physicians and 78% of medical students use psychoactive drugs (usually marijuana and cocaine) and that 40% of orthodox doctors get high with friends on a regular basis; he adds that the United States loses the equivalent of seven medical-school graduating classes each year to drug addiction, alcoholism and suicide, and (per 'Medicine On Trial') that patients visit these physicians at least 45 to 100 million times a year.",
       "verbatim": "A recent Harvard study has revealed that\n\"59% of physicians 78% of medical students\nuse psychoactive dmgs (usually marijuana\nand cocaine) and that 40% of \"orthodox\" doctors get \"high\" with friends on a regular basis",
       "locator": {
         "book": "lets-play-doctor",
@@ -18784,7 +18784,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach cautions that even a mostly-vegetarian diet aiming for the right calcium-to-phosphorus ratio is undermined by phytates, which he describes as a natural chelating (mineral-grabbing) substance in plants that can make even supplemented calcium unavailable to the body. In his words: \"A vegetarian diet gets close but is complicated by “phytates” (a natural chelating substance found in plants) which makes even supplemented calcium unavailable.\"",
+      "claim_text": "Wallach cautions that even a vegetarian diet aiming for the right calcium-to-phosphorus ratio is undermined by phytates, which he describes as a natural chelating (mineral-grabbing) substance in plants that makes even supplemented calcium unavailable to the body. In his words: \"A vegetarian diet gets close but is complicated by “phytates” (a natural chelating substance found in plants) which makes even supplemented calcium unavailable.\"",
       "verbatim": "A vegetarian diet gets close but is complicated by \"phytates\" (a natural chelating substance found in plants) which makes even supplemented calcium unavailable.",
       "locator": {
         "book": "lets-play-doctor",
