@@ -1,13 +1,21 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-20)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77**. Corpus sealed at **kv=365**, **1335 claims**. **BOTH 2026-07-20 ratification pastes are fully applied — 71 rulings.** Paste 1 (54): Seal 1 (45 claim_text + 6 sidecars, kv 361->362, `d065cb83`) + Seal 2 (2 LETS source fixes, kv 362->363, `338d321a`) + 7 keeps. Paste 2 (17): Seal A (11 claim_text + 5 sidecars incl. the CHARGED EPIGEN-000008 homosexuality reframe on his approval, kv 363->364) + Seal B (LETS-000095 Arthavara->Atharva source garble fix, kv 364->365) + 6 keeps — `a9b8aeeb`. No adds, no purges. **★ THE 149-CARD REVIEW QUEUE IS NOW 100% RULED + SEALED — working list EMPTY** (applied.json 188, pending 0); page republished. Prior 2026-07-19 pastes (33+45) landed last session (kv->361).
-> **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
->
-> ★ **2026-07-20 session was 100% deterministic** — no agent fleets, budget freeze fully honored. The whole 54-ruling paste was applied with plain Python + safe_write + resnap. If the weekly has reset, the fleet-dependent PATH-TO-99% steps below reopen; re-check first.
+> Board **77/77**. Corpus sealed at **kv=367**, **1335 claims**. **2026-07-20 SESSION 2 was huge — all deterministic except ONE approved ~11M audit.** (1) Both ratification pastes applied — 71 rulings, kv 361->365 (`d065cb83` `338d321a` `a9b8aeeb`). (2) **315 redundant 'In his words' quote-tails removed corpus-wide** (kv 365->367, `663e0457`; the gloss gate caught 1 orphaned 'EPA', fixed). (3) **The final 127 never-audited claims AUDITED** (validated byte-frozen harness, 11M tokens, **13 flags, ALL upheld by the adversarial skeptic, ZERO dangerous** — every flag is a hedge/word-injection). No adds, no purges. Review page REBUILT + republished. Every claim is now audited at least once.
+> **★ WEEKLY HAS RESET (2026-07-20). Agents are back ON — but he now has HALF the old weekly budget (no more 2x), and ONE session ate ~35% of the OLD weekly. BE VERY CAREFUL: estimate every fleet, keep runs lean, warn + get approval before spending.** He was at ~3% weekly at session start; the 127-audit (~11M) was his approved spend. Do NOT spike his usage. [[workflow-token-budget-guard]]
+
+# ★★★★ 2026-07-20 SESSION 2 — THE 13 AUDIT FLAGS + WHAT'S NEXT (do not lose)
+The 127-never-audited sweep is DONE (coverage now complete — every claim audited ≥1×). 13 flagged, all skeptic-upheld, all minor-fidelity (added hedges softening Wallach's absolutes + a few injected outside-world terms), ZERO dangerous. They are **staged as WORKING cards on the rebuilt page for his ruling** (NOT applied). Raw results: `scratchpad/audit127_flagged.json` + task output `tasks/w08rhsebm.output` (session f02b944d).
+**The 13:** IMMORT-000097 (about 9000 BC), IMMORT-000186 (aqua-regia gloss injected), IMMORT-000233 (thought-by-some→flat), LETS-000079 (virtually all), LETS-000142 (about twice), LETS-000156 (anaphylactic injected), LETS-000223 (dropped 'at least'), LETS-000231 (mayapple vs his 'American mandrake'), LETS-000235 (will→can), LETS-000427 (will-cure→can), RARE-000045 ($40 Down's hedged), RARE-000137 (about 10), RARE-000169 (about half). 4 marked HIGH (softened absolutes): LETS-000079/-000235/-000427, RARE-000045.
+★ **IMMORT-000070** came back `needs_page_image` (auditor refused to guess). Immortality page shots are on disk — resolve it against the image rather than backlogging.
+★ **7 of the 17 'In his words' differs are on ALREADY-DECIDED claims** (dual-home), so only 10 show as WORKING; those 7 tails were not separately surfaced (the applied/open split is per-claim, not per-concern). Revisit if he wants.
+
+## ★★★ THE PATH TO 99% — where it actually stands now
+Coverage is COMPLETE (all 1335 audited once). With the 13 ruled+applied, the corpus sits at **~97%** — the single-pass recall ceiling (one pass misses ~1-in-8). **True 99% still needs the SECOND INDEPENDENT PASS he DEFERRED** (he chose '127 audit only' this session). Costs measured @ 87k tok/claim: 2nd pass IMMORT+DDDL (342) = ~30M; 2nd pass ALL (1335) = ~116M (~a full new-weekly). **Safety floor holds regardless: ZERO dangerous defects across all 1335 on multiple lenses — the 99% gap is hedge/word polish, not safety.** Per-book flag rates (weight a 2nd pass): IMMORT 27.5% · DDDL 21.7% · EPIGEN 16.7% · LETS 11.7% · RARE 8.5%.
+
 
 # ★★★★ THE REVIEW ARTIFACT (his ruling surface)
-**https://claude.ai/code/artifact/31349afe-da57-4912-8d23-a1783bfa5603** — 149 queue cards (each with a Claude verdict + priority) above the original 162 sweep findings. Rebuild with `scratchpad/genpage.py` (session `fdd34631-…`), republish to the SAME url. Decisions live in his browser localStorage (`wallach_adjudication_v1`); he exports and pastes them back.
+**https://claude.ai/code/artifact/31349afe-da57-4912-8d23-a1783bfa5603** — **REBUILT 2026-07-20** into 3 tiers: **23 TO RULE** (13 never-audited-sweep flags + 10 'In his words' quote-differs) · **86 AUDITOR-CLEARED** worth-a-look (filter default-OFF, default keep — he flags only if he disagrees) · **188 DECIDED** (149 queue + 39 confirmed/contested/editorial, default-OFF). Regenerate with `scratchpad/genpage2.py` (reads `unified_cards.json` + `applied.json` + `pending.json`; lifts the CSS + the VALIDATED export SCRIPT byte-for-byte; build `unified_cards.json` via `build_unified.py` in session `f02b944d`), republish to the SAME url. Export logic UNCHANGED from the 2026-07-19 fix — `test_export.js` 20/20 (its hardcoded card count was updated 311->297). Decisions live in browser localStorage; he exports + pastes back.
 
 ## ★★ THE EXPORT BUG HE CAUGHT — 2026-07-19, and the rule that prevents it recurring
 He pasted 63 decisions. **Only 24 were his.** The build before this one merged a `SEED` of 39 already-applied rulings into the decision store; `syncAll()` PRESSED their buttons, and the exporter scrapes the DOM — so a seeded ruling and a fresh click were physically indistinguishable. The first `save()` persisted them, so the pollution outlived the page that made it. Had he not noticed, 39 rulings he never made that session would have been re-applied on his authority.
@@ -23,11 +31,11 @@ He pasted 63 decisions. **Only 24 were his.** The build before this one merged a
 
 | | |
 |---|---|
-| Queue cards total | **149** |
-| Ruled + SEALED (kv 365) | **149** (the ENTIRE queue; all render in the page's DECIDED tier, filter default-off) |
-| Ruled but HELD | **0** — nothing pending. |
-| **Still unruled** | **0** — the 149-card queue is COMPLETE. `applied.json` holds **188**; `pending.json` is empty. |
-| Prior campaign, applied | 39 (2026-07-17) folded in → `applied.json` now holds **188** total |
+| Page cards total | **297** (rebuilt 2026-07-20) |
+| **TO RULE** | **23** — 13 never-audited-sweep flags (4 high + 9 standard) + 10 'In his words' quote-differs (hold). His to rule next. |
+| Auditor-cleared (REVIEW) | **86** — worth-a-look; DEFAULT KEEP, he flags only if he disagrees. Filter default-off. |
+| DECIDED | **188** — 149 queue (100% ruled) + 39 confirmed/contested/editorial, all applied. Filter default-off. |
+| applied.json | **188** · `pending.json` **0** |
 
 ## ★★ SETTLED 2026-07-19 — `WAL-CLM-LETS-000071` (vitamin A). HE WAS RIGHT; THE GATE WAS WRONG.
 He ruled this THREE times and I reverted it twice, siding with `dose_amount_in_verbatim`. His photo of the printed Fig. 8-1 settled it: the VITAMIN A row's **RDA cell is blank**, so its two printed values are the True Supplement Need **5,000 IU** and the pharmacologic **20,000-300,000 IU**. Dose is now 5,000 IU, sealed at kv 357.
