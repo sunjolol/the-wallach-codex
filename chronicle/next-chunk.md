@@ -1,7 +1,7 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-20)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77**. Corpus sealed at **kv=363**, **1335 claims**. His **2026-07-20** ratification paste (**54 rulings**) is fully applied: Seal 1 (45 claim_text + 6 search-answer sidecar mirror-fixes, kv 361->362, `d065cb83`) + Seal 2 (2 LETS source-.txt garble fixes via the resnap flow, kv 362->363, `338d321a`) + 7 keeps (6 straight + RARE-000143 VERIFIED genuinely his stance via same-book RARE-000086). No adds, no purges. The review page was republished (applied.json 117->171, pending empty). The prior 2026-07-19 pastes (33+45) were applied last session (kv->361).
+> Board **77/77**. Corpus sealed at **kv=365**, **1335 claims**. **BOTH 2026-07-20 ratification pastes are fully applied — 71 rulings.** Paste 1 (54): Seal 1 (45 claim_text + 6 sidecars, kv 361->362, `d065cb83`) + Seal 2 (2 LETS source fixes, kv 362->363, `338d321a`) + 7 keeps. Paste 2 (17): Seal A (11 claim_text + 5 sidecars incl. the CHARGED EPIGEN-000008 homosexuality reframe on his approval, kv 363->364) + Seal B (LETS-000095 Arthavara->Atharva source garble fix, kv 364->365) + 6 keeps — `a9b8aeeb`. No adds, no purges. **★ THE 149-CARD REVIEW QUEUE IS NOW 100% RULED + SEALED — working list EMPTY** (applied.json 188, pending 0); page republished. Prior 2026-07-19 pastes (33+45) landed last session (kv->361).
 > **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
 >
 > ★ **2026-07-20 session was 100% deterministic** — no agent fleets, budget freeze fully honored. The whole 54-ruling paste was applied with plain Python + safe_write + resnap. If the weekly has reset, the fleet-dependent PATH-TO-99% steps below reopen; re-check first.
@@ -24,10 +24,10 @@ He pasted 63 decisions. **Only 24 were his.** The build before this one merged a
 | | |
 |---|---|
 | Queue cards total | **149** |
-| Ruled + SEALED (kv 363) | **132** (all pastes; render in the page's DECIDED tier, filter default-off) |
+| Ruled + SEALED (kv 365) | **149** (the ENTIRE queue; all render in the page's DECIDED tier, filter default-off) |
 | Ruled but HELD | **0** — nothing pending. |
-| **Still unruled** | **17** — the working list on the page: **15 low + 2 hold/your-call**. ALL safety/high/standard cards are cleared. `applied.json` holds **171**; `pending.json` is empty. |
-| Prior campaign, applied | 39 (2026-07-17) folded in → `applied.json` now holds **171** total |
+| **Still unruled** | **0** — the 149-card queue is COMPLETE. `applied.json` holds **188**; `pending.json` is empty. |
+| Prior campaign, applied | 39 (2026-07-17) folded in → `applied.json` now holds **188** total |
 
 ## ★★ SETTLED 2026-07-19 — `WAL-CLM-LETS-000071` (vitamin A). HE WAS RIGHT; THE GATE WAS WRONG.
 He ruled this THREE times and I reverted it twice, siding with `dose_amount_in_verbatim`. His photo of the printed Fig. 8-1 settled it: the VITAMIN A row's **RDA cell is blank**, so its two printed values are the True Supplement Need **5,000 IU** and the pharmacologic **20,000-300,000 IU**. Dose is now 5,000 IU, sealed at kv 357.
