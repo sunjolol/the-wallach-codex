@@ -690,7 +690,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "How much real (elemental) calcium a supplement delivers depends heavily on its form. Wallach's table for the metallic calcium in a 1,000mg tablet: calcium gluconate 90mg, calcium carbonate 400mg, calcium acetate 230mg, calcium citrate 210mg, calcium lactate 140mg - and cow's milk (1,000mg of fluid) just 10mg. (These are the milligrams of calcium present; how much you actually absorb is lower still - see his metallic-absorption note.) In his words: \"Amounts of Metallic Calcium in a 1,000 mg Tablet - Calcium gluconate 90; Calcium carbonate 400; Calcium acetate 230; Calcium citrate 210; Calcium lactate 140; Cow's milk (1,000 mg fluid) 10\"",
+      "claim_text": "How much real (elemental) calcium a supplement delivers depends heavily on its form. Wallach's table for the metallic calcium in a 1,000mg tablet: calcium gluconate 90mg, calcium carbonate 400mg, calcium acetate 230mg, calcium citrate 210mg, calcium lactate 140mg - and cow's milk (1,000mg of fluid) just 10mg. (These are the milligrams of calcium present; how much you actually absorb is lower still - see his metallic-absorption note.)",
       "verbatim": "Amounts of Metallic Calcium in a 1,000 mg Tablet\n\nCalcium Source Mg Available\n\nCalcium gluconate 90\nCalcium carbonate 400\nCalcium acetate 230\nCalcium citrate 210\nCalcium lactate 140\nCow’s milk (1,000 mg fluid) 10",
       "locator": {
         "book": "immortality",
@@ -3202,7 +3202,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "The element's name and history. Copper makes up only 0.007% of the earth's crust. Its name comes from the Latin cuprum, meaning 'from Cyprus' — the Romans mined their copper on the island of Cyprus. Copper was one of the first metals humanity used: copper jewelry from about 9000 B.C. has been found in Iraq. Because pure copper is soft, ancient peoples alloyed it with tin to make bronze, zinc to make brass, and nickel to make monel, producing harder metals for tools and weapons.",
+      "claim_text": "The element's name and history. Copper makes up only 0.007% of the earth's crust. Its name comes from the Latin cuprum, meaning 'from Cyprus' — the Romans mined their copper on the island of Cyprus. Copper was one of the first metals humanity used: copper jewelry dating back to 9000 B.C. has been found in Iraq. Because pure copper is soft, ancient peoples alloyed it with tin to make bronze, zinc to make brass, and nickel to make monel, producing harder metals for tools and weapons.",
       "verbatim": "Despite the common use of copper, it makes up only\n0.007% of the earth’s crust. Copper gets its name from the\nLatin word, cuprum, which translates to “from Cyprus,” a\nreference to the fact that the Romans mined their copper from\nthe island of Cyprus.",
       "locator": {
         "book": "immortality",
@@ -8000,7 +8000,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. He describes the arrangement as a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12.",
+      "claim_text": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. The need for B12 cobalt, he notes, is thought by some to represent a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12.",
       "verbatim": "The essentiality\nof cobalt is unusual in that the requirement is for a cobalt\n\ncomplex known as cyanocobalamine or vitamin B12. A pure\ncobalt requirement is only found in some bacteria and algae\nand the need for B12 cobalt is thought by some to represent a\nsymbiotic relationship between microbes which generate and\nmanufacture B12 from elemental cobalt and vertebrates that\nrequire B12.",
       "locator": {
         "book": "immortality",

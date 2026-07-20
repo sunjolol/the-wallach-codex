@@ -942,7 +942,7 @@
       "synonyms": [
         "ca"
       ],
-      "one_liner": "How much real (elemental) calcium a supplement delivers depends heavily on its form. Wallach's table for the metallic calcium in a 1,000mg tablet: calcium gluconate 90mg, calcium carbonate 400mg, calcium acetate 230mg, calcium citrate 210mg, calcium lactate 140mg - and cow's milk (1,000mg of fluid) just 10mg. (These are the milligrams of calcium present; how much you actually absorb is lower still - see his metallic-absorption note.) In his words: \"Amounts of Metallic Calcium in a 1,000 mg Tablet - Calcium gluconate 90; Calcium carbonate 400; Calcium acetate 230; Calcium citrate 210; Calcium lactate 140; Cow's milk (1,000 mg fluid) 10\"",
+      "one_liner": "How much real (elemental) calcium a supplement delivers depends heavily on its form. Wallach's table for the metallic calcium in a 1,000mg tablet: calcium gluconate 90mg, calcium carbonate 400mg, calcium acetate 230mg, calcium citrate 210mg, calcium lactate 140mg - and cow's milk (1,000mg of fluid) just 10mg. (These are the milligrams of calcium present; how much you actually absorb is lower still - see his metallic-absorption note.)",
       "record": [
         {
           "kind": "dose",
@@ -5933,7 +5933,7 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. He describes the arrangement as a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12.",
+      "one_liner": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. The need for B12 cobalt, he notes, is thought by some to represent a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12.",
       "record": [
         {
           "kind": "dose",
