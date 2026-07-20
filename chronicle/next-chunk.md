@@ -1,7 +1,7 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-19)
 
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
-> Board **77/77**. Corpus sealed at **kv=358**, **1335 claims** — 33 claim_texts edited + sealed 2026-07-19 (no adds, no purges) on top of the 27 from 2026-07-18.
+> Board **77/77**. Corpus sealed at **kv=361**, **1335 claims**. Two of his ratification pastes are fully applied this session: 33 fixes (2026-07-19 first pass, kv->358) + 45 more (second pass = 38 sealed claim_texts + 7 keeps, kv 358->361). No adds, no purges.
 > **Weekly usage was ~89–92% against his 93% ceiling on 2026-07-18. NO AGENT FLEETS. Deterministic Python only until the weekly resets. Re-check before spending.**
 
 # ★★★★ THE REVIEW ARTIFACT (his ruling surface)
@@ -22,9 +22,9 @@ He pasted 63 decisions. **Only 24 were his.** The build before this one merged a
 | | |
 |---|---|
 | Queue cards total | **149** |
-| Ruled + SEALED (kv 358) | **33** (cards 1–33, all sealed) |
-| Ruled but HELD | **0** — nothing pending. IMMORT-000221 (butter/margarine) was sealed at kv 358 with HIS OWN summary; see the doctrine note below. |
-| **Still unruled** | **116** — his next paste starts at card 34 (`WAL-CLM-IMMORT-000227`). ALL 9 SAFETY cards are cleared. |
+| Ruled + SEALED (kv 361) | **78** (both pastes; render in the page's DECIDED tier, filter default-off) |
+| Ruled but HELD | **0** — nothing pending. Last cleared: DDDL-000027 (manganese) + LETS-000061 (phosphorus why-0), both drafted from his own span and sealed at kv 361 on his approval. |
+| **Still unruled** | **71** — the working list on the page. ALL 9 SAFETY cards are cleared. `applied.json` holds **117**; `pending.json` is empty. |
 | Prior campaign, applied | 39 (2026-07-17) → `applied.json` now holds **72** |
 
 ## ★★ SETTLED 2026-07-19 — `WAL-CLM-LETS-000071` (vitamin A). HE WAS RIGHT; THE GATE WAS WRONG.
