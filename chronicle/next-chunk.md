@@ -1,16 +1,26 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-21)
-# ★★★★ 2026-07-21 (SESSION 7) — ★ PLANT-DERIVED "HOW IT WORKS" PAGE FINALIZED + DE-POISONED · board 77/77, committed + pushed
+# ★★★★ 2026-07-21 (SESSION 8) — PLANT-DERIVED ENRICHMENT · BATCH 1 SEALED + LIVE · board 77/77, committed + pushed (01cc5a42)
 
-**The plant-derived how-it-works page is done.** The figure readability landed (bigger/bolder/wider boxes, re-centred), the unsourced "30-day therapeutic use" box is gone, and the false 2× therapeutic multiplier was purged from every layer. Luneth ratified "nothing more" on a new 30-day claim. Board green, one commit, pushed. He asked to close + restart with genesis.
+**New phase (Luneth):** enrich ALL 90 elements in the uniform entity-page style so browsing becomes second-nature — but FIRST complete the 35 plant-derived (trace_pdm) minerals so the whole complex is accounted for before moving on. A read-only 6-book scout produced the full candidate inventory (30 new + 12 retags, organised by colour-family, 67 metallic-trap rejects) → the **Ratification Console** artifact: https://claude.ai/code/artifact/26714d57-f84e-44d0-8c62-ca48c749ef04
 
-## What shipped this session (1 commit)
-- **Figure readability** (`views/entity-page.ts::pdmFigure` + `drawer-knowledge.css` `.kd-ep-fam__art--pdm` scope; omega figures untouched): node names 12.5→21px, arrow captions 11→19px, weight 600, `--ds-ink` (was ink-soft); box 60→76h + width 176→209 (**+20 SCREEN px/box** — via viewBox 918→1050 + a scoped figure CSS width 560→640 so gaps/text/height render unchanged). 98%/Colloidal + single-line names re-centred (≤0.23px off).
-  - **★ LESSON (do not relearn):** an SVG scales to its CSS width (~0.61 px/unit here) — size PDM-figure changes in SCREEN px, not viewBox units. An early +6-unit box bump was only +3.7 screen px = invisible. Verify with a headless-Chromium measure+screenshot; the in-app preview pane CACHES the 6 MB bundle (a normal reload showed the stale build). [[measured-change-not-extremes]]
-- **Removed the unsourced "30-DAY THERAPEUTIC USE" box** — hand-written UI prose (`kd_ep_pdm_thera*` view-copy) rendered only on the 35 trace_pdm pages, the exact elements FIG 8-1 doesn't cover. Gone from render + view-copy + CSS. Group note (`kd_ep_pdm_note`) stays.
-- **Purged the false 2× therapeutic (R8 no-poison)** from all 5 layers: `trace-mineral-vehicles.json` (therapeutic_multiplier/_note), `pdm_coverage_derive.py`, regenerated `pdm-coverage-data.json`, `pdm-coverage.ts` schema, and trimmed the therapeutic half of the `pdm_goal_wallach_sourced` gate (Wallach-sourced maintenance anchor intact + green; R9 refinement, not a silent loosening).
+## What shipped this session (batch 1 — "clean colour wins", commit 01cc5a42)
+6 new group claims tagged `about:[colloidal-minerals]` (corpus_seal → kv 371, 1341 claims), propagated onto all 35 trace_pdm pages' group_record:
+- **quote (orange):** DDDL-000121 Fountain-of-Youth · DDDL-000122 astringency · DDDL-000125 control-group-of-five
+- **personal_anecdote (violet):** DDDL-000123 discovery · DDDL-000124 Mineral Toddy battle + resolution (full arc in claim_text — cheaper-source degradation → American Longevity / Virgin Earth return to the original Rockland deposit; **book-facts only, no "still sold today"**) · IMMORT-000234 Mandela
+- +6 search-enrichment entries (subject `colloidal_minerals`). Group section: **9→15 claims, 2 blocks/1 colour → 4 blocks/3 colours** (teal+violet+orange). Screenshot-verified on strontium.
 
-## Key finding (for whoever picks up dosing / therapeutic-tier work)
-**FIG 8-1 "Base Line Nutritional Supplement Program For Adults" (Let's Play Doctor p.72-73, Luneth verified the table) is ALREADY mined** — 33 dose claims / 32 essentials, each rendering *RDA · True Supplement Need · 30-Day Pharmacologic* per-element (`dose.for_condition == 'base-line supplement program (true supplement need)'`, `isFig81Row` in entity-page.ts + knowledge-corpus.ts). The two-tier maintenance-vs-30-day-therapeutic concept is already surfaced + sourced where it applies. The plant-derived trace minerals have NO individual therapeutic dose (they're the colloidal group, 924 mg shared goal via WAL-CLM-EPIGEN-000089) — which is exactly why the box + the 2× were wrong on those pages.
+## The mining flow that WORKED — reuse verbatim for batches 2-4
+1. Author raw.json per book: `{kind, about:["colloidal-minerals"], conditions:[], claim_text=<full summary — becomes the displayed `answer`>, verbatim=<byte-exact from the .txt>, tags:["plant-derived-group",<book_id>], confidence:"high"}`.
+2. `PYTHONUTF8=1 python eden/tools/corpus_extract.py finalize --book <id> --raw <raw>` → snaps verbatim to book bytes, assigns IDs, writes drafts/ + reports/. (locator convention: DDDL chapter/page=null + char_offset; immortality has `Screenshot (NN)` markers → set screenshot.)
+3. Present report + enrichment card-copy → Luneth ratifies.
+4. `PYTHONUTF8=1 python eden/tools/corpus_seal.py` (bare) — Luneth authorised me to run it; normally USER-ONLY. Promotes drafts + reseals + bumps kv.
+5. Merge search-enrichment entries (subject/also_about/facet/question/answer_short/topics) via safe_write. `answer` DERIVES from claim_text; `answer_short`+`question` are authored.
+6. `build_embeds.py` (12 artifacts) → `node tools/build.mjs` → `invariants.py` → render-probe screenshot (strontium entity page) → build-log + creators_log → RE-inline build.mjs → commit + push.
+- **COLOUR = claim KIND's family** (kindCategory in view-copy.json): teal=definition/mechanism/interaction/diagnostic_pattern/food_source · green=dose/protocol · amber=deficiency_sign/toxicity_sign · orange=prevalence/prognosis/quote · violet=personal_anecdote · red=contraindication.
 
-## NEXT
-Open — the PDM how-it-works arc is complete. Pick the next surface/task from `chronicle/OVERHAUL-BLUEPRINT.md`, or ask Luneth what to build next. Board 77/77, tree clean.
+## NEXT — remaining plant-derived batches (all in the Ratification Console)
+- **Batch 2 — 12 teal RETAGS:** tag existing already-sealed claims into the group (add `about:[colloidal-minerals]` via mine_batch/edit-path, verbatim untouched) + author enrichment. Audit the 67 metallic-trap rejects while here.
+- **Batch 3 — 4 green dose/protocol** (NEW-26 maintenance dose 1 oz/100 lb, NEW-27 cravings, NEW-28 water, NEW-29 Nez Perce): **ALL carry numbers needing page-image verification; NEW-29 fringe.** First real green on the group.
+- **Batch 4 — 19 teal new** (origin/sources/history/mechanism). Several **cross-book number conflicts to rule on:** humic-shale ~19,000 mg/qt (HK) vs ~38,000 mg/L (RARE/EPS); 77 vs 60 minerals; Carboniferous vs 75-million-years; "five" vs "eight" long-lived cultures.
+- **Fringe parked for Luneth:** rare-earths-double-lifespan (NEW-17, NEW-22), Nez Perce 30-50% glucose (NEW-29); HK four-forms dedup question.
+- **THEN (after plant-derived complete):** bring the 3 still-to-do demo surfaces live — **Ask Wallach, Products tab, Conditions tab** (+ their detail views). Everything else in live already beats the dated demo. See memory `demo-elements-still-to-do`.
