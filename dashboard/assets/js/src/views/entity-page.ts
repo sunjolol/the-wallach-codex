@@ -606,18 +606,6 @@ function renderPdmGroupGlance(g: PdmGroupSummary): string {
     bw: `${fmtTarget(prov.bodyWeightLb)} lb`,
     goal: `${fmtTarget(g.goalMg)} mg`,
   });
-  const src = rankedPdmSources();
-  const TOP = 5;
-  const head = src.slice(0, TOP).map(s => pdmSrcRow(s)).join('');
-  const rest = src.slice(TOP);
-  const more = rest.length > 0
-    ? `<details class="kd-ep-more"><summary>Show all ${src.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => pdmSrcRow(s)).join('')}</div></details>`
-    : '';
-  const sourcesHTML = src.length > 0
-    ? `<hr class="kd-ep-op__div">
-      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_pdm_srclabel'))}</div>
-      ${head}${more}`
-    : '';
   return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
@@ -640,8 +628,26 @@ function renderPdmGroupGlance(g: PdmGroupSummary): string {
         <div class="kd-ep-pdm-thera__body">${escHTML(ui('kd_ep_pdm_thera'))}</div>
       </div>
     </div>
-    ${sourcesHTML}
   </div>`;
+}
+
+/** The plant-derived group's Best-Youngevity sources — deferred out of the "at a glance" meter to
+ *  the BOTTOM of the how-it-works hero (Luneth 2026-07-21: products sit UNDER the enrichment, as on
+ *  the omega pages). '' when no product carries a plant-derived vehicle. */
+function renderPdmSourcesBlock(): string {
+  const src = rankedPdmSources();
+  if (src.length === 0) {
+    return '';
+  }
+  const TOP = 5;
+  const head = src.slice(0, TOP).map(s => pdmSrcRow(s)).join('');
+  const rest = src.slice(TOP);
+  const more = rest.length > 0
+    ? `<details class="kd-ep-more"><summary>Show all ${src.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => pdmSrcRow(s)).join('')}</div></details>`
+    : '';
+  return `<hr class="kd-ep-op__div">
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_pdm_srclabel'))}</div>
+      ${head}${more}`;
 }
 
 // ─── "Worth knowing" — the faceted search cards ─────────────────────────────
@@ -992,6 +998,66 @@ function renderOmega6Experience(quoteClaim: string | undefined, highlight: strin
     </section>`;
 }
 
+/** The plant-derived "how it works" figure: a 4-stage flow — parent rock → glacial milk → the
+ *  plant → colloidal (98%). Deterministic (no Math.random); reuses the .kd-ep-fam node/arrow
+ *  classes, last node accent-solid as the payoff. Labels + arrow captions come from view-copy. */
+function pdmFigure(): string {
+  const W = 176;
+  const NODES = [
+    { x: 8, cx: 96, nameKey: 'kd_ep_pdm_fig_n1', solid: false },
+    { x: 250, cx: 338, nameKey: 'kd_ep_pdm_fig_n2', solid: false },
+    { x: 492, cx: 580, nameKey: 'kd_ep_pdm_fig_n3', solid: false },
+    { x: 734, cx: 822, nameKey: 'kd_ep_pdm_fig_n4', solid: true },
+  ];
+  const nodes = NODES.map((n) => {
+    const rect = `<rect class="kd-ep-fam__node kd-ep-fam__node--${n.solid ? 'solid' : 'soft'}" x="${n.x}" y="40" width="${W}" height="60" rx="12"/>`;
+    const label = n.solid
+      ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="72" text-anchor="middle">${escHTML(ui('kd_ep_pdm_fig_n4stat'))}</text>
+         <text class="kd-ep-fam__nname" x="${n.cx}" y="90" text-anchor="middle">${escHTML(ui(n.nameKey))}</text>`
+      : `<text class="kd-ep-fam__nname" x="${n.cx}" y="74" text-anchor="middle">${escHTML(ui(n.nameKey))}</text>`;
+    return rect + label;
+  }).join('');
+  const ARROWS = [
+    { x1: 184, x2: 250, key: 'kd_ep_pdm_fig_a1' },
+    { x1: 426, x2: 492, key: 'kd_ep_pdm_fig_a2' },
+    { x1: 668, x2: 734, key: 'kd_ep_pdm_fig_a3' },
+  ];
+  const arrows = ARROWS.map((a) => {
+    const mid = (a.x1 + a.x2) / 2;
+    return `<path class="kd-ep-fam__arrowline" d="M${a.x1 + 4} 70 L${a.x2 - 4} 70" marker-end="url(#pdm-arrow)"/>
+        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="30" text-anchor="middle">${escHTML(ui(a.key))}</text>`;
+  }).join('');
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 918 116" role="img" aria-label="How plant-derived minerals form: parent rock is ground by glaciers into glacial milk, taken up and rebuilt by plants into colloidal minerals the body absorbs at about 98 percent">
+      <defs><marker id="pdm-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+      ${arrows}${nodes}
+    </svg>`;
+}
+
+/** The plant-derived "how it works" HERO — the omega-style experience for the 34 plant-derived
+ *  minerals. Authored ONCE (view-copy + the sealed RARE-000061 quote) and rendered on every
+ *  plant-derived page, gated on group_record (a DERIVED per-page datum, never a slug literal —
+ *  R1 pure projection, entity_render_is_projection-safe). Reuses .kd-ep-fam + fatFamilyStep/Quote.
+ *  §00.A: the step copy is our faithful summary (R4); every number traces to RARE-000061; the
+ *  quote is Wallach's own sealed verbatim. Renders '' on non-plant-derived essentials. */
+function renderPdmClarity(page: EssentialPage): string {
+  if (page.group_record === undefined || page.group_record.length === 0) {
+    return '';
+  }
+  return `<section class="kd-ep-fam">
+      <span class="kd-ep-fam__eyebrow">${escHTML(ui('kd_ep_pdm_hero_eyebrow'))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML(ui('kd_ep_pdm_hero_kill'))}</h3>
+      <div class="kd-ep-fam__figure">${pdmFigure()}</div>
+      <div class="kd-ep-fam__steps">
+        ${fatFamilyStep('01', 'kd_ep_pdm_s1_t', 'kd_ep_pdm_s1_b')}
+        ${fatFamilyStep('02', 'kd_ep_pdm_s2_t', 'kd_ep_pdm_s2_b')}
+        ${fatFamilyStep('03', 'kd_ep_pdm_s3_t', 'kd_ep_pdm_s3_b')}
+        ${fatFamilyStep('04', 'kd_ep_pdm_s4_t', 'kd_ep_pdm_s4_b')}
+      </div>
+      ${fatFamilyQuote('WAL-CLM-RARE-000061', '98 %')}
+      ${renderPdmSourcesBlock()}
+    </section>`;
+}
+
 /** Omega-3 is the easy one — its forms box + a prominent CTA button to the full family experience (matches omega-9's). */
 function renderFamCTA(): string {
   return `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
@@ -1110,6 +1176,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${seclabel('At a glance', 'the essentials, in one place')}
     ${glanceHTML}
     ${fattyAcidBlockFor(layoutKey, page.name, tile)}
+    ${renderPdmClarity(page)}
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}

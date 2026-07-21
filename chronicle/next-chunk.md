@@ -1,24 +1,25 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-21)
 
-# ★★★★ 2026-07-21 (SESSION 5) — ★ PLANT-DERIVED TIER 1 SHIPPED (kv 370) · NEXT = TIER 2 VISUAL HERO DESIGN
-**Board 77/77. Committed + pushed.** The plant-derived enrichment's actual point is DONE: every one of the 34 plant-derived mineral pages now RECALLS the full "how plant-derived minerals work" story from ONE source. Tier 2 (the omega-style visual hero + per-element bespoke enrichments) is the next design.
+# ★★★★ 2026-07-21 (SESSION 6) — ★ TIER 2a HERO SHIPPED (all 35 PDM pages) · NEXT = DIAGRAM READABILITY (MEASURED!) + thera-claim
+**Board 77/77. Committed + pushed. Luneth asked to close + restart with genesis after a swing-frustration.** The shared plant-derived "how it works" hero is LIVE on all 35 plant-derived pages. Two things are DEFERRED; the first is where he got frustrated — read the swing note.
 
-## What shipped (committed — 2 commits this session)
-- **Commit A `4932f37f` (glossary R9):** sealed 069/070/071 (kv 369) + rewrote the 4 plant-derived glossary hovers; when the numbers tripped `glossary_wellformed`, refined the gate to ALLOW anchored numbers (a `number_exempt` citing a sealed claim that literally contains the digits) instead of stripping or bypassing. [[refine-gate-dont-strip-or-bypass]] [[gate-exceptions-are-world-claims]]
-- **Commit B (Tier 1 recall + 2 review fixes):** tagged RARE-000069/070/071/061 with `about:["colloidal-minerals"]` → they RECALL onto all 34 trace_pdm pages via the existing renderGroupRecord "About the plant-derived group" section (5→9 cards, stored ONCE). Enriched 061 (the 98%-vs-8-12% card). kv 369→370. FIXES from Luneth's review: dropped a "not X, not Y" AI-pattern on DDDL-000119 ("Not genes, not altitude" → "Not genes"); added an "Age Beaters" glossary entry (never glossed before) so the term gets its dotted hover in the expanded card.
+## What shipped (3 commits this campaign)
+- `4932f37f` glossary R9 anchored-number gate · `dc18f566` Tier 1 recall (069/070/071/061 → all 34 PDM pages via `about:colloidal-minerals`) · [this commit] Tier 2a hero.
+- **Tier 2a HERO** — `renderPdmClarity` in `views/entity-page.ts`: the omega-style `kd-ep-fam` experience on every PDM page — eyebrow + kill-shot ("Rock your body can't absorb — until a plant rebuilds it.") + a parent-rock→glacial-milk→plant→98%-colloidal `pdmFigure` + 4 numbered steps + Wallach's sealed **RARE-000061** pull-quote. Gated on `page.group_record` (a DERIVED per-page datum — `entity_render_is_projection`-safe; NEVER branch on a slug). Reuses `fatFamilyStep`/`fatFamilyQuote`. Copy in view-copy `kd_ep_pdm_*`.
+- **Products under the enrichment** — `renderPdmSourcesBlock` moved the PDM Best-sources OUT of the at-a-glance meter to the BOTTOM of the hero (omega pattern). Approved.
+- **Note reworded** to Luneth's exact text (view-copy `kd_ep_pdm_note`).
 
-## ★ THE RECALL MECHANISM (so the next session does NOT rebuild it)
-Already built. A claim carries `about:["colloidal-minerals"]` (a claim field, passed through by corpus_embed) → `entity_page_derive` puts it in `group_record` for every `coverage_kind=="trace_pdm"` essential → `renderGroupRecord` renders it as a shared "About the plant-derived group" card (prefers the enriched Q&A shape via getSearchClaim; else a corpus-shape fallback). **To recall MORE plant-derived content onto all 34 pages:** tag the claim `about:["colloidal-minerals"]` + enrich it, re-seal. Glossify runs on a card's answer+verbatim (NOT the answer_short preview — it lives inside the clickable `<summary>`, where a hover-button can't nest).
+## ★★ NEXT — DO THIS FIRST, AND MEASURED (the swing lesson, do NOT repeat)
+The `pdmFigure` diagram is at its ORIGINAL size, which Luneth finds hard to read. **He asked for "SLIGHTLY bigger"; I swung to FULL-WIDTH (max-width:none + font 19/30/14). He reverted me to exactly original.** The task: make the figure text just a LITTLE more readable in ONE measured step — e.g. bump the figure `max-width` from 560px to ~600–620px, OR narrow the viewBox slightly (918→~820, which scales text UP), OR nudge font +1–2px — then STOP and show him. Do **NOT** go full-width. Do **NOT** swing. Calibration reference: the omega figures right beside it (3 nodes @ viewBox 680, readable at the 560px cap). `pdmFigure` ≈ `views/entity-page.ts` line ~995. [[measured-change-not-extremes]] [[directives-are-guidelines-stay-balanced]]
 
-## ★ NEXT CHUNK — TIER 2 DESIGN (a design proposal is being presented in-chat now)
-Luneth's direction (2026-07-21): *"enrich all of the plant-derived minerals the same way we enriched omega 3 and 6"* — the rich `kd-ep-fam` visual experience (eyebrow + kill-shot + SVG diagram + numbered steps + pull-quote). ONE design covers all 34 (they share the group behaviour). THEN the other elements case-by-case. Some need a BESPOKE enrichment, not the group default — **Aluminum first** (his stance is unusual), *"and I'm sure there's others."* So Tier 2 = (a) a shared plant-derived visual "how it works" hero rendered on all 34 group pages from one source, ABOVE the 9 cards; (b) a shortlist of elements warranting a personalized enrichment.
-- Model: `renderOmega3Rich` / `renderOmegaClarity` (`views/entity-page.ts` ~838-960) + `fatty-acid-clarity-data.json` + the `kd-ep-fam` CSS. **Data-DRIVE it** — never branch the entity view on a slug literal (`entity_render_is_projection` rejects it). Visual-verification gate: design → Luneth sign-off → build → his visual sign-off.
+## ★ ALSO PENDING — the 30-day therapeutic → a real Protocol claim
+Luneth wants the "30-DAY THERAPEUTIC USE" box (currently UI-only prose in `renderPdmGroupGlance`; view-copy `kd_ep_pdm_thera` / `kd_ep_pdm_thera_label`) REMOVED and made a sealed **Protocol** claim tagged `about:colloidal-minerals` (so it recalls into the group cards on all 35). **No clean single-verbatim source was found** for "double the base-line for ~30 days / two servings apart" — the diet-absorption-blueprint says Luneth offered a/b sourcing. NEEDS his source steer before mining; the box stays in the glance until then. [[say-unreadable-never-guess]]
 
-## Still open (carried)
-- **RARE-000074/000088 MISFRAMED + RARE-000089 EDITORIAL_TAIL** — do NOT land without his ruling.
-- The ratification queue / worth-a-look / 2nd-pass-to-99% (budget-gated).
-- Regimen + Scanner rebuilds (`views/regimen.ts` + `views/scanner.ts` still burn).
-[[small-batch-build-test-log-mandate]] [[wallach-efa-omega9-stance]] [[visual-design-bar-and-principles]] [[refine-gate-dont-strip-or-bypass]]
+## Tier 2b (later) — per-element BESPOKE, Aluminum first
+21 of the 35 carry their OWN claims (Lithium 25 · Tin 8 · Arsenic 7 · Cesium 5 · Aluminum 3 = "essential in plant-derived form, toxic as metallic"). After 2a is polished, do these case-by-case, small batches, his review. [[small-batch-build-test-log-mandate]]
+
+## ★★ THE RECURRING SWING — read before touching ANY visual/copy
+TWICE this session I swung to an extreme instead of a measured step: glossary hovers lazy→wall-of-text, and this diagram slightly-bigger→full-width. He now HAND-VERIFIES everything. RULE: a change of DEGREE (bigger/shorter/more) = ONE small step + STOP to show him; never jump to the boundary. [[measured-change-not-extremes]] [[refine-gate-dont-strip-or-bypass]]
 
 
 # ★★★★ 2026-07-21 — OMEGA-6 GLYPH/HIGHLIGHT/SPACING + OMEGA-3 HIGH-IMPACT REBUILD (2 commits, board 77/77)
