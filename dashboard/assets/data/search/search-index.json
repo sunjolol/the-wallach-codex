@@ -350,7 +350,7 @@
         "selenium",
         "essential_nutrients"
       ],
-      "claim_count": 20
+      "claim_count": 24
     },
     "color_therapy": {
       "display_name": "Color Therapy",
@@ -3446,6 +3446,76 @@
         "fda",
         "health-claim",
         "biography"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000009",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much of the liquid mineral supplement should I take?",
+      "answer_short": "One ounce of plant-derived colloidal minerals per 100 lb of body weight a day, ideally split — a 100-lb person takes 1 oz (½ oz twice daily), a 200-lb person 2 oz. Raise to 1¼ oz per 100 lb to lose 25+ lb.",
+      "answer": "Wallach's maintenance dose for the liquid plant-derived colloidal minerals: one ounce per 100 pounds of body weight per day, ideally split. A 100-pound person takes one ounce a day (or half an ounce — one tablespoon — twice daily); a 200-pound person, two ounces; a 300-pound person, three, and so on. He specifies the supplement should carry at least 77 minerals at a concentration of 19,000 mg per quart and cover all 90 essential nutrients. For anyone needing to lose 25 pounds or more, the level can be raised to one and one-quarter ounces per 100 pounds.",
+      "verbatim": "These liquid minerals should be taken at the rate of one ounce \nper hundred pounds of body weight as a maintenance dose.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "maintenance-dose",
+        "how-to-take",
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000010",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What can I do about sugar cravings and the munchies?",
+      "answer_short": "Take one ounce of plant-derived colloidal minerals per 100 lb of body weight — even up to 10× a day early on. Wallach reads cravings and pica as a sure sign of mineral deficiency.",
+      "answer": "Wallach's tactic for sugar cravings and the munchies while quitting sugar: take one ounce of plant-derived colloidal minerals per 100 pounds of body weight — even up to ten times a day at first. He reads cravings and pica as a sure sign of mineral deficiency, so flooding the body with absorbable minerals is meant to switch the urge off.",
+      "verbatim": "If during the process of giving up sugar you get the “munchies” \nor feel the need to go on the classic “chocoholic” binge, take one \nounce of plant derived colloidal minerals per 100 pounds of body \nweight - even if it’s ten times per day at the start (remember - cravings \nor pica are the sure sign of mineral deficiencies!!).",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "cravings",
+        "munchies",
+        "sugar",
+        "pica"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000011",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "How do I re-mineralize distilled or filtered water?",
+      "answer_short": "Add one ounce of liquid plant-derived colloidal minerals to each gallon of distilled or double-filtered water — distilled is mineral-free and otherwise leaches minerals from the body.",
+      "answer": "A practical use for the liquid complex: distilled water is mineral-free and over time pulls minerals out of the body, so Wallach suggests re-mineralizing it — add one ounce of liquid colloidal minerals (at 19,000 mg of minerals per quart) to each gallon of distilled or double-filtered water.",
+      "verbatim": "A good compromise is to use distilled or double filtered water \nthat has been “enriched” with liquid colloidal minerals at the rate of \none ounce of the liquid colloidal minerals (19,000 mg of minerals \nper quart) per gallon of distilled or double filtered water.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "distilled-water",
+        "re-mineralize",
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000012",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Is there a study showing the minerals help with diabetes or obesity?",
+      "answer_short": "Wallach cites a 2004 pilot study he co-authored among the Nez Perce of Idaho: on a plant-derived colloidal mineral program, participants lost weight, lowered blood pressure, and cut fasting blood sugar 30–50%, most reducing or stopping medication.",
+      "answer": "Wallach's own outcome evidence for the complex, from a 2004 pilot study he co-authored among the Nez Perce of Idaho (Wallach, MacCoy, Henry, and Schrauzer). On a plant-derived colloidal mineral program — framed as replacing the wood ashes the tribe historically got their minerals from — almost all participants lost weight, significantly lowered their blood pressure, and cut fasting blood sugar by thirty to fifty percent, with everyone able to significantly reduce or come off their medication.",
+      "verbatim": "A 2004 pilot supplement study (Wallach, J.D., MacCoy, B., Henry, \nL. and Schrauzer, G.N.) with the Nez Perce Indians of Idaho, has \nshown that almost all participants lost weight, significantly reduced \nblood pressure and reduced fasting blood sugars by thirty to fifty \npercent. All were able to significantly reduce or wean off of their \nmedication.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "nez-perce",
+        "diabetes",
+        "obesity",
+        "clinical-study"
       ]
     },
     {

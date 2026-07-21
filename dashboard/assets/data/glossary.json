@@ -1275,18 +1275,30 @@
       "category": "medical"
     },
     {
-      "term": "colloidal minerals",
-      "plain": "Minerals delivered through a plant instead of as ground-up rock — which is what makes them absorbable. About 98% of the plant-processed form is absorbed, versus only 8–12% when the same minerals come as ground-up rock.",
+      "term": "plant derived",
+      "plain": "The mineral's SOURCE, not its physical form: pulled from rock or soil by a living plant and rebuilt into an organic, cell-ready form your body can use — a step your body cannot do for itself. Wallach's contrast is 'metallic' minerals ground straight from rock: about 98% of the plant-processed form is absorbed, versus only 8–12% when the same minerals come as ground-up rock.",
       "category": "nutrition",
       "number_exempt": {
         "reason": "Wallach's own bioavailability figures (98% plant-derived colloidal vs 8-12% metallic), manually verified against the cited claim and ratified by Luneth 2026-07-21; tooltip copy is frozen. Anchored to the corpus, not smuggled.",
-        "claim_ids": ["WAL-CLM-RARE-000061"],
+        "claim_ids": [
+          "WAL-CLM-RARE-000061"
+        ],
         "approved": "Luneth 2026-07-21 (manual override + review)"
       },
       "aliases": [
-        "colloidal mineral",
-        "plant-derived colloidal minerals",
-        "plant derived colloidal minerals"
+        "plant-derived",
+        "plant derived minerals",
+        "plant-derived minerals"
+      ]
+    },
+    {
+      "term": "colloidal",
+      "plain": "The mineral's physical FORM, not its source: ultra-fine solid particles held suspended in a liquid — too small to settle out or filter, but not fully dissolved. Wallach says this ultra-fine, suspended form is why the body takes them up so readily. Note: glacier-ground 'rock flour' is colloidal too, yet Wallach calls it 'metallic' and poorly absorbed — so being colloidal alone is not what makes a mineral usable.",
+      "category": "nutrition",
+      "aliases": [
+        "colloid",
+        "colloids",
+        "colloidal form"
       ]
     },
     {
@@ -1309,7 +1321,9 @@
       "category": "science",
       "number_exempt": {
         "reason": "Wallach's own mineral-count figures (glacial milk 60-72 minerals vs most glaciers' 3-20), manually verified against the cited claim and ratified by Luneth 2026-07-21; tooltip copy is frozen. Anchored to the corpus, not smuggled.",
-        "claim_ids": ["WAL-CLM-RARE-000071"],
+        "claim_ids": [
+          "WAL-CLM-RARE-000071"
+        ],
         "approved": "Luneth 2026-07-21 (manual override + review)"
       },
       "aliases": []

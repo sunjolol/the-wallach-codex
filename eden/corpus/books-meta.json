@@ -120,8 +120,8 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/hk.txt",
-      "content_sha256": "7c9159e064dd1c2cd98ed1f09064d7001d8d750566f1fd82aefd370b9f82ca21",
-      "content_bytes": 698553,
+      "content_sha256": "8f6a77c81b6c042a0a3e78a369e4123b1461cde319818d1d06492e7e23734d50",
+      "content_bytes": 698549,
       "line_count": 13435,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",

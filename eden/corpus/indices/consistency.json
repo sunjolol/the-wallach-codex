@@ -418,6 +418,22 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-HELLS-000009",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000010",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000011",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000012",
+        "book": "hells-kitchen"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000376",
         "book": "lets-play-doctor"
       },
@@ -426,8 +442,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 4,
-    "claim_count": 4
+    "books_repeating": 5,
+    "claim_count": 8
   },
   {
     "id": "CG-0008",

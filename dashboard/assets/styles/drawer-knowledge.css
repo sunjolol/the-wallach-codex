@@ -1789,3 +1789,14 @@
 #drawer-knowledge-mount .kd-cov-legend{ margin:0 0 var(--ds-space-3); padding-top:0; border-top:none; }
 /* Legend dots sit ~1px low when centered to the text line-box; nudge up onto the uppercase cap-height center. */
 #drawer-knowledge-mount .kd-cov-legend .kd-cov-dot{ position:relative; top:-1px; }
+
+/* ── "Where to get it" — actionability pointer under the plant-derived group's green (dose/protocol)
+   block. Wallach's dose is inert without a real source; these link to the Youngevity plant-derived-
+   mineral products (data-kd-product -> detail panel). Green-only, fed by rankedPdmSources. (Luneth 2026-07-21). ── */
+#drawer-knowledge-mount .kd-ep-getit { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed color-mix(in srgb, var(--fam-action, #5aa82c) 45%, transparent); }
+#drawer-knowledge-mount .kd-ep-getit__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); text-transform: uppercase; letter-spacing: var(--ds-track-wide); color: var(--fam-action, #5aa82c); font-weight: 600; }
+#drawer-knowledge-mount .kd-ep-getit__rows { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+#drawer-knowledge-mount .kd-ep-getit__prod { font-family: var(--ds-font-display-interface); font-size: 0.82rem; font-weight: 600; cursor: pointer; background: transparent; border: 1px solid var(--fam-action, #5aa82c); color: var(--fam-action, #5aa82c); border-radius: var(--ds-radius-xs); padding: 3px 10px; display: inline-flex; align-items: center; gap: 4px; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-ep-getit__prod:hover { background: var(--fam-action, #5aa82c); color: #fff; }
+#drawer-knowledge-mount .kd-ep-getit__chev { opacity: 0.65; }
+#drawer-knowledge-mount .kd-ep-getit__more { font-size: 0.72rem; color: var(--ds-ink-faint); font-style: italic; }

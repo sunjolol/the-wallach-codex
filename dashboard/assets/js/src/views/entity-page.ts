@@ -696,6 +696,33 @@ function recordKindRank(k: string): number {
  * "enrich, or the card reads flat." Silent no-op on essentials that carry no group_record
  * (every non-trace_pdm slug).
  */
+/** Group claims whose kind is an actionable recommendation to TAKE the liquid (these get the
+ * "Where to get it" product pointer). dose + protocol are the colloidal group's green kinds. */
+const ACTIONABLE_GROUP_KINDS = new Set<string>(['dose', 'protocol']);
+
+/**
+ * "Where to get it" — the actionability pointer under the plant-derived group's dose/protocol
+ * (green) block. Wallach's dose ("one ounce of plant-derived colloidal minerals per 100 lb") is
+ * inert without a real source, so we surface the Youngevity plant-derived-mineral products
+ * (rankedPdmSources — the SAME data the hero's best-sources block reads) right at the recommendation.
+ * Green-only by design: a definition/mechanism/quote is not something a reader "gets" (Luneth 2026-07-21).
+ */
+function renderGroupGetIt(): string {
+  const src = rankedPdmSources();
+  if (src.length === 0) {
+    return '';
+  }
+  const TOP = 3;
+  const rows = src.slice(0, TOP).map(s =>
+    `<button class="kd-ep-getit__prod" type="button" data-kd-product="${escHTML(s.productId)}">${escHTML(s.name)}<span class="kd-ep-getit__chev">›</span></button>`
+  ).join('');
+  const more = src.length > TOP ? `<span class="kd-ep-getit__more">+${src.length - TOP} more above</span>` : '';
+  return `<div class="kd-ep-getit">
+      <span class="kd-ep-getit__label">Where to get it</span>
+      <div class="kd-ep-getit__rows">${rows}${more}</div>
+    </div>`;
+}
+
 function renderGroupRecord(page: EssentialPage): string {
   const gr = page.group_record;
   if (gr === undefined || gr.length === 0) {
@@ -727,9 +754,15 @@ function renderGroupRecord(page: EssentialPage): string {
     if (cards.length === 0) {
       return '';
     }
-    return `<details class="kd-ep-kind" open data-family="${escHTML(kindCategory(g.kind))}">
+    const fam = kindCategory(g.kind);
+    // A dose/protocol block RECOMMENDS taking the liquid, which is meaningless without a real source
+    // — surface the actionable Youngevity plant-derived-mineral products right at the dose. Keyed on
+    // the actionable KINDS, never on the colour-family word (that is never a view literal, R7).
+    // definition/mechanism/quote/anecdote claims are not something you "get", so they carry nothing.
+    const getIt = ACTIONABLE_GROUP_KINDS.has(g.kind) ? renderGroupGetIt() : '';
+    return `<details class="kd-ep-kind" open data-family="${escHTML(fam)}">
       <summary><span class="kd-ep-kind__label">${escHTML(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${g.claim_ids.length}</span></summary>
-      <div class="kd-ep-kind__body">${cards}</div>
+      <div class="kd-ep-kind__body">${cards}${getIt}</div>
     </details>`;
   }).join('');
   if (total === 0) {
