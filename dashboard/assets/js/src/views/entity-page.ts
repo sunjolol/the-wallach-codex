@@ -877,7 +877,7 @@ function fatFamilyFigure(): string {
   const arrow = escHTML(ui('kd_ep_fam_arrow'));
   const bracket = escHTML(ui('kd_ep_fam_bracket'));
   const condtag = escHTML(ui('kd_ep_fam_condtag'));
-  return `<svg class="kd-ep-fam__art" viewBox="0 0 680 196" role="img" aria-label="Three fatty acids: two essential (linolenic, linoleic) and one conditional (arachidonic)">
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 680 166" role="img" aria-label="Three fatty acids: two essential (linolenic, linoleic) and one conditional (arachidonic)">
       <defs><marker id="fam-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <text class="kd-ep-fam__nfam" x="100" y="26" text-anchor="middle">ω-3</text>
       <text class="kd-ep-fam__nfam" x="340" y="26" text-anchor="middle">ω-6</text>
@@ -911,23 +911,28 @@ function fatFamilyStep(num: string, tKey: string, bKey: string): string {
     </div>`;
 }
 
-/** Wallach's OWN designation statement, from the sealed claim RARE-000109 (mapped to omega-3+6).
+/** Wallach's OWN designation statement, from the sealed claim DDDL-000063 (it names both the omega-3 and omega-6 acids).
  *  Verbatim + cite come from the claim, never hand-typed (R3). '' if the claim is unresolved. */
-function fatFamilyQuote(claimId: string | undefined): string {
+function fatFamilyQuote(claimId: string | undefined, highlight: string | undefined): string {
   const c = claimId !== undefined ? getClaim(claimId) : null;
   if (c === null) {
     return '';
   }
+  const raw = collapseWS(c.verbatim);
+  const at = highlight !== undefined ? raw.indexOf(highlight) : -1;
+  const body = at >= 0 && highlight !== undefined
+    ? `${glossify(raw.slice(0, at))}<mark class="ds-mark">${glossify(highlight)}</mark>${glossify(raw.slice(at + highlight.length))}`
+    : glossify(raw);
   return `<div class="ds-pull-quote-wrap kd-ep-fam__quote">
       <blockquote class="ds-pull-quote">
-        <p>${glossify(collapseWS(c.verbatim))}</p>
+        <p>${body}</p>
         <footer>— Dr. Joel Wallach · ${escHTML(getBookLabel(c.book))}</footer>
       </blockquote>
     </div>`;
 }
 
 /** The whole omega-6 experience section. */
-function renderOmega6Experience(quoteClaim: string | undefined, layoutKey: string): string {
+function renderOmega6Experience(quoteClaim: string | undefined, highlight: string | undefined, layoutKey: string): string {
   return `<section class="kd-ep-fam">
       <span class="kd-ep-fam__eyebrow">${escHTML(ui('kd_ep_fam_eyebrow'))}</span>
       <h3 class="kd-ep-fam__kill">${escHTML(ui('kd_ep_fam_kill'))}</h3>
@@ -937,7 +942,7 @@ function renderOmega6Experience(quoteClaim: string | undefined, layoutKey: strin
         ${fatFamilyStep('02', 'kd_ep_fam_s2_t', 'kd_ep_fam_s2_b')}
         ${fatFamilyStep('03', 'kd_ep_fam_s3_t', 'kd_ep_fam_s3_b')}
       </div>
-      ${fatFamilyQuote(quoteClaim)}
+      ${fatFamilyQuote(quoteClaim, highlight)}
       <div class="kd-ep-fam__note">${escHTML(ui('kd_ep_fam_note'))}</div>
       ${renderSourcesBlock(layoutKey)}
     </section>`;
@@ -967,7 +972,7 @@ function fattyAcidBlockFor(layoutKey: string, name: string, tile: CoverageTile |
   }
   const fatExp = fatExperienceFam(name);
   if (fatExp !== undefined) {
-    return renderOmega6Experience(fatExp.quote_claim, layoutKey);
+    return renderOmega6Experience(fatExp.quote_claim, fatExp.highlight, layoutKey);
   }
   const m = /^Omega-([369])\b/.exec(name);
   const fam = m !== null ? OMEGA_BY_FAMILY.get(`omega-${m[1]}`) : undefined;

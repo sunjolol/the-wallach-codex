@@ -1659,7 +1659,7 @@
 #drawer-knowledge-mount .kd-ep-fam { margin-top: var(--ds-space-5); padding: var(--ds-space-5); background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-md); }
 #drawer-knowledge-mount .kd-ep-fam__eyebrow { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-fam__kill { font-family: var(--ds-font-display); font-size: var(--ds-text-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; color: var(--ds-ink); margin: var(--ds-space-1) 0 var(--ds-space-4); }
-#drawer-knowledge-mount .kd-ep-fam__figure { margin: 0 auto var(--ds-space-4); max-width: 560px; }
+#drawer-knowledge-mount .kd-ep-fam__figure { margin: 0 auto 19px; max-width: 560px; }
 #drawer-knowledge-mount .kd-ep-fam__art { width: 100%; height: auto; display: block; }
 #drawer-knowledge-mount .kd-ep-fam__node--solid { fill: var(--ds-accent-wash); stroke: var(--ds-accent); stroke-width: 2; }
 #drawer-knowledge-mount .kd-ep-fam__node--dashed { fill: transparent; stroke: var(--ds-ink-faint); stroke-width: 1.5; stroke-dasharray: 5 4; }
@@ -1679,8 +1679,10 @@
 #drawer-knowledge-mount .kd-ep-fam__num { flex: none; font-family: var(--ds-font-mono); font-size: var(--ds-text-sm); font-weight: 700; color: var(--ds-accent); }
 #drawer-knowledge-mount .kd-ep-fam__steptitle { font-family: var(--ds-font-display); font-size: var(--ds-text-base); font-weight: 700; color: var(--ds-ink); }
 #drawer-knowledge-mount .kd-ep-fam__steptext { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.55; color: var(--ds-ink); margin-top: 2px; max-width: 66ch; }
-#drawer-knowledge-mount .kd-ep-fam__quote { margin-top: 40px; margin-bottom: 15px; }
-#drawer-knowledge-mount .kd-ep-fam__quote .ds-pull-quote { font-family: 'Playfair Display', Georgia, serif; }
+#drawer-knowledge-mount .kd-ep-fam__quote { margin-top: 47px; margin-bottom: 15px; }
+/* Smaller than the .ds-pull-quote base (2vw) so the highlighted 'essential fatty acids (EFA).'
+   mark (display:inline-block, can't break) doesn't force an early wrap. Scoped to this quote. */
+#drawer-knowledge-mount .kd-ep-fam__quote .ds-pull-quote { font-size: clamp(1.4rem, 1.4vw, 1.85rem); }
 #drawer-knowledge-mount .kd-ep-fam__note { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: 1.45; margin-top: var(--ds-space-3); max-width: 66ch; }
 #drawer-knowledge-mount .kd-ep-fam__xlink { display: inline-flex; align-items: center; gap: var(--ds-space-1); margin-top: var(--ds-space-3); padding: 0; background: none; border: 0; cursor: pointer; font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); letter-spacing: .04em; text-transform: uppercase; color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-fam__xlink:hover { color: var(--ds-accent-hot); text-decoration: underline; }

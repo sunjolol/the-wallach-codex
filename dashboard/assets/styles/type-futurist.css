@@ -39,10 +39,13 @@
   font-family: 'Unbounded', 'Space Grotesk', system-ui, sans-serif;
 }
 
-/* CARVE-OUT: the crown-jewel Wallach verbatim pull-quote keeps the old Playfair — the one
-   deliberate serif accent — scoped to the Absorption ("second prong") pull-quote only. */
+/* CARVE-OUT: the crown-jewel Wallach verbatim pull-quotes keep the old Playfair — the one
+   deliberate serif accent — covering the Absorption ("second prong") villi quote AND the omega-6 fatty-acid-family quote
+   (body + the giant ::before glyph, which else falls through to Unbounded via --ds-font-display). */
 #drawer-knowledge-mount .kd-foods-pq .ds-pull-quote,
-#drawer-knowledge-mount .kd-foods-pq .ds-pull-quote::before {
+#drawer-knowledge-mount .kd-foods-pq .ds-pull-quote::before,
+#drawer-knowledge-mount .kd-ep-fam__quote .ds-pull-quote,
+#drawer-knowledge-mount .kd-ep-fam__quote .ds-pull-quote::before {
   font-family: 'Playfair Display', 'Times New Roman', Georgia, serif;
 }
 

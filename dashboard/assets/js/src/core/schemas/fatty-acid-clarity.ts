@@ -27,6 +27,8 @@ export const OmegaFamilySchema = z.object({
   experience: z.boolean().optional(),
   /** The sealed Wallach claim id whose verbatim the experience pull-quotes (data-driven, R1). */
   quote_claim: z.string().optional(),
+  /** omega-6 only: a substring of the quote verbatim to wrap in the textured .ds-mark highlighter. */
+  highlight: z.string().optional(),
   /** omega-3 only: append a one-line cross-link to the omega-6 experience. */
   crosslink: z.boolean().optional(),
 }).passthrough();
