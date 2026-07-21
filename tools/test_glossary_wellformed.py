@@ -125,10 +125,59 @@ ex_cases = [
 
 results += [excase(*c) for c in ex_cases]
 
+# ---------------------------------------------------------------------------
+# task_4ba8c8bd 2026-07-21 -- the term+alias KEY-SPACE collision guard. The runtime
+# matcher (state/glossary.ts) folds term + every alias into ONE lowercased Map, so a
+# repeated normalized key is a SILENT last-write-wins override, not a harmless dup. The
+# OLD check only saw term-vs-term and missed all four real collisions (an alias == another
+# entry's term made a dedicated 'myelosclerosis' definition dead; meq/l, Supralife, glacial
+# milk were aliases == their own term). These cases pin that the full key-space is guarded.
+# ---------------------------------------------------------------------------
+collide = inv._glossary_key_collisions
+
+print("-" * 100)
+print("term+alias key-space -- every normalized key GLOBALLY unique (no silent Map override)")
+
+
+def kcase(label, terms, expect_clean):
+    probs = collide(terms)
+    clean = (len(probs) == 0)
+    ok = clean == expect_clean
+    print(f"  {'OK' if ok else 'FAIL'}  {label:<44}  expect_clean={expect_clean}  problems={probs}")
+    return ok
+
+
+k_cases = [
+    # CLEAN: distinct terms + distinct aliases -> no problems (the post-fix glossary shape).
+    ("distinct_terms_and_aliases_clean",
+     [{"term": "mEq/L", "aliases": ["meq"]},
+      {"term": "myelosclerosis"},
+      {"term": "myelofibrosis", "aliases": []}], True),
+    # THE REAL BUG: an alias equals ANOTHER entry's term -> silent override, MUST trip.
+    ("alias_equals_other_term_trips",
+     [{"term": "myelosclerosis"},
+      {"term": "myelofibrosis", "aliases": ["myelosclerosis"]}], False),
+    # REDUNDANT self-alias: alias == own term's lowercase -> dead weight, MUST trip.
+    ("self_alias_lowercase_trips",
+     [{"term": "Glacial Milk", "aliases": ["glacial milk"]}], False),
+    # Two entries sharing the SAME alias -> collision, MUST trip.
+    ("shared_alias_across_entries_trips",
+     [{"term": "alpha", "aliases": ["shared"]},
+      {"term": "beta", "aliases": ["shared"]}], False),
+    # term-vs-term duplicate is STILL caught (the old check's job, now subsumed).
+    ("duplicate_term_still_trips",
+     [{"term": "arthritis"}, {"term": "Arthritis"}], False),
+    # case-insensitive: 'SupraLife' term vs 'supralife' alias collide.
+    ("case_insensitive_collision_trips",
+     [{"term": "SupraLife", "aliases": ["supralife"]}], False),
+]
+
+results += [kcase(*c) for c in k_cases]
+
 failures = sum(1 for r in results if not r)
 print("-" * 100)
 if failures:
     print(f"FAIL -- {failures}/{len(results)} case(s) misbehaved.")
     sys.exit(1)
 print(f"PASS -- every one of {len(results)} case(s) behaves; the gate catches unanchored health "
-      f"numbers, permits historical dates, and allows ONLY cited+contained numbers.")
+      f"numbers, permits historical dates, allows ONLY cited+contained numbers, and rejects term/alias key collisions.")

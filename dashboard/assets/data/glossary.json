@@ -766,7 +766,6 @@
       "plain": "milliequivalents per liter -- an older laboratory measure of an electrolyte's concentration in the blood.",
       "category": "unit",
       "aliases": [
-        "meq/l",
         "meq"
       ]
     },
@@ -792,9 +791,7 @@
       "term": "myelofibrosis",
       "plain": "scarring of the bone marrow that crowds out normal blood-cell production",
       "category": "medical",
-      "aliases": [
-        "myelosclerosis"
-      ]
+      "aliases": []
     },
     {
       "term": "chromatolysis",
@@ -1245,7 +1242,6 @@
       "plain": "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
       "category": "product-history",
       "aliases": [
-        "Supralife",
         "SupraLife International"
       ]
     },
@@ -1305,9 +1301,7 @@
       "term": "Glacial Milk",
       "plain": "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
       "category": "science",
-      "aliases": [
-        "glacial milk"
-      ]
+      "aliases": []
     },
     {
       "term": "rock flour",

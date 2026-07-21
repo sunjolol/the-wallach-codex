@@ -3805,9 +3805,39 @@ def _glossary_number_exemption_valid(entry, runs_by_id):
     return True, f"anchored to {','.join(claim_ids)}"
 
 
+def _glossary_key_collisions(terms):
+    """Every normalized (lowercased) key across term + aliases must be GLOBALLY UNIQUE.
+    The runtime matcher (dashboard/assets/js/src/state/glossary.ts) folds term + every alias
+    into ONE lowercased Map, so a repeated key is a SILENT last-write-wins override -- the
+    later entry's definition wins and the earlier one is dead, with no error. Returns a list of
+    human problem strings (empty == clean); driven directly by tools/test_glossary_wellformed.py.
+    2026-07-21 (task_4ba8c8bd): 'myelosclerosis' had a dedicated entry AND was an alias of
+    'myelofibrosis' so the dedicated definition was dead; three others (meq/l, Supralife, glacial
+    milk) were aliases equal to their own term's lowercase -- dead weight the Map collapses. The
+    pre-existing term-vs-term check missed all four because it never looked at aliases."""
+    owner = {}   # normalized key -> "role 'k' of 'term'"
+    problems = []
+    for t in terms:
+        name = (t.get("term") or "").strip()
+        pairs = []
+        if name:
+            pairs.append(("term", name))
+        for a in (t.get("aliases") or []):
+            a2 = (a or "").strip()
+            if a2:
+                pairs.append(("alias", a2))
+        for role, k in pairs:
+            kl = k.lower()
+            if kl in owner:
+                problems.append(f"key {k!r} ({role} of {name!r}) collides with {owner[kl]}")
+            else:
+                owner[kl] = f"{role} {k!r} of {name!r}"
+    return problems
+
+
 def check_glossary_wellformed():
     """Glossary integrity (SESSION 39 Phase 1): dashboard/assets/data/glossary.json parses,
-    every entry has a non-empty term + plain definition + category, terms are unique, and no
+    every entry has a non-empty term + plain definition + category, every term+alias key is globally unique (the matcher folds them into one lowercased Map, so a collision silently overrides), and no
     definition asserts an UNANCHORED health number/dose (the glossary is the one content layer
     outside the §00.A source gates, so a bare number here would be an unverifiable Wallach claim).
     Historical dates pass; a health number trips UNLESS the entry declares an anchored
@@ -3824,17 +3854,17 @@ def check_glossary_wellformed():
     if not isinstance(terms, list) or not terms:
         return False, "glossary.json has no 'terms' array"
     runs_by_id = _corpus_claim_digit_runs()
-    seen = set()
-    problems = []
+    # The runtime matcher (state/glossary.ts) folds term + every alias into ONE lowercased
+    # Map, so any repeated normalized key is a SILENT last-write-wins override. Guard the FULL
+    # key-space, not just term-vs-term (task_4ba8c8bd, 2026-07-21: an alias collision made a
+    # dedicated 'myelosclerosis' definition dead, and the old term-only check never saw it).
+    problems = list(_glossary_key_collisions(terms))
     exempted = 0
     for t in terms:
         name = (t.get("term") or "").strip()
         if not name:
             problems.append("entry with empty term")
             continue
-        if name.lower() in seen:
-            problems.append(f"duplicate term {name!r}")
-        seen.add(name.lower())
         if not (t.get("plain") or "").strip():
             problems.append(f"{name}: empty definition")
         if not (t.get("category") or "").strip():

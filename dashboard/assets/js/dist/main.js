@@ -59713,7 +59713,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         plain: "milliequivalents per liter -- an older laboratory measure of an electrolyte's concentration in the blood.",
         category: "unit",
         aliases: [
-          "meq/l",
           "meq"
         ]
       },
@@ -59739,9 +59738,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "myelofibrosis",
         plain: "scarring of the bone marrow that crowds out normal blood-cell production",
         category: "medical",
-        aliases: [
-          "myelosclerosis"
-        ]
+        aliases: []
       },
       {
         term: "chromatolysis",
@@ -60192,7 +60189,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         plain: "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
         category: "product-history",
         aliases: [
-          "Supralife",
           "SupraLife International"
         ]
       },
@@ -60252,9 +60248,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "Glacial Milk",
         plain: "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
         category: "science",
-        aliases: [
-          "glacial milk"
-        ]
+        aliases: []
       },
       {
         term: "rock flour",
@@ -101160,7 +101154,24 @@ Glossary separation (dashboard/assets/data/glossary.json, hand-authored, matched
 
 "Where to get it" affordance (views/entity-page.ts renderGroupGetIt + ACTIONABLE_GROUP_KINDS={dose,protocol}; drawer-knowledge.css .kd-ep-getit): renders only on green dose/protocol group blocks, keyed on the claim KIND rather than a colour-family literal (view_category_not_hardcoded flagged a 'green' string literal on the first pass and I re-keyed it to the kind-set), listing the top-3 rankedPdmSources() as clickable data-kd-product chips (Cheri-Mins, Majestic Earth Mineral STX, Plant Derived Minerals + "+N more above"). Fed by the same product data the hero's best-sources block uses; reusable for every future dose claim and ready to carry into Ask-Wallach when that surface is built (Luneth chose this dedicated-affordance mechanism over inline product names).
 
-+4 search-enrichment entries (subject colloidal_minerals; facets protocol/uses). Regenerated all 12 derived artifacts (build_embeds) + rebundled (build.mjs); board 77/77. Screenshot-verified on the strontium entity page: the green PROTOCOL block with all four cards, the "Where to get it" affordance, and the two SEPARATE dotted-underline hovers ("plant-derived" and "colloidal") each showing the correct form-vs-source definition, with no conflated term remaining. Spawned a background task (task_4ba8c8bd) for pre-existing duplicate glossary keys (glacial milk / supralife / myelosclerosis / meq-l) found in passing. Remaining plant-derived batches: batch 2 (12 teal retags) and batch 4 (19 teal new + cross-book number conflicts) per the Ratification Console artifact.` }];
++4 search-enrichment entries (subject colloidal_minerals; facets protocol/uses). Regenerated all 12 derived artifacts (build_embeds) + rebundled (build.mjs); board 77/77. Screenshot-verified on the strontium entity page: the green PROTOCOL block with all four cards, the "Where to get it" affordance, and the two SEPARATE dotted-underline hovers ("plant-derived" and "colloidal") each showing the correct form-vs-source definition, with no conflated term remaining. Spawned a background task (task_4ba8c8bd) for pre-existing duplicate glossary keys (glacial milk / supralife / myelosclerosis / meq-l) found in passing. Remaining plant-derived batches: batch 2 (12 teal retags) and batch 4 (19 teal new + cross-book number conflicts) per the Ratification Console artifact.` }, { id: "lg_mrv9kl50_9c094y", ts: "2026-07-21T18:07:41.700985-05:00", surface: "knowledge", kind: "round-close", summary: "Glossary key dedup (task_4ba8c8bd): removed 4 colliding tooltip keys (myelosclerosis mis-attributed + 3 redundant self-aliases) and tightened glossary_wellformed to guard the full term+alias key-space so silent Map overrides cannot recur", detail: `Cleaned up 4 duplicate keys in the glossary tooltip layer, and closed the hole in the checker that let them slip past a green board. The tooltip matcher builds one big lowercase lookup from every term plus all its aliases, and when two entries claim the same key the LAST one silently wins. "myelosclerosis" had its own dedicated entry AND was also listed as an alias of "myelofibrosis", so hovering the word showed the wrong (myelofibrosis) definition. The other three (meq/l, Supralife, glacial milk) were aliases that just re-spelled their own term in lowercase \u2014 dead weight, since the matcher already lowercases everything. I fixed the data and taught the gate to catch this whole class so it can never come back quietly.
+
+DATA \u2014 dashboard/assets/data/glossary.json (hand-authored, not sealed):
+- myelofibrosis: removed the mis-attributed "myelosclerosis" alias. The dedicated myelosclerosis entry stays canonical, so the hover now correctly reads "hardening and scarring of the bone marrow" (previously it resolved to myelofibrosis's wording).
+- mEq/L: removed the redundant self-alias "meq/l"; kept the distinct "meq".
+- SupraLife: removed the redundant self-alias "Supralife"; kept "SupraLife International".
+- Glacial Milk: removed the redundant self-alias "glacial milk" (aliases now []).
+git diff = 4 hunks, +2/-8, no CRLF churn. Re-scan = 0 colliding keys. Matcher-simulation confirms every lowercase form (glacial milk / meq/l / supralife) still resolves via the term's own lowercasing.
+
+GATE (R9 \u2014 fix the misfire WITH proof) \u2014 tools/invariants.py:
+- Added module-level _glossary_key_collisions(terms): every normalized (lowercased) key across term + aliases must be globally unique, because the runtime folds them into one Map where a repeat is a silent override.
+- Wired it into check_glossary_wellformed, REPLACING the old term-only "seen" check (which only compared term-vs-term and never looked at aliases \u2014 that is exactly why all four collisions passed). The new check subsumes the old one. Docstring corrected: "terms are unique" was untrue of the alias space.
+
+TEST \u2014 tools/test_glossary_wellformed.py: +6 key-space cases (alias==another-entry-term trips; self-alias-lowercase trips; shared-alias trips; duplicate-term still trips; case-insensitive collision trips; distinct-and-clean passes). 28/28 cases pass.
+
+VERIFICATIONS: node tools/build.mjs (main.js 6.1mb, glossary re-inlined) \xB7 invariants.py 77/77 (glossary_wellformed green: 219 defs, 2 anchored number-exempt) \xB7 render_probe_knowledge PASS (0 page errors, 82 glosses resolve) \xB7 Python matcher-simulation proof.
+
+The one user-visible behavior change is the myelosclerosis hover now showing its own (correct) definition instead of myelofibrosis's. Both are accurate medical glosses; the dedicated entry was authored deliberately, so it wins. task_4ba8c8bd complete.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
