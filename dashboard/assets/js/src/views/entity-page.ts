@@ -547,20 +547,26 @@ function renderPresentGlance(tile: CoverageTile): string {
 }
 
 /**
- * The NON-ESSENTIAL treatment (omega-9 / oleic — the only case today). It is NOT one of Wallach's
- * 90: he designates exactly two essential fatty acids — linoleic (omega-6) + linolenic (omega-3),
- * verified in DDDL 2011 / Immortality / Rare Earths — and names oleic acid only as a monounsaturated
- * fat, never an essential. We keep the tile for completeness + because oleic rides along in the same
- * flax/fish EFA oils, so its product sources still belong here. Given MORE room than the present /
- * mirror treatments (Luneth 2026-07-20): the expanded "why it is the 91st" + composition sources
- * REPLACE the fatty-acid-forms box (suppressed for this slug in renderEssentialPage).
+ * The NON-ESSENTIAL treatment (omega-9 / oleic — the only case today). Omega-9 is NOT one of
+ * Wallach's fatty acids at all: he designates two essential (linoleic ω-6 + linolenic ω-3) and, in
+ * his broader "3", a CONDITIONAL third — arachidonic (also ω-6), never oleic. We keep the omega-9
+ * tile as a deliberate presentation choice ("omega 3-6-9" is how the EFA oils are named + sold), so
+ * this treatment (a) OWNS that as our choice, not Wallach's, and (b) hard-separates it from the
+ * conditional 3rd via an orange CTA to the Omega-6 page + explicit "what omega-9 is NOT" copy.
+ * Rendered as a soft accent --aside callout so it reads as our note, not an essential's verdict.
  *
- * S00.A: every line is Wallach's own stance or our presentation reason — never the outside-world
- * cardiovascular / insulin / immune claims (those trace to no Wallach primary and were kept OUT).
- * Copy single-copy in view-copy.json (R4); the source mg is composition (what a product CONTAINS),
- * never a target. Two body paragraphs both use kd-ep-mirror__body (its margin-top spaces them).
+ * S00.A: every line is Wallach's stance or our stated presentation reason — no outside-world health
+ * claim. Copy single-copy in view-copy.json (R4); the source mg below is composition, never a target.
  */
 function renderNonEssentialGlance(layoutKey: string): string {
+  // The orange CTA points at OMEGA-6, because Wallach's real "third fatty acid" is arachidonic (a
+  // form of omega-6), NOT omega-9. Target = omega-6's canon layout_key (stable; render_probe_omega
+  // covers the jump). The --aside callout + eyebrow mark this as OUR note, not a Wallach essential.
+  const cta = `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
+        <span class="kd-ep-mirror__cta-nm">Omega-6</span>
+        <span class="kd-ep-mirror__cta-go">${escHTML(ui('kd_ep_noness_cta'))}</span>
+        <span class="kd-ep-mirror__cta-chev" aria-hidden="true">›</span>
+      </button>`;
   return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
@@ -572,10 +578,12 @@ function renderNonEssentialGlance(layoutKey: string): string {
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML(ui('kd_ep_noness_covword'))}</span></div>
       </div>
     </div>
-    <div class="kd-ep-mirror">
+    <div class="kd-ep-mirror kd-ep-mirror--aside">
+      <div class="kd-ep-k kd-ep-mirror__eyebrow">${escHTML(ui('kd_ep_noness_eyebrow'))}</div>
       <div class="kd-ep-mirror__lead">${escHTML(ui('kd_ep_noness_lead'))}</div>
       <div class="kd-ep-mirror__body">${escHTML(ui('kd_ep_noness_body'))}</div>
       <div class="kd-ep-mirror__body">${escHTML(ui('kd_ep_noness_body2'))}</div>
+      ${cta}
     </div>
     ${renderSourcesBlock(layoutKey)}
   </div>`;
