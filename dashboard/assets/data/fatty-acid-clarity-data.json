@@ -5,6 +5,7 @@
     {
       "family": "omega-3",
       "label": "Omega-3",
+      "crosslink": true,
       "acids": [
         {
           "abbr": "ALA",
@@ -29,6 +30,8 @@
     {
       "family": "omega-6",
       "label": "Omega-6",
+      "experience": true,
+      "quote_claim": "WAL-CLM-DDDL-000063",
       "acids": [
         {
           "abbr": "LA",

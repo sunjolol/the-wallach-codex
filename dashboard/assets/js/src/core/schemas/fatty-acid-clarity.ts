@@ -23,6 +23,12 @@ export const OmegaFamilySchema = z.object({
   family: z.string(),
   label: z.string(),
   acids: z.array(FattyAcidSchema),
+  /** omega-6 only: render the full "fatty-acid family" experience (the 2-vs-3 explainer). */
+  experience: z.boolean().optional(),
+  /** The sealed Wallach claim id whose verbatim the experience pull-quotes (data-driven, R1). */
+  quote_claim: z.string().optional(),
+  /** omega-3 only: append a one-line cross-link to the omega-6 experience. */
+  crosslink: z.boolean().optional(),
 }).passthrough();
 
 export const FattyAcidClaritySchema = z.object({

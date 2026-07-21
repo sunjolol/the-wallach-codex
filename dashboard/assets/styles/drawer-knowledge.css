@@ -1655,6 +1655,35 @@
    on the Omega-6 page). Luneth 2026-07-20. */
 #drawer-knowledge-mount .kd-ep-mirror--aside { border-top: 0; margin-top: var(--ds-space-4); padding: var(--ds-space-4) var(--ds-space-5); background: var(--ds-accent-wash); border-left: 3px solid var(--ds-accent); border-radius: var(--ds-radius-sm); }
 #drawer-knowledge-mount .kd-ep-mirror__eyebrow { color: var(--ds-accent-deep); margin-bottom: var(--ds-space-2); }
+/* Omega-6 "fatty-acid family" experience — the 2-vs-3 EFA explainer (Luneth 2026-07-20). */
+#drawer-knowledge-mount .kd-ep-fam { margin-top: var(--ds-space-5); padding: var(--ds-space-5); background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-md); }
+#drawer-knowledge-mount .kd-ep-fam__eyebrow { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .kd-ep-fam__kill { font-family: var(--ds-font-display); font-size: var(--ds-text-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; color: var(--ds-ink); margin: var(--ds-space-1) 0 var(--ds-space-4); }
+#drawer-knowledge-mount .kd-ep-fam__figure { margin: 0 auto var(--ds-space-4); max-width: 560px; }
+#drawer-knowledge-mount .kd-ep-fam__art { width: 100%; height: auto; display: block; }
+#drawer-knowledge-mount .kd-ep-fam__node--solid { fill: var(--ds-accent-wash); stroke: var(--ds-accent); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__node--dashed { fill: transparent; stroke: var(--ds-ink-faint); stroke-width: 1.5; stroke-dasharray: 5 4; }
+#drawer-knowledge-mount .kd-ep-fam__nabbr { fill: var(--ds-ink); font-family: var(--ds-font-display); font-weight: 700; font-size: 27px; }
+#drawer-knowledge-mount .kd-ep-fam__nabbr--cond { fill: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-ep-fam__nname { fill: var(--ds-ink-soft); font-family: var(--ds-font-sans); font-size: 12.5px; }
+#drawer-knowledge-mount .kd-ep-fam__nfam { fill: var(--ds-accent-deep); font-family: var(--ds-font-mono); font-size: 12px; letter-spacing: .04em; }
+#drawer-knowledge-mount .kd-ep-fam__nfam--cond { fill: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-ep-fam__arrowline { fill: none; stroke: var(--ds-ink-faint); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__arrowhead { fill: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-ep-fam__arrowlbl { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 11px; }
+#drawer-knowledge-mount .kd-ep-fam__bracket { fill: none; stroke: var(--ds-accent); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__bracketlbl { fill: var(--ds-accent-deep); font-family: var(--ds-font-mono); font-size: 12px; }
+#drawer-knowledge-mount .kd-ep-fam__condtag { fill: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: 11px; }
+#drawer-knowledge-mount .kd-ep-fam__steps { display: flex; flex-direction: column; gap: var(--ds-space-3); }
+#drawer-knowledge-mount .kd-ep-fam__step { display: flex; gap: var(--ds-space-3); align-items: baseline; }
+#drawer-knowledge-mount .kd-ep-fam__num { flex: none; font-family: var(--ds-font-mono); font-size: var(--ds-text-sm); font-weight: 700; color: var(--ds-accent); }
+#drawer-knowledge-mount .kd-ep-fam__steptitle { font-family: var(--ds-font-display); font-size: var(--ds-text-base); font-weight: 700; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-ep-fam__steptext { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.55; color: var(--ds-ink); margin-top: 2px; max-width: 66ch; }
+#drawer-knowledge-mount .kd-ep-fam__quote { margin-top: 40px; margin-bottom: 15px; }
+#drawer-knowledge-mount .kd-ep-fam__quote .ds-pull-quote { font-family: 'Playfair Display', Georgia, serif; }
+#drawer-knowledge-mount .kd-ep-fam__note { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: 1.45; margin-top: var(--ds-space-3); max-width: 66ch; }
+#drawer-knowledge-mount .kd-ep-fam__xlink { display: inline-flex; align-items: center; gap: var(--ds-space-1); margin-top: var(--ds-space-3); padding: 0; background: none; border: 0; cursor: pointer; font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); letter-spacing: .04em; text-transform: uppercase; color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .kd-ep-fam__xlink:hover { color: var(--ds-accent-hot); text-decoration: underline; }
 /* best-source rows (clickable to the product detail panel) */
 #drawer-knowledge-mount .kd-ep-src { display: flex; align-items: center; gap: var(--ds-space-3); width: 100%; text-align: left; padding: .5rem .7rem; margin-bottom: 5px; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-sm); cursor: pointer; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-ep-src:hover { border-color: var(--ds-accent); background: var(--ds-paper-deep); transform: translateX(2px); }

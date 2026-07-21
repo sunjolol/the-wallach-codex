@@ -41,6 +41,7 @@ import {
   conditionDisplayName,
   essentialDisplayName,
   getBookLabel,
+  getClaim,
   getCondition,
   getEssentialByLayoutKey,
   getEssentialBySlug,
@@ -332,7 +333,7 @@ function srcRow(s: RankedSourceRow, isBest: boolean): string {
     </button>`;
 }
 
-function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null): string {
+function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null, showSources = true): string {
   // Plant-derived GROUP tiles carry no per-element dose — the 34 trace_pdm minerals share ONE
   // meter (Σ plant-derived vehicle mg vs the 924 mg Wallach group goal). Render the group
   // treatment, not the per-element target/pending logic.
@@ -378,7 +379,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
     coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span></div>`;
   }
-  const sourcesHTML = renderSourcesBlock(layoutKey);
+  const sourcesHTML = showSources ? renderSourcesBlock(layoutKey) : '';
   return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
@@ -861,6 +862,122 @@ function renderOmegaClarity(name: string): string {
     </div>`;
 }
 
+// ─── Omega-6 "fatty-acid family" experience — the 2-vs-3 knot, untied ─────────
+// Wallach names 3 fatty acids (linoleic, linolenic, arachidonic) but designates 2 as truly
+// essential (linoleic + linolenic); arachidonic is "conditionally essential" — the body builds it
+// from linoleic (Epigenetics 2014 / Immortality 2008). This is the one page that tells that whole
+// story well: a deterministic triad figure (2 solid essentials + 1 dashed conditional) + numbered
+// steps + Wallach's OWN sealed quote (RARE-000109). Destination for the omega-9 CTA + the "3 fatty
+// acids" gloss. S00.A: explanatory copy is ours (view-copy R4, clearly framed); the quote is his,
+// pulled from the sealed claim (never hand-typed). Luneth 2026-07-20.
+
+/** The triad SVG: ALA (ω-3) + LA (ω-6) solid essentials, AA (ω-6) dashed conditional, LA -> AA
+ *  arrow ("makes"), bracket under the two. Deterministic (no Math.random) — stable for probes. */
+function fatFamilyFigure(): string {
+  const arrow = escHTML(ui('kd_ep_fam_arrow'));
+  const bracket = escHTML(ui('kd_ep_fam_bracket'));
+  const condtag = escHTML(ui('kd_ep_fam_condtag'));
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 680 196" role="img" aria-label="Three fatty acids: two essential (linolenic, linoleic) and one conditional (arachidonic)">
+      <defs><marker id="fam-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+      <text class="kd-ep-fam__nfam" x="100" y="26" text-anchor="middle">ω-3</text>
+      <text class="kd-ep-fam__nfam" x="340" y="26" text-anchor="middle">ω-6</text>
+      <text class="kd-ep-fam__nfam kd-ep-fam__nfam--cond" x="580" y="26" text-anchor="middle">ω-6</text>
+      <rect class="kd-ep-fam__node kd-ep-fam__node--solid" x="16" y="36" width="168" height="72" rx="12"/>
+      <rect class="kd-ep-fam__node kd-ep-fam__node--solid" x="256" y="36" width="168" height="72" rx="12"/>
+      <rect class="kd-ep-fam__node kd-ep-fam__node--dashed" x="496" y="36" width="168" height="72" rx="12"/>
+      <text class="kd-ep-fam__nabbr" x="100" y="80" text-anchor="middle">ALA</text>
+      <text class="kd-ep-fam__nabbr" x="340" y="80" text-anchor="middle">LA</text>
+      <text class="kd-ep-fam__nabbr kd-ep-fam__nabbr--cond" x="580" y="80" text-anchor="middle">AA</text>
+      <text class="kd-ep-fam__nname" x="100" y="98" text-anchor="middle">Linolenic</text>
+      <text class="kd-ep-fam__nname" x="340" y="98" text-anchor="middle">Linoleic</text>
+      <text class="kd-ep-fam__nname" x="580" y="98" text-anchor="middle">Arachidonic</text>
+      <path class="kd-ep-fam__arrowline" d="M430 72 L490 72" marker-end="url(#fam-arrow)"/>
+      <text class="kd-ep-fam__arrowlbl" x="460" y="62" text-anchor="middle">${arrow}</text>
+      <path class="kd-ep-fam__bracket" d="M16 126 L16 134 L424 134 L424 126"/>
+      <text class="kd-ep-fam__bracketlbl" x="220" y="152" text-anchor="middle">${bracket}</text>
+      <text class="kd-ep-fam__condtag" x="580" y="132" text-anchor="middle">${condtag}</text>
+    </svg>`;
+}
+
+/** One numbered step (01/02/03). Body glossified so "arachidonic"/"conditionally essential" pick up
+ *  the shared gloss hovers once they exist (Piece 3). */
+function fatFamilyStep(num: string, tKey: string, bKey: string): string {
+  return `<div class="kd-ep-fam__step">
+      <span class="kd-ep-fam__num">${escHTML(num)}</span>
+      <div class="kd-ep-fam__stepbody">
+        <div class="kd-ep-fam__steptitle">${escHTML(ui(tKey))}</div>
+        <div class="kd-ep-fam__steptext">${glossify(collapseWS(ui(bKey)))}</div>
+      </div>
+    </div>`;
+}
+
+/** Wallach's OWN designation statement, from the sealed claim RARE-000109 (mapped to omega-3+6).
+ *  Verbatim + cite come from the claim, never hand-typed (R3). '' if the claim is unresolved. */
+function fatFamilyQuote(claimId: string | undefined): string {
+  const c = claimId !== undefined ? getClaim(claimId) : null;
+  if (c === null) {
+    return '';
+  }
+  return `<div class="ds-pull-quote-wrap kd-ep-fam__quote">
+      <blockquote class="ds-pull-quote">
+        <p>${glossify(collapseWS(c.verbatim))}</p>
+        <footer>— Dr. Joel Wallach · ${escHTML(getBookLabel(c.book))}</footer>
+      </blockquote>
+    </div>`;
+}
+
+/** The whole omega-6 experience section. */
+function renderOmega6Experience(quoteClaim: string | undefined, layoutKey: string): string {
+  return `<section class="kd-ep-fam">
+      <span class="kd-ep-fam__eyebrow">${escHTML(ui('kd_ep_fam_eyebrow'))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML(ui('kd_ep_fam_kill'))}</h3>
+      <div class="kd-ep-fam__figure">${fatFamilyFigure()}</div>
+      <div class="kd-ep-fam__steps">
+        ${fatFamilyStep('01', 'kd_ep_fam_s1_t', 'kd_ep_fam_s1_b')}
+        ${fatFamilyStep('02', 'kd_ep_fam_s2_t', 'kd_ep_fam_s2_b')}
+        ${fatFamilyStep('03', 'kd_ep_fam_s3_t', 'kd_ep_fam_s3_b')}
+      </div>
+      ${fatFamilyQuote(quoteClaim)}
+      <div class="kd-ep-fam__note">${escHTML(ui('kd_ep_fam_note'))}</div>
+      ${renderSourcesBlock(layoutKey)}
+    </section>`;
+}
+
+/** Omega-3 is the easy one — its plain forms box + a one-line link to the full family story. */
+function renderFamCrossLink(): string {
+  return `<button class="kd-ep-fam__xlink" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">${escHTML(ui('kd_ep_fam_crosslink'))} ›</button>`;
+}
+
+/** The omega family whose clarity data carries the full `experience`, else undefined. Keyed off the
+ *  name pattern + the DATA flag (never a per-slug branch) so the block dispatcher AND the at-a-glance
+ *  source-deferral read the same truth. */
+function fatExperienceFam(name: string) {
+  const m = /^Omega-([369])\b/.exec(name);
+  const fam = m !== null ? OMEGA_BY_FAMILY.get(`omega-${m[1]}`) : undefined;
+  return fam?.experience === true ? fam : undefined;
+}
+
+/** Which fatty-acid block a page gets — driven by the clarity DATA, never a per-slug branch (R1
+ *  pure projection): omega-9 -> nothing (its own aside handles it); an omega whose data carries
+ *  `experience` -> the family experience (which OWNS its sources, moved to the bottom); one carrying
+ *  `crosslink` -> plain box + a link; else the plain forms box. Non-omega essentials get nothing. */
+function fattyAcidBlockFor(layoutKey: string, name: string, tile: CoverageTile | null): string {
+  if (tile?.noTargetReason === 'non_essential') {
+    return '';
+  }
+  const fatExp = fatExperienceFam(name);
+  if (fatExp !== undefined) {
+    return renderOmega6Experience(fatExp.quote_claim, layoutKey);
+  }
+  const m = /^Omega-([369])\b/.exec(name);
+  const fam = m !== null ? OMEGA_BY_FAMILY.get(`omega-${m[1]}`) : undefined;
+  if (fam === undefined) {
+    return '';
+  }
+  const base = renderOmegaClarity(name);
+  return fam.crosslink === true ? base + renderFamCrossLink() : base;
+}
+
 // ─── The page ───────────────────────────────────────────────────────────────
 
 /** The back affordance — the drawer's existing essential-close handler returns to the grid. */
@@ -880,7 +997,8 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const page = slug !== null ? getEssentialPage(slug) : null;
   const tile = tileOf(snapshot, layoutKey);
   const status: CoverageStatus = tile?.status ?? '';
-  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot);
+  const deferSources = page !== null && fatExperienceFam(page.name) !== undefined;
+  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
 
   if (page === null) {
     // Graceful fallback: an essential with no sealed page record yet (e.g. the
@@ -926,7 +1044,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${lede}
     ${seclabel('At a glance', 'the essentials, in one place')}
     ${glanceHTML}
-    ${tile?.noTargetReason === 'non_essential' ? '' : renderOmegaClarity(page.name)}
+    ${fattyAcidBlockFor(layoutKey, page.name, tile)}
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}
