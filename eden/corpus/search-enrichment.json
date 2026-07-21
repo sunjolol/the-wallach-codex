@@ -395,7 +395,7 @@
       "also_about": [],
       "facet": "big_question",
       "question": "What do the world's longest-lived peoples all share?",
-      "answer_short": "Not genes, not altitude — what grows in their fields. Every \"Age Beater\" culture settled below a glacier and built canals to bring its mineral-rich meltwater ('glacial milk') to their crops, which converted those inorganic minerals into plant-derived colloidal form.",
+      "answer_short": "Not genes — what grows in their fields. Every \"Age Beater\" culture settled below a glacier and built canals to bring its mineral-rich meltwater ('glacial milk') to their crops, which converted those inorganic minerals into plant-derived colloidal form.",
       "topics": [
         "age-beaters",
         "longevity",
@@ -4192,6 +4192,19 @@
         "parent-rock",
         "source-matters",
         "mineral-count"
+      ]
+    },
+    "WAL-CLM-RARE-000061": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How much more of a plant-derived mineral does the body actually absorb?",
+      "answer_short": "About 98% of it, on Wallach's account — versus only 8–12% of the same mineral taken as ground-up rock. That gap is the whole reason he insists on the plant-derived (colloidal) form.",
+      "topics": [
+        "bioavailability",
+        "absorption",
+        "plant-derived",
+        "source-matters"
       ]
     }
   }

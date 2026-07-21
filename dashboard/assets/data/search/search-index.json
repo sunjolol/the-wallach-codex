@@ -350,7 +350,7 @@
         "selenium",
         "essential_nutrients"
       ],
-      "claim_count": 13
+      "claim_count": 14
     },
     "color_therapy": {
       "display_name": "Color Therapy",
@@ -1978,7 +1978,7 @@
       "also_about": [],
       "facet": "big_question",
       "question": "What do the world's longest-lived peoples all share?",
-      "answer_short": "Not genes, not altitude — what grows in their fields. Every \"Age Beater\" culture settled below a glacier and built canals to bring its mineral-rich meltwater ('glacial milk') to their crops, which converted those inorganic minerals into plant-derived colloidal form.",
+      "answer_short": "Not genes — what grows in their fields. Every \"Age Beater\" culture settled below a glacier and built canals to bring its mineral-rich meltwater ('glacial milk') to their crops, which converted those inorganic minerals into plant-derived colloidal form.",
       "answer": "'Age Beaters' is Wallach's shorthand for the eight unrelated long-lived cultures he tracks — populations where reaching 100+ in good health is common rather than exceptional. What ties them together, he argues, is what grows in their fields: each settled by chance in a high arid valley below a glacier and built canals to bring the glacier's mineral-rich meltwater ('glacial milk') to their crops, which converted those inorganic minerals into plant-derived colloidal form. Those plant-derived colloidal minerals in their food, he says, are the common thread behind the shared longevity — and why he calls them, flatly, the Fountain of Youth.",
       "verbatim": "It is the plant derived colloidal minerals in their grains,\nvegetables, fruits, and nuts that are their common threads giving the Age Beaters their health and longevity. It is the plant derived colloidal\nminerals that are in fact the Fountain of Youth!",
       "page": null,
@@ -7159,6 +7159,24 @@
           "omega-3"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-RARE-000061",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How much more of a plant-derived mineral does the body actually absorb?",
+      "answer_short": "About 98% of it, on Wallach's account — versus only 8–12% of the same mineral taken as ground-up rock. That gap is the whole reason he insists on the plant-derived (colloidal) form.",
+      "answer": "Wallach states that organic colloidal minerals from plants are 98% bioavailable to humans, versus only 8 to 12% for metallic (inorganic) minerals.",
+      "verbatim": "Organic colloidal minerals derived from plants are 98 % available to humans as compared to 8 to 12 % availability for the metallic minerals.",
+      "page": 213,
+      "book_id": "rare-earths",
+      "topics": [
+        "bioavailability",
+        "absorption",
+        "plant-derived",
+        "source-matters"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000069",
