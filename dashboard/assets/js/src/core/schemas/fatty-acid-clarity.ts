@@ -16,6 +16,8 @@ export const FattyAcidSchema = z.object({
   name: z.string(),
   primary: z.boolean(),
   description: z.string(),
+  /** omega-3 forms only: "plant" or "marine" — general-reference source cue for the figure. */
+  source: z.string().optional(),
 }).passthrough();
 
 export const OmegaFamilySchema = z.object({

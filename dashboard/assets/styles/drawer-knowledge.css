@@ -1663,6 +1663,7 @@
 #drawer-knowledge-mount .kd-ep-fam__art { width: 100%; height: auto; display: block; }
 #drawer-knowledge-mount .kd-ep-fam__node--solid { fill: var(--ds-accent-wash); stroke: var(--ds-accent); stroke-width: 2; }
 #drawer-knowledge-mount .kd-ep-fam__node--dashed { fill: transparent; stroke: var(--ds-ink-faint); stroke-width: 1.5; stroke-dasharray: 5 4; }
+#drawer-knowledge-mount .kd-ep-fam__node--soft { fill: var(--ds-paper-darker); stroke: var(--ds-rule); stroke-width: 1.5; }
 #drawer-knowledge-mount .kd-ep-fam__nabbr { fill: var(--ds-ink); font-family: var(--ds-font-display); font-weight: 700; font-size: 27px; }
 #drawer-knowledge-mount .kd-ep-fam__nabbr--cond { fill: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-ep-fam__nname { fill: var(--ds-ink-soft); font-family: var(--ds-font-sans); font-size: 12.5px; }

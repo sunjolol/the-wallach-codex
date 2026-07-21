@@ -32,6 +32,7 @@ import {
   type CorpusClaim,
   type EssentialPage,
   FattyAcidClaritySchema,
+  type OmegaFamily,
   SEARCH_FACETS,
   type SearchClaim,
 } from '../core/schemas/index.js';
@@ -862,6 +863,49 @@ function renderOmegaClarity(name: string): string {
     </div>`;
 }
 
+/** The omega-3 figure (deterministic, no Math.random): three form nodes ALA / EPA / DHA, the primary
+ *  (ALA) solid-accent + tagged "the essential one", EPA + DHA soft/neutral, each with its source
+ *  label (PLANT / MARINE) — the "one from plants, two from the sea" story. Data-driven off fam.acids.
+ *  §00.A: general reference (the acids + sources are non-Wallach clarity), never a Wallach claim. */
+function omega3Figure(fam: OmegaFamily): string {
+  const XN = [16, 256, 496];
+  const XC = [100, 340, 580];
+  const nodes = fam.acids.slice(0, 3).map((a, i) => {
+    const solid = a.primary === true;
+    const shortName = a.name.replace(/\s+Acid$/i, '');
+    const src = (a.source ?? '').toUpperCase();
+    return `
+      <text class="kd-ep-fam__nfam${solid ? '' : ' kd-ep-fam__nfam--cond'}" x="${XC[i]}" y="24" text-anchor="middle">${escHTML(src)}</text>
+      <rect class="kd-ep-fam__node kd-ep-fam__node--${solid ? 'solid' : 'soft'}" x="${XN[i]}" y="38" width="168" height="72" rx="12"/>
+      <text class="kd-ep-fam__nabbr${solid ? '' : ' kd-ep-fam__nabbr--cond'}" x="${XC[i]}" y="80" text-anchor="middle">${escHTML(a.abbr)}</text>
+      <text class="kd-ep-fam__nname" x="${XC[i]}" y="98" text-anchor="middle">${escHTML(shortName)}</text>
+      ${solid ? `<text class="kd-ep-fam__bracketlbl" x="${XC[i]}" y="134" text-anchor="middle">${escHTML(ui('kd_ep_o3_ala_tag'))}</text>` : ''}`;
+  }).join('');
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 680 150" role="img" aria-label="The three forms of omega-3: ALA from plants, the essential one; EPA and DHA from the sea">${nodes}</svg>`;
+}
+
+/** The omega-3 "three forms" experience — the high-impact replacement for the old flat blue clarity
+ *  box (Luneth 2026-07-21). Reuses the omega-6 .kd-ep-fam visual system: eyebrow + kill-shot + the
+ *  figure + the three forms as rich rows + the general-reference disclaimer. Its OWN Best-Youngevity
+ *  sources ride BELOW via fattyAcidBlockFor (deferred from the glance). §00.A: general reference. */
+function renderOmega3Rich(fam: OmegaFamily): string {
+  const rows = fam.acids.map(a => `
+      <div class="kd-ep-fam__step">
+        <span class="kd-ep-fam__num">${escHTML(a.abbr)}</span>
+        <div class="kd-ep-fam__stepbody">
+          <div class="kd-ep-fam__steptitle">${escHTML(a.name)}</div>
+          <div class="kd-ep-fam__steptext">${escHTML(a.description)}</div>
+        </div>
+      </div>`).join('');
+  return `<section class="kd-ep-fam">
+      <span class="kd-ep-fam__eyebrow">${escHTML(ui('kd_ep_o3_eyebrow'))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML(ui('kd_ep_o3_kill'))}</h3>
+      <div class="kd-ep-fam__figure">${omega3Figure(fam)}</div>
+      <div class="kd-ep-fam__steps">${rows}</div>
+      <div class="kd-ep-fam__note">${escHTML(FATTY_ACID_CLARITY.disclaimer)}</div>
+    </section>`;
+}
+
 // ─── Omega-6 "fatty-acid family" experience — the 2-vs-3 knot, untied ─────────
 // Wallach names 3 fatty acids (linoleic, linolenic, arachidonic) but designates 2 as truly
 // essential (linoleic + linolenic); arachidonic is "conditionally essential" — the body builds it
@@ -948,9 +992,13 @@ function renderOmega6Experience(quoteClaim: string | undefined, highlight: strin
     </section>`;
 }
 
-/** Omega-3 is the easy one — its plain forms box + a one-line link to the full family story. */
-function renderFamCrossLink(): string {
-  return `<button class="kd-ep-fam__xlink" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">${escHTML(ui('kd_ep_fam_crosslink'))} ›</button>`;
+/** Omega-3 is the easy one — its forms box + a prominent CTA button to the full family experience (matches omega-9's). */
+function renderFamCTA(): string {
+  return `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
+      <span class="kd-ep-mirror__cta-nm">${escHTML(ui('kd_ep_fam_crosslink'))}</span>
+      <span class="kd-ep-mirror__cta-go">${escHTML(ui('kd_ep_fam_cta_go'))}</span>
+      <span class="kd-ep-mirror__cta-chev" aria-hidden="true">›</span>
+    </button>`;
 }
 
 /** The omega family whose clarity data carries the full `experience`, else undefined. Keyed off the
@@ -960,6 +1008,15 @@ function fatExperienceFam(name: string) {
   const m = /^Omega-([369])\b/.exec(name);
   const fam = m !== null ? OMEGA_BY_FAMILY.get(`omega-${m[1]}`) : undefined;
   return fam?.experience === true ? fam : undefined;
+}
+
+/** True when the page's fatty-acid block renders its OWN Best-Youngevity sources, so the glance
+ *  defers them: omega-6's experience (sources at the bottom) and omega-3's crosslink block (sources
+ *  under the forms + CTA). Omega-9 is non_essential, so its glance carries sources itself, not here. */
+function fatBlockOwnsSources(name: string): boolean {
+  const m = /^Omega-([369])\b/.exec(name);
+  const fam = m !== null ? OMEGA_BY_FAMILY.get(`omega-${m[1]}`) : undefined;
+  return fam !== undefined && (fam.experience === true || fam.crosslink === true);
 }
 
 /** Which fatty-acid block a page gets — driven by the clarity DATA, never a per-slug branch (R1
@@ -980,7 +1037,10 @@ function fattyAcidBlockFor(layoutKey: string, name: string, tile: CoverageTile |
     return '';
   }
   const base = renderOmegaClarity(name);
-  return fam.crosslink === true ? base + renderFamCrossLink() : base;
+  // Crosslink family (omega-3): forms box, then a prominent CTA to the full family experience,
+  // then its OWN Best-Youngevity sources -- deferred out of the glance so forms + CTA sit ABOVE
+  // sources (Luneth 2026-07-20). fatBlockOwnsSources() drives the glance deferral off the flag.
+  return fam.crosslink === true ? renderOmega3Rich(fam) + renderFamCTA() + renderSourcesBlock(layoutKey) : base;
 }
 
 // ─── The page ───────────────────────────────────────────────────────────────
@@ -1002,7 +1062,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const page = slug !== null ? getEssentialPage(slug) : null;
   const tile = tileOf(snapshot, layoutKey);
   const status: CoverageStatus = tile?.status ?? '';
-  const deferSources = page !== null && fatExperienceFam(page.name) !== undefined;
+  const deferSources = page !== null && fatBlockOwnsSources(page.name);
   const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
 
   if (page === null) {

@@ -11,19 +11,22 @@
           "abbr": "ALA",
           "name": "Alpha-Linolenic Acid",
           "primary": true,
-          "description": "Found mostly in plant foods; supports cardiovascular health and helps combat inflammation."
+          "description": "Found mostly in plant foods; supports cardiovascular health and helps combat inflammation.",
+          "source": "plant"
         },
         {
           "abbr": "EPA",
           "name": "Eicosapentaenoic Acid",
           "primary": false,
-          "description": "Supports several physiological roles and may play a role against inflammation."
+          "description": "Supports several physiological roles and may play a role against inflammation.",
+          "source": "marine"
         },
         {
           "abbr": "DHA",
           "name": "Docosahexaenoic Acid",
           "primary": false,
-          "description": "Found mostly in seafood; a structural part of every cell and concentrated in the brain."
+          "description": "Found mostly in seafood; a structural part of every cell and concentrated in the brain.",
+          "source": "marine"
         }
       ]
     },
