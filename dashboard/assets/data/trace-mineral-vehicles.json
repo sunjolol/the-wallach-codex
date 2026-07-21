@@ -4,9 +4,7 @@
     "wallach_dose_claim_id": "WAL-CLM-EPIGEN-000089",
     "wallach_dose_text": "1 fl oz of liquid plant-derived colloidal minerals per 100 lb of body weight per day",
     "reference_composition_product_id": "plant-derived-minerals",
-    "reference_serving_note": "The maintenance goal (mg) = Wallach's 1 fl oz/100 lb dose expressed in mg via the reference product's composition (Plant Derived Minerals(TM) = 600 mg solids per 1 fl oz serving — Youngevity COMPOSITION, read from the pillar, never hand-typed here), scaled to the 154 lb reference adult (targets_derive BODY_WEIGHT_LB) => ~924 mg/day = 100%.",
-    "therapeutic_multiplier": 2,
-    "therapeutic_note": "Therapeutic = double the maintenance goal (~1,848 mg/day), taken as two separate doses. Wallach's 'double the base line nutrition program' doctrine (Let's Play Doctor 4e — drug withdrawal, oligospermia; 'double the supplement rate', autism)."
+    "reference_serving_note": "The maintenance goal (mg) = Wallach's 1 fl oz/100 lb dose expressed in mg via the reference product's composition (Plant Derived Minerals(TM) = 600 mg solids per 1 fl oz serving — Youngevity COMPOSITION, read from the pillar, never hand-typed here), scaled to the 154 lb reference adult (targets_derive BODY_WEIGHT_LB) => ~924 mg/day = 100%."
   },
   "group_factors": {
     "A": 1.0,

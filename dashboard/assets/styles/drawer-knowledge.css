@@ -1629,10 +1629,6 @@
 #drawer-knowledge-mount .kd-ep-sub { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); margin-top: var(--ds-space-2); }
 #drawer-knowledge-mount .kd-ep-bar--met > i { background: var(--ds-status-ok); }
 #drawer-knowledge-mount .kd-ep-pdm-tag { font-family: var(--ds-font-mono); font-size: 9px; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); background: var(--ds-paper-darker); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 1px 7px; margin-left: 6px; vertical-align: 2px; }
-#drawer-knowledge-mount .kd-ep-pdm-thera { display: flex; gap: var(--ds-space-3); margin-top: var(--ds-space-3); padding: var(--ds-space-3) var(--ds-space-4); background: var(--ds-accent-wash); border: 1px solid var(--ds-accent-soft); border-left: 3px solid var(--ds-accent); border-radius: var(--ds-radius-sm); }
-#drawer-knowledge-mount .kd-ep-pdm-thera__mark { flex: 0 0 auto; margin-top: 1px; color: var(--ds-accent); }
-#drawer-knowledge-mount .kd-ep-pdm-thera__label { font-family: var(--ds-font-mono); font-size: 9px; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); margin-bottom: var(--ds-space-1); }
-#drawer-knowledge-mount .kd-ep-pdm-thera__body { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.5; }
 #drawer-knowledge-mount .kd-ep-pdm-note { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.5; margin-top: var(--ds-space-4); padding-top: var(--ds-space-3); border-top: 1px dashed var(--ds-rule); }
 /* ── THE MIRROR treatment (cobalt → B12): a SHORT weighted explanation + a real destination.
    Replaced a 11-line uniform-grey paragraph + a default list-row button (Luneth 2026-07-15:
@@ -1660,6 +1656,10 @@
 #drawer-knowledge-mount .kd-ep-fam__eyebrow { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-fam__kill { font-family: var(--ds-font-display); font-size: var(--ds-text-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; color: var(--ds-ink); margin: var(--ds-space-1) 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-ep-fam__figure { margin: 0 auto 19px; max-width: 560px; }
+/* The PDM figure carries 4 wider boxes (+20 screen px each). Its viewBox is 1050 (vs the omega 918),
+   so this 640px width * (1/1050) keeps the same ~0.61 px/unit scale — the boxes render wider while the
+   arrow gaps, text, and height stay put. Scoped so the omega figure keeps its 560. Luneth 2026-07-21. */
+#drawer-knowledge-mount .kd-ep-fam__figure--pdm { max-width: 640px; }
 #drawer-knowledge-mount .kd-ep-fam__art { width: 100%; height: auto; display: block; }
 #drawer-knowledge-mount .kd-ep-fam__node--solid { fill: var(--ds-accent-wash); stroke: var(--ds-accent); stroke-width: 2; }
 #drawer-knowledge-mount .kd-ep-fam__node--dashed { fill: transparent; stroke: var(--ds-ink-faint); stroke-width: 1.5; stroke-dasharray: 5 4; }
@@ -1672,6 +1672,12 @@
 #drawer-knowledge-mount .kd-ep-fam__arrowline { fill: none; stroke: var(--ds-ink-faint); stroke-width: 1.5; }
 #drawer-knowledge-mount .kd-ep-fam__arrowhead { fill: var(--ds-ink-faint); }
 #drawer-knowledge-mount .kd-ep-fam__arrowlbl { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 11px; }
+/* Plant-derived "how it works" figure ONLY (--pdm). Its 4-node figure (viewBox 1050) scales the
+   shared node/arrow text down small on screen, so here it runs larger + heavier + higher-contrast
+   (ink, not ink-soft) so the info doesn't fade; scoped so the omega figures (Luneth's calibration
+   reference) stay as-is. Node names 21px, arrow captions 19px, weight 600. Luneth 2026-07-21. */
+#drawer-knowledge-mount .kd-ep-fam__art--pdm .kd-ep-fam__nname { fill: var(--ds-ink); font-size: 21px; font-weight: 600; }
+#drawer-knowledge-mount .kd-ep-fam__art--pdm .kd-ep-fam__arrowlbl { fill: var(--ds-ink-soft); font-size: 19px; font-weight: 600; }
 #drawer-knowledge-mount .kd-ep-fam__bracket { fill: none; stroke: var(--ds-accent); stroke-width: 1.5; }
 #drawer-knowledge-mount .kd-ep-fam__bracketlbl { fill: var(--ds-accent-deep); font-family: var(--ds-font-mono); font-size: 12px; }
 #drawer-knowledge-mount .kd-ep-fam__condtag { fill: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: 11px; }

@@ -173,11 +173,9 @@ def build_data() -> dict:
         raise DeriveError(f"reference {ref_id}: mg={ref_mg} serv_oz={serv_oz} — cannot form the goal")
     ref_mg_per_oz = ref_mg / serv_oz
     maintenance = round(dose_amt * ref_mg_per_oz * BODY_WEIGHT_LB / per_bw, 2)
-    therapeutic = round(maintenance * float(gm["therapeutic_multiplier"]), 2)
 
     goal = {
         "maintenance_mg": maintenance,
-        "therapeutic_mg": therapeutic,
         "unit": "mg",
         "source_claim_id": gm["wallach_dose_claim_id"],
         "provenance": {
@@ -189,7 +187,6 @@ def build_data() -> dict:
             "reference_mg_per_serving": round(ref_mg, 4),
             "reference_mg_per_fl_oz": round(ref_mg_per_oz, 4),
             "body_weight_lb": BODY_WEIGHT_LB,
-            "therapeutic_multiplier": float(gm["therapeutic_multiplier"]),
             "formula": "maintenance_mg = dose_amount x (reference_mg / serving_fl_oz) x (body_weight_lb / per_bw_lb)",
         },
     }
@@ -267,6 +264,5 @@ if __name__ == "__main__":
         sys.exit(1)
     n = write_data()
     amount_n = sum(1 for r in d["products"].values() if not r["present"])
-    print(f"OK  wrote pdm-coverage-data.json ({n} B) · goal {d['goal']['maintenance_mg']}mg maint / "
-          f"{d['goal']['therapeutic_mg']}mg therapeutic · {amount_n} amount + "
-          f"{len(d['products']) - amount_n} present products")
+    print(f"OK  wrote pdm-coverage-data.json ({n} B) · goal {d['goal']['maintenance_mg']}mg maint · "
+          f"{amount_n} amount + {len(d['products']) - amount_n} present products")

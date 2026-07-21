@@ -20,7 +20,6 @@ import { z } from 'zod';
 export const PdmCoverageSchema = z.object({
   goal: z.object({
     maintenance_mg: z.number(),
-    therapeutic_mg: z.number(),
     unit: z.string(),
     source_claim_id: z.string(),
   }).passthrough(),

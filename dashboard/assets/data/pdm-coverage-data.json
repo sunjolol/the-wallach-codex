@@ -9,13 +9,11 @@
       "reference_mg_per_serving": 600.0,
       "reference_product_id": "plant-derived-minerals",
       "reference_serving_fl_oz": 1.0,
-      "therapeutic_multiplier": 2.0,
       "wallach_dose_amount": 1.0,
       "wallach_dose_per_body_weight_lb": 100.0,
       "wallach_dose_unit": "fl oz"
     },
     "source_claim_id": "WAL-CLM-EPIGEN-000089",
-    "therapeutic_mg": 1848.0,
     "unit": "mg"
   },
   "group_factors": {

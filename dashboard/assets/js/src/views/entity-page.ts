@@ -621,13 +621,6 @@ function renderPdmGroupGlance(g: PdmGroupSummary): string {
       </div>
     </div>
     <div class="kd-ep-pdm-note">${escHTML(ui('kd_ep_pdm_note'))}</div>
-    <div class="kd-ep-pdm-thera">
-      <svg class="kd-ep-pdm-thera__mark" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5v.01"/></svg>
-      <div>
-        <div class="kd-ep-pdm-thera__label">${escHTML(ui('kd_ep_pdm_thera_label'))}</div>
-        <div class="kd-ep-pdm-thera__body">${escHTML(ui('kd_ep_pdm_thera'))}</div>
-      </div>
-    </div>
   </div>`;
 }
 
@@ -1002,32 +995,41 @@ function renderOmega6Experience(quoteClaim: string | undefined, highlight: strin
  *  plant → colloidal (98%). Deterministic (no Math.random); reuses the .kd-ep-fam node/arrow
  *  classes, last node accent-solid as the payoff. Labels + arrow captions come from view-copy. */
 function pdmFigure(): string {
-  const W = 176;
+  const W = 209;
   const NODES = [
-    { x: 8, cx: 96, nameKey: 'kd_ep_pdm_fig_n1', solid: false },
-    { x: 250, cx: 338, nameKey: 'kd_ep_pdm_fig_n2', solid: false },
-    { x: 492, cx: 580, nameKey: 'kd_ep_pdm_fig_n3', solid: false },
-    { x: 734, cx: 822, nameKey: 'kd_ep_pdm_fig_n4', solid: true },
+    { x: 8, cx: 112.5, nameKey: 'kd_ep_pdm_fig_n1', solid: false },
+    { x: 283, cx: 387.5, nameKey: 'kd_ep_pdm_fig_n2', solid: false },
+    { x: 558, cx: 662.5, nameKey: 'kd_ep_pdm_fig_n3', solid: false },
+    { x: 833, cx: 937.5, nameKey: 'kd_ep_pdm_fig_n4', solid: true },
   ];
   const nodes = NODES.map((n) => {
-    const rect = `<rect class="kd-ep-fam__node kd-ep-fam__node--${n.solid ? 'solid' : 'soft'}" x="${n.x}" y="40" width="${W}" height="60" rx="12"/>`;
+    // Geometry chosen in SCREEN terms (Luneth 2026-07-21). KEY LESSON: this SVG scales to the figure's
+    // CSS width, so a user-unit delta is ~0.61x on screen — pick sizes for what LANDS on screen.
+    // WIDTH: boxes 209 wide = +20 screen px each vs the old 176. To keep the arrow GAPS and TEXT the
+    // same on screen, the viewBox grew 918 -> 1050 (all +132 goes into the 4 boxes; the three 66-unit
+    // gaps are held) AND the --pdm figure CSS width grew 560 -> 640, so the scale (~0.61) is unchanged.
+    // HEIGHT: box 76 (orig 60) grows LESS than the text (21px, orig 12.5) so the copy fills more of it.
+    // The 98%/Colloidal two-line stack (98% y75 + Colloidal y100) is block-centred with room to breathe;
+    // arrow captions sit at y24, ~7 screen px clear of the box tops. Single-line baseline y85 keeps the
+    // 21px name optically centred on the box centre (78).
+    const rect = `<rect class="kd-ep-fam__node kd-ep-fam__node--${n.solid ? 'solid' : 'soft'}" x="${n.x}" y="40" width="${W}" height="76" rx="12"/>`;
     const label = n.solid
-      ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="72" text-anchor="middle">${escHTML(ui('kd_ep_pdm_fig_n4stat'))}</text>
-         <text class="kd-ep-fam__nname" x="${n.cx}" y="90" text-anchor="middle">${escHTML(ui(n.nameKey))}</text>`
-      : `<text class="kd-ep-fam__nname" x="${n.cx}" y="74" text-anchor="middle">${escHTML(ui(n.nameKey))}</text>`;
+      ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="75" text-anchor="middle">${escHTML(ui('kd_ep_pdm_fig_n4stat'))}</text>
+         <text class="kd-ep-fam__nname" x="${n.cx}" y="100" text-anchor="middle">${escHTML(ui(n.nameKey))}</text>`
+      : `<text class="kd-ep-fam__nname" x="${n.cx}" y="85" text-anchor="middle">${escHTML(ui(n.nameKey))}</text>`;
     return rect + label;
   }).join('');
   const ARROWS = [
-    { x1: 184, x2: 250, key: 'kd_ep_pdm_fig_a1' },
-    { x1: 426, x2: 492, key: 'kd_ep_pdm_fig_a2' },
-    { x1: 668, x2: 734, key: 'kd_ep_pdm_fig_a3' },
+    { x1: 217, x2: 283, key: 'kd_ep_pdm_fig_a1' },
+    { x1: 492, x2: 558, key: 'kd_ep_pdm_fig_a2' },
+    { x1: 767, x2: 833, key: 'kd_ep_pdm_fig_a3' },
   ];
   const arrows = ARROWS.map((a) => {
     const mid = (a.x1 + a.x2) / 2;
-    return `<path class="kd-ep-fam__arrowline" d="M${a.x1 + 4} 70 L${a.x2 - 4} 70" marker-end="url(#pdm-arrow)"/>
-        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="30" text-anchor="middle">${escHTML(ui(a.key))}</text>`;
+    return `<path class="kd-ep-fam__arrowline" d="M${a.x1 + 4} 78 L${a.x2 - 4} 78" marker-end="url(#pdm-arrow)"/>
+        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="24" text-anchor="middle">${escHTML(ui(a.key))}</text>`;
   }).join('');
-  return `<svg class="kd-ep-fam__art" viewBox="0 0 918 116" role="img" aria-label="How plant-derived minerals form: parent rock is ground by glaciers into glacial milk, taken up and rebuilt by plants into colloidal minerals the body absorbs at about 98 percent">
+  return `<svg class="kd-ep-fam__art kd-ep-fam__art--pdm" viewBox="0 0 1050 130" role="img" aria-label="How plant-derived minerals form: parent rock is ground by glaciers into glacial milk, taken up and rebuilt by plants into colloidal minerals the body absorbs at about 98 percent">
       <defs><marker id="pdm-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       ${arrows}${nodes}
     </svg>`;
@@ -1046,7 +1048,7 @@ function renderPdmClarity(page: EssentialPage): string {
   return `<section class="kd-ep-fam">
       <span class="kd-ep-fam__eyebrow">${escHTML(ui('kd_ep_pdm_hero_eyebrow'))}</span>
       <h3 class="kd-ep-fam__kill">${escHTML(ui('kd_ep_pdm_hero_kill'))}</h3>
-      <div class="kd-ep-fam__figure">${pdmFigure()}</div>
+      <div class="kd-ep-fam__figure kd-ep-fam__figure--pdm">${pdmFigure()}</div>
       <div class="kd-ep-fam__steps">
         ${fatFamilyStep('01', 'kd_ep_pdm_s1_t', 'kd_ep_pdm_s1_b')}
         ${fatFamilyStep('02', 'kd_ep_pdm_s2_t', 'kd_ep_pdm_s2_b')}

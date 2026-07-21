@@ -3223,7 +3223,7 @@ def check_pdm_goal_wallach_sourced():
         `dose` with an amount + per_body_weight (a real Wallach dose, not a hand-set number).
       CHAIN (the recompute) — re-run the documented transform from source: dose_amount x
         (reference-product vehicle mg / serving fl oz, read from the SEALED pillar) x (154 / per_bw),
-        byte-compare to goal.maintenance_mg; therapeutic = maintenance x the config multiplier.
+        byte-compare to goal.maintenance_mg.
 
     A fabricated goal, one sourced from a non-dose claim, or an arithmetic drift all go RED. The
     reference product's mg is COMPOSITION (§00.A lets composition feed the math); only the
@@ -3301,15 +3301,11 @@ def check_pdm_goal_wallach_sourced():
     if ref_mg <= 0 or serv_oz <= 0:
         return False, f"reference {ref_id}: mg={ref_mg} serv_oz={serv_oz} — cannot form the goal"
 
-    mult = float(gm.get("therapeutic_multiplier", 2))
     exp_maint = round(dose_amt * (ref_mg / serv_oz) * 154 / per_bw, 2)
-    exp_ther = round(exp_maint * mult, 2)
     if goal.get("maintenance_mg") != exp_maint:
         return False, (f"goal.maintenance_mg {goal.get('maintenance_mg')} != recompute {exp_maint} "
                        f"(dose {dose_amt} x {ref_mg:.0f}/{serv_oz} mg/oz x 154/{per_bw:.0f})")
-    if goal.get("therapeutic_mg") != exp_ther:
-        return False, f"goal.therapeutic_mg {goal.get('therapeutic_mg')} != maintenance x {mult} = {exp_ther}"
-    return True, (f"trace/rare goal {exp_maint}mg maint / {exp_ther}mg therapeutic traces to Wallach dose "
+    return True, (f"trace/rare goal {exp_maint}mg maint traces to Wallach dose "
                   f"{cid} ({dose_amt:.0f} {dose.get('unit')}/{per_bw:.0f}lb) x {ref_mg:.0f}mg/oz composition x 154lb")
 
 
@@ -5815,7 +5811,7 @@ INVARIANTS = [
     Invariant(
         name="pdm_goal_wallach_sourced",
         anchor_class="external",  # the sealed dose claim + reference product composition
-        description="the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach dose expressed in mg via composition (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim, and maintenance/therapeutic recompute from that dose x the reference product's pillar composition x 154 lb — a fabricated or non-Wallach-sourced goal is RED",
+        description="the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach dose expressed in mg via composition (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim, and maintenance recomputes from that dose x the reference product's pillar composition x 154 lb — a fabricated or non-Wallach-sourced goal is RED",
         check_fn=check_pdm_goal_wallach_sourced,
         truth_anchor="pdm-coverage-data.json goal x the sealed dose claim (eden/corpus/claims/*) x the reference product composition (eden/products/products.json), recomputed each run independently of pdm_coverage_derive",
         severity="critical",
