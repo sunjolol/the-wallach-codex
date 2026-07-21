@@ -1,5 +1,32 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-20)
 
+# ★★★★ 2026-07-20 (EVENING) — ELEMENTS SPECIAL-CASES + FATTY-ACID CLARITY (5 commits, board 77/77)
+All UI, ZERO corpus mutation (kv still 368, 1335 claims), zero fleets — budget-safe. Commits: `9fa47f01` `8a52acb2` `c448c2cf` `e1631f6c` (+ this handoff).
+
+## A. Element "special cases" on the details screen (SHIPPED)
+- `9fa47f01` — honest "no-target" treatments: phosphorus + H/C/N/O read "present by default" (not a fake unmined gap); omega-9 gets a "not one of the 90" treatment. `state/coverage.ts` `noTargetReason` discriminator drives it (present_stated_zero / present_structural / non_essential).
+- `8a52acb2` — omega-9's periodic-grid tile now reads 'present' (neutral), never green 'covered' (a NON_ESSENTIAL tile is capped at 'present').
+
+## B. THE FATTY-ACID 2-vs-3 KNOT — RESOLVED against the corpus (the big lesson) [[wallach-efa-omega9-stance]]
+Wallach says BOTH "2 essential fatty acids" AND "3" — it kept looking like our summaries self-contradicted. VERIFIED against all 7 books:
+- His **3** = **linoleic (ω-6) · linolenic (ω-3) · arachidonic (ω-6)** — printed in tables (Epigenetics; Rare-Earths Table 12-8). TWO are ω-6.
+- His **2 designated** = linoleic + linolenic (the 90 counts THESE). Arachidonic is **"conditionally essential"** (Epigenetics 2014) — the body builds it from linoleic "when present in optimal amounts" (Immortality 2008), so it only becomes essential-to-eat under deficiency. THAT is why he says both 2 and 3 — not a contradiction.
+- **Omega-9 (oleic) is in NEITHER list** — it's OUR "omega 3-6-9" DESIGN CHOICE (product framing), NOT Wallach's 3rd. Arachidonic is his 3rd.
+- **NO chronological 3→2 stance shift** — the NEWEST book (IAIYH 2020) still says 3 (Luneth hypothesized a shift; REFUTED against the corpus). We hang on "he consistently designates 2"; the "3" is his known-as-EFA list.
+- ★ An outside-AI blurb tried (twice) to inject omega-9 health claims + a wrong "conditionally-essential omega-9" — checked + kept OUT (§00.A). [[outside-knowledge-injected-as-wallach]] [[outside-agreement-is-an-alarm-not-a-verdict]]
+
+**Pieces (Luneth-approved plan): (1) omega-9 alert ✓  (2) omega-6 experience ✓  (3) the "3 fatty acids" gloss — PENDING.**
+- `c448c2cf` — Piece 1: omega-9 page = design-choice alert ("Our choice — not Wallach's count.") + orange CTA to Omega-6 + soft `.kd-ep-mirror--aside` accent callout. (Grid tile flip is in `8a52acb2`.)
+- `e1631f6c` — Piece 2: omega-6 page = a full "fatty-acid family" EXPERIENCE (Absorption-tab quality): kill-shot, deterministic triad SVG (2 solid essentials + 1 dashed conditional AA + a "makes" arrow LA→AA + bracket "the 2 in the 90"), 3 numbered steps, Wallach's sealed pull-quote (**DDDL-000063**, Playfair-Display text), omega-9 cross-ref note, Best-Youngevity sources at the bottom. **DATA-driven** off `fatty-acid-clarity-data.json` flags (`experience`/`quote_claim`/`crosslink`) + `showSources` on renderAtAGlance — the critical `entity_render_is_projection` invariant REJECTED the first per-slug cut, so NEVER branch the entity view on a slug literal.
+
+## ★ NEXT SESSION — 3 items, Luneth's order (he is nearly out of weekly budget — keep lean)
+1. **omega-3 page** — currently plain forms box + a one-line cross-link to the omega-6 experience (via the `crosslink` data flag). He may want it finished/reviewed. (ω-3 is the easy one — a cross-link, not the full experience.)
+2. **Apply the 3 APPROVED plant-derived group summaries: `RARE-000069` / `000070` / `000071`** — Chapter-10 "Glacial Milk" claims, ALREADY RE-VALIDATED this session (whole-corpus audit CLEAN; replacement verbatims byte-verified 1× at their offsets 646672 / 647037 / 648877; every number traces to source). Full proposals are in the chat + `scratchpad/verify_batch1.py`. Each = claim_text REPLACE/EXPAND + verbatim REPLACE (offsets move → `corpus_resnap` → sync draft) + enrichment sidecar add (`subject: colloidal_minerals`, facets stance/sources/sources). Apply via the corpus-edit playbook → **USER-authorized `corpus_seal`**. Group goes 5 → 8. ★ The same audit flagged **`RARE-000074`/`000088` MISFRAMED + `RARE-000089` EDITORIAL_TAIL** among the 10 ACCEPT drafts — do NOT land those without his ruling (same trap as EPIGEN-000089). [[small-batch-build-test-log-mandate]]
+3. **Piece 3 — the "3 fatty acids" gloss** — a dotted-underline hover on any "three/3 (essential) fatty acids" (verbatim OR summary; an OVERLAY, no text change) explaining the 2-designated / conditional-arachidonic split, linking to the omega-6 experience. Uses the glossify/gloss system; the omega-6 step bodies already run through `glossify()`, so a phrase-gloss entry lights up there too. Note it is a PHRASE reconciliation, not a jargon term — small impl wrinkle.
+
+★ BUDGET: HALF the old weekly + nearly out of this session. genesis fresh, estimate before any fleet. [[workflow-token-budget-guard]]
+
+
 > ★★★ THIS FILE + the memory files OVERRIDE ALL OLDER BLUEPRINT / PLAN / DEMO NOTES.
 > Board **77/77**. Corpus sealed at **kv=368**, **1335 claims**. **★ SESSION 3 (2026-07-20, later): the 23-card ratification queue is fully RULED + APPLIED — 17 rewrites + 6 keeps + 1 lexicon reversal (LETS-000231 mayapple→American mandrake), kv 367→368. See the SESSION 3 block below.** **2026-07-20 SESSION 2 was huge — all deterministic except ONE approved ~11M audit.** (1) Both ratification pastes applied — 71 rulings, kv 361->365 (`d065cb83` `338d321a` `a9b8aeeb`). (2) **315 redundant 'In his words' quote-tails removed corpus-wide** (kv 365->367, `663e0457`; the gloss gate caught 1 orphaned 'EPA', fixed). (3) **The final 127 never-audited claims AUDITED** (validated byte-frozen harness, 11M tokens, **13 flags, ALL upheld by the adversarial skeptic, ZERO dangerous** — every flag is a hedge/word-injection). No adds, no purges. Review page REBUILT + republished. Every claim is now audited at least once.
 > **★ WEEKLY HAS RESET (2026-07-20). Agents are back ON — but he now has HALF the old weekly budget (no more 2x), and ONE session ate ~35% of the OLD weekly. BE VERY CAREFUL: estimate every fleet, keep runs lean, warn + get approval before spending.** He was at ~3% weekly at session start; the 127-audit (~11M) was his approved spend. Do NOT spike his usage. [[workflow-token-budget-guard]]
