@@ -844,12 +844,24 @@ export function recompute(): CoverageSnapshot {
     const target = CoverageTargetSchema.safeParse(entry.target);
     const t = target.success ? target.data : null;
     const d = delivery.get(entry.name) ?? EMPTY_DELIVERY;
-    // The foundational-present rule runs HERE (not inside classify) because it keys off the
+    // Two identity-keyed adjustments run HERE (not inside classify) because they key off the
     // essential's identity, not its target/delivery — classify() only sees the target + delivery.
     const classified = classify(t, d, pdmStatus, efaStatus);
-    const status: CoverageStatus = (classified === '' && FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug))
-      ? 'covered'
-      : classified;
+    //  · FOUNDATIONAL_PRESENT (H/C/N/O) promote an empty verdict to 'covered' — they ARE among the 90.
+    //  · a NON-ESSENTIAL (omega-9) is capped at 'present' and can NEVER read 'covered': Wallach sets no
+    //    goal for it, so its grid tile must not light green — that would contradict the entity page's
+    //    "not tracked". 'present' = you may be getting it (oleic rides in an EFA oil), not a goal met.
+    //    It is already out of coveredCount/totalCount (countedTiles), so this is purely the grid dot.
+    let status: CoverageStatus;
+    if (NON_ESSENTIAL_NAMES.has(entry.name)) {
+      status = (classified === 'covered' || classified === 'trace') ? 'present' : classified;
+    }
+    else if (classified === '' && FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug)) {
+      status = 'covered';
+    }
+    else {
+      status = classified;
+    }
     // NOT `|| wallach_collective` — that alias fed the omegas into the rare-earth
     // meter (see classify). trace_pdm is the ONLY kind the PDM aggregate scores.
     const isPdm = t?.kind === 'trace_pdm';
