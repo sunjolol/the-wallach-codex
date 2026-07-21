@@ -8025,6 +8025,39 @@
       "extracted_at": "2026-07-15T21:00:00+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000234",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "A public figure Wallach points to for the liquid supplement. Nelson Mandela was mentally sharp and physically animated at his 90th birthday in 2008 — remarkable, Wallach notes, after 27 years in a South African prison on a very low-calorie, protein-restricted diet. On his release, Mandela began drinking South African wine for its antioxidants and taking a liquid form of plant-derived minerals, sent to him from Atlanta by former UN Ambassador Andrew Young.",
+      "verbatim": "Immediately upon release from prison Mandela began\nto drink South African wine (a significant source of resveratrol\nand polyphenols - antioxidants) and supplement with a liquid\nform of plant derived minerals shipped to him from Atlanta,\nGeorgia by former UN Ambassador Andrew Young.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 26,
+        "kindle_location": null,
+        "char_offset": 60334
+      },
+      "dose": null,
+      "tags": [
+        "plant-derived-group",
+        "immortality"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-21T20:51:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     }
   ]
 }

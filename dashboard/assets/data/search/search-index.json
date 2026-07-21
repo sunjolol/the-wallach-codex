@@ -350,7 +350,7 @@
         "selenium",
         "essential_nutrients"
       ],
-      "claim_count": 14
+      "claim_count": 20
     },
     "color_therapy": {
       "display_name": "Color Therapy",
@@ -2007,6 +2007,92 @@
         "major-minerals",
         "mineral-toddy",
         "trace-only"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000121",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Where is Wallach's “Fountain of Youth”?",
+      "answer_short": "Under our feet the whole time — it's minerals. After millennia of chasing longevity, Wallach says the answer is almost anticlimactic: the plant-derived minerals in the ground.",
+      "answer": "Wallach's punchline to the entire search for longevity. For all of recorded history people have poured out resources, money, and even their lives chasing a Fountain of Youth — and his answer is almost anticlimactic: it was under our feet the whole time. The Fountain of Youth is minerals.",
+      "verbatim": "The search for health and longevity is as old as man himself. We have\nexpended resources, money, energy, and have in fact died in droves looking\nfor the Fountain of Youth. Literally the Fountain of Youth has been under\nour feet since the beginning of time. The answer is almost anticlimactic; it’s\nminerals.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "fountain-of-youth",
+        "longevity",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000122",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What does the liquid mineral supplement taste like?",
+      "answer_short": "Intensely astringent — Wallach says drunk straight it would “shrink wrap your lips over your teeth,” so it's taken stirred into juice.",
+      "answer": "What the raw liquid actually tastes like. Plant-derived colloidal minerals are intensely astringent — Wallach says that taken straight, undiluted, they would 'shrink wrap your lips over your teeth.' That is why they are taken stirred into juice rather than drunk on their own.",
+      "verbatim": "The plant derived colloidal minerals were very astringent. Taken “straight,”\nthey’d “shrink wrap your lips over your teeth” if you drank\nthem without juice.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "taste",
+        "how-to-take",
+        "astringency"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000123",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How did Wallach discover colloidal minerals?",
+      "answer_short": "He'd never heard of them until he met the liquid being served to patients at Hospital Santa Monica, then spent three months reading everything then known about colloids.",
+      "answer": "How Wallach came to colloidal minerals. He had never even heard of them until he encountered the liquid being served to patients at Hospital Santa Monica. Excited by the new tool, he gathered every book and article ever written on colloids, and within three months had absorbed essentially everything then known about them.",
+      "verbatim": "I got excited about this new-found nutritional tool, and I gathered every\npiece of information that I could find on plant derived colloidal minerals. I\nhad never heard of colloidal minerals until this moment in my professional\ncareer so I began to educate myself. I gathered every book and every article\nthat had ever been written on colloidal minerals and within three months I\nwas familiar with just about everything historically and currently known\nabout colloids and plant derived colloidal minerals.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "discovery",
+        "mineral-toddy",
+        "hospital-santa-monica"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000124",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Does the source of plant-derived minerals matter — and what if a maker cuts corners?",
+      "answer_short": "Yes — quality tracks the source deposit. Wallach tells how a product went black and green batch-to-batch after its bottler switched to a cheaper source, and how he fixed it by going back to the original deposit under his own label.",
+      "answer": "Wallach's own account of the fight to keep plant-derived colloidal minerals high-quality — and a hard lesson about companies that cut corners. The minerals he built his products on came from one particular prehistoric deposit. When the company then bottling them, Eagle, quietly switched to a cheaper source to save about a dollar a gallon, the liquid changed batch to batch: one day thin and tasteless with its astringency gone, the next black like India ink, the next green. Every product built on those minerals suffered, and customers began complaining that 'the minerals didn't work anymore.' When Wallach objected, Eagle denied anything had changed, and in early 1997 terminated his distributorship, wanting a quieter corporate image. Rather than accept a degraded product, Wallach founded his own company, American Longevity, and went straight back to Elmer Heinrich of Rockland — the original deposit the minerals had come from since 1991 — relaunching them as 'Virgin Earth' plant-derived colloidal minerals. He went back to the proven source. The lasting lesson for anyone buying these minerals: the source deposit is what makes them work, and a cheaper source is not the same product.",
+      "verbatim": "The Mineral Toddy, however, was beginning to change. One day you could\ndrink a quart of Toddy minerals like water because the astringent character\nof the minerals was gone. The next batch of Mineral Toddy was black like\nIndia Ink. The next batch was green. The obvious changes in the Mineral\nToddy negatively affected all of the products that used the minerals as a\nbase.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "source-quality",
+        "mineral-toddy",
+        "virgin-earth",
+        "american-longevity"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000125",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Why does Wallach point to the long-lived cultures as proof?",
+      "answer_short": "He treats them as a living “control group” — five ancient peoples with disease-free longevity from steady access to all 90 essential nutrients, chiefly plant-derived colloidal minerals — and promises you can do the same.",
+      "answer": "Wallach's opening thesis, framed as science. He treats the world's long-lived cultures as a living 'control group' — five ancient, very different peoples who all reached healthful, disease-free longevity, with steady access to all ninety essential nutrients the body needs. The secret they shared, he says, was unique natural sources of plant-derived colloidal minerals, and his promise is that anyone who taps that same accumulated knowledge can do the same.",
+      "verbatim": "This control group of five\nancient and highly diverse cultures share common denominators that\ninclude healthful, disease-free longevity, and unlimited access to adequate\nlevels of all ninety essential nutrients required by humans. One of the\nsecrets they shared includes access to unique natural sources of plant\nderived colloidal minerals. My promise to you is that if you plug into the\nthousands of years of accumulated knowledge of these long-lived peoples,\nyou and yours can make it too!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "long-lived-cultures",
+        "control-group",
+        "90-essentials"
       ]
     },
     {
@@ -5903,6 +5989,23 @@
           "vitamin-b12"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000234",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "biography",
+      "question": "Has any public figure used the liquid mineral supplement?",
+      "answer_short": "Wallach cites Nelson Mandela — sharp and animated at his 90th birthday after 27 years imprisoned — taking a liquid plant-derived mineral supplement sent from Atlanta by former UN Ambassador Andrew Young.",
+      "answer": "A public figure Wallach points to for the liquid supplement. Nelson Mandela was mentally sharp and physically animated at his 90th birthday in 2008 — remarkable, Wallach notes, after 27 years in a South African prison on a very low-calorie, protein-restricted diet. On his release, Mandela began drinking South African wine for its antioxidants and taking a liquid form of plant-derived minerals, sent to him from Atlanta by former UN Ambassador Andrew Young.",
+      "verbatim": "Immediately upon release from prison Mandela began\nto drink South African wine (a significant source of resveratrol\nand polyphenols - antioxidants) and supplement with a liquid\nform of plant derived minerals shipped to him from Atlanta,\nGeorgia by former UN Ambassador Andrew Young.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "nelson-mandela",
+        "andrew-young",
+        "longevity-example"
+      ]
     },
     {
       "id": "WAL-CLM-LETS-000080",

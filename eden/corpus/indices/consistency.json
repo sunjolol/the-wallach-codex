@@ -338,6 +338,18 @@
     "kind": "personal_anecdote",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-DDDL-000123",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000124",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000234",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000008",
         "book": "rare-earths"
       },
@@ -350,8 +362,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 3
+    "books_repeating": 3,
+    "claim_count": 6
   },
   {
     "id": "CG-0006",
@@ -428,6 +440,18 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000121",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000122",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000125",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-HELLS-000001",
         "book": "hells-kitchen"
       },
@@ -481,7 +505,7 @@
       }
     ],
     "books_repeating": 4,
-    "claim_count": 14
+    "claim_count": 17
   },
   {
     "id": "CG-0009",
