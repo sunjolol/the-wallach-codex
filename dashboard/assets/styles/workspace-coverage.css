@@ -1357,6 +1357,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 .gchip:hover { border-color: var(--gc); color: var(--ds-ink); box-shadow: 0 0 0 2px color-mix(in srgb, var(--gc) 22%, transparent); }
 .gchip__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gc); flex: 0 0 auto; }
+/* Uppercase labels have no descenders, so the flex row centers the box but the glyphs read high vs the dot + pill; nudge the label (only) down 1px (Luneth 2026-07-21). */
+.gchip__label { position: relative; top: 1px; }
 .gchip--add { color: var(--ds-ink-faint); border-style: dashed; }
 
 

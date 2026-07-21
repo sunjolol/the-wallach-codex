@@ -3737,12 +3737,22 @@ def check_term_gloss_ratified_present():
                   f"({', '.join(r[1][0] for r in rules)}) upheld across {len(claims)} claims")
 
 
-# A HEALTH number (dose, %, IU count) has no legitimate home in a glossary definition — the
-# gate exists to catch that smuggling. Historical dates (1997, 1980s, "June 15, 1997") ARE
-# legitimate in product-history entries and are NOT health claims. Strip year-shaped tokens
-# BEFORE the digit check so real health numbers still trip but dates pass. Extended 2026-07-17
-# (R9) for the Mineral-Toddy / SupraLife / Rockland lineage entries; proved by
-# tools/test_glossary_wellformed.py (7-case negative test).
+# A HEALTH number (dose, %, IU count) has no legitimate home in a glossary definition UNLESS it is
+# ANCHORED: the gate exists to catch smuggling — an unverifiable Wallach number in the one content
+# layer the §00.A source gates do not cover. Historical dates (1997, 1980s, "June 15, 1997") ARE
+# legitimate in product-history entries and are NOT health claims; year-shaped tokens are stripped
+# BEFORE the digit check so real health numbers still trip but dates pass (extended 2026-07-17, R9,
+# for the Mineral-Toddy / SupraLife / Rockland lineage entries).
+#
+# R9 REFINEMENT 2026-07-21 (Luneth's manual override + review): a number IS permitted when the entry
+# declares a `number_exempt` block that ANCHORS it — a reason + claim_ids that (a) resolve to sealed
+# claims and (b) actually CONTAIN every digit-run in the definition. This turns "no numbers ever"
+# into "no UNANCHORED numbers": the smuggling hole stays closed (you cannot cite an unrelated claim;
+# the number must literally appear as a digit-run in the cited claim), while a hand-verified figure
+# like the plant-derived 98%-vs-8-12% bioavailability (WAL-CLM-RARE-000061) may render in the tooltip.
+# The number-is-SEMANTICALLY-faithful half rests on the human review recorded in `reason` (R7 WISH,
+# labeled): the gate proves the citation resolves AND the digits match, not that the sentence is true
+# to the source. Proved by tools/test_glossary_wellformed.py.
 _GLOSSARY_DATE_TOKEN = re.compile(
     r"\b(?:19|20)\d{2}s?\b"                         # 1997, 1990s
     r"|\b\d{1,2}(?=[,\s]+(?:19|20)\d{2})\b"         # 15 in "June 15, 1997" (comma OR space)
@@ -3756,13 +3766,57 @@ def _glossary_definition_has_smuggled_number(plain):
     return bool(re.search(r"\d", _GLOSSARY_DATE_TOKEN.sub("", plain)))
 
 
+def _corpus_claim_digit_runs():
+    """{claim_id: set of digit-run strings} over every SEALED claim's claim_text + verbatim.
+    The truth anchor for a glossary number_exempt: a cited number must literally appear here."""
+    runs = {}
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    if not claims_dir.exists():
+        return runs
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        try:
+            data = json.loads(shard.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for c in data.get("claims", []):
+            txt = f"{c.get('claim_text','')} {c.get('verbatim','')}"
+            runs[c.get("id")] = set(re.findall(r"\d+", txt))
+    return runs
+
+
+def _glossary_number_exemption_valid(entry, runs_by_id):
+    """A glossary definition carrying a number is legal ONLY with an anchored `number_exempt`.
+    Returns (ok, why). Non-gameable: every digit-run in the definition must appear as a digit-run
+    in a cited, resolving sealed claim. Driven directly by tools/test_glossary_wellformed.py."""
+    ex = entry.get("number_exempt")
+    if not isinstance(ex, dict):
+        return False, "has a health number but no number_exempt block"
+    if not (ex.get("reason") or "").strip():
+        return False, "number_exempt missing a reason"
+    claim_ids = ex.get("claim_ids") or []
+    if not claim_ids:
+        return False, "number_exempt cites no claim_ids"
+    unresolved = [c for c in claim_ids if c not in runs_by_id]
+    if unresolved:
+        return False, f"number_exempt cites unresolved claim(s): {unresolved}"
+    cited = set()
+    for c in claim_ids:
+        cited |= runs_by_id[c]
+    tip = set(re.findall(r"\d+", _GLOSSARY_DATE_TOKEN.sub("", entry.get("plain", ""))))
+    missing = sorted(tip - cited, key=lambda s: (len(s), s))
+    if missing:
+        return False, f"number(s) {missing} not present in cited claim(s) — unanchored"
+    return True, f"anchored to {','.join(claim_ids)}"
+
+
 def check_glossary_wellformed():
     """Glossary integrity (SESSION 39 Phase 1): dashboard/assets/data/glossary.json parses,
-    every entry has a non-empty term + plain definition + category, terms are unique, and NO
-    definition asserts a health number/dose (the glossary is plain-language reference ONLY,
-    never a Wallach claim or target -- keeps it clear of the §00.A source rule). Historical
-    dates in product-history entries pass; health numbers still trip
-    (_glossary_definition_has_smuggled_number). memory: term-gloss-standard."""
+    every entry has a non-empty term + plain definition + category, terms are unique, and no
+    definition asserts an UNANCHORED health number/dose (the glossary is the one content layer
+    outside the §00.A source gates, so a bare number here would be an unverifiable Wallach claim).
+    Historical dates pass; a health number trips UNLESS the entry declares an anchored
+    `number_exempt` (R9 2026-07-21, Luneth's reviewed override — the number must resolve to a cited
+    sealed claim that literally contains it). memory: term-gloss-standard."""
     p = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
     if not p.exists():
         return True, "glossary.json not installed (bootstrap-guard)"
@@ -3773,8 +3827,10 @@ def check_glossary_wellformed():
     terms = g.get("terms")
     if not isinstance(terms, list) or not terms:
         return False, "glossary.json has no 'terms' array"
+    runs_by_id = _corpus_claim_digit_runs()
     seen = set()
     problems = []
+    exempted = 0
     for t in terms:
         name = (t.get("term") or "").strip()
         if not name:
@@ -3788,10 +3844,15 @@ def check_glossary_wellformed():
         if not (t.get("category") or "").strip():
             problems.append(f"{name}: missing category")
         if _glossary_definition_has_smuggled_number(t.get("plain", "")):
-            problems.append(f"{name}: definition has a health number (glossary must not assert doses/percentages/IU counts)")
+            ok, why = _glossary_number_exemption_valid(t, runs_by_id)
+            if ok:
+                exempted += 1
+            else:
+                problems.append(f"{name}: definition has a health number ({why}); a glossary number needs an anchored number_exempt")
     if problems:
         return False, f"{len(problems)} glossary problem(s): {'; '.join(problems[:6])}"
-    return True, f"glossary.json well-formed -- {len(terms)} plain-language definitions, no smuggled health numbers"
+    tail = f"; {exempted} anchored number-exempt entr(ies)" if exempted else ", no smuggled health numbers"
+    return True, f"glossary.json well-formed -- {len(terms)} plain-language definitions{tail}"
 
 
 _JARGON_SUFFIX = re.compile(
@@ -5925,7 +5986,7 @@ INVARIANTS = [
     Invariant(
         name="glossary_wellformed",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="dashboard/assets/data/glossary.json parses; every entry has term+plain+category; terms unique; NO definition asserts a number/dose (plain-language reference only)",
+        description="dashboard/assets/data/glossary.json parses; every entry has term+plain+category; terms unique; no definition asserts an UNANCHORED number/dose (a number needs a number_exempt citing a sealed claim that contains it -- R9 2026-07-21)",
         check_fn=check_glossary_wellformed,
         truth_anchor="dashboard/assets/data/glossary.json structural scan",
         severity="critical",

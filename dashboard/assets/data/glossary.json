@@ -1,5 +1,5 @@
 {
-  "_doc": "Plain-language term glossary for the Knowledge drawer tooltip layer (SESSION 39). Each entry gives a SHORT, plain-language definition of a medical/technical term so no reader is left not understanding a word (memory: term-gloss-standard). These are GENERAL descriptive reference definitions (standard medical terminology), NOT Wallach health claims or numeric targets -- they carry no §00.A source obligation and must never assert a dose, target, or verdict. 'term' is matched case-insensitively on word boundaries; 'aliases' catch morphological variants. Seeded set; grows under the jargon_terms_glossed invariant guard.",
+  "_doc": "Plain-language term glossary for the Knowledge drawer tooltip layer (SESSION 39). Each entry gives a SHORT, plain-language definition of a medical/technical term so no reader is left not understanding a word (memory: term-gloss-standard). These are GENERAL descriptive reference definitions (standard medical terminology), NOT Wallach health claims or numeric targets -- they carry no §00.A source obligation and must never assert an UNANCHORED dose, target, or verdict -- the ONE exception is an entry with an anchored 'number_exempt' (a Wallach figure cited to a sealed claim that literally contains it; R9 2026-07-21, Luneth's reviewed override), which the invariant glossary_wellformed enforces. 'term' is matched case-insensitively on word boundaries; 'aliases' catch morphological variants. Seeded set; grows under the jargon_terms_glossed invariant guard.",
   "terms": [
     {
       "term": "hypoglycemia",
@@ -1273,6 +1273,46 @@
       "term": "metamorphosis",
       "plain": "the change in body form an animal goes through as it develops, such as a tadpole becoming a frog",
       "category": "medical"
+    },
+    {
+      "term": "colloidal minerals",
+      "plain": "Minerals delivered through a plant instead of as ground-up rock — which is what makes them absorbable. About 98% of the plant-processed form is absorbed, versus only 8–12% when the same minerals come as ground-up rock.",
+      "category": "nutrition",
+      "number_exempt": {
+        "reason": "Wallach's own bioavailability figures (98% plant-derived colloidal vs 8-12% metallic), manually verified against the cited claim and ratified by Luneth 2026-07-21; tooltip copy is frozen. Anchored to the corpus, not smuggled.",
+        "claim_ids": ["WAL-CLM-RARE-000061"],
+        "approved": "Luneth 2026-07-21 (manual override + review)"
+      },
+      "aliases": [
+        "colloidal mineral",
+        "plant-derived colloidal minerals",
+        "plant derived colloidal minerals"
+      ]
+    },
+    {
+      "term": "Glacial Milk",
+      "plain": "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
+      "category": "science",
+      "aliases": [
+        "glacial milk"
+      ]
+    },
+    {
+      "term": "rock flour",
+      "plain": "Rock ground by a glacier into a powder as fine as flour or clay — the fine mineral dust suspended in 'Glacial Milk.'",
+      "category": "science",
+      "aliases": []
+    },
+    {
+      "term": "parent rock",
+      "plain": "The bedrock a glacier grinds down, and what decides which minerals its meltwater carries. It's why the long-lived cultures' glacial milk holds 60–72 minerals while most of the world's glaciers grind rock with only 3–20.",
+      "category": "science",
+      "number_exempt": {
+        "reason": "Wallach's own mineral-count figures (glacial milk 60-72 minerals vs most glaciers' 3-20), manually verified against the cited claim and ratified by Luneth 2026-07-21; tooltip copy is frozen. Anchored to the corpus, not smuggled.",
+        "claim_ids": ["WAL-CLM-RARE-000071"],
+        "approved": "Luneth 2026-07-21 (manual override + review)"
+      },
+      "aliases": []
     }
   ]
 }

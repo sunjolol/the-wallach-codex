@@ -12,6 +12,14 @@ CASE 'health_500mg_trips' is the load-bearing one: it re-proves the ORIGINAL bug
 the check was written for. If that case ever flips green, the gate has stopped
 enforcing §00.A and the glossary is a backdoor for undocumented health claims.
 
+R9 REFINEMENT 2026-07-21 (Luneth's manual override + review): a number IS allowed
+when the entry declares an ANCHORED `number_exempt` -- a reason + claim_ids that
+resolve to sealed claims AND literally contain every digit-run in the definition.
+The second block below pins that anchoring is NON-GAMEABLE: an entry may not (a)
+carry a number with no exempt block, (b) cite an unresolved claim, (c) cite a claim
+that does not contain the number, or (d) omit the reason. If any of those flips to
+'allowed', the smuggling hole the gate exists to close is reopened.
+
 Run:  PYTHONUTF8=1 python tools/test_glossary_wellformed.py
 Exit 0 = every case behaves; non-zero = the gate stopped biting."""
 import importlib.util
@@ -26,6 +34,7 @@ spec.loader.exec_module(inv)
 # The tightened check is exposed as a module-level helper so this test drives it
 # directly (no need to plant a fake glossary.json on disk).
 check = inv._glossary_definition_has_smuggled_number
+exempt_valid = inv._glossary_number_exemption_valid
 
 
 def case(label, plain, expect_flagged):
@@ -62,9 +71,64 @@ cases = [
 ]
 
 results = [case(*c) for c in cases]
+
+# ---------------------------------------------------------------------------
+# R9 2026-07-21 -- the ANCHORED number_exempt block. A digit is allowed ONLY when the
+# entry cites a sealed claim that literally contains it. Fake claim-run index so this
+# drives _glossary_number_exemption_valid directly, no disk.
+# ---------------------------------------------------------------------------
+RUNS = {
+    "WAL-CLM-RARE-000061": {"98", "8", "12"},        # colloidal 98% vs 8-12%
+    "WAL-CLM-RARE-000071": {"60", "72", "3", "20"},  # glacial-milk 60-72 vs 3-20
+}
+GOOD_REASON = "Wallach's own figure, manually verified + ratified by Luneth; tooltip frozen."
+
+
+def excase(label, entry, expect_ok):
+    ok_actual, why = exempt_valid(entry, RUNS)
+    ok = ok_actual == expect_ok
+    print(f"  {'OK' if ok else 'FAIL'}  {label:<40}  expect_ok={expect_ok}  actual={ok_actual}  why={why!r}")
+    return ok
+
+
+print("-" * 100)
+print("anchored number_exempt -- must ALLOW a cited+contained number, REFUSE everything else")
+
+ex_cases = [
+    # ALLOWED: number is cited and literally present in the cited claim.
+    ("anchored_98_vs_8_12_passes",
+     {"plain": "About 98% absorbed, versus only 8–12% as ground-up rock.",
+      "number_exempt": {"reason": GOOD_REASON, "claim_ids": ["WAL-CLM-RARE-000061"]}}, True),
+    ("anchored_60_72_vs_3_20_passes",
+     {"plain": "Glacial milk holds 60–72 minerals while most hold only 3–20.",
+      "number_exempt": {"reason": GOOD_REASON, "claim_ids": ["WAL-CLM-RARE-000071"]}}, True),
+    # REFUSED: a number with no exempt block at all (the original smuggling threat).
+    ("number_no_exempt_block_fails",
+     {"plain": "About 98% absorbed."}, False),
+    # REFUSED: cites a claim that does not exist -> cannot be anchored.
+    ("unresolved_claim_fails",
+     {"plain": "About 98% absorbed.",
+      "number_exempt": {"reason": GOOD_REASON, "claim_ids": ["WAL-CLM-RARE-999999"]}}, False),
+    # REFUSED: cites a REAL claim that does NOT contain the number (98 not in 071). Non-gameable.
+    ("wrong_claim_missing_number_fails",
+     {"plain": "About 98% absorbed.",
+      "number_exempt": {"reason": GOOD_REASON, "claim_ids": ["WAL-CLM-RARE-000071"]}}, False),
+    # REFUSED: no reason.
+    ("empty_reason_fails",
+     {"plain": "About 98% absorbed.",
+      "number_exempt": {"reason": "  ", "claim_ids": ["WAL-CLM-RARE-000061"]}}, False),
+    # REFUSED: no claim_ids.
+    ("no_claim_ids_fails",
+     {"plain": "About 98% absorbed.",
+      "number_exempt": {"reason": GOOD_REASON, "claim_ids": []}}, False),
+]
+
+results += [excase(*c) for c in ex_cases]
+
 failures = sum(1 for r in results if not r)
 print("-" * 100)
 if failures:
-    print(f"FAIL -- {failures}/{len(cases)} case(s) misbehaved.")
+    print(f"FAIL -- {failures}/{len(results)} case(s) misbehaved.")
     sys.exit(1)
-print(f"PASS -- every one of {len(cases)} case(s) behaves; the gate still catches health numbers AND permits historical dates.")
+print(f"PASS -- every one of {len(results)} case(s) behaves; the gate catches unanchored health "
+      f"numbers, permits historical dates, and allows ONLY cited+contained numbers.")

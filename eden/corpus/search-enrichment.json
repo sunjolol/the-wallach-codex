@@ -4154,6 +4154,45 @@
         "food-safety",
         "toxins"
       ]
+    },
+    "WAL-CLM-RARE-000069": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Of the 90 essentials, which ones matter most?",
+      "answer_short": "His own ranking inside the 90: get a highly usable source of all of them every day — but the most critical, he says, are the plant-derived colloidal minerals. That, on his account, is what the long-lived cultures boil down to.",
+      "topics": [
+        "most-critical",
+        "90-essentials",
+        "long-lived-cultures",
+        "daily-intake"
+      ]
+    },
+    "WAL-CLM-RARE-000070": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where do these minerals come from in the first place?",
+      "answer_short": "They start as rock. Glaciers grind 2 to 6 inches off the mountain every year into a dust as fine as clay, and the melt water carries it out as “Glacial Milk” — the mineralized water the long-lived cultures flood their fields with.",
+      "topics": [
+        "glacial-milk",
+        "rock-flour",
+        "glaciers",
+        "source-matters"
+      ]
+    },
+    "WAL-CLM-RARE-000071": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "There are thousands of glaciers — so why only a handful of long-lived cultures?",
+      "answer_short": "Not the ice — the rock beneath it. Glacial milk carries only what its parent mountain held: the long-lived cultures' glaciers grind rock with 60 to 72 minerals; most of the world's thousands, 3 to 20 — not enough, he says, for longevity.",
+      "topics": [
+        "glacial-milk",
+        "parent-rock",
+        "source-matters",
+        "mineral-count"
+      ]
     }
   }
 }
