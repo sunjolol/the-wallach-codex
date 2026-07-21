@@ -347,6 +347,14 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   if (tile?.mirrorsOf != null && tile.mirrorsOf.length > 0) {
     return renderMirrorGlance(tile);
   }
+  // Present-by-default / non-essential: the absent number is DELIBERATE, so state WHY in place of
+  // the generic "unmined gap" copy - the same ambiguity the mirror treatment above removes.
+  if (tile?.noTargetReason === 'present_stated_zero' || tile?.noTargetReason === 'present_structural') {
+    return renderPresentGlance(tile);
+  }
+  if (tile?.noTargetReason === 'non_essential') {
+    return renderNonEssentialGlance(layoutKey);
+  }
   const ivt = tile?.intakeVsTarget ?? null;
   const why = slug !== null ? essentialWhy(slug) : '';
   const whyHTML = why.length > 0
@@ -370,11 +378,34 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
     coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span></div>`;
   }
-  // Best sources: the recommender ranking, in the demo's ep-src row style. Faithful to
-  // the canonical demo (temporary/knowledge-drawer-prototype.html · essentialPageHTML):
-  // show the top 5, but if the best-value product ranks 6th or lower, swap it into the
-  // last visible slot so its "best value" tag is ALWAYS shown, never buried in "Show all".
+  const sourcesHTML = renderSourcesBlock(layoutKey);
+  return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">Wallach daily target</div>
+        ${targetHTML}
+        ${whyHTML}
+      </div>
+      <div>
+        ${coverageHTML}
+      </div>
+    </div>
+    ${sourcesHTML}
+  </div>`;
+}
+
+/**
+ * The "Best Youngevity sources" list for an essential — the recommender ranking in the demo's
+ * ep-src row style. Top 5, but if the best-value product ranks 6th or lower it is swapped into the
+ * last visible slot so its "best value" tag is ALWAYS shown, never buried under "Show all". Shared
+ * by the standard glance + the non-essential glance (omega-9 lists its label composition too — the
+ * mg is what a product CONTAINS, never a target · S00.A). '' when no product carries it.
+ */
+function renderSourcesBlock(layoutKey: string): string {
   const sources = rankedSourcesForEssential(layoutKey);
+  if (sources.length === 0) {
+    return '';
+  }
   const bestId = bestValueProductId(sources);
   const bestIdx = bestId !== null ? sources.findIndex(s => s.productId === bestId) : -1;
   const TOP = 5;
@@ -391,24 +422,9 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   const more = rest.length > 0
     ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => srcRow(s, false)).join('')}</div></details>`
     : '';
-  const sourcesHTML = sources.length > 0
-    ? `<hr class="kd-ep-op__div">
+  return `<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
-      ${head}${more}`
-    : '';
-  return `<div class="kd-ep-op">
-    <div class="kd-ep-op__grid">
-      <div>
-        <div class="kd-ep-k">Wallach daily target</div>
-        ${targetHTML}
-        ${whyHTML}
-      </div>
-      <div>
-        ${coverageHTML}
-      </div>
-    </div>
-    ${sourcesHTML}
-  </div>`;
+      ${head}${more}`;
 }
 
 // ─── Plant-derived GROUP "at a glance" (the 34 trace_pdm minerals, scored as one) ──
@@ -493,6 +509,75 @@ function renderMirrorGlance(tile: CoverageTile): string {
       <div class="kd-ep-mirror__foot">${escHTML(ui('kd_ep_mirror_foot'))}</div>
       ${cta}
     </div>
+  </div>`;
+}
+
+/**
+ * The PRESENT-BY-DEFAULT treatment: this essential is covered with no number to hit, because
+ * Wallach's own table states a supplement need of zero (phosphorus) or it is a structural element
+ * you get by default from air/water/food (H/C/N/O). Replaces the target box with an explicit,
+ * honest "none needed" + WHY - never the generic "unmined gap" copy, which would read as "we just
+ * have not gotten to it" for a value that is deliberately zero.
+ *
+ * S00.A: the zero variant cites Wallach's own table (a sealed claim); the structural variant makes
+ * NO dose claim - it states the general fact (present from air/water/food) + our no-target design.
+ * Both copies live single-copy in view-copy.json (R4).
+ */
+function renderPresentGlance(tile: CoverageTile): string {
+  const body = tile.noTargetReason === 'present_stated_zero'
+    ? ui('kd_ep_present_body_zero')
+    : ui('kd_ep_present_body_structural');
+  return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_present_targetlabel'))}</div>
+        <div class="kd-ep-gap">${escHTML(ui('kd_ep_present_notarget'))}</div>
+      </div>
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_present_covlabel'))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(tile.status)}">● ${escHTML(statusLabel(tile.status))}</span></div>
+        <div class="kd-ep-sub">${escHTML(ui('kd_ep_present_sub'))}</div>
+      </div>
+    </div>
+    <div class="kd-ep-mirror">
+      <div class="kd-ep-mirror__lead">${escHTML(ui('kd_ep_present_lead'))}</div>
+      <div class="kd-ep-mirror__body">${escHTML(body)}</div>
+    </div>
+  </div>`;
+}
+
+/**
+ * The NON-ESSENTIAL treatment (omega-9 / oleic — the only case today). It is NOT one of Wallach's
+ * 90: he designates exactly two essential fatty acids — linoleic (omega-6) + linolenic (omega-3),
+ * verified in DDDL 2011 / Immortality / Rare Earths — and names oleic acid only as a monounsaturated
+ * fat, never an essential. We keep the tile for completeness + because oleic rides along in the same
+ * flax/fish EFA oils, so its product sources still belong here. Given MORE room than the present /
+ * mirror treatments (Luneth 2026-07-20): the expanded "why it is the 91st" + composition sources
+ * REPLACE the fatty-acid-forms box (suppressed for this slug in renderEssentialPage).
+ *
+ * S00.A: every line is Wallach's own stance or our presentation reason — never the outside-world
+ * cardiovascular / insulin / immune claims (those trace to no Wallach primary and were kept OUT).
+ * Copy single-copy in view-copy.json (R4); the source mg is composition (what a product CONTAINS),
+ * never a target. Two body paragraphs both use kd-ep-mirror__body (its margin-top spaces them).
+ */
+function renderNonEssentialGlance(layoutKey: string): string {
+  return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_noness_targetlabel'))}</div>
+        <div class="kd-ep-gap">${escHTML(ui('kd_ep_noness_notarget'))}</div>
+      </div>
+      <div>
+        <div class="kd-ep-k">${escHTML(ui('kd_ep_noness_covlabel'))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML(ui('kd_ep_noness_covword'))}</span></div>
+      </div>
+    </div>
+    <div class="kd-ep-mirror">
+      <div class="kd-ep-mirror__lead">${escHTML(ui('kd_ep_noness_lead'))}</div>
+      <div class="kd-ep-mirror__body">${escHTML(ui('kd_ep_noness_body'))}</div>
+      <div class="kd-ep-mirror__body">${escHTML(ui('kd_ep_noness_body2'))}</div>
+    </div>
+    ${renderSourcesBlock(layoutKey)}
   </div>`;
 }
 
@@ -809,7 +894,11 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const sciSub = page.scientific_name !== page.name
     ? `<div class="kd-ep-hero__sci">${escHTML(page.scientific_name)}</div>`
     : '';
-  const nonEss = page.is_essential ? '' : `<div class="kd-ep-flag">${escHTML(ui('ep_non_essential'))}</div>`;
+  // The non-essential GLANCE now carries this "not one of the 90" line, so suppress the top flag
+  // when that treatment renders - the point is made once per card, not twice.
+  const nonEss = (page.is_essential || tile?.noTargetReason === 'non_essential')
+    ? ''
+    : `<div class="kd-ep-flag">${escHTML(ui('ep_non_essential'))}</div>`;
   const ledeText = slug !== null ? essentialLede(slug) : '';
   const lede = ledeText.length > 0
     ? `<p class="kd-ep-lede">${escHTML(ledeText)}</p>`
@@ -829,7 +918,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${lede}
     ${seclabel('At a glance', 'the essentials, in one place')}
     ${glanceHTML}
-    ${renderOmegaClarity(page.name)}
+    ${tile?.noTargetReason === 'non_essential' ? '' : renderOmegaClarity(page.name)}
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}

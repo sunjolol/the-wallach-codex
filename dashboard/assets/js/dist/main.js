@@ -16200,6 +16200,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           unit: t.unit ?? "mg"
         };
       }
+      let noTargetReason = null;
+      if (NON_ESSENTIAL_NAMES.has(entry.name)) {
+        noTargetReason = "non_essential";
+      } else if (t?.kind !== "mirrors" && !isPdm && intakeVsTarget === null) {
+        if (typeof t?.low === "number" && t.low === 0) {
+          noTargetReason = "present_stated_zero";
+        } else if (FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug)) {
+          noTargetReason = "present_structural";
+        }
+      }
       const base = {
         tileId: buildTileId(entry.name),
         category: catFromTarget(entry.category),
@@ -16210,7 +16220,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         fillPercent: isPdm ? PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0 : deliveryRatio(t, status, d),
         contributesTo: isPdm ? pdm.sources : d.sources,
         aggregateVehicle: isPdm && status === "covered",
-        intakeVsTarget
+        intakeVsTarget,
+        noTargetReason
       };
       return { ...base, pdmGroup: isPdm, mirrorsOf: null, mirrorsSlug: null };
     });
@@ -18250,6 +18261,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_ep_mirror_notarget: "None \u2014 and that is deliberate",
       kd_ep_mirror_targetlabel: "Wallach daily target",
       kd_ep_mirror_via: "via {name}",
+      kd_ep_noness_body: "Wallach names 90 essential nutrients, and within them exactly two essential fatty acids \u2014 linoleic (omega-6) and linolenic (omega-3). Omega-9 (oleic acid) is the third omega on this table, but the body makes its own, so he never counts it. That is the one gap between the numbers you see: 91 tiles here, 90 of them essential; three omegas shown, two of them counted.",
+      kd_ep_noness_body2: "It keeps its tile for two honest reasons \u2014 it completes the fatty-acid family at a glance, and it rides along naturally in the same flax and fish oils Wallach's essential-fatty-acid dose comes from, so it turns up on the product labels below even though it was never a number to hit.",
+      kd_ep_noness_covlabel: "Your status",
+      kd_ep_noness_covword: "Not tracked",
+      kd_ep_noness_lead: "Not one of the 90 \u2014 shown anyway.",
+      kd_ep_noness_notarget: "None \u2014 not one of the 90",
+      kd_ep_noness_targetlabel: "Wallach daily target",
       kd_ep_pdm_calc_q: "how is this calculated?",
       kd_ep_pdm_calc_tip: "Wallach doses plant-derived colloidal minerals at {dose} per {perbw} of body weight, daily. One fl oz carries about {refmg} of mineral solids; for a {bw} reference adult that works out to {goal}.",
       kd_ep_pdm_covof: "of the plant-derived group goal",
@@ -18259,6 +18277,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_ep_pdm_targetlabel: "Wallach daily target \xB7 group",
       kd_ep_pdm_thera: "For a serious illness, Wallach doubles the base-line dose for about 30 days, then drops back to it. Take the doubled amount as two servings a few hours apart rather than all at once, so more is absorbed instead of flushed out.",
       kd_ep_pdm_thera_label: "30-day therapeutic use",
+      kd_ep_present_body_structural: "You get all you need from the air you breathe, the water you drink, and ordinary food. There is nothing to supplement, so no daily target is set.",
+      kd_ep_present_body_zero: "Wallach's own supplement table lists this at a need of zero \u2014 you already get enough from food, so there is nothing to add.",
+      kd_ep_present_covlabel: "Your status",
+      kd_ep_present_lead: "Present by default.",
+      kd_ep_present_notarget: "None needed",
+      kd_ep_present_sub: "present by default",
+      kd_ep_present_targetlabel: "Wallach daily target",
       kd_esssec_amino: "Amino acids",
       kd_esssec_dosed: "Minerals with a stated dose",
       kd_esssec_fatty: "Essential fatty acids",
@@ -95770,6 +95795,12 @@ deaths, blood clots, sterility`,
     if (tile?.mirrorsOf != null && tile.mirrorsOf.length > 0) {
       return renderMirrorGlance(tile);
     }
+    if (tile?.noTargetReason === "present_stated_zero" || tile?.noTargetReason === "present_structural") {
+      return renderPresentGlance(tile);
+    }
+    if (tile?.noTargetReason === "non_essential") {
+      return renderNonEssentialGlance(layoutKey);
+    }
     const ivt = tile?.intakeVsTarget ?? null;
     const why = slug !== null ? essentialWhy(slug) : "";
     const whyHTML = why.length > 0 ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML6(why)}</span></span>` : "";
@@ -95786,7 +95817,26 @@ deaths, blood clots, sterility`,
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">\u25CF ${statusLabel(status)}</span></div>`;
     }
+    const sourcesHTML = renderSourcesBlock(layoutKey);
+    return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">Wallach daily target</div>
+        ${targetHTML}
+        ${whyHTML}
+      </div>
+      <div>
+        ${coverageHTML}
+      </div>
+    </div>
+    ${sourcesHTML}
+  </div>`;
+  }
+  function renderSourcesBlock(layoutKey) {
     const sources = rankedSourcesForEssential(layoutKey);
+    if (sources.length === 0) {
+      return "";
+    }
     const bestId = bestValueProductId(sources);
     const bestIdx = bestId !== null ? sources.findIndex((s) => s.productId === bestId) : -1;
     const TOP = 5;
@@ -95801,22 +95851,9 @@ deaths, blood clots, sterility`,
     const rest = sources.filter((s) => !visibleIds.has(s.productId));
     const head = visible.map((s) => srcRow(s, s.productId === bestId)).join("");
     const more = rest.length > 0 ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map((s) => srcRow(s, false)).join("")}</div></details>` : "";
-    const sourcesHTML = sources.length > 0 ? `<hr class="kd-ep-op__div">
+    return `<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
-      ${head}${more}` : "";
-    return `<div class="kd-ep-op">
-    <div class="kd-ep-op__grid">
-      <div>
-        <div class="kd-ep-k">Wallach daily target</div>
-        ${targetHTML}
-        ${whyHTML}
-      </div>
-      <div>
-        ${coverageHTML}
-      </div>
-    </div>
-    ${sourcesHTML}
-  </div>`;
+      ${head}${more}`;
   }
   function barFillClass(s) {
     return s === "covered" || s === "trace" ? " kd-ep-bar--met" : "";
@@ -95877,6 +95914,46 @@ deaths, blood clots, sterility`,
       <div class="kd-ep-mirror__foot">${escHTML6(ui("kd_ep_mirror_foot"))}</div>
       ${cta}
     </div>
+  </div>`;
+  }
+  function renderPresentGlance(tile) {
+    const body = tile.noTargetReason === "present_stated_zero" ? ui("kd_ep_present_body_zero") : ui("kd_ep_present_body_structural");
+    return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_present_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_present_notarget"))}</div>
+      </div>
+      <div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_present_covlabel"))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(tile.status)}">\u25CF ${escHTML6(statusLabel(tile.status))}</span></div>
+        <div class="kd-ep-sub">${escHTML6(ui("kd_ep_present_sub"))}</div>
+      </div>
+    </div>
+    <div class="kd-ep-mirror">
+      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_present_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(body)}</div>
+    </div>
+  </div>`;
+  }
+  function renderNonEssentialGlance(layoutKey) {
+    return `<div class="kd-ep-op">
+    <div class="kd-ep-op__grid">
+      <div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_noness_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_noness_notarget"))}</div>
+      </div>
+      <div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_noness_covlabel"))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML6(ui("kd_ep_noness_covword"))}</span></div>
+      </div>
+    </div>
+    <div class="kd-ep-mirror">
+      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_noness_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_noness_body"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_noness_body2"))}</div>
+    </div>
+    ${renderSourcesBlock(layoutKey)}
   </div>`;
   }
   function renderPdmGroupGlance(g) {
@@ -96113,7 +96190,7 @@ deaths, blood clots, sterility`,
     const metaBits = [escHTML6(page.category ?? ""), `${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
     const synonyms = page.synonyms.length > 0 ? ` \xB7 also: ${escHTML6(page.synonyms.join(", "))}` : "";
     const sciSub = page.scientific_name !== page.name ? `<div class="kd-ep-hero__sci">${escHTML6(page.scientific_name)}</div>` : "";
-    const nonEss = page.is_essential ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
+    const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
     const ledeText = slug !== null ? essentialLede(slug) : "";
     const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML6(ledeText)}</p>` : "";
     return `<div class="kd-essential-deep kd-ep">
@@ -96130,7 +96207,7 @@ deaths, blood clots, sterility`,
     ${lede}
     ${seclabel("At a glance", "the essentials, in one place")}
     ${glanceHTML}
-    ${renderOmegaClarity(page.name)}
+    ${tile?.noTargetReason === "non_essential" ? "" : renderOmegaClarity(page.name)}
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}
@@ -99471,7 +99548,7 @@ IMMORT-000070 RESOLVED (verified faithful, no change): the auditor returned need
 
 ARTIFACTS refreshed (both were stale pending-snapshots of already-applied work). Ratification Queue (31349afe): the 23 ruled this session were moved to the DECIDED tier AND added to the page's APPLIED map (188->211); rail fcounts + headline counts fixed -> "0 to rule". This needed BOTH edits: applyFilter() groups cards by static data-tier, while stateOf()/tally()/export key off APPLIED \u2014 the tier flip moves them out of the to-rule view, the APPLIED add badges them + excludes them from export. Mis-tag audit (ec860c9c): republished with an "ALL APPLIED + SEALED 2026-07-11 (kv 322)" banner. The recurring lesson (now hit on BOTH review artifacts): flip a review page pending->applied the instant its rulings seal, or it re-solicits already-done decisions.
 
-No corpus change this chunk (0 seals, kv stays 368). Board 77/77. Budget: deterministic Python + two WebFetch, zero fleets.` }];
+No corpus change this chunk (0 seals, kv stays 368). Board 77/77. Budget: deterministic Python + two WebFetch, zero fleets.` }, { id: "lg_mrtwwrue_7a49st", ts: "2026-07-20T19:25:29.078638-05:00", surface: "knowledge", kind: "round-close", summary: "Details screen: phosphorus + the structural elements + omega-9 now explain WHY they carry no target instead of showing a fake 'unmined gap' contradiction, and omega-9 gets a full Wallach-grounded write-up (91-vs-90, 3-omegas-vs-2) with its product sources brought back.", detail: "Three element detail pages were confusing or self-contradicting. Phosphorus (and the structural elements H/C/N/O) said 'no Wallach number yet - an honest gap until his tables are mined' while ALSO showing a green 'Covered' - two opposite messages on one card. Omega-9 showed that same 'unmined gap' line even though it's deliberately NOT one of Wallach's 90. We replaced all three with honest, plain explanations of WHY there's no target. Omega-9 got extra room per Luneth: a full write-up of why it's the 91st tile - Wallach counts 90 essential nutrients and exactly two essential fatty acids, so omega-9 is the third omega we show but the body makes its own - plus its product sources back where a decorative 'fatty-acid forms' box used to sit. Every line was checked against Wallach's actual books; an AI-suggested blurb full of cardiovascular / cholesterol / insulin / immune benefits was kept OUT because none of it traces to his writing.\n\nstate/coverage.ts: added a noTargetReason discriminator to CoverageTile, computed in the tile map - 'present_stated_zero' (target.low===0; phosphorus, Wallach Fig 8-1 = 0), 'present_structural' (FOUNDATIONAL_PRESENT_SLUGS; H/C/N/O), 'non_essential' (NON_ESSENTIAL_NAMES; omega-9); null for a real target or a genuine unmined gap. mirrors stays its own field (cobalt untouched). views/entity-page.ts: renderAtAGlance branches on it -> renderPresentGlance (two S00.A variants: the zero variant cites Wallach's own table, the structural variant states the general air/water/food fact with NO dose claim) and renderNonEssentialGlance (two-paragraph body + product sources via an extracted, shared renderSourcesBlock; renderOmegaClarity now suppressed for omega-9 so the sources take the box's place; the top nonEss flag suppressed to avoid duplication). view-copy.json (R4 store): kd_ep_present_* and kd_ep_noness_* (+body2). S00.A verification: Wallach designates exactly two EFAs (linoleic=omega-6, linolenic=omega-3) - DDDL-2011 L7171-74, Immortality L5189-94, Rare-Earths L22377-85; oleic acid named only as a monounsaturated fat (Immortality L18431, Hell's-Kitchen L9509). Verified: build OK (tsc + esbuild), invariants 77/77 (0 new reds), render probes entity/omega/mirror/knowledge PASS with 0 page errors, all four entity pages headless-screenshot-verified, Luneth visual sign-off in two rounds (phosphorus + hydrogen approved first, then the expanded omega-9). Deferred (optional, pre-existing): the periodic-grid omega-9 coverage dot can read green while the entity page says NOT TRACKED - a separate surface, flagged for later alignment if wanted." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

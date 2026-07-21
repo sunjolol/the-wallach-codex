@@ -101,6 +101,21 @@ export type TileCategory =
  */
 export type CoverageStatus = 'covered' | 'partial' | 'trace' | 'gap' | 'present' | '';
 
+/**
+ * Why an essential shows NO numeric Wallach target, when that absence is DELIBERATE (not merely
+ * not-yet-mined) — so the view states the reason instead of the generic "unmined gap" copy, which
+ * would misdescribe a deliberate zero AND contradict the tile's own status pill on the same card.
+ *   'present_stated_zero' - Wallach's own table states a supplement need of ZERO (phosphorus,
+ *                           Fig. 8-1) -> covered, nothing to add.
+ *   'present_structural'  - present by default from air/water/food (H/C/N/O, the
+ *                           FOUNDATIONAL_PRESENT rule) -> covered, nothing to take.
+ *   'non_essential'       - body-synthesizable, NOT one of the 90 (omega-9 / oleic) -> no target
+ *                           by design.
+ *   null                  - the essential HAS a target, or its absence is a genuine gap awaiting
+ *                           mining. (`mirrors` is the fourth deliberate case, kept as its own field.)
+ */
+export type NoTargetReason = 'present_stated_zero' | 'present_structural' | 'non_essential' | null;
+
 export interface CoverageTile {
   tileId: TileId;
   category: TileCategory;
@@ -157,6 +172,10 @@ export interface CoverageTile {
   } | null;
   /** True for a trace_pdm / wallach_collective rare-earth-group tile (scored as one group). */
   pdmGroup: boolean;
+  /** Why this tile has no numeric target when the absence is DELIBERATE; see NoTargetReason. null
+   *  for a normal target or a genuine unmined gap. Set in the tile map from this essential's own
+   *  target/identity (like every base field); `mirrors` is handled by the fields above. */
+  noTargetReason: NoTargetReason;
 }
 
 /**
@@ -856,6 +875,22 @@ export function recompute(): CoverageSnapshot {
         unit: t.unit ?? 'mg',
       };
     }
+    // Why there is no number - DELIBERATE cases only, so the view never shows the "unmined gap"
+    // copy for an essential whose absence is by design. A genuinely unmined essential is status ''
+    // with no match here -> stays null -> generic copy. Non-essential wins over present (an
+    // omega-9 is body-made, not "covered by default").
+    let noTargetReason: NoTargetReason = null;
+    if (NON_ESSENTIAL_NAMES.has(entry.name)) {
+      noTargetReason = 'non_essential';
+    }
+    else if (t?.kind !== 'mirrors' && !isPdm && intakeVsTarget === null) {
+      if (typeof t?.low === 'number' && t.low === 0) {
+        noTargetReason = 'present_stated_zero';
+      }
+      else if (FOUNDATIONAL_PRESENT_SLUGS.has(entry.slug)) {
+        noTargetReason = 'present_structural';
+      }
+    }
     const base = {
       tileId: buildTileId(entry.name),
       category: catFromTarget(entry.category),
@@ -867,6 +902,7 @@ export function recompute(): CoverageSnapshot {
       contributesTo: isPdm ? pdm.sources : d.sources,
       aggregateVehicle: isPdm && status === 'covered',
       intakeVsTarget,
+      noTargetReason,
     };
     // pdmGroup/mirrorsOf/mirrorsSlug sit here rather than in `base` because all three are
     // resolved at ASSEMBLY time (the mirrors pass below writes the latter two), not from this
