@@ -198,7 +198,7 @@ export function renderSearchCard(claim: SearchClaim): string {
     </summary>
     <div class="kd-ep-claim__body">
       ${short}
-      <div class="kd-ep-claim__answer">${glossify(claim.answer)}</div>
+      ${claim.answer.trim() === claim.answer_short.trim() ? '' : `<div class="kd-ep-claim__answer">${glossify(claim.answer)}</div>`}
       <blockquote class="kd-ep-claim__verbatim">“${glossify(collapseWS(claim.verbatim))}”</blockquote>
       ${cite.length > 0 ? `<div class="kd-ep-claim__cite">— Dr. Joel Wallach · ${escHTML(cite)}</div>` : ''}
       ${tags.length > 0 ? `<div class="kd-ep-claim__tags">${tags}</div>` : ''}

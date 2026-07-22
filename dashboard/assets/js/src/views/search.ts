@@ -156,9 +156,13 @@ function renderAnswer(claim: SearchClaim): string {
 
 /** The expandable innards shared by an entity-page row + (minus the summary) the Ask card. */
 function claimDetail(claim: SearchClaim): string {
+  // Suppress the full answer when it would merely repeat the short answer — a claim whose
+  // summary == its answer_short adds nothing by showing both (Luneth 2026-07-22).
+  const fullAnswer = claim.answer.trim() === claim.answer_short.trim()
+    ? '' : `<div class="sr-claim__answer">${renderAnswer(claim)}</div>`;
   return `
       <div class="sr-claim__short">${escHTML(claim.answer_short)}</div>
-      <div class="sr-claim__answer">${renderAnswer(claim)}</div>
+      ${fullAnswer}
       <blockquote class="sr-claim__verbatim">“${glossify(oneLine(claim.verbatim))}”</blockquote>
       <div class="sr-claim__cite">${escHTML(composeCite(claim))}</div>
       ${renderClaimRelated(claim)}

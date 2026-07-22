@@ -1,6 +1,11 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-22, sub-batch 1 close)
-# ★★★★★ 2026-07-22 — Batch-4 sub-batch 1 DONE · board 77/77 · kv 379 · committed+pushed
+# ★★★★★ 2026-07-22 — Batch-4 sub-batch 1 DONE · board 77/77 · kv 380 · committed+pushed
 # ⚠ SUB-BATCH 1 WAS NOT "5 NEW CLAIMS" — a dedup pass proved 4 of the 5 already existed. Read the LESSON before touching the rest of Batch 4.
+
+## 🔴🔴 REVIEW PROCESS — Luneth's hard rule (he does NOT trust silent authoring)
+Before sealing ANY claim, show it to Luneth in its EXACT final form and get approval ON THE CLAIM ITSELF:
+  QUESTION → SHORT ANSWER → (full answer ONLY if it genuinely adds something — it is NOT always needed; judge per claim, do not template it) → QUOTE.
+NEVER put the approval prompt on a side-question (verbatim span, spelling, "which of these already exist") and treat that as content sign-off — that is how trust gets broken. If content was not reviewed, the log says "unreviewed", never "approved". Do NOT pad a claim_text into a longer restatement of the short answer (the search card guards against showing a full answer == the short answer, added 2026-07-22, kv 380). Be efficient: dedup + author + show the exact card, do not spelunk tool source or loop.
 
 ## ✅ WHAT LANDED THIS SESSION (1 new claim + 6 retags, NOT 5 new claims)
 The handoff said "mine 5 NEW Glacial-Milk claims." Dedup against the FULL sealed corpus (not just DDDL) showed 4 already existed:
