@@ -25,7 +25,8 @@ H1 (derivation correctness, migration blueprint §4 H1 + §1.2) — LANDED here:
   * PROMINENCE: protocol_claim_ids (the curated "what to do" source) excludes base-line-
     program / dose-table reference rows — a table row is never a curated recommendation.
 The kind->colour category grouping stays at RENDER (view-copy kind_categories, gated by
-claim_category_mapping_total); this artifact groups claims by raw KIND (a stable projection).
+claim_category_mapping_total); this artifact groups a page's `record` by raw KIND and the
+plant-derived `group_record` by enrichment FACET (both stable, deterministic projections).
 
 Deterministic (no timestamp; ordering is fixed) so build_data() byte-compares to disk
 under derived_artifacts_fresh. Exposes build_data()/write_data() per the MANIFEST contract.
@@ -53,6 +54,12 @@ FACET_DEFAULT = ["basics", "warning", "discovery", "etymology", "physiology", "m
                  "sources", "uses", "stance", "protocol", "history", "big_question", "biography"]
 FACET_CONDITION = ["stance", "mechanism", "protocol", "warning", "physiology", "basics",
                    "sources", "uses", "history", "big_question", "biography", "discovery", "etymology"]
+# The plant-derived GROUP section's OWN facet display order (Luneth 2026-07-22): FACET_DEFAULT's
+# order, minus the folded-away "protocol" bucket, with history moved directly above biography. USES
+# keeps its FACET_DEFAULT slot; only the dose card leads WITHIN uses. Distinct const from
+# FACET_DEFAULT so the group section's order can diverge from "Worth knowing".
+GROUP_FACET_ORDER = ["basics", "warning", "discovery", "etymology", "physiology", "mechanism",
+                     "sources", "uses", "stance", "big_question", "history", "biography"]
 RELATED_MAX = 8
 
 # ── H1 pill derivation — the directed nutrient<->condition relation ──
@@ -219,17 +226,39 @@ def build_data() -> dict:
     # page as a SHARED group record, stored once (never copied 34x) and rendered in a distinct
     # section so a user does not read it as strontium-specific content. The Colloidal Minerals
     # topic page (Explore) is a separate home fed by search-enrichment.json — not this artifact.
-    group_by_kind: dict = {}
+    # Grouped by ENRICHMENT FACET, not claim KIND (Luneth 2026-07-22): kind-grouping collapsed
+    # 22 of 32 group cards into two adjacent teal blocks (definition + mechanism = the "wall of
+    # blue") and stranded "Which peoples live to 120-140" under DEFINITION though its facet is
+    # "history". The facet taxonomy (the same buckets the search "Worth knowing" section uses)
+    # spreads the cards across ~11 varied categories and gives HISTORY & LORE its own home. An
+    # un-enriched group claim (no search card, hence no facet) falls to a trailing "other" bucket
+    # so a future addition never silently vanishes.
+    #
+    # Two curation calls (Luneth 2026-07-22): the lone "protocol" (WHAT TO DO) card folds into
+    # "uses" as its FIRST entry (the dose leads the practical bucket — no one-card category); and
+    # bucket order follows GROUP_FACET_ORDER (FACET_DEFAULT minus the folded protocol, history
+    # directly above biography). The view renders in this order without re-sorting, so it lives HERE.
+    facet_by_id = {sc["id"]: sc["facet"] for sc in si_claims}
+    group_by_facet: dict = {}
+    protocol_ids: list = []
     for cid, cc in claims.items():
         if "colloidal-minerals" in (cc.get("about") or []):
-            k = cc.get("kind")
-            if k:
-                group_by_kind.setdefault(k, []).append(cid)
-    # deterministic ordering — the derive byte-compares under derived_artifacts_fresh
-    for k in group_by_kind:
-        group_by_kind[k].sort()
-    group_record = [{"kind": k, "claim_ids": group_by_kind[k]}
-                    for k in _ordered(group_by_kind, KIND_PRIORITY)]
+            f = facet_by_id.get(cid, "other")
+            if f == "protocol":            # fold WHAT-TO-DO into uses; it leads that bucket below
+                protocol_ids.append(cid)
+                f = "uses"
+            group_by_facet.setdefault(f, []).append(cid)
+    # deterministic ordering — the derive byte-compares under derived_artifacts_fresh. The folded
+    # protocol (dose) claim(s) lead the uses bucket; every other bucket sorts by id.
+    lead_ids = set(protocol_ids)
+    for f in group_by_facet:
+        if f == "uses" and lead_ids:
+            ids = group_by_facet[f]
+            group_by_facet[f] = sorted(x for x in ids if x in lead_ids) + sorted(x for x in ids if x not in lead_ids)
+        else:
+            group_by_facet[f].sort()
+    group_record = [{"facet": f, "claim_ids": group_by_facet[f]}
+                    for f in _ordered(group_by_facet, GROUP_FACET_ORDER)]
 
     # ── ESSENTIALS (all canon entries; count of `essential:true` is the 90) ──
     essentials_out: dict = {}

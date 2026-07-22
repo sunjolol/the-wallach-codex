@@ -2776,60 +2776,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3368,60 +3393,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3481,60 +3531,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3599,60 +3674,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3693,60 +3793,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3787,60 +3912,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3881,60 +4031,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -3966,60 +4141,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4073,60 +4273,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4160,60 +4385,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4245,60 +4495,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4339,60 +4614,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4467,60 +4767,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4554,60 +4879,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4641,60 +4991,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4728,60 +5103,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4822,60 +5222,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -4994,60 +5419,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5079,60 +5529,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5166,60 +5641,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5253,60 +5753,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5363,60 +5888,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5448,60 +5998,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5533,60 +6108,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5618,60 +6218,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5703,60 +6328,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5788,60 +6438,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5911,60 +6586,85 @@
       ],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -5996,60 +6696,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -6081,60 +6806,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -6166,60 +6916,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -6251,60 +7026,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -6337,60 +7137,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -6422,60 +7247,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]
@@ -6507,60 +7357,85 @@
       "related": [],
       "group_record": [
         {
-          "kind": "protocol",
+          "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-HELLS-000009",
-            "WAL-CLM-HELLS-000010",
-            "WAL-CLM-HELLS-000011",
-            "WAL-CLM-HELLS-000012"
+            "WAL-CLM-IMMORT-000024"
           ]
         },
         {
-          "kind": "mechanism",
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000120"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
+          ]
+        },
+        {
+          "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
-            "WAL-CLM-DDDL-000119",
             "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-IMMORT-000025",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
             "WAL-CLM-RARE-000072",
-            "WAL-CLM-RARE-000074",
-            "WAL-CLM-RARE-000088"
+            "WAL-CLM-RARE-000074"
           ]
         },
         {
-          "kind": "definition",
+          "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000117",
-            "WAL-CLM-DDDL-000120",
-            "WAL-CLM-IMMORT-000024",
-            "WAL-CLM-IMMORT-000026",
-            "WAL-CLM-LETS-000352",
-            "WAL-CLM-RARE-000024",
+            "WAL-CLM-DDDL-000124",
             "WAL-CLM-RARE-000062",
-            "WAL-CLM-RARE-000069",
             "WAL-CLM-RARE-000070",
             "WAL-CLM-RARE-000071",
-            "WAL-CLM-RARE-000073",
             "WAL-CLM-RARE-000319"
           ]
         },
         {
-          "kind": "personal_anecdote",
+          "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-DDDL-000123",
-            "WAL-CLM-DDDL-000124",
-            "WAL-CLM-IMMORT-000234"
+            "WAL-CLM-HELLS-000009",
+            "WAL-CLM-DDDL-000122",
+            "WAL-CLM-HELLS-000010",
+            "WAL-CLM-HELLS-000011",
+            "WAL-CLM-HELLS-000012",
+            "WAL-CLM-LETS-000352",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
-            "WAL-CLM-DDDL-000121",
-            "WAL-CLM-DDDL-000122",
-            "WAL-CLM-DDDL-000125"
+            "WAL-CLM-DDDL-000117",
+            "WAL-CLM-DDDL-000125",
+            "WAL-CLM-IMMORT-000026",
+            "WAL-CLM-RARE-000069",
+            "WAL-CLM-RARE-000073"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000119",
+            "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000024"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000234"
           ]
         }
       ]

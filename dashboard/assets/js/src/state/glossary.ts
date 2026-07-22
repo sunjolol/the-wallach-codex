@@ -32,6 +32,20 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+/** Canonical form of a glossary key / matched surface form: lower-cased, with every
+ *  whitespace-or-hyphen run collapsed to ONE space (Luneth 2026-07-22). Stored keys AND lookup
+ *  keys pass through this, so "Age-Beater", "Age  Beater" and "age beater" all share one entry. */
+function normKey(s: string): string {
+  return s.toLowerCase().replace(/[\s-]+/g, ' ').trim();
+}
+
+/** A regex source for one (already normalized) key whose internal spaces match a space OR a
+ *  hyphen, so a key stored as "age beater" also matches the text "Age-Beater". Each word is
+ *  regex-escaped; a [\s-]+ bridge rejoins them. A single-word / symbol key is just its escape. */
+function keyToPattern(normalizedKey: string): string {
+  return normalizedKey.split(' ').map(escapeRegExp).join('[\\s\\-]+');
+}
+
 /** Build the match index once (bad/absent data → empty; drawer degrades). */
 function index(): GlossIndex {
   if (cached === null) {
@@ -39,9 +53,9 @@ function index(): GlossIndex {
     const g = parsed.success ? parsed.data : EMPTY;
     const defByKey = new Map<string, string>();
     for (const e of g.terms) {
-      defByKey.set(e.term.toLowerCase(), e.plain);
+      defByKey.set(normKey(e.term), e.plain);
       for (const a of e.aliases ?? []) {
-        defByKey.set(a.toLowerCase(), e.plain);
+        defByKey.set(normKey(a), e.plain);
       }
     }
     // Longest key first so the alternation prefers the most specific term.
@@ -50,8 +64,10 @@ function index(): GlossIndex {
     // symbol-terminated unit keys ("mg%", "g%") also fire. For a word-ending key this is
     // identical to \b; but after "%" a \b would backwards demand a following word char, so
     // a "%"-key could otherwise never match. memory: term-gloss-standard (units layer).
+    // keyToPattern makes each key separator-insensitive so "age beater" also matches the
+    // hyphenated "Age-Beater" — the live bug where the full answer's dashed form never glossed.
     const re = keys.length > 0
-      ? new RegExp(`\\b(${keys.map(escapeRegExp).join('|')})(?!\\w)`, 'gi')
+      ? new RegExp(`\\b(${keys.map(keyToPattern).join('|')})(?!\\w)`, 'gi')
       : null;
     cached = { re, defByKey };
   }
@@ -67,7 +83,9 @@ export function glossaryRegex(): RegExp | null {
   return re === null ? null : new RegExp(re.source, re.flags);
 }
 
-/** Plain-language definition for a matched key (case-insensitive), or null. */
+/** Plain-language definition for a matched key or surface form (case- and separator-insensitive),
+ *  or null. The key is normalized (lower-case, [\s-] runs -> one space) so "Age-Beater" resolves to
+ *  the stored "age beater" entry — the same normalization the stored keys pass through. */
 export function glossaryDef(key: string): string | null {
-  return index().defByKey.get(key.toLowerCase()) ?? null;
+  return index().defByKey.get(normKey(key)) ?? null;
 }

@@ -1,59 +1,67 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-22, sub-batch 1 close)
-# ★★★★★ 2026-07-22 — Batch-4 sub-batch 1 DONE · board 77/77 · kv 380 · committed+pushed
-# ⚠ SUB-BATCH 1 WAS NOT "5 NEW CLAIMS" — a dedup pass proved 4 of the 5 already existed. Read the LESSON before touching the rest of Batch 4.
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-22, mineral-polish close)
+# ★★★★★ 2026-07-22 — mineral card polish DONE · board 77/77 · corpus kv 381 · committed+pushed
+# ▶ NEXT STAGE: bring the still-unused DEMO pages/revamps to the live surface. Mining is PAUSED.
 
-## 🔴🔴 REVIEW PROCESS — Luneth's hard rule (he does NOT trust silent authoring)
-Before sealing ANY claim, show it to Luneth in its EXACT final form and get approval ON THE CLAIM ITSELF:
-  QUESTION → SHORT ANSWER → (full answer ONLY if it genuinely adds something — it is NOT always needed; judge per claim, do not template it) → QUOTE.
-NEVER put the approval prompt on a side-question (verbatim span, spelling, "which of these already exist") and treat that as content sign-off — that is how trust gets broken. If content was not reviewed, the log says "unreviewed", never "approved". Do NOT pad a claim_text into a longer restatement of the short answer (the search card guards against showing a full answer == the short answer, added 2026-07-22, kv 380). Be efficient: dedup + author + show the exact card, do not spelunk tool source or loop.
+## ✅ WHAT LANDED THIS SESSION (the "final mineral set" before demo work)
+Plant-derived group cards on the 34 mineral pages — the "About the plant-derived group" section:
+- **Regrouped by enrichment FACET, not claim KIND.** Kind-grouping piled 22 of 32 cards into two teal
+  definition+mechanism blocks (the "wall of blue"); facet grouping spreads them across 10 coloured
+  categories and gives "Which peoples live to 120-140" its own HISTORY & LORE home. The derive owns
+  the grouping AND order now (`entity_page_derive.py` `group_record` by facet + `GROUP_FACET_ORDER`);
+  `views/entity-page.ts::renderGroupRecord` renders `kd-ep-facet` buckets in artifact order (no re-sort);
+  schema `group_record` → `EntityFacetGroupSchema`.
+- **Two Luneth order calls:** the 1-card "protocol"/What-To-Do facet folds into USES as its FIRST entry
+  (the dose leads Uses; Uses keeps its normal slot — NOT moved to the top); HISTORY & LORE sits directly
+  above BIOGRAPHY.
+- **Glossary hover is now separator-insensitive** (`state/glossary.ts` `normKey` + `keyToPattern`): a term
+  glosses whether written spaced or hyphenated ("Age Beater"/"Age-Beater"). Test `state/glossary.test.ts`.
+- **CONTENT (Luneth-approved):** RARE-059 claim_text `"Age-Beater"`→`"Age Beater"` (sealed, corpus_seal
+  kv 380→381); RARE-062 re-questioned to "What do all five long-lived cultures have in common?" with a
+  present-tense short answer (enrichment only — its distinct "common denominator" thesis, no longer
+  duplicating RARE-070's origin question).
+- Verified: build clean · invariants 77/77 · glossary vitest 3/3 · render_probe entity+knowledge+search PASS.
 
-## ✅ WHAT LANDED THIS SESSION (1 new claim + 6 retags, NOT 5 new claims)
-The handoff said "mine 5 NEW Glacial-Milk claims." Dedup against the FULL sealed corpus (not just DDDL) showed 4 already existed:
-- **P3 (irrigate-don't-drink)** = **RARE-072** — already a claim, fully in group. DONE, untouched.
-- **P2b (60-72 vs 3-20 minerals)** = **RARE-071** — already a claim (identical verbatim), in the about-group; just gained the `plant-derived-group`+`rare-earths` tags this session.
-- **P8 (the "crystalloid" physiology)** = **IMMORT-025** — Wallach reused the passage near-verbatim in Immortality (2008); already mined. Retagged into the group this session.
-- **P9 (four forms of colloid)** = **IMMORT-026** — same story; already mined. Retagged into the group.
-- **P11b (humic-shale manufacturing)** = **GENUINELY NEW** → authored as **WAL-CLM-RARE-000319**.
+## 🔴 PROCESS LESSON (do not repeat) — placement instructions are literal
+I misread "consolidate its entry into Uses at the very top" as "move the Uses CATEGORY to the section top."
+He meant the DOSE CARD at the top of Uses, Uses in place. When an instruction names an ENTRY and a
+container, "at the very top" is the entry's position WITHIN the container — do not promote the container.
+When a placement is ambiguous, ASK rather than guess-and-show (guessing wrong burns trust + tokens).
 
-So this session = **1 new claim (RARE-000319) + 1 enrichment card + 6 retags** (IMMORT-025/026 gained about+tag; RARE-061/069/070/071 gained tags) + a source-purification of rare-earths.txt lines 20843-20876. corpus_seal kv 378→379 (1345→1346). Board 77/77, all pushed.
+## ▶ NEXT STAGE — DEMO PAGES → LIVE (memory `demo-elements-still-to-do`)
+The v3 demo has three surfaces still not built on live data. Bring them live, ONE surface to 100% before
+the next (memory `gold-standard-page-workflow`), each ending in a STOP-for-visual-sign-off (Luneth is the
+test gate — memory `screenshot-verify-visual-chunks`, `visual-verification.md`):
+1. **Ask Wallach** — the search/retrieval popup (memory `search-is-ask-wallach-popup`, `ask-wallach-search-vision`).
+2. **Products tab** — (the Products list + detail panel already exist in the knowledge drawer; confirm what
+   the DEMO adds beyond that before building — do not rebuild what's live).
+3. **Conditions tab** (+ detail views).
+Rules that bind: the signed-off DEMO is the VISUAL spec (memory `signed-off-demo-is-the-spec`,
+`demo-vision-not-letter`, `replicate-demo-not-blueprint-notes` — recreate the DESIGN on REAL data, don't
+copy the demo's stale data); LIVE beats a stale demo where they diverge (`live-supersedes-demo-log-micro-deltas`);
+measure computed-style deltas, don't eyeball (`visual-verification.md` "measure don't eyeball", `style_diff.js`).
+FIRST STEP when you start: open the relevant demo mockup under `dashboard/components/` and diff its
+intent against what's already live, then propose a build plan + ASK Luneth which surface first.
 
-## 🔴 THE LESSON (do NOT skip — it changes how you mine the rest of Batch 4)
-**The 19-teal-new inventory below came from a rare-earths sweep that deduped ONLY against the 5 mined DDDL claims.** It never checked Immortality or the June rare-earths mining. **Wallach reuses whole passages across books**, so that sweep's "new" candidates include already-mined content. **Before authoring ANY teal-new claim: dedup its proposition against the FULL sealed corpus (all 7 books), not just the sweep's reference set.** Use a keyword scan over `eden/corpus/claims/*.json` (grep the distinctive phrase + the concept). Authoring without this manufactures duplicates — it nearly created 4 this session. Fold a cross-book reuse in by RETAG (bring the existing claim into the group), not a new claim.
+## ⏸ PARKED — Batch-4 book mining (resume only when Luneth redirects to it)
+Remaining teal-new candidates (re-dedup each against ALL 7 sealed books FIRST — Wallach reuses passages;
+memory `dedup-across-all-books-before-authoring`): NEW-01/03, 13, 14, 15, 16, 19, 20, 21, 23, 30 + fringe
+NEW-17 (rare-earths doubled-lifespan) & NEW-22 (256-yr Li Chung Yun — capture faithfully, neither censored
+nor inflated). Byte-verified passages: `temporary/plant-derived-research-2026-07-17/sweep/book-rare-earths.md`.
+Batch-4 rulings are SETTLED (do not re-litigate) — see the prior handoff in git history if resuming.
 
-Second lesson (source-image mandate earned its keep): verify numbers + spellings against the **rendered PDF page pixels**, NOT the OCR .txt. This batch, the page confirmed the numbers AND revealed "fullfill"/"ones life" are Wallach's own printed spellings (author error, not OCR) — Luneth ruled to normalize author spellings during purification.
+## 🔴🔴 REVIEW PROCESS — Luneth's hard rule (carries into EVERY corpus/content touch)
+Before sealing ANY claim, show it to Luneth in its EXACT final form and get approval ON THE CLAIM itself:
+QUESTION → SHORT ANSWER → (full answer only if it genuinely adds something) → QUOTE. Never put the approval
+prompt on a side-question and treat that as content sign-off. If content was not reviewed, the log says
+"unreviewed", never "approved". `corpus_seal` is USER-ONLY (he authorizes each seal).
 
-## ▶ NEXT ACTION — remaining Batch-4 teal-new, in small sub-batches, AFTER re-dedup
-Re-dedup each against the full corpus first (per the lesson). Candidates still plausibly new (verify each — some may already exist):
-NEW-01/03 (origin / 6-denominators) · NEW-13 (Hunza ~100/140) · NEW-14 (liquid tones stomach + ups acid) · NEW-15 (thesis: minerals not tech) · NEW-16 (wood→electric fuel turning point) · NEW-19 (obsessive soil care) · NEW-20 (humic shale ~70 minerals — dup-check vs the new RARE-319) · NEW-21 (bee-pollen/algae/kelp can't do it — trim Aztec-cannibalism/kelp-79.9 asides; 400 lb figure) · NEW-23 (humic shale = Carboniferous plants, 77+/84 minerals — brontosaurus typo already fixed) · NEW-30 (culinary-ashes lineage).
-**FRINGE (Luneth ruled INCLUDE BOTH, faithfully — memory `never-censor-wallach-for-implausibility`):** NEW-17 (Immortality 2008: rare earths "doubled the expected life span of several species" + supplementation-is-the-only-warranty — his direct stance) · NEW-22 (Epigenetics 2014: the reportedly 256-yr-old Li Chung Yun; capture as Wallach's SPECULATION exactly as framed, labeled+attributed, NEITHER censored NOR inflated).
-Full byte-verified passages: `temporary/plant-derived-research-2026-07-17/sweep/book-rare-earths.md`. After the teal-new is exhausted → **item 3: bring the 3 still-to-do demo surfaces live — Ask Wallach, Products tab, Conditions tab** (memory `demo-elements-still-to-do`).
-
-## ⚖ BATCH-4 RULINGS — SETTLED with Luneth (do NOT re-litigate)
-1. **Concentration is NOT a cross-book contradiction — two different MEASURES.** RARE (1994) & EPS (2014) both give the humic-shale SG-3.0 extract as 38,000 mg/L = 38 g/L (identical). HK (2015) says 19,000 mg/qt (~20 g/L). The "38" is total SUSPENDED SOLIDS (RARE Table 10-5 header literally: "Suspended Solids 38 gm/L"); the listed minerals sum to only ~6.2 g/L. RULE: use HK's 19,000 mg/qt as the mineral number; wherever a claim quotes 38 g/L, label it "suspended solids (total)", NOT "minerals"; NO "contradiction" note. (RARE-319 applied this.)
-2. **Culture count / age / mineral counts:** favor-newer (culture count → "eight" per DDDL-119; humic-shale age = reclassification); mineral counts (77/60/60-72/84/~70) are DIFFERENT REFERENTS (product vs essential vs Glacial-Milk vs ancient-soil), NOT contradictions — keep each with its referent.
-3. **FRINGE:** include BOTH NEW-17 + NEW-22 faithfully (see NEXT ACTION). Fringe policy is for CHARGED political/sexual content, NOT implausible claims.
-4. **DROP NEW-11** (Todd "reduce" arm) — RARE-088 already carries the full unmask→reduce→time/dose arc.
-
-## 🔧 MECHANICS (proven — reuse)
-- **Dedup FIRST:** grep `eden/corpus/claims/*.json` for the distinctive phrase + the concept slug; check `about:["colloidal-minerals"]` group (about-based, ~32 claims now) + the search "Colloidal Minerals" concept (33 entries). Cross-book reuse → retag, not new claim.
-- **NEW claim (ADD):** author raw.json `{kind, about:["colloidal-minerals"], conditions:[], claim_text=<plain summary, no book-refs>, verbatim=<byte-exact>, tags, confidence}` → `corpus_extract.py finalize --book <id> --raw <raw>` (snaps verbatim via whitespace/quote-fold norm; stores EXACT book bytes incl. line-breaks — so purify narrow-column source FIRST). Report → drafts/reports/.
-- **Retag existing (edit `about`/tags):** transactional safe_write on the DRAFT (mine_batch cannot edit `about`). NOTE ordering: if you also finalize a NEW claim for the same book, finalize REBUILDS that book's draft from the shard — do retags on that draft AFTER finalize.
-- **Source purification (narrow-column → single-line):** stage LF old/new via a python script (reflow = `par.replace("-\n","").replace("\n"," ")`); safe_write replace (payloads MUST be LF — safe_write normalizes the CRLF file on read) → `corpus_resnap.py --book <id> --write` (re-hashes books-meta + re-snaps ALL offsets; EXACT/HEAL/BROKEN) → then finalize/seal. Verify no sealed verbatim lives in the block first (resnap dry-run BROKEN=0). rare-earths is a 'raw' book so book_source_clean/mined_pages_clean do NOT hard-block it.
-- **Enrichment card** → `search-enrichment.json` `enrichment` dict, keyed by claim id (NOT sealed; JSON round-trip is byte-identical so load+dump+append gives a clean diff). Authored: subject/also_about/facet/question/answer_short/topics (answer/verbatim/cite DERIVE). Facet ∈ 13-set. Dual-home OK (a non-search-only claim CAN have a card — DDDL-116 precedent; the _note's "must be search-only" is stale). Card validates only AFTER seal (derive reads the sealed shard).
-- **Seal cycle:** corpus_seal (USER-ONLY — per-invocation OK) → build_embeds (12) → build.mjs → invariants → render_probe knowledge+entity+search → build-log + creators_log → RE-inline build (log bakes at BUILD time) → commit + push.
-- **⚠ creators_log gotcha:** NEVER inline a double-quoted `--detail` with a backtick (command-substitutes, silently drops the word). Use `--detail "$(cat file)"` from a backtick-free file. `--kind` from the fixed set (source-purification is NOT valid → use round-close). `--summary` ≤280.
-- **PDF page-image verify:** `temporary/rare earths forbidden cures/…pdf`. Render with PyMuPDF: `fitz.open(pdf)[idx].get_pixmap(matrix=fitz.Matrix(3,3)).save(png)` → Read the PNG. fitz idx ≈ printed page + 22 for Ch.10 (calibrate by phrase-search over `d[p].get_text()`). Cross-check the RENDERED pixels, not the PDF text layer (also OCR). (memory `page-images-exist-for-three-books`, `verify-against-source-images`.)
-
-## PLANT-DERIVED GROUP STATE (after this session)
-about-based group ≈ 32 claims (was 29: +RARE-319 + IMMORT-025 + IMMORT-026). Search "Colloidal Minerals" concept = 33 entries, 11 facets. Seed voice model = DDDL-116-120.
-
-## COMMITS THIS SESSION
-(see git log — sub-batch 1: 1 new claim RARE-000319 + 6 retags + source-purification, kv 379)
-
----
-
-# ★★★★ 2026-07-21 (SESSION 8) — reusable UX patterns (batches 1+3 done)
-- **Glossary separated** (`glossary.json`): atomic "colloidal" (FORM) + "plant derived" (SOURCE); matcher longest-first → multi-word phrases decompose per-concept.
-- **"Where to get it" affordance** (`views/entity-page.ts::renderGroupGetIt` + `ACTIONABLE_GROUP_KINDS={dose,protocol}`): product pointer on green dose/protocol group blocks, keyed on claim KIND (NOT a colour literal — `view_category_not_hardcoded` REDs a 'green' string), fed by `rankedPdmSources()`.
-- **COLOUR = claim KIND's family** (view-copy `kind_categories`): teal=definition/mechanism/... · green=dose/protocol · amber=deficiency/toxicity · orange=prevalence/prognosis/quote · violet=personal_anecdote · red=contraindication.
-- **After plant-derived (item 3):** bring the 3 still-to-do demo surfaces live — Ask Wallach, Products tab, Conditions tab (+ detail views). Everything else in live beats the dated demo (memory `demo-elements-still-to-do`).
+## 🔧 KEY MECHANICS (reuse)
+- Seal cycle: edit the DRAFT (`drafts/claims-<book>.draft.json`) → **user runs `corpus_seal`** (promotes
+  drafts→shards, bumps kv, corpus_verify) → `build_embeds.py` → `entity_page_derive.py` → `build.mjs` →
+  invariants → render probes → build-log + `creators_log.py append` → RE-inline `build.mjs` (log bakes at
+  BUILD time) → commit + push.
+- Enrichment (`search-enrichment.json`) is NOT sealed — load/modify/`json.dumps(...,ensure_ascii=False,indent=2)+"\n"`
+  is byte-stable; edit + `build_embeds` (rebuilds search-index).
+- `creators_log.py append`: `--kind` from the fixed set (use `round-close`); `--summary` ≤280; pass
+  `--detail "$(cat backtick-free-file)"` (a backtick in an inline double-quoted --detail silently drops words).
+- Windows/UTF-8: prefix `PYTHONUTF8=1`; safe_write payloads must be LF; every project write via `safe_write`.

@@ -50,12 +50,13 @@ export const EssentialPageSchema = z.object({
   works_with: z.array(z.string()),
   /** Co-occurrence "keep exploring" graph (mixed essential + condition slugs). */
   related: z.array(z.string()),
-  /** GROUP claims propagated onto plant-derived (trace_pdm) element pages: one shared list of
+  /** GROUP claims propagated onto plant-derived (trace_pdm) element pages: shared search-index
    * claim IDs authored `about: [colloidal-minerals]`, rendered as a distinct "shared across
    * the plant-derived group" section so a user does not misread them as strontium-specific.
-   * Present ONLY on the 35 trace_pdm slugs; omitted elsewhere. Same {kind, claim_ids} shape as
-   * `record`, so the view reuses the record renderer. */
-  group_record: z.array(EntityKindGroupSchema).optional(),
+   * Present ONLY on the 35 trace_pdm slugs; omitted elsewhere. Grouped by enrichment FACET
+   * ({facet, claim_ids}) — like `search`, not `record` — so the shared cards spread across the
+   * facet taxonomy (HISTORY & LORE, SOURCES, ...) instead of two teal kind blocks (Luneth 2026-07-22). */
+  group_record: z.array(EntityFacetGroupSchema).optional(),
 });
 
 /** A condition's page view-model — entity-page-data.json → conditions[slug]. */

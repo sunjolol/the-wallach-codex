@@ -728,17 +728,28 @@ function renderGroupRecord(page: EssentialPage): string {
   if (gr === undefined || gr.length === 0) {
     return '';
   }
-  const groups = [...gr].sort((a, b) => {
-    const ra = recordKindRank(a.kind);
-    const rb = recordKindRank(b.kind);
-    return ra !== rb ? ra - rb : (a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0);
-  });
+  // Grouped by enrichment FACET (HISTORY & LORE, SOURCES, HOW IT WORKS, ...), not claim kind
+  // (Luneth 2026-07-22): kind-grouping collapsed 22 of 32 shared cards into two adjacent teal
+  // blocks (the "wall of blue"). The facet buckets — the same taxonomy the "Worth knowing"
+  // section uses — spread them and give the history claim its own home. The derive owns BOTH the
+  // grouping AND the bucket order (entity_page_derive.py GROUP_FACET_ORDER), so the buckets
+  // render in artifact order — no re-sort here.
+  const groups = gr;
   let total = 0;
-  const kindsHTML = groups.map((g) => {
+  // The "Where to get it" product pointer rides ONE bucket — the first carrying an actionable
+  // (dose/protocol KIND) claim — so the same three products don't repeat down the section. Keyed
+  // on the claim KIND (via getClaim), never a facet-name literal (R7).
+  let getItPlaced = false;
+  const facetsHTML = groups.map((g) => {
+    let bucketActionable = false;
     // Prefer the search-enriched shape for the above-the-fold card format (question + short
     // answer). Any id without enrichment falls back to the corpus-shape card so a future
     // unenriched addition still renders — never silently vanishes.
     const cards = g.claim_ids.map((id) => {
+      const kind = getClaim(id)?.kind ?? '';
+      if (kind.length > 0 && ACTIONABLE_GROUP_KINDS.has(kind)) {
+        bucketActionable = true;
+      }
       const sc = getSearchClaim(id);
       if (sc !== null) {
         total += 1;
@@ -754,15 +765,13 @@ function renderGroupRecord(page: EssentialPage): string {
     if (cards.length === 0) {
       return '';
     }
-    const fam = kindCategory(g.kind);
-    // A dose/protocol block RECOMMENDS taking the liquid, which is meaningless without a real source
-    // — surface the actionable Youngevity plant-derived-mineral products right at the dose. Keyed on
-    // the actionable KINDS, never on the colour-family word (that is never a view literal, R7).
-    // definition/mechanism/quote/anecdote claims are not something you "get", so they carry nothing.
-    const getIt = ACTIONABLE_GROUP_KINDS.has(g.kind) ? renderGroupGetIt() : '';
-    return `<details class="kd-ep-kind" open data-family="${escHTML(fam)}">
-      <summary><span class="kd-ep-kind__label">${escHTML(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${g.claim_ids.length}</span></summary>
-      <div class="kd-ep-kind__body">${cards}${getIt}</div>
+    const getIt = (bucketActionable && !getItPlaced) ? renderGroupGetIt() : '';
+    if (getIt.length > 0) {
+      getItPlaced = true;
+    }
+    return `<details class="kd-ep-facet" data-facet="${escHTML(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
+      <div class="kd-ep-facet__body">${cards}${getIt}</div>
     </details>`;
   }).join('');
   if (total === 0) {
@@ -775,7 +784,7 @@ function renderGroupRecord(page: EssentialPage): string {
     + `<details class="kd-ep-record kd-ep-record--group" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${total} ${plural(total, 'group claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
-          ${kindsHTML}
+          ${facetsHTML}
         </div>
       </details>`;
 }
