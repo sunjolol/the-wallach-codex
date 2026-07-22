@@ -2995,7 +2995,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In Epigenetics, Wallach's entry for dysprosium -- a rare-earth metal -- covers only its natural distribution (parts-per-million across igneous rocks, shale, sandstone and limestone, with animal concentrations highest in bone) and its discovery history; he assigns it no specific human deficiency disease or nutritional function here. This reflects how little is individually established about the rare-earth trace minerals, which Wallach groups broadly as life-supporting elements while saying little element-by-element. Dysprosium was named in 1886 by the French chemist Paul Emile Lecoq de Boisbaudran from the Greek 'dysprositos', meaning 'hard to get', and is never found free in nature.",
+      "claim_text": "In Epigenetics, Wallach's entry for dysprosium -- a rare-earth metal -- covers only its natural distribution (parts-per-million across igneous rocks, shale, sandstone and limestone, with animal concentrations highest in bone) and its discovery history; he assigns it no specific human deficiency disease or nutritional function here. Dysprosium was named in 1886 by the French chemist Paul Emile Lecoq de Boisbaudran from the Greek 'dysprositos', meaning 'hard to get', and is never found free in nature.",
       "verbatim": "Dysprosium was first identified in 1886 by a French chemist, Paul Emile Lecoq\nde Boisbaudran while he was studying holmium oxide. He gave it the name\ndysprosium from the Greek word dysprositos meaning “hard to get,”",
       "locator": {
         "book": "epigenetics",
@@ -3031,7 +3031,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Epigenetics entry for erbium -- a rare-earth metal -- records only its natural distribution (parts-per-million in rocks, plants and animals, concentrating in bone) and its discovery, plus that a large variety of medical applications in dermatology and dentistry use erbium; he assigns it no specific human nutritional deficiency or function. Erbium was discovered in 1843 by Carl Gustaf Mosander, who split 'yttria' from the mineral gadolinite into three fractions -- yttria, erbia and terbia -- and its oxide has a distinctive pink color. It is one of the individually under-studied rare-earth trace elements in his framework.",
+      "claim_text": "Wallach's Epigenetics entry for erbium -- a rare-earth metal -- records only its natural distribution (parts-per-million in rocks, plants and animals, concentrating in bone) and its discovery, plus that a large variety of medical applications in dermatology and dentistry use erbium; he assigns it no specific human nutritional deficiency or function. Erbium was discovered in 1843 by Carl Gustaf Mosander, who split 'yttria' from the mineral gadolinite into three fractions -- yttria, erbia and terbia -- and its oxide has a distinctive pink color.",
       "verbatim": "Erbium (for Ytterby, a village in Sweden) was discovered by Carl Gustaf\nMosander in 1843. Mosander separated “yttria” from the mineral gadolinite into\nthree fractions which he called yttria, erbia, and terbia.",
       "locator": {
         "book": "epigenetics",
@@ -3067,7 +3067,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's stance on europium -- a 'light' rare-earth metal -- is part of his broader thesis that rare-earth trace minerals support longevity: europium extended the lifespan of a laboratory species (the protozoan Tetrahymena pyriformis) by 100 percent over its normal expected lifespan. He also notes europium is found in higher concentrations in the breast milk of women in third-world countries than in American women. As with the other rare earths, he offers little element-specific detail beyond this life-extension observation and its natural distribution.",
+      "claim_text": "Wallach's stance on europium -- a 'light' rare-earth metal: europium extended the lifespan of a laboratory species (the protozoan Tetrahymena pyriformis) by 100 percent over its normal expected lifespan. He also notes europium is found in higher concentrations in the breast milk of women in third-world countries than in American women. As with the other rare earths, he offers little element-specific detail beyond this life-extension observation and its natural distribution.",
       "verbatim": "Europium has extended the life of laboratory species (e.g., Tetrahymena\npyriformis) over their normal expected lifespan by 100%. Europium is found in\nhigher concentrations in breast milk from women in third world countries than in\nAmerican women.",
       "locator": {
         "book": "epigenetics",
@@ -3218,7 +3218,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach's Epigenetics entry for gadolinium (the book spells it 'Gadolium') -- a rare-earth mineral -- records only its natural distribution across igneous rocks, shale, sandstone, limestone, plants and animals, and the observation that land animals accumulate it in bone and liver very quickly after absorption; he assigns it no specific human deficiency disease or nutritional function. It is one of the individually under-detailed rare-earth trace elements in his framework.",
+      "claim_text": "Wallach's Epigenetics entry for gadolinium (the book spells it 'Gadolium') -- a rare-earth mineral -- records only its natural distribution across igneous rocks, shale, sandstone, limestone, plants and animals, and the observation that land animals accumulate it in bone and liver very quickly after absorption; he assigns it no specific human deficiency disease or nutritional function.",
       "verbatim": "Gd - Gadolium, a rare earth mineral, is found in igneous rocks at 5.4 ppm; shale\nat 4.3 ppm; sandstone at 2.6 ppm; limestone at 0.7 ppm; land plants at up to\n70 ppm by Carya spp.; marine animals at 0.06 ppm; land animals accumulate\ngadolium in bone and liver very quickly after absorption.",
       "locator": {
         "book": "epigenetics",
@@ -6046,7 +6046,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach classifies cruciferous vegetables as dietary goitrogens — foods that interfere with normal thyroid metabolism and function. In his newest book (2014) he names cabbage, broccoli, cauliflower, Brussels sprouts and kale, grouping them alongside dietary and waterborne nitrates, gluten intolerance, pituitary problems and general nutritional deficiencies as things that disrupt the thyroid.",
+      "claim_text": "Wallach classifies cruciferous vegetables as dietary goitrogens -- foods that interfere with normal thyroid metabolism and function. He names cabbage, broccoli, cauliflower, Brussels sprouts and kale, grouping them alongside dietary and waterborne nitrates, gluten intolerance, pituitary problems and general nutritional deficiencies as things that disrupt the thyroid.",
       "verbatim": "Many foods and food additives are known to be “goitrogens” because they\ninterfere with the normal thyroid metabolism and function including:\n\nDietary nitrates (e.g,, deli slices, sandwich meats, etc.)\nWater borne nitrates\n\nCruciferous vegetables (e.g., cabbage, broccoli, cauliflower, Brussel sprouts,\nkale, etc.)\n\nGluten intolerance\n\nPituitary problems\n\nGeneral nutritional deficiencies",
       "locator": {
         "book": "epigenetics",
@@ -6325,7 +6325,7 @@
         "muscular_dystrophy"
       ],
       "symptoms": [],
-      "claim_text": "Wallach does name pork chops as the first of the 'muscle meats' — the meats where, as he puts it, muscle meat is 'King' — alongside beef steak, lamb chops, roasts, ground red meat, chicken and turkey. But his actual point about muscular dystrophy (what veterinarians call white muscle disease) is that it has nothing to do with eating too little meat: he frames MD as a simple selenium-deficiency disease that is fully preventable and curable with extra selenium, a full 90-essential-nutrient program, and a gluten-free diet — the same selenium supplementation that 'wiped out' the disease in farm animals. He even warns that a gluten-damaged gut can't absorb selenium even when it's in the food ('you are not what you eat, you are what you absorb'). So pork is a fine muscle-meat protein, but eating pork is not his prescription for building muscle or beating MD — supplementing selenium is.",
+      "claim_text": "Wallach does name pork chops as the first of the 'muscle meats' — the meats where, as he puts it, muscle meat is 'King' — alongside beef steak, lamb chops, roasts, ground red meat, chicken and turkey. But his actual point about muscular dystrophy (what veterinarians call white muscle disease) is that it has nothing to do with eating too little meat: he frames MD as a simple selenium-deficiency disease that is fully preventable and curable with extra selenium, a full 90-essential-nutrient program, and a gluten-free diet — the same selenium supplementation that 'wiped out' the disease in farm animals. He even warns that a gluten-damaged gut can't absorb selenium even when it's in the food ('you are not what you eat, you are what you absorb').",
       "verbatim": "muscular dystrophy) where muscle\n\n(meat) is “King” (.e., pork chops, beef steak, lamb chops, roasts, ground red meat,\nchicken, turkey, etc.)",
       "locator": {
         "book": "epigenetics",
