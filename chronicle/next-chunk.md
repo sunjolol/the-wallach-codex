@@ -1,9 +1,16 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-21)
-# ★★★★★ 2026-07-21 (SESSION 9) — CORPUS-AUDIT TAIL REMEDIATION (unplanned pivot) · board 77/77 · kv 374 · pushed
+# ★★★★★ 2026-07-21 (SESSION 9) — CORPUS-AUDIT TAIL REMEDIATION + plant-derived retag sub-batch 1 · board 77/77 · kv 375 · pushed
 
 **⚠ WHY THE PIVOT (read first):** while scoping plant-derived Batch 2 (the 12 teal retags), the retag candidates were cross-checked against the 2026-07-17 corpus audit — which surfaced that the audit's "strip 65 editorial tails" action was NEVER completed (only 26/65 done) yet had been reported to Luneth as 100% complete, then logged as "next" and forgotten. A real silent failure. Luneth (justifiably) lost trust; the whole session pivoted to reconciling + remediating it. FULL reconciliation + per-claim table: `temporary/audit-2026-07-17/UNADDRESSED-EDITORIAL-TAILS.md`. Review console (his rulings): https://claude.ai/code/artifact/0260dd38-5069-4c48-bbc3-62f3079d3ed2
 
-## AUDIT-TAIL STATUS — 61 / 65 closed (kv 374)
+## ▶ NEXT SESSION — LUNETH'S ORDER (do in THIS sequence)
+1. **Re-mine the 4 audit-tail claims** (see AUDIT-TAIL STATUS below): IMMORT-115, IMMORT-209, RARE-295, RARE-074 (074 → PURGE if no clean salvage). NEW authored claim_text → present drafts for Luneth's review BEFORE seal.
+2. **Finish the remaining plant-derived retags:** sub-batch 2 = 4 colloid-science retags (EPIGEN-060 / IMMORT-024 / LETS-352 / RARE-088), same mechanism as sub-batch 1 → then Batch 4 (19 teal-new, cross-book number conflicts: humic-shale mg, mineral counts, culture ages).
+3. **Implement the rest of the demo into the live dashboard** — the 3 still-to-do demo surfaces: Ask Wallach, Products tab, Conditions tab (+ detail views). Everything else in live already beats the dated demo (memory `demo-elements-still-to-do`).
+
+**⚠ RETAG MECHANISM (learned this session):** the group selector is the claim's `about:["colloidal-minerals"]` field — but `mine_batch` CANNOT edit `about` (not in EDITABLE); set it via a transactional safe_write draft-edit, then seal. Enrichment cards go in `eden/corpus/search-enrichment.json` (subject `colloidal_minerals`). **New gate:** `search_index_wellformed` now REDs a non-numeric search-index `page` (a Roman-numeral front-matter page like RARE-024's 'xix' silently blanked Explore/Foods this session; derive now coerces non-int page → null).
+
+## AUDIT-TAIL STATUS — 61 / 65 closed (kv 375)
 - **26** fixed before this session · **24** ratified fixes applied this session (21 clean strips + 3 surgical; commit d97fce4e) · **2** false dose-misprint notes removed (LETS-052/221 — the sealed .txt already read the correct safe unit mg/mcg, so ONLY the false note needed deleting, NOT a source correction; commit f1857889) · **9** ruled KEEP (no change): EPIGEN-163, IMMORT-026/113/118/173, RARE-143, LETS-117, DDDL-024, EPIGEN-030.
 - **4 REMAIN — all need a RE-MINE (Luneth's ruling), NOT a tail-strip:**
   - **IMMORT-000115** (europium — whole opening "headline claim / anti-aging theme" + the "his implication" close are our editorializing) — immortality HAS page screenshots; re-read the page + re-author.
@@ -13,7 +20,7 @@
 - Method: re-mines produce NEW authored claim_text → require Luneth's review BEFORE seal (manual-review gate). Present drafts; do not seal unilaterally.
 
 ## ⏸ STILL QUEUED (pre-empted by the pivot) — Plant-derived Batch 2 (9 clean retags, NEVER applied)
-Batch 2 was scoped but not applied. The 12 retag candidates split: **9 audit-CLEAN** ready to retag (add `about:["colloidal-minerals"]` + author enrichment, verbatim untouched) — RARE-024/059/062/072/073 (Age-Beaters / Glacial-Milk arc; sub-batch-1 enrichment drafted in-chat: facets history/mechanism/sources/mechanism/stance) + EPIGEN-060 / IMMORT-024 / LETS-352 / RARE-088 (colloid-science, sub-batch 2). The 3 deferred: EPIGEN-089 (already rewritten/clean; load-bearing pdm-coverage `source_claim_id`), IMMORT-026 + RARE-074 (were also strip-tail-set members — handled/queued above). Then Batch 4 (19 teal-new) with the cross-book number conflicts (humic-shale mg, mineral counts, culture ages).
+**SUB-BATCH 1 DONE** (commit b042b494, kv 375): RARE-024/059/062/072/073 retagged + 5 enrichment cards; group 19→24. **Remaining below.** The 12 retag candidates split: **9 audit-CLEAN** (5 done) (add `about:["colloidal-minerals"]` + author enrichment, verbatim untouched) — RARE-024/059/062/072/073 (Age-Beaters / Glacial-Milk arc; sub-batch-1 enrichment drafted in-chat: facets history/mechanism/sources/mechanism/stance) + EPIGEN-060 / IMMORT-024 / LETS-352 / RARE-088 (colloid-science, sub-batch 2). The 3 deferred: EPIGEN-089 (already rewritten/clean; load-bearing pdm-coverage `source_claim_id`), IMMORT-026 + RARE-074 (were also strip-tail-set members — handled/queued above). Then Batch 4 (19 teal-new) with the cross-book number conflicts (humic-shale mg, mineral counts, culture ages).
 
 ---
 
