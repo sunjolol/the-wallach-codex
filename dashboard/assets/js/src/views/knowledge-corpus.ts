@@ -1,38 +1,34 @@
 /**
- * views/knowledge-corpus.ts — sealed-corpus render helpers for the Knowledge drawer
+ * views/knowledge-corpus.ts — Conditions-tab render + condition derivations
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The render functions that surface the eden/corpus claim graph inside the
- * Knowledge drawer: the Conditions tab (renderConditionsTab) and the shared corpus-claim renderer
- * (renderCorpusClaim), plus the coverage-tile lookup (tileOf).
- * Split out of views/knowledge.ts (Phase ε.2 cleanup) so each file stays one
- * cohesive concern — the drawer shell/tabs there, the corpus claim rendering
- * here. Both are layer `views`; the one-way views → state → core flow is intact
- * (this module imports only state/ + core/).
+ * The Conditions TAB of the Knowledge drawer: the ghost-number card grid
+ * (renderConditionsTab / renderConditionRow) + the coverage-tile lookup (tileOf)
+ * shared with the essentials page. Split out of views/knowledge.ts (Phase ε.2)
+ * so each file stays one cohesive concern.
+ *
+ * The condition DETAIL view is no longer here: it moved to the unified entity page
+ * (views/entity-page.ts::renderConditionPage, Phase H2 chunk 2) so a condition reuses
+ * the same kd-ep-* vocabulary as an essential. This file still OWNS the two condition
+ * derivations that page reuses — `conditionSynopsis` (the Wallach nutrient lead-in) and
+ * `essentialsInRoles` (the deficiency/treat/also split) — plus `familiarEssentialName`;
+ * all three are exported for the entity-page condition renderer.
  *
  * Pure render: reads the validated corpus via state/corpus.ts, holds no state,
- * escapes all text (escHTML; §00.B escape-by-default). Every claim shows the
- * neutral paraphrase + the EXACT book verbatim + its citation (§00.A).
+ * escapes all text (escHTML; §00.B escape-by-default). Both layers stay views →
+ * state → core (this module imports only state/ + core/).
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import type {
-  CorpusClaim,
-  CorpusCondition,
-} from '../core/schemas/index.js';
+import type { CorpusCondition } from '../core/schemas/index.js';
 import type { CoverageSnapshot, CoverageTile } from '../state/coverage.js';
 import { plural } from '../core/format.js';
+import { conditionCategory } from '../state/condition-categories.js';
 import {
   essentialDisplayName,
-  getBookLabel,
-  getCondition,
   listConditions,
   resolveClaims,
-  umbrellaChildren,
 } from '../state/corpus.js';
-import { conditionCategory } from '../state/condition-categories.js';
-import { glossaryDef } from '../state/glossary.js';
-import { glossify } from './glossify.js';
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
@@ -48,185 +44,7 @@ export function tileOf(snapshot: CoverageSnapshot | null, key: string): Coverage
   return snapshot.tiles.find(t => t.name === key) ?? null;
 }
 
-// ─── Corpus claim rendering (Essentials deep-dive) ─────────────────────────
-
-/** A claim kind slug → an uppercase human label (no literal map — §00.B). */
-function corpusKindLabel(kind: string): string {
-  return kind.replace(/[_-]+/g, ' ').toUpperCase();
-}
-
-/** Collapse a book verbatim's hard line-wraps into one clean line. */
-function collapseWS(s: string): string {
-  return s.replace(/\s+/g, ' ').trim();
-}
-
-/** A short "50 mg / daily" dose label, or '' when no structured dose. */
-function formatDose(dose: CorpusClaim['dose']): string {
-  if (dose === null || dose === undefined) {
-    return '';
-  }
-  const amount = (typeof dose.amount === 'number' || typeof dose.amount === 'string') ? String(dose.amount) : '';
-  const unit = typeof dose.unit === 'string' ? dose.unit : '';
-  const period = typeof dose.period === 'string' ? dose.period : '';
-  const head = [amount, unit].filter(s => s.length > 0).join(' ');
-  if (head.length === 0) {
-    return '';
-  }
-  return period.length > 0 ? `${head} / ${period}` : head;
-}
-
-/**
- * True when a claim is a row of Wallach's Fig. 8-1 "Base Line Nutritional
- * Supplement Program" dose table (Let's Play Doctor, ch. 8). Keyed off the dose
- * atom's `for_condition`, which the derive step already projects into the embed.
- * NOT the `dose-table` tag: that tag is overloaded (dddl uses it for prose
- * maintenance doses like germanium) AND tags aren't projected into the embed, so
- * `for_condition` is the precise, available signal. These verbatims are raw
- * 4-column rows (Nutrient · RDA · True Supplement Need · 30-Day Pharmacologic)
- * that read as an unlabeled run of numbers without their header — so the renderer
- * surfaces the column legend and keeps the source line-breaks.
- */
-const FIG_8_1_FOR_CONDITION = 'base-line supplement program (true supplement need)';
-function isFig81Row(claim: CorpusClaim): boolean {
-  return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION;
-}
-
-/**
- * The column legend for a Fig. 8-1 dose-table row — Wallach's OWN header names, each
- * wrapped as a glossary tooltip (dotted underline; hover/tap explains what "RDA" vs
- * "True Supplement Need" vs the pharmacologic dose mean) so the row's three numbers stop
- * reading as an unlabeled run. Only the column NAMES cross into the view; the numbers
- * live in the faithful verbatim rendered directly below it (§00.A).
- */
-function renderFig81Legend(): string {
-  const cols = ['RDA', 'True Supplement Need', '30-Day Pharmacologic'].map(glossCol).join(' · ');
-  return `
-      <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
-        <span class="kd-claim__legend-cols">Nutrient · ${cols}</span>
-      </div>`;
-}
-
-/** A legend column header wrapped as a glossary tooltip (definition from the lexicon). */
-function glossCol(term: string): string {
-  const def = glossaryDef(term);
-  if (def === null) {
-    return escHTML(term);
-  }
-  return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML(term)}: ${escHTML(def)}" data-def="${escHTML(def)}">${escHTML(term)}</span>`;
-}
-
-/**
- * The clicked nutrient's OWN row from a Fig. 8-1 verbatim. The sealed verbatim runs from
- * this nutrient's row into the NEXT one (a side-effect of the 60-char verbatim floor at
- * extraction time), so a reader on Biotin would otherwise see a stray Calcium row. Keep
- * the first line + any wrap continuation ("(time release)", "per day") and stop at the
- * next ALL-CAPS nutrient label or a footnote line. Faithful subset: the shown text is
- * still Wallach's exact row; the whole verbatim stays in the sealed data.
- */
-function fig81OwnRow(verbatim: string): string {
-  const lines = verbatim.split('\n');
-  const kept: string[] = [lines[0] ?? ''];
-  for (let i = 1; i < lines.length; i++) {
-    const t = (lines[i] ?? '').trim();
-    if (t.length === 0 || /^[A-Z]/.test(t) || t.startsWith('*')) {
-      break;
-    }
-    kept.push(lines[i] ?? '');
-  }
-  return kept.join('\n');
-}
-
-/**
- * The context label for a dose value — WHAT the number is. A Fig. 8-1 row's number is
- * Wallach's "True Supplement Need" (his daily maintenance target); any other dose claim
- * carries its own for_condition (e.g. "maintenance", "serious illness"), minus a trailing
- * parenthetical qualifier. Sealed data only (§00.A) — no number crosses here.
- */
-function doseContextLabel(claim: CorpusClaim): string {
-  if (isFig81Row(claim)) {
-    return 'True Supplement Need';
-  }
-  const fc = (claim.dose?.for_condition ?? '').trim();
-  return fc.replace(/\s*\([^)]*\)\s*$/, '').trim();
-}
-
-/**
- * The dose card at the head of a dose claim: a bold, eye-scannable VALUE with a label
- * naming what it is (point of the audit-2026-07-08 rework). Value + label come straight
- * from the sealed dose atom; nothing is computed in the view (§00.A). Empty when the
- * claim has no structured dose.
- */
-function renderDoseBlock(claim: CorpusClaim): string {
-  const value = formatDose(claim.dose);
-  if (value.length === 0) {
-    return '';
-  }
-  const label = doseContextLabel(claim);
-  const labelHTML = label.length > 0
-    ? `<span class="kd-claim__dose-label">${escHTML(label)}</span>`
-    : '';
-  return `
-      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML(value)}</span></div>`;
-}
-
-// ─── Source-table attribution header (Table/Fig ref → labeled header) ──
-
-/**
- * The attribution header for a claim whose paraphrase named an internal Table/Figure/page.
- * Styled with the shared .kd-claim__legend (same box as the Fig. 8-1 column legend) so the
- * two provenance surfaces read as one system: the label as the accent eyebrow, a muted
- * qualifier beside it. Only the label crosses into the view; the faithful verbatim below
- * carries the table's actual content (§00.A).
- */
-function renderRefHeader(label: string): string {
-  return `
-      <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">${escHTML(label)}</span>
-        <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
-      </div>`;
-}
-
-/** One corpus claim: paraphrase + optional dose card / table header + verbatim source + citation. */
-function renderCorpusClaim(claim: CorpusClaim): string {
-  const isTable = isFig81Row(claim);
-  // A claim carrying source_table describes one of Wallach's numbered tables/figures: the ref
-  // was removed from the sealed claim_text at mining time and the label surfaced here as a
-  // labeled attribution header instead (front-facing-human-first). The Fig. 8-1 dose rows keep
-  // their own dose-card + column-legend, so the table header is suppressed for them.
-  const refLabel = (!isTable && typeof claim.source_table === 'string' && claim.source_table.length > 0)
-    ? claim.source_table
-    : null;
-  // Fig. 8-1 rows show ONLY this nutrient's own row (fig81OwnRow drops the bled next-row +
-  // footnotes) with source line-breaks kept (CSS pre-line). Every other verbatim collapses
-  // its hard-wraps to one clean line. The verbatim shown is Wallach's exact words either way.
-  const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
-  const verbatimHTML = glossify(shownVerbatim);
-  const verbatimCls = isTable ? 'kd-claim__verbatim kd-claim__verbatim--rows' : 'kd-claim__verbatim';
-  return `
-    <div class="kd-claim">
-      <p class="kd-claim__text">${glossify(claim.claim_text)}</p>
-      ${renderDoseBlock(claim)}
-      ${isTable ? renderFig81Legend() : ''}
-      ${refLabel !== null ? renderRefHeader(refLabel) : ''}
-      <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
-      <div class="kd-claim__cite">CITED · ${escHTML(getBookLabel(claim.book))}</div>
-    </div>`;
-}
-
 // ─── Conditions tab ────────────────────────────────────────────────────────
-
-/** Most-salient claim roles first; the rest fall after, alphabetically. */
-const CORPUS_ROLE_PRIORITY = ['causes', 'deficiency_signs', 'toxicity_signs', 'protocols', 'doses', 'prognosis'];
-
-/** Priority-then-alphabetical ordering for the claim-role groups. */
-function corpusRoleOrder(a: string, b: string): number {
-  const ia = CORPUS_ROLE_PRIORITY.indexOf(a);
-  const ib = CORPUS_ROLE_PRIORITY.indexOf(b);
-  const ra = ia === -1 ? CORPUS_ROLE_PRIORITY.length : ia;
-  const rb = ib === -1 ? CORPUS_ROLE_PRIORITY.length : ib;
-  return ra !== rb ? ra - rb : (a < b ? -1 : a > b ? 1 : 0);
-}
 
 /**
  * Lowercased keyword blob for a condition row's `data-search` attribute so the
@@ -281,9 +99,10 @@ function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): st
  * Familiar label for an essential in the Conditions view — the letter vitamins
  * by the name a layperson recognizes ("Vitamin D", not the chemical display name
  * "Cholecalciferol"); everything else (B-vitamins, minerals, amino acids, fatty
- * acids) keeps its corpus display name, which is already the common name.
+ * acids) keeps its corpus display name, which is already the common name. Exported
+ * for the entity-page condition renderer's nutrient pills.
  */
-function familiarEssentialName(slug: string): string {
+export function familiarEssentialName(slug: string): string {
   const letter = /^vitamin-([a-z]\d*)$/.exec(slug)?.[1];
   return letter !== undefined ? `Vitamin ${letter.toUpperCase()}` : essentialDisplayName(slug);
 }
@@ -292,8 +111,9 @@ function familiarEssentialName(slug: string): string {
  * Distinct essential slugs named across the claims of the given role buckets —
  * lets the synopsis quote only the nutrients of the role it summarizes (the
  * deficiency CAUSE vs the treatment), never lumping the two together (§00.A).
+ * Exported for the entity-page condition renderer's relationship-aware nutrients block.
  */
-function essentialsInRoles(c: CorpusCondition, roleKeys: string[]): string[] {
+export function essentialsInRoles(c: CorpusCondition, roleKeys: string[]): string[] {
   const ids = roleKeys.flatMap(r => c.claims_by_role[r] ?? []);
   const seen = new Set<string>();
   for (const cl of resolveClaims(ids)) {
@@ -321,31 +141,16 @@ function joinEssentials(slugs: string[]): string {
 }
 
 /**
- * One labeled chip row of essentials in the condition deep-view. Empty when the
- * group has no members, so a condition with only a cause (or only a treatment)
- * shows just the one relevant group.
- */
-function essentialChipRow(label: string, slugs: string[]): string {
-  if (slugs.length === 0) {
-    return '';
-  }
-  const chips = slugs
-    .map(s => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML(familiarEssentialName(s))}</span>`)
-    .join('');
-  return `<div class="kd-corpus__sub">${escHTML(label)}</div><div class="kd-corpus__chips">${chips}</div>`;
-}
-
-/**
  * A condition-first lead-in that ties the condition to its nutrient(s) up front,
- * so clicking a condition opens WITH the connection instead of dropping the
- * reader mid-way into a nutrient's own write-up. Derived only from the
- * condition's Wallach-sourced claim structure (§00.A) and faithful to the claim
- * role it summarizes: a deficiency/cause role reads "linked to a deficiency of",
- * a treatment-only role "the protocol centers on". Empty when neither a
- * deficiency/cause nor a treatment nutrient is named for the condition (its
- * claim text already leads with the condition, so no lead-in is needed).
+ * so opening a condition leads WITH the connection instead of dropping the reader
+ * mid-way into a nutrient's own write-up. Derived only from the condition's
+ * Wallach-sourced claim structure (§00.A) and faithful to the claim role it
+ * summarizes: a deficiency/cause role reads "linked to a deficiency of", a
+ * treatment-only role "the protocol centers on". Empty when neither a
+ * deficiency/cause nor a treatment nutrient is named for the condition. Exported
+ * for the entity-page condition renderer's lede.
  */
-function conditionSynopsis(c: CorpusCondition): string {
+export function conditionSynopsis(c: CorpusCondition): string {
   const deficiency = essentialsInRoles(c, ['deficiency_signs', 'causes']);
   if (deficiency.length > 0) {
     return `Wallach links ${c.display_name} to a deficiency of ${joinEssentials(deficiency)}.`;
@@ -355,75 +160,6 @@ function conditionSynopsis(c: CorpusCondition): string {
     return `Wallach's protocol for ${c.display_name} centers on ${joinEssentials(treatment)}.`;
   }
   return '';
-}
-
-// An umbrella condition (cancer, dermatitis, ...) collects many subtypes; past this
-// many surfaced claims the list is long enough to warrant the "search your specific
-// type" tip. All 7 current umbrellas clear it; the gate future-proofs thin ones.
-const UMBRELLA_TIP_MIN_CLAIMS = 15;
-
-/**
- * The "broad category" note shown atop an umbrella condition -- steers a user
- * browsing e.g. Cancer toward their specific subtype, with two real examples.
- */
-function renderUmbrellaTip(childDisplayNames: readonly string[]): string {
-  const examples = childDisplayNames.slice(0, 2).map(n => `<em>${escHTML(n)}</em>`).join(', ');
-  const eg = examples.length > 0 ? ` (e.g. ${examples})` : '';
-  return `<p class="kd-condition-deep__umbrella-tip"><strong>Broad category</strong> \u2014 this collects every subtype. Search your specific type for a focused view${eg}.</p>`;
-}
-
-/**
- * The deep view for one condition — a condition-first synopsis, then claims
- * grouped by role + the essentials chips.
- */
-function renderConditionDeep(slug: string): string {
-  const c = getCondition(slug);
-  if (c === null) {
-    return '';
-  }
-  const groupsHTML = Object.keys(c.claims_by_role).sort(corpusRoleOrder).map((role) => {
-    const ids = c.claims_by_role[role] ?? [];
-    const claimsHTML = resolveClaims(ids).map(cl => renderCorpusClaim(cl)).join('');
-    return `
-      <div class="kd-corpus__group">
-        <div class="kd-corpus__group-label">${escHTML(corpusKindLabel(role))}</div>
-        ${claimsHTML}
-      </div>`;
-  }).join('');
-  const synopsis = conditionSynopsis(c);
-  // Split the involved essentials by claim role so the synopsis (which quotes the
-  // deficiency CAUSE nutrients) always matches a labeled chip group — never a
-  // silent disagreement between the lead-in and the chips (Luneth 2026-07-01).
-  const causeEss = essentialsInRoles(c, ['deficiency_signs', 'causes']);
-  const treatEss = essentialsInRoles(c, ['protocols', 'doses']);
-  const primary = new Set([...causeEss, ...treatEss]);
-  const otherEss = c.essentials_involved.filter(s => !primary.has(s));
-  const chipRows = [
-    essentialChipRow('DEFICIENCY / CAUSE', causeEss),
-    essentialChipRow('TREATED WITH', treatEss),
-    essentialChipRow('ALSO CITED', otherEss),
-  ].join('');
-  const books = c.books_cited.map(b => getBookLabel(b)).join(' · ');
-  const umbrellaKids = umbrellaChildren(c.slug);
-  const umbrellaTipHTML = (umbrellaKids.length > 0 && c.claim_count >= UMBRELLA_TIP_MIN_CLAIMS)
-    ? renderUmbrellaTip(umbrellaKids)
-    : '';
-
-  return `
-    <div class="kd-essential-deep kd-condition-deep">
-      <button class="kd-essential-deep__close" data-kd-action="condition-close" title="Close (Esc)">×</button>
-      <header class="kd-essential-deep__head">
-        <div class="kd-essential-deep__name-block">
-          <h3 class="kd-essential-deep__name">${escHTML(c.display_name)}</h3>
-          <div class="kd-essential-deep__cat">CONDITION · ${c.claim_count} CLAIM${c.claim_count === 1 ? '' : 'S'}</div>
-        </div>
-      </header>
-      ${umbrellaTipHTML}
-      ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML(synopsis)}</p>` : ''}
-      ${chipRows}
-      ${groupsHTML}
-      <div class="kd-corpus__foot">SOURCE · ${escHTML(books)}</div>
-    </div>`;
 }
 
 /**
@@ -437,15 +173,18 @@ function conditionsByWeight(conditions: readonly CorpusCondition[]): CorpusCondi
     || (a.display_name < b.display_name ? -1 : a.display_name > b.display_name ? 1 : 0));
 }
 
+/**
+ * The Conditions TAB — the ghost-number card grid. The condition DETAIL view is
+ * prepended by knowledge.ts (renderConditionPage from the unified entity page), so
+ * this renders the grid only; `selectedSlug` still drives the card's is-selected accent.
+ */
 export function renderConditionsTab(selectedSlug: string | null): string {
   const conditions = listConditions();
   if (conditions.length === 0) {
     return '<div class="kd-empty">— no conditions in the corpus yet —</div>';
   }
-  const deepHTML = selectedSlug !== null ? renderConditionDeep(selectedSlug) : '';
   const rowsHTML = conditionsByWeight(conditions).map(c => renderConditionRow(c, selectedSlug)).join('');
   return `
-    ${deepHTML}
     <div class="kd-section-head">ALL ${conditions.length} CONDITIONS · SORTED BY HOW MUCH WALLACH WROTE</div>
     <div class="kd-conditions-grid">${rowsHTML}</div>`;
 }

@@ -258,7 +258,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   chipToProduct.srcCursor = magSources.cursor;
 
   // 4b. Conditions tab — list over conditions.json + click a condition to expand
-  //     the role-grouped deep view (causes/protocols/doses/... with citations).
+  //     the entity-page condition detail (kd-ep--cond: synopsis lede + protocol + nutrients +
+  //     the full record grouped by kind, each claim Wallach-cited). Redesigned Phase H2 chunk 2.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="conditions"]')?.click());
   await wait(300);
   const conditions = await page.evaluate(() => {
@@ -270,25 +271,26 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(250);
   const condDeep = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const d = root ? root.querySelector('.kd-condition-deep') : null;
-    const claims = d ? [...d.querySelectorAll('.kd-claim')] : [];
+    const d = root ? root.querySelector('.kd-ep--cond') : null;
+    const claims = d ? [...d.querySelectorAll('.kd-ep-claim')] : [];
     const first = claims[0] || null;
-    const subs = d ? [...d.querySelectorAll('.kd-corpus__sub')].map(s => s.textContent.trim()) : [];
-    const synopsis = d ? (d.querySelector('.kd-condition-deep__synopsis')?.textContent || '') : '';
-    // The role-labeled chip groups must back the synopsis: a "deficiency of …"
-    // lead-in requires a DEFICIENCY / CAUSE group, a "centers on …" a TREATED WITH
-    // group — so the lead-in never disagrees with the chips (Luneth 2026-07-01).
+    // The nutrient-block labels (To restore / Caused by these deficiencies / Also cited alongside)
+    const subs = d ? [...d.querySelectorAll('.kd-ep-nutri__lbl')].map(s => s.textContent.replace(/\s+/g, ' ').trim()) : [];
+    const synopsis = d ? (d.querySelector('.kd-ep-lede')?.textContent || '') : '';
+    // The nutrient labels must back the synopsis: a "deficiency of …" lead-in requires a
+    // "Caused by these deficiencies" group; a "centers on …" a "To restore" group — so the
+    // lead-in never disagrees with the nutrient block (Luneth 2026-07-01, re-anchored H2).
     const synopsisCoherent =
-      (!/deficiency of/.test(synopsis) || subs.some(s => /DEFICIENCY/.test(s))) &&
-      (!/centers on/.test(synopsis) || subs.some(s => /TREATED/.test(s)));
+      (!/deficiency of/.test(synopsis) || subs.some(s => /Caused by these deficiencies|To restore/i.test(s))) &&
+      (!/centers on|protocol for/.test(synopsis) || subs.some(s => /To restore|Caused by these deficiencies/i.test(s)));
     return {
       shown: d !== null,
       claimCount: claims.length,
-      groupCount: d ? d.querySelectorAll('.kd-corpus__group').length : 0,
-      firstCite: first ? /DEAD DOCTORS|DDDL|RARE EARTHS|EPIGENETICS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(first.querySelector('.kd-claim__cite')?.textContent || '') : false,
+      groupCount: d ? d.querySelectorAll('.kd-ep-kind').length : 0,
+      firstCite: first ? /DEAD DOCTORS|DDDL|RARE EARTHS|EPIGENETICS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(first.querySelector('.kd-ep-claim__cite')?.textContent || '') : false,
       subLabels: subs,
       synopsisCoherent,
-      hasUmbrellaTip: !!(d && d.querySelector('.kd-condition-deep__umbrella-tip')),
+      hasUmbrellaTip: !!(d && d.querySelector('.kd-ep-umbrella')),
       glossCount: root ? root.querySelectorAll('.gloss').length : 0,
       glossSample: (() => { const g = root && root.querySelector('.gloss'); return g ? { word: g.textContent, def: g.getAttribute('data-def'), hasTabindex: g.getAttribute('tabindex') === '0' } : null; })(),
     };
@@ -311,8 +313,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(250);
   const umbrellaTip = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const d = root ? root.querySelector('.kd-condition-deep') : null;
-    const tip = d ? d.querySelector('.kd-condition-deep__umbrella-tip') : null;
+    const d = root ? root.querySelector('.kd-ep--cond') : null;
+    const tip = d ? d.querySelector('.kd-ep-umbrella') : null;
     return {
       shown: tip !== null,
       hasExample: tip ? /Breast Cancer|Colon Cancer/.test(tip.textContent) : false,
@@ -343,7 +345,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-condition="anosmia"]')?.click());
   await wait(150);
   const highlight = await page.evaluate(() => {
-    const deep = document.querySelector('#drawer-knowledge-mount .kd-condition-deep');
+    const deep = document.querySelector('#drawer-knowledge-mount .kd-ep--cond');
     const marks = deep ? [...deep.querySelectorAll('mark.kd-search-hl')] : [];
     return {
       deepShown: deep !== null,
@@ -470,7 +472,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['record: large entity keeps kind groups collapsed (Magnesium, 89 claims)', deep.recordKindsCollapsed === true],
     ['conditions: list rendered', conditions.rowCount >= 1],
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
-    ['conditions: claims grouped by role', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
+    ['conditions: claims grouped by kind (full record)', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],
     ['conditions: claim cites the book', condDeep.firstCite === true],
     ['conditions: synopsis backed by a labeled chip group', condDeep.synopsisCoherent === true],
     ['conditions: leaf condition has NO umbrella tip (diabetes)', condDeep.hasUmbrellaTip === false],

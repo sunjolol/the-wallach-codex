@@ -128,6 +128,8 @@
     "kd_ep_present_body_zero": "Wallach's own supplement table lists this at a need of zero — you already get enough from food, so there is nothing to add.",
     "kd_ep_present_covlabel": "Your status",
     "kd_ep_present_lead": "Present by default.",
+    "kd_ep_umbrella_lead": "Broad category",
+    "kd_ep_umbrella_body": "this collects every subtype. Open your specific type for a focused view",
     "kd_ep_present_notarget": "None needed",
     "kd_ep_present_sub": "present by default",
     "kd_ep_present_targetlabel": "Wallach daily target",

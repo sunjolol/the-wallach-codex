@@ -20,6 +20,8 @@ import { z } from 'zod';
 export const ConditionCategoryDefSchema = z.object({
   label: z.string(),
   color: z.string(),
+  /** Inner SVG markup for the body-system glyph (author-vetted; rendered stroke=--cat). Optional so pre-icon data degrades to no glyph. */
+  icon: z.string().optional(),
 });
 
 /** Root shape of condition-categories.json (any `_`-prefixed header keys are ignored). */

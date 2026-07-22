@@ -2,51 +2,63 @@
   "categories": {
     "bones-joints-muscles": {
       "label": "Bones, Joints & Muscles",
-      "color": "#4f76a3"
+      "color": "#4f76a3",
+      "icon": "<line x1='4' y1='9' x2='4' y2='15'/><line x1='7' y1='7' x2='7' y2='17'/><line x1='17' y1='7' x2='17' y2='17'/><line x1='20' y1='9' x2='20' y2='15'/><line x1='7' y1='12' x2='17' y2='12'/>"
     },
     "mind-nerves": {
       "label": "Mind & Nerves",
-      "color": "#7b62a3"
+      "color": "#7b62a3",
+      "icon": "<path d='M9 18h6'/><path d='M10 21h4'/><path d='M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z'/>"
     },
     "heart-blood-circulation": {
       "label": "Heart, Blood & Circulation",
-      "color": "#a83f48"
+      "color": "#a83f48",
+      "icon": "<path d='M12 20S4 15 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 6-8 11-8 11z'/>"
     },
     "skin-hair-nails": {
       "label": "Skin, Hair & Nails",
-      "color": "#bd7b34"
+      "color": "#bd7b34",
+      "icon": "<path d='M12 3 3 8l9 5 9-5-9-5z'/><path d='M3 13l9 5 9-5'/>"
     },
     "digestion-liver": {
       "label": "Digestion & Liver",
-      "color": "#6b8a43"
+      "color": "#6b8a43",
+      "icon": "<path d='M9 3h6'/><path d='M10 3v6l-4 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-8V3'/>"
     },
     "hormones-metabolism": {
       "label": "Hormones & Metabolism",
-      "color": "#2c8a7e"
+      "color": "#2c8a7e",
+      "icon": "<path d='M12 3 20 7.5v9L12 21 4 16.5v-9z'/><circle cx='12' cy='12' r='2.5'/>"
     },
     "reproductive-urinary": {
       "label": "Reproductive & Urinary",
-      "color": "#a25490"
+      "color": "#a25490",
+      "icon": "<path d='M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z'/>"
     },
     "respiratory": {
       "label": "Respiratory",
-      "color": "#3f8fa8"
+      "color": "#3f8fa8",
+      "icon": "<path d='M3 8h10a3 3 0 1 0-3-3'/><path d='M3 12h14a3 3 0 1 1-3 3'/><path d='M3 16h8'/>"
     },
     "immunity-infection": {
       "label": "Immunity & Infection",
-      "color": "#c9a13b"
+      "color": "#c9a13b",
+      "icon": "<path d='M12 3 20 6v5c0 5-4 8-8 10-4-2-8-5-8-10V6z'/>"
     },
     "eyes-ears-mouth": {
       "label": "Eyes, Ears & Mouth",
-      "color": "#5860a8"
+      "color": "#5860a8",
+      "icon": "<path d='M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z'/><circle cx='12' cy='12' r='3'/>"
     },
     "cellular-systemic": {
       "label": "Cellular / Systemic",
-      "color": "#5f636b"
+      "color": "#5f636b",
+      "icon": "<circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='3'/>"
     },
     "general-other": {
       "label": "General / Other",
-      "color": "#8a8a86"
+      "color": "#8a8a86",
+      "icon": "<circle cx='7' cy='7' r='1.5'/><circle cx='17' cy='7' r='1.5'/><circle cx='7' cy='17' r='1.5'/><circle cx='17' cy='17' r='1.5'/><circle cx='12' cy='12' r='1.5'/>"
     }
   },
   "conditions": {

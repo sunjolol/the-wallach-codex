@@ -1823,3 +1823,175 @@
 #drawer-knowledge-mount .kd-ep-getit__prod:hover { background: var(--fam-action, #5aa82c); color: #fff; }
 #drawer-knowledge-mount .kd-ep-getit__chev { opacity: 0.65; }
 #drawer-knowledge-mount .kd-ep-getit__more { font-size: 0.72rem; color: var(--ds-ink-faint); font-style: italic; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+ * CONDITION detail page (kd-ep--cond) — Phase H2 chunk 2
+ * Reuses the essential entity-page vocabulary (kd-ep-hero / seclabel / claim /
+ * record / pills / src). Adds only: the CATEGORY-tinted hero (hero-only, Luneth's
+ * call — the body-system colour rides in via --cat, set inline per condition; the
+ * claim groups keep the standard family colours), the relationship-aware nutrients
+ * block, the featured-protocol wrapper, and the products list.
+ * ════════════════════════════════════════════════════════════════════════════ */
+
+/* Hero HR stays the default subtle gray (the kd-ep-hero base 1px --ds-rule); the category colour lives in the icon + chip only (Luneth 2026-07-22). */
+#drawer-knowledge-mount .kd-ep-hero__cat {
+  display: inline-flex; align-items: center; gap: 6px; margin-bottom: 7px;
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-weight: 700;
+  color: var(--cat, var(--ds-ink-soft));
+}
+#drawer-knowledge-mount .kd-ep-hero__cat i {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--cat, var(--ds-accent));
+}
+
+/* Umbrella "broad category" steer (shown only on umbrella conditions) */
+#drawer-knowledge-mount .kd-ep-umbrella {
+  font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); line-height: 1.45;
+  color: var(--ds-ink-medium); margin: var(--ds-space-3) 0 0;
+  padding: var(--ds-space-2) var(--ds-space-3);
+  background: var(--ds-paper-deep); border-left: 2px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-sm);
+}
+#drawer-knowledge-mount .kd-ep-umbrella strong { color: var(--ds-ink); font-weight: 700; }
+#drawer-knowledge-mount .kd-ep-umbrella em { font-style: italic; color: var(--ds-ink-soft); }
+
+/* Featured protocol — the real sourced claims, green (--fam-action = "what to do") */
+#drawer-knowledge-mount .kd-ep-protocol {
+  --kd-ep-fam: var(--fam-action);
+  display: flex; flex-direction: column; gap: var(--ds-space-2);
+}
+
+/* Nutrients to restore — glimpse (green primary) + collapsible relationship lenses */
+#drawer-knowledge-mount .kd-ep-nutri {
+  border: 1px solid var(--ds-rule); background: var(--ds-paper-deep);
+  border-radius: var(--ds-radius-md); padding: var(--ds-space-4) var(--ds-space-5);
+}
+#drawer-knowledge-mount .kd-ep-nutri__lbl {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-weight: 700;
+  color: var(--ds-ink-soft);
+}
+#drawer-knowledge-mount .kd-ep-nutri__grp > .kd-ep-nutri__lbl { margin-bottom: var(--ds-space-3); }
+#drawer-knowledge-mount .kd-ep-nutri__dot {
+  width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto;
+}
+#drawer-knowledge-mount .kd-ep-nutri__dot--restore { background: var(--fam-action); }
+#drawer-knowledge-mount .kd-ep-nutri__dot--cause { background: var(--fam-signs); }
+#drawer-knowledge-mount .kd-ep-nutri__dot--also { background: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-ep-nutri__n {
+  margin-left: 5px; font-weight: 400; color: var(--ds-ink-faint);
+}
+/* the dive-in lenses */
+#drawer-knowledge-mount .kd-ep-nutri__rel {
+  margin-top: var(--ds-space-4); padding-top: var(--ds-space-3);
+  border-top: 1px dashed var(--ds-rule);
+}
+#drawer-knowledge-mount .kd-ep-nutri__rel > summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-ep-nutri__rel > summary::-webkit-details-marker { display: none; }
+/* (the nutrient-lens chevron was replaced by the Expand/Collapse pill styled below) */
+#drawer-knowledge-mount .kd-ep-nutri__rel[open] > summary { margin-bottom: var(--ds-space-3); }
+#drawer-knowledge-mount .kd-ep-nutri__cloud { margin-top: 0; }
+
+/* context nutrient pills (deficiency / also cited) — neutral, distinct from the green "take these" */
+#drawer-knowledge-mount button.kd-ep-pill--ctx { color: var(--ds-ink-soft); border-color: var(--ds-rule); }
+#drawer-knowledge-mount button.kd-ep-pill--ctx:hover { border-color: var(--ds-ink-soft); color: var(--ds-ink); background: var(--ds-paper-light); }
+
+/* Best products for this condition — reuses the kd-ep-src row */
+#drawer-knowledge-mount .kd-ep-prods { display: flex; flex-direction: column; gap: 4px; }
+
+/* ── Condition detail — round-2 refinements (Luneth 2026-07-22) ──────────────── */
+
+/* Category ICON tile in the hero — the element [Ca] tile, but a body-system glyph in --cat */
+#drawer-knowledge-mount .kd-ep-hero__sym--cat {
+  color: var(--cat, var(--ds-accent-deep));
+  border-color: color-mix(in srgb, var(--cat, var(--ds-accent)) 60%, var(--ds-rule));
+  box-shadow: inset 0 0 0 1px var(--ds-paper), 0 0 18px -6px color-mix(in srgb, var(--cat, var(--ds-accent)) 45%, transparent);
+}
+#drawer-knowledge-mount .kd-ep-hero__sym--cat svg {
+  width: 30px; height: 30px; fill: none; stroke: var(--cat, var(--ds-accent-deep));
+  stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+}
+/* the category chip now sits BELOW the name */
+#drawer-knowledge-mount .kd-ep-hero__idblock .kd-ep-hero__cat { margin: 0; }
+
+/* Claim card: when EXPANDED, the truncated teaser gives way to the FULL summary, family-coloured
+   + bold (no more truncated-then-repeated title); collapsed still shows the scannable teaser. */
+#drawer-knowledge-mount .kd-ep-claim__full { display: none; }
+#drawer-knowledge-mount .kd-ep-claim--record[open] .kd-ep-claim__q { display: none; }
+#drawer-knowledge-mount .kd-ep-claim--record[open] .kd-ep-claim__full {
+  display: block; font-family: var(--ds-font-display-interface); font-weight: 700;
+  font-size: var(--ds-text-sm); line-height: 1.5; color: var(--kd-ep-fam, var(--ds-ink));
+}
+/* bright orange reads too hot as a title — soften to accent-deep (matches the __short rule) */
+#drawer-knowledge-mount .kd-ep-kind[data-family="orange"] .kd-ep-claim[open] .kd-ep-claim__full { color: var(--ds-accent-deep); }
+
+/* Nutrient lens: a clear Expand ▾ / Collapse ▴ pill (kd-ep-back styling) — the tiny chevron read as un-clickable */
+#drawer-knowledge-mount .kd-ep-nutri__toggle {
+  flex: 0 0 auto; background: transparent; border: 1px solid var(--ds-rule);
+  color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase; padding: 3px 9px;
+  border-radius: var(--ds-radius-xs); white-space: nowrap;
+  transition: all var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-ep-nutri__rel > summary:hover .kd-ep-nutri__toggle { border-color: var(--ds-ink-soft); color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-ep-nutri__toggle-close { display: none; }
+#drawer-knowledge-mount .kd-ep-nutri__rel[open] .kd-ep-nutri__toggle-open { display: none; }
+#drawer-knowledge-mount .kd-ep-nutri__rel[open] .kd-ep-nutri__toggle-close { display: inline; }
+
+/* trim the gap above the first section (Wallach's protocol) by ~7px (32 → 25) */
+#drawer-knowledge-mount .kd-ep--cond .kd-ep-lede + .kd-ep-seclabel { margin-top: 25px; }
+
+/* ── breadcrumb rail — top of the drawer body. Our chrome language (mono micro, like the
+   back affordance), NOT the demo's inherited-serif look. Current crumb bold ink; the rest
+   are muted links; separators faint. ──────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-crumbs {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
+  margin: 0 0 var(--ds-space-4);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-mini);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase;
+}
+#drawer-knowledge-mount .kd-crumb {
+  background: none; border: 0; padding: 0; margin: 0; cursor: pointer;
+  font: inherit; letter-spacing: inherit; color: var(--ds-ink-soft);
+  transition: color var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount button.kd-crumb:hover { color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .kd-crumb--here { color: var(--ds-ink); font-weight: 700; }
+#drawer-knowledge-mount .kd-crumb__sep { color: var(--ds-ink-faint); }
+
+/* ── Condition detail — round-3 refinements (Luneth 2026-07-22) ──────────────── */
+
+/* hero subline: category chip + counts on ONE line, wide "·" separator (not stacked) */
+#drawer-knowledge-mount .kd-ep-hero__subline { display: flex; flex-wrap: wrap; align-items: center; margin-top: 7px; }
+#drawer-knowledge-mount .kd-ep-hero__subline .kd-ep-hero__meta { margin: 0; }
+#drawer-knowledge-mount .kd-ep-hero__sep { margin: 0 10px; color: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); }
+
+/* nudge every coloured status dot up 2px to sit optically centred on the uppercase text */
+#drawer-knowledge-mount .kd-ep-hero__cat i { transform: translateY(-2px); }
+
+/* expanded claim: room for the badge, and pull the title up so it lines up + drops the blank gap below */
+#drawer-knowledge-mount .kd-ep-claim--record[open] .kd-ep-claim__badge { margin-top: 5px; }
+#drawer-knowledge-mount .kd-ep-claim--record[open] .kd-ep-claim__full { margin-top: 3px; margin-bottom: -9px; }
+
+/* condition card: swap the orange accent for the body-system CATEGORY colour (border · glow · top hairline) */
+#drawer-knowledge-mount .kd-essential-deep.kd-ep--cond {
+  border-color: var(--cat, var(--ds-accent));
+  box-shadow: 0 4px 14px -3px color-mix(in srgb, var(--cat, var(--ds-accent)) 38%, transparent);
+}
+#drawer-knowledge-mount .kd-essential-deep.kd-ep--cond::before {
+  background: linear-gradient(to right, transparent 0%, var(--cat, var(--ds-accent)) 8%, var(--cat, var(--ds-accent)) 18%, transparent 22%, transparent 78%, var(--cat, var(--ds-accent)) 82%, var(--cat, var(--ds-accent)) 92%, transparent 95%);
+}
+
+/* the drawer-body scrollbar takes the condition's category colour via --kd-cond-scroll, published on
+   <html> in render() — a WebKit scrollbar pseudo reads ONLY root-level custom props (proven: the
+   app's orange thumb resolves var(--ds-accent), a :root prop). Firefox reads scrollbar-color; Chrome
+   the webkit thumb; both fall back to the app orange when the prop is unset (off a condition). */
+#drawer-knowledge-mount .kd-body { scrollbar-color: var(--kd-cond-scroll, var(--ds-accent)) var(--ds-paper-darker); }
+#drawer-knowledge-mount .kd-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--kd-cond-scroll, var(--ds-accent)) 0%, var(--kd-cond-scroll, var(--ds-accent-hot)) 100%);
+  border: 2px solid var(--ds-paper-darker); border-radius: var(--ds-radius-pill);
+}

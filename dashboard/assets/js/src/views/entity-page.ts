@@ -29,14 +29,17 @@
 import fattyAcidClarityData from '../../../data/fatty-acid-clarity-data.json';
 import { plural } from '../core/format.js';
 import {
+  type ConditionPage,
   type CorpusClaim,
+  type CorpusCondition,
+  type EntityKindGroup,
   type EssentialPage,
   FattyAcidClaritySchema,
   type OmegaFamily,
   SEARCH_FACETS,
   type SearchClaim,
 } from '../core/schemas/index.js';
-import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
+import { conditionCategory } from '../state/condition-categories.js';
 import { facetLabel, kindCategory, kindLabel, ui } from '../state/copy.js';
 import {
   conditionDisplayName,
@@ -48,14 +51,17 @@ import {
   getEssentialBySlug,
   humanizeSlug,
   resolveClaims,
+  umbrellaChildren,
 } from '../state/corpus.js';
-import { getEssentialPage } from '../state/entity-page.js';
+import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
 import { essentialLede, essentialWhy } from '../state/entity-copy.js';
+import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import { glossaryDef } from '../state/glossary.js';
+import { type CoverageRec, rankProductsForCoverage } from '../state/recommender.js';
 import { composeCite, getSearchClaim } from '../state/search.js';
 import { glossify } from './glossify.js';
-import { tileOf } from './knowledge-corpus.js';
-import { rankedSourcesForEssential, type RankedSourceRow } from './knowledge-products.js';
+import { conditionSynopsis, essentialsInRoles, familiarEssentialName, tileOf } from './knowledge-corpus.js';
+import { type RankedSourceRow, rankedSourcesForEssential } from './knowledge-products.js';
 
 // The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
 // quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
@@ -211,21 +217,20 @@ export function renderSearchCard(claim: SearchClaim): string {
  * full paraphrase + optional dose card / table header + Wallach's exact words +
  * citation. Resolves a CorpusClaim.
  */
-function renderRecordClaim(claim: CorpusClaim): string {
+function renderRecordClaim(claim: CorpusClaim, open = false): string {
   const isTable = isFig81Row(claim);
   const refLabel = (!isTable && typeof claim.source_table === 'string' && claim.source_table.length > 0)
     ? claim.source_table
     : null;
   const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
   const verbatimCls = isTable ? 'kd-ep-claim__verbatim kd-ep-claim__verbatim--rows' : 'kd-ep-claim__verbatim';
-  return `<details class="kd-ep-claim">
+  return `<details class="kd-ep-claim kd-ep-claim--record"${open ? ' open' : ''}>
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
-      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML(truncate(claim.claim_text, 116))}</span></span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
       <span class="kd-ep-claim__chev">▸</span>
     </summary>
     <div class="kd-ep-claim__body">
-      <div class="kd-ep-claim__answer">${glossify(claim.claim_text)}</div>
       ${renderDoseBlock(claim)}
       ${isTable ? renderFig81Legend() : ''}
       ${refLabel !== null ? renderRefHeader(refLabel) : ''}
@@ -789,16 +794,16 @@ function renderGroupRecord(page: EssentialPage): string {
       </details>`;
 }
 
-function renderRecord(page: EssentialPage): string {
-  if (page.record.length === 0) {
+function renderRecord(record: EntityKindGroup[], claimCount: number, label = 'The full record', hint = 'every claim · advanced'): string {
+  if (record.length === 0) {
     return '';
   }
-  const groups = [...page.record].sort((a, b) => {
+  const groups = [...record].sort((a, b) => {
     const ra = recordKindRank(a.kind);
     const rb = recordKindRank(b.kind);
     return ra !== rb ? ra - rb : (a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0);
   });
-  const total = page.claim_count;
+  const total = claimCount;
   // Few total claims (< 20) => expand every kind group by default; collapsing a 2-claim group
   // is pointless friction (Luneth). Large records stay collapsed so they remain scannable.
   const openKinds = total < 20 ? ' open' : '';
@@ -807,13 +812,13 @@ function renderRecord(page: EssentialPage): string {
     if (claims.length === 0) {
       return '';
     }
-    const cards = claims.map(renderRecordClaim).join('');
+    const cards = claims.map(cl => renderRecordClaim(cl)).join('');
     return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML(kindCategory(g.kind))}">
       <summary><span class="kd-ep-kind__label">${escHTML(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
       <div class="kd-ep-kind__body">${cards}</div>
     </details>`;
   }).join('');
-  return seclabel('The full record', 'every claim · advanced')
+  return seclabel(label, hint)
     + `<details class="kd-ep-record" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, 'claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
@@ -1225,7 +1230,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}
     ${renderGroupRecord(page)}
-    ${renderRecord(page)}
+    ${renderRecord(page.record, page.claim_count)}
     ${renderRelatedSection(page)}
   </div>`;
 }
@@ -1251,4 +1256,248 @@ export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
       (group as HTMLDetailsElement).open = true;
     }
   });
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// The CONDITION page (Phase H2, chunk 2 — the live Osteoporosis condition detail)
+// ═══════════════════════════════════════════════════════════════════════════
+//
+// A PURE PROJECTION of the generated condition record (state/entity-page →
+// conditions[slug]) joined with the sealed corpus at render time — same discipline
+// as renderEssentialPage (no canonical value as a literal, no per-condition branch:
+// osteoporosis is only the first slug styled, the renderer is data-driven and
+// degrades gracefully for a condition with fewer claims / no protocol).
+//
+// Section order (the layout restyled to the live kd-ep-* system — Luneth 2026-07-22):
+//   hero (category-tinted) · synopsis lede · Wallach's protocol (the REAL sourced
+//   claims, NEVER composited — §00.A) · nutrients to restore (relationship-aware,
+//   glimpse-then-dive) · best products for this · the full picture (every claim,
+//   grouped + filterable) · related conditions · keep exploring.
+//
+// Colour: the HERO carries the condition's body-system CATEGORY colour (continuity
+// with the ghost-number cards on the Conditions tab, Luneth's "hero-only" call); the
+// claim groups keep the standard family colours (kindCategory), so the claim language
+// stays consistent with the essentials page.
+
+/** The back affordance — the drawer's condition-close handler returns to the grid. */
+function conditionBackButton(): string {
+  return '<button class="kd-ep-back" data-kd-action="condition-close" type="button">‹ All conditions</button>';
+}
+
+/**
+ * The "broad category" steer atop an umbrella condition (cancer, dermatitis, …) —
+ * points a browser at their specific subtype. Gated on a real subtype list + enough
+ * claims to be worth it (thin umbrellas skip it). Ported from the old condition deep
+ * view so the steer survives the redesign.
+ */
+const UMBRELLA_TIP_MIN_CLAIMS = 15;
+function conditionUmbrellaTip(slug: string, claimCount: number): string {
+  const kids = umbrellaChildren(slug);
+  if (kids.length === 0 || claimCount < UMBRELLA_TIP_MIN_CLAIMS) {
+    return '';
+  }
+  const examples = kids.slice(0, 2).map(n => `<em>${escHTML(n)}</em>`).join(', ');
+  const eg = examples.length > 0 ? ` (e.g. ${examples})` : '';
+  return `<p class="kd-ep-umbrella"><strong>${escHTML(ui('kd_ep_umbrella_lead'))}</strong> — ${escHTML(ui('kd_ep_umbrella_body'))}${eg}.</p>`;
+}
+
+/** One navigable nutrient pill → the essential's detail page (by layout key, the join the click handler routes on). */
+function nutrientPill(slug: string, cls: string): string {
+  const lk = getEssentialBySlug(slug)?.layout_key ?? slug;
+  return pill(familiarEssentialName(slug), 'data-kd-essential', lk, cls);
+}
+
+/**
+ * NUTRIENTS TO RESTORE — the relationship-aware hybrid (Luneth 2026-07-22): not a flat
+ * unified list (loses the context of HOW each nutrient relates) and not a noisy three-up
+ * split. A prominent glimpse — the directed "to restore" set, what to actually take —
+ * then two collapsed lenses the reader can dive into: where the deficiency shows, and
+ * the wider set Wallach cites alongside. All pills navigate to the essential's page.
+ *
+ * The relationship split is Wallach-sourced (§00.A): `restore` is the directed maps(E,C)
+ * set from the artifact; the deficiency/also lenses come from the condition's claim ROLES
+ * (essentialsInRoles), never re-derived from raw co-occurrence.
+ */
+function renderNutrientsToRestore(page: ConditionPage, c: CorpusCondition | null): string {
+  const restore = page.restore;
+  const cause = c !== null ? essentialsInRoles(c, ['deficiency_signs', 'causes']) : [];
+  const shown = new Set([...restore, ...cause]);
+  const also = c !== null ? c.essentials_involved.filter(s => !shown.has(s)) : [];
+  if (restore.length === 0 && cause.length === 0 && also.length === 0) {
+    return '';
+  }
+
+  // Primary glimpse — the directed "to restore" pills (green = the action). If `restore`
+  // is empty (a condition with no directed set yet), the deficiency set stands in as the
+  // headline so the block is never empty-headed.
+  const primarySlugs = restore.length > 0 ? restore : cause;
+  const primaryLabel = restore.length > 0 ? 'To restore' : 'Caused by these deficiencies';
+  const primaryPills = primarySlugs.map(s => nutrientPill(s, 'kd-ep-pill--nut'));
+  const primary = `<div class="kd-ep-nutri__grp">
+      <div class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--restore"></i>${escHTML(primaryLabel)}<span class="kd-ep-nutri__n">${primarySlugs.length}</span></div>
+      ${pillCloud(primaryPills, 12)}
+    </div>`;
+
+  // Dive-in lenses — collapsed, so the page opens on the glimpse, not the whole graph. Each
+  // carries a clear Expand/Collapse pill on the right (the bare chevron read as un-clickable).
+  const relToggle = '<span class="kd-ep-nutri__toggle"><span class="kd-ep-nutri__toggle-open">Expand ▾</span><span class="kd-ep-nutri__toggle-close">Collapse ▴</span></span>';
+  const nutriLens = (dotCls: string, label: string, count: number, pillsHTML: string): string =>
+    `<details class="kd-ep-nutri__rel">
+        <summary><span class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--${dotCls}"></i>${escHTML(label)}<span class="kd-ep-nutri__n">${count}</span></span>${relToggle}</summary>
+        <div class="kd-ep-cloud kd-ep-nutri__cloud">${pillsHTML}</div>
+      </details>`;
+  const lenses: string[] = [];
+  // Show the deficiency lens only when `restore` is the primary (else it IS the primary).
+  if (restore.length > 0 && cause.length > 0) {
+    lenses.push(nutriLens('cause', 'Caused by these deficiencies', cause.length, cause.map(s => nutrientPill(s, 'kd-ep-pill--ctx')).join('')));
+  }
+  if (also.length > 0) {
+    lenses.push(nutriLens('also', 'Also cited alongside', also.length, also.map(s => nutrientPill(s, 'kd-ep-pill--ctx')).join('')));
+  }
+
+  return seclabel('Nutrients to restore')
+    + `<div class="kd-ep-nutri">${primary}${lenses.join('')}</div>`;
+}
+
+/**
+ * WALLACH'S PROTOCOL — features the REAL sourced protocol claims (protocol-kind, then
+ * a non-base-line dose claim), each as its own claim card. §00.A / the handoff's hard
+ * rule: NEVER composite several claims into one paraphrase — every sentence stays
+ * attributable to the claim it came from. The first (most specific regimen) opens by
+ * default; the rest are one tap away. Green (--fam-action) = the "what to do" family.
+ */
+function renderConditionProtocol(page: ConditionPage): string {
+  const claims = resolveClaims(page.protocol_claim_ids);
+  if (claims.length === 0) {
+    return '';
+  }
+  const cards = claims.map((cl, i) => renderRecordClaim(cl, i === 0)).join('');
+  return seclabel('Wallach’s protocol')
+    + `<div class="kd-ep-protocol">${cards}</div>`;
+}
+
+/** One best-product row for a condition — "covers N / M nutrients · $wholesale", clickable to the product. */
+function condProductRow(rec: CoverageRec, total: number, isBest: boolean): string {
+  const price = rec.price > 0 ? `$${rec.price.toFixed(2)}` : '—';
+  const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : '';
+  return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML(rec.productId)}">
+      <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
+      <span class="kd-ep-src__nm">${escHTML(rec.name)}${tag}</span>
+      <span class="kd-ep-src__amt">covers ${rec.supplies} / ${total}</span>
+      <span class="kd-ep-src__pr">${price}</span>
+      <span class="kd-ep-src__chev">›</span>
+    </button>`;
+}
+
+/**
+ * BEST PRODUCTS FOR THIS — the vault products that deliver the MOST of the condition's
+ * "to restore" nutrients, ranked by the shared cross-essential recommender
+ * (rankProductsForCoverage: supplies + breadth + wholesale value, kid-filtered). Each row
+ * shows how many of the M nutrients it covers + the wholesale price (the featured price).
+ * §00.A: composition + price are recommender inputs, never a Wallach target.
+ */
+function renderConditionProducts(page: ConditionPage): string {
+  const total = page.restore.length;
+  if (total === 0) {
+    return '';
+  }
+  const recs = rankProductsForCoverage({ want: page.restore, limit: 8 });
+  if (recs.length === 0) {
+    return '';
+  }
+  // "Best value" = most nutrients covered per dollar (perTenDollars), surfaced with a tag.
+  let best: CoverageRec | null = null;
+  for (const r of recs) {
+    if (best === null || r.perTenDollars > best.perTenDollars) {
+      best = r;
+    }
+  }
+  const TOP = 5;
+  const head = recs.slice(0, TOP).map(r => condProductRow(r, total, r.productId === best?.productId)).join('');
+  const rest = recs.slice(TOP);
+  const more = rest.length > 0
+    ? `<details class="kd-ep-more"><summary>Show all ${recs.length} products</summary><div class="kd-ep-more__body">${rest.map(r => condProductRow(r, total, false)).join('')}</div></details>`
+    : '';
+  return seclabel('Best products for this', 'ranked by how many nutrients each covers')
+    + `<div class="kd-ep-prods">${head}${more}</div>`;
+}
+
+/** "Related conditions" (orange) + "Keep exploring" (mixed) pill rails at the foot of a condition page. */
+function renderConditionRelated(page: ConditionPage): string {
+  const relatedCondSet = new Set(page.related_conditions);
+  let out = '';
+  if (page.related_conditions.length > 0) {
+    const pills = page.related_conditions.map(slug => pill(conditionDisplayName(slug), 'data-kd-condition', slug, 'kd-ep-pill--cond'));
+    out += seclabel('Related conditions') + pillCloud(pills, 12);
+  }
+  // Keep exploring = the co-occurrence graph MINUS the conditions already shown above
+  // (no duplicate pill), each resolved to whatever entity type it is.
+  const explore = page.related.filter(s => !relatedCondSet.has(s));
+  if (explore.length > 0) {
+    const pills = explore.map((slug) => {
+      const ess = getEssentialBySlug(slug);
+      if (ess !== null) {
+        return pill(essentialDisplayName(slug), 'data-kd-essential', ess.layout_key, 'kd-ep-pill--explore');
+      }
+      const cond = getCondition(slug);
+      if (cond !== null) {
+        return pill(cond.display_name, 'data-kd-condition', slug, 'kd-ep-pill--explore');
+      }
+      return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML(humanizeSlug(slug))}</span>`;
+    });
+    out += seclabel('Keep exploring') + pillCloud(pills, 14);
+  }
+  return out;
+}
+
+/**
+ * Render one condition entity page. `slug` is the catalog condition slug (the routing slot
+ * in knowledge.ts). Projects the generated condition record; the corpus join + the synopsis
+ * derivation resolve at render (nothing here holds a canonical value as a literal).
+ */
+export function renderConditionPage(slug: string): string {
+  const page = getConditionPage(slug);
+  const c = getCondition(slug);
+  if (page === null) {
+    // Graceful fallback: a condition with no generated record (should not happen — all 502
+    // are derived — but never render `undefined`).
+    const nm = escHTML(c?.display_name ?? humanizeSlug(slug));
+    return `<div class="kd-essential-deep kd-ep kd-ep--cond">
+      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${conditionBackButton()}</div>
+      <div class="kd-ep-empty">${escHTML(ui('ep_empty_record'))}</div>
+    </div>`;
+  }
+
+  const cat = conditionCategory(slug);
+  const catStyle = cat !== null ? ` style="--cat:${escHTML(cat.color)}"` : '';
+  // Author-vetted SVG glyph from the sealed curation, rendered UNescaped by design (it is
+  // markup, not user text; its stroke inherits --cat). '' when the category carries no icon.
+  const catIcon = (cat !== null && cat.icon.length > 0)
+    ? `<div class="kd-ep-hero__sym kd-ep-hero__sym--cat"><svg viewBox="0 0 24 24" aria-hidden="true">${cat.icon}</svg></div>`
+    : '';
+  const catChip = cat !== null
+    ? `<div class="kd-ep-hero__cat"><i></i>${escHTML(cat.label)}</div>`
+    : '';
+  const metaBits = [`${page.claim_count} ${plural(page.claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`].join(' · ');
+  const synonyms = page.synonyms.length > 0 ? ` · also: ${escHTML(page.synonyms.join(', '))}` : '';
+  const synopsis = c !== null ? conditionSynopsis(c) : '';
+  const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML(synopsis)}</p>` : '';
+
+  return `<div class="kd-essential-deep kd-ep kd-ep--cond"${catStyle}>
+    <div class="kd-ep-hero">
+      ${catIcon}
+      <div class="kd-ep-hero__idblock">
+        <h1 class="kd-ep-hero__name">${escHTML(page.name)}</h1>
+        <div class="kd-ep-hero__subline">${catChip}${catChip.length > 0 ? '<span class="kd-ep-hero__sep">·</span>' : ''}<span class="kd-ep-hero__meta">${metaBits}${synonyms}</span></div>
+      </div>
+      ${conditionBackButton()}
+    </div>
+    ${conditionUmbrellaTip(slug, page.claim_count)}
+    ${lede}
+    ${renderConditionProtocol(page)}
+    ${renderNutrientsToRestore(page, c)}
+    ${renderConditionProducts(page)}
+    ${renderRecord(page.record, page.claim_count, 'The full picture', 'every claim, grouped')}
+    ${renderConditionRelated(page)}
+  </div>`;
 }

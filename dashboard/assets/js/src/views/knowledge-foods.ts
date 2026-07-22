@@ -81,7 +81,10 @@ function sectionHeader(num: string, kicker: string, headingHTML: string, extra: 
  * one system with the rest of Knowledge (basics -> teal, protocol -> green).
  */
 function facetSections(claims: SearchClaim[]): string {
-  return SEARCH_FACETS.map((facet) => {
+  // Absorption one-off (Luneth 2026-07-22): lead with "What to do" (protocol) — the gluten-free
+  // corrective is the most useful thing on this tab, so it sits above Basics; the rest stay canonical.
+  const order = ['protocol', ...SEARCH_FACETS.filter(f => f !== 'protocol')];
+  return order.map((facet) => {
     const inFacet = claims.filter(c => c.facet === facet);
     if (inFacet.length === 0) {
       return '';

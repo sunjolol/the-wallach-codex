@@ -35,6 +35,8 @@ export interface ConditionCategory {
   slug: string;
   label: string;
   color: string;
+  /** Inner SVG markup for the category glyph (author-vetted; '' when the curation carries none). */
+  icon: string;
 }
 
 /**
@@ -52,5 +54,5 @@ export function conditionCategory(slug: string): ConditionCategory | null {
   if (def === undefined) {
     return null;
   }
-  return { slug: catId, label: def.label, color: def.color };
+  return { slug: catId, label: def.label, color: def.color, icon: def.icon ?? '' };
 }

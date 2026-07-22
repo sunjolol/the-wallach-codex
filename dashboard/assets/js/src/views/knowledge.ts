@@ -30,8 +30,11 @@ import {
   type LayoutSection,
   type LayoutTile,
 } from '../core/schemas/index.js';
+import { conditionCategory } from '../state/condition-categories.js';
 import { ui } from '../state/copy.js';
 import {
+  getCondition,
+  getEssentialByLayoutKey,
   getEssentialBySlug,
   listConditions,
 } from '../state/corpus.js';
@@ -42,7 +45,8 @@ import {
   getOrCompute,
 } from '../state/coverage.js';
 import { listEssentialPages } from '../state/entity-page.js';
-import { applyRecordFilter, renderEssentialPage } from './entity-page.js';
+import { vaultEntry } from '../state/recommender.js';
+import { applyRecordFilter, renderConditionPage, renderEssentialPage } from './entity-page.js';
 import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
 import { renderFoodsTab } from './knowledge-foods.js';
@@ -188,6 +192,52 @@ function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
 }
 
+// ── breadcrumb trail (ported from the signed-off demo; safeguards Luneth 2026-07-11) ──
+// A BOUNDED, LOOP-FREE back-history, not an append-forever log:
+//  (1) trail[0] is always the ORIGIN-tab anchor — an unbreakable fallback to exit the detail;
+//  (2) re-visiting an entity already in the trail JUMPS BACK to it (openDetail/goCrumb truncate)
+//      instead of appending — kills the Calcium <-> Osteoporosis back-and-forth that grew forever;
+//  (3) capped at CRUMB_MAX (oldest recent crumb dropped, the anchor kept).
+type EntityCrumbType = 'essential' | 'condition' | 'product';
+interface Crumb {
+  type: EntityCrumbType | 'tab';
+  val: string;
+  label: string;
+}
+const CRUMB_MAX = 6;
+function crumbKey(c: Crumb): string {
+  return `${c.type}:${c.val}`;
+}
+function capTrail(trail: Crumb[]): void {
+  while (trail.length > CRUMB_MAX && trail.length > 2) {
+    trail.splice(1, 1);
+  }
+}
+function tabLabel(tab: Tab): string {
+  return ui(`kd_tab_${tab}`) || tab.toUpperCase();
+}
+/** The display label for an entity crumb — resolved from state, never scraped from the clicked DOM. */
+function crumbLabel(type: EntityCrumbType, val: string): string {
+  if (type === 'essential') {
+    return getEssentialByLayoutKey(val)?.common_name ?? val;
+  }
+  if (type === 'condition') {
+    return getCondition(val)?.display_name ?? val;
+  }
+  return vaultEntry(val)?.name ?? val;
+}
+/** The breadcrumb rail at the top of the drawer body — shown only inside a detail (trail non-empty). */
+function renderCrumbs(trail: Crumb[]): string {
+  if (trail.length === 0) {
+    return '';
+  }
+  const items = trail.map((c, i) => i === trail.length - 1
+    ? `<span class="kd-crumb kd-crumb--here">${escHTML(c.label)}</span>`
+    : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML(c.label)}</button>`,
+  ).join('<span class="kd-crumb__sep" aria-hidden="true">\u203A</span>');
+  return `<nav class="kd-crumbs" aria-label="Breadcrumb">${items}</nav>`;
+}
+
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
@@ -242,13 +292,13 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
     case 'home': return renderHomeTab();
     case 'foods': return renderFoodsTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
-    case 'conditions': return renderConditionsTab(selectedCondition);
+    case 'conditions': return (selectedCondition !== null ? renderConditionPage(selectedCondition) : '') + renderConditionsTab(selectedCondition);
     case 'explore': return renderExploreTab();
     case 'products': return renderProductsTab(selectedProduct);
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, trail: Crumb[]): string {
   const snapshot = getOrCompute();
   const productsCount = productCount();
   const tabs = [
@@ -276,7 +326,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <span class="kd-search-kbd">/</span>
     </div>`
       : ''}
-    <div class="kd-body">${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
+    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
 }
 
 // ─── Search (per-tab DOM filter) ──────────────────────────────
@@ -380,10 +430,11 @@ export function mount(container: HTMLElement): DrawerHandle {
   let selectedCondition: string | null = null;
   let selectedProduct: string | null = null;
   let selectedTopic: string | null = null;
+  let trail: Crumb[] = [];
   let searchQuery = '';
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic, trail);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -397,6 +448,93 @@ export function mount(container: HTMLElement): DrawerHandle {
         applyKnowledgeSearch(body, activeTab, searchQuery);
       }
     }
+    // Scrollbar tint (cross-browser). A WebKit scrollbar pseudo reads ONLY root-level custom props
+    // (an element-level --cat on .kd-body can't reach it), and Firefox uses standard scrollbar-color
+    // — so publish the condition's category colour on <html> as --kd-cond-scroll (a validated hex
+    // from conditionCategory); the .kd-body scrollbar CSS reads it, orange when unset.
+    const scrollCat = (activeTab === 'conditions' && selectedCondition !== null)
+      ? conditionCategory(selectedCondition)?.color ?? ''
+      : '';
+    if (/^#[0-9a-f]{3,8}$/i.test(scrollCat)) {
+      document.documentElement.style.setProperty('--kd-cond-scroll', scrollCat);
+    }
+    else {
+      document.documentElement.style.removeProperty('--kd-cond-scroll');
+    }
+  };
+
+  // Opening an entity extends the trail; toggling the same entity off, or a tab switch, clears it.
+  const openDetail = (type: EntityCrumbType, val: string): void => {
+    const cur = type === 'essential' ? selectedEssential : type === 'condition' ? selectedCondition : selectedProduct;
+    const originTab = activeTab;
+    selectedEssential = null;
+    selectedCondition = null;
+    selectedProduct = null;
+    selectedTopic = null;
+    if (cur === val) {
+      // toggle off — close the detail, drop the trail
+      trail = [];
+      render();
+      return;
+    }
+    if (type === 'essential') {
+      selectedEssential = val;
+      activeTab = 'essentials';
+    }
+    else if (type === 'condition') {
+      selectedCondition = val;
+      activeTab = 'conditions';
+    }
+    else {
+      selectedProduct = val;
+      activeTab = 'products';
+    }
+    const crumb: Crumb = { type, val, label: crumbLabel(type, val) };
+    if (trail.length === 0) {
+      trail = [{ type: 'tab', val: originTab, label: tabLabel(originTab) }, crumb];
+    }
+    else {
+      const dup = trail.findIndex(c => crumbKey(c) === crumbKey(crumb));
+      if (dup >= 0) {
+        // loop guard: jump back to the existing crumb, never grow
+        trail = trail.slice(0, dup + 1);
+      }
+      else {
+        trail.push(crumb);
+        capTrail(trail);
+      }
+    }
+    render();
+  };
+  const goCrumb = (i: number): void => {
+    const c = trail[i];
+    selectedEssential = null;
+    selectedCondition = null;
+    selectedProduct = null;
+    selectedTopic = null;
+    // the origin anchor (or an invalid index) exits the detail
+    if (i < 0 || c === undefined || c.type === 'tab') {
+      trail = [];
+      if (c !== undefined && c.type === 'tab') {
+        activeTab = c.val as Tab;
+      }
+      render();
+      return;
+    }
+    trail = trail.slice(0, i + 1);
+    if (c.type === 'essential') {
+      selectedEssential = c.val;
+      activeTab = 'essentials';
+    }
+    else if (c.type === 'condition') {
+      selectedCondition = c.val;
+      activeTab = 'conditions';
+    }
+    else if (c.type === 'product') {
+      selectedProduct = c.val;
+      activeTab = 'products';
+    }
+    render();
   };
 
   const open = (): void => {
@@ -417,6 +555,8 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedCondition = null;
     selectedProduct = null;
     selectedTopic = null;
+    trail = [];
+    document.documentElement.style.removeProperty('--kd-cond-scroll');
     container.classList.remove('kd-open');
     container.innerHTML = '';
   };
@@ -448,32 +588,31 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedCondition = null;
         selectedProduct = null;
         selectedTopic = null;
+        trail = [];
         searchQuery = '';
         render();
       }
       return;
     }
+    const crumbEl = target.closest<HTMLElement>('[data-kd-crumb]');
+    if (crumbEl !== null) {
+      goCrumb(Number(crumbEl.getAttribute('data-kd-crumb')));
+      return;
+    }
     const essEl = target.closest<HTMLElement>('[data-kd-essential]');
     if (essEl !== null) {
       const k = essEl.getAttribute('data-kd-essential');
-      selectedEssential = (k !== null && k === selectedEssential) ? null : k;
-      // Opening an essential surfaces it on the Essentials tab, so a click from the
-      // Home hero or a cross-link pill lands on the page (mirrors the product branch).
-      if (selectedEssential !== null) {
-        activeTab = 'essentials';
+      if (k !== null) {
+        openDetail('essential', k);
       }
-      render();
       return;
     }
     const condEl = target.closest<HTMLElement>('[data-kd-condition]');
     if (condEl !== null) {
       const k = condEl.getAttribute('data-kd-condition');
-      selectedCondition = (k !== null && k === selectedCondition) ? null : k;
-      // Same as essentials: land the condition on its own tab (Home hero / cross-links).
-      if (selectedCondition !== null) {
-        activeTab = 'conditions';
+      if (k !== null) {
+        openDetail('condition', k);
       }
-      render();
       return;
     }
     const topicEl = target.closest<HTMLElement>('[data-kd-topic]');
@@ -483,20 +622,17 @@ export function mount(container: HTMLElement): DrawerHandle {
       // A topic renders as a full-body OVERLAY on top of whatever tab opened it (activeTab is left
       // untouched) so the back button returns you there — an Absorption card → back to Absorption,
       // an Explore chip → back to the all-topics grid (renderTab picks the label from the origin tab).
+      // topics are their own overlay with their own back — not part of the entity trail
+      trail = [];
       render();
       return;
     }
     const prodEl = target.closest<HTMLElement>('[data-kd-product]');
     if (prodEl !== null) {
-      // A product is clickable from the Products list OR an essentials-deep-dive
-      // chip: toggle its detail panel and switch to the Products tab so product
-      // detail always has one home.
       const k = prodEl.getAttribute('data-kd-product');
-      selectedProduct = (k !== null && k === selectedProduct) ? null : k;
-      if (selectedProduct !== null) {
-        activeTab = 'products';
+      if (k !== null) {
+        openDetail('product', k);
       }
-      render();
       return;
     }
     const actionEl = target.closest<HTMLElement>('[data-kd-action]');
@@ -507,18 +643,22 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'essential-close') {
         selectedEssential = null;
+        trail = [];
         render();
       }
       else if (action === 'condition-close') {
         selectedCondition = null;
+        trail = [];
         render();
       }
       else if (action === 'product-close') {
         selectedProduct = null;
+        trail = [];
         render();
       }
       else if (action === 'topic-close') {
         selectedTopic = null;
+        trail = [];
         render();
       }
       else if (action === 'explore-home') {
@@ -529,6 +669,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedEssential = null;
         selectedCondition = null;
         selectedProduct = null;
+        trail = [];
         searchQuery = '';
         render();
       }

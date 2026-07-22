@@ -5140,7 +5140,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   // assets/js/src/core/schemas/condition-categories.ts
   var ConditionCategoryDefSchema = external_exports.object({
     label: external_exports.string(),
-    color: external_exports.string()
+    color: external_exports.string(),
+    /** Inner SVG markup for the body-system glyph (author-vetted; rendered stroke=--cat). Optional so pre-icon data degrades to no glyph. */
+    icon: external_exports.string().optional()
   });
   var ConditionCategoriesSchema = external_exports.object({
     /** category-id → { label, colour }. */
@@ -18334,6 +18336,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_ep_present_body_zero: "Wallach's own supplement table lists this at a need of zero \u2014 you already get enough from food, so there is nothing to add.",
       kd_ep_present_covlabel: "Your status",
       kd_ep_present_lead: "Present by default.",
+      kd_ep_umbrella_lead: "Broad category",
+      kd_ep_umbrella_body: "this collects every subtype. Open your specific type for a focused view",
       kd_ep_present_notarget: "None needed",
       kd_ep_present_sub: "present by default",
       kd_ep_present_targetlabel: "Wallach daily target",
@@ -26560,6 +26564,599 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       toggleExpanded,
       isOpen: () => isOpen
     };
+  }
+
+  // assets/data/condition-categories.json
+  var condition_categories_default = {
+    categories: {
+      "bones-joints-muscles": {
+        label: "Bones, Joints & Muscles",
+        color: "#4f76a3",
+        icon: "<line x1='4' y1='9' x2='4' y2='15'/><line x1='7' y1='7' x2='7' y2='17'/><line x1='17' y1='7' x2='17' y2='17'/><line x1='20' y1='9' x2='20' y2='15'/><line x1='7' y1='12' x2='17' y2='12'/>"
+      },
+      "mind-nerves": {
+        label: "Mind & Nerves",
+        color: "#7b62a3",
+        icon: "<path d='M9 18h6'/><path d='M10 21h4'/><path d='M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z'/>"
+      },
+      "heart-blood-circulation": {
+        label: "Heart, Blood & Circulation",
+        color: "#a83f48",
+        icon: "<path d='M12 20S4 15 4 9a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 6-8 11-8 11z'/>"
+      },
+      "skin-hair-nails": {
+        label: "Skin, Hair & Nails",
+        color: "#bd7b34",
+        icon: "<path d='M12 3 3 8l9 5 9-5-9-5z'/><path d='M3 13l9 5 9-5'/>"
+      },
+      "digestion-liver": {
+        label: "Digestion & Liver",
+        color: "#6b8a43",
+        icon: "<path d='M9 3h6'/><path d='M10 3v6l-4 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-8V3'/>"
+      },
+      "hormones-metabolism": {
+        label: "Hormones & Metabolism",
+        color: "#2c8a7e",
+        icon: "<path d='M12 3 20 7.5v9L12 21 4 16.5v-9z'/><circle cx='12' cy='12' r='2.5'/>"
+      },
+      "reproductive-urinary": {
+        label: "Reproductive & Urinary",
+        color: "#a25490",
+        icon: "<path d='M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11z'/>"
+      },
+      respiratory: {
+        label: "Respiratory",
+        color: "#3f8fa8",
+        icon: "<path d='M3 8h10a3 3 0 1 0-3-3'/><path d='M3 12h14a3 3 0 1 1-3 3'/><path d='M3 16h8'/>"
+      },
+      "immunity-infection": {
+        label: "Immunity & Infection",
+        color: "#c9a13b",
+        icon: "<path d='M12 3 20 6v5c0 5-4 8-8 10-4-2-8-5-8-10V6z'/>"
+      },
+      "eyes-ears-mouth": {
+        label: "Eyes, Ears & Mouth",
+        color: "#5860a8",
+        icon: "<path d='M2 12s4-6 10-6 10 6 10 6-4 6-10 6-10-6-10-6z'/><circle cx='12' cy='12' r='3'/>"
+      },
+      "cellular-systemic": {
+        label: "Cellular / Systemic",
+        color: "#5f636b",
+        icon: "<circle cx='12' cy='12' r='9'/><circle cx='12' cy='12' r='3'/>"
+      },
+      "general-other": {
+        label: "General / Other",
+        color: "#8a8a86",
+        icon: "<circle cx='7' cy='7' r='1.5'/><circle cx='17' cy='7' r='1.5'/><circle cx='7' cy='17' r='1.5'/><circle cx='17' cy='17' r='1.5'/><circle cx='12' cy='12' r='1.5'/>"
+      }
+    },
+    conditions: {
+      abrasions: "skin-hair-nails",
+      abscess: "immunity-infection",
+      absence_attacks: "mind-nerves",
+      achalasia: "digestion-liver",
+      achlorhydria: "digestion-liver",
+      acidosis: "hormones-metabolism",
+      acne: "skin-hair-nails",
+      acrodermatitis_enteropathica: "skin-hair-nails",
+      addisons_disease: "hormones-metabolism",
+      adhd: "mind-nerves",
+      adrenal_exhaustion: "hormones-metabolism",
+      adrenoleukodystrophy: "mind-nerves",
+      ageusia: "eyes-ears-mouth",
+      aids: "immunity-infection",
+      airway_obstruction: "respiratory",
+      alcoholism: "mind-nerves",
+      alkalosis: "hormones-metabolism",
+      allergies: "immunity-infection",
+      alopecia: "skin-hair-nails",
+      als: "mind-nerves",
+      alzheimers: "mind-nerves",
+      amblyopia: "eyes-ears-mouth",
+      amenorrhea: "reproductive-urinary",
+      anal_abscess: "digestion-liver",
+      anaphylaxis: "immunity-infection",
+      anemia: "heart-blood-circulation",
+      anencephaly: "reproductive-urinary",
+      aneurysm: "heart-blood-circulation",
+      angina: "heart-blood-circulation",
+      angular_stomatitis: "eyes-ears-mouth",
+      ankylosing_spondylitis: "bones-joints-muscles",
+      anorexia: "general-other",
+      anorexia_nervosa: "mind-nerves",
+      anosmia: "eyes-ears-mouth",
+      anxiety: "mind-nerves",
+      aphthous_stomatitis: "eyes-ears-mouth",
+      arsenic_toxicity: "cellular-systemic",
+      arteriosclerosis: "heart-blood-circulation",
+      arthritis: "bones-joints-muscles",
+      asthma: "respiratory",
+      atherosclerosis: "heart-blood-circulation",
+      athletes_foot: "skin-hair-nails",
+      atopic_asthma: "respiratory",
+      atopic_dermatitis: "skin-hair-nails",
+      atrial_fibrillation: "heart-blood-circulation",
+      autism: "mind-nerves",
+      autoimmune_disorders: "immunity-infection",
+      backache: "bones-joints-muscles",
+      bad_breath: "eyes-ears-mouth",
+      basal_cell_carcinoma: "cellular-systemic",
+      bedsores: "skin-hair-nails",
+      bedwetting: "reproductive-urinary",
+      bee_stings: "skin-hair-nails",
+      bells_palsy: "mind-nerves",
+      benign_prostatic_hyperplasia: "reproductive-urinary",
+      beriberi: "mind-nerves",
+      bipolar_disorder: "mind-nerves",
+      birth_defects: "reproductive-urinary",
+      bladder_stones: "reproductive-urinary",
+      bleeding: "heart-blood-circulation",
+      bleeding_bowels: "digestion-liver",
+      bleeding_gums: "eyes-ears-mouth",
+      blepharitis: "eyes-ears-mouth",
+      blind_rage: "mind-nerves",
+      blindness: "eyes-ears-mouth",
+      bloating: "digestion-liver",
+      body_odor: "skin-hair-nails",
+      boils: "skin-hair-nails",
+      bone_pain: "bones-joints-muscles",
+      bone_spurs: "bones-joints-muscles",
+      brain_cancer: "cellular-systemic",
+      breast_cancer: "cellular-systemic",
+      breast_cysts: "reproductive-urinary",
+      breast_tenderness: "reproductive-urinary",
+      brittle_hair: "skin-hair-nails",
+      brittle_nails: "skin-hair-nails",
+      bronchitis: "respiratory",
+      bruises: "skin-hair-nails",
+      bruxism: "eyes-ears-mouth",
+      bulimia: "mind-nerves",
+      burns: "skin-hair-nails",
+      bursitis: "bones-joints-muscles",
+      bush_sickness: "cellular-systemic",
+      calcium_deposits: "bones-joints-muscles",
+      cancer: "cellular-systemic",
+      candidiasis: "immunity-infection",
+      canker_sores: "eyes-ears-mouth",
+      carcinoma: "cellular-systemic",
+      cardiac_arrest: "heart-blood-circulation",
+      cardiac_arrhythmia: "heart-blood-circulation",
+      cardiac_failure: "heart-blood-circulation",
+      cardiomyopathy: "heart-blood-circulation",
+      cardiovascular_disease: "heart-blood-circulation",
+      carpal_tunnel_syndrome: "bones-joints-muscles",
+      cataracts: "eyes-ears-mouth",
+      catarrh: "respiratory",
+      celiac_disease: "digestion-liver",
+      cerebellar_hypoplasia: "mind-nerves",
+      cerebral_palsy: "mind-nerves",
+      cerebrovascular_disease: "heart-blood-circulation",
+      cervical_dysplasia: "reproductive-urinary",
+      chalazion: "eyes-ears-mouth",
+      cheilosis: "eyes-ears-mouth",
+      chicken_pox: "immunity-infection",
+      chiggers: "skin-hair-nails",
+      chills: "general-other",
+      chondrodystrophy: "bones-joints-muscles",
+      chondromalacia: "bones-joints-muscles",
+      chorea: "mind-nerves",
+      chronic_fatigue: "cellular-systemic",
+      chronic_fatigue_syndrome: "cellular-systemic",
+      chronic_obstructive_pulmonary_disease: "respiratory",
+      circulatory_disease: "heart-blood-circulation",
+      cirrhosis: "digestion-liver",
+      cleft_lip: "eyes-ears-mouth",
+      cleft_palate: "eyes-ears-mouth",
+      cluster_headaches: "mind-nerves",
+      cold_sores: "immunity-infection",
+      colds: "respiratory",
+      colic: "digestion-liver",
+      colitis: "digestion-liver",
+      collagen_disease: "cellular-systemic",
+      colon_cancer: "cellular-systemic",
+      common_cold: "respiratory",
+      compression_fractures: "bones-joints-muscles",
+      congenital_ataxia: "mind-nerves",
+      congested_lungs: "respiratory",
+      congestive_heart_failure: "heart-blood-circulation",
+      conjunctivitis: "eyes-ears-mouth",
+      constipation: "digestion-liver",
+      convulsions: "mind-nerves",
+      cor_pulmonale: "respiratory",
+      corneal_ulcers: "eyes-ears-mouth",
+      coronary_artery_disease: "heart-blood-circulation",
+      cough: "respiratory",
+      cradle_cap: "skin-hair-nails",
+      cretinism: "hormones-metabolism",
+      creutzfeldt_jakob_disease: "mind-nerves",
+      criminal_behavior: "mind-nerves",
+      crohns_disease: "digestion-liver",
+      cuts: "skin-hair-nails",
+      cystic_fibrosis: "respiratory",
+      cystitis: "reproductive-urinary",
+      dandruff: "skin-hair-nails",
+      deafness: "eyes-ears-mouth",
+      degenerative_arthritis: "bones-joints-muscles",
+      degenerative_disc_disease: "bones-joints-muscles",
+      dementia: "mind-nerves",
+      demyelination: "mind-nerves",
+      dental_calculus: "eyes-ears-mouth",
+      dental_fluorosis: "eyes-ears-mouth",
+      depression: "mind-nerves",
+      dermatitis: "skin-hair-nails",
+      dermatosis: "skin-hair-nails",
+      diabetes: "hormones-metabolism",
+      diaper_rash: "skin-hair-nails",
+      diarrhea: "digestion-liver",
+      diplopia: "eyes-ears-mouth",
+      disagreeable_attitude: "mind-nerves",
+      diverticulitis: "digestion-liver",
+      dowagers_hump: "bones-joints-muscles",
+      down_syndrome: "reproductive-urinary",
+      dropsy: "general-other",
+      drug_addiction: "mind-nerves",
+      dry_skin: "skin-hair-nails",
+      dumping_syndrome: "digestion-liver",
+      dysentery: "digestion-liver",
+      dyslexia: "mind-nerves",
+      dysmenorrhea: "reproductive-urinary",
+      dyspepsia: "digestion-liver",
+      dysphagia: "digestion-liver",
+      earache: "eyes-ears-mouth",
+      ecchymosis: "heart-blood-circulation",
+      eclampsia: "reproductive-urinary",
+      eczema: "skin-hair-nails",
+      edema: "general-other",
+      electric_shock: "general-other",
+      emphysema: "respiratory",
+      encephalopathy: "mind-nerves",
+      enuresis: "reproductive-urinary",
+      enzootic_ataxia: "mind-nerves",
+      epilepsy: "mind-nerves",
+      erbs_palsy: "mind-nerves",
+      erectile_dysfunction: "reproductive-urinary",
+      esophageal_cancer: "cellular-systemic",
+      exophthalmos: "eyes-ears-mouth",
+      explosive_outbursts: "mind-nerves",
+      eye_redness: "eyes-ears-mouth",
+      failure_to_thrive: "cellular-systemic",
+      fatty_liver: "digestion-liver",
+      fever: "immunity-infection",
+      fibrocystic_breast_disease: "reproductive-urinary",
+      fibromyalgia: "bones-joints-muscles",
+      flatulence: "digestion-liver",
+      food_allergy: "immunity-infection",
+      fractures: "bones-joints-muscles",
+      freckles: "skin-hair-nails",
+      gallstones: "digestion-liver",
+      gangrene: "heart-blood-circulation",
+      gastroparesis: "digestion-liver",
+      geographic_tongue: "eyes-ears-mouth",
+      gestational_diabetes: "hormones-metabolism",
+      gingivitis: "eyes-ears-mouth",
+      glaucoma: "eyes-ears-mouth",
+      glucose_intolerance: "hormones-metabolism",
+      goiter: "hormones-metabolism",
+      gout: "bones-joints-muscles",
+      graves_disease: "hormones-metabolism",
+      gray_hair: "skin-hair-nails",
+      growing_pains: "bones-joints-muscles",
+      hangnails: "skin-hair-nails",
+      hashimotos_disease: "hormones-metabolism",
+      hay_fever: "immunity-infection",
+      headache: "mind-nerves",
+      heart_attack: "heart-blood-circulation",
+      heart_defects: "heart-blood-circulation",
+      heart_failure: "heart-blood-circulation",
+      heartburn: "digestion-liver",
+      heat_stroke: "general-other",
+      heavy_metal_toxicity: "cellular-systemic",
+      heel_spurs: "bones-joints-muscles",
+      hemochromatosis: "hormones-metabolism",
+      hemorrhoids: "digestion-liver",
+      hepatitis: "digestion-liver",
+      hernia: "digestion-liver",
+      herpes_simplex: "immunity-infection",
+      hiatal_hernia: "digestion-liver",
+      hiccoughs: "general-other",
+      high_cholesterol: "heart-blood-circulation",
+      high_triglycerides: "heart-blood-circulation",
+      hiv_aids: "immunity-infection",
+      hoarseness: "respiratory",
+      huntingtons_disease: "mind-nerves",
+      hydrocephalus: "mind-nerves",
+      hyperacidity: "digestion-liver",
+      hyperactivity: "mind-nerves",
+      hypercalcemia: "hormones-metabolism",
+      hyperinsulinemia: "hormones-metabolism",
+      hyperirritability: "mind-nerves",
+      hyperkinesis: "mind-nerves",
+      hyperparathyroidism: "hormones-metabolism",
+      hypertension: "heart-blood-circulation",
+      hyperthyroidism: "hormones-metabolism",
+      hypochlorhydria: "digestion-liver",
+      hypoglycemia: "hormones-metabolism",
+      hypogonadism: "hormones-metabolism",
+      hypokalemia: "hormones-metabolism",
+      hypophosphatemia: "hormones-metabolism",
+      hypotension: "heart-blood-circulation",
+      hypothermia: "general-other",
+      hypothyroidism: "hormones-metabolism",
+      hysteria: "mind-nerves",
+      ichthyosis: "skin-hair-nails",
+      immune_depression: "immunity-infection",
+      impetigo: "skin-hair-nails",
+      impotence: "reproductive-urinary",
+      incontinence: "reproductive-urinary",
+      indigestion: "digestion-liver",
+      infarction: "heart-blood-circulation",
+      infection: "immunity-infection",
+      infertility: "reproductive-urinary",
+      inflammation: "general-other",
+      influenza: "immunity-infection",
+      insomnia: "mind-nerves",
+      intermittent_claudication: "heart-blood-circulation",
+      irritable_bowel_syndrome: "digestion-liver",
+      ischemic_heart_disease: "heart-blood-circulation",
+      itching: "skin-hair-nails",
+      jaundice: "digestion-liver",
+      joint_pain: "bones-joints-muscles",
+      kawasaki_disease: "immunity-infection",
+      keratitis: "eyes-ears-mouth",
+      keratomalacia: "eyes-ears-mouth",
+      keratosis: "skin-hair-nails",
+      kernicterus: "mind-nerves",
+      keshan_disease: "heart-blood-circulation",
+      ketoacidosis: "hormones-metabolism",
+      ketosis: "hormones-metabolism",
+      kidney_disease: "reproductive-urinary",
+      kidney_stones: "reproductive-urinary",
+      korsakoffs_syndrome: "mind-nerves",
+      kwashiorkor: "cellular-systemic",
+      kyphosis: "bones-joints-muscles",
+      labor: "reproductive-urinary",
+      lactase_deficiency: "digestion-liver",
+      lactose_intolerance: "digestion-liver",
+      laryngitis: "respiratory",
+      lead_poisoning: "cellular-systemic",
+      learning_disabilities: "mind-nerves",
+      legg_perthes: "bones-joints-muscles",
+      legionnaires_disease: "respiratory",
+      leptospirosis: "immunity-infection",
+      leukemia: "heart-blood-circulation",
+      leukopenia: "heart-blood-circulation",
+      leukorrhea: "reproductive-urinary",
+      lice: "skin-hair-nails",
+      liver_cancer: "cellular-systemic",
+      liver_cirrhosis: "digestion-liver",
+      liver_disease: "digestion-liver",
+      lordosis: "bones-joints-muscles",
+      low_back_pain: "bones-joints-muscles",
+      low_libido: "reproductive-urinary",
+      lung_cancer: "cellular-systemic",
+      lupus: "immunity-infection",
+      lyme_disease: "immunity-infection",
+      macular_degeneration: "eyes-ears-mouth",
+      mad_cow_disease: "mind-nerves",
+      malabsorption: "digestion-liver",
+      male_pattern_baldness: "skin-hair-nails",
+      malnutrition: "cellular-systemic",
+      measles: "immunity-infection",
+      melanoma: "cellular-systemic",
+      melasma: "skin-hair-nails",
+      memory_loss: "mind-nerves",
+      menieres_disease: "eyes-ears-mouth",
+      meningitis: "immunity-infection",
+      meningocele: "reproductive-urinary",
+      menkes_syndrome: "cellular-systemic",
+      menopause: "reproductive-urinary",
+      menorrhagia: "reproductive-urinary",
+      mental_retardation: "mind-nerves",
+      mercury_poisoning: "cellular-systemic",
+      migraine: "mind-nerves",
+      minamata_disease: "cellular-systemic",
+      miscarriage: "reproductive-urinary",
+      mitral_valve_prolapse: "heart-blood-circulation",
+      monckebergs_arteriosclerosis: "heart-blood-circulation",
+      morning_sickness: "reproductive-urinary",
+      motion_sickness: "general-other",
+      multiple_sclerosis: "mind-nerves",
+      mumps: "immunity-infection",
+      muscle_cramps: "bones-joints-muscles",
+      muscle_twitches: "bones-joints-muscles",
+      muscular_dystrophy: "bones-joints-muscles",
+      myelofibrosis: "heart-blood-circulation",
+      myopia: "eyes-ears-mouth",
+      narcolepsy: "mind-nerves",
+      nasal_catarrh: "respiratory",
+      nervous_heart: "heart-blood-circulation",
+      nervous_tension: "mind-nerves",
+      neural_tube_defects: "reproductive-urinary",
+      neuralgia: "mind-nerves",
+      neuropathy: "mind-nerves",
+      neutropenia: "heart-blood-circulation",
+      night_blindness: "eyes-ears-mouth",
+      night_terrors: "mind-nerves",
+      nosebleeds: "respiratory",
+      obesity: "hormones-metabolism",
+      oligospermia: "reproductive-urinary",
+      omphalocele: "reproductive-urinary",
+      opiate_withdrawal: "mind-nerves",
+      optic_nerve_atrophy: "eyes-ears-mouth",
+      oral_cancer: "cellular-systemic",
+      organic_brain_syndrome: "mind-nerves",
+      ornithosis: "immunity-infection",
+      osteitis_fibrosa: "bones-joints-muscles",
+      osteoarthritis: "bones-joints-muscles",
+      osteofibrosis: "bones-joints-muscles",
+      osteomalacia: "bones-joints-muscles",
+      osteopenia: "bones-joints-muscles",
+      osteoporosis: "bones-joints-muscles",
+      osteosarcoma: "cellular-systemic",
+      osteosclerosis: "bones-joints-muscles",
+      otitis: "eyes-ears-mouth",
+      pagets_disease: "bones-joints-muscles",
+      pain: "general-other",
+      palpitations: "heart-blood-circulation",
+      pancreatic_cancer: "cellular-systemic",
+      pancreatic_fibrosis: "digestion-liver",
+      pancreatitis: "digestion-liver",
+      panic_attacks: "mind-nerves",
+      paranoia: "mind-nerves",
+      parasites: "immunity-infection",
+      parkinsonism: "mind-nerves",
+      parkinsons_disease: "mind-nerves",
+      pediculosis: "skin-hair-nails",
+      pellagra: "skin-hair-nails",
+      peptic_ulcers: "digestion-liver",
+      periodontal_disease: "eyes-ears-mouth",
+      peripheral_arterial_disease: "heart-blood-circulation",
+      peripheral_neuropathy: "mind-nerves",
+      peritonsillar_abscess: "respiratory",
+      pernicious_anemia: "heart-blood-circulation",
+      phlebitis: "heart-blood-circulation",
+      photophobia: "eyes-ears-mouth",
+      pica: "mind-nerves",
+      pilonidal_cyst: "skin-hair-nails",
+      plumbism: "cellular-systemic",
+      poison_ivy: "skin-hair-nails",
+      poor_circulation: "heart-blood-circulation",
+      post_partum_hemorrhage: "reproductive-urinary",
+      prediabetes: "hormones-metabolism",
+      preeclampsia: "reproductive-urinary",
+      pregnancy_toxemia: "reproductive-urinary",
+      pms: "reproductive-urinary",
+      prolonged_clotting_time: "heart-blood-circulation",
+      prostate_cancer: "cellular-systemic",
+      pruritus: "skin-hair-nails",
+      psoriasis: "skin-hair-nails",
+      psychosis: "mind-nerves",
+      ptosis: "eyes-ears-mouth",
+      pubic_lice: "skin-hair-nails",
+      pyorrhea: "eyes-ears-mouth",
+      q_fever: "immunity-infection",
+      quinsy: "respiratory",
+      rabbit_fever: "immunity-infection",
+      rabies: "immunity-infection",
+      radial_nerve_palsy: "mind-nerves",
+      raynauds_disease: "heart-blood-circulation",
+      reactive_hypoglycemia: "hormones-metabolism",
+      receding_gums: "eyes-ears-mouth",
+      rectal_itching: "skin-hair-nails",
+      renal_failure: "reproductive-urinary",
+      repetitive_motion_syndrome: "bones-joints-muscles",
+      respiratory_disease: "respiratory",
+      restless_leg_syndrome: "mind-nerves",
+      reyes_syndrome: "mind-nerves",
+      rheumatic_fever: "immunity-infection",
+      rheumatoid_arthritis: "bones-joints-muscles",
+      rickets: "bones-joints-muscles",
+      ringworm: "skin-hair-nails",
+      rocky_mountain_spotted_fever: "immunity-infection",
+      roseola: "immunity-infection",
+      rubella: "immunity-infection",
+      sarcoma: "cellular-systemic",
+      scabies: "skin-hair-nails",
+      scarlatina: "immunity-infection",
+      schistosomiasis: "immunity-infection",
+      schizophrenia: "mind-nerves",
+      sciatica: "mind-nerves",
+      scoliosis: "bones-joints-muscles",
+      scurvy: "cellular-systemic",
+      sebaceous_cyst: "skin-hair-nails",
+      seborrheic_dermatitis: "skin-hair-nails",
+      secondary_hyperparathyroidism: "hormones-metabolism",
+      shingles: "immunity-infection",
+      shwachman_syndrome: "digestion-liver",
+      sickle_cell_anemia: "heart-blood-circulation",
+      sids: "respiratory",
+      sore_throat: "respiratory",
+      spider_bite: "skin-hair-nails",
+      spider_veins: "heart-blood-circulation",
+      spina_bifida: "reproductive-urinary",
+      spinal_stenosis: "bones-joints-muscles",
+      spontaneous_fractures: "bones-joints-muscles",
+      sprain: "bones-joints-muscles",
+      stomach_cancer: "cellular-systemic",
+      stomatitis: "eyes-ears-mouth",
+      strabismus: "eyes-ears-mouth",
+      strain: "bones-joints-muscles",
+      stress: "general-other",
+      stroke: "heart-blood-circulation",
+      sty: "eyes-ears-mouth",
+      sudden_cardiac_death: "heart-blood-circulation",
+      swimmers_ear: "eyes-ears-mouth",
+      syphilis: "immunity-infection",
+      tachycardia: "heart-blood-circulation",
+      tapeworms: "immunity-infection",
+      tardive_dyskinesia: "mind-nerves",
+      teeth_discoloration: "eyes-ears-mouth",
+      teething: "eyes-ears-mouth",
+      tetanus: "immunity-infection",
+      tetany: "mind-nerves",
+      thallium_poisoning: "cellular-systemic",
+      throat_cancer: "cellular-systemic",
+      thrombosis: "heart-blood-circulation",
+      thrush: "immunity-infection",
+      thyroid_cancer: "cellular-systemic",
+      thyroid_disease: "hormones-metabolism",
+      tinnitus: "eyes-ears-mouth",
+      tmj: "bones-joints-muscles",
+      tongue_atrophy: "eyes-ears-mouth",
+      tonsillitis: "respiratory",
+      tooth_decay: "eyes-ears-mouth",
+      toothache: "eyes-ears-mouth",
+      torticollis: "bones-joints-muscles",
+      tourette_syndrome: "mind-nerves",
+      toxic_shock_syndrome: "immunity-infection",
+      toxoplasmosis: "immunity-infection",
+      trigeminal_neuralgia: "mind-nerves",
+      tularemia: "immunity-infection",
+      umbilical_hernia: "digestion-liver",
+      urinary_tract_infection: "reproductive-urinary",
+      uterine_cancer: "cellular-systemic",
+      uterine_fibroids: "reproductive-urinary",
+      vaginitis: "reproductive-urinary",
+      varicose_veins: "heart-blood-circulation",
+      vascular_dementia: "mind-nerves",
+      vertigo: "mind-nerves",
+      violent_behavior: "mind-nerves",
+      vitiligo: "skin-hair-nails",
+      vomiting: "digestion-liver",
+      warts: "skin-hair-nails",
+      water_intoxication: "general-other",
+      weight_loss: "general-other",
+      weils_disease: "immunity-infection",
+      wernicke_korsakoff_syndrome: "mind-nerves",
+      white_muscle_disease: "bones-joints-muscles",
+      white_spots_fingernails: "skin-hair-nails",
+      wilsons_syndrome: "hormones-metabolism",
+      wounds: "skin-hair-nails",
+      xerophthalmia: "eyes-ears-mouth"
+    }
+  };
+
+  // assets/js/src/state/condition-categories.ts
+  var EMPTY2 = { categories: {}, conditions: {} };
+  var cached3 = null;
+  function store() {
+    if (cached3 === null) {
+      const parsed = ConditionCategoriesSchema.safeParse(condition_categories_default);
+      cached3 = parsed.success ? parsed.data : EMPTY2;
+    }
+    return cached3;
+  }
+  function conditionCategory(slug) {
+    const s = store();
+    const catId = s.conditions[slug];
+    if (catId === void 0) {
+      return null;
+    }
+    const def = s.categories[catId];
+    if (def === void 0) {
+      return null;
+    }
+    return { slug: catId, label: def.label, color: def.color, icon: def.icon ?? "" };
   }
 
   // assets/data/entity-page-data.json
@@ -60158,17 +60755,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   };
 
   // assets/js/src/state/entity-page.ts
-  var EMPTY2 = { essentials: {}, conditions: {} };
-  var cached3 = null;
+  var EMPTY3 = { essentials: {}, conditions: {} };
+  var cached4 = null;
   function data2() {
-    if (cached3 === null) {
+    if (cached4 === null) {
       const parsed = EntityPageDataSchema.safeParse(entity_page_data_default);
-      cached3 = parsed.success ? { essentials: parsed.data.essentials, conditions: parsed.data.conditions } : EMPTY2;
+      cached4 = parsed.success ? { essentials: parsed.data.essentials, conditions: parsed.data.conditions } : EMPTY3;
     }
-    return cached3;
+    return cached4;
   }
   function getEssentialPage(slug) {
     return data2().essentials[slug] ?? null;
+  }
+  function getConditionPage(slug) {
+    return data2().conditions[slug] ?? null;
   }
   function listEssentialPages() {
     return Object.entries(data2().essentials).map(([slug, e]) => ({
@@ -60271,14 +60871,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   };
 
   // assets/js/src/state/entity-copy.ts
-  var EMPTY3 = { essentials: {}, conditions: {} };
-  var cached4 = null;
+  var EMPTY4 = { essentials: {}, conditions: {} };
+  var cached5 = null;
   function data3() {
-    if (cached4 === null) {
+    if (cached5 === null) {
       const parsed = EntityCopySchema.safeParse(entity_copy_default);
-      cached4 = parsed.success ? parsed.data : EMPTY3;
+      cached5 = parsed.success ? parsed.data : EMPTY4;
     }
-    return cached4;
+    return cached5;
   }
   function essentialLede(slug) {
     return data3().essentials[slug]?.lede ?? "";
@@ -61624,8 +62224,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   };
 
   // assets/js/src/state/glossary.ts
-  var EMPTY4 = { terms: [] };
-  var cached5 = null;
+  var EMPTY5 = { terms: [] };
+  var cached6 = null;
   function escapeRegExp(s) {
     return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
@@ -61636,9 +62236,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return normalizedKey.split(" ").map(escapeRegExp).join("[\\s\\-]+");
   }
   function index() {
-    if (cached5 === null) {
+    if (cached6 === null) {
       const parsed = GlossarySchema.safeParse(glossary_default);
-      const g = parsed.success ? parsed.data : EMPTY4;
+      const g = parsed.success ? parsed.data : EMPTY5;
       const defByKey = /* @__PURE__ */ new Map();
       for (const e of g.terms) {
         defByKey.set(normKey(e.term), e.plain);
@@ -61648,9 +62248,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       }
       const keys = [...defByKey.keys()].sort((a, b) => b.length - a.length);
       const re = keys.length > 0 ? new RegExp(`\\b(${keys.map(keyToPattern).join("|")})(?!\\w)`, "gi") : null;
-      cached5 = { re, defByKey };
+      cached6 = { re, defByKey };
     }
-    return cached5;
+    return cached6;
   }
   function glossaryRegex() {
     const re = index().re;
@@ -69696,587 +70296,6 @@ deaths, blood clots, sterility`,
     return out;
   }
 
-  // assets/data/condition-categories.json
-  var condition_categories_default = {
-    categories: {
-      "bones-joints-muscles": {
-        label: "Bones, Joints & Muscles",
-        color: "#4f76a3"
-      },
-      "mind-nerves": {
-        label: "Mind & Nerves",
-        color: "#7b62a3"
-      },
-      "heart-blood-circulation": {
-        label: "Heart, Blood & Circulation",
-        color: "#a83f48"
-      },
-      "skin-hair-nails": {
-        label: "Skin, Hair & Nails",
-        color: "#bd7b34"
-      },
-      "digestion-liver": {
-        label: "Digestion & Liver",
-        color: "#6b8a43"
-      },
-      "hormones-metabolism": {
-        label: "Hormones & Metabolism",
-        color: "#2c8a7e"
-      },
-      "reproductive-urinary": {
-        label: "Reproductive & Urinary",
-        color: "#a25490"
-      },
-      respiratory: {
-        label: "Respiratory",
-        color: "#3f8fa8"
-      },
-      "immunity-infection": {
-        label: "Immunity & Infection",
-        color: "#c9a13b"
-      },
-      "eyes-ears-mouth": {
-        label: "Eyes, Ears & Mouth",
-        color: "#5860a8"
-      },
-      "cellular-systemic": {
-        label: "Cellular / Systemic",
-        color: "#5f636b"
-      },
-      "general-other": {
-        label: "General / Other",
-        color: "#8a8a86"
-      }
-    },
-    conditions: {
-      abrasions: "skin-hair-nails",
-      abscess: "immunity-infection",
-      absence_attacks: "mind-nerves",
-      achalasia: "digestion-liver",
-      achlorhydria: "digestion-liver",
-      acidosis: "hormones-metabolism",
-      acne: "skin-hair-nails",
-      acrodermatitis_enteropathica: "skin-hair-nails",
-      addisons_disease: "hormones-metabolism",
-      adhd: "mind-nerves",
-      adrenal_exhaustion: "hormones-metabolism",
-      adrenoleukodystrophy: "mind-nerves",
-      ageusia: "eyes-ears-mouth",
-      aids: "immunity-infection",
-      airway_obstruction: "respiratory",
-      alcoholism: "mind-nerves",
-      alkalosis: "hormones-metabolism",
-      allergies: "immunity-infection",
-      alopecia: "skin-hair-nails",
-      als: "mind-nerves",
-      alzheimers: "mind-nerves",
-      amblyopia: "eyes-ears-mouth",
-      amenorrhea: "reproductive-urinary",
-      anal_abscess: "digestion-liver",
-      anaphylaxis: "immunity-infection",
-      anemia: "heart-blood-circulation",
-      anencephaly: "reproductive-urinary",
-      aneurysm: "heart-blood-circulation",
-      angina: "heart-blood-circulation",
-      angular_stomatitis: "eyes-ears-mouth",
-      ankylosing_spondylitis: "bones-joints-muscles",
-      anorexia: "general-other",
-      anorexia_nervosa: "mind-nerves",
-      anosmia: "eyes-ears-mouth",
-      anxiety: "mind-nerves",
-      aphthous_stomatitis: "eyes-ears-mouth",
-      arsenic_toxicity: "cellular-systemic",
-      arteriosclerosis: "heart-blood-circulation",
-      arthritis: "bones-joints-muscles",
-      asthma: "respiratory",
-      atherosclerosis: "heart-blood-circulation",
-      athletes_foot: "skin-hair-nails",
-      atopic_asthma: "respiratory",
-      atopic_dermatitis: "skin-hair-nails",
-      atrial_fibrillation: "heart-blood-circulation",
-      autism: "mind-nerves",
-      autoimmune_disorders: "immunity-infection",
-      backache: "bones-joints-muscles",
-      bad_breath: "eyes-ears-mouth",
-      basal_cell_carcinoma: "cellular-systemic",
-      bedsores: "skin-hair-nails",
-      bedwetting: "reproductive-urinary",
-      bee_stings: "skin-hair-nails",
-      bells_palsy: "mind-nerves",
-      benign_prostatic_hyperplasia: "reproductive-urinary",
-      beriberi: "mind-nerves",
-      bipolar_disorder: "mind-nerves",
-      birth_defects: "reproductive-urinary",
-      bladder_stones: "reproductive-urinary",
-      bleeding: "heart-blood-circulation",
-      bleeding_bowels: "digestion-liver",
-      bleeding_gums: "eyes-ears-mouth",
-      blepharitis: "eyes-ears-mouth",
-      blind_rage: "mind-nerves",
-      blindness: "eyes-ears-mouth",
-      bloating: "digestion-liver",
-      body_odor: "skin-hair-nails",
-      boils: "skin-hair-nails",
-      bone_pain: "bones-joints-muscles",
-      bone_spurs: "bones-joints-muscles",
-      brain_cancer: "cellular-systemic",
-      breast_cancer: "cellular-systemic",
-      breast_cysts: "reproductive-urinary",
-      breast_tenderness: "reproductive-urinary",
-      brittle_hair: "skin-hair-nails",
-      brittle_nails: "skin-hair-nails",
-      bronchitis: "respiratory",
-      bruises: "skin-hair-nails",
-      bruxism: "eyes-ears-mouth",
-      bulimia: "mind-nerves",
-      burns: "skin-hair-nails",
-      bursitis: "bones-joints-muscles",
-      bush_sickness: "cellular-systemic",
-      calcium_deposits: "bones-joints-muscles",
-      cancer: "cellular-systemic",
-      candidiasis: "immunity-infection",
-      canker_sores: "eyes-ears-mouth",
-      carcinoma: "cellular-systemic",
-      cardiac_arrest: "heart-blood-circulation",
-      cardiac_arrhythmia: "heart-blood-circulation",
-      cardiac_failure: "heart-blood-circulation",
-      cardiomyopathy: "heart-blood-circulation",
-      cardiovascular_disease: "heart-blood-circulation",
-      carpal_tunnel_syndrome: "bones-joints-muscles",
-      cataracts: "eyes-ears-mouth",
-      catarrh: "respiratory",
-      celiac_disease: "digestion-liver",
-      cerebellar_hypoplasia: "mind-nerves",
-      cerebral_palsy: "mind-nerves",
-      cerebrovascular_disease: "heart-blood-circulation",
-      cervical_dysplasia: "reproductive-urinary",
-      chalazion: "eyes-ears-mouth",
-      cheilosis: "eyes-ears-mouth",
-      chicken_pox: "immunity-infection",
-      chiggers: "skin-hair-nails",
-      chills: "general-other",
-      chondrodystrophy: "bones-joints-muscles",
-      chondromalacia: "bones-joints-muscles",
-      chorea: "mind-nerves",
-      chronic_fatigue: "cellular-systemic",
-      chronic_fatigue_syndrome: "cellular-systemic",
-      chronic_obstructive_pulmonary_disease: "respiratory",
-      circulatory_disease: "heart-blood-circulation",
-      cirrhosis: "digestion-liver",
-      cleft_lip: "eyes-ears-mouth",
-      cleft_palate: "eyes-ears-mouth",
-      cluster_headaches: "mind-nerves",
-      cold_sores: "immunity-infection",
-      colds: "respiratory",
-      colic: "digestion-liver",
-      colitis: "digestion-liver",
-      collagen_disease: "cellular-systemic",
-      colon_cancer: "cellular-systemic",
-      common_cold: "respiratory",
-      compression_fractures: "bones-joints-muscles",
-      congenital_ataxia: "mind-nerves",
-      congested_lungs: "respiratory",
-      congestive_heart_failure: "heart-blood-circulation",
-      conjunctivitis: "eyes-ears-mouth",
-      constipation: "digestion-liver",
-      convulsions: "mind-nerves",
-      cor_pulmonale: "respiratory",
-      corneal_ulcers: "eyes-ears-mouth",
-      coronary_artery_disease: "heart-blood-circulation",
-      cough: "respiratory",
-      cradle_cap: "skin-hair-nails",
-      cretinism: "hormones-metabolism",
-      creutzfeldt_jakob_disease: "mind-nerves",
-      criminal_behavior: "mind-nerves",
-      crohns_disease: "digestion-liver",
-      cuts: "skin-hair-nails",
-      cystic_fibrosis: "respiratory",
-      cystitis: "reproductive-urinary",
-      dandruff: "skin-hair-nails",
-      deafness: "eyes-ears-mouth",
-      degenerative_arthritis: "bones-joints-muscles",
-      degenerative_disc_disease: "bones-joints-muscles",
-      dementia: "mind-nerves",
-      demyelination: "mind-nerves",
-      dental_calculus: "eyes-ears-mouth",
-      dental_fluorosis: "eyes-ears-mouth",
-      depression: "mind-nerves",
-      dermatitis: "skin-hair-nails",
-      dermatosis: "skin-hair-nails",
-      diabetes: "hormones-metabolism",
-      diaper_rash: "skin-hair-nails",
-      diarrhea: "digestion-liver",
-      diplopia: "eyes-ears-mouth",
-      disagreeable_attitude: "mind-nerves",
-      diverticulitis: "digestion-liver",
-      dowagers_hump: "bones-joints-muscles",
-      down_syndrome: "reproductive-urinary",
-      dropsy: "general-other",
-      drug_addiction: "mind-nerves",
-      dry_skin: "skin-hair-nails",
-      dumping_syndrome: "digestion-liver",
-      dysentery: "digestion-liver",
-      dyslexia: "mind-nerves",
-      dysmenorrhea: "reproductive-urinary",
-      dyspepsia: "digestion-liver",
-      dysphagia: "digestion-liver",
-      earache: "eyes-ears-mouth",
-      ecchymosis: "heart-blood-circulation",
-      eclampsia: "reproductive-urinary",
-      eczema: "skin-hair-nails",
-      edema: "general-other",
-      electric_shock: "general-other",
-      emphysema: "respiratory",
-      encephalopathy: "mind-nerves",
-      enuresis: "reproductive-urinary",
-      enzootic_ataxia: "mind-nerves",
-      epilepsy: "mind-nerves",
-      erbs_palsy: "mind-nerves",
-      erectile_dysfunction: "reproductive-urinary",
-      esophageal_cancer: "cellular-systemic",
-      exophthalmos: "eyes-ears-mouth",
-      explosive_outbursts: "mind-nerves",
-      eye_redness: "eyes-ears-mouth",
-      failure_to_thrive: "cellular-systemic",
-      fatty_liver: "digestion-liver",
-      fever: "immunity-infection",
-      fibrocystic_breast_disease: "reproductive-urinary",
-      fibromyalgia: "bones-joints-muscles",
-      flatulence: "digestion-liver",
-      food_allergy: "immunity-infection",
-      fractures: "bones-joints-muscles",
-      freckles: "skin-hair-nails",
-      gallstones: "digestion-liver",
-      gangrene: "heart-blood-circulation",
-      gastroparesis: "digestion-liver",
-      geographic_tongue: "eyes-ears-mouth",
-      gestational_diabetes: "hormones-metabolism",
-      gingivitis: "eyes-ears-mouth",
-      glaucoma: "eyes-ears-mouth",
-      glucose_intolerance: "hormones-metabolism",
-      goiter: "hormones-metabolism",
-      gout: "bones-joints-muscles",
-      graves_disease: "hormones-metabolism",
-      gray_hair: "skin-hair-nails",
-      growing_pains: "bones-joints-muscles",
-      hangnails: "skin-hair-nails",
-      hashimotos_disease: "hormones-metabolism",
-      hay_fever: "immunity-infection",
-      headache: "mind-nerves",
-      heart_attack: "heart-blood-circulation",
-      heart_defects: "heart-blood-circulation",
-      heart_failure: "heart-blood-circulation",
-      heartburn: "digestion-liver",
-      heat_stroke: "general-other",
-      heavy_metal_toxicity: "cellular-systemic",
-      heel_spurs: "bones-joints-muscles",
-      hemochromatosis: "hormones-metabolism",
-      hemorrhoids: "digestion-liver",
-      hepatitis: "digestion-liver",
-      hernia: "digestion-liver",
-      herpes_simplex: "immunity-infection",
-      hiatal_hernia: "digestion-liver",
-      hiccoughs: "general-other",
-      high_cholesterol: "heart-blood-circulation",
-      high_triglycerides: "heart-blood-circulation",
-      hiv_aids: "immunity-infection",
-      hoarseness: "respiratory",
-      huntingtons_disease: "mind-nerves",
-      hydrocephalus: "mind-nerves",
-      hyperacidity: "digestion-liver",
-      hyperactivity: "mind-nerves",
-      hypercalcemia: "hormones-metabolism",
-      hyperinsulinemia: "hormones-metabolism",
-      hyperirritability: "mind-nerves",
-      hyperkinesis: "mind-nerves",
-      hyperparathyroidism: "hormones-metabolism",
-      hypertension: "heart-blood-circulation",
-      hyperthyroidism: "hormones-metabolism",
-      hypochlorhydria: "digestion-liver",
-      hypoglycemia: "hormones-metabolism",
-      hypogonadism: "hormones-metabolism",
-      hypokalemia: "hormones-metabolism",
-      hypophosphatemia: "hormones-metabolism",
-      hypotension: "heart-blood-circulation",
-      hypothermia: "general-other",
-      hypothyroidism: "hormones-metabolism",
-      hysteria: "mind-nerves",
-      ichthyosis: "skin-hair-nails",
-      immune_depression: "immunity-infection",
-      impetigo: "skin-hair-nails",
-      impotence: "reproductive-urinary",
-      incontinence: "reproductive-urinary",
-      indigestion: "digestion-liver",
-      infarction: "heart-blood-circulation",
-      infection: "immunity-infection",
-      infertility: "reproductive-urinary",
-      inflammation: "general-other",
-      influenza: "immunity-infection",
-      insomnia: "mind-nerves",
-      intermittent_claudication: "heart-blood-circulation",
-      irritable_bowel_syndrome: "digestion-liver",
-      ischemic_heart_disease: "heart-blood-circulation",
-      itching: "skin-hair-nails",
-      jaundice: "digestion-liver",
-      joint_pain: "bones-joints-muscles",
-      kawasaki_disease: "immunity-infection",
-      keratitis: "eyes-ears-mouth",
-      keratomalacia: "eyes-ears-mouth",
-      keratosis: "skin-hair-nails",
-      kernicterus: "mind-nerves",
-      keshan_disease: "heart-blood-circulation",
-      ketoacidosis: "hormones-metabolism",
-      ketosis: "hormones-metabolism",
-      kidney_disease: "reproductive-urinary",
-      kidney_stones: "reproductive-urinary",
-      korsakoffs_syndrome: "mind-nerves",
-      kwashiorkor: "cellular-systemic",
-      kyphosis: "bones-joints-muscles",
-      labor: "reproductive-urinary",
-      lactase_deficiency: "digestion-liver",
-      lactose_intolerance: "digestion-liver",
-      laryngitis: "respiratory",
-      lead_poisoning: "cellular-systemic",
-      learning_disabilities: "mind-nerves",
-      legg_perthes: "bones-joints-muscles",
-      legionnaires_disease: "respiratory",
-      leptospirosis: "immunity-infection",
-      leukemia: "heart-blood-circulation",
-      leukopenia: "heart-blood-circulation",
-      leukorrhea: "reproductive-urinary",
-      lice: "skin-hair-nails",
-      liver_cancer: "cellular-systemic",
-      liver_cirrhosis: "digestion-liver",
-      liver_disease: "digestion-liver",
-      lordosis: "bones-joints-muscles",
-      low_back_pain: "bones-joints-muscles",
-      low_libido: "reproductive-urinary",
-      lung_cancer: "cellular-systemic",
-      lupus: "immunity-infection",
-      lyme_disease: "immunity-infection",
-      macular_degeneration: "eyes-ears-mouth",
-      mad_cow_disease: "mind-nerves",
-      malabsorption: "digestion-liver",
-      male_pattern_baldness: "skin-hair-nails",
-      malnutrition: "cellular-systemic",
-      measles: "immunity-infection",
-      melanoma: "cellular-systemic",
-      melasma: "skin-hair-nails",
-      memory_loss: "mind-nerves",
-      menieres_disease: "eyes-ears-mouth",
-      meningitis: "immunity-infection",
-      meningocele: "reproductive-urinary",
-      menkes_syndrome: "cellular-systemic",
-      menopause: "reproductive-urinary",
-      menorrhagia: "reproductive-urinary",
-      mental_retardation: "mind-nerves",
-      mercury_poisoning: "cellular-systemic",
-      migraine: "mind-nerves",
-      minamata_disease: "cellular-systemic",
-      miscarriage: "reproductive-urinary",
-      mitral_valve_prolapse: "heart-blood-circulation",
-      monckebergs_arteriosclerosis: "heart-blood-circulation",
-      morning_sickness: "reproductive-urinary",
-      motion_sickness: "general-other",
-      multiple_sclerosis: "mind-nerves",
-      mumps: "immunity-infection",
-      muscle_cramps: "bones-joints-muscles",
-      muscle_twitches: "bones-joints-muscles",
-      muscular_dystrophy: "bones-joints-muscles",
-      myelofibrosis: "heart-blood-circulation",
-      myopia: "eyes-ears-mouth",
-      narcolepsy: "mind-nerves",
-      nasal_catarrh: "respiratory",
-      nervous_heart: "heart-blood-circulation",
-      nervous_tension: "mind-nerves",
-      neural_tube_defects: "reproductive-urinary",
-      neuralgia: "mind-nerves",
-      neuropathy: "mind-nerves",
-      neutropenia: "heart-blood-circulation",
-      night_blindness: "eyes-ears-mouth",
-      night_terrors: "mind-nerves",
-      nosebleeds: "respiratory",
-      obesity: "hormones-metabolism",
-      oligospermia: "reproductive-urinary",
-      omphalocele: "reproductive-urinary",
-      opiate_withdrawal: "mind-nerves",
-      optic_nerve_atrophy: "eyes-ears-mouth",
-      oral_cancer: "cellular-systemic",
-      organic_brain_syndrome: "mind-nerves",
-      ornithosis: "immunity-infection",
-      osteitis_fibrosa: "bones-joints-muscles",
-      osteoarthritis: "bones-joints-muscles",
-      osteofibrosis: "bones-joints-muscles",
-      osteomalacia: "bones-joints-muscles",
-      osteopenia: "bones-joints-muscles",
-      osteoporosis: "bones-joints-muscles",
-      osteosarcoma: "cellular-systemic",
-      osteosclerosis: "bones-joints-muscles",
-      otitis: "eyes-ears-mouth",
-      pagets_disease: "bones-joints-muscles",
-      pain: "general-other",
-      palpitations: "heart-blood-circulation",
-      pancreatic_cancer: "cellular-systemic",
-      pancreatic_fibrosis: "digestion-liver",
-      pancreatitis: "digestion-liver",
-      panic_attacks: "mind-nerves",
-      paranoia: "mind-nerves",
-      parasites: "immunity-infection",
-      parkinsonism: "mind-nerves",
-      parkinsons_disease: "mind-nerves",
-      pediculosis: "skin-hair-nails",
-      pellagra: "skin-hair-nails",
-      peptic_ulcers: "digestion-liver",
-      periodontal_disease: "eyes-ears-mouth",
-      peripheral_arterial_disease: "heart-blood-circulation",
-      peripheral_neuropathy: "mind-nerves",
-      peritonsillar_abscess: "respiratory",
-      pernicious_anemia: "heart-blood-circulation",
-      phlebitis: "heart-blood-circulation",
-      photophobia: "eyes-ears-mouth",
-      pica: "mind-nerves",
-      pilonidal_cyst: "skin-hair-nails",
-      plumbism: "cellular-systemic",
-      poison_ivy: "skin-hair-nails",
-      poor_circulation: "heart-blood-circulation",
-      post_partum_hemorrhage: "reproductive-urinary",
-      prediabetes: "hormones-metabolism",
-      preeclampsia: "reproductive-urinary",
-      pregnancy_toxemia: "reproductive-urinary",
-      pms: "reproductive-urinary",
-      prolonged_clotting_time: "heart-blood-circulation",
-      prostate_cancer: "cellular-systemic",
-      pruritus: "skin-hair-nails",
-      psoriasis: "skin-hair-nails",
-      psychosis: "mind-nerves",
-      ptosis: "eyes-ears-mouth",
-      pubic_lice: "skin-hair-nails",
-      pyorrhea: "eyes-ears-mouth",
-      q_fever: "immunity-infection",
-      quinsy: "respiratory",
-      rabbit_fever: "immunity-infection",
-      rabies: "immunity-infection",
-      radial_nerve_palsy: "mind-nerves",
-      raynauds_disease: "heart-blood-circulation",
-      reactive_hypoglycemia: "hormones-metabolism",
-      receding_gums: "eyes-ears-mouth",
-      rectal_itching: "skin-hair-nails",
-      renal_failure: "reproductive-urinary",
-      repetitive_motion_syndrome: "bones-joints-muscles",
-      respiratory_disease: "respiratory",
-      restless_leg_syndrome: "mind-nerves",
-      reyes_syndrome: "mind-nerves",
-      rheumatic_fever: "immunity-infection",
-      rheumatoid_arthritis: "bones-joints-muscles",
-      rickets: "bones-joints-muscles",
-      ringworm: "skin-hair-nails",
-      rocky_mountain_spotted_fever: "immunity-infection",
-      roseola: "immunity-infection",
-      rubella: "immunity-infection",
-      sarcoma: "cellular-systemic",
-      scabies: "skin-hair-nails",
-      scarlatina: "immunity-infection",
-      schistosomiasis: "immunity-infection",
-      schizophrenia: "mind-nerves",
-      sciatica: "mind-nerves",
-      scoliosis: "bones-joints-muscles",
-      scurvy: "cellular-systemic",
-      sebaceous_cyst: "skin-hair-nails",
-      seborrheic_dermatitis: "skin-hair-nails",
-      secondary_hyperparathyroidism: "hormones-metabolism",
-      shingles: "immunity-infection",
-      shwachman_syndrome: "digestion-liver",
-      sickle_cell_anemia: "heart-blood-circulation",
-      sids: "respiratory",
-      sore_throat: "respiratory",
-      spider_bite: "skin-hair-nails",
-      spider_veins: "heart-blood-circulation",
-      spina_bifida: "reproductive-urinary",
-      spinal_stenosis: "bones-joints-muscles",
-      spontaneous_fractures: "bones-joints-muscles",
-      sprain: "bones-joints-muscles",
-      stomach_cancer: "cellular-systemic",
-      stomatitis: "eyes-ears-mouth",
-      strabismus: "eyes-ears-mouth",
-      strain: "bones-joints-muscles",
-      stress: "general-other",
-      stroke: "heart-blood-circulation",
-      sty: "eyes-ears-mouth",
-      sudden_cardiac_death: "heart-blood-circulation",
-      swimmers_ear: "eyes-ears-mouth",
-      syphilis: "immunity-infection",
-      tachycardia: "heart-blood-circulation",
-      tapeworms: "immunity-infection",
-      tardive_dyskinesia: "mind-nerves",
-      teeth_discoloration: "eyes-ears-mouth",
-      teething: "eyes-ears-mouth",
-      tetanus: "immunity-infection",
-      tetany: "mind-nerves",
-      thallium_poisoning: "cellular-systemic",
-      throat_cancer: "cellular-systemic",
-      thrombosis: "heart-blood-circulation",
-      thrush: "immunity-infection",
-      thyroid_cancer: "cellular-systemic",
-      thyroid_disease: "hormones-metabolism",
-      tinnitus: "eyes-ears-mouth",
-      tmj: "bones-joints-muscles",
-      tongue_atrophy: "eyes-ears-mouth",
-      tonsillitis: "respiratory",
-      tooth_decay: "eyes-ears-mouth",
-      toothache: "eyes-ears-mouth",
-      torticollis: "bones-joints-muscles",
-      tourette_syndrome: "mind-nerves",
-      toxic_shock_syndrome: "immunity-infection",
-      toxoplasmosis: "immunity-infection",
-      trigeminal_neuralgia: "mind-nerves",
-      tularemia: "immunity-infection",
-      umbilical_hernia: "digestion-liver",
-      urinary_tract_infection: "reproductive-urinary",
-      uterine_cancer: "cellular-systemic",
-      uterine_fibroids: "reproductive-urinary",
-      vaginitis: "reproductive-urinary",
-      varicose_veins: "heart-blood-circulation",
-      vascular_dementia: "mind-nerves",
-      vertigo: "mind-nerves",
-      violent_behavior: "mind-nerves",
-      vitiligo: "skin-hair-nails",
-      vomiting: "digestion-liver",
-      warts: "skin-hair-nails",
-      water_intoxication: "general-other",
-      weight_loss: "general-other",
-      weils_disease: "immunity-infection",
-      wernicke_korsakoff_syndrome: "mind-nerves",
-      white_muscle_disease: "bones-joints-muscles",
-      white_spots_fingernails: "skin-hair-nails",
-      wilsons_syndrome: "hormones-metabolism",
-      wounds: "skin-hair-nails",
-      xerophthalmia: "eyes-ears-mouth"
-    }
-  };
-
-  // assets/js/src/state/condition-categories.ts
-  var EMPTY5 = { categories: {}, conditions: {} };
-  var cached6 = null;
-  function store() {
-    if (cached6 === null) {
-      const parsed = ConditionCategoriesSchema.safeParse(condition_categories_default);
-      cached6 = parsed.success ? parsed.data : EMPTY5;
-    }
-    return cached6;
-  }
-  function conditionCategory(slug) {
-    const s = store();
-    const catId = s.conditions[slug];
-    if (catId === void 0) {
-      return null;
-    }
-    const def = s.categories[catId];
-    if (def === void 0) {
-      return null;
-    }
-    return { slug: catId, label: def.label, color: def.color };
-  }
-
   // assets/js/src/views/knowledge-corpus.ts
   function escHTML4(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -70286,104 +70305,6 @@ deaths, blood clots, sterility`,
       return null;
     }
     return snapshot.tiles.find((t) => t.name === key) ?? null;
-  }
-  function corpusKindLabel(kind) {
-    return kind.replace(/[_-]+/g, " ").toUpperCase();
-  }
-  function collapseWS(s) {
-    return s.replace(/\s+/g, " ").trim();
-  }
-  function formatDose2(dose) {
-    if (dose === null || dose === void 0) {
-      return "";
-    }
-    const amount = typeof dose.amount === "number" || typeof dose.amount === "string" ? String(dose.amount) : "";
-    const unit = typeof dose.unit === "string" ? dose.unit : "";
-    const period = typeof dose.period === "string" ? dose.period : "";
-    const head = [amount, unit].filter((s) => s.length > 0).join(" ");
-    if (head.length === 0) {
-      return "";
-    }
-    return period.length > 0 ? `${head} / ${period}` : head;
-  }
-  var FIG_8_1_FOR_CONDITION = "base-line supplement program (true supplement need)";
-  function isFig81Row(claim) {
-    return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION;
-  }
-  function renderFig81Legend() {
-    const cols = ["RDA", "True Supplement Need", "30-Day Pharmacologic"].map(glossCol).join(" \xB7 ");
-    return `
-      <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
-        <span class="kd-claim__legend-cols">Nutrient \xB7 ${cols}</span>
-      </div>`;
-  }
-  function glossCol(term) {
-    const def = glossaryDef(term);
-    if (def === null) {
-      return escHTML4(term);
-    }
-    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML4(term)}: ${escHTML4(def)}" data-def="${escHTML4(def)}">${escHTML4(term)}</span>`;
-  }
-  function fig81OwnRow(verbatim) {
-    const lines = verbatim.split("\n");
-    const kept = [lines[0] ?? ""];
-    for (let i = 1; i < lines.length; i++) {
-      const t = (lines[i] ?? "").trim();
-      if (t.length === 0 || /^[A-Z]/.test(t) || t.startsWith("*")) {
-        break;
-      }
-      kept.push(lines[i] ?? "");
-    }
-    return kept.join("\n");
-  }
-  function doseContextLabel(claim) {
-    if (isFig81Row(claim)) {
-      return "True Supplement Need";
-    }
-    const fc = (claim.dose?.for_condition ?? "").trim();
-    return fc.replace(/\s*\([^)]*\)\s*$/, "").trim();
-  }
-  function renderDoseBlock(claim) {
-    const value = formatDose2(claim.dose);
-    if (value.length === 0) {
-      return "";
-    }
-    const label = doseContextLabel(claim);
-    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML4(label)}</span>` : "";
-    return `
-      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML4(value)}</span></div>`;
-  }
-  function renderRefHeader(label) {
-    return `
-      <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">${escHTML4(label)}</span>
-        <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
-      </div>`;
-  }
-  function renderCorpusClaim(claim) {
-    const isTable = isFig81Row(claim);
-    const refLabel = !isTable && typeof claim.source_table === "string" && claim.source_table.length > 0 ? claim.source_table : null;
-    const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
-    const verbatimHTML = glossify(shownVerbatim);
-    const verbatimCls = isTable ? "kd-claim__verbatim kd-claim__verbatim--rows" : "kd-claim__verbatim";
-    return `
-    <div class="kd-claim">
-      <p class="kd-claim__text">${glossify(claim.claim_text)}</p>
-      ${renderDoseBlock(claim)}
-      ${isTable ? renderFig81Legend() : ""}
-      ${refLabel !== null ? renderRefHeader(refLabel) : ""}
-      <blockquote class="${verbatimCls}">${verbatimHTML}</blockquote>
-      <div class="kd-claim__cite">CITED \xB7 ${escHTML4(getBookLabel(claim.book))}</div>
-    </div>`;
-  }
-  var CORPUS_ROLE_PRIORITY = ["causes", "deficiency_signs", "toxicity_signs", "protocols", "doses", "prognosis"];
-  function corpusRoleOrder(a, b) {
-    const ia = CORPUS_ROLE_PRIORITY.indexOf(a);
-    const ib = CORPUS_ROLE_PRIORITY.indexOf(b);
-    const ra = ia === -1 ? CORPUS_ROLE_PRIORITY.length : ia;
-    const rb = ib === -1 ? CORPUS_ROLE_PRIORITY.length : ib;
-    return ra !== rb ? ra - rb : a < b ? -1 : a > b ? 1 : 0;
   }
   function conditionSearchKeywords(c) {
     const parts = [c.display_name, c.slug.replace(/_/g, " ")];
@@ -70439,13 +70360,6 @@ deaths, blood clots, sterility`,
     const last = names[names.length - 1] ?? "";
     return `${names.slice(0, -1).join(", ")} and ${last}${tail}`;
   }
-  function essentialChipRow(label, slugs) {
-    if (slugs.length === 0) {
-      return "";
-    }
-    const chips = slugs.map((s) => `<span class="kd-corpus__chip kd-corpus__chip--ess">${escHTML4(familiarEssentialName(s))}</span>`).join("");
-    return `<div class="kd-corpus__sub">${escHTML4(label)}</div><div class="kd-corpus__chips">${chips}</div>`;
-  }
   function conditionSynopsis(c) {
     const deficiency = essentialsInRoles(c, ["deficiency_signs", "causes"]);
     if (deficiency.length > 0) {
@@ -70457,55 +70371,6 @@ deaths, blood clots, sterility`,
     }
     return "";
   }
-  var UMBRELLA_TIP_MIN_CLAIMS = 15;
-  function renderUmbrellaTip(childDisplayNames) {
-    const examples = childDisplayNames.slice(0, 2).map((n) => `<em>${escHTML4(n)}</em>`).join(", ");
-    const eg = examples.length > 0 ? ` (e.g. ${examples})` : "";
-    return `<p class="kd-condition-deep__umbrella-tip"><strong>Broad category</strong> \u2014 this collects every subtype. Search your specific type for a focused view${eg}.</p>`;
-  }
-  function renderConditionDeep(slug) {
-    const c = getCondition(slug);
-    if (c === null) {
-      return "";
-    }
-    const groupsHTML = Object.keys(c.claims_by_role).sort(corpusRoleOrder).map((role) => {
-      const ids = c.claims_by_role[role] ?? [];
-      const claimsHTML = resolveClaims(ids).map((cl) => renderCorpusClaim(cl)).join("");
-      return `
-      <div class="kd-corpus__group">
-        <div class="kd-corpus__group-label">${escHTML4(corpusKindLabel(role))}</div>
-        ${claimsHTML}
-      </div>`;
-    }).join("");
-    const synopsis = conditionSynopsis(c);
-    const causeEss = essentialsInRoles(c, ["deficiency_signs", "causes"]);
-    const treatEss = essentialsInRoles(c, ["protocols", "doses"]);
-    const primary = /* @__PURE__ */ new Set([...causeEss, ...treatEss]);
-    const otherEss = c.essentials_involved.filter((s) => !primary.has(s));
-    const chipRows = [
-      essentialChipRow("DEFICIENCY / CAUSE", causeEss),
-      essentialChipRow("TREATED WITH", treatEss),
-      essentialChipRow("ALSO CITED", otherEss)
-    ].join("");
-    const books = c.books_cited.map((b) => getBookLabel(b)).join(" \xB7 ");
-    const umbrellaKids = umbrellaChildren(c.slug);
-    const umbrellaTipHTML = umbrellaKids.length > 0 && c.claim_count >= UMBRELLA_TIP_MIN_CLAIMS ? renderUmbrellaTip(umbrellaKids) : "";
-    return `
-    <div class="kd-essential-deep kd-condition-deep">
-      <button class="kd-essential-deep__close" data-kd-action="condition-close" title="Close (Esc)">\xD7</button>
-      <header class="kd-essential-deep__head">
-        <div class="kd-essential-deep__name-block">
-          <h3 class="kd-essential-deep__name">${escHTML4(c.display_name)}</h3>
-          <div class="kd-essential-deep__cat">CONDITION \xB7 ${c.claim_count} CLAIM${c.claim_count === 1 ? "" : "S"}</div>
-        </div>
-      </header>
-      ${umbrellaTipHTML}
-      ${synopsis.length > 0 ? `<p class="kd-condition-deep__synopsis">${escHTML4(synopsis)}</p>` : ""}
-      ${chipRows}
-      ${groupsHTML}
-      <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML4(books)}</div>
-    </div>`;
-  }
   function conditionsByWeight(conditions) {
     return [...conditions].sort((a, b) => b.claim_count - a.claim_count || (a.display_name < b.display_name ? -1 : a.display_name > b.display_name ? 1 : 0));
   }
@@ -70514,10 +70379,8 @@ deaths, blood clots, sterility`,
     if (conditions.length === 0) {
       return '<div class="kd-empty">\u2014 no conditions in the corpus yet \u2014</div>';
     }
-    const deepHTML = selectedSlug !== null ? renderConditionDeep(selectedSlug) : "";
     const rowsHTML = conditionsByWeight(conditions).map((c) => renderConditionRow(c, selectedSlug)).join("");
     return `
-    ${deepHTML}
     <div class="kd-section-head">ALL ${conditions.length} CONDITIONS \xB7 SORTED BY HOW MUCH WALLACH WROTE</div>
     <div class="kd-conditions-grid">${rowsHTML}</div>`;
   }
@@ -99083,10 +98946,10 @@ deaths, blood clots, sterility`,
   function escHTML6(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
-  function collapseWS2(s) {
+  function collapseWS(s) {
     return s.replace(/\s+/g, " ").trim();
   }
-  function formatDose3(dose) {
+  function formatDose2(dose) {
     if (dose === null || dose === void 0) {
       return "";
     }
@@ -99099,26 +98962,26 @@ deaths, blood clots, sterility`,
     }
     return period.length > 0 ? `${head} / ${period}` : head;
   }
-  var FIG_8_1_FOR_CONDITION2 = "base-line supplement program (true supplement need)";
-  function isFig81Row2(claim) {
-    return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION2;
+  var FIG_8_1_FOR_CONDITION = "base-line supplement program (true supplement need)";
+  function isFig81Row(claim) {
+    return claim.dose?.for_condition === FIG_8_1_FOR_CONDITION;
   }
-  function glossCol2(term) {
+  function glossCol(term) {
     const def = glossaryDef(term);
     if (def === null) {
       return escHTML6(term);
     }
     return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML6(term)}: ${escHTML6(def)}" data-def="${escHTML6(def)}">${escHTML6(term)}</span>`;
   }
-  function renderFig81Legend2() {
-    const cols = ["RDA", "True Supplement Need", "30-Day Pharmacologic"].map(glossCol2).join(" \xB7 ");
+  function renderFig81Legend() {
+    const cols = ["RDA", "True Supplement Need", "30-Day Pharmacologic"].map(glossCol).join(" \xB7 ");
     return `
       <div class="kd-claim__legend" role="note">
         <span class="kd-claim__legend-eyebrow">Fig. 8-1 columns</span>
         <span class="kd-claim__legend-cols">Nutrient \xB7 ${cols}</span>
       </div>`;
   }
-  function fig81OwnRow2(verbatim) {
+  function fig81OwnRow(verbatim) {
     const lines = verbatim.split("\n");
     const kept = [lines[0] ?? ""];
     for (let i = 1; i < lines.length; i++) {
@@ -99130,8 +98993,8 @@ deaths, blood clots, sterility`,
     }
     return kept.join("\n");
   }
-  function doseContextLabel2(claim) {
-    if (isFig81Row2(claim)) {
+  function doseContextLabel(claim) {
+    if (isFig81Row(claim)) {
       return "True Supplement Need";
     }
     const applies = claim.dose?.applies_to;
@@ -99142,17 +99005,17 @@ deaths, blood clots, sterility`,
     const fc = (claim.dose?.for_condition ?? "").trim();
     return fc.replace(/\s*\([^)]*\)\s*$/, "").trim();
   }
-  function renderDoseBlock2(claim) {
-    const value = formatDose3(claim.dose);
+  function renderDoseBlock(claim) {
+    const value = formatDose2(claim.dose);
     if (value.length === 0) {
       return "";
     }
-    const label = doseContextLabel2(claim);
+    const label = doseContextLabel(claim);
     const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML6(label)}</span>` : "";
     return `
       <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML6(value)}</span></div>`;
   }
-  function renderRefHeader2(label) {
+  function renderRefHeader(label) {
     return `
       <div class="kd-claim__legend" role="note">
         <span class="kd-claim__legend-eyebrow">${escHTML6(label)}</span>
@@ -99179,28 +99042,27 @@ deaths, blood clots, sterility`,
     <div class="kd-ep-claim__body">
       ${short}
       ${claim.answer.trim() === claim.answer_short.trim() ? "" : `<div class="kd-ep-claim__answer">${glossify(claim.answer)}</div>`}
-      <blockquote class="kd-ep-claim__verbatim">\u201C${glossify(collapseWS2(claim.verbatim))}\u201D</blockquote>
+      <blockquote class="kd-ep-claim__verbatim">\u201C${glossify(collapseWS(claim.verbatim))}\u201D</blockquote>
       ${cite.length > 0 ? `<div class="kd-ep-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML6(cite)}</div>` : ""}
       ${tags.length > 0 ? `<div class="kd-ep-claim__tags">${tags}</div>` : ""}
     </div>
   </details>`;
   }
-  function renderRecordClaim(claim) {
-    const isTable = isFig81Row2(claim);
+  function renderRecordClaim(claim, open = false) {
+    const isTable = isFig81Row(claim);
     const refLabel = !isTable && typeof claim.source_table === "string" && claim.source_table.length > 0 ? claim.source_table : null;
-    const shownVerbatim = isTable ? fig81OwnRow2(claim.verbatim) : collapseWS2(claim.verbatim);
+    const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
     const verbatimCls = isTable ? "kd-ep-claim__verbatim kd-ep-claim__verbatim--rows" : "kd-ep-claim__verbatim";
-    return `<details class="kd-ep-claim">
+    return `<details class="kd-ep-claim kd-ep-claim--record"${open ? " open" : ""}>
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
-      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML6(truncate(claim.claim_text, 116))}</span></span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML6(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
       <span class="kd-ep-claim__chev">\u25B8</span>
     </summary>
     <div class="kd-ep-claim__body">
-      <div class="kd-ep-claim__answer">${glossify(claim.claim_text)}</div>
-      ${renderDoseBlock2(claim)}
-      ${isTable ? renderFig81Legend2() : ""}
-      ${refLabel !== null ? renderRefHeader2(refLabel) : ""}
+      ${renderDoseBlock(claim)}
+      ${isTable ? renderFig81Legend() : ""}
+      ${refLabel !== null ? renderRefHeader(refLabel) : ""}
       <blockquote class="${verbatimCls}">${glossify(shownVerbatim)}</blockquote>
       <div class="kd-ep-claim__cite">CITED \xB7 ${escHTML6(getBookLabel(claim.book))}</div>
     </div>
@@ -99591,29 +99453,29 @@ deaths, blood clots, sterility`,
         </div>
       </details>`;
   }
-  function renderRecord(page) {
-    if (page.record.length === 0) {
+  function renderRecord(record, claimCount3, label = "The full record", hint = "every claim \xB7 advanced") {
+    if (record.length === 0) {
       return "";
     }
-    const groups = [...page.record].sort((a, b) => {
+    const groups = [...record].sort((a, b) => {
       const ra = recordKindRank(a.kind);
       const rb = recordKindRank(b.kind);
       return ra !== rb ? ra - rb : a.kind < b.kind ? -1 : a.kind > b.kind ? 1 : 0;
     });
-    const total = page.claim_count;
+    const total = claimCount3;
     const openKinds = total < 20 ? " open" : "";
     const kindsHTML = groups.map((g) => {
       const claims = resolveClaims(g.claim_ids);
       if (claims.length === 0) {
         return "";
       }
-      const cards2 = claims.map(renderRecordClaim).join("");
+      const cards2 = claims.map((cl) => renderRecordClaim(cl)).join("");
       return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML6(kindCategory(g.kind))}">
       <summary><span class="kd-ep-kind__label">${escHTML6(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
       <div class="kd-ep-kind__body">${cards2}</div>
     </details>`;
     }).join("");
-    return seclabel("The full record", "every claim \xB7 advanced") + `<details class="kd-ep-record" open>
+    return seclabel(label, hint) + `<details class="kd-ep-record" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, "claim")}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
           <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} ${plural(total, "claim")} by keyword\u2026"></div>
@@ -99750,7 +99612,7 @@ deaths, blood clots, sterility`,
       <span class="kd-ep-fam__num">${escHTML6(num)}</span>
       <div class="kd-ep-fam__stepbody">
         <div class="kd-ep-fam__steptitle">${escHTML6(ui(tKey))}</div>
-        <div class="kd-ep-fam__steptext">${glossify(collapseWS2(ui(bKey)))}</div>
+        <div class="kd-ep-fam__steptext">${glossify(collapseWS(ui(bKey)))}</div>
       </div>
     </div>`;
   }
@@ -99759,7 +99621,7 @@ deaths, blood clots, sterility`,
     if (c === null) {
       return "";
     }
-    const raw = collapseWS2(c.verbatim);
+    const raw = collapseWS(c.verbatim);
     const at = highlight !== void 0 ? raw.indexOf(highlight) : -1;
     const body = at >= 0 && highlight !== void 0 ? `${glossify(raw.slice(0, at))}<mark class="ds-mark">${glossify(highlight)}</mark>${glossify(raw.slice(at + highlight.length))}` : glossify(raw);
     return `<div class="ds-pull-quote-wrap kd-ep-fam__quote">
@@ -99910,7 +99772,7 @@ deaths, blood clots, sterility`,
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}
     ${renderGroupRecord(page)}
-    ${renderRecord(page)}
+    ${renderRecord(page.record, page.claim_count)}
     ${renderRelatedSection(page)}
   </div>`;
   }
@@ -99930,6 +99792,152 @@ deaths, blood clots, sterility`,
         group.open = true;
       }
     });
+  }
+  function conditionBackButton() {
+    return '<button class="kd-ep-back" data-kd-action="condition-close" type="button">\u2039 All conditions</button>';
+  }
+  var UMBRELLA_TIP_MIN_CLAIMS = 15;
+  function conditionUmbrellaTip(slug, claimCount3) {
+    const kids = umbrellaChildren(slug);
+    if (kids.length === 0 || claimCount3 < UMBRELLA_TIP_MIN_CLAIMS) {
+      return "";
+    }
+    const examples = kids.slice(0, 2).map((n) => `<em>${escHTML6(n)}</em>`).join(", ");
+    const eg = examples.length > 0 ? ` (e.g. ${examples})` : "";
+    return `<p class="kd-ep-umbrella"><strong>${escHTML6(ui("kd_ep_umbrella_lead"))}</strong> \u2014 ${escHTML6(ui("kd_ep_umbrella_body"))}${eg}.</p>`;
+  }
+  function nutrientPill(slug, cls) {
+    const lk = getEssentialBySlug(slug)?.layout_key ?? slug;
+    return pill(familiarEssentialName(slug), "data-kd-essential", lk, cls);
+  }
+  function renderNutrientsToRestore(page, c) {
+    const restore = page.restore;
+    const cause = c !== null ? essentialsInRoles(c, ["deficiency_signs", "causes"]) : [];
+    const shown = /* @__PURE__ */ new Set([...restore, ...cause]);
+    const also = c !== null ? c.essentials_involved.filter((s) => !shown.has(s)) : [];
+    if (restore.length === 0 && cause.length === 0 && also.length === 0) {
+      return "";
+    }
+    const primarySlugs = restore.length > 0 ? restore : cause;
+    const primaryLabel = restore.length > 0 ? "To restore" : "Caused by these deficiencies";
+    const primaryPills = primarySlugs.map((s) => nutrientPill(s, "kd-ep-pill--nut"));
+    const primary = `<div class="kd-ep-nutri__grp">
+      <div class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--restore"></i>${escHTML6(primaryLabel)}<span class="kd-ep-nutri__n">${primarySlugs.length}</span></div>
+      ${pillCloud(primaryPills, 12)}
+    </div>`;
+    const relToggle = '<span class="kd-ep-nutri__toggle"><span class="kd-ep-nutri__toggle-open">Expand \u25BE</span><span class="kd-ep-nutri__toggle-close">Collapse \u25B4</span></span>';
+    const nutriLens = (dotCls, label, count, pillsHTML) => `<details class="kd-ep-nutri__rel">
+        <summary><span class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--${dotCls}"></i>${escHTML6(label)}<span class="kd-ep-nutri__n">${count}</span></span>${relToggle}</summary>
+        <div class="kd-ep-cloud kd-ep-nutri__cloud">${pillsHTML}</div>
+      </details>`;
+    const lenses = [];
+    if (restore.length > 0 && cause.length > 0) {
+      lenses.push(nutriLens("cause", "Caused by these deficiencies", cause.length, cause.map((s) => nutrientPill(s, "kd-ep-pill--ctx")).join("")));
+    }
+    if (also.length > 0) {
+      lenses.push(nutriLens("also", "Also cited alongside", also.length, also.map((s) => nutrientPill(s, "kd-ep-pill--ctx")).join("")));
+    }
+    return seclabel("Nutrients to restore") + `<div class="kd-ep-nutri">${primary}${lenses.join("")}</div>`;
+  }
+  function renderConditionProtocol(page) {
+    const claims = resolveClaims(page.protocol_claim_ids);
+    if (claims.length === 0) {
+      return "";
+    }
+    const cards2 = claims.map((cl, i) => renderRecordClaim(cl, i === 0)).join("");
+    return seclabel("Wallach\u2019s protocol") + `<div class="kd-ep-protocol">${cards2}</div>`;
+  }
+  function condProductRow(rec, total, isBest) {
+    const price = rec.price > 0 ? `$${rec.price.toFixed(2)}` : "\u2014";
+    const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : "";
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(rec.productId)}">
+      <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
+      <span class="kd-ep-src__nm">${escHTML6(rec.name)}${tag}</span>
+      <span class="kd-ep-src__amt">covers ${rec.supplies} / ${total}</span>
+      <span class="kd-ep-src__pr">${price}</span>
+      <span class="kd-ep-src__chev">\u203A</span>
+    </button>`;
+  }
+  function renderConditionProducts(page) {
+    const total = page.restore.length;
+    if (total === 0) {
+      return "";
+    }
+    const recs = rankProductsForCoverage({ want: page.restore, limit: 8 });
+    if (recs.length === 0) {
+      return "";
+    }
+    let best = null;
+    for (const r of recs) {
+      if (best === null || r.perTenDollars > best.perTenDollars) {
+        best = r;
+      }
+    }
+    const TOP = 5;
+    const head = recs.slice(0, TOP).map((r) => condProductRow(r, total, r.productId === best?.productId)).join("");
+    const rest = recs.slice(TOP);
+    const more = rest.length > 0 ? `<details class="kd-ep-more"><summary>Show all ${recs.length} products</summary><div class="kd-ep-more__body">${rest.map((r) => condProductRow(r, total, false)).join("")}</div></details>` : "";
+    return seclabel("Best products for this", "ranked by how many nutrients each covers") + `<div class="kd-ep-prods">${head}${more}</div>`;
+  }
+  function renderConditionRelated(page) {
+    const relatedCondSet = new Set(page.related_conditions);
+    let out = "";
+    if (page.related_conditions.length > 0) {
+      const pills = page.related_conditions.map((slug) => pill(conditionDisplayName(slug), "data-kd-condition", slug, "kd-ep-pill--cond"));
+      out += seclabel("Related conditions") + pillCloud(pills, 12);
+    }
+    const explore = page.related.filter((s) => !relatedCondSet.has(s));
+    if (explore.length > 0) {
+      const pills = explore.map((slug) => {
+        const ess = getEssentialBySlug(slug);
+        if (ess !== null) {
+          return pill(essentialDisplayName(slug), "data-kd-essential", ess.layout_key, "kd-ep-pill--explore");
+        }
+        const cond = getCondition(slug);
+        if (cond !== null) {
+          return pill(cond.display_name, "data-kd-condition", slug, "kd-ep-pill--explore");
+        }
+        return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML6(humanizeSlug(slug))}</span>`;
+      });
+      out += seclabel("Keep exploring") + pillCloud(pills, 14);
+    }
+    return out;
+  }
+  function renderConditionPage(slug) {
+    const page = getConditionPage(slug);
+    const c = getCondition(slug);
+    if (page === null) {
+      const nm = escHTML6(c?.display_name ?? humanizeSlug(slug));
+      return `<div class="kd-essential-deep kd-ep kd-ep--cond">
+      <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${conditionBackButton()}</div>
+      <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
+    </div>`;
+    }
+    const cat = conditionCategory(slug);
+    const catStyle = cat !== null ? ` style="--cat:${escHTML6(cat.color)}"` : "";
+    const catIcon = cat !== null && cat.icon.length > 0 ? `<div class="kd-ep-hero__sym kd-ep-hero__sym--cat"><svg viewBox="0 0 24 24" aria-hidden="true">${cat.icon}</svg></div>` : "";
+    const catChip = cat !== null ? `<div class="kd-ep-hero__cat"><i></i>${escHTML6(cat.label)}</div>` : "";
+    const metaBits = [`${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].join(" \xB7 ");
+    const synonyms = page.synonyms.length > 0 ? ` \xB7 also: ${escHTML6(page.synonyms.join(", "))}` : "";
+    const synopsis = c !== null ? conditionSynopsis(c) : "";
+    const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML6(synopsis)}</p>` : "";
+    return `<div class="kd-essential-deep kd-ep kd-ep--cond"${catStyle}>
+    <div class="kd-ep-hero">
+      ${catIcon}
+      <div class="kd-ep-hero__idblock">
+        <h1 class="kd-ep-hero__name">${escHTML6(page.name)}</h1>
+        <div class="kd-ep-hero__subline">${catChip}${catChip.length > 0 ? '<span class="kd-ep-hero__sep">\xB7</span>' : ""}<span class="kd-ep-hero__meta">${metaBits}${synonyms}</span></div>
+      </div>
+      ${conditionBackButton()}
+    </div>
+    ${conditionUmbrellaTip(slug, page.claim_count)}
+    ${lede}
+    ${renderConditionProtocol(page)}
+    ${renderNutrientsToRestore(page, c)}
+    ${renderConditionProducts(page)}
+    ${renderRecord(page.record, page.claim_count, "The full picture", "every claim, grouped")}
+    ${renderConditionRelated(page)}
+  </div>`;
   }
 
   // assets/js/src/views/knowledge-explore.ts
@@ -100082,7 +100090,8 @@ deaths, blood clots, sterility`,
     </header>`;
   }
   function facetSections(claims) {
-    return SEARCH_FACETS.map((facet) => {
+    const order = ["protocol", ...SEARCH_FACETS.filter((f) => f !== "protocol")];
+    return order.map((facet) => {
       const inFacet = claims.filter((c) => c.facet === facet);
       if (inFacet.length === 0) {
         return "";
@@ -100148,7 +100157,7 @@ deaths, blood clots, sterility`,
       <div class="kd-foods-villi__cap">${withVilliGloss(cap)}</div>
     </div>`;
   }
-  function collapseWS3(s) {
+  function collapseWS2(s) {
     return s.replace(/\s+/g, " ").trim();
   }
   function fixQuoteGlyph(s) {
@@ -100159,7 +100168,7 @@ deaths, blood clots, sterility`,
     if (q === null) {
       return "";
     }
-    const text = fixQuoteGlyph(collapseWS3(q.claim.verbatim));
+    const text = fixQuoteGlyph(collapseWS2(q.claim.verbatim));
     const idx = text.indexOf(q.highlightFrom);
     const body = idx >= 0 ? `${escHTML8(text.slice(0, idx))}<mark class="ds-mark">${escHTML8(text.slice(idx))}</mark>` : escHTML8(text);
     const page = q.claim.page !== null ? `Page \xB7 ${q.claim.page}` : "";
@@ -100592,6 +100601,36 @@ deaths, blood clots, sterility`,
   function escHTML11(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
+  var CRUMB_MAX = 6;
+  function crumbKey(c) {
+    return `${c.type}:${c.val}`;
+  }
+  function capTrail(trail) {
+    while (trail.length > CRUMB_MAX && trail.length > 2) {
+      trail.splice(1, 1);
+    }
+  }
+  function tabLabel(tab) {
+    return ui(`kd_tab_${tab}`) || tab.toUpperCase();
+  }
+  function crumbLabel(type, val) {
+    if (type === "essential") {
+      return getEssentialByLayoutKey(val)?.common_name ?? val;
+    }
+    if (type === "condition") {
+      return getCondition(val)?.display_name ?? val;
+    }
+    return vaultEntry(val)?.name ?? val;
+  }
+  function renderCrumbs(trail) {
+    if (trail.length === 0) {
+      return "";
+    }
+    const items = trail.map(
+      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML11(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML11(c.label)}</button>`
+    ).join('<span class="kd-crumb__sep" aria-hidden="true">\u203A</span>');
+    return `<nav class="kd-crumbs" aria-label="Breadcrumb">${items}</nav>`;
+  }
   function renderEssentialDeep(key, snapshot) {
     return renderEssentialPage(key, snapshot);
   }
@@ -100634,14 +100673,14 @@ deaths, blood clots, sterility`,
       case "essentials":
         return renderEssentialsTab(snapshot, selectedKey);
       case "conditions":
-        return renderConditionsTab(selectedCondition);
+        return (selectedCondition !== null ? renderConditionPage(selectedCondition) : "") + renderConditionsTab(selectedCondition);
       case "explore":
         return renderExploreTab();
       case "products":
         return renderProductsTab(selectedProduct);
     }
   }
-  function renderShell2(activeTab, selectedKey, selectedCondition, selectedProduct, selectedTopic) {
+  function renderShell2(activeTab, selectedKey, selectedCondition, selectedProduct, selectedTopic, trail) {
     const snapshot = getOrCompute();
     const productsCount = productCount();
     const tabs = [
@@ -100666,7 +100705,7 @@ deaths, blood clots, sterility`,
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ""}
-    <div class="kd-body">${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
+    <div class="kd-body">${renderCrumbs(trail)}${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
   }
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
@@ -100731,9 +100770,10 @@ deaths, blood clots, sterility`,
     let selectedCondition = null;
     let selectedProduct = null;
     let selectedTopic = null;
+    let trail = [];
     let searchQuery = "";
     const render = () => {
-      container.innerHTML = renderShell2(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic);
+      container.innerHTML = renderShell2(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic, trail);
       if (searchQuery.length > 0) {
         const input = container.querySelector(".kd-search-input");
         if (input !== null) {
@@ -100745,6 +100785,75 @@ deaths, blood clots, sterility`,
           applyKnowledgeSearch(body, activeTab, searchQuery);
         }
       }
+      const scrollCat = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : "";
+      if (/^#[0-9a-f]{3,8}$/i.test(scrollCat)) {
+        document.documentElement.style.setProperty("--kd-cond-scroll", scrollCat);
+      } else {
+        document.documentElement.style.removeProperty("--kd-cond-scroll");
+      }
+    };
+    const openDetail = (type, val) => {
+      const cur = type === "essential" ? selectedEssential : type === "condition" ? selectedCondition : selectedProduct;
+      const originTab = activeTab;
+      selectedEssential = null;
+      selectedCondition = null;
+      selectedProduct = null;
+      selectedTopic = null;
+      if (cur === val) {
+        trail = [];
+        render();
+        return;
+      }
+      if (type === "essential") {
+        selectedEssential = val;
+        activeTab = "essentials";
+      } else if (type === "condition") {
+        selectedCondition = val;
+        activeTab = "conditions";
+      } else {
+        selectedProduct = val;
+        activeTab = "products";
+      }
+      const crumb = { type, val, label: crumbLabel(type, val) };
+      if (trail.length === 0) {
+        trail = [{ type: "tab", val: originTab, label: tabLabel(originTab) }, crumb];
+      } else {
+        const dup = trail.findIndex((c) => crumbKey(c) === crumbKey(crumb));
+        if (dup >= 0) {
+          trail = trail.slice(0, dup + 1);
+        } else {
+          trail.push(crumb);
+          capTrail(trail);
+        }
+      }
+      render();
+    };
+    const goCrumb = (i) => {
+      const c = trail[i];
+      selectedEssential = null;
+      selectedCondition = null;
+      selectedProduct = null;
+      selectedTopic = null;
+      if (i < 0 || c === void 0 || c.type === "tab") {
+        trail = [];
+        if (c !== void 0 && c.type === "tab") {
+          activeTab = c.val;
+        }
+        render();
+        return;
+      }
+      trail = trail.slice(0, i + 1);
+      if (c.type === "essential") {
+        selectedEssential = c.val;
+        activeTab = "essentials";
+      } else if (c.type === "condition") {
+        selectedCondition = c.val;
+        activeTab = "conditions";
+      } else if (c.type === "product") {
+        selectedProduct = c.val;
+        activeTab = "products";
+      }
+      render();
     };
     const open = () => {
       if (isOpen) {
@@ -100764,6 +100873,8 @@ deaths, blood clots, sterility`,
       selectedCondition = null;
       selectedProduct = null;
       selectedTopic = null;
+      trail = [];
+      document.documentElement.style.removeProperty("--kd-cond-scroll");
       container.classList.remove("kd-open");
       container.innerHTML = "";
     };
@@ -100791,46 +100902,47 @@ deaths, blood clots, sterility`,
           selectedCondition = null;
           selectedProduct = null;
           selectedTopic = null;
+          trail = [];
           searchQuery = "";
           render();
         }
         return;
       }
+      const crumbEl = target.closest("[data-kd-crumb]");
+      if (crumbEl !== null) {
+        goCrumb(Number(crumbEl.getAttribute("data-kd-crumb")));
+        return;
+      }
       const essEl = target.closest("[data-kd-essential]");
       if (essEl !== null) {
         const k = essEl.getAttribute("data-kd-essential");
-        selectedEssential = k !== null && k === selectedEssential ? null : k;
-        if (selectedEssential !== null) {
-          activeTab = "essentials";
+        if (k !== null) {
+          openDetail("essential", k);
         }
-        render();
         return;
       }
       const condEl = target.closest("[data-kd-condition]");
       if (condEl !== null) {
         const k = condEl.getAttribute("data-kd-condition");
-        selectedCondition = k !== null && k === selectedCondition ? null : k;
-        if (selectedCondition !== null) {
-          activeTab = "conditions";
+        if (k !== null) {
+          openDetail("condition", k);
         }
-        render();
         return;
       }
       const topicEl = target.closest("[data-kd-topic]");
       if (topicEl !== null) {
         const k = topicEl.getAttribute("data-kd-topic");
         selectedTopic = k !== null && k === selectedTopic ? null : k;
+        trail = [];
         render();
         return;
       }
       const prodEl = target.closest("[data-kd-product]");
       if (prodEl !== null) {
         const k = prodEl.getAttribute("data-kd-product");
-        selectedProduct = k !== null && k === selectedProduct ? null : k;
-        if (selectedProduct !== null) {
-          activeTab = "products";
+        if (k !== null) {
+          openDetail("product", k);
         }
-        render();
         return;
       }
       const actionEl = target.closest("[data-kd-action]");
@@ -100840,15 +100952,19 @@ deaths, blood clots, sterility`,
           close();
         } else if (action === "essential-close") {
           selectedEssential = null;
+          trail = [];
           render();
         } else if (action === "condition-close") {
           selectedCondition = null;
+          trail = [];
           render();
         } else if (action === "product-close") {
           selectedProduct = null;
+          trail = [];
           render();
         } else if (action === "topic-close") {
           selectedTopic = null;
+          trail = [];
           render();
         } else if (action === "explore-home") {
           activeTab = "explore";
@@ -100856,6 +100972,7 @@ deaths, blood clots, sterility`,
           selectedEssential = null;
           selectedCondition = null;
           selectedProduct = null;
+          trail = [];
           searchQuery = "";
           render();
         } else if (action === "sources-more") {
@@ -103351,7 +103468,15 @@ DEFERRED (his call): the "searchable-but-demoted" per-card flag (keep a low-valu
 
 Technical: Two files. views/knowledge-corpus.ts \u2014 added conditionsByWeight() (sort by claim_count desc, display_name alpha tiebreak; presentation-only, the derive keeps conditions A-Z), wrapped the rows in a .kd-conditions-grid container, restructured the section head to "ALL {N} CONDITIONS \xB7 SORTED BY HOW MUCH WALLACH WROTE", and restructured renderConditionRow into a .kd-condition-row__body (name + "N nutrients") + a .kd-condition-row__count (claim_count + "claims" label). drawer-knowledge.css \u2014 .kd-conditions-grid is repeat(auto-fill, minmax(230px,1fr)) ~3 cols at the 950px drawer; .kd-condition-row is a grid 1fr/auto card with background var(--ds-paper-deep), border-left 3px var(--ds-accent), radius sm; name = --ds-font-display-interface (Chakra Petch) uppercase sm; meta = --ds-font-mono micro muted; count = --ds-font-display-artifact (Bruno Ace) 1.2rem --ds-accent-deep with a mono "claims" sublabel; hover sets background --ds-paper-light + name colour --ds-accent-deep + count colour --ds-accent-hot; is-selected mirrors the hover bg + an accent ring. The content-aware search filter (data-search keyword blob, e.g. "smell"->Anosmia) still works because the grid wrapper doesn't change the flat querySelectorAll the filter walks. Card styling (tan bg + orange bar) mirrors the demo's .sh-condrow (background rgb(242,234,211)=--ds-paper-deep, border-left 3px rgb(255,126,60)=--ds-accent), mapped to current tokens rather than hardcoded. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds), render_probe_knowledge PASS (conditions rowCount 502, search visible 11 for a query, anosmiaVisible true, PAGE_ERRORS 0), plus headless default + hover screenshots. Deferred: Luneth wants a redesign (higher-impact Unbounded-forward cards, less busy/less boring, possible condition-type colour-coding) \u2014 mockups are the next step, then the condition detail view.` }, { id: "lg_mrwhzt0v_vli528", ts: "2026-07-22T14:51:14.863665-05:00", surface: "knowledge", kind: "round-close", summary: "Conditions tab redesigned: ghost-number cards + 12 body-system category colours + Unbounded (design D of 4 mockups). 502 conditions tagged via a reviewed 12-agent pass; new condition-categories.json curation + schema + reader, MANIFEST-accounted, board 77/77", detail: `Plain: The Conditions list in the Knowledge drawer got a real redesign. Every condition now sits on its own card with a big, faded claim-count number in the top corner, the condition's name in our bold Unbounded font, and a small coloured tag saying which part of the body it affects (Bones & Joints, Mind & Nerves, Heart/Blood, Skin, Digestion, Hormones, and so on \u2014 12 groups, each its own colour). That colour tag is the whole point: Luneth found that seeing "what each condition affects" while browsing was genuinely delightful and informative, so we made it a first-class part of the card. He picked this "ghost number" look from four mockups I drafted. All 502 conditions were sorted into the 12 groups by a reviewed pass of 12 helper agents; Luneth approved it as good-enough-for-now and plans to fine-tune the groupings later.
 
-Technical: NEW curation layer + wiring, following the existing hand-authored-curation pattern (home-curation/foods-curation). dashboard/assets/data/condition-categories.json = {categories:{id:{label,color}}, conditions:{slug:id}} (12 categories, 502 mapped). Registered in eden/derived/MANIFEST.json \`accounted\` (hand_authored) so data_artifacts_accounted stays green (now 24 assets/data files: 12 derived + 14 hand/external). core/schemas/condition-categories.ts (ConditionCategoriesSchema + ConditionCategoryDefSchema, exported via schemas/index.ts). state/condition-categories.ts reader: parse-once through Zod, conditionCategory(slug) -> {slug,label,color}|null (graceful \u2014 unmapped condition or unknown id => no chip/colour, falls back to app accent). Render: views/knowledge-corpus.ts renderConditionRow rebuilt to the D markup (.kd-condition-row__ghost aria-hidden claim_count + .kd-condition-row__cat dot+label + .kd-condition-row__name + .kd-condition-row__foot; --cat colour carried inline per card from the reader). drawer-knowledge.css .kd-condition-row block: position:relative + overflow:hidden card, radius-lg, name = --ds-font-display (Unbounded) text-md, ghost = --ds-font-display 3rem color-mix(--cat 22% transparent) absolute right:12 top:2, cat chip mono in --cat with a dot, hover = border+bg(white)+lift + ghost color-mix 34%, is-selected = --cat ring. Category colours: bones-joints-muscles #4f76a3, mind-nerves #7b62a3, heart-blood-circulation #a83f48, skin-hair-nails #bd7b34, digestion-liver #6b8a43, hormones-metabolism #2c8a7e, reproductive-urinary #a25490, respiratory #3f8fa8, immunity-infection #c9a13b, eyes-ears-mouth #5860a8, cellular-systemic #5f636b, general-other #8a8a86. Classification via a Workflow (12 parallel agents, ~42 conditions each, strict 12-category medical rubric; first run hit the workflow VM's 4096 data-crossing cap on args, fixed by embedding the 502-item list in the script + returning a flat pairs array). Content-aware condition search filter preserved (the grid wrapper doesn't change the flat querySelectorAll the filter walks). No sealed pillar touched (curation is not a golden file) \u2014 no seal needed. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds; data_artifacts_accounted + derived_artifacts_fresh green), render_probe_knowledge PASS (conditions rowCount 502, PAGE_ERRORS 0), headless puppeteer screenshots (default + hover). Design reference temporary/condition-cards-brainstorm.html (gitignored local mockup, 4 options). Next: the condition DETAIL view (Osteoporosis exemplar) in a fresh genesis session; its "THE APPROACH" protocol card must feature the REAL sourced Wallach claim WAL-CLM-DDDL-000060, never a composite (\xA700.A).` }];
+Technical: NEW curation layer + wiring, following the existing hand-authored-curation pattern (home-curation/foods-curation). dashboard/assets/data/condition-categories.json = {categories:{id:{label,color}}, conditions:{slug:id}} (12 categories, 502 mapped). Registered in eden/derived/MANIFEST.json \`accounted\` (hand_authored) so data_artifacts_accounted stays green (now 24 assets/data files: 12 derived + 14 hand/external). core/schemas/condition-categories.ts (ConditionCategoriesSchema + ConditionCategoryDefSchema, exported via schemas/index.ts). state/condition-categories.ts reader: parse-once through Zod, conditionCategory(slug) -> {slug,label,color}|null (graceful \u2014 unmapped condition or unknown id => no chip/colour, falls back to app accent). Render: views/knowledge-corpus.ts renderConditionRow rebuilt to the D markup (.kd-condition-row__ghost aria-hidden claim_count + .kd-condition-row__cat dot+label + .kd-condition-row__name + .kd-condition-row__foot; --cat colour carried inline per card from the reader). drawer-knowledge.css .kd-condition-row block: position:relative + overflow:hidden card, radius-lg, name = --ds-font-display (Unbounded) text-md, ghost = --ds-font-display 3rem color-mix(--cat 22% transparent) absolute right:12 top:2, cat chip mono in --cat with a dot, hover = border+bg(white)+lift + ghost color-mix 34%, is-selected = --cat ring. Category colours: bones-joints-muscles #4f76a3, mind-nerves #7b62a3, heart-blood-circulation #a83f48, skin-hair-nails #bd7b34, digestion-liver #6b8a43, hormones-metabolism #2c8a7e, reproductive-urinary #a25490, respiratory #3f8fa8, immunity-infection #c9a13b, eyes-ears-mouth #5860a8, cellular-systemic #5f636b, general-other #8a8a86. Classification via a Workflow (12 parallel agents, ~42 conditions each, strict 12-category medical rubric; first run hit the workflow VM's 4096 data-crossing cap on args, fixed by embedding the 502-item list in the script + returning a flat pairs array). Content-aware condition search filter preserved (the grid wrapper doesn't change the flat querySelectorAll the filter walks). No sealed pillar touched (curation is not a golden file) \u2014 no seal needed. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds; data_artifacts_accounted + derived_artifacts_fresh green), render_probe_knowledge PASS (conditions rowCount 502, PAGE_ERRORS 0), headless puppeteer screenshots (default + hover). Design reference temporary/condition-cards-brainstorm.html (gitignored local mockup, 4 options). Next: the condition DETAIL view (Osteoporosis exemplar) in a fresh genesis session; its "THE APPROACH" protocol card must feature the REAL sourced Wallach claim WAL-CLM-DDDL-000060, never a composite (\xA700.A).` }, { id: "lg_mrwod8ua_nlvtia", ts: "2026-07-22T17:49:39.586777-05:00", surface: "knowledge", kind: "round-close", summary: "Condition DETAIL view landed \u2014 the Osteoporosis-style page is now live for all 502 conditions (category hero + icon, real sourced Wallach protocol, relationship-aware nutrients, best-products, full record), plus loop-safe breadcrumbs across the Knowledge drawer.", detail: `Built the condition detail page \u2014 click any condition (e.g. Osteoporosis) in the Knowledge drawer and you now get a full page: what body-system it affects (with a category-coloured icon), Wallach's actual protocol in HIS words (never stitched together), the nutrients to restore (grouped so you see which the deficiency causes vs. which treat it), the best products to buy, and every claim grouped by type. Also added breadcrumbs so you can always click back through where you've been, and colour-coded the whole card + scrollbar to the condition's body-system. It works for all 502 conditions, not just Osteoporosis, because it's one data-driven renderer \u2014 no per-condition code.
+
+TECHNICAL \u2014 NEW views/entity-page.ts::renderConditionPage(slug): a pure projection mirroring renderEssentialPage (entity_render_is_projection holds), reading getConditionPage() + the sealed corpus. Sections: category-tinted hero (per-category SVG icon tile + name + chip/counts subline + back) \xB7 derived conditionSynopsis lede (NOT the broken auto one_liner) \xB7 Wallach's protocol featuring the real protocol_claim_ids verbatim, never composited (\xA700.A) \xB7 nutrients hybrid ("To restore" glimpse + collapsed "Caused by these deficiencies"/"Also cited alongside" lenses with Expand/Collapse pills) \xB7 best products (rankProductsForCoverage over restore[], "covers N/M \xB7 \\$wholesale") \xB7 full record (renderRecord kind groups + filter) \xB7 related/keep-exploring pills. Wired from knowledge.ts; renderConditionsTab slimmed to grid-only; old renderConditionDeep + ~15 kd-corpus/kd-claim helpers removed from knowledge-corpus.ts (now exports conditionSynopsis/essentialsInRoles/familiarEssentialName).
+
+Category colour-coding: condition-categories.json gained a per-category icon (12 body-system glyphs) via schema+reader; hero tile, card border/top-hairline, and drawer scrollbar all take --cat. Scrollbar gotcha (new memory webkit-scrollbar-root-custom-props): WebKit scrollbar pseudos read ONLY root-level custom props, so render() publishes --kd-cond-scroll on <html> (Firefox reads scrollbar-color, Chrome the webkit thumb).
+
+Breadcrumbs (drawer-wide, new): ported the signed-off demo's bounded/loop-free/cap-6 trail (origin anchor \xB7 dedup-truncate on revisit \xB7 drop-oldest) to knowledge.ts; all nav routes through openDetail(), goCrumb() on click, mono chrome styling. Claim cards: expanded = full family-coloured summary (record cards only, scoped by .kd-ep-claim--record; search Q&A cards untouched). Absorption facets lead with "What to do".
+
+VERIFIED: build OK \xB7 invariants 77/77 \xB7 render_probe_entity + render_probe_knowledge (UPDATED to the new kd-ep--cond structure \u2014 stale on the old deep-view since round 1) + a breadcrumb behaviour probe (grow/truncate/loop-guard/origin-exit) ALL PASS \xB7 0 page errors \xB7 category propagation across 6 categories \xB7 scrollbar proven via computed scrollbar-color. Luneth visually signed off each round including the scrollbar. Lint tidy: cleaned all new breadcrumb/scrollbar style errors + import ordering in the touched files. DEFERRED: the auto condition one_liner is still mismatched (fibrous-dysplasia for osteoporosis) \u2014 we render the derived synopsis. Remaining demo surfaces: Products tab + detail, Ask-Wallach wording.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
