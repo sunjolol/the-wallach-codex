@@ -2463,8 +2463,8 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "Wallach teaches that minerals are absorbed at very different efficiencies depending on their form, so the most efficient supplement form — plant-derived colloidal minerals — should be consumed; for the poorly absorbed metallic form the absorption ratio is roughly 1:1 for iodine, 1:10 for iron and 1:100 for chromium, meaning the colloidal form can be absorbed up to 100 times better for some minerals.",
-      "verbatim": "the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.\n\nFor the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.",
+      "claim_text": "Wallach argues that because there is often a wide disparity between a trace mineral's absolute requirement and its dietary requirement — a gap arising from the different intestinal absorption efficiencies of individual elements — the most efficient form of supplement, such as plant-derived colloidal minerals, should be consumed. For the metallic form, he gives this ratio as almost 1:1 for iodine, 1:10 for iron, and 1:100 for chromium.",
+      "verbatim": "Because of the frequently wide disparity between the absolute and dietary requirements (results from different intestinal absorption efficiencies for individual elements) the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.\n\nFor the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.",
       "locator": {
         "book": "rare-earths",
         "scheme": "chapter_page",
@@ -2472,7 +2472,7 @@
         "page": 270,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 681664
+        "char_offset": 681493
       },
       "dose": null,
       "tags": [
@@ -10488,7 +10488,7 @@
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
-      "claim_text": "In Rare Earths: Forbidden Cures, Wallach catalogs rhenium -- a trace element -- in his periodic-table survey. His entry records its natural distribution (0.005 parts-per-million in igneous rocks, trace levels in marine plants and animals) and notes that land animals accumulate rhenium in thyroid tissue. He records no specific deficiency disease here; the value is completeness -- this is rhenium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the minerals taken up by living tissue.",
+      "claim_text": "In Rare Earths: Forbidden Cures, Wallach catalogs rhenium -- a trace element -- in his periodic-table survey. His entry records its natural distribution -- 0.005 parts-per-million in igneous rocks, 0.014 ppm in marine plants, and 0.0005 to 0.006 ppm in marine animals -- and notes that land animals accumulate rhenium in the thyroid tissue. He records no specific deficiency disease here.",
       "verbatim": "Re - Rhenium is found in igneous\nrocks at 0.005 ppm; marine plants at 0.014\nppm; marine animals at 0.0005 to 0.006\nppm; land animals accumulate Re in the\nthyroid tissue.",
       "locator": {
         "book": "rare-earths",
