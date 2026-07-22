@@ -2479,14 +2479,18 @@
         "colloidal-minerals",
         "bioavailability",
         "absorption-ratio",
-        "metallic-vs-colloidal"
+        "metallic-vs-colloidal",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T03:39:21+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000075",
@@ -2981,14 +2985,18 @@
         "colloidal-minerals",
         "heavy-metal-detox",
         "unmask-then-reduce",
-        "dr-todd"
+        "dr-todd",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T04:12:22+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000089",

@@ -350,7 +350,7 @@
         "selenium",
         "essential_nutrients"
       ],
-      "claim_count": 29
+      "claim_count": 32
     },
     "color_therapy": {
       "display_name": "Color Therapy",
@@ -2427,16 +2427,17 @@
       "subject": "colloidal_minerals",
       "also_about": [],
       "facet": "mechanism",
-      "question": "Why do different mineral forms absorb so differently?",
-      "answer_short": "Metallic minerals are only 8–12% absorbable (3–5% after 40), chelated better, and plant-derived colloidal the most usable — which is why Wallach calls it the most critical of the 90 nutrients.",
+      "question": "Why are the minerals in ordinary supplement tablets so poorly absorbed?",
+      "answer_short": "Because of their form. Wallach says metallic minerals (the gluconate/carbonate/oxide forms in most tablets, plus eggshell, oyster shell, dolomite and antacids) are only 8–12% absorbable — and just 3–5% after age 35–40. Chelated minerals absorb better, but plant-derived colloidal minerals are the most usable, which is why he calls them the most critical of the 90 essential nutrients.",
       "answer": "Wallach describes three basic forms of minerals and their very different bioavailability. Metallic minerals (eggshell, oyster shell, calcium carbonate, dolomite, antacids such as Rolaids and Tums, and the gluconate/carbonate/oxide forms in most tablets) are, despite claims to the contrary, only 8 to 12 percent absorbable by humans -- dropping to roughly 3 to 5 percent after age 35 to 40. Chelated minerals (created by the livestock industry in the 1960s, the mineral wrapped in an amino acid such as EDTA) absorb better, and colloidal minerals -- ultra-fine plant-derived particles suspended in liquid -- are the most usable, which is why he calls plant-derived colloidal minerals the most critical of the 90 essential nutrients.",
       "verbatim": "Metallic minerals, despite wild claims to the contrary, are only eight percent\nto twelve percent biologically available to all vertebrates, including humans; after\nattaining the age of 35 to 40 years the absorptive availability to humans is\n\n\nreduced to somewhere around three to five percent.",
       "page": 646,
       "book_id": "epigenetics",
       "topics": [
         "mineral-bioavailability",
-        "metallic-minerals",
-        "absorption"
+        "mineral-forms",
+        "colloidal-minerals",
+        "metallic-minerals"
       ]
     },
     {
@@ -3794,16 +3795,17 @@
       "subject": "colloidal_minerals",
       "also_about": [],
       "facet": "basics",
-      "question": "What is a colloidal mineral?",
-      "answer_short": "A mineral existing as ultra-fine particles (1–100 nanometers — 'nano-technology') suspended in liquid, too small to dissolve into single atoms the way salt does.",
+      "question": "What actually is a 'colloidal' mineral?",
+      "answer_short": "An ultra-fine particle. Wallach describes a colloidal mineral as a particle so small (~1 billion would fit in 0.01 cubic inch) it can't be seen with the naked eye, and which stays grouped together instead of separating into individual atoms the way salt does in water — kept within the 1–100 nanometer range he calls 'nano-technology.'",
       "answer": "What is a colloidal mineral - and what does 'nano-technology' have to do with it? Wallach describes a colloid as a substance existing as ultra-fine particles suspended in a medium of different matter - so small (about one billion would fit into 0.01 cubic inch) that they cannot be seen with the naked eye. In the colloidal state, he says, the particles remain grouped together instead of separating into individual atoms the way salt does in a true solution. He notes colloids remain heterogeneous, multiphasic and insoluble as long as a larger number of the particles, if not all, stay within the colloidal size range of 1nm to 100nm - a range, he points out, known as 'nano-technology.'",
       "verbatim": "The interesting\nthing about colloids is that they remain heterogeneous, multiphasic and insoluble at different concentrations as long as a\nlarger number if not all of the particles are within a range of\nsizes of colloids (1nm to 100nm) known as “nano-technology.”",
       "page": 91,
       "book_id": "immortality",
       "topics": [
-        "colloidal-minerals",
         "nano-technology",
-        "mineral-forms"
+        "mineral-forms",
+        "colloidal-minerals",
+        "colloid-chemistry"
       ]
     },
     {
@@ -6854,6 +6856,29 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000352",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "If someone can't absorb nutrients from food, what's the best way to get minerals in?",
+      "answer_short": "Liquid plant-derived colloidal minerals, Wallach says — the most efficient way to get minerals into malnourished people. He frames malnutrition-from-malabsorption (celiac changes or low stomach acid) as the common denominator of almost all degenerative disease, so the absorbable colloidal form is his answer.",
+      "answer": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people.",
+      "verbatim": "As wild as it seems \"malnutrition\" as a\nresult of \"malabsorption\" appears to be the\ncommon denominator of almost all degenerative disease. Liquid plant derived colloidal\nminerals are the most efficient way to get\nminerals into malnurished humans",
+      "page": 146,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "malabsorption",
+        "malnutrition",
+        "colloidal-minerals",
+        "degenerative-disease"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "malnutrition"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-LETS-000362",
       "subject": "be_your_own_doctor",
       "also_about": [
@@ -7493,6 +7518,49 @@
         "degenerative-disease",
         "long-lived-cultures",
         "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000074",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does the form of a mineral matter so much for absorption?",
+      "answer_short": "Because absorption efficiency varies enormously by form. Wallach ties it to the gap between how much of a mineral the body truly needs and how much you must eat to get it — for the metallic form the ratio runs from about 1:1 (iodine) to 1:100 (chromium) — so the most efficient form, plant-derived colloidal minerals, should be consumed.",
+      "answer": "Wallach argues that because there is often a wide disparity between a trace mineral's absolute requirement and its dietary requirement — a gap arising from the different intestinal absorption efficiencies of individual elements — the most efficient form of supplement, such as plant-derived colloidal minerals, should be consumed. For the metallic form, he gives this ratio as almost 1:1 for iodine, 1:10 for iron, and 1:100 for chromium.",
+      "verbatim": "Because of the frequently wide disparity between the absolute and dietary requirements (results from different intestinal absorption efficiencies for individual elements) the most efficient form of trace mineral supplement, such as plant derived colloidal minerals should be consumed.\n\nFor the metallic form of iodine the ratio is almost 1:1; for iron it’s 1:10 and for chromium it’s 1:100.",
+      "page": 270,
+      "book_id": "rare-earths",
+      "topics": [
+        "absorption-ratio",
+        "mineral-bioavailability",
+        "colloidal-minerals",
+        "metallic-minerals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine",
+          "iron",
+          "chromium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000088",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can plant-derived colloidal minerals help clear heavy metals from the body?",
+      "answer_short": "Per a study Wallach cites: Gary Price Todd, MD gave patients 3 oz of liquid plant-derived colloidal minerals daily; hair levels of lead, cadmium and mercury first ROSE at three months (the minerals unmask hidden tissue stores), then dropped steadily — a reduction Todd found to be time- and dose-related.",
+      "answer": "Dr. Gary Price Todd, MD — a physician whose published clinical study on mineral substitution Wallach cites in this chapter — gave patients three ounces of liquid plant-derived colloidal minerals daily. Wallach relays Todd's finding that this regimen first UNMASKS hidden body stores of lead, cadmium and mercury — hair levels actually rise at the three-month mark as the tissue stores mobilize into the blood — and then progressively REDUCES them, with the rate and degree of toxic-mineral clearance being time- and dose-related.",
+      "verbatim": "use of Todd’s protocol may be an effective method of unmasking latent (hidden) body stores of lead, cadmium or mercury.",
+      "page": 279,
+      "book_id": "rare-earths",
+      "topics": [
+        "heavy-metal-detox",
+        "dr-todd",
+        "colloidal-minerals",
+        "lead-cadmium-mercury"
       ]
     },
     {

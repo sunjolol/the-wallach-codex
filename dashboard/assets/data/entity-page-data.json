@@ -2789,9 +2789,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -2800,6 +2803,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3373,9 +3378,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3384,6 +3392,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3478,9 +3488,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3489,6 +3502,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3588,9 +3603,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3599,6 +3617,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3674,9 +3694,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3685,6 +3708,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3760,9 +3785,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3771,6 +3799,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3846,9 +3876,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3857,6 +3890,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -3923,9 +3958,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -3934,6 +3972,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4022,9 +4062,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4033,6 +4076,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4101,9 +4146,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4112,6 +4160,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4178,9 +4228,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4189,6 +4242,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4264,9 +4319,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4275,6 +4333,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4384,9 +4444,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4395,6 +4458,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4463,9 +4528,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4474,6 +4542,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4542,9 +4612,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4553,6 +4626,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4621,9 +4696,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4632,6 +4710,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4707,9 +4787,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4718,6 +4801,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4871,9 +4956,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4882,6 +4970,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -4948,9 +5038,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -4959,6 +5052,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5027,9 +5122,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5038,6 +5136,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5106,9 +5206,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5117,6 +5220,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5208,9 +5313,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5219,6 +5327,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5285,9 +5395,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5296,6 +5409,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5362,9 +5477,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5373,6 +5491,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5439,9 +5559,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5450,6 +5573,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5516,9 +5641,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5527,6 +5655,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5593,9 +5723,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5604,6 +5737,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5708,9 +5843,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5719,6 +5857,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5785,9 +5925,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5796,6 +5939,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5862,9 +6007,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5873,6 +6021,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -5939,9 +6089,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -5950,6 +6103,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -6016,9 +6171,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -6027,6 +6185,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -6094,9 +6254,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -6105,6 +6268,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -6171,9 +6336,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -6182,6 +6350,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -6248,9 +6418,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
             "WAL-CLM-DDDL-000119",
+            "WAL-CLM-EPIGEN-000060",
             "WAL-CLM-RARE-000059",
             "WAL-CLM-RARE-000061",
-            "WAL-CLM-RARE-000072"
+            "WAL-CLM-RARE-000072",
+            "WAL-CLM-RARE-000074",
+            "WAL-CLM-RARE-000088"
           ]
         },
         {
@@ -6259,6 +6432,8 @@
             "WAL-CLM-DDDL-000116",
             "WAL-CLM-DDDL-000117",
             "WAL-CLM-DDDL-000120",
+            "WAL-CLM-IMMORT-000024",
+            "WAL-CLM-LETS-000352",
             "WAL-CLM-RARE-000024",
             "WAL-CLM-RARE-000062",
             "WAL-CLM-RARE-000069",
@@ -24059,7 +24234,7 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people. (Note: in the book this entry's text is split by the two-column scan order; the reading order is reassembled here.)",
+      "one_liner": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people.",
       "protocol_claim_ids": [],
       "restore": [],
       "record": [

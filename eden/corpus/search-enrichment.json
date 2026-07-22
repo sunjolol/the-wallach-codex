@@ -652,12 +652,13 @@
       "subject": "colloidal_minerals",
       "also_about": [],
       "facet": "mechanism",
-      "question": "Why do different mineral forms absorb so differently?",
-      "answer_short": "Metallic minerals are only 8–12% absorbable (3–5% after 40), chelated better, and plant-derived colloidal the most usable — which is why Wallach calls it the most critical of the 90 nutrients.",
+      "question": "Why are the minerals in ordinary supplement tablets so poorly absorbed?",
+      "answer_short": "Because of their form. Wallach says metallic minerals (the gluconate/carbonate/oxide forms in most tablets, plus eggshell, oyster shell, dolomite and antacids) are only 8–12% absorbable — and just 3–5% after age 35–40. Chelated minerals absorb better, but plant-derived colloidal minerals are the most usable, which is why he calls them the most critical of the 90 essential nutrients.",
       "topics": [
         "mineral-bioavailability",
-        "metallic-minerals",
-        "absorption"
+        "mineral-forms",
+        "colloidal-minerals",
+        "metallic-minerals"
       ]
     },
     "WAL-CLM-EPIGEN-000140": {
@@ -1542,12 +1543,13 @@
       "subject": "colloidal_minerals",
       "also_about": [],
       "facet": "basics",
-      "question": "What is a colloidal mineral?",
-      "answer_short": "A mineral existing as ultra-fine particles (1–100 nanometers — 'nano-technology') suspended in liquid, too small to dissolve into single atoms the way salt does.",
+      "question": "What actually is a 'colloidal' mineral?",
+      "answer_short": "An ultra-fine particle. Wallach describes a colloidal mineral as a particle so small (~1 billion would fit in 0.01 cubic inch) it can't be seen with the naked eye, and which stays grouped together instead of separating into individual atoms the way salt does in water — kept within the 1–100 nanometer range he calls 'nano-technology.'",
       "topics": [
-        "colloidal-minerals",
         "nano-technology",
-        "mineral-forms"
+        "mineral-forms",
+        "colloidal-minerals",
+        "colloid-chemistry"
       ]
     },
     "WAL-CLM-IMMORT-000025": {
@@ -4393,6 +4395,45 @@
         "degenerative-disease",
         "long-lived-cultures",
         "colloidal-minerals"
+      ]
+    },
+    "WAL-CLM-LETS-000352": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "If someone can't absorb nutrients from food, what's the best way to get minerals in?",
+      "answer_short": "Liquid plant-derived colloidal minerals, Wallach says — the most efficient way to get minerals into malnourished people. He frames malnutrition-from-malabsorption (celiac changes or low stomach acid) as the common denominator of almost all degenerative disease, so the absorbable colloidal form is his answer.",
+      "topics": [
+        "malabsorption",
+        "malnutrition",
+        "colloidal-minerals",
+        "degenerative-disease"
+      ]
+    },
+    "WAL-CLM-RARE-000088": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can plant-derived colloidal minerals help clear heavy metals from the body?",
+      "answer_short": "Per a study Wallach cites: Gary Price Todd, MD gave patients 3 oz of liquid plant-derived colloidal minerals daily; hair levels of lead, cadmium and mercury first ROSE at three months (the minerals unmask hidden tissue stores), then dropped steadily — a reduction Todd found to be time- and dose-related.",
+      "topics": [
+        "heavy-metal-detox",
+        "dr-todd",
+        "colloidal-minerals",
+        "lead-cadmium-mercury"
+      ]
+    },
+    "WAL-CLM-RARE-000074": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does the form of a mineral matter so much for absorption?",
+      "answer_short": "Because absorption efficiency varies enormously by form. Wallach ties it to the gap between how much of a mineral the body truly needs and how much you must eat to get it — for the metallic form the ratio runs from about 1:1 (iodine) to 1:100 (chromium) — so the most efficient form, plant-derived colloidal minerals, should be consumed.",
+      "topics": [
+        "absorption-ratio",
+        "mineral-bioavailability",
+        "colloidal-minerals",
+        "metallic-minerals"
       ]
     }
   }

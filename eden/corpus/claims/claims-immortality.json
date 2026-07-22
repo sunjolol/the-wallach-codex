@@ -770,14 +770,18 @@
         "search-only",
         "search-topic:nano-technology",
         "colloidal-minerals",
-        "mineral-forms"
+        "mineral-forms",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-03T15:05:26+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-IMMORT-000025",

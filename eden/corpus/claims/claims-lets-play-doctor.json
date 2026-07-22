@@ -13912,7 +13912,7 @@
         "malnutrition"
       ],
       "symptoms": [],
-      "claim_text": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people. (Note: in the book this entry's text is split by the two-column scan order; the reading order is reassembled here.)",
+      "claim_text": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people.",
       "verbatim": "As wild as it seems \"malnutrition\" as a\nresult of \"malabsorption\" appears to be the\ncommon denominator of almost all degenerative disease. Liquid plant derived colloidal\nminerals are the most efficient way to get\nminerals into malnurished humans",
       "locator": {
         "book": "lets-play-doctor",
@@ -13926,14 +13926,18 @@
       "dose": null,
       "tags": [
         "materia-medica",
-        "ch10"
+        "ch10",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-29T03:54:10+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-LETS-000353",
