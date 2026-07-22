@@ -69809,13 +69809,13 @@ deaths, blood clots, sterility`,
     return parts.join(" ").toLowerCase().replace(/\s+/g, " ").trim().slice(0, 2500);
   }
   function renderConditionRow(c, selectedSlug) {
-    const ess = c.essentials_involved.slice(0, 6).map((s) => essentialDisplayName(s)).join(" \xB7 ");
     const cls = `kd-condition-row${c.slug === selectedSlug ? " is-selected" : ""}`;
+    const nutrients = c.essentials_involved.length;
     return `
     <div class="${cls}" data-kd-condition="${escHTML4(c.slug)}" data-search="${escHTML4(conditionSearchKeywords(c))}" role="button" tabindex="0">
       <div class="kd-condition-row__body">
-        <h4 class="kd-condition-row__name">${escHTML4(c.display_name)}</h4>
-        <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML4(ess) : "\u2014 corpus entry \u2014"}</div>
+        <span class="kd-condition-row__name">${escHTML4(c.display_name)}</span>
+        <span class="kd-condition-row__meta">${nutrients} ${plural(nutrients, "nutrient")}</span>
       </div>
       <div class="kd-condition-row__count">${c.claim_count}<small>${plural(c.claim_count, "claim")}</small></div>
     </div>`;
@@ -69911,17 +69911,20 @@ deaths, blood clots, sterility`,
       <div class="kd-corpus__foot">SOURCE \xB7 ${escHTML4(books)}</div>
     </div>`;
   }
+  function conditionsByWeight(conditions) {
+    return [...conditions].sort((a, b) => b.claim_count - a.claim_count || (a.display_name < b.display_name ? -1 : a.display_name > b.display_name ? 1 : 0));
+  }
   function renderConditionsTab(selectedSlug) {
     const conditions = listConditions();
     if (conditions.length === 0) {
       return '<div class="kd-empty">\u2014 no conditions in the corpus yet \u2014</div>';
     }
     const deepHTML = selectedSlug !== null ? renderConditionDeep(selectedSlug) : "";
-    const rowsHTML = conditions.map((c) => renderConditionRow(c, selectedSlug)).join("");
+    const rowsHTML = conditionsByWeight(conditions).map((c) => renderConditionRow(c, selectedSlug)).join("");
     return `
     ${deepHTML}
-    <div class="kd-section-head">CONDITIONS \xB7 ${conditions.length} \xB7 WALLACH CORPUS</div>
-    ${rowsHTML}`;
+    <div class="kd-section-head">ALL ${conditions.length} CONDITIONS \xB7 SORTED BY HOW MUCH WALLACH WROTE</div>
+    <div class="kd-conditions-grid">${rowsHTML}</div>`;
   }
 
   // assets/data/product-detail-data.json
@@ -102749,7 +102752,9 @@ VERIFICATION: node tools/build.mjs clean (tsc + esbuild); invariants 77/77, 0 ne
 
 PROCESS NOTE (honesty): I first misread "consolidate its entry into Uses at the very top" as moving the whole Uses category to the top of the section. Luneth corrected it \u2014 he meant the dose card at the top of Uses, with Uses staying in place. Fixed before sealing. Recorded so the next session doesn't repeat the over-literal-then-wrong reading of a placement instruction.
 
-DEFERRED (his call): the "searchable-but-demoted" per-card flag (keep a low-value card in Ask Wallach but drop it from the entity page's prominent section) \u2014 chosen to defer this round. Next stage: bring the still-unused demo pages/revamps to the live surface (Ask Wallach, Products tab, Conditions tab).` }];
+DEFERRED (his call): the "searchable-but-demoted" per-card flag (keep a low-value card in Ask Wallach but drop it from the entity page's prominent section) \u2014 chosen to defer this round. Next stage: bring the still-unused demo pages/revamps to the live surface (Ask Wallach, Products tab, Conditions tab).` }, { id: "lg_mrwg0xna_u8ywg9", ts: "2026-07-22T13:56:08.278500-05:00", surface: "knowledge", kind: "round-close", summary: "Conditions tab rebuilt as a demo-style 3-col card grid in our current fonts (Chakra Petch + Bruno Ace, no serif); tan cards, orange left bar, big claim-count accent, working hover \u2014 a checkpoint before an Unbounded-forward redesign", detail: `Plain: The Conditions list in the Knowledge drawer used to be a plain one-column A-Z list. I rebuilt it to match the demo's design \u2014 a grid of cards, three across, ordered by how much Wallach wrote about each condition (Cancer first, with 65 claims). I used our CURRENT fonts, not the demo's dated serif ones: each card has a warm tan background with an orange bar down the left edge, the condition name plus how many nutrients it involves stacked on the left, and a big orange claim-count number with "CLAIMS" on the right. Hovering a card lights it up (brighter background, the name turns orange). This is a saved checkpoint \u2014 Luneth wasn't happy with the look and wants a bolder, Unbounded-font redesign next, so I locked this working version first so we can always come back to it.
+
+Technical: Two files. views/knowledge-corpus.ts \u2014 added conditionsByWeight() (sort by claim_count desc, display_name alpha tiebreak; presentation-only, the derive keeps conditions A-Z), wrapped the rows in a .kd-conditions-grid container, restructured the section head to "ALL {N} CONDITIONS \xB7 SORTED BY HOW MUCH WALLACH WROTE", and restructured renderConditionRow into a .kd-condition-row__body (name + "N nutrients") + a .kd-condition-row__count (claim_count + "claims" label). drawer-knowledge.css \u2014 .kd-conditions-grid is repeat(auto-fill, minmax(230px,1fr)) ~3 cols at the 950px drawer; .kd-condition-row is a grid 1fr/auto card with background var(--ds-paper-deep), border-left 3px var(--ds-accent), radius sm; name = --ds-font-display-interface (Chakra Petch) uppercase sm; meta = --ds-font-mono micro muted; count = --ds-font-display-artifact (Bruno Ace) 1.2rem --ds-accent-deep with a mono "claims" sublabel; hover sets background --ds-paper-light + name colour --ds-accent-deep + count colour --ds-accent-hot; is-selected mirrors the hover bg + an accent ring. The content-aware search filter (data-search keyword blob, e.g. "smell"->Anosmia) still works because the grid wrapper doesn't change the flat querySelectorAll the filter walks. Card styling (tan bg + orange bar) mirrors the demo's .sh-condrow (background rgb(242,234,211)=--ds-paper-deep, border-left 3px rgb(255,126,60)=--ds-accent), mapped to current tokens rather than hardcoded. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds), render_probe_knowledge PASS (conditions rowCount 502, search visible 11 for a query, anosmiaVisible true, PAGE_ERRORS 0), plus headless default + hover screenshots. Deferred: Luneth wants a redesign (higher-impact Unbounded-forward cards, less busy/less boring, possible condition-type colour-coding) \u2014 mockups are the next step, then the condition detail view.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

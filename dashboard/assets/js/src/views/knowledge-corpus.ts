@@ -252,15 +252,18 @@ function conditionSearchKeywords(c: CorpusCondition): string {
   return parts.join(' ').toLowerCase().replace(/\s+/g, ' ').trim().slice(0, 2500);
 }
 
-/** One condition list row — click to expand the deep view. */
+/**
+ * One condition grid cell — the name + nutrient count on the left, a big
+ * futurist claim-count accent on the right; click to expand the deep view.
+ */
 function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): string {
-  const ess = c.essentials_involved.slice(0, 6).map(s => essentialDisplayName(s)).join(' · ');
   const cls = `kd-condition-row${c.slug === selectedSlug ? ' is-selected' : ''}`;
+  const nutrients = c.essentials_involved.length;
   return `
     <div class="${cls}" data-kd-condition="${escHTML(c.slug)}" data-search="${escHTML(conditionSearchKeywords(c))}" role="button" tabindex="0">
       <div class="kd-condition-row__body">
-        <h4 class="kd-condition-row__name">${escHTML(c.display_name)}</h4>
-        <div class="kd-condition-row__meta">${ess.length > 0 ? escHTML(ess) : '— corpus entry —'}</div>
+        <span class="kd-condition-row__name">${escHTML(c.display_name)}</span>
+        <span class="kd-condition-row__meta">${nutrients} ${plural(nutrients, 'nutrient')}</span>
       </div>
       <div class="kd-condition-row__count">${c.claim_count}<small>${plural(c.claim_count, 'claim')}</small></div>
     </div>`;
@@ -415,15 +418,26 @@ function renderConditionDeep(slug: string): string {
     </div>`;
 }
 
+/**
+ * Conditions in the order the tab presents them: most-written-about first
+ * (claim_count desc), alphabetical within a tie — the demo's "sorted by how much
+ * Wallach wrote". Presentation-only; the derive keeps conditions A–Z.
+ */
+function conditionsByWeight(conditions: readonly CorpusCondition[]): CorpusCondition[] {
+  return [...conditions].sort((a, b) =>
+    b.claim_count - a.claim_count
+    || (a.display_name < b.display_name ? -1 : a.display_name > b.display_name ? 1 : 0));
+}
+
 export function renderConditionsTab(selectedSlug: string | null): string {
   const conditions = listConditions();
   if (conditions.length === 0) {
     return '<div class="kd-empty">— no conditions in the corpus yet —</div>';
   }
   const deepHTML = selectedSlug !== null ? renderConditionDeep(selectedSlug) : '';
-  const rowsHTML = conditions.map(c => renderConditionRow(c, selectedSlug)).join('');
+  const rowsHTML = conditionsByWeight(conditions).map(c => renderConditionRow(c, selectedSlug)).join('');
   return `
     ${deepHTML}
-    <div class="kd-section-head">CONDITIONS · ${conditions.length} · WALLACH CORPUS</div>
-    ${rowsHTML}`;
+    <div class="kd-section-head">ALL ${conditions.length} CONDITIONS · SORTED BY HOW MUCH WALLACH WROTE</div>
+    <div class="kd-conditions-grid">${rowsHTML}</div>`;
 }

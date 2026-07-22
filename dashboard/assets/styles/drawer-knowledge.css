@@ -923,9 +923,16 @@
  * expand deep view. The deep view REUSES .kd-essential-deep + the .kd-corpus__*
  * / .kd-claim vocabulary (claims grouped by role: causes/protocols/doses/...).
  * ═══════════════════════════════════════════════════════════════════════════ */
+#drawer-knowledge-mount .kd-conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: var(--ds-space-2);
+  margin-top: var(--ds-space-3);
+}
 #drawer-knowledge-mount .kd-condition-row {
-  background: var(--ds-paper-light);
+  background: var(--ds-paper-deep);
   border: 1px solid var(--ds-rule-soft);
+  border-left: 3px solid var(--ds-accent);
   border-radius: var(--ds-radius-sm);
   padding: var(--ds-space-3) var(--ds-space-4);
   display: grid;
@@ -934,17 +941,20 @@
   align-items: center;
   cursor: pointer;
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
-  margin-bottom: var(--ds-space-2);
 }
 #drawer-knowledge-mount .kd-condition-row:hover {
+  background: var(--ds-paper-light);
   border-color: var(--ds-accent);
   box-shadow: 0 2px 8px -2px rgba(255, 126, 60, 0.15);
 }
+#drawer-knowledge-mount .kd-condition-row:hover .kd-condition-row__name { color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .kd-condition-row:hover .kd-condition-row__count { color: var(--ds-accent-hot); }
 #drawer-knowledge-mount .kd-condition-row.is-selected {
+  background: var(--ds-paper-light);
   border-color: var(--ds-accent);
   box-shadow: 0 0 0 1px var(--ds-accent), 0 4px 12px -3px rgba(255, 126, 60, 0.28);
 }
-#drawer-knowledge-mount .kd-condition-row__body { min-width: 0; }
+#drawer-knowledge-mount .kd-condition-row__body { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 #drawer-knowledge-mount .kd-condition-row__name {
   font-family: var(--ds-font-display-interface);
   font-size: var(--ds-text-sm);
@@ -952,26 +962,24 @@
   color: var(--ds-ink);
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  margin: 0;
-  line-height: 1.15;
+  line-height: 1.2;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-knowledge-mount .kd-condition-row__meta {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
+  letter-spacing: var(--ds-track-wide);
   text-transform: uppercase;
   color: var(--ds-ink-soft);
-  margin-top: 2px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 #drawer-knowledge-mount .kd-condition-row__count {
   font-family: var(--ds-font-display-artifact);
-  font-size: var(--ds-text-md);
+  font-size: 1.2rem;
   color: var(--ds-accent-deep);
-  text-align: right;
+  text-align: center;
   white-space: nowrap;
+  line-height: 1;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-knowledge-mount .kd-condition-row__count small {
   font-family: var(--ds-font-mono);
@@ -980,7 +988,7 @@
   letter-spacing: var(--ds-track-wider);
   text-transform: uppercase;
   display: block;
-  margin-top: 2px;
+  margin-top: 3px;
   font-weight: 500;
 }
 /* condition deep view reuses .kd-essential-deep; it has no symbol row */
