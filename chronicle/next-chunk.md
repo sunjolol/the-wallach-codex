@@ -1,4 +1,22 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-21)
+# ★★★★★ 2026-07-21 (SESSION 9) — CORPUS-AUDIT TAIL REMEDIATION (unplanned pivot) · board 77/77 · kv 374 · pushed
+
+**⚠ WHY THE PIVOT (read first):** while scoping plant-derived Batch 2 (the 12 teal retags), the retag candidates were cross-checked against the 2026-07-17 corpus audit — which surfaced that the audit's "strip 65 editorial tails" action was NEVER completed (only 26/65 done) yet had been reported to Luneth as 100% complete, then logged as "next" and forgotten. A real silent failure. Luneth (justifiably) lost trust; the whole session pivoted to reconciling + remediating it. FULL reconciliation + per-claim table: `temporary/audit-2026-07-17/UNADDRESSED-EDITORIAL-TAILS.md`. Review console (his rulings): https://claude.ai/code/artifact/0260dd38-5069-4c48-bbc3-62f3079d3ed2
+
+## AUDIT-TAIL STATUS — 61 / 65 closed (kv 374)
+- **26** fixed before this session · **24** ratified fixes applied this session (21 clean strips + 3 surgical; commit d97fce4e) · **2** false dose-misprint notes removed (LETS-052/221 — the sealed .txt already read the correct safe unit mg/mcg, so ONLY the false note needed deleting, NOT a source correction; commit f1857889) · **9** ruled KEEP (no change): EPIGEN-163, IMMORT-026/113/118/173, RARE-143, LETS-117, DDDL-024, EPIGEN-030.
+- **4 REMAIN — all need a RE-MINE (Luneth's ruling), NOT a tail-strip:**
+  - **IMMORT-000115** (europium — whole opening "headline claim / anti-aging theme" + the "his implication" close are our editorializing) — immortality HAS page screenshots; re-read the page + re-author.
+  - **IMMORT-000209** (audit recorded no strip-phrase — needs a manual read; immortality screenshots exist).
+  - **RARE-000295** (no strip-phrase; rare-earths has NO imagery — read the .txt span, flag the limitation).
+  - **RARE-000074** (deeper MISFRAMED: our "for the poorly absorbed metallic form the ratio is 1:1/1:10/1:100 → 100× better" recasts a ratio the source anchors to absolute-vs-dietary need; no imagery) — **re-mine, PURGE if a clean salvage isn't possible.**
+- Method: re-mines produce NEW authored claim_text → require Luneth's review BEFORE seal (manual-review gate). Present drafts; do not seal unilaterally.
+
+## ⏸ STILL QUEUED (pre-empted by the pivot) — Plant-derived Batch 2 (9 clean retags, NEVER applied)
+Batch 2 was scoped but not applied. The 12 retag candidates split: **9 audit-CLEAN** ready to retag (add `about:["colloidal-minerals"]` + author enrichment, verbatim untouched) — RARE-024/059/062/072/073 (Age-Beaters / Glacial-Milk arc; sub-batch-1 enrichment drafted in-chat: facets history/mechanism/sources/mechanism/stance) + EPIGEN-060 / IMMORT-024 / LETS-352 / RARE-088 (colloid-science, sub-batch 2). The 3 deferred: EPIGEN-089 (already rewritten/clean; load-bearing pdm-coverage `source_claim_id`), IMMORT-026 + RARE-074 (were also strip-tail-set members — handled/queued above). Then Batch 4 (19 teal-new) with the cross-book number conflicts (humic-shale mg, mineral counts, culture ages).
+
+---
+
 # ★★★★ 2026-07-21 (SESSION 8) — PLANT-DERIVED ENRICHMENT · BATCHES 1 + 3 LIVE + glossary/affordance UX · board 77/77, pushed
 
 **Phase (Luneth):** enrich ALL 90 elements in the uniform entity-page style — but FIRST complete the 35 plant-derived (trace_pdm) minerals so the whole complex is accounted for. A read-only 6-book scout produced the full candidate inventory (30 new + 12 retags, 67 metallic-trap rejects, organised by colour-family) → the **Ratification Console** artifact: https://claude.ai/code/artifact/26714d57-f84e-44d0-8c62-ca48c749ef04 . **THEN** (after plant-derived): bring the 3 still-to-do demo surfaces live — **Ask Wallach, Products tab, Conditions tab** (+ detail views); everything else in live already beats the dated demo (memory `demo-elements-still-to-do`).
