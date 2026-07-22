@@ -4435,6 +4435,20 @@
         "colloidal-minerals",
         "metallic-minerals"
       ]
+    },
+    "WAL-CLM-RARE-000319": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "How is a plant-derived colloidal mineral supplement actually made?",
+      "answer_short": "Humic shale — prehistoric plants that dried without ever turning to rock — is ground to a flour and soaked in spring water for three to four weeks until it reaches a specific gravity of 3.0. It takes 78 pounds of shale (about 1,034 lb of the original plants) to make one liter of the 98%-absorbable concentrate, carrying 60-plus minerals.",
+      "topics": [
+        "humic-shale",
+        "manufacturing",
+        "plant-derived",
+        "specific-gravity",
+        "concentration"
+      ]
     }
   }
 }

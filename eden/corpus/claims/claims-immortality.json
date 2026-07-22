@@ -806,14 +806,18 @@
         "search-only",
         "colloidal-minerals",
         "mineral-absorption",
-        "mineral-forms"
+        "mineral-forms",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-03T15:05:26+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-IMMORT-000026",
@@ -838,14 +842,18 @@
         "search-only",
         "colloidal-minerals",
         "mineral-forms",
-        "bioavailability"
+        "bioavailability",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-03T15:05:26+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-IMMORT-000027",
