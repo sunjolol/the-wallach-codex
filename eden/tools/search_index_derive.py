@@ -213,7 +213,12 @@ def build_index():
             'answer_short': a['answer_short'],
             'answer': _derive_answer(c.get('claim_text', '')),
             'verbatim': c.get('verbatim', ''),
-            'page': loc.get('page'),
+            # Roman-numeral / non-numeric front-matter pages (e.g. 'xix' for a book's
+            # Introduction) can't fit the search-index numeric page field (SearchClaimSchema
+            # page: number|null). Passing the raw string fails the RUNTIME safeParse, which
+            # empties the WHOLE index (state/search.ts EMPTY_INDEX fallback) -> Explore/Foods
+            # silently blank. Coerce any non-int page to null. (2026-07-21: RARE-000024, p.xix.)
+            'page': (loc.get('page') if type(loc.get('page')) is int else None),
             'book_id': loc.get('book'),
             'topics': a.get('topics', []),
         }

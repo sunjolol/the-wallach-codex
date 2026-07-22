@@ -350,7 +350,7 @@
         "selenium",
         "essential_nutrients"
       ],
-      "claim_count": 24
+      "claim_count": 29
     },
     "color_therapy": {
       "display_name": "Color Therapy",
@@ -7334,6 +7334,42 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000024",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "history",
+      "question": "Which peoples actually live to 120–140, and how?",
+      "answer_short": "Wallach names several ancient, diverse cultures — Tibetans, Georgians, Armenians, Azerbaijanis, Abkhazians, Hunzakuts, Vilcabambas and the Titicacas — who reach a disease-free 120–140 years by getting their minerals as plant-derived colloidal minerals (his plant 'rare earths').",
+      "answer": "Wallach identifies ancient, diverse cultures that reach the 120-to-140-year longevity potential disease-free — Tibetans, Russian Georgians, Armenians, Azerbaijanis, Abkhazians, Hunzakuts, Vilcabambas, the Titicacas — through access to plant-derived colloidal minerals (rare earths).",
+      "verbatim": "If you access and plug into the plant derived RARE EARTHS used for thousands of years by certain tribes of Tibetans, Russian Georgians, Armenians, Azerbaijanies, Abkhazians, Hunzakuts, Vilcabambas or the Titicacas you can make it too!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "long-lived-cultures",
+        "longevity",
+        "colloidal-minerals",
+        "rare-earths"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000059",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What's the actual secret behind the long-lived 'Age Beater' cultures?",
+      "answer_short": "Eating plants rich in organic plant-derived colloidal minerals. The plants pull inorganic minerals from 'Glacial Milk' and convert them into the cell-usable colloidal form — the secret Wallach credits to the five 'Age Beater' cultures.",
+      "answer": "Wallach holds that the secret of the five long-lived \"Age-Beater\" cultures is eating plants rich in organic colloidal minerals — minerals the plants take up from inorganic \"Glacial Milk\" and convert into the cell-usable organic colloidal form.",
+      "verbatim": "It is the eating of the plants rich in organic colloidal minerals that is the secret of health and longevity of the five cultures we have called the “Age Beaters”",
+      "page": 212,
+      "book_id": "rare-earths",
+      "topics": [
+        "age-beaters",
+        "glacial-milk",
+        "colloidal-minerals",
+        "mechanism"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000061",
       "subject": "colloidal_minerals",
       "also_about": [],
@@ -7349,6 +7385,24 @@
         "absorption",
         "plant-derived",
         "source-matters"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000062",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where do the long-lived cultures' minerals actually come from?",
+      "answer_short": "From 'Glacial Milk' — mineral-rich glacial meltwater carrying 60+ minerals — that the five long-lived cultures used to irrigate their terraced fields. Wallach calls this the common denominator behind their 120–140-year lifespans, delivered as plant-derived colloidal minerals.",
+      "answer": "Wallach identifies the common denominator of the five long-lived cultures as the serendipitous irrigation of their terraced fields with mineral-rich \"Glacial Milk\" carrying 60 or more minerals — the secret of their 120-to-140-year lifespans.",
+      "verbatim": "The serendipitous irrigation of their terraced fields with the common denominator of “Glacial Milk” from the mountains containing 60 or more minerals is the secret of the five cultures who live to be 120 to 140 years of age.",
+      "page": 213,
+      "book_id": "rare-earths",
+      "topics": [
+        "glacial-milk",
+        "long-lived-cultures",
+        "colloidal-minerals",
+        "sources"
       ]
     },
     {
@@ -7403,6 +7457,42 @@
         "parent-rock",
         "source-matters",
         "mineral-count"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000072",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Do the long-lived cultures drink Glacial Milk, or use it another way?",
+      "answer_short": "They irrigate with it, not drink it. Wallach says only ~5–12% of the raw metallic minerals in 'Glacial Milk' are absorbable if you drink it — the real key is using it as irrigation water, so plants convert those minerals into the highly usable plant-derived colloidal form.",
+      "answer": "Wallach stresses that the centenarians absorb only 5 to 12% of the suspended metallic colloids they drink in \"Glacial Milk\"; the real key to their longevity is using it as IRRIGATION water, so plants convert the metallic minerals into highly usable organic plant-derived colloidal minerals.",
+      "verbatim": "The bottom line for the centenarians to reach their genetic potentials of 120 to 140 years of age is in fact their utilization of the “Glacial Milk” as irrigation water.",
+      "page": 253,
+      "book_id": "rare-earths",
+      "topics": [
+        "glacial-milk",
+        "irrigation",
+        "colloidal-minerals",
+        "bioavailability"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000073",
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What benefits do the long-lived cultures get from all those minerals?",
+      "answer_short": "Freedom from the degenerative diseases, Wallach says. Millennia of irrigating terraces with mineral-rich 'Glacial Milk' leave them without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer or lupus.",
+      "answer": "Wallach asserts that millennia of farming terraces irrigated with mineral-rich \"Glacial Milk\" reward the long-lived cultures with optimal health free of the degenerative diseases — hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer and lupus among them.",
+      "verbatim": "they have been blessed with optimal health without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer, lupus",
+      "page": 253,
+      "book_id": "rare-earths",
+      "topics": [
+        "glacial-milk",
+        "degenerative-disease",
+        "long-lived-cultures",
+        "colloidal-minerals"
       ]
     },
     {

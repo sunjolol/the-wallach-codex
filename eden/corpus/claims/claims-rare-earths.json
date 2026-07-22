@@ -774,14 +774,18 @@
         "thesis",
         "longevity-cultures",
         "colloidal-minerals",
-        "rare-earths"
+        "rare-earths",
+        "plant-derived-group"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-24T23:01:47+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000025",
@@ -1959,14 +1963,19 @@
         "colloidal-minerals",
         "longevity",
         "age-beaters",
-        "glacial-milk"
+        "glacial-milk",
+        "plant-derived-group",
+        "rare-earths"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:23:23+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000060",
@@ -2057,14 +2066,19 @@
         "glacial-milk",
         "longevity",
         "60-minerals",
-        "long-lived-cultures"
+        "long-lived-cultures",
+        "plant-derived-group",
+        "rare-earths"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:23:23+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000063",
@@ -2387,14 +2401,19 @@
         "glacial-milk",
         "irrigation",
         "colloidal-conversion",
-        "absorption"
+        "absorption",
+        "plant-derived-group",
+        "rare-earths"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:54:55+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000073",
@@ -2419,14 +2438,19 @@
         "longevity",
         "degenerative-disease",
         "glacial-milk",
-        "disease-absence"
+        "disease-absence",
+        "plant-derived-group",
+        "rare-earths"
       ],
       "confidence": "high",
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-06-25T02:54:55+00:00",
       "reviewed_at": null,
-      "reviewed_by": null
+      "reviewed_by": null,
+      "about": [
+        "colloidal-minerals"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000074",

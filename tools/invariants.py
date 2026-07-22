@@ -3468,6 +3468,18 @@ def check_search_only_indices_excluded():
     return True, f"all {len(search_ids)} search-only (tier-2) claim(s) correctly excluded from operational indices"
 
 
+def _search_index_nonnumeric_pages(shipped):
+    """Claim ids in a shipped search-index whose `page` is neither int nor null. The RUNTIME
+    SearchClaimSchema requires page: number|null; a string page (a Roman-numeral front-matter
+    page such as 'xix') passes every structural check but fails the runtime safeParse, which
+    empties the WHOLE index (state/search.ts EMPTY_INDEX fallback) -> Explore/Foods/topics go
+    silently blank. The derive coerces non-int pages to null; this proves the shipped artifact
+    did. 2026-07-21: RARE-000024 (p.xix) shipped a string page and blanked the search surfaces.
+    Driven by tools/test_search_index_wellformed.py."""
+    return [c.get("id") for c in shipped.get("claims", [])
+            if not (c.get("page") is None or type(c.get("page")) is int)]
+
+
 def check_search_index_wellformed():
     """Search-corpus doctrine + Charter R4/R5 -- every ENRICHED search claim is STRUCTURED, not a
     blob: the authored fields (subject/facet/question/answer_short) are present, facet is in the
@@ -3499,9 +3511,22 @@ def check_search_index_wellformed():
     if errs:
         return False, ("search index NOT well-formed (" + str(len(errs)) + "): "
                        + "; ".join(errs[:6]) + (" ..." if len(errs) > 6 else ""))
+    # Runtime-parity guard (2026-07-21): the shipped index page must be int|null (runtime
+    # SearchClaimSchema); a string page empties the whole index at load. See helper above.
+    idx_p = ROOT / "dashboard" / "assets" / "data" / "search" / "search-index.json"
+    if idx_p.exists():
+        try:
+            shipped = json.loads(idx_p.read_text(encoding="utf-8"))
+        except Exception as e:
+            return False, f"shipped search-index.json does not parse: {e}"
+        bad_page = _search_index_nonnumeric_pages(shipped)
+        if bad_page:
+            return False, (f"{len(bad_page)} shipped search claim(s) have a non-numeric page — the "
+                           f"runtime SearchClaimSchema requires number|null and empties the whole "
+                           f"index otherwise: {bad_page[:5]}")
     enr = json.loads(enr_p.read_text(encoding="utf-8"))["enrichment"]
     return True, (f"all {len(enr)} enriched search claim(s) well-formed (facet in taxonomy, subject "
-                  f"resolves, answer+verbatim present) + TS/Python facet taxonomy in sync")
+                  f"resolves, answer+verbatim present; page int|null) + TS/Python facet taxonomy in sync")
 
 
 def check_verbatim_names_mapped_conditions():

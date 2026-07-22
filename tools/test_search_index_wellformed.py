@@ -81,6 +81,17 @@ case("see_also-ghost-target", mutate_enr=lambda e: e[A_CLAIM].__setitem__("see_a
 case("see_also-phantom-phrase", mutate_enr=lambda e: e[A_CLAIM].__setitem__("see_also", {"phrase": "zzzznotthere", "target": A_CLAIM}), needle="does not occur")
 case("see_also-cross-subject", mutate_enr=lambda e: e[A_CLAIM].__setitem__("see_also", {"phrase": _present, "target": "WAL-CLM-IMMORT-000159"}), needle="different subject")
 
+# 13) page-type runtime-parity guard (2026-07-21): a shipped non-numeric page (Roman-numeral
+#     front-matter, e.g. 'xix') passes structural checks but empties the WHOLE runtime index.
+#     Drive the invariants helper directly -- it reads the shipped artifact, not the enrichment.
+_ispec = importlib.util.spec_from_file_location('invariants', ROOT / 'tools' / 'invariants.py')
+_inv = importlib.util.module_from_spec(_ispec); _ispec.loader.exec_module(_inv)
+_bad = _inv._search_index_nonnumeric_pages({'claims': [
+    {'id': 'A', 'page': 'xix'}, {'id': 'B', 'page': 42}, {'id': 'C', 'page': None}, {'id': 'D'}]})
+_okpage = (_bad == ['A'])
+print(f"  {'OK' if _okpage else 'FAIL'}  page-nonnumeric-flagged      expect=['A']  got={_bad}")
+results.append(_okpage)
+
 passed = sum(results)
 total = len(results)
 print(f"\n{passed}/{total} cases behaved as expected")
