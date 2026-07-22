@@ -28,6 +28,7 @@ export * from './view-copy.js';
 export * from './entity-page.js';
 export * from './entity-copy.js';
 export * from './home-curation.js';
+export * from './condition-categories.js';
 export * from './foods-curation.js';
 export * from './kids-exclusion.js';
 export * from './pdm-coverage.js';

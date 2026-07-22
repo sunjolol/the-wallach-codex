@@ -30,6 +30,7 @@ import {
   resolveClaims,
   umbrellaChildren,
 } from '../state/corpus.js';
+import { conditionCategory } from '../state/condition-categories.js';
 import { glossaryDef } from '../state/glossary.js';
 import { glossify } from './glossify.js';
 
@@ -253,19 +254,26 @@ function conditionSearchKeywords(c: CorpusCondition): string {
 }
 
 /**
- * One condition grid cell — the name + nutrient count on the left, a big
- * futurist claim-count accent on the right; click to expand the deep view.
+ * One condition card — the "ghost number" design (Luneth-approved 2026-07-22): a big
+ * faded claim-count in the condition's body-system colour behind an Unbounded name,
+ * over a category chip + a claim/nutrient count line. `--cat` carries the category
+ * colour into the CSS (chip + ghost + hover/selected accent); an unmapped condition
+ * omits the chip and falls back to the app accent. Click to expand the deep view.
  */
 function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): string {
   const cls = `kd-condition-row${c.slug === selectedSlug ? ' is-selected' : ''}`;
   const nutrients = c.essentials_involved.length;
+  const cat = conditionCategory(c.slug);
+  const catStyle = cat !== null ? ` style="--cat:${escHTML(cat.color)}"` : '';
+  const catHTML = cat !== null
+    ? `<div class="kd-condition-row__cat"><i></i>${escHTML(cat.label)}</div>`
+    : '';
   return `
-    <div class="${cls}" data-kd-condition="${escHTML(c.slug)}" data-search="${escHTML(conditionSearchKeywords(c))}" role="button" tabindex="0">
-      <div class="kd-condition-row__body">
-        <span class="kd-condition-row__name">${escHTML(c.display_name)}</span>
-        <span class="kd-condition-row__meta">${nutrients} ${plural(nutrients, 'nutrient')}</span>
-      </div>
-      <div class="kd-condition-row__count">${c.claim_count}<small>${plural(c.claim_count, 'claim')}</small></div>
+    <div class="${cls}"${catStyle} data-kd-condition="${escHTML(c.slug)}" data-search="${escHTML(conditionSearchKeywords(c))}" role="button" tabindex="0">
+      <div class="kd-condition-row__ghost" aria-hidden="true">${c.claim_count}</div>
+      ${catHTML}
+      <h4 class="kd-condition-row__name">${escHTML(c.display_name)}</h4>
+      <div class="kd-condition-row__foot">${c.claim_count} ${plural(c.claim_count, 'claim')} · ${nutrients} ${plural(nutrients, 'nutrient')}</div>
     </div>`;
 }
 

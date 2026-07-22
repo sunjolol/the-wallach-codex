@@ -1,67 +1,40 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-22, mineral-polish close)
-# ★★★★★ 2026-07-22 — mineral card polish DONE · board 77/77 · corpus kv 381 · committed+pushed
-# ▶ NEXT STAGE: bring the still-unused DEMO pages/revamps to the live surface. Mining is PAUSED.
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-22, Conditions-tab redesign close)
+# ★★★★★ 2026-07-22 — Conditions TAB redesigned (ghost-number cards + 12-category colour-coding + Unbounded) · board 77/77 · committed+pushed
+# ▶ NEXT: the CONDITION DETAIL view (Osteoporosis exemplar). Mining is PAUSED; demo-to-live work continues.
 
-## ✅ WHAT LANDED THIS SESSION (the "final mineral set" before demo work)
-Plant-derived group cards on the 34 mineral pages — the "About the plant-derived group" section:
-- **Regrouped by enrichment FACET, not claim KIND.** Kind-grouping piled 22 of 32 cards into two teal
-  definition+mechanism blocks (the "wall of blue"); facet grouping spreads them across 10 coloured
-  categories and gives "Which peoples live to 120-140" its own HISTORY & LORE home. The derive owns
-  the grouping AND order now (`entity_page_derive.py` `group_record` by facet + `GROUP_FACET_ORDER`);
-  `views/entity-page.ts::renderGroupRecord` renders `kd-ep-facet` buckets in artifact order (no re-sort);
-  schema `group_record` → `EntityFacetGroupSchema`.
-- **Two Luneth order calls:** the 1-card "protocol"/What-To-Do facet folds into USES as its FIRST entry
-  (the dose leads Uses; Uses keeps its normal slot — NOT moved to the top); HISTORY & LORE sits directly
-  above BIOGRAPHY.
-- **Glossary hover is now separator-insensitive** (`state/glossary.ts` `normKey` + `keyToPattern`): a term
-  glosses whether written spaced or hyphenated ("Age Beater"/"Age-Beater"). Test `state/glossary.test.ts`.
-- **CONTENT (Luneth-approved):** RARE-059 claim_text `"Age-Beater"`→`"Age Beater"` (sealed, corpus_seal
-  kv 380→381); RARE-062 re-questioned to "What do all five long-lived cultures have in common?" with a
-  present-tense short answer (enrichment only — its distinct "common denominator" thesis, no longer
-  duplicating RARE-070's origin question).
-- Verified: build clean · invariants 77/77 · glossary vitest 3/3 · render_probe entity+knowledge+search PASS.
+## TASK CONTEXT (carries across the whole demo-to-live effort — memory demo-elements-still-to-do + demo-layout-yes-demo-style-no)
+- THE demo = `file:///…/temporary/knowledge-drawer-prototype.html` (NOT dashboard/components/*.html). Only 5 surfaces from it are not-yet-live:
+  1. Products tab · 2. Products detail · 3. Conditions tab ✅ DONE · 4. Conditions detail (Osteoporosis is the ONLY designed exemplar) ← NEXT · 5. Ask-Wallach popup/side-menu WORDING.
+- HARD RULE: take the demo's LAYOUT/STRUCTURE, RESTYLE to CURRENT standards. Fonts: `--ds-font-display`=Unbounded (display), `--ds-font-sans`/`--ds-font-serif`=Space Grotesk (body), `--ds-font-display-interface`=Chakra Petch (labels), `--ds-font-display-artifact`=Bruno Ace (numbers), `--ds-font-mono`=JetBrains. NO serif except crown-jewel Wallach pull-quotes. Visuals identical in spirit, CODE PROPER (no spaghetti/inline prose/cut corners). Reference current-best surfaces: omega-3/6 detail, Absorption tab, plant-derived-mineral detail.
 
-## 🔴 PROCESS LESSON (do not repeat) — placement instructions are literal
-I misread "consolidate its entry into Uses at the very top" as "move the Uses CATEGORY to the section top."
-He meant the DOSE CARD at the top of Uses, Uses in place. When an instruction names an ENTRY and a
-container, "at the very top" is the entry's position WITHIN the container — do not promote the container.
-When a placement is ambiguous, ASK rather than guess-and-show (guessing wrong burns trust + tokens).
+## ✅ LANDED THIS SESSION — Conditions TAB (the "ghost number" design, option D of a 4-option mockup)
+- 1-col A-Z list → 3-col GRID of cards: big faded claim-count (Unbounded ~3rem) in the condition's CATEGORY COLOUR top-right (the "ghost"); category CHIP (coloured dot + mono label — the browsing "delight", context on what each condition affects); NAME in Unbounded; foot "N CLAIMS · M NUTRIENTS" (mono). Sorted claim_count desc (conditionsByWeight, presentation-only). Hover: border+ghost → category colour, bg → white, lift. `--cat` carries the colour inline per card.
+- NEW 12-category body-system system mapping ALL 502 conditions (Luneth-approved taxonomy + "map all then review"; he'll refine later with agents):
+  - Data: `dashboard/assets/data/condition-categories.json` (hand-authored curation: `{categories:{id:{label,color}}, conditions:{slug:id}}`). Registered in `eden/derived/MANIFEST.json` accounted (data_artifacts_accounted green, 24 files).
+  - Schema `core/schemas/condition-categories.ts` (+ index export); reader `state/condition-categories.ts` (`conditionCategory(slug)→{slug,label,color}|null`, graceful).
+  - Cats+colours: bones-joints-muscles #4f76a3 · mind-nerves #7b62a3 · heart-blood-circulation #a83f48 · skin-hair-nails #bd7b34 · digestion-liver #6b8a43 · hormones-metabolism #2c8a7e · reproductive-urinary #a25490 · respiratory #3f8fa8 · immunity-infection #c9a13b · eyes-ears-mouth #5860a8 · cellular-systemic #5f636b · general-other #8a8a86.
+- Render: `views/knowledge-corpus.ts` renderConditionRow (D markup) + `drawer-knowledge.css` .kd-condition-row block. Content-aware search filter preserved (grid wrapper doesn't change the flat querySelectorAll).
+- Design ref (LOCAL, gitignored): `temporary/condition-cards-brainstorm.html` — the 4-option mockup (A editorial / B colour-rail / C colour-band / D ghost-number ← chosen). Ghost fix he asked for: `top:0` not negative (overflow:hidden clips a negative top).
+- Verified: build OK · invariants 77/77 · render_probe_knowledge PASS (rowCount 502, PAGE_ERRORS 0) · headless screenshots default+hover. Earlier this session a CHECKPOINT commit (4b722122, tan first-iteration cards) preceded the D redesign — superseded, kept in history.
 
-## ▶ NEXT STAGE — DEMO PAGES → LIVE (memory `demo-elements-still-to-do`)
-The v3 demo has three surfaces still not built on live data. Bring them live, ONE surface to 100% before
-the next (memory `gold-standard-page-workflow`), each ending in a STOP-for-visual-sign-off (Luneth is the
-test gate — memory `screenshot-verify-visual-chunks`, `visual-verification.md`):
-1. **Ask Wallach** — the search/retrieval popup (memory `search-is-ask-wallach-popup`, `ask-wallach-search-vision`).
-2. **Products tab** — (the Products list + detail panel already exist in the knowledge drawer; confirm what
-   the DEMO adds beyond that before building — do not rebuild what's live).
-3. **Conditions tab** (+ detail views).
-Rules that bind: the signed-off DEMO is the VISUAL spec (memory `signed-off-demo-is-the-spec`,
-`demo-vision-not-letter`, `replicate-demo-not-blueprint-notes` — recreate the DESIGN on REAL data, don't
-copy the demo's stale data); LIVE beats a stale demo where they diverge (`live-supersedes-demo-log-micro-deltas`);
-measure computed-style deltas, don't eyeball (`visual-verification.md` "measure don't eyeball", `style_diff.js`).
-FIRST STEP when you start: open the relevant demo mockup under `dashboard/components/` and diff its
-intent against what's already live, then propose a build plan + ASK Luneth which surface first.
+## ▶ NEXT — CONDITION DETAIL VIEW (Osteoporosis exemplar; open demo → Conditions → Osteoporosis. Depression etc. show a "generated in the real build" placeholder — only Osteoporosis + Calcium are wired)
+Demo detail = faceted entity-page in the SAME card language, with condition blocks:
+1. Header: name + "N CLAIMS · N BOOKS · ALSO: <synonyms>". claim_count ✓ + books_cited.length ✓ live; SYNONYMS are NOT in CorpusCondition (they ARE in entity-page/search schemas) — decide: derive/add-a-field/omit-when-absent.
+2. Intro lede — live has a DERIVED conditionSynopsis ("Wallach links X to a deficiency of …"); demo has bespoke prose. Keep the derived (scalable to 502, honest); don't fabricate.
+3. ★ WALLACH'S PROTOCOL ("THE APPROACH" green card). ⚠ §00.A: the demo text COMPOSITES several claims — do NOT compose. FEATURE the REAL sourced protocol claim_text. Osteoporosis = WAL-CLM-DDDL-000060 ("Osteoporosis treatment includes betaine hydrochloride and pancreatic enzymes (75-200 mg three times daily before meals) plus calcium and magnesium at 2,000 and 1,000 mg/day or more for the first 30 days."). Condition carries a `protocols` role in claims_by_role.
+4. NUTRIENTS TO RESTORE chips — essentials_involved (demo unifies; live splits cause/treated/also — decide).
+5. ★ BEST PRODUCTS FOR THIS — rows "covers N/M · $price" ranked by how many of the condition's nutrients each product covers. NEW capability: state/recommender.ts + product-recommender-data.json exist; scope the coverage to a condition's essentials subset. Wholesale-featured price (memory wholesale-featured-price).
+6. THE FULL PICTURE — claims_by_role groups as a COLLAPSIBLE facet accordion (WHAT TO DO / WHY IT HAPPENS / …) with facet-coloured borders. Live renderConditionDeep already renders role-groups (renderCorpusClaim); restyle to the collapsible faceted format (reuse the entity-page kd-ep-* facet pattern). Consider colouring the detail by the condition's CATEGORY colour (conditionCategory(slug)).
 
-## ⏸ PARKED — Batch-4 book mining (resume only when Luneth redirects to it)
-Remaining teal-new candidates (re-dedup each against ALL 7 sealed books FIRST — Wallach reuses passages;
-memory `dedup-across-all-books-before-authoring`): NEW-01/03, 13, 14, 15, 16, 19, 20, 21, 23, 30 + fringe
-NEW-17 (rare-earths doubled-lifespan) & NEW-22 (256-yr Li Chung Yun — capture faithfully, neither censored
-nor inflated). Byte-verified passages: `temporary/plant-derived-research-2026-07-17/sweep/book-rare-earths.md`.
-Batch-4 rulings are SETTLED (do not re-litigate) — see the prior handoff in git history if resuming.
+## ⏸ AFTER the detail: remaining 3 demo surfaces — Products tab+detail (confirm what the demo ADDS beyond live knowledge-products.ts before rebuilding) · Ask-Wallach WORDING (rail "SEARCH"→"Ask Wallach" + drawer copy; NOT a rebuild).
 
-## 🔴🔴 REVIEW PROCESS — Luneth's hard rule (carries into EVERY corpus/content touch)
-Before sealing ANY claim, show it to Luneth in its EXACT final form and get approval ON THE CLAIM itself:
-QUESTION → SHORT ANSWER → (full answer only if it genuinely adds something) → QUOTE. Never put the approval
-prompt on a side-question and treat that as content sign-off. If content was not reviewed, the log says
-"unreviewed", never "approved". `corpus_seal` is USER-ONLY (he authorizes each seal).
+## ⏸ PARKED — Batch-4 book mining (resume only if Luneth redirects): re-dedup each teal-new candidate vs ALL 7 sealed books first (memory dedup-across-all-books-before-authoring). Byte-verified passages in temporary/plant-derived-research-2026-07-17/.
 
-## 🔧 KEY MECHANICS (reuse)
-- Seal cycle: edit the DRAFT (`drafts/claims-<book>.draft.json`) → **user runs `corpus_seal`** (promotes
-  drafts→shards, bumps kv, corpus_verify) → `build_embeds.py` → `entity_page_derive.py` → `build.mjs` →
-  invariants → render probes → build-log + `creators_log.py append` → RE-inline `build.mjs` (log bakes at
-  BUILD time) → commit + push.
-- Enrichment (`search-enrichment.json`) is NOT sealed — load/modify/`json.dumps(...,ensure_ascii=False,indent=2)+"\n"`
-  is byte-stable; edit + `build_embeds` (rebuilds search-index).
-- `creators_log.py append`: `--kind` from the fixed set (use `round-close`); `--summary` ≤280; pass
-  `--detail "$(cat backtick-free-file)"` (a backtick in an inline double-quoted --detail silently drops words).
-- Windows/UTF-8: prefix `PYTHONUTF8=1`; safe_write payloads must be LF; every project write via `safe_write`.
+## 🔴🔴 REVIEW PROCESS — Luneth's hard rule (EVERY corpus/content touch): before sealing ANY claim show it in EXACT final form — QUESTION → SHORT ANSWER → (full only if it adds) → QUOTE — and approve the CLAIM, never a side-question. Unreviewed = log "unreviewed", never "approved". corpus_seal is USER-ONLY.
+
+## 🔧 KEY MECHANICS
+- Preview pane CACHES the bundle + snapshots new tabs as `data:` — for a reliable visual use the headless puppeteer screenshot (scratchpad `shot_conditions.js` pattern): fresh chrome loads current dist + CSS; dismiss the onboarding modal ("just browsing") first, then screenshot.
+- CSS is LINKED not bundled — CSS edits need NO rebuild; JS/data edits need `node tools/build.mjs`.
+- Curation-layer pattern (reused for categories): `assets/data/*.json` (hand-authored) + `core/schemas/*.ts` (+ index export) + `state/*.ts` reader + MANIFEST `accounted` entry.
+- Round-close: build → invariants → probe → build-log → `creators_log.py append` → RE-inline build → commit + push.
+- Windows/UTF-8: prefix `PYTHONUTF8=1`; safe_write payloads LF; every project write via `safe_write`.

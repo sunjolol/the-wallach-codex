@@ -191,6 +191,11 @@
       "reason": "Foods & Absorption tab curated selections -- the SPECIAL curated persuasive landing (the home-page-curation philosophy; mirrors home-curation.json). hero_claims are the sealed crown-jewel search-claim IDs anchoring the two-pronged thesis; the REMOVE/EAT good-vs-bad-foods contrast lands here as remove[]/eat[] topic-slug lists in a later chunk. Editorial UI config, NOT canonical health data and NOT a pillar projection; no generator. IDs/slugs are resolved against the search index at render (an unresolved one is skipped)."
     },
     {
+      "file": "dashboard/assets/data/condition-categories.json",
+      "disposition": "hand_authored",
+      "reason": "Condition->body-system CATEGORY curation (Luneth-approved 2026-07-22): each of the 502 Wallach conditions is tagged with one of 12 body-system categories (label + display colour) so the Conditions tab colour-codes + labels every card -- the browsing context that gives the delight (what each condition affects). Editorial ORGANISATION, OURS and explicitly NOT a Wallach claim/number and NOT a pillar projection; no generator. A wrong category mis-colours a card, it never mis-states a fact. Initial classification by a reviewed agent pass over the corpus condition list; Luneth refines over time. condition keys are corpus slugs; an unmapped condition or unknown category id degrades to no colour/chip at render (state/condition-categories.ts)."
+    },
+    {
       "file": "dashboard/assets/data/versions-data.json",
       "disposition": "hand_authored",
       "reason": "App version/changelog history, hand-maintained. Not a projection of the pillars; no generator."

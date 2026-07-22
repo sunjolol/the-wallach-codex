@@ -5137,6 +5137,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     explore_preview: external_exports.array(external_exports.string())
   });
 
+  // assets/js/src/core/schemas/condition-categories.ts
+  var ConditionCategoryDefSchema = external_exports.object({
+    label: external_exports.string(),
+    color: external_exports.string()
+  });
+  var ConditionCategoriesSchema = external_exports.object({
+    /** category-id → { label, colour }. */
+    categories: external_exports.record(external_exports.string(), ConditionCategoryDefSchema),
+    /** condition-slug → category-id. */
+    conditions: external_exports.record(external_exports.string(), external_exports.string())
+  });
+
   // assets/js/src/core/schemas/foods-curation.ts
   var FoodsCurationSchema = external_exports.object({
     /** Curated crown-jewel claim IDs anchoring the landing's two-pronged thesis, in curated order. */
@@ -69684,6 +69696,587 @@ deaths, blood clots, sterility`,
     return out;
   }
 
+  // assets/data/condition-categories.json
+  var condition_categories_default = {
+    categories: {
+      "bones-joints-muscles": {
+        label: "Bones, Joints & Muscles",
+        color: "#4f76a3"
+      },
+      "mind-nerves": {
+        label: "Mind & Nerves",
+        color: "#7b62a3"
+      },
+      "heart-blood-circulation": {
+        label: "Heart, Blood & Circulation",
+        color: "#a83f48"
+      },
+      "skin-hair-nails": {
+        label: "Skin, Hair & Nails",
+        color: "#bd7b34"
+      },
+      "digestion-liver": {
+        label: "Digestion & Liver",
+        color: "#6b8a43"
+      },
+      "hormones-metabolism": {
+        label: "Hormones & Metabolism",
+        color: "#2c8a7e"
+      },
+      "reproductive-urinary": {
+        label: "Reproductive & Urinary",
+        color: "#a25490"
+      },
+      respiratory: {
+        label: "Respiratory",
+        color: "#3f8fa8"
+      },
+      "immunity-infection": {
+        label: "Immunity & Infection",
+        color: "#c9a13b"
+      },
+      "eyes-ears-mouth": {
+        label: "Eyes, Ears & Mouth",
+        color: "#5860a8"
+      },
+      "cellular-systemic": {
+        label: "Cellular / Systemic",
+        color: "#5f636b"
+      },
+      "general-other": {
+        label: "General / Other",
+        color: "#8a8a86"
+      }
+    },
+    conditions: {
+      abrasions: "skin-hair-nails",
+      abscess: "immunity-infection",
+      absence_attacks: "mind-nerves",
+      achalasia: "digestion-liver",
+      achlorhydria: "digestion-liver",
+      acidosis: "hormones-metabolism",
+      acne: "skin-hair-nails",
+      acrodermatitis_enteropathica: "skin-hair-nails",
+      addisons_disease: "hormones-metabolism",
+      adhd: "mind-nerves",
+      adrenal_exhaustion: "hormones-metabolism",
+      adrenoleukodystrophy: "mind-nerves",
+      ageusia: "eyes-ears-mouth",
+      aids: "immunity-infection",
+      airway_obstruction: "respiratory",
+      alcoholism: "mind-nerves",
+      alkalosis: "hormones-metabolism",
+      allergies: "immunity-infection",
+      alopecia: "skin-hair-nails",
+      als: "mind-nerves",
+      alzheimers: "mind-nerves",
+      amblyopia: "eyes-ears-mouth",
+      amenorrhea: "reproductive-urinary",
+      anal_abscess: "digestion-liver",
+      anaphylaxis: "immunity-infection",
+      anemia: "heart-blood-circulation",
+      anencephaly: "reproductive-urinary",
+      aneurysm: "heart-blood-circulation",
+      angina: "heart-blood-circulation",
+      angular_stomatitis: "eyes-ears-mouth",
+      ankylosing_spondylitis: "bones-joints-muscles",
+      anorexia: "general-other",
+      anorexia_nervosa: "mind-nerves",
+      anosmia: "eyes-ears-mouth",
+      anxiety: "mind-nerves",
+      aphthous_stomatitis: "eyes-ears-mouth",
+      arsenic_toxicity: "cellular-systemic",
+      arteriosclerosis: "heart-blood-circulation",
+      arthritis: "bones-joints-muscles",
+      asthma: "respiratory",
+      atherosclerosis: "heart-blood-circulation",
+      athletes_foot: "skin-hair-nails",
+      atopic_asthma: "respiratory",
+      atopic_dermatitis: "skin-hair-nails",
+      atrial_fibrillation: "heart-blood-circulation",
+      autism: "mind-nerves",
+      autoimmune_disorders: "immunity-infection",
+      backache: "bones-joints-muscles",
+      bad_breath: "eyes-ears-mouth",
+      basal_cell_carcinoma: "cellular-systemic",
+      bedsores: "skin-hair-nails",
+      bedwetting: "reproductive-urinary",
+      bee_stings: "skin-hair-nails",
+      bells_palsy: "mind-nerves",
+      benign_prostatic_hyperplasia: "reproductive-urinary",
+      beriberi: "mind-nerves",
+      bipolar_disorder: "mind-nerves",
+      birth_defects: "reproductive-urinary",
+      bladder_stones: "reproductive-urinary",
+      bleeding: "heart-blood-circulation",
+      bleeding_bowels: "digestion-liver",
+      bleeding_gums: "eyes-ears-mouth",
+      blepharitis: "eyes-ears-mouth",
+      blind_rage: "mind-nerves",
+      blindness: "eyes-ears-mouth",
+      bloating: "digestion-liver",
+      body_odor: "skin-hair-nails",
+      boils: "skin-hair-nails",
+      bone_pain: "bones-joints-muscles",
+      bone_spurs: "bones-joints-muscles",
+      brain_cancer: "cellular-systemic",
+      breast_cancer: "cellular-systemic",
+      breast_cysts: "reproductive-urinary",
+      breast_tenderness: "reproductive-urinary",
+      brittle_hair: "skin-hair-nails",
+      brittle_nails: "skin-hair-nails",
+      bronchitis: "respiratory",
+      bruises: "skin-hair-nails",
+      bruxism: "eyes-ears-mouth",
+      bulimia: "mind-nerves",
+      burns: "skin-hair-nails",
+      bursitis: "bones-joints-muscles",
+      bush_sickness: "cellular-systemic",
+      calcium_deposits: "bones-joints-muscles",
+      cancer: "cellular-systemic",
+      candidiasis: "immunity-infection",
+      canker_sores: "eyes-ears-mouth",
+      carcinoma: "cellular-systemic",
+      cardiac_arrest: "heart-blood-circulation",
+      cardiac_arrhythmia: "heart-blood-circulation",
+      cardiac_failure: "heart-blood-circulation",
+      cardiomyopathy: "heart-blood-circulation",
+      cardiovascular_disease: "heart-blood-circulation",
+      carpal_tunnel_syndrome: "bones-joints-muscles",
+      cataracts: "eyes-ears-mouth",
+      catarrh: "respiratory",
+      celiac_disease: "digestion-liver",
+      cerebellar_hypoplasia: "mind-nerves",
+      cerebral_palsy: "mind-nerves",
+      cerebrovascular_disease: "heart-blood-circulation",
+      cervical_dysplasia: "reproductive-urinary",
+      chalazion: "eyes-ears-mouth",
+      cheilosis: "eyes-ears-mouth",
+      chicken_pox: "immunity-infection",
+      chiggers: "skin-hair-nails",
+      chills: "general-other",
+      chondrodystrophy: "bones-joints-muscles",
+      chondromalacia: "bones-joints-muscles",
+      chorea: "mind-nerves",
+      chronic_fatigue: "cellular-systemic",
+      chronic_fatigue_syndrome: "cellular-systemic",
+      chronic_obstructive_pulmonary_disease: "respiratory",
+      circulatory_disease: "heart-blood-circulation",
+      cirrhosis: "digestion-liver",
+      cleft_lip: "eyes-ears-mouth",
+      cleft_palate: "eyes-ears-mouth",
+      cluster_headaches: "mind-nerves",
+      cold_sores: "immunity-infection",
+      colds: "respiratory",
+      colic: "digestion-liver",
+      colitis: "digestion-liver",
+      collagen_disease: "cellular-systemic",
+      colon_cancer: "cellular-systemic",
+      common_cold: "respiratory",
+      compression_fractures: "bones-joints-muscles",
+      congenital_ataxia: "mind-nerves",
+      congested_lungs: "respiratory",
+      congestive_heart_failure: "heart-blood-circulation",
+      conjunctivitis: "eyes-ears-mouth",
+      constipation: "digestion-liver",
+      convulsions: "mind-nerves",
+      cor_pulmonale: "respiratory",
+      corneal_ulcers: "eyes-ears-mouth",
+      coronary_artery_disease: "heart-blood-circulation",
+      cough: "respiratory",
+      cradle_cap: "skin-hair-nails",
+      cretinism: "hormones-metabolism",
+      creutzfeldt_jakob_disease: "mind-nerves",
+      criminal_behavior: "mind-nerves",
+      crohns_disease: "digestion-liver",
+      cuts: "skin-hair-nails",
+      cystic_fibrosis: "respiratory",
+      cystitis: "reproductive-urinary",
+      dandruff: "skin-hair-nails",
+      deafness: "eyes-ears-mouth",
+      degenerative_arthritis: "bones-joints-muscles",
+      degenerative_disc_disease: "bones-joints-muscles",
+      dementia: "mind-nerves",
+      demyelination: "mind-nerves",
+      dental_calculus: "eyes-ears-mouth",
+      dental_fluorosis: "eyes-ears-mouth",
+      depression: "mind-nerves",
+      dermatitis: "skin-hair-nails",
+      dermatosis: "skin-hair-nails",
+      diabetes: "hormones-metabolism",
+      diaper_rash: "skin-hair-nails",
+      diarrhea: "digestion-liver",
+      diplopia: "eyes-ears-mouth",
+      disagreeable_attitude: "mind-nerves",
+      diverticulitis: "digestion-liver",
+      dowagers_hump: "bones-joints-muscles",
+      down_syndrome: "reproductive-urinary",
+      dropsy: "general-other",
+      drug_addiction: "mind-nerves",
+      dry_skin: "skin-hair-nails",
+      dumping_syndrome: "digestion-liver",
+      dysentery: "digestion-liver",
+      dyslexia: "mind-nerves",
+      dysmenorrhea: "reproductive-urinary",
+      dyspepsia: "digestion-liver",
+      dysphagia: "digestion-liver",
+      earache: "eyes-ears-mouth",
+      ecchymosis: "heart-blood-circulation",
+      eclampsia: "reproductive-urinary",
+      eczema: "skin-hair-nails",
+      edema: "general-other",
+      electric_shock: "general-other",
+      emphysema: "respiratory",
+      encephalopathy: "mind-nerves",
+      enuresis: "reproductive-urinary",
+      enzootic_ataxia: "mind-nerves",
+      epilepsy: "mind-nerves",
+      erbs_palsy: "mind-nerves",
+      erectile_dysfunction: "reproductive-urinary",
+      esophageal_cancer: "cellular-systemic",
+      exophthalmos: "eyes-ears-mouth",
+      explosive_outbursts: "mind-nerves",
+      eye_redness: "eyes-ears-mouth",
+      failure_to_thrive: "cellular-systemic",
+      fatty_liver: "digestion-liver",
+      fever: "immunity-infection",
+      fibrocystic_breast_disease: "reproductive-urinary",
+      fibromyalgia: "bones-joints-muscles",
+      flatulence: "digestion-liver",
+      food_allergy: "immunity-infection",
+      fractures: "bones-joints-muscles",
+      freckles: "skin-hair-nails",
+      gallstones: "digestion-liver",
+      gangrene: "heart-blood-circulation",
+      gastroparesis: "digestion-liver",
+      geographic_tongue: "eyes-ears-mouth",
+      gestational_diabetes: "hormones-metabolism",
+      gingivitis: "eyes-ears-mouth",
+      glaucoma: "eyes-ears-mouth",
+      glucose_intolerance: "hormones-metabolism",
+      goiter: "hormones-metabolism",
+      gout: "bones-joints-muscles",
+      graves_disease: "hormones-metabolism",
+      gray_hair: "skin-hair-nails",
+      growing_pains: "bones-joints-muscles",
+      hangnails: "skin-hair-nails",
+      hashimotos_disease: "hormones-metabolism",
+      hay_fever: "immunity-infection",
+      headache: "mind-nerves",
+      heart_attack: "heart-blood-circulation",
+      heart_defects: "heart-blood-circulation",
+      heart_failure: "heart-blood-circulation",
+      heartburn: "digestion-liver",
+      heat_stroke: "general-other",
+      heavy_metal_toxicity: "cellular-systemic",
+      heel_spurs: "bones-joints-muscles",
+      hemochromatosis: "hormones-metabolism",
+      hemorrhoids: "digestion-liver",
+      hepatitis: "digestion-liver",
+      hernia: "digestion-liver",
+      herpes_simplex: "immunity-infection",
+      hiatal_hernia: "digestion-liver",
+      hiccoughs: "general-other",
+      high_cholesterol: "heart-blood-circulation",
+      high_triglycerides: "heart-blood-circulation",
+      hiv_aids: "immunity-infection",
+      hoarseness: "respiratory",
+      huntingtons_disease: "mind-nerves",
+      hydrocephalus: "mind-nerves",
+      hyperacidity: "digestion-liver",
+      hyperactivity: "mind-nerves",
+      hypercalcemia: "hormones-metabolism",
+      hyperinsulinemia: "hormones-metabolism",
+      hyperirritability: "mind-nerves",
+      hyperkinesis: "mind-nerves",
+      hyperparathyroidism: "hormones-metabolism",
+      hypertension: "heart-blood-circulation",
+      hyperthyroidism: "hormones-metabolism",
+      hypochlorhydria: "digestion-liver",
+      hypoglycemia: "hormones-metabolism",
+      hypogonadism: "hormones-metabolism",
+      hypokalemia: "hormones-metabolism",
+      hypophosphatemia: "hormones-metabolism",
+      hypotension: "heart-blood-circulation",
+      hypothermia: "general-other",
+      hypothyroidism: "hormones-metabolism",
+      hysteria: "mind-nerves",
+      ichthyosis: "skin-hair-nails",
+      immune_depression: "immunity-infection",
+      impetigo: "skin-hair-nails",
+      impotence: "reproductive-urinary",
+      incontinence: "reproductive-urinary",
+      indigestion: "digestion-liver",
+      infarction: "heart-blood-circulation",
+      infection: "immunity-infection",
+      infertility: "reproductive-urinary",
+      inflammation: "general-other",
+      influenza: "immunity-infection",
+      insomnia: "mind-nerves",
+      intermittent_claudication: "heart-blood-circulation",
+      irritable_bowel_syndrome: "digestion-liver",
+      ischemic_heart_disease: "heart-blood-circulation",
+      itching: "skin-hair-nails",
+      jaundice: "digestion-liver",
+      joint_pain: "bones-joints-muscles",
+      kawasaki_disease: "immunity-infection",
+      keratitis: "eyes-ears-mouth",
+      keratomalacia: "eyes-ears-mouth",
+      keratosis: "skin-hair-nails",
+      kernicterus: "mind-nerves",
+      keshan_disease: "heart-blood-circulation",
+      ketoacidosis: "hormones-metabolism",
+      ketosis: "hormones-metabolism",
+      kidney_disease: "reproductive-urinary",
+      kidney_stones: "reproductive-urinary",
+      korsakoffs_syndrome: "mind-nerves",
+      kwashiorkor: "cellular-systemic",
+      kyphosis: "bones-joints-muscles",
+      labor: "reproductive-urinary",
+      lactase_deficiency: "digestion-liver",
+      lactose_intolerance: "digestion-liver",
+      laryngitis: "respiratory",
+      lead_poisoning: "cellular-systemic",
+      learning_disabilities: "mind-nerves",
+      legg_perthes: "bones-joints-muscles",
+      legionnaires_disease: "respiratory",
+      leptospirosis: "immunity-infection",
+      leukemia: "heart-blood-circulation",
+      leukopenia: "heart-blood-circulation",
+      leukorrhea: "reproductive-urinary",
+      lice: "skin-hair-nails",
+      liver_cancer: "cellular-systemic",
+      liver_cirrhosis: "digestion-liver",
+      liver_disease: "digestion-liver",
+      lordosis: "bones-joints-muscles",
+      low_back_pain: "bones-joints-muscles",
+      low_libido: "reproductive-urinary",
+      lung_cancer: "cellular-systemic",
+      lupus: "immunity-infection",
+      lyme_disease: "immunity-infection",
+      macular_degeneration: "eyes-ears-mouth",
+      mad_cow_disease: "mind-nerves",
+      malabsorption: "digestion-liver",
+      male_pattern_baldness: "skin-hair-nails",
+      malnutrition: "cellular-systemic",
+      measles: "immunity-infection",
+      melanoma: "cellular-systemic",
+      melasma: "skin-hair-nails",
+      memory_loss: "mind-nerves",
+      menieres_disease: "eyes-ears-mouth",
+      meningitis: "immunity-infection",
+      meningocele: "reproductive-urinary",
+      menkes_syndrome: "cellular-systemic",
+      menopause: "reproductive-urinary",
+      menorrhagia: "reproductive-urinary",
+      mental_retardation: "mind-nerves",
+      mercury_poisoning: "cellular-systemic",
+      migraine: "mind-nerves",
+      minamata_disease: "cellular-systemic",
+      miscarriage: "reproductive-urinary",
+      mitral_valve_prolapse: "heart-blood-circulation",
+      monckebergs_arteriosclerosis: "heart-blood-circulation",
+      morning_sickness: "reproductive-urinary",
+      motion_sickness: "general-other",
+      multiple_sclerosis: "mind-nerves",
+      mumps: "immunity-infection",
+      muscle_cramps: "bones-joints-muscles",
+      muscle_twitches: "bones-joints-muscles",
+      muscular_dystrophy: "bones-joints-muscles",
+      myelofibrosis: "heart-blood-circulation",
+      myopia: "eyes-ears-mouth",
+      narcolepsy: "mind-nerves",
+      nasal_catarrh: "respiratory",
+      nervous_heart: "heart-blood-circulation",
+      nervous_tension: "mind-nerves",
+      neural_tube_defects: "reproductive-urinary",
+      neuralgia: "mind-nerves",
+      neuropathy: "mind-nerves",
+      neutropenia: "heart-blood-circulation",
+      night_blindness: "eyes-ears-mouth",
+      night_terrors: "mind-nerves",
+      nosebleeds: "respiratory",
+      obesity: "hormones-metabolism",
+      oligospermia: "reproductive-urinary",
+      omphalocele: "reproductive-urinary",
+      opiate_withdrawal: "mind-nerves",
+      optic_nerve_atrophy: "eyes-ears-mouth",
+      oral_cancer: "cellular-systemic",
+      organic_brain_syndrome: "mind-nerves",
+      ornithosis: "immunity-infection",
+      osteitis_fibrosa: "bones-joints-muscles",
+      osteoarthritis: "bones-joints-muscles",
+      osteofibrosis: "bones-joints-muscles",
+      osteomalacia: "bones-joints-muscles",
+      osteopenia: "bones-joints-muscles",
+      osteoporosis: "bones-joints-muscles",
+      osteosarcoma: "cellular-systemic",
+      osteosclerosis: "bones-joints-muscles",
+      otitis: "eyes-ears-mouth",
+      pagets_disease: "bones-joints-muscles",
+      pain: "general-other",
+      palpitations: "heart-blood-circulation",
+      pancreatic_cancer: "cellular-systemic",
+      pancreatic_fibrosis: "digestion-liver",
+      pancreatitis: "digestion-liver",
+      panic_attacks: "mind-nerves",
+      paranoia: "mind-nerves",
+      parasites: "immunity-infection",
+      parkinsonism: "mind-nerves",
+      parkinsons_disease: "mind-nerves",
+      pediculosis: "skin-hair-nails",
+      pellagra: "skin-hair-nails",
+      peptic_ulcers: "digestion-liver",
+      periodontal_disease: "eyes-ears-mouth",
+      peripheral_arterial_disease: "heart-blood-circulation",
+      peripheral_neuropathy: "mind-nerves",
+      peritonsillar_abscess: "respiratory",
+      pernicious_anemia: "heart-blood-circulation",
+      phlebitis: "heart-blood-circulation",
+      photophobia: "eyes-ears-mouth",
+      pica: "mind-nerves",
+      pilonidal_cyst: "skin-hair-nails",
+      plumbism: "cellular-systemic",
+      poison_ivy: "skin-hair-nails",
+      poor_circulation: "heart-blood-circulation",
+      post_partum_hemorrhage: "reproductive-urinary",
+      prediabetes: "hormones-metabolism",
+      preeclampsia: "reproductive-urinary",
+      pregnancy_toxemia: "reproductive-urinary",
+      pms: "reproductive-urinary",
+      prolonged_clotting_time: "heart-blood-circulation",
+      prostate_cancer: "cellular-systemic",
+      pruritus: "skin-hair-nails",
+      psoriasis: "skin-hair-nails",
+      psychosis: "mind-nerves",
+      ptosis: "eyes-ears-mouth",
+      pubic_lice: "skin-hair-nails",
+      pyorrhea: "eyes-ears-mouth",
+      q_fever: "immunity-infection",
+      quinsy: "respiratory",
+      rabbit_fever: "immunity-infection",
+      rabies: "immunity-infection",
+      radial_nerve_palsy: "mind-nerves",
+      raynauds_disease: "heart-blood-circulation",
+      reactive_hypoglycemia: "hormones-metabolism",
+      receding_gums: "eyes-ears-mouth",
+      rectal_itching: "skin-hair-nails",
+      renal_failure: "reproductive-urinary",
+      repetitive_motion_syndrome: "bones-joints-muscles",
+      respiratory_disease: "respiratory",
+      restless_leg_syndrome: "mind-nerves",
+      reyes_syndrome: "mind-nerves",
+      rheumatic_fever: "immunity-infection",
+      rheumatoid_arthritis: "bones-joints-muscles",
+      rickets: "bones-joints-muscles",
+      ringworm: "skin-hair-nails",
+      rocky_mountain_spotted_fever: "immunity-infection",
+      roseola: "immunity-infection",
+      rubella: "immunity-infection",
+      sarcoma: "cellular-systemic",
+      scabies: "skin-hair-nails",
+      scarlatina: "immunity-infection",
+      schistosomiasis: "immunity-infection",
+      schizophrenia: "mind-nerves",
+      sciatica: "mind-nerves",
+      scoliosis: "bones-joints-muscles",
+      scurvy: "cellular-systemic",
+      sebaceous_cyst: "skin-hair-nails",
+      seborrheic_dermatitis: "skin-hair-nails",
+      secondary_hyperparathyroidism: "hormones-metabolism",
+      shingles: "immunity-infection",
+      shwachman_syndrome: "digestion-liver",
+      sickle_cell_anemia: "heart-blood-circulation",
+      sids: "respiratory",
+      sore_throat: "respiratory",
+      spider_bite: "skin-hair-nails",
+      spider_veins: "heart-blood-circulation",
+      spina_bifida: "reproductive-urinary",
+      spinal_stenosis: "bones-joints-muscles",
+      spontaneous_fractures: "bones-joints-muscles",
+      sprain: "bones-joints-muscles",
+      stomach_cancer: "cellular-systemic",
+      stomatitis: "eyes-ears-mouth",
+      strabismus: "eyes-ears-mouth",
+      strain: "bones-joints-muscles",
+      stress: "general-other",
+      stroke: "heart-blood-circulation",
+      sty: "eyes-ears-mouth",
+      sudden_cardiac_death: "heart-blood-circulation",
+      swimmers_ear: "eyes-ears-mouth",
+      syphilis: "immunity-infection",
+      tachycardia: "heart-blood-circulation",
+      tapeworms: "immunity-infection",
+      tardive_dyskinesia: "mind-nerves",
+      teeth_discoloration: "eyes-ears-mouth",
+      teething: "eyes-ears-mouth",
+      tetanus: "immunity-infection",
+      tetany: "mind-nerves",
+      thallium_poisoning: "cellular-systemic",
+      throat_cancer: "cellular-systemic",
+      thrombosis: "heart-blood-circulation",
+      thrush: "immunity-infection",
+      thyroid_cancer: "cellular-systemic",
+      thyroid_disease: "hormones-metabolism",
+      tinnitus: "eyes-ears-mouth",
+      tmj: "bones-joints-muscles",
+      tongue_atrophy: "eyes-ears-mouth",
+      tonsillitis: "respiratory",
+      tooth_decay: "eyes-ears-mouth",
+      toothache: "eyes-ears-mouth",
+      torticollis: "bones-joints-muscles",
+      tourette_syndrome: "mind-nerves",
+      toxic_shock_syndrome: "immunity-infection",
+      toxoplasmosis: "immunity-infection",
+      trigeminal_neuralgia: "mind-nerves",
+      tularemia: "immunity-infection",
+      umbilical_hernia: "digestion-liver",
+      urinary_tract_infection: "reproductive-urinary",
+      uterine_cancer: "cellular-systemic",
+      uterine_fibroids: "reproductive-urinary",
+      vaginitis: "reproductive-urinary",
+      varicose_veins: "heart-blood-circulation",
+      vascular_dementia: "mind-nerves",
+      vertigo: "mind-nerves",
+      violent_behavior: "mind-nerves",
+      vitiligo: "skin-hair-nails",
+      vomiting: "digestion-liver",
+      warts: "skin-hair-nails",
+      water_intoxication: "general-other",
+      weight_loss: "general-other",
+      weils_disease: "immunity-infection",
+      wernicke_korsakoff_syndrome: "mind-nerves",
+      white_muscle_disease: "bones-joints-muscles",
+      white_spots_fingernails: "skin-hair-nails",
+      wilsons_syndrome: "hormones-metabolism",
+      wounds: "skin-hair-nails",
+      xerophthalmia: "eyes-ears-mouth"
+    }
+  };
+
+  // assets/js/src/state/condition-categories.ts
+  var EMPTY5 = { categories: {}, conditions: {} };
+  var cached6 = null;
+  function store() {
+    if (cached6 === null) {
+      const parsed = ConditionCategoriesSchema.safeParse(condition_categories_default);
+      cached6 = parsed.success ? parsed.data : EMPTY5;
+    }
+    return cached6;
+  }
+  function conditionCategory(slug) {
+    const s = store();
+    const catId = s.conditions[slug];
+    if (catId === void 0) {
+      return null;
+    }
+    const def = s.categories[catId];
+    if (def === void 0) {
+      return null;
+    }
+    return { slug: catId, label: def.label, color: def.color };
+  }
+
   // assets/js/src/views/knowledge-corpus.ts
   function escHTML4(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -69811,13 +70404,15 @@ deaths, blood clots, sterility`,
   function renderConditionRow(c, selectedSlug) {
     const cls = `kd-condition-row${c.slug === selectedSlug ? " is-selected" : ""}`;
     const nutrients = c.essentials_involved.length;
+    const cat = conditionCategory(c.slug);
+    const catStyle = cat !== null ? ` style="--cat:${escHTML4(cat.color)}"` : "";
+    const catHTML = cat !== null ? `<div class="kd-condition-row__cat"><i></i>${escHTML4(cat.label)}</div>` : "";
     return `
-    <div class="${cls}" data-kd-condition="${escHTML4(c.slug)}" data-search="${escHTML4(conditionSearchKeywords(c))}" role="button" tabindex="0">
-      <div class="kd-condition-row__body">
-        <span class="kd-condition-row__name">${escHTML4(c.display_name)}</span>
-        <span class="kd-condition-row__meta">${nutrients} ${plural(nutrients, "nutrient")}</span>
-      </div>
-      <div class="kd-condition-row__count">${c.claim_count}<small>${plural(c.claim_count, "claim")}</small></div>
+    <div class="${cls}"${catStyle} data-kd-condition="${escHTML4(c.slug)}" data-search="${escHTML4(conditionSearchKeywords(c))}" role="button" tabindex="0">
+      <div class="kd-condition-row__ghost" aria-hidden="true">${c.claim_count}</div>
+      ${catHTML}
+      <h4 class="kd-condition-row__name">${escHTML4(c.display_name)}</h4>
+      <div class="kd-condition-row__foot">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${nutrients} ${plural(nutrients, "nutrient")}</div>
     </div>`;
   }
   function familiarEssentialName(slug) {
@@ -99402,14 +99997,14 @@ deaths, blood clots, sterility`,
   };
 
   // assets/js/src/state/foods-curation.ts
-  var EMPTY5 = { hero_claims: [], remove: [], eat: [], conditional: [] };
-  var cached6 = null;
+  var EMPTY6 = { hero_claims: [], remove: [], eat: [], conditional: [] };
+  var cached7 = null;
   function data4() {
-    if (cached6 === null) {
+    if (cached7 === null) {
       const parsed = FoodsCurationSchema.safeParse(foods_curation_default);
-      cached6 = parsed.success ? parsed.data : EMPTY5;
+      cached7 = parsed.success ? parsed.data : EMPTY6;
     }
-    return cached6;
+    return cached7;
   }
   function foodsThesisClaims() {
     const out = [];
@@ -99665,14 +100260,14 @@ deaths, blood clots, sterility`,
   };
 
   // assets/js/src/state/home-curation.ts
-  var EMPTY6 = { explore_preview: [] };
-  var cached7 = null;
+  var EMPTY7 = { explore_preview: [] };
+  var cached8 = null;
   function data5() {
-    if (cached7 === null) {
+    if (cached8 === null) {
       const parsed = HomeCurationSchema.safeParse(home_curation_default);
-      cached7 = parsed.success ? parsed.data : EMPTY6;
+      cached8 = parsed.success ? parsed.data : EMPTY7;
     }
-    return cached7;
+    return cached8;
   }
   function homeExploreTopics() {
     const bySlug = new Map(entityList().map((e) => [e.slug, e]));
@@ -102754,7 +103349,9 @@ PROCESS NOTE (honesty): I first misread "consolidate its entry into Uses at the 
 
 DEFERRED (his call): the "searchable-but-demoted" per-card flag (keep a low-value card in Ask Wallach but drop it from the entity page's prominent section) \u2014 chosen to defer this round. Next stage: bring the still-unused demo pages/revamps to the live surface (Ask Wallach, Products tab, Conditions tab).` }, { id: "lg_mrwg0xna_u8ywg9", ts: "2026-07-22T13:56:08.278500-05:00", surface: "knowledge", kind: "round-close", summary: "Conditions tab rebuilt as a demo-style 3-col card grid in our current fonts (Chakra Petch + Bruno Ace, no serif); tan cards, orange left bar, big claim-count accent, working hover \u2014 a checkpoint before an Unbounded-forward redesign", detail: `Plain: The Conditions list in the Knowledge drawer used to be a plain one-column A-Z list. I rebuilt it to match the demo's design \u2014 a grid of cards, three across, ordered by how much Wallach wrote about each condition (Cancer first, with 65 claims). I used our CURRENT fonts, not the demo's dated serif ones: each card has a warm tan background with an orange bar down the left edge, the condition name plus how many nutrients it involves stacked on the left, and a big orange claim-count number with "CLAIMS" on the right. Hovering a card lights it up (brighter background, the name turns orange). This is a saved checkpoint \u2014 Luneth wasn't happy with the look and wants a bolder, Unbounded-font redesign next, so I locked this working version first so we can always come back to it.
 
-Technical: Two files. views/knowledge-corpus.ts \u2014 added conditionsByWeight() (sort by claim_count desc, display_name alpha tiebreak; presentation-only, the derive keeps conditions A-Z), wrapped the rows in a .kd-conditions-grid container, restructured the section head to "ALL {N} CONDITIONS \xB7 SORTED BY HOW MUCH WALLACH WROTE", and restructured renderConditionRow into a .kd-condition-row__body (name + "N nutrients") + a .kd-condition-row__count (claim_count + "claims" label). drawer-knowledge.css \u2014 .kd-conditions-grid is repeat(auto-fill, minmax(230px,1fr)) ~3 cols at the 950px drawer; .kd-condition-row is a grid 1fr/auto card with background var(--ds-paper-deep), border-left 3px var(--ds-accent), radius sm; name = --ds-font-display-interface (Chakra Petch) uppercase sm; meta = --ds-font-mono micro muted; count = --ds-font-display-artifact (Bruno Ace) 1.2rem --ds-accent-deep with a mono "claims" sublabel; hover sets background --ds-paper-light + name colour --ds-accent-deep + count colour --ds-accent-hot; is-selected mirrors the hover bg + an accent ring. The content-aware search filter (data-search keyword blob, e.g. "smell"->Anosmia) still works because the grid wrapper doesn't change the flat querySelectorAll the filter walks. Card styling (tan bg + orange bar) mirrors the demo's .sh-condrow (background rgb(242,234,211)=--ds-paper-deep, border-left 3px rgb(255,126,60)=--ds-accent), mapped to current tokens rather than hardcoded. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds), render_probe_knowledge PASS (conditions rowCount 502, search visible 11 for a query, anosmiaVisible true, PAGE_ERRORS 0), plus headless default + hover screenshots. Deferred: Luneth wants a redesign (higher-impact Unbounded-forward cards, less busy/less boring, possible condition-type colour-coding) \u2014 mockups are the next step, then the condition detail view.` }];
+Technical: Two files. views/knowledge-corpus.ts \u2014 added conditionsByWeight() (sort by claim_count desc, display_name alpha tiebreak; presentation-only, the derive keeps conditions A-Z), wrapped the rows in a .kd-conditions-grid container, restructured the section head to "ALL {N} CONDITIONS \xB7 SORTED BY HOW MUCH WALLACH WROTE", and restructured renderConditionRow into a .kd-condition-row__body (name + "N nutrients") + a .kd-condition-row__count (claim_count + "claims" label). drawer-knowledge.css \u2014 .kd-conditions-grid is repeat(auto-fill, minmax(230px,1fr)) ~3 cols at the 950px drawer; .kd-condition-row is a grid 1fr/auto card with background var(--ds-paper-deep), border-left 3px var(--ds-accent), radius sm; name = --ds-font-display-interface (Chakra Petch) uppercase sm; meta = --ds-font-mono micro muted; count = --ds-font-display-artifact (Bruno Ace) 1.2rem --ds-accent-deep with a mono "claims" sublabel; hover sets background --ds-paper-light + name colour --ds-accent-deep + count colour --ds-accent-hot; is-selected mirrors the hover bg + an accent ring. The content-aware search filter (data-search keyword blob, e.g. "smell"->Anosmia) still works because the grid wrapper doesn't change the flat querySelectorAll the filter walks. Card styling (tan bg + orange bar) mirrors the demo's .sh-condrow (background rgb(242,234,211)=--ds-paper-deep, border-left 3px rgb(255,126,60)=--ds-accent), mapped to current tokens rather than hardcoded. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds), render_probe_knowledge PASS (conditions rowCount 502, search visible 11 for a query, anosmiaVisible true, PAGE_ERRORS 0), plus headless default + hover screenshots. Deferred: Luneth wants a redesign (higher-impact Unbounded-forward cards, less busy/less boring, possible condition-type colour-coding) \u2014 mockups are the next step, then the condition detail view.` }, { id: "lg_mrwhzt0v_vli528", ts: "2026-07-22T14:51:14.863665-05:00", surface: "knowledge", kind: "round-close", summary: "Conditions tab redesigned: ghost-number cards + 12 body-system category colours + Unbounded (design D of 4 mockups). 502 conditions tagged via a reviewed 12-agent pass; new condition-categories.json curation + schema + reader, MANIFEST-accounted, board 77/77", detail: `Plain: The Conditions list in the Knowledge drawer got a real redesign. Every condition now sits on its own card with a big, faded claim-count number in the top corner, the condition's name in our bold Unbounded font, and a small coloured tag saying which part of the body it affects (Bones & Joints, Mind & Nerves, Heart/Blood, Skin, Digestion, Hormones, and so on \u2014 12 groups, each its own colour). That colour tag is the whole point: Luneth found that seeing "what each condition affects" while browsing was genuinely delightful and informative, so we made it a first-class part of the card. He picked this "ghost number" look from four mockups I drafted. All 502 conditions were sorted into the 12 groups by a reviewed pass of 12 helper agents; Luneth approved it as good-enough-for-now and plans to fine-tune the groupings later.
+
+Technical: NEW curation layer + wiring, following the existing hand-authored-curation pattern (home-curation/foods-curation). dashboard/assets/data/condition-categories.json = {categories:{id:{label,color}}, conditions:{slug:id}} (12 categories, 502 mapped). Registered in eden/derived/MANIFEST.json \`accounted\` (hand_authored) so data_artifacts_accounted stays green (now 24 assets/data files: 12 derived + 14 hand/external). core/schemas/condition-categories.ts (ConditionCategoriesSchema + ConditionCategoryDefSchema, exported via schemas/index.ts). state/condition-categories.ts reader: parse-once through Zod, conditionCategory(slug) -> {slug,label,color}|null (graceful \u2014 unmapped condition or unknown id => no chip/colour, falls back to app accent). Render: views/knowledge-corpus.ts renderConditionRow rebuilt to the D markup (.kd-condition-row__ghost aria-hidden claim_count + .kd-condition-row__cat dot+label + .kd-condition-row__name + .kd-condition-row__foot; --cat colour carried inline per card from the reader). drawer-knowledge.css .kd-condition-row block: position:relative + overflow:hidden card, radius-lg, name = --ds-font-display (Unbounded) text-md, ghost = --ds-font-display 3rem color-mix(--cat 22% transparent) absolute right:12 top:2, cat chip mono in --cat with a dot, hover = border+bg(white)+lift + ghost color-mix 34%, is-selected = --cat ring. Category colours: bones-joints-muscles #4f76a3, mind-nerves #7b62a3, heart-blood-circulation #a83f48, skin-hair-nails #bd7b34, digestion-liver #6b8a43, hormones-metabolism #2c8a7e, reproductive-urinary #a25490, respiratory #3f8fa8, immunity-infection #c9a13b, eyes-ears-mouth #5860a8, cellular-systemic #5f636b, general-other #8a8a86. Classification via a Workflow (12 parallel agents, ~42 conditions each, strict 12-category medical rubric; first run hit the workflow VM's 4096 data-crossing cap on args, fixed by embedding the 502-item list in the script + returning a flat pairs array). Content-aware condition search filter preserved (the grid wrapper doesn't change the flat querySelectorAll the filter walks). No sealed pillar touched (curation is not a golden file) \u2014 no seal needed. Verified: node tools/build.mjs OK, invariants 77/77 (0 new reds; data_artifacts_accounted + derived_artifacts_fresh green), render_probe_knowledge PASS (conditions rowCount 502, PAGE_ERRORS 0), headless puppeteer screenshots (default + hover). Design reference temporary/condition-cards-brainstorm.html (gitignored local mockup, 4 options). Next: the condition DETAIL view (Osteoporosis exemplar) in a fresh genesis session; its "THE APPROACH" protocol card must feature the REAL sourced Wallach claim WAL-CLM-DDDL-000060, never a composite (\xA700.A).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

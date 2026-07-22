@@ -925,71 +925,86 @@
  * ═══════════════════════════════════════════════════════════════════════════ */
 #drawer-knowledge-mount .kd-conditions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
   gap: var(--ds-space-2);
   margin-top: var(--ds-space-3);
 }
+/* Condition card — the "ghost number" design: a big faded claim-count in the
+   condition's body-system colour (--cat, set inline per card) behind an Unbounded
+   name + a category chip. Unmapped conditions fall back to the app accent. */
 #drawer-knowledge-mount .kd-condition-row {
-  background: var(--ds-paper-deep);
+  position: relative;
+  overflow: hidden;
+  background: var(--ds-paper-light);
   border: 1px solid var(--ds-rule-soft);
-  border-left: 3px solid var(--ds-accent);
-  border-radius: var(--ds-radius-sm);
-  padding: var(--ds-space-3) var(--ds-space-4);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--ds-space-3);
-  align-items: center;
+  border-radius: var(--ds-radius-lg);
+  padding: var(--ds-space-3) var(--ds-space-4) var(--ds-space-4);
   cursor: pointer;
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-knowledge-mount .kd-condition-row:hover {
-  background: var(--ds-paper-light);
-  border-color: var(--ds-accent);
-  box-shadow: 0 2px 8px -2px rgba(255, 126, 60, 0.15);
+  border-color: var(--cat, var(--ds-accent));
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -12px rgba(26, 22, 18, 0.4);
 }
-#drawer-knowledge-mount .kd-condition-row:hover .kd-condition-row__name { color: var(--ds-accent-deep); }
-#drawer-knowledge-mount .kd-condition-row:hover .kd-condition-row__count { color: var(--ds-accent-hot); }
+#drawer-knowledge-mount .kd-condition-row:hover .kd-condition-row__ghost {
+  color: color-mix(in srgb, var(--cat, var(--ds-accent)) 34%, transparent);
+}
 #drawer-knowledge-mount .kd-condition-row.is-selected {
-  background: var(--ds-paper-light);
-  border-color: var(--ds-accent);
-  box-shadow: 0 0 0 1px var(--ds-accent), 0 4px 12px -3px rgba(255, 126, 60, 0.28);
+  border-color: var(--cat, var(--ds-accent));
+  box-shadow: 0 0 0 1px var(--cat, var(--ds-accent)), 0 6px 16px -8px rgba(26, 22, 18, 0.3);
 }
-#drawer-knowledge-mount .kd-condition-row__body { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
-#drawer-knowledge-mount .kd-condition-row__name {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-sm);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  line-height: 1.2;
+#drawer-knowledge-mount .kd-condition-row__ghost {
+  position: absolute;
+  right: 12px;
+  top: 2px;
+  font-family: var(--ds-font-display);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: color-mix(in srgb, var(--cat, var(--ds-accent)) 22%, transparent);
+  pointer-events: none;
   transition: color var(--ds-motion-fast) var(--ds-ease-out);
 }
-#drawer-knowledge-mount .kd-condition-row__meta {
+#drawer-knowledge-mount .kd-condition-row__cat {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--cat, var(--ds-ink-soft));
+}
+#drawer-knowledge-mount .kd-condition-row__cat i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cat, var(--ds-accent));
+}
+#drawer-knowledge-mount .kd-condition-row__name {
+  position: relative;
+  font-family: var(--ds-font-display);
+  font-size: var(--ds-text-md);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ds-ink);
+  margin: 8px 0 0;
+  line-height: 1.1;
+  max-width: 82%;
+}
+#drawer-knowledge-mount .kd-condition-row__foot {
+  position: relative;
+  margin-top: 12px;
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wide);
   text-transform: uppercase;
   color: var(--ds-ink-soft);
-}
-#drawer-knowledge-mount .kd-condition-row__count {
-  font-family: var(--ds-font-display-artifact);
-  font-size: 1.2rem;
-  color: var(--ds-accent-deep);
-  text-align: center;
-  white-space: nowrap;
-  line-height: 1;
-  transition: color var(--ds-motion-fast) var(--ds-ease-out);
-}
-#drawer-knowledge-mount .kd-condition-row__count small {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  color: var(--ds-ink-soft);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  display: block;
-  margin-top: 3px;
-  font-weight: 500;
 }
 /* condition deep view reuses .kd-essential-deep; it has no symbol row */
 #drawer-knowledge-mount .kd-condition-deep .kd-essential-deep__head { grid-template-columns: 1fr; }
