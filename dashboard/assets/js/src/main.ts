@@ -75,6 +75,8 @@ interface DrawerHandle {
   close: () => void;
   toggle: () => void;
   isOpen: () => boolean;
+  /** Knowledge only — open the drawer at an entity page (Ask-Wallach "Learn More"). */
+  openEntity?: (kind: 'essential' | 'condition', slug: string) => void;
 }
 
 /** One overlay drawer: a rail target, its mount slot, and a bare-key toggle. */
@@ -260,6 +262,19 @@ function wireJourneyAutoDerive(): void {
   });
 }
 
+/**
+ * Ask-Wallach "Learn More" → the Knowledge detail page. The search popup emits knowledge:open-entity;
+ * here we perform the single-drawer swap (close search, open Knowledge at the entity, sync the rail)
+ * so the one-overlay-at-a-time invariant holds.
+ */
+function wireSearchToKnowledge(): void {
+  events.on('knowledge:open-entity', ({ kind, slug }) => {
+    closeAllDrawers();
+    drawerHandles.get('knowledge')?.openEntity?.(kind, slug);
+    syncDrawerRail();
+  });
+}
+
 // ─── Profile panel ─────────────────────────────────────────────────────────
 
 let profileHandle: { unmount: () => void } | null = null;
@@ -354,6 +369,7 @@ function bootstrap(): void {
   wireTopbarSearch();
   mountDrawers();
   wireDrawerKeys();
+  wireSearchToKnowledge();
   wireJourneyAutoDerive();
   initGlossTooltip();
 

@@ -1,38 +1,38 @@
 /**
- * views/search.ts — Search drawer (the "Ask-Wallach" surface)
+ * views/search.ts — Ask-Wallach (the centered green command-palette popup)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Slide-in-from-left overlay drawer (mirrors the Knowledge drawer chrome, own sr-*
- * namespace + drawer-search.css so nothing leaks). Three render modes on ONE surface:
- *   - LANDING (empty query): a browse grid of every registered entity (icon · name ·
- *     type · claim count) — click a card to open its entity page.
- *   - ENTITY PAGE (query = a subject): a product-detail-style panel — header then one
- *     collapsible section per FACET (order tailored per entity type), each an FAQ list of
- *     question rows that expand to answer + verbatim + cite + RELATED pills.
- *   - ASK ANSWER (query = a question): the demo's ask-result card.
+ * ONE surface, four render modes over the derived search index (state/search.ts, offline, no LLM):
+ *   - OPENING (empty query): "browse by kind of answer" — the five facet-FAMILY cards.
+ *   - QUESTION (a plain-language query): a best-answer card (Wallach's exact words in the one serif)
+ *     + colour-coded "more answers" rows + a "keep exploring" topic card.
+ *   - TOPIC (a query that exactly names an entity): its page — hero + every answer grouped by facet.
+ *   - EMPTY (a query that matches nothing): a calm dead-end with real suggestion chips.
  *
- * ONE pill rule (renderPill): anywhere a slug is referenced (a claim's related entities, an
- * entity's related list), the pill is CLICKABLE + navigable iff that slug resolves to an entity
- * that has a page; otherwise it is a plain chip. So pills light up automatically as entities are
- * authored — no per-site wiring, no duplication (the structure decides). A nav back-stack lets
- * "‹ BACK" return to the previous card. Retrieval + data come from state/search.ts (offline, no LLM).
+ * Colour is DATA-DRIVEN, never a TS colour literal (view_category_not_hardcoded): a result element
+ * carries data-facet (→ its family colour) or data-type (→ its entity-type colour); drawer-search.css
+ * maps both to --k. Book sourcing stays SILENT everywhere — verbatims are attributed to the person,
+ * never a title/year. The host is the scrim; `.scr` (data-aw-pop) is the panel — click outside closes.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import type { SearchClaim } from '../core/schemas/index.js';
-import { plural } from '../core/format.js';
+import { emit } from '../core/events.js';
+import { facetLabel, ui } from '../state/copy.js';
+import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import {
   claimCount,
-  composeCite,
   displayName,
-  type EntitySummary,
   entityList,
+  type EntitySummary,
   type FacetGroup,
   facetGroups,
+  type FamilyCount,
+  familyCounts,
   getEntity,
-  indexTotals,
   resolveQuery,
   type SearchResult,
+  subjectFacetHints,
 } from '../state/search.js';
 import { glossify } from './glossify.js';
 
@@ -40,7 +40,6 @@ export interface DrawerHandle {
   open: () => void;
   close: () => void;
   toggle: () => void;
-  toggleExpanded: () => void;
   isOpen: () => boolean;
 }
 
@@ -57,7 +56,7 @@ function oneLine(s: string): string {
 
 /**
  * Per-type tile icons (author-vetted constant SVGs; monochrome line icons, inherit the tile
- * color). Used for entities WITHOUT an atomic symbol — elements/minerals keep their symbol.
+ * colour). Used for entities WITHOUT an atomic symbol — elements/minerals keep their symbol.
  */
 const TYPE_ICON: Record<string, string> = {
   substance: '<svg viewBox="0 0 24 24"><path d="M12 3l7.5 4.5v9L12 21l-7.5-4.5v-9z"/><circle cx="12" cy="12" r="2.2"/></svg>',
@@ -70,7 +69,7 @@ const TYPE_ICON: Record<string, string> = {
 
 /**
  * Entity-SPECIFIC icon overrides (checked before the type icon) — for entities whose subject
- * deserves a bespoke mark. Color Therapy gets a full-color 6-segment wheel (the one deliberately
+ * deserves a bespoke mark. Color Therapy gets a full-colour 6-segment wheel (the one deliberately
  * NOT monochrome; drawer-search.css opts .sr-icon-wheel out of the mono stroke rule). Luneth 2026-07-09.
  */
 const ENTITY_ICON: Record<string, string> = {
@@ -86,22 +85,8 @@ function tileGlyph(slug: string, e: { symbol?: string | null | undefined; type: 
   return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML(e.display_name.charAt(0));
 }
 
-/**
- * The ONE pill primitive. A slug that resolves to an entity WITH a page becomes a clickable link
- * (navigates via the shared data-sr-entity handler → nav push); otherwise a plain chip. displayName
- * is the single source for the label. Used by both the per-claim RELATED row and the per-entity
- * RELATED list, so every pill everywhere behaves identically with zero duplicated logic.
- */
-function renderPill(slug: string): string {
-  const name = escHTML(displayName(slug));
-  if (getEntity(slug) !== null) {
-    return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML(slug)}" title="Open ${name}">${name}</button>`;
-  }
-  return `<span class="sr-pill" title="Related to this">${name}</span>`;
-}
-
 /** The entities a claim connects to: authored also_about + its dual-home tier-1 links, deduped,
- *  minus the claim's own subject (no self-links). Ordered also_about → essentials → conditions → symptoms. */
+ *  minus the claim's own subject. Ordered also_about → essentials → conditions → symptoms. */
 function claimRelatedSlugs(claim: SearchClaim): string[] {
   const seen = new Set<string>([claim.subject]);
   const out: string[] = [];
@@ -120,27 +105,29 @@ function claimRelatedSlugs(claim: SearchClaim): string[] {
   return out;
 }
 
-/** A claim's RELATED row — the cross-reference pills (was the confusing "ALSO TIER-1"). */
-function renderClaimRelated(claim: SearchClaim): string {
+/** One related pill — a clickable, type-coloured cross-link when the slug resolves to an entity
+ *  with a page; otherwise a plain chip. `data-type` sets the pill's own --k (its entity colour). */
+function renderRelPill(slug: string): string {
+  const name = escHTML(displayName(slug));
+  const e = getEntity(slug);
+  if (e !== null) {
+    return `<button class="relpill" data-type="${escHTML(e.type)}" data-sr-entity="${escHTML(slug)}" title="Open ${name}">${name}</button>`;
+  }
+  return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
+}
+
+/** A claim's RELATED row — the cross-reference pills, each coloured by its entity type. */
+function renderRelated(claim: SearchClaim): string {
   const slugs = claimRelatedSlugs(claim);
   if (slugs.length === 0) {
     return '';
   }
-  const pills = slugs.map(renderPill).join('');
-  return `<div class="sr-claim__related"><span class="sr-related__label">RELATED</span>${pills}</div>`;
-}
-
-function topicTags(claim: SearchClaim): string {
-  if (claim.topics.length === 0) {
-    return '';
-  }
-  const tags = claim.topics.map(t => `<span class="sr-tag">#${escHTML(t)}</span>`).join('');
-  return `<div class="sr-claim__tags">${tags}</div>`;
+  return `<div class="relrow"><span class="rellabel">Related</span>${slugs.map(renderRelPill).join('')}</div>`;
 }
 
 /**
- * The answer, glossified; if the claim carries an in-answer cross-reference, the first
- * occurrence of its phrase becomes a link that jumps to the target claim's card (same page).
+ * The answer, glossified; if the claim carries an in-answer cross-reference, the first occurrence
+ * of its phrase becomes a link that jumps to the target claim's card on the same page.
  */
 function renderAnswer(claim: SearchClaim): string {
   const xref = claim.see_also;
@@ -154,172 +141,204 @@ function renderAnswer(claim: SearchClaim): string {
   return glossify(claim.answer);
 }
 
-/** The expandable innards shared by an entity-page row + (minus the summary) the Ask card. */
-function claimDetail(claim: SearchClaim): string {
-  // Suppress the full answer when it would merely repeat the short answer — a claim whose
-  // summary == its answer_short adds nothing by showing both (Luneth 2026-07-22).
-  const fullAnswer = claim.answer.trim() === claim.answer_short.trim()
-    ? '' : `<div class="sr-claim__answer">${renderAnswer(claim)}</div>`;
-  return `
-      <div class="sr-claim__short">${escHTML(claim.answer_short)}</div>
-      ${fullAnswer}
-      <blockquote class="sr-claim__verbatim">“${glossify(oneLine(claim.verbatim))}”</blockquote>
-      <div class="sr-claim__cite">${escHTML(composeCite(claim))}</div>
-      ${renderClaimRelated(claim)}
-      ${topicTags(claim)}`;
-}
-
-/** One FAQ row: the question is the summary; expanding reveals the full answer + verbatim + cite. */
-function renderClaimRow(claim: SearchClaim): string {
-  return `
-    <details class="sr-claim" data-sr-claim="${escHTML(claim.id)}">
-      <summary class="sr-claim__summary">
-        <span class="sr-claim__badge">?</span>
-        <span class="sr-claim__qblock">
-          <span class="sr-claim__q">${escHTML(claim.question)}</span>
-          <span class="sr-claim__preview">${escHTML(claim.answer_short)}</span>
-        </span>
-        <span class="sr-claim__chev">›</span>
-      </summary>
-      <div class="sr-claim__body">${claimDetail(claim)}</div>
-    </details>`;
-}
-
-function renderFacet(group: FacetGroup): string {
-  const rows = group.claims.map(renderClaimRow).join('');
-  return `
-    <details class="sr-facet" data-facet="${escHTML(group.facet)}" open>
-      <summary class="sr-facet__head">
-        <span class="sr-facet__label">${escHTML(group.label)}</span>
-        <span class="sr-facet__count">${group.claims.length}</span>
-      </summary>
-      <div class="sr-facet__body">${rows}</div>
-    </details>`;
-}
-
-/** The entity-level RELATED list — curated cross-links for the whole entity (same pill rule). */
-function renderRelated(subject: string): string {
-  const e = getEntity(subject);
-  if (e === null || e.related.length === 0) {
+/** The crown-jewel Wallach verbatim (the one serif — Playfair), attributed to the person, no cite. */
+function renderVerbatim(claim: SearchClaim): string {
+  if (claim.verbatim.trim().length === 0) {
     return '';
   }
-  const pills = e.related.map(renderPill).join('');
-  return `
-    <div class="sr-related">
-      <span class="sr-related__label">RELATED</span>
-      <div class="sr-related__chips">${pills}</div>
-    </div>`;
+  return `<blockquote class="vq">${glossify(oneLine(claim.verbatim))}<span class="vq__attr">— Dr. Wallach, in his own words</span></blockquote>`;
 }
 
-/** Browse landing — every registered entity as a card. */
-function renderLanding(noMatch: boolean): string {
-  const ents = entityList();
-  const noteHTML = noMatch
-    ? '<div class="sr-note">No direct match — browse the entities below, or try a different word.</div>'
-    : '';
-  if (ents.length === 0) {
-    return '<div class="sr-empty">— no entities in the index yet —</div>';
+/** The deeper answer body — shown only when it says more than the one-line answer_short. */
+function renderAnswerBody(claim: SearchClaim): string {
+  if (claim.answer.trim() === claim.answer_short.trim()) {
+    return '';
   }
-  const card = (e: EntitySummary): string => `
-    <button class="sr-ent-card" data-sr-entity="${escHTML(e.slug)}">
-      <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
-      <span class="sr-ent-card__idblock">
-        <span class="sr-ent-card__name">${escHTML(e.display_name)}</span>
-        <span class="sr-ent-card__meta">${escHTML(e.type.toUpperCase())} · ${e.claim_count} ENTR${e.claim_count === 1 ? 'Y' : 'IES'}</span>
-      </span>
-      <span class="sr-ent-card__chev">›</span>
-    </button>`;
+  return `<div class="ans__body">${renderAnswer(claim)}</div>`;
+}
+
+/** The innards shared by an expanded answer row + the best-answer card: short → deeper → verbatim. */
+function claimInner(claim: SearchClaim): string {
+  return `<div class="ans__short">${escHTML(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
+}
+
+// ─── QUESTION results (best answer + more answers + keep exploring) ─────────
+
+/** The best-answer card — facet-coloured bar + kind pill + question + answer + verbatim + related. */
+function renderBestAnswer(claim: SearchClaim): string {
   return `
-    ${noteHTML}
-    <div class="sr-landing">
-      <div class="sr-landing__eyebrow">BROWSE · ${ents.length} ENTIT${ents.length === 1 ? 'Y' : 'IES'}</div>
-      <div class="sr-landing__grid">${ents.map(card).join('')}</div>
+    <div class="ans" data-facet="${escHTML(claim.facet)}">
+      <span class="facetpill"><i></i>${escHTML(facetLabel(claim.facet))}</span>
+      <div class="ans__q">${escHTML(claim.question)}</div>
+      ${claimInner(claim)}
+      ${renderRelated(claim)}
     </div>`;
 }
 
-function renderEntity(subject: string): string {
+/** One collapsible answer row — question + 2-line preview collapsed; the facet pill sits at the
+ *  bottom-right and disappears on expand (so the claim text keeps a uniform left edge). */
+function renderArow(claim: SearchClaim, hidden: boolean): string {
+  return `
+    <details class="arow${hidden ? ' arow--hidden' : ''}" data-facet="${escHTML(claim.facet)}" data-sr-claim="${escHTML(claim.id)}">
+      <summary class="arow__sum">
+        <span class="arow__text"><span class="arow__q">${escHTML(claim.question)}</span><span class="arow__prev">${escHTML(claim.answer_short)}</span></span>
+        <span class="arow__chev">›</span>
+        <span class="arow__pill">${escHTML(facetLabel(claim.facet))}</span>
+      </summary>
+      <div class="arow__body">${claimInner(claim)}</div>
+    </details>`;
+}
+
+/** The "keep exploring" topic card (ghost-number), coloured by the entity's type. */
+function renderTcard(subject: string): string {
+  const e = getEntity(subject);
+  if (e === null) {
+    return '';
+  }
+  const n = claimCount(subject);
+  const hints = subjectFacetHints(subject).map(escHTML).join(' · ');
+  return `
+    <button class="tcard" data-type="${escHTML(e.type)}" data-sr-entity="${escHTML(subject)}">
+      <div class="tcard-ghost">${n}</div>
+      <div class="tcard-cat"><i></i>${escHTML(e.type)}</div>
+      <div class="tcard-name">${escHTML(displayName(subject))}</div>
+      <div class="tcard-foot"><b>${n} ${n === 1 ? 'answer' : 'answers'}</b>${hints.length > 0 ? ` · ${hints}` : ''}</div>
+    </button>`;
+}
+
+function renderQuestionResults(claims: SearchClaim[]): string {
+  const best = claims[0] as SearchClaim;
+  const more = claims.slice(1, 5);
+  const moreHTML = more.length > 0
+    ? `<div class="scr-label">More answers</div>${more.map(c => renderArow(c, false)).join('')}`
+    : '';
+  return `
+    <div class="scr-label">Best answer</div>
+    ${renderBestAnswer(best)}
+    ${moreHTML}
+    <div class="scr-label">Keep exploring</div>
+    ${renderTcard(best.subject)}`;
+}
+
+// ─── TOPIC page (exact-match entity → every answer, grouped by facet) ───────
+
+const GROUP_CAP = 4;
+
+/** One facet group — coloured label + count + hairline, its rows, and a "see more" reveal when big. */
+function renderFacetGroup(group: FacetGroup): string {
+  const shown = group.claims.slice(0, GROUP_CAP);
+  const hidden = group.claims.slice(GROUP_CAP);
+  const rows = shown.map(c => renderArow(c, false)).join('') + hidden.map(c => renderArow(c, true)).join('');
+  const more = hidden.length > 0
+    ? `<button class="fgroup__more" data-aw-morebtn>See ${hidden.length} more <span class="fm-arrow">→</span></button>`
+    : '';
+  return `
+    <div class="fgroup" data-facet="${escHTML(group.facet)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML(group.label)}</span><span class="fgroup__ct">${group.claims.length}</span><span class="fgroup__rule"></span></div>
+      ${rows}
+      ${more}
+    </div>`;
+}
+
+function renderTopicPage(subject: string): string {
   const e = getEntity(subject);
   const groups = facetGroups(subject);
-  const n = claimCount(subject);
   if (e === null || groups.length === 0) {
-    return '<div class="sr-empty">— nothing to show for this entity yet —</div>';
+    return '<div class="aw-empty-line">— nothing to show for this topic yet —</div>';
   }
-  const synLine = e.synonyms.length > 0 ? ` · also: ${e.synonyms.map(escHTML).join(', ')}` : '';
-  const facetsHTML = groups.map(renderFacet).join('');
+  const n = claimCount(subject);
+  const syn = e.synonyms.length > 0 ? ` · also: ${e.synonyms.map(escHTML).join(', ')}` : '';
+  // "Learn More →" appears ONLY for entities that HAVE a Knowledge detail page (conditions +
+  // essentials, resolved by slug); clicking it opens that page. An element like Mercury has none,
+  // so it shows no button — data-driven show/hide that self-heals as pages are authored.
+  const pageKind = getConditionPage(subject) !== null
+    ? 'condition'
+    : getEssentialPage(subject) !== null ? 'essential' : null;
+  const learnMore = pageKind !== null
+    ? `<button class="eback" data-aw-learnmore="${escHTML(subject)}" data-aw-kind="${pageKind}">Learn More →</button>`
+    : '';
   return `
-    <div class="sr-entity">
-      <header class="sr-entity__head">
-        <button class="sr-entity__back" data-sr-action="back" title="Back">‹ BACK</button>
-        <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
-        <div class="sr-entity__idblock">
-          <h3 class="sr-entity__name">${escHTML(e.display_name)}</h3>
-          <div class="sr-entity__meta">${escHTML(e.type.toUpperCase())} · ${n} ENTR${n === 1 ? 'Y' : 'IES'}${escHTML(synLine)}</div>
-        </div>
-      </header>
-      <div class="sr-facets">${facetsHTML}</div>
-      ${renderRelated(subject)}
-    </div>`;
+    <div class="ehero" data-type="${escHTML(e.type)}">
+      <span class="ehero__sym">${tileGlyph(subject, e)}</span>
+      <span class="ehero__id">
+        <span class="ehero__name">${escHTML(e.display_name)}</span>
+        <span class="ehero__meta">${escHTML(e.type)} · ${n} ${n === 1 ? 'answer' : 'answers'}${escHTML(syn)}</span>
+      </span>
+      ${learnMore}
+    </div>
+    ${groups.map(renderFacetGroup).join('')}`;
 }
 
-function renderAsk(claim: SearchClaim): string {
+// ─── OPENING (browse by kind) + EMPTY (no match) ───────────────────────────
+
+/** The opening screen — one card per facet FAMILY with its real claim count (colour by data-family). */
+function renderOpening(): string {
+  const card = (f: FamilyCount): string => `
+    <button class="kcard" data-family="${escHTML(f.id)}" data-aw-family="${escHTML(f.id)}">
+      <span class="kcard-main">
+        <span class="kcard-name">${escHTML(ui(`search_fam_${f.id}_name`))}</span>
+        <span class="kcard-facets">${escHTML(ui(`search_fam_${f.id}_sub`))}</span>
+      </span>
+      <span class="kcard-n">${f.count}</span>
+    </button>`;
   return `
-    <div class="sr-ask">
-      <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK · WALLACH</div>
-      <div class="sr-ask__q">${escHTML(claim.question)}</div>
-      <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-entity="${escHTML(claim.subject)}">MORE ON ${escHTML(displayName(claim.subject).toUpperCase())} →</button>
+    <div class="scr-label">${escHTML(ui('search_browse_label'))}</div>
+    <div class="kstack">${familyCounts().map(card).join('')}</div>`;
+}
+
+/** No-match: a calm dead-end with real suggestion chips (the busiest topics), never a bare "no results". */
+function renderEmpty(query: string): string {
+  const sugg = entityList()
+    .slice()
+    .sort((a, b) => b.claim_count - a.claim_count)
+    .slice(0, 5);
+  const chip = (e: EntitySummary): string =>
+    `<button class="echip" data-type="${escHTML(e.type)}" data-sr-entity="${escHTML(e.slug)}">${escHTML(e.display_name)}</button>`;
+  return `
+    <div class="empty">
+      <div class="empty__h">Nothing on that yet</div>
+      <div class="empty__p">No match for “${escHTML(query)}.” Try one of these:</div>
+      <div class="empty__chips">${sugg.map(chip).join('')}</div>
     </div>`;
 }
 
 function renderBody(result: SearchResult): string {
-  if (result.mode === 'ask' && result.claim !== null) {
-    return renderAsk(result.claim);
+  if (result.mode === 'ask' && result.claims.length > 0) {
+    return renderQuestionResults(result.claims);
   }
   if (result.mode === 'entity') {
-    return renderEntity(result.subject);
+    return renderTopicPage(result.subject);
   }
-  return renderLanding(result.noMatch);
+  if (result.noMatch) {
+    return renderEmpty(result.query);
+  }
+  return renderOpening();
 }
 
-function hexSerial(seed: number): string {
-  return ((seed * 0x9E3779B9) >>> 0).toString(16).toUpperCase().padStart(4, '0').slice(0, 4);
-}
-
+/** The centered green popup shell: green-chrome head + neumorphic search bar + the result body.
+ *  The mount host is the scrim; `.scr` (data-aw-pop) is the panel — a click outside it closes. */
 function renderShell(): string {
-  const totals = indexTotals();
   return `
-    <span class="ds-scan-line" aria-hidden="true"></span>
-    <header class="sr-head">
-      <div>
-        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER · <span class="ds-cipher" data-cipher-set="hexa">SR·${hexSerial(totals.claims)}</span></div>
-        <h2 class="sr-title">Search</h2>
-        <div class="sr-sub">// ask Wallach anything — offline, in his own words</div>
+    <div class="scr" data-aw-pop>
+      <div class="scr-head">
+        <div class="scr-id">Ask <em>Wallach</em></div>
+        <div class="aw-search">
+          <div class="aw-search__well">
+            <input class="aw-search__input" type="text" placeholder="${escHTML(ui('search_placeholder'))}" autocomplete="off" spellcheck="false" />
+            <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
+          </div>
+        </div>
       </div>
-      <button class="sr-close" data-sr-action="close" title="Close (Esc)">×</button>
-    </header>
-    <div class="sr-searchbar">
-      <span class="sr-searchbar__icon">⌕</span>
-      <input class="sr-searchbar__input" type="text" placeholder="ASK A QUESTION OR NAME A SUBJECT…" autocomplete="off" spellcheck="false" />
-      <button class="sr-searchbar__clear" data-sr-action="search-clear" type="button" aria-label="Clear" title="Clear">×</button>
-    </div>
-    <div class="sr-body"></div>
-    <footer class="sr-footer">
-      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? 'Y' : 'IES'} · ${totals.claims} ${plural(totals.claims, 'ENTRY', 'ENTRIES')}</span>
-      <span class="sr-footer__spacer"></span>
-      <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">⤢</span>EXPAND</button>
-    </footer>`;
+      <div class="scr-body"></div>
+    </div>`;
 }
 
 // ─── Mount ─────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): DrawerHandle {
   let isOpen = false;
-  let isExpanded = false;
   let query = '';
   let lastKey = '';
-  // Navigation back-stack: each entry is the query we were showing BEFORE a pill/card jump, so
-  // "‹ BACK" pops to the previous card (and to the landing when empty). One source of nav truth.
-  const navStack: string[] = [];
 
   const resultKey = (r: SearchResult): string => `${r.mode}|${r.subject}|${r.claim?.id ?? ''}|${r.noMatch}`;
 
@@ -330,22 +349,20 @@ export function mount(container: HTMLElement): DrawerHandle {
       return;
     }
     lastKey = key;
-    const body = container.querySelector<HTMLElement>('.sr-body');
+    const body = container.querySelector<HTMLElement>('.scr-body');
     if (body !== null) {
       body.innerHTML = renderBody(result);
-      // Every repaint starts at the top: a fresh entity/landing must not inherit the
-      // previous view's scroll offset (replacing innerHTML alone does not reset it when
-      // the new content is at least as tall). Luneth 2026-07-09.
+      // Every repaint starts at the top: a fresh topic/opening must not inherit the previous
+      // view's scroll offset (replacing innerHTML alone does not reset it). Luneth 2026-07-09.
       body.scrollTop = 0;
     }
   };
 
   const syncSearchbar = (): void => {
-    const input = container.querySelector<HTMLInputElement>('.sr-searchbar__input');
+    const input = container.querySelector<HTMLInputElement>('.aw-search__input');
     if (input !== null) {
       input.value = query;
     }
-    container.querySelector('.sr-searchbar')?.classList.toggle('has-query', query.trim().length > 0);
   };
 
   const render = (): void => {
@@ -353,9 +370,8 @@ export function mount(container: HTMLElement): DrawerHandle {
     lastKey = '';
     paintBody(true);
     syncSearchbar();
-    const input = container.querySelector<HTMLInputElement>('.sr-searchbar__input');
+    const input = container.querySelector<HTMLInputElement>('.aw-search__input');
     if (input !== null) {
-      // Focus for immediate typing when opened.
       setTimeout(() => input.focus(), 0);
     }
   };
@@ -373,10 +389,8 @@ export function mount(container: HTMLElement): DrawerHandle {
       return;
     }
     isOpen = false;
-    isExpanded = false;
     query = '';
-    navStack.length = 0;
-    container.classList.remove('sr-open', 'sr-expanded');
+    container.classList.remove('sr-open');
     container.innerHTML = '';
   };
   const toggle = (): void => {
@@ -387,35 +401,17 @@ export function mount(container: HTMLElement): DrawerHandle {
       open();
     }
   };
-  const toggleExpanded = (): void => {
-    isExpanded = !isExpanded;
-    container.classList.toggle('sr-expanded', isExpanded);
-  };
 
-  /** Navigate to an entity page by its slug — push the current view so "‹ BACK" can return here. */
+  /** Navigate to a topic page by slug — the search bar shows its name; exact-match resolves the page. */
   const gotoEntity = (slug: string): void => {
-    navStack.push(query);
     query = displayName(slug);
-    syncSearchbar();
-    paintBody(true);
-  };
-  /** Pop one step back — to the previous card, or the landing when the stack is empty. */
-  const goBack = (): void => {
-    query = navStack.pop() ?? '';
-    syncSearchbar();
-    paintBody(true);
-  };
-  /** Reset to the browse landing (clears the nav chain). */
-  const gotoHome = (): void => {
-    query = '';
-    navStack.length = 0;
     syncSearchbar();
     paintBody(true);
   };
 
   /**
-   * Jump to another claim's card on the current page (an in-answer cross-reference): open it +
-   * any collapsed ancestor <details>, scroll it into view, and flash it so the eye lands on it.
+   * Jump to another claim's card on the current page (an in-answer cross-reference): open it + any
+   * collapsed ancestor <details>, scroll it into view, and flash it so the eye lands on it.
    */
   const jumpToClaim = (id: string): void => {
     const el = container.querySelector<HTMLElement>(`[data-sr-claim="${id}"]`);
@@ -436,19 +432,39 @@ export function mount(container: HTMLElement): DrawerHandle {
 
   container.addEventListener('input', (ev: Event): void => {
     const t = ev.target as HTMLElement | null;
-    if (t === null || !t.classList.contains('sr-searchbar__input')) {
+    if (t === null || !t.classList.contains('aw-search__input')) {
       return;
     }
-    // A manually-typed query is a fresh search — reset the nav chain so BACK goes to the landing.
     query = (t as HTMLInputElement).value;
-    navStack.length = 0;
-    container.querySelector('.sr-searchbar')?.classList.toggle('has-query', query.trim().length > 0);
     paintBody(false);
   });
 
   container.addEventListener('click', (ev: Event): void => {
     const target = ev.target as HTMLElement | null;
     if (target === null) {
+      return;
+    }
+    // A click on the scrim (the mount host, outside the popup panel) closes — a centered modal.
+    if (target.closest('[data-aw-pop]') === null) {
+      close();
+      return;
+    }
+    // "Learn More →" → open the Knowledge detail page for this entity (conditions + essentials only);
+    // main.ts does the single-drawer swap (close search, open Knowledge at the entity).
+    const learnEl = target.closest<HTMLElement>('[data-aw-learnmore]');
+    if (learnEl !== null) {
+      const kind = learnEl.getAttribute('data-aw-kind');
+      if (kind === 'essential' || kind === 'condition') {
+        emit('knowledge:open-entity', { kind, slug: learnEl.getAttribute('data-aw-learnmore') ?? '' });
+      }
+      return;
+    }
+    // "See N more" reveals the rest of a facet group's rows, then retires itself.
+    const moreBtn = target.closest<HTMLElement>('[data-aw-morebtn]');
+    if (moreBtn !== null) {
+      const group = moreBtn.closest('.fgroup');
+      group?.querySelectorAll('.arow--hidden').forEach(el => el.classList.remove('arow--hidden'));
+      moreBtn.remove();
       return;
     }
     const jumpEl = target.closest<HTMLElement>('[data-sr-jump]');
@@ -459,24 +475,6 @@ export function mount(container: HTMLElement): DrawerHandle {
     const entBtn = target.closest<HTMLElement>('[data-sr-entity]');
     if (entBtn !== null) {
       gotoEntity(entBtn.getAttribute('data-sr-entity') ?? '');
-      return;
-    }
-    const actionEl = target.closest<HTMLElement>('[data-sr-action]');
-    if (actionEl !== null) {
-      const action = actionEl.getAttribute('data-sr-action');
-      if (action === 'close') {
-        close();
-      }
-      else if (action === 'expand') {
-        toggleExpanded();
-      }
-      else if (action === 'back') {
-        goBack();
-      }
-      else if (action === 'search-clear') {
-        gotoHome();
-        container.querySelector<HTMLInputElement>('.sr-searchbar__input')?.focus();
-      }
     }
   });
 
@@ -484,7 +482,6 @@ export function mount(container: HTMLElement): DrawerHandle {
     open,
     close,
     toggle,
-    toggleExpanded,
     isOpen: () => isOpen,
   };
 }

@@ -19,6 +19,7 @@
 
 import searchIndexJson from '../../../data/search/search-index.json';
 import {
+  FACET_FAMILIES,
   FACET_ORDER_BY_TYPE,
   INTRO_ORDER_BY_TYPE,
   INTRO_ORDER_DEFAULT,
@@ -202,8 +203,12 @@ export function getSearchClaim(id: string): SearchClaim | null {
 export interface SearchResult {
   mode: 'landing' | 'entity' | 'ask';
   subject: string;
-  /** Present when mode === 'ask' — the single best-matching claim. */
+  /** Present when mode === 'ask' — the single best-matching claim (== claims[0]). */
   claim: SearchClaim | null;
+  /** The ranked answers for an 'ask' query: [0] is the best answer, the rest are "more answers". */
+  claims: SearchClaim[];
+  /** The normalized query, echoed for the no-match empty state. */
+  query: string;
   /** True when a non-empty query matched no entity + no claim (landing shows a gentle note). */
   noMatch: boolean;
 }
@@ -225,46 +230,83 @@ function entityHit(q: string): string | null {
   return null;
 }
 
-/** Field-weighted score of a claim against a normalized query (subject/synonym > question/topic > answer > verbatim). */
-function scoreClaim(c: SearchClaim, q: string): number {
+/**
+ * Common English glue words carrying no retrieval signal — dropped before token scoring so a
+ * natural-language question ("why are fried eggs bad") ranks on its content words. Built from a
+ * split string (not an array literal) so it stays under the inline-array lint without a fixture.
+ */
+const STOPWORDS = new Set<string>(
+  ('the a an of to is are and or in on for with how what why does do did can it its be as by that '
+    + 'this which who was were has have had you your i my me about at from into than then so if not '
+    + 'no am we they he she his her their').split(' '),
+);
+
+/** Split a query into lowercase content tokens (≥2 chars, non-stopword). */
+function tokenize(q: string): string[] {
+  return q.toLowerCase().split(/[^a-z0-9]+/).filter(t => t.length > 1 && !STOPWORDS.has(t));
+}
+
+/**
+ * Per-TOKEN field-weighted score of a claim (question > subject > topics > answer_short > answer /
+ * verbatim), summed over the query's content tokens, plus a small whole-query boost so a single
+ * exact word still reads as precise. Whole-substring `.includes(q)` (the old scorer) never matched
+ * a real multi-word question; tokenizing lets "why are fried eggs bad" rank on fried/eggs/bad.
+ * Still 100% offline string matching, no LLM.
+ */
+function scoreClaim(c: SearchClaim, tokens: string[], q: string): number {
   let score = 0;
-  if (c.subject.includes(q) || q.includes(c.subject)) {
-    score += 5;
-  }
-  if (c.question.toLowerCase().includes(q)) {
-    score += 6;
-  }
-  if (c.topics.some(t => t.includes(q) || q.includes(t))) {
-    score += 4;
-  }
-  if (c.answer_short.toLowerCase().includes(q)) {
+  const subj = c.subject.toLowerCase();
+  if (subj.includes(q) || q.includes(subj)) {
     score += 3;
   }
-  if (c.answer.toLowerCase().includes(q)) {
-    score += 1;
-  }
-  if (c.verbatim.toLowerCase().includes(q)) {
-    score += 1;
+  const ql = c.question.toLowerCase();
+  const al = c.answer_short.toLowerCase();
+  const ab = c.answer.toLowerCase();
+  const vb = c.verbatim.toLowerCase();
+  const tops = c.topics.map(t => t.toLowerCase());
+  for (const t of tokens) {
+    if (ql.includes(t)) {
+      score += 6;
+    }
+    if (subj.includes(t)) {
+      score += 5;
+    }
+    if (tops.some(x => x.includes(t))) {
+      score += 4;
+    }
+    if (al.includes(t)) {
+      score += 3;
+    }
+    if (ab.includes(t)) {
+      score += 1;
+    }
+    if (vb.includes(t)) {
+      score += 1;
+    }
   }
   return score;
 }
 
-/** The single best-matching claim for an Ask query (null if nothing clears the bar). */
-export function ask(query: string): SearchClaim | null {
+/** Distinct content tokens the subject's answers hint at, for the "keep exploring" card foot. */
+export function subjectFacetHints(subject: string, max = 4): string[] {
+  return facetGroups(subject).slice(0, max).map(g => g.facet);
+}
+
+/** The ranked answers for an Ask query — [0] is the best answer, the rest are "more answers".
+ *  Empty when nothing clears the bar. Deterministic (score desc, then id) — no LLM. */
+export function askRanked(query: string, limit = 6): SearchClaim[] {
   const q = normalize(query);
   if (q.length < 2) {
-    return null;
+    return [];
   }
-  let best: SearchClaim | null = null;
-  let bestScore = 0;
-  for (const c of index().claims) {
-    const s = scoreClaim(c, q);
-    if (s > bestScore) {
-      bestScore = s;
-      best = c;
-    }
+  const tokens = tokenize(q);
+  if (tokens.length === 0) {
+    return [];
   }
-  return best;
+  const scored = index().claims.map(c => ({ c, s: scoreClaim(c, tokens, q) }));
+  const hits = scored.filter(x => x.s > 0);
+  hits.sort((a, b) => (b.s - a.s) || (a.c.id < b.c.id ? -1 : a.c.id > b.c.id ? 1 : 0));
+  return hits.slice(0, limit).map(x => x.c);
 }
 
 /**
@@ -275,17 +317,18 @@ export function ask(query: string): SearchClaim | null {
 export function resolveQuery(query: string): SearchResult {
   const q = normalize(query);
   if (q.length === 0) {
-    return { mode: 'landing', subject: '', claim: null, noMatch: false };
+    return { mode: 'landing', subject: '', claim: null, claims: [], query: '', noMatch: false };
   }
   const hit = entityHit(q);
   if (hit !== null) {
-    return { mode: 'entity', subject: hit, claim: null, noMatch: false };
+    return { mode: 'entity', subject: hit, claim: null, claims: [], query: q, noMatch: false };
   }
-  const best = ask(q);
-  if (best !== null) {
-    return { mode: 'ask', subject: best.subject, claim: best, noMatch: false };
+  const ranked = askRanked(q);
+  const best = ranked[0];
+  if (best !== undefined) {
+    return { mode: 'ask', subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
   }
-  return { mode: 'landing', subject: '', claim: null, noMatch: true };
+  return { mode: 'landing', subject: '', claim: null, claims: [], query: q, noMatch: true };
 }
 
 /** The first registered entity (slug-sorted) — a safe fallback subject. */
@@ -306,6 +349,26 @@ export function indexTotals(): { entities: number; claims: number } {
   return { entities: Object.keys(idx.entities).length, claims: idx.claims.length };
 }
 
+/** One facet-family readout for the opening "browse by kind" screen: id (→ CSS data-family +
+ *  the view-copy label id), its facets, and the total claim count across them. */
+export interface FamilyCount {
+  id: string;
+  facets: readonly string[];
+  count: number;
+}
+/** Per-family claim counts for the opening screen — facets partitioned by FACET_FAMILIES. */
+export function familyCounts(): FamilyCount[] {
+  const byFacet = new Map<string, number>();
+  for (const c of index().claims) {
+    byFacet.set(c.facet, (byFacet.get(c.facet) ?? 0) + 1);
+  }
+  return FACET_FAMILIES.map(fam => ({
+    id: fam.id,
+    facets: fam.facets,
+    count: fam.facets.reduce((n, f) => n + (byFacet.get(f) ?? 0), 0),
+  }));
+}
+
 // ─── Bridge (window.* — reached by headless probes + the topbar search bar) ──
 
 const bridge = window as Window & {
@@ -317,6 +380,7 @@ const bridge = window as Window & {
     defaultSubject: typeof defaultSubject;
     entityList: typeof entityList;
     indexTotals: typeof indexTotals;
+    familyCounts: typeof familyCounts;
   };
 };
-bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals };
+bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts };

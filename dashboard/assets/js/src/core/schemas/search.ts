@@ -35,6 +35,24 @@ export const SEARCH_FACETS = [
 export const SearchFacetSchema = z.enum(SEARCH_FACETS);
 export type SearchFacet = z.infer<typeof SearchFacetSchema>;
 
+/**
+ * The five colour FAMILIES grouping the 13 facets — the Ask-Wallach "browse by kind" opening
+ * screen + result colour-coding (design signed off 2026-07-23). STRUCTURE only (grouping + display
+ * order): the family COLOUR lives in CSS (--fam-* / --ds-accent, applied by data-family / data-facet,
+ * never a TS colour literal -- view_category_not_hardcoded), and the family LABEL + sublabel live in
+ * the view-copy prose store (R4; ui ids search_fam_<id>_{name,sub}). The five facet lists PARTITION
+ * SEARCH_FACETS (each facet exactly once) so per-family claim counts sum to the index total; the
+ * facet strings are typed SearchFacet, so a typo fails tsc. `id` doubles as the CSS data-family key +
+ * the copy-id suffix. Lives in core (exempt from views_state_no_inline_data). Order = card order.
+ */
+export const FACET_FAMILIES: readonly { readonly id: string; readonly facets: readonly SearchFacet[] }[] = [
+  { id: 'science', facets: ['mechanism', 'basics', 'sources', 'physiology'] },
+  { id: 'action', facets: ['protocol', 'uses'] },
+  { id: 'stance', facets: ['stance', 'big_question'] },
+  { id: 'signs', facets: ['warning'] },
+  { id: 'story', facets: ['history', 'discovery', 'biography', 'etymology'] },
+];
+
 /*
  * FACET display labels moved to the view-copy content store (Phase H0, R4 single-source):
  * dashboard/assets/data/view-copy.json `facet_labels`, read via state/copy.ts::facetLabel.

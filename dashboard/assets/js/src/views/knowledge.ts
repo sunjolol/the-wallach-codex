@@ -59,6 +59,8 @@ export interface DrawerHandle {
   open: () => void;
   close: () => void;
   toggle: () => void;
+  /** Open the drawer directly at an entity's detail page — the Ask-Wallach "Learn More" entry point. */
+  openEntity: (kind: 'essential' | 'condition', slug: string) => void;
   isOpen: () => boolean;
 }
 
@@ -816,6 +818,10 @@ export function mount(container: HTMLElement): DrawerHandle {
     open,
     close,
     toggle,
+    openEntity: (kind: 'essential' | 'condition', slug: string): void => {
+      open();
+      openDetail(kind, slug);
+    },
     isOpen: () => isOpen,
   };
 }

@@ -4946,6 +4946,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     "biography"
   ];
   var SearchFacetSchema = external_exports.enum(SEARCH_FACETS);
+  var FACET_FAMILIES = [
+    { id: "science", facets: ["mechanism", "basics", "sources", "physiology"] },
+    { id: "action", facets: ["protocol", "uses"] },
+    { id: "stance", facets: ["stance", "big_question"] },
+    { id: "signs", facets: ["warning"] },
+    { id: "story", facets: ["history", "discovery", "biography", "etymology"] }
+  ];
   var FACET_ORDER_BY_TYPE = {
     condition: [
       "stance",
@@ -18262,6 +18269,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       biography: "BIOGRAPHY"
     },
     ui: {
+      search_placeholder: "Ask about a nutrient, food, condition, or symptom\u2026",
+      search_browse_label: "Browse by kind of answer",
+      search_no_match: "No direct match \u2014 browse by kind below, or try a different word.",
+      search_fam_science_name: "The Science",
+      search_fam_science_sub: "How it works \xB7 Basics \xB7 Sources \xB7 Physiology",
+      search_fam_action_name: "What To Do",
+      search_fam_action_sub: "Protocol \xB7 Uses",
+      search_fam_stance_name: "Wallach's Take",
+      search_fam_stance_sub: "Stance \xB7 Big questions",
+      search_fam_signs_name: "Cautions",
+      search_fam_signs_sub: "Warnings",
+      search_fam_story_name: "The Story",
+      search_fam_story_sub: "History \xB7 Discovery \xB7 Biography \xB7 Origins",
       cov_goals_add: "+ ADD",
       cov_goals_eyebrow: "Your goals",
       cov_goals_hint: "Hover a goal to focus it",
@@ -69614,58 +69634,77 @@ deaths, blood clots, sterility`,
     }
     return null;
   }
-  function scoreClaim(c, q) {
+  var STOPWORDS = new Set(
+    "the a an of to is are and or in on for with how what why does do did can it its be as by that this which who was were has have had you your i my me about at from into than then so if not no am we they he she his her their".split(" ")
+  );
+  function tokenize(q) {
+    return q.toLowerCase().split(/[^a-z0-9]+/).filter((t) => t.length > 1 && !STOPWORDS.has(t));
+  }
+  function scoreClaim(c, tokens, q) {
     let score = 0;
-    if (c.subject.includes(q) || q.includes(c.subject)) {
-      score += 5;
-    }
-    if (c.question.toLowerCase().includes(q)) {
-      score += 6;
-    }
-    if (c.topics.some((t) => t.includes(q) || q.includes(t))) {
-      score += 4;
-    }
-    if (c.answer_short.toLowerCase().includes(q)) {
+    const subj = c.subject.toLowerCase();
+    if (subj.includes(q) || q.includes(subj)) {
       score += 3;
     }
-    if (c.answer.toLowerCase().includes(q)) {
-      score += 1;
-    }
-    if (c.verbatim.toLowerCase().includes(q)) {
-      score += 1;
+    const ql = c.question.toLowerCase();
+    const al = c.answer_short.toLowerCase();
+    const ab = c.answer.toLowerCase();
+    const vb = c.verbatim.toLowerCase();
+    const tops = c.topics.map((t) => t.toLowerCase());
+    for (const t of tokens) {
+      if (ql.includes(t)) {
+        score += 6;
+      }
+      if (subj.includes(t)) {
+        score += 5;
+      }
+      if (tops.some((x) => x.includes(t))) {
+        score += 4;
+      }
+      if (al.includes(t)) {
+        score += 3;
+      }
+      if (ab.includes(t)) {
+        score += 1;
+      }
+      if (vb.includes(t)) {
+        score += 1;
+      }
     }
     return score;
   }
-  function ask(query) {
+  function subjectFacetHints(subject, max = 4) {
+    return facetGroups(subject).slice(0, max).map((g) => g.facet);
+  }
+  function askRanked(query, limit = 6) {
     const q = normalize2(query);
     if (q.length < 2) {
-      return null;
+      return [];
     }
-    let best = null;
-    let bestScore = 0;
-    for (const c of index2().claims) {
-      const s = scoreClaim(c, q);
-      if (s > bestScore) {
-        bestScore = s;
-        best = c;
-      }
+    const tokens = tokenize(q);
+    if (tokens.length === 0) {
+      return [];
     }
-    return best;
+    const scored = index2().claims.map((c) => ({ c, s: scoreClaim(c, tokens, q) }));
+    const hits = scored.filter((x) => x.s > 0);
+    hits.sort((a, b) => b.s - a.s || (a.c.id < b.c.id ? -1 : a.c.id > b.c.id ? 1 : 0));
+    return hits.slice(0, limit).map((x) => x.c);
   }
   function resolveQuery(query) {
     const q = normalize2(query);
     if (q.length === 0) {
-      return { mode: "landing", subject: "", claim: null, noMatch: false };
+      return { mode: "landing", subject: "", claim: null, claims: [], query: "", noMatch: false };
     }
     const hit = entityHit(q);
     if (hit !== null) {
-      return { mode: "entity", subject: hit, claim: null, noMatch: false };
+      return { mode: "entity", subject: hit, claim: null, claims: [], query: q, noMatch: false };
     }
-    const best = ask(q);
-    if (best !== null) {
-      return { mode: "ask", subject: best.subject, claim: best, noMatch: false };
+    const ranked = askRanked(q);
+    const best = ranked[0];
+    if (best !== void 0) {
+      return { mode: "ask", subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
     }
-    return { mode: "landing", subject: "", claim: null, noMatch: true };
+    return { mode: "landing", subject: "", claim: null, claims: [], query: q, noMatch: true };
   }
   function defaultSubject() {
     const keys = Object.keys(index2().entities).sort();
@@ -69679,8 +69718,19 @@ deaths, blood clots, sterility`,
     const idx = index2();
     return { entities: Object.keys(idx.entities).length, claims: idx.claims.length };
   }
+  function familyCounts() {
+    const byFacet = /* @__PURE__ */ new Map();
+    for (const c of index2().claims) {
+      byFacet.set(c.facet, (byFacet.get(c.facet) ?? 0) + 1);
+    }
+    return FACET_FAMILIES.map((fam) => ({
+      id: fam.id,
+      facets: fam.facets,
+      count: fam.facets.reduce((n, f) => n + (byFacet.get(f) ?? 0), 0)
+    }));
+  }
   var bridge = window;
-  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals };
+  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts };
 
   // assets/js/src/views/glossify.ts
   function escHTML3(s) {
@@ -100650,6 +100700,10 @@ deaths, blood clots, sterility`,
       open,
       close,
       toggle,
+      openEntity: (kind, slug) => {
+        open();
+        openDetail(kind, slug);
+      },
       isOpen: () => isOpen
     };
   }
@@ -103078,7 +103132,7 @@ Deliverables (gitignored temporary/ mockups, which ARE the build spec): ask-wall
 
 Process notes worth keeping: (1) first attempt MISSED -- I reached for retired v3 primitives (the dark ds-pull-stat panel) + a pill/chip style + surfaced "the books"; Luneth rejected it as alien to anything we've done. Corrected by studying the REAL Conditions/Products card vocabulary (calibrated against a rendered screenshot, not a digest) and matching the brainstorm-page format. (2) Caught + replaced 2 FABRICATED verbatim quotes in the results mockup with the real corpus text -- invented words in Wallach's mouth are a \xA700.A breach even in a demo. (3) A standalone mockup that links workspace-coverage.css inherits html,body{overflow:hidden} (the app-shell lock) so the page would not scroll; fullPage screenshots hid it (new memory standalone-page-scroll-lock).
 
-Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the full build spec at chronicle/next-chunk.md. Next session (BUILD): views/search.ts + drawer-search.css + state/search.ts (token ranking, keep entity-exact-first) + a new render_probe_search.` }];
+Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the full build spec at chronicle/next-chunk.md. Next session (BUILD): views/search.ts + drawer-search.css + state/search.ts (token ranking, keep entity-exact-first) + a new render_probe_search.` }, { id: "lg_mrxu5ff0_00adly", ts: "2026-07-23T13:19:18.732065-05:00", surface: "ask-wallach", kind: "build", summary: "Ask-Wallach search built LIVE \u2014 signed-off centered green popup replaces the old left drawer: browse-by-kind opening, 3-type results, token ranking, Learn More cross-nav to Knowledge pages. Board 77/77.", detail: 'Searching Wallach now looks like the demo Luneth signed off: a centered green command-palette popup (the old `.sr-*` left slide-in drawer is gone), color-coded answer cards, real questions that rank correctly, and a "Learn More \u2192" that jumps into the Knowledge drawer at a topic\'s full page. Built live across the opening screen, the 3-type results view, and the cross-navigation.\n\nChunk 1 (opening): views/search.ts renderShell = centered green popup + scrim-close (mount host is the scrim, `.scr` is the panel); neumorphic green search bar; renderOpening = 5 facet-FAMILY "browse by kind" cards with REAL counts (Science137/WhatToDo53/Wallach\'s44/Cautions36/Story51). New: core/schemas/search.ts FACET_FAMILIES (the 5-family partition of the 13 facets, STRUCTURE only \u2014 colour stays in CSS, view_category_not_hardcoded); state/search.ts familyCounts; view-copy.json ui search_fam_*_name/_sub + placeholder + browse label. Scrim later hardened to darker+blur, LAG-FREE (no transitioned blur; panel sized to fit so no scroll re-composite), z-index 200 full-cover.\n\nChunk 2 (results): rewrote the whole result layer to match ask-wallach-results-demo.html \u2014 best-answer card (Playfair verbatim, "\u2014 Dr. Wallach", NO book cite) + colour-coded "more answers" arows + keep-exploring tcard; topic page (hero + facet groups, pills bottom-right that hide on expand, See-N-more); empty state (real type-coloured chips). Colour is DATA-DRIVEN: data-facet->family + data-type->entity, mapped in drawer-search.css; --fam-*/--aw-green/--t-* redeclared on #drawer-search-mount. state/search.ts: token askRanked+scoreClaim+tokenize+STOPWORDS (whole-substring matcher couldn\'t match a real question); SearchResult carries claims[]+query; ask() removed (dead code -> fixed a transient no_new_dead_code red).\n\nLearn More cross-nav (conditions+essentials): typed event core/events.ts knowledge:open-entity -> main.ts wireSearchToKnowledge does the single-drawer swap (closeAllDrawers -> knowledge.openEntity -> syncDrawerRail); knowledge.ts mount exposes openEntity=open()+openDetail(). Predicate via getConditionPage/getEssentialPage; shows only where a page exists, hides otherwise. VERIFIED end-to-end (diabetes -> closes search, opens Knowledge condition page).\n\nVerified: node build OK, tsc clean, new code eslint-clean (pre-existing main.ts lint left untouched, eslint is not board-gated), invariants 77/77, headless screenshots for every result state + the cross-nav.\n\nNEXT (Luneth\'s underlying-fix mandate, recorded so the next session does not re-derive it): the search must become a CATCH-ALL over the ENTIRE knowledge base (502 conditions + 91 essentials + Explore topics + products + ~1346 corpus claims), not the 73 enriched entities \u2014 mostly a PRESENTATION problem (style non-enriched entries to match enriched). Three rule-level fixes: exact-match resolves against the full universe + routes to the full page (today "cancer" falls through to a junk gold-cancer ask); Learn More basically ALWAYS appears (broaden the predicate \u2014 Mercury is an Explore topic with a page); no arbitrary 4-cap truncation. See memory search-is-a-catch-all-over-everything + learn-more-links-to-knowledge-page + chronicle/next-chunk.md. Deferrals: render_probe_search still a WISH (unbuilt); fried-eggs verbatim has an unrelated leading fragment (corpus/data fix, user-gated).' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -104361,13 +104415,6 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     }
     return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML15(e.display_name.charAt(0));
   }
-  function renderPill(slug) {
-    const name = escHTML15(displayName2(slug));
-    if (getEntity(slug) !== null) {
-      return `<button class="sr-pill sr-pill--link" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
-    }
-    return `<span class="sr-pill" title="Related to this">${name}</span>`;
-  }
   function claimRelatedSlugs(claim) {
     const seen = /* @__PURE__ */ new Set([claim.subject]);
     const out = [];
@@ -104385,20 +104432,20 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     add(claim.tier1_link?.symptoms);
     return out;
   }
-  function renderClaimRelated(claim) {
+  function renderRelPill(slug) {
+    const name = escHTML15(displayName2(slug));
+    const e = getEntity(slug);
+    if (e !== null) {
+      return `<button class="relpill" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
+    }
+    return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
+  }
+  function renderRelated(claim) {
     const slugs = claimRelatedSlugs(claim);
     if (slugs.length === 0) {
       return "";
     }
-    const pills = slugs.map(renderPill).join("");
-    return `<div class="sr-claim__related"><span class="sr-related__label">RELATED</span>${pills}</div>`;
-  }
-  function topicTags(claim) {
-    if (claim.topics.length === 0) {
-      return "";
-    }
-    const tags = claim.topics.map((t) => `<span class="sr-tag">#${escHTML15(t)}</span>`).join("");
-    return `<div class="sr-claim__tags">${tags}</div>`;
+    return `<div class="relrow"><span class="rellabel">Related</span>${slugs.map(renderRelPill).join("")}</div>`;
   }
   function renderAnswer(claim) {
     const xref = claim.see_also;
@@ -104411,149 +104458,155 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     }
     return glossify(claim.answer);
   }
-  function claimDetail(claim) {
-    const fullAnswer = claim.answer.trim() === claim.answer_short.trim() ? "" : `<div class="sr-claim__answer">${renderAnswer(claim)}</div>`;
-    return `
-      <div class="sr-claim__short">${escHTML15(claim.answer_short)}</div>
-      ${fullAnswer}
-      <blockquote class="sr-claim__verbatim">\u201C${glossify(oneLine(claim.verbatim))}\u201D</blockquote>
-      <div class="sr-claim__cite">${escHTML15(composeCite(claim))}</div>
-      ${renderClaimRelated(claim)}
-      ${topicTags(claim)}`;
-  }
-  function renderClaimRow(claim) {
-    return `
-    <details class="sr-claim" data-sr-claim="${escHTML15(claim.id)}">
-      <summary class="sr-claim__summary">
-        <span class="sr-claim__badge">?</span>
-        <span class="sr-claim__qblock">
-          <span class="sr-claim__q">${escHTML15(claim.question)}</span>
-          <span class="sr-claim__preview">${escHTML15(claim.answer_short)}</span>
-        </span>
-        <span class="sr-claim__chev">\u203A</span>
-      </summary>
-      <div class="sr-claim__body">${claimDetail(claim)}</div>
-    </details>`;
-  }
-  function renderFacet(group) {
-    const rows = group.claims.map(renderClaimRow).join("");
-    return `
-    <details class="sr-facet" data-facet="${escHTML15(group.facet)}" open>
-      <summary class="sr-facet__head">
-        <span class="sr-facet__label">${escHTML15(group.label)}</span>
-        <span class="sr-facet__count">${group.claims.length}</span>
-      </summary>
-      <div class="sr-facet__body">${rows}</div>
-    </details>`;
-  }
-  function renderRelated(subject) {
-    const e = getEntity(subject);
-    if (e === null || e.related.length === 0) {
+  function renderVerbatim(claim) {
+    if (claim.verbatim.trim().length === 0) {
       return "";
     }
-    const pills = e.related.map(renderPill).join("");
-    return `
-    <div class="sr-related">
-      <span class="sr-related__label">RELATED</span>
-      <div class="sr-related__chips">${pills}</div>
-    </div>`;
+    return `<blockquote class="vq">${glossify(oneLine(claim.verbatim))}<span class="vq__attr">\u2014 Dr. Wallach, in his own words</span></blockquote>`;
   }
-  function renderLanding(noMatch) {
-    const ents = entityList();
-    const noteHTML = noMatch ? '<div class="sr-note">No direct match \u2014 browse the entities below, or try a different word.</div>' : "";
-    if (ents.length === 0) {
-      return '<div class="sr-empty">\u2014 no entities in the index yet \u2014</div>';
+  function renderAnswerBody(claim) {
+    if (claim.answer.trim() === claim.answer_short.trim()) {
+      return "";
     }
-    const card = (e) => `
-    <button class="sr-ent-card" data-sr-entity="${escHTML15(e.slug)}">
-      <span class="sr-ent-card__sym">${tileGlyph(e.slug, e)}</span>
-      <span class="sr-ent-card__idblock">
-        <span class="sr-ent-card__name">${escHTML15(e.display_name)}</span>
-        <span class="sr-ent-card__meta">${escHTML15(e.type.toUpperCase())} \xB7 ${e.claim_count} ENTR${e.claim_count === 1 ? "Y" : "IES"}</span>
-      </span>
-      <span class="sr-ent-card__chev">\u203A</span>
-    </button>`;
+    return `<div class="ans__body">${renderAnswer(claim)}</div>`;
+  }
+  function claimInner(claim) {
+    return `<div class="ans__short">${escHTML15(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
+  }
+  function renderBestAnswer(claim) {
     return `
-    ${noteHTML}
-    <div class="sr-landing">
-      <div class="sr-landing__eyebrow">BROWSE \xB7 ${ents.length} ENTIT${ents.length === 1 ? "Y" : "IES"}</div>
-      <div class="sr-landing__grid">${ents.map(card).join("")}</div>
+    <div class="ans" data-facet="${escHTML15(claim.facet)}">
+      <span class="facetpill"><i></i>${escHTML15(facetLabel(claim.facet))}</span>
+      <div class="ans__q">${escHTML15(claim.question)}</div>
+      ${claimInner(claim)}
+      ${renderRelated(claim)}
     </div>`;
   }
-  function renderEntity(subject) {
+  function renderArow(claim, hidden) {
+    return `
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML15(claim.facet)}" data-sr-claim="${escHTML15(claim.id)}">
+      <summary class="arow__sum">
+        <span class="arow__text"><span class="arow__q">${escHTML15(claim.question)}</span><span class="arow__prev">${escHTML15(claim.answer_short)}</span></span>
+        <span class="arow__chev">\u203A</span>
+        <span class="arow__pill">${escHTML15(facetLabel(claim.facet))}</span>
+      </summary>
+      <div class="arow__body">${claimInner(claim)}</div>
+    </details>`;
+  }
+  function renderTcard(subject) {
+    const e = getEntity(subject);
+    if (e === null) {
+      return "";
+    }
+    const n = claimCount2(subject);
+    const hints = subjectFacetHints(subject).map(escHTML15).join(" \xB7 ");
+    return `
+    <button class="tcard" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(subject)}">
+      <div class="tcard-ghost">${n}</div>
+      <div class="tcard-cat"><i></i>${escHTML15(e.type)}</div>
+      <div class="tcard-name">${escHTML15(displayName2(subject))}</div>
+      <div class="tcard-foot"><b>${n} ${n === 1 ? "answer" : "answers"}</b>${hints.length > 0 ? ` \xB7 ${hints}` : ""}</div>
+    </button>`;
+  }
+  function renderQuestionResults(claims) {
+    const best = claims[0];
+    const more = claims.slice(1, 5);
+    const moreHTML = more.length > 0 ? `<div class="scr-label">More answers</div>${more.map((c) => renderArow(c, false)).join("")}` : "";
+    return `
+    <div class="scr-label">Best answer</div>
+    ${renderBestAnswer(best)}
+    ${moreHTML}
+    <div class="scr-label">Keep exploring</div>
+    ${renderTcard(best.subject)}`;
+  }
+  var GROUP_CAP = 4;
+  function renderFacetGroup(group) {
+    const shown = group.claims.slice(0, GROUP_CAP);
+    const hidden = group.claims.slice(GROUP_CAP);
+    const rows = shown.map((c) => renderArow(c, false)).join("") + hidden.map((c) => renderArow(c, true)).join("");
+    const more = hidden.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${hidden.length} more <span class="fm-arrow">\u2192</span></button>` : "";
+    return `
+    <div class="fgroup" data-facet="${escHTML15(group.facet)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML15(group.label)}</span><span class="fgroup__ct">${group.claims.length}</span><span class="fgroup__rule"></span></div>
+      ${rows}
+      ${more}
+    </div>`;
+  }
+  function renderTopicPage2(subject) {
     const e = getEntity(subject);
     const groups = facetGroups(subject);
-    const n = claimCount2(subject);
     if (e === null || groups.length === 0) {
-      return '<div class="sr-empty">\u2014 nothing to show for this entity yet \u2014</div>';
+      return '<div class="aw-empty-line">\u2014 nothing to show for this topic yet \u2014</div>';
     }
-    const synLine = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML15).join(", ")}` : "";
-    const facetsHTML = groups.map(renderFacet).join("");
+    const n = claimCount2(subject);
+    const syn = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML15).join(", ")}` : "";
+    const pageKind = getConditionPage(subject) !== null ? "condition" : getEssentialPage(subject) !== null ? "essential" : null;
+    const learnMore = pageKind !== null ? `<button class="eback" data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${pageKind}">Learn More \u2192</button>` : "";
     return `
-    <div class="sr-entity">
-      <header class="sr-entity__head">
-        <button class="sr-entity__back" data-sr-action="back" title="Back">\u2039 BACK</button>
-        <div class="sr-entity__sym">${tileGlyph(subject, e)}</div>
-        <div class="sr-entity__idblock">
-          <h3 class="sr-entity__name">${escHTML15(e.display_name)}</h3>
-          <div class="sr-entity__meta">${escHTML15(e.type.toUpperCase())} \xB7 ${n} ENTR${n === 1 ? "Y" : "IES"}${escHTML15(synLine)}</div>
-        </div>
-      </header>
-      <div class="sr-facets">${facetsHTML}</div>
-      ${renderRelated(subject)}
-    </div>`;
+    <div class="ehero" data-type="${escHTML15(e.type)}">
+      <span class="ehero__sym">${tileGlyph(subject, e)}</span>
+      <span class="ehero__id">
+        <span class="ehero__name">${escHTML15(e.display_name)}</span>
+        <span class="ehero__meta">${escHTML15(e.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}${escHTML15(syn)}</span>
+      </span>
+      ${learnMore}
+    </div>
+    ${groups.map(renderFacetGroup).join("")}`;
   }
-  function renderAsk(claim) {
+  function renderOpening() {
+    const card = (f) => `
+    <button class="kcard" data-family="${escHTML15(f.id)}" data-aw-family="${escHTML15(f.id)}">
+      <span class="kcard-main">
+        <span class="kcard-name">${escHTML15(ui(`search_fam_${f.id}_name`))}</span>
+        <span class="kcard-facets">${escHTML15(ui(`search_fam_${f.id}_sub`))}</span>
+      </span>
+      <span class="kcard-n">${f.count}</span>
+    </button>`;
     return `
-    <div class="sr-ask">
-      <div class="sr-ask__badge"><span class="sr-ask__q-mark">?</span> ASK \xB7 WALLACH</div>
-      <div class="sr-ask__q">${escHTML15(claim.question)}</div>
-      <div class="sr-ask__detail">${claimDetail(claim)}</div>
-      <button class="sr-ask__more" data-sr-entity="${escHTML15(claim.subject)}">MORE ON ${escHTML15(displayName2(claim.subject).toUpperCase())} \u2192</button>
+    <div class="scr-label">${escHTML15(ui("search_browse_label"))}</div>
+    <div class="kstack">${familyCounts().map(card).join("")}</div>`;
+  }
+  function renderEmpty(query) {
+    const sugg = entityList().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
+    const chip2 = (e) => `<button class="echip" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(e.slug)}">${escHTML15(e.display_name)}</button>`;
+    return `
+    <div class="empty">
+      <div class="empty__h">Nothing on that yet</div>
+      <div class="empty__p">No match for \u201C${escHTML15(query)}.\u201D Try one of these:</div>
+      <div class="empty__chips">${sugg.map(chip2).join("")}</div>
     </div>`;
   }
   function renderBody(result) {
-    if (result.mode === "ask" && result.claim !== null) {
-      return renderAsk(result.claim);
+    if (result.mode === "ask" && result.claims.length > 0) {
+      return renderQuestionResults(result.claims);
     }
     if (result.mode === "entity") {
-      return renderEntity(result.subject);
+      return renderTopicPage2(result.subject);
     }
-    return renderLanding(result.noMatch);
-  }
-  function hexSerial2(seed) {
-    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
+    if (result.noMatch) {
+      return renderEmpty(result.query);
+    }
+    return renderOpening();
   }
   function renderShell4() {
-    const totals = indexTotals();
     return `
-    <span class="ds-scan-line" aria-hidden="true"></span>
-    <header class="sr-head">
-      <div>
-        <div class="sr-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">SR\xB7${hexSerial2(totals.claims)}</span></div>
-        <h2 class="sr-title">Search</h2>
-        <div class="sr-sub">// ask Wallach anything \u2014 offline, in his own words</div>
+    <div class="scr" data-aw-pop>
+      <div class="scr-head">
+        <div class="scr-id">Ask <em>Wallach</em></div>
+        <div class="aw-search">
+          <div class="aw-search__well">
+            <input class="aw-search__input" type="text" placeholder="${escHTML15(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
+            <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
+          </div>
+        </div>
       </div>
-      <button class="sr-close" data-sr-action="close" title="Close (Esc)">\xD7</button>
-    </header>
-    <div class="sr-searchbar">
-      <span class="sr-searchbar__icon">\u2315</span>
-      <input class="sr-searchbar__input" type="text" placeholder="ASK A QUESTION OR NAME A SUBJECT\u2026" autocomplete="off" spellcheck="false" />
-      <button class="sr-searchbar__clear" data-sr-action="search-clear" type="button" aria-label="Clear" title="Clear">\xD7</button>
-    </div>
-    <div class="sr-body"></div>
-    <footer class="sr-footer">
-      <span class="sr-footer__hint">${totals.entities} ENTIT${totals.entities === 1 ? "Y" : "IES"} \xB7 ${totals.claims} ${plural(totals.claims, "ENTRY", "ENTRIES")}</span>
-      <span class="sr-footer__spacer"></span>
-      <button class="sr-action sr-action--expand" data-sr-action="expand"><span class="sr-action__glyph">\u2922</span>EXPAND</button>
-    </footer>`;
+      <div class="scr-body"></div>
+    </div>`;
   }
   function mount7(container) {
     let isOpen = false;
-    let isExpanded = false;
     let query = "";
     let lastKey = "";
-    const navStack = [];
     const resultKey = (r) => `${r.mode}|${r.subject}|${r.claim?.id ?? ""}|${r.noMatch}`;
     const paintBody = (force) => {
       const result = resolveQuery(query);
@@ -104562,25 +104615,24 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
         return;
       }
       lastKey = key;
-      const body = container.querySelector(".sr-body");
+      const body = container.querySelector(".scr-body");
       if (body !== null) {
         body.innerHTML = renderBody(result);
         body.scrollTop = 0;
       }
     };
     const syncSearchbar = () => {
-      const input = container.querySelector(".sr-searchbar__input");
+      const input = container.querySelector(".aw-search__input");
       if (input !== null) {
         input.value = query;
       }
-      container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
     };
     const render = () => {
       container.innerHTML = renderShell4();
       lastKey = "";
       paintBody(true);
       syncSearchbar();
-      const input = container.querySelector(".sr-searchbar__input");
+      const input = container.querySelector(".aw-search__input");
       if (input !== null) {
         setTimeout(() => input.focus(), 0);
       }
@@ -104598,10 +104650,8 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
         return;
       }
       isOpen = false;
-      isExpanded = false;
       query = "";
-      navStack.length = 0;
-      container.classList.remove("sr-open", "sr-expanded");
+      container.classList.remove("sr-open");
       container.innerHTML = "";
     };
     const toggle = () => {
@@ -104611,24 +104661,8 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
         open();
       }
     };
-    const toggleExpanded = () => {
-      isExpanded = !isExpanded;
-      container.classList.toggle("sr-expanded", isExpanded);
-    };
     const gotoEntity = (slug) => {
-      navStack.push(query);
       query = displayName2(slug);
-      syncSearchbar();
-      paintBody(true);
-    };
-    const goBack = () => {
-      query = navStack.pop() ?? "";
-      syncSearchbar();
-      paintBody(true);
-    };
-    const gotoHome = () => {
-      query = "";
-      navStack.length = 0;
       syncSearchbar();
       paintBody(true);
     };
@@ -104648,17 +104682,34 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     };
     container.addEventListener("input", (ev) => {
       const t = ev.target;
-      if (t === null || !t.classList.contains("sr-searchbar__input")) {
+      if (t === null || !t.classList.contains("aw-search__input")) {
         return;
       }
       query = t.value;
-      navStack.length = 0;
-      container.querySelector(".sr-searchbar")?.classList.toggle("has-query", query.trim().length > 0);
       paintBody(false);
     });
     container.addEventListener("click", (ev) => {
       const target = ev.target;
       if (target === null) {
+        return;
+      }
+      if (target.closest("[data-aw-pop]") === null) {
+        close();
+        return;
+      }
+      const learnEl = target.closest("[data-aw-learnmore]");
+      if (learnEl !== null) {
+        const kind = learnEl.getAttribute("data-aw-kind");
+        if (kind === "essential" || kind === "condition") {
+          emit("knowledge:open-entity", { kind, slug: learnEl.getAttribute("data-aw-learnmore") ?? "" });
+        }
+        return;
+      }
+      const moreBtn = target.closest("[data-aw-morebtn]");
+      if (moreBtn !== null) {
+        const group = moreBtn.closest(".fgroup");
+        group?.querySelectorAll(".arow--hidden").forEach((el) => el.classList.remove("arow--hidden"));
+        moreBtn.remove();
         return;
       }
       const jumpEl = target.closest("[data-sr-jump]");
@@ -104669,28 +104720,12 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
       const entBtn = target.closest("[data-sr-entity]");
       if (entBtn !== null) {
         gotoEntity(entBtn.getAttribute("data-sr-entity") ?? "");
-        return;
-      }
-      const actionEl = target.closest("[data-sr-action]");
-      if (actionEl !== null) {
-        const action = actionEl.getAttribute("data-sr-action");
-        if (action === "close") {
-          close();
-        } else if (action === "expand") {
-          toggleExpanded();
-        } else if (action === "back") {
-          goBack();
-        } else if (action === "search-clear") {
-          gotoHome();
-          container.querySelector(".sr-searchbar__input")?.focus();
-        }
       }
     });
     return {
       open,
       close,
       toggle,
-      toggleExpanded,
       isOpen: () => isOpen
     };
   }
@@ -105067,6 +105102,13 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
       logEvent({ kind: "milestone", title: "Updated a goal", occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
     });
   }
+  function wireSearchToKnowledge() {
+    on("knowledge:open-entity", ({ kind, slug }) => {
+      closeAllDrawers();
+      drawerHandles.get("knowledge")?.openEntity?.(kind, slug);
+      syncDrawerRail();
+    });
+  }
   var profileHandle = null;
   var profileOverlay = null;
   function hideProfilePanel() {
@@ -105142,6 +105184,7 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     wireTopbarSearch();
     mountDrawers();
     wireDrawerKeys();
+    wireSearchToKnowledge();
     wireJourneyAutoDerive();
     initGlossTooltip();
     setTimeout(() => navigateTo("coverage"), 0);
