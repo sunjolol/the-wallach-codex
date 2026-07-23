@@ -41,7 +41,6 @@ export const EssentialPageSchema = z.object({
   claim_count: z.number(),
   books: z.array(z.string()),
   synonyms: z.array(z.string()),
-  one_liner: z.string().nullable(),
   record: z.array(EntityKindGroupSchema),
   search: z.array(EntityFacetGroupSchema),
   /** DIRECTED maps(E,C) pills — conditions this essential is Wallach-tied to (H1). */
@@ -66,7 +65,6 @@ export const ConditionPageSchema = z.object({
   claim_count: z.number(),
   books: z.array(z.string()),
   synonyms: z.array(z.string()),
-  one_liner: z.string().nullable(),
   /** Curated "what to do": protocol-kind then non-base-line-table dose claims (prominence). */
   protocol_claim_ids: z.array(z.string()),
   /** DIRECTED maps(E,C) pills — nutrients to restore for this condition (H1). */

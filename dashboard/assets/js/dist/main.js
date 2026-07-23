@@ -5082,7 +5082,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     claim_count: external_exports.number(),
     books: external_exports.array(external_exports.string()),
     synonyms: external_exports.array(external_exports.string()),
-    one_liner: external_exports.string().nullable(),
     record: external_exports.array(EntityKindGroupSchema),
     search: external_exports.array(EntityFacetGroupSchema),
     /** DIRECTED maps(E,C) pills — conditions this essential is Wallach-tied to (H1). */
@@ -5105,7 +5104,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     claim_count: external_exports.number(),
     books: external_exports.array(external_exports.string()),
     synonyms: external_exports.array(external_exports.string()),
-    one_liner: external_exports.string().nullable(),
     /** Curated "what to do": protocol-kind then non-base-line-table dose claims (prominence). */
     protocol_claim_ids: external_exports.array(external_exports.string()),
     /** DIRECTED maps(E,C) pills — nutrients to restore for this condition (H1). */
@@ -27191,7 +27189,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [
           "h2"
         ],
-        one_liner: "The simplest atom -- one proton, one electron -- and the most abundant element in the universe (~93% of all atoms). As a gas it is diatomic (H2), colorless and highly flammable, burning with oxygen to make water; its name is Greek for 'water-maker.'",
         record: [
           {
             kind: "toxicity_sign",
@@ -27289,7 +27286,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "climate change",
           "climate"
         ],
-        one_liner: "Carbon is the element most essential for life on Earth - Wallach calls it the center of the 'organic' world. Because carbon atoms link into long chains that form the backbone (spine) of almost every biological molecule, virtually all of the body's building blocks are carbon-based: carbohydrates, fats, amino acids, vitamins and enzymes. DNA itself is one such long carbon-chain molecule.",
         record: [
           {
             kind: "mechanism",
@@ -27329,7 +27325,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach explains nitrogen is a structural atom in protein, nucleic acids (RNA and DNA), and a wide variety of organic molecules; dietary nitrogen, supplied as protein, furnishes the amino acids for building tissue protein and other metabolic functions.",
         record: [
           {
             kind: "deficiency_sign",
@@ -27377,7 +27372,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach explains oxygen is a structural atom of water and of all organic compounds of biological interest, and that gaseous oxygen is required for respiration by all organisms except anaerobes; a person can survive 30 days without food and 3 to 7 days without water, but only about four minutes without oxygen, making it the most critical of all elemental factors for sustaining human life.",
         record: [
           {
             kind: "protocol",
@@ -27447,7 +27441,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach rejects the medical advice to eat little or no salt \u2014 sodium is a craved necessity, evidenced by the salt block every rancher provides livestock and the snack-food industry that profits from the craving.",
         record: [
           {
             kind: "dose",
@@ -27538,7 +27531,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Magnesium as the 'ultimate source of all biological energy.' Magnesium is the metal atom found in the chlorophyll of every green plant, driving photosynthesis -- the process that stores the sun's energy as the chemical 'solar currency' feeding all plants, animals, and humans. Wallach calls magnesium, the source of the deep green of plants, the ultimate source of all biological energy.",
         record: [
           {
             kind: "dose",
@@ -27768,7 +27760,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach describes phosphorus as an extremely important essential mineral that nutritionists largely ignore because it is so widely available in food. It is a major structural mineral of bones and teeth and has more functions in the body than any other mineral \u2014 serving as a vital constituent of nucleic acids, activating enzymes, driving several steps of the ATP (adenosine triphosphate) energy cycle, and supporting red blood cell metabolism; B-complex vitamins act as coenzymes only when combined with phosphorus.",
         record: [
           {
             kind: "dose",
@@ -27844,7 +27835,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach explains that sulfur is an important structural atom in most proteins, present as the sulfur amino acids cystine, cysteine, and methionine and in small organic molecules; glutathione, a tripeptide containing cysteine, is essential to cellular reactions involving these sulfur amino acids in protein.",
         record: [
           {
             kind: "dose",
@@ -27918,7 +27908,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Chlorine (as chloride) is essential to every living species. Wallach says it powers electrochemical and catalytic functions, activates numerous enzymes, and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) \u2014 which is required to activate protein digestion by the enzyme pepsin, to absorb vitamin B12 (by activating intrinsic factor), and to absorb minerals. Ordinary salt (sodium chloride, NaCl) is the universal source of chloride ions for all living things.",
         record: [
           {
             kind: "dose",
@@ -27968,7 +27957,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "potash",
           "kalium"
         ],
-        one_liner: "A silver-white alkali metal so soft you can cut it with a knife - and is never found pure in nature; Davy first isolated it by electrolysis in 1807.",
         record: [
           {
             kind: "dose",
@@ -28104,7 +28092,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [
           "ca"
         ],
-        one_liner: "How much real (elemental) calcium a supplement delivers depends heavily on its form. Wallach's table for the metallic calcium in a 1,000mg tablet: calcium gluconate 90mg, calcium carbonate 400mg, calcium acetate 230mg, calcium citrate 210mg, calcium lactate 140mg - and cow's milk (1,000mg of fluid) just 10mg. (These are the milligrams of calcium present; how much you actually absorb is lower still - see his metallic-absorption note.)",
         record: [
           {
             kind: "dose",
@@ -28415,7 +28402,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Boron is one of the 60 minerals Wallach counts as essential - though mainstream science was slow to agree, accepting it as an essential nutrient for humans only in 1990 (it had been shown essential for growing chicks about a decade earlier). Its core job, per Wallach, is in bone metabolism: it helps the body use calcium and magnesium efficiently and keeps the endocrine glands - the hormone-producing ovaries, testes and adrenals - working properly.",
         record: [
           {
             kind: "dose",
@@ -28494,7 +28480,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cobalamin",
           "cyanocobalamine"
         ],
-        one_liner: 'Cobalt is essential to every form of life \u2014 from blue-green algae, bacteria and fungi to plants, insects, and all the vertebrates including humans. It works as an enzyme cofactor and activator, helps "fix" nitrogen during amino-acid production, and \u2014 most importantly \u2014 a single cobalt atom sits at the center of vitamin B12, which is itself a cofactor and activator (the cobamide coenzymes) for several essential enzymes.',
         record: [
           {
             kind: "dose",
@@ -28581,7 +28566,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [
           "cr"
         ],
-        one_liner: "Chromium is a small but metabolically busy trace mineral. Wallach says it activates the enzyme phosphoglucomutase and others, and \u2014 most importantly \u2014 it is the working core of glucose tolerance factor (GTF), the compound that lets insulin do its job of controlling blood sugar. GTF is a complex of chromium in its trivalent (chromium-III) form, dinicotinic acid (a niacin / vitamin-B3 derivative), and glutathione (the body's main built-in antioxidant). The whole body holds only about 1.5 mg of chromium, and because hair concentrates it roughly ten times higher than blood does, hair analysis gives a more accurate read on tissue stores than a blood test.",
         record: [
           {
             kind: "dose",
@@ -28805,7 +28789,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cu",
           "cuprum"
         ],
-        one_liner: "A soft reddish metal - only 0.007% of Earth's crust. Its name is Latin 'cuprum' ('from Cyprus,' where Rome mined it), and it was one of humanity's first metals.",
         record: [
           {
             kind: "dose",
@@ -29030,7 +29013,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "ge",
           "ge-132"
         ],
-        one_liner: "A metalloid 'semiconductor' element predicted by Mendeleyev in 1871 and isolated in 1886 - 'doped' with a trace of arsenic or gallium, it makes transistors.",
         record: [
           {
             kind: "dose",
@@ -29153,7 +29135,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "fe",
           "ferrum"
         ],
-        one_liner: "Iron is the 4th most abundant element in Earth's crust \u2014 its ores opened the Iron Age (~1100 B.C.), and Earth's molten core is thought to be magnetized iron.",
         record: [
           {
             kind: "dose",
@@ -29299,7 +29280,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [
           "iodide"
         ],
-        one_liner: "Wallach records that iodine is an essential element for red and brown algae and for all vertebrates; in land animals it concentrates in the thyroid gland and hair.",
         record: [
           {
             kind: "dose",
@@ -29430,7 +29410,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states manganese is essential to all known living organisms; it activates numerous enzyme systems (including glucose metabolism, energy production, and superoxide dismutase) and is a major constituent of several metalloenzymes, hormones, and proteins. Total body content in humans is only 10 to 20 mg.",
         record: [
           {
             kind: "dose",
@@ -29541,7 +29520,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states molybdenum is essential to all organisms as a constituent of numerous metalloenzymes.",
         record: [
           {
             kind: "dose",
@@ -29596,7 +29574,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -29865,7 +29842,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -29909,7 +29885,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "deficiency_sign",
@@ -30036,7 +30011,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -30160,7 +30134,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -30442,7 +30415,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "colloidal silver",
           "silver sulfadiazine"
         ],
-        one_liner: "Wallach notes silver's clinical pedigree: silver sulfadiazine (Silvadene) \u2014 discovered by Dr. Charles Fox at Columbia University \u2014 is used in 70 percent of America's burn centers and has been used to treat syphilis, cholera and malaria; it also stops the herpes virus behind cold sores and fever blisters. Earlier, colloidal silver was documented in the British Medical Journal and Lancet (1917\u20131918) for septic conditions, inflammation and wound healing.",
         record: [
           {
             kind: "dose",
@@ -30514,7 +30486,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "al",
           "aluminium"
         ],
-        one_liner: null,
         record: [
           {
             kind: "deficiency_sign",
@@ -30652,7 +30623,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: `Arsenic is an essential nutrient in Wallach's framework, determined to be one in 1947 - though he notes some soil regions in Argentina and New Zealand carry toxic levels of it. He records that arsenic normally appears in human female blood at 0.64 ppm, rising to 0.93 ppm during menstruation and 2.20 ppm during months five and six of pregnancy; that minute traces stimulate the production of red blood cells; that at 90 to 120 ppm it promotes and enhances the growth rate of chicks, and that arsenic likewise speeds the growth and metamorphosis of tadpoles; and that arsenic combined with the B-vitamin choline prevents 100% of perosis ("slipped tendon") in poultry.`,
         record: [
           {
             kind: "deficiency_sign",
@@ -30792,7 +30762,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "au",
           "aurum"
         ],
-        one_liner: null,
         record: [
           {
             kind: "protocol",
@@ -30933,7 +30902,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Barium is one of the 60 minerals Wallach counts as essential (recognized as essential for mammals in 1949). To most people, though, barium is familiar from medicine: because barium sulfate is a very dense salt that blocks X-rays, radiologists have a patient drink it (a 'barium swallow') or receive it as an enema so the hollow organs of the digestive tract show up clearly, outlined in white, on the film.",
         record: [
           {
             kind: "mechanism",
@@ -31052,7 +31020,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Beryllium is on Wallach's list of essential minerals, but it is one of the thin ones - in this book he assigns it no specific positive role in the body, offering mostly geology and history (it heads the 'alkaline-earth' metal family, alongside calcium and magnesium). What he does flag is a hazard: breathing beryllium-oxide dust, a mining and industrial contaminant, can cause berylliosis, a painful and sometimes fatal lung disease.",
         record: [
           {
             kind: "toxicity_sign",
@@ -31171,7 +31138,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Bromine is a canon essential mineral in Wallach's framework and a halogen - the same chemical family as iodine. He says it works in the body in its active form as brominated amino acids, and that there is strong evidence for its essentiality in both mammals and humans.",
         record: [
           {
             kind: "mechanism",
@@ -31288,7 +31254,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -31401,7 +31366,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Cesium is an alkali (alkaline) metal, so chemically it behaves much like sodium, potassium and rubidium. Wallach describes cesium and potassium forming a 'solute complex' inside the cell that takes part in ion antagonism (the balancing push-pull between minerals), osmosis, regulating what crosses the cell membrane (permeability), and keeping the cell's interior in its proper gel-like 'colloidal' state. Because the two minerals trade places, taking extra potassium speeds up how fast the body excretes and loses cesium.",
         record: [
           {
             kind: "protocol",
@@ -31531,7 +31495,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Epigenetics, Wallach's entry for dysprosium -- a rare-earth metal -- covers only its natural distribution (parts-per-million across igneous rocks, shale, sandstone and limestone, with animal concentrations highest in bone) and its discovery history; he assigns it no specific human deficiency disease or nutritional function here. Dysprosium was named in 1886 by the French chemist Paul Emile Lecoq de Boisbaudran from the Greek 'dysprositos', meaning 'hard to get', and is never found free in nature.",
         record: [
           {
             kind: "definition",
@@ -31642,7 +31605,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: "Wallach's Epigenetics entry for erbium -- a rare-earth metal -- records only its natural distribution (parts-per-million in rocks, plants and animals, concentrating in bone) and its discovery, plus that a large variety of medical applications in dermatology and dentistry use erbium; he assigns it no specific human nutritional deficiency or function. Erbium was discovered in 1843 by Carl Gustaf Mosander, who split 'yttria' from the mineral gadolinite into three fractions -- yttria, erbia and terbia -- and its oxide has a distinctive pink color.",
         record: [
           {
             kind: "definition",
@@ -31754,7 +31716,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -31876,7 +31837,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "ga",
           "gallium-67"
         ],
-        one_liner: "A soft, aluminum-like metal so low-melting it liquefies from your body heat, yet has the widest liquid range of any metal; named for Gallia (the Latin name for France).",
         record: [
           {
             kind: "protocol",
@@ -32025,7 +31985,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach's Epigenetics entry for gadolinium (the book spells it 'Gadolium') -- a rare-earth mineral -- records only its natural distribution across igneous rocks, shale, sandstone, limestone, plants and animals, and the observation that land animals accumulate it in bone and liver very quickly after absorption; he assigns it no specific human deficiency disease or nutritional function.",
         record: [
           {
             kind: "definition",
@@ -32137,7 +32096,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Epigenetics, Wallach's entry for hafnium -- a trace metal -- gives only its natural distribution: its concentration in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, soil, and marine and land plants and animals. He assigns it no specific human deficiency disease or nutritional function here.",
         record: [
           {
             kind: "definition",
@@ -32249,7 +32207,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Epigenetics, Wallach's entry for holmium -- a rare-earth metal -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably concentrated in hickory, Carya species), and marine and land animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here.",
         record: [
           {
             kind: "definition",
@@ -32362,7 +32319,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -32483,7 +32439,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
         record: [
           {
             kind: "dose",
@@ -32676,7 +32631,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: "In Epigenetics, Wallach's entry for lutetium (spelled 'Lutecium' in the book) -- a rare-earth element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably hickory, Carya species) and animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here.",
         record: [
           {
             kind: "definition",
@@ -32787,7 +32741,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Epigenetics, Wallach's entry for niobium -- a canon trace element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, land plants and marine animals. He assigns it no deficiency disease or nutritional function in this entry.",
         record: [
           {
             kind: "definition",
@@ -32899,7 +32852,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -33011,7 +32963,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "deficiency_sign",
@@ -33145,7 +33096,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -33255,7 +33205,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -33365,7 +33314,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Rare Earths: Forbidden Cures, Wallach catalogs rhenium -- a trace element -- in his periodic-table survey. His entry records its natural distribution -- 0.005 parts-per-million in igneous rocks, 0.014 ppm in marine plants, and 0.0005 to 0.006 ppm in marine animals -- and notes that land animals accumulate rhenium in the thyroid tissue. He records no specific deficiency disease here.",
         record: [
           {
             kind: "definition",
@@ -33475,7 +33423,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Rare Earths: Forbidden Cures, Wallach catalogs scandium -- a trace element -- in his periodic-table survey. His entry records its natural distribution (22 parts-per-million in igneous rock down to trace levels in sea water) and notes that in land animals it concentrates in the heart and bone.",
         record: [
           {
             kind: "definition",
@@ -33585,7 +33532,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -33697,7 +33643,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -33843,7 +33788,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Rare Earths: Forbidden Cures, Wallach catalogs tantalum -- a trace element -- in his periodic-table survey. His entry records its natural distribution (2 parts-per-million in igneous rocks down to trace levels) and notes that marine animals accumulate tantalum up to 410 parts-per-million.",
         record: [
           {
             kind: "definition",
@@ -33953,7 +33897,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Rare Earths: Forbidden Cures, Wallach catalogs terbium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 0.9 parts-per-million in igneous rock down to trace levels, 0.0015 in land plants, and 0.0004 parts-per-million in land animals, accumulating in bone.",
         record: [
           {
             kind: "definition",
@@ -34063,7 +34006,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Rare Earths: Forbidden Cures, Wallach catalogs titanium -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 5,700 parts-per-million in igneous rocks, 5,000 in soils, down to 0.001 parts-per-million in sea water, accumulating in plankton (12 to 80 parts-per-million in marine plants) and 0.2 parts-per-million in land animals. He records no specific deficiency disease here.",
         record: [
           {
             kind: "definition",
@@ -34173,7 +34115,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -34283,7 +34224,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -34394,7 +34334,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -34504,7 +34443,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "In Rare Earths: Forbidden Cures, Wallach catalogs zirconium (the book's optical-character-recognition renders it 'ZY') -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 165 parts-per-million in igneous rocks, 220 in sandstone, 300 in soils, down to 0.000022 parts-per-million in sea water, and 0.3 parts-per-million in land animals. He records no specific deficiency disease here.",
         record: [
           {
             kind: "definition",
@@ -34618,7 +34556,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -34828,7 +34765,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -34914,7 +34850,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -34992,7 +34927,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -35102,7 +35036,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -35178,7 +35111,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -35333,7 +35265,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -35440,7 +35371,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX \u2014 the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. The need for B12 cobalt, he notes, is thought by some to represent a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates \u2014 us \u2014 require the finished B12.",
         record: [
           {
             kind: "dose",
@@ -35576,7 +35506,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -35784,7 +35713,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter \u2014 an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen.",
         record: [
           {
             kind: "dose",
@@ -35890,7 +35818,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -36092,7 +36019,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -36160,7 +36086,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -36235,7 +36160,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -36316,7 +36240,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -36379,7 +36302,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "dose",
@@ -36464,7 +36386,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         record: [
           {
             kind: "protocol",
@@ -36525,7 +36446,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         record: [
           {
             kind: "deficiency_sign",
@@ -36586,7 +36506,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "protocol",
@@ -36630,7 +36549,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -36657,7 +36575,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "protocol",
@@ -36700,7 +36617,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "deficiency_sign",
@@ -36754,7 +36670,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "deficiency_sign",
@@ -36811,7 +36726,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "protocol",
@@ -36868,7 +36782,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "mechanism",
@@ -36896,7 +36809,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "deficiency_sign",
@@ -36956,7 +36868,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         record: [
           {
             kind: "protocol",
@@ -37015,7 +36926,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         record: [
           {
             kind: "protocol",
@@ -37062,7 +36972,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "The essential fatty acids are linoleic, linolenic, and arachidonic acids; 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
         record: [
           {
             kind: "dose",
@@ -37294,7 +37203,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "The essential fatty acids are linoleic, linolenic, and arachidonic acids; 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
         record: [
           {
             kind: "dose",
@@ -37371,7 +37279,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         claim_count: 0,
         books: [],
         synonyms: [],
-        one_liner: null,
         record: [],
         search: [],
         conditions: [],
@@ -37388,7 +37295,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000118"
         ],
@@ -37417,7 +37323,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000119"
         ],
@@ -37446,7 +37351,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000120"
         ],
@@ -37479,7 +37383,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000121"
         ],
@@ -37505,7 +37408,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000095",
           "WAL-CLM-LETS-000122"
@@ -37552,7 +37454,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -37588,7 +37489,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000123"
         ],
@@ -37652,7 +37552,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "zinc"
@@ -37695,7 +37594,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "sodium"
@@ -37734,7 +37632,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -37795,7 +37692,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000124"
         ],
@@ -37826,7 +37722,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -37870,7 +37765,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "sodium",
@@ -37916,7 +37810,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000126"
         ],
@@ -37953,7 +37846,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000385"
         ],
@@ -37979,7 +37871,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388"
         ],
@@ -38035,7 +37926,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -38069,7 +37959,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000128"
         ],
@@ -38125,7 +38014,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000131"
         ],
@@ -38208,7 +38096,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000371"
         ],
@@ -38276,7 +38163,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000016",
           "WAL-CLM-LETS-000130",
@@ -38342,7 +38228,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000132"
         ],
@@ -38371,7 +38256,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000134",
           "WAL-CLM-LETS-000357"
@@ -38424,7 +38308,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000136"
         ],
@@ -38449,7 +38332,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000135"
         ],
@@ -38479,7 +38361,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000137"
         ],
@@ -38596,7 +38477,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000359"
         ],
@@ -38642,7 +38522,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper",
@@ -38719,7 +38598,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000076",
           "WAL-CLM-LETS-000139"
@@ -38762,7 +38640,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "iron",
@@ -38809,7 +38686,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -38856,7 +38732,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000140"
         ],
@@ -38953,7 +38828,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000140"
         ],
@@ -38985,7 +38859,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000141"
         ],
@@ -39047,7 +38920,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000078",
           "WAL-CLM-LETS-000142"
@@ -39114,7 +38986,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000080",
           "WAL-CLM-LETS-000143"
@@ -39155,7 +39026,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000081",
           "WAL-CLM-LETS-000144"
@@ -39190,7 +39060,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease \u2014 among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000145",
           "WAL-CLM-RARE-000202"
@@ -39277,7 +39146,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease \u2014 among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000051",
           "WAL-CLM-LETS-000146",
@@ -39426,7 +39294,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000147",
           "WAL-CLM-RARE-000202"
@@ -39499,7 +39366,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -39563,7 +39429,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000149"
         ],
@@ -39606,7 +39471,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000147"
         ],
@@ -39642,7 +39506,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000148"
         ],
@@ -39679,7 +39542,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -39731,7 +39593,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000151"
         ],
@@ -39797,7 +39658,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000150"
         ],
@@ -39837,7 +39697,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000152"
         ],
@@ -39889,7 +39748,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000153"
         ],
@@ -39918,7 +39776,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -39947,7 +39804,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000154"
         ],
@@ -39980,7 +39836,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000155",
           "WAL-CLM-LETS-000266"
@@ -40036,7 +39891,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000156"
         ],
@@ -40066,7 +39920,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000086",
           "WAL-CLM-LETS-000158",
@@ -40145,7 +39998,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000085",
           "WAL-CLM-LETS-000157"
@@ -40204,7 +40056,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b1"
@@ -40251,7 +40102,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000159"
         ],
@@ -40333,7 +40183,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000160",
           "WAL-CLM-LETS-000359",
@@ -40437,7 +40286,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000161"
         ],
@@ -40477,7 +40325,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000162"
         ],
@@ -40503,7 +40350,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000163"
         ],
@@ -40548,7 +40394,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000164"
         ],
@@ -40605,7 +40450,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "biotin"
@@ -40651,7 +40495,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -40713,7 +40556,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dddl-3e-2011"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-a"
@@ -40746,7 +40588,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000165"
         ],
@@ -40791,7 +40632,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000166"
         ],
@@ -40824,7 +40664,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000167"
         ],
@@ -40871,7 +40710,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000168"
         ],
@@ -40912,7 +40750,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000168"
         ],
@@ -40981,7 +40818,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "gallium"
@@ -41033,7 +40869,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -41083,7 +40918,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000169"
         ],
@@ -41117,7 +40951,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000170"
         ],
@@ -41148,7 +40981,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -41191,7 +41023,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000171",
           "WAL-CLM-LETS-000276"
@@ -41233,7 +41064,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000172"
         ],
@@ -41289,7 +41119,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000173"
         ],
@@ -41343,7 +41172,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000174"
         ],
@@ -41376,7 +41204,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "zinc"
@@ -41418,7 +41245,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000175"
         ],
@@ -41464,7 +41290,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000176"
         ],
@@ -41503,7 +41328,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "cobalt"
@@ -41536,7 +41360,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -41589,7 +41412,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000018",
           "WAL-CLM-DDDL-000056",
@@ -41760,7 +41582,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000201",
           "WAL-CLM-LETS-000450"
@@ -41813,7 +41634,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000080",
           "WAL-CLM-LETS-000202"
@@ -41872,7 +41692,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -41901,7 +41720,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -41926,7 +41744,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000203"
         ],
@@ -41968,7 +41785,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "potassium"
@@ -42003,7 +41819,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000204"
         ],
@@ -42089,7 +41904,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000076",
           "WAL-CLM-LETS-000295"
@@ -42154,7 +41968,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000205",
           "WAL-CLM-LETS-000383"
@@ -42233,7 +42046,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000207"
         ],
@@ -42313,7 +42125,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000208"
         ],
@@ -42341,7 +42152,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000209"
         ],
@@ -42405,7 +42215,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -42452,7 +42261,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper",
@@ -42516,7 +42324,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dddl-3e-2011"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -42541,7 +42348,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000212"
         ],
@@ -42572,7 +42378,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000213"
         ],
@@ -42604,7 +42409,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000214"
         ],
@@ -42655,7 +42459,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000215"
         ],
@@ -42687,7 +42490,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000216"
         ],
@@ -42712,7 +42514,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000217"
         ],
@@ -42738,7 +42539,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "manganese"
@@ -42783,7 +42583,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "manganese"
@@ -42827,7 +42626,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000220"
         ],
@@ -42864,7 +42662,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000272"
         ],
@@ -42902,7 +42699,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000221"
         ],
@@ -42940,7 +42736,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -42969,7 +42764,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-RARE-000202"
         ],
@@ -43011,7 +42805,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "aluminum"
@@ -43054,7 +42847,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "zinc"
@@ -43093,7 +42885,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b9",
@@ -43134,7 +42925,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000224"
         ],
@@ -43165,7 +42955,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000299"
         ],
@@ -43203,7 +42992,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000225"
         ],
@@ -43236,7 +43024,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000226"
         ],
@@ -43282,7 +43069,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000227"
         ],
@@ -43327,7 +43113,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "sulfur"
@@ -43366,7 +43151,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000078",
           "WAL-CLM-IMMORT-000096",
@@ -43422,7 +43206,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dddl-3e-2011"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000094"
         ],
@@ -43473,7 +43256,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -43518,7 +43300,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper",
@@ -43565,7 +43346,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000228"
         ],
@@ -43593,7 +43373,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000229"
         ],
@@ -43655,7 +43434,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000230"
         ],
@@ -43709,7 +43487,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000231"
         ],
@@ -43736,7 +43513,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000233",
           "WAL-CLM-LETS-000277"
@@ -43804,7 +43580,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000054",
           "WAL-CLM-LETS-000234"
@@ -43837,7 +43612,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-a"
@@ -43885,7 +43659,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -43938,7 +43711,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000235"
         ],
@@ -43991,7 +43763,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000055",
           "WAL-CLM-LETS-000237"
@@ -44029,7 +43800,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "iodine"
@@ -44063,7 +43833,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -44109,7 +43878,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "copper",
@@ -44172,7 +43940,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000238"
         ],
@@ -44229,7 +43996,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000239"
         ],
@@ -44277,7 +44043,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cf",
           "mucoviscidosis"
         ],
-        one_liner: "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease \u2014 among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000240"
         ],
@@ -44353,7 +44118,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-IMMORT-000153",
           "WAL-CLM-LETS-000241",
@@ -44389,7 +44153,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000242",
           "WAL-CLM-LETS-000430"
@@ -44439,7 +44202,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000294"
         ],
@@ -44500,7 +44262,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -44543,7 +44304,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -44594,7 +44354,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: `Wallach frames dementia not as a single disease but as a minimum of four distinct nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's disease -- each with its own deficiency basis and nutritional-therapy protocol; an individual may have some degree of two, three, or all four at the same time. In Wallach's words: "Dementia manifests itself as a minimum of four different diseases. Sometimes, individuals will have some degree of two, three, or all four of the classic dementias at the same time."`,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000013",
           "WAL-CLM-EPIGEN-000016",
@@ -44691,7 +44450,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "cobalt"
@@ -44723,7 +44481,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000177"
         ],
@@ -44753,7 +44510,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -44789,7 +44545,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000244",
           "WAL-CLM-LETS-000388"
@@ -44934,7 +44689,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000237",
           "WAL-CLM-LETS-000245",
@@ -45035,7 +44789,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -45087,7 +44840,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "adult-onset diabetes",
           "blood sugar"
         ],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000048",
           "WAL-CLM-DDDL-000049",
@@ -45244,7 +44996,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000247"
         ],
@@ -45280,7 +45031,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000248"
         ],
@@ -45352,7 +45102,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -45376,7 +45125,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000125"
         ],
@@ -45431,7 +45179,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000251"
         ],
@@ -45477,7 +45224,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -45528,7 +45274,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000368",
           "WAL-CLM-RARE-000045"
@@ -45588,7 +45333,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000253"
         ],
@@ -45613,7 +45357,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000363"
         ],
@@ -45642,7 +45385,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000254"
         ],
@@ -45679,7 +45421,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000255"
         ],
@@ -45708,7 +45449,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000256"
         ],
@@ -45752,7 +45492,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000257"
         ],
@@ -45791,7 +45530,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000258",
           "WAL-CLM-LETS-000357"
@@ -45839,7 +45577,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000259",
           "WAL-CLM-LETS-000321"
@@ -45880,7 +45617,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "iron"
@@ -45922,7 +45658,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000260",
           "WAL-CLM-LETS-000392"
@@ -45956,7 +45691,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000261"
         ],
@@ -46002,7 +45736,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000407"
         ],
@@ -46040,7 +45773,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000148",
           "WAL-CLM-LETS-000245"
@@ -46121,7 +45853,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "nitrogen",
@@ -46175,7 +45906,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000264"
         ],
@@ -46200,7 +45930,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-RARE-000202"
         ],
@@ -46242,7 +45971,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -46269,7 +45997,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000266"
         ],
@@ -46303,7 +46030,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -46348,7 +46074,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000233",
           "WAL-CLM-LETS-000267"
@@ -46398,7 +46123,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -46434,7 +46158,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000315"
         ],
@@ -46470,7 +46193,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -46511,7 +46233,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000268"
         ],
@@ -46537,7 +46258,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -46588,7 +46308,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000269"
         ],
@@ -46642,7 +46361,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000270"
         ],
@@ -46708,7 +46426,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "biotin",
@@ -46761,7 +46478,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000274"
         ],
@@ -46788,7 +46504,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000169",
           "WAL-CLM-LETS-000275"
@@ -46848,7 +46563,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b1",
@@ -46900,7 +46614,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000271",
           "WAL-CLM-LETS-000278"
@@ -46927,7 +46640,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000280"
         ],
@@ -46980,7 +46692,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000281"
         ],
@@ -47039,7 +46750,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000282"
         ],
@@ -47076,7 +46786,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000283"
         ],
@@ -47138,7 +46847,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-RARE-000202"
         ],
@@ -47180,7 +46888,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -47210,7 +46917,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000284"
         ],
@@ -47267,7 +46973,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "chromium"
@@ -47298,7 +47003,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000285",
           "WAL-CLM-LETS-000398"
@@ -47353,7 +47057,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000286"
         ],
@@ -47407,7 +47110,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper",
@@ -47457,7 +47159,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000287"
         ],
@@ -47553,7 +47254,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000288"
         ],
@@ -47594,7 +47294,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -47625,7 +47324,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -47668,7 +47366,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000289"
         ],
@@ -47705,7 +47402,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000291"
         ],
@@ -47738,7 +47434,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "iodine"
@@ -47776,7 +47471,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000292"
         ],
@@ -47808,7 +47502,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000293"
         ],
@@ -47861,7 +47554,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease \u2014 among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000295",
           "WAL-CLM-LETS-000317"
@@ -47925,7 +47617,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "zinc"
@@ -47964,7 +47655,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -48006,7 +47696,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000296"
         ],
@@ -48031,7 +47720,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "sodium"
@@ -48059,7 +47747,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000361",
           "WAL-CLM-LETS-000449"
@@ -48105,7 +47792,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -48148,7 +47834,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -48194,7 +47879,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000297"
         ],
@@ -48251,7 +47935,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000298"
         ],
@@ -48293,7 +47976,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -48338,7 +48020,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000299"
         ],
@@ -48376,7 +48057,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000301"
         ],
@@ -48401,7 +48081,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000302"
         ],
@@ -48429,7 +48108,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000219"
         ],
@@ -48514,7 +48192,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000457"
         ],
@@ -48577,7 +48254,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -48621,7 +48297,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000303"
         ],
@@ -48651,7 +48326,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "choline"
@@ -48692,7 +48366,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -48722,7 +48395,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000304"
         ],
@@ -48750,7 +48422,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000257",
           "WAL-CLM-LETS-000305"
@@ -48829,7 +48500,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -48880,7 +48550,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -48934,7 +48603,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -48987,7 +48655,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000305",
           "WAL-CLM-LETS-000388"
@@ -49038,7 +48705,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -49090,7 +48756,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000306"
         ],
@@ -49171,7 +48836,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -49223,7 +48887,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -49260,7 +48923,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000307",
           "WAL-CLM-LETS-000388"
@@ -49345,7 +49007,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "zinc"
@@ -49382,7 +49043,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "potassium"
@@ -49413,7 +49073,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -49438,7 +49097,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000308"
         ],
@@ -49497,7 +49155,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000218"
         ],
@@ -49526,7 +49183,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000103",
           "WAL-CLM-LETS-000309"
@@ -49597,7 +49253,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000310"
         ],
@@ -49633,7 +49288,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-a"
@@ -49679,7 +49333,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000311"
         ],
@@ -49749,7 +49402,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000314"
         ],
@@ -49782,7 +49434,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000315"
         ],
@@ -49833,7 +49484,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000316"
         ],
@@ -49868,7 +49518,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000321"
         ],
@@ -49906,7 +49555,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000317"
         ],
@@ -49946,7 +49594,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000318"
         ],
@@ -49985,7 +49632,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000070",
           "WAL-CLM-LETS-000273",
@@ -50083,7 +49729,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000320"
         ],
@@ -50139,7 +49784,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000279",
           "WAL-CLM-RARE-000315"
@@ -50193,7 +49837,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000075",
           "WAL-CLM-LETS-000322"
@@ -50276,7 +49919,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000222"
         ],
@@ -50314,7 +49956,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000323"
         ],
@@ -50363,7 +50004,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-e"
@@ -50407,7 +50047,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000324"
         ],
@@ -50443,7 +50082,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000325"
         ],
@@ -50492,7 +50130,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000326"
         ],
@@ -50547,7 +50184,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: 'Wallach maintains that dozens of human "genetic" diseases can in fact be prevented \u2014 and in early stages reversed or "cured" \u2014 with minerals, naming cystic fibrosis, muscular dystrophy and Kawasaki Disease as prime examples.',
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000007"
         ],
@@ -50608,7 +50244,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dddl-3e-2011"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-a"
@@ -50641,7 +50276,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000328"
         ],
@@ -50693,7 +50327,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000329",
           "WAL-CLM-LETS-000431"
@@ -50728,7 +50361,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000330"
         ],
@@ -50757,7 +50389,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000373",
           "WAL-CLM-RARE-000048"
@@ -50823,7 +50454,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000331"
         ],
@@ -50855,7 +50485,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000331"
         ],
@@ -50887,7 +50516,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000332"
         ],
@@ -50956,7 +50584,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000088",
           "WAL-CLM-LETS-000161",
@@ -51025,7 +50652,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000014",
           "WAL-CLM-LETS-000333",
@@ -51087,7 +50713,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000334"
         ],
@@ -51133,7 +50758,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -51182,7 +50806,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000335",
           "WAL-CLM-LETS-000406"
@@ -51209,7 +50832,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000337"
         ],
@@ -51239,7 +50861,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000337"
         ],
@@ -51279,7 +50900,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000303",
           "WAL-CLM-LETS-000338"
@@ -51311,7 +50931,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000340",
           "WAL-CLM-RARE-000214"
@@ -51364,7 +50983,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388"
         ],
@@ -51442,7 +51060,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -51485,7 +51102,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000341"
         ],
@@ -51510,7 +51126,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000343"
         ],
@@ -51540,7 +51155,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000344"
         ],
@@ -51586,7 +51200,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -51620,7 +51233,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000345"
         ],
@@ -51645,7 +51257,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000346"
         ],
@@ -51676,7 +51287,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -51729,7 +51339,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000348"
         ],
@@ -51809,7 +51418,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000298",
           "WAL-CLM-LETS-000348"
@@ -51914,7 +51522,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -51964,7 +51571,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -52014,7 +51620,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable for women and can flatten a man's sex drive.",
         protocol_claim_ids: [],
         restore: [
           "manganese"
@@ -52064,7 +51669,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-IMMORT-000096"
         ],
@@ -52108,7 +51712,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000350"
         ],
@@ -52167,7 +51770,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000351"
         ],
@@ -52193,7 +51795,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -52234,7 +51835,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -52286,7 +51886,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-e",
@@ -52349,7 +51948,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dddl-3e-2011"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "tin"
@@ -52376,7 +51974,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people.",
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -52405,7 +52002,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000353"
         ],
@@ -52430,7 +52026,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000342"
         ],
@@ -52474,7 +52069,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000355"
         ],
@@ -52500,7 +52094,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000356"
         ],
@@ -52562,7 +52155,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -52611,7 +52203,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000358"
         ],
@@ -52636,7 +52227,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000359"
         ],
@@ -52679,7 +52269,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Menkes' Kinky Hair Syndrome is the genetic disorder Wallach ties most directly to copper. He says it is thought to be a sex-linked recessive genetic defect of copper absorption. Affected infants show stunted growth, defective keratin in the hair (the 'kinky' hair), loss of hair pigment, low body temperature (low thyroid function, anemia), degeneration and fractures of the aortic elastin (aneurysms), arthritis in the growth plates of the long bones, and progressive mental deterioration \u2014 the last because the brain is left totally devoid of cytochrome oxidase, an essential copper-dependent enzyme. Because of the copper absorption problem, Wallach says injections of copper and liver extracts plus a diet program designed for celiac patients will be useful for these children.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000360"
         ],
@@ -52717,7 +52306,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable for women and can flatten a man's sex drive.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000092",
           "WAL-CLM-LETS-000223",
@@ -52781,7 +52369,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000357"
         ],
@@ -52821,7 +52408,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -52854,7 +52440,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000361"
         ],
@@ -52919,7 +52504,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000364"
         ],
@@ -52975,7 +52559,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -53014,7 +52597,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000365"
         ],
@@ -53070,7 +52652,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000366"
         ],
@@ -53103,7 +52684,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000367"
         ],
@@ -53135,7 +52715,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000369"
         ],
@@ -53172,7 +52751,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000206",
           "WAL-CLM-LETS-000461"
@@ -53206,7 +52784,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000015",
           "WAL-CLM-EPIGEN-000172",
@@ -53276,7 +52853,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000372"
         ],
@@ -53305,7 +52881,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000374"
         ],
@@ -53372,7 +52947,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -53418,7 +52992,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease \u2014 among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000005",
           "WAL-CLM-LETS-000373"
@@ -53501,7 +53074,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -53544,7 +53116,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-d"
@@ -53580,7 +53151,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "chromium"
@@ -53623,7 +53193,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000375"
         ],
@@ -53648,7 +53217,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000377"
         ],
@@ -53679,7 +53247,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000378"
         ],
@@ -53705,7 +53272,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b9"
@@ -53761,7 +53327,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000379"
         ],
@@ -53802,7 +53367,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000379"
         ],
@@ -53861,7 +53425,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -53909,7 +53472,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000380"
         ],
@@ -53969,7 +53531,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000381"
         ],
@@ -53999,7 +53560,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000382"
         ],
@@ -54059,7 +53619,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000384"
         ],
@@ -54129,7 +53688,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000386"
         ],
@@ -54187,7 +53745,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000387"
         ],
@@ -54221,7 +53778,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000363"
         ],
@@ -54250,7 +53806,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -54273,7 +53828,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -54306,7 +53860,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388"
         ],
@@ -54354,7 +53907,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000389"
         ],
@@ -54379,7 +53931,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000390"
         ],
@@ -54415,7 +53966,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium",
@@ -54477,7 +54027,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -54530,7 +54079,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium",
@@ -54591,7 +54139,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -54639,7 +54186,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000060",
           "WAL-CLM-IAIYH-000004",
@@ -54782,7 +54328,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -54823,7 +54368,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -54851,7 +54395,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000392"
         ],
@@ -54887,7 +54430,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
         protocol_claim_ids: [
           "WAL-CLM-IAIYH-000004",
           "WAL-CLM-LETS-000390"
@@ -54939,7 +54481,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000393"
         ],
@@ -54964,7 +54505,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000394"
         ],
@@ -54997,7 +54537,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -55038,7 +54577,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -55070,7 +54608,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -55116,7 +54653,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000078"
         ],
@@ -55181,7 +54717,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388"
         ],
@@ -55238,7 +54773,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000395",
           "WAL-CLM-LETS-000465"
@@ -55266,7 +54800,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000396"
         ],
@@ -55324,7 +54857,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -55380,7 +54912,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000346"
         ],
@@ -55412,7 +54943,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388"
         ],
@@ -55474,7 +55004,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000397",
           "WAL-CLM-LETS-000458",
@@ -55542,7 +55071,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000285",
           "WAL-CLM-LETS-000398"
@@ -55609,7 +55137,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -55645,7 +55172,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "calcium",
@@ -55700,7 +55226,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000410"
         ],
@@ -55738,7 +55263,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "cobalt",
@@ -55787,7 +55311,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000399"
         ],
@@ -55827,7 +55350,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b2"
@@ -55875,7 +55397,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000400"
         ],
@@ -55949,7 +55470,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000401"
         ],
@@ -55982,7 +55502,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000340"
         ],
@@ -56019,7 +55538,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388",
           "WAL-CLM-LETS-000402"
@@ -56087,7 +55605,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000403"
         ],
@@ -56112,7 +55629,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000404"
         ],
@@ -56143,7 +55659,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000405"
         ],
@@ -56170,7 +55685,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "chromium"
@@ -56220,7 +55734,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000407"
         ],
@@ -56254,7 +55767,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000407"
         ],
@@ -56288,7 +55800,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -56333,7 +55844,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -56373,7 +55883,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000324"
         ],
@@ -56428,7 +55937,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000409"
         ],
@@ -56486,7 +55994,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b12"
@@ -56537,7 +56044,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -56587,7 +56093,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000236"
         ],
@@ -56612,7 +56117,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease \u2014 among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000290",
           "WAL-CLM-LETS-000398"
@@ -56669,7 +56173,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000408"
         ],
@@ -56694,7 +56197,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000410"
         ],
@@ -56730,7 +56232,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000411"
         ],
@@ -56759,7 +56260,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000412"
         ],
@@ -56784,7 +56284,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000414"
         ],
@@ -56809,7 +56308,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000415"
         ],
@@ -56846,7 +56344,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -56892,7 +56389,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -56941,7 +56437,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000416"
         ],
@@ -56967,7 +56462,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "inositol"
@@ -57018,7 +56512,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "manganese"
@@ -57069,7 +56562,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -57114,7 +56606,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium",
@@ -57161,7 +56652,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000417"
         ],
@@ -57194,7 +56684,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000418"
         ],
@@ -57220,7 +56709,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000146",
           "WAL-CLM-LETS-000419"
@@ -57279,7 +56767,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter \u2014 an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000413",
           "WAL-CLM-LETS-000420"
@@ -57350,7 +56837,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000421"
         ],
@@ -57393,7 +56879,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000422"
         ],
@@ -57418,7 +56903,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000423"
         ],
@@ -57443,7 +56927,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000354"
         ],
@@ -57469,7 +56952,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-IMMORT-000096"
         ],
@@ -57511,7 +56993,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000424"
         ],
@@ -57536,7 +57017,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000425"
         ],
@@ -57561,7 +57041,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-RARE-000224"
         ],
@@ -57587,7 +57066,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000388"
         ],
@@ -57651,7 +57129,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [
           "WAL-CLM-LETS-000426"
         ],
@@ -57717,7 +57194,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000427"
         ],
@@ -57773,7 +57249,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000428"
         ],
@@ -57824,7 +57299,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000429"
         ],
@@ -57851,7 +57325,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000237",
           "WAL-CLM-LETS-000430"
@@ -57915,7 +57388,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -57970,7 +57442,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000215",
           "WAL-CLM-LETS-000300",
@@ -58012,7 +57483,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -58055,7 +57525,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium",
@@ -58101,7 +57570,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "magnesium",
@@ -58146,7 +57614,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000434"
         ],
@@ -58171,7 +57638,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000436"
         ],
@@ -58196,7 +57662,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -58243,7 +57708,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000359"
         ],
@@ -58302,7 +57766,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -58351,7 +57814,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -58394,7 +57856,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000435"
         ],
@@ -58419,7 +57880,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -58462,7 +57922,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-b6"
@@ -58512,7 +57971,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -58535,7 +57993,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000437"
         ],
@@ -58561,7 +58018,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000438"
         ],
@@ -58602,7 +58058,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000317",
           "WAL-CLM-LETS-000439",
@@ -58675,7 +58130,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000269"
         ],
@@ -58704,7 +58158,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -58736,7 +58189,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000441"
         ],
@@ -58761,7 +58213,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000442"
         ],
@@ -58787,7 +58238,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000443"
         ],
@@ -58841,7 +58291,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000444"
         ],
@@ -58874,7 +58323,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000445"
         ],
@@ -58929,7 +58377,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: "Teeth discoloration with reduced enamel thickness is a common side effect of prolonged administration of tetracyclines during the second half of pregnancy or during early tooth development; affected teeth become brown or gray and fluoresce orange-green under ultraviolet light. Prevention is key; cosmetic capping is necessary if permanent teeth are affected.",
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -58952,7 +58399,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000447"
         ],
@@ -58995,7 +58441,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000349"
         ],
@@ -59023,7 +58468,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
         protocol_claim_ids: [],
         restore: [
           "calcium",
@@ -59079,7 +58523,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000449"
         ],
@@ -59108,7 +58551,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -59149,7 +58591,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -59181,7 +58622,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000450"
         ],
@@ -59222,7 +58662,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -59264,7 +58703,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "copper"
@@ -59322,7 +58760,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000451"
         ],
@@ -59395,7 +58832,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "arsenic",
@@ -59450,7 +58886,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iaiyh"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -59473,7 +58908,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000260",
           "WAL-CLM-LETS-000452"
@@ -59515,7 +58949,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000453"
         ],
@@ -59573,7 +59006,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000453"
         ],
@@ -59602,7 +59034,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000454"
         ],
@@ -59638,7 +59069,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium",
@@ -59686,7 +59116,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000455"
         ],
@@ -59711,7 +59140,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000456"
         ],
@@ -59749,7 +59177,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "calcium"
@@ -59806,7 +59233,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000411"
         ],
@@ -59835,7 +59261,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000387"
         ],
@@ -59870,7 +59295,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-IMMORT-000153",
           "WAL-CLM-RARE-000136"
@@ -59904,7 +59328,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dddl-3e-2011"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [],
         record: [
@@ -59938,7 +59361,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "vitamin-d"
@@ -59981,7 +59403,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000252",
           "WAL-CLM-LETS-000459"
@@ -60022,7 +59443,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000399",
           "WAL-CLM-LETS-000460"
@@ -60085,7 +59505,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000013"
         ],
@@ -60118,7 +59537,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000461"
         ],
@@ -60187,7 +59605,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor \u2014 chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
         protocol_claim_ids: [],
         restore: [
           "copper",
@@ -60255,7 +59672,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000462"
         ],
@@ -60313,7 +59729,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000265"
         ],
@@ -60353,7 +59768,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000463"
         ],
@@ -60379,7 +59793,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "sodium"
@@ -60411,7 +59824,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000249"
         ],
@@ -60465,7 +59877,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000343"
         ],
@@ -60495,7 +59906,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000015"
         ],
@@ -60549,7 +59959,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "selenium"
@@ -60598,7 +60007,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000464"
         ],
@@ -60627,7 +60035,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "immortality"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [],
         restore: [
           "iodine"
@@ -60662,7 +60069,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lets-play-doctor"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000466"
         ],
@@ -60697,7 +60103,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare-earths"
         ],
         synonyms: [],
-        one_liner: null,
         protocol_claim_ids: [
           "WAL-CLM-LETS-000328",
           "WAL-CLM-LETS-000380"
@@ -62219,6 +61624,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         aliases: [
           "Age Beater"
         ]
+      },
+      {
+        term: "Wallach's Fibrous Dysplasia",
+        plain: "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
+        category: "medical",
+        aliases: []
       }
     ]
   };
@@ -62230,10 +61641,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
   function normKey(s) {
-    return s.toLowerCase().replace(/[\s-]+/g, " ").trim();
+    return s.toLowerCase().replace(/[‘’]/g, "'").replace(/[\s-]+/g, " ").trim();
   }
   function keyToPattern(normalizedKey) {
-    return normalizedKey.split(" ").map(escapeRegExp).join("[\\s\\-]+");
+    return normalizedKey.split(" ").map((w) => escapeRegExp(w).replace(/'/g, "['\u2019\u2018]")).join("[\\s\\-]+");
   }
   function index() {
     if (cached6 === null) {
@@ -70269,15 +69680,14 @@ deaths, blood clots, sterility`,
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function glossify(raw) {
-    const esc = escHTML3(raw);
     const re = glossaryRegex();
     if (re === null) {
-      return esc;
+      return escHTML3(raw);
     }
     const seen = /* @__PURE__ */ new Set();
     let out = "";
     let last = 0;
-    for (let m = re.exec(esc); m !== null; m = re.exec(esc)) {
+    for (let m = re.exec(raw); m !== null; m = re.exec(raw)) {
       const word = m[0];
       const key = word.toLowerCase();
       if (seen.has(key)) {
@@ -70288,11 +69698,11 @@ deaths, blood clots, sterility`,
         continue;
       }
       seen.add(key);
-      out += esc.slice(last, m.index);
-      out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML3(word)}: ${escHTML3(def)}" data-def="${escHTML3(def)}">${word}</span>`;
+      out += escHTML3(raw.slice(last, m.index));
+      out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML3(word)}: ${escHTML3(def)}" data-def="${escHTML3(def)}">${escHTML3(word)}</span>`;
       last = m.index + word.length;
     }
-    out += esc.slice(last);
+    out += escHTML3(raw.slice(last));
     return out;
   }
 
@@ -98754,9 +98164,6 @@ deaths, blood clots, sterility`,
   function fmtMoney(n) {
     return n.toFixed(2);
   }
-  function countNutrients(p) {
-    return p.components.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
-  }
   function productSearchBlob(p) {
     const parts = [p.name];
     for (const slug of essentialSlugsByProduct().get(p.product_id) ?? []) {
@@ -98780,20 +98187,54 @@ deaths, blood clots, sterility`,
     }
     return parts.join(" ");
   }
+  function formFamily(p) {
+    const f = (p.components[0]?.form ?? "").toLowerCase();
+    if (f.includes("powder") || f === "stick") {
+      return "powder";
+    }
+    if (f.includes("tea")) {
+      return "tea";
+    }
+    if (f.includes("topical") || f.includes("cream")) {
+      return "topical";
+    }
+    if (f.includes("gummy") || f.includes("lozenge") || f.includes("chewable")) {
+      return "chewable";
+    }
+    if (f.includes("tablet") || f.includes("caplet")) {
+      return "tablet";
+    }
+    if (f.includes("capsule") || f.includes("softgel")) {
+      return "capsule";
+    }
+    if (f.includes("liquid") || f.includes("spray") || f.includes("shot") || f.includes("syrup") || f.includes("drops")) {
+      return "liquid";
+    }
+    return "other";
+  }
+  function essentialsSupplied(p) {
+    return essentialSlugsByProduct().get(p.product_id)?.length ?? 0;
+  }
   function renderProductRow(p, selected) {
     const cls = `kd-product-row${p.product_id === selected ? " is-selected" : ""}`;
-    const n = countNutrients(p);
+    const fam = formFamily(p);
+    const supplied = essentialsSupplied(p);
     const price = p.price != null && p.price.wholesale != null ? `$${fmtMoney(p.price.wholesale)}` : p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : "";
-    const meta = [`${n} NUTRIENT${n === 1 ? "" : "S"}`, price].filter((s) => s.length > 0).join(" \xB7 ");
+    const spc = p.components[0]?.servings_per_container;
+    const serv = spc !== null && spc !== void 0 ? `${spc} servings` : "";
+    const lead = supplied > 0 ? "<b>of 90</b> essentials" : "targeted formula";
+    const foot = [lead, price, serv].filter((s) => s.length > 0).join(" \xB7 ");
+    const ghost = supplied > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${supplied}</div>` : "";
     return `
-    <div class="${cls}" data-kd-product="${escHTML5(p.product_id)}" data-search="${escHTML5(productSearchBlob(p))}" role="button" tabindex="0">
-      <div class="kd-product-row__icon">${escHTML5(p.name.charAt(0).toUpperCase())}</div>
-      <div class="kd-product-row__body">
-        <h4 class="kd-product-row__name">${escHTML5(p.name)}</h4>
-        <div class="kd-product-row__meta">${escHTML5(meta)}</div>
-      </div>
-      <span class="kd-product-row__verdict kd-product-row__verdict--ok">VIEW</span>
+    <div class="${cls}" data-form="${fam}" data-kd-product="${escHTML5(p.product_id)}" data-search="${escHTML5(productSearchBlob(p))}" role="button" tabindex="0">
+      ${ghost}
+      <div class="kd-product-row__cat"><i></i>${escHTML5(fam.toUpperCase())}</div>
+      <h4 class="kd-product-row__name">${escHTML5(p.name)}</h4>
+      <div class="kd-product-row__foot">${foot}</div>
     </div>`;
+  }
+  function productsByBreadth(products) {
+    return [...products].sort((a, b) => essentialsSupplied(b) - essentialsSupplied(a) || a.name.localeCompare(b.name));
   }
   function renderProductsTab(selectedProduct) {
     const products = listProducts();
@@ -98801,11 +98242,11 @@ deaths, blood clots, sterility`,
       return '<div class="kd-empty">\u2014 no products loaded \u2014</div>';
     }
     const deepHTML = selectedProduct !== null ? renderProductDeep(selectedProduct) : "";
-    const rowsHTML = products.map((p) => renderProductRow(p, selectedProduct)).join("");
+    const rowsHTML = productsByBreadth(products).map((p) => renderProductRow(p, selectedProduct)).join("");
     return `
     ${deepHTML}
-    <div class="kd-section-head">PRODUCTS \xB7 ${products.length} \xB7 YOUNGEVITY</div>
-    ${rowsHTML}`;
+    <div class="kd-section-head">ALL ${products.length} PRODUCTS \xB7 SORTED BY ESSENTIALS SUPPLIED</div>
+    <div class="kd-products-grid">${rowsHTML}</div>`;
   }
   function renderPrice(price) {
     if (price === null || price === void 0) {
@@ -103476,7 +102917,30 @@ Category colour-coding: condition-categories.json gained a per-category icon (12
 
 Breadcrumbs (drawer-wide, new): ported the signed-off demo's bounded/loop-free/cap-6 trail (origin anchor \xB7 dedup-truncate on revisit \xB7 drop-oldest) to knowledge.ts; all nav routes through openDetail(), goCrumb() on click, mono chrome styling. Claim cards: expanded = full family-coloured summary (record cards only, scoped by .kd-ep-claim--record; search Q&A cards untouched). Absorption facets lead with "What to do".
 
-VERIFIED: build OK \xB7 invariants 77/77 \xB7 render_probe_entity + render_probe_knowledge (UPDATED to the new kd-ep--cond structure \u2014 stale on the old deep-view since round 1) + a breadcrumb behaviour probe (grow/truncate/loop-guard/origin-exit) ALL PASS \xB7 0 page errors \xB7 category propagation across 6 categories \xB7 scrollbar proven via computed scrollbar-color. Luneth visually signed off each round including the scrollbar. Lint tidy: cleaned all new breadcrumb/scrollbar style errors + import ordering in the touched files. DEFERRED: the auto condition one_liner is still mismatched (fibrous-dysplasia for osteoporosis) \u2014 we render the derived synopsis. Remaining demo surfaces: Products tab + detail, Ask-Wallach wording.` }];
+VERIFIED: build OK \xB7 invariants 77/77 \xB7 render_probe_entity + render_probe_knowledge (UPDATED to the new kd-ep--cond structure \u2014 stale on the old deep-view since round 1) + a breadcrumb behaviour probe (grow/truncate/loop-guard/origin-exit) ALL PASS \xB7 0 page errors \xB7 category propagation across 6 categories \xB7 scrollbar proven via computed scrollbar-color. Luneth visually signed off each round including the scrollbar. Lint tidy: cleaned all new breadcrumb/scrollbar style errors + import ordering in the touched files. DEFERRED: the auto condition one_liner is still mismatched (fibrous-dysplasia for osteoporosis) \u2014 we render the derived synopsis. Remaining demo surfaces: Products tab + detail, Ask-Wallach wording.` }, { id: "lg_mrwxeqvw_07k1m2", ts: "2026-07-22T22:02:46.172728-05:00", surface: "knowledge/products", kind: "round-close", summary: "Products tab now live \u2014 colour-coded ghost-number cards (delivery form + essentials-of-90), the Conditions design adapted for products. Plus removed a dead field and fixed a glossary bug that blocked every apostrophe term (Bell's Palsy, Wallach's Fibrous Dysplasia).", detail: `This session finished the Products tab in the Knowledge drawer. It now shows all 215 Youngevity products as cards colour-coded by how you take them (liquid, capsule, powder, tablet, chewable, tea, topical), each with a big faded number for how many of the 90 essentials it covers \u2014 the same look as the Conditions tab, but adapted for products rather than copied. Along the way I deleted a leftover data field nobody was using, and fixed a bug where any term with an apostrophe (Bell's Palsy, Wallach's Fibrous Dysplasia) could never get its dotted-underline definition. Board stayed 77/77 green throughout, and Luneth signed off each visual step.
+
+TECHNICAL \u2014
+
+PRODUCTS TAB (Direction A, Luneth's pick from a 4-option mockup temporary/product-cards-brainstorm.html, gitignored like condition-cards-brainstorm.html; options were A ghost=essentials [chosen], B ghost=price, C coverage meter, D form band):
+- COLOUR = delivery FORM. Products carry no category field, but every one has a form and it's the axis a shopper scans by (the product-native analog of a condition's body-system). formFamily() buckets the ~26 raw label forms into 7 families; drawer-knowledge.css colours each via [data-form="\u2026"]{--form:\u2026}. 'other' is a neutral fallback that no product hits today.
+- GHOST NUMBER = essentials-supplied-of-90, essentialsSupplied() = essentialSlugsByProduct().get(id)?.length (the recommender's UNfiltered product\u2192essentials index, so trace minerals carried through a blend count, and kids products stay discoverable in the catalogue). 60 of 215 are TARGETED FORMULAS (supply none of the 90 \u2014 botanicals/adaptogens); they drop the ghost entirely and the foot reads "targeted formula", never a sad "0".
+- FOOT = "of 90 essentials \xB7 $wholesale \xB7 N servings" (wholesale is the featured price). Grid sorted most-comprehensive-first (productsByBreadth: breadth desc, name tiebreak; listProducts stays A\u2013Z for other readers). Section head "ALL 215 PRODUCTS \xB7 SORTED BY ESSENTIALS SUPPLIED".
+- Clicking a card still opens the existing renderProductDeep label panel; the data-search blob is preserved so product search still filters.
+
+CARD LAYOUT (Luneth refinements, each MEASURED not eyeballed):
+- name 97% width + 0.9rem to cut wrapping.
+- Title EXACTLY vertically centered in each card's TOTAL height: the chip and foot are position:absolute overlays (top-left / bottom), the name is the only in-flow child, centered by justify-content:center on a flex column with SYMMETRIC 28px top/bottom padding + min-height:120px. Result measured nameCenter==cardCenter for 1-, 2- and 3-line names, and it's robust to long names (the flow name grows the card and stays centered). This replaced an earlier margin-top:auto attempt that only centered BETWEEN chip and foot (8px high) and couldn't move the tallest cards at all.
+- Form dot nudged transform:translateY(-2px) (same pattern as .kd-ep-hero__cat i).
+- Ghost sizes tuned so names never cut the number: product ghost 3rem\u21922rem top:-2px\u21924px; condition ghost 3rem\u21922.5rem top:2px\u21924px.
+- Files: views/knowledge-products.ts (formFamily, essentialsSupplied, renderProductRow card, productsByBreadth, renderProductsTab grid), drawer-knowledge.css (.kd-products-grid + card + [data-form] palette + the condition ghost tweak), tools/render_probe_knowledge.js (count regex \u2192 "ALL N PRODUCTS").
+
+FIX 1 \u2014 removed the DEAD one_liner field. No view ever read it (0 .one_liner dot-access in the built bundle; the 599 bundle hits were the 2 schema defs + inlined data). Removed the one_liner() helper + basics_by_subject + cbk_for_ol + both output keys from eden/tools/entity_page_derive.py and both page schemas in core/schemas/entity-page.ts, regenerated entity-page-data.json. This closes the prior "auto one_liner mismatched" deferral (Osteoporosis had shown a fibrous-dysplasia definition); pages already rendered the derived conditionSynopsis.
+
+FIX 2 \u2014 glossary now matches apostrophe terms. views/glossify.ts had been scanning HTML-ESCAPED text, so a straight ' had already become &#39; and NO apostrophe term could ever gloss \u2014 the tell was 0 apostrophe terms in the 219-term glossary, even though the corpus is full of eponyms (Bell's Palsy, Meniere's, Wallach's Vertigo, Wallach's Fibrous Dysplasia). Fixed glossify to scan RAW text and escape per-segment (still XSS-safe). state/glossary.ts normKey/keyToPattern now fold/allow straight + both curly apostrophe forms. Added the glossary term "Wallach's Fibrous Dysplasia" (a faithful, digit-free descriptive definition \u2014 passes glossary_wellformed) with alias handling, plus 4 vitest cases. Zero regression: no existing term had an apostrophe, so the change is purely additive. All 18 corpus occurrences of "fibrous dysplasia" are the possessive form, and it's Wallach's own name for osteoporosis of the skull and spine (verified against IAIYH p.13 + the equivalence on p.14) \u2014 so the claim is faithful, not a fabrication.
+
+VERIFICATION: node tools/build.mjs OK \xB7 invariants 77/77 (0 new reds) \xB7 render_probe_knowledge PASS (215 cards, all clickable to detail, 0 page errors) \xB7 glossary vitest 7/7 (3 original + 4 new apostrophe cases) \xB7 headless screenshots + getBoundingClientRect measurements (nameCenter==cardCenter, dot \u22122px, eponym glosses in both straight and curly apostrophe forms) \xB7 Luneth visual sign-off at each chunk.
+
+DEFERRALS: Products DETAIL panel + Ask-Wallach wording remain (the last demo-to-live surfaces); mining still paused. Nothing sealed this session \u2014 no pillar (corpus/products/catalog, all *.golden.sha256) was touched; all changes are source code + one derived artifact + the hand-authored glossary store.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

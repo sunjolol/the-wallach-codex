@@ -124,7 +124,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const root = document.getElementById('drawer-knowledge-mount');
     const heads = root ? [...root.querySelectorAll('.kd-section-head')].map(e => e.textContent.trim()) : [];
     const head = heads.find(t => /PRODUCTS/.test(t)) || '';
-    const m = head.match(/PRODUCTS\s*·\s*(\d+)/);
+    const m = head.match(/ALL\s+(\d+)\s+PRODUCTS/) || head.match(/PRODUCTS\s*·\s*(\d+)/);
     const rows = root ? [...root.querySelectorAll('.kd-product-row__name')].map(e => e.textContent.trim()) : [];
     const clickable = root ? root.querySelectorAll('.kd-product-row[data-kd-product]').length : 0;
     return {

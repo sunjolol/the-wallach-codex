@@ -118,22 +118,6 @@ def build_data() -> dict:
         return [{"facet": f, "claim_ids": by_facet[f]}
                 for f in order if f in by_facet]
 
-    # ── one-liner: a search 'basics' answer_short, else the first tier-1 definition claim ──
-    basics_by_subject: dict = {}
-    for sc in si_claims:
-        if sc["facet"] == "basics":
-            basics_by_subject.setdefault(sc.get("subject"), sc)
-
-    def one_liner(slug, claims_by_kind):
-        sc = basics_by_subject.get(slug)
-        if sc and sc.get("answer_short"):
-            return sc["answer_short"]
-        for cid in claims_by_kind.get("definition", []):
-            txt = claims.get(cid, {}).get("claim_text")
-            if txt:
-                return txt
-        return None
-
     # ── co-occurrence graph over entity slugs (essentials + conditions) sharing a claim ──
     # This is the SERENDIPITY signal (violet "keep exploring" + related-conditions), and is
     # DELIBERATELY broad. It is NOT the pill relation — the therapeutic pills use maps() below.
@@ -280,7 +264,6 @@ def build_data() -> dict:
             "claim_count": ecorp.get("claim_count", 0),
             "books": ecorp.get("books_cited", []),
             "synonyms": si_ent.get("synonyms", []),
-            "one_liner": one_liner(slug, cbk),
             "record": [{"kind": k, "claim_ids": cbk[k]} for k in _ordered(cbk, KIND_PRIORITY)],
             "search": search_sections(slug, "essential"),
             "conditions": sorted(ess_conditions.get(slug, set())),   # directed pills (H1)
@@ -299,17 +282,12 @@ def build_data() -> dict:
     for slug in sorted(embed_cond.keys()):
         ccorp = embed_cond[slug]
         si_ent = si_entities.get(slug, {})
-        cbk_for_ol = {}
-        for cid in (c for role in ccorp.get("claims_by_role", {}).values() for c in role):
-            if claims.get(cid, {}).get("kind") == "definition":
-                cbk_for_ol.setdefault("definition", []).append(cid)
         conditions_out[slug] = {
             "type": "condition",
             "name": (catcond.get(slug, {}) or {}).get("display_name", slug),
             "claim_count": ccorp.get("claim_count", 0),
             "books": ccorp.get("books_cited", []),
             "synonyms": si_ent.get("synonyms", []),
-            "one_liner": one_liner(slug, cbk_for_ol),
             "protocol_claim_ids": protocol_claim_ids(slug),
             "restore": sorted(cond_essentials.get(slug, set())),     # directed pills (H1)
             "record": cond_record(ccorp),

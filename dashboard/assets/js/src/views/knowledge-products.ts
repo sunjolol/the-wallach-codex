@@ -77,11 +77,6 @@ function fmtNum(n: number): string {
   return String(Math.round(n * 100) / 100);
 }
 
-/** Count of quantified nutrient rows across a product's components (list meta). */
-function countNutrients(p: ProductDetail): number {
-  return p.components.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
-}
-
 // ─── Products tab (list ALL + deep-dive above when selected) ───────────────
 
 /**
@@ -117,22 +112,85 @@ function productSearchBlob(p: ProductDetail): string {
   return parts.join(' ');
 }
 
+/**
+ * Delivery-form family (bucketed from the ~26 raw label forms) — the Products tab's colour
+ * axis, the product-native analog of a condition's body-system. Returns a lowercase key the
+ * CSS maps to a colour via [data-form]; 'other' is the neutral fallback (no product hits it
+ * today). Reads the FIRST component's form; multi-part products take their primary form.
+ */
+function formFamily(p: ProductDetail): string {
+  const f = (p.components[0]?.form ?? '').toLowerCase();
+  if (f.includes('powder') || f === 'stick') {
+    return 'powder';
+  }
+  if (f.includes('tea')) {
+    return 'tea';
+  }
+  if (f.includes('topical') || f.includes('cream')) {
+    return 'topical';
+  }
+  if (f.includes('gummy') || f.includes('lozenge') || f.includes('chewable')) {
+    return 'chewable';
+  }
+  if (f.includes('tablet') || f.includes('caplet')) {
+    return 'tablet';
+  }
+  if (f.includes('capsule') || f.includes('softgel')) {
+    return 'capsule';
+  }
+  if (f.includes('liquid') || f.includes('spray') || f.includes('shot') || f.includes('syrup') || f.includes('drops')) {
+    return 'liquid';
+  }
+  return 'other';
+}
+
+/**
+ * How many of the 90 canonical essentials a product delivers — the card's ghost number.
+ * Reads the recommender's UNfiltered product→essentials index (the same source the search
+ * blob uses), so a trace mineral carried through a blend counts even when it never prints on
+ * the label. Zero = a targeted formula (a botanical/adaptogen outside the 90), shown as such.
+ */
+function essentialsSupplied(p: ProductDetail): number {
+  return essentialSlugsByProduct().get(p.product_id)?.length ?? 0;
+}
+
+/**
+ * One product card — the "ghost number" design shared with the Conditions tab (Luneth-approved
+ * 2026-07-22), adapted for products: the faded number is essentials-supplied (of 90) in the
+ * delivery-form colour, the chip is the FORM, the foot carries wholesale price + servings. A
+ * targeted formula (supplies none of the 90) drops the ghost and reads "targeted formula" so the
+ * grid never shows a sad "0". Click opens the full label panel (renderProductDeep).
+ */
 function renderProductRow(p: ProductDetail, selected: string | null): string {
   const cls = `kd-product-row${p.product_id === selected ? ' is-selected' : ''}`;
-  const n = countNutrients(p);
+  const fam = formFamily(p);
+  const supplied = essentialsSupplied(p);
   const price = (p.price != null && p.price.wholesale != null)
     ? `$${fmtMoney(p.price.wholesale)}`
     : (p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : '');
-  const meta = [`${n} NUTRIENT${n === 1 ? '' : 'S'}`, price].filter(s => s.length > 0).join(' · ');
+  const spc = p.components[0]?.servings_per_container;
+  const serv = (spc !== null && spc !== undefined) ? `${spc} servings` : '';
+  const lead = supplied > 0 ? '<b>of 90</b> essentials' : 'targeted formula';
+  const foot = [lead, price, serv].filter(s => s.length > 0).join(' · ');
+  const ghost = supplied > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${supplied}</div>` : '';
   return `
-    <div class="${cls}" data-kd-product="${escHTML(p.product_id)}" data-search="${escHTML(productSearchBlob(p))}" role="button" tabindex="0">
-      <div class="kd-product-row__icon">${escHTML(p.name.charAt(0).toUpperCase())}</div>
-      <div class="kd-product-row__body">
-        <h4 class="kd-product-row__name">${escHTML(p.name)}</h4>
-        <div class="kd-product-row__meta">${escHTML(meta)}</div>
-      </div>
-      <span class="kd-product-row__verdict kd-product-row__verdict--ok">VIEW</span>
+    <div class="${cls}" data-form="${fam}" data-kd-product="${escHTML(p.product_id)}" data-search="${escHTML(productSearchBlob(p))}" role="button" tabindex="0">
+      ${ghost}
+      <div class="kd-product-row__cat"><i></i>${escHTML(fam.toUpperCase())}</div>
+      <h4 class="kd-product-row__name">${escHTML(p.name)}</h4>
+      <div class="kd-product-row__foot">${foot}</div>
     </div>`;
+}
+
+/**
+ * Products-tab order: most-comprehensive first (essentials supplied desc), targeted formulas
+ * after, alphabetical within a tie — the coverage story leads, as the Conditions tab leads
+ * with most-written-about. Presentation-only; listProducts stays A–Z for other readers.
+ */
+function productsByBreadth(products: ProductDetail[]): ProductDetail[] {
+  return [...products].sort((a, b) =>
+    essentialsSupplied(b) - essentialsSupplied(a)
+    || a.name.localeCompare(b.name));
 }
 
 export function renderProductsTab(selectedProduct: string | null): string {
@@ -141,11 +199,11 @@ export function renderProductsTab(selectedProduct: string | null): string {
     return '<div class="kd-empty">— no products loaded —</div>';
   }
   const deepHTML = selectedProduct !== null ? renderProductDeep(selectedProduct) : '';
-  const rowsHTML = products.map(p => renderProductRow(p, selectedProduct)).join('');
+  const rowsHTML = productsByBreadth(products).map(p => renderProductRow(p, selectedProduct)).join('');
   return `
     ${deepHTML}
-    <div class="kd-section-head">PRODUCTS · ${products.length} · YOUNGEVITY</div>
-    ${rowsHTML}`;
+    <div class="kd-section-head">ALL ${products.length} PRODUCTS · SORTED BY ESSENTIALS SUPPLIED</div>
+    <div class="kd-products-grid">${rowsHTML}</div>`;
 }
 
 // ─── Product detail panel ──────────────────────────────────────────────────

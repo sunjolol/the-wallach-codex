@@ -25,3 +25,34 @@ describe('glossary matcher - separator insensitivity', () => {
     expect(glossaryDef('definitely not a glossary term at all')).toBeNull();
   });
 });
+
+describe('glossary matcher - apostrophe eponyms (Luneth 2026-07-22)', () => {
+  // Before this fix glossify scanned HTML-ESCAPED text, so a ' had already become
+  // &#39; and NO apostrophe term could ever gloss (Bell's Palsy, Meniere's, Wallach's
+  // Fibrous Dysplasia ...). glossify now scans raw text; the key widens ' to match
+  // either curly form too, so the same eponym resolves however the text writes it.
+  it('resolves the possessive eponym, straight or curly apostrophe, to one def', () => {
+    const straight = glossaryDef('Wallach\'s Fibrous Dysplasia');
+    const curly = glossaryDef('Wallach’s Fibrous Dysplasia');
+    expect(straight).not.toBeNull();
+    expect(curly).toBe(straight);
+  });
+
+  it('the built regex matches the eponym (straight apostrophe) in running text', () => {
+    const re = glossaryRegex();
+    expect(re).not.toBeNull();
+    const m = (re as RegExp).exec('reversal of Wallach\'s Fibrous Dysplasia');
+    expect(m).not.toBeNull();
+    expect((m as RegExpExecArray)[0].toLowerCase()).toBe('wallach\'s fibrous dysplasia');
+  });
+
+  it('the built regex matches the eponym with a curly apostrophe too', () => {
+    const re = glossaryRegex();
+    const m = (re as RegExp).exec('reversal of Wallach’s Fibrous Dysplasia');
+    expect(m).not.toBeNull();
+  });
+
+  it('leaves an existing non-apostrophe term working (regression guard)', () => {
+    expect(glossaryDef('osteoporosis')).not.toBeNull();
+  });
+});

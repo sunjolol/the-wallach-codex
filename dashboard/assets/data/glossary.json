@@ -1329,6 +1329,12 @@
       "aliases": [
         "Age Beater"
       ]
+    },
+    {
+      "term": "Wallach's Fibrous Dysplasia",
+      "plain": "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
+      "category": "medical",
+      "aliases": []
     }
   ]
 }

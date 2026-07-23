@@ -32,18 +32,21 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-/** Canonical form of a glossary key / matched surface form: lower-cased, with every
- *  whitespace-or-hyphen run collapsed to ONE space (Luneth 2026-07-22). Stored keys AND lookup
- *  keys pass through this, so "Age-Beater", "Age  Beater" and "age beater" all share one entry. */
+/** Canonical form of a glossary key / matched surface form: lower-cased, curly apostrophes
+ *  folded to a straight ', and every whitespace-or-hyphen run collapsed to ONE space (Luneth
+ *  2026-07-22). Stored keys AND lookup keys pass through this, so "Age-Beater", "Age  Beater"
+ *  and "age beater" — and both apostrophe forms of an eponym — all resolve to one entry. */
 function normKey(s: string): string {
-  return s.toLowerCase().replace(/[\s-]+/g, ' ').trim();
+  return s.toLowerCase().replace(/[‘’]/g, '\'').replace(/[\s-]+/g, ' ').trim();
 }
 
 /** A regex source for one (already normalized) key whose internal spaces match a space OR a
  *  hyphen, so a key stored as "age beater" also matches the text "Age-Beater". Each word is
- *  regex-escaped; a [\s-]+ bridge rejoins them. A single-word / symbol key is just its escape. */
+ *  regex-escaped; a [\s-]+ bridge rejoins them. A single-word / symbol key is just its escape.
+ *  A straight apostrophe in a word is widened to also match either curly form, so an eponym like
+ *  "Wallach's Fibrous Dysplasia" glosses whichever apostrophe the running text happens to use. */
 function keyToPattern(normalizedKey: string): string {
-  return normalizedKey.split(' ').map(escapeRegExp).join('[\\s\\-]+');
+  return normalizedKey.split(' ').map(w => escapeRegExp(w).replace(/'/g, '[\'’‘]')).join('[\\s\\-]+');
 }
 
 /** Build the match index once (bad/absent data → empty; drawer degrades). */

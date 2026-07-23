@@ -254,62 +254,110 @@
   padding: var(--ds-space-3) var(--ds-space-4);
 }
 
-/* ─── PRODUCTS · vault rows ──────────────────────────────────────────────── */
+/* ─── PRODUCTS · vault cards (ghost-number grid; form-colour coded) ──────────────────────────────────────────────── */
+#drawer-knowledge-mount .kd-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+  gap: var(--ds-space-2);
+  margin-top: var(--ds-space-3);
+}
+/* delivery-form colour — set per card via [data-form]; drives ghost + chip + hover/selected.
+   The product-native analog of the conditions' --cat body-system colour. */
+#drawer-knowledge-mount .kd-product-row[data-form="liquid"]   { --form: #3f8fa8; }
+#drawer-knowledge-mount .kd-product-row[data-form="capsule"]  { --form: #c08a3e; }
+#drawer-knowledge-mount .kd-product-row[data-form="powder"]   { --form: #5f8a4b; }
+#drawer-knowledge-mount .kd-product-row[data-form="tablet"]   { --form: #5a63a8; }
+#drawer-knowledge-mount .kd-product-row[data-form="chewable"] { --form: #a8517f; }
+#drawer-knowledge-mount .kd-product-row[data-form="tea"]      { --form: #9a7b3c; }
+#drawer-knowledge-mount .kd-product-row[data-form="topical"]  { --form: #6a6f77; }
+#drawer-knowledge-mount .kd-product-row[data-form="other"]    { --form: var(--ds-ink-soft); }
+/* Product card — the "ghost number" design shared with the Conditions tab: a big faded
+   essentials-supplied count in the delivery-form colour (--form) behind an Unbounded name +
+   a form chip. Targeted formulas render with no ghost (view omits it), staying calm. */
 #drawer-knowledge-mount .kd-product-row {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
   background: var(--ds-paper-light);
   border: 1px solid var(--ds-rule-soft);
-  border-left: 3px solid var(--ds-status-ok);
-  border-radius: var(--ds-radius-sm);
-  padding: var(--ds-space-3) var(--ds-space-4);
-  display: grid;
-  grid-template-columns: 36px 1fr auto;
-  gap: var(--ds-space-3);
-  align-items: center;
+  border-radius: var(--ds-radius-lg);
+  padding: 28px var(--ds-space-4);
   cursor: pointer;
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
-  margin-bottom: var(--ds-space-2);
 }
-#drawer-knowledge-mount .kd-product-row:hover { border-color: var(--ds-accent); box-shadow: 0 2px 8px -2px rgba(255, 126, 60, 0.15); }
-#drawer-knowledge-mount .kd-product-row__icon {
-  width: 36px; height: 36px;
-  background: linear-gradient(135deg, var(--ds-paper-darker) 0%, var(--ds-paper-deep) 100%);
-  border: 1px solid var(--ds-rule);
-  border-radius: var(--ds-radius-xs);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--ds-font-display-artifact);
-  font-size: var(--ds-text-md);
-  color: var(--ds-accent-deep);
+#drawer-knowledge-mount .kd-product-row:hover {
+  border-color: var(--form, var(--ds-accent));
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px -12px rgba(26, 22, 18, 0.4);
 }
-#drawer-knowledge-mount .kd-product-row__body { min-width: 0; }
-#drawer-knowledge-mount .kd-product-row__name {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-sm);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0 0 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+#drawer-knowledge-mount .kd-product-row:hover .kd-product-row__ghost {
+  color: color-mix(in srgb, var(--form, var(--ds-accent)) 34%, transparent);
 }
-#drawer-knowledge-mount .kd-product-row__meta {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-ink-faint);
+#drawer-knowledge-mount .kd-product-row.is-selected {
+  border-color: var(--form, var(--ds-accent));
+  box-shadow: 0 0 0 1px var(--form, var(--ds-accent)), 0 6px 16px -8px rgba(26, 22, 18, 0.3);
 }
-#drawer-knowledge-mount .kd-product-row__verdict {
+#drawer-knowledge-mount .kd-product-row__ghost {
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  font-family: var(--ds-font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: color-mix(in srgb, var(--form, var(--ds-accent)) 22%, transparent);
+  pointer-events: none;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-product-row__cat {
+  position: absolute;
+  top: var(--ds-space-3);
+  left: var(--ds-space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wide);
   text-transform: uppercase;
   font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--ds-radius-pill);
+  color: var(--form, var(--ds-ink-soft));
 }
-#drawer-knowledge-mount .kd-product-row__verdict--ok { color: var(--ds-status-ok); background: var(--ds-status-ok-soft); }
+#drawer-knowledge-mount .kd-product-row__cat i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--form, var(--ds-accent));
+  transform: translateY(-2px);
+}
+#drawer-knowledge-mount .kd-product-row__name {
+  position: relative;
+  font-family: var(--ds-font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ds-ink);
+  margin: 0;
+  line-height: 1.1;
+  max-width: 97%;
+}
+#drawer-knowledge-mount .kd-product-row__foot {
+  position: absolute;
+  left: var(--ds-space-4);
+  right: var(--ds-space-4);
+  bottom: var(--ds-space-3);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  color: var(--ds-ink-soft);
+}
+#drawer-knowledge-mount .kd-product-row__foot b { color: var(--ds-ink-medium); font-weight: 700; }
 
 /* ─── DOCTRINE · cards ───────────────────────────────────────────────────── */
 #drawer-knowledge-mount .kd-doctrine-card {
@@ -958,10 +1006,10 @@
 #drawer-knowledge-mount .kd-condition-row__ghost {
   position: absolute;
   right: 12px;
-  top: 2px;
+  top: 4px;
   font-family: var(--ds-font-display);
   font-weight: 800;
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 1;
   letter-spacing: -0.03em;
   color: color-mix(in srgb, var(--cat, var(--ds-accent)) 22%, transparent);
@@ -1179,11 +1227,6 @@
      Clicking a product row (or an essentials "FOUND IN YGY VAULT" chip) opens this
      full label panel: price band → per-component serving/directions/supplement-facts/
      blends/other-ingredients. Same visual language as the condition deep-dive. */
-#drawer-knowledge-mount .kd-product-row.is-selected {
-  border-color: var(--ds-accent);
-  border-left-color: var(--ds-accent);
-  box-shadow: 0 2px 10px -3px rgba(255, 126, 60, 0.22);
-}
 
 #drawer-knowledge-mount .kd-product-deep__price {
   display: flex;

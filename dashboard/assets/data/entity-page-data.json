@@ -29,7 +29,6 @@
       "synonyms": [
         "h2"
       ],
-      "one_liner": "The simplest atom -- one proton, one electron -- and the most abundant element in the universe (~93% of all atoms). As a gas it is diatomic (H2), colorless and highly flammable, burning with oxygen to make water; its name is Greek for 'water-maker.'",
       "record": [
         {
           "kind": "toxicity_sign",
@@ -127,7 +126,6 @@
         "climate change",
         "climate"
       ],
-      "one_liner": "Carbon is the element most essential for life on Earth - Wallach calls it the center of the 'organic' world. Because carbon atoms link into long chains that form the backbone (spine) of almost every biological molecule, virtually all of the body's building blocks are carbon-based: carbohydrates, fats, amino acids, vitamins and enzymes. DNA itself is one such long carbon-chain molecule.",
       "record": [
         {
           "kind": "mechanism",
@@ -167,7 +165,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach explains nitrogen is a structural atom in protein, nucleic acids (RNA and DNA), and a wide variety of organic molecules; dietary nitrogen, supplied as protein, furnishes the amino acids for building tissue protein and other metabolic functions.",
       "record": [
         {
           "kind": "deficiency_sign",
@@ -215,7 +212,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach explains oxygen is a structural atom of water and of all organic compounds of biological interest, and that gaseous oxygen is required for respiration by all organisms except anaerobes; a person can survive 30 days without food and 3 to 7 days without water, but only about four minutes without oxygen, making it the most critical of all elemental factors for sustaining human life.",
       "record": [
         {
           "kind": "protocol",
@@ -285,7 +281,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach rejects the medical advice to eat little or no salt — sodium is a craved necessity, evidenced by the salt block every rancher provides livestock and the snack-food industry that profits from the craving.",
       "record": [
         {
           "kind": "dose",
@@ -376,7 +371,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Magnesium as the 'ultimate source of all biological energy.' Magnesium is the metal atom found in the chlorophyll of every green plant, driving photosynthesis -- the process that stores the sun's energy as the chemical 'solar currency' feeding all plants, animals, and humans. Wallach calls magnesium, the source of the deep green of plants, the ultimate source of all biological energy.",
       "record": [
         {
           "kind": "dose",
@@ -606,7 +600,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach describes phosphorus as an extremely important essential mineral that nutritionists largely ignore because it is so widely available in food. It is a major structural mineral of bones and teeth and has more functions in the body than any other mineral — serving as a vital constituent of nucleic acids, activating enzymes, driving several steps of the ATP (adenosine triphosphate) energy cycle, and supporting red blood cell metabolism; B-complex vitamins act as coenzymes only when combined with phosphorus.",
       "record": [
         {
           "kind": "dose",
@@ -682,7 +675,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach explains that sulfur is an important structural atom in most proteins, present as the sulfur amino acids cystine, cysteine, and methionine and in small organic molecules; glutathione, a tripeptide containing cysteine, is essential to cellular reactions involving these sulfur amino acids in protein.",
       "record": [
         {
           "kind": "dose",
@@ -756,7 +748,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Chlorine (as chloride) is essential to every living species. Wallach says it powers electrochemical and catalytic functions, activates numerous enzymes, and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) — which is required to activate protein digestion by the enzyme pepsin, to absorb vitamin B12 (by activating intrinsic factor), and to absorb minerals. Ordinary salt (sodium chloride, NaCl) is the universal source of chloride ions for all living things.",
       "record": [
         {
           "kind": "dose",
@@ -806,7 +797,6 @@
         "potash",
         "kalium"
       ],
-      "one_liner": "A silver-white alkali metal so soft you can cut it with a knife - and is never found pure in nature; Davy first isolated it by electrolysis in 1807.",
       "record": [
         {
           "kind": "dose",
@@ -942,7 +932,6 @@
       "synonyms": [
         "ca"
       ],
-      "one_liner": "How much real (elemental) calcium a supplement delivers depends heavily on its form. Wallach's table for the metallic calcium in a 1,000mg tablet: calcium gluconate 90mg, calcium carbonate 400mg, calcium acetate 230mg, calcium citrate 210mg, calcium lactate 140mg - and cow's milk (1,000mg of fluid) just 10mg. (These are the milligrams of calcium present; how much you actually absorb is lower still - see his metallic-absorption note.)",
       "record": [
         {
           "kind": "dose",
@@ -1253,7 +1242,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Boron is one of the 60 minerals Wallach counts as essential - though mainstream science was slow to agree, accepting it as an essential nutrient for humans only in 1990 (it had been shown essential for growing chicks about a decade earlier). Its core job, per Wallach, is in bone metabolism: it helps the body use calcium and magnesium efficiently and keeps the endocrine glands - the hormone-producing ovaries, testes and adrenals - working properly.",
       "record": [
         {
           "kind": "dose",
@@ -1332,7 +1320,6 @@
         "cobalamin",
         "cyanocobalamine"
       ],
-      "one_liner": "Cobalt is essential to every form of life — from blue-green algae, bacteria and fungi to plants, insects, and all the vertebrates including humans. It works as an enzyme cofactor and activator, helps \"fix\" nitrogen during amino-acid production, and — most importantly — a single cobalt atom sits at the center of vitamin B12, which is itself a cofactor and activator (the cobamide coenzymes) for several essential enzymes.",
       "record": [
         {
           "kind": "dose",
@@ -1419,7 +1406,6 @@
       "synonyms": [
         "cr"
       ],
-      "one_liner": "Chromium is a small but metabolically busy trace mineral. Wallach says it activates the enzyme phosphoglucomutase and others, and — most importantly — it is the working core of glucose tolerance factor (GTF), the compound that lets insulin do its job of controlling blood sugar. GTF is a complex of chromium in its trivalent (chromium-III) form, dinicotinic acid (a niacin / vitamin-B3 derivative), and glutathione (the body's main built-in antioxidant). The whole body holds only about 1.5 mg of chromium, and because hair concentrates it roughly ten times higher than blood does, hair analysis gives a more accurate read on tissue stores than a blood test.",
       "record": [
         {
           "kind": "dose",
@@ -1643,7 +1629,6 @@
         "cu",
         "cuprum"
       ],
-      "one_liner": "A soft reddish metal - only 0.007% of Earth's crust. Its name is Latin 'cuprum' ('from Cyprus,' where Rome mined it), and it was one of humanity's first metals.",
       "record": [
         {
           "kind": "dose",
@@ -1868,7 +1853,6 @@
         "ge",
         "ge-132"
       ],
-      "one_liner": "A metalloid 'semiconductor' element predicted by Mendeleyev in 1871 and isolated in 1886 - 'doped' with a trace of arsenic or gallium, it makes transistors.",
       "record": [
         {
           "kind": "dose",
@@ -1991,7 +1975,6 @@
         "fe",
         "ferrum"
       ],
-      "one_liner": "Iron is the 4th most abundant element in Earth's crust — its ores opened the Iron Age (~1100 B.C.), and Earth's molten core is thought to be magnetized iron.",
       "record": [
         {
           "kind": "dose",
@@ -2137,7 +2120,6 @@
       "synonyms": [
         "iodide"
       ],
-      "one_liner": "Wallach records that iodine is an essential element for red and brown algae and for all vertebrates; in land animals it concentrates in the thyroid gland and hair.",
       "record": [
         {
           "kind": "dose",
@@ -2268,7 +2250,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states manganese is essential to all known living organisms; it activates numerous enzyme systems (including glucose metabolism, energy production, and superoxide dismutase) and is a major constituent of several metalloenzymes, hormones, and proteins. Total body content in humans is only 10 to 20 mg.",
       "record": [
         {
           "kind": "dose",
@@ -2379,7 +2360,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states molybdenum is essential to all organisms as a constituent of numerous metalloenzymes.",
       "record": [
         {
           "kind": "dose",
@@ -2434,7 +2414,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -2703,7 +2682,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -2747,7 +2725,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "deficiency_sign",
@@ -2874,7 +2851,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -2998,7 +2974,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -3280,7 +3255,6 @@
         "colloidal silver",
         "silver sulfadiazine"
       ],
-      "one_liner": "Wallach notes silver's clinical pedigree: silver sulfadiazine (Silvadene) — discovered by Dr. Charles Fox at Columbia University — is used in 70 percent of America's burn centers and has been used to treat syphilis, cholera and malaria; it also stops the herpes virus behind cold sores and fever blisters. Earlier, colloidal silver was documented in the British Medical Journal and Lancet (1917–1918) for septic conditions, inflammation and wound healing.",
       "record": [
         {
           "kind": "dose",
@@ -3352,7 +3326,6 @@
         "al",
         "aluminium"
       ],
-      "one_liner": null,
       "record": [
         {
           "kind": "deficiency_sign",
@@ -3490,7 +3463,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Arsenic is an essential nutrient in Wallach's framework, determined to be one in 1947 - though he notes some soil regions in Argentina and New Zealand carry toxic levels of it. He records that arsenic normally appears in human female blood at 0.64 ppm, rising to 0.93 ppm during menstruation and 2.20 ppm during months five and six of pregnancy; that minute traces stimulate the production of red blood cells; that at 90 to 120 ppm it promotes and enhances the growth rate of chicks, and that arsenic likewise speeds the growth and metamorphosis of tadpoles; and that arsenic combined with the B-vitamin choline prevents 100% of perosis (\"slipped tendon\") in poultry.",
       "record": [
         {
           "kind": "deficiency_sign",
@@ -3630,7 +3602,6 @@
         "au",
         "aurum"
       ],
-      "one_liner": null,
       "record": [
         {
           "kind": "protocol",
@@ -3771,7 +3742,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Barium is one of the 60 minerals Wallach counts as essential (recognized as essential for mammals in 1949). To most people, though, barium is familiar from medicine: because barium sulfate is a very dense salt that blocks X-rays, radiologists have a patient drink it (a 'barium swallow') or receive it as an enema so the hollow organs of the digestive tract show up clearly, outlined in white, on the film.",
       "record": [
         {
           "kind": "mechanism",
@@ -3890,7 +3860,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Beryllium is on Wallach's list of essential minerals, but it is one of the thin ones - in this book he assigns it no specific positive role in the body, offering mostly geology and history (it heads the 'alkaline-earth' metal family, alongside calcium and magnesium). What he does flag is a hazard: breathing beryllium-oxide dust, a mining and industrial contaminant, can cause berylliosis, a painful and sometimes fatal lung disease.",
       "record": [
         {
           "kind": "toxicity_sign",
@@ -4009,7 +3978,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Bromine is a canon essential mineral in Wallach's framework and a halogen - the same chemical family as iodine. He says it works in the body in its active form as brominated amino acids, and that there is strong evidence for its essentiality in both mammals and humans.",
       "record": [
         {
           "kind": "mechanism",
@@ -4126,7 +4094,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -4239,7 +4206,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Cesium is an alkali (alkaline) metal, so chemically it behaves much like sodium, potassium and rubidium. Wallach describes cesium and potassium forming a 'solute complex' inside the cell that takes part in ion antagonism (the balancing push-pull between minerals), osmosis, regulating what crosses the cell membrane (permeability), and keeping the cell's interior in its proper gel-like 'colloidal' state. Because the two minerals trade places, taking extra potassium speeds up how fast the body excretes and loses cesium.",
       "record": [
         {
           "kind": "protocol",
@@ -4369,7 +4335,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Epigenetics, Wallach's entry for dysprosium -- a rare-earth metal -- covers only its natural distribution (parts-per-million across igneous rocks, shale, sandstone and limestone, with animal concentrations highest in bone) and its discovery history; he assigns it no specific human deficiency disease or nutritional function here. Dysprosium was named in 1886 by the French chemist Paul Emile Lecoq de Boisbaudran from the Greek 'dysprositos', meaning 'hard to get', and is never found free in nature.",
       "record": [
         {
           "kind": "definition",
@@ -4480,7 +4445,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": "Wallach's Epigenetics entry for erbium -- a rare-earth metal -- records only its natural distribution (parts-per-million in rocks, plants and animals, concentrating in bone) and its discovery, plus that a large variety of medical applications in dermatology and dentistry use erbium; he assigns it no specific human nutritional deficiency or function. Erbium was discovered in 1843 by Carl Gustaf Mosander, who split 'yttria' from the mineral gadolinite into three fractions -- yttria, erbia and terbia -- and its oxide has a distinctive pink color.",
       "record": [
         {
           "kind": "definition",
@@ -4592,7 +4556,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -4714,7 +4677,6 @@
         "ga",
         "gallium-67"
       ],
-      "one_liner": "A soft, aluminum-like metal so low-melting it liquefies from your body heat, yet has the widest liquid range of any metal; named for Gallia (the Latin name for France).",
       "record": [
         {
           "kind": "protocol",
@@ -4863,7 +4825,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach's Epigenetics entry for gadolinium (the book spells it 'Gadolium') -- a rare-earth mineral -- records only its natural distribution across igneous rocks, shale, sandstone, limestone, plants and animals, and the observation that land animals accumulate it in bone and liver very quickly after absorption; he assigns it no specific human deficiency disease or nutritional function.",
       "record": [
         {
           "kind": "definition",
@@ -4975,7 +4936,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Epigenetics, Wallach's entry for hafnium -- a trace metal -- gives only its natural distribution: its concentration in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, soil, and marine and land plants and animals. He assigns it no specific human deficiency disease or nutritional function here.",
       "record": [
         {
           "kind": "definition",
@@ -5087,7 +5047,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Epigenetics, Wallach's entry for holmium -- a rare-earth metal -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably concentrated in hickory, Carya species), and marine and land animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here.",
       "record": [
         {
           "kind": "definition",
@@ -5200,7 +5159,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -5321,7 +5279,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
       "record": [
         {
           "kind": "dose",
@@ -5514,7 +5471,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": "In Epigenetics, Wallach's entry for lutetium (spelled 'Lutecium' in the book) -- a rare-earth element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, land plants (notably hickory, Carya species) and animals, where it appears in bone. He assigns it no specific human deficiency disease or nutritional function here.",
       "record": [
         {
           "kind": "definition",
@@ -5625,7 +5581,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Epigenetics, Wallach's entry for niobium -- a canon trace element -- gives only its natural distribution in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, land plants and marine animals. He assigns it no deficiency disease or nutritional function in this entry.",
       "record": [
         {
           "kind": "definition",
@@ -5737,7 +5692,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -5849,7 +5803,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "deficiency_sign",
@@ -5983,7 +5936,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -6093,7 +6045,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -6203,7 +6154,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Rare Earths: Forbidden Cures, Wallach catalogs rhenium -- a trace element -- in his periodic-table survey. His entry records its natural distribution -- 0.005 parts-per-million in igneous rocks, 0.014 ppm in marine plants, and 0.0005 to 0.006 ppm in marine animals -- and notes that land animals accumulate rhenium in the thyroid tissue. He records no specific deficiency disease here.",
       "record": [
         {
           "kind": "definition",
@@ -6313,7 +6263,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Rare Earths: Forbidden Cures, Wallach catalogs scandium -- a trace element -- in his periodic-table survey. His entry records its natural distribution (22 parts-per-million in igneous rock down to trace levels in sea water) and notes that in land animals it concentrates in the heart and bone.",
       "record": [
         {
           "kind": "definition",
@@ -6423,7 +6372,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -6535,7 +6483,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -6681,7 +6628,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Rare Earths: Forbidden Cures, Wallach catalogs tantalum -- a trace element -- in his periodic-table survey. His entry records its natural distribution (2 parts-per-million in igneous rocks down to trace levels) and notes that marine animals accumulate tantalum up to 410 parts-per-million.",
       "record": [
         {
           "kind": "definition",
@@ -6791,7 +6737,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Rare Earths: Forbidden Cures, Wallach catalogs terbium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 0.9 parts-per-million in igneous rock down to trace levels, 0.0015 in land plants, and 0.0004 parts-per-million in land animals, accumulating in bone.",
       "record": [
         {
           "kind": "definition",
@@ -6901,7 +6846,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Rare Earths: Forbidden Cures, Wallach catalogs titanium -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 5,700 parts-per-million in igneous rocks, 5,000 in soils, down to 0.001 parts-per-million in sea water, accumulating in plankton (12 to 80 parts-per-million in marine plants) and 0.2 parts-per-million in land animals. He records no specific deficiency disease here.",
       "record": [
         {
           "kind": "definition",
@@ -7011,7 +6955,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -7121,7 +7064,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -7232,7 +7174,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -7342,7 +7283,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "In Rare Earths: Forbidden Cures, Wallach catalogs zirconium (the book's optical-character-recognition renders it 'ZY') -- a trace element -- in his periodic-table survey. His entry records only its natural distribution: 165 parts-per-million in igneous rocks, 220 in sandstone, 300 in soils, down to 0.000022 parts-per-million in sea water, and 0.3 parts-per-million in land animals. He records no specific deficiency disease here.",
       "record": [
         {
           "kind": "definition",
@@ -7456,7 +7396,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -7666,7 +7605,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -7752,7 +7690,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -7830,7 +7767,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -7940,7 +7876,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -8016,7 +7951,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -8171,7 +8105,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -8278,7 +8211,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach calls cobalt's essentiality unusual: what the body requires is not cobalt on its own but a cobalt COMPLEX — the molecule cyanocobalamine, better known as vitamin B12. A requirement for pure cobalt, he says, is found only in some bacteria and algae. The need for B12 cobalt, he notes, is thought by some to represent a symbiosis: microbes build B12 out of elemental cobalt, and vertebrates — us — require the finished B12.",
       "record": [
         {
           "kind": "dose",
@@ -8414,7 +8346,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -8622,7 +8553,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen.",
       "record": [
         {
           "kind": "dose",
@@ -8728,7 +8658,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -8930,7 +8859,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -8998,7 +8926,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -9073,7 +9000,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -9154,7 +9080,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -9217,7 +9142,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "dose",
@@ -9302,7 +9226,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "record": [
         {
           "kind": "protocol",
@@ -9363,7 +9286,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9424,7 +9346,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "protocol",
@@ -9468,7 +9389,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -9495,7 +9415,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "protocol",
@@ -9538,7 +9457,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9592,7 +9510,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9649,7 +9566,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "protocol",
@@ -9706,7 +9622,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "mechanism",
@@ -9734,7 +9649,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "deficiency_sign",
@@ -9794,7 +9708,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "record": [
         {
           "kind": "protocol",
@@ -9853,7 +9766,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "record": [
         {
           "kind": "protocol",
@@ -9900,7 +9812,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
       "record": [
         {
           "kind": "dose",
@@ -10132,7 +10043,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "The essential fatty acids are linoleic, linolenic, and arachidonic acids; 3% of total daily calorie intake should come from EFAs (linoleic and linolenic are strictly essential).",
       "record": [
         {
           "kind": "dose",
@@ -10209,7 +10119,6 @@
       "claim_count": 0,
       "books": [],
       "synonyms": [],
-      "one_liner": null,
       "record": [],
       "search": [],
       "conditions": [],
@@ -10226,7 +10135,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000118"
       ],
@@ -10255,7 +10163,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000119"
       ],
@@ -10284,7 +10191,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000120"
       ],
@@ -10317,7 +10223,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000121"
       ],
@@ -10343,7 +10248,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000095",
         "WAL-CLM-LETS-000122"
@@ -10390,7 +10294,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -10426,7 +10329,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000123"
       ],
@@ -10490,7 +10392,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "zinc"
@@ -10533,7 +10434,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "sodium"
@@ -10572,7 +10472,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -10633,7 +10532,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000124"
       ],
@@ -10664,7 +10562,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -10708,7 +10605,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "sodium",
@@ -10754,7 +10650,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000126"
       ],
@@ -10791,7 +10686,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000385"
       ],
@@ -10817,7 +10711,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
@@ -10873,7 +10766,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -10907,7 +10799,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000128"
       ],
@@ -10963,7 +10854,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000131"
       ],
@@ -11046,7 +10936,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000371"
       ],
@@ -11114,7 +11003,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000016",
         "WAL-CLM-LETS-000130",
@@ -11180,7 +11068,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000132"
       ],
@@ -11209,7 +11096,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000134",
         "WAL-CLM-LETS-000357"
@@ -11262,7 +11148,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000136"
       ],
@@ -11287,7 +11172,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000135"
       ],
@@ -11317,7 +11201,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000137"
       ],
@@ -11434,7 +11317,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000359"
       ],
@@ -11480,7 +11362,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper",
@@ -11557,7 +11438,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000076",
         "WAL-CLM-LETS-000139"
@@ -11600,7 +11480,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "iron",
@@ -11647,7 +11526,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -11694,7 +11572,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000140"
       ],
@@ -11791,7 +11668,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000140"
       ],
@@ -11823,7 +11699,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000141"
       ],
@@ -11885,7 +11760,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-LETS-000142"
@@ -11952,7 +11826,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-LETS-000143"
@@ -11993,7 +11866,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-LETS-000144"
@@ -12028,7 +11900,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000145",
         "WAL-CLM-RARE-000202"
@@ -12115,7 +11986,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000051",
         "WAL-CLM-LETS-000146",
@@ -12264,7 +12134,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000147",
         "WAL-CLM-RARE-000202"
@@ -12337,7 +12206,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -12401,7 +12269,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000149"
       ],
@@ -12444,7 +12311,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000147"
       ],
@@ -12480,7 +12346,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000148"
       ],
@@ -12517,7 +12382,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -12569,7 +12433,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000151"
       ],
@@ -12635,7 +12498,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000150"
       ],
@@ -12675,7 +12537,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000152"
       ],
@@ -12727,7 +12588,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000153"
       ],
@@ -12756,7 +12616,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -12785,7 +12644,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000154"
       ],
@@ -12818,7 +12676,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000155",
         "WAL-CLM-LETS-000266"
@@ -12874,7 +12731,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000156"
       ],
@@ -12904,7 +12760,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000086",
         "WAL-CLM-LETS-000158",
@@ -12983,7 +12838,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-LETS-000157"
@@ -13042,7 +12896,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b1"
@@ -13089,7 +12942,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000159"
       ],
@@ -13171,7 +13023,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000160",
         "WAL-CLM-LETS-000359",
@@ -13275,7 +13126,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000161"
       ],
@@ -13315,7 +13165,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000162"
       ],
@@ -13341,7 +13190,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000163"
       ],
@@ -13386,7 +13234,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000164"
       ],
@@ -13443,7 +13290,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "biotin"
@@ -13489,7 +13335,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -13551,7 +13396,6 @@
         "dddl-3e-2011"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-a"
@@ -13584,7 +13428,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000165"
       ],
@@ -13629,7 +13472,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000166"
       ],
@@ -13662,7 +13504,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000167"
       ],
@@ -13709,7 +13550,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000168"
       ],
@@ -13750,7 +13590,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000168"
       ],
@@ -13819,7 +13658,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "gallium"
@@ -13871,7 +13709,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -13921,7 +13758,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000169"
       ],
@@ -13955,7 +13791,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000170"
       ],
@@ -13986,7 +13821,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -14029,7 +13863,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000171",
         "WAL-CLM-LETS-000276"
@@ -14071,7 +13904,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000172"
       ],
@@ -14127,7 +13959,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000173"
       ],
@@ -14181,7 +14012,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000174"
       ],
@@ -14214,7 +14044,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "zinc"
@@ -14256,7 +14085,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000175"
       ],
@@ -14302,7 +14130,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000176"
       ],
@@ -14341,7 +14168,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "cobalt"
@@ -14374,7 +14200,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -14427,7 +14252,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000018",
         "WAL-CLM-DDDL-000056",
@@ -14598,7 +14422,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000450"
@@ -14651,7 +14474,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-LETS-000202"
@@ -14710,7 +14532,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -14739,7 +14560,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -14764,7 +14584,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000203"
       ],
@@ -14806,7 +14625,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "potassium"
@@ -14841,7 +14659,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000204"
       ],
@@ -14927,7 +14744,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000076",
         "WAL-CLM-LETS-000295"
@@ -14992,7 +14808,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000205",
         "WAL-CLM-LETS-000383"
@@ -15071,7 +14886,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000207"
       ],
@@ -15151,7 +14965,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000208"
       ],
@@ -15179,7 +14992,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000209"
       ],
@@ -15243,7 +15055,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -15290,7 +15101,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper",
@@ -15354,7 +15164,6 @@
         "dddl-3e-2011"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -15379,7 +15188,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000212"
       ],
@@ -15410,7 +15218,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000213"
       ],
@@ -15442,7 +15249,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000214"
       ],
@@ -15493,7 +15299,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000215"
       ],
@@ -15525,7 +15330,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000216"
       ],
@@ -15550,7 +15354,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000217"
       ],
@@ -15576,7 +15379,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "manganese"
@@ -15621,7 +15423,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "manganese"
@@ -15665,7 +15466,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000220"
       ],
@@ -15702,7 +15502,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000272"
       ],
@@ -15740,7 +15539,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000221"
       ],
@@ -15778,7 +15576,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -15807,7 +15604,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000202"
       ],
@@ -15849,7 +15645,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "aluminum"
@@ -15892,7 +15687,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "zinc"
@@ -15931,7 +15725,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b9",
@@ -15972,7 +15765,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000224"
       ],
@@ -16003,7 +15795,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000299"
       ],
@@ -16041,7 +15832,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000225"
       ],
@@ -16074,7 +15864,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000226"
       ],
@@ -16120,7 +15909,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000227"
       ],
@@ -16165,7 +15953,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "sulfur"
@@ -16204,7 +15991,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-IMMORT-000096",
@@ -16260,7 +16046,6 @@
         "dddl-3e-2011"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000094"
       ],
@@ -16311,7 +16096,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -16356,7 +16140,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper",
@@ -16403,7 +16186,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000228"
       ],
@@ -16431,7 +16213,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000229"
       ],
@@ -16493,7 +16274,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000230"
       ],
@@ -16547,7 +16327,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000231"
       ],
@@ -16574,7 +16353,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000233",
         "WAL-CLM-LETS-000277"
@@ -16642,7 +16420,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000054",
         "WAL-CLM-LETS-000234"
@@ -16675,7 +16452,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-a"
@@ -16723,7 +16499,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -16776,7 +16551,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000235"
       ],
@@ -16829,7 +16603,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000055",
         "WAL-CLM-LETS-000237"
@@ -16867,7 +16640,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "iodine"
@@ -16901,7 +16673,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -16947,7 +16718,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "copper",
@@ -17010,7 +16780,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000238"
       ],
@@ -17067,7 +16836,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000239"
       ],
@@ -17115,7 +16883,6 @@
         "cf",
         "mucoviscidosis"
       ],
-      "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000240"
       ],
@@ -17191,7 +16958,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-IMMORT-000153",
         "WAL-CLM-LETS-000241",
@@ -17227,7 +16993,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000242",
         "WAL-CLM-LETS-000430"
@@ -17277,7 +17042,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000294"
       ],
@@ -17338,7 +17102,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -17381,7 +17144,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -17432,7 +17194,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach frames dementia not as a single disease but as a minimum of four distinct nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's disease -- each with its own deficiency basis and nutritional-therapy protocol; an individual may have some degree of two, three, or all four at the same time. In Wallach's words: \"Dementia manifests itself as a minimum of four different diseases. Sometimes, individuals will have some degree of two, three, or all four of the classic dementias at the same time.\"",
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000013",
         "WAL-CLM-EPIGEN-000016",
@@ -17529,7 +17290,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "cobalt"
@@ -17561,7 +17321,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000177"
       ],
@@ -17591,7 +17350,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -17627,7 +17385,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000388"
@@ -17772,7 +17529,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000237",
         "WAL-CLM-LETS-000245",
@@ -17873,7 +17629,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -17925,7 +17680,6 @@
         "adult-onset diabetes",
         "blood sugar"
       ],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000049",
@@ -18082,7 +17836,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000247"
       ],
@@ -18118,7 +17871,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000248"
       ],
@@ -18190,7 +17942,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -18214,7 +17965,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000125"
       ],
@@ -18269,7 +18019,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000251"
       ],
@@ -18315,7 +18064,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -18366,7 +18114,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000368",
         "WAL-CLM-RARE-000045"
@@ -18426,7 +18173,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000253"
       ],
@@ -18451,7 +18197,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000363"
       ],
@@ -18480,7 +18225,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000254"
       ],
@@ -18517,7 +18261,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000255"
       ],
@@ -18546,7 +18289,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000256"
       ],
@@ -18590,7 +18332,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000257"
       ],
@@ -18629,7 +18370,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000258",
         "WAL-CLM-LETS-000357"
@@ -18677,7 +18417,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000259",
         "WAL-CLM-LETS-000321"
@@ -18718,7 +18457,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "iron"
@@ -18760,7 +18498,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000260",
         "WAL-CLM-LETS-000392"
@@ -18794,7 +18531,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000261"
       ],
@@ -18840,7 +18576,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000407"
       ],
@@ -18878,7 +18613,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000148",
         "WAL-CLM-LETS-000245"
@@ -18959,7 +18693,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "nitrogen",
@@ -19013,7 +18746,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000264"
       ],
@@ -19038,7 +18770,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000202"
       ],
@@ -19080,7 +18811,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -19107,7 +18837,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000266"
       ],
@@ -19141,7 +18870,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -19186,7 +18914,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000233",
         "WAL-CLM-LETS-000267"
@@ -19236,7 +18963,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -19272,7 +18998,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000315"
       ],
@@ -19308,7 +19033,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -19349,7 +19073,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000268"
       ],
@@ -19375,7 +19098,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -19426,7 +19148,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000269"
       ],
@@ -19480,7 +19201,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000270"
       ],
@@ -19546,7 +19266,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "biotin",
@@ -19599,7 +19318,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000274"
       ],
@@ -19626,7 +19344,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000169",
         "WAL-CLM-LETS-000275"
@@ -19686,7 +19403,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b1",
@@ -19738,7 +19454,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000271",
         "WAL-CLM-LETS-000278"
@@ -19765,7 +19480,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000280"
       ],
@@ -19818,7 +19532,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000281"
       ],
@@ -19877,7 +19590,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000282"
       ],
@@ -19914,7 +19626,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000283"
       ],
@@ -19976,7 +19687,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000202"
       ],
@@ -20018,7 +19728,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -20048,7 +19757,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000284"
       ],
@@ -20105,7 +19813,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "chromium"
@@ -20136,7 +19843,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000398"
@@ -20191,7 +19897,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000286"
       ],
@@ -20245,7 +19950,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper",
@@ -20295,7 +19999,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000287"
       ],
@@ -20391,7 +20094,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000288"
       ],
@@ -20432,7 +20134,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -20463,7 +20164,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -20506,7 +20206,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000289"
       ],
@@ -20543,7 +20242,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000291"
       ],
@@ -20576,7 +20274,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "iodine"
@@ -20614,7 +20311,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000292"
       ],
@@ -20646,7 +20342,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000293"
       ],
@@ -20699,7 +20394,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000317"
@@ -20763,7 +20457,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "zinc"
@@ -20802,7 +20495,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -20844,7 +20536,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000296"
       ],
@@ -20869,7 +20560,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "sodium"
@@ -20897,7 +20587,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000361",
         "WAL-CLM-LETS-000449"
@@ -20943,7 +20632,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -20986,7 +20674,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -21032,7 +20719,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000297"
       ],
@@ -21089,7 +20775,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000298"
       ],
@@ -21131,7 +20816,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -21176,7 +20860,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000299"
       ],
@@ -21214,7 +20897,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000301"
       ],
@@ -21239,7 +20921,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000302"
       ],
@@ -21267,7 +20948,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000219"
       ],
@@ -21352,7 +21032,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000457"
       ],
@@ -21415,7 +21094,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -21459,7 +21137,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000303"
       ],
@@ -21489,7 +21166,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "choline"
@@ -21530,7 +21206,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -21560,7 +21235,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000304"
       ],
@@ -21588,7 +21262,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000257",
         "WAL-CLM-LETS-000305"
@@ -21667,7 +21340,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -21718,7 +21390,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -21772,7 +21443,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -21825,7 +21495,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000305",
         "WAL-CLM-LETS-000388"
@@ -21876,7 +21545,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -21928,7 +21596,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000306"
       ],
@@ -22009,7 +21676,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -22061,7 +21727,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -22098,7 +21763,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000388"
@@ -22183,7 +21847,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "zinc"
@@ -22220,7 +21883,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "potassium"
@@ -22251,7 +21913,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -22276,7 +21937,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000308"
       ],
@@ -22335,7 +21995,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000218"
       ],
@@ -22364,7 +22023,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000103",
         "WAL-CLM-LETS-000309"
@@ -22435,7 +22093,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000310"
       ],
@@ -22471,7 +22128,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-a"
@@ -22517,7 +22173,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000311"
       ],
@@ -22587,7 +22242,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000314"
       ],
@@ -22620,7 +22274,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000315"
       ],
@@ -22671,7 +22324,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000316"
       ],
@@ -22706,7 +22358,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000321"
       ],
@@ -22744,7 +22395,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000317"
       ],
@@ -22784,7 +22434,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000318"
       ],
@@ -22823,7 +22472,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000070",
         "WAL-CLM-LETS-000273",
@@ -22921,7 +22569,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000320"
       ],
@@ -22977,7 +22624,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000279",
         "WAL-CLM-RARE-000315"
@@ -23031,7 +22677,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000075",
         "WAL-CLM-LETS-000322"
@@ -23114,7 +22759,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000222"
       ],
@@ -23152,7 +22796,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000323"
       ],
@@ -23201,7 +22844,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-e"
@@ -23245,7 +22887,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000324"
       ],
@@ -23281,7 +22922,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000325"
       ],
@@ -23330,7 +22970,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000326"
       ],
@@ -23385,7 +23024,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach maintains that dozens of human \"genetic\" diseases can in fact be prevented — and in early stages reversed or \"cured\" — with minerals, naming cystic fibrosis, muscular dystrophy and Kawasaki Disease as prime examples.",
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000007"
       ],
@@ -23446,7 +23084,6 @@
         "dddl-3e-2011"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-a"
@@ -23479,7 +23116,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000328"
       ],
@@ -23531,7 +23167,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000329",
         "WAL-CLM-LETS-000431"
@@ -23566,7 +23201,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000330"
       ],
@@ -23595,7 +23229,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000373",
         "WAL-CLM-RARE-000048"
@@ -23661,7 +23294,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000331"
       ],
@@ -23693,7 +23325,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000331"
       ],
@@ -23725,7 +23356,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000332"
       ],
@@ -23794,7 +23424,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000088",
         "WAL-CLM-LETS-000161",
@@ -23863,7 +23492,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000014",
         "WAL-CLM-LETS-000333",
@@ -23925,7 +23553,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000334"
       ],
@@ -23971,7 +23598,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -24020,7 +23646,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000335",
         "WAL-CLM-LETS-000406"
@@ -24047,7 +23672,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000337"
       ],
@@ -24077,7 +23701,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000337"
       ],
@@ -24117,7 +23740,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000303",
         "WAL-CLM-LETS-000338"
@@ -24149,7 +23771,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000340",
         "WAL-CLM-RARE-000214"
@@ -24202,7 +23823,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
@@ -24280,7 +23900,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -24323,7 +23942,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000341"
       ],
@@ -24348,7 +23966,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000343"
       ],
@@ -24378,7 +23995,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000344"
       ],
@@ -24424,7 +24040,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -24458,7 +24073,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000345"
       ],
@@ -24483,7 +24097,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000346"
       ],
@@ -24514,7 +24127,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -24567,7 +24179,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000348"
       ],
@@ -24647,7 +24258,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000348"
@@ -24752,7 +24362,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -24802,7 +24411,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -24852,7 +24460,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable for women and can flatten a man's sex drive.",
       "protocol_claim_ids": [],
       "restore": [
         "manganese"
@@ -24902,7 +24509,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-IMMORT-000096"
       ],
@@ -24946,7 +24552,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000350"
       ],
@@ -25005,7 +24610,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000351"
       ],
@@ -25031,7 +24635,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -25072,7 +24675,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -25124,7 +24726,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-e",
@@ -25187,7 +24788,6 @@
         "dddl-3e-2011"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "tin"
@@ -25214,7 +24814,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Wallach defines malnutrition as occurring either as an overt nutritional deficiency, secondary to extended use of medications that interfere with nutrient absorption, or as malabsorption from celiac disease or low stomach acid (hypochlorhydria). He argues conventional doctors think of malnutrition only as protein/calorie deprivation and miss macro- and micro-nutrient deficiencies (singly or in combination, especially early), and miss that celiac changes in the small-intestine lining arise from subclinical allergies to wheat, cow's-milk albumen and soy (and rye, barley, beef, eggs). In his framework many degenerative diseases are really malabsorption: diabetes and hypoglycemia as chromium/vanadium deficiencies, cystic fibrosis as a selenium and essential-fatty-acid deficiency, arthritis as a calcium deficiency worsened by excess dietary phosphorus, and cancer as a depleted immune system run out of repair nutrients. He concludes malnutrition from malabsorption is the common denominator of almost all degenerative disease, and that liquid plant-derived colloidal minerals are the most efficient way to get minerals into malnourished people.",
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -25243,7 +24842,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000353"
       ],
@@ -25268,7 +24866,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000342"
       ],
@@ -25312,7 +24909,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000355"
       ],
@@ -25338,7 +24934,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000356"
       ],
@@ -25400,7 +24995,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -25449,7 +25043,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000358"
       ],
@@ -25474,7 +25067,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000359"
       ],
@@ -25517,7 +25109,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Menkes' Kinky Hair Syndrome is the genetic disorder Wallach ties most directly to copper. He says it is thought to be a sex-linked recessive genetic defect of copper absorption. Affected infants show stunted growth, defective keratin in the hair (the 'kinky' hair), loss of hair pigment, low body temperature (low thyroid function, anemia), degeneration and fractures of the aortic elastin (aneurysms), arthritis in the growth plates of the long bones, and progressive mental deterioration — the last because the brain is left totally devoid of cytochrome oxidase, an essential copper-dependent enzyme. Because of the copper absorption problem, Wallach says injections of copper and liver extracts plus a diet program designed for celiac patients will be useful for these children.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000360"
       ],
@@ -25555,7 +25146,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Is cholesterol bad for you? Wallach's answer is emphatically no - it is essential. It is a structural part of every cell membrane and of the myelin that insulates the brain and spinal cord, and it is the raw material the body uses to make vitamin D, bile acids (which digest fat), the adrenal stress hormones, and the sex hormones estrogen, progesterone and testosterone. Because of that hormone role, he warns that a cholesterol deficiency can make menopause miserable for women and can flatten a man's sex drive.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000092",
         "WAL-CLM-LETS-000223",
@@ -25619,7 +25209,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000357"
       ],
@@ -25659,7 +25248,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -25692,7 +25280,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000361"
       ],
@@ -25757,7 +25344,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000364"
       ],
@@ -25813,7 +25399,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -25852,7 +25437,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000365"
       ],
@@ -25908,7 +25492,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000366"
       ],
@@ -25941,7 +25524,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000367"
       ],
@@ -25973,7 +25555,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000369"
       ],
@@ -26010,7 +25591,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000206",
         "WAL-CLM-LETS-000461"
@@ -26044,7 +25624,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-EPIGEN-000172",
@@ -26114,7 +25693,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000372"
       ],
@@ -26143,7 +25721,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000374"
       ],
@@ -26210,7 +25787,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -26256,7 +25832,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-LETS-000373"
@@ -26339,7 +25914,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -26382,7 +25956,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-d"
@@ -26418,7 +25991,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "chromium"
@@ -26461,7 +26033,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000375"
       ],
@@ -26486,7 +26057,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000377"
       ],
@@ -26517,7 +26087,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000378"
       ],
@@ -26543,7 +26112,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b9"
@@ -26599,7 +26167,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000379"
       ],
@@ -26640,7 +26207,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000379"
       ],
@@ -26699,7 +26265,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -26747,7 +26312,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000380"
       ],
@@ -26807,7 +26371,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000381"
       ],
@@ -26837,7 +26400,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000382"
       ],
@@ -26897,7 +26459,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000384"
       ],
@@ -26967,7 +26528,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000386"
       ],
@@ -27025,7 +26585,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000387"
       ],
@@ -27059,7 +26618,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000363"
       ],
@@ -27088,7 +26646,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -27111,7 +26668,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -27144,7 +26700,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
@@ -27192,7 +26747,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000389"
       ],
@@ -27217,7 +26771,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000390"
       ],
@@ -27253,7 +26806,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
@@ -27315,7 +26867,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -27368,7 +26919,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
@@ -27429,7 +26979,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -27477,7 +27026,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000060",
         "WAL-CLM-IAIYH-000004",
@@ -27620,7 +27168,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -27661,7 +27208,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -27689,7 +27235,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000392"
       ],
@@ -27725,7 +27270,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
       "protocol_claim_ids": [
         "WAL-CLM-IAIYH-000004",
         "WAL-CLM-LETS-000390"
@@ -27777,7 +27321,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000393"
       ],
@@ -27802,7 +27345,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000394"
       ],
@@ -27835,7 +27377,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -27876,7 +27417,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -27908,7 +27448,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -27954,7 +27493,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000078"
       ],
@@ -28019,7 +27557,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
@@ -28076,7 +27613,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000395",
         "WAL-CLM-LETS-000465"
@@ -28104,7 +27640,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000396"
       ],
@@ -28162,7 +27697,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -28218,7 +27752,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000346"
       ],
@@ -28250,7 +27783,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
@@ -28312,7 +27844,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000397",
         "WAL-CLM-LETS-000458",
@@ -28380,7 +27911,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000398"
@@ -28447,7 +27977,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -28483,7 +28012,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
@@ -28538,7 +28066,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000410"
       ],
@@ -28576,7 +28103,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "cobalt",
@@ -28625,7 +28151,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000399"
       ],
@@ -28665,7 +28190,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b2"
@@ -28713,7 +28237,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000400"
       ],
@@ -28787,7 +28310,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000401"
       ],
@@ -28820,7 +28342,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000340"
       ],
@@ -28857,7 +28378,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000402"
@@ -28925,7 +28445,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000403"
       ],
@@ -28950,7 +28469,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000404"
       ],
@@ -28981,7 +28499,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000405"
       ],
@@ -29008,7 +28525,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "chromium"
@@ -29058,7 +28574,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000407"
       ],
@@ -29092,7 +28607,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000407"
       ],
@@ -29126,7 +28640,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -29171,7 +28684,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -29211,7 +28723,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000324"
       ],
@@ -29266,7 +28777,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000409"
       ],
@@ -29324,7 +28834,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b12"
@@ -29375,7 +28884,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -29425,7 +28933,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000236"
       ],
@@ -29450,7 +28957,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Wallach holds that taking vitamins and minerals only at Recommended Daily Allowance (RDA) levels is better than nothing but will not prevent serious disease — among them arthritis, osteoporosis, arteriosclerosis, senile dementia, muscular dystrophy, cystic fibrosis, pyorrhea (gum disease), heart attack and cancer.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000290",
         "WAL-CLM-LETS-000398"
@@ -29507,7 +29013,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000408"
       ],
@@ -29532,7 +29037,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000410"
       ],
@@ -29568,7 +29072,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000411"
       ],
@@ -29597,7 +29100,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000412"
       ],
@@ -29622,7 +29124,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000414"
       ],
@@ -29647,7 +29148,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000415"
       ],
@@ -29684,7 +29184,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -29730,7 +29229,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -29779,7 +29277,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000416"
       ],
@@ -29805,7 +29302,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "inositol"
@@ -29856,7 +29352,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "manganese"
@@ -29907,7 +29402,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -29952,7 +29446,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
@@ -29999,7 +29492,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000417"
       ],
@@ -30032,7 +29524,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000418"
       ],
@@ -30058,7 +29549,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000419"
@@ -30117,7 +29607,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach recounts that the French physician Armand Trousseau treated rickets patients with cod liver oil, sunshine AND butter — an early demonstration that diet plus sunshine (vitamin D) cause, prevent and cure rickets, with butter part of a real historical therapeutic regimen.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000413",
         "WAL-CLM-LETS-000420"
@@ -30188,7 +29677,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000421"
       ],
@@ -30231,7 +29719,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000422"
       ],
@@ -30256,7 +29743,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000423"
       ],
@@ -30281,7 +29767,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000354"
       ],
@@ -30307,7 +29792,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-IMMORT-000096"
       ],
@@ -30349,7 +29833,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000424"
       ],
@@ -30374,7 +29857,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000425"
       ],
@@ -30399,7 +29881,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-RARE-000224"
       ],
@@ -30425,7 +29906,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000388"
       ],
@@ -30489,7 +29969,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000426"
       ],
@@ -30555,7 +30034,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000427"
       ],
@@ -30611,7 +30089,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000428"
       ],
@@ -30662,7 +30139,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000429"
       ],
@@ -30689,7 +30165,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000237",
         "WAL-CLM-LETS-000430"
@@ -30753,7 +30228,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -30808,7 +30282,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000215",
         "WAL-CLM-LETS-000300",
@@ -30850,7 +30323,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -30893,7 +30365,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium",
@@ -30939,7 +30410,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "magnesium",
@@ -30984,7 +30454,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000434"
       ],
@@ -31009,7 +30478,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000436"
       ],
@@ -31034,7 +30502,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -31081,7 +30548,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000359"
       ],
@@ -31140,7 +30606,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -31189,7 +30654,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -31232,7 +30696,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000435"
       ],
@@ -31257,7 +30720,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -31300,7 +30762,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-b6"
@@ -31350,7 +30811,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -31373,7 +30833,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000437"
       ],
@@ -31399,7 +30858,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000438"
       ],
@@ -31440,7 +30898,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000439",
@@ -31513,7 +30970,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000269"
       ],
@@ -31542,7 +30998,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -31574,7 +31029,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000441"
       ],
@@ -31599,7 +31053,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000442"
       ],
@@ -31625,7 +31078,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000443"
       ],
@@ -31679,7 +31131,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000444"
       ],
@@ -31712,7 +31163,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000445"
       ],
@@ -31767,7 +31217,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": "Teeth discoloration with reduced enamel thickness is a common side effect of prolonged administration of tetracyclines during the second half of pregnancy or during early tooth development; affected teeth become brown or gray and fluoresce orange-green under ultraviolet light. Prevention is key; cosmetic capping is necessary if permanent teeth are affected.",
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -31790,7 +31239,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000447"
       ],
@@ -31833,7 +31281,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000349"
       ],
@@ -31861,7 +31308,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach asserts there are no fewer than 147 deficiency diseases that can be attributed to calcium deficiency or imbalance, and that the entire American diet is critically deficient in calcium. Common calcium-deficiency conditions he lists include osteoporosis, receding gums, osteomalacia, arthritis, hypertension, insomnia, kidney stones, bone and heel spurs, calcium deposits, muscle cramps and twitches, premenstrual syndrome, low-back pain, Bell's palsy, panic attacks, and tetany.",
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
@@ -31917,7 +31363,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000449"
       ],
@@ -31946,7 +31391,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -31987,7 +31431,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -32019,7 +31462,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000450"
       ],
@@ -32060,7 +31502,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -32102,7 +31543,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "copper"
@@ -32160,7 +31600,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000451"
       ],
@@ -32233,7 +31672,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "arsenic",
@@ -32288,7 +31726,6 @@
         "iaiyh"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -32311,7 +31748,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000260",
         "WAL-CLM-LETS-000452"
@@ -32353,7 +31789,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000453"
       ],
@@ -32411,7 +31846,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000453"
       ],
@@ -32440,7 +31874,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000454"
       ],
@@ -32476,7 +31909,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
@@ -32524,7 +31956,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000455"
       ],
@@ -32549,7 +31980,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000456"
       ],
@@ -32587,7 +32017,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "calcium"
@@ -32644,7 +32073,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000411"
       ],
@@ -32673,7 +32101,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000387"
       ],
@@ -32708,7 +32135,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-IMMORT-000153",
         "WAL-CLM-RARE-000136"
@@ -32742,7 +32168,6 @@
         "dddl-3e-2011"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [],
       "record": [
@@ -32776,7 +32201,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "vitamin-d"
@@ -32819,7 +32243,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000252",
         "WAL-CLM-LETS-000459"
@@ -32860,7 +32283,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000399",
         "WAL-CLM-LETS-000460"
@@ -32923,7 +32345,6 @@
         "epigenetics"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000013"
       ],
@@ -32956,7 +32377,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000461"
       ],
@@ -33025,7 +32445,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
       "protocol_claim_ids": [],
       "restore": [
         "copper",
@@ -33093,7 +32512,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000462"
       ],
@@ -33151,7 +32569,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000265"
       ],
@@ -33191,7 +32608,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000463"
       ],
@@ -33217,7 +32633,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "sodium"
@@ -33249,7 +32664,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000249"
       ],
@@ -33303,7 +32717,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000343"
       ],
@@ -33333,7 +32746,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000015"
       ],
@@ -33387,7 +32799,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "selenium"
@@ -33436,7 +32847,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000464"
       ],
@@ -33465,7 +32875,6 @@
         "immortality"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [],
       "restore": [
         "iodine"
@@ -33500,7 +32909,6 @@
         "lets-play-doctor"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000466"
       ],
@@ -33535,7 +32943,6 @@
         "rare-earths"
       ],
       "synonyms": [],
-      "one_liner": null,
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000328",
         "WAL-CLM-LETS-000380"

@@ -8,8 +8,12 @@
  * Knowledge corpus view and the Search drawer so a reader meets the same explained
  * term everywhere — one implementation, no duplication (§00.B single-source).
  *
- * Escape-first (§00.B #5): the matched text is already HTML-escaped and the definition
- * rides in an escaped attribute, so no author-controlled HTML ever reaches innerHTML.
+ * Escape-per-segment (§00.B #5): the matcher runs against the RAW text, NOT a
+ * pre-escaped copy — so a term carrying an apostrophe or quote (e.g. "Wallach's
+ * Fibrous Dysplasia") can match at all; when the scan ran on escaped text the ' had
+ * already become &#39; and such a term could never fire. Every emitted piece — each
+ * gap, the matched word, and the definition attributes — is then HTML-escaped
+ * individually, so no author-controlled HTML ever reaches innerHTML.
  * ═════════════════════════════════════════════════════════════════
  */
 
@@ -20,21 +24,21 @@ function escHTML(s: unknown): string {
 }
 
 /**
- * Escape `raw`, then wrap the FIRST occurrence of each glossary term in a `.gloss`
- * tooltip span (dotted underline; hover/tap shows the plain definition via the shared
- * gloss-tooltip). First-occurrence-per-block keeps a paragraph from becoming a field
- * of dotted words.
+ * Wrap the FIRST occurrence of each glossary term in a `.gloss` tooltip span (dotted
+ * underline; hover/tap shows the plain definition via the shared gloss-tooltip). The
+ * scan runs on the RAW string; each gap and the matched word are HTML-escaped as they
+ * are emitted. First-occurrence-per-block keeps a paragraph from becoming a field of
+ * dotted words.
  */
 export function glossify(raw: string): string {
-  const esc = escHTML(raw);
   const re = glossaryRegex();
   if (re === null) {
-    return esc;
+    return escHTML(raw);
   }
   const seen = new Set<string>();
   let out = '';
   let last = 0;
-  for (let m = re.exec(esc); m !== null; m = re.exec(esc)) {
+  for (let m = re.exec(raw); m !== null; m = re.exec(raw)) {
     const word = m[0];
     const key = word.toLowerCase();
     if (seen.has(key)) {
@@ -45,10 +49,10 @@ export function glossify(raw: string): string {
       continue;
     }
     seen.add(key);
-    out += esc.slice(last, m.index);
-    out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML(word)}: ${escHTML(def)}" data-def="${escHTML(def)}">${word}</span>`;
+    out += escHTML(raw.slice(last, m.index));
+    out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML(word)}: ${escHTML(def)}" data-def="${escHTML(def)}">${escHTML(word)}</span>`;
     last = m.index + word.length;
   }
-  out += esc.slice(last);
+  out += escHTML(raw.slice(last));
   return out;
 }
