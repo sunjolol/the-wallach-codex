@@ -59,8 +59,9 @@ export interface DrawerHandle {
   open: () => void;
   close: () => void;
   toggle: () => void;
-  /** Open the drawer directly at an entity's detail page — the Ask-Wallach "Learn More" entry point. */
-  openEntity: (kind: 'essential' | 'condition', slug: string) => void;
+  /** Open the drawer directly at an entity's page — the Ask-Wallach "Learn More" entry point.
+   *  condition/essential/product open a detail page; 'topic' opens the Explore topic overlay. */
+  openEntity: (kind: 'essential' | 'condition' | 'product' | 'topic', slug: string) => void;
   isOpen: () => boolean;
 }
 
@@ -818,8 +819,21 @@ export function mount(container: HTMLElement): DrawerHandle {
     open,
     close,
     toggle,
-    openEntity: (kind: 'essential' | 'condition', slug: string): void => {
+    openEntity: (kind: 'essential' | 'condition' | 'product' | 'topic', slug: string): void => {
       open();
+      if (kind === 'topic') {
+        // A topic is NOT a crumb entity — it renders as a full-body overlay (mirrors the data-kd-topic
+        // click branch): clear any open detail, set the topic, anchor "back" to the all-topics grid
+        // (activeTab='explore'), and drop the trail.
+        selectedEssential = null;
+        selectedCondition = null;
+        selectedProduct = null;
+        selectedTopic = slug;
+        trail = [];
+        activeTab = 'explore';
+        render();
+        return;
+      }
       openDetail(kind, slug);
     },
     isOpen: () => isOpen,

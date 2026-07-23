@@ -18282,6 +18282,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       search_fam_signs_sub: "Warnings",
       search_fam_story_name: "The Story",
       search_fam_story_sub: "History \xB7 Discovery \xB7 Biography \xB7 Origins",
+      search_fam_science_more: "science answers",
+      search_fam_action_more: "recommendations",
+      search_fam_stance_more: "positions",
+      search_fam_signs_more: "cautions",
+      search_fam_story_more: "stories",
       cov_goals_add: "+ ADD",
       cov_goals_eyebrow: "Your goals",
       cov_goals_hint: "Hover a goal to focus it",
@@ -69538,7 +69543,15 @@ deaths, blood clots, sterility`,
     if (e !== null) {
       return e.common_name ?? e.display_name;
     }
-    return slug.replace(/[_-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    const c = getConditionPage(slug);
+    if (c !== null) {
+      return c.name;
+    }
+    const es = getEssentialPage(slug);
+    if (es !== null) {
+      return es.name;
+    }
+    return slug.replace(/[_-]+/g, " ").replace(/\b\w/g, (c2) => c2.toUpperCase());
   }
   function claimsForSubject(subject) {
     return index2().claims.filter((c) => c.subject === subject).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
@@ -69634,6 +69647,20 @@ deaths, blood clots, sterility`,
     }
     return null;
   }
+  function wideEntityHit(q) {
+    const spaced = (slug) => slug.replace(/[_-]+/g, " ");
+    for (const c of listConditionPages()) {
+      if (c.slug === q || spaced(c.slug) === q || c.name.toLowerCase() === q) {
+        return c.slug;
+      }
+    }
+    for (const e of listEssentialPages()) {
+      if (e.slug === q || spaced(e.slug) === q || e.name.toLowerCase() === q) {
+        return e.slug;
+      }
+    }
+    return null;
+  }
   var STOPWORDS = new Set(
     "the a an of to is are and or in on for with how what why does do did can it its be as by that this which who was were has have had you your i my me about at from into than then so if not no am we they he she his her their".split(" ")
   );
@@ -69676,6 +69703,71 @@ deaths, blood clots, sterility`,
   function subjectFacetHints(subject, max = 4) {
     return facetGroups(subject).slice(0, max).map((g) => g.facet);
   }
+  var CHARGED = /* @__PURE__ */ new Set(["homosexuality", "intersex"]);
+  var CHARGED_TERMS = "homosexual|homosexuality|gay|lesbian|lgbt|lgbtq|queer|same-sex|same sex|sexual orientation|gay gene|intersex|hermaphrodite|hermaphroditism|transgender".split("|");
+  function chargedExplicit(q) {
+    const pad = ` ${q} `;
+    for (const slug of CHARGED) {
+      const e = getEntity(slug);
+      const names = e !== null ? [e.display_name.toLowerCase(), ...e.synonyms.map((s) => s.toLowerCase())] : [];
+      names.push(slug.replace(/[_-]+/g, " "));
+      for (const t of names) {
+        if (pad.includes(` ${t} `)) {
+          return true;
+        }
+      }
+    }
+    for (const t of CHARGED_TERMS) {
+      if (pad.includes(` ${t} `)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  function isCharged(c) {
+    return CHARGED.has(c.subject) || c.also_about.some((s) => CHARGED.has(s));
+  }
+  function isChargedEntity(slug) {
+    return CHARGED.has(slug);
+  }
+  var phraseCache = null;
+  function entityPhrases() {
+    if (phraseCache === null) {
+      const arr = [];
+      for (const [slug, e] of Object.entries(index2().entities)) {
+        arr.push({ phrase: e.display_name.toLowerCase(), slug });
+        for (const s of e.synonyms) {
+          arr.push({ phrase: s.toLowerCase(), slug });
+        }
+      }
+      for (const c of listConditionPages()) {
+        arr.push({ phrase: c.name.toLowerCase(), slug: c.slug });
+      }
+      for (const es of listEssentialPages()) {
+        arr.push({ phrase: es.name.toLowerCase(), slug: es.slug });
+      }
+      const seen = /* @__PURE__ */ new Set();
+      const dedup = [];
+      for (const p of arr) {
+        if (p.phrase.length >= 3 && !seen.has(p.phrase)) {
+          seen.add(p.phrase);
+          dedup.push(p);
+        }
+      }
+      phraseCache = dedup.sort((a, b) => b.phrase.length - a.phrase.length);
+    }
+    return phraseCache;
+  }
+  function entityInQuery(q) {
+    const pad = ` ${q} `;
+    for (const { phrase, slug } of entityPhrases()) {
+      if (pad.includes(` ${phrase} `)) {
+        return slug;
+      }
+    }
+    return null;
+  }
+  var ASK_ANSWER_LIMIT = 40;
   function askRanked(query, limit = 6) {
     const q = normalize2(query);
     if (q.length < 2) {
@@ -69685,7 +69777,8 @@ deaths, blood clots, sterility`,
     if (tokens.length === 0) {
       return [];
     }
-    const scored = index2().claims.map((c) => ({ c, s: scoreClaim(c, tokens, q) }));
+    const allowCharged = chargedExplicit(q);
+    const scored = index2().claims.filter((c) => allowCharged || !isCharged(c)).map((c) => ({ c, s: scoreClaim(c, tokens, q) }));
     const hits = scored.filter((x) => x.s > 0);
     hits.sort((a, b) => b.s - a.s || (a.c.id < b.c.id ? -1 : a.c.id > b.c.id ? 1 : 0));
     return hits.slice(0, limit).map((x) => x.c);
@@ -69695,12 +69788,19 @@ deaths, blood clots, sterility`,
     if (q.length === 0) {
       return { mode: "landing", subject: "", claim: null, claims: [], query: "", noMatch: false };
     }
-    const hit = entityHit(q);
+    const hit = entityHit(q) ?? wideEntityHit(q);
     if (hit !== null) {
       return { mode: "entity", subject: hit, claim: null, claims: [], query: q, noMatch: false };
     }
-    const ranked = askRanked(q);
+    const ranked = askRanked(q, ASK_ANSWER_LIMIT);
     const best = ranked[0];
+    const mentioned = entityInQuery(q);
+    if (mentioned !== null) {
+      if (best !== void 0 && best.subject === mentioned) {
+        return { mode: "ask", subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
+      }
+      return { mode: "entity", subject: mentioned, claim: null, claims: [], query: q, noMatch: false };
+    }
     if (best !== void 0) {
       return { mode: "ask", subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
     }
@@ -69729,8 +69829,97 @@ deaths, blood clots, sterility`,
       count: fam.facets.reduce((n, f) => n + (byFacet.get(f) ?? 0), 0)
     }));
   }
+  var FACET_FAMILY = (() => {
+    const m = /* @__PURE__ */ new Map();
+    for (const fam of FACET_FAMILIES) {
+      for (const f of fam.facets) {
+        m.set(f, fam.id);
+      }
+    }
+    return m;
+  })();
+  var CATEGORY_FAMILY = {
+    teal: "science",
+    green: "action",
+    orange: "stance",
+    amber: "signs",
+    violet: "story",
+    red: "signs"
+  };
+  var FAMILY_ORDER = ["science", "signs", "action", "stance", "story"];
+  function entityExists(slug) {
+    return getEntity(slug) !== null || getConditionPage(slug) !== null || getEssentialPage(slug) !== null;
+  }
+  function entityFamilies(subject) {
+    const cond = getConditionPage(subject);
+    const ess = cond === null ? getEssentialPage(subject) : null;
+    const page = cond ?? ess;
+    const answers = [];
+    const seen = /* @__PURE__ */ new Set();
+    const enriched = page !== null ? page.search.flatMap((g) => g.claim_ids).map(getSearchClaim).filter((c) => c !== null) : claimsForSubject(subject);
+    for (const c of enriched) {
+      if (seen.has(c.id)) {
+        continue;
+      }
+      seen.add(c.id);
+      answers.push({
+        id: c.id,
+        quality: 0,
+        familyId: FACET_FAMILY.get(c.facet) ?? "science",
+        pill: facetLabel(c.facet),
+        title: c.question,
+        prev: c.answer_short,
+        short: c.answer_short,
+        body: c.answer.trim() === c.answer_short.trim() ? "" : c.answer,
+        verbatim: c.verbatim
+      });
+    }
+    if (page !== null) {
+      for (const cc of resolveClaims(page.record.flatMap((g) => g.claim_ids))) {
+        if (seen.has(cc.id)) {
+          continue;
+        }
+        seen.add(cc.id);
+        answers.push({
+          id: cc.id,
+          quality: 1,
+          familyId: CATEGORY_FAMILY[kindCategory(cc.kind)] ?? "science",
+          pill: kindLabel(cc.kind),
+          title: softClamp(cc.claim_text, 116),
+          prev: "",
+          short: "",
+          body: cc.claim_text,
+          verbatim: cc.verbatim
+        });
+      }
+    }
+    const out = [];
+    for (const fid of FAMILY_ORDER) {
+      const inFam = answers.filter((a) => a.familyId === fid);
+      if (inFam.length === 0) {
+        continue;
+      }
+      inFam.sort((a, b) => a.quality - b.quality);
+      out.push({ familyId: fid, count: inFam.length, answers: inFam });
+    }
+    return out;
+  }
+  function relatedSlugs(subject) {
+    const cond = getConditionPage(subject);
+    const ess = cond === null ? getEssentialPage(subject) : null;
+    const raw = cond !== null ? [...cond.related, ...cond.related_conditions, ...cond.restore] : ess !== null ? [...ess.related, ...ess.conditions, ...ess.works_with] : getEntity(subject)?.related ?? [];
+    const out = [];
+    const seen = /* @__PURE__ */ new Set([subject]);
+    for (const s of raw) {
+      if (!seen.has(s) && entityExists(s)) {
+        seen.add(s);
+        out.push(s);
+      }
+    }
+    return out.slice(0, 8);
+  }
   var bridge = window;
-  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts };
+  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies };
 
   // assets/js/src/views/glossify.ts
   function escHTML3(s) {
@@ -100702,6 +100891,16 @@ deaths, blood clots, sterility`,
       toggle,
       openEntity: (kind, slug) => {
         open();
+        if (kind === "topic") {
+          selectedEssential = null;
+          selectedCondition = null;
+          selectedProduct = null;
+          selectedTopic = slug;
+          trail = [];
+          activeTab = "explore";
+          render();
+          return;
+        }
         openDetail(kind, slug);
       },
       isOpen: () => isOpen
@@ -103132,7 +103331,11 @@ Deliverables (gitignored temporary/ mockups, which ARE the build spec): ask-wall
 
 Process notes worth keeping: (1) first attempt MISSED -- I reached for retired v3 primitives (the dark ds-pull-stat panel) + a pill/chip style + surfaced "the books"; Luneth rejected it as alien to anything we've done. Corrected by studying the REAL Conditions/Products card vocabulary (calibrated against a rendered screenshot, not a digest) and matching the brainstorm-page format. (2) Caught + replaced 2 FABRICATED verbatim quotes in the results mockup with the real corpus text -- invented words in Wallach's mouth are a \xA700.A breach even in a demo. (3) A standalone mockup that links workspace-coverage.css inherits html,body{overflow:hidden} (the app-shell lock) so the page would not scroll; fullPage screenshots hid it (new memory standalone-page-scroll-lock).
 
-Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the full build spec at chronicle/next-chunk.md. Next session (BUILD): views/search.ts + drawer-search.css + state/search.ts (token ranking, keep entity-exact-first) + a new render_probe_search.` }, { id: "lg_mrxu5ff0_00adly", ts: "2026-07-23T13:19:18.732065-05:00", surface: "ask-wallach", kind: "build", summary: "Ask-Wallach search built LIVE \u2014 signed-off centered green popup replaces the old left drawer: browse-by-kind opening, 3-type results, token ranking, Learn More cross-nav to Knowledge pages. Board 77/77.", detail: 'Searching Wallach now looks like the demo Luneth signed off: a centered green command-palette popup (the old `.sr-*` left slide-in drawer is gone), color-coded answer cards, real questions that rank correctly, and a "Learn More \u2192" that jumps into the Knowledge drawer at a topic\'s full page. Built live across the opening screen, the 3-type results view, and the cross-navigation.\n\nChunk 1 (opening): views/search.ts renderShell = centered green popup + scrim-close (mount host is the scrim, `.scr` is the panel); neumorphic green search bar; renderOpening = 5 facet-FAMILY "browse by kind" cards with REAL counts (Science137/WhatToDo53/Wallach\'s44/Cautions36/Story51). New: core/schemas/search.ts FACET_FAMILIES (the 5-family partition of the 13 facets, STRUCTURE only \u2014 colour stays in CSS, view_category_not_hardcoded); state/search.ts familyCounts; view-copy.json ui search_fam_*_name/_sub + placeholder + browse label. Scrim later hardened to darker+blur, LAG-FREE (no transitioned blur; panel sized to fit so no scroll re-composite), z-index 200 full-cover.\n\nChunk 2 (results): rewrote the whole result layer to match ask-wallach-results-demo.html \u2014 best-answer card (Playfair verbatim, "\u2014 Dr. Wallach", NO book cite) + colour-coded "more answers" arows + keep-exploring tcard; topic page (hero + facet groups, pills bottom-right that hide on expand, See-N-more); empty state (real type-coloured chips). Colour is DATA-DRIVEN: data-facet->family + data-type->entity, mapped in drawer-search.css; --fam-*/--aw-green/--t-* redeclared on #drawer-search-mount. state/search.ts: token askRanked+scoreClaim+tokenize+STOPWORDS (whole-substring matcher couldn\'t match a real question); SearchResult carries claims[]+query; ask() removed (dead code -> fixed a transient no_new_dead_code red).\n\nLearn More cross-nav (conditions+essentials): typed event core/events.ts knowledge:open-entity -> main.ts wireSearchToKnowledge does the single-drawer swap (closeAllDrawers -> knowledge.openEntity -> syncDrawerRail); knowledge.ts mount exposes openEntity=open()+openDetail(). Predicate via getConditionPage/getEssentialPage; shows only where a page exists, hides otherwise. VERIFIED end-to-end (diabetes -> closes search, opens Knowledge condition page).\n\nVerified: node build OK, tsc clean, new code eslint-clean (pre-existing main.ts lint left untouched, eslint is not board-gated), invariants 77/77, headless screenshots for every result state + the cross-nav.\n\nNEXT (Luneth\'s underlying-fix mandate, recorded so the next session does not re-derive it): the search must become a CATCH-ALL over the ENTIRE knowledge base (502 conditions + 91 essentials + Explore topics + products + ~1346 corpus claims), not the 73 enriched entities \u2014 mostly a PRESENTATION problem (style non-enriched entries to match enriched). Three rule-level fixes: exact-match resolves against the full universe + routes to the full page (today "cancer" falls through to a junk gold-cancer ask); Learn More basically ALWAYS appears (broaden the predicate \u2014 Mercury is an Explore topic with a page); no arbitrary 4-cap truncation. See memory search-is-a-catch-all-over-everything + learn-more-links-to-knowledge-page + chronicle/next-chunk.md. Deferrals: render_probe_search still a WISH (unbuilt); fried-eggs verbatim has an unrelated leading fragment (corpus/data fix, user-gated).' }];
+Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the full build spec at chronicle/next-chunk.md. Next session (BUILD): views/search.ts + drawer-search.css + state/search.ts (token ranking, keep entity-exact-first) + a new render_probe_search.` }, { id: "lg_mrxu5ff0_00adly", ts: "2026-07-23T13:19:18.732065-05:00", surface: "ask-wallach", kind: "build", summary: "Ask-Wallach search built LIVE \u2014 signed-off centered green popup replaces the old left drawer: browse-by-kind opening, 3-type results, token ranking, Learn More cross-nav to Knowledge pages. Board 77/77.", detail: 'Searching Wallach now looks like the demo Luneth signed off: a centered green command-palette popup (the old `.sr-*` left slide-in drawer is gone), color-coded answer cards, real questions that rank correctly, and a "Learn More \u2192" that jumps into the Knowledge drawer at a topic\'s full page. Built live across the opening screen, the 3-type results view, and the cross-navigation.\n\nChunk 1 (opening): views/search.ts renderShell = centered green popup + scrim-close (mount host is the scrim, `.scr` is the panel); neumorphic green search bar; renderOpening = 5 facet-FAMILY "browse by kind" cards with REAL counts (Science137/WhatToDo53/Wallach\'s44/Cautions36/Story51). New: core/schemas/search.ts FACET_FAMILIES (the 5-family partition of the 13 facets, STRUCTURE only \u2014 colour stays in CSS, view_category_not_hardcoded); state/search.ts familyCounts; view-copy.json ui search_fam_*_name/_sub + placeholder + browse label. Scrim later hardened to darker+blur, LAG-FREE (no transitioned blur; panel sized to fit so no scroll re-composite), z-index 200 full-cover.\n\nChunk 2 (results): rewrote the whole result layer to match ask-wallach-results-demo.html \u2014 best-answer card (Playfair verbatim, "\u2014 Dr. Wallach", NO book cite) + colour-coded "more answers" arows + keep-exploring tcard; topic page (hero + facet groups, pills bottom-right that hide on expand, See-N-more); empty state (real type-coloured chips). Colour is DATA-DRIVEN: data-facet->family + data-type->entity, mapped in drawer-search.css; --fam-*/--aw-green/--t-* redeclared on #drawer-search-mount. state/search.ts: token askRanked+scoreClaim+tokenize+STOPWORDS (whole-substring matcher couldn\'t match a real question); SearchResult carries claims[]+query; ask() removed (dead code -> fixed a transient no_new_dead_code red).\n\nLearn More cross-nav (conditions+essentials): typed event core/events.ts knowledge:open-entity -> main.ts wireSearchToKnowledge does the single-drawer swap (closeAllDrawers -> knowledge.openEntity -> syncDrawerRail); knowledge.ts mount exposes openEntity=open()+openDetail(). Predicate via getConditionPage/getEssentialPage; shows only where a page exists, hides otherwise. VERIFIED end-to-end (diabetes -> closes search, opens Knowledge condition page).\n\nVerified: node build OK, tsc clean, new code eslint-clean (pre-existing main.ts lint left untouched, eslint is not board-gated), invariants 77/77, headless screenshots for every result state + the cross-nav.\n\nNEXT (Luneth\'s underlying-fix mandate, recorded so the next session does not re-derive it): the search must become a CATCH-ALL over the ENTIRE knowledge base (502 conditions + 91 essentials + Explore topics + products + ~1346 corpus claims), not the 73 enriched entities \u2014 mostly a PRESENTATION problem (style non-enriched entries to match enriched). Three rule-level fixes: exact-match resolves against the full universe + routes to the full page (today "cancer" falls through to a junk gold-cancer ask); Learn More basically ALWAYS appears (broaden the predicate \u2014 Mercury is an Explore topic with a page); no arbitrary 4-cap truncation. See memory search-is-a-catch-all-over-everything + learn-more-links-to-knowledge-page + chronicle/next-chunk.md. Deferrals: render_probe_search still a WISH (unbuilt); fried-eggs verbatim has an unrelated leading fragment (corpus/data fix, user-gated).' }, { id: "lg_mrxyujvn_t5ov3c", ts: "2026-07-23T15:30:49.379051-05:00", surface: "ask-wallach", kind: "build", summary: "Ask-Wallach search: true catch-all + intent + no blur lag. Every exact match shows ALL its claims (Q&A first, then raw corpus) in 5 families with See-N-more + keep-exploring; 'what causes cancer' -> Cancer page; charged topics gated; hero clickable.", detail: `The Ask-Wallach search is finally what Luneth wanted: type anything and it shows real Wallach answers. Every exact match (any of ~600 conditions/essentials/topics) now populates ALL of that entity's claims -- the pristine Q&A first, then the raw sealed corpus -- grouped into the five families with a real "See N more" per category and a "Keep exploring" row; it understands intent ("what causes cancer" opens the Cancer page not a gold claim; "libido"/"potency" open sexual_health); charged topics never ambush an unrelated search; the recurring popup blur lag is gone; and the whole entity hero is clickable.
+
+Technical: state/search.ts -- entityFamilies gathers page.search (enriched) + page.record (raw, via corpus.resolveClaims), dedups by id, maps facet->family + kind->family (kindCategory), groups into 5 families best-first (qa before raw); entityInQuery over ~600 entity names+synonyms (longest-first) + a hybrid resolveQuery (route a MENTIONED entity to its page unless the top claim's subject IS it -- kills gold-for-cancer); CHARGED{homosexuality,intersex}+chargedExplicit+isCharged filter askRanked unless the query names the topic; displayName wide-upgrade; relatedSlugs/entityExists/isChargedEntity. views/search.ts -- renderTopicPage rebuilt to family groups (renderFamilyGroup/renderEntityRow qa-or-raw), renderKeepExploring, clickable .ehero--link hero, wide-clickable renderRelPill, charged-filtered renderEmpty. core/events.ts + views/knowledge.ts + main.ts -- knowledge:open-entity widened to essential|condition|product|topic + the openEntity topic-overlay branch. drawer-search.css -- [data-family] colour rules, .exrow, .ehero--link hover, .eback 0.7rem/centered/+5px margin, and REMOVED the backdrop-filter blur for a plain rgba(18,14,10,0.74) scrim (a blur over a full-screen overlay re-rasterizes the page every repaint = the lag; a solid wash is guaranteed cheap). view-copy.json -- search_fam_*_more nouns. tools/render_probe_search.js -- NEW, closes the standing WISH; asserts the rich behaviour + intent + charged gate + cross-nav. Doctrine: .claude/rules/search-corpus.md + memory mining-serves-ask-wallach elevate ALL future mining to serve Ask-Wallach with the enrichment recipe.
+
+Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-build: unused import, dead export), render_probe_search PASS 0 page errors, headless screenshots. Deferrals: testosterone->strength is a MINING gap (system ready, data not mined); products-in-search fast-follow; wide-entity synonyms sparse (name-match only).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -104404,7 +104607,10 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     concept: '<svg viewBox="0 0 24 24"><circle cx="12" cy="6" r="2.4"/><circle cx="6" cy="17" r="2.4"/><circle cx="18" cy="17" r="2.4"/><path d="M12 8.4 6.9 14.8M12 8.4l5.1 6.4M8.3 17h7.4"/></svg>',
     topic: '<svg viewBox="0 0 24 24"><path d="M4 4h8l8 8-8 8-8-8z"/><circle cx="8" cy="8" r="1.4"/></svg>',
     person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg>',
-    nutrient: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>'
+    nutrient: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>',
+    // A wide essential (from entity-page, type literal 'essential') with no atomic symbol borrows the
+    // nutrient droplet, so its hero glyph is a mark rather than a bare first letter.
+    essential: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>'
   };
   var ENTITY_ICON = {
     color_therapy: '<svg viewBox="0 0 24 24" class="sr-icon-wheel"><path fill="#e5484d" d="M12 12L12 3A9 9 0 0 1 19.79 7.5Z"/><path fill="#f5892a" d="M12 12L19.79 7.5A9 9 0 0 1 19.79 16.5Z"/><path fill="#ffc531" d="M12 12L19.79 16.5A9 9 0 0 1 12 21Z"/><path fill="#4ca259" d="M12 12L12 21A9 9 0 0 1 4.21 16.5Z"/><path fill="#4a7dff" d="M12 12L4.21 16.5A9 9 0 0 1 4.21 7.5Z"/><path fill="#9159f0" d="M12 12L4.21 7.5A9 9 0 0 1 12 3Z"/></svg>'
@@ -104435,8 +104641,9 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
   function renderRelPill(slug) {
     const name = escHTML15(displayName2(slug));
     const e = getEntity(slug);
-    if (e !== null) {
-      return `<button class="relpill" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
+    const type = e !== null ? e.type : getConditionPage(slug) !== null ? "condition" : getEssentialPage(slug) !== null ? "essential" : "";
+    if (type !== "") {
+      return `<button class="relpill" data-type="${escHTML15(type)}" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
   }
@@ -104510,8 +104717,8 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
   }
   function renderQuestionResults(claims) {
     const best = claims[0];
-    const more = claims.slice(1, 5);
-    const moreHTML = more.length > 0 ? `<div class="scr-label">More answers</div>${more.map((c) => renderArow(c, false)).join("")}` : "";
+    const more = claims.slice(1);
+    const moreHTML = more.length > 0 ? `<div class="scr-label">More answers</div><div class="scr-more">${revealRows(more, MORE_CAP)}</div>` : "";
     return `
     <div class="scr-label">Best answer</div>
     ${renderBestAnswer(best)}
@@ -104519,39 +104726,97 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     <div class="scr-label">Keep exploring</div>
     ${renderTcard(best.subject)}`;
   }
-  var GROUP_CAP = 4;
-  function renderFacetGroup(group) {
-    const shown = group.claims.slice(0, GROUP_CAP);
-    const hidden = group.claims.slice(GROUP_CAP);
-    const rows = shown.map((c) => renderArow(c, false)).join("") + hidden.map((c) => renderArow(c, true)).join("");
-    const more = hidden.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${hidden.length} more <span class="fm-arrow">\u2192</span></button>` : "";
+  var FAM_CAP = 3;
+  var MORE_CAP = 4;
+  function revealRows(claims, cap) {
+    const rows = claims.slice(0, cap).map((c) => renderArow(c, false)).join("") + claims.slice(cap).map((c) => renderArow(c, true)).join("");
+    const hiddenN = Math.max(0, claims.length - cap);
+    const more = hiddenN > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${hiddenN} more <span class="fm-arrow">\u2192</span></button>` : "";
+    return `${rows}${more}`;
+  }
+  function renderEntityRow(a, hidden) {
+    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML15(a.prev)}</span>` : "";
+    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML15(a.short)}</div>` : "";
+    const body = a.body.length > 0 ? `<div class="ans__body">${glossify(a.body)}</div>` : "";
+    const verbatim = a.verbatim.trim().length > 0 ? `<blockquote class="vq">${glossify(oneLine(a.verbatim))}<span class="vq__attr">\u2014 Dr. Wallach, in his own words</span></blockquote>` : "";
     return `
-    <div class="fgroup" data-facet="${escHTML15(group.facet)}">
-      <div class="fgroup__head"><span class="fgroup__label">${escHTML15(group.label)}</span><span class="fgroup__ct">${group.claims.length}</span><span class="fgroup__rule"></span></div>
-      ${rows}
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML15(a.familyId)}" data-sr-claim="${escHTML15(a.id)}">
+      <summary class="arow__sum">
+        <span class="arow__text"><span class="arow__q">${escHTML15(a.title)}</span>${prev}</span>
+        <span class="arow__chev">\u203A</span>
+        <span class="arow__pill">${escHTML15(a.pill)}</span>
+      </summary>
+      <div class="arow__body">${short}${body}${verbatim}</div>
+    </details>`;
+  }
+  function renderFamilyGroup(fam) {
+    const shown = fam.answers.slice(0, FAM_CAP).map((a) => renderEntityRow(a, false)).join("");
+    const rest = fam.answers.slice(FAM_CAP);
+    const hidden = rest.map((a) => renderEntityRow(a, true)).join("");
+    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML15(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
+    return `
+    <div class="fgroup" data-family="${escHTML15(fam.familyId)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML15(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
+      ${shown}${hidden}
       ${more}
     </div>`;
   }
+  function heroFor(subject, e) {
+    if (e !== null) {
+      return { name: e.display_name, type: e.type, symbol: e.symbol ?? null, synonyms: e.synonyms, count: claimCount2(subject) };
+    }
+    const c = getConditionPage(subject);
+    if (c !== null) {
+      return { name: c.name, type: "condition", symbol: null, synonyms: c.synonyms, count: c.claim_count };
+    }
+    const es = getEssentialPage(subject);
+    if (es !== null) {
+      return { name: es.name, type: "essential", symbol: es.symbol, synonyms: es.synonyms, count: es.claim_count };
+    }
+    return null;
+  }
+  function learnKind(subject, e) {
+    if (getConditionPage(subject) !== null) {
+      return "condition";
+    }
+    if (getEssentialPage(subject) !== null) {
+      return "essential";
+    }
+    return e !== null ? "topic" : null;
+  }
+  function renderKeepExploring(subject) {
+    const slugs = relatedSlugs(subject);
+    if (slugs.length === 0) {
+      return "";
+    }
+    return `<div class="scr-label">Keep exploring</div><div class="exrow">${slugs.map(renderRelPill).join("")}</div>`;
+  }
   function renderTopicPage2(subject) {
     const e = getEntity(subject);
-    const groups = facetGroups(subject);
-    if (e === null || groups.length === 0) {
+    const hero = heroFor(subject, e);
+    if (hero === null) {
       return '<div class="aw-empty-line">\u2014 nothing to show for this topic yet \u2014</div>';
     }
-    const n = claimCount2(subject);
-    const syn = e.synonyms.length > 0 ? ` \xB7 also: ${e.synonyms.map(escHTML15).join(", ")}` : "";
-    const pageKind = getConditionPage(subject) !== null ? "condition" : getEssentialPage(subject) !== null ? "essential" : null;
-    const learnMore = pageKind !== null ? `<button class="eback" data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${pageKind}">Learn More \u2192</button>` : "";
+    const families = entityFamilies(subject);
+    const total = families.reduce((acc, f) => acc + f.count, 0);
+    const n = total > 0 ? total : hero.count;
+    const syn = hero.synonyms.length > 0 ? ` \xB7 also: ${hero.synonyms.map(escHTML15).join(", ")}` : "";
+    const kind = learnKind(subject, e);
+    const heroCls = kind !== null ? "ehero ehero--link" : "ehero";
+    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}"` : "";
+    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
+    const groupsHTML = families.length > 0 ? families.map(renderFamilyGroup).join("") : '<div class="aw-empty-line">\u2014 no sealed claims on this yet \u2014</div>';
     return `
-    <div class="ehero" data-type="${escHTML15(e.type)}">
-      <span class="ehero__sym">${tileGlyph(subject, e)}</span>
+    <div class="${heroCls}" data-type="${escHTML15(hero.type)}"${heroAttrs}>
+      <span class="ehero__sym">${tileGlyph(subject, { symbol: hero.symbol, type: hero.type, display_name: hero.name })}</span>
       <span class="ehero__id">
-        <span class="ehero__name">${escHTML15(e.display_name)}</span>
-        <span class="ehero__meta">${escHTML15(e.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}${escHTML15(syn)}</span>
+        <span class="ehero__name">${escHTML15(hero.name)}</span>
+        <span class="ehero__meta">${escHTML15(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}${escHTML15(syn)}</span>
       </span>
       ${learnMore}
     </div>
-    ${groups.map(renderFacetGroup).join("")}`;
+    ${groupsHTML}
+    ${renderKeepExploring(subject)}`;
   }
   function renderOpening() {
     const card = (f) => `
@@ -104567,7 +104832,7 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
     <div class="kstack">${familyCounts().map(card).join("")}</div>`;
   }
   function renderEmpty(query) {
-    const sugg = entityList().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
+    const sugg = entityList().filter((e) => !isChargedEntity(e.slug)).sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
     const chip2 = (e) => `<button class="echip" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(e.slug)}">${escHTML15(e.display_name)}</button>`;
     return `
     <div class="empty">
@@ -104700,15 +104965,15 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
       const learnEl = target.closest("[data-aw-learnmore]");
       if (learnEl !== null) {
         const kind = learnEl.getAttribute("data-aw-kind");
-        if (kind === "essential" || kind === "condition") {
+        if (kind === "essential" || kind === "condition" || kind === "topic" || kind === "product") {
           emit("knowledge:open-entity", { kind, slug: learnEl.getAttribute("data-aw-learnmore") ?? "" });
         }
         return;
       }
       const moreBtn = target.closest("[data-aw-morebtn]");
       if (moreBtn !== null) {
-        const group = moreBtn.closest(".fgroup");
-        group?.querySelectorAll(".arow--hidden").forEach((el) => el.classList.remove("arow--hidden"));
+        const scope = moreBtn.closest(".fgroup, .scr-more");
+        scope?.querySelectorAll(".arow--hidden").forEach((el) => el.classList.remove("arow--hidden"));
         moreBtn.remove();
         return;
       }

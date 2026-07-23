@@ -49,10 +49,11 @@ export interface EventPayloads {
    *  chokepoint; the name is painted in three slots (topbar · profile tab · avatar
    *  initial), so a silent write would leave two of them stale. */
   'profile:changed': { name: string | null; browsing: boolean };
-  /** Ask-Wallach → open the Knowledge drawer at an entity's detail page (only entities that HAVE
-   *  one: conditions + essentials). Fired by views/search.ts "Learn More"; main.ts does the
+  /** Ask-Wallach → open the Knowledge drawer at an entity's page. 'condition'/'essential'/'product'
+   *  open a detail page (openDetail); 'topic' opens the Explore topic overlay. Fired by views/search.ts
+   *  "Learn More" — now for basically any resolved entity (the catch-all); main.ts does the
    *  single-drawer swap (close search, open Knowledge, select the entity). */
-  'knowledge:open-entity': { kind: 'essential' | 'condition'; slug: string };
+  'knowledge:open-entity': { kind: 'essential' | 'condition' | 'product' | 'topic'; slug: string };
 }
 
 export type EventHandler<E extends EventName> = (payload: EventPayloads[E]) => void;

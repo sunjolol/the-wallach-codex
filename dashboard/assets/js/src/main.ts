@@ -76,7 +76,7 @@ interface DrawerHandle {
   toggle: () => void;
   isOpen: () => boolean;
   /** Knowledge only — open the drawer at an entity page (Ask-Wallach "Learn More"). */
-  openEntity?: (kind: 'essential' | 'condition', slug: string) => void;
+  openEntity?: (kind: 'essential' | 'condition' | 'product' | 'topic', slug: string) => void;
 }
 
 /** One overlay drawer: a rail target, its mount slot, and a bare-key toggle. */

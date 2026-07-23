@@ -32,9 +32,10 @@
   align-items: flex-start;
   justify-content: center;
   padding: clamp(24px, 7vh, 88px) 20px 40px;
-  background: rgba(20, 16, 12, 0.55);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  /* A plain darker scrim — NO backdrop-filter. A blur() over a full-screen overlay forces the browser
+     to re-rasterize the whole page behind it on EVERY repaint (hover, scroll), which is the recurring
+     Ask-Wallach lag; a solid rgba wash is guaranteed cheap and gives the same "dim the app" focus. */
+  background: rgba(18, 14, 10, 0.74);
   z-index: 200;
   pointer-events: auto;
   overflow-y: auto;
@@ -141,13 +142,21 @@
 #drawer-search-mount [data-facet="biography"],
 #drawer-search-mount [data-facet="etymology"] { --k: var(--fam-story); }
 #drawer-search-mount [data-type="element"],
-#drawer-search-mount [data-type="nutrient"] { --k: var(--t-element); }
+#drawer-search-mount [data-type="nutrient"],
+#drawer-search-mount [data-type="essential"] { --k: var(--t-element); }
 #drawer-search-mount [data-type="condition"] { --k: var(--t-condition); }
 #drawer-search-mount [data-type="concept"] { --k: var(--t-concept); }
 #drawer-search-mount [data-type="substance"] { --k: var(--t-substance); }
 #drawer-search-mount [data-type="topic"],
 #drawer-search-mount [data-type="person"],
 #drawer-search-mount [data-type="event"] { --k: var(--t-topic); }
+/* FAMILY colour — the entity-page groups + their rows are coloured by their browse family
+   (data-family), the same five families the opening screen uses. --ds-accent = the stance colour. */
+#drawer-search-mount [data-family="science"] { --k: var(--fam-science); }
+#drawer-search-mount [data-family="action"] { --k: var(--fam-action); }
+#drawer-search-mount [data-family="stance"] { --k: var(--ds-accent); }
+#drawer-search-mount [data-family="signs"] { --k: var(--fam-signs); }
+#drawer-search-mount [data-family="story"] { --k: var(--fam-story); }
 
 /* ─── BEST-ANSWER card ─────────────────────────────────────────────────────── */
 #drawer-search-mount .ans {
@@ -173,6 +182,7 @@
 
 /* ─── RELATED pills (each coloured by its entity type via data-type) ───────── */
 #drawer-search-mount .relrow { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+#drawer-search-mount .exrow { display: flex; flex-wrap: wrap; gap: 8px; }
 #drawer-search-mount .rellabel { font-family: var(--ds-font-mono); font-size: 0.54rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-ink-faint); margin-right: 2px; }
 #drawer-search-mount .relpill { font-family: var(--ds-font-display-interface); font-size: 0.76rem; font-weight: 600; color: var(--k, var(--ds-ink-soft)); background: transparent; border: 1px solid color-mix(in srgb, var(--k, var(--ds-ink-soft)) 45%, var(--ds-rule)); border-radius: 4px; padding: 3px 9px; cursor: pointer; transition: all 0.16s var(--ds-ease-out); }
 #drawer-search-mount button.relpill:hover { background: var(--k); color: #fff; }
@@ -195,6 +205,9 @@
 #drawer-search-mount .arow[open] .arow__pill { display: none; }
 #drawer-search-mount .arow[open] .arow__sum { row-gap: 0; }
 #drawer-search-mount .arow__body { padding: 0 15px 15px 15px; }
+/* The ask "more answers" reveal block: its wrapper carries no data-facet, so give it the Ask-Wallach
+   green as --k — the "See N more" button reads in the accent while each row keeps its own facet colour. */
+#drawer-search-mount .scr-more { --k: var(--aw-green); }
 
 /* ─── KEEP-EXPLORING topic card (ghost-number; colour by data-type) ────────── */
 #drawer-search-mount .tcard { position: relative; overflow: hidden; display: block; width: 100%; text-align: left; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: 8px; padding: 14px 16px 13px; cursor: pointer; transition: all 0.16s var(--ds-ease-out); }
@@ -215,8 +228,13 @@
 #drawer-search-mount .ehero__id { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px; }
 #drawer-search-mount .ehero__name { font-family: var(--ds-font-display); font-size: 1.7rem; font-weight: 800; letter-spacing: -0.01em; color: var(--ds-ink); line-height: 1; }
 #drawer-search-mount .ehero__meta { font-family: var(--ds-font-mono); font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-ink-soft); }
-#drawer-search-mount .eback { flex: 0 0 auto; align-self: flex-start; cursor: pointer; font-family: var(--ds-font-mono); font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-ink-soft); background: transparent; border: 1px solid var(--ds-rule); border-radius: 4px; padding: 4px 9px; transition: all 0.16s var(--ds-ease-out); white-space: nowrap; }
+#drawer-search-mount .eback { flex: 0 0 auto; margin-right: 5px; align-self: center; cursor: pointer; font-family: var(--ds-font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-ink-soft); background: transparent; border: 1px solid var(--ds-rule); border-radius: 5px; padding: 7px 12px; transition: all 0.16s var(--ds-ease-out); white-space: nowrap; }
 #drawer-search-mount .eback:hover { border-color: var(--k); color: var(--k); }
+/* The WHOLE hero is the Learn-More hit target when it links (data-aw-learnmore on .ehero): pointer
+   cursor + hovering ANYWHERE lights the Learn-More button so it reads as "a click leads here". */
+#drawer-search-mount .ehero--link { cursor: pointer; border-radius: 10px; transition: background 0.15s var(--ds-ease-out); }
+#drawer-search-mount .ehero--link:hover { background: color-mix(in srgb, var(--k) 6%, transparent); }
+#drawer-search-mount .ehero--link:hover .eback { border-color: var(--k); color: var(--k); background: color-mix(in srgb, var(--k) 8%, transparent); }
 
 /* ─── FACET GROUP (topic page section; colour by data-facet) ───────────────── */
 #drawer-search-mount .fgroup { margin-top: 20px; }

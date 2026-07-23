@@ -16,20 +16,23 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import type { SearchClaim } from '../core/schemas/index.js';
+import type { SearchClaim, SearchEntity } from '../core/schemas/index.js';
 import { emit } from '../core/events.js';
 import { facetLabel, ui } from '../state/copy.js';
 import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import {
   claimCount,
   displayName,
+  type EntityAnswer,
+  type EntityFamily,
+  entityFamilies,
   entityList,
   type EntitySummary,
-  type FacetGroup,
-  facetGroups,
   type FamilyCount,
   familyCounts,
   getEntity,
+  isChargedEntity,
+  relatedSlugs,
   resolveQuery,
   type SearchResult,
   subjectFacetHints,
@@ -65,6 +68,9 @@ const TYPE_ICON: Record<string, string> = {
   topic: '<svg viewBox="0 0 24 24"><path d="M4 4h8l8 8-8 8-8-8z"/><circle cx="8" cy="8" r="1.4"/></svg>',
   person: '<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3-6 7-6s7 2.4 7 6"/></svg>',
   nutrient: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>',
+  // A wide essential (from entity-page, type literal 'essential') with no atomic symbol borrows the
+  // nutrient droplet, so its hero glyph is a mark rather than a bare first letter.
+  essential: '<svg viewBox="0 0 24 24"><path d="M12 3.5c3.8 4.6 6 7.6 6 10.5a6 6 0 0 1-12 0c0-2.9 2.2-5.9 6-10.5z"/></svg>',
 };
 
 /**
@@ -109,9 +115,14 @@ function claimRelatedSlugs(claim: SearchClaim): string[] {
  *  with a page; otherwise a plain chip. `data-type` sets the pill's own --k (its entity colour). */
 function renderRelPill(slug: string): string {
   const name = escHTML(displayName(slug));
+  // Clickable when the slug resolves ANYWHERE in the universe — a search entity OR a wider
+  // condition/essential page (the catch-all: a related condition is a live jump, not a dead chip).
   const e = getEntity(slug);
-  if (e !== null) {
-    return `<button class="relpill" data-type="${escHTML(e.type)}" data-sr-entity="${escHTML(slug)}" title="Open ${name}">${name}</button>`;
+  const type = e !== null
+    ? e.type
+    : getConditionPage(slug) !== null ? 'condition' : getEssentialPage(slug) !== null ? 'essential' : '';
+  if (type !== '') {
+    return `<button class="relpill" data-type="${escHTML(type)}" data-sr-entity="${escHTML(slug)}" title="Open ${name}">${name}</button>`;
   }
   return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
 }
@@ -208,9 +219,12 @@ function renderTcard(subject: string): string {
 
 function renderQuestionResults(claims: SearchClaim[]): string {
   const best = claims[0] as SearchClaim;
-  const more = claims.slice(1, 5);
+  const more = claims.slice(1);
+  // "More answers": every ranked hit past the best (no hard slice) — first MORE_CAP visible, the rest
+  // behind the same "See N more" reveal the facet groups use. .scr-more carries the green --k so the
+  // button reads in the Ask-Wallach accent (each row keeps its own per-facet colour).
   const moreHTML = more.length > 0
-    ? `<div class="scr-label">More answers</div>${more.map(c => renderArow(c, false)).join('')}`
+    ? `<div class="scr-label">More answers</div><div class="scr-more">${revealRows(more, MORE_CAP)}</div>`
     : '';
   return `
     <div class="scr-label">Best answer</div>
@@ -222,51 +236,143 @@ function renderQuestionResults(claims: SearchClaim[]): string {
 
 // ─── TOPIC page (exact-match entity → every answer, grouped by facet) ───────
 
-const GROUP_CAP = 4;
+// A soft cap with a working reveal: the first `cap` rows show, the rest render collapsed behind a
+// "See N more" button that reveals them in place — the ONE truncation pattern across the surface, no
+// hard slice that silently drops rows (Luneth 2026-07-23: "no arbitrary truncation ... a working See
+// N more everywhere"). FAM_CAP governs a topic-page family group; MORE_CAP the ask "more answers".
+const FAM_CAP = 3;
+const MORE_CAP = 4;
 
-/** One facet group — coloured label + count + hairline, its rows, and a "see more" reveal when big. */
-function renderFacetGroup(group: FacetGroup): string {
-  const shown = group.claims.slice(0, GROUP_CAP);
-  const hidden = group.claims.slice(GROUP_CAP);
-  const rows = shown.map(c => renderArow(c, false)).join('') + hidden.map(c => renderArow(c, true)).join('');
-  const more = hidden.length > 0
-    ? `<button class="fgroup__more" data-aw-morebtn>See ${hidden.length} more <span class="fm-arrow">→</span></button>`
+/** Shown rows + collapsed (hidden) rows + a "See N more" reveal button when any are hidden. */
+function revealRows(claims: SearchClaim[], cap: number): string {
+  const rows = claims.slice(0, cap).map(c => renderArow(c, false)).join('')
+    + claims.slice(cap).map(c => renderArow(c, true)).join('');
+  const hiddenN = Math.max(0, claims.length - cap);
+  const more = hiddenN > 0
+    ? `<button class="fgroup__more" data-aw-morebtn>See ${hiddenN} more <span class="fm-arrow">→</span></button>`
+    : '';
+  return `${rows}${more}`;
+}
+
+/** One answer row on an entity page — an enriched Q&A OR a presentation-enriched raw claim. Both wear
+ *  the family colour (data-family) + a specific pill (facet or kind); a raw claim shows its paraphrase
+ *  as the title and Wallach's exact words on expand, so it reads like the rest of the results. */
+function renderEntityRow(a: EntityAnswer, hidden: boolean): string {
+  const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML(a.prev)}</span>` : '';
+  const short = a.short.length > 0 ? `<div class="ans__short">${escHTML(a.short)}</div>` : '';
+  const body = a.body.length > 0 ? `<div class="ans__body">${glossify(a.body)}</div>` : '';
+  const verbatim = a.verbatim.trim().length > 0
+    ? `<blockquote class="vq">${glossify(oneLine(a.verbatim))}<span class="vq__attr">— Dr. Wallach, in his own words</span></blockquote>`
     : '';
   return `
-    <div class="fgroup" data-facet="${escHTML(group.facet)}">
-      <div class="fgroup__head"><span class="fgroup__label">${escHTML(group.label)}</span><span class="fgroup__ct">${group.claims.length}</span><span class="fgroup__rule"></span></div>
-      ${rows}
+    <details class="arow${hidden ? ' arow--hidden' : ''}" data-family="${escHTML(a.familyId)}" data-sr-claim="${escHTML(a.id)}">
+      <summary class="arow__sum">
+        <span class="arow__text"><span class="arow__q">${escHTML(a.title)}</span>${prev}</span>
+        <span class="arow__chev">›</span>
+        <span class="arow__pill">${escHTML(a.pill)}</span>
+      </summary>
+      <div class="arow__body">${short}${body}${verbatim}</div>
+    </details>`;
+}
+
+/** One FAMILY section of an entity page — the coloured family header + its answers (best-first),
+ *  capped at FAM_CAP with a "See N more <family>" reveal (every category ends in a real See-N-more). */
+function renderFamilyGroup(fam: EntityFamily): string {
+  const shown = fam.answers.slice(0, FAM_CAP).map(a => renderEntityRow(a, false)).join('');
+  const rest = fam.answers.slice(FAM_CAP);
+  const hidden = rest.map(a => renderEntityRow(a, true)).join('');
+  const more = rest.length > 0
+    ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">→</span></button>`
+    : '';
+  return `
+    <div class="fgroup" data-family="${escHTML(fam.familyId)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
+      ${shown}${hidden}
       ${more}
     </div>`;
 }
 
+/**
+ * A hero descriptor for the topic page, from EITHER the enriched search entity OR — when the query
+ * resolved to the wider Knowledge universe (a condition/essential with no enriched search claims) —
+ * that page's own record. This is the CATCH-ALL: a non-enriched entity ("cancer") still gets the
+ * full Mercury-style hero + a "Learn More →" into its Knowledge page, instead of a dead-end.
+ */
+interface HeroSrc { name: string; type: string; symbol: string | null; synonyms: string[]; count: number }
+function heroFor(subject: string, e: SearchEntity | null): HeroSrc | null {
+  if (e !== null) {
+    return { name: e.display_name, type: e.type, symbol: e.symbol ?? null, synonyms: e.synonyms, count: claimCount(subject) };
+  }
+  const c = getConditionPage(subject);
+  if (c !== null) {
+    return { name: c.name, type: 'condition', symbol: null, synonyms: c.synonyms, count: c.claim_count };
+  }
+  const es = getEssentialPage(subject);
+  if (es !== null) {
+    return { name: es.name, type: 'essential', symbol: es.symbol, synonyms: es.synonyms, count: es.claim_count };
+  }
+  return null;
+}
+
+/**
+ * The Learn-More target kind — a Knowledge page this entity can open. Conditions + essentials open
+ * their detail page; any OTHER resolved search entity opens its Explore topic overlay. So the button
+ * now appears for basically every resolved topic (Luneth 2026-07-23: "Learn More should basically
+ * ALWAYS appear because ANY topic has a full page by default"), self-healing as pages are authored.
+ * Products land in the fast-follow (openDetail already routes 'product'; the emitter is what's to add).
+ */
+function learnKind(subject: string, e: SearchEntity | null): 'condition' | 'essential' | 'topic' | null {
+  if (getConditionPage(subject) !== null) {
+    return 'condition';
+  }
+  if (getEssentialPage(subject) !== null) {
+    return 'essential';
+  }
+  return e !== null ? 'topic' : null;
+}
+
+/** The keep-exploring row — related entities as live pills (the catch-all makes wide ones clickable),
+ *  so an exact match always offers somewhere interesting to go next instead of dead-ending. */
+function renderKeepExploring(subject: string): string {
+  const slugs = relatedSlugs(subject);
+  if (slugs.length === 0) {
+    return '';
+  }
+  return `<div class="scr-label">Keep exploring</div><div class="exrow">${slugs.map(renderRelPill).join('')}</div>`;
+}
+
 function renderTopicPage(subject: string): string {
   const e = getEntity(subject);
-  const groups = facetGroups(subject);
-  if (e === null || groups.length === 0) {
+  const hero = heroFor(subject, e);
+  if (hero === null) {
     return '<div class="aw-empty-line">— nothing to show for this topic yet —</div>';
   }
-  const n = claimCount(subject);
-  const syn = e.synonyms.length > 0 ? ` · also: ${e.synonyms.map(escHTML).join(', ')}` : '';
-  // "Learn More →" appears ONLY for entities that HAVE a Knowledge detail page (conditions +
-  // essentials, resolved by slug); clicking it opens that page. An element like Mercury has none,
-  // so it shows no button — data-driven show/hide that self-heals as pages are authored.
-  const pageKind = getConditionPage(subject) !== null
-    ? 'condition'
-    : getEssentialPage(subject) !== null ? 'essential' : null;
-  const learnMore = pageKind !== null
-    ? `<button class="eback" data-aw-learnmore="${escHTML(subject)}" data-aw-kind="${pageKind}">Learn More →</button>`
+  const families = entityFamilies(subject);
+  const total = families.reduce((acc, f) => acc + f.count, 0);
+  const n = total > 0 ? total : hero.count;
+  const syn = hero.synonyms.length > 0 ? ` · also: ${hero.synonyms.map(escHTML).join(', ')}` : '';
+  const kind = learnKind(subject, e);
+  // The WHOLE hero is the Learn-More hit target (name, glyph, meta, blank space) — data-aw-learnmore
+  // on the .ehero itself; the button stays as the visible cue (and keyboard focus). Luneth 2026-07-23.
+  const heroCls = kind !== null ? 'ehero ehero--link' : 'ehero';
+  const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML(subject)}" data-aw-kind="${kind}"` : '';
+  const learnMore = kind !== null
+    ? `<button class="eback" data-aw-learnmore="${escHTML(subject)}" data-aw-kind="${kind}">Learn More →</button>`
     : '';
+  const groupsHTML = families.length > 0
+    ? families.map(renderFamilyGroup).join('')
+    : '<div class="aw-empty-line">— no sealed claims on this yet —</div>';
   return `
-    <div class="ehero" data-type="${escHTML(e.type)}">
-      <span class="ehero__sym">${tileGlyph(subject, e)}</span>
+    <div class="${heroCls}" data-type="${escHTML(hero.type)}"${heroAttrs}>
+      <span class="ehero__sym">${tileGlyph(subject, { symbol: hero.symbol, type: hero.type, display_name: hero.name })}</span>
       <span class="ehero__id">
-        <span class="ehero__name">${escHTML(e.display_name)}</span>
-        <span class="ehero__meta">${escHTML(e.type)} · ${n} ${n === 1 ? 'answer' : 'answers'}${escHTML(syn)}</span>
+        <span class="ehero__name">${escHTML(hero.name)}</span>
+        <span class="ehero__meta">${escHTML(hero.type)} · ${n} ${n === 1 ? 'answer' : 'answers'}${escHTML(syn)}</span>
       </span>
       ${learnMore}
     </div>
-    ${groups.map(renderFacetGroup).join('')}`;
+    ${groupsHTML}
+    ${renderKeepExploring(subject)}`;
 }
 
 // ─── OPENING (browse by kind) + EMPTY (no match) ───────────────────────────
@@ -289,7 +395,7 @@ function renderOpening(): string {
 /** No-match: a calm dead-end with real suggestion chips (the busiest topics), never a bare "no results". */
 function renderEmpty(query: string): string {
   const sugg = entityList()
-    .slice()
+    .filter(e => !isChargedEntity(e.slug))
     .sort((a, b) => b.claim_count - a.claim_count)
     .slice(0, 5);
   const chip = (e: EntitySummary): string =>
@@ -449,21 +555,23 @@ export function mount(container: HTMLElement): DrawerHandle {
       close();
       return;
     }
-    // "Learn More →" → open the Knowledge detail page for this entity (conditions + essentials only);
-    // main.ts does the single-drawer swap (close search, open Knowledge at the entity).
+    // "Learn More →" → open this entity's Knowledge page: a condition/essential/product detail page,
+    // or an Explore topic overlay for any other entity. main.ts does the single-drawer swap (close
+    // search, open Knowledge at the entity). 'product' is accepted ahead of its fast-follow emitter.
     const learnEl = target.closest<HTMLElement>('[data-aw-learnmore]');
     if (learnEl !== null) {
       const kind = learnEl.getAttribute('data-aw-kind');
-      if (kind === 'essential' || kind === 'condition') {
+      if (kind === 'essential' || kind === 'condition' || kind === 'topic' || kind === 'product') {
         emit('knowledge:open-entity', { kind, slug: learnEl.getAttribute('data-aw-learnmore') ?? '' });
       }
       return;
     }
-    // "See N more" reveals the rest of a facet group's rows, then retires itself.
+    // "See N more" reveals the rest of the rows in its block — a facet group OR the ask "more answers".
+    // Both hold their overflow behind .arow--hidden; the button retires itself after revealing.
     const moreBtn = target.closest<HTMLElement>('[data-aw-morebtn]');
     if (moreBtn !== null) {
-      const group = moreBtn.closest('.fgroup');
-      group?.querySelectorAll('.arow--hidden').forEach(el => el.classList.remove('arow--hidden'));
+      const scope = moreBtn.closest('.fgroup, .scr-more');
+      scope?.querySelectorAll('.arow--hidden').forEach(el => el.classList.remove('arow--hidden'));
       moreBtn.remove();
       return;
     }

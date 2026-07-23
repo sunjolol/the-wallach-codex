@@ -30,7 +30,14 @@ import {
   type SearchIndex,
   SearchIndexSchema,
 } from '../core/schemas/index.js';
-import { facetLabel } from './copy.js';
+import { facetLabel, kindCategory, kindLabel } from './copy.js';
+import { resolveClaims } from './corpus.js';
+import {
+  getConditionPage,
+  getEssentialPage,
+  listConditionPages,
+  listEssentialPages,
+} from './entity-page.js';
 
 const EMPTY_INDEX: SearchIndex = { books: {}, entities: {}, claims: [] };
 
@@ -51,13 +58,22 @@ export function getEntity(slug: string): SearchEntity | null {
   return index().entities[slug] ?? null;
 }
 
-/** Human display name for a slug — registry display_name, else a humanized fallback. */
+/** Human display name for a slug — search registry, else a wider condition/essential page name,
+ *  else a humanized fallback (so a wide-universe slug still reads as a real title + round-trips). */
 export function displayName(slug: string): string {
   const e = getEntity(slug);
   if (e !== null) {
     return e.common_name ?? e.display_name;
   }
-  return slug.replace(/[_-]+/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const c = getConditionPage(slug);
+  if (c !== null) {
+    return c.name;
+  }
+  const es = getEssentialPage(slug);
+  if (es !== null) {
+    return es.name;
+  }
+  return slug.replace(/[_-]+/g, ' ').replace(/\b\w/g, c2 => c2.toUpperCase());
 }
 
 /** Every claim whose subject is this entity, in stable id order. */
@@ -231,6 +247,30 @@ function entityHit(q: string): string | null {
 }
 
 /**
+ * The WIDER exact-match: the full Knowledge universe beyond the ~73 enriched search entities —
+ * every condition + essential page (state/entity-page, an already-gated shipped artifact). Matches
+ * a query to a page slug by slug, spaced-slug, or display name (case-folded). This is what makes the
+ * search a CATCH-ALL: typing "cancer" resolves the real condition page instead of falling through to
+ * a tangential ask answer. Synonyms are not matched here yet (the page artifact's synonyms field is
+ * still sparse — 2/502 conditions, 14/91 essentials — so name/slug is the reliable key; alias data is
+ * a separate follow-up). entityHit (the enriched 73) is tried FIRST, so an enriched entity still wins.
+ */
+function wideEntityHit(q: string): string | null {
+  const spaced = (slug: string): string => slug.replace(/[_-]+/g, ' ');
+  for (const c of listConditionPages()) {
+    if (c.slug === q || spaced(c.slug) === q || c.name.toLowerCase() === q) {
+      return c.slug;
+    }
+  }
+  for (const e of listEssentialPages()) {
+    if (e.slug === q || spaced(e.slug) === q || e.name.toLowerCase() === q) {
+      return e.slug;
+    }
+  }
+  return null;
+}
+
+/**
  * Common English glue words carrying no retrieval signal — dropped before token scoring so a
  * natural-language question ("why are fried eggs bad") ranks on its content words. Built from a
  * split string (not an array literal) so it stays under the inline-array lint without a fixture.
@@ -292,6 +332,108 @@ export function subjectFacetHints(subject: string, max = 4): string[] {
   return facetGroups(subject).slice(0, max).map(g => g.facet);
 }
 
+// ─── Intent detection + charged-topic safety gate ───────────────────────────
+
+/**
+ * Charged topics that must NEVER ambush a searcher — surfaced only when the query EXPLICITLY names
+ * one (its name/slug or an exact synonym), never via an incidental body word. The Explore tab keeps
+ * them (a full index); this gate is search-results only, extensible with Luneth. (memory: charged-search-gate)
+ */
+const CHARGED: ReadonlySet<string> = new Set(['homosexuality', 'intersex']);
+/** Explicit charged terms beyond the entities' own synonyms, so the gate never misses a common word.
+ *  Built from a split string (not an array literal) so it stays under the inline-data lint. */
+const CHARGED_TERMS: readonly string[] = (
+  'homosexual|homosexuality|gay|lesbian|lgbt|lgbtq|queer|same-sex|same sex|sexual orientation|'
+  + 'gay gene|intersex|hermaphrodite|hermaphroditism|transgender'
+).split('|');
+
+/** True when the query EXPLICITLY names a charged topic (its name/synonym, whole-word). */
+function chargedExplicit(q: string): boolean {
+  const pad = ` ${q} `;
+  for (const slug of CHARGED) {
+    const e = getEntity(slug);
+    const names = e !== null ? [e.display_name.toLowerCase(), ...e.synonyms.map(s => s.toLowerCase())] : [];
+    names.push(slug.replace(/[_-]+/g, ' '));
+    for (const t of names) {
+      if (pad.includes(` ${t} `)) {
+        return true;
+      }
+    }
+  }
+  for (const t of CHARGED_TERMS) {
+    if (pad.includes(` ${t} `)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/** True when a claim is primarily (subject) or secondarily (also_about) about a charged topic. */
+function isCharged(c: SearchClaim): boolean {
+  return CHARGED.has(c.subject) || c.also_about.some(s => CHARGED.has(s));
+}
+
+/** Is this slug a charged entity? (exported for the view's suggestion filter). */
+export function isChargedEntity(slug: string): boolean {
+  return CHARGED.has(slug);
+}
+
+/**
+ * Entity-name/synonym index for INTENT detection: phrase (>=3 chars) -> slug over the whole universe
+ * (search registry names + synonyms + condition/essential names), longest phrase first so "breast
+ * cancer" beats "cancer". Cached once. Charged entities are included — they only match when a charged
+ * name/synonym is literally present, which is itself an explicit search.
+ */
+let phraseCache: { phrase: string; slug: string }[] | null = null;
+function entityPhrases(): { phrase: string; slug: string }[] {
+  if (phraseCache === null) {
+    const arr: { phrase: string; slug: string }[] = [];
+    for (const [slug, e] of Object.entries(index().entities)) {
+      arr.push({ phrase: e.display_name.toLowerCase(), slug });
+      for (const s of e.synonyms) {
+        arr.push({ phrase: s.toLowerCase(), slug });
+      }
+    }
+    for (const c of listConditionPages()) {
+      arr.push({ phrase: c.name.toLowerCase(), slug: c.slug });
+    }
+    for (const es of listEssentialPages()) {
+      arr.push({ phrase: es.name.toLowerCase(), slug: es.slug });
+    }
+    const seen = new Set<string>();
+    const dedup: { phrase: string; slug: string }[] = [];
+    for (const p of arr) {
+      if (p.phrase.length >= 3 && !seen.has(p.phrase)) {
+        seen.add(p.phrase);
+        dedup.push(p);
+      }
+    }
+    phraseCache = dedup.sort((a, b) => b.phrase.length - a.phrase.length);
+  }
+  return phraseCache;
+}
+
+/** The entity a query MENTIONS (a name/synonym appearing whole-word anywhere in it), longest match
+ *  first; null if none. Powers intent routing: "what causes cancer" mentions cancer. */
+function entityInQuery(q: string): string | null {
+  const pad = ` ${q} `;
+  for (const { phrase, slug } of entityPhrases()) {
+    if (pad.includes(` ${phrase} `)) {
+      return slug;
+    }
+  }
+  return null;
+}
+
+/**
+ * A generous ceiling on the ranked "more answers" — replaces the old hard cap that let the view show
+ * only 4 with no way to reach the rest (Luneth 2026-07-23: "no arbitrary truncation"). Typical queries
+ * return well under this over the ~321 enriched claims; an exact entity name routes to its topic page
+ * instead, so this bound is NOT the "hundreds of entries" surface (that is the deferred inline-claims
+ * pass). Every ranked hit up to the ceiling renders — first few visible, the rest behind "See N more".
+ */
+const ASK_ANSWER_LIMIT = 40;
+
 /** The ranked answers for an Ask query — [0] is the best answer, the rest are "more answers".
  *  Empty when nothing clears the bar. Deterministic (score desc, then id) — no LLM. */
 export function askRanked(query: string, limit = 6): SearchClaim[] {
@@ -303,7 +445,12 @@ export function askRanked(query: string, limit = 6): SearchClaim[] {
   if (tokens.length === 0) {
     return [];
   }
-  const scored = index().claims.map(c => ({ c, s: scoreClaim(c, tokens, q) }));
+  // Charged topics (homosexuality/intersex) must never AMBUSH a searcher — a claim about one is
+  // ranked only when the query EXPLICITLY names it, never via an incidental body word ("testosterone").
+  const allowCharged = chargedExplicit(q);
+  const scored = index().claims
+    .filter(c => allowCharged || !isCharged(c))
+    .map(c => ({ c, s: scoreClaim(c, tokens, q) }));
   const hits = scored.filter(x => x.s > 0);
   hits.sort((a, b) => (b.s - a.s) || (a.c.id < b.c.id ? -1 : a.c.id > b.c.id ? 1 : 0));
   return hits.slice(0, limit).map(x => x.c);
@@ -319,12 +466,25 @@ export function resolveQuery(query: string): SearchResult {
   if (q.length === 0) {
     return { mode: 'landing', subject: '', claim: null, claims: [], query: '', noMatch: false };
   }
-  const hit = entityHit(q);
+  // 1. A whole-query name/synonym match resolves straight to that entity page (highest confidence).
+  const hit = entityHit(q) ?? wideEntityHit(q);
   if (hit !== null) {
     return { mode: 'entity', subject: hit, claim: null, claims: [], query: q, noMatch: false };
   }
-  const ranked = askRanked(q);
+  // 2. Rank claims (charged topics filtered unless named), and detect whether the query MENTIONS an
+  //    entity anywhere in it (intent).
+  const ranked = askRanked(q, ASK_ANSWER_LIMIT);
   const best = ranked[0];
+  const mentioned = entityInQuery(q);
+  if (mentioned !== null) {
+    // Show the sharp best-answer ONLY when it is PRIMARILY about the mentioned entity; otherwise that
+    // entity's own rich page is the honest answer. Kills "what causes cancer" -> a tangential gold claim
+    // (best.subject 'gold' !== 'cancer', so we route to the Cancer page, which holds the real answer).
+    if (best !== undefined && best.subject === mentioned) {
+      return { mode: 'ask', subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
+    }
+    return { mode: 'entity', subject: mentioned, claim: null, claims: [], query: q, noMatch: false };
+  }
   if (best !== undefined) {
     return { mode: 'ask', subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
   }
@@ -369,6 +529,137 @@ export function familyCounts(): FamilyCount[] {
   }));
 }
 
+// ─── Entity answer assembly (the CATCH-ALL: ALL of an entity's claims, categorized) ──
+
+/**
+ * The catch-all entity result. Gathers EVERY claim about an entity — the enriched Q&A slice (best)
+ * PLUS the raw sealed corpus record — and groups them into the five browse FAMILIES (The Science ·
+ * What To Do · Wallach's Take · Cautions · The Story), enriched-first within each. So "cancer" is
+ * rich (its 65 claims, categorized) rather than a lone hero + a link. The old topic page showed only
+ * the ~enriched slice, which left a non-enriched condition empty.
+ */
+const FACET_FAMILY: ReadonlyMap<string, string> = (() => {
+  const m = new Map<string, string>();
+  for (const fam of FACET_FAMILIES) {
+    for (const f of fam.facets) {
+      m.set(f, fam.id);
+    }
+  }
+  return m;
+})();
+
+/** Corpus colour-category (state/copy::kindCategory) -> the browse family a RAW claim joins. Red
+ *  (contraindication) folds into Cautions. Lives in state (not a view), so no colour-literal gate. */
+const CATEGORY_FAMILY: Record<string, string> = {
+  teal: 'science', green: 'action', orange: 'stance', amber: 'signs', violet: 'story', red: 'signs',
+};
+
+/** Entity-page family display order — reads what-it-is -> cautions -> what-to-do -> his take -> story. */
+const FAMILY_ORDER: readonly string[] = ['science', 'signs', 'action', 'stance', 'story'];
+
+/** One answer on an entity page — an enriched Q&A (quality 0, best) or a raw record claim (quality 1). */
+export interface EntityAnswer {
+  id: string;
+  quality: 0 | 1;
+  familyId: string;
+  pill: string;
+  title: string;
+  prev: string;
+  short: string;
+  body: string;
+  verbatim: string;
+}
+/** One family group on an entity page — its answers (best-first) + the family total. */
+export interface EntityFamily {
+  familyId: string;
+  count: number;
+  answers: EntityAnswer[];
+}
+
+/** True when a slug resolves to any entity in the full universe (search registry OR a page). */
+export function entityExists(slug: string): boolean {
+  return getEntity(slug) !== null || getConditionPage(slug) !== null || getEssentialPage(slug) !== null;
+}
+
+/**
+ * ALL of an entity's answers, grouped into the five families, enriched-Q&A first then raw record.
+ * Conditions/essentials draw from the entity-page record (raw) + search (enriched); a topic (a search
+ * entity with no page) has only its enriched claims. Dedup by id so an enriched claim never doubles as
+ * its own raw row.
+ */
+export function entityFamilies(subject: string): EntityFamily[] {
+  const cond = getConditionPage(subject);
+  const ess = cond === null ? getEssentialPage(subject) : null;
+  const page = cond ?? ess;
+
+  const answers: EntityAnswer[] = [];
+  const seen = new Set<string>();
+
+  const enriched: SearchClaim[] = page !== null
+    ? page.search.flatMap(g => g.claim_ids).map(getSearchClaim).filter((c): c is SearchClaim => c !== null)
+    : claimsForSubject(subject);
+  for (const c of enriched) {
+    if (seen.has(c.id)) {
+      continue;
+    }
+    seen.add(c.id);
+    answers.push({
+      id: c.id, quality: 0, familyId: FACET_FAMILY.get(c.facet) ?? 'science', pill: facetLabel(c.facet),
+      title: c.question, prev: c.answer_short, short: c.answer_short,
+      body: c.answer.trim() === c.answer_short.trim() ? '' : c.answer, verbatim: c.verbatim,
+    });
+  }
+
+  if (page !== null) {
+    for (const cc of resolveClaims(page.record.flatMap(g => g.claim_ids))) {
+      if (seen.has(cc.id)) {
+        continue;
+      }
+      seen.add(cc.id);
+      answers.push({
+        id: cc.id, quality: 1, familyId: CATEGORY_FAMILY[kindCategory(cc.kind)] ?? 'science', pill: kindLabel(cc.kind),
+        title: softClamp(cc.claim_text, 116), prev: '', short: '', body: cc.claim_text, verbatim: cc.verbatim,
+      });
+    }
+  }
+
+  const out: EntityFamily[] = [];
+  for (const fid of FAMILY_ORDER) {
+    const inFam = answers.filter(a => a.familyId === fid);
+    if (inFam.length === 0) {
+      continue;
+    }
+    inFam.sort((a, b) => a.quality - b.quality);
+    out.push({ familyId: fid, count: inFam.length, answers: inFam });
+  }
+  return out;
+}
+
+/**
+ * Related entities to "keep exploring" from an entity page — only those that resolve to a page (so
+ * every pill is a live jump). Conditions surface their related + tied conditions + restore nutrients;
+ * essentials their related + tied conditions + interaction partners; a topic its registry `related`.
+ * Deduped, the subject itself excluded, capped.
+ */
+export function relatedSlugs(subject: string): string[] {
+  const cond = getConditionPage(subject);
+  const ess = cond === null ? getEssentialPage(subject) : null;
+  const raw = cond !== null
+    ? [...cond.related, ...cond.related_conditions, ...cond.restore]
+    : ess !== null
+      ? [...ess.related, ...ess.conditions, ...ess.works_with]
+      : (getEntity(subject)?.related ?? []);
+  const out: string[] = [];
+  const seen = new Set<string>([subject]);
+  for (const s of raw) {
+    if (!seen.has(s) && entityExists(s)) {
+      seen.add(s);
+      out.push(s);
+    }
+  }
+  return out.slice(0, 8);
+}
+
 // ─── Bridge (window.* — reached by headless probes + the topbar search bar) ──
 
 const bridge = window as Window & {
@@ -381,6 +672,7 @@ const bridge = window as Window & {
     entityList: typeof entityList;
     indexTotals: typeof indexTotals;
     familyCounts: typeof familyCounts;
+    entityFamilies: typeof entityFamilies;
   };
 };
-bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts };
+bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies };
