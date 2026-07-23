@@ -37,12 +37,26 @@ export const ProductNutrientRowSchema = z.object({
   label_iu: z.number().nullable().optional(),
 }).passthrough();
 
+/**
+ * One line inside a proprietary blend's indented ingredient list (label order = descending
+ * amount per FDA). Present in the derived JSON but previously only tolerated via .passthrough();
+ * typed now so the product-detail Supplement Facts can render the collapsible blend breakdown
+ * (name + italic latin) the way a real label prints it. DISPLAY ONLY (§00.A) — composition.
+ */
+const ProductBlendIngredientSchema = z.object({
+  name: z.string(),
+  latin: z.string().optional(),
+  part: z.string().optional(),
+  form: z.string().optional(),
+}).passthrough();
+
 export const ProductBlendSchema = z.object({
   name: z.string().optional(),
   total: AmountUnit.nullable().optional(),
   total_cfu: AmountUnit.nullable().optional(),
   as_labeled: z.string().optional(),
   pct_dv: AmountLike.nullable().optional(),
+  ingredients: z.array(ProductBlendIngredientSchema).optional(),
 }).passthrough();
 
 export const ProductComponentSchema = z.object({

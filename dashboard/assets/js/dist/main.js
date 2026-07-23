@@ -4833,12 +4833,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     unit_detail: external_exports.string().optional(),
     label_iu: external_exports.number().nullable().optional()
   }).passthrough();
+  var ProductBlendIngredientSchema = external_exports.object({
+    name: external_exports.string(),
+    latin: external_exports.string().optional(),
+    part: external_exports.string().optional(),
+    form: external_exports.string().optional()
+  }).passthrough();
   var ProductBlendSchema = external_exports.object({
     name: external_exports.string().optional(),
     total: AmountUnit.nullable().optional(),
     total_cfu: AmountUnit.nullable().optional(),
     as_labeled: external_exports.string().optional(),
-    pct_dv: AmountLike.nullable().optional()
+    pct_dv: AmountLike.nullable().optional(),
+    ingredients: external_exports.array(ProductBlendIngredientSchema).optional()
   }).passthrough();
   var ProductComponentSchema = external_exports.object({
     role: external_exports.string().optional(),
@@ -98248,114 +98255,227 @@ deaths, blood clots, sterility`,
     <div class="kd-section-head">ALL ${products.length} PRODUCTS \xB7 SORTED BY ESSENTIALS SUPPLIED</div>
     <div class="kd-products-grid">${rowsHTML}</div>`;
   }
-  function renderPrice(price) {
-    if (price === null || price === void 0) {
-      return "";
-    }
-    const items = [];
-    if (price.wholesale !== null && price.wholesale !== void 0) {
-      items.push(`<span class="kd-product-deep__price-item"><span class="kd-product-deep__price-label">WHOLESALE</span> $${fmtMoney(price.wholesale)}</span>`);
-    }
-    if (price.retail !== null && price.retail !== void 0) {
-      items.push(`<span class="kd-product-deep__price-item"><span class="kd-product-deep__price-label">RETAIL</span> $${fmtMoney(price.retail)}</span>`);
-    }
-    if (items.length === 0) {
-      return "";
-    }
-    return `<div class="kd-product-deep__price">${items.join("")}<small class="kd-product-deep__price-note">indicative YGY listing</small></div>`;
+  var FORM_COLORS = {
+    liquid: "#3f8fa8",
+    capsule: "#c08a3e",
+    powder: "#5f8a4b",
+    tablet: "#5a63a8",
+    chewable: "#a8517f",
+    tea: "#9a7b3c",
+    topical: "#6a6f77"
+  };
+  function productScrollTint(id) {
+    const p = getProduct(id);
+    return p !== null ? FORM_COLORS[formFamily(p)] ?? "" : "";
   }
-  function renderMacros(macros) {
+  function normNutrientName(s) {
+    return s.toLowerCase().replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim();
+  }
+  function bVitaminToken(norm) {
+    const m = norm.match(/\bb(12|[1235679])\b/);
+    return m !== null ? `b${m[1]}` : null;
+  }
+  var B_SYNONYM = {
+    thiamin: "b1",
+    thiamine: "b1",
+    riboflavin: "b2",
+    pantothenic: "b5",
+    pyridoxine: "b6",
+    cobalamin: "b12"
+  };
+  function rowBToken(n, rowNorm) {
+    const ud = (n.unit_detail ?? "").trim().match(/^b(12|[1235679])$/i);
+    if (ud !== null) {
+      return `b${ud[1]}`;
+    }
+    for (const [key, tok] of Object.entries(B_SYNONYM)) {
+      if (rowNorm.includes(key)) {
+        return tok;
+      }
+    }
+    return null;
+  }
+  function suppliedEssentials(productId) {
+    const out = [];
+    for (const slug of essentialSlugsByProduct().get(productId) ?? []) {
+      const page = getEssentialPage(slug);
+      if (page === null) {
+        continue;
+      }
+      out.push({
+        layoutKey: getEssentialBySlug(slug)?.layout_key ?? slug,
+        name: page.name,
+        category: page.category ?? "",
+        norm: normNutrientName(page.name)
+      });
+    }
+    return out;
+  }
+  var PRODUCT_GLYPH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>';
+  function pfNutrientRow(n, byNorm) {
+    const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML5(n.unit)}` : "";
+    const amt = fmtAmt(n.amount);
+    const amtHTML = amt.length > 0 ? `${escHTML5(amt)}${unit}` : "";
+    const iu = n.label_iu !== null && n.label_iu !== void 0 ? ` \xB7 ${escHTML5(String(n.label_iu))} IU` : "";
+    const detail = n.unit_detail !== void 0 && n.unit_detail.length > 0 ? ` <span class="kd-pf-nrow__ex">(${escHTML5(n.unit_detail)})</span>` : "";
+    const form = n.form !== void 0 && n.form.length > 0 ? `<span class="kd-pf-nrow__form">${escHTML5(n.form)}</span>` : "";
+    const dvRaw = n.pct_dv;
+    const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `${escHTML5(String(dvRaw))}%` : '<span title="Daily Value not established">\u2020</span>';
+    const rowNorm = normNutrientName(n.name);
+    const bt = rowBToken(n, rowNorm);
+    const match = byNorm.get(rowNorm) ?? (bt !== null ? byNorm.get(bt) : void 0);
+    const linked = match !== void 0 && match.category.length > 0;
+    const nav = linked ? ` data-cat="${escHTML5(match.category)}" data-kd-essential="${escHTML5(match.layoutKey)}" role="button" tabindex="0"` : match !== void 0 ? ` data-kd-essential="${escHTML5(match.layoutKey)}" role="button" tabindex="0"` : "";
+    const cls = match !== void 0 ? " kd-pf-nrow--link" : "";
+    const go = match !== void 0 ? '<span class="kd-pf-nrow__go">\u203A</span>' : "";
+    return `<div class="kd-pf-nrow${cls}"${nav}>
+      <span class="kd-pf-nrow__nm">${escHTML5(n.name)}${detail}${go}${form}</span>
+      <span class="kd-pf-nrow__amt">${amtHTML}${iu}</span>
+      <span class="kd-pf-nrow__dv">${dv}</span>
+    </div>`;
+  }
+  function pfBlend(b) {
+    const name = b.name !== void 0 && b.name.length > 0 ? escHTML5(b.name) : "Proprietary blend";
+    const total = b.total != null && b.total.amount != null ? `${escHTML5(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML5(b.total.unit)}` : ""}` : "";
+    const cfu = b.total_cfu != null && b.total_cfu.amount != null ? `${escHTML5(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML5(b.total_cfu.unit)}` : ""}` : "";
+    const ings = b.ingredients ?? [];
+    const body = ings.length > 0 ? ings.map((i) => `${escHTML5(i.name)}${i.latin !== void 0 && i.latin.length > 0 ? ` <i>(${escHTML5(i.latin)})</i>` : ""}`).join(" \xB7 ") : b.as_labeled !== void 0 ? escHTML5(b.as_labeled) : "";
+    const count = ings.length > 0 ? `${ings.length} ingredient${ings.length === 1 ? "" : "s"}` : "";
+    const meta = [total.length > 0 ? total : cfu, count].filter((s) => s.length > 0).join(" \xB7 ");
+    return `<details class="kd-pf-blend">
+      <summary><span class="kd-pf-blend__nm">${name}</span><span class="kd-pf-blend__meta">${meta}</span></summary>
+      <div class="kd-pf-blend__body">${body}</div>
+    </details>`;
+  }
+  function pfMacros(macros) {
     if (macros === void 0 || macros === null) {
       return "";
     }
-    const bits = [];
+    const chips = [];
     for (const [key, val] of Object.entries(macros)) {
       if (val === null || typeof val !== "object") {
         continue;
       }
       const amount = val.amount;
-      const unit = val.unit;
       if (amount === null || amount === void 0) {
         continue;
       }
-      const u = typeof unit === "string" ? ` ${unit}` : "";
-      bits.push(`${escHTML5(key.replace(/_/g, " "))}: ${escHTML5(String(amount))}${escHTML5(u)}`);
+      const unit = val.unit;
+      const u = typeof unit === "string" ? escHTML5(unit) : "";
+      chips.push(`<span class="kd-pf-macro"><b>${escHTML5(String(amount))}${u}</b><span>${escHTML5(key.replace(/_/g, " "))}</span></span>`);
     }
-    return bits.length > 0 ? `<div class="kd-product-comp__macros">${bits.join(" \xB7 ")}</div>` : "";
+    return chips.length > 0 ? `<div class="kd-pf-macros">${chips.join("")}</div>` : "";
   }
-  function renderNutrients(nutrients) {
-    if (nutrients === void 0 || nutrients.length === 0) {
-      return "";
+  function pfComponent(c, multi, byNorm) {
+    const title = multi ? c.role ?? c.form ?? "Component" : "Supplement facts";
+    const metaBits = [
+      multi && c.form !== void 0 ? c.form : "",
+      c.serving_size ?? "",
+      c.servings_per_container !== null && c.servings_per_container !== void 0 ? `${String(c.servings_per_container)} serving${String(c.servings_per_container) === "1" ? "" : "s"}` : ""
+    ].filter((s) => s.length > 0).join(" \xB7 ");
+    let h = `<div class="kd-pf-comp">
+      <div class="kd-pf-comp__head"><span class="kd-pf-comp__title">${escHTML5(title)}</span><span class="kd-pf-comp__meta">${escHTML5(metaBits)}</span></div>`;
+    h += pfMacros(c.macros);
+    const nuts = c.nutrients ?? [];
+    if (nuts.length > 0) {
+      h += '<div class="kd-pf-nhead"><span>Nutrient</span><span>Amount</span><span>%DV</span></div>';
+      h += nuts.map((n) => pfNutrientRow(n, byNorm)).join("");
     }
-    const rows = nutrients.map((n) => {
-      const amt = fmtAmt(n.amount);
-      const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML5(n.unit)}` : "";
-      const form = n.form !== void 0 && n.form.length > 0 ? ` <span class="kd-product-nut__form">${escHTML5(n.form)}</span>` : "";
-      const dvRaw = n.pct_dv;
-      const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `<span class="kd-product-nut__dv">${escHTML5(String(dvRaw))}% DV</span>` : "";
-      const amtHTML = amt.length > 0 ? `${escHTML5(amt)}${unit}` : "";
-      return `
-      <div class="kd-product-nut">
-        <span class="kd-product-nut__name">${escHTML5(n.name)}${form}</span>
-        <span class="kd-product-nut__amt">${amtHTML}${dv}</span>
-      </div>`;
-    }).join("");
-    return `<div class="kd-product-comp__sub">SUPPLEMENT FACTS</div><div class="kd-product-nuts">${rows}</div>`;
+    const blends = c.blends ?? [];
+    if (blends.length > 0) {
+      h += '<div class="kd-pf-sub">Blends <span class="kd-pf-sub__hint">tap to see what\u2019s inside</span></div>';
+      h += blends.map(pfBlend).join("");
+    }
+    if (c.other_ingredients !== void 0 && c.other_ingredients.length > 0) {
+      h += `<div class="kd-pf-sub">Other ingredients</div><div class="kd-pf-other">${escHTML5(c.other_ingredients.join(", "))}</div>`;
+    }
+    return `${h}</div>`;
   }
-  function renderBlends(blends) {
-    if (blends === void 0 || blends.length === 0) {
-      return "";
-    }
-    const items = blends.map((b) => {
-      const name = b.name !== void 0 && b.name.length > 0 ? escHTML5(b.name) : "Proprietary Blend";
-      const total = b.total != null && b.total.amount != null ? ` \xB7 ${escHTML5(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML5(b.total.unit)}` : ""}` : "";
-      const cfu = b.total_cfu != null && b.total_cfu.amount != null ? ` \xB7 ${escHTML5(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML5(b.total_cfu.unit)}` : ""}` : "";
-      const labeled = b.as_labeled !== void 0 && b.as_labeled.length > 0 ? `<div class="kd-product-blend__labeled">${escHTML5(b.as_labeled)}</div>` : "";
-      return `
-      <div class="kd-product-blend">
-        <div class="kd-product-blend__head">${name}${total}${cfu}</div>
-        ${labeled}
-      </div>`;
-    }).join("");
-    return `<div class="kd-product-comp__sub">BLENDS</div>${items}`;
-  }
-  function renderComponent(c, idx, total) {
-    const label = total > 1 ? `<div class="kd-product-comp__label">${escHTML5((c.role ?? c.form ?? `Part ${idx + 1}`).toUpperCase())}</div>` : "";
-    const servingBits = [];
-    if (c.serving_size !== void 0 && c.serving_size.length > 0) {
-      servingBits.push(`SERVING \xB7 ${escHTML5(c.serving_size)}`);
-    }
-    if (c.servings_per_container !== null && c.servings_per_container !== void 0) {
-      servingBits.push(`${escHTML5(String(c.servings_per_container))} PER CONTAINER`);
-    }
-    const serving = servingBits.length > 0 ? `<div class="kd-product-comp__meta">${servingBits.join(" \xB7 ")}</div>` : "";
-    const directions = c.directions !== void 0 && c.directions.length > 0 ? `<p class="kd-product-comp__directions"><strong>Directions</strong> \xB7 ${escHTML5(c.directions)}</p>` : "";
-    const other = c.other_ingredients !== void 0 && c.other_ingredients.length > 0 ? `<div class="kd-product-comp__other"><span class="kd-product-comp__other-label">OTHER INGREDIENTS</span> ${escHTML5(c.other_ingredients.join(", "))}</div>` : "";
-    return `
-    <div class="kd-product-comp">
-      ${label}${serving}${directions}${renderMacros(c.macros)}${renderNutrients(c.nutrients)}${renderBlends(c.blends)}${other}
-    </div>`;
+  function pfGlance(p, supplied) {
+    const c0 = p.components[0];
+    const price = p.price ?? null;
+    const wholesale = price !== null && price.wholesale !== null && price.wholesale !== void 0 ? price.wholesale : null;
+    const retail = price !== null && price.retail !== null && price.retail !== void 0 ? price.retail : null;
+    const spcRaw = c0?.servings_per_container;
+    const spc = typeof spcRaw === "number" ? spcRaw : null;
+    const perServe = wholesale !== null && spc !== null && spc > 0 ? wholesale / spc : null;
+    const serving = c0?.serving_size ?? "";
+    const hero = supplied > 0 ? `<div class="kd-pf-glance__num">${supplied}</div>
+        <div class="kd-pf-glance__cap"><b>of 90</b> Wallach essentials<br>delivered on this label</div>` : `<div class="kd-pf-glance__kill">Targeted<br>formula</div>
+        <div class="kd-pf-glance__cap">a focused botanical outside<br>the 90 core essentials</div>`;
+    const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML5(k)}</div><div class="kd-pf-metric__v">${v}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML5(sub)}</div>` : ""}</div>`;
+    const metrics = [
+      metric("Wholesale", wholesale !== null ? `$${fmtMoney(wholesale)}` : "\u2014", retail !== null ? `$${fmtMoney(retail)} retail` : ""),
+      metric("Per serving", serving.length > 0 ? escHTML5(serving) : "\u2014", spc !== null ? `${spc} per container` : ""),
+      metric("Cost / serving", perServe !== null ? `$${fmtMoney(perServe)}` : "\u2014", perServe !== null ? "wholesale \xF7 servings" : "")
+    ].join("");
+    return `<div class="kd-ep-seclabel">At a glance <span class="kd-ep-seclabel__hint">what\u2019s on the label</span></div>
+    <div class="kd-pf-glance">
+      <div class="kd-pf-glance__hero">${hero}</div>
+      <div class="kd-pf-glance__metrics">${metrics}</div>
+    </div>
+    <div class="kd-pf-note">Composition and an indicative Youngevity listing price \u2014 what the product contains, never a Wallach target (\xA700.A). Wholesale is featured (what most buyers pay online); retail is the MSRP.</div>`;
   }
   function renderProductDeep(id) {
     const p = getProduct(id);
     if (p === null) {
       return "";
     }
+    const fam = formFamily(p);
+    const hex = FORM_COLORS[fam] ?? "";
+    const famStyle = hex.length > 0 ? ` style="--form:${hex}"` : "";
+    const supplied = essentialsSupplied(p);
+    const comps = p.components;
+    const multi = comps.length > 1;
+    const forms = [...new Set(comps.map((c) => c.form).filter((f) => f !== void 0 && f.length > 0))].join(" + ");
+    const c0 = comps[0];
+    const nNut = comps.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
+    const nBlend = comps.reduce((s, c) => s + (c.blends?.length ?? 0), 0);
     const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML5(p.sku)}` : "";
-    const compsHTML = p.components.map((c, i) => renderComponent(c, i, p.components.length)).join("");
-    return `
-    <div class="kd-essential-deep kd-product-deep">
-      <button class="kd-essential-deep__close" data-kd-action="product-close" title="Close (Esc)">\xD7</button>
-      <header class="kd-essential-deep__head">
-        <div class="kd-essential-deep__name-block">
-          <h3 class="kd-essential-deep__name">${escHTML5(p.name)}</h3>
-          <div class="kd-essential-deep__cat">YOUNGEVITY PRODUCT${sku}</div>
+    const supplied_list = suppliedEssentials(p.product_id);
+    const byNorm = /* @__PURE__ */ new Map();
+    for (const e of supplied_list) {
+      byNorm.set(e.norm, e);
+      const bt = bVitaminToken(e.norm);
+      if (bt !== null && !byNorm.has(bt)) {
+        byNorm.set(bt, e);
+      }
+    }
+    const servingTxt = c0?.serving_size !== void 0 && c0.serving_size.length > 0 ? c0.serving_size : "\u2014";
+    const spcVal = c0?.servings_per_container;
+    const spcTxt = spcVal !== null && spcVal !== void 0 ? `, ${String(spcVal)} serving${String(spcVal) === "1" ? "" : "s"} per container` : "";
+    const blendPhrase = nBlend > 0 ? `${nBlend} whole-food blend${nBlend === 1 ? "" : "s"}` : "";
+    const labelSentence = nNut > 0 ? ` The label lists ${nNut} nutrient${nNut === 1 ? "" : "s"}${blendPhrase.length > 0 ? ` across ${blendPhrase}` : ""}.` : blendPhrase.length > 0 ? ` The label is built from ${blendPhrase}.` : "";
+    const lede = `A ${escHTML5(forms.length > 0 ? forms : "Youngevity")} supplement \u2014 one serving is ${escHTML5(servingTxt)}${escHTML5(spcTxt)}.${labelSentence}`;
+    const factsHead = `<div class="kd-ep-seclabel">Supplement facts${multi ? ` <span class="kd-ep-seclabel__hint">${comps.length} components</span>` : ""}</div>`;
+    const factsHTML = comps.map((c) => pfComponent(c, multi, byNorm)).join("");
+    const dirs = comps.map((c) => c.directions).filter((d) => d !== void 0 && d.length > 0);
+    const dirHTML = dirs.length > 0 ? `<div class="kd-ep-seclabel">How to use it</div>${dirs.map((d) => `<div class="kd-pf-use">${escHTML5(d)}</div>`).join("")}` : "";
+    const pills = [...supplied_list].sort((a, b) => a.name.localeCompare(b.name));
+    const pillsHTML = pills.length > 0 ? `<div class="kd-ep-seclabel">Essentials on this label</div>
+      <p class="kd-ep-lead">This product delivers <b>${pills.length}</b> of Wallach\u2019s 90 essentials that have their own page \u2014 tap one to read it.</p>
+      <div class="kd-ep-cloud">${pills.map((e) => `<button class="kd-ep-pill kd-ep-pill--nut" type="button" data-kd-essential="${escHTML5(e.layoutKey)}">${escHTML5(e.name)}</button>`).join("")}</div>` : "";
+    return `<div class="kd-essential-deep kd-ep kd-ep--prod"${famStyle}>
+    <div class="kd-ep-hero">
+      <div class="kd-ep-hero__sym kd-ep-hero__sym--form">${PRODUCT_GLYPH}</div>
+      <div class="kd-ep-hero__idblock">
+        <h1 class="kd-ep-hero__name">${escHTML5(p.name)}</h1>
+        <div class="kd-ep-hero__subline">
+          <div class="kd-ep-hero__form"><i></i>${escHTML5(fam.toUpperCase())}</div>
+          <span class="kd-ep-hero__sep">\xB7</span>
+          <span class="kd-ep-hero__meta">Youngevity product${sku}</span>
         </div>
-      </header>
-      ${renderPrice(p.price)}
-      ${compsHTML}
-      <div class="kd-corpus__foot">SOURCE \xB7 Youngevity product label \xB7 composition + indicative listing price (\xA700.A \xB7 never a Wallach target)</div>
-    </div>`;
+      </div>
+      <button class="kd-ep-back" data-kd-action="product-close" type="button">\u2039 All products</button>
+    </div>
+    <p class="kd-ep-lede">${lede}</p>
+    ${pfGlance(p, supplied)}
+    ${factsHead}
+    ${factsHTML}
+    ${dirHTML}
+    ${pillsHTML}
+    <div class="kd-corpus__foot">SOURCE \xB7 Youngevity product label \xB7 composition + indicative listing price (\xA700.A \xB7 never a Wallach target)</div>
+  </div>`;
   }
   function targetLowOf(target) {
     if (target !== null && typeof target === "object" && "low" in target) {
@@ -100226,11 +100346,11 @@ deaths, blood clots, sterility`,
           applyKnowledgeSearch(body, activeTab, searchQuery);
         }
       }
-      const scrollCat = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : "";
-      if (/^#[0-9a-f]{3,8}$/i.test(scrollCat)) {
-        document.documentElement.style.setProperty("--kd-cond-scroll", scrollCat);
+      const scrollTint = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : activeTab === "products" && selectedProduct !== null ? productScrollTint(selectedProduct) : "";
+      if (/^#[0-9a-f]{3,8}$/i.test(scrollTint)) {
+        document.documentElement.style.setProperty("--kd-detail-scroll", scrollTint);
       } else {
-        document.documentElement.style.removeProperty("--kd-cond-scroll");
+        document.documentElement.style.removeProperty("--kd-detail-scroll");
       }
     };
     const openDetail = (type, val) => {
@@ -100315,7 +100435,7 @@ deaths, blood clots, sterility`,
       selectedProduct = null;
       selectedTopic = null;
       trail = [];
-      document.documentElement.style.removeProperty("--kd-cond-scroll");
+      document.documentElement.style.removeProperty("--kd-detail-scroll");
       container.classList.remove("kd-open");
       container.innerHTML = "";
     };
@@ -102940,7 +103060,19 @@ FIX 2 \u2014 glossary now matches apostrophe terms. views/glossify.ts had been s
 
 VERIFICATION: node tools/build.mjs OK \xB7 invariants 77/77 (0 new reds) \xB7 render_probe_knowledge PASS (215 cards, all clickable to detail, 0 page errors) \xB7 glossary vitest 7/7 (3 original + 4 new apostrophe cases) \xB7 headless screenshots + getBoundingClientRect measurements (nameCenter==cardCenter, dot \u22122px, eponym glosses in both straight and curly apostrophe forms) \xB7 Luneth visual sign-off at each chunk.
 
-DEFERRALS: Products DETAIL panel + Ask-Wallach wording remain (the last demo-to-live surfaces); mining still paused. Nothing sealed this session \u2014 no pillar (corpus/products/catalog, all *.golden.sha256) was touched; all changes are source code + one derived artifact + the hand-authored glossary store.` }];
+DEFERRALS: Products DETAIL panel + Ask-Wallach wording remain (the last demo-to-live surfaces); mining still paused. Nothing sealed this session \u2014 no pillar (corpus/products/catalog, all *.golden.sha256) was touched; all changes are source code + one derived artifact + the hand-authored glossary store.` }, { id: "lg_mrx2l5gt_gton2z", ts: "2026-07-23T00:27:43.085827-05:00", surface: "knowledge/products", kind: "round-close", summary: 'Products DETAIL page live \u2014 a product opens as a full, delivery-form colour-coded entity page: an Unbounded "at a glance" hero + a real-label Supplement Facts table. Round-2 polish too: B-vitamin alias colouring, one-line back button + metrics, lede tidy-ups.', detail: `The Products tab now has a proper detail page \u2014 click any product and it opens like the conditions detail did: a full page, colour-coded to the product's delivery form (tablet = indigo, capsule = amber, liquid = teal\u2026), with a big bold "at a glance" number showing how many of Wallach's 90 essentials it delivers, and a Supplement Facts table that reads like a real label. Then I made the round of fixes you asked for.
+
+Rebuilt renderProductDeep (views/knowledge-products.ts) from the old inline panel into the kd-ep-* entity vocabulary the conditions/essentials pages use (kd-ep-hero / lede / seclabel / pill / back). Colour-coding is keyed on DELIVERY FORM \u2014 the product analog of a condition's body-system category: FORM_COLORS (the JS single source) sets --form inline on the .kd-ep--prod root, driving the icon, the TITLE (products colour the title, unlike conditions' ink title \u2014 your call), the card frame/glow/top-hairline, and \u2014 via productScrollTint published on <html> as --kd-detail-scroll (renamed from --kd-cond-scroll, now shared by conditions + products) \u2014 the drawer scrollbar.
+
+AT A GLANCE (kd-pf-glance): a high-impact Unbounded numeral (--form) = essentials-supplied of 90, echoing the card's ghost number; a targeted formula (0 of 90) shows a "Targeted formula" Unbounded word headline instead of a sad 0; beside it the wholesale / per-serving / cost metrics (content-sized columns, justify-content space-between, nowrap \u2014 so a long "per serving" borrows the blank space a short price leaves and never wraps).
+
+SUPPLEMENT FACTS (kd-pf-*): ported the demo faithfully \u2014 one card per label component, macro chips, a 3-col grid (Nutrient / Amount / %DV, 1fr auto 56px), category-coloured left borders + hover-to-navigate rows linking to the essential page, chemical-form italic sub-lines, unit_detail parentheticals, IU, \u2020 for no-DV, collapsible proprietary blends (ProductBlendSchema widened to type the ingredients list, kept file-internal to satisfy no_new_dead_code), and Other Ingredients.
+
+Row category colouring is GROUNDED in essentialSlugsByProduct (the recommender's authoritative product\u2192essential set): a row only colours/links if its name matches an essential the product actually supplies, so botanicals (MSM, glucosamine, beet root) correctly stay neutral. Round-2 added a B-number alias bridge \u2014 B-vitamins are indexed by their number (Vitamin B1 \u2192 b1) and a row resolves via its unit_detail ("B1") or a 6-name synonym map (thiamin/riboflavin/pantothenic/pyridoxine/cobalamin), lifting BTT from 20\u219223 coloured rows without inventing any mapping.
+
+Round-2 fixes (Luneth): (1) B-vitamin alias colouring; (2) blend-only ledes read "built from N whole-food blends" instead of "lists 0 nutrients"; (3) .kd-ep-back is white-space:nowrap; flex:0 0 auto so it is ALWAYS one line (the title shrinks) \u2014 this also fixes the essentials/Carbon wrap you flagged, since it is the shared back button; (4) metrics content-sized to stop "per serving" wrapping; plus "1 serving" pluralisation and .kd-ep-lede max-width 60ch \u2192 69ch.
+
+Verified: node tools/build.mjs OK (tsc clean), eslint clean, invariants 77/77 (0 new reds), render_probe_knowledge.js PASS with 0 page errors and all 215 products parsing under the widened schema (the blank-surface canary from the build-gate-vs-runtime-schema-drift lesson), plus headless screenshots of BTT 2.0 Tablets (rich), the 18&20 Daily blend (targeted formula), and Rebound FX 1-Case (worst-case long title + long serving). No pillar or sealed-canonical file was touched, so no re-seal is required.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

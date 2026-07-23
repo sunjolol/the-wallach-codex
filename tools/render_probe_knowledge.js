@@ -142,13 +142,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(250);
   const productDeep = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const d = root ? root.querySelector('.kd-product-deep') : null;
+    const d = root ? root.querySelector('.kd-ep--prod') : null;
     return {
       shown: d !== null,
-      hasName: d ? (d.querySelector('.kd-essential-deep__name')?.textContent || '').length > 0 : false,
-      hasPrice: d ? d.querySelector('.kd-product-deep__price') !== null : false,
-      hasComponent: d ? d.querySelector('.kd-product-comp') !== null : false,
-      hasFactsOrBlend: d ? (d.querySelector('.kd-product-nut') !== null || d.querySelector('.kd-product-blend') !== null) : false,
+      hasName: d ? (d.querySelector('.kd-ep-hero__name')?.textContent || '').length > 0 : false,
+      hasGlance: d ? d.querySelector('.kd-pf-glance') !== null : false,
+      hasComponent: d ? d.querySelector('.kd-pf-comp') !== null : false,
+      hasFactsOrBlend: d ? (d.querySelector('.kd-pf-nrow') !== null || d.querySelector('.kd-pf-blend') !== null) : false,
+      formTinted: d ? (d.getAttribute('style') || '').includes('--form') && d.querySelector('.kd-ep-hero__sym--form') !== null : false,
     };
   });
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-action="product-close"]')?.click());
@@ -250,7 +251,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(250);
   const chipToProduct = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
-    const d = root ? root.querySelector('.kd-product-deep') : null;
+    const d = root ? root.querySelector('.kd-ep--prod') : null;
     const active = root ? (root.querySelector('.kd-knh__tab.active')?.textContent || '') : '';
     return { productShown: d !== null, onProductsTab: /Products/i.test(active) };
   });
@@ -456,7 +457,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['products: ALL listed (no 30 cap)', products.rowCount === products.count && products.rowCount >= 200],
     ['products: every row is clickable', products.clickable === products.rowCount],
     ['no unnamed product rows', products.anyUnnamed === false],
-    ['product row opens the detail panel (price + components + facts/blend)', productDeep.shown === true && productDeep.hasName === true && productDeep.hasPrice === true && productDeep.hasComponent === true && productDeep.hasFactsOrBlend === true],
+    ['product row opens the kd-ep--prod detail (hero name + at-a-glance + supplement facts, form-tinted)', productDeep.shown === true && productDeep.hasName === true && productDeep.hasGlance === true && productDeep.hasComponent === true && productDeep.hasFactsOrBlend === true && productDeep.formTinted === true],
     ['essentials BEST SOURCES list renders (Magnesium)', chipToProduct.srcCount > 0],
     ['best-source rows show a pointer cursor (look clickable)', chipToProduct.srcCursor === 'pointer'],
     ['best-source row opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],

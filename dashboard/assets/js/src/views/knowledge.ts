@@ -51,7 +51,7 @@ import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
 import { renderFoodsTab } from './knowledge-foods.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
-import { productCount, renderProductsTab } from './knowledge-products.js';
+import { productCount, productScrollTint, renderProductsTab } from './knowledge-products.js';
 import { renderTopicPage } from './knowledge-topic.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
@@ -449,17 +449,20 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
     }
     // Scrollbar tint (cross-browser). A WebKit scrollbar pseudo reads ONLY root-level custom props
-    // (an element-level --cat on .kd-body can't reach it), and Firefox uses standard scrollbar-color
-    // — so publish the condition's category colour on <html> as --kd-cond-scroll (a validated hex
-    // from conditionCategory); the .kd-body scrollbar CSS reads it, orange when unset.
-    const scrollCat = (activeTab === 'conditions' && selectedCondition !== null)
+    // (an element-level --cat/--form on .kd-body can't reach it), and Firefox uses standard
+    // scrollbar-color — so publish the SELECTED detail's colour on <html> as --kd-detail-scroll: a
+    // condition's body-system category colour, OR a product's delivery-form colour (both validated
+    // hex); the .kd-body scrollbar CSS reads it, app-orange when unset.
+    const scrollTint = (activeTab === 'conditions' && selectedCondition !== null)
       ? conditionCategory(selectedCondition)?.color ?? ''
-      : '';
-    if (/^#[0-9a-f]{3,8}$/i.test(scrollCat)) {
-      document.documentElement.style.setProperty('--kd-cond-scroll', scrollCat);
+      : (activeTab === 'products' && selectedProduct !== null)
+          ? productScrollTint(selectedProduct)
+          : '';
+    if (/^#[0-9a-f]{3,8}$/i.test(scrollTint)) {
+      document.documentElement.style.setProperty('--kd-detail-scroll', scrollTint);
     }
     else {
-      document.documentElement.style.removeProperty('--kd-cond-scroll');
+      document.documentElement.style.removeProperty('--kd-detail-scroll');
     }
   };
 
@@ -556,7 +559,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedProduct = null;
     selectedTopic = null;
     trail = [];
-    document.documentElement.style.removeProperty('--kd-cond-scroll');
+    document.documentElement.style.removeProperty('--kd-detail-scroll');
     container.classList.remove('kd-open');
     container.innerHTML = '';
   };
