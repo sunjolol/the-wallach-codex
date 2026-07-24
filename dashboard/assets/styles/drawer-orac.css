@@ -1,7 +1,7 @@
 /* ORAC knowledge tab — content styles (kd-orac-*). Ported byte-exact from the
    signed-off temporary/orac-EDITED.html; every rule scoped to #drawer-knowledge-mount
    to match the drawer convention and prevent cascade leakage. --ds-* tokens + local
-   --o-*/--sev-* palette only; no external resources. Loaded AFTER drawer-knowledge.css. */
+   --o-* / --sev-* palette only; no external resources. Loaded AFTER drawer-knowledge.css. */
 #drawer-knowledge-mount .kd-orac { --o-spice: #b4531f; --o-nut: #8a6a2f; --o-berry: #7b2d52; --o-bean: #5d6a34; --o-juice: #2f7d8a; --o-wine: #6d213c; --o-choc: #4a3120; --o-veg: #3f7a3a; --sev-calm: #5a8ca8; --sev-warn: #d99a2b; --sev-dang: #c85a2c; --sev-crit: #8a2f2f; padding-bottom: 40px; }
 #drawer-knowledge-mount .kd-orac-hero { position: relative; padding: 30px 0px 24px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
 #drawer-knowledge-mount .kd-orac-eyebrow { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--ds-space-5); font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 500; letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }

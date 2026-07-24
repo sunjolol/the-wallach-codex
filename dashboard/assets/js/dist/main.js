@@ -5232,6 +5232,81 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }).passthrough())
   }).passthrough();
 
+  // assets/js/src/core/schemas/orac-data.ts
+  var Sourced = { source_claim_id: external_exports.string() };
+  var OracDataSchema = external_exports.object({
+    /** §02 mirror-test — Adelman aging-pigment decade table (bar height = pct). */
+    decades: external_exports.object({
+      ...Sourced,
+      cite: external_exports.string(),
+      rows: external_exports.array(external_exports.object({
+        age: external_exports.string(),
+        pct: external_exports.number()
+      }))
+    }),
+    /** §02 stolen-years — the 20–25 year gap + the should-average / actual figures. */
+    stolen_years: external_exports.object({
+      ...Sourced,
+      low: external_exports.number(),
+      high: external_exports.number(),
+      display: external_exports.string(),
+      should_low: external_exports.number(),
+      should_high: external_exports.number(),
+      actual: external_exports.number()
+    }),
+    /** §02 rankings — the US world-longevity decline (year → rank progression). */
+    rankings: external_exports.object({
+      ...Sourced,
+      cite: external_exports.string(),
+      points: external_exports.array(external_exports.object({
+        year: external_exports.number(),
+        rank: external_exports.number()
+      }))
+    }),
+    /** §03 daily target — 20,000–25,000 ORAC/day; base_age (100) feeds the §08 ceiling. */
+    target: external_exports.object({
+      ...Sourced,
+      low: external_exports.number(),
+      high: external_exports.number(),
+      low_display: external_exports.string(),
+      high_display: external_exports.string(),
+      base_age: external_exports.number()
+    }),
+    /** §03 disease dose — the >100,000 ORAC/day neurological-disease figure. */
+    disease_target: external_exports.object({
+      ...Sourced,
+      min: external_exports.number(),
+      display: external_exports.string(),
+      min_display: external_exports.string()
+    }),
+    /** §08 piece 2 — the calorie-restricted band (1,250–1,800). */
+    calories: external_exports.object({
+      ...Sourced,
+      low: external_exports.number(),
+      high: external_exports.number(),
+      display: external_exports.string()
+    }),
+    /** §08 payoff — +25–50 healthful years for a 150–175 lb person. */
+    payoff: external_exports.object({
+      ...Sourced,
+      cite: external_exports.string(),
+      years_low: external_exports.number(),
+      years_high: external_exports.number(),
+      years_display: external_exports.string(),
+      weight_low: external_exports.number(),
+      weight_high: external_exports.number(),
+      weight_display: external_exports.string()
+    }),
+    /** §08 forces intro — base age (100), the ceiling (150), and the gap between (50). */
+    ceiling: external_exports.object({
+      ...Sourced,
+      base_claim_id: external_exports.string(),
+      base: external_exports.number(),
+      ceiling: external_exports.number(),
+      gap: external_exports.number()
+    })
+  });
+
   // assets/js/src/state/corpus.ts
   var EMPTY_CORPUS = {
     knowledge_version: 0,
@@ -18416,6 +18491,65 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_orac_claims_kicker: "{n} claims Wallach makes about ORAC",
       kd_orac_claims_h: "The full record",
       kd_orac_claims_intro: "Every claim behind this page, grouped by what it answers. This is the same set that powers Ask Wallach \u2014 the page is both the experience and the database.",
+      kd_orac_mirror_k: "Look at the back of your hand",
+      kd_orac_mirror_h: "See a dark spot? You already have *millions more* you can\u2019t see.",
+      kd_orac_mirror_body: "**Age spots** and liver spots aren\u2019t cosmetic. They\u2019re **ceroid lipofuscin** \u2014 a brown residue left behind wherever free radicals have burned through a cell. **The ones on your skin are the readable surface of the same buildup happening in your brain, heart, liver and eyes.** Wallach cites how much of a brain cell it fills as you age:",
+      kd_orac_dec_age_prefix: "Age ",
+      kd_orac_dec_lbl: "of the cell, full",
+      kd_orac_dec_cap1: "starting",
+      kd_orac_dec_cap2: "building",
+      kd_orac_dec_cap3: "serious",
+      kd_orac_dec_cap4: "critical",
+      kd_orac_steal_lead: "What that damage is costing you",
+      kd_orac_steal_body: "Wallach\u2019s math: the industrialized world *should* average {shouldLow} to {shouldHigh} years, and instead averages about {actual}. That gap is roughly {low} to {high} years taken off the front of your life \u2014 and America keeps losing ground, sliding down the world longevity rankings for two decades straight.",
+      kd_orac_chain_k: "How the damage actually happens",
+      kd_orac_chain_h: "Rust, one cell at a time",
+      kd_orac_chain_intro: "Wallach quotes the researcher Roy Walford, who called free radicals \u201Cthe great white sharks in the biochemical sea.\u201D Here is the attack, in plain terms \u2014 five steps from a single broken molecule to the spot on your hand:",
+      kd_orac_chain_s1_t: "A molecule breaks",
+      kd_orac_chain_s1_d: "A free radical is a molecule missing a piece. It comes from fried food, smoke, sugar \u2014 even your body burning fuel.",
+      kd_orac_chain_s2_t: "It steals from your cells",
+      kd_orac_chain_s2_d: "To repair itself it rips a piece off your cell wall. Now that part is broken too \u2014 a chain reaction starts.",
+      kd_orac_chain_s3_t: "The damage sets",
+      kd_orac_chain_s3_d: "The broken fats turn into a glue that fuses your proteins and DNA together where they should move freely.",
+      kd_orac_chain_s4_t: "Your cells stiffen",
+      kd_orac_chain_s4_d: "Fused cells can\u2019t let food in or push waste out. At the cellular level, this hardening IS aging.",
+      kd_orac_chain_s5_t: "You can see it",
+      kd_orac_chain_s5_d: "The leftover residue is a brown pigment. On your skin it\u2019s an age spot. Everywhere else, it just keeps building.",
+      kd_orac_target_k: "The one number to hit",
+      kd_orac_target_h: "How much protection you actually need",
+      kd_orac_target_intro: "ORAC turns \u201Ceat more antioxidants\u201D into a target you can count. Here is Wallach\u2019s:",
+      kd_orac_target_lead: "Wallach\u2019s daily target",
+      kd_orac_target_unit: "ORAC points / day",
+      kd_orac_target_body: "The intake he gives as optimal for reaching {baseAge}. A maintenance figure \u2014 never given alone, always paired with the rest of his program.",
+      kd_orac_target_sk: "Fighting disease",
+      kd_orac_target_sb: "For active neurological disease \u2014 MS, ALS, Parkinson\u2019s \u2014 he goes past {diseaseMin} points a day, four times the maintenance dose.",
+      kd_orac_pieces_k: "Where ORAC fits in the bigger picture",
+      kd_orac_pieces_h: "ORAC is one of four \u2014 and only one raises the ceiling",
+      kd_orac_pieces_intro: "Antioxidants are powerful, but Wallach is clear they only get you so far: **more antioxidants raise the average lifespan, not the maximum.** To go the whole distance he names four longevity pieces, and says leaving out any one causes total failure:",
+      kd_orac_piece1_tag: "Piece 1 \xB7 on this page",
+      kd_orac_piece1_t: "Antioxidants",
+      kd_orac_piece1_d: "{orac} ORAC points a day \u2014 the defence that slows the rusting.",
+      kd_orac_piece2_tag: "Piece 2 \xB7 Absorption tab",
+      kd_orac_piece2_t: "Calorie-restricted diet",
+      kd_orac_piece2_d: "{calories} calories, without malnutrition. A diet piece.",
+      kd_orac_piece3_tag: "Piece 3 \xB7 on this page",
+      kd_orac_piece3_t: "Mineral-rich diet",
+      kd_orac_piece3_d: "The raw materials to rebuild. \u201CUnforgiving of a low mineral diet.\u201D",
+      kd_orac_piece4_tag: "Piece 4 \xB7 Absorption tab",
+      kd_orac_piece4_t: "Avoid the land mines",
+      kd_orac_piece4_d: "Fried food, sugar, burnt meat, alcohol, tobacco. A diet piece.",
+      kd_orac_abs_txt: "**Two of the four are what you eat and don\u2019t eat** \u2014 a calorie-restricted, well-rounded diet, and steering clear of the land mines. Both are covered in depth on the Absorption tab.",
+      kd_orac_abs_btn: "Explore the Absorption facts \u2192",
+      kd_orac_forces_intro: "So how do you get the *other* {gap} years \u2014 past {baseAge}, toward the {ceiling} Wallach says is possible? Two different forces, doing two different jobs:",
+      kd_orac_force_a_k: "Antioxidants \xB7 ORAC",
+      kd_orac_force_a_t: "Slow the rusting",
+      kd_orac_force_a_d: "Neutralize the free radicals before they burn through a cell. This is defence \u2014 it stops damage you\u2019d otherwise take.",
+      kd_orac_force_a_big: "\u2191 raises your AVERAGE",
+      kd_orac_force_b_k: "The {essentials} essentials \xB7 minerals",
+      kd_orac_force_b_t: "Build and repair",
+      kd_orac_force_b_d: "Give the body every raw material it needs to rebuild what wears out. Wallach: forgiving of low vitamins, unforgiving of low minerals.",
+      kd_orac_force_b_big: "\u2191 raises your CEILING",
+      kd_orac_payoff_body: "Wallach\u2019s calculation for a {weight} person doing both \u2014 and note the word **healthful**. The goal isn\u2019t extra years in decline; it\u2019s reaching past {baseAge} \u201Cin a beautiful, healthful and functional way.\u201D It even *saves* money: cheaper whole food more than offsets the supplements, and you avoid the medical bills of the diseases you\u2019d otherwise be buying. Prevention, not cure.",
       kd_best_match: "Best match",
       kd_mark: "KNOWLEDGE",
       kd_tab_conditions: "Conditions",
@@ -25635,10 +25769,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const status = tile?.status ?? "";
     const hitIdx = goals.map((g, i) => spec.slug !== void 0 && g.members.includes(spec.slug) ? i : -1).filter((i) => i >= 0);
     const cls = [tileClass, status, hitIdx.length > 1 ? "tile--blend" : ""].filter(Boolean).join(" ");
-    const fill = tileFillPercent(tile);
+    const fill2 = tileFillPercent(tile);
     const styles = [];
-    if (fill !== null) {
-      styles.push(`--fill: ${fill}%`);
+    if (fill2 !== null) {
+      styles.push(`--fill: ${fill2}%`);
     }
     if (hitIdx.length > 0) {
       const cols = hitIdx.map((i) => GOAL_HUES[i] ?? GOAL_HUES[0]);
@@ -26214,10 +26348,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return groups;
   }
   function renderPips(severity) {
-    const fill = severity >= 4 ? "fill-ok" : "fill-warn";
+    const fill2 = severity >= 4 ? "fill-ok" : "fill-warn";
     let out = "";
     for (let i = 1; i <= 5; i++) {
-      out += `<span class="jd-sev-pip${i <= severity ? ` ${fill}` : ""}"></span>`;
+      out += `<span class="jd-sev-pip${i <= severity ? ` ${fill2}` : ""}"></span>`;
     }
     return out;
   }
@@ -101024,12 +101158,49 @@ deaths, blood clots, sterility`,
     return html;
   }
 
+  // assets/data/orac-data.json
+  var orac_data_default = { _purpose: "The ORAC knowledge tab's canonical Wallach numbers (\xA702/\xA703/\xA708). GENERATED by eden/tools/orac_data_derive.py \u2014 every value is parsed from a sealed claim's byte-faithful verbatim (dose is null on all), so no ORAC number is hand-typed in a view or in view-copy (R1/R3/\xA700.A). Framing prose lives in view-copy.json with {placeholders}; these numbers fill them at render. Never hand-edit; run eden/tools/build_embeds.py.", calories: { display: "1,250\u20131,800", high: 1800, low: 1250, source_claim_id: "WAL-CLM-IMMORT-000255" }, ceiling: { base: 100, base_claim_id: "WAL-CLM-IMMORT-000238", ceiling: 150, gap: 50, source_claim_id: "WAL-CLM-IMMORT-000260" }, decades: { cite: "Immortality, p.29 \xB7 after Adelman et al., 1988", rows: [{ age: "30\u201340", pct: 35 }, { age: "50\u201360", pct: 41 }, { age: "70\u201380", pct: 55 }, { age: "90\u2013100", pct: 78 }], source_claim_id: "WAL-CLM-IMMORT-000261" }, disease_target: { display: "100,000+", min: 1e5, min_display: "100,000", source_claim_id: "WAL-CLM-EPIGEN-000154" }, payoff: { cite: "Immortality (2008)", source_claim_id: "WAL-CLM-IMMORT-000259", weight_display: "150\u2013175 lb", weight_high: 175, weight_low: 150, years_display: "+25 to 50 healthful years", years_high: 50, years_low: 25 }, rankings: { cite: "Immortality, p.9 \xB7 CDC / WHO longevity rankings", points: [{ rank: 17, year: 1990 }, { rank: 24, year: 2e3 }, { rank: 46, year: 2005 }, { rank: 48, year: 2008 }], source_claim_id: "WAL-CLM-IMMORT-000262" }, stolen_years: { actual: 75, display: "20\u201325 years", high: 25, low: 20, should_high: 100, should_low: 95, source_claim_id: "WAL-CLM-IMMORT-000254" }, target: { base_age: 100, high: 25e3, high_display: "25,000", low: 2e4, low_display: "20,000", source_claim_id: "WAL-CLM-IMMORT-000238" } };
+
+  // assets/js/src/state/orac.ts
+  var cached9;
+  function oracData() {
+    if (cached9 === void 0) {
+      const parsed = OracDataSchema.safeParse(orac_data_default);
+      cached9 = parsed.success ? parsed.data : null;
+    }
+    return cached9;
+  }
+
   // assets/js/src/views/knowledge-orac.ts
+  var DASH = "\u2013";
   function escHTML10(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function emph(raw) {
-    return escHTML10(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+    return escHTML10(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+  }
+  function fill(key, repl = {}) {
+    let s = ui(key);
+    for (const k of Object.keys(repl)) {
+      s = s.split(`{${k}}`).join(repl[k] ?? "");
+    }
+    return emph(s);
+  }
+  function ordinal(n) {
+    const t = n % 100;
+    if (t >= 11 && t <= 13) {
+      return "th";
+    }
+    switch (n % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
   }
   function sectionHeader2(num, kickerHTML, headingKey) {
     return `<div class="kd-orac-sec">
@@ -101039,6 +101210,129 @@ deaths, blood clots, sterility`,
         <h2 class="kd-orac-sec__h">${escHTML10(ui(headingKey))}</h2>
       </div>
     </div>`;
+  }
+  function secKicker(key) {
+    return `<div class="kd-orac-sec__k">${escHTML10(ui(key))}</div>`;
+  }
+  var SEV_VARS = ["var(--sev-calm)", "var(--sev-warn)", "var(--sev-dang)", "var(--sev-crit)"];
+  function renderMirror(od) {
+    const d = od.decades;
+    const capKeys = ["kd_orac_dec_cap1", "kd_orac_dec_cap2", "kd_orac_dec_cap3", "kd_orac_dec_cap4"];
+    const cols = d.rows.map((r, i) => `<div class="kd-orac-dec">
+      <div class="kd-orac-dec__bar"><div class="kd-orac-dec__fill" style="height:${r.pct}%;background:${SEV_VARS[i] ?? "var(--sev-crit)"}"><div class="kd-orac-dec__pct" style="bottom:6px;">${r.pct}%<span class="kd-orac-dec__cap" style="display:block;">${escHTML10(ui(capKeys[i] ?? ""))}</span></div></div></div>
+      <div class="kd-orac-dec__age">${escHTML10(ui("kd_orac_dec_age_prefix"))}${escHTML10(r.age)}</div>
+      <div class="kd-orac-dec__lbl">${escHTML10(ui("kd_orac_dec_lbl"))}</div>
+    </div>`).join("");
+    return `<div class="kd-orac-mirror">
+    <div class="kd-orac-mirror__k">${escHTML10(ui("kd_orac_mirror_k"))}</div>
+    <h2 class="kd-orac-mirror__h">${fill("kd_orac_mirror_h")}</h2>
+    <p class="kd-orac-mirror__body">${fill("kd_orac_mirror_body")}</p>
+    <div class="kd-orac-decades">${cols}</div>
+    <div class="kd-orac-mirror__src">${escHTML10(d.cite)}</div>
+  </div>`;
+  }
+  function renderSteal(od) {
+    const s = od.stolen_years;
+    const r = od.rankings;
+    const cells = r.points.map((p, i) => `<div class="kd-orac-rank__c">
+      <div class="kd-orac-rank__yr">${escHTML10(String(p.year))}</div>
+      <div class="kd-orac-rank__v" style="color:${SEV_VARS[i] ?? "var(--sev-crit)"}">${escHTML10(String(p.rank))}${ordinal(p.rank)}</div>
+    </div>`).join('<span class="kd-orac-rank__arrow">\u2192</span>');
+    return `<div class="kd-orac-steal">
+    <div class="kd-orac-steal__lead">${escHTML10(ui("kd_orac_steal_lead"))}</div>
+    <div class="kd-orac-steal__num">${escHTML10(s.display)}</div>
+    <p class="kd-orac-steal__body">${fill("kd_orac_steal_body", {
+      shouldLow: String(s.should_low),
+      shouldHigh: String(s.should_high),
+      actual: String(s.actual),
+      low: String(s.low),
+      high: String(s.high)
+    })}</p>
+    <div class="kd-orac-rank">${cells}</div>
+    <div class="kd-orac-mirror__src">${escHTML10(r.cite)}</div>
+  </div>`;
+  }
+  var CHAIN_COLORS = ["#5a8ca8", "#c9902f", "#c85a2c", "#a03f2c", "#8a2f2f"];
+  function renderChain() {
+    const cards2 = CHAIN_COLORS.map((c, i) => {
+      const n = i + 1;
+      return `<div class="kd-orac-chain__step" style="background:${c}">
+      <div class="kd-orac-chain__i">${String(n).padStart(2, "0")}</div>
+      <div class="kd-orac-chain__t">${escHTML10(ui(`kd_orac_chain_s${n}_t`))}</div>
+      <div class="kd-orac-chain__d">${escHTML10(ui(`kd_orac_chain_s${n}_d`))}</div>
+    </div>`;
+    }).join("");
+    return `${sectionHeader2("02", secKicker("kd_orac_chain_k"), "kd_orac_chain_h")}
+    <p class="kd-orac-p">${fill("kd_orac_chain_intro")}</p>
+    <div class="kd-orac-chain">${cards2}</div>`;
+  }
+  function renderTarget(od) {
+    const t = od.target;
+    const dis = od.disease_target;
+    return `${sectionHeader2("03", secKicker("kd_orac_target_k"), "kd_orac_target_h")}
+    <p class="kd-orac-p">${fill("kd_orac_target_intro")}</p>
+    <div class="kd-orac-target">
+      <div class="kd-orac-target__main">
+        <div class="kd-orac-target__lead">${escHTML10(ui("kd_orac_target_lead"))}</div>
+        <div class="kd-orac-target__num">${escHTML10(t.low_display)}<em>${DASH}</em>${escHTML10(t.high_display)}<span class="kd-orac-target__unit">${escHTML10(ui("kd_orac_target_unit"))}</span></div>
+        <p class="kd-orac-target__body">${fill("kd_orac_target_body", { baseAge: String(t.base_age) })}</p>
+      </div>
+      <div class="kd-orac-target__side">
+        <div class="kd-orac-target__sk">${escHTML10(ui("kd_orac_target_sk"))}</div>
+        <div class="kd-orac-target__sn">${escHTML10(dis.display)}</div>
+        <div class="kd-orac-target__sb">${fill("kd_orac_target_sb", { diseaseMin: dis.min_display })}</div>
+      </div>
+    </div>`;
+  }
+  function oracPiece(n, mod, repl = {}) {
+    return `<div class="kd-orac-piece kd-orac-piece--${mod}">
+      <div class="kd-orac-piece__tag">${escHTML10(ui(`kd_orac_piece${n}_tag`))}</div>
+      <div class="kd-orac-piece__t">${escHTML10(ui(`kd_orac_piece${n}_t`))}</div>
+      <div class="kd-orac-piece__d">${fill(`kd_orac_piece${n}_d`, repl)}</div>
+    </div>`;
+  }
+  function renderPieces(od) {
+    const t = od.target;
+    const cal = od.calories;
+    const cl = od.ceiling;
+    const pay = od.payoff;
+    const oracRange = `${t.low_display}${DASH}${t.high_display}`;
+    const pieces = oracPiece(1, "here", { orac: oracRange }) + oracPiece(3, "here") + oracPiece(2, "diet", { calories: cal.display }) + oracPiece(4, "diet");
+    return `${sectionHeader2("08", secKicker("kd_orac_pieces_k"), "kd_orac_pieces_h")}
+    <p class="kd-orac-p">${fill("kd_orac_pieces_intro")}</p>
+    <div class="kd-orac-pieces">${pieces}</div>
+    <div class="kd-orac-abs">
+      <div class="kd-orac-abs__txt">${fill("kd_orac_abs_txt")}</div>
+      <button class="kd-orac-abs__btn" type="button" data-kd-tab="foods">${escHTML10(ui("kd_orac_abs_btn"))}</button>
+    </div>
+    <p class="kd-orac-p" style="margin-top:34px; margin-bottom:12px; font-weight:700; font-size:1.25rem; text-align:center">${fill("kd_orac_forces_intro", { gap: String(cl.gap), baseAge: String(cl.base), ceiling: String(cl.ceiling) })}</p>
+    <div class="kd-orac-forces">
+      <div class="kd-orac-force kd-orac-force--a">
+        <div class="kd-orac-force__k">${escHTML10(ui("kd_orac_force_a_k"))}</div>
+        <div class="kd-orac-force__t">${escHTML10(ui("kd_orac_force_a_t"))}</div>
+        <div class="kd-orac-force__d">${escHTML10(ui("kd_orac_force_a_d"))}</div>
+        <div class="kd-orac-force__big">${escHTML10(ui("kd_orac_force_a_big"))}</div>
+      </div>
+      <div class="kd-orac-force__plus">+</div>
+      <div class="kd-orac-force kd-orac-force--b">
+        <div class="kd-orac-force__k">${fill("kd_orac_force_b_k", { essentials: String(essentialCount()) })}</div>
+        <div class="kd-orac-force__t">${escHTML10(ui("kd_orac_force_b_t"))}</div>
+        <div class="kd-orac-force__d">${escHTML10(ui("kd_orac_force_b_d"))}</div>
+        <div class="kd-orac-force__big">${escHTML10(ui("kd_orac_force_b_big"))}</div>
+      </div>
+    </div>
+    <div class="kd-orac-payoff">
+      <div class="kd-orac-payoff__n">${escHTML10(pay.years_display)}</div>
+      <p class="kd-orac-payoff__b">${fill("kd_orac_payoff_body", { weight: pay.weight_display, baseAge: String(t.base_age) })}</p>
+      <div class="kd-orac-src">${escHTML10(pay.cite)}</div>
+    </div>`;
+  }
+  function renderNarrative(od) {
+    return `${renderMirror(od)}
+    ${renderSteal(od)}
+    ${renderChain()}
+    ${renderTarget(od)}
+    ${renderPieces(od)}`;
   }
   function oracClaimCard(c) {
     return `<div class="kd-orac-claim">
@@ -101062,7 +101356,8 @@ deaths, blood clots, sterility`,
   }
   function renderOracTab() {
     const claims = oracClaims();
-    const kicker = `<div class="kd-orac-sec__k">${escHTML10(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
+    const od = oracData();
+    const claimsKicker = `<div class="kd-orac-sec__k">${escHTML10(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
     return `<div class="kt-page kd-orac">
     <header class="kd-orac-hero">
       <div class="kd-orac-eyebrow">
@@ -101079,7 +101374,9 @@ deaths, blood clots, sterility`,
       </div>
     </header>
 
-    ${sectionHeader2("09", kicker, "kd_orac_claims_h")}
+    ${od !== null ? renderNarrative(od) : ""}
+
+    ${sectionHeader2("09", claimsKicker, "kd_orac_claims_h")}
     <p class="kd-orac-p">${escHTML10(ui("kd_orac_claims_intro"))}</p>
     <div class="kd-orac-claims">${oracClaimGroups(claims)}</div>
   </div>`;
@@ -104298,7 +104595,15 @@ Decisions locked: 31-claim scope (excludes the lone eggs-subject claim that only
 
 Purified immortality.txt via safe_write: the Adelman decade table (col-1 header 'Age' OCR'd 'Soe' + fused with the wrapped col-2 header; the 41 value OCR'd '4]'), and 'Atlantha'->'Atlanta' (p.9). corpus_resnap --write: 254 claims, 253 relocated, 0 broken. corpus_extract finalize -> WAL-CLM-IMMORT-000261 (mechanism, decade table, p.29) + WAL-CLM-IMMORT-000262 (prevalence, ranking decline, p.9), verbatims snapped to exact book bytes. purity-spec Chunk H audit recorded (2 replacements). corpus_seal (user-authorized per-invocation) -> knowledge_version=387, 1379 claims, corpus_verify PASS, 15 goldens rewritten. Enriched both in search-enrichment.json (subject free_radicals / longevity, facet physiology / big_question) \u2014 deliberately NOT also_about:orac, so they are searchable but stay OUT of the ORAC \xA709 record (which holds the Q&A claims; \xA702 reads the data by claim-id). build_embeds regenerated every corpus-derived artifact + search_index_derive + build.mjs re-bundled.
 
-Verify: invariants 77/77 (0 new red \u2014 corpus_integrity green post-seal, derived_artifacts_fresh green post-rebuild); search index 354 claims (was 352); oracClaims() == 31 (unchanged \u2014 both new claims present in the index but excluded from the ORAC page's claim set by design); render_probe_orac PASS. Deferred: the \xA702/\xA703/\xA708 view sections + the DERIVED orac-data.json that pulls their numbers from the source claims (000261/262/238/250/254/255/256/259) \u2014 no number hand-typed.` }];
+Verify: invariants 77/77 (0 new red \u2014 corpus_integrity green post-seal, derived_artifacts_fresh green post-rebuild); search index 354 claims (was 352); oracClaims() == 31 (unchanged \u2014 both new claims present in the index but excluded from the ORAC page's claim set by design); render_probe_orac PASS. Deferred: the \xA702/\xA703/\xA708 view sections + the DERIVED orac-data.json that pulls their numbers from the source claims (000261/262/238/250/254/255/256/259) \u2014 no number hand-typed.` }, { id: "lg_mrynt0py_edshly", ts: "2026-07-24T03:09:28.294072-05:00", surface: "knowledge", kind: "round-close", summary: "ORAC tab Phase 2 live: mirror-test / stolen-years / damage-chain / daily-target / four-pieces sections between hero and claims \u2014 every Wallach number derived from the sealed corpus, none hand-typed. Luneth signed off; fixed a CSS comment bug that had blanked the bar colours.", detail: `Phase 2 of the ORAC knowledge tab: the urgency + explainer sections now sit between the hero and the full claims record \u2014 the age-spot "mirror test" with its decade bars, the "20\u201325 stolen years" + world-ranking decline, the five-step damage chain, the daily ORAC target, and the four longevity pieces with the forces/payoff. The whole design principle is that every Wallach number is real: none is typed into the page or the copy \u2014 each is pulled straight out of the sealed corpus and interpolated in. Luneth reviewed the render and signed off ("looks identical").
+
+NEW eden/tools/orac_data_derive.py \u2192 dashboard/assets/data/orac-data.json: parses every \xA702/\xA703/\xA708 number out of the byte-faithful verbatim of 10 sealed claims (IMMORT-000261 decade table 35/41/55/78, 000262 rank decline 17\u219224\u219246\u219248, 000254 stolen-years 20\u201325 / should 95\u2013100 / actual 75, 000238 target 20,000\u201325,000 + base age 100, 000255 calories 1,250\u20131,800, 000259 payoff +25\u201350 yrs / 150\u2013175 lb, 000260 ceiling 150; EPIGEN-000154 disease dose 100,000+), composes cites from books-meta + locator.page + a verbatim-parsed attribution, and HARD-FAILS (ParseError) on any missing/misparsed figure so a silent guess cannot ship. Registered in eden/derived/MANIFEST.json artifacts[] (13 now) \u2192 byte-gated by derived_artifacts_fresh, regenerated by build_embeds. NEW core/schemas/orac-data.ts (OracDataSchema) + barrel export; NEW state/orac.ts (Zod read boundary; degrades to null so the tab still renders hero+claims if the artifact is bad). view-copy.json +59 kd_orac_* framing keys \u2014 Wallach numbers appear ONLY as {placeholders}, interpolated at render (never hand-typed in the prose store; R1/R3/\xA700.A). views/knowledge-orac.ts spliced renderMirror/renderSteal/renderChain/renderTarget/renderPieces between hero and claims; extended emph() to handle *em*; added fill() interpolation, ordinal(), and essentialCount() for "the 90 essentials"; the "Explore the Absorption facts \u2192" button carries data-kd-tab="foods".
+
+FIX dashboard/assets/styles/drawer-orac.css: the ported header comment contained "--o-*/--sev-*", whose embedded "*/" closed the block comment 82 bytes early. The CSS parser then swallowed line-5's entire --o-*/--sev-* custom-property block into a corrupt selector and dropped the whole rule \u2014 so the decade bars rendered as empty boxes and the rank text fell back to black, while every rule from line 6 on worked (which is exactly why it looked "mostly fine"). Broke the accidental sequence to "--o-* / --sev-*". This was invisible to every gate: CSS is not parsed by invariants, and the render probe asserts DOM structure, not computed colour \u2014 it was caught only by screenshotting the built tab and eyeballing it. Lesson saved as a memory.
+
+Verify: build exit 0; invariants 77/77 (0 new red \u2014 data_artifacts_accounted now 13 derived + 14 hand-authored; derived_artifacts_fresh byte-gates orac-data.json); render_probe_orac PASS (decade fills [35,41,55,78], 4 rank cells + 3 arrows, 5 chain steps, target 20,000\u201325,000 + 100,000+ side, calories 1,250\u20131,800, 4 pieces, 2 forces, payoff "+25 to 50 healthful years", Absorption\u2192foods, section numbers 02/03/08/09, 31 cards == live oracClaims(), 0 page errors); an independent 3-agent adversarial provenance workflow returned 0 blockers across 38 verified facts; Luneth gave visual sign-off.
+
+Deferred: Phase 3 \u2014 mine ~39 Immortality pp.378\u2013381 per-serving food rows into the corpus (small batches, his review each) \u2192 the \xA704\u201307 league tables; and mine the Walford "great white sharks in the biochemical sea" quote (real book text, immortality.txt:1896\u20131899) into a claim (it currently sits as framing prose). Phase 4 \u2014 claim-card expand-to-verbatim. Notes: the payoff cite is book-level because claim 000259 carries no page locator; the forces copy says "toward the 150" per the signed-off demo (Wallach's stated max is actually 200).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

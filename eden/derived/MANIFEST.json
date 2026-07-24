@@ -166,6 +166,18 @@
         "eden/catalog/conditions.json"
       ],
       "note": "GENERATED per-entity page view-model (Phase H0) for every essential + condition. LEAN: each record carries claim IDs + derived extras (co-occurrence related[], per-condition protocol_claim_ids, a derived one_liner, synonyms) but NOT claim text -- text/verbatim/citation resolve at render from corpus-embed + search-index (already loaded), so nothing is duplicated. Targets, live coverage %, and best-sources ranking stay in their own homes; this artifact does not carry them. Claims grouped by raw KIND (stable projection); the kind->colour category grouping + the essentials[]-union works-with/restore pills + hero prominence are DEFERRED to H1. Loose file in H0 (no view imports it yet -> zero bundle impact until H2). Deterministic (fixed ordering, no timestamp) so build_data() byte-compares to disk."
+    },
+    {
+      "artifact": "dashboard/assets/data/orac-data.json",
+      "generator": "eden/tools/orac_data_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/corpus/claims/",
+        "eden/corpus/books-meta.json"
+      ],
+      "note": "The ORAC knowledge tab's canonical numbers (Phase 2, sections 02/03/08), read by views/knowledge-orac.ts via state/orac.ts (esbuild JSON import). Every value is PARSED from a sealed claim's byte-faithful verbatim (dose is null on all 10 source claims), so no ORAC number is hand-typed in a view or in view-copy (R1/R3/SS00.A) -- the numbers live here, the framing prose with {placeholders} lives in view-copy.json. Citations are composed from books-meta + the claim's own locator.page + a verbatim-parsed study/agency attribution (R3), never hand-typed. build_data() HARD-FAILS (ParseError) if a required number is not present in its claim's verbatim -- a silent guess cannot ship, and a verbatim edit that drops a number reddens the board. Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",

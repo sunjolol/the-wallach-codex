@@ -1,11 +1,15 @@
-// tools/render_probe_orac.js — ORAC knowledge tab (Phase 1: hero + live claims record).
+// tools/render_probe_orac.js — ORAC knowledge tab (Phase 2: hero + narrative + live claims).
 //
 // Usage: node tools/render_probe_orac.js   (exit 0 = PASS, non-zero = FAIL)
 //
 // Verifies the ORAC tab end-to-end: the K rail opens the drawer, the ORAC menu tab
-// (after Absorption) activates the .kd-orac page, the editorial hero renders, and the
-// full-record claims index renders LIVE — the rendered card count equals the live
-// oracClaims() query (the anti-silent-drop anchor), facet-grouped, each Wallach-cited.
+// (after Absorption) activates the .kd-orac page, and the page renders in three bands —
+//   (1) the editorial hero,
+//   (2) the Phase-2 narrative sections (mirror-test decade bars, stolen-years rank decline,
+//       the damage chain, the daily target, the four pieces / forces / payoff) with their
+//       Wallach numbers DERIVED from the sealed corpus (orac-data.json), and
+//   (3) the full-record claims index — the rendered card count equals the live oracClaims()
+//       query (the anti-silent-drop anchor), facet-grouped, each Wallach-cited.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -37,25 +41,53 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const orac = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
     const pageEl = root ? root.querySelector('.kd-orac') : null;
-    const cards = pageEl ? [...pageEl.querySelectorAll('.kd-orac-claim')] : [];
-    const groups = pageEl ? [...pageEl.querySelectorAll('.kd-orac-fgroup')] : [];
+    const q = sel => (pageEl ? [...pageEl.querySelectorAll(sel)] : []);
+    const txt = pageEl ? (pageEl.textContent || '') : '';
+    const cards = q('.kd-orac-claim');
+    const groups = q('.kd-orac-fgroup');
     const groupCounts = groups.map(g => parseInt(g.querySelector('.kd-orac-fgroup__n')?.textContent || '0', 10));
     const cites = cards.map(c => c.querySelector('.kd-orac-claim__src')?.textContent || '');
     const live = (window.wallachSearch && typeof window.wallachSearch.oracClaims === 'function')
       ? window.wallachSearch.oracClaims().length : -1;
+    const decFills = q('.kd-orac-dec__fill').map(f => Math.round(parseFloat(f.style.height) || 0));
+    const fill0 = pageEl ? pageEl.querySelector('.kd-orac-dec__fill') : null;
+    const rank0 = pageEl ? pageEl.querySelector('.kd-orac-rank__v') : null;
+    const secNums = q('.kd-orac-sec__num').map(s => (s.textContent || '').trim());
+    const absBtn = pageEl ? pageEl.querySelector('.kd-orac-abs__btn') : null;
     return {
       shown: pageEl !== null,
       heroShown: pageEl ? pageEl.querySelector('.kd-orac-hero') !== null : false,
-      headlineLen: pageEl ? (pageEl.querySelector('.kd-orac-hero__h')?.textContent || '').length : 0,
-      hasDeck: pageEl ? (pageEl.querySelector('.kd-orac-hero__deck')?.textContent || '').length > 40 : false,
       deckBold: pageEl ? pageEl.querySelector('.kd-orac-hero__deck strong') !== null : false,
-      hasEyebrowRule: pageEl ? pageEl.querySelector('.kd-orac-eyebrow__rule') !== null : false,
       subject: pageEl ? (pageEl.querySelector('.kd-orac-eyebrow__r')?.textContent || '').trim() : '',
+      // Phase-2 narrative structure
+      mirrorEmShown: pageEl ? pageEl.querySelector('.kd-orac-mirror__h em') !== null : false,
+      decadeCount: q('.kd-orac-dec').length,
+      decFills,
+      rankCount: q('.kd-orac-rank__c').length,
+      rankArrows: q('.kd-orac-rank__arrow').length,
+      // computed COLOUR (not just structure): the dropped --sev-* comment bug left these
+      // transparent / default-ink. A real colour here is the regression anchor for it.
+      decFill0Bg: fill0 ? getComputedStyle(fill0).backgroundColor : '',
+      rank0Color: rank0 ? getComputedStyle(rank0).color : '',
+      chainSteps: q('.kd-orac-chain__step').length,
+      targetNum: pageEl ? (pageEl.querySelector('.kd-orac-target__num')?.textContent || '').replace(/\s+/g, ' ').trim() : '',
+      targetSide: pageEl ? (pageEl.querySelector('.kd-orac-target__sn')?.textContent || '').trim() : '',
+      pieceCount: q('.kd-orac-piece').length,
+      forceCount: q('.kd-orac-force').length,
+      payoffNum: pageEl ? (pageEl.querySelector('.kd-orac-payoff__n')?.textContent || '').trim() : '',
+      absBtnTab: absBtn ? absBtn.getAttribute('data-kd-tab') : null,
+      secNums,
+      // numbers that MUST have come from the derived corpus data (regression anchor)
+      hasTargetRange: /20,000\s*–\s*25,000/.test(txt),
+      hasDiseaseDose: txt.indexOf('100,000') !== -1,
+      hasCalories: txt.indexOf('1,250') !== -1 && txt.indexOf('1,800') !== -1,
+      hasRank17: txt.indexOf('17th') !== -1 && txt.indexOf('48th') !== -1,
+      hasEssentials90: txt.indexOf('90 essentials') !== -1,
+      // claims record (Phase 1)
       cardCount: cards.length,
       liveCount: live,
       groupCount: groups.length,
       groupSum: groupCounts.reduce((a, b) => a + b, 0),
-      kicker: pageEl ? (pageEl.querySelector('.kd-orac-sec__k')?.textContent || '') : '',
       allCited: cards.length > 0 && cites.every(c => /EPIGENETICS|DEAD DOCTORS|RARE EARTHS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD|HELL/i.test(c)),
       allHaveQ: cards.length > 0 && cards.every(c => (c.querySelector('.kd-orac-claim__q')?.textContent || '').length > 0),
     };
@@ -64,15 +96,34 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   console.log('ORAC', JSON.stringify(orac));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
+  const decadesOk = orac.decFills.length === 4 && [35, 41, 55, 78].every((v, i) => orac.decFills[i] === v);
   const checks = [
     ['ORAC tab renders its container', orac.shown === true],
-    ['hero: headline + emphasised deck + eyebrow rule + ORAC subject', orac.heroShown === true && orac.headlineLen > 12 && orac.hasDeck === true && orac.deckBold === true && orac.hasEyebrowRule === true && orac.subject === 'ORAC'],
+    ['hero: emphasised deck + ORAC subject', orac.heroShown === true && orac.deckBold === true && orac.subject === 'ORAC'],
+    // ── Phase 2 narrative ──
+    ['mirror test: 4 decade bars, heights == derived pcts 35/41/55/78', orac.decadeCount === 4 && decadesOk],
+    // Guards the CSS-comment-drop class: a dropped --sev-* var leaves the fill transparent.
+    ['decade bar has a real fill colour (--sev-* resolves, not transparent)', /^rgb\(/.test(orac.decFill0Bg) && orac.decFill0Bg !== 'rgba(0, 0, 0, 0)'],
+    ['mirror heading emphasis (<em>) renders', orac.mirrorEmShown === true],
+    ['stolen years: 4 rank cells + 3 arrows', orac.rankCount === 4 && orac.rankArrows === 3],
+    ['rank value is severity-coloured (--sev-calm resolves)', orac.rank0Color === 'rgb(90, 140, 168)'],
+    ['rank ordinals present (17th … 48th)', orac.hasRank17 === true],
+    ['damage chain: 5 steps', orac.chainSteps === 5],
+    ['daily target range 20,000–25,000 (derived)', orac.hasTargetRange === true && /20,000/.test(orac.targetNum)],
+    ['disease dose 100,000+ (derived)', orac.targetSide.indexOf('100,000') !== -1 && orac.hasDiseaseDose === true],
+    ['calorie band 1,250–1,800 (derived)', orac.hasCalories === true],
+    ['four pieces render', orac.pieceCount === 4],
+    ['two forces render', orac.forceCount === 2],
+    ['essentials count interpolated (90 essentials)', orac.hasEssentials90 === true],
+    ['payoff +25 to 50 healthful years (derived)', /\+?25 to 50/.test(orac.payoffNum)],
+    ['Absorption button routes to foods tab', orac.absBtnTab === 'foods'],
+    ['section numbers 02/03/08/09 present', ['02', '03', '08', '09'].every(n => orac.secNums.includes(n))],
+    // ── claims record (Phase 1) ──
     ['claims record renders live cards', orac.cardCount > 0],
     // The anti-silent-drop anchor: the view renders EXACTLY what the query returns.
-    // 31 is the locked Phase-1 scope; update this literal when mining changes the corpus.
+    // 31 is the locked scope; update this literal when mining changes the corpus.
     ['rendered card count == live oracClaims() (== 31 today)', orac.cardCount === orac.liveCount && orac.liveCount === 31],
     ['claims facet-grouped, tallies sum to the card total', orac.groupCount >= 1 && orac.groupSum === orac.cardCount],
-    ['live claim count shown in the kicker', orac.kicker.indexOf(String(orac.cardCount)) !== -1],
     ['every card has a question', orac.allHaveQ === true],
     ['every card is Wallach-cited', orac.allCited === true],
     ['no page errors', errs.length === 0],
@@ -80,5 +131,6 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);
   await browser.close();
   if (failed.length) { console.log('FAIL', JSON.stringify(failed)); process.exit(1); }
-  console.log('PASS · ORAC tab · hero + live full-record (' + orac.cardCount + ' cards == live query), facet-grouped + Wallach-cited');
+  console.log('PASS · ORAC tab · hero + §02/§03/§08 narrative (derived numbers) + live full-record ('
+    + orac.cardCount + ' cards == live query)');
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });
