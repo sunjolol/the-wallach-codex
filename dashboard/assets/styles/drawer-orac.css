@@ -57,7 +57,7 @@
 #drawer-knowledge-mount .kd-orac-sec { display: grid; grid-template-columns: auto 1fr; gap: var(--ds-space-5); align-items: end; margin: 3.5rem 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-orac-sec__num { font-family: var(--ds-font-display); font-size: 4rem; font-weight: 900; line-height: 1; color: var(--ds-accent); letter-spacing: var(--ds-track-tight); }
 #drawer-knowledge-mount .kd-orac-sec__body { padding-bottom: var(--ds-space-2); min-width: 0px; }
-#drawer-knowledge-mount .kd-orac-sec__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 5px; }
+#drawer-knowledge-mount .kd-orac-sec__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-orac-sec__h { font-family: var(--ds-font-display); font-size: 1.4rem; font-weight: 800; color: var(--ds-ink); margin: 0px; letter-spacing: -0.01em; }
 #drawer-knowledge-mount .kd-orac-p { font-family: var(--ds-font-serif); font-size: 1rem; line-height: 1.65; color: var(--ds-ink-medium); max-width: 88ch; margin: 0 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-orac-src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 10px; }
@@ -143,3 +143,37 @@
   #drawer-knowledge-mount .kd-orac-force--b { border-radius: 0 0 var(--ds-radius-xs) var(--ds-radius-xs); border-left: 1px solid var(--ds-rule-soft); border-top-width: medium; border-top-style: none; border-top-color: currentcolor; }
   #drawer-knowledge-mount .kd-orac-target { grid-template-columns: 1fr; }
 }
+
+/* ─── §07 Best Supplement Sources — Youngevity product ORAC (ygy composition, per serving) ─── */
+#drawer-knowledge-mount .kd-orac-supp { margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-orac-supp__form { display: inline-block; font-family: var(--ds-font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; color: #fff; background: var(--fc, var(--ds-ink-soft)); white-space: nowrap; }
+
+/* the standout "leader" hero card */
+#drawer-knowledge-mount .kd-orac-supp__leader { position: relative; display: grid; grid-template-columns: 1fr auto; grid-template-areas: "top score" "meta score"; align-items: center; gap: 8px 22px; width: 100%; text-align: left; appearance: none; font: inherit; color: inherit; padding: 22px 24px 20px; margin-bottom: 16px; border: 1px solid var(--ds-rule-soft); border-left: 4px solid var(--fc, var(--o-spice)); border-radius: var(--ds-radius-xs); background: linear-gradient(180deg, var(--ds-paper-light), var(--ds-paper)); cursor: pointer; transition: border-color .15s, box-shadow .15s, transform .08s; }
+#drawer-knowledge-mount .kd-orac-supp__leader:hover { border-color: var(--fc, var(--o-spice)); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+#drawer-knowledge-mount .kd-orac-supp__leader:active { transform: translateY(1px); }
+#drawer-knowledge-mount .kd-orac-supp__tag { position: absolute; top: -9px; left: 20px; font-family: var(--ds-font-mono); font-size: 0.57rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #fff; background: var(--fc, var(--o-spice)); padding: 3px 10px; border-radius: 3px; }
+#drawer-knowledge-mount .kd-orac-supp__lead-top { grid-area: top; display: flex; align-items: center; gap: 11px; flex-wrap: wrap; }
+#drawer-knowledge-mount .kd-orac-supp__lead-name { font-family: var(--ds-font-display); font-size: 1.08rem; font-weight: 700; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-orac-supp__lead-meta { grid-area: meta; display: flex; align-items: baseline; gap: 9px; font-family: var(--ds-font-mono); font-size: 0.74rem; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-orac-supp__dot { color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-orac-supp__lead-meta .v strong { color: var(--fc, var(--o-spice)); }
+#drawer-knowledge-mount .kd-orac-supp__lead-score { grid-area: score; display: flex; flex-direction: column; align-items: flex-end; }
+#drawer-knowledge-mount .kd-orac-supp__lead-score .n { font-family: var(--ds-font-display); font-size: 2.15rem; font-weight: 800; line-height: 0.95; color: var(--fc, var(--o-spice)); font-variant-numeric: tabular-nums; }
+#drawer-knowledge-mount .kd-orac-supp__lead-score .u { font-family: var(--ds-font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 5px; }
+
+/* the value league-table (runners-up) */
+#drawer-knowledge-mount .kd-orac-supp__rows { display: flex; flex-direction: column; gap: 6px; }
+#drawer-knowledge-mount .kd-orac-supp__row { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(64px,1fr) auto 12px; align-items: center; gap: 15px; width: 100%; text-align: left; appearance: none; font: inherit; color: inherit; padding: 11px 15px; border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); background: var(--ds-paper-light); cursor: pointer; transition: border-color .15s, background .15s, transform .08s; }
+#drawer-knowledge-mount .kd-orac-supp__row:hover { border-color: var(--ds-ink-soft); background: var(--ds-paper); }
+#drawer-knowledge-mount .kd-orac-supp__row:active { transform: translateY(1px); }
+#drawer-knowledge-mount .kd-orac-supp__row-head { display: flex; align-items: center; gap: 10px; min-width: 0; flex-wrap: wrap; }
+#drawer-knowledge-mount .kd-orac-supp__row-name { font-family: var(--ds-font-sans); font-size: 0.85rem; font-weight: 600; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-orac-supp__row-track { height: 8px; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-radius: 999px; overflow: hidden; }
+#drawer-knowledge-mount .kd-orac-supp__row-fill { display: block; height: 100%; background: var(--fc, var(--ds-accent)); opacity: 0.85; border-radius: 999px; }
+#drawer-knowledge-mount .kd-orac-supp__row-nums { display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap; }
+#drawer-knowledge-mount .kd-orac-supp__row-nums .s { font-family: var(--ds-font-mono); font-size: 0.92rem; font-weight: 700; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
+#drawer-knowledge-mount .kd-orac-supp__row-nums .sub { font-family: var(--ds-font-mono); font-size: 0.64rem; color: var(--ds-ink-soft); margin-top: 2px; }
+#drawer-knowledge-mount .kd-orac-supp__row-nums .sub .v { color: var(--ds-ink-medium); font-weight: 700; }
+#drawer-knowledge-mount .kd-orac-supp__go { font-family: var(--ds-font-display); font-size: 1.15rem; color: var(--ds-ink-soft); text-align: center; }
+#drawer-knowledge-mount .kd-orac-supp__cap { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 13px; }

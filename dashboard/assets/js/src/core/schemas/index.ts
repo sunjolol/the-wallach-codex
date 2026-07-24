@@ -35,3 +35,4 @@ export * from './pdm-coverage.js';
 export * from './efa-coverage.js';
 export * from './orac-data.js';
 export * from './orac-foods-data.js';
+export * from './orac-products-data.js';

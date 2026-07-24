@@ -1344,6 +1344,7 @@
 #drawer-knowledge-mount .kd-pf-blend__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); margin-left: auto; white-space: nowrap; }
 #drawer-knowledge-mount .kd-pf-blend__body { padding: 0 .8rem .7rem 1.5rem; font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); line-height: 1.75; color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-pf-blend__body i { color: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-pf-ing__q { color: var(--ds-ink-faint); }
 #drawer-knowledge-mount .kd-pf-other { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); line-height: 1.65; color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-pf-use { border-left: 3px solid var(--form, var(--fam-action)); background: var(--ds-paper-deep); border-radius: var(--ds-radius-sm); padding: var(--ds-space-3) var(--ds-space-4); font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); margin-bottom: 6px; line-height: 1.5; }
 

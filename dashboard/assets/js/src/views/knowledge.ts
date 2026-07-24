@@ -281,7 +281,7 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
   return `${deepHTML}${legendHTML}${groupsHTML}`;
 }
 
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, fromProductsTab: boolean): string {
   // A selected topic is an OVERLAY page on top of whatever tab opened it: the topic renders
   // full-body while the origin tab stays active, so the back button (top-right) returns you there
   // — foods → the Absorption grid, explore → the all-topics grid. An unknown slug degrades to the
@@ -300,7 +300,7 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return (selectedCondition !== null ? renderConditionPage(selectedCondition) : '') + renderConditionsTab(selectedCondition);
     case 'explore': return renderExploreTab();
-    case 'products': return renderProductsTab(selectedProduct);
+    case 'products': return renderProductsTab(selectedProduct, fromProductsTab);
   }
 }
 
@@ -321,6 +321,9 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
     { id: 'products' as Tab, label: ui('kd_tab_products'), count: `${productsCount} KNOWN` },
   ];
   const tabsHTML = tabs.map(t => `<button class="kd-knh__tab${t.id === activeTab ? ' active' : ''}" data-kd-tab="${t.id}">${escHTML(t.label)}</button>`).join('');
+  // A product opened from a NON-products tab (e.g. the ORAC supplement list) gets an origin-aware
+  // back button ("Go back" -> that tab); a normal Products-tab open keeps "All products".
+  const fromProductsTab = trail.length === 0 || (trail[0]?.type === 'tab' && trail[0].val === 'products');
 
   return `
     <header class="kd-knh">
@@ -336,7 +339,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <span class="kd-search-kbd">/</span>
     </div>`
       : ''}
-    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic)}</div>`;
+    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab)}</div>`;
 }
 
 // ─── Search (per-tab DOM filter) ──────────────────────────────
@@ -785,9 +788,17 @@ export function mount(container: HTMLElement): DrawerHandle {
         render();
       }
       else if (action === 'product-close') {
-        selectedProduct = null;
-        trail = [];
-        render();
+        // Origin-aware back (mirrors the topic page): a product opened from a NON-products tab (the
+        // ORAC "Best Supplement Sources" list) returns to that origin tab via its crumb; a normal
+        // Products-tab open clears the detail and lands on the product list.
+        if (trail[0] !== undefined && trail[0].type === 'tab' && trail[0].val !== 'products') {
+          goCrumb(0);
+        }
+        else {
+          selectedProduct = null;
+          trail = [];
+          render();
+        }
       }
       else if (action === 'topic-close') {
         selectedTopic = null;

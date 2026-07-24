@@ -1,0 +1,130 @@
+#!/usr/bin/env python3
+"""orac_products_derive.py -- the ORAC tab's "Best Supplement Sources" (Youngevity product ORAC).
+
+Generates dashboard/assets/data/orac-products-data.json -- the section-07 supplement league-table the
+ORAC knowledge tab shows: Youngevity products ranked by their OFFICIAL, lab-tested per-serving ORAC
+score, each with a delivery-form badge, wholesale price, and an ORAC-per-wholesale-dollar VALUE figure,
+each row linking to that product's detail page.
+
+SOURCING (SS00.A). These ORAC scores are YOUNGEVITY OFFICIAL lab values (source: ygy) -- NOT Wallach
+numbers and NOT in the corpus, so, unlike orac_foods_derive, there is no sealed verbatim to parse.
+Product ORAC is composition / measured-property data (what a serving DELIVERS); SS00.A lets Youngevity
+supply + surface composition, and Luneth confirmed this framing 2026-07-24 (ygy composition, no
+source-rule override; never a Wallach target/dose). The numbers therefore have ONE hand-authored home,
+dashboard/assets/data/orac-products-curation.json. This generator JOINS each product_id there with the
+product pillar for the canonical NAME + delivery FORM (eden/products/products.json) and the wholesale
+PRICE (eden/products/prices.json, by ygy_id) -- so name/form/price are never re-typed here (single home).
+
+HARD-FAIL (ProductsError) if a curated product_id is not in the pillar, has no component form, or has no
+wholesale price -- an unresolved join is a silent drop and reddens the board, never ships.
+
+Deterministic (sorted keys, NO timestamp) so build_data() byte-compares to disk (derived_artifacts_fresh).
+Model: eden/tools/orac_foods_derive.py.
+"""
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent.parent
+PRODUCTS_PATH = ROOT / "eden" / "products" / "products.json"
+PRICES_PATH = ROOT / "eden" / "products" / "prices.json"
+CURATION_PATH = ROOT / "dashboard" / "assets" / "data" / "orac-products-curation.json"
+OUT_PATH = ROOT / "dashboard" / "assets" / "data" / "orac-products-data.json"
+
+sys.path.insert(0, str(ROOT / "tools"))
+import safe_write  # noqa: E402
+
+
+class ProductsError(RuntimeError):
+    """A curated product_id did not resolve to a pillar record / form / wholesale price (never guess)."""
+
+
+def _money(x: float) -> str:
+    return f"${x:,.2f}"
+
+
+def build_data() -> dict:
+    products = json.loads(PRODUCTS_PATH.read_text(encoding="utf-8"))["products"]
+    prices = json.loads(PRICES_PATH.read_text(encoding="utf-8"))["prices"]
+    curation = json.loads(CURATION_PATH.read_text(encoding="utf-8"))
+
+    def resolve(pid: str) -> dict:
+        rec = products.get(pid)
+        if rec is None:
+            raise ProductsError(f"curated product_id {pid!r} not in products.json (HARD-FAIL: no pillar record)")
+        comps = rec.get("components") or []
+        form = comps[0].get("form") if comps else None
+        if not form:
+            raise ProductsError(f"{pid!r}: no component delivery form in the pillar (cannot badge the row)")
+        ygy = rec.get("ygy_id")
+        pr = prices.get(str(ygy)) if ygy is not None else None
+        if pr is None:
+            raise ProductsError(f"{pid!r}: ygy_id {ygy!r} has no prices.json entry (cannot price the row)")
+        ws = pr.get("price_wholesale")
+        if ws is None:
+            raise ProductsError(f"{pid!r}: prices entry {ygy!r} has no price_wholesale")
+        return {"name": rec.get("name", pid), "form": str(form), "price_wholesale": float(ws)}
+
+    built = []
+    for row in curation["products"]:
+        pid = row["product_id"]
+        orac = int(row["orac"])
+        info = resolve(pid)
+        value = round(orac / info["price_wholesale"])
+        built.append({
+            "product_id": pid,
+            "name": info["name"],
+            "form": info["form"],
+            "orac": orac,
+            "orac_display": f"{orac:,}",
+            "price_wholesale": round(info["price_wholesale"], 2),
+            "price_display": _money(info["price_wholesale"]),
+            "value": value,
+            "value_display": f"{value:,}",
+        })
+
+    if not built:
+        raise ProductsError("no curated products -- refusing to write an empty supplement table")
+
+    # ORAC desc, then name for stable ties; the top score is the standout "leader" hero.
+    built.sort(key=lambda p: (-p["orac"], p["name"]))
+    leader = built[0]
+    rows = built[1:]
+    # Bars scale to the RUNNER-UP field's own max (not the leader), so the runners-up are legible --
+    # the leader (BTT tablets, ~10x the next) would otherwise flatten every other bar to a sliver.
+    rmax = max((p["orac"] for p in rows), default=1)
+    for p in rows:
+        p["bar"] = round(p["orac"] / rmax * 100, 1)
+
+    return {
+        "_purpose": "The ORAC knowledge tab's section-07 'Best Supplement Sources' -- Youngevity products "
+                    "ranked by OFFICIAL lab-tested per-serving ORAC (source: ygy). GENERATED by "
+                    "eden/tools/orac_products_derive.py: the ORAC numbers are hand-authored in "
+                    "orac-products-curation.json (their ONE home -- product ORAC is Youngevity "
+                    "composition/measured-property data, NOT a Wallach number; Luneth-confirmed SS00.A "
+                    "framing 2026-07-24), joined here with the product pillar for name+form and prices.json "
+                    "for the wholesale price. Never hand-edit; run eden/tools/build_embeds.py.",
+        "source": curation.get("source", "ygy"),
+        "cite": curation.get("cite", ""),
+        "untested_note": curation.get("untested_note", ""),
+        "leader": leader,
+        "rows": rows,
+    }
+
+
+def render() -> str:
+    return json.dumps(build_data(), ensure_ascii=False, sort_keys=True,
+                      separators=(",", ":")) + "\n"
+
+
+def write_data() -> int:
+    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    return safe_write.safe_rewrite(OUT_PATH, render())
+
+
+if __name__ == "__main__":
+    n = write_data()
+    d = build_data()
+    print(f"OK  wrote orac-products-data.json ({n} B) · leader "
+          f"{d['leader']['name']} ({d['leader']['orac_display']} · {d['leader']['value_display']}/$) · "
+          f"{len(d['rows'])} more row(s)")

@@ -1,0 +1,15 @@
+{
+  "_purpose": "Youngevity PRODUCT ORAC scores (per serving) — OFFICIAL, lab-tested values from Youngevity (source: ygy). NOT Wallach numbers, NOT in the corpus, NOT parsed from any verbatim. Product ORAC is composition / measured-property data (what a serving DELIVERS): §00.A lets Youngevity supply + surface composition, and Luneth CONFIRMED this framing 2026-07-24 (ygy composition, no source-rule override; it is never a Wallach target/dose). This hand-authored file is the ONE home for these numbers. eden/tools/orac_products_derive.py joins each product_id with eden/products/products.json (canonical name + delivery form) and eden/products/prices.json (wholesale price, by ygy_id) to build dashboard/assets/data/orac-products-data.json. Other Youngevity products contain antioxidants but are not ORAC-tested yet. Never hand-edit the derived file; edit THIS + run eden/tools/build_embeds.py.",
+  "source": "ygy",
+  "cite": "Youngevity — official ORAC, per serving",
+  "untested_note": "Other Youngevity products contain antioxidants, but aren’t ORAC-tested yet.",
+  "products": [
+    { "product_id": "btt-2-0-tablets", "orac": 160000 },
+    { "product_id": "cell-shield-rtq", "orac": 15800 },
+    { "product_id": "imortalium", "orac": 10500 },
+    { "product_id": "beyond-tangy-tangerine-2-5-canister", "orac": 8000 },
+    { "product_id": "btt-2-0-citrus-peach-fusion", "orac": 8000 },
+    { "product_id": "beyond-tangy-tangerine-450g-canister", "orac": 5745 },
+    { "product_id": "zradical-liquid", "orac": 4390 }
+  ]
+}

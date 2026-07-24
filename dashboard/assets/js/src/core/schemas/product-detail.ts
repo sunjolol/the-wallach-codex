@@ -48,6 +48,7 @@ const ProductBlendIngredientSchema = z.object({
   latin: z.string().optional(),
   part: z.string().optional(),
   form: z.string().optional(),
+  standardization: z.string().optional(),
 }).passthrough();
 
 export const ProductBlendSchema = z.object({

@@ -191,6 +191,19 @@
         "dashboard/assets/data/orac-foods-curation.json"
       ],
       "note": "The ORAC knowledge tab's food league-table numbers (Phase 3b, sections 04-07), read by views/knowledge-orac.ts via state/orac-foods.ts (esbuild JSON import). Every ORAC score is PARSED from a sealed food_source claim's byte-faithful verbatim (dose is null on all 5: IMMORT-000240/241/263/264 per-serving + HELLS-000014 per-100 g), so no score is hand-typed in a view, in view-copy, or in the curation (R1/R3/SS00.A -- the mineral-tiers lesson). The hand-authored orac-foods-curation.json (accounted, numbers-free) decides only names/grouping/colour/selection; each curated name is a byte-exact join key into a pool. build_data() HARD-FAILS (FoodsError) if a curated name does not resolve OR if any per-serving pool row is neither placed in a category nor omitted (a silent drop reddens the board). The two ORAC bases (per-serving / per-100 g) are kept separate + LABELLED, never mixed. Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
+    },
+    {
+      "artifact": "dashboard/assets/data/orac-products-data.json",
+      "generator": "eden/tools/orac_products_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/products/products.json",
+        "eden/products/prices.json",
+        "dashboard/assets/data/orac-products-curation.json"
+      ],
+      "note": "The ORAC knowledge tab's section-07 'Best Supplement Sources' (Youngevity product ORAC), read by views/knowledge-orac.ts via state/orac-products.ts (esbuild JSON import). These per-serving ORAC scores are YOUNGEVITY OFFICIAL lab values (source: ygy), NOT Wallach numbers and NOT in the corpus -- product ORAC is composition/measured-property data (SS00.A lets Youngevity supply+surface composition; Luneth-confirmed framing 2026-07-24, no source-rule override). Unlike orac-foods there is no sealed verbatim to parse, so the numbers have ONE hand-authored home: orac-products-curation.json (accounted). orac_products_derive.py JOINS each product_id with the sealed product pillar (canonical name + delivery form) and prices.json (wholesale price, by ygy_id); build_data() HARD-FAILS (ProductsError) if a curated product_id has no pillar record, no component form, or no wholesale price -- a silent drop reddens the board. Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
@@ -269,6 +282,11 @@
       "file": "dashboard/assets/data/orac-foods-curation.json",
       "disposition": "hand_authored",
       "reason": "The ORAC food league-tables CURATION (sections 04-07 of the Knowledge ORAC tab; mirrors foods-curation.json / coverage-layout-skeleton.json). Editorial arrangement -- category grouping + per-category colour + the reach/scale SELECTIONS + display-name fixes for the source's OCR typos + the 4 baby-food rows the signed-off demo omits. HAND-AUTHORED and NUMBERS-FREE: every `raw` is a byte-exact join key into a sealed food_source claim's verbatim, from which eden/tools/orac_foods_derive.py reads the ORAC score -- no number lives here (R1/R3/SS00.A). Consumed as an input by orac_foods_derive.py (which HARD-FAILS on an unresolved name or a silently-dropped pool row); not itself a pillar projection, no generator."
+    },
+    {
+      "file": "dashboard/assets/data/orac-products-curation.json",
+      "disposition": "hand_authored",
+      "reason": "The section-07 'Best Supplement Sources' CURATION -- the ONE hand-authored home for Youngevity PRODUCT ORAC scores (per serving, official lab-tested, source: ygy). Unlike orac-foods-curation (numbers-free, parsed from Wallach verbatims), product ORAC has NO Wallach/corpus source to parse -- it is Youngevity composition/measured-property data (SS00.A lets Youngevity supply+surface composition; Luneth-confirmed framing 2026-07-24, no source-rule override; never a Wallach target/dose). So the numbers live HERE, once; eden/tools/orac_products_derive.py joins each product_id with the sealed product pillar (name + delivery form) and prices.json (wholesale price) and HARD-FAILS on any unresolved join. Hand-authored, not a pillar projection, no generator."
     }
   ]
 }

@@ -119,9 +119,11 @@ function productSearchBlob(p: ProductDetail): string {
  * axis, the product-native analog of a condition's body-system. Returns a lowercase key the
  * CSS maps to a colour via [data-form]; 'other' is the neutral fallback (no product hits it
  * today). Reads the FIRST component's form; multi-part products take their primary form.
+ * `formFamilyFromForm` is exported so the ORAC "Best Supplement Sources" badges/bars colour-match
+ * the product pages from the SAME map (single source, FORM_COLORS below).
  */
-function formFamily(p: ProductDetail): string {
-  const f = (p.components[0]?.form ?? '').toLowerCase();
+export function formFamilyFromForm(rawForm: string): string {
+  const f = rawForm.toLowerCase();
   if (f.includes('powder') || f === 'stick') {
     return 'powder';
   }
@@ -144,6 +146,10 @@ function formFamily(p: ProductDetail): string {
     return 'liquid';
   }
   return 'other';
+}
+
+function formFamily(p: ProductDetail): string {
+  return formFamilyFromForm(p.components[0]?.form ?? '');
 }
 
 /**
@@ -195,12 +201,12 @@ function productsByBreadth(products: ProductDetail[]): ProductDetail[] {
     || a.name.localeCompare(b.name));
 }
 
-export function renderProductsTab(selectedProduct: string | null): string {
+export function renderProductsTab(selectedProduct: string | null, fromProductsTab = true): string {
   const products = listProducts();
   if (products.length === 0) {
     return '<div class="kd-empty">— no products loaded —</div>';
   }
-  const deepHTML = selectedProduct !== null ? renderProductDeep(selectedProduct) : '';
+  const deepHTML = selectedProduct !== null ? renderProductDeep(selectedProduct, fromProductsTab) : '';
   const rowsHTML = productsByBreadth(products).map(p => renderProductRow(p, selectedProduct)).join('');
   return `
     ${deepHTML}
@@ -226,7 +232,7 @@ export function renderProductsTab(selectedProduct: string | null): string {
  * ONLY a root-level custom property, never the element-level --form. 'other' is intentionally
  * absent (no product hits it today): unmapped → no inline tint, scrollbar stays app-orange.
  */
-const FORM_COLORS: Record<string, string> = {
+export const FORM_COLORS: Record<string, string> = {
   liquid: '#3f8fa8',
   capsule: '#c08a3e',
   powder: '#5f8a4b',
@@ -360,7 +366,25 @@ function pfBlend(b: ProductBlend): string {
     : '';
   const ings = b.ingredients ?? [];
   const body = ings.length > 0
-    ? ings.map(i => `${escHTML(i.name)}${(i.latin !== undefined && i.latin.length > 0) ? ` <i>(${escHTML(i.latin)})</i>` : ''}`).join(' · ')
+    ? ings.map((i) => {
+        // The label detail lives in STRUCTURED fields (form / standardization / part / latin), so show
+        // them all -- else "Grape seed extract" prints as "Grape seed" (Luneth 2026-07-24). Normalized
+        // formatting (not byte-exact label wording); latin stays italic, the rest are faint qualifiers.
+        const parts = [escHTML(i.name)];
+        if (i.form !== undefined && i.form.length > 0) {
+          parts.push(`<span class="kd-pf-ing__q">${escHTML(i.form)}</span>`);
+        }
+        if (i.part !== undefined && i.part.length > 0) {
+          parts.push(`<span class="kd-pf-ing__q">${escHTML(i.part)}</span>`);
+        }
+        if (i.standardization !== undefined && i.standardization.length > 0) {
+          parts.push(`<span class="kd-pf-ing__q">(${escHTML(i.standardization)})</span>`);
+        }
+        if (i.latin !== undefined && i.latin.length > 0) {
+          parts.push(`<i>(${escHTML(i.latin)})</i>`);
+        }
+        return parts.join(' ');
+      }).join(' · ')
     : (b.as_labeled !== undefined ? escHTML(b.as_labeled) : '');
   const count = ings.length > 0 ? `${ings.length} ingredient${ings.length === 1 ? '' : 's'}` : '';
   const meta = [(total.length > 0 ? total : cfu), count].filter(s => s.length > 0).join(' · ');
@@ -452,7 +476,7 @@ function pfGlance(p: ProductDetail, supplied: number): string {
     <div class="kd-pf-note">Composition and an indicative Youngevity listing price — what the product contains, never a Wallach target (§00.A). Wholesale is featured (what most buyers pay online); retail is the MSRP.</div>`;
 }
 
-export function renderProductDeep(id: string): string {
+export function renderProductDeep(id: string, fromProductsTab = true): string {
   const p = getProduct(id);
   if (p === null) {
     return '';
@@ -515,7 +539,7 @@ export function renderProductDeep(id: string): string {
           <span class="kd-ep-hero__meta">Youngevity product${sku}</span>
         </div>
       </div>
-      <button class="kd-ep-back" data-kd-action="product-close" type="button">‹ All products</button>
+      <button class="kd-ep-back" data-kd-action="product-close" type="button">${fromProductsTab ? '‹ All products' : '‹ Go back'}</button>
     </div>
     <p class="kd-ep-lede">${lede}</p>
     ${pfGlance(p, supplied)}

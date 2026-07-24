@@ -25,13 +25,15 @@
  * ===========================================================================
  */
 
-import { type OracData, type OracFoodsData, SEARCH_FACETS, type SearchClaim } from '../core/schemas/index.js';
+import { type OracData, type OracFoodsData, type OracProductsData, SEARCH_FACETS, type SearchClaim } from '../core/schemas/index.js';
 import { facetLabel, ui } from '../state/copy.js';
 import { essentialCount } from '../state/coverage.js';
 import { oracFoodsData } from '../state/orac-foods.js';
+import { oracProductsData } from '../state/orac-products.js';
 import { oracData } from '../state/orac.js';
 import { composeCite, composeShortCite, oracClaims } from '../state/search.js';
 import { glossify } from './glossify.js';
+import { FORM_COLORS, formFamilyFromForm } from './knowledge-products.js';
 
 const DASH = '–'; // en dash, matching the signed-off demo's numeric ranges
 
@@ -272,28 +274,69 @@ function renderTables(f: OracFoodsData): string {
     <div class="kd-orac-tables" id="tables">${tbls}</div>`;
 }
 
-/** §07 WINE: the four wines as scale-style bars (relative to Cabernet). */
-function renderWine(f: OracFoodsData): string {
-  const rows = f.wine.rows.map(r => `<div class="kd-orac-scale__row"><span class="kd-orac-scale__nm">${escHTML(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%;--c:var(--${escHTML(r.color)})"></span></span><span class="kd-orac-scale__vl">${escHTML(r.value_display)}</span></div>`).join('');
-  return `${sectionHeader('07', secKicker('kd_orac_wine_k'), 'kd_orac_wine_h')}
-    <div class="kd-orac-scale" id="wine">${rows}</div>`;
+/**
+ * A product's delivery-form FAMILY + accent hex, pulled from the SAME source the product detail pages
+ * use (knowledge-products FORM_COLORS / formFamilyFromForm) so a supplement's badge + bar colour-match
+ * its own full product page (Luneth 2026-07-24). Empty hex -> the CSS fallback tint.
+ */
+function formInfo(form: string): { label: string; color: string } {
+  const fam = formFamilyFromForm(form);
+  return { label: fam.charAt(0).toUpperCase() + fam.slice(1), color: FORM_COLORS[fam] ?? '' };
 }
 
-/** The §04–§07 food league-tables bundle (reach / scale / league tables / wine). */
+/**
+ * §07 SUPPLEMENTS: Youngevity products with an OFFICIAL per-serving ORAC (source: ygy) -- the top
+ * scorer as a standout "leader" card, the rest as a value league-table. Each row opens that product's
+ * detail page: data-kd-product routes through the drawer's delegated handler (knowledge.ts), and because
+ * the click fires on the ORAC tab, the drawer sets a breadcrumb back to ORAC + a "Go back" label. Every
+ * number here is Youngevity composition / measured-property data -- never a Wallach amount (§00.A).
+ */
+function renderSupplements(p: OracProductsData): string {
+  const L = p.leader;
+  const li = formInfo(L.form);
+  const lStyle = li.color.length > 0 ? ` style="--fc:${li.color}"` : '';
+  const leader = `<button type="button" class="kd-orac-supp__leader" data-kd-product="${escHTML(L.product_id)}"${lStyle}>
+      <span class="kd-orac-supp__tag">${escHTML(ui('kd_orac_supp_leader_tag'))}</span>
+      <span class="kd-orac-supp__lead-top"><span class="kd-orac-supp__lead-name">${escHTML(L.name)}</span><span class="kd-orac-supp__form">${escHTML(li.label)}</span></span>
+      <span class="kd-orac-supp__lead-meta"><span class="v"><strong>${escHTML(L.value_display)}</strong> ${escHTML(ui('kd_orac_supp_per_dollar'))}</span><span class="kd-orac-supp__dot" aria-hidden="true">·</span><span class="p">${escHTML(L.price_display)} ${escHTML(ui('kd_orac_supp_wholesale'))}</span></span>
+      <span class="kd-orac-supp__lead-score"><span class="n">${escHTML(L.orac_display)}</span><span class="u">${escHTML(ui('kd_orac_supp_unit'))}</span></span>
+    </button>`;
+  const rows = p.rows.map((r) => {
+    const fi = formInfo(r.form);
+    const barStyle = fi.color.length > 0 ? `width:${r.bar}%;--fc:${fi.color}` : `width:${r.bar}%`;
+    const badge = fi.color.length > 0 ? ` style="--fc:${fi.color}"` : '';
+    return `<button type="button" class="kd-orac-supp__row" data-kd-product="${escHTML(r.product_id)}">
+      <span class="kd-orac-supp__row-head"><span class="kd-orac-supp__row-name">${escHTML(r.name)}</span><span class="kd-orac-supp__form"${badge}>${escHTML(fi.label)}</span></span>
+      <span class="kd-orac-supp__row-track"><span class="kd-orac-supp__row-fill" style="${barStyle}"></span></span>
+      <span class="kd-orac-supp__row-nums"><span class="s">${escHTML(r.orac_display)}</span><span class="sub"><span class="v">${escHTML(r.value_display)}</span> ${escHTML(ui('kd_orac_supp_per_dollar'))} · ${escHTML(r.price_display)}</span></span>
+      <span class="kd-orac-supp__go" aria-hidden="true">›</span>
+    </button>`;
+  }).join('');
+  const cap = [p.cite, p.untested_note].filter(s => s.length > 0).join(' · ');
+  return `${sectionHeader('07', secKicker('kd_orac_supp_k'), 'kd_orac_supp_h')}
+    <p class="kd-orac-p">${fill('kd_orac_supp_intro')}</p>
+    <div class="kd-orac-supp" id="supplements">
+      ${leader}
+      <div class="kd-orac-supp__rows">${rows}</div>
+      ${cap.length > 0 ? `<div class="kd-orac-supp__cap">${escHTML(cap)}</div>` : ''}
+    </div>`;
+}
+
+/** The §04–§07 food league-tables bundle (reach / scale / league tables). */
 function renderFoods(f: OracFoodsData): string {
   return `${renderReach(f)}
     ${renderScale(f)}
-    ${renderTables(f)}
-    ${renderWine(f)}`;
+    ${renderTables(f)}`;
 }
 
 /** The narrative bundle (§02–§08) that sits BETWEEN the hero and the claims record. */
-function renderNarrative(od: OracData, ofd: OracFoodsData | null): string {
+function renderNarrative(od: OracData, ofd: OracFoodsData | null, opd: OracProductsData | null): string {
   return `${renderMirror(od)}
     ${renderSteal(od)}
     ${renderChain()}
     ${renderTarget(od)}
     ${ofd !== null ? renderFoods(ofd) : ''}
+    ${opd !== null ? renderSupplements(opd) : ''}
     ${renderPieces(od)}`;
 }
 
@@ -353,6 +396,7 @@ export function renderOracTab(): string {
   const claims = oracClaims();
   const od = oracData();
   const ofd = oracFoodsData();
+  const opd = oracProductsData();
   const claimsKicker = `<div class="kd-orac-sec__k">${escHTML(ui('kd_orac_claims_kicker').replace('{n}', String(claims.length)))}</div>`;
   return `<div class="kt-page kd-orac">
     <header class="kd-orac-hero">
@@ -370,7 +414,7 @@ export function renderOracTab(): string {
       </div>
     </header>
 
-    ${od !== null ? renderNarrative(od, ofd) : ''}
+    ${od !== null ? renderNarrative(od, ofd, opd) : ''}
 
     ${sectionHeader('09', claimsKicker, 'kd_orac_claims_h')}
     <p class="kd-orac-p">${escHTML(ui('kd_orac_claims_intro'))}</p>
