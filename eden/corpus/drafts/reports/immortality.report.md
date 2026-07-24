@@ -1,30 +1,53 @@
 # Extraction report — immortality (Immortality)
 
-_2 claim(s) drafted 2026-07-24T06:59:53+00:00. Review then run corpus_seal.py to promote._
+_2 claim(s) drafted 2026-07-24T08:55:27+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: mechanism×1, prevalence×1
+Kinds: food_source×2
 
-### WAL-CLM-IMMORT-000261 · mechanism
+### WAL-CLM-IMMORT-000263 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach cites Adelman's data on how the aging pigment ceroid lipofuscin accumulates in human brain cells with age: it fills about 35% of a cell at 30-40 years, 41% by 50-60, 55% by 70-80, and 78% by 90-100.
-- **verbatim** (offset 71708): “Percent of Ceroid Lipofuscin in Aging Human Brain Cells
+- **claim:** Continuing Wallach's per-serving ORAC table of centenarian foods, the pecan stands out at 17,940 — the highest-scoring nut on his list — among a run of berries and fruits: raspberry 6,058, strawberry 5,938, Red Delicious apple 5,900, Granny Smith apple 5,381, sweet cherry 4,873, black plum 4,844, plum 4,118, gala apple 3,903 and acai 1,842. The same block also lists russet potato 4,649, black bean 4,181, and four commercial baby foods (peaches 6,257, apple-blueberry 4,822, strained applesauce 4,123 and bananas 2,658).
+- **verbatim** (offset 644288): “Acai 1,842
+Raspberry 6,058
+Strawberry 5,938
+Red Delicious apple 5,900
+Granny Smith apple 5,381
+Pecan 17,940
+Sweet cherry 4,873
+Black plum 4,844
+Russet potato 4,649
+Black bean 4,181
+Plum 4,118
+Baby food, (peaches) 6,257
+Baby food, (apple/ blueberry) 4,822
+Baby food, (applesauce-strained) 4,123
+Baby food, (bananas) 2,658
+Gala apple 3,903”
 
-Age  % intracellular volume occupied
-
-30 - 40  35
-50 - 60  41
-70 - 80  55
-90 - 100  78
-
-(Adelman, et al., 1988)”
-
-### WAL-CLM-IMMORT-000262 · prevalence
+### WAL-CLM-IMMORT-000264 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach tracks the US decline in world longevity rankings from CDC and WHO surveys: Americans ranked 17th in 1990, fell to 24th by 2000, 46th by 2005, and 48th by 2008.
-- **verbatim** (offset 34509): “In a CDC (Atlanta, GA) and WHO survey in 1990,
-Americans ranked 17th in the world in longevity; in the year
-2000 Americans dropped in ranking to 24th in longevity; and
-in 2005, Americans dropped in ranking again to a pitiful 46th,
-and in 2008 Americans again dropped to 48th in the world
-when it comes to health and longevity.”
+- **claim:** The table's final block gathers juices, the remaining nuts, and everyday produce. Among juices, blueberry juice leads at 9,019 and prune juice at 7,291, ahead of pomegranate 2,341, acai berry 1,842, pomegranate-blueberry blend 962, mangosteen 498, noni 398 and wolfberry (goji) 363. Hazelnuts reach 9,275 and almonds 4,282; raw lentils 7,282, prune 5,770, and dark chocolate pieces 3,040 (dark liquid/juice blend 3,000). A tail of everyday produce follows: raisins 2,830, baked sweet potato 2,115, raw avocado 1,933, raw pears 1,911, navel oranges 1,785, kale 1,770, kiwi 1,159, brewed green tea 1,128 and raw mangos 988.
+- **verbatim** (offset 644721): “Raisins 2,830
+Avocado, raw 1,933
+Kale 1,770
+Noni juice 398
+Mangosteen juice 498
+Wolfberry (Gogi) juice 363
+Almonds 4,282
+Hazelnuts (filberts) 9,275
+Acai berry juice 1,842
+Kiwi 1,159
+Lentils, raw 7,282
+Prune juice 7,291
+Prune 5,770
+Blueberry juice 9,019
+Pomagranate juice (100%) 2,341
+Chocolate (dark liquid) /juice blend 3,000
+Dark chocolate pieces 3,040
+Sweet potato, baked 2,115
+Green tea, brewed 1,128
+Mangos, raw 988
+Oranges, navel 1,785
+Pears, raw 1,911
+Pomagranate/ Blueberry 962”
 

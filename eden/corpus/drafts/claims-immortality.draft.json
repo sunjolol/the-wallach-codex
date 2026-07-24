@@ -8958,6 +8958,68 @@
       "extracted_at": "2026-07-24T06:59:53+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000263",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Continuing Wallach's per-serving ORAC table of centenarian foods, the pecan stands out at 17,940 — the highest-scoring nut on his list — among a run of berries and fruits: raspberry 6,058, strawberry 5,938, Red Delicious apple 5,900, Granny Smith apple 5,381, sweet cherry 4,873, black plum 4,844, plum 4,118, gala apple 3,903 and acai 1,842. The same block also lists russet potato 4,649, black bean 4,181, and four commercial baby foods (peaches 6,257, apple-blueberry 4,822, strained applesauce 4,123 and bananas 2,658).",
+      "verbatim": "Acai 1,842\nRaspberry 6,058\nStrawberry 5,938\nRed Delicious apple 5,900\nGranny Smith apple 5,381\nPecan 17,940\nSweet cherry 4,873\nBlack plum 4,844\nRusset potato 4,649\nBlack bean 4,181\nPlum 4,118\nBaby food, (peaches) 6,257\nBaby food, (apple/ blueberry) 4,822\nBaby food, (applesauce-strained) 4,123\nBaby food, (bananas) 2,658\nGala apple 3,903",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 203,
+        "kindle_location": null,
+        "char_offset": 644288
+      },
+      "dose": null,
+      "tags": [
+        "orac",
+        "food-sources",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T08:55:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000264",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The table's final block gathers juices, the remaining nuts, and everyday produce. Among juices, blueberry juice leads at 9,019 and prune juice at 7,291, ahead of pomegranate 2,341, acai berry 1,842, pomegranate-blueberry blend 962, mangosteen 498, noni 398 and wolfberry (goji) 363. Hazelnuts reach 9,275 and almonds 4,282; raw lentils 7,282, prune 5,770, and dark chocolate pieces 3,040 (dark liquid/juice blend 3,000). A tail of everyday produce follows: raisins 2,830, baked sweet potato 2,115, raw avocado 1,933, raw pears 1,911, navel oranges 1,785, kale 1,770, kiwi 1,159, brewed green tea 1,128 and raw mangos 988.",
+      "verbatim": "Raisins 2,830\nAvocado, raw 1,933\nKale 1,770\nNoni juice 398\nMangosteen juice 498\nWolfberry (Gogi) juice 363\nAlmonds 4,282\nHazelnuts (filberts) 9,275\nAcai berry juice 1,842\nKiwi 1,159\nLentils, raw 7,282\nPrune juice 7,291\nPrune 5,770\nBlueberry juice 9,019\nPomagranate juice (100%) 2,341\nChocolate (dark liquid) /juice blend 3,000\nDark chocolate pieces 3,040\nSweet potato, baked 2,115\nGreen tea, brewed 1,128\nMangos, raw 988\nOranges, navel 1,785\nPears, raw 1,911\nPomagranate/ Blueberry 962",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 203,
+        "kindle_location": null,
+        "char_offset": 644721
+      },
+      "dose": null,
+      "tags": [
+        "orac",
+        "food-sources",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T08:55:27+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
