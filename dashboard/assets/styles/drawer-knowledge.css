@@ -30,7 +30,7 @@
 #drawer-knowledge-mount .kd-knh__g { color: var(--ds-accent); font-size: 1rem; }
 #drawer-knowledge-mount .kd-knh__mark b { color: var(--ds-ink-soft); font-weight: 600; }
 #drawer-knowledge-mount .kd-knh__tabs { flex: 0 0 auto; margin-inline: auto; display: inline-flex; background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 5px; gap: 3px; box-shadow: inset 0 1px 2px rgba(26, 22, 18, .06); }
-#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display); font-size: 0.65rem; font-weight: 600; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display); font-size: var(--ds-text-mini); font-weight: 600; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-knh__tab:hover { color: var(--ds-ink); background: var(--ds-paper); }
 #drawer-knowledge-mount .kd-knh__tab.active { background: var(--ds-paper); color: var(--ds-accent-deep); box-shadow: 0 2px 6px rgba(26, 22, 18, .18), 0 0 0 1px var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-knh__end { flex: 0 0 auto; display: flex; justify-content: flex-end; }

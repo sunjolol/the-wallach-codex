@@ -1,33 +1,48 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-23, Luneth's touchup batch SHIPPED)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-23, touchup batch CLOSED · next = MINING)
 
-# ★★★★★ All five items from Luneth's dashboard-wide touchup notes are LIVE, committed + pushed (board 77/77, six render probes green). NEXT = his review of the batch, plus the two flagged follow-ups below.
+# ★★★★★ Luneth's dashboard-wide touchup batch is DONE, reviewed, committed + pushed (6 commits, board 77/77, all 8 render probes green). NEXT SESSION = **MINING to enrich Ask-Wallach**, plus "some things I feel are missing" — ask him for that list at session start, do NOT assume scope.
 
-## ✅ WHAT LANDED (4 commits, each with its own build-log line + Creator's Log entry)
-1. **Search blur restored lag-free + typography + scanning line removed** (`a73be090`) — the Ask-Wallach popup has its blur back at 3.5px. The blur was never the cost: seven always-on animations behind it forced a full-page repaint every frame, and a backdrop-filter re-blurred the page on each one. A `:has()`-scoped `animation-play-state: paused` freeze holds the backdrop still while the popup is open (compositor work 292→81ms, frame commits 434→234). Rail/`.ep-seclabel`/hero moved to Unbounded via tokens; the orange `.ds-scan-line` deleted at source from all four views + both CSS rules.
-2. **Entity-page colour clustering** (`a73be090`) — facet display order re-clustered so same-family (same-colour) sections sit together; Cautions deliberately held at position 2. Essentials 16→12 colour switches, hydrogen/potassium 3→1. Conditions untouched.
-3. **Related pills route (264/272) + a real bug fixed** (`2769faa5`) — Ask-Wallach "Learn More" on any ESSENTIAL had been opening an EMPTY page since it shipped (`openEntity` passed a slug into a handler keyed by Coverage layout key). Fixed at the root. Related pills now consult both the search registry AND the corpus.
-4. **Best-match block + Explore filter** (`45f07a09`) — exact title hits pin to the top of Conditions/Explore/Products, most-exact first, cap 12, AND-over-terms so "breast cancer" pins only Breast Cancer. Rows are MOVED not cloned. Explore gained a search bar that searches synonyms + claim topics + claim questions.
-5. **Essentials tab removed from the drawer menu** (`105fe4ef`) — the route stays alive with three doors (full-table link · breadcrumbs · "‹ All essentials"). All 91 Coverage cards now open their element's page. `render_probe_knowledge` was UPDATED (not bypassed) to assert the 5-tab menu with Essentials ABSENT.
+## ▶ NEXT — mining for search (the big lever)
+Per `.claude/rules/search-corpus.md` + memory `mining-serves-ask-wallach`: **the PRIMARY purpose of every mining operation is to make Ask-Wallach magical.** Mine FOR the search, biggest / most-searched entities first.
 
-## ▶ NEXT — Luneth reviews the batch
-Reload and check each surface. Everything is committed, so anything he dislikes is a cheap revert or tweak.
+**The enrichment recipe** (matches how `state/search.ts::scoreClaim` actually ranks):
+`question` in the EXACT words a person types (highest-weighted field) · correct `subject` (drives intent routing + best-answer pick) · rich LAY `synonyms` on the entity (the single biggest lever) · `topics[]` tags · a crisp `answer_short` · `also_about` cross-links · correct `facet` · per-entity QUESTION-INVENTORY coverage (L3).
 
-## 🔴 FLAGGED FOR HIM (needs his call, not mine)
-- **8 related-pill slugs have no page** and stay honestly unclickable rather than pointing somewhere plausible: `digestion`, `epigenetics`, `margarine`, `ph`, `poultry`, `silicon`, `villi`, `wheat`. Each looks like a legitimate Explore topic that simply has not been created/enriched yet. His call whether to mine them.
-- **`design-system.css` is SEALED and slightly stale**: its reduced-motion comment still lists `ds-scan-sweep` among "7 painted offenders" (now 6, since the scan line was deleted). A user-signed patch is needed; it was flagged rather than silently edited.
+**Two force multipliers now live that mining feeds directly:**
+- The **Best-match block** ranks on TITLE with AND-over-terms. Entity `synonyms` are what let a lay phrasing reach the right title — currently sparse (**2/502 conditions, 14/91 essentials**). Populating aliases is a small data task with outsized payoff.
+- The **Explore filter** searches `synonyms + claim topics + claim QUESTIONS`. Every well-phrased `question` mined is immediately a new way to find that topic.
 
-## 🔴 DEFERRED (unchanged, from the previous handoff)
-- **THE BIG LEVER — mining-for-search** (memory `mining-serves-ask-wallach`): enrich the biggest entity pages with search-DESIGNED claims. This is what makes the search feel magic.
-- **testosterone → strength**: a MINING gap, not code.
-- **Products in search**: needs a state-level product read-boundary + a route to renderProductDeep.
-- **Wide-entity synonyms**: conditions/essentials resolve by NAME only (2/502 conditions, 14/91 essentials carry aliases) — a small data task that would sharpen both Ask-Wallach and the new Best-match block.
+**The review process is non-negotiable** (memory `review-claims-in-exact-form-approve-the-claim`, `small-batch-build-test-log-mandate`): SMALL batches, each claim shown in EXACT final form (Q → answer_short → [full answer if it adds] → verbatim quote), Luneth approves the CLAIM. Never automate. Never guess — and never guess SILENTLY (`.claude/rules/mining-veins.md`). `corpus_seal` is USER-ONLY.
 
-## 🔧 MECHANICS (unchanged) — the load-bearing ones
-- CSS is LINKED (no rebuild); JS/data need `node tools/build.mjs`. Creator's-Log embed inlines at BUILD → re-inline AFTER logging.
-- Every write via `safe_write` (LF payloads; multi-edit → a Python driver of exact-string replaces with `count==1` asserts — that assert caught two real mistakes this session). Never bare `cd subdir`.
-- Round-close: build → invariants → probes → build-log → `creators_log.py append` (--summary ≤280, --kind from the fixed set) → RE-inline build → commit + push. `corpus_seal` is USER-ONLY.
-- Headless verify: puppeteer from repo-root `node_modules`; dismiss the welcome veil ("just browsing"), then click `.topbar__ask` or `[data-rail-nav="knowledge"]`.
-- **Probe-instrument traps hit this session (all produced confident WRONG answers):** rAF cadence is BLIND to blur cost in headless (a 60px blur measured identical to none — always use a negative control); `[data-kd-tab]` also matches BREADCRUMB anchors, not just menu buttons; a condition row's `textContent` starts with its ghost claim-count, so read `.kd-condition-row__name` for titles.
-- Mining still PAUSED (until Luneth resumes; when he does, it serves Ask-Wallach — memory `mining-serves-ask-wallach`).
+## ▶ ALSO NEXT — "things I feel are missing"
+Luneth has a second list for this session. **Await it; do not assume scope.**
+
+## ✅ WHAT LANDED THIS SESSION (6 commits, each with its own build-log line + Creator's Log entry)
+1. `a73be090` — Ask-Wallach blur restored lag-free (the seven ambient animations behind it were the cost, not the blur; a `:has()`-scoped freeze took compositor work 292→81ms) + typography pass + the orange scanning line deleted at source + entity-page colour clustering (essentials 16→12 colour switches).
+2. `2769faa5` — related pills route 264/272, and a REAL pre-existing bug fixed: Ask-Wallach "Learn More" on any **essential** had been opening an EMPTY page since it shipped (`openEntity` passed a slug into a handler keyed by Coverage layout key).
+3. `45f07a09` — Best-match block (exact title first, cap 12, AND-over-terms) + Explore content filter.
+4. `105fe4ef` — Essentials tab out of the drawer menu; route alive via 3 doors; all 91 Coverage cards open their element.
+5. `208368ef` — drawer menu → Unbounded (a MISSED item from the batch) + Explore's first category flush.
+6. `caa4047b` + follow-up — menu optically centred between the mark and the [X], font settled at **0.7rem**.
+
+## 🔴 FLAGGED — needs Luneth's call, not mine
+- **8 related-pill slugs have no page** and stay honestly unclickable rather than pointing somewhere plausible: `digestion`, `epigenetics`, `margarine`, `ph`, `poultry`, `silicon`, `villi`, `wheat`. Each looks like a legitimate Explore topic not yet created. **Good mining candidates.**
+- **The sealed design-system stylesheet has a stale comment**: its reduced-motion block still lists `ds-scan-sweep` among "7 painted offenders" (now 6 — the scan line was deleted). NOT edited under the general "permission to seal", because that gate's own docstring says *an agent re-sealing to match its own css edit is exactly what this catches* — it wants a per-file green light. Zero functional impact; a 2-line fix whenever he names the file.
+
+## 🔴 DEFERRED (unchanged)
+- **testosterone → strength**: a MINING gap, not code — the intent system is ready and waiting for the material.
+- **Products in search**: needs a state-level product read-boundary + a route to `renderProductDeep`.
+
+## 🔧 MECHANICS — the load-bearing ones
+- CSS is LINKED (no rebuild); JS/data need `node tools/build.mjs`. Creator's-Log embed inlines at BUILD → **re-inline AFTER logging**.
+- Every write via `safe_write` (LF payloads; multi-edit → a Python driver of exact-string replaces with `count==1` asserts — that assert caught two real mistakes this session and prevented both). Never bare `cd subdir` (it drifts cwd and blocks the hooks).
+- `creators_log.py append --kind` takes a FIXED set (build · round-close · milestone · incident · design-decision · note · …); `fix` is not one. `--summary` ≤ 280 chars.
+- The pre-bash guard pattern-matches on sealed filenames: mentioning `design-system.css` inside a bash STRING (e.g. a log body) trips it. Rephrase, don't fight it.
+- Round-close: build → invariants → probes → build-log → `creators_log.py append` → RE-inline build → commit + push.
+- **Probe-instrument traps hit this session — every one produced a confident WRONG answer:**
+  - rAF cadence is BLIND to blur cost headless (a 60px blur measured identical to none). **Always ship a negative control**; it is what caught this.
+  - `[data-kd-tab]` also matches BREADCRUMB anchors, not just menu buttons — scope to `.kd-knh__tabs`.
+  - a condition row's `textContent` starts with its ghost claim-count, so read `.kd-condition-row__name` for titles.
+  - the drawer menu was ALREADY geometrically centred (offset 0px) while looking wrong; assert the two GAPS are equal, since the centred-in-container property was true *while the defect stood*.
 
 ## 🔴🔴 REVIEW PROCESS (every corpus/content touch): show each claim in EXACT final form (Q→short→[full if it adds]→quote), approve the CLAIM. Unreviewed = log "unreviewed". `corpus_seal` USER-ONLY.
