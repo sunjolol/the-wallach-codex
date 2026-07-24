@@ -1,13 +1,16 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-24 · ORAC VIEW Phase 1 SHIPPED · next = Phase 2)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-24 · ORAC Phase 1 + §02-mining SHIPPED · next = Phase 2 VIEW BUILD)
 
 # ★★★★★ The live ORAC knowledge tab is UNDER CONSTRUCTION — built in phases from the signed-off design `temporary/orac-EDITED.html` (LOCAL ONLY, gitignored — the only copy of the design; read it first). Full plan + LOCKED decisions live in memory `orac-live-view-build-plan`.
 
 ## ✅ Phase 1 SHIPPED (commit cb8bda74)
 The ORAC tab is live in the Knowledge drawer, after Absorption: the editorial hero (§01) + the full-record claims index (§09) — **31 claims** live from the search index (`state/search.ts::oracClaims()`), facet-grouped (canonical `facetLabel()`), short-cited ("Hell's Kitchen (2015)" via `composeShortCite()`). NEW: `views/knowledge-orac.ts`, `oracClaims()`+`composeShortCite()`, `dashboard/assets/styles/drawer-orac.css` (ALL ~130 `.kd-orac-*` rules already ported + scoped — **Phase 2/3 section styles already exist**), `render_probe_orac.js`. Menu fits at 6 tabs (headOverflow=0). The 150 anchor (`WAL-CLM-IMMORT-000260`) already renders (it's one of the 31, a big_question). Board 77/77.
 
-## ▶ NEXT — Phase 2: urgency sections (§02–§08), spliced BETWEEN the hero and the claims record
-Sections: **02** mirror-test (decade bars 35/41/55/78 %, Immortality p.29) + stolen-years (20–25 yrs; ranks 17th→48th, p.9) + damage-chain (5 lay steps); **03** daily-target (20–25k/day; 100,000+ disease side — `WAL-CLM-IMMORT-000238`); **08** four-pieces / forces / payoff (+25–50 healthful yrs; avg-vs-ceiling). [**04** reach · **05** scale · **06** tables · **07** wine are the FOOD sections → need Phase-3 data first.]
-- **LOCKED data rule:** every number is Wallach's → **NONE hand-typed, NONE in view-copy** (`copy.ts` forbids Wallach numbers). Build a **DERIVED `orac-data.json`** (a generator parses the source claims → typed numbers; register in MANIFEST `artifacts`; byte-gated by `derived_artifacts_fresh`). Framing PROSE → view-copy `kd_orac_*`. **FIRST STEP:** map each number → its sealed claim (the numbers ARE in claim text — grep-confirmed 78 %, 17th, 48th, "20 to 25", "95 to 100", 20,000/25,000/100,000, 1,250/1,800).
+## ✅ §02 mining SHIPPED (commit 9adedbbd) — the two mirror-test visuals are now sealed claims
+`WAL-CLM-IMMORT-000261` (mechanism, p.29) = the Adelman decade table (35/41/55/78 % by band); `WAL-CLM-IMMORT-000262` (prevalence, p.9) = the world-ranking decline (17th→24th→46th→48th). Verified against the page image, 3 OCR errors purified (Chunk H), corpus v387/1379. Enriched (searchable) but NOT orac-tagged → oracClaims() stays 31. So EVERY §02/§03/§08 number now traces to a sealed claim.
+
+## ▶ NEXT — Phase 2 VIEW BUILD: the §02/§03/§08 sections, spliced BETWEEN the hero and the claims record
+Sections + their sources: **02** mirror-test (decade bars ← 000261) + stolen-years (20–25 yrs; ranks ← 000254 + 000262) + damage-chain (5 lay prose steps); **03** daily-target (20–25k ← 000238; 100,000+ ← EPIGEN-000148/154); **08** four-pieces (← 000250) / forces / payoff (+25–50 yrs ← 000259; calories ← 000255; minerals ← 000256). [**04** reach · **05** scale · **06** tables · **07** wine = FOOD sections → Phase-3 mining first.]
+- **LOCKED data rule:** every number traces to a sealed claim → **NONE hand-typed, NONE in view-copy** (`copy.ts` forbids Wallach numbers). Build a **DERIVED `orac-data.json`** (generator reads the source claims by id → typed numbers; MANIFEST `artifacts`; byte-gated). Framing PROSE → view-copy `kd_orac_*`. The number→claim map is DONE (claim ids above).
 - Wire **"Explore the Absorption facts →"** = `data-kd-tab="foods"`.
 
 ## ▶ THEN — Phase 3 (food tables, has a MINING dependency) · Phase 4 (interactions)
