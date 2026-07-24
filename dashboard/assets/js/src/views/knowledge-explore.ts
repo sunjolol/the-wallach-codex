@@ -18,7 +18,7 @@
  */
 
 import { ui } from '../state/copy.js';
-import { entityList, type EntitySummary } from '../state/search.js';
+import { claimsForSubject, entityList, getEntity, type EntitySummary } from '../state/search.js';
 
 // Hex escapes \x22 \x27 for " and ' (clean-view prose scanner has no regex parser).
 function escHTML(s: unknown): string {
@@ -42,9 +42,35 @@ export function exploreEntities(): EntitySummary[] {
   return entityList().filter(e => e.type !== 'nutrient' && e.type !== 'condition');
 }
 
+/**
+ * The hidden keyword blob the Explore filter matches against, so the tab searches CONTENT and not
+ * just chip labels (Luneth 2026-07-23). Mirrors what condition rows already carry in `data-search`.
+ *
+ * Contents, in descending signal: the entity's lay SYNONYMS (how a person actually names the thing),
+ * its claims' TOPIC tags, and its claims' QUESTION text — questions are phrased the way people
+ * search, which is exactly why they earn their place here. Answer/verbatim bodies are deliberately
+ * EXCLUDED: they would multiply the attribute's weight across every chip and make a topic match on
+ * one incidental word, which reads as a false positive. The chip's own label is matched from its
+ * textContent by the filter, so it is not duplicated into the blob.
+ */
+function searchBlob(slug: string): string {
+  const ent = getEntity(slug);
+  const parts = new Set<string>();
+  for (const s of ent?.synonyms ?? []) {
+    parts.add(s);
+  }
+  for (const c of claimsForSubject(slug)) {
+    parts.add(c.question);
+    for (const t of c.topics) {
+      parts.add(t);
+    }
+  }
+  return [...parts].join(' ');
+}
+
 /** One chip → opens that entity's page via the drawer's data-kd-topic contract. */
 function chip(e: EntitySummary): string {
-  return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML(e.slug)}">${escHTML(e.display_name)}</button>`;
+  return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML(e.slug)}" data-search="${escHTML(searchBlob(e.slug))}">${escHTML(e.display_name)}</button>`;
 }
 
 /**

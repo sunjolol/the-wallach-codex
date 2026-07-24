@@ -18408,6 +18408,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_foods_villi_ok_title: "Healthy gut",
       kd_foods_villi_title: "What gluten does to your gut",
       kd_foods_words_label: "In his own words",
+      kd_best_match: "Best match",
       kd_mark: "KNOWLEDGE",
       kd_tab_conditions: "Conditions",
       kd_tab_essentials: "Essentials",
@@ -99752,8 +99753,22 @@ deaths, blood clots, sterility`,
   function exploreEntities() {
     return entityList().filter((e) => e.type !== "nutrient" && e.type !== "condition");
   }
+  function searchBlob(slug) {
+    const ent = getEntity(slug);
+    const parts = /* @__PURE__ */ new Set();
+    for (const s of ent?.synonyms ?? []) {
+      parts.add(s);
+    }
+    for (const c of claimsForSubject(slug)) {
+      parts.add(c.question);
+      for (const t of c.topics) {
+        parts.add(t);
+      }
+    }
+    return [...parts].join(" ");
+  }
   function chip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML7(e.slug)}">${escHTML7(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML7(e.slug)}" data-search="${escHTML7(searchBlob(e.slug))}">${escHTML7(e.display_name)}</button>`;
   }
   function renderExploreTab() {
     const all = exploreEntities();
@@ -100516,7 +100531,7 @@ deaths, blood clots, sterility`,
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
-    ${(activeTab === "essentials" || activeTab === "conditions" || activeTab === "products") && selectedTopic === null ? `<div class="kd-search">
+    ${(activeTab === "essentials" || activeTab === "conditions" || activeTab === "products" || activeTab === "explore") && selectedTopic === null ? `<div class="kd-search">
       <span class="kd-search-icon">\u2315</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
@@ -100532,6 +100547,64 @@ deaths, blood clots, sterility`,
     explore: ".kd-explore-chip",
     products: ".kd-product-row"
   };
+  var KD_TITLE_SELECTOR = {
+    home: null,
+    foods: null,
+    essentials: ".sh-tile__nm",
+    conditions: ".kd-condition-row__name",
+    explore: null,
+    products: ".kd-product-row__name"
+  };
+  var kdHoisted = [];
+  function restoreHoisted() {
+    for (const h of [...kdHoisted].reverse()) {
+      h.parent.insertBefore(h.node, h.next);
+    }
+    kdHoisted = [];
+  }
+  var BEST_MATCH_MAX = 12;
+  function applyBestMatch(body, tab, query) {
+    const sel = KD_SEARCH_ITEM_SELECTOR[tab];
+    const titleSel = KD_TITLE_SELECTOR[tab];
+    const terms = query.split(/\s+/).filter((t) => t.length > 0);
+    if (terms.length === 0) {
+      return 0;
+    }
+    const scored = [];
+    body.querySelectorAll(`${sel}:not(.kd-hidden)`).forEach((node) => {
+      const el = titleSel !== null ? node.querySelector(titleSel) : node;
+      const title = (el?.textContent ?? "").trim().toLowerCase();
+      if (title.length === 0 || !terms.every((t) => title.includes(t))) {
+        return;
+      }
+      const rank = title === query ? 0 : title.startsWith(query) ? 1 : 2;
+      scored.push({ node, rank, len: title.length });
+    });
+    if (scored.length === 0) {
+      return 0;
+    }
+    scored.sort((a, b) => a.rank - b.rank || a.len - b.len);
+    const take = scored.slice(0, BEST_MATCH_MAX);
+    let block = body.querySelector(".kd-bestmatch");
+    if (block === null) {
+      block = document.createElement("div");
+      block.className = "kd-bestmatch";
+      body.insertBefore(block, body.firstChild);
+    }
+    block.textContent = "";
+    const label = document.createElement("div");
+    label.className = "kd-bestmatch__label";
+    label.textContent = ui("kd_best_match");
+    block.appendChild(label);
+    const rows = document.createElement("div");
+    rows.className = "kd-bestmatch__rows";
+    block.appendChild(rows);
+    for (const s of take) {
+      kdHoisted.push({ node: s.node, parent: s.node.parentNode, next: s.node.nextSibling });
+      rows.appendChild(s.node);
+    }
+    return take.length;
+  }
   function applyKnowledgeSearch(body, tab, rawQuery) {
     const query = rawQuery.trim().toLowerCase();
     const active = query.length > 0;
@@ -100539,7 +100612,23 @@ deaths, blood clots, sterility`,
     body.querySelectorAll(".kd-featured-citation").forEach((intro) => {
       intro.classList.toggle("kd-hidden", active);
     });
+    restoreHoisted();
+    const oldBlock = body.querySelector(".kd-bestmatch");
+    if (oldBlock !== null) {
+      oldBlock.remove();
+    }
     let visible = 0;
+    body.querySelectorAll(selector).forEach((node) => {
+      const hay = `${node.textContent ?? ""} ${node.dataset["search"] ?? ""}`;
+      const match = !active || hay.toLowerCase().includes(query);
+      node.classList.toggle("kd-hidden", !match);
+      if (match) {
+        visible += 1;
+      }
+    });
+    if (active) {
+      applyBestMatch(body, tab, query);
+    }
     let head = null;
     let headHasMatch = false;
     const commitHead = () => {
@@ -100554,11 +100643,7 @@ deaths, blood clots, sterility`,
         headHasMatch = false;
         return;
       }
-      const hay = `${node.textContent ?? ""} ${node.dataset["search"] ?? ""}`;
-      const match = !active || hay.toLowerCase().includes(query);
-      node.classList.toggle("kd-hidden", !match);
-      if (match) {
-        visible += 1;
+      if (!node.classList.contains("kd-hidden")) {
         headHasMatch = true;
       }
     });
@@ -103357,7 +103442,7 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
 
 Technical: state/search.ts -- entityFamilies gathers page.search (enriched) + page.record (raw, via corpus.resolveClaims), dedups by id, maps facet->family + kind->family (kindCategory), groups into 5 families best-first (qa before raw); entityInQuery over ~600 entity names+synonyms (longest-first) + a hybrid resolveQuery (route a MENTIONED entity to its page unless the top claim's subject IS it -- kills gold-for-cancer); CHARGED{homosexuality,intersex}+chargedExplicit+isCharged filter askRanked unless the query names the topic; displayName wide-upgrade; relatedSlugs/entityExists/isChargedEntity. views/search.ts -- renderTopicPage rebuilt to family groups (renderFamilyGroup/renderEntityRow qa-or-raw), renderKeepExploring, clickable .ehero--link hero, wide-clickable renderRelPill, charged-filtered renderEmpty. core/events.ts + views/knowledge.ts + main.ts -- knowledge:open-entity widened to essential|condition|product|topic + the openEntity topic-overlay branch. drawer-search.css -- [data-family] colour rules, .exrow, .ehero--link hover, .eback 0.7rem/centered/+5px margin, and REMOVED the backdrop-filter blur for a plain rgba(18,14,10,0.74) scrim (a blur over a full-screen overlay re-rasterizes the page every repaint = the lag; a solid wash is guaranteed cheap). view-copy.json -- search_fam_*_more nouns. tools/render_probe_search.js -- NEW, closes the standing WISH; asserts the rich behaviour + intent + charged gate + cross-nav. Doctrine: .claude/rules/search-corpus.md + memory mining-serves-ask-wallach elevate ALL future mining to serve Ask-Wallach with the enrichment recipe.
 
-Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-build: unused import, dead export), render_probe_search PASS 0 page errors, headless screenshots. Deferrals: testosterone->strength is a MINING gap (system ready, data not mined); products-in-search fast-follow; wide-entity synonyms sparse (name-match only).` }, { id: "lg_mry796e6_qxixu0", ts: "2026-07-23T19:26:08.670626-05:00", surface: "ask-wallach", kind: "build", summary: "Search blur restored lag-free (the animations behind it were the cost, not the blur) + typography pass + scanning line removed + entity-page colour clustering", detail: "Two things landed. First, the Ask-Wallach popup gets its blurred background back without the lag that made us drop it. The blur was never the problem: seven always-on animations sit behind the popup and force the browser to redraw the whole page every frame; add a blur and it re-blurs the entire page on every one of those frames. Pausing those animations while the popup is open lets the browser blur once and reuse it. Second, Luneth's touchup pass: fonts, and the orange line that swept down every page is gone.\n\nMEASUREMENT (negative-controlled, because the first instrument lied). rAF frame cadence was BLIND in headless - a 60px full-viewport blur measured identical to no blur at all - which the built-in negative control caught, so that reading was discarded rather than reported. A devtools trace over 3s of hover agitation showed the truth: blur RADIUS is irrelevant (7px 288ms / 60px 274ms / none 292ms), while freezing the ambient animations cuts compositor work 292 to 81ms and frame commits 434 to 234 (-72 percent). Blur smoothness itself is NOT measurable headless; that was signed off by eye. Honest gap, recorded.\n\nIMPLEMENTATION. drawer-search.css: backdrop-filter blur(var(--aw-scrim-blur)) at 3.5px (halved from 7px on request), translateZ(0)+backface-visibility composite hint, and a :has()-scoped animation-play-state:paused freeze over .app-topbar/.app-workspace/#drawer-knowledge-mount/#drawer-journey-mount. A dedicated probe asserts the freeze ENGAGES on open and RELEASES on close - a permanent freeze would have been the obvious bug. Scrim darkness deliberately unchanged and pinned by assertion.\n\nTYPOGRAPHY. .rail__item and .ep-seclabel and .sh-hero h1 moved to var(--ds-font-display) (Unbounded via type-futurist.css) at --ds-text-mini / --ds-text-sm / --ds-text-2xl - tokens, not raw numbers. .ep-seclabel__hint + a: 9px to 10px. The orange .ds-scan-line was removed AT SOURCE from all four emitting views plus both dead CSS rules, not merely hidden.\n\nENTITY-PAGE COLOUR CLUSTERING. Claim sections are tinted by facet family, and the default order interleaved them. The first attempt - Luneth's two requested swaps - changed NOTHING on essentials pages, because no essential carries both protocol+stance or both big_question+history; all 6 improved pages were Explore topics. That correction was surfaced immediately and the decision re-opened rather than left standing on a wrong basis. Option B then landed: families contiguous, Cautions deliberately held at position 2. Essentials 16 to 12 colour switches, hydrogen+potassium 3 to 1, 0 pages worse. Full clustering would have scored 11 instead of 12, on copper alone, and was rejected rather than bury a health caution below four sections.\n\nVERIFICATIONS: build OK, invariants 77/77 (0 new reds), render_probe + _knowledge + _search + _seeded all exit 0, entity-page-data.json regenerated and byte-gated, potassium screenshot confirms the clustering on screen.\n\nDEFERRED: the sealed design-system stylesheet still names ds-scan-sweep among '7 painted offenders' (now 6) in its reduced-motion comment. It is a user-only canonical, so it was flagged for a signed patch rather than silently edited." }, { id: "lg_mry7ksec_nzk4jx", ts: "2026-07-23T19:35:10.404510-05:00", surface: "knowledge", kind: "build", summary: "Related pills route to their real pages (264/272), and Ask-Wallach 'Learn More' on an essential no longer opens an empty page", detail: "The 'related' bubbles on topic pages are clickable now. The cause was that the app keeps two lists of things - a small search registry of 73 enriched entities, and the big corpus of 91 essentials plus 502 conditions - and the pills only ever consulted the small one. So a pill for Selenium, Zinc, Cancer or Osteoporosis rendered as dead text even though every one of those pages exists. They consult both now.\n\nA REAL BUG FOUND ON THE WAY. Ask-Wallach's 'Learn More' on any ESSENTIAL had been opening a blank page since the day it shipped. openEntity passed a corpus SLUG ('calcium') into a handler that keys by the Coverage LAYOUT KEY ('Calcium'), and getEssentialByLayoutKey is an exact map lookup, so it missed and renderEssentialPage fell through to its 'no sealed page record' fallback - an empty page titled with the raw lowercase slug. Measured before: heroName 'calcium', 0 facet sections, 397 chars of body. After: 'Calcium', 4 sections, 130284 chars. The existing render probe never caught it because it only covered the condition and topic paths. Fixed at the root in openEntity so every caller - Learn More, related pills, and the Coverage cards still to come - is fixed at once.\n\nTHE FIRST CUT WAS WRONG AND THE AUDIT CAUGHT IT. Routing only registry entities still left 46 distinct pills dead. Auditing all 272 related pills against the artifacts - rather than eyeballing one page and declaring victory - exposed it. After the corpus fallback: 264 route, 8 dead. The 8 are digestion, epigenetics, margarine, ph, poultry, silicon, villi and wheat: topics with no page yet, reported to Luneth rather than quietly linked somewhere plausible.\n\nRegistry type wins when a slug is in both, so entities that are BOTH a registry element and a corpus essential (gold, hydrogen, potassium) keep opening the Explore page they open today. The change only ADDS destinations; it never re-points a pill that already worked.\n\nTWO GATES FIRED AND BOTH WERE RIGHT. no_new_dead_code and views_no_inline_prose flagged a relPillUnrouted diagnostic helper I had written - genuinely uncalled, with prose reason-strings sitting in a view. It was DELETED rather than baselined: the audit runs in Python over search-index.json and corpus-embed.json, which covers all 272 pills instead of only the ones a rendered page happens to show, so the helper was the worse instrument anyway.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0, and browser-verified - butter shows Vitamin A / Vitamin D / Vitamin K live with Margarine static; gluten shows Celiac Disease / Nutrient Absorption / Malabsorption / Phytates live with Villi and Wheat static; clicking Vitamin A lands on its essential page via layout key 'Vitamin A (Retinol / beta-carotene)'." }];
+Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-build: unused import, dead export), render_probe_search PASS 0 page errors, headless screenshots. Deferrals: testosterone->strength is a MINING gap (system ready, data not mined); products-in-search fast-follow; wide-entity synonyms sparse (name-match only).` }, { id: "lg_mry796e6_qxixu0", ts: "2026-07-23T19:26:08.670626-05:00", surface: "ask-wallach", kind: "build", summary: "Search blur restored lag-free (the animations behind it were the cost, not the blur) + typography pass + scanning line removed + entity-page colour clustering", detail: "Two things landed. First, the Ask-Wallach popup gets its blurred background back without the lag that made us drop it. The blur was never the problem: seven always-on animations sit behind the popup and force the browser to redraw the whole page every frame; add a blur and it re-blurs the entire page on every one of those frames. Pausing those animations while the popup is open lets the browser blur once and reuse it. Second, Luneth's touchup pass: fonts, and the orange line that swept down every page is gone.\n\nMEASUREMENT (negative-controlled, because the first instrument lied). rAF frame cadence was BLIND in headless - a 60px full-viewport blur measured identical to no blur at all - which the built-in negative control caught, so that reading was discarded rather than reported. A devtools trace over 3s of hover agitation showed the truth: blur RADIUS is irrelevant (7px 288ms / 60px 274ms / none 292ms), while freezing the ambient animations cuts compositor work 292 to 81ms and frame commits 434 to 234 (-72 percent). Blur smoothness itself is NOT measurable headless; that was signed off by eye. Honest gap, recorded.\n\nIMPLEMENTATION. drawer-search.css: backdrop-filter blur(var(--aw-scrim-blur)) at 3.5px (halved from 7px on request), translateZ(0)+backface-visibility composite hint, and a :has()-scoped animation-play-state:paused freeze over .app-topbar/.app-workspace/#drawer-knowledge-mount/#drawer-journey-mount. A dedicated probe asserts the freeze ENGAGES on open and RELEASES on close - a permanent freeze would have been the obvious bug. Scrim darkness deliberately unchanged and pinned by assertion.\n\nTYPOGRAPHY. .rail__item and .ep-seclabel and .sh-hero h1 moved to var(--ds-font-display) (Unbounded via type-futurist.css) at --ds-text-mini / --ds-text-sm / --ds-text-2xl - tokens, not raw numbers. .ep-seclabel__hint + a: 9px to 10px. The orange .ds-scan-line was removed AT SOURCE from all four emitting views plus both dead CSS rules, not merely hidden.\n\nENTITY-PAGE COLOUR CLUSTERING. Claim sections are tinted by facet family, and the default order interleaved them. The first attempt - Luneth's two requested swaps - changed NOTHING on essentials pages, because no essential carries both protocol+stance or both big_question+history; all 6 improved pages were Explore topics. That correction was surfaced immediately and the decision re-opened rather than left standing on a wrong basis. Option B then landed: families contiguous, Cautions deliberately held at position 2. Essentials 16 to 12 colour switches, hydrogen+potassium 3 to 1, 0 pages worse. Full clustering would have scored 11 instead of 12, on copper alone, and was rejected rather than bury a health caution below four sections.\n\nVERIFICATIONS: build OK, invariants 77/77 (0 new reds), render_probe + _knowledge + _search + _seeded all exit 0, entity-page-data.json regenerated and byte-gated, potassium screenshot confirms the clustering on screen.\n\nDEFERRED: the sealed design-system stylesheet still names ds-scan-sweep among '7 painted offenders' (now 6) in its reduced-motion comment. It is a user-only canonical, so it was flagged for a signed patch rather than silently edited." }, { id: "lg_mry7ksec_nzk4jx", ts: "2026-07-23T19:35:10.404510-05:00", surface: "knowledge", kind: "build", summary: "Related pills route to their real pages (264/272), and Ask-Wallach 'Learn More' on an essential no longer opens an empty page", detail: "The 'related' bubbles on topic pages are clickable now. The cause was that the app keeps two lists of things - a small search registry of 73 enriched entities, and the big corpus of 91 essentials plus 502 conditions - and the pills only ever consulted the small one. So a pill for Selenium, Zinc, Cancer or Osteoporosis rendered as dead text even though every one of those pages exists. They consult both now.\n\nA REAL BUG FOUND ON THE WAY. Ask-Wallach's 'Learn More' on any ESSENTIAL had been opening a blank page since the day it shipped. openEntity passed a corpus SLUG ('calcium') into a handler that keys by the Coverage LAYOUT KEY ('Calcium'), and getEssentialByLayoutKey is an exact map lookup, so it missed and renderEssentialPage fell through to its 'no sealed page record' fallback - an empty page titled with the raw lowercase slug. Measured before: heroName 'calcium', 0 facet sections, 397 chars of body. After: 'Calcium', 4 sections, 130284 chars. The existing render probe never caught it because it only covered the condition and topic paths. Fixed at the root in openEntity so every caller - Learn More, related pills, and the Coverage cards still to come - is fixed at once.\n\nTHE FIRST CUT WAS WRONG AND THE AUDIT CAUGHT IT. Routing only registry entities still left 46 distinct pills dead. Auditing all 272 related pills against the artifacts - rather than eyeballing one page and declaring victory - exposed it. After the corpus fallback: 264 route, 8 dead. The 8 are digestion, epigenetics, margarine, ph, poultry, silicon, villi and wheat: topics with no page yet, reported to Luneth rather than quietly linked somewhere plausible.\n\nRegistry type wins when a slug is in both, so entities that are BOTH a registry element and a corpus essential (gold, hydrogen, potassium) keep opening the Explore page they open today. The change only ADDS destinations; it never re-points a pill that already worked.\n\nTWO GATES FIRED AND BOTH WERE RIGHT. no_new_dead_code and views_no_inline_prose flagged a relPillUnrouted diagnostic helper I had written - genuinely uncalled, with prose reason-strings sitting in a view. It was DELETED rather than baselined: the audit runs in Python over search-index.json and corpus-embed.json, which covers all 272 pills instead of only the ones a rendered page happens to show, so the helper was the worse instrument anyway.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0, and browser-verified - butter shows Vitamin A / Vitamin D / Vitamin K live with Margarine static; gluten shows Celiac Disease / Nutrient Absorption / Malabsorption / Phytates live with Villi and Wheat static; clicking Vitamin A lands on its essential page via layout key 'Vitamin A (Retinol / beta-carotene)'." }, { id: "lg_mry7smim_r27l3k", ts: "2026-07-23T19:41:16.030412-05:00", surface: "knowledge", kind: "build", summary: "Best-match block pins exact title hits on every filterable tab; Explore gets a search bar that searches content", detail: "Typing 'acne' on the Conditions tab used to match every condition whose CLAIMS mention acne, ordered by claim count, so the actual Acne page sat far down a list of 31 results. Real title matches are now pinned in a 'Best match' strip at the top, most-exact always first. The Explore tab, which had no filter at all, now has one - and it searches content, not just chip labels.\n\nRANKING (Luneth's spec). AND-over-terms on the TITLE, which is what makes a multi-word query narrow rather than widen: 'cancer' pins Cancer plus 11 more cancers, while 'breast cancer' pins only Breast Cancer, because no other title carries both terms. Rank 0 = the title IS the query, and that slot is reserved so a perfect match can never be outranked; 1 = starts-with; 2 = merely contains; ties break on the shorter title so 'Cancer' precedes 'Cancer, Breast'. Cap 12: one exact plus up to eleven.\n\nWHY TITLES NEEDED THEIR OWN SOURCE. The data-search blob deliberately makes a row match on content - that is the feature that lets 'smell' find Anosmia - but it is also exactly what buries a title hit. So ranking reads the title alone, via a per-tab KD_TITLE_SELECTOR, while filtering keeps using the blob.\n\nHOISTED, NOT CLONED. The pinned rows are the ORIGINAL DOM nodes, moved. They therefore keep their per-tab styling and their delegated click handlers, and they cannot render twice - Luneth chose 'disappear from the bottom results' explicitly. Each move records where it came from, and every keystroke restores the previous set before ranking again, so ordering never compounds on itself. applyKnowledgeSearch was restructured into restore -> mark -> hoist -> head-pass, in that order, so a section whose rows were ALL hoisted reports itself empty instead of showing a head over nothing.\n\nEXPLORE CONTENT SEARCH. Each chip now carries a data-search blob of the entity's lay synonyms, its claims' topic tags, and its claims' QUESTION text - questions are phrased the way people actually search. Answer and verbatim bodies are deliberately excluded: they would multiply the attribute across every chip and make a topic match on one incidental word, which reads as a false positive.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0. Browser-verified: 'acne' pins Acne first (previously buried among 31 results), 'cancer' pins Cancer then eleven more cancers, 'breast cancer' pins exactly one, clearing the query restores all 502 rows with zero hidden and removes the block, the Explore bar exists, 'celiac' matches three Explore chips through their claim questions, and Explore 'mercury' pins Mercury first.\n\nINSTRUMENT NOTE: the first verification run reported nonsense - 'acne' pinned as '9'. That was the PROBE reading a condition row's big ghost claim-count as its title, not a fault in the feature. Fixed in the probe. Worth recording because a wrong instrument that returns plausible-looking output is the failure mode that wastes the most time." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

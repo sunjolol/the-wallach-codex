@@ -320,7 +320,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">×</button></div>
     </header>
-    ${(activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products') && selectedTopic === null
+    ${(activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products' || activeTab === 'explore') && selectedTopic === null
       ? `<div class="kd-search">
       <span class="kd-search-icon">⌕</span>
       <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
@@ -348,6 +348,97 @@ const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
 };
 
 /**
+ * Where each tab's item keeps its TITLE. The blob in `data-search` deliberately makes a row match on
+ * content, which is what buries an exact title hit — searching "acne" matched every condition whose
+ * claims mention acne and ranked them by claim count, so the Acne row itself sat far down the page
+ * (Luneth 2026-07-23). Ranking needs the title alone, so it is read from here. `null` = the item's
+ * own textContent IS the title (an Explore chip is just its label).
+ */
+const KD_TITLE_SELECTOR: Record<Tab, string | null> = {
+  home: null,
+  foods: null,
+  essentials: '.sh-tile__nm',
+  conditions: '.kd-condition-row__name',
+  explore: null,
+  products: '.kd-product-row__name',
+};
+
+/** Rows currently lifted into the Best-match block, with where to put each one back. */
+interface HoistedRow { node: HTMLElement; parent: Node; next: Node | null; }
+let kdHoisted: HoistedRow[] = [];
+
+/**
+ * Return every hoisted row to exactly where it came from. Restores in REVERSE hoist order so a run
+ * of adjacent siblings lands back in its original sequence (each row's recorded `next` is still a
+ * valid sibling because only hoisted rows ever moved).
+ */
+function restoreHoisted(): void {
+  for (const h of [...kdHoisted].reverse()) {
+    h.parent.insertBefore(h.node, h.next);
+  }
+  kdHoisted = [];
+}
+
+/** Max rows pinned at the top — 1 exact + up to 11 more (Luneth 2026-07-23). */
+const BEST_MATCH_MAX = 12;
+
+/**
+ * Lift the rows whose TITLE matches the query to a pinned block at the top of the body, most-exact
+ * first. Returns the number lifted.
+ *
+ * Matching is AND-over-terms on the title, which is what makes multi-word queries narrow instead of
+ * widen: "cancer" pins Cancer + Breast/Colon/… , while "breast cancer" pins only Breast Cancer,
+ * because no other title carries both terms. Rank 0 = the title IS the query (this slot is reserved
+ * so the perfect match can never be outranked), 1 = title starts with it, 2 = merely contains it;
+ * ties break on the shorter title, so "Cancer" precedes "Cancer, Breast". Hoisted rows are MOVED,
+ * not cloned — they vanish from their section below, so nothing renders twice and the delegated
+ * click handlers keep working because the nodes themselves are preserved.
+ */
+function applyBestMatch(body: HTMLElement, tab: Tab, query: string): number {
+  const sel = KD_SEARCH_ITEM_SELECTOR[tab];
+  const titleSel = KD_TITLE_SELECTOR[tab];
+  const terms = query.split(/\s+/).filter(t => t.length > 0);
+  if (terms.length === 0) {
+    return 0;
+  }
+  const scored: { node: HTMLElement; rank: number; len: number }[] = [];
+  body.querySelectorAll<HTMLElement>(`${sel}:not(.kd-hidden)`).forEach((node) => {
+    const el = titleSel !== null ? node.querySelector(titleSel) : node;
+    const title = (el?.textContent ?? '').trim().toLowerCase();
+    if (title.length === 0 || !terms.every(t => title.includes(t))) {
+      return;
+    }
+    const rank = title === query ? 0 : title.startsWith(query) ? 1 : 2;
+    scored.push({ node, rank, len: title.length });
+  });
+  if (scored.length === 0) {
+    return 0;
+  }
+  scored.sort((a, b) => (a.rank - b.rank) || (a.len - b.len));
+  const take = scored.slice(0, BEST_MATCH_MAX);
+
+  let block = body.querySelector<HTMLElement>('.kd-bestmatch');
+  if (block === null) {
+    block = document.createElement('div');
+    block.className = 'kd-bestmatch';
+    body.insertBefore(block, body.firstChild);
+  }
+  block.textContent = '';
+  const label = document.createElement('div');
+  label.className = 'kd-bestmatch__label';
+  label.textContent = ui('kd_best_match');
+  block.appendChild(label);
+  const rows = document.createElement('div');
+  rows.className = 'kd-bestmatch__rows';
+  block.appendChild(rows);
+  for (const s of take) {
+    kdHoisted.push({ node: s.node, parent: s.node.parentNode as Node, next: s.node.nextSibling });
+    rows.appendChild(s.node);
+  }
+  return take.length;
+}
+
+/**
  * Filter the active tab's rendered rows in-place against a query string.
  *
  * DOM-filter (toggle `.kd-hidden`) rather than re-render so an open deep-dive
@@ -367,9 +458,36 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
     intro.classList.toggle('kd-hidden', active);
   });
 
-  // Heads + items walked in document order (querySelectorAll flattens the
-  // essentials grid wrapper) so each head reflects only its own items' state.
+  // Any rows pinned by the PREVIOUS keystroke go home first, so every pass starts from the
+  // canonical document order and ranking never compounds on itself.
+  restoreHoisted();
+  const oldBlock = body.querySelector('.kd-bestmatch');
+  if (oldBlock !== null) {
+    oldBlock.remove();
+  }
+
+  // Pass 1 — mark each item hidden or not. Match visible text OR the row's hidden `data-search`
+  // keyword blob (condition rows carry synonyms/symptoms/claim text, Explore chips carry synonyms/
+  // topics/claim questions, so content queries like "smell" -> Anosmia work; rows without the attr
+  // fall back to textContent only).
   let visible = 0;
+  body.querySelectorAll<HTMLElement>(selector).forEach((node) => {
+    const hay = `${node.textContent ?? ''} ${node.dataset['search'] ?? ''}`;
+    const match = !active || hay.toLowerCase().includes(query);
+    node.classList.toggle('kd-hidden', !match);
+    if (match) {
+      visible += 1;
+    }
+  });
+
+  // Pass 2 — lift the title matches to the top, BEFORE the head pass, so a section whose every
+  // row got hoisted correctly reports itself empty instead of showing a head over nothing.
+  if (active) {
+    applyBestMatch(body, tab, query);
+  }
+
+  // Pass 3 — heads walked in document order (querySelectorAll flattens the essentials grid
+  // wrapper) so each head reflects only the items that remain beneath it.
   let head: HTMLElement | null = null;
   let headHasMatch = false;
   const commitHead = (): void => {
@@ -384,14 +502,7 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
       headHasMatch = false;
       return;
     }
-    // Match visible text OR the row's hidden `data-search` keyword blob (condition
-    // rows carry synonyms/symptoms/claim text there, so content queries like
-    // "smell" -> Anosmia work; rows without the attr fall back to textContent only).
-    const hay = `${node.textContent ?? ''} ${node.dataset['search'] ?? ''}`;
-    const match = !active || hay.toLowerCase().includes(query);
-    node.classList.toggle('kd-hidden', !match);
-    if (match) {
-      visible += 1;
+    if (!node.classList.contains('kd-hidden')) {
       headHasMatch = true;
     }
   });

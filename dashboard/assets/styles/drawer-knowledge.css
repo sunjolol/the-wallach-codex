@@ -1768,6 +1768,30 @@
 #drawer-knowledge-mount .ep-seclabel{ display:flex; align-items:center; gap:var(--ds-space-3); margin:var(--ds-space-6) 0 var(--ds-space-3); font-family:var(--ds-font-display); font-size:var(--ds-text-sm); font-weight:700; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink); }
 #drawer-knowledge-mount .ep-seclabel::after{ content:''; flex:1; height:1px; background:var(--ds-rule-soft); }
 #drawer-knowledge-mount .ep-seclabel--tight{ margin-top:calc(var(--ds-space-6) - 15px); }
+
+/* ─── BEST MATCH — title hits pinned above the filtered list ──────────────────
+   The rows inside are the ORIGINAL nodes, moved here by applyKnowledgeSearch (never clones), so
+   they keep their per-tab styling and their delegated click handlers. The chrome stays quiet on
+   purpose: a heavy container would read as a second UI rather than "these matched your words". */
+#drawer-knowledge-mount .kd-bestmatch {
+  margin: 0 0 var(--ds-space-5);
+  padding: 0 0 var(--ds-space-4);
+  border-bottom: 1px solid var(--ds-rule-soft);
+}
+#drawer-knowledge-mount .kd-bestmatch__label {
+  display: flex; align-items: center; gap: var(--ds-space-3);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase;
+  color: var(--ds-accent-deep); margin: 0 0 var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-bestmatch__label::after {
+  content: ''; flex: 1; height: 1px;
+  background: color-mix(in srgb, var(--ds-accent) 30%, transparent);
+}
+/* The Explore tab's rows are chips, which need the cloud's flex flow to sit correctly. */
+#drawer-knowledge-mount .kd-bestmatch__rows { display: flex; flex-direction: column; gap: 9px; }
+#drawer-knowledge-mount .kd-explore .kd-bestmatch__rows,
+#drawer-knowledge-mount .kd-bestmatch__rows:has(.kd-explore-chip) { flex-direction: row; flex-wrap: wrap; gap: 8px; }
 #drawer-knowledge-mount .ep-seclabel__hint{ font-family:var(--ds-font-mono); font-size:10px; font-weight:400; letter-spacing:var(--ds-track-wide); text-transform:none; color:var(--ds-ink-faint); }
 #drawer-knowledge-mount .ep-seclabel a{ font-family:var(--ds-font-mono); font-size:10px; font-weight:400; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-accent-deep); text-decoration:none; cursor:pointer; }
 #drawer-knowledge-mount .ep-seclabel a:hover{ text-decoration:underline; }
