@@ -7725,7 +7725,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 714466
+        "char_offset": 714476
       },
       "dose": null,
       "tags": [
@@ -7824,7 +7824,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 723443
+        "char_offset": 723453
       },
       "dose": null,
       "tags": [
@@ -8087,7 +8087,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642424
+        "char_offset": 642430
       },
       "dose": null,
       "tags": [
@@ -8118,7 +8118,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642495
+        "char_offset": 642501
       },
       "dose": null,
       "tags": [
@@ -8149,7 +8149,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642684
+        "char_offset": 642690
       },
       "dose": null,
       "tags": [
@@ -8180,7 +8180,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 641885
+        "char_offset": 641891
       },
       "dose": null,
       "tags": [
@@ -8211,7 +8211,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642228
+        "char_offset": 642234
       },
       "dose": null,
       "tags": [
@@ -8243,7 +8243,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 644037
+        "char_offset": 644043
       },
       "dose": null,
       "tags": [
@@ -8275,7 +8275,7 @@
         "page": null,
         "screenshot": 203,
         "kindle_location": null,
-        "char_offset": 644645
+        "char_offset": 644651
       },
       "dose": null,
       "tags": [
@@ -8307,7 +8307,7 @@
         "page": null,
         "screenshot": 225,
         "kindle_location": null,
-        "char_offset": 712527
+        "char_offset": 712533
       },
       "dose": null,
       "tags": [
@@ -8338,7 +8338,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 641589
+        "char_offset": 641595
       },
       "dose": null,
       "tags": [
@@ -8496,7 +8496,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 641421
+        "char_offset": 641427
       },
       "dose": null,
       "tags": [
@@ -8527,7 +8527,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 643525
+        "char_offset": 643531
       },
       "dose": null,
       "tags": [
@@ -8540,6 +8540,294 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-24T02:41:18+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000250",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's anti-aging framework has exactly four parts, and he is blunt that leaving any one out causes total failure. The four longevity pieces are the section headings of his own chapter: ANTIOXIDANTS (20,000-25,000 ORAC points a day), CALORIE RESTRICTED DIETS (1,250 to 1,800 calories, without malnutrition), MINERAL-RICH DIETS (an absolute requirement, and the piece he says a low-vitamin diet can survive but a low-mineral diet cannot), and avoiding the LAND MINES (smoking, excess alcohol, street or prescription drugs, fried foods, burnt meat, sugar). ORAC is one quarter of the answer, not the whole of it.",
+      "verbatim": "The omission of any one or any part of the four longevity pieces will result in\ncatastrophic failure:",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 201,
+        "kindle_location": null,
+        "char_offset": 641276
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "four-pieces",
+        "aging",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000251",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's position is that living past 100 is standard human equipment, not a lottery win. Every human, he says, has the genetic potential, the genetic equipment and the genetic capacity to live well beyond 100 - and the only reasons people do not get there are that they leave pieces of the anti-aging circuitry out of their daily lives, or they knowingly step on the land mines. He accepts there is a genetic upper limit; his argument is that almost nobody is anywhere near it.",
+      "verbatim": "While there are genetic upper limits to human longevity, all humans certainly and\npredictably have the genetic potential, the genetic equipment and the genetic capacity\nto live well beyond 100!",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 201,
+        "kindle_location": null,
+        "char_offset": 639542
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "genetic-potential",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000252",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The goal Wallach states is not extra years in decline - it is reaching beyond 100 in a beautiful, healthful and functional way. That phrasing is the whole answer to the objection that a longer life just means a longer old age: the same accumulated knowledge that adds the years is what prevents the deterioration people are picturing when they say they would not want them. He frames aging as something that starts at conception and runs at a rate you influence daily, not a switch that flips at 70.",
+      "verbatim": "There is an accumulated knowledge, however, that will allow each of us to prevent and\nslow the aging process so that we can successfully reach beyond 100 years of age in a\nbeautiful, healthful and functional way.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 201,
+        "kindle_location": null,
+        "char_offset": 639328
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "quality-of-life",
+        "aging",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000253",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach dismisses both halves of the genetics excuse. Good genes will not carry you to 100 if you ignore the physiological requirements - and bad family history will not stop you if you meet them. His example is deliberately extreme: even if everyone in your family died at 35, fulfilling the requirements and avoiding the land mines can still get you healthfully to 100. He calls these physiological laws as unforgiving and predictable as gravity, and compares ignoring them to stepping off a third-storey roof without a ladder.",
+      "verbatim": "On the other hand, if everyone in your family died at 35 years of age and you accurately\nfulfill your physiological requirements for longevity and you avoid the land mines, you\ncan easily make it healthfully to 100.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 201,
+        "kindle_location": null,
+        "char_offset": 640709
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "genetics",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000254",
+      "kind": "prevalence",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's measure of the gap is stark: the industrialized world should be averaging 95 to 100 years, and instead averages about 75 - some 20 to 25 years short of our genetic potential. He tracks the American slide with CDC and WHO rankings: 17th in the world for longevity in 1990, down to 24th by 2000, down to a pitiful 46th by 2005, and 48th by 2008.",
+      "verbatim": "the\naverage age of peoples in the industrialized world should\nbe somewhere between 95 and 100 years of age. However,\nthe average age of those living in the industrialized world\nis somewhere around 75 years of age (give or take five\nyears), in fact 20 to 25 years short of our genetic potential for\nlongevity.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 34199
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "public-health",
+        "urgency",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000255",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The second longevity piece is a calorie-restricted diet WITHOUT malnutrition - a distinction Wallach says most practitioners of calorie restriction miss entirely. It is universally known to extend the life span of laboratory, pet and farm animals, and it is a common thread among centenarians both historically and in every Blue Zone today. The levels he cites are 1,250 to 1,800 calories a day, with those doing heavier physical labour at the upper end. The 'without malnutrition' half means every known essential nutrient at optimal levels, well above the RDI, in fewer calories - which is why the mineral piece and the calorie piece are inseparable.",
+      "verbatim": "In most cases the caloric levels fall between 1,250 and\n1,800 calories per day, with those performing more physical\nlabor consuming the higher calorie levels.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 224,
+        "kindle_location": null,
+        "char_offset": 713200
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "calorie-restriction",
+        "four-pieces",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000256",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "This is Wallach's sharpest line on why minerals outrank vitamins, and it is the third longevity piece. Mineral-rich diets are found universally across every Blue Zone and he calls them an absolute requirement to reach the centenarian club - in every case those populations have multiple sources rich in a wide spectrum of minerals. His rule of thumb: a high protein, low carbohydrate diet is relatively forgiving of a low vitamin intake, but unforgiving of a low mineral diet. Antioxidants raise your average; this is the piece that gets you to the ceiling.",
+      "verbatim": "A high protein, low carbohydrate diet is relatively\nforgiving of a low vitamin intake, but unforgiving of a low\nmineral diet.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 224,
+        "kindle_location": null,
+        "char_offset": 713586
+      },
+      "dose": null,
+      "tags": [
+        "minerals",
+        "vitamins",
+        "four-pieces",
+        "longevity",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000257",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Where the world's longest-lived populations actually got their minerals, in Wallach's list: glacial milk, river silt, rock dust, wood ashes (which he marks as universal across all Blue Zones), kelp ashes, seaweed ashes, rice straw ashes, peat moss ashes and manure ashes. None of it is a supplement aisle - it is dust, ash and silt entering the food and water supply. It is the same argument behind plant-derived minerals: the minerals reached people because the ground they ate from still had them.",
+      "verbatim": "Mineral rich diets, found universally in all Blue Zones,\nare an absolute requirement to reach the centenarian club. In\nall cases, the Blue Zones have multiple sources rich in a wide\nspectrum of minerals.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 224,
+        "kindle_location": null,
+        "char_offset": 713381
+      },
+      "dose": null,
+      "tags": [
+        "minerals",
+        "blue-zones",
+        "plant-derived-minerals",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000258",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The fourth longevity piece is subtractive - the things that will stop you reaching 100 no matter what else you do right. Wallach's land mines are smoking, drinking excess alcohol, using street or prescription drugs, not getting second medical opinions, eating fried foods (trans fatty acids), eating burnt or well-done meats (heterocyclic amines), consuming sugar and large quantities of super-heated carbohydrates (acrylamides), and indulging in high-risk behaviour. He notes an unintended advantage of the Blue Zones: they are remote enough to have little or no access to doctors, pharmaceuticals, commercial fried food, high fructose corn syrup, soft drinks or white flour.",
+      "verbatim": "Land mines that will certainly prevent you from reaching\n100 years of age include smoking, drinking excess alcohol,\nusing street or prescription drugs, not getting second medical\nopinions, eating fried foods (trans fatty acids), eating burnt or\nwell-done meats (heterocyclic amines), consuming sugar and\nlarge quantities of super-heated carbohydrates (acrylamides),",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 225,
+        "kindle_location": null,
+        "char_offset": 713949
+      },
+      "dose": null,
+      "tags": [
+        "land-mines",
+        "four-pieces",
+        "longevity",
+        "warning",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:42:52+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

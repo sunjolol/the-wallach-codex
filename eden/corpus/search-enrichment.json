@@ -3527,6 +3527,144 @@
         "food-sources"
       ]
     },
+    "WAL-CLM-IMMORT-000250": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants",
+        "free_radicals"
+      ],
+      "facet": "protocol",
+      "question": "What are the four things that get you to 100?",
+      "answer_short": "Antioxidants, a calorie-restricted diet, mineral-rich food, and avoiding the land mines - leave any one out and Wallach says the whole thing fails.",
+      "topics": [
+        "four-pieces",
+        "longevity",
+        "aging",
+        "orac",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000251": {
+      "subject": "longevity",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "big_question",
+      "question": "Can I actually live past 100?",
+      "answer_short": "Wallach says every human already has the genetic equipment for it - the reasons people don't get there are things they're doing, not things they inherited.",
+      "topics": [
+        "longevity",
+        "genetic-potential",
+        "aging"
+      ]
+    },
+    "WAL-CLM-IMMORT-000252": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "big_question",
+      "question": "Do I even want to live to 100?",
+      "answer_short": "Wallach's target isn't extra years in decline - it's reaching past 100 in a beautiful, healthful and functional way.",
+      "topics": [
+        "quality-of-life",
+        "longevity",
+        "aging"
+      ]
+    },
+    "WAL-CLM-IMMORT-000253": {
+      "subject": "longevity",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "stance",
+      "question": "Do I need good genes to live to 100?",
+      "answer_short": "No - and good genes won't save you either. Wallach says even if everyone in your family died at 35, you can still make it healthfully to 100.",
+      "topics": [
+        "genetics",
+        "longevity",
+        "family-history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000254": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "free_radicals"
+      ],
+      "facet": "big_question",
+      "question": "How many years are we losing?",
+      "answer_short": "20 to 25. Wallach says the industrialized world should average 95-100 years and instead averages about 75 - with America falling from 17th in the world to 48th.",
+      "topics": [
+        "longevity",
+        "urgency",
+        "public-health",
+        "america"
+      ]
+    },
+    "WAL-CLM-IMMORT-000255": {
+      "subject": "longevity",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "protocol",
+      "question": "How many calories should I eat to live longer?",
+      "answer_short": "1,250 to 1,800 a day - but only WITHOUT malnutrition, meaning every essential nutrient at optimal levels inside those calories.",
+      "topics": [
+        "calorie-restriction",
+        "four-pieces",
+        "longevity"
+      ]
+    },
+    "WAL-CLM-IMMORT-000256": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "stance",
+      "question": "Are minerals more important than vitamins?",
+      "answer_short": "Wallach's rule: a high-protein, low-carb diet is forgiving of low vitamins but unforgiving of low minerals.",
+      "topics": [
+        "minerals",
+        "vitamins",
+        "four-pieces",
+        "longevity"
+      ]
+    },
+    "WAL-CLM-IMMORT-000257": {
+      "subject": "longevity",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "sources",
+      "question": "Where did the world's longest-lived people get their minerals?",
+      "answer_short": "Glacial milk, river silt, rock dust and wood ashes - not a supplement aisle. The ground they ate from still had the minerals in it.",
+      "topics": [
+        "minerals",
+        "blue-zones",
+        "plant-derived-minerals",
+        "four-pieces"
+      ]
+    },
+    "WAL-CLM-IMMORT-000258": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "free_radicals"
+      ],
+      "facet": "warning",
+      "question": "What will stop me reaching 100 no matter what else I do?",
+      "answer_short": "Wallach's land mines: smoking, excess alcohol, street or prescription drugs, fried foods, burnt meat, sugar and super-heated carbs.",
+      "topics": [
+        "land-mines",
+        "four-pieces",
+        "warning",
+        "longevity"
+      ]
+    },
     "WAL-CLM-LETS-000080": {
       "subject": "diabetes",
       "also_about": [],
