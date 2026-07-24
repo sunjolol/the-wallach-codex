@@ -30,7 +30,7 @@
 #drawer-knowledge-mount .kd-knh__g { color: var(--ds-accent); font-size: 1rem; }
 #drawer-knowledge-mount .kd-knh__mark b { color: var(--ds-ink-soft); font-weight: 600; }
 #drawer-knowledge-mount .kd-knh__tabs { flex: 0 0 auto; display: inline-flex; background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 5px; gap: 3px; box-shadow: inset 0 1px 2px rgba(26, 22, 18, .06); }
-#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display); font-size: var(--ds-text-mini); font-weight: 600; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-knh__tab:hover { color: var(--ds-ink); background: var(--ds-paper); }
 #drawer-knowledge-mount .kd-knh__tab.active { background: var(--ds-paper); color: var(--ds-accent-deep); box-shadow: 0 2px 6px rgba(26, 22, 18, .18), 0 0 0 1px var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-knh__end { flex: 1 1 0; display: flex; justify-content: flex-end; }
@@ -1573,6 +1573,7 @@
 
 #drawer-knowledge-mount .kd-explore { --fam-story: #8a52d6; padding: 6px 0 30px; }
 #drawer-knowledge-mount .kd-explore-group { margin-top: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-explore-group:first-child { margin-top: 0; }
 #drawer-knowledge-mount .kd-explore-group__head { display: flex; align-items: center; gap: 10px; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink); margin-bottom: var(--ds-space-3); }
 #drawer-knowledge-mount .kd-explore-group__head::after { content: ''; flex: 1; height: 1px; background: var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-explore-group__ct { font-family: var(--ds-font-mono); font-size: 9px; font-weight: 400; color: var(--ds-ink-faint); }
