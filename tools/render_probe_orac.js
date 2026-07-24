@@ -54,6 +54,13 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const rank0 = pageEl ? pageEl.querySelector('.kd-orac-rank__v') : null;
     const secNums = q('.kd-orac-sec__num').map(s => (s.textContent || '').trim());
     const absBtn = pageEl ? pageEl.querySelector('.kd-orac-abs__btn') : null;
+    // §04-07 food league-tables (Phase 3b) — DERIVED from orac-foods-data.json
+    const reachRows = q('#reach .kd-orac-reach__row');
+    const reachFirst = reachRows[0] || null;
+    const reachFill0 = pageEl ? pageEl.querySelector('#reach .kd-orac-reach__fill') : null;
+    const scaleRows = q('#scale .kd-orac-scale__row');
+    const wineRows = q('#wine .kd-orac-scale__row');
+    const tblMetas = q('.kd-orac-tbl__meta').map(m => (m.textContent || '').trim());
     return {
       shown: pageEl !== null,
       heroShown: pageEl ? pageEl.querySelector('.kd-orac-hero') !== null : false,
@@ -77,6 +84,15 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       payoffNum: pageEl ? (pageEl.querySelector('.kd-orac-payoff__n')?.textContent || '').trim() : '',
       absBtnTab: absBtn ? absBtn.getAttribute('data-kd-tab') : null,
       secNums,
+      reachRowCount: reachRows.length,
+      reachFirstName: reachFirst ? (reachFirst.querySelector('.kd-orac-reach__name')?.textContent || '').trim() : '',
+      reachFirstPct: reachFirst ? (reachFirst.querySelector('.kd-orac-reach__pct')?.textContent || '').trim() : '',
+      reachFill0Bg: reachFill0 ? getComputedStyle(reachFill0).backgroundColor : '',
+      scaleRowCount: scaleRows.length,
+      scaleFirstVl: scaleRows[0] ? (scaleRows[0].querySelector('.kd-orac-scale__vl')?.textContent || '').trim() : '',
+      tblCount: q('.kd-orac-tbl').length,
+      hasPer100: tblMetas.some(m => /per 100 g/.test(m)),
+      wineRowCount: wineRows.length,
       // numbers that MUST have come from the derived corpus data (regression anchor)
       hasTargetRange: /20,000\s*–\s*25,000/.test(txt),
       hasDiseaseDose: txt.indexOf('100,000') !== -1,
@@ -117,7 +133,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['essentials count interpolated (90 essentials)', orac.hasEssentials90 === true],
     ['payoff +25 to 50 healthful years (derived)', /\+?25 to 50/.test(orac.payoffNum)],
     ['Absorption button routes to foods tab', orac.absBtnTab === 'foods'],
-    ['section numbers 02/03/08/09 present', ['02', '03', '08', '09'].every(n => orac.secNums.includes(n))],
+    ['section numbers 02–09 present (04-07 food tables spliced in)', ['02', '03', '04', '05', '06', '07', '08', '09'].every(n => orac.secNums.includes(n))],
+    // ── §04-07 food league-tables (Phase 3b, derived) ──
+    ['§04 reach: 9 rows, pecan 72% first (derived)', orac.reachRowCount === 9 && orac.reachFirstName === 'Pecan' && orac.reachFirstPct === '72%'],
+    ['§04 reach bar has a real fill colour (--o-* resolves, not transparent)', /^rgb\(/.test(orac.reachFill0Bg) && orac.reachFill0Bg !== 'rgba(0, 0, 0, 0)'],
+    ['§05 scale: 6 rows, cloves 314,446 first (derived)', orac.scaleRowCount === 6 && orac.scaleFirstVl === '314,446'],
+    ['§06 league tables: 9 categories', orac.tblCount === 9],
+    ['§06 Hell\u2019s Kitchen labelled per-100 g (different basis, not silently mixed)', orac.hasPer100 === true],
+    ['§07 wine: 4 rows (red-vs-white)', orac.wineRowCount === 4],
     // ── claims record (Phase 1) ──
     ['claims record renders live cards', orac.cardCount > 0],
     // The anti-silent-drop anchor: the view renders EXACTLY what the query returns.

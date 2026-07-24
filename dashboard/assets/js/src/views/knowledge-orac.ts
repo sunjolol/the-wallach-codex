@@ -25,9 +25,10 @@
  * ===========================================================================
  */
 
-import { type OracData, SEARCH_FACETS, type SearchClaim } from '../core/schemas/index.js';
+import { type OracData, type OracFoodsData, SEARCH_FACETS, type SearchClaim } from '../core/schemas/index.js';
 import { facetLabel, ui } from '../state/copy.js';
 import { essentialCount } from '../state/coverage.js';
+import { oracFoodsData } from '../state/orac-foods.js';
 import { oracData } from '../state/orac.js';
 import { composeShortCite, oracClaims } from '../state/search.js';
 
@@ -236,12 +237,57 @@ function renderPieces(od: OracData): string {
     </div>`;
 }
 
-/** The narrative bundle (§02/§03/§08) that sits BETWEEN the hero and the claims record. */
-function renderNarrative(od: OracData): string {
+// ─── §04–§07 · the food league-tables (reach / scale / tables / wine) ───────
+
+/** §04 REACH: each curated food as a bar toward the daily target (pct is the label). */
+function renderReach(f: OracFoodsData): string {
+  const rows = f.reach.rows.map(r => `<div class="kd-orac-reach__row"><span class="kd-orac-reach__name">${escHTML(r.name)}</span><span class="kd-orac-reach__track"><span class="kd-orac-reach__fill" style="width:${Math.min(100, r.pct)}%;--c:var(--${escHTML(r.color)})"></span>${r.over ? '<span class="kd-orac-reach__over"></span>' : ''}</span><span class="kd-orac-reach__pct">${r.pct}%</span></div>`).join('');
+  return `${sectionHeader('04', secKicker('kd_orac_reach_k'), 'kd_orac_reach_h')}
+    <p class="kd-orac-p">${fill('kd_orac_reach_intro', { target: f.reach.target_display })}</p>
+    <div class="kd-orac-reach" id="reach">${rows}</div>
+    <div class="kd-orac-reach__cap">${fill('kd_orac_reach_cap', { cite: f.reach.cite })}</div>`;
+}
+
+/** §05 SCALE: the spice-outlier bars on one linear axis, with the fruit-vanishes note. */
+function renderScale(f: OracFoodsData): string {
+  const rows = f.scale.rows.map(r => `<div class="kd-orac-scale__row"><span class="kd-orac-scale__nm">${escHTML(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%;--c:var(--${escHTML(r.color)})"></span></span><span class="kd-orac-scale__vl">${escHTML(r.value_display)}</span></div>`).join('');
+  return `${sectionHeader('05', secKicker('kd_orac_scale_k'), 'kd_orac_scale_h')}
+    <div class="kd-orac-scale" id="scale">${rows}<p class="kd-orac-scale__note">${fill('kd_orac_scale_note', { cloves: f.scale.max_display })}</p></div>`;
+}
+
+/** §06 TABLES: the category league tables, each bar relative to that category's own max. */
+function renderTables(f: OracFoodsData): string {
+  const tbls = f.tables.categories.map((cat) => {
+    const body = cat.rows.map(r => `<div class="kd-orac-row"><span class="kd-orac-row__n">${escHTML(r.name)}</span><span class="kd-orac-row__v">${escHTML(r.value_display)}</span><span class="kd-orac-row__bar" style="width:${r.bar}%;--c:var(--${escHTML(cat.color)})"></span></div>`).join('');
+    return `<div class="kd-orac-tbl"><div class="kd-orac-tbl__hd" style="--c:var(--${escHTML(cat.color)})"><span class="kd-orac-tbl__ttl">${escHTML(cat.label)}</span><span class="kd-orac-tbl__meta">${escHTML(cat.basis)}</span></div><div class="kd-orac-tbl__body">${body}</div></div>`;
+  }).join('');
+  return `${sectionHeader('06', secKicker('kd_orac_tables_k'), 'kd_orac_tables_h')}
+    <p class="kd-orac-p">${fill('kd_orac_tables_intro')}</p>
+    <div class="kd-orac-tables" id="tables">${tbls}</div>`;
+}
+
+/** §07 WINE: the four wines as scale-style bars (relative to Cabernet). */
+function renderWine(f: OracFoodsData): string {
+  const rows = f.wine.rows.map(r => `<div class="kd-orac-scale__row"><span class="kd-orac-scale__nm">${escHTML(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%;--c:var(--${escHTML(r.color)})"></span></span><span class="kd-orac-scale__vl">${escHTML(r.value_display)}</span></div>`).join('');
+  return `${sectionHeader('07', secKicker('kd_orac_wine_k'), 'kd_orac_wine_h')}
+    <div class="kd-orac-scale" id="wine">${rows}</div>`;
+}
+
+/** The §04–§07 food league-tables bundle (reach / scale / league tables / wine). */
+function renderFoods(f: OracFoodsData): string {
+  return `${renderReach(f)}
+    ${renderScale(f)}
+    ${renderTables(f)}
+    ${renderWine(f)}`;
+}
+
+/** The narrative bundle (§02–§08) that sits BETWEEN the hero and the claims record. */
+function renderNarrative(od: OracData, ofd: OracFoodsData | null): string {
   return `${renderMirror(od)}
     ${renderSteal(od)}
     ${renderChain()}
     ${renderTarget(od)}
+    ${ofd !== null ? renderFoods(ofd) : ''}
     ${renderPieces(od)}`;
 }
 
@@ -282,6 +328,7 @@ function oracClaimGroups(claims: SearchClaim[]): string {
 export function renderOracTab(): string {
   const claims = oracClaims();
   const od = oracData();
+  const ofd = oracFoodsData();
   const claimsKicker = `<div class="kd-orac-sec__k">${escHTML(ui('kd_orac_claims_kicker').replace('{n}', String(claims.length)))}</div>`;
   return `<div class="kt-page kd-orac">
     <header class="kd-orac-hero">
@@ -299,7 +346,7 @@ export function renderOracTab(): string {
       </div>
     </header>
 
-    ${od !== null ? renderNarrative(od) : ''}
+    ${od !== null ? renderNarrative(od, ofd) : ''}
 
     ${sectionHeader('09', claimsKicker, 'kd_orac_claims_h')}
     <p class="kd-orac-p">${escHTML(ui('kd_orac_claims_intro'))}</p>

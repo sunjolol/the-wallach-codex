@@ -178,6 +178,19 @@
         "eden/corpus/books-meta.json"
       ],
       "note": "The ORAC knowledge tab's canonical numbers (Phase 2, sections 02/03/08), read by views/knowledge-orac.ts via state/orac.ts (esbuild JSON import). Every value is PARSED from a sealed claim's byte-faithful verbatim (dose is null on all 10 source claims), so no ORAC number is hand-typed in a view or in view-copy (R1/R3/SS00.A) -- the numbers live here, the framing prose with {placeholders} lives in view-copy.json. Citations are composed from books-meta + the claim's own locator.page + a verbatim-parsed study/agency attribution (R3), never hand-typed. build_data() HARD-FAILS (ParseError) if a required number is not present in its claim's verbatim -- a silent guess cannot ship, and a verbatim edit that drops a number reddens the board. Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
+    },
+    {
+      "artifact": "dashboard/assets/data/orac-foods-data.json",
+      "generator": "eden/tools/orac_foods_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/corpus/claims/",
+        "eden/corpus/books-meta.json",
+        "dashboard/assets/data/orac-foods-curation.json"
+      ],
+      "note": "The ORAC knowledge tab's food league-table numbers (Phase 3b, sections 04-07), read by views/knowledge-orac.ts via state/orac-foods.ts (esbuild JSON import). Every ORAC score is PARSED from a sealed food_source claim's byte-faithful verbatim (dose is null on all 5: IMMORT-000240/241/263/264 per-serving + HELLS-000014 per-100 g), so no score is hand-typed in a view, in view-copy, or in the curation (R1/R3/SS00.A -- the mineral-tiers lesson). The hand-authored orac-foods-curation.json (accounted, numbers-free) decides only names/grouping/colour/selection; each curated name is a byte-exact join key into a pool. build_data() HARD-FAILS (FoodsError) if a curated name does not resolve OR if any per-serving pool row is neither placed in a category nor omitted (a silent drop reddens the board). The two ORAC bases (per-serving / per-100 g) are kept separate + LABELLED, never mixed. Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
@@ -251,6 +264,11 @@
       "file": "dashboard/assets/data/fatty-acid-clarity-data.json",
       "disposition": "hand_authored",
       "reason": "Designated CLARITY prose store for the omega fatty-acid explainer alert (views/knowledge.ts deep-dive). GENERAL reference, clearly marked non-Wallach (SS00.A-safe) -- original prose, not a pillar projection, no generator. Added 2026-07-08 alongside the Omega-9 label correction (the source graphic mislabeled Omega-9 as 'Arachidonic'). prose in the `description` field (a prose-home key); not yet on the prose_contained clean surface (WISH, like the other hand stores)."
+    },
+    {
+      "file": "dashboard/assets/data/orac-foods-curation.json",
+      "disposition": "hand_authored",
+      "reason": "The ORAC food league-tables CURATION (sections 04-07 of the Knowledge ORAC tab; mirrors foods-curation.json / coverage-layout-skeleton.json). Editorial arrangement -- category grouping + per-category colour + the reach/scale SELECTIONS + display-name fixes for the source's OCR typos + the 4 baby-food rows the signed-off demo omits. HAND-AUTHORED and NUMBERS-FREE: every `raw` is a byte-exact join key into a sealed food_source claim's verbatim, from which eden/tools/orac_foods_derive.py reads the ORAC score -- no number lives here (R1/R3/SS00.A). Consumed as an input by orac_foods_derive.py (which HARD-FAILS on an unresolved name or a silently-dropped pool row); not itself a pillar projection, no generator."
     }
   ]
 }
