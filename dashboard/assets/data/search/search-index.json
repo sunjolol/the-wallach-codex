@@ -687,7 +687,7 @@
         "antioxidants",
         "longevity"
       ],
-      "claim_count": 4
+      "claim_count": 5
     },
     "gallium": {
       "display_name": "Gallium",
@@ -3755,6 +3755,7 @@
       "book_id": "hells-kitchen",
       "topics": [
         "orac",
+        "antioxidants",
         "food-sources",
         "berries",
         "prunes",
@@ -6463,6 +6464,7 @@
       "book_id": "immortality",
       "topics": [
         "orac",
+        "antioxidants",
         "spices",
         "food-sources",
         "cloves",
@@ -6962,6 +6964,30 @@
         "lead",
         "detox",
         "chelation-therapy"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000267",
+      "subject": "free_radicals",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "mechanism",
+      "question": "What are free radicals and why are they dangerous?",
+      "answer_short": "The gerontologist Roy Walford called free radicals 'the great white sharks in the biochemical sea' — short-lived but voracious molecules that oxidize and damage tissue, especially cell and mitochondrial membranes.",
+      "answer": "The gerontologist Roy Walford — cited throughout Wallach's longevity work — called free radicals 'the great white sharks in the biochemical sea': short-lived but voracious molecules that oxidize and damage tissue, hitting cell membranes and mitochondrial membranes hardest. Most free radicals the body meets are oxidants — a loose electron whirling around a super-activated oxygen atom — and their 'shark attacks' on the polyunsaturated fats in those membranes produce lipid peroxides that go on to cross-link proteins, lipids and DNA. It is the vivid image behind why Wallach treats antioxidants, and the ORAC score that measures them, as essential defense.",
+      "verbatim": "Dr. Roy Walford referred to free radicals as the “Great\nwhite sharks in the biochemical sea” - these short-lived but\nvoracious chemicals oxidize and damage tissue, particularly\ncell membranes and mitochondrial membranes.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "free-radicals",
+        "great-white-sharks",
+        "walford",
+        "antioxidants",
+        "orac",
+        "oxidative-damage",
+        "membranes"
       ]
     },
     {

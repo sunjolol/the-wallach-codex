@@ -9094,6 +9094,40 @@
       "extracted_at": "2026-07-24T15:42:22+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000267",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The gerontologist Roy Walford — cited throughout Wallach's longevity work — called free radicals 'the great white sharks in the biochemical sea': short-lived but voracious molecules that oxidize and damage tissue, hitting cell membranes and mitochondrial membranes hardest. Most free radicals the body meets are oxidants — a loose electron whirling around a super-activated oxygen atom — and their 'shark attacks' on the polyunsaturated fats in those membranes produce lipid peroxides that go on to cross-link proteins, lipids and DNA. It is the vivid image behind why Wallach treats antioxidants, and the ORAC score that measures them, as essential defense.",
+      "verbatim": "Dr. Roy Walford referred to free radicals as the “Great\nwhite sharks in the biochemical sea” - these short-lived but\nvoracious chemicals oxidize and damage tissue, particularly\ncell membranes and mitochondrial membranes.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 69742
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "orac",
+        "free-radicals",
+        "walford",
+        "antioxidants",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T16:25:35+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
