@@ -319,7 +319,7 @@
       ],
       "related": [
         "vanadium",
-        "silicon",
+        "silica",
         "menopause",
         "macronutrients"
       ],
@@ -359,7 +359,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 2,
+      "claim_count": 3,
       "symbol": "Co"
     },
     "colloidal_minerals": {
@@ -518,7 +518,6 @@
         "fried foods",
         "trans fats",
         "rancid fat",
-        "margarine",
         "oxidized oils",
         "free radicals"
       ],
@@ -529,6 +528,33 @@
         "processed_meat"
       ],
       "claim_count": 6
+    },
+    "digestion": {
+      "display_name": "Digestion & Stomach Acid",
+      "type": "concept",
+      "synonyms": [
+        "digestion",
+        "digestive",
+        "stomach acid",
+        "hydrochloric acid",
+        "hcl",
+        "betaine hcl",
+        "digestive enzymes",
+        "pancreatic enzymes",
+        "digestive aids",
+        "low stomach acid",
+        "enzymes",
+        "burp belch and bloat"
+      ],
+      "related": [
+        "absorption",
+        "gluten",
+        "salt",
+        "phytates",
+        "ph"
+      ],
+      "claim_count": 13,
+      "intro_claim": "WAL-CLM-DDDL-000131"
     },
     "drug_safety_elderly": {
       "display_name": "Drug Safety in the Elderly",
@@ -734,17 +760,17 @@
         "gluten intolerance",
         "gluten sensitivity",
         "gluten-free",
-        "gluten enteropathy"
+        "gluten enteropathy",
+        "wheat",
+        "villi"
       ],
       "related": [
         "celiac_disease",
         "absorption",
-        "villi",
-        "wheat",
         "malabsorption",
         "phytates"
       ],
-      "claim_count": 6
+      "claim_count": 7
     },
     "gold": {
       "display_name": "Gold",
@@ -1031,6 +1057,28 @@
       ],
       "claim_count": 5
     },
+    "margarine": {
+      "display_name": "Margarine",
+      "type": "substance",
+      "synonyms": [
+        "margarine",
+        "margarines",
+        "oleo",
+        "butter substitute",
+        "hydrogenated oil",
+        "hydrogenated oils",
+        "partially hydrogenated",
+        "hydrogenated vegetable oil",
+        "hydrogenation"
+      ],
+      "related": [
+        "butter",
+        "dietary_oils",
+        "cholesterol",
+        "free_radicals"
+      ],
+      "claim_count": 1
+    },
     "meat": {
       "display_name": "Meat & Animal Foods",
       "type": "concept",
@@ -1176,6 +1224,29 @@
       ],
       "claim_count": 9
     },
+    "ph": {
+      "display_name": "Body pH & Acid-Base Balance",
+      "type": "concept",
+      "synonyms": [
+        "ph",
+        "body ph",
+        "ph balance",
+        "acid-base balance",
+        "acid base balance",
+        "alkalinity",
+        "blood ph",
+        "urine ph"
+      ],
+      "related": [
+        "hydrogen",
+        "water",
+        "digestion",
+        "acidosis",
+        "alkalosis"
+      ],
+      "claim_count": 3,
+      "intro_claim": "WAL-CLM-IMMORT-000151"
+    },
     "phytates": {
       "display_name": "Phytates",
       "type": "concept",
@@ -1220,7 +1291,7 @@
         "beef",
         "meat",
         "eggs",
-        "poultry",
+        "chicken",
         "fish"
       ],
       "claim_count": 9,
@@ -1662,7 +1733,8 @@
       "subject": "salt",
       "also_about": [
         "achlorhydria",
-        "absorption"
+        "absorption",
+        "digestion"
       ],
       "facet": "protocol",
       "question": "Why does Wallach say to salt your food?",
@@ -1731,7 +1803,8 @@
       "also_about": [
         "selenium",
         "vitamin-e",
-        "fibromyalgia"
+        "fibromyalgia",
+        "margarine"
       ],
       "facet": "mechanism",
       "question": "What does Wallach say causes fibromyalgia?",
@@ -1821,7 +1894,9 @@
     {
       "id": "WAL-CLM-DDDL-000102",
       "subject": "meat",
-      "also_about": [],
+      "also_about": [
+        "margarine"
+      ],
       "facet": "uses",
       "question": "Why does Wallach say eggs and red meat are critical for MS, and what foods should be avoided?",
       "answer_short": "Myelin is almost pure cholesterol, so eggs and red meat are vital; avoid fried foods and margarine and use fish/flax oil.",
@@ -2277,6 +2352,174 @@
       ]
     },
     {
+      "id": "WAL-CLM-DDDL-000128",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Does everyone get low stomach acid as they age?",
+      "answer_short": "Largely yes — Wallach calls achlorhydria a natural process of aging and “perhaps the most significant aging phenomenon,” and puts the number at 75 percent of people over 50 needing supplemental stomach acid. He names stress as the other cause, and says it lowers acid rather than raising it.",
+      "answer": "Achlorhydria — what causes it, and how common it is. Achlorhydria means the loss of the stomach's hydrochloric acid (HCl). Wallach names two causes, and says both run opposite to what most people assume. The first is stress — contrary to popular belief it does not raise stomach acid, it shuts acid production down, and he pins the moment: once stress passes the point of decompensation, where the body can no longer compensate. The second is age itself, a natural process he calls perhaps the most significant aging phenomenon, at 75 percent of people over 50 requiring supplemental stomach acid. A third contributor is dietary: ordinary salt (sodium chloride) is the raw material the stomach uses to manufacture its acid, so people on salt-restricted diets are more likely to become achlorhydric. The everyday sign is 'burp, belch, and bloat' after eating.",
+      "verbatim": "ACHLORHYDRIA (loss of stomach acid—hydrochloric acid): Contrary\nto popular belief, stress will result in loss of stomach acid production.\nAchlorhydria is also a natural process of aging and perhaps the most\nsignificant aging phenomenon. Seventy-five percent of people over the age\nof 50 years require supplementation of stomach acid.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "achlorhydria",
+        "stomach-acid",
+        "aging",
+        "stress",
+        "digestive-aids"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "achlorhydria"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000129",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is indigestion actually serious?",
+      "answer_short": "Wallach calls dyspepsia probably the most common “disease” in the western world and the most costly — but says the money is the smaller cost, because chronic indigestion leads on to food allergies, osteoporosis, anemia, a debilitated immune system and degenerative disease.",
+      "answer": "Chronic dyspepsia — what it costs if you leave it. Dyspepsia means poor digestion, and Wallach describes it by its everyday signs: belching, burping, bloating and 'acid stomach.' His explanation inverts the usual one — the trouble is not too much acid but that the stomach's acid is not acid enough, so food ferments and the gas is burped back up. He calls it probably the most common 'disease' in the western world and certainly the most costly, measured by what people spend on relief — but says the real cost is what it becomes: food allergies, osteoporosis, anemia, a debilitated immune system, degenerative disease. Prevention is reduced stress, exercise, healthful diet habits and reasonable food volumes; and because stomach-acid production falls as we age — an unforgiving event, and the main cause of dyspepsia in seniors — the regular use of digestive aids.",
+      "verbatim": "Dyspepsia is probably the most common\n“disease” in the western world and is certainly the most costly from the\namount of money spent on “relief.” Even more costly is the secondary\nresults of chronic dyspepsia: food allergies, osteoporosis, anemia,\ndebilitated immune system, degenerative disease. Prevention includes\nreduced stress levels, exercise, healthful diet habits, and reasonable food\nvolumes. An unforgiving event as we age is a decrease in stomach acid\nproduction, the main cause of dyspepsia in seniors. Prevention in this case\nincludes the regular use of digestive aids.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "dyspepsia",
+        "indigestion",
+        "stomach-acid",
+        "digestive-aids",
+        "aging"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "dyspepsia",
+          "osteoporosis",
+          "anemia",
+          "food_allergy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000130",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Are antacids bad for you?",
+      "answer_short": "In an emergency, no — Wallach calls them a good temporary fix. As a habit, yes: regular use will eventually damage you by reducing the nutrients you absorb, because the underlying problem is usually too little stomach acid, not too much.",
+      "answer": "Antacids versus digestive aids. Wallach's position on antacids is split, and the split follows from his account of indigestion. In an emergency they are a good temporary fix. As a regular habit they harm you — regular use will eventually damage you by reducing the nutrients you absorb — because the stomach's acid is already not acid enough, so neutralizing it further undercuts the digestion and absorption that acid exists to drive. What he prescribes instead is replacement rather than suppression: 75 to 200 mg of betaine hydrochloride (a supplemental form of stomach acid) with pancreatic enzymes, three times a day, 15 to 30 minutes before each meal. His herbal preventions and remedies are papaya, common barberry, and bitters such as gentian — and in some cases a glass of wine or several ounces of vinegar before meals will help.",
+      "verbatim": "Treatment of dyspepsia includes supplementation of 75-200 mg betaine\nHC1 and pancreatic enzymes t.i.d. 15-30 minutes before each meal.\n“Antacids” are a good “temporary fix” in an emergency, but regular use will\neventually damage you by reducing the nutrients you absorb.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "antacids",
+        "dyspepsia",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "absorption"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "dyspepsia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000131",
+      "subject": "digestion",
+      "also_about": [
+        "absorption"
+      ],
+      "facet": "protocol",
+      "question": "Should I be taking digestive enzymes?",
+      "answer_short": "Wallach’s rule of thumb: as you grow older, take betaine HCl and pancreatic enzymes before meals to offset the normal decline in stomach-acid production — and be sure to take them if you are under stress.",
+      "answer": "Who should take digestive aids, and why. Wallach gives this instruction as part of preventing candidiasis — the Candida albicans overgrowth he ties to chronic fatigue syndrome — and the reasoning is what makes the advice land. Candida is a normally harmless yeast living on the skin, mouth, vagina and intestine. It turns pathological when the gut's competing normal bacteria are killed off by long-term antibiotic use, or when low stomach acid (hypochlorhydria, usually the result of salt restriction) lets it move up into the stomach — a location it does not normally occupy. Stress reduces stomach acid once it reaches the point of decompensation, and food allergies change the lining of the gut in a way very similar to celiac disease, raising the nutrient concentration in the gut into a 'hyperfertilized' environment the yeast finds attractive; eventually the overgrowth spills into the bloodstream. So his prevention starts with knowing your own digestive and absorptive patterns: pulse-test for food allergies, avoid long-term antibiotics, and as you grow older take betaine HCl and pancreatic enzymes before meals to offset the normal decrease in stomach-acid production. He is emphatic on two more points — take these digestive aids if you are under stress, and deal aggressively with any disease that lowers your immune capacity.",
+      "verbatim": "Prevention includes being aware of your intestines and knowing your\ndigestive and absorptive abilities and patterns. Do pulse tests for food\nallergies, avoid long term use of antibiotics, and as you grow older take\nbetaine HC1 and pancreatic enzymes before meals to offset the normal\ndecrease in production of stomach acid. Be sure to take these digestive aids\nif you are under stress; deal aggressively with any disease that lowers your\nimmune capacity!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "digestive-aids",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "candidiasis",
+        "aging",
+        "stress"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000132",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why do I get bloated after eating?",
+      "answer_short": "Because the stomach isn’t acidic enough to stay sterile. Wallach says low stomach acid lets bacteria and yeast from the small intestine migrate up into the stomach, where they ferment the carbohydrates and sugars in your meal — and that fermentation is the gas.",
+      "answer": "Gastric bloating — where the gas actually comes from. Bloating is the accumulation of gas in the stomach, and Wallach's explanation turns on a fact most people don't know: a healthy stomach is sterile, and it stays that way because it is so acidic. When hypochlorhydria — low stomach acid — sets in, that sterility fails, and bacteria and yeast from the small intestine migrate upward into the stomach, a place they do not belong. There they ferment the carbohydrates and sugars you have eaten, and the gas that fermentation produces is the 'bloat.' It is the same picture he draws for achlorhydria, where the symptom triad is 'burp, belch, and bloat,' and it explains why his treatment goes after the missing acid — colloidal minerals, betaine HCl and pancreatic enzymes before meals — rather than after the gas.",
+      "verbatim": "BLOATING (gastric) is the accumulation of gas in the stomach. Normally\nthe stomach is sterile because of the acid environment; however, when\nhypochlorhydria (low stomach acid) occurs, bacteria and yeast from the\nsmall intestine migrates up into the stomach. The bacteria in the stomach\nnow “ferments” carbohydrates and sugars that are eaten and produce gas or\n“bloat.”",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "bloating",
+        "hypochlorhydria",
+        "stomach-acid",
+        "fermentation"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "bloating",
+          "hypochlorhydria"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000133",
+      "subject": "digestion",
+      "also_about": [
+        "ph"
+      ],
+      "facet": "mechanism",
+      "question": "Why do pancreatic enzymes stop working?",
+      "answer_short": "They need an alkaline environment. Wallach explains it through dumping syndrome — when the stomach empties into the small intestine all at once it overloads the intestine’s natural buffer, and the acid conditions that result stop pancreatic enzymes from working properly.",
+      "answer": "Dumping syndrome — why an acid intestine disables your enzymes. Dumping syndrome is the sudden emptying of stomach contents into the small intestine all at once, overloading the intestine's natural buffer system. That matters because of where the body's acid is meant to sit: the stomach is supposed to be strongly acidic, the small intestine is not, and pancreatic enzymes require an alkaline environment to function — so when unbuffered acid floods in, they stop working properly. Wallach notes it is a common side effect of stomach surgery, and that anemia and osteoporosis are its common secondary diseases, which is what you would expect from a stretch of gut that can no longer digest and absorb. His treatment works with the mechanism rather than against it: any of the classic bitters such as gentian, folic acid at 3 to 5 mg a day, pectin at half an ounce in water before meals, high animal-protein diets, six to eight small meals a day rather than a few large ones, and lying down for half an hour after eating.",
+      "verbatim": "DUMPING SYNDROME is the sudden “dumping” of stomach contents\ninto the small intestine all at once, thus overloading the natural intestinal\nbuffer system. The resulting acid condition in the intestine prevents proper\nfunctioning of pancreatic enzymes, which require an alkaline environment.\nDumping syndrome is a common side effect of stomach surgery. Anemia\nand osteoporosis are common secondary diseases of the dumping\nsyndrome.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "dumping-syndrome",
+        "pancreatic-enzymes",
+        "alkaline",
+        "absorption"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "dumping_syndrome",
+          "anemia",
+          "osteoporosis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000134",
+      "subject": "digestion",
+      "also_about": [
+        "ph"
+      ],
+      "facet": "physiology",
+      "question": "What is the pH of stomach acid?",
+      "answer_short": "About 1.0. Wallach gives the body’s secretions as running from 1.0 in stomach acid up to 8.2 in pancreatic juice — a deliberately wide spread, in contrast to blood, which is held in the narrow band of 7.36 to 7.44.",
+      "answer": "How acidic your stomach is supposed to be. Wallach draws a sharp line between the body's internal chemistry and its secretions. Internally, acidity is policed within a very narrow range: healthy blood runs 7.36 to 7.44, below 7.30 is acidosis, above 7.44 is alkalosis, and anything below 6.8 or above 7.8 is rapidly fatal. Secretions and excretions are the opposite — deliberately variable, running from about 1.0 in stomach acid at one end to 8.2 in pancreatic juice at the other, with alkaline urine in vegans. That spread is the point rather than a flaw. The stomach is meant to be strongly acidic: it is the acid environment that keeps the stomach sterile and that activates protein digestion. The pancreatic juice meeting food further down the tract is meant to be alkaline — which is why acid conditions in the small intestine disable pancreatic enzymes.",
+      "verbatim": "In contrast to the internal body, the pH\nof secretions and excretions can be more variable and range from 1.0 in\nstomach acid to 8.2 in pancreatic juice and alkaline urine in vegans.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "ph",
+        "acid-base",
+        "stomach-acid",
+        "pancreatic-juice"
+      ]
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000008",
       "subject": "homosexuality",
       "also_about": [
@@ -2550,7 +2793,8 @@
       "subject": "absorption",
       "also_about": [
         "hypochlorhydria",
-        "cobalt"
+        "cobalt",
+        "digestion"
       ],
       "facet": "mechanism",
       "question": "How does low stomach acid block absorption?",
@@ -2815,7 +3059,9 @@
     {
       "id": "WAL-CLM-EPIGEN-000149",
       "subject": "dietary_oils",
-      "also_about": [],
+      "also_about": [
+        "margarine"
+      ],
       "facet": "warning",
       "question": "What does Wallach say overusing dietary oils and eating fried foods does to the body?",
       "answer_short": "He calls it self-destruction: too many fried/burnt foods and overused margarines, salad dressings and cooking oils load the body with trans fats, heterocyclic amines and acrylamides.",
@@ -3044,7 +3290,9 @@
     {
       "id": "WAL-CLM-EPIGEN-000161",
       "subject": "water",
-      "also_about": [],
+      "also_about": [
+        "digestion"
+      ],
       "facet": "protocol",
       "question": "Is alkaline water good, and when should you drink it?",
       "answer_short": "Drink clean, slightly alkaline water (7.5-8.5) - but not with meals, since it neutralizes the stomach acid you need to digest.",
@@ -3458,7 +3706,8 @@
       "subject": "fish",
       "also_about": [
         "selenium",
-        "omega-3"
+        "omega-3",
+        "margarine"
       ],
       "facet": "warning",
       "question": "Can fish oil ever be harmful?",
@@ -4242,7 +4491,8 @@
       "id": "WAL-CLM-IMMORT-000046",
       "subject": "bismuth",
       "also_about": [
-        "peptic_ulcers"
+        "peptic_ulcers",
+        "digestion"
       ],
       "facet": "uses",
       "question": "What is bismuth used for, and did stress really cause ulcers?",
@@ -4598,6 +4848,63 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000078",
+      "subject": "digestion",
+      "also_about": [
+        "absorption"
+      ],
+      "facet": "mechanism",
+      "question": "What does stomach acid actually do?",
+      "answer_short": "Salt (sodium chloride) is the raw material your stomach uses to make hydrochloric acid — and that acid is what activates pepsin to digest protein, activates intrinsic factor to absorb B12, and lets you absorb minerals.",
+      "answer": "Chlorine (as chloride) is essential to every living species. Wallach says it powers electrochemical and catalytic functions, activates numerous enzymes, and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) — which is required to activate protein digestion by the enzyme pepsin, to absorb vitamin B12 (by activating intrinsic factor), and to absorb minerals. Ordinary salt (sodium chloride, NaCl) is the universal source of chloride ions for all living things.",
+      "verbatim": "Chlorine\n\n\n \n\nis essential for all living species’ electrochemical and catalytic\nfunctions, activates numerous enzymes, and is the basic\nraw material for our stomachs to make stomach acid (HCl)\nrequired to activate protein digestion by the enzyme pepsin,\nB12 absorption (intrinsic factor activation), and for absorption\nof minerals.",
+      "page": 125,
+      "book_id": "immortality",
+      "topics": [
+        "stomach-acid",
+        "hydrochloric-acid",
+        "pepsin",
+        "intrinsic-factor",
+        "absorption",
+        "salt"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chloride"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000081",
+      "subject": "cobalt",
+      "also_about": [
+        "digestion",
+        "absorption"
+      ],
+      "facet": "mechanism",
+      "question": "Why can’t I absorb vitamin B12?",
+      "answer_short": "Because B12 uptake depends on stomach acid. Wallach explains that intrinsic factor only works when the stomach is acid enough; with hypochlorhydria it fails and B12 is not absorbed — which is why doctors give B12 shots to older people on salt-restricted diets.",
+      "answer": "How well cobalt/B12 is absorbed depends on stomach acid and intrinsic factor. Metallic cobalt is absorbed at 20–26.2% only if intrinsic factor (Castle's factor, a mucoprotein in normal stomach secretions) is present and the stomach pH is 2.0 or lower. If a person has hypochlorhydria (low stomach acid — usually from a salt/NaCl deficiency), intrinsic factor fails and B12/cobalt isn't absorbed — which is why doctors often give B12 shots to older people on salt-restricted diets (sublingual and oral-spray B12 are alternatives). Plant-derived cobalt is highly bioavailable, but because of low-salt diets and cobalt-depleted soils, vegetarians frequently run B12 deficiencies.",
+      "verbatim": "If a person\nhas hypochlorhydria (low stomach acid- usually a NaCl\ndeficiency) the intrinsic factor will not work and B12 cobalt is\nnot absorbed - this is why doctors frequently give B12 shots\nto older people on salt restricted diets. Sublingual (under the\ntongue) and oral spray B12 is available. Plant derived cobalt is\nvery bioavailable; however, because of low salt diets and cobalt\ndepleted soils, vegetarians frequently have B12 deficiencies.",
+      "page": 127,
+      "book_id": "immortality",
+      "topics": [
+        "b12",
+        "cobalt",
+        "intrinsic-factor",
+        "hypochlorhydria",
+        "absorption"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cobalt"
+        ],
+        "conditions": [
+          "hypochlorhydria"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-IMMORT-000085",
       "subject": "cobalt",
       "also_about": [
@@ -4715,9 +5022,34 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000094",
+      "subject": "ph",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is cesium?",
+      "answer_short": "An alkali metal that behaves chemically like sodium, potassium and rubidium. Wallach says cesium and potassium pair up inside the cell, which is also why taking extra potassium makes you lose cesium faster.",
+      "answer": "Cesium is an alkali (alkaline) metal, so chemically it behaves much like sodium, potassium and rubidium. Wallach describes cesium and potassium forming a 'solute complex' inside the cell that takes part in ion antagonism (the balancing push-pull between minerals), osmosis, regulating what crosses the cell membrane (permeability), and keeping the cell's interior in its proper gel-like 'colloidal' state. Because the two minerals trade places, taking extra potassium speeds up how fast the body excretes and loses cesium.",
+      "verbatim": "As an alkaline mineral, cesium behaves chemically in a\nsimilar manner as sodium, potassium and rubidium. Cesium\nand potassium enter into a solute complex, which participates\nin ion antagonism, osmosis, permeability regulation, and\nmaintenance of the colloidal state in the living cell. The increase\nin supplemental potassium increases the rate of excretion or\nloss of cesium.",
+      "page": 133,
+      "book_id": "immortality",
+      "topics": [
+        "cesium",
+        "alkali-metal",
+        "potassium",
+        "minerals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cesium"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-IMMORT-000095",
       "subject": "obscure_elements",
-      "also_about": [],
+      "also_about": [
+        "ph"
+      ],
       "facet": "discovery",
       "question": "How was cesium discovered?",
       "answer_short": "In 1860 the German chemists Bunsen and Kirchhoff identified cesium by its spectral 'fingerprint' -- the colors of light it emits when heated. Its lines were sky-blue, so they named it from the Latin caesius, 'sky blue.'",
@@ -4730,6 +5062,35 @@
         "spectroscopy",
         "discovery"
       ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000096",
+      "subject": "ph",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can making the body alkaline treat cancer?",
+      "answer_short": "Wallach presents cesium chloride as “high-pH therapy” — cesium enters the cancer cell and makes its interior alkaline. He says it has been recommended for all cancers, including sarcomas, bronchiogenic carcinoma and colon cancer.",
+      "answer": "Wallach presents cesium chloride as a cancer therapy — the basis of what's called 'high-pH therapy.' The idea: cesium enters the cancer cell and makes its interior alkaline (raises its pH), an environment hostile to the cancer. He says it has been recommended for all cancers, including sarcomas (cancers of connective or soft tissue), bronchiogenic carcinoma (lung cancer arising in the bronchi), and colon cancer.",
+      "verbatim": "Cesium chloride is used as part of alternative cancer\ntherapy programs. Cesium provides “high pH therapy” for\ncancer by entering the cancer cell and producing an alkaline\nenvironment. It has been recommended for all cancers including\nsarcomas, bronchiogenic carcinoma and colon cancer.",
+      "page": 133,
+      "book_id": "immortality",
+      "topics": [
+        "cesium",
+        "high-ph-therapy",
+        "cancer",
+        "alkaline"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cesium"
+        ],
+        "conditions": [
+          "cancer",
+          "colon_cancer",
+          "sarcoma",
+          "lung_cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000097",
@@ -5020,7 +5381,8 @@
       "id": "WAL-CLM-IMMORT-000132",
       "subject": "iron",
       "also_about": [
-        "vitamin-c"
+        "vitamin-c",
+        "digestion"
       ],
       "facet": "mechanism",
       "question": "What helps or blocks iron absorption?",
@@ -5252,7 +5614,9 @@
     {
       "id": "WAL-CLM-IMMORT-000150",
       "subject": "hydrogen",
-      "also_about": [],
+      "also_about": [
+        "ph"
+      ],
       "facet": "mechanism",
       "question": "How does hydrogen set the body's acid-base balance?",
       "answer_short": "Regulating acid-base balance is really regulating hydrogen-ion (H+) levels - healthy blood is held in a narrow pH band of 7.36-7.44 by homeostatic mechanisms.",
@@ -5268,9 +5632,39 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000151",
+      "subject": "ph",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What is a normal blood pH?",
+      "answer_short": "Healthy blood runs 7.36 to 7.44. Below 7.30 is acidosis, above 7.44 is alkalosis, and below 6.8 or above 7.8 is rapidly fatal; inside cells pH runs 6.0 to 7.4.",
+      "answer": "The blood-pH thresholds for acidosis and alkalosis. When blood pH falls below 7.30 the person is in acidosis (too acidic); when it rises above 7.44 they are in alkalosis (too alkaline); a blood pH below 6.8 or above 7.8 is rapidly fatal. Inside cells, pH runs 6.0 to 7.4. Rapid metabolism (as in an overactive thyroid, Graves' disease) or reduced blood flow (as in a heart attack) raises carbon-dioxide levels and so lowers pH — acidifying the blood.",
+      "verbatim": "When the pH falls below 7.30, the patient has acidosis; when\nthe blood pH rises above 7.44, the individual has alkalosis.\n\nBlood pH below 6.8 and above 7.8 is rapidly fatal.\nIntracellular pH ranges between 6.0 and 7.4. Rapid metabolism\n(hyperthyroid, Graves' disease) or decreased blood flow\n(heart attack) increases the carbon dioxide levels and therefore\ndecreases pH or acidifies the blood.",
+      "page": 150,
+      "book_id": "immortality",
+      "topics": [
+        "ph",
+        "acid-base",
+        "acidosis",
+        "alkalosis",
+        "blood"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ],
+        "conditions": [
+          "acidosis",
+          "alkalosis"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-IMMORT-000152",
       "subject": "hydrogen",
-      "also_about": [],
+      "also_about": [
+        "ph"
+      ],
       "facet": "mechanism",
       "question": "How does the body get rid of acid?",
       "answer_short": "The kidneys excrete metabolic hydrogen ions ~60% as ammonium and 40% as weak acids; the trace of free H+ left is what sets the urine's pH.",
@@ -5300,6 +5694,39 @@
         "water",
         "dna"
       ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000155",
+      "subject": "margarine",
+      "also_about": [
+        "butter",
+        "dietary_oils"
+      ],
+      "facet": "stance",
+      "question": "Is margarine bad for you?",
+      "answer_short": "The hydrogenated and partially-hydrogenated vegetable oils sold as a safe substitute for butter — to prevent hardened arteries, fatty plaque and stroke — are now known to be a direct cause of those very diseases.",
+      "answer": "Hydrogenation and trans fats — Wallach's warning. Commercial food-makers pump hydrogen gas into liquid vegetable oils ('hydrogenation') to harden them into margarine, creating trans fatty acids. Wallach's stance: hydrogenated and partially-hydrogenated oils, once sold by the medical trade as a safe butter substitute to PREVENT hardening of the arteries (arteriosclerosis), fatty-plaque buildup (atherosclerosis) and stroke, are now known to be a DIRECT CAUSE of those very diseases. Fried foods, super-heated carbohydrates (breads, French fries, croutons), margarines, cooking oils and trans fats produce the inflammation that damages the arterial lining (intima), leading to clogged and blocked arteries, blood clots, thrombosis and stroke.",
+      "verbatim": "Hydrogenated and partially hydrogenated vegetable\noils, once touted by the medical trade as a safe substitute for\nbutter in the prevention of arteriosclerosis, atherosclerosis and\nstroke, are now known to be the direct cause of these diseases.\nThe consumption of fried foods, super-heated carbohydrates\n(breads, French fries, croutons, etc.), margarines, cooking\noils and trans fatty acids are now known to produce the\n“inflammation” that damages the intima or arterial lining\nthat produces clogged and blocked arteries, blood clots,\nthrombosis and stroke.",
+      "page": 151,
+      "book_id": "immortality",
+      "topics": [
+        "margarine",
+        "trans-fats",
+        "hydrogenated-oils",
+        "arteries",
+        "heart-disease"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ],
+        "conditions": [
+          "arteriosclerosis",
+          "atherosclerosis",
+          "stroke",
+          "thrombosis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000156",
@@ -6086,7 +6513,8 @@
       "id": "WAL-CLM-IMMORT-000221",
       "subject": "butter",
       "also_about": [
-        "vitamin-a"
+        "vitamin-a",
+        "margarine"
       ],
       "facet": "sources",
       "question": "How much vitamin A is actually in butter?",
@@ -7680,6 +8108,121 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000122",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What happens if you don’t fix low stomach acid?",
+      "answer_short": "Untreated achlorhydria costs you B-12, calcium and protein, and brings on new food allergies as half-digested protein fragments get absorbed. Treatment is 75–250 mg betaine HCl 15–20 minutes before each meal, or 1–2 oz of vinegar with gentian if you have none.",
+      "answer": "For achlorhydria (loss of stomach acid, common with aging and stress, with 75% of people over age 50 requiring supplementation, and which untreated leads to vitamin B-12, calcium, and protein deficiencies plus new food allergies), Wallach's treatment is betaine hydrochloride (betaine HCl) 75-250 mg taken 15-20 minutes before each meal; in its absence, 1-2 oz of vinegar with gentian (Gentian) before meals; plant-derived colloidal minerals also help the stomach produce acid.",
+      "verbatim": "Failure to deal\nwith achlorhydria will result in B-12, calcium\nand protein deficiencies and the onset of new\nfood allergies as a result of absorption of\npartially digested polypeptides (relatively large\nprotein fragments).\nTreatment includes supplementation of\nbetaine HCl at the rate of 75-250 mg 15-20\nminutes before each meal. In the absence of\nbetaine HCl 1-2 oz. of vinegar with English",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "achlorhydria",
+        "betaine-hcl",
+        "food-allergies",
+        "b12",
+        "absorption"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "achlorhydria"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000137",
+      "subject": "digestion",
+      "also_about": [
+        "absorption",
+        "anemia"
+      ],
+      "facet": "protocol",
+      "question": "Why isn’t my B12 supplement working?",
+      "answer_short": "Because vitamin B12 needs stomach acid to be absorbed at all. In Wallach’s anemia program the betaine hydrochloride comes first — 75–200 mg three times a day, 15–20 minutes before meals — specifically to assure B-12 absorption, before the B12 itself.",
+      "answer": "For anemia (a lack of blood from hemorrhage, infection, and/or nutritional deficiencies), Wallach's program is betaine hydrochloride 75-200 mg three times daily 15-20 minutes before meals (to assure B-12 absorption); liver extract orally or by intramuscular injection; iron 20 mg; vitamin B-12 1000 mcg per day for 20 days; folic acid 15 mg for 20 days; copper 2 mg; zinc 50 mg three times daily; vitamin B-2 50 mg twice daily; vitamin B-5 50 mg three times daily; vitamin B-6 50 mg twice daily for 20 days; vitamin C to bowel tolerance; vitamin E 800-1200 IU per day; selenium 500 mcg per day; and essential fatty acids 5 grams three times daily; with herbs sweet cicely (Myrrhis odorata) and marsh marigold (Caltha palustris).",
+      "verbatim": "ANEMIA: is a lack of blood from many\npossible causes including hemorrhage, infections and/or nutritional deficiencies. Betaine\nHCl orally at 75-200 mg t.i.d. 15-20 minutes\nbefore meals is required to assure absorption\nof B-12; liver extract orally or IM; nutritional\nsupport with iron 20 mg; B-12 1000 mcg per\nday for 20 days; folic acid 15 mg for 20 days",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "b12",
+        "betaine-hcl",
+        "anemia",
+        "absorption",
+        "stomach-acid"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron",
+          "vitamin-b12",
+          "vitamin-b9",
+          "copper",
+          "zinc",
+          "vitamin-b2",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-c",
+          "vitamin-e",
+          "selenium",
+          "omega-3"
+        ],
+        "conditions": [
+          "anemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000165",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How do I get rid of bloating and gas?",
+      "answer_short": "Wallach treats the missing acid, not the gas: oral hydrogen peroxide diluted at 20 drops per ounce, 1 ounce twice a day, plant-derived colloidal minerals, and betaine hydrochloride with pancreatic enzymes at 75–200 mg three times a day, 15 minutes before meals.",
+      "answer": "Gastric bloating is the accumulation of gas in the stomach: when hypochlorhydria (low stomach acid) sets in, bacteria from the small intestine migrate up and ferment carbohydrates and sugars into gas. Wallach's treatment for 'bloat, belch and burp' is oral hydrogen peroxide (20 drops per oz) at 1 oz twice daily, colloidal minerals, and betaine hydrochloride with pancreatic enzymes at 75-200 mg three times daily, 15 minutes before meals.",
+      "verbatim": "Treatment of \"bloat, belch and burp\" includes\noral hydrogen peroxide ( 20 drops/ oz) at 1 oz.\nb.i.d., colloidal minerals and betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. 15\nminutes before meals.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "bloating",
+        "betaine-hcl",
+        "pancreatic-enzymes",
+        "colloidal-minerals"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "bloating"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000173",
+      "subject": "digestion",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Should I take enzymes with food or between meals?",
+      "answer_short": "Both, for different jobs. Before meals they digest your food; taken between meals on an empty stomach, Wallach says pancreatic enzymes get into your bloodstream and dissolve blood clots — which is why his bruise protocol puts them at 200 mg three times a day between meals.",
+      "answer": "Bruises are blood released into surrounding tissue when a bump or blow ruptures blood vessels; capillary fragility can come from vitamin C or vitamin E deficiency. Wallach's treatment is vitamin C to bowel tolerance, vitamin E at 800-1200 IU per day, pancreatic enzymes at 200 mg three times daily between meals (so the enzymes reach the bloodstream and dissolve blood clots), topical dimethyl sulfoxide (DMSO) and pain gel, and herbs including arnica (Arnica montana), marigold (Calendula officinalis), witch hazel (Hamamelis virginiana), and yellow sweet clover (Melilotus officinalis).",
+      "verbatim": "BRUISES: are the result ofa bump or blow that\nruptures blood vessels and releases blood into\nthe surrounding tissue including the skin. The\nfragility (tenderness) or capillaries can result\nfrom vitamin C or vitamin E deficiencies.\nTreatment includes vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, pancreatic enzymes at 200 mg t.i.d. between meals\n(so the enzymes get into your bloodstream\nand dissolve blood clots), DMSO topically,\npain gel and herbs including arnica (Arnica\nmontana), marigold (Calendula officinalis),\nwitch hazel (Hamaelis virginiana) and yellow\nsweet clover (Metilotus officinalis",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "pancreatic-enzymes",
+        "timing",
+        "blood-clots",
+        "bruises"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-e"
+        ],
+        "conditions": [
+          "bruises"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-LETS-000194",
       "subject": "urine_therapy",
       "also_about": [
@@ -7741,6 +8284,67 @@
         "history",
         "midwives"
       ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000245",
+      "subject": "gluten",
+      "also_about": [
+        "digestion",
+        "absorption"
+      ],
+      "facet": "protocol",
+      "question": "How long does it take to heal your gut?",
+      "answer_short": "60 to 90 days. That is how long Wallach tells dermatitis patients to expect before the intestinal lesions heal to the point where they can absorb nutrients efficiently — on a gluten-free, cow’s-milk-free diet with digestive aids.",
+      "answer": "Dermatitis (atopic dermatitis, eczema, and dermatitis herpetiformis) is a common skin disease that Wallach says is treated incorrectly with cortisone or prednisone creams; 97% of these patients have wheat-gluten food allergies and almost as many are sensitive to cow's milk, with the same lesions occurring in the small-intestine lining and causing serious, life-threatening, immune-depleting malabsorption (a precursor to diabetes, cancer, arthritis, and birth defects). His treatment for all three forms is a gluten-free and cow's-milk-free diet, a pulse test on frequently eaten foods, essential fatty acids at 5 gm four times daily, para-aminobenzoic acid (PABA) at 200 mg four times daily, betaine HCl and digestive enzymes at 75-200 mg each three times daily before meals, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times daily, and colloidal minerals on top of the base-line supplement program; healing the intestinal lesions takes 60-90 days.",
+      "verbatim": "Treatment of all three of the above manifestations of dermatitis should include a gluten free\nand cow's milk free diet. It is also pmdent to\ndo a \"pulse test\" on frequently consumed\nfoods to determine if they are also affecting\nyou. The supplementation of essential fatty\nacids are 5 gm q. i. d. ,PABA at 200 mg q.i.d. and\n113\nbetaine HC1 and digestive enzymes at 75-200\nmg each t.i.d. before meals should be added\non top of the base line supplement program.\nHave patience, it will take 60-90 days to heal\nthe intestinal lesions to the point where you\ncan absorb nutrients efficiently. Vitamin A at\n300,000 IU/day as beta carotene and zinc at 50\nmg t.i.d. and colloidal minerals.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "gut-healing",
+        "gluten",
+        "dermatitis",
+        "absorption",
+        "digestive-aids"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "vitamin-a",
+          "zinc"
+        ],
+        "conditions": [
+          "dermatitis",
+          "eczema"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000255",
+      "subject": "digestion",
+      "also_about": [
+        "ph"
+      ],
+      "facet": "protocol",
+      "question": "How do you treat dumping syndrome?",
+      "answer_short": "With bitters and buffering rather than more acid: classic bitters such as gentian, folic acid at 3–5 mg a day, pectin at half an ounce in water before meals, high-animal-protein food, and lying down for half an hour after eating.",
+      "answer": "Dumping syndrome is the sudden 'dumping' of stomach contents into the small intestine all at once, overloading its natural buffer system; the resulting acidity prevents pancreatic enzymes (which need an alkaline environment) from working. It is a common side effect of stomach surgery, with anemia and osteoporosis as common secondary diseases. Wallach's treatment is any of the classic 'bitters' (such as gentian, Gentiana lutea), folic acid at 3-5 mg per day, pectin at 1/2 oz in water before meals, high-animal-protein diets, lying down for a half hour after meals, and the base-line supplements.",
+      "verbatim": "Treatment of the dumping syndrome should\ninclude any of the classic \"bitters\" (i.e., gentian, Gentiana lutea), folic acid at 3-5 mg/day,\npectin at 1/2 oz. in water before meals, high\nanimal protein diets, andyou should lay down\nfor a half hour after meals",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "dumping-syndrome",
+        "bitters",
+        "pancreatic-enzymes",
+        "stomach-surgery"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b9"
+        ],
+        "conditions": [
+          "dumping_syndrome"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000263",
@@ -8655,7 +9259,9 @@
     {
       "id": "WAL-CLM-RARE-000314",
       "subject": "butter",
-      "also_about": [],
+      "also_about": [
+        "margarine"
+      ],
       "facet": "protocol",
       "question": "What should I cook with instead of margarine or vegetable oil?",
       "answer_short": "In his See-Food Diet free-radical-elimination list, Wallach gives a flat cooking directive: no margarine — cook with butter, ghee, mutton fat, or water instead. Butter is on his approved-fats shortlist for the kitchen.",

@@ -40,6 +40,10 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000134",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000089",
         "book": "epigenetics"
       },
@@ -197,7 +201,7 @@
       }
     ],
     "books_repeating": 5,
-    "claim_count": 43
+    "claim_count": 44
   },
   {
     "id": "CG-0003",
@@ -418,6 +422,10 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000131",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000169",
         "book": "epigenetics"
       },
@@ -447,7 +455,7 @@
       }
     ],
     "books_repeating": 5,
-    "claim_count": 8
+    "claim_count": 9
   },
   {
     "id": "CG-0008",

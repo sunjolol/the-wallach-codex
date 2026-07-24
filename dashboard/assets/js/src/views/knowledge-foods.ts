@@ -37,8 +37,9 @@
 
 import { SEARCH_FACETS, type SearchClaim } from '../core/schemas/index.js';
 import { facetLabel, ui } from '../state/copy.js';
-import { type FoodCard, foodsConditional, foodsEat, foodsRemove, foodsThesisClaims, foodsVilliQuote } from '../state/foods-curation.js';
+import { type FoodCard, foodsConditional, foodsEat, foodsEnzymeClaims, foodsRemove, foodsThesisClaims, foodsVilliQuote } from '../state/foods-curation.js';
 import { renderSearchCard } from './entity-page.js';
+import { glossify } from './glossify.js';
 
 // Hex escapes \x22 \x27 for " and ' (the clean-view prose scanner has no regex parser;
 // a bare quote inside the char class would read to it as a string -- see knowledge-topic.ts).
@@ -218,6 +219,84 @@ function foodItem(c: FoodCard, kind: string): string {
     </button>`;
 }
 
+// Deterministic scatter for the gate figure (no Math.random -- the probe needs a stable render).
+const CHUNK_X = [0.06, 0.30, 0.55, 0.78];   // fractional x of the four food masses
+const CHUNK_JY = [0, 6, -4, 3];             // per-mass y jitter
+const FRAG_JX = [-9, 9, -3, 7, -7, 2, 5, -5]; // fragment offsets around a broken mass
+const FRAG_JY = [-7, -2, 6, 1, -5, 7, -1, 4];
+
+/**
+ * The "gate" figure -- section 04's teaching image, built in the same grammar as the villi scan
+ * so the tab reads as one instrument: a chamber above the gut wall, the wall itself, and the
+ * bloodstream below. LOW acid: food sits as four intact masses, nothing crosses. ENOUGH acid: the
+ * same four masses are fragmented, and the freed particles are through the wall and into the blood.
+ * The mass X positions are IDENTICAL in both panels, so the eye reads the difference side-to-side
+ * exactly as it does on the villi panels. Decorative (aria-hidden); colour lives in CSS classes.
+ */
+function gateArt(open: boolean): string {
+  const W = 260, H = 150, mx = 14;
+  const wallY = 96;
+  const usable = W - mx * 2;
+  // The bloodstream band below the wall: what "getting through" actually means, shown rather
+  // than captioned. Empty on the low-acid panel; carrying freed particles on the other.
+  let grid = `<rect class="kd-foods-gate__blood" x="${mx}" y="${wallY + 2}" width="${usable}" height="${H - wallY - 2}" />`;
+  for (let x = mx; x <= W - mx; x += 24) {
+    grid += `<line class="kd-foods-gate__gridline" x1="${x}" y1="14" x2="${x}" y2="${wallY}" />`;
+  }
+  for (let y = 14; y < wallY; y += 20) {
+    grid += `<line class="kd-foods-gate__gridline" x1="${mx}" y1="${y}" x2="${W - mx}" y2="${y}" />`;
+  }
+  let food = '';
+  for (let i = 0; i < CHUNK_X.length; i += 1) {
+    const cx = mx + CHUNK_X[i]! * usable + 18;
+    const cy = 72 + CHUNK_JY[i]!;   // resting ON the wall -- blocked, not floating
+    if (!open) {
+      // intact mass: a big rounded lump that cannot pass
+      food += `<rect class="kd-foods-gate__mass" x="${(cx - 17).toFixed(1)}" y="${(cy - 13).toFixed(1)}" width="34" height="26" rx="9" />`;
+    } else {
+      // the same mass, broken: a cluster of fragments, two of which are already through the wall
+      for (let f = 0; f < 6; f += 1) {
+        const fx = cx + FRAG_JX[(i * 2 + f) % FRAG_JX.length]!;
+        const fy = cy + FRAG_JY[(i + f) % FRAG_JY.length]!;
+        food += `<circle class="kd-foods-gate__frag" cx="${fx.toFixed(1)}" cy="${fy.toFixed(1)}" r="4" />`;
+      }
+      food += `<circle class="kd-foods-gate__through" cx="${(cx - 4).toFixed(1)}" cy="${(wallY + 16).toFixed(1)}" r="4.5" style="animation-delay:${(i * 0.22).toFixed(2)}s" />`;
+      food += `<circle class="kd-foods-gate__through" cx="${(cx + 9).toFixed(1)}" cy="${(wallY + 28).toFixed(1)}" r="3.5" style="animation-delay:${(i * 0.22 + 0.4).toFixed(2)}s" />`;
+    }
+  }
+  let ticks = '';
+  for (let x = mx; x <= W - mx; x += 11) {
+    ticks += `<line class="kd-foods-gate__tick" x1="${x}" y1="${wallY}" x2="${x}" y2="${wallY + 4}" />`;
+  }
+  const wall = `<line class="kd-foods-gate__wall" x1="${mx}" y1="${wallY}" x2="${W - mx}" y2="${wallY}" />`;
+  return `<svg class="kd-foods-gate__art" viewBox="0 0 ${W} ${H}" role="img" aria-hidden="true">${grid}${food}${wall}${ticks}</svg>`;
+}
+
+/** One gate panel: title + metric readout + the figure + its plain-language caption. */
+function gatePanel(open: boolean): string {
+  const k = open ? 'ok' : 'bad';
+  const t = open ? ui('kd_foods_sec04_gate_ok_t') : ui('kd_foods_sec04_gate_bad_t');
+  const m = open ? ui('kd_foods_sec04_gate_ok_m') : ui('kd_foods_sec04_gate_bad_m');
+  const c = open ? ui('kd_foods_sec04_gate_ok_cap') : ui('kd_foods_sec04_gate_bad_cap');
+  return `<div class="kd-foods-gate__panel kd-foods-gate__panel--${k}">
+      <div class="kd-foods-gate__top">
+        <div class="kd-foods-gate__t">${escHTML(t)}</div>
+        <div class="kd-foods-gate__metric">${escHTML(m)}</div>
+      </div>
+      ${gateArt(open)}
+      <div class="kd-foods-gate__cap">${glossify(c)}</div>
+    </div>`;
+}
+
+/** One instinct-vs-fix panel (mirrors the 03 remove/eat contrast so the tab reads as one system). */
+function enzPanel(kind: string, head: string, title: string, body: string): string {
+  return `<div class="kd-foods-enz__panel kd-foods-enz__panel--${escHTML(kind)}">
+      <div class="kd-foods-col__hd">${escHTML(head)}</div>
+      <div class="kd-foods-enz__panel-t">${escHTML(title)}</div>
+      <p class="kd-foods-enz__panel-b">${glossify(body)}</p>
+    </div>`;
+}
+
 /**
  * The Absorption landing: editorial hero -> the .ds-pull-stat prevalence kill-shot -> the
  * villi "scan" (damaged left, healthy right) -> the REMOVE <-> EAT good/bad-foods contrast
@@ -278,7 +357,45 @@ export function renderFoodsTab(): string {
       </div>
     </section>
 
+    <section class="kd-foods-enz">
+      ${sectionHeader('04', ui('kd_foods_sec04_kicker'), `<h2 class="ds-h-section kd-foods-enz__h">${escHTML(ui('kd_foods_sec04_hd'))}</h2>`, '')}
+      <p class="kd-foods-enz__lead">${glossify(ui('kd_foods_sec04_lead'))}</p>
+
+      <div class="ds-pull-stat kd-foods-enz__stat">
+        <span class="ds-pull-stat__readout">${escHTML(ui('kd_foods_sec04_stat_readout'))}</span>
+        <div class="ds-pull-stat__num">${escHTML(ui('kd_foods_sec04_stat_num'))}</div>
+        <div class="ds-pull-stat__body">${escHTML(ui('kd_foods_sec04_stat_body'))}<small>${escHTML(ui('kd_foods_sec04_stat_small'))}</small></div>
+      </div>
+
+      <div class="kd-foods-col__hd kd-foods-enz__hd">${escHTML(ui('kd_foods_sec04_gate_hd'))}</div>
+      <div class="kd-foods-gate">
+        ${gatePanel(false)}
+        ${gatePanel(true)}
+      </div>
+      <p class="kd-foods-gate__note">${escHTML(ui('kd_foods_sec04_gate_note'))}</p>
+
+      <div class="kd-foods-enz__grid">
+        ${enzPanel('wrong', ui('kd_foods_sec04_col_wrong'), ui('kd_foods_sec04_wrong_t'), ui('kd_foods_sec04_wrong_b'))}
+        ${enzPanel('right', ui('kd_foods_sec04_col_right'), ui('kd_foods_sec04_right_t'), ui('kd_foods_sec04_right_b'))}
+      </div>
+
+      <div class="kd-foods-col__hd kd-foods-enz__hd">${escHTML(ui('kd_foods_sec04_time_hd'))}</div>
+      <div class="kd-foods-time">
+        <div class="kd-foods-time__rail">
+          <span class="kd-foods-time__zone kd-foods-time__zone--before">${escHTML(ui('kd_foods_sec04_time_before_k'))}</span>
+          <span class="kd-foods-time__meal">${escHTML(ui('kd_foods_sec04_time_meal'))}</span>
+          <span class="kd-foods-time__zone kd-foods-time__zone--between">${escHTML(ui('kd_foods_sec04_time_between_k'))}</span>
+        </div>
+        <div class="kd-foods-time__body">
+          <p class="kd-foods-time__b">${glossify(ui('kd_foods_sec04_time_before'))}</p>
+          <p class="kd-foods-time__b">${glossify(ui('kd_foods_sec04_time_between'))}</p>
+        </div>
+      </div>
+
+      <p class="kd-foods-enz__note">${escHTML(ui('kd_foods_sec04_note'))}</p>
+    </section>
+
     <div class="kd-ep-seclabel">${escHTML(ui('kd_foods_words_label'))}</div>
-    ${facetSections(foodsThesisClaims())}
+    ${facetSections([...foodsThesisClaims(), ...foodsEnzymeClaims()])}
   </div>`;
 }

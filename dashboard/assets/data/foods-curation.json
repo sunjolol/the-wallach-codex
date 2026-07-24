@@ -1,33 +1,39 @@
 {
- "_purpose": "Foods & Absorption tab curation -- the SPECIAL curated persuasive landing (the home-page-curation philosophy: this surface is hand-tuned; every other tab is pure formula). Editorial UI config, NOT canonical health data and NOT a pillar projection -- no generator, no Wallach source-rule obligation. hero_claims are the sealed crown-jewel search-claim IDs that anchor the landing's two-pronged thesis (resolved against the search index at render; a missing id is skipped). The two-column REMOVE/EAT good-vs-bad-foods contrast will be added here as remove[]/eat[] topic-slug lists in a later chunk, each still opening its own book-cited topic page.",
- "hero_claims": [
-  "WAL-CLM-EPIGEN-000140",
-  "WAL-CLM-EPIGEN-000141",
-  "WAL-CLM-EPIGEN-000142"
- ],
- "remove": [
-  "gluten",
-  "dietary_oils",
-  "sugar",
-  "carbonated_beverages",
-  "processed_meat"
- ],
- "eat": [
-  "butter",
-  "beef",
-  "chicken",
-  "pork",
-  "eggs",
-  "salt"
- ],
- "conditional": [
-  "dairy",
-  "water",
-  "cruciferous_vegetables",
-  "phytates"
- ],
- "villi_quote": {
-  "id": "WAL-CLM-EPIGEN-000158",
-  "highlight_from": "the consumption of gluten"
- }
+  "_purpose": "Foods & Absorption tab curation -- the SPECIAL curated persuasive landing (the home-page-curation philosophy: this surface is hand-tuned; every other tab is pure formula). Editorial UI config, NOT canonical health data and NOT a pillar projection -- no generator, no Wallach source-rule obligation. hero_claims are the sealed crown-jewel search-claim IDs that anchor the landing's two-pronged thesis (resolved against the search index at render; a missing id is skipped). The two-column REMOVE/EAT good-vs-bad-foods contrast will be added here as remove[]/eat[] topic-slug lists in a later chunk, each still opening its own book-cited topic page.",
+  "hero_claims": [
+    "WAL-CLM-EPIGEN-000140",
+    "WAL-CLM-EPIGEN-000141",
+    "WAL-CLM-EPIGEN-000142"
+  ],
+  "remove": [
+    "gluten",
+    "dietary_oils",
+    "sugar",
+    "carbonated_beverages",
+    "processed_meat"
+  ],
+  "eat": [
+    "butter",
+    "beef",
+    "chicken",
+    "pork",
+    "eggs",
+    "salt"
+  ],
+  "conditional": [
+    "dairy",
+    "water",
+    "cruciferous_vegetables",
+    "phytates"
+  ],
+  "villi_quote": {
+    "id": "WAL-CLM-EPIGEN-000158",
+    "highlight_from": "the consumption of gluten"
+  },
+  "enzyme_claims": [
+    "WAL-CLM-DDDL-000131",
+    "WAL-CLM-DDDL-000128",
+    "WAL-CLM-IMMORT-000078",
+    "WAL-CLM-DDDL-000130"
+  ]
 }

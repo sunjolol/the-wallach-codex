@@ -71,6 +71,46 @@ def _guard_cli() -> None:
     ).parse_args()
 
 
+def draft_offset_failures():
+    """Refuse-to-promote guard: every DRAFT claim's char_offset must point at its verbatim
+    in the CURRENT book text, checked BEFORE any promotion happens.
+
+    WHY this exists (codified 2026-07-24 after the 4th occurrence — S12, S44, 2026-07-17,
+    2026-07-24): `corpus_resnap --write` relocates offsets in the SHARD + books-meta ONLY,
+    never the draft. Step 2 promotes draft -> shard, so sealing after a book-text edit
+    without re-syncing the draft SILENTLY replaces resnap's corrected offsets with stale
+    ones. The final corpus_verify does catch it — as N x check #9 — but only after the bad
+    shard is already on disk, and the recovery (re-resnap, sync, re-seal) burns a whole
+    cycle. The memory `editing-sealed-corpus-claims` documented the correct order through
+    all four hits and prevented none of them: a memory is not a gate (§00.B "codify, don't
+    promise"). This is check #9's own logic moved AHEAD of the write, anchored to the same
+    external truth (the book bytes), so the failure mode cannot reach disk.
+    """
+    meta = json.loads(META_PATH.read_text(encoding="utf-8"))
+    files = {b["book_id"]: b["file"] for b in meta.get("books", [])}
+    text_cache, out = {}, []
+    if not DRAFTS_DIR.exists():
+        return out
+    for d in sorted(DRAFTS_DIR.glob("claims-*.draft.json")):
+        doc = json.loads(lf_text(d))
+        bid = doc.get("book_id")
+        rel = files.get(bid)
+        if rel is None:
+            out.append(f"{d.name}: book_id {bid!r} is not in books-meta")
+            continue
+        if bid not in text_cache:
+            text_cache[bid] = lf_text(ROOT / rel)
+        txt = text_cache[bid]
+        for c in doc.get("claims", []):
+            off = (c.get("locator") or {}).get("char_offset")
+            vb = c.get("verbatim", "")
+            if off is None or not vb:
+                continue
+            if txt[off:off + len(vb)] != vb:
+                out.append(f"{d.name}: {c.get('id')} char_offset {off} does not point at its verbatim")
+    return out
+
+
 def main() -> int:
     _guard_cli()
     # 1. gate on always-valid checks. Skip #8 (index-is-clean-derivation): step 3
@@ -83,6 +123,21 @@ def main() -> int:
         print("REFUSING to seal — integrity checks failed:")
         for f in fails:
             print(f"  - {f}")
+        return 1
+
+    # 1b. draft/shard offset guard — see draft_offset_failures.__doc__ (4th-occurrence codification).
+    stale = draft_offset_failures()
+    if stale:
+        print(f"REFUSING to seal — {len(stale)} draft claim(s) have a char_offset that does not "
+              f"point at their verbatim in the current book text.")
+        for s in stale[:10]:
+            print(f"  - {s}")
+        if len(stale) > 10:
+            print(f"  ... and {len(stale) - 10} more")
+        print("  The book text was edited but the draft was not re-synced. Fix order:")
+        print("    1. python eden/tools/corpus_resnap.py --book <book> --write [--fix <json>]")
+        print("    2. sync each draft's claims from its (corrected) shard via safe_write")
+        print("    3. re-run corpus_seal.py")
         return 1
 
     # 2. promote drafts

@@ -4488,7 +4488,7 @@ help to bring it to a "point" so it can be opened.
 Flushing the opened abscess with 3% H202
 will clean out the puss and disinfect the wou nd.
 ANEMIA: is a lack of blood from many
-possible causes including hemonhage, infections and/or nutritional deficiencies. Betaine
+possible causes including hemorrhage, infections and/or nutritional deficiencies. Betaine
 HCl orally at 75-200 mg t.i.d. 15-20 minutes
 before meals is required to assure absorption
 of B-12; liver extract orally or IM; nutritional
@@ -4506,7 +4506,7 @@ ANEURYSM: is a "bubble" or "balloon" in the
 wall of an artery (much like a "balloon" in a
 weak tire) which can cause pressure on an
 organ like a tumor or burst causing sudden
-death by hemonhage (i.e., subdural hemor-
+death by hemorrhage (i.e., subdural hemor-
 rhage). Aneurysms are most frequently caused
 by copper deficiency which results in weak-
 ened elastic fibers; copper supplementation

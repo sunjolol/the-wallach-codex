@@ -30,7 +30,7 @@
 #drawer-knowledge-mount .kd-knh__g { color: var(--ds-accent); font-size: 1rem; }
 #drawer-knowledge-mount .kd-knh__mark b { color: var(--ds-ink-soft); font-weight: 600; }
 #drawer-knowledge-mount .kd-knh__tabs { flex: 0 0 auto; margin-inline: auto; display: inline-flex; background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 5px; gap: 3px; box-shadow: inset 0 1px 2px rgba(26, 22, 18, .06); }
-#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display); font-size: var(--ds-text-mini); font-weight: 600; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
+#drawer-knowledge-mount .kd-knh__tab { border: 0; background: none; border-radius: var(--ds-radius-pill); padding: .6rem 1.2rem; cursor: pointer; white-space: nowrap; font-family: var(--ds-font-display); font-size: var(--ds-text-mini); font-weight: 500; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); transition: color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-knh__tab:hover { color: var(--ds-ink); background: var(--ds-paper); }
 #drawer-knowledge-mount .kd-knh__tab.active { background: var(--ds-paper); color: var(--ds-accent-deep); box-shadow: 0 2px 6px rgba(26, 22, 18, .18), 0 0 0 1px var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-knh__end { flex: 0 0 auto; display: flex; justify-content: flex-end; }
@@ -1550,6 +1550,60 @@
 #drawer-knowledge-mount .kd-foods-pq { margin: var(--ds-space-7) 0 var(--ds-space-6); }
 #drawer-knowledge-mount .kd-foods-pq__page { position: absolute; top: 0.7rem; right: 0.9rem; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-tech); letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-style: normal; }
 #drawer-knowledge-mount .kd-foods-contrast { margin: var(--ds-space-6) 0; }
+/* Section 04 -- digestive enzymes. A DESIGNED section: lead -> the GATE figure (the teaching image,
+   built in the villi scan's grammar so the tab reads as one instrument) -> the 75% stat -> the
+   instinct/fix contrast -> a meal timeline -> the closing note. The sealed claims live in the page's
+   "in his own words" foot block for readers who want the source.
+   HEADER: no align override. 04's heading is set to 1.65rem so it fits ONE line, which makes the
+   shared end-aligned grid place the kicker exactly 6px below the numeral's top -- measured to match
+   01-03. Forcing align-items:start instead put them dead level, which is what read as the kicker
+   "peaking above" the numeral. */
+#drawer-knowledge-mount .kd-foods-enz { margin: var(--ds-space-8) 0 var(--ds-space-6); }
+#drawer-knowledge-mount .kd-foods-enz__h { font-size: 1.65rem; }
+/* 04's heading is 1.65rem vs the 1.85rem of 02/03, so the end-aligned body sits 4px lower and the
+   kicker fell 10px under the numeral where the siblings sit at 6px. Pad the body back to parity --
+   MEASURED against 02/03, not eyeballed; the probe re-measures the delta every run. */
+#drawer-knowledge-mount .kd-foods-enz .kd-foods-sec__body { padding-bottom: calc(var(--ds-space-2) + 4px); }
+#drawer-knowledge-mount .kd-foods-enz__lead { font-family: var(--ds-font-serif); font-size: 1.05rem; line-height: 1.6; color: var(--ds-ink-medium); margin: 0 0 var(--ds-space-5); }
+#drawer-knowledge-mount .kd-foods-enz__stat { margin: var(--ds-space-6) 0; }
+#drawer-knowledge-mount .kd-foods-enz__hd { margin-top: var(--ds-space-5); color: var(--ds-ink-soft); }
+/* The gate figure -- two panels, identical mass positions, so low-acid vs enough-acid reads across. */
+#drawer-knowledge-mount .kd-foods-gate { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); align-items: start; }
+#drawer-knowledge-mount .kd-foods-gate__panel { padding: var(--ds-space-3) var(--ds-space-4) var(--ds-space-4); background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); }
+#drawer-knowledge-mount .kd-foods-gate__panel--bad { border-top: 3px solid var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-gate__panel--ok { border-top: 3px solid var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-gate__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--ds-space-3); margin-bottom: var(--ds-space-2); }
+#drawer-knowledge-mount .kd-foods-gate__t { font-family: var(--ds-font-display); font-weight: 700; font-size: 1.02rem; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-foods-gate__metric { font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; }
+#drawer-knowledge-mount .kd-foods-gate__panel--bad .kd-foods-gate__metric { color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-gate__panel--ok .kd-foods-gate__metric { color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-gate__art { display: block; width: 100%; height: auto; }
+#drawer-knowledge-mount .kd-foods-gate__gridline { stroke: var(--ds-rule-soft); stroke-width: 0.5; opacity: 0.55; }
+#drawer-knowledge-mount .kd-foods-gate__blood { fill: var(--ds-tech); opacity: 0.07; }
+#drawer-knowledge-mount .kd-foods-gate__wall { stroke: var(--ds-ink-soft); stroke-width: 2.5; }
+#drawer-knowledge-mount .kd-foods-gate__tick { stroke: var(--ds-rule); stroke-width: 1; }
+#drawer-knowledge-mount .kd-foods-gate__mass { fill: var(--ds-status-err); opacity: 0.28; stroke: var(--ds-status-err); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-foods-gate__frag { fill: var(--fam-action); opacity: 0.55; }
+#drawer-knowledge-mount .kd-foods-gate__through { fill: var(--ds-accent); animation: kd-foods-dot 2.4s ease-in-out infinite; }
+#drawer-knowledge-mount .kd-foods-gate__cap { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.5; color: var(--ds-ink-medium); margin-top: var(--ds-space-2); }
+#drawer-knowledge-mount .kd-foods-gate__note { font-family: var(--ds-font-display); font-weight: 700; font-size: 1.05rem; color: var(--ds-ink); text-align: center; margin: var(--ds-space-4) 0 0; }
+/* Instinct vs fix */
+#drawer-knowledge-mount .kd-foods-enz__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); align-items: start; margin-top: var(--ds-space-6); }
+#drawer-knowledge-mount .kd-foods-enz__panel { padding: 0.85rem 1rem; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-rule); border-radius: var(--ds-radius-sm); }
+#drawer-knowledge-mount .kd-foods-enz__panel--wrong { border-left-color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-enz__panel--wrong .kd-foods-col__hd { color: var(--ds-status-err); }
+#drawer-knowledge-mount .kd-foods-enz__panel--right { border-left-color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-enz__panel--right .kd-foods-col__hd { color: var(--fam-action); }
+#drawer-knowledge-mount .kd-foods-enz__panel-t { font-family: var(--ds-font-display); font-weight: 700; font-size: 1.02rem; color: var(--ds-ink); margin-bottom: 4px; }
+#drawer-knowledge-mount .kd-foods-enz__panel-b { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.55; color: var(--ds-ink-medium); margin: 0; }
+/* Meal timeline -- the rail carries the two zones either side of the meal chip. */
+#drawer-knowledge-mount .kd-foods-time__rail { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--ds-space-3); padding: var(--ds-space-3) 0 var(--ds-space-4); }
+#drawer-knowledge-mount .kd-foods-time__zone { position: relative; font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-tech); text-align: center; padding-top: 14px; }
+#drawer-knowledge-mount .kd-foods-time__zone::before { content: ''; position: absolute; top: 4px; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--ds-tech) 18%, var(--ds-tech) 82%, transparent); opacity: 0.55; }
+#drawer-knowledge-mount .kd-foods-time__meal { font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-paper); background: var(--ds-ink); padding: 6px 14px; border-radius: var(--ds-radius-pill); white-space: nowrap; }
+#drawer-knowledge-mount .kd-foods-time__body { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); }
+#drawer-knowledge-mount .kd-foods-time__b { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.55; color: var(--ds-ink-medium); margin: 0; }
+#drawer-knowledge-mount .kd-foods-enz__note { font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.6; margin: var(--ds-space-6) 0 0; padding-left: var(--ds-space-4); border-left: 2px solid var(--ds-accent); }
 #drawer-knowledge-mount .kd-foods-contrast__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); align-items: start; }
 #drawer-knowledge-mount .kd-foods-col__hd { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; margin-bottom: var(--ds-space-3); color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-foods-col__hd::before { content: ''; width: 10px; height: 10px; border-radius: 2px; background: currentColor; }

@@ -1358,6 +1358,7 @@
         {
           "facet": "mechanism",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000081",
             "WAL-CLM-IMMORT-000085"
           ]
         },
@@ -10242,7 +10243,7 @@
     "achlorhydria": {
       "type": "condition",
       "name": "Achlorhydria",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -10267,6 +10268,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000095",
             "WAL-CLM-LETS-000122"
+          ]
+        },
+        {
+          "kind": "prevalence",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000128"
           ]
         }
       ],
@@ -11191,7 +11198,7 @@
     "anemia": {
       "type": "condition",
       "name": "Anemia",
-      "claim_count": 36,
+      "claim_count": 38,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11269,8 +11276,15 @@
           ]
         },
         {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000133"
+          ]
+        },
+        {
           "kind": "prognosis",
           "claim_ids": [
+            "WAL-CLM-DDDL-000129",
             "WAL-CLM-RARE-000213"
           ]
         },
@@ -13422,8 +13436,9 @@
     "bloating": {
       "type": "condition",
       "name": "Bloating",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -13442,6 +13457,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-DDDL-000132",
             "WAL-CLM-EPIGEN-000030"
           ]
         }
@@ -13452,6 +13468,7 @@
         "colitis",
         "crohns_disease",
         "diverticulitis",
+        "hypochlorhydria",
         "irritable_bowel_syndrome",
         "malabsorption"
       ],
@@ -13460,6 +13477,7 @@
         "colitis",
         "crohns_disease",
         "diverticulitis",
+        "hypochlorhydria",
         "irritable_bowel_syndrome",
         "malabsorption"
       ]
@@ -18256,8 +18274,9 @@
     "dumping_syndrome": {
       "type": "condition",
       "name": "Dumping Syndrome",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -18273,11 +18292,22 @@
           "claim_ids": [
             "WAL-CLM-LETS-000255"
           ]
+        },
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000133"
+          ]
         }
       ],
       "search": [],
-      "related_conditions": [],
+      "related_conditions": [
+        "anemia",
+        "osteoporosis"
+      ],
       "related": [
+        "anemia",
+        "osteoporosis",
         "vitamin-b9"
       ]
     },
@@ -18412,8 +18442,9 @@
     "dyspepsia": {
       "type": "condition",
       "name": "Dyspepsia",
-      "claim_count": 2,
+      "claim_count": 4,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -18434,16 +18465,34 @@
             "WAL-CLM-LETS-000259",
             "WAL-CLM-LETS-000321"
           ]
+        },
+        {
+          "kind": "prognosis",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000129"
+          ]
+        },
+        {
+          "kind": "contraindication",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000130"
+          ]
         }
       ],
       "search": [],
       "related_conditions": [
-        "indigestion"
+        "anemia",
+        "food_allergy",
+        "indigestion",
+        "osteoporosis"
       ],
       "related": [
+        "anemia",
         "calcium",
+        "food_allergy",
         "indigestion",
         "magnesium",
+        "osteoporosis",
         "selenium",
         "vitamin-e"
       ]
@@ -19475,8 +19524,9 @@
     "food_allergy": {
       "type": "condition",
       "name": "Food Allergy",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -19498,28 +19548,34 @@
           "claim_ids": [
             "WAL-CLM-LETS-000280"
           ]
+        },
+        {
+          "kind": "prognosis",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000129"
+          ]
         }
       ],
       "search": [],
       "related_conditions": [
         "alcoholism",
+        "anemia",
         "arthritis",
         "celiac_disease",
         "common_cold",
         "depression",
         "diabetes",
-        "edema",
-        "heavy_metal_toxicity"
+        "dyspepsia"
       ],
       "related": [
         "alcoholism",
+        "anemia",
         "arthritis",
         "celiac_disease",
         "chromium",
         "common_cold",
         "depression",
-        "diabetes",
-        "edema"
+        "diabetes"
       ]
     },
     "fractures": {
@@ -21721,8 +21777,9 @@
     "hypochlorhydria": {
       "type": "condition",
       "name": "Hypochlorhydria",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "immortality"
       ],
@@ -21733,6 +21790,7 @@
         {
           "kind": "mechanism",
           "claim_ids": [
+            "WAL-CLM-DDDL-000132",
             "WAL-CLM-EPIGEN-000029",
             "WAL-CLM-IMMORT-000068",
             "WAL-CLM-IMMORT-000081"
@@ -21741,10 +21799,12 @@
       ],
       "search": [],
       "related_conditions": [
+        "bloating",
         "celiac_disease",
         "lactose_intolerance"
       ],
       "related": [
+        "bloating",
         "calcium",
         "celiac_disease",
         "cobalt",
@@ -27016,7 +27076,7 @@
     "osteoporosis": {
       "type": "condition",
       "name": "Osteoporosis",
-      "claim_count": 32,
+      "claim_count": 34,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -27087,13 +27147,15 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000052",
+            "WAL-CLM-DDDL-000133",
             "WAL-CLM-IAIYH-000001"
           ]
         },
         {
           "kind": "prognosis",
           "claim_ids": [
-            "WAL-CLM-DDDL-000058"
+            "WAL-CLM-DDDL-000058",
+            "WAL-CLM-DDDL-000129"
           ]
         },
         {
@@ -27144,9 +27206,9 @@
         "hypertension",
         "osteomalacia",
         "osteoarthritis",
+        "anemia",
         "bone_spurs",
-        "insomnia",
-        "kidney_stones"
+        "insomnia"
       ],
       "related": [
         "arthritis",
@@ -27156,7 +27218,7 @@
         "osteomalacia",
         "magnesium",
         "osteoarthritis",
-        "bone_spurs"
+        "anemia"
       ]
     },
     "osteosarcoma": {

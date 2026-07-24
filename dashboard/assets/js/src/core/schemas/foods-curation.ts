@@ -27,6 +27,9 @@ export const FoodsCurationSchema = z.object({
   eat: z.array(z.string()).default([]),
   /** Conditional foods (stance turns on the form/context) -- entity slugs, in display order. */
   conditional: z.array(z.string()).default([]),
+  /** Section 04 (digestive enzymes): sealed claim IDs, in curated reading order. Defaulted so a
+   *  config predating the section still parses rather than emptying the whole tab. */
+  enzyme_claims: z.array(z.string()).default([]),
   /** Featured pull-quote under the villi scan: a sealed search-claim id + the substring to highlight from (to the end). */
   villi_quote: z.object({ id: z.string(), highlight_from: z.string() }).optional(),
 });

@@ -283,7 +283,7 @@
       ],
       "related": [
         "vanadium",
-        "silicon",
+        "silica",
         "menopause",
         "macronutrients"
       ],
@@ -465,7 +465,6 @@
         "fried foods",
         "trans fats",
         "rancid fat",
-        "margarine",
         "oxidized oils",
         "free radicals"
       ],
@@ -475,6 +474,32 @@
         "vitamin-e",
         "processed_meat"
       ]
+    },
+    "digestion": {
+      "display_name": "Digestion & Stomach Acid",
+      "type": "concept",
+      "synonyms": [
+        "digestion",
+        "digestive",
+        "stomach acid",
+        "hydrochloric acid",
+        "hcl",
+        "betaine hcl",
+        "digestive enzymes",
+        "pancreatic enzymes",
+        "digestive aids",
+        "low stomach acid",
+        "enzymes",
+        "burp belch and bloat"
+      ],
+      "related": [
+        "absorption",
+        "gluten",
+        "salt",
+        "phytates",
+        "ph"
+      ],
+      "intro_claim": "WAL-CLM-DDDL-000131"
     },
     "drug_safety_elderly": {
       "display_name": "Drug Safety in the Elderly",
@@ -667,13 +692,13 @@
         "gluten intolerance",
         "gluten sensitivity",
         "gluten-free",
-        "gluten enteropathy"
+        "gluten enteropathy",
+        "wheat",
+        "villi"
       ],
       "related": [
         "celiac_disease",
         "absorption",
-        "villi",
-        "wheat",
         "malabsorption",
         "phytates"
       ]
@@ -938,6 +963,27 @@
         "omega-3"
       ]
     },
+    "margarine": {
+      "display_name": "Margarine",
+      "type": "substance",
+      "synonyms": [
+        "margarine",
+        "margarines",
+        "oleo",
+        "butter substitute",
+        "hydrogenated oil",
+        "hydrogenated oils",
+        "partially hydrogenated",
+        "hydrogenated vegetable oil",
+        "hydrogenation"
+      ],
+      "related": [
+        "butter",
+        "dietary_oils",
+        "cholesterol",
+        "free_radicals"
+      ]
+    },
     "meat": {
       "display_name": "Meat & Animal Foods",
       "type": "concept",
@@ -1076,6 +1122,28 @@
         "longevity"
       ]
     },
+    "ph": {
+      "display_name": "Body pH & Acid-Base Balance",
+      "type": "concept",
+      "synonyms": [
+        "ph",
+        "body ph",
+        "ph balance",
+        "acid-base balance",
+        "acid base balance",
+        "alkalinity",
+        "blood ph",
+        "urine ph"
+      ],
+      "related": [
+        "hydrogen",
+        "water",
+        "digestion",
+        "acidosis",
+        "alkalosis"
+      ],
+      "intro_claim": "WAL-CLM-IMMORT-000151"
+    },
     "phytates": {
       "display_name": "Phytates",
       "type": "concept",
@@ -1119,7 +1187,7 @@
         "beef",
         "meat",
         "eggs",
-        "poultry",
+        "chicken",
         "fish"
       ],
       "intro_claim": "WAL-CLM-IMMORT-000229"

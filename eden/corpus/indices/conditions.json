@@ -78,10 +78,13 @@
   },
   "achlorhydria": {
     "display_name": "Achlorhydria",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000035"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000128"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000095",
@@ -628,8 +631,11 @@
   },
   "anemia": {
     "display_name": "Anemia",
-    "claim_count": 36,
+    "claim_count": 38,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000133"
+      ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000020",
         "WAL-CLM-EPIGEN-000033",
@@ -671,6 +677,7 @@
         "WAL-CLM-RARE-000081"
       ],
       "prognosis": [
+        "WAL-CLM-DDDL-000129",
         "WAL-CLM-RARE-000213"
       ],
       "protocols": [
@@ -1972,9 +1979,10 @@
   },
   "bloating": {
     "display_name": "Bloating",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-DDDL-000132",
         "WAL-CLM-EPIGEN-000030"
       ],
       "protocols": [
@@ -1989,6 +1997,7 @@
       "pancreatic-enzymes"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor"
     ]
@@ -4716,8 +4725,11 @@
   },
   "dumping_syndrome": {
     "display_name": "Dumping Syndrome",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-DDDL-000133"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000255"
       ]
@@ -4730,6 +4742,7 @@
       "pectin"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -4814,8 +4827,14 @@
   },
   "dyspepsia": {
     "display_name": "Dyspepsia",
-    "claim_count": 2,
+    "claim_count": 4,
     "claims_by_role": {
+      "contraindications": [
+        "WAL-CLM-DDDL-000130"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000129"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000259",
         "WAL-CLM-LETS-000321"
@@ -4842,6 +4861,7 @@
       "wormwood"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -5419,8 +5439,11 @@
   },
   "food_allergy": {
     "display_name": "Food Allergy",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "prognosis": [
+        "WAL-CLM-DDDL-000129"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000280"
       ]
@@ -5443,6 +5466,7 @@
       "urine-therapy"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -6663,9 +6687,10 @@
   },
   "hypochlorhydria": {
     "display_name": "Hypochlorhydria",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-DDDL-000132",
         "WAL-CLM-EPIGEN-000029",
         "WAL-CLM-IMMORT-000068",
         "WAL-CLM-IMMORT-000081"
@@ -6677,6 +6702,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "dddl-3e-2011",
       "epigenetics",
       "immortality"
     ]
@@ -9692,10 +9718,11 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 32,
+    "claim_count": 34,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000052",
+        "WAL-CLM-DDDL-000133",
         "WAL-CLM-IAIYH-000001"
       ],
       "contraindications": [
@@ -9737,7 +9764,8 @@
         "WAL-CLM-DDDL-000009"
       ],
       "prognosis": [
-        "WAL-CLM-DDDL-000058"
+        "WAL-CLM-DDDL-000058",
+        "WAL-CLM-DDDL-000129"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000060",

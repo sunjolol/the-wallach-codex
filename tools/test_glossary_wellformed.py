@@ -68,6 +68,15 @@ cases = [
     # ADVERSARIAL edge -- a real-looking dose that HAPPENS to be near year-shaped: 1500 does not
     # match 19XX/20XX so it still trips. Guard against a future loosening that would let it through.
     ("year_shaped_dose_trips",     "Wallach's IU target sits at 1500.",                                 True),
+    # R9 2026-07-24 -- a vitamin DESIGNATION is part of the name, not a health number. The gate
+    # over-fired on "intrinsic factor", whose lay definition cannot avoid naming vitamin B12.
+    # The two *_beside_dose cases are load-bearing: they prove the strip is not a smuggling hole.
+    ("vitamin_b12_name_passes",    "A stomach substance vitamin B12 must attach to be absorbed.",       False),
+    ("vitamin_b_hyphen_12_passes", "Vitamin B-12 cannot be absorbed without stomach acid.",             False),
+    ("vitamin_d3_k2_passes",       "Vitamin D3 and vitamin K2 act together on bone.",                   False),
+    ("dose_beside_vitamin_trips",  "B6 at 100 mg twice daily.",                                         True),
+    ("dose_beside_vitamin2_trips", "Vitamin B-12 1000 mcg per day for 20 days.",                        True),
+    ("ocr_token_hc1_still_trips",  "Labelled betaine HC1 on the bottle.",                               True),
 ]
 
 results = [case(*c) for c in cases]

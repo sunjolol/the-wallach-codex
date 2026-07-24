@@ -2,42 +2,108 @@
   "_doc": "Plain-language term glossary for the Knowledge drawer tooltip layer (SESSION 39). Each entry gives a SHORT, plain-language definition of a medical/technical term so no reader is left not understanding a word (memory: term-gloss-standard). These are GENERAL descriptive reference definitions (standard medical terminology), NOT Wallach health claims or numeric targets -- they carry no §00.A source obligation and must never assert an UNANCHORED dose, target, or verdict -- the ONE exception is an entry with an anchored 'number_exempt' (a Wallach figure cited to a sealed claim that literally contains it; R9 2026-07-21, Luneth's reviewed override), which the invariant glossary_wellformed enforces. 'term' is matched case-insensitively on word boundaries; 'aliases' catch morphological variants. Seeded set; grows under the jargon_terms_glossed invariant guard.",
   "terms": [
     {
-      "term": "hypoglycemia",
-      "plain": "low blood sugar",
-      "category": "medical",
+      "term": "30-Day Pharmacologic",
+      "plain": "a higher, short-term therapeutic dose taken for about a month to correct an existing deficiency, above the everyday maintenance amount",
+      "category": "nutrition",
       "aliases": [
-        "hypoglycemic"
+        "pharmacologic daily dose",
+        "pharmacologic dose"
       ]
     },
     {
-      "term": "hyperglycemia",
-      "plain": "high blood sugar",
+      "term": "achlorhydria",
+      "plain": "no stomach acid being produced at all",
       "category": "medical",
       "aliases": [
-        "hyperglycemic"
+        "achlorhydric"
       ]
     },
     {
-      "term": "hyperinsulinemia",
-      "plain": "chronically high insulin levels in the blood",
+      "term": "acidosis",
+      "plain": "too much acid in the body fluids",
       "category": "medical"
     },
     {
-      "term": "osteoporosis",
-      "plain": "brittle, thinning bones from mineral loss",
-      "category": "medical",
-      "aliases": [
-        "osteoporotic"
-      ]
-    },
-    {
-      "term": "osteopenia",
-      "plain": "mild bone-mineral loss, a precursor to osteoporosis",
+      "term": "acrodermatitis",
+      "plain": "inflamed skin on the hands and feet",
       "category": "medical"
     },
     {
-      "term": "osteoarthritis",
-      "plain": "wear-and-tear arthritis from cartilage breakdown",
+      "term": "adrenoleukodystrophy",
+      "plain": "an inherited disorder that damages nerves and the adrenal glands",
+      "category": "medical"
+    },
+    {
+      "term": "aerobic",
+      "plain": "requiring oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "aflatoxin",
+      "plain": "a cancer-causing toxin made by mold on grains and nuts",
+      "category": "nutrition",
+      "aliases": [
+        "aflatoxins"
+      ]
+    },
+    {
+      "term": "Age Beaters",
+      "plain": "Wallach's nickname for the handful of unusually long-lived peoples he studied — such as the Hunza and the Vilcabamba — where reaching a healthy old age is common rather than rare.",
+      "category": "science",
+      "aliases": [
+        "Age Beater"
+      ]
+    },
+    {
+      "term": "albuminuria",
+      "plain": "the blood protein albumin leaking into the urine",
+      "category": "medical"
+    },
+    {
+      "term": "aldehyde",
+      "plain": "a reactive type of organic molecule",
+      "category": "medical",
+      "aliases": [
+        "aldehydes"
+      ]
+    },
+    {
+      "term": "alkalosis",
+      "plain": "too much alkali (base) in the body fluids",
+      "category": "medical"
+    },
+    {
+      "term": "amenorrhea",
+      "plain": "absence of menstrual periods",
+      "category": "medical"
+    },
+    {
+      "term": "American Longevity",
+      "plain": "The name Youngevity was founded under, in March 1997. Wallach called Elmer Heinrich at Rockland the day the company opened and secured mineral supply for the new line. American Longevity paid its first commissions on June 15, 1997, and later renamed to Youngevity.",
+      "category": "product-history",
+      "aliases": []
+    },
+    {
+      "term": "anaerobic",
+      "plain": "happening without oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "aneurysm",
+      "plain": "a bulge in the weakened wall of a blood vessel",
+      "category": "medical",
+      "aliases": [
+        "aneurysms"
+      ]
+    },
+    {
+      "term": "appendicitis",
+      "plain": "inflammation of the appendix",
+      "category": "medical"
+    },
+    {
+      "term": "arteriosclerosis",
+      "plain": "hardening and thickening of artery walls",
       "category": "medical"
     },
     {
@@ -49,58 +115,12 @@
       ]
     },
     {
-      "term": "fibrosis",
-      "plain": "scarring and thickening of tissue",
+      "term": "ataxia",
+      "plain": "loss of muscle coordination and balance",
       "category": "medical",
       "aliases": [
-        "fibrotic"
+        "ataxic"
       ]
-    },
-    {
-      "term": "cirrhosis",
-      "plain": "severe, irreversible liver scarring",
-      "category": "medical",
-      "aliases": [
-        "cirrhotic"
-      ]
-    },
-    {
-      "term": "dermatitis",
-      "plain": "inflamed, itchy skin",
-      "category": "medical"
-    },
-    {
-      "term": "dermatosis",
-      "plain": "any skin disease or disorder",
-      "category": "medical"
-    },
-    {
-      "term": "cardiomyopathy",
-      "plain": "disease of the heart muscle",
-      "category": "medical"
-    },
-    {
-      "term": "neuropathy",
-      "plain": "nerve damage causing numbness, tingling, or pain",
-      "category": "medical",
-      "aliases": [
-        "neuropathic"
-      ]
-    },
-    {
-      "term": "neuralgia",
-      "plain": "sharp pain running along a nerve",
-      "category": "medical"
-    },
-    {
-      "term": "neuritis",
-      "plain": "inflammation of a nerve",
-      "category": "medical"
-    },
-    {
-      "term": "arteriosclerosis",
-      "plain": "hardening and thickening of artery walls",
-      "category": "medical"
     },
     {
       "term": "atherosclerosis",
@@ -108,459 +128,29 @@
       "category": "medical"
     },
     {
-      "term": "sclerosis",
-      "plain": "abnormal hardening of tissue",
+      "term": "atrioventricular",
+      "plain": "between the heart's upper and lower chambers",
+      "category": "medical"
+    },
+    {
+      "term": "autoimmune",
+      "plain": "when the body's immune system attacks its own healthy tissue",
       "category": "medical",
       "aliases": [
-        "sclerotic"
+        "autoimmunity"
       ]
     },
     {
-      "term": "hemorrhage",
-      "plain": "heavy or uncontrolled bleeding",
-      "category": "medical",
+      "term": "b.i.d.",
+      "plain": "twice a day (Latin: bis in die)",
+      "category": "abbreviation",
       "aliases": [
-        "hemorrhagic"
+        "bid"
       ]
     },
     {
-      "term": "thrombosis",
-      "plain": "a blood clot blocking a vessel",
-      "category": "medical",
-      "aliases": [
-        "thrombus",
-        "thrombotic"
-      ]
-    },
-    {
-      "term": "ischemia",
-      "plain": "reduced blood flow to tissue",
-      "category": "medical",
-      "aliases": [
-        "ischemic"
-      ]
-    },
-    {
-      "term": "edema",
-      "plain": "swelling from fluid buildup in tissue",
-      "category": "medical",
-      "aliases": [
-        "edematous"
-      ]
-    },
-    {
-      "term": "cyanosis",
-      "plain": "bluish skin from low blood oxygen",
-      "category": "medical"
-    },
-    {
-      "term": "cyanotic",
-      "plain": "bluish from low blood oxygen",
-      "category": "medical"
-    },
-    {
-      "term": "ecchymosis",
-      "plain": "a bruise; bleeding under the skin",
-      "category": "medical"
-    },
-    {
-      "term": "necrosis",
-      "plain": "death of body tissue",
-      "category": "medical",
-      "aliases": [
-        "necrotic"
-      ]
-    },
-    {
-      "term": "stomatitis",
-      "plain": "inflammation of the mouth",
-      "category": "medical"
-    },
-    {
-      "term": "gingivitis",
-      "plain": "gum inflammation",
-      "category": "medical"
-    },
-    {
-      "term": "gastritis",
-      "plain": "inflammation of the stomach lining",
-      "category": "medical"
-    },
-    {
-      "term": "enteritis",
-      "plain": "inflammation of the intestine",
-      "category": "medical"
-    },
-    {
-      "term": "gastroenteritis",
-      "plain": "inflammation of the stomach and intestines ('stomach flu')",
-      "category": "medical"
-    },
-    {
-      "term": "diverticulitis",
-      "plain": "inflammation of small pouches in the colon wall",
-      "category": "medical"
-    },
-    {
-      "term": "hepatitis",
-      "plain": "liver inflammation",
-      "category": "medical"
-    },
-    {
-      "term": "conjunctivitis",
-      "plain": "pink eye; inflammation of the eye's surface",
-      "category": "medical"
-    },
-    {
-      "term": "meningitis",
-      "plain": "inflammation of the membranes around the brain and spinal cord",
-      "category": "medical"
-    },
-    {
-      "term": "encephalitis",
-      "plain": "inflammation of the brain",
-      "category": "medical"
-    },
-    {
-      "term": "pneumonitis",
-      "plain": "inflammation of lung tissue",
-      "category": "medical"
-    },
-    {
-      "term": "prostaglandins",
-      "plain": "hormone-like substances that regulate inflammation and other body functions",
-      "category": "medical",
-      "aliases": [
-        "prostaglandin"
-      ]
-    },
-    {
-      "term": "steatohepatitis",
-      "plain": "fatty inflammation of the liver",
-      "category": "medical"
-    },
-    {
-      "term": "kyphosis",
-      "plain": "excessive outward curve of the upper spine (hunchback)",
-      "category": "medical"
-    },
-    {
-      "term": "lordosis",
-      "plain": "excessive inward curve of the lower spine (swayback)",
-      "category": "medical"
-    },
-    {
-      "term": "scoliosis",
-      "plain": "sideways curvature of the spine",
-      "category": "medical"
-    },
-    {
-      "term": "spondylitis",
-      "plain": "inflammation of the spinal joints",
-      "category": "medical"
-    },
-    {
-      "term": "exostosis",
-      "plain": "a benign bony outgrowth",
-      "category": "medical"
-    },
-    {
-      "term": "galactosemia",
-      "plain": "an inherited inability to digest the milk sugar galactose",
-      "category": "medical"
-    },
-    {
-      "term": "phenylketonuria",
-      "plain": "an inherited inability to process the amino acid phenylalanine",
-      "category": "medical"
-    },
-    {
-      "term": "mucoviscidosis",
-      "plain": "an older name for cystic fibrosis",
-      "category": "medical"
-    },
-    {
-      "term": "ophthalmoplegia",
-      "plain": "paralysis of the eye muscles",
-      "category": "medical"
-    },
-    {
-      "term": "cheilosis",
-      "plain": "cracking and inflammation at the corners of the mouth",
-      "category": "medical",
-      "aliases": [
-        "chelosis"
-      ]
-    },
-    {
-      "term": "ichthyosis",
-      "plain": "dry, scaly, fish-like skin",
-      "category": "medical"
-    },
-    {
-      "term": "hyperkeratosis",
-      "plain": "thickening of the skin's outer layer",
-      "category": "medical"
-    },
-    {
-      "term": "parakeratosis",
-      "plain": "abnormal skin-cell maturation causing scaling",
-      "category": "medical"
-    },
-    {
-      "term": "hydroencephalocele",
-      "plain": "a birth defect where brain tissue protrudes through the skull",
-      "category": "medical"
-    },
-    {
-      "term": "omphalocele",
-      "plain": "a birth defect where organs protrude through the navel",
-      "category": "medical"
-    },
-    {
-      "term": "meningocele",
-      "plain": "a birth defect where the spinal membranes protrude through the spine",
-      "category": "medical"
-    },
-    {
-      "term": "leukorrhea",
-      "plain": "a whitish vaginal discharge",
-      "category": "medical"
-    },
-    {
-      "term": "amenorrhea",
-      "plain": "absence of menstrual periods",
-      "category": "medical"
-    },
-    {
-      "term": "dysmenorrhea",
-      "plain": "painful menstrual periods",
-      "category": "medical"
-    },
-    {
-      "term": "iatrogenic",
-      "plain": "caused by medical treatment itself",
-      "category": "medical"
-    },
-    {
-      "term": "teratogenic",
-      "plain": "capable of causing birth defects",
-      "category": "medical"
-    },
-    {
-      "term": "goitrogenic",
-      "plain": "capable of causing goiter (thyroid enlargement)",
-      "category": "medical",
-      "aliases": [
-        "goiterogenic"
-      ]
-    },
-    {
-      "term": "carcinogenic",
-      "plain": "capable of causing cancer",
-      "category": "medical",
-      "aliases": [
-        "anticarcinogenic"
-      ]
-    },
-    {
-      "term": "carcinoma",
-      "plain": "a cancer arising from skin or tissue-lining cells",
-      "category": "medical"
-    },
-    {
-      "term": "sarcoma",
-      "plain": "a cancer arising from bone, muscle, or connective tissue",
-      "category": "medical"
-    },
-    {
-      "term": "osteosarcoma",
-      "plain": "a bone cancer",
-      "category": "medical"
-    },
-    {
-      "term": "melanoma",
-      "plain": "a serious skin cancer from pigment cells",
-      "category": "medical"
-    },
-    {
-      "term": "leukemia",
-      "plain": "cancer of the blood and bone marrow",
-      "category": "medical"
-    },
-    {
-      "term": "metastasis",
-      "plain": "spread of cancer to distant parts of the body",
-      "category": "medical",
-      "aliases": [
-        "metastatic"
-      ]
-    },
-    {
-      "term": "neutropenia",
-      "plain": "an abnormally low count of infection-fighting white blood cells",
-      "category": "medical"
-    },
-    {
-      "term": "hyperplasia",
-      "plain": "tissue enlargement from an increased number of cells",
-      "category": "medical"
-    },
-    {
-      "term": "hypoplasia",
-      "plain": "underdevelopment of a tissue or organ",
-      "category": "medical"
-    },
-    {
-      "term": "hypertrophy",
-      "plain": "tissue enlargement from bigger cells",
-      "category": "medical",
-      "aliases": [
-        "hypertrophic"
-      ]
-    },
-    {
-      "term": "glaucoma",
-      "plain": "eye damage from high internal pressure, a cause of blindness",
-      "category": "medical"
-    },
-    {
-      "term": "psychosis",
-      "plain": "a mental state of losing touch with reality",
-      "category": "medical",
-      "aliases": [
-        "psychotic"
-      ]
-    },
-    {
-      "term": "neurosis",
-      "plain": "an older term for anxiety-driven mental distress",
-      "category": "medical",
-      "aliases": [
-        "neurotic"
-      ]
-    },
-    {
-      "term": "acidosis",
-      "plain": "too much acid in the body fluids",
-      "category": "medical"
-    },
-    {
-      "term": "alkalosis",
-      "plain": "too much alkali (base) in the body fluids",
-      "category": "medical"
-    },
-    {
-      "term": "ketoacidosis",
-      "plain": "dangerous acid buildup from unmanaged fat-burning, seen in diabetes",
-      "category": "medical"
-    },
-    {
-      "term": "hypervitaminosis",
-      "plain": "toxicity from an excess of vitamins",
-      "category": "medical"
-    },
-    {
-      "term": "fluorine",
-      "plain": "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
-      "category": "chemistry"
-    },
-    {
-      "term": "fluorosis",
-      "plain": "tooth or bone damage from excess fluoride",
-      "category": "medical"
-    },
-    {
-      "term": "hemosiderosis",
-      "plain": "iron overload deposited in the tissues",
-      "category": "medical"
-    },
-    {
-      "term": "hypercalcemia",
-      "plain": "high calcium levels in the blood",
-      "category": "medical"
-    },
-    {
-      "term": "hypoproteinemia",
-      "plain": "low protein levels in the blood",
-      "category": "medical"
-    },
-    {
-      "term": "hypophosphatemia",
-      "plain": "low phosphate levels in the blood",
-      "category": "medical"
-    },
-    {
-      "term": "hematuria",
-      "plain": "blood in the urine",
-      "category": "medical"
-    },
-    {
-      "term": "proteinuria",
-      "plain": "protein leaking into the urine",
-      "category": "medical"
-    },
-    {
-      "term": "albuminuria",
-      "plain": "the blood protein albumin leaking into the urine",
-      "category": "medical"
-    },
-    {
-      "term": "tuberculosis",
-      "plain": "a contagious bacterial lung infection",
-      "category": "medical"
-    },
-    {
-      "term": "leptospirosis",
-      "plain": "a bacterial infection spread through animal urine",
-      "category": "medical"
-    },
-    {
-      "term": "toxoplasmosis",
-      "plain": "a parasite infection, especially risky in pregnancy",
-      "category": "medical"
-    },
-    {
-      "term": "psittacosis",
-      "plain": "a bird-borne bacterial lung infection",
-      "category": "medical",
-      "aliases": [
-        "ornithosis"
-      ]
-    },
-    {
-      "term": "tularemia",
-      "plain": "a bacterial infection from rabbits and rodents ('rabbit fever')",
-      "category": "medical"
-    },
-    {
-      "term": "pediculosis",
-      "plain": "a lice infestation",
-      "category": "medical"
-    },
-    {
-      "term": "halitosis",
-      "plain": "bad breath",
-      "category": "medical"
-    },
-    {
-      "term": "lipodystrophy",
-      "plain": "abnormal loss or redistribution of body fat",
-      "category": "medical"
-    },
-    {
-      "term": "chondrodystrophy",
-      "plain": "a disorder of cartilage growth, a form of dwarfism",
-      "category": "medical"
-    },
-    {
-      "term": "adrenoleukodystrophy",
-      "plain": "an inherited disorder that damages nerves and the adrenal glands",
-      "category": "medical"
-    },
-    {
-      "term": "sarcoidosis",
-      "plain": "an inflammatory disease that forms small nodules, often in the lungs",
+      "term": "benign",
+      "plain": "not cancerous; harmless",
       "category": "medical"
     },
     {
@@ -569,19 +159,19 @@
       "category": "medical"
     },
     {
-      "term": "enzootic",
-      "plain": "a disease regularly present in an animal population",
-      "category": "medical"
+      "term": "betaine hcl",
+      "plain": "a supplement that supplies hydrochloric acid — the acid the stomach normally makes. It is not an enzyme; it replaces missing stomach acid.",
+      "category": "supplement",
+      "aliases": [
+        "betaine hydrochloride",
+        "betaine hc1",
+        "betaine"
+      ]
     },
     {
-      "term": "acrodermatitis",
-      "plain": "inflamed skin on the hands and feet",
-      "category": "medical"
-    },
-    {
-      "term": "appendicitis",
-      "plain": "inflammation of the appendix",
-      "category": "medical"
+      "term": "bitters",
+      "plain": "bitter-tasting herbal preparations taken before meals to stimulate digestion",
+      "category": "supplement"
     },
     {
       "term": "blepharitis",
@@ -602,8 +192,204 @@
       "category": "medical"
     },
     {
+      "term": "carcinogen",
+      "plain": "a cancer-causing substance",
+      "category": "medical",
+      "aliases": [
+        "carcinogens"
+      ]
+    },
+    {
+      "term": "carcinogenic",
+      "plain": "capable of causing cancer",
+      "category": "medical",
+      "aliases": [
+        "anticarcinogenic"
+      ]
+    },
+    {
+      "term": "carcinoma",
+      "plain": "a cancer arising from skin or tissue-lining cells",
+      "category": "medical"
+    },
+    {
+      "term": "cardiomyopathy",
+      "plain": "disease of the heart muscle",
+      "category": "medical"
+    },
+    {
+      "term": "cation",
+      "plain": "a positively charged ion",
+      "category": "nutrition",
+      "aliases": [
+        "cations"
+      ]
+    },
+    {
+      "term": "cc",
+      "plain": "cubic centimeter -- a unit of volume equal to one milliliter (mL).",
+      "category": "unit"
+    },
+    {
+      "term": "cellulose",
+      "plain": "the fiber that makes up plant cell walls",
+      "category": "nutrition"
+    },
+    {
+      "term": "cerebellum",
+      "plain": "the brain region that controls balance and coordination",
+      "category": "medical",
+      "aliases": [
+        "cerebellar"
+      ]
+    },
+    {
+      "term": "cheilosis",
+      "plain": "cracking and inflammation at the corners of the mouth",
+      "category": "medical",
+      "aliases": [
+        "chelosis"
+      ]
+    },
+    {
+      "term": "chondrodystrophy",
+      "plain": "a disorder of cartilage growth, a form of dwarfism",
+      "category": "medical"
+    },
+    {
+      "term": "chondroitin",
+      "plain": "a cushioning building-block compound found in cartilage",
+      "category": "nutrition"
+    },
+    {
+      "term": "chromatolysis",
+      "plain": "breakdown of the protein-making structures inside a damaged nerve cell",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "cirrhosis",
+      "plain": "severe, irreversible liver scarring",
+      "category": "medical",
+      "aliases": [
+        "cirrhotic"
+      ]
+    },
+    {
+      "term": "collagen",
+      "plain": "the main structural protein in skin, bone, and connective tissue",
+      "category": "medical"
+    },
+    {
+      "term": "colloidal",
+      "plain": "The mineral's physical FORM, not its source: ultra-fine solid particles held suspended in a liquid — too small to settle out or filter, but not fully dissolved. Wallach says this ultra-fine, suspended form is why the body takes them up so readily. Note: glacier-ground 'rock flour' is colloidal too, yet Wallach calls it 'metallic' and poorly absorbed — so being colloidal alone is not what makes a mineral usable.",
+      "category": "nutrition",
+      "aliases": [
+        "colloid",
+        "colloids",
+        "colloidal form"
+      ]
+    },
+    {
+      "term": "congenital",
+      "plain": "present from birth",
+      "category": "medical"
+    },
+    {
+      "term": "congestive",
+      "plain": "relating to heart failure in which fluid backs up in the lungs and body",
+      "category": "medical"
+    },
+    {
+      "term": "conjunctivitis",
+      "plain": "pink eye; inflammation of the eye's surface",
+      "category": "medical"
+    },
+    {
+      "term": "cyanosis",
+      "plain": "bluish skin from low blood oxygen",
+      "category": "medical"
+    },
+    {
+      "term": "cyanotic",
+      "plain": "bluish from low blood oxygen",
+      "category": "medical"
+    },
+    {
       "term": "cystitis",
       "plain": "bladder inflammation",
+      "category": "medical"
+    },
+    {
+      "term": "cytoplasm",
+      "plain": "the jelly-like fluid that fills a cell",
+      "category": "medical"
+    },
+    {
+      "term": "dermatitis",
+      "plain": "inflamed, itchy skin",
+      "category": "medical"
+    },
+    {
+      "term": "dermatosis",
+      "plain": "any skin disease or disorder",
+      "category": "medical"
+    },
+    {
+      "term": "disulfide",
+      "plain": "a sulfur-to-sulfur bond that holds a protein's shape",
+      "category": "medical"
+    },
+    {
+      "term": "diverticulitis",
+      "plain": "inflammation of small pouches in the colon wall",
+      "category": "medical"
+    },
+    {
+      "term": "dumping syndrome",
+      "plain": "when the stomach empties into the small intestine all at once, overwhelming its ability to buffer the acid",
+      "category": "medical"
+    },
+    {
+      "term": "dysmenorrhea",
+      "plain": "painful menstrual periods",
+      "category": "medical"
+    },
+    {
+      "term": "dyspepsia",
+      "plain": "indigestion — belching, bloating, burping and “acid stomach”",
+      "category": "medical"
+    },
+    {
+      "term": "Eagle",
+      "plain": "Wallach's original distributor company - the one that recruited him after his 'Dead Doctors Don't Lie' lecture reached its distributors. Renamed itself SupraLife International in 1998.",
+      "category": "product-history",
+      "aliases": [
+        "Soaring Eagle"
+      ]
+    },
+    {
+      "term": "ecchymosis",
+      "plain": "a bruise; bleeding under the skin",
+      "category": "medical"
+    },
+    {
+      "term": "edema",
+      "plain": "swelling from fluid buildup in tissue",
+      "category": "medical",
+      "aliases": [
+        "edematous"
+      ]
+    },
+    {
+      "term": "electrolysis",
+      "plain": "using an electric current to split a compound into its parts",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "encephalitis",
+      "plain": "inflammation of the brain",
       "category": "medical"
     },
     {
@@ -612,141 +398,68 @@
       "category": "medical"
     },
     {
+      "term": "enteritis",
+      "plain": "inflammation of the intestine",
+      "category": "medical"
+    },
+    {
+      "term": "enzootic",
+      "plain": "a disease regularly present in an animal population",
+      "category": "medical"
+    },
+    {
+      "term": "epithelium",
+      "plain": "the sheet of cells that lines the body's surfaces and cavities",
+      "category": "medical",
+      "aliases": [
+        "epithelial"
+      ]
+    },
+    {
+      "term": "erythropoietin",
+      "plain": "a hormone that signals the body to make red blood cells",
+      "category": "medical"
+    },
+    {
+      "term": "exostosis",
+      "plain": "a benign bony outgrowth",
+      "category": "medical"
+    },
+    {
+      "term": "familial",
+      "plain": "running in families; inherited",
+      "category": "medical"
+    },
+    {
+      "term": "fibroblast",
+      "plain": "a cell that produces collagen and connective tissue",
+      "category": "medical",
+      "aliases": [
+        "fibroblasts"
+      ]
+    },
+    {
       "term": "fibromyalgia",
       "plain": "a condition of widespread muscle pain and fatigue",
       "category": "medical"
     },
     {
-      "term": "glossitis",
-      "plain": "inflammation of the tongue",
-      "category": "medical"
-    },
-    {
-      "term": "gonorrhea",
-      "plain": "a sexually transmitted bacterial infection",
-      "category": "medical"
-    },
-    {
-      "term": "hepatomegaly",
-      "plain": "an enlarged liver",
-      "category": "medical"
-    },
-    {
-      "term": "hysterectomy",
-      "plain": "surgical removal of the uterus",
-      "category": "medical"
-    },
-    {
-      "term": "keratitis",
-      "plain": "inflammation of the cornea, the clear front of the eye",
-      "category": "medical"
-    },
-    {
-      "term": "keratosis",
-      "plain": "a horny thickening of the skin",
-      "category": "medical"
-    },
-    {
-      "term": "laryngitis",
-      "plain": "inflammation of the voice box",
-      "category": "medical"
-    },
-    {
-      "term": "myelosclerosis",
-      "plain": "hardening and scarring of the bone marrow",
-      "category": "medical"
-    },
-    {
-      "term": "osteitis",
-      "plain": "inflammation of bone",
-      "category": "medical"
-    },
-    {
-      "term": "osteosclerosis",
-      "plain": "abnormal hardening and thickening of bone",
-      "category": "medical"
-    },
-    {
-      "term": "pancreatitis",
-      "plain": "inflammation of the pancreas",
-      "category": "medical"
-    },
-    {
-      "term": "periodontitis",
-      "plain": "gum disease that damages the bone anchoring the teeth",
-      "category": "medical"
-    },
-    {
-      "term": "phlebitis",
-      "plain": "inflammation of a vein",
-      "category": "medical"
-    },
-    {
-      "term": "pleuritis",
-      "plain": "inflammation of the lung lining (pleurisy)",
-      "category": "medical"
-    },
-    {
-      "term": "polyuria",
-      "plain": "excessive urination",
-      "category": "medical"
-    },
-    {
-      "term": "rhinitis",
-      "plain": "inflammation of the nasal lining, causing a runny or stuffy nose",
-      "category": "medical"
-    },
-    {
-      "term": "sinusitis",
-      "plain": "inflammation of the sinuses",
-      "category": "medical"
-    },
-    {
-      "term": "splenomegaly",
-      "plain": "an enlarged spleen",
-      "category": "medical"
-    },
-    {
-      "term": "steatoma",
-      "plain": "a fatty cyst under the skin",
-      "category": "medical"
-    },
-    {
-      "term": "stenosis",
-      "plain": "abnormal narrowing of a passage or blood vessel",
-      "category": "medical"
-    },
-    {
-      "term": "tonsillectomy",
-      "plain": "surgical removal of the tonsils",
-      "category": "medical"
-    },
-    {
-      "term": "tonsillitis",
-      "plain": "inflammation of the tonsils",
-      "category": "medical"
-    },
-    {
-      "term": "tracheotomy",
-      "plain": "a surgical opening made into the windpipe",
-      "category": "medical"
-    },
-    {
-      "term": "vaginitis",
-      "plain": "inflammation of the vagina",
-      "category": "medical"
-    },
-    {
-      "term": "mg%",
-      "plain": "milligrams per deciliter (mg/dL) -- a blood concentration: how much of a substance is dissolved in a tenth of a liter. Despite the percent sign, it is not a true percentage.",
-      "category": "unit",
+      "term": "fibrosis",
+      "plain": "scarring and thickening of tissue",
+      "category": "medical",
       "aliases": [
-        "mg %",
-        "mg percent",
-        "milligram percent",
-        "mg/100 ml",
-        "mg /100 ml"
+        "fibrotic"
       ]
+    },
+    {
+      "term": "fluorine",
+      "plain": "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
+      "category": "chemistry"
+    },
+    {
+      "term": "fluorosis",
+      "plain": "tooth or bone damage from excess fluoride",
+      "category": "medical"
     },
     {
       "term": "g%",
@@ -762,280 +475,8 @@
       ]
     },
     {
-      "term": "mEq/L",
-      "plain": "milliequivalents per liter -- an older laboratory measure of an electrolyte's concentration in the blood.",
-      "category": "unit",
-      "aliases": [
-        "meq"
-      ]
-    },
-    {
-      "term": "cc",
-      "plain": "cubic centimeter -- a unit of volume equal to one milliliter (mL).",
-      "category": "unit"
-    },
-    {
-      "term": "tinnitus",
-      "plain": "ringing or buzzing in the ears",
-      "category": "medical",
-      "aliases": [
-        "tinnitis"
-      ]
-    },
-    {
-      "term": "osteofibrosis",
-      "plain": "replacement of normal bone with fibrous scar tissue",
-      "category": "medical"
-    },
-    {
-      "term": "myelofibrosis",
-      "plain": "scarring of the bone marrow that crowds out normal blood-cell production",
-      "category": "medical",
-      "aliases": []
-    },
-    {
-      "term": "chromatolysis",
-      "plain": "breakdown of the protein-making structures inside a damaged nerve cell",
-      "category": "medical",
-      "aliases": []
-    },
-    {
-      "term": "leukopenia",
-      "plain": "a low total white-blood-cell count",
-      "category": "medical",
-      "aliases": [
-        "leucopenia"
-      ]
-    },
-    {
-      "term": "hepatocholangiocarcinoma",
-      "plain": "a rare cancer arising from both liver cells and bile-duct cells",
-      "category": "medical",
-      "aliases": []
-    },
-    {
-      "term": "electrolysis",
-      "plain": "using an electric current to split a compound into its parts",
-      "category": "medical",
-      "aliases": []
-    },
-    {
-      "term": "hydrolysis",
-      "plain": "a chemical reaction that splits a compound apart using water",
-      "category": "medical",
-      "aliases": []
-    },
-    {
-      "term": "neuroencephalopathy",
-      "plain": "brain damage caused by a toxin",
-      "category": "medical",
-      "aliases": []
-    },
-    {
-      "term": "RDA",
-      "plain": "the government's Recommended Dietary Allowance — a bare-minimum intake meant only to prevent deficiency disease, which Wallach considers far too low for real health",
-      "category": "nutrition",
-      "aliases": [
-        "recommended dietary allowance"
-      ]
-    },
-    {
-      "term": "True Supplement Need",
-      "plain": "Wallach's own daily maintenance target — the amount he says you actually need to take each day for lasting health, set well above the RDA",
-      "category": "nutrition"
-    },
-    {
-      "term": "30-Day Pharmacologic",
-      "plain": "a higher, short-term therapeutic dose taken for about a month to correct an existing deficiency, above the everyday maintenance amount",
-      "category": "nutrition",
-      "aliases": [
-        "pharmacologic daily dose",
-        "pharmacologic dose"
-      ]
-    },
-    {
-      "term": "autoimmune",
-      "plain": "when the body's immune system attacks its own healthy tissue",
-      "category": "medical",
-      "aliases": [
-        "autoimmunity"
-      ]
-    },
-    {
-      "term": "congenital",
-      "plain": "present from birth",
-      "category": "medical"
-    },
-    {
-      "term": "goiter",
-      "plain": "a swollen thyroid gland, seen as a lump in the neck",
-      "category": "medical",
-      "aliases": [
-        "goitre"
-      ]
-    },
-    {
-      "term": "ataxia",
-      "plain": "loss of muscle coordination and balance",
-      "category": "medical",
-      "aliases": [
-        "ataxic"
-      ]
-    },
-    {
-      "term": "systemic",
-      "plain": "affecting the whole body, not just one part",
-      "category": "medical"
-    },
-    {
-      "term": "myelin",
-      "plain": "the fatty insulating sheath around nerve fibers",
-      "category": "medical"
-    },
-    {
-      "term": "metalloenzyme",
-      "plain": "an enzyme that needs a specific mineral to work",
-      "category": "medical",
-      "aliases": [
-        "metalloenzymes"
-      ]
-    },
-    {
-      "term": "benign",
-      "plain": "not cancerous; harmless",
-      "category": "medical"
-    },
-    {
-      "term": "phytate",
-      "plain": "a plant compound that binds minerals and blocks their absorption",
-      "category": "nutrition",
-      "aliases": [
-        "phytates",
-        "phytic acid"
-      ]
-    },
-    {
-      "term": "hypothyroidism",
-      "plain": "an underactive thyroid gland",
-      "category": "medical",
-      "aliases": [
-        "hypothyroid"
-      ]
-    },
-    {
-      "term": "tetany",
-      "plain": "muscle cramps and spasms, often from low calcium",
-      "category": "medical"
-    },
-    {
-      "term": "varicose",
-      "plain": "swollen, twisted veins, usually in the legs",
-      "category": "medical"
-    },
-    {
-      "term": "aneurysm",
-      "plain": "a bulge in the weakened wall of a blood vessel",
-      "category": "medical",
-      "aliases": [
-        "aneurysms"
-      ]
-    },
-    {
-      "term": "cerebellum",
-      "plain": "the brain region that controls balance and coordination",
-      "category": "medical",
-      "aliases": [
-        "cerebellar"
-      ]
-    },
-    {
-      "term": "cation",
-      "plain": "a positively charged ion",
-      "category": "nutrition",
-      "aliases": [
-        "cations"
-      ]
-    },
-    {
-      "term": "collagen",
-      "plain": "the main structural protein in skin, bone, and connective tissue",
-      "category": "medical"
-    },
-    {
-      "term": "goitrogen",
-      "plain": "a substance that interferes with the thyroid and can cause goiter",
-      "category": "nutrition",
-      "aliases": [
-        "goitrogens"
-      ]
-    },
-    {
-      "term": "chondroitin",
-      "plain": "a cushioning building-block compound found in cartilage",
-      "category": "nutrition"
-    },
-    {
-      "term": "lipid",
-      "plain": "a fat or fat-like molecule",
-      "category": "nutrition",
-      "aliases": [
-        "lipids"
-      ]
-    },
-    {
-      "term": "congestive",
-      "plain": "relating to heart failure in which fluid backs up in the lungs and body",
-      "category": "medical"
-    },
-    {
-      "term": "polyunsaturated",
-      "plain": "a type of fat with several double bonds, common in vegetable and fish oils",
-      "category": "nutrition"
-    },
-    {
-      "term": "kwashiorkor",
-      "plain": "severe malnutrition caused by too little protein",
-      "category": "medical"
-    },
-    {
-      "term": "geophagia",
-      "plain": "compulsive eating of dirt or clay",
-      "category": "medical"
-    },
-    {
-      "term": "keratomalacia",
-      "plain": "softening and clouding of the cornea from severe vitamin A deficiency",
-      "category": "medical"
-    },
-    {
-      "term": "keratin",
-      "plain": "the tough protein that forms hair, nails, and the outer skin",
-      "category": "medical"
-    },
-    {
-      "term": "kinase",
-      "plain": "an enzyme that switches proteins on or off by adding a phosphate group",
-      "category": "medical",
-      "aliases": [
-        "kinases"
-      ]
-    },
-    {
-      "term": "glycogen",
-      "plain": "the body's stored form of glucose, kept in the liver and muscles",
-      "category": "nutrition"
-    },
-    {
-      "term": "malignant",
-      "plain": "cancerous and able to spread to other tissues",
-      "category": "medical",
-      "aliases": [
-        "malignancy"
-      ]
-    },
-    {
-      "term": "pagophagia",
-      "plain": "compulsive chewing of ice",
+      "term": "galactosemia",
+      "plain": "an inherited inability to digest the milk sugar galactose",
       "category": "medical"
     },
     {
@@ -1047,12 +488,344 @@
       ]
     },
     {
-      "term": "telomere",
-      "plain": "the protective cap on the end of a chromosome",
+      "term": "gastritis",
+      "plain": "inflammation of the stomach lining",
+      "category": "medical"
+    },
+    {
+      "term": "gastroenteritis",
+      "plain": "inflammation of the stomach and intestines ('stomach flu')",
+      "category": "medical"
+    },
+    {
+      "term": "geophagia",
+      "plain": "compulsive eating of dirt or clay",
+      "category": "medical"
+    },
+    {
+      "term": "gingivitis",
+      "plain": "gum inflammation",
+      "category": "medical"
+    },
+    {
+      "term": "Glacial Milk",
+      "plain": "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
+      "category": "science",
+      "aliases": []
+    },
+    {
+      "term": "glaucoma",
+      "plain": "eye damage from high internal pressure, a cause of blindness",
+      "category": "medical"
+    },
+    {
+      "term": "glossitis",
+      "plain": "inflammation of the tongue",
+      "category": "medical"
+    },
+    {
+      "term": "glycogen",
+      "plain": "the body's stored form of glucose, kept in the liver and muscles",
+      "category": "nutrition"
+    },
+    {
+      "term": "goiter",
+      "plain": "a swollen thyroid gland, seen as a lump in the neck",
       "category": "medical",
       "aliases": [
-        "telomeres"
+        "goitre"
       ]
+    },
+    {
+      "term": "goitrogen",
+      "plain": "a substance that interferes with the thyroid and can cause goiter",
+      "category": "nutrition",
+      "aliases": [
+        "goitrogens"
+      ]
+    },
+    {
+      "term": "goitrogenic",
+      "plain": "capable of causing goiter (thyroid enlargement)",
+      "category": "medical",
+      "aliases": [
+        "goiterogenic"
+      ]
+    },
+    {
+      "term": "gonorrhea",
+      "plain": "a sexually transmitted bacterial infection",
+      "category": "medical"
+    },
+    {
+      "term": "halitosis",
+      "plain": "bad breath",
+      "category": "medical"
+    },
+    {
+      "term": "hematuria",
+      "plain": "blood in the urine",
+      "category": "medical"
+    },
+    {
+      "term": "hemorrhage",
+      "plain": "heavy or uncontrolled bleeding",
+      "category": "medical",
+      "aliases": [
+        "hemorrhagic"
+      ]
+    },
+    {
+      "term": "hemosiderosis",
+      "plain": "iron overload deposited in the tissues",
+      "category": "medical"
+    },
+    {
+      "term": "hepatitis",
+      "plain": "liver inflammation",
+      "category": "medical"
+    },
+    {
+      "term": "hepatocholangiocarcinoma",
+      "plain": "a rare cancer arising from both liver cells and bile-duct cells",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "hepatomegaly",
+      "plain": "an enlarged liver",
+      "category": "medical"
+    },
+    {
+      "term": "hydrochloric acid",
+      "plain": "the strong acid the stomach makes to digest protein, absorb B12 and free up minerals — abbreviated HCl",
+      "category": "physiology",
+      "aliases": [
+        "hcl",
+        "hc1",
+        "stomach acid"
+      ]
+    },
+    {
+      "term": "hydroencephalocele",
+      "plain": "a birth defect where brain tissue protrudes through the skull",
+      "category": "medical"
+    },
+    {
+      "term": "hydrolysis",
+      "plain": "a chemical reaction that splits a compound apart using water",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "hydrophobic",
+      "plain": "water-repelling",
+      "category": "medical"
+    },
+    {
+      "term": "hypercalcemia",
+      "plain": "high calcium levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hyperglycemia",
+      "plain": "high blood sugar",
+      "category": "medical",
+      "aliases": [
+        "hyperglycemic"
+      ]
+    },
+    {
+      "term": "hyperinsulinemia",
+      "plain": "chronically high insulin levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hyperkeratosis",
+      "plain": "thickening of the skin's outer layer",
+      "category": "medical"
+    },
+    {
+      "term": "hyperplasia",
+      "plain": "tissue enlargement from an increased number of cells",
+      "category": "medical"
+    },
+    {
+      "term": "hypertrophy",
+      "plain": "tissue enlargement from bigger cells",
+      "category": "medical",
+      "aliases": [
+        "hypertrophic"
+      ]
+    },
+    {
+      "term": "hypervitaminosis",
+      "plain": "toxicity from an excess of vitamins",
+      "category": "medical"
+    },
+    {
+      "term": "hypochlorhydria",
+      "plain": "too little stomach acid",
+      "category": "medical",
+      "aliases": [
+        "low stomach acid"
+      ]
+    },
+    {
+      "term": "hypoglycemia",
+      "plain": "low blood sugar",
+      "category": "medical",
+      "aliases": [
+        "hypoglycemic"
+      ]
+    },
+    {
+      "term": "hypophosphatemia",
+      "plain": "low phosphate levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hypoplasia",
+      "plain": "underdevelopment of a tissue or organ",
+      "category": "medical"
+    },
+    {
+      "term": "hypoproteinemia",
+      "plain": "low protein levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hypothyroidism",
+      "plain": "an underactive thyroid gland",
+      "category": "medical",
+      "aliases": [
+        "hypothyroid"
+      ]
+    },
+    {
+      "term": "hysterectomy",
+      "plain": "surgical removal of the uterus",
+      "category": "medical"
+    },
+    {
+      "term": "iatrogenic",
+      "plain": "caused by medical treatment itself",
+      "category": "medical"
+    },
+    {
+      "term": "ichthyosis",
+      "plain": "dry, scaly, fish-like skin",
+      "category": "medical"
+    },
+    {
+      "term": "intrinsic factor",
+      "plain": "a substance in stomach juice that vitamin B12 must attach to before the body can absorb it",
+      "category": "physiology",
+      "aliases": [
+        "castle's intrinsic factor"
+      ]
+    },
+    {
+      "term": "ischemia",
+      "plain": "reduced blood flow to tissue",
+      "category": "medical",
+      "aliases": [
+        "ischemic"
+      ]
+    },
+    {
+      "term": "keratin",
+      "plain": "the tough protein that forms hair, nails, and the outer skin",
+      "category": "medical"
+    },
+    {
+      "term": "keratitis",
+      "plain": "inflammation of the cornea, the clear front of the eye",
+      "category": "medical"
+    },
+    {
+      "term": "keratomalacia",
+      "plain": "softening and clouding of the cornea from severe vitamin A deficiency",
+      "category": "medical"
+    },
+    {
+      "term": "keratosis",
+      "plain": "a horny thickening of the skin",
+      "category": "medical"
+    },
+    {
+      "term": "ketoacidosis",
+      "plain": "dangerous acid buildup from unmanaged fat-burning, seen in diabetes",
+      "category": "medical"
+    },
+    {
+      "term": "kinase",
+      "plain": "an enzyme that switches proteins on or off by adding a phosphate group",
+      "category": "medical",
+      "aliases": [
+        "kinases"
+      ]
+    },
+    {
+      "term": "kwashiorkor",
+      "plain": "severe malnutrition caused by too little protein",
+      "category": "medical"
+    },
+    {
+      "term": "kyphosis",
+      "plain": "excessive outward curve of the upper spine (hunchback)",
+      "category": "medical"
+    },
+    {
+      "term": "laryngitis",
+      "plain": "inflammation of the voice box",
+      "category": "medical"
+    },
+    {
+      "term": "leptospirosis",
+      "plain": "a bacterial infection spread through animal urine",
+      "category": "medical"
+    },
+    {
+      "term": "leukemia",
+      "plain": "cancer of the blood and bone marrow",
+      "category": "medical"
+    },
+    {
+      "term": "leukopenia",
+      "plain": "a low total white-blood-cell count",
+      "category": "medical",
+      "aliases": [
+        "leucopenia"
+      ]
+    },
+    {
+      "term": "leukorrhea",
+      "plain": "a whitish vaginal discharge",
+      "category": "medical"
+    },
+    {
+      "term": "ligand",
+      "plain": "a molecule that binds to a protein or receptor",
+      "category": "medical"
+    },
+    {
+      "term": "lipid",
+      "plain": "a fat or fat-like molecule",
+      "category": "nutrition",
+      "aliases": [
+        "lipids"
+      ]
+    },
+    {
+      "term": "lipodystrophy",
+      "plain": "abnormal loss or redistribution of body fat",
+      "category": "medical"
+    },
+    {
+      "term": "lordosis",
+      "plain": "excessive inward curve of the lower spine (swayback)",
+      "category": "medical"
     },
     {
       "term": "macrophage",
@@ -1063,162 +836,73 @@
       ]
     },
     {
-      "term": "neutrophil",
-      "plain": "the most common white blood cell that fights infection",
-      "category": "medical",
-      "aliases": [
-        "neutrophils"
-      ]
-    },
-    {
-      "term": "neurotransmitter",
-      "plain": "a chemical messenger that carries signals between nerve cells",
-      "category": "medical",
-      "aliases": [
-        "neurotransmitters"
-      ]
-    },
-    {
-      "term": "cytoplasm",
-      "plain": "the jelly-like fluid that fills a cell",
-      "category": "medical"
-    },
-    {
-      "term": "hydrophobic",
-      "plain": "water-repelling",
-      "category": "medical"
-    },
-    {
-      "term": "anaerobic",
-      "plain": "happening without oxygen",
-      "category": "medical"
-    },
-    {
-      "term": "aldehyde",
-      "plain": "a reactive type of organic molecule",
-      "category": "medical",
-      "aliases": [
-        "aldehydes"
-      ]
-    },
-    {
-      "term": "carcinogen",
-      "plain": "a cancer-causing substance",
-      "category": "medical",
-      "aliases": [
-        "carcinogens"
-      ]
-    },
-    {
       "term": "macular",
       "plain": "relating to the macula, the central seeing part of the retina",
       "category": "medical"
     },
     {
-      "term": "atrioventricular",
-      "plain": "between the heart's upper and lower chambers",
-      "category": "medical"
-    },
-    {
-      "term": "oncogene",
-      "plain": "a gene that can turn a normal cell cancerous",
+      "term": "malignant",
+      "plain": "cancerous and able to spread to other tissues",
       "category": "medical",
       "aliases": [
-        "oncogenes"
+        "malignancy"
       ]
     },
     {
-      "term": "fibroblast",
-      "plain": "a cell that produces collagen and connective tissue",
+      "term": "melanoma",
+      "plain": "a serious skin cancer from pigment cells",
+      "category": "medical"
+    },
+    {
+      "term": "meningitis",
+      "plain": "inflammation of the membranes around the brain and spinal cord",
+      "category": "medical"
+    },
+    {
+      "term": "meningocele",
+      "plain": "a birth defect where the spinal membranes protrude through the spine",
+      "category": "medical"
+    },
+    {
+      "term": "mEq/L",
+      "plain": "milliequivalents per liter -- an older laboratory measure of an electrolyte's concentration in the blood.",
+      "category": "unit",
+      "aliases": [
+        "meq"
+      ]
+    },
+    {
+      "term": "metalloenzyme",
+      "plain": "an enzyme that needs a specific mineral to work",
       "category": "medical",
       "aliases": [
-        "fibroblasts"
+        "metalloenzymes"
       ]
     },
     {
-      "term": "erythropoietin",
-      "plain": "a hormone that signals the body to make red blood cells",
+      "term": "metamorphosis",
+      "plain": "the change in body form an animal goes through as it develops, such as a tadpole becoming a frog",
       "category": "medical"
     },
     {
-      "term": "epithelium",
-      "plain": "the sheet of cells that lines the body's surfaces and cavities",
+      "term": "metastasis",
+      "plain": "spread of cancer to distant parts of the body",
       "category": "medical",
       "aliases": [
-        "epithelial"
+        "metastatic"
       ]
     },
     {
-      "term": "organelle",
-      "plain": "a specialized structure inside a cell",
-      "category": "medical",
+      "term": "mg%",
+      "plain": "milligrams per deciliter (mg/dL) -- a blood concentration: how much of a substance is dissolved in a tenth of a liter. Despite the percent sign, it is not a true percentage.",
+      "category": "unit",
       "aliases": [
-        "organelles"
+        "mg %",
+        "mg percent",
+        "milligram percent",
+        "mg/100 ml",
+        "mg /100 ml"
       ]
-    },
-    {
-      "term": "ligand",
-      "plain": "a molecule that binds to a protein or receptor",
-      "category": "medical"
-    },
-    {
-      "term": "peptide",
-      "plain": "a short chain of amino acids",
-      "category": "nutrition",
-      "aliases": [
-        "peptides"
-      ]
-    },
-    {
-      "term": "triglyceride",
-      "plain": "the main form in which fat is stored and carried in the blood",
-      "category": "nutrition",
-      "aliases": [
-        "triglycerides"
-      ]
-    },
-    {
-      "term": "cellulose",
-      "plain": "the fiber that makes up plant cell walls",
-      "category": "nutrition"
-    },
-    {
-      "term": "disulfide",
-      "plain": "a sulfur-to-sulfur bond that holds a protein's shape",
-      "category": "medical"
-    },
-    {
-      "term": "redox",
-      "plain": "a reaction in which electrons pass from one molecule to another",
-      "category": "medical"
-    },
-    {
-      "term": "aerobic",
-      "plain": "requiring oxygen",
-      "category": "medical"
-    },
-    {
-      "term": "aflatoxin",
-      "plain": "a cancer-causing toxin made by mold on grains and nuts",
-      "category": "nutrition",
-      "aliases": [
-        "aflatoxins"
-      ]
-    },
-    {
-      "term": "zygote",
-      "plain": "a fertilized egg",
-      "category": "medical"
-    },
-    {
-      "term": "familial",
-      "plain": "running in families; inherited",
-      "category": "medical"
-    },
-    {
-      "term": "Zumbani",
-      "plain": "an African medicinal herb (Lippia javanica) used as a tonic for vitality and potency",
-      "category": "nutrition"
     },
     {
       "term": "Mineral Toddy",
@@ -1230,45 +914,230 @@
       ]
     },
     {
-      "term": "Rockland U.S.A.",
-      "plain": "The historical manufacturer of Mineral Toddy - the company that mined a prehistoric plant deposit and produced the original plant-derived colloidal mineral liquid Wallach adopted at Hospital Santa Monica. Elmer Heinrich ran it and continued supplying Wallach's American Longevity line (later Youngevity) from 1997 onward.",
-      "category": "product-history",
-      "aliases": [
-        "Rockland"
-      ]
-    },
-    {
-      "term": "SupraLife",
-      "plain": "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
-      "category": "product-history",
-      "aliases": [
-        "SupraLife International"
-      ]
-    },
-    {
-      "term": "Eagle",
-      "plain": "Wallach's original distributor company - the one that recruited him after his 'Dead Doctors Don't Lie' lecture reached its distributors. Renamed itself SupraLife International in 1998.",
-      "category": "product-history",
-      "aliases": [
-        "Soaring Eagle"
-      ]
-    },
-    {
-      "term": "American Longevity",
-      "plain": "The name Youngevity was founded under, in March 1997. Wallach called Elmer Heinrich at Rockland the day the company opened and secured mineral supply for the new line. American Longevity paid its first commissions on June 15, 1997, and later renamed to Youngevity.",
-      "category": "product-history",
-      "aliases": []
-    },
-    {
-      "term": "Virgin Earth",
-      "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
-      "category": "product-history",
-      "aliases": []
-    },
-    {
-      "term": "metamorphosis",
-      "plain": "the change in body form an animal goes through as it develops, such as a tadpole becoming a frog",
+      "term": "mucoviscidosis",
+      "plain": "an older name for cystic fibrosis",
       "category": "medical"
+    },
+    {
+      "term": "myelin",
+      "plain": "the fatty insulating sheath around nerve fibers",
+      "category": "medical"
+    },
+    {
+      "term": "myelofibrosis",
+      "plain": "scarring of the bone marrow that crowds out normal blood-cell production",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "myelosclerosis",
+      "plain": "hardening and scarring of the bone marrow",
+      "category": "medical"
+    },
+    {
+      "term": "necrosis",
+      "plain": "death of body tissue",
+      "category": "medical",
+      "aliases": [
+        "necrotic"
+      ]
+    },
+    {
+      "term": "neuralgia",
+      "plain": "sharp pain running along a nerve",
+      "category": "medical"
+    },
+    {
+      "term": "neuritis",
+      "plain": "inflammation of a nerve",
+      "category": "medical"
+    },
+    {
+      "term": "neuroencephalopathy",
+      "plain": "brain damage caused by a toxin",
+      "category": "medical",
+      "aliases": []
+    },
+    {
+      "term": "neuropathy",
+      "plain": "nerve damage causing numbness, tingling, or pain",
+      "category": "medical",
+      "aliases": [
+        "neuropathic"
+      ]
+    },
+    {
+      "term": "neurosis",
+      "plain": "an older term for anxiety-driven mental distress",
+      "category": "medical",
+      "aliases": [
+        "neurotic"
+      ]
+    },
+    {
+      "term": "neurotransmitter",
+      "plain": "a chemical messenger that carries signals between nerve cells",
+      "category": "medical",
+      "aliases": [
+        "neurotransmitters"
+      ]
+    },
+    {
+      "term": "neutropenia",
+      "plain": "an abnormally low count of infection-fighting white blood cells",
+      "category": "medical"
+    },
+    {
+      "term": "neutrophil",
+      "plain": "the most common white blood cell that fights infection",
+      "category": "medical",
+      "aliases": [
+        "neutrophils"
+      ]
+    },
+    {
+      "term": "omphalocele",
+      "plain": "a birth defect where organs protrude through the navel",
+      "category": "medical"
+    },
+    {
+      "term": "oncogene",
+      "plain": "a gene that can turn a normal cell cancerous",
+      "category": "medical",
+      "aliases": [
+        "oncogenes"
+      ]
+    },
+    {
+      "term": "ophthalmoplegia",
+      "plain": "paralysis of the eye muscles",
+      "category": "medical"
+    },
+    {
+      "term": "organelle",
+      "plain": "a specialized structure inside a cell",
+      "category": "medical",
+      "aliases": [
+        "organelles"
+      ]
+    },
+    {
+      "term": "osteitis",
+      "plain": "inflammation of bone",
+      "category": "medical"
+    },
+    {
+      "term": "osteoarthritis",
+      "plain": "wear-and-tear arthritis from cartilage breakdown",
+      "category": "medical"
+    },
+    {
+      "term": "osteofibrosis",
+      "plain": "replacement of normal bone with fibrous scar tissue",
+      "category": "medical"
+    },
+    {
+      "term": "osteopenia",
+      "plain": "mild bone-mineral loss, a precursor to osteoporosis",
+      "category": "medical"
+    },
+    {
+      "term": "osteoporosis",
+      "plain": "brittle, thinning bones from mineral loss",
+      "category": "medical",
+      "aliases": [
+        "osteoporotic"
+      ]
+    },
+    {
+      "term": "osteosarcoma",
+      "plain": "a bone cancer",
+      "category": "medical"
+    },
+    {
+      "term": "osteosclerosis",
+      "plain": "abnormal hardening and thickening of bone",
+      "category": "medical"
+    },
+    {
+      "term": "pagophagia",
+      "plain": "compulsive chewing of ice",
+      "category": "medical"
+    },
+    {
+      "term": "pancreatic enzymes",
+      "plain": "enzymes made by the pancreas that break food into pieces small enough to absorb — a different job from stomach acid",
+      "category": "physiology",
+      "aliases": [
+        "digestive enzymes",
+        "pancreatin",
+        "digestive aids"
+      ]
+    },
+    {
+      "term": "pancreatitis",
+      "plain": "inflammation of the pancreas",
+      "category": "medical"
+    },
+    {
+      "term": "parakeratosis",
+      "plain": "abnormal skin-cell maturation causing scaling",
+      "category": "medical"
+    },
+    {
+      "term": "parent rock",
+      "plain": "The bedrock a glacier grinds down, and what decides which minerals its meltwater carries. It's why the long-lived cultures' glacial milk holds 60–72 minerals while most of the world's glaciers grind rock with only 3–20.",
+      "category": "science",
+      "number_exempt": {
+        "reason": "Wallach's own mineral-count figures (glacial milk 60-72 minerals vs most glaciers' 3-20), manually verified against the cited claim and ratified by Luneth 2026-07-21; tooltip copy is frozen. Anchored to the corpus, not smuggled.",
+        "claim_ids": [
+          "WAL-CLM-RARE-000071"
+        ],
+        "approved": "Luneth 2026-07-21 (manual override + review)"
+      },
+      "aliases": []
+    },
+    {
+      "term": "pediculosis",
+      "plain": "a lice infestation",
+      "category": "medical"
+    },
+    {
+      "term": "pepsin",
+      "plain": "the stomach’s protein-digesting enzyme, switched on by stomach acid",
+      "category": "physiology"
+    },
+    {
+      "term": "peptide",
+      "plain": "a short chain of amino acids",
+      "category": "nutrition",
+      "aliases": [
+        "peptides"
+      ]
+    },
+    {
+      "term": "periodontitis",
+      "plain": "gum disease that damages the bone anchoring the teeth",
+      "category": "medical"
+    },
+    {
+      "term": "phenylketonuria",
+      "plain": "an inherited inability to process the amino acid phenylalanine",
+      "category": "medical"
+    },
+    {
+      "term": "phlebitis",
+      "plain": "inflammation of a vein",
+      "category": "medical"
+    },
+    {
+      "term": "phytate",
+      "plain": "a plant compound that binds minerals and blocks their absorption",
+      "category": "nutrition",
+      "aliases": [
+        "phytates",
+        "phytic acid"
+      ]
     },
     {
       "term": "plant derived",
@@ -1288,20 +1157,87 @@
       ]
     },
     {
-      "term": "colloidal",
-      "plain": "The mineral's physical FORM, not its source: ultra-fine solid particles held suspended in a liquid — too small to settle out or filter, but not fully dissolved. Wallach says this ultra-fine, suspended form is why the body takes them up so readily. Note: glacier-ground 'rock flour' is colloidal too, yet Wallach calls it 'metallic' and poorly absorbed — so being colloidal alone is not what makes a mineral usable.",
-      "category": "nutrition",
+      "term": "pleuritis",
+      "plain": "inflammation of the lung lining (pleurisy)",
+      "category": "medical"
+    },
+    {
+      "term": "pneumonitis",
+      "plain": "inflammation of lung tissue",
+      "category": "medical"
+    },
+    {
+      "term": "polypeptides",
+      "plain": "partly digested protein fragments — too big to be absorbed safely",
+      "category": "physiology",
       "aliases": [
-        "colloid",
-        "colloids",
-        "colloidal form"
+        "polypeptide"
       ]
     },
     {
-      "term": "Glacial Milk",
-      "plain": "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
-      "category": "science",
-      "aliases": []
+      "term": "polyunsaturated",
+      "plain": "a type of fat with several double bonds, common in vegetable and fish oils",
+      "category": "nutrition"
+    },
+    {
+      "term": "polyuria",
+      "plain": "excessive urination",
+      "category": "medical"
+    },
+    {
+      "term": "prostaglandins",
+      "plain": "hormone-like substances that regulate inflammation and other body functions",
+      "category": "medical",
+      "aliases": [
+        "prostaglandin"
+      ]
+    },
+    {
+      "term": "proteinuria",
+      "plain": "protein leaking into the urine",
+      "category": "medical"
+    },
+    {
+      "term": "psittacosis",
+      "plain": "a bird-borne bacterial lung infection",
+      "category": "medical",
+      "aliases": [
+        "ornithosis"
+      ]
+    },
+    {
+      "term": "psychosis",
+      "plain": "a mental state of losing touch with reality",
+      "category": "medical",
+      "aliases": [
+        "psychotic"
+      ]
+    },
+    {
+      "term": "q.i.d.",
+      "plain": "four times a day (Latin: quater in die)",
+      "category": "abbreviation",
+      "aliases": [
+        "qid"
+      ]
+    },
+    {
+      "term": "RDA",
+      "plain": "the government's Recommended Dietary Allowance — a bare-minimum intake meant only to prevent deficiency disease, which Wallach considers far too low for real health",
+      "category": "nutrition",
+      "aliases": [
+        "recommended dietary allowance"
+      ]
+    },
+    {
+      "term": "redox",
+      "plain": "a reaction in which electrons pass from one molecule to another",
+      "category": "medical"
+    },
+    {
+      "term": "rhinitis",
+      "plain": "inflammation of the nasal lining, causing a runny or stuffy nose",
+      "category": "medical"
     },
     {
       "term": "rock flour",
@@ -1310,31 +1246,201 @@
       "aliases": []
     },
     {
-      "term": "parent rock",
-      "plain": "The bedrock a glacier grinds down, and what decides which minerals its meltwater carries. It's why the long-lived cultures' glacial milk holds 60–72 minerals while most of the world's glaciers grind rock with only 3–20.",
-      "category": "science",
-      "number_exempt": {
-        "reason": "Wallach's own mineral-count figures (glacial milk 60-72 minerals vs most glaciers' 3-20), manually verified against the cited claim and ratified by Luneth 2026-07-21; tooltip copy is frozen. Anchored to the corpus, not smuggled.",
-        "claim_ids": [
-          "WAL-CLM-RARE-000071"
-        ],
-        "approved": "Luneth 2026-07-21 (manual override + review)"
-      },
-      "aliases": []
+      "term": "Rockland U.S.A.",
+      "plain": "The historical manufacturer of Mineral Toddy - the company that mined a prehistoric plant deposit and produced the original plant-derived colloidal mineral liquid Wallach adopted at Hospital Santa Monica. Elmer Heinrich ran it and continued supplying Wallach's American Longevity line (later Youngevity) from 1997 onward.",
+      "category": "product-history",
+      "aliases": [
+        "Rockland"
+      ]
     },
     {
-      "term": "Age Beaters",
-      "plain": "Wallach's nickname for the handful of unusually long-lived peoples he studied — such as the Hunza and the Vilcabamba — where reaching a healthy old age is common rather than rare.",
-      "category": "science",
+      "term": "sarcoidosis",
+      "plain": "an inflammatory disease that forms small nodules, often in the lungs",
+      "category": "medical"
+    },
+    {
+      "term": "sarcoma",
+      "plain": "a cancer arising from bone, muscle, or connective tissue",
+      "category": "medical"
+    },
+    {
+      "term": "sclerosis",
+      "plain": "abnormal hardening of tissue",
+      "category": "medical",
       "aliases": [
-        "Age Beater"
+        "sclerotic"
       ]
+    },
+    {
+      "term": "scoliosis",
+      "plain": "sideways curvature of the spine",
+      "category": "medical"
+    },
+    {
+      "term": "sinusitis",
+      "plain": "inflammation of the sinuses",
+      "category": "medical"
+    },
+    {
+      "term": "splenomegaly",
+      "plain": "an enlarged spleen",
+      "category": "medical"
+    },
+    {
+      "term": "spondylitis",
+      "plain": "inflammation of the spinal joints",
+      "category": "medical"
+    },
+    {
+      "term": "steatohepatitis",
+      "plain": "fatty inflammation of the liver",
+      "category": "medical"
+    },
+    {
+      "term": "steatoma",
+      "plain": "a fatty cyst under the skin",
+      "category": "medical"
+    },
+    {
+      "term": "stenosis",
+      "plain": "abnormal narrowing of a passage or blood vessel",
+      "category": "medical"
+    },
+    {
+      "term": "stomatitis",
+      "plain": "inflammation of the mouth",
+      "category": "medical"
+    },
+    {
+      "term": "SupraLife",
+      "plain": "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
+      "category": "product-history",
+      "aliases": [
+        "SupraLife International"
+      ]
+    },
+    {
+      "term": "systemic",
+      "plain": "affecting the whole body, not just one part",
+      "category": "medical"
+    },
+    {
+      "term": "t.i.d.",
+      "plain": "three times a day (Latin: ter in die)",
+      "category": "abbreviation",
+      "aliases": [
+        "tid"
+      ]
+    },
+    {
+      "term": "telomere",
+      "plain": "the protective cap on the end of a chromosome",
+      "category": "medical",
+      "aliases": [
+        "telomeres"
+      ]
+    },
+    {
+      "term": "teratogenic",
+      "plain": "capable of causing birth defects",
+      "category": "medical"
+    },
+    {
+      "term": "tetany",
+      "plain": "muscle cramps and spasms, often from low calcium",
+      "category": "medical"
+    },
+    {
+      "term": "thrombosis",
+      "plain": "a blood clot blocking a vessel",
+      "category": "medical",
+      "aliases": [
+        "thrombus",
+        "thrombotic"
+      ]
+    },
+    {
+      "term": "tinnitus",
+      "plain": "ringing or buzzing in the ears",
+      "category": "medical",
+      "aliases": [
+        "tinnitis"
+      ]
+    },
+    {
+      "term": "tonsillectomy",
+      "plain": "surgical removal of the tonsils",
+      "category": "medical"
+    },
+    {
+      "term": "tonsillitis",
+      "plain": "inflammation of the tonsils",
+      "category": "medical"
+    },
+    {
+      "term": "toxoplasmosis",
+      "plain": "a parasite infection, especially risky in pregnancy",
+      "category": "medical"
+    },
+    {
+      "term": "tracheotomy",
+      "plain": "a surgical opening made into the windpipe",
+      "category": "medical"
+    },
+    {
+      "term": "triglyceride",
+      "plain": "the main form in which fat is stored and carried in the blood",
+      "category": "nutrition",
+      "aliases": [
+        "triglycerides"
+      ]
+    },
+    {
+      "term": "True Supplement Need",
+      "plain": "Wallach's own daily maintenance target — the amount he says you actually need to take each day for lasting health, set well above the RDA",
+      "category": "nutrition"
+    },
+    {
+      "term": "tuberculosis",
+      "plain": "a contagious bacterial lung infection",
+      "category": "medical"
+    },
+    {
+      "term": "tularemia",
+      "plain": "a bacterial infection from rabbits and rodents ('rabbit fever')",
+      "category": "medical"
+    },
+    {
+      "term": "vaginitis",
+      "plain": "inflammation of the vagina",
+      "category": "medical"
+    },
+    {
+      "term": "varicose",
+      "plain": "swollen, twisted veins, usually in the legs",
+      "category": "medical"
+    },
+    {
+      "term": "Virgin Earth",
+      "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
+      "category": "product-history",
+      "aliases": []
     },
     {
       "term": "Wallach's Fibrous Dysplasia",
       "plain": "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "Zumbani",
+      "plain": "an African medicinal herb (Lippia javanica) used as a tonic for vitality and potency",
+      "category": "nutrition"
+    },
+    {
+      "term": "zygote",
+      "plain": "a fertilized egg",
+      "category": "medical"
     }
   ]
 }

@@ -22,7 +22,7 @@ import curationData from '../../../data/foods-curation.json';
 import { type FoodsCuration, FoodsCurationSchema, type SearchClaim } from '../core/schemas/index.js';
 import { claimsForSubject, displayName, getSearchClaim } from './search.js';
 
-const EMPTY: FoodsCuration = { hero_claims: [], remove: [], eat: [], conditional: [] };
+const EMPTY: FoodsCuration = { hero_claims: [], remove: [], eat: [], conditional: [], enzyme_claims: [] };
 
 let cached: FoodsCuration | null = null;
 
@@ -42,6 +42,22 @@ function data(): FoodsCuration {
 export function foodsThesisClaims(): SearchClaim[] {
   const out: SearchClaim[] = [];
   for (const id of data().hero_claims) {
+    const c = getSearchClaim(id);
+    if (c !== null) {
+      out.push(c);
+    }
+  }
+  return out;
+}
+
+/**
+ * Section 04's digestive-enzyme claims, in curated reading order (the instruction -> the scale ->
+ * the mechanism -> the counter-move). An id that resolves to nothing is silently skipped, exactly
+ * like the hero list, so a curation edit can never blank the tab.
+ */
+export function foodsEnzymeClaims(): SearchClaim[] {
+  const out: SearchClaim[] = [];
+  for (const id of data().enzyme_claims) {
     const c = getSearchClaim(id);
     if (c !== null) {
       out.push(c);

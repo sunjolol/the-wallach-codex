@@ -3781,10 +3781,23 @@ _GLOSSARY_DATE_TOKEN = re.compile(
 )
 
 
+# R9 REFINEMENT 2026-07-24: a vitamin's DESIGNATION (B12, B-12, D3, K2, B6) is part of its NAME,
+# not a health number - exactly like a year. The gate over-fired on the plain-language definition of
+# "intrinsic factor", which cannot be written for a lay reader without naming vitamin B12 (the only
+# alternative, "cobalamin", is the jargon the gloss exists to remove). Stripped BEFORE the digit
+# check, same shape as the date exclusion. Deliberately NARROW: one A-K letter, an optional hyphen,
+# and 1-2 digits with NO intervening space, so a real dose standing beside a vitamin name still
+# trips - "B6 100 mg" strips the B6 and the 100 fires. Word-bounded, so the book's OCR token "HC1"
+# is untouched. Proved by tools/test_glossary_wellformed.py.
+_GLOSSARY_VITAMIN_TOKEN = re.compile(r"\b[A-K]-?\d{1,2}\b")
+
+
 def _glossary_definition_has_smuggled_number(plain):
-    """True iff `plain` still contains a digit after every year-shaped token is stripped.
-    Extracted so the negative test in tools/test_glossary_wellformed.py can drive it directly."""
-    return bool(re.search(r"\d", _GLOSSARY_DATE_TOKEN.sub("", plain)))
+    """True iff `plain` still contains a digit after every year-shaped token AND every vitamin
+    designation is stripped. Extracted so the negative test in
+    tools/test_glossary_wellformed.py can drive it directly."""
+    stripped = _GLOSSARY_VITAMIN_TOKEN.sub("", _GLOSSARY_DATE_TOKEN.sub("", plain))
+    return bool(re.search(r"\d", stripped))
 
 
 def _corpus_claim_digit_runs():
