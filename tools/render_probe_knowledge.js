@@ -459,7 +459,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['rail K opens drawer', afterClick.open === true && afterClick.hasHead === true],
     // Essentials left the MENU on 2026-07-23 (it duplicated Coverage) while staying a live route.
     // Asserting its ABSENCE is the point: if it ever reappears here, that is a regression.
-    ['tab bar: exactly the 5 tabs, Essentials absent', tabBar.tabs.length === 5 && ['Home','Absorption','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t)) && !tabBar.tabs.includes('Essentials')],
+    ['tab bar: exactly the 6 tabs, Essentials absent', tabBar.tabs.length === 6 && ['Home','Absorption','ORAC','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t)) && !tabBar.tabs.includes('Essentials')],
     ['tab bar: Corpus + Doctrine removed', !tabBar.tabs.includes('Corpus') && !tabBar.tabs.includes('Doctrine')],
     ['tab bar: Home is the default active tab', tabBar.active === 'Home'],
     ['home: tab renders its container', tabBar.homeShown === true],

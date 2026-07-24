@@ -18408,12 +18408,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_foods_villi_ok_title: "Healthy gut",
       kd_foods_villi_title: "What gluten does to your gut",
       kd_foods_words_label: "In his own words",
+      kd_orac_eyebrow_l: "The Wallach Codex \xB7 Knowledge",
+      kd_orac_eyebrow_r: "ORAC",
+      kd_orac_hero_hl1: "The score that measures",
+      kd_orac_hero_hl2: "how fast you rust.",
+      kd_orac_hero_deck: "Every day, unstable molecules called **free radicals** corrode your cells from the inside \u2014 the same reaction that rusts iron and browns a cut apple. **ORAC** is the one number that says how hard a food fights back.",
+      kd_orac_claims_kicker: "{n} claims Wallach makes about ORAC",
+      kd_orac_claims_h: "The full record",
+      kd_orac_claims_intro: "Every claim behind this page, grouped by what it answers. This is the same set that powers Ask Wallach \u2014 the page is both the experience and the database.",
       kd_best_match: "Best match",
       kd_mark: "KNOWLEDGE",
       kd_tab_conditions: "Conditions",
       kd_tab_essentials: "Essentials",
       kd_tab_explore: "Explore",
       kd_tab_foods: "Absorption",
+      kd_tab_orac: "ORAC",
       kd_tab_home: "Home",
       kd_tab_products: "Products",
       kh_conditions_hint: "what Wallach wrote most about",
@@ -70276,6 +70285,10 @@ deaths, blood clots, sterility`,
   function claimsForSubject(subject) {
     return index2().claims.filter((c) => c.subject === subject).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
   }
+  var ORAC_SUBJECTS = /* @__PURE__ */ new Set(["orac", "antioxidants", "free_radicals", "longevity"]);
+  function oracClaims() {
+    return index2().claims.filter((c) => ORAC_SUBJECTS.has(c.subject) && (c.subject === "orac" || c.also_about.includes("orac"))).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+  }
   function booksForSubject(subject) {
     const titles = /* @__PURE__ */ new Set();
     for (const c of claimsForSubject(subject)) {
@@ -70345,6 +70358,14 @@ deaths, blood clots, sterility`,
     }
     const head = `${b.title.toUpperCase()} (${b.year})`;
     return claim.page !== null ? `${head} \xB7 P.${claim.page}` : head;
+  }
+  function composeShortCite(claim) {
+    const b = claim.book_id !== null ? index2().books[claim.book_id] : void 0;
+    if (b === void 0) {
+      return "";
+    }
+    const short = b.title.replace(/:.*$/, "").trim();
+    return `${short} (${b.year})`;
   }
   var claimByIdCache = null;
   function getSearchClaim(id) {
@@ -70639,7 +70660,7 @@ deaths, blood clots, sterility`,
     return out.slice(0, 8);
   }
   var bridge = window;
-  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies };
+  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies, oracClaims };
 
   // assets/js/src/views/glossify.ts
   function escHTML3(s) {
@@ -100965,14 +100986,75 @@ deaths, blood clots, sterility`,
     return html;
   }
 
-  // assets/js/src/views/knowledge-topic.ts
+  // assets/js/src/views/knowledge-orac.ts
   function escHTML10(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  function emph(raw) {
+    return escHTML10(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  }
+  function sectionHeader2(num, kickerHTML, headingKey) {
+    return `<div class="kd-orac-sec">
+      <span class="kd-orac-sec__num">${escHTML10(num)}</span>
+      <div class="kd-orac-sec__body">
+        ${kickerHTML}
+        <h2 class="kd-orac-sec__h">${escHTML10(ui(headingKey))}</h2>
+      </div>
+    </div>`;
+  }
+  function oracClaimCard(c) {
+    return `<div class="kd-orac-claim">
+      <div class="kd-orac-claim__q">${escHTML10(c.question)}</div>
+      <p class="kd-orac-claim__a">${escHTML10(c.answer_short)}</p>
+      <div class="kd-orac-claim__src">${escHTML10(composeShortCite(c))}</div>
+    </div>`;
+  }
+  function oracClaimGroups(claims) {
+    const order = ["big_question", ...SEARCH_FACETS.filter((f) => f !== "big_question")];
+    return order.map((facet) => {
+      const inFacet = claims.filter((c) => c.facet === facet);
+      if (inFacet.length === 0) {
+        return "";
+      }
+      return `<div class="kd-orac-fgroup">
+      <div class="kd-orac-fgroup__h">${escHTML10(facetLabel(facet))}<span class="kd-orac-fgroup__n">${inFacet.length}</span></div>
+      <div class="kd-orac-claimlist">${inFacet.map(oracClaimCard).join("")}</div>
+    </div>`;
+    }).join("");
+  }
+  function renderOracTab() {
+    const claims = oracClaims();
+    const kicker = `<div class="kd-orac-sec__k">${escHTML10(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
+    return `<div class="kt-page kd-orac">
+    <header class="kd-orac-hero">
+      <div class="kd-orac-eyebrow">
+        <span class="kd-orac-eyebrow__l">${escHTML10(ui("kd_orac_eyebrow_l"))}</span>
+        <span class="kd-orac-eyebrow__rule"></span>
+        <span class="kd-orac-eyebrow__r">${escHTML10(ui("kd_orac_eyebrow_r"))}</span>
+      </div>
+      <div class="kd-orac-hd">
+        <span class="kd-orac-hd__num">01</span>
+        <div>
+          <h1 class="kd-orac-hero__h"><span class="l1">${escHTML10(ui("kd_orac_hero_hl1"))}</span><span class="l2">${escHTML10(ui("kd_orac_hero_hl2"))}</span></h1>
+          <p class="kd-orac-hero__deck">${emph(ui("kd_orac_hero_deck"))}</p>
+        </div>
+      </div>
+    </header>
+
+    ${sectionHeader2("09", kicker, "kd_orac_claims_h")}
+    <p class="kd-orac-p">${escHTML10(ui("kd_orac_claims_intro"))}</p>
+    <div class="kd-orac-claims">${oracClaimGroups(claims)}</div>
+  </div>`;
+  }
+
+  // assets/js/src/views/knowledge-topic.ts
+  function escHTML11(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function relPill(slug) {
     const t = relTarget(slug);
     const name = displayName2(slug);
-    return t === null ? `<span class="kt-pill kt-pill--static">${escHTML10(name)}</span>` : `<button class="kt-pill" type="button" ${t.attr}="${escHTML10(t.val)}">${escHTML10(name)}</button>`;
+    return t === null ? `<span class="kt-pill kt-pill--static">${escHTML11(name)}</span>` : `<button class="kt-pill" type="button" ${t.attr}="${escHTML11(t.val)}">${escHTML11(name)}</button>`;
   }
   function relTarget(slug) {
     const essAttr = (s) => {
@@ -101003,27 +101085,27 @@ deaths, blood clots, sterility`,
     const groups = facetGroups(slug);
     const lede = entityLede(slug);
     const sym = e.symbol ?? "";
-    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML10(sym)}</span>` : "";
+    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML11(sym)}</span>` : "";
     const rels = e.related.map(relPill).join("");
-    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML10(ui("kt_related"))}</span>${rels}</div>` : "";
+    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML11(ui("kt_related"))}</span>${rels}</div>` : "";
     const nClaims = groups.reduce((n, g) => n + g.claims.length, 0);
     const books = booksForSubject(slug);
     const noun = plural(nClaims, "claim");
     const meta = books.length > 0 ? ui("kt_meta_full").replace("{n}", String(nClaims)).replace("{noun}", noun).replace("{books}", books.join(", ")) : ui("kt_meta").replace("{n}", String(nClaims)).replace("{noun}", noun);
-    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML10(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML10(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
+    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML11(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML11(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
       <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
     </details>`).join("");
     return `<div class="kt-page kd-ep">
     <header class="kt-hero">
       <div class="kt-hero__top">
-        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML10(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML10(ui("kt_kicker"))}</button></span>
-        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML10(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML11(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML11(ui("kt_kicker"))}</button></span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML11(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
       </div>
-      <div class="kt-title">${symHTML}<h1>${escHTML10(e.common_name ?? e.display_name)}</h1></div>
-      ${lede.length > 0 ? `<p class="kt-lede">${escHTML10(lede)}</p>` : ""}
+      <div class="kt-title">${symHTML}<h1>${escHTML11(e.common_name ?? e.display_name)}</h1></div>
+      ${lede.length > 0 ? `<p class="kt-lede">${escHTML11(lede)}</p>` : ""}
       ${relBlock}
-      <div class="kt-meta">${escHTML10(meta)}</div>
+      <div class="kt-meta">${escHTML11(meta)}</div>
     </header>
     ${facetsHTML}
   </div>`;
@@ -101151,7 +101233,7 @@ deaths, blood clots, sterility`,
     }
     return "uncovered";
   }
-  function escHTML11(s) {
+  function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var CRUMB_MAX = 6;
@@ -101180,7 +101262,7 @@ deaths, blood clots, sterility`,
       return "";
     }
     const items = trail.map(
-      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML11(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML11(c.label)}</button>`
+      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML12(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML12(c.label)}</button>`
     ).join('<span class="kd-crumb__sep" aria-hidden="true">\u203A</span>');
     return `<nav class="kd-crumbs" aria-label="Breadcrumb">${items}</nav>`;
   }
@@ -101198,16 +101280,16 @@ deaths, blood clots, sterility`,
   var COV_STATES = ["covered", "partial", "uncovered", "present"];
   function renderEssentialsTab(snapshot, selectedKey) {
     const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : "";
-    const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML11(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML11(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
+    const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML12(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML12(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
     const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
         const dot = dotState(statusOf(snapshot, e.key));
         const sel = e.key === selectedKey ? " is-selected" : "";
-        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML11(e.category)}" data-kd-essential="${escHTML11(e.key)}" title="${escHTML11(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML11(e.symbol)}</span><span class="sh-tile__nm">${escHTML11(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML11(plural(e.claimCount, "claim"))}</span></button>`;
+        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML12(e.category)}" data-kd-essential="${escHTML12(e.key)}" title="${escHTML12(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML12(e.symbol)}</span><span class="sh-tile__nm">${escHTML12(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML12(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
       const key = SEC_LABEL_KEY[group.label];
       const label = key !== void 0 ? ui(key) : group.label;
-      return `<div class="sh-subhead">${escHTML11(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
+      return `<div class="sh-subhead">${escHTML12(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${legendHTML}${groupsHTML}`;
   }
@@ -101223,6 +101305,8 @@ deaths, blood clots, sterility`,
         return renderHomeTab();
       case "foods":
         return renderFoodsTab();
+      case "orac":
+        return renderOracTab();
       case "essentials":
         return renderEssentialsTab(snapshot, selectedKey);
       case "conditions":
@@ -101239,14 +101323,15 @@ deaths, blood clots, sterility`,
     const tabs = [
       { id: "home", label: ui("kd_tab_home"), count: "" },
       { id: "foods", label: ui("kd_tab_foods"), count: "" },
+      { id: "orac", label: ui("kd_tab_orac"), count: "" },
       { id: "conditions", label: ui("kd_tab_conditions"), count: `${listConditions().length} INDEXED` },
       { id: "explore", label: ui("kd_tab_explore"), count: `${exploreEntities().length} TOPICS` },
       { id: "products", label: ui("kd_tab_products"), count: `${productsCount} KNOWN` }
     ];
-    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML11(t.label)}</button>`).join("");
+    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML12(t.label)}</button>`).join("");
     return `
     <header class="kd-knh">
-      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML11(ui("kd_mark"))}</b></div>
+      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML12(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
@@ -101261,6 +101346,7 @@ deaths, blood clots, sterility`,
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
     foods: ".kd-foods-topic",
+    orac: ".kd-orac-claim",
     essentials: ".sh-tile",
     conditions: ".kd-condition-row",
     explore: ".kd-explore-chip",
@@ -101269,6 +101355,7 @@ deaths, blood clots, sterility`,
   var KD_TITLE_SELECTOR = {
     home: null,
     foods: null,
+    orac: null,
     essentials: ".sh-tile__nm",
     conditions: ".kd-condition-row__name",
     explore: null,
@@ -104163,7 +104250,13 @@ Board 77/77 throughout (design-only, nothing drifted). Handoff rewritten to the 
 
 Technical: state/search.ts -- entityFamilies gathers page.search (enriched) + page.record (raw, via corpus.resolveClaims), dedups by id, maps facet->family + kind->family (kindCategory), groups into 5 families best-first (qa before raw); entityInQuery over ~600 entity names+synonyms (longest-first) + a hybrid resolveQuery (route a MENTIONED entity to its page unless the top claim's subject IS it -- kills gold-for-cancer); CHARGED{homosexuality,intersex}+chargedExplicit+isCharged filter askRanked unless the query names the topic; displayName wide-upgrade; relatedSlugs/entityExists/isChargedEntity. views/search.ts -- renderTopicPage rebuilt to family groups (renderFamilyGroup/renderEntityRow qa-or-raw), renderKeepExploring, clickable .ehero--link hero, wide-clickable renderRelPill, charged-filtered renderEmpty. core/events.ts + views/knowledge.ts + main.ts -- knowledge:open-entity widened to essential|condition|product|topic + the openEntity topic-overlay branch. drawer-search.css -- [data-family] colour rules, .exrow, .ehero--link hover, .eback 0.7rem/centered/+5px margin, and REMOVED the backdrop-filter blur for a plain rgba(18,14,10,0.74) scrim (a blur over a full-screen overlay re-rasterizes the page every repaint = the lag; a solid wash is guaranteed cheap). view-copy.json -- search_fam_*_more nouns. tools/render_probe_search.js -- NEW, closes the standing WISH; asserts the rich behaviour + intent + charged gate + cross-nav. Doctrine: .claude/rules/search-corpus.md + memory mining-serves-ask-wallach elevate ALL future mining to serve Ask-Wallach with the enrichment recipe.
 
-Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-build: unused import, dead export), render_probe_search PASS 0 page errors, headless screenshots. Deferrals: testosterone->strength is a MINING gap (system ready, data not mined); products-in-search fast-follow; wide-entity synonyms sparse (name-match only).` }, { id: "lg_mry796e6_qxixu0", ts: "2026-07-23T19:26:08.670626-05:00", surface: "ask-wallach", kind: "build", summary: "Search blur restored lag-free (the animations behind it were the cost, not the blur) + typography pass + scanning line removed + entity-page colour clustering", detail: "Two things landed. First, the Ask-Wallach popup gets its blurred background back without the lag that made us drop it. The blur was never the problem: seven always-on animations sit behind the popup and force the browser to redraw the whole page every frame; add a blur and it re-blurs the entire page on every one of those frames. Pausing those animations while the popup is open lets the browser blur once and reuse it. Second, Luneth's touchup pass: fonts, and the orange line that swept down every page is gone.\n\nMEASUREMENT (negative-controlled, because the first instrument lied). rAF frame cadence was BLIND in headless - a 60px full-viewport blur measured identical to no blur at all - which the built-in negative control caught, so that reading was discarded rather than reported. A devtools trace over 3s of hover agitation showed the truth: blur RADIUS is irrelevant (7px 288ms / 60px 274ms / none 292ms), while freezing the ambient animations cuts compositor work 292 to 81ms and frame commits 434 to 234 (-72 percent). Blur smoothness itself is NOT measurable headless; that was signed off by eye. Honest gap, recorded.\n\nIMPLEMENTATION. drawer-search.css: backdrop-filter blur(var(--aw-scrim-blur)) at 3.5px (halved from 7px on request), translateZ(0)+backface-visibility composite hint, and a :has()-scoped animation-play-state:paused freeze over .app-topbar/.app-workspace/#drawer-knowledge-mount/#drawer-journey-mount. A dedicated probe asserts the freeze ENGAGES on open and RELEASES on close - a permanent freeze would have been the obvious bug. Scrim darkness deliberately unchanged and pinned by assertion.\n\nTYPOGRAPHY. .rail__item and .ep-seclabel and .sh-hero h1 moved to var(--ds-font-display) (Unbounded via type-futurist.css) at --ds-text-mini / --ds-text-sm / --ds-text-2xl - tokens, not raw numbers. .ep-seclabel__hint + a: 9px to 10px. The orange .ds-scan-line was removed AT SOURCE from all four emitting views plus both dead CSS rules, not merely hidden.\n\nENTITY-PAGE COLOUR CLUSTERING. Claim sections are tinted by facet family, and the default order interleaved them. The first attempt - Luneth's two requested swaps - changed NOTHING on essentials pages, because no essential carries both protocol+stance or both big_question+history; all 6 improved pages were Explore topics. That correction was surfaced immediately and the decision re-opened rather than left standing on a wrong basis. Option B then landed: families contiguous, Cautions deliberately held at position 2. Essentials 16 to 12 colour switches, hydrogen+potassium 3 to 1, 0 pages worse. Full clustering would have scored 11 instead of 12, on copper alone, and was rejected rather than bury a health caution below four sections.\n\nVERIFICATIONS: build OK, invariants 77/77 (0 new reds), render_probe + _knowledge + _search + _seeded all exit 0, entity-page-data.json regenerated and byte-gated, potassium screenshot confirms the clustering on screen.\n\nDEFERRED: the sealed design-system stylesheet still names ds-scan-sweep among '7 painted offenders' (now 6) in its reduced-motion comment. It is a user-only canonical, so it was flagged for a signed patch rather than silently edited." }, { id: "lg_mry7ksec_nzk4jx", ts: "2026-07-23T19:35:10.404510-05:00", surface: "knowledge", kind: "build", summary: "Related pills route to their real pages (264/272), and Ask-Wallach 'Learn More' on an essential no longer opens an empty page", detail: "The 'related' bubbles on topic pages are clickable now. The cause was that the app keeps two lists of things - a small search registry of 73 enriched entities, and the big corpus of 91 essentials plus 502 conditions - and the pills only ever consulted the small one. So a pill for Selenium, Zinc, Cancer or Osteoporosis rendered as dead text even though every one of those pages exists. They consult both now.\n\nA REAL BUG FOUND ON THE WAY. Ask-Wallach's 'Learn More' on any ESSENTIAL had been opening a blank page since the day it shipped. openEntity passed a corpus SLUG ('calcium') into a handler that keys by the Coverage LAYOUT KEY ('Calcium'), and getEssentialByLayoutKey is an exact map lookup, so it missed and renderEssentialPage fell through to its 'no sealed page record' fallback - an empty page titled with the raw lowercase slug. Measured before: heroName 'calcium', 0 facet sections, 397 chars of body. After: 'Calcium', 4 sections, 130284 chars. The existing render probe never caught it because it only covered the condition and topic paths. Fixed at the root in openEntity so every caller - Learn More, related pills, and the Coverage cards still to come - is fixed at once.\n\nTHE FIRST CUT WAS WRONG AND THE AUDIT CAUGHT IT. Routing only registry entities still left 46 distinct pills dead. Auditing all 272 related pills against the artifacts - rather than eyeballing one page and declaring victory - exposed it. After the corpus fallback: 264 route, 8 dead. The 8 are digestion, epigenetics, margarine, ph, poultry, silicon, villi and wheat: topics with no page yet, reported to Luneth rather than quietly linked somewhere plausible.\n\nRegistry type wins when a slug is in both, so entities that are BOTH a registry element and a corpus essential (gold, hydrogen, potassium) keep opening the Explore page they open today. The change only ADDS destinations; it never re-points a pill that already worked.\n\nTWO GATES FIRED AND BOTH WERE RIGHT. no_new_dead_code and views_no_inline_prose flagged a relPillUnrouted diagnostic helper I had written - genuinely uncalled, with prose reason-strings sitting in a view. It was DELETED rather than baselined: the audit runs in Python over search-index.json and corpus-embed.json, which covers all 272 pills instead of only the ones a rendered page happens to show, so the helper was the worse instrument anyway.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0, and browser-verified - butter shows Vitamin A / Vitamin D / Vitamin K live with Margarine static; gluten shows Celiac Disease / Nutrient Absorption / Malabsorption / Phytates live with Villi and Wheat static; clicking Vitamin A lands on its essential page via layout key 'Vitamin A (Retinol / beta-carotene)'." }, { id: "lg_mry7smim_r27l3k", ts: "2026-07-23T19:41:16.030412-05:00", surface: "knowledge", kind: "build", summary: "Best-match block pins exact title hits on every filterable tab; Explore gets a search bar that searches content", detail: "Typing 'acne' on the Conditions tab used to match every condition whose CLAIMS mention acne, ordered by claim count, so the actual Acne page sat far down a list of 31 results. Real title matches are now pinned in a 'Best match' strip at the top, most-exact always first. The Explore tab, which had no filter at all, now has one - and it searches content, not just chip labels.\n\nRANKING (Luneth's spec). AND-over-terms on the TITLE, which is what makes a multi-word query narrow rather than widen: 'cancer' pins Cancer plus 11 more cancers, while 'breast cancer' pins only Breast Cancer, because no other title carries both terms. Rank 0 = the title IS the query, and that slot is reserved so a perfect match can never be outranked; 1 = starts-with; 2 = merely contains; ties break on the shorter title so 'Cancer' precedes 'Cancer, Breast'. Cap 12: one exact plus up to eleven.\n\nWHY TITLES NEEDED THEIR OWN SOURCE. The data-search blob deliberately makes a row match on content - that is the feature that lets 'smell' find Anosmia - but it is also exactly what buries a title hit. So ranking reads the title alone, via a per-tab KD_TITLE_SELECTOR, while filtering keeps using the blob.\n\nHOISTED, NOT CLONED. The pinned rows are the ORIGINAL DOM nodes, moved. They therefore keep their per-tab styling and their delegated click handlers, and they cannot render twice - Luneth chose 'disappear from the bottom results' explicitly. Each move records where it came from, and every keystroke restores the previous set before ranking again, so ordering never compounds on itself. applyKnowledgeSearch was restructured into restore -> mark -> hoist -> head-pass, in that order, so a section whose rows were ALL hoisted reports itself empty instead of showing a head over nothing.\n\nEXPLORE CONTENT SEARCH. Each chip now carries a data-search blob of the entity's lay synonyms, its claims' topic tags, and its claims' QUESTION text - questions are phrased the way people actually search. Answer and verbatim bodies are deliberately excluded: they would multiply the attribute across every chip and make a topic match on one incidental word, which reads as a false positive.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0. Browser-verified: 'acne' pins Acne first (previously buried among 31 results), 'cancer' pins Cancer then eleven more cancers, 'breast cancer' pins exactly one, clearing the query restores all 502 rows with zero hidden and removes the block, the Explore bar exists, 'celiac' matches three Explore chips through their claim questions, and Explore 'mercury' pins Mercury first.\n\nINSTRUMENT NOTE: the first verification run reported nonsense - 'acne' pinned as '9'. That was the PROBE reading a condition row's big ghost claim-count as its title, not a fault in the feature. Fixed in the probe. Worth recording because a wrong instrument that returns plausible-looking output is the failure mode that wastes the most time." }, { id: "lg_mry8080x_iivi97", ts: "2026-07-23T19:47:10.497307-05:00", surface: "knowledge", kind: "build", summary: "Essentials tab leaves the drawer menu; every Coverage element card becomes the new entrance to its detail page", detail: "The Essentials tab duplicated the Coverage page the user already starts on, so the menu item is gone. The surface itself stays exactly where it was - it just became a place you arrive at rather than a place you navigate to. Clicking any element card on Coverage now opens that element's page directly, which is the new front door.\n\nTHREE DOORS, ALL VERIFIED. The essentials list keeps: Home's 'open the full table' link, the breadcrumb trail, and the '< All essentials' button on an essential's own page. Luneth corrected an earlier note of mine here - 'open the full table' was NOT re-pointed at Coverage; it still opens the 90-essentials view exactly as before.\n\nCOVERAGE CARDS. The tiles previously had NO click behaviour at all, only hover-focus, so this displaces nothing. The new branch is checked LAST in the delegated handler, so every action control above it - goal add, row remove, dose steppers, product recommendations - still wins when clicked inside a tile. data-tile carries the layout key; it resolves to the canon slug before emitting knowledge:open-entity rather than leaning on a fallback, so the event contract keeps meaning what it says. All 91 of 91 tiles verified to open a real page.\n\nTHE ROUTE STAYS ALIVE. Only the menu ENTRY was removed; 'essentials' is still a Tab and renderTab still serves it. A comment says so at the deletion site, because the obvious future mistake is to 'restore' the missing tab. ESS_ESSENTIAL_COUNT, which existed only to label that tab, was deleted with it rather than left as dead code - tsc caught it immediately.\n\nTHE PROBE WAS UPDATED, NOT BYPASSED. render_probe_knowledge asserted 'exactly the 6 tabs incl. Essentials' and reached the surface by clicking a button that no longer exists, so it failed - correctly. It now asserts the 5-tab menu with Essentials ABSENT, so a reappearance is caught as a regression, and it navigates through door 1 instead, which means the probe exercises a real user path rather than a synthetic one.\n\nVERIFICATIONS: build OK, invariants 77/77, SIX render probes exit 0 (coverage, knowledge, search, seeded, adopt, scan). Browser-verified: 91/91 coverage tiles open an essential page, the menu is exactly home/foods/conditions/explore/products, door 1 reaches 91 tiles, door 3 returns to 91 tiles.\n\nINSTRUMENT NOTES, recorded because both produced confident-looking wrong answers: a bare [data-kd-tab] selector also matches BREADCRUMB anchors, so the menu check reported 'essentials' present when it was a crumb - and correctly so, having just navigated in; and a condition row's textContent begins with its big ghost claim-count, so a title readout returned '9' and '65'. Both were probe bugs, not feature bugs, and both were fixed in the probes." }, { id: "lg_mry8ds33_pcnxw9", ts: "2026-07-23T19:57:43.023766-05:00", surface: "knowledge", kind: "build", summary: "Drawer tab menu to Unbounded 0.7rem (a missed item from the touchup batch) + Explore's first category pulled flush", detail: "Two small visual fixes. The knowledge drawer's tab menu now uses the Unbounded font at 0.7rem, and the Explore tab's first category no longer sits a full gap below the search bar.\n\nTHE MENU FONT WAS A MISS, and worth recording as one. It was part of Luneth's original touchup batch. I deferred it to the essentials chunk on the reasoning that removing a tab would free the horizontal room for a larger face - which was sound - and then simply never applied it when that chunk landed. No gate covers 'a requested visual change was silently dropped', so it took Luneth re-reading his own list to catch it. The lesson is not about this font: a deferral inside a multi-item batch is exactly where an item goes missing, because the batch gets marked done on the strength of the items that DID land.\n\nTHE CHANGES. .kd-knh__tab moves from --ds-font-display-interface to --ds-font-display (Unbounded via type-futurist.css) and from --ds-text-xs to --ds-text-mini, which is 0.7rem exactly, so the token carries Luneth's number with no drift. .kd-explore-group:first-child gets margin-top 0; the --ds-space-5 rule stays on every following group, because he asked for the leading gap only and explicitly not the spacing between categories.\n\nVERIFICATIONS: invariants 77/77, render_probe_knowledge and render_probe_search exit 0, browser-verified the menu computes to Unbounded at 11.2px and the Explore groups measure [Therapies & ideas 0px, Big concepts 24px, Elements 24px]. The probe asserts the SECOND group still has its margin, so flattening every gap would FAIL rather than pass quietly - the obvious way to get this wrong." }, { id: "lg_mry8q7bg_o2766q", ts: "2026-07-23T20:07:22.636382-05:00", surface: "knowledge", kind: "build", summary: "Drawer menu to 0.65rem and optically centered - it was already geometrically centered, which is why it looked wrong", detail: "The knowledge drawer's tab menu is now 0.65rem and sits centered between the KNOWLEDGE mark and the close button.\n\nTHE INTERESTING PART. The menu was ALREADY dead-center in the header - measured offset 0px from the content box midpoint. Had I trusted that number and replied 'it is centered', I would have been correct and useless. What made it read as left-shifted is that the two side columns were each flex: 1 1 0, so each claimed an equal 101px, but their VISIBLE content differs completely: the left column is filled by the 'KNOWLEDGE' text, while the right holds a 34px close button flush right with roughly 67px of empty column beside it. The eye therefore measured 24px of gap after the mark and about 91px before the [X]. Geometric centering and optical centering were not the same thing, and the eye was right.\n\nTHE FIX. Both side columns size to their content (flex: 0 0 auto) and the tab pill takes margin-inline: auto, so the leftover space splits evenly around the thing you can actually see. Measured after: 77px of gap on each side, tabs center 723 exactly equal to the midpoint between the mark's right edge and the button's left edge.\n\nTHE FONT. 0.65rem is a literal, not a token: it sits between --ds-text-micro (0.6rem) and --ds-text-mini (0.7rem), so no token expresses it and borrowing the nearest one would have said something false about the value.\n\nVERIFICATIONS: invariants 77/77, render_probe_knowledge and render_probe_search exit 0. The probe asserts the two GAPS are equal, deliberately, rather than asserting the pill is centered in its container - the container-centering property was already TRUE while the defect stood, so testing it would have passed and proved nothing. Picking the assertion that can actually fail is the whole job." }, { id: "lg_mry8v22a_mlbat4", ts: "2026-07-23T20:11:09.106394-05:00", surface: "knowledge", kind: "round-close", summary: "Menu font back to 0.7rem; session round-close - Luneth's full touchup batch shipped across 6 commits, board 77/77, all 8 probes green", detail: "The drawer menu font goes back to 0.7rem - 0.65 read as too easy to miss - while keeping the optical centering from the previous entry. Re-measured after the revert: 63px and 62px of gap (1px rounding), tabs center 724 against a visible midpoint of 723. The centering absorbed a wider pill without any re-tuning, which is exactly why it was done with auto margins rather than a fixed offset.\n\nSESSION ROUND-CLOSE. Luneth's dashboard-wide touchup batch is complete across six commits: the Ask-Wallach blur restored lag-free plus the typography pass and the scanning line removed; entity-page colour clustering; related pills routing 264 of 272 plus the empty-essential Learn More bug fixed at its root; the Best-match block and the Explore content filter; the Essentials tab leaving the menu with Coverage cards as its new entrance; and the drawer menu font plus Explore's leading margin.\n\nTWO THINGS I GOT WRONG AND WAS CAUGHT ON, recorded because they are the useful part. First: I said 'good to go' and then ended my turn instead of continuing to work, so nothing happened while Luneth was away - a handoff message is not a handoff. Second: I deferred the drawer menu font to the essentials chunk and then never applied it, and reported the batch complete anyway; no gate covers 'a requested visual change was silently dropped', so it took him re-reading his own list. A deferral inside a multi-item batch is where items disappear, because the batch gets declared done on the strength of what DID land.\n\nSEAL CHECK. Nothing needed sealing. design_system_hash_integrity, design_system_write_protection, products_hash_integrity, graphics_integrity and derived_artifacts_fresh are all green and no pillar was touched. The one sealed-file item still outstanding is the stale reduced-motion comment in the design-system stylesheet, which still lists ds-scan-sweep among '7 painted offenders' though the scan line was deleted and there are now 6. It was deliberately NOT edited under the general 'permission to seal': that gate's own docstring says an agent re-sealing to match its own css edit is exactly what it catches, so it wants a per-file green light rather than a blanket one. Zero functional impact, a two-line fix whenever he names that file.\n\nVERIFICATIONS: invariants 77/77 (0 new reds), all EIGHT render probes exit 0 - coverage, knowledge, search, seeded, adopt, scan, ocr, slots." }, { id: "lg_mryavlm3_gjnoso", ts: "2026-07-23T21:07:33.675690-05:00", surface: "shell", kind: "build", summary: "Topbar title to Unbounded 0.85rem; rail drawer buttons stop lying about being open", detail: "Two small fixes Luneth asked for. The page title top-left is now the Unbounded font at 0.85rem. And the real one: clicking a side-rail drawer then closing it from inside left the rail button still highlighted, as if the drawer were still open. The rail highlight is worked out FROM the drawer state, but the shell only recalculated it on the paths it controlled itself - so closing via the drawer's own X button quietly left the button lit.\n\nFixed at the source instead of patching each close site: core/events.ts gains a typed 'drawer:toggled' {target, open}; views/knowledge.ts, views/journey.ts and views/search.ts emit it from BOTH open() and close(); main.ts subscribes once at boot and re-syncs the rail. Any future close path is therefore covered for free. dashboard.css .np__name moves from --ds-font-display-interface to --ds-font-display (type-futurist.css maps that to Unbounded) and 1.05rem to 0.85rem; the TOKEN was deliberately not repointed because 89 rules across 6 stylesheets read it. New probe tools/render_probe_rail_sync.js drives all three drawers through their own internal close affordance - deliberately not Esc and not the rail button, since those two paths already worked - and asserts the highlight drops. Verified: build OK, invariants 77/77 at the time of the change, coverage/knowledge/search/seeded probes exit 0, rail_sync exit 0. Negative control: the same probe against the pre-fix bundle fails on all three drawers with railActive=true after close and reports the nameplate as Chakra Petch 16.8px, so it demonstrably detects the bug it guards. Lint 8 errors before and after, none introduced. render_probe_journey and render_probe_entity fail but fail identically at HEAD, so they are pre-existing." }, { id: "lg_mrycd8h3_jen1is", ts: "2026-07-23T21:49:16.071917-05:00", surface: "knowledge", kind: "milestone", summary: "ORAC becomes a first-class topic: 20 claims, 3 new Explore entities, 4 source-purification chunks", detail: "Wallach writes about ORAC across three of his books and the app had nothing on it - no entity, no page, no claim any question could reach. Someone asking 'what causes age spots' or 'how many antioxidants do I actually need' got silence. That is now 20 claims behind an ORAC Score topic in Explore, and because every enriched claim feeds Ask Wallach automatically, they are searchable the moment they exist.\n\nThe mining could not start until the source was fixed. Immortality pp.378-381 is a two-column layout and the OCR had fused the columns line by line, so the shard literally read 'ORAC is a method of measuring antioxidant capacities Cloves, ground 314,446'. The continuation table was worse: OCR emitted all 43 food names as one block and the numbers as another, dropping 18 of the left column's 23 values outright. Four purification chunks were applied and recorded in eden/tools/purity-specs/: the pp.378-379 de-interleave, the pp.380-381 table rebuilt as 43 name+value rows, four numeral fixes in Hell's Kitchen p.253 (']Prunes 21.00)' was really '1 Prunes 5,770'), and an orphan 'ee' fragment that mined_pages_clean caught the moment the chocolate claim made screenshot 225 a mined page. Every correction was verified against the page image, not the OCR - Hell's Kitchen had to be rendered from its PDF at 4x because the PDF's own text layer carries the identical damage. The book's own print spellings were deliberately preserved (Florescein, catechens, Cabernet Suavignon, Pomagranate) because the page really prints them; correcting those would make the shard say something the page does not, which is forgery rather than purification. The p.380-381 rebuild is safe because the shard's surviving digits independently confirm it: the 5 left-column values OCR kept and all 20 right-column values match the image exactly.\n\n20 claims authored (immortality 15, hells-kitchen 4, epigenetics 1), every verbatim snapped to exact book bytes by corpus_extract finalize, covering 12 of the 13 facets. Three new type:topic entities - orac, antioxidants, free_radicals - with lay-first synonyms, since synonyms are what route a real person's phrasing to the right page. The >100,000-ORAC figure was NOT duplicated: it already lives in an existing claim enriched as an eggs question, so it was cross-linked via also_about instead.\n\nVerified: corpus_verify PASS at knowledge_version=383 (1366 claims, 7 books), invariants 77/77, six render probes green, the ORAC chip renders with 183 cards and zero page errors, and live Ask-Wallach routing confirmed for four lay phrasings. One honest gap left open: 'highest antioxidant food' still ranks the weight-loss warning above the highest-ORAC-foods claim - a real scoring miss, flagged for tuning rather than quietly patched. corpus_seal is user-only and was run on Luneth's explicit approval of all 20 claims plus 'commit/push these live'." }, { id: "lg_mryecjuv_kwzm3e", ts: "2026-07-23T22:44:43.399026-05:00", surface: "knowledge", kind: "milestone", summary: "The four longevity pieces: ORAC is one quarter of Wallach's anti-aging answer, and minerals are a separate piece", detail: "Luneth's critique of the ORAC demo asked a question the page could not answer: if antioxidants only raise the AVERAGE lifespan and not the maximum, what raises the ceiling? Going to look for the answer turned up a whole framework nobody had mined. Wallach names FOUR longevity pieces and says leaving out any one of them causes catastrophic failure - and they are the section headings of Immortality's Chapter 12 itself: Antioxidants, Calorie Restricted Diets, Mineral-rich Diets, and Land Mines. So ORAC is one quarter of the answer, and minerals are their own separate piece, which is exactly the distinction Luneth suspected was missing.\n\nThe material was unquotable until it was fixed. Pages 376-377 carry the same two-column OCR fusion as the earlier chunks - 'There is an accumulated knowledge, however, thatyeyeals the simple and universal common threads' is the left column's '...however, that' welded onto the right column's 'reveals the simple...'. Getting the reading order right mattered and was easy to get wrong, so both columns of the page image were read separately at 2.7x: page 376 ends mid-sentence on '...beyond 100 years is' and page 377 picks it up with 'that: 1) consciously or unconsciously...'. A second fix repaired lost word spacing on the Land Mines opening, which would otherwise have shipped as 'thatwillcertainly preventyoufrom' inside a quote users actually read.\n\nNine claims landed, every verbatim snapped to exact book bytes: the four pieces; that every human has the genetic equipment to live well beyond 100; 'beautiful, healthful and functional' - which is Wallach's own answer to the objection that a longer life just means a longer old age; the genetics rebuttal that even if everyone in your family died at 35 you can still reach 100; the 20 to 25 years the industrialized world is losing, with America sliding from 17th to 48th; calorie restriction at 1,250-1,800; the line that a high-protein low-carb diet is forgiving of low vitamins but unforgiving of low minerals; where Blue Zone populations actually got their minerals; and the land mines themselves.\n\nTwo gates caught real mistakes rather than letting them ship. corpus_extract rejected the kind 'stance' - that is a SEARCH FACET, and the 14 claim kinds and 13 facets are different vocabularies I had conflated. And corpus_seal refused outright with 'claim references unknown/unhashed book' because the spacing fix was applied after the last resnap, leaving the book hash stale - the exact ordering trap the resnap documentation warns about.\n\nVerified: corpus_verify PASS at knowledge_version=384 (1375 claims, 7 books), invariants 77/77, and the ORAC page now has 30 claims across 12 facets, up from 21." }, { id: "lg_mrygv0ke_13521f", ts: "2026-07-23T23:55:04.094517-05:00", surface: "knowledge", kind: "milestone", summary: "Verified + mined Wallach's '150, 175 or 200' ceiling claim; applied Luneth's DevTools demo fixes", detail: "Two pieces. First, Luneth spent over half an hour fixing about 50 presentation issues on the ORAC demo using Chrome's inspect tool - but those edits live only in the browser's in-memory stylesheet and reverted on every save attempt, which is a genuinely nasty trap. Recovered them with a Console snapshot script that freezes the live DOM and serializes the edited CSSOM into a downloadable file; he dropped it in temporary/. On top of his fixes I applied the three bold-text tweaks he asked for. temporary/orac-EDITED.html is now the signed-off design reference.\n\nSecond, the anchor claim. Luneth wanted to be sure the '150, 175 or 200' line was really Wallach's words and not something we invented, and to mine it as an anchor. It lives in Screenshot 160, a two-page spread with the same column-fusion corruption as the earlier chunks - the claim was welded to an unrelated right-page fragment about commercially producing food in 4000 B.C. China. I verified it against the page image first, reading both columns separately: the claim is exact, and the shard's 'sav' is just an OCR slip for 'say'. Then I de-interleaved the whole region - left page is the longevity narrative (the experts who said cars at 50 mph would explode our hearts, the four-minute mile that 300 runners broke within a year of Bannister, the sound barrier, the moon landing, then 'who is to say we can't live to be 150, 175 or 200 - we believe we can!'), and the right page is the wood-ashes and plant-derived-minerals section. An 18-token guard confirmed nothing was dropped. This also unblocks the plant-derived-minerals material for a future mining pass.\n\nOne claim mined (WAL-CLM-IMMORT-000260), verbatim snapped to exact book bytes, enriched onto subject longevity with also_about orac. It is not on the frozen demo page yet - it flows in when the live view is built. Verified: corpus_verify PASS at knowledge_version 386 (1377 claims, 7 books), invariants 77/77, ORAC page now 32 claims reachable." }, { id: "lg_mryhf55t_akmy2r", ts: "2026-07-24T00:10:43.169232-05:00", surface: "knowledge", kind: "note", summary: "Fixed CSSOM var-shorthand extraction drops in the ORAC demo; handoff set for the live-view build", detail: "Closing note for the ORAC session. Luneth hand-tuned the demo with Chrome's inspect tool - about 50 fixes - but Chrome's CSSOM serialization silently drops any shorthand that contains a var() to empty longhands when you save it. So his live browser session looked right, but the saved file rendered margins and borders as zero. He caught three broken rules; a grep for empty declarations turned up a fourth. Restored all four to exactly match his live session: his own edits kept (the 3.5rem top margin, the -2rem bottom margin, the two accent border-lefts) and the dropped var-shorthands re-merged. Verified headless - no empty declarations left, computed styles correct, no page errors.\n\nThe signed-off demo lives at temporary/orac-EDITED.html, which is gitignored, so it is local-only until the live view is committed - flagged prominently in the handoff so it is not lost. Wrote a memory capturing the extraction pitfall and the grep-and-restore fix so we handle it cleanly next time he inspect-edits.\n\nHandoff rewritten for the next session: the ORAC topic is fully mined and sealed (knowledge_version 386, 32 claims across 12 facets) and its design is signed off, so the next task is a pure code build - turn the design reference into a real wired knowledge view that reads the 32 claims live, wires the Absorption handoff button and the claim cards, and adds the ORAC menu tab after Absorption. Board 77/77, working tree clean." }];
+Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-build: unused import, dead export), render_probe_search PASS 0 page errors, headless screenshots. Deferrals: testosterone->strength is a MINING gap (system ready, data not mined); products-in-search fast-follow; wide-entity synonyms sparse (name-match only).` }, { id: "lg_mry796e6_qxixu0", ts: "2026-07-23T19:26:08.670626-05:00", surface: "ask-wallach", kind: "build", summary: "Search blur restored lag-free (the animations behind it were the cost, not the blur) + typography pass + scanning line removed + entity-page colour clustering", detail: "Two things landed. First, the Ask-Wallach popup gets its blurred background back without the lag that made us drop it. The blur was never the problem: seven always-on animations sit behind the popup and force the browser to redraw the whole page every frame; add a blur and it re-blurs the entire page on every one of those frames. Pausing those animations while the popup is open lets the browser blur once and reuse it. Second, Luneth's touchup pass: fonts, and the orange line that swept down every page is gone.\n\nMEASUREMENT (negative-controlled, because the first instrument lied). rAF frame cadence was BLIND in headless - a 60px full-viewport blur measured identical to no blur at all - which the built-in negative control caught, so that reading was discarded rather than reported. A devtools trace over 3s of hover agitation showed the truth: blur RADIUS is irrelevant (7px 288ms / 60px 274ms / none 292ms), while freezing the ambient animations cuts compositor work 292 to 81ms and frame commits 434 to 234 (-72 percent). Blur smoothness itself is NOT measurable headless; that was signed off by eye. Honest gap, recorded.\n\nIMPLEMENTATION. drawer-search.css: backdrop-filter blur(var(--aw-scrim-blur)) at 3.5px (halved from 7px on request), translateZ(0)+backface-visibility composite hint, and a :has()-scoped animation-play-state:paused freeze over .app-topbar/.app-workspace/#drawer-knowledge-mount/#drawer-journey-mount. A dedicated probe asserts the freeze ENGAGES on open and RELEASES on close - a permanent freeze would have been the obvious bug. Scrim darkness deliberately unchanged and pinned by assertion.\n\nTYPOGRAPHY. .rail__item and .ep-seclabel and .sh-hero h1 moved to var(--ds-font-display) (Unbounded via type-futurist.css) at --ds-text-mini / --ds-text-sm / --ds-text-2xl - tokens, not raw numbers. .ep-seclabel__hint + a: 9px to 10px. The orange .ds-scan-line was removed AT SOURCE from all four emitting views plus both dead CSS rules, not merely hidden.\n\nENTITY-PAGE COLOUR CLUSTERING. Claim sections are tinted by facet family, and the default order interleaved them. The first attempt - Luneth's two requested swaps - changed NOTHING on essentials pages, because no essential carries both protocol+stance or both big_question+history; all 6 improved pages were Explore topics. That correction was surfaced immediately and the decision re-opened rather than left standing on a wrong basis. Option B then landed: families contiguous, Cautions deliberately held at position 2. Essentials 16 to 12 colour switches, hydrogen+potassium 3 to 1, 0 pages worse. Full clustering would have scored 11 instead of 12, on copper alone, and was rejected rather than bury a health caution below four sections.\n\nVERIFICATIONS: build OK, invariants 77/77 (0 new reds), render_probe + _knowledge + _search + _seeded all exit 0, entity-page-data.json regenerated and byte-gated, potassium screenshot confirms the clustering on screen.\n\nDEFERRED: the sealed design-system stylesheet still names ds-scan-sweep among '7 painted offenders' (now 6) in its reduced-motion comment. It is a user-only canonical, so it was flagged for a signed patch rather than silently edited." }, { id: "lg_mry7ksec_nzk4jx", ts: "2026-07-23T19:35:10.404510-05:00", surface: "knowledge", kind: "build", summary: "Related pills route to their real pages (264/272), and Ask-Wallach 'Learn More' on an essential no longer opens an empty page", detail: "The 'related' bubbles on topic pages are clickable now. The cause was that the app keeps two lists of things - a small search registry of 73 enriched entities, and the big corpus of 91 essentials plus 502 conditions - and the pills only ever consulted the small one. So a pill for Selenium, Zinc, Cancer or Osteoporosis rendered as dead text even though every one of those pages exists. They consult both now.\n\nA REAL BUG FOUND ON THE WAY. Ask-Wallach's 'Learn More' on any ESSENTIAL had been opening a blank page since the day it shipped. openEntity passed a corpus SLUG ('calcium') into a handler that keys by the Coverage LAYOUT KEY ('Calcium'), and getEssentialByLayoutKey is an exact map lookup, so it missed and renderEssentialPage fell through to its 'no sealed page record' fallback - an empty page titled with the raw lowercase slug. Measured before: heroName 'calcium', 0 facet sections, 397 chars of body. After: 'Calcium', 4 sections, 130284 chars. The existing render probe never caught it because it only covered the condition and topic paths. Fixed at the root in openEntity so every caller - Learn More, related pills, and the Coverage cards still to come - is fixed at once.\n\nTHE FIRST CUT WAS WRONG AND THE AUDIT CAUGHT IT. Routing only registry entities still left 46 distinct pills dead. Auditing all 272 related pills against the artifacts - rather than eyeballing one page and declaring victory - exposed it. After the corpus fallback: 264 route, 8 dead. The 8 are digestion, epigenetics, margarine, ph, poultry, silicon, villi and wheat: topics with no page yet, reported to Luneth rather than quietly linked somewhere plausible.\n\nRegistry type wins when a slug is in both, so entities that are BOTH a registry element and a corpus essential (gold, hydrogen, potassium) keep opening the Explore page they open today. The change only ADDS destinations; it never re-points a pill that already worked.\n\nTWO GATES FIRED AND BOTH WERE RIGHT. no_new_dead_code and views_no_inline_prose flagged a relPillUnrouted diagnostic helper I had written - genuinely uncalled, with prose reason-strings sitting in a view. It was DELETED rather than baselined: the audit runs in Python over search-index.json and corpus-embed.json, which covers all 272 pills instead of only the ones a rendered page happens to show, so the helper was the worse instrument anyway.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0, and browser-verified - butter shows Vitamin A / Vitamin D / Vitamin K live with Margarine static; gluten shows Celiac Disease / Nutrient Absorption / Malabsorption / Phytates live with Villi and Wheat static; clicking Vitamin A lands on its essential page via layout key 'Vitamin A (Retinol / beta-carotene)'." }, { id: "lg_mry7smim_r27l3k", ts: "2026-07-23T19:41:16.030412-05:00", surface: "knowledge", kind: "build", summary: "Best-match block pins exact title hits on every filterable tab; Explore gets a search bar that searches content", detail: "Typing 'acne' on the Conditions tab used to match every condition whose CLAIMS mention acne, ordered by claim count, so the actual Acne page sat far down a list of 31 results. Real title matches are now pinned in a 'Best match' strip at the top, most-exact always first. The Explore tab, which had no filter at all, now has one - and it searches content, not just chip labels.\n\nRANKING (Luneth's spec). AND-over-terms on the TITLE, which is what makes a multi-word query narrow rather than widen: 'cancer' pins Cancer plus 11 more cancers, while 'breast cancer' pins only Breast Cancer, because no other title carries both terms. Rank 0 = the title IS the query, and that slot is reserved so a perfect match can never be outranked; 1 = starts-with; 2 = merely contains; ties break on the shorter title so 'Cancer' precedes 'Cancer, Breast'. Cap 12: one exact plus up to eleven.\n\nWHY TITLES NEEDED THEIR OWN SOURCE. The data-search blob deliberately makes a row match on content - that is the feature that lets 'smell' find Anosmia - but it is also exactly what buries a title hit. So ranking reads the title alone, via a per-tab KD_TITLE_SELECTOR, while filtering keeps using the blob.\n\nHOISTED, NOT CLONED. The pinned rows are the ORIGINAL DOM nodes, moved. They therefore keep their per-tab styling and their delegated click handlers, and they cannot render twice - Luneth chose 'disappear from the bottom results' explicitly. Each move records where it came from, and every keystroke restores the previous set before ranking again, so ordering never compounds on itself. applyKnowledgeSearch was restructured into restore -> mark -> hoist -> head-pass, in that order, so a section whose rows were ALL hoisted reports itself empty instead of showing a head over nothing.\n\nEXPLORE CONTENT SEARCH. Each chip now carries a data-search blob of the entity's lay synonyms, its claims' topic tags, and its claims' QUESTION text - questions are phrased the way people actually search. Answer and verbatim bodies are deliberately excluded: they would multiply the attribute across every chip and make a topic match on one incidental word, which reads as a false positive.\n\nVERIFICATIONS: build OK, invariants 77/77, four render probes exit 0. Browser-verified: 'acne' pins Acne first (previously buried among 31 results), 'cancer' pins Cancer then eleven more cancers, 'breast cancer' pins exactly one, clearing the query restores all 502 rows with zero hidden and removes the block, the Explore bar exists, 'celiac' matches three Explore chips through their claim questions, and Explore 'mercury' pins Mercury first.\n\nINSTRUMENT NOTE: the first verification run reported nonsense - 'acne' pinned as '9'. That was the PROBE reading a condition row's big ghost claim-count as its title, not a fault in the feature. Fixed in the probe. Worth recording because a wrong instrument that returns plausible-looking output is the failure mode that wastes the most time." }, { id: "lg_mry8080x_iivi97", ts: "2026-07-23T19:47:10.497307-05:00", surface: "knowledge", kind: "build", summary: "Essentials tab leaves the drawer menu; every Coverage element card becomes the new entrance to its detail page", detail: "The Essentials tab duplicated the Coverage page the user already starts on, so the menu item is gone. The surface itself stays exactly where it was - it just became a place you arrive at rather than a place you navigate to. Clicking any element card on Coverage now opens that element's page directly, which is the new front door.\n\nTHREE DOORS, ALL VERIFIED. The essentials list keeps: Home's 'open the full table' link, the breadcrumb trail, and the '< All essentials' button on an essential's own page. Luneth corrected an earlier note of mine here - 'open the full table' was NOT re-pointed at Coverage; it still opens the 90-essentials view exactly as before.\n\nCOVERAGE CARDS. The tiles previously had NO click behaviour at all, only hover-focus, so this displaces nothing. The new branch is checked LAST in the delegated handler, so every action control above it - goal add, row remove, dose steppers, product recommendations - still wins when clicked inside a tile. data-tile carries the layout key; it resolves to the canon slug before emitting knowledge:open-entity rather than leaning on a fallback, so the event contract keeps meaning what it says. All 91 of 91 tiles verified to open a real page.\n\nTHE ROUTE STAYS ALIVE. Only the menu ENTRY was removed; 'essentials' is still a Tab and renderTab still serves it. A comment says so at the deletion site, because the obvious future mistake is to 'restore' the missing tab. ESS_ESSENTIAL_COUNT, which existed only to label that tab, was deleted with it rather than left as dead code - tsc caught it immediately.\n\nTHE PROBE WAS UPDATED, NOT BYPASSED. render_probe_knowledge asserted 'exactly the 6 tabs incl. Essentials' and reached the surface by clicking a button that no longer exists, so it failed - correctly. It now asserts the 5-tab menu with Essentials ABSENT, so a reappearance is caught as a regression, and it navigates through door 1 instead, which means the probe exercises a real user path rather than a synthetic one.\n\nVERIFICATIONS: build OK, invariants 77/77, SIX render probes exit 0 (coverage, knowledge, search, seeded, adopt, scan). Browser-verified: 91/91 coverage tiles open an essential page, the menu is exactly home/foods/conditions/explore/products, door 1 reaches 91 tiles, door 3 returns to 91 tiles.\n\nINSTRUMENT NOTES, recorded because both produced confident-looking wrong answers: a bare [data-kd-tab] selector also matches BREADCRUMB anchors, so the menu check reported 'essentials' present when it was a crumb - and correctly so, having just navigated in; and a condition row's textContent begins with its big ghost claim-count, so a title readout returned '9' and '65'. Both were probe bugs, not feature bugs, and both were fixed in the probes." }, { id: "lg_mry8ds33_pcnxw9", ts: "2026-07-23T19:57:43.023766-05:00", surface: "knowledge", kind: "build", summary: "Drawer tab menu to Unbounded 0.7rem (a missed item from the touchup batch) + Explore's first category pulled flush", detail: "Two small visual fixes. The knowledge drawer's tab menu now uses the Unbounded font at 0.7rem, and the Explore tab's first category no longer sits a full gap below the search bar.\n\nTHE MENU FONT WAS A MISS, and worth recording as one. It was part of Luneth's original touchup batch. I deferred it to the essentials chunk on the reasoning that removing a tab would free the horizontal room for a larger face - which was sound - and then simply never applied it when that chunk landed. No gate covers 'a requested visual change was silently dropped', so it took Luneth re-reading his own list to catch it. The lesson is not about this font: a deferral inside a multi-item batch is exactly where an item goes missing, because the batch gets marked done on the strength of the items that DID land.\n\nTHE CHANGES. .kd-knh__tab moves from --ds-font-display-interface to --ds-font-display (Unbounded via type-futurist.css) and from --ds-text-xs to --ds-text-mini, which is 0.7rem exactly, so the token carries Luneth's number with no drift. .kd-explore-group:first-child gets margin-top 0; the --ds-space-5 rule stays on every following group, because he asked for the leading gap only and explicitly not the spacing between categories.\n\nVERIFICATIONS: invariants 77/77, render_probe_knowledge and render_probe_search exit 0, browser-verified the menu computes to Unbounded at 11.2px and the Explore groups measure [Therapies & ideas 0px, Big concepts 24px, Elements 24px]. The probe asserts the SECOND group still has its margin, so flattening every gap would FAIL rather than pass quietly - the obvious way to get this wrong." }, { id: "lg_mry8q7bg_o2766q", ts: "2026-07-23T20:07:22.636382-05:00", surface: "knowledge", kind: "build", summary: "Drawer menu to 0.65rem and optically centered - it was already geometrically centered, which is why it looked wrong", detail: "The knowledge drawer's tab menu is now 0.65rem and sits centered between the KNOWLEDGE mark and the close button.\n\nTHE INTERESTING PART. The menu was ALREADY dead-center in the header - measured offset 0px from the content box midpoint. Had I trusted that number and replied 'it is centered', I would have been correct and useless. What made it read as left-shifted is that the two side columns were each flex: 1 1 0, so each claimed an equal 101px, but their VISIBLE content differs completely: the left column is filled by the 'KNOWLEDGE' text, while the right holds a 34px close button flush right with roughly 67px of empty column beside it. The eye therefore measured 24px of gap after the mark and about 91px before the [X]. Geometric centering and optical centering were not the same thing, and the eye was right.\n\nTHE FIX. Both side columns size to their content (flex: 0 0 auto) and the tab pill takes margin-inline: auto, so the leftover space splits evenly around the thing you can actually see. Measured after: 77px of gap on each side, tabs center 723 exactly equal to the midpoint between the mark's right edge and the button's left edge.\n\nTHE FONT. 0.65rem is a literal, not a token: it sits between --ds-text-micro (0.6rem) and --ds-text-mini (0.7rem), so no token expresses it and borrowing the nearest one would have said something false about the value.\n\nVERIFICATIONS: invariants 77/77, render_probe_knowledge and render_probe_search exit 0. The probe asserts the two GAPS are equal, deliberately, rather than asserting the pill is centered in its container - the container-centering property was already TRUE while the defect stood, so testing it would have passed and proved nothing. Picking the assertion that can actually fail is the whole job." }, { id: "lg_mry8v22a_mlbat4", ts: "2026-07-23T20:11:09.106394-05:00", surface: "knowledge", kind: "round-close", summary: "Menu font back to 0.7rem; session round-close - Luneth's full touchup batch shipped across 6 commits, board 77/77, all 8 probes green", detail: "The drawer menu font goes back to 0.7rem - 0.65 read as too easy to miss - while keeping the optical centering from the previous entry. Re-measured after the revert: 63px and 62px of gap (1px rounding), tabs center 724 against a visible midpoint of 723. The centering absorbed a wider pill without any re-tuning, which is exactly why it was done with auto margins rather than a fixed offset.\n\nSESSION ROUND-CLOSE. Luneth's dashboard-wide touchup batch is complete across six commits: the Ask-Wallach blur restored lag-free plus the typography pass and the scanning line removed; entity-page colour clustering; related pills routing 264 of 272 plus the empty-essential Learn More bug fixed at its root; the Best-match block and the Explore content filter; the Essentials tab leaving the menu with Coverage cards as its new entrance; and the drawer menu font plus Explore's leading margin.\n\nTWO THINGS I GOT WRONG AND WAS CAUGHT ON, recorded because they are the useful part. First: I said 'good to go' and then ended my turn instead of continuing to work, so nothing happened while Luneth was away - a handoff message is not a handoff. Second: I deferred the drawer menu font to the essentials chunk and then never applied it, and reported the batch complete anyway; no gate covers 'a requested visual change was silently dropped', so it took him re-reading his own list. A deferral inside a multi-item batch is where items disappear, because the batch gets declared done on the strength of what DID land.\n\nSEAL CHECK. Nothing needed sealing. design_system_hash_integrity, design_system_write_protection, products_hash_integrity, graphics_integrity and derived_artifacts_fresh are all green and no pillar was touched. The one sealed-file item still outstanding is the stale reduced-motion comment in the design-system stylesheet, which still lists ds-scan-sweep among '7 painted offenders' though the scan line was deleted and there are now 6. It was deliberately NOT edited under the general 'permission to seal': that gate's own docstring says an agent re-sealing to match its own css edit is exactly what it catches, so it wants a per-file green light rather than a blanket one. Zero functional impact, a two-line fix whenever he names that file.\n\nVERIFICATIONS: invariants 77/77 (0 new reds), all EIGHT render probes exit 0 - coverage, knowledge, search, seeded, adopt, scan, ocr, slots." }, { id: "lg_mryavlm3_gjnoso", ts: "2026-07-23T21:07:33.675690-05:00", surface: "shell", kind: "build", summary: "Topbar title to Unbounded 0.85rem; rail drawer buttons stop lying about being open", detail: "Two small fixes Luneth asked for. The page title top-left is now the Unbounded font at 0.85rem. And the real one: clicking a side-rail drawer then closing it from inside left the rail button still highlighted, as if the drawer were still open. The rail highlight is worked out FROM the drawer state, but the shell only recalculated it on the paths it controlled itself - so closing via the drawer's own X button quietly left the button lit.\n\nFixed at the source instead of patching each close site: core/events.ts gains a typed 'drawer:toggled' {target, open}; views/knowledge.ts, views/journey.ts and views/search.ts emit it from BOTH open() and close(); main.ts subscribes once at boot and re-syncs the rail. Any future close path is therefore covered for free. dashboard.css .np__name moves from --ds-font-display-interface to --ds-font-display (type-futurist.css maps that to Unbounded) and 1.05rem to 0.85rem; the TOKEN was deliberately not repointed because 89 rules across 6 stylesheets read it. New probe tools/render_probe_rail_sync.js drives all three drawers through their own internal close affordance - deliberately not Esc and not the rail button, since those two paths already worked - and asserts the highlight drops. Verified: build OK, invariants 77/77 at the time of the change, coverage/knowledge/search/seeded probes exit 0, rail_sync exit 0. Negative control: the same probe against the pre-fix bundle fails on all three drawers with railActive=true after close and reports the nameplate as Chakra Petch 16.8px, so it demonstrably detects the bug it guards. Lint 8 errors before and after, none introduced. render_probe_journey and render_probe_entity fail but fail identically at HEAD, so they are pre-existing." }, { id: "lg_mrycd8h3_jen1is", ts: "2026-07-23T21:49:16.071917-05:00", surface: "knowledge", kind: "milestone", summary: "ORAC becomes a first-class topic: 20 claims, 3 new Explore entities, 4 source-purification chunks", detail: "Wallach writes about ORAC across three of his books and the app had nothing on it - no entity, no page, no claim any question could reach. Someone asking 'what causes age spots' or 'how many antioxidants do I actually need' got silence. That is now 20 claims behind an ORAC Score topic in Explore, and because every enriched claim feeds Ask Wallach automatically, they are searchable the moment they exist.\n\nThe mining could not start until the source was fixed. Immortality pp.378-381 is a two-column layout and the OCR had fused the columns line by line, so the shard literally read 'ORAC is a method of measuring antioxidant capacities Cloves, ground 314,446'. The continuation table was worse: OCR emitted all 43 food names as one block and the numbers as another, dropping 18 of the left column's 23 values outright. Four purification chunks were applied and recorded in eden/tools/purity-specs/: the pp.378-379 de-interleave, the pp.380-381 table rebuilt as 43 name+value rows, four numeral fixes in Hell's Kitchen p.253 (']Prunes 21.00)' was really '1 Prunes 5,770'), and an orphan 'ee' fragment that mined_pages_clean caught the moment the chocolate claim made screenshot 225 a mined page. Every correction was verified against the page image, not the OCR - Hell's Kitchen had to be rendered from its PDF at 4x because the PDF's own text layer carries the identical damage. The book's own print spellings were deliberately preserved (Florescein, catechens, Cabernet Suavignon, Pomagranate) because the page really prints them; correcting those would make the shard say something the page does not, which is forgery rather than purification. The p.380-381 rebuild is safe because the shard's surviving digits independently confirm it: the 5 left-column values OCR kept and all 20 right-column values match the image exactly.\n\n20 claims authored (immortality 15, hells-kitchen 4, epigenetics 1), every verbatim snapped to exact book bytes by corpus_extract finalize, covering 12 of the 13 facets. Three new type:topic entities - orac, antioxidants, free_radicals - with lay-first synonyms, since synonyms are what route a real person's phrasing to the right page. The >100,000-ORAC figure was NOT duplicated: it already lives in an existing claim enriched as an eggs question, so it was cross-linked via also_about instead.\n\nVerified: corpus_verify PASS at knowledge_version=383 (1366 claims, 7 books), invariants 77/77, six render probes green, the ORAC chip renders with 183 cards and zero page errors, and live Ask-Wallach routing confirmed for four lay phrasings. One honest gap left open: 'highest antioxidant food' still ranks the weight-loss warning above the highest-ORAC-foods claim - a real scoring miss, flagged for tuning rather than quietly patched. corpus_seal is user-only and was run on Luneth's explicit approval of all 20 claims plus 'commit/push these live'." }, { id: "lg_mryecjuv_kwzm3e", ts: "2026-07-23T22:44:43.399026-05:00", surface: "knowledge", kind: "milestone", summary: "The four longevity pieces: ORAC is one quarter of Wallach's anti-aging answer, and minerals are a separate piece", detail: "Luneth's critique of the ORAC demo asked a question the page could not answer: if antioxidants only raise the AVERAGE lifespan and not the maximum, what raises the ceiling? Going to look for the answer turned up a whole framework nobody had mined. Wallach names FOUR longevity pieces and says leaving out any one of them causes catastrophic failure - and they are the section headings of Immortality's Chapter 12 itself: Antioxidants, Calorie Restricted Diets, Mineral-rich Diets, and Land Mines. So ORAC is one quarter of the answer, and minerals are their own separate piece, which is exactly the distinction Luneth suspected was missing.\n\nThe material was unquotable until it was fixed. Pages 376-377 carry the same two-column OCR fusion as the earlier chunks - 'There is an accumulated knowledge, however, thatyeyeals the simple and universal common threads' is the left column's '...however, that' welded onto the right column's 'reveals the simple...'. Getting the reading order right mattered and was easy to get wrong, so both columns of the page image were read separately at 2.7x: page 376 ends mid-sentence on '...beyond 100 years is' and page 377 picks it up with 'that: 1) consciously or unconsciously...'. A second fix repaired lost word spacing on the Land Mines opening, which would otherwise have shipped as 'thatwillcertainly preventyoufrom' inside a quote users actually read.\n\nNine claims landed, every verbatim snapped to exact book bytes: the four pieces; that every human has the genetic equipment to live well beyond 100; 'beautiful, healthful and functional' - which is Wallach's own answer to the objection that a longer life just means a longer old age; the genetics rebuttal that even if everyone in your family died at 35 you can still reach 100; the 20 to 25 years the industrialized world is losing, with America sliding from 17th to 48th; calorie restriction at 1,250-1,800; the line that a high-protein low-carb diet is forgiving of low vitamins but unforgiving of low minerals; where Blue Zone populations actually got their minerals; and the land mines themselves.\n\nTwo gates caught real mistakes rather than letting them ship. corpus_extract rejected the kind 'stance' - that is a SEARCH FACET, and the 14 claim kinds and 13 facets are different vocabularies I had conflated. And corpus_seal refused outright with 'claim references unknown/unhashed book' because the spacing fix was applied after the last resnap, leaving the book hash stale - the exact ordering trap the resnap documentation warns about.\n\nVerified: corpus_verify PASS at knowledge_version=384 (1375 claims, 7 books), invariants 77/77, and the ORAC page now has 30 claims across 12 facets, up from 21." }, { id: "lg_mrygv0ke_13521f", ts: "2026-07-23T23:55:04.094517-05:00", surface: "knowledge", kind: "milestone", summary: "Verified + mined Wallach's '150, 175 or 200' ceiling claim; applied Luneth's DevTools demo fixes", detail: "Two pieces. First, Luneth spent over half an hour fixing about 50 presentation issues on the ORAC demo using Chrome's inspect tool - but those edits live only in the browser's in-memory stylesheet and reverted on every save attempt, which is a genuinely nasty trap. Recovered them with a Console snapshot script that freezes the live DOM and serializes the edited CSSOM into a downloadable file; he dropped it in temporary/. On top of his fixes I applied the three bold-text tweaks he asked for. temporary/orac-EDITED.html is now the signed-off design reference.\n\nSecond, the anchor claim. Luneth wanted to be sure the '150, 175 or 200' line was really Wallach's words and not something we invented, and to mine it as an anchor. It lives in Screenshot 160, a two-page spread with the same column-fusion corruption as the earlier chunks - the claim was welded to an unrelated right-page fragment about commercially producing food in 4000 B.C. China. I verified it against the page image first, reading both columns separately: the claim is exact, and the shard's 'sav' is just an OCR slip for 'say'. Then I de-interleaved the whole region - left page is the longevity narrative (the experts who said cars at 50 mph would explode our hearts, the four-minute mile that 300 runners broke within a year of Bannister, the sound barrier, the moon landing, then 'who is to say we can't live to be 150, 175 or 200 - we believe we can!'), and the right page is the wood-ashes and plant-derived-minerals section. An 18-token guard confirmed nothing was dropped. This also unblocks the plant-derived-minerals material for a future mining pass.\n\nOne claim mined (WAL-CLM-IMMORT-000260), verbatim snapped to exact book bytes, enriched onto subject longevity with also_about orac. It is not on the frozen demo page yet - it flows in when the live view is built. Verified: corpus_verify PASS at knowledge_version 386 (1377 claims, 7 books), invariants 77/77, ORAC page now 32 claims reachable." }, { id: "lg_mryhf55t_akmy2r", ts: "2026-07-24T00:10:43.169232-05:00", surface: "knowledge", kind: "note", summary: "Fixed CSSOM var-shorthand extraction drops in the ORAC demo; handoff set for the live-view build", detail: "Closing note for the ORAC session. Luneth hand-tuned the demo with Chrome's inspect tool - about 50 fixes - but Chrome's CSSOM serialization silently drops any shorthand that contains a var() to empty longhands when you save it. So his live browser session looked right, but the saved file rendered margins and borders as zero. He caught three broken rules; a grep for empty declarations turned up a fourth. Restored all four to exactly match his live session: his own edits kept (the 3.5rem top margin, the -2rem bottom margin, the two accent border-lefts) and the dropped var-shorthands re-merged. Verified headless - no empty declarations left, computed styles correct, no page errors.\n\nThe signed-off demo lives at temporary/orac-EDITED.html, which is gitignored, so it is local-only until the live view is committed - flagged prominently in the handoff so it is not lost. Wrote a memory capturing the extraction pitfall and the grep-and-restore fix so we handle it cleanly next time he inspect-edits.\n\nHandoff rewritten for the next session: the ORAC topic is fully mined and sealed (knowledge_version 386, 32 claims across 12 facets) and its design is signed off, so the next task is a pure code build - turn the design reference into a real wired knowledge view that reads the 32 claims live, wires the Absorption handoff button and the claim cards, and adds the ORAC menu tab after Absorption. Board 77/77, working tree clean." }, { id: "lg_mryjk82u_yqzasz", ts: "2026-07-24T01:10:39.462788-05:00", surface: "knowledge", kind: "round-close", summary: "ORAC knowledge tab, Phase 1: the new tab is live \u2014 hero + all 31 Wallach ORAC claims render from the search index, grouped by topic, each cited. Wired into the Knowledge drawer after Absorption; visually signed off.", detail: `Built the first slice of the new ORAC ("how fast you rust") knowledge tab from Luneth's signed-off design. It now opens as a real tab in the Knowledge drawer, right after Absorption, and shows the editorial hero plus the full record of every claim Wallach makes about ORAC \u2014 31 of them \u2014 pulled live from the corpus, not hardcoded. Luneth reviewed the render and signed off (with one tweak: short book cites like "Hell's Kitchen (2015)" instead of the full subtitle). The middle "urgency" sections come next.
+
+Files: NEW views/knowledge-orac.ts (renderOracTab -- hero section 01 + facet-grouped claims record section 09, big-questions first then canonical order; all copy via ui(), Wallach words escaped). NEW state/search.ts::oracClaims() (subject in {orac,antioxidants,free_radicals,longevity} AND (subject==orac OR 'orac' in also_about) -> 31, stable id order, on the wallachSearch bridge) + composeShortCite() ("ShortTitle (Year)", strips any subtitle after ':', per Luneth's call; composeCite untouched so every other tab keeps its full cite). NEW dashboard/assets/styles/drawer-orac.css (~130 .kd-orac-* rules ported byte-exact from temporary/orac-EDITED.html, each scoped to #drawer-knowledge-mount) linked after drawer-knowledge.css. view-copy.json += kd_tab_orac + 8 kd_orac_* framing keys (NO Wallach numbers -- copy.ts forbids them; the deck's **bold** rendered via an escape-then-<strong> helper). views/knowledge.ts wired at 6 touchpoints (Tab union +'orac', import, renderTab case, tabs array after foods, both Record<Tab> maps). knowledge-orac.ts registered in invariants _CLEAN_VIEW_FILES. NEW render_probe_orac.js + render_probe_knowledge.js tab-count 5->6.
+
+Verify: build exit 0; invariants 77/77 (0 new red; views_no_inline_prose now covers 5 views); render_probe_orac PASS (rendered card count == live oracClaims() == 31, 12 facet groups summing to 31, all Wallach-cited, 0 page errors); render_probe_knowledge PASS (6-tab bar Home/Absorption/ORAC/Conditions/Explore/Products); headless menu-fit measured headOverflow=0 (6 tabs fit at 0.7rem Unbounded); screenshot visually signed off by Luneth.
+
+Decisions locked: 31-claim scope (excludes the lone eggs-subject claim that only also_abouts orac); facet labels stay canonical (facetLabel(), single-source). No new assets/data artifact this phase -- the claims ride the existing search index. Deferred: Phase 2 (urgency sections 02-08 + a DERIVED orac-data.json so canonical numbers stay corpus-sourced, never hand-typed), Phase 3 (mine ~39 unmined Immortality pp.378-381 food rows -> league tables), Phase 4 (claim-card expand-to-verbatim).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -104199,7 +104292,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML12(s) {
+  function escHTML13(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -104245,15 +104338,15 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML12(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML13(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML12(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML13(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML12(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML12(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML12(kindLabel2(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML13(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML13(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML13(kindLabel2(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML12(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML13(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -104327,9 +104420,9 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML12(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML12(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML12(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML13(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML13(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML13(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -104474,7 +104567,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
     { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
   ];
-  function escHTML13(s) {
+  function escHTML14(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -104504,7 +104597,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   function renderSlot(slot) {
     if (slot.empty === true) {
       return `
-      <article class="slot-card empty" data-slot-id="${escHTML13(slot.id)}">
+      <article class="slot-card empty" data-slot-id="${escHTML14(slot.id)}">
         <div class="slot-card__empty-mark">+</div>
         <div class="slot-card__empty-label">EMPTY SLOT</div>
       </article>
@@ -104514,12 +104607,12 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const serialPrefix = slot.active === true ? "\u25CF " : "";
     const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
     return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML13(slot.id)}" data-slot-num="${escHTML13(slot.num)}">
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML13(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML13(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML13(slot.name)}</h3>
+    <article class="slot-card${activeClass}" data-slot-id="${escHTML14(slot.id)}" data-slot-num="${escHTML14(slot.num)}">
+      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML14(slot.serial)}</span>${serialSuffix}</div>
+      <div class="slot-card__num">${escHTML14(slot.num)}</div>
+      <h3 class="slot-card__name">${escHTML14(slot.name)}</h3>
       <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML13(slot.stamp)}</div>
+      <div class="slot-card__stamp">${escHTML14(slot.stamp)}</div>
     </article>
   `;
   }
@@ -104556,9 +104649,9 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const scaling = amount * freq;
     return `
     <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML13(icon)}</div>
+      <div class="regimen-item-row__icon">${escHTML14(icon)}</div>
       <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML13(name)}</h4>
+        <h4 class="regimen-item-row__name">${escHTML14(name)}</h4>
         <div class="regimen-item-row__contrib">
           <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
           ${pips}
@@ -104621,13 +104714,13 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     return `
     <div class="rec-item">
       <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML13(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML13(item.heat)}"><span class="rec-item__tag-sign">${escHTML13(sign)}</span>${escHTML13(tagText)}</span>
+        <h4 class="rec-item__name">${escHTML14(item.name)}</h4>
+        <span class="rec-item__tag" data-heat="${escHTML14(item.heat)}"><span class="rec-item__tag-sign">${escHTML14(sign)}</span>${escHTML14(tagText)}</span>
       </div>
-      <div class="rec-item__reason">${escHTML13(item.reason)}</div>
+      <div class="rec-item__reason">${escHTML14(item.reason)}</div>
       <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML13(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML13(item.name)}">DETAILS</button>
+        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML14(item.name)}">+ ADOPT</button>
+        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML14(item.name)}">DETAILS</button>
       </div>
     </div>
   `;
@@ -104830,7 +104923,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   }
   function renderAddRow() {
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML13(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML14(n)}"></option>`).join("");
     return `
     <section class="active-slot rg-add-panel">
       <div class="search-wrap">
@@ -104922,7 +105015,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML14(s) {
+  function escHTML15(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -104967,19 +105060,19 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
     const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
     <div class="scan-label__row">
-      <span>${escHTML14(n.name)}</span>
-      <span>${escHTML14(n.amount ?? "")}${escHTML14(n.unit ?? "")}</span>
+      <span>${escHTML15(n.name)}</span>
+      <span>${escHTML15(n.amount ?? "")}${escHTML15(n.unit ?? "")}</span>
       <span>\u2014</span>
     </div>
   `).join("");
     return `
     <div class="scan-canvas scan-canvas--active">
       <div class="scan-label">
-        <div class="scan-label__brand">${escHTML14(brand)}</div>
-        <div class="scan-label__product">${escHTML14(product)}</div>
+        <div class="scan-label__brand">${escHTML15(brand)}</div>
+        <div class="scan-label__product">${escHTML15(product)}</div>
         <div class="scan-label__rule"></div>
         <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML14(servings)}</div>
+        <div class="scan-label__serving">Serving Size \xB7 ${escHTML15(servings)}</div>
         <div class="scan-label__rows">${nutrientRows}</div>
         <span class="ocr-bracket ocr-bracket--brand"></span>
         <span class="ocr-bracket ocr-bracket--product"></span>
@@ -104999,7 +105092,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     <span>\xB7</span>
     <span>${regionCount} REGIONS</span>
     <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML14(confidence)}</strong></span>
+    <span>CONFIDENCE <strong>${escHTML15(confidence)}</strong></span>
   ` : `
     <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
     <span>\xB7</span>
@@ -105061,9 +105154,9 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
       return `
       <div class="stage stage--${s.status}">
         <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML14(s.name)}</div>
-        <div class="stage__sub">${escHTML14(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML14(s.ms)}</span>` : escHTML14(s.ms)}</div>
+        <div class="stage__name">${escHTML15(s.name)}</div>
+        <div class="stage__sub">${escHTML15(s.sub)}</div>
+        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML15(s.ms)}</span>` : escHTML15(s.ms)}</div>
       </div>
     `;
     }).join("");
@@ -105075,7 +105168,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
           <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
           <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML14(total)}</strong> \xB7 target &lt;5s</div>
+        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML15(total)}</strong> \xB7 target &lt;5s</div>
       </header>
       <div class="pipeline__stages">${stagesHTML}</div>
     </section>
@@ -105086,17 +105179,17 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
     const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
     const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML14(row.tag.sign)}</span>` : "";
+    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML15(row.tag.sign)}</span>` : "";
     return `
     <div class="parsed-row parsed-row--${row.status}">
       <div class="parsed-row__status">${statusChar}</div>
       <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML14(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML14(row.name)}</h4>
+        <span class="parsed-row__raw">"${escHTML15(row.raw)}"</span>
+        <h4 class="parsed-row__name">${escHTML15(row.name)}</h4>
       </div>
-      <span class="${mappedClass}">\u2192 ${escHTML14(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML14(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML14(row.tag.heat)}">${tagSignHTML}${escHTML14(row.tag.text)}</span>
+      <span class="${mappedClass}">\u2192 ${escHTML15(row.mapped)}</span>
+      <span class="parsed-row__confidence">${escHTML15(row.confidence)} <small>conf</small></span>
+      <span class="parsed-row__tag" data-heat="${escHTML15(row.tag.heat)}">${tagSignHTML}${escHTML15(row.tag.text)}</span>
       <div class="parsed-row__actions">
         <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
         <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
@@ -105202,10 +105295,10 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     return `
     <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
       <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML14(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML14(entry.ts.slice(0, 16))}</span>
+        <h4 class="scan-history-item__name">${escHTML15(name)}</h4>
+        <span class="scan-history-item__ts">${escHTML15(entry.ts.slice(0, 16))}</span>
       </div>
-      <span class="${pillClass}">${escHTML14(verdictText)}</span>
+      <span class="${pillClass}">${escHTML15(verdictText)}</span>
     </div>
   `;
   }
@@ -105421,7 +105514,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   }
 
   // assets/js/src/views/search.ts
-  function escHTML15(s) {
+  function escHTML16(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -105443,9 +105536,9 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML15(e.symbol);
+      return escHTML16(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML15(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML16(e.display_name.charAt(0));
   }
   function claimRelatedSlugs(claim) {
     const seen = /* @__PURE__ */ new Set([claim.subject]);
@@ -105465,11 +105558,11 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     return out;
   }
   function renderRelPill(slug) {
-    const name = escHTML15(displayName2(slug));
+    const name = escHTML16(displayName2(slug));
     const e = getEntity(slug);
     const type = e !== null ? e.type : getConditionPage(slug) !== null ? "condition" : getEssentialPage(slug) !== null ? "essential" : "";
     if (type !== "") {
-      return `<button class="relpill" data-type="${escHTML15(type)}" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="relpill" data-type="${escHTML16(type)}" data-sr-entity="${escHTML16(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
   }
@@ -105486,7 +105579,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
       const i = claim.answer.indexOf(xref.phrase);
       const before = claim.answer.slice(0, i);
       const after = claim.answer.slice(i + xref.phrase.length);
-      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML15(xref.target)}" title="Jump to the full answer">${escHTML15(xref.phrase)}</button>`;
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML16(xref.target)}" title="Jump to the full answer">${escHTML16(xref.phrase)}</button>`;
       return glossify(before) + link + glossify(after);
     }
     return glossify(claim.answer);
@@ -105504,24 +105597,24 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     return `<div class="ans__body">${renderAnswer(claim)}</div>`;
   }
   function claimInner(claim) {
-    return `<div class="ans__short">${escHTML15(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
+    return `<div class="ans__short">${escHTML16(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
   }
   function renderBestAnswer(claim) {
     return `
-    <div class="ans" data-facet="${escHTML15(claim.facet)}">
-      <span class="facetpill"><i></i>${escHTML15(facetLabel(claim.facet))}</span>
-      <div class="ans__q">${escHTML15(claim.question)}</div>
+    <div class="ans" data-facet="${escHTML16(claim.facet)}">
+      <span class="facetpill"><i></i>${escHTML16(facetLabel(claim.facet))}</span>
+      <div class="ans__q">${escHTML16(claim.question)}</div>
       ${claimInner(claim)}
       ${renderRelated(claim)}
     </div>`;
   }
   function renderArow(claim, hidden) {
     return `
-    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML15(claim.facet)}" data-sr-claim="${escHTML15(claim.id)}">
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML16(claim.facet)}" data-sr-claim="${escHTML16(claim.id)}">
       <summary class="arow__sum">
-        <span class="arow__text"><span class="arow__q">${escHTML15(claim.question)}</span><span class="arow__prev">${escHTML15(claim.answer_short)}</span></span>
+        <span class="arow__text"><span class="arow__q">${escHTML16(claim.question)}</span><span class="arow__prev">${escHTML16(claim.answer_short)}</span></span>
         <span class="arow__chev">\u203A</span>
-        <span class="arow__pill">${escHTML15(facetLabel(claim.facet))}</span>
+        <span class="arow__pill">${escHTML16(facetLabel(claim.facet))}</span>
       </summary>
       <div class="arow__body">${claimInner(claim)}</div>
     </details>`;
@@ -105532,12 +105625,12 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
       return "";
     }
     const n = claimCount2(subject);
-    const hints = subjectFacetHints(subject).map(escHTML15).join(" \xB7 ");
+    const hints = subjectFacetHints(subject).map(escHTML16).join(" \xB7 ");
     return `
-    <button class="tcard" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(subject)}">
+    <button class="tcard" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(subject)}">
       <div class="tcard-ghost">${n}</div>
-      <div class="tcard-cat"><i></i>${escHTML15(e.type)}</div>
-      <div class="tcard-name">${escHTML15(displayName2(subject))}</div>
+      <div class="tcard-cat"><i></i>${escHTML16(e.type)}</div>
+      <div class="tcard-name">${escHTML16(displayName2(subject))}</div>
       <div class="tcard-foot"><b>${n} ${n === 1 ? "answer" : "answers"}</b>${hints.length > 0 ? ` \xB7 ${hints}` : ""}</div>
     </button>`;
   }
@@ -105561,16 +105654,16 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     return `${rows}${more}`;
   }
   function renderEntityRow(a, hidden) {
-    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML15(a.prev)}</span>` : "";
-    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML15(a.short)}</div>` : "";
+    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML16(a.prev)}</span>` : "";
+    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML16(a.short)}</div>` : "";
     const body = a.body.length > 0 ? `<div class="ans__body">${glossify(a.body)}</div>` : "";
     const verbatim = a.verbatim.trim().length > 0 ? `<blockquote class="vq">${glossify(oneLine(a.verbatim))}<span class="vq__attr">\u2014 Dr. Wallach, in his own words</span></blockquote>` : "";
     return `
-    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML15(a.familyId)}" data-sr-claim="${escHTML15(a.id)}">
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML16(a.familyId)}" data-sr-claim="${escHTML16(a.id)}">
       <summary class="arow__sum">
-        <span class="arow__text"><span class="arow__q">${escHTML15(a.title)}</span>${prev}</span>
+        <span class="arow__text"><span class="arow__q">${escHTML16(a.title)}</span>${prev}</span>
         <span class="arow__chev">\u203A</span>
-        <span class="arow__pill">${escHTML15(a.pill)}</span>
+        <span class="arow__pill">${escHTML16(a.pill)}</span>
       </summary>
       <div class="arow__body">${short}${body}${verbatim}</div>
     </details>`;
@@ -105579,10 +105672,10 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const shown = fam.answers.slice(0, FAM_CAP).map((a) => renderEntityRow(a, false)).join("");
     const rest = fam.answers.slice(FAM_CAP);
     const hidden = rest.map((a) => renderEntityRow(a, true)).join("");
-    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML15(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
+    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML16(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
     return `
-    <div class="fgroup" data-family="${escHTML15(fam.familyId)}">
-      <div class="fgroup__head"><span class="fgroup__label">${escHTML15(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
+    <div class="fgroup" data-family="${escHTML16(fam.familyId)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML16(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
       ${shown}${hidden}
       ${more}
     </div>`;
@@ -105626,18 +105719,18 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const families = entityFamilies(subject);
     const total = families.reduce((acc, f) => acc + f.count, 0);
     const n = total > 0 ? total : hero.count;
-    const syn = hero.synonyms.length > 0 ? ` \xB7 also: ${hero.synonyms.map(escHTML15).join(", ")}` : "";
+    const syn = hero.synonyms.length > 0 ? ` \xB7 also: ${hero.synonyms.map(escHTML16).join(", ")}` : "";
     const kind = learnKind(subject, e);
     const heroCls = kind !== null ? "ehero ehero--link" : "ehero";
-    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}"` : "";
-    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
+    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML16(subject)}" data-aw-kind="${kind}"` : "";
+    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML16(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
     const groupsHTML = families.length > 0 ? families.map(renderFamilyGroup).join("") : '<div class="aw-empty-line">\u2014 no sealed claims on this yet \u2014</div>';
     return `
-    <div class="${heroCls}" data-type="${escHTML15(hero.type)}"${heroAttrs}>
+    <div class="${heroCls}" data-type="${escHTML16(hero.type)}"${heroAttrs}>
       <span class="ehero__sym">${tileGlyph(subject, { symbol: hero.symbol, type: hero.type, display_name: hero.name })}</span>
       <span class="ehero__id">
-        <span class="ehero__name">${escHTML15(hero.name)}</span>
-        <span class="ehero__meta">${escHTML15(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}${escHTML15(syn)}</span>
+        <span class="ehero__name">${escHTML16(hero.name)}</span>
+        <span class="ehero__meta">${escHTML16(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}${escHTML16(syn)}</span>
       </span>
       ${learnMore}
     </div>
@@ -105646,24 +105739,24 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   }
   function renderOpening() {
     const card = (f) => `
-    <button class="kcard" data-family="${escHTML15(f.id)}" data-aw-family="${escHTML15(f.id)}">
+    <button class="kcard" data-family="${escHTML16(f.id)}" data-aw-family="${escHTML16(f.id)}">
       <span class="kcard-main">
-        <span class="kcard-name">${escHTML15(ui(`search_fam_${f.id}_name`))}</span>
-        <span class="kcard-facets">${escHTML15(ui(`search_fam_${f.id}_sub`))}</span>
+        <span class="kcard-name">${escHTML16(ui(`search_fam_${f.id}_name`))}</span>
+        <span class="kcard-facets">${escHTML16(ui(`search_fam_${f.id}_sub`))}</span>
       </span>
       <span class="kcard-n">${f.count}</span>
     </button>`;
     return `
-    <div class="scr-label">${escHTML15(ui("search_browse_label"))}</div>
+    <div class="scr-label">${escHTML16(ui("search_browse_label"))}</div>
     <div class="kstack">${familyCounts().map(card).join("")}</div>`;
   }
   function renderEmpty(query) {
     const sugg = entityList().filter((e) => !isChargedEntity(e.slug)).sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
-    const chip2 = (e) => `<button class="echip" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(e.slug)}">${escHTML15(e.display_name)}</button>`;
+    const chip2 = (e) => `<button class="echip" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(e.slug)}">${escHTML16(e.display_name)}</button>`;
     return `
     <div class="empty">
       <div class="empty__h">Nothing on that yet</div>
-      <div class="empty__p">No match for \u201C${escHTML15(query)}.\u201D Try one of these:</div>
+      <div class="empty__p">No match for \u201C${escHTML16(query)}.\u201D Try one of these:</div>
       <div class="empty__chips">${sugg.map(chip2).join("")}</div>
     </div>`;
   }
@@ -105686,7 +105779,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
         <div class="scr-id">Ask <em>Wallach</em></div>
         <div class="aw-search">
           <div class="aw-search__well">
-            <input class="aw-search__input" type="text" placeholder="${escHTML15(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
+            <input class="aw-search__input" type="text" placeholder="${escHTML16(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
             <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
           </div>
         </div>
@@ -105906,7 +105999,7 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
   // assets/js/src/views/welcome.ts
   var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var NAME_MAX = 18;
-  function escHTML16(s) {
+  function escHTML17(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -105922,27 +106015,27 @@ Verified: tsc clean, build OK, invariants 77/77 (2 transient reds fixed mid-buil
     const existing = loadUserProfile();
     const reopen = existing !== null;
     let chosen = [...loadRgUserGoals() ?? []].slice(0, MAX_GOALS);
-    const goalChips = LAYOUT4.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML16(g.id)}"><span class="wc-goal__dot"></span>${escHTML16(g.name)}</button>`).join("");
+    const goalChips = LAYOUT4.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML17(g.id)}"><span class="wc-goal__dot"></span>${escHTML17(g.name)}</button>`).join("");
     host.innerHTML = `
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
-        <div class="wc__kicker">${escHTML16(ui("wc_kicker"))}</div>
-        <h2 class="wc__h" id="wcH">${escHTML16(ui("wc_h"))}</h2>
-        <p class="wc__deck">${escHTML16(ui("wc_deck"))}</p>
-        ${reopen ? "" : `<label class="wc__label" for="wcName">${escHTML16(ui("wc_name_label"))}
+        <div class="wc__kicker">${escHTML17(ui("wc_kicker"))}</div>
+        <h2 class="wc__h" id="wcH">${escHTML17(ui("wc_h"))}</h2>
+        <p class="wc__deck">${escHTML17(ui("wc_deck"))}</p>
+        ${reopen ? "" : `<label class="wc__label" for="wcName">${escHTML17(ui("wc_name_label"))}
                <span class="wc__count"><span data-name-count>0</span>/${NAME_MAX}</span>
              </label>
              <input class="wc__name" id="wcName" data-name maxlength="${NAME_MAX}"
-                    placeholder="${escHTML16(ui("wc_name_placeholder"))}" autocomplete="off">
+                    placeholder="${escHTML17(ui("wc_name_placeholder"))}" autocomplete="off">
              <p class="wc__err" data-name-err hidden></p>`}
         <div style="height: var(--ds-space-6)"></div>
-        <span class="wc__label">${escHTML16(ui("wc_goals_label"))}
+        <span class="wc__label">${escHTML17(ui("wc_goals_label"))}
           <span class="wc__count"><span data-goal-count>0</span>/${MAX_GOALS} selected</span>
         </span>
         <div class="wc__goals" data-goals>${goalChips}</div>
         <div class="wc__foot">
-          <button class="wc__browse" type="button" data-browse>${escHTML16(ui("wc_browse"))}</button>
-          <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML16(ui("wc_go"))}</button>
+          <button class="wc__browse" type="button" data-browse>${escHTML17(ui("wc_browse"))}</button>
+          <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML17(ui("wc_go"))}</button>
         </div>
       </div>
     </div>

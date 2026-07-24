@@ -51,6 +51,7 @@ import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
 import { renderFoodsTab } from './knowledge-foods.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
+import { renderOracTab } from './knowledge-orac.js';
 import { productCount, productScrollTint, renderProductsTab } from './knowledge-products.js';
 import { renderTopicPage } from './knowledge-topic.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
@@ -65,7 +66,7 @@ export interface DrawerHandle {
   isOpen: () => boolean;
 }
 
-type Tab = 'home' | 'foods' | 'essentials' | 'conditions' | 'explore' | 'products';
+type Tab = 'home' | 'foods' | 'orac' | 'essentials' | 'conditions' | 'explore' | 'products';
 
 // ─── Essentials layout (shared with the Coverage periodic table) ───────────
 
@@ -295,6 +296,7 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
   switch (tab) {
     case 'home': return renderHomeTab();
     case 'foods': return renderFoodsTab();
+    case 'orac': return renderOracTab();
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return (selectedCondition !== null ? renderConditionPage(selectedCondition) : '') + renderConditionsTab(selectedCondition);
     case 'explore': return renderExploreTab();
@@ -313,6 +315,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
   const tabs = [
     { id: 'home' as Tab, label: ui('kd_tab_home'), count: '' },
     { id: 'foods' as Tab, label: ui('kd_tab_foods'), count: '' },
+    { id: 'orac' as Tab, label: ui('kd_tab_orac'), count: '' },
     { id: 'conditions' as Tab, label: ui('kd_tab_conditions'), count: `${listConditions().length} INDEXED` },
     { id: 'explore' as Tab, label: ui('kd_tab_explore'), count: `${exploreEntities().length} TOPICS` },
     { id: 'products' as Tab, label: ui('kd_tab_products'), count: `${productsCount} KNOWN` },
@@ -346,6 +349,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
 const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
   home: '.kd-home',
   foods: '.kd-foods-topic',
+  orac: '.kd-orac-claim',
   essentials: '.sh-tile',
   conditions: '.kd-condition-row',
   explore: '.kd-explore-chip',
@@ -362,6 +366,7 @@ const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
 const KD_TITLE_SELECTOR: Record<Tab, string | null> = {
   home: null,
   foods: null,
+  orac: null,
   essentials: '.sh-tile__nm',
   conditions: '.kd-condition-row__name',
   explore: null,

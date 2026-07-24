@@ -4777,6 +4777,7 @@ _CLEAN_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/knowledge-home.ts",
     "dashboard/assets/js/src/views/knowledge-explore.ts",
     "dashboard/assets/js/src/views/knowledge-topic.ts",
+    "dashboard/assets/js/src/views/knowledge-orac.ts",
 )
 
 # The entity-render view file(s). Asserted a PURE PROJECTION of the generated

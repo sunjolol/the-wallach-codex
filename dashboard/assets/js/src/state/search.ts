@@ -83,6 +83,22 @@ export function claimsForSubject(subject: string): SearchClaim[] {
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }
 
+/** The four ORAC-family subjects whose claims populate the ORAC knowledge page. */
+const ORAC_SUBJECTS: ReadonlySet<string> = new Set(['orac', 'antioxidants', 'free_radicals', 'longevity']);
+
+/**
+ * Every claim on the ORAC knowledge page: one of the four ORAC-family subjects AND actually
+ * about ORAC (its subject IS orac, or 'orac' is in its also_about). The subject-set keeps out an
+ * off-topic claim that merely also_abouts orac (e.g. an eggs-dosing claim); the also_about clause
+ * keeps out longevity/antioxidant claims that never touch ORAC. 31 on today's index -- a LIVE
+ * count, never the demo's stale hardcoded "30". Stable id order.
+ */
+export function oracClaims(): SearchClaim[] {
+  return index().claims
+    .filter(c => ORAC_SUBJECTS.has(c.subject) && (c.subject === 'orac' || c.also_about.includes('orac')))
+    .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+}
+
 /** Distinct book titles a subject's claims cite (for the entity-page meta line), sorted. */
 export function booksForSubject(subject: string): string[] {
   const titles = new Set<string>();
@@ -194,6 +210,20 @@ export function composeCite(claim: SearchClaim): string {
   }
   const head = `${b.title.toUpperCase()} (${b.year})`;
   return claim.page !== null ? `${head} · P.${claim.page}` : head;
+}
+
+/**
+ * A COMPACT book cite for space-constrained cards: the short title (before any subtitle ":")
+ * + year, no page -- derived from the registry title (single source), e.g. "Hell's Kitchen:
+ * Causes..." -> "Hell's Kitchen (2015)". Casing is left to the card CSS (text-transform).
+ */
+export function composeShortCite(claim: SearchClaim): string {
+  const b = claim.book_id !== null ? index().books[claim.book_id] : undefined;
+  if (b === undefined) {
+    return '';
+  }
+  const short = b.title.replace(/:.*$/, '').trim();
+  return `${short} (${b.year})`;
 }
 
 // ─── By-id claim lookup (the entity-page artifact stores search claim IDs) ──
@@ -673,6 +703,7 @@ const bridge = window as Window & {
     indexTotals: typeof indexTotals;
     familyCounts: typeof familyCounts;
     entityFamilies: typeof entityFamilies;
+    oracClaims: typeof oracClaims;
   };
 };
-bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies };
+bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies, oracClaims };

@@ -1,0 +1,136 @@
+/* ORAC knowledge tab — content styles (kd-orac-*). Ported byte-exact from the
+   signed-off temporary/orac-EDITED.html; every rule scoped to #drawer-knowledge-mount
+   to match the drawer convention and prevent cascade leakage. --ds-* tokens + local
+   --o-*/--sev-* palette only; no external resources. Loaded AFTER drawer-knowledge.css. */
+#drawer-knowledge-mount .kd-orac { --o-spice: #b4531f; --o-nut: #8a6a2f; --o-berry: #7b2d52; --o-bean: #5d6a34; --o-juice: #2f7d8a; --o-wine: #6d213c; --o-choc: #4a3120; --o-veg: #3f7a3a; --sev-calm: #5a8ca8; --sev-warn: #d99a2b; --sev-dang: #c85a2c; --sev-crit: #8a2f2f; padding-bottom: 40px; }
+#drawer-knowledge-mount .kd-orac-hero { position: relative; padding: 30px 0px 24px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-orac-eyebrow { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--ds-space-5); font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 500; letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-orac-eyebrow__l { display: flex; align-items: center; gap: var(--ds-space-3); white-space: nowrap; }
+#drawer-knowledge-mount .kd-orac-eyebrow__l::before { content: ""; flex: 0 0 auto; width: 122px; height: 1px; background: var(--ds-rule); }
+#drawer-knowledge-mount .kd-orac-eyebrow__rule { height: 1px; background: linear-gradient(to right, var(--ds-rule) 0%, var(--ds-rule) 60%, var(--ds-accent) 65%, var(--ds-accent) 72%, var(--ds-rule) 76%, var(--ds-rule) 100%); }
+#drawer-knowledge-mount .kd-orac-eyebrow__r { color: var(--ds-accent); font-family: var(--ds-font-sans); font-weight: 600; white-space: nowrap; }
+#drawer-knowledge-mount .kd-orac-hd { display: grid; grid-template-columns: auto 1fr; gap: var(--ds-space-5); align-items: start; margin-top: 20px; }
+#drawer-knowledge-mount .kd-orac-hd__num { font-family: var(--ds-font-display); font-size: 4.5rem; font-weight: 900; line-height: 0.82; margin-top: 0em; color: var(--ds-accent); letter-spacing: var(--ds-track-tight); }
+#drawer-knowledge-mount .kd-orac-hero__h { font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(2.1rem, 4.6vw, 3rem); line-height: 1.05; letter-spacing: -0.015em; margin: 0px; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-orac-hero__h .l1 { display: block; }
+#drawer-knowledge-mount .kd-orac-hero__h .l2 { display: block; color: var(--ds-accent); font-style: italic; }
+#drawer-knowledge-mount .kd-orac-hero__deck { font-family: var(--ds-font-serif); font-size: 1.02rem; line-height: 1.6; color: var(--ds-ink-medium); max-width: 62ch; margin: 16px 0px 0px; }
+#drawer-knowledge-mount .kd-orac-mirror { margin: var(--ds-space-6) 0 var(--ds-space-5); }
+#drawer-knowledge-mount .kd-orac-mirror__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--sev-crit); font-weight: 700; margin-bottom: 12px; }
+#drawer-knowledge-mount .kd-orac-mirror__h { font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(1.7rem, 3.6vw, 2.5rem); line-height: 1.12; letter-spacing: -0.015em; color: var(--ds-ink); margin: 0px; max-width: 25ch; }
+#drawer-knowledge-mount .kd-orac-mirror__h em { color: var(--sev-crit); font-style: normal; }
+#drawer-knowledge-mount .kd-orac-mirror__body { font-family: var(--ds-font-serif); font-size: 1.02rem; line-height: 1.6; color: var(--ds-ink-medium); max-width: 83ch; margin: 16px 0px 0px; }
+#drawer-knowledge-mount .kd-orac-mirror__src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 10px; }
+#drawer-knowledge-mount .kd-orac-decades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: end; margin: var(--ds-space-5) 0 0; }
+#drawer-knowledge-mount .kd-orac-dec { text-align: center; }
+#drawer-knowledge-mount .kd-orac-dec__bar { position: relative; height: 220px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: 3px; overflow: hidden; }
+#drawer-knowledge-mount .kd-orac-dec__fill { position: absolute; inset: auto 0px 0px; opacity: 0.9; }
+#drawer-knowledge-mount .kd-orac-dec__pct { position: absolute; left: 0px; right: 0px; font-family: var(--ds-font-display); font-size: 1.15rem; font-weight: 800; color: rgb(255, 255, 255); }
+#drawer-knowledge-mount .kd-orac-dec__cap { font-family: var(--ds-font-sans); font-size: 0.68rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); }
+#drawer-knowledge-mount .kd-orac-dec__age { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 9px; }
+#drawer-knowledge-mount .kd-orac-dec__lbl { font-family: var(--ds-font-sans); font-size: 0.74rem; color: var(--ds-ink-soft); margin-top: 2px; }
+#drawer-knowledge-mount .kd-orac-steal { margin: var(--ds-space-6) 0; padding: 26px 28px; background: rgb(243, 233, 228); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--sev-dang); border-radius: var(--ds-radius-xs); }
+#drawer-knowledge-mount .kd-orac-steal__num { font-family: var(--ds-font-display); font-weight: 900; font-size: clamp(2.4rem, 5.6vw, 3.4rem); line-height: 1; color: var(--sev-crit); letter-spacing: -0.02em; }
+#drawer-knowledge-mount .kd-orac-steal__lead { font-family: var(--ds-font-sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 8px; }
+#drawer-knowledge-mount .kd-orac-steal__body { font-family: var(--ds-font-serif); font-size: 0.98rem; line-height: 1.6; color: var(--ds-ink-medium); margin: 12px 0px 0px; max-width: 83ch; }
+#drawer-knowledge-mount .kd-orac-rank { display: flex; gap: 6px; align-items: flex-end; margin: 16px 0px 0px; }
+#drawer-knowledge-mount .kd-orac-rank__c { text-align: center; }
+#drawer-knowledge-mount .kd-orac-rank__yr { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-soft); margin-bottom: 4px; }
+#drawer-knowledge-mount .kd-orac-rank__v { font-family: var(--ds-font-display); font-weight: 800; font-size: 1.15rem; }
+#drawer-knowledge-mount .kd-orac-rank__arrow { align-self: center; color: var(--sev-dang); font-size: 1rem; margin: 12px 2px 0px; }
+#drawer-knowledge-mount .kd-orac-chain { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-orac-chain__step { position: relative; padding: 16px 14px 18px; border-radius: var(--ds-radius-xs); color: rgb(255, 255, 255); }
+#drawer-knowledge-mount .kd-orac-chain__i { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 700; letter-spacing: 0.1em; opacity: 0.8; }
+#drawer-knowledge-mount .kd-orac-chain__t { font-family: var(--ds-font-display); font-size: 0.95rem; font-weight: 800; margin: 7px 0px 5px; line-height: 1.15; }
+#drawer-knowledge-mount .kd-orac-chain__d { font-family: var(--ds-font-sans); font-size: 0.74rem; line-height: 1.5; opacity: 0.95; }
+#drawer-knowledge-mount .kd-orac-target { margin: var(--ds-space-5) 0; display: grid; grid-template-columns: 1.7fr 1fr; gap: 0px; border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); overflow: hidden; }
+#drawer-knowledge-mount .kd-orac-target__main { padding: 24px 28px; background: var(--ds-paper-light); border-left: 3px solid var(--ds-accent); }
+#drawer-knowledge-mount .kd-orac-target__lead { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 6px; }
+#drawer-knowledge-mount .kd-orac-target__num { font-family: var(--ds-font-display); font-weight: 900; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1; color: var(--ds-ink); letter-spacing: -0.02em; }
+#drawer-knowledge-mount .kd-orac-target__num em { font-style: normal; color: var(--ds-accent); }
+#drawer-knowledge-mount .kd-orac-target__unit { font-family: var(--ds-font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-ink-soft); display: block; margin-top: 8px; }
+#drawer-knowledge-mount .kd-orac-target__body { font-family: var(--ds-font-serif); font-size: 0.92rem; line-height: 1.55; color: var(--ds-ink-medium); margin: 14px 0px 0px; }
+#drawer-knowledge-mount .kd-orac-target__side { padding: 24px 22px; background: rgb(239, 230, 217); display: flex; flex-direction: column; justify-content: center; }
+#drawer-knowledge-mount .kd-orac-target__sk { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.1em; text-transform: uppercase; color: var(--sev-dang); font-weight: 700; }
+#drawer-knowledge-mount .kd-orac-target__sn { font-family: var(--ds-font-display); font-weight: 900; font-size: 2rem; color: var(--sev-crit); line-height: 1; margin: 6px 0px 8px; }
+#drawer-knowledge-mount .kd-orac-target__sb { font-family: var(--ds-font-sans); font-size: 0.78rem; line-height: 1.45; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-orac-sec { display: grid; grid-template-columns: auto 1fr; gap: var(--ds-space-5); align-items: end; margin: 3.5rem 0 var(--ds-space-4); }
+#drawer-knowledge-mount .kd-orac-sec__num { font-family: var(--ds-font-display); font-size: 4rem; font-weight: 900; line-height: 1; color: var(--ds-accent); letter-spacing: var(--ds-track-tight); }
+#drawer-knowledge-mount .kd-orac-sec__body { padding-bottom: var(--ds-space-2); min-width: 0px; }
+#drawer-knowledge-mount .kd-orac-sec__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 5px; }
+#drawer-knowledge-mount .kd-orac-sec__h { font-family: var(--ds-font-display); font-size: 1.4rem; font-weight: 800; color: var(--ds-ink); margin: 0px; letter-spacing: -0.01em; }
+#drawer-knowledge-mount .kd-orac-p { font-family: var(--ds-font-serif); font-size: 1rem; line-height: 1.65; color: var(--ds-ink-medium); max-width: 88ch; margin: 0 0 var(--ds-space-4); }
+#drawer-knowledge-mount .kd-orac-src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 10px; }
+#drawer-knowledge-mount .kd-orac-reach { margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-orac-reach__row { display: grid; grid-template-columns: 150px 1fr 92px; align-items: center; gap: 14px; margin-bottom: 9px; }
+#drawer-knowledge-mount .kd-orac-reach__name { font-family: var(--ds-font-sans); font-size: 0.84rem; font-weight: 600; color: var(--ds-ink); text-align: right; }
+#drawer-knowledge-mount .kd-orac-reach__track { position: relative; height: 24px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: 2px; overflow: hidden; }
+#drawer-knowledge-mount .kd-orac-reach__fill { position: absolute; inset: 0px auto 0px 0px; background: var(--c, var(--ds-accent)); opacity: 0.82; }
+#drawer-knowledge-mount .kd-orac-reach__over { position: absolute; inset: 0px; background: repeating-linear-gradient(45deg, transparent 0px, transparent 5px, rgba(255, 255, 255, 0.35) 5px, rgba(255, 255, 255, 0.35) 10px); }
+#drawer-knowledge-mount .kd-orac-reach__pct { font-family: var(--ds-font-mono); font-size: 0.76rem; font-weight: 600; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-orac-reach__cap { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 10px; }
+#drawer-knowledge-mount .kd-orac-scale { margin: var(--ds-space-5) 0; padding: 24px 26px; border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); background: var(--ds-paper-light); }
+#drawer-knowledge-mount .kd-orac-scale__row { display: grid; grid-template-columns: 148px 1fr 82px; align-items: center; gap: 12px; margin-bottom: 7px; }
+#drawer-knowledge-mount .kd-orac-scale__nm { font-family: var(--ds-font-sans); font-size: 0.8rem; font-weight: 600; text-align: right; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-orac-scale__tr { height: 18px; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); position: relative; border-radius: 2px; }
+#drawer-knowledge-mount .kd-orac-scale__fl { position: absolute; inset: 0px auto 0px 0px; background: var(--c); opacity: 0.85; }
+#drawer-knowledge-mount .kd-orac-scale__vl { font-family: var(--ds-font-mono); font-size: 0.74rem; font-weight: 600; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-orac-scale__note { font-family: var(--ds-font-serif); font-size: 0.92rem; line-height: 1.55; color: var(--ds-ink-medium); margin: 14px 0px 0px; }
+#drawer-knowledge-mount .kd-orac-tables { column-count: 2; column-gap: var(--ds-space-5); margin: var(--ds-space-5) 0 -2rem; }
+#drawer-knowledge-mount .kd-orac-tbl { break-inside: avoid; display: inline-block; width: 100%; margin: 0 0 var(--ds-space-5); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); background: var(--ds-paper-light); overflow: hidden; }
+#drawer-knowledge-mount .kd-orac-tbl__hd { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 11px 14px; border-bottom: 1px solid var(--ds-rule-soft); border-top: 2px solid var(--c, var(--ds-accent)); }
+#drawer-knowledge-mount .kd-orac-tbl__ttl { font-family: var(--ds-font-display); font-size: 0.92rem; font-weight: 700; color: var(--ds-ink); letter-spacing: 0.01em; }
+#drawer-knowledge-mount .kd-orac-tbl__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); white-space: nowrap; }
+#drawer-knowledge-mount .kd-orac-tbl__body { padding: 8px 14px 12px; }
+#drawer-knowledge-mount .kd-orac-row { display: grid; grid-template-columns: 1fr 68px; align-items: center; gap: 8px; padding: 3px 0px; }
+#drawer-knowledge-mount .kd-orac-row__n { font-family: var(--ds-font-sans); font-size: 0.8rem; color: var(--ds-ink); min-width: 0px; }
+#drawer-knowledge-mount .kd-orac-row__v { font-family: var(--ds-font-mono); font-size: 0.78rem; font-weight: 600; color: var(--ds-ink); text-align: right; }
+#drawer-knowledge-mount .kd-orac-row__bar { grid-column: 1 / -1; height: 3px; background: var(--c, var(--ds-accent)); opacity: 0.5; border-radius: 2px; margin-bottom: 2px; }
+#drawer-knowledge-mount .kd-orac-pieces { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-orac-piece { position: relative; padding: 18px 20px; border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); background: var(--ds-paper-light); }
+#drawer-knowledge-mount .kd-orac-piece--here { border-top: 3px solid var(--ds-accent); }
+#drawer-knowledge-mount .kd-orac-piece--diet { border-top: 3px solid var(--ds-rule); background: rgb(239, 230, 217); }
+#drawer-knowledge-mount .kd-orac-piece__tag { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+#drawer-knowledge-mount .kd-orac-piece--here .kd-orac-piece__tag { color: var(--ds-accent); }
+#drawer-knowledge-mount .kd-orac-piece--diet .kd-orac-piece__tag { color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-orac-piece__t { font-family: var(--ds-font-display); font-size: 1.1rem; font-weight: 800; color: var(--ds-ink); margin: 6px 0px 5px; }
+#drawer-knowledge-mount .kd-orac-piece__d { font-family: var(--ds-font-sans); font-size: 0.78rem; line-height: 1.5; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-orac-abs { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin: var(--ds-space-4) 0 var(--ds-space-5); padding: 18px 22px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); }
+#drawer-knowledge-mount .kd-orac-abs__txt { font-family: var(--ds-font-serif); font-size: 0.95rem; line-height: 1.5; color: var(--ds-ink-medium); max-width: 52ch; }
+#drawer-knowledge-mount .kd-orac-abs__btn { flex: 0 0 auto; font-family: var(--ds-font-display-interface); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: rgb(255, 255, 255); background: var(--ds-accent); border-width: medium; border-style: none; border-color: currentcolor; border-image: none; border-radius: var(--ds-radius-xs); padding: 14px 22px; cursor: pointer; white-space: nowrap; }
+#drawer-knowledge-mount .kd-orac-abs__btn:hover { filter: brightness(1.06); }
+#drawer-knowledge-mount .kd-orac-forces { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0px; align-items: stretch; margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-orac-force { padding: 20px 22px; border: 1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-orac-force--a { border-radius: var(--ds-radius-xs) 0 0 var(--ds-radius-xs); border-right-width: medium; border-right-style: none; border-right-color: currentcolor; background: rgb(234, 241, 244); }
+#drawer-knowledge-mount .kd-orac-force--b { border-radius: 0 var(--ds-radius-xs) var(--ds-radius-xs) 0; border-left-width: medium; border-left-style: none; border-left-color: currentcolor; background: rgb(238, 243, 233); }
+#drawer-knowledge-mount .kd-orac-force__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+#drawer-knowledge-mount .kd-orac-force--a .kd-orac-force__k { color: var(--sev-calm); }
+#drawer-knowledge-mount .kd-orac-force--b .kd-orac-force__k { color: var(--o-veg); }
+#drawer-knowledge-mount .kd-orac-force__t { font-family: var(--ds-font-display); font-size: 1.05rem; font-weight: 800; color: var(--ds-ink); margin: 6px 0px; }
+#drawer-knowledge-mount .kd-orac-force__d { font-family: var(--ds-font-sans); font-size: 0.85rem; line-height: 1.5; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-orac-force__big { font-family: var(--ds-font-display); font-size: 0.9rem; font-weight: 800; margin-top: 8px; }
+#drawer-knowledge-mount .kd-orac-force--a .kd-orac-force__big { color: var(--sev-calm); }
+#drawer-knowledge-mount .kd-orac-force--b .kd-orac-force__big { color: var(--o-veg); }
+#drawer-knowledge-mount .kd-orac-force__plus { display: flex; align-items: center; justify-content: center; padding: 0px 4px; font-family: var(--ds-font-display); font-size: 1.6rem; font-weight: 900; color: var(--ds-ink-soft); background: var(--ds-paper); border-top: 1px solid var(--ds-rule-soft); border-bottom: 1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-orac-payoff { margin: var(--ds-space-4) 0 0; padding: 22px 26px; border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--o-veg); border-radius: var(--ds-radius-xs); background: rgb(238, 243, 233); }
+#drawer-knowledge-mount .kd-orac-payoff__n { font-family: var(--ds-font-display); font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--o-veg); line-height: 1; }
+#drawer-knowledge-mount .kd-orac-payoff__b { font-family: var(--ds-font-serif); font-size: 0.98rem; line-height: 1.6; color: var(--ds-ink-medium); margin: 12px 0px 0px; max-width: 83ch; }
+#drawer-knowledge-mount .kd-orac-claims { margin: var(--ds-space-5) 0; }
+#drawer-knowledge-mount .kd-orac-fgroup { margin-bottom: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-orac-fgroup__h { font-family: var(--ds-font-display-interface); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink); padding-bottom: 8px; margin: 0px 0px 12px; border-bottom: 1px solid var(--ds-rule); display: flex; justify-content: space-between; }
+#drawer-knowledge-mount .kd-orac-fgroup__n { color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-weight: 500; }
+#drawer-knowledge-mount .kd-orac-claimlist { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4); }
+#drawer-knowledge-mount .kd-orac-claim { border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); padding: 15px 17px; background: var(--ds-paper-light); }
+#drawer-knowledge-mount .kd-orac-claim__q { font-family: var(--ds-font-display); font-size: 0.92rem; font-weight: 700; color: var(--ds-ink); margin: 0px 0px 6px; line-height: 1.28; }
+#drawer-knowledge-mount .kd-orac-claim__a { font-family: var(--ds-font-serif); font-size: 0.86rem; line-height: 1.5; color: var(--ds-ink-medium); margin: 0px 0px 8px; }
+#drawer-knowledge-mount .kd-orac-claim__src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-ink-soft); }
+
+@media (max-width: 820px) {
+  #drawer-knowledge-mount .kd-orac-tables { column-count: 1; }
+  #drawer-knowledge-mount .kd-orac-chain { grid-template-columns: 1fr 1fr; }
+  #drawer-knowledge-mount .kd-orac-pieces, #drawer-knowledge-mount .kd-orac-claimlist { grid-template-columns: 1fr; }
+  #drawer-knowledge-mount .kd-orac-forces { grid-template-columns: 1fr; }
+  #drawer-knowledge-mount .kd-orac-force--a { border-radius: var(--ds-radius-xs) var(--ds-radius-xs) 0 0; border-right: 1px solid var(--ds-rule-soft); border-bottom-width: medium; border-bottom-style: none; border-bottom-color: currentcolor; }
+  #drawer-knowledge-mount .kd-orac-force--b { border-radius: 0 0 var(--ds-radius-xs) var(--ds-radius-xs); border-left: 1px solid var(--ds-rule-soft); border-top-width: medium; border-top-style: none; border-top-color: currentcolor; }
+  #drawer-knowledge-mount .kd-orac-target { grid-template-columns: 1fr; }
+}
