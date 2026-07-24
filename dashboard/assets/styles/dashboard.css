@@ -111,7 +111,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
    <h1> default: huge, title-case, no rule. Markup without its CSS is the unstyled-drawer
    drift, and it is exactly what .claude/rules/visual-verification.md exists to stop. */
 .topbar__breadcrumb { display: flex; align-items: baseline; gap: var(--ds-space-4); min-width: 0; }
-.np__name { font-family: var(--ds-font-display-interface); font-size: 1.05rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink); margin: 0; white-space: nowrap; }
+.np__name { font-family: var(--ds-font-display); font-size: 0.85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink); margin: 0; white-space: nowrap; }
 /* 34px hairline: 12px of accent, then rule. The one flash of orange in the nameplate. */
 .np__rule { flex: 0 0 auto; width: 34px; height: 1px; background: linear-gradient(90deg, var(--ds-accent) 0 12px, var(--ds-rule) 12px 100%); align-self: center; }
 .np__deck { font-family: var(--ds-font-sans); font-size: .8rem; color: var(--ds-ink-soft); white-space: nowrap; }

@@ -31,7 +31,8 @@ export type EventName =
   | 'rail:navigate'
   | 'log:entry-added'
   | 'profile:changed'
-  | 'knowledge:open-entity';
+  | 'knowledge:open-entity'
+  | 'drawer:toggled';
 
 /** Payload shape per event name. Add a case here when adding an event. */
 export interface EventPayloads {
@@ -54,6 +55,12 @@ export interface EventPayloads {
    *  "Learn More" — now for basically any resolved entity (the catch-all); main.ts does the
    *  single-drawer swap (close search, open Knowledge, select the entity). */
   'knowledge:open-entity': { kind: 'essential' | 'condition' | 'product' | 'topic'; slug: string };
+  /** An overlay drawer opened or closed, from ANY path — the rail button, the bare
+   *  key, Esc, or the drawer's own [X]. The rail's active highlight is derived state:
+   *  before this event the shell re-synced it only on the paths IT drove, so closing
+   *  from inside left the button lit for a drawer that was already gone. Views emit;
+   *  main.ts::syncDrawerRail is the single subscriber. */
+  'drawer:toggled': { target: 'search' | 'knowledge' | 'journey'; open: boolean };
 }
 
 export type EventHandler<E extends EventName> = (payload: EventPayloads[E]) => void;

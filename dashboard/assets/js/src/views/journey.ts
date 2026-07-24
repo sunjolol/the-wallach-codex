@@ -20,7 +20,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { on as onEvent } from '../core/events.js';
+import { emit, on as onEvent } from '../core/events.js';
 import { type EventKind, EventKindSchema, type JourneyEvent } from '../core/schemas/index.js';
 import { listGoals, listMilestones } from '../state/goals.js';
 import { crossRefForCheckin, listCheckins, listEvents, logCheckin, logEvent } from '../state/journey.js';
@@ -446,6 +446,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     isOpen = true;
     container.classList.add('jd-open');
     render();
+    emit('drawer:toggled', { target: 'journey', open: true });
   };
   const close = (): void => {
     if (!isOpen) {
@@ -456,6 +457,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     formMode = null;
     container.classList.remove('jd-open', 'jd-expanded');
     container.innerHTML = '';
+    emit('drawer:toggled', { target: 'journey', open: false });
   };
   const toggle = (): void => {
     if (isOpen) {

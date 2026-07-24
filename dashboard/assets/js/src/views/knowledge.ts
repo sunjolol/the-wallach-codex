@@ -23,7 +23,7 @@
  */
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
-import { on as onEvent } from '../core/events.js';
+import { emit, on as onEvent } from '../core/events.js';
 import { plural } from '../core/format.js';
 import {
   CoverageLayoutSchema,
@@ -665,6 +665,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     isOpen = true;
     container.classList.add('kd-open');
     render();
+    emit('drawer:toggled', { target: 'knowledge', open: true });
   };
   const close = (): void => {
     if (!isOpen) {
@@ -680,6 +681,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     document.documentElement.style.removeProperty('--kd-detail-scroll');
     container.classList.remove('kd-open');
     container.innerHTML = '';
+    emit('drawer:toggled', { target: 'knowledge', open: false });
   };
   const toggle = (): void => {
     if (isOpen) {

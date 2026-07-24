@@ -489,6 +489,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     isOpen = true;
     container.classList.add('sr-open');
     render();
+    emit('drawer:toggled', { target: 'search', open: true });
   };
   const close = (): void => {
     if (!isOpen) {
@@ -498,6 +499,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     query = '';
     container.classList.remove('sr-open');
     container.innerHTML = '';
+    emit('drawer:toggled', { target: 'search', open: false });
   };
   const toggle = (): void => {
     if (isOpen) {

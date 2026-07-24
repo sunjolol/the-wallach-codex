@@ -369,6 +369,9 @@ function bootstrap(): void {
   wireTopbarSearch();
   mountDrawers();
   wireDrawerKeys();
+  // The rail highlight is DERIVED from drawer open-state, so it must re-sync on every
+  // close path — including the drawer's own [X], which the shell never sees.
+  events.on('drawer:toggled', () => syncDrawerRail());
   wireSearchToKnowledge();
   wireJourneyAutoDerive();
   initGlossTooltip();
