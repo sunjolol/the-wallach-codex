@@ -355,6 +355,131 @@
       "about": [
         "colloidal-minerals"
       ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000013",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "ORAC stands for Oxygen Radical Absorbance Capacity, a lab score for how strongly a food, drink or supplement neutralises free radicals. The test scores one specific attacker, the peroxyl radical, chosen because it is among the most common reactive oxygen species in the human body. Worth noting that Wallach's books print the name two ways - Absorbance in Immortality, Absorption in Hell's Kitchen.",
+      "verbatim": "A good way to measure the antioxidant activity of foods includ- \ning juices is by means of the ORAC point system. ORAC stands for \nOxygen Radical Absorption Capacity, a measure of the scavenging",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 252,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 482627
+      },
+      "dose": null,
+      "tags": [
+        "orac",
+        "antioxidants",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T02:41:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000014",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's everyday top ten runs prunes 5,770, raisins 2,830, blueberries 2,400, blackberries 2,036, kale 1,770, strawberries 1,540, spinach 1,260, raspberries 1,220, Brussels sprouts 980 and plums 949. It is dried fruit, dark berries and leafy greens - and it is scored per 100 grams, so it is not directly comparable with the per-serving table in Immortality, where the same prunes appear at the same 5,770 but alongside spices scoring in the hundreds of thousands.",
+      "verbatim": "ORAC Rating Food Units (per 100 g) \n1 Prunes 5,770 \n2 Raisins 2,830 \n3 Blueberries 2,400 \n4 Blackberries 2,036 \n5 Kale 1,770 \n6 Strawberries 1,540 \n7 Spinach 1,260 \n8 Raspberries 1,220 \n9 Brussels sprouts 980 \n10 Plums 949",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 253,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 482897
+      },
+      "dose": null,
+      "tags": [
+        "orac",
+        "food-sources",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T02:41:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000015",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's practical trick is to replace salad dressing with a high-ORAC juice - noni or mangosteen - instead of oil. It sits inside his See Food Diet, where oils and dressings are a main target. For eating out he gives the Salad Fork Trick: dip the fork a quarter inch into the dressing and shake off the excess, which lets you taste it while giving up about ninety-five percent of the calories.",
+      "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 269,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 508786
+      },
+      "dose": null,
+      "tags": [
+        "orac",
+        "practical",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T02:41:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000016",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Losing weight itself creates the damage antioxidants defend against. Wallach says the byproducts of burning fat can turn into free radicals that inflame the intima, the lining of the arteries, which then drives arteriosclerosis, cardiovascular disease, cancer and Alzheimer's disease. His instruction is not a single daily pill but flooding yourself with multiple antioxidants at every meal, framed as an insurance policy against the free radicals you will eat without knowing it.",
+      "verbatim": "To reduce the risk of the complications \nof weight loss, people need to flood themselves with antioxi- \ndants in order to protect themselves.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": 252,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 482323
+      },
+      "dose": null,
+      "tags": [
+        "antioxidants",
+        "weight-loss",
+        "free-radicals",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T02:41:24+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

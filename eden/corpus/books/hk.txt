@@ -8571,14 +8571,14 @@ Oxygen Radical Absorption Capacity, a measure of the scavenging
 HELVS KITCHEN 253 
 capacity of antioxidants against the peroxyl radical. 
 ORAC Rating Food Units (per 100 g) 
-] Prunes 21.00) 
+1 Prunes 5,770 
 2 Raisins 2,830 
 3 Blueberries 2,400 
 4 Blackberries 2,036 
-5 Kale Le KO 
+5 Kale 1,770 
 6 Strawberries 1,540 
 7 Spinach 1,260 
-8 Raspberries 1220 
+8 Raspberries 1,220 
 9 Brussels sprouts 980 
 10 Plums 949 
 Trans Fatty Acids 

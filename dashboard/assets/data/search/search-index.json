@@ -84,6 +84,33 @@
       ],
       "claim_count": 2
     },
+    "antioxidants": {
+      "display_name": "Antioxidants",
+      "type": "topic",
+      "synonyms": [
+        "antioxidant",
+        "antioxidants",
+        "anti oxidant",
+        "anti-oxidants",
+        "polyphenols",
+        "flavonoids",
+        "flavanols",
+        "bioflavonoids",
+        "resveratrol",
+        "catechins",
+        "lycopene",
+        "beta carotene",
+        "proanthocyanins",
+        "what foods fight free radicals",
+        "foods that fight aging"
+      ],
+      "related": [
+        "orac",
+        "free_radicals",
+        "longevity"
+      ],
+      "claim_count": 4
+    },
     "aromatherapy": {
       "display_name": "Aromatherapy",
       "type": "topic",
@@ -606,6 +633,36 @@
       "claim_count": 6,
       "symbol": "F"
     },
+    "free_radicals": {
+      "display_name": "Free Radicals",
+      "type": "topic",
+      "synonyms": [
+        "free radical",
+        "free radicals",
+        "oxidative stress",
+        "oxidation",
+        "reactive oxygen species",
+        "ros",
+        "peroxyl radical",
+        "ceroid lipofuscin",
+        "lipofuscin",
+        "age spots",
+        "age spot",
+        "liver spots",
+        "liver spot",
+        "dark spots on hands",
+        "brown spots on hands",
+        "sun spots",
+        "aging pigment",
+        "what causes age spots"
+      ],
+      "related": [
+        "orac",
+        "antioxidants",
+        "longevity"
+      ],
+      "claim_count": 3
+    },
     "gallium": {
       "display_name": "Gallium",
       "common_name": "Gallium",
@@ -912,7 +969,7 @@
         "be_your_own_doctor",
         "negative_ion_therapy"
       ],
-      "claim_count": 2
+      "claim_count": 4
     },
     "macrobiotics": {
       "display_name": "Macrobiotics",
@@ -1038,6 +1095,35 @@
         "essential_nutrients"
       ],
       "claim_count": 6
+    },
+    "orac": {
+      "display_name": "ORAC Score",
+      "type": "topic",
+      "synonyms": [
+        "orac",
+        "orac score",
+        "orac value",
+        "orac points",
+        "orac rating",
+        "orac units",
+        "oxygen radical absorbance capacity",
+        "oxygen radical absorption capacity",
+        "antioxidant score",
+        "antioxidant rating",
+        "antioxidant value",
+        "antioxidant capacity",
+        "antioxidant power",
+        "antioxidant points",
+        "how antioxidants are measured",
+        "measure antioxidants",
+        "free radical score"
+      ],
+      "related": [
+        "antioxidants",
+        "free_radicals",
+        "longevity"
+      ],
+      "claim_count": 11
     },
     "phytates": {
       "display_name": "Phytates",
@@ -2715,7 +2801,11 @@
     {
       "id": "WAL-CLM-EPIGEN-000154",
       "subject": "eggs",
-      "also_about": [],
+      "also_about": [
+        "antioxidants",
+        "free_radicals",
+        "orac"
+      ],
       "facet": "protocol",
       "question": "How many eggs a day does Wallach recommend, and how should they be cooked?",
       "answer_short": "Four to six eggs per day per 100 lb of body weight -- poached, soft-boiled, or scrambled in butter (never fried).",
@@ -2724,12 +2814,13 @@
       "page": 312,
       "book_id": "epigenetics",
       "topics": [
+        "dose-per-body-weight",
+        "egg-cooking",
         "eggs",
         "how-many-eggs",
-        "egg-cooking",
-        "poached-eggs",
-        "dose-per-body-weight",
-        "neurological-disease-diet"
+        "neurological-disease-diet",
+        "orac",
+        "poached-eggs"
       ]
     },
     {
@@ -3299,6 +3390,26 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000178",
+      "subject": "antioxidants",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "mechanism",
+      "question": "Do flavonoids raise your ORAC?",
+      "answer_short": "Yes - Wallach lists raising ORAC antioxidant activity among the effects demonstrated clinically in people, not just in cell studies.",
+      "answer": "Wallach draws a line between test-tube results and whole-person results, and puts raising ORAC antioxidant activity on the whole-person side. In in-vivo studies he lists flavonoid supplementation as clinically effective for reducing or eliminating allergies, calming vascular and pulmonary inflammation, raising ORAC antioxidant activity, antimicrobial action against bacteria, viruses, yeast and fungus, improving gastrointestinal function, and supporting the immune system in cancer patients. Flavonoids themselves are plant pigments - the yellow, red and blue in flower petals.",
+      "verbatim": "supplementation with flavonoids have demonstrated clinical\neffectiveness for reducing or eliminating allergies, vascular and pulmonary\ninflammation, for increasing ORAC antioxidant activity, antimicrobial properties",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "flavonoids",
+        "orac",
+        "antioxidants",
+        "inflammation"
+      ]
+    },
+    {
       "id": "WAL-CLM-HELLS-000001",
       "subject": "beef",
       "also_about": [
@@ -3517,6 +3628,83 @@
         "diabetes",
         "obesity",
         "clinical-study"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000013",
+      "subject": "orac",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "etymology",
+      "question": "What does ORAC stand for?",
+      "answer_short": "Oxygen Radical Absorbance Capacity - a lab score for how strongly a food, drink or supplement neutralizes free radicals.",
+      "answer": "ORAC stands for Oxygen Radical Absorbance Capacity, a lab score for how strongly a food, drink or supplement neutralises free radicals. The test scores one specific attacker, the peroxyl radical, chosen because it is among the most common reactive oxygen species in the human body. Worth noting that Wallach's books print the name two ways - Absorbance in Immortality, Absorption in Hell's Kitchen.",
+      "verbatim": "A good way to measure the antioxidant activity of foods includ- \ning juices is by means of the ORAC point system. ORAC stands for \nOxygen Radical Absorption Capacity, a measure of the scavenging",
+      "page": 252,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "orac",
+        "definition",
+        "antioxidants"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000014",
+      "subject": "orac",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What are the top ten antioxidant foods?",
+      "answer_short": "Prunes lead at 5,770 per 100 g, then raisins, blueberries, blackberries and kale.",
+      "answer": "Wallach's everyday top ten runs prunes 5,770, raisins 2,830, blueberries 2,400, blackberries 2,036, kale 1,770, strawberries 1,540, spinach 1,260, raspberries 1,220, Brussels sprouts 980 and plums 949. It is dried fruit, dark berries and leafy greens - and it is scored per 100 grams, so it is not directly comparable with the per-serving table in Immortality, where the same prunes appear at the same 5,770 but alongside spices scoring in the hundreds of thousands.",
+      "verbatim": "ORAC Rating Food Units (per 100 g) \n1 Prunes 5,770 \n2 Raisins 2,830 \n3 Blueberries 2,400 \n4 Blackberries 2,036 \n5 Kale 1,770 \n6 Strawberries 1,540 \n7 Spinach 1,260 \n8 Raspberries 1,220 \n9 Brussels sprouts 980 \n10 Plums 949",
+      "page": 253,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "orac",
+        "food-sources",
+        "berries",
+        "prunes",
+        "kale"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000015",
+      "subject": "orac",
+      "also_about": [],
+      "facet": "uses",
+      "question": "How do I actually get more ORAC into my day?",
+      "answer_short": "Swap your salad dressing for a high-ORAC juice - noni or mangosteen - instead of oil.",
+      "answer": "Wallach's practical trick is to replace salad dressing with a high-ORAC juice - noni or mangosteen - instead of oil. It sits inside his See Food Diet, where oils and dressings are a main target. For eating out he gives the Salad Fork Trick: dip the fork a quarter inch into the dressing and shake off the excess, which lets you taste it while giving up about ninety-five percent of the calories.",
+      "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing.",
+      "page": 269,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "orac",
+        "practical",
+        "salad-dressing",
+        "juice"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000016",
+      "subject": "antioxidants",
+      "also_about": [
+        "orac",
+        "free_radicals"
+      ],
+      "facet": "warning",
+      "question": "Why do I need more antioxidants when I'm losing weight?",
+      "answer_short": "Because burning fat generates free radicals - losing weight itself creates the damage antioxidants defend against.",
+      "answer": "Losing weight itself creates the damage antioxidants defend against. Wallach says the byproducts of burning fat can turn into free radicals that inflame the intima, the lining of the arteries, which then drives arteriosclerosis, cardiovascular disease, cancer and Alzheimer's disease. His instruction is not a single daily pill but flooding yourself with multiple antioxidants at every meal, framed as an insurance policy against the free radicals you will eat without knowing it.",
+      "verbatim": "To reduce the risk of the complications \nof weight loss, people need to flood themselves with antioxi- \ndants in order to protect themselves.",
+      "page": 252,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "weight-loss",
+        "free-radicals",
+        "antioxidants",
+        "warning"
       ]
     },
     {
@@ -6077,6 +6265,301 @@
         "nelson-mandela",
         "andrew-young",
         "longevity-example"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000235",
+      "subject": "orac",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is an ORAC score?",
+      "answer_short": "A single number rating a food's antioxidant power - the higher the score, the more free-radical damage it can absorb.",
+      "answer": "ORAC stands for Oxygen Radical Absorbance Capacity. Wallach calls it the universally agreed method of predicting the antioxidant power and free-radical neutralising value of foods, drink and supplements. Because it puts all three on one scale, he can set a daily point target rather than simply telling people to eat more vegetables.",
+      "verbatim": "ORAC is a method of measuring antioxidant capacities of various foods.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "antioxidants",
+        "measurement"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000236",
+      "subject": "orac",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who invented the ORAC test?",
+      "answer_short": "Scientists at the National Institute on Aging - a division of the NIH in Baltimore - working with Tufts University in Boston.",
+      "answer": "The ORAC test is a government-developed metric, not a supplement-industry one. It was created by scientists at the National Institute on Aging, a division of the NIH in Baltimore, working with Tufts University in Boston. The USDA went on to publish ORAC values for 277 commonly eaten foods in 2007 and a full database in 2008.",
+      "verbatim": "It was developed\nby scientists at the National Institute on Aging, a division of the National Institute\nof Health (NIH) in Baltimore, Maryland and Tufts University, Boston, Massachusetts.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "nih",
+        "usda",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000237",
+      "subject": "orac",
+      "also_about": [
+        "free_radicals"
+      ],
+      "facet": "mechanism",
+      "question": "How does the ORAC test actually work?",
+      "answer_short": "A fluorescent dye is put in a tube with peroxyl radicals that destroy it; how well the food protects that dye becomes its score.",
+      "answer": "The ORAC assay puts a fluorescent dye in a tube with peroxyl radicals that destroy it, and scores how well a food protects that dye. The peroxyl radical is chosen deliberately: it is one of the most common reactive oxygen species found in the human body, so the test measures defence against damage that actually happens in you rather than an abstract laboratory reaction.",
+      "verbatim": "The ORAC analysis, which utilizes Florescein as the florescent probe, provides a\nmeasure of the scavenging capacity of antioxidants against the peroxyl radical, which\nis one of the most common reactive oxygen species (ROS) found in the body.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "free-radicals",
+        "laboratory"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000238",
+      "subject": "orac",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "protocol",
+      "question": "How many ORAC points should I get a day?",
+      "answer_short": "20,000 to 25,000 ORAC points a day - the intake Wallach says is optimal for reaching 100.",
+      "answer": "Wallach's daily target is 20,000 to 25,000 ORAC points, which he gives as the optimal intake for reaching the age of 100. It is a maintenance figure, not a cure, and he never presents it alone: in the same book he pairs it with cutting free-radical foods such as fried food, trans fats, burnt fat, nitrites, alcohol and sugar, taking every essential nutrient with a special focus on minerals, and a calorie-restricted diet. He is also explicit that antioxidants by themselves raise a population's average lifespan but not its maximum.",
+      "verbatim": "A universally agreed upon method of predicting the antioxidant power and free radical\nneutralizing value of foods, drink and supplements is the Oxygen Radical Absorbance\nCapacity or ORAC value - based on current studies, we believe that the optimal total\ndaily intake of ORAC points to reach the age of 100 years is 20,000 to 25,000 per day.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "daily-target",
+        "longevity"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000239",
+      "subject": "orac",
+      "also_about": [],
+      "facet": "history",
+      "question": "Where do ORAC numbers come from?",
+      "answer_short": "The USDA published ORAC values for 277 commonly eaten American foods in 2007, then a full database in 2008.",
+      "answer": "The published ORAC numbers come from the USDA, which released an updated list of values for 277 commonly consumed American foods in 2007 and a full database in 2008. The list spans fruits, vegetables, nuts, seeds, spices, grains and drinks. What interests Wallach is the pattern it exposed: the correlation between high-antioxidant fruits and vegetables and better health outcomes is what ties the metric back to the free-radical theory of aging.",
+      "verbatim": "In 2007, scientists with the USDA published an updated list of ORAC values for 277\nfoods commonly consumed by the U.S. population (fruits, vegetables, nuts, seeds,\nspices, grains, drinks, etc.).",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "usda",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000240",
+      "subject": "orac",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Which foods have the highest ORAC score?",
+      "answer_short": "Ground cloves at 314,446 and cinnamon at 267,536 - spices outscore every fruit by more than tenfold.",
+      "answer": "Spices dominate Wallach's ORAC table by more than tenfold over any fruit: ground cloves score 314,446 and cinnamon 267,536 per serving. Below them come black sorghum at 100,800, then the dark berries and beans that make up realistic daily intake - aronia chokeberry 16,062, small red bean 13,727, wild blueberry 13,427, peppermint 13,978, red kidney bean 13,259, pinto bean 11,864, cranberry 8,983 and artichoke hearts 7,904.",
+      "verbatim": "Cloves, ground 314,446\nCinnamon 267,536\nSorghum, black 100,800\nAronia Black chokeberry 16,062\nSmall Red Bean 13,727\nWild blueberry 13,427\nRed kidney bean 13,259\nPeppermint 13,978\nPinto bean 11,864\nCranberry 8,983\nArtichoke hearts 7,904",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "spices",
+        "food-sources",
+        "cloves",
+        "cinnamon"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000241",
+      "subject": "orac",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "sources",
+      "question": "Is red wine actually good for you?",
+      "answer_short": "By ORAC, red beats white by roughly thirteen to one - Cabernet Sauvignon 5,034 against white wine's 392.",
+      "answer": "Wallach's ORAC table scores wine by type, and the gap is large: Cabernet Sauvignon reaches 5,034 per serving and Merlot 3,873, while rose falls to 1,005 and white wine to just 392 - roughly a thirteenfold spread between red and white. Elsewhere he explains why, describing resveratrol as a fat-soluble polyphenol antioxidant found in far greater amounts in red wine than white, and notes a sixteen-year Danish study of 13,000 people in which a daily glass of red wine was associated with a 32 percent lower risk of thrombotic stroke.",
+      "verbatim": "Wine, red (Merlot) 3,873\nWine, red (Cabernet Suavignon) 5,034\nWine, rose 1,005\nWine, white 392",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "wine",
+        "resveratrol",
+        "red-wine",
+        "food-sources"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000242",
+      "subject": "orac",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "uses",
+      "question": "How do you pick a good chocolate?",
+      "answer_short": "Four ways: the percentage of chocolate, the country of origin, the ORAC value, and taste.",
+      "answer": "Wallach gives four ways to judge a chocolate: the percentage of chocolate in the product, the country of origin, the ORAC value, and taste. He treats dark chocolate as a genuine antioxidant food on two lines of evidence. The Kuna studies found high cocoa consumption tracked with better cardiovascular health, that urban Kuna eating less cocoa lost the advantage, and that risk factors fell again when consumption rose. And in the Engler trial, 21 people ate either high- or low-flavanoid dark chocolate daily for two weeks, with the high-flavanoid group showing significantly better function in the endothelial lining of their blood vessels.",
+      "verbatim": "There are many ways to evaluate chocolate; one is by the\npercentage of chocolate in the product; the country of origin;\nanother is by the ORAC value; and yet another is by taste.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "orac",
+        "chocolate",
+        "cocoa",
+        "flavanols"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000243",
+      "subject": "free_radicals",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "physiology",
+      "question": "What do free radicals actually do to your body?",
+      "answer_short": "They attack your cells, cell walls and mitochondria - raising the risk of heart disease, cancer, Alzheimer's, cataracts and diabetes, and speeding aging itself.",
+      "answer": "Free radicals are molecules carrying an extra unpaired electron, and Wallach quotes Dr. Roy Walford calling them the great white sharks in the biochemical sea. The damage runs in steps: they attack polyunsaturated fats and cholesterol in cell membranes, producing lipid peroxides, which decompose into aldehydes that cross-link proteins, lipids and DNA. The result is membranes that stiffen, so nutrients and oxygen cannot get in and wastes cannot get out. They reach us through skin, breath, food and drink, and are also produced internally during normal metabolism.",
+      "verbatim": "quench or neutralize free radicals that attack our cells, cell walls, mitochondria and\nphysiological processes and increase our risk of cardiovascular disease, cancer,\nAlzheimer's disease and other dementias, cataracts, diabetes and aggressively speed up\nthe process and damage of aging itself.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "free-radicals",
+        "aging",
+        "oxidation",
+        "mitochondria"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000244",
+      "subject": "free_radicals",
+      "also_about": [
+        "orac",
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "What causes age spots and liver spots?",
+      "answer_short": "They're ceroid lipofuscin, the pigment left behind by free-radical damage - and if you have one on the outside, Wallach says you have millions on the inside.",
+      "answer": "Age spots and liver spots are ceroid lipofuscin, the pigment left behind by free-radical damage - and Wallach's point is that the ones you can see are the readable surface of an accumulation happening throughout the body. It is the end byproduct of malondialdehyde attacking oxidised cell-wall and mitochondrial fats, and it builds up inside the cell's cytoplasm over a lifetime. He cites measurements of how much of a human brain cell's interior it occupies with age: roughly 35 percent at 30 to 40 years, 41 percent at 50 to 60, 55 percent at 70 to 80, and 78 percent at 90 to 100.",
+      "verbatim": "Ceroid lipofuscin shows up in humans as “age spots”\nor “liver spots” on the skin of the hands or face. If you have\none liver spot or age spot on the outside you have millions of\nthem on the inside!",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "age-spots",
+        "liver-spots",
+        "ceroid-lipofuscin",
+        "aging"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000245",
+      "subject": "free_radicals",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "warning",
+      "question": "Are age spots a warning sign of something worse?",
+      "answer_short": "Wallach says yes - how many you have and how dark they are tracks your free-radical damage, and forecasts cataracts, heart disease, diabetes and dementia.",
+      "answer": "Wallach treats age spots as a readable gauge of internal damage: how many you have and how dark they are tracks your level of free-radical damage directly. He calls them a predictive barometer for cataracts, macular degeneration, coronary artery disease, diabetes, senile dementia, Alzheimer's disease and cancer. The reasoning follows from what the pigment is - the same ceroid lipofuscin is accumulating in the brain, heart, liver, lungs, bone marrow and eyes, where it cannot be seen.",
+      "verbatim": "The number and intensity of pigment levels in age\nspots are directly related to the level of free radical damage\nand can be a predictive barometer of sinister things to come -\ni.e. - cataracts, macular degeneration, coronary artery disease,\ndiabetes, senile dementia, Alzheimer’s disease, cancer, etc.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "age-spots",
+        "warning-signs",
+        "free-radicals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000246",
+      "subject": "longevity",
+      "also_about": [
+        "free_radicals",
+        "antioxidants",
+        "orac"
+      ],
+      "facet": "big_question",
+      "question": "Is aging reversible?",
+      "answer_short": "On the aging pigment specifically Wallach says yes - and calls the belief that it can't be undone a medical dogma that is simply wrong.",
+      "answer": "On the aging pigment specifically, Wallach says reversal is possible, and he calls the opposite view a medical dogma that is simply wrong. His charge is that doctors and most gerontologists falsely believe accumulated ceroid lipofuscin is not preventable, removable or reversible, and he points to cell-culture, animal and human studies showing otherwise. He draws a real limit in the same chapter, though: raising antioxidant intake alone increases a population's mean lifespan, not its maximum. Clearing the pigment is not the same as extending the human ceiling.",
+      "verbatim": "Fortunately, the accumulation of ceroid lipofuscin\nin the brain, heart, liver, lungs, bone marrow, eyes, etc. can\neasily be prevented and quickly reversed.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "aging",
+        "longevity",
+        "ceroid-lipofuscin"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000247",
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "free_radicals"
+      ],
+      "facet": "protocol",
+      "question": "How do you reverse the aging pigment?",
+      "answer_short": "Cut free-radical foods hard, take every essential nutrient, and push antioxidants to 20,000-25,000 ORAC points a day.",
+      "answer": "Wallach's method for reversing the aging pigment has three parts: cut free-radical foods hard, take every known essential nutrient, and push antioxidants to 20,000 to 25,000 ORAC points a day. The foods he names to cut are fried foods, trans fats, burnt fats, heterocyclic amines, super-heated carbohydrates, acrylamides, nitrites, alcohol and sugar. He frames the whole thing inside Clive McKay's equation - a calorie-restricted diet without malnutrition yielding a 30 to 100 percent longevity increase - where without malnutrition means every known essential nutrient at optimal levels well above the RDI, with a special focus on minerals.",
+      "verbatim": "Preventing and reversing the accumulation of ceroid\nlipofuscin pigments is well documented in many animal\nspecies and humans - to accomplish this “antiaging” feat\nrequires a significant reduction of the intake of free radicals\n(fried foods, trans fats, burnt fats, heterocyclic amines, super-heated carbohydrates, acrylamides, nitrites, alcohol, sugar,\netc.) and a significant increase in the intake of all known\nessential nutrients and an extraordinary increased intake of\nantioxidants (20,000 to 25,000 ORAC points/ day).",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "aging",
+        "orac",
+        "calorie-restriction",
+        "protocol"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000248",
+      "subject": "antioxidants",
+      "also_about": [
+        "longevity",
+        "orac"
+      ],
+      "facet": "stance",
+      "question": "Do antioxidants really help you live longer?",
+      "answer_short": "Yes for average lifespan, no for the maximum - and only in combination, never one at a time.",
+      "answer": "Wallach is more careful here than he is often given credit for. He says antioxidant intake alone raises a population's mean lifespan but not its maximum. What moves the 50 percent survival rate is combinations - vitamins A, C and E, selenium, the sulphur-bearing amino acids methionine, cysteine and cystine, plus catechins, resveratrol, proanthocyanins, leutines, lycopenes, flavonols and polyphenols. His clearest evidence is a fruit-fly study: engineering the flies to overexpress SOD alone, or catalase alone, changed longevity little or not at all, while doing both together raised mean and maximum lifespan by as much as 40 percent.",
+      "verbatim": "Daily consumption of antioxidant rich food and drink is a universal feature of those\nliving in Blue Zones and in particular centenarians.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "antioxidants",
+        "longevity",
+        "lifespan",
+        "blue-zones"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000249",
+      "subject": "antioxidants",
+      "also_about": [
+        "longevity",
+        "orac"
+      ],
+      "facet": "sources",
+      "question": "What do the world's longest-lived people actually eat?",
+      "answer_short": "Dark fruits and berries, yellow and red vegetables, cocoa, red wine, green tea and coffee - every day, not occasionally.",
+      "answer": "The world's longest-lived people eat dark fruits and berries, yellow and red vegetables, cocoa, red wine, green tea and coffee - every day rather than occasionally. Wallach maps compound to source: lycopenes from tomatoes, leutines from green leafy vegetables, proanthocyanins from red grape skins and seeds, resveratrol from red wine, red grape juice and giant Japanese knotweed, and flavonols and polyphenols from dark chocolate, red wine and green tea. What he stresses is the constancy - seasonal variety changes with the growing season, but daily consumption of multiple antioxidant sources does not.",
+      "verbatim": "In the \"Blue Zones\" of the world, large quantities of vitamin C, Beta carotene,\nflavanols, lycopenes, leutenes, proanthocyanins, resveratrols, catechens (EGCGs) and\npolyphenols are found in dark fruits and berries, yellow and red vegetables, cocoa, red\nwine, green tea or coffee - these are the antioxidants that have universally been found\nto be consumed daily in the Blue Zones and are known to protect the centenarians.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "blue-zones",
+        "centenarians",
+        "antioxidants",
+        "food-sources"
       ]
     },
     {

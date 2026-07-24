@@ -2,35 +2,193 @@
   "schema_version": 1,
   "_note": "SOURCE (hand-authored) entity registry for Search (blueprint §4B). Non-canon entities carry display_name/type/symbol here. Canon entities set canon_ref:true and OMIT display_name/symbol — the derive pulls those from eden/corpus/essentials-canon.json so a canonical name is never hand-duplicated (no_hand_duplicated_canonical). synonyms power retrieval; related are soft cross-link chips. Grows one entity at a time as we author.",
   "entities": {
-    "mercury": {
-      "display_name": "Mercury",
-      "type": "element",
-      "symbol": "Hg",
+    "absorption": {
+      "display_name": "Nutrient Absorption",
+      "type": "concept",
       "synonyms": [
-        "quicksilver",
-        "hg",
-        "hydrargyrum"
+        "nutrient absorption",
+        "malabsorption",
+        "bioavailability",
+        "assimilation",
+        "you are what you absorb",
+        "gut absorption"
       ],
       "related": [
-        "selenium",
-        "mercury_poisoning",
-        "minamata_disease",
-        "vaccines"
+        "gluten",
+        "hypochlorhydria",
+        "phytates",
+        "digestion",
+        "colloidal_minerals",
+        "essential_nutrients"
       ]
     },
-    "vaccines": {
-      "display_name": "Vaccines",
-      "type": "topic",
+    "aluminum": {
+      "canon_ref": true,
+      "type": "nutrient",
       "synonyms": [
-        "vaccine",
-        "vaccination",
-        "immunization",
-        "thimerosal"
+        "al",
+        "aluminium"
       ],
       "related": [
-        "mercury",
-        "autism",
+        "gallium",
+        "alzheimers",
+        "mercury"
+      ]
+    },
+    "amino_acids": {
+      "display_name": "Amino Acids",
+      "type": "concept",
+      "synonyms": [
+        "amino acid",
+        "essential amino acids",
+        "protein building blocks"
+      ],
+      "related": [
+        "essential_nutrients",
+        "macronutrients",
+        "selenium"
+      ]
+    },
+    "antioxidants": {
+      "display_name": "Antioxidants",
+      "type": "topic",
+      "synonyms": [
+        "antioxidant",
+        "antioxidants",
+        "anti oxidant",
+        "anti-oxidants",
+        "polyphenols",
+        "flavonoids",
+        "flavanols",
+        "bioflavonoids",
+        "resveratrol",
+        "catechins",
+        "lycopene",
+        "beta carotene",
+        "proanthocyanins",
+        "what foods fight free radicals",
+        "foods that fight aging"
+      ],
+      "related": [
+        "orac",
+        "free_radicals",
+        "longevity"
+      ]
+    },
+    "aromatherapy": {
+      "display_name": "Aromatherapy",
+      "type": "topic",
+      "synonyms": [
+        "essential oils",
+        "aromatic oils"
+      ],
+      "related": [
+        "herbal_medicine",
+        "ayurveda",
         "be_your_own_doctor"
+      ]
+    },
+    "ayurveda": {
+      "display_name": "Ayurveda",
+      "type": "topic",
+      "synonyms": [
+        "ayurvedic medicine",
+        "ayurvedic",
+        "dosha"
+      ],
+      "related": [
+        "herbal_medicine",
+        "homeopathy",
+        "be_your_own_doctor"
+      ]
+    },
+    "be_your_own_doctor": {
+      "display_name": "Be Your Own Doctor",
+      "type": "topic",
+      "synonyms": [
+        "self-care",
+        "self-reliance",
+        "primary care",
+        "preventive medicine",
+        "separate medicine and state"
+      ],
+      "related": [
+        "hospital_dangers",
+        "pregnancy_birth",
+        "essential_nutrients",
+        "negative_ion_therapy"
+      ]
+    },
+    "beef": {
+      "display_name": "Beef",
+      "type": "substance",
+      "synonyms": [
+        "beef",
+        "red meat",
+        "steak",
+        "sirloin",
+        "roast beef",
+        "beef liver",
+        "steak tartare",
+        "ground beef",
+        "beef cattle"
+      ],
+      "related": [
+        "meat",
+        "pork",
+        "eggs",
+        "vitamin-a",
+        "copper"
+      ]
+    },
+    "bismuth": {
+      "display_name": "Bismuth",
+      "type": "element",
+      "symbol": "Bi",
+      "synonyms": [
+        "bi",
+        "pepto-bismol",
+        "pepto bismol",
+        "bismuth subsalicylate"
+      ],
+      "related": [
+        "obscure_elements",
+        "colloidal_minerals"
+      ]
+    },
+    "butter": {
+      "display_name": "Butter",
+      "type": "substance",
+      "synonyms": [
+        "butter",
+        "ghee",
+        "clarified butter",
+        "grass-fed butter",
+        "butterfat",
+        "dairy fat"
+      ],
+      "related": [
+        "cholesterol",
+        "vitamin-a",
+        "vitamin-d",
+        "vitamin-k",
+        "eggs",
+        "margarine"
+      ]
+    },
+    "cadmium": {
+      "display_name": "Cadmium",
+      "type": "element",
+      "symbol": "Cd",
+      "synonyms": [
+        "cd",
+        "heavy metal",
+        "cadmium toxicity"
+      ],
+      "related": [
+        "zinc",
+        "mercury",
+        "obscure_elements"
       ]
     },
     "calcium": {
@@ -48,6 +206,75 @@
         "colloidal_minerals"
       ]
     },
+    "carbon": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "c",
+        "carbon dioxide",
+        "co2",
+        "global warming",
+        "climate change",
+        "climate"
+      ],
+      "related": []
+    },
+    "carbonated_beverages": {
+      "display_name": "Soft Drinks & Carbonation",
+      "type": "concept",
+      "synonyms": [
+        "carbonated beverages",
+        "soft drinks",
+        "soda",
+        "pop",
+        "cola",
+        "diet soda",
+        "phosphates",
+        "phosphoric acid"
+      ],
+      "related": [
+        "sugar",
+        "calcium",
+        "phosphorus",
+        "osteoporosis",
+        "absorption"
+      ]
+    },
+    "chicken": {
+      "display_name": "Chicken",
+      "type": "substance",
+      "synonyms": [
+        "chicken",
+        "poultry",
+        "chicken soup",
+        "drumstick",
+        "chicken drumstick",
+        "fried chicken",
+        "pollo",
+        "hen",
+        "chicken bone"
+      ],
+      "related": [
+        "meat",
+        "fish",
+        "eggs",
+        "pork",
+        "beef"
+      ]
+    },
+    "chiropractic": {
+      "display_name": "Chiropractic",
+      "type": "topic",
+      "synonyms": [
+        "chiropractor",
+        "spinal manipulation",
+        "subluxation"
+      ],
+      "related": [
+        "hydrotherapy",
+        "be_your_own_doctor"
+      ]
+    },
     "cholesterol": {
       "display_name": "Cholesterol",
       "type": "substance",
@@ -62,19 +289,33 @@
       ],
       "intro_claim": "WAL-CLM-EPIGEN-000151"
     },
-    "diabetes": {
-      "catalog_ref": true,
-      "type": "condition",
+    "chromium": {
+      "canon_ref": true,
+      "type": "nutrient",
       "synonyms": [
-        "type 2 diabetes",
-        "diabetes mellitus",
-        "adult-onset diabetes",
-        "blood sugar"
+        "cr"
       ],
       "related": [
-        "chromium",
+        "diabetes",
         "vanadium",
-        "hypoglycemia",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "cobalt": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "co",
+        "vitamin b12",
+        "b12",
+        "cobalamin",
+        "cyanocobalamine"
+      ],
+      "related": [
+        "vitamins",
+        "iron",
+        "essential_nutrients",
         "colloidal_minerals"
       ]
     },
@@ -107,108 +348,6 @@
         "be_your_own_doctor"
       ]
     },
-    "wallach": {
-      "display_name": "Dr. Joel Wallach",
-      "type": "person",
-      "synonyms": [
-        "joel wallach",
-        "dr wallach",
-        "joel d wallach"
-      ],
-      "related": [
-        "epigenetics",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "iron": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "fe",
-        "ferrum"
-      ],
-      "related": [
-        "vitamin-c",
-        "anemia",
-        "copper",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "iodine": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "iodide"
-      ],
-      "related": [
-        "thyroid_disease",
-        "hypothyroidism",
-        "selenium",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "germanium": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "ge",
-        "ge-132"
-      ],
-      "related": [
-        "cancer",
-        "selenium",
-        "lithium",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "hydrogen": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "h2"
-      ],
-      "related": [
-        "oxygen",
-        "water",
-        "ph",
-        "essential_nutrients"
-      ]
-    },
-    "potassium": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "potash",
-        "kalium"
-      ],
-      "related": [
-        "sodium",
-        "magnesium",
-        "lithium",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "fluoride": {
-      "display_name": "Fluoride",
-      "type": "element",
-      "symbol": "F",
-      "synonyms": [
-        "fluorine",
-        "fluorspar",
-        "fluorite"
-      ],
-      "related": [
-        "calcium",
-        "osteoporosis",
-        "tooth_decay",
-        "essential_nutrients"
-      ]
-    },
     "copper": {
       "canon_ref": true,
       "type": "nutrient",
@@ -224,335 +363,22 @@
         "colloidal_minerals"
       ]
     },
-    "chromium": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "cr"
-      ],
-      "related": [
-        "diabetes",
-        "vanadium",
-        "colloidal_minerals",
-        "essential_nutrients"
-      ]
-    },
-    "gold": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "au",
-        "aurum"
-      ],
-      "related": [
-        "arthritis",
-        "cancer",
-        "silver",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "aluminum": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "al",
-        "aluminium"
-      ],
-      "related": [
-        "gallium",
-        "alzheimers",
-        "mercury"
-      ]
-    },
-    "krypton": {
-      "display_name": "Krypton",
-      "type": "element",
-      "symbol": "Kr",
-      "synonyms": [
-        "kr",
-        "noble gas"
-      ],
-      "related": [
-        "fluoride",
-        "helium",
-        "essential_nutrients"
-      ]
-    },
-    "gallium": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "ga",
-        "gallium-67"
-      ],
-      "related": [
-        "aluminum",
-        "cancer",
-        "germanium",
-        "essential_nutrients",
-        "colloidal_minerals"
-      ]
-    },
-    "essential_nutrients": {
-      "display_name": "Essential Nutrients",
+    "cruciferous_vegetables": {
+      "display_name": "Cruciferous Vegetables & Goitrogens",
       "type": "concept",
       "synonyms": [
-        "90 essential nutrients",
-        "90 nutrients",
-        "essential nutrient"
+        "cruciferous vegetables",
+        "goitrogens",
+        "cabbage",
+        "broccoli",
+        "cauliflower",
+        "kale",
+        "brussels sprouts"
       ],
       "related": [
-        "colloidal_minerals",
-        "vitamins",
-        "amino_acids",
-        "macronutrients"
-      ]
-    },
-    "vitamins": {
-      "display_name": "Vitamins",
-      "type": "concept",
-      "synonyms": [
-        "vitamin",
-        "fat-soluble",
-        "water-soluble",
-        "flavanols",
-        "megavitamin",
-        "megavitamin therapy",
-        "orthomolecular",
-        "orthomolecular medicine",
-        "pauling"
-      ],
-      "related": [
-        "essential_nutrients",
-        "vitamin-c"
-      ]
-    },
-    "amino_acids": {
-      "display_name": "Amino Acids",
-      "type": "concept",
-      "synonyms": [
-        "amino acid",
-        "essential amino acids",
-        "protein building blocks"
-      ],
-      "related": [
-        "essential_nutrients",
-        "macronutrients",
-        "selenium"
-      ]
-    },
-    "macronutrients": {
-      "display_name": "Macronutrients",
-      "type": "concept",
-      "synonyms": [
-        "carbohydrates",
-        "carbs",
-        "fats",
-        "protein",
-        "sugar"
-      ],
-      "related": [
-        "amino_acids",
-        "essential_nutrients",
-        "omega-3"
-      ]
-    },
-    "light_therapy": {
-      "display_name": "Light Therapy",
-      "type": "topic",
-      "synonyms": [
-        "uv therapy",
-        "ultraviolet therapy",
-        "infrared therapy",
-        "phototherapy"
-      ],
-      "related": [
-        "color_therapy",
-        "vitamin-d",
-        "be_your_own_doctor"
-      ]
-    },
-    "chiropractic": {
-      "display_name": "Chiropractic",
-      "type": "topic",
-      "synonyms": [
-        "chiropractor",
-        "spinal manipulation",
-        "subluxation"
-      ],
-      "related": [
-        "hydrotherapy",
-        "be_your_own_doctor"
-      ]
-    },
-    "aromatherapy": {
-      "display_name": "Aromatherapy",
-      "type": "topic",
-      "synonyms": [
-        "essential oils",
-        "aromatic oils"
-      ],
-      "related": [
-        "herbal_medicine",
-        "ayurveda",
-        "be_your_own_doctor"
-      ]
-    },
-    "ayurveda": {
-      "display_name": "Ayurveda",
-      "type": "topic",
-      "synonyms": [
-        "ayurvedic medicine",
-        "ayurvedic",
-        "dosha"
-      ],
-      "related": [
-        "herbal_medicine",
-        "homeopathy",
-        "be_your_own_doctor"
-      ]
-    },
-    "homeopathy": {
-      "display_name": "Homeopathy",
-      "type": "topic",
-      "synonyms": [
-        "homeopathic",
-        "like cures like",
-        "hahnemann",
-        "cell salts",
-        "schuessler cell salts",
-        "biochemics",
-        "bach flower remedies",
-        "bach remedies",
-        "tissue salts"
-      ],
-      "related": [
-        "herbal_medicine",
-        "naturopathy",
-        "be_your_own_doctor"
-      ]
-    },
-    "hydrotherapy": {
-      "display_name": "Hydrotherapy",
-      "type": "topic",
-      "synonyms": [
-        "water therapy",
-        "medicinal baths",
-        "balneotherapy"
-      ],
-      "related": [
-        "chiropractic",
-        "be_your_own_doctor"
-      ]
-    },
-    "negative_ion_therapy": {
-      "display_name": "Negative Ion Therapy",
-      "type": "topic",
-      "synonyms": [
-        "negative ions",
-        "air ionization",
-        "ionizer"
-      ],
-      "related": [
-        "asthma",
-        "be_your_own_doctor"
-      ]
-    },
-    "urine_therapy": {
-      "display_name": "Urine Therapy",
-      "type": "topic",
-      "synonyms": [
-        "urotherapy",
-        "autoimmune urine therapy",
-        "uropathy"
-      ],
-      "related": [
-        "allergies",
-        "cancer",
-        "be_your_own_doctor"
-      ]
-    },
-    "macrobiotics": {
-      "display_name": "Macrobiotics",
-      "type": "topic",
-      "synonyms": [
-        "macrobiotic diet",
-        "brown rice diet",
-        "ohsawa"
-      ],
-      "related": [
-        "celiac_disease",
-        "diabetes",
-        "be_your_own_doctor"
-      ]
-    },
-    "herbal_medicine": {
-      "display_name": "Herbal Medicine",
-      "type": "topic",
-      "synonyms": [
-        "herbalism",
-        "herbal remedies",
-        "botanical medicine",
-        "phytotherapy"
-      ],
-      "related": [
-        "aromatherapy",
-        "ayurveda",
-        "homeopathy",
-        "be_your_own_doctor"
-      ]
-    },
-    "be_your_own_doctor": {
-      "display_name": "Be Your Own Doctor",
-      "type": "topic",
-      "synonyms": [
-        "self-care",
-        "self-reliance",
-        "primary care",
-        "preventive medicine",
-        "separate medicine and state"
-      ],
-      "related": [
-        "hospital_dangers",
-        "pregnancy_birth",
-        "essential_nutrients",
-        "negative_ion_therapy"
-      ]
-    },
-    "hospital_dangers": {
-      "display_name": "Hospital Dangers",
-      "type": "topic",
-      "synonyms": [
-        "hospital safety",
-        "nosocomial infection",
-        "iatrogenic",
-        "medical errors"
-      ],
-      "related": [
-        "be_your_own_doctor"
-      ]
-    },
-    "pregnancy_birth": {
-      "display_name": "Pregnancy & Birth",
-      "type": "topic",
-      "synonyms": [
-        "pregnancy",
-        "childbirth",
-        "home birth",
-        "prenatal",
-        "obstetrics",
-        "contraception",
-        "birth defects",
-        "congenital defects",
-        "teratology"
-      ],
-      "related": [
-        "birth_defects",
-        "infertility",
-        "cystic_fibrosis",
-        "vitamins",
-        "sexual_health"
+        "iodine",
+        "hypothyroidism",
+        "gluten"
       ]
     },
     "cystic_fibrosis": {
@@ -568,242 +394,62 @@
         "birth_defects"
       ]
     },
-    "longevity": {
-      "display_name": "Longevity",
-      "type": "topic",
-      "synonyms": [
-        "lifespan",
-        "aging",
-        "live longer",
-        "hunza"
-      ],
-      "related": [
-        "essential_nutrients",
-        "colloidal_minerals",
-        "be_your_own_doctor",
-        "negative_ion_therapy"
-      ]
-    },
-    "sexual_health": {
-      "display_name": "Sexual Health",
-      "type": "topic",
-      "synonyms": [
-        "mens health",
-        "sexual function",
-        "potency",
-        "libido",
-        "premature ejaculation"
-      ],
-      "related": [
-        "pregnancy_birth",
-        "be_your_own_doctor",
-        "herbal_medicine"
-      ]
-    },
-    "home_remedies": {
-      "display_name": "Home Remedies",
-      "type": "topic",
-      "synonyms": [
-        "natural remedies",
-        "folk remedies",
-        "pest control",
-        "mosquito repellent"
-      ],
-      "related": [
-        "herbal_medicine",
-        "be_your_own_doctor"
-      ]
-    },
-    "somatic_therapies": {
-      "display_name": "Somatic Therapies",
-      "type": "topic",
-      "synonyms": [
-        "bodywork",
-        "osteopathy",
-        "reflexology",
-        "rolfing",
-        "structural integration",
-        "spinal manipulation",
-        "massage therapy",
-        "somatics",
-        "doctor of osteopathy",
-        "d.o."
-      ],
-      "related": [
-        "chiropractic",
-        "naturopathy",
-        "hydrotherapy",
-        "be_your_own_doctor"
-      ]
-    },
-    "faith_healing": {
-      "display_name": "Faith & Energy Healing",
-      "type": "topic",
-      "synonyms": [
-        "faith healing",
-        "laying on of hands",
-        "spiritual healing",
-        "christian science",
-        "therapeutic touch",
-        "energy healing",
-        "positive thinking",
-        "prayer healing"
-      ],
-      "related": [
-        "be_your_own_doctor",
-        "longevity"
-      ]
-    },
-    "naturopathy": {
-      "display_name": "Naturopathy",
-      "type": "topic",
-      "synonyms": [
-        "naturopathic medicine",
-        "naturopathic physician",
-        "n.d.",
-        "first do no harm",
-        "natural hygiene"
-      ],
-      "related": [
-        "herbal_medicine",
-        "homeopathy",
-        "hydrotherapy",
-        "be_your_own_doctor"
-      ]
-    },
-    "rare_earth_elements": {
-      "display_name": "Rare Earth Elements",
+    "dairy": {
+      "display_name": "Milk & Dairy",
       "type": "concept",
       "synonyms": [
-        "rare earths",
-        "lanthanides",
-        "rare earth metals",
-        "dysprosium",
-        "erbium",
-        "europium",
-        "gadolinium",
-        "holmium",
-        "lutetium",
-        "cerium",
-        "monazite"
+        "dairy",
+        "milk",
+        "whole milk",
+        "raw milk",
+        "pasteurized milk",
+        "cheese",
+        "butter"
       ],
       "related": [
-        "obscure_elements",
-        "colloidal_minerals",
-        "essential_nutrients"
+        "cholesterol",
+        "vitamin-b12",
+        "meat",
+        "eggs"
       ]
     },
-    "obscure_elements": {
-      "display_name": "Obscure Elements",
-      "type": "concept",
+    "diabetes": {
+      "catalog_ref": true,
+      "type": "condition",
       "synonyms": [
-        "obscure elements",
-        "trace elements",
-        "actinium",
-        "bromine",
-        "cesium",
-        "caesium",
-        "hafnium",
-        "indium",
-        "iridium",
-        "bromide"
+        "type 2 diabetes",
+        "diabetes mellitus",
+        "adult-onset diabetes",
+        "blood sugar"
       ],
       "related": [
-        "rare_earth_elements",
-        "colloidal_minerals",
-        "essential_nutrients"
-      ]
-    },
-    "cobalt": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "co",
-        "vitamin b12",
-        "b12",
-        "cobalamin",
-        "cyanocobalamine"
-      ],
-      "related": [
-        "vitamins",
-        "iron",
-        "essential_nutrients",
+        "chromium",
+        "vanadium",
+        "hypoglycemia",
         "colloidal_minerals"
       ]
     },
-    "helium": {
-      "display_name": "Helium",
-      "type": "element",
-      "symbol": "He",
+    "dietary_oils": {
+      "display_name": "Cooking Oils & Fried Foods",
+      "type": "concept",
       "synonyms": [
-        "he",
-        "noble gas",
-        "the bends",
-        "decompression sickness"
+        "dietary oils",
+        "vegetable oils",
+        "seed oils",
+        "cooking oil",
+        "fried foods",
+        "trans fats",
+        "rancid fat",
+        "margarine",
+        "oxidized oils",
+        "free radicals"
       ],
       "related": [
-        "hydrogen",
-        "krypton",
-        "obscure_elements"
+        "cholesterol",
+        "selenium",
+        "vitamin-e",
+        "processed_meat"
       ]
-    },
-    "silver": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "ag",
-        "argentum",
-        "colloidal silver",
-        "silver sulfadiazine"
-      ],
-      "related": [
-        "gold",
-        "colloidal_minerals",
-        "essential_nutrients"
-      ]
-    },
-    "cadmium": {
-      "display_name": "Cadmium",
-      "type": "element",
-      "symbol": "Cd",
-      "synonyms": [
-        "cd",
-        "heavy metal",
-        "cadmium toxicity"
-      ],
-      "related": [
-        "zinc",
-        "mercury",
-        "obscure_elements"
-      ]
-    },
-    "bismuth": {
-      "display_name": "Bismuth",
-      "type": "element",
-      "symbol": "Bi",
-      "synonyms": [
-        "bi",
-        "pepto-bismol",
-        "pepto bismol",
-        "bismuth subsalicylate"
-      ],
-      "related": [
-        "obscure_elements",
-        "colloidal_minerals"
-      ]
-    },
-    "carbon": {
-      "canon_ref": true,
-      "type": "nutrient",
-      "synonyms": [
-        "c",
-        "carbon dioxide",
-        "co2",
-        "global warming",
-        "climate change",
-        "climate"
-      ],
-      "related": []
     },
     "drug_safety_elderly": {
       "display_name": "Drug Safety in the Elderly",
@@ -832,58 +478,159 @@
         "essential_nutrients"
       ]
     },
-    "homosexuality": {
-      "display_name": "Homosexuality",
-      "type": "topic",
+    "eggs": {
+      "display_name": "Eggs",
+      "type": "substance",
       "synonyms": [
-        "gay",
-        "homosexual",
-        "gay gene",
-        "sexual orientation",
-        "same-sex attraction",
-        "lgbt"
+        "egg",
+        "eggs",
+        "egg yolk",
+        "egg white",
+        "poached eggs",
+        "soft-boiled eggs"
       ],
       "related": [
-        "intersex",
-        "essential_nutrients",
-        "pregnancy_birth"
+        "cholesterol",
+        "biotin",
+        "meat",
+        "dietary_oils"
       ]
     },
-    "intersex": {
-      "display_name": "Intersex",
-      "type": "topic",
+    "essential_nutrients": {
+      "display_name": "Essential Nutrients",
+      "type": "concept",
       "synonyms": [
-        "hermaphrodite",
-        "hermaphroditism",
-        "intersexual",
-        "ambiguous genitalia",
-        "disorders of sex development",
-        "dsd"
+        "90 essential nutrients",
+        "90 nutrients",
+        "essential nutrient"
       ],
       "related": [
-        "homosexuality",
-        "essential_nutrients",
-        "pregnancy_birth"
+        "colloidal_minerals",
+        "vitamins",
+        "amino_acids",
+        "macronutrients"
       ]
     },
-    "quackbusters": {
-      "display_name": "Quackbusters & Medical Freedom",
+    "faith_healing": {
+      "display_name": "Faith & Energy Healing",
       "type": "topic",
       "synonyms": [
-        "quackbuster",
-        "quackwatch",
-        "medical censorship",
-        "medical freedom",
-        "health freedom",
-        "medical monopoly",
-        "victor herbert",
-        "stephen barrett"
+        "faith healing",
+        "laying on of hands",
+        "spiritual healing",
+        "christian science",
+        "therapeutic touch",
+        "energy healing",
+        "positive thinking",
+        "prayer healing"
       ],
       "related": [
         "be_your_own_doctor",
-        "vaccines",
+        "longevity"
+      ]
+    },
+    "fish": {
+      "display_name": "Fish",
+      "type": "concept",
+      "synonyms": [
+        "fish",
+        "seafood",
+        "tuna",
+        "salmon",
+        "cod",
+        "cod liver oil",
+        "cod-liver oil",
+        "fish oil",
+        "salmon oil",
+        "shark",
+        "swordfish",
+        "anchovies",
+        "shellfish",
+        "marine fish",
+        "fish liver"
+      ],
+      "related": [
+        "omega-3",
+        "selenium",
+        "vitamin-d",
+        "vitamin-a",
+        "cholesterol",
+        "meat"
+      ]
+    },
+    "fluoride": {
+      "display_name": "Fluoride",
+      "type": "element",
+      "symbol": "F",
+      "synonyms": [
+        "fluorine",
+        "fluorspar",
+        "fluorite"
+      ],
+      "related": [
+        "calcium",
+        "osteoporosis",
+        "tooth_decay",
+        "essential_nutrients"
+      ]
+    },
+    "free_radicals": {
+      "display_name": "Free Radicals",
+      "type": "topic",
+      "synonyms": [
+        "free radical",
+        "free radicals",
+        "oxidative stress",
+        "oxidation",
+        "reactive oxygen species",
+        "ros",
+        "peroxyl radical",
+        "ceroid lipofuscin",
+        "lipofuscin",
+        "age spots",
+        "age spot",
+        "liver spots",
+        "liver spot",
+        "dark spots on hands",
+        "brown spots on hands",
+        "sun spots",
+        "aging pigment",
+        "what causes age spots"
+      ],
+      "related": [
+        "orac",
+        "antioxidants",
+        "longevity"
+      ]
+    },
+    "gallium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ga",
+        "gallium-67"
+      ],
+      "related": [
+        "aluminum",
+        "cancer",
+        "germanium",
         "essential_nutrients",
-        "hospital_dangers"
+        "colloidal_minerals"
+      ]
+    },
+    "germanium": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ge",
+        "ge-132"
+      ],
+      "related": [
+        "cancer",
+        "selenium",
+        "lithium",
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
     "gluten": {
@@ -906,142 +653,262 @@
         "phytates"
       ]
     },
-    "absorption": {
-      "display_name": "Nutrient Absorption",
-      "type": "concept",
+    "gold": {
+      "canon_ref": true,
+      "type": "nutrient",
       "synonyms": [
-        "nutrient absorption",
-        "malabsorption",
-        "bioavailability",
-        "assimilation",
-        "you are what you absorb",
-        "gut absorption"
+        "au",
+        "aurum"
       ],
       "related": [
-        "gluten",
-        "hypochlorhydria",
-        "phytates",
-        "digestion",
-        "colloidal_minerals",
+        "arthritis",
+        "cancer",
+        "silver",
+        "essential_nutrients",
+        "colloidal_minerals"
+      ]
+    },
+    "helium": {
+      "display_name": "Helium",
+      "type": "element",
+      "symbol": "He",
+      "synonyms": [
+        "he",
+        "noble gas",
+        "the bends",
+        "decompression sickness"
+      ],
+      "related": [
+        "hydrogen",
+        "krypton",
+        "obscure_elements"
+      ]
+    },
+    "herbal_medicine": {
+      "display_name": "Herbal Medicine",
+      "type": "topic",
+      "synonyms": [
+        "herbalism",
+        "herbal remedies",
+        "botanical medicine",
+        "phytotherapy"
+      ],
+      "related": [
+        "aromatherapy",
+        "ayurveda",
+        "homeopathy",
+        "be_your_own_doctor"
+      ]
+    },
+    "home_remedies": {
+      "display_name": "Home Remedies",
+      "type": "topic",
+      "synonyms": [
+        "natural remedies",
+        "folk remedies",
+        "pest control",
+        "mosquito repellent"
+      ],
+      "related": [
+        "herbal_medicine",
+        "be_your_own_doctor"
+      ]
+    },
+    "homeopathy": {
+      "display_name": "Homeopathy",
+      "type": "topic",
+      "synonyms": [
+        "homeopathic",
+        "like cures like",
+        "hahnemann",
+        "cell salts",
+        "schuessler cell salts",
+        "biochemics",
+        "bach flower remedies",
+        "bach remedies",
+        "tissue salts"
+      ],
+      "related": [
+        "herbal_medicine",
+        "naturopathy",
+        "be_your_own_doctor"
+      ]
+    },
+    "homosexuality": {
+      "display_name": "Homosexuality",
+      "type": "topic",
+      "synonyms": [
+        "gay",
+        "homosexual",
+        "gay gene",
+        "sexual orientation",
+        "same-sex attraction",
+        "lgbt"
+      ],
+      "related": [
+        "intersex",
+        "essential_nutrients",
+        "pregnancy_birth"
+      ]
+    },
+    "hospital_dangers": {
+      "display_name": "Hospital Dangers",
+      "type": "topic",
+      "synonyms": [
+        "hospital safety",
+        "nosocomial infection",
+        "iatrogenic",
+        "medical errors"
+      ],
+      "related": [
+        "be_your_own_doctor"
+      ]
+    },
+    "hydrogen": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "h2"
+      ],
+      "related": [
+        "oxygen",
+        "water",
+        "ph",
         "essential_nutrients"
       ]
     },
-    "phytates": {
-      "display_name": "Phytates",
-      "type": "concept",
+    "hydrotherapy": {
+      "display_name": "Hydrotherapy",
+      "type": "topic",
       "synonyms": [
-        "phytate",
-        "phytic acid",
-        "anti-nutrient",
-        "mineral blockers"
+        "water therapy",
+        "medicinal baths",
+        "balneotherapy"
       ],
       "related": [
-        "absorption",
-        "calcium",
-        "iron",
-        "zinc",
-        "gluten"
+        "chiropractic",
+        "be_your_own_doctor"
       ]
     },
-    "salt": {
-      "display_name": "Salt",
-      "type": "substance",
+    "intersex": {
+      "display_name": "Intersex",
+      "type": "topic",
       "synonyms": [
-        "table salt",
-        "sodium chloride",
-        "nacl",
-        "sea salt",
-        "salt-restricted diet",
-        "low-salt diet",
-        "salting your food"
+        "hermaphrodite",
+        "hermaphroditism",
+        "intersexual",
+        "ambiguous genitalia",
+        "disorders of sex development",
+        "dsd"
       ],
       "related": [
-        "sodium",
-        "chloride",
-        "hypochlorhydria",
-        "achlorhydria",
-        "absorption"
+        "homosexuality",
+        "essential_nutrients",
+        "pregnancy_birth"
       ]
     },
-    "sugar": {
-      "display_name": "Sugar & Caffeine",
-      "type": "substance",
+    "iodine": {
+      "canon_ref": true,
+      "type": "nutrient",
       "synonyms": [
-        "sugar",
-        "refined sugar",
-        "sweets",
-        "caffeine",
-        "coffee",
-        "sugar cravings",
-        "carbohydrates"
+        "iodide"
       ],
       "related": [
-        "carbonated_beverages",
-        "chromium",
-        "vanadium",
-        "calcium",
-        "absorption"
-      ]
-    },
-    "carbonated_beverages": {
-      "display_name": "Soft Drinks & Carbonation",
-      "type": "concept",
-      "synonyms": [
-        "carbonated beverages",
-        "soft drinks",
-        "soda",
-        "pop",
-        "cola",
-        "diet soda",
-        "phosphates",
-        "phosphoric acid"
-      ],
-      "related": [
-        "sugar",
-        "calcium",
-        "phosphorus",
-        "osteoporosis",
-        "absorption"
-      ]
-    },
-    "dietary_oils": {
-      "display_name": "Cooking Oils & Fried Foods",
-      "type": "concept",
-      "synonyms": [
-        "dietary oils",
-        "vegetable oils",
-        "seed oils",
-        "cooking oil",
-        "fried foods",
-        "trans fats",
-        "rancid fat",
-        "margarine",
-        "oxidized oils",
-        "free radicals"
-      ],
-      "related": [
-        "cholesterol",
+        "thyroid_disease",
+        "hypothyroidism",
         "selenium",
-        "vitamin-e",
-        "processed_meat"
+        "essential_nutrients",
+        "colloidal_minerals"
       ]
     },
-    "eggs": {
-      "display_name": "Eggs",
-      "type": "substance",
+    "iron": {
+      "canon_ref": true,
+      "type": "nutrient",
       "synonyms": [
-        "egg",
-        "eggs",
-        "egg yolk",
-        "egg white",
-        "poached eggs",
-        "soft-boiled eggs"
+        "fe",
+        "ferrum"
       ],
       "related": [
-        "cholesterol",
-        "biotin",
-        "meat",
-        "dietary_oils"
+        "vitamin-c",
+        "anemia",
+        "copper",
+        "essential_nutrients",
+        "colloidal_minerals"
+      ]
+    },
+    "krypton": {
+      "display_name": "Krypton",
+      "type": "element",
+      "symbol": "Kr",
+      "synonyms": [
+        "kr",
+        "noble gas"
+      ],
+      "related": [
+        "fluoride",
+        "helium",
+        "essential_nutrients"
+      ]
+    },
+    "light_therapy": {
+      "display_name": "Light Therapy",
+      "type": "topic",
+      "synonyms": [
+        "uv therapy",
+        "ultraviolet therapy",
+        "infrared therapy",
+        "phototherapy"
+      ],
+      "related": [
+        "color_therapy",
+        "vitamin-d",
+        "be_your_own_doctor"
+      ]
+    },
+    "longevity": {
+      "display_name": "Longevity",
+      "type": "topic",
+      "synonyms": [
+        "lifespan",
+        "aging",
+        "live longer",
+        "hunza"
+      ],
+      "related": [
+        "essential_nutrients",
+        "colloidal_minerals",
+        "be_your_own_doctor",
+        "negative_ion_therapy"
+      ]
+    },
+    "macrobiotics": {
+      "display_name": "Macrobiotics",
+      "type": "topic",
+      "synonyms": [
+        "macrobiotic diet",
+        "brown rice diet",
+        "ohsawa"
+      ],
+      "related": [
+        "celiac_disease",
+        "diabetes",
+        "be_your_own_doctor"
+      ]
+    },
+    "macronutrients": {
+      "display_name": "Macronutrients",
+      "type": "concept",
+      "synonyms": [
+        "carbohydrates",
+        "carbs",
+        "fats",
+        "protein",
+        "sugar"
+      ],
+      "related": [
+        "amino_acids",
+        "essential_nutrients",
+        "omega-3"
       ]
     },
     "meat": {
@@ -1065,142 +932,116 @@
         "vitamin-d"
       ]
     },
-    "dairy": {
-      "display_name": "Milk & Dairy",
-      "type": "concept",
+    "mercury": {
+      "display_name": "Mercury",
+      "type": "element",
+      "symbol": "Hg",
       "synonyms": [
-        "dairy",
-        "milk",
-        "whole milk",
-        "raw milk",
-        "pasteurized milk",
-        "cheese",
-        "butter"
+        "quicksilver",
+        "hg",
+        "hydrargyrum"
       ],
       "related": [
-        "cholesterol",
-        "vitamin-b12",
-        "meat",
-        "eggs"
+        "selenium",
+        "mercury_poisoning",
+        "minamata_disease",
+        "vaccines"
       ]
     },
-    "processed_meat": {
-      "display_name": "Processed & Cured Meats",
-      "type": "concept",
+    "naturopathy": {
+      "display_name": "Naturopathy",
+      "type": "topic",
       "synonyms": [
-        "processed meat",
-        "deli meat",
-        "lunch meat",
-        "bacon",
-        "hot dogs",
-        "sausage",
-        "nitrates",
-        "nitrites",
-        "cured meat"
+        "naturopathic medicine",
+        "naturopathic physician",
+        "n.d.",
+        "first do no harm",
+        "natural hygiene"
       ],
       "related": [
-        "dietary_oils",
-        "meat",
-        "gluten"
+        "herbal_medicine",
+        "homeopathy",
+        "hydrotherapy",
+        "be_your_own_doctor"
       ]
     },
-    "cruciferous_vegetables": {
-      "display_name": "Cruciferous Vegetables & Goitrogens",
-      "type": "concept",
+    "negative_ion_therapy": {
+      "display_name": "Negative Ion Therapy",
+      "type": "topic",
       "synonyms": [
-        "cruciferous vegetables",
-        "goitrogens",
-        "cabbage",
-        "broccoli",
-        "cauliflower",
-        "kale",
-        "brussels sprouts"
+        "negative ions",
+        "air ionization",
+        "ionizer"
       ],
       "related": [
-        "iodine",
-        "hypothyroidism",
-        "gluten"
+        "asthma",
+        "be_your_own_doctor"
       ]
     },
-    "water": {
-      "display_name": "Water",
+    "obscure_elements": {
+      "display_name": "Obscure Elements",
       "type": "concept",
       "synonyms": [
-        "water",
-        "filtered water",
-        "distilled water",
-        "tap water",
-        "alkaline water",
-        "drinking water"
+        "obscure elements",
+        "trace elements",
+        "actinium",
+        "bromine",
+        "cesium",
+        "caesium",
+        "hafnium",
+        "indium",
+        "iridium",
+        "bromide"
       ],
       "related": [
-        "fluoride",
+        "rare_earth_elements",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "orac": {
+      "display_name": "ORAC Score",
+      "type": "topic",
+      "synonyms": [
+        "orac",
+        "orac score",
+        "orac value",
+        "orac points",
+        "orac rating",
+        "orac units",
+        "oxygen radical absorbance capacity",
+        "oxygen radical absorption capacity",
+        "antioxidant score",
+        "antioxidant rating",
+        "antioxidant value",
+        "antioxidant capacity",
+        "antioxidant power",
+        "antioxidant points",
+        "how antioxidants are measured",
+        "measure antioxidants",
+        "free radical score"
+      ],
+      "related": [
+        "antioxidants",
+        "free_radicals",
+        "longevity"
+      ]
+    },
+    "phytates": {
+      "display_name": "Phytates",
+      "type": "concept",
+      "synonyms": [
+        "phytate",
+        "phytic acid",
+        "anti-nutrient",
+        "mineral blockers"
+      ],
+      "related": [
         "absorption",
-        "carbonated_beverages"
-      ]
-    },
-    "butter": {
-      "display_name": "Butter",
-      "type": "substance",
-      "synonyms": [
-        "butter",
-        "ghee",
-        "clarified butter",
-        "grass-fed butter",
-        "butterfat",
-        "dairy fat"
-      ],
-      "related": [
-        "cholesterol",
-        "vitamin-a",
-        "vitamin-d",
-        "vitamin-k",
-        "eggs",
-        "margarine"
-      ]
-    },
-    "beef": {
-      "display_name": "Beef",
-      "type": "substance",
-      "synonyms": [
-        "beef",
-        "red meat",
-        "steak",
-        "sirloin",
-        "roast beef",
-        "beef liver",
-        "steak tartare",
-        "ground beef",
-        "beef cattle"
-      ],
-      "related": [
-        "meat",
-        "pork",
-        "eggs",
-        "vitamin-a",
-        "copper"
-      ]
-    },
-    "chicken": {
-      "display_name": "Chicken",
-      "type": "substance",
-      "synonyms": [
-        "chicken",
-        "poultry",
-        "chicken soup",
-        "drumstick",
-        "chicken drumstick",
-        "fried chicken",
-        "pollo",
-        "hen",
-        "chicken bone"
-      ],
-      "related": [
-        "meat",
-        "fish",
-        "eggs",
-        "pork",
-        "beef"
+        "calcium",
+        "iron",
+        "zinc",
+        "gluten"
       ]
     },
     "pork": {
@@ -1234,33 +1075,103 @@
       ],
       "intro_claim": "WAL-CLM-IMMORT-000229"
     },
-    "fish": {
-      "display_name": "Fish",
-      "type": "concept",
+    "potassium": {
+      "canon_ref": true,
+      "type": "nutrient",
       "synonyms": [
-        "fish",
-        "seafood",
-        "tuna",
-        "salmon",
-        "cod",
-        "cod liver oil",
-        "cod-liver oil",
-        "fish oil",
-        "salmon oil",
-        "shark",
-        "swordfish",
-        "anchovies",
-        "shellfish",
-        "marine fish",
-        "fish liver"
+        "potash",
+        "kalium"
       ],
       "related": [
-        "omega-3",
-        "selenium",
-        "vitamin-d",
-        "vitamin-a",
-        "cholesterol",
-        "meat"
+        "sodium",
+        "magnesium",
+        "lithium",
+        "essential_nutrients",
+        "colloidal_minerals"
+      ]
+    },
+    "pregnancy_birth": {
+      "display_name": "Pregnancy & Birth",
+      "type": "topic",
+      "synonyms": [
+        "pregnancy",
+        "childbirth",
+        "home birth",
+        "prenatal",
+        "obstetrics",
+        "contraception",
+        "birth defects",
+        "congenital defects",
+        "teratology"
+      ],
+      "related": [
+        "birth_defects",
+        "infertility",
+        "cystic_fibrosis",
+        "vitamins",
+        "sexual_health"
+      ]
+    },
+    "processed_meat": {
+      "display_name": "Processed & Cured Meats",
+      "type": "concept",
+      "synonyms": [
+        "processed meat",
+        "deli meat",
+        "lunch meat",
+        "bacon",
+        "hot dogs",
+        "sausage",
+        "nitrates",
+        "nitrites",
+        "cured meat"
+      ],
+      "related": [
+        "dietary_oils",
+        "meat",
+        "gluten"
+      ]
+    },
+    "quackbusters": {
+      "display_name": "Quackbusters & Medical Freedom",
+      "type": "topic",
+      "synonyms": [
+        "quackbuster",
+        "quackwatch",
+        "medical censorship",
+        "medical freedom",
+        "health freedom",
+        "medical monopoly",
+        "victor herbert",
+        "stephen barrett"
+      ],
+      "related": [
+        "be_your_own_doctor",
+        "vaccines",
+        "essential_nutrients",
+        "hospital_dangers"
+      ]
+    },
+    "rare_earth_elements": {
+      "display_name": "Rare Earth Elements",
+      "type": "concept",
+      "synonyms": [
+        "rare earths",
+        "lanthanides",
+        "rare earth metals",
+        "dysprosium",
+        "erbium",
+        "europium",
+        "gadolinium",
+        "holmium",
+        "lutetium",
+        "cerium",
+        "monazite"
+      ],
+      "related": [
+        "obscure_elements",
+        "colloidal_minerals",
+        "essential_nutrients"
       ]
     },
     "salmon": {
@@ -1280,6 +1191,99 @@
         "tuna"
       ]
     },
+    "salt": {
+      "display_name": "Salt",
+      "type": "substance",
+      "synonyms": [
+        "table salt",
+        "sodium chloride",
+        "nacl",
+        "sea salt",
+        "salt-restricted diet",
+        "low-salt diet",
+        "salting your food"
+      ],
+      "related": [
+        "sodium",
+        "chloride",
+        "hypochlorhydria",
+        "achlorhydria",
+        "absorption"
+      ]
+    },
+    "sexual_health": {
+      "display_name": "Sexual Health",
+      "type": "topic",
+      "synonyms": [
+        "mens health",
+        "sexual function",
+        "potency",
+        "libido",
+        "premature ejaculation"
+      ],
+      "related": [
+        "pregnancy_birth",
+        "be_your_own_doctor",
+        "herbal_medicine"
+      ]
+    },
+    "silver": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "ag",
+        "argentum",
+        "colloidal silver",
+        "silver sulfadiazine"
+      ],
+      "related": [
+        "gold",
+        "colloidal_minerals",
+        "essential_nutrients"
+      ]
+    },
+    "somatic_therapies": {
+      "display_name": "Somatic Therapies",
+      "type": "topic",
+      "synonyms": [
+        "bodywork",
+        "osteopathy",
+        "reflexology",
+        "rolfing",
+        "structural integration",
+        "spinal manipulation",
+        "massage therapy",
+        "somatics",
+        "doctor of osteopathy",
+        "d.o."
+      ],
+      "related": [
+        "chiropractic",
+        "naturopathy",
+        "hydrotherapy",
+        "be_your_own_doctor"
+      ]
+    },
+    "sugar": {
+      "display_name": "Sugar & Caffeine",
+      "type": "substance",
+      "synonyms": [
+        "sugar",
+        "refined sugar",
+        "sweets",
+        "caffeine",
+        "coffee",
+        "sugar cravings",
+        "carbohydrates"
+      ],
+      "related": [
+        "carbonated_beverages",
+        "chromium",
+        "vanadium",
+        "calcium",
+        "absorption"
+      ]
+    },
     "tuna": {
       "display_name": "Tuna",
       "type": "substance",
@@ -1295,6 +1299,85 @@
         "mercury",
         "selenium",
         "germanium"
+      ]
+    },
+    "urine_therapy": {
+      "display_name": "Urine Therapy",
+      "type": "topic",
+      "synonyms": [
+        "urotherapy",
+        "autoimmune urine therapy",
+        "uropathy"
+      ],
+      "related": [
+        "allergies",
+        "cancer",
+        "be_your_own_doctor"
+      ]
+    },
+    "vaccines": {
+      "display_name": "Vaccines",
+      "type": "topic",
+      "synonyms": [
+        "vaccine",
+        "vaccination",
+        "immunization",
+        "thimerosal"
+      ],
+      "related": [
+        "mercury",
+        "autism",
+        "be_your_own_doctor"
+      ]
+    },
+    "vitamins": {
+      "display_name": "Vitamins",
+      "type": "concept",
+      "synonyms": [
+        "vitamin",
+        "fat-soluble",
+        "water-soluble",
+        "flavanols",
+        "megavitamin",
+        "megavitamin therapy",
+        "orthomolecular",
+        "orthomolecular medicine",
+        "pauling"
+      ],
+      "related": [
+        "essential_nutrients",
+        "vitamin-c"
+      ]
+    },
+    "wallach": {
+      "display_name": "Dr. Joel Wallach",
+      "type": "person",
+      "synonyms": [
+        "joel wallach",
+        "dr wallach",
+        "joel d wallach"
+      ],
+      "related": [
+        "epigenetics",
+        "essential_nutrients",
+        "colloidal_minerals"
+      ]
+    },
+    "water": {
+      "display_name": "Water",
+      "type": "concept",
+      "synonyms": [
+        "water",
+        "filtered water",
+        "distilled water",
+        "tap water",
+        "alkaline water",
+        "drinking water"
+      ],
+      "related": [
+        "fluoride",
+        "absorption",
+        "carbonated_beverages"
       ]
     }
   }

@@ -417,6 +417,67 @@
         "trace-only"
       ]
     },
+    "WAL-CLM-DDDL-000121": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Where is Wallach's “Fountain of Youth”?",
+      "answer_short": "Under our feet the whole time — it's minerals. After millennia of chasing longevity, Wallach says the answer is almost anticlimactic: the plant-derived minerals in the ground.",
+      "topics": [
+        "fountain-of-youth",
+        "longevity",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000122": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What does the liquid mineral supplement taste like?",
+      "answer_short": "Intensely astringent — Wallach says drunk straight it would “shrink wrap your lips over your teeth,” so it's taken stirred into juice.",
+      "topics": [
+        "taste",
+        "how-to-take",
+        "astringency"
+      ]
+    },
+    "WAL-CLM-DDDL-000123": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How did Wallach discover colloidal minerals?",
+      "answer_short": "He'd never heard of them until he met the liquid being served to patients at Hospital Santa Monica, then spent three months reading everything then known about colloids.",
+      "topics": [
+        "discovery",
+        "mineral-toddy",
+        "hospital-santa-monica"
+      ]
+    },
+    "WAL-CLM-DDDL-000124": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Does the source of plant-derived minerals matter — and what if a maker cuts corners?",
+      "answer_short": "Yes — quality tracks the source deposit. Wallach tells how a product went black and green batch-to-batch after its bottler switched to a cheaper source, and how he fixed it by going back to the original deposit under his own label.",
+      "topics": [
+        "source-quality",
+        "mineral-toddy",
+        "virgin-earth",
+        "american-longevity"
+      ]
+    },
+    "WAL-CLM-DDDL-000125": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Why does Wallach point to the long-lived cultures as proof?",
+      "answer_short": "He treats them as a living “control group” — five ancient peoples with disease-free longevity from steady access to all 90 essential nutrients, chiefly plant-derived colloidal minerals — and promises you can do the same.",
+      "topics": [
+        "long-lived-cultures",
+        "control-group",
+        "90-essentials"
+      ]
+    },
     "WAL-CLM-EPIGEN-000008": {
       "subject": "homosexuality",
       "also_about": [
@@ -870,17 +931,22 @@
     },
     "WAL-CLM-EPIGEN-000154": {
       "subject": "eggs",
-      "also_about": [],
+      "also_about": [
+        "antioxidants",
+        "free_radicals",
+        "orac"
+      ],
       "facet": "protocol",
       "question": "How many eggs a day does Wallach recommend, and how should they be cooked?",
       "answer_short": "Four to six eggs per day per 100 lb of body weight -- poached, soft-boiled, or scrambled in butter (never fried).",
       "topics": [
+        "dose-per-body-weight",
+        "egg-cooking",
         "eggs",
         "how-many-eggs",
-        "egg-cooking",
-        "poached-eggs",
-        "dose-per-body-weight",
-        "neurological-disease-diet"
+        "neurological-disease-diet",
+        "orac",
+        "poached-eggs"
       ]
     },
     "WAL-CLM-EPIGEN-000155": {
@@ -1237,6 +1303,21 @@
         "warning"
       ]
     },
+    "WAL-CLM-EPIGEN-000178": {
+      "subject": "antioxidants",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "mechanism",
+      "question": "Do flavonoids raise your ORAC?",
+      "answer_short": "Yes - Wallach lists raising ORAC antioxidant activity among the effects demonstrated clinically in people, not just in cell studies.",
+      "topics": [
+        "flavonoids",
+        "orac",
+        "antioxidants",
+        "inflammation"
+      ]
+    },
     "WAL-CLM-HELLS-000001": {
       "subject": "beef",
       "also_about": [
@@ -1341,6 +1422,113 @@
         "fda",
         "health-claim",
         "biography"
+      ]
+    },
+    "WAL-CLM-HELLS-000009": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much of the liquid mineral supplement should I take?",
+      "answer_short": "One ounce of plant-derived colloidal minerals per 100 lb of body weight a day, ideally split — a 100-lb person takes 1 oz (½ oz twice daily), a 200-lb person 2 oz. Raise to 1¼ oz per 100 lb to lose 25+ lb.",
+      "topics": [
+        "maintenance-dose",
+        "how-to-take",
+        "colloidal-minerals"
+      ]
+    },
+    "WAL-CLM-HELLS-000010": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What can I do about sugar cravings and the munchies?",
+      "answer_short": "Take one ounce of plant-derived colloidal minerals per 100 lb of body weight — even up to 10× a day early on. Wallach reads cravings and pica as a sure sign of mineral deficiency.",
+      "topics": [
+        "cravings",
+        "munchies",
+        "sugar",
+        "pica"
+      ]
+    },
+    "WAL-CLM-HELLS-000011": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "How do I re-mineralize distilled or filtered water?",
+      "answer_short": "Add one ounce of liquid plant-derived colloidal minerals to each gallon of distilled or double-filtered water — distilled is mineral-free and otherwise leaches minerals from the body.",
+      "topics": [
+        "distilled-water",
+        "re-mineralize",
+        "colloidal-minerals"
+      ]
+    },
+    "WAL-CLM-HELLS-000012": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Is there a study showing the minerals help with diabetes or obesity?",
+      "answer_short": "Wallach cites a 2004 pilot study he co-authored among the Nez Perce of Idaho: on a plant-derived colloidal mineral program, participants lost weight, lowered blood pressure, and cut fasting blood sugar 30–50%, most reducing or stopping medication.",
+      "topics": [
+        "nez-perce",
+        "diabetes",
+        "obesity",
+        "clinical-study"
+      ]
+    },
+    "WAL-CLM-HELLS-000013": {
+      "subject": "orac",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "etymology",
+      "question": "What does ORAC stand for?",
+      "answer_short": "Oxygen Radical Absorbance Capacity - a lab score for how strongly a food, drink or supplement neutralizes free radicals.",
+      "topics": [
+        "orac",
+        "definition",
+        "antioxidants"
+      ]
+    },
+    "WAL-CLM-HELLS-000014": {
+      "subject": "orac",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What are the top ten antioxidant foods?",
+      "answer_short": "Prunes lead at 5,770 per 100 g, then raisins, blueberries, blackberries and kale.",
+      "topics": [
+        "orac",
+        "food-sources",
+        "berries",
+        "prunes",
+        "kale"
+      ]
+    },
+    "WAL-CLM-HELLS-000015": {
+      "subject": "orac",
+      "also_about": [],
+      "facet": "uses",
+      "question": "How do I actually get more ORAC into my day?",
+      "answer_short": "Swap your salad dressing for a high-ORAC juice - noni or mangosteen - instead of oil.",
+      "topics": [
+        "orac",
+        "practical",
+        "salad-dressing",
+        "juice"
+      ]
+    },
+    "WAL-CLM-HELLS-000016": {
+      "subject": "antioxidants",
+      "also_about": [
+        "orac",
+        "free_radicals"
+      ],
+      "facet": "warning",
+      "question": "Why do I need more antioxidants when I'm losing weight?",
+      "answer_short": "Because burning fat generates free radicals - losing weight itself creates the damage antioxidants defend against.",
+      "topics": [
+        "weight-loss",
+        "free-radicals",
+        "antioxidants",
+        "warning"
       ]
     },
     "WAL-CLM-IAIYH-000018": {
@@ -3107,6 +3295,238 @@
         "deficiency"
       ]
     },
+    "WAL-CLM-IMMORT-000234": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "biography",
+      "question": "Has any public figure used the liquid mineral supplement?",
+      "answer_short": "Wallach cites Nelson Mandela — sharp and animated at his 90th birthday after 27 years imprisoned — taking a liquid plant-derived mineral supplement sent from Atlanta by former UN Ambassador Andrew Young.",
+      "topics": [
+        "nelson-mandela",
+        "andrew-young",
+        "longevity-example"
+      ]
+    },
+    "WAL-CLM-IMMORT-000235": {
+      "subject": "orac",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is an ORAC score?",
+      "answer_short": "A single number rating a food's antioxidant power - the higher the score, the more free-radical damage it can absorb.",
+      "topics": [
+        "orac",
+        "antioxidants",
+        "measurement"
+      ]
+    },
+    "WAL-CLM-IMMORT-000236": {
+      "subject": "orac",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who invented the ORAC test?",
+      "answer_short": "Scientists at the National Institute on Aging - a division of the NIH in Baltimore - working with Tufts University in Boston.",
+      "topics": [
+        "orac",
+        "nih",
+        "usda",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000237": {
+      "subject": "orac",
+      "also_about": [
+        "free_radicals"
+      ],
+      "facet": "mechanism",
+      "question": "How does the ORAC test actually work?",
+      "answer_short": "A fluorescent dye is put in a tube with peroxyl radicals that destroy it; how well the food protects that dye becomes its score.",
+      "topics": [
+        "orac",
+        "free-radicals",
+        "laboratory"
+      ]
+    },
+    "WAL-CLM-IMMORT-000238": {
+      "subject": "orac",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "protocol",
+      "question": "How many ORAC points should I get a day?",
+      "answer_short": "20,000 to 25,000 ORAC points a day - the intake Wallach says is optimal for reaching 100.",
+      "topics": [
+        "orac",
+        "daily-target",
+        "longevity"
+      ]
+    },
+    "WAL-CLM-IMMORT-000239": {
+      "subject": "orac",
+      "also_about": [],
+      "facet": "history",
+      "question": "Where do ORAC numbers come from?",
+      "answer_short": "The USDA published ORAC values for 277 commonly eaten American foods in 2007, then a full database in 2008.",
+      "topics": [
+        "orac",
+        "usda",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000240": {
+      "subject": "orac",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Which foods have the highest ORAC score?",
+      "answer_short": "Ground cloves at 314,446 and cinnamon at 267,536 - spices outscore every fruit by more than tenfold.",
+      "topics": [
+        "orac",
+        "spices",
+        "food-sources",
+        "cloves",
+        "cinnamon"
+      ]
+    },
+    "WAL-CLM-IMMORT-000241": {
+      "subject": "orac",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "sources",
+      "question": "Is red wine actually good for you?",
+      "answer_short": "By ORAC, red beats white by roughly thirteen to one - Cabernet Sauvignon 5,034 against white wine's 392.",
+      "topics": [
+        "orac",
+        "wine",
+        "resveratrol",
+        "red-wine",
+        "food-sources"
+      ]
+    },
+    "WAL-CLM-IMMORT-000242": {
+      "subject": "orac",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "uses",
+      "question": "How do you pick a good chocolate?",
+      "answer_short": "Four ways: the percentage of chocolate, the country of origin, the ORAC value, and taste.",
+      "topics": [
+        "orac",
+        "chocolate",
+        "cocoa",
+        "flavanols"
+      ]
+    },
+    "WAL-CLM-IMMORT-000243": {
+      "subject": "free_radicals",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "physiology",
+      "question": "What do free radicals actually do to your body?",
+      "answer_short": "They attack your cells, cell walls and mitochondria - raising the risk of heart disease, cancer, Alzheimer's, cataracts and diabetes, and speeding aging itself.",
+      "topics": [
+        "free-radicals",
+        "aging",
+        "oxidation",
+        "mitochondria"
+      ]
+    },
+    "WAL-CLM-IMMORT-000244": {
+      "subject": "free_radicals",
+      "also_about": [
+        "orac",
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "What causes age spots and liver spots?",
+      "answer_short": "They're ceroid lipofuscin, the pigment left behind by free-radical damage - and if you have one on the outside, Wallach says you have millions on the inside.",
+      "topics": [
+        "age-spots",
+        "liver-spots",
+        "ceroid-lipofuscin",
+        "aging"
+      ]
+    },
+    "WAL-CLM-IMMORT-000245": {
+      "subject": "free_radicals",
+      "also_about": [
+        "orac"
+      ],
+      "facet": "warning",
+      "question": "Are age spots a warning sign of something worse?",
+      "answer_short": "Wallach says yes - how many you have and how dark they are tracks your free-radical damage, and forecasts cataracts, heart disease, diabetes and dementia.",
+      "topics": [
+        "age-spots",
+        "warning-signs",
+        "free-radicals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000246": {
+      "subject": "longevity",
+      "also_about": [
+        "free_radicals",
+        "antioxidants",
+        "orac"
+      ],
+      "facet": "big_question",
+      "question": "Is aging reversible?",
+      "answer_short": "On the aging pigment specifically Wallach says yes - and calls the belief that it can't be undone a medical dogma that is simply wrong.",
+      "topics": [
+        "aging",
+        "longevity",
+        "ceroid-lipofuscin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000247": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "free_radicals"
+      ],
+      "facet": "protocol",
+      "question": "How do you reverse the aging pigment?",
+      "answer_short": "Cut free-radical foods hard, take every essential nutrient, and push antioxidants to 20,000-25,000 ORAC points a day.",
+      "topics": [
+        "aging",
+        "orac",
+        "calorie-restriction",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-IMMORT-000248": {
+      "subject": "antioxidants",
+      "also_about": [
+        "longevity",
+        "orac"
+      ],
+      "facet": "stance",
+      "question": "Do antioxidants really help you live longer?",
+      "answer_short": "Yes for average lifespan, no for the maximum - and only in combination, never one at a time.",
+      "topics": [
+        "antioxidants",
+        "longevity",
+        "lifespan",
+        "blue-zones"
+      ]
+    },
+    "WAL-CLM-IMMORT-000249": {
+      "subject": "antioxidants",
+      "also_about": [
+        "longevity",
+        "orac"
+      ],
+      "facet": "sources",
+      "question": "What do the world's longest-lived people actually eat?",
+      "answer_short": "Dark fruits and berries, yellow and red vegetables, cocoa, red wine, green tea and coffee - every day, not occasionally.",
+      "topics": [
+        "blue-zones",
+        "centenarians",
+        "antioxidants",
+        "food-sources"
+      ]
+    },
     "WAL-CLM-LETS-000080": {
       "subject": "diabetes",
       "also_about": [],
@@ -3662,6 +4082,19 @@
         "colloidal-minerals"
       ]
     },
+    "WAL-CLM-LETS-000352": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "If someone can't absorb nutrients from food, what's the best way to get minerals in?",
+      "answer_short": "Liquid plant-derived colloidal minerals, Wallach says — the most efficient way to get minerals into malnourished people. He frames malnutrition-from-malabsorption (celiac changes or low stomach acid) as the common denominator of almost all degenerative disease, so the absorbable colloidal form is his answer.",
+      "topics": [
+        "malabsorption",
+        "malnutrition",
+        "colloidal-minerals",
+        "degenerative-disease"
+      ]
+    },
     "WAL-CLM-LETS-000362": {
       "subject": "be_your_own_doctor",
       "also_about": [
@@ -4001,6 +4434,149 @@
         "epa"
       ]
     },
+    "WAL-CLM-RARE-000024": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "history",
+      "question": "Which peoples actually live to 120–140, and how?",
+      "answer_short": "Wallach names several ancient, diverse cultures — Tibetans, Georgians, Armenians, Azerbaijanis, Abkhazians, Hunzakuts, Vilcabambas and the Titicacas — who reach a disease-free 120–140 years by getting their minerals as plant-derived colloidal minerals (his plant 'rare earths').",
+      "topics": [
+        "long-lived-cultures",
+        "longevity",
+        "colloidal-minerals",
+        "rare-earths"
+      ]
+    },
+    "WAL-CLM-RARE-000059": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What's the actual secret behind the long-lived 'Age Beater' cultures?",
+      "answer_short": "Eating plants rich in organic plant-derived colloidal minerals. The plants pull inorganic minerals from 'Glacial Milk' and convert them into the cell-usable colloidal form — the secret Wallach credits to the five 'Age Beater' cultures.",
+      "topics": [
+        "age-beaters",
+        "glacial-milk",
+        "colloidal-minerals",
+        "mechanism"
+      ]
+    },
+    "WAL-CLM-RARE-000061": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How much more of a plant-derived mineral does the body actually absorb?",
+      "answer_short": "About 98% of it, on Wallach's account — versus only 8–12% of the same mineral taken as ground-up rock. That gap is the whole reason he insists on the plant-derived (colloidal) form.",
+      "topics": [
+        "bioavailability",
+        "absorption",
+        "plant-derived",
+        "source-matters"
+      ]
+    },
+    "WAL-CLM-RARE-000062": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What do all five long-lived cultures have in common?",
+      "answer_short": "One shared practice: they all irrigate their terraced fields with mineral-rich 'Glacial Milk' carrying 60 or more minerals. Wallach calls this the common denominator behind their 120–140-year lifespans — the minerals reaching them as plant-derived colloidal minerals in the crops.",
+      "topics": [
+        "glacial-milk",
+        "long-lived-cultures",
+        "colloidal-minerals",
+        "sources"
+      ]
+    },
+    "WAL-CLM-RARE-000069": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Of the 90 essentials, which ones matter most?",
+      "answer_short": "His own ranking inside the 90: get a highly usable source of all of them every day — but the most critical, he says, are the plant-derived colloidal minerals. That, on his account, is what the long-lived cultures boil down to.",
+      "topics": [
+        "most-critical",
+        "90-essentials",
+        "long-lived-cultures",
+        "daily-intake"
+      ]
+    },
+    "WAL-CLM-RARE-000070": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where do these minerals come from in the first place?",
+      "answer_short": "They start as rock. Glaciers grind 2 to 6 inches off the mountain every year into a dust as fine as clay, and the melt water carries it out as “Glacial Milk” — the mineralized water the long-lived cultures flood their fields with.",
+      "topics": [
+        "glacial-milk",
+        "rock-flour",
+        "glaciers",
+        "source-matters"
+      ]
+    },
+    "WAL-CLM-RARE-000071": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "sources",
+      "question": "There are thousands of glaciers — so why only a handful of long-lived cultures?",
+      "answer_short": "Not the ice — the rock beneath it. Glacial milk carries only what its parent mountain held: the long-lived cultures' glaciers grind rock with 60 to 72 minerals; most of the world's thousands, 3 to 20 — not enough, he says, for longevity.",
+      "topics": [
+        "glacial-milk",
+        "parent-rock",
+        "source-matters",
+        "mineral-count"
+      ]
+    },
+    "WAL-CLM-RARE-000072": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Do the long-lived cultures drink Glacial Milk, or use it another way?",
+      "answer_short": "They irrigate with it, not drink it. Wallach says only ~5–12% of the raw metallic minerals in 'Glacial Milk' are absorbable if you drink it — the real key is using it as irrigation water, so plants convert those minerals into the highly usable plant-derived colloidal form.",
+      "topics": [
+        "glacial-milk",
+        "irrigation",
+        "colloidal-minerals",
+        "bioavailability"
+      ]
+    },
+    "WAL-CLM-RARE-000073": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What benefits do the long-lived cultures get from all those minerals?",
+      "answer_short": "Freedom from the degenerative diseases, Wallach says. Millennia of irrigating terraces with mineral-rich 'Glacial Milk' leave them without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer or lupus.",
+      "topics": [
+        "glacial-milk",
+        "degenerative-disease",
+        "long-lived-cultures",
+        "colloidal-minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000074": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does the form of a mineral matter so much for absorption?",
+      "answer_short": "Because absorption efficiency varies enormously by form. Wallach ties it to the gap between how much of a mineral the body truly needs and how much you must eat to get it — for the metallic form the ratio runs from about 1:1 (iodine) to 1:100 (chromium) — so the most efficient form, plant-derived colloidal minerals, should be consumed.",
+      "topics": [
+        "absorption-ratio",
+        "mineral-bioavailability",
+        "colloidal-minerals",
+        "metallic-minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000088": {
+      "subject": "colloidal_minerals",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can plant-derived colloidal minerals help clear heavy metals from the body?",
+      "answer_short": "Per a study Wallach cites: Gary Price Todd, MD gave patients 3 oz of liquid plant-derived colloidal minerals daily; hair levels of lead, cadmium and mercury first ROSE at three months (the minerals unmask hidden tissue stores), then dropped steadily — a reduction Todd found to be time- and dose-related.",
+      "topics": [
+        "heavy-metal-detox",
+        "dr-todd",
+        "colloidal-minerals",
+        "lead-cadmium-mercury"
+      ]
+    },
     "WAL-CLM-RARE-000112": {
       "subject": "rare_earth_elements",
       "also_about": [],
@@ -4155,285 +4731,6 @@
         "canned-tuna",
         "food-safety",
         "toxins"
-      ]
-    },
-    "WAL-CLM-RARE-000069": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "stance",
-      "question": "Of the 90 essentials, which ones matter most?",
-      "answer_short": "His own ranking inside the 90: get a highly usable source of all of them every day — but the most critical, he says, are the plant-derived colloidal minerals. That, on his account, is what the long-lived cultures boil down to.",
-      "topics": [
-        "most-critical",
-        "90-essentials",
-        "long-lived-cultures",
-        "daily-intake"
-      ]
-    },
-    "WAL-CLM-RARE-000070": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "sources",
-      "question": "Where do these minerals come from in the first place?",
-      "answer_short": "They start as rock. Glaciers grind 2 to 6 inches off the mountain every year into a dust as fine as clay, and the melt water carries it out as “Glacial Milk” — the mineralized water the long-lived cultures flood their fields with.",
-      "topics": [
-        "glacial-milk",
-        "rock-flour",
-        "glaciers",
-        "source-matters"
-      ]
-    },
-    "WAL-CLM-RARE-000071": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "sources",
-      "question": "There are thousands of glaciers — so why only a handful of long-lived cultures?",
-      "answer_short": "Not the ice — the rock beneath it. Glacial milk carries only what its parent mountain held: the long-lived cultures' glaciers grind rock with 60 to 72 minerals; most of the world's thousands, 3 to 20 — not enough, he says, for longevity.",
-      "topics": [
-        "glacial-milk",
-        "parent-rock",
-        "source-matters",
-        "mineral-count"
-      ]
-    },
-    "WAL-CLM-RARE-000061": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "How much more of a plant-derived mineral does the body actually absorb?",
-      "answer_short": "About 98% of it, on Wallach's account — versus only 8–12% of the same mineral taken as ground-up rock. That gap is the whole reason he insists on the plant-derived (colloidal) form.",
-      "topics": [
-        "bioavailability",
-        "absorption",
-        "plant-derived",
-        "source-matters"
-      ]
-    },
-    "WAL-CLM-DDDL-000121": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "big_question",
-      "question": "Where is Wallach's “Fountain of Youth”?",
-      "answer_short": "Under our feet the whole time — it's minerals. After millennia of chasing longevity, Wallach says the answer is almost anticlimactic: the plant-derived minerals in the ground.",
-      "topics": [
-        "fountain-of-youth",
-        "longevity",
-        "minerals"
-      ]
-    },
-    "WAL-CLM-DDDL-000122": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "uses",
-      "question": "What does the liquid mineral supplement taste like?",
-      "answer_short": "Intensely astringent — Wallach says drunk straight it would “shrink wrap your lips over your teeth,” so it's taken stirred into juice.",
-      "topics": [
-        "taste",
-        "how-to-take",
-        "astringency"
-      ]
-    },
-    "WAL-CLM-DDDL-000123": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "discovery",
-      "question": "How did Wallach discover colloidal minerals?",
-      "answer_short": "He'd never heard of them until he met the liquid being served to patients at Hospital Santa Monica, then spent three months reading everything then known about colloids.",
-      "topics": [
-        "discovery",
-        "mineral-toddy",
-        "hospital-santa-monica"
-      ]
-    },
-    "WAL-CLM-DDDL-000124": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "sources",
-      "question": "Does the source of plant-derived minerals matter — and what if a maker cuts corners?",
-      "answer_short": "Yes — quality tracks the source deposit. Wallach tells how a product went black and green batch-to-batch after its bottler switched to a cheaper source, and how he fixed it by going back to the original deposit under his own label.",
-      "topics": [
-        "source-quality",
-        "mineral-toddy",
-        "virgin-earth",
-        "american-longevity"
-      ]
-    },
-    "WAL-CLM-DDDL-000125": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "stance",
-      "question": "Why does Wallach point to the long-lived cultures as proof?",
-      "answer_short": "He treats them as a living “control group” — five ancient peoples with disease-free longevity from steady access to all 90 essential nutrients, chiefly plant-derived colloidal minerals — and promises you can do the same.",
-      "topics": [
-        "long-lived-cultures",
-        "control-group",
-        "90-essentials"
-      ]
-    },
-    "WAL-CLM-IMMORT-000234": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "biography",
-      "question": "Has any public figure used the liquid mineral supplement?",
-      "answer_short": "Wallach cites Nelson Mandela — sharp and animated at his 90th birthday after 27 years imprisoned — taking a liquid plant-derived mineral supplement sent from Atlanta by former UN Ambassador Andrew Young.",
-      "topics": [
-        "nelson-mandela",
-        "andrew-young",
-        "longevity-example"
-      ]
-    },
-    "WAL-CLM-HELLS-000009": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much of the liquid mineral supplement should I take?",
-      "answer_short": "One ounce of plant-derived colloidal minerals per 100 lb of body weight a day, ideally split — a 100-lb person takes 1 oz (½ oz twice daily), a 200-lb person 2 oz. Raise to 1¼ oz per 100 lb to lose 25+ lb.",
-      "topics": [
-        "maintenance-dose",
-        "how-to-take",
-        "colloidal-minerals"
-      ]
-    },
-    "WAL-CLM-HELLS-000010": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "uses",
-      "question": "What can I do about sugar cravings and the munchies?",
-      "answer_short": "Take one ounce of plant-derived colloidal minerals per 100 lb of body weight — even up to 10× a day early on. Wallach reads cravings and pica as a sure sign of mineral deficiency.",
-      "topics": [
-        "cravings",
-        "munchies",
-        "sugar",
-        "pica"
-      ]
-    },
-    "WAL-CLM-HELLS-000011": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "uses",
-      "question": "How do I re-mineralize distilled or filtered water?",
-      "answer_short": "Add one ounce of liquid plant-derived colloidal minerals to each gallon of distilled or double-filtered water — distilled is mineral-free and otherwise leaches minerals from the body.",
-      "topics": [
-        "distilled-water",
-        "re-mineralize",
-        "colloidal-minerals"
-      ]
-    },
-    "WAL-CLM-HELLS-000012": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "uses",
-      "question": "Is there a study showing the minerals help with diabetes or obesity?",
-      "answer_short": "Wallach cites a 2004 pilot study he co-authored among the Nez Perce of Idaho: on a plant-derived colloidal mineral program, participants lost weight, lowered blood pressure, and cut fasting blood sugar 30–50%, most reducing or stopping medication.",
-      "topics": [
-        "nez-perce",
-        "diabetes",
-        "obesity",
-        "clinical-study"
-      ]
-    },
-    "WAL-CLM-RARE-000024": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "history",
-      "question": "Which peoples actually live to 120–140, and how?",
-      "answer_short": "Wallach names several ancient, diverse cultures — Tibetans, Georgians, Armenians, Azerbaijanis, Abkhazians, Hunzakuts, Vilcabambas and the Titicacas — who reach a disease-free 120–140 years by getting their minerals as plant-derived colloidal minerals (his plant 'rare earths').",
-      "topics": [
-        "long-lived-cultures",
-        "longevity",
-        "colloidal-minerals",
-        "rare-earths"
-      ]
-    },
-    "WAL-CLM-RARE-000059": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "What's the actual secret behind the long-lived 'Age Beater' cultures?",
-      "answer_short": "Eating plants rich in organic plant-derived colloidal minerals. The plants pull inorganic minerals from 'Glacial Milk' and convert them into the cell-usable colloidal form — the secret Wallach credits to the five 'Age Beater' cultures.",
-      "topics": [
-        "age-beaters",
-        "glacial-milk",
-        "colloidal-minerals",
-        "mechanism"
-      ]
-    },
-    "WAL-CLM-RARE-000062": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "sources",
-      "question": "What do all five long-lived cultures have in common?",
-      "answer_short": "One shared practice: they all irrigate their terraced fields with mineral-rich 'Glacial Milk' carrying 60 or more minerals. Wallach calls this the common denominator behind their 120–140-year lifespans — the minerals reaching them as plant-derived colloidal minerals in the crops.",
-      "topics": [
-        "glacial-milk",
-        "long-lived-cultures",
-        "colloidal-minerals",
-        "sources"
-      ]
-    },
-    "WAL-CLM-RARE-000072": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "Do the long-lived cultures drink Glacial Milk, or use it another way?",
-      "answer_short": "They irrigate with it, not drink it. Wallach says only ~5–12% of the raw metallic minerals in 'Glacial Milk' are absorbable if you drink it — the real key is using it as irrigation water, so plants convert those minerals into the highly usable plant-derived colloidal form.",
-      "topics": [
-        "glacial-milk",
-        "irrigation",
-        "colloidal-minerals",
-        "bioavailability"
-      ]
-    },
-    "WAL-CLM-RARE-000073": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "stance",
-      "question": "What benefits do the long-lived cultures get from all those minerals?",
-      "answer_short": "Freedom from the degenerative diseases, Wallach says. Millennia of irrigating terraces with mineral-rich 'Glacial Milk' leave them without hypertension, heart disease, stroke, aneurysms, arthritis, osteoporosis, dental disease, cataracts, diabetes, cancer or lupus.",
-      "topics": [
-        "glacial-milk",
-        "degenerative-disease",
-        "long-lived-cultures",
-        "colloidal-minerals"
-      ]
-    },
-    "WAL-CLM-LETS-000352": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "uses",
-      "question": "If someone can't absorb nutrients from food, what's the best way to get minerals in?",
-      "answer_short": "Liquid plant-derived colloidal minerals, Wallach says — the most efficient way to get minerals into malnourished people. He frames malnutrition-from-malabsorption (celiac changes or low stomach acid) as the common denominator of almost all degenerative disease, so the absorbable colloidal form is his answer.",
-      "topics": [
-        "malabsorption",
-        "malnutrition",
-        "colloidal-minerals",
-        "degenerative-disease"
-      ]
-    },
-    "WAL-CLM-RARE-000088": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "uses",
-      "question": "Can plant-derived colloidal minerals help clear heavy metals from the body?",
-      "answer_short": "Per a study Wallach cites: Gary Price Todd, MD gave patients 3 oz of liquid plant-derived colloidal minerals daily; hair levels of lead, cadmium and mercury first ROSE at three months (the minerals unmask hidden tissue stores), then dropped steadily — a reduction Todd found to be time- and dose-related.",
-      "topics": [
-        "heavy-metal-detox",
-        "dr-todd",
-        "colloidal-minerals",
-        "lead-cadmium-mercury"
-      ]
-    },
-    "WAL-CLM-RARE-000074": {
-      "subject": "colloidal_minerals",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "Why does the form of a mineral matter so much for absorption?",
-      "answer_short": "Because absorption efficiency varies enormously by form. Wallach ties it to the gap between how much of a mineral the body truly needs and how much you must eat to get it — for the metallic form the ratio runs from about 1:1 (iodine) to 1:100 (chromium) — so the most efficient form, plant-derived colloidal minerals, should be consumed.",
-      "topics": [
-        "absorption-ratio",
-        "mineral-bioavailability",
-        "colloidal-minerals",
-        "metallic-minerals"
       ]
     },
     "WAL-CLM-RARE-000319": {
