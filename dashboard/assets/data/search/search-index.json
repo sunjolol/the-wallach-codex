@@ -969,7 +969,7 @@
         "be_your_own_doctor",
         "negative_ion_therapy"
       ],
-      "claim_count": 13
+      "claim_count": 15
     },
     "macrobiotics": {
       "display_name": "Macrobiotics",
@@ -6743,6 +6743,50 @@
         "four-pieces",
         "warning",
         "longevity"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000259",
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "big_question",
+      "question": "How many more years can I actually add?",
+      "answer_short": "Wallach calculates 25 to 50 additional HEALTHFUL years for a 150-175 lb person - and says it saves money, because cheaper food offsets the supplements.",
+      "answer": "Wallach puts a number on the payoff and ties it straight to cost. He calculates that a 150 to 175 pound person can add 25 to 50 additional HEALTHFUL years to their life - not years of decline - by practicing a calorie-restricted diet and faithfully following a supplement program. And it saves money rather than costing it: the reduced cost of food more than compensates for the cost of the supplements. It is the same prevent-don't-cure logic that runs through his work, and the direct rebuttal to 'I don't want to live to 150' - the years he is offering are healthful ones, and the bill is lower, not higher.",
+      "verbatim": "We calculate that a 150 - 175 pound person can add\n25 to 50 additional healthful years to their life with a net\nsavings in their cost of living by practicing a CR diet and by\nfaithfully employing a modified supplement program",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "quality-of-life",
+        "longevity",
+        "cost",
+        "medical-debt",
+        "calorie-restriction"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000260",
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "big_question",
+      "question": "How long can a person actually live?",
+      "answer_short": "Wallach: \"who is to say we can't live to be 150, 175 or 200 - we believe we can!\" He lists the four-minute mile and the moon landing as things the experts also called impossible.",
+      "answer": "This is Wallach's boldest statement of the ceiling. He lines up a history of things the experts swore were impossible - that our hearts would explode if we drove cars at 50 mph, that no one could break the four-minute mile (then 300 runners did within a year), that the sound barrier could not be broken, that a man would never reach the moon and return - and then asks: who is to say we can't live to be 150, 175 or 200? We believe we can. It is the direct answer to the ceiling question: antioxidants raise your average, the full program raises the maximum, and Wallach puts that maximum far past 100.",
+      "verbatim": "it was believed that we would never\nget a man to land on the moon and return to earth and so on - who is to say we can’t live\nto be 150, 175 or 200 - we believe we can!",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "longevity",
+        "genetic-potential",
+        "150-years",
+        "aging",
+        "lifespan"
       ]
     },
     {

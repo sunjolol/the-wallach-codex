@@ -3665,6 +3665,40 @@
         "longevity"
       ]
     },
+    "WAL-CLM-IMMORT-000259": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "big_question",
+      "question": "How many more years can I actually add?",
+      "answer_short": "Wallach calculates 25 to 50 additional HEALTHFUL years for a 150-175 lb person - and says it saves money, because cheaper food offsets the supplements.",
+      "topics": [
+        "quality-of-life",
+        "longevity",
+        "cost",
+        "medical-debt",
+        "calorie-restriction"
+      ]
+    },
+    "WAL-CLM-IMMORT-000260": {
+      "subject": "longevity",
+      "also_about": [
+        "orac",
+        "antioxidants"
+      ],
+      "facet": "big_question",
+      "question": "How long can a person actually live?",
+      "answer_short": "Wallach: \"who is to say we can't live to be 150, 175 or 200 - we believe we can!\" He lists the four-minute mile and the moon landing as things the experts also called impossible.",
+      "topics": [
+        "longevity",
+        "genetic-potential",
+        "150-years",
+        "aging",
+        "lifespan"
+      ]
+    },
     "WAL-CLM-LETS-000080": {
       "subject": "diabetes",
       "also_about": [],

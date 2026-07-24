@@ -7725,7 +7725,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 714476
+        "char_offset": 714450
       },
       "dose": null,
       "tags": [
@@ -7824,7 +7824,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 723453
+        "char_offset": 723427
       },
       "dose": null,
       "tags": [
@@ -7954,7 +7954,7 @@
         "page": null,
         "screenshot": null,
         "kindle_location": null,
-        "char_offset": 626478
+        "char_offset": 626452
       },
       "dose": null,
       "tags": [
@@ -8087,7 +8087,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642430
+        "char_offset": 642404
       },
       "dose": null,
       "tags": [
@@ -8118,7 +8118,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642501
+        "char_offset": 642475
       },
       "dose": null,
       "tags": [
@@ -8149,7 +8149,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642690
+        "char_offset": 642664
       },
       "dose": null,
       "tags": [
@@ -8180,7 +8180,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 641891
+        "char_offset": 641865
       },
       "dose": null,
       "tags": [
@@ -8211,7 +8211,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 642234
+        "char_offset": 642208
       },
       "dose": null,
       "tags": [
@@ -8243,7 +8243,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 644043
+        "char_offset": 644017
       },
       "dose": null,
       "tags": [
@@ -8275,7 +8275,7 @@
         "page": null,
         "screenshot": 203,
         "kindle_location": null,
-        "char_offset": 644651
+        "char_offset": 644625
       },
       "dose": null,
       "tags": [
@@ -8307,7 +8307,7 @@
         "page": null,
         "screenshot": 225,
         "kindle_location": null,
-        "char_offset": 712533
+        "char_offset": 712507
       },
       "dose": null,
       "tags": [
@@ -8338,7 +8338,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 641595
+        "char_offset": 641569
       },
       "dose": null,
       "tags": [
@@ -8496,7 +8496,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 641427
+        "char_offset": 641401
       },
       "dose": null,
       "tags": [
@@ -8527,7 +8527,7 @@
         "page": null,
         "screenshot": 202,
         "kindle_location": null,
-        "char_offset": 643531
+        "char_offset": 643505
       },
       "dose": null,
       "tags": [
@@ -8559,7 +8559,7 @@
         "page": null,
         "screenshot": 201,
         "kindle_location": null,
-        "char_offset": 641276
+        "char_offset": 641250
       },
       "dose": null,
       "tags": [
@@ -8591,7 +8591,7 @@
         "page": null,
         "screenshot": 201,
         "kindle_location": null,
-        "char_offset": 639542
+        "char_offset": 639516
       },
       "dose": null,
       "tags": [
@@ -8622,7 +8622,7 @@
         "page": null,
         "screenshot": 201,
         "kindle_location": null,
-        "char_offset": 639328
+        "char_offset": 639302
       },
       "dose": null,
       "tags": [
@@ -8654,7 +8654,7 @@
         "page": null,
         "screenshot": 201,
         "kindle_location": null,
-        "char_offset": 640709
+        "char_offset": 640683
       },
       "dose": null,
       "tags": [
@@ -8717,7 +8717,7 @@
         "page": null,
         "screenshot": 224,
         "kindle_location": null,
-        "char_offset": 713200
+        "char_offset": 713174
       },
       "dose": null,
       "tags": [
@@ -8749,7 +8749,7 @@
         "page": null,
         "screenshot": 224,
         "kindle_location": null,
-        "char_offset": 713586
+        "char_offset": 713560
       },
       "dose": null,
       "tags": [
@@ -8782,7 +8782,7 @@
         "page": null,
         "screenshot": 224,
         "kindle_location": null,
-        "char_offset": 713381
+        "char_offset": 713355
       },
       "dose": null,
       "tags": [
@@ -8814,7 +8814,7 @@
         "page": null,
         "screenshot": 225,
         "kindle_location": null,
-        "char_offset": 713949
+        "char_offset": 713923
       },
       "dose": null,
       "tags": [
@@ -8828,6 +8828,71 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-24T03:42:52+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000259",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach puts a number on the payoff and ties it straight to cost. He calculates that a 150 to 175 pound person can add 25 to 50 additional HEALTHFUL years to their life - not years of decline - by practicing a calorie-restricted diet and faithfully following a supplement program. And it saves money rather than costing it: the reduced cost of food more than compensates for the cost of the supplements. It is the same prevent-don't-cure logic that runs through his work, and the direct rebuttal to 'I don't want to live to 150' - the years he is offering are healthful ones, and the bill is lower, not higher.",
+      "verbatim": "We calculate that a 150 - 175 pound person can add\n25 to 50 additional healthful years to their life with a net\nsavings in their cost of living by practicing a CR diet and by\nfaithfully employing a modified supplement program",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 32,
+        "kindle_location": null,
+        "char_offset": 78212
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "quality-of-life",
+        "cost",
+        "calorie-restriction",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T03:48:50+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000260",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "This is Wallach's boldest statement of the ceiling. He lines up a history of things the experts swore were impossible - that our hearts would explode if we drove cars at 50 mph, that no one could break the four-minute mile (then 300 runners did within a year), that the sound barrier could not be broken, that a man would never reach the moon and return - and then asks: who is to say we can't live to be 150, 175 or 200? We believe we can. It is the direct answer to the ceiling question: antioxidants raise your average, the full program raises the maximum, and Wallach puts that maximum far past 100.",
+      "verbatim": "it was believed that we would never\nget a man to land on the moon and return to earth and so on - who is to say we can’t live\nto be 150, 175 or 200 - we believe we can!",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": 160,
+        "kindle_location": null,
+        "char_offset": 518384
+      },
+      "dose": null,
+      "tags": [
+        "longevity",
+        "genetic-potential",
+        "aging",
+        "search-only"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T04:53:47+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }
