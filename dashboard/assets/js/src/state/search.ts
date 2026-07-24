@@ -494,6 +494,58 @@ export function askRanked(query: string, limit = 6): SearchClaim[] {
 }
 
 /**
+ * The topic's OWN name tokens (slug + display name, both singular + plural), so INTENT scoring can
+ * DISCOUNT the shared topic word: every claim about antioxidants repeats "antioxidants", so that word
+ * carries no signal for picking the best ANSWER within the topic. Multi-word synonyms are deliberately
+ * excluded — antioxidants' "what foods fight free radicals" synonym would wrongly eat the word "foods".
+ */
+function entityNameTokens(slug: string): Set<string> {
+  const out = new Set<string>();
+  const add = (s: string): void => {
+    for (const t of tokenize(s)) {
+      out.add(t);
+      out.add(t.endsWith('s') ? t.slice(0, -1) : `${t}s`);
+    }
+  };
+  add(slug.replace(/[_-]+/g, ' '));
+  const e = getEntity(slug);
+  if (e !== null) {
+    add(e.display_name);
+  }
+  return out;
+}
+
+/**
+ * Re-pick the hero for a mentioned entity by INTENT — the query minus the topic's OWN name. Every claim
+ * about antioxidants repeats "antioxidants", so that word can't discriminate the best ANSWER within the
+ * topic; a generic claim (a definition, a niche warning) would otherwise win a specific query just by
+ * repeating it. We rank only the already-ranked answers ABOUT this subject on the intent tokens, and hero
+ * the top; a claim heroes iff it genuinely tops intent (so "...when losing weight" still wins a weight-loss
+ * query). Never hides a claim — every answer stays in the ranked "more answers" list. An empty intent (a
+ * bare "what is X") returns the top claim unchanged. (memory: search-routing-verify-not-scoreclaim)
+ */
+function heroByIntent(subject: string, best: SearchClaim, ranked: SearchClaim[], q: string): SearchClaim {
+  const strip = entityNameTokens(subject);
+  const intent = tokenize(q).filter(t => !strip.has(t));
+  if (intent.length === 0) {
+    return best;
+  }
+  let hero = best;
+  let heroScore = -1;
+  for (const c of ranked) {
+    if (c.subject !== subject && !c.also_about.includes(subject)) {
+      continue;
+    }
+    const s = scoreClaim(c, intent, q);
+    if (s > heroScore) {
+      heroScore = s;
+      hero = c;
+    }
+  }
+  return hero;
+}
+
+/**
  * Resolve a plain-language query to a render intent. Empty query → the browse LANDING
  * (every entity). A subject/synonym hit → its entity page. Otherwise the best Ask answer;
  * if none clears the bar, the landing with a gentle no-match note.
@@ -518,7 +570,14 @@ export function resolveQuery(query: string): SearchResult {
     // entity's own rich page is the honest answer. Kills "what causes cancer" -> a tangential gold claim
     // (best.subject 'gold' !== 'cancer', so we route to the Cancer page, which holds the real answer).
     if (best !== undefined && best.subject === mentioned) {
-      return { mode: 'ask', subject: best.subject, claim: best, claims: ranked, query: q, noMatch: false };
+      // Once the topic is known (an entity is mentioned), rank ITS answers by the query's INTENT — the
+      // words other than the topic's own name — and hero the best match. A generic claim (a definition, a
+      // niche warning) otherwise wins by merely REPEATING the topic word: "...more antioxidants when losing
+      // weight" hijacking "how to get more antioxidants", or "what are antioxidants" hijacking "which foods
+      // have the most antioxidants". A bare "what is X" query has no intent words, so the top claim stays.
+      const hero = heroByIntent(mentioned, best, ranked, q);
+      const claims = hero.id === best.id ? ranked : [hero, ...ranked.filter(c => c.id !== hero.id)];
+      return { mode: 'ask', subject: hero.subject, claim: hero, claims, query: q, noMatch: false };
     }
     return { mode: 'entity', subject: mentioned, claim: null, claims: [], query: q, noMatch: false };
   }

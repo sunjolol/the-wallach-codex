@@ -3769,7 +3769,9 @@
     {
       "id": "WAL-CLM-HELLS-000015",
       "subject": "orac",
-      "also_about": [],
+      "also_about": [
+        "antioxidants"
+      ],
       "facet": "uses",
       "question": "How do I actually get more ORAC into my day?",
       "answer_short": "Swap your salad dressing for a high-ORAC juice - noni or mangosteen - instead of oil.",
