@@ -833,6 +833,18 @@ export function mount(container: HTMLElement): DrawerHandle {
         render();
         return;
       }
+      if (kind === 'essential') {
+        // openDetail('essential', ...) keys by the COVERAGE LAYOUT KEY ('Calcium', 'Vitamin A
+        // (Retinol / beta-carotene)'), NOT the corpus slug ('calcium') — getEssentialByLayoutKey
+        // is an exact map lookup, so a slug silently missed and renderEssentialPage fell to its
+        // "no sealed page record" fallback: an empty page titled with the raw slug. That is what
+        // Ask-Wallach's "Learn More" did for every essential from the day it shipped (measured
+        // 2026-07-23; the render probe only ever covered the condition + topic paths). Resolve
+        // here so EVERY caller — Learn More, related pills, Coverage cards — is fixed at once.
+        const lk = getEssentialBySlug(slug)?.layout_key;
+        openDetail('essential', lk ?? slug);
+        return;
+      }
       openDetail(kind, slug);
     },
     isOpen: () => isOpen,

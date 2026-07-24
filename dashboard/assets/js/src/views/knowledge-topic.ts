@@ -19,6 +19,7 @@
  */
 
 import { plural } from '../core/format.js';
+import { getCondition, getEssentialBySlug } from '../state/corpus.js';
 import { ui } from '../state/copy.js';
 import { booksForSubject, displayName, entityLede, facetGroups, getEntity } from '../state/search.js';
 import { renderSearchCard } from './entity-page.js';
@@ -30,18 +31,70 @@ function escHTML(s: unknown): string {
 }
 
 /**
- * One related pill. Navigates (opens that topic page) only when the slug resolves to
- * an Explore-type entity; a nutrient/condition/unregistered slug renders as a static
- * chip (cross-routing those to their own pages is a later refinement, not a dead link).
+ * One related pill, routed to whichever page actually owns the slug (Luneth 2026-07-23 — the
+ * "fill in the unclickable related bubbles" pass). Until now ONLY Explore-type entities were
+ * clickable and every nutrient/condition pill rendered static, on the note that cross-routing was
+ * "a later refinement"; those pages exist, so all three kinds navigate now:
+ *   nutrient  → the essential detail page, by its COVERAGE LAYOUT KEY (not the slug — see the
+ *               openEntity comment in knowledge.ts for why that distinction is load-bearing)
+ *   condition → the condition detail page, by slug
+ *   otherwise → the Explore topic overlay, by slug
+ * A pill still renders STATIC when its target genuinely does not resolve — an unregistered slug,
+ * or a nutrient/condition the corpus has no entry for. That is deliberate: a dead button that
+ * looks live is worse than an honest static chip. The unroutable remainder is audited
+ * out-of-band (search-index.json x corpus-embed.json) so a dead pill is a REPORTED gap:
+ * 8 of 272 as of 2026-07-23 — digestion, epigenetics, margarine, ph, poultry, silicon,
+ * villi, wheat — each a topic that simply has no page yet, not a broken link.
  */
 function relPill(slug: string): string {
-  const e = getEntity(slug);
-  const navigable = e !== null && e.type !== 'nutrient' && e.type !== 'condition';
+  const t = relTarget(slug);
   const name = displayName(slug);
-  return navigable
-    ? `<button class="kt-pill" type="button" data-kd-topic="${escHTML(slug)}">${escHTML(name)}</button>`
-    : `<span class="kt-pill kt-pill--static">${escHTML(name)}</span>`;
+  return t === null
+    ? `<span class="kt-pill kt-pill--static">${escHTML(name)}</span>`
+    : `<button class="kt-pill" type="button" ${t.attr}="${escHTML(t.val)}">${escHTML(name)}</button>`;
 }
+
+/**
+ * Resolve a related slug to the page that actually owns it, or null if nothing does.
+ *
+ * TWO REGISTRIES, and the pill must consult BOTH. The search entity registry holds 73 enriched
+ * entities; the corpus holds 91 essentials + 502 conditions. Routing on the search registry alone
+ * (the first cut of this fix) left 46 distinct pills dead — `selenium`, `zinc`, `vitamin-d`,
+ * `cancer`, `osteoporosis`, `arthritis` and friends — every one of which HAS a page, just not a
+ * registry entry. Slugs match the corpus RAW, underscores and all (`celiac_disease` IS the corpus
+ * condition slug), so no normalisation is involved and none should be added: a normaliser here
+ * would silently paper over a genuine slug mismatch instead of surfacing it. The unroutable
+ * remainder is audited out-of-band against search-index.json + corpus-embed.json (all 272
+ * pills, not just rendered ones), so a dead pill is a reported gap, not a silent one.
+ *
+ * Registry type wins when present, so an entity that is BOTH a registry element and a corpus
+ * essential (gold, hydrogen, potassium...) keeps opening the Explore topic page it opens today —
+ * this fix only ADDS destinations, it never re-points a pill that already worked.
+ */
+function relTarget(slug: string): { attr: string; val: string } | null {
+  const essAttr = (s: string): { attr: string; val: string } | null => {
+    // The essential page keys by COVERAGE LAYOUT KEY ('Vitamin D2 (Ergocalciferol) + D3
+    // (Cholecalciferol)'), never the slug — see the openEntity comment in knowledge.ts.
+    const lk = getEssentialBySlug(s)?.layout_key;
+    return lk !== undefined && lk !== '' ? { attr: 'data-kd-essential', val: lk } : null;
+  };
+  const e = getEntity(slug);
+  if (e !== null) {
+    if (e.type === 'nutrient') {
+      return essAttr(slug);
+    }
+    if (e.type === 'condition') {
+      return getCondition(slug) !== null ? { attr: 'data-kd-condition', val: slug } : null;
+    }
+    return { attr: 'data-kd-topic', val: slug };
+  }
+  const ess = essAttr(slug);
+  if (ess !== null) {
+    return ess;
+  }
+  return getCondition(slug) !== null ? { attr: 'data-kd-condition', val: slug } : null;
+}
+
 
 /**
  * The Explore entity page for one subject slug. Hero + the faceted claim groups
