@@ -1,19 +1,18 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-24, ORAC corpus DONE · next = BUILD THE LIVE ORAC VIEW)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-24 · ORAC VIEW Phase 1 SHIPPED · next = Phase 2)
 
-# ★★★★★ The ORAC topic is fully mined + sealed and its design is signed off. NEXT SESSION = **build the live ORAC knowledge tab** as a real wired view, from the signed-off design reference. The design + all the claims exist; this is a code build, not a design or mining task.
+# ★★★★★ The live ORAC knowledge tab is UNDER CONSTRUCTION — built in phases from the signed-off design `temporary/orac-EDITED.html` (LOCAL ONLY, gitignored — the only copy of the design; read it first). Full plan + LOCKED decisions live in memory `orac-live-view-build-plan`.
 
-## ▶ NEXT — build the live ORAC view
-**The signed-off design reference is LOCAL ONLY: `temporary/orac-EDITED.html`** (temporary/ is gitignored — memory `clean-root-temp-labeling`). It is Luneth's frozen inspect-edited snapshot (~50 of his DevTools fixes + 3 bold edits + 4 restored CSS drops), visually confirmed by him. **Do not lose it** — until the live view is committed, this file is the only copy of the design. Read it first.
+## ✅ Phase 1 SHIPPED (commit cb8bda74)
+The ORAC tab is live in the Knowledge drawer, after Absorption: the editorial hero (§01) + the full-record claims index (§09) — **31 claims** live from the search index (`state/search.ts::oracClaims()`), facet-grouped (canonical `facetLabel()`), short-cited ("Hell's Kitchen (2015)" via `composeShortCite()`). NEW: `views/knowledge-orac.ts`, `oracClaims()`+`composeShortCite()`, `dashboard/assets/styles/drawer-orac.css` (ALL ~130 `.kd-orac-*` rules already ported + scoped — **Phase 2/3 section styles already exist**), `render_probe_orac.js`. Menu fits at 6 tabs (headOverflow=0). The 150 anchor (`WAL-CLM-IMMORT-000260`) already renders (it's one of the 31, a big_question). Board 77/77.
 
-**What to build:** a real `views/knowledge-*.ts` surface (like `knowledge-foods.ts` = the Absorption tab) that:
-1. Reads the **32 ORAC-page claims** live from the search index (`subject in {orac, antioxidants, free_radicals, longevity} AND (subject==orac OR 'orac' in also_about)`), NOT hardcoded — the demo's `CLAIMS`/`TABLES`/etc. arrays were transcribed demo data; the live view pulls from `state/`.
-2. Reproduces the demo's LAYOUT + CSS (the `.kd-orac-*` styles in orac-EDITED.html are proper, but were authored in a demo `<style>` — port them into a real stylesheet; the design-system tokens are already used throughout).
-3. Wires the **"Explore the Absorption facts →"** button to open the Absorption (foods) tab.
-4. Makes the **claim cards** open their entity/verbatim (the demo cards are static).
-5. Adds **"ORAC"** as a menu tab in the knowledge drawer, **after "ABSORPTION"** (Luneth's placement). Confirm the menu still fits at 0.7rem before wiring (it was tight — memory on the menu centering).
-6. The Coverage-layout + food tables use per-serving ORAC values transcribed from the sealed corpus tables (Immortality pp.378–381, Hell's Kitchen p.253). Decide their home: a hand-authored `assets/data` artifact (MANIFEST-registered) is the honest place, since these are corpus TABLE values not yet a derived artifact.
+## ▶ NEXT — Phase 2: urgency sections (§02–§08), spliced BETWEEN the hero and the claims record
+Sections: **02** mirror-test (decade bars 35/41/55/78 %, Immortality p.29) + stolen-years (20–25 yrs; ranks 17th→48th, p.9) + damage-chain (5 lay steps); **03** daily-target (20–25k/day; 100,000+ disease side — `WAL-CLM-IMMORT-000238`); **08** four-pieces / forces / payoff (+25–50 healthful yrs; avg-vs-ceiling). [**04** reach · **05** scale · **06** tables · **07** wine are the FOOD sections → need Phase-3 data first.]
+- **LOCKED data rule:** every number is Wallach's → **NONE hand-typed, NONE in view-copy** (`copy.ts` forbids Wallach numbers). Build a **DERIVED `orac-data.json`** (a generator parses the source claims → typed numbers; register in MANIFEST `artifacts`; byte-gated by `derived_artifacts_fresh`). Framing PROSE → view-copy `kd_orac_*`. **FIRST STEP:** map each number → its sealed claim (the numbers ARE in claim text — grep-confirmed 78 %, 17th, 48th, "20 to 25", "95 to 100", 20,000/25,000/100,000, 1,250/1,800).
+- Wire **"Explore the Absorption facts →"** = `data-kd-tab="foods"`.
 
-**The 150 anchor claim (WAL-CLM-IMMORT-000260)** is in the corpus + searchable but NOT on the frozen demo page — fold it into the live view's claim list when built.
+## ▶ THEN — Phase 3 (food tables, has a MINING dependency) · Phase 4 (interactions)
+- **Phase 3:** MINE the ~39 unmined Immortality pp.378–381 per-serving rows (pecan 17,940, blueberry juice 9,019 …) into the corpus — small batches, Luneth reviews EACH (never-guess). 15 rows already mined (`IMMORT-000240/241`, `HELLS-000014`). Then derive the league tables + reach/scale/wine computed bars. **DON'T hand-type the values** (the mineral-tiers poison; R1/R3).
+- **Phase 4:** claim cards open their entity/verbatim (currently static, by design).
 
 ## ✅ WHAT LANDED THIS SESSION (5 commits)
 1. `64083732` — shell fixes: COVERAGE nameplate → Unbounded 0.85rem; rail drawer buttons stop staying highlighted after internal close (new `drawer:toggled` event + `render_probe_rail_sync.js` with negative control).
