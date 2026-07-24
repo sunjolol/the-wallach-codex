@@ -50,16 +50,20 @@ import safe_write  # noqa: E402
 # canonical data; centralized with the entity view when it lands (H2). Any kind/facet not
 # listed sorts after, alphabetically, so a new kind never silently vanishes.
 KIND_PRIORITY = ["dose", "deficiency_sign", "toxicity_sign", "protocol", "mechanism", "prognosis"]
-FACET_DEFAULT = ["basics", "warning", "discovery", "etymology", "physiology", "mechanism",
-                 "sources", "uses", "stance", "protocol", "history", "big_question", "biography"]
+# MIRRORS core/schemas/search.ts SEARCH_FACETS (the default display order). Same-family facets
+# are kept ADJACENT so the coloured sections do not interleave — see that file's comment.
+FACET_DEFAULT = ["basics", "warning", "physiology", "mechanism", "sources",
+                 "uses", "protocol", "stance", "big_question", "discovery", "etymology",
+                 "history", "biography"]
 FACET_CONDITION = ["stance", "mechanism", "protocol", "warning", "physiology", "basics",
                    "sources", "uses", "history", "big_question", "biography", "discovery", "etymology"]
 # The plant-derived GROUP section's OWN facet display order (Luneth 2026-07-22): FACET_DEFAULT's
-# order, minus the folded-away "protocol" bucket, with history moved directly above biography. USES
-# keeps its FACET_DEFAULT slot; only the dose card leads WITHIN uses. Distinct const from
-# FACET_DEFAULT so the group section's order can diverge from "Worth knowing".
-GROUP_FACET_ORDER = ["basics", "warning", "discovery", "etymology", "physiology", "mechanism",
-                     "sources", "uses", "stance", "big_question", "history", "biography"]
+# order, minus the folded-away "protocol" bucket. USES keeps its FACET_DEFAULT slot; only the dose
+# card leads WITHIN uses. Distinct const from FACET_DEFAULT so the group section's order CAN diverge
+# from "Worth knowing" — it currently does not, because it had the same colour-interleaving defect
+# (2026-07-23) and takes the same option-B clustering: families contiguous, Cautions kept at #2.
+GROUP_FACET_ORDER = ["basics", "warning", "physiology", "mechanism", "sources", "uses",
+                     "stance", "big_question", "discovery", "etymology", "history", "biography"]
 RELATED_MAX = 8
 
 # ── H1 pill derivation — the directed nutrient<->condition relation ──

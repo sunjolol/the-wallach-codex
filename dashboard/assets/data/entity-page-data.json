@@ -65,12 +65,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000148"
-          ]
-        },
-        {
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-IMMORT-000154"
@@ -81,6 +75,12 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000150",
             "WAL-CLM-IMMORT-000152"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000148"
           ]
         },
         {
@@ -863,12 +863,6 @@
           ]
         },
         {
-          "facet": "etymology",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000190"
-          ]
-        },
-        {
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-IMMORT-000189"
@@ -878,6 +872,12 @@
           "facet": "sources",
           "claim_ids": [
             "WAL-CLM-IMMORT-000187"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000190"
           ]
         },
         {
@@ -1521,12 +1521,6 @@
       ],
       "search": [
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000093"
-          ]
-        },
-        {
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-IMMORT-000092"
@@ -1536,6 +1530,12 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-IMMORT-000091"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000093"
           ]
         }
       ],
@@ -2765,13 +2765,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -2820,6 +2813,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -3378,13 +3378,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -3433,6 +3426,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -3515,13 +3515,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -3570,6 +3563,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -3657,13 +3657,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -3712,6 +3705,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -3775,13 +3775,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -3830,6 +3823,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -3893,13 +3893,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -3948,6 +3941,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4011,13 +4011,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4066,6 +4059,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4120,13 +4120,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4175,6 +4168,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4251,13 +4251,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4306,6 +4299,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4362,13 +4362,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4417,6 +4410,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4471,13 +4471,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4526,6 +4519,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4589,13 +4589,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4644,6 +4637,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4741,13 +4741,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4796,6 +4789,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4852,13 +4852,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -4907,6 +4900,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -4963,13 +4963,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5018,6 +5011,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5074,13 +5074,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5129,6 +5122,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5192,13 +5192,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5247,6 +5240,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5388,13 +5388,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5443,6 +5436,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5497,13 +5497,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5552,6 +5545,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5608,13 +5608,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5663,6 +5656,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5719,13 +5719,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5774,6 +5767,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5853,13 +5853,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -5908,6 +5901,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -5962,13 +5962,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6017,6 +6010,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6071,13 +6071,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6126,6 +6119,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6180,13 +6180,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6235,6 +6228,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6289,13 +6289,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6344,6 +6337,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6398,13 +6398,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6453,6 +6446,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6545,13 +6545,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6600,6 +6593,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6654,13 +6654,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6709,6 +6702,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6763,13 +6763,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6818,6 +6811,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6872,13 +6872,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -6927,6 +6920,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -6981,13 +6981,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -7036,6 +7029,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -7091,13 +7091,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -7146,6 +7139,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -7200,13 +7200,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -7255,6 +7248,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {
@@ -7309,13 +7309,6 @@
           ]
         },
         {
-          "facet": "discovery",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000116",
-            "WAL-CLM-DDDL-000123"
-          ]
-        },
-        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000118",
@@ -7364,6 +7357,13 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000119",
             "WAL-CLM-DDDL-000121"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000116",
+            "WAL-CLM-DDDL-000123"
           ]
         },
         {

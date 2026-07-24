@@ -5,8 +5,8 @@
  * on 2026-06-21 (Round 26 · task #20 visual fidelity sweep).
  *
  * Three blocks:
- *   1. Workspace chrome (fonts, :root tokens, ds-cipher / ds-scan-line /
- *      ds-border-travel, coverage-stat glyph pulse) — shared by every
+ *   1. Workspace chrome (fonts, :root tokens, ds-cipher / ds-border-travel,
+ *      coverage-stat glyph pulse) — shared by every
  *      view, lives here for now until extracted into design-system.css
  *      by the user (sealed-canonical writer rule).
  *   2. SKIPPED — .app-shell / .app-rail / .app-topbar already styled by
@@ -135,30 +135,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
   letter-spacing: 0.05em;
   display: inline-block;
   min-width: 1ch;
-}
-
-/* SCAN LINE — sweeps top→bottom across a parent every N seconds.
-   Wrap with .ds-scan-host { position: relative; overflow: hidden; } */
-.ds-scan-line {
-  position: absolute;
-  left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    var(--ds-accent-soft) 20%,
-    var(--ds-accent) 50%,
-    var(--ds-accent-soft) 80%,
-    transparent 100%);
-  opacity: 0.35;
-  pointer-events: none;
-  animation: ds-scan-sweep 10s linear infinite;
-  filter: blur(0.5px);
-}
-@keyframes ds-scan-sweep {
-  0%   { top: -3%; opacity: 0; }
-  10%  { opacity: 0.35; }
-  90%  { opacity: 0.35; }
-  100% { top: 103%; opacity: 0; }
 }
 
 /* BORDER TRAVEL — a hairline accent that travels around a card border.
@@ -568,9 +544,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
    tiles would look absurd on web (Luneth said so explicitly) — the depth comes from an
    inset shadow + a hairline registration grid, which is the FEEL without the costume. */
 .essentials-host {
-  /* position/overflow host the .ds-scan-line sweep (merged in from the pre-plate-language
-     block that used to sit above — two .essentials-host declarations were shadowing each
-     other, the same duplicate-block bug purged from .tile this round). */
+  /* position/overflow now host the .ds-border-travel edge sweep, whose pseudo-elements run
+     -30% → 130% and must be clipped by this box. (They hosted the .ds-scan-line sweep too until
+     that was deleted 2026-07-23; do not drop them — border-travel still needs both.) */
   position: relative;
   overflow: hidden;
   background: var(--ds-paper-darker);

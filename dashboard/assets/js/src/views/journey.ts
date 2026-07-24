@@ -390,7 +390,6 @@ function renderShell(activeTab: Tab, formMode: FormMode): string {
   }
 
   return `
-    <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="jd-head">
       <div>
         <div class="jd-eyebrow"><span class="pulse-dot"></span>DRAWER · <span class="ds-cipher" data-cipher-set="hexa">JN·${hexSerial(activeTab.length * 7)}</span></div>

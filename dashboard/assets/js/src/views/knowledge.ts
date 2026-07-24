@@ -315,7 +315,6 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
   const tabsHTML = tabs.map(t => `<button class="kd-knh__tab${t.id === activeTab ? ' active' : ''}" data-kd-tab="${t.id}">${escHTML(t.label)}</button>`).join('');
 
   return `
-    <span class="ds-scan-line" aria-hidden="true"></span>
     <header class="kd-knh">
       <div class="kd-knh__mark"><span class="kd-knh__g">❡</span><b>${escHTML(ui('kd_mark'))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>

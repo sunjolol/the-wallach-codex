@@ -23,6 +23,9 @@
   --t-concept: #8a52d6;
   --t-substance: #bd7b34;
   --t-topic: #5f7599;
+  /* Scrim blur radius — the single knob, so a "more/less blur" call is a one-token change.
+     Measured irrelevant to PERFORMANCE (see .sr-open); this is purely a look control. */
+  --aw-scrim-blur: 3.5px;
   position: absolute; pointer-events: none;
 }
 #drawer-search-mount.sr-open {
@@ -32,13 +35,48 @@
   align-items: flex-start;
   justify-content: center;
   padding: clamp(24px, 7vh, 88px) 20px 40px;
-  /* A plain darker scrim — NO backdrop-filter. A blur() over a full-screen overlay forces the browser
-     to re-rasterize the whole page behind it on EVERY repaint (hover, scroll), which is the recurring
-     Ask-Wallach lag; a solid rgba wash is guaranteed cheap and gives the same "dim the app" focus. */
+  /* THE SCRIM: dark wash + a real backdrop blur. The blur was removed earlier on 2026-07-23 as the
+     cause of the recurring Ask-Wallach lag. That diagnosis was HALF right, and the wrong half cost us
+     the effect. Measured headless 2026-07-23 (devtools trace, 3s of hover agitation over an open
+     results page, negative-controlled): the blur RADIUS is not the cost — 7px, 60px and none all
+     traced identically (274-292ms). The cost is INVALIDATION. Seven ambient `infinite` animations
+     paint behind this scrim (ds-travel-top/-bottom, ds-stat-pulse, ds-numeric-glow, 2x
+     ds-pulse-animate; ds-scan-sweep was a seventh until it was deleted 2026-07-23) and the travellers
+     animate `left`/`right` — layout properties, so the compositor
+     re-commits EVERY frame: 434 commits / 292ms of compositor work per 3s WITH NO BLUR AT ALL. Add a
+     backdrop-filter and each of those 434 frames drags a full-viewport re-blur along with it. THAT is
+     the lag. So the fix is to stop the invalidation, not to drop the blur: the freeze block below
+     pauses those animations while the popup is open, taking the same window to 234 commits / 81ms
+     (-72% compositor work). A backdrop that does not change is blurred once and cached.
+     DO NOT re-add the blur without the freeze, and do not "optimize" by lowering the radius — the
+     radius was never the problem. Caveat kept honest: headless renders the blur but charges no
+     measurable time for it, so the -72% is proven and the resulting SMOOTHNESS is not — that was
+     signed off by eye. */
   background: rgba(18, 14, 10, 0.74);
+  backdrop-filter: blur(var(--aw-scrim-blur));
+  -webkit-backdrop-filter: blur(var(--aw-scrim-blur));
+  /* Composite hint (the translate3d/backface trick): keeps the scrim on its own layer so the popup's
+     own hover repaints never re-enter the backdrop pass. Traced -7% compositor work — minor beside
+     the freeze, but free and harmless. Safe here because the mount is the ONLY position:fixed element
+     on this surface, so promoting it steals no fixed-positioning containing block. */
+  transform: translateZ(0);
+  backface-visibility: hidden;
   z-index: 200;
   pointer-events: auto;
   overflow-y: auto;
+}
+
+/* ─── THE FREEZE: hold the backdrop still while Ask-Wallach is open ───────────
+   Pauses the ambient loops in the surfaces that sit BEHIND the scrim, so the backdrop-filter above
+   samples a static image and Chrome can cache the blurred result instead of recomputing it per frame.
+   Scoped to those containers by name (never a bare `*`) so the popup's OWN animations keep running.
+   Purely a hold, not a stop: `animation-play-state` resumes exactly where it paused the moment the
+   popup closes, and none of it is visible under a 74%-opaque blurred wash anyway. */
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount),
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount) *,
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount) *::before,
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount) *::after {
+  animation-play-state: paused;
 }
 #drawer-search-mount .scr {
   position: relative;

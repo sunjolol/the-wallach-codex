@@ -26,11 +26,28 @@ import { z } from 'zod';
  * eden/tools/search_index_derive.py SEARCH_FACETS. Ordered as the entity page renders its
  * sections top-to-bottom, so state/view read the display order straight off this list (no
  * second 13-element literal, which would trip views_state_no_inline_data — this lives in
- * core, which is exempt). Gated by search_index_wellformed (facet ∈ this set).
+ * core, which is exempt). Gated by search_index_wellformed (facet ∈ this set) — which compares
+ * TS vs Python as SETS, so this ORDER is display-only and free to change.
+ *
+ * ORDER IS COLOUR-DRIVEN (Luneth 2026-07-23, "option B"). Sections are tinted by FACET_FAMILIES
+ * below, so an order that interleaves families renders as visual chaos. Two separate scatters were
+ * measured and fixed:
+ *   TAIL — ran uses(action) stance(stance) protocol(action) history(story) big_question(stance):
+ *     green/purple/green/purple. `protocol` now sits beside `uses`, `big_question` beside `stance`.
+ *   HEAD — ran basics(science) warning(signs) discovery(story) etymology(story) physiology(science)
+ *     mechanism(science) sources(science), splitting SCIENCE in two around a purple wedge. That was
+ *     the visible defect on essentials pages (hydrogen + potassium rendered blue/purple/blue/blue/
+ *     purple). `discovery` + `etymology` moved down beside the other story facets: 3 switches -> 1.
+ * WARNING DELIBERATELY STAYS AT POSITION 2 — clustering it with the other families would score one
+ * switch better across all 12 multi-facet essentials (copper, the only one with a Cautions section)
+ * and was rejected: a health caution must not sit below four other sections to buy one colour run.
+ * Measured, not asserted: essentials went 16 -> 12 total switches, 0 pages worse.
+ * Keep same-family facets adjacent when editing this list. Conditions override it via
+ * FACET_ORDER_BY_TYPE and are deliberately NOT subject to this (stance-first, reviewed and kept).
  */
 export const SEARCH_FACETS = [
-  'basics', 'warning', 'discovery', 'etymology', 'physiology', 'mechanism', 'sources',
-  'uses', 'stance', 'protocol', 'history', 'big_question', 'biography',
+  'basics', 'warning', 'physiology', 'mechanism', 'sources',
+  'uses', 'protocol', 'stance', 'big_question', 'discovery', 'etymology', 'history', 'biography',
 ] as const;
 export const SearchFacetSchema = z.enum(SEARCH_FACETS);
 export type SearchFacet = z.infer<typeof SearchFacetSchema>;

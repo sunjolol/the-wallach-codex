@@ -344,7 +344,6 @@ function renderField(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): st
   const sections = LAYOUT.sections.map(s => renderSection(s, snapshot, goals)).join('');
   return `
     <section class="essentials-host ds-border-travel">
-      <span class="ds-scan-line" aria-hidden="true"></span>
       ${sections}
       ${renderLedger(snapshot)}
     </section>

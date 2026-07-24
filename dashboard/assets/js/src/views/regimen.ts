@@ -12,7 +12,7 @@
  *   - Active slot detail: eyebrow + title + stat + item rows + cart actions
  *   - Each item row: icon, name, contrib pips, dose-block, scaling, remove
  *   - Right rail: recommendations panel + wishlist panel
- *   - .ds-cipher + .ds-scan-line + .ds-border-travel ambient chrome
+ *   - .ds-cipher + .ds-border-travel ambient chrome
  *
  * Cart actions bridge to legacy window.* helpers (saveCurrentToSlot,
  * loadFromSlot, showSlotInputModal) preserving §31 chokepoint discipline.
@@ -153,12 +153,10 @@ function renderSlot(slot: SlotMeta): string {
     `;
   }
   const activeClass = slot.active === true ? ' active ds-border-travel' : '';
-  const scanLine = slot.active === true ? '<span class="ds-scan-line" aria-hidden="true"></span>' : '';
   const serialPrefix = slot.active === true ? '● ' : '';
   const serialSuffix = slot.active === true ? ' · ACTIVE' : '';
   return `
     <article class="slot-card${activeClass}" data-slot-id="${escHTML(slot.id)}" data-slot-num="${escHTML(slot.num)}">
-      ${scanLine}
       <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML(slot.serial)}</span>${serialSuffix}</div>
       <div class="slot-card__num">${escHTML(slot.num)}</div>
       <h3 class="slot-card__name">${escHTML(slot.name)}</h3>
