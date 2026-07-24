@@ -3962,6 +3962,77 @@
       "about": [
         "colloidal-minerals"
       ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000126",
+      "kind": "mechanism",
+      "essentials": [
+        "selenium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Microplastics are a modern problem Wallach's books never take up. But they fall squarely into a category he does address: xenobiotics — the foreign compounds the body has to recognize and clear. In a selenium review he quotes approvingly across several books, the mineral is described as 'involved in detoxification of metals and certain xenobiotics,' one of the body's built-in tools for handling foreign chemicals. From there his general defense against toxin load is consistent: keep selenium up (he runs 250 to 500 mcg a day in his prevention programs), lean on plant-derived colloidal minerals to 'reduce your risk of damage from heavy metals and pollution,' filter your home's water and air, and run a periodic detox. None of this is Wallach speaking about plastics specifically — it is his framework for foreign-chemical exposure, which microplastics now fall under.",
+      "verbatim": "selenium acts as an acceptor of\nbiogenic methyl groups, and is involved in detoxification of metals and\ncertain xenobiotics. Selenium also has immunopotentiating properties.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 589701
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "detox",
+        "microplastics",
+        "xenobiotics",
+        "selenium",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T15:42:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000127",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [
+        "alfalfa"
+      ],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "As part of his cancer-prevention program, Wallach lays out a simple ongoing detox routine: take alfalfa daily 'in some form as a detoxifier,' do a liver flush once or twice a month by drinking apple juice for three days, and get a hair analysis each year — which he uses both to monitor toxic-metal load and to check how well you're absorbing minerals (if absorption is poor, he notes, all your mineral levels run low). It sits inside a broader daily regimen for keeping toxins down: dietary fiber at every meal, filtered (not distilled) water, 2 to 3 bowel movements a day, biodegradable household cleaners, and organic food wherever possible. The hair analysis is the feedback loop — it is how he would tell whether the metals are actually coming down.",
+      "verbatim": "Take alfalfa daily in some form\nas a detoxifier. Do a liver flush once or twice each month by drinking apple\njuice for three days. Do a hair analysis each year to monitor toxic metal\nload as well as absorption capability.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 661112
+      },
+      "dose": null,
+      "tags": [
+        "dddl-3e-2011",
+        "detox",
+        "hair-analysis",
+        "liver-flush",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T15:42:22+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -464,6 +464,32 @@
       ],
       "claim_count": 2
     },
+    "detox": {
+      "display_name": "Detox & Heavy Metals",
+      "type": "concept",
+      "synonyms": [
+        "detox",
+        "detoxification",
+        "detoxify",
+        "cleanse",
+        "body cleanse",
+        "heavy metal detox",
+        "remove toxins",
+        "clear toxins",
+        "get rid of toxins",
+        "toxic metals",
+        "environmental toxins",
+        "chelation"
+      ],
+      "related": [
+        "selenium",
+        "mercury",
+        "colloidal_minerals",
+        "aluminum",
+        "microplastics"
+      ],
+      "claim_count": 5
+    },
     "diabetes": {
       "display_name": "Diabetes",
       "type": "condition",
@@ -1041,6 +1067,29 @@
       ],
       "claim_count": 13,
       "symbol": "Hg"
+    },
+    "microplastics": {
+      "display_name": "Microplastics",
+      "type": "topic",
+      "synonyms": [
+        "microplastics",
+        "microplastic",
+        "nanoplastics",
+        "nanoplastic",
+        "plastics",
+        "plastic",
+        "plastic pollution",
+        "plastic particles",
+        "xenobiotics",
+        "xenobiotic",
+        "plastic in blood"
+      ],
+      "related": [
+        "detox",
+        "selenium",
+        "colloidal_minerals"
+      ],
+      "claim_count": 1
     },
     "naturopathy": {
       "display_name": "Naturopathy",
@@ -2179,6 +2228,50 @@
         "long-lived-cultures",
         "control-group",
         "90-essentials"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000126",
+      "subject": "microplastics",
+      "also_about": [
+        "detox",
+        "selenium"
+      ],
+      "facet": "mechanism",
+      "question": "How do I detox microplastics and plastics from my body?",
+      "answer_short": "Wallach never wrote about microplastics, but they're a xenobiotic — a foreign chemical the body must clear — and he endorses selenium's role in the 'detoxification of metals and certain xenobiotics.'",
+      "answer": "Microplastics are a modern problem Wallach's books never take up. But they fall squarely into a category he does address: xenobiotics — the foreign compounds the body has to recognize and clear. In a selenium review he quotes approvingly across several books, the mineral is described as 'involved in detoxification of metals and certain xenobiotics,' one of the body's built-in tools for handling foreign chemicals. From there his general defense against toxin load is consistent: keep selenium up (he runs 250 to 500 mcg a day in his prevention programs), lean on plant-derived colloidal minerals to 'reduce your risk of damage from heavy metals and pollution,' filter your home's water and air, and run a periodic detox. None of this is Wallach speaking about plastics specifically — it is his framework for foreign-chemical exposure, which microplastics now fall under.",
+      "verbatim": "selenium acts as an acceptor of\nbiogenic methyl groups, and is involved in detoxification of metals and\ncertain xenobiotics. Selenium also has immunopotentiating properties.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "microplastics",
+        "nanoplastics",
+        "xenobiotics",
+        "selenium",
+        "detox",
+        "pollution",
+        "plastics"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000127",
+      "subject": "detox",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is Wallach's routine for detoxing and clearing toxic metals?",
+      "answer_short": "Take alfalfa daily as a detoxifier, do a monthly apple-juice liver flush, and get a yearly hair analysis to track your toxic-metal load.",
+      "answer": "As part of his cancer-prevention program, Wallach lays out a simple ongoing detox routine: take alfalfa daily 'in some form as a detoxifier,' do a liver flush once or twice a month by drinking apple juice for three days, and get a hair analysis each year — which he uses both to monitor toxic-metal load and to check how well you're absorbing minerals (if absorption is poor, he notes, all your mineral levels run low). It sits inside a broader daily regimen for keeping toxins down: dietary fiber at every meal, filtered (not distilled) water, 2 to 3 bowel movements a day, biodegradable household cleaners, and organic food wherever possible. The hair analysis is the feedback loop — it is how he would tell whether the metals are actually coming down.",
+      "verbatim": "Take alfalfa daily in some form\nas a detoxifier. Do a liver flush once or twice each month by drinking apple\njuice for three days. Do a hair analysis each year to monitor toxic metal\nload as well as absorption capability.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "detox",
+        "alfalfa",
+        "liver-flush",
+        "hair-analysis",
+        "toxic-metals",
+        "cancer-prevention"
       ]
     },
     {
@@ -6828,6 +6921,50 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000265",
+      "subject": "detox",
+      "also_about": [
+        "selenium",
+        "mercury"
+      ],
+      "facet": "protocol",
+      "question": "Does selenium protect against mercury and heavy-metal poisoning?",
+      "answer_short": "Selenium is a direct antagonist of mercury; Wallach tells anyone exposed to it — dental amalgams, industrial pollution — to supplement selenium before, during, and after any detox.",
+      "answer": "Wallach singles out selenium as an antagonist of mercury: the two compete in the body, so keeping selenium up blunts mercury's toxicity. He names dental amalgams and industrial pollution as the common chronic-exposure routes, and gives a practical rule — anyone at risk should supplement selenium before, during, and after a detox, so mercury freed during the process does not do damage on its way out. It sits inside his broader case for selenium as a cornerstone mineral; he links its deficiency to conditions ranging from cardiomyopathy and muscle weakness to a raised risk of cancer.",
+      "verbatim": "Selenium acts as an antagonist of mercury. Those at\nrisk for chronic mercury toxicity (dental amalgams, industrial\npollution, etc.) supplement with\nselenium prior to, during and after detoxification activities.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "mercury",
+        "selenium",
+        "heavy-metals",
+        "dental-amalgams",
+        "detox",
+        "chelation"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000266",
+      "subject": "detox",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is EDTA chelation and where did it come from?",
+      "answer_short": "Calcium EDTA was invented in Germany just before WWI to antidote arsenic and lead from chemical warfare; the same agent now does IV chelation to clear obstructed arteries.",
+      "answer": "EDTA has a striking origin: calcium EDTA was a man-made amino acid the Germans engineered just before World War I to antidote the arsenic and lead of chemical-warfare exposure — it was born as a heavy-metal antidote. That same claw-like binding ('chelate' is Latin for claw) is why it is used today for intravenous chelation therapy to open obstructed arteries, and Wallach folds IV EDTA chelation into his programs for cardiovascular problems — poor circulation, arteriosclerosis, stroke. Do not confuse it with the 'chelated minerals' on a supplement label (a livestock-industry invention for better absorption) or with plant-derived colloidal minerals — EDTA is the therapeutic chelator that grabs metals and pulls them out.",
+      "verbatim": "The original chelating agent use was calcium EDTA, a\nman-made amino acid that was created by the Germans just\nprior to WWI to antidote arsenic and lead exposure in chemical\nwarfare attacks (calcium EDTA is used today for intravenous\nchelation therapy to open up obstructed arteries).",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "edta",
+        "chelation",
+        "heavy-metals",
+        "arsenic",
+        "lead",
+        "detox",
+        "chelation-therapy"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000080",
       "subject": "diabetes",
       "also_about": [],
@@ -8105,6 +8242,47 @@
           "omega-3"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-LETS-000489",
+      "subject": "detox",
+      "also_about": [
+        "colloidal_minerals"
+      ],
+      "facet": "uses",
+      "question": "Do supplements help protect against heavy metals and pollution?",
+      "answer_short": "Wallach says plant-derived colloidal minerals do double duty — preventing disease and reducing your risk of damage from heavy metals and pollution in the environment.",
+      "answer": "Wallach's answer is his signature supplement — plant-derived colloidal minerals — which he says do not just prevent deficiency disease but 'reduce your risk of damage from heavy metals and pollution in the environment.' Colloidal here means the minerals exist as ultra-fine particles (Angstrom scale) that a plant has already pulled from the soil and rebuilt into a living, absorbable form — which is why he rates them about 98% absorbable and makes them the base of any 'public health program.' The logic is protective as much as nutritional: a body kept fully mineral-replete is, in his framing, more resistant to the toxic metals and pollutants it is inevitably exposed to.",
+      "verbatim": "Be sure to include plant derived colloidal minerals into your public health program\n- they prevent disease and reduce your risk of\ndamage from heavy metals and pollution in\nthe environment!",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "colloidal-minerals",
+        "heavy-metals",
+        "pollution",
+        "detox",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000490",
+      "subject": "detox",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How does Wallach say to reduce my exposure to environmental toxins?",
+      "answer_short": "Take control of your household environment: grow some of your own organic food and filter your home's water and air — a bone-charcoal filter, he says, removes hydrocarbons and heavy metals.",
+      "answer": "Wallach frames environmental toxins as something you have to take personal control of — 'we must take matters into our own hands.' His program for dropping your 'personal pollution load': grow a portion of your own organic food (which also cuts the pollution you take in through food), and treat home water and air treatment as necessities, not luxuries. He is most insistent on water — he claims more than 3,000 chemicals survive municipal treatment, most carcinogenic and undetectable by taste ('just because the water is clear doesn't mean that it is safe'), and that a bone-charcoal filter 'will remove all of the hydrocarbons and heavy metals.' The through-line: you spend a third or more of your day at home, so cleaning up that micro-environment is high-leverage — do not wait for a 'Love Canal' in your own community.",
+      "verbatim": "This means dropping our\npersonal pollution load to a minimum by\ngrowing a certain amount of our own \"organic\" food, we must have home water treatment systems and air conditioning systems in\nthe fullest sense (not just cooling)",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "pollution",
+        "organic-food",
+        "water-filtration",
+        "air-filtration",
+        "detox",
+        "environmental-toxins"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000024",

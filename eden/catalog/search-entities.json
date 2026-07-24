@@ -413,6 +413,31 @@
         "eggs"
       ]
     },
+    "detox": {
+      "display_name": "Detox & Heavy Metals",
+      "type": "concept",
+      "synonyms": [
+        "detox",
+        "detoxification",
+        "detoxify",
+        "cleanse",
+        "body cleanse",
+        "heavy metal detox",
+        "remove toxins",
+        "clear toxins",
+        "get rid of toxins",
+        "toxic metals",
+        "environmental toxins",
+        "chelation"
+      ],
+      "related": [
+        "selenium",
+        "mercury",
+        "colloidal_minerals",
+        "aluminum",
+        "microplastics"
+      ]
+    },
     "diabetes": {
       "catalog_ref": true,
       "type": "condition",
@@ -946,6 +971,28 @@
         "mercury_poisoning",
         "minamata_disease",
         "vaccines"
+      ]
+    },
+    "microplastics": {
+      "display_name": "Microplastics",
+      "type": "topic",
+      "synonyms": [
+        "microplastics",
+        "microplastic",
+        "nanoplastics",
+        "nanoplastic",
+        "plastics",
+        "plastic",
+        "plastic pollution",
+        "plastic particles",
+        "xenobiotics",
+        "xenobiotic",
+        "plastic in blood"
+      ],
+      "related": [
+        "detox",
+        "selenium",
+        "colloidal_minerals"
       ]
     },
     "naturopathy": {
