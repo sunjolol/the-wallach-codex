@@ -661,7 +661,7 @@
         "antioxidants",
         "longevity"
       ],
-      "claim_count": 3
+      "claim_count": 4
     },
     "gallium": {
       "display_name": "Gallium",
@@ -969,7 +969,7 @@
         "be_your_own_doctor",
         "negative_ion_therapy"
       ],
-      "claim_count": 15
+      "claim_count": 16
     },
     "macrobiotics": {
       "display_name": "Macrobiotics",
@@ -6787,6 +6787,44 @@
         "150-years",
         "aging",
         "lifespan"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000261",
+      "subject": "free_radicals",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "How much of a brain cell fills with aging pigment as you get older?",
+      "answer_short": "By Adelman's data Wallach cites, ceroid lipofuscin fills about 35% of a brain cell at age 30-40, 41% by 50-60, 55% by 70-80, and 78% by 90-100.",
+      "answer": "Wallach cites Adelman's data on how the aging pigment ceroid lipofuscin accumulates in human brain cells with age: it fills about 35% of a cell at 30-40 years, 41% by 50-60, 55% by 70-80, and 78% by 90-100.",
+      "verbatim": "Percent of Ceroid Lipofuscin in Aging Human Brain Cells\n\nAge  % intracellular volume occupied\n\n30 - 40  35\n50 - 60  41\n70 - 80  55\n90 - 100  78\n\n(Adelman, et al., 1988)",
+      "page": 29,
+      "book_id": "immortality",
+      "topics": [
+        "ceroid-lipofuscin",
+        "aging",
+        "brain",
+        "free-radicals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000262",
+      "subject": "longevity",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "How far has American longevity fallen in the world rankings?",
+      "answer_short": "By CDC/WHO surveys, the US fell from 17th in the world in 1990 to 24th by 2000, 46th by 2005, and 48th by 2008.",
+      "answer": "Wallach tracks the US decline in world longevity rankings from CDC and WHO surveys: Americans ranked 17th in 1990, fell to 24th by 2000, 46th by 2005, and 48th by 2008.",
+      "verbatim": "In a CDC (Atlanta, GA) and WHO survey in 1990,\nAmericans ranked 17th in the world in longevity; in the year\n2000 Americans dropped in ranking to 24th in longevity; and\nin 2005, Americans dropped in ranking again to a pitiful 46th,\nand in 2008 Americans again dropped to 48th in the world\nwhen it comes to health and longevity.",
+      "page": 9,
+      "book_id": "immortality",
+      "topics": [
+        "longevity",
+        "world-rankings",
+        "america",
+        "public-health"
       ]
     },
     {

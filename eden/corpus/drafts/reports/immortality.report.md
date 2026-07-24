@@ -1,13 +1,30 @@
 # Extraction report — immortality (Immortality)
 
-_1 claim(s) drafted 2026-07-24T04:53:47+00:00. Review then run corpus_seal.py to promote._
+_2 claim(s) drafted 2026-07-24T06:59:53+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: prognosis×1
+Kinds: mechanism×1, prevalence×1
 
-### WAL-CLM-IMMORT-000260 · prognosis
+### WAL-CLM-IMMORT-000261 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** This is Wallach's boldest statement of the ceiling. He lines up a history of things the experts swore were impossible - that our hearts would explode if we drove cars at 50 mph, that no one could break the four-minute mile (then 300 runners did within a year), that the sound barrier could not be broken, that a man would never reach the moon and return - and then asks: who is to say we can't live to be 150, 175 or 200? We believe we can. It is the direct answer to the ceiling question: antioxidants raise your average, the full program raises the maximum, and Wallach puts that maximum far past 100.
-- **verbatim** (offset 518384): “it was believed that we would never
-get a man to land on the moon and return to earth and so on - who is to say we can’t live
-to be 150, 175 or 200 - we believe we can!”
+- **claim:** Wallach cites Adelman's data on how the aging pigment ceroid lipofuscin accumulates in human brain cells with age: it fills about 35% of a cell at 30-40 years, 41% by 50-60, 55% by 70-80, and 78% by 90-100.
+- **verbatim** (offset 71708): “Percent of Ceroid Lipofuscin in Aging Human Brain Cells
+
+Age  % intracellular volume occupied
+
+30 - 40  35
+50 - 60  41
+70 - 80  55
+90 - 100  78
+
+(Adelman, et al., 1988)”
+
+### WAL-CLM-IMMORT-000262 · prevalence
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach tracks the US decline in world longevity rankings from CDC and WHO surveys: Americans ranked 17th in 1990, fell to 24th by 2000, 46th by 2005, and 48th by 2008.
+- **verbatim** (offset 34509): “In a CDC (Atlanta, GA) and WHO survey in 1990,
+Americans ranked 17th in the world in longevity; in the year
+2000 Americans dropped in ranking to 24th in longevity; and
+in 2005, Americans dropped in ranking again to a pitiful 46th,
+and in 2008 Americans again dropped to 48th in the world
+when it comes to health and longevity.”
 

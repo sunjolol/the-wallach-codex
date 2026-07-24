@@ -36,6 +36,20 @@
       "expect": 1,
       "word": false,
       "why": "Chunk G (2026-07-23) - Screenshot 160, a two-page spread. Same two-column fusion as chunks B/C/E: the claim 'who is to sav we can't live to be 150, 175 or 200 - we believe we can!' was welded to a right-page fragment ('commercially produce food was first written about in 4000'). LEFT page = longevity narrative (experts/four-minute-mile/moon/150-175-200/Dan Buettner/four principles), RIGHT page = wood-ashes / plant-derived-minerals section under the 'Tibetans & Chinese' heading. Both columns read separately off the page image at 2.5x; reading order left-page-then-right-page, joining at 'the most universally available // mineral nutritional supplement'. OCR fix 'sav'->'say'. Book spelling 'principals' preserved (twice). Also unblocks the plant-derived-minerals / culinary-ashes / munchies-as-salt-craving material for future mining."
+    },
+    {
+      "find": "% intracellular volume\n\n \n\nSoe occupied\n30 - 40 35\n50 - 60 4]\n70 - 80 55\n90 - 100 78",
+      "repl": "Age  % intracellular volume occupied\n\n30 - 40  35\n50 - 60  41\n70 - 80  55\n90 - 100  78",
+      "expect": 1,
+      "word": false,
+      "why": "Chunk H (2026-07-24) - the Adelman ceroid-lipofuscin decade table on p.29, for the ORAC page's SS02 'mirror test' (claim WAL-CLM-IMMORT-000261). Verified against the page image Luneth supplied: a two-column table 'Age | % intracellular volume occupied' with values 35/41/55/78 by decade band. OCR fixes: the col-1 header 'Age' was misread as 'Soe' and fused with the wrapped col-2 header 'occupied'; the 50-60 value '41' was OCR'd '4]' (a bracket for the 1). Table-normalized to one row per decade. APPLIED OUT-OF-BAND (safe_write + corpus_resnap: 254 claims, 253 relocated, 0 broken), like chunks B-G - this spec is apply-once."
+    },
+    {
+      "find": "In a CDC (Atlantha, GA)",
+      "repl": "In a CDC (Atlanta, GA)",
+      "expect": 1,
+      "word": false,
+      "why": "Chunk H (2026-07-24) - OCR 'h'-insertion in the CDC location on p.9 (the world-longevity-ranking passage, claim WAL-CLM-IMMORT-000262); the CDC is in Atlanta, GA. Applied out-of-band with the table fix above."
     }
   ],
   "regex_replacements": [],

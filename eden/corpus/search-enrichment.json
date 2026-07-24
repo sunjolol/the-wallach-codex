@@ -4918,6 +4918,34 @@
         "specific-gravity",
         "concentration"
       ]
+    },
+    "WAL-CLM-IMMORT-000261": {
+      "subject": "free_radicals",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "How much of a brain cell fills with aging pigment as you get older?",
+      "answer_short": "By Adelman's data Wallach cites, ceroid lipofuscin fills about 35% of a brain cell at age 30-40, 41% by 50-60, 55% by 70-80, and 78% by 90-100.",
+      "topics": [
+        "ceroid-lipofuscin",
+        "aging",
+        "brain",
+        "free-radicals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000262": {
+      "subject": "longevity",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "How far has American longevity fallen in the world rankings?",
+      "answer_short": "By CDC/WHO surveys, the US fell from 17th in the world in 1990 to 24th by 2000, 46th by 2005, and 48th by 2008.",
+      "topics": [
+        "longevity",
+        "world-rankings",
+        "america",
+        "public-health"
+      ]
     }
   }
 }

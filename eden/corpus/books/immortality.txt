@@ -950,7 +950,7 @@ is somewhere around 75 years of age (give or take five
 years), in fact 20 to 25 years short of our genetic potential for
 longevity.
 
-In a CDC (Atlantha, GA) and WHO survey in 1990,
+In a CDC (Atlanta, GA) and WHO survey in 1990,
 Americans ranked 17th in the world in longevity; in the year
 2000 Americans dropped in ranking to 24th in longevity; and
 in 2005, Americans dropped in ranking again to a pitiful 46th,
@@ -1939,15 +1939,12 @@ will accumulate in the cell cytoplasm itself over time.
 
 Percent of Ceroid Lipofuscin in Aging Human Brain Cells
 
-% intracellular volume
+Age  % intracellular volume occupied
 
- 
-
-Soe occupied
-30 - 40 35
-50 - 60 4]
-70 - 80 55
-90 - 100 78
+30 - 40  35
+50 - 60  41
+70 - 80  55
+90 - 100  78
 
 (Adelman, et al., 1988)
 
