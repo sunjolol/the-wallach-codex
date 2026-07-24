@@ -9128,6 +9128,39 @@
       "extracted_at": "2026-07-24T16:25:35+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000268",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Antioxidants are the body's defense against free radicals — the reactive molecules that oxidize and damage your cells, cell walls and mitochondria. Wallach's signature point is that they don't work alone: the antioxidant enzyme systems present in every healthy cell need raw materials and mineral cofactors to run at full capacity — glutathione, for example, requires selenium. So in his framework, getting the benefit of antioxidants is inseparable from getting the minerals that power them, and he measures the antioxidant strength of foods by their ORAC score.",
+      "verbatim": "Antioxidant enzyme systems are normally present in all\nhealthy aerobic cells - remember, antioxidants also need raw\nmaterials and mineral cofactors to operate at their optimum\ncapacity (glutathione requires selenium, etc.).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 67896
+      },
+      "dose": null,
+      "tags": [
+        "immortality",
+        "antioxidants",
+        "free-radicals",
+        "orac",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-24T17:16:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

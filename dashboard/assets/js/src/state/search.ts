@@ -79,7 +79,9 @@ export function displayName(slug: string): string {
 /** Every claim whose subject is this entity, in stable id order. */
 export function claimsForSubject(subject: string): SearchClaim[] {
   return index().claims
-    .filter(c => c.subject === subject)
+    // A topic includes claims PRIMARILY about it (subject) OR secondarily (also_about) -- the
+    // catch-all intent: ORAC food answers surface on the Antioxidants topic, and vice-versa.
+    .filter(c => c.subject === subject || c.also_about.includes(subject))
     .sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }
 
@@ -177,6 +179,11 @@ export function entityLede(subject: string): string {
   let best: SearchClaim | null = null;
   let bestRank = order.length;
   for (const c of claimsForSubject(subject)) {
+    // The LEDE must be PRIMARILY about the entity, never a tangential also_about claim
+    // (else the eggs topic ledes with a red-meat claim). Card LISTINGS still show also_about.
+    if (c.subject !== subject) {
+      continue;
+    }
     const rank = order.indexOf(c.facet);
     if (rank >= 0 && rank < bestRank) {
       bestRank = rank;

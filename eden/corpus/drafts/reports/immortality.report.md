@@ -1,14 +1,14 @@
 # Extraction report — immortality (Immortality)
 
-_1 claim(s) drafted 2026-07-24T16:25:35+00:00. Review then run corpus_seal.py to promote._
+_1 claim(s) drafted 2026-07-24T17:16:11+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: quote×1
+Kinds: definition×1
 
-### WAL-CLM-IMMORT-000267 · quote
+### WAL-CLM-IMMORT-000268 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** The gerontologist Roy Walford — cited throughout Wallach's longevity work — called free radicals 'the great white sharks in the biochemical sea': short-lived but voracious molecules that oxidize and damage tissue, hitting cell membranes and mitochondrial membranes hardest. Most free radicals the body meets are oxidants — a loose electron whirling around a super-activated oxygen atom — and their 'shark attacks' on the polyunsaturated fats in those membranes produce lipid peroxides that go on to cross-link proteins, lipids and DNA. It is the vivid image behind why Wallach treats antioxidants, and the ORAC score that measures them, as essential defense.
-- **verbatim** (offset 69742): “Dr. Roy Walford referred to free radicals as the “Great
-white sharks in the biochemical sea” - these short-lived but
-voracious chemicals oxidize and damage tissue, particularly
-cell membranes and mitochondrial membranes.”
+- **claim:** Antioxidants are the body's defense against free radicals — the reactive molecules that oxidize and damage your cells, cell walls and mitochondria. Wallach's signature point is that they don't work alone: the antioxidant enzyme systems present in every healthy cell need raw materials and mineral cofactors to run at full capacity — glutathione, for example, requires selenium. So in his framework, getting the benefit of antioxidants is inseparable from getting the minerals that power them, and he measures the antioxidant strength of foods by their ORAC score.
+- **verbatim** (offset 67896): “Antioxidant enzyme systems are normally present in all
+healthy aerobic cells - remember, antioxidants also need raw
+materials and mineral cofactors to operate at their optimum
+capacity (glutathione requires selenium, etc.).”
 

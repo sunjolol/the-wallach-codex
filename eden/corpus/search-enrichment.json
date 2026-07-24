@@ -1523,8 +1523,10 @@
       ]
     },
     "WAL-CLM-HELLS-000014": {
-      "subject": "orac",
-      "also_about": [],
+      "subject": "antioxidants",
+      "also_about": [
+        "orac"
+      ],
       "facet": "sources",
       "question": "What are the top ten antioxidant foods?",
       "answer_short": "Prunes lead at 5,770 per 100 g, then raisins, blueberries, blackberries and kale.",
@@ -3408,8 +3410,10 @@
       ]
     },
     "WAL-CLM-IMMORT-000240": {
-      "subject": "orac",
-      "also_about": [],
+      "subject": "antioxidants",
+      "also_about": [
+        "orac"
+      ],
       "facet": "sources",
       "question": "Which foods have the highest ORAC score?",
       "answer_short": "Ground cloves at 314,446 and cinnamon at 267,536 - spices outscore every fruit by more than tenfold.",
@@ -3814,6 +3818,24 @@
         "orac",
         "oxidative-damage",
         "membranes"
+      ]
+    },
+    "WAL-CLM-IMMORT-000268": {
+      "subject": "antioxidants",
+      "also_about": [
+        "free_radicals",
+        "orac"
+      ],
+      "facet": "basics",
+      "question": "What are antioxidants?",
+      "answer_short": "Antioxidants are the body's defense against free radicals — but Wallach's key point is they can't work without minerals: your antioxidant enzymes need cofactors like selenium (for glutathione) to run at full strength.",
+      "topics": [
+        "antioxidants",
+        "free-radicals",
+        "glutathione",
+        "selenium",
+        "orac",
+        "oxidative-defense"
       ]
     },
     "WAL-CLM-LETS-000080": {

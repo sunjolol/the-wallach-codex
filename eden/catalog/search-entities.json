@@ -774,7 +774,8 @@
         "intersex",
         "essential_nutrients",
         "pregnancy_birth"
-      ]
+      ],
+      "intro_claim": "WAL-CLM-EPIGEN-000008"
     },
     "hospital_dangers": {
       "display_name": "Hospital Dangers",
@@ -904,7 +905,8 @@
         "colloidal_minerals",
         "be_your_own_doctor",
         "negative_ion_therapy"
-      ]
+      ],
+      "intro_claim": "WAL-CLM-IMMORT-000250"
     },
     "macrobiotics": {
       "display_name": "Macrobiotics",
