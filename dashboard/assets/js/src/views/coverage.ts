@@ -32,7 +32,7 @@
  */
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
-import { on } from '../core/events.js';
+import { emit, on } from '../core/events.js';
 import { plural } from '../core/format.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
 import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutSubsection, type LayoutTile, type RegimenItem } from '../core/schemas/index.js';
@@ -726,6 +726,21 @@ export function mount(container: HTMLElement): MountHandle {
     }
     if (t.closest('[data-full-regimen]') !== null) {
       window.dispatchEvent(new CustomEvent('wallach:navigate', { detail: { to: 'regimen' } }));
+      return;
+    }
+    // A tile opens that element's Knowledge page. This is the NEW entrance to the essential
+    // detail view now that the drawer's Essentials menu item is gone (Luneth 2026-07-23), so it
+    // has to work for every card — `data-tile` carries the LAYOUT key, which is exactly what the
+    // detail page is keyed by, but the event contract speaks slugs, so resolve it here rather
+    // than leaning on openEntity's fallback. Checked LAST so every action control above (goal
+    // add, row remove, dose steppers, recommendations) still wins inside a tile.
+    const tileEl = t.closest<HTMLElement>('[data-tile]');
+    if (tileEl !== null) {
+      const key = tileEl.dataset['tile'] ?? '';
+      const slug = [...slugToTileKey()].find(([, k]) => k === key)?.[0];
+      if (slug !== undefined) {
+        emit('knowledge:open-entity', { kind: 'essential', slug });
+      }
     }
   };
 

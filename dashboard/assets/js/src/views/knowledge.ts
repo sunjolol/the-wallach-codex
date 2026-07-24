@@ -155,8 +155,9 @@ function buildSubsections(): EssentialSubsection[] {
 }
 
 const ESS_SUBSECTIONS = buildSubsections();
-/** The 90 — count of essential tiles (Omega-9 and any other non-essential excluded). */
-const ESS_ESSENTIAL_COUNT = ESS_SUBSECTIONS.reduce((n, g) => n + g.items.filter(i => i.essential).length, 0);
+// The "90 ESSENTIAL" count that used to sit under this line was the Essentials TAB's subtitle.
+// The tab left the menu on 2026-07-23 and nothing else read the constant, so it went with it
+// rather than lingering as dead code. Coverage still owns and displays the count.
 
 // ─── Status → presentation ─────────────────────────────────────────────────
 
@@ -304,10 +305,14 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
 function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, trail: Crumb[]): string {
   const snapshot = getOrCompute();
   const productsCount = productCount();
+  // The 'essentials' TAB IS DELIBERATELY ABSENT FROM THIS LIST while remaining a live route
+  // (Luneth 2026-07-23). It duplicated Coverage, which is where the user already starts, so the
+  // menu item went and the surface stayed. It keeps exactly three doors: the Home tab's "open the
+  // full table →", the breadcrumb trail, and the "‹ All essentials" button on an essential's own
+  // page. Do NOT "restore" it here — its absence is the feature; renderTab still serves it.
   const tabs = [
     { id: 'home' as Tab, label: ui('kd_tab_home'), count: '' },
     { id: 'foods' as Tab, label: ui('kd_tab_foods'), count: '' },
-    { id: 'essentials' as Tab, label: ui('kd_tab_essentials'), count: `${ESS_ESSENTIAL_COUNT} ESSENTIAL` },
     { id: 'conditions' as Tab, label: ui('kd_tab_conditions'), count: `${listConditions().length} INDEXED` },
     { id: 'explore' as Tab, label: ui('kd_tab_explore'), count: `${exploreEntities().length} TOPICS` },
     { id: 'products' as Tab, label: ui('kd_tab_products'), count: `${productsCount} KNOWN` },

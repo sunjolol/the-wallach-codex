@@ -194,7 +194,18 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 
   // 4. Essentials tab -> ALL essentials shown (every section), then click a tile
   //    to expand the Wallach deep-dive.
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="essentials"]')?.click());
+  // The Essentials MENU ITEM was removed 2026-07-23; the surface is reached through one of its
+  // three doors. Use door 1 - Home's "open the full table" link - so this probe exercises a real
+  // user path rather than a button that no longer exists.
+  await page.evaluate(() => {
+    document.querySelector('#drawer-knowledge-mount [data-kd-tab="home"]')?.click();
+  });
+  await wait(400);
+  await page.evaluate(() => {
+    const a = [...document.querySelectorAll('#drawer-knowledge-mount .ep-seclabel a')]
+      .find(e => /full table/i.test(e.textContent || ''));
+    if (a) { a.click(); }
+  });
   await wait(300);
   const essentials = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
@@ -446,7 +457,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   const checks = [
     ['drawer closed at boot', boot.open === false],
     ['rail K opens drawer', afterClick.open === true && afterClick.hasHead === true],
-    ['tab bar: exactly the 6 tabs incl. Absorption', tabBar.tabs.length === 6 && ['Home','Absorption','Essentials','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t))],
+    // Essentials left the MENU on 2026-07-23 (it duplicated Coverage) while staying a live route.
+    // Asserting its ABSENCE is the point: if it ever reappears here, that is a regression.
+    ['tab bar: exactly the 5 tabs, Essentials absent', tabBar.tabs.length === 5 && ['Home','Absorption','Conditions','Explore','Products'].every(t => tabBar.tabs.includes(t)) && !tabBar.tabs.includes('Essentials')],
     ['tab bar: Corpus + Doctrine removed', !tabBar.tabs.includes('Corpus') && !tabBar.tabs.includes('Doctrine')],
     ['tab bar: Home is the default active tab', tabBar.active === 'Home'],
     ['home: tab renders its container', tabBar.homeShown === true],
