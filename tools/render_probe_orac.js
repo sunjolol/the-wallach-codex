@@ -61,6 +61,17 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const scaleRows = q('#scale .kd-orac-scale__row');
     const wineRows = q('#wine .kd-orac-scale__row');
     const tblMetas = q('.kd-orac-tbl__meta').map(m => (m.textContent || '').trim());
+    // §09 claim-card expand (Phase 4) — cards are <details>; verbatim hidden until opened
+    const claimCards = q('.kd-orac-claim');
+    const cardsAreDetails = claimCards.length > 0 && claimCards.every(c => c.tagName === 'DETAILS');
+    const firstCard = claimCards[0] || null;
+    const firstVerb = firstCard ? firstCard.querySelector('.kd-orac-claim__verbatim') : null;
+    const closedCardH = firstCard ? firstCard.offsetHeight : 0;
+    if (firstCard) { firstCard.open = true; }
+    const openCardH = firstCard ? firstCard.offsetHeight : 0;
+    const chevEl = firstCard ? firstCard.querySelector('.kd-orac-claim__chev') : null;
+    const chevRot = chevEl ? getComputedStyle(chevEl).transform : '';
+    if (firstCard) { firstCard.open = false; }
     return {
       shown: pageEl !== null,
       heroShown: pageEl ? pageEl.querySelector('.kd-orac-hero') !== null : false,
@@ -93,6 +104,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       tblCount: q('.kd-orac-tbl').length,
       hasPer100: tblMetas.some(m => /per 100 g/.test(m)),
       wineRowCount: wineRows.length,
+      cardsAreDetails,
+      verbatimCount: q('.kd-orac-claim__verbatim').length,
+      expandGrows: openCardH > closedCardH + 20,
+      verbatimHasText: firstVerb ? (firstVerb.textContent || '').trim().length > 0 : false,
+      chevRotated: chevRot !== '' && chevRot !== 'none',
       // numbers that MUST have come from the derived corpus data (regression anchor)
       hasTargetRange: /20,000\s*–\s*25,000/.test(txt),
       hasDiseaseDose: txt.indexOf('100,000') !== -1,
@@ -141,6 +157,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['§06 league tables: 9 categories', orac.tblCount === 9],
     ['§06 Hell\u2019s Kitchen labelled per-100 g (different basis, not silently mixed)', orac.hasPer100 === true],
     ['§07 wine: 4 rows (red-vs-white)', orac.wineRowCount === 4],
+    // ── §09 claim-card expand (Phase 4) ──
+    ['§09 claim cards are <details> disclosures', orac.cardsAreDetails === true],
+    ['§09 every card carries a verbatim body (== card count)', orac.verbatimCount === orac.cardCount && orac.verbatimCount === 31],
+    ['§09 card grows when opened (body gated behind the expand)', orac.expandGrows === true],
+    ['§09 revealed verbatim carries Wallach text', orac.verbatimHasText === true],
+    ['§09 chevron rotates on expand', orac.chevRotated === true],
     // ── claims record (Phase 1) ──
     ['claims record renders live cards', orac.cardCount > 0],
     // The anti-silent-drop anchor: the view renders EXACTLY what the query returns.

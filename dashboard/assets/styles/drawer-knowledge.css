@@ -1481,7 +1481,7 @@
 #drawer-knowledge-mount .kt-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 14px; }
 /* ═══════════════════════════ ABSORPTION tab · the "second prong" landing (diet/absorption) ═══════════════════════════ */
 #drawer-knowledge-mount .kd-foods { --fam-science: #2f9dba; --fam-action: #5aa82c; --fam-story: #8a52d6; padding-bottom: 40px; }
-#drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 30px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 16px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
 /* The corner lockup below the rule: the tech-blue tag then the dark scan-id, right-aligned. */
 #drawer-knowledge-mount .kd-foods-corner { text-align: right; margin-top: 5px; }
 /* "THE FIRST STEP" tag -- same mono treatment as the FIG-01 scan-id below (micro / track-wider /

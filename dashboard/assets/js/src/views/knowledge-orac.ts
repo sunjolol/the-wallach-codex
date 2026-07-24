@@ -30,9 +30,15 @@ import { facetLabel, ui } from '../state/copy.js';
 import { essentialCount } from '../state/coverage.js';
 import { oracFoodsData } from '../state/orac-foods.js';
 import { oracData } from '../state/orac.js';
-import { composeShortCite, oracClaims } from '../state/search.js';
+import { composeCite, composeShortCite, oracClaims } from '../state/search.js';
+import { glossify } from './glossify.js';
 
 const DASH = '–'; // en dash, matching the signed-off demo's numeric ranges
+
+/** Collapse a book verbatim's hard line-wraps into one clean line (mirrors entity-page). */
+function collapseWS(s: string): string {
+  return s.replace(/\s+/g, ' ').trim();
+}
 
 // Hex escapes \x22 \x27 for " and ' -- the clean-view prose scanner (views_no_inline_prose)
 // has no regex parser, so a bare quote in the char class would read to it as a string
@@ -293,13 +299,31 @@ function renderNarrative(od: OracData, ofd: OracFoodsData | null): string {
 
 // ─── §09 · the full-record claims index (Phase 1) ────────────────────────────
 
-/** One compact record card: the question + its one-line answer + the composed Wallach cite. */
+/**
+ * One record card -- a native <details> disclosure (no JS wiring; the browser toggles it).
+ * Collapsed keeps the signed-off ORAC look (question + one-line answer + compact cite);
+ * expanded reveals the fuller answer (when it adds to the short one), Wallach's exact words
+ * (glossified), and the full citation. composeCite/composeShortCite compose from the registry
+ * (R3), never hand-typed.
+ */
 function oracClaimCard(c: SearchClaim): string {
-  return `<div class="kd-orac-claim">
-      <div class="kd-orac-claim__q">${escHTML(c.question)}</div>
-      <p class="kd-orac-claim__a">${escHTML(c.answer_short)}</p>
-      <div class="kd-orac-claim__src">${escHTML(composeShortCite(c))}</div>
-    </div>`;
+  const cite = composeCite(c);
+  const fullAnswer = c.answer.trim() === c.answer_short.trim()
+    ? ''
+    : `<p class="kd-orac-claim__full">${glossify(c.answer)}</p>`;
+  return `<details class="kd-orac-claim">
+      <summary class="kd-orac-claim__summary">
+        <div class="kd-orac-claim__q">${escHTML(c.question)}</div>
+        <span class="kd-orac-claim__chev" aria-hidden="true">▸</span>
+        <p class="kd-orac-claim__a">${escHTML(c.answer_short)}</p>
+        <div class="kd-orac-claim__src">${escHTML(composeShortCite(c))}</div>
+      </summary>
+      <div class="kd-orac-claim__body">
+        ${fullAnswer}
+        <blockquote class="kd-orac-claim__verbatim">“${glossify(collapseWS(c.verbatim))}”</blockquote>
+        ${cite.length > 0 ? `<div class="kd-orac-claim__cite">— Dr. Joel Wallach · ${escHTML(cite)}</div>` : ''}
+      </div>
+    </details>`;
 }
 
 /**
