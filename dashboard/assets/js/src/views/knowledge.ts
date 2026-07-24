@@ -683,6 +683,11 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedProduct = null;
     selectedTopic = null;
     trail = [];
+    // Reset the per-tab filter too. Without this, a re-open renders Home while searchQuery still holds
+    // the prior tab's term; render() then re-applies it and paints "nothing in home matches X" with no
+    // search box to clear it. (The tab-switch handler already resets searchQuery, which is why switching
+    // tabs 'fixed' it — this makes close() consistent so a plain re-open starts clean.)
+    searchQuery = '';
     document.documentElement.style.removeProperty('--kd-detail-scroll');
     container.classList.remove('kd-open');
     container.innerHTML = '';
