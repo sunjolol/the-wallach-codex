@@ -1496,6 +1496,29 @@
         "absorption",
         "carbonated_beverages"
       ]
+    },
+    "epigenetics": {
+      "display_name": "Epigenetics",
+      "type": "concept",
+      "synonyms": [
+        "what is epigenetics",
+        "are genes destiny",
+        "can i change my genes",
+        "gene expression",
+        "nature vs nurture",
+        "genetic theory of disease",
+        "death of the genetic theory",
+        "is disease genetic",
+        "runs in my family",
+        "hereditary disease",
+        "born with it",
+        "dna and nutrition"
+      ],
+      "related": [
+        "essential_nutrients",
+        "wallach",
+        "cystic_fibrosis"
+      ]
     }
   }
 }

@@ -603,6 +603,30 @@
       ],
       "claim_count": 13
     },
+    "epigenetics": {
+      "display_name": "Epigenetics",
+      "type": "concept",
+      "synonyms": [
+        "what is epigenetics",
+        "are genes destiny",
+        "can i change my genes",
+        "gene expression",
+        "nature vs nurture",
+        "genetic theory of disease",
+        "death of the genetic theory",
+        "is disease genetic",
+        "runs in my family",
+        "hereditary disease",
+        "born with it",
+        "dna and nutrition"
+      ],
+      "related": [
+        "essential_nutrients",
+        "wallach",
+        "cystic_fibrosis"
+      ],
+      "claim_count": 3
+    },
     "essential_nutrients": {
       "display_name": "Essential Nutrients",
       "type": "concept",
@@ -3751,6 +3775,74 @@
         "orac",
         "antioxidants",
         "inflammation"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000179",
+      "subject": "epigenetics",
+      "also_about": [
+        "essential_nutrients"
+      ],
+      "facet": "basics",
+      "question": "What does Dr. Wallach mean by epigenetics?",
+      "answer_short": "Most diseases blamed on inherited ‘bad genes’ are really nutritional deficiencies that cripple how your DNA, RNA and enzymes work — fix the nutrition and you can prevent or reverse them.",
+      "answer": "Wallach's own one-line definition of epigenetics, and the idea behind his book's subtitle 'The Death of the Genetic Theory of Disease Transmission': most diseases that are thought to be genetically transmitted are, in fact, nutritional deficiencies that negatively impact the functions of DNA, RNA, and enzymes. His conclusion is that supplying all 90 essential nutrients lets medicine prevent and reverse most diseases, rather than writing them off as inherited fate.",
+      "verbatim": "epigenetics (i.e., most diseases that are thought to be genetically transmitted are\nin fact nutritional deficiencies that negatively impact the functions of DNA, RNA,\nand enzymes)",
+      "page": 812,
+      "book_id": "epigenetics",
+      "topics": [
+        "genetic-theory",
+        "death-of-the-genetic-theory",
+        "gene-expression",
+        "dna",
+        "nutritional-deficiency"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000180",
+      "subject": "epigenetics",
+      "also_about": [
+        "essential_nutrients",
+        "wallach"
+      ],
+      "facet": "discovery",
+      "question": "What is Wallach's duckling experiment?",
+      "answer_short": "His 1968 proof that nutrition beats genetics: 100 genetically identical ducklings split onto four diets — the ones fed a complete nutrient ration grew three-to-six times larger than their identical siblings fed only lettuce or barley grass.",
+      "answer": "The experiment Wallach credits as the origin of the field. In 1968, at the Center for the Biology of Natural Systems, he set out to show that 'genetic potential' is controlled by environment and nutrition. He took 100 genetically identical ducklings -- same mother and father -- and divided them into four groups of 25, each on a different diet: lettuce only; hydroponic barley grass only; Purina duck grower pellets only; or pellets plus barley grass. After one month the results were dramatic -- the two groups eating the nutritionally complete Purina pellets grew three to six times larger than the identical ducklings fed only lettuce or barley grass, which showed almost no growth at all. Same genes, different nutrition, radically different bodies.",
+      "verbatim": "In 1968 Wallach, while at the Center for the Biology of Natural Systems,\ndesigned a simple experiment that would demonstrate how “genetic potential”\ncan be affected by the environment and nutrition. Thus we have the field of\nepigenetics.",
+      "page": 352,
+      "book_id": "epigenetics",
+      "topics": [
+        "duckling-experiment",
+        "genetic-potential",
+        "nutrition-vs-genes",
+        "growth-and-development",
+        "1968",
+        "proof",
+        "proven",
+        "evidence",
+        "scientific-evidence"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000181",
+      "subject": "epigenetics",
+      "also_about": [
+        "cystic_fibrosis"
+      ],
+      "facet": "discovery",
+      "question": "How did Wallach come up with the idea of epigenetics?",
+      "answer_short": "From cystic fibrosis. If CF were a recessive gene, every child of two CF parents would have it — but out of thousands of such babies Wallach found only one did, so the genetic theory couldn’t be right.",
+      "answer": "Where Wallach's rejection of the genetic theory began. Cystic fibrosis was taught to be the 'most classic' simple Mendelian recessive-gene disease, with a supposed one-in-four carrier rate. Wallach ran what he called a fourth-grade test: if CF were truly recessive, 100% of babies born to two CF parents would have CF. Instead, out of thousands of babies born to such couples, only one had CF -- and couples with one CF parent never produced the predicted one-in-four. The results did not match the theory; it was impossible for CF to be genetic. Coming to the question, in his words, as an empty slate untainted by dogma, Wallach concluded CF was not inherited but a congenital defect caused by a selenium deficiency in the mother.",
+      "verbatim": "Wallach, on the other hand came to the table as an empty slate and untainted\nby dogma, As a result, he \"knew\" that CF was not a genetically-transmitted\ndisease, and “epigenetics” was born!",
+      "page": 511,
+      "book_id": "epigenetics",
+      "topics": [
+        "cystic-fibrosis",
+        "mendelian-genetics",
+        "recessive-gene",
+        "genetic-theory",
+        "selenium"
       ]
     },
     {

@@ -6689,6 +6689,104 @@
       "extracted_at": "2026-07-24T02:41:24+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000179",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's own one-line definition of epigenetics, and the idea behind his book's subtitle 'The Death of the Genetic Theory of Disease Transmission': most diseases that are thought to be genetically transmitted are, in fact, nutritional deficiencies that negatively impact the functions of DNA, RNA, and enzymes. His conclusion is that supplying all 90 essential nutrients lets medicine prevent and reverse most diseases, rather than writing them off as inherited fate.",
+      "verbatim": "epigenetics (i.e., most diseases that are thought to be genetically transmitted are\nin fact nutritional deficiencies that negatively impact the functions of DNA, RNA,\nand enzymes)",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Survival of Species",
+        "page": 812,
+        "screenshot": 672,
+        "kindle_location": null,
+        "char_offset": 1405014
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch19",
+        "genetic-theory",
+        "definition",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T15:37:03+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000180",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The experiment Wallach credits as the origin of the field. In 1968, at the Center for the Biology of Natural Systems, he set out to show that 'genetic potential' is controlled by environment and nutrition. He took 100 genetically identical ducklings -- same mother and father -- and divided them into four groups of 25, each on a different diet: lettuce only; hydroponic barley grass only; Purina duck grower pellets only; or pellets plus barley grass. After one month the results were dramatic -- the two groups eating the nutritionally complete Purina pellets grew three to six times larger than the identical ducklings fed only lettuce or barley grass, which showed almost no growth at all. Same genes, different nutrition, radically different bodies.",
+      "verbatim": "In 1968 Wallach, while at the Center for the Biology of Natural Systems,\ndesigned a simple experiment that would demonstrate how “genetic potential”\ncan be affected by the environment and nutrition. Thus we have the field of\nepigenetics.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "Epigenetics",
+        "page": 352,
+        "screenshot": 450,
+        "kindle_location": null,
+        "char_offset": 607895
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch13",
+        "duckling-experiment",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T15:37:03+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000181",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Where Wallach's rejection of the genetic theory began. Cystic fibrosis was taught to be the 'most classic' simple Mendelian recessive-gene disease, with a supposed one-in-four carrier rate. Wallach ran what he called a fourth-grade test: if CF were truly recessive, 100% of babies born to two CF parents would have CF. Instead, out of thousands of babies born to such couples, only one had CF -- and couples with one CF parent never produced the predicted one-in-four. The results did not match the theory; it was impossible for CF to be genetic. Coming to the question, in his words, as an empty slate untainted by dogma, Wallach concluded CF was not inherited but a congenital defect caused by a selenium deficiency in the mother.",
+      "verbatim": "Wallach, on the other hand came to the table as an empty slate and untainted\nby dogma, As a result, he \"knew\" that CF was not a genetically-transmitted\ndisease, and “epigenetics” was born!",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": "The 150-Year Update on The Origin of Species",
+        "page": 511,
+        "screenshot": 526,
+        "kindle_location": null,
+        "char_offset": 904255
+      },
+      "dose": null,
+      "tags": [
+        "epigenetics",
+        "ch16",
+        "cystic-fibrosis",
+        "genetic-theory",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T15:37:03+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -5393,6 +5393,59 @@
         "specific-gravity",
         "concentration"
       ]
+    },
+    "WAL-CLM-EPIGEN-000179": {
+      "subject": "epigenetics",
+      "also_about": [
+        "essential_nutrients"
+      ],
+      "facet": "basics",
+      "question": "What does Dr. Wallach mean by epigenetics?",
+      "answer_short": "Most diseases blamed on inherited ‘bad genes’ are really nutritional deficiencies that cripple how your DNA, RNA and enzymes work — fix the nutrition and you can prevent or reverse them.",
+      "topics": [
+        "genetic-theory",
+        "death-of-the-genetic-theory",
+        "gene-expression",
+        "dna",
+        "nutritional-deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000180": {
+      "subject": "epigenetics",
+      "also_about": [
+        "essential_nutrients",
+        "wallach"
+      ],
+      "facet": "discovery",
+      "question": "What is Wallach's duckling experiment?",
+      "answer_short": "His 1968 proof that nutrition beats genetics: 100 genetically identical ducklings split onto four diets — the ones fed a complete nutrient ration grew three-to-six times larger than their identical siblings fed only lettuce or barley grass.",
+      "topics": [
+        "duckling-experiment",
+        "genetic-potential",
+        "nutrition-vs-genes",
+        "growth-and-development",
+        "1968",
+        "proof",
+        "proven",
+        "evidence",
+        "scientific-evidence"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000181": {
+      "subject": "epigenetics",
+      "also_about": [
+        "cystic_fibrosis"
+      ],
+      "facet": "discovery",
+      "question": "How did Wallach come up with the idea of epigenetics?",
+      "answer_short": "From cystic fibrosis. If CF were a recessive gene, every child of two CF parents would have it — but out of thousands of such babies Wallach found only one did, so the genetic theory couldn’t be right.",
+      "topics": [
+        "cystic-fibrosis",
+        "mendelian-genetics",
+        "recessive-gene",
+        "genetic-theory",
+        "selenium"
+      ]
     }
   }
 }
