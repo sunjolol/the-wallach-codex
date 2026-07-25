@@ -2584,6 +2584,12 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000138"
+          ]
+        },
+        {
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000135",

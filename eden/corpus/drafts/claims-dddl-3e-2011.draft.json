@@ -4384,6 +4384,40 @@
       "extracted_at": "2026-07-25T18:56:42+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000138",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Selenium is a trace mineral — an essential nutrient the body needs in only tiny (microgram) amounts, with Wallach's daily target around 200 mcg. Its importance is out of all proportion to that amount because of what it does: he calls it the most efficient antioxidant there is, the front-line defense that stops the fats inside your cells from oxidizing, or 'going rancid.' It is also the mineral Wallach is most identified with — his 1977 finding that cystic fibrosis is a selenium deficiency, and his framing of Keshan-disease heart failure, muscular dystrophy, and much of cancer as selenium-deficiency diseases, all trace back to this one element. The catch, in his telling: selenium is spread unevenly through the world's soils, so entire regions are deficient, and a gut damaged by gluten cannot absorb it even when food supplies it.",
+      "verbatim": "Selenium is a trace mineral that has been investigated very intensively as a\ncancer preventative and as therapeutic nutrition.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 668305
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "what-is",
+        "trace-mineral",
+        "antioxidant",
+        "definition",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T19:29:45+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

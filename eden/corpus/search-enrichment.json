@@ -5759,6 +5759,22 @@
         "hair-loss",
         "safe-dosing"
       ]
+    },
+    "WAL-CLM-DDDL-000138": {
+      "subject": "selenium",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "basics",
+      "question": "What is selenium?",
+      "answer_short": "Selenium is an essential trace mineral -- needed in only tiny amounts, yet in Wallach's framework it's the body's most efficient antioxidant and the hidden deficiency behind diseases from cystic fibrosis to Keshan heart failure.",
+      "topics": [
+        "what-is",
+        "trace-mineral",
+        "antioxidant",
+        "essential-nutrient",
+        "overview"
+      ]
     }
   }
 }
