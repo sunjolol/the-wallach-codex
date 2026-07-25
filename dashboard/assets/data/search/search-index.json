@@ -625,7 +625,7 @@
         "wallach",
         "cystic_fibrosis"
       ],
-      "claim_count": 3
+      "claim_count": 6
     },
     "essential_nutrients": {
       "display_name": "Essential Nutrients",
@@ -3843,6 +3843,64 @@
         "recessive-gene",
         "genetic-theory",
         "selenium"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000182",
+      "subject": "epigenetics",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What's the scientific definition of epigenetics?",
+      "answer_short": "The textbook definition Wallach adopts: epigenetics is how the cell interprets its DNA — like a pianist interpreting a musical score — the study of heritable traits that don't change the DNA sequence itself. Wallach adds his own gloss: those traits are driven by nutritional deficiency.",
+      "answer": "Wallach opens his Epigenetics chapter by adopting a textbook definition from Clifford Pickover's The Medical Book (2012): just as a pianist interprets the notes of a musical score — controlling volume and tempo — epigenetics governs how a cell interprets its DNA. It is the study of heritable traits that do not involve any change to the underlying DNA sequence. Wallach signals his agreement by inserting his own thesis directly into the borrowed definition — those heritable traits, he adds in parentheses, are 'caused by nutritional deficiencies.'",
+      "verbatim": "Just as a pianist interprets the notes of a musical score, controlling the\nvolume and tempo, epigenetics affects the interpretation of DNA genetic\nsequences in cells. Epigenetics usually refers to the study of ‘heritable\ntraits’ (caused by nutritional deficiencies), that do not involve changes to the\nunderlying DNA sequence of the cells.",
+      "page": 351,
+      "book_id": "epigenetics",
+      "topics": [
+        "definition",
+        "gene-expression",
+        "heritable-traits",
+        "dna-sequence",
+        "pickover"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000183",
+      "subject": "epigenetics",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does Wallach say DNA is a script, not a blueprint?",
+      "answer_short": "Because a blueprint stamps out identical copies, but DNA doesn't. Wallach borrows Nessa Carey's metaphor: DNA is more like a script — two film versions of Romeo & Juliet used the same script yet came out completely different. Same genes, different 'production' — and what directs the difference, Wallach adds, is nutrition.",
+      "answer": "To explain the core idea, Wallach opens the chapter with a metaphor from Nessa Carey's The Epigenetics Revolution (2012): DNA is not a rigid template or blueprint that stamps out thousands of identical copies — it is more like a script. Carey compares it to Romeo and Juliet: two film versions made sixty years apart used the same Shakespearean script yet came out entirely different. Identical starting points, different outcomes. Wallach adopts and extends the metaphor, adding in his own words that the 'production' differs because the cell is reading a script from DNA that is nutritionally deficient — the difference is driven by diet and nutrition, not by any change to the genes themselves.",
+      "verbatim": "But DNA isn’t really like that. It's more like a script. Think of Romeo\nand Juliet, for example. In 1936 George Cukor directed Leslie Howard and\nNorma Shearer in a film version. Sixty years later Baz Luhrmann directed\nLeonardo DiCaprio and Claire Danes in another movie version of this play.\nBoth productions used Shakespeare's script, yet the two movies are entirely\ndifferent. Identical starting points, different outcomes.",
+      "page": 351,
+      "book_id": "epigenetics",
+      "topics": [
+        "dna-is-a-script",
+        "blueprint",
+        "same-genes-different-outcome",
+        "gene-expression",
+        "carey"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000184",
+      "subject": "epigenetics",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Can I change my genes, or are they set in stone?",
+      "answer_short": "Not entirely — and that's the hopeful part. As Wallach quotes twin researcher Danielle Reed: your DNA is written in pen and can't be changed, but epigenetics is written in pencil — and for Wallach, nutrition is the eraser.",
+      "answer": "Answering whether your genes are your destiny, Wallach quotes twin researcher Danielle Reed (speaking in National Geographic, 2012): 'Mother Nature writes some things in pencil and some things in pen. Things written in pen you can't change — that's DNA. But things written in pencil you can — that's epigenetics.' The point Wallach draws is his optimistic thesis: the pen — your actual DNA sequence — is fixed, but the pencil — how those genes are expressed — can be rewritten. For Wallach, the pencil and eraser are nutrition.",
+      "verbatim": "Mother Nature writes some things in pencil and\nsome things in pen... Things written in pen you can’t change. That's DNA. But\nthings written in pencil you can. That's epigenetics.",
+      "page": 289,
+      "book_id": "epigenetics",
+      "topics": [
+        "can-i-change-my-genes",
+        "pencil-and-pen",
+        "changeable",
+        "genes-not-destiny",
+        "twin-studies",
+        "reed"
       ]
     },
     {

@@ -5446,6 +5446,49 @@
         "genetic-theory",
         "selenium"
       ]
+    },
+    "WAL-CLM-EPIGEN-000182": {
+      "subject": "epigenetics",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What's the scientific definition of epigenetics?",
+      "answer_short": "The textbook definition Wallach adopts: epigenetics is how the cell interprets its DNA — like a pianist interpreting a musical score — the study of heritable traits that don't change the DNA sequence itself. Wallach adds his own gloss: those traits are driven by nutritional deficiency.",
+      "topics": [
+        "definition",
+        "gene-expression",
+        "heritable-traits",
+        "dna-sequence",
+        "pickover"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000183": {
+      "subject": "epigenetics",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does Wallach say DNA is a script, not a blueprint?",
+      "answer_short": "Because a blueprint stamps out identical copies, but DNA doesn't. Wallach borrows Nessa Carey's metaphor: DNA is more like a script — two film versions of Romeo & Juliet used the same script yet came out completely different. Same genes, different 'production' — and what directs the difference, Wallach adds, is nutrition.",
+      "topics": [
+        "dna-is-a-script",
+        "blueprint",
+        "same-genes-different-outcome",
+        "gene-expression",
+        "carey"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000184": {
+      "subject": "epigenetics",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Can I change my genes, or are they set in stone?",
+      "answer_short": "Not entirely — and that's the hopeful part. As Wallach quotes twin researcher Danielle Reed: your DNA is written in pen and can't be changed, but epigenetics is written in pencil — and for Wallach, nutrition is the eraser.",
+      "topics": [
+        "can-i-change-my-genes",
+        "pencil-and-pen",
+        "changeable",
+        "genes-not-destiny",
+        "twin-studies",
+        "reed"
+      ]
     }
   }
 }
