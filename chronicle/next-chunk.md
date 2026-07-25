@@ -10,9 +10,11 @@
 
 ## ▶ NEXT, IN ORDER (Luneth's pick at session start)
 1. **A new Ask-Wallach topic to mine** — the mining mandate is now "ALL mining serves Ask-Wallach; biggest / most-searched entities first" ([[mining-serves-ask-wallach]]). Pick the next dead/thin `related` pill or a big condition/essential page and mine its question-inventory. SMALL batches, Luneth reviews EVERY batch (Q→short→full→quote), corpus_seal (user-only).
-2. **Gloss card SHORT answers** — extending glossing to `answer_short` is a system-wide visual change; its own chunk + screenshot. (Expanded-answer glossing is done.)
-3. **D1 · Trim 3 claim_texts that outrun their verbatim** — LETS-000122, LETS-000259, IMMORT-000081.
-4. **Book-wide `betaine HC1` → `HCl`** — OCR artifact across both books, quoted by sealed verbatims. Its own campaign (resnap + re-quote + reseal).
+2. **Book-wide `betaine HC1` → `HCl`** — OCR artifact across both books, quoted by sealed verbatims. Its own campaign (resnap + re-quote + reseal).
+
+RESOLVED / DECIDED (2026-07-25 — do NOT re-propose):
+- **Gloss card SHORT answers — DECIDED AGAINST** (Luneth): would clutter the UX. Glossing stays on the full answer + verbatim only, never the one-line card previews.
+- **D1 "trim 3 claim_texts that outrun their verbatim" — RESOLVED, NO TRIM.** Verified word-for-word against their SOURCE SPANS: LETS-000122 (75%-over-50 + colloidal-minerals-tonify-stomach), LETS-000259 (dyspepsia most-common/costly + acid-decreases-with-age + prevention list), IMMORT-000081 (cobalt 20-26.2% + pH 2.0 + Castle's intrinsic factor) — every added fact is Wallach's own, from text adjacent to the narrow verbatim. Approved as-is. DOCTRINE (Luneth): a claim_text is MEANT to add real, TRUE context that explains the quote (not reword it; no padding/walls); the test is TRUTH against the source span, NOT length-parity with the verbatim. [[claim-text-numbers-unguarded]]
 
 ## 🔧 MECHANICS — load-bearing (confirmed across BOTH batches this session)
 - **`corpus_extract finalize` is NOT additive** — writes `draft = sealed shard + THIS run's claims`. One finalize per seal cycle ([[corpus-extract-finalize-not-additive]]).
