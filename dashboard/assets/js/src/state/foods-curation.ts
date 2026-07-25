@@ -146,3 +146,13 @@ export function foodsVilliQuote(): { claim: SearchClaim; highlightFrom: string }
   const claim = getSearchClaim(q.id);
   return claim !== null ? { claim, highlightFrom: q.highlight_from } : null;
 }
+
+/** The section-04 pull-quote: the resolved sealed claim + faithful excerpt boundaries + the phrase to mark, or null. */
+export function foodsSec04Quote(): { claim: SearchClaim; excerptFrom: string; excerptTo: string; mark: string } | null {
+  const q = data().sec04_quote;
+  if (q === undefined) {
+    return null;
+  }
+  const claim = getSearchClaim(q.id);
+  return claim !== null ? { claim, excerptFrom: q.excerpt_from, excerptTo: q.excerpt_to, mark: q.mark } : null;
+}

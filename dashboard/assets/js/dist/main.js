@@ -5174,11 +5174,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     eat: external_exports.array(external_exports.string()).default([]),
     /** Conditional foods (stance turns on the form/context) -- entity slugs, in display order. */
     conditional: external_exports.array(external_exports.string()).default([]),
-    /** Section 04 (digestive enzymes): sealed claim IDs, in curated reading order. Defaulted so a
-     *  config predating the section still parses rather than emptying the whole tab. */
+    /**
+     * Section 04 (digestive enzymes): sealed claim IDs, in curated reading order. Defaulted so a
+     * config predating the section still parses rather than emptying the whole tab.
+     */
     enzyme_claims: external_exports.array(external_exports.string()).default([]),
     /** Featured pull-quote under the villi scan: a sealed search-claim id + the substring to highlight from (to the end). */
-    villi_quote: external_exports.object({ id: external_exports.string(), highlight_from: external_exports.string() }).optional()
+    villi_quote: external_exports.object({ id: external_exports.string(), highlight_from: external_exports.string() }).optional(),
+    /** Section 04 pull-quote: a sealed claim id + a faithful contiguous excerpt of its verbatim (excerpt_from..excerpt_to) with `mark` highlighted; the boundaries point INTO the sealed verbatim, never hand-typed. */
+    sec04_quote: external_exports.object({ id: external_exports.string(), excerpt_from: external_exports.string(), excerpt_to: external_exports.string(), mark: external_exports.string() }).optional()
   });
 
   // assets/js/src/core/schemas/kids-exclusion.ts
@@ -18542,34 +18546,85 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_foods_scan: "Fig\xB701",
       kd_foods_sec02_kicker: "The mechanism",
       kd_foods_sec03_kicker: "The fix",
-      kd_foods_sec04_col_right: "What Wallach does instead",
-      kd_foods_sec04_col_wrong: "The instinct",
-      kd_foods_sec04_gate_bad_cap: "Protein stays in lumps too big to cross, and the minerals locked inside them go out the way they came in.",
-      kd_foods_sec04_gate_bad_m: "Absorb \u2193",
-      kd_foods_sec04_gate_bad_t: "Not enough acid",
-      kd_foods_sec04_gate_hd: "At the gut wall",
-      kd_foods_sec04_gate_note: "Same food. Same supplement. The only difference is whether there was acid there to open it.",
-      kd_foods_sec04_gate_ok_cap: "Acid switches on pepsin, which breaks protein apart \u2014 and frees the minerals so they can cross the wall into your blood.",
-      kd_foods_sec04_gate_ok_m: "Absorb \u2191",
-      kd_foods_sec04_gate_ok_t: "Enough acid",
+      kd_foods_sec04_cta_foot_tail: "one of the least-expensive force-multipliers in the program",
+      kd_foods_sec04_cta_h: "You just learned the problem. Here\u2019s the one-bottle answer.",
+      kd_foods_sec04_cta_h_em: "one-bottle",
+      kd_foods_sec04_cta_kicker: "Put it into practice",
+      kd_foods_sec04_cta_nm: "Solve it for about a quarter per serving",
+      kd_foods_sec04_cta_p: "Wallach\u2019s fix is specific \u2014 betaine HCl, pancreatic enzymes, and ox bile, before meals. One inexpensive product already puts all of it in a single capsule.",
+      kd_foods_sec04_cta_p_strong: "One inexpensive product already puts all of it in a single capsule.",
+      kd_foods_sec04_cta_price_l: "per serving",
+      kd_foods_sec04_cta_sub: "Ultimate Enzymes \xB7 one capsule, three times a day, before meals",
+      kd_foods_sec04_enz1_blurb: "Restores the acid that switches on digestion.",
+      kd_foods_sec04_enz1_nm: "Betaine HCl",
+      kd_foods_sec04_enz1_stage: "In the stomach",
+      kd_foods_sec04_enz2_blurb: "The acid-activated enzyme that cuts protein.",
+      kd_foods_sec04_enz2_nm: "Pepsin",
+      kd_foods_sec04_enz2_stage: "Protein \xB7 stage 1",
+      kd_foods_sec04_enz3_blurb: "Protease, amylase & lipase \u2014 the pancreas\u2019 job.",
+      kd_foods_sec04_enz3_nm: "Pancreatin 11X",
+      kd_foods_sec04_enz3_stage: "Protein \xB7 carbs \xB7 fats",
+      kd_foods_sec04_enz4_blurb: "Plant enzymes from papaya & pineapple.",
+      kd_foods_sec04_enz4_nm: "Papain + Bromelain",
+      kd_foods_sec04_enz4_stage: "Extra protein power",
+      kd_foods_sec04_enz5_blurb: "Bile salts to break down and absorb fats.",
+      kd_foods_sec04_enz5_nm: "Ox Bile",
+      kd_foods_sec04_enz5_stage: "Fats & A/D/E/K",
+      kd_foods_sec04_frt_bad_cap: "Bacteria and yeast climb up from the intestine and ferment your food into gas. Undigested lumps leave the way they came in \u2014 minerals still locked inside.",
+      kd_foods_sec04_frt_bad_k: "When the acid falls",
+      kd_foods_sec04_frt_bad_ph: "pH ~3\u20135",
+      kd_foods_sec04_frt_bad_t: "Breached & fermenting",
+      kd_foods_sec04_frt_kicker: "The same gut, two states",
+      kd_foods_sec04_frt_lede: "Picture your stomach as a fortress with an acid moat. At full strength \u2014 pH 1.0 \u2014 nothing survives it: it stays sterile, it dissolves your food, it frees the minerals to cross the wall. Let the acid fall, and the drawbridge drops.",
+      kd_foods_sec04_frt_leg_gas: "Fermentation gas",
+      kd_foods_sec04_frt_leg_invader: "Invading bacteria / yeast",
+      kd_foods_sec04_frt_leg_moat: "Acid moat",
+      kd_foods_sec04_frt_leg_nutrient: "Nutrient crossing the wall",
+      kd_foods_sec04_frt_ok_cap: "Food breaks into particles that cross the wall into your blood. Minerals and B12 get through. No invaders survive the moat.",
+      kd_foods_sec04_frt_ok_k: "At full strength",
+      kd_foods_sec04_frt_ok_ph: "pH ~1.0",
+      kd_foods_sec04_frt_ok_t: "Sterile & dissolving",
       kd_foods_sec04_hd: "You can\u2019t absorb what you can\u2019t break down",
-      kd_foods_sec04_kicker: "The multiplier",
-      kd_foods_sec04_lead: "Getting the 90 essentials in is one half. Absorbing them is the other \u2014 and absorption starts with stomach acid, which falls away with age and under stress. Food that never gets broken down never gets through the gut wall, however good it was.",
-      kd_foods_sec04_note: "He attaches no dietary condition to it. The instruction is simply to take them as you grow older, and to be sure to take them when you are under stress.",
-      kd_foods_sec04_right_b: "Betaine HCl and pancreatic enzymes, 15 to 30 minutes before each meal. Acid first, enzymes second \u2014 they are two different things doing two different jobs.",
-      kd_foods_sec04_right_t: "Replace what\u2019s missing",
+      kd_foods_sec04_inv_b: "You feel the burn and the bloat and reach for an antacid, sure you have an excess. Wallach says it\u2019s the opposite: the acid is not acid enough, and it\u2019s burped up with bacterially-generated gas. An antacid \u2014 and even alkaline water at mealtime \u2014 pushes the ladder the wrong way and shuts down the digestion you need.",
+      kd_foods_sec04_inv_b_mark: "the acid is not acid enough",
+      kd_foods_sec04_inv_k: "The twist most people get backwards",
+      kd_foods_sec04_inv_t: "Heartburn is usually too little acid, not too much",
+      kd_foods_sec04_inv_t_em: "little",
+      kd_foods_sec04_kicker: "A question of pH",
+      kd_foods_sec04_ladder_acid: "acid",
+      kd_foods_sec04_ladder_alk: "alkaline",
+      kd_foods_sec04_ladder_blood: "Blood \xB7 7.36\u20137.44",
+      kd_foods_sec04_ladder_blood_s: "defended to the decimal",
+      kd_foods_sec04_ladder_cite: "Dr. Joel Wallach \xB7 Dead Doctors Don\u2019t Lie (2011)",
+      kd_foods_sec04_ladder_kicker: "Why 1.0 is non-negotiable",
+      kd_foods_sec04_ladder_note: "The intestine below runs the opposite way \u2014 alkaline, pH 8.2 \u2014 because pancreatic enzymes only work in an alkaline bath. The tract is a two-stage pH machine, and each stage has to be right.",
+      kd_foods_sec04_ladder_panc_d: "The intestine runs alkaline \u2014 pancreatic enzymes only work here.",
+      kd_foods_sec04_ladder_panc_nm: "Pancreatic juice",
+      kd_foods_sec04_ladder_panc_ph: "pH 8.2",
+      kd_foods_sec04_ladder_stom_d: "Sterile \xB7 pepsin armed \xB7 minerals dissolving. As strong as it gets.",
+      kd_foods_sec04_ladder_stom_nm: "Stomach acid",
+      kd_foods_sec04_ladder_stom_ph: "pH 1.0",
+      kd_foods_sec04_ladder_t1: "Only that extreme acid keeps bacteria and yeast out of the stomach.",
+      kd_foods_sec04_ladder_t1_b: "It stays sterile.",
+      kd_foods_sec04_ladder_t2: "The protein-cutting enzyme only switches on in strong acid.",
+      kd_foods_sec04_ladder_t2_b: "It arms pepsin.",
+      kd_foods_sec04_ladder_t3: "Acid releases the minerals from your food and activates B12 uptake.",
+      kd_foods_sec04_ladder_t3_b: "It frees minerals & B12.",
+      kd_foods_sec04_lead: "Your stomach is meant to be the single most acidic place in your body \u2014 about pH 1.0, on the far edge of the scale. That isn\u2019t a flaw to be neutralised; it\u2019s the entire design. Getting the 90 essentials in is one half of Wallach\u2019s model. Absorbing them is the other \u2014 and it lives or dies on where your stomach sits on this ladder.",
+      kd_foods_sec04_pq_cite: "Dr. Joel Wallach \xB7 Dead Doctors Don\u2019t Lie (2011)",
+      kd_foods_sec04_proof: "Wallach\u2019s own protocol: 75\u2013200 mg betaine HCl with pancreatic enzymes, three times a day, 15\u201330 minutes before each meal \u2014 and he prescribes ox bile alongside them. Ultimate Enzymes is that formula, pre-built.",
+      kd_foods_sec04_proof_bold: "75\u2013200 mg betaine HCl with pancreatic enzymes, three times a day, 15\u201330 minutes before each meal",
+      kd_foods_sec04_proof_cite: "Dr. Joel Wallach \xB7 Dead Doctors Don\u2019t Lie & Let\u2019s Play Doctor",
+      kd_foods_sec04_prov_p: "Plant enzyme",
+      kd_foods_sec04_prov_w: "Wallach-backed",
+      kd_foods_sec04_rec_h: "Everything Wallach says about breaking food down",
+      kd_foods_sec04_rec_lead: "Shared across Knowledge \xB7 the full record",
+      kd_foods_sec04_rec_lead_b: "the full record",
+      kd_foods_sec04_rec_sub: "The section ends the way it does across Knowledge \u2014 the sealed claims that also power Ask\xA0Wallach, grouped by what each one answers. The page is both the experience and the database.",
       kd_foods_sec04_stat_body: "of people over 50 need supplemental stomach acid.",
       kd_foods_sec04_stat_num: "75%",
       kd_foods_sec04_stat_readout: "// Dead Doctors Don\u2019t Lie",
       kd_foods_sec04_stat_small: "Wallach calls the decline perhaps the most significant aging phenomenon \xB7 stress lowers acid too",
-      kd_foods_sec04_time_before: "Betaine HCl and pancreatic enzymes work on the food \u2014 acid to break protein down, enzymes to finish the job.",
-      kd_foods_sec04_time_before_k: "15\u201330 min before",
-      kd_foods_sec04_time_between: "With no food to work on, the enzymes reach your bloodstream, where Wallach says they dissolve blood clots.",
-      kd_foods_sec04_time_between_k: "Between meals",
-      kd_foods_sec04_time_hd: "Two doses, two different jobs",
-      kd_foods_sec04_time_meal: "Meal",
-      kd_foods_sec04_wrong_b: "It neutralises what little acid is left. He allows it as an emergency fix \u2014 but says regular use will eventually damage you by reducing the nutrients you absorb.",
-      kd_foods_sec04_wrong_t: "Reach for an antacid",
       kd_foods_stat_body: "Americans are gluten-intolerant \u2014 about one in three.",
       kd_foods_stat_num: "115M",
       kd_foods_stat_readout: "// Mayo Clinic \xB7 2009",
@@ -18587,7 +18642,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_foods_villi_ok_metric: "Absorb \u2191",
       kd_foods_villi_ok_title: "Healthy gut",
       kd_foods_villi_title: "What gluten does to your gut",
-      kd_foods_words_label: "In his own words",
       kd_mark: "KNOWLEDGE",
       kd_orac_abs_btn: "Explore the Absorption facts \u2192",
       kd_orac_abs_txt: "**Two of the four are what you eat and don\u2019t eat** \u2014 a calorie-restricted, well-rounded diet, and steering clear of the land mines. Both are covered in depth on the Absorption tab.",
@@ -101522,9 +101576,9 @@ deaths, blood clots, sterility`,
       <text class="kd-ep-fam__condtag" x="580" y="132" text-anchor="middle">${condtag}</text>
     </svg>`;
   }
-  function fatFamilyStep(num, tKey, bKey) {
+  function fatFamilyStep(num2, tKey, bKey) {
     return `<div class="kd-ep-fam__step">
-      <span class="kd-ep-fam__num">${escHTML6(num)}</span>
+      <span class="kd-ep-fam__num">${escHTML6(num2)}</span>
       <div class="kd-ep-fam__stepbody">
         <div class="kd-ep-fam__steptitle">${escHTML6(ui(tKey))}</div>
         <div class="kd-ep-fam__steptext">${glossify(collapseWS(ui(bKey)))}</div>
@@ -101931,11 +101985,18 @@ deaths, blood clots, sterility`,
       id: "WAL-CLM-EPIGEN-000158",
       highlight_from: "the consumption of gluten"
     },
+    sec04_quote: {
+      id: "WAL-CLM-DDDL-000132",
+      excerpt_from: "Normally the stomach is sterile",
+      excerpt_to: "migrates up into the stomach.",
+      mark: "sterile"
+    },
     enzyme_claims: [
       "WAL-CLM-DDDL-000131",
       "WAL-CLM-DDDL-000128",
       "WAL-CLM-IMMORT-000078",
-      "WAL-CLM-DDDL-000130"
+      "WAL-CLM-DDDL-000130",
+      "WAL-CLM-DDDL-000134"
     ]
   };
 
@@ -102015,6 +102076,14 @@ deaths, blood clots, sterility`,
     const claim = getSearchClaim(q.id);
     return claim !== null ? { claim, highlightFrom: q.highlight_from } : null;
   }
+  function foodsSec04Quote() {
+    const q = data4().sec04_quote;
+    if (q === void 0) {
+      return null;
+    }
+    const claim = getSearchClaim(q.id);
+    return claim !== null ? { claim, excerptFrom: q.excerpt_from, excerptTo: q.excerpt_to, mark: q.mark } : null;
+  }
 
   // assets/js/src/views/knowledge-foods.ts
   function escHTML8(s) {
@@ -102022,12 +102091,12 @@ deaths, blood clots, sterility`,
   }
   function withVilliGloss(raw) {
     const def = escHTML8(ui("kd_foods_villi_gloss"));
-    return escHTML8(raw).replace(/\b(villi)\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
+    return escHTML8(raw).replace(/\bvilli\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
   }
-  function sectionHeader(num, kicker, headingHTML, extra) {
+  function sectionHeader(num2, kicker, headingHTML, extra) {
     const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML8(kicker)}</div>` : "";
     return `<header class="kd-foods-sec${extra}">
-      <span class="kd-foods-sec__num">${escHTML8(num)}</span>
+      <span class="kd-foods-sec__num">${escHTML8(num2)}</span>
       <div class="kd-foods-sec__body">
         ${kickerHTML}
         ${headingHTML}
@@ -102132,63 +102201,164 @@ deaths, blood clots, sterility`,
       <span class="kd-foods-item__go" aria-hidden="true">&rarr;</span>
     </button>`;
   }
-  var CHUNK_X = [0.06, 0.3, 0.55, 0.78];
-  var CHUNK_JY = [0, 6, -4, 3];
-  var FRAG_JX = [-9, 9, -3, 7, -7, 2, 5, -5];
-  var FRAG_JY = [-7, -2, 6, 1, -5, 7, -1, 4];
-  function gateArt(open) {
-    const W = 260, H = 150, mx = 14;
-    const wallY = 96;
-    const usable = W - mx * 2;
-    let grid = `<rect class="kd-foods-gate__blood" x="${mx}" y="${wallY + 2}" width="${usable}" height="${H - wallY - 2}" />`;
-    for (let x = mx; x <= W - mx; x += 24) {
-      grid += `<line class="kd-foods-gate__gridline" x1="${x}" y1="14" x2="${x}" y2="${wallY}" />`;
+  function num(x) {
+    if (typeof x === "number") {
+      return Number.isFinite(x) ? x : null;
     }
-    for (let y = 14; y < wallY; y += 20) {
-      grid += `<line class="kd-foods-gate__gridline" x1="${mx}" y1="${y}" x2="${W - mx}" y2="${y}" />`;
+    if (typeof x === "string") {
+      const n = Number.parseFloat(x);
+      return Number.isFinite(n) ? n : null;
     }
-    let food = "";
-    for (let i = 0; i < CHUNK_X.length; i += 1) {
-      const cx = mx + CHUNK_X[i] * usable + 18;
-      const cy = 72 + CHUNK_JY[i];
-      if (!open) {
-        food += `<rect class="kd-foods-gate__mass" x="${(cx - 17).toFixed(1)}" y="${(cy - 13).toFixed(1)}" width="34" height="26" rx="9" />`;
-      } else {
-        for (let f = 0; f < 6; f += 1) {
-          const fx = cx + FRAG_JX[(i * 2 + f) % FRAG_JX.length];
-          const fy = cy + FRAG_JY[(i + f) % FRAG_JY.length];
-          food += `<circle class="kd-foods-gate__frag" cx="${fx.toFixed(1)}" cy="${fy.toFixed(1)}" r="4" />`;
-        }
-        food += `<circle class="kd-foods-gate__through" cx="${(cx - 4).toFixed(1)}" cy="${(wallY + 16).toFixed(1)}" r="4.5" style="animation-delay:${(i * 0.22).toFixed(2)}s" />`;
-        food += `<circle class="kd-foods-gate__through" cx="${(cx + 9).toFixed(1)}" cy="${(wallY + 28).toFixed(1)}" r="3.5" style="animation-delay:${(i * 0.22 + 0.4).toFixed(2)}s" />`;
+    return null;
+  }
+  function emphasize(raw, sub, open, close) {
+    const e = escHTML8(raw);
+    if (sub.length === 0) {
+      return e;
+    }
+    const s = escHTML8(sub);
+    const i = e.indexOf(s);
+    if (i < 0) {
+      return e;
+    }
+    return `${e.slice(0, i)}${open}${s}${close}${e.slice(i + s.length)}`;
+  }
+  var PH_H = 500;
+  var PH_PAD = 12;
+  function phY(ph) {
+    return PH_H - PH_PAD - ph / 14 * (PH_H - 2 * PH_PAD);
+  }
+  function phLadder() {
+    let out = "";
+    for (let t = 0; t <= 14; t += 2) {
+      out += `<span class="sxb-axis__t" style="top:${phY(t).toFixed(1)}px">${t}</span>`;
+    }
+    out += `<span class="sxb-cap" style="top:${phY(13.3).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_alk"))}</span>`;
+    out += `<span class="sxb-cap" style="top:${phY(0.7).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_acid"))}</span>`;
+    out += '<div class="sxb-track"></div>';
+    out += `<div class="sxb-band" style="top:${phY(7.4).toFixed(1)}px"></div>`;
+    out += `<div class="sxb-bandlbl" style="top:${phY(7.4).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_blood"))}<small>${escHTML8(ui("kd_foods_sec04_ladder_blood_s"))}</small></div>`;
+    out += `<div class="sxb-dot" style="top:${phY(8.2).toFixed(1)}px;background:#5a8ca8"></div>`;
+    out += `<div class="sxb-card sxb-card--panc" style="top:${phY(10.2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML8(ui("kd_foods_sec04_ladder_panc_ph"))}</div><div class="sxb-card__nm">${escHTML8(ui("kd_foods_sec04_ladder_panc_nm"))}</div><div class="sxb-card__d">${escHTML8(ui("kd_foods_sec04_ladder_panc_d"))}</div></div>`;
+    out += `<div class="sxb-dot" style="top:${phY(1).toFixed(1)}px;background:#ff6420"></div>`;
+    out += `<div class="sxb-card sxb-card--stomach" style="top:${phY(2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML8(ui("kd_foods_sec04_ladder_stom_ph"))}</div><div class="sxb-card__nm">${escHTML8(ui("kd_foods_sec04_ladder_stom_nm"))}</div><div class="sxb-card__d">${escHTML8(ui("kd_foods_sec04_ladder_stom_d"))}</div></div>`;
+    return out;
+  }
+  var FRT_FOOD_X = [95, 140, 185, 225];
+  var FRT_INVADERS = [[96, 138], [120, 120], [150, 132], [182, 116], [210, 134], [135, 150], [172, 148]];
+  var FRT_BUBBLES = [[110, 64, 7], [150, 50, 9], [196, 66, 6], [168, 80, 5]];
+  function fortressFig(state) {
+    const W = 300;
+    const H = 190;
+    const wallY = 150;
+    const body = '<path d="M40 30 Q150 6 262 34 Q276 78 236 128 Q210 168 150 176 Q90 168 66 128 Q28 82 40 30 Z" fill="#ffffff" stroke="#d8b48c" stroke-width="2"/>';
+    const blood = `<rect x="14" y="${wallY + 6}" width="${W - 28}" height="26" rx="5" fill="#e7eef2" stroke="#cddbe2" stroke-width="1"/><text x="${W - 20}" y="${wallY + 22}" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1" fill="#7a8f9a">BLOOD</text>`;
+    let g = "";
+    if (state === "ok") {
+      g += '<path d="M52 58 Q150 40 250 60 Q262 96 230 128 Q206 160 150 166 Q94 160 72 128 Q44 96 52 58 Z" fill="rgba(255,126,60,.20)"/>';
+      for (let i = 0; i < FRT_FOOD_X.length; i += 1) {
+        const x = FRT_FOOD_X[i];
+        const yo = 96 + (i % 2 ? 8 : -6);
+        g += `<circle cx="${x}" cy="${yo}" r="5" fill="#e39a4e" opacity=".85"/>`;
+        g += `<circle cx="${x - 4}" cy="${wallY + 16}" r="3.4" fill="#5a8ca8"/>`;
+        g += `<circle cx="${x + 7}" cy="${wallY + 24}" r="2.6" fill="#5a8ca8" opacity=".8"/>`;
+        g += `<line x1="${x}" y1="${112 + (i % 2 ? 8 : -6)}" x2="${x - 2}" y2="${wallY - 2}" stroke="#c8552a" stroke-width="1" opacity=".35"/>`;
       }
+      g += '<circle cx="70" cy="52" r="12" fill="none" stroke="#c8552a" stroke-width="1.4" opacity=".8"/>';
+      g += '<text x="70" y="55" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" font-weight="700" fill="#c8552a">STER</text>';
+    } else {
+      g += '<path d="M62 118 Q150 106 238 118 Q214 156 150 164 Q92 158 62 118 Z" fill="rgba(255,126,60,.14)"/>';
+      for (const p of FRT_INVADERS) {
+        g += `<g transform="translate(${p[0]},${p[1]})"><circle r="4.5" fill="#8a2f2f"/><line x1="-6" y1="0" x2="6" y2="0" stroke="#8a2f2f" stroke-width="1.4"/><line x1="0" y1="-6" x2="0" y2="6" stroke="#8a2f2f" stroke-width="1.4"/></g>`;
+      }
+      for (const b of FRT_BUBBLES) {
+        g += `<circle cx="${b[0]}" cy="${b[1]}" r="${b[2]}" fill="none" stroke="#9b8e7c" stroke-width="1.4"/>`;
+      }
+      g += '<rect x="126" y="96" width="48" height="30" rx="10" fill="#c9a05a" stroke="#a07d3a" stroke-width="1.5"/>';
+      g += '<text x="150" y="115" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#5c4a26">UNBROKEN</text>';
     }
-    let ticks = "";
-    for (let x = mx; x <= W - mx; x += 11) {
-      ticks += `<line class="kd-foods-gate__tick" x1="${x}" y1="${wallY}" x2="${x}" y2="${wallY + 4}" />`;
+    const wall = `<line x1="30" y1="${wallY}" x2="${W - 30}" y2="${wallY}" stroke="#d8b48c" stroke-width="2" stroke-dasharray="5 4"/>`;
+    return `<svg style="width:100%;height:auto;display:block" viewBox="0 0 ${W} ${H}" role="img" aria-hidden="true">${body}${wall}${blood}${g}</svg>`;
+  }
+  var ENZ_TILES = [
+    { comp: ["Betaine Hydrochloride"], nm: "kd_foods_sec04_enz1_nm", stage: "kd_foods_sec04_enz1_stage", blurb: "kd_foods_sec04_enz1_blurb", prov: "w" },
+    { comp: ["Pepsin"], nm: "kd_foods_sec04_enz2_nm", stage: "kd_foods_sec04_enz2_stage", blurb: "kd_foods_sec04_enz2_blurb", prov: "w" },
+    { comp: ["Pancreatin 11X"], nm: "kd_foods_sec04_enz3_nm", stage: "kd_foods_sec04_enz3_stage", blurb: "kd_foods_sec04_enz3_blurb", prov: "w" },
+    { comp: ["Papain", "Bromelain"], nm: "kd_foods_sec04_enz4_nm", stage: "kd_foods_sec04_enz4_stage", blurb: "kd_foods_sec04_enz4_blurb", prov: "p" },
+    { comp: ["Ox Bile"], nm: "kd_foods_sec04_enz5_nm", stage: "kd_foods_sec04_enz5_stage", blurb: "kd_foods_sec04_enz5_blurb", prov: "w" }
+  ];
+  function enzStrip() {
+    const comp = getProduct("ultimate-enzymes")?.components?.[0];
+    const amountOf = (names) => {
+      if (comp === void 0) {
+        return "";
+      }
+      let total = 0;
+      let unit = "mg";
+      let found = false;
+      for (const name of names) {
+        const n = comp.nutrients?.find((x) => x.name === name);
+        const na = n !== void 0 ? num(n.amount) : null;
+        if (na !== null) {
+          total += na;
+          unit = n?.unit ?? unit;
+          found = true;
+          continue;
+        }
+        const b = comp.blends?.find((x) => x.name === name);
+        const ba = b !== void 0 && b.total !== void 0 && b.total !== null ? num(b.total.amount) : null;
+        if (ba !== null) {
+          total += ba;
+          unit = b?.total?.unit ?? unit;
+          found = true;
+        }
+      }
+      return found ? `${Math.round(total * 10) / 10} ${unit}` : "";
+    };
+    return ENZ_TILES.map((t) => {
+      const amt = amountOf(t.comp);
+      const provLabel = t.prov === "p" ? ui("kd_foods_sec04_prov_p") : ui("kd_foods_sec04_prov_w");
+      const dot = `<span class="ue-dot ue-dot--${t.prov}"></span> ${escHTML8(provLabel)}`;
+      return `<div class="ue-tile"><div class="ue-tile__stage">${escHTML8(ui(t.stage))}</div><div class="ue-tile__c">${escHTML8(ui(t.nm))}</div><div class="ue-tile__amt">${escHTML8(amt)}</div><div class="ue-tile__d">${escHTML8(ui(t.blurb))}</div><div class="ue-tile__prov">${dot}</div></div>`;
+    }).join("");
+  }
+  function ctaBar() {
+    const prod = getProduct("ultimate-enzymes");
+    const comp = prod?.components?.[0];
+    const spc = num(comp?.servings_per_container ?? null);
+    const whole = num(prod?.price?.wholesale ?? null);
+    const perServe = whole !== null && spc !== null && spc > 0 ? whole / spc : null;
+    const perServeStr = perServe !== null ? `$${perServe.toFixed(2)}` : "";
+    const perDayStr = perServe !== null ? `$${(perServe * 3).toFixed(2)}` : "";
+    const capsStr = spc !== null ? String(spc) : "";
+    const foot = `Wholesale &middot; ${escHTML8(capsStr)} capsules &middot; &asymp; ${escHTML8(perDayStr)} a day &middot; ${escHTML8(ui("kd_foods_sec04_cta_foot_tail"))}`;
+    return `<button class="ue-bar" type="button" data-kd-product="ultimate-enzymes">
+        <span>
+          <span class="ue-bar__nm">${escHTML8(ui("kd_foods_sec04_cta_nm"))}</span>
+          <span class="ue-bar__sub">${escHTML8(ui("kd_foods_sec04_cta_sub"))}</span>
+        </span>
+        <span class="ue-bar__r">
+          <span class="ue-bar__price"><span class="ue-bar__pn">${escHTML8(perServeStr)}</span><span class="ue-bar__pl">${escHTML8(ui("kd_foods_sec04_cta_price_l"))}</span></span>
+          <span class="ue-bar__chev">&rsaquo;</span>
+        </span>
+      </button>
+      <div class="ue-foot">${foot}</div>`;
+  }
+  function sec04PullQuote() {
+    const q = foodsSec04Quote();
+    if (q === null) {
+      return "";
     }
-    const wall = `<line class="kd-foods-gate__wall" x1="${mx}" y1="${wallY}" x2="${W - mx}" y2="${wallY}" />`;
-    return `<svg class="kd-foods-gate__art" viewBox="0 0 ${W} ${H}" role="img" aria-hidden="true">${grid}${food}${wall}${ticks}</svg>`;
-  }
-  function gatePanel(open) {
-    const k = open ? "ok" : "bad";
-    const t = open ? ui("kd_foods_sec04_gate_ok_t") : ui("kd_foods_sec04_gate_bad_t");
-    const m = open ? ui("kd_foods_sec04_gate_ok_m") : ui("kd_foods_sec04_gate_bad_m");
-    const c = open ? ui("kd_foods_sec04_gate_ok_cap") : ui("kd_foods_sec04_gate_bad_cap");
-    return `<div class="kd-foods-gate__panel kd-foods-gate__panel--${k}">
-      <div class="kd-foods-gate__top">
-        <div class="kd-foods-gate__t">${escHTML8(t)}</div>
-        <div class="kd-foods-gate__metric">${escHTML8(m)}</div>
-      </div>
-      ${gateArt(open)}
-      <div class="kd-foods-gate__cap">${glossify(c)}</div>
-    </div>`;
-  }
-  function enzPanel(kind, head, title, body) {
-    return `<div class="kd-foods-enz__panel kd-foods-enz__panel--${escHTML8(kind)}">
-      <div class="kd-foods-col__hd">${escHTML8(head)}</div>
-      <div class="kd-foods-enz__panel-t">${escHTML8(title)}</div>
-      <p class="kd-foods-enz__panel-b">${glossify(body)}</p>
+    const text = collapseWS2(q.claim.verbatim);
+    const i0 = text.indexOf(q.excerptFrom);
+    const i1 = text.indexOf(q.excerptTo);
+    const excerpt = i0 >= 0 && i1 >= 0 ? text.slice(i0, i1 + q.excerptTo.length) : text;
+    const body = emphasize(excerpt, q.mark, '<mark class="ds-mark">', "</mark>");
+    return `<div class="ds-pull-quote-wrap kd-foods-pq sxbeat">
+      <blockquote class="ds-pull-quote">
+        <p>${body}</p>
+        <footer>&mdash; ${escHTML8(ui("kd_foods_sec04_pq_cite"))}</footer>
+      </blockquote>
     </div>`;
   }
   function renderFoodsTab() {
@@ -102247,45 +102417,85 @@ deaths, blood clots, sterility`,
     </section>
 
     <section class="kd-foods-enz">
-      ${sectionHeader("04", ui("kd_foods_sec04_kicker"), `<h2 class="ds-h-section kd-foods-enz__h">${escHTML8(ui("kd_foods_sec04_hd"))}</h2>`, "")}
-      <p class="kd-foods-enz__lead">${glossify(ui("kd_foods_sec04_lead"))}</p>
+      ${sectionHeader("04", ui("kd_foods_sec04_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_sec04_hd"))}</h2>`, "")}
+      <p class="sx-p">${emphasize(ui("kd_foods_sec04_lead"), "pH 1.0", "<strong>", "</strong>")}</p>
 
-      <div class="ds-pull-stat kd-foods-enz__stat">
+      <div class="sxb-wrap">
+        <div class="sxb-scale">${phLadder()}</div>
+        <div class="sxb-side">
+          <div class="ds-kicker" style="margin-bottom:12px">${escHTML8(ui("kd_foods_sec04_ladder_kicker"))}</div>
+          <div class="sxb-triad">
+            <div class="sxb-triad__i"><span class="sxb-triad__n">01</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t1_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t1"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">02</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t2_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t2"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">03</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t3_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t3"))}</span></div>
+          </div>
+          <p class="sx-note">${escHTML8(ui("kd_foods_sec04_ladder_note"))}</p>
+          <div class="sx-cite">${escHTML8(ui("kd_foods_sec04_ladder_cite"))}</div>
+        </div>
+      </div>
+
+      <div class="sxbeat">
+        <div class="ds-kicker" style="margin-bottom:12px">${escHTML8(ui("kd_foods_sec04_frt_kicker"))}</div>
+        <p class="sx-p">${emphasize(ui("kd_foods_sec04_frt_lede"), "pH 1.0", "<strong>", "</strong>")}</p>
+        <div class="frt-scene">
+          <div class="frt-cell frt-cell--ok">
+            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML8(ui("kd_foods_sec04_frt_ok_k"))}</span><span class="frt-cell__ph">${escHTML8(ui("kd_foods_sec04_frt_ok_ph"))}</span></div>
+            <div class="frt-cell__t">${escHTML8(ui("kd_foods_sec04_frt_ok_t"))}</div>
+            ${fortressFig("ok")}
+            <p class="frt-cap">${escHTML8(ui("kd_foods_sec04_frt_ok_cap"))}</p>
+          </div>
+          <div class="frt-cell frt-cell--bad">
+            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML8(ui("kd_foods_sec04_frt_bad_k"))}</span><span class="frt-cell__ph">${escHTML8(ui("kd_foods_sec04_frt_bad_ph"))}</span></div>
+            <div class="frt-cell__t">${escHTML8(ui("kd_foods_sec04_frt_bad_t"))}</div>
+            ${fortressFig("bad")}
+            <p class="frt-cap">${escHTML8(ui("kd_foods_sec04_frt_bad_cap"))}</p>
+          </div>
+        </div>
+        <div class="frt-legend">
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--ds-accent)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_moat"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-calm)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_nutrient"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-crit)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_invader"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="border:1px solid var(--ds-ink-faint);background:transparent"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_gas"))}</span>
+        </div>
+      </div>
+
+      <div class="sxbeat">
+        <div class="sx-callout">
+          <div class="sx-callout__k">${escHTML8(ui("kd_foods_sec04_inv_k"))}</div>
+          <div class="sx-callout__t">${emphasize(ui("kd_foods_sec04_inv_t"), ui("kd_foods_sec04_inv_t_em"), "<em>", "</em>")}</div>
+          <p class="sx-callout__b">${emphasize(ui("kd_foods_sec04_inv_b"), ui("kd_foods_sec04_inv_b_mark"), '<mark class="ds-mark rose">', "</mark>")}</p>
+        </div>
+      </div>
+
+      <div class="ds-pull-stat sxbeat">
         <span class="ds-pull-stat__readout">${escHTML8(ui("kd_foods_sec04_stat_readout"))}</span>
         <div class="ds-pull-stat__num">${escHTML8(ui("kd_foods_sec04_stat_num"))}</div>
         <div class="ds-pull-stat__body">${escHTML8(ui("kd_foods_sec04_stat_body"))}<small>${escHTML8(ui("kd_foods_sec04_stat_small"))}</small></div>
       </div>
 
-      <div class="kd-foods-col__hd kd-foods-enz__hd">${escHTML8(ui("kd_foods_sec04_gate_hd"))}</div>
-      <div class="kd-foods-gate">
-        ${gatePanel(false)}
-        ${gatePanel(true)}
-      </div>
-      <p class="kd-foods-gate__note">${escHTML8(ui("kd_foods_sec04_gate_note"))}</p>
+      ${sec04PullQuote()}
 
-      <div class="kd-foods-enz__grid">
-        ${enzPanel("wrong", ui("kd_foods_sec04_col_wrong"), ui("kd_foods_sec04_wrong_t"), ui("kd_foods_sec04_wrong_b"))}
-        ${enzPanel("right", ui("kd_foods_sec04_col_right"), ui("kd_foods_sec04_right_t"), ui("kd_foods_sec04_right_b"))}
-      </div>
-
-      <div class="kd-foods-col__hd kd-foods-enz__hd">${escHTML8(ui("kd_foods_sec04_time_hd"))}</div>
-      <div class="kd-foods-time">
-        <div class="kd-foods-time__rail">
-          <span class="kd-foods-time__zone kd-foods-time__zone--before">${escHTML8(ui("kd_foods_sec04_time_before_k"))}</span>
-          <span class="kd-foods-time__meal">${escHTML8(ui("kd_foods_sec04_time_meal"))}</span>
-          <span class="kd-foods-time__zone kd-foods-time__zone--between">${escHTML8(ui("kd_foods_sec04_time_between_k"))}</span>
+      <section class="sxbeat">
+        <div class="ds-kicker" style="margin-bottom:10px">${escHTML8(ui("kd_foods_sec04_cta_kicker"))}</div>
+        <h3 style="font-family:var(--ds-font-display);font-size:2rem;font-weight:800;line-height:1.4;letter-spacing:-.01em;color:var(--ds-ink);margin:0 0 10px">${emphasize(ui("kd_foods_sec04_cta_h"), ui("kd_foods_sec04_cta_h_em"), '<em style="color:var(--ds-accent-deep);font-style:italic">', "</em>")}</h3>
+        <p class="sx-p">${emphasize(ui("kd_foods_sec04_cta_p"), ui("kd_foods_sec04_cta_p_strong"), "<br><strong>", "</strong>")}</p>
+        <div class="ue-strip">${enzStrip()}</div>
+        <div class="ue-proof">
+          <span class="ue-proof__q">&ldquo;</span>
+          <div class="ue-proof__t">${emphasize(ui("kd_foods_sec04_proof"), ui("kd_foods_sec04_proof_bold"), "<b>", "</b>")}
+            <span class="ue-proof__cite">${escHTML8(ui("kd_foods_sec04_proof_cite"))}</span>
+          </div>
         </div>
-        <div class="kd-foods-time__body">
-          <p class="kd-foods-time__b">${glossify(ui("kd_foods_sec04_time_before"))}</p>
-          <p class="kd-foods-time__b">${glossify(ui("kd_foods_sec04_time_between"))}</p>
-        </div>
-      </div>
+        ${ctaBar()}
+      </section>
 
-      <p class="kd-foods-enz__note">${escHTML8(ui("kd_foods_sec04_note"))}</p>
+      <div class="sxr-wrap">
+        <div class="sxr-lead">${emphasize(ui("kd_foods_sec04_rec_lead"), ui("kd_foods_sec04_rec_lead_b"), "<b>", "</b>")}</div>
+        <h3 class="sxr-h">${escHTML8(ui("kd_foods_sec04_rec_h"))}</h3>
+        <p class="sxr-sub">${escHTML8(ui("kd_foods_sec04_rec_sub"))}</p>
+        ${facetSections([...foodsThesisClaims(), ...foodsEnzymeClaims()])}
+      </div>
     </section>
-
-    <div class="kd-ep-seclabel">${escHTML8(ui("kd_foods_words_label"))}</div>
-    ${facetSections([...foodsThesisClaims(), ...foodsEnzymeClaims()])}
   </div>`;
   }
 
@@ -102546,9 +102756,9 @@ deaths, blood clots, sterility`,
         return "th";
     }
   }
-  function sectionHeader2(num, kickerHTML, headingKey) {
+  function sectionHeader2(num2, kickerHTML, headingKey) {
     return `<div class="kd-orac-sec">
-      <span class="kd-orac-sec__num">${escHTML10(num)}</span>
+      <span class="kd-orac-sec__num">${escHTML10(num2)}</span>
       <div class="kd-orac-sec__body">
         ${kickerHTML}
         <h2 class="kd-orac-sec__h">${escHTML10(ui(headingKey))}</h2>
@@ -106035,7 +106245,13 @@ ULTIMATE ENZYMES CTA -- verified against the sealed Product DB (NOT the AI text 
 
 FILES: temporary/foods-sec04-redesign-demo.html (4 variations), temporary/ultimate-enzymes-cta-demo.html (CTA + proof), temporary/foods-sec04-combined-demo.html (approved combine, Rich/Lean toggle) [all gitignored]; committed spec dashboard/components/knowledge-foods-sec04-PROPOSAL.html. VERIFY: headless render of the committed proposal = 0 failed resources / 0 bad statuses; ladder(2 cards)+fortress(svg)+strip(5)+record(17) present; Unbounded display font. 4 final CTA fixes applied + re-shot (unbold the fix line / bold the "single capsule" line / stack price with >=10px gap / break the product sub-line under / "quarter per serving").
 
-DEFERRED to the live build (next session): mine 2 book-facts shown in the demo but not yet in sealed claims (blood pH 7.36-7.44 @ dddl 7885 / immort 6918 / epig 23564 / rare 25070; "begins at about age 35" @ dddl 12187 / lets 8381) + the between-meals blood-clot beat (deliberately omitted); port to knowledge-foods.ts + view-copy.json (R4/R1); rebuild the SVGs deterministically; wire the CTA to the real product + regimen-add; render probe + Luneth screenshot sign-off. NO pillar changed -> no seal required (permission to seal was granted but unused).` }];
+DEFERRED to the live build (next session): mine 2 book-facts shown in the demo but not yet in sealed claims (blood pH 7.36-7.44 @ dddl 7885 / immort 6918 / epig 23564 / rare 25070; "begins at about age 35" @ dddl 12187 / lets 8381) + the between-meals blood-clot beat (deliberately omitted); port to knowledge-foods.ts + view-copy.json (R4/R1); rebuild the SVGs deterministically; wire the CTA to the real product + regimen-add; render probe + Luneth screenshot sign-off. NO pillar changed -> no seal required (permission to seal was granted but unused).` }, { id: "lg_mrzss2jr_tzznua", ts: "2026-07-24T22:16:28.263125-05:00", surface: "knowledge", kind: "milestone", summary: "Foods \xA704 redesign LIVE: pH ladder + fortress cutaways + Ultimate Enzymes CTA (amounts + $/serving derived live from the Product DB) replaced the old gate/enzyme/timeline \xA704; every number + quote traces to a sealed Wallach claim; signed off after Luneth's live tweaks.", detail: `The "You can't absorb what you can't break down" section is now the approved redesign, live in the app on real data \u2014 replacing the old gate-figure / enzyme-panel / meal-timeline version. It reads as one sequence: a pH ladder (Wallach's stomach 1.0, pancreatic 8.2, blood 7.36\u20137.44), a fortress cutaway of full-acid vs. fallen-acid, the "heartburn is usually too little acid" twist, one 75% pull-stat, Wallach's "sterile" quote, and an Ultimate Enzymes call-to-action whose ingredient amounts and price come straight from the product database. Luneth reviewed it live, tuned the type and spacing, and signed off.
+
+Replaced the kd-foods-enz body + tail in views/knowledge-foods.ts (removed gateArt/gatePanel/enzPanel + their coord constants; added phLadder/fortressFig/enzStrip/ctaBar/sec04PullQuote + num/emphasize helpers). Exported getProduct from knowledge-products.ts; added foodsSec04Quote accessor + sec04_quote schema. foods-curation.json: enzyme_claims += DDDL-000134, + sec04_quote (a faithful contiguous excerpt of DDDL-000132, "sterile" marked). view-copy.json: removed 22 dead \xA704 keys, added ~72. drawer-knowledge.css: the \xA704 CSS block (sx-*/sxb-*/frt-*/ue-*/sxr-*) + two SCOPED design-system overrides (.kd-foods .ds-h-section 1.65rem, .kd-foods-enz .ds-pull-stat padding-right 2rem) kept OUT of the sealed design-system.css since both primitives are token-based + foods-only + Luneth's live tweaks (sx-p 84ch, sxb-side margin-right 43px, triad/axis type sizes). render_probe_knowledge.js \xA704 assertions rewritten.
+
+\xA700.A: the demo's combined betaine-HCl+ox-bile-"for-fats" protocol is NOT one sealed claim and cited Epigenetics wrongly; rebuilt the proof-quote from the real claims \u2014 dose from DDDL-000130, ox bile from LETS-000147 \u2014 corrected the cite to "Dead Doctors Don't Lie & Let's Play Doctor", and dropped the unsourced "for fats" rationale (Luneth ratified). Blood pH 7.36\u20137.44 traces to DDDL-000134's sealed claim_text (book-verified, no new mine). The unmined age-35 onset + between-meals-blood-clot facts were deliberately omitted. Strip amounts (105/22.5/75/35.3/33 mg) + $0.26/serving + $0.77/day derive live from getProduct('ultimate-enzymes'); the CTA routes via the existing data-kd-product path.
+
+Verified: build OK \xB7 invariants 77/77 (0 failed) \xB7 render_probe_knowledge PASS (PAGE_ERRORS 0) \xB7 eslint + tsc clean \xB7 size-limit CSS 87/150 KB gz \xB7 live screenshots signed off by Luneth. Deferrals: \xA704 glossary tooltips dropped (demo had none); the full record is 8 curated claims (could expand); the "acid" axis cap sits partly behind the pH-1.0 card (cosmetic); PROPOSAL.html is now a frozen approval snapshot, superseded by the live view.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

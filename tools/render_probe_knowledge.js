@@ -81,13 +81,13 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   });
 
   // 2e. Foods & Absorption tab -- the curated "second prong" landing: a hero with the
-  //     mantra lede + the two-pronged thesis rendered as the three sealed crown-jewel
-  //     claim cards, facet-grouped (basics teal, protocol green) and Wallach-cited.
-  //     Since 2026-07-24 the tab carries section 04 (digestive enzymes) -- a DESIGNED
-  //     section (stat / unlock triptych / instinct-vs-fix / timing strip), NOT a claim list;
-  //     its sealed claims live in the page's foot block with the thesis. So section 04 is
-  //     asserted by its own parts, and the foot block by its combined count -- never a
-  //     page-wide total, which would silently absorb a future section instead of asserting it.
+  //     mantra lede + the two-pronged thesis rendered as the sealed crown-jewel claim cards,
+  //     facet-grouped (basics teal, protocol green) and Wallach-cited. Section 04 ("You can't
+  //     absorb what you can't break down") was redesigned 2026-07-24 into a DESIGNED sequence:
+  //     a pH ladder (two Wallach anchor cards + blood band), the fortress cutaways, an inversion
+  //     callout, ONE pull-stat, the Wallach "sterile" pull-quote, and the Ultimate Enzymes CTA
+  //     (strip amounts + $/serving DERIVED live from the product DB) -- then the shared full
+  //     record (thesis + enzyme claims) inside the section. Asserted by its own parts.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-tab="foods"]')?.click());
   await wait(300);
   const foods = await page.evaluate(() => {
@@ -121,36 +121,24 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       facets: pageEl ? pageEl.querySelectorAll('.kd-ep-facet').length : 0,
       cards: cards.length,
       enzymeCards: enzCards.length,
-      hasEnzLead: enzSec ? (enzSec.querySelector('.kd-foods-enz__lead')?.textContent || '').length > 40 : false,
-      hasEnzNote: enzSec ? (enzSec.querySelector('.kd-foods-enz__note')?.textContent || '').length > 20 : false,
-      enzStatNum: enzSec ? (enzSec.querySelector('.kd-foods-enz__stat .ds-pull-stat__num')?.textContent || '').trim() : '',
-      // The GATE figure: two panels, two SVGs, blocked masses on the low-acid side and freed
-      // particles through the wall on the other -- the section's teaching image.
-      gatePanels: enzSec ? enzSec.querySelectorAll('.kd-foods-gate__panel').length : 0,
-      gateArts: enzSec ? enzSec.querySelectorAll('.kd-foods-gate__art').length : 0,
-      gateMasses: enzSec ? enzSec.querySelectorAll('.kd-foods-gate__panel--bad .kd-foods-gate__mass').length : 0,
-      gateThrough: enzSec ? enzSec.querySelectorAll('.kd-foods-gate__panel--ok .kd-foods-gate__through').length : 0,
-      gateBadThrough: enzSec ? enzSec.querySelectorAll('.kd-foods-gate__panel--bad .kd-foods-gate__through').length : 0,
-      enzPanels: enzSec ? enzSec.querySelectorAll('.kd-foods-enz__panel').length : 0,
-      timeZones: enzSec ? enzSec.querySelectorAll('.kd-foods-time__zone').length : 0,
-      timeBodies: enzSec ? enzSec.querySelectorAll('.kd-foods-time__b').length : 0,
-      // Loose (non-claim) prose carries the dotted glossary terms too -- Luneth 2026-07-24.
-      enzGlossTerms: enzSec ? enzSec.querySelectorAll('.gloss[data-def]').length : 0,
-      // Header parity: 04's numeral-to-kicker offset must MATCH 03's, not merely be small. Anchored
-      // to the sibling section so a future type-scale change can't quietly desync one header.
-      enzHdrDelta: (() => {
-        const d = (sec) => {
-          const hdr = sec ? sec.querySelector('.kd-foods-sec') : null;
-          if (!hdr) return null;
-          const num = hdr.querySelector('.kd-foods-sec__num');
-          const kick = hdr.querySelector('.ds-kicker');
-          if (!num || !kick) return null;
-          return Math.round(kick.getBoundingClientRect().top - num.getBoundingClientRect().top);
-        };
-        const mine = d(enzSec);
-        const sib = d(pageEl ? pageEl.querySelector('.kd-foods-contrast') : null);
-        return (mine === null || sib === null) ? null : { mine, sib };
-      })(),
+      // section 04 redesign (2026-07-24): pH ladder + fortress cutaways + inversion callout + one
+      // pull-stat + the Wallach "sterile" pull-quote + the Ultimate Enzymes CTA. Amounts/price on
+      // the CTA are DERIVED live from the product DB (never hand-typed), so the strip is asserted to
+      // carry a real "<n> mg" per tile and the bar to route to the ultimate-enzymes product page.
+      phCards: enzSec ? enzSec.querySelectorAll('.sxb-scale .sxb-card').length : 0,
+      phBand: enzSec ? enzSec.querySelector('.sxb-scale .sxb-band') !== null : false,
+      phTriad: enzSec ? enzSec.querySelectorAll('.sxb-triad__i').length : 0,
+      frtCells: enzSec ? enzSec.querySelectorAll('.frt-scene .frt-cell').length : 0,
+      frtFigs: enzSec ? enzSec.querySelectorAll('.frt-scene svg').length : 0,
+      frtLegend: enzSec ? enzSec.querySelectorAll('.frt-legend__i').length : 0,
+      inversion: enzSec ? enzSec.querySelector('.sx-callout .sx-callout__b mark.ds-mark') !== null : false,
+      sec04Stat: enzSec ? (enzSec.querySelector('.ds-pull-stat .ds-pull-stat__num')?.textContent || '').trim() : '',
+      sec04Pq: enzSec ? (enzSec.querySelector('.kd-foods-pq mark.ds-mark')?.textContent || '').trim() : '',
+      enzTiles: enzSec ? enzSec.querySelectorAll('.ue-strip .ue-tile').length : 0,
+      enzAmounts: enzSec ? [...enzSec.querySelectorAll('.ue-tile__amt')].map(a => (a.textContent || '').trim()) : [],
+      ctaProduct: enzSec ? (enzSec.querySelector('.ue-bar')?.getAttribute('data-kd-product') || '') : '',
+      ctaPrice: enzSec ? (enzSec.querySelector('.ue-bar .ue-bar__pn')?.textContent || '').trim() : '',
+      recordWrap: enzSec ? enzSec.querySelector('.sxr-wrap') !== null : false,
       allCited: cards.length > 0 && cites.every(c => /EPIGENETICS|DEAD DOCTORS|RARE EARTHS|IMMORTALITY|PLAY DOCTOR|YOUR HEAD/i.test(c)),
     };
   });
@@ -549,12 +537,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['topic (from Absorption card): overlay w/ derived intro lede (beef has no basics claim)', foodsTopic.shown === true && foodsTopic.title === 'Beef' && foodsTopic.ledeLen > 0],
     ['topic (from Absorption): back label = "Go back" + returns to Absorption', /Go back/i.test(foodsTopic.back) && foodsBack.onFoods === true],
     ['foods: rich landing renders (3-colour lockup + orange subject + 3 numbered headers + pull-stat + 2 villi scans + villi gloss)', foods.shown === true && foods.headlineLen > 12 && foods.hasDeck === true && foods.hasEyebrow === true && foods.hasBrand === true && foods.hasScan === true && foods.noScuffedPulse === true && foods.hasOrangeSubject === true && foods.hasSecHeaders === true && foods.hasExplain === true && foods.hasVilliTerm === true && foods.hasPullQuote === true && foods.hasStat === true && foods.villiArts === 2 && foods.villiFingers >= 14 && foods.villiDots === 12],
-    ['foods: foot block = 3 thesis + 4 enzyme crown-jewel cards, facet-grouped + Wallach-cited', foods.cards === 7 && foods.facets >= 2 && foods.allCited === true],
-    ['foods: section 04 is DESIGNED (stat + gate figure + 2 panels + timeline), not a claim list', foods.enzymeCards === 0 && foods.enzStatNum === '75%' && foods.gatePanels === 2 && foods.gateArts === 2 && foods.enzPanels === 2 && foods.timeZones === 2 && foods.timeBodies === 2],
-    ['foods: gate figure tells the story (masses blocked on the low-acid side, particles through on the other)', foods.gateMasses === 4 && foods.gateThrough === 8 && foods.gateBadThrough === 0],
-    ['foods: section 04 lead + closing note present', foods.hasEnzLead === true && foods.hasEnzNote === true],
-    ['foods: section 04 loose prose carries dotted glossary terms', foods.enzGlossTerms >= 4],
-    ['foods: section 04 header offset MATCHES section 03 (measured, not eyeballed)', foods.enzHdrDelta !== null && Math.abs(foods.enzHdrDelta.mine - foods.enzHdrDelta.sib) <= 2],
+    ['foods: full record = 3 thesis + 5 enzyme crown-jewel cards, facet-grouped + Wallach-cited', foods.cards === 8 && foods.facets >= 2 && foods.allCited === true],
+    ['foods: section 04 pH ladder -- 2 Wallach anchor cards (stomach 1.0 / pancreatic 8.2) + blood band + why-1.0 triad', foods.phCards === 2 && foods.phBand === true && foods.phTriad === 3],
+    ['foods: section 04 fortress scene -- 2 cutaway cells, 2 SVG figures, 4-item legend', foods.frtCells === 2 && foods.frtFigs === 2 && foods.frtLegend === 4],
+    ['foods: section 04 inversion callout marks the too-little-acid twist', foods.inversion === true],
+    ['foods: section 04 one pull-stat (75%) + the Wallach "sterile" pull-quote', foods.sec04Stat === '75%' && foods.sec04Pq === 'sterile'],
+    ['foods: Ultimate Enzymes strip -- 5 tiles, every amount derived live from the product DB', foods.enzTiles === 5 && foods.enzAmounts.filter(a => /\d\s*mg/.test(a)).length === 5],
+    ['foods: CTA routes to the ultimate-enzymes product page at the derived $/serving', foods.ctaProduct === 'ultimate-enzymes' && /^\$\d/.test(foods.ctaPrice)],
+    ['foods: section 04 ends in the shared full-record wrap', foods.recordWrap === true],
     ['foods: REMOVE/EAT contrast (5/6) + form strip (4) render, all topic-linked', foods.removeItems === 5 && foods.eatItems === 6 && foods.formItems === 4 && foods.itemsLinked === true],
     ['no page errors', errs.length === 0],
   ];

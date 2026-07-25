@@ -54,7 +54,7 @@ function listProducts(): ProductDetail[] {
   return cachedProducts ?? [];
 }
 
-function getProduct(id: string): ProductDetail | null {
+export function getProduct(id: string): ProductDetail | null {
   ensureLoaded();
   return cachedById?.get(id) ?? null;
 }

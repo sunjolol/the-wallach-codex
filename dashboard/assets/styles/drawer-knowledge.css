@@ -1482,6 +1482,10 @@
 #drawer-knowledge-mount .kt-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 14px; }
 /* ═══════════════════════════ ABSORPTION tab · the "second prong" landing (diet/absorption) ═══════════════════════════ */
 #drawer-knowledge-mount .kd-foods { --fam-science: #2f9dba; --fam-action: #5aa82c; --fam-story: #8a52d6; padding-bottom: 40px; }
+/* Foods section headings (02/03/04) trimmed from the design-system --ds-text-2xl (1.85rem) to 1.65rem (Luneth 2026-07-24). Scoped HERE, not in the SEALED design-system.css: .ds-h-section is a token-based primitive used only on this tab, so a surface override keeps the seal + type scale intact. */
+#drawer-knowledge-mount .kd-foods .ds-h-section { font-size: 1.65rem; }
+/* Section 04 pull-stat: a little more right padding so the last words ("acid too") don't wrap against the edge (Luneth 2026-07-24). Scoped here, not in the SEALED design-system.css .ds-pull-stat. */
+#drawer-knowledge-mount .kd-foods-enz .ds-pull-stat { padding-right: 2rem; }
 #drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 16px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
 /* The corner lockup below the rule: the tech-blue tag then the dark scan-id, right-aligned. */
 #drawer-knowledge-mount .kd-foods-corner { text-align: right; margin-top: 5px; }
@@ -1625,6 +1629,120 @@
 #drawer-knowledge-mount .kd-foods-form__hd { color: var(--ds-status-warn); }
 #drawer-knowledge-mount .kd-foods-form__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-3); }
 #drawer-knowledge-mount .kd-foods-form__grid .kd-foods-item { margin-bottom: 0; }
+
+/* ═══════════════════════════ ABSORPTION §04 · pH ladder + fortress + Ultimate Enzymes CTA ═══════════════════════════ */
+/* The redesigned "You can't absorb what you can't break down" section (Luneth-approved 2026-07-24,
+   spec: dashboard/components/knowledge-foods-sec04-PROPOSAL.html). --sev-* live only under .kd-orac,
+   so re-declare the two this section uses on the foods root. Every rule scoped like its neighbours. */
+#drawer-knowledge-mount .kd-foods { --sev-calm: #5a8ca8; --sev-crit: #8a2f2f; }
+
+/* beat rhythm + shared prose primitives */
+#drawer-knowledge-mount .sxbeat { margin-top: var(--ds-space-9); }
+#drawer-knowledge-mount .sxbeat--tight { margin-top: var(--ds-space-7); }
+#drawer-knowledge-mount .sx-p { font-family: var(--ds-font-serif); font-size: 1.02rem; line-height: 1.62; color: var(--ds-ink-medium); max-width: 84ch; margin: 0 0 20px; }
+#drawer-knowledge-mount .sx-p strong { color: var(--ds-ink); font-weight: 600; }
+#drawer-knowledge-mount .sx-note { font-family: var(--ds-font-serif); font-size: .9rem; line-height: 1.55; color: var(--ds-ink-soft); max-width: 64ch; margin: 14px 0 0; }
+#drawer-knowledge-mount .sx-cite { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .08em; text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 9px; }
+#drawer-knowledge-mount .sx-callout { position: relative; margin: var(--ds-space-5) 0 0; padding: 20px 24px; border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-status-err); border-radius: var(--ds-radius-xs); background: #f7ece6; }
+#drawer-knowledge-mount .sx-callout__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--ds-status-err); margin-bottom: 6px; }
+#drawer-knowledge-mount .sx-callout__t { font-family: var(--ds-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ds-ink); margin: 0 0 6px; }
+#drawer-knowledge-mount .sx-callout__t em { color: var(--ds-status-err); font-style: italic; }
+#drawer-knowledge-mount .sx-callout__b { font-family: var(--ds-font-serif); font-size: .92rem; line-height: 1.55; color: var(--ds-ink-medium); margin: 0; }
+
+/* ── the pH ladder ── */
+#drawer-knowledge-mount .sxb-wrap { display: grid; grid-template-columns: 374px 1fr; gap: 30px; margin: var(--ds-space-5) 0 0; align-items: center; }
+#drawer-knowledge-mount .sxb-scale { position: relative; height: 500px; }
+#drawer-knowledge-mount .sxb-track { position: absolute; left: 44px; top: 0; bottom: 0; width: 40px; border-radius: 6px; overflow: hidden;
+  background: linear-gradient(to top, #9c2b1e 0%, #c8552a 12%, #e39a4e 27%, #f2ead3 50%, #8fb8c8 73%, #4a7ea0 100%);
+  box-shadow: inset 0 0 0 1px rgba(26,22,18,.14); }
+#drawer-knowledge-mount .sxb-axis__t { position: absolute; left: 0; width: 34px; text-align: right; transform: translateY(-50%);
+  font-family: var(--ds-font-mono); font-size: 0.7rem; color: var(--ds-ink-faint); letter-spacing: .04em; }
+#drawer-knowledge-mount .sxb-cap { position: absolute; left: 94px; transform: translateY(-50%); font-family: var(--ds-font-mono); font-size: .52rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ds-ink-faint); }
+#drawer-knowledge-mount .sxb-dot { position: absolute; left: 64px; transform: translate(-50%,-50%); width: 13px; height: 13px; border-radius: 50%;
+  border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(26,22,18,.25); z-index: 2; }
+#drawer-knowledge-mount .sxb-band { position: absolute; left: 44px; width: 40px; height: 8px; transform: translateY(-50%); z-index: 1;
+  background: repeating-linear-gradient(45deg, rgba(138,47,47,.9) 0 3px, rgba(138,47,47,.45) 3px 6px); }
+#drawer-knowledge-mount .sxb-bandlbl { position: absolute; left: 96px; transform: translateY(-50%); font-family: var(--ds-font-mono); font-size: .58rem;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--sev-crit); font-weight: 700; }
+#drawer-knowledge-mount .sxb-bandlbl small { display: block; font-weight: 500; color: var(--ds-ink-soft); text-transform: none; letter-spacing: 0; margin-top: 2px; }
+#drawer-knowledge-mount .sxb-card { position: absolute; left: 100px; transform: translateY(-50%); width: 248px; padding: 11px 15px;
+  background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-rule); border-radius: var(--ds-radius-xs); box-shadow: var(--ds-elev-1); }
+#drawer-knowledge-mount .sxb-card__ph { font-family: var(--ds-font-display); font-size: 1.35rem; font-weight: 900; line-height: 1; }
+#drawer-knowledge-mount .sxb-card__nm { font-family: var(--ds-font-mono); font-size: .56rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ds-ink-soft); font-weight: 600; margin: 4px 0 5px; }
+#drawer-knowledge-mount .sxb-card__d { font-family: var(--ds-font-serif); font-size: .82rem; line-height: 1.42; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .sxb-card--stomach { border-left-color: var(--ds-accent-hot); }
+#drawer-knowledge-mount .sxb-card--stomach .sxb-card__ph { color: var(--ds-accent-hot); }
+#drawer-knowledge-mount .sxb-card--panc { border-left-color: var(--sev-calm); }
+#drawer-knowledge-mount .sxb-card--panc .sxb-card__ph { color: var(--sev-calm); }
+#drawer-knowledge-mount .sxb-side { align-self: center; margin-right: 43px; }
+#drawer-knowledge-mount .sxb-triad { display: grid; gap: 10px; margin: 0 0 var(--ds-space-4); }
+#drawer-knowledge-mount .sxb-triad__i { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: baseline; }
+#drawer-knowledge-mount .sxb-triad__n { font-family: var(--ds-font-mono); font-size: .79rem; font-weight: 700; letter-spacing: .1em; color: var(--ds-accent); }
+#drawer-knowledge-mount .sxb-triad__t { font-family: var(--ds-font-serif); font-size: 1.25rem; line-height: 1.45; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .sxb-triad__t b { color: var(--ds-ink); font-weight: 600; }
+
+/* ── the fortress scene ── */
+#drawer-knowledge-mount .frt-scene { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: var(--ds-space-5) 0 0; }
+#drawer-knowledge-mount .frt-cell { position: relative; padding: 16px 16px 18px; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-rule-soft); overflow: hidden; }
+#drawer-knowledge-mount .frt-cell--ok { background: linear-gradient(180deg, #fff8ee 0%, #fdeede 100%); border-color: var(--ds-accent-soft); }
+#drawer-knowledge-mount .frt-cell--bad { background: linear-gradient(180deg, #f3ede0 0%, #ece2cd 100%); }
+#drawer-knowledge-mount .frt-cell__hd { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+#drawer-knowledge-mount .frt-cell__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+#drawer-knowledge-mount .frt-cell--ok .frt-cell__k { color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .frt-cell--bad .frt-cell__k { color: var(--sev-crit); }
+#drawer-knowledge-mount .frt-cell__ph { font-family: var(--ds-font-mono); font-size: .62rem; color: var(--ds-ink-soft); letter-spacing: .06em; }
+#drawer-knowledge-mount .frt-cell__t { font-family: var(--ds-font-display); font-size: 1rem; font-weight: 800; color: var(--ds-ink); margin: 0 0 8px; }
+#drawer-knowledge-mount .frt-cap { font-family: var(--ds-font-serif); font-size: .82rem; line-height: 1.45; color: var(--ds-ink-medium); margin: 10px 0 0; }
+#drawer-knowledge-mount .frt-legend { display: flex; gap: 16px 22px; flex-wrap: wrap; margin: var(--ds-space-4) 0 0; padding: 12px 16px;
+  background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); }
+#drawer-knowledge-mount .frt-legend__i { display: flex; align-items: center; gap: 7px; font-family: var(--ds-font-mono); font-size: .6rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .frt-legend__sw { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+
+/* ── Ultimate Enzymes CTA ── */
+#drawer-knowledge-mount .ue-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: var(--ds-space-5) 0 18px; }
+#drawer-knowledge-mount .ue-tile { display: flex; flex-direction: column; padding: 13px 13px 15px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft);
+  border-top: 3px solid var(--ds-accent); border-radius: var(--ds-radius-xs); }
+#drawer-knowledge-mount .ue-tile__stage { font-family: var(--ds-font-mono); font-size: .52rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-faint); }
+#drawer-knowledge-mount .ue-tile__c { font-family: var(--ds-font-display); font-size: .92rem; font-weight: 800; color: var(--ds-ink); margin: 5px 0 2px; line-height: 1.1; }
+#drawer-knowledge-mount .ue-tile__amt { font-family: var(--ds-font-mono); font-size: .56rem; color: var(--ds-accent-deep); letter-spacing: .04em; }
+#drawer-knowledge-mount .ue-tile__d { font-family: var(--ds-font-serif); font-size: .74rem; line-height: 1.4; color: var(--ds-ink-medium); margin-top: 7px; }
+#drawer-knowledge-mount .ue-tile__prov { display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 9px; font-family: var(--ds-font-mono); font-size: .5rem;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .ue-dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+#drawer-knowledge-mount .ue-dot--w { background: var(--ds-status-ok); }
+#drawer-knowledge-mount .ue-dot--p { background: linear-gradient(90deg, var(--ds-status-ok) 0 50%, var(--ds-paper-light) 50% 100%); border: 1.5px solid var(--ds-status-ok); }
+#drawer-knowledge-mount .ue-proof { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 20px; padding: 14px 18px;
+  background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-status-ok); border-radius: var(--ds-radius-xs); }
+#drawer-knowledge-mount .ue-proof__q { font-family: var(--ds-font-display); font-size: 2.4rem; font-weight: 900; color: var(--ds-status-ok); line-height: .7; }
+#drawer-knowledge-mount .ue-proof__t { font-family: var(--ds-font-serif); font-size: .9rem; line-height: 1.55; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .ue-proof__t b { color: var(--ds-ink); font-weight: 600; }
+#drawer-knowledge-mount .ue-proof__cite { display: block; margin-top: 6px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-faint); }
+#drawer-knowledge-mount .ue-bar { display: flex; align-items: center; gap: var(--ds-space-4); width: 100%; text-align: left; padding: 16px 20px;
+  background: linear-gradient(100deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); border: 0; border-radius: var(--ds-radius-sm);
+  cursor: pointer; box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 3px 14px rgba(200,85,42,.28); transition: transform .15s var(--ds-ease-out), box-shadow .15s var(--ds-ease-out); }
+#drawer-knowledge-mount .ue-bar:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 6px 20px rgba(200,85,42,.36); }
+#drawer-knowledge-mount .ue-bar__nm { display: block; font-family: var(--ds-font-display); font-size: 1.02rem; font-weight: 800; letter-spacing: .01em; color: #fff; line-height: 1.15; }
+#drawer-knowledge-mount .ue-bar__sub { display: block; font-family: var(--ds-font-sans); font-size: .74rem; font-weight: 500; color: rgba(255,255,255,.9); margin-top: 6px; }
+#drawer-knowledge-mount .ue-bar__r { margin-left: auto; display: flex; align-items: center; gap: 14px; flex: none; }
+#drawer-knowledge-mount .ue-bar__price { text-align: right; }
+#drawer-knowledge-mount .ue-bar__pn { display: block; font-family: var(--ds-font-display); font-size: 1.5rem; font-weight: 900; color: #fff; line-height: 1; }
+#drawer-knowledge-mount .ue-bar__pl { display: block; font-family: var(--ds-font-mono); font-size: .52rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-top: 4px; }
+#drawer-knowledge-mount .ue-bar__chev { font-family: var(--ds-font-mono); font-size: 1.5rem; line-height: 1; color: #fff; }
+#drawer-knowledge-mount .ue-foot { font-family: var(--ds-font-mono); font-size: .58rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ds-ink-faint); margin: 10px 2px 0; }
+
+/* ── the shared full record framing (cards remain the shared facetSections renderer) ── */
+#drawer-knowledge-mount .sxr-wrap { margin-top: var(--ds-space-9); padding-top: var(--ds-space-6); border-top: 2px solid var(--ds-rule); }
+#drawer-knowledge-mount .sxr-lead { font-family: var(--ds-font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 4px; }
+#drawer-knowledge-mount .sxr-lead b { color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .sxr-h { font-family: var(--ds-font-display); font-size: 1.4rem; font-weight: 800; color: var(--ds-ink); margin: 0 0 6px; }
+#drawer-knowledge-mount .sxr-sub { font-family: var(--ds-font-serif); font-size: .92rem; line-height: 1.55; color: var(--ds-ink-medium); max-width: 62ch; margin: 0 0 var(--ds-space-5); }
+
+@media (max-width: 780px) {
+  #drawer-knowledge-mount .sxb-wrap, #drawer-knowledge-mount .frt-scene { grid-template-columns: 1fr; }
+  #drawer-knowledge-mount .ue-strip { grid-template-columns: 1fr 1fr; }
+  #drawer-knowledge-mount .sxb-scale { height: 380px; }
+}
 
 #drawer-knowledge-mount .kd-explore { --fam-story: #8a52d6; padding: 6px 0 30px; }
 #drawer-knowledge-mount .kd-explore-group { margin-top: var(--ds-space-5); }

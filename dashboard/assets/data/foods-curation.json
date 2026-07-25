@@ -30,10 +30,17 @@
     "id": "WAL-CLM-EPIGEN-000158",
     "highlight_from": "the consumption of gluten"
   },
+  "sec04_quote": {
+    "id": "WAL-CLM-DDDL-000132",
+    "excerpt_from": "Normally the stomach is sterile",
+    "excerpt_to": "migrates up into the stomach.",
+    "mark": "sterile"
+  },
   "enzyme_claims": [
     "WAL-CLM-DDDL-000131",
     "WAL-CLM-DDDL-000128",
     "WAL-CLM-IMMORT-000078",
-    "WAL-CLM-DDDL-000130"
+    "WAL-CLM-DDDL-000130",
+    "WAL-CLM-DDDL-000134"
   ]
 }
