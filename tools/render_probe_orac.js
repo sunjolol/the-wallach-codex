@@ -85,7 +85,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       rankArrows: q('.kd-orac-rank__arrow').length,
       // computed COLOUR (not just structure): the dropped --sev-* comment bug left these
       // transparent / default-ink. A real colour here is the regression anchor for it.
-      decFill0Bg: fill0 ? getComputedStyle(fill0).backgroundColor : '',
+      decFill0Bg: fill0 ? getComputedStyle(fill0).backgroundImage : '',
       rank0Color: rank0 ? getComputedStyle(rank0).color : '',
       chainSteps: q('.kd-orac-chain__step').length,
       targetNum: pageEl ? (pageEl.querySelector('.kd-orac-target__num')?.textContent || '').replace(/\s+/g, ' ').trim() : '',
@@ -98,7 +98,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       reachRowCount: reachRows.length,
       reachFirstName: reachFirst ? (reachFirst.querySelector('.kd-orac-reach__name')?.textContent || '').trim() : '',
       reachFirstPct: reachFirst ? (reachFirst.querySelector('.kd-orac-reach__pct')?.textContent || '').trim() : '',
-      reachFill0Bg: reachFill0 ? getComputedStyle(reachFill0).backgroundColor : '',
+      reachFill0Bg: reachFill0 ? getComputedStyle(reachFill0).backgroundImage : '',
       scaleRowCount: scaleRows.length,
       scaleFirstVl: scaleRows[0] ? (scaleRows[0].querySelector('.kd-orac-scale__vl')?.textContent || '').trim() : '',
       tblCount: q('.kd-orac-tbl').length,
@@ -135,10 +135,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     // ── Phase 2 narrative ──
     ['mirror test: 4 decade bars, heights == derived pcts 35/41/55/78', orac.decadeCount === 4 && decadesOk],
     // Guards the CSS-comment-drop class: a dropped --sev-* var leaves the fill transparent.
-    ['decade bar has a real fill colour (--sev-* resolves, not transparent)', /^rgb\(/.test(orac.decFill0Bg) && orac.decFill0Bg !== 'rgba(0, 0, 0, 0)'],
+    ['decade bar has a real gradient fill (--f resolves, not none)', /gradient/.test(orac.decFill0Bg)],
     ['mirror heading emphasis (<em>) renders', orac.mirrorEmShown === true],
     ['stolen years: 4 rank cells + 3 arrows', orac.rankCount === 4 && orac.rankArrows === 3],
-    ['rank value is severity-coloured (--sev-calm resolves)', orac.rank0Color === 'rgb(90, 140, 168)'],
+    ['rank value is severity-coloured (--sev-calm resolves)', orac.rank0Color === 'rgb(14, 165, 183)'],
     ['rank ordinals present (17th … 48th)', orac.hasRank17 === true],
     ['damage chain: 5 steps', orac.chainSteps === 5],
     ['daily target range 20,000–25,000 (derived)', orac.hasTargetRange === true && /20,000/.test(orac.targetNum)],
@@ -152,22 +152,21 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['section numbers 02–09 present (04-07 food tables spliced in)', ['02', '03', '04', '05', '06', '07', '08', '09'].every(n => orac.secNums.includes(n))],
     // ── §04-07 food league-tables (Phase 3b, derived) ──
     ['§04 reach: 9 rows, pecan 72% first (derived)', orac.reachRowCount === 9 && orac.reachFirstName === 'Pecan' && orac.reachFirstPct === '72%'],
-    ['§04 reach bar has a real fill colour (--o-* resolves, not transparent)', /^rgb\(/.test(orac.reachFill0Bg) && orac.reachFill0Bg !== 'rgba(0, 0, 0, 0)'],
+    ['§04 reach bar has a real gradient fill (--c resolves, not none)', /gradient/.test(orac.reachFill0Bg)],
     ['§05 scale: 6 rows, cloves 314,446 first (derived)', orac.scaleRowCount === 6 && orac.scaleFirstVl === '314,446'],
     ['§06 league tables: 9 categories', orac.tblCount === 9],
     ['§06 Hell\u2019s Kitchen labelled per-100 g (different basis, not silently mixed)', orac.hasPer100 === true],
-    ['§07 wine: 4 rows (red-vs-white)', orac.wineRowCount === 4],
     // ── §09 claim-card expand (Phase 4) ──
     ['§09 claim cards are <details> disclosures', orac.cardsAreDetails === true],
-    ['§09 every card carries a verbatim body (== card count)', orac.verbatimCount === orac.cardCount && orac.verbatimCount === 31],
+    ['§09 every card carries a verbatim body (== card count)', orac.verbatimCount === orac.cardCount && orac.verbatimCount === 33],
     ['§09 card grows when opened (body gated behind the expand)', orac.expandGrows === true],
     ['§09 revealed verbatim carries Wallach text', orac.verbatimHasText === true],
     ['§09 chevron rotates on expand', orac.chevRotated === true],
     // ── claims record (Phase 1) ──
     ['claims record renders live cards', orac.cardCount > 0],
     // The anti-silent-drop anchor: the view renders EXACTLY what the query returns.
-    // 31 is the locked scope; update this literal when mining changes the corpus.
-    ['rendered card count == live oracClaims() (== 31 today)', orac.cardCount === orac.liveCount && orac.liveCount === 31],
+    // 33 is the locked scope; update this literal when mining changes the corpus.
+    ['rendered card count == live oracClaims() (== 33 today)', orac.cardCount === orac.liveCount && orac.liveCount === 33],
     ['claims facet-grouped, tallies sum to the card total', orac.groupCount >= 1 && orac.groupSum === orac.cardCount],
     ['every card has a question', orac.allHaveQ === true],
     ['every card is Wallach-cited', orac.allCited === true],

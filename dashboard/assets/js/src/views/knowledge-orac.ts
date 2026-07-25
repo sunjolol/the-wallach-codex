@@ -117,7 +117,7 @@ function renderMirror(od: OracData): string {
   const d = od.decades;
   const capKeys = ['kd_orac_dec_cap1', 'kd_orac_dec_cap2', 'kd_orac_dec_cap3', 'kd_orac_dec_cap4'];
   const cols = d.rows.map((r, i) => `<div class="kd-orac-dec">
-      <div class="kd-orac-dec__bar"><div class="kd-orac-dec__fill" style="height:${r.pct}%;background:${SEV_VARS[i] ?? 'var(--sev-crit)'}"><div class="kd-orac-dec__pct" style="bottom:6px;">${r.pct}%<span class="kd-orac-dec__cap" style="display:block;">${escHTML(ui(capKeys[i] ?? ''))}</span></div></div></div>
+      <div class="kd-orac-dec__bar"><div class="kd-orac-dec__fill" style="height:${r.pct}%;--f:${SEV_VARS[i] ?? 'var(--sev-crit)'}"><div class="kd-orac-dec__pct" style="bottom:6px;">${r.pct}%<span class="kd-orac-dec__cap" style="display:block;">${escHTML(ui(capKeys[i] ?? ''))}</span></div></div></div>
       <div class="kd-orac-dec__age">${escHTML(ui('kd_orac_dec_age_prefix'))}${escHTML(r.age)}</div>
       <div class="kd-orac-dec__lbl">${escHTML(ui('kd_orac_dec_lbl'))}</div>
     </div>`).join('');
@@ -156,13 +156,13 @@ function renderSteal(od: OracData): string {
 
 // ─── §02 · the damage chain (five lay-language steps) ────────────────────────
 
-/** Per-step chrome colour ramp (calm -> critical) -- matches the signed-off demo's inline hues. */
-const CHAIN_COLORS = ['#5a8ca8', '#c9902f', '#c85a2c', '#a03f2c', '#8a2f2f'];
+/** Per-step chrome colour ramp (calm -> critical); CSS builds a gradient from --f (2026-07-24 re-imagining). */
+const CHAIN_COLORS = ['#12879b', '#c67d16', '#e0641c', '#c8382a', '#a3182f'];
 
 function renderChain(): string {
   const cards = CHAIN_COLORS.map((c, i) => {
     const n = i + 1;
-    return `<div class="kd-orac-chain__step" style="background:${c}">
+    return `<div class="kd-orac-chain__step" style="--f:${c}">
       <div class="kd-orac-chain__i">${String(n).padStart(2, '0')}</div>
       <div class="kd-orac-chain__t">${escHTML(ui(`kd_orac_chain_s${n}_t`))}</div>
       <div class="kd-orac-chain__d">${escHTML(ui(`kd_orac_chain_s${n}_d`))}</div>

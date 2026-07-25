@@ -21,7 +21,7 @@ WHERE THE NUMBERS COME FROM -- the two ORAC bases, kept separate and LABELLED:
 
 WHAT THE CURATION DECIDES (dashboard/assets/data/orac-foods-curation.json -- hand-authored,
 numbers-free): only NAMES (display fixes for the source's OCR typos), GROUPING (food ->
-category), COLOUR (per category), and SELECTION (the reach 9 + scale 6 + the omitted baby
+category), COLOUR (per category, or a per-food reach override), and SELECTION (the reach 9 + scale 6 + the omitted baby
 foods). Each curation `raw` is a byte-exact join key into a pool. THE DERIVE HARD-FAILS
 (FoodsError) if a `raw` does not resolve, or if any per-serving pool row is neither placed
 in a category nor listed in `omit` -- a silent drop reddens the board, never ships.
@@ -197,7 +197,7 @@ def build_data() -> dict:
     if both:
         raise FoodsError(f"rows both placed and omitted: {sorted(both)}")
 
-    # --- 04 REACH: each food as % of the daily target ---------------------------------
+    # --- 04 REACH: each food as % of the daily target (colour = category, or a per-food override) ---
     target = _reach_target(claims)
     reach_rows = []
     for r in curation["reach"]:
@@ -206,7 +206,7 @@ def build_data() -> dict:
         if raw not in raw_color:
             raise FoodsError(f"[reach] {raw!r} has no category colour (place it in a category)")
         pct = round(val / target * 100)
-        reach_rows.append({"name": disp, "color": raw_color[raw],
+        reach_rows.append({"name": disp, "color": r.get("color") or raw_color[raw],
                            "pct": pct, "over": val > target})
 
     # --- 05 SCALE: spice-outlier bars relative to the first (cloves) -------------------

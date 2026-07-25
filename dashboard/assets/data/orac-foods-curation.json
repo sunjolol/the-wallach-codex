@@ -1,5 +1,5 @@
 {
-  "_purpose": "ORAC food league-tables CURATION (sections 04-07 of the Knowledge ORAC tab). HAND-AUTHORED editorial arrangement, MANIFEST-accounted, and NUMBERS-FREE: every `raw` string is a byte-exact join key into a sealed food_source claim's verbatim, and eden/tools/orac_foods_derive.py looks up the ORAC value there -- no score is typed here (R1/R3/SS00.A; the mineral-tiers lesson). This file decides only NAMES (display fixes for the source's OCR typos: Suavignon->Sauvignon, Pomagranate->Pomegranate, Gogi->goji, Aronia Black chokeberry->Aronia chokeberry), GROUPING (which food in which category), COLOUR (per category), and SELECTION (the reach 9 + scale 6, and the 4 baby-food rows the signed-off demo omits). Mirrors the signed-off temporary/orac-EDITED.html sections 04-07 exactly. Category `source` picks the pool: perserv (Immortality per-serving, claims 000240/241/263/264) or per100 (Hell's Kitchen per-100 g, HELLS-000014) -- the two bases are LABELLED, never silently mixed. reach/scale row colour is inherited from the food's category (single-sourced). The derive HARD-FAILS if a `raw` does not resolve, or if any per-serving pool row is neither placed in a category nor listed in `omit` (no silent drop).",
+  "_purpose": "ORAC food league-tables CURATION (sections 04-07 of the Knowledge ORAC tab). HAND-AUTHORED editorial arrangement, MANIFEST-accounted, and NUMBERS-FREE: every `raw` string is a byte-exact join key into a sealed food_source claim's verbatim, and eden/tools/orac_foods_derive.py looks up the ORAC value there -- no score is typed here (R1/R3/SS00.A; the mineral-tiers lesson). This file decides only NAMES (display fixes for the source's OCR typos: Suavignon->Sauvignon, Pomagranate->Pomegranate, Gogi->goji, Aronia Black chokeberry->Aronia chokeberry), GROUPING (which food in which category), COLOUR (per category), and SELECTION (the reach 9 + scale 6, and the 4 baby-food rows the signed-off demo omits). Mirrors the signed-off temporary/orac-EDITED.html sections 04-07 exactly. Category `source` picks the pool: perserv (Immortality per-serving, claims 000240/241/263/264) or per100 (Hell's Kitchen per-100 g, HELLS-000014) -- the two bases are LABELLED, never silently mixed. reach/scale row colour is inherited from the food's category (single-sourced) unless a reach entry sets its own color override for the editorial spectrum (e.g. prune juice -> o-plum, green tea -> o-leaf). The derive HARD-FAILS if a `raw` does not resolve, or if any per-serving pool row is neither placed in a category nor listed in `omit` (no silent drop).",
   "reach_target_claim": "WAL-CLM-IMMORT-000238",
   "categories": [
     { "key": "spices", "label": "Spices", "color": "o-spice", "basis": "per serving", "source": "perserv",
@@ -95,11 +95,11 @@
     { "raw": "Hazelnuts (filberts)", "display": "Hazelnuts" },
     { "raw": "Blueberry juice", "display": "Blueberry juice" },
     { "raw": "Artichoke hearts", "display": "Artichoke hearts" },
-    { "raw": "Prune juice", "display": "Prune juice" },
+    { "raw": "Prune juice", "display": "Prune juice", "color": "o-plum" },
     { "raw": "Raspberry", "display": "Raspberry" },
     { "raw": "Wine, red (Cabernet Suavignon)", "display": "Cabernet Sauvignon" },
     { "raw": "Dark chocolate pieces", "display": "Dark chocolate" },
-    { "raw": "Green tea, brewed", "display": "Green tea, brewed" }
+    { "raw": "Green tea, brewed", "display": "Green tea, brewed", "color": "o-leaf" }
   ],
   "scale": [
     { "raw": "Cloves, ground", "display": "Cloves, ground" },
