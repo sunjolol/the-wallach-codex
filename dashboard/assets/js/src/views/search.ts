@@ -30,6 +30,8 @@ import {
   type EntitySummary,
   type FamilyCount,
   familyCounts,
+  type FamilyTopic,
+  familyTopics,
   getEntity,
   isChargedEntity,
   relatedSlugs,
@@ -392,6 +394,47 @@ function renderOpening(): string {
     <div class="kstack">${familyCounts().map(card).join('')}</div>`;
 }
 
+/** One browse topic card — its dominant-facet micro-label, in-family count, name, and a peek (its
+ *  crispest answer_short). Coloured by the browse family (data-family); a click opens the topic's own
+ *  page through the shared data-sr-entity path. */
+function renderBrowseCard(familyId: string, t: FamilyTopic): string {
+  return `
+    <button class="brow-card" data-family="${escHTML(familyId)}" data-sr-entity="${escHTML(t.subject)}">
+      <span class="brow-card__top">
+        <span class="brow-card__cat"><i></i>${escHTML(facetLabel(t.facet))}</span>
+        <span class="brow-card__n">${t.count}</span>
+      </span>
+      <span class="brow-card__name">${escHTML(displayName(t.subject))}</span>
+      <span class="brow-card__peek">${escHTML(t.peek)}</span>
+    </button>`;
+}
+
+/**
+ * The BROWSE page — reached by clicking a "kind of answer" card on the opening screen. It lists the
+ * TOPICS that have that kind of answer, each a light card (micro-label + count + peek), so a family
+ * with 159 answers browses as ~60 short cards — never a flood of answer bodies (the anti-lag choice:
+ * no glossified answer text renders here). The five lens pills switch families in place; a card opens
+ * that topic's full page. Colour + counts are data-driven; nothing is hand-catalogued.
+ */
+function renderBrowse(familyId: string): string {
+  const topics = familyTopics(familyId);
+  const total = topics.reduce((n, t) => n + t.count, 0);
+  const lens = familyCounts().map(f => `
+    <button class="brow-lens__b${f.id === familyId ? ' is-active' : ''}" data-family="${escHTML(f.id)}" data-aw-family="${escHTML(f.id)}">${escHTML(ui(`search_fam_${f.id}_name`))}</button>`).join('');
+  const cards = topics.map(t => renderBrowseCard(familyId, t)).join('');
+  return `
+    <div class="brow-lens">${lens}</div>
+    <div class="brow-head" data-family="${escHTML(familyId)}">
+      <div class="brow-head__main">
+        <div class="brow-head__k">${escHTML(ui('search_browse_label'))}</div>
+        <div class="brow-head__t">${escHTML(ui(`search_fam_${familyId}_name`))}</div>
+        <div class="brow-head__m"><b>${topics.length}</b> topics · <b>${total}</b> ${total === 1 ? 'answer' : 'answers'}</div>
+      </div>
+      <button class="brow-head__back" data-aw-browse-back type="button">‹ Go Back</button>
+    </div>
+    <div class="brow-grid" data-family="${escHTML(familyId)}">${cards}</div>`;
+}
+
 /** No-match: a calm dead-end with real suggestion chips (the busiest topics), never a bare "no results". */
 function renderEmpty(query: string): string {
   const sugg = entityList()
@@ -426,8 +469,10 @@ function renderBody(result: SearchResult): string {
 function renderShell(): string {
   return `
     <div class="scr" data-aw-pop>
+      <button class="scr-nav scr-nav--back" data-aw-nav-back type="button" aria-label="Back" title="Back" hidden><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="scr-nav scr-nav--close" data-aw-nav-close type="button" aria-label="Close search" title="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       <div class="scr-head">
-        <div class="scr-id">Ask <em>Wallach</em></div>
+        <button class="scr-id" data-aw-home type="button" title="Back to the start">Ask <em>Wallach</em></button>
         <div class="aw-search">
           <div class="aw-search__well">
             <input class="aw-search__input" type="text" placeholder="${escHTML(ui('search_placeholder'))}" autocomplete="off" spellcheck="false" />
@@ -445,23 +490,58 @@ export function mount(container: HTMLElement): DrawerHandle {
   let isOpen = false;
   let query = '';
   let lastKey = '';
+  // The active browse family (a "kind of answer" card was clicked), or null for the normal
+  // query-driven modes. Set by a kcard/lens click; cleared by back, typing, or entity navigation.
+  let browseFamily: string | null = null;
+  // Navigation history for the back button: each entry is a full page state (query + browseFamily),
+  // so restoring one re-renders deterministically. Pushed on every click-navigation, never per
+  // keystroke; capped so it can't grow unbounded.
+  const navHistory: { query: string; browseFamily: string | null }[] = [];
+  const pushNav = (): void => {
+    navHistory.push({ query, browseFamily });
+    if (navHistory.length > 50) {
+      navHistory.shift();
+    }
+  };
+  // The corner back arrow hides only on the pristine opening screen (nothing to go back to).
+  const syncNav = (): void => {
+    const back = container.querySelector<HTMLElement>('.scr-nav--back');
+    if (back !== null) {
+      back.hidden = navHistory.length === 0 && browseFamily === null && query.trim() === '';
+    }
+  };
 
   const resultKey = (r: SearchResult): string => `${r.mode}|${r.subject}|${r.claim?.id ?? ''}|${r.noMatch}`;
 
   const paintBody = (force: boolean): void => {
+    const body = container.querySelector<HTMLElement>('.scr-body');
+    if (body === null) {
+      return;
+    }
+    // Browse mode (a "kind of answer" card was clicked) is a UI navigation state, not a query
+    // result — it short-circuits the query resolver until the user goes back or types.
+    if (browseFamily !== null) {
+      const bkey = `browse|${browseFamily}`;
+      if (!force && bkey === lastKey) {
+        return;
+      }
+      lastKey = bkey;
+      body.innerHTML = renderBrowse(browseFamily);
+      body.scrollTop = 0;
+      syncNav();
+      return;
+    }
     const result = resolveQuery(query);
     const key = resultKey(result);
     if (!force && key === lastKey) {
       return;
     }
     lastKey = key;
-    const body = container.querySelector<HTMLElement>('.scr-body');
-    if (body !== null) {
-      body.innerHTML = renderBody(result);
-      // Every repaint starts at the top: a fresh topic/opening must not inherit the previous
-      // view's scroll offset (replacing innerHTML alone does not reset it). Luneth 2026-07-09.
-      body.scrollTop = 0;
-    }
+    body.innerHTML = renderBody(result);
+    // Every repaint starts at the top: a fresh topic/opening must not inherit the previous
+    // view's scroll offset (replacing innerHTML alone does not reset it). Luneth 2026-07-09.
+    body.scrollTop = 0;
+    syncNav();
   };
 
   const syncSearchbar = (): void => {
@@ -469,6 +549,29 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (input !== null) {
       input.value = query;
     }
+  };
+
+  // Step back one navigation (restore the last page state), or reset to opening if the stack is empty.
+  const goBack = (): void => {
+    const prev = navHistory.pop();
+    if (prev !== undefined) {
+      query = prev.query;
+      browseFamily = prev.browseFamily;
+    }
+    else {
+      query = '';
+      browseFamily = null;
+    }
+    syncSearchbar();
+    paintBody(true);
+  };
+  // "Ask Wallach" -> a hard reset to the opening screen, clearing the whole history.
+  const goHome = (): void => {
+    navHistory.length = 0;
+    query = '';
+    browseFamily = null;
+    syncSearchbar();
+    paintBody(true);
   };
 
   const render = (): void => {
@@ -497,6 +600,8 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
     isOpen = false;
     query = '';
+    browseFamily = null;
+    navHistory.length = 0;
     container.classList.remove('sr-open');
     container.innerHTML = '';
     emit('drawer:toggled', { target: 'search', open: false });
@@ -512,6 +617,8 @@ export function mount(container: HTMLElement): DrawerHandle {
 
   /** Navigate to a topic page by slug — the search bar shows its name; exact-match resolves the page. */
   const gotoEntity = (slug: string): void => {
+    pushNav();
+    browseFamily = null;
     query = displayName(slug);
     syncSearchbar();
     paintBody(true);
@@ -543,6 +650,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (t === null || !t.classList.contains('aw-search__input')) {
       return;
     }
+    browseFamily = null;
     query = (t as HTMLInputElement).value;
     paintBody(false);
   });
@@ -555,6 +663,35 @@ export function mount(container: HTMLElement): DrawerHandle {
     // A click on the scrim (the mount host, outside the popup panel) closes — a centered modal.
     if (target.closest('[data-aw-pop]') === null) {
       close();
+      return;
+    }
+    // Close (top-right) — an explicit affordance beside click-outside-to-close.
+    if (target.closest('[data-aw-nav-close]') !== null) {
+      close();
+      return;
+    }
+    // "Ask Wallach" (the title) → a hard reset to the opening screen, clearing history.
+    if (target.closest('[data-aw-home]') !== null) {
+      goHome();
+      return;
+    }
+    // Top-left arrow — steps back one navigation (or home if the stack is empty).
+    if (target.closest('[data-aw-nav-back]') !== null) {
+      goBack();
+      return;
+    }
+    // Browse "Go Back" — up to the opening kinds screen (same destination as the title).
+    if (target.closest('[data-aw-browse-back]') !== null) {
+      goHome();
+      return;
+    }
+    // A "kind of answer" card (opening) OR a lens pill (browse) — both carry data-aw-family — opens
+    // or switches the browse page for that family. The five opening kcards were dead links until now.
+    const famEl = target.closest<HTMLElement>('[data-aw-family]');
+    if (famEl !== null) {
+      pushNav();
+      browseFamily = famEl.getAttribute('data-aw-family');
+      paintBody(true);
       return;
     }
     // "Learn More →" → open this entity's Knowledge page: a condition/essential/product detail page,

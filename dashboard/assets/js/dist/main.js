@@ -71989,6 +71989,43 @@ deaths, blood clots, sterility`,
     }
     return m;
   })();
+  function familyTopics(familyId) {
+    const bySubject = /* @__PURE__ */ new Map();
+    for (const c of index2().claims) {
+      if (FACET_FAMILY.get(c.facet) === familyId) {
+        const arr = bySubject.get(c.subject);
+        if (arr === void 0) {
+          bySubject.set(c.subject, [c]);
+        } else {
+          arr.push(c);
+        }
+      }
+    }
+    const out = [];
+    for (const [subject, cs] of bySubject) {
+      let peek = cs[0];
+      const byFacet = /* @__PURE__ */ new Map();
+      for (const c of cs) {
+        byFacet.set(c.facet, (byFacet.get(c.facet) ?? 0) + 1);
+        const short = c.answer_short.trim();
+        const cur = peek.answer_short.trim();
+        if (short.length > 0 && (cur.length === 0 || short.length < cur.length)) {
+          peek = c;
+        }
+      }
+      let facet = cs[0].facet;
+      let facetN = -1;
+      for (const [f, n] of byFacet) {
+        if (n > facetN) {
+          facetN = n;
+          facet = f;
+        }
+      }
+      out.push({ subject, count: cs.length, facet, peek: peek.answer_short.trim() });
+    }
+    out.sort((a, b) => b.count - a.count || (displayName2(a.subject).toLowerCase() < displayName2(b.subject).toLowerCase() ? -1 : 1));
+    return out;
+  }
   var CATEGORY_FAMILY = {
     teal: "science",
     green: "action",
@@ -72070,7 +72107,7 @@ deaths, blood clots, sterility`,
     return out.slice(0, 8);
   }
   var bridge = window;
-  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies, oracClaims };
+  bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, familyTopics, entityFamilies, oracClaims };
 
   // assets/js/src/views/glossify.ts
   function escHTML3(s) {
@@ -106268,7 +106305,15 @@ Files:
 
 Trialed then reverted (no net change): a per-panel SVG <linearGradient> (lit dome -> deeper base) filling the villi fingers, with the stops styled in CSS to respect the file's "colours live in CSS, not SVG attributes" rule. Reverted via git checkout of knowledge-foods.ts plus a surgical CSS revert that stripped the gradient fill/stop rules while KEEPING the section-number gradient. The design decision is logged so a future session knows the villi gradient was considered and set aside by preference, not forgotten.
 
-Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 python tools/invariants.py 77/77; render_probe_knowledge PASS (villi figure counts intact: 2 arts / 18 fingers / 12 dots); headless screenshot confirmed the gradient number renders and the villi chart is back to its original outline style. Net diff vs the prior commit is drawer-knowledge.css only \u2014 main.js is byte-identical (the number gradient is a linked stylesheet, not bundled). Nothing sealed touched.` }];
+Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 python tools/invariants.py 77/77; render_probe_knowledge PASS (villi figure counts intact: 2 arts / 18 fingers / 12 dots); headless screenshot confirmed the gradient number renders and the villi chart is back to its original outline style. Net diff vs the prior commit is drawer-knowledge.css only \u2014 main.js is byte-identical (the number gradient is a linked stylesheet, not bundled). Nothing sealed touched.` }, { id: "lg_ms0ig70i_4r71a6", ts: "2026-07-25T10:15:04.194237-05:00", surface: "search", kind: "round-close", summary: "Ask-Wallach's five 'kind of answer' cards were dead links \u2014 now each opens a browse page of the topics under that kind (light cards with a one-line peek), and clicking a topic opens its full page; plus search-wide nav: a back arrow, a Go Back, a home-on-title, and a close X.", detail: `The Search popup's five category cards ("The Science", "What To Do", etc.) did nothing when clicked. Now clicking one opens a browse page that lists the topics that have that kind of answer \u2014 e.g. "The Science" shows 62 light cards (Colloidal Minerals, Mercury, Calcium\u2026), each with a one-line peek \u2014 and clicking a topic opens its full page. I also added easy navigation across the whole search: a round back arrow top-left (go back one page), a "Go Back" button that returns to the kinds screen, a clickable "Ask Wallach" title to jump home, and a round \u2715 to close.
+
+TECHNICAL. state/search.ts: new familyTopics(familyId) \u2014 filters the search claims by their facet-family (FACET_FAMILY map), groups by PRIMARY subject, and returns {subject, in-family count, dominant facet, peek = crispest answer_short} sorted by count desc then display name. It needs NO new cataloguing because facet + subject are already on every one of the 381 claims (gate-enforced). Exposed on the window bridge. views/search.ts: a new renderBrowse/renderBrowseCard mode; a browseFamily UI-state var plus a small navigation-history stack (pushNav/goBack/goHome/syncNav) where each entry is a full page state {query, browseFamily} so restoring one re-renders deterministically. Wired the previously-dead data-aw-family attribute on the opening cards AND the lens pills; added corner-nav handlers (data-aw-nav-back = step back, data-aw-nav-close = close, data-aw-home = hard reset to opening) and the browse "Go Back" (data-aw-browse-back = to opening). gotoEntity pushes history (so topic\u2192topic\u2192back works); typing and close reset appropriately; the back arrow hides only on the pristine opening screen. styles/drawer-search.css: the .brow-* card/grid/header styles, lens pills on one line with the count removed, .brow-head made a flex row (text __main + right-aligned __back), and the circular corner buttons (.scr-nav) + .scr-id turned into a button. tools/render_probe_search_browse.js: a new ~20-assertion headless probe driving the whole flow end to end.
+
+Charged content: the browse INCLUDES homosexuality/intersex under "Wallach's Take" \u2014 Luneth ratified this (2026-07-25) as consistent with the Knowledge Explore tab, which already lists them; the search charged-gate remains search-results-only.
+
+Design call (Luneth aware): the header "Go Back" jumps straight to the opening kinds, while the top-left \u2190 steps back one page \u2014 deliberately different so they complement rather than duplicate.
+
+Verified: build OK (tsc + esbuild); invariants 77/77 (0 failed); render_probe_search_browse PASS with 0 page errors; render_probe_search + render_probe_search_routing PASS (no regression to the catch-all or intent routing); 0 NEW eslint errors (2 pre-existing in the view); live screenshots signed off by Luneth.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -107762,6 +107807,35 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
     <div class="scr-label">${escHTML16(ui("search_browse_label"))}</div>
     <div class="kstack">${familyCounts().map(card).join("")}</div>`;
   }
+  function renderBrowseCard(familyId, t) {
+    return `
+    <button class="brow-card" data-family="${escHTML16(familyId)}" data-sr-entity="${escHTML16(t.subject)}">
+      <span class="brow-card__top">
+        <span class="brow-card__cat"><i></i>${escHTML16(facetLabel(t.facet))}</span>
+        <span class="brow-card__n">${t.count}</span>
+      </span>
+      <span class="brow-card__name">${escHTML16(displayName2(t.subject))}</span>
+      <span class="brow-card__peek">${escHTML16(t.peek)}</span>
+    </button>`;
+  }
+  function renderBrowse(familyId) {
+    const topics = familyTopics(familyId);
+    const total = topics.reduce((n, t) => n + t.count, 0);
+    const lens = familyCounts().map((f) => `
+    <button class="brow-lens__b${f.id === familyId ? " is-active" : ""}" data-family="${escHTML16(f.id)}" data-aw-family="${escHTML16(f.id)}">${escHTML16(ui(`search_fam_${f.id}_name`))}</button>`).join("");
+    const cards2 = topics.map((t) => renderBrowseCard(familyId, t)).join("");
+    return `
+    <div class="brow-lens">${lens}</div>
+    <div class="brow-head" data-family="${escHTML16(familyId)}">
+      <div class="brow-head__main">
+        <div class="brow-head__k">${escHTML16(ui("search_browse_label"))}</div>
+        <div class="brow-head__t">${escHTML16(ui(`search_fam_${familyId}_name`))}</div>
+        <div class="brow-head__m"><b>${topics.length}</b> topics \xB7 <b>${total}</b> ${total === 1 ? "answer" : "answers"}</div>
+      </div>
+      <button class="brow-head__back" data-aw-browse-back type="button">\u2039 Go Back</button>
+    </div>
+    <div class="brow-grid" data-family="${escHTML16(familyId)}">${cards2}</div>`;
+  }
   function renderEmpty(query) {
     const sugg = entityList().filter((e) => !isChargedEntity(e.slug)).sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
     const chip2 = (e) => `<button class="echip" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(e.slug)}">${escHTML16(e.display_name)}</button>`;
@@ -107787,8 +107861,10 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
   function renderShell4() {
     return `
     <div class="scr" data-aw-pop>
+      <button class="scr-nav scr-nav--back" data-aw-nav-back type="button" aria-label="Back" title="Back" hidden><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="scr-nav scr-nav--close" data-aw-nav-close type="button" aria-label="Close search" title="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       <div class="scr-head">
-        <div class="scr-id">Ask <em>Wallach</em></div>
+        <button class="scr-id" data-aw-home type="button" title="Back to the start">Ask <em>Wallach</em></button>
         <div class="aw-search">
           <div class="aw-search__well">
             <input class="aw-search__input" type="text" placeholder="${escHTML16(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
@@ -107803,25 +107879,71 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
     let isOpen = false;
     let query = "";
     let lastKey = "";
+    let browseFamily = null;
+    const navHistory = [];
+    const pushNav = () => {
+      navHistory.push({ query, browseFamily });
+      if (navHistory.length > 50) {
+        navHistory.shift();
+      }
+    };
+    const syncNav = () => {
+      const back = container.querySelector(".scr-nav--back");
+      if (back !== null) {
+        back.hidden = navHistory.length === 0 && browseFamily === null && query.trim() === "";
+      }
+    };
     const resultKey = (r) => `${r.mode}|${r.subject}|${r.claim?.id ?? ""}|${r.noMatch}`;
     const paintBody = (force) => {
+      const body = container.querySelector(".scr-body");
+      if (body === null) {
+        return;
+      }
+      if (browseFamily !== null) {
+        const bkey = `browse|${browseFamily}`;
+        if (!force && bkey === lastKey) {
+          return;
+        }
+        lastKey = bkey;
+        body.innerHTML = renderBrowse(browseFamily);
+        body.scrollTop = 0;
+        syncNav();
+        return;
+      }
       const result = resolveQuery(query);
       const key = resultKey(result);
       if (!force && key === lastKey) {
         return;
       }
       lastKey = key;
-      const body = container.querySelector(".scr-body");
-      if (body !== null) {
-        body.innerHTML = renderBody(result);
-        body.scrollTop = 0;
-      }
+      body.innerHTML = renderBody(result);
+      body.scrollTop = 0;
+      syncNav();
     };
     const syncSearchbar = () => {
       const input = container.querySelector(".aw-search__input");
       if (input !== null) {
         input.value = query;
       }
+    };
+    const goBack = () => {
+      const prev = navHistory.pop();
+      if (prev !== void 0) {
+        query = prev.query;
+        browseFamily = prev.browseFamily;
+      } else {
+        query = "";
+        browseFamily = null;
+      }
+      syncSearchbar();
+      paintBody(true);
+    };
+    const goHome = () => {
+      navHistory.length = 0;
+      query = "";
+      browseFamily = null;
+      syncSearchbar();
+      paintBody(true);
     };
     const render = () => {
       container.innerHTML = renderShell4();
@@ -107848,6 +107970,8 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
       }
       isOpen = false;
       query = "";
+      browseFamily = null;
+      navHistory.length = 0;
       container.classList.remove("sr-open");
       container.innerHTML = "";
       emit("drawer:toggled", { target: "search", open: false });
@@ -107860,6 +107984,8 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
       }
     };
     const gotoEntity = (slug) => {
+      pushNav();
+      browseFamily = null;
       query = displayName2(slug);
       syncSearchbar();
       paintBody(true);
@@ -107883,6 +108009,7 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
       if (t === null || !t.classList.contains("aw-search__input")) {
         return;
       }
+      browseFamily = null;
       query = t.value;
       paintBody(false);
     });
@@ -107893,6 +108020,29 @@ Verifications: node tools/build.mjs OK (tsc --noEmit + esbuild); PYTHONUTF8=1 py
       }
       if (target.closest("[data-aw-pop]") === null) {
         close();
+        return;
+      }
+      if (target.closest("[data-aw-nav-close]") !== null) {
+        close();
+        return;
+      }
+      if (target.closest("[data-aw-home]") !== null) {
+        goHome();
+        return;
+      }
+      if (target.closest("[data-aw-nav-back]") !== null) {
+        goBack();
+        return;
+      }
+      if (target.closest("[data-aw-browse-back]") !== null) {
+        goHome();
+        return;
+      }
+      const famEl = target.closest("[data-aw-family]");
+      if (famEl !== null) {
+        pushNav();
+        browseFamily = famEl.getAttribute("data-aw-family");
+        paintBody(true);
         return;
       }
       const learnEl = target.closest("[data-aw-learnmore]");

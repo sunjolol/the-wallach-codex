@@ -644,6 +644,64 @@ const FACET_FAMILY: ReadonlyMap<string, string> = (() => {
   return m;
 })();
 
+/** One topic inside a browse family: the subject, its in-family claim count, the dominant facet (the
+ *  card's micro-label), and a peek — its crispest answer_short. */
+export interface FamilyTopic {
+  subject: string;
+  count: number;
+  facet: string;
+  peek: string;
+}
+/**
+ * The topics inside a browse FAMILY — every subject with >= 1 claim whose facet belongs to the family,
+ * each with its in-family count, its dominant family-facet (the card micro-label), and a peek (its
+ * crispest answer_short). Sorted by count desc, then display name. Powers the browse-by-kind grid: a
+ * pure filter-and-group over data every claim already carries (facet + subject, both gate-enforced),
+ * so it needs no new cataloguing. Grouped by PRIMARY subject only (not also_about), so the per-family
+ * topic counts sum to familyCounts()'s total for that family.
+ */
+export function familyTopics(familyId: string): FamilyTopic[] {
+  const bySubject = new Map<string, SearchClaim[]>();
+  for (const c of index().claims) {
+    if (FACET_FAMILY.get(c.facet) === familyId) {
+      const arr = bySubject.get(c.subject);
+      if (arr === undefined) {
+        bySubject.set(c.subject, [c]);
+      }
+      else {
+        arr.push(c);
+      }
+    }
+  }
+  const out: FamilyTopic[] = [];
+  for (const [subject, cs] of bySubject) {
+    // Peek = the crispest (shortest non-empty) answer_short among this subject's in-family claims;
+    // dominant facet = the family facet the subject uses most (its card micro-label).
+    let peek = cs[0] as SearchClaim;
+    const byFacet = new Map<string, number>();
+    for (const c of cs) {
+      byFacet.set(c.facet, (byFacet.get(c.facet) ?? 0) + 1);
+      const short = c.answer_short.trim();
+      const cur = peek.answer_short.trim();
+      if (short.length > 0 && (cur.length === 0 || short.length < cur.length)) {
+        peek = c;
+      }
+    }
+    let facet: string = (cs[0] as SearchClaim).facet;
+    let facetN = -1;
+    for (const [f, n] of byFacet) {
+      if (n > facetN) {
+        facetN = n;
+        facet = f;
+      }
+    }
+    out.push({ subject, count: cs.length, facet, peek: peek.answer_short.trim() });
+  }
+  out.sort((a, b) => (b.count - a.count)
+    || (displayName(a.subject).toLowerCase() < displayName(b.subject).toLowerCase() ? -1 : 1));
+  return out;
+}
+
 /** Corpus colour-category (state/copy::kindCategory) -> the browse family a RAW claim joins. Red
  *  (contraindication) folds into Cautions. Lives in state (not a view), so no colour-literal gate. */
 const CATEGORY_FAMILY: Record<string, string> = {
@@ -768,8 +826,9 @@ const bridge = window as Window & {
     entityList: typeof entityList;
     indexTotals: typeof indexTotals;
     familyCounts: typeof familyCounts;
+    familyTopics: typeof familyTopics;
     entityFamilies: typeof entityFamilies;
     oracClaims: typeof oracClaims;
   };
 };
-bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, entityFamilies, oracClaims };
+bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, familyTopics, entityFamilies, oracClaims };
