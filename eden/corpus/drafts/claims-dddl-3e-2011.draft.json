@@ -4282,6 +4282,108 @@
       "extracted_at": "2026-07-24T21:41:10+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000135",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Selenium's job is to keep the fats in your cells from oxidizing; vegetable oils are polyunsaturated fats that oxidize easily — especially once heated or hydrogenated into trans fats. So Wallach's warning is about the combination: flood the body with rancidity-prone oils while selenium (the antioxidant that would protect them) runs low, and the oils go rancid inside your cells, driving free-radical damage. He calls high vegetable-oil intake concurrent with selenium deficiency “the quickest route to a heart attack and cancer,” and ties the same pairing — including too much fish oil — to birth defects, arteriosclerosis, cardiomyopathy, and sudden cardiac death. The practical point: to him these oils aren't just empty calories, they actively consume the protection selenium is meant to provide.",
+      "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 585540
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "vegetable-oils",
+        "trans-fats",
+        "rancidity",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000136",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "To Wallach, fibromyalgia isn't an unexplained chronic-pain condition but a nutritional muscle disease under a modern name — the same thing veterinarians call white muscle disease or stiff lamb disease, and what he terms adult-onset muscular dystrophy. He notes it was eliminated from lambs, calves, and pigs back in 1957 through nutrition. In humans he frames it as a multiple-deficiency disease with a dietary trigger: a high intake of fried foods and vegetable oils (margarine, cooking oils) combined with deficiencies of selenium, vitamin E, and the sulfur-bearing amino acids. The logic mirrors his selenium thesis throughout — rancidity-prone oils flooding in while the antioxidants that would protect the muscle are missing — so his answer to the pain is to correct the deficiencies and cut the oils, not to mask symptoms with muscle relaxants.",
+      "verbatim": "FIBROMYALGIA (stiff lamb disease, white muscle disease, adult onset\nmuscular dystrophy) is a disease that was eliminated from lambs, calves,\nand pigs in 1957. It is a multiple deficiency disease caused by a high intake\nof fried foods and vegetable oils (margarine, cooking oils, and salad\ndressing) and deficiencies of selenium, vitamin E, and sulfur amino acids",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 763153
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "fibromyalgia",
+        "multiple-deficiency",
+        "vegetable-oils",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000137",
+      "kind": "deficiency_sign",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach treats selenium as a reproductive mineral on both sides of conception. In men, he lists sterility as a direct sign of selenium deficiency. In women, he emphasizes preconception status: adequate selenium in the diet and supplements before conceiving is, in his framing, key both to maintaining the pregnancy and to preventing birth defects like muscular dystrophy and cystic fibrosis in the child. On the deficiency side he links low selenium to infertility, low birth weight, high infant mortality, and sudden infant death syndrome (SIDS). It's consistent with his cystic-fibrosis thesis — that the mother's trace-mineral status in the first months of pregnancy shapes the child's lifelong health — and it's why “preconception nutrition” recurs throughout his prevention advice.",
+      "verbatim": "The selenium levels in\npreconception women is important to the maintenance of pregnancy as well\nas the prevention of muscular dystrophy in all of its forms",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 871109
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "fertility",
+        "pregnancy",
+        "preconception",
+        "deficiency_sign",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

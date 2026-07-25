@@ -2414,7 +2414,17 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "selenium",
+        "se",
+        "selenium supplement",
+        "selenium deficiency",
+        "trace mineral selenium",
+        "sodium selenite",
+        "selenomethionine",
+        "colloidal selenium",
+        "low selenium"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -2572,7 +2582,74 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000135",
+            "WAL-CLM-EPIGEN-000186",
+            "WAL-CLM-LETS-000492"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000137",
+            "WAL-CLM-RARE-000321"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000320"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000187"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000269",
+            "WAL-CLM-RARE-000324"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000491"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000136",
+            "WAL-CLM-RARE-000323"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000188",
+            "WAL-CLM-RARE-000325"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000185"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000322"
+          ]
+        }
+      ],
       "conditions": [
         "adrenoleukodystrophy",
         "aids",

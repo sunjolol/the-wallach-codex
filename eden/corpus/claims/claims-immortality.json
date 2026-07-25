@@ -9161,6 +9161,40 @@
       "extracted_at": "2026-07-24T17:16:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000269",
+      "kind": "interaction",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains a mutual “metabolic antagonism” between mercury and selenium — each blunts the other's toxicity. In practice that means selenium supplements protect against mercury poisoning two specific ways: they guard the human kidney against the tissue death (necrosis) mercury causes, and they block mercury from crossing the placenta into the fetus — a real concern in his view, since mercury vapor off-gasses continuously from “silver” dental amalgam fillings. The antagonism runs both directions (mercury, in turn, protects against selenium overdose), but the practical upshot is that he treats adequate selenium as a frontline defense for anyone carrying mercury fillings or exposed to environmental mercury.",
+      "verbatim": "Because a mutual antagonism between\nHg and Se exists, Se protects the human kidney from necrosis\n(tissue death) by mercury poisoning and the placental transfer\nof mercury.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 283163
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "mercury",
+        "antidote",
+        "dental-amalgam",
+        "interaction",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

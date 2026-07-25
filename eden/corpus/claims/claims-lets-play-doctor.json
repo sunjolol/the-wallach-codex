@@ -19086,6 +19086,74 @@
       "extracted_at": "2026-07-24T15:54:53+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000491",
+      "kind": "dose",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Base Line Nutritional Supplement Program, Wallach lists selenium's daily maintenance target (“True Supplement Need”) at 200 mcg — pointedly leaving the official RDA column as a question mark, since he rejects government RDAs as too low to prevent disease. In his Epigenetics dosing he frames it by body weight: roughly 100–200 mcg per 100 lb per day. Above maintenance he defines a 30-day “pharmacologic” range of 500 to 3,000 mcg for actively reversing a deficiency disease, and for cancer specifically names 1,000–3,000 mcg/day. He also stresses form over milligrams: plant-derived colloidal selenium, he says, is far better absorbed than the cheap metallic kind — so the number on the label only matters if your gut can take it up.",
+      "verbatim": "SELENIUM ? 200 mcg 500 to 3,000 mcg\nSODIUM 1,100 mg 3,300 mg 300 to 3,000 mg",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 139914
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "dose",
+        "maintenance",
+        "base-line-program",
+        "dose",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000492",
+      "kind": "toxicity_sign",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Selenium is one of the minerals where the gap between “enough” and “too much” genuinely matters, and Wallach documents both ends. The tell-tale signs of selenium toxicity, in his listing, are alopecia (hair loss), brittle nails, a distinctive garlic odor on the breath, a metallic taste in the mouth, and arthritis — with kidney and liver dysfunction at more serious excess. It's the necessary counterweight to his high therapeutic doses: the 500–3,000 mcg ranges he cites are deliberate, time-limited treatment levels rather than open-ended daily habits, and these symptoms are the body's signal to pull back.",
+      "verbatim": "SELENIUM TOXICITY\nalopecia\narthritis\nbrittle nails\ngarlic breath\nmetallic taste\nkidney dysfunction\nliver dysfunction",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 91351
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "toxicity",
+        "overdose",
+        "garlic-breath",
+        "toxicity_sign",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:42+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

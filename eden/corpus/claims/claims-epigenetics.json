@@ -6889,6 +6889,142 @@
       "extracted_at": "2026-07-25T16:26:28+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000185",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The monkey, one of a group being studied for the space program, had died of unknown causes; in its pancreas, liver, and lungs Wallach found damage identical to human cystic fibrosis. Two independent pathologists confirmed it — Dr. Victor Nassar of Emory and Dr. John Easterly, a national CF authority in Chicago — and the finding held up: a 2005 retrospective in the ILAR Journal called it “a classic textbook case.” Because the lesions tracked with low selenium, Wallach argues CF is not the inherited genetic disease medicine assumed, but a congenital deficiency of the trace mineral selenium in the embryo or early infancy — and therefore preventable and reversible. Emory terminated him in April 1978; St. Louis University, which had just hired him, fired him before he moved into his office. He later autopsied 1,700 children in Keshan Province, China, and found that 35% of those who died of selenium-deficiency heart disease also carried the pancreatic and liver lesions of cystic fibrosis.",
+      "verbatim": "When Wallach announced that cystic fibrosis was not a genetic disease, but\nrather a congenital deficiency of the trace mineral selenium in the embryo or\nearly postnatal life, Wallach was summarily terminated in April of 1978 from his\nPosition at Yerke's without the ability to defend his observations",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": 134,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 228797
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "discovery",
+        "cystic-fibrosis",
+        "yerkes",
+        "personal_anecdote",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000186",
+      "kind": "deficiency_sign",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Keshan disease is named for Keshan Province, China, where Wallach autopsied 1,700 children under ten and documented death by hypertrophic cardiomyopathy — a thickened, failing heart muscle — traced to selenium deficiency in the local diet. He argues the collapses of seemingly healthy young athletes are the same disease: not a mysterious “silent” defect but selenium-starved heart muscle giving out under exertion. His prescription is equally direct — a complete 90-essential-nutrient program with extra selenium, and, he says, “the athlete can live.” It's the human echo of what he watched selenium do in livestock, where the identical heart-muscle disease (“mulberry heart disease”) was eliminated by simple selenium supplementation.",
+      "verbatim": "In fact, hypertrophic cardiomyopathy,\nsudden heart death of athletes, is KSD and is caused by a simple deficiency\nof the trace element selenium. Supplement a complete 90 nutrient program\nwith extra selenium and the athlete can live.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1003118
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "keshan-disease",
+        "cardiomyopathy",
+        "athletes",
+        "deficiency_sign",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000187",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The richest dietary selenium, in Wallach's telling, comes from organ meats — liver and kidneys — plus eggs and some high-selenium rice varieties (a plant's selenium depends heavily on the soil it grew in). He raises these specifically around cystic fibrosis, which he frames as a prenatal selenium deficiency: “Normal selenium levels in pregnant women will prevent CF.” But he attaches the caveat that runs through his whole framework — “you are not what you eat, you are what you absorb.” A gut damaged by gluten can't take up selenium even when it's on the plate, which is why he pairs selenium-rich food (or supplements) with a gluten-free diet rather than trusting diet alone.",
+      "verbatim": "Wallach says the key to its prevention and cure is selenium, a trace\nelement found in liver, eggs, kidneys and some varieties of high selenium\nrice.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1380059
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "food-sources",
+        "liver",
+        "eggs",
+        "food_source",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000188",
+      "kind": "prognosis",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Conventionally, cystic fibrosis strikes about 1 in every 2,500 American children, is usually fatal in infancy, and fewer than half of those affected live past 21. Wallach's position overturns the premise: he argues CF isn't an inherited genetic disease but a congenital deficiency of selenium (with zinc and vitamin B12) during pregnancy — which makes it both preventable and curable. His specific claims are that normal selenium levels in a pregnant woman will prevent CF outright, and that the disease is “100 percent curable when diagnosed within 30 days of birth,” with recovery still possible even in teenagers and young adults. It's the therapeutic flip side of his 1977 discovery: if the pancreatic, lung, and intestinal damage of CF comes from missing selenium, then supplying it early enough should reverse it.",
+      "verbatim": "Normal selenium levels in pregnant women will prevent CF,” Wallach\nsaid, and tests on thousands of monkeys (their exaggeration) have shown\nthe disease is 100 percent curable when diagnosed within 30 days of birth",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1380210
+      },
+      "dose": null,
+      "tags": [
+        "selenium",
+        "cystic-fibrosis",
+        "curable",
+        "prenatal",
+        "prognosis",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-25T18:56:41+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

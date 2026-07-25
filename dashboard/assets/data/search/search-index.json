@@ -1448,6 +1448,33 @@
       ],
       "claim_count": 2
     },
+    "selenium": {
+      "display_name": "Selenium",
+      "type": "nutrient",
+      "synonyms": [
+        "selenium",
+        "se",
+        "selenium supplement",
+        "selenium deficiency",
+        "trace mineral selenium",
+        "sodium selenite",
+        "selenomethionine",
+        "colloidal selenium",
+        "low selenium"
+      ],
+      "related": [
+        "vitamin-e",
+        "cancer",
+        "keshan_disease",
+        "cystic_fibrosis",
+        "muscular_dystrophy",
+        "mercury",
+        "antioxidants",
+        "cardiomyopathy"
+      ],
+      "claim_count": 16,
+      "symbol": "Se"
+    },
     "sexual_health": {
       "display_name": "Sexual Health",
       "type": "topic",
@@ -2541,6 +2568,72 @@
         "acid-base",
         "stomach-acid",
         "pancreatic-juice"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000135",
+      "subject": "selenium",
+      "also_about": [
+        "dietary_oils",
+        "cancer",
+        "free_radicals"
+      ],
+      "facet": "warning",
+      "question": "Why does Wallach warn about vegetable oils?",
+      "answer_short": "Because, in his framework, polyunsaturated vegetable oils plus a selenium deficiency are a lethal pairing — together he calls them “the quickest route to a heart attack and cancer.”",
+      "answer": "Selenium's job is to keep the fats in your cells from oxidizing; vegetable oils are polyunsaturated fats that oxidize easily — especially once heated or hydrogenated into trans fats. So Wallach's warning is about the combination: flood the body with rancidity-prone oils while selenium (the antioxidant that would protect them) runs low, and the oils go rancid inside your cells, driving free-radical damage. He calls high vegetable-oil intake concurrent with selenium deficiency “the quickest route to a heart attack and cancer,” and ties the same pairing — including too much fish oil — to birth defects, arteriosclerosis, cardiomyopathy, and sudden cardiac death. The practical point: to him these oils aren't just empty calories, they actively consume the protection selenium is meant to provide.",
+      "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "vegetable-oils",
+        "trans-fats",
+        "rancidity",
+        "heart-attack",
+        "cancer"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000136",
+      "subject": "selenium",
+      "also_about": [
+        "fibromyalgia",
+        "vitamin-e"
+      ],
+      "facet": "stance",
+      "question": "What causes fibromyalgia, according to Wallach?",
+      "answer_short": "Wallach equates fibromyalgia with the adult form of muscular dystrophy — the same “white muscle disease” vets eliminated in livestock in 1957 — and calls it a multiple-deficiency disease, not a mystery pain syndrome.",
+      "answer": "To Wallach, fibromyalgia isn't an unexplained chronic-pain condition but a nutritional muscle disease under a modern name — the same thing veterinarians call white muscle disease or stiff lamb disease, and what he terms adult-onset muscular dystrophy. He notes it was eliminated from lambs, calves, and pigs back in 1957 through nutrition. In humans he frames it as a multiple-deficiency disease with a dietary trigger: a high intake of fried foods and vegetable oils (margarine, cooking oils) combined with deficiencies of selenium, vitamin E, and the sulfur-bearing amino acids. The logic mirrors his selenium thesis throughout — rancidity-prone oils flooding in while the antioxidants that would protect the muscle are missing — so his answer to the pain is to correct the deficiencies and cut the oils, not to mask symptoms with muscle relaxants.",
+      "verbatim": "FIBROMYALGIA (stiff lamb disease, white muscle disease, adult onset\nmuscular dystrophy) is a disease that was eliminated from lambs, calves,\nand pigs in 1957. It is a multiple deficiency disease caused by a high intake\nof fried foods and vegetable oils (margarine, cooking oils, and salad\ndressing) and deficiencies of selenium, vitamin E, and sulfur amino acids",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "fibromyalgia",
+        "multiple-deficiency",
+        "vegetable-oils",
+        "white-muscle-disease"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000137",
+      "subject": "selenium",
+      "also_about": [
+        "infertility",
+        "pregnancy_birth"
+      ],
+      "facet": "physiology",
+      "question": "Does selenium affect fertility and pregnancy?",
+      "answer_short": "Strongly, in Wallach's view. He ties selenium deficiency to male sterility, infertility, miscarriage, low birth weight, and SIDS — and says a woman's selenium level before conception helps determine whether a pregnancy holds.",
+      "answer": "Wallach treats selenium as a reproductive mineral on both sides of conception. In men, he lists sterility as a direct sign of selenium deficiency. In women, he emphasizes preconception status: adequate selenium in the diet and supplements before conceiving is, in his framing, key both to maintaining the pregnancy and to preventing birth defects like muscular dystrophy and cystic fibrosis in the child. On the deficiency side he links low selenium to infertility, low birth weight, high infant mortality, and sudden infant death syndrome (SIDS). It's consistent with his cystic-fibrosis thesis — that the mother's trace-mineral status in the first months of pregnancy shapes the child's lifelong health — and it's why “preconception nutrition” recurs throughout his prevention advice.",
+      "verbatim": "The selenium levels in\npreconception women is important to the maintenance of pregnancy as well\nas the prevention of muscular dystrophy in all of its forms",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "fertility",
+        "pregnancy",
+        "preconception",
+        "sids",
+        "male-sterility"
       ]
     },
     {
@@ -3901,6 +3994,96 @@
         "genes-not-destiny",
         "twin-studies",
         "reed"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000185",
+      "subject": "selenium",
+      "also_about": [
+        "cystic_fibrosis",
+        "wallach"
+      ],
+      "facet": "discovery",
+      "question": "How did Wallach discover selenium causes cystic fibrosis?",
+      "answer_short": "In 1977, during a routine autopsy at Emory's Yerkes Primate Research Center, Wallach found textbook cystic-fibrosis lesions in a 6-month-old rhesus monkey — the first non-human case ever documented — and concluded CF isn't a genetic disease but a congenital selenium deficiency. Announcing it cost him his job.",
+      "answer": "The monkey, one of a group being studied for the space program, had died of unknown causes; in its pancreas, liver, and lungs Wallach found damage identical to human cystic fibrosis. Two independent pathologists confirmed it — Dr. Victor Nassar of Emory and Dr. John Easterly, a national CF authority in Chicago — and the finding held up: a 2005 retrospective in the ILAR Journal called it “a classic textbook case.” Because the lesions tracked with low selenium, Wallach argues CF is not the inherited genetic disease medicine assumed, but a congenital deficiency of the trace mineral selenium in the embryo or early infancy — and therefore preventable and reversible. Emory terminated him in April 1978; St. Louis University, which had just hired him, fired him before he moved into his office. He later autopsied 1,700 children in Keshan Province, China, and found that 35% of those who died of selenium-deficiency heart disease also carried the pancreatic and liver lesions of cystic fibrosis.",
+      "verbatim": "When Wallach announced that cystic fibrosis was not a genetic disease, but\nrather a congenital deficiency of the trace mineral selenium in the embryo or\nearly postnatal life, Wallach was summarily terminated in April of 1978 from his\nPosition at Yerke's without the ability to defend his observations",
+      "page": 134,
+      "book_id": "epigenetics",
+      "topics": [
+        "discovery",
+        "cystic-fibrosis",
+        "yerkes",
+        "rhesus-monkey",
+        "whistleblower"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000186",
+      "subject": "selenium",
+      "also_about": [
+        "cardiomyopathy",
+        "sudden_cardiac_death",
+        "keshan_disease"
+      ],
+      "facet": "warning",
+      "question": "Why do young athletes drop dead of heart failure?",
+      "answer_short": "Wallach's answer is blunt: the sudden cardiac death of a young athlete is Keshan disease — hypertrophic cardiomyopathy caused by a simple deficiency of the trace mineral selenium — and it's preventable.",
+      "answer": "Keshan disease is named for Keshan Province, China, where Wallach autopsied 1,700 children under ten and documented death by hypertrophic cardiomyopathy — a thickened, failing heart muscle — traced to selenium deficiency in the local diet. He argues the collapses of seemingly healthy young athletes are the same disease: not a mysterious “silent” defect but selenium-starved heart muscle giving out under exertion. His prescription is equally direct — a complete 90-essential-nutrient program with extra selenium, and, he says, “the athlete can live.” It's the human echo of what he watched selenium do in livestock, where the identical heart-muscle disease (“mulberry heart disease”) was eliminated by simple selenium supplementation.",
+      "verbatim": "In fact, hypertrophic cardiomyopathy,\nsudden heart death of athletes, is KSD and is caused by a simple deficiency\nof the trace element selenium. Supplement a complete 90 nutrient program\nwith extra selenium and the athlete can live.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "keshan-disease",
+        "cardiomyopathy",
+        "athletes",
+        "sudden-death",
+        "prevention"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000187",
+      "subject": "selenium",
+      "also_about": [
+        "eggs",
+        "cystic_fibrosis",
+        "absorption"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in selenium?",
+      "answer_short": "Wallach names liver, eggs, kidneys, and certain high-selenium varieties of rice as the everyday food sources — but warns a damaged gut may not absorb it no matter how much you eat.",
+      "answer": "The richest dietary selenium, in Wallach's telling, comes from organ meats — liver and kidneys — plus eggs and some high-selenium rice varieties (a plant's selenium depends heavily on the soil it grew in). He raises these specifically around cystic fibrosis, which he frames as a prenatal selenium deficiency: “Normal selenium levels in pregnant women will prevent CF.” But he attaches the caveat that runs through his whole framework — “you are not what you eat, you are what you absorb.” A gut damaged by gluten can't take up selenium even when it's on the plate, which is why he pairs selenium-rich food (or supplements) with a gluten-free diet rather than trusting diet alone.",
+      "verbatim": "Wallach says the key to its prevention and cure is selenium, a trace\nelement found in liver, eggs, kidneys and some varieties of high selenium\nrice.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "food-sources",
+        "liver",
+        "eggs",
+        "selenium-rice",
+        "absorption"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000188",
+      "subject": "selenium",
+      "also_about": [
+        "cystic_fibrosis",
+        "zinc"
+      ],
+      "facet": "big_question",
+      "question": "Can cystic fibrosis actually be cured?",
+      "answer_short": "Wallach makes a striking claim: that cystic fibrosis — conventionally a fatal genetic disease — is essentially 100% curable when caught within 30 days of birth, because in his view it's a selenium deficiency, not a genetic defect.",
+      "answer": "Conventionally, cystic fibrosis strikes about 1 in every 2,500 American children, is usually fatal in infancy, and fewer than half of those affected live past 21. Wallach's position overturns the premise: he argues CF isn't an inherited genetic disease but a congenital deficiency of selenium (with zinc and vitamin B12) during pregnancy — which makes it both preventable and curable. His specific claims are that normal selenium levels in a pregnant woman will prevent CF outright, and that the disease is “100 percent curable when diagnosed within 30 days of birth,” with recovery still possible even in teenagers and young adults. It's the therapeutic flip side of his 1977 discovery: if the pancreatic, lung, and intestinal damage of CF comes from missing selenium, then supplying it early enough should reverse it.",
+      "verbatim": "Normal selenium levels in pregnant women will prevent CF,” Wallach\nsaid, and tests on thousands of monkeys (their exaggeration) have shown\nthe disease is 100 percent curable when diagnosed within 30 days of birth",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "cystic-fibrosis",
+        "curable",
+        "prenatal",
+        "pregnancy",
+        "prevention"
       ]
     },
     {
@@ -7600,6 +7783,28 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000269",
+      "subject": "selenium",
+      "also_about": [
+        "mercury",
+        "mercury_poisoning"
+      ],
+      "facet": "uses",
+      "question": "Does selenium protect against mercury poisoning?",
+      "answer_short": "Yes — Wallach describes selenium as mercury's natural antidote. The two minerals are mutually antagonistic, so selenium supplements protect against mercury poisoning, shielding both the kidneys and the developing fetus.",
+      "answer": "Wallach explains a mutual “metabolic antagonism” between mercury and selenium — each blunts the other's toxicity. In practice that means selenium supplements protect against mercury poisoning two specific ways: they guard the human kidney against the tissue death (necrosis) mercury causes, and they block mercury from crossing the placenta into the fetus — a real concern in his view, since mercury vapor off-gasses continuously from “silver” dental amalgam fillings. The antagonism runs both directions (mercury, in turn, protects against selenium overdose), but the practical upshot is that he treats adequate selenium as a frontline defense for anyone carrying mercury fillings or exposed to environmental mercury.",
+      "verbatim": "Because a mutual antagonism between\nHg and Se exists, Se protects the human kidney from necrosis\n(tissue death) by mercury poisoning and the placental transfer\nof mercury.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "mercury",
+        "antidote",
+        "dental-amalgam",
+        "kidney",
+        "pregnancy"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000080",
       "subject": "diabetes",
       "also_about": [],
@@ -9096,6 +9301,44 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000491",
+      "subject": "selenium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much selenium does Wallach recommend a day?",
+      "answer_short": "For everyday maintenance, Wallach's Base Line program sets selenium at 200 mcg a day — with a much higher short-term therapeutic range (500–3,000 mcg) reserved for actively treating disease.",
+      "answer": "In his Base Line Nutritional Supplement Program, Wallach lists selenium's daily maintenance target (“True Supplement Need”) at 200 mcg — pointedly leaving the official RDA column as a question mark, since he rejects government RDAs as too low to prevent disease. In his Epigenetics dosing he frames it by body weight: roughly 100–200 mcg per 100 lb per day. Above maintenance he defines a 30-day “pharmacologic” range of 500 to 3,000 mcg for actively reversing a deficiency disease, and for cancer specifically names 1,000–3,000 mcg/day. He also stresses form over milligrams: plant-derived colloidal selenium, he says, is far better absorbed than the cheap metallic kind — so the number on the label only matters if your gut can take it up.",
+      "verbatim": "SELENIUM ? 200 mcg 500 to 3,000 mcg\nSODIUM 1,100 mg 3,300 mg 300 to 3,000 mg",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "dose",
+        "maintenance",
+        "base-line-program",
+        "therapy-dose",
+        "colloidal-selenium"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000492",
+      "subject": "selenium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can you take too much selenium?",
+      "answer_short": "Yes — although Wallach uses high therapeutic doses, he also lists clear signs of selenium excess: hair loss, brittle nails, a garlic odor on the breath, a metallic taste, and arthritis, with kidney and liver dysfunction at more serious levels.",
+      "answer": "Selenium is one of the minerals where the gap between “enough” and “too much” genuinely matters, and Wallach documents both ends. The tell-tale signs of selenium toxicity, in his listing, are alopecia (hair loss), brittle nails, a distinctive garlic odor on the breath, a metallic taste in the mouth, and arthritis — with kidney and liver dysfunction at more serious excess. It's the necessary counterweight to his high therapeutic doses: the 500–3,000 mcg ranges he cites are deliberate, time-limited treatment levels rather than open-ended daily habits, and these symptoms are the body's signal to pull back.",
+      "verbatim": "SELENIUM TOXICITY\nalopecia\narthritis\nbrittle nails\ngarlic breath\nmetallic taste\nkidney dysfunction\nliver dysfunction",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "toxicity",
+        "overdose",
+        "garlic-breath",
+        "hair-loss",
+        "safe-dosing"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000024",
       "subject": "colloidal_minerals",
       "also_about": [],
@@ -9535,6 +9778,140 @@
         "plant-derived",
         "specific-gravity",
         "concentration"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000320",
+      "subject": "selenium",
+      "also_about": [
+        "antioxidants",
+        "free_radicals",
+        "vitamin-e"
+      ],
+      "facet": "mechanism",
+      "question": "What does selenium actually do in the body?",
+      "answer_short": "Selenium is, in Wallach's words, the body's most efficient antioxidant. Working inside the glutathione-peroxidase enzyme system, it keeps the fats built into your cells from oxidizing — literally stops them from going rancid.",
+      "answer": "Every cell and every mitochondrion is wrapped in a membrane made of fat (a “bi-lipid layer”), and those fats can oxidize — go rancid — the same way cooking oil does. Wallach says selenium is the most efficient anti-peroxidant there is, operating at the subcellular level through the glutathione-peroxidase enzyme system and selenium-bearing amino acids like selenomethionine, and that its job is to shield those fatty membranes from oxidative damage. It concentrates where the metabolic work is hardest — liver, kidney, heart, and skeletal muscle. When selenium runs short, the protection fails: he points to an electron micrograph of a selenium-deficient monkey's liver in which the inner mitochondrial membrane has precipitated out of its normal structure into a nonfunctioning “crystalloid,” visible under an ordinary microscope as “age pigment.”",
+      "verbatim": "Selenium is the most efficient antioxidant (anti-peroxidant) and is found at the subcellular level in the glutathione peroxidase enzyme system and metallo amino acids (selenomethionine, etc.).",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "antioxidant",
+        "glutathione-peroxidase",
+        "oxidation",
+        "cell-membrane",
+        "mitochondria"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000321",
+      "subject": "selenium",
+      "also_about": [
+        "free_radicals",
+        "antioxidants",
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "What causes age spots and liver spots?",
+      "answer_short": "According to Wallach, those brown “age spots” or “liver spots” are literally rancid fat — a peroxidized lipid called ceroid lipofuscin — surfacing because selenium is too low to keep body fats from oxidizing. He calls their appearance in older adults an early sign of selenium deficiency.",
+      "answer": "It's the same oxidation Wallach blames for cellular aging, made visible on the skin. When selenium — the body's main defense against fats going rancid — falls short, lipids peroxidize and leave behind a brown-gold residue called ceroid lipofuscin; on the skin that shows up as the familiar “age spots” or “liver spots.” He treats their arrival in older adults not as harmless cosmetic aging but as an early external sign of selenium deficiency — the visible cousin of the “age pigment” that builds up inside oxygen-starved, selenium-deficient cells. In his framework that makes a liver spot a warning worth heeding, not just a blemish.",
+      "verbatim": "Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "age-spots",
+        "liver-spots",
+        "ceroid-lipofuscin",
+        "aging",
+        "oxidation"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000322",
+      "subject": "selenium",
+      "also_about": [
+        "keshan_disease",
+        "cardiomyopathy"
+      ],
+      "facet": "history",
+      "question": "Is there real proof selenium prevents heart disease?",
+      "answer_short": "Yes — Wallach cites a large Chinese field trial where supplementing children with selenium cut Keshan-disease heart failure by more than 90%, a result later confirmed in studies of over half a million people.",
+      "answer": "Between 1974 and 1977, researchers split children in the Keshan region into two groups: 36,603 received 1 mg of sodium selenite three times a week, while 9,430 got a placebo sugar tablet. Over the three years, Keshan-disease heart failure in the selenium group fell from 13 cases per 1,000 children to just 1 per 1,000 — while the placebo group stayed put at 13 per 1,000. Wallach points to this as a clean, controlled demonstration that the cardiomyopathy was a selenium deficiency, not a mystery: change one variable, the disease nearly vanishes. Follow-up work eventually involving more than 500,000 participants, he notes, confirmed that supplemental selenium was specifically protective against Keshan disease.",
+      "verbatim": "At the end of a three year study, the rate of KSD in the selenium supplemented group dropped from 13/1,000 children to 1/1,000 children; the rate of KSD in the control group remained at 13/1,000. Continued long term studies, eventually involving over 500,000 participants, confirmed that supplemental selenium was specific for the prevention of KSD!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "proof",
+        "clinical-trial",
+        "china",
+        "sodium-selenite",
+        "prevention"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000323",
+      "subject": "selenium",
+      "also_about": [
+        "muscular_dystrophy",
+        "vitamin-e"
+      ],
+      "facet": "stance",
+      "question": "What causes muscular dystrophy, according to Wallach?",
+      "answer_short": "Wallach holds that muscular dystrophy isn't an incurable genetic sentence but a preventable selenium-deficiency disease — the same “white muscle disease” the livestock industry eliminated in animals decades ago with simple selenium.",
+      "answer": "In cattle, sheep, and pigs, the muscle-wasting condition vets call white muscle disease (or “stiff lamb disease”) was wiped out back in 1957 by adding selenium and vitamin E — and Wallach argues human muscular dystrophy is the same deficiency disease. He dismisses the long list of named types (Duchenne, Becker's, Landouzy-Dejerine, and the rest) as “artificial classifications” based on which muscle fails first, not on different causes. Prevention, in his view, hinges on a woman's selenium levels before and during pregnancy; treatment is selenium plus vitamin E, which he claims can arrest or even cure the disease if given by injection at the very first onset of symptoms. He frames the failure to act on this as “a crime… for reasons of money” — curing MD would erase an entire medical specialty — and points to case reports of children who recovered on his protocol, which he says got Jerry Lewis fired from the MD Telethon for taking them seriously.",
+      "verbatim": "Muscular dystrophy (MD) is another\ncrime against the American people by the\n“orthodox” medical doctors for reasons of\nmoney - if the total truth was shared with\nthe public, muscular dystrophy would be\ntotally preventable but a whole medical\nspecialty would be wiped out!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "muscular-dystrophy",
+        "white-muscle-disease",
+        "preventable",
+        "livestock",
+        "jerry-lewis"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000324",
+      "subject": "selenium",
+      "also_about": [
+        "cancer",
+        "antioxidants"
+      ],
+      "facet": "uses",
+      "question": "Can selenium help fight cancer?",
+      "answer_short": "Wallach considers selenium one of the most important anti-cancer nutrients — citing a UCSD chemist's review that it works through several distinct mechanisms — and puts the therapeutic dose at 1,000–3,000 mcg a day.",
+      "answer": "Wallach leans on Dr. Gerhard Schrauzer, head of chemistry at UC San Diego, who reviewed selenium as “a versatile anticarcinogenic agent” whose protection can't be pinned on the glutathione-peroxidase enzyme alone. In Schrauzer's account, selenium acts as a “redox switch” that throttles the growth factors driving cell division, stimulates cellular respiration (Wallach's shorthand: “more oxygen, less cancer”), blocks tumor viruses and oncogene activation, alters how the body handles carcinogens, and shields DNA from carcinogen-induced damage. For actual use, Wallach names 1,000–3,000 mcg per day as the therapeutic range and stresses that form matters — plant-derived colloidal selenium, he says, is up to 98% absorbable. (Worth flagging: that's a therapy figure, far above his ~200 mcg daily maintenance target, not an everyday supplement dose.)",
+      "verbatim": "Selenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "cancer",
+        "anticarcinogen",
+        "schrauzer",
+        "therapy-dose",
+        "colloidal-selenium"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000325",
+      "subject": "selenium",
+      "also_about": [
+        "cancer",
+        "cystic_fibrosis",
+        "multiple_sclerosis"
+      ],
+      "facet": "big_question",
+      "question": "What diseases does Wallach link to selenium deficiency?",
+      "answer_short": "An unusually long list. Wallach ties selenium deficiency to dozens of conditions — from Keshan heart disease, muscular dystrophy, and cystic fibrosis to cancer, cataracts, and liver cirrhosis, and even Alzheimer's, ALS, and Parkinson's.",
+      "answer": "This is central to Wallach's whole thesis — that one mineral shortage surfaces as many differently-named diseases. His published selenium-deficiency lists run long: Keshan-disease cardiomyopathy and “mulberry heart,” muscular dystrophy and white muscle disease, cystic fibrosis, cancer, cataracts, liver cirrhosis, anemia, pancreatitis and pancreatic atrophy, scoliosis, myalgia and muscle weakness, infertility, low birth weight, SIDS, and clinical AIDS. He extends it to several neurodegenerative diseases — multiple sclerosis, ALS (Lou Gehrig's), Parkinson's, and Alzheimer's — noting some (ALS, Parkinson's) tend to travel with mercury poisoning and others (Alzheimer's) with high vegetable-oil intake. His point isn't that selenium is a cure-all, but that the same rancidity-and-oxidation damage, left unchecked in different tissues, ends up wearing different clinical names.",
+      "verbatim": "Selenium Deficiency Diseases.\nHIV (AIDS)\nAnemia (RBC fragility)\n“Age Spots” & “Liver Spots”\nFatigue\nMuscular weakness\nMyalgia (muscle pain and soreness)\nScoliosis\nMuscular Dystrophy (MD, White Muscle Disease, Stiff Lamb Disease)\nCystic Fibrosis (congenital)",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "deficiency-diseases",
+        "breadth",
+        "neurodegenerative",
+        "one-deficiency-many-diseases"
       ]
     }
   ]

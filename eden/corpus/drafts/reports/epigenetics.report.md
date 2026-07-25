@@ -1,32 +1,36 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_3 claim(s) drafted 2026-07-25T16:26:28+00:00. Review then run corpus_seal.py to promote._
+_4 claim(s) drafted 2026-07-25T18:56:41+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: quote×3
+Kinds: deficiency_sign×1, food_source×1, personal_anecdote×1, prognosis×1
 
-### WAL-CLM-EPIGEN-000182 · quote
+### WAL-CLM-EPIGEN-000185 · personal_anecdote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach opens his Epigenetics chapter by adopting a textbook definition from Clifford Pickover's The Medical Book (2012): just as a pianist interprets the notes of a musical score — controlling volume and tempo — epigenetics governs how a cell interprets its DNA. It is the study of heritable traits that do not involve any change to the underlying DNA sequence. Wallach signals his agreement by inserting his own thesis directly into the borrowed definition — those heritable traits, he adds in parentheses, are 'caused by nutritional deficiencies.'
-- **verbatim** (offset 606743): “Just as a pianist interprets the notes of a musical score, controlling the
-volume and tempo, epigenetics affects the interpretation of DNA genetic
-sequences in cells. Epigenetics usually refers to the study of ‘heritable
-traits’ (caused by nutritional deficiencies), that do not involve changes to the
-underlying DNA sequence of the cells.”
+- **claim:** The monkey, one of a group being studied for the space program, had died of unknown causes; in its pancreas, liver, and lungs Wallach found damage identical to human cystic fibrosis. Two independent pathologists confirmed it — Dr. Victor Nassar of Emory and Dr. John Easterly, a national CF authority in Chicago — and the finding held up: a 2005 retrospective in the ILAR Journal called it “a classic textbook case.” Because the lesions tracked with low selenium, Wallach argues CF is not the inherited genetic disease medicine assumed, but a congenital deficiency of the trace mineral selenium in the embryo or early infancy — and therefore preventable and reversible. Emory terminated him in April 1978; St. Louis University, which had just hired him, fired him before he moved into his office. He later autopsied 1,700 children in Keshan Province, China, and found that 35% of those who died of selenium-deficiency heart disease also carried the pancreatic and liver lesions of cystic fibrosis.
+- **verbatim** (offset 228797): “When Wallach announced that cystic fibrosis was not a genetic disease, but
+rather a congenital deficiency of the trace mineral selenium in the embryo or
+early postnatal life, Wallach was summarily terminated in April of 1978 from his
+Position at Yerke's without the ability to defend his observations”
 
-### WAL-CLM-EPIGEN-000183 · quote
+### WAL-CLM-EPIGEN-000186 · deficiency_sign
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** To explain the core idea, Wallach opens the chapter with a metaphor from Nessa Carey's The Epigenetics Revolution (2012): DNA is not a rigid template or blueprint that stamps out thousands of identical copies — it is more like a script. Carey compares it to Romeo and Juliet: two film versions made sixty years apart used the same Shakespearean script yet came out entirely different. Identical starting points, different outcomes. Wallach adopts and extends the metaphor, adding in his own words that the 'production' differs because the cell is reading a script from DNA that is nutritionally deficient — the difference is driven by diet and nutrition, not by any change to the genes themselves.
-- **verbatim** (offset 605735): “But DNA isn’t really like that. It's more like a script. Think of Romeo
-and Juliet, for example. In 1936 George Cukor directed Leslie Howard and
-Norma Shearer in a film version. Sixty years later Baz Luhrmann directed
-Leonardo DiCaprio and Claire Danes in another movie version of this play.
-Both productions used Shakespeare's script, yet the two movies are entirely
-different. Identical starting points, different outcomes.”
+- **claim:** Keshan disease is named for Keshan Province, China, where Wallach autopsied 1,700 children under ten and documented death by hypertrophic cardiomyopathy — a thickened, failing heart muscle — traced to selenium deficiency in the local diet. He argues the collapses of seemingly healthy young athletes are the same disease: not a mysterious “silent” defect but selenium-starved heart muscle giving out under exertion. His prescription is equally direct — a complete 90-essential-nutrient program with extra selenium, and, he says, “the athlete can live.” It's the human echo of what he watched selenium do in livestock, where the identical heart-muscle disease (“mulberry heart disease”) was eliminated by simple selenium supplementation.
+- **verbatim** (offset 1003118): “In fact, hypertrophic cardiomyopathy,
+sudden heart death of athletes, is KSD and is caused by a simple deficiency
+of the trace element selenium. Supplement a complete 90 nutrient program
+with extra selenium and the athlete can live.”
 
-### WAL-CLM-EPIGEN-000184 · quote
+### WAL-CLM-EPIGEN-000187 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Answering whether your genes are your destiny, Wallach quotes twin researcher Danielle Reed (speaking in National Geographic, 2012): 'Mother Nature writes some things in pencil and some things in pen. Things written in pen you can't change — that's DNA. But things written in pencil you can — that's epigenetics.' The point Wallach draws is his optimistic thesis: the pen — your actual DNA sequence — is fixed, but the pencil — how those genes are expressed — can be rewritten. For Wallach, the pencil and eraser are nutrition.
-- **verbatim** (offset 500821): “Mother Nature writes some things in pencil and
-some things in pen... Things written in pen you can’t change. That's DNA. But
-things written in pencil you can. That's epigenetics.”
+- **claim:** The richest dietary selenium, in Wallach's telling, comes from organ meats — liver and kidneys — plus eggs and some high-selenium rice varieties (a plant's selenium depends heavily on the soil it grew in). He raises these specifically around cystic fibrosis, which he frames as a prenatal selenium deficiency: “Normal selenium levels in pregnant women will prevent CF.” But he attaches the caveat that runs through his whole framework — “you are not what you eat, you are what you absorb.” A gut damaged by gluten can't take up selenium even when it's on the plate, which is why he pairs selenium-rich food (or supplements) with a gluten-free diet rather than trusting diet alone.
+- **verbatim** (offset 1380059): “Wallach says the key to its prevention and cure is selenium, a trace
+element found in liver, eggs, kidneys and some varieties of high selenium
+rice.”
+
+### WAL-CLM-EPIGEN-000188 · prognosis
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Conventionally, cystic fibrosis strikes about 1 in every 2,500 American children, is usually fatal in infancy, and fewer than half of those affected live past 21. Wallach's position overturns the premise: he argues CF isn't an inherited genetic disease but a congenital deficiency of selenium (with zinc and vitamin B12) during pregnancy — which makes it both preventable and curable. His specific claims are that normal selenium levels in a pregnant woman will prevent CF outright, and that the disease is “100 percent curable when diagnosed within 30 days of birth,” with recovery still possible even in teenagers and young adults. It's the therapeutic flip side of his 1977 discovery: if the pancreatic, lung, and intestinal damage of CF comes from missing selenium, then supplying it early enough should reverse it.
+- **verbatim** (offset 1380210): “Normal selenium levels in pregnant women will prevent CF,” Wallach
+said, and tests on thousands of monkeys (their exaggeration) have shown
+the disease is 100 percent curable when diagnosed within 30 days of birth”
 

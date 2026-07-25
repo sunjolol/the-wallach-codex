@@ -1,14 +1,14 @@
 # Extraction report — immortality (Immortality)
 
-_1 claim(s) drafted 2026-07-24T17:16:11+00:00. Review then run corpus_seal.py to promote._
+_1 claim(s) drafted 2026-07-25T18:56:42+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1
+Kinds: interaction×1
 
-### WAL-CLM-IMMORT-000268 · definition
+### WAL-CLM-IMMORT-000269 · interaction
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Antioxidants are the body's defense against free radicals — the reactive molecules that oxidize and damage your cells, cell walls and mitochondria. Wallach's signature point is that they don't work alone: the antioxidant enzyme systems present in every healthy cell need raw materials and mineral cofactors to run at full capacity — glutathione, for example, requires selenium. So in his framework, getting the benefit of antioxidants is inseparable from getting the minerals that power them, and he measures the antioxidant strength of foods by their ORAC score.
-- **verbatim** (offset 67896): “Antioxidant enzyme systems are normally present in all
-healthy aerobic cells - remember, antioxidants also need raw
-materials and mineral cofactors to operate at their optimum
-capacity (glutathione requires selenium, etc.).”
+- **claim:** Wallach explains a mutual “metabolic antagonism” between mercury and selenium — each blunts the other's toxicity. In practice that means selenium supplements protect against mercury poisoning two specific ways: they guard the human kidney against the tissue death (necrosis) mercury causes, and they block mercury from crossing the placenta into the fetus — a real concern in his view, since mercury vapor off-gasses continuously from “silver” dental amalgam fillings. The antagonism runs both directions (mercury, in turn, protects against selenium overdose), but the practical upshot is that he treats adequate selenium as a frontline defense for anyone carrying mercury fillings or exposed to environmental mercury.
+- **verbatim** (offset 283163): “Because a mutual antagonism between
+Hg and Se exists, Se protects the human kidney from necrosis
+(tissue death) by mercury poisoning and the placental transfer
+of mercury.”
 

@@ -1519,6 +1519,32 @@
         "wallach",
         "cystic_fibrosis"
       ]
+    },
+    "selenium": {
+      "display_name": "Selenium",
+      "type": "nutrient",
+      "synonyms": [
+        "selenium",
+        "se",
+        "selenium supplement",
+        "selenium deficiency",
+        "trace mineral selenium",
+        "sodium selenite",
+        "selenomethionine",
+        "colloidal selenium",
+        "low selenium"
+      ],
+      "related": [
+        "vitamin-e",
+        "cancer",
+        "keshan_disease",
+        "cystic_fibrosis",
+        "muscular_dystrophy",
+        "mercury",
+        "antioxidants",
+        "cardiomyopathy"
+      ],
+      "symbol": "Se"
     }
   }
 }

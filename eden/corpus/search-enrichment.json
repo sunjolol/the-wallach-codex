@@ -5489,6 +5489,276 @@
         "twin-studies",
         "reed"
       ]
+    },
+    "WAL-CLM-EPIGEN-000185": {
+      "subject": "selenium",
+      "also_about": [
+        "cystic_fibrosis",
+        "wallach"
+      ],
+      "facet": "discovery",
+      "question": "How did Wallach discover selenium causes cystic fibrosis?",
+      "answer_short": "In 1977, during a routine autopsy at Emory's Yerkes Primate Research Center, Wallach found textbook cystic-fibrosis lesions in a 6-month-old rhesus monkey — the first non-human case ever documented — and concluded CF isn't a genetic disease but a congenital selenium deficiency. Announcing it cost him his job.",
+      "topics": [
+        "discovery",
+        "cystic-fibrosis",
+        "yerkes",
+        "rhesus-monkey",
+        "whistleblower"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000186": {
+      "subject": "selenium",
+      "also_about": [
+        "cardiomyopathy",
+        "sudden_cardiac_death",
+        "keshan_disease"
+      ],
+      "facet": "warning",
+      "question": "Why do young athletes drop dead of heart failure?",
+      "answer_short": "Wallach's answer is blunt: the sudden cardiac death of a young athlete is Keshan disease — hypertrophic cardiomyopathy caused by a simple deficiency of the trace mineral selenium — and it's preventable.",
+      "topics": [
+        "keshan-disease",
+        "cardiomyopathy",
+        "athletes",
+        "sudden-death",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000187": {
+      "subject": "selenium",
+      "also_about": [
+        "eggs",
+        "cystic_fibrosis",
+        "absorption"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in selenium?",
+      "answer_short": "Wallach names liver, eggs, kidneys, and certain high-selenium varieties of rice as the everyday food sources — but warns a damaged gut may not absorb it no matter how much you eat.",
+      "topics": [
+        "food-sources",
+        "liver",
+        "eggs",
+        "selenium-rice",
+        "absorption"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000188": {
+      "subject": "selenium",
+      "also_about": [
+        "cystic_fibrosis",
+        "zinc"
+      ],
+      "facet": "big_question",
+      "question": "Can cystic fibrosis actually be cured?",
+      "answer_short": "Wallach makes a striking claim: that cystic fibrosis — conventionally a fatal genetic disease — is essentially 100% curable when caught within 30 days of birth, because in his view it's a selenium deficiency, not a genetic defect.",
+      "topics": [
+        "cystic-fibrosis",
+        "curable",
+        "prenatal",
+        "pregnancy",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-RARE-000320": {
+      "subject": "selenium",
+      "also_about": [
+        "antioxidants",
+        "free_radicals",
+        "vitamin-e"
+      ],
+      "facet": "mechanism",
+      "question": "What does selenium actually do in the body?",
+      "answer_short": "Selenium is, in Wallach's words, the body's most efficient antioxidant. Working inside the glutathione-peroxidase enzyme system, it keeps the fats built into your cells from oxidizing — literally stops them from going rancid.",
+      "topics": [
+        "antioxidant",
+        "glutathione-peroxidase",
+        "oxidation",
+        "cell-membrane",
+        "mitochondria"
+      ]
+    },
+    "WAL-CLM-RARE-000321": {
+      "subject": "selenium",
+      "also_about": [
+        "free_radicals",
+        "antioxidants",
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "What causes age spots and liver spots?",
+      "answer_short": "According to Wallach, those brown “age spots” or “liver spots” are literally rancid fat — a peroxidized lipid called ceroid lipofuscin — surfacing because selenium is too low to keep body fats from oxidizing. He calls their appearance in older adults an early sign of selenium deficiency.",
+      "topics": [
+        "age-spots",
+        "liver-spots",
+        "ceroid-lipofuscin",
+        "aging",
+        "oxidation"
+      ]
+    },
+    "WAL-CLM-RARE-000322": {
+      "subject": "selenium",
+      "also_about": [
+        "keshan_disease",
+        "cardiomyopathy"
+      ],
+      "facet": "history",
+      "question": "Is there real proof selenium prevents heart disease?",
+      "answer_short": "Yes — Wallach cites a large Chinese field trial where supplementing children with selenium cut Keshan-disease heart failure by more than 90%, a result later confirmed in studies of over half a million people.",
+      "topics": [
+        "proof",
+        "clinical-trial",
+        "china",
+        "sodium-selenite",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-RARE-000323": {
+      "subject": "selenium",
+      "also_about": [
+        "muscular_dystrophy",
+        "vitamin-e"
+      ],
+      "facet": "stance",
+      "question": "What causes muscular dystrophy, according to Wallach?",
+      "answer_short": "Wallach holds that muscular dystrophy isn't an incurable genetic sentence but a preventable selenium-deficiency disease — the same “white muscle disease” the livestock industry eliminated in animals decades ago with simple selenium.",
+      "topics": [
+        "muscular-dystrophy",
+        "white-muscle-disease",
+        "preventable",
+        "livestock",
+        "jerry-lewis"
+      ]
+    },
+    "WAL-CLM-RARE-000324": {
+      "subject": "selenium",
+      "also_about": [
+        "cancer",
+        "antioxidants"
+      ],
+      "facet": "uses",
+      "question": "Can selenium help fight cancer?",
+      "answer_short": "Wallach considers selenium one of the most important anti-cancer nutrients — citing a UCSD chemist's review that it works through several distinct mechanisms — and puts the therapeutic dose at 1,000–3,000 mcg a day.",
+      "topics": [
+        "cancer",
+        "anticarcinogen",
+        "schrauzer",
+        "therapy-dose",
+        "colloidal-selenium"
+      ]
+    },
+    "WAL-CLM-RARE-000325": {
+      "subject": "selenium",
+      "also_about": [
+        "cancer",
+        "cystic_fibrosis",
+        "multiple_sclerosis"
+      ],
+      "facet": "big_question",
+      "question": "What diseases does Wallach link to selenium deficiency?",
+      "answer_short": "An unusually long list. Wallach ties selenium deficiency to dozens of conditions — from Keshan heart disease, muscular dystrophy, and cystic fibrosis to cancer, cataracts, and liver cirrhosis, and even Alzheimer's, ALS, and Parkinson's.",
+      "topics": [
+        "deficiency-diseases",
+        "breadth",
+        "neurodegenerative",
+        "one-deficiency-many-diseases"
+      ]
+    },
+    "WAL-CLM-IMMORT-000269": {
+      "subject": "selenium",
+      "also_about": [
+        "mercury",
+        "mercury_poisoning"
+      ],
+      "facet": "uses",
+      "question": "Does selenium protect against mercury poisoning?",
+      "answer_short": "Yes — Wallach describes selenium as mercury's natural antidote. The two minerals are mutually antagonistic, so selenium supplements protect against mercury poisoning, shielding both the kidneys and the developing fetus.",
+      "topics": [
+        "mercury",
+        "antidote",
+        "dental-amalgam",
+        "kidney",
+        "pregnancy"
+      ]
+    },
+    "WAL-CLM-DDDL-000135": {
+      "subject": "selenium",
+      "also_about": [
+        "dietary_oils",
+        "cancer",
+        "free_radicals"
+      ],
+      "facet": "warning",
+      "question": "Why does Wallach warn about vegetable oils?",
+      "answer_short": "Because, in his framework, polyunsaturated vegetable oils plus a selenium deficiency are a lethal pairing — together he calls them “the quickest route to a heart attack and cancer.”",
+      "topics": [
+        "vegetable-oils",
+        "trans-fats",
+        "rancidity",
+        "heart-attack",
+        "cancer"
+      ]
+    },
+    "WAL-CLM-DDDL-000136": {
+      "subject": "selenium",
+      "also_about": [
+        "fibromyalgia",
+        "vitamin-e"
+      ],
+      "facet": "stance",
+      "question": "What causes fibromyalgia, according to Wallach?",
+      "answer_short": "Wallach equates fibromyalgia with the adult form of muscular dystrophy — the same “white muscle disease” vets eliminated in livestock in 1957 — and calls it a multiple-deficiency disease, not a mystery pain syndrome.",
+      "topics": [
+        "fibromyalgia",
+        "multiple-deficiency",
+        "vegetable-oils",
+        "white-muscle-disease"
+      ]
+    },
+    "WAL-CLM-DDDL-000137": {
+      "subject": "selenium",
+      "also_about": [
+        "infertility",
+        "pregnancy_birth"
+      ],
+      "facet": "physiology",
+      "question": "Does selenium affect fertility and pregnancy?",
+      "answer_short": "Strongly, in Wallach's view. He ties selenium deficiency to male sterility, infertility, miscarriage, low birth weight, and SIDS — and says a woman's selenium level before conception helps determine whether a pregnancy holds.",
+      "topics": [
+        "fertility",
+        "pregnancy",
+        "preconception",
+        "sids",
+        "male-sterility"
+      ]
+    },
+    "WAL-CLM-LETS-000491": {
+      "subject": "selenium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much selenium does Wallach recommend a day?",
+      "answer_short": "For everyday maintenance, Wallach's Base Line program sets selenium at 200 mcg a day — with a much higher short-term therapeutic range (500–3,000 mcg) reserved for actively treating disease.",
+      "topics": [
+        "dose",
+        "maintenance",
+        "base-line-program",
+        "therapy-dose",
+        "colloidal-selenium"
+      ]
+    },
+    "WAL-CLM-LETS-000492": {
+      "subject": "selenium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can you take too much selenium?",
+      "answer_short": "Yes — although Wallach uses high therapeutic doses, he also lists clear signs of selenium excess: hair loss, brittle nails, a garlic odor on the breath, a metallic taste, and arthritis, with kidney and liver dysfunction at more serious levels.",
+      "topics": [
+        "toxicity",
+        "overdose",
+        "garlic-breath",
+        "hair-loss",
+        "safe-dosing"
+      ]
     }
   }
 }
