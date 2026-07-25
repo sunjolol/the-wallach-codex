@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knowledge · Foods §04 — approved redesign proposal (pH Ladder + fortress + Ultimate Enzymes CTA)</title>
+<link rel="stylesheet" href="../assets/styles/design-system.css">
+<link rel="stylesheet" href="../assets/styles/dashboard.css">
+<link rel="stylesheet" href="../assets/styles/workspace-coverage.css">
+<link rel="stylesheet" href="../assets/styles/drawer-shared.css">
+<link rel="stylesheet" href="../assets/styles/drawer-knowledge.css">
+<link rel="stylesheet" href="../assets/styles/type-futurist.css">
+<style>
+html, body { height: auto !important; overflow: auto !important; background: var(--ds-paper-deep); }
+body { margin: 0; padding: 0; }
+#drawer-knowledge-mount { --sev-calm: #5a8ca8; --sev-warn: #d99a2b; --sev-dang: #c85a2c; --sev-crit: #8a2f2f; }
+
+/* demo chrome */
+.cmb-bar { position: sticky; top: 0; z-index: 50; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  padding: 10px 44px; background: var(--ds-paper-darker); border-bottom: 1px solid var(--ds-rule); }
+.cmb-bar__t { font-family: var(--ds-font-mono); font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ds-ink-soft); margin-right: auto; }
+.cmb-bar__t b { color: var(--ds-accent-deep); }
+.cmb-bar__lbl { font-family: var(--ds-font-mono); font-size: .56rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-faint); }
+.cmb-tog { font-family: var(--ds-font-mono); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
+  padding: 7px 12px; border: 1px solid var(--ds-rule); background: var(--ds-paper-light); color: var(--ds-ink-soft); border-radius: var(--ds-radius-xs); cursor: pointer; }
+.cmb-tog.is-active { background: var(--ds-ink); color: var(--ds-paper); border-color: var(--ds-ink); }
+.cmb-frame { max-width: 940px; margin: 0 auto; padding: 34px 44px 110px; background: var(--ds-paper); min-height: 100vh; }
+
+/* generous rhythm between the section's major beats */
+.cmb-beat { margin-top: var(--ds-space-9); }
+.cmb-beat--tight { margin-top: var(--ds-space-7); }
+
+/* shared prose + primitives */
+.sx-p { font-family: var(--ds-font-serif); font-size: 1.02rem; line-height: 1.62; color: var(--ds-ink-medium); max-width: 66ch; margin: 0 0 20px; }
+.sx-p strong { color: var(--ds-ink); font-weight: 600; }
+.sx-note { font-family: var(--ds-font-serif); font-size: .9rem; line-height: 1.55; color: var(--ds-ink-soft); max-width: 64ch; margin: 14px 0 0; }
+.sx-cite { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .08em; text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 9px; }
+.sx-callout { position: relative; margin: var(--ds-space-5) 0 0; padding: 20px 24px; background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-status-err); border-radius: var(--ds-radius-xs); background: #f7ece6; }
+.sx-callout__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--ds-status-err); margin-bottom: 6px; }
+.sx-callout__t { font-family: var(--ds-font-display); font-size: 1.1rem; font-weight: 700; color: var(--ds-ink); margin: 0 0 6px; }
+.sx-callout__t em { color: var(--ds-status-err); font-style: italic; }
+.sx-callout__b { font-family: var(--ds-font-serif); font-size: .92rem; line-height: 1.55; color: var(--ds-ink-medium); margin: 0; }
+
+/* ── the pH ladder (B, whole) ── */
+.sxb-wrap { display: grid; grid-template-columns: 374px 1fr; gap: 30px; margin: var(--ds-space-5) 0 0; align-items: center; }
+.sxb-scale { position: relative; height: 500px; }
+.sxb-track { position: absolute; left: 44px; top: 0; bottom: 0; width: 40px; border-radius: 6px; overflow: hidden;
+  background: linear-gradient(to top, #9c2b1e 0%, #c8552a 12%, #e39a4e 27%, #f2ead3 50%, #8fb8c8 73%, #4a7ea0 100%);
+  box-shadow: inset 0 0 0 1px rgba(26,22,18,.14); }
+.sxb-axis__t { position: absolute; left: 0; width: 34px; text-align: right; transform: translateY(-50%);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .04em; }
+.sxb-cap { position: absolute; left: 94px; transform: translateY(-50%); font-family: var(--ds-font-mono); font-size: .52rem;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--ds-ink-faint); }
+.sxb-dot { position: absolute; left: 64px; transform: translate(-50%,-50%); width: 13px; height: 13px; border-radius: 50%;
+  border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(26,22,18,.25); z-index: 2; }
+.sxb-band { position: absolute; left: 44px; width: 40px; height: 8px; transform: translateY(-50%); z-index: 1;
+  background: repeating-linear-gradient(45deg, rgba(138,47,47,.9) 0 3px, rgba(138,47,47,.45) 3px 6px); }
+.sxb-bandlbl { position: absolute; left: 96px; transform: translateY(-50%); font-family: var(--ds-font-mono); font-size: .58rem;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--sev-crit); font-weight: 700; }
+.sxb-bandlbl small { display: block; font-weight: 500; color: var(--ds-ink-soft); text-transform: none; letter-spacing: 0; margin-top: 2px; }
+.sxb-card { position: absolute; left: 100px; transform: translateY(-50%); width: 248px; padding: 11px 15px;
+  background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-rule); border-radius: var(--ds-radius-xs); box-shadow: var(--ds-elev-1); }
+.sxb-card__ph { font-family: var(--ds-font-display); font-size: 1.35rem; font-weight: 900; line-height: 1; }
+.sxb-card__nm { font-family: var(--ds-font-mono); font-size: .56rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ds-ink-soft); font-weight: 600; margin: 4px 0 5px; }
+.sxb-card__d { font-family: var(--ds-font-serif); font-size: .82rem; line-height: 1.42; color: var(--ds-ink-medium); }
+.sxb-card--stomach { border-left-color: var(--ds-accent-hot); } .sxb-card--stomach .sxb-card__ph { color: var(--ds-accent-hot); }
+.sxb-card--panc { border-left-color: var(--sev-calm); } .sxb-card--panc .sxb-card__ph { color: var(--sev-calm); }
+.sxb-side { align-self: center; }
+.sxb-triad { display: grid; gap: 10px; margin: 0 0 var(--ds-space-4); }
+.sxb-triad__i { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: baseline; }
+.sxb-triad__n { font-family: var(--ds-font-mono); font-size: .62rem; font-weight: 700; letter-spacing: .1em; color: var(--ds-accent); }
+.sxb-triad__t { font-family: var(--ds-font-serif); font-size: .9rem; line-height: 1.45; color: var(--ds-ink-medium); }
+.sxb-triad__t b { color: var(--ds-ink); font-weight: 600; }
+
+/* ── the fortress scene (from D — lede + two cutaways + legend) ── */
+.frt-scene { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: var(--ds-space-5) 0 0; }
+.frt-cell { position: relative; padding: 16px 16px 18px; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-rule-soft); overflow: hidden; }
+.frt-cell--ok { background: linear-gradient(180deg, #fff8ee 0%, #fdeede 100%); border-color: var(--ds-accent-soft); }
+.frt-cell--bad { background: linear-gradient(180deg, #f3ede0 0%, #ece2cd 100%); }
+.frt-cell__hd { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+.frt-cell__k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
+.frt-cell--ok .frt-cell__k { color: var(--ds-accent-deep); }
+.frt-cell--bad .frt-cell__k { color: var(--sev-crit); }
+.frt-cell__ph { font-family: var(--ds-font-mono); font-size: .62rem; color: var(--ds-ink-soft); letter-spacing: .06em; }
+.frt-cell__t { font-family: var(--ds-font-display); font-size: 1rem; font-weight: 800; color: var(--ds-ink); margin: 0 0 8px; }
+.frt-cap { font-family: var(--ds-font-serif); font-size: .82rem; line-height: 1.45; color: var(--ds-ink-medium); margin: 10px 0 0; }
+.frt-legend { display: flex; gap: 16px 22px; flex-wrap: wrap; margin: var(--ds-space-4) 0 0; padding: 12px 16px;
+  background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); }
+.frt-legend__i { display: flex; align-items: center; gap: 7px; font-family: var(--ds-font-mono); font-size: .6rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-soft); }
+.frt-legend__sw { width: 12px; height: 12px; border-radius: 3px; flex: none; }
+
+/* ── Ultimate Enzymes CTA ── */
+.ue-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: var(--ds-space-5) 0 18px; }
+.ue-tile { display: flex; flex-direction: column; padding: 13px 13px 15px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft);
+  border-top: 3px solid var(--ds-accent); border-radius: var(--ds-radius-xs); }
+.ue-tile__stage { font-family: var(--ds-font-mono); font-size: .52rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-faint); }
+.ue-tile__c { font-family: var(--ds-font-display); font-size: .92rem; font-weight: 800; color: var(--ds-ink); margin: 5px 0 2px; line-height: 1.1; }
+.ue-tile__amt { font-family: var(--ds-font-mono); font-size: .56rem; color: var(--ds-accent-deep); letter-spacing: .04em; }
+.ue-tile__d { font-family: var(--ds-font-serif); font-size: .74rem; line-height: 1.4; color: var(--ds-ink-medium); margin-top: 7px; }
+.ue-tile__prov { display: flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 9px; font-family: var(--ds-font-mono); font-size: .5rem;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-soft); }
+.ue-dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.ue-dot--w { background: var(--ds-status-ok); }
+.ue-dot--p { background: linear-gradient(90deg, var(--ds-status-ok) 0 50%, var(--ds-paper-light) 50% 100%); border: 1.5px solid var(--ds-status-ok); }
+.ue-proof { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 20px; padding: 14px 18px;
+  background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-status-ok); border-radius: var(--ds-radius-xs); }
+.ue-proof__q { font-family: var(--ds-font-display); font-size: 2.4rem; font-weight: 900; color: var(--ds-status-ok); line-height: .7; }
+.ue-proof__t { font-family: var(--ds-font-serif); font-size: .9rem; line-height: 1.55; color: var(--ds-ink-medium); }
+.ue-proof__t b { color: var(--ds-ink); font-weight: 600; }
+.ue-proof__cite { display: block; margin-top: 6px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-faint); }
+.ue-bar { display: flex; align-items: center; gap: var(--ds-space-4); width: 100%; text-align: left; padding: 16px 20px;
+  background: linear-gradient(100deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); border: 0; border-radius: var(--ds-radius-sm);
+  cursor: pointer; box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 3px 14px rgba(200,85,42,.28); transition: transform .15s var(--ds-ease-out), box-shadow .15s var(--ds-ease-out); }
+.ue-bar:hover { transform: translateY(-1px); box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 6px 20px rgba(200,85,42,.36); }
+.ue-bar__nm { display: block; font-family: var(--ds-font-display); font-size: 1.02rem; font-weight: 800; letter-spacing: .01em; color: #fff; line-height: 1.15; }
+.ue-bar__sub { display: block; font-family: var(--ds-font-sans); font-size: .74rem; font-weight: 500; color: rgba(255,255,255,.9); margin-top: 6px; }
+.ue-bar__r { margin-left: auto; display: flex; align-items: center; gap: 14px; flex: none; }
+.ue-bar__price { text-align: right; }
+.ue-bar__pn { display: block; font-family: var(--ds-font-display); font-size: 1.15rem; font-weight: 900; color: #fff; line-height: 1; }
+.ue-bar__pl { display: block; font-family: var(--ds-font-mono); font-size: .52rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.85); margin-top: 11px; }
+.ue-bar__chev { font-family: var(--ds-font-mono); font-size: 1.5rem; line-height: 1; color: #fff; }
+.ue-barb { display: none; align-items: center; gap: 14px; width: 100%; padding: 15px 20px; background: var(--ds-accent);
+  border: 0; border-radius: var(--ds-radius-sm); box-shadow: inset 0 1px 0 var(--ds-accent-bright), 0 2px 10px rgba(200,85,42,.22); cursor: pointer; }
+.ue-barb__nm { font-family: var(--ds-font-display); font-size: var(--ds-text-sm); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #fff; }
+.ue-barb__go { margin-left: auto; font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.95); }
+.ue-barb__chev { font-family: var(--ds-font-mono); font-size: var(--ds-text-lg); color: #fff; }
+[data-bar="lean"] .ue-bar { display: none; } [data-bar="lean"] .ue-barb { display: flex; }
+.ue-foot { font-family: var(--ds-font-mono); font-size: .58rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ds-ink-faint); margin: 10px 2px 0; }
+
+/* ── shared full record ── */
+.sxr-wrap { margin-top: var(--ds-space-9); padding-top: var(--ds-space-6); border-top: 2px solid var(--ds-rule); }
+.sxr-lead { font-family: var(--ds-font-mono); font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 4px; }
+.sxr-lead b { color: var(--ds-accent-deep); }
+.sxr-h { font-family: var(--ds-font-display); font-size: 1.4rem; font-weight: 800; color: var(--ds-ink); margin: 0 0 6px; }
+.sxr-sub { font-family: var(--ds-font-serif); font-size: .92rem; line-height: 1.55; color: var(--ds-ink-medium); max-width: 62ch; margin: 0 0 var(--ds-space-5); }
+.sxr-group { margin-bottom: var(--ds-space-5); }
+.sxr-group__h { font-family: var(--ds-font-display-interface); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ds-ink); padding-bottom: 7px; margin: 0 0 12px; border-bottom: 1px solid var(--ds-rule); display: flex; justify-content: space-between; }
+.sxr-group__n { color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-weight: 500; }
+.sxr-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sxr-card { border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-xs); padding: 14px 16px; background: var(--ds-paper-light); }
+.sxr-card__q { font-family: var(--ds-font-display); font-size: .9rem; font-weight: 700; color: var(--ds-ink); margin: 0 0 6px; line-height: 1.28; }
+.sxr-card__a { font-family: var(--ds-font-serif); font-size: .84rem; line-height: 1.5; color: var(--ds-ink-medium); margin: 0 0 8px; }
+.sxr-card__s { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-faint); }
+
+@media (max-width: 780px) {
+  .cmb-frame { padding: 26px 20px 90px; }
+  .sxb-wrap, .frt-scene, .sxr-list, .ue-strip { grid-template-columns: 1fr; }
+  .ue-strip { grid-template-columns: 1fr 1fr; }
+  .sxb-scale { height: 380px; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><filter id="ds-filter-rough"><feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="4"/><feDisplacementMap in="SourceGraphic" scale="5" /></filter></defs></svg>
+
+<div class="cmb-bar">
+  <span class="cmb-bar__t"><b>§04 combined build</b> · pH Ladder (whole) + fortress scene + Ultimate Enzymes CTA</span>
+  <span class="cmb-bar__lbl">CTA bar:</span>
+  <button class="cmb-tog is-active" data-bar="rich">Rich</button>
+  <button class="cmb-tog" data-bar="lean">Lean</button>
+</div>
+
+<div id="drawer-knowledge-mount">
+<div class="cmb-frame" id="cmb-root" data-bar="rich">
+
+  <!-- HEADER -->
+  <header class="kd-foods-sec">
+    <span class="kd-foods-sec__num">04</span>
+    <div class="kd-foods-sec__body">
+      <div class="ds-kicker">A question of pH</div>
+      <h2 class="ds-h-section">You can&rsquo;t absorb what you can&rsquo;t break down</h2>
+    </div>
+  </header>
+
+  <p class="sx-p cmb-beat--tight">Your stomach is meant to be the single most acidic place in your body &mdash; about <strong>pH 1.0</strong>, on the far edge of the scale. That isn&rsquo;t a flaw to be neutralised; it&rsquo;s the entire design. Getting the 90 essentials in is one half of Wallach&rsquo;s model. Absorbing them is the other &mdash; and it lives or dies on where your stomach sits on this ladder.</p>
+
+  <!-- 1 · THE pH LADDER -->
+  <div class="sxb-wrap">
+    <div class="sxb-scale" id="sxb-scale"></div>
+    <div class="sxb-side">
+      <div class="ds-kicker" style="margin-bottom:12px">Why 1.0 is non-negotiable</div>
+      <div class="sxb-triad">
+        <div class="sxb-triad__i"><span class="sxb-triad__n">01</span><span class="sxb-triad__t"><b>It stays sterile.</b> Only that extreme acid keeps bacteria and yeast out of the stomach.</span></div>
+        <div class="sxb-triad__i"><span class="sxb-triad__n">02</span><span class="sxb-triad__t"><b>It arms pepsin.</b> The protein-cutting enzyme only switches on in strong acid.</span></div>
+        <div class="sxb-triad__i"><span class="sxb-triad__n">03</span><span class="sxb-triad__t"><b>It frees minerals &amp; B12.</b> Acid releases the minerals from your food and activates B12 uptake.</span></div>
+      </div>
+      <p class="sx-note">The intestine below runs the opposite way &mdash; alkaline, pH&nbsp;8.2 &mdash; because pancreatic enzymes only work in an alkaline bath. The tract is a two-stage pH machine, and each stage has to be right.</p>
+      <div class="sx-cite">Dr. Joel Wallach &middot; Dead Doctors Don&rsquo;t Lie (2011)</div>
+    </div>
+  </div>
+
+  <!-- 2 · THE FORTRESS SCENE (grafted from D) -->
+  <div class="cmb-beat">
+    <div class="ds-kicker" style="margin-bottom:12px">The same gut, two states</div>
+    <p class="sx-p">Picture your stomach as a fortress with an acid moat. At full strength &mdash; <strong>pH 1.0</strong> &mdash; nothing survives it: it stays sterile, it dissolves your food, it frees the minerals to cross the wall. Let the acid fall, and the drawbridge drops.</p>
+    <div class="frt-scene">
+      <div class="frt-cell frt-cell--ok">
+        <div class="frt-cell__hd"><span class="frt-cell__k">At full strength</span><span class="frt-cell__ph">pH ~1.0</span></div>
+        <div class="frt-cell__t">Sterile &amp; dissolving</div>
+        <div id="frt-fig-ok"></div>
+        <p class="frt-cap">Food breaks into particles that cross the wall into your blood. Minerals and B12 get through. No invaders survive the moat.</p>
+      </div>
+      <div class="frt-cell frt-cell--bad">
+        <div class="frt-cell__hd"><span class="frt-cell__k">When the acid falls</span><span class="frt-cell__ph">pH ~3&ndash;5</span></div>
+        <div class="frt-cell__t">Breached &amp; fermenting</div>
+        <div id="frt-fig-bad"></div>
+        <p class="frt-cap">Bacteria and yeast climb up from the intestine and ferment your food into gas. Undigested lumps leave the way they came in &mdash; minerals still locked inside.</p>
+      </div>
+    </div>
+    <div class="frt-legend">
+      <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--ds-accent)"></span> Acid moat</span>
+      <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-calm)"></span> Nutrient crossing the wall</span>
+      <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-crit)"></span> Invading bacteria / yeast</span>
+      <span class="frt-legend__i"><span class="frt-legend__sw" style="border:1px solid var(--ds-ink-faint);background:transparent"></span> Fermentation gas</span>
+    </div>
+  </div>
+
+  <!-- 3 · THE INVERSION -->
+  <div class="cmb-beat">
+    <div class="sx-callout">
+      <div class="sx-callout__k">The twist most people get backwards</div>
+      <div class="sx-callout__t">Heartburn is usually too <em>little</em> acid, not too much</div>
+      <p class="sx-callout__b">You feel the burn and the bloat and reach for an antacid, sure you have an excess. Wallach says it&rsquo;s the opposite: <mark class="ds-mark rose">the acid is not acid enough</mark>, and it&rsquo;s burped up with bacterially-generated gas. An antacid &mdash; and even alkaline water at mealtime &mdash; pushes the ladder the wrong way and shuts down the digestion you need.</p>
+    </div>
+  </div>
+
+  <!-- 4 · THE KILL-SHOT (one pull-stat) -->
+  <div class="ds-pull-stat cmb-beat">
+    <span class="ds-pull-stat__readout">// achlorhydria &middot; DDDL</span>
+    <div class="ds-pull-stat__num">75<sup>%</sup></div>
+    <div class="ds-pull-stat__body">of people over 50 need supplemental stomach acid<small>the acid slips as you age &mdash; most have already drifted off pH 1.0 &middot; it starts thinning around age 35</small></div>
+  </div>
+
+  <!-- 5 · WALLACH'S WORDS -->
+  <div class="ds-pull-quote-wrap kd-foods-pq cmb-beat">
+    <blockquote class="ds-pull-quote">
+      <p>Normally the stomach is <mark class="ds-mark">sterile</mark> because of the acid environment; however, when hypochlorhydria (low stomach acid) occurs, bacteria and yeast from the small intestine migrates up into the stomach.</p>
+      <footer>&mdash; Dr. Joel Wallach &middot; Dead Doctors Don&rsquo;t Lie (2011)</footer>
+    </blockquote>
+  </div>
+
+  <!-- 6 · THE CTA — put it into practice -->
+  <section class="cmb-beat">
+    <div class="ds-kicker" style="margin-bottom:10px">Put it into practice</div>
+    <h3 style="font-family:var(--ds-font-display);font-size:var(--ds-text-2xl);font-weight:800;line-height:1.1;letter-spacing:-.01em;color:var(--ds-ink);margin:0 0 10px">You just learned the problem. Here&rsquo;s the <em style="color:var(--ds-accent-deep);font-style:italic">one-bottle</em> answer.</h3>
+    <p class="sx-p">Wallach&rsquo;s fix is specific &mdash; betaine HCl, pancreatic enzymes, and ox bile, before meals. <strong>One inexpensive product already puts all of it in a single capsule.</strong></p>
+
+    <div class="ue-strip" id="ue-strip"></div>
+
+    <div class="ue-proof">
+      <span class="ue-proof__q">&ldquo;</span>
+      <div class="ue-proof__t">Wallach&rsquo;s own protocol: <b>75&ndash;200 mg betaine HCl and pancreatic enzymes, three times a day, 15&ndash;30 minutes before meals</b> &mdash; and he adds ox bile for fats. Ultimate Enzymes is that formula, pre-built.
+        <span class="ue-proof__cite">Dr. Joel Wallach &middot; Dead Doctors Don&rsquo;t Lie &amp; Epigenetics</span>
+      </div>
+    </div>
+
+    <button class="ue-bar" type="button">
+      <span>
+        <span class="ue-bar__nm">Solve it for about a quarter per serving</span>
+        <span class="ue-bar__sub">Ultimate Enzymes &middot; one capsule, three times a day, before meals</span>
+      </span>
+      <span class="ue-bar__r">
+        <span class="ue-bar__price"><span class="ue-bar__pn">$0.26</span><span class="ue-bar__pl">per serving</span></span>
+        <span class="ue-bar__chev">&rsaquo;</span>
+      </span>
+    </button>
+    <button class="ue-barb" type="button">
+      <span class="ue-barb__nm">Ultimate Enzymes &middot; solve it for about a quarter per serving</span>
+      <span class="ue-barb__go">Add to regimen</span>
+      <span class="ue-barb__chev">&rsaquo;</span>
+    </button>
+    <div class="ue-foot">Wholesale &middot; 120 capsules &middot; &asymp; $0.77 a day &middot; one of the least-expensive force-multipliers in the program</div>
+  </section>
+
+  <!-- 7 · THE FULL RECORD -->
+  <div class="sxr-wrap">
+    <div class="sxr-lead">Shared across Knowledge &middot; <b>the full record</b></div>
+    <h3 class="sxr-h">Everything Wallach says about breaking food down</h3>
+    <p class="sxr-sub">The section ends the way it does across Knowledge &mdash; the complete set of sealed claims that also powers Ask&nbsp;Wallach, grouped by what each one answers. The page is both the experience and the database.</p>
+    <div id="sxr-record"></div>
+  </div>
+
+</div>
+</div>
+
+<script>
+/* CTA bar toggle */
+(function(){
+  var root=document.getElementById('cmb-root');
+  document.querySelectorAll('.cmb-tog').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('.cmb-tog').forEach(function(x){ x.classList.toggle('is-active', x===b); });
+      root.setAttribute('data-bar', b.dataset.bar);
+    });
+  });
+})();
+
+/* pH ladder */
+(function(){
+  var el = document.getElementById('sxb-scale'); if(!el) return;
+  var H = 500, PAD = 12;
+  function y(ph){ return (H-PAD) - (ph/14)*(H-2*PAD); }
+  var html = '';
+  for(var t=0;t<=14;t+=2){ html += '<span class="sxb-axis__t" style="top:'+y(t)+'px">'+t+'</span>'; }
+  html += '<span class="sxb-cap" style="top:'+y(13.3)+'px">alkaline</span>';
+  html += '<span class="sxb-cap" style="top:'+y(0.7)+'px">acid</span>';
+  html += '<div class="sxb-track"></div>';
+  html += '<div class="sxb-band" style="top:'+y(7.4)+'px"></div>';
+  html += '<div class="sxb-bandlbl" style="top:'+y(7.4)+'px">Blood &middot; 7.36&ndash;7.44<small>defended to the decimal</small></div>';
+  html += '<div class="sxb-dot" style="top:'+y(8.2)+'px;background:#5a8ca8"></div>';
+  html += '<div class="sxb-card sxb-card--panc" style="top:'+y(10.2)+'px"><div class="sxb-card__ph">pH 8.2</div><div class="sxb-card__nm">Pancreatic juice</div><div class="sxb-card__d">The intestine runs alkaline &mdash; pancreatic enzymes only work here.</div></div>';
+  html += '<div class="sxb-dot" style="top:'+y(1.0)+'px;background:#ff6420"></div>';
+  html += '<div class="sxb-card sxb-card--stomach" style="top:'+y(2.0)+'px"><div class="sxb-card__ph">pH 1.0</div><div class="sxb-card__nm">Stomach acid</div><div class="sxb-card__d">Sterile &middot; pepsin armed &middot; minerals dissolving. As strong as it gets.</div></div>';
+  el.innerHTML = html;
+})();
+
+/* fortress cutaways */
+(function(){
+  function stomach(state){
+    var W=300,H=190;
+    var body='<path d="M40 30 Q150 6 262 34 Q276 78 236 128 Q210 168 150 176 Q90 168 66 128 Q28 82 40 30 Z" fill="#ffffff" stroke="#d8b48c" stroke-width="2"/>';
+    var wallY=150;
+    var blood='<rect x="14" y="'+(wallY+6)+'" width="'+(W-28)+'" height="26" rx="5" fill="#e7eef2" stroke="#cddbe2" stroke-width="1"/>'
+      + '<text x="'+(W-20)+'" y="'+(wallY+22)+'" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1" fill="#7a8f9a">BLOOD</text>';
+    var g='';
+    if(state==='ok'){
+      g += '<path d="M52 58 Q150 40 250 60 Q262 96 230 128 Q206 160 150 166 Q94 160 72 128 Q44 96 52 58 Z" fill="rgba(255,126,60,.20)"/>';
+      var fx=[95,140,185,225];
+      fx.forEach(function(x,i){
+        g += '<circle cx="'+x+'" cy="'+(96+(i%2?8:-6))+'" r="5" fill="#e39a4e" opacity=".85"/>';
+        g += '<circle cx="'+(x-4)+'" cy="'+(wallY+16)+'" r="3.4" fill="#5a8ca8"/>';
+        g += '<circle cx="'+(x+7)+'" cy="'+(wallY+24)+'" r="2.6" fill="#5a8ca8" opacity=".8"/>';
+        g += '<line x1="'+x+'" y1="'+(112+(i%2?8:-6))+'" x2="'+(x-2)+'" y2="'+(wallY-2)+'" stroke="#c8552a" stroke-width="1" opacity=".35"/>';
+      });
+      g += '<circle cx="70" cy="52" r="12" fill="none" stroke="#c8552a" stroke-width="1.4" opacity=".8"/>'
+         + '<text x="70" y="55" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" font-weight="700" fill="#c8552a">STER</text>';
+    } else {
+      g += '<path d="M62 118 Q150 106 238 118 Q214 156 150 164 Q92 158 62 118 Z" fill="rgba(255,126,60,.14)"/>';
+      var inv=[[96,138],[120,120],[150,132],[182,116],[210,134],[135,150],[172,148]];
+      inv.forEach(function(p){
+        g += '<g transform="translate('+p[0]+','+p[1]+')"><circle r="4.5" fill="#8a2f2f"/><line x1="-6" y1="0" x2="6" y2="0" stroke="#8a2f2f" stroke-width="1.4"/><line x1="0" y1="-6" x2="0" y2="6" stroke="#8a2f2f" stroke-width="1.4"/></g>';
+      });
+      [[110,64,7],[150,50,9],[196,66,6],[168,80,5]].forEach(function(b){
+        g += '<circle cx="'+b[0]+'" cy="'+b[1]+'" r="'+b[2]+'" fill="none" stroke="#9b8e7c" stroke-width="1.4"/>';
+      });
+      g += '<rect x="126" y="96" width="48" height="30" rx="10" fill="#c9a05a" stroke="#a07d3a" stroke-width="1.5"/>';
+      g += '<text x="150" y="115" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7" fill="#5c4a26">UNBROKEN</text>';
+    }
+    return '<svg style="width:100%;height:auto;display:block" viewBox="0 0 '+W+' '+H+'" role="img" aria-hidden="true">'
+      + body + '<line x1="30" y1="'+wallY+'" x2="'+(W-30)+'" y2="'+wallY+'" stroke="#d8b48c" stroke-width="2" stroke-dasharray="5 4"/>'
+      + blood + g + '</svg>';
+  }
+  var a=document.getElementById('frt-fig-ok'); if(a) a.innerHTML=stomach('ok');
+  var b=document.getElementById('frt-fig-bad'); if(b) b.innerHTML=stomach('bad');
+})();
+
+/* Ultimate Enzymes coverage strip */
+(function(){
+  var el = document.getElementById('ue-strip'); if(!el) return;
+  var S = [
+    ['In the stomach','Betaine HCl','105 mg','Restores the acid that switches on digestion.','w'],
+    ['Protein &middot; stage 1','Pepsin','22.5 mg','The acid-activated enzyme that cuts protein.','w'],
+    ['Protein &middot; carbs &middot; fats','Pancreatin 11X','75 mg','Protease, amylase &amp; lipase &mdash; the pancreas&rsquo; job.','w'],
+    ['Extra protein power','Papain + Bromelain','35 mg','Plant enzymes from papaya &amp; pineapple.','p'],
+    ['Fats &amp; A/D/E/K','Ox Bile','33 mg','Bile salts to break down and absorb fats.','w']
+  ];
+  el.innerHTML = S.map(function(s){
+    var prov = s[4]==='w' ? '<span class="ue-dot ue-dot--w"></span> Wallach-backed'
+      : s[4]==='p' ? '<span class="ue-dot ue-dot--p"></span> Papaya backed'
+      : '<span class="ue-dot"></span> in the formula';
+    return '<div class="ue-tile"><div class="ue-tile__stage">'+s[0]+'</div>'
+      + '<div class="ue-tile__c">'+s[1]+'</div><div class="ue-tile__amt">'+s[2]+'</div>'
+      + '<div class="ue-tile__d">'+s[3]+'</div><div class="ue-tile__prov">'+prov+'</div></div>';
+  }).join('');
+})();
+
+/* the full record */
+(function(){
+  var el=document.getElementById('sxr-record'); if(!el) return;
+  var R=[
+    ['basics','Is it what you eat, or what you absorb?','Wallach flips the old adage: your health is decided not by what you eat but by what you actually absorb.','Epigenetics'],
+    ['basics','Does everyone get low stomach acid with age?','Largely yes &mdash; he calls it &ldquo;perhaps the most significant aging phenomenon,&rdquo; hitting 75% of people over 50.','Dead Doctors Don’t Lie'],
+    ['basics','Which grains contain the gluten to avoid?','Wheat, barley, rye and oats &mdash; the small-grain proteins; he calls the reaction an intolerance, not a true allergy.','Epigenetics'],
+    ['mechanism','What does stomach acid actually do?','Made from ordinary salt, it activates pepsin to digest protein, activates intrinsic factor to absorb B12, and frees minerals to be absorbed.','Immortality'],
+    ['mechanism','Why do I get bloated after eating?','Low acid lets bacteria and yeast climb up from the intestine and ferment your carbs &mdash; that fermentation gas is the bloat.','Dead Doctors Don’t Lie'],
+    ['mechanism','Why can’t I absorb vitamin B12?','B12 uptake needs acid-activated intrinsic factor; with low acid it fails &mdash; which is why doctors give older people B12 shots.','Immortality'],
+    ['mechanism','Why do pancreatic enzymes stop working?','They need an alkaline environment; when unbuffered acid floods the intestine they can’t function.','Dead Doctors Don’t Lie'],
+    ['mechanism','Why is gluten so damaging to the gut?','He frames it as a &ldquo;contact enteritis&rdquo; &mdash; like poison ivy on the gut lining &mdash; that gradually destroys the villi you absorb with.','Epigenetics'],
+    ['physiology','What is the pH of stomach acid?','About 1.0. His secretions run from 1.0 in the stomach to 8.2 in pancreatic juice &mdash; while blood is held at 7.36&ndash;7.44.','Dead Doctors Don’t Lie'],
+    ['warning','Is indigestion actually serious?','He calls it the most common and costly &ldquo;disease&rdquo; in the west &mdash; leading on to food allergies, osteoporosis, anemia and degenerative disease.','Dead Doctors Don’t Lie'],
+    ['warning','What happens if you don’t fix low acid?','You lose B12, calcium and protein, and pick up new adult food allergies from absorbing half-digested protein fragments.','Let’s Play Doctor'],
+    ['stance','Are antacids bad for you?','In an emergency, no. As a habit, yes &mdash; regular use harms you by reducing the nutrients you absorb, because the real problem is usually too little acid.','Dead Doctors Don’t Lie'],
+    ['protocol','Should I be taking digestive enzymes?','As you grow older, take betaine HCl and pancreatic enzymes before meals to offset falling acid &mdash; and be sure to under stress.','Dead Doctors Don’t Lie'],
+    ['protocol','Why does Wallach say to salt your food?','Salt is the raw material for stomach acid; salt-restricted diets breed low acid &mdash; so his fix starts with salting to taste.','Dead Doctors Don’t Lie'],
+    ['protocol','How do I get rid of bloating and gas?','He treats the missing acid, not the gas: betaine HCl and pancreatic enzymes before meals, plus colloidal minerals.','Let’s Play Doctor'],
+    ['protocol','Is alkaline water good, and when?','Drink it slightly alkaline (7.5&ndash;8.5) &mdash; but not with meals, since it neutralises the stomach acid you need to digest.','Epigenetics'],
+    ['protocol','If gluten damaged my gut, what’s the fix?','Two prongs together: go fully gluten-free and supply the 90 essentials plus therapeutic levels of what you’re most short on.','Epigenetics']
+  ];
+  var LABEL={basics:'The basics',mechanism:'How it works',physiology:'In the body',warning:'Warnings',stance:'Wallach’s stance',protocol:'What to do'};
+  var ORDER=['basics','mechanism','physiology','warning','stance','protocol'];
+  var by={}; R.forEach(function(r){ (by[r[0]]=by[r[0]]||[]).push(r); });
+  el.innerHTML = ORDER.map(function(f){
+    var list=by[f]; if(!list) return '';
+    return '<div class="sxr-group"><div class="sxr-group__h">'+LABEL[f]+'<span class="sxr-group__n">'+list.length+'</span></div>'
+      + '<div class="sxr-list">'+list.map(function(c){
+          return '<div class="sxr-card"><div class="sxr-card__q">'+c[1]+'</div><p class="sxr-card__a">'+c[2]+'</p><div class="sxr-card__s">'+c[3]+'</div></div>';
+        }).join('')+'</div></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>
