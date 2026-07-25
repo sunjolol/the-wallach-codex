@@ -1506,7 +1506,7 @@
 #drawer-knowledge-mount .kd-foods-sec { display: grid; grid-template-columns: auto 1fr; gap: var(--ds-space-5); align-items: end; margin: 0 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-foods-sec--hero { align-items: start; margin-top: -14px; }
 #drawer-knowledge-mount .kd-foods-sec--hero .kd-foods-sec__num { margin-top: -0.22em; line-height: 0.82; }
-#drawer-knowledge-mount .kd-foods-sec__num { position: relative; font-family: var(--ds-font-display); font-size: 4.5rem; font-weight: 900; line-height: 1; color: var(--ds-accent); letter-spacing: var(--ds-track-tight); }
+#drawer-knowledge-mount .kd-foods-sec__num { position: relative; font-family: var(--ds-font-display); font-size: 4.5rem; font-weight: 900; line-height: 1; background: linear-gradient(135deg, var(--ds-accent-bright) 0%, var(--ds-accent) 45%, var(--ds-accent-hot) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; letter-spacing: var(--ds-track-tight); }
 #drawer-knowledge-mount .kd-foods-sec__body { padding-bottom: var(--ds-space-2); min-width: 0; }
 #drawer-knowledge-mount .kd-foods-sec__body .ds-kicker { margin-bottom: var(--ds-space-2); }
 /* Pull-quote body: between the .ds-pull-quote default and the reduced size so the first line fills the width without an obvious wrap right after "proteins". */
