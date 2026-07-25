@@ -27,6 +27,7 @@
  */
 
 import fattyAcidClarityData from '../../../data/fatty-acid-clarity-data.json';
+import mechanismClarityData from '../../../data/mechanism-clarity-data.json';
 import { plural } from '../core/format.js';
 import {
   type ConditionPage,
@@ -35,6 +36,7 @@ import {
   type EntityKindGroup,
   type EssentialPage,
   FattyAcidClaritySchema,
+  MechanismClaritySchema,
   type OmegaFamily,
   SEARCH_FACETS,
   type SearchClaim,
@@ -881,6 +883,9 @@ function renderRelatedSection(page: EssentialPage): string {
 const FATTY_ACID_CLARITY = FattyAcidClaritySchema.parse(fattyAcidClarityData);
 const OMEGA_BY_FAMILY = new Map(FATTY_ACID_CLARITY.omegas.map(o => [o.family, o] as const));
 
+const MECHANISM_CLARITY = MechanismClaritySchema.parse(mechanismClarityData);
+const MECH_BY_SLUG = new Map(MECHANISM_CLARITY.mechanisms.map(m => [m.slug, m] as const));
+
 function renderOmegaClarity(name: string): string {
   const m = /^Omega-([369])\b/.exec(name);
   const digit = m?.[1];
@@ -1038,6 +1043,85 @@ function renderOmega6Experience(quoteClaim: string | undefined, highlight: strin
     </section>`;
 }
 
+// ─── Mechanism explainer — the per-element "how it works" hero (selenium's rancidity mechanism is
+// the first instance). Data-driven off mechanism-clarity-data.json, keyed by slug via MECH_BY_SLUG
+// (a Map built by .map — NO id-keyed literal, NO slug branch), so the entity page stays a pure
+// projection (entity_render_is_projection). A plain-language gloss of Wallach's OWN sealed claims:
+// eyebrow/kill/beats are our voice (segregated content, R4); his exact words + the stat figure are
+// pulled BY CLAIM ID at render. Reuses the .kd-ep-fam experience-hero, recoloured to the mechanism
+// facet's science-teal via data-facet (the colour is never a TS literal — view_category_not_hardcoded).
+
+/** The rancidity strip — deterministic (no Math.random, stable for probes): ONE fat bilayer that
+ *  loses colour + order left→right (intact → Se guard at centre → rancid), with a grafted brown-gold
+ *  ceroid "age spot" in the rancid zone. All state lives in CSS classes (theme-aware). */
+function rancidityFigure(alt: string): string {
+  const heads: string[] = [];
+  for (let i = 0; i < 20; i++) {
+    const x = 26 + i * 33;
+    const cls = x < 250 ? '' : x > 430 ? ' kd-ep-fam__head--rancid' : ' kd-ep-fam__head--guard';
+    heads.push(`<circle class="kd-ep-fam__head${cls}" cx="${x}" cy="58" r="5"/><circle class="kd-ep-fam__head${cls}" cx="${x}" cy="92" r="5"/>`);
+  }
+  return `<svg class="kd-ep-fam__art kd-ep-fam__art--mech" viewBox="0 0 680 150" role="img" aria-label="${escHTML(alt)}">
+      <path class="kd-ep-fam__mem" d="M20 58 L430 58 M20 92 L430 92"/>
+      <path class="kd-ep-fam__mem kd-ep-fam__mem--gone" d="M430 58 L660 58 M430 92 L660 92"/>
+      ${heads.join('')}
+      <path class="kd-ep-fam__shieldarc" d="M300 44 A44 44 0 0 1 380 44"/>
+      <rect class="kd-ep-fam__seguard" x="312" y="56" width="56" height="38" rx="10"/>
+      <text class="kd-ep-fam__seglyph" x="340" y="82" text-anchor="middle">Se</text>
+      <circle class="kd-ep-fam__ceroid" cx="545" cy="72" r="11"/>
+      <circle class="kd-ep-fam__spot" cx="600" cy="60" r="5"/>
+      <circle class="kd-ep-fam__spot" cx="628" cy="88" r="4"/>
+      <text class="kd-ep-fam__flabel" x="130" y="130" text-anchor="middle">INTACT MEMBRANE</text>
+      <text class="kd-ep-fam__flabel" x="340" y="130" text-anchor="middle">Se · ON GUARD</text>
+      <text class="kd-ep-fam__flabel kd-ep-fam__flabel--rancid" x="560" y="130" text-anchor="middle">RANCID · AGE SPOT</text>
+    </svg>`;
+}
+
+/** Figure dispatch on a GENERIC key (never a slug) — keeps renderMechanism a pure projection. */
+function mechanismFigure(key: string, alt: string): string {
+  switch (key) {
+    case 'rancidity':
+      return rancidityFigure(alt);
+    default:
+      return '';
+  }
+}
+
+/** The per-element mechanism hero. Renders ONLY for a slug that has a mechanism-clarity entry
+ *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug branch. */
+function renderMechanism(slug: string | null, layoutKey: string, category: string | null): string {
+  const m = slug !== null ? MECH_BY_SLUG.get(slug) : undefined;
+  if (m === undefined) {
+    return '';
+  }
+  const beats = m.beats.map(b => `
+      <div class="kd-ep-fam__step">
+        <span class="kd-ep-fam__num">${escHTML(b.n)}</span>
+        <div class="kd-ep-fam__stepbody">
+          <div class="kd-ep-fam__steptitle">${escHTML(b.title)}</div>
+          <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
+          <p class="kd-ep-fam__hook">${escHTML(b.hook)}</p>
+        </div>
+      </div>`).join('');
+  const stat = m.stat !== undefined ? `
+      <div class="kd-ep-fam__stat">
+        <span class="kd-ep-fam__statread">${escHTML(m.stat.readout)}</span>
+        <span class="kd-ep-fam__statnum">${escHTML(m.stat.value)}</span>
+        <span class="kd-ep-fam__statlbl">${escHTML(m.stat.label)}</span>
+      </div>` : '';
+  return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML(category ?? '')}">
+      <span class="kd-ep-fam__eyebrow">${escHTML(m.eyebrow)}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML(m.kill)}</h3>
+      <div class="kd-ep-fam__figure kd-ep-fam__figure--mech">${mechanismFigure(m.figure, m.figure_alt)}</div>
+      <div class="kd-ep-fam__steps">${beats}</div>
+      ${stat}
+      ${fatFamilyQuote(m.quote_claim, m.highlight)}
+      <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>
+      ${renderSourcesBlock(layoutKey)}
+    </section>`;
+}
+
+
 /** The plant-derived "how it works" figure: a 4-stage flow — parent rock → glacial milk → the
  *  plant → colloidal (98%). Deterministic (no Math.random); reuses the .kd-ep-fam node/arrow
  *  classes, last node accent-solid as the payoff. Labels + arrow captions come from view-copy. */
@@ -1177,14 +1261,14 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const page = slug !== null ? getEssentialPage(slug) : null;
   const tile = tileOf(snapshot, layoutKey);
   const status: CoverageStatus = tile?.status ?? '';
-  const deferSources = page !== null && fatBlockOwnsSources(page.name);
+  const deferSources = page !== null && (fatBlockOwnsSources(page.name) || (slug !== null && MECH_BY_SLUG.has(slug)));
   const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
 
   if (page === null) {
     // Graceful fallback: an essential with no sealed page record yet (e.g. the
     // non-essential 91st). Coverage meter + sources still join by layoutKey.
     const nm = escHTML(corpusEss?.common_name ?? layoutKey);
-    return `<div class="kd-essential-deep kd-ep">
+    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel('At a glance', 'the essentials, in one place')}
       ${glanceHTML}
@@ -1210,7 +1294,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ? `<p class="kd-ep-lede">${escHTML(ledeText)}</p>`
     : '';
 
-  return `<div class="kd-essential-deep kd-ep">
+  return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}">
     <div class="kd-ep-hero">
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML(page.symbol)}</div>` : ''}
       <div class="kd-ep-hero__idblock">
@@ -1225,6 +1309,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${seclabel('At a glance', 'the essentials, in one place')}
     ${glanceHTML}
     ${fattyAcidBlockFor(layoutKey, page.name, tile)}
+    ${renderMechanism(slug, layoutKey, corpusEss?.category ?? null)}
     ${renderPdmClarity(page)}
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}

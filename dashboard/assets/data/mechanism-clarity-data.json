@@ -1,0 +1,45 @@
+{
+  "_purpose": "Hand-authored MECHANISM explainer prose store for the entity-page 'how it works' hero (selenium's rancidity mechanism = the first instance). A plain-language gloss of Wallach's OWN sealed claims: each beat's `traces` are provenance-only (never rendered), and his exact words + the stat figure are pulled BY CLAIM ID at render (never hand-typed verbatim, R3). NOT a dose/target (source-rule / R2). Segregated content (R4), MANIFEST-accounted, Zod-validated, never inline in code. Sibling to fatty-acid-clarity-data.json.",
+  "disclaimer": "A plain-language summary of Wallach's mechanism, drawn from his sealed books; his exact words appear in the quote above. General education, not medical advice.",
+  "mechanisms": [
+    {
+      "slug": "selenium",
+      "facet": "mechanism",
+      "eyebrow": "The rancidity mechanism",
+      "kill": "The antioxidant that keeps your cells from going rancid",
+      "figure": "rancidity",
+      "figure_alt": "A fatty cell membrane: intact on the left, guarded at its centre by selenium, gone rancid with a visible age spot on the right.",
+      "beats": [
+        {
+          "n": "01",
+          "title": "Your cells are fat",
+          "text": "Every cell and every mitochondrion is wrapped in a membrane made of fat — and fat oxidizes, goes rancid, the same way cooking oil does once it's heated or left out.",
+          "hook": "The rancidity that spoils oil in the pan can happen inside your own cell walls.",
+          "traces": ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000135"]
+        },
+        {
+          "n": "02",
+          "title": "The most efficient antioxidant",
+          "text": "Selenium — working through the glutathione-peroxidase enzyme system — is, in Wallach's telling, the most efficient antioxidant there is, standing guard over those fatty membranes right at the subcellular level.",
+          "hook": "A trace mineral you need in millionths of a gram is the bodyguard on every membrane you own.",
+          "traces": ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000138"]
+        },
+        {
+          "n": "03",
+          "title": "Rancid, made visible",
+          "text": "Pull selenium out and the fats peroxidize — the brown-gold residue (ceroid lipofuscin) surfaces on skin as \"age spots\" or \"liver spots,\" while selenium-starved heart muscle can fail outright, as in Keshan disease and the sudden collapse of young athletes.",
+          "hook": "An age spot is rancid fat you can see — Wallach reads it as a warning, not a blemish.",
+          "traces": ["WAL-CLM-RARE-000321", "WAL-CLM-EPIGEN-000186"]
+        }
+      ],
+      "quote_claim": "WAL-CLM-RARE-000321",
+      "highlight": "prevents body fats from going rancid",
+      "stat": {
+        "value": "13 → 1",
+        "readout": "// Keshan Province · 3-year selenium trial",
+        "label": "Keshan-disease cases per 1,000 children, after selenium was added",
+        "claim": "WAL-CLM-RARE-000322"
+      }
+    }
+  ]
+}

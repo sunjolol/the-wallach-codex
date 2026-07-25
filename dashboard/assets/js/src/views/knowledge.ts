@@ -265,6 +265,8 @@ const SEC_LABEL_KEY: Record<string, string> = {
 /** The 4 coverage-dot states, in legend order. */
 const COV_STATES = ['covered', 'partial', 'uncovered', 'present'] as const;
 
+const ESSENTIAL_CAT_SCROLL: Record<string, string> = { mineral: '#2b6fb0', vitamin: '#ff7e3c', amino_acid: '#5aa82c', fatty_acid: '#8a52d6' };
+
 function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
   const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : '';
   const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML(ui('kd_covlegend_label'))}</span>${COV_STATES.map(s => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML(ui(`kd_covlegend_${s}`))}</span>`).join('')}</div>`;
@@ -583,7 +585,9 @@ export function mount(container: HTMLElement): DrawerHandle {
       ? conditionCategory(selectedCondition)?.color ?? ''
       : (activeTab === 'products' && selectedProduct !== null)
           ? productScrollTint(selectedProduct)
-          : '';
+          : (activeTab === 'essentials' && selectedEssential !== null)
+              ? (ESSENTIAL_CAT_SCROLL[getEssentialByLayoutKey(selectedEssential)?.category ?? ''] ?? '')
+              : '';
     if (/^#[0-9a-f]{3,8}$/i.test(scrollTint)) {
       document.documentElement.style.setProperty('--kd-detail-scroll', scrollTint);
     }

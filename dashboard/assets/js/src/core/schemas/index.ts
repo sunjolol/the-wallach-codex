@@ -22,6 +22,7 @@ export * from './scanner.js';
 export * from './product-detail.js';
 export * from './nutrient-resolver.js';
 export * from './fatty-acid-clarity.js';
+export * from './mechanism-clarity.js';
 export * from './recommender.js';
 export * from './search.js';
 export * from './view-copy.js';

@@ -2215,3 +2215,65 @@
   background: linear-gradient(180deg, var(--kd-detail-scroll, var(--ds-accent)) 0%, var(--kd-detail-scroll, var(--ds-accent-hot)) 100%);
   border: 2px solid var(--ds-paper-darker); border-radius: var(--ds-radius-pill);
 }
+
+/* ── Mechanism explainer hero (per-element "how it works"; selenium's rancidity mechanism is the
+   first instance). Reuses .kd-ep-fam wholesale; the accent is the ELEMENT'S CATEGORY colour —
+   mineral=blue · vitamin=orange · amino=green · omega=purple — so each category's detail screens
+   feel distinct + colour-coded (Luneth 2026-07-25). Every colour a design-system token → theme-aware. ── */
+/* the mechanism block adopts the screen's category accent (set on the .kd-essential-deep container) */
+#drawer-knowledge-mount .kd-ep-fam--mech { --kd-ep-fam: var(--ds-accent); }
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__eyebrow { color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__num     { color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__statnum { color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__quote .ds-pull-quote { border-left-color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__quote .ds-pull-quote::before { color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__stepbody { flex: 1; min-width: 0; }
+/* quote sized DOWN so the highlighted (inline-block, unbreakable) .ds-mark phrase never forces a wrap */
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__quote .ds-pull-quote { font-size: clamp(1.05rem, 1.05vw, 1.35rem); }
+
+/* per-beat hook — an editorial italic payoff line under each numbered step */
+#drawer-knowledge-mount .kd-ep-fam__hook {
+  margin: var(--ds-space-2) 0 0; font-family: var(--ds-font-serif-light); font-style: italic;
+  font-size: var(--ds-text-sm); line-height: 1.5; color: var(--ds-ink-soft); }
+
+/* the rancidity strip — one membrane desaturating L→R; the category accent is the only theme colour, decay = loss of colour */
+#drawer-knowledge-mount .kd-ep-fam__figure--mech { max-width: 600px; }
+#drawer-knowledge-mount .kd-ep-fam__mem          { fill: none; stroke: var(--ds-rule-bright); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__mem--gone    { stroke: var(--ds-ink-faint); stroke-dasharray: 4 4; }
+#drawer-knowledge-mount .kd-ep-fam__head         { fill: var(--ds-paper-darker); stroke: var(--ds-rule); stroke-width: 1; }
+#drawer-knowledge-mount .kd-ep-fam__head--guard  { fill: color-mix(in srgb, var(--kd-ep-fam) 20%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam__head--rancid { fill: var(--ds-paper-shadow); stroke: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-ep-fam__seguard      { fill: color-mix(in srgb, var(--kd-ep-fam) 16%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__shieldarc    { fill: none; stroke: var(--kd-ep-fam); stroke-width: 1.5; opacity: .55; }
+#drawer-knowledge-mount .kd-ep-fam__seglyph      { fill: var(--ds-ink); font-family: var(--ds-font-display); font-weight: 700; font-size: 20px; }
+/* the grafted visible age spot — muted brown-gold ceroid lipofuscin; low-opacity so it never fights the accent */
+#drawer-knowledge-mount .kd-ep-fam__ceroid       { fill: color-mix(in srgb, var(--ds-status-warn) 55%, var(--ds-paper-shadow)); opacity: .8; }
+#drawer-knowledge-mount .kd-ep-fam__spot         { fill: color-mix(in srgb, var(--ds-status-warn) 40%, transparent); }
+#drawer-knowledge-mount .kd-ep-fam__flabel       { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 11px; letter-spacing: .04em; }
+#drawer-knowledge-mount .kd-ep-fam__flabel--rancid { fill: var(--ds-ink-faint); }
+
+/* data-forward pull-stat — mono readout on its own line, then the oversized numeral + label CENTRED beside each other */
+#drawer-knowledge-mount .kd-ep-fam__stat {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-3) var(--ds-space-4);
+  margin: var(--ds-space-5) 0 var(--ds-space-1); padding-top: var(--ds-space-4);
+  border-top: 1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-ep-fam__statread {
+  flex: 1 0 100%; margin-bottom: var(--ds-space-1); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-ep-fam__statnum {
+  flex: 0 0 auto; font-family: var(--ds-font-display); font-weight: 700;
+  font-size: clamp(2rem, 4.4vw, 2.85rem); line-height: .95; letter-spacing: var(--ds-track-tight); }
+#drawer-knowledge-mount .kd-ep-fam__statlbl {
+  flex: 1; min-width: 16ch; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide); text-transform: uppercase;
+  color: var(--ds-ink-soft); line-height: 1.5; max-width: 40ch; }
+
+/* -- Category theming: the whole detail screen adopts the element's CATEGORY accent by overriding
+   the --ds-accent FAMILY on the container, so the hero tile, outer border, why-link, back button and
+   the mechanism block all recolour together. minerals=blue; vitamins keep the default orange;
+   amino=green + omega=purple land when those elements are built (Luneth 2026-07-25). -- */
+#drawer-knowledge-mount .kd-essential-deep[data-category="mineral"] {
+  --ds-accent: #2b6fb0; --ds-accent-bright: #5591cf; --ds-accent-hot: #1f60a0;
+  --ds-accent-deep: #1e5088; --ds-accent-soft: #bcd3ea; --ds-accent-wash: #e3edf7;
+  box-shadow: 0 4px 14px -3px rgba(43, 111, 176, 0.25);
+}

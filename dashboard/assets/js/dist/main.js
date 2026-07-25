@@ -4911,6 +4911,37 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     omegas: external_exports.array(OmegaFamilySchema)
   }).passthrough();
 
+  // assets/js/src/core/schemas/mechanism-clarity.ts
+  var MechStatSchema = external_exports.object({
+    value: external_exports.string(),
+    readout: external_exports.string(),
+    label: external_exports.string(),
+    claim: external_exports.string()
+  }).passthrough();
+  var MechBeatSchema = external_exports.object({
+    n: external_exports.string(),
+    title: external_exports.string(),
+    text: external_exports.string(),
+    hook: external_exports.string(),
+    traces: external_exports.array(external_exports.string())
+  }).passthrough();
+  var MechanismSchema = external_exports.object({
+    slug: external_exports.string(),
+    facet: external_exports.string(),
+    eyebrow: external_exports.string(),
+    kill: external_exports.string(),
+    figure: external_exports.string(),
+    figure_alt: external_exports.string(),
+    beats: external_exports.array(MechBeatSchema),
+    quote_claim: external_exports.string(),
+    highlight: external_exports.string().optional(),
+    stat: MechStatSchema.optional()
+  }).passthrough();
+  var MechanismClaritySchema = external_exports.object({
+    disclaimer: external_exports.string(),
+    mechanisms: external_exports.array(MechanismSchema)
+  }).passthrough();
+
   // assets/js/src/core/schemas/recommender.ts
   var RecommenderCandidateSchema = external_exports.object({
     product_id: external_exports.string(),
@@ -60767,6 +60798,53 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     ]
   };
 
+  // assets/data/mechanism-clarity-data.json
+  var mechanism_clarity_data_default = {
+    _purpose: "Hand-authored MECHANISM explainer prose store for the entity-page 'how it works' hero (selenium's rancidity mechanism = the first instance). A plain-language gloss of Wallach's OWN sealed claims: each beat's `traces` are provenance-only (never rendered), and his exact words + the stat figure are pulled BY CLAIM ID at render (never hand-typed verbatim, R3). NOT a dose/target (source-rule / R2). Segregated content (R4), MANIFEST-accounted, Zod-validated, never inline in code. Sibling to fatty-acid-clarity-data.json.",
+    disclaimer: "A plain-language summary of Wallach's mechanism, drawn from his sealed books; his exact words appear in the quote above. General education, not medical advice.",
+    mechanisms: [
+      {
+        slug: "selenium",
+        facet: "mechanism",
+        eyebrow: "The rancidity mechanism",
+        kill: "The antioxidant that keeps your cells from going rancid",
+        figure: "rancidity",
+        figure_alt: "A fatty cell membrane: intact on the left, guarded at its centre by selenium, gone rancid with a visible age spot on the right.",
+        beats: [
+          {
+            n: "01",
+            title: "Your cells are fat",
+            text: "Every cell and every mitochondrion is wrapped in a membrane made of fat \u2014 and fat oxidizes, goes rancid, the same way cooking oil does once it's heated or left out.",
+            hook: "The rancidity that spoils oil in the pan can happen inside your own cell walls.",
+            traces: ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000135"]
+          },
+          {
+            n: "02",
+            title: "The most efficient antioxidant",
+            text: "Selenium \u2014 working through the glutathione-peroxidase enzyme system \u2014 is, in Wallach's telling, the most efficient antioxidant there is, standing guard over those fatty membranes right at the subcellular level.",
+            hook: "A trace mineral you need in millionths of a gram is the bodyguard on every membrane you own.",
+            traces: ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000138"]
+          },
+          {
+            n: "03",
+            title: "Rancid, made visible",
+            text: 'Pull selenium out and the fats peroxidize \u2014 the brown-gold residue (ceroid lipofuscin) surfaces on skin as "age spots" or "liver spots," while selenium-starved heart muscle can fail outright, as in Keshan disease and the sudden collapse of young athletes.',
+            hook: "An age spot is rancid fat you can see \u2014 Wallach reads it as a warning, not a blemish.",
+            traces: ["WAL-CLM-RARE-000321", "WAL-CLM-EPIGEN-000186"]
+          }
+        ],
+        quote_claim: "WAL-CLM-RARE-000321",
+        highlight: "prevents body fats from going rancid",
+        stat: {
+          value: "13 \u2192 1",
+          readout: "// Keshan Province \xB7 3-year selenium trial",
+          label: "Keshan-disease cases per 1,000 children, after selenium was added",
+          claim: "WAL-CLM-RARE-000322"
+        }
+      }
+    ]
+  };
+
   // assets/data/entity-copy.json
   var entity_copy_default = {
     _purpose: "Hand-authored, USER-APPROVED per-entity lede + short 'why this number' copy (Charter R4 prose home). NEVER auto-derived: a lede must accurately summarize the Wallach corpus and a why must accurately explain how the target was reached, so each is written one at a time and approved by Luneth. An entity absent here shows NO lede / NO why (never a guessed one). Read via state/entity-copy.ts; on the clean surface (_CLEAN_SURFACE_STORES) with lede/why as prose homes. conditions{} fills in as condition pages land (H2 chunk 2).",
@@ -60774,6 +60852,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       calcium: {
         lede: "The most abundant mineral in your body \u2014 about 1 kg of you, 99% locked in bone and teeth, the last 1% running your muscles, nerves and heartbeat.",
         why: "From Wallach's Epigenetics (2014) dose table: 600\u20131,000 mg per 100 lb of body weight, scaled to a 154 lb adult \u2248 1,500 mg/day. It supersedes the 2,000 mg he gave earlier in Let's Play Doctor (1995)."
+      },
+      selenium: {
+        lede: "The body's most efficient antioxidant \u2014 a trace mineral needed in only micrograms, yet the one Wallach ties to cystic fibrosis, Keshan heart failure, and much of cancer.",
+        why: "From Wallach's Epigenetics (2014) mineral table: 100\u2013200 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 310 mcg/day. (His earlier Let's Play Doctor Base Line program lists a flat 200 mcg maintenance figure.)"
       }
     },
     conditions: {}
@@ -102157,6 +102239,8 @@ deaths, blood clots, sterility`,
   }
   var FATTY_ACID_CLARITY = FattyAcidClaritySchema.parse(fatty_acid_clarity_data_default);
   var OMEGA_BY_FAMILY = new Map(FATTY_ACID_CLARITY.omegas.map((o) => [o.family, o]));
+  var MECHANISM_CLARITY = MechanismClaritySchema.parse(mechanism_clarity_data_default);
+  var MECH_BY_SLUG = new Map(MECHANISM_CLARITY.mechanisms.map((m) => [m.slug, m]));
   function renderOmegaClarity(name) {
     const m = /^Omega-([369])\b/.exec(name);
     const digit = m?.[1];
@@ -102281,6 +102365,67 @@ deaths, blood clots, sterility`,
       ${renderSourcesBlock(layoutKey)}
     </section>`;
   }
+  function rancidityFigure(alt) {
+    const heads = [];
+    for (let i = 0; i < 20; i++) {
+      const x = 26 + i * 33;
+      const cls = x < 250 ? "" : x > 430 ? " kd-ep-fam__head--rancid" : " kd-ep-fam__head--guard";
+      heads.push(`<circle class="kd-ep-fam__head${cls}" cx="${x}" cy="58" r="5"/><circle class="kd-ep-fam__head${cls}" cx="${x}" cy="92" r="5"/>`);
+    }
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--mech" viewBox="0 0 680 150" role="img" aria-label="${escHTML6(alt)}">
+      <path class="kd-ep-fam__mem" d="M20 58 L430 58 M20 92 L430 92"/>
+      <path class="kd-ep-fam__mem kd-ep-fam__mem--gone" d="M430 58 L660 58 M430 92 L660 92"/>
+      ${heads.join("")}
+      <path class="kd-ep-fam__shieldarc" d="M300 44 A44 44 0 0 1 380 44"/>
+      <rect class="kd-ep-fam__seguard" x="312" y="56" width="56" height="38" rx="10"/>
+      <text class="kd-ep-fam__seglyph" x="340" y="82" text-anchor="middle">Se</text>
+      <circle class="kd-ep-fam__ceroid" cx="545" cy="72" r="11"/>
+      <circle class="kd-ep-fam__spot" cx="600" cy="60" r="5"/>
+      <circle class="kd-ep-fam__spot" cx="628" cy="88" r="4"/>
+      <text class="kd-ep-fam__flabel" x="130" y="130" text-anchor="middle">INTACT MEMBRANE</text>
+      <text class="kd-ep-fam__flabel" x="340" y="130" text-anchor="middle">Se \xB7 ON GUARD</text>
+      <text class="kd-ep-fam__flabel kd-ep-fam__flabel--rancid" x="560" y="130" text-anchor="middle">RANCID \xB7 AGE SPOT</text>
+    </svg>`;
+  }
+  function mechanismFigure(key, alt) {
+    switch (key) {
+      case "rancidity":
+        return rancidityFigure(alt);
+      default:
+        return "";
+    }
+  }
+  function renderMechanism(slug, layoutKey, category) {
+    const m = slug !== null ? MECH_BY_SLUG.get(slug) : void 0;
+    if (m === void 0) {
+      return "";
+    }
+    const beats = m.beats.map((b) => `
+      <div class="kd-ep-fam__step">
+        <span class="kd-ep-fam__num">${escHTML6(b.n)}</span>
+        <div class="kd-ep-fam__stepbody">
+          <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
+          <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
+          <p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>
+        </div>
+      </div>`).join("");
+    const stat = m.stat !== void 0 ? `
+      <div class="kd-ep-fam__stat">
+        <span class="kd-ep-fam__statread">${escHTML6(m.stat.readout)}</span>
+        <span class="kd-ep-fam__statnum">${escHTML6(m.stat.value)}</span>
+        <span class="kd-ep-fam__statlbl">${escHTML6(m.stat.label)}</span>
+      </div>` : "";
+    return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML6(category ?? "")}">
+      <span class="kd-ep-fam__eyebrow">${escHTML6(m.eyebrow)}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML6(m.kill)}</h3>
+      <div class="kd-ep-fam__figure kd-ep-fam__figure--mech">${mechanismFigure(m.figure, m.figure_alt)}</div>
+      <div class="kd-ep-fam__steps">${beats}</div>
+      ${stat}
+      ${fatFamilyQuote(m.quote_claim, m.highlight)}
+      <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
+      ${renderSourcesBlock(layoutKey)}
+    </section>`;
+  }
   function pdmFigure() {
     const W = 209;
     const NODES = [
@@ -102370,11 +102515,11 @@ deaths, blood clots, sterility`,
     const page = slug !== null ? getEssentialPage(slug) : null;
     const tile = tileOf(snapshot, layoutKey);
     const status = tile?.status ?? "";
-    const deferSources = page !== null && fatBlockOwnsSources(page.name);
+    const deferSources = page !== null && (fatBlockOwnsSources(page.name) || slug !== null && MECH_BY_SLUG.has(slug));
     const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
     if (page === null) {
       const nm = escHTML6(corpusEss?.common_name ?? layoutKey);
-      return `<div class="kd-essential-deep kd-ep">
+      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel("At a glance", "the essentials, in one place")}
       ${glanceHTML}
@@ -102387,7 +102532,7 @@ deaths, blood clots, sterility`,
     const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
     const ledeText = slug !== null ? essentialLede(slug) : "";
     const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML6(ledeText)}</p>` : "";
-    return `<div class="kd-essential-deep kd-ep">
+    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}">
     <div class="kd-ep-hero">
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML6(page.symbol)}</div>` : ""}
       <div class="kd-ep-hero__idblock">
@@ -102402,6 +102547,7 @@ deaths, blood clots, sterility`,
     ${seclabel("At a glance", "the essentials, in one place")}
     ${glanceHTML}
     ${fattyAcidBlockFor(layoutKey, page.name, tile)}
+    ${renderMechanism(slug, layoutKey, corpusEss?.category ?? null)}
     ${renderPdmClarity(page)}
     ${renderFacetGroups(page)}
     ${renderConditionSection(page)}
@@ -103907,6 +104053,7 @@ deaths, blood clots, sterility`,
     "FATTY ACIDS": "kd_esssec_fatty"
   };
   var COV_STATES = ["covered", "partial", "uncovered", "present"];
+  var ESSENTIAL_CAT_SCROLL = { mineral: "#2b6fb0", vitamin: "#ff7e3c", amino_acid: "#5aa82c", fatty_acid: "#8a52d6" };
   function renderEssentialsTab(snapshot, selectedKey) {
     const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : "";
     const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML12(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML12(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
@@ -104123,7 +104270,7 @@ deaths, blood clots, sterility`,
           applyKnowledgeSearch(body, activeTab, searchQuery);
         }
       }
-      const scrollTint = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : activeTab === "products" && selectedProduct !== null ? productScrollTint(selectedProduct) : "";
+      const scrollTint = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : activeTab === "products" && selectedProduct !== null ? productScrollTint(selectedProduct) : activeTab === "essentials" && selectedEssential !== null ? ESSENTIAL_CAT_SCROLL[getEssentialByLayoutKey(selectedEssential)?.category ?? ""] ?? "" : "";
       if (/^#[0-9a-f]{3,8}$/i.test(scrollTint)) {
         document.documentElement.style.setProperty("--kd-detail-scroll", scrollTint);
       } else {
@@ -106952,7 +107099,9 @@ Book-wide OCR purification, user-authorized seal (knowledge_version 396->397, 14
 
 16 search-only claims sealed across 5 books (EPIGEN-000185-188, RARE-000320-325, IMMORT-000269, DDDL-000135-137, LETS-000491-492); kv397->398, 1402->1418 claims. +16 search-enrichment entries (subject=selenium, spanning 10 facet families); new selenium search-entity with rich lay synonyms. Regenerated search-index/entity-page/corpus-embed, rebuilt bundle. Two authoring bugs the pipeline caught and I fixed: facet "interaction"->"uses" (not in the 13-facet closed taxonomy, caught by build_embeds) and entity type "mineral"->"nutrient" (a runtime Zod enum reject that blanked the whole entity map at load -- build-gate-vs-runtime-schema-drift; search_index_wellformed does not validate entity type against the runtime enum). Verified: corpus_verify PASS (kv398), invariants 77/77, render_probe_search PASS, render_probe_search_routing 6/6, entity enriched-facet render confirmed. Deferred: selenium's unique data-driven design element (next chunk, pending visual sign-off).` }, { id: "lg_ms0u6tcb_08yise", ts: "2026-07-25T15:43:41.963858-05:00", surface: "eden/corpus", kind: "round-close", summary: `Every element's Worth knowing now leads with a uniform "What is X?" intro card; selenium's is the reference example. WAL-CLM-DDDL-000138 sealed (kv399); selenium now 17 enriched claims, basics-led.`, detail: `Every element's "Worth knowing" will now open with a "What is X?" card -- a plain, complete overview before the detailed questions. Selenium's is the reference example (Luneth: the standard for completeness + conciseness). Its full answer doubles as the canonical description that short summaries and the upcoming design element both draw from.
 
-1 search-only definition claim WAL-CLM-DDDL-000138 (facet=basics, subject=selenium, question "What is selenium?") sealed kv398->399, 1418->1419 claims; +1 search-enrichment entry (404 total). Selenium now carries 17 enriched claims, led by basics. facet=basics leads both FACET_DEFAULT (section order) and INTRO_ORDER_DEFAULT (card lede), so the intro heads Worth knowing AND becomes the one-line lede with no extra wiring. Campaign rule codified: memory element-intro-what-is-claim (step 0 of the per-element recipe). Verified: corpus_verify PASS (kv399), invariants 77/77, screenshot confirms the BASICS "What is selenium?" card leads the section. Deferred: memory-index consolidation (Luneth: not until ~195/200 lines).` }];
+1 search-only definition claim WAL-CLM-DDDL-000138 (facet=basics, subject=selenium, question "What is selenium?") sealed kv398->399, 1418->1419 claims; +1 search-enrichment entry (404 total). Selenium now carries 17 enriched claims, led by basics. facet=basics leads both FACET_DEFAULT (section order) and INTRO_ORDER_DEFAULT (card lede), so the intro heads Worth knowing AND becomes the one-line lede with no extra wiring. Campaign rule codified: memory element-intro-what-is-claim (step 0 of the per-element recipe). Verified: corpus_verify PASS (kv399), invariants 77/77, screenshot confirms the BASICS "What is selenium?" card leads the section. Deferred: memory-index consolidation (Luneth: not until ~195/200 lines).` }, { id: "lg_ms0z730h_jo8vtq", ts: "2026-07-25T18:03:52.577384-05:00", surface: "dashboard/views", kind: "round-close", summary: "Selenium DONE end-to-end -- the golden standard: 17 enriched claims + a unique 'rancidity mechanism' design hero + whole-screen blue mineral theming. Re-verified every sourced fact (dropped a workflow-fabricated stat). The template the Tier-A army replicates next.", detail: `Selenium is finished end-to-end and becomes the template the Tier-A army replicates next session. On top of its 17 enriched Q&A claims it now carries a unique, illustrated "how it works" hero (the rancidity mechanism: a cell membrane that visibly goes rancid across its width, selenium standing guard at the centre), its Best-Youngevity sources docked at the bottom behind a dotted line, a "why this number?" explanation of the 310 mcg daily target in "At a glance," and the whole mineral screen colour-coded blue.
+
+Design came from a 7-agent workflow (research the real design system -> 3 independent concepts -> judged synthesis) but I re-verified every sourced fact by hand and DROPPED the workflow's fabricated "1,700 children" stat (present in no sealed claim) for the genuinely-sourced 13->1 Keshan-trial figure (RARE-000322) -- the exact human-ratification the army's verify layer must enforce. Build: mechanism-clarity-data.json (hand-authored prose store, MANIFEST-accounted) + MechanismClaritySchema + renderMechanism/rancidityFigure (data-driven, projection-safe -- entity_render_is_projection green); best-sources deferred out of the glance to the block bottom; whole-screen category theming by overriding the --ds-accent family on .kd-essential-deep[data-category="mineral"] (deep readable blue #2b6fb0, not the light --ds-tech Luneth rejected), scrollbar included; selenium lede + target-provenance authored into entity-copy.json; new render_probe_mechanism.js. Also fixed a recurring "*/ inside a CSS comment" trap that silently dropped the colour rule. Verified: build OK, tsc clean, invariants 77/77, three render probes PASS, screenshots signed off. Five recurring-correction rules saved as memories (sources-at-bottom, daily-target-provenance, category-colour-coding, quote-highlight-one-line, present-tense). No seal needed -- no new corpus claims since kv399.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

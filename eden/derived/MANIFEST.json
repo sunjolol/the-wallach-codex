@@ -287,6 +287,11 @@
       "file": "dashboard/assets/data/orac-products-curation.json",
       "disposition": "hand_authored",
       "reason": "The section-07 'Best Supplement Sources' CURATION -- the ONE hand-authored home for Youngevity PRODUCT ORAC scores (per serving, official lab-tested, source: ygy). Unlike orac-foods-curation (numbers-free, parsed from Wallach verbatims), product ORAC has NO Wallach/corpus source to parse -- it is Youngevity composition/measured-property data (SS00.A lets Youngevity supply+surface composition; Luneth-confirmed framing 2026-07-24, no source-rule override; never a Wallach target/dose). So the numbers live HERE, once; eden/tools/orac_products_derive.py joins each product_id with the sealed product pillar (name + delivery form) and prices.json (wholesale price) and HARD-FAILS on any unresolved join. Hand-authored, not a pillar projection, no generator."
+    },
+    {
+      "file": "dashboard/assets/data/mechanism-clarity-data.json",
+      "disposition": "hand_authored",
+      "reason": "Mechanism-explainer prose store for the entity-page 'how it works' hero (selenium's rancidity mechanism = first instance). A plain-language gloss of Wallach's OWN sealed claims; his exact words + the stat figure are pulled BY CLAIM ID at render (never hand-typed verbatim). General-education, non-target (source-rule/R2-safe); segregated content (R4). Sibling to fatty-acid-clarity-data.json. Luneth 2026-07-25."
     }
   ]
 }
