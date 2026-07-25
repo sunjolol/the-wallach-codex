@@ -7435,7 +7435,7 @@ ppm (highest in soft coelenterates), and land animals at 2,800 ppm. In land
 animals, Cl’s highest concentration is found in mammalian hair and skin.
 Chlorine is essential for all living species’ electrochemical and catalytic
 functions, activates numerous enzymes, and is the basic raw material for
-our stomachs to make stomach acid (HC1) for protein digestion by pepsin,
+our stomachs to make stomach acid (HCl) for protein digestion by pepsin,
 B12 absorption (intrinsic factor activation), and absorption of minerals.
 Sodium chloride (NaCl) or salt is the universal source of chloride ions for
 all living things.
@@ -9091,8 +9091,8 @@ acquired later in life as a result of absorption of partially digested
 polypeptides (relatively large protein fragments) which trigger an allergic
 response.
 Treatment of achlorhydria includes salting your food to taste and
-supplementation of betaine HC1 at the rate of 75-250 mg 15-20 minutes
-before each meal. In the absence of betaine HC1, 1-2 oz. of vinegar with
+supplementation of betaine HCl at the rate of 75-250 mg 15-20 minutes
+before each meal. In the absence of betaine HCl, 1-2 oz. of vinegar with
 English bitters (Gentian) may be taken before meals. Additionally, plant
 derived colloidal minerals tone the stomach and increase its ability to
 produce stomach acid.
@@ -9102,7 +9102,7 @@ menopause. Papules, pustules, superficial pus-filled cysts, and deep pus-filled 
 fatty acid deficiency with a concurrent intake of too much saturated fat and
 polyunsaturated fatty acids (fried foods and margarine). Eliminate “fast”
 foods and other sources of fat and sugar. Check out the probability of food
-allergies (i.e., wheat, milk, soy) as a contributing factor. Betaine HC1 and
+allergies (i.e., wheat, milk, soy) as a contributing factor. Betaine HCl and
 pancreatic enzymes are of considerable benefit. Essential fatty acids are a
 must and should be consumed at the rate of 3 percent of your total daily
 calorie consumption or supplemented at the rate of 9 grams per day in
@@ -9194,7 +9194,7 @@ subcutaneously every other day for five to eight treatments is suggested.
 Use a 0.22 micron millipore filter. Take vitamin C to bowel tolerance,
 bioflavonoids (rutin, catechin, quercetin), 300,000 IU of vitamin A as beta
 carotene per day, zinc 50 mg t.i.d., essential fatty acids 1 tbsp. b.i.d.,
-rotation diets, and digestive enzymes with betaine HC1 before meals.
+rotation diets, and digestive enzymes with betaine HCl before meals.
 ALLERGIC SHINERS are the purplish/ black discoloration under the
 lower eyelids of individuals with allergies. They will appear within minutes
 of ingestion or inhalation of an allergen. Allergic shiners may take as much
@@ -9217,7 +9217,7 @@ daily dose of 12-16 units of U.S.P. Posterior Pituitary, and centro-phenoxine
 (Lucidril) 6.2-8.0 gram/day. Lecithin at 2,500 mg t.i.d. is very useful at all
 stages though phosphatydil choline is more efficient. Don’t forget the
 baseline nutritional supplements including colloidal minerals plus betaine
-HC1 and pancreatic enzymes 75-200 mg t.i.d.. Oral and IV H2O2 may be
+HCl and pancreatic enzymes 75-200 mg t.i.d.. Oral and IV H2O2 may be
 helpful, 200 mg vitamin B1 t.i.d., vitamin E at 2000 iu daily, 500 mcg
 selenium daily and IV chelation will be of value. Eat soft-scrambled (not
 fried) eggs every day and 72 oz. red meat each month to replace cholesterol
@@ -9233,7 +9233,7 @@ of plant derived liquid colloidal tin. Alopecia that occurs with eczema is
 often caused by essential fatty acid deficiency and will respond to IV
 interlipids and/or oral flaxseed oil at the rate of 9 grams per day. Zinc at 50
 mg t.i.d. is also indicated. Elimination of wheat and cow’s milk from the
-diet will increase the rate of recovery. Betaine HC1 and pancreatic enzymes
+diet will increase the rate of recovery. Betaine HCl and pancreatic enzymes
 at 75-200 mg t.i.d. 15-20 minutes before meals are a must.
 AMBLYOPIA is a type of blindness that can be caused by B12 deficiency
 or tobacco smoking. B12 IM at a rate of 1000 mcg/day for a total of 20,000
@@ -9279,7 +9279,7 @@ opened abscess with 3 percent H2O2 will clean out the pus and disinfect
 the wound.
 ANEMIA is a lack of red blood cells from many
 possible causes including hemorrhage, infections, and/or nutritional
-deficiencies. Betaine HC1 orally at 75-200 mg t.i.d. 15-20 minutes before
+deficiencies. Betaine HCl orally at 75-200 mg t.i.d. 15-20 minutes before
 meals is required to assure absorption of B12, liver extract orally or IM,
 nutritional support with iron 20 mg per day, B12 1000 mcg per day for 20
 days, folic acid 15 mg for 20 days, copper 2 mg, zinc 50 mg t.i.d., B-2 50
@@ -9328,7 +9328,7 @@ is “I always feel better when I don’t eat and feel bad when I eat.”
 Deficiencies of zinc and lithium are associated with anorexia. Elimination
 diets and pulse tests are useful in finding the offending food, frequently
 cow’s milk, wheat, eggs, and corn.
-Treatment should include betaine HC1 and pancreatic enzymes at a rate of
+Treatment should include betaine HCl and pancreatic enzymes at a rate of
 150-250 mg/day t.i.d. and don’t forget the baseline vitamin/ mineral
 supplements. Herbs are excellent appetite stimulants. Test herbal
 preparations of buckbean or marsh trefoil (Menyanthes trifoliata), centaury
@@ -9354,7 +9354,7 @@ Treatment should include avoidance of caffeine and sugar in all forms
 (fruit, juices, processed sugar, candy, etc.). Take chromium and vanadium
 200-300 mcg/day, B6 100 mg t.i.d., B3 450 mg t.i.d. as time-release tablets,
 Bl, B2, and B5 at the rate of 50 mg t.i.d., L-tryptophan 10 grams t.i.d.,
-calcium 2000 mg/day, and magnesium at 800 mg/day. Betaine HC1 100-
+calcium 2000 mg/day, and magnesium at 800 mg/day. Betaine HCl 100-
 250 t.i.d. before meals and herbs including valerian (Valerian officinalis)
 can be of value.
 APHTHOUS STOMATITIS (canker sores) are
@@ -9453,7 +9453,7 @@ with closure of bronchial tubes by spasmodic muscles. ATOPIC ASTHMA
 has eczema as a feature along with the respiratory disease. Asthma is a
 disease of malabsorption with essential fatty acid deficiencies and
 deficiencies of manganese and magnesium. Treatment should include
-betaine HC1, pancreatic enzymes, and ox bile at 75-200 mg each t.i.d.
+betaine HCl, pancreatic enzymes, and ox bile at 75-200 mg each t.i.d.
 before meals. Autoimmune urine therapy, essential fatty acids at 5 gm t.i.d.,
 and plant derived colloidal mineral suspensions that contain magnesium and
 manganese should be taken. Herbs are very useful for treating asthma with
@@ -9541,7 +9541,7 @@ Arthritis Formula, and poultices of herbs including comfrey (Symphytum
 officinale) and arnica (Arnica montana).
 BAD BREATH (halitosis) can be dealt with by basic care. Use a good anti-tartar toothpaste, hydrogen peroxide tooth gel, floss upon awakening and
 after meals, use a hydrogen peroxide mouthwash, parsley may be used after
-each meal, and zinc at 50 mg t.i.d. Digestive enzymes with betaine HC1
+each meal, and zinc at 50 mg t.i.d. Digestive enzymes with betaine HCl
 maybe useful.
 BALDNESS (thinning hair): see alopecia. Colloidal tin is reported to be
 effective!
@@ -9723,7 +9723,7 @@ now “ferments” carbohydrates and sugars that are eaten and produce gas or
 “bloat.”
 Treatment of “belch, burp, and bloat” includes oral hydrogen peroxide (20
 drops/oz. of liquid to dilute the hydrogen peroxide) at 1 oz. b.i.d., colloidal
-minerals and betaine HC1, and pancreatic enzymes at 75-200 mg t.i.d. 15
+minerals and betaine HCl, and pancreatic enzymes at 75-200 mg t.i.d. 15
 minutes before meals.
 BODY ODOR (foot odor, stinky tennis shoes) can occur in anyone,
 especially teenagers and older people, and often indicates a zinc deficiency.
@@ -9777,7 +9777,7 @@ or zinc.
 Treatment of brittle nails includes dealing with food allergies to improve
 absorption, gelatin (unflavored and unsweetened or diabetic brands),
 essential fatty acids at 5 gm t.i.d., vitamin E at 800-1,200 IU/day, the base
-line supplementation, and betaine HC1 and pancreatic enzymes at 75-200
+line supplementation, and betaine HCl and pancreatic enzymes at 75-200
 mg each t.i.d. 15 minutes before meals. To diagnose food allergies,use the
 pulse test—it’s cheap and accurate.
 BRONCHIAL ASTHMA: see asthma
@@ -9788,7 +9788,7 @@ deficiencies. If bronchitis persists after treatment for five to ten days,
 consider cystic fibrosis in children and lung cancer in adults. X-rays will be
 necessary to determine diagnosis of chronic processes.
 Treatment includes steam vaporizers at night, essential fatty acids at 5 gm
-t.i.d., digestive enzymes and betaine HC1 at 75-200 mg each, vitamin C to
+t.i.d., digestive enzymes and betaine HCl at 75-200 mg each, vitamin C to
 bowel tolerance, vitamin A at 300,000 IU as beta carotene, zinc at 50 mg
 t.i.d., and herbs including slippery elm (Ulmus fulva), coltsfoot (Tussilago
 farfara), cowslip (Primula veris), eucalyptus (Eucalyptus globulus) as a
@@ -10041,7 +10041,7 @@ and, thus, infests the body proper.
 Prevention includes being aware of your intestines and knowing your
 digestive and absorptive abilities and patterns. Do pulse tests for food
 allergies, avoid long term use of antibiotics, and as you grow older take
-betaine HC1 and pancreatic enzymes before meals to offset the normal
+betaine HCl and pancreatic enzymes before meals to offset the normal
 decrease in production of stomach acid. Be sure to take these digestive aids
 if you are under stress; deal aggressively with any disease that lowers your
 immune capacity!
@@ -10384,7 +10384,7 @@ every day, red meat once each day, and the liver flush at least once per
 month. Use the base line supplement program, plus calcium and magnesium
 at 2,000 mg and 1,000 mg per day and herbs to include Lady’s mantle
 (Alchemilla vulgaris), motherwort (Leo nurus cardiaca), and St. John’s wort
-(Hypericum perforatum) and Betaine HC1 and pancreatic enzymes at 75-
+(Hypericum perforatum) and Betaine HCl and pancreatic enzymes at 75-
 200 mg t.i.d. 15 minutes before meals.
 “CLUSTER HEADACHES” (histamine headache) are related to allergic
 reactions and may occur by themselves or be associated with other diseases
@@ -10734,7 +10734,7 @@ at 800-1,200 IU/day, vitamin C to bowel tolerance, copper at 2-3 mg/day,
 magnesium at 1,000 mg/day, zinc at 50 mg ti.d., hydergine at 9 mg/day,
 vasopressin (Diapid) at 12-16 units/day, centrophenoxine (Lucidril) at 4.4-
 8.0 gm/day, Piracetam at 2.4-4.8 mg/day, and betaine
-HC1 and pancreatic enzymes at 75-200 mg t.i.d.
+HCl and pancreatic enzymes at 75-200 mg t.i.d.
 15-20 minutes before meals. Useful herbs include ginkgo (Ginkgo biloba).
 DEPRESSION (manic depression) is a common problem in the human
 population throughout the world—so common that some pharmaceutical
@@ -10783,7 +10783,7 @@ Treatment of all three of the above manifestations of dermatitis should
 include a gluten free and cow’s milk free diet. It is also prudent to do a
 pulse test on frequently consumed foods to determine if they are also
 affecting you. The supplementation of EFA at 5 gm q.i.d., PABA at 200 mg
-q.i.d., and betaine HC1 and digestive enzymes at 75-200 mg each t.i.d.
+q.i.d., and betaine HCl and digestive enzymes at 75-200 mg each t.i.d.
 before meals should be added on top of the base line supplement program.
 Have patience; it will take 60-90 days to heal the intestinal lesions to the
 point where you can absorb nutrients efficiently. Vitamin A at 300,000
@@ -10825,7 +10825,7 @@ blood sugar before and after meals, and as the blood sugar level drops you
 can adjust your insulin or pill medication just like you have been taught.
 You will also need to deal with food allergies that cause celiac-type
 intestinal lesions (i.e. wheat gluten, cow’s milk, soy, etc.) and supplement
-with betaine HC1 and digestive enzymes at 75-200 mg t.i.d. before meals.
+with betaine HCl and digestive enzymes at 75-200 mg t.i.d. before meals.
 Have patience; the intestinal lesions take 60-90 days to heal.
 Treatment of diabetes should also include zinc at 50 mg t.i.d., B-complex at
 50 mg t.i.d. (be sure to include niacin which is part of the GTF “glucose
@@ -11030,7 +11030,7 @@ believe such a turn around with just a dietary program! To condemn a
 equal to finding an innocent man “guilty” of murder and sentenced to life in
 prison—what a waste and what a tragedy.
 Treatment and prevention are closely intertwined. Digestive enzymes and
-betaine HC1 are essential to prevent progression of the problem as well as
+betaine HCl are essential to prevent progression of the problem as well as
 aid in onset of symptoms. The “Feingold Diet” is a good place to start,
 however, it, in itself, is not a “shield” to be totally relied upon. There are
 many foods and food additives not excluded by the Feingold program that
@@ -11067,7 +11067,7 @@ volumes. An unforgiving event as we age is a decrease in stomach acid
 production, the main cause of dyspepsia in seniors. Prevention in this case
 includes the regular use of digestive aids.
 Treatment of dyspepsia includes supplementation of 75-200 mg betaine
-HC1 and pancreatic enzymes t.i.d. 15-30 minutes before each meal.
+HCl and pancreatic enzymes t.i.d. 15-30 minutes before each meal.
 “Antacids” are a good “temporary fix” in an emergency, but regular use will
 eventually damage you by reducing the nutrients you absorb. Herbal
 preventions and remedies include papaya (Carica papaya), common
@@ -11102,7 +11102,7 @@ elimination diets to determine the culprits. This is not only a cosmetic
 problem as the same damage is occurring in the intestinal lining which can
 lead to malabsorption, lowered immune status, and chronic degenerative
 diseases.
-Treatment includes avoidance of offending foods, betaine HC1 and
+Treatment includes avoidance of offending foods, betaine HCl and
 pancreatic enzymes at 75-200 mg t.i.d. before meals, folic acid at 3-5
 mg/day, essential fatty acids at 5 mg t.i.d., vitamin A at 300,000 IU/day as
 beta-carotene, zinc at 50 mg t.i.d., vitamin C at bowel tolerance, and
@@ -11231,7 +11231,7 @@ little children—the “bad seed” syndrome. Employ the pulse test and a six-h
 Treatment of enuresis includes eliminating the offending foods for food
 allergies, and eliminating sugar natural and processed including sweet
 juices, i.e. grape and apple from bedtime treats. Use digestive aids (i.e.
-betaine HC1 and pancreatic enzymes) at 75-200 mg t.i.d. 15-20 minutes
+betaine HCl and pancreatic enzymes) at 75-200 mg t.i.d. 15-20 minutes
 before meals, calcium and magnesium at 2,000 mg and 1,000 mg, and don’t
 forget the base line supplement program for the 90 essential nutrients and
 the plant derived colloidal minerals.
@@ -11291,7 +11291,7 @@ celiac disease type changes in the small intestine, which results in
 malabsorption. The unabsorbed proteins reach the colon and are the source
 of sulfur that smells like rotten eggs.
 Treatment for pathological amounts of unpleasant bowel gas includes the
-avoidance of offending foods and betaine HC1 and pancreatic enzymes at
+avoidance of offending foods and betaine HCl and pancreatic enzymes at
 75-200 mg t.i.d. 15-20 minutes before meals where food allergies have
 caused celiac disease type changes in the small intestine.
 FATIGUE (chronic fatigue syndrome, Candidiasis, Epstein-Barr Virus,
@@ -11321,7 +11321,7 @@ nutrients while she waited for adoption paper work to be processed. In just
 three months she was pregnant! It is amazing what a little nutrition will do.
 Treatment of this form of infertility includes the base line nutritional
 supplement. Pay special attention to selenium deficiency in male infertility,
-betaine HC1 and pancreatic enzymes at 75-200 mg t.i.d. before meals,
+betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals,
 correction of quality animal protein intake to a minimum of 100 gm/day
 (the RDA is only 40 gm/day), and essential fatty acids at 5 gm ti.d.
 FEVER or elevated temperature (normal is 98.6°F) is part of the body’s
@@ -11392,7 +11392,7 @@ nutritional supplements with all 90 essential nutrients.
 Treatment of fingernail problems should include collagen (Willamette
 Valley which is 100 percent Kosher beef, diabetic Jello, or Knox gelatin—
 this is especially important for those who have been vegetarians for any
-length of time), essential fatty acids at 5 gm t.i.d., and betaine HC1 and
+length of time), essential fatty acids at 5 gm t.i.d., and betaine HCl and
 pancreatic enzymes at 75-200 mg t.i.d. before meals.
 FITS (see epilepsy) can be caused by a variety of problems including
 epilepsy, high fever in children, low fat low cholesterol diets and certain
@@ -11406,7 +11406,7 @@ especially proteins, are reaching the colon where they are fermented by
 colon organisms. Do the pulse test to see if any allergies are present that
 might cause celiac changes in the small intestine.
 Treatment of flatulence includes digestive enzymes at 75-200 mg t.i.d. 15-
-20 minutes before meals, betaine HC1 at 75—200 mg before each meal,
+20 minutes before meals, betaine HCl at 75—200 mg before each meal,
 avoidance and/or rotation of offending food allergens, and herbs including
 angelica (Angelica archangelica), anise (Pimpinella anisum), caraway
 (Carum carvi), dill (Anethum graveolens), fennel (Foeniculum vulgare),
@@ -11493,7 +11493,7 @@ soy, egg, or milk). Avoid vaccinations that have egg, blood, or beef origins.
 Use vitamin C to bowel tolerance levels, vitamin A at 300,000 IU/day as
 beta-carotene, bioflavonoids at 150-300 mg/day, zinc at 15 mg t.i.d.,
 essential fatty acids at 5 gm t.i.d., selenium at 300 mcg b.i.d., chromium and
-vanadium at 200 mcg t.i.d., betaine HC1 and pancreatic enzymes at 75-500
+vanadium at 200 mcg t.i.d., betaine HCl and pancreatic enzymes at 75-500
 mg t.i.d. 15-20 minutes before meals, ACE sublingual or IV, five day
 rotation diets, avoid offending foods, and have patience! It takes up to 90
 days to repair the intestinal injury. The good news is that repair will take
@@ -11513,7 +11513,7 @@ sprain or strain.
 The use of the base line nutritional supplements (Dr. Wallach’s Pig Arthritis
 Formula) including calcium and magnesium at 2,000 mg and 1,000 mg per
 day, plant derived colloidal minerals and digestive aids (i.e.
-betaine HC1 and pancreatic enzymes at 75-200 mg
+betaine HCl and pancreatic enzymes at 75-200 mg
 t.i.d. before meals) is an almost sure guarantee against nontrauma fractures
 especially in post-menopause women. The use of comfrey (Symphytum
 officinale) orally and over the injury site will speed healing of fractures as
@@ -11562,7 +11562,7 @@ irregular denuded areas on the top surface and sides of the tongue. Do a
 series of pulse tests to determine what foods you may be allergic to.
 Geographic tongue is not painful and taste may or may not be affected.
 Treatment of geographic tongue includes avoidance of any offending food
-allergens, zinc at 15 mg t.i.d., betaine HC1 and pancreatic enzymes at 75-
+allergens, zinc at 15 mg t.i.d., betaine HCl and pancreatic enzymes at 75-
 200 mg t.i.d. before meals, B-complex IM in the early stages of therapy,
 and be sure to get on the base line supplement program.
 GINGIVITIS (periodontal disease, receding gums, loose teeth, facial and
@@ -11610,7 +11610,7 @@ Another common cause of increased eye pressure is muscular dystrophy or
 fibromyalgia of the eye muscles.
 Treatment of glaucoma by the “orthodox” doctor is limited to a prescription
 of pilocarpine 4 percent every 15 minutes, surgery, or cortisone. You must
-do pulse testing and eliminate foods you are sensitive to, betaine HC1 at 75-
+do pulse testing and eliminate foods you are sensitive to, betaine HCl at 75-
 200 mg t.i.d. before meals, vitamin C to bowel tolerance, rutin at 20-50 mg
 t.i.d., and the base line nutritional supplement. DO NOT REDUCE
 MEDICATION WITHOUT A TEST THAT SHOWS A REDUCTION IN
@@ -11653,7 +11653,7 @@ rich in calcium, magnesium, selenium, vitamin E, and vitamin C including
 Dr. Wallach’s Pig Arthritis Formula at 1 tsp/ 20 pounds body weight for
 kids.
 Treatment of growing pains includes calcium and magnesium at 2,000 mg
-and 1,000 mg per day, selenium at 50-200 mcg b.i.d., and betaine HC1 and
+and 1,000 mg per day, selenium at 50-200 mcg b.i.d., and betaine HCl and
 pancreatic enzymes at 75-200 mg t.i.d. before meals, and Dr. Wallach’s Pig
 Arthritis Formula at one tsp per 20 pounds body weight.
 GUMS (bleeding, sore, pyorrhea) see gingivitis. You may also wish to rinse
@@ -11683,7 +11683,7 @@ milk products. Headaches can also be cyclic in PMS. Do a complete series
 of pulse tests and a six-hour GTT.
 Treatment for headaches comes in the form of a wide variety of commercial
 products (i.e. aspirin, Tylenol, Nuprin, Bufferin), chromium at 50-200 mcg
-t.i.d., and betaine HC1 at 75-200 mg t.i.d.
+t.i.d., and betaine HCl at 75-200 mg t.i.d.
 Avoid offending foods including all sources of caffeine. Use autoimmune
 urine therapy, vitamin C to bowel tolerance, B3 at 450 mg time release
 q.i.d., B6 at 100 mg t.i.d. or as needed, choline at 150 mg/day, and flaxseed
@@ -11729,7 +11729,7 @@ yourself. Increase your selenium intake to 1,000 mcg/day and your vitamin
 E to 1,200 to 2,000 IU/day and take 5-10 alfalfa tablets with each meal in
 addition to the base line nutrition program. Take two ounces of an oxygen
 supplement in the morning when you awake and two ounces before retiring.
-Take betaine HC1 and pancreatic enzymes at 75-200 mg t.i.d. before meals.
+Take betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals.
 REFER TO YOUR PHYSICIAN’S DESK REFERENCE BEFORE
 TAKING ANY MEDICATION YOUR “ORTHODOX” CARDIOLOGIST
 WANTS TO PRESCRIBE FOR YOU! Don’t take any medication you do
@@ -11743,7 +11743,7 @@ stomach acid production which allows bacteria to grow in the stomach.
 These opportunistic bacteria generate gas and acid that results in the “belch,
 burp, and bloat” syndrome. Prevention includes eating small meals, no fried
 foods, and drinking eight glasses of water each day to prevent constipation.
-Treatment should include betaine HC1 and pancreatic enzymes at 75-200
+Treatment should include betaine HCl and pancreatic enzymes at 75-200
 mg t.i.d. before each meal. For acute attacks of “heartburn,” any of the
 commercial products advertised on TV (i.e. Rolaids) may be
 helpful. Herbs to try include peppermint (Mentha
@@ -11885,7 +11885,7 @@ allergies which cause severe malabsorption of nutrients. In turn, the
 resultant malnutrition causes further behavioral problems.
 Treatment of hyperactivity and hyperkinesis requires absolute adherence to
 a rotation and avoidance diet based on the results of the allergy testing and
-six-hour GTT. Supplement with betaine HC1 and pancreatic enzymes at 75-
+six-hour GTT. Supplement with betaine HCl and pancreatic enzymes at 75-
 200 mg t.i.d. before meals, Feingold diet (i.e. avoid sugar natural and
 processed, additives, food colors, etc.), IM or IV B-complex at 50 mg each
 per day, and chromium and vanadium at 25-250 mcg per day.
@@ -11974,9 +11974,9 @@ with meals. THOSE INDIVIDUALS ON INSULIN SHOULD START
 CHROMIUM / VANADIUM THERAPY AT 25 mcg ti.d. TO PREVENT A
 SUDDEN DIP IN BLOOD SUGAR. Also B-complex at 50 mg each t.i.d.,
 avoid alcohol (alcohol is a simple carbohydrate), zinc at 25 mg ti.d., and
-betaine HC1 and pancreatic enzymes at 75-200 mg t.i.d. before meals.
+betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals.
 Resolve the associated food allergies by using digestive enzymes, betaine
-HC1, and avoidance and rotation diets.
+HCl, and avoidance and rotation diets.
 HYPOTENSION (low blood pressure) can be caused by prescribed drugs
 (check your PDR), heart disease, kidney disease, low blood sugar, food
 allergies, dehydration, adrenal exhaustion, and hypothyroidism.
@@ -12017,7 +12017,7 @@ any medication that you might be on.
 Treatment of hysteria includes avoidance of offending foods that you might
 be allergic to (i.e. sugar, dairy, caffeine, etc.), rotation diets, EFA at 5 gm
 t.i.d. with meals, chromium and vanadium at 50-200 mcg t.i.d. with meals,
-lithium, betaine HC1 and pancreatic enzymes at 75-200 mg t.i.d. before
+lithium, betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before
 meals, acupuncture, homeopathy, and herbs including black hellebore
 (Helleborus niger), blue cohosh (Caulophyllum thalictroides), mistletoe (Viscum album), B3 at 450 mg t.i.d. (time release), and
 B6 at 150-300 mg t.i.d. Take this dose for thirty days then cut it to 25 mg
@@ -12122,7 +12122,7 @@ injury is a must if the desired results are to be achieved.
 Treatment of incontinence should include Kegel’s exercises (i.e. contracting
 the floor of the pelvis as if trying to stop a bowel movement) at about 250-
 500/day, essential fatty acids at 5 gm t.i.d., selenium at 500 mcg/day,
-vitamin E at 800-1,200 IU/day, betaine HC1 and pancreatic enzymes at 75-
+vitamin E at 800-1,200 IU/day, betaine HCl and pancreatic enzymes at 75-
 200 mg t.i.d. before meals, and the avoidance and rotation diets with respect
 to offending food allergens. Also chromium and vanadium at 25-200
 mcg/day, and herbs to include saw palmetto (Serenoa serrulata) and ginseng
@@ -12140,7 +12140,7 @@ oxygen supplements (i.e. hydrogen peroxide, etc.), vitamin C to bowel
 tolerance, vitamin E at 800-1,200 IU/day, selenium at 500-1,000 mcg/day
 orally or IM, vitamin A at 300,000 IU/day as beta
 carotene, chelation with EDTA, hydrogen peroxide
-IV, betaine HC1 and pancreatic enzymes at 200-500 mg t.i.d. 15 minutes
+IV, betaine HCl and pancreatic enzymes at 200-500 mg t.i.d. 15 minutes
 before meals. Avoid fried foods, margarines, and sugar. If clumps of
 bacteria are involved (i.e. rheumatic fever) then antibiotics (penicillin or
 tetracycline) will be required to resolve the current problem and prevent
@@ -12186,7 +12186,7 @@ INDIGESTION (dyspepsia, belch, burp, and bloat) occurs as a natural course of ag
 result of stress, salt restriction, and overeating. In the course of aging, the stomach begins to loose its
 ability to produce hydrochloric acid. This process begins at about age 35. Food allergies can
 contribute to this syndrome. The pulse test should be used to determine food allergies.
-Treatment of indigestion should include Kaopectate or Pepto Bismol for acute diarrhea, betaine HC1
+Treatment of indigestion should include Kaopectate or Pepto Bismol for acute diarrhea, betaine HCl
 and pancreatic enzymes at 75-200 mg t.i.d. before meals, mint tea as needed to calm stomach,
 English bitters (Gentiana lutea) before each meal, vitamin E at 800-1,200 IU/day, selenium at 500
 mcg/day, calcium and magnesium at 2,000 and 1,000 mg/day, acupuncture, homeopathy, herbs such
@@ -12216,7 +12216,7 @@ syndrome.
 Treatment of irritable bowel syndrome should include high fiber diets, 4-6
 cups of fruit and vegetables per day, elimination of fried food, margarine,
 caffeine, sugar, and offending foods based on the pulse test (i.e. wheat,
-milk, soy), betaine HC1 and pancreatic enzymes at 75-200 mg t.i.d. before
+milk, soy), betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before
 meals, folic acid at 5-25 mg/day, gluten free diet, and eight to ten glasses of
 water each day. Don’t forget the base line nutrition supplement program.
 Herbs including marshmallow (Althaea officinalis). A macrobiotic diet can
@@ -12356,7 +12356,7 @@ treat.
 Treatment of Korsakoff s syndrome includes IV chelation, hydrogen
 peroxide IV, vitamin B1 at 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,
 avoidance of alcohol and sugar, chromium and vanadium at 50-200 mcg
-t.i.d., betaine HC1 and pancreatic enzymes at 75-200 mg t.i.d. before meals,
+t.i.d., betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals,
 hydergine at 4.5-9 mg/day, vasopressin (Diapid) at 12-16 units per day as a
 nasal spray, centrophenoxine at 4.4-8.0 gm per day, and piracetam
 (Dinagen) at 1.6-4.8 gm per day. This is the drug treatment program used to
@@ -12528,7 +12528,7 @@ avoiding caffeine, alcohol, fried foods, and drugs. That’s a gain of 6.5 years
 The use of water filtration systems in the home, the use of air filters and
 conditioners for the home and work place as well as employing the base
 line nutrition program can add 10 to 20 to 40 healthful years to your life.
-The use of digestive aids (i.e. betaine HC1 and pancreatic enzymes) will
+The use of digestive aids (i.e. betaine HCl and pancreatic enzymes) will
 add an additional ten years to your life. Together, these measures add a total
 of 20 to 50 years when you actively and aggressively seek a healthful life.
 The Hunza secret of longevity (average of 100 years with a top end of 140
@@ -12764,7 +12764,7 @@ hair, loss of hair color, arterial aneurysms, and scurvy-like bone disease
 and blood will show a low copper and low ceruloplasmin.
 Treatment of Menke’s syndrome includes dealing with the malabsorption
 problems (i.e. avoid wheat, cow’s milk, and soy), supplement with digestive
-enzymes and betaine HC1, give copper IV at 200 ug/kg/day, and give
+enzymes and betaine HCl, give copper IV at 200 ug/kg/day, and give
 copper orally at 1-2 mg per day after relief of symptoms.
 MENOPAUSE: see climacteric
 MERCURY POISONING can result from the ingestion or inhalation of
@@ -12812,7 +12812,7 @@ muscular scalp arteries. Do the pulse test to determine which foods you are
 allergic to.
 Treatment and prevention are related to avoidance of food allergens which
 are identified by means of a diet diary and the pulse test, rotation diets,
-autoimmune urine therapy, betaine HC1 and pancreatic enzymes at 75-200
+autoimmune urine therapy, betaine HCl and pancreatic enzymes at 75-200
 mg t.i.d., vitamin C to bowel tolerance, bioflavonoids at 200 mg b.i.d., and
 the base line nutritional supplement program.
 MISCARRIAGE (spontaneous abortion) is
@@ -12915,7 +12915,7 @@ cholesterol.
 Treatment should include removal of mercury fillings, the use of CaEAP (a
 european drug used for M.S.) at 1 q.i.d., octocosanol at two capsules t.i.d.,
 and rattle snake venom injections daily for a contenr irritant therapy, d-
-phenylalanine at 500 mg t.i.d., betaine HC1 and pancreatic enzymes at 75-
+phenylalanine at 500 mg t.i.d., betaine HCl and pancreatic enzymes at 75-
 200 mg t.i.d., along with the avoidance of known food allergens and
 rotation diets to heal the small intestine, and avoid large doses of vitamin C
 supplementation. Eat green vegetables and juices as a natural source of
@@ -12987,7 +12987,7 @@ Do pulse test to determine food allergies that might cause celiac disease
 type changes and the resultant malabsorption. Do a hair analysis to
 determine mineral status.
 Treatment of muscle cramps can include liquid plant derived colloidal
-calcium, magnesium, and potassium, betaine HC1 and pancreatic enzymes
+calcium, magnesium, and potassium, betaine HCl and pancreatic enzymes
 at 75-200 mg t.i.d. before meals. Dr. Wallach’s Pig Arthritis Formula works
 like a charm here.
 NASAL CATARRH (runny nose, stuffy nose) can be caused by a wide
@@ -13118,7 +13118,7 @@ Lunch should be a moderate meal with animal protein and dinner should be
 a light “soup and salad.” Take salmon oil at 5 gm t.i.d. with meals, flaxseed
 oil at one tbsp. b.i.d., two heaping tbsp. of nutritional fiber in an eight ounce
 glass of water before bed, glucomannan at 1 gm in eight ounces of water
-one hour before meals, and betaine HC1 and pancreatic enzymes at 75-200
+one hour before meals, and betaine HCl and pancreatic enzymes at 75-200
 mg t.i.d. 15 minutes before meals. Take thyroid starting at 1-3 grains. Too
 much will make you a little jittery and increase your heart rate as much as
 10-20 beats/minute. Adjust your intake up or down in dosage as needed. If
@@ -13195,7 +13195,7 @@ glucose will miss 99.9 percent of the hypoglycemia and 85 percent of the
 diabetes. Treatment of organic mental disorders requires serious dedication
 to identify the underlying problems and dealing with them.
 Treatment should include avoidance of food allergens including sugar,
-dairy, and wheat, rotation diets, betaine HC1 and pancreatic enzymes at 75-
+dairy, and wheat, rotation diets, betaine HCl and pancreatic enzymes at 75-
 200 mg. t.i.d. 15 minutes before meals, B3 (niacin) at 450 mg t.i.d. as time
 release tablets, essential fatty acids as salmon and flaxseed oils at 5 grams
 each t.i.d., chromium and vanadium at 25-200 mcg ti.d., and zinc at 50 mg
@@ -13242,7 +13242,7 @@ dietary calcium/phosphorus ratio, reduce or eliminate red meat intake, avoid
 phosphate containing soft drinks, avoid all phosphate containing
 supplements, reduce vitamin D intake and exposure (i.e.
 hats, long sleeve shirts, etc.), increase calcium and magnesium intake to
-2,000 mg and 1,000 mg per day, take betaine HC1 and pancreatic enzymes
+2,000 mg and 1,000 mg per day, take betaine HCl and pancreatic enzymes
 at 75-200 mg t.i.d. 15 minutes before meals, and don’t forget the base line
 nutritional supplement program—or to make it very simple—Dr. Wallach’s
 Pig Arthritis Formula.
@@ -13334,7 +13334,7 @@ recommend an additional drug to deal with the symptoms of the offending
 drug. Have mercury amalgam fillings replaced with composite, take
 octacosanol at 300 mcg t.i.d., leucine 10 gm/day, l-methionine at 5 gm/day,
 EFA at 5 grams b.i.d., l-tyrosine at 100 mg/day, dl-phenylalanine at 100 mg
-t.i.d., Bl at 200 mg t.i.d., B6 at 100 mg t.i.d., betaine HC1 and pancreatic
+t.i.d., Bl at 200 mg t.i.d., B6 at 100 mg t.i.d., betaine HCl and pancreatic
 enzymes at 75-200 mg t.i.d. before meals, and the base line nutritional
 supplement program. The “orthodox” neurologist treats with l-Dopa and
 carbidopa which aggravates and speeds up the progress of Parkinson’s
@@ -13376,7 +13376,7 @@ red meat consumption, reduce phytate intake (raw vegetables), supplement
 calcium at 2,000 mg per day and magnesium at 1,000 mg per day, and
 remember the base line nutrition supplement program including plant
 derived colloidal minerals. Take vitamin A at 300,000 IU per day as beta-carotene, vitamin C to bowel tolerance, zinc at 15 mg t.i.d., and betaine
-HC1 and pancreatic enzymes at 75-200 mg t.i.d. 15 minutes before meals.
+HCl and pancreatic enzymes at 75-200 mg t.i.d. 15 minutes before meals.
 Avoid sugar, use herbal and hydrogen peroxide mouthwashes, and dental
 floss to keep gum pockets and teeth clean so rebuilding of bone can take
 place.
@@ -13490,7 +13490,7 @@ food allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at
 300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,
 EFA at 5 grams b.i.d., vitamin E at 800-1,200 IU per day, zinc at 15 mg
 t.i.d., copper at 2 mg per day, selenium at 500-1,000 mcg per day, and
-betaine HC1 and pancreatic enzymes at 75-200 mg per day. Topical herbal
+betaine HCl and pancreatic enzymes at 75-200 mg per day. Topical herbal
 washes are of palliative value as are topical pureed onions, topical pureed
 cucumbers, and topical vitamin A & D creams.
 PYORRHEA (periodontal disease): see periodontal disease
@@ -13819,7 +13819,7 @@ are caused by lifting, sudden stops or turns, and/or trauma.
 Treatment of sprains include ice to reduce swelling as immediate first aid,
 then wrap with an Ace bandage for support. Fingers may be taped to the
 adjoining fingers for added support. Take collagen, glucosamine sulfate,
-and chondroitin sulfate at 5 gram t.i.d., betaine HC1
+and chondroitin sulfate at 5 gram t.i.d., betaine HCl
 and pancreatic enzymes at 75-200 mg t.i.d. in
 between meals, DMSO topically, pain gels topically, and herbs including
 arnica (Arnica montana) and comfrey (Symphytum officinale).
@@ -13833,7 +13833,7 @@ ligaments and torn joint capsule with bleeding and swelling. A very painful
 joint trauma, emergency treatment should include ice to reduce swelling;
 strains frequently require a cast similar to that used for a fracture to
 immobilize and rest the injured joint.
-Treatment of strains should include ice, DMSO, pain gels, betaine HC1 and
+Treatment of strains should include ice, DMSO, pain gels, betaine HCl and
 pancreatic enzymes at 75-200 mg t.i.d. between meals, and herbs including
 arnica (Arnica montana), comfrey (Symphytum officinale), and lavender
 (Lavandula spp.). A cast and crutches are appropriate to provide support
@@ -13993,7 +13993,7 @@ Treatment of tinnitus should include the treatment of the underlying
 disease. Avoid offending food allergens, avoid sugar and all refined foods,
 take zinc at 15 mg t.i.d., tin from plant derived colloidal minerals, EFA at 5
 grams t.i.d., vitamin A at 300,000 IU per day as beta-carotene, calcium and
-magnesium at 2,000 and 1,000 mg per day, and betaine HC1 and pancreatic
+magnesium at 2,000 and 1,000 mg per day, and betaine HCl and pancreatic
 enzymes at 75-200 mg t.i.d. 15 minutes before meals. Using Dr. Wallach’s
 Pig Arthritis simplifies the whole process.
 TIREDNESS (chronic fatigue syndrome): see chronic fatigue syndrome.
