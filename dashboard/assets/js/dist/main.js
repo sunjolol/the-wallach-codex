@@ -61861,6 +61861,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "adrenocortical",
+        plain: "relating to the outer layer of the adrenal gland, which makes steroid hormones",
+        category: "biology"
+      },
+      {
         term: "adrenoleukodystrophy",
         plain: "an inherited disorder that damages nerves and the adrenal glands",
         category: "medical"
@@ -61900,9 +61905,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "aldosterone",
+        plain: "an adrenal hormone that regulates the body's salt and water balance",
+        category: "biology"
+      },
+      {
         term: "alkalosis",
         plain: "too much alkali (base) in the body fluids",
         category: "medical"
+      },
+      {
+        term: "alpha-linolenic acid",
+        plain: "a plant-source essential fat (the omega-three kind) the body cannot make, found in flax and leafy greens",
+        category: "nutrition",
+        aliases: [
+          "alpha linolenic acid",
+          "linolenic acid"
+        ]
       },
       {
         term: "amenorrhea",
@@ -61921,6 +61940,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "androstenedione",
+        plain: "a steroid hormone the body can convert toward testosterone or estrogen",
+        category: "biology"
+      },
+      {
+        term: "anemia",
+        plain: "a shortage of healthy red blood cells or hemoglobin, which leaves the body short on oxygen",
+        category: "medical",
+        aliases: [
+          "anaemia"
+        ]
+      },
+      {
         term: "aneurysm",
         plain: "a bulge in the weakened wall of a blood vessel",
         category: "medical",
@@ -61929,9 +61961,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "angiotoxicity",
+        plain: "damage to the blood vessels",
+        category: "medical"
+      },
+      {
+        term: "anti-rachitic",
+        plain: "preventing rickets, the childhood disease of soft, bending bones",
+        category: "medical",
+        aliases: [
+          "antirachitic",
+          "anti-rickets"
+        ]
+      },
+      {
+        term: "antioxidant",
+        plain: "a substance that protects the body's cells from damage by unstable molecules",
+        category: "nutrition"
+      },
+      {
         term: "appendicitis",
         plain: "inflammation of the appendix",
         category: "medical"
+      },
+      {
+        term: "arachidonic acid",
+        plain: "a fatty acid the body can build from linoleic acid",
+        category: "nutrition"
       },
       {
         term: "arteriosclerosis",
@@ -61947,6 +62003,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "ascorbic acid",
+        plain: "the chemical name for vitamin C",
+        category: "nutrition"
+      },
+      {
+        term: "aspergillus",
+        plain: "a common mold; some kinds produce harmful toxins",
+        category: "biology"
+      },
+      {
         term: "ataxia",
         plain: "loss of muscle coordination and balance",
         category: "medical",
@@ -61960,8 +62026,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "ATP",
+        plain: "the small molecule the body's cells use to store and release energy",
+        category: "biology"
+      },
+      {
         term: "atrioventricular",
         plain: "between the heart's upper and lower chambers",
+        category: "medical"
+      },
+      {
+        term: "atrophy",
+        plain: "the wasting away or shrinking of a body tissue or organ",
         category: "medical"
       },
       {
@@ -61986,6 +62062,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "barbiturate",
+        plain: "a class of strong sedative drug",
+        category: "medical"
+      },
+      {
         term: "benign",
         plain: "not cancerous; harmless",
         category: "medical"
@@ -61994,6 +62075,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "berylliosis",
         plain: "lung disease from inhaling beryllium dust",
         category: "medical"
+      },
+      {
+        term: "beta-carotene",
+        plain: "the orange plant pigment the body converts into vitamin A",
+        category: "nutrition",
+        aliases: [
+          "betacarotene"
+        ]
       },
       {
         term: "betaine hcl",
@@ -62029,6 +62118,49 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "calcareous",
+        plain: "made of or rich in calcium, like chalk, shells, or bone",
+        category: "chemistry"
+      },
+      {
+        term: "calcification",
+        plain: "the hardening of a tissue by deposits of calcium",
+        category: "medical"
+      },
+      {
+        term: "calcitonin",
+        plain: "a hormone that lowers blood calcium by moving it into the bones",
+        category: "medical"
+      },
+      {
+        term: "calculi",
+        plain: "the medical term for hard stones that form in the body, such as kidney stones",
+        category: "medical"
+      },
+      {
+        term: "capillaries",
+        plain: "the tiniest blood vessels, where oxygen and nutrients pass into the tissues",
+        category: "anatomy"
+      },
+      {
+        term: "carbon monoxide",
+        plain: "a colorless, poisonous gas that competes with oxygen in the blood",
+        category: "chemistry"
+      },
+      {
+        term: "carbonic anhydrase",
+        plain: "a zinc-dependent enzyme that manages carbon dioxide and the body's acid balance",
+        category: "biology",
+        aliases: [
+          "anhydrase"
+        ]
+      },
+      {
+        term: "carboxypeptidase",
+        plain: "a zinc-dependent enzyme that helps digest proteins",
+        category: "biology"
+      },
+      {
         term: "carcinogen",
         plain: "a cancer-causing substance",
         category: "medical",
@@ -62053,6 +62185,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "cardiomyopathy",
         plain: "disease of the heart muscle",
         category: "medical"
+      },
+      {
+        term: "carotenoid",
+        plain: "a family of plant pigments, some of which the body turns into vitamin A",
+        category: "nutrition",
+        aliases: [
+          "carotenoids",
+          "carotene"
+        ]
+      },
+      {
+        term: "catalase",
+        plain: "an iron-containing enzyme that breaks down harmful peroxide",
+        category: "biology"
       },
       {
         term: "cation",
@@ -62089,6 +62235,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "chelated",
+        plain: "bound to an amino acid or similar carrier so the mineral is absorbed more easily",
+        category: "nutrition"
+      },
+      {
+        term: "chlorophyll",
+        plain: "the green pigment plants use to capture sunlight; it is built around a magnesium atom",
+        category: "biology"
+      },
+      {
+        term: "cholecalciferol",
+        plain: "vitamin D3, the form the skin makes from sunlight",
+        category: "nutrition"
+      },
+      {
         term: "chondrodystrophy",
         plain: "a disorder of cartilage growth, a form of dwarfism",
         category: "medical"
@@ -62111,6 +62272,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         aliases: [
           "cirrhotic"
         ]
+      },
+      {
+        term: "cofactor",
+        plain: "a helper substance an enzyme needs before it can do its job in the body",
+        category: "biology"
       },
       {
         term: "collagen",
@@ -62143,6 +62309,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "contractility",
+        plain: "a muscle's ability to contract",
+        category: "biology"
+      },
+      {
+        term: "coronary thrombosis",
+        plain: "a blood clot blocking an artery that feeds the heart",
+        category: "medical"
+      },
+      {
+        term: "cryptoxanthin",
+        plain: "a plant pigment related to beta-carotene that yields some vitamin A",
+        category: "nutrition"
+      },
+      {
         term: "cyanosis",
         plain: "bluish skin from low blood oxygen",
         category: "medical"
@@ -62161,6 +62342,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "cytoplasm",
         plain: "the jelly-like fluid that fills a cell",
         category: "medical"
+      },
+      {
+        term: "dehydrocholesterol",
+        plain: "the cholesterol-like compound in skin that sunlight converts into vitamin D",
+        category: "biology"
       },
       {
         term: "dermatitis",
@@ -62183,9 +62369,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "docosahexaenoic acid",
+        plain: "DHA, a long-chain omega fat important for the brain and eyes",
+        category: "nutrition",
+        aliases: [
+          "DHA"
+        ]
+      },
+      {
         term: "dumping syndrome",
         plain: "when the stomach empties into the small intestine all at once, overwhelming its ability to buffer the acid",
         category: "medical"
+      },
+      {
+        term: "duodenum",
+        plain: "the first section of the small intestine, just past the stomach",
+        category: "anatomy"
       },
       {
         term: "dysmenorrhea",
@@ -62195,6 +62394,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         term: "dyspepsia",
         plain: "indigestion \u2014 belching, bloating, burping and \u201Cacid stomach\u201D",
+        category: "medical"
+      },
+      {
+        term: "dysplasia",
+        plain: "abnormal growth or development of cells or tissue",
         category: "medical"
       },
       {
@@ -62219,10 +62423,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "eicosapentaenoic acid",
+        plain: "EPA, a long-chain omega fat found in fish oil",
+        category: "nutrition",
+        aliases: [
+          "EPA"
+        ]
+      },
+      {
+        term: "electrochemical",
+        plain: "involving both electrical charge and chemistry, as in how cells and nerves signal",
+        category: "biology"
+      },
+      {
         term: "electrolysis",
         plain: "using an electric current to split a compound into its parts",
         category: "medical",
         aliases: []
+      },
+      {
+        term: "electrolytes",
+        plain: "charged minerals in body fluid, such as sodium and potassium, that carry electrical signals",
+        category: "biology"
+      },
+      {
+        term: "elemental",
+        plain: "the weight of the pure mineral itself, apart from whatever it is bound to",
+        category: "nutrition"
       },
       {
         term: "encephalitis",
@@ -62233,6 +62460,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "encephalopathy",
         plain: "any disease or damage affecting brain function",
         category: "medical"
+      },
+      {
+        term: "endocrine",
+        plain: "the body's system of glands and the hormones they release",
+        category: "biology"
       },
       {
         term: "enteritis",
@@ -62253,9 +62485,24 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "ergocalciferol",
+        plain: "vitamin D2, the plant-derived form of vitamin D",
+        category: "nutrition"
+      },
+      {
+        term: "ergosterol",
+        plain: "a plant and yeast compound that ultraviolet light turns into vitamin D2",
+        category: "biology"
+      },
+      {
         term: "erythropoietin",
         plain: "a hormone that signals the body to make red blood cells",
         category: "medical"
+      },
+      {
+        term: "excitability",
+        plain: "how readily a nerve or muscle fires in response to a signal",
+        category: "biology"
       },
       {
         term: "exostosis",
@@ -62263,8 +62510,38 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "extracellular",
+        plain: "located in the fluid outside the body's cells",
+        category: "biology"
+      },
+      {
         term: "familial",
         plain: "running in families; inherited",
+        category: "medical"
+      },
+      {
+        term: "fat-soluble",
+        plain: "dissolves in fat and is stored in the body's fat, rather than flushed out daily",
+        category: "nutrition"
+      },
+      {
+        term: "feminization",
+        plain: "the appearance of female physical traits in a male",
+        category: "medical"
+      },
+      {
+        term: "ferritin",
+        plain: "the protein that stores iron inside the body",
+        category: "biology"
+      },
+      {
+        term: "fibrin",
+        plain: "the stringy protein web that traps blood cells together to form a clot",
+        category: "medical"
+      },
+      {
+        term: "fibrinogen",
+        plain: "the dissolved blood protein the body turns into fibrin when it clots",
         category: "medical"
       },
       {
@@ -62405,12 +62682,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "heme",
+        plain: "the iron-carrying part of hemoglobin; heme iron from animal foods is absorbed most easily",
+        category: "biology",
+        aliases: [
+          "non-heme",
+          "heme iron"
+        ]
+      },
+      {
+        term: "hemoglobin",
+        plain: "the iron-containing protein in red blood cells that carries oxygen",
+        category: "biology",
+        aliases: [
+          "haemoglobin"
+        ]
+      },
+      {
         term: "hemorrhage",
         plain: "heavy or uncontrolled bleeding",
         category: "medical",
         aliases: [
           "hemorrhagic"
         ]
+      },
+      {
+        term: "hemosiderin",
+        plain: "a storage form of iron the body deposits in tissues",
+        category: "biology"
       },
       {
         term: "hemosiderosis",
@@ -62432,6 +62731,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "hepatomegaly",
         plain: "an enlarged liver",
         category: "medical"
+      },
+      {
+        term: "homeostatic",
+        plain: "keeping an internal level, such as blood calcium, in steady balance",
+        category: "biology",
+        aliases: [
+          "homeostasis"
+        ]
       },
       {
         term: "hydrochloric acid",
@@ -62460,6 +62767,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "hydroxyapatite",
+        plain: "the hard calcium-and-phosphorus crystal that gives bones and teeth their rigid structure",
+        category: "biology"
+      },
+      {
         term: "hypercalcemia",
         plain: "high calcium levels in the blood",
         category: "medical"
@@ -62480,6 +62792,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         term: "hyperkeratosis",
         plain: "thickening of the skin's outer layer",
+        category: "medical"
+      },
+      {
+        term: "hyperparathyroidism",
+        plain: "a disorder in which the parathyroid glands release too much hormone",
         category: "medical"
       },
       {
@@ -62507,6 +62824,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         aliases: [
           "low stomach acid"
         ]
+      },
+      {
+        term: "hypochromic",
+        plain: "describing red blood cells that are paler than normal, a sign of iron-deficiency anemia",
+        category: "medical"
       },
       {
         term: "hypoglycemia",
@@ -62555,12 +62877,38 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "intracellular",
+        plain: "located inside the body's cells",
+        category: "biology"
+      },
+      {
+        term: "intramuscular",
+        plain: "injected into a muscle",
+        category: "medical",
+        aliases: [
+          "intramuscularly"
+        ]
+      },
+      {
+        term: "intravenous",
+        plain: "given directly into a vein",
+        category: "medical",
+        aliases: [
+          "intravenously"
+        ]
+      },
+      {
         term: "intrinsic factor",
         plain: "a substance in stomach juice that vitamin B12 must attach to before the body can absorb it",
         category: "physiology",
         aliases: [
           "castle's intrinsic factor"
         ]
+      },
+      {
+        term: "ionized",
+        plain: "in the dissolved, electrically charged form the body can use directly",
+        category: "chemistry"
       },
       {
         term: "ischemia",
@@ -62647,6 +62995,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "linoleic acid",
+        plain: "an essential fat (the omega-six kind) the body cannot make, found in seeds and vegetable oils",
+        category: "nutrition"
+      },
+      {
         term: "lipid",
         plain: "a fat or fat-like molecule",
         category: "nutrition",
@@ -62658,6 +63011,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "lipodystrophy",
         plain: "abnormal loss or redistribution of body fat",
         category: "medical"
+      },
+      {
+        term: "lipoproteins",
+        plain: "particles that carry fats such as cholesterol through the blood",
+        category: "biology"
       },
       {
         term: "lordosis",
@@ -62675,6 +63033,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         term: "macular",
         plain: "relating to the macula, the central seeing part of the retina",
+        category: "medical"
+      },
+      {
+        term: "malabsorption",
+        plain: "poor absorption of nutrients from the digestive tract",
         category: "medical"
       },
       {
@@ -62742,6 +63105,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "microcytic",
+        plain: "describing abnormally small red blood cells",
+        category: "medical"
+      },
+      {
         term: "Mineral Toddy",
         plain: "Historical name (1980s-90s) for the plant-derived colloidal mineral liquid Wallach built his framework around. Made by Rockland U.S.A. (Elmer Heinrich) from a prehistoric plant deposit. Distributed through Eagle, which was renamed SupraLife International in 1998. Wallach founded American Longevity in 1997 (today's Youngevity). Youngevity later acquired SupraLife; today's direct descendants in the Youngevity line are Ultra Body Toddy and Cal Toddy.",
         category: "product-history",
@@ -62772,6 +63140,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "myoglobin",
+        plain: "an iron-containing protein that stores oxygen in the muscles",
+        category: "biology"
+      },
+      {
         term: "necrosis",
         plain: "death of body tissue",
         category: "medical",
@@ -62794,6 +63167,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         plain: "brain damage caused by a toxin",
         category: "medical",
         aliases: []
+      },
+      {
+        term: "neuromuscular",
+        plain: "involving the junction where nerves meet and control the muscles",
+        category: "biology"
       },
       {
         term: "neuropathy",
@@ -62831,6 +63209,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         aliases: [
           "neutrophils"
         ]
+      },
+      {
+        term: "niacin",
+        plain: "another name for vitamin B3",
+        category: "nutrition"
       },
       {
         term: "omphalocele",
@@ -62874,6 +63257,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "osteomalacia",
+        plain: "a softening of adult bones caused by too little calcium or vitamin D",
+        category: "medical"
+      },
+      {
         term: "osteopenia",
         plain: "mild bone-mineral loss, a precursor to osteoporosis",
         category: "medical"
@@ -62895,6 +63283,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "osteosclerosis",
         plain: "abnormal hardening and thickening of bone",
         category: "medical"
+      },
+      {
+        term: "oxalate",
+        plain: "a plant compound that binds calcium and blocks it from being absorbed",
+        category: "chemistry",
+        aliases: [
+          "oxalic acid"
+        ]
       },
       {
         term: "pagophagia",
@@ -62922,6 +63318,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "parathormone",
+        plain: "the parathyroid glands' hormone, which raises the calcium level in the blood",
+        category: "medical",
+        aliases: [
+          "parathyroid hormone"
+        ]
+      },
+      {
+        term: "parathyroid",
+        plain: "the tiny neck glands that keep the blood's calcium level in balance",
+        category: "anatomy"
+      },
+      {
         term: "parent rock",
         plain: "The bedrock a glacier grinds down, and what decides which minerals its meltwater carries. It's why the long-lived cultures' glacial milk holds 60\u201372 minerals while most of the world's glaciers grind rock with only 3\u201320.",
         category: "science",
@@ -62933,6 +63342,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           approved: "Luneth 2026-07-21 (manual override + review)"
         },
         aliases: []
+      },
+      {
+        term: "paresthesia",
+        plain: "an abnormal tingling, prickling, or numb feeling in the skin",
+        category: "medical"
       },
       {
         term: "pediculosis",
@@ -62953,6 +63367,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "periodontal",
+        plain: "relating to the gums and the tissues that support the teeth",
+        category: "medical"
+      },
+      {
         term: "periodontitis",
         plain: "gum disease that damages the bone anchoring the teeth",
         category: "medical"
@@ -62966,6 +63385,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "phlebitis",
         plain: "inflammation of a vein",
         category: "medical"
+      },
+      {
+        term: "phosphatase",
+        plain: "an enzyme that removes phosphate groups as part of the body's chemistry",
+        category: "biology"
+      },
+      {
+        term: "phospholipids",
+        plain: "fat molecules that form the membranes around the body's cells",
+        category: "biology"
       },
       {
         term: "phytate",
@@ -63035,6 +63464,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "prothrombin",
+        plain: "the inactive blood protein the body converts into thrombin to make a clot",
+        category: "medical"
+      },
+      {
+        term: "provitamin",
+        plain: "a substance the body converts into an active vitamin",
+        category: "nutrition"
+      },
+      {
         term: "psittacosis",
         plain: "a bird-borne bacterial lung infection",
         category: "medical",
@@ -63067,14 +63506,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        term: "reabsorption",
+        plain: "taking a substance back into the body instead of excreting it",
+        category: "biology"
+      },
+      {
         term: "redox",
         plain: "a reaction in which electrons pass from one molecule to another",
         category: "medical"
       },
       {
+        term: "retinol",
+        plain: "the active animal form of vitamin A",
+        category: "nutrition"
+      },
+      {
+        term: "retinyl",
+        plain: "a storage form of vitamin A used in foods and supplements",
+        category: "nutrition"
+      },
+      {
         term: "rhinitis",
         plain: "inflammation of the nasal lining, causing a runny or stuffy nose",
         category: "medical"
+      },
+      {
+        term: "riboflavin",
+        plain: "another name for vitamin B2",
+        category: "nutrition"
       },
       {
         term: "rock flour",
@@ -63144,6 +63603,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "sterol",
+        plain: "a family of fat-related compounds; cholesterol and vitamin D are sterols",
+        category: "chemistry"
+      },
+      {
         term: "stomatitis",
         plain: "inflammation of the mouth",
         category: "medical"
@@ -63154,6 +63618,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "product-history",
         aliases: [
           "SupraLife International"
+        ]
+      },
+      {
+        term: "synaptic",
+        plain: "relating to the tiny gap where one nerve cell passes its signal to the next",
+        category: "biology",
+        aliases: [
+          "synapse",
+          "synapses"
         ]
       },
       {
@@ -63185,6 +63658,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         term: "tetany",
         plain: "muscle cramps and spasms, often from low calcium",
+        category: "medical"
+      },
+      {
+        term: "thrombin",
+        plain: "a blood enzyme that drives the final step of forming a clot",
+        category: "medical"
+      },
+      {
+        term: "thromboplastin",
+        plain: "a clot-triggering substance released by injured tissue and platelets",
         category: "medical"
       },
       {
@@ -63225,6 +63708,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "trigeminal",
+        plain: "relating to the main facial nerve; trigeminal pain is severe, shock-like facial pain",
+        category: "medical"
+      },
+      {
         term: "triglyceride",
         plain: "the main form in which fat is stored and carried in the blood",
         category: "nutrition",
@@ -63248,6 +63736,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
+        term: "ultraviolet",
+        plain: "the invisible part of sunlight that triggers vitamin D production in skin",
+        category: "biology"
+      },
+      {
         term: "vaginitis",
         plain: "inflammation of the vagina",
         category: "medical"
@@ -63268,6 +63761,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         plain: "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
         category: "medical",
         aliases: []
+      },
+      {
+        term: "water-soluble",
+        plain: "dissolves in water and is not stored, so it must be replaced regularly",
+        category: "nutrition"
+      },
+      {
+        term: "xerophthalmia",
+        plain: "severe eye dryness and damage caused by vitamin A deficiency",
+        category: "medical"
       },
       {
         term: "Zumbani",
@@ -113483,7 +113986,15 @@ Design came from a 7-agent workflow (research the real design system -> 3 indepe
 
 Batches 6-7 added: sulfur, cobalt, lithium, molybdenum, chloride, vitamin-b2, vitamin-b5, vitamin-k, biotin, choline, inositol, arginine, taurine, tryptophan. Combined with batches 1-5 the review queue now holds 746 curated claims across 39 elements (565 newly mined + 181 enrich-existing), plus a 'What is X?' intro and rich entity synonyms per element; 310 claims curated out. ALL 16 vitamins are now complete. Same two-layer verification: the DETERMINISTIC snap gate (0 fabrications shipped) then an adversarial faithfulness re-read, which on this segment caught a cross-nutrient dose confusion (a choline dose whose verbatim was actually the biotin chart row -> REJECTED), several added hedges on flat numbers, and editorial framing not in the source. Deliverables re-persisted to temporary/enrichment-queue/ (per-book raw.json + enrichmap.json now cumulative across all batches, enrich_existing.json, entities.json, master_queue.json, and the reusable pipeline scripts). Review artifact (same URL): https://claude.ai/code/artifact/c06c7495-f959-4650-81af-bf511d2713fc. Handoff + seal/wire steps in chronicle/next-chunk.md. Deferred: 9 amino acids (batch 8 sources already staged), omega-6/9, silica/silver/tin/nickel/oxygen, hydrogen/carbon/nitrogen, the 35 rare-earth GROUP treatment, and the per-element design pass. No source or pillar changed (queue is gitignored staging), so the only repo change is this log-embed rebuild.` }, { id: "lg_ms2b3umi_a1vyn2", ts: "2026-07-26T16:25:03.306254-05:00", surface: "corpus", kind: "milestone", summary: "First selective corpus seal: zinc+magnesium search claims LIVE (71). Re-verified 146 flagged claims via 13-agent workflow, selective-sealed 48 new across 6 books at kv401 (+gloss fix), wired 72 enrichment + 2 entities. Board 77/77, search probe PASS.", detail: "The first batch of reviewed knowledge went live. I pushed the zinc and magnesium encyclopedia entries (the searchable question-and-answer cards) into the sealed corpus, deliberately starting small to prove the whole pipeline before doing the other 37 elements.\n\nRe-verified the 146 REVISE-flagged enrichment-queue claims with a 13-agent workflow grounded strictly in book context (0 REJECT, 118 SEAL_AS_IS, 27 FIX; 23 fixes deterministically re-checked against book bytes and applied, 5 HOLD). Selective-sealed zinc+magnesium ONLY: rebuilt filtered per-book raw+enrichmap from the corrected queue via a two-way-proven queue_id-to-raw_index map (48 new claims across 6 books), corpus_extract finalize, corpus_seal at kv400 (user-authorized). Caught one gloss regression post-seal (claim_text English-hawthorne to hawthorn per the common_swaps lexicon; verbatim kept Wallach-exact), fixed it in the draft and re-sealed at kv401. Wired 72 enrichment entries (48 new + 24 reuse) and 2 canon_ref entities into search-enrichment.json (404 to 475) and search-entities.json; one id collision (WAL-CLM-DDDL-000053) resolved non-destructively by widening its also_about to keep absorption primary and cross-link magnesium and manganese. build_embeds, build.mjs, invariants 77/77, render_probe_search PASS. Live: zinc 36 claims (Zn, 32 synonyms), magnesium 35 (Mg, 44 synonyms). Remaining: 37 elements plus the 5 HOLD, 2 hedge, 3 resnap touch-ups still queued." }, { id: "lg_ms2bypxj_pvfu7j", ts: "2026-07-26T16:49:03.559884-05:00", surface: "views", kind: "round-close", summary: "Entity + search hero no longer dumps the full synonym list front-facing; meta stops at the book/answer count (all 90 essentials, conditions, Ask-Wallach popup). Synonyms stay matcher-only.", detail: 'The top line of every knowledge page (and the search popup) was printing the entire hidden alias list \u2014 for magnesium that was 44 synonyms after the book count, a wall of text. Those aliases exist only so the search matcher can find the entity; they were never meant to be shown. Now the line stops at the book/answer count.\n\nviews/entity-page.ts: dropped the " . also: synonyms" suffix + its unused const from BOTH heroes (essential kd-ep-hero + condition kd-ep--cond). views/search.ts: same removal from ehero__meta. Synonyms stay in the search index (matching unaffected). Verified headless (hero_shot.js): zinc "mineral . 108 claims . 4 books", magnesium ". 88 claims . 5 books", calcium ". 102 claims . 5 books" (0 also:); render_probe_search heroMeta "element . 16 answers". build OK, invariants 77/77, render_probe_search PASS. Pre-existing (stash-verified) render_probe_entity best-source->product-panel assertion still fails, unrelated (task_65cfe20e).' }, { id: "lg_ms2d44a5_rreqjf", ts: "2026-07-26T17:21:15.053014-05:00", surface: "corpus", kind: "session-end", summary: "Session close: Batch 1 (zinc+magnesium) sealed live at kv401 + wired; entity/search hero synonym-dump fixed; all 10 queue touch-ups done. Whole 39-element queue seal-ready. Next: Batch 2 = high-value 6.", detail: "Closing the session cleanly for a fresh genesis. Recap of what shipped: (1) first selective corpus seal - zinc + magnesium search claims live at knowledge_version=401, 72 enrichment entries + 2 entities wired, board 77/77 [c942e724]; (2) fixed the entity-page + search-popup hero that dumped the full synonym list front-facing [b989a8bf]; (3) applied + validated all 10 queue touch-ups so the whole 39-element queue is now seal-ready [1a7609fc + handoff].\n\nThe re-verify->filter->finalize->seal->wire->build->probe pipeline is proven, tooled, and persisted (temporary/enrichment-queue/pilot/). Next session (genesis) resumes at Batch 2 = the high-value 6: omega-3, vitamin-c, vitamin-a, vitamin-d, iron, calcium. A render_probe_entity product-panel probe fix is running as an independent task (task_65cfe20e)." }, { id: "lg_ms2fa9ki_l2etul", ts: "2026-07-26T18:22:01.074861-05:00", surface: "corpus", kind: "round-close", summary: "Batch 2 sealed (kv402): the high-value 6 \u2014 omega-3, vitamin-c, vitamin-a, vitamin-d, iron, calcium \u2014 155 reviewed search claims LIVE in Ask-Wallach. Luneth approved all 155 in an exact-form review, then authorized the seal.", detail: `Batch 2 of the search-enrichment rollout is live. I built a review page showing all 155 of the high-value-6 claims exactly as they would be saved (question, short answer, full answer, and Wallach's exact quote); you read them, approved every one, and authorized the seal. Sealed 112 new Wallach claims and wired the search so a person can now ask Ask-Wallach about omega-3, vitamin C, vitamin A, vitamin D, iron, or calcium and get rich, categorized answers.
 
-Source: temporary/enrichment-queue/pilot/corrected_master_queue.json. 112 new mine_new claims finalized per book (dddl 26 \xB7 epigenetics 40 \xB7 hells-kitchen 11 \xB7 immortality 17 \xB7 lets-play-doctor 9 \xB7 rare-earths 9) \u2192 corpus_seal (user-authorized) kv401\u2192kv402, 1467\u21921579 claims, final corpus_verify PASS. Every verbatim byte-exact in its sealed book source; every enrich_existing resolves to a sealed claim. PRE-SEAL I ran the 112 new claims through every claim-scanning RED gate (references_resolve \xB7 claim_text_term_gloss \xB7 internal_refs_out_of_prose \xB7 prose_contained) and caught claim_text_term_gloss BEFORE the seal \u2014 WAL-CLM-DDDL-000174 + WAL-CLM-EPIGEN-000233 used "ATP" without spelling it out; fixed in the queue to "ATP (adenosine triphosphate)" (a definitional acronym gloss) and re-finalized, so it never reddened a sealed board. Added glossary term "avitaminosis" (used in a vitamin-A claim). Reset+re-finalized dddl+epigenetics for contiguous ids (existing_max_seq reads shard+draft, so a mid-fix re-finalize inflated them \u2014 new memory refinalize-inflates-ids). Wiring (post-seal, via safe_write): search-enrichment.json 475\u2192617 (142 new keys + 12 collisions merged NON-DESTRUCTIVELY, existing entries preserved, only also_about widened, self-subject widen suppressed); search-entities.json 88\u219292 (4 new canon_ref entities omega-3/vitamin-c/vitamin-a/vitamin-d; iron+calcium UNION-merged rather than clobbered \u2014 preserved ferrum + essential_nutrients/colloidal_minerals the Batch-1 script would have dropped). build_embeds \u2192 build.mjs \u2192 invariants 77/77 \u2192 render_probe_search PASS (updated the calcium answer-count anchor 110\u2192134, independently verified = 134 distinct claim ids in calcium's entity-page record). Visually confirmed omega-3 Ask-Wallach renders rich (107 answers across 5 families). Deferred: 31 elements still queued for future batches; vitamin-d's hero shows its canonical name "Cholecalciferol" (canon display-name \u2014 flag for a possible future "Vitamin D" display preference).` }];
+Source: temporary/enrichment-queue/pilot/corrected_master_queue.json. 112 new mine_new claims finalized per book (dddl 26 \xB7 epigenetics 40 \xB7 hells-kitchen 11 \xB7 immortality 17 \xB7 lets-play-doctor 9 \xB7 rare-earths 9) \u2192 corpus_seal (user-authorized) kv401\u2192kv402, 1467\u21921579 claims, final corpus_verify PASS. Every verbatim byte-exact in its sealed book source; every enrich_existing resolves to a sealed claim. PRE-SEAL I ran the 112 new claims through every claim-scanning RED gate (references_resolve \xB7 claim_text_term_gloss \xB7 internal_refs_out_of_prose \xB7 prose_contained) and caught claim_text_term_gloss BEFORE the seal \u2014 WAL-CLM-DDDL-000174 + WAL-CLM-EPIGEN-000233 used "ATP" without spelling it out; fixed in the queue to "ATP (adenosine triphosphate)" (a definitional acronym gloss) and re-finalized, so it never reddened a sealed board. Added glossary term "avitaminosis" (used in a vitamin-A claim). Reset+re-finalized dddl+epigenetics for contiguous ids (existing_max_seq reads shard+draft, so a mid-fix re-finalize inflated them \u2014 new memory refinalize-inflates-ids). Wiring (post-seal, via safe_write): search-enrichment.json 475\u2192617 (142 new keys + 12 collisions merged NON-DESTRUCTIVELY, existing entries preserved, only also_about widened, self-subject widen suppressed); search-entities.json 88\u219292 (4 new canon_ref entities omega-3/vitamin-c/vitamin-a/vitamin-d; iron+calcium UNION-merged rather than clobbered \u2014 preserved ferrum + essential_nutrients/colloidal_minerals the Batch-1 script would have dropped). build_embeds \u2192 build.mjs \u2192 invariants 77/77 \u2192 render_probe_search PASS (updated the calcium answer-count anchor 110\u2192134, independently verified = 134 distinct claim ids in calcium's entity-page record). Visually confirmed omega-3 Ask-Wallach renders rich (107 answers across 5 families). Deferred: 31 elements still queued for future batches; vitamin-d's hero shows its canonical name "Cholecalciferol" (canon display-name \u2014 flag for a possible future "Vitamin D" display preference).` }, { id: "lg_ms2gif3b_8n0m0s", ts: "2026-07-26T18:56:21.095594-05:00", surface: "search", kind: "round-close", summary: "Dotted-line hover explainers added to every scientific term across all 8 enriched elements (glossary 234->325); calcium calibrated the bar, then the other 7. Plus 3 brow-lens CSS touch-ups. Board 77/77.", detail: `Made the enriched content actually understandable to a normal reader: every overly-scientific word across all 8 live-enriched elements now shows a plain-language definition on a dotted-line hover, instead of leaving the reader stuck on a term like "hydroxyapatite" or "hemoglobin". This is Luneth's standing rule \u2014 do the glossing AS we enrich, never later, and spelling an acronym out ("ATP (adenosine triphosphate)") is NOT the fix because both forms are equally opaque; the hover is. I also did three small layout touch-ups he asked for on the Ask-Wallach "kind of answer" pills.
+
+glossary.json 234 \u2192 325 terms (+91). Calcium first as the calibration sample (29 terms) \u2014 Luneth confirmed the bar ("all of those look ripe"), which is: gloss the scientific/lesser-known, skip the genuinely well-known (protein, hormone, cancer, hypertension...). Then the same bar across zinc \xB7 magnesium \xB7 omega-3 \xB7 vitamin-a \xB7 vitamin-c \xB7 vitamin-d \xB7 iron (61 more, shared terms deduped by the adder). Coverage spans the clotting cascade, the calcium-regulating hormones, the fatty-acid + vitamin chemistry (alpha-linolenic/linoleic/arachidonic acid, EPA/DHA, retinol/beta-carotene/carotenoid, cholecalciferol/ergocalciferol), the iron blood-proteins (hemoglobin/myoglobin/ferritin/hemosiderin/catalase), and absorption terms.
+
+Mechanism is data-only (no view code): views/glossify.ts auto-wraps the first occurrence of any glossary.json term in a .gloss dotted-underline hover, everywhere reader-facing text renders \u2014 the search answer, the full claim_text, Wallach's verbatim quote, and the entity pages. So a term added once is explained everywhere.
+
+Two correctness notes: (1) my batch-adder first used a naive any-digit reject that wrongly bounced the vitamin names (riboflavin "B2", cholecalciferol "D3"); I re-aligned it to glossary_wellformed's real logic (strip vitamin designations A-K+digits and year tokens, THEN flag a genuine number), and reworded the omega defs digit-free since "omega-3/omega-6" genuinely trips the gate. (2) CSS in drawer-search.css (linked, not bundled): .brow-lens__b font-size 0.75\u21920.9rem; .brow-lens margin 15px 0 2px \u2192 0px 0 20px + justify-content:center \u2014 the family "kind of answer" pills are now bigger and centered with equal side spacing.
+
+Verified: build OK \xB7 glossary_wellformed PASS (325 defs) \xB7 jargon_terms_glossed PASS (443 keys \u2014 it had been flagging avitaminosis) \xB7 invariants 77/77 \xB7 render_probe_search + render_probe_knowledge PASS \xB7 headless screenshots confirm the tooltips render (calcium\u2192hydroxyapatite, iron\u2192hemoglobin) and the centered pill row. Standing rule saved to memory (gloss-scientific-terms-as-you-enrich); future batches gloss as they seal, so no more backfills.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

@@ -29,6 +29,11 @@
       "category": "medical"
     },
     {
+      "term": "adrenocortical",
+      "plain": "relating to the outer layer of the adrenal gland, which makes steroid hormones",
+      "category": "biology"
+    },
+    {
       "term": "adrenoleukodystrophy",
       "plain": "an inherited disorder that damages nerves and the adrenal glands",
       "category": "medical"
@@ -68,9 +73,23 @@
       ]
     },
     {
+      "term": "aldosterone",
+      "plain": "an adrenal hormone that regulates the body's salt and water balance",
+      "category": "biology"
+    },
+    {
       "term": "alkalosis",
       "plain": "too much alkali (base) in the body fluids",
       "category": "medical"
+    },
+    {
+      "term": "alpha-linolenic acid",
+      "plain": "a plant-source essential fat (the omega-three kind) the body cannot make, found in flax and leafy greens",
+      "category": "nutrition",
+      "aliases": [
+        "alpha linolenic acid",
+        "linolenic acid"
+      ]
     },
     {
       "term": "amenorrhea",
@@ -89,6 +108,19 @@
       "category": "medical"
     },
     {
+      "term": "androstenedione",
+      "plain": "a steroid hormone the body can convert toward testosterone or estrogen",
+      "category": "biology"
+    },
+    {
+      "term": "anemia",
+      "plain": "a shortage of healthy red blood cells or hemoglobin, which leaves the body short on oxygen",
+      "category": "medical",
+      "aliases": [
+        "anaemia"
+      ]
+    },
+    {
       "term": "aneurysm",
       "plain": "a bulge in the weakened wall of a blood vessel",
       "category": "medical",
@@ -97,9 +129,33 @@
       ]
     },
     {
+      "term": "angiotoxicity",
+      "plain": "damage to the blood vessels",
+      "category": "medical"
+    },
+    {
+      "term": "anti-rachitic",
+      "plain": "preventing rickets, the childhood disease of soft, bending bones",
+      "category": "medical",
+      "aliases": [
+        "antirachitic",
+        "anti-rickets"
+      ]
+    },
+    {
+      "term": "antioxidant",
+      "plain": "a substance that protects the body's cells from damage by unstable molecules",
+      "category": "nutrition"
+    },
+    {
       "term": "appendicitis",
       "plain": "inflammation of the appendix",
       "category": "medical"
+    },
+    {
+      "term": "arachidonic acid",
+      "plain": "a fatty acid the body can build from linoleic acid",
+      "category": "nutrition"
     },
     {
       "term": "arteriosclerosis",
@@ -115,6 +171,16 @@
       ]
     },
     {
+      "term": "ascorbic acid",
+      "plain": "the chemical name for vitamin C",
+      "category": "nutrition"
+    },
+    {
+      "term": "aspergillus",
+      "plain": "a common mold; some kinds produce harmful toxins",
+      "category": "biology"
+    },
+    {
       "term": "ataxia",
       "plain": "loss of muscle coordination and balance",
       "category": "medical",
@@ -128,8 +194,18 @@
       "category": "medical"
     },
     {
+      "term": "ATP",
+      "plain": "the small molecule the body's cells use to store and release energy",
+      "category": "biology"
+    },
+    {
       "term": "atrioventricular",
       "plain": "between the heart's upper and lower chambers",
+      "category": "medical"
+    },
+    {
+      "term": "atrophy",
+      "plain": "the wasting away or shrinking of a body tissue or organ",
       "category": "medical"
     },
     {
@@ -154,6 +230,11 @@
       ]
     },
     {
+      "term": "barbiturate",
+      "plain": "a class of strong sedative drug",
+      "category": "medical"
+    },
+    {
       "term": "benign",
       "plain": "not cancerous; harmless",
       "category": "medical"
@@ -162,6 +243,14 @@
       "term": "berylliosis",
       "plain": "lung disease from inhaling beryllium dust",
       "category": "medical"
+    },
+    {
+      "term": "beta-carotene",
+      "plain": "the orange plant pigment the body converts into vitamin A",
+      "category": "nutrition",
+      "aliases": [
+        "betacarotene"
+      ]
     },
     {
       "term": "betaine hcl",
@@ -197,6 +286,49 @@
       "category": "medical"
     },
     {
+      "term": "calcareous",
+      "plain": "made of or rich in calcium, like chalk, shells, or bone",
+      "category": "chemistry"
+    },
+    {
+      "term": "calcification",
+      "plain": "the hardening of a tissue by deposits of calcium",
+      "category": "medical"
+    },
+    {
+      "term": "calcitonin",
+      "plain": "a hormone that lowers blood calcium by moving it into the bones",
+      "category": "medical"
+    },
+    {
+      "term": "calculi",
+      "plain": "the medical term for hard stones that form in the body, such as kidney stones",
+      "category": "medical"
+    },
+    {
+      "term": "capillaries",
+      "plain": "the tiniest blood vessels, where oxygen and nutrients pass into the tissues",
+      "category": "anatomy"
+    },
+    {
+      "term": "carbon monoxide",
+      "plain": "a colorless, poisonous gas that competes with oxygen in the blood",
+      "category": "chemistry"
+    },
+    {
+      "term": "carbonic anhydrase",
+      "plain": "a zinc-dependent enzyme that manages carbon dioxide and the body's acid balance",
+      "category": "biology",
+      "aliases": [
+        "anhydrase"
+      ]
+    },
+    {
+      "term": "carboxypeptidase",
+      "plain": "a zinc-dependent enzyme that helps digest proteins",
+      "category": "biology"
+    },
+    {
       "term": "carcinogen",
       "plain": "a cancer-causing substance",
       "category": "medical",
@@ -221,6 +353,20 @@
       "term": "cardiomyopathy",
       "plain": "disease of the heart muscle",
       "category": "medical"
+    },
+    {
+      "term": "carotenoid",
+      "plain": "a family of plant pigments, some of which the body turns into vitamin A",
+      "category": "nutrition",
+      "aliases": [
+        "carotenoids",
+        "carotene"
+      ]
+    },
+    {
+      "term": "catalase",
+      "plain": "an iron-containing enzyme that breaks down harmful peroxide",
+      "category": "biology"
     },
     {
       "term": "cation",
@@ -257,6 +403,21 @@
       ]
     },
     {
+      "term": "chelated",
+      "plain": "bound to an amino acid or similar carrier so the mineral is absorbed more easily",
+      "category": "nutrition"
+    },
+    {
+      "term": "chlorophyll",
+      "plain": "the green pigment plants use to capture sunlight; it is built around a magnesium atom",
+      "category": "biology"
+    },
+    {
+      "term": "cholecalciferol",
+      "plain": "vitamin D3, the form the skin makes from sunlight",
+      "category": "nutrition"
+    },
+    {
       "term": "chondrodystrophy",
       "plain": "a disorder of cartilage growth, a form of dwarfism",
       "category": "medical"
@@ -279,6 +440,11 @@
       "aliases": [
         "cirrhotic"
       ]
+    },
+    {
+      "term": "cofactor",
+      "plain": "a helper substance an enzyme needs before it can do its job in the body",
+      "category": "biology"
     },
     {
       "term": "collagen",
@@ -311,6 +477,21 @@
       "category": "medical"
     },
     {
+      "term": "contractility",
+      "plain": "a muscle's ability to contract",
+      "category": "biology"
+    },
+    {
+      "term": "coronary thrombosis",
+      "plain": "a blood clot blocking an artery that feeds the heart",
+      "category": "medical"
+    },
+    {
+      "term": "cryptoxanthin",
+      "plain": "a plant pigment related to beta-carotene that yields some vitamin A",
+      "category": "nutrition"
+    },
+    {
       "term": "cyanosis",
       "plain": "bluish skin from low blood oxygen",
       "category": "medical"
@@ -329,6 +510,11 @@
       "term": "cytoplasm",
       "plain": "the jelly-like fluid that fills a cell",
       "category": "medical"
+    },
+    {
+      "term": "dehydrocholesterol",
+      "plain": "the cholesterol-like compound in skin that sunlight converts into vitamin D",
+      "category": "biology"
     },
     {
       "term": "dermatitis",
@@ -351,9 +537,22 @@
       "category": "medical"
     },
     {
+      "term": "docosahexaenoic acid",
+      "plain": "DHA, a long-chain omega fat important for the brain and eyes",
+      "category": "nutrition",
+      "aliases": [
+        "DHA"
+      ]
+    },
+    {
       "term": "dumping syndrome",
       "plain": "when the stomach empties into the small intestine all at once, overwhelming its ability to buffer the acid",
       "category": "medical"
+    },
+    {
+      "term": "duodenum",
+      "plain": "the first section of the small intestine, just past the stomach",
+      "category": "anatomy"
     },
     {
       "term": "dysmenorrhea",
@@ -363,6 +562,11 @@
     {
       "term": "dyspepsia",
       "plain": "indigestion — belching, bloating, burping and “acid stomach”",
+      "category": "medical"
+    },
+    {
+      "term": "dysplasia",
+      "plain": "abnormal growth or development of cells or tissue",
       "category": "medical"
     },
     {
@@ -387,10 +591,33 @@
       ]
     },
     {
+      "term": "eicosapentaenoic acid",
+      "plain": "EPA, a long-chain omega fat found in fish oil",
+      "category": "nutrition",
+      "aliases": [
+        "EPA"
+      ]
+    },
+    {
+      "term": "electrochemical",
+      "plain": "involving both electrical charge and chemistry, as in how cells and nerves signal",
+      "category": "biology"
+    },
+    {
       "term": "electrolysis",
       "plain": "using an electric current to split a compound into its parts",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "electrolytes",
+      "plain": "charged minerals in body fluid, such as sodium and potassium, that carry electrical signals",
+      "category": "biology"
+    },
+    {
+      "term": "elemental",
+      "plain": "the weight of the pure mineral itself, apart from whatever it is bound to",
+      "category": "nutrition"
     },
     {
       "term": "encephalitis",
@@ -401,6 +628,11 @@
       "term": "encephalopathy",
       "plain": "any disease or damage affecting brain function",
       "category": "medical"
+    },
+    {
+      "term": "endocrine",
+      "plain": "the body's system of glands and the hormones they release",
+      "category": "biology"
     },
     {
       "term": "enteritis",
@@ -421,9 +653,24 @@
       ]
     },
     {
+      "term": "ergocalciferol",
+      "plain": "vitamin D2, the plant-derived form of vitamin D",
+      "category": "nutrition"
+    },
+    {
+      "term": "ergosterol",
+      "plain": "a plant and yeast compound that ultraviolet light turns into vitamin D2",
+      "category": "biology"
+    },
+    {
       "term": "erythropoietin",
       "plain": "a hormone that signals the body to make red blood cells",
       "category": "medical"
+    },
+    {
+      "term": "excitability",
+      "plain": "how readily a nerve or muscle fires in response to a signal",
+      "category": "biology"
     },
     {
       "term": "exostosis",
@@ -431,8 +678,38 @@
       "category": "medical"
     },
     {
+      "term": "extracellular",
+      "plain": "located in the fluid outside the body's cells",
+      "category": "biology"
+    },
+    {
       "term": "familial",
       "plain": "running in families; inherited",
+      "category": "medical"
+    },
+    {
+      "term": "fat-soluble",
+      "plain": "dissolves in fat and is stored in the body's fat, rather than flushed out daily",
+      "category": "nutrition"
+    },
+    {
+      "term": "feminization",
+      "plain": "the appearance of female physical traits in a male",
+      "category": "medical"
+    },
+    {
+      "term": "ferritin",
+      "plain": "the protein that stores iron inside the body",
+      "category": "biology"
+    },
+    {
+      "term": "fibrin",
+      "plain": "the stringy protein web that traps blood cells together to form a clot",
+      "category": "medical"
+    },
+    {
+      "term": "fibrinogen",
+      "plain": "the dissolved blood protein the body turns into fibrin when it clots",
       "category": "medical"
     },
     {
@@ -573,12 +850,34 @@
       "category": "medical"
     },
     {
+      "term": "heme",
+      "plain": "the iron-carrying part of hemoglobin; heme iron from animal foods is absorbed most easily",
+      "category": "biology",
+      "aliases": [
+        "non-heme",
+        "heme iron"
+      ]
+    },
+    {
+      "term": "hemoglobin",
+      "plain": "the iron-containing protein in red blood cells that carries oxygen",
+      "category": "biology",
+      "aliases": [
+        "haemoglobin"
+      ]
+    },
+    {
       "term": "hemorrhage",
       "plain": "heavy or uncontrolled bleeding",
       "category": "medical",
       "aliases": [
         "hemorrhagic"
       ]
+    },
+    {
+      "term": "hemosiderin",
+      "plain": "a storage form of iron the body deposits in tissues",
+      "category": "biology"
     },
     {
       "term": "hemosiderosis",
@@ -600,6 +899,14 @@
       "term": "hepatomegaly",
       "plain": "an enlarged liver",
       "category": "medical"
+    },
+    {
+      "term": "homeostatic",
+      "plain": "keeping an internal level, such as blood calcium, in steady balance",
+      "category": "biology",
+      "aliases": [
+        "homeostasis"
+      ]
     },
     {
       "term": "hydrochloric acid",
@@ -628,6 +935,11 @@
       "category": "medical"
     },
     {
+      "term": "hydroxyapatite",
+      "plain": "the hard calcium-and-phosphorus crystal that gives bones and teeth their rigid structure",
+      "category": "biology"
+    },
+    {
       "term": "hypercalcemia",
       "plain": "high calcium levels in the blood",
       "category": "medical"
@@ -648,6 +960,11 @@
     {
       "term": "hyperkeratosis",
       "plain": "thickening of the skin's outer layer",
+      "category": "medical"
+    },
+    {
+      "term": "hyperparathyroidism",
+      "plain": "a disorder in which the parathyroid glands release too much hormone",
       "category": "medical"
     },
     {
@@ -675,6 +992,11 @@
       "aliases": [
         "low stomach acid"
       ]
+    },
+    {
+      "term": "hypochromic",
+      "plain": "describing red blood cells that are paler than normal, a sign of iron-deficiency anemia",
+      "category": "medical"
     },
     {
       "term": "hypoglycemia",
@@ -723,12 +1045,38 @@
       "category": "medical"
     },
     {
+      "term": "intracellular",
+      "plain": "located inside the body's cells",
+      "category": "biology"
+    },
+    {
+      "term": "intramuscular",
+      "plain": "injected into a muscle",
+      "category": "medical",
+      "aliases": [
+        "intramuscularly"
+      ]
+    },
+    {
+      "term": "intravenous",
+      "plain": "given directly into a vein",
+      "category": "medical",
+      "aliases": [
+        "intravenously"
+      ]
+    },
+    {
       "term": "intrinsic factor",
       "plain": "a substance in stomach juice that vitamin B12 must attach to before the body can absorb it",
       "category": "physiology",
       "aliases": [
         "castle's intrinsic factor"
       ]
+    },
+    {
+      "term": "ionized",
+      "plain": "in the dissolved, electrically charged form the body can use directly",
+      "category": "chemistry"
     },
     {
       "term": "ischemia",
@@ -815,6 +1163,11 @@
       "category": "medical"
     },
     {
+      "term": "linoleic acid",
+      "plain": "an essential fat (the omega-six kind) the body cannot make, found in seeds and vegetable oils",
+      "category": "nutrition"
+    },
+    {
       "term": "lipid",
       "plain": "a fat or fat-like molecule",
       "category": "nutrition",
@@ -826,6 +1179,11 @@
       "term": "lipodystrophy",
       "plain": "abnormal loss or redistribution of body fat",
       "category": "medical"
+    },
+    {
+      "term": "lipoproteins",
+      "plain": "particles that carry fats such as cholesterol through the blood",
+      "category": "biology"
     },
     {
       "term": "lordosis",
@@ -843,6 +1201,11 @@
     {
       "term": "macular",
       "plain": "relating to the macula, the central seeing part of the retina",
+      "category": "medical"
+    },
+    {
+      "term": "malabsorption",
+      "plain": "poor absorption of nutrients from the digestive tract",
       "category": "medical"
     },
     {
@@ -910,6 +1273,11 @@
       ]
     },
     {
+      "term": "microcytic",
+      "plain": "describing abnormally small red blood cells",
+      "category": "medical"
+    },
+    {
       "term": "Mineral Toddy",
       "plain": "Historical name (1980s-90s) for the plant-derived colloidal mineral liquid Wallach built his framework around. Made by Rockland U.S.A. (Elmer Heinrich) from a prehistoric plant deposit. Distributed through Eagle, which was renamed SupraLife International in 1998. Wallach founded American Longevity in 1997 (today's Youngevity). Youngevity later acquired SupraLife; today's direct descendants in the Youngevity line are Ultra Body Toddy and Cal Toddy.",
       "category": "product-history",
@@ -940,6 +1308,11 @@
       "category": "medical"
     },
     {
+      "term": "myoglobin",
+      "plain": "an iron-containing protein that stores oxygen in the muscles",
+      "category": "biology"
+    },
+    {
       "term": "necrosis",
       "plain": "death of body tissue",
       "category": "medical",
@@ -962,6 +1335,11 @@
       "plain": "brain damage caused by a toxin",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "neuromuscular",
+      "plain": "involving the junction where nerves meet and control the muscles",
+      "category": "biology"
     },
     {
       "term": "neuropathy",
@@ -999,6 +1377,11 @@
       "aliases": [
         "neutrophils"
       ]
+    },
+    {
+      "term": "niacin",
+      "plain": "another name for vitamin B3",
+      "category": "nutrition"
     },
     {
       "term": "omphalocele",
@@ -1042,6 +1425,11 @@
       "category": "medical"
     },
     {
+      "term": "osteomalacia",
+      "plain": "a softening of adult bones caused by too little calcium or vitamin D",
+      "category": "medical"
+    },
+    {
       "term": "osteopenia",
       "plain": "mild bone-mineral loss, a precursor to osteoporosis",
       "category": "medical"
@@ -1063,6 +1451,14 @@
       "term": "osteosclerosis",
       "plain": "abnormal hardening and thickening of bone",
       "category": "medical"
+    },
+    {
+      "term": "oxalate",
+      "plain": "a plant compound that binds calcium and blocks it from being absorbed",
+      "category": "chemistry",
+      "aliases": [
+        "oxalic acid"
+      ]
     },
     {
       "term": "pagophagia",
@@ -1090,6 +1486,19 @@
       "category": "medical"
     },
     {
+      "term": "parathormone",
+      "plain": "the parathyroid glands' hormone, which raises the calcium level in the blood",
+      "category": "medical",
+      "aliases": [
+        "parathyroid hormone"
+      ]
+    },
+    {
+      "term": "parathyroid",
+      "plain": "the tiny neck glands that keep the blood's calcium level in balance",
+      "category": "anatomy"
+    },
+    {
       "term": "parent rock",
       "plain": "The bedrock a glacier grinds down, and what decides which minerals its meltwater carries. It's why the long-lived cultures' glacial milk holds 60–72 minerals while most of the world's glaciers grind rock with only 3–20.",
       "category": "science",
@@ -1101,6 +1510,11 @@
         "approved": "Luneth 2026-07-21 (manual override + review)"
       },
       "aliases": []
+    },
+    {
+      "term": "paresthesia",
+      "plain": "an abnormal tingling, prickling, or numb feeling in the skin",
+      "category": "medical"
     },
     {
       "term": "pediculosis",
@@ -1121,6 +1535,11 @@
       ]
     },
     {
+      "term": "periodontal",
+      "plain": "relating to the gums and the tissues that support the teeth",
+      "category": "medical"
+    },
+    {
       "term": "periodontitis",
       "plain": "gum disease that damages the bone anchoring the teeth",
       "category": "medical"
@@ -1134,6 +1553,16 @@
       "term": "phlebitis",
       "plain": "inflammation of a vein",
       "category": "medical"
+    },
+    {
+      "term": "phosphatase",
+      "plain": "an enzyme that removes phosphate groups as part of the body's chemistry",
+      "category": "biology"
+    },
+    {
+      "term": "phospholipids",
+      "plain": "fat molecules that form the membranes around the body's cells",
+      "category": "biology"
     },
     {
       "term": "phytate",
@@ -1203,6 +1632,16 @@
       "category": "medical"
     },
     {
+      "term": "prothrombin",
+      "plain": "the inactive blood protein the body converts into thrombin to make a clot",
+      "category": "medical"
+    },
+    {
+      "term": "provitamin",
+      "plain": "a substance the body converts into an active vitamin",
+      "category": "nutrition"
+    },
+    {
       "term": "psittacosis",
       "plain": "a bird-borne bacterial lung infection",
       "category": "medical",
@@ -1235,14 +1674,34 @@
       ]
     },
     {
+      "term": "reabsorption",
+      "plain": "taking a substance back into the body instead of excreting it",
+      "category": "biology"
+    },
+    {
       "term": "redox",
       "plain": "a reaction in which electrons pass from one molecule to another",
       "category": "medical"
     },
     {
+      "term": "retinol",
+      "plain": "the active animal form of vitamin A",
+      "category": "nutrition"
+    },
+    {
+      "term": "retinyl",
+      "plain": "a storage form of vitamin A used in foods and supplements",
+      "category": "nutrition"
+    },
+    {
       "term": "rhinitis",
       "plain": "inflammation of the nasal lining, causing a runny or stuffy nose",
       "category": "medical"
+    },
+    {
+      "term": "riboflavin",
+      "plain": "another name for vitamin B2",
+      "category": "nutrition"
     },
     {
       "term": "rock flour",
@@ -1312,6 +1771,11 @@
       "category": "medical"
     },
     {
+      "term": "sterol",
+      "plain": "a family of fat-related compounds; cholesterol and vitamin D are sterols",
+      "category": "chemistry"
+    },
+    {
       "term": "stomatitis",
       "plain": "inflammation of the mouth",
       "category": "medical"
@@ -1322,6 +1786,15 @@
       "category": "product-history",
       "aliases": [
         "SupraLife International"
+      ]
+    },
+    {
+      "term": "synaptic",
+      "plain": "relating to the tiny gap where one nerve cell passes its signal to the next",
+      "category": "biology",
+      "aliases": [
+        "synapse",
+        "synapses"
       ]
     },
     {
@@ -1353,6 +1826,16 @@
     {
       "term": "tetany",
       "plain": "muscle cramps and spasms, often from low calcium",
+      "category": "medical"
+    },
+    {
+      "term": "thrombin",
+      "plain": "a blood enzyme that drives the final step of forming a clot",
+      "category": "medical"
+    },
+    {
+      "term": "thromboplastin",
+      "plain": "a clot-triggering substance released by injured tissue and platelets",
       "category": "medical"
     },
     {
@@ -1393,6 +1876,11 @@
       "category": "medical"
     },
     {
+      "term": "trigeminal",
+      "plain": "relating to the main facial nerve; trigeminal pain is severe, shock-like facial pain",
+      "category": "medical"
+    },
+    {
       "term": "triglyceride",
       "plain": "the main form in which fat is stored and carried in the blood",
       "category": "nutrition",
@@ -1416,6 +1904,11 @@
       "category": "medical"
     },
     {
+      "term": "ultraviolet",
+      "plain": "the invisible part of sunlight that triggers vitamin D production in skin",
+      "category": "biology"
+    },
+    {
       "term": "vaginitis",
       "plain": "inflammation of the vagina",
       "category": "medical"
@@ -1436,6 +1929,16 @@
       "plain": "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "water-soluble",
+      "plain": "dissolves in water and is not stored, so it must be replaced regularly",
+      "category": "nutrition"
+    },
+    {
+      "term": "xerophthalmia",
+      "plain": "severe eye dryness and damage caused by vitamin A deficiency",
+      "category": "medical"
     },
     {
       "term": "Zumbani",
