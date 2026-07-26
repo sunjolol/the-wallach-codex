@@ -1278,7 +1278,6 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
 
   const metaBits = [escHTML(page.category ?? ''), `${page.claim_count} ${plural(page.claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`]
     .filter(s => s.length > 0).join(' · ');
-  const synonyms = page.synonyms.length > 0 ? ` · also: ${escHTML(page.synonyms.join(', '))}` : '';
   // Friendly name is the H1 (page.name = common_name); the scientific name shows as a
   // muted subtitle only when it differs (Vitamin A -> Retinol; omitted for Calcium).
   const sciSub = page.scientific_name !== page.name
@@ -1300,7 +1299,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
       <div class="kd-ep-hero__idblock">
         <h1 class="kd-ep-hero__name">${escHTML(page.name)}</h1>
         ${sciSub}
-        <div class="kd-ep-hero__meta">${metaBits}${synonyms}</div>
+        <div class="kd-ep-hero__meta">${metaBits}</div>
       </div>
       ${backButton()}
     </div>
@@ -1564,7 +1563,6 @@ export function renderConditionPage(slug: string): string {
     ? `<div class="kd-ep-hero__cat"><i></i>${escHTML(cat.label)}</div>`
     : '';
   const metaBits = [`${page.claim_count} ${plural(page.claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`].join(' · ');
-  const synonyms = page.synonyms.length > 0 ? ` · also: ${escHTML(page.synonyms.join(', '))}` : '';
   const synopsis = c !== null ? conditionSynopsis(c) : '';
   const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML(synopsis)}</p>` : '';
 
@@ -1573,7 +1571,7 @@ export function renderConditionPage(slug: string): string {
       ${catIcon}
       <div class="kd-ep-hero__idblock">
         <h1 class="kd-ep-hero__name">${escHTML(page.name)}</h1>
-        <div class="kd-ep-hero__subline">${catChip}${catChip.length > 0 ? '<span class="kd-ep-hero__sep">·</span>' : ''}<span class="kd-ep-hero__meta">${metaBits}${synonyms}</span></div>
+        <div class="kd-ep-hero__subline">${catChip}${catChip.length > 0 ? '<span class="kd-ep-hero__sep">·</span>' : ''}<span class="kd-ep-hero__meta">${metaBits}</span></div>
       </div>
       ${conditionBackButton()}
     </div>

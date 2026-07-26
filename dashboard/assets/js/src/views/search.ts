@@ -352,7 +352,6 @@ function renderTopicPage(subject: string): string {
   const families = entityFamilies(subject);
   const total = families.reduce((acc, f) => acc + f.count, 0);
   const n = total > 0 ? total : hero.count;
-  const syn = hero.synonyms.length > 0 ? ` · also: ${hero.synonyms.map(escHTML).join(', ')}` : '';
   const kind = learnKind(subject, e);
   // The WHOLE hero is the Learn-More hit target (name, glyph, meta, blank space) — data-aw-learnmore
   // on the .ehero itself; the button stays as the visible cue (and keyboard focus). Luneth 2026-07-23.
@@ -369,7 +368,7 @@ function renderTopicPage(subject: string): string {
       <span class="ehero__sym">${tileGlyph(subject, { symbol: hero.symbol, type: hero.type, display_name: hero.name })}</span>
       <span class="ehero__id">
         <span class="ehero__name">${escHTML(hero.name)}</span>
-        <span class="ehero__meta">${escHTML(hero.type)} · ${n} ${n === 1 ? 'answer' : 'answers'}${escHTML(syn)}</span>
+        <span class="ehero__meta">${escHTML(hero.type)} · ${n} ${n === 1 ? 'answer' : 'answers'}</span>
       </span>
       ${learnMore}
     </div>
