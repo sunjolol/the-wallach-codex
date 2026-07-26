@@ -25,11 +25,16 @@ The queue's army left 146 claims flagged REVISE with STALE/unreliable verify fla
 7. `scripts/verify_drafts.py` (capture new ids) → `scripts/compute_wiring.py` (merge enrichment + entities; WATCH for id collisions → widen also_about, never clobber) → `safe_write rewrite` search-enrichment.json + search-entities.json.
 8. `build_embeds` → `build.mjs` → `invariants.py` (WATCH `claim_text_term_gloss` — a common_swaps term in a new claim_text reddens it; fix the draft claim_text + re-seal) → `render_probe_search` → round-close.
 
-## TOUCH-UPS STILL OWED (Luneth said "fix them all now" — NOT yet done; none are in batch 1)
-Fix these in `corrected_master_queue.json` before their element's batch seals:
-- **5 HOLD:** `iron-035` (re-verify — agent dropped it), `vitamin-b9-009` · `calcium-035` · `phosphorus-020` (re-snapped verbatim >1200-char cap → trim to a tighter exact slice containing the needed line), `vitamin-k-010` (dose number '30' absent from verbatim → proper re-snap or park).
-- **2 hedge:** `vitamin-b3-008` ("about 3,000"→flat), `sodium-032` ("~15 grams"→flat).
-- **3 resnap (optional polish):** `copper-032`, `vitamin-b12-004`, `manganese-000` (faithful to book but the quote is a narrower adjacent sentence than the answer's figure).
+## TOUCH-UPS — DONE (2026-07-26; applied to corrected_master_queue.json, re-reviewed at each element's batch-seal)
+All 10 resolved + validated (exact book substring, 60-1200 chars, answer numbers grounded):
+- **iron-035** re-verified SEAL_AS_IS (workflow had dropped it; faithful, verbatim carries the 8-12%/3-5% figures; advocacy-conclusion defect already removed).
+- **vitamin-b9-009** folic-acid answers confirmed + verbatim widened to the FIG. 8-1 Folic-Acid row cluster (was the wrong Copper/Fluoride row).
+- **calcium-035** verbatim widened to the FIG. 8-1 header + CALCIUM row (self-documenting).
+- **phosphorus-020** verbatim widened to the PHOSPHORUS 800/0.0/0.0 row cluster.
+- **vitamin-k-010** verbatim set to the VITAMIN K 70/140/140 row (the earlier "missing 30" was a false positive - "30-day" is a column label).
+- **vitamin-b3-008 / sodium-032** de-hedged ("about 3,000"->"3,000"; "~15 grams"->"15 grams").
+- **copper-032 / vitamin-b12-004 / manganese-000** verbatims re-snapped to the sentence carrying the answer's figure (copper: the 8-12%->3-5% availability sentence; b12: the 1926 raw-liver sentence; manganese: the 10-20 mg body-content -> ear-bones/joint-cartilage span).
+The whole 39-element queue is now seal-ready in corrected_master_queue.json (the seal source); reverify_results.json HOLD flags for the 5 are superseded.
 
 ## THE 37 REMAINING ELEMENTS (queued, re-verified, ready to batch)
 omega-3 · vitamin-a · vitamin-b1 · vitamin-b2 · vitamin-b3 · vitamin-b5 · vitamin-b6 · vitamin-b9 · vitamin-b12 · vitamin-c · vitamin-d · vitamin-e · vitamin-k · biotin · choline · inositol · flavonoids · chromium · copper · vanadium · iron · iodine · germanium · manganese · sodium · calcium · potassium · phosphorus · boron · sulfur · cobalt · lithium · molybdenum · chloride · arginine · taurine · tryptophan
