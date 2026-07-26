@@ -1,7 +1,10 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-26 · FIRST SELECTIVE SEAL DONE: zinc + magnesium are LIVE canon; the re-verify→seal→wire→build pipeline is PROVEN + TOOLED; 37 elements remain queued)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-26 · BATCH 1 (zinc+magnesium) LIVE at kv401; entity/search hero synonym-dump fixed; ALL 10 touch-ups done → the WHOLE 39-element queue is seal-ready; NEXT = Batch 2)
 
 # ★★★★★ READ FIRST (plain language)
-The enrichment queue (39 elements of "Worth knowing" search claims) is now being pushed live in **selective batches** — Luneth reviews a batch, approves, then it seals. **Batch 1 (zinc + magnesium) is DONE and LIVE** (corpus sealed at knowledge_version=401; search index carries them; board green 77/77). The rest of the queue is untouched and waiting for its turn. Nothing is auto-sealed — `corpus_seal` is user-run (Luneth authorized batch 1 explicitly).
+The enrichment queue (39 elements of "Worth knowing" search claims) is being pushed live in **selective batches** — Luneth reviews a batch, approves, then he seals it. **Batch 1 (zinc + magnesium) is DONE + LIVE** (corpus sealed kv401; board green 77/77). The re-verify→filter→finalize→seal→wire→build→probe pipeline is PROVEN, TOOLED, and PERSISTED; every remaining claim is verified seal-ready. `corpus_seal` is user-run (Luneth authorizes each seal).
+
+## ★★★ NEXT TASK (Luneth 2026-07-26): SEAL BATCH 2 = the HIGH-VALUE 6
+**omega-3 · vitamin-c · vitamin-a · vitamin-d · iron · calcium.** Run the proven pipeline (see "HOW TO SEAL THE NEXT BATCH" below), using `temporary/enrichment-queue/pilot/corrected_master_queue.json` as the seal source (it has all fixes + the 10 touch-ups baked in). Steps: build a focused exact-form REVIEW ARTIFACT for these 6 → Luneth approves → `scripts/build_pilot_seal.py` (repoint PILOT list + the scratchpad paths) filters raw+enrichmap → finalize per book → **Luneth runs corpus_seal** → wire enrichment+entities → build_embeds → build → invariants → render_probe_search → round-close. WATCH: enrichment id collisions (widen also_about, never clobber — see WAL-CLM-DDDL-000053 precedent) + the `claim_text_term_gloss` gate (a common_swaps term in a new claim_text reddens the board post-seal; fix the draft claim_text + re-seal). Then continue batching the remaining 31.
 
 ## WHAT SHIPPED (batch 1, commit c942e724)
 - **zinc** (36 claims · Zn · 32 synonyms) + **magnesium** (35 · Mg · 44 synonyms) sealed + wired + live in Ask-Wallach search.
