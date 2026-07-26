@@ -1,28 +1,49 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-25 · SELENIUM COMPLETE end-to-end = the GOLDEN STANDARD; board green, kv399, NO seal pending; NEXT = the Tier-A enrichment ARMY)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-25 · ELEMENT-ENRICHMENT ARMY ran while Luneth was away: 39 substantive elements enriched + verified + QUEUED for sealing; NOTHING sealed yet — corpus_seal is user-only)
 
-# ★★★★★ READ FIRST: **Selenium is DONE, end-to-end — the golden standard the whole campaign now replicates.** Its detail card carries: (1) **17 enriched "Worth knowing" Q&A claims** led by a "What is selenium?" basics intro; (2) a unique data-driven **DESIGN element** — the "rancidity mechanism" hero (a fat membrane going rancid left→right, selenium on guard; 3 beats with hooks; a sourced **13→1** Keshan-trial stat; Wallach's highlighted quote); (3) **Best-Youngevity sources docked at the block bottom** (dotted-separated); (4) a **"why this number?" target-provenance** in "At a glance"; (5) the whole mineral screen **colour-coded blue**. Build OK · invariants 77/77 · render_probe_mechanism/_search/_search_routing PASS · screenshots signed off. **NEXT: the Tier-A enrichment ARMY (below).**
+# ★★★★★ READ FIRST (plain language)
+While you were away, a parallel mining "army" read Wallach's books and wrote the **"Worth knowing" search claims** for **39 elements** — the same golden standard as Selenium (question → short answer → full answer → exact quote), CLAIMS ONLY (no design/illustration this pass — that is the next one). It is all a **verified, deduped QUEUE waiting for your review + seal**. I sealed nothing (that is yours). Every claim was machine-proven to be exact book text and adversarially fact-checked. **ALL 16 vitamins are now done.**
 
-## ✅ WHAT SHIPPED (selenium — the pilot, this session)
-- **17 enriched search-only claims** (subject=selenium), intro-led, sealed kv397→399 (16 across 5 books EPIGEN-185-188/RARE-320-325/IMMORT-269/DDDL-135-137/LETS-491-492 + the "What is selenium?" intro DDDL-000138). Spread across 10 facet families, no padding. Each = question + short + **FULL** answer + verbatim.
-- **The design element** (all NEW, projection-safe — `entity_render_is_projection` green): `dashboard/assets/data/mechanism-clarity-data.json` (hand-authored, MANIFEST-registered) + `core/schemas/mechanism-clarity.ts` + `renderMechanism`/`rancidityFigure`/`mechanismFigure` in `entity-page.ts`. Data-driven off a slot keyed by slug (Map by .map, NO per-slug branch). A 7-agent workflow (3 concepts → judged synthesis) drafted it; **every sourced fact was RE-VERIFIED by hand** — the workflow's FABRICATED "1,700" stat (in no sealed claim) was dropped for the real **13→1** (RARE-000322). The block ADAPTS per element — it is NOT a template to copy blindly.
-- **Whole-screen category theming:** `data-category` on `.kd-essential-deep` → override the `--ds-accent` family (mineral=**#2b6fb0** deep readable blue, NOT the light `--ds-tech`) → the hero tile, outer border, why-link, back button + mechanism block recolour together; scrollbar via `--kd-detail-scroll` (knowledge.ts).
-- **5 recurring corrections are now RULES (memories):** [[element-sources-at-bottom]] · [[daily-target-provenance-always]] · [[category-color-coding]] · [[quote-highlight-one-line]] · [[wallach-is-alive-present-tense]]. Plus [[element-intro-what-is-claim]] (step 0). Trap hit again + caught by screenshot: [[css-comment-star-slash-drops-rule]] (a `*/` in `--ds-*/--fam-*` dropped the colour rule).
-- **NO seal pending** — no new corpus claims since kv399; the design element is view/data only.
+## WHERE IT IS
+- **Review artifact (open first):** https://claude.ai/code/artifact/c06c7495-f959-4650-81af-bf511d2713fc — every claim as Q → short → FULL → quote + citation + verify verdict, grouped by element. **746 claims · 39 elements · 310 curated-out (parked, recoverable).**
+- **Deliverables persisted in the repo (gitignored):** `temporary/enrichment-queue/`
+  - `master_queue.json` — the full review structure (source of the artifact).
+  - `raw/<book>.raw.json` — NEW claims per book, ready for `corpus_extract finalize`. ONE file per book holds ALL this campaign's new claims for that book (finalize is not-additive → one finalize per book covers everything).
+  - `raw/<book>.enrichmap.json` — search-enrichment metadata in the SAME ORDER as the raw file → zip with the finalize-assigned WAL-CLM ids.
+  - `enrich_existing.json` — 181 enrichment entries keyed by EXISTING sealed claim ids (reuse of proven claims; NO finalize needed).
+  - `entities.json` — proposed `search-entities.json` registry entries per element (canon_ref:true + rich lay synonyms + related).
+  - `parked.json` + `master_queue.parked` — curated-out claims (unfaithful/redundant/charged/not-selected) with reasons.
+  - `scripts/` — the whole reusable pipeline. NOTE: scripts hardcode THIS session's scratchpad absolute paths; a new session must repoint the `SC`/`OUT`/`base` paths before re-running — see `CAMPAIGN.md`.
 
-## ▶ NEXT — the Tier-A enrichment ARMY (Luneth's plan; he'll paste the reworded prompt)
-Point a LARGE workflow at the **Tier-A claim-rich elements** (zinc 108 · magnesium 88 · vit-C 73 · vit-A 69 · vit-E 68 · chromium 61 · copper 59 · vit-B6 49 · vit-B12 37 · vanadium 33 · iron 29 · iodine 26 …) replicating the selenium golden standard. Shape (full detail: the reworded army prompt + `chronicle/element-enrichment-blueprint.md` + [[mining-serves-ask-wallach]]):
-1. **READ the selenium golden standard FIRST** (its claims + intro + design element) — replicate its quality, adapt to each element.
-2. **Compute-bound (parallel, spend budget):** per element — gather mapped claims + read book spans → draft (a "What is X?" intro + every genuinely-unique claim, short+FULL answers, colourful facet spread, no padding/memifying) → **adversarially verify** each BEFORE Luneth sees it (verbatim ⊆ book · faithfulness re-read of the CITED passage · facet ∈ taxonomy · subject/also_about resolve · dedup vs corpus + siblings). Only survivors enter the queue.
-3. **Me-bound (protect it):** Luneth ratifies each claim — NOT 100 in one gulp (rubber-stamping defeats the never-guess gate). Build a large PRE-VERIFIED queue; bring it in careful chunks (per-element or ~20–30) via a **review ARTIFACT** (Q→short→full→quote + citation + verify-verdict, grouped by element).
-4. Per element after approval: seal (USER-ONLY) → wire enrichment → build_embeds/build → design element (mechanism-clarity slot + category colour) → visual sign-off → round-close.
+## THE 39 ELEMENTS (this session) — selenium was already done before
+zinc · magnesium · omega-3 · vitamin-a · vitamin-b1 · vitamin-b2 · vitamin-b3 · vitamin-b5 · vitamin-b6 · vitamin-b9 · vitamin-b12 · vitamin-c · vitamin-d · vitamin-e · vitamin-k · biotin · choline · inositol · flavonoids · chromium · copper · vanadium · iron · iodine · germanium · manganese · sodium · calcium · potassium · phosphorus · boron · sulfur · cobalt · lithium · molybdenum · chloride · arginine · taurine · tryptophan
 
-## 🔧 MECHANICS — load-bearing
-- **`corpus_extract finalize` is NOT additive** — writes `draft = sealed shard + THIS run's claims`. One finalize per book per seal cycle ([[corpus-extract-finalize-not-additive]]). A batch spanning N books = N raw files, N finalizes.
-- **Search-only claim shape:** tag `search-only`, `essentials:[]` + `conditions:[]` (kept out of tier-1), NO `about` needed; the subject lives ONLY in `search-enrichment.json`. Enrichment must reference a SEALED claim (derive errors on an unsealed id) → **seal first, THEN add enrichment, THEN build_embeds**.
-- **Facet ∈ the closed 13-set** (basics/warning/discovery/etymology/physiology/mechanism/sources/uses/stance/protocol/history/big_question/biography) — `interaction` etc. are claim KINDS, NOT facets. Entity `type` ∈ the enum (minerals use `nutrient`, NOT `mineral`) — an invalid type is a RUNTIME Zod reject that blanks the whole entity map ([[build-gate-vs-runtime-schema-drift]]).
-- **`corpus_seal` is USER-ONLY** — promotes ALL drafts, re-derives, rewrites golden hashes, runs corpus_verify. After it: `PYTHONUTF8=1 python eden/tools/build_embeds.py` → `node tools/build.mjs` → green; rebuild AGAIN after the Creator's Log append (log embed inlines at build).
-- **search-enrichment.json + entity-copy.json + mechanism-clarity-data.json = hand-authored, NOT golden** — edit via a staging script (load → mutate → `json.dumps(indent=2, ensure_ascii=False)+"\n"` LF) → `safe_write.safe_rewrite`.
-- **Search scoring (scoreClaim, per token, substring):** question +6 · subject +5 · topics +4 · answer_short +3 · answer/verbatim +1. Levers: `topics[]`=pure recall (safe); `subject`+entity `synonyms`=routing (keep subject CORRECT); `also_about`=page-presence, can't hijack a best-answer. [[search-routing-verify-not-scoreclaim]]
+## HOW TO SEAL + WIRE (per book; corpus_seal is USER-run)
+1. **Finalize** new claims per book: `PYTHONUTF8=1 python eden/tools/corpus_extract.py finalize --book <book_id> --raw temporary/enrichment-queue/raw/<book_id>.raw.json` (snaps each verbatim to book bytes — already gate-verified, will pass). Read the draft report.
+2. **Seal (USER):** `corpus_seal` — promotes drafts, re-derives, rewrites golden hashes, runs corpus_verify.
+3. **Wire enrichment:** for each book, the finalize-assigned ids (in order) zip with `raw/<book>.enrichmap.json` (same order) → add each as an entry in `eden/corpus/search-enrichment.json` keyed by the new id. Add every `enrich_existing.json` entry by its existing id. Add `entities.json` entries to `eden/catalog/search-entities.json`.
+4. `PYTHONUTF8=1 python eden/tools/build_embeds.py` → `node tools/build.mjs` → invariants → `render_probe_search`.
 
-## 🔴🔴 REVIEW PROCESS ([[review-claims-in-exact-form-approve-the-claim]] + [[small-batch-build-test-log-mandate]] + [[visual-verification]])
-Show EVERY new claim in exact final form IN THE MESSAGE (or a review artifact) — **Q → short → FULL answer → quote** (Luneth can't see tool output; the FULL answer is the default, ~90%, and ADDS book context). `corpus_seal` is user-authorizable. Small batches, his review every time, NEVER automate. Visual/UX work ENDS at a STOP for sign-off. Never guess, never guess silently.
+## ★ SELECTIVE SEAL — Luneth's plan (do NOT seal everything by default)
+Luneth reviewed the queue: most claims look good, but he wants to **push only SOME live now and keep reviewing the rest.** IMPORTANT MECHANIC: `corpus_seal` promotes **ALL** drafts at once — it is not selective. So "push some live" = **finalize ONLY the approved subset** into the drafts, THEN seal:
+1. Luneth names the approved set (by element, or by specific queue_ids/claim from the artifact).
+2. FILTER the per-book raw files to only the approved claims before finalize (e.g. a small script: read `temporary/enrichment-queue/raw/<book>.raw.json` + its `enrichmap.json`, keep only the approved rows IN LOCKSTEP ORDER, write filtered raw+enrichmap, finalize from the filtered file). The `master_queue.json` carries `element` + `queue_id` per claim to map an approval back to its raw row.
+3. Finalize the filtered raws → `corpus_seal` → wire enrichment (zip filtered enrichmap with the new ids) + the approved `enrich_existing`/`entities` entries → build_embeds → build → probe.
+4. The UN-approved claims stay in `temporary/enrichment-queue/` untouched, still in the queue/artifact, for a later review+seal round. Re-review them before their turn.
+A `seal_selection.py` helper (filter raw+enrichmap by an approved element/queue_id list) is worth writing at the start of that session.
+
+## QUALITY NOTES (eye these in review)
+- **Dose/protocol claims are the weak spot.** Their verbatims are often table/chart fragments, and a few had number confusion (a manganese dose that used magnesium's figures; a choline dose whose verbatim was actually the biotin row — that one was REJECTED; RDA-vs-Wallach-need mixups). The adversarial verifier flagged these REVISE/REJECT and applied passage-grounded fixes — but SCAN the `protocol`-facet claims per element yourself before sealing.
+- Every claim cleared the DETERMINISTIC anti-fabrication gate (verbatim = exact book bytes, 0 fabrications shipped) AND an adversarial faithfulness re-read (caught outside-knowledge injection, invented numbers/dates, cross-passage bleed, cross-nutrient dose confusion, R4 inline-verbatim, added hedges — all fixed or parked). It works; review still holds final say.
+- Some `also_about` cross-links used non-registered slugs and were dropped (soft loss). A small alias map (folic-acid→vitamin-b9, pregnancy→its condition slug, etc.) would recover routing.
+- Each element's `curation.gaps` in `master_queue.json` lists real questions the set does NOT yet answer — a targeted backfill list.
+
+## DEFERRED (after the weekly cap resets)
+- **~14 substantive elements not yet mined:** 9 amino acids (lysine, methionine, tyrosine, phenylalanine, histidine, isoleucine, leucine, threonine, valine — **BATCH 8 sources + chunk ALREADY STAGED**, just relaunch mineA.js); fatty acids omega-6, omega-9; minerals silica, silver, tin, nickel, oxygen; structural hydrogen, carbon, nitrogen (very thin in Wallach).
+- **35 rare-earth trace minerals** → the existing plant-derived-mineral GROUP treatment (do NOT mine individually).
+- **Design elements** (the omega/ORAC/rancidity-style illustrated hero per element) — the separate pass you planned for AFTER the claims exist. Do it once these are sealed.
+
+## BUDGET
+This session ran 7 mine + 7 verify workflows (batches 1–7) across two go-rounds (~7-unit budget, then +25% more). Stopped at your instruction ("stop after this next one"). Batch 8 (9 amino acids) is fully staged — a single "keep going" resumes it instantly.
+
+## THE PIPELINE (reusable; scripts in temporary/enrichment-queue/scripts/, full loop in CAMPAIGN.md)
+source_builder.py → chunk.py (cross-book bounded work-items) → mineA.js (GOLDEN2 recipe, parallel miners) → verify_claims.py (DETERMINISTIC snap gate = anti-fabrication) → build_survivors.py (dup→enrich conversion + ground-truth context) → wfB.js (adversarial verify + curate/select + "What is X?" intro + entity synonyms) → assemble.py (cumulative queue + per-book raw/enrichmap) → build_artifact.py → Artifact republish (same URL).
