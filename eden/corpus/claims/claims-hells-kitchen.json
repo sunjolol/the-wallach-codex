@@ -480,6 +480,116 @@
       "extracted_at": "2026-07-24T02:41:24+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000017",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach classes common supplement forms such as zinc gluconate as 'metallic minerals,' which in his framework are poorly absorbed. He states that metallic minerals — sold as gluconates, lactates, sulphates, carbonates and oxides — are only eight to twelve percent biologically available in younger people, and that after age thirty-five to forty their availability plummets to three to five percent. This is the basis for his preference for plant-derived colloidal minerals, which he considers the most efficient form of trace-mineral supplement.",
+      "verbatim": "Typically, metallic minerals are found in tablets and powders as \ngluconate (calcium gluconate, zinc gluconate, etc.), lactate, sulphates, \ncarbonates and oxides (iron oxide, etc.). \nMetallic minerals, despite wild claims to the contrary are only \neight to twelve percent biologically available to younger animals and \nhumans; after attaining the age of thirty five to forty years, the avail- \nability of metallic minerals plummets to three to five percent.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 420028
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "zinc gluconate",
+        "supplement form",
+        "absorption",
+        "bioavailability",
+        "metallic minerals",
+        "colloidal minerals",
+        "food_source",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-26T21:10:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000018",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach points to a National Cancer Institute five-year study in Henan Province, China, that tested nutrients against a placebo in about 29,000 people aged forty to sixty-nine. He reports that zinc — along with vitamin C, retinol, riboflavin, molybdenum and niacin — had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking a combination of beta carotene, vitamin E and selenium saw dramatic results: 13% fewer deaths from all cancers, a 21% reduction in stomach-cancer deaths, and a 9% drop in deaths from all causes. In Wallach's account, zinc was not among the standout cancer-protective nutrients in that trial.",
+      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, ribofla- \nvin, molybdenum and niacin had no statistically significant (protec- \ntive) effect on cancer deaths after five years.” \nThe group that took the combination of beta carotene, vitamin E \nand selenium for five years had dramatically positive results: 13 per- \ncent fewer deaths from all cancers, 21 percent reduction in deaths \nfrom stomach cancer and a 9 percent decrease in deaths from all \ncauses.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 312961
+      },
+      "dose": null,
+      "tags": [
+        "zinc",
+        "cancer",
+        "cancer prevention",
+        "antioxidants",
+        "china study",
+        "zinc and cancer",
+        "quote",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-26T21:10:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000019",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Among nuts, Wallach singles out cashews as a good magnesium source: a handful supplies about 20 percent of the USDA recommended daily allowance of magnesium, along with 30 percent of copper and 10 percent of iron. An ounce — roughly 18 roasted nuts — carries 160 calories and 13 grams of fat.",
+      "verbatim": "Cashews: a handful contains 20 percent of the USDA recom- \nmended daily allowance of magnesium, 30 percent of copper, and \n10 percent of iron. One ounce (18 roasted nuts) contains 160 calo- \nries and 13 grams of fat.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 556427
+      },
+      "dose": null,
+      "tags": [
+        "magnesium",
+        "magnesium sources",
+        "cashews",
+        "nuts",
+        "minerals",
+        "RDA",
+        "copper",
+        "food_source",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-26T21:10:51+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

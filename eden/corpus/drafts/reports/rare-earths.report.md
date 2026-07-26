@@ -1,51 +1,80 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_6 claim(s) drafted 2026-07-25T18:56:42+00:00. Review then run corpus_seal.py to promote._
+_8 claim(s) drafted 2026-07-26T21:10:52+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×2, mechanism×2, prognosis×1, quote×1
+Kinds: definition×3, food_source×1, prognosis×1, protocol×1, quote×2
 
-### WAL-CLM-RARE-000320 · mechanism
+### WAL-CLM-RARE-000326 · prognosis
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Every cell and every mitochondrion is wrapped in a membrane made of fat (a “bi-lipid layer”), and those fats can oxidize — go rancid — the same way cooking oil does. Wallach says selenium is the most efficient anti-peroxidant there is, operating at the subcellular level through the glutathione-peroxidase enzyme system and selenium-bearing amino acids like selenomethionine, and that its job is to shield those fatty membranes from oxidative damage. It concentrates where the metabolic work is hardest — liver, kidney, heart, and skeletal muscle. When selenium runs short, the protection fails: he points to an electron micrograph of a selenium-deficient monkey's liver in which the inner mitochondrial membrane has precipitated out of its normal structure into a nonfunctioning “crystalloid,” visible under an ordinary microscope as “age pigment.”
-- **verbatim** (offset 902607): “Selenium is the most efficient antioxidant (anti-peroxidant) and is found at the subcellular level in the glutathione peroxidase enzyme system and metallo amino acids (selenomethionine, etc.).”
+- **claim:** Wallach frames spina bifida as an embryonic defect that folic acid alone can't fully prevent. Folic acid supplementation, he notes, prevents only about 50% of cases — and he argues the remaining 50% is preventable with zinc supplementation. It's part of his broader claim that adequate preconception minerals, not just vitamins, are needed to prevent birth defects.
+- **verbatim** (offset 411139): “for example spina bifida is a well
+known embryonic result of a folic acid de-
+ficiency, yet folic acid supplementation only
+prevents 50 % of this defect - the other 50%”
 
-### WAL-CLM-RARE-000321 · mechanism
+### WAL-CLM-RARE-000327 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** It's the same oxidation Wallach blames for cellular aging, made visible on the skin. When selenium — the body's main defense against fats going rancid — falls short, lipids peroxidize and leave behind a brown-gold residue called ceroid lipofuscin; on the skin that shows up as the familiar “age spots” or “liver spots.” He treats their arrival in older adults not as harmless cosmetic aging but as an early external sign of selenium deficiency — the visible cousin of the “age pigment” that builds up inside oxygen-starved, selenium-deficient cells. In his framework that makes a liver spot a warning worth heeding, not just a blemish.
-- **verbatim** (offset 902800): “Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).”
+- **claim:** Wallach notes that organ meats are a rich dietary source of several trace minerals. Eating liver and kidney can significantly increase the availability of selenium, sulfur, cobalt, molybdenum and zinc. He cautions, though, that an exclusively meat diet still leaves out enough calcium, magnesium and manganese, producing the typical disease picture of pure carnivores.
+- **verbatim** (offset 1119674): “Eating organ meats such as liver and
+kidney can significantly increase the
+availability of selenium, sulfur, cobalt,
+molybdenum and zinc, but again an
+exclusive meat diet excludes suitable
+levels of calcium, magnesium and
+manganese, etc. resulting in typical
 
-### WAL-CLM-RARE-000322 · prognosis
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Between 1974 and 1977, researchers split children in the Keshan region into two groups: 36,603 received 1 mg of sodium selenite three times a week, while 9,430 got a placebo sugar tablet. Over the three years, Keshan-disease heart failure in the selenium group fell from 13 cases per 1,000 children to just 1 per 1,000 — while the placebo group stayed put at 13 per 1,000. Wallach points to this as a clean, controlled demonstration that the cardiomyopathy was a selenium deficiency, not a mystery: change one variable, the disease nearly vanishes. Follow-up work eventually involving more than 500,000 participants, he notes, confirmed that supplemental selenium was specifically protective against Keshan disease.
-- **verbatim** (offset 430967): “At the end of a three year study, the rate of KSD in the selenium supplemented group dropped from 13/1,000 children to 1/1,000 children; the rate of KSD in the control group remained at 13/1,000. Continued long term studies, eventually involving over 500,000 participants, confirmed that supplemental selenium was specific for the prevention of KSD!!”
+disease pictures for pure carnivores”
 
-### WAL-CLM-RARE-000323 · deficiency_sign
+### WAL-CLM-RARE-000328 · quote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In cattle, sheep, and pigs, the muscle-wasting condition vets call white muscle disease (or “stiff lamb disease”) was wiped out back in 1957 by adding selenium and vitamin E — and Wallach argues human muscular dystrophy is the same deficiency disease. He dismisses the long list of named types (Duchenne, Becker's, Landouzy-Dejerine, and the rest) as “artificial classifications” based on which muscle fails first, not on different causes. Prevention, in his view, hinges on a woman's selenium levels before and during pregnancy; treatment is selenium plus vitamin E, which he claims can arrest or even cure the disease if given by injection at the very first onset of symptoms. He frames the failure to act on this as “a crime… for reasons of money” — curing MD would erase an entire medical specialty — and points to case reports of children who recovered on his protocol, which he says got Jerry Lewis fired from the MD Telethon for taking them seriously.
-- **verbatim** (offset 431319): “Muscular dystrophy (MD) is another
-crime against the American people by the
-“orthodox” medical doctors for reasons of
-money - if the total truth was shared with
-the public, muscular dystrophy would be
-totally preventable but a whole medical
-specialty would be wiped out!!!”
+- **claim:** When a 1994 study implicated zinc as a causative factor in Alzheimer's disease, Wallach flatly rejected it — quipping that if you believe it, he has some oceanfront property in Montana to sell you. He notes that earlier studies blaming aluminum had themselves been discredited (aluminum-contaminated stains skewed the results) and points instead to vitamin E and selenium, which he says prevented and even reversed the early brain wasting ('star-gazing') seen in poultry.
+- **verbatim** (offset 718471): “zinc as a
+causitive factor in the genesis of Alzheimer's
+disease (if you believe this one, we have
+some ocean-front property in Montana to”
 
-### WAL-CLM-RARE-000324 · quote
+### WAL-CLM-RARE-000329 · quote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach leans on Dr. Gerhard Schrauzer, head of chemistry at UC San Diego, who reviewed selenium as “a versatile anticarcinogenic agent” whose protection can't be pinned on the glutathione-peroxidase enzyme alone. In Schrauzer's account, selenium acts as a “redox switch” that throttles the growth factors driving cell division, stimulates cellular respiration (Wallach's shorthand: “more oxygen, less cancer”), blocks tumor viruses and oncogene activation, alters how the body handles carcinogens, and shields DNA from carcinogen-induced damage. For actual use, Wallach names 1,000–3,000 mcg per day as the therapeutic range and stresses that form matters — plant-derived colloidal selenium, he says, is up to 98% absorbable. (Worth flagging: that's a therapy figure, far above his ~200 mcg daily maintenance target, not an everyday supplement dose.)
-- **verbatim** (offset 907772): “Selenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.”
+- **claim:** Wallach traces the scientific recognition of zinc's essentiality to its initial identification as an essential element in the bread mold Aspergillus niger — one of the early trace-element discoveries (alongside copper found in bird feathers and snail blood) that revealed metals play biologically significant roles in living things.
+- **verbatim** (offset 673940): “Zinc was initially recognized as an es-
+sential element in the bread mold Aspergil-
+lus niger.”
 
-### WAL-CLM-RARE-000325 · deficiency_sign
+### WAL-CLM-RARE-000330 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** This is central to Wallach's whole thesis — that one mineral shortage surfaces as many differently-named diseases. His published selenium-deficiency lists run long: Keshan-disease cardiomyopathy and “mulberry heart,” muscular dystrophy and white muscle disease, cystic fibrosis, cancer, cataracts, liver cirrhosis, anemia, pancreatitis and pancreatic atrophy, scoliosis, myalgia and muscle weakness, infertility, low birth weight, SIDS, and clinical AIDS. He extends it to several neurodegenerative diseases — multiple sclerosis, ALS (Lou Gehrig's), Parkinson's, and Alzheimer's — noting some (ALS, Parkinson's) tend to travel with mercury poisoning and others (Alzheimer's) with high vegetable-oil intake. His point isn't that selenium is a cure-all, but that the same rancidity-and-oxidation damage, left unchecked in different tissues, ends up wearing different clinical names.
-- **verbatim** (offset 903657): “Selenium Deficiency Diseases.
-HIV (AIDS)
-Anemia (RBC fragility)
-“Age Spots” & “Liver Spots”
-Fatigue
-Muscular weakness
-Myalgia (muscle pain and soreness)
-Scoliosis
-Muscular Dystrophy (MD, White Muscle Disease, Stiff Lamb Disease)
-Cystic Fibrosis (congenital)”
+- **claim:** In Rare Earths, Wallach traces zinc's name back to the 1500s. Erasmus Ebener is credited as the first to recognize metallic zinc around 1509, and the physician Paracelsus named the newly recognized metal 'zinken.' Paracelsus called it a strange, distinct metal 'of a different origin,' unlike all others in color and not malleable.
+- **verbatim** (offset 135078): “Erasmus Ebener (1509) of Nerenberg is
+credited as the first to recognize metallic
+zinc. Paracelsus named the new mineral
+zinken:”
+
+### WAL-CLM-RARE-000331 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths, Wallach points to magnesium as the atom built into the chlorophyll molecule, the green pigment plants use. He uses Hawaii as the vivid example: its volcanic soil is rich in olivine, an impure magnesium silicate, and that abundant magnesium is why the island's rain forests grow so green and lush. The green of chlorophyll is, quite literally, built on magnesium.
+- **verbatim** (offset 53788): “the mineral olivine which is an
+impure magnesium silicate (which is why
+Hawaiian rain forests are so green and lush
+- the magnesium is part of the chlorophyll
+molecule).”
+
+### WAL-CLM-RARE-000332 · protocol
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes magnesium's long therapeutic history. In 1905 and 1906, Meltzer and Auer at the Rockefeller Institute studied magnesium salts against tetanus and demonstrated magnesium's anesthetic value. In 1925, Edmond Meyer Lazard introduced intravenous injections of magnesium sulfate to control eclampsia, the convulsions of pregnancy, a use that reflects magnesium's calming, muscle-relaxing role in the body.
+- **verbatim** (offset 138225): “In 1905 and 1906 Samuel James
+Meltzer (1851-1920) and his associate John
+Auer (1875-1948) at the Rockerfeller Insti-
+tute researched the effects of magnesium
+salts on tetanus. They also demonstrated
+the anesthetic values of magnesium. In
+1925 Edmond Meyer Lazard introduced IV
+injections of magnesium sulfate in
+eclampsia (convulsions of pregnancy).”
+
+### WAL-CLM-RARE-000333 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach traces Epsom salt back to the summer of 1618, when a drought sent Henry Wicker of Epsom, a village south of London, searching for water for his cattle. He found a small hole of bitter water the cattle refused to drink, but the magnesium-rich spring soon proved valuable for external and internal medical use, becoming famous as a purgative and blood purifier. In 1695 Nehemiah Grew finally isolated magnesium sulfate from the Epsom water, and by 1700 the town was drawing 2,000 visitors a day.
+- **verbatim** (offset 136999): “Before long this magnesium rich
+spring was found to produce water that was
+beneficial for external and internal medi-
+cal use.”
 

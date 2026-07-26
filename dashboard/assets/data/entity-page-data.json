@@ -370,7 +370,52 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "magnesium",
+        "mg",
+        "magnesium deficiency",
+        "low magnesium",
+        "magnesium deficient",
+        "signs of low magnesium",
+        "am i low on magnesium",
+        "magnesium supplement",
+        "magnesium supplements",
+        "magnesium pills",
+        "magnesium tablets",
+        "magnesium citrate",
+        "magnesium glycinate",
+        "magnesium oxide",
+        "magnesium chloride",
+        "magnesium carbonate",
+        "magnesium sulfate",
+        "magnesium hydroxide",
+        "milk of magnesia",
+        "epsom salt",
+        "epsom salts",
+        "colloidal magnesium",
+        "plant derived magnesium",
+        "magnesium for cramps",
+        "magnesium for muscle cramps",
+        "magnesium for leg cramps",
+        "magnesium for sleep",
+        "magnesium for anxiety",
+        "magnesium for constipation",
+        "magnesium for migraines",
+        "magnesium for heart palpitations",
+        "foods high in magnesium",
+        "magnesium rich foods",
+        "how much magnesium",
+        "magnesium dose",
+        "magnesium dosage",
+        "too much magnesium",
+        "magnesium overdose",
+        "best form of magnesium",
+        "magnisium",
+        "magneisum",
+        "magnezium",
+        "magnesim",
+        "mag"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -501,7 +546,98 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000271",
+            "WAL-CLM-RARE-000331"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000152",
+            "WAL-CLM-DDDL-000153",
+            "WAL-CLM-DDDL-000154",
+            "WAL-CLM-EPIGEN-000098",
+            "WAL-CLM-EPIGEN-000195"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000074",
+            "WAL-CLM-DDDL-000149",
+            "WAL-CLM-DDDL-000150",
+            "WAL-CLM-IMMORT-000272",
+            "WAL-CLM-IMMORT-000273",
+            "WAL-CLM-LETS-000016",
+            "WAL-CLM-LETS-000174",
+            "WAL-CLM-LETS-000495",
+            "WAL-CLM-RARE-000082"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000148",
+            "WAL-CLM-EPIGEN-000194",
+            "WAL-CLM-IMMORT-000207",
+            "WAL-CLM-IMMORT-000208"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000019",
+            "WAL-CLM-IMMORT-000209",
+            "WAL-CLM-IMMORT-000275"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000151",
+            "WAL-CLM-IMMORT-000274",
+            "WAL-CLM-LETS-000496",
+            "WAL-CLM-RARE-000332"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000060",
+            "WAL-CLM-LETS-000056"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000155",
+            "WAL-CLM-EPIGEN-000196",
+            "WAL-CLM-IMMORT-000205"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000156"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000276"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000333"
+          ]
+        }
+      ],
       "conditions": [
         "angina",
         "anorexia",
@@ -3057,7 +3193,40 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "zinc",
+        "Zinc",
+        "zinc mineral",
+        "zinc (Zn)",
+        "Zn",
+        "zink",
+        "zinq",
+        "zinc deficiency",
+        "low zinc",
+        "zinc deficient",
+        "zinc supplement",
+        "zinc supplements",
+        "zinc pills",
+        "zinc tablets",
+        "zinc lozenges",
+        "zinc gluconate",
+        "zinc oxide",
+        "zinc chloride",
+        "zinc citrate",
+        "zinc picolinate",
+        "chelated zinc",
+        "colloidal zinc",
+        "zinc fingers",
+        "zinc cream",
+        "zinc ointment",
+        "zinc for immune system",
+        "zinc for colds",
+        "zinc for acne",
+        "zinc for skin",
+        "how much zinc",
+        "white spots on nails",
+        "loss of smell and taste"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -3198,7 +3367,99 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000139"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000191",
+            "WAL-CLM-LETS-000210",
+            "WAL-CLM-LETS-000365",
+            "WAL-CLM-RARE-000086"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000140",
+            "WAL-CLM-DDDL-000141",
+            "WAL-CLM-DDDL-000142",
+            "WAL-CLM-IMMORT-000270",
+            "WAL-CLM-LETS-000141",
+            "WAL-CLM-LETS-000276",
+            "WAL-CLM-RARE-000268"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000189",
+            "WAL-CLM-EPIGEN-000190"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000040",
+            "WAL-CLM-HELLS-000017",
+            "WAL-CLM-RARE-000327"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000143",
+            "WAL-CLM-DDDL-000144",
+            "WAL-CLM-DDDL-000145",
+            "WAL-CLM-DDDL-000146",
+            "WAL-CLM-LETS-000157",
+            "WAL-CLM-LETS-000166",
+            "WAL-CLM-LETS-000493",
+            "WAL-CLM-LETS-000494",
+            "WAL-CLM-RARE-000326"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000127"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000147",
+            "WAL-CLM-RARE-000010",
+            "WAL-CLM-RARE-000044",
+            "WAL-CLM-RARE-000328"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000193",
+            "WAL-CLM-RARE-000329"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000330"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000192",
+            "WAL-CLM-HELLS-000018"
+          ]
+        }
+      ],
       "conditions": [
         "acne",
         "acrodermatitis_enteropathica",

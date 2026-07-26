@@ -64,7 +64,9 @@
       "subject": "absorption",
       "also_about": [
         "asthma",
-        "malabsorption"
+        "malabsorption",
+        "magnesium",
+        "manganese"
       ],
       "facet": "stance",
       "question": "Are some 'diseases' really just malabsorption?",
@@ -5774,6 +5776,1207 @@
         "antioxidant",
         "essential-nutrient",
         "overview"
+      ]
+    },
+    "WAL-CLM-DDDL-000139": {
+      "subject": "zinc",
+      "also_about": [
+        "copper",
+        "selenium",
+        "vitamin-a"
+      ],
+      "facet": "basics",
+      "question": "What is zinc?",
+      "answer_short": "In Wallach's framework, zinc is a foundational essential trace mineral the body must be given every day: no fewer than 70 metalloenzymes cannot function without it, so a shortage ripples across the body's whole chemistry.",
+      "topics": [
+        "what is zinc",
+        "zinc",
+        "essential mineral",
+        "zinc function",
+        "trace minerals",
+        "what zinc does"
+      ]
+    },
+    "WAL-CLM-DDDL-000140": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How much zinc is in the human body and where is it stored?",
+      "answer_short": "Wallach puts the adult body's total zinc at 1.4 to 2.3 grams, held mostly in the liver, pancreas, kidney, bone, and muscle, with smaller stores in the eye, prostate, and semen.",
+      "topics": [
+        "how much zinc",
+        "body stores",
+        "total zinc",
+        "where zinc is stored"
+      ]
+    },
+    "WAL-CLM-DDDL-000141": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What are the signs and symptoms of a zinc deficiency?",
+      "answer_short": "Wallach lists a wide range — loss of taste and smell, wounds that won't heal, weak immunity, poor growth, hair loss, anemia, depression, and even odd cravings like eating dirt.",
+      "topics": [
+        "zinc deficiency",
+        "symptoms",
+        "loss of taste",
+        "loss of smell",
+        "wound healing",
+        "immune"
+      ]
+    },
+    "WAL-CLM-DDDL-000142": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Do men lose zinc when they ejaculate?",
+      "answer_short": "Yes — Wallach states that men lose 420 mcg of zinc with each ejaculation, which is why he calls sex without ejaculation a zinc-conserving practice.",
+      "topics": [
+        "men's health",
+        "ejaculation",
+        "semen",
+        "sex",
+        "testosterone"
+      ]
+    },
+    "WAL-CLM-DDDL-000143": {
+      "subject": "zinc",
+      "also_about": [
+        "alopecia"
+      ],
+      "facet": "uses",
+      "question": "Does zinc help with hair loss?",
+      "answer_short": "Wallach includes zinc at 50 mg three times a day in his treatment for alopecia (hair loss).",
+      "topics": [
+        "hair loss",
+        "baldness",
+        "alopecia",
+        "thinning hair"
+      ]
+    },
+    "WAL-CLM-DDDL-000144": {
+      "subject": "zinc",
+      "also_about": [
+        "burns",
+        "vitamin-e"
+      ],
+      "facet": "uses",
+      "question": "Is zinc oxide good for sunburn and burns?",
+      "answer_short": "Wallach recommends zinc oxide ointment to shield the skin — especially the nose — from sunburn, and to cover second-degree burns.",
+      "topics": [
+        "zinc oxide",
+        "sunburn",
+        "burns",
+        "skin protection",
+        "ointment"
+      ]
+    },
+    "WAL-CLM-DDDL-000145": {
+      "subject": "zinc",
+      "also_about": [
+        "down_syndrome"
+      ],
+      "facet": "uses",
+      "question": "Can zinc improve Down's syndrome?",
+      "answer_short": "Wallach says treating Down's syndrome children with zinc (15 mg three times a day) plus his full nutrient program can raise IQ by 15–20 points and improve physical features — gains that are lost if the program is stopped.",
+      "topics": [
+        "down syndrome",
+        "iq improvement",
+        "zinc treatment",
+        "mongolism",
+        "children"
+      ]
+    },
+    "WAL-CLM-DDDL-000146": {
+      "subject": "zinc",
+      "also_about": [
+        "testicular_atrophy",
+        "impotence"
+      ],
+      "facet": "uses",
+      "question": "Does zinc help shrinking testicles or low sex drive in men?",
+      "answer_short": "Zinc leads Wallach's treatment for testicular atrophy — the shrinking of the testicles seen in aging men or after mumps that can bring on decreased sex drive and feminization.",
+      "topics": [
+        "testicular atrophy",
+        "low sex drive",
+        "men's health",
+        "testosterone",
+        "mumps"
+      ]
+    },
+    "WAL-CLM-DDDL-000147": {
+      "subject": "zinc",
+      "also_about": [
+        "cancer",
+        "celiac_disease",
+        "vitamin-a",
+        "selenium"
+      ],
+      "facet": "stance",
+      "question": "Can a zinc deficiency cause cancer?",
+      "answer_short": "Wallach links cancer to malabsorption of zinc, along with vitamin A and selenium, caused by celiac-type gut damage.",
+      "topics": [
+        "zinc deficiency cancer",
+        "celiac disease",
+        "malabsorption",
+        "cancer cause",
+        "cancer prevention"
+      ]
+    },
+    "WAL-CLM-DDDL-000148": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "What is the relationship between calcium and magnesium?",
+      "answer_short": "Wallach says calcium and magnesium are antagonists in muscle contraction — calcium is the stimulator, magnesium the relaxer — so too much calcium can trigger signs of magnesium deficiency, while too much magnesium blocks bone calcification.",
+      "topics": [
+        "magnesium",
+        "calcium",
+        "muscle contraction",
+        "balance",
+        "cramps",
+        "relaxer"
+      ]
+    },
+    "WAL-CLM-DDDL-000149": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "physiology",
+      "question": "Does magnesium help keep calcium in your bones?",
+      "answer_short": "Yes — Wallach says magnesium is needed to hold calcium in the bones, and running short can let bony calcium leak out (showing up as tartar on the teeth).",
+      "topics": [
+        "tartar",
+        "calculus",
+        "calcium",
+        "bones",
+        "teeth",
+        "calcium phosphorus ratio"
+      ]
+    },
+    "WAL-CLM-DDDL-000150": {
+      "subject": "magnesium",
+      "also_about": [
+        "potassium",
+        "selenium",
+        "palpitations"
+      ],
+      "facet": "physiology",
+      "question": "Can low magnesium cause heart palpitations?",
+      "answer_short": "Yes — Wallach lists a magnesium deficiency among the nutritional shortfalls that can trigger palpitations, or an irregular heartbeat.",
+      "topics": [
+        "heart palpitations",
+        "irregular heartbeat",
+        "arrhythmia",
+        "magnesium deficiency",
+        "heart"
+      ]
+    },
+    "WAL-CLM-DDDL-000151": {
+      "subject": "magnesium",
+      "also_about": [
+        "mitral_valve_prolapse",
+        "selenium"
+      ],
+      "facet": "uses",
+      "question": "Can magnesium help mitral valve prolapse?",
+      "answer_short": "Wallach says magnesium deficiency is a common cause of mitral valve prolapse, and if that's the cause you can expect significant improvement within 30 to 60 days of correcting it.",
+      "topics": [
+        "mitral valve prolapse",
+        "heart valve",
+        "MVP",
+        "palpitations",
+        "heart"
+      ]
+    },
+    "WAL-CLM-DDDL-000152": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "sulfur",
+        "arthritis",
+        "osteoporosis",
+        "kidney_stones"
+      ],
+      "facet": "warning",
+      "question": "Can sweating deplete your magnesium?",
+      "answer_short": "Wallach warns that if you sweat out your calcium, magnesium and sulfur and don't replace them, you're at high risk of arthritis, osteoporosis and kidney stones — and he notes high-performance athletes lose a lot of magnesium in sweat.",
+      "topics": [
+        "magnesium",
+        "sweat",
+        "athletes",
+        "electrolytes",
+        "osteoporosis",
+        "kidney stones"
+      ]
+    },
+    "WAL-CLM-DDDL-000153": {
+      "subject": "magnesium",
+      "also_about": [
+        "dementia",
+        "cerebrovascular_disease",
+        "vitamin-b1"
+      ],
+      "facet": "warning",
+      "question": "Can a magnesium deficiency cause memory loss or dementia?",
+      "answer_short": "Wallach lists magnesium deficiency — along with low vitamin B1 and cholesterol — as one of the common nutritional causes of dementia, which he says is not a true result of aging.",
+      "topics": [
+        "dementia",
+        "memory loss",
+        "senile dementia",
+        "forgetfulness",
+        "aging brain"
+      ]
+    },
+    "WAL-CLM-DDDL-000154": {
+      "subject": "magnesium",
+      "also_about": [
+        "fractures",
+        "osteoporosis",
+        "calcium"
+      ],
+      "facet": "warning",
+      "question": "Can a magnesium deficiency cause bones to break easily?",
+      "answer_short": "Wallach says fractures can result from malnutrition — including calcium/magnesium deficiency — and that good mineral status in your bones prevents most 'spontaneous' fractures and fractures from simple falls.",
+      "topics": [
+        "fractures",
+        "broken bones",
+        "bone strength",
+        "osteoporosis",
+        "spontaneous fractures"
+      ]
+    },
+    "WAL-CLM-DDDL-000155": {
+      "subject": "magnesium",
+      "also_about": [
+        "kidney_stones",
+        "kidney_disease",
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "stance",
+      "question": "What actually causes kidney stones?",
+      "answer_short": "Contrary to what mainstream doctors believe, Wallach says kidney stones are caused by calcium and magnesium DEFICIENCY, which pulls calcium out of your bones — and that bone calcium is what ends up in the stone.",
+      "topics": [
+        "kidney stones",
+        "kidney disease",
+        "calcium deficiency",
+        "osteoporosis",
+        "malignant calcification"
+      ]
+    },
+    "WAL-CLM-DDDL-000156": {
+      "subject": "magnesium",
+      "also_about": [
+        "osteoporosis",
+        "osteoarthritis",
+        "arteriosclerosis",
+        "calcium"
+      ],
+      "facet": "discovery",
+      "question": "Did Wallach see magnesium deficiency cause disease in animals?",
+      "answer_short": "Yes — in his zoo autopsies Wallach found osteoporosis and osteoarthritis from calcium-and-magnesium deficiency, and arteriosclerosis in plant-eating animals from magnesium deficiency, across species from parrots to rhinos.",
+      "topics": [
+        "magnesium",
+        "zoo animals",
+        "autopsy",
+        "osteoporosis",
+        "arthritis",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000189": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does zinc actually do in the body?",
+      "answer_short": "Wallach says at least 70 different enzymes need zinc as a cofactor to work — including carbonic anhydrase, alkaline phosphatase, and carboxypeptidase.",
+      "topics": [
+        "zinc function",
+        "metalloenzymes",
+        "enzyme cofactor",
+        "carbonic anhydrase",
+        "what zinc does"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000190": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does zinc affect your DNA and genes?",
+      "answer_short": "Wallach says zinc is built right into the RNA molecule — the 'zinc fingers' — and is needed for protein synthesis, cell division, and making DNA.",
+      "topics": [
+        "zinc dna",
+        "zinc fingers",
+        "rna",
+        "gene expression",
+        "cell division",
+        "epigenetics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000191": {
+      "subject": "zinc",
+      "also_about": [
+        "down_syndrome",
+        "spina_bifida",
+        "cleft_palate",
+        "cerebral_palsy"
+      ],
+      "facet": "warning",
+      "question": "Can a zinc deficiency cause birth defects?",
+      "answer_short": "Yes — Wallach links zinc deficiency to a long list of congenital birth defects, from cleft lip and palate and spina bifida to Down's syndrome and heart defects.",
+      "topics": [
+        "zinc birth defects",
+        "pregnancy zinc",
+        "congenital",
+        "cleft palate",
+        "spina bifida"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000192": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "history",
+      "question": "How long have we known that zinc is essential?",
+      "answer_short": "Wallach notes zinc was known to be essential for bread mold 125 years ago and for rats 70 years ago, but was recognized as essential for humans only 40 years ago.",
+      "topics": [
+        "zinc essential",
+        "zinc history",
+        "essential nutrient",
+        "when zinc discovered"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000193": {
+      "subject": "zinc",
+      "also_about": [
+        "spina_bifida",
+        "cleft_palate",
+        "cerebral_palsy"
+      ],
+      "facet": "discovery",
+      "question": "Can a mother's zinc deficiency cause birth defects in her baby?",
+      "answer_short": "Wallach says yes — in his zoo work he traced birth defects across many animal species directly to the mother's zinc (and other) deficiencies during pregnancy.",
+      "topics": [
+        "zinc pregnancy",
+        "maternal deficiency",
+        "birth defects animals",
+        "zoo pathology",
+        "zinc mother"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000194": {
+      "subject": "magnesium",
+      "also_about": [
+        "biotin"
+      ],
+      "facet": "mechanism",
+      "question": "Does the body need magnesium to use biotin?",
+      "answer_short": "Yes — Wallach's book says converting biotin (vitamin H) into its active coenzyme form depends on magnesium and ATP being present.",
+      "topics": [
+        "magnesium",
+        "biotin",
+        "b vitamins",
+        "coenzyme",
+        "atp"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000195": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "warning",
+      "question": "Can you take too much magnesium?",
+      "answer_short": "Wallach's book reports that with healthy kidneys there is no evidence of magnesium toxicity even up to 6,000 mg a day — though he cautions that a true excess of magnesium can inhibit bone calcification.",
+      "topics": [
+        "magnesium",
+        "overdose",
+        "too much",
+        "safe",
+        "toxicity",
+        "kidneys"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000196": {
+      "subject": "magnesium",
+      "also_about": [
+        "osteoarthritis",
+        "arthritis",
+        "calcium",
+        "sulfur"
+      ],
+      "facet": "stance",
+      "question": "What causes arthritis according to Wallach?",
+      "answer_short": "Wallach found osteoarthritis to be a near-universal disease across animal species and attributes it to deficiencies of calcium, magnesium, sulfur and trace minerals — not simple wear and tear.",
+      "topics": [
+        "magnesium",
+        "arthritis",
+        "osteoarthritis",
+        "joints",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-HELLS-000017": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Is zinc gluconate a good form of zinc?",
+      "answer_short": "In Wallach's view, no — zinc gluconate is a 'metallic mineral' form, and he says metallic minerals are only 8–12% absorbed, dropping to just 3–5% after age 35–40.",
+      "topics": [
+        "zinc gluconate",
+        "supplement form",
+        "absorption",
+        "bioavailability",
+        "metallic minerals",
+        "colloidal minerals"
+      ]
+    },
+    "WAL-CLM-HELLS-000018": {
+      "subject": "zinc",
+      "also_about": [
+        "cancer",
+        "selenium",
+        "vitamin-e"
+      ],
+      "facet": "history",
+      "question": "Does zinc prevent cancer?",
+      "answer_short": "Not according to the study Wallach cites: in a five-year Chinese cancer trial, zinc showed no statistically significant protective effect against cancer deaths, while a beta carotene, vitamin E and selenium combination did.",
+      "topics": [
+        "cancer",
+        "cancer prevention",
+        "antioxidants",
+        "china study",
+        "zinc and cancer"
+      ]
+    },
+    "WAL-CLM-HELLS-000019": {
+      "subject": "magnesium",
+      "also_about": [
+        "copper",
+        "iron"
+      ],
+      "facet": "sources",
+      "question": "Are cashews a good source of magnesium?",
+      "answer_short": "Yes — per Wallach, a handful of cashews supplies about 20 percent of the recommended daily allowance of magnesium.",
+      "topics": [
+        "magnesium sources",
+        "cashews",
+        "nuts",
+        "minerals",
+        "RDA",
+        "copper"
+      ]
+    },
+    "WAL-CLM-IMMORT-000270": {
+      "subject": "zinc",
+      "also_about": [
+        "pica"
+      ],
+      "facet": "physiology",
+      "question": "Why do some people crave eating dirt, ice, or other non-food things?",
+      "answer_short": "Wallach ties pica — the urge to eat dirt, ice, paint, hair, or wool — to zinc deficiency.",
+      "topics": [
+        "pica",
+        "eating dirt",
+        "craving ice",
+        "geophagia",
+        "zinc deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000271": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "potassium"
+      ],
+      "facet": "basics",
+      "question": "What is magnesium?",
+      "answer_short": "Magnesium is a mineral no living thing can do without. In Wallach's framework it switches on a vast number of the body's enzymes, carries out electro-chemical, catalytic and structural jobs, and is the metal atom at the center of the chlorophyll in every green plant.",
+      "topics": [
+        "what is magnesium",
+        "magnesium",
+        "mineral",
+        "essential nutrient",
+        "enzymes",
+        "chlorophyll"
+      ]
+    },
+    "WAL-CLM-IMMORT-000272": {
+      "subject": "magnesium",
+      "also_about": [
+        "potassium",
+        "calcium"
+      ],
+      "facet": "physiology",
+      "question": "How much magnesium is in the human body?",
+      "answer_short": "Wallach puts total body magnesium at 20 to 28 grams in an adult, with about 60% locked in the bones and roughly a quarter in skeletal muscle.",
+      "topics": [
+        "body content",
+        "bones",
+        "blood levels",
+        "storage",
+        "electrolyte"
+      ]
+    },
+    "WAL-CLM-IMMORT-000273": {
+      "subject": "magnesium",
+      "also_about": [
+        "salt"
+      ],
+      "facet": "physiology",
+      "question": "Why do magnesium supplements taste so bad?",
+      "answer_short": "Wallach says magnesium tastes so unpleasant that deficient animals crave salt instead, and will actually die of deficiency-driven seizures rather than eat a pure magnesium supplement.",
+      "topics": [
+        "taste",
+        "supplements",
+        "cravings",
+        "salt",
+        "seizures",
+        "pica"
+      ]
+    },
+    "WAL-CLM-IMMORT-000274": {
+      "subject": "magnesium",
+      "also_about": [
+        "constipation"
+      ],
+      "facet": "uses",
+      "question": "What is milk of magnesia, and what are Epsom salts?",
+      "answer_short": "Both are everyday magnesium remedies: milk of magnesia is magnesium hydroxide used as an OTC laxative, and Epsom salts are magnesium sulfate used as a wound disinfectant and to ease the swelling of bruises, strains and sprains.",
+      "topics": [
+        "milk of magnesia",
+        "Epsom salts",
+        "laxative",
+        "constipation",
+        "sprains",
+        "bruises"
+      ]
+    },
+    "WAL-CLM-IMMORT-000275": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "sources",
+      "question": "Is there magnesium in drinking water?",
+      "answer_short": "It can be very high: Wallach describes the Nicoyans' water in Costa Rica, filtered up through limestone bedrock, as so rich in calcium and magnesium it reportedly had to be diluted 50% just to be tested.",
+      "topics": [
+        "drinking water",
+        "hard water",
+        "mineral water",
+        "Costa Rica",
+        "limestone"
+      ]
+    },
+    "WAL-CLM-IMMORT-000276": {
+      "subject": "magnesium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does magnesium get its name?",
+      "answer_short": "Magnesium is named after Magnesia, a district in ancient Greece, where its ore magnesite (largely magnesium carbonate) is believed to have first been mined.",
+      "topics": [
+        "name origin",
+        "magnesite",
+        "Magnesia",
+        "ancient Greece",
+        "Humphry Davy"
+      ]
+    },
+    "WAL-CLM-LETS-000493": {
+      "subject": "zinc",
+      "also_about": [
+        "acne",
+        "vitamin-a"
+      ],
+      "facet": "uses",
+      "question": "Does zinc help acne?",
+      "answer_short": "Zinc is part of Wallach's acne protocol at 50 mg three times a day — though he considers acne primarily an essential-fatty-acid deficiency combined with too much saturated fat.",
+      "topics": [
+        "acne",
+        "zinc acne",
+        "pimples",
+        "skin",
+        "teenage acne",
+        "clear skin"
+      ]
+    },
+    "WAL-CLM-LETS-000494": {
+      "subject": "zinc",
+      "also_about": [
+        "thrush",
+        "candidiasis",
+        "selenium",
+        "vitamin-a"
+      ],
+      "facet": "uses",
+      "question": "Does zinc help the immune system?",
+      "answer_short": "Yes — Wallach says zinc, together with vitamins A, C and E and selenium, is of great value in restoring immune status when fighting infections like thrush.",
+      "topics": [
+        "immune system",
+        "immunity",
+        "thrush",
+        "candida",
+        "infection"
+      ]
+    },
+    "WAL-CLM-LETS-000495": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "copper",
+        "sulfur",
+        "arthritis",
+        "gout"
+      ],
+      "facet": "physiology",
+      "question": "What causes joint pain?",
+      "answer_short": "Wallach lists nutritional deficiencies — including calcium, magnesium, sulfur, sulfur-bearing amino acids and copper — among the causes of joint pain, alongside conditions like arthritis, gout and food allergies.",
+      "topics": [
+        "joint pain",
+        "aching joints",
+        "joint pain causes",
+        "sore joints"
+      ]
+    },
+    "WAL-CLM-LETS-000496": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "kidney_stones"
+      ],
+      "facet": "uses",
+      "question": "Will taking calcium supplements give me kidney stones?",
+      "answer_short": "Wallach says no — even heavy calcium supplementation will not cause kidney stones as long as you take magnesium along with it.",
+      "topics": [
+        "does calcium cause kidney stones",
+        "calcium kidney stones",
+        "magnesium with calcium",
+        "safe calcium dose"
+      ]
+    },
+    "WAL-CLM-RARE-000326": {
+      "subject": "zinc",
+      "also_about": [
+        "spina_bifida",
+        "birth_defects"
+      ],
+      "facet": "uses",
+      "question": "Does zinc help prevent spina bifida?",
+      "answer_short": "Wallach says folic acid prevents only about half of spina bifida cases — and that zinc supplementation prevents the other half.",
+      "topics": [
+        "spina bifida",
+        "zinc spina bifida",
+        "folic acid",
+        "prevent birth defects",
+        "neural tube defect"
+      ]
+    },
+    "WAL-CLM-RARE-000327": {
+      "subject": "zinc",
+      "also_about": [
+        "selenium",
+        "molybdenum",
+        "cobalt",
+        "sulfur"
+      ],
+      "facet": "sources",
+      "question": "What foods are a good source of zinc?",
+      "answer_short": "Wallach says eating organ meats like liver and kidney can significantly boost your zinc intake — along with selenium, sulfur, cobalt and molybdenum.",
+      "topics": [
+        "zinc food sources",
+        "organ meats",
+        "liver",
+        "kidney",
+        "zinc diet"
+      ]
+    },
+    "WAL-CLM-RARE-000328": {
+      "subject": "zinc",
+      "also_about": [
+        "alzheimers",
+        "vitamin-e",
+        "selenium",
+        "aluminum"
+      ],
+      "facet": "stance",
+      "question": "Does zinc cause Alzheimer's disease?",
+      "answer_short": "Wallach is openly skeptical — he dismisses a 1994 study that implicated zinc as a cause of Alzheimer's with his sarcastic 'oceanfront property in Montana' line.",
+      "topics": [
+        "zinc alzheimers",
+        "does zinc cause alzheimers",
+        "zinc brain",
+        "alzheimer's cause",
+        "zinc dementia"
+      ]
+    },
+    "WAL-CLM-RARE-000329": {
+      "subject": "zinc",
+      "also_about": [
+        "manganese"
+      ],
+      "facet": "discovery",
+      "question": "How was zinc first discovered to be essential for life?",
+      "answer_short": "Wallach recounts that zinc was initially recognized as an essential element in the bread mold Aspergillus niger.",
+      "topics": [
+        "zinc discovery",
+        "essential mineral",
+        "aspergillus niger",
+        "zinc history",
+        "hart wisconsin"
+      ]
+    },
+    "WAL-CLM-RARE-000330": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the word zinc come from?",
+      "answer_short": "Wallach recounts that Erasmus Ebener was credited as the first to recognize metallic zinc around 1509, and that the physician Paracelsus named the new metal 'zinken.'",
+      "topics": [
+        "zinc name origin",
+        "zinken",
+        "paracelsus",
+        "history of zinc",
+        "etymology"
+      ]
+    },
+    "WAL-CLM-RARE-000331": {
+      "subject": "magnesium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Is magnesium what makes plants green?",
+      "answer_short": "Yes — magnesium sits at the center of the chlorophyll molecule, which is exactly why green plants (and lush places like Hawaiian rain forests) are so green.",
+      "topics": [
+        "magnesium",
+        "chlorophyll",
+        "plants",
+        "why plants are green",
+        "photosynthesis",
+        "olivine"
+      ]
+    },
+    "WAL-CLM-RARE-000332": {
+      "subject": "magnesium",
+      "also_about": [
+        "eclampsia",
+        "tetanus"
+      ],
+      "facet": "uses",
+      "question": "Is magnesium used to treat seizures?",
+      "answer_short": "Yes — magnesium has a long medical record as an anticonvulsant and anesthetic; intravenous magnesium sulfate has been used since 1925 to control eclampsia, the convulsions of pregnancy.",
+      "topics": [
+        "magnesium sulfate",
+        "eclampsia",
+        "seizures",
+        "anesthetic",
+        "tetanus",
+        "pregnancy convulsions"
+      ]
+    },
+    "WAL-CLM-RARE-000333": {
+      "subject": "magnesium",
+      "also_about": [
+        "constipation"
+      ],
+      "facet": "history",
+      "question": "Where do Epsom salts come from?",
+      "answer_short": "Epsom salt is magnesium sulfate, first discovered in a bitter mineral spring near the English village of Epsom during the drought of 1618.",
+      "topics": [
+        "epsom salt",
+        "magnesium sulfate",
+        "history",
+        "laxative",
+        "purgative",
+        "mineral springs"
+      ]
+    },
+    "WAL-CLM-RARE-000268": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Do athletes need more zinc?",
+      "answer_short": "Yes — Wallach notes that heavy zinc losses occur in sweat, so unsupplemented athletes are especially prone to zinc deficiency.",
+      "topics": [
+        "zinc",
+        "athletes",
+        "sweat",
+        "exercise",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-LETS-000141": {
+      "subject": "zinc",
+      "also_about": [
+        "anosmia"
+      ],
+      "facet": "physiology",
+      "question": "Why can't I smell anything anymore?",
+      "answer_short": "Wallach says a chronic loss of the sense of smell is the result of a zinc deficiency, and zinc at 50 mg three times a day is very effective at bringing smell back.",
+      "topics": [
+        "loss of smell",
+        "anosmia",
+        "can't smell",
+        "sense of smell",
+        "zinc and smell",
+        "smell loss"
+      ]
+    },
+    "WAL-CLM-LETS-000276": {
+      "subject": "zinc",
+      "also_about": [
+        "iron",
+        "calcium"
+      ],
+      "facet": "physiology",
+      "question": "What do white spots on my fingernails mean?",
+      "answer_short": "In Wallach's framework, white spots on the fingernails are a sign of zinc deficiency, with the nails acting as a visible barometer of your nutritional status.",
+      "topics": [
+        "fingernails",
+        "white spots",
+        "nails",
+        "zinc deficiency",
+        "deficiency signs"
+      ]
+    },
+    "WAL-CLM-DDDL-000040": {
+      "subject": "zinc",
+      "also_about": [
+        "copper",
+        "iron"
+      ],
+      "facet": "sources",
+      "question": "What blocks zinc absorption?",
+      "answer_short": "Wallach warns that too much dietary copper and iron, plus high-phytate vegan diets, all cut down how much zinc the body can actually take up.",
+      "topics": [
+        "zinc",
+        "absorption",
+        "copper",
+        "iron",
+        "phytates",
+        "vegan"
+      ]
+    },
+    "WAL-CLM-LETS-000166": {
+      "subject": "zinc",
+      "also_about": [
+        "body_odor"
+      ],
+      "facet": "uses",
+      "question": "Does zinc help with body odor?",
+      "answer_short": "Wallach treats body odor and foot odor — in anyone, but especially teenagers and older people — with zinc at 50 mg three times a day.",
+      "topics": [
+        "zinc",
+        "body odor",
+        "foot odor",
+        "smell",
+        "teenagers"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000127": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much zinc should I take a day?",
+      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+      "topics": [
+        "zinc dose",
+        "how much zinc",
+        "daily zinc",
+        "zinc mg",
+        "supplement amount"
+      ]
+    },
+    "WAL-CLM-LETS-000157": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Does zinc help an enlarged prostate?",
+      "answer_short": "Yes — Wallach treats benign prostatic hypertrophy (an enlarged prostate) with zinc at 50 mg three times a day, alongside flaxseed oil, saw palmetto, vitamin A and other supports.",
+      "topics": [
+        "enlarged prostate",
+        "prostate",
+        "BPH",
+        "zinc prostate",
+        "urinary frequency",
+        "saw palmetto"
+      ]
+    },
+    "WAL-CLM-RARE-000086": {
+      "subject": "zinc",
+      "also_about": [
+        "cadmium"
+      ],
+      "facet": "warning",
+      "question": "Does smoking affect my zinc?",
+      "answer_short": "Wallach explains that cadmium — about 23 micrograms per pack of cigarettes and a major part of second-hand smoke — interferes with zinc.",
+      "topics": [
+        "zinc",
+        "smoking",
+        "cadmium",
+        "cigarettes",
+        "toxic metals"
+      ]
+    },
+    "WAL-CLM-LETS-000210": {
+      "subject": "zinc",
+      "also_about": [
+        "cerebral_palsy",
+        "celiac_disease",
+        "vitamin-b6",
+        "copper"
+      ],
+      "facet": "warning",
+      "question": "What causes cerebral palsy?",
+      "answer_short": "Wallach holds that cerebral palsy is a birth defect of the cerebellum caused by a preconception deficiency of zinc and vitamin B-6 in the mother — and once it forms there is no treatment.",
+      "topics": [
+        "cerebral palsy",
+        "birth defects",
+        "preconception",
+        "pregnancy zinc",
+        "vitamin B-6",
+        "cerebellum"
+      ]
+    },
+    "WAL-CLM-LETS-000365": {
+      "subject": "zinc",
+      "also_about": [
+        "miscarriage"
+      ],
+      "facet": "warning",
+      "question": "Can a zinc deficiency cause a miscarriage?",
+      "answer_short": "Wallach holds that zinc is one of the nutrients essential to maintaining a pregnancy, and that deficiencies of it (along with vitamin A, folic acid, selenium and protein) are a common cause of miscarriage.",
+      "topics": [
+        "miscarriage",
+        "pregnancy",
+        "zinc deficiency",
+        "spontaneous abortion",
+        "prenatal"
+      ]
+    },
+    "WAL-CLM-RARE-000044": {
+      "subject": "zinc",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is Down's syndrome really genetic?",
+      "answer_short": "Wallach's provocative stance is that Down's syndrome is not genetic at all but the result of a preconception zinc deficiency that produces chromosome damage.",
+      "topics": [
+        "zinc",
+        "Down's syndrome",
+        "genetics",
+        "pregnancy",
+        "chromosomes"
+      ]
+    },
+    "WAL-CLM-RARE-000010": {
+      "subject": "zinc",
+      "also_about": [
+        "cystic_fibrosis",
+        "selenium",
+        "vitamin-e"
+      ],
+      "facet": "stance",
+      "question": "What does Wallach say causes cystic fibrosis?",
+      "answer_short": "Wallach argues cystic fibrosis is largely an acquired environmental disease driven by a deficiency of selenium, zinc, and riboflavin, made worse by low vitamin E and diets rich in polyunsaturated fats.",
+      "topics": [
+        "cystic fibrosis cause",
+        "zinc cystic fibrosis",
+        "selenium deficiency",
+        "CF nutrition",
+        "riboflavin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000207": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "What does magnesium actually do in the body?",
+      "answer_short": "In Wallach's framework magnesium is required to produce and transfer energy, build proteins, contract your muscles, and fire your nerves — while too much of it can actually inhibit bone from calcifying.",
+      "topics": [
+        "magnesium",
+        "energy",
+        "protein synthesis",
+        "muscle function",
+        "nerves"
+      ]
+    },
+    "WAL-CLM-IMMORT-000208": {
+      "subject": "magnesium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why is magnesium called the source of all biological energy?",
+      "answer_short": "Wallach points out that magnesium is the metal atom at the heart of chlorophyll in every green plant — making it, in his words, the ultimate source of all biological energy.",
+      "topics": [
+        "magnesium",
+        "chlorophyll",
+        "green plants",
+        "biological energy",
+        "photosynthesis"
+      ]
+    },
+    "WAL-CLM-LETS-000016": {
+      "subject": "magnesium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What are the signs I'm low on magnesium?",
+      "answer_short": "Wallach lists the signs of magnesium deficiency as anxiety, confusion, irritability and restlessness, depression, and even birth defects.",
+      "topics": [
+        "magnesium",
+        "deficiency symptoms",
+        "signs of low magnesium",
+        "anxiety",
+        "irritability",
+        "depression"
+      ]
+    },
+    "WAL-CLM-DDDL-000074": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "potassium",
+        "selenium",
+        "muscle_cramps"
+      ],
+      "facet": "physiology",
+      "question": "Why do I keep getting muscle cramps and charley horses?",
+      "answer_short": "Wallach calls a muscle cramp a 'mini-convulsion' in the muscle, caused by deficiencies of calcium, magnesium, potassium, and selenium.",
+      "topics": [
+        "magnesium",
+        "muscle cramps",
+        "charley horse",
+        "leg cramps",
+        "muscle spasms",
+        "potassium"
+      ]
+    },
+    "WAL-CLM-LETS-000174": {
+      "subject": "magnesium",
+      "also_about": [
+        "bruxism",
+        "calcium",
+        "vitamin-b6",
+        "hypoglycemia"
+      ],
+      "facet": "physiology",
+      "question": "Why do I grind my teeth at night?",
+      "answer_short": "Wallach lists teeth grinding (bruxism) as a possible sign of a magnesium, calcium, or B-6 deficiency — along with food allergies and low blood sugar.",
+      "topics": [
+        "teeth grinding",
+        "bruxism",
+        "magnesium deficiency",
+        "jaw clenching",
+        "sleep"
+      ]
+    },
+    "WAL-CLM-RARE-000082": {
+      "subject": "magnesium",
+      "also_about": [
+        "osteoporosis",
+        "arthritis",
+        "kidney_stones",
+        "calcium"
+      ],
+      "facet": "physiology",
+      "question": "What does high magnesium on a hair analysis mean?",
+      "answer_short": "Counterintuitively, elevated calcium and magnesium on a hair test can signal depletion — minerals being shed from the bones — revealing active osteoporosis, arthritis, gum disease, and a tendency toward kidney stones.",
+      "topics": [
+        "hair analysis",
+        "hair mineral test",
+        "osteoporosis",
+        "kidney stones",
+        "calcium",
+        "bone loss"
+      ]
+    },
+    "WAL-CLM-IMMORT-000209": {
+      "subject": "magnesium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What's the most absorbable form of magnesium?",
+      "answer_short": "Wallach says magnesium absorption ranges from just 24% up to 85% — metallic (rock/mineral) forms are absorbed the least, while plant-derived magnesium is absorbed the best.",
+      "topics": [
+        "magnesium",
+        "absorption",
+        "best form",
+        "plant-derived",
+        "bioavailability",
+        "colloidal minerals"
+      ]
+    },
+    "WAL-CLM-LETS-000056": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "protocol",
+      "question": "How much magnesium should I take a day?",
+      "answer_short": "In his Base Line Nutritional Supplement Program Wallach gives magnesium a daily maintenance need (True Supplement Need) of 1,000 mg, with a 30-day pharmacologic dose also of 1,000 mg — well above the government RDA of 350 mg, which he reprints only to argue against.",
+      "topics": [
+        "magnesium",
+        "dose",
+        "how much",
+        "daily amount",
+        "base line program",
+        "supplement"
+      ]
+    },
+    "WAL-CLM-DDDL-000060": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "protocol",
+      "question": "How much magnesium does Wallach recommend a day?",
+      "answer_short": "Wallach's standard pairing is calcium at 2,000 mg and magnesium at 1,000 mg a day — a two-to-one combination he prescribes for osteoporosis and other bone and mineral problems.",
+      "topics": [
+        "magnesium dose",
+        "how much magnesium",
+        "calcium and magnesium",
+        "1000 mg",
+        "osteoporosis"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000098": {
+      "subject": "magnesium",
+      "also_about": [
+        "asthma",
+        "depression",
+        "migraine",
+        "anorexia"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of magnesium deficiency?",
+      "answer_short": "Wallach ties a long list of problems to magnesium shortage — including asthma, menstrual migraines, depression, tetany and convulsions, tremors, muscular weakness, vertigo, ECG changes, and abnormal calcification of arteries and soft tissue.",
+      "topics": [
+        "magnesium deficiency",
+        "symptoms",
+        "depression",
+        "migraines",
+        "asthma",
+        "cramps"
+      ]
+    },
+    "WAL-CLM-IMMORT-000205": {
+      "subject": "magnesium",
+      "also_about": [
+        "calcium",
+        "arteriosclerosis"
+      ],
+      "facet": "stance",
+      "question": "Is cholesterol really what hardens your arteries?",
+      "answer_short": "No — Wallach argues the real driver of arterial hardening is magnesium deficiency, not cholesterol; a lack of magnesium lets calcium deposit into the artery walls in what he calls 'malignant calcification.'",
+      "topics": [
+        "magnesium",
+        "cholesterol",
+        "arteries",
+        "arteriosclerosis",
+        "calcification",
+        "heart disease"
       ]
     }
   }

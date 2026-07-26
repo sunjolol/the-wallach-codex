@@ -1,41 +1,37 @@
 # Extraction report — hells-kitchen (Hell's Kitchen: Causes, Prevention and Cure of Obesity, Diabetes and Metabolic Syndrome)
 
-_4 claim(s) drafted 2026-07-24T02:41:24+00:00. Review then run corpus_seal.py to promote._
+_3 claim(s) drafted 2026-07-26T21:10:51+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: definition×1, food_source×1, protocol×2
+Kinds: food_source×2, quote×1
 
-### WAL-CLM-HELLS-000013 · definition
+### WAL-CLM-HELLS-000017 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** ORAC stands for Oxygen Radical Absorbance Capacity, a lab score for how strongly a food, drink or supplement neutralises free radicals. The test scores one specific attacker, the peroxyl radical, chosen because it is among the most common reactive oxygen species in the human body. Worth noting that Wallach's books print the name two ways - Absorbance in Immortality, Absorption in Hell's Kitchen.
-- **verbatim** (offset 482627): “A good way to measure the antioxidant activity of foods includ- 
-ing juices is by means of the ORAC point system. ORAC stands for 
-Oxygen Radical Absorption Capacity, a measure of the scavenging”
+- **claim:** Wallach classes common supplement forms such as zinc gluconate as 'metallic minerals,' which in his framework are poorly absorbed. He states that metallic minerals — sold as gluconates, lactates, sulphates, carbonates and oxides — are only eight to twelve percent biologically available in younger people, and that after age thirty-five to forty their availability plummets to three to five percent. This is the basis for his preference for plant-derived colloidal minerals, which he considers the most efficient form of trace-mineral supplement.
+- **verbatim** (offset 420028): “Typically, metallic minerals are found in tablets and powders as 
+gluconate (calcium gluconate, zinc gluconate, etc.), lactate, sulphates, 
+carbonates and oxides (iron oxide, etc.). 
+Metallic minerals, despite wild claims to the contrary are only 
+eight to twelve percent biologically available to younger animals and 
+humans; after attaining the age of thirty five to forty years, the avail- 
+ability of metallic minerals plummets to three to five percent.”
 
-### WAL-CLM-HELLS-000014 · food_source
+### WAL-CLM-HELLS-000018 · quote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's everyday top ten runs prunes 5,770, raisins 2,830, blueberries 2,400, blackberries 2,036, kale 1,770, strawberries 1,540, spinach 1,260, raspberries 1,220, Brussels sprouts 980 and plums 949. It is dried fruit, dark berries and leafy greens - and it is scored per 100 grams, so it is not directly comparable with the per-serving table in Immortality, where the same prunes appear at the same 5,770 but alongside spices scoring in the hundreds of thousands.
-- **verbatim** (offset 482897): “ORAC Rating Food Units (per 100 g) 
-1 Prunes 5,770 
-2 Raisins 2,830 
-3 Blueberries 2,400 
-4 Blackberries 2,036 
-5 Kale 1,770 
-6 Strawberries 1,540 
-7 Spinach 1,260 
-8 Raspberries 1,220 
-9 Brussels sprouts 980 
-10 Plums 949”
+- **claim:** Wallach points to a National Cancer Institute five-year study in Henan Province, China, that tested nutrients against a placebo in about 29,000 people aged forty to sixty-nine. He reports that zinc — along with vitamin C, retinol, riboflavin, molybdenum and niacin — had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking a combination of beta carotene, vitamin E and selenium saw dramatic results: 13% fewer deaths from all cancers, a 21% reduction in stomach-cancer deaths, and a 9% drop in deaths from all causes. In Wallach's account, zinc was not among the standout cancer-protective nutrients in that trial.
+- **verbatim** (offset 312961): “The investigators reported that, “vitamin C, retinol, zinc, ribofla- 
+vin, molybdenum and niacin had no statistically significant (protec- 
+tive) effect on cancer deaths after five years.” 
+The group that took the combination of beta carotene, vitamin E 
+and selenium for five years had dramatically positive results: 13 per- 
+cent fewer deaths from all cancers, 21 percent reduction in deaths 
+from stomach cancer and a 9 percent decrease in deaths from all 
+causes.”
 
-### WAL-CLM-HELLS-000015 · protocol
+### WAL-CLM-HELLS-000019 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's practical trick is to replace salad dressing with a high-ORAC juice - noni or mangosteen - instead of oil. It sits inside his See Food Diet, where oils and dressings are a main target. For eating out he gives the Salad Fork Trick: dip the fork a quarter inch into the dressing and shake off the excess, which lets you taste it while giving up about ninety-five percent of the calories.
-- **verbatim** (offset 508786): “At home you will want to use a high ORAC value juice (noni, 
-mangosteen) or juice blend for a salad dressing.”
-
-### WAL-CLM-HELLS-000016 · protocol
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Losing weight itself creates the damage antioxidants defend against. Wallach says the byproducts of burning fat can turn into free radicals that inflame the intima, the lining of the arteries, which then drives arteriosclerosis, cardiovascular disease, cancer and Alzheimer's disease. His instruction is not a single daily pill but flooding yourself with multiple antioxidants at every meal, framed as an insurance policy against the free radicals you will eat without knowing it.
-- **verbatim** (offset 482323): “To reduce the risk of the complications 
-of weight loss, people need to flood themselves with antioxi- 
-dants in order to protect themselves.”
+- **claim:** Among nuts, Wallach singles out cashews as a good magnesium source: a handful supplies about 20 percent of the USDA recommended daily allowance of magnesium, along with 30 percent of copper and 10 percent of iron. An ounce — roughly 18 roasted nuts — carries 160 calories and 13 grams of fat.
+- **verbatim** (offset 556427): “Cashews: a handful contains 20 percent of the USDA recom- 
+mended daily allowance of magnesium, 30 percent of copper, and 
+10 percent of iron. One ounce (18 roasted nuts) contains 160 calo- 
+ries and 13 grams of fat.”
 
