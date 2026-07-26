@@ -66,7 +66,8 @@
         "asthma",
         "malabsorption",
         "magnesium",
-        "manganese"
+        "manganese",
+        "omega-3"
       ],
       "facet": "stance",
       "question": "Are some 'diseases' really just malabsorption?",
@@ -194,7 +195,8 @@
     "WAL-CLM-DDDL-000102": {
       "subject": "meat",
       "also_about": [
-        "margarine"
+        "margarine",
+        "omega-3"
       ],
       "facet": "uses",
       "question": "Why does Wallach say eggs and red meat are critical for MS, and what foods should be avoided?",
@@ -1830,7 +1832,8 @@
     "WAL-CLM-IMMORT-000013": {
       "subject": "essential_nutrients",
       "also_about": [
-        "colloidal_minerals"
+        "colloidal_minerals",
+        "vitamin-a"
       ],
       "facet": "sources",
       "question": "How depleted is the food supply?",
@@ -2209,7 +2212,9 @@
     },
     "WAL-CLM-IMMORT-000070": {
       "subject": "calcium",
-      "also_about": [],
+      "also_about": [
+        "phosphorus"
+      ],
       "facet": "mechanism",
       "question": "What in the modern diet drains your calcium?",
       "answer_short": "Fiber, salt and soft-drink phosphate force calcium out of the body — the modern diet's calcium-to-phosphorus ratio simply can't be met by eating alone.",
@@ -2567,7 +2572,9 @@
     },
     "WAL-CLM-IMMORT-000127": {
       "subject": "iron",
-      "also_about": [],
+      "also_about": [
+        "oxygen"
+      ],
       "facet": "mechanism",
       "question": "Why is carbon monoxide so deadly?",
       "answer_short": "Carbon monoxide binds the iron in hemoglobin ~200x more tightly than oxygen — crowding oxygen out of the blood, which is what makes it poisonous.",
@@ -4544,7 +4551,9 @@
       "subject": "digestion",
       "also_about": [
         "absorption",
-        "anemia"
+        "anemia",
+        "iron",
+        "vitamin-b12"
       ],
       "facet": "protocol",
       "question": "Why isn’t my B12 supplement working?",
@@ -6977,6 +6986,2109 @@
         "arteriosclerosis",
         "calcification",
         "heart disease"
+      ]
+    },
+    "WAL-CLM-DDDL-000157": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What do essential fatty acids do in the body?",
+      "answer_short": "Wallach says EFAs have vitamin-like roles in fat transport and metabolism and in keeping cell walls (the bilipid membranes) intact, and they form part of the cholesterol esters and phospholipids in the blood.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "cell membranes"
+      ]
+    },
+    "WAL-CLM-DDDL-000158": {
+      "subject": "omega-3",
+      "also_about": [
+        "eczema",
+        "asthma",
+        "alopecia"
+      ],
+      "facet": "mechanism",
+      "question": "Is eczema related to omega-3 or essential fatty acids?",
+      "answer_short": "Wallach says atopic dermatitis (eczema) is part of the 'atopic' syndrome — which also includes asthma, hair loss and lowered immunity — and is a condition of essential fatty acid malabsorption.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "eczema",
+        "skin health",
+        "immune health"
+      ]
+    },
+    "WAL-CLM-DDDL-000159": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why is the cystic fibrosis sweat test positive?",
+      "answer_short": "Wallach says the positive CF 'sweat test' results from essential fatty acid deficiency, which causes a secondary shortage of prostaglandins that control the sodium, chloride and potassium levels of sweat.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "cystic fibrosis",
+        "prostaglandins"
+      ]
+    },
+    "WAL-CLM-DDDL-000160": {
+      "subject": "omega-3",
+      "also_about": [
+        "acne"
+      ],
+      "facet": "uses",
+      "question": "Does an omega-3 or essential fatty acid deficiency cause acne?",
+      "answer_short": "Wallach says acne is primarily the result of an essential fatty acid deficiency combined with eating too much saturated and polyunsaturated fat from fried foods and margarine.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "acne",
+        "skin health"
+      ]
+    },
+    "WAL-CLM-DDDL-000161": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What are the best sources of omega-3 or essential fatty acids?",
+      "answer_short": "Wallach points to flaxseed oil and salmon oil as the essential fats to take, and advises avoiding as much of the other polyunsaturated fats as possible.",
+      "topics": [
+        "omega-3",
+        "flaxseed oil",
+        "salmon oil",
+        "fish oil",
+        "healthy fats"
+      ]
+    },
+    "WAL-CLM-DDDL-000162": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is dry skin a sign of omega-3 or essential fatty acid deficiency?",
+      "answer_short": "Yes — Wallach says dry skin, cracked cuticles and hangnails signal essential fatty acid deficiency that can lead to cardiovascular disease; he sums it up as 'dry skin means essential fatty acids.'",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "dry skin",
+        "skin health",
+        "heart health"
+      ]
+    },
+    "WAL-CLM-DDDL-000163": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much vitamin C should I take?",
+      "answer_short": "For treating abrasions, Wallach recommends taking vitamin C orally to bowel tolerance — anywhere from 1 to 5 grams.",
+      "topics": [
+        "vitamin c",
+        "how much vitamin c",
+        "dosage",
+        "bowel tolerance"
+      ]
+    },
+    "WAL-CLM-DDDL-000164": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "als"
+      ],
+      "facet": "warning",
+      "question": "Should people with MS avoid vitamin C supplements?",
+      "answer_short": "For multiple sclerosis (and ALS), Wallach advises avoiding large-dose vitamin C supplements and getting vitamin C from green vegetables and juices instead.",
+      "topics": [
+        "vitamin c",
+        "multiple sclerosis",
+        "als",
+        "supplement caution"
+      ]
+    },
+    "WAL-CLM-DDDL-000165": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "xerophthalmia",
+        "zinc"
+      ],
+      "facet": "mechanism",
+      "question": "What causes night blindness?",
+      "answer_short": "Wallach says night blindness is caused by a vitamin A deficiency, from a poor diet, fat malabsorption, or a zinc shortage that blocks the liver from converting carotene to vitamin A.",
+      "topics": [
+        "eyes",
+        "vision",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-DDDL-000166": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "keratosis",
+        "zinc",
+        "cheilosis"
+      ],
+      "facet": "physiology",
+      "question": "Why do I have rough bumpy skin on my arms?",
+      "answer_short": "Wallach says rough, sandpaper-like 'shark skin' (keratosis) is caused by a deficiency of vitamin A and zinc, often from a low-animal-protein diet.",
+      "topics": [
+        "skin",
+        "deficiency",
+        "symptoms"
+      ]
+    },
+    "WAL-CLM-DDDL-000167": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "cancer",
+        "carcinoma",
+        "vitamin-e"
+      ],
+      "facet": "uses",
+      "question": "How does Wallach use vitamin A to fight cancer?",
+      "answer_short": "Wallach says beta-carotene with vitamin E can be taken at up to 600,000 IU of vitamin A equivalent in cancer therapy, helping the thymus make antibodies and making laetrile more effective.",
+      "topics": [
+        "cancer",
+        "therapy",
+        "high-dose"
+      ]
+    },
+    "WAL-CLM-DDDL-000168": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "acne",
+        "zinc",
+        "vitamin-b6"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach treat acne with vitamin A?",
+      "answer_short": "Wallach recommends vitamin A at 300,000 units a day as beta-carotene for five months, then dropping to 25,000 a day, along with B6, zinc, and topical vitamin E oil.",
+      "topics": [
+        "acne",
+        "skin",
+        "dosage",
+        "therapy"
+      ]
+    },
+    "WAL-CLM-DDDL-000169": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "keratomalacia",
+        "xerophthalmia",
+        "blindness"
+      ],
+      "facet": "warning",
+      "question": "What is keratomalacia?",
+      "answer_short": "Keratomalacia is a severe vitamin A deficiency disease in which the cornea turns hazy, dry, and ulcerated, and if untreated it can cause permanent blindness.",
+      "topics": [
+        "eyes",
+        "vision",
+        "deficiency",
+        "blindness"
+      ]
+    },
+    "WAL-CLM-DDDL-000170": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "miscarriage",
+        "zinc",
+        "selenium"
+      ],
+      "facet": "warning",
+      "question": "Can vitamin A deficiency cause miscarriage or birth defects?",
+      "answer_short": "Wallach says miscarriage is usually due to deficiencies of vitamins, trace minerals, or protein, and names vitamin A, zinc, folic acid, selenium, and complete proteins as essential to maintaining a pregnancy.",
+      "topics": [
+        "pregnancy",
+        "deficiency",
+        "prenatal"
+      ]
+    },
+    "WAL-CLM-DDDL-000171": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "arteriosclerosis"
+      ],
+      "facet": "protocol",
+      "question": "How much vitamin D should an adult take?",
+      "answer_short": "Wallach advises adults to avoid vitamin D, warning that more than 400 IU a day results in calcification of the coronary arteries.",
+      "topics": [
+        "vitamin d",
+        "vitamin d dosage",
+        "how much vitamin d",
+        "heart health"
+      ]
+    },
+    "WAL-CLM-DDDL-000172": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "rickets",
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "protocol",
+      "question": "How do you treat rickets with vitamin D?",
+      "answer_short": "Wallach treats rickets — a vitamin D deficiency disease — with vitamin D at 400 IU orally twice a day, plus calcium and magnesium and 30 minutes of daily sunshine.",
+      "topics": [
+        "vitamin d",
+        "rickets",
+        "rickets treatment",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-DDDL-000173": {
+      "subject": "iron",
+      "also_about": [
+        "copper",
+        "anemia"
+      ],
+      "facet": "stance",
+      "question": "Is iron storage disease really an iron problem?",
+      "answer_short": "No, Wallach lists iron storage disease and iron-resistant anemia as symptoms of copper deficiency, not of iron itself.",
+      "topics": [
+        "iron",
+        "copper",
+        "iron-storage-disease",
+        "anemia"
+      ]
+    },
+    "WAL-CLM-DDDL-000174": {
+      "subject": "calcium",
+      "also_about": [
+        "phosphorus",
+        "magnesium",
+        "vitamin-d"
+      ],
+      "facet": "basics",
+      "question": "What is calcium?",
+      "answer_short": "Calcium is the fifth most abundant mineral in the earth's crust and the most abundant mineral in the human body — the structural mineral of bones and teeth that also powers muscle contraction, blood clotting, nerve signaling and the heartbeat.",
+      "topics": [
+        "what is calcium",
+        "calcium basics",
+        "minerals",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-DDDL-000175": {
+      "subject": "calcium",
+      "also_about": [
+        "vitamin-d",
+        "phytates"
+      ],
+      "facet": "mechanism",
+      "question": "What causes calcium deficiency or blocks calcium absorption?",
+      "answer_short": "Low vitamin D, low stomach acid, lactose intolerance, celiac disease, high-fat or low-protein diets, and phytates all reduce the calcium the body can absorb.",
+      "topics": [
+        "calcium deficiency",
+        "absorption",
+        "digestion"
+      ]
+    },
+    "WAL-CLM-DDDL-000176": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why can't my body hold onto the calcium I take?",
+      "answer_short": "Without the gelatinous bone matrix (collagen/gelatin), most supplemental calcium can't be retained in bone and is simply urinated out.",
+      "topics": [
+        "bone health",
+        "calcium retention",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-DDDL-000177": {
+      "subject": "calcium",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "How do calcium and magnesium work together?",
+      "answer_short": "Calcium and magnesium have opposite roles — calcium stimulates muscle contraction while magnesium relaxes it — so the two need to stay in balance.",
+      "topics": [
+        "calcium magnesium balance",
+        "muscle function",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000178": {
+      "subject": "calcium",
+      "also_about": [
+        "dairy",
+        "magnesium"
+      ],
+      "facet": "sources",
+      "question": "Do you need dairy to get enough calcium?",
+      "answer_short": "No — Wallach notes the Chinese eat no dairy yet get their calcium from animal bones, often simmered in vinegar to leach the minerals into soup.",
+      "topics": [
+        "calcium sources",
+        "dairy-free",
+        "diet"
+      ]
+    },
+    "WAL-CLM-DDDL-000179": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Can you get enough calcium from food alone?",
+      "answer_short": "No — Wallach says American diets are critically deficient in calcium and the only practical way to get enough is through supplementation.",
+      "topics": [
+        "calcium supplements",
+        "diet",
+        "nutrition myths"
+      ]
+    },
+    "WAL-CLM-DDDL-000180": {
+      "subject": "calcium",
+      "also_about": [
+        "phosphorus"
+      ],
+      "facet": "stance",
+      "question": "What is the ideal calcium to phosphorus ratio?",
+      "answer_short": "Wallach says the ideal dietary calcium-to-phosphorus ratio is 2:1, which is impossible to hit from food alone because the American diet is loaded with phosphorus.",
+      "topics": [
+        "calcium phosphorus ratio",
+        "diet",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-DDDL-000181": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "history",
+      "question": "How much calcium did our ancestors eat compared to people today?",
+      "answer_short": "Stone Age humans got 1,600–3,000 mg of calcium a day, while 20th-century Americans get only one-fifth to one-third that — roughly 300–680 mg.",
+      "topics": [
+        "evolution",
+        "diet history",
+        "calcium intake"
+      ]
+    },
+    "WAL-CLM-DDDL-000182": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "biography",
+      "question": "How did Wallach first discover that calcium fixed his own health problem?",
+      "answer_short": "At age 14, after library books tied his eyelid cramps and twitches to calcium deficiency, Wallach ate calcium-loaded calf pellets and the twitches went away in four days.",
+      "topics": [
+        "Wallach story",
+        "calcium deficiency",
+        "muscle cramps"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000197": {
+      "subject": "omega-3",
+      "also_about": [
+        "omega-6"
+      ],
+      "facet": "basics",
+      "question": "What is Omega-3?",
+      "answer_short": "Omega-3 is one of the two fatty acids Wallach classes as truly essential — alpha-linolenic acid — a fat the body cannot make and must get from food.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "nutrition basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000198": {
+      "subject": "omega-3",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "mechanism",
+      "question": "Can omega-3 help with depression?",
+      "answer_short": "Low DHA (an omega-3) tracks with low brain 5-HIAA, which Wallach links to higher rates of depression and suicide.",
+      "topics": [
+        "brain-health",
+        "depression",
+        "mental-health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000199": {
+      "subject": "omega-3",
+      "also_about": [
+        "inflammation"
+      ],
+      "facet": "mechanism",
+      "question": "Does omega-3 slow aging?",
+      "answer_short": "Wallach cites research in which omega-3 supplementation lengthened DNA telomeres and lowered inflammation in obese adults.",
+      "topics": [
+        "anti-aging",
+        "longevity",
+        "inflammation"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000200": {
+      "subject": "omega-3",
+      "also_about": [
+        "selenium",
+        "copper"
+      ],
+      "facet": "physiology",
+      "question": "Can low omega-3 cause blood clots or a heart attack?",
+      "answer_short": "Yes — Wallach lists coronary thrombosis as a disease caused by omega-3 deficiency, not by genetics.",
+      "topics": [
+        "heart-health",
+        "deficiency",
+        "blood-clots"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000201": {
+      "subject": "omega-3",
+      "also_about": [
+        "asthma"
+      ],
+      "facet": "mechanism",
+      "question": "What does omega-3 do in the body?",
+      "answer_short": "Essential fatty acids like omega-3 are the raw material for prostaglandins that regulate blood pressure, heart rate, blood clotting, airway opening, and brain neurotransmitters.",
+      "topics": [
+        "heart-health",
+        "mechanism",
+        "asthma"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000202": {
+      "subject": "omega-3",
+      "also_about": [
+        "omega-6"
+      ],
+      "facet": "history",
+      "question": "What is the ideal ratio of omega-3 to omega-6?",
+      "answer_short": "Wallach points out that traditional diets contained nearly equal amounts of omega-3 and omega-6 essential fatty acids.",
+      "topics": [
+        "diet",
+        "nutrition-basics",
+        "ancestral-diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000203": {
+      "subject": "omega-3",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "biography",
+      "question": "Why did Wallach take the FDA to court over omega-3?",
+      "answer_short": "Wallach was plaintiff in eight FDA lawsuits — up to the Supreme Court steps — to make information on omega-3, selenium, folic acid and antioxidants available to Americans.",
+      "topics": [
+        "history",
+        "fda",
+        "advocacy"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000204": {
+      "subject": "omega-3",
+      "also_about": [
+        "omega-6",
+        "omega-9"
+      ],
+      "facet": "etymology",
+      "question": "Why is it called omega-3?",
+      "answer_short": "The '3' marks where the first double bond sits — three carbons in from the tail (methyl) end of the fatty acid.",
+      "topics": [
+        "nutrition-basics",
+        "chemistry",
+        "essential-fatty-acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000205": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "antioxidants",
+        "scurvy"
+      ],
+      "facet": "basics",
+      "question": "What is Vitamin C?",
+      "answer_short": "Vitamin C (ascorbic acid) is a water-soluble antioxidant that most mammals make in their own bodies, but humans cannot -- so we must get it from food or supplements every day.",
+      "topics": [
+        "vitamin c",
+        "what is vitamin c",
+        "ascorbic acid",
+        "antioxidant",
+        "water-soluble vitamins"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000206": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "iron"
+      ],
+      "facet": "mechanism",
+      "question": "What does vitamin C do in the body?",
+      "answer_short": "Vitamin C is a required cofactor for building collagen, connective tissue, cartilage, bones, teeth and blood vessels, and it improves iron absorption.",
+      "topics": [
+        "vitamin c",
+        "collagen",
+        "connective tissue",
+        "iron absorption"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000207": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "allergies"
+      ],
+      "facet": "physiology",
+      "question": "Does vitamin C help the immune system?",
+      "answer_short": "Yes — vitamin C affects white blood cells, macrophages, immune responses, wound healing and allergic reactions.",
+      "topics": [
+        "vitamin c",
+        "immune support",
+        "wound healing",
+        "white blood cells"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000208": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can your body store vitamin C?",
+      "answer_short": "No — humans cannot store vitamin C, so it must be replenished from the diet every day.",
+      "topics": [
+        "vitamin c",
+        "daily requirement",
+        "storage",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000209": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can you take too much vitamin C?",
+      "answer_short": "Yes — too much vitamin C can cause oxalate crystal deposits, urinary tract inflammation, diarrhea, and breakdown of red blood cells.",
+      "topics": [
+        "vitamin c",
+        "overdose",
+        "toxicity",
+        "side effects"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000210": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "scurvy"
+      ],
+      "facet": "history",
+      "question": "Who discovered the cure for scurvy?",
+      "answer_short": "Scottish naval surgeon James Lind proved in 1753 that lemons and oranges cured scurvy, in one of the first controlled experiments.",
+      "topics": [
+        "vitamin c",
+        "scurvy",
+        "history",
+        "james lind"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000211": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "influenza"
+      ],
+      "facet": "history",
+      "question": "Who made vitamin C famous?",
+      "answer_short": "Linus Pauling — his 1970 book 'Vitamin C and the Common Cold' triggered a national surge in vitamin C use dubbed the 'Linus Pauling effect.'",
+      "topics": [
+        "vitamin c",
+        "linus pauling",
+        "common cold",
+        "history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000212": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "scurvy"
+      ],
+      "facet": "etymology",
+      "question": "Why is vitamin C called ascorbic acid?",
+      "answer_short": "It was named 'ascorbic' — meaning 'without scurvy' — after Szent-Gyorgyi first jokingly proposed calling it 'ignosco' and 'godnose.'",
+      "topics": [
+        "vitamin c",
+        "ascorbic acid",
+        "name origin",
+        "etymology"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000213": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is Vitamin A?",
+      "answer_short": "Vitamin A is a fat-soluble vitamin, isolated in 1913, that exists in several active forms — retinol, retinoic acid, and retinyl esters — and is essential for vision, healthy skin and mucous membranes, and strong bones and teeth.",
+      "topics": [
+        "vitamins",
+        "fat-soluble-vitamins",
+        "basics",
+        "vision",
+        "skin"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000214": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is vitamin A?",
+      "answer_short": "Vitamin A is a fat-soluble vitamin, isolated in 1913, that exists in several active forms and is essential for vision, skin, mucous membranes, bones, and teeth.",
+      "topics": [
+        "vitamins",
+        "fat-soluble-vitamins",
+        "vision",
+        "skin",
+        "basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000215": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What does vitamin A do in the body?",
+      "answer_short": "Vitamin A drives growth, maintains epithelial tissues like the retina, gut lining, and skin, and helps make adrenal steroid hormones.",
+      "topics": [
+        "how-it-works",
+        "hormones",
+        "skin",
+        "eyes"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000216": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "vitamin-d",
+        "vitamin-e",
+        "vitamin-k"
+      ],
+      "facet": "sources",
+      "question": "Can you absorb vitamin A on a low-fat diet?",
+      "answer_short": "Wallach says no, vitamin A is fat-soluble and is poorly absorbed on low-fat diets, and people without a gallbladder should take ox bile to absorb it.",
+      "topics": [
+        "absorption",
+        "digestion",
+        "low-fat-diet",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000217": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can you take too much vitamin A?",
+      "answer_short": "Yes, sustained high intakes of retinol can be toxic, but Wallach says overdose signs generally appear only above about 50,000 IU of retinol a day in adults.",
+      "topics": [
+        "toxicity",
+        "overdose",
+        "safety",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000218": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was vitamin A discovered?",
+      "answer_short": "Vitamin A was discovered in 1913 when two research groups found that animals fed only lard developed a deficiency that was corrected by adding butter, egg yolk, and cod liver oil.",
+      "topics": [
+        "history",
+        "discovery",
+        "science"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000219": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "history",
+      "question": "Was cystic fibrosis first thought to be a vitamin A deficiency?",
+      "answer_short": "Yes, Wallach notes that when cystic fibrosis was first described in 1933 it was thought to be a vitamin A deficiency, based on vitamin A deficiency changes seen in young celiac patients.",
+      "topics": [
+        "history",
+        "cystic-fibrosis",
+        "disease"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000220": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "calcium",
+        "phosphorus",
+        "cholesterol"
+      ],
+      "facet": "basics",
+      "question": "What is Vitamin D?",
+      "answer_short": "Vitamin D is a fat-soluble vitamin with two forms — D2 from plants and D3, which the body makes when sunlight converts cholesterol in the skin — and it is essential for depositing calcium and phosphorus in the bones and teeth.",
+      "topics": [
+        "vitamin d",
+        "sunshine vitamin",
+        "fat soluble vitamins",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000221": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "cholesterol",
+        "rickets"
+      ],
+      "facet": "stance",
+      "question": "Why is vitamin D deficiency so common today?",
+      "answer_short": "Wallach calls the universal vitamin D deficiency of the 20th and 21st centuries a physician-caused disease driven by medical advice to avoid the sun and skip cholesterol and supplements.",
+      "topics": [
+        "vitamin d",
+        "vitamin d deficiency",
+        "sun exposure",
+        "sunscreen",
+        "physician-caused disease"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000222": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "cholesterol"
+      ],
+      "facet": "big_question",
+      "question": "Is vitamin D a hormone?",
+      "answer_short": "Wallach notes some consider vitamin D a hormone, since it is synthesized in one place, like the skin, and acts on a distant target, like bone, much like steroid hormones.",
+      "topics": [
+        "vitamin d",
+        "is vitamin d a hormone",
+        "hormones",
+        "steroid hormones"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000223": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "rickets",
+        "vitamin-a"
+      ],
+      "facet": "discovery",
+      "question": "How was vitamin D discovered to cure rickets?",
+      "answer_short": "Early 20th-century researchers proved both sunlight and diet cured rickets — Hulschinsky straightened deformed limbs with UV lamps, and Mellanby and McCollum showed cod liver oil cured it even after its vitamin A was destroyed.",
+      "topics": [
+        "vitamin d",
+        "rickets",
+        "history of vitamin d",
+        "cod liver oil"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000224": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "rickets",
+        "cholesterol"
+      ],
+      "facet": "history",
+      "question": "Is rickets making a comeback?",
+      "answer_short": "Yes — Wallach reports rickets reappeared in the industrialized world in 2013 with a 400 percent increase between 1995 and 2011, which he blames on sun-avoidance, sunscreen, and fear of cholesterol.",
+      "topics": [
+        "vitamin d",
+        "rickets",
+        "rickets comeback",
+        "vitamin d deficiency",
+        "children's health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000225": {
+      "subject": "iron",
+      "also_about": [
+        "anemia",
+        "oxygen"
+      ],
+      "facet": "basics",
+      "question": "What is iron?",
+      "answer_short": "Iron is an essential mineral found in nearly every living thing; in the body it sits at the heart of hemoglobin, the protein that carries oxygen in the blood, and a healthy adult holds about 3 to 5 grams of it.",
+      "topics": [
+        "iron",
+        "minerals",
+        "nutrition-basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000226": {
+      "subject": "iron",
+      "also_about": [
+        "anemia",
+        "copper"
+      ],
+      "facet": "basics",
+      "question": "What is iron and what does it do in the body?",
+      "answer_short": "Iron is an essential element in nearly all living things; a healthy adult carries 3 to 5 grams of it, mostly in hemoglobin and other oxygen-handling proteins.",
+      "topics": [
+        "iron",
+        "minerals",
+        "nutrition-basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000227": {
+      "subject": "iron",
+      "also_about": [
+        "gluten"
+      ],
+      "facet": "physiology",
+      "question": "What causes iron deficiency?",
+      "answer_short": "Iron deficiency comes from unsupplemented pregnancy, menstruation, chronic infections, low stomach acid, chronic diarrhea or bleeding, and impaired absorption from high-fat, high-phytate, or gluten-intolerant diets.",
+      "topics": [
+        "iron-deficiency",
+        "absorption",
+        "causes"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000228": {
+      "subject": "iron",
+      "also_about": [
+        "selenium",
+        "copper",
+        "zinc"
+      ],
+      "facet": "stance",
+      "question": "Is too much iron dangerous?",
+      "answer_short": "Wallach argues iron overload is falsely blamed for diseases like cirrhosis and diabetes; excess stored iron is actually caused by shortages of selenium, copper, and zinc.",
+      "topics": [
+        "iron",
+        "toxicity",
+        "overload",
+        "iron-storage-disease"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000229": {
+      "subject": "iron",
+      "also_about": [
+        "anemia"
+      ],
+      "facet": "stance",
+      "question": "If I have iron-deficiency anemia, do I have other deficiencies too?",
+      "answer_short": "Almost certainly, Wallach says deficiencies rarely occur alone, so an obvious one like iron-deficiency anemia usually means others, maybe dozens, are present.",
+      "topics": [
+        "iron",
+        "deficiency",
+        "anemia",
+        "supplementation"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000230": {
+      "subject": "iron",
+      "also_about": [
+        "pica",
+        "anemia"
+      ],
+      "facet": "history",
+      "question": "Can iron actually cure pica or ice-eating?",
+      "answer_short": "Yes, Wallach cites trials where iron cured children of eating sand and made ice-eating disappear once the underlying anemia was corrected.",
+      "topics": [
+        "iron",
+        "pica",
+        "evidence",
+        "studies"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000231": {
+      "subject": "iron",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why did ancient people call iron the metal from the sky?",
+      "answer_short": "Because the first purified iron came from meteors, the Egyptians called iron 'the metal from the sky' and the Aztecs 'the gift of heaven.'",
+      "topics": [
+        "iron",
+        "history",
+        "ancient-egypt",
+        "meteorite"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000232": {
+      "subject": "calcium",
+      "also_about": [
+        "phosphorus"
+      ],
+      "facet": "physiology",
+      "question": "How much calcium is in the human body and where is it stored?",
+      "answer_short": "Calcium is the most abundant mineral in the body—about 1,200 g in men and 1,000 g in women—with 99 percent of it stored in the bones and teeth.",
+      "topics": [
+        "calcium",
+        "bone health",
+        "how much calcium in body"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000233": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does calcium do in the body besides build bones?",
+      "answer_short": "Beyond bone structure, calcium is required for muscle contraction, blood clotting, nerve transmission, hormone secretion, and regulating the heartbeat.",
+      "topics": [
+        "calcium",
+        "muscle contraction",
+        "blood clotting",
+        "heart"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000234": {
+      "subject": "calcium",
+      "also_about": [
+        "vitamin-d",
+        "phosphorus"
+      ],
+      "facet": "mechanism",
+      "question": "Does calcium need vitamin D to be absorbed?",
+      "answer_short": "Yes—Wallach says vitamin D is required for the absorption, metabolism, and proper deposition of calcium (and phosphorus) in the bones and teeth.",
+      "topics": [
+        "calcium",
+        "vitamin d",
+        "absorption",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000235": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis"
+      ],
+      "facet": "uses",
+      "question": "Can bone spurs and calcium deposits be reversed?",
+      "answer_short": "Yes—Wallach says bone spurs, heel spurs, and calcium deposits form during raging osteoporosis and can be reversed and eliminated by supplementing with significant amounts of chelated and colloidal calcium.",
+      "topics": [
+        "calcium",
+        "bone spurs",
+        "heel spurs",
+        "osteoporosis"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000236": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis"
+      ],
+      "facet": "discovery",
+      "question": "How did Wallach discover that kidney stones come from too little calcium?",
+      "answer_short": "In zoo tortoises and iguanas fed diets with no added calcium, Wallach found the calcium in their kidney stones had been leached from their own bones and shells during raging osteoporosis—proof stones come from too little calcium, not too much.",
+      "topics": [
+        "calcium",
+        "kidney stones",
+        "osteoporosis",
+        "animals"
+      ]
+    },
+    "WAL-CLM-HELLS-000020": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Which nuts have the most omega-3?",
+      "answer_short": "Walnuts — Wallach says English walnuts are the only nut with significant levels of omega-3 fatty acids.",
+      "topics": [
+        "food-sources",
+        "nuts",
+        "diet"
+      ]
+    },
+    "WAL-CLM-HELLS-000021": {
+      "subject": "omega-3",
+      "also_about": [
+        "cholesterol",
+        "obesity",
+        "atherosclerosis"
+      ],
+      "facet": "warning",
+      "question": "Does low omega-3 raise cholesterol or cause obesity?",
+      "answer_short": "Wallach ties omega-3 deficiency to elevated total cholesterol and LDL, obesity, peripheral neuropathies, thrombotic disease, and atherosclerosis.",
+      "topics": [
+        "cholesterol",
+        "weight",
+        "heart-health",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-HELLS-000022": {
+      "subject": "omega-3",
+      "also_about": [
+        "dementia",
+        "alzheimers"
+      ],
+      "facet": "history",
+      "question": "Does omega-3 help prevent dementia or Alzheimer's?",
+      "answer_short": "Wallach cites a Framingham/Tufts study in which diets rich in omega-3 cut the risk of new dementia by 48 percent.",
+      "topics": [
+        "brain-health",
+        "dementia",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-HELLS-000023": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "protocol",
+      "question": "How much vitamin C did Linus Pauling recommend?",
+      "answer_short": "Linus Pauling recommended taking 10 to 12 grams of vitamin C every day - for colds, and to help prevent cancer and heart disease.",
+      "topics": [
+        "linus pauling",
+        "megadose vitamin c",
+        "how much vitamin c",
+        "colds"
+      ]
+    },
+    "WAL-CLM-HELLS-000024": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What foods are high in vitamin C?",
+      "answer_short": "Wallach notes that capsicum - cayenne peppers - are rich in vitamin C.",
+      "topics": [
+        "vitamin c foods",
+        "cayenne pepper",
+        "food sources"
+      ]
+    },
+    "WAL-CLM-HELLS-000025": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "vitamin-e"
+      ],
+      "facet": "uses",
+      "question": "Can vitamin C help prevent Alzheimer's disease?",
+      "answer_short": "In a Johns Hopkins study, people taking vitamin C and vitamin E had a 78% lower risk of Alzheimer's disease.",
+      "topics": [
+        "vitamin c and alzheimers",
+        "dementia",
+        "antioxidants",
+        "brain health"
+      ]
+    },
+    "WAL-CLM-HELLS-000026": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "cancer",
+        "selenium",
+        "vitamin-e"
+      ],
+      "facet": "stance",
+      "question": "Does vitamin C prevent cancer?",
+      "answer_short": "In a large five-year National Cancer Institute study, vitamin C showed no statistically significant protective effect on cancer deaths.",
+      "topics": [
+        "vitamin c and cancer",
+        "cancer prevention",
+        "antioxidants"
+      ]
+    },
+    "WAL-CLM-HELLS-000027": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "history",
+      "question": "Is synthetic vitamin C the same as natural vitamin C?",
+      "answer_short": "Wallach recounts that when vitamin C was first synthesized in 1933, the artificial form was identical to the natural one.",
+      "topics": [
+        "synthetic vs natural vitamin c",
+        "ascorbic acid",
+        "history"
+      ]
+    },
+    "WAL-CLM-HELLS-000028": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "vitamin-d",
+        "rickets"
+      ],
+      "facet": "etymology",
+      "question": "How did vitamin A get its name, and how is it related to vitamin D?",
+      "answer_short": "Wallach recounts that in 1922 the original 'vitamin A' was found to consist of two separate factors: the growth factor kept the name vitamin A, while the anti-rachitic (anti-rickets) factor was designated vitamin D.",
+      "topics": [
+        "history",
+        "etymology",
+        "naming"
+      ]
+    },
+    "WAL-CLM-HELLS-000029": {
+      "subject": "iron",
+      "also_about": [
+        "obesity",
+        "phosphorus",
+        "pica"
+      ],
+      "facet": "big_question",
+      "question": "Can iron deficiency make you fat?",
+      "answer_short": "Wallach says a combined iron and phosphorus deficiency can trigger almost psychotic binge eating and soft-drink bingeing that ends in morbid obesity.",
+      "topics": [
+        "iron",
+        "obesity",
+        "cravings",
+        "binge-eating",
+        "phosphorus",
+        "weight"
+      ]
+    },
+    "WAL-CLM-HELLS-000030": {
+      "subject": "calcium",
+      "also_about": [
+        "obesity"
+      ],
+      "facet": "uses",
+      "question": "Does calcium help with weight loss?",
+      "answer_short": "Wallach says consuming 1,200 mg of calcium a day cuts your risk of being overweight by 65 percent, and combined with dropping 500 calories a day it doubles the rate of weight loss—without exercise.",
+      "topics": [
+        "calcium",
+        "weight loss",
+        "obesity",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-IMMORT-000277": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much omega-3 do I need each day?",
+      "answer_short": "Wallach sets the daily essential fatty acid requirement at two to three percent of calories — about five grams on a 1,500-calorie diet.",
+      "topics": [
+        "dosage",
+        "supplements",
+        "nutrition-basics"
+      ]
+    },
+    "WAL-CLM-IMMORT-000278": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "sources",
+      "question": "How can I absorb omega-3 if my gallbladder was removed?",
+      "answer_short": "Wallach advises supplementing ox bile after gallbladder removal so bile salts can absorb essential fatty acids and other good fats.",
+      "topics": [
+        "absorption",
+        "digestion",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-IMMORT-000279": {
+      "subject": "omega-3",
+      "also_about": [
+        "stroke"
+      ],
+      "facet": "uses",
+      "question": "Can omega-3 prevent stroke and sudden heart death?",
+      "answer_short": "Wallach says supplementing omega-3 essential fatty acids reduces the risk of stroke and coronary-thrombosis sudden death — a claim the FDA long forbade sharing.",
+      "topics": [
+        "heart-health",
+        "stroke",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-IMMORT-000280": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Does vitamin C help with colds?",
+      "answer_short": "Vitamin C has been shown to cut the rate, severity and duration of a cold by about 20% on average.",
+      "topics": [
+        "vitamin c for colds",
+        "common cold",
+        "immune"
+      ]
+    },
+    "WAL-CLM-IMMORT-000281": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Do smokers need more vitamin C?",
+      "answer_short": "Yes - cigarette smoking roughly doubles the body's need for vitamin C.",
+      "topics": [
+        "smoking",
+        "smokers",
+        "vitamin c needs"
+      ]
+    },
+    "WAL-CLM-IMMORT-000282": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "scurvy"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered vitamin C and when was it isolated?",
+      "answer_short": "Pure ascorbic acid was isolated in 1928 by Albert Szent-Gyorgyi; in 1932 C. Glenn King reisolated it from lemons and identified it as vitamin C.",
+      "topics": [
+        "who discovered vitamin c",
+        "history",
+        "szent-gyorgyi",
+        "ascorbic acid"
+      ]
+    },
+    "WAL-CLM-IMMORT-000283": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "scurvy"
+      ],
+      "facet": "etymology",
+      "question": "Why were British sailors called limeys?",
+      "answer_short": "British sailors were nicknamed 'limeys' because they carried lemons on their ships to prevent and cure scurvy.",
+      "topics": [
+        "limeys",
+        "sailors",
+        "scurvy",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000284": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "malabsorption"
+      ],
+      "facet": "mechanism",
+      "question": "Why can't I absorb vitamin A even when I eat enough?",
+      "answer_short": "Vitamin A is fat-soluble, so it is absorbed with dietary fats — anything that blocks fat absorption (antibiotics, gallbladder disease, celiac disease, high-fiber diets, mineral oil) blocks vitamin A too.",
+      "topics": [
+        "absorption",
+        "digestion",
+        "fat-soluble"
+      ]
+    },
+    "WAL-CLM-IMMORT-000285": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What foods are highest in vitamin A?",
+      "answer_short": "Beef liver is by far the richest source, followed by carrots, sweet potato, spinach, and dried apricots; plants carry vitamin A as carotenoids in yellow, red, and orange pigments.",
+      "topics": [
+        "food",
+        "diet",
+        "carotenoids"
+      ]
+    },
+    "WAL-CLM-IMMORT-000286": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "xerophthalmia"
+      ],
+      "facet": "history",
+      "question": "How did they figure out vitamin A cures eye disease?",
+      "answer_short": "Animals on fat-free diets developed eye inflammation and infections that reversed with butter or cod liver oil, and in 1924 Bloch showed childhood xerophthalmia was the same disease.",
+      "topics": [
+        "history",
+        "eyes",
+        "cod-liver-oil"
+      ]
+    },
+    "WAL-CLM-IMMORT-000287": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "calcium",
+        "phosphorus"
+      ],
+      "facet": "physiology",
+      "question": "What does vitamin D do in the body?",
+      "answer_short": "Vitamin D drives intestinal absorption of calcium and phosphate and, with parathyroid hormone, mobilizes calcium from bone to keep blood levels normal; it also mobilizes phosphate from bone and helps the kidney reabsorb calcium from urine.",
+      "topics": [
+        "vitamin d",
+        "calcium absorption",
+        "bone health",
+        "phosphorus"
+      ]
+    },
+    "WAL-CLM-IMMORT-000288": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "cholesterol"
+      ],
+      "facet": "sources",
+      "question": "How does the body make vitamin D from sunlight?",
+      "answer_short": "In the skin, sunlight or UV light drives the conversion of cholesterol into 7-dehydrocholesterol, the provitamin of vitamin D3 (cholecalciferol); UV light also converts the yeast sterol ergosterol into vitamin D2.",
+      "topics": [
+        "vitamin d",
+        "sunshine vitamin",
+        "sun exposure",
+        "cholesterol"
+      ]
+    },
+    "WAL-CLM-IMMORT-000289": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "cancer",
+        "diabetes"
+      ],
+      "facet": "uses",
+      "question": "Can vitamin D prevent cancer and chronic disease?",
+      "answer_short": "Wallach cites research that vitamin D deficiency raises the risk of heart attacks, breast and colon cancer mortality, and childhood type II diabetes, while adequate vitamin D may help prevent many serious chronic diseases.",
+      "topics": [
+        "vitamin d",
+        "vitamin d and cancer",
+        "chronic disease",
+        "diabetes",
+        "heart health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000290": {
+      "subject": "iron",
+      "also_about": [
+        "phytates"
+      ],
+      "facet": "sources",
+      "question": "Is iron from plants as good as iron from meat?",
+      "answer_short": "No — heme iron from meat is 10% absorbable, while iron from fresh plants is only 1% absorbable because of the plant's phytates.",
+      "topics": [
+        "iron",
+        "meat",
+        "plants",
+        "vegetarian",
+        "absorption",
+        "heme-iron"
+      ]
+    },
+    "WAL-CLM-IMMORT-000291": {
+      "subject": "calcium",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "How is calcium absorbed in the body?",
+      "answer_short": "Calcium is absorbed mainly in the acidic duodenum, and absorption drops as the gut turns alkaline; metallic forms may yield only 1-3%, while colloidal or chelated forms reach up to 98%.",
+      "topics": [
+        "calcium",
+        "absorption",
+        "supplements",
+        "colloidal-minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000292": {
+      "subject": "calcium",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "sources",
+      "question": "Why doesn't calcium carbonate work well as a supplement?",
+      "answer_short": "Calcium carbonate is a metallic mineral that is barely absorbed — you'd have to take about 25 capsules a day to actually net 2,000 mg of usable calcium.",
+      "topics": [
+        "calcium",
+        "supplements",
+        "absorption",
+        "calcium-carbonate",
+        "bioavailability"
+      ]
+    },
+    "WAL-CLM-IMMORT-000293": {
+      "subject": "calcium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the word calcium come from and who discovered it?",
+      "answer_short": "The name comes from the Latin 'calx' (lime), used by the Romans in the 1st century, and the metal was isolated in 1808 by Sir Humphry Davy.",
+      "topics": [
+        "calcium",
+        "etymology",
+        "history",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-LETS-000497": {
+      "subject": "omega-3",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "uses",
+      "question": "Can omega-3 / essential fatty acids help cystic fibrosis?",
+      "answer_short": "Wallach says cystic fibrosis is prevented in animals by adequate selenium and essential fatty acid nutrition in the mother, and treated in people with flaxseed oil and selenium.",
+      "topics": [
+        "omega-3",
+        "cystic-fibrosis",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-LETS-000498": {
+      "subject": "omega-3",
+      "also_about": [
+        "pms"
+      ],
+      "facet": "uses",
+      "question": "Does omega-3 help with PMS?",
+      "answer_short": "Wallach says PMS is driven by essential fatty acid deficiency acting with the monthly hormone cycle, and he includes EFAs in his PMS treatment.",
+      "topics": [
+        "omega-3",
+        "pms",
+        "womens-health"
+      ]
+    },
+    "WAL-CLM-LETS-000499": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "nosebleeds",
+        "vitamin-k"
+      ],
+      "facet": "physiology",
+      "question": "Can vitamin C deficiency cause nosebleeds?",
+      "answer_short": "Wallach says nosebleeds are usually the result of vitamin K and/or vitamin C deficiencies.",
+      "topics": [
+        "nosebleeds",
+        "epistaxis",
+        "vitamin c deficiency",
+        "vitamin k"
+      ]
+    },
+    "WAL-CLM-LETS-000500": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much vitamin C should I take when I'm sick?",
+      "answer_short": "Wallach recommends taking vitamin C 'to bowel tolerance' - and, if you already have diarrhea, 1,000 mg time-release tablets hourly through the day.",
+      "topics": [
+        "bowel tolerance",
+        "how much vitamin c when sick",
+        "flu",
+        "dosing"
+      ]
+    },
+    "WAL-CLM-LETS-000501": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "cancer",
+        "zinc"
+      ],
+      "facet": "uses",
+      "question": "Is cervical dysplasia caused by vitamin A deficiency?",
+      "answer_short": "Wallach considers cervical dysplasia a manifestation of chronic vitamin A deficiency and treats it with Lugol's iodine plus beta carotene and zinc.",
+      "topics": [
+        "cancer",
+        "womens-health",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-LETS-000502": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "infertility",
+        "malabsorption"
+      ],
+      "facet": "uses",
+      "question": "Can low vitamin A cause infertility?",
+      "answer_short": "Wallach describes a woman whose infertility traced to a blood vitamin A level at 10% of normal from malabsorption, who conceived once it was corrected.",
+      "topics": [
+        "fertility",
+        "case-study",
+        "absorption"
+      ]
+    },
+    "WAL-CLM-LETS-000503": {
+      "subject": "iron",
+      "also_about": [
+        "anemia"
+      ],
+      "facet": "physiology",
+      "question": "What does iron deficiency look like on a blood test?",
+      "answer_short": "Iron deficiency shows up as decreased hemoglobin and small red cells — the picture of a microcytic anemia.",
+      "topics": [
+        "iron",
+        "blood-test",
+        "anemia",
+        "cbc",
+        "hemoglobin",
+        "diagnosis"
+      ]
+    },
+    "WAL-CLM-LETS-000504": {
+      "subject": "iron",
+      "also_about": [
+        "anemia"
+      ],
+      "facet": "protocol",
+      "question": "How much iron should I take for heavy periods?",
+      "answer_short": "Wallach's protocol for painful or heavy periods includes 25 to 50 mg of iron a day, especially for vegetarian women who do not eat red meat or liver regularly.",
+      "topics": [
+        "heavy-periods",
+        "menstruation",
+        "womens-health",
+        "vegetarian",
+        "iron-dose"
+      ]
+    },
+    "WAL-CLM-LETS-000505": {
+      "subject": "calcium",
+      "also_about": [
+        "arthritis",
+        "phosphorus"
+      ],
+      "facet": "stance",
+      "question": "Is arthritis caused by a calcium deficiency?",
+      "answer_short": "Wallach holds that arthritis is fundamentally a calcium deficiency made worse by too much phosphorus in the American diet.",
+      "topics": [
+        "arthritis",
+        "bone-health",
+        "joint-pain",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000334": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Can a hair analysis reveal an essential fatty acid deficiency?",
+      "answer_short": "Yes — Wallach says high hair sodium, potassium, and chloride signal an EFA deficiency, because the skin glands lose electrolytes instead of conserving them.",
+      "topics": [
+        "omega-3",
+        "deficiency",
+        "testing"
+      ]
+    },
+    "WAL-CLM-RARE-000335": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "vitamin-c"
+      ],
+      "facet": "sources",
+      "question": "What's the best way to get beta carotene naturally?",
+      "answer_short": "Wallach says juicing is one of the greatest ways he knows to get fresh, natural beta carotene, though it can't supply the full spectrum of essential minerals.",
+      "topics": [
+        "juicing",
+        "diet",
+        "raw-food",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-RARE-000336": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "cancer",
+        "selenium",
+        "vitamin-e"
+      ],
+      "facet": "history",
+      "question": "Is there evidence that beta carotene helps prevent cancer?",
+      "answer_short": "Rare Earths reproduces a newspaper report of a National Cancer Institute trial in a rural area of China where beta carotene with vitamin E and selenium dramatically cut cancer deaths — called the first hard evidence antioxidants protect against cancer.",
+      "topics": [
+        "cancer",
+        "antioxidants",
+        "research"
+      ]
+    },
+    "WAL-CLM-RARE-000337": {
+      "subject": "iron",
+      "also_about": [
+        "copper"
+      ],
+      "facet": "physiology",
+      "question": "Why do redheads have red hair?",
+      "answer_short": "Red hair gets its color from an iron-containing pigment, so redheads have relatively high iron in their hair.",
+      "topics": [
+        "red-hair",
+        "hair",
+        "iron-pigment"
+      ]
+    },
+    "WAL-CLM-RARE-000338": {
+      "subject": "iron",
+      "also_about": [
+        "copper"
+      ],
+      "facet": "sources",
+      "question": "Is the iron in cheap supplements just rust?",
+      "answer_short": "Often yes—metallic forms like iron oxide are literally rust and only 8 to 12 percent absorbable, dropping to 3 to 5 percent after age 35–40.",
+      "topics": [
+        "supplements",
+        "mineral-absorption",
+        "colloidal-minerals",
+        "iron-oxide"
+      ]
+    },
+    "WAL-CLM-RARE-000339": {
+      "subject": "iron",
+      "also_about": [
+        "anemia"
+      ],
+      "facet": "history",
+      "question": "What is the story of the iron baby?",
+      "answer_short": "In 1850 a woman who had lost three pregnancies took iron scales from a blacksmith's anvil steeped in cider through her next pregnancy and delivered a boy so strong he walked at nine months—the 'iron baby.'",
+      "topics": [
+        "pregnancy",
+        "iron-history",
+        "anemia"
+      ]
+    },
+    "WAL-CLM-RARE-000340": {
+      "subject": "calcium",
+      "also_about": [
+        "pica"
+      ],
+      "facet": "mechanism",
+      "question": "Why do children eat dirt or paint chips?",
+      "answer_short": "Wallach attributes pica -- the craving to eat non-food items -- to mineral deficiency: calcium-deficient rats will drink large amounts of a bad-tasting lead acetate solution, unlike calcium-fed controls.",
+      "topics": [
+        "pica",
+        "children-health",
+        "minerals",
+        "lead"
+      ]
+    },
+    "WAL-CLM-RARE-000341": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis",
+        "arthritis",
+        "magnesium",
+        "manganese"
+      ],
+      "facet": "physiology",
+      "question": "Does an all-meat carnivore diet cause calcium deficiency?",
+      "answer_short": "Yes — Wallach says even an organ-meat-rich carnivore diet still lacks enough calcium, magnesium and manganese, producing the classic degenerative diseases of pure carnivores.",
+      "topics": [
+        "bone-health",
+        "carnivore-diet",
+        "osteoporosis",
+        "meat-diet",
+        "mineral-deficiency"
+      ]
+    },
+    "WAL-CLM-RARE-000342": {
+      "subject": "calcium",
+      "also_about": [
+        "rickets",
+        "convulsions"
+      ],
+      "facet": "history",
+      "question": "Has calcium been used as medicine throughout history?",
+      "answer_short": "Yes—calcium was used for infantile convulsions as far back as 1689, and rickets was linked to calcium deficiency as early as 850 B.C.",
+      "topics": [
+        "history",
+        "bone-health",
+        "rickets",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000063": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Which fatty acids does Wallach say are actually essential?",
+      "answer_short": "Of the three EFAs — linoleic, linolenic, and arachidonic — only linoleic and linolenic are truly essential, since the body can make arachidonic acid from linolenic.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "linolenic acid"
+      ]
+    },
+    "WAL-CLM-IMMORT-000053": {
+      "subject": "omega-3",
+      "also_about": [
+        "eczema",
+        "asthma"
+      ],
+      "facet": "physiology",
+      "question": "Why do babies and children need omega-3?",
+      "answer_short": "Wallach warns that EFA deficiency in infants causes poor growth, lowered IQ, seizures, learning disabilities, eczema, asthma, and weaker immunity.",
+      "topics": [
+        "pregnancy",
+        "children",
+        "brain-health",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-DDDL-000115": {
+      "subject": "omega-3",
+      "also_about": [
+        "acne"
+      ],
+      "facet": "protocol",
+      "question": "How much omega-3 or essential fatty acids should I take per day?",
+      "answer_short": "Wallach says essential fatty acids should make up 3 percent of your total daily calories, or be supplemented at 9 grams per day in capsule form.",
+      "topics": [
+        "omega-3",
+        "essential fatty acids",
+        "dosage",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-RARE-000283": {
+      "subject": "omega-3",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "uses",
+      "question": "Can omega-3 replace blood thinners or blood pressure drugs?",
+      "answer_short": "In Wallach's drug-replacement guide, omega-3 oils are listed among the nutrients that stand in for blood thinners and blood pressure drugs.",
+      "topics": [
+        "omega-3",
+        "blood-pressure",
+        "medications"
+      ]
+    },
+    "WAL-CLM-LETS-000011": {
+      "subject": "omega-3",
+      "also_about": [
+        "eczema",
+        "acne"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of essential fatty acid deficiency?",
+      "answer_short": "Wallach lists acne, hair loss, eczema, brittle hair, arthritis, gallstones, impaired wound healing, infertility and more as signs of essential fatty acid deficiency.",
+      "topics": [
+        "deficiency",
+        "skin",
+        "hair"
+      ]
+    },
+    "WAL-CLM-RARE-000055": {
+      "subject": "omega-3",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Are omega-3s one of the essential nutrients the body needs?",
+      "answer_short": "Yes — Wallach counts three essential fatty acids among the 90 nutrients the body requires, including for immune defense.",
+      "topics": [
+        "omega-3",
+        "essential-nutrients",
+        "immune-system"
+      ]
+    },
+    "WAL-CLM-LETS-000428": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "scurvy",
+        "gingivitis"
+      ],
+      "facet": "physiology",
+      "question": "What causes scurvy?",
+      "answer_short": "Wallach identifies scurvy, marked by bleeding gums, as a disease caused by vitamin C deficiency.",
+      "topics": [
+        "scurvy",
+        "bleeding gums",
+        "vitamin c deficiency",
+        "gum health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000117": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much vitamin C should I take a day?",
+      "answer_short": "Wallach's daily multiple recommends 250 to 1,000 mg of vitamin C (ascorbic acid) for adults and children over 9.",
+      "topics": [
+        "how much vitamin c",
+        "daily dose",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-LETS-000417": {
+      "subject": "vitamin-c",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can vitamin C be given intravenously?",
+      "answer_short": "Yes, for Reye's syndrome Wallach uses intravenous vitamin C at 5-10 grams per day.",
+      "topics": [
+        "iv vitamin c",
+        "reye's syndrome",
+        "high dose vitamin c",
+        "intravenous vitamin c"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000043": {
+      "subject": "vitamin-c",
+      "also_about": [
+        "scurvy",
+        "cancer"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of vitamin C deficiency?",
+      "answer_short": "Vitamin C deficiency can cause bleeding gums, loose teeth, bruising, dry rough skin, poor growth, slow wound healing, elevated cancer risk and scurvy.",
+      "topics": [
+        "vitamin c",
+        "deficiency",
+        "scurvy",
+        "bleeding gums"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000031": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "xerophthalmia",
+        "keratomalacia",
+        "acne"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of vitamin A deficiency?",
+      "answer_short": "Vitamin A deficiency shows up as night blindness and other eye problems, dry and bumpy skin, acne, infertility, birth defects, depression, weak immunity, poor growth, bone disease, and higher cancer risk.",
+      "topics": [
+        "deficiency",
+        "eyes",
+        "skin",
+        "symptoms"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000110": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much vitamin A should I take daily?",
+      "answer_short": "Wallach's daily multiple recommends about 2,500 to 5,000 IU of vitamin A as retinol plus 5,000 to 25,000 IU as beta-carotene for adults and children over nine.",
+      "topics": [
+        "dosage",
+        "daily-intake",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-LETS-000037": {
+      "subject": "vitamin-a",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What are the signs of too much vitamin A?",
+      "answer_short": "Vitamin A toxicity causes abdominal pain, hair loss, missed periods, cracked lips, GI upset, enlarged liver and spleen, joint pain, nausea, itching, and weight loss.",
+      "topics": [
+        "toxicity",
+        "overdose",
+        "safety",
+        "symptoms"
+      ]
+    },
+    "WAL-CLM-DDDL-000056": {
+      "subject": "vitamin-a",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "stance",
+      "question": "Can you overdose on beta-carotene?",
+      "answer_short": "Wallach says it is almost impossible to overdose on beta-carotene, the first sign being dry skin, and he uses it at a vitamin A equivalent of about 300,000 IU per day.",
+      "topics": [
+        "safety",
+        "supplements",
+        "cancer-prevention"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000032": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "rickets",
+        "osteoporosis",
+        "arthritis",
+        "tetany"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of vitamin D deficiency?",
+      "answer_short": "Vitamin D deficiency can cause facial tics, muscle cramps, tetany and convulsions, childhood rickets, osteoporosis, arthritis, kidney stones, and more.",
+      "topics": [
+        "vitamin d",
+        "vitamin d deficiency",
+        "rickets",
+        "bone health",
+        "muscle cramps"
+      ]
+    },
+    "WAL-CLM-DDDL-000083": {
+      "subject": "vitamin-d",
+      "also_about": [
+        "cholesterol",
+        "arteriosclerosis",
+        "calcium"
+      ],
+      "facet": "warning",
+      "question": "Can too much vitamin D be dangerous?",
+      "answer_short": "Yes — Wallach teaches that vitamin D toxicity is angiotoxic, targeting the elastic arteries and causing fibrosis of arterial smooth muscle and calcification of blood vessel walls.",
+      "topics": [
+        "vitamin d",
+        "vitamin d toxicity",
+        "artery calcification",
+        "heart health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000126": {
+      "subject": "iron",
+      "also_about": [
+        "anemia",
+        "oxygen"
+      ],
+      "facet": "physiology",
+      "question": "Why does the body need iron?",
+      "answer_short": "Iron sits at the center of hemoglobin, where its atoms bind oxygen in the lungs and carry it to every cell.",
+      "topics": [
+        "iron",
+        "oxygen",
+        "blood",
+        "energy",
+        "hemoglobin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000131": {
+      "subject": "iron",
+      "also_about": [
+        "anemia",
+        "pica"
+      ],
+      "facet": "physiology",
+      "question": "What are the symptoms of iron deficiency?",
+      "answer_short": "Iron deficiency brings fatigue, listlessness, palpitations on exertion, poor memory and concentration, a sore tongue, and microcytic anemia.",
+      "topics": [
+        "iron",
+        "fatigue",
+        "anemia",
+        "symptoms",
+        "brain-fog",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-RARE-000130": {
+      "subject": "iron",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "What does iron do in the body?",
+      "answer_short": "Iron builds hemoglobin and myoglobin and transfers electrons so the body can use oxygen—'iron is to hemoglobin what magnesium is to chlorophyll.'",
+      "topics": [
+        "hemoglobin",
+        "oxygen",
+        "how-iron-works"
+      ]
+    },
+    "WAL-CLM-LETS-000054": {
+      "subject": "iron",
+      "also_about": [
+        "anemia"
+      ],
+      "facet": "protocol",
+      "question": "How much iron should you take a day?",
+      "answer_short": "Wallach's baseline adult program lists 45 mg of iron a day — well above the 18 mg RDA — with a therapeutic range of 50 to 100 mg.",
+      "topics": [
+        "iron",
+        "dose",
+        "supplement",
+        "how-much",
+        "daily-intake"
+      ]
+    },
+    "WAL-CLM-IMMORT-000133": {
+      "subject": "iron",
+      "also_about": [
+        "diabetes",
+        "selenium",
+        "copper",
+        "zinc"
+      ],
+      "facet": "warning",
+      "question": "Can you get too much iron?",
+      "answer_short": "Yes — excess iron can lead to liver cirrhosis, pancreatic fibrosis, diabetes and heart failure, largely by driving up the body's need for other minerals.",
+      "topics": [
+        "iron",
+        "toxicity",
+        "overdose",
+        "liver",
+        "diabetes",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000129": {
+      "subject": "iron",
+      "also_about": [
+        "pica",
+        "anemia"
+      ],
+      "facet": "stance",
+      "question": "Is eating ice or dirt a sign of iron deficiency?",
+      "answer_short": "Yes — Wallach says pica (craving ice, dirt, paint, or excess food) is a specific sign of iron deficiency.",
+      "topics": [
+        "iron",
+        "pica",
+        "ice-eating",
+        "cravings",
+        "dirt-eating",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-LETS-000079": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis"
+      ],
+      "facet": "physiology",
+      "question": "Can a blood test detect calcium deficiency?",
+      "answer_short": "No — Wallach says your blood calcium stays in the normal range even during a raging calcium deficiency, so a standard blood test misses it.",
+      "topics": [
+        "calcium",
+        "blood-test",
+        "deficiency",
+        "diagnosis"
+      ]
+    },
+    "WAL-CLM-LETS-000004": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis",
+        "arthritis"
+      ],
+      "facet": "physiology",
+      "question": "What are the symptoms of calcium deficiency?",
+      "answer_short": "Signs range from arthritis, bone spurs, osteoporosis and tooth decay to muscle cramps, insomnia, depression, hypertension and pica.",
+      "topics": [
+        "calcium",
+        "deficiency",
+        "symptoms",
+        "bone-health"
+      ]
+    },
+    "WAL-CLM-LETS-000045": {
+      "subject": "calcium",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "protocol",
+      "question": "How much calcium should an adult take daily?",
+      "answer_short": "Wallach's baseline program sets a true daily need of 2,000 mg of calcium, with a therapeutic range of 2,000 to 5,000 mg — far above the 800 mg RDA.",
+      "topics": [
+        "calcium",
+        "dose",
+        "supplements",
+        "daily-intake"
+      ]
+    },
+    "WAL-CLM-IMMORT-000071": {
+      "subject": "calcium",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "uses",
+      "question": "Can calcium deficiency cause high blood pressure?",
+      "answer_short": "Yes — Wallach cites research linking chronic calcium deficiency to hypertension, with more than 30 studies supporting it and lower ionized calcium found in untreated hypertensives.",
+      "topics": [
+        "calcium",
+        "hypertension",
+        "blood-pressure",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-DDDL-000059": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis"
+      ],
+      "facet": "uses",
+      "question": "Can osteoporosis be cured?",
+      "answer_short": "Wallach says osteoporosis is easy to prevent and cure with proper supplementation of stomach acid (HCl) and calcium—estrogen and fluoride alone don't solve it.",
+      "topics": [
+        "osteoporosis",
+        "bone-health",
+        "supplements",
+        "stomach-acid"
+      ]
+    },
+    "WAL-CLM-DDDL-000009": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis",
+        "arthritis",
+        "tinnitus"
+      ],
+      "facet": "warning",
+      "question": "What diseases can calcium deficiency cause?",
+      "answer_short": "Wallach ties calcium deficiency to as many as 147 different diseases, from osteoporosis and arthritis to Bell's palsy, tinnitus, and trigeminal neuralgia.",
+      "topics": [
+        "calcium deficiency",
+        "osteoporosis",
+        "arthritis"
+      ]
+    },
+    "WAL-CLM-DDDL-000087": {
+      "subject": "calcium",
+      "also_about": [
+        "osteoporosis",
+        "magnesium"
+      ],
+      "facet": "stance",
+      "question": "Does taking calcium cause kidney stones?",
+      "answer_short": "No — Wallach says kidney and bladder stones are ironically caused by calcium and magnesium deficiency, with the stone minerals coming from your own bones.",
+      "topics": [
+        "kidney stones",
+        "calcium myths",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000073": {
+      "subject": "calcium",
+      "also_about": [
+        "hyperparathyroidism"
+      ],
+      "facet": "stance",
+      "question": "Do you need surgery for an enlarged parathyroid gland?",
+      "answer_short": "Wallach says no — an enlarged parathyroid from calcium deficiency is often mislabeled a 'tumor,' but supplementing usable calcium resolves it, so don't get surgery.",
+      "topics": [
+        "calcium",
+        "parathyroid",
+        "surgery",
+        "deficiency"
       ]
     }
   }

@@ -141,6 +141,11 @@
       ]
     },
     {
+      "term": "avitaminosis",
+      "plain": "a disease caused by a severe lack of one or more vitamins",
+      "category": "medical"
+    },
+    {
       "term": "b.i.d.",
       "plain": "twice a day (Latin: bis in die)",
       "category": "abbreviation",

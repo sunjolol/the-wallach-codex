@@ -165,7 +165,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['mercury is grouped into families with rows', mercury.groupCount >= 3 && mercury.totalRows >= 5],
     ['mercury: Learn More opens its Explore topic', mercury.learnKind === 'topic'],
     // ── best-first: an essential leads each family with its enriched Q&A ──
-    ['calcium shows its full claim set (110) not just the enriched slice', /\b110 answers\b/.test(calcium.heroMeta)],
+    ['calcium shows its full claim set (134) not just the enriched slice', /\b134 answers\b/.test(calcium.heroMeta)],
     ['calcium: the first family leads with an enriched Q&A (a preview line)', calcium.groups.length > 0 && calcium.groups[0].firstRowHasPrev === true],
     ['topic "See N more" reveals the hidden rows and retires', groupReveal.hidden === 0 && groupReveal.btn === false],
     // ── the ask flow (a plain question) still de-truncates ──

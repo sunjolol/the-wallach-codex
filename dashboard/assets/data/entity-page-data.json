@@ -1066,7 +1066,46 @@
         "rare-earths"
       ],
       "synonyms": [
-        "ca"
+        "calcium",
+        "Ca",
+        "calcium deficiency",
+        "low calcium",
+        "not enough calcium",
+        "lack of calcium",
+        "calcium supplement",
+        "calcium supplements",
+        "calcium pills",
+        "calcium tablets",
+        "calcium carbonate",
+        "calcium citrate",
+        "calcium gluconate",
+        "calcium lactate",
+        "calcium acetate",
+        "coral calcium",
+        "oyster shell calcium",
+        "eggshell calcium",
+        "dolomite",
+        "chelated calcium",
+        "colloidal calcium",
+        "plant-derived calcium",
+        "cal-mag",
+        "calcium magnesium",
+        "calcium and magnesium",
+        "calcium for bones",
+        "calcium for osteoporosis",
+        "calcium intake",
+        "calcium absorption",
+        "how much calcium",
+        "best form of calcium",
+        "calcium rich foods",
+        "calcium sources",
+        "calx",
+        "calcuim",
+        "caclium",
+        "calcuim deficiency",
+        "brittle bones",
+        "weak bones",
+        "bone loss"
       ],
       "record": [
         {
@@ -1224,31 +1263,106 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000174"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000009"
+          ]
+        },
+        {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000065"
+            "WAL-CLM-EPIGEN-000232",
+            "WAL-CLM-IMMORT-000065",
+            "WAL-CLM-LETS-000004",
+            "WAL-CLM-LETS-000079",
+            "WAL-CLM-RARE-000341"
           ]
         },
         {
           "facet": "mechanism",
           "claim_ids": [
+            "WAL-CLM-DDDL-000175",
+            "WAL-CLM-DDDL-000176",
+            "WAL-CLM-DDDL-000177",
+            "WAL-CLM-EPIGEN-000233",
+            "WAL-CLM-EPIGEN-000234",
             "WAL-CLM-IMMORT-000066",
             "WAL-CLM-IMMORT-000067",
             "WAL-CLM-IMMORT-000069",
-            "WAL-CLM-IMMORT-000070"
+            "WAL-CLM-IMMORT-000070",
+            "WAL-CLM-IMMORT-000291",
+            "WAL-CLM-RARE-000340"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000178",
+            "WAL-CLM-IMMORT-000292"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000059",
+            "WAL-CLM-EPIGEN-000235",
+            "WAL-CLM-HELLS-000030",
+            "WAL-CLM-IMMORT-000071"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000045"
           ]
         },
         {
           "facet": "stance",
           "claim_ids": [
+            "WAL-CLM-DDDL-000087",
+            "WAL-CLM-DDDL-000180",
             "WAL-CLM-IMMORT-000062",
-            "WAL-CLM-IMMORT-000074"
+            "WAL-CLM-IMMORT-000073",
+            "WAL-CLM-IMMORT-000074",
+            "WAL-CLM-LETS-000505"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000179"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000236"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000293"
           ]
         },
         {
           "facet": "history",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000075"
+            "WAL-CLM-DDDL-000181",
+            "WAL-CLM-IMMORT-000075",
+            "WAL-CLM-RARE-000342"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000182"
           ]
         }
       ],
@@ -2109,7 +2223,54 @@
         "rare-earths"
       ],
       "synonyms": [
-        "fe",
+        "iron",
+        "Fe",
+        "iron deficiency",
+        "iron deficient",
+        "low iron",
+        "iron levels",
+        "iron supplement",
+        "iron supplements",
+        "iron pills",
+        "iron tablets",
+        "anemia",
+        "anaemia",
+        "iron deficiency anemia",
+        "iron-deficiency anaemia",
+        "microcytic anemia",
+        "hypochromic anemia",
+        "low hemoglobin",
+        "low haemoglobin",
+        "ferritin",
+        "hemosiderin",
+        "heme iron",
+        "non-heme iron",
+        "ferrous",
+        "ferric",
+        "ferrous sulfate",
+        "ferrous sulphate",
+        "ferrous gluconate",
+        "iron oxide",
+        "metallic iron",
+        "colloidal iron",
+        "iron overload",
+        "too much iron",
+        "iron toxicity",
+        "iron poisoning",
+        "hemochromatosis",
+        "iron storage disease",
+        "pica",
+        "craving ice",
+        "eating ice",
+        "eating dirt",
+        "iron for periods",
+        "iron for heavy periods",
+        "iron in pregnancy",
+        "iron for fatigue",
+        "iron rich foods",
+        "iron absorption",
+        "iorn",
+        "iron defficiency",
         "ferrum"
       ],
       "record": [
@@ -2187,13 +2348,26 @@
         {
           "facet": "basics",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000225",
+            "WAL-CLM-EPIGEN-000226",
             "WAL-CLM-IMMORT-000125"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000133"
           ]
         },
         {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000128"
+            "WAL-CLM-EPIGEN-000227",
+            "WAL-CLM-IMMORT-000126",
+            "WAL-CLM-IMMORT-000128",
+            "WAL-CLM-IMMORT-000131",
+            "WAL-CLM-LETS-000503",
+            "WAL-CLM-RARE-000337"
           ]
         },
         {
@@ -2201,7 +2375,45 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000127",
             "WAL-CLM-IMMORT-000130",
-            "WAL-CLM-IMMORT-000132"
+            "WAL-CLM-IMMORT-000132",
+            "WAL-CLM-RARE-000130"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000290",
+            "WAL-CLM-RARE-000338"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000054",
+            "WAL-CLM-LETS-000504"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000173",
+            "WAL-CLM-EPIGEN-000228",
+            "WAL-CLM-EPIGEN-000229",
+            "WAL-CLM-IMMORT-000129"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000029"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000230",
+            "WAL-CLM-EPIGEN-000231",
+            "WAL-CLM-RARE-000339"
           ]
         }
       ],
@@ -7740,7 +7952,50 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin a",
+        "vitamin-a",
+        "vit a",
+        "vit-a",
+        "vitamin a1",
+        "retinol",
+        "retinoic acid",
+        "retinyl esters",
+        "retinyl palmitate",
+        "retinoids",
+        "preformed vitamin a",
+        "beta carotene",
+        "beta-carotene",
+        "betacarotene",
+        "beta carotine",
+        "carotene",
+        "carotenoids",
+        "provitamin a",
+        "pro-vitamin a",
+        "vitamin a deficiency",
+        "low vitamin a",
+        "vitamin a supplement",
+        "vitamin a foods",
+        "foods with vitamin a",
+        "vitamin a dose",
+        "how much vitamin a",
+        "vitamin a overdose",
+        "vitamin a toxicity",
+        "too much vitamin a",
+        "night blindness",
+        "nyctalopia",
+        "xerophthalmia",
+        "keratomalacia",
+        "keratosis",
+        "shark skin",
+        "goose bumps skin",
+        "bumpy skin on arms",
+        "dry eyes",
+        "bitot's spots",
+        "avitaminosis a",
+        "vitamn a",
+        "vitiamin a"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -7842,7 +8097,88 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000213",
+            "WAL-CLM-EPIGEN-000214"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000169",
+            "WAL-CLM-DDDL-000170",
+            "WAL-CLM-EPIGEN-000217",
+            "WAL-CLM-LETS-000037"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000166",
+            "WAL-CLM-EPIGEN-000031",
+            "WAL-CLM-EPIGEN-000215"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000165",
+            "WAL-CLM-IMMORT-000284"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000216",
+            "WAL-CLM-IMMORT-000285",
+            "WAL-CLM-RARE-000335"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000167",
+            "WAL-CLM-LETS-000501",
+            "WAL-CLM-LETS-000502"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000168",
+            "WAL-CLM-EPIGEN-000110"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000056"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000218"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000028"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000219",
+            "WAL-CLM-IMMORT-000286",
+            "WAL-CLM-RARE-000336"
+          ]
+        }
+      ],
       "conditions": [
         "acne",
         "aids",
@@ -8690,7 +9026,34 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin c",
+        "vitamin-c",
+        "vit c",
+        "vit-c",
+        "ascorbic acid",
+        "ascorbate",
+        "ascorbic",
+        "hexuronic acid",
+        "vitamin c deficiency",
+        "vitamin c supplement",
+        "vitamin c supplements",
+        "vitamin c pills",
+        "vitamin c tablets",
+        "vitamin c dose",
+        "vitamin c dosage",
+        "how much vitamin c",
+        "vitamin c for colds",
+        "vitamin c and cancer",
+        "vitamin c foods",
+        "foods high in vitamin c",
+        "low vitamin c",
+        "vitamin c benefits",
+        "vitamine c",
+        "vitimin c",
+        "vitiman c",
+        "scurvy"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8786,7 +9149,88 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000205"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000164",
+            "WAL-CLM-EPIGEN-000043",
+            "WAL-CLM-EPIGEN-000209",
+            "WAL-CLM-IMMORT-000281"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000207",
+            "WAL-CLM-LETS-000428",
+            "WAL-CLM-LETS-000499"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000206",
+            "WAL-CLM-EPIGEN-000208"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000024"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000025",
+            "WAL-CLM-IMMORT-000280",
+            "WAL-CLM-LETS-000417"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000163",
+            "WAL-CLM-EPIGEN-000117",
+            "WAL-CLM-HELLS-000023",
+            "WAL-CLM-LETS-000500"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000026"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000282"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000212",
+            "WAL-CLM-IMMORT-000283"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000210",
+            "WAL-CLM-EPIGEN-000211",
+            "WAL-CLM-HELLS-000027"
+          ]
+        }
+      ],
       "conditions": [
         "abrasions",
         "abscess",
@@ -8897,7 +9341,51 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin D",
+        "vitamin d",
+        "vit D",
+        "vit d",
+        "vitamin-d",
+        "vitamin D3",
+        "vitamin d3",
+        "vitamin D2",
+        "vitamin d2",
+        "D3",
+        "D2",
+        "cholecalciferol",
+        "calciferol",
+        "ergocalciferol",
+        "calcitriol",
+        "calcidiol",
+        "7-dehydrocholesterol",
+        "25-hydroxycholecalciferol",
+        "sunshine vitamin",
+        "the sunshine vitamin",
+        "sun vitamin",
+        "vitamin d deficiency",
+        "low vitamin d",
+        "vitamin d dificiency",
+        "vit d deficiency",
+        "vitamin d supplement",
+        "vitamin d supplements",
+        "vitamin d dosage",
+        "how much vitamin d",
+        "vitamin d toxicity",
+        "too much vitamin d",
+        "vitamin d overdose",
+        "vitamin d benefits",
+        "vitamin d side effects",
+        "vitamin d and calcium",
+        "vitamin d for bones",
+        "vitamin d and cancer",
+        "vitamin d and rickets",
+        "vitamin d rich foods",
+        "vitamin d from sun",
+        "vitamin d hormone",
+        "is vitamin d a hormone",
+        "cod liver oil"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8955,7 +9443,70 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000220"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000083",
+            "WAL-CLM-EPIGEN-000032"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000287"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000288"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000289"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000171",
+            "WAL-CLM-DDDL-000172"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000221"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000222"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000223"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000224"
+          ]
+        }
+      ],
       "conditions": [
         "angina",
         "arthritis",
@@ -10156,7 +10707,61 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "omega-3",
+        "omega 3",
+        "omega3",
+        "omega-3s",
+        "omega 3s",
+        "omega threes",
+        "omega-3 fatty acid",
+        "omega 3 fatty acids",
+        "omega-3 fatty acids",
+        "n-3",
+        "n-3 fatty acid",
+        "alpha-linolenic acid",
+        "alpha linolenic acid",
+        "ALA",
+        "linolenic acid",
+        "DHA",
+        "docosahexaenoic acid",
+        "EPA",
+        "eicosapentaenoic acid",
+        "essential fatty acids",
+        "essential fatty acid",
+        "EFA",
+        "EFAs",
+        "vitamin F",
+        "fish oil",
+        "fish oil supplement",
+        "cod liver oil",
+        "salmon oil",
+        "flaxseed oil",
+        "flax oil",
+        "flax seed oil",
+        "flaxseed",
+        "good fats",
+        "healthy fats",
+        "omega-3 deficiency",
+        "omega 3 deficiency",
+        "essential fatty acid deficiency",
+        "EFA deficiency",
+        "low omega-3",
+        "not enough omega-3",
+        "omega-3 supplement",
+        "omega 3 supplement",
+        "omega-3 benefits",
+        "omega-3 for the heart",
+        "omega-3 for depression",
+        "omega-3 for skin",
+        "how much omega-3",
+        "omega-3 vs omega-6",
+        "omega-3 to omega-6 ratio",
+        "dry skin means essential fatty acids",
+        "DSM/EFA",
+        "omeaga 3",
+        "omega -3"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -10267,7 +10872,92 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000063",
+            "WAL-CLM-EPIGEN-000197"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000162",
+            "WAL-CLM-HELLS-000021",
+            "WAL-CLM-LETS-000011"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000157",
+            "WAL-CLM-EPIGEN-000200",
+            "WAL-CLM-IMMORT-000053",
+            "WAL-CLM-RARE-000334"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000158",
+            "WAL-CLM-DDDL-000159",
+            "WAL-CLM-EPIGEN-000198",
+            "WAL-CLM-EPIGEN-000199",
+            "WAL-CLM-EPIGEN-000201"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000161",
+            "WAL-CLM-HELLS-000020",
+            "WAL-CLM-IMMORT-000278"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000160",
+            "WAL-CLM-IMMORT-000279",
+            "WAL-CLM-LETS-000497",
+            "WAL-CLM-LETS-000498",
+            "WAL-CLM-RARE-000283"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000115",
+            "WAL-CLM-IMMORT-000277"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-RARE-000055"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000204"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000202",
+            "WAL-CLM-HELLS-000022"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000203"
+          ]
+        }
+      ],
       "conditions": [
         "acne",
         "alcoholism",

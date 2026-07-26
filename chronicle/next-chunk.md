@@ -1,48 +1,33 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-26 · BATCH 1 (zinc+magnesium) LIVE at kv401; entity/search hero synonym-dump fixed; ALL 10 touch-ups done → the WHOLE 39-element queue is seal-ready; NEXT = Batch 2)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-26 · BATCH 2 (high-value 6) SEALED LIVE at kv402; 31 elements remain; NEXT = Batch 3)
 
 # ★★★★★ READ FIRST (plain language)
-The enrichment queue (39 elements of "Worth knowing" search claims) is being pushed live in **selective batches** — Luneth reviews a batch, approves, then he seals it. **Batch 1 (zinc + magnesium) is DONE + LIVE** (corpus sealed kv401; board green 77/77). The re-verify→filter→finalize→seal→wire→build→probe pipeline is PROVEN, TOOLED, and PERSISTED; every remaining claim is verified seal-ready. `corpus_seal` is user-run (Luneth authorizes each seal).
+The enrichment queue (39 elements of "Worth knowing" search claims) is being pushed live in **selective batches** — Luneth reviews a batch in an exact-form review artifact, approves, then authorizes the seal. **Batch 1 (zinc + magnesium) + Batch 2 (the high-value 6: omega-3 · vitamin-c · vitamin-a · vitamin-d · iron · calcium) are DONE + LIVE** (corpus sealed kv402; board green 77/77). The review→filter→finalize→**pre-seal RED-gate check**→seal→wire→build→probe pipeline is PROVEN, TOOLED, and PERSISTED. `corpus_seal` is Luneth-authorized each time (he ran/OK'd it).
 
-## ★★★ NEXT TASK (Luneth 2026-07-26): SEAL BATCH 2 = the HIGH-VALUE 6
-**omega-3 · vitamin-c · vitamin-a · vitamin-d · iron · calcium.** Run the proven pipeline (see "HOW TO SEAL THE NEXT BATCH" below), using `temporary/enrichment-queue/pilot/corrected_master_queue.json` as the seal source (it has all fixes + the 10 touch-ups baked in). Steps: build a focused exact-form REVIEW ARTIFACT for these 6 → Luneth approves → `scripts/build_pilot_seal.py` (repoint PILOT list + the scratchpad paths) filters raw+enrichmap → finalize per book → **Luneth runs corpus_seal** → wire enrichment+entities → build_embeds → build → invariants → render_probe_search → round-close. WATCH: enrichment id collisions (widen also_about, never clobber — see WAL-CLM-DDDL-000053 precedent) + the `claim_text_term_gloss` gate (a common_swaps term in a new claim_text reddens the board post-seal; fix the draft claim_text + re-seal). Then continue batching the remaining 31.
+## ★★★ NEXT TASK: SEAL BATCH 3 (Luneth picks the elements)
+31 elements remain (list below). Recommend the next tier by search-value: the **B-vitamins** (b1·b2·b3·b5·b6·b9·b12 — commonly searched) + **copper · chromium · potassium · iodine · vitamin-e**. Luneth names the batch; then run the proven recipe below using `temporary/enrichment-queue/pilot/corrected_master_queue.json` as the seal source (all fixes + touch-ups baked in).
 
-## WHAT SHIPPED (batch 1, commit c942e724)
-- **zinc** (36 claims · Zn · 32 synonyms) + **magnesium** (35 · Mg · 44 synonyms) sealed + wired + live in Ask-Wallach search.
-- 48 new claims finalized across 6 books + 24 reuse enrichments + 2 canon_ref entities. search-enrichment 404→475, search-entities 86→88.
-- Re-sealed once (kv400→kv401) to fix one gloss regression the `claim_text_term_gloss` gate caught post-seal.
+## THE 31 REMAINING ELEMENTS (queued, re-verified, ready to batch)
+vitamin-b1 · vitamin-b2 · vitamin-b3 · vitamin-b5 · vitamin-b6 · vitamin-b9 · vitamin-b12 · vitamin-e · vitamin-k · biotin · choline · inositol · flavonoids · chromium · copper · vanadium · iodine · germanium · manganese · sodium · potassium · phosphorus · boron · sulfur · cobalt · lithium · molybdenum · chloride · arginine · taurine · tryptophan
 
-## THE RE-VERIFICATION IS DONE FOR ALL 39 ELEMENTS (do NOT repeat it)
-The queue's army left 146 claims flagged REVISE with STALE/unreliable verify flags (some already-fixed, some genuinely broken — the flag can't be trusted as a seal filter). A 13-agent workflow re-verified ALL 146 against book context; every fix was deterministically re-checked against book bytes. Results persisted (gitignored) in **`temporary/enrichment-queue/pilot/`**:
-- `corrected_master_queue.json` — the FULL queue with the 23 verified fixes applied (all elements). **Use THIS, not the original master_queue, as the seal source.**
-- `reverify_results.json` — trustworthy per-claim status for all 146 REVISE (SEAL_READY / HOLD, with the fix text).
-- `qid_map.json` — proven queue_id → {book, raw_index} map (all 547 mine_new claims).
-- `scripts/` — the reusable seal pipeline (paths hardcode the OLD session scratchpad — repoint before reuse).
+## HOW TO SEAL THE NEXT BATCH (proven recipe — Batch 1 + 2)
+The reusable scripts live in this session's scratchpad (`.../eaf40b58-.../scratchpad/`): `build_batch2_seal.py`, `verify_drafts_batch2.py`, `compute_wiring_batch2.py`, `precheck_new_claims.py`, `reset_two_drafts.py`, `fix_atp_gloss.py`, `add_glossary_term.py`, `build_review_html.py`, `batch2_analyze.py`. Repoint the PILOT list + the scratchpad STAGE paths, then:
+1. Luneth names the elements.
+2. Build a focused exact-form REVIEW ARTIFACT (batch2_analyze.py → build_review_html.py: byte-verify every verbatim ⊆ book source, resolve every enrich_existing, render Q→short→full→verbatim) → Luneth approves (the visual-verification gate). SendUserFile the HTML.
+3. `build_batch2_seal.py` (repoint PILOT + STAGE): filters per-book raw+enrichmap to the chosen elements from the corrected queue; also_about filtered to resolvable slugs; writes seal-staging.
+4. `corpus_extract finalize --book <b> --raw <staged raw>` per affected book — **ONE finalize per book** (a 2nd finalize DROPS the 1st AND inflates ids). If you must re-finalize (e.g. to fix a claim_text), FIRST reset that book's draft to sealed content (see reset_two_drafts.py) so ids stay contiguous (existing_max_seq reads shard+draft — memory refinalize-inflates-ids).
+5. **★ NEW — PRE-SEAL RED-GATE CHECK (`precheck_new_claims.py`): run the 112-style new draft claims through references_resolve · claim_text_term_gloss · internal_refs_out_of_prose · prose_contained BEFORE the seal.** This caught the ATP-gloss red in Batch 2 pre-seal and saved a re-seal cycle. Fix any red in the queue's answer_full → re-finalize (with the reset above) → re-check. Add any missing jargon to glossary.json (hand-authored, writable) to clear the jargon warning.
+6. Pre-flight: `corpus_verify.run_checks(skip_index_derive_check=True)` + `corpus_seal.draft_offset_failures()` both empty.
+7. `verify_drafts_batch2.py` (capture new ids — run PRE-seal; the count math needs pre-seal sealed counts) → **Luneth authorizes `corpus_seal`**.
+8. `compute_wiring_batch2.py` (merge enrichment + entities). **WATCH: id collisions → widen also_about, never clobber (self-subject widen suppressed); and ALREADY-REGISTERED entities (like iron/calcium in Batch 2) must be UNION-merged, never overwritten — preserve existing synonyms/related.** → `safe_write rewrite` search-enrichment.json + search-entities.json (post-seal).
+9. `build_embeds` → `build.mjs` → `invariants` → `render_probe_search` (update the calcium/other hardcoded answer-count anchors if the batch grew that element — verify the new number = distinct claim ids in the entity-page record, don't just bump to pass) → round-close (build-log · creators-log · re-inline build · commit+push).
 
-## HOW TO SEAL THE NEXT BATCH (proven recipe)
-1. Luneth names the next elements (biggest/highest-search-value first — see the readiness table logic in `scripts/readiness.py`).
-2. Build a focused exact-form REVIEW ARTIFACT for those elements (from `corrected_master_queue.json`) → Luneth approves (the visual-verification gate).
-3. `scripts/build_pilot_seal.py` (repoint PILOT list + paths): filters per-book raw+enrichmap to the chosen elements from the corrected queue, fixes baked in, also_about filtered to resolvable slugs, writes `seal-staging/`.
-4. `corpus_extract finalize --book <b> --raw <staged raw>` per affected book (ONE finalize per book — it appends onto the sealed shard; a 2nd finalize DROPS the 1st).
-5. Pre-flight: `corpus_verify.run_checks(skip_index_derive_check=True)` + `corpus_seal.draft_offset_failures()` both empty → seal will pass.
-6. **Luneth runs `corpus_seal`** (user-only).
-7. `scripts/verify_drafts.py` (capture new ids) → `scripts/compute_wiring.py` (merge enrichment + entities; WATCH for id collisions → widen also_about, never clobber) → `safe_write rewrite` search-enrichment.json + search-entities.json.
-8. `build_embeds` → `build.mjs` → `invariants.py` (WATCH `claim_text_term_gloss` — a common_swaps term in a new claim_text reddens it; fix the draft claim_text + re-seal) → `render_probe_search` → round-close.
-
-## TOUCH-UPS — DONE (2026-07-26; applied to corrected_master_queue.json, re-reviewed at each element's batch-seal)
-All 10 resolved + validated (exact book substring, 60-1200 chars, answer numbers grounded):
-- **iron-035** re-verified SEAL_AS_IS (workflow had dropped it; faithful, verbatim carries the 8-12%/3-5% figures; advocacy-conclusion defect already removed).
-- **vitamin-b9-009** folic-acid answers confirmed + verbatim widened to the FIG. 8-1 Folic-Acid row cluster (was the wrong Copper/Fluoride row).
-- **calcium-035** verbatim widened to the FIG. 8-1 header + CALCIUM row (self-documenting).
-- **phosphorus-020** verbatim widened to the PHOSPHORUS 800/0.0/0.0 row cluster.
-- **vitamin-k-010** verbatim set to the VITAMIN K 70/140/140 row (the earlier "missing 30" was a false positive - "30-day" is a column label).
-- **vitamin-b3-008 / sodium-032** de-hedged ("about 3,000"->"3,000"; "~15 grams"->"15 grams").
-- **copper-032 / vitamin-b12-004 / manganese-000** verbatims re-snapped to the sentence carrying the answer's figure (copper: the 8-12%->3-5% availability sentence; b12: the 1926 raw-liver sentence; manganese: the 10-20 mg body-content -> ear-bones/joint-cartilage span).
-The whole 39-element queue is now seal-ready in corrected_master_queue.json (the seal source); reverify_results.json HOLD flags for the 5 are superseded.
-
-## THE 37 REMAINING ELEMENTS (queued, re-verified, ready to batch)
-omega-3 · vitamin-a · vitamin-b1 · vitamin-b2 · vitamin-b3 · vitamin-b5 · vitamin-b6 · vitamin-b9 · vitamin-b12 · vitamin-c · vitamin-d · vitamin-e · vitamin-k · biotin · choline · inositol · flavonoids · chromium · copper · vanadium · iron · iodine · germanium · manganese · sodium · calcium · potassium · phosphorus · boron · sulfur · cobalt · lithium · molybdenum · chloride · arginine · taurine · tryptophan
+## WHAT SHIPPED (batch 2, kv402)
+- **112 new claims** across 6 books (dddl 26 · epigenetics 40 · hells-kitchen 11 · immortality 17 · lets-play-doctor 9 · rare-earths 9) + 42 reuse enrichments.
+- search-enrichment 475→617 (142 new + 12 non-destructive collision merges), search-entities 88→92 (4 new + iron/calcium union-merged). glossary +avitaminosis. corpus_seal kv401→kv402 (1467→1579 claims).
+- Board 77/77 · render_probe_search PASS · omega-3 Ask-Wallach visually confirmed (107 answers, 5 families).
 
 ## STILL DEFERRED (after the queue is sealed)
-- ~14 substantive elements NOT yet mined (9 amino acids — batch 8 staged in the OLD scratchpad, gone now; re-stage; + omega-6, omega-9, silica, silver, tin, nickel, oxygen, hydrogen, carbon, nitrogen).
+- **vitamin-d hero shows canonical "Cholecalciferol"** (canon display-name) — flag for a possible future "Vitamin D" display preference (applies to any vitamin whose canon name is the chemical form).
+- ~14 substantive elements NOT yet mined (9 amino acids — re-stage; + omega-6, omega-9, silica, silver, tin, nickel, oxygen, hydrogen, carbon, nitrogen).
 - 35 rare-earth trace minerals → the plant-derived-mineral GROUP treatment (never individual).
 - **Design elements** (the illustrated hero per element, selenium/omega style) — the pass AFTER the claims are sealed.
