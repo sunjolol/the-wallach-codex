@@ -20878,6 +20878,140 @@
         "distribution of zirconium",
         "occurrence in nature"
       ]
+    },
+    "WAL-CLM-EPIGEN-000074": {
+      "subject": "cadmium",
+      "also_about": [
+        "zinc"
+      ],
+      "facet": "physiology",
+      "question": "Does cadmium have any biological function in the body?",
+      "answer_short": "Despite being a toxic heavy metal, cadmium has real biological roles: it can substitute for zinc in zinc-deficient enzymes, it triggers the hatching of nematode (worm) cysts, and cadmium-bound proteins occur naturally in molluscs and horse kidney.",
+      "topics": [
+        "cadmium",
+        "zinc-substitution",
+        "heavy-metal",
+        "biological-function"
+      ]
+    },
+    "WAL-CLM-RARE-000143": {
+      "subject": "cadmium",
+      "also_about": [
+        "zinc",
+        "copper",
+        "calcium",
+        "selenium"
+      ],
+      "facet": "warning",
+      "question": "Is cadmium toxic, and what does it do in the body?",
+      "answer_short": "Wallach treats cadmium mainly as a toxic metal that builds up in the kidney and displaces four essential minerals — zinc, copper, calcium and selenium — from the enzymes that depend on them.",
+      "topics": [
+        "cadmium",
+        "kidney",
+        "heavy-metal-toxicity",
+        "mineral-displacement"
+      ]
+    },
+    "WAL-CLM-DDDL-000061": {
+      "subject": "estrogen",
+      "also_about": [
+        "osteoporosis",
+        "breast_cancer"
+      ],
+      "facet": "warning",
+      "question": "Is estrogen therapy safe for osteoporosis?",
+      "answer_short": "Wallach opposes estrogen for osteoporosis: it can cause breast and uterine cancer, and he treats the disease as a mineral/absorption failure — betaine HCl, calcium, magnesium and colloidal minerals — not a hormone deficiency.",
+      "topics": [
+        "estrogen",
+        "osteoporosis",
+        "breast-cancer",
+        "uterine-cancer",
+        "hormone-therapy"
+      ]
+    },
+    "WAL-CLM-DDDL-000091": {
+      "subject": "estrogen",
+      "also_about": [
+        "menopause",
+        "breast_cancer"
+      ],
+      "facet": "stance",
+      "question": "Should you take estrogen during menopause?",
+      "answer_short": "Wallach advises against estrogen in menopause — it raises breast/uterine cancer risk — treating menopause as a normal transition to support: as the ovaries wind down, the adrenals and liver take over, aided by calcium, magnesium, diet and herbs.",
+      "topics": [
+        "estrogen",
+        "menopause",
+        "breast-cancer",
+        "uterine-cancer",
+        "hormone-replacement"
+      ]
+    },
+    "WAL-CLM-RARE-000201": {
+      "subject": "hydrogen-peroxide",
+      "also_about": [
+        "oxygen"
+      ],
+      "facet": "uses",
+      "question": "How does food-grade hydrogen peroxide work as an oxygen therapy?",
+      "answer_short": "Wallach frames food-grade hydrogen peroxide as an oxygen therapy: diluted on an empty stomach or given IV, it's absorbed through the stomach and duodenal walls into the bloodstream, where it splits into water and singlet oxygen.",
+      "topics": [
+        "hydrogen-peroxide",
+        "oxygen-therapy",
+        "singlet-oxygen",
+        "food-grade-peroxide"
+      ]
+    },
+    "WAL-CLM-RARE-000202": {
+      "subject": "hydrogen-peroxide",
+      "also_about": [
+        "oxygen",
+        "cancer",
+        "emphysema",
+        "asthma"
+      ],
+      "facet": "history",
+      "question": "What has hydrogen peroxide therapy been used to treat?",
+      "answer_short": "Wallach says hydrogen peroxide has served as an oxygen therapy since the Civil War, and for 50+ years in Europe — for cancer, circulatory disease, emphysema, asthma and gangrene, and lately to revive dormant cells after a stroke.",
+      "topics": [
+        "hydrogen-peroxide",
+        "oxygen-therapy",
+        "cancer",
+        "europe",
+        "history"
+      ]
+    },
+    "WAL-CLM-RARE-000199": {
+      "subject": "hydrogen-peroxide",
+      "also_about": [
+        "oxygen"
+      ],
+      "facet": "mechanism",
+      "question": "How does the body use hydrogen peroxide to fight infection?",
+      "answer_short": "Wallach explains the body makes its own hydrogen peroxide: neutrophils produce it in organelles called peroxisomes to kill microbes, parasites and cancer cells, and the enzyme catalase breaks the excess into water and singlet oxygen.",
+      "topics": [
+        "hydrogen-peroxide",
+        "neutrophils",
+        "peroxisomes",
+        "catalase",
+        "immune-defense"
+      ]
+    },
+    "WAL-CLM-RARE-000109": {
+      "subject": "arachidonic-acid",
+      "also_about": [
+        "omega-6",
+        "omega-3"
+      ],
+      "facet": "basics",
+      "question": "Is arachidonic acid an essential fatty acid?",
+      "answer_short": "Arachidonic acid is usually counted among the essential fatty acids, but Wallach says only linoleic and linolenic truly are — the body can make arachidonic acid from linoleic acid, so it need not come from food.",
+      "topics": [
+        "arachidonic-acid",
+        "essential-fatty-acids",
+        "linoleic-acid",
+        "linolenic-acid",
+        "omega-6"
+      ]
     }
   }
 }

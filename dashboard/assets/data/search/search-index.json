@@ -128,6 +128,21 @@
       ],
       "claim_count": 7
     },
+    "arachidonic-acid": {
+      "display_name": "Arachidonic Acid",
+      "type": "concept",
+      "synonyms": [
+        "arachidonic acid",
+        "arachidonate",
+        "arachidonic",
+        "omega-6 fatty acid"
+      ],
+      "related": [
+        "omega-6",
+        "omega-3"
+      ],
+      "claim_count": 1
+    },
     "arginine": {
       "display_name": "Arginine",
       "common_name": "Arginine",
@@ -153,9 +168,6 @@
         "taurine",
         "tyrosine",
         "lysine",
-        "ornithine",
-        "citrulline",
-        "nitric-oxide",
         "erectile_dysfunction"
       ],
       "claim_count": 12
@@ -196,7 +208,6 @@
       ],
       "related": [
         "sulfur",
-        "arsenic-trioxide",
         "manganese",
         "choline",
         "carpal_tunnel_syndrome",
@@ -318,8 +329,7 @@
         "magnesium",
         "hafnium",
         "scandium",
-        "zirconium",
-        "berylliosis"
+        "zirconium"
       ],
       "claim_count": 6,
       "symbol": "Be"
@@ -425,7 +435,6 @@
         "copper",
         "chromium",
         "cancer",
-        "testosterone",
         "estrogen"
       ],
       "claim_count": 15,
@@ -478,6 +487,30 @@
         "margarine"
       ],
       "claim_count": 9
+    },
+    "cadmium": {
+      "display_name": "Cadmium",
+      "type": "element",
+      "synonyms": [
+        "cadmium",
+        "cd",
+        "heavy metal",
+        "cadmium toxicity",
+        "cadmium poisoning",
+        "is cadmium toxic",
+        "cadmium and zinc",
+        "cadmium in cigarettes"
+      ],
+      "related": [
+        "zinc",
+        "copper",
+        "calcium",
+        "selenium",
+        "mercury",
+        "obscure_elements"
+      ],
+      "claim_count": 2,
+      "symbol": "Cd"
     },
     "calcium": {
       "display_name": "Calcium",
@@ -1283,6 +1316,30 @@
       ],
       "claim_count": 5
     },
+    "estrogen": {
+      "display_name": "Estrogen",
+      "type": "topic",
+      "synonyms": [
+        "estrogen",
+        "oestrogen",
+        "estrogen therapy",
+        "estrogen replacement",
+        "estrogen supplements",
+        "hormone replacement therapy",
+        "hrt",
+        "estradiol",
+        "female hormone",
+        "is estrogen safe",
+        "estrogen and cancer"
+      ],
+      "related": [
+        "osteoporosis",
+        "menopause",
+        "boron",
+        "breast_cancer"
+      ],
+      "claim_count": 2
+    },
     "europium": {
       "display_name": "Europium",
       "common_name": "Europium",
@@ -1648,8 +1705,7 @@
       "related": [
         "zirconium",
         "beryllium",
-        "scandium",
-        "thorium"
+        "scandium"
       ],
       "claim_count": 2,
       "symbol": "Hf"
@@ -1852,6 +1908,28 @@
       ],
       "claim_count": 11,
       "symbol": "H"
+    },
+    "hydrogen-peroxide": {
+      "display_name": "Hydrogen Peroxide",
+      "type": "topic",
+      "synonyms": [
+        "hydrogen peroxide",
+        "h2o2",
+        "food grade hydrogen peroxide",
+        "food-grade peroxide",
+        "peroxide",
+        "hydrogen peroxide therapy",
+        "oxygen therapy",
+        "35% food grade",
+        "hydrogen peroxide for cancer"
+      ],
+      "related": [
+        "oxygen",
+        "cancer",
+        "emphysema",
+        "asthma"
+      ],
+      "claim_count": 3
     },
     "hydrotherapy": {
       "display_name": "Hydrotherapy",
@@ -2725,15 +2803,12 @@
         "what does nitrogen do"
       ],
       "related": [
-        "protein",
         "amino_acids",
         "phosphorus",
         "iron",
         "sulfur",
         "cobalt",
         "chromium",
-        "nitrates",
-        "nitrites",
         "liver_disease",
         "kidney_disease",
         "cancer"
@@ -2857,9 +2932,7 @@
       ],
       "related": [
         "omega-3",
-        "arachidonic-acid",
-        "gamma-linolenic-acid",
-        "docosahexaenoic-acid"
+        "arachidonic-acid"
       ],
       "claim_count": 4
     },
@@ -2946,8 +3019,7 @@
         "stroke",
         "water",
         "germanium",
-        "hydrogen-peroxide",
-        "minerals"
+        "hydrogen-peroxide"
       ],
       "claim_count": 6,
       "symbol": "O"
@@ -3305,8 +3377,7 @@
         "Re rhenium"
       ],
       "related": [
-        "molybdenum",
-        "thyroid"
+        "molybdenum"
       ],
       "claim_count": 5,
       "symbol": "Re"
@@ -3409,7 +3480,6 @@
       "related": [
         "beryllium",
         "hafnium",
-        "thorium",
         "zirconium"
       ],
       "claim_count": 4,
@@ -3514,12 +3584,10 @@
         "silver sulfadiazine"
       ],
       "related": [
-        "silver-nitrate",
         "conjunctivitis",
         "epilepsy",
         "tonsillitis",
         "cystitis",
-        "whooping_cough",
         "shingles",
         "cancer",
         "immune_depression",
@@ -3796,8 +3864,7 @@
         "terbium in the body"
       ],
       "related": [
-        "yttrium",
-        "thorium"
+        "yttrium"
       ],
       "claim_count": 4,
       "symbol": "Tb"
@@ -3852,8 +3919,7 @@
         "ytterbium",
         "yttrium",
         "erbium",
-        "dysprosium",
-        "thorium"
+        "dysprosium"
       ],
       "claim_count": 6,
       "symbol": "Tm"
@@ -3948,13 +4014,10 @@
       ],
       "related": [
         "vitamin-b3",
-        "serotonin",
-        "melatonin",
         "phenylalanine",
         "tyrosine",
         "depression",
-        "pellagra",
-        "5-htp"
+        "pellagra"
       ],
       "claim_count": 12
     },
@@ -4201,7 +4264,6 @@
         "beriberi",
         "dementia",
         "alzheimers",
-        "korsakoff",
         "congestive_heart_failure",
         "alcoholism",
         "cancer"
@@ -4395,8 +4457,6 @@
         "what is vitamin b5"
       ],
       "related": [
-        "coenzyme-a",
-        "acetylcholine",
         "vitamin-b1",
         "depression",
         "anemia",
@@ -4787,7 +4847,6 @@
         "erbium",
         "thulium",
         "lutetium",
-        "thorium",
         "calcium"
       ],
       "claim_count": 3,
@@ -4895,7 +4954,6 @@
       "related": [
         "hafnium",
         "scandium",
-        "thorium",
         "beryllium",
         "rare_earth_elements"
       ],
@@ -5608,6 +5666,36 @@
       }
     },
     {
+      "id": "WAL-CLM-DDDL-000061",
+      "subject": "estrogen",
+      "also_about": [
+        "osteoporosis",
+        "breast_cancer"
+      ],
+      "facet": "warning",
+      "question": "Is estrogen therapy safe for osteoporosis?",
+      "answer_short": "Wallach opposes estrogen for osteoporosis: it can cause breast and uterine cancer, and he treats the disease as a mineral/absorption failure — betaine HCl, calcium, magnesium and colloidal minerals — not a hormone deficiency.",
+      "answer": "Wallach considers estrogen the wrong treatment for osteoporosis, and a risky one: it may be contraindicated because of a carcinogenic effect — it is known to cause breast and uterine cancer. His deeper objection is that he does not see osteoporosis as an estrogen-deficiency disease at all, but as a mineral-and-absorption failure — his program corrects stomach acid with betaine HCl and pancreatic enzymes and supplies calcium, magnesium and the plant-derived colloidal minerals (including boron) that bone actually needs. In that view hormone replacement treats a symptom while missing the real deficiency.",
+      "verbatim": "Estrogen may be contraindicated because of the potential carcinogenic\neffect: it is known to cause breast and uterine cancer.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "estrogen",
+        "osteoporosis",
+        "breast-cancer",
+        "uterine-cancer",
+        "hormone-therapy"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "osteoporosis",
+          "breast_cancer",
+          "uterine_cancer",
+          "cancer"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-DDDL-000063",
       "subject": "omega-3",
       "also_about": [],
@@ -5753,6 +5841,36 @@
         "conditions": [
           "kidney_stones",
           "bladder_stones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000091",
+      "subject": "estrogen",
+      "also_about": [
+        "menopause",
+        "breast_cancer"
+      ],
+      "facet": "stance",
+      "question": "Should you take estrogen during menopause?",
+      "answer_short": "Wallach advises against estrogen in menopause — it raises breast/uterine cancer risk — treating menopause as a normal transition to support: as the ovaries wind down, the adrenals and liver take over, aided by calcium, magnesium, diet and herbs.",
+      "answer": "On menopause, Wallach's stance is that estrogen supplements should not be used, because they raise the risk of inducing breast and uterine cancer. He treats menopause not as a disease needing hormone 'treatment' but as a normal transition to support: as the ovaries wind down, the adrenals and liver take over female-hormone production, and the aim is to smooth that shift — with the base-line supplement program plus extra calcium and magnesium, two eggs and red meat daily, a monthly liver flush, betaine HCl and pancreatic enzymes, and herbs such as lady's mantle, motherwort and St. John's wort.",
+      "verbatim": "Estrogen supplements should not be used as\nthey increase the breast and uterine cancer induction risk.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "estrogen",
+        "menopause",
+        "breast-cancer",
+        "uterine-cancer",
+        "hormone-replacement"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "menopause",
+          "breast_cancer",
+          "uterine_cancer",
+          "cancer"
         ]
       }
     },
@@ -10917,6 +11035,26 @@
           "beryllium"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000074",
+      "subject": "cadmium",
+      "also_about": [
+        "zinc"
+      ],
+      "facet": "physiology",
+      "question": "Does cadmium have any biological function in the body?",
+      "answer_short": "Despite being a toxic heavy metal, cadmium has real biological roles: it can substitute for zinc in zinc-deficient enzymes, it triggers the hatching of nematode (worm) cysts, and cadmium-bound proteins occur naturally in molluscs and horse kidney.",
+      "answer": "Wallach notes that cadmium -- a soft metal chemically similar to zinc, best known as a kidney-accumulating heavy metal -- nonetheless has biological functions: it can substitute for zinc in zinc-deficiency states by activating some zinc-dependent enzymes (such as carbonic anhydrase in marine diatoms), it stimulates the hatching of nematode (worm) cysts, and cadmium-bound proteins have been isolated from molluscs and horse kidney. He adds the historical note that the 1907 British Pharmaceutical Codex listed cadmium iodide as a therapy for enlarged joints, scrofulous (tuberculous) glands, and chilblains.",
+      "verbatim": "Cadmium can substitute for zinc in zinc deficiency states by its ability\nto activate some zinc dependent enzymes",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "cadmium",
+        "zinc-substitution",
+        "heavy-metal",
+        "biological-function"
+      ]
     },
     {
       "id": "WAL-CLM-EPIGEN-000075",
@@ -32462,6 +32600,34 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000109",
+      "subject": "arachidonic-acid",
+      "also_about": [
+        "omega-6",
+        "omega-3"
+      ],
+      "facet": "basics",
+      "question": "Is arachidonic acid an essential fatty acid?",
+      "answer_short": "Arachidonic acid is usually counted among the essential fatty acids, but Wallach says only linoleic and linolenic truly are — the body can make arachidonic acid from linoleic acid, so it need not come from food.",
+      "answer": "Wallach explains that three polyunsaturated fatty acids — linoleic, linolenic and arachidonic — are grouped together as 'essential fatty acids,' but only two are genuinely essential: the body can make arachidonic acid itself from linoleic acid, so it need not come from the diet. These essential fats do real work — carrying and metabolising fat and maintaining the integrity of cell membranes (the bilipid layer) — and they form part of the cholesterol esters and phospholipids in the blood.",
+      "verbatim": "only two (linoleic and linolenic) are\ndesignated as EFA as arachidonic acid can\nbe synthesized by the human from linoleic\nacid.",
+      "page": 291,
+      "book_id": "rare-earths",
+      "topics": [
+        "arachidonic-acid",
+        "essential-fatty-acids",
+        "linoleic-acid",
+        "linolenic-acid",
+        "omega-6"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-RARE-000112",
       "subject": "rare_earth_elements",
       "also_about": [
@@ -32637,6 +32803,29 @@
           "copper"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-RARE-000143",
+      "subject": "cadmium",
+      "also_about": [
+        "zinc",
+        "copper",
+        "calcium",
+        "selenium"
+      ],
+      "facet": "warning",
+      "question": "Is cadmium toxic, and what does it do in the body?",
+      "answer_short": "Wallach treats cadmium mainly as a toxic metal that builds up in the kidney and displaces four essential minerals — zinc, copper, calcium and selenium — from the enzymes that depend on them.",
+      "answer": "In the per-element catalog Wallach records that cadmium accumulates in the kidney, has a biological function stimulating the hatching of nematode (worm) cysts, and that cadmium-binding proteins have been isolated from molluscs and horse kidney. (Wallach treats cadmium primarily as a toxic metal that displaces zinc, copper, calcium, and selenium.)",
+      "verbatim": "Functions by stimulating the hatching of nematode cysts (worms). Cadmium bound proteins have been isolated from molluscs and the horse kidney.",
+      "page": 304,
+      "book_id": "rare-earths",
+      "topics": [
+        "cadmium",
+        "kidney",
+        "heavy-metal-toxicity",
+        "mineral-displacement"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000149",
@@ -32945,6 +33134,95 @@
         "essentials": [
           "nickel",
           "vitamin-b12"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000199",
+      "subject": "hydrogen-peroxide",
+      "also_about": [
+        "oxygen"
+      ],
+      "facet": "mechanism",
+      "question": "How does the body use hydrogen peroxide to fight infection?",
+      "answer_short": "Wallach explains the body makes its own hydrogen peroxide: neutrophils produce it in organelles called peroxisomes to kill microbes, parasites and cancer cells, and the enzyme catalase breaks the excess into water and singlet oxygen.",
+      "answer": "Wallach describes how neutrophils, a type of white blood cell, destroy invading micro-organisms, parasites, and cancer cells using hydrogen peroxide produced by organelles called peroxisomes, and that excess hydrogen peroxide spilled into the bloodstream is broken down by the enzyme catalase, which coats the red blood cells and blood-vessel walls, into water and singlet oxygen.",
+      "verbatim": "The function of catalase is to rapidly facilitate the decomposition of hydrogen peroxide down to water (H2O) and singlet oxygen (O).",
+      "page": 363,
+      "book_id": "rare-earths",
+      "topics": [
+        "hydrogen-peroxide",
+        "neutrophils",
+        "peroxisomes",
+        "catalase",
+        "immune-defense"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "oxygen"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000201",
+      "subject": "hydrogen-peroxide",
+      "also_about": [
+        "oxygen"
+      ],
+      "facet": "uses",
+      "question": "How does food-grade hydrogen peroxide work as an oxygen therapy?",
+      "answer_short": "Wallach frames food-grade hydrogen peroxide as an oxygen therapy: diluted on an empty stomach or given IV, it's absorbed through the stomach and duodenal walls into the bloodstream, where it splits into water and singlet oxygen.",
+      "answer": "Wallach describes food-grade hydrogen peroxide as an oxygen therapy: taken in proper dilution on an empty stomach, or given intravenously under proper conditions, it is absorbed through the stomach and duodenal walls directly into the bloodstream, where it is immediately broken down into water and singlet oxygen.",
+      "verbatim": "When ingested in proper dilution on an empty stomach or administered IV under proper conditions, food grade hydrogen peroxide is readily absorbed through the stomach and duodenal walls directly into the blood stream where it is immediately broken down into water and singlet oxygen.",
+      "page": 372,
+      "book_id": "rare-earths",
+      "topics": [
+        "hydrogen-peroxide",
+        "oxygen-therapy",
+        "singlet-oxygen",
+        "food-grade-peroxide"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "oxygen"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000202",
+      "subject": "hydrogen-peroxide",
+      "also_about": [
+        "oxygen",
+        "cancer",
+        "emphysema",
+        "asthma"
+      ],
+      "facet": "history",
+      "question": "What has hydrogen peroxide therapy been used to treat?",
+      "answer_short": "Wallach says hydrogen peroxide has served as an oxygen therapy since the Civil War, and for 50+ years in Europe — for cancer, circulatory disease, emphysema, asthma and gangrene, and lately to revive dormant cells after a stroke.",
+      "answer": "Wallach states that oxygen in the form of hydrogen peroxide has been used topically, intravenously, and orally since the Civil War, and for over 50 years in Europe as an alternative therapy for cancer, circulatory disease, arteriosclerosis, emphysema, asthma, and gangrene — and more recently for long-term stroke victims, whose dormant but living \"sleeping beauty\" cells around the stroke site can be reactivated when exposed to several atmospheres of oxygen in a hyperbaric chamber.",
+      "verbatim": "Oxygen in the form of hydrogen peroxide has been used topically, intravenously and orally since the Civil War, it has been used widely in Europe for over 50 years for alternative cancer therapies, circulatory disease, arteriosclerosis, emphysema, asthma, gangrene and more recently as a therapy for long time stroke",
+      "page": 372,
+      "book_id": "rare-earths",
+      "topics": [
+        "hydrogen-peroxide",
+        "oxygen-therapy",
+        "cancer",
+        "europe",
+        "history"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "oxygen"
+        ],
+        "conditions": [
+          "cancer",
+          "circulatory_disease",
+          "arteriosclerosis",
+          "emphysema",
+          "asthma",
+          "gangrene",
+          "stroke"
         ]
       }
     },

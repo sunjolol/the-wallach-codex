@@ -198,12 +198,20 @@
       "type": "element",
       "symbol": "Cd",
       "synonyms": [
+        "cadmium",
         "cd",
         "heavy metal",
-        "cadmium toxicity"
+        "cadmium toxicity",
+        "cadmium poisoning",
+        "is cadmium toxic",
+        "cadmium and zinc",
+        "cadmium in cigarettes"
       ],
       "related": [
         "zinc",
+        "copper",
+        "calcium",
+        "selenium",
         "mercury",
         "obscure_elements"
       ]
@@ -1702,8 +1710,7 @@
       "related": [
         "fish",
         "omega-3",
-        "cholesterol",
-        "tuna"
+        "cholesterol"
       ]
     },
     "salt": {
@@ -1765,12 +1772,10 @@
         "silver sulfadiazine"
       ],
       "related": [
-        "silver-nitrate",
         "conjunctivitis",
         "epilepsy",
         "tonsillitis",
         "cystitis",
-        "whooping_cough",
         "shingles",
         "cancer",
         "immune_depression",
@@ -2342,7 +2347,6 @@
         "beriberi",
         "dementia",
         "alzheimers",
-        "korsakoff",
         "congestive_heart_failure",
         "alcoholism",
         "cancer"
@@ -2478,8 +2482,6 @@
         "what is vitamin b5"
       ],
       "related": [
-        "coenzyme-a",
-        "acetylcholine",
         "vitamin-b1",
         "depression",
         "anemia",
@@ -3042,7 +3044,6 @@
         "copper",
         "chromium",
         "cancer",
-        "testosterone",
         "estrogen"
       ]
     },
@@ -3340,9 +3341,6 @@
         "taurine",
         "tyrosine",
         "lysine",
-        "ornithine",
-        "citrulline",
-        "nitric-oxide",
         "erectile_dysfunction"
       ]
     },
@@ -3415,13 +3413,10 @@
       ],
       "related": [
         "vitamin-b3",
-        "serotonin",
-        "melatonin",
         "phenylalanine",
         "tyrosine",
         "depression",
-        "pellagra",
-        "5-htp"
+        "pellagra"
       ]
     },
     "phenylalanine": {
@@ -3700,9 +3695,7 @@
       ],
       "related": [
         "omega-3",
-        "arachidonic-acid",
-        "gamma-linolenic-acid",
-        "docosahexaenoic-acid"
+        "arachidonic-acid"
       ]
     },
     "nitrogen": {
@@ -3725,15 +3718,12 @@
         "what does nitrogen do"
       ],
       "related": [
-        "protein",
         "amino_acids",
         "phosphorus",
         "iron",
         "sulfur",
         "cobalt",
         "chromium",
-        "nitrates",
-        "nitrites",
         "liver_disease",
         "kidney_disease",
         "cancer"
@@ -3764,8 +3754,7 @@
         "stroke",
         "water",
         "germanium",
-        "hydrogen-peroxide",
-        "minerals"
+        "hydrogen-peroxide"
       ]
     },
     "silica": {
@@ -3923,8 +3912,7 @@
         "magnesium",
         "hafnium",
         "scandium",
-        "zirconium",
-        "berylliosis"
+        "zirconium"
       ]
     },
     "terbium": {
@@ -3947,8 +3935,7 @@
         "terbium in the body"
       ],
       "related": [
-        "yttrium",
-        "thorium"
+        "yttrium"
       ]
     },
     "rubidium": {
@@ -4182,7 +4169,6 @@
       ],
       "related": [
         "sulfur",
-        "arsenic-trioxide",
         "manganese",
         "choline",
         "carpal_tunnel_syndrome",
@@ -4341,7 +4327,6 @@
       "related": [
         "beryllium",
         "hafnium",
-        "thorium",
         "zirconium"
       ]
     },
@@ -4365,8 +4350,7 @@
         "Re rhenium"
       ],
       "related": [
-        "molybdenum",
-        "thyroid"
+        "molybdenum"
       ]
     },
     "gadolinium": {
@@ -4447,8 +4431,7 @@
         "ytterbium",
         "yttrium",
         "erbium",
-        "dysprosium",
-        "thorium"
+        "dysprosium"
       ]
     },
     "samarium": {
@@ -4501,7 +4484,6 @@
         "erbium",
         "thulium",
         "lutetium",
-        "thorium",
         "calcium"
       ]
     },
@@ -4581,8 +4563,7 @@
       "related": [
         "zirconium",
         "beryllium",
-        "scandium",
-        "thorium"
+        "scandium"
       ]
     },
     "zirconium": {
@@ -4608,9 +4589,66 @@
       "related": [
         "hafnium",
         "scandium",
-        "thorium",
         "beryllium",
         "rare_earth_elements"
+      ]
+    },
+    "estrogen": {
+      "display_name": "Estrogen",
+      "type": "topic",
+      "synonyms": [
+        "estrogen",
+        "oestrogen",
+        "estrogen therapy",
+        "estrogen replacement",
+        "estrogen supplements",
+        "hormone replacement therapy",
+        "hrt",
+        "estradiol",
+        "female hormone",
+        "is estrogen safe",
+        "estrogen and cancer"
+      ],
+      "related": [
+        "osteoporosis",
+        "menopause",
+        "boron",
+        "breast_cancer"
+      ]
+    },
+    "hydrogen-peroxide": {
+      "display_name": "Hydrogen Peroxide",
+      "type": "topic",
+      "synonyms": [
+        "hydrogen peroxide",
+        "h2o2",
+        "food grade hydrogen peroxide",
+        "food-grade peroxide",
+        "peroxide",
+        "hydrogen peroxide therapy",
+        "oxygen therapy",
+        "35% food grade",
+        "hydrogen peroxide for cancer"
+      ],
+      "related": [
+        "oxygen",
+        "cancer",
+        "emphysema",
+        "asthma"
+      ]
+    },
+    "arachidonic-acid": {
+      "display_name": "Arachidonic Acid",
+      "type": "concept",
+      "synonyms": [
+        "arachidonic acid",
+        "arachidonate",
+        "arachidonic",
+        "omega-6 fatty acid"
+      ],
+      "related": [
+        "omega-6",
+        "omega-3"
       ]
     }
   }
