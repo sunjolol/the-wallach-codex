@@ -11,12 +11,22 @@
       ]
     },
     {
+      "term": "acetylcholine",
+      "plain": "a chemical messenger nerves use to signal muscles and the brain",
+      "category": "biology"
+    },
+    {
       "term": "achlorhydria",
       "plain": "no stomach acid being produced at all",
       "category": "medical",
       "aliases": [
         "achlorhydric"
       ]
+    },
+    {
+      "term": "acid-base",
+      "plain": "the body's balance between acids and bases (its pH)",
+      "category": "biology"
     },
     {
       "term": "acidosis",
@@ -121,6 +131,11 @@
       ]
     },
     {
+      "term": "anencephaly",
+      "plain": "a severe birth defect in which the brain and skull do not fully form",
+      "category": "medical"
+    },
+    {
       "term": "aneurysm",
       "plain": "a bulge in the weakened wall of a blood vessel",
       "category": "medical",
@@ -146,6 +161,11 @@
       "term": "antioxidant",
       "plain": "a substance that protects the body's cells from damage by unstable molecules",
       "category": "nutrition"
+    },
+    {
+      "term": "aplasia",
+      "plain": "the failure of a tissue or organ to develop properly",
+      "category": "medical"
     },
     {
       "term": "appendicitis",
@@ -237,6 +257,11 @@
     {
       "term": "benign",
       "plain": "not cancerous; harmless",
+      "category": "medical"
+    },
+    {
+      "term": "beriberi",
+      "plain": "a disease caused by vitamin B1 deficiency, affecting the nerves and heart",
       "category": "medical"
     },
     {
@@ -355,6 +380,11 @@
       "category": "medical"
     },
     {
+      "term": "carnitine",
+      "plain": "a compound that helps the body turn fat into usable energy",
+      "category": "biology"
+    },
+    {
       "term": "carotenoid",
       "plain": "a family of plant pigments, some of which the body turns into vitamin A",
       "category": "nutrition",
@@ -393,6 +423,11 @@
       "aliases": [
         "cerebellar"
       ]
+    },
+    {
+      "term": "ceruloplasmin",
+      "plain": "the main copper-carrying protein in the blood",
+      "category": "biology"
     },
     {
       "term": "cheilosis",
@@ -442,6 +477,21 @@
       ]
     },
     {
+      "term": "cobalamin",
+      "plain": "the chemical family name for vitamin B12",
+      "category": "nutrition"
+    },
+    {
+      "term": "coenzyme",
+      "plain": "a helper molecule an enzyme needs in order to work",
+      "category": "biology"
+    },
+    {
+      "term": "coenzyme A",
+      "plain": "a vitamin-B5-based helper molecule central to energy metabolism",
+      "category": "biology"
+    },
+    {
       "term": "cofactor",
       "plain": "a helper substance an enzyme needs before it can do its job in the body",
       "category": "biology"
@@ -487,9 +537,27 @@
       "category": "medical"
     },
     {
+      "term": "cretinism",
+      "plain": "severe physical and mental impairment from iodine deficiency in infancy",
+      "category": "medical"
+    },
+    {
+      "term": "cryptogenic",
+      "plain": "of unknown or unclear cause",
+      "category": "medical"
+    },
+    {
       "term": "cryptoxanthin",
       "plain": "a plant pigment related to beta-carotene that yields some vitamin A",
       "category": "nutrition"
+    },
+    {
+      "term": "cyanocobalamin",
+      "plain": "the common synthetic supplement form of vitamin B12",
+      "category": "nutrition",
+      "aliases": [
+        "cyanocobalamine"
+      ]
     },
     {
       "term": "cyanosis",
@@ -512,9 +580,19 @@
       "category": "medical"
     },
     {
+      "term": "decarboxylation",
+      "plain": "a chemical reaction that removes a carbon-dioxide group from a molecule",
+      "category": "chemistry"
+    },
+    {
       "term": "dehydrocholesterol",
       "plain": "the cholesterol-like compound in skin that sunlight converts into vitamin D",
       "category": "biology"
+    },
+    {
+      "term": "demyelination",
+      "plain": "the stripping of the protective sheath around nerves",
+      "category": "medical"
     },
     {
       "term": "dermatitis",
@@ -599,6 +677,11 @@
       ]
     },
     {
+      "term": "elastin",
+      "plain": "the stretchy protein that lets tissues like skin and arteries spring back",
+      "category": "biology"
+    },
+    {
       "term": "electrochemical",
       "plain": "involving both electrical charge and chemistry, as in how cells and nerves signal",
       "category": "biology"
@@ -622,6 +705,11 @@
     {
       "term": "encephalitis",
       "plain": "inflammation of the brain",
+      "category": "medical"
+    },
+    {
+      "term": "encephalomalacia",
+      "plain": "a softening of brain tissue",
       "category": "medical"
     },
     {
@@ -721,6 +809,11 @@
       ]
     },
     {
+      "term": "fibrocystic",
+      "plain": "describing benign lumpy, cystic tissue, as in fibrocystic breast changes",
+      "category": "medical"
+    },
+    {
       "term": "fibromyalgia",
       "plain": "a condition of widespread muscle pain and fatigue",
       "category": "medical"
@@ -734,6 +827,27 @@
       ]
     },
     {
+      "term": "flavin",
+      "plain": "the yellow pigment at the core of vitamin B2 and its coenzymes",
+      "category": "biology"
+    },
+    {
+      "term": "flavin adenine dinucleotide",
+      "plain": "FAD, a vitamin-B2 coenzyme that carries energy inside cells",
+      "category": "biology",
+      "aliases": [
+        "FAD"
+      ]
+    },
+    {
+      "term": "flavin mononucleotide",
+      "plain": "FMN, a vitamin-B2 coenzyme used in energy reactions",
+      "category": "biology",
+      "aliases": [
+        "FMN"
+      ]
+    },
+    {
       "term": "fluorine",
       "plain": "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
       "category": "chemistry"
@@ -742,6 +856,15 @@
       "term": "fluorosis",
       "plain": "tooth or bone damage from excess fluoride",
       "category": "medical"
+    },
+    {
+      "term": "folate",
+      "plain": "vitamin B9, needed to build DNA and healthy new cells",
+      "category": "nutrition",
+      "aliases": [
+        "folacin",
+        "folic acid"
+      ]
     },
     {
       "term": "g%",
@@ -806,6 +929,24 @@
       "category": "medical"
     },
     {
+      "term": "gluconeogenesis",
+      "plain": "the body's making of new glucose from non-sugar sources",
+      "category": "biology"
+    },
+    {
+      "term": "glucose tolerance factor",
+      "plain": "GTF, the chromium-containing compound that helps insulin work",
+      "category": "biology",
+      "aliases": [
+        "GTF"
+      ]
+    },
+    {
+      "term": "glutathione",
+      "plain": "the body's main built-in antioxidant molecule",
+      "category": "biology"
+    },
+    {
       "term": "glycogen",
       "plain": "the body's stored form of glucose, kept in the liver and muscles",
       "category": "nutrition"
@@ -840,9 +981,19 @@
       "category": "medical"
     },
     {
+      "term": "half-life",
+      "plain": "the time it takes for half of a substance to leave the body",
+      "category": "biology"
+    },
+    {
       "term": "halitosis",
       "plain": "bad breath",
       "category": "medical"
+    },
+    {
+      "term": "halogen",
+      "plain": "a chemical family that includes iodine, chlorine, and fluorine",
+      "category": "chemistry"
     },
     {
       "term": "hematuria",
@@ -857,6 +1008,11 @@
         "non-heme",
         "heme iron"
       ]
+    },
+    {
+      "term": "hemocyanin",
+      "plain": "a copper-based, oxygen-carrying molecule found in some animals",
+      "category": "biology"
     },
     {
       "term": "hemoglobin",
@@ -935,6 +1091,11 @@
       "category": "medical"
     },
     {
+      "term": "hydroxocobalamin",
+      "plain": "a natural, injectable form of vitamin B12",
+      "category": "nutrition"
+    },
+    {
       "term": "hydroxyapatite",
       "plain": "the hard calcium-and-phosphorus crystal that gives bones and teeth their rigid structure",
       "category": "biology"
@@ -1004,6 +1165,14 @@
       "category": "medical",
       "aliases": [
         "hypoglycemic"
+      ]
+    },
+    {
+      "term": "hypokalemia",
+      "plain": "an abnormally low level of potassium in the blood",
+      "category": "medical",
+      "aliases": [
+        "hypokalemic"
       ]
     },
     {
@@ -1087,6 +1256,14 @@
       ]
     },
     {
+      "term": "Kayser-Fleischer ring",
+      "plain": "a copper-colored ring around the cornea, a sign of copper overload",
+      "category": "medical",
+      "aliases": [
+        "kayser-fleischer"
+      ]
+    },
+    {
       "term": "keratin",
       "plain": "the tough protein that forms hair, nails, and the outer skin",
       "category": "medical"
@@ -1117,6 +1294,23 @@
       "category": "medical",
       "aliases": [
         "kinases"
+      ]
+    },
+    {
+      "term": "Korsakoff's syndrome",
+      "plain": "a severe memory disorder linked to thiamine deficiency, often from alcoholism",
+      "category": "medical",
+      "aliases": [
+        "korsakoff's",
+        "korsakoff"
+      ]
+    },
+    {
+      "term": "Krebs cycle",
+      "plain": "the cell's central chain of reactions that releases energy from food",
+      "category": "biology",
+      "aliases": [
+        "citric acid cycle"
       ]
     },
     {
@@ -1217,6 +1411,16 @@
       ]
     },
     {
+      "term": "megaloblastic",
+      "plain": "describing the abnormally large, immature red blood cells of folate or B12 deficiency",
+      "category": "medical"
+    },
+    {
+      "term": "melanin",
+      "plain": "the pigment that gives skin, hair, and eyes their color",
+      "category": "biology"
+    },
+    {
       "term": "melanoma",
       "plain": "a serious skin cancer from pigment cells",
       "category": "medical"
@@ -1261,6 +1465,19 @@
       ]
     },
     {
+      "term": "methotrexate",
+      "plain": "a drug that blocks folate, used against cancer and psoriasis",
+      "category": "medical"
+    },
+    {
+      "term": "methylcobalamin",
+      "plain": "an active, body-ready form of vitamin B12",
+      "category": "nutrition",
+      "aliases": [
+        "adenosylcobalamin"
+      ]
+    },
+    {
       "term": "mg%",
       "plain": "milligrams per deciliter (mg/dL) -- a blood concentration: how much of a substance is dissolved in a tenth of a liter. Despite the percent sign, it is not a true percentage.",
       "category": "unit",
@@ -1292,6 +1509,14 @@
       "category": "medical"
     },
     {
+      "term": "muscular dystrophy",
+      "plain": "a group of diseases causing progressive muscle weakness and wasting",
+      "category": "medical",
+      "aliases": [
+        "dystrophy"
+      ]
+    },
+    {
       "term": "myelin",
       "plain": "the fatty insulating sheath around nerve fibers",
       "category": "medical"
@@ -1319,6 +1544,11 @@
       "aliases": [
         "necrotic"
       ]
+    },
+    {
+      "term": "neural tube",
+      "plain": "the early structure in a fetus that becomes the brain and spinal cord",
+      "category": "biology"
     },
     {
       "term": "neuralgia",
@@ -1384,6 +1614,22 @@
       "category": "nutrition"
     },
     {
+      "term": "nicotinamide",
+      "plain": "a form of vitamin B3 (niacin)",
+      "category": "nutrition",
+      "aliases": [
+        "niacinamide"
+      ]
+    },
+    {
+      "term": "nicotinamide adenine dinucleotide",
+      "plain": "NAD, a niacin-based coenzyme central to producing energy",
+      "category": "biology",
+      "aliases": [
+        "NAD"
+      ]
+    },
+    {
       "term": "omphalocele",
       "plain": "a birth defect where organs protrude through the navel",
       "category": "medical"
@@ -1408,6 +1654,11 @@
       "aliases": [
         "organelles"
       ]
+    },
+    {
+      "term": "orthomolecular",
+      "plain": "an approach that treats illness with high doses of substances natural to the body",
+      "category": "medical"
     },
     {
       "term": "osteitis",
@@ -1461,6 +1712,16 @@
       ]
     },
     {
+      "term": "oxidase",
+      "plain": "an enzyme that drives a reaction using oxygen",
+      "category": "biology"
+    },
+    {
+      "term": "oxidation-reduction",
+      "plain": "paired reactions that transfer energy by moving electrons between molecules",
+      "category": "chemistry"
+    },
+    {
       "term": "pagophagia",
       "plain": "compulsive chewing of ice",
       "category": "medical"
@@ -1479,6 +1740,11 @@
       "term": "pancreatitis",
       "plain": "inflammation of the pancreas",
       "category": "medical"
+    },
+    {
+      "term": "pantothenic acid",
+      "plain": "the chemical name for vitamin B5",
+      "category": "nutrition"
     },
     {
       "term": "parakeratosis",
@@ -1522,6 +1788,11 @@
       "category": "medical"
     },
     {
+      "term": "pellagra",
+      "plain": "a disease of niacin deficiency, marked by skin rash, diarrhea, and confusion",
+      "category": "medical"
+    },
+    {
       "term": "pepsin",
       "plain": "the stomach’s protein-digesting enzyme, switched on by stomach acid",
       "category": "physiology"
@@ -1545,6 +1816,21 @@
       "category": "medical"
     },
     {
+      "term": "pernicious anemia",
+      "plain": "anemia caused by being unable to absorb vitamin B12",
+      "category": "medical"
+    },
+    {
+      "term": "peroxidase",
+      "plain": "an enzyme that clears harmful peroxide from the body",
+      "category": "biology"
+    },
+    {
+      "term": "peroxidation",
+      "plain": "the damaging oxidation of fats by unstable oxygen molecules",
+      "category": "biology"
+    },
+    {
       "term": "phenylketonuria",
       "plain": "an inherited inability to process the amino acid phenylalanine",
       "category": "medical"
@@ -1565,6 +1851,16 @@
       "category": "biology"
     },
     {
+      "term": "phosphorylase",
+      "plain": "an enzyme that breaks down stored sugar (glycogen) for energy",
+      "category": "biology"
+    },
+    {
+      "term": "photophobia",
+      "plain": "abnormal discomfort or sensitivity of the eyes to light",
+      "category": "medical"
+    },
+    {
       "term": "phytate",
       "plain": "a plant compound that binds minerals and blocks their absorption",
       "category": "nutrition",
@@ -1572,6 +1868,11 @@
         "phytates",
         "phytic acid"
       ]
+    },
+    {
+      "term": "picolinate",
+      "plain": "a carrier that chromium is bound to in many supplements",
+      "category": "nutrition"
     },
     {
       "term": "plant derived",
@@ -1598,6 +1899,11 @@
     {
       "term": "pneumonitis",
       "plain": "inflammation of lung tissue",
+      "category": "medical"
+    },
+    {
+      "term": "polyneuritis",
+      "plain": "inflammation of many nerves at once",
       "category": "medical"
     },
     {
@@ -1656,6 +1962,30 @@
       "aliases": [
         "psychotic"
       ]
+    },
+    {
+      "term": "ptosis",
+      "plain": "a drooping of the upper eyelid",
+      "category": "medical"
+    },
+    {
+      "term": "pyridine",
+      "plain": "a ring-shaped chemical structure that forms part of the niacin molecule",
+      "category": "chemistry"
+    },
+    {
+      "term": "pyridoxine",
+      "plain": "the common supplement form of vitamin B6",
+      "category": "nutrition",
+      "aliases": [
+        "pyridoxamine",
+        "pyridoxal"
+      ]
+    },
+    {
+      "term": "pyruvate",
+      "plain": "a molecule formed when the body breaks down sugar, feeding energy production",
+      "category": "biology"
     },
     {
       "term": "q.i.d.",
@@ -1728,6 +2058,11 @@
       "category": "medical"
     },
     {
+      "term": "sarcopenia",
+      "plain": "the age-related loss of muscle mass and strength",
+      "category": "medical"
+    },
+    {
       "term": "sclerosis",
       "plain": "abnormal hardening of tissue",
       "category": "medical",
@@ -1743,6 +2078,11 @@
     {
       "term": "sinusitis",
       "plain": "inflammation of the sinuses",
+      "category": "medical"
+    },
+    {
+      "term": "spina bifida",
+      "plain": "a birth defect where the spine does not close fully around the spinal cord",
       "category": "medical"
     },
     {
@@ -1829,6 +2169,28 @@
       "category": "medical"
     },
     {
+      "term": "thiaminase",
+      "plain": "an enzyme in some raw foods that destroys thiamine (vitamin B1)",
+      "category": "biology"
+    },
+    {
+      "term": "thiamine",
+      "plain": "the chemical name for vitamin B1",
+      "category": "nutrition",
+      "aliases": [
+        "thiamin"
+      ]
+    },
+    {
+      "term": "thiamine pyrophosphate",
+      "plain": "the active coenzyme form of vitamin B1",
+      "category": "biology",
+      "aliases": [
+        "TPP",
+        "cocarboxylase"
+      ]
+    },
+    {
       "term": "thrombin",
       "plain": "a blood enzyme that drives the final step of forming a clot",
       "category": "medical"
@@ -1848,11 +2210,34 @@
       ]
     },
     {
+      "term": "thyroid",
+      "plain": "the neck gland that uses iodine to set the body's metabolic rate",
+      "category": "anatomy"
+    },
+    {
+      "term": "thyroxine",
+      "plain": "the main thyroid hormone, built from iodine",
+      "category": "biology",
+      "aliases": [
+        "thyroxin"
+      ]
+    },
+    {
       "term": "tinnitus",
       "plain": "ringing or buzzing in the ears",
       "category": "medical",
       "aliases": [
         "tinnitis"
+      ]
+    },
+    {
+      "term": "tocopherol",
+      "plain": "the chemical name for vitamin E",
+      "category": "nutrition",
+      "aliases": [
+        "alpha-tocopherol",
+        "tocopherols",
+        "alpha-tocopherols"
       ]
     },
     {
@@ -1874,6 +2259,11 @@
       "term": "tracheotomy",
       "plain": "a surgical opening made into the windpipe",
       "category": "medical"
+    },
+    {
+      "term": "transaminase",
+      "plain": "a vitamin-B6-dependent enzyme that helps build and recycle amino acids",
+      "category": "biology"
     },
     {
       "term": "trigeminal",
@@ -1902,6 +2292,11 @@
       "term": "tularemia",
       "plain": "a bacterial infection from rabbits and rodents ('rabbit fever')",
       "category": "medical"
+    },
+    {
+      "term": "tyrosine",
+      "plain": "an amino acid the thyroid combines with iodine to make its hormones",
+      "category": "biology"
     },
     {
       "term": "ultraviolet",
@@ -1934,6 +2329,11 @@
       "term": "water-soluble",
       "plain": "dissolves in water and is not stored, so it must be replaced regularly",
       "category": "nutrition"
+    },
+    {
+      "term": "Wilson's disease",
+      "plain": "an inherited disorder in which copper builds up to toxic levels",
+      "category": "medical"
     },
     {
       "term": "xerophthalmia",

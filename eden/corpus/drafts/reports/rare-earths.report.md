@@ -1,114 +1,198 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_9 claim(s) drafted 2026-07-26T22:50:48+00:00. Review then run corpus_seal.py to promote._
+_15 claim(s) drafted 2026-07-27T00:11:51+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×1, definition×1, diagnostic_pattern×1, food_source×1, interaction×1, personal_anecdote×2, prevalence×1, quote×1
+Kinds: deficiency_sign×3, definition×4, diagnostic_pattern×1, dose×1, interaction×1, mechanism×4, prognosis×1
 
-### WAL-CLM-RARE-000334 · diagnostic_pattern
+### WAL-CLM-RARE-000343 · prognosis
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that elevated hair levels of sodium, potassium and chloride indicate a deficiency of essential fatty acids, because the deficiency makes the skin glands malfunction and lose electrolytes rather than conserve them. He notes these false 'elevations' return to normal once proper mineral and essential fatty acid supplementation is restored.
-- **verbatim** (offset 700376): “Elevated hair levels of sodium, potassium and chloride indicate deficiencies of essential fatty acids, with resultant malfunctions of the skin glands which loose electrolytes instead of conserving them. These false “elevations” return to normal following the proper mineral and essential fatty acid supplementation.”
+- **claim:** Wallach argues that while spina bifida is a well-known embryonic result of a folic acid deficiency, folic acid supplementation only prevents 50% of this defect. The other 50%, he says, is preventable by zinc supplementation. He frames zinc's 'metal finger' role in DNA and RNA replication as so critical that just about every physical defect described in man can be produced by an embryonic zinc deficiency — so folic acid on its own is only half the answer.
+- **verbatim** (offset 411139): “for example spina bifida is a well
+known embryonic result of a folic acid de-
+ficiency, yet folic acid supplementation only
+prevents 50 % of this defect - the other 50%”
 
-### WAL-CLM-RARE-000335 · food_source
+### WAL-CLM-RARE-000344 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach points to juicing as one of the best ways to obtain fresh, natural sources of beta carotene, along with vitamin C, folic acid, and some of the B-complex vitamins. He cautions, however, that juicing alone will not deliver a warrantied spectrum of all 60 essential minerals or sufficient amounts of each.
-- **verbatim** (offset 1116400): “of beta carotene, vitamin C, folic acid and
-some of the B-complex vitamins (not B,,)i
-however, juicing will not provide a
-warrantied spectrum of all 60 essential
-minerals or sufficient amounts of each
-mineral.”
+- **claim:** Wallach explains that hair pigment is a type of melanin formed by the enzyme tyrosinase acting on the amino acid tyrosine, and that copper is required as the cofactor for this reaction. When copper is deficient, pigment production fails and the hair turns white, silver or gray.
+- **verbatim** (offset 694255): “Hair pigment
+is a type of melanin which is formed in the
+presence of the enzyme tyrosinase and its
+effects on the essential amino acid tyrosine
+(copper is required as a cofactor for this
+reaction - therefore a copper deficiency re-
+sults in white, silver or gray hair).”
 
-### WAL-CLM-RARE-000336 · prevalence
+### WAL-CLM-RARE-000345 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Rare Earths reproduces a newspaper report of a National Cancer Institute study in a rural area of China in which daily doses of beta carotene, vitamin E, and selenium dramatically reduced the risk of dying from cancer among thousands of residents. Scientists described it as the first hard evidence that some antioxidant substances can provide a protective effect against cancer.
-- **verbatim** (offset 914189): “WASHINGTON — Daily doses
-f beta carotene, vitamin E and
-selenium dramatically reduced the
-tisk of dying from cancer among
-thousands of residents in a rural
-rea of China
+- **claim:** Wallach explains that copper works as a cofactor and activator of numerous cuproenzymes involved in fetal development. When a pregnant female is deficient in copper, the result can be congenital defects of the heart, such as Kawasaki disease, and of the brain, such as cerebral palsy and hypoplasia of the cerebellum.
+- **verbatim** (offset 780487): “Copper functions as a co-factor and ac-
+tivator of numerous cuproenzymes that are
+involved in the development (deficiency of
+Cu in the pregnant female results in con-
+genital defects of the heart,i.e.-Kawasaki
+Disease and brain - i.e.- cerebral palsy and
+hypoplasia of the cerebellum)”
 
-The experiment, sponsored by
-National Cancer Institute, is
-he first hard evidence that some
-antioxidant substances can pro-
-side a “protective” effect against
-ancer, scientists said yesterday”
-
-### WAL-CLM-RARE-000337 · definition
+### WAL-CLM-RARE-000346 · interaction
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach notes that the pigment in red hair, which he calls tricosiverin, is an iron-containing pigment, resulting in relatively high iron content in red hair. This differs from ordinary hair color, which comes from melanin made with copper as a cofactor. It is a small but striking example of how a specific mineral can literally show up in the color of the body.
-- **verbatim** (offset 694525): “The pig-
-ment in red hair (tricosiverin) is an iron-
-containing pigment resulting in relatively
-high iron content in red hair.”
+- **claim:** Wallach recounts that while studying copper poisoning in sheep in Australia, Dick found in the 1950s that a three-way interaction exists between copper, molybdenum and inorganic sulfate. In the same passage he notes that molybdenum's ability to limit copper retention in animals can only occur when adequate sulfate is present.
+- **verbatim** (offset 677853): “while
+studying copper poisoning in sheep in Aus-
+tralia, Dick (1950's) found that a three way
+interaction exists between copper, molyb-
+denum and inorganic sulfate”
 
-### WAL-CLM-RARE-000338 · interaction
+### WAL-CLM-RARE-000347 · deficiency_sign
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach warns that metallic minerals—the oxide, carbonate, and sulphate forms in most tablets, including iron oxide, which he bluntly calls rust—are only eight to 12 percent biologically available to animals and humans, despite wild claims to the contrary. After age 35 to 40, he says the availability of metallic minerals to humans drops to just three to five percent.
-- **verbatim** (offset 658489): “Metallic minerals despite wild claims to
-the contrary are only eight to 12 % biologi-
-cally available to animals and humans; af-
-ter attaining the age of 35 to 40 years the
-availability of metallic minerals to humans
-drops to three to five percent.”
+- **claim:** Wallach states that neutropenia (reduced neutrophil white blood cells) and leukopenia (reduced total white blood cells) are the earliest indicators of copper deficiency in infants. Infants whose diets are primarily cow's milk frequently develop anemia, and chronic copper deficiency can lead to iron storage disease.
+- **verbatim** (offset 781315): “Neutropenia (reduced numbers of
+neutophillic WBC) and leukopenia (re-
+duced total WBC) are the earliest indica-
+tors of copper deficiency in infants; infants
+whose diets are primarily cows milk fre-
+quently develop anemia; iron storage dis-
+ease can result from chronic copper defi-
+ciency.”
 
-### WAL-CLM-RARE-000339 · personal_anecdote
+### WAL-CLM-RARE-000348 · dose
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts an 1850 medical journal report of a woman who had lost three premature pregnancies and was then given iron scales from a smith's anvil, steeped in hard cider, throughout her entire next pregnancy. Her appetite, digestion, health, and spirits all improved, and she delivered a full-term boy so strong he could walk by nine months of age. By age five he was so tall and strong that he became known as the 'iron baby.'
-- **verbatim** (offset 92204): “In 1850 it was reported in a medical jour-
-nal that a woman who had lost three pre-
-mature pregnancies was given “iron scales
-from the smiths anvil, steeped in “hard”
-cider during her entire pregnancy. The
-woman’s appetite increased, her digestion,
-health and spirits improved. She delivered
-a full term boy and who was so strong that
-he could walk by 9 months of age; at age
-five he was so tall and strong that he be-
-came known as the “iron baby.””
+- **claim:** Wallach states that the average well-nourished adult body contains between 80 and 120 mg of copper, with higher concentrations in the brain, liver, heart and kidneys, while bone and muscle hold half of the body's total copper reserves because of their mass. The greatest concentration of copper is found in newborns, whose daily requirement is 0.08 mg/kg. Toddlers require 0.04 mg/kg and adults only 0.03 mg/kg.
+- **verbatim** (offset 779840): “The average well-nourished adult hu-
+man body contains between 80 and 120 mg
+of copper. Concentrations are higher in the
 
-### WAL-CLM-RARE-000340 · personal_anecdote
+brain, liver, heart and kidneys. Bone and
+muscle have lower percentages of copper
+but contain 50 percent of the body total
+copper reserves because of their mass. It is
+of interest that the greatest concentration
+of copper is found in the newborm and their
+daily requirement is 0.08 mg/kg, toddlers
+require 0.04 mg/kg and adults only 0.03 mg/
+kg.”
+
+### WAL-CLM-RARE-000349 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains the craving to eat non-food items (pica) as a sign of mineral deficiency. He cites the demonstration that calcium-deficient weanling rats will consume large amounts of a lead acetate solution -- even though it tastes bad -- compared with calcium-fed controls. He adds that the Oriental diet is extremely low in calcium, leading people to habitually and preferentially eat bones, and recounts that when he and Dr. Ma Lan were courting she ate the calcium-rich bones and gave him the fillets.
-- **verbatim** (offset 204337): “It was demonstrated that calcium defi-
-cient weanling rats will consume large
-amounts of a lead acetate solution (even
-though they taste bad) when compared with
-calcium fed controls. The Oriental diet is
-extremely low in calcium leading them to
-habitually and preferentially eat bones
-(when Dr. Ma Lan and I were courting she
-ate the bones and gave me the fillets) par-
-tially leached of calcium with vinegar.”
+- **claim:** Wallach explains that chelated minerals are about 40% bioavailable — a significant improvement over metallic minerals, where the other 60% is wasted. He says chelated minerals are recognized on a supplement label by an amino-acid suffix, such as chromium picolinate or selenium aspartate, or simply as an "amino acid chelate."
+- **verbatim** (offset 660767): “Chelated minerals are approximately
+40 % bioavailable, a significant improve-
+ment over the original metallic minerals -
+your septic tank in the back yard gets the
+other 60 % (Table 10 - 4).
 
-### WAL-CLM-RARE-000341 · deficiency_sign
+Chelated minerals are easily recognized
+on the label of a multiple vitamin/mineral
+supplement by the amino acid suffix such
+as selenium aspartate, chromium
+picolinate, or sometimes as an “amino acid
+chelate.””
+
+### WAL-CLM-RARE-000350 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach argues that an exclusive meat diet fails to supply adequate calcium, even when it includes organ meats such as liver and kidney (which do boost selenium, sulfur, cobalt, molybdenum and zinc). Because it still falls short on calcium, magnesium and manganese, he says the diet produces the "disease pictures" typical of pure carnivores: short stature, arthritis, osteoporosis, tooth loss, "Repetitive Motion Syndrome," aneurysms and skin wrinkles. This is part of his broader conclusion that no single dietary camp — vegan or carnivore — delivers all the minerals the body needs, which led him to a universal concept of supplementing the full set of essential nutrients.
-- **verbatim** (offset 1119674): “Eating organ meats such as liver and
-kidney can significantly increase the
-availability of selenium, sulfur, cobalt,
-molybdenum and zinc, but again an
-exclusive meat diet excludes suitable
-levels of calcium, magnesium and
-manganese, etc. resulting in typical
+- **claim:** Potassium is an essential mineral that Wallach counts among the roughly 60 minerals the body must obtain to stay healthy. It is the major cation (positively charged ion) inside your cells and makes up about five percent of the body's total mineral content. Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic (fluid-pressure) equilibrium and acid-base (pH) balance, and working with calcium it regulates neuromuscular (nerve-and-muscle) activity. The body stores essentially none and excretes about 90% of what you take in through the urine, so Wallach says it must be replenished every day.
+- **verbatim** (offset 828801): “Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.”
 
-disease pictures for pure carnivores (i.e.-
-short stature, arthritis, osteoporosis,
-tooth loss, “Repetitive Motion
-Syndrome,” aneurysms, skin wrinkles,
-etc.).”
-
-### WAL-CLM-RARE-000342 · quote
+### WAL-CLM-RARE-000351 · diagnostic_pattern
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach traces calcium's medical use back centuries. Walter Harris published a book on infant diseases in 1689 that emphasized the value of calcium for treating infantile convulsions—the fits that physicians of the day often called epilepsy. Wallach notes that rickets was known to be related to a calcium deficiency as early as 850 B.C., in the days of Homer, showing the link between calcium and bone disease was recognized in antiquity.
-- **verbatim** (offset 95726): “Walter Harris in 1689 published a book
-on infant diseases. In his book Harris em-
-phasized the value of calcium for the treat-
-ment of infantile convulsions (many physi-
-cians of the day referred to these ‘fits’ as
-epilepsy). Rickets was known to be related
-toa calcium deficiency as early as 850 B.C.
-in the days of Homer!!!!”
+- **claim:** In interpreting hair mineral analysis, Wallach notes that elevated hair levels of sodium, potassium and chloride point to a deficiency of essential fatty acids. The mechanism is that the fatty-acid shortfall makes the skin glands malfunction and lose electrolytes rather than conserve them, so the 'high' reading actually signals a problem elsewhere. He adds that these false elevations return to normal once mineral and essential fatty acid supplementation is corrected.
+- **verbatim** (offset 700376): “Elevated hair levels of sodium, potassium and chloride indicate deficiencies of essential fatty acids, with resultant malfunctions of the skin glands which loose electrolytes instead of conserving them.”
+
+### WAL-CLM-RARE-000352 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Citing research on hypertension, Wallach notes that among Black and elderly white people with essential (high) blood pressure, it is restricted intake of calcium and potassium, rather than elevated salt consumption, that is responsible for salt sensitivity. This reframes the usual 'too much salt' story: the shortfall of protective minerals like potassium is the real problem. It suggests that correcting mineral intake, not just cutting salt, matters for blood pressure.
+- **verbatim** (offset 750558): “Among
+black and elderly whites with essential hy-
+pertension, restricted intakes of calcium
+and potassium, rather than elevated salt
+consumption is responsible for salt sensi-
+tivity.”
+
+### WAL-CLM-RARE-000353 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths, Wallach includes potassium in his table of 'The 60 Essential Elements, Metals and Minerals' — the roster of minerals he holds the human body must obtain to stay healthy. Potassium appears alongside calcium, magnesium, sodium, selenium, zinc and dozens of others. Its place on this list reflects his core doctrine that the body needs a broad spectrum of some 60 minerals, not just a handful.
+- **verbatim** (offset 1127829): “Cobalt Neodymium
+Copper Nickle
+Dysprosium Niobium
+Erbium Nitrogen
+Europium Oxygen
+Gadolinium Phosphorus
+Gallium Potassium
+Germanium Praseodymium”
+
+### WAL-CLM-RARE-000354 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains that the Earth's more recent geological history — spanning less than 1.3 billion years — is investigated using the 'potassium-argon' method. Potassium 40, a rare radioisotope of potassium, decays into a stable, heavy form of the inert gas argon (argon 40), which has a half-life of 1.3 billion years. By measuring the accumulated argon 40 in potassium-rich rocks, scientists can estimate when the rock became solid.
+- **verbatim** (offset 48813): “The Earth’s more recent geological his-
+tory (less than 1.3 billion years) is investi-
+gated by the “potassium-argon” method.
+Potassium 40, a rare radioisotope of potas-
+sium decays to a stable form of argon - ar-
+gon 40, a heavy form of the inert gas argon
+which has a half life of 1.3 billion years.”
+
+### WAL-CLM-RARE-000355 · deficiency_sign
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** In Rare Earths, Wallach argues that doctors die at a disproportionately high rate of preventable nutritional deficiency diseases because they refuse to supplement the essential 90 nutrients. In his list of the causes of death in American allopathic physicians, he ties vitamin E deficiency — alongside selenium and other nutrients — to cardiomyopathy, coronary and cerebrovascular disease, cancer of all types, and Alzheimer's disease. He treats physicians who don't supplement as a control group that shows what these deficiencies produce.
+- **verbatim** (offset 1089148): “Table 12-2. Causes of Death In American Allopathic Physicians.
+
+Cause of Death
+Cardiomyopathy
+
+Coronary disease
+(including aneurysms & stroke)
+
+Cerebrovascular disease
+(including aneurysms & stroke)
+
+Aneurysms
+Diabetes
+Liver cirrhosis
+
+Cancer
+
+Suicide
+
+Alzheimer's disease
+
+Nutritional Deficiency
+Selenium, Vitamin E, essential fatty acids
+
+Selenium, Vitamin E, vitamin C
+magnesium, copper, essential fatty acids
+
+Same as above
+
+Copper
+Chromium, Vanadium, Zinc
+Selenium, Copper, Sulfur
+
+Selenium, Tin, Zinc, Gallium, Vitamin E (all types) ,
+beta carotene, Germanium, Vitamin C
+
+Lithium, Chromium, Vanadium
+
+Vitamin E, Selenium, Thiamine”
+
+### WAL-CLM-RARE-000356 · deficiency_sign
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites the Register General of England finding that physicians had a higher death rate from intestinal disease than any other profession or trade. He states that the nutritional deficiencies which result in intestinal disease include niacin, thiamine, selenium, vitamin E, beta carotene, zinc, and vitamin C. He uses this to argue that people must depend on their own nutritional knowledge rather than on doctors.
+- **verbatim** (offset 1091354): “According to the Register General of
+England physicians had a higher death
+rate from intestinal disease than any other
+profession or trade (Table 12-3).
+Nutritional deficiencies that result in
+intestinal disease include niacin,
+thiamine, selenium, vitamin E, beta
+carotene, zinc, vitamin C, etc.”
+
+### WAL-CLM-RARE-000357 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach is not surprised that vitamin E relieves memory loss in Alzheimer's patients, and he explains why through veterinary medicine. In poultry, a brain-wasting condition called 'star-gazing,' or encephalomalacia, which he likens to Alzheimer's disease, is prevented and, in its early stages, cured by high doses of vitamin E and selenium. This animal precedent is the basis for his view on vitamin E and human brain disease.
+- **verbatim** (offset 718746): “not too surprising in light of the history of
+“star-gazing” in poultry, where
+encephalomalacia or brain wasting
+(Alzheimer’s Disease) was prevented and
+in the early stages cured by high doses of
+vitamin E and selenium.”
 

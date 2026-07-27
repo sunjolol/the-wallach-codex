@@ -930,7 +930,43 @@
         "rare-earths"
       ],
       "synonyms": [
+        "potassium",
+        "K",
+        "potassium deficiency",
+        "low potassium",
+        "hypokalemia",
+        "potassium supplement",
+        "potassium supplements",
+        "potassium levels",
+        "high potassium",
+        "hyperkalemia",
+        "potassium rich foods",
+        "foods high in potassium",
+        "potassium chloride",
+        "potassium citrate",
+        "potassium gluconate",
+        "potassium 40",
+        "potassium-40",
+        "electrolyte",
+        "electrolytes",
+        "potassium for cramps",
+        "potassium for muscle cramps",
+        "charley horse potassium",
+        "potassium for heart",
+        "potassium for irregular heartbeat",
+        "potassium for palpitations",
+        "potassium blood test",
+        "potassium blood level",
+        "potassium mEq",
+        "potassium for blood pressure",
+        "how much potassium per day",
+        "daily potassium",
         "potash",
+        "sodium potassium balance",
+        "99 mg potassium",
+        "potasium",
+        "potassum",
+        "potasium deficiency",
         "kalium"
       ],
       "record": [
@@ -995,19 +1031,73 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000188"
+            "WAL-CLM-IMMORT-000188",
+            "WAL-CLM-RARE-000350"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000194",
+            "WAL-CLM-LETS-000025"
           ]
         },
         {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000189"
+            "WAL-CLM-HELLS-000047",
+            "WAL-CLM-IMMORT-000189",
+            "WAL-CLM-IMMORT-000192",
+            "WAL-CLM-LETS-000510",
+            "WAL-CLM-RARE-000351"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000314"
           ]
         },
         {
           "facet": "sources",
           "claim_ids": [
             "WAL-CLM-IMMORT-000187"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000204",
+            "WAL-CLM-LETS-000374",
+            "WAL-CLM-RARE-000352"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000203",
+            "WAL-CLM-EPIGEN-000137",
+            "WAL-CLM-IMMORT-000193",
+            "WAL-CLM-LETS-000062"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000048",
+            "WAL-CLM-RARE-000353"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-RARE-000354"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000315"
           ]
         },
         {
@@ -1655,7 +1745,32 @@
         "rare-earths"
       ],
       "synonyms": [
-        "cr"
+        "chromium",
+        "Cr",
+        "chromium III",
+        "trivalent chromium",
+        "chromium picolinate",
+        "chromium chelate",
+        "chelated chromium",
+        "chromium deficiency",
+        "chromium deficiency symptoms",
+        "low chromium",
+        "chromium supplement",
+        "chromium supplements",
+        "chromium for diabetes",
+        "chromium for blood sugar",
+        "chromium for weight loss",
+        "chromium and blood sugar",
+        "chromium for sugar cravings",
+        "chromium and vanadium",
+        "glucose tolerance factor",
+        "GTF",
+        "chromium levels",
+        "chromium hair analysis",
+        "cromium",
+        "chronium",
+        "chromuim",
+        "chromiun"
       ],
       "record": [
         {
@@ -1772,21 +1887,85 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000041",
+            "WAL-CLM-HELLS-000042",
+            "WAL-CLM-IMMORT-000311",
+            "WAL-CLM-IMMORT-000312"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000017"
+          ]
+        },
+        {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000092"
+            "WAL-CLM-EPIGEN-000275",
+            "WAL-CLM-HELLS-000044",
+            "WAL-CLM-HELLS-000045",
+            "WAL-CLM-IMMORT-000092",
+            "WAL-CLM-RARE-000116"
           ]
         },
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000091"
+            "WAL-CLM-DDDL-000200",
+            "WAL-CLM-DDDL-000201",
+            "WAL-CLM-HELLS-000043",
+            "WAL-CLM-IMMORT-000091",
+            "WAL-CLM-LETS-000508"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000276",
+            "WAL-CLM-RARE-000349"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000046",
+            "WAL-CLM-DDDL-000202"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000509"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000277",
+            "WAL-CLM-IMMORT-000313"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-RARE-000043"
           ]
         },
         {
           "facet": "discovery",
           "claim_ids": [
             "WAL-CLM-IMMORT-000093"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000016",
+            "WAL-CLM-EPIGEN-000278",
+            "WAL-CLM-HELLS-000046"
           ]
         }
       ],
@@ -1877,8 +2056,49 @@
         "rare-earths"
       ],
       "synonyms": [
-        "cu",
-        "cuprum"
+        "copper",
+        "Cu",
+        "cuprum",
+        "cupric",
+        "copper mineral",
+        "copper element",
+        "trace mineral copper",
+        "copper deficiency",
+        "copper deficient",
+        "low copper",
+        "copper deficiency symptoms",
+        "copper deficiency signs",
+        "copper deficiency diseases",
+        "copper supplement",
+        "copper supplements",
+        "copper pills",
+        "colloidal copper",
+        "copper oxide",
+        "copper bracelet",
+        "high copper",
+        "too much copper",
+        "excess copper",
+        "copper toxicity",
+        "copper overload",
+        "copper levels",
+        "copper blood test",
+        "copper rich foods",
+        "foods high in copper",
+        "copper for gray hair",
+        "copper for grey hair",
+        "copper and gray hair",
+        "copper for aneurysm",
+        "copper for hair",
+        "copper for arthritis",
+        "copper for hemorrhoids",
+        "copper for wrinkles",
+        "copper and thyroid",
+        "copper and iodine",
+        "copper cofactor",
+        "copper enzyme",
+        "coper",
+        "coppar",
+        "cuprum metallicum"
       ],
       "record": [
         {
@@ -1995,19 +2215,90 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000097"
+            "WAL-CLM-IMMORT-000097",
+            "WAL-CLM-IMMORT-000309"
           ]
         },
         {
           "facet": "warning",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000111"
+            "WAL-CLM-IMMORT-000099",
+            "WAL-CLM-IMMORT-000104",
+            "WAL-CLM-IMMORT-000111",
+            "WAL-CLM-LETS-000009"
           ]
         },
         {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000106"
+            "WAL-CLM-DDDL-000003",
+            "WAL-CLM-DDDL-000195",
+            "WAL-CLM-EPIGEN-000063",
+            "WAL-CLM-IMMORT-000100",
+            "WAL-CLM-IMMORT-000106",
+            "WAL-CLM-RARE-000142",
+            "WAL-CLM-RARE-000344",
+            "WAL-CLM-RARE-000345",
+            "WAL-CLM-RARE-000347"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000272",
+            "WAL-CLM-IMMORT-000107",
+            "WAL-CLM-IMMORT-000180",
+            "WAL-CLM-RARE-000346"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000038",
+            "WAL-CLM-HELLS-000039",
+            "WAL-CLM-IMMORT-000310"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000196",
+            "WAL-CLM-DDDL-000198"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000197",
+            "WAL-CLM-LETS-000049",
+            "WAL-CLM-RARE-000348"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000199",
+            "WAL-CLM-EPIGEN-000273",
+            "WAL-CLM-RARE-000129"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000274",
+            "WAL-CLM-HELLS-000040"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000004"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000123"
           ]
         }
       ],
@@ -2467,7 +2758,29 @@
         "rare-earths"
       ],
       "synonyms": [
-        "iodide"
+        "iodine",
+        "iodin",
+        "iodide",
+        "iodine deficiency",
+        "iodine deficiency symptoms",
+        "low iodine",
+        "not enough iodine",
+        "iodine supplement",
+        "iodine supplements",
+        "iodine drops",
+        "iodine tincture",
+        "tincture of iodine",
+        "lugol's iodine",
+        "iodized salt",
+        "iodine for thyroid",
+        "iodine and thyroid",
+        "metallic iodine",
+        "elemental iodine",
+        "too much iodine",
+        "iodine toxicity",
+        "iodine benefits",
+        "goiter",
+        "goitre"
       ],
       "record": [
         {
@@ -2539,20 +2852,39 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000316"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000208",
+            "WAL-CLM-DDDL-000209"
+          ]
+        },
+        {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000178"
+            "WAL-CLM-DDDL-000205",
+            "WAL-CLM-IMMORT-000178",
+            "WAL-CLM-LETS-000013"
           ]
         },
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000181"
+            "WAL-CLM-DDDL-000023",
+            "WAL-CLM-IMMORT-000181",
+            "WAL-CLM-IMMORT-000317",
+            "WAL-CLM-RARE-000149"
           ]
         },
         {
           "facet": "sources",
           "claim_ids": [
+            "WAL-CLM-DDDL-000206",
             "WAL-CLM-IMMORT-000173",
             "WAL-CLM-IMMORT-000175"
           ]
@@ -2561,6 +2893,36 @@
           "facet": "uses",
           "claim_ids": [
             "WAL-CLM-IMMORT-000176"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000207"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000177"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000318"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000049"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000210"
           ]
         }
       ],
@@ -8285,7 +8647,39 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin b1",
+        "vitamin b-1",
+        "b1",
+        "b-1",
+        "b1 vitamin",
+        "vitamin b one",
+        "thiamine",
+        "thiamin",
+        "thiamine hydrochloride",
+        "thiamine hcl",
+        "thiamine mononitrate",
+        "aneurine",
+        "aneurin",
+        "thiamine pyrophosphate",
+        "tpp",
+        "cocarboxylase",
+        "vitamin b1 deficiency",
+        "b1 deficiency",
+        "thiamine deficiency",
+        "thiamin deficiency",
+        "vitamin b1 supplement",
+        "b1 supplement",
+        "thiamine supplement",
+        "vitamin b1 dose",
+        "vitamin b1 dosage",
+        "how much vitamin b1",
+        "vitamin b1 benefits",
+        "vitamin b1 foods",
+        "vitamin b1 for energy",
+        "vitamin b1 for memory",
+        "vitamin b1 fatigue"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8324,7 +8718,58 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000237"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000043"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000183",
+            "WAL-CLM-IMMORT-000294"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000238",
+            "WAL-CLM-IMMORT-000295"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000184"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000239"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000241"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000240"
+          ]
+        }
+      ],
       "conditions": [
         "alzheimers",
         "anorexia",
@@ -8370,7 +8815,48 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin b2",
+        "vitamin b-2",
+        "b2",
+        "b-2",
+        "vitamin b 2",
+        "vitamin b two",
+        "b vitamin 2",
+        "riboflavin",
+        "riboflavine",
+        "ribloflavin",
+        "riboflavin vitamin",
+        "vitamin b2 riboflavin",
+        "what is vitamin b2",
+        "vitamin b2 function",
+        "vitamin b2 benefits",
+        "vitamin b2 deficiency",
+        "b2 deficiency",
+        "riboflavin deficiency",
+        "vitamin b2 supplement",
+        "b2 supplement",
+        "riboflavin supplement",
+        "vitamin b2 dosage",
+        "vitamin b2 dose",
+        "how much vitamin b2",
+        "vitamin b2 foods",
+        "foods with vitamin b2",
+        "riboflavin foods",
+        "vitamin b2 side effects",
+        "vitamin b2 for skin",
+        "vitamin b2 for eyes",
+        "vitamin b2 energy",
+        "cracks in corners of mouth",
+        "cracked mouth corners",
+        "cracked lips corners",
+        "cheilosis",
+        "angular stomatitis",
+        "geographic tongue",
+        "sore burning tongue",
+        "yellow vitamin",
+        "flavin vitamin"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8405,7 +8891,51 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000242"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-LETS-000029"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000185"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000243"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000296"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000186",
+            "WAL-CLM-LETS-000064"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000297"
+          ]
+        }
+      ],
       "conditions": [
         "alopecia",
         "anemia",
@@ -8447,7 +8977,33 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "niacin",
+        "vitamin b3",
+        "vitamin b-3",
+        "vitamin b 3",
+        "b3",
+        "b-3",
+        "b3 vitamin",
+        "vitamin b3 deficiency",
+        "niacin deficiency",
+        "vitamin b3 supplement",
+        "niacin supplement",
+        "nicotinic acid",
+        "niacinamide",
+        "nicotinamide",
+        "niacin flush",
+        "niacin for cholesterol",
+        "niacin for schizophrenia",
+        "how much niacin",
+        "niacin dose",
+        "niacin benefits",
+        "niacine",
+        "niasin",
+        "vitamin b3 benefits",
+        "vitamin b3 pellagra",
+        "niacin pellagra"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8495,7 +9051,68 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000244"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000248"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000298"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000245",
+            "WAL-CLM-EPIGEN-000246",
+            "WAL-CLM-EPIGEN-000247"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000049",
+            "WAL-CLM-DDDL-000075",
+            "WAL-CLM-DDDL-000187"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000059"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000188"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000249"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000250",
+            "WAL-CLM-HELLS-000031",
+            "WAL-CLM-LETS-000506"
+          ]
+        }
+      ],
       "conditions": [
         "alcoholism",
         "anorexia",
@@ -8556,7 +9173,37 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin b5",
+        "vitamin b-5",
+        "vitamin b 5",
+        "vit b5",
+        "b5",
+        "b-5",
+        "b5 vitamin",
+        "b 5 vitamin",
+        "pantothenic acid",
+        "panthothenic acid",
+        "pantothenate",
+        "calcium pantothenate",
+        "d-pantothenate",
+        "panthenol",
+        "pantethine",
+        "vitamin b5 deficiency",
+        "b5 deficiency",
+        "pantothenic acid deficiency",
+        "vitamin b5 supplement",
+        "b5 supplement",
+        "pantothenic acid supplement",
+        "vitamin b5 dose",
+        "vitamin b5 dosage",
+        "how much vitamin b5",
+        "vitamin b5 benefits",
+        "vitamin b5 foods",
+        "vitamin b5 side effects",
+        "burning feet vitamin",
+        "what is vitamin b5"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8584,7 +9231,56 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000299"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000252"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-LETS-000021"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000251"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000115"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-LETS-000060"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000253"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000254"
+          ]
+        }
+      ],
       "conditions": [
         "alopecia",
         "anemia",
@@ -8631,7 +9327,42 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin b6",
+        "b6",
+        "vitamin b-6",
+        "b-6",
+        "vitamin b 6",
+        "vit b6",
+        "pyridoxine",
+        "pyridoxin",
+        "pyridoxine hydrochloride",
+        "pyridoxal",
+        "pyridoxamine",
+        "pyridoxal phosphate",
+        "pyridoxal 5 phosphate",
+        "p5p",
+        "plp",
+        "vitamin b6 deficiency",
+        "b6 deficiency",
+        "pyridoxine deficiency",
+        "vitamin b6 supplement",
+        "b6 supplement",
+        "vitamin b6 dose",
+        "vitamin b6 dosage",
+        "how much vitamin b6",
+        "vitamin b6 foods",
+        "foods high in vitamin b6",
+        "vitamin b6 benefits",
+        "vitamin b6 side effects",
+        "too much vitamin b6",
+        "vitamin b6 overdose",
+        "vitamin b6 toxicity",
+        "vitamin b6 morning sickness",
+        "vitamin b6 epilepsy",
+        "vitamin b6 seizures",
+        "b6 for nausea"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8703,7 +9434,66 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000255"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000258"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-LETS-000027"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000256",
+            "WAL-CLM-EPIGEN-000257"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000032"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000189",
+            "WAL-CLM-DDDL-000190",
+            "WAL-CLM-IMMORT-000008",
+            "WAL-CLM-IMMORT-000300"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000063"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000259"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000301"
+          ]
+        }
+      ],
       "conditions": [
         "absence_attacks",
         "acne",
@@ -8785,7 +9575,38 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "folate",
+        "folic acid",
+        "folacin",
+        "vitamin b9",
+        "vitamin b-9",
+        "vitamin b 9",
+        "b9",
+        "b-9",
+        "vitamin b nine",
+        "folic acid deficiency",
+        "folate deficiency",
+        "vitamin b9 deficiency",
+        "low folate",
+        "folic acid supplement",
+        "folate supplement",
+        "vitamin b9 supplement",
+        "folic acid pregnancy",
+        "folic acid prenatal",
+        "folic acid for pregnancy",
+        "folic acid spina bifida",
+        "folic acid birth defects",
+        "folic acid anemia",
+        "pteroylglutamic acid",
+        "pga",
+        "polyglutamates",
+        "methylfolate",
+        "5-mthf",
+        "folick acid",
+        "folik acid",
+        "folate vitamin"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8827,7 +9648,80 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000260"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000263",
+            "WAL-CLM-EPIGEN-000264",
+            "WAL-CLM-IMMORT-000302"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000191",
+            "WAL-CLM-LETS-000010"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000261",
+            "WAL-CLM-EPIGEN-000262"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000034"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000192",
+            "WAL-CLM-HELLS-000033"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000050"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000303",
+            "WAL-CLM-RARE-000343"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000265"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000035"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-LETS-000507"
+          ]
+        }
+      ],
       "conditions": [
         "anemia",
         "anencephaly",
@@ -8891,7 +9785,42 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin B12",
+        "vitamin b12",
+        "B12",
+        "b12",
+        "vitamin b-12",
+        "vitamin b 12",
+        "vit b12",
+        "vitamin b twelve",
+        "b-12",
+        "cobalamin",
+        "cobalamine",
+        "cyanocobalamin",
+        "cyanocobalamine",
+        "methylcobalamin",
+        "hydroxocobalamin",
+        "hydroxycobalamine",
+        "adenosylcobalamin",
+        "B12 deficiency",
+        "vitamin B12 deficiency",
+        "low B12",
+        "B12 supplement",
+        "vitamin B12 supplement",
+        "B12 shots",
+        "B12 shot",
+        "B12 injections",
+        "B12 injection",
+        "sublingual B12",
+        "B12 spray",
+        "vegan B12",
+        "B12 for vegans",
+        "B12 for energy",
+        "B12 anemia",
+        "pernicious anemia",
+        "cobalt vitamin"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8966,7 +9895,71 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000304",
+            "WAL-CLM-IMMORT-000305"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000040",
+            "WAL-CLM-EPIGEN-000269",
+            "WAL-CLM-EPIGEN-000270",
+            "WAL-CLM-IMMORT-000307"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000193",
+            "WAL-CLM-IMMORT-000080"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000266",
+            "WAL-CLM-IMMORT-000306"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000267",
+            "WAL-CLM-EPIGEN-000268"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000116"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000036"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000308"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000194",
+            "WAL-CLM-EPIGEN-000271",
+            "WAL-CLM-HELLS-000037"
+          ]
+        }
+      ],
       "conditions": [
         "achlorhydria",
         "amblyopia",
@@ -9553,7 +10546,34 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin E",
+        "vitamin e",
+        "vit E",
+        "vit e",
+        "vit. E",
+        "vitamin-e",
+        "vitamin E deficiency",
+        "vitamin e deficiency",
+        "low vitamin E",
+        "vitamin E supplement",
+        "vitamin e supplement",
+        "vitamin E oil",
+        "vitamin e oil",
+        "tocopherol",
+        "tocopherols",
+        "alpha-tocopherol",
+        "alpha tocopherol",
+        "alpha-tocopherols",
+        "mixed tocopherols",
+        "d-alpha-tocopherol",
+        "vitimin e",
+        "vitamine e",
+        "vitamin E benefits",
+        "vitamin e for skin",
+        "vitamin e for burns",
+        "vitamin e and selenium"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -9649,7 +10669,89 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000279"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000211",
+            "WAL-CLM-EPIGEN-000281"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000033",
+            "WAL-CLM-EPIGEN-000280",
+            "WAL-CLM-IMMORT-000319",
+            "WAL-CLM-RARE-000355",
+            "WAL-CLM-RARE-000356"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000320",
+            "WAL-CLM-IMMORT-000321"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000050",
+            "WAL-CLM-HELLS-000051"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000052",
+            "WAL-CLM-LETS-000175",
+            "WAL-CLM-LETS-000275",
+            "WAL-CLM-LETS-000511"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000075"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000282"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000283",
+            "WAL-CLM-IMMORT-000322"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000054",
+            "WAL-CLM-IMMORT-000323"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000212",
+            "WAL-CLM-EPIGEN-000284",
+            "WAL-CLM-HELLS-000053",
+            "WAL-CLM-RARE-000357"
+          ]
+        }
+      ],
       "conditions": [
         "acne",
         "aids",
