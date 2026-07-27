@@ -10,7 +10,7 @@ The enrichment queue (39 elements of "Worth knowing" search claims) ships live i
 vitamin-k · biotin · choline · inositol · flavonoids · vanadium · germanium · manganese · sodium · phosphorus · boron · sulfur · cobalt · lithium · molybdenum · chloride · arginine · taurine · tryptophan
 
 ## HOW TO SEAL THE NEXT BATCH (proven recipe — Batches 1–3)
-Generic reusable scripts in this session's scratchpad (`.../eaf40b58-.../scratchpad/`): `review_analyze.py <out.json> <slug...>` + `review_html.py <analysis> <out.html> <title> <sub>` (byte-verified review artifact), `seal_stage.py <stage> <slug...>`, `verify_drafts_gen.py <stage>`, `compute_wiring_gen.py <stage>`, `precheck_new_claims.py <stage>`, `gloss_audit.py <subject>`, `gloss_add.py::add_batch`. Pass the element list as args — no repointing.
+Generic reusable scripts PERSISTED in `temporary/enrichment-queue/pilot/scripts/` (gitignored but survives sessions on this machine — where Batch 1's scripts live): `review_analyze.py <out.json> <slug...>` + `review_html.py <analysis> <out.html> <title> <sub>` (byte-verified review artifact), `seal_stage.py <stage> <slug...>`, `verify_drafts_gen.py <stage>`, `compute_wiring_gen.py <stage>`, `precheck_new_claims.py <stage>`, `gloss_audit.py <subject>`, `gloss_add.py::add_batch`. Pass the element list as args — no repointing.
 1. Luneth names the elements.
 2. `review_analyze.py` → `review_html.py` → SendUserFile → Luneth approves (visual-verification gate).
 3. `seal_stage.py <stage> <slugs>` (skips books with no raw file; iaiyh has none).
