@@ -317,7 +317,7 @@
         "testosterone",
         "estrogen"
       ],
-      "claim_count": 14,
+      "claim_count": 15,
       "symbol": "B"
     },
     "butter": {
@@ -9006,6 +9006,29 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000123",
+      "subject": "vitamin-b9",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much folic acid should I take?",
+      "answer_short": "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
+      "answer": "In his Epigenetics daily multiple recommendations, Wallach gives folic acid (folate) a daily amount of 400 mcg.",
+      "verbatim": "Folic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg\n",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "folic-acid",
+        "dose",
+        "supplement",
+        "rda"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b9"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000126",
       "subject": "flavonoids",
       "also_about": [],
@@ -9029,53 +9052,28 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000127",
-      "subject": "zinc",
+      "subject": "boron",
       "also_about": [
-        "chromium",
-        "vanadium",
-        "boron",
         "calcium",
-        "copper"
+        "copper",
+        "chromium"
       ],
       "facet": "protocol",
-      "question": "How much zinc should I take a day?",
-      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+      "question": "How much boron should you take per day?",
+      "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives boron a daily range of 1 to 6 mg.",
       "verbatim": "Boron 1 - 6 mg\nCalcium 600 - 1,000 mg\nChromium 200 - 400 mcg",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
-        "zinc dose",
-        "how much zinc",
-        "daily zinc",
-        "zinc mg",
-        "supplement amount"
+        "dosage",
+        "supplements",
+        "daily dose",
+        "minerals"
       ],
       "tier1_link": {
         "essentials": [
           "boron"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000133",
-      "subject": "molybdenum",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "What is the recommended daily amount of molybdenum?",
-      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
-      "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives magnesium a daily range of 250 to 500 mg.",
-      "verbatim": "Magnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "minerals",
-        "supplements",
-        "dosage"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "magnesium"
         ]
       }
     },
@@ -9101,6 +9099,28 @@
       "tier1_link": {
         "essentials": [
           "manganese"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000135",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the recommended daily amount of molybdenum?",
+      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+      "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives molybdenum a daily range of 10 to 25 mcg.",
+      "verbatim": "Molybdenum 10 - 25 mcg\nPotassium NA\nSelenium 100 - 200 mcg\nSilica 1 - 25 mg",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "minerals",
+        "supplements",
+        "dosage"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "molybdenum"
         ]
       }
     },
@@ -9149,6 +9169,36 @@
       "tier1_link": {
         "essentials": [
           "vanadium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000139",
+      "subject": "zinc",
+      "also_about": [
+        "chromium",
+        "vanadium",
+        "boron",
+        "calcium",
+        "copper"
+      ],
+      "facet": "protocol",
+      "question": "How much zinc should I take a day?",
+      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+      "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives zinc a daily range of 15 to 30 mg.",
+      "verbatim": "Zinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "zinc dose",
+        "how much zinc",
+        "daily zinc",
+        "zinc mg",
+        "supplement amount"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc"
         ]
       }
     },
@@ -22302,29 +22352,6 @@
       "tier1_link": {
         "essentials": [
           "chromium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-LETS-000050",
-      "subject": "vitamin-b9",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much folic acid should I take?",
-      "answer_short": "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
-      "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives copper a True Supplement Need (daily maintenance target) of 3 to 4 mg and a 30-day pharmacologic daily dose of 4 to 6 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
-      "verbatim": "COPPER 2 mg 3 to 4 mg 4 to 6 mg\nFLUORIDE 1.5 mg 1.5 mg 20 mg **",
-      "page": 73,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "folic-acid",
-        "dose",
-        "supplement",
-        "rda"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "copper"
         ]
       }
     },

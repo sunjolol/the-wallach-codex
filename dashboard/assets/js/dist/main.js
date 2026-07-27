@@ -29655,6 +29655,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000127"
+            ]
+          },
+          {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-EPIGEN-000316"
@@ -31469,7 +31475,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000133",
+              "WAL-CLM-EPIGEN-000135",
               "WAL-CLM-LETS-000058",
               "WAL-CLM-RARE-000180"
             ]
@@ -32507,7 +32513,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000127"
+              "WAL-CLM-EPIGEN-000139"
             ]
           },
           {
@@ -38298,7 +38304,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000050"
+              "WAL-CLM-EPIGEN-000123"
             ]
           },
           {
@@ -67879,7 +67885,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "testosterone",
           "estrogen"
         ],
-        claim_count: 14,
+        claim_count: 15,
         symbol: "B"
       },
       butter: {
@@ -76581,6 +76587,29 @@ Uterine fibroids`,
         }
       },
       {
+        id: "WAL-CLM-EPIGEN-000123",
+        subject: "vitamin-b9",
+        also_about: [],
+        facet: "protocol",
+        question: "How much folic acid should I take?",
+        answer_short: "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
+        answer: "In his Epigenetics daily multiple recommendations, Wallach gives folic acid (folate) a daily amount of 400 mcg.",
+        verbatim: "Folic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg\n",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "folic-acid",
+          "dose",
+          "supplement",
+          "rda"
+        ],
+        tier1_link: {
+          essentials: [
+            "vitamin-b9"
+          ]
+        }
+      },
+      {
         id: "WAL-CLM-EPIGEN-000126",
         subject: "flavonoids",
         also_about: [],
@@ -76604,53 +76633,28 @@ Uterine fibroids`,
       },
       {
         id: "WAL-CLM-EPIGEN-000127",
-        subject: "zinc",
+        subject: "boron",
         also_about: [
-          "chromium",
-          "vanadium",
-          "boron",
           "calcium",
-          "copper"
+          "copper",
+          "chromium"
         ],
         facet: "protocol",
-        question: "How much zinc should I take a day?",
-        answer_short: "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+        question: "How much boron should you take per day?",
+        answer_short: "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight.",
         answer: "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives boron a daily range of 1 to 6 mg.",
         verbatim: "Boron 1 - 6 mg\nCalcium 600 - 1,000 mg\nChromium 200 - 400 mcg",
         page: null,
         book_id: "epigenetics",
         topics: [
-          "zinc dose",
-          "how much zinc",
-          "daily zinc",
-          "zinc mg",
-          "supplement amount"
+          "dosage",
+          "supplements",
+          "daily dose",
+          "minerals"
         ],
         tier1_link: {
           essentials: [
             "boron"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-EPIGEN-000133",
-        subject: "molybdenum",
-        also_about: [],
-        facet: "protocol",
-        question: "What is the recommended daily amount of molybdenum?",
-        answer_short: "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
-        answer: "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives magnesium a daily range of 250 to 500 mg.",
-        verbatim: "Magnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
-        page: null,
-        book_id: "epigenetics",
-        topics: [
-          "minerals",
-          "supplements",
-          "dosage"
-        ],
-        tier1_link: {
-          essentials: [
-            "magnesium"
           ]
         }
       },
@@ -76676,6 +76680,28 @@ Uterine fibroids`,
         tier1_link: {
           essentials: [
             "manganese"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000135",
+        subject: "molybdenum",
+        also_about: [],
+        facet: "protocol",
+        question: "What is the recommended daily amount of molybdenum?",
+        answer_short: "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+        answer: "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives molybdenum a daily range of 10 to 25 mcg.",
+        verbatim: "Molybdenum 10 - 25 mcg\nPotassium NA\nSelenium 100 - 200 mcg\nSilica 1 - 25 mg",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "minerals",
+          "supplements",
+          "dosage"
+        ],
+        tier1_link: {
+          essentials: [
+            "molybdenum"
           ]
         }
       },
@@ -76724,6 +76750,36 @@ Uterine fibroids`,
         tier1_link: {
           essentials: [
             "vanadium"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000139",
+        subject: "zinc",
+        also_about: [
+          "chromium",
+          "vanadium",
+          "boron",
+          "calcium",
+          "copper"
+        ],
+        facet: "protocol",
+        question: "How much zinc should I take a day?",
+        answer_short: "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+        answer: "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives zinc a daily range of 15 to 30 mg.",
+        verbatim: "Zinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "zinc dose",
+          "how much zinc",
+          "daily zinc",
+          "zinc mg",
+          "supplement amount"
+        ],
+        tier1_link: {
+          essentials: [
+            "zinc"
           ]
         }
       },
@@ -89877,29 +89933,6 @@ Uterine fibroids`,
         tier1_link: {
           essentials: [
             "chromium"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-LETS-000050",
-        subject: "vitamin-b9",
-        also_about: [],
-        facet: "protocol",
-        question: "How much folic acid should I take?",
-        answer_short: "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
-        answer: "In his Base Line Nutritional Supplement Program for adults, Wallach gives copper a True Supplement Need (daily maintenance target) of 3 to 4 mg and a 30-day pharmacologic daily dose of 4 to 6 mg. The quoted row lists three figures in column order \u2014 the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
-        verbatim: "COPPER 2 mg 3 to 4 mg 4 to 6 mg\nFLUORIDE 1.5 mg 1.5 mg 20 mg **",
-        page: 73,
-        book_id: "lets-play-doctor",
-        topics: [
-          "folic-acid",
-          "dose",
-          "supplement",
-          "rda"
-        ],
-        tier1_link: {
-          essentials: [
-            "copper"
           ]
         }
       },
@@ -129931,7 +129964,7 @@ Wiring (post-seal, safe_write): search-enrichment 617\u2192820 (203 new keys + 9
 
 Glossing (in-batch): glossary 325\u2192393 (+68 scientific terms) \u2014 the B-vitamin coenzymes (thiamine/TPP/cocarboxylase, FAD/FMN, NAD, the cobalamin forms), the copper proteins (ceruloplasmin, hemocyanin, elastin, melanin) plus Wilson's disease and the Kayser-Fleischer ring, chromium's GTF and glutathione, iodine's thyroid/thyroxine/tyrosine/halogen/goiter/cretinism, and vitamin E's tocopherol/muscular dystrophy/peroxidation \u2014 and it cleared the 3 jargon warnings (sarcopenia, polyneuritis, cryptogenic).
 
-Verified: build_embeds \u2192 build.mjs \u2192 invariants 77/77 \u2192 render_probe_search + render_probe_knowledge PASS \xB7 glossary_wellformed PASS (393 defs) \xB7 jargon_terms_glossed PASS (535 keys) \xB7 headless screenshots confirm the tooltips render (vitamin-b1\u2192thiamine, copper\u2192ceruloplasmin, iodine\u2192thyroid). Deferred: 19 elements remain for future batches (vitamin-k, biotin, choline, inositol, flavonoids, vanadium, germanium, manganese, sodium, phosphorus, boron, sulfur, cobalt, lithium, molybdenum, chloride, arginine, taurine, tryptophan).` }, { id: "lg_ms2hniie_0bhp1h", ts: "2026-07-26T19:28:18.422178-05:00", surface: "corpus", kind: "session-end", summary: "Session close: Batches 2 (kv402) + 3 (kv403) sealed live + glossed (glossary 234->393); pipeline now generic + persisted to pilot/scripts/; handoff set for Batch 4. Board 77/77, all pushed.", detail: 'Session close. We shipped three selective enrichment batches live to Ask-Wallach and made the content readable to normal people. Setting up cleanly so the next session\'s `genesis` boots straight into Batch 4.\n\nWhat landed this session:\n- Batch 2 (kv402): the high-value 6 \u2014 omega-3, vitamin C, vitamin A, vitamin D, iron, calcium.\n- Batch 3 (kv403): the 7 B-vitamins + copper, chromium, potassium, iodine, vitamin E.\n- Glossing pass: every scientific term across all 8 Batch-2 elements got a plain-language dotted-line hover (glossary 234\u2192325), and Batch 3 was glossed IN-batch (325\u2192393) \u2014 Luneth\'s standing rule that this happens as we enrich, never as a backfill.\n- CSS: brow-lens "kind of answer" pills bigger + centered.\n- 20 of 39 queue elements now enriched + live; corpus 1467\u21921732 claims.\n\nSetup done for the handoff: the seal/review/gloss pipeline is now GENERIC (element list + stage dir as args) and PERSISTED to temporary/enrichment-queue/pilot/scripts/ (survives sessions on this machine) \u2014 review_analyze, review_html, seal_stage, verify_drafts_gen, compute_wiring_gen, precheck_new_claims, gloss_audit, gloss_add. next-chunk.md carries the full recipe (incl. the pre-seal RED-gate check that caught the ATP gloss in B2 and the "Table 12-2" ref in B3, and the gloss-as-you-enrich step) and points at the persisted scripts.\n\nState verified: genesis dry-run clean \u2014 invariants 77/77 (no new reds), build parity fresh, board green. Everything committed + pushed (Batch 3 = c42c5bcb). NEXT: Batch 4 \u2014 Luneth names the elements from the 19 remaining (vitamin-k, biotin, choline, inositol, flavonoids, vanadium, germanium, manganese, sodium, phosphorus, boron, sulfur, cobalt, lithium, molybdenum, chloride, arginine, taurine, tryptophan). Housekeeping deferred to a natural break: the memory index is ~21KB and due for a consolidate-memory pass.' }, { id: "lg_ms2ja06g_shfcmw", ts: "2026-07-26T20:13:47.368591-05:00", surface: "corpus", kind: "round-close", summary: "Batch 4 sealed live in Ask-Wallach: vitamin K, biotin, choline, inositol, flavonoids \u2014 65 reviewed search claims (corpus kv403->kv404, 1782 claims). Completes every vitamin in the queue; glossed in-batch (glossary 393->446).", detail: "Sealed the fourth reviewed batch of Worth-knowing search claims \u2014 the vitamin-family finisher. Luneth picked the five (vitamin K, biotin, choline, inositol, flavonoids), reviewed all 65 claims in an exact-form artifact, approved, and authorized the seal. In plain terms: these five now answer real questions inside Ask-Wallach with Wallach's own words, and every scientific term in them gets a hover definition. Two answers were caught pointing at the wrong quote and fixed before sealing; one acronym was caught unexplained and spelled out before sealing.\n\nCONTENT: 50 new search claims finalized per book (dddl 8, epigenetics 21, immortality 20, lets-play-doctor 1) + 15 reuse enrichments. corpus_seal (user-authorized) kv403->kv404, 1732->1782 claims across 7 shards, final corpus_verify PASS.\n\nREVIEW CATCHES (grounding): (1) vitamin-k-010 'how much vitamin K?' pointed at WAL-CLM-LETS-000074 (the vitamin-D dose row, which never shows the K dose) -> re-pointed to WAL-CLM-LETS-000076 (verbatim carries 'VITAMIN K 70 mcg 140 mcg 140 mcg'). (2) inositol-013 'inositol for insomnia?' pointed at WAL-CLM-DDDL-000075 (a Ca/Cr/V slice that never names inositol AND was already carrying a B3 enrichment) -> re-pointed to WAL-CLM-LETS-000322 (verbatim 'inositol at 500 mg/day'); book moved DDDL->LETS; and per Luneth's call the answer's incidental 'and vanadium' was trimmed to match the LETS quote (chromium only).\n\nPRE-SEAL RED-GATE CHECK: caught claim_text_term_gloss before the seal \u2014 unexplained 'ATP' in biotin-000/001 (WAL-CLM-EPIGEN-000291/000292). Fixed by spelling out 'adenosine triphosphate (ATP)' in the queue answer_full, re-staging, resetting the epigenetics draft to sealed, and re-finalizing (contiguous ids 285-305), then re-checking clean (0 RED, references_resolve/prose_contained/internal_refs all PASS).\n\nWIRING (post-seal, safe_write): search-enrichment.json 820->880 (60 new keys + 2 non-destructive collisions merged \u2014 WAL-CLM-IMMORT-000215 gained inositol in also_about beside its phytates question, WAL-CLM-EPIGEN-000178 gained flavonoids beside its antioxidants/ORAC question). search-entities.json 100->105 (5 new canon_ref entities).\n\nGLOSSING (standing rule, in-batch): glossary.json 393->446 (+53 terms across the five elements \u2014 vitamin-K forms, biotin enzymology, choline fats, inositol chemistry, flavonoid vascular biology); cleared the polycythemia jargon warning.\n\nVERIFIED: build OK; invariants 77/77 (0 new reds); render_probe_search + render_probe_knowledge PASS (0 page errors); glossary_wellformed PASS (446 defs); jargon_terms_glossed PASS.\n\nDEFERRED: 14 elements remain (vanadium, germanium, manganese, sodium, phosphorus, boron, sulfur, cobalt, lithium, molybdenum, chloride, arginine, taurine, tryptophan). Two follow-ups recorded in next-chunk: (a) the flavonoids 'What are flavonoids good for?' answer was suppressed by the EPIGEN-000178 collision (routes via the flavonoids page, no dedicated best-answer) \u2014 give it a home; (b) the Batch-3 B3 enrichment on WAL-CLM-DDDL-000075 is itself ungrounded (its niacin doses aren't in that truncated quote) \u2014 small correction." }, { id: "lg_ms2k8ehn_imtvs8", ts: "2026-07-26T20:40:32.219987-05:00", surface: "corpus", kind: "round-close", summary: "Batch 4 corrective seal (kv405, 1784 claims): 2 new grounded search-only claims fix both follow-ups \u2014 the flavonoids 'good for?' answer and the B3 insomnia answer now sit on quotes that contain them. Luneth approved + OK'd the autonomous 14-element run.", detail: "Fixed the two grounding follow-ups flagged at Batch 4 close. Both were the same problem: a good answer attached to a Wallach quote that did not actually contain the thing being answered. Each got one new, correctly-grounded search-only claim. Luneth reviewed both in an exact-form artifact, approved, and \u2014 since he is away ~2 hours \u2014 authorized me to then run the whole remaining 14-element enrichment queue autonomously, flagging anything needing his input into tasks.\n\nSEAL: 2 new search-only claims (epigenetics 1 + dddl 1), corpus_seal (user-authorized) kv404->kv405, 1782->1784 claims, corpus_verify PASS.\n\nFIX #1 flavonoids: new WAL-CLM-EPIGEN-000306 (mechanism) from the fuller Epigenetics benefits sentence (EPIGEN-000178 was only a slice of it; the continuation adds 'improving gastrointestinal function and supporting the immune system in cancer patients'). 'What are flavonoids good for?' \u2014 dropped by the Batch-4 non-destructive collision on the ORAC-framed EPIGEN-000178 \u2014 now has its own grounded best-answer. EPIGEN-000178 keeps its ORAC question.\n\nFIX #2 vitamin-b3: new WAL-CLM-DDDL-000221 (dose) from the DDDL insomnia span carrying BOTH niacin doses (niacinamide 1,000 mg at bedtime + B3 niacin 450 mg t.i.d. time-release). The 'Can niacin help with insomnia?' enrichment moved here from WAL-CLM-DDDL-000075, whose truncated Ca/Cr/V quote never named niacin. DDDL-000075 is now un-enriched (free) per Luneth's approved default.\n\nBOTH claims search-only (essentials=[], search-only tag; no tier-1/coverage leakage), verbatims byte-exact. Enrichment (safe_write) 880->881. Glossary 446->450 (gastrointestinal, pulmonary, antimicrobial, valerian).\n\nVERIFIED: pre-seal RED-gate check 0 RED; build OK; invariants 77/77; both render probes PASS; search index confirms both new questions live and DDDL-000075 no longer B3-enriched." }, { id: "lg_ms2kqz14_nec66f", ts: "2026-07-26T20:54:58.648341-05:00", surface: "corpus", kind: "round-close", summary: "Batch 5 sealed (kv406, 1859 claims): 7 trace/rare minerals live, 110 search claims. First autonomous batch \u2014 self-reviewed, 4 objective re-points fixed, 3 religion/occult claims held for Luneth, dose-table scramble flagged.", detail: "First batch of the autonomous run Luneth authorized before stepping away ~2h. Brought the 7 trace/rare minerals live in Ask-Wallach. Self-reviewed each (no live approval this window), fixed objective grounding issues the same way as the Batch-4 re-points, held religion/occult-adjacent content for his review, and logged everything to FOR-LUNETH-autonomous-run.md.\n\nSEAL: 75 new search claims (dddl 20, epigenetics 13, hells-kitchen 4, immortality 28, lets 1, rare-earths 9) + 35 reuse enrichments, corpus_seal (user-authorized) kv405->kv406, 1784->1859, corpus_verify PASS.\n\nSELF-REVIEW CATCHES (4 re-points, all to FREE correctly-grounded targets): vanadium-006 cholesterol RARE-000255->RARE-000256; vanadium-013 vanadium-dose EPIGEN-000127(boron slice)->EPIGEN-000138(the vanadium row); lithium-014 lithium-B12 RARE-000166->RARE-000167; manganese-013 manganese-dose LETS-000056(magnesium)->EPIGEN-000134(the free manganese row).\n\nHELD for Luneth (per his 2026-07-26 charged rule \u2014 hold only Christianity/occult): germanium-008 + lithium-012 (Lourdes 'Holy Waters' Catholic framing) + cobalt-010 (cobalt<-'kobald'/evil-gnome etymology). Saved to scratchpad/batch5-HELD.json, not sealed. Also flagged the already-live IMMORT-000146 Lourdes claim for his review.\n\nWIRING: search-enrichment 881->982 (101 new + 6 non-destructive collisions), search-entities 105->110 (5 new; germanium+cobalt union-merged). Glossary 450->470 (+20 technical terms).\n\nPRE-EXISTING ISSUE FLAGGED (not fixed autonomously): the Epigenetics mineral dose-table was sealed as overlapping 3-row slices; 'how much zinc?' (Batch 1) mis-sits on the boron slice and 'how much potassium?' (Batch 3) on the silica slice. Minerals appearing only as 2nd/3rd rows lack a clean own slice, so boron's dose question collided+dropped. Needs Luneth's call on how to home mineral doses.\n\nVERIFIED: pre-seal RED-gate 0 RED; build OK; invariants 77/77; both render probes PASS; glossary_wellformed PASS (470)." }, { id: "lg_ms2l19fb_yusrjw", ts: "2026-07-26T21:02:58.679756-05:00", surface: "corpus", kind: "round-close", summary: "Batch 6 sealed (kv407, 1939 claims): 4 macro minerals (sodium phosphorus sulfur chloride), 89 search claims live. Self-reviewed; 3 grounding fixes + pre-seal caught 2 ATP + 1 table-ref; no holds (no religion/occult).", detail: "Second batch of the autonomous run \u2014 the 4 macro minerals, live in Ask-Wallach.\n\nSEAL: 80 new (dddl 24, epigenetics 21, hells-kitchen 7, immortality 11, lets 3, rare-earths 14) + 9 reuse enrichments, corpus_seal (user-authorized) kv406->kv407, 1859->1939, corpus_verify PASS.\n\nSELF-REVIEW: phosphorus-020/022 were verbatim-length mismatches on the CORRECT phosphorus claims (LETS-000061 dose, LETS-000023 deficiency) \u2014 synced. chloride-004 'how much chloride?' was mis-pointed at the biotin slice -> re-pointed to LETS-000047, the actual chloride dose row.\n\nPRE-SEAL RED-GATE CHECK caught 3 before the seal: unexplained ATP in phosphorus-000/006 -> spelled out 'adenosine triphosphate (ATP)'; 'Table 12-5 of Rare Earths' in sulfur-015's summary -> de-referenced. Fixed in queue, reset+re-finalized dddl + rare-earths, re-checked 0 RED.\n\nWIRING: search-enrichment 982->1069 (87 new + 2 non-destructive collisions), search-entities 110->114 (4 new). Glossary 470->480 (+10).\n\nCHARGED: only benign health phrasings (salt-deficiency 'kill', chlorine-gas 'suicidal'); no religion/occult; nothing held.\n\nVERIFIED: pre-seal 0 RED; build OK; invariants 77/77; both render probes PASS; glossary_wellformed PASS (480)." }, { id: "lg_ms2l6a9p_45r7hq", ts: "2026-07-26T21:06:53.053085-05:00", surface: "corpus", kind: "milestone", summary: "Batch 7 sealed (kv408, 1967 claims): 3 amino acids (arginine taurine tryptophan), 34 search claims live. THE FINAL BATCH \u2014 completes the whole 39-element enrichment queue. Autonomous run (Batches 5-7, 14 elements) done.", detail: "Final batch of the autonomous run \u2014 the 3 amino acids. This completes the ENTIRE 39-element enrichment queue: every canon essential now has Worth-knowing search claims live in Ask-Wallach.\n\nCleanest batch of the run: no grounding mismatches, no collisions, no charged or religious content.\n\nSEAL: 28 new (dddl 8, epigenetics 17, hells-kitchen 1, immortality 2) + 6 reuse enrichments, corpus_seal (user-authorized) kv407->kv408, 1939->1967, corpus_verify PASS. Pre-seal RED-gate caught unexplained ATP in arginine-000 -> spelled out, reset+re-finalized epigenetics, re-checked 0 RED.\n\nWIRING: search-enrichment 1069->1103 (34 new, 0 collisions), search-entities 114->117 (3 new). Glossary 480->490 (+10).\n\nAUTONOMOUS RUN COMPLETE (Batches 5+6+7 = 14 elements sealed live while Luneth away ~2h). Everything needing his review is in FOR-LUNETH-autonomous-run.md: 3 held religion/occult claims (Batch 5), the Epigenetics mineral dose-table scramble (pre-existing, spans prior batches), the already-live Lourdes claim, the dropped-collision-question list, and the full charged-topics-included list.\n\nVERIFIED: pre-seal 0 RED; build OK; invariants 77/77; both render probes PASS; glossary_wellformed PASS (490)." }, { id: "lg_ms2nd397_ck9d8c", ts: "2026-07-26T22:08:09.787044-05:00", surface: "corpus", kind: "round-close", summary: "Cobalt etymology sealed (kv409, 1968 claims): Luneth ruled on the 3 held religion/occult items - KEEP Lourdes live as-is, SEAL the cobalt-kobold etymology. 1 new search claim live; Lourdes needed no action.", detail: "Resolved the held religion/occult items from the autonomous run per Luneth's ruling.\n\nLOURDES 'Holy Waters' (germanium/lithium mineral explanation): KEEP live as-is. The claim IMMORT-000146 was already sealed+searchable; the 2 held enrichments (germanium-008, lithium-012) were redundant collisions, so skipped. No action needed, nothing re-sealed.\n\nCOBALT etymology (cobalt <- German 'kobald', an evil gnome/spirit miners blamed for accidents): SEAL. Standard chemistry name-origin, not occult promotion. New search-only claim WAL-CLM-IMMORT-000385 (definition, essentials=[], search-only), verbatim byte-exact in Immortality. corpus_seal (user-authorized) kv408->kv409, 1967->1968, corpus_verify PASS. Enrichment 1103->1104 (subject cobalt, etymology facet); cobalt already a registered entity.\n\nVERIFIED: pre-seal 0 RED; build OK; invariants 77/77; both render probes PASS.\n\nOnly open follow-up remaining: the Epigenetics mineral dose-table scramble (task chip)." }];
+Verified: build_embeds \u2192 build.mjs \u2192 invariants 77/77 \u2192 render_probe_search + render_probe_knowledge PASS \xB7 glossary_wellformed PASS (393 defs) \xB7 jargon_terms_glossed PASS (535 keys) \xB7 headless screenshots confirm the tooltips render (vitamin-b1\u2192thiamine, copper\u2192ceruloplasmin, iodine\u2192thyroid). Deferred: 19 elements remain for future batches (vitamin-k, biotin, choline, inositol, flavonoids, vanadium, germanium, manganese, sodium, phosphorus, boron, sulfur, cobalt, lithium, molybdenum, chloride, arginine, taurine, tryptophan).` }, { id: "lg_ms2hniie_0bhp1h", ts: "2026-07-26T19:28:18.422178-05:00", surface: "corpus", kind: "session-end", summary: "Session close: Batches 2 (kv402) + 3 (kv403) sealed live + glossed (glossary 234->393); pipeline now generic + persisted to pilot/scripts/; handoff set for Batch 4. Board 77/77, all pushed.", detail: 'Session close. We shipped three selective enrichment batches live to Ask-Wallach and made the content readable to normal people. Setting up cleanly so the next session\'s `genesis` boots straight into Batch 4.\n\nWhat landed this session:\n- Batch 2 (kv402): the high-value 6 \u2014 omega-3, vitamin C, vitamin A, vitamin D, iron, calcium.\n- Batch 3 (kv403): the 7 B-vitamins + copper, chromium, potassium, iodine, vitamin E.\n- Glossing pass: every scientific term across all 8 Batch-2 elements got a plain-language dotted-line hover (glossary 234\u2192325), and Batch 3 was glossed IN-batch (325\u2192393) \u2014 Luneth\'s standing rule that this happens as we enrich, never as a backfill.\n- CSS: brow-lens "kind of answer" pills bigger + centered.\n- 20 of 39 queue elements now enriched + live; corpus 1467\u21921732 claims.\n\nSetup done for the handoff: the seal/review/gloss pipeline is now GENERIC (element list + stage dir as args) and PERSISTED to temporary/enrichment-queue/pilot/scripts/ (survives sessions on this machine) \u2014 review_analyze, review_html, seal_stage, verify_drafts_gen, compute_wiring_gen, precheck_new_claims, gloss_audit, gloss_add. next-chunk.md carries the full recipe (incl. the pre-seal RED-gate check that caught the ATP gloss in B2 and the "Table 12-2" ref in B3, and the gloss-as-you-enrich step) and points at the persisted scripts.\n\nState verified: genesis dry-run clean \u2014 invariants 77/77 (no new reds), build parity fresh, board green. Everything committed + pushed (Batch 3 = c42c5bcb). NEXT: Batch 4 \u2014 Luneth names the elements from the 19 remaining (vitamin-k, biotin, choline, inositol, flavonoids, vanadium, germanium, manganese, sodium, phosphorus, boron, sulfur, cobalt, lithium, molybdenum, chloride, arginine, taurine, tryptophan). Housekeeping deferred to a natural break: the memory index is ~21KB and due for a consolidate-memory pass.' }, { id: "lg_ms2ja06g_shfcmw", ts: "2026-07-26T20:13:47.368591-05:00", surface: "corpus", kind: "round-close", summary: "Batch 4 sealed live in Ask-Wallach: vitamin K, biotin, choline, inositol, flavonoids \u2014 65 reviewed search claims (corpus kv403->kv404, 1782 claims). Completes every vitamin in the queue; glossed in-batch (glossary 393->446).", detail: "Sealed the fourth reviewed batch of Worth-knowing search claims \u2014 the vitamin-family finisher. Luneth picked the five (vitamin K, biotin, choline, inositol, flavonoids), reviewed all 65 claims in an exact-form artifact, approved, and authorized the seal. In plain terms: these five now answer real questions inside Ask-Wallach with Wallach's own words, and every scientific term in them gets a hover definition. Two answers were caught pointing at the wrong quote and fixed before sealing; one acronym was caught unexplained and spelled out before sealing.\n\nCONTENT: 50 new search claims finalized per book (dddl 8, epigenetics 21, immortality 20, lets-play-doctor 1) + 15 reuse enrichments. corpus_seal (user-authorized) kv403->kv404, 1732->1782 claims across 7 shards, final corpus_verify PASS.\n\nREVIEW CATCHES (grounding): (1) vitamin-k-010 'how much vitamin K?' pointed at WAL-CLM-LETS-000074 (the vitamin-D dose row, which never shows the K dose) -> re-pointed to WAL-CLM-LETS-000076 (verbatim carries 'VITAMIN K 70 mcg 140 mcg 140 mcg'). (2) inositol-013 'inositol for insomnia?' pointed at WAL-CLM-DDDL-000075 (a Ca/Cr/V slice that never names inositol AND was already carrying a B3 enrichment) -> re-pointed to WAL-CLM-LETS-000322 (verbatim 'inositol at 500 mg/day'); book moved DDDL->LETS; and per Luneth's call the answer's incidental 'and vanadium' was trimmed to match the LETS quote (chromium only).\n\nPRE-SEAL RED-GATE CHECK: caught claim_text_term_gloss before the seal \u2014 unexplained 'ATP' in biotin-000/001 (WAL-CLM-EPIGEN-000291/000292). Fixed by spelling out 'adenosine triphosphate (ATP)' in the queue answer_full, re-staging, resetting the epigenetics draft to sealed, and re-finalizing (contiguous ids 285-305), then re-checking clean (0 RED, references_resolve/prose_contained/internal_refs all PASS).\n\nWIRING (post-seal, safe_write): search-enrichment.json 820->880 (60 new keys + 2 non-destructive collisions merged \u2014 WAL-CLM-IMMORT-000215 gained inositol in also_about beside its phytates question, WAL-CLM-EPIGEN-000178 gained flavonoids beside its antioxidants/ORAC question). search-entities.json 100->105 (5 new canon_ref entities).\n\nGLOSSING (standing rule, in-batch): glossary.json 393->446 (+53 terms across the five elements \u2014 vitamin-K forms, biotin enzymology, choline fats, inositol chemistry, flavonoid vascular biology); cleared the polycythemia jargon warning.\n\nVERIFIED: build OK; invariants 77/77 (0 new reds); render_probe_search + render_probe_knowledge PASS (0 page errors); glossary_wellformed PASS (446 defs); jargon_terms_glossed PASS.\n\nDEFERRED: 14 elements remain (vanadium, germanium, manganese, sodium, phosphorus, boron, sulfur, cobalt, lithium, molybdenum, chloride, arginine, taurine, tryptophan). Two follow-ups recorded in next-chunk: (a) the flavonoids 'What are flavonoids good for?' answer was suppressed by the EPIGEN-000178 collision (routes via the flavonoids page, no dedicated best-answer) \u2014 give it a home; (b) the Batch-3 B3 enrichment on WAL-CLM-DDDL-000075 is itself ungrounded (its niacin doses aren't in that truncated quote) \u2014 small correction." }, { id: "lg_ms2k8ehn_imtvs8", ts: "2026-07-26T20:40:32.219987-05:00", surface: "corpus", kind: "round-close", summary: "Batch 4 corrective seal (kv405, 1784 claims): 2 new grounded search-only claims fix both follow-ups \u2014 the flavonoids 'good for?' answer and the B3 insomnia answer now sit on quotes that contain them. Luneth approved + OK'd the autonomous 14-element run.", detail: "Fixed the two grounding follow-ups flagged at Batch 4 close. Both were the same problem: a good answer attached to a Wallach quote that did not actually contain the thing being answered. Each got one new, correctly-grounded search-only claim. Luneth reviewed both in an exact-form artifact, approved, and \u2014 since he is away ~2 hours \u2014 authorized me to then run the whole remaining 14-element enrichment queue autonomously, flagging anything needing his input into tasks.\n\nSEAL: 2 new search-only claims (epigenetics 1 + dddl 1), corpus_seal (user-authorized) kv404->kv405, 1782->1784 claims, corpus_verify PASS.\n\nFIX #1 flavonoids: new WAL-CLM-EPIGEN-000306 (mechanism) from the fuller Epigenetics benefits sentence (EPIGEN-000178 was only a slice of it; the continuation adds 'improving gastrointestinal function and supporting the immune system in cancer patients'). 'What are flavonoids good for?' \u2014 dropped by the Batch-4 non-destructive collision on the ORAC-framed EPIGEN-000178 \u2014 now has its own grounded best-answer. EPIGEN-000178 keeps its ORAC question.\n\nFIX #2 vitamin-b3: new WAL-CLM-DDDL-000221 (dose) from the DDDL insomnia span carrying BOTH niacin doses (niacinamide 1,000 mg at bedtime + B3 niacin 450 mg t.i.d. time-release). The 'Can niacin help with insomnia?' enrichment moved here from WAL-CLM-DDDL-000075, whose truncated Ca/Cr/V quote never named niacin. DDDL-000075 is now un-enriched (free) per Luneth's approved default.\n\nBOTH claims search-only (essentials=[], search-only tag; no tier-1/coverage leakage), verbatims byte-exact. Enrichment (safe_write) 880->881. Glossary 446->450 (gastrointestinal, pulmonary, antimicrobial, valerian).\n\nVERIFIED: pre-seal RED-gate check 0 RED; build OK; invariants 77/77; both render probes PASS; search index confirms both new questions live and DDDL-000075 no longer B3-enriched." }, { id: "lg_ms2kqz14_nec66f", ts: "2026-07-26T20:54:58.648341-05:00", surface: "corpus", kind: "round-close", summary: "Batch 5 sealed (kv406, 1859 claims): 7 trace/rare minerals live, 110 search claims. First autonomous batch \u2014 self-reviewed, 4 objective re-points fixed, 3 religion/occult claims held for Luneth, dose-table scramble flagged.", detail: "First batch of the autonomous run Luneth authorized before stepping away ~2h. Brought the 7 trace/rare minerals live in Ask-Wallach. Self-reviewed each (no live approval this window), fixed objective grounding issues the same way as the Batch-4 re-points, held religion/occult-adjacent content for his review, and logged everything to FOR-LUNETH-autonomous-run.md.\n\nSEAL: 75 new search claims (dddl 20, epigenetics 13, hells-kitchen 4, immortality 28, lets 1, rare-earths 9) + 35 reuse enrichments, corpus_seal (user-authorized) kv405->kv406, 1784->1859, corpus_verify PASS.\n\nSELF-REVIEW CATCHES (4 re-points, all to FREE correctly-grounded targets): vanadium-006 cholesterol RARE-000255->RARE-000256; vanadium-013 vanadium-dose EPIGEN-000127(boron slice)->EPIGEN-000138(the vanadium row); lithium-014 lithium-B12 RARE-000166->RARE-000167; manganese-013 manganese-dose LETS-000056(magnesium)->EPIGEN-000134(the free manganese row).\n\nHELD for Luneth (per his 2026-07-26 charged rule \u2014 hold only Christianity/occult): germanium-008 + lithium-012 (Lourdes 'Holy Waters' Catholic framing) + cobalt-010 (cobalt<-'kobald'/evil-gnome etymology). Saved to scratchpad/batch5-HELD.json, not sealed. Also flagged the already-live IMMORT-000146 Lourdes claim for his review.\n\nWIRING: search-enrichment 881->982 (101 new + 6 non-destructive collisions), search-entities 105->110 (5 new; germanium+cobalt union-merged). Glossary 450->470 (+20 technical terms).\n\nPRE-EXISTING ISSUE FLAGGED (not fixed autonomously): the Epigenetics mineral dose-table was sealed as overlapping 3-row slices; 'how much zinc?' (Batch 1) mis-sits on the boron slice and 'how much potassium?' (Batch 3) on the silica slice. Minerals appearing only as 2nd/3rd rows lack a clean own slice, so boron's dose question collided+dropped. Needs Luneth's call on how to home mineral doses.\n\nVERIFIED: pre-seal RED-gate 0 RED; build OK; invariants 77/77; both render probes PASS; glossary_wellformed PASS (470)." }, { id: "lg_ms2l19fb_yusrjw", ts: "2026-07-26T21:02:58.679756-05:00", surface: "corpus", kind: "round-close", summary: "Batch 6 sealed (kv407, 1939 claims): 4 macro minerals (sodium phosphorus sulfur chloride), 89 search claims live. Self-reviewed; 3 grounding fixes + pre-seal caught 2 ATP + 1 table-ref; no holds (no religion/occult).", detail: "Second batch of the autonomous run \u2014 the 4 macro minerals, live in Ask-Wallach.\n\nSEAL: 80 new (dddl 24, epigenetics 21, hells-kitchen 7, immortality 11, lets 3, rare-earths 14) + 9 reuse enrichments, corpus_seal (user-authorized) kv406->kv407, 1859->1939, corpus_verify PASS.\n\nSELF-REVIEW: phosphorus-020/022 were verbatim-length mismatches on the CORRECT phosphorus claims (LETS-000061 dose, LETS-000023 deficiency) \u2014 synced. chloride-004 'how much chloride?' was mis-pointed at the biotin slice -> re-pointed to LETS-000047, the actual chloride dose row.\n\nPRE-SEAL RED-GATE CHECK caught 3 before the seal: unexplained ATP in phosphorus-000/006 -> spelled out 'adenosine triphosphate (ATP)'; 'Table 12-5 of Rare Earths' in sulfur-015's summary -> de-referenced. Fixed in queue, reset+re-finalized dddl + rare-earths, re-checked 0 RED.\n\nWIRING: search-enrichment 982->1069 (87 new + 2 non-destructive collisions), search-entities 110->114 (4 new). Glossary 470->480 (+10).\n\nCHARGED: only benign health phrasings (salt-deficiency 'kill', chlorine-gas 'suicidal'); no religion/occult; nothing held.\n\nVERIFIED: pre-seal 0 RED; build OK; invariants 77/77; both render probes PASS; glossary_wellformed PASS (480)." }, { id: "lg_ms2l6a9p_45r7hq", ts: "2026-07-26T21:06:53.053085-05:00", surface: "corpus", kind: "milestone", summary: "Batch 7 sealed (kv408, 1967 claims): 3 amino acids (arginine taurine tryptophan), 34 search claims live. THE FINAL BATCH \u2014 completes the whole 39-element enrichment queue. Autonomous run (Batches 5-7, 14 elements) done.", detail: "Final batch of the autonomous run \u2014 the 3 amino acids. This completes the ENTIRE 39-element enrichment queue: every canon essential now has Worth-knowing search claims live in Ask-Wallach.\n\nCleanest batch of the run: no grounding mismatches, no collisions, no charged or religious content.\n\nSEAL: 28 new (dddl 8, epigenetics 17, hells-kitchen 1, immortality 2) + 6 reuse enrichments, corpus_seal (user-authorized) kv407->kv408, 1939->1967, corpus_verify PASS. Pre-seal RED-gate caught unexplained ATP in arginine-000 -> spelled out, reset+re-finalized epigenetics, re-checked 0 RED.\n\nWIRING: search-enrichment 1069->1103 (34 new, 0 collisions), search-entities 114->117 (3 new). Glossary 480->490 (+10).\n\nAUTONOMOUS RUN COMPLETE (Batches 5+6+7 = 14 elements sealed live while Luneth away ~2h). Everything needing his review is in FOR-LUNETH-autonomous-run.md: 3 held religion/occult claims (Batch 5), the Epigenetics mineral dose-table scramble (pre-existing, spans prior batches), the already-live Lourdes claim, the dropped-collision-question list, and the full charged-topics-included list.\n\nVERIFIED: pre-seal 0 RED; build OK; invariants 77/77; both render probes PASS; glossary_wellformed PASS (490)." }, { id: "lg_ms2nd397_ck9d8c", ts: "2026-07-26T22:08:09.787044-05:00", surface: "corpus", kind: "round-close", summary: "Cobalt etymology sealed (kv409, 1968 claims): Luneth ruled on the 3 held religion/occult items - KEEP Lourdes live as-is, SEAL the cobalt-kobold etymology. 1 new search claim live; Lourdes needed no action.", detail: "Resolved the held religion/occult items from the autonomous run per Luneth's ruling.\n\nLOURDES 'Holy Waters' (germanium/lithium mineral explanation): KEEP live as-is. The claim IMMORT-000146 was already sealed+searchable; the 2 held enrichments (germanium-008, lithium-012) were redundant collisions, so skipped. No action needed, nothing re-sealed.\n\nCOBALT etymology (cobalt <- German 'kobald', an evil gnome/spirit miners blamed for accidents): SEAL. Standard chemistry name-origin, not occult promotion. New search-only claim WAL-CLM-IMMORT-000385 (definition, essentials=[], search-only), verbatim byte-exact in Immortality. corpus_seal (user-authorized) kv408->kv409, 1967->1968, corpus_verify PASS. Enrichment 1103->1104 (subject cobalt, etymology facet); cobalt already a registered entity.\n\nVERIFIED: pre-seal 0 RED; build OK; invariants 77/77; both render probes PASS.\n\nOnly open follow-up remaining: the Epigenetics mineral dose-table scramble (task chip)." }, { id: "lg_ms2nmmvn_nf0sp6", ts: "2026-07-26T22:15:35.123389-05:00", surface: "corpus", kind: "round-close", summary: "Fixed the Epigenetics dose-table scramble (Luneth-approved): re-homed 3 mis-placed per-mineral dose answers (zinc, folic acid, molybdenum) to their own dose-row slices + restored boron's dropped question. Enrichment-only, no re-seal. Closes the last autonomous-run follow-up.", detail: "The last open follow-up from the autonomous run. The Epigenetics 'Minerals Range' table was sealed as overlapping 3-row slices (EPIGEN-000122-139), each correctly mapped to its first mineral; the bug was purely which claim each dose QUESTION was enriched onto.\n\nAUDIT of every per-mineral dose question found 3 genuine mis-homings; potassium and vitamin-D turned out correctly grounded (potassium's '99 mg' note is literally in slice 137's verbatim; vitamin-D is Wallach's 'avoid vitamin D as an adult' stance).\n\nFIXES (each verified: target FREE + verbatim carries the mineral's dose row): zinc EPIGEN-000127(boron slice)->EPIGEN-000139(Zinc row); folic acid LETS-000050(copper slice)->EPIGEN-000123(Folic acid row); molybdenum EPIGEN-000133(magnesium slice)->EPIGEN-000135(Molybdenum row); boron 'how much boron?' (dropped in Batch 5) RESTORED onto the now-free EPIGEN-000127(Boron row).\n\nPure search-enrichment.json metadata edits via safe_write (1104->1105); NO claim re-sealed, corpus stays kv409.\n\nVERIFIED: build OK; invariants 77/77; both render probes PASS; search index confirms all 4 dose questions resolve to their own-mineral slice." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

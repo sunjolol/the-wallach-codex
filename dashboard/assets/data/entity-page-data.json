@@ -2105,6 +2105,12 @@
           ]
         },
         {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000127"
+          ]
+        },
+        {
           "facet": "stance",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000316"
@@ -3919,7 +3925,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000133",
+            "WAL-CLM-EPIGEN-000135",
             "WAL-CLM-LETS-000058",
             "WAL-CLM-RARE-000180"
           ]
@@ -4957,7 +4963,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000127"
+            "WAL-CLM-EPIGEN-000139"
           ]
         },
         {
@@ -10748,7 +10754,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
-            "WAL-CLM-LETS-000050"
+            "WAL-CLM-EPIGEN-000123"
           ]
         },
         {

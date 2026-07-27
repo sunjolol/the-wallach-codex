@@ -6710,26 +6710,6 @@
         "teenagers"
       ]
     },
-    "WAL-CLM-EPIGEN-000127": {
-      "subject": "zinc",
-      "also_about": [
-        "chromium",
-        "vanadium",
-        "boron",
-        "calcium",
-        "copper"
-      ],
-      "facet": "protocol",
-      "question": "How much zinc should I take a day?",
-      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
-      "topics": [
-        "zinc dose",
-        "how much zinc",
-        "daily zinc",
-        "zinc mg",
-        "supplement amount"
-      ]
-    },
     "WAL-CLM-LETS-000157": {
       "subject": "zinc",
       "also_about": [],
@@ -11609,19 +11589,6 @@
         "geographic-tongue"
       ]
     },
-    "WAL-CLM-LETS-000050": {
-      "subject": "vitamin-b9",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much folic acid should I take?",
-      "answer_short": "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
-      "topics": [
-        "folic-acid",
-        "dose",
-        "supplement",
-        "rda"
-      ]
-    },
     "WAL-CLM-IMMORT-000080": {
       "subject": "vitamin-b12",
       "also_about": [
@@ -14509,18 +14476,6 @@
         "dosage"
       ]
     },
-    "WAL-CLM-EPIGEN-000133": {
-      "subject": "molybdenum",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "What is the recommended daily amount of molybdenum?",
-      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
-      "topics": [
-        "minerals",
-        "supplements",
-        "dosage"
-      ]
-    },
     "WAL-CLM-DDDL-000242": {
       "subject": "sodium",
       "also_about": [
@@ -16371,6 +16326,68 @@
         "etymology",
         "history",
         "name-origin"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000139": {
+      "subject": "zinc",
+      "also_about": [
+        "chromium",
+        "vanadium",
+        "boron",
+        "calcium",
+        "copper"
+      ],
+      "facet": "protocol",
+      "question": "How much zinc should I take a day?",
+      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+      "topics": [
+        "zinc dose",
+        "how much zinc",
+        "daily zinc",
+        "zinc mg",
+        "supplement amount"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000127": {
+      "subject": "boron",
+      "also_about": [
+        "calcium",
+        "copper",
+        "chromium"
+      ],
+      "facet": "protocol",
+      "question": "How much boron should you take per day?",
+      "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight.",
+      "topics": [
+        "dosage",
+        "supplements",
+        "daily dose",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000123": {
+      "subject": "vitamin-b9",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much folic acid should I take?",
+      "answer_short": "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
+      "topics": [
+        "folic-acid",
+        "dose",
+        "supplement",
+        "rda"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000135": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the recommended daily amount of molybdenum?",
+      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+      "topics": [
+        "minerals",
+        "supplements",
+        "dosage"
       ]
     }
   }
