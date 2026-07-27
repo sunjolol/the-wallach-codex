@@ -9413,6 +9413,185 @@
       "extracted_at": "2026-07-27T05:56:12+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000283",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach draws a fundamental line between the two kinds of raw materials the body must take in. The carbon-based nutrients — the macronutrients (carbohydrates, fats and proteins) together with micronutrients such as vitamins — are built using the energy of the sun. The non-carbon materials, chiefly the minerals, are not manufactured by living things at all; their only source is the earth's crust, the soil. Because a soil's mineral make-up varies so widely from place to place, Wallach notes that people with the same basic genetics do not all get the same opportunity for health and longevity.",
+      "verbatim": "The sun provides the energy to manufacture the\ncarbon-based macronutrients (carbohydrates, fats, and proteins) and\nmicronutrients like vitamins. The earth’s crust—the soil— is the source of\nall our non-carbon based raw materials like minerals.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 23777
+      },
+      "dose": null,
+      "tags": [
+        "carbon",
+        "carbon based nutrients",
+        "macronutrients",
+        "minerals from soil",
+        "carbohydrates fats proteins",
+        "non-carbon",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T18:16:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000284",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach lists oxygen, water, and food as the obvious raw materials every living organism needs to sustain life, maintain and repair tissues and organs, reproduce, and support longevity. He draws a sharp line between them: clean oxygen and water, free of pathogens and pollution, are 'non-variables' — the same in China, Germany, Brazil, Nigeria, Canada, and all fifty U.S. states. Food, by contrast, is the variable, because all nourishment ultimately comes from the soil and depends on its mineral composition. In his framework oxygen is essentially a given; the real problem to solve is the mineral-depleted food supply.",
+      "verbatim": "Raw materials are required by all living organisms. The obvious raw\nmaterials to sustain life, maintain and repair tissues and organs, support\nreproduction, and support longevity, are oxygen, water, and food. Clean\noxygen and water, free of pathogens and pollution, are non-variables.\nOxygen and water are the same in China, Germany, Brazil, Nigeria,\nCanada, and all fifty states in the United States.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 23132
+      },
+      "dose": null,
+      "tags": [
+        "oxygen",
+        "raw materials of life",
+        "non-variable",
+        "water",
+        "breathing",
+        "longevity",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T18:16:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000285",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach classes strontium among the essential minerals the body requires, holding that there is considerable evidence for its essentiality in mammals including man. He backs this with strontium's ability to replace calcium in many organisms and its high concentration in mammalian bone. In his framework strontium is a genuine nutritional need — one of many minerals that meet the criteria for an essential nutrient even though they are not 'classically' considered essential.",
+      "verbatim": "There is\nconsiderable evidence for essentiality in mammals including man.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 594066
+      },
+      "dose": null,
+      "tags": [
+        "strontium",
+        "strontium essential",
+        "do i need strontium",
+        "essential mineral",
+        "trace mineral",
+        "essentiality",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T18:16:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000286",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach is careful to separate two things that share a name. Strontium-90 is not the natural strontium the body uses in place of calcium — it is a man-made radioactive product of the fission atomic explosions, and Wallach calls it the greatest biohazard fear of the Cold War. Unlike natural strontium, which is found throughout rocks, soil, plants and animals, strontium-90 does not occur in nature at all; it exists only because humans split atoms.",
+      "verbatim": "Strontium 90, the man-made product of\nfission atomic explosions and the greatest biohazard fear during the cold\nwar, does not occur in nature.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 594254
+      },
+      "dose": null,
+      "tags": [
+        "strontium",
+        "strontium-90",
+        "radioactive strontium",
+        "cold war",
+        "nuclear fallout",
+        "fission",
+        "is strontium-90 natural",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T18:16:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000287",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "male_pattern_baldness",
+        "alopecia"
+      ],
+      "symptoms": [],
+      "claim_text": "In his entry on alopecia, Wallach ties male-pattern baldness to tin. He states that deficiencies of the mineral tin have been shown to cause male-pattern baldness in lab animals, and he offers his own experience as evidence: he personally had considerable hair regrowth after using plant-derived liquid colloidal tin. It is one of the clearest places he connects a single trace mineral to both hair loss and hair regrowth.",
+      "verbatim": "Deficiencies\nof the mineral tin have been shown to cause male pattern baldness in lab\nanimals. I personally have had considerable hair regrowth following the use\nof plant derived liquid colloidal tin.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 618255
+      },
+      "dose": null,
+      "tags": [
+        "tin",
+        "hair loss",
+        "male pattern baldness",
+        "hair regrowth",
+        "colloidal tin",
+        "baldness",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T18:16:43+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -342,7 +342,9 @@
     },
     "WAL-CLM-DDDL-000112": {
       "subject": "eggs",
-      "also_about": [],
+      "also_about": [
+        "nitrogen"
+      ],
       "facet": "physiology",
       "question": "Is egg a high-quality protein compared to other foods?",
       "answer_short": "Whole egg tops Wallach's protein chart with a chemical score of 100 and 94% utilization, higher than human milk, cow's milk, or soybean, making it his benchmark for usable protein.",
@@ -2026,7 +2028,9 @@
     },
     "WAL-CLM-IMMORT-000048": {
       "subject": "obscure_elements",
-      "also_about": [],
+      "also_about": [
+        "bromine"
+      ],
       "facet": "history",
       "question": "Where does the word 'bromide' come from?",
       "answer_short": "From medicine: sodium bromide, a bromine salt, was a common mild sedative in the late 1800s used to calm the nerves -- which is why we still speak of taking a 'bromide' to settle down.",
@@ -2091,7 +2095,12 @@
     "WAL-CLM-IMMORT-000055": {
       "subject": "macronutrients",
       "also_about": [
-        "amino_acids"
+        "amino_acids",
+        "nitrogen",
+        "phosphorus",
+        "iron",
+        "sulfur",
+        "cobalt"
       ],
       "facet": "physiology",
       "question": "What are proteins?",
@@ -2381,7 +2390,12 @@
     },
     "WAL-CLM-IMMORT-000094": {
       "subject": "ph",
-      "also_about": [],
+      "also_about": [
+        "cesium",
+        "potassium",
+        "sodium",
+        "rubidium"
+      ],
       "facet": "basics",
       "question": "What is cesium?",
       "answer_short": "An alkali metal that behaves chemically like sodium, potassium and rubidium. Wallach says cesium and potassium pair up inside the cell, which is also why taking extra potassium makes you lose cesium faster.",
@@ -2395,7 +2409,8 @@
     "WAL-CLM-IMMORT-000095": {
       "subject": "obscure_elements",
       "also_about": [
-        "ph"
+        "ph",
+        "cesium"
       ],
       "facet": "discovery",
       "question": "How was cesium discovered?",
@@ -2408,7 +2423,9 @@
     },
     "WAL-CLM-IMMORT-000096": {
       "subject": "ph",
-      "also_about": [],
+      "also_about": [
+        "cesium"
+      ],
       "facet": "uses",
       "question": "Can making the body alkaline treat cancer?",
       "answer_short": "Wallach presents cesium chloride as “high-pH therapy” — cesium enters the cancer cell and makes its interior alkaline. He says it has been recommended for all cancers, including sarcomas, bronchiogenic carcinoma and colon cancer.",
@@ -2459,7 +2476,10 @@
     },
     "WAL-CLM-IMMORT-000112": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "dysprosium",
+        "erbium"
+      ],
       "facet": "discovery",
       "question": "What is dysprosium?",
       "answer_short": "A soft, silvery rare-earth metal -- the 9th most abundant of the rare earths -- discovered in 1886 and named from the Greek for 'hard to get at.' Its magnetic alloys help CDs work, and in the body it collects in bone.",
@@ -2471,7 +2491,10 @@
     },
     "WAL-CLM-IMMORT-000113": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "erbium",
+        "vanadium"
+      ],
       "facet": "uses",
       "question": "What is erbium used for?",
       "answer_short": "A scarce rare-earth metal (found 1843), alloyed with vanadium to improve workability; its most memorable use is tinting glass and enamel pink -- the pink glass of sunglasses and costume jewelry. In the body it settles in bone.",
@@ -2483,7 +2506,9 @@
     },
     "WAL-CLM-IMMORT-000114": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "europium"
+      ],
       "facet": "discovery",
       "question": "What is europium?",
       "answer_short": "One of the rarest rare earths, isolated in 1901 and named for Europe; it is the softest of them and so reactive it bursts into flame in air above 150C. It is mined from the ores monazite and bastnasite.",
@@ -2673,7 +2698,10 @@
     },
     "WAL-CLM-IMMORT-000137": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "gadolinium",
+        "germanium"
+      ],
       "facet": "sources",
       "question": "Where is gadolinium found?",
       "answer_short": "A rare-earth mineral scattered through rocks and plants -- hickory trees can concentrate it to 70 ppm -- and in land animals it collects in the bone and liver almost as soon as it is absorbed.",
@@ -2812,7 +2840,9 @@
     },
     "WAL-CLM-IMMORT-000151": {
       "subject": "ph",
-      "also_about": [],
+      "also_about": [
+        "hydrogen"
+      ],
       "facet": "physiology",
       "question": "What is a normal blood pH?",
       "answer_short": "Healthy blood runs 7.36 to 7.44. Below 7.30 is acidosis, above 7.44 is alkalosis, and below 6.8 or above 7.8 is rapidly fatal; inside cells pH runs 6.0 to 7.4.",
@@ -2854,7 +2884,8 @@
       "subject": "margarine",
       "also_about": [
         "butter",
-        "dietary_oils"
+        "dietary_oils",
+        "hydrogen"
       ],
       "facet": "stance",
       "question": "Is margarine bad for you?",
@@ -2895,7 +2926,10 @@
     },
     "WAL-CLM-IMMORT-000158": {
       "subject": "obscure_elements",
-      "also_about": [],
+      "also_about": [
+        "hafnium",
+        "zirconium"
+      ],
       "facet": "discovery",
       "question": "Why was hafnium discovered so late?",
       "answer_short": "Because it hid inside its chemical 'twin' zirconium -- common in the crust but nearly impossible to separate, so it was not isolated until 1923. Coster and de Hevesy named it Hafnia, the Latin name for Copenhagen, to honor Niels Bohr's home city.",
@@ -3079,7 +3113,12 @@
     },
     "WAL-CLM-IMMORT-000172": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "holmium",
+        "dysprosium",
+        "erbium",
+        "thulium"
+      ],
       "facet": "basics",
       "question": "What is holmium?",
       "answer_short": "A rare-earth metal the body carries in trace amounts, mostly in bone. Spotted by its spectral 'fingerprint' in 1878 as unknown 'element X,' it was isolated in 1879 and named Holmia, the Latin name for Stockholm.",
@@ -3280,7 +3319,9 @@
     },
     "WAL-CLM-IMMORT-000203": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "lutetium"
+      ],
       "facet": "basics",
       "question": "What is lutetium?",
       "answer_short": "The last lanthanide -- the hardest, heaviest and one of the least abundant rare earths, silvery-white and corrosion-resistant. Discovered independently in 1907 and named for Lutetia, the ancient name of Paris.",
@@ -5261,7 +5302,9 @@
     },
     "WAL-CLM-RARE-000112": {
       "subject": "rare_earth_elements",
-      "also_about": [],
+      "also_about": [
+        "cerium"
+      ],
       "facet": "uses",
       "question": "Does cerium have a medical use?",
       "answer_short": "Yes -- cerium (a rare earth that accumulates in bone) is used as cerium nitrate, a topical disinfectant for severe burn victims.",
@@ -10497,7 +10540,8 @@
       "also_about": [
         "diabetes",
         "hypoglycemia",
-        "vanadium"
+        "vanadium",
+        "nitrogen"
       ],
       "facet": "physiology",
       "question": "What are the symptoms of chromium deficiency?",
@@ -11941,7 +11985,9 @@
     },
     "WAL-CLM-EPIGEN-000137": {
       "subject": "potassium",
-      "also_about": [],
+      "also_about": [
+        "silica"
+      ],
       "facet": "protocol",
       "question": "Why are potassium supplements limited to only 99 mg?",
       "answer_short": "Wallach's book notes the FDA restricts the amount of potassium allowed in a supplement to 99 mg.",
@@ -14081,7 +14127,9 @@
       "subject": "lithium",
       "also_about": [
         "vanadium",
-        "selenium"
+        "selenium",
+        "silica",
+        "nickel"
       ],
       "facet": "discovery",
       "question": "Is lithium an essential nutrient?",
@@ -17410,6 +17458,3425 @@
         "threonine",
         "biochemistry",
         "protein"
+      ]
+    },
+    "WAL-CLM-HELLS-000067": {
+      "subject": "omega-9",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Is oleic acid a monounsaturated fat, and where is it found?",
+      "answer_short": "Wallach describes oleic acid as a monounsaturated fat, the same fat found in olive oil, and says it makes up about 30 percent of cocoa butter (the fat in chocolate).",
+      "topics": [
+        "oleic acid",
+        "monounsaturated fat",
+        "olive oil",
+        "cocoa butter",
+        "chocolate fat",
+        "omega-9"
+      ]
+    },
+    "WAL-CLM-HELLS-000068": {
+      "subject": "silica",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Does beer contain silica?",
+      "answer_short": "Wallach notes that beer — often called 'liquid bread' — contains significant levels of silica, the mineral needed for healthy bones, skin, hair and nails.",
+      "topics": [
+        "silica",
+        "silicon",
+        "beer",
+        "liquid bread",
+        "food sources of silica",
+        "silica in beer"
+      ]
+    },
+    "WAL-CLM-HELLS-000069": {
+      "subject": "cesium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is cesium an essential mineral?",
+      "answer_short": "Yes, Wallach lists cesium among the essential minerals found in high-quality humic shale, holding that it meets the criteria for an essential nutrient even though it isn't 'classically' considered one.",
+      "topics": [
+        "is cesium essential",
+        "do I need cesium",
+        "essential minerals",
+        "plant derived minerals",
+        "humic shale",
+        "rare earth minerals"
+      ]
+    },
+    "WAL-CLM-HELLS-000070": {
+      "subject": "titanium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach say titanium is an essential mineral?",
+      "answer_short": "Yes — Wallach lists titanium among the essential minerals in humic shale, holding it meets two or more criteria for an essential nutrient.",
+      "topics": [
+        "titanium",
+        "is titanium essential",
+        "do I need titanium",
+        "essential minerals",
+        "plant derived colloidal minerals",
+        "humic shale"
+      ]
+    },
+    "WAL-CLM-HELLS-000071": {
+      "subject": "tantalum",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach consider tantalum an essential mineral?",
+      "answer_short": "Yes -- Wallach lists tantalum among the essential minerals found in high-quality humic shale, holding that although such minerals aren't classically considered essential, they each meet two or more criteria for an essential nutrient.",
+      "topics": [
+        "tantalum",
+        "essential minerals",
+        "plant derived minerals",
+        "humic shale",
+        "is tantalum essential"
+      ]
+    },
+    "WAL-CLM-HELLS-000072": {
+      "subject": "zirconium",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Is zirconium an essential nutrient?",
+      "answer_short": "Wallach argues that although zirconium isn't 'classically' considered essential, it -- like the other plant-derived humic-shale minerals -- meets two or more of the criteria used to declare a nutrient essential.",
+      "topics": [
+        "is zirconium essential",
+        "essential nutrient",
+        "humic shale",
+        "plant-derived minerals",
+        "essential elements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000394": {
+      "subject": "omega-9",
+      "also_about": [
+        "omega-3",
+        "omega-6"
+      ],
+      "facet": "basics",
+      "question": "What are the omega-3, omega-6, and omega-9 fatty acid groups?",
+      "answer_short": "Wallach groups the fatty acids into families -- omega-3 (which he lists as DHA and EPA), omega-6, omega-9, and cholesterol -- though elsewhere he counts only omega-3 and omega-6 as classically essential.",
+      "topics": [
+        "omega-3",
+        "omega-6",
+        "omega-9",
+        "omega 3 6 9",
+        "fatty acid families",
+        "DHA",
+        "EPA",
+        "cholesterol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000395": {
+      "subject": "carbon",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why do some minerals have a carbon coating?",
+      "answer_short": "In Wallach's framework carbon forms a protective coating — a chain of about 10 to 12 carbon atoms — around the third and most stable type of naturally occurring organic mineral colloid.",
+      "topics": [
+        "colloidal minerals",
+        "carbon coating",
+        "organic mineral colloid",
+        "mineral stability",
+        "petrified wood"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000396": {
+      "subject": "omega-6",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "basics",
+      "question": "Is arachidonic acid an omega-6 fatty acid?",
+      "answer_short": "Yes -- Wallach classes arachidonic acid and gamma-linolenic acid as omega-6 fatty acids, both in his 'conditionally essential' group.",
+      "topics": [
+        "arachidonic acid",
+        "gamma-linolenic acid",
+        "conditionally essential",
+        "omega-6 fatty acids",
+        "linoleic acid"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000397": {
+      "subject": "omega-6",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "history",
+      "question": "Were essential fatty acids once called vitamin F?",
+      "answer_short": "Yes -- Wallach notes the two essential fatty acids were identified in 1923 and first listed as 'vitamin F' before being reclassified as fats.",
+      "topics": [
+        "vitamin F",
+        "essential fatty acids history",
+        "1923",
+        "linoleic acid",
+        "when discovered"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000398": {
+      "subject": "omega-6",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "mechanism",
+      "question": "Should omega-3 and omega-6 be balanced?",
+      "answer_short": "Wallach says yes -- the essential fatty acids' functions in the body all require proper ratios between the omega-3 and omega-6 forms.",
+      "topics": [
+        "omega-3 omega-6 ratio",
+        "fatty acid balance",
+        "omega-6 to omega-3",
+        "essential fatty acid ratio",
+        "balance"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000399": {
+      "subject": "omega-6",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "mechanism",
+      "question": "What does the body make from omega-6 fatty acids?",
+      "answer_short": "Wallach says omega-6 EFAs are the raw material for lipoxins and other eicosanoid signaling compounds the body produces.",
+      "topics": [
+        "eicosanoids",
+        "lipoxins",
+        "omega-6 function",
+        "prostaglandins",
+        "inflammation"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000400": {
+      "subject": "gallium",
+      "also_about": [
+        "iron"
+      ],
+      "facet": "mechanism",
+      "question": "Does gallium act like iron in the body?",
+      "answer_short": "Wallach says gallium and iron-type (ferric) salts behave so alike in the body that gallium ions often stand in for iron ions in medical treatments.",
+      "topics": [
+        "gallium and iron",
+        "ferric salts",
+        "gallium mimics iron",
+        "gallium ions",
+        "how gallium works"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000401": {
+      "subject": "gallium",
+      "also_about": [
+        "brain_cancer"
+      ],
+      "facet": "uses",
+      "question": "Is gallium used as a medicine?",
+      "answer_short": "Wallach says gallium maltolate, an orally absorbable form of gallium, is used to treat brain cancer, inflammation, and certain infectious diseases.",
+      "topics": [
+        "gallium maltolate",
+        "gallium medicine",
+        "gallium treatment",
+        "gallium for infection",
+        "gallium brain cancer"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000402": {
+      "subject": "gallium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is gallium found in nature?",
+      "answer_short": "Wallach says gallium occurs as trace amounts in bauxite and zinc ores and across rocks, water, plants and animals -- richest in shale (about 19 ppm), scarcest in land animals.",
+      "topics": [
+        "where is gallium found",
+        "gallium in nature",
+        "bauxite",
+        "zinc ores",
+        "gallium ppm",
+        "gallium in rocks"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000403": {
+      "subject": "aluminum",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is aluminum toxic to humans?",
+      "answer_short": "Wallach says aluminum is remarkably nontoxic - you'd have to swallow more than a pound of aluminum sulfate in a single day to reach a lethal dose.",
+      "topics": [
+        "aluminum",
+        "toxic",
+        "poisonous",
+        "safe",
+        "aluminum sulfate",
+        "ld50"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000404": {
+      "subject": "aluminum",
+      "also_about": [
+        "alzheimers"
+      ],
+      "facet": "uses",
+      "question": "Is aluminum cookware and deodorant safe?",
+      "answer_short": "Wallach says studies show aluminum cookware, deodorants, and antiperspirants are generally safe at directed levels, with no evidence they cause disease.",
+      "topics": [
+        "aluminum cookware",
+        "aluminum pans",
+        "deodorant",
+        "antiperspirant",
+        "safe"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000405": {
+      "subject": "aluminum",
+      "also_about": [
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "mechanism",
+      "question": "Does aluminum affect calcium absorption or bones?",
+      "answer_short": "Wallach notes aluminum can compete with calcium for absorption, so a high dietary aluminum load can reduce bone mineralization (osteopenia).",
+      "topics": [
+        "aluminum",
+        "calcium",
+        "bones",
+        "osteopenia",
+        "absorption"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000406": {
+      "subject": "aluminum",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name aluminum come from?",
+      "answer_short": "The English chemist Sir Humphrey Davy named it aluminum, 'the metal of clay.'",
+      "topics": [
+        "aluminum",
+        "name origin",
+        "etymology",
+        "humphry davy",
+        "bauxite",
+        "metal of clay"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000407": {
+      "subject": "aluminum",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Are rubies and sapphires made of aluminum?",
+      "answer_short": "Rubies and sapphires are aluminum: Wallach explains aluminum occurs only as the oxide alumina, which becomes those gems when traced with other elements.",
+      "topics": [
+        "aluminum",
+        "rubies",
+        "sapphires",
+        "alumina",
+        "gems",
+        "aluminum oxide"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000408": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is gold found in nature?",
+      "answer_short": "Wallach reports gold occurs only in tiny traces throughout rocks, water, plants and animals -- concentrating in the horsetail plant and forming a colloid in mammalian livers.",
+      "topics": [
+        "gold",
+        "where is gold found",
+        "gold in nature",
+        "horsetail plant",
+        "gold in the body",
+        "gold in water",
+        "gold ppm"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000409": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "history",
+      "question": "Did alchemists try to turn lead into gold?",
+      "answer_short": "Wallach says medieval alchemists -- the earliest chemists -- spent most of their effort trying to transmute lead and other base metals into gold, which was seen as a noble cure-all.",
+      "topics": [
+        "gold",
+        "alchemy",
+        "alchemists",
+        "turn lead into gold",
+        "panacea",
+        "medieval medicine",
+        "transmutation"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000410": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "history",
+      "question": "Did the ancient Chinese believe gold could make you immortal?",
+      "answer_short": "Wallach says the Chinese believed gold was immortal and could confer immortality -- even holding that eating daily from gold-colored alloy plates was enough.",
+      "topics": [
+        "gold",
+        "immortality",
+        "ancient Chinese",
+        "eating gold",
+        "gold plates",
+        "alchemy",
+        "gold not absorbed"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000411": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What are the side effects of gold treatment for arthritis?",
+      "answer_short": "Wallach lists gold-therapy toxic reactions including itching, dermatitis, mouth inflammation, GI upset, protein or blood in the urine, aplastic anemia, low white cells, hepatitis and pneumonitis.",
+      "topics": [
+        "gold",
+        "gold side effects",
+        "gold toxicity",
+        "gold shots side effects",
+        "gold therapy risks",
+        "arthritis treatment side effects"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000412": {
+      "subject": "bromine",
+      "also_about": [
+        "iodine"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered bromine?",
+      "answer_short": "Wallach recounts that bromine was discovered independently by two chemists — Carl Jacob Lowig in 1825 and Antoine Balard in 1826.",
+      "topics": [
+        "bromine",
+        "who discovered bromine",
+        "when was bromine discovered",
+        "Balard",
+        "Lowig",
+        "bromine history",
+        "seaweed"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000413": {
+      "subject": "bromine",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is bromine toxic?",
+      "answer_short": "Wallach warns that toxic reactions from a bromine overdose can resemble acne-like skin eruptions.",
+      "topics": [
+        "bromine",
+        "is bromine toxic",
+        "bromine overdose",
+        "bromine side effects",
+        "acne-like skin eruptions",
+        "toxicity"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000414": {
+      "subject": "lanthanum",
+      "also_about": [
+        "cerium"
+      ],
+      "facet": "basics",
+      "question": "What is lanthanum?",
+      "answer_short": "Lanthanum (symbol La) is what Wallach calls a 'light' rare earth metal, one of the rare earths he counts among the body's essential minerals.",
+      "topics": [
+        "lanthanum",
+        "rare earth",
+        "light rare earth",
+        "La",
+        "trace mineral",
+        "what is lanthanum"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000415": {
+      "subject": "lanthanum",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is lanthanum found in the human body?",
+      "answer_short": "Yes; Wallach reports lanthanum occurs in animal tissue at trace levels and concentrates in bone (about 0.27 ppm) far more than in soft tissue (0.0001 ppm).",
+      "topics": [
+        "lanthanum in body",
+        "bone",
+        "soft tissue",
+        "where is lanthanum found",
+        "rare earth",
+        "physiology"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000416": {
+      "subject": "cerium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is cerium?",
+      "answer_short": "Cerium is a Rare Earth element — the most abundant of all the rare earths — named after Ceres, the Roman goddess of agriculture.",
+      "topics": [
+        "cerium",
+        "rare earth",
+        "rare earth element",
+        "most abundant",
+        "essential minerals",
+        "ceres"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000417": {
+      "subject": "cerium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered cerium and when?",
+      "answer_short": "Cerium was discovered in 1803 at Bastnas, Sweden by Berzelius and Hisinger, and in Germany by Martin Heinrich Klaproth.",
+      "topics": [
+        "cerium",
+        "discovery",
+        "1803",
+        "berzelius",
+        "hisinger",
+        "klaproth"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000418": {
+      "subject": "cerium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What plants is cerium found in?",
+      "answer_short": "Wallach says cerium is commonly found in tobacco plants, barley, and the wood of beech trees.",
+      "topics": [
+        "cerium",
+        "tobacco",
+        "barley",
+        "beech",
+        "plant sources",
+        "trace minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000419": {
+      "subject": "beryllium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is beryllium?",
+      "answer_short": "Beryllium is a rare, light, hard gray-white alkaline-earth metal that Wallach lists among the body's essential minerals and that occurs mainly locked inside gemstones like beryl and emerald.",
+      "topics": [
+        "beryllium",
+        "mineral",
+        "alkaline earth metal",
+        "beryl",
+        "trace mineral",
+        "essential minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000420": {
+      "subject": "beryllium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered beryllium?",
+      "answer_short": "Beryllium was discovered in 1798 by French chemist Louis-Nicolas Vauquelin, who isolated it as a new 'rare earth' from emerald and beryl.",
+      "topics": [
+        "beryllium",
+        "discovery",
+        "vauquelin",
+        "glucine",
+        "1798",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000421": {
+      "subject": "beryllium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name beryllium come from?",
+      "answer_short": "Beryllium was first called 'glucine' or 'glucinium' for its sweet taste, and only got the name 'beryllium,' coined by Wohler in 1828, much later.",
+      "topics": [
+        "beryllium",
+        "name origin",
+        "glucinium",
+        "glucine",
+        "sweet taste",
+        "wohler"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000422": {
+      "subject": "rubidium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is rubidium?",
+      "answer_short": "Rubidium is a plant-derived trace mineral that Wallach counts among the 60 essential elements the body needs.",
+      "topics": [
+        "rubidium",
+        "Rb",
+        "trace mineral",
+        "essential minerals",
+        "what is rubidium",
+        "60 essential elements",
+        "do I need rubidium",
+        "rare earths"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000423": {
+      "subject": "rubidium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Where is rubidium found in the body?",
+      "answer_short": "Wallach reports rubidium's highest levels in land animals concentrate in the liver and muscle, with the lowest levels in bone.",
+      "topics": [
+        "rubidium",
+        "Rb",
+        "rubidium in the body",
+        "liver",
+        "muscle",
+        "rubidium bone",
+        "where is rubidium found"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000424": {
+      "subject": "erbium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is erbium found in the body?",
+      "answer_short": "Yes — Wallach reports that in land animals erbium settles primarily in bone, while plants take it up strongly, reaching up to 46 ppm in Carya species.",
+      "topics": [
+        "erbium",
+        "bone",
+        "plants",
+        "Carya",
+        "rare earth",
+        "where found"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000425": {
+      "subject": "europium",
+      "also_about": [
+        "erbium",
+        "dysprosium"
+      ],
+      "facet": "physiology",
+      "question": "Where is europium found in nature and in the body?",
+      "answer_short": "Europium is a plant-derived rare-earth trace mineral that spreads thinly through rocks, plants and animals -- and in land animals it concentrates in bone far more than in soft tissue.",
+      "topics": [
+        "europium in bone",
+        "europium in plants",
+        "rare earth distribution",
+        "trace mineral",
+        "carya",
+        "europium in the body"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000426": {
+      "subject": "europium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered europium and how?",
+      "answer_short": "William Crookes observed the phosphorescent spectra of the rare earths in the late 1880s, but europium's discovery is generally credited to French chemist Eugene-Anatole Demarcay, who isolated it in 1901.",
+      "topics": [
+        "who discovered europium",
+        "europium discovery",
+        "william crookes",
+        "demarcay",
+        "1901",
+        "history of europium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000427": {
+      "subject": "cesium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is cesium found in the body?",
+      "answer_short": "Yes, Wallach reports cesium occurs in trace amounts in plants and animals, and in land animals the highest concentrations are found in the muscle.",
+      "topics": [
+        "is cesium found in the body",
+        "where is cesium found",
+        "cesium in plants",
+        "cesium in muscle",
+        "cesium in animals",
+        "trace amounts"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000428": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name barium come from?",
+      "answer_short": "Barium's name traces to the alchemical term 'baryta,' from the Greek 'barys,' meaning 'heavy.'",
+      "topics": [
+        "barium name origin",
+        "barium etymology",
+        "baryta",
+        "barys heavy",
+        "Greek word",
+        "meaning of barium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000429": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "When was barium discovered?",
+      "answer_short": "Wallach says barium was isolated as an element in 1774 but not classed as a metal until 1808, the year he credits to English chemist Sir Humphry Davy.",
+      "topics": [
+        "barium discovery",
+        "who discovered barium",
+        "Humphry Davy",
+        "1808",
+        "1774",
+        "history of barium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000430": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Which plants are highest in barium?",
+      "answer_short": "Wallach reports barium is highest in marine plants like brown algae, and the fruit of Bertholletia excelea is such a strong barium concentrator it can hold up to 4,000 ppm.",
+      "topics": [
+        "barium in plants",
+        "brown algae",
+        "Bertholletia excelea",
+        "barium concentrator",
+        "plant minerals",
+        "barium in food"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000431": {
+      "subject": "yttrium",
+      "also_about": [
+        "ytterbium"
+      ],
+      "facet": "physiology",
+      "question": "Is yttrium found in the human body?",
+      "answer_short": "Yes — Wallach says yttrium turns up in living tissue, accumulating in ferns among plants and settling into mammalian bone, teeth and liver.",
+      "topics": [
+        "yttrium",
+        "bone",
+        "teeth",
+        "liver",
+        "ferns",
+        "rare earth",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000432": {
+      "subject": "arsenic",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the word arsenic come from?",
+      "answer_short": "Wallach traces 'arsenic' from the Syriac al zarniga and Persian Zarnikh ('yellow pigment') through Greek arsenikos (meaning 'masculine'), then Latin arsenicum and Old French arsenic.",
+      "topics": [
+        "arsenic",
+        "etymology",
+        "word origin",
+        "name meaning",
+        "masculine",
+        "yellow pigment"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000433": {
+      "subject": "arsenic",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered arsenic and when?",
+      "answer_short": "Wallach records that arsenic was first isolated and identified in 1250 by Albertus Magnus.",
+      "topics": [
+        "arsenic",
+        "discovery",
+        "who discovered arsenic",
+        "Albertus Magnus",
+        "1250",
+        "history of arsenic"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000434": {
+      "subject": "arsenic",
+      "also_about": [
+        "leukemia",
+        "psoriasis",
+        "syphilis"
+      ],
+      "facet": "uses",
+      "question": "What has arsenic been used to treat?",
+      "answer_short": "Wallach says arsenic compounds have long served as medicines — arsphenamine and neosalvarsan for syphilis and trypanosomiasis, and arsenic trioxide for cancer and, from 2000, leukemia.",
+      "topics": [
+        "arsenic medicine",
+        "arsphenamine",
+        "syphilis",
+        "cancer",
+        "leukemia",
+        "Fowler's solution"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000435": {
+      "subject": "tin",
+      "also_about": [
+        "silica",
+        "germanium"
+      ],
+      "facet": "basics",
+      "question": "What is tin?",
+      "answer_short": "Tin (symbol Sn) is a trace mineral Wallach counts among the essential elements; chemically it sits in the fourth main group, resembling carbon, silica, germanium, and lead.",
+      "topics": [
+        "tin",
+        "Sn",
+        "what is tin",
+        "trace mineral",
+        "essential mineral",
+        "fourth main group"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000436": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is tin found in the human body?",
+      "answer_short": "Yes -- Wallach says tin occurs in land animals with the highest levels in the lungs and intestines of vertebrates, and in plants it concentrates most in mosses (bryophytes) and lichens.",
+      "topics": [
+        "tin",
+        "where is tin found",
+        "tin in the body",
+        "lungs",
+        "intestines",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000437": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Why do men lose their hearing faster than women?",
+      "answer_short": "Wallach points to a 1991 federal study finding men now have poorer hearing at any age, thought to result from tin deficiency, with men over 30 losing hearing more than twice as fast as women.",
+      "topics": [
+        "tin",
+        "hearing loss",
+        "men's health",
+        "deafness",
+        "tin deficiency",
+        "aging"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000438": {
+      "subject": "praseodymium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is praseodymium found in the body?",
+      "answer_short": "Wallach says praseodymium accumulates in mammalian bone and liver, and land plants concentrate it up to 46 ppm.",
+      "topics": [
+        "praseodymium",
+        "in the body",
+        "bone",
+        "liver",
+        "land plants",
+        "accumulates",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000439": {
+      "subject": "rhenium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach say rhenium is essential?",
+      "answer_short": "Yes — Wallach lists rhenium among the 60 essential elements, metals, minerals, trace minerals and rare earths he holds the body requires.",
+      "topics": [
+        "rhenium",
+        "essential mineral",
+        "do I need rhenium",
+        "rare earths",
+        "plant derived minerals",
+        "60 essential minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000440": {
+      "subject": "thulium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is thulium found in plants and animals?",
+      "answer_short": "Wallach reports that thulium occurs naturally in land plants and land animals, but only in extraordinarily tiny trace amounts.",
+      "topics": [
+        "thulium",
+        "Tm",
+        "land plants",
+        "land animals",
+        "trace mineral",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000441": {
+      "subject": "samarium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is samarium?",
+      "answer_short": "Samarium is a 'light' rare earth element that Wallach counts among the trace minerals the body needs.",
+      "topics": [
+        "samarium",
+        "sm",
+        "rare earth",
+        "rare earth element",
+        "light rare earth",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000442": {
+      "subject": "samarium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is samarium found in the human body?",
+      "answer_short": "Wallach says samarium is present in living tissue in tiny amounts, in heart muscle, bone and liver, and that plants accumulate it.",
+      "topics": [
+        "samarium",
+        "samarium in the body",
+        "heart muscle",
+        "bone",
+        "plant-derived mineral",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000443": {
+      "subject": "ytterbium",
+      "also_about": [
+        "yttrium"
+      ],
+      "facet": "basics",
+      "question": "What is ytterbium?",
+      "answer_short": "Ytterbium (Yb) is a rare-earth trace element Wallach documents in rocks, soil, plants and animals -- and it concentrates in bone, teeth and liver.",
+      "topics": [
+        "ytterbium",
+        "Yb",
+        "rare earth",
+        "trace mineral",
+        "plant derived minerals",
+        "bone"
+      ]
+    },
+    "WAL-CLM-DDDL-000283": {
+      "subject": "carbon",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Are minerals carbon-based?",
+      "answer_short": "No — Wallach teaches that minerals are the body's non-carbon raw materials that come from the soil, while the carbon-based nutrients (carbohydrates, fats, proteins and vitamins) are built using the sun's energy.",
+      "topics": [
+        "carbon based nutrients",
+        "macronutrients",
+        "minerals from soil",
+        "carbohydrates fats proteins",
+        "non-carbon"
+      ]
+    },
+    "WAL-CLM-DDDL-000284": {
+      "subject": "oxygen",
+      "also_about": [
+        "water"
+      ],
+      "facet": "basics",
+      "question": "What is oxygen and why does the body need it?",
+      "answer_short": "Oxygen is one of the three obvious raw materials every living thing needs to sustain life, and unlike food it is a 'non-variable' — the same everywhere on earth.",
+      "topics": [
+        "oxygen",
+        "raw materials of life",
+        "non-variable",
+        "water",
+        "breathing",
+        "longevity"
+      ]
+    },
+    "WAL-CLM-DDDL-000285": {
+      "subject": "strontium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "stance",
+      "question": "Does the body need strontium?",
+      "answer_short": "Wallach holds there is considerable evidence that strontium is an essential mineral in mammals, including humans.",
+      "topics": [
+        "strontium essential",
+        "do i need strontium",
+        "essential mineral",
+        "trace mineral",
+        "essentiality"
+      ]
+    },
+    "WAL-CLM-DDDL-000286": {
+      "subject": "strontium",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is strontium-90, and is it natural?",
+      "answer_short": "Strontium-90 is a man-made radioactive product of atomic-bomb fission — the great biohazard scare of the Cold War — and, unlike natural strontium, it does not occur in nature.",
+      "topics": [
+        "strontium-90",
+        "radioactive strontium",
+        "cold war",
+        "nuclear fallout",
+        "fission",
+        "is strontium-90 natural"
+      ]
+    },
+    "WAL-CLM-DDDL-000287": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Does tin help regrow hair?",
+      "answer_short": "Wallach says tin deficiency causes male-pattern baldness in lab animals, and he personally regrew a considerable amount of hair using plant-derived liquid colloidal tin.",
+      "topics": [
+        "tin",
+        "hair loss",
+        "male pattern baldness",
+        "hair regrowth",
+        "colloidal tin",
+        "baldness"
+      ]
+    },
+    "WAL-CLM-IMMORT-000388": {
+      "subject": "gallium",
+      "also_about": [
+        "aluminum"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name gallium come from?",
+      "answer_short": "Gallium was named for Gallia, the Latin word for France, and was identified in 1875 by the chemist Paul-Emile Lecoq de Boisbaudran.",
+      "topics": [
+        "gallium name origin",
+        "who discovered gallium",
+        "eka-aluminum",
+        "mendeleyev",
+        "boisbaudran",
+        "gallia france"
+      ]
+    },
+    "WAL-CLM-IMMORT-000389": {
+      "subject": "gallium",
+      "also_about": [
+        "brain_cancer"
+      ],
+      "facet": "uses",
+      "question": "Can taking gallium during pregnancy lower a child's risk of brain cancer?",
+      "answer_short": "Wallach cites British research finding that pregnant women whose diets are supplemented with gallium have significantly lower rates of brain cancer in their children.",
+      "topics": [
+        "gallium pregnancy",
+        "brain cancer prevention",
+        "prenatal gallium",
+        "childhood brain cancer",
+        "gallium during pregnancy"
+      ]
+    },
+    "WAL-CLM-IMMORT-000390": {
+      "subject": "hydrogen",
+      "also_about": [
+        "oxygen"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name hydrogen come from?",
+      "answer_short": "Hydrogen means 'water-creator' in Greek, because burning it in oxygen produces water.",
+      "topics": [
+        "hydrogen name meaning",
+        "why is it called hydrogen",
+        "greek",
+        "water creator",
+        "etymology"
+      ]
+    },
+    "WAL-CLM-IMMORT-000391": {
+      "subject": "hydrogen",
+      "also_about": [
+        "oxygen"
+      ],
+      "facet": "basics",
+      "question": "Is hydrogen gas flammable?",
+      "answer_short": "Yes, Wallach describes hydrogen as a colorless, odorless, tasteless but extremely flammable diatomic gas.",
+      "topics": [
+        "hydrogen gas",
+        "flammable",
+        "diatomic molecule",
+        "H2",
+        "colorless odorless tasteless"
+      ]
+    },
+    "WAL-CLM-IMMORT-000392": {
+      "subject": "hydrogen",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is hydrogen found in nature?",
+      "answer_short": "Wallach reports hydrogen is most concentrated in water, about 111,000 ppm in fresh water and 108,000 ppm in seawater, with smaller amounts in rocks and living tissue.",
+      "topics": [
+        "where is hydrogen found",
+        "hydrogen in nature",
+        "seawater",
+        "fresh water",
+        "abundance ppm"
+      ]
+    },
+    "WAL-CLM-IMMORT-000393": {
+      "subject": "nitrogen",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Are the nitrates and nitrites in processed meat bad for you?",
+      "answer_short": "Wallach warns that nitrates and nitrites in cured and canned foods turn into nitrosamines in the stomach -- potential carcinogens that can also suppress the thyroid.",
+      "topics": [
+        "nitrogen",
+        "nitrates",
+        "nitrites",
+        "processed meat",
+        "nitrosamines",
+        "cancer",
+        "preserved meat"
+      ]
+    },
+    "WAL-CLM-IMMORT-000394": {
+      "subject": "oxygen",
+      "also_about": [
+        "water"
+      ],
+      "facet": "mechanism",
+      "question": "Why do I need minerals to use oxygen?",
+      "answer_short": "Wallach says even oxygen and water are useless to your cells without mineral cofactors — no nutrient works physiologically without minerals.",
+      "topics": [
+        "oxygen",
+        "minerals",
+        "mineral cofactors",
+        "cellular",
+        "water",
+        "nutrient absorption"
+      ]
+    },
+    "WAL-CLM-IMMORT-000395": {
+      "subject": "oxygen",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Is oxygen poisonous?",
+      "answer_short": "Wallach approvingly cites Dr. Roy Walford's point that the oxygen in our atmosphere is actually a highly poisonous gas — one we both require and are damaged by.",
+      "topics": [
+        "oxygen",
+        "free radicals",
+        "oxidation",
+        "poison",
+        "antioxidants",
+        "Roy Walford"
+      ]
+    },
+    "WAL-CLM-IMMORT-000396": {
+      "subject": "oxygen",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "mechanism",
+      "question": "Do cancer cells die in the presence of oxygen?",
+      "answer_short": "Wallach cites Otto Warburg's Nobel-winning finding that cancer cells ferment sugar anaerobically and die in the presence of oxygen, while normal cells run on aerobic metabolism.",
+      "topics": [
+        "oxygen",
+        "cancer",
+        "Warburg",
+        "anaerobic",
+        "aerobic",
+        "fermentation"
+      ]
+    },
+    "WAL-CLM-IMMORT-000397": {
+      "subject": "oxygen",
+      "also_about": [
+        "stroke"
+      ],
+      "facet": "uses",
+      "question": "What is hyperbaric oxygen therapy used for?",
+      "answer_short": "Wallach says exposing patients to several atmospheres of oxygen in a hyperbaric chamber can reactivate 'sleeping beauty' cells around a stroke and speed the healing of athletic injuries.",
+      "topics": [
+        "oxygen",
+        "hyperbaric",
+        "hyperbaric oxygen",
+        "stroke",
+        "sports injury",
+        "healing"
+      ]
+    },
+    "WAL-CLM-IMMORT-000398": {
+      "subject": "oxygen",
+      "also_about": [],
+      "facet": "history",
+      "question": "How long has oxygen therapy been used in medicine?",
+      "answer_short": "Wallach says oxygen in the form of hydrogen peroxide has been used topically, intravenously, and orally since the Civil War, and widely in Europe for over 50 years.",
+      "topics": [
+        "oxygen",
+        "hydrogen peroxide",
+        "oxygen therapy",
+        "Civil War",
+        "H2O2",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000399": {
+      "subject": "silica",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is silica?",
+      "answer_short": "Silica is silicon dioxide (SiO2), the most important compound of silicon — the second most abundant element in the earth's crust after oxygen — and Wallach counts it among the body's essential minerals.",
+      "topics": [
+        "silica",
+        "silicon",
+        "silicon dioxide",
+        "quartz",
+        "SiO2",
+        "what is silica"
+      ]
+    },
+    "WAL-CLM-IMMORT-000400": {
+      "subject": "silica",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Is silica the same as sand and glass?",
+      "answer_short": "Wallach explains that silica is the main material of sand, and that sand melted with soda ash and limestone becomes glass — of which there are more than a thousand forms.",
+      "topics": [
+        "silica",
+        "sand",
+        "glass",
+        "quartz",
+        "silicon dioxide",
+        "is silica sand"
+      ]
+    },
+    "WAL-CLM-IMMORT-000401": {
+      "subject": "aluminum",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Is there aluminum in baby formula?",
+      "answer_short": "Wallach cites a survey putting aluminum in infant formula at about 0.9 mg/kg body weight per week (milk-based) and 1.1 mg (soy-based).",
+      "topics": [
+        "aluminum",
+        "infant formula",
+        "baby formula",
+        "soy formula",
+        "babies"
+      ]
+    },
+    "WAL-CLM-IMMORT-000402": {
+      "subject": "gold",
+      "also_about": [
+        "silver",
+        "mercury"
+      ],
+      "facet": "basics",
+      "question": "What is gold?",
+      "answer_short": "Wallach describes gold as the most precious and one of the most beautiful of all metals -- a corrosion-resistant, bright-yellow element prized since ancient times.",
+      "topics": [
+        "gold",
+        "Au",
+        "what is gold",
+        "precious metal",
+        "yellow metal",
+        "gold element"
+      ]
+    },
+    "WAL-CLM-IMMORT-000403": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name gold and its symbol Au come from?",
+      "answer_short": "Wallach says gold's symbol Au comes from the Latin aurum ('shining dawn'), with older roots in the Sanskrit jval and the Anglo-Saxon gold.",
+      "topics": [
+        "gold",
+        "Au",
+        "aurum",
+        "gold name origin",
+        "why is gold called Au",
+        "shining dawn"
+      ]
+    },
+    "WAL-CLM-IMMORT-000404": {
+      "subject": "gold",
+      "also_about": [
+        "mercury"
+      ],
+      "facet": "uses",
+      "question": "Is gold used in dental fillings?",
+      "answer_short": "Wallach notes gold dissolves in mercury to form an amalgam, and this gold-mercury amalgam is used by dentists to fill teeth.",
+      "topics": [
+        "gold",
+        "dental fillings",
+        "amalgam",
+        "gold in teeth",
+        "gold mercury amalgam",
+        "dentistry"
+      ]
+    },
+    "WAL-CLM-IMMORT-000405": {
+      "subject": "strontium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name strontium come from?",
+      "answer_short": "Strontium was named in 1789 after the Scottish village of Strontian, where Dr. Adair Crawford first identified the element.",
+      "topics": [
+        "strontium",
+        "name origin",
+        "strontian scotland",
+        "adair crawford",
+        "celestite",
+        "strontianite"
+      ]
+    },
+    "WAL-CLM-IMMORT-000406": {
+      "subject": "bromine",
+      "also_about": [
+        "mercury"
+      ],
+      "facet": "basics",
+      "question": "Is bromine a liquid?",
+      "answer_short": "In its pure form bromine is a reddish liquid, and Wallach notes it and mercury are the only two elements that are liquid at room temperature.",
+      "topics": [
+        "bromine",
+        "is bromine a liquid",
+        "reddish liquid",
+        "liquid at room temperature",
+        "mercury",
+        "diatomic molecule"
+      ]
+    },
+    "WAL-CLM-IMMORT-000407": {
+      "subject": "bromine",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "What does the name bromine mean?",
+      "answer_short": "Wallach explains the element was named bromine from the Greek word 'bromos,' which means 'stench.'",
+      "topics": [
+        "bromine",
+        "what does bromine mean",
+        "why is it called bromine",
+        "bromine name origin",
+        "bromos",
+        "stench",
+        "greek"
+      ]
+    },
+    "WAL-CLM-IMMORT-000408": {
+      "subject": "terbium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is terbium?",
+      "answer_short": "Terbium is a rare-earth metal that Wallach counts among the essential trace minerals -- one of the least abundant of the rare earths, silvery-white and soft enough to be cut with a knife.",
+      "topics": [
+        "terbium",
+        "rare earth",
+        "rare earth metal",
+        "trace mineral",
+        "lanthanide",
+        "silvery-white"
+      ]
+    },
+    "WAL-CLM-IMMORT-000409": {
+      "subject": "terbium",
+      "also_about": [
+        "yttrium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered terbium and when?",
+      "answer_short": "Wallach records that terbium was discovered in 1843 by Carl Gustaf Mosander, who isolated its oxide from the mineral yttria.",
+      "topics": [
+        "terbium",
+        "who discovered terbium",
+        "1843",
+        "Carl Gustaf Mosander",
+        "yttria",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-IMMORT-000410": {
+      "subject": "terbium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where does terbium come from?",
+      "answer_short": "Wallach says terbium is recovered commercially from monazite -- a mix of rare earths, thorium and calcium -- found in river sands from India and Brazil and beach sand from Florida.",
+      "topics": [
+        "terbium",
+        "monazite",
+        "where terbium comes from",
+        "India",
+        "Brazil",
+        "Florida",
+        "rare earth sands",
+        "thorium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000411": {
+      "subject": "rubidium",
+      "also_about": [
+        "cesium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered rubidium?",
+      "answer_short": "Rubidium was discovered in 1861 by German chemists Robert Bunsen and Gustav Kirchhoff, who spotted it by its deep-red spectral line.",
+      "topics": [
+        "rubidium",
+        "Rb",
+        "discovery",
+        "who discovered rubidium",
+        "Bunsen",
+        "Kirchhoff",
+        "1861",
+        "spectral lines"
+      ]
+    },
+    "WAL-CLM-IMMORT-000412": {
+      "subject": "rubidium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name rubidium come from?",
+      "answer_short": "The name rubidium comes from the Latin rubidus, meaning 'deep red,' after the red spectral line by which it was identified.",
+      "topics": [
+        "rubidium",
+        "Rb",
+        "name origin",
+        "etymology",
+        "rubidus",
+        "deep red",
+        "why is it called rubidium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000413": {
+      "subject": "nickel",
+      "also_about": [
+        "iron"
+      ],
+      "facet": "basics",
+      "question": "What is nickel?",
+      "answer_short": "Wallach describes nickel as a silvery metal and a rare element, making up only one one-hundredth of one percent of the earth's crust.",
+      "topics": [
+        "nickel",
+        "Ni",
+        "silvery metal",
+        "millerite",
+        "earth's crust",
+        "meteorites",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000414": {
+      "subject": "nickel",
+      "also_about": [
+        "cobalt"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name nickel come from?",
+      "answer_short": "Wallach says nickel is a German word for Satan, from Kupfernickel, meaning 'Satan's copper.'",
+      "topics": [
+        "nickel",
+        "name",
+        "etymology",
+        "German",
+        "Satan",
+        "Kupfernickel",
+        "coloring glass"
+      ]
+    },
+    "WAL-CLM-IMMORT-000415": {
+      "subject": "nickel",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered nickel?",
+      "answer_short": "Wallach says nickel's pure metal was first identified in 1751 by Swedish chemist Axel Fredrik Cronstedt.",
+      "topics": [
+        "nickel",
+        "discovery",
+        "1751",
+        "Cronstedt",
+        "Swedish chemist",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000416": {
+      "subject": "nickel",
+      "also_about": [
+        "cobalt",
+        "cadmium"
+      ],
+      "facet": "uses",
+      "question": "What is nickel used for?",
+      "answer_short": "Wallach says nickel is used in the US five-cent coin, in powerful alnico magnets, and in nickel-cadmium (Ni-Cad) batteries.",
+      "topics": [
+        "nickel",
+        "uses",
+        "coin",
+        "five cent",
+        "magnet",
+        "alnico",
+        "Ni-Cad battery",
+        "alloy"
+      ]
+    },
+    "WAL-CLM-IMMORT-000417": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "Is barium a rare element?",
+      "answer_short": "No — despite being grouped with the rare earths, Wallach calls barium an abundant element, ranking sixth among all the elements in the earth's crust.",
+      "topics": [
+        "is barium rare",
+        "barium abundance",
+        "earth's crust",
+        "witherite",
+        "barite",
+        "common element"
+      ]
+    },
+    "WAL-CLM-IMMORT-000418": {
+      "subject": "neodymium",
+      "also_about": [
+        "praseodymium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered neodymium and when?",
+      "answer_short": "Wallach's book recounts that neodymium was discovered in 1885 by Austrian amateur mineralogist Baron Carl Auer von Welsbach, who split the mineral didymium into two new elements.",
+      "topics": [
+        "neodymium discovery",
+        "who discovered neodymium",
+        "Welsbach",
+        "didymium",
+        "1885",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-IMMORT-000419": {
+      "subject": "neodymium",
+      "also_about": [
+        "praseodymium"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name neodymium come from?",
+      "answer_short": "Welsbach coined 'neodymium' from two Greek words, neos ('new') and didymos ('twin'), after splitting the mineral didymium.",
+      "topics": [
+        "neodymium name",
+        "neodymium etymology",
+        "neos new didymos twin",
+        "meaning of neodymium",
+        "didymium",
+        "Greek"
+      ]
+    },
+    "WAL-CLM-IMMORT-000420": {
+      "subject": "neodymium",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is neodymium used for?",
+      "answer_short": "Wallach's book notes neodymium is used to make the most powerful magnets on earth, plus colored glass for welder's goggles and the synthetic 'ruby' in powerful lasers.",
+      "topics": [
+        "neodymium uses",
+        "neodymium magnets",
+        "strongest magnet",
+        "neodymium laser",
+        "welder's goggles",
+        "counterfeit detection"
+      ]
+    },
+    "WAL-CLM-IMMORT-000421": {
+      "subject": "yttrium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is yttrium?",
+      "answer_short": "Yttrium is a 'heavy' rare earth element — a silver-gray metal Wallach counts among the plant-derived trace minerals the body needs.",
+      "topics": [
+        "yttrium",
+        "rare earth",
+        "silver-gray metal",
+        "what is yttrium",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000422": {
+      "subject": "yttrium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name yttrium come from?",
+      "answer_short": "Yttrium was first identified in 1789 by Johan Gadolin, who named it for Ytterby, a small Swedish village near Stockholm.",
+      "topics": [
+        "yttrium",
+        "name origin",
+        "Ytterby",
+        "Johan Gadolin",
+        "discovery",
+        "1789"
+      ]
+    },
+    "WAL-CLM-IMMORT-000423": {
+      "subject": "yttrium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Did the Apollo astronauts find yttrium on the moon?",
+      "answer_short": "Wallach says yttrium is scarce in the earth's crust, but moon rocks the Apollo astronauts brought back had a surprisingly high level of it.",
+      "topics": [
+        "yttrium",
+        "moon rocks",
+        "Apollo",
+        "monazite sand",
+        "where is yttrium found",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-IMMORT-000424": {
+      "subject": "arsenic",
+      "also_about": [
+        "sulfur"
+      ],
+      "facet": "basics",
+      "question": "What is arsenic?",
+      "answer_short": "Arsenic is a semimetal or metalloid that occurs mostly in mineral compounds such as realgar and orpiment, both of which are mixes of arsenic and sulfur.",
+      "topics": [
+        "arsenic",
+        "what is arsenic",
+        "metalloid",
+        "semimetal",
+        "realgar",
+        "orpiment"
+      ]
+    },
+    "WAL-CLM-IMMORT-000425": {
+      "subject": "lutetium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name lutetium come from?",
+      "answer_short": "The name comes from Lutetia, the ancient name for the city of Paris, coined by the French scientist Georges Urbain.",
+      "topics": [
+        "lutetium name origin",
+        "why is it called lutetium",
+        "Lutetia Paris",
+        "cassiopium",
+        "etymology of lutetium",
+        "Georges Urbain"
+      ]
+    },
+    "WAL-CLM-IMMORT-000426": {
+      "subject": "lutetium",
+      "also_about": [
+        "ytterbium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered lutetium?",
+      "answer_short": "Lutetium was discovered in 1907 by the Austrian mineralogist Carl Auer von Welsbach and the French scientist Georges Urbain, with American chemist Charles James believed to have found it independently the same year.",
+      "topics": [
+        "who discovered lutetium",
+        "when was lutetium discovered",
+        "Charles James King James",
+        "Welsbach Urbain",
+        "history of lutetium",
+        "1907"
+      ]
+    },
+    "WAL-CLM-IMMORT-000427": {
+      "subject": "niobium",
+      "also_about": [
+        "iron",
+        "manganese"
+      ],
+      "facet": "basics",
+      "question": "What is niobium?",
+      "answer_short": "Wallach describes niobium as a soft, steel-gray metal found mainly in the ore columbite.",
+      "topics": [
+        "niobium",
+        "columbite",
+        "trace mineral",
+        "rare earth",
+        "steel-gray metal",
+        "essential minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000428": {
+      "subject": "niobium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered niobium?",
+      "answer_short": "Wallach says niobium was discovered by the Englishman Charles Hatchett in 1801.",
+      "topics": [
+        "niobium",
+        "Charles Hatchett",
+        "discovered",
+        "1801",
+        "columbite",
+        "British Museum"
+      ]
+    },
+    "WAL-CLM-IMMORT-000429": {
+      "subject": "niobium",
+      "also_about": [
+        "tantalum"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name niobium come from?",
+      "answer_short": "Wallach says the element was named niobium for the mythological goddess Niobe.",
+      "topics": [
+        "niobium",
+        "Niobe",
+        "name origin",
+        "etymology",
+        "Greek mythology",
+        "Thebes"
+      ]
+    },
+    "WAL-CLM-IMMORT-000430": {
+      "subject": "praseodymium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is praseodymium?",
+      "answer_short": "Praseodymium is a soft, silvery-white 'light' rare earth metal that tarnishes to a green oxide, one of the rare-earth minerals Wallach counts among the essential nutrients.",
+      "topics": [
+        "praseodymium",
+        "rare earth",
+        "light rare earth",
+        "green oxide",
+        "silvery-white metal",
+        "mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000431": {
+      "subject": "praseodymium",
+      "also_about": [
+        "neodymium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered praseodymium?",
+      "answer_short": "Praseodymium was isolated in 1885 by the Austrian baron Carl Auer von Welsbach, who split the mineral didymium into two new elements.",
+      "topics": [
+        "praseodymium",
+        "discovery",
+        "1885",
+        "Carl Auer von Welsbach",
+        "didymium",
+        "who discovered"
+      ]
+    },
+    "WAL-CLM-IMMORT-000432": {
+      "subject": "praseodymium",
+      "also_about": [
+        "neodymium"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name praseodymium come from?",
+      "answer_short": "The name comes from the Greek 'prasios' (green) and 'didymos' (twin), for the green color of the element's oxide.",
+      "topics": [
+        "praseodymium",
+        "name origin",
+        "etymology",
+        "Greek",
+        "prasios green",
+        "didymos twin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000433": {
+      "subject": "titanium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is titanium?",
+      "answer_short": "Titanium is the ninth most abundant element in the earth's crust — a trace mineral discovered in 1791 and named for the Titans of Greek myth.",
+      "topics": [
+        "titanium",
+        "what is titanium",
+        "ninth most abundant element",
+        "rutile and ilmenite",
+        "who discovered titanium",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000434": {
+      "subject": "titanium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name titanium come from?",
+      "answer_short": "Titanium is named for the Titans of Greek mythology.",
+      "topics": [
+        "titanium",
+        "name origin",
+        "titans",
+        "greek mythology",
+        "why is it called titanium",
+        "etymology"
+      ]
+    },
+    "WAL-CLM-IMMORT-000435": {
+      "subject": "titanium",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is titanium used for?",
+      "answer_short": "Wallach points to titanium's industrial scale — each Boeing 747 jet engine holds 10,000 pounds of it.",
+      "topics": [
+        "titanium",
+        "what is titanium used for",
+        "jet engine",
+        "boeing 747",
+        "industrial metal"
+      ]
+    },
+    "WAL-CLM-IMMORT-000436": {
+      "subject": "scandium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is scandium?",
+      "answer_short": "Scandium is a rare element that makes up only about 0.0025% of the earth's crust and occurs at an even higher rate in the sun and a few other stars.",
+      "topics": [
+        "scandium",
+        "Sc",
+        "rare element",
+        "earth's crust",
+        "sun",
+        "stars"
+      ]
+    },
+    "WAL-CLM-IMMORT-000437": {
+      "subject": "scandium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered scandium?",
+      "answer_short": "Scandium was predicted by Mendeleyev in 1871 from the periodic chart and then discovered in 1879 by Lars Fredrik Nilson.",
+      "topics": [
+        "scandium",
+        "discovery",
+        "Mendeleyev",
+        "periodic table",
+        "1879",
+        "Nilson"
+      ]
+    },
+    "WAL-CLM-IMMORT-000438": {
+      "subject": "scandium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name scandium come from?",
+      "answer_short": "When Lars Fredrik Nilson discovered scandium in 1879 he named it after his homeland, Scandinavia.",
+      "topics": [
+        "scandium",
+        "name origin",
+        "Scandinavia",
+        "Nilson",
+        "why is it called scandium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000439": {
+      "subject": "rhenium",
+      "also_about": [
+        "molybdenum"
+      ],
+      "facet": "basics",
+      "question": "What is rhenium?",
+      "answer_short": "Rhenium is one of the rarest elements on Earth — so scarce that a million pounds of ore yields only a single gram.",
+      "topics": [
+        "rhenium",
+        "rarest element",
+        "rare metal",
+        "molybdenite ore",
+        "expensive element",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000440": {
+      "subject": "rhenium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered rhenium?",
+      "answer_short": "Rhenium's existence was predicted and then discovered in 1925 by German chemists Ida Tacke, Walter Nodack, and Otto Carl Berg.",
+      "topics": [
+        "rhenium",
+        "who discovered rhenium",
+        "1925",
+        "German chemists",
+        "Ida Tacke",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000441": {
+      "subject": "rhenium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name rhenium come from?",
+      "answer_short": "Rhenium is named from the Latin word Rhenus, which translates to the Rhine River.",
+      "topics": [
+        "rhenium",
+        "name origin",
+        "etymology",
+        "Rhine River",
+        "Latin Rhenus",
+        "where does the name come from"
+      ]
+    },
+    "WAL-CLM-IMMORT-000442": {
+      "subject": "dysprosium",
+      "also_about": [
+        "erbium",
+        "holmium",
+        "yttrium",
+        "ytterbium",
+        "thulium",
+        "lutetium"
+      ],
+      "facet": "basics",
+      "question": "What is dysprosium?",
+      "answer_short": "Dysprosium is a soft, shiny, silvery rare-earth metal — soft enough to be cut with a knife and fairly stable in air.",
+      "topics": [
+        "dysprosium",
+        "rare earth metal",
+        "trace mineral",
+        "what is dysprosium",
+        "silvery metal",
+        "Dy"
+      ]
+    },
+    "WAL-CLM-IMMORT-000443": {
+      "subject": "dysprosium",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is dysprosium used for?",
+      "answer_short": "Wallach notes dysprosium forms alloys whose magnetic features help compact discs function efficiently.",
+      "topics": [
+        "dysprosium uses",
+        "compact discs",
+        "magnetic alloys",
+        "rare earth magnet",
+        "industrial use",
+        "Dy"
+      ]
+    },
+    "WAL-CLM-IMMORT-000444": {
+      "subject": "thulium",
+      "also_about": [
+        "ytterbium",
+        "yttrium",
+        "erbium"
+      ],
+      "facet": "basics",
+      "question": "What is thulium?",
+      "answer_short": "Thulium is a soft, bright silvery 'heavy' rare-earth metal, so soft it can be cut with a knife, and one of the scarcest of the rare earths.",
+      "topics": [
+        "thulium",
+        "Tm",
+        "rare earth",
+        "heavy rare earth",
+        "silvery metal",
+        "what is thulium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000445": {
+      "subject": "thulium",
+      "also_about": [
+        "erbium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered thulium?",
+      "answer_short": "Thulium was discovered in 1879 by the Swedish chemist Per Teodor Cleve, who isolated its greenish oxide from the mineral erbia.",
+      "topics": [
+        "thulium",
+        "Tm",
+        "discovery",
+        "Per Teodor Cleve",
+        "1879",
+        "erbia"
+      ]
+    },
+    "WAL-CLM-IMMORT-000446": {
+      "subject": "thulium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name thulium come from?",
+      "answer_short": "Thulium is named after Thule, the ancient name for Scandinavia, chosen by its discoverer Per Teodor Cleve.",
+      "topics": [
+        "thulium",
+        "Tm",
+        "etymology",
+        "name origin",
+        "Thule",
+        "Scandinavia"
+      ]
+    },
+    "WAL-CLM-IMMORT-000447": {
+      "subject": "thulium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where does thulium come from?",
+      "answer_short": "Wallach says thulium's main source is the mineral monazite, found in river sands in India and Brazil and in beach sand in Florida.",
+      "topics": [
+        "thulium",
+        "Tm",
+        "monazite",
+        "source of thulium",
+        "India",
+        "Florida"
+      ]
+    },
+    "WAL-CLM-IMMORT-000448": {
+      "subject": "samarium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered samarium and when?",
+      "answer_short": "Samarium was discovered in 1879 by the French chemist Paul-Emile Lecoq de Boisbaudran.",
+      "topics": [
+        "samarium",
+        "who discovered samarium",
+        "discovery of samarium",
+        "1879",
+        "lecoq de boisbaudran",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-IMMORT-000449": {
+      "subject": "samarium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name samarium come from?",
+      "answer_short": "Wallach says samarium was identified in a mineral called samarskite, which was itself named for a Russian army officer, Colonel Samarski.",
+      "topics": [
+        "samarium",
+        "name origin",
+        "samarskite",
+        "colonel samarski",
+        "etymology",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-IMMORT-000450": {
+      "subject": "ytterbium",
+      "also_about": [
+        "yttrium"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name ytterbium come from?",
+      "answer_short": "Wallach says ytterbium was discovered in 1878 by French chemist Jean de Marignac and named after the small Swedish village of Ytterby.",
+      "topics": [
+        "ytterbium",
+        "Ytterby",
+        "Jean de Marignac",
+        "1878",
+        "monazite",
+        "rare earth",
+        "name origin",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000451": {
+      "subject": "holmium",
+      "also_about": [
+        "dysprosium"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered holmium?",
+      "answer_short": "Two Swiss chemists first spotted holmium's spectral lines in 1878 but couldn't identify it, and Swedish chemist Per Teodor Cleve isolated and named it in 1879.",
+      "topics": [
+        "holmium",
+        "discovery",
+        "element X",
+        "Per Teodor Cleve",
+        "spectral lines",
+        "1879"
+      ]
+    },
+    "WAL-CLM-IMMORT-000452": {
+      "subject": "holmium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name holmium come from?",
+      "answer_short": "Holmium is named Holmia -- Latin for Stockholm, the home town of Per Teodor Cleve, the Swedish chemist who isolated it in 1879.",
+      "topics": [
+        "holmium",
+        "name origin",
+        "Holmia",
+        "Stockholm",
+        "etymology",
+        "Per Teodor Cleve"
+      ]
+    },
+    "WAL-CLM-IMMORT-000453": {
+      "subject": "tantalum",
+      "also_about": [
+        "niobium"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name tantalum come from?",
+      "answer_short": "Wallach recounts that the Swedish chemist Anders Gustav Ekeberg, who discovered the element in 1802, named it after Tantalos, the father of Niobe in Greek mythology.",
+      "topics": [
+        "tantalum",
+        "tantalum name origin",
+        "Tantalos",
+        "Ekeberg",
+        "discovered 1802",
+        "Ytterby"
+      ]
+    },
+    "WAL-CLM-IMMORT-000454": {
+      "subject": "tantalum",
+      "also_about": [
+        "niobium"
+      ],
+      "facet": "history",
+      "question": "Was tantalum confused with niobium?",
+      "answer_short": "For nearly 50 years after Ekeberg announced it, many chemists thought he had mistaken tantalum for niobium, and pure tantalum metal was not produced until 1903.",
+      "topics": [
+        "tantalum",
+        "niobium confusion",
+        "pure tantalum metal 1903",
+        "tantalum history",
+        "Niobe"
+      ]
+    },
+    "WAL-CLM-IMMORT-000455": {
+      "subject": "tantalum",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is tantalum used for?",
+      "answer_short": "Wallach notes that tantalum -- whose principal ore is columbite -- is used for dental and joint prosthesis.",
+      "topics": [
+        "tantalum",
+        "tantalum uses",
+        "dental prosthesis",
+        "joint prosthesis",
+        "columbite",
+        "tantalum ore"
+      ]
+    },
+    "WAL-CLM-IMMORT-000456": {
+      "subject": "hafnium",
+      "also_about": [
+        "zirconium"
+      ],
+      "facet": "basics",
+      "question": "What is hafnium?",
+      "answer_short": "Hafnium is a bright, silvery-white metal so chemically bound to its 'twin' zirconium that the two are almost impossible to separate, and Wallach counts it among his essential trace minerals.",
+      "topics": [
+        "hafnium",
+        "what is hafnium",
+        "silvery-white metal",
+        "trace mineral",
+        "essential elements",
+        "zirconium twin"
+      ]
+    },
+    "WAL-CLM-IMMORT-000457": {
+      "subject": "hafnium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name hafnium come from?",
+      "answer_short": "Hafnium is named for Copenhagen; its finders Coster and von Hevesy honored Bohr's native city using its Latin name, Hafnia.",
+      "topics": [
+        "hafnium",
+        "hafnium name origin",
+        "hafnia",
+        "copenhagen",
+        "who discovered hafnium",
+        "etymology"
+      ]
+    },
+    "WAL-CLM-IMMORT-000458": {
+      "subject": "zirconium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is zirconium?",
+      "answer_short": "Zirconium is a mineral Wallach counts among the essential trace elements and rare earths; its best-known form is the gemstone mineral zircon, a crystalline zirconium silicate.",
+      "topics": [
+        "zircon",
+        "zirconium silicate",
+        "gemstone",
+        "diamond substitute",
+        "semiprecious gem"
+      ]
+    },
+    "WAL-CLM-IMMORT-000459": {
+      "subject": "zirconium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered zirconium?",
+      "answer_short": "Zirconium was discovered in 1787 by the German chemist Martin Heinrich Klaproth, though its best-known compound, zircon, had been known since ancient times.",
+      "topics": [
+        "discovery of zirconium",
+        "when was zirconium discovered",
+        "Klaproth",
+        "1787",
+        "zircon"
+      ]
+    },
+    "WAL-CLM-IMMORT-000460": {
+      "subject": "zirconium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name zirconium come from?",
+      "answer_short": "The name zirconium comes from 'zargun,' the Arabic word for zircon, which translates to 'gold color.'",
+      "topics": [
+        "name origin of zirconium",
+        "zargun",
+        "Arabic",
+        "gold color",
+        "etymology",
+        "zircon"
+      ]
+    },
+    "WAL-CLM-IMMORT-000461": {
+      "subject": "zirconium",
+      "also_about": [
+        "hafnium"
+      ],
+      "facet": "history",
+      "question": "Is zirconium related to hafnium?",
+      "answer_short": "Yes -- zirconium and hafnium are chemical twins, so alike that Wallach says it is almost impossible to work with one without working with the other.",
+      "topics": [
+        "zirconium and hafnium",
+        "twin metals",
+        "chemically similar",
+        "hard to separate",
+        "hafnium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000462": {
+      "subject": "colloidal_minerals",
+      "also_about": [
+        "rare_earth_elements"
+      ],
+      "facet": "history",
+      "question": "Is there real proof that rare-earth minerals extend life?",
+      "answer_short": "Yes — Wallach cites lab studies where adding rare-earth minerals to animals' diets doubled their expected lifespan, and argues that because these minerals are stripped from our food, daily supplementation is the only reliable way to get them.",
+      "topics": [
+        "rare earth minerals",
+        "do I need rare earths",
+        "longevity",
+        "lifespan",
+        "daily supplementation",
+        "plant-derived minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000383": {
+      "subject": "hydrogen",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "mechanism",
+      "question": "How does the body use hydrogen peroxide to fight infection?",
+      "answer_short": "Wallach says neutrophils (white blood cells) make hydrogen peroxide as a 'lethal weapon' to destroy germs and cancer cells, while the enzyme catalase protects healthy tissue from the excess.",
+      "topics": [
+        "hydrogen peroxide",
+        "immune system",
+        "white blood cells",
+        "neutrophils",
+        "catalase",
+        "kill germs"
+      ]
+    },
+    "WAL-CLM-RARE-000384": {
+      "subject": "nitrogen",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is nitrogen found and how much is in the body?",
+      "answer_short": "Wallach reports nitrogen rising from about 20 ppm in igneous rock to 100,000 ppm in land animals, showing it concentrates strongly in living tissue.",
+      "topics": [
+        "nitrogen",
+        "where is nitrogen found",
+        "nitrogen in the body",
+        "nitrogen ppm",
+        "nitrogen in soil",
+        "nitrogen concentration"
+      ]
+    },
+    "WAL-CLM-RARE-000385": {
+      "subject": "silica",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What parts of the body contain silica?",
+      "answer_short": "Wallach says silica is present in the blood, bile, skin, hair and nails, and forms part of the connective tissue, bones, nerve sheaths and mucus membranes.",
+      "topics": [
+        "silica",
+        "silicon",
+        "connective tissue",
+        "bones",
+        "skin hair nails",
+        "where is silica in the body"
+      ]
+    },
+    "WAL-CLM-RARE-000386": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why are newborn babies given silver drops in their eyes?",
+      "answer_short": "Wallach recounts that in 1884 Carl Sigmund Crede began the practice of putting a single prophylactic drop of 2% silver nitrate in every newborn's eyes to prevent gonorrheal eye infection at birth.",
+      "topics": [
+        "silver nitrate",
+        "lunar caustic",
+        "newborn eye drops",
+        "crede",
+        "ophthalmia neonatorum",
+        "eye infection"
+      ]
+    },
+    "WAL-CLM-RARE-000387": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why is silver linked to the moon and lunacy?",
+      "answer_short": "In Wallach's history of medicine, silver was tied to the moon -- believed to rule the head and emotions -- so 'Tincture of the moon' (a silver preparation) was long used for epilepsy, melancholia, and mania.",
+      "topics": [
+        "silver and the moon",
+        "lunacy",
+        "tincture of the moon",
+        "lunar caustic",
+        "melancholia",
+        "mania",
+        "moonstruck"
+      ]
+    },
+    "WAL-CLM-RARE-000388": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What conditions can colloidal silver help with?",
+      "answer_short": "Wallach cites a 1917 British Medical Journal report by J. Mark Hovell that colloidal silver helped ear, nose and throat problems -- blocked eustachian tubes, nasal catarrh, mouth/throat/ear infections -- plus septicemia, cystitis, whooping cough and shingles.",
+      "topics": [
+        "colloidal silver",
+        "germ fighter",
+        "eustachian tubes",
+        "catarrh",
+        "tonsillitis",
+        "cystitis",
+        "whooping cough",
+        "shingles"
+      ]
+    },
+    "WAL-CLM-RARE-000389": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does colloidal silver survive stomach acid when you swallow it?",
+      "answer_short": "Wallach says that taken internally, colloidal silver particles resist the dilute acids and alkalis of the stomach and intestine, so they keep their catalytic action and pass into the intestine unchanged.",
+      "topics": [
+        "colloidal silver",
+        "stomach acid",
+        "digestion",
+        "absorption",
+        "systemic disinfectant",
+        "catalytic action"
+      ]
+    },
+    "WAL-CLM-RARE-000390": {
+      "subject": "silver",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Has silver been used to treat cancer?",
+      "answer_short": "Wallach reports that Dr. Bjorn Nordstrom of Sweden's Karolinska Institute has used silver in his alternative cancer therapy programs.",
+      "topics": [
+        "silver cancer",
+        "bjorn nordstrom",
+        "karolinska institute",
+        "alternative cancer therapy"
+      ]
+    },
+    "WAL-CLM-RARE-000391": {
+      "subject": "aluminum",
+      "also_about": [],
+      "facet": "history",
+      "question": "Was aluminum ever more valuable than silver?",
+      "answer_short": "Yes - Wallach recounts that aluminum was once worth more than silver, until Charles Hall's 1886 electrolysis process made it cheap.",
+      "topics": [
+        "aluminum",
+        "history",
+        "precious metal",
+        "more valuable than silver",
+        "washington monument",
+        "charles hall"
+      ]
+    },
+    "WAL-CLM-RARE-000392": {
+      "subject": "gold",
+      "also_about": [
+        "silver",
+        "copper"
+      ],
+      "facet": "discovery",
+      "question": "Was gold one of the first metals humans discovered?",
+      "answer_short": "Wallach holds that gold, silver and copper were probably the first metals discovered in their native nugget form -- with gold likely the very first.",
+      "topics": [
+        "gold",
+        "first metal discovered",
+        "gold nuggets",
+        "history of gold",
+        "native metal",
+        "why gold was discovered first"
+      ]
+    },
+    "WAL-CLM-RARE-000393": {
+      "subject": "cerium",
+      "also_about": [],
+      "facet": "history",
+      "question": "Was cerium ever used as a medicine?",
+      "answer_short": "Yes — in the 1800s physicians used cerium salts to control morning sickness and severe vomiting.",
+      "topics": [
+        "cerium",
+        "morning sickness",
+        "vomiting",
+        "nausea",
+        "history of medicine",
+        "oxalate of cerium"
+      ]
+    },
+    "WAL-CLM-RARE-000394": {
+      "subject": "nickel",
+      "also_about": [
+        "epilepsy"
+      ],
+      "facet": "history",
+      "question": "Was nickel ever used as a medicine?",
+      "answer_short": "Wallach recounts that bromide of nickel was used in the 1800s as a therapy for epilepsy and similar diseases.",
+      "topics": [
+        "nickel",
+        "epilepsy",
+        "bromide of nickel",
+        "medicine",
+        "seizures",
+        "history"
+      ]
+    },
+    "WAL-CLM-RARE-000395": {
+      "subject": "barium",
+      "also_about": [
+        "tuberculosis"
+      ],
+      "facet": "history",
+      "question": "Was barium ever used as a medicine?",
+      "answer_short": "Yes — Wallach recounts that 18th-century physician Adair Crawford used chlorinated barium to treat 'scrophulous' (TB of the cervical lymph nodes), believing it improved appetite and general health, though it could cause nausea and vertigo.",
+      "topics": [
+        "barium medicine",
+        "history of barium",
+        "Adair Crawford",
+        "scrophulous",
+        "chlorinated barium",
+        "barium side effects"
+      ]
+    },
+    "WAL-CLM-RARE-000396": {
+      "subject": "arsenic",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Isn't arsenic a poison — why would I need it?",
+      "answer_short": "Wallach holds that although arsenic is feared as a poison, in trace levels it is in fact an essential element for optimal health and longevity.",
+      "topics": [
+        "arsenic",
+        "is arsenic essential",
+        "arsenic poison",
+        "essential mineral",
+        "trace mineral",
+        "longevity"
+      ]
+    },
+    "WAL-CLM-RARE-000397": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "history",
+      "question": "How was tin used in medicine historically?",
+      "answer_short": "Wallach recounts that in the Middle Ages Paracelsus recommended tin to expel worms, and tin was also used as a sweat-inducer and a purgative for fevers, PMS, and venereal disease.",
+      "topics": [
+        "tin",
+        "Paracelsus",
+        "history of tin",
+        "worms",
+        "folk medicine",
+        "alchemy"
+      ]
+    },
+    "WAL-CLM-LETS-000517": {
+      "subject": "nitrogen",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What is BUN (blood urea nitrogen) and what does it mean?",
+      "answer_short": "BUN, or blood urea nitrogen, is a barometer of how well the liver and kidneys process the by-products of protein metabolism.",
+      "topics": [
+        "nitrogen",
+        "BUN",
+        "blood urea nitrogen",
+        "kidney test",
+        "protein metabolism",
+        "blood test"
+      ]
+    },
+    "WAL-CLM-IMMORT-000049": {
+      "subject": "carbon",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is carbon?",
+      "answer_short": "Wallach calls carbon the element most essential for life on Earth — the structural backbone of every organic molecule, from carbohydrates, fats and amino acids to vitamins and enzymes.",
+      "topics": [
+        "carbon",
+        "element of life",
+        "organic molecules",
+        "structural element",
+        "carbon based life",
+        "C"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000084": {
+      "subject": "gallium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is gallium an essential mineral?",
+      "answer_short": "Wallach counts gallium among the essential elements, noting it was claimed essential in 1938 and again in 1958 and has metalloenzyme activity in the human brain.",
+      "topics": [
+        "is gallium essential",
+        "essential minerals",
+        "does the body need gallium",
+        "gallium nutrient",
+        "90 essential nutrients"
+      ]
+    },
+    "WAL-CLM-IMMORT-000135": {
+      "subject": "gallium",
+      "also_about": [
+        "brain_cancer"
+      ],
+      "facet": "uses",
+      "question": "Does gallium help protect against brain cancer?",
+      "answer_short": "Wallach says gallium has specific metalloenzyme activity in the human brain and has been reported to specifically reduce the rate of brain cancer in laboratory animals.",
+      "topics": [
+        "gallium brain cancer",
+        "gallium and the brain",
+        "brain tumor",
+        "metalloenzyme",
+        "gallium cancer"
+      ]
+    },
+    "WAL-CLM-IMMORT-000153": {
+      "subject": "hydrogen",
+      "also_about": [
+        "cystitis"
+      ],
+      "facet": "protocol",
+      "question": "Does cranberry juice help bladder infections?",
+      "answer_short": "Wallach says acidifying the urine with unsweetened cranberry juice can often control bladder infections (cystitis).",
+      "topics": [
+        "cranberry juice",
+        "bladder infection",
+        "cystitis",
+        "acidify urine",
+        "UTI"
+      ]
+    },
+    "WAL-CLM-RARE-000182": {
+      "subject": "nitrogen",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is nitrogen and what does it do in the body?",
+      "answer_short": "Nitrogen is a structural atom in protein, in the nucleic acids RNA and DNA, and in many organic molecules, supplied to the body as dietary protein.",
+      "topics": [
+        "nitrogen",
+        "what is nitrogen",
+        "protein",
+        "nucleic acids",
+        "amine group",
+        "nitrogen in the body"
+      ]
+    },
+    "WAL-CLM-RARE-000185": {
+      "subject": "nitrogen",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What happens if you don't get enough protein?",
+      "answer_short": "Classic protein deficiency causes infertility, poor growth, lowered immune status, edema, and Kwashiorkor -- the potbellied, thin children of third-world countries.",
+      "topics": [
+        "nitrogen",
+        "protein deficiency",
+        "kwashiorkor",
+        "edema",
+        "not enough protein",
+        "malnutrition"
+      ]
+    },
+    "WAL-CLM-RARE-000183": {
+      "subject": "nitrogen",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What does the body use protein for?",
+      "answer_short": "Protein's core uses are repairing worn-out tissue, building new tissue (muscle, growth, pregnancy), and serving as an emergency source of heat and energy.",
+      "topics": [
+        "nitrogen",
+        "protein functions",
+        "what protein is used for",
+        "tissue repair",
+        "muscle building",
+        "building blocks"
+      ]
+    },
+    "WAL-CLM-RARE-000244": {
+      "subject": "silica",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does silica help build collagen and strengthen bones?",
+      "answer_short": "Wallach says silicon (silica) supplementation increases the collagen in growing bone by 100%, and that tissue silicon levels fall with age in people who don't supplement.",
+      "topics": [
+        "silica",
+        "silicon",
+        "collagen",
+        "bone",
+        "aging",
+        "bone density"
+      ]
+    },
+    "WAL-CLM-RARE-000245": {
+      "subject": "silica",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of silica deficiency?",
+      "answer_short": "Wallach says silica deficiency shows up as dry brittle hair, brittle finger and toe nails, poor skin quality, poor calcium utilization, and arterial disease.",
+      "topics": [
+        "silica",
+        "silicon",
+        "deficiency",
+        "brittle nails",
+        "brittle hair",
+        "arterial disease",
+        "skin"
+      ]
+    },
+    "WAL-CLM-RARE-000246": {
+      "subject": "silica",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much silica should you take a day?",
+      "answer_short": "Wallach gives a recommended silicon (silica) intake of 200 to 500 mg per day, and notes high-fiber diets are rich in silicon, which many investigators think helps lower cholesterol.",
+      "topics": [
+        "silica",
+        "silicon",
+        "dose",
+        "how much silica",
+        "recommended intake",
+        "cholesterol",
+        "fiber"
+      ]
+    },
+    "WAL-CLM-IMMORT-000027": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is silver?",
+      "answer_short": "Silver is a mineral Wallach counts as essential -- not because an enzyme requires it, but because it works as a systemic disinfectant and immune-system stimulator, so a silver deficiency leaves the immune system impaired.",
+      "topics": [
+        "silver",
+        "essential mineral",
+        "immune system",
+        "systemic disinfectant",
+        "ag",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000030": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can taking too much silver turn your skin blue-gray?",
+      "answer_short": "Wallach says silver is absolutely non-toxic at standard intake, but chronic overdosing can cause argyria -- a permanent, whole-body dusky blue-gray discoloration of the skin.",
+      "topics": [
+        "silver safety",
+        "argyria",
+        "blue skin",
+        "silver toxicity",
+        "overdose",
+        "non-toxic"
+      ]
+    },
+    "WAL-CLM-IMMORT-000028": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does silver kill bacteria and viruses?",
+      "answer_short": "Per Wallach, silver is an anti-bacterial, anti-viral, anti-fungal 'anti-metabolite' that disables the specific enzymes microorganisms use to breathe (respire) -- so efficient that our great-grandmothers dropped silver dollars into milk to keep it from spoiling.",
+      "topics": [
+        "how silver works",
+        "antibacterial",
+        "antiviral",
+        "antifungal",
+        "anti-metabolite",
+        "respiration enzymes",
+        "silver dollars in milk"
+      ]
+    },
+    "WAL-CLM-RARE-000090": {
+      "subject": "silver",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much silver can you take per day?",
+      "answer_short": "Wallach says humans can consume 400 mcg of silver per day, and that a silver 'deficiency' results in an impaired immune system.",
+      "topics": [
+        "silver dose",
+        "400 mcg",
+        "daily silver",
+        "how much silver",
+        "silver deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000032": {
+      "subject": "aluminum",
+      "also_about": [
+        "birth_defects",
+        "cirrhosis"
+      ],
+      "facet": "physiology",
+      "question": "Is aluminum an essential nutrient?",
+      "answer_short": "Yes - Wallach classifies the organically-bound colloidal aluminum in soil-grown plants as an essential, nontoxic nutrient, and lab-diet aluminum deficiency caused congenital limb defects.",
+      "topics": [
+        "aluminum",
+        "essential mineral",
+        "colloidal aluminum",
+        "nutrient",
+        "birth defects"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000067": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Is the gold leaf in fancy foods and drinks good for you?",
+      "answer_short": "Wallach says elemental gold leaf is biologically inert -- tasteless, unabsorbed and passed unchanged in the feces -- so the gold in gourmet foods and $1,000 cocktails is purely decorative with no nutritional value.",
+      "topics": [
+        "gold",
+        "edible gold leaf",
+        "is gold good for you",
+        "does the body absorb gold",
+        "gold in food",
+        "goldwasser",
+        "gold nutritional value"
+      ]
+    },
+    "WAL-CLM-RARE-000096": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Does gold treat arthritis and how is it given?",
+      "answer_short": "Wallach documents that gold compounds are injected as an add-on to aspirin for arthritis -- not as a painkiller but for anti-inflammatory effect -- starting around 10 mg weekly and building toward a one-gram total.",
+      "topics": [
+        "gold",
+        "gold for arthritis",
+        "gold shots",
+        "gold injections",
+        "gold arthritis dose",
+        "rheumatoid arthritis treatment"
+      ]
+    },
+    "WAL-CLM-RARE-000097": {
+      "subject": "gold",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Who should not take gold compounds?",
+      "answer_short": "Wallach warns gold compounds must not be used in patients with liver or kidney disease, blood diseases, or systemic lupus erythematosus (lupus).",
+      "topics": [
+        "gold",
+        "gold contraindications",
+        "who should not take gold",
+        "gold and lupus",
+        "gold and kidney disease",
+        "gold and liver disease"
+      ]
+    },
+    "WAL-CLM-DDDL-000033": {
+      "subject": "strontium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "basics",
+      "question": "What is strontium?",
+      "answer_short": "Strontium is a trace mineral that can substitute for calcium in the body and is most highly concentrated in bone.",
+      "topics": [
+        "strontium",
+        "what is strontium",
+        "trace mineral",
+        "calcium substitute",
+        "bone mineral"
+      ]
+    },
+    "WAL-CLM-DDDL-000032": {
+      "subject": "strontium",
+      "also_about": [
+        "calcium",
+        "boron"
+      ],
+      "facet": "warning",
+      "question": "Can a strontium deficiency cause osteoporosis?",
+      "answer_short": "Wallach links strontium deficiency to certain calcium- and boron-resistant forms of osteoporosis and arthritis.",
+      "topics": [
+        "strontium deficiency",
+        "osteoporosis",
+        "arthritis",
+        "bone health",
+        "calcium resistant"
+      ]
+    },
+    "WAL-CLM-RARE-000250": {
+      "subject": "strontium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "warning",
+      "question": "Is strontium radioactive or dangerous?",
+      "answer_short": "Natural strontium is a needed mineral; strontium-90 is a separate man-made radioactive fission product that does not occur in nature.",
+      "topics": [
+        "strontium-90",
+        "radioactive",
+        "radiation",
+        "cold war",
+        "biohazard",
+        "fission"
+      ]
+    },
+    "WAL-CLM-IMMORT-000047": {
+      "subject": "bromine",
+      "also_about": [
+        "iodine"
+      ],
+      "facet": "basics",
+      "question": "What is bromine?",
+      "answer_short": "Bromine is a halogen in the same chemical family as iodine that Wallach counts among the essential minerals, working in the body in its active form as brominated amino acids.",
+      "topics": [
+        "bromine",
+        "what is bromine",
+        "halogen",
+        "essential mineral",
+        "brominated amino acids",
+        "is bromine essential"
+      ]
+    },
+    "WAL-CLM-RARE-000103": {
+      "subject": "bromine",
+      "also_about": [
+        "iodine"
+      ],
+      "facet": "mechanism",
+      "question": "How does bromine work in the body?",
+      "answer_short": "Wallach says bromine functions in the body through brominated amino acids, and holds there is strong evidence it is essential for mammals.",
+      "topics": [
+        "bromine",
+        "how does bromine work",
+        "brominated amino acids",
+        "is bromine essential",
+        "do i need bromine",
+        "bromine function"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000095": {
+      "subject": "lanthanum",
+      "also_about": [
+        "chronic_fatigue",
+        "candidiasis"
+      ],
+      "facet": "mechanism",
+      "question": "Can candida cause chronic fatigue?",
+      "answer_short": "Wallach theorizes that Candida albicans produces an energy-sapping, chronic-fatigue-like illness by hoarding lanthanum and 'stealing' it from the patient.",
+      "topics": [
+        "chronic fatigue",
+        "candida",
+        "yeast infection",
+        "fatigue",
+        "always tired",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-RARE-000158": {
+      "subject": "lanthanum",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can lanthanum extend lifespan?",
+      "answer_short": "Wallach reports that a trace of lanthanum (0.32 ppm) doubles the life span of the protozoa Blepharisma and Tetrahymena pyriformis and speeds their growth.",
+      "topics": [
+        "lifespan",
+        "longevity",
+        "life span",
+        "anti-aging",
+        "rare earth",
+        "protozoa"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000075": {
+      "subject": "cerium",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "Does cerium act like calcium in the body?",
+      "answer_short": "Wallach says cerium can function much like calcium in all organisms — it deposits in bone and has been shown to stimulate metabolism.",
+      "topics": [
+        "cerium",
+        "calcium",
+        "bone",
+        "metabolism",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000070": {
+      "subject": "beryllium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is beryllium toxic?",
+      "answer_short": "Yes - Wallach warns that pure powdered beryllium and its compounds must be handled carefully because they can cause acute beryllium disease or chemical pneumonitis.",
+      "topics": [
+        "beryllium",
+        "toxic",
+        "safety",
+        "acute beryllium disease",
+        "chemical pneumonitis",
+        "poison"
+      ]
+    },
+    "WAL-CLM-IMMORT-000045": {
+      "subject": "beryllium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What is berylliosis?",
+      "answer_short": "Berylliosis is a painful, sometimes fatal lung disease Wallach says comes from inhaling beryllium oxide dust from mining and industry.",
+      "topics": [
+        "beryllium",
+        "berylliosis",
+        "lung disease",
+        "beryllium dust",
+        "breathing",
+        "inhalation"
+      ]
+    },
+    "WAL-CLM-RARE-000287": {
+      "subject": "beryllium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is beryllium found in nature?",
+      "answer_short": "Wallach records beryllium as a rare element present only in trace amounts across igneous rocks, shale, sandstone, soil, and fresh and sea water.",
+      "topics": [
+        "beryllium",
+        "where found",
+        "natural abundance",
+        "rocks",
+        "seawater",
+        "soil"
+      ]
+    },
+    "WAL-CLM-RARE-000298": {
+      "subject": "terbium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does terbium build up in the body?",
+      "answer_short": "In Wallach's periodic-table survey, terbium occurs only in trace amounts across rocks, plants, and animals, and in land animals it accumulates in mammalian bone.",
+      "topics": [
+        "terbium",
+        "bone",
+        "mammalian bone",
+        "accumulates",
+        "trace mineral",
+        "rare earth in the body"
+      ]
+    },
+    "WAL-CLM-RARE-000217": {
+      "subject": "rubidium",
+      "also_about": [
+        "potassium"
+      ],
+      "facet": "mechanism",
+      "question": "Can rubidium replace potassium in the body?",
+      "answer_short": "Wallach notes rubidium can take over potassium's electrolyte function in many species — including bacteria, algae, fungi, and invertebrates such as starfish.",
+      "topics": [
+        "rubidium",
+        "Rb",
+        "potassium",
+        "electrolyte",
+        "potassium substitute",
+        "what does rubidium do"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000105": {
+      "subject": "nickel",
+      "also_about": [
+        "iron",
+        "zinc"
+      ],
+      "facet": "stance",
+      "question": "Is nickel an essential mineral?",
+      "answer_short": "Yes — Wallach holds that nickel is an essential trace mineral that acts as a cofactor for metalloenzymes and helps the gut absorb iron and zinc.",
+      "topics": [
+        "nickel",
+        "essential mineral",
+        "essential trace mineral",
+        "do I need nickel",
+        "cofactor",
+        "iron and zinc absorption"
+      ]
+    },
+    "WAL-CLM-RARE-000192": {
+      "subject": "nickel",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Where is nickel found in the body?",
+      "answer_short": "Wallach reports nickel accumulates in RNA, and that less than 10 percent of ingested metallic nickel is actually absorbed.",
+      "topics": [
+        "nickel",
+        "RNA",
+        "in the body",
+        "absorption",
+        "how much nickel is absorbed",
+        "tissue levels"
+      ]
+    },
+    "WAL-CLM-RARE-000193": {
+      "subject": "nickel",
+      "also_about": [
+        "anemia",
+        "dermatitis"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of nickel deficiency?",
+      "answer_short": "Wallach lists poor growth, anemia, depressed liver oxidative ability, high newborn mortality, a rough/dry coat, dermatitis, delayed puberty, and poor zinc absorption.",
+      "topics": [
+        "nickel deficiency",
+        "symptoms of nickel deficiency",
+        "low nickel",
+        "anemia",
+        "dermatitis",
+        "deficiency signs"
+      ]
+    },
+    "WAL-CLM-RARE-000194": {
+      "subject": "nickel",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "mechanism",
+      "question": "Does nickel interact with vitamin B12?",
+      "answer_short": "Wallach says nickel and vitamin B12 are interdependent — B12 is needed for nickel to work, and B12 deficiency raises the body's need for nickel.",
+      "topics": [
+        "nickel",
+        "vitamin B12",
+        "B12",
+        "interaction",
+        "interdependent",
+        "B12 deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000080": {
+      "subject": "erbium",
+      "also_about": [
+        "terbium",
+        "yttrium",
+        "ytterbium"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name erbium come from?",
+      "answer_short": "Erbium is named for Ytterby, a village in Sweden, from the yttria that Carl Gustaf Mosander split into three fractions in 1843.",
+      "topics": [
+        "erbium",
+        "name origin",
+        "Ytterby",
+        "Mosander",
+        "discovery",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000081": {
+      "subject": "europium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can europium help you live longer?",
+      "answer_short": "Wallach reports that europium doubled the lifespan of a laboratory species (the protozoan Tetrahymena pyriformis) -- a 100 percent increase over its normal expected lifespan.",
+      "topics": [
+        "europium lifespan",
+        "longevity",
+        "live longer",
+        "tetrahymena",
+        "rare earth longevity",
+        "anti-aging"
+      ]
+    },
+    "WAL-CLM-IMMORT-000115": {
+      "subject": "europium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is europium found in breast milk?",
+      "answer_short": "Yes -- Wallach reports europium occurs in higher concentrations in the breast milk of women in third-world countries than in American women.",
+      "topics": [
+        "europium breast milk",
+        "breast milk minerals",
+        "third world",
+        "rare earth in humans",
+        "europium in the body"
+      ]
+    },
+    "WAL-CLM-IMMORT-000044": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is barium?",
+      "answer_short": "Barium is a mineral Wallach counts among the body's essential nutrients, though most people know it from the 'barium meal' that lights up the gut on an X-ray.",
+      "topics": [
+        "barium",
+        "Ba",
+        "essential minerals",
+        "trace minerals",
+        "rare earths",
+        "barium meal"
+      ]
+    },
+    "WAL-CLM-RARE-000100": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does barium build up in the body?",
+      "answer_short": "Yes — Wallach reports barium concentrates in hard tissues such as bone, and in the lung and eyes, and is thought to be essential to mammals.",
+      "topics": [
+        "barium in the body",
+        "barium bone",
+        "barium accumulation",
+        "essential to mammals",
+        "Rygh 1949",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000069": {
+      "subject": "barium",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Why do you have to drink barium before an X-ray?",
+      "answer_short": "Because barium sulfate is dense and blocks X-rays, it outlines the digestive tract on film — the basis of the 'barium meal' and 'barium enema.'",
+      "topics": [
+        "barium meal",
+        "barium enema",
+        "barium sulfate",
+        "X-ray contrast",
+        "GI imaging",
+        "low toxicity"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000104": {
+      "subject": "neodymium",
+      "also_about": [
+        "praseodymium",
+        "cerium",
+        "samarium"
+      ],
+      "facet": "basics",
+      "question": "What is neodymium?",
+      "answer_short": "Neodymium is a 'light' rare-earth trace mineral that Wallach says is proven to enhance normal cell growth and double the lifespan of laboratory species.",
+      "topics": [
+        "neodymium",
+        "Nd",
+        "rare earth",
+        "rare earth mineral",
+        "light rare earth",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-RARE-000259": {
+      "subject": "yttrium",
+      "also_about": [
+        "ytterbium"
+      ],
+      "facet": "mechanism",
+      "question": "Does yttrium help you live longer?",
+      "answer_short": "Wallach reports that yttrium enhances normal cell growth and doubles the life span of laboratory species.",
+      "topics": [
+        "yttrium",
+        "longevity",
+        "life span",
+        "cell growth",
+        "rare earth",
+        "anti-aging"
+      ]
+    },
+    "WAL-CLM-RARE-000260": {
+      "subject": "yttrium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does yttrium cross the placenta during pregnancy?",
+      "answer_short": "Wallach reports that yttrium rapidly crosses the placenta — about 14% of ingested yttrium can be detected in newborn mice.",
+      "topics": [
+        "yttrium",
+        "pregnancy",
+        "placenta",
+        "placental transfer",
+        "newborn",
+        "mice"
+      ]
+    },
+    "WAL-CLM-IMMORT-000037": {
+      "subject": "arsenic",
+      "also_about": [
+        "carpal_tunnel_syndrome",
+        "tmj",
+        "manganese",
+        "choline"
+      ],
+      "facet": "physiology",
+      "question": "Can too little arsenic cause carpal tunnel syndrome?",
+      "answer_short": "Yes — Wallach holds that arsenic deficiency in humans shows up as carpal tunnel syndrome, TMJ and other repetitive-motion degenerative joint diseases.",
+      "topics": [
+        "carpal tunnel",
+        "carpal tunnel syndrome",
+        "TMJ",
+        "repetitive motion",
+        "joint pain",
+        "arsenic deficiency"
+      ]
+    },
+    "WAL-CLM-LETS-000144": {
+      "subject": "arsenic",
+      "also_about": [
+        "arsenic_toxicity"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of arsenic poisoning?",
+      "answer_short": "Wallach lists arsenic-toxicity symptoms including hair loss, confusion, dermatitis, diarrhea, numbness, seizures and weakness, and says hair analysis is the best way to detect it.",
+      "topics": [
+        "arsenic poisoning",
+        "arsenic toxicity",
+        "symptoms",
+        "hair analysis",
+        "herbicide",
+        "slug poison"
+      ]
+    },
+    "WAL-CLM-IMMORT-000038": {
+      "subject": "arsenic",
+      "also_about": [
+        "leukemia",
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Can arsenic treat leukemia?",
+      "answer_short": "Wallach cites the Memorial Sloan-Kettering Cancer Center that arsenic infusions work better than any other drug for certain types of leukemia.",
+      "topics": [
+        "arsenic leukemia",
+        "arsenic cancer",
+        "APL",
+        "arsenic trioxide",
+        "Sloan-Kettering",
+        "leukemia treatment"
+      ]
+    },
+    "WAL-CLM-LETS-000069": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much tin should I take a day?",
+      "answer_short": "In Wallach's Base Line Nutritional Supplement Program, tin has a daily maintenance target of 500 mcg, with a 30-day pharmacologic dose of 1,000 mcg.",
+      "topics": [
+        "tin",
+        "tin dosage",
+        "how much tin",
+        "500 mcg",
+        "daily tin",
+        "base line program"
+      ]
+    },
+    "WAL-CLM-RARE-000249": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does tin help prevent cancer?",
+      "answer_short": "Wallach cites evidence that tin has cancer-prevention properties and strongly induces the enzyme heme oxygenase, boosting heme breakdown in the kidney.",
+      "topics": [
+        "tin",
+        "cancer prevention",
+        "heme oxygenase",
+        "tin and cancer",
+        "anticancer mineral"
+      ]
+    },
+    "WAL-CLM-RARE-000248": {
+      "subject": "tin",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Does Wallach say humans need tin?",
+      "answer_short": "Yes -- Wallach holds that tin, once dismissed as mere tissue contamination, was proven by Schwarz's careful studies to be an essential trace element.",
+      "topics": [
+        "tin",
+        "is tin essential",
+        "do I need tin",
+        "essential trace element",
+        "Schwarz"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000097": {
+      "subject": "lutetium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is lutetium found in plants or in the body?",
+      "answer_short": "Yes -- Wallach's rare-earth data records lutetium occurring in land plants (up to 4.5 ppm) and in animal soft tissue and bone, not only in rocks and soil.",
+      "topics": [
+        "is lutetium in the body",
+        "lutetium in plants",
+        "lutetium in bone",
+        "where is lutetium found",
+        "plant derived mineral",
+        "does lutetium occur in nature"
+      ]
+    },
+    "WAL-CLM-RARE-000216": {
+      "subject": "praseodymium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does praseodymium do in the body?",
+      "answer_short": "Wallach reports praseodymium enhances normal cell growth and doubled the life span of laboratory species.",
+      "topics": [
+        "praseodymium",
+        "cell growth",
+        "longevity",
+        "life span",
+        "anti-aging",
+        "what does it do"
+      ]
+    },
+    "WAL-CLM-RARE-000299": {
+      "subject": "titanium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is titanium found in nature?",
+      "answer_short": "Wallach catalogs titanium across igneous rocks, soils, sea water, plants and animals, noting it accumulates in plankton.",
+      "topics": [
+        "titanium",
+        "where is titanium found",
+        "titanium in plants",
+        "plankton",
+        "natural distribution",
+        "trace mineral"
+      ]
+    },
+    "WAL-CLM-RARE-000296": {
+      "subject": "scandium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does scandium accumulate in the body?",
+      "answer_short": "Yes — Wallach's mineral survey records that scandium, though present only in trace amounts, concentrates in mammalian heart and bone.",
+      "topics": [
+        "scandium",
+        "rare earth",
+        "trace mineral",
+        "heart",
+        "bone",
+        "accumulates in body"
+      ]
+    },
+    "WAL-CLM-RARE-000295": {
+      "subject": "rhenium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does rhenium build up in the body?",
+      "answer_short": "Wallach records that land (terrestrial) animals accumulate rhenium in the thyroid, and catalogs its traces in rocks, marine plants and marine animals.",
+      "topics": [
+        "rhenium",
+        "thyroid",
+        "trace mineral",
+        "where is rhenium found",
+        "marine plants",
+        "rare earth",
+        "accumulates in body"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000085": {
+      "subject": "gadolinium",
+      "also_about": [
+        "germanium",
+        "gallium",
+        "europium",
+        "terbium"
+      ],
+      "facet": "basics",
+      "question": "What is gadolinium?",
+      "answer_short": "Gadolinium is a rare-earth mineral Wallach counts among the trace elements, found naturally in rocks, plants and animals.",
+      "topics": [
+        "gadolinium",
+        "gd",
+        "rare earth",
+        "rare earth mineral",
+        "trace mineral",
+        "rare earths"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000079": {
+      "subject": "dysprosium",
+      "also_about": [
+        "holmium"
+      ],
+      "facet": "etymology",
+      "question": "Where does the name dysprosium come from?",
+      "answer_short": "The name comes from the Greek word 'dysprositos,' meaning 'hard to get,' given by its discoverer after it was first identified in 1886.",
+      "topics": [
+        "dysprosium name origin",
+        "greek dysprositos",
+        "hard to get",
+        "meaning of dysprosium",
+        "why is it called dysprosium"
+      ]
+    },
+    "WAL-CLM-RARE-000288": {
+      "subject": "dysprosium",
+      "also_about": [
+        "erbium"
+      ],
+      "facet": "physiology",
+      "question": "Does dysprosium build up in the body?",
+      "answer_short": "Wallach reports dysprosium occurs in terrestrial animals only in trace amounts (0.01 ppm), concentrated highest in the bones.",
+      "topics": [
+        "dysprosium in the body",
+        "bones",
+        "accumulate",
+        "terrestrial animals",
+        "rare earth in bone"
+      ]
+    },
+    "WAL-CLM-RARE-000251": {
+      "subject": "thulium",
+      "also_about": [
+        "ytterbium",
+        "yttrium"
+      ],
+      "facet": "mechanism",
+      "question": "Does thulium help you live longer?",
+      "answer_short": "Wallach reports that thulium supplementation enhances the growth of normal cells and has doubled the lifespans of laboratory species.",
+      "topics": [
+        "thulium",
+        "Tm",
+        "lifespan",
+        "longevity",
+        "cell growth",
+        "live longer",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-RARE-000247": {
+      "subject": "samarium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does samarium extend lifespan or help cells?",
+      "answer_short": "Wallach says samarium enhances normal cell proliferation and doubles the lifespan of laboratory species.",
+      "topics": [
+        "samarium",
+        "lifespan",
+        "life span",
+        "longevity",
+        "cell proliferation",
+        "anti-aging",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-RARE-000261": {
+      "subject": "ytterbium",
+      "also_about": [
+        "yttrium"
+      ],
+      "facet": "physiology",
+      "question": "Does ytterbium cross the placenta?",
+      "answer_short": "Yes -- Wallach reports ytterbium rapidly crosses the placenta, with 14% of an ingested amount detectable in newborn mice.",
+      "topics": [
+        "ytterbium",
+        "placenta",
+        "pregnancy",
+        "placental transfer",
+        "newborn",
+        "mice",
+        "rare earth"
+      ]
+    },
+    "WAL-CLM-RARE-000297": {
+      "subject": "tantalum",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is tantalum?",
+      "answer_short": "Tantalum (Ta) is a trace element Wallach catalogs among the rare, plant-derived minerals, distributed in nature from 2 ppm in igneous rocks down to trace levels.",
+      "topics": [
+        "tantalum",
+        "Ta",
+        "trace mineral",
+        "rare earth mineral",
+        "plant derived minerals",
+        "essential elements"
+      ]
+    },
+    "WAL-CLM-RARE-000300": {
+      "subject": "zirconium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is zirconium found in plants and animals?",
+      "answer_short": "Yes -- Wallach's survey records zirconium in living tissue, about 20 ppm in marine plants and roughly 0.3 ppm in land animals, alongside rocks, soils and water.",
+      "topics": [
+        "where is zirconium found",
+        "zirconium in plants",
+        "zirconium in the body",
+        "distribution of zirconium",
+        "occurrence in nature"
       ]
     }
   }

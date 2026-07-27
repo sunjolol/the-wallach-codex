@@ -11,6 +11,16 @@
       ]
     },
     {
+      "term": "absorption",
+      "plain": "The way the body takes a substance in through the gut and into the blood.",
+      "category": "biology",
+      "aliases": [
+        "absorb",
+        "absorbed",
+        "absorbing"
+      ]
+    },
+    {
       "term": "acetyl-CoA",
       "plain": "a central molecule the body uses to burn fuel for energy and to build fats",
       "category": "biology"
@@ -70,12 +80,39 @@
       ]
     },
     {
+      "term": "acute",
+      "plain": "Coming on suddenly and lasting only a short while, often severe.",
+      "category": "medical"
+    },
+    {
+      "term": "acute beryllium disease",
+      "plain": "A sudden, serious illness caused by breathing in beryllium, mainly harming the lungs.",
+      "category": "medical"
+    },
+    {
+      "term": "acute promyelocytic leukemia",
+      "plain": "A fast-developing cancer of the blood and bone marrow, a specific kind of leukemia.",
+      "category": "medical",
+      "aliases": [
+        "APL"
+      ]
+    },
+    {
       "term": "adipose tissue",
       "plain": "the body's fat tissue",
       "category": "biology",
       "aliases": [
         "adipose",
         "fat tissue"
+      ]
+    },
+    {
+      "term": "adrenal",
+      "plain": "A small gland sitting on top of each kidney that makes hormones to help handle stress and control body chemistry.",
+      "category": "anatomy",
+      "aliases": [
+        "adrenal gland",
+        "adrenal glands"
       ]
     },
     {
@@ -102,6 +139,11 @@
       ]
     },
     {
+      "term": "agate",
+      "plain": "A banded, many-colored gemstone that is a form of quartz.",
+      "category": "geology"
+    },
+    {
       "term": "Age Beaters",
       "plain": "Wallach's nickname for the handful of unusually long-lived peoples he studied — such as the Hunza and the Vilcabamba — where reaching a healthy old age is common rather than rare.",
       "category": "science",
@@ -115,9 +157,32 @@
       "category": "biology"
     },
     {
+      "term": "airship",
+      "plain": "A large, engine-powered aircraft that floats because it is filled with a gas lighter than air.",
+      "category": "general",
+      "aliases": [
+        "blimp",
+        "blimps"
+      ]
+    },
+    {
+      "term": "albumin",
+      "plain": "A common protein found in the blood; finding it leaking into the urine can be a sign of a kidney problem.",
+      "category": "medical"
+    },
+    {
       "term": "albuminuria",
       "plain": "the blood protein albumin leaking into the urine",
       "category": "medical"
+    },
+    {
+      "term": "alchemist",
+      "plain": "A person from long ago who mixed substances trying to turn ordinary metals into gold and find cures.",
+      "category": "general",
+      "aliases": [
+        "alchemists",
+        "alchemy"
+      ]
     },
     {
       "term": "alcohol group",
@@ -136,6 +201,45 @@
       "term": "aldosterone",
       "plain": "an adrenal hormone that regulates the body's salt and water balance",
       "category": "biology"
+    },
+    {
+      "term": "algae",
+      "plain": "Simple, plant-like living things that grow in water and can make their own food from sunlight.",
+      "category": "biology",
+      "aliases": [
+        "alga"
+      ]
+    },
+    {
+      "term": "alkali metal",
+      "plain": "A group of soft, very reactive metal elements — like sodium and potassium — that react strongly with water and are never found pure in nature.",
+      "category": "chemistry",
+      "aliases": [
+        "alkali metals",
+        "alkaline metal",
+        "alkaline metals"
+      ]
+    },
+    {
+      "term": "alkaline",
+      "plain": "The opposite of acidic; a substance that can neutralize acids, like baking soda.",
+      "category": "chemistry",
+      "aliases": [
+        "alkali",
+        "alkalinity"
+      ]
+    },
+    {
+      "term": "alkaline-earth metal",
+      "plain": "One of a family of shiny, fairly reactive metals — calcium and magnesium among them — that share a column on the chemists' chart of the elements.",
+      "category": "chemistry",
+      "aliases": [
+        "alkaline-earth",
+        "alkaline earth metal",
+        "alkaline-earth metals",
+        "alkaline earth",
+        "alkaline-earth family"
+      ]
     },
     {
       "term": "alkalosis",
@@ -158,9 +262,32 @@
       "category": "biology"
     },
     {
+      "term": "allopathic",
+      "plain": "Referring to conventional mainstream medicine, the kind practiced by most modern doctors.",
+      "category": "medical",
+      "aliases": [
+        "allopathy"
+      ]
+    },
+    {
+      "term": "alloy",
+      "plain": "A material made by melting a metal together with one or more other metals to give it useful qualities.",
+      "category": "chemistry",
+      "aliases": [
+        "alloyed",
+        "alloys",
+        "alloying"
+      ]
+    },
+    {
       "term": "allysine",
       "plain": "a changed form of lysine the body makes so it can lock protein fibers together",
       "category": "biology"
+    },
+    {
+      "term": "alnico",
+      "plain": "A strong magnetic material made by combining aluminum, nickel, and cobalt.",
+      "category": "chemistry"
     },
     {
       "term": "alopecia",
@@ -198,6 +325,42 @@
       ]
     },
     {
+      "term": "alumina",
+      "plain": "The natural, rock-hard compound of aluminum joined with oxygen - the form aluminum is normally found in.",
+      "category": "chemistry",
+      "aliases": [
+        "aluminum oxide",
+        "aluminium oxide"
+      ]
+    },
+    {
+      "term": "aluminum hydroxide",
+      "plain": "A white, powdery compound made of aluminum, oxygen, and hydrogen.",
+      "category": "chemistry",
+      "aliases": [
+        "aluminium hydroxide"
+      ]
+    },
+    {
+      "term": "aluminum sulfate",
+      "plain": "A chemical made from aluminum, used in everyday jobs like cleaning drinking water and making paper.",
+      "category": "chemistry",
+      "aliases": [
+        "aluminium sulfate",
+        "aluminum sulphate"
+      ]
+    },
+    {
+      "term": "Alzheimer's disease",
+      "plain": "A brain disease, common in older people, that slowly destroys memory and the ability to think clearly.",
+      "category": "medical",
+      "aliases": [
+        "Alzheimer's",
+        "Alzheimers",
+        "Alzheimer disease"
+      ]
+    },
+    {
       "term": "amenorrhea",
       "plain": "absence of menstrual periods",
       "category": "medical"
@@ -206,6 +369,20 @@
       "term": "American Longevity",
       "plain": "The name Youngevity was founded under, in March 1997. Wallach called Elmer Heinrich at Rockland the day the company opened and secured mineral supply for the new line. American Longevity paid its first commissions on June 15, 1997, and later renamed to Youngevity.",
       "category": "product-history"
+    },
+    {
+      "term": "amethyst",
+      "plain": "A purple gemstone that is really just quartz tinted by tiny traces of other substances.",
+      "category": "geology"
+    },
+    {
+      "term": "amine group",
+      "plain": "The nitrogen-containing part of a molecule that makes something an amino acid, and is what sets protein apart from fats and sugars.",
+      "category": "chemistry",
+      "aliases": [
+        "amine",
+        "amine groups"
+      ]
     },
     {
       "term": "amino acid",
@@ -236,12 +413,41 @@
       "category": "chemistry"
     },
     {
+      "term": "ammonium",
+      "plain": "A compound of nitrogen and hydrogen that the kidneys use to carry waste acid out in the urine.",
+      "category": "chemistry"
+    },
+    {
+      "term": "ammonium chloride",
+      "plain": "A white, salt-like chemical made from ammonia and chlorine.",
+      "category": "chemistry"
+    },
+    {
+      "term": "amoebic",
+      "plain": "Caused by amoebas — tiny single-celled creatures that can infect the body, often the gut.",
+      "category": "medical",
+      "aliases": [
+        "amoebic diseases",
+        "amebic",
+        "amoeba"
+      ]
+    },
+    {
       "term": "amyotrophic lateral sclerosis",
       "plain": "a disease that destroys the nerves controlling muscle movement",
       "category": "medical",
       "aliases": [
         "ALS",
         "Lou Gehrig's Disease"
+      ]
+    },
+    {
+      "term": "anabolic",
+      "plain": "Describing the body's building-up process, where small pieces are joined together to make new tissue.",
+      "category": "biology",
+      "aliases": [
+        "anabolic process",
+        "anabolism"
       ]
     },
     {
@@ -297,11 +503,50 @@
       "category": "medical"
     },
     {
+      "term": "anterior pituitary",
+      "plain": "The front part of the pituitary gland, which releases hormones that direct growth and steer other glands.",
+      "category": "anatomy"
+    },
+    {
+      "term": "anti-bacterial",
+      "plain": "Able to kill bacteria or stop them from growing.",
+      "category": "medical",
+      "aliases": [
+        "antibacterial"
+      ]
+    },
+    {
       "term": "anti-depressant",
       "plain": "something taken to lift low mood",
       "category": "biology",
       "aliases": [
         "antidepressant"
+      ]
+    },
+    {
+      "term": "anti-fungal",
+      "plain": "Able to kill fungi, like molds and yeasts, or stop them from growing.",
+      "category": "medical",
+      "aliases": [
+        "antifungal"
+      ]
+    },
+    {
+      "term": "anti-inflammatory",
+      "plain": "Something that reduces swelling, redness, and irritation in the body.",
+      "category": "medical",
+      "aliases": [
+        "anti inflammatory",
+        "antiinflammatory"
+      ]
+    },
+    {
+      "term": "anti-metabolite",
+      "plain": "A substance that jams a germ's inner chemistry by imitating the molecules it needs, so it cannot function.",
+      "category": "biology",
+      "aliases": [
+        "antimetabolite",
+        "anti-metabolites"
       ]
     },
     {
@@ -340,6 +585,14 @@
       "category": "nutrition"
     },
     {
+      "term": "antiperspirant",
+      "plain": "A product put on the skin, usually under the arms, to stop or reduce sweating.",
+      "category": "general",
+      "aliases": [
+        "antiperspirants"
+      ]
+    },
+    {
       "term": "antiviral",
       "plain": "a medicine that fights viruses",
       "category": "biology",
@@ -358,6 +611,11 @@
       "category": "medical"
     },
     {
+      "term": "aplastic anemia",
+      "plain": "A serious blood disorder in which the body stops making enough new blood cells.",
+      "category": "medical"
+    },
+    {
       "term": "apocarboxylase",
       "plain": "the inactive form of a carboxylase enzyme, before biotin is attached",
       "category": "biology"
@@ -368,6 +626,11 @@
       "category": "medical"
     },
     {
+      "term": "aquamarine",
+      "plain": "A pale blue-green gemstone that is a form of the mineral beryl.",
+      "category": "geology"
+    },
+    {
       "term": "arachidonic acid",
       "plain": "a fatty acid the body can build from linoleic acid",
       "category": "nutrition"
@@ -376,6 +639,31 @@
       "term": "arginine",
       "plain": "an amino acid Wallach counts as essential; the body can normally make some on its own",
       "category": "nutrition"
+    },
+    {
+      "term": "argyria",
+      "plain": "A permanent blue-gray color of the skin caused by taking in too much silver over a long time.",
+      "category": "medical"
+    },
+    {
+      "term": "arsenic",
+      "plain": "A chemical element that is a well-known poison in larger amounts, yet which some research suggests the body may need in tiny traces.",
+      "category": "chemistry"
+    },
+    {
+      "term": "arsenic trioxide",
+      "plain": "A white, poisonous arsenic compound that has also been used as a medicine, including against some cancers.",
+      "category": "chemistry"
+    },
+    {
+      "term": "arsphenamine",
+      "plain": "An early arsenic-based medicine that was once the main drug used to treat syphilis.",
+      "category": "medical"
+    },
+    {
+      "term": "arterial disease",
+      "plain": "Disease of the arteries — the blood vessels that carry blood away from the heart — usually from them becoming hardened or clogged.",
+      "category": "medical"
     },
     {
       "term": "arteriosclerosis",
@@ -425,6 +713,11 @@
       "category": "biology"
     },
     {
+      "term": "asthma",
+      "plain": "A condition where the airways narrow and swell, causing wheezing and trouble breathing.",
+      "category": "medical"
+    },
+    {
       "term": "ataxia",
       "plain": "loss of muscle coordination and balance",
       "category": "medical",
@@ -436,6 +729,42 @@
       "term": "atherosclerosis",
       "plain": "artery narrowing from fatty plaque buildup",
       "category": "medical"
+    },
+    {
+      "term": "atmospheres",
+      "plain": "A unit for measuring pressure, equal to the normal weight of the air pressing down on us at sea level.",
+      "category": "physics",
+      "aliases": [
+        "atmosphere"
+      ]
+    },
+    {
+      "term": "atom",
+      "plain": "The tiniest possible piece of an element, far too small to see, that everything around us is made of.",
+      "category": "chemistry",
+      "aliases": [
+        "atoms"
+      ]
+    },
+    {
+      "term": "atomic fission",
+      "plain": "The splitting of an atom's tiny core, which releases a huge burst of energy and is the process behind nuclear bombs.",
+      "category": "physics",
+      "aliases": [
+        "fission",
+        "nuclear fission",
+        "atomic-fission",
+        "atomic-fission explosions"
+      ]
+    },
+    {
+      "term": "atonic",
+      "plain": "Describing a muscle that has lost its normal tightness and strength, leaving it weak and floppy.",
+      "category": "medical",
+      "aliases": [
+        "atony",
+        "atonia"
+      ]
     },
     {
       "term": "ATP",
@@ -458,6 +787,11 @@
       "category": "biology"
     },
     {
+      "term": "aurothioglucose",
+      "plain": "Another gold-containing medicine given by injection for rheumatoid arthritis.",
+      "category": "medical"
+    },
+    {
       "term": "autoimmune",
       "plain": "when the body's immune system attacks its own healthy tissue",
       "category": "medical",
@@ -478,6 +812,14 @@
       "term": "avitaminosis",
       "plain": "a disease caused by a severe lack of one or more vitamins",
       "category": "medical"
+    },
+    {
+      "term": "Ayurvedic",
+      "plain": "Relating to Ayurveda, a traditional system of medicine from India that uses herbs, minerals, and diet.",
+      "category": "medical",
+      "aliases": [
+        "Ayurveda"
+      ]
     },
     {
       "term": "B-6",
@@ -518,14 +860,75 @@
       ]
     },
     {
+      "term": "bactericide",
+      "plain": "A substance that kills bacteria.",
+      "category": "medical",
+      "aliases": [
+        "bactericidal"
+      ]
+    },
+    {
       "term": "barbiturate",
       "plain": "a class of strong sedative drug",
       "category": "medical"
     },
     {
+      "term": "barite",
+      "plain": "A common mineral made of barium sulfate and one of the main natural ores that barium is taken from.",
+      "category": "geology",
+      "aliases": [
+        "barytes"
+      ]
+    },
+    {
+      "term": "barium carbonate",
+      "plain": "A barium compound found in the mineral witherite that, like most barium ores, does not dissolve in water.",
+      "category": "chemistry"
+    },
+    {
+      "term": "barium enema",
+      "plain": "A barium liquid put into the lower bowel through the rear so the large intestine shows up clearly on an X-ray.",
+      "category": "medical",
+      "aliases": [
+        "barium enemas"
+      ]
+    },
+    {
+      "term": "barium meal",
+      "plain": "A barium drink a patient swallows so the upper digestive tract shows up clearly on an X-ray.",
+      "category": "medical",
+      "aliases": [
+        "barium swallow"
+      ]
+    },
+    {
+      "term": "barium sulfate",
+      "plain": "A chalky barium compound that does not dissolve in water and is thick enough to stop X-rays passing through, which is why doctors have patients swallow it to make the gut show up on a scan.",
+      "category": "chemistry",
+      "aliases": [
+        "barium sulphate"
+      ]
+    },
+    {
+      "term": "baryta",
+      "plain": "An old alchemy name for barium's heavy, earthy compound, taken from a Greek word meaning 'heavy.'",
+      "category": "chemistry",
+      "aliases": [
+        "borytes"
+      ]
+    },
+    {
       "term": "basal ganglia",
       "plain": "A group of control centers deep in the brain that help steady and smooth out movement",
       "category": "anatomy"
+    },
+    {
+      "term": "base metal",
+      "plain": "A common, inexpensive metal such as lead or copper that tarnishes easily, unlike precious metals like gold.",
+      "category": "chemistry",
+      "aliases": [
+        "base metals"
+      ]
     },
     {
       "term": "base-line supplement program",
@@ -540,6 +943,19 @@
       "term": "basic nitrogen",
       "plain": "a nitrogen part of histidine that behaves like a base, meaning it can grab hydrogen particles",
       "category": "biology"
+    },
+    {
+      "term": "bastnäsite",
+      "plain": "A mineral dug from the ground that is one of the main natural sources of rare-earth elements.",
+      "category": "geology",
+      "aliases": [
+        "bastnasite"
+      ]
+    },
+    {
+      "term": "bauxite",
+      "plain": "A reddish, clay-like rock that is the main natural source of aluminum.",
+      "category": "geology"
     },
     {
       "term": "benign",
@@ -561,9 +977,35 @@
       "category": "medical"
     },
     {
+      "term": "Bertholletia excelea",
+      "plain": "The scientific name for the Brazil nut tree, whose nuts soak up unusually large amounts of barium.",
+      "category": "biology",
+      "aliases": [
+        "Bertholletia excelsa"
+      ]
+    },
+    {
+      "term": "beryl",
+      "plain": "A hard, often clear mineral that is the main natural source of beryllium; emerald and aquamarine are coloured kinds of it.",
+      "category": "geology"
+    },
+    {
       "term": "berylliosis",
       "plain": "lung disease from inhaling beryllium dust",
       "category": "medical"
+    },
+    {
+      "term": "beryllium",
+      "plain": "A lightweight, hard, silvery metal that is one of the chemical elements.",
+      "category": "chemistry"
+    },
+    {
+      "term": "beryllium oxide",
+      "plain": "A white powder formed when beryllium combines with oxygen; breathing its dust is harmful.",
+      "category": "chemistry",
+      "aliases": [
+        "beryllium-oxide"
+      ]
     },
     {
       "term": "beta-carotene",
@@ -581,6 +1023,22 @@
         "betaine hydrochloride",
         "betaine hc1",
         "betaine"
+      ]
+    },
+    {
+      "term": "bile",
+      "plain": "A greenish-yellow fluid made by the liver that helps the body break down and digest fats.",
+      "category": "anatomy"
+    },
+    {
+      "term": "bilipid",
+      "plain": "Made of two layers of fat molecules, like the double-layered skin that wraps around every living cell.",
+      "category": "biology",
+      "aliases": [
+        "bilipid cell membrane",
+        "bilipid cell membranes",
+        "bilipid layer",
+        "bilayer"
       ]
     },
     {
@@ -604,6 +1062,15 @@
       "category": "nutrition",
       "aliases": [
         "bioflavonoids"
+      ]
+    },
+    {
+      "term": "biohazard",
+      "plain": "Something biological or radioactive, like a germ or fallout, that poses a danger to living things.",
+      "category": "medical",
+      "aliases": [
+        "biohazards",
+        "biological hazard"
       ]
     },
     {
@@ -643,6 +1110,11 @@
       "category": "biology"
     },
     {
+      "term": "Blepharisma",
+      "plain": "A kind of single-celled protozoan, often pinkish in color, that scientists study in the laboratory.",
+      "category": "biology"
+    },
+    {
       "term": "blepharitis",
       "plain": "inflammation of the eyelids",
       "category": "medical",
@@ -656,9 +1128,24 @@
       "category": "anatomy"
     },
     {
+      "term": "Bohr",
+      "plain": "Niels Bohr, a famous physicist born in Copenhagen, the home city that hafnium was named after in his honor.",
+      "category": "general"
+    },
+    {
+      "term": "boron",
+      "plain": "A chemical element that is one of the minerals the body uses in small amounts, especially for healthy bones.",
+      "category": "chemistry"
+    },
+    {
       "term": "bowel tolerance",
       "plain": "the largest amount that can be taken before it loosens the stools",
       "category": "biology"
+    },
+    {
+      "term": "brackish",
+      "plain": "Describes water that is a bit salty — saltier than fresh water but not as salty as the sea.",
+      "category": "geology"
     },
     {
       "term": "branched-chain amino acid",
@@ -672,6 +1159,14 @@
       ]
     },
     {
+      "term": "broad-spectrum",
+      "plain": "Able to work against many different kinds of germs, not just one.",
+      "category": "medical",
+      "aliases": [
+        "broad spectrum"
+      ]
+    },
+    {
       "term": "bromelain",
       "plain": "an enzyme from pineapple used to reduce swelling and aid digestion",
       "category": "biology",
@@ -681,14 +1176,64 @@
       ]
     },
     {
+      "term": "bromide",
+      "plain": "A chemical made by joining the element bromine with another substance, once given as a calming medicine.",
+      "category": "chemistry",
+      "aliases": [
+        "bromides"
+      ]
+    },
+    {
+      "term": "brominated",
+      "plain": "Describes something that has had bromine chemically added to it or joined with it.",
+      "category": "chemistry",
+      "aliases": [
+        "brominate",
+        "bromination"
+      ]
+    },
+    {
       "term": "bromine",
       "plain": "a chemical element in the same family as chlorine and iodine (a halogen)",
       "category": "chemistry"
     },
     {
+      "term": "bronchi",
+      "plain": "The two main airways that branch off the windpipe and carry air down into the lungs.",
+      "category": "anatomy",
+      "aliases": [
+        "bronchus",
+        "bronchial"
+      ]
+    },
+    {
+      "term": "bronchiogenic",
+      "plain": "Beginning in the bronchi, the main airways of the lungs.",
+      "category": "medical",
+      "aliases": [
+        "bronchogenic"
+      ]
+    },
+    {
       "term": "bronchitis",
       "plain": "inflammation of the airways in the lungs",
       "category": "medical"
+    },
+    {
+      "term": "brown algae",
+      "plain": "A group of large, usually brownish seaweeds that grow in the sea.",
+      "category": "biology",
+      "aliases": [
+        "brown alga"
+      ]
+    },
+    {
+      "term": "bryophytes",
+      "plain": "A group of small, simple plants that includes mosses, which have no true roots or flowers.",
+      "category": "biology",
+      "aliases": [
+        "bryophyte"
+      ]
     },
     {
       "term": "buffer proteins",
@@ -771,6 +1316,14 @@
       ]
     },
     {
+      "term": "Candida albicans",
+      "plain": "A common type of yeast that normally lives in and on the body but can overgrow and cause infections.",
+      "category": "biology",
+      "aliases": [
+        "Candida"
+      ]
+    },
+    {
       "term": "canker sores",
       "plain": "small painful open sores inside the mouth, not caused by a virus",
       "category": "biology"
@@ -794,6 +1347,19 @@
       ]
     },
     {
+      "term": "carbon",
+      "plain": "A common chemical element that forms the backbone of almost every molecule in living things, linking up into long chains.",
+      "category": "chemistry"
+    },
+    {
+      "term": "carbon dioxide",
+      "plain": "A colorless gas that the body makes when it burns food for energy and that we breathe out.",
+      "category": "chemistry",
+      "aliases": [
+        "carbon-dioxide"
+      ]
+    },
+    {
       "term": "carbon monoxide",
       "plain": "a colorless, poisonous gas that competes with oxygen in the blood",
       "category": "chemistry"
@@ -804,6 +1370,14 @@
       "category": "chemistry"
     },
     {
+      "term": "carbon-based",
+      "plain": "Built around carbon atoms, the way the materials in all living things are.",
+      "category": "chemistry",
+      "aliases": [
+        "carbon based"
+      ]
+    },
+    {
       "term": "carbon-monoxide hemoglobin",
       "plain": "hemoglobin that has grabbed the poison gas carbon monoxide instead of oxygen",
       "category": "chemistry",
@@ -811,6 +1385,11 @@
         "CO haemoglobin",
         "carbon monoxide haemoglobin"
       ]
+    },
+    {
+      "term": "carbonic acid",
+      "plain": "A weak acid that forms when carbon dioxide gas dissolves in water.",
+      "category": "chemistry"
     },
     {
       "term": "carbonic anhydrase",
@@ -881,9 +1460,22 @@
       "category": "medical"
     },
     {
+      "term": "carpal tunnel syndrome",
+      "plain": "Pain, numbness, or tingling in the hand caused by a pinched nerve at the wrist.",
+      "category": "medical"
+    },
+    {
       "term": "cartilage",
       "plain": "the tough, rubbery tissue in joints, taken here as a supplement",
       "category": "nutrition"
+    },
+    {
+      "term": "Carya",
+      "plain": "The scientific name for a group of nut-bearing trees that includes hickory and pecan.",
+      "category": "biology",
+      "aliases": [
+        "Carya species"
+      ]
     },
     {
       "term": "casein",
@@ -925,6 +1517,14 @@
       ]
     },
     {
+      "term": "catarrh",
+      "plain": "A buildup of thick mucus and swelling in the nose or throat, like a heavy cold.",
+      "category": "medical",
+      "aliases": [
+        "catarrhal"
+      ]
+    },
+    {
       "term": "cation",
       "plain": "a positively charged ion",
       "category": "nutrition",
@@ -938,11 +1538,27 @@
       "category": "unit"
     },
     {
+      "term": "celestite",
+      "plain": "A natural mineral, made of strontium and sulfur, that is a main source rock of strontium.",
+      "category": "geology",
+      "aliases": [
+        "celestine"
+      ]
+    },
+    {
       "term": "cell growth",
       "plain": "the process by which cells get bigger and multiply to build and repair the body",
       "category": "biology",
       "aliases": [
         "regulates cell growth"
+      ]
+    },
+    {
+      "term": "cell proliferation",
+      "plain": "Cells multiplying by dividing again and again to make many more cells.",
+      "category": "biology",
+      "aliases": [
+        "proliferation"
       ]
     },
     {
@@ -977,9 +1593,41 @@
       "category": "anatomy"
     },
     {
+      "term": "cerium group",
+      "plain": "A family of the lighter rare-earth metals, named after the element cerium, that includes neodymium.",
+      "category": "chemistry",
+      "aliases": [
+        "cerium-group",
+        "cerium-group rare earths",
+        "cerium"
+      ]
+    },
+    {
+      "term": "cerium nitrate",
+      "plain": "A salt made by combining cerium with nitric acid, spread on the skin to kill germs on serious burns.",
+      "category": "chemistry"
+    },
+    {
       "term": "ceruloplasmin",
       "plain": "the main copper-carrying protein in the blood",
       "category": "biology"
+    },
+    {
+      "term": "cervical lymph nodes",
+      "plain": "Small bean-shaped glands in the neck that are part of the body's system for fighting infection.",
+      "category": "anatomy",
+      "aliases": [
+        "cervical lymph node",
+        "lymph nodes"
+      ]
+    },
+    {
+      "term": "cesium",
+      "plain": "A soft, silvery metal element that reacts very easily with other substances.",
+      "category": "chemistry",
+      "aliases": [
+        "caesium"
+      ]
     },
     {
       "term": "Charcot's triad",
@@ -1014,12 +1662,29 @@
       ]
     },
     {
+      "term": "chemical buffering",
+      "plain": "A chemical process that soaks up extra acid or base to keep a liquid's acidity steady.",
+      "category": "chemistry",
+      "aliases": [
+        "buffering",
+        "buffer"
+      ]
+    },
+    {
       "term": "chemical complex",
       "plain": "two or more substances bonded together into a single structure",
       "category": "biology",
       "aliases": [
         "crystalline complex",
         "iodine-amino acid complex"
+      ]
+    },
+    {
+      "term": "chemical family",
+      "plain": "A group of elements on the periodic table that behave in similar ways because they are built alike.",
+      "category": "chemistry",
+      "aliases": [
+        "chemical group"
       ]
     },
     {
@@ -1030,6 +1695,35 @@
         "reaction",
         "reactions"
       ]
+    },
+    {
+      "term": "chemical score",
+      "plain": "A way of rating how good a food's protein is by comparing its mix of amino acids to what the body needs.",
+      "category": "nutrition"
+    },
+    {
+      "term": "chloride",
+      "plain": "A form of the element chlorine after it has joined with another substance, such as the chloride in ordinary table salt.",
+      "category": "chemistry",
+      "aliases": [
+        "chlorides",
+        "cesium chloride"
+      ]
+    },
+    {
+      "term": "chlorinated",
+      "plain": "Describes water or another substance that has had chlorine added to it, often to clean or disinfect it.",
+      "category": "chemistry",
+      "aliases": [
+        "chlorinated water",
+        "chlorinate",
+        "chlorination"
+      ]
+    },
+    {
+      "term": "chlorinated barium",
+      "plain": "A barium compound combined with chlorine that was once given as an old-fashioned medicine.",
+      "category": "chemistry"
     },
     {
       "term": "chlorophyll",
@@ -1080,9 +1774,39 @@
       "category": "nutrition"
     },
     {
+      "term": "chronic",
+      "plain": "Lasting a long time or happening over and over again.",
+      "category": "medical",
+      "aliases": [
+        "chronically"
+      ]
+    },
+    {
+      "term": "chronic fatigue",
+      "plain": "A condition of severe, long-lasting tiredness that does not get better with ordinary rest.",
+      "category": "medical",
+      "aliases": [
+        "chronic fatigue-like",
+        "chronic-fatigue-like"
+      ]
+    },
+    {
+      "term": "chrysoberyl",
+      "plain": "A hard, usually yellow-green gemstone that contains beryllium.",
+      "category": "geology"
+    },
+    {
       "term": "chymotrypsin",
       "plain": "a digestive enzyme that helps break down proteins",
       "category": "biology"
+    },
+    {
+      "term": "circulatory disease",
+      "plain": "An illness affecting the heart and the blood vessels that carry blood around the body.",
+      "category": "medical",
+      "aliases": [
+        "circulatory"
+      ]
     },
     {
       "term": "cirrhosis",
@@ -1113,9 +1837,19 @@
       "category": "nutrition"
     },
     {
+      "term": "cobalt",
+      "plain": "A hard, silvery-blue metallic element used in magnets and to color glass blue.",
+      "category": "chemistry"
+    },
+    {
       "term": "cobamide",
       "plain": "a cobalt-containing form of vitamin B12",
       "category": "biology"
+    },
+    {
+      "term": "cocoa butter",
+      "plain": "The natural fat pressed from cocoa beans, the fat that gives chocolate its smooth texture.",
+      "category": "nutrition"
     },
     {
       "term": "cod liver oil",
@@ -1178,6 +1912,11 @@
       "category": "biology"
     },
     {
+      "term": "Cold War",
+      "plain": "A long period of tension and rivalry between the United States and the Soviet Union, marked by fear of nuclear weapons but no direct fighting.",
+      "category": "general"
+    },
+    {
       "term": "collagen",
       "plain": "the main structural protein in skin, bone, and connective tissue",
       "category": "medical"
@@ -1201,11 +1940,29 @@
       ]
     },
     {
+      "term": "colon",
+      "plain": "The main part of the large intestine, where the body forms and holds waste before it leaves.",
+      "category": "anatomy"
+    },
+    {
+      "term": "columbite",
+      "plain": "A dark, heavy mineral found in rock that is the main source this metal is drawn from.",
+      "category": "geology"
+    },
+    {
       "term": "comfrey",
       "plain": "a herb traditionally applied to the skin to soothe injuries",
       "category": "biology",
       "aliases": [
         "Symphytum officinale"
+      ]
+    },
+    {
+      "term": "complement",
+      "plain": "The complete set or full amount of something needed to make it whole.",
+      "category": "general",
+      "aliases": [
+        "complements"
       ]
     },
     {
@@ -1223,6 +1980,28 @@
       "aliases": [
         "herb compress"
       ]
+    },
+    {
+      "term": "concentration",
+      "plain": "How much of a substance is packed into a given space or amount — a high concentration means a lot of it in one place.",
+      "category": "chemistry",
+      "aliases": [
+        "concentrations"
+      ]
+    },
+    {
+      "term": "concentrator",
+      "plain": "A living thing that soaks up and stores far more of a mineral than the plants or animals around it.",
+      "category": "biology",
+      "aliases": [
+        "concentrates",
+        "concentrate"
+      ]
+    },
+    {
+      "term": "conditionally essential",
+      "plain": "Describing a nutrient the body can usually make for itself but sometimes cannot make enough of, so at those times it must come from food.",
+      "category": "nutrition"
     },
     {
       "term": "congenital",
@@ -1245,9 +2024,65 @@
       "category": "biology"
     },
     {
+      "term": "constellation",
+      "plain": "A group of stars that form a recognizable pattern in the night sky.",
+      "category": "general",
+      "aliases": [
+        "constellations"
+      ]
+    },
+    {
+      "term": "contact dermatitis",
+      "plain": "A red, itchy skin rash that appears where the skin has touched something it reacts badly to.",
+      "category": "medical"
+    },
+    {
+      "term": "contaminant",
+      "plain": "An unwanted substance that pollutes or dirties something else.",
+      "category": "general",
+      "aliases": [
+        "contaminants"
+      ]
+    },
+    {
       "term": "contractility",
       "plain": "a muscle's ability to contract",
       "category": "biology"
+    },
+    {
+      "term": "contraindicated",
+      "plain": "Meaning a treatment should not be used because it would likely be harmful for that particular person.",
+      "category": "medical",
+      "aliases": [
+        "contraindication",
+        "contraindications"
+      ]
+    },
+    {
+      "term": "contrast medium",
+      "plain": "A harmless substance swallowed or given to a patient to make certain organs stand out clearly on an X-ray or scan.",
+      "category": "medical",
+      "aliases": [
+        "contrast media",
+        "contrast agent"
+      ]
+    },
+    {
+      "term": "control",
+      "plain": "In an experiment, a comparison group without the condition being studied, used as a baseline to judge the results against.",
+      "category": "general",
+      "aliases": [
+        "controls",
+        "control group"
+      ]
+    },
+    {
+      "term": "controlled study",
+      "plain": "A careful experiment that compares a treated group with an untreated group to see whether a treatment truly works.",
+      "category": "general",
+      "aliases": [
+        "controlled trial"
+      ]
     },
     {
       "term": "coordinating ligand",
@@ -1263,6 +2098,19 @@
       "term": "coronary thrombosis",
       "plain": "a blood clot blocking an artery that feeds the heart",
       "category": "medical"
+    },
+    {
+      "term": "corrosion",
+      "plain": "The slow chemical wearing-away of a metal, like the rust that eats at iron over time; gold barely corrodes at all.",
+      "category": "chemistry",
+      "aliases": [
+        "corrode",
+        "corrodes",
+        "corroding",
+        "corrosion-resistant",
+        "corrosion resistant",
+        "resistance to corrosion"
+      ]
     },
     {
       "term": "cortisone",
@@ -1306,6 +2154,14 @@
       "term": "crystalline",
       "plain": "in the form of solid crystals, a sign a pure substance has been separated out",
       "category": "biology"
+    },
+    {
+      "term": "cured",
+      "plain": "Preserved with salt, smoke, or added chemicals so meat lasts longer without spoiling.",
+      "category": "general",
+      "aliases": [
+        "curing"
+      ]
     },
     {
       "term": "cyanocobalamin",
@@ -1396,12 +2252,28 @@
       ]
     },
     {
+      "term": "deficiency disease",
+      "plain": "A sickness caused by not getting enough of a certain vitamin or mineral.",
+      "category": "medical",
+      "aliases": [
+        "deficiency diseases"
+      ]
+    },
+    {
       "term": "degeneration",
       "plain": "the gradual breaking down or wearing out of a body part",
       "category": "biology",
       "aliases": [
         "degenerate",
         "degenerative"
+      ]
+    },
+    {
+      "term": "degenerative joint disease",
+      "plain": "A condition where the cushioning inside a joint wears down over time, causing pain and stiffness.",
+      "category": "medical",
+      "aliases": [
+        "degenerative joint diseases"
       ]
     },
     {
@@ -1425,9 +2297,27 @@
       "category": "medical"
     },
     {
+      "term": "density",
+      "plain": "How much matter is packed into a given amount of space; something with low density is light for its size.",
+      "category": "physics"
+    },
+    {
       "term": "dentin",
       "plain": "the hard tissue beneath tooth enamel that makes up most of a tooth",
       "category": "anatomy"
+    },
+    {
+      "term": "dentistry",
+      "plain": "The branch of health care that deals with the teeth and gums.",
+      "category": "medical"
+    },
+    {
+      "term": "deobstruent",
+      "plain": "An old term for a medicine thought to clear blockages inside the body.",
+      "category": "medical",
+      "aliases": [
+        "deobstruents"
+      ]
     },
     {
       "term": "depilatory",
@@ -1453,6 +2343,11 @@
     {
       "term": "dermatitis",
       "plain": "inflamed, itchy skin",
+      "category": "medical"
+    },
+    {
+      "term": "dermatology",
+      "plain": "The branch of medicine that deals with the skin and its diseases.",
       "category": "medical"
     },
     {
@@ -1484,9 +2379,19 @@
       "category": "medical"
     },
     {
+      "term": "diatomic",
+      "plain": "Describes a gas whose smallest natural unit is a pair of atoms bonded together rather than a single atom.",
+      "category": "chemistry"
+    },
+    {
       "term": "dicumarol",
       "plain": "a natural blood-thinning compound that works by blocking vitamin K",
       "category": "medical"
+    },
+    {
+      "term": "didymium",
+      "plain": "A substance once believed to be a single element, later discovered to be a mixture of two different rare-earth elements.",
+      "category": "chemistry"
     },
     {
       "term": "dimethyl sulfoxide",
@@ -1502,9 +2407,36 @@
       "category": "medical"
     },
     {
+      "term": "disinfectant",
+      "plain": "A substance that kills germs on surfaces or in the body.",
+      "category": "medical",
+      "aliases": [
+        "disinfect",
+        "disinfection"
+      ]
+    },
+    {
+      "term": "distilled",
+      "plain": "Purified or separated by heating a liquid into vapor and then cooling it back into liquid.",
+      "category": "chemistry",
+      "aliases": [
+        "distill",
+        "distillation",
+        "distilling"
+      ]
+    },
+    {
       "term": "disulfide",
       "plain": "a sulfur-to-sulfur bond that holds a protein's shape",
       "category": "medical"
+    },
+    {
+      "term": "divalent",
+      "plain": "Describing an atom that joins with other atoms using two of its linking points at a time.",
+      "category": "chemistry",
+      "aliases": [
+        "divalent metal"
+      ]
     },
     {
       "term": "diverticulitis",
@@ -1518,6 +2450,14 @@
       "aliases": [
         "D-phenylalanine",
         "DLPA"
+      ]
+    },
+    {
+      "term": "DNA",
+      "plain": "The molecule inside living cells that carries the instructions telling a body how to grow and work.",
+      "category": "biology",
+      "aliases": [
+        "deoxyribonucleic acid"
       ]
     },
     {
@@ -1548,6 +2488,14 @@
       ]
     },
     {
+      "term": "double bond",
+      "plain": "A tighter link where two atoms share two pairs of electrons instead of one, which puts a bend or a reactive spot in a fat's chain.",
+      "category": "chemistry",
+      "aliases": [
+        "double bonds"
+      ]
+    },
+    {
       "term": "dumping syndrome",
       "plain": "when the stomach empties into the small intestine all at once, overwhelming its ability to buffer the acid",
       "category": "medical"
@@ -1561,6 +2509,11 @@
       "term": "dwarf elder",
       "plain": "a plant used as a herbal remedy",
       "category": "biology"
+    },
+    {
+      "term": "dwarf planet",
+      "plain": "A round object in space that circles the sun like a planet but is too small to have swept other objects out of its path.",
+      "category": "general"
     },
     {
       "term": "dyskinesia",
@@ -1588,6 +2541,11 @@
       "category": "medical"
     },
     {
+      "term": "dysprosium",
+      "plain": "A silvery rare-earth metal that belongs to the same family as erbium.",
+      "category": "chemistry"
+    },
+    {
       "term": "Eagle",
       "plain": "Wallach's original distributor company - the one that recruited him after his 'Dead Doctors Don't Lie' lecture reached its distributors. Renamed itself SupraLife International in 1998.",
       "category": "product-history",
@@ -1596,9 +2554,34 @@
       ]
     },
     {
+      "term": "earth's crust",
+      "plain": "The hard, rocky outer layer of the planet, the ground we stand on and dig into.",
+      "category": "geology",
+      "aliases": [
+        "crust",
+        "the earth's crust"
+      ]
+    },
+    {
       "term": "ecchymosis",
       "plain": "a bruise; bleeding under the skin",
       "category": "medical"
+    },
+    {
+      "term": "echinoderm",
+      "plain": "A group of spiny-skinned sea animals that includes starfish and sea urchins.",
+      "category": "biology",
+      "aliases": [
+        "echinoderms"
+      ]
+    },
+    {
+      "term": "eczema",
+      "plain": "A skin condition that makes patches of skin red, dry, itchy, and inflamed.",
+      "category": "medical",
+      "aliases": [
+        "perineal eczema"
+      ]
     },
     {
       "term": "edema",
@@ -1609,11 +2592,27 @@
       ]
     },
     {
+      "term": "eicosanoids",
+      "plain": "A family of hormone-like messenger molecules the body makes from fatty acids to help control things like inflammation and blood flow.",
+      "category": "biology",
+      "aliases": [
+        "eicosanoid"
+      ]
+    },
+    {
       "term": "eicosapentaenoic acid",
       "plain": "EPA, a long-chain omega fat found in fish oil",
       "category": "nutrition",
       "aliases": [
         "EPA"
+      ]
+    },
+    {
+      "term": "eka-aluminum",
+      "plain": "A placeholder name meaning 'the element that should sit just below aluminum,' used for gallium before anyone had actually found it.",
+      "category": "chemistry",
+      "aliases": [
+        "eka-aluminium"
       ]
     },
     {
@@ -1650,6 +2649,14 @@
       "category": "chemistry"
     },
     {
+      "term": "element",
+      "plain": "A pure, basic substance that cannot be broken down into anything simpler, and that everything else is built from.",
+      "category": "chemistry",
+      "aliases": [
+        "elements"
+      ]
+    },
+    {
       "term": "elemental",
       "plain": "the weight of the pure mineral itself, apart from whatever it is bound to",
       "category": "nutrition"
@@ -1658,6 +2665,19 @@
       "term": "Emil Fischer",
       "plain": "the German chemist who first obtained pure valine from milk protein long ago",
       "category": "biology"
+    },
+    {
+      "term": "emphysema",
+      "plain": "A lung disease that damages the tiny air sacs in the lungs, making it hard to breathe.",
+      "category": "medical"
+    },
+    {
+      "term": "enamel",
+      "plain": "A hard, glassy coating that is melted onto glass, metal, or pottery to color or protect it.",
+      "category": "general",
+      "aliases": [
+        "enamels"
+      ]
     },
     {
       "term": "encephalitis",
@@ -1689,6 +2709,14 @@
       "category": "biology"
     },
     {
+      "term": "endocannabinoids",
+      "plain": "Natural messenger molecules the body makes that affect mood, behavior, and inflammation, acting on the same targets as compounds in cannabis.",
+      "category": "biology",
+      "aliases": [
+        "endocannabinoid"
+      ]
+    },
+    {
       "term": "endocrine",
       "plain": "the body's system of glands and the hormones they release",
       "category": "biology"
@@ -1699,6 +2727,14 @@
       "category": "biology",
       "aliases": [
         "endothelial"
+      ]
+    },
+    {
+      "term": "enema",
+      "plain": "A liquid pushed into the bowel through the rear, used to clean it out or help it show up on a scan.",
+      "category": "medical",
+      "aliases": [
+        "enemas"
       ]
     },
     {
@@ -1742,6 +2778,14 @@
       ]
     },
     {
+      "term": "epilepsy",
+      "plain": "A brain condition in which sudden bursts of electrical activity cause seizures.",
+      "category": "medical",
+      "aliases": [
+        "epileptic"
+      ]
+    },
+    {
       "term": "epinephrine",
       "plain": "the fight-or-flight hormone, also called adrenaline",
       "category": "biology",
@@ -1766,6 +2810,16 @@
       "term": "equilibrium",
       "plain": "a stable balance between opposing forces or amounts",
       "category": "biology"
+    },
+    {
+      "term": "erbia",
+      "plain": "The oxide of erbium, a powder that has a pink color.",
+      "category": "chemistry"
+    },
+    {
+      "term": "erbium",
+      "plain": "A rare-earth metallic element, one of europium's close relatives.",
+      "category": "chemistry"
     },
     {
       "term": "ergocalciferol",
@@ -1799,12 +2853,38 @@
       ]
     },
     {
+      "term": "essential element",
+      "plain": "A substance the body cannot make on its own and must get from food to stay healthy.",
+      "category": "nutrition",
+      "aliases": [
+        "essential elements"
+      ]
+    },
+    {
       "term": "essential fatty acids",
       "plain": "healthy fats the body cannot make and must get from food",
       "category": "biology",
       "aliases": [
         "EFAs",
         "essential fatty acid"
+      ]
+    },
+    {
+      "term": "essential nutrient",
+      "plain": "A substance the body must get from food because it cannot make enough of it on its own.",
+      "category": "nutrition",
+      "aliases": [
+        "essential nutrients",
+        "essential mineral",
+        "essential minerals"
+      ]
+    },
+    {
+      "term": "essentiality",
+      "plain": "The quality of being essential — meaning the body genuinely needs the substance and cannot stay fully healthy without it.",
+      "category": "nutrition",
+      "aliases": [
+        "essentialities"
       ]
     },
     {
@@ -1827,9 +2907,41 @@
       ]
     },
     {
+      "term": "europium",
+      "plain": "A soft, silvery rare-earth metal, one of the scarce elements grouped alongside gadolinium.",
+      "category": "chemistry"
+    },
+    {
+      "term": "eustachian tubes",
+      "plain": "The narrow tubes that connect the middle ear to the back of the throat and help balance ear pressure.",
+      "category": "anatomy",
+      "aliases": [
+        "eustachian tube"
+      ]
+    },
+    {
+      "term": "evacuant",
+      "plain": "An old term for a medicine that makes the body empty its bowels.",
+      "category": "medical",
+      "aliases": [
+        "evacuants"
+      ]
+    },
+    {
       "term": "excitability",
       "plain": "how readily a nerve or muscle fires in response to a signal",
       "category": "biology"
+    },
+    {
+      "term": "excrete",
+      "plain": "To get rid of a waste substance from the body, for example in urine.",
+      "category": "biology",
+      "aliases": [
+        "excretes",
+        "excreted",
+        "excretion",
+        "excreting"
+      ]
     },
     {
       "term": "exostosis",
@@ -1865,6 +2977,15 @@
       "category": "medical"
     },
     {
+      "term": "FDA",
+      "plain": "The U.S. Food and Drug Administration, the government agency that decides which medicines and foods are safe to sell.",
+      "category": "general",
+      "aliases": [
+        "Food and Drug Administration",
+        "U.S. FDA"
+      ]
+    },
+    {
       "term": "fecundity",
       "plain": "the ability to produce offspring",
       "category": "biology",
@@ -1873,9 +2994,33 @@
       ]
     },
     {
+      "term": "feeding trial",
+      "plain": "An experiment in which animals are given a particular diet to see how it affects their health.",
+      "category": "general",
+      "aliases": [
+        "feeding trials"
+      ]
+    },
+    {
       "term": "feminization",
       "plain": "the appearance of female physical traits in a male",
       "category": "medical"
+    },
+    {
+      "term": "ferment",
+      "plain": "To break down sugar for energy without using oxygen, the way yeast turns sugar into alcohol.",
+      "category": "biology",
+      "aliases": [
+        "ferments",
+        "fermentation",
+        "fermentative",
+        "fermenting"
+      ]
+    },
+    {
+      "term": "ferric",
+      "plain": "A word chemists use for iron when it is in one of its common charged forms found in compounds.",
+      "category": "chemistry"
     },
     {
       "term": "ferritin",
@@ -1893,6 +3038,16 @@
       "category": "biology",
       "aliases": [
         "Chrysanthemum parthenium"
+      ]
+    },
+    {
+      "term": "fiber",
+      "plain": "The part of plant foods that the body cannot digest, which helps keep the gut working smoothly.",
+      "category": "nutrition",
+      "aliases": [
+        "high-fiber",
+        "fibre",
+        "high-fibre"
       ]
     },
     {
@@ -1932,6 +3087,19 @@
       ]
     },
     {
+      "term": "fission product",
+      "plain": "A leftover substance created when atoms are split apart, such as during a nuclear explosion.",
+      "category": "physics",
+      "aliases": [
+        "fission products"
+      ]
+    },
+    {
+      "term": "flame spectroscopy",
+      "plain": "A method that identifies which elements are present by looking at the colors of light they give off when heated in a flame.",
+      "category": "chemistry"
+    },
+    {
       "term": "flavanol",
       "plain": "a subgroup of flavonoids found in cocoa, tea, and apples",
       "category": "nutrition",
@@ -1966,6 +3134,11 @@
       "category": "biology"
     },
     {
+      "term": "flint",
+      "plain": "A hard, dull form of silica that is not made of crystals, once widely used to strike sparks and make tools.",
+      "category": "geology"
+    },
+    {
       "term": "fluorine",
       "plain": "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
       "category": "chemistry"
@@ -1995,11 +3168,43 @@
       ]
     },
     {
+      "term": "Fowler's solution",
+      "plain": "An old liquid medicine that contained arsenic, once used to treat various ailments including skin problems.",
+      "category": "medical",
+      "aliases": [
+        "Fowlers solution"
+      ]
+    },
+    {
+      "term": "fraction",
+      "plain": "In chemistry, one of the separated portions a mixture is divided into when it is split apart.",
+      "category": "chemistry",
+      "aliases": [
+        "fractions"
+      ]
+    },
+    {
+      "term": "free metal",
+      "plain": "A metal existing on its own as a pure element, not chemically locked together with anything else.",
+      "category": "chemistry",
+      "aliases": [
+        "free-metal"
+      ]
+    },
+    {
       "term": "free radical",
       "plain": "an unstable molecule that can damage cells",
       "category": "chemistry",
       "aliases": [
         "free radicals"
+      ]
+    },
+    {
+      "term": "fungi",
+      "plain": "A group of living things such as mushrooms, molds and yeasts that are neither plants nor animals.",
+      "category": "biology",
+      "aliases": [
+        "fungus"
       ]
     },
     {
@@ -2016,9 +3221,41 @@
       ]
     },
     {
+      "term": "gadolinite",
+      "plain": "A dark mineral found in rock that holds several rare-earth metals and was the source from which many of them were first discovered.",
+      "category": "geology"
+    },
+    {
+      "term": "gadolinium",
+      "plain": "A rare-earth metallic element, one of europium's close relatives.",
+      "category": "chemistry"
+    },
+    {
       "term": "galactosemia",
       "plain": "an inherited inability to digest the milk sugar galactose",
       "category": "medical"
+    },
+    {
+      "term": "gallium maltolate",
+      "plain": "A form of gallium joined to a carrier molecule so the body can take it up when it is swallowed.",
+      "category": "chemistry"
+    },
+    {
+      "term": "gallium(III) ion",
+      "plain": "The charged form of a gallium atom used in medicines, made when the atom gives up some of its tiny electric charges.",
+      "category": "chemistry",
+      "aliases": [
+        "gallium ion",
+        "gallium III"
+      ]
+    },
+    {
+      "term": "gamma-linolenic acid",
+      "plain": "An omega-six fat, found in some plant oils, that the body can make from linoleic acid under the right conditions.",
+      "category": "nutrition",
+      "aliases": [
+        "GLA"
+      ]
     },
     {
       "term": "gangrene",
@@ -2044,6 +3281,15 @@
       "category": "anatomy"
     },
     {
+      "term": "gemstone",
+      "plain": "A precious or pretty mineral that is cut and polished for use in jewellery.",
+      "category": "geology",
+      "aliases": [
+        "gemstones",
+        "gem"
+      ]
+    },
+    {
       "term": "general base",
       "plain": "a helper that speeds up a body reaction by pulling a tiny hydrogen piece off another molecule",
       "category": "chemistry"
@@ -2067,9 +3313,31 @@
       ]
     },
     {
+      "term": "genus",
+      "plain": "A group of closely related living things that share a broad scientific name, ranking just above a single species.",
+      "category": "biology",
+      "aliases": [
+        "genera"
+      ]
+    },
+    {
+      "term": "geochemist",
+      "plain": "A scientist who studies the chemistry of the Earth, meaning what rocks, soil, and water are made of.",
+      "category": "geology",
+      "aliases": [
+        "geochemists",
+        "geochemistry"
+      ]
+    },
+    {
       "term": "geophagia",
       "plain": "compulsive eating of dirt or clay",
       "category": "medical"
+    },
+    {
+      "term": "germanium",
+      "plain": "A brittle, silvery chemical element that is sometimes used in supplements and in electronics.",
+      "category": "chemistry"
     },
     {
       "term": "gingivitis",
@@ -2113,6 +3381,11 @@
       "term": "glucose",
       "plain": "the sugar in the blood that the body's cells burn for energy",
       "category": "biology"
+    },
+    {
+      "term": "glucose intolerance",
+      "plain": "When the body has trouble handling sugar in the blood, an early step toward diabetes.",
+      "category": "medical"
     },
     {
       "term": "glucose tolerance factor",
@@ -2188,6 +3461,11 @@
       ]
     },
     {
+      "term": "gold sodium thiomalate",
+      "plain": "A gold-containing medicine given by injection to treat rheumatoid arthritis.",
+      "category": "medical"
+    },
+    {
       "term": "goldenrod",
       "plain": "a yellow-flowered plant used as a herbal remedy",
       "category": "biology"
@@ -2196,6 +3474,35 @@
       "term": "gonorrhea",
       "plain": "a sexually transmitted bacterial infection",
       "category": "medical"
+    },
+    {
+      "term": "granite",
+      "plain": "A hard, common rock that forms deep underground from cooled molten material and is often used for countertops and monuments.",
+      "category": "geology",
+      "aliases": [
+        "granite boulders"
+      ]
+    },
+    {
+      "term": "Graves' disease",
+      "plain": "A condition in which the thyroid gland becomes overactive and speeds up the body's processes.",
+      "category": "medical",
+      "aliases": [
+        "Graves disease"
+      ]
+    },
+    {
+      "term": "gravitational constant",
+      "plain": "A fixed number scientists use to work out the strength of gravity's pull between any two objects.",
+      "category": "physics",
+      "aliases": [
+        "gravitational constant G"
+      ]
+    },
+    {
+      "term": "hafnium",
+      "plain": "A shiny, silvery metal element that behaves so much like zirconium that the two are almost always found together.",
+      "category": "chemistry"
     },
     {
       "term": "hair analysis",
@@ -2213,6 +3520,15 @@
       "category": "medical"
     },
     {
+      "term": "Hall-Heroult process",
+      "plain": "The electric method still used today to pull pure aluminum cheaply out of its ore.",
+      "category": "chemistry",
+      "aliases": [
+        "Hall-Heroult",
+        "Hall Heroult process"
+      ]
+    },
+    {
       "term": "halogen",
       "plain": "a chemical family that includes iodine, chlorine, and fluorine",
       "category": "chemistry"
@@ -2223,6 +3539,30 @@
       "category": "biology"
     },
     {
+      "term": "hard tissues",
+      "plain": "The firm, solid parts of the body such as bone and, in sea creatures, shell.",
+      "category": "anatomy",
+      "aliases": [
+        "hard tissue"
+      ]
+    },
+    {
+      "term": "heavy metals",
+      "plain": "Dense metals such as lead and mercury that can build up in the body and cause poisoning.",
+      "category": "chemistry",
+      "aliases": [
+        "heavy metal"
+      ]
+    },
+    {
+      "term": "heavy rare earth",
+      "plain": "One of the heavier members of the rare-earth family of metals, as opposed to the lighter ones.",
+      "category": "chemistry",
+      "aliases": [
+        "heavy rare earths"
+      ]
+    },
+    {
       "term": "helices E and F",
       "plain": "two coiled sections of the hemoglobin molecule that cradle the oxygen-carrying core",
       "category": "chemistry",
@@ -2230,6 +3570,16 @@
         "helices",
         "helix"
       ]
+    },
+    {
+      "term": "helium",
+      "plain": "A very light gas that will not burn, often used to fill balloons and blimps.",
+      "category": "chemistry"
+    },
+    {
+      "term": "hematocrit",
+      "plain": "A measure of how much of the blood is made up of red blood cells.",
+      "category": "medical"
     },
     {
       "term": "hematuria",
@@ -2244,6 +3594,11 @@
         "non-heme",
         "heme iron"
       ]
+    },
+    {
+      "term": "heme oxygenase",
+      "plain": "A body enzyme that breaks down heme, the iron-rich red pigment found in blood.",
+      "category": "biology"
     },
     {
       "term": "hemocyanin",
@@ -2314,6 +3669,14 @@
       ]
     },
     {
+      "term": "herbicide",
+      "plain": "A chemical used to kill unwanted plants and weeds.",
+      "category": "chemistry",
+      "aliases": [
+        "herbicides"
+      ]
+    },
+    {
       "term": "herpes",
       "plain": "a common virus that causes recurring cold sores or genital sores",
       "category": "biology"
@@ -2321,6 +3684,11 @@
     {
       "term": "herpes simplex",
       "plain": "the virus behind cold sores on the lips and sores on the genitals",
+      "category": "biology"
+    },
+    {
+      "term": "hickory",
+      "plain": "A type of hardwood tree, common in North America, that grows edible nuts.",
       "category": "biology"
     },
     {
@@ -2336,6 +3704,19 @@
         "1-histidine",
         "L-histidine"
       ]
+    },
+    {
+      "term": "hollow organs",
+      "plain": "Body organs shaped like tubes or pouches with empty space inside, such as the stomach and intestines.",
+      "category": "anatomy",
+      "aliases": [
+        "hollow organ"
+      ]
+    },
+    {
+      "term": "holmium",
+      "plain": "A soft, silvery rare-earth metal, one of the scarce elements in erbium's group.",
+      "category": "chemistry"
     },
     {
       "term": "holocarboxylase",
@@ -2367,6 +3748,16 @@
       "term": "horsetail",
       "plain": "a reed-like plant used as a herbal remedy",
       "category": "biology"
+    },
+    {
+      "term": "humic shale",
+      "plain": "A soft, layered rock formed from ancient decayed plants, which Wallach uses as a rich source of plant-based minerals.",
+      "category": "geology"
+    },
+    {
+      "term": "humus",
+      "plain": "The dark, rich part of soil made from rotted plant and animal matter.",
+      "category": "geology"
     },
     {
       "term": "hydrocarbon side chain",
@@ -2424,6 +3815,16 @@
       "category": "biology"
     },
     {
+      "term": "hydrogenated",
+      "plain": "Treated by forcing hydrogen gas into a liquid oil to turn it into a solid or semi-solid fat.",
+      "category": "chemistry",
+      "aliases": [
+        "hydrogenation",
+        "partially hydrogenated",
+        "partially-hydrogenated"
+      ]
+    },
+    {
       "term": "hydrolysis",
       "plain": "a chemical reaction that splits a compound apart using water",
       "category": "medical"
@@ -2464,6 +3865,16 @@
         "OH group",
         "hydroxyl",
         "phenolic OH group"
+      ]
+    },
+    {
+      "term": "hyperbaric",
+      "plain": "Describing a treatment where a person breathes oxygen inside a sealed chamber at higher-than-normal air pressure.",
+      "category": "medical",
+      "aliases": [
+        "hyperbaric oxygen therapy",
+        "hyperbaric chamber",
+        "hyperbaric oxygen chamber"
       ]
     },
     {
@@ -2546,6 +3957,15 @@
       ]
     },
     {
+      "term": "hypochondriacal",
+      "plain": "Describing someone who is very anxious and convinced they are sick even when little or nothing is actually wrong.",
+      "category": "medical",
+      "aliases": [
+        "hypochondria",
+        "hypochondriac"
+      ]
+    },
+    {
       "term": "hypochromic",
       "plain": "describing red blood cells that are paler than normal, a sign of iron-deficiency anemia",
       "category": "medical"
@@ -2595,6 +4015,19 @@
       "category": "medical"
     },
     {
+      "term": "hysterical",
+      "plain": "An old medical word for fits or emotional distress that doctors once blamed on the mind rather than a physical cause.",
+      "category": "medical",
+      "aliases": [
+        "hysteria"
+      ]
+    },
+    {
+      "term": "hysterical vomiting",
+      "plain": "Repeated vomiting that is thought to be triggered by strong emotions or stress rather than by a physical illness.",
+      "category": "medical"
+    },
+    {
       "term": "iatrogenic",
       "plain": "caused by medical treatment itself",
       "category": "medical"
@@ -2603,6 +4036,34 @@
       "term": "ichthyosis",
       "plain": "dry, scaly, fish-like skin",
       "category": "medical"
+    },
+    {
+      "term": "igneous rock",
+      "plain": "Rock that formed when hot, melted material from inside the earth cooled down and hardened.",
+      "category": "geology",
+      "aliases": [
+        "igneous rocks"
+      ]
+    },
+    {
+      "term": "ignites spontaneously",
+      "plain": "Bursts into flame on its own, without needing a spark or a match.",
+      "category": "chemistry",
+      "aliases": [
+        "ignite spontaneously",
+        "spontaneously ignites",
+        "spontaneous ignition"
+      ]
+    },
+    {
+      "term": "illinium",
+      "plain": "An old name for a rare earth element now usually called promethium; Wallach lists it among the rare earths.",
+      "category": "chemistry"
+    },
+    {
+      "term": "ilmenite",
+      "plain": "A dark mineral made of iron and titanium that is mined as a source of titanium.",
+      "category": "geology"
     },
     {
       "term": "imidazole side chain",
@@ -2628,6 +4089,15 @@
       "category": "biology"
     },
     {
+      "term": "immune-system stimulator",
+      "plain": "Something that boosts or strengthens the body's germ-fighting defenses.",
+      "category": "medical",
+      "aliases": [
+        "immune system stimulator",
+        "immune stimulator"
+      ]
+    },
+    {
       "term": "immunity",
       "plain": "the body's built-in defense system against germs and disease",
       "category": "medical",
@@ -2636,9 +4106,44 @@
       ]
     },
     {
+      "term": "impurity",
+      "plain": "A small amount of an unwanted substance mixed in with an otherwise pure material.",
+      "category": "chemistry",
+      "aliases": [
+        "impurities"
+      ]
+    },
+    {
       "term": "inborn error of metabolism",
       "plain": "a flaw in the body's chemistry that a person is born with",
       "category": "biology"
+    },
+    {
+      "term": "index of refraction",
+      "plain": "A measure of how strongly a material bends light as the light passes into it, which is part of what makes some crystals sparkle.",
+      "category": "physics",
+      "aliases": [
+        "refractive index"
+      ]
+    },
+    {
+      "term": "induce",
+      "plain": "To switch on or ramp up the body's production of something, such as making more of a particular enzyme.",
+      "category": "biology",
+      "aliases": [
+        "induces",
+        "induction",
+        "induction effect",
+        "induced"
+      ]
+    },
+    {
+      "term": "inert",
+      "plain": "Chemically inactive -- it does not react with or change the substances around it.",
+      "category": "chemistry",
+      "aliases": [
+        "biologically inert"
+      ]
     },
     {
       "term": "infection",
@@ -2646,9 +4151,52 @@
       "category": "biology"
     },
     {
+      "term": "infectious disease",
+      "plain": "An illness caused by germs such as bacteria or viruses that can spread from one living thing to another.",
+      "category": "medical",
+      "aliases": [
+        "infectious diseases"
+      ]
+    },
+    {
+      "term": "infertility",
+      "plain": "Not being able to have children, or having trouble conceiving.",
+      "category": "medical"
+    },
+    {
+      "term": "infestation",
+      "plain": "When unwanted living things invade and spread through a body or a place in large numbers.",
+      "category": "medical",
+      "aliases": [
+        "infestations"
+      ]
+    },
+    {
+      "term": "inflammable air",
+      "plain": "An old-fashioned name early chemists gave to hydrogen because it catches fire so readily.",
+      "category": "chemistry"
+    },
+    {
       "term": "inflammation",
       "plain": "the body's swelling, redness, and heat in response to injury or irritation",
       "category": "biology"
+    },
+    {
+      "term": "infusion",
+      "plain": "Slowly delivering a medicine or fluid straight into a vein through a drip.",
+      "category": "medical",
+      "aliases": [
+        "infusions"
+      ]
+    },
+    {
+      "term": "ingested",
+      "plain": "Taken into the body by swallowing, as with food or drink.",
+      "category": "medical",
+      "aliases": [
+        "ingest",
+        "ingestion"
+      ]
     },
     {
       "term": "initiation",
@@ -2656,14 +4204,41 @@
       "category": "biology"
     },
     {
+      "term": "inorganic",
+      "plain": "Describes substances that do not come from living things and are not built from the carbon-based parts that make up plants and animals.",
+      "category": "chemistry",
+      "aliases": [
+        "inorganic nutrients"
+      ]
+    },
+    {
       "term": "inositol",
       "plain": "a vitamin-like nutrient the body uses to pass signals inside cells",
       "category": "nutrition"
     },
     {
+      "term": "insoluble",
+      "plain": "Not able to dissolve in water; it stays solid instead of mixing in.",
+      "category": "chemistry",
+      "aliases": [
+        "water-insoluble",
+        "water insoluble"
+      ]
+    },
+    {
       "term": "insomnia",
       "plain": "trouble falling asleep or staying asleep",
       "category": "biology"
+    },
+    {
+      "term": "insulin",
+      "plain": "A hormone the body makes to move sugar out of the blood and into cells for energy.",
+      "category": "medical"
+    },
+    {
+      "term": "insulin resistance",
+      "plain": "When the body's cells stop responding well to insulin, so sugar builds up in the blood.",
+      "category": "medical"
     },
     {
       "term": "intention tremor",
@@ -2687,9 +4262,25 @@
       ]
     },
     {
+      "term": "interstellar space",
+      "plain": "The huge, nearly empty stretches that lie between the stars.",
+      "category": "physics",
+      "aliases": [
+        "interstellar"
+      ]
+    },
+    {
       "term": "intervertebral",
       "plain": "located between the bones (vertebrae) of the spine",
       "category": "anatomy"
+    },
+    {
+      "term": "intima",
+      "plain": "The smooth innermost lining of an artery.",
+      "category": "anatomy",
+      "aliases": [
+        "arterial lining"
+      ]
     },
     {
       "term": "intracellular",
@@ -2721,9 +4312,25 @@
       ]
     },
     {
+      "term": "invertebrate",
+      "plain": "An animal that has no backbone.",
+      "category": "biology",
+      "aliases": [
+        "invertebrates"
+      ]
+    },
+    {
       "term": "iodine",
       "plain": "a mineral the body needs to build thyroid hormone",
       "category": "nutrition"
+    },
+    {
+      "term": "ion",
+      "plain": "An atom that carries a tiny electrical charge because it has gained or lost one of its electrons.",
+      "category": "chemistry",
+      "aliases": [
+        "ions"
+      ]
     },
     {
       "term": "ionized",
@@ -2770,6 +4377,19 @@
       "aliases": [
         "Isoprinosin"
       ]
+    },
+    {
+      "term": "isotope",
+      "plain": "One of the different forms of the same chemical element, which vary slightly in weight.",
+      "category": "physics",
+      "aliases": [
+        "isotopes"
+      ]
+    },
+    {
+      "term": "jasper",
+      "plain": "A solid-colored, usually reddish gemstone that is a form of quartz.",
+      "category": "geology"
     },
     {
       "term": "Java tea",
@@ -2907,9 +4527,35 @@
       ]
     },
     {
+      "term": "lanthanide",
+      "plain": "One of a set of closely related metallic elements that sit together in a single row of the periodic table and make up most of the rare earths.",
+      "category": "chemistry",
+      "aliases": [
+        "lanthanides",
+        "lanthanoid"
+      ]
+    },
+    {
       "term": "laryngitis",
       "plain": "inflammation of the voice box",
       "category": "medical"
+    },
+    {
+      "term": "laser",
+      "plain": "A device that produces a very narrow, intense beam of light.",
+      "category": "physics",
+      "aliases": [
+        "lasers"
+      ]
+    },
+    {
+      "term": "LD50",
+      "plain": "A standard way to measure how poisonous something is - the amount that kills half of the animals in a test.",
+      "category": "medical",
+      "aliases": [
+        "LD-50",
+        "median lethal dose"
+      ]
     },
     {
       "term": "lecithin",
@@ -2935,12 +4581,25 @@
       ]
     },
     {
+      "term": "lethal dose",
+      "plain": "An amount of a substance large enough to kill.",
+      "category": "medical",
+      "aliases": [
+        "lethal doses"
+      ]
+    },
+    {
       "term": "leucine",
       "plain": "one of the essential amino acids the body must get from food",
       "category": "nutrition",
       "aliases": [
         "Leu"
       ]
+    },
+    {
+      "term": "leucorrhea",
+      "plain": "a whitish or yellowish discharge of mucus from the vagina",
+      "category": "medical"
     },
     {
       "term": "leukemia",
@@ -2961,9 +4620,33 @@
       "category": "medical"
     },
     {
+      "term": "lichens",
+      "plain": "A crusty living thing formed by a fungus and tiny algae growing together, often found on rocks and tree bark.",
+      "category": "biology",
+      "aliases": [
+        "lichen"
+      ]
+    },
+    {
       "term": "ligand",
       "plain": "a molecule that binds to a protein or receptor",
       "category": "medical"
+    },
+    {
+      "term": "light rare earth",
+      "plain": "A rare-earth metal that belongs to the lighter-weight half of that family of elements.",
+      "category": "chemistry",
+      "aliases": [
+        "'light' rare earth",
+        "light rare-earth",
+        "light rare earths",
+        "light rare-earth metal"
+      ]
+    },
+    {
+      "term": "limestone",
+      "plain": "A common rock made mostly from the hardened remains of shells and sea creatures.",
+      "category": "geology"
     },
     {
       "term": "linoleic acid",
@@ -2997,6 +4680,27 @@
       ]
     },
     {
+      "term": "lipoxins",
+      "plain": "A kind of messenger molecule made from omega-six fats that helps the body calm down and clear away inflammation.",
+      "category": "biology",
+      "aliases": [
+        "lipoxin"
+      ]
+    },
+    {
+      "term": "lipoxygenase",
+      "plain": "A body enzyme that helps turn fatty acids into messenger molecules such as lipoxins.",
+      "category": "biology",
+      "aliases": [
+        "lipoxygenase pathway"
+      ]
+    },
+    {
+      "term": "liquid range",
+      "plain": "The full span of temperatures over which a substance stays liquid, between the point it melts and the point it boils.",
+      "category": "physics"
+    },
+    {
       "term": "lithium",
       "plain": "a mineral used in very small amounts and linked to steadying mood",
       "category": "nutrition"
@@ -3017,9 +4721,19 @@
       "category": "biology"
     },
     {
+      "term": "longevity",
+      "plain": "Living for a very long time; a long lifespan.",
+      "category": "general"
+    },
+    {
       "term": "lordosis",
       "plain": "excessive inward curve of the lower spine (swayback)",
       "category": "medical"
+    },
+    {
+      "term": "lunar caustic",
+      "plain": "An old name for solid silver nitrate, a silver medicine used to burn away damaged skin or tissue.",
+      "category": "chemistry"
     },
     {
       "term": "lupus erythematosus",
@@ -3028,6 +4742,11 @@
       "aliases": [
         "erythematosus"
       ]
+    },
+    {
+      "term": "lutetium",
+      "plain": "A silvery, very scarce rare-earth metal, the last member of the rare-earth family.",
+      "category": "chemistry"
     },
     {
       "term": "lye",
@@ -3063,6 +4782,14 @@
       "category": "biology"
     },
     {
+      "term": "macronutrient",
+      "plain": "A nutrient the body needs in large amounts for energy, such as a carbohydrate, fat or protein.",
+      "category": "nutrition",
+      "aliases": [
+        "macronutrients"
+      ]
+    },
+    {
       "term": "macrophage",
       "plain": "a large immune cell that engulfs germs and debris",
       "category": "medical",
@@ -3086,14 +4813,40 @@
       "category": "nutrition"
     },
     {
+      "term": "main chemical group",
+      "plain": "A column of the periodic table whose elements tend to behave in similar chemical ways.",
+      "category": "chemistry",
+      "aliases": [
+        "fourth main group",
+        "fourth main chemical group",
+        "main group"
+      ]
+    },
+    {
       "term": "maintenance",
       "plain": "a smaller steady dose taken afterward to keep the results going",
       "category": "biology"
     },
     {
+      "term": "major minerals",
+      "plain": "The minerals the body needs in fairly large amounts, such as calcium, unlike the trace minerals it needs only a little of.",
+      "category": "nutrition",
+      "aliases": [
+        "major mineral"
+      ]
+    },
+    {
       "term": "malabsorption",
       "plain": "poor absorption of nutrients from the digestive tract",
       "category": "medical"
+    },
+    {
+      "term": "male-pattern baldness",
+      "plain": "The common form of hair loss in men, where the hair thins at the temples and crown.",
+      "category": "medical",
+      "aliases": [
+        "male pattern baldness"
+      ]
     },
     {
       "term": "malignant",
@@ -3148,9 +4901,55 @@
       ]
     },
     {
+      "term": "margarine",
+      "plain": "A soft, butter-like spread made from processed vegetable oils.",
+      "category": "nutrition",
+      "aliases": [
+        "margarines"
+      ]
+    },
+    {
+      "term": "marine",
+      "plain": "Having to do with the sea or ocean.",
+      "category": "general"
+    },
+    {
+      "term": "marine animals",
+      "plain": "Animals that live in the sea.",
+      "category": "biology",
+      "aliases": [
+        "marine animal"
+      ]
+    },
+    {
+      "term": "marine mammal",
+      "plain": "A warm-blooded, milk-feeding animal that lives in the sea, such as a whale, dolphin, or seal.",
+      "category": "biology",
+      "aliases": [
+        "marine mammals"
+      ]
+    },
+    {
+      "term": "mcg",
+      "plain": "A unit of weight for measuring extremely small amounts of a nutrient, far tinier than a milligram.",
+      "category": "nutrition",
+      "aliases": [
+        "microgram",
+        "micrograms"
+      ]
+    },
+    {
       "term": "megaloblastic",
       "plain": "describing the abnormally large, immature red blood cells of folate or B12 deficiency",
       "category": "medical"
+    },
+    {
+      "term": "melancholia",
+      "plain": "An old word for a deep, lasting sadness or depression.",
+      "category": "medical",
+      "aliases": [
+        "melancholy"
+      ]
     },
     {
       "term": "melanin",
@@ -3168,6 +4967,21 @@
       "category": "biology"
     },
     {
+      "term": "melting point",
+      "plain": "The temperature at which a solid warms up just enough to turn into a liquid.",
+      "category": "physics"
+    },
+    {
+      "term": "membrane",
+      "plain": "The thin outer skin that surrounds a cell and controls what passes in and out of it.",
+      "category": "biology",
+      "aliases": [
+        "membranes",
+        "cell membrane",
+        "cell membranes"
+      ]
+    },
+    {
       "term": "menadione",
       "plain": "a synthetic form of vitamin K (vitamin K3)",
       "category": "nutrition"
@@ -3178,6 +4992,14 @@
       "category": "nutrition",
       "aliases": [
         "menaquinones"
+      ]
+    },
+    {
+      "term": "Mendeleyev",
+      "plain": "The Russian chemist who first arranged the elements into the periodic table and used its blank spaces to predict elements that had not yet been found.",
+      "category": "general",
+      "aliases": [
+        "Mendeleev"
       ]
     },
     {
@@ -3197,6 +5019,11 @@
       "aliases": [
         "meq"
       ]
+    },
+    {
+      "term": "mercury",
+      "plain": "A shiny, silver-colored metal that stays liquid at room temperature and is poisonous to people.",
+      "category": "chemistry"
     },
     {
       "term": "mercury fillings",
@@ -3253,6 +5080,15 @@
       ]
     },
     {
+      "term": "metallurgist",
+      "plain": "A person who works with metals - shaping, mixing, melting, and refining them.",
+      "category": "general",
+      "aliases": [
+        "metallurgists",
+        "metallurgy"
+      ]
+    },
+    {
       "term": "metamorphosis",
       "plain": "the change in body form an animal goes through as it develops, such as a tadpole becoming a frog",
       "category": "medical"
@@ -3264,6 +5100,11 @@
       "aliases": [
         "metastatic"
       ]
+    },
+    {
+      "term": "methane",
+      "plain": "A colorless, odorless gas made of carbon and hydrogen; it is the main ingredient in natural gas.",
+      "category": "chemistry"
     },
     {
       "term": "methionine",
@@ -3341,6 +5182,22 @@
       ]
     },
     {
+      "term": "microorganism",
+      "plain": "A living thing too tiny to see without a microscope, such as a bacterium or virus.",
+      "category": "biology",
+      "aliases": [
+        "microorganisms",
+        "micro-organism",
+        "microbe",
+        "microbes"
+      ]
+    },
+    {
+      "term": "millerite",
+      "plain": "A yellowish mineral made of nickel and sulfur that nickel metal can be extracted from.",
+      "category": "geology"
+    },
+    {
       "term": "millet",
       "plain": "A small-seeded cereal grain eaten as a staple in parts of Asia and Africa",
       "category": "biology"
@@ -3363,12 +5220,40 @@
       ]
     },
     {
+      "term": "mineralization",
+      "plain": "The process of hardening bone by filling it with minerals like calcium.",
+      "category": "anatomy",
+      "aliases": [
+        "mineralisation",
+        "skeletal mineralization",
+        "bone mineralization"
+      ]
+    },
+    {
+      "term": "mineralogist",
+      "plain": "A scientist who studies minerals and the rocks they are found in.",
+      "category": "geology",
+      "aliases": [
+        "mineralogists"
+      ]
+    },
+    {
+      "term": "mineralogy",
+      "plain": "The scientific study of minerals, including what they are made of and how they form.",
+      "category": "geology"
+    },
+    {
       "term": "molecule",
       "plain": "a single tiny particle made of atoms joined together, the basic unit of a substance",
       "category": "chemistry",
       "aliases": [
         "molecules"
       ]
+    },
+    {
+      "term": "molten",
+      "plain": "So hot that it has melted into a thick, glowing liquid.",
+      "category": "general"
     },
     {
       "term": "molybdenite",
@@ -3381,14 +5266,38 @@
       "category": "nutrition"
     },
     {
+      "term": "monazite",
+      "plain": "A reddish-brown mineral that is a natural blend of several rare-earth elements mixed with thorium and calcium, and a common source used to obtain rare earths.",
+      "category": "geology"
+    },
+    {
       "term": "monoamine",
       "plain": "a class of small brain-signaling chemicals that includes dopamine and adrenaline",
       "category": "chemistry"
     },
     {
+      "term": "monounsaturated",
+      "plain": "Describing a fat with a single double bond in its carbon chain, like the main fat in olive oil.",
+      "category": "nutrition",
+      "aliases": [
+        "monounsaturated fat",
+        "monounsaturated fats"
+      ]
+    },
+    {
       "term": "morphine",
       "plain": "a strong prescription painkiller",
       "category": "biology"
+    },
+    {
+      "term": "mortality",
+      "plain": "The rate at which living things die.",
+      "category": "medical"
+    },
+    {
+      "term": "mosaic gold",
+      "plain": "An old name for a shiny, gold-colored powder made from tin and sulfur, once used as a coloring pigment.",
+      "category": "chemistry"
     },
     {
       "term": "mucoprotein",
@@ -3399,6 +5308,16 @@
       "term": "mucoviscidosis",
       "plain": "an older name for cystic fibrosis",
       "category": "medical"
+    },
+    {
+      "term": "mucus membranes",
+      "plain": "The soft, moist linings inside body openings like the nose, mouth and gut that make slippery mucus to protect them.",
+      "category": "anatomy",
+      "aliases": [
+        "mucus membrane",
+        "mucous membrane",
+        "mucous membranes"
+      ]
     },
     {
       "term": "mugwort",
@@ -3412,6 +5331,11 @@
       "aliases": [
         "MS"
       ]
+    },
+    {
+      "term": "muscle wasting",
+      "plain": "The shrinking and loss of muscle that leaves the body weaker.",
+      "category": "medical"
     },
     {
       "term": "muscular dystrophy",
@@ -3471,6 +5395,23 @@
       "category": "biology"
     },
     {
+      "term": "nasopharyngeal",
+      "plain": "Having to do with the area where the nose meets the upper throat.",
+      "category": "anatomy",
+      "aliases": [
+        "nasopharynx"
+      ]
+    },
+    {
+      "term": "native",
+      "plain": "Found in nature already in pure metal form, such as a gold nugget, rather than locked away inside an ore.",
+      "category": "geology",
+      "aliases": [
+        "native form",
+        "native nugget"
+      ]
+    },
+    {
       "term": "Nature",
       "plain": "a well-known scientific magazine where researchers publish new findings",
       "category": "biology"
@@ -3481,6 +5422,32 @@
       "category": "medical",
       "aliases": [
         "necrotic"
+      ]
+    },
+    {
+      "term": "negative nitrogen balance",
+      "plain": "A state where the body is breaking down more protein than it takes in, so it is steadily losing muscle.",
+      "category": "medical",
+      "aliases": [
+        "nitrogen balance"
+      ]
+    },
+    {
+      "term": "neodymium",
+      "plain": "A silvery rare earth metal, the sister element that was separated from didymium alongside praseodymium.",
+      "category": "chemistry"
+    },
+    {
+      "term": "neosalvarsan",
+      "plain": "An improved arsenic-based medicine that came after arsphenamine, also used against syphilis.",
+      "category": "medical"
+    },
+    {
+      "term": "nerve sheaths",
+      "plain": "The protective coverings wrapped around nerves, much like the insulation around an electrical wire.",
+      "category": "anatomy",
+      "aliases": [
+        "nerve sheath"
       ]
     },
     {
@@ -3560,6 +5527,14 @@
       ]
     },
     {
+      "term": "neutron",
+      "plain": "One of the tiny particles found in the center of an atom, carrying no electric charge.",
+      "category": "physics",
+      "aliases": [
+        "neutrons"
+      ]
+    },
+    {
       "term": "neutropenia",
       "plain": "an abnormally low count of infection-fighting white blood cells",
       "category": "medical"
@@ -3578,6 +5553,11 @@
       "category": "nutrition"
     },
     {
+      "term": "nickel",
+      "plain": "A hard, silvery-white metal element; research suggests the body may need it in extremely tiny traces.",
+      "category": "chemistry"
+    },
+    {
       "term": "nicotinamide",
       "plain": "a form of vitamin B3 (niacin)",
       "category": "nutrition",
@@ -3594,9 +5574,30 @@
       ]
     },
     {
+      "term": "niobium",
+      "plain": "A shiny grey metal element so much like tantalum in the way it behaves that early scientists once mixed the two up.",
+      "category": "chemistry"
+    },
+    {
+      "term": "nitrates",
+      "plain": "A group of nitrogen-and-oxygen compounds often added to cured meats as a preservative.",
+      "category": "chemistry",
+      "aliases": [
+        "nitrate"
+      ]
+    },
+    {
       "term": "nitric oxide",
       "plain": "a gas the body makes to relax and widen blood vessels",
       "category": "biology"
+    },
+    {
+      "term": "nitrites",
+      "plain": "Nitrogen-and-oxygen compounds closely related to nitrates, used to preserve meat and keep it looking red.",
+      "category": "chemistry",
+      "aliases": [
+        "nitrite"
+      ]
     },
     {
       "term": "nitrogen",
@@ -3604,11 +5605,41 @@
       "category": "nutrition"
     },
     {
+      "term": "nitrosamines",
+      "plain": "Compounds that can form when nitrates or nitrites react with protein in the stomach, some of which can cause cancer.",
+      "category": "chemistry",
+      "aliases": [
+        "nitrosamine"
+      ]
+    },
+    {
+      "term": "noble",
+      "plain": "In chemistry, a metal like gold that stays shiny and resists rusting or tarnishing because it barely reacts with other substances.",
+      "category": "chemistry",
+      "aliases": [
+        "noble metal",
+        "most noble"
+      ]
+    },
+    {
+      "term": "non-basic nitrogen",
+      "plain": "Nitrogen that is chemically bound up inside soil matter rather than sitting in a free, active form.",
+      "category": "chemistry"
+    },
+    {
       "term": "non-essential amino acid",
       "plain": "an amino acid the body can make on its own, so food is not strictly required",
       "category": "nutrition",
       "aliases": [
         "non-essential"
+      ]
+    },
+    {
+      "term": "noncrystalline",
+      "plain": "Not formed into crystals — having no neat, repeating internal pattern.",
+      "category": "chemistry",
+      "aliases": [
+        "non-crystalline"
       ]
     },
     {
@@ -3620,11 +5651,27 @@
       ]
     },
     {
+      "term": "nontoxic",
+      "plain": "Not poisonous - safe to be around or take in without being harmed.",
+      "category": "medical",
+      "aliases": [
+        "non-toxic"
+      ]
+    },
+    {
       "term": "norepinephrine",
       "plain": "an alertness-and-stress chemical, also called noradrenaline",
       "category": "chemistry",
       "aliases": [
         "noradrenaline"
+      ]
+    },
+    {
+      "term": "nucleic acids",
+      "plain": "The long molecules that store and carry the instructions for building and running a living thing, like DNA and RNA.",
+      "category": "biology",
+      "aliases": [
+        "nucleic acid"
       ]
     },
     {
@@ -3660,11 +5707,51 @@
       "category": "biology"
     },
     {
+      "term": "obstetrics",
+      "plain": "The branch of medicine that cares for women during pregnancy and childbirth.",
+      "category": "medical",
+      "aliases": [
+        "obstetric",
+        "obstetrician"
+      ]
+    },
+    {
       "term": "octacosanol",
       "plain": "a natural waxy substance taken as a supplement for the nerves and muscles",
       "category": "nutrition",
       "aliases": [
         "octocosanol"
+      ]
+    },
+    {
+      "term": "oleic acid",
+      "plain": "The main fat in olive oil, a monounsaturated fat that stays liquid at room temperature.",
+      "category": "nutrition"
+    },
+    {
+      "term": "omega-3",
+      "plain": "A family of fats, common in fish and some seeds, whose first bend in the chain sits near the tail end; the body needs them but cannot make them.",
+      "category": "nutrition",
+      "aliases": [
+        "omega 3",
+        "omega-3s"
+      ]
+    },
+    {
+      "term": "omega-6",
+      "plain": "A family of fats named for where the first double bond sits along the chain; common in vegetable oils and seeds.",
+      "category": "nutrition",
+      "aliases": [
+        "omega-6 fatty acid",
+        "omega 6"
+      ]
+    },
+    {
+      "term": "omega-9",
+      "plain": "A family of fats the body can usually make for itself, with the first bend in the chain sitting farther from the tail end than in omega-three or omega-six fats.",
+      "category": "nutrition",
+      "aliases": [
+        "omega 9"
       ]
     },
     {
@@ -3681,14 +5768,57 @@
       ]
     },
     {
+      "term": "opal",
+      "plain": "A silica gemstone that flashes shifting, rainbow-like colors.",
+      "category": "geology"
+    },
+    {
+      "term": "opaque",
+      "plain": "Blocking light or X-rays so you cannot see through it.",
+      "category": "physics",
+      "aliases": [
+        "opacity"
+      ]
+    },
+    {
+      "term": "ophthalmia neonatorum",
+      "plain": "An eye infection that a newborn baby can catch during birth.",
+      "category": "medical"
+    },
+    {
       "term": "ophthalmoplegia",
       "plain": "paralysis of the eye muscles",
       "category": "medical"
     },
     {
+      "term": "optical character recognition",
+      "plain": "Computer technology that reads printed or scanned text and turns it into words a computer can use, sometimes making mistakes.",
+      "category": "general",
+      "aliases": [
+        "OCR",
+        "optical-character-recognition"
+      ]
+    },
+    {
       "term": "oral",
       "plain": "taken by mouth",
       "category": "biology"
+    },
+    {
+      "term": "orally absorbable",
+      "plain": "Able to be taken into the body by swallowing, rather than needing a shot or an injection.",
+      "category": "medical",
+      "aliases": [
+        "orally absorbed"
+      ]
+    },
+    {
+      "term": "ore",
+      "plain": "A naturally occurring rock or mineral that holds enough of a metal to be worth digging up and extracting.",
+      "category": "geology",
+      "aliases": [
+        "ores"
+      ]
     },
     {
       "term": "organelle",
@@ -3699,14 +5829,45 @@
       ]
     },
     {
+      "term": "organic",
+      "plain": "In chemistry, describing any substance that is built around carbon, the kind of material found in living things.",
+      "category": "chemistry"
+    },
+    {
+      "term": "organically-bound",
+      "plain": "Attached to the carbon-based molecules of a living thing, rather than existing as a plain chemical on its own.",
+      "category": "chemistry",
+      "aliases": [
+        "organically bound"
+      ]
+    },
+    {
+      "term": "organisms",
+      "plain": "Any living things, such as people, animals, plants, or tiny microbes.",
+      "category": "biology",
+      "aliases": [
+        "organism"
+      ]
+    },
+    {
       "term": "ornithine",
       "plain": "an amino acid closely related to arginine in the body's urea cycle",
       "category": "nutrition"
     },
     {
+      "term": "orpiment",
+      "plain": "A bright yellow mineral made of arsenic and sulfur that was long used as a gold-colored paint pigment.",
+      "category": "geology"
+    },
+    {
       "term": "orthomolecular",
       "plain": "an approach that treats illness with high doses of substances natural to the body",
       "category": "medical"
+    },
+    {
+      "term": "osmosis",
+      "plain": "The natural movement of water through a thin barrier to balance out how much of a substance is dissolved on each side.",
+      "category": "biology"
     },
     {
       "term": "osteitis",
@@ -3762,6 +5923,23 @@
       "category": "medical"
     },
     {
+      "term": "over-the-counter",
+      "plain": "Describes medicine you can buy right off the shelf without needing a doctor's prescription.",
+      "category": "medical",
+      "aliases": [
+        "over the counter"
+      ]
+    },
+    {
+      "term": "overdose",
+      "plain": "Taking more of a substance or medicine than the body can safely handle.",
+      "category": "medical",
+      "aliases": [
+        "overdoses",
+        "overdosing"
+      ]
+    },
+    {
       "term": "oxalate",
       "plain": "a plant compound that binds calcium and blocks it from being absorbed",
       "category": "chemistry",
@@ -3798,6 +5976,14 @@
       "category": "biology"
     },
     {
+      "term": "oxide",
+      "plain": "A compound formed when a substance joins together with oxygen.",
+      "category": "chemistry",
+      "aliases": [
+        "oxides"
+      ]
+    },
+    {
       "term": "oxidized",
       "plain": "having lost electrons, leaving a molecule needing to be re-charged",
       "category": "chemistry"
@@ -3824,6 +6010,19 @@
       "category": "medical"
     },
     {
+      "term": "palmitic acid",
+      "plain": "A common saturated fat found in palm oil, meat, and cocoa butter.",
+      "category": "nutrition"
+    },
+    {
+      "term": "panacea",
+      "plain": "A supposed cure-all -- a single remedy imagined to treat every illness.",
+      "category": "medical",
+      "aliases": [
+        "panaceas"
+      ]
+    },
+    {
       "term": "pancreatic enzymes",
       "plain": "enzymes made by the pancreas that break food into pieces small enough to absorb — a different job from stomach acid",
       "category": "physiology",
@@ -3844,9 +6043,22 @@
       "category": "nutrition"
     },
     {
+      "term": "Paracelsus",
+      "plain": "A famous Renaissance-era Swiss physician and alchemist who pioneered using chemicals as medicines.",
+      "category": "general"
+    },
+    {
       "term": "parakeratosis",
       "plain": "abnormal skin-cell maturation causing scaling",
       "category": "medical"
+    },
+    {
+      "term": "parasites",
+      "plain": "Living things that live on or inside another creature and feed off it, often causing harm.",
+      "category": "biology",
+      "aliases": [
+        "parasite"
+      ]
     },
     {
       "term": "parathormone",
@@ -3902,6 +6114,32 @@
       ]
     },
     {
+      "term": "parts per million",
+      "plain": "A way of describing a very tiny amount, telling how many units of something are present in a million units of the whole.",
+      "category": "chemistry",
+      "aliases": [
+        "ppm",
+        "part per million",
+        "parts-per-million"
+      ]
+    },
+    {
+      "term": "patency",
+      "plain": "The state of a tube or passage being open and unblocked so things can flow through.",
+      "category": "medical",
+      "aliases": [
+        "patent"
+      ]
+    },
+    {
+      "term": "pathogens",
+      "plain": "Tiny living things like germs, bacteria, and viruses that can get into the body and make you sick.",
+      "category": "medical",
+      "aliases": [
+        "pathogen"
+      ]
+    },
+    {
       "term": "pathway",
       "plain": "a chain of chemical steps the body or a plant follows to make or break down a substance",
       "category": "chemistry",
@@ -3920,6 +6158,11 @@
       "category": "medical"
     },
     {
+      "term": "penicillin",
+      "plain": "An early antibiotic — a medicine made from mold that kills certain bacteria and cures infections.",
+      "category": "medical"
+    },
+    {
       "term": "pepsin",
       "plain": "the stomach’s protein-digesting enzyme, switched on by stomach acid",
       "category": "physiology"
@@ -3933,6 +6176,30 @@
       ]
     },
     {
+      "term": "peptide bond",
+      "plain": "The chemical link that joins one amino acid to the next, chaining them together into a protein.",
+      "category": "chemistry",
+      "aliases": [
+        "peptide bonds"
+      ]
+    },
+    {
+      "term": "perineal",
+      "plain": "Having to do with the perineum, the area of the body between the genitals and the anus.",
+      "category": "anatomy",
+      "aliases": [
+        "perineum"
+      ]
+    },
+    {
+      "term": "periodic table",
+      "plain": "The big chart that arranges all the known chemical elements in order, grouping ones that behave alike together.",
+      "category": "chemistry",
+      "aliases": [
+        "periodic chart"
+      ]
+    },
+    {
       "term": "periodontal",
       "plain": "relating to the gums and the tissues that support the teeth",
       "category": "medical"
@@ -3941,6 +6208,14 @@
       "term": "periodontitis",
       "plain": "gum disease that damages the bone anchoring the teeth",
       "category": "medical"
+    },
+    {
+      "term": "peripheral neuropathy",
+      "plain": "Damage to the nerves in the hands, feet, and limbs that can cause numbness, tingling, or pain.",
+      "category": "medical",
+      "aliases": [
+        "peripheral neuropathies"
+      ]
     },
     {
       "term": "permeability",
@@ -3961,6 +6236,31 @@
       "term": "peroxidation",
       "plain": "the damaging oxidation of fats by unstable oxygen molecules",
       "category": "biology"
+    },
+    {
+      "term": "peroxisomes",
+      "plain": "Tiny compartments inside a cell whose job is to make and store hydrogen peroxide.",
+      "category": "biology",
+      "aliases": [
+        "peroxisome"
+      ]
+    },
+    {
+      "term": "petrified wood",
+      "plain": "Ancient wood that has slowly turned into stone as minerals soaked in and replaced the original plant material.",
+      "category": "geology",
+      "aliases": [
+        "petrified"
+      ]
+    },
+    {
+      "term": "pH",
+      "plain": "A scale that measures how acidic or how alkaline (the opposite of acidic) something is.",
+      "category": "chemistry",
+      "aliases": [
+        "high-pH",
+        "high pH"
+      ]
     },
     {
       "term": "phenol group",
@@ -4037,6 +6337,15 @@
       "category": "biology"
     },
     {
+      "term": "phosphorescent",
+      "plain": "Giving off a soft glow of light after soaking up energy, sometimes lingering for a while afterward.",
+      "category": "physics",
+      "aliases": [
+        "phosphorescence",
+        "phosphorescent spectra"
+      ]
+    },
+    {
       "term": "phosphorus",
       "plain": "a mineral found in bones and in many everyday foods",
       "category": "nutrition"
@@ -4071,9 +6380,30 @@
       ]
     },
     {
+      "term": "phthisis",
+      "plain": "An old-fashioned word for a wasting disease of the lungs, especially tuberculosis, that slowly leaves a person weaker and thinner.",
+      "category": "medical"
+    },
+    {
       "term": "phylloquinone",
       "plain": "the plant form of vitamin K (vitamin K1), found in green leafy vegetables",
       "category": "nutrition"
+    },
+    {
+      "term": "physicist",
+      "plain": "A scientist who studies matter, energy, and the basic forces of nature.",
+      "category": "physics",
+      "aliases": [
+        "physicists"
+      ]
+    },
+    {
+      "term": "physiologically",
+      "plain": "Having to do with how the living body actually works and carries out its normal functions.",
+      "category": "biology",
+      "aliases": [
+        "physiological"
+      ]
     },
     {
       "term": "phytate",
@@ -4082,6 +6412,14 @@
       "aliases": [
         "phytates",
         "phytic acid"
+      ]
+    },
+    {
+      "term": "phytonutrient",
+      "plain": "A natural, health-supporting substance made by plants.",
+      "category": "nutrition",
+      "aliases": [
+        "phytonutrients"
       ]
     },
     {
@@ -4106,12 +6444,33 @@
       ]
     },
     {
+      "term": "pituitary gland",
+      "plain": "A pea-sized gland at the base of the brain that controls many other glands by releasing hormones.",
+      "category": "anatomy",
+      "aliases": [
+        "pituitary"
+      ]
+    },
+    {
+      "term": "placenta",
+      "plain": "The organ that grows inside a pregnant mother to feed her developing baby and pass substances back and forth between them.",
+      "category": "anatomy",
+      "aliases": [
+        "placental"
+      ]
+    },
+    {
       "term": "placenta extracts",
       "plain": "preparations made from the organ that nourishes a baby in the womb",
       "category": "biology",
       "aliases": [
         "extracts of placenta"
       ]
+    },
+    {
+      "term": "plankton",
+      "plain": "Tiny plants and animals that drift in oceans and lakes and are food for larger sea creatures.",
+      "category": "biology"
     },
     {
       "term": "plant derived",
@@ -4134,12 +6493,26 @@
       "category": "chemistry"
     },
     {
+      "term": "plaque",
+      "plain": "A fatty deposit that builds up on the inside walls of arteries and can clog them.",
+      "category": "medical",
+      "aliases": [
+        "fatty-plaque",
+        "fatty plaque"
+      ]
+    },
+    {
       "term": "platelet",
       "plain": "a tiny blood-cell fragment that helps form clots",
       "category": "biology",
       "aliases": [
         "platelets"
       ]
+    },
+    {
+      "term": "platinum",
+      "plain": "A rare, silver-white precious metal prized for jewelry and used in many industrial tools.",
+      "category": "chemistry"
     },
     {
       "term": "pleuritis",
@@ -4208,6 +6581,26 @@
       ]
     },
     {
+      "term": "posterior pituitary",
+      "plain": "The back part of the pituitary gland, which releases hormones that help control the body's water balance.",
+      "category": "anatomy"
+    },
+    {
+      "term": "potassium",
+      "plain": "A mineral the body needs for healthy nerves and muscles, found in foods like bananas and leafy greens.",
+      "category": "nutrition"
+    },
+    {
+      "term": "potassium bromide",
+      "plain": "A compound made of potassium and bromine that was once used as a calming, sleep-inducing medicine.",
+      "category": "chemistry"
+    },
+    {
+      "term": "praseodymium",
+      "plain": "A soft, silvery rare-earth metal that is the other 'twin' element separated out of didymium alongside neodymium.",
+      "category": "chemistry"
+    },
+    {
       "term": "precursor",
       "plain": "a substance the body converts into another substance",
       "category": "biology"
@@ -4223,11 +6616,38 @@
       "category": "medical"
     },
     {
+      "term": "prophylactic",
+      "plain": "Given ahead of time to stop a disease before it can start.",
+      "category": "medical",
+      "aliases": [
+        "prophylaxis",
+        "prophylactically"
+      ]
+    },
+    {
       "term": "prostaglandins",
       "plain": "hormone-like substances that regulate inflammation and other body functions",
       "category": "medical",
       "aliases": [
         "prostaglandin"
+      ]
+    },
+    {
+      "term": "prostate",
+      "plain": "A small gland in men, near the bladder, that helps make the fluid in semen.",
+      "category": "anatomy",
+      "aliases": [
+        "enlarged prostate"
+      ]
+    },
+    {
+      "term": "prosthesis",
+      "plain": "A man-made part built to replace a missing or damaged piece of the body, such as an artificial joint or tooth.",
+      "category": "medical",
+      "aliases": [
+        "prostheses",
+        "prosthetic",
+        "prosthetics"
       ]
     },
     {
@@ -4282,9 +6702,27 @@
       "category": "chemistry"
     },
     {
+      "term": "protozoan",
+      "plain": "A tiny living creature made of just a single cell.",
+      "category": "biology",
+      "aliases": [
+        "protozoa",
+        "protozoans",
+        "protozoon"
+      ]
+    },
+    {
       "term": "provitamin",
       "plain": "a substance the body converts into an active vitamin",
       "category": "nutrition"
+    },
+    {
+      "term": "pruritus",
+      "plain": "The medical word for itching of the skin.",
+      "category": "medical",
+      "aliases": [
+        "pruritis"
+      ]
     },
     {
       "term": "psittacosis",
@@ -4293,6 +6731,11 @@
       "aliases": [
         "ornithosis"
       ]
+    },
+    {
+      "term": "psoriasis",
+      "plain": "A long-lasting skin condition that causes red, flaky, scaly patches.",
+      "category": "medical"
     },
     {
       "term": "psychosis",
@@ -4318,6 +6761,23 @@
       "category": "biology"
     },
     {
+      "term": "purgative",
+      "plain": "A medicine that empties the bowels, making a person go to the bathroom.",
+      "category": "medical",
+      "aliases": [
+        "purgatives",
+        "purge"
+      ]
+    },
+    {
+      "term": "pyorrhea",
+      "plain": "A gum disease where the gums become infected and ooze pus.",
+      "category": "medical",
+      "aliases": [
+        "pyorrhoea"
+      ]
+    },
+    {
       "term": "pyridine",
       "plain": "a ring-shaped chemical structure that forms part of the niacin molecule",
       "category": "chemistry"
@@ -4330,6 +6790,11 @@
         "pyridoxamine",
         "pyridoxal"
       ]
+    },
+    {
+      "term": "pyrosis",
+      "plain": "The medical name for severe heartburn, a strong burning feeling rising from the stomach up into the chest or throat.",
+      "category": "medical"
     },
     {
       "term": "pyruvate",
@@ -4345,14 +6810,53 @@
       ]
     },
     {
+      "term": "quartz",
+      "plain": "A hard, clear or colored crystal form of silica whose tiny chips are the grains that make up most sand.",
+      "category": "geology"
+    },
+    {
       "term": "quercetin",
       "plain": "a plant pigment taken as a supplement for its antioxidant effect",
       "category": "nutrition"
     },
     {
+      "term": "radiation therapy",
+      "plain": "A cancer treatment that uses strong beams or radioactive sources to destroy diseased cells.",
+      "category": "medical"
+    },
+    {
       "term": "radical",
       "plain": "a highly reactive molecule left with an unpaired electron",
       "category": "chemistry"
+    },
+    {
+      "term": "radioactive",
+      "plain": "Giving off invisible energy or particles as unstable atoms slowly break down.",
+      "category": "physics",
+      "aliases": [
+        "radioactivity"
+      ]
+    },
+    {
+      "term": "radiologist",
+      "plain": "A doctor who specializes in using X-rays and other scans to look inside the body and spot problems.",
+      "category": "medical",
+      "aliases": [
+        "radiologists"
+      ]
+    },
+    {
+      "term": "rare earth",
+      "plain": "A group of scarce metal elements, chemically alike, that are spread thinly through the earth's rocks and are hard to separate from one another.",
+      "category": "chemistry",
+      "aliases": [
+        "rare earths",
+        "rare earth metal",
+        "rare-earth metal",
+        "rare-earth minerals",
+        "rare earth minerals",
+        "rare-earth"
+      ]
     },
     {
       "term": "rate-limiting enzyme",
@@ -4371,6 +6875,35 @@
       "term": "reabsorption",
       "plain": "taking a substance back into the body instead of excreting it",
       "category": "biology"
+    },
+    {
+      "term": "reactive",
+      "plain": "Describes a substance that easily and quickly combines with other things around it, sometimes strongly enough to catch fire on its own.",
+      "category": "chemistry",
+      "aliases": [
+        "reactivity"
+      ]
+    },
+    {
+      "term": "reactor",
+      "plain": "A nuclear reactor: a facility where controlled atomic reactions take place, sometimes used to make radioactive materials.",
+      "category": "physics",
+      "aliases": [
+        "nuclear reactor"
+      ]
+    },
+    {
+      "term": "realgar",
+      "plain": "A soft, reddish-orange mineral made of arsenic joined with sulfur.",
+      "category": "geology"
+    },
+    {
+      "term": "red algae",
+      "plain": "A group of reddish seaweeds and simple water plants that grow in the ocean.",
+      "category": "biology",
+      "aliases": [
+        "red alga"
+      ]
     },
     {
       "term": "red blood cells",
@@ -4395,6 +6928,23 @@
       ]
     },
     {
+      "term": "refraction",
+      "plain": "The bending of light when it passes from one material into another, like the way a straw looks bent in a glass of water.",
+      "category": "physics",
+      "aliases": [
+        "refract",
+        "refracting"
+      ]
+    },
+    {
+      "term": "relapse",
+      "plain": "The return of a disease or its symptoms after a period of getting better.",
+      "category": "medical",
+      "aliases": [
+        "relapses"
+      ]
+    },
+    {
       "term": "remission",
       "plain": "a stretch of time when a disease goes quiet and causes no symptoms",
       "category": "medical"
@@ -4414,6 +6964,27 @@
       ]
     },
     {
+      "term": "resolvins",
+      "plain": "A kind of messenger molecule made from omega-three fats that helps bring inflammation to an end and heal tissue.",
+      "category": "biology",
+      "aliases": [
+        "resolvin"
+      ]
+    },
+    {
+      "term": "respiration",
+      "plain": "The process by which the body takes in oxygen and uses it to release energy from food.",
+      "category": "biology",
+      "aliases": [
+        "respire"
+      ]
+    },
+    {
+      "term": "respiratory quotient",
+      "plain": "A measure comparing the carbon dioxide you breathe out to the oxygen you take in, used to tell whether the body is mainly burning sugar or fat.",
+      "category": "biology"
+    },
+    {
       "term": "retinol",
       "plain": "the active animal form of vitamin A",
       "category": "nutrition"
@@ -4422,6 +6993,11 @@
       "term": "retinyl",
       "plain": "a storage form of vitamin A used in foods and supplements",
       "category": "nutrition"
+    },
+    {
+      "term": "rheumatoid arthritis",
+      "plain": "A long-term disease in which the body's own defenses attack its joints, causing pain and swelling.",
+      "category": "medical"
     },
     {
       "term": "rhinitis",
@@ -4444,6 +7020,23 @@
       "category": "biology",
       "aliases": [
         "ribosomes"
+      ]
+    },
+    {
+      "term": "Rigg's disease",
+      "plain": "An old name for severe gum disease that damages the gums and the bone holding the teeth.",
+      "category": "medical",
+      "aliases": [
+        "Riggs disease",
+        "Rigg disease"
+      ]
+    },
+    {
+      "term": "RNA",
+      "plain": "A molecule inside every cell that carries instructions from the genes to help build the body's proteins.",
+      "category": "biology",
+      "aliases": [
+        "ribonucleic acid"
       ]
     },
     {
@@ -4470,6 +7063,16 @@
       ]
     },
     {
+      "term": "rubidium",
+      "plain": "A soft, silvery metal element that behaves chemically much like sodium and potassium.",
+      "category": "chemistry"
+    },
+    {
+      "term": "rutile",
+      "plain": "A reddish-brown mineral dug from the ground that is one of the main natural sources of titanium.",
+      "category": "geology"
+    },
+    {
       "term": "S-adenosyl methionine",
       "plain": "the active form of methionine that carries a small chemical tag the body uses to switch reactions on or off; its short name is SAM",
       "category": "chemistry",
@@ -4477,6 +7080,47 @@
         "S-adenosylmethionine",
         "SAM"
       ]
+    },
+    {
+      "term": "salicylates",
+      "plain": "A family of pain- and fever-reducing medicines that includes aspirin.",
+      "category": "medical",
+      "aliases": [
+        "salicylate"
+      ]
+    },
+    {
+      "term": "salt",
+      "plain": "In chemistry, any compound formed when a metal or metal-like part joins with another part, not just the grains you sprinkle on food.",
+      "category": "chemistry",
+      "aliases": [
+        "salts"
+      ]
+    },
+    {
+      "term": "salt marsh",
+      "plain": "A low, muddy coastal wetland that is regularly flooded by salty seawater.",
+      "category": "geology",
+      "aliases": [
+        "salt marshes",
+        "salt-marsh",
+        "salt-marshes"
+      ]
+    },
+    {
+      "term": "samarium",
+      "plain": "A hard, silvery rare earth metal, one of the lesser-known chemical elements in the rare earth group.",
+      "category": "chemistry"
+    },
+    {
+      "term": "samarskite",
+      "plain": "A dark mineral, named after a Russian army officer, in which the element samarium was first discovered.",
+      "category": "geology"
+    },
+    {
+      "term": "sandstone",
+      "plain": "A rock made of sand grains pressed and cemented together over long stretches of time.",
+      "category": "geology"
     },
     {
       "term": "sarcoidosis",
@@ -4494,9 +7138,31 @@
       "category": "medical"
     },
     {
+      "term": "saturated fat",
+      "plain": "A fat whose carbon chain is fully packed with hydrogen and has no double bonds, so it is usually solid at room temperature, like butter.",
+      "category": "nutrition",
+      "aliases": [
+        "saturated",
+        "saturated fats"
+      ]
+    },
+    {
+      "term": "scandium",
+      "plain": "A soft, silvery-white metal that is one of the chemical elements, often grouped with the rare earths.",
+      "category": "chemistry"
+    },
+    {
       "term": "scanning speech",
       "plain": "slow, halting speech with pauses between syllables",
       "category": "biology"
+    },
+    {
+      "term": "Schwarz",
+      "plain": "A twentieth-century researcher known for showing that several trace elements are truly essential to the body.",
+      "category": "general",
+      "aliases": [
+        "Schwarz's"
+      ]
     },
     {
       "term": "sclerosis",
@@ -4512,6 +7178,15 @@
       "category": "medical"
     },
     {
+      "term": "scrofula",
+      "plain": "An old name for a form of tuberculosis that swells the lymph glands of the neck.",
+      "category": "medical",
+      "aliases": [
+        "scrophulous",
+        "scrofulous"
+      ]
+    },
+    {
       "term": "seborrheic",
       "plain": "relating to oily, flaky skin, as in seborrheic dermatitis",
       "category": "medical"
@@ -4520,6 +7195,31 @@
       "term": "second messenger",
       "plain": "a molecule inside a cell that relays a signal from a hormone acting at the cell surface",
       "category": "biology"
+    },
+    {
+      "term": "sedative",
+      "plain": "A medicine or substance that calms you down and eases tension or helps make you sleepy.",
+      "category": "medical",
+      "aliases": [
+        "sedatives"
+      ]
+    },
+    {
+      "term": "sedimentary rock",
+      "plain": "Rock built up over long ages from layers of sand, mud, or shells that get pressed together.",
+      "category": "geology",
+      "aliases": [
+        "sedimentary",
+        "sedimentary rocks"
+      ]
+    },
+    {
+      "term": "seizure",
+      "plain": "A sudden burst of abnormal electrical activity in the brain that can cause shaking or loss of control.",
+      "category": "medical",
+      "aliases": [
+        "seizures"
+      ]
     },
     {
       "term": "selenium",
@@ -4535,6 +7235,41 @@
       "term": "semiconductor",
       "plain": "a material that conducts electricity partially — the basis of computer chips",
       "category": "chemistry"
+    },
+    {
+      "term": "semimetal",
+      "plain": "A substance that behaves partly like a metal and partly like a non-metal, sitting on the border between the two.",
+      "category": "chemistry",
+      "aliases": [
+        "semimetals",
+        "semi-metal"
+      ]
+    },
+    {
+      "term": "semiprecious",
+      "plain": "Describes a gem or metal that is valuable but not as rare or costly as the very top ones like diamonds or gold.",
+      "category": "geology",
+      "aliases": [
+        "semi-precious",
+        "semiprecious metal"
+      ]
+    },
+    {
+      "term": "septic",
+      "plain": "Infected with germs that are spreading and causing harm.",
+      "category": "medical",
+      "aliases": [
+        "sepsis",
+        "septic conditions"
+      ]
+    },
+    {
+      "term": "septicemia",
+      "plain": "A dangerous, whole-body illness caused by germs multiplying in the blood; blood poisoning.",
+      "category": "medical",
+      "aliases": [
+        "septicaemia"
+      ]
     },
     {
       "term": "serine",
@@ -4555,6 +7290,11 @@
       "term": "shaking palsy",
       "plain": "an old name for Parkinson's disease, describing its trembling and stiffness",
       "category": "medical"
+    },
+    {
+      "term": "shale",
+      "plain": "A soft, layered rock formed from hardened mud or clay.",
+      "category": "geology"
     },
     {
       "term": "shingles",
@@ -4585,9 +7325,76 @@
       ]
     },
     {
+      "term": "silica",
+      "plain": "A hard, glassy compound of silicon and oxygen that makes up most sand and quartz.",
+      "category": "chemistry"
+    },
+    {
+      "term": "silicate",
+      "plain": "A very common kind of mineral made of silicon and oxygen joined together, the main stuff that most rocks are built from.",
+      "category": "chemistry",
+      "aliases": [
+        "silicates",
+        "zirconium silicate"
+      ]
+    },
+    {
+      "term": "silicon",
+      "plain": "A hard, gray chemical element found in sand, rock and glass; after oxygen it is the most common element in the earth's rocky outer layer.",
+      "category": "chemistry"
+    },
+    {
+      "term": "silicon dioxide",
+      "plain": "The chemical name for silica: a compound made of silicon joined with oxygen, and the main material in sand, quartz and glass.",
+      "category": "chemistry",
+      "aliases": [
+        "SiO2",
+        "SiO₂"
+      ]
+    },
+    {
+      "term": "silver nitrate",
+      "plain": "A chemical made of silver that dissolves in water and was used as a medicine to kill germs and burn away unwanted tissue.",
+      "category": "chemistry",
+      "aliases": [
+        "silver-nitrate"
+      ]
+    },
+    {
+      "term": "silver sulfadiazine",
+      "plain": "A silver-containing cream spread on burns to keep them from getting infected.",
+      "category": "medical",
+      "aliases": [
+        "Silvadene"
+      ]
+    },
+    {
+      "term": "singlet oxygen",
+      "plain": "A highly reactive, energized form of oxygen that readily takes part in chemical reactions in the body.",
+      "category": "chemistry",
+      "aliases": [
+        "singlet oxygen atom"
+      ]
+    },
+    {
       "term": "sinusitis",
       "plain": "inflammation of the sinuses",
       "category": "medical"
+    },
+    {
+      "term": "skeletal",
+      "plain": "Having to do with the bones or the skeleton.",
+      "category": "anatomy"
+    },
+    {
+      "term": "skin eruptions",
+      "plain": "Breakouts, rashes, or bumps that appear on the skin.",
+      "category": "medical",
+      "aliases": [
+        "skin eruption",
+        "eruption",
+        "eruptions"
+      ]
     },
     {
       "term": "sleep aid",
@@ -4595,14 +7402,87 @@
       "category": "biology"
     },
     {
+      "term": "smelting",
+      "plain": "Heating an ore until the metal inside melts out so it can be collected.",
+      "category": "chemistry",
+      "aliases": [
+        "smelt",
+        "smelted",
+        "smelter"
+      ]
+    },
+    {
+      "term": "Sn",
+      "plain": "The chemical shorthand for tin, taken from its old Latin name, stannum.",
+      "category": "chemistry"
+    },
+    {
       "term": "snake venom injections",
       "plain": "shots of treated snake poison used as an unconventional treatment",
       "category": "biology"
     },
     {
+      "term": "soda ash",
+      "plain": "A white powder (sodium carbonate) that is melted together with sand to help make glass.",
+      "category": "chemistry",
+      "aliases": [
+        "sodium carbonate"
+      ]
+    },
+    {
+      "term": "sodium",
+      "plain": "A common mineral element the body needs; it is one of the two parts of ordinary table salt.",
+      "category": "chemistry"
+    },
+    {
+      "term": "sodium bromide",
+      "plain": "A compound made of sodium and bromine that was once used as a mild calming medicine.",
+      "category": "chemistry"
+    },
+    {
+      "term": "soft tissue",
+      "plain": "The body's softer parts, such as muscle and organs, as opposed to hard bone.",
+      "category": "anatomy",
+      "aliases": [
+        "soft tissues"
+      ]
+    },
+    {
+      "term": "solute",
+      "plain": "A substance that is dissolved into a liquid, the way salt or sugar dissolves in water.",
+      "category": "chemistry",
+      "aliases": [
+        "solutes"
+      ]
+    },
+    {
       "term": "sorghum",
       "plain": "A cereal grain eaten as a staple food in parts of Africa and Asia",
       "category": "biology"
+    },
+    {
+      "term": "species",
+      "plain": "A single, specific kind of living thing whose members can breed with one another.",
+      "category": "biology"
+    },
+    {
+      "term": "spectra",
+      "plain": "The specific pattern of light or colors a substance gives off, which scientists use to identify it.",
+      "category": "physics",
+      "aliases": [
+        "spectrum"
+      ]
+    },
+    {
+      "term": "spectral lines",
+      "plain": "The exact colors of light a chemical element gives off when it is heated, which act like a fingerprint that identifies it.",
+      "category": "physics",
+      "aliases": [
+        "spectral line",
+        "spectral emission lines",
+        "spectral emission line",
+        "spectral fingerprint"
+      ]
     },
     {
       "term": "sphingomyelin",
@@ -4633,6 +7513,14 @@
       "category": "medical"
     },
     {
+      "term": "spp.",
+      "plain": "An abbreviation meaning 'several species,' written after a plant or animal group name to show it covers more than one kind.",
+      "category": "biology",
+      "aliases": [
+        "spp"
+      ]
+    },
+    {
       "term": "stabilization",
       "plain": "making something hold together steadily rather than fall apart",
       "category": "biology",
@@ -4649,6 +7537,11 @@
         "Start",
         "start codon"
       ]
+    },
+    {
+      "term": "stearic acid",
+      "plain": "A saturated fat, solid at room temperature, found in animal fat and in cocoa butter.",
+      "category": "nutrition"
     },
     {
       "term": "steatohepatitis",
@@ -4680,6 +7573,14 @@
       "category": "chemistry"
     },
     {
+      "term": "stimulant",
+      "plain": "A substance that speeds up the body or mind, making a person feel more alert or energetic.",
+      "category": "medical",
+      "aliases": [
+        "stimulants"
+      ]
+    },
+    {
       "term": "stinging nettle",
       "plain": "a wild plant used as an herbal remedy for joint problems",
       "category": "biology",
@@ -4709,6 +7610,35 @@
       ]
     },
     {
+      "term": "stroke",
+      "plain": "A sudden loss of blood flow to part of the brain, which can damage that area and affect movement or speech.",
+      "category": "medical"
+    },
+    {
+      "term": "strontianite",
+      "plain": "A natural mineral made of strontium that is one of the main sources of the element found in the ground.",
+      "category": "geology"
+    },
+    {
+      "term": "strontium carbonate",
+      "plain": "A compound of strontium joined with carbon and oxygen, found in nature as the mineral strontianite.",
+      "category": "chemistry"
+    },
+    {
+      "term": "strontium sulfate",
+      "plain": "A compound of strontium joined with sulfur and oxygen, found in nature as the mineral celestite.",
+      "category": "chemistry"
+    },
+    {
+      "term": "strontium-90",
+      "plain": "A man-made, radioactive form of strontium created by nuclear explosions, which does not exist in nature.",
+      "category": "chemistry",
+      "aliases": [
+        "strontium 90",
+        "Sr-90"
+      ]
+    },
+    {
       "term": "subcutaneous",
       "plain": "located or given just under the skin",
       "category": "medical"
@@ -4720,6 +7650,11 @@
       "aliases": [
         "subunits"
       ]
+    },
+    {
+      "term": "succinic dehydrogenase",
+      "plain": "A helper protein (enzyme) inside cells that speeds up a key step in turning food into usable energy.",
+      "category": "biology"
     },
     {
       "term": "succinyl coenzyme A",
@@ -4794,6 +7729,21 @@
       "category": "biology"
     },
     {
+      "term": "synthetic",
+      "plain": "Made artificially by people rather than occurring naturally.",
+      "category": "general"
+    },
+    {
+      "term": "syphilis",
+      "plain": "A serious infection caused by bacteria, spread mainly through sexual contact.",
+      "category": "medical"
+    },
+    {
+      "term": "Syriac",
+      "plain": "An old Middle Eastern language, a form of Aramaic, once widely spoken and written.",
+      "category": "general"
+    },
+    {
       "term": "systemic",
       "plain": "affecting the whole body, not just one part",
       "category": "medical"
@@ -4815,9 +7765,24 @@
       ]
     },
     {
+      "term": "tantalum",
+      "plain": "A hard, gray, rare metal element that is closely related to niobium and often found near it in the ground.",
+      "category": "chemistry"
+    },
+    {
       "term": "tardive dyskinesia",
       "plain": "involuntary, repetitive movements that can develop after long-term use of certain drugs",
       "category": "medical"
+    },
+    {
+      "term": "tarnish",
+      "plain": "When a metal's shiny surface slowly dulls or changes color because it reacts with the air.",
+      "category": "chemistry",
+      "aliases": [
+        "tarnishes",
+        "tarnished",
+        "tarnishing"
+      ]
     },
     {
       "term": "taurine",
@@ -4833,9 +7798,47 @@
       ]
     },
     {
+      "term": "temporomandibular joint",
+      "plain": "The hinge joint that connects the lower jaw to the skull, letting the mouth open and close.",
+      "category": "anatomy",
+      "aliases": [
+        "TMJ",
+        "jaw joint",
+        "jaw-joint"
+      ]
+    },
+    {
       "term": "teratogenic",
       "plain": "capable of causing birth defects",
       "category": "medical"
+    },
+    {
+      "term": "terbia",
+      "plain": "The oxide of the rare-earth metal terbium.",
+      "category": "chemistry"
+    },
+    {
+      "term": "terbium",
+      "plain": "A rare-earth metallic element, one of europium's close relatives.",
+      "category": "chemistry"
+    },
+    {
+      "term": "terbium metals",
+      "plain": "A small cluster of closely related rare-earth metals grouped together because they behave in similar chemical ways.",
+      "category": "geology",
+      "aliases": [
+        "terbium metal",
+        "terbium group"
+      ]
+    },
+    {
+      "term": "terrestrial animals",
+      "plain": "Animals that live on land, rather than in the water.",
+      "category": "biology",
+      "aliases": [
+        "terrestrial animal",
+        "terrestrial"
+      ]
     },
     {
       "term": "tetany",
@@ -4848,6 +7851,22 @@
       "category": "biology",
       "aliases": [
         "tetracycline"
+      ]
+    },
+    {
+      "term": "Tetrahymena pyriformis",
+      "plain": "A kind of single-celled pond organism often used as a test subject in laboratory experiments.",
+      "category": "biology",
+      "aliases": [
+        "Tetrahymena"
+      ]
+    },
+    {
+      "term": "therapeutic",
+      "plain": "Relating to treating or healing a disease or health condition.",
+      "category": "medical",
+      "aliases": [
+        "therapeutic use"
       ]
     },
     {
@@ -4875,6 +7894,11 @@
     {
       "term": "thiolysis",
       "plain": "a splitting reaction that uses a sulfur-containing helper to break a molecule apart",
+      "category": "chemistry"
+    },
+    {
+      "term": "thorium",
+      "plain": "A naturally radioactive metal element that is often found alongside rare earths in the same minerals.",
       "category": "chemistry"
     },
     {
@@ -4915,6 +7939,11 @@
       ]
     },
     {
+      "term": "thulium",
+      "plain": "One of the rarest of the rare-earth metals, a soft silvery element.",
+      "category": "chemistry"
+    },
+    {
       "term": "thyroid",
       "plain": "the neck gland that uses iodine to set the body's metabolic rate",
       "category": "anatomy"
@@ -4938,6 +7967,15 @@
       "category": "biology",
       "aliases": [
         "time-release tablets"
+      ]
+    },
+    {
+      "term": "tincture",
+      "plain": "A liquid medicine made by soaking a substance in alcohol to pull out its active parts.",
+      "category": "medical",
+      "aliases": [
+        "tinctures",
+        "tinctura"
       ]
     },
     {
@@ -4997,14 +8035,63 @@
       ]
     },
     {
+      "term": "toxicology",
+      "plain": "The science of studying poisons and measuring how harmful different substances are to living things.",
+      "category": "medical",
+      "aliases": [
+        "toxicological"
+      ]
+    },
+    {
       "term": "toxoplasmosis",
       "plain": "a parasite infection, especially risky in pregnancy",
       "category": "medical"
     },
     {
+      "term": "trace element",
+      "plain": "A mineral the body needs only in very tiny amounts to stay healthy.",
+      "category": "nutrition",
+      "aliases": [
+        "trace-element",
+        "trace elements",
+        "trace-elements"
+      ]
+    },
+    {
+      "term": "trace levels",
+      "plain": "Amounts so tiny they can barely be measured, yet still matter for the body's health.",
+      "category": "nutrition",
+      "aliases": [
+        "trace level",
+        "trace amounts",
+        "trace amount",
+        "trace"
+      ]
+    },
+    {
+      "term": "trace mineral",
+      "plain": "A mineral the body needs in only very tiny amounts to stay healthy.",
+      "category": "nutrition",
+      "aliases": [
+        "trace minerals",
+        "trace-mineral",
+        "trace and rare-earth minerals"
+      ]
+    },
+    {
       "term": "tracheotomy",
       "plain": "a surgical opening made into the windpipe",
       "category": "medical"
+    },
+    {
+      "term": "trans fatty acids",
+      "plain": "A kind of fat created by adding hydrogen to vegetable oils, now known to harm the heart and arteries.",
+      "category": "nutrition",
+      "aliases": [
+        "trans fats",
+        "trans fat",
+        "trans fatty acid"
+      ]
     },
     {
       "term": "transaminase",
@@ -5023,6 +8110,16 @@
       "aliases": [
         "protein translation",
         "translating"
+      ]
+    },
+    {
+      "term": "transmute",
+      "plain": "To change one substance into a completely different one, like the old dream of turning lead into gold.",
+      "category": "chemistry",
+      "aliases": [
+        "transmutation",
+        "transmuting",
+        "transmuted"
       ]
     },
     {
@@ -5055,6 +8152,14 @@
       "term": "True Supplement Need",
       "plain": "Wallach's own daily maintenance target — the amount he says you actually need to take each day for lasting health, set well above the RDA",
       "category": "nutrition"
+    },
+    {
+      "term": "trypanosomiasis",
+      "plain": "A disease, also called sleeping sickness, caused by tiny parasites spread through the bite of certain flies.",
+      "category": "medical",
+      "aliases": [
+        "sleeping sickness"
+      ]
     },
     {
       "term": "trypsin",
@@ -5143,9 +8248,32 @@
       "category": "medical"
     },
     {
+      "term": "uptake",
+      "plain": "The taking in or absorbing of a substance into a living thing's cells or tissues.",
+      "category": "biology"
+    },
+    {
+      "term": "urea",
+      "plain": "A waste product the body makes when it breaks down protein, which the kidneys remove in urine.",
+      "category": "medical"
+    },
+    {
       "term": "ureter",
       "plain": "the tube that carries urine from the kidney down to the bladder",
       "category": "biology"
+    },
+    {
+      "term": "uterine",
+      "plain": "Having to do with the uterus, the womb where a baby grows.",
+      "category": "anatomy",
+      "aliases": [
+        "uterus"
+      ]
+    },
+    {
+      "term": "utilization",
+      "plain": "How much of the protein you eat the body can actually absorb and put to use, rather than waste.",
+      "category": "nutrition"
     },
     {
       "term": "vaginitis",
@@ -5192,6 +8320,27 @@
       "category": "medical"
     },
     {
+      "term": "venereal disease",
+      "plain": "An illness that spreads from person to person through sexual contact.",
+      "category": "medical",
+      "aliases": [
+        "venereal diseases"
+      ]
+    },
+    {
+      "term": "vertebrates",
+      "plain": "Animals that have a backbone, such as fish, birds, and mammals.",
+      "category": "biology",
+      "aliases": [
+        "vertebrate"
+      ]
+    },
+    {
+      "term": "vertigo",
+      "plain": "A dizzy feeling that the room is spinning around you.",
+      "category": "medical"
+    },
+    {
       "term": "veterinary medicine",
       "plain": "the branch of medicine that treats animals",
       "category": "biology"
@@ -5200,6 +8349,14 @@
       "term": "Virgin Earth",
       "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
       "category": "product-history"
+    },
+    {
+      "term": "viruses",
+      "plain": "Tiny germs that can only multiply by invading the cells of a living host, often causing disease.",
+      "category": "biology",
+      "aliases": [
+        "virus"
+      ]
     },
     {
       "term": "vitamin",
@@ -5240,9 +8397,19 @@
       "category": "nutrition"
     },
     {
+      "term": "vitamin F",
+      "plain": "An old name once given to the essential fatty acids, before scientists realized they were fats rather than true vitamins.",
+      "category": "nutrition"
+    },
+    {
       "term": "vitiligo",
       "plain": "a condition in which patches of skin lose their color",
       "category": "medical"
+    },
+    {
+      "term": "volatile",
+      "plain": "Describes a substance that easily evaporates or turns into a gas.",
+      "category": "chemistry"
     },
     {
       "term": "Wallach's Fibrous Dysplasia",
@@ -5260,9 +8427,47 @@
       "category": "nutrition"
     },
     {
+      "term": "white blood cell",
+      "plain": "A type of blood cell that fights off infection as part of the body's defense system.",
+      "category": "biology",
+      "aliases": [
+        "white blood cells",
+        "white cells"
+      ]
+    },
+    {
+      "term": "whooping cough",
+      "plain": "A very contagious infection that causes long, violent coughing fits ending in a whooping sound.",
+      "category": "medical",
+      "aliases": [
+        "pertussis"
+      ]
+    },
+    {
       "term": "Wilson's disease",
       "plain": "an inherited disorder in which copper builds up to toxic levels",
       "category": "medical"
+    },
+    {
+      "term": "witherite",
+      "plain": "A mineral made of barium carbonate, one of the natural ores that contain barium.",
+      "category": "geology"
+    },
+    {
+      "term": "World Health Organization",
+      "plain": "A global health agency that guides and coordinates health matters for countries around the world.",
+      "category": "general",
+      "aliases": [
+        "WHO"
+      ]
+    },
+    {
+      "term": "X-ray opacity",
+      "plain": "How strongly a material blocks X-rays, making it show up as a bright, solid shape on the film.",
+      "category": "physics",
+      "aliases": [
+        "X-ray opaque"
+      ]
     },
     {
       "term": "xanthine oxidase",
@@ -5275,6 +8480,11 @@
       "category": "medical"
     },
     {
+      "term": "yeast",
+      "plain": "A tiny single-celled fungus, some kinds of which can cause infections in the body.",
+      "category": "biology"
+    },
+    {
       "term": "yellow lupine",
       "plain": "a yellow-flowered plant in the bean and pea family",
       "category": "biology",
@@ -5284,9 +8494,47 @@
       ]
     },
     {
+      "term": "ytterbium",
+      "plain": "A soft, silvery rare-earth metal, one of the group Wallach links with yttrium.",
+      "category": "chemistry"
+    },
+    {
+      "term": "yttria",
+      "plain": "A white powder that is the oxide of the metal yttrium, once used as a starting material for separating rare-earth elements.",
+      "category": "chemistry"
+    },
+    {
+      "term": "yttrium",
+      "plain": "A silvery rare-earth metal that is often grouped and found together with the other rare earths.",
+      "category": "chemistry"
+    },
+    {
+      "term": "yttrium/ytterbium group",
+      "plain": "A cluster of closely related rare-earth elements that behave so alike in chemistry that they tend to be found and studied together.",
+      "category": "chemistry",
+      "aliases": [
+        "yttrium group",
+        "ytterbium group",
+        "yttrium ytterbium group"
+      ]
+    },
+    {
       "term": "zinc",
       "plain": "a mineral the body needs for healing, immunity, and many enzymes",
       "category": "nutrition"
+    },
+    {
+      "term": "zircon",
+      "plain": "A hard, sparkling mineral that contains zirconium and is often cut and polished into a gemstone.",
+      "category": "geology",
+      "aliases": [
+        "zircons"
+      ]
+    },
+    {
+      "term": "zirconium",
+      "plain": "A hard, silvery-grey metal element valued for resisting heat and rust.",
+      "category": "chemistry"
     },
     {
       "term": "Zumbani",

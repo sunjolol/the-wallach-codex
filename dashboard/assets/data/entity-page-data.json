@@ -27,6 +27,21 @@
         "rare-earths"
       ],
       "synonyms": [
+        "hydrogen",
+        "hydrogen element",
+        "hydrogen H",
+        "hydrogen gas",
+        "hydrogen atom",
+        "hydrogen peroxide",
+        "hydrogenated oils",
+        "hydrogen in the body",
+        "hydrogen ion",
+        "what is hydrogen",
+        "hidrogen",
+        "hydrogyn",
+        "hydrogen benefits",
+        "hydrogen supplement",
+        "hydrogen deficiency",
         "h2"
       ],
       "record": [
@@ -61,7 +76,8 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000147"
+            "WAL-CLM-IMMORT-000147",
+            "WAL-CLM-IMMORT-000391"
           ]
         },
         {
@@ -74,13 +90,32 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-IMMORT-000150",
-            "WAL-CLM-IMMORT-000152"
+            "WAL-CLM-IMMORT-000152",
+            "WAL-CLM-RARE-000383"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000392"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000153"
           ]
         },
         {
           "facet": "discovery",
           "claim_ids": [
             "WAL-CLM-IMMORT-000148"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000390"
           ]
         },
         {
@@ -119,6 +154,19 @@
         "immortality"
       ],
       "synonyms": [
+        "carbon",
+        "carbon element",
+        "element carbon",
+        "carbon C",
+        "carbon in the body",
+        "carbon based life",
+        "carbon based nutrients",
+        "organic carbon",
+        "carbon atom",
+        "what is carbon",
+        "carbon molecules",
+        "carbon supplement",
+        "carbon deficiency",
         "c",
         "carbon dioxide",
         "co2",
@@ -142,6 +190,19 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000049"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000283",
+            "WAL-CLM-EPIGEN-000395"
+          ]
+        },
+        {
           "facet": "stance",
           "claim_ids": [
             "WAL-CLM-IMMORT-000050"
@@ -164,7 +225,22 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "nitrogen",
+        "what is nitrogen",
+        "nitrogen in the body",
+        "nitrogen and protein",
+        "protein nitrogen",
+        "nitrogen balance",
+        "negative nitrogen balance",
+        "blood urea nitrogen",
+        "BUN test",
+        "nitrogen deficiency",
+        "nitrates and nitrites",
+        "amine group",
+        "nitrogen in food",
+        "what does nitrogen do"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -187,7 +263,39 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-RARE-000182"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000393",
+            "WAL-CLM-RARE-000185"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-LETS-000517"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-RARE-000384"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-RARE-000183"
+          ]
+        }
+      ],
       "conditions": [
         "edema",
         "infertility",
@@ -211,7 +319,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "oxygen",
+        "O2",
+        "oxygen therapy",
+        "hyperbaric oxygen",
+        "hyperbaric oxygen therapy",
+        "oxygen and cancer",
+        "does oxygen kill cancer cells",
+        "hydrogen peroxide therapy",
+        "oxygen supplement",
+        "oxygenation",
+        "is oxygen poisonous",
+        "oxygen free radicals",
+        "oxidation",
+        "oxygen benefits",
+        "increase oxygen in blood"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -244,7 +368,39 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000284"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000394",
+            "WAL-CLM-IMMORT-000396"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000397"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000395"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000398"
+          ]
+        }
+      ],
       "conditions": [
         "arteriosclerosis",
         "asthma",
@@ -4323,7 +4479,23 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "silica",
+        "silicon",
+        "silica supplement",
+        "silicon supplement",
+        "silica deficiency",
+        "silica benefits",
+        "silicon dioxide",
+        "SiO2",
+        "silica for hair skin and nails",
+        "silica for bones",
+        "silica for collagen",
+        "how much silica should i take",
+        "silica dosage",
+        "silica in food",
+        "silica for brittle nails"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -4345,7 +4517,50 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000399"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-RARE-000245"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000385"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000244"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000068"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000400"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-RARE-000246"
+          ]
+        }
+      ],
       "conditions": [
         "cardiovascular_disease"
       ],
@@ -4366,7 +4581,23 @@
         "dddl-3e-2011",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "strontium",
+        "what is strontium",
+        "strontium deficiency",
+        "strontium supplement",
+        "strontium benefits",
+        "strontium for bones",
+        "strontium for osteoporosis",
+        "do i need strontium",
+        "is strontium essential",
+        "strontium and calcium",
+        "strontium 90",
+        "strontium-90",
+        "is strontium radioactive",
+        "is strontium safe",
+        "strontium mineral"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -4382,7 +4613,39 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000033"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000032",
+            "WAL-CLM-RARE-000250"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000285"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000405"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000286"
+          ]
+        }
+      ],
       "conditions": [
         "arthritis",
         "osteoporosis"
@@ -4467,6 +4730,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5131,9 +5395,22 @@
         "rare-earths"
       ],
       "synonyms": [
-        "ag",
-        "argentum",
+        "silver",
+        "silver mineral",
+        "Ag",
         "colloidal silver",
+        "silver supplement",
+        "silver deficiency",
+        "silver benefits",
+        "silver dose",
+        "how much silver",
+        "silver for immune system",
+        "silver germ killer",
+        "silver nitrate",
+        "silver argyria",
+        "silver side effects",
+        "is silver essential",
+        "argentum",
         "silver sulfadiazine"
       ],
       "record": [
@@ -5175,9 +5452,43 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000027"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000030"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000028",
+            "WAL-CLM-RARE-000389"
+          ]
+        },
+        {
           "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000031"
+            "WAL-CLM-IMMORT-000031",
+            "WAL-CLM-RARE-000388",
+            "WAL-CLM-RARE-000390"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-RARE-000090"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000386",
+            "WAL-CLM-RARE-000387"
           ]
         }
       ],
@@ -5204,8 +5515,21 @@
         "rare-earths"
       ],
       "synonyms": [
-        "al",
-        "aluminium"
+        "aluminum",
+        "aluminium",
+        "aluminum",
+        "aluminum foil",
+        "aluminum deficiency",
+        "aluminum supplement",
+        "aluminum toxicity",
+        "aluminum poisoning",
+        "is aluminum safe",
+        "aluminum and alzheimer's",
+        "aluminum cookware",
+        "aluminum deodorant",
+        "aluminum in food",
+        "aluminum benefits",
+        "al"
       ],
       "record": [
         {
@@ -5224,15 +5548,53 @@
       ],
       "search": [
         {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000403"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000032"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000405"
+          ]
+        },
+        {
           "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000033"
+            "WAL-CLM-EPIGEN-000407",
+            "WAL-CLM-IMMORT-000033",
+            "WAL-CLM-IMMORT-000401"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000404"
           ]
         },
         {
           "facet": "big_question",
           "claim_ids": [
             "WAL-CLM-IMMORT-000034"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000406"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000391"
           ]
         }
       ],
@@ -5319,6 +5681,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5343,7 +5706,22 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "arsenic",
+        "arsenic mineral",
+        "arsenic deficiency",
+        "arsenic supplement",
+        "arsenic benefits",
+        "is arsenic essential",
+        "arsenic poison",
+        "arsenic poisoning",
+        "arsenic toxicity",
+        "arsenic symptoms",
+        "what is arsenic",
+        "arsenic trace mineral",
+        "arsenic for carpal tunnel",
+        "arsnic"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -5368,7 +5746,51 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000424"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-LETS-000144"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000037"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000434",
+            "WAL-CLM-IMMORT-000038"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-RARE-000396"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000433"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000432"
+          ]
+        }
+      ],
       "conditions": [
         "carpal_tunnel_syndrome",
         "tmj"
@@ -5456,6 +5878,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5480,7 +5903,20 @@
         "rare-earths"
       ],
       "synonyms": [
-        "au",
+        "gold",
+        "Au",
+        "gold supplement",
+        "gold benefits",
+        "gold deficiency",
+        "is gold good for you",
+        "gold mineral",
+        "gold for arthritis",
+        "gold shots",
+        "colloidal gold",
+        "edible gold",
+        "eating gold",
+        "gold in the body",
+        "gold element",
         "aurum"
       ],
       "record": [
@@ -5505,15 +5941,66 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000402"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000411",
+            "WAL-CLM-RARE-000097"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000067"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000408"
+          ]
+        },
+        {
           "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000041"
+            "WAL-CLM-IMMORT-000041",
+            "WAL-CLM-IMMORT-000404"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-RARE-000096"
           ]
         },
         {
           "facet": "stance",
           "claim_ids": [
             "WAL-CLM-IMMORT-000040"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-RARE-000392"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000403"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000409",
+            "WAL-CLM-EPIGEN-000410"
           ]
         }
       ],
@@ -5598,6 +6085,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5622,7 +6110,22 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "barium",
+        "Ba",
+        "barium mineral",
+        "barium supplement",
+        "barium deficiency",
+        "barium benefits",
+        "barium meal",
+        "barium enema",
+        "barium sulfate",
+        "barium X-ray",
+        "is barium essential",
+        "barrium",
+        "barium in the body",
+        "barium element"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -5638,7 +6141,56 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000044"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000100"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000430"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000069"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000417"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000429"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000428"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000395"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -5716,6 +6268,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5740,7 +6293,23 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "beryllium",
+        "berylium",
+        "berilium",
+        "beryllium mineral",
+        "beryllium metal",
+        "beryllium deficiency",
+        "beryllium supplement",
+        "beryllium benefits",
+        "is beryllium toxic",
+        "beryllium poisoning",
+        "berylliosis",
+        "glucinium",
+        "beryllium in the body",
+        "Be mineral",
+        "rare earth beryllium"
+      ],
       "record": [
         {
           "kind": "toxicity_sign",
@@ -5756,7 +6325,39 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000419"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000070",
+            "WAL-CLM-IMMORT-000045"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-RARE-000287"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000420"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000421"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -5834,6 +6435,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5858,7 +6460,22 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "bromine",
+        "bromine deficiency",
+        "bromine supplement",
+        "bromine benefits",
+        "is bromine essential",
+        "do i need bromine",
+        "bromine mineral",
+        "bromide",
+        "brominated amino acids",
+        "bromine function",
+        "bromine trace mineral",
+        "Br",
+        "bromin",
+        "bromine health"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -5874,7 +6491,39 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000047",
+            "WAL-CLM-IMMORT-000406"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000413"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000103"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000412"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000407"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -5952,6 +6601,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -5974,7 +6624,22 @@
       "books": [
         "epigenetics"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "cerium",
+        "cerium supplement",
+        "cerium benefits",
+        "cerium deficiency",
+        "what is cerium",
+        "cerium mineral",
+        "cerium rare earth",
+        "rare earth minerals",
+        "cerium nitrate",
+        "cerium for burns",
+        "Ce mineral",
+        "cerium element",
+        "serium",
+        "cerium in the body"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -5983,7 +6648,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000416"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000075"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000418"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000417"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000393"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -6061,6 +6757,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6086,7 +6783,20 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "cesium",
+        "caesium",
+        "cesium chloride",
+        "cesium chloride cancer",
+        "cesium cancer treatment",
+        "cesium for cancer",
+        "high pH therapy",
+        "cesium supplement",
+        "cesium benefits",
+        "cesium mineral",
+        "what is cesium",
+        "cesium element"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -6104,7 +6814,20 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000427"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000069"
+          ]
+        }
+      ],
       "conditions": [
         "cancer",
         "colon_cancer",
@@ -6192,6 +6915,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6215,7 +6939,22 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "dysprosium",
+        "Dy",
+        "disprosium",
+        "dysprosium mineral",
+        "dysprosium metal",
+        "dysprosium rare earth",
+        "rare earth minerals",
+        "dysprosium supplement",
+        "dysprosium benefits",
+        "dysprosium deficiency",
+        "what is dysprosium",
+        "dysprosium in the body",
+        "plant derived minerals",
+        "trace minerals"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -6225,7 +6964,32 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000442"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000288"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000443"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000079"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -6303,6 +7067,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6325,7 +7090,22 @@
       "books": [
         "epigenetics"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "erbium",
+        "erbium mineral",
+        "erbium rare earth",
+        "rare earth erbium",
+        "erbium deficiency",
+        "erbium supplement",
+        "erbium benefits",
+        "what is erbium",
+        "erbium element",
+        "Er mineral",
+        "erbium in the body",
+        "erbium metal",
+        "erbrium",
+        "erbium symbol Er"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -6334,7 +7114,20 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000424"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000080"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -6412,6 +7205,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6436,7 +7230,23 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "europium",
+        "europium mineral",
+        "europium rare earth",
+        "light rare earth",
+        "rare earth mineral",
+        "europium supplement",
+        "europium benefits",
+        "europium deficiency",
+        "what is europium",
+        "europium in the body",
+        "europium longevity",
+        "europium lifespan",
+        "europium breast milk",
+        "europeum",
+        "eu mineral"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -6452,7 +7262,27 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000425",
+            "WAL-CLM-IMMORT-000115"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000081"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000426"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -6530,6 +7360,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6555,8 +7386,21 @@
         "rare-earths"
       ],
       "synonyms": [
-        "ga",
-        "gallium-67"
+        "gallium",
+        "gallium metal",
+        "gallium supplement",
+        "gallium deficiency",
+        "gallium benefits",
+        "metal that melts in your hand",
+        "gallium maltolate",
+        "gallium-67",
+        "gallium element",
+        "gallium mineral",
+        "eka-aluminum",
+        "is gallium essential",
+        "gallium and brain cancer",
+        "gallium Ga",
+        "ga"
       ],
       "record": [
         {
@@ -6587,9 +7431,36 @@
           ]
         },
         {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000400"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000402"
+          ]
+        },
+        {
           "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000136"
+            "WAL-CLM-EPIGEN-000401",
+            "WAL-CLM-IMMORT-000135",
+            "WAL-CLM-IMMORT-000136",
+            "WAL-CLM-IMMORT-000389"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000084"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000388"
           ]
         }
       ],
@@ -6682,6 +7553,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6705,7 +7577,21 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "gadolinium",
+        "gadolinium supplement",
+        "gadolinium deficiency",
+        "gadolinium benefits",
+        "gadolinium mineral",
+        "rare earth minerals",
+        "gadolinium rare earth",
+        "gd mineral",
+        "what is gadolinium",
+        "gadolinium in the body",
+        "gadolineum",
+        "gadolinium wallach",
+        "gadolinium trace mineral"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -6715,7 +7601,14 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000085"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -6793,6 +7686,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6816,7 +7710,23 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "hafnium",
+        "hafnium mineral",
+        "hafnium supplement",
+        "hafnium benefits",
+        "hafnium deficiency",
+        "what is hafnium",
+        "hafnium metal",
+        "hafnium element",
+        "hafnium Hf",
+        "element 72",
+        "hafnium rare earth",
+        "hafnium trace mineral",
+        "hafnium and zirconium",
+        "hafnuim",
+        "haffnium"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -6826,7 +7736,20 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000456"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000457"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -6904,6 +7827,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -6927,7 +7851,23 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "holmium",
+        "what is holmium",
+        "holmium supplement",
+        "holmium benefits",
+        "holmium deficiency",
+        "holmium mineral",
+        "holmium rare earth",
+        "rare earth minerals",
+        "holmium element",
+        "do I need holmium",
+        "holmium trace mineral",
+        "holmium in the body",
+        "holium",
+        "holmiun",
+        "holmium Ho"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -6937,7 +7877,20 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000451"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000452"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -7015,6 +7968,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7039,7 +7993,23 @@
         "immortality",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "lanthanum",
+        "lanthanum La",
+        "La mineral",
+        "lanthanum deficiency",
+        "lanthanum supplement",
+        "lanthanum benefits",
+        "what is lanthanum",
+        "rare earth minerals",
+        "rare earths",
+        "light rare earth",
+        "lanthanum in the body",
+        "cerium metals",
+        "plant derived minerals",
+        "lanthinum",
+        "lanthanam"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -7051,7 +8021,27 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000414"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000415"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000095",
+            "WAL-CLM-RARE-000158"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [
@@ -7133,6 +8123,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7428,6 +8419,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7450,7 +8442,22 @@
       "books": [
         "epigenetics"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "lutetium",
+        "lutecium",
+        "Lu",
+        "lutetium supplement",
+        "lutetium deficiency",
+        "lutetium benefits",
+        "lutetium mineral",
+        "lutetium rare earth",
+        "rare earth element",
+        "cassiopium",
+        "what is lutetium",
+        "lutetium in the body",
+        "lutetium element",
+        "plant derived minerals"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -7459,7 +8466,26 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000097"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000426"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000425"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -7537,6 +8563,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7560,7 +8587,21 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "niobium",
+        "niobium deficiency",
+        "niobium supplement",
+        "niobium benefits",
+        "what is niobium",
+        "niobium mineral",
+        "niobium trace mineral",
+        "niobium rare earth",
+        "columbium",
+        "niobium Nb",
+        "is niobium essential",
+        "does the body need niobium",
+        "niobium in the body"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -7570,7 +8611,26 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000427"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000428"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000429"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -7648,6 +8708,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7671,7 +8732,21 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "neodymium",
+        "neodymium mineral",
+        "Nd",
+        "neodymium deficiency",
+        "neodymium supplement",
+        "neodymium benefits",
+        "light rare earth",
+        "rare earth minerals",
+        "neodymium magnets",
+        "what is neodymium",
+        "neodimium",
+        "neodymium trace mineral",
+        "neodymium Wallach"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -7681,7 +8756,32 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000104"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000420"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000418"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000419"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -7759,6 +8859,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7782,7 +8883,21 @@
         "epigenetics",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "nickel",
+        "Ni",
+        "nickle",
+        "nickel deficiency",
+        "nickel supplement",
+        "nickel benefits",
+        "nickel trace mineral",
+        "is nickel essential",
+        "do I need nickel",
+        "nickel in the body",
+        "nickel mineral",
+        "nickel and vitamin B12",
+        "what is nickel"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -7804,7 +8919,62 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000413"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-RARE-000193"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000192"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000194"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000416"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000105"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000415"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000414"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000394"
+          ]
+        }
+      ],
       "conditions": [
         "anemia",
         "dermatitis"
@@ -7893,6 +9063,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -7915,7 +9086,22 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "praseodymium",
+        "praseodymium supplement",
+        "praseodymium deficiency",
+        "praseodymium benefits",
+        "what is praseodymium",
+        "rare earth minerals",
+        "rare earth elements",
+        "light rare earth",
+        "praseodymium mineral",
+        "praseodymium in the body",
+        "praseodimium",
+        "praseodymium Wallach",
+        "Pr mineral",
+        "praseodymium bone and liver"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -7924,7 +9110,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000430"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000438"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000216"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000431"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000432"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8002,6 +9219,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8024,7 +9242,22 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "rubidium",
+        "Rb",
+        "rubidium mineral",
+        "rubidium element",
+        "rubidium trace mineral",
+        "rubidium deficiency",
+        "rubidium supplement",
+        "rubidium benefits",
+        "what is rubidium",
+        "rubidum",
+        "rubidium in the body",
+        "is rubidium essential",
+        "do I need rubidium",
+        "rubidium rare earth"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -8033,7 +9266,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000422"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000423"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000217"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000411"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000412"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8111,6 +9375,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8133,7 +9398,22 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "rhenium",
+        "rhenium mineral",
+        "rhenium deficiency",
+        "rhenium supplement",
+        "rhenium benefits",
+        "what is rhenium",
+        "rhenium element",
+        "rhenium trace mineral",
+        "renium",
+        "rhenium in the body",
+        "is rhenium essential",
+        "rhenium rare earth",
+        "rhenium metal",
+        "Re rhenium"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -8142,7 +9422,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000439"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000295"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000439"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000440"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000441"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8220,6 +9531,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8242,7 +9554,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "scandium",
+        "scandium mineral",
+        "scandium supplement",
+        "scandium benefits",
+        "scandium deficiency",
+        "what is scandium",
+        "scandium element",
+        "scandium rare earth",
+        "scandium trace mineral",
+        "Sc scandium",
+        "is scandium essential",
+        "does scandium accumulate in the body",
+        "scandium in the body",
+        "scandium Wallach",
+        "scandum"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -8251,7 +9579,32 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000436"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000296"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000437"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000438"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8329,6 +9682,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8351,7 +9705,22 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "samarium",
+        "sm",
+        "samerium",
+        "samariam",
+        "samarium supplement",
+        "samarium benefits",
+        "samarium deficiency",
+        "samarium rare earth",
+        "rare earth samarium",
+        "light rare earth element",
+        "samarium in the body",
+        "what is samarium",
+        "samarium mineral",
+        "rare earth minerals"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -8360,7 +9729,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000441"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000442"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000247"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000448"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000449"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8438,6 +9838,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8462,7 +9863,23 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "tin",
+        "Sn",
+        "tin mineral",
+        "tin deficiency",
+        "tin supplement",
+        "tin benefits",
+        "colloidal tin",
+        "liquid colloidal tin",
+        "plant derived tin",
+        "tin for hair loss",
+        "tin hair regrowth",
+        "does tin prevent cancer",
+        "tin and hearing loss",
+        "how much tin per day",
+        "tin trace mineral"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -8493,7 +9910,56 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000435"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000437"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000436"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000249"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000287"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000069"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-RARE-000248"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000397"
+          ]
+        }
+      ],
       "conditions": [
         "alopecia",
         "deafness",
@@ -8585,6 +10051,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8607,7 +10074,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "tantalum",
+        "what is tantalum",
+        "tantalum mineral",
+        "tantalum Ta",
+        "Ta element",
+        "tantalum deficiency",
+        "tantalum supplement",
+        "tantalum benefits",
+        "tantalum trace mineral",
+        "tantalum rare earth",
+        "tantalum essential mineral",
+        "tantalum uses",
+        "tantalum in the body",
+        "tantulum",
+        "tantalum plant derived mineral"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -8616,7 +10099,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-RARE-000297"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000455"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000071"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000453"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000454"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8694,6 +10208,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8716,7 +10231,22 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "terbium",
+        "terbium mineral",
+        "terbium supplement",
+        "terbium benefits",
+        "terbium deficiency",
+        "what is terbium",
+        "terbium rare earth",
+        "rare earth minerals",
+        "rare earth elements",
+        "terbium trace mineral",
+        "Tb mineral",
+        "terbium Wallach",
+        "terbrium",
+        "terbium in the body"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -8725,7 +10255,32 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000408"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000298"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000410"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000409"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8803,6 +10358,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8825,7 +10381,22 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "titanium",
+        "titanium mineral",
+        "titanium trace mineral",
+        "titanium supplement",
+        "titanium benefits",
+        "titanium deficiency",
+        "is titanium essential",
+        "do I need titanium",
+        "titanium in the body",
+        "titanium rare earth mineral",
+        "what is titanium",
+        "titanium element",
+        "titaniam",
+        "titanuim"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -8834,7 +10405,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000433"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-RARE-000299"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000435"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000070"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000434"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -8912,6 +10514,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -8934,7 +10537,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "thulium",
+        "thulium mineral",
+        "thulium rare earth",
+        "thulium supplement",
+        "thulium benefits",
+        "thulium deficiency",
+        "what is thulium",
+        "thulium Tm",
+        "Tm element",
+        "thulium metal",
+        "rare earth thulium",
+        "thullium",
+        "thulium element",
+        "does thulium make you live longer",
+        "thulium in the body"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -8943,7 +10562,44 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000444"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000440"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000251"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000447"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000445"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000446"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -9021,6 +10677,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -9043,7 +10700,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "yttrium",
+        "yttrium benefits",
+        "yttrium supplement",
+        "yttrium deficiency",
+        "what is yttrium",
+        "yttrium mineral",
+        "yttrium rare earth",
+        "rare earth minerals",
+        "rare earth elements",
+        "plant derived minerals",
+        "yttrium in the body",
+        "yttrium element",
+        "ytrium",
+        "yttrrium",
+        "yttrium metal"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -9053,7 +10726,39 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000421"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000431",
+            "WAL-CLM-RARE-000260"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000259"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000423"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000422"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -9131,6 +10836,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -9153,7 +10859,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "ytterbium",
+        "Yb",
+        "yterbium",
+        "ytterbium mineral",
+        "ytterbium element",
+        "ytterbium deficiency",
+        "ytterbium supplement",
+        "ytterbium benefits",
+        "ytterbium rare earth",
+        "rare earth minerals",
+        "ytterbium in the body",
+        "ytterbium in bone",
+        "plant derived minerals",
+        "what is ytterbium",
+        "ytterbium metals"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -9162,7 +10884,26 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000443"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000261"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000450"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -9240,6 +10981,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -9262,7 +11004,23 @@
       "books": [
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "zirconium",
+        "zirconium supplement",
+        "zirconium benefits",
+        "zirconium deficiency",
+        "zirconium mineral",
+        "Zr",
+        "zircon",
+        "zirconium silicate",
+        "rare earth minerals",
+        "zirconium in the body",
+        "is zirconium essential",
+        "zircon gemstone",
+        "zerconium",
+        "zirconium rare earth",
+        "zircon diamond substitute"
+      ],
       "record": [
         {
           "kind": "definition",
@@ -9271,7 +11029,44 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000458"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000300"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000072"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000459"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000460"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000461"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [],
@@ -9349,6 +11144,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000462",
             "WAL-CLM-RARE-000024"
           ]
         },
@@ -14316,7 +16112,23 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "omega-6",
+        "omega 6",
+        "omega6",
+        "omega six",
+        "omega-6 fatty acid",
+        "linoleic acid",
+        "omega-6 vs omega-3",
+        "omega 3 omega 6 balance",
+        "omega-6 deficiency",
+        "omega-6 supplement",
+        "omega-6 benefits",
+        "essential fatty acids",
+        "EFA",
+        "what is omega-6",
+        "linoleic acid omega 6"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -14349,7 +16161,27 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000396"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000398",
+            "WAL-CLM-EPIGEN-000399"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000397"
+          ]
+        }
+      ],
       "conditions": [
         "acne",
         "alopecia",
@@ -14392,9 +16224,38 @@
       "is_essential": false,
       "claim_count": 0,
       "books": [],
-      "synonyms": [],
+      "synonyms": [
+        "omega-9",
+        "omega 9",
+        "omega nine",
+        "omega-9 fatty acid",
+        "oleic acid",
+        "monounsaturated fat",
+        "monounsaturated fatty acid",
+        "omega 3 6 9",
+        "omega-9 benefits",
+        "omega-9 supplement",
+        "omega-9 sources",
+        "omega-9 foods",
+        "is omega-9 essential",
+        "what is omega-9",
+        "omega-9 in olive oil"
+      ],
       "record": [],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000394"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000067"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": []
@@ -21269,11 +23130,15 @@
       ],
       "search": [],
       "related_conditions": [
-        "urinary_tract_infection"
+        "urinary_tract_infection",
+        "shingles",
+        "tonsillitis"
       ],
       "related": [
         "hydrogen",
-        "urinary_tract_infection"
+        "urinary_tract_infection",
+        "shingles",
+        "tonsillitis"
       ]
     },
     "dandruff": {
@@ -28671,9 +30536,9 @@
         "arthritis",
         "cancer",
         "fatty_liver",
+        "kidney_disease",
         "alopecia",
-        "dementia",
-        "kidney_disease"
+        "dementia"
       ],
       "related": [
         "liver_cirrhosis",
@@ -28682,8 +30547,8 @@
         "cancer",
         "fatty_liver",
         "selenium",
-        "alopecia",
-        "dementia"
+        "kidney_disease",
+        "alopecia"
       ]
     },
     "lordosis": {
@@ -29134,8 +30999,11 @@
         }
       ],
       "search": [],
-      "related_conditions": [],
+      "related_conditions": [
+        "alopecia"
+      ],
       "related": [
+        "alopecia",
         "tin"
       ]
     },
@@ -34640,11 +36508,15 @@
       ],
       "search": [],
       "related_conditions": [
-        "chicken_pox"
+        "chicken_pox",
+        "cystitis",
+        "tonsillitis"
       ],
       "related": [
         "vitamin-e",
         "chicken_pox",
+        "cystitis",
+        "tonsillitis",
         "vitamin-b12",
         "vitamin-c",
         "zinc"
@@ -35234,6 +37106,7 @@
       ],
       "synonyms": [],
       "protocol_claim_ids": [
+        "WAL-CLM-IMMORT-000397",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000439",
         "WAL-CLM-RARE-000202"
@@ -36104,11 +37977,15 @@
       ],
       "search": [],
       "related_conditions": [
-        "earache"
+        "cystitis",
+        "earache",
+        "shingles"
       ],
       "related": [
+        "cystitis",
         "earache",
         "selenium",
+        "shingles",
         "vitamin-a",
         "vitamin-c",
         "zinc"

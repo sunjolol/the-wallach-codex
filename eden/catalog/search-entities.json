@@ -26,12 +26,29 @@
       "canon_ref": true,
       "type": "nutrient",
       "synonyms": [
-        "al",
-        "aluminium"
+        "aluminum",
+        "aluminium",
+        "aluminum",
+        "aluminum foil",
+        "aluminum deficiency",
+        "aluminum supplement",
+        "aluminum toxicity",
+        "aluminum poisoning",
+        "is aluminum safe",
+        "aluminum and alzheimer's",
+        "aluminum cookware",
+        "aluminum deodorant",
+        "aluminum in food",
+        "aluminum benefits",
+        "al"
       ],
       "related": [
-        "gallium",
         "alzheimers",
+        "birth_defects",
+        "cirrhosis",
+        "calcium",
+        "osteoporosis",
+        "gallium",
         "mercury"
       ]
     },
@@ -252,6 +269,19 @@
       "canon_ref": true,
       "type": "nutrient",
       "synonyms": [
+        "carbon",
+        "carbon element",
+        "element carbon",
+        "carbon C",
+        "carbon in the body",
+        "carbon based life",
+        "carbon based nutrients",
+        "organic carbon",
+        "carbon atom",
+        "what is carbon",
+        "carbon molecules",
+        "carbon supplement",
+        "carbon deficiency",
         "c",
         "carbon dioxide",
         "co2",
@@ -818,11 +848,27 @@
       "canon_ref": true,
       "type": "nutrient",
       "synonyms": [
-        "ga",
-        "gallium-67"
+        "gallium",
+        "gallium metal",
+        "gallium supplement",
+        "gallium deficiency",
+        "gallium benefits",
+        "metal that melts in your hand",
+        "gallium maltolate",
+        "gallium-67",
+        "gallium element",
+        "gallium mineral",
+        "eka-aluminum",
+        "is gallium essential",
+        "gallium and brain cancer",
+        "gallium Ga",
+        "ga"
       ],
       "related": [
         "aluminum",
+        "iron",
+        "brain_cancer",
+        "melanoma",
         "cancer",
         "germanium",
         "essential_nutrients",
@@ -897,13 +943,30 @@
       "canon_ref": true,
       "type": "nutrient",
       "synonyms": [
-        "au",
+        "gold",
+        "Au",
+        "gold supplement",
+        "gold benefits",
+        "gold deficiency",
+        "is gold good for you",
+        "gold mineral",
+        "gold for arthritis",
+        "gold shots",
+        "colloidal gold",
+        "edible gold",
+        "eating gold",
+        "gold in the body",
+        "gold element",
         "aurum"
       ],
       "related": [
-        "arthritis",
-        "cancer",
         "silver",
+        "mercury",
+        "copper",
+        "arthritis",
+        "rheumatoid_arthritis",
+        "lupus",
+        "cancer",
         "essential_nutrients",
         "colloidal_minerals"
       ]
@@ -1009,10 +1072,35 @@
       "canon_ref": true,
       "type": "nutrient",
       "synonyms": [
+        "hydrogen",
+        "hydrogen element",
+        "hydrogen H",
+        "hydrogen gas",
+        "hydrogen atom",
+        "hydrogen peroxide",
+        "hydrogenated oils",
+        "hydrogen in the body",
+        "hydrogen ion",
+        "what is hydrogen",
+        "hidrogen",
+        "hydrogyn",
+        "hydrogen benefits",
+        "hydrogen supplement",
+        "hydrogen deficiency",
         "h2"
       ],
       "related": [
         "oxygen",
+        "helium",
+        "cancer",
+        "acidosis",
+        "alkalosis",
+        "cystitis",
+        "urinary_tract_infection",
+        "arteriosclerosis",
+        "atherosclerosis",
+        "stroke",
+        "thrombosis",
         "water",
         "ph",
         "essential_nutrients"
@@ -1658,12 +1746,34 @@
       "canon_ref": true,
       "type": "nutrient",
       "synonyms": [
-        "ag",
-        "argentum",
+        "silver",
+        "silver mineral",
+        "Ag",
         "colloidal silver",
+        "silver supplement",
+        "silver deficiency",
+        "silver benefits",
+        "silver dose",
+        "how much silver",
+        "silver for immune system",
+        "silver germ killer",
+        "silver nitrate",
+        "silver argyria",
+        "silver side effects",
+        "is silver essential",
+        "argentum",
         "silver sulfadiazine"
       ],
       "related": [
+        "silver-nitrate",
+        "conjunctivitis",
+        "epilepsy",
+        "tonsillitis",
+        "cystitis",
+        "whooping_cough",
+        "shingles",
+        "cancer",
+        "immune_depression",
         "gold",
         "colloidal_minerals",
         "essential_nutrients"
@@ -3540,6 +3650,967 @@
         "vitamin-c",
         "vitamin-e",
         "zinc"
+      ]
+    },
+    "omega-9": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "omega-9",
+        "omega 9",
+        "omega nine",
+        "omega-9 fatty acid",
+        "oleic acid",
+        "monounsaturated fat",
+        "monounsaturated fatty acid",
+        "omega 3 6 9",
+        "omega-9 benefits",
+        "omega-9 supplement",
+        "omega-9 sources",
+        "omega-9 foods",
+        "is omega-9 essential",
+        "what is omega-9",
+        "omega-9 in olive oil"
+      ],
+      "related": [
+        "omega-3",
+        "omega-6",
+        "cholesterol"
+      ]
+    },
+    "omega-6": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "omega-6",
+        "omega 6",
+        "omega6",
+        "omega six",
+        "omega-6 fatty acid",
+        "linoleic acid",
+        "omega-6 vs omega-3",
+        "omega 3 omega 6 balance",
+        "omega-6 deficiency",
+        "omega-6 supplement",
+        "omega-6 benefits",
+        "essential fatty acids",
+        "EFA",
+        "what is omega-6",
+        "linoleic acid omega 6"
+      ],
+      "related": [
+        "omega-3",
+        "arachidonic-acid",
+        "gamma-linolenic-acid",
+        "docosahexaenoic-acid"
+      ]
+    },
+    "nitrogen": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "nitrogen",
+        "what is nitrogen",
+        "nitrogen in the body",
+        "nitrogen and protein",
+        "protein nitrogen",
+        "nitrogen balance",
+        "negative nitrogen balance",
+        "blood urea nitrogen",
+        "BUN test",
+        "nitrogen deficiency",
+        "nitrates and nitrites",
+        "amine group",
+        "nitrogen in food",
+        "what does nitrogen do"
+      ],
+      "related": [
+        "protein",
+        "amino-acids",
+        "phosphorus",
+        "iron",
+        "sulfur",
+        "cobalt",
+        "chromium",
+        "nitrates",
+        "nitrites",
+        "liver_disease",
+        "kidney_disease",
+        "cancer"
+      ]
+    },
+    "oxygen": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "oxygen",
+        "O2",
+        "oxygen therapy",
+        "hyperbaric oxygen",
+        "hyperbaric oxygen therapy",
+        "oxygen and cancer",
+        "does oxygen kill cancer cells",
+        "hydrogen peroxide therapy",
+        "oxygen supplement",
+        "oxygenation",
+        "is oxygen poisonous",
+        "oxygen free radicals",
+        "oxidation",
+        "oxygen benefits",
+        "increase oxygen in blood"
+      ],
+      "related": [
+        "cancer",
+        "stroke",
+        "water",
+        "germanium",
+        "hydrogen-peroxide",
+        "minerals"
+      ]
+    },
+    "silica": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "silica",
+        "silicon",
+        "silica supplement",
+        "silicon supplement",
+        "silica deficiency",
+        "silica benefits",
+        "silicon dioxide",
+        "SiO2",
+        "silica for hair skin and nails",
+        "silica for bones",
+        "silica for collagen",
+        "how much silica should i take",
+        "silica dosage",
+        "silica in food",
+        "silica for brittle nails"
+      ],
+      "related": [
+        "calcium",
+        "vanadium",
+        "lithium",
+        "nickel",
+        "cardiovascular_disease"
+      ]
+    },
+    "strontium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "strontium",
+        "what is strontium",
+        "strontium deficiency",
+        "strontium supplement",
+        "strontium benefits",
+        "strontium for bones",
+        "strontium for osteoporosis",
+        "do i need strontium",
+        "is strontium essential",
+        "strontium and calcium",
+        "strontium 90",
+        "strontium-90",
+        "is strontium radioactive",
+        "is strontium safe",
+        "strontium mineral"
+      ],
+      "related": [
+        "calcium",
+        "boron",
+        "osteoporosis",
+        "arthritis"
+      ]
+    },
+    "bromine": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "bromine",
+        "bromine deficiency",
+        "bromine supplement",
+        "bromine benefits",
+        "is bromine essential",
+        "do i need bromine",
+        "bromine mineral",
+        "bromide",
+        "brominated amino acids",
+        "bromine function",
+        "bromine trace mineral",
+        "Br",
+        "bromin",
+        "bromine health"
+      ],
+      "related": [
+        "iodine",
+        "mercury"
+      ]
+    },
+    "lanthanum": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "lanthanum",
+        "lanthanum La",
+        "La mineral",
+        "lanthanum deficiency",
+        "lanthanum supplement",
+        "lanthanum benefits",
+        "what is lanthanum",
+        "rare earth minerals",
+        "rare earths",
+        "light rare earth",
+        "lanthanum in the body",
+        "cerium metals",
+        "plant derived minerals",
+        "lanthinum",
+        "lanthanam"
+      ],
+      "related": [
+        "cerium",
+        "rare-earths",
+        "chronic_fatigue",
+        "candidiasis"
+      ]
+    },
+    "cerium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "cerium",
+        "cerium supplement",
+        "cerium benefits",
+        "cerium deficiency",
+        "what is cerium",
+        "cerium mineral",
+        "cerium rare earth",
+        "rare earth minerals",
+        "cerium nitrate",
+        "cerium for burns",
+        "Ce mineral",
+        "cerium element",
+        "serium",
+        "cerium in the body"
+      ],
+      "related": [
+        "calcium",
+        "rare-earths"
+      ]
+    },
+    "beryllium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "beryllium",
+        "berylium",
+        "berilium",
+        "beryllium mineral",
+        "beryllium metal",
+        "beryllium deficiency",
+        "beryllium supplement",
+        "beryllium benefits",
+        "is beryllium toxic",
+        "beryllium poisoning",
+        "berylliosis",
+        "glucinium",
+        "beryllium in the body",
+        "Be mineral",
+        "rare earth beryllium"
+      ],
+      "related": [
+        "calcium",
+        "magnesium",
+        "hafnium",
+        "scandium",
+        "zirconium",
+        "berylliosis"
+      ]
+    },
+    "terbium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "terbium",
+        "terbium mineral",
+        "terbium supplement",
+        "terbium benefits",
+        "terbium deficiency",
+        "what is terbium",
+        "terbium rare earth",
+        "rare earth minerals",
+        "rare earth elements",
+        "terbium trace mineral",
+        "Tb mineral",
+        "terbium Wallach",
+        "terbrium",
+        "terbium in the body"
+      ],
+      "related": [
+        "yttrium",
+        "thorium"
+      ]
+    },
+    "rubidium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "rubidium",
+        "Rb",
+        "rubidium mineral",
+        "rubidium element",
+        "rubidium trace mineral",
+        "rubidium deficiency",
+        "rubidium supplement",
+        "rubidium benefits",
+        "what is rubidium",
+        "rubidum",
+        "rubidium in the body",
+        "is rubidium essential",
+        "do I need rubidium",
+        "rubidium rare earth"
+      ],
+      "related": [
+        "potassium",
+        "cesium"
+      ]
+    },
+    "nickel": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "nickel",
+        "Ni",
+        "nickle",
+        "nickel deficiency",
+        "nickel supplement",
+        "nickel benefits",
+        "nickel trace mineral",
+        "is nickel essential",
+        "do I need nickel",
+        "nickel in the body",
+        "nickel mineral",
+        "nickel and vitamin B12",
+        "what is nickel"
+      ],
+      "related": [
+        "iron",
+        "zinc",
+        "cobalt",
+        "cadmium",
+        "vitamin-b12",
+        "epilepsy",
+        "anemia",
+        "dermatitis"
+      ]
+    },
+    "erbium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "erbium",
+        "erbium mineral",
+        "erbium rare earth",
+        "rare earth erbium",
+        "erbium deficiency",
+        "erbium supplement",
+        "erbium benefits",
+        "what is erbium",
+        "erbium element",
+        "Er mineral",
+        "erbium in the body",
+        "erbium metal",
+        "erbrium",
+        "erbium symbol Er"
+      ],
+      "related": [
+        "rare-earths",
+        "vanadium",
+        "terbium",
+        "yttrium",
+        "ytterbium",
+        "dysprosium",
+        "holmium",
+        "thulium",
+        "lutetium"
+      ]
+    },
+    "europium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "europium",
+        "europium mineral",
+        "europium rare earth",
+        "light rare earth",
+        "rare earth mineral",
+        "europium supplement",
+        "europium benefits",
+        "europium deficiency",
+        "what is europium",
+        "europium in the body",
+        "europium longevity",
+        "europium lifespan",
+        "europium breast milk",
+        "europeum",
+        "eu mineral"
+      ],
+      "related": [
+        "gadolinium",
+        "terbium",
+        "erbium",
+        "dysprosium"
+      ]
+    },
+    "cesium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "cesium",
+        "caesium",
+        "cesium chloride",
+        "cesium chloride cancer",
+        "cesium cancer treatment",
+        "cesium for cancer",
+        "high pH therapy",
+        "cesium supplement",
+        "cesium benefits",
+        "cesium mineral",
+        "what is cesium",
+        "cesium element"
+      ],
+      "related": [
+        "potassium",
+        "sodium",
+        "rubidium",
+        "cancer",
+        "colon_cancer",
+        "sarcoma",
+        "lung_cancer"
+      ]
+    },
+    "barium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "barium",
+        "Ba",
+        "barium mineral",
+        "barium supplement",
+        "barium deficiency",
+        "barium benefits",
+        "barium meal",
+        "barium enema",
+        "barium sulfate",
+        "barium X-ray",
+        "is barium essential",
+        "barrium",
+        "barium in the body",
+        "barium element"
+      ],
+      "related": [
+        "tuberculosis"
+      ]
+    },
+    "neodymium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "neodymium",
+        "neodymium mineral",
+        "Nd",
+        "neodymium deficiency",
+        "neodymium supplement",
+        "neodymium benefits",
+        "light rare earth",
+        "rare earth minerals",
+        "neodymium magnets",
+        "what is neodymium",
+        "neodimium",
+        "neodymium trace mineral",
+        "neodymium Wallach"
+      ],
+      "related": [
+        "praseodymium",
+        "cerium",
+        "samarium",
+        "lanthanum"
+      ]
+    },
+    "yttrium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "yttrium",
+        "yttrium benefits",
+        "yttrium supplement",
+        "yttrium deficiency",
+        "what is yttrium",
+        "yttrium mineral",
+        "yttrium rare earth",
+        "rare earth minerals",
+        "rare earth elements",
+        "plant derived minerals",
+        "yttrium in the body",
+        "yttrium element",
+        "ytrium",
+        "yttrrium",
+        "yttrium metal"
+      ],
+      "related": [
+        "ytterbium"
+      ]
+    },
+    "arsenic": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "arsenic",
+        "arsenic mineral",
+        "arsenic deficiency",
+        "arsenic supplement",
+        "arsenic benefits",
+        "is arsenic essential",
+        "arsenic poison",
+        "arsenic poisoning",
+        "arsenic toxicity",
+        "arsenic symptoms",
+        "what is arsenic",
+        "arsenic trace mineral",
+        "arsenic for carpal tunnel",
+        "arsnic"
+      ],
+      "related": [
+        "sulfur",
+        "arsenic-trioxide",
+        "manganese",
+        "choline",
+        "carpal_tunnel_syndrome",
+        "tmj",
+        "leukemia",
+        "arsenic_toxicity",
+        "psoriasis",
+        "syphilis",
+        "cancer"
+      ]
+    },
+    "tin": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "tin",
+        "Sn",
+        "tin mineral",
+        "tin deficiency",
+        "tin supplement",
+        "tin benefits",
+        "colloidal tin",
+        "liquid colloidal tin",
+        "plant derived tin",
+        "tin for hair loss",
+        "tin hair regrowth",
+        "does tin prevent cancer",
+        "tin and hearing loss",
+        "how much tin per day",
+        "tin trace mineral"
+      ],
+      "related": [
+        "silica",
+        "germanium",
+        "manganese",
+        "male_pattern_baldness",
+        "alopecia",
+        "deafness",
+        "cancer"
+      ]
+    },
+    "lutetium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "lutetium",
+        "lutecium",
+        "Lu",
+        "lutetium supplement",
+        "lutetium deficiency",
+        "lutetium benefits",
+        "lutetium mineral",
+        "lutetium rare earth",
+        "rare earth element",
+        "cassiopium",
+        "what is lutetium",
+        "lutetium in the body",
+        "lutetium element",
+        "plant derived minerals"
+      ],
+      "related": [
+        "ytterbium",
+        "yttrium"
+      ]
+    },
+    "niobium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "niobium",
+        "niobium deficiency",
+        "niobium supplement",
+        "niobium benefits",
+        "what is niobium",
+        "niobium mineral",
+        "niobium trace mineral",
+        "niobium rare earth",
+        "columbium",
+        "niobium Nb",
+        "is niobium essential",
+        "does the body need niobium",
+        "niobium in the body"
+      ],
+      "related": [
+        "iron",
+        "manganese",
+        "tantalum"
+      ]
+    },
+    "praseodymium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "praseodymium",
+        "praseodymium supplement",
+        "praseodymium deficiency",
+        "praseodymium benefits",
+        "what is praseodymium",
+        "rare earth minerals",
+        "rare earth elements",
+        "light rare earth",
+        "praseodymium mineral",
+        "praseodymium in the body",
+        "praseodimium",
+        "praseodymium Wallach",
+        "Pr mineral",
+        "praseodymium bone and liver"
+      ],
+      "related": [
+        "neodymium",
+        "cerium",
+        "rare-earths"
+      ]
+    },
+    "titanium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "titanium",
+        "titanium mineral",
+        "titanium trace mineral",
+        "titanium supplement",
+        "titanium benefits",
+        "titanium deficiency",
+        "is titanium essential",
+        "do I need titanium",
+        "titanium in the body",
+        "titanium rare earth mineral",
+        "what is titanium",
+        "titanium element",
+        "titaniam",
+        "titanuim"
+      ],
+      "related": []
+    },
+    "scandium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "scandium",
+        "scandium mineral",
+        "scandium supplement",
+        "scandium benefits",
+        "scandium deficiency",
+        "what is scandium",
+        "scandium element",
+        "scandium rare earth",
+        "scandium trace mineral",
+        "Sc scandium",
+        "is scandium essential",
+        "does scandium accumulate in the body",
+        "scandium in the body",
+        "scandium Wallach",
+        "scandum"
+      ],
+      "related": [
+        "beryllium",
+        "hafnium",
+        "thorium",
+        "zirconium"
+      ]
+    },
+    "rhenium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "rhenium",
+        "rhenium mineral",
+        "rhenium deficiency",
+        "rhenium supplement",
+        "rhenium benefits",
+        "what is rhenium",
+        "rhenium element",
+        "rhenium trace mineral",
+        "renium",
+        "rhenium in the body",
+        "is rhenium essential",
+        "rhenium rare earth",
+        "rhenium metal",
+        "Re rhenium"
+      ],
+      "related": [
+        "molybdenum",
+        "thyroid"
+      ]
+    },
+    "gadolinium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "gadolinium",
+        "gadolinium supplement",
+        "gadolinium deficiency",
+        "gadolinium benefits",
+        "gadolinium mineral",
+        "rare earth minerals",
+        "gadolinium rare earth",
+        "gd mineral",
+        "what is gadolinium",
+        "gadolinium in the body",
+        "gadolineum",
+        "gadolinium wallach",
+        "gadolinium trace mineral"
+      ],
+      "related": [
+        "germanium",
+        "gallium",
+        "europium",
+        "terbium",
+        "samarium"
+      ]
+    },
+    "dysprosium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "dysprosium",
+        "Dy",
+        "disprosium",
+        "dysprosium mineral",
+        "dysprosium metal",
+        "dysprosium rare earth",
+        "rare earth minerals",
+        "dysprosium supplement",
+        "dysprosium benefits",
+        "dysprosium deficiency",
+        "what is dysprosium",
+        "dysprosium in the body",
+        "plant derived minerals",
+        "trace minerals"
+      ],
+      "related": [
+        "erbium",
+        "holmium",
+        "yttrium",
+        "ytterbium",
+        "thulium",
+        "lutetium"
+      ]
+    },
+    "thulium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "thulium",
+        "thulium mineral",
+        "thulium rare earth",
+        "thulium supplement",
+        "thulium benefits",
+        "thulium deficiency",
+        "what is thulium",
+        "thulium Tm",
+        "Tm element",
+        "thulium metal",
+        "rare earth thulium",
+        "thullium",
+        "thulium element",
+        "does thulium make you live longer",
+        "thulium in the body"
+      ],
+      "related": [
+        "ytterbium",
+        "yttrium",
+        "erbium",
+        "dysprosium",
+        "thorium"
+      ]
+    },
+    "samarium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "samarium",
+        "sm",
+        "samerium",
+        "samariam",
+        "samarium supplement",
+        "samarium benefits",
+        "samarium deficiency",
+        "samarium rare earth",
+        "rare earth samarium",
+        "light rare earth element",
+        "samarium in the body",
+        "what is samarium",
+        "samarium mineral",
+        "rare earth minerals"
+      ],
+      "related": [
+        "rare-earths"
+      ]
+    },
+    "ytterbium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "ytterbium",
+        "Yb",
+        "yterbium",
+        "ytterbium mineral",
+        "ytterbium element",
+        "ytterbium deficiency",
+        "ytterbium supplement",
+        "ytterbium benefits",
+        "ytterbium rare earth",
+        "rare earth minerals",
+        "ytterbium in the body",
+        "ytterbium in bone",
+        "plant derived minerals",
+        "what is ytterbium",
+        "ytterbium metals"
+      ],
+      "related": [
+        "yttrium",
+        "dysprosium",
+        "holmium",
+        "erbium",
+        "thulium",
+        "lutetium",
+        "thorium",
+        "calcium"
+      ]
+    },
+    "holmium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "holmium",
+        "what is holmium",
+        "holmium supplement",
+        "holmium benefits",
+        "holmium deficiency",
+        "holmium mineral",
+        "holmium rare earth",
+        "rare earth minerals",
+        "holmium element",
+        "do I need holmium",
+        "holmium trace mineral",
+        "holmium in the body",
+        "holium",
+        "holmiun",
+        "holmium Ho"
+      ],
+      "related": [
+        "dysprosium",
+        "erbium",
+        "thulium",
+        "yttrium",
+        "ytterbium",
+        "lutetium"
+      ]
+    },
+    "tantalum": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "tantalum",
+        "what is tantalum",
+        "tantalum mineral",
+        "tantalum Ta",
+        "Ta element",
+        "tantalum deficiency",
+        "tantalum supplement",
+        "tantalum benefits",
+        "tantalum trace mineral",
+        "tantalum rare earth",
+        "tantalum essential mineral",
+        "tantalum uses",
+        "tantalum in the body",
+        "tantulum",
+        "tantalum plant derived mineral"
+      ],
+      "related": [
+        "niobium"
+      ]
+    },
+    "hafnium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "hafnium",
+        "hafnium mineral",
+        "hafnium supplement",
+        "hafnium benefits",
+        "hafnium deficiency",
+        "what is hafnium",
+        "hafnium metal",
+        "hafnium element",
+        "hafnium Hf",
+        "element 72",
+        "hafnium rare earth",
+        "hafnium trace mineral",
+        "hafnium and zirconium",
+        "hafnuim",
+        "haffnium"
+      ],
+      "related": [
+        "zirconium",
+        "beryllium",
+        "scandium",
+        "thorium"
+      ]
+    },
+    "zirconium": {
+      "type": "nutrient",
+      "canon_ref": true,
+      "synonyms": [
+        "zirconium",
+        "zirconium supplement",
+        "zirconium benefits",
+        "zirconium deficiency",
+        "zirconium mineral",
+        "Zr",
+        "zircon",
+        "zirconium silicate",
+        "rare earth minerals",
+        "zirconium in the body",
+        "is zirconium essential",
+        "zircon gemstone",
+        "zerconium",
+        "zirconium rare earth",
+        "zircon diamond substitute"
+      ],
+      "related": [
+        "hafnium",
+        "scandium",
+        "thorium",
+        "beryllium",
+        "rare-earths"
       ]
     }
   }
