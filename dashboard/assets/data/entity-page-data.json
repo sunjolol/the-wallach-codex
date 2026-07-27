@@ -1581,7 +1581,34 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "boron",
+        "boron deficiency",
+        "boron supplement",
+        "boron supplements",
+        "boron dose",
+        "boron dosage",
+        "how much boron",
+        "boron benefits",
+        "boron for bones",
+        "boron for osteoporosis",
+        "boron for arthritis",
+        "boron for testosterone",
+        "boron testosterone",
+        "boron estrogen",
+        "boron for hormones",
+        "is boron safe",
+        "boron toxicity",
+        "borax",
+        "boric acid",
+        "sodium borate",
+        "diamond boron",
+        "20 mule team borax",
+        "boron neutron capture",
+        "bortezomib",
+        "borom",
+        "boaron"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -1620,7 +1647,72 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000351"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000315"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000238",
+            "WAL-CLM-IMMORT-000043"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000312"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000352"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000313",
+            "WAL-CLM-EPIGEN-000314",
+            "WAL-CLM-RARE-000362"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000316"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000354"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000318"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000317",
+            "WAL-CLM-IMMORT-000353"
+          ]
+        }
+      ],
       "conditions": [
         "arthritis",
         "bone_spurs",
@@ -1654,11 +1746,45 @@
         "rare-earths"
       ],
       "synonyms": [
+        "cobalt",
+        "cobalt deficiency",
+        "cobalt supplement",
+        "cobalt mineral",
+        "cobalt trace mineral",
+        "trace mineral cobalt",
+        "cobalt benefits",
+        "cobalt in food",
+        "cobalt foods",
+        "cobalt rich foods",
+        "cobalt sources",
+        "cobalt dose",
+        "cobalt dosage",
+        "cobalt and b12",
+        "cobalt b12",
+        "cobalt vitamin b12",
+        "vitamin b12 cobalt",
+        "cobalt toxicity",
+        "too much cobalt",
+        "cobalt overdose",
+        "cobalt excess",
+        "cobalt deficiency symptoms",
+        "cobalt for anemia",
+        "cobalt pernicious anemia",
+        "cobalt Co",
+        "Co mineral",
+        "cobalt blue",
+        "is cobalt magnetic",
+        "cobalamin",
+        "cobalamine",
+        "cyanocobalamine",
+        "kobald",
+        "kobalt",
+        "cobolt",
+        "cobalt element",
+        "bush sickness",
         "co",
         "vitamin b12",
-        "b12",
-        "cobalamin",
-        "cyanocobalamine"
+        "b12"
       ],
       "record": [
         {
@@ -1696,6 +1822,28 @@
       ],
       "search": [
         {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000355"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000083",
+            "WAL-CLM-IMMORT-000359"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000239",
+            "WAL-CLM-IMMORT-000079",
+            "WAL-CLM-IMMORT-000356",
+            "WAL-CLM-IMMORT-000357"
+          ]
+        },
+        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-IMMORT-000081",
@@ -1705,7 +1853,35 @@
         {
           "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000086"
+            "WAL-CLM-IMMORT-000086",
+            "WAL-CLM-IMMORT-000358",
+            "WAL-CLM-RARE-000363"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000084"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000360"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000082"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000319",
+            "WAL-CLM-IMMORT-000361",
+            "WAL-CLM-IMMORT-000362"
           ]
         }
       ],
@@ -2392,8 +2568,31 @@
         "rare-earths"
       ],
       "synonyms": [
-        "ge",
-        "ge-132"
+        "germanium",
+        "germanium deficiency",
+        "germanium supplement",
+        "germanium supplements",
+        "organic germanium",
+        "GE-132",
+        "Ge-132",
+        "germanium 132",
+        "germanium sesquioxide",
+        "carboxyethyl germanium sesquioxide",
+        "Ge",
+        "eka-silicon",
+        "germanium mineral",
+        "germanium metalloid",
+        "germanium dose",
+        "how much germanium",
+        "germanium for cancer",
+        "germanium and oxygen",
+        "germanium immune",
+        "foods with germanium",
+        "germanuim",
+        "germainium",
+        "germenium",
+        "germaneum",
+        "germanim"
       ],
       "record": [
         {
@@ -2447,12 +2646,22 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000138"
+            "WAL-CLM-DDDL-000227",
+            "WAL-CLM-IMMORT-000138",
+            "WAL-CLM-IMMORT-000346"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000086"
           ]
         },
         {
           "facet": "mechanism",
           "claim_ids": [
+            "WAL-CLM-DDDL-000228",
+            "WAL-CLM-DDDL-000229",
             "WAL-CLM-IMMORT-000141",
             "WAL-CLM-IMMORT-000143"
           ]
@@ -2460,12 +2669,34 @@
         {
           "facet": "sources",
           "claim_ids": [
+            "WAL-CLM-DDDL-000230",
+            "WAL-CLM-EPIGEN-000309",
             "WAL-CLM-IMMORT-000144"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000231"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000011",
+            "WAL-CLM-DDDL-000232"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000310"
           ]
         },
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-DDDL-000233",
             "WAL-CLM-IMMORT-000142",
             "WAL-CLM-IMMORT-000146"
           ]
@@ -2960,7 +3191,48 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "manganese",
+        "Mn",
+        "maganese",
+        "manganeze",
+        "mangenese",
+        "mangnese",
+        "magnese",
+        "manganese deficiency",
+        "manganese supplement",
+        "manganese supplements",
+        "manganese benefits",
+        "manganese dosage",
+        "how much manganese",
+        "manganese daily dose",
+        "colloidal manganese",
+        "plant derived manganese",
+        "manganese toxicity",
+        "manganese poisoning",
+        "too much manganese",
+        "manganese overdose",
+        "trace mineral manganese",
+        "manganese foods",
+        "foods high in manganese",
+        "manganese for joints",
+        "manganese for arthritis",
+        "manganese for carpal tunnel",
+        "manganese carpal tunnel",
+        "manganese hearing loss",
+        "manganese for asthma",
+        "manganese for seizures",
+        "manganese epilepsy",
+        "manganese fertility",
+        "manganese libido",
+        "permanganate",
+        "potassium permanganate",
+        "permanganate of potash",
+        "pyrolusite",
+        "locura manganica",
+        "manganese vs magnesium",
+        "manganese ringing ears"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -3022,7 +3294,74 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-RARE-000360"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000026",
+            "WAL-CLM-LETS-000017",
+            "WAL-CLM-RARE-000175"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000234",
+            "WAL-CLM-EPIGEN-000311",
+            "WAL-CLM-IMMORT-000348",
+            "WAL-CLM-IMMORT-000349"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000347"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000056"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000235",
+            "WAL-CLM-DDDL-000236"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000134"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000237"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000350"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000361"
+          ]
+        }
+      ],
       "conditions": [
         "asthma",
         "atherosclerosis",
@@ -3070,7 +3409,34 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "molybdenum",
+        "molybdenum deficiency",
+        "molybdenum supplement",
+        "molybdenum dose",
+        "molybdenum dosage",
+        "molybdenum benefits",
+        "molybdenum foods",
+        "molybdenum rich foods",
+        "molybdenum toxicity",
+        "molybdenum overdose",
+        "too much molybdenum",
+        "molybdenum side effects",
+        "molybdenum RDA",
+        "molybdenum enzyme",
+        "molybdenum and gout",
+        "molybdenum goiter",
+        "trace mineral molybdenum",
+        "moly",
+        "molybdenite",
+        "Mo",
+        "molybdenum",
+        "molybdenm",
+        "molybdenium",
+        "molibdenum",
+        "molybenum",
+        "molybdnum"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -3100,7 +3466,60 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000368"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000369",
+            "WAL-CLM-IMMORT-000370"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000241",
+            "WAL-CLM-HELLS-000057"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000100"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000133",
+            "WAL-CLM-LETS-000058",
+            "WAL-CLM-RARE-000180"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-RARE-000366"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000371"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000058"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [
@@ -3644,7 +4063,47 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vanadium",
+        "vanadium deficiency",
+        "vanadium supplement",
+        "vanadium supplements",
+        "vanadium mineral",
+        "trace mineral vanadium",
+        "vanadyl",
+        "vanadyl sulfate",
+        "vanadium chelate",
+        "chelated vanadium",
+        "colloidal vanadium",
+        "plant derived vanadium",
+        "vanadium dose",
+        "vanadium dosage",
+        "how much vanadium",
+        "vanadium for diabetes",
+        "vanadium for blood sugar",
+        "vanadium and insulin",
+        "vanadium for hypoglycemia",
+        "vanadium for low blood sugar",
+        "vanadium for weight loss",
+        "vanadium and cholesterol",
+        "vanadium and cancer",
+        "vanadium benefits",
+        "vanadinite",
+        "vanadis",
+        "vanadum",
+        "vanadiam",
+        "vandium",
+        "vanadim",
+        "venadium",
+        "vanadium deficency",
+        "sugar cravings",
+        "candy cravings",
+        "carb cravings",
+        "chocolate cravings",
+        "the munchies",
+        "craving sweets",
+        "always craving soda"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -3720,7 +4179,81 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000222",
+            "WAL-CLM-DDDL-000223"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000226"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000344",
+            "WAL-CLM-RARE-000081"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000055"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000224"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000035",
+            "WAL-CLM-EPIGEN-000307",
+            "WAL-CLM-RARE-000256"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000225",
+            "WAL-CLM-EPIGEN-000138"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000047",
+            "WAL-CLM-LETS-000513"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000308"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000345"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000358",
+            "WAL-CLM-RARE-000359"
+          ]
+        }
+      ],
       "conditions": [
         "anxiety",
         "bedwetting",
@@ -6197,7 +6730,36 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "lithium",
+        "Li",
+        "lithium deficiency",
+        "low lithium",
+        "lithium supplement",
+        "lithium supplementation",
+        "chelated lithium",
+        "colloidal lithium",
+        "plant derived colloidal lithium",
+        "lithium carbonate",
+        "lithium salts",
+        "lithium mineral",
+        "trace mineral lithium",
+        "natural lithium",
+        "lithium orotate",
+        "lithia",
+        "lithium water",
+        "lithium in water",
+        "lithium levels",
+        "lithium for depression",
+        "lithium for mood",
+        "lithium for bipolar",
+        "lithium and depression",
+        "lithium and crime",
+        "does lithium help depression",
+        "lithuim",
+        "lithim",
+        "litheum"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -6265,7 +6827,77 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000363",
+            "WAL-CLM-IMMORT-000364"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-RARE-000167"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000200",
+            "WAL-CLM-IMMORT-000202"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000365"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000240"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000199"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000366"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-RARE-000029"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-RARE-000365"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000367"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000041",
+            "WAL-CLM-RARE-000364"
+          ]
+        }
+      ],
       "conditions": [
         "adhd",
         "anorexia",

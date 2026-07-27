@@ -1805,6 +1805,144 @@
       "extracted_at": "2026-07-27T00:10:09+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000055",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that when dietary or supplemental chromium and vanadium are absent or insufficient, blood glucose is converted into blood lipids and body fat rather than being efficiently burned for energy. The concurrent deficiencies of chromium, vanadium, and other minerals produce ravenous hunger, cravings, binge eating, pica, and the munchies. He identifies this combination as a basic root cause of obesity.",
+      "verbatim": "The absence of or insufficient levels of dietary or supplemental \nchromium and vanadium, results in blood glucose being converted \ninto blood lipids and body fat, rather than efficiently being burned \nfor energy. The concurrent deficiencies chromium, vanadium and \nother minerals results in ravenous hunger, cravings, binge eating, \npica, cribbing and the munchies.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 450540
+      },
+      "dose": null,
+      "tags": [
+        "vanadium",
+        "weight gain",
+        "obesity",
+        "fat storage",
+        "cravings",
+        "metabolism",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:51:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000056",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Among nuts, hazelnuts (filberts) are an outstanding source of manganese. Wallach notes that 24 hazelnuts provide ninety percent of the USDA recommended daily value of manganese, along with twenty percent of the daily value for vitamin E. A one-ounce serving of 20 nuts carries 180 calories and 17 grams of fat, making hazelnuts an easy whole-food way to boost manganese intake.",
+      "verbatim": "Hazelnuts (Filberts): 24 nuts provide twenty percent of the \nUSDA recommended daily value of vitamin E and ninety percent of \nthe manganese.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 555493
+      },
+      "dose": null,
+      "tags": [
+        "manganese",
+        "food-sources",
+        "nuts",
+        "nutrition",
+        "food_source",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:51:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000057",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In a table of elements required by plants for optimal health, Wallach classes molybdenum as a micronutrient - one of the trace elements that plants need in small amounts, alongside iron, chlorine, copper, zinc, boron, and manganese. These micronutrients are distinguished from the macronutrients plants need in larger quantities, such as nitrogen, phosphorus, and potassium.",
+      "verbatim": "Elements Required by Plants for Optimal Health \nMacronutrients \nNitrogen (N) \nPhosphorus (P) \nPotassium (K) \nCalcium \nMagnesium \nSulfur \nMicronutrients \nIron \nChlorine \nCopper \nZinc \nBoron \nManganese \nMolybdenum",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 390349
+      },
+      "dose": null,
+      "tags": [
+        "molybdenum",
+        "minerals",
+        "plants",
+        "agriculture",
+        "definition",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:51:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000058",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach recounts a National Cancer Institute study in Henan Province, China, in which molybdenum was one of the nutrients tested against cancer. He reports that vitamin C, retinol, zinc, riboflavin, molybdenum, and niacin had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking beta carotene, vitamin E, and selenium saw dramatically positive results, including 13 percent fewer deaths from all cancers.",
+      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, ribofla- \nvin, molybdenum and niacin had no statistically significant (protec- \ntive) effect on cancer deaths after five years.”",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 312961
+      },
+      "dose": null,
+      "tags": [
+        "molybdenum",
+        "cancer",
+        "antioxidants",
+        "research",
+        "quote",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:51:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

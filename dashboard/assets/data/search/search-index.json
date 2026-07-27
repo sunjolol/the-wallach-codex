@@ -244,6 +244,50 @@
       "claim_count": 1,
       "symbol": "Bi"
     },
+    "boron": {
+      "display_name": "Boron",
+      "common_name": "Boron",
+      "type": "nutrient",
+      "synonyms": [
+        "boron",
+        "boron deficiency",
+        "boron supplement",
+        "boron supplements",
+        "boron dose",
+        "boron dosage",
+        "how much boron",
+        "boron benefits",
+        "boron for bones",
+        "boron for osteoporosis",
+        "boron for arthritis",
+        "boron for testosterone",
+        "boron testosterone",
+        "boron estrogen",
+        "boron for hormones",
+        "is boron safe",
+        "boron toxicity",
+        "borax",
+        "boric acid",
+        "sodium borate",
+        "diamond boron",
+        "20 mule team borax",
+        "boron neutron capture",
+        "bortezomib",
+        "borom",
+        "boaron"
+      ],
+      "related": [
+        "calcium",
+        "magnesium",
+        "copper",
+        "chromium",
+        "cancer",
+        "testosterone",
+        "estrogen"
+      ],
+      "claim_count": 14,
+      "symbol": "B"
+    },
     "butter": {
       "display_name": "Butter",
       "type": "substance",
@@ -505,19 +549,61 @@
       "common_name": "Cobalt",
       "type": "nutrient",
       "synonyms": [
+        "cobalt",
+        "cobalt deficiency",
+        "cobalt supplement",
+        "cobalt mineral",
+        "cobalt trace mineral",
+        "trace mineral cobalt",
+        "cobalt benefits",
+        "cobalt in food",
+        "cobalt foods",
+        "cobalt rich foods",
+        "cobalt sources",
+        "cobalt dose",
+        "cobalt dosage",
+        "cobalt and b12",
+        "cobalt b12",
+        "cobalt vitamin b12",
+        "vitamin b12 cobalt",
+        "cobalt toxicity",
+        "too much cobalt",
+        "cobalt overdose",
+        "cobalt excess",
+        "cobalt deficiency symptoms",
+        "cobalt for anemia",
+        "cobalt pernicious anemia",
+        "cobalt Co",
+        "Co mineral",
+        "cobalt blue",
+        "is cobalt magnetic",
+        "cobalamin",
+        "cobalamine",
+        "cyanocobalamine",
+        "kobald",
+        "kobalt",
+        "cobolt",
+        "cobalt element",
+        "bush sickness",
         "co",
         "vitamin b12",
-        "b12",
-        "cobalamin",
-        "cyanocobalamine"
+        "b12"
       ],
       "related": [
+        "vitamin-b12",
+        "molybdenum",
+        "selenium",
+        "zinc",
+        "methionine",
+        "choline",
+        "sodium",
+        "hypochlorhydria",
         "vitamins",
         "iron",
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 3,
+      "claim_count": 18,
       "symbol": "Co"
     },
     "colloidal_minerals": {
@@ -1016,17 +1102,46 @@
       "common_name": "Germanium",
       "type": "nutrient",
       "synonyms": [
-        "ge",
-        "ge-132"
+        "germanium",
+        "germanium deficiency",
+        "germanium supplement",
+        "germanium supplements",
+        "organic germanium",
+        "GE-132",
+        "Ge-132",
+        "germanium 132",
+        "germanium sesquioxide",
+        "carboxyethyl germanium sesquioxide",
+        "Ge",
+        "eka-silicon",
+        "germanium mineral",
+        "germanium metalloid",
+        "germanium dose",
+        "how much germanium",
+        "germanium for cancer",
+        "germanium and oxygen",
+        "germanium immune",
+        "foods with germanium",
+        "germanuim",
+        "germainium",
+        "germenium",
+        "germaneum",
+        "germanim"
       ],
       "related": [
-        "cancer",
-        "selenium",
+        "silica",
+        "carbon",
+        "oxygen",
+        "gallium",
         "lithium",
+        "cancer",
+        "arthritis",
+        "osteoarthritis",
+        "selenium",
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 6,
+      "claim_count": 18,
       "symbol": "Ge"
     },
     "gluten": {
@@ -1407,6 +1522,53 @@
       ],
       "claim_count": 4
     },
+    "lithium": {
+      "display_name": "Lithium",
+      "common_name": "Lithium",
+      "type": "nutrient",
+      "synonyms": [
+        "lithium",
+        "Li",
+        "lithium deficiency",
+        "low lithium",
+        "lithium supplement",
+        "lithium supplementation",
+        "chelated lithium",
+        "colloidal lithium",
+        "plant derived colloidal lithium",
+        "lithium carbonate",
+        "lithium salts",
+        "lithium mineral",
+        "trace mineral lithium",
+        "natural lithium",
+        "lithium orotate",
+        "lithia",
+        "lithium water",
+        "lithium in water",
+        "lithium levels",
+        "lithium for depression",
+        "lithium for mood",
+        "lithium for bipolar",
+        "lithium and depression",
+        "lithium and crime",
+        "does lithium help depression",
+        "lithuim",
+        "lithim",
+        "litheum"
+      ],
+      "related": [
+        "depression",
+        "adhd",
+        "autism",
+        "vanadium",
+        "chromium",
+        "fluoride",
+        "vitamin-b12",
+        "germanium"
+      ],
+      "claim_count": 14,
+      "symbol": "Li"
+    },
     "longevity": {
       "display_name": "Longevity",
       "type": "topic",
@@ -1520,6 +1682,65 @@
       "claim_count": 35,
       "symbol": "Mg"
     },
+    "manganese": {
+      "display_name": "Manganese",
+      "common_name": "Manganese",
+      "type": "nutrient",
+      "synonyms": [
+        "manganese",
+        "Mn",
+        "maganese",
+        "manganeze",
+        "mangenese",
+        "mangnese",
+        "magnese",
+        "manganese deficiency",
+        "manganese supplement",
+        "manganese supplements",
+        "manganese benefits",
+        "manganese dosage",
+        "how much manganese",
+        "manganese daily dose",
+        "colloidal manganese",
+        "plant derived manganese",
+        "manganese toxicity",
+        "manganese poisoning",
+        "too much manganese",
+        "manganese overdose",
+        "trace mineral manganese",
+        "manganese foods",
+        "foods high in manganese",
+        "manganese for joints",
+        "manganese for arthritis",
+        "manganese for carpal tunnel",
+        "manganese carpal tunnel",
+        "manganese hearing loss",
+        "manganese for asthma",
+        "manganese for seizures",
+        "manganese epilepsy",
+        "manganese fertility",
+        "manganese libido",
+        "permanganate",
+        "potassium permanganate",
+        "permanganate of potash",
+        "pyrolusite",
+        "locura manganica",
+        "manganese vs magnesium",
+        "manganese ringing ears"
+      ],
+      "related": [
+        "magnesium",
+        "choline",
+        "zinc",
+        "arsenic",
+        "iron",
+        "tin",
+        "tmj",
+        "asthma"
+      ],
+      "claim_count": 16,
+      "symbol": "Mn"
+    },
     "margarine": {
       "display_name": "Margarine",
       "type": "substance",
@@ -1603,6 +1824,50 @@
         "colloidal_minerals"
       ],
       "claim_count": 1
+    },
+    "molybdenum": {
+      "display_name": "Molybdenum",
+      "common_name": "Molybdenum",
+      "type": "nutrient",
+      "synonyms": [
+        "molybdenum",
+        "molybdenum deficiency",
+        "molybdenum supplement",
+        "molybdenum dose",
+        "molybdenum dosage",
+        "molybdenum benefits",
+        "molybdenum foods",
+        "molybdenum rich foods",
+        "molybdenum toxicity",
+        "molybdenum overdose",
+        "too much molybdenum",
+        "molybdenum side effects",
+        "molybdenum RDA",
+        "molybdenum enzyme",
+        "molybdenum and gout",
+        "molybdenum goiter",
+        "trace mineral molybdenum",
+        "moly",
+        "molybdenite",
+        "Mo",
+        "molybdenum",
+        "molybdenm",
+        "molybdenium",
+        "molibdenum",
+        "molybenum",
+        "molybdnum"
+      ],
+      "related": [
+        "selenium",
+        "copper",
+        "iodine",
+        "zinc",
+        "manganese",
+        "chromium",
+        "vanadium"
+      ],
+      "claim_count": 12,
+      "symbol": "Mo"
     },
     "naturopathy": {
       "display_name": "Naturopathy",
@@ -2134,6 +2399,64 @@
         "be_your_own_doctor"
       ],
       "claim_count": 1
+    },
+    "vanadium": {
+      "display_name": "Vanadium",
+      "common_name": "Vanadium",
+      "type": "nutrient",
+      "synonyms": [
+        "vanadium",
+        "vanadium deficiency",
+        "vanadium supplement",
+        "vanadium supplements",
+        "vanadium mineral",
+        "trace mineral vanadium",
+        "vanadyl",
+        "vanadyl sulfate",
+        "vanadium chelate",
+        "chelated vanadium",
+        "colloidal vanadium",
+        "plant derived vanadium",
+        "vanadium dose",
+        "vanadium dosage",
+        "how much vanadium",
+        "vanadium for diabetes",
+        "vanadium for blood sugar",
+        "vanadium and insulin",
+        "vanadium for hypoglycemia",
+        "vanadium for low blood sugar",
+        "vanadium for weight loss",
+        "vanadium and cholesterol",
+        "vanadium and cancer",
+        "vanadium benefits",
+        "vanadinite",
+        "vanadis",
+        "vanadum",
+        "vanadiam",
+        "vandium",
+        "vanadim",
+        "venadium",
+        "vanadium deficency",
+        "sugar cravings",
+        "candy cravings",
+        "carb cravings",
+        "chocolate cravings",
+        "the munchies",
+        "craving sweets",
+        "always craving soda"
+      ],
+      "related": [
+        "chromium",
+        "diabetes",
+        "hypoglycemia",
+        "obesity",
+        "cholesterol",
+        "selenium",
+        "cancer",
+        "hyperinsulinemia"
+      ],
+      "claim_count": 18,
+      "symbol": "V"
     },
     "vitamin-a": {
       "display_name": "Retinol",
@@ -2909,7 +3232,8 @@
       "subject": "diabetes",
       "also_about": [
         "chromium",
-        "vanadium"
+        "vanadium",
+        "selenium"
       ],
       "facet": "history",
       "question": "How did Wallach first connect diabetes to a mineral deficiency?",
@@ -2967,6 +3291,28 @@
           "trigeminal_neuralgia",
           "spinal_stenosis",
           "arthritis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000011",
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much germanium should I take a day?",
+      "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body.",
+      "answer": "The recommended maintenance dose for germanium is 20–30 mg per day (50–100 mg/day is used for serious illness requiring increased oxygenation).",
+      "verbatim": "Twenty to 30 mg per day is the recommended maintenance dose for\ngermanium. Fifty to 100 mg per day doses are commonly used when an\nindividual has a serious illness that requires an increased oxygen level in\nthe body.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "dosage",
+        "supplements",
+        "protocol"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
         ]
       }
     },
@@ -3085,9 +3431,44 @@
       }
     },
     {
+      "id": "WAL-CLM-DDDL-000026",
+      "subject": "manganese",
+      "also_about": [
+        "asthma",
+        "tmj",
+        "deafness"
+      ],
+      "facet": "warning",
+      "question": "What diseases does manganese deficiency cause?",
+      "answer_short": "Wallach calls manganese deficiency striking, causing birth defects like congenital ataxia and deafness, plus asthma, convulsions, stunted growth, skeletal defects, and joint disorders like TMJ and carpal tunnel.",
+      "answer": "Manganese deficiency causes birth defects (congenital ataxia, deafness), asthma, convulsions, skeletal defects, and joint problems including temporomandibular joint (jaw) disorder, repetitive motion syndrome, and carpal tunnel syndrome.",
+      "verbatim": "Deficiency diseases of Mn are very striking, ranging from severe birth\ndefects (congenital ataxia, deafness, chondrodystrophy), asthma,\nconvulsions, retarded growth, skeletal defects, disruption of fat and\ncarbohydrate metabolism to joint problems in children and adults (i.e. TMJ,\nRepetitive Motion Syndrome, Carpal Tunnel Syndrome).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "deficiency-diseases",
+        "birth-defects",
+        "joint-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "manganese"
+        ],
+        "conditions": [
+          "carpal_tunnel_syndrome",
+          "tmj",
+          "asthma",
+          "congenital_ataxia",
+          "repetitive_motion_syndrome"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-DDDL-000034",
       "subject": "diabetes",
-      "also_about": [],
+      "also_about": [
+        "vanadium"
+      ],
       "facet": "mechanism",
       "question": "How does vanadium help with diabetes?",
       "answer_short": "Vanadium mimics insulin — it makes the cell's insulin receptors more sensitive, helping the body handle glucose and carbohydrates.",
@@ -3099,6 +3480,35 @@
         "vanadium",
         "insulin",
         "blood-sugar"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vanadium"
+        ],
+        "conditions": [
+          "diabetes"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000035",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "hyperinsulinemia"
+      ],
+      "facet": "uses",
+      "question": "Can vanadium help with diabetes and low blood sugar?",
+      "answer_short": "Wallach says vanadium acts like insulin—making cell receptors more sensitive—and could reduce or even eliminate most adult-onset diabetes.",
+      "answer": "Vanadium supplementation can reduce or even eliminate most cases of adult-onset diabetes.",
+      "verbatim": "Vanadium supplementation can have a major positive\neconomic impact by reducing or even eliminating most cases of adult onset\ndiabetes.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "diabetes",
+        "blood sugar",
+        "insulin resistance"
       ],
       "tier1_link": {
         "essentials": [
@@ -3194,6 +3604,35 @@
         "conditions": [
           "diabetes",
           "hypoglycemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000047",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "chromium"
+      ],
+      "facet": "stance",
+      "question": "Can vanadium replace insulin for diabetes?",
+      "answer_short": "Wallach cites a medical school's finding that vanadium will replace insulin for adult-onset diabetics.",
+      "answer": "A University of Vancouver medical school statement (1985): vanadium will replace insulin for adult-onset diabetics.",
+      "verbatim": "the medical school at the\nUniversity of Vancouver, BC, Canada stated that “vanadium will replace\ninsulin for adult onset diabetics.”",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "diabetes",
+        "insulin",
+        "blood sugar",
+        "adult onset diabetes"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vanadium"
+        ],
+        "conditions": [
+          "diabetes"
         ]
       }
     },
@@ -6115,6 +6554,421 @@
       ]
     },
     {
+      "id": "WAL-CLM-DDDL-000222",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "chromium",
+        "hypoglycemia",
+        "obesity"
+      ],
+      "facet": "basics",
+      "question": "What is vanadium?",
+      "answer_short": "Vanadium is an essential trace mineral—proven essential in 1971—that works much like insulin to help the body control blood sugar.",
+      "answer": "Wallach describes vanadium as an essential trace mineral, proven essential in 1971, whose central job is handling blood sugar. It stimulates glucose oxidation and transport in fat cells and glycogen synthesis in the liver and muscle, while inhibiting the liver's own production of glucose and the gut's absorption of it, and it heightens insulin's effect. Because it behaves so much like insulin—making cell insulin receptors more sensitive—Wallach treats vanadium, paired with chromium, as a cornerstone mineral for hypoglycemia, obesity, and adult-onset (type 2) diabetes, which he regards not as a genetic disease but as a simple chromium-and-vanadium deficiency.",
+      "verbatim": "Vanadium was proven to be essential in 1971. Vanadium stimulates blood\nsugar (glucose) oxidation and transport in fat cells and glycogen (animal\nstarch) synthesis in liver and muscle, and inhibits liver gluconeogenesis\n(production of glucose from fat) and absorption of glucose from the gut.\nVanadium enhances the stimulating effect of insulin on DNA synthesis.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "blood sugar",
+        "trace minerals",
+        "diabetes",
+        "insulin",
+        "metabolism"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000223",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes"
+      ],
+      "facet": "basics",
+      "question": "What is vanadium?",
+      "answer_short": "Vanadium is an essential trace mineral, proven essential in 1971, that works like insulin to help control blood sugar.",
+      "answer": "Wallach describes vanadium as an essential trace mineral that was proven to be essential in 1971. It stimulates blood sugar (glucose) oxidation and transport in fat cells and glycogen synthesis in liver and muscle, while inhibiting the liver's production of glucose from fat and the absorption of glucose from the gut. It also enhances the stimulating effect of insulin on DNA synthesis, giving it a central role in carbohydrate metabolism.",
+      "verbatim": "Vanadium was proven to be essential in 1971. Vanadium stimulates blood\nsugar (glucose) oxidation and transport in fat cells and glycogen (animal\nstarch) synthesis in liver and muscle, and inhibits liver gluconeogenesis\n(production of glucose from fat) and absorption of glucose from the gut.\nVanadium enhances the stimulating effect of insulin on DNA synthesis.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "blood sugar",
+        "trace minerals",
+        "diabetes",
+        "metabolism"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000224",
+      "subject": "vanadium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What form of vanadium is best absorbed?",
+      "answer_short": "Plant-derived colloidal vanadium is absorbed at up to 98%, versus 40% for chelates and only 0.1-1% for metallic vanadyl sulfate.",
+      "answer": "Wallach says the form of vanadium determines how much the body can absorb. Metallic vanadium (vanadyl sulfate) is absorbed from the intestinal tract very poorly, at only 0.1 to 1.0 percent. Vanadium chelates are absorbed at 40 percent, while plant-derived colloidal forms are absorbed at up to 98 percent.",
+      "verbatim": "Metallic vanadium (vanadyl\nsulfate) is absorbed from the intestinal tract very poorly at only 0.1 to 1.0\npercent, vanadium chelates are absorbed at 40 percent, and plant derived\ncolloidal forms at up to 98 percent.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "absorption",
+        "supplements",
+        "colloidal minerals",
+        "forms"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000225",
+      "subject": "vanadium",
+      "also_about": [
+        "hypoglycemia",
+        "chromium",
+        "diabetes"
+      ],
+      "facet": "protocol",
+      "question": "How much vanadium should I take for low blood sugar?",
+      "answer_short": "Wallach calls chromium and vanadium the 'magic bullets' for hypoglycemia, at 50-200 mcg three times a day with meals.",
+      "answer": "Wallach identifies chromium and vanadium as the 'magic bullets' for treating hypoglycemia, at 50 to 200 mcg three times a day with meals. He warns that people already on insulin should start chromium/vanadium therapy at a lower 25 mcg three times a day to prevent a sudden dip in blood sugar. He also notes that simple sugars can increase the urinary excretion of chromium and vanadium up to 300 percent of the normal rate.",
+      "verbatim": "Chromium and vanadium\nare the “magic bullets” for treatment of hypoglycemia at 50-200 mcg t.i.d.\nwith meals. THOSE INDIVIDUALS ON INSULIN SHOULD START\nCHROMIUM / VANADIUM THERAPY AT 25 mcg ti.d. TO PREVENT A\nSUDDEN DIP IN BLOOD SUGAR.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "dosage",
+        "hypoglycemia",
+        "low blood sugar",
+        "supplements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000226",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "obesity",
+        "depression",
+        "adhd",
+        "infertility"
+      ],
+      "facet": "warning",
+      "question": "What diseases does vanadium deficiency cause?",
+      "answer_short": "Wallach links vanadium deficiency to diabetes, hypoglycemia, high cholesterol and triglycerides, obesity, infertility, ADD/ADHD, depression, and bipolar disease.",
+      "answer": "Wallach lists the clinical diseases associated with vanadium deficiency: slow growth, increased infant mortality, infertility, elevated cholesterol and triglycerides, hypoglycemia, hyperinsulinemia, narcolepsy, prediabetes, diabetes, ADD/ADHD, depression, manic depression (bipolar disease), Tourette's syndrome, cardiovascular disease, and obesity.",
+      "verbatim": "Clinical Diseases Associated with Vanadium Deficiency\nSlow growth\nIncreased infant mortality Infertility\nElevated cholesterol\nElevated triglycerides\nHypoglycemia\nHyperinsulinemia\nNarcolepsy\nPrediabetes\nDiabetes\nADD, ADHD\nDepression\nManic depression, Bi-polar disease Tourette’s syndrome Cardiovascular\ndisease Obesity",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "deficiency",
+        "diabetes",
+        "obesity",
+        "mental health",
+        "blood sugar"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000227",
+      "subject": "germanium",
+      "also_about": [
+        "silica",
+        "carbon",
+        "oxygen"
+      ],
+      "facet": "basics",
+      "question": "What is germanium?",
+      "answer_short": "Germanium is a trace mineral and metalloid element that Wallach counts among the body's essential nutrients; biologically it acts as a highly effective electrical impulse initiator inside cells and as a metallic cofactor for oxygen utilization.",
+      "answer": "Germanium is a trace mineral -- a metalloid element chemically related to silica and carbon, and a poor conductor of electricity that is prized as a semiconductor in electronics. In Wallach's framework it is an essential nutrient: biologically it works as a highly effective electrical impulse initiator inside the cell and as a metallic cofactor for oxygen utilization, helping the body use oxygen at the cellular level. Wallach links germanium deficiency to reduced immune status, arthritis, low energy, and cancer, and recommends 20 to 30 mg per day for maintenance.",
+      "verbatim": "Biologically, germanium is a highly effective\nelectrical impulse initiator intracellularly and acts as a metallic cofactor for\noxygen utilization.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "trace-minerals",
+        "oxygen",
+        "basics"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000228",
+      "subject": "germanium",
+      "also_about": [
+        "oxygen",
+        "silica",
+        "carbon"
+      ],
+      "facet": "mechanism",
+      "question": "How does germanium work in the body?",
+      "answer_short": "In the body germanium acts as a highly effective intracellular electrical-impulse initiator and as a metallic cofactor for oxygen utilization.",
+      "answer": "Germanium is closely related to silica and carbon. Biologically, Wallach describes it as a highly effective electrical impulse initiator inside the cell, and as a metallic cofactor for oxygen utilization -- helping the body use oxygen at the cellular level.",
+      "verbatim": "It is therefore not too surprising that germanium is closely\nrelated to silica and carbon. Biologically, germanium is a highly effective\nelectrical impulse initiator intracellularly and acts as a metallic cofactor for\noxygen utilization.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "oxygen",
+        "cellular-energy",
+        "trace-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000229",
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "mechanism",
+      "question": "Does germanium boost the immune system?",
+      "answer_short": "Germanium enhances the immune system by stimulating natural killer cells, interferon, macrophages, and T-suppressor cells.",
+      "answer": "Germanium is known to enhance the immune system. It does this by stimulating the production of natural killer cells, lymphokines such as interferon, macrophages, and T-suppressor cells -- the cells the body uses to defend against infection and abnormal cells.",
+      "verbatim": "Germanium is known to enhance the\nimmune system by stimulating production of natural killer cells,\nlymphokines such as IFN(y) interferon, macrophages, and T-suppresser\ncells.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "immune-health",
+        "interferon",
+        "natural-killer-cells"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000230",
+      "subject": "germanium",
+      "also_about": [
+        "absorption"
+      ],
+      "facet": "sources",
+      "question": "What is GE-132 (organic germanium)?",
+      "answer_short": "GE-132, carboxyethyl germanium sesquioxide, is the organic form of germanium Asai synthesized in 1967; it is absorbed at about 30% efficiency and fully excreted within a week.",
+      "answer": "Asai synthesized GE-132, carboxyethyl germanium sesquioxide, in 1967 using a hydrolysis method. This organic germanium forms a cubic structure with three negative oxygen ions at the base of a cubic triangle. As an organic or chelated form, GE-132 is absorbed at about 30 percent efficiency, and the total intake is excreted within one week.",
+      "verbatim": "Asai synthesized GE-132, carboxyethyl germanium sesquioxide, in 1967 by\na hydrolysis method. This organic germanium structure forms a cubic\nstructure with three negative oxygen ions at the base of a cubic triangle. As\nan organic or chelate form of germanium, GE-132 is absorbed at the rate of\n30 percent efficiency and the total intake is excreted in one week.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "supplements",
+        "organic-germanium",
+        "absorption",
+        "forms"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000231",
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Can germanium help prevent or fight cancer?",
+      "answer_short": "Germanium can be used for cancer prevention or therapy -- it raises oxygen flow into cells (cancer cells dislike oxygen) and stimulates immune cells and interferon.",
+      "answer": "Germanium is found in significant amounts in plants like Shiitake mushrooms, ginseng, and garlic. It works by increasing oxygen flow into cells from the blood -- and cancer cells do not like high levels of oxygen -- while boosting macrophage activity, antibody-forming cells, T-cells, B-lymphocytes, and killer cells, and inducing the body to produce interferon. Wallach says it can be used either as prevention or in cancer therapy programs.",
+      "verbatim": "GERMANIUM is found in significant amounts in a variety of plants\nincluding imported Shiitake mushrooms, ginseng, garlic, etc. Germanium\nfunctions by increasing the oxygen flow into cells from the blood (cancer\ncells do not like high levels of\noxygen), increases macrophage (scavenger cells) activity, increases the\nnumbers of antibody forming cells, T-cells, B-lymphocytes, and killer cells,\nand induces the body to produce interferon! This can be used as prevention\nor in therapy programs.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cancer",
+        "oxygen",
+        "immune-health",
+        "prevention"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000232",
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How is germanium used to treat Alzheimer's disease?",
+      "answer_short": "Wallach's Alzheimer's protocol includes germanium IM (5 ml of standard solution every other day for 24 days), then oral germanium at 150 mg twice a day.",
+      "answer": "In Wallach's Alzheimer's protocol, treatment includes germanium given intramuscularly -- 5 ml of standard solution every other day for 24 days -- followed by oral germanium at 150 mg twice daily (b.i.d.), alongside the baseline nutritional supplements.",
+      "verbatim": "Treatment should include germanium IM 5 ml of standard solution every\nother day for 24 days followed by oral germanium at 150 mg b.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "alzheimers",
+        "brain-health",
+        "protocol",
+        "dosage"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000233",
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "history",
+      "question": "How was germanium's healing potential discovered?",
+      "answer_short": "In 1950 Japanese chemist Dr. Kazuhiko Asai found germanium in fossilized plant life and linked healing herbs to their high germanium levels, while Russian researchers tied it to anti-cancer activity.",
+      "answer": "In 1950 Dr. Kazuhiko Asai, a Japanese chemist, found traces of germanium in fossilized plant life. Russian researchers quickly attributed anti-cancer activity to germanium, and Asai was able to connect the healing properties of certain herbs to their relatively high germanium levels. Many of these medicinal herbs are germanium accumulator plants.",
+      "verbatim": "In 1950, Dr. Kazuhiko Asai, a Japanese chemist, found traces of germanium\nin fossilized plant life. Russian researchers quickly attributed anti-cancer\nactivity to germanium. Dr. Asai was able to connect the healing properties\nof certain herbs to relatively high levels of germanium. Many of these herbs\nare germanium accumulator plants.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "history",
+        "cancer",
+        "herbs",
+        "research"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000234",
+      "subject": "manganese",
+      "also_about": [
+        "tin",
+        "deafness"
+      ],
+      "facet": "physiology",
+      "question": "Can manganese deficiency cause hearing loss in children?",
+      "answer_short": "Yes, in children a manganese and/or tin deficiency can cause reversible hearing loss.",
+      "answer": "Wallach states that in children, manganese and/or tin deficiency can cause reversible hearing loss, meaning the hearing can return once the deficiency is corrected. He also advises a pulse test for milk allergies, another common cause of deafness in kids. The message is that childhood hearing loss is often nutritional and fixable rather than permanent.",
+      "verbatim": "In children, manganese and/or tin deficiency can cause\nreversible hearing loss. Do a pulse test for milk allergies (another common\ncause of deafness in kids).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "ear-health",
+        "childrens-health",
+        "hearing"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000235",
+      "subject": "manganese",
+      "also_about": [
+        "choline",
+        "arsenic",
+        "zinc",
+        "vitamin-b6"
+      ],
+      "facet": "uses",
+      "question": "How does Wallach treat carpal tunnel syndrome without surgery?",
+      "answer_short": "He treats it as a deficiency of arsenic, manganese, and choline, using B6, zinc, and plant-derived colloidal arsenic, manganese, and choline instead of wrist surgery.",
+      "answer": "Wallach holds that carpal tunnel syndrome is caused by a deficiency of arsenic, manganese, and choline. His treatment includes vitamin B6 at 75 mg three times a day, zinc at 50 mg three times a day, and plant-derived colloidal arsenic, manganese, and choline, all nutrients found in his Pig Arthritis Formula. He contrasts this nutritional approach with the orthodox therapy of wrist surgery.",
+      "verbatim": "Carpal tunnel\nsyndrome is caused by a deficiency of arsenic, manganese, and choline.\nTreatment includes B6 at 75 mg t.i.d., zinc at 50 mg t.i.d., plant derived\ncolloidal arsenic, manganese, and choline. All of these nutrients are found\nin Dr. Wallach’s Pig Arthritis Formula. Compare this with the “orthodox”\ntherapy of wrist surgery!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "joint-health",
+        "repetitive-strain",
+        "protocols"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000236",
+      "subject": "manganese",
+      "also_about": [
+        "epilepsy",
+        "choline",
+        "taurine",
+        "zinc"
+      ],
+      "facet": "uses",
+      "question": "Does Wallach use manganese for seizures or epilepsy?",
+      "answer_short": "Yes, manganese at 50 mg/day is part of his epilepsy protocol, alongside zinc, essential fatty acids, choline, taurine, and DMG.",
+      "answer": "In Wallach's approach to epilepsy, manganese at 50 mg per day is among the indicated nutrients, together with zinc at 50 mg three times a day, essential fatty acids at 5 gm three times a day, choline at 4 gm/day, taurine at 500 mg three times a day, and dimethyl glycine at 100 mg twice a day. Because convulsions are one of the classic manganese-deficiency signs, correcting the mineral is part of resolving the seizures. This nutritional protocol is offered as an alternative to standard anticonvulsant drugs.",
+      "verbatim": "Manganese at 50 mg/day, zinc at 50 mg t.i.d., essential fatty\nacids at 5 gm t.i.d., choline at 4 gm/day, taurine at 500 mg t.i.d., and\ndimethyl glycine at 100 mg b.i.d. are also indicated.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "brain-health",
+        "seizures",
+        "protocols"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000237",
+      "subject": "manganese",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is carpal tunnel syndrome really caused by a mineral deficiency?",
+      "answer_short": "Wallach argues that repetitive motion injuries, and the millions of people wearing wrist, knee, and back supports, are all suffering from simple manganese deficiency.",
+      "answer": "Wallach makes the provocative claim that repetitive stress and repetitive motion syndrome are manganese-deficiency problems rather than mere mechanical injuries. In his words, we see literally millions of people at work with Velcro wrist, neck, elbow, finger, knee, back, and hip supports — all for manganese deficiencies.",
+      "verbatim": "We see\nliterally millions of people at work with Velcro wrist, neck, elbow, finger,\nknee, back, and hip supports—all for manganese deficiencies!!!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "joint-health",
+        "repetitive-strain",
+        "workplace-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000238",
+      "subject": "boron",
+      "also_about": [
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "physiology",
+      "question": "What does boron do in the body?",
+      "answer_short": "Boron supports bone metabolism, helps the body use calcium and magnesium efficiently, and is needed for proper function of the ovaries, testes, and adrenal glands.",
+      "answer": "In Wallach's framework, boron is essential for bone metabolism, including the efficient use of calcium and magnesium. It is also required for the proper function of the endocrine glands, specifically the ovaries, testes, and adrenals. This ties boron to both skeletal health and hormone production.",
+      "verbatim": "Boron is essential for bone metabolism including efficient use of calcium\nand magnesium and proper function of endocrine glands (i.e.— ovaries,\ntestes, and adrenals).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "bone health",
+        "hormones",
+        "adrenal glands",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000239",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "Why can vegans go years before a B12 deficiency shows up?",
+      "answer_short": "The body recycles B12 through an enterohepatic (gut-to-liver) circulation, so a deficiency in vegans may not appear for five to ten years after giving up meat.",
+      "answer": "Wallach describes an enterohepatic circulation - a direct intestine-to-liver loop - that recycles vitamin B12 from bile and other intestinal secretions. This recycling is why a B12 deficiency in vegans may not appear for five to ten years after they give up meat.",
+      "verbatim": "There is an enterohepatic (intestine direct to the\nliver) circulation of Vitamin B12 that recycles B12 from bile and other\nintestinal secretions which explains why B12 deficiency in vegans may not\nappear for five to ten years after giving up meat.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cobalt",
+        "b12",
+        "vegan",
+        "recycling",
+        "deficiency"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000240",
+      "subject": "lithium",
+      "also_about": [
+        "adhd"
+      ],
+      "facet": "uses",
+      "question": "What does Wallach recommend for ADD and ADHD?",
+      "answer_short": "For ADD/ADHD, Wallach calls for removing all sugar and alcohol from the diet and taking plant-derived colloidal lithium, chromium and vanadium as specific supplements.",
+      "answer": "For ADD and ADHD, Wallach insists treatment must include complete removal of alcohol and sugar, natural and processed, from the diet, and teaching the person the connection between sugar and their behavior — with the whole family eating the same way. He names plant-derived colloidal lithium, chromium and vanadium as the specific supplements to take, adding that it is best to take all 90 essential nutrients.",
+      "verbatim": "Treatment must include complete removal of alcohol and sugar (natural and\nprocessed) from the diet and educating the ADD/ADHD victim that there is\na connection between sugar consumption and their negative behavior. The\nwhole family must eat the same way if this dietary approach is to be\nsuccessful! Plant derived colloidal lithium, chromium, and vanadium are\nspecific supplements to be taken. It is best to take all 90 essential nutrients.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "adhd",
+        "children",
+        "behavior",
+        "sugar"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000241",
+      "subject": "molybdenum",
+      "also_about": [
+        "goiter",
+        "hypothyroidism",
+        "iodine",
+        "copper",
+        "tyrosine"
+      ],
+      "facet": "physiology",
+      "question": "Can a molybdenum deficiency cause goiter?",
+      "answer_short": "Wallach lists molybdenum among the nutrient deficiencies that cause goiter, along with iodine, copper, and the amino acid tyrosine.",
+      "answer": "Wallach describes goiter (colloid goiter, hypothyroid) as being caused by a simple deficiency of nutrients, and he includes molybdenum in that list alongside iodine, copper, and the amino acid tyrosine. In his framework the enlarged thyroid gland is a sign of these underlying nutrient deficiencies.",
+      "verbatim": "GOITER (colloid goiter, hypothyroid) is caused by a simple deficiency of\nnutrients (i.e. iodine, copper, molybdenum, the amino acid tyrosine, etc.).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "minerals",
+        "thyroid",
+        "deficiency"
+      ]
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000008",
       "subject": "homosexuality",
       "also_about": [
@@ -6871,6 +7725,37 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000086",
+      "subject": "germanium",
+      "also_about": [
+        "arthritis",
+        "osteoarthritis",
+        "cancer"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of germanium deficiency?",
+      "answer_short": "Germanium deficiency is typified by a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
+      "answer": "Wallach lists the signs of germanium deficiency: a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
+      "verbatim": "Deficiencies of germanium are typified by a severely reduced immune status,\narthritis, osteoarthritis, low energy, and cancer.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "deficiency",
+        "immune-health",
+        "low-energy"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ],
+        "conditions": [
+          "cancer",
+          "arthritis",
+          "osteoarthritis"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000098",
       "subject": "magnesium",
       "also_about": [
@@ -6906,6 +7791,28 @@
           "convulsions",
           "depression",
           "vertigo"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000100",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does molybdenum do in the body?",
+      "answer_short": "Molybdenum is essential to all organisms as part of metalloenzymes and is an integral part of at least three enzymes: xanthine oxidase, aldehyde oxidase, and sulfite oxidase.",
+      "answer": "Molybdenum is essential to all organisms as a constituent of numerous metalloenzymes; Wallach identifies it as an integral part of at least three essential enzymes -- xanthine oxidase, aldehyde oxidase and sulfite oxidase. The average American takes in 76 to 109 micrograms per day from food. Molybdenum toxicity appears at about 10 milligrams per day, showing up as a gout-like disease and as interference with copper metabolism. A few soils worldwide are rich enough in molybdenum to poison animals grazing on the local plants, while many other soils are molybdenum-deficient.",
+      "verbatim": "Molybdenum is essential to all organisms as a constituent of numerous\nmetalloenzymes. Molybdenum is known to be an integral part of no less than\nthree essential enzymes",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "minerals",
+        "enzymes",
+        "metabolism"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "molybdenum"
         ]
       }
     },
@@ -7030,7 +7937,10 @@
       "subject": "zinc",
       "also_about": [
         "chromium",
-        "vanadium"
+        "vanadium",
+        "boron",
+        "calcium",
+        "copper"
       ],
       "facet": "protocol",
       "question": "How much zinc should I take a day?",
@@ -7053,6 +7963,53 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000133",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the recommended daily amount of molybdenum?",
+      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+      "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives magnesium a daily range of 250 to 500 mg.",
+      "verbatim": "Magnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "minerals",
+        "supplements",
+        "dosage"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000134",
+      "subject": "manganese",
+      "also_about": [
+        "magnesium",
+        "molybdenum"
+      ],
+      "facet": "protocol",
+      "question": "How much manganese should I take each day?",
+      "answer_short": "In Wallach's Base Line Nutritional Supplement Program the True Supplement Need for manganese is 5 mg a day (vs. the 2.5 mg government RDA), with a 30-day pharmacologic dose range of 2 to 50 mg.",
+      "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives manganese a daily range of 3 to 5 mg.",
+      "verbatim": "Manganese 3 - 5 mg\nMolybdenum 10 - 25 mcg\nPotassium NA\nSelenium 100 - 200 mcg",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "dosage",
+        "supplements",
+        "minerals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "manganese"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000137",
       "subject": "potassium",
       "also_about": [],
@@ -7071,6 +8028,32 @@
       "tier1_link": {
         "essentials": [
           "silica"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000138",
+      "subject": "vanadium",
+      "also_about": [
+        "chromium",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What is the recommended daily dose of vanadium?",
+      "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children.",
+      "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives vanadium a daily range of 50 to 100 mcg.",
+      "verbatim": "Vanadium 50 - 100 mcg\nZinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "dosage",
+        "daily dose",
+        "supplements",
+        "minerals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vanadium"
         ]
       }
     },
@@ -10496,6 +11479,252 @@
       ]
     },
     {
+      "id": "WAL-CLM-EPIGEN-000307",
+      "subject": "vanadium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Does vanadium fight cancer?",
+      "answer_short": "Wallach says vanadium has known anticarcinogenic properties and blocked mammary tumor growth in mice.",
+      "answer": "Wallach states that vanadium has known anticarcinogenic properties. In animal work, feeding 25 micrograms of vanadium per gram of diet blocked the induction of mouse mammary tumor growth. The vanadium supplement reduced tumor incidence, lowered the average tumor count per animal, and prolonged median cancer-free time without inhibiting the animals' overall growth or health.",
+      "verbatim": "Vanadium has known anticarcinogenic properties. Induction of mouse\nmammary tumor growth was blocked by feeding 25 ug/gm of diet. The vanadium\nsupplement reduced tumor incidence, average tumor count per animal and\nprolonged median cancer free time without inhibiting overall growth or health of\nthe animals (sure beats the results and untoward side effects of chemotherapy\nand radiation!)",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "cancer",
+        "cancer prevention",
+        "tumors"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000308",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "chromium",
+        "hypoglycemia"
+      ],
+      "facet": "big_question",
+      "question": "Is type 2 diabetes really a mineral deficiency?",
+      "answer_short": "Wallach argues type 2 diabetes is not genetic but a simple deficiency of chromium and vanadium.",
+      "answer": "Wallach maintains that type 2 diabetes is not a genetically-transmitted disease but a simple mineral deficiency. He says it has been well documented since 1958 that supplementing the 90 essential nutrients along with chromium and vanadium in an otherwise perfect diet will prevent and cure hypoglycemia, reactive hypoglycemia, hyperinsulinemia, and type 2 diabetes. He cites USDA field-services director Walter Mertz, whose research indicated that universally adding chromium to the diet would wipe out an entire medical specialty.",
+      "verbatim": "Since 1958 it has been well documented that supplementation of the 90\nessential nutrients along with chromium and vanadium to an otherwise perfect\ndiet will prevent and cure hypoglycemia, reactive hypoglycemia (narcolepsy),\nhyperinsulinemia, and type 2 diabetes. Walter Mertz, the director of the U.S.D.A.\nfield services, published the results of his research in Federation Proceedings\nthat showed clearly that an entire medical specialty (endocrinology) would be\nwiped out by universally adding chromium to an otherwise perfect diet. Type 2\ndiabetes is not a genetically-transmitted disease—it is in fact a simple mineral\ndeficiency!",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "diabetes",
+        "genetics",
+        "mineral deficiency",
+        "blood sugar",
+        "prevention"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000309",
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What foods and herbs contain germanium?",
+      "answer_short": "Beans and tuna carry small amounts, while healing herbs like garlic, ginseng, aloe, comfrey, chlorella and Shiitake mushroom concentrate germanium at 100 to 2,000 ppm.",
+      "answer": "Food plants and animals contain small amounts of germanium -- for example beans at 4.67 ppm and tuna at 2.3 ppm. Healing herbs concentrate far more: garlic, aloe, comfrey, chlorella, ginseng, watercress, Shiitake mushroom, pearl barley, sanzukon, sushi, waternut, boxthorn seed, and wisteria knob contain germanium in amounts ranging from 100 to 2,000 ppm.",
+      "verbatim": "Food plants and animals contain small amounts of germanium (e.g., beans at\n4.67 ppm; tuna at 2.3 ppm). Healing herbs such as garlic, aloe, comfrey, chlorella,\nginseng, watercress, Shiitake mushroom, pearl barley, sanzukon, sushi, waternut,\nboxthorn seed, and wisteria knob contain germanium in amounts ranging from\n100 to 2,000 ppm.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "food-sources",
+        "herbs",
+        "diet"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000310",
+      "subject": "germanium",
+      "also_about": [
+        "silica",
+        "carbon"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered germanium and when?",
+      "answer_short": "Its existence was predicted by Mendeleev's periodic table, and the element was finally isolated in 1886 by a German chemist, Clemens Winkler, who named it germanium.",
+      "answer": "The existence of germanium was predicted by Mendeleev's periodic table before the element itself had ever been found. It was not until 1886 that a German chemist, Clemens Winkler, isolated the element and gave it the name germanium.",
+      "verbatim": "The existence of the element germanium had been predicted by Mendeleev in\nhis periodic table, however, it was not until 1886 that a German chemist, Clemens\nWinkler, isolated this element and named it Germanium",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "history",
+        "periodic-table",
+        "trace-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000311",
+      "subject": "manganese",
+      "also_about": [
+        "deafness"
+      ],
+      "facet": "physiology",
+      "question": "Can a mother's manganese deficiency make a baby deaf?",
+      "answer_short": "Yes, Wallach reports that infants born deaf are the result of mothers being deficient in manganese during pregnancy.",
+      "answer": "From his medical work in rural Africa, Wallach observed that nutritional deficiencies caused predictable birth defects. Infants born deaf, he reports, were the result of mothers being deficient in manganese during pregnancy, much as folic acid or zinc deficiencies produced neural tube defects and cleft palates. He treats congenital deafness as a preventable maternal manganese-deficiency problem rather than a genetic accident.",
+      "verbatim": "Infants born with neural tube defects (spina\nbifida) and cleft palates from folic acid or zinc deficiencies usually did not survive\nthe primitive environment. Infants born deaf were the result of mothers being\ndeficient in manganese during pregnancy.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "ear-health",
+        "pregnancy",
+        "birth-defects"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000312",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why is boron so rare?",
+      "answer_short": "Boron is produced by cosmic ray spallation rather than by stellar nucleosynthesis, making it a low-abundance element in both the solar system and Earth's crust.",
+      "answer": "Unlike most elements, boron is not forged inside stars (stellar nucleosynthesis). Instead it is produced by cosmic ray spallation, the breaking apart of larger nuclei by high-energy cosmic rays. Because of this, boron is a low-abundance element in both the solar system and the earth's crust. Wallach classifies it as an elemental chemical rather than a metallic mineral.",
+      "verbatim": "B - Boron is an elemental chemical rather than a metallic mineral. It is\nproduced by cosmic ray spallation and not by stellar nucleosynthesis.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "chemistry",
+        "cosmic origin",
+        "rare element",
+        "science"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000313",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is boric acid used for?",
+      "answer_short": "Boric acid has antiseptic, antifungal, and antiviral properties, and mild solutions are used as wound disinfectants and eye washes.",
+      "answer": "Boric acid, one of boron's most important compounds, has antiseptic, antifungal, and antiviral properties. Mild solutions of boric acid are used as wound disinfectants and as an eye antiseptic wash. These practical uses illustrate boron's antimicrobial character.",
+      "verbatim": "Boric acid has antiseptic, antifungal, and antiviral properties, and mild\nsolutions of boric acid are used as wound disinfectants and as an eye antiseptic\nwash.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "boric acid",
+        "antiseptic",
+        "wound care",
+        "eye wash"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000314",
+      "subject": "boron",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Is boron used to treat cancer?",
+      "answer_short": "Yes, boron is the active ingredient in Bortezomib, a first-of-its-kind drug used to treat multiple myeloma and certain lymphomas.",
+      "answer": "Boron is the active ingredient in Bortezomib, described as the first pharmaceutical of its kind, a proteasome inhibitor. It is used to treat multiple myeloma (bone marrow cancer) and certain lymphomas. This makes boron a component of a modern anti-cancer medication.",
+      "verbatim": "Boron is an active ingredient in the first of its kind pharmaceutical as\nBortezomib (a proteasome inhibitor) used for the treatment of multiple myeloma\n(bone marrow cancer) and certain lymphomas.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "cancer",
+        "multiple myeloma",
+        "lymphoma",
+        "medicine"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000315",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is boron toxic or safe to take?",
+      "answer_short": "Borates have low toxicity in mammals, similar to table salt, but are more toxic to insects and so are used as insecticides.",
+      "answer": "In mammals, borates have low toxicity, which Wallach compares to that of table salt. They are, however, more toxic to arthropods (insects), which is why boron compounds are used as insecticides. Boric acid is also mildly antimicrobial.",
+      "verbatim": "In biology, borates have low toxicity in mammals (similar to table salt), but\nare more toxic to arthropods (insects) and are used as insecticides. Boric acid is\nmildly antimicrobial.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "safety",
+        "toxicity",
+        "insecticide",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000316",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is boron essential for all living things?",
+      "answer_short": "Yes, Wallach states that boron is essential to life for all organisms, including both plants and animals.",
+      "answer": "Wallach states plainly that boron is essential to life for all organisms, including both plants and animals. This is a strong, unqualified claim of universal biological necessity, extending boron's importance well beyond human nutrition to the entire living world.",
+      "verbatim": "Boron is essential to life for all organisms including plants\nand animals.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "essential nutrients",
+        "plants",
+        "biology",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000317",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is the story behind 20 Mule Team Borax?",
+      "answer_short": "Large borax deposits were discovered in Death Valley in 1881, and the mined borax was hauled out by the famous 20-mule-team wagons.",
+      "answer": "Large deposits of borax, sometimes called diamond boron, were discovered in Death Valley in 1881. The deposits were made famous by the 20 mule team wagons that hauled the mined borax out. Each wagon had rear wheels seven feet high, was sixteen feet long, and could carry 24,000 pounds (12 tons) of borax.",
+      "verbatim": "Large deposits of borax or “diamond boron” were discovered in Death Valley\nin1881. The Death Valley deposits were made famous by the 20 mule team\nwagons that hauled out the mined borax. The rear wheels were seven foot high,\neach wagon was sixteen foot long and could carry 24,000 pounds (12 tons) of\nborax.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "borax",
+        "Death Valley",
+        "20 mule team",
+        "mining history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000318",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name boron come from?",
+      "answer_short": "The name 'boron' comes from the Arabic word 'buraq' and the Persian 'burah,' both names for borax.",
+      "answer": "The name boron derives from the Arabic word buraq or the Persian word burah, both of which are names for borax. Boron compounds were known thousands of years ago, and borax itself was known from the deserts of western Tibet as tincal, from the Sanskrit. This deep history reflects boron's ancient use long before it was identified as an element.",
+      "verbatim": "The name “boron” is derived from the Arabic word “buraq” or the Persian\nword “burah,” which are the names for borax. Boron compounds were known\nthousands of years ago and borax was known from the deserts of western Tibet\nas “tincal” from the Sanskrit.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "etymology",
+        "name origin",
+        "borax",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000319",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "history",
+      "question": "How was vitamin B12 discovered?",
+      "answer_short": "In 1948 two teams (in the UK and US) isolated pure B12, the anti-pernicious-anemia factor, gleaning just 20 mg from a ton of liver.",
+      "answer": "Wallach recounts that Dr. William Castle theorized the liver contained an anti-pernicious-anemia (APA) factor. The hunt was slow because humans store and recycle B12, until a microorganism, Lactobacillus lactis, was found that could be used to test for it. Later in 1948, two independent teams - one in the UK and one in the US - isolated the pure APA factor, vitamin B12, managing to glean only 20 mg from a ton of liver.",
+      "verbatim": "Later in 1948, two independent teams (one in the UK and the other in the U.S)\nwere able to isolate the pure APA factor: vitamin B,>. They were able to glean 20\n\nmg of the B,, from a ton of liver.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "cobalt",
+        "b12",
+        "history",
+        "discovery"
+      ]
+    },
+    {
       "id": "WAL-CLM-HELLS-000001",
       "subject": "beef",
       "also_about": [
@@ -11566,6 +12795,90 @@
       ]
     },
     {
+      "id": "WAL-CLM-HELLS-000055",
+      "subject": "vanadium",
+      "also_about": [
+        "obesity",
+        "chromium"
+      ],
+      "facet": "mechanism",
+      "question": "Can low vanadium cause weight gain?",
+      "answer_short": "Without enough chromium and vanadium, blood glucose is converted into blood fats and body fat instead of being burned for energy.",
+      "answer": "Wallach explains that when dietary or supplemental chromium and vanadium are absent or insufficient, blood glucose is converted into blood lipids and body fat rather than being efficiently burned for energy. The concurrent deficiencies of chromium, vanadium, and other minerals produce ravenous hunger, cravings, binge eating, pica, and the munchies. He identifies this combination as a basic root cause of obesity.",
+      "verbatim": "The absence of or insufficient levels of dietary or supplemental \nchromium and vanadium, results in blood glucose being converted \ninto blood lipids and body fat, rather than efficiently being burned \nfor energy. The concurrent deficiencies chromium, vanadium and \nother minerals results in ravenous hunger, cravings, binge eating, \npica, cribbing and the munchies.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "weight gain",
+        "obesity",
+        "fat storage",
+        "cravings",
+        "metabolism"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000056",
+      "subject": "manganese",
+      "also_about": [
+        "vitamin-e"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in manganese?",
+      "answer_short": "Hazelnuts (filberts) are a standout, with 24 nuts supplying ninety percent of the daily value for manganese.",
+      "answer": "Among nuts, hazelnuts (filberts) are an outstanding source of manganese. Wallach notes that 24 hazelnuts provide ninety percent of the USDA recommended daily value of manganese, along with twenty percent of the daily value for vitamin E. A one-ounce serving of 20 nuts carries 180 calories and 17 grams of fat, making hazelnuts an easy whole-food way to boost manganese intake.",
+      "verbatim": "Hazelnuts (Filberts): 24 nuts provide twenty percent of the \nUSDA recommended daily value of vitamin E and ninety percent of \nthe manganese.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "food-sources",
+        "nuts",
+        "nutrition"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000057",
+      "subject": "molybdenum",
+      "also_about": [
+        "manganese",
+        "boron",
+        "copper",
+        "zinc"
+      ],
+      "facet": "physiology",
+      "question": "Is molybdenum essential for plants?",
+      "answer_short": "Wallach lists molybdenum among the micronutrients that plants require for optimal health.",
+      "answer": "In a table of elements required by plants for optimal health, Wallach classes molybdenum as a micronutrient - one of the trace elements that plants need in small amounts, alongside iron, chlorine, copper, zinc, boron, and manganese. These micronutrients are distinguished from the macronutrients plants need in larger quantities, such as nitrogen, phosphorus, and potassium.",
+      "verbatim": "Elements Required by Plants for Optimal Health \nMacronutrients \nNitrogen (N) \nPhosphorus (P) \nPotassium (K) \nCalcium \nMagnesium \nSulfur \nMicronutrients \nIron \nChlorine \nCopper \nZinc \nBoron \nManganese \nMolybdenum",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "minerals",
+        "plants",
+        "agriculture"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000058",
+      "subject": "molybdenum",
+      "also_about": [
+        "cancer",
+        "selenium",
+        "vitamin-e"
+      ],
+      "facet": "history",
+      "question": "Does molybdenum help prevent cancer?",
+      "answer_short": "In a large China study Wallach cites, molybdenum had no statistically significant protective effect against cancer deaths, unlike beta carotene, vitamin E, and selenium.",
+      "answer": "Wallach recounts a National Cancer Institute study in Henan Province, China, in which molybdenum was one of the nutrients tested against cancer. He reports that vitamin C, retinol, zinc, riboflavin, molybdenum, and niacin had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking beta carotene, vitamin E, and selenium saw dramatically positive results, including 13 percent fewer deaths from all cancers.",
+      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, ribofla- \nvin, molybdenum and niacin had no statistically significant (protec- \ntive) effect on cancer deaths after five years.”",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "cancer",
+        "antioxidants",
+        "research"
+      ]
+    },
+    {
       "id": "WAL-CLM-IAIYH-000018",
       "subject": "essential_nutrients",
       "also_about": [],
@@ -12022,6 +13335,30 @@
         "radiotherapy",
         "cancer"
       ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000043",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does boron raise testosterone and estrogen?",
+      "answer_short": "Wallach reports that boron supplementation doubles blood levels of both estrogen (estradiol) and testosterone in men and women.",
+      "answer": "Wallach points to boron's bone-protective and hormonal effects. He says it is needed both to maintain bone density and to keep normal blood levels of estrogen and testosterone. He cites a supplementation finding: within eight days of taking boron, women held on to far more of their minerals - excreting 40% less calcium, 33% less magnesium, and less phosphorus in their urine - while their level of 17-beta estradiol (the main, most active form of estrogen) doubled to what is seen in women on estrogen-replacement therapy, and testosterone doubled in both men and women.",
+      "verbatim": "Boron is required for the maintenance of bone density\nand normal blood levels of estrogen and testosterone. Within\neight days of supplementing boron, women lost 40% less\ncalcium, 33% less magnesium, and less phosphorus through\ntheir urine. Women receiving boron supplements had blood\nlevels of estradiol 17B doubled to “levels found in women\non estrogen replacement therapy.” Levels of testosterone\nalso double in both men and women following boron\nsupplementation.",
+      "page": 103,
+      "book_id": "immortality",
+      "topics": [
+        "testosterone",
+        "estrogen",
+        "hormones",
+        "menopause",
+        "men's health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "boron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000046",
@@ -12505,12 +13842,38 @@
       }
     },
     {
+      "id": "WAL-CLM-IMMORT-000079",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "What does cobalt do in the body?",
+      "answer_short": "Cobalt is essential for all forms of life; it activates enzymes, helps fix nitrogen, and sits at the very center of vitamin B12.",
+      "answer": "Cobalt is essential to every form of life — from blue-green algae, bacteria and fungi to plants, insects, and all the vertebrates including humans. It works as an enzyme cofactor and activator, helps \"fix\" nitrogen during amino-acid production, and — most importantly — a single cobalt atom sits at the center of vitamin B12, which is itself a cofactor and activator (the cobamide coenzymes) for several essential enzymes.",
+      "verbatim": "Cobalt is essential for all forms of life including blue-green algae, some bacteria and fungi, some plants, insects,\nbirds, reptiles, amphibians and mammals including man.\nCobalt functions as a cofactor and an activator for enzymes,\n“fixes” nitrogen during amino acid production, and a single\ncobalt atom is the central metal component of vitamin B12,\nwhich itself is a cofactor and activator (cobamide coenzymes)\nfor several essential enzymes.",
+      "page": 126,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "enzymes",
+        "trace-minerals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cobalt"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-IMMORT-000080",
       "subject": "vitamin-b12",
       "also_about": [
         "choline",
         "methionine",
-        "cholesterol"
+        "cholesterol",
+        "cobalt"
       ],
       "facet": "physiology",
       "question": "What does vitamin B12 do in the body?",
@@ -12541,7 +13904,9 @@
       "subject": "cobalt",
       "also_about": [
         "digestion",
-        "absorption"
+        "absorption",
+        "vitamin-b12",
+        "sodium"
       ],
       "facet": "mechanism",
       "question": "Why can’t I absorb vitamin B12?",
@@ -12567,11 +13932,99 @@
       }
     },
     {
+      "id": "WAL-CLM-IMMORT-000082",
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was cobalt discovered to be essential?",
+      "answer_short": "It came from 'bush sickness,' a fatal wasting disease of cattle and sheep in Australia and New Zealand that was cured and prevented by cobalt.",
+      "answer": "Cobalt's essentiality was discovered through \"bush sickness,\" a fatal disease of cattle and sheep in Australia and New Zealand that could be successfully treated and prevented with cobalt supplements. Bush sickness was marked by emaciation (Wallach likens it to unsupplemented vegans), a dull stare, a listless and starved look, pale mucous membranes, anorexia (loss of appetite), and pernicious anemia (a macrocytic/hypochromic anemia — large, pale red cells).",
+      "verbatim": "The discovery of the essentiality of cobalt came from\nobserving a fatal disease (“bush sickness”) in cattle and\nsheep from Australia and New Zealand. It was observed that\n“bush sickness” could be successfully treated and prevented\nby cobalt supplements. Bush sickness was characterized by\nemaciation (unsupplemented vegans), dull stare, listless\nand starved look, pale mucus membranes, anorexia, and\npernicious anemia (macrocytic/hypochromic).",
+      "page": 128,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "discovery",
+        "bush-sickness",
+        "anemia",
+        "livestock"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cobalt"
+        ],
+        "conditions": [
+          "bush_sickness",
+          "anorexia",
+          "pernicious_anemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000083",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "warning",
+      "question": "What diseases does a cobalt or vitamin B12 deficiency cause?",
+      "answer_short": "Failing to absorb B12/cobalt causes pernicious anemia and demyelination of the spinal cord and large nerve trunks.",
+      "answer": "In humans, failing to absorb B12/cobalt causes a deficiency disease. It can follow surgical removal of part of the stomach (which wipes out the zones that make intrinsic factor) or of the ileum, small-intestinal pouches (diverticulae), parasites (tapeworm), celiac disease (gluten/grain and cow's-milk-albumen allergy), and other malabsorption disorders. The classic results are pernicious anemia and demyelination — stripping of the myelin insulation — of the spinal cord and the large nerve trunks.",
+      "verbatim": "In humans, a failure to absorb B12/cobalt results in a\ndeficiency disease. This can result from a surgical removal\nof parts of the stomach (eliminates zones of intrinsic factor\nproduction), or surgical removal of the ileum portion of\nthe small bowel, small intestinal diverticulae, parasites\n(tapeworm), celiac disease (allergies to wheat gluten, barley,\nrye, oats and cows milk albumen), and other malabsorption\ndiseases. Pernicious anemia and demyelination of the spinal\ncord and large nerve trunks are classic diseases that are the\nresult of B12/cobalt deficiency.",
+      "page": 128,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "anemia",
+        "nerves",
+        "deficiency"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cobalt"
+        ],
+        "conditions": [
+          "pernicious_anemia",
+          "demyelination",
+          "celiac_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000084",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "protocol",
+      "question": "How much cobalt or vitamin B12 should I take a day?",
+      "answer_short": "The RDA is only 3–4 mcg a day, but Wallach prefers 250 to 400 mcg for a real safety margin, especially before and during pregnancy and nursing.",
+      "answer": "Wallach gives the quantitative picture for cobalt/B12. In the soil, less than 0.07 ppm cobalt leaves crops (and the animals and people who eat them) deficient, while 0.11 ppm prevents and cures the deficiency. The official RDA for B12/cobalt is just 3–4 mcg per day, but Wallach recommends 250–400 mcg for a respectable safety margin, and urges pregnant and nursing mothers especially to supplement (a baby nursed by a deficient mother carries the congenital deficiency longer, risking serious, permanent nerve damage). At the other extreme, a cobalt excess in humans (20–30 mg/day) can over-stimulate red-blood-cell production (erythropoiesis) by raising the kidney hormone erythropoietin.",
+      "verbatim": "The human RDA for B12/cobalt is 3 to 4 mcg per day,\nhowever 250 to 400 mcg gives a respectable safety margin.\nPregnant and nursing mothers should especially take care\nto supplement with the optimum levels of B12.",
+      "page": 129,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "dose",
+        "supplements",
+        "pregnancy"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cobalt",
+          "vitamin-b12"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-IMMORT-000085",
       "subject": "cobalt",
       "also_about": [
         "iron",
-        "magnesium"
+        "magnesium",
+        "vitamin-b12"
       ],
       "facet": "mechanism",
       "question": "What does cobalt have to do with vitamin B12?",
@@ -14427,6 +15880,95 @@
         "krypton-fluoride",
         "chemistry"
       ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000199",
+      "subject": "lithium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much lithium should you take and in what form?",
+      "answer_short": "Wallach cites chelated lithium at 1,000 to 2,000 micrograms per day, which raises hair lithium levels over weeks — unlike metallic lithium carbonate.",
+      "answer": "Wallach's lithium supplement dose. Chelated lithium supplemented at 1,000-2,000 mcg (1-2 mg) per day produces a dose-related rise in hair-lithium levels -- climbing after four weeks, leveling off by three months, and falling back to baseline within two months of stopping. Wallach notes this response is not seen with metallic lithium carbonate.",
+      "verbatim": "Chelated lithium supplemented at 1,000 to 2,000 ug/day causes a dose related increase in hair lithium levels. Hair\nlithium levels increased after four weeks of supplementation\nand leveled off and became stationary after three months.\nWhen the lithium supplementation was stopped, hair lithium\nlevels dropped to presupplement values in two months. This\nscenario is not seen with the supplementation of metallic\nlithium carbonate.",
+      "page": 167,
+      "book_id": "immortality",
+      "topics": [
+        "dose",
+        "supplements",
+        "lithium",
+        "hair-analysis"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lithium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000200",
+      "subject": "lithium",
+      "also_about": [
+        "depression",
+        "adhd",
+        "autism"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of a lithium deficiency?",
+      "answer_short": "In animals lithium deficiency causes reproductive failure, infertility, poor growth and shortened life; in humans it shows as manic depression, rages, hyperactivity, ADD/ADHD, some autism and 'bad seed' behavior.",
+      "answer": "Lithium deficiency and mental/behavioral health. Wallach frames depression and manic-depression (bipolar disorder) as, at root, a lithium deficiency aggravated by high sugar -- noting conventional psychiatry itself treats depression with the trace mineral lithium, and lithium carbonate is standard for severe bipolar disorder. He lists depression, manic-depression, hyperactivity, attention-deficit disorders (ADD/ADHD), certain forms of autism, and a spectrum of aggression, rage, and violent or criminal behavior as hallmarks of a lithium deficiency worsened by high sugar or alcohol intake.",
+      "verbatim": "In humans, manic depression, depression, “bi-polar”\ndisease, rage, road rage, “going postal,” Dr. Jekyll/Mr. Hyde\nbehavior, hyperactivity, ADD, ADHD, certain forms of autism\nand “bad seeds” are all hallmarks of a lithium deficiency\naggravated by a high sugar or alcohol intake.",
+      "page": 167,
+      "book_id": "immortality",
+      "topics": [
+        "mental-health",
+        "behavior",
+        "violence",
+        "deficiency"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lithium"
+        ],
+        "conditions": [
+          "depression",
+          "bipolar_disorder",
+          "adhd",
+          "hyperactivity",
+          "autism",
+          "violent_behavior",
+          "criminal_behavior",
+          "blind_rage"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000202",
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "physiology",
+      "question": "Do violent criminals have low lithium levels?",
+      "answer_short": "Wallach reports that normal controls have almost 400 times more hair lithium than violent criminals from California, Florida, Texas and Oregon.",
+      "answer": "Lithium levels track with violent and criminal behavior. Wallach reports that normal controls had almost 400 times more hair lithium than violent criminals sampled across California, Florida, Texas, and Oregon -- evidence he ties to lithium's role in curbing aggression and criminal behavior. He cautions that the daily lithium intake estimated by the EPA (Environmental Protection Agency), 650-3,100 mcg, overstates what is usable, since much dietary lithium is metallic and not necessarily bioavailable.",
+      "verbatim": "Normal controls showed almost 400 times more hair\nlithium than do the violent criminals from California, Florida,\nTexas and Oregon. The EPA estimated daily intake of lithium\nranges from 650 to 3,100 ug/day, however, much of the\ningested lithium is metallic and not necessarily biologically\navailable.",
+      "page": 168,
+      "book_id": "immortality",
+      "topics": [
+        "crime",
+        "violence",
+        "hair-analysis",
+        "diagnosis"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lithium"
+        ],
+        "conditions": [
+          "criminal_behavior",
+          "violent_behavior"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000203",
@@ -17108,6 +18650,548 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000344",
+      "subject": "vanadium",
+      "also_about": [
+        "chromium",
+        "hypoglycemia",
+        "obesity"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of a vanadium deficiency?",
+      "answer_short": "Wallach says carbohydrate and candy cravings, the 'munchies,' and a strong thirst for sweet drinks are sure signs of chromium and vanadium deficiency.",
+      "answer": "According to Wallach, chromium and vanadium deficiencies show up as an intense thirst for liquids, with sugary soft drinks usually the first choice and water the last, plus a hunger for carbohydrates like soft drinks, sweetened coffee and tea, alcohol, pasta, desserts, and bread. The 'munchies,' cravings for alcohol, and candy cravings, especially for chocolate, are sure signs of a chromium and vanadium deficiency.",
+      "verbatim": "Chromium and vanadium deficiencies are manifested\nby an intense thirst for liquid (high fructose corn syrup laden\nsoft drinks being the usual first choice and water the last for\nminerally deficient humans) and hunger for carbohydrates\n(i.e. - soft drinks, coffee and tea with added sugar, alcohol,\npasta, deserts, bread, etc.).\n\nThe “munchies,” cravings for alcohol and “candy\ncravings” (especially chocolate) are sure signs of chromium\nand vanadium deficiencies.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cravings",
+        "deficiency signs",
+        "sugar",
+        "munchies",
+        "chocolate"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000345",
+      "subject": "vanadium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "How did vanadium get its name?",
+      "answer_short": "Vanadium was named for the Scandinavian goddess Vanadis because of its many beautifully colored compounds.",
+      "answer": "Wallach recounts that vanadium was discovered in 1801 by a Mexican professor of mineralogy, Andres Manuel del Rio. It was later named for the Scandinavian goddess Vanadis because of its many beautifully colored compounds. Vanadium makes up 0.02% of the earth's crust and is present in trace amounts in more than 60 different ores, with vanadinite as its predominant source.",
+      "verbatim": "Vanadium makes up 0.02% of the earth’s crust, and is\npresent in trace amounts in more than 60 different ores. The\npredominant source of vanadium is vanadinite. A Mexican\nprofessor of mineralogy, Andres Manuel del Rio, discovered\nvanadium in 1801. It was later named for the Scandinavian\ngoddess Vanadis because of its many beautifully colored\ncompounds.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "name origin",
+        "history",
+        "chemistry",
+        "trace minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000346",
+      "subject": "germanium",
+      "also_about": [
+        "silica",
+        "carbon",
+        "gallium"
+      ],
+      "facet": "basics",
+      "question": "Is germanium used in electronics or computers?",
+      "answer_short": "Germanium is a poor conductor classed as a semiconductor, and when 'doped' with trace elements it is used to make transistors and microcomputers.",
+      "answer": "Germanium is a poor conductor of electricity, which places it in semiconductor status. Adding tiny amounts of other elements such as arsenic, gallium, or antimony -- a process called 'doping' -- greatly increases its ability to conduct electricity. Doped germanium is used to manufacture transistors, which essentially become micro-computers.",
+      "verbatim": "Germanium is a poor conductor of electricity\nand therefore is relegated to a semi-conductor status.\n\nThe addition of small amounts of other elements such\nas arsenic, gallium, or antimony is called “doping” - this\nprocess greatly increases its ability to conduct electricity.\nDoped germanium is used to manufacture transistors, which\nessentially become micro-computers.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "electronics",
+        "technology",
+        "semiconductor",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000347",
+      "subject": "manganese",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "mechanism",
+      "question": "What does manganese do in the body?",
+      "answer_short": "Manganese activates many enzyme systems, including those for glucose metabolism, energy production, and the antioxidant SOD, and is built into metalloenzymes, hormones, and proteins.",
+      "answer": "Even though the total body content of manganese in humans is only 10 to 20 mg, it is essential to all living organisms. It activates numerous enzyme systems, including those involved in glucose metabolism, energy production, and the antioxidant enzyme superoxide dismutase (SOD). Manganese is also a major constituent of several metalloenzymes, hormones, and proteins essential to all vertebrates and humans.",
+      "verbatim": "The total body content of manganese in humans\nis only 10 to 20 mg. Manganese is known to be essential\nfor all living organisms. Manganese activates numerous\nenzyme systems including those involved with glucose\nmetabolism, energy production and antioxidant properties\nof superoxide dismutase (SOD). It is a major constituent of\nseveral metalloenzymes, hormones, and proteins essential to\nall vertebrates and humans.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "minerals",
+        "enzymes",
+        "energy",
+        "antioxidants"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000348",
+      "subject": "manganese",
+      "also_about": [
+        "arthritis"
+      ],
+      "facet": "physiology",
+      "question": "Does manganese help build bones and cartilage?",
+      "answer_short": "Yes, manganese is essential to forming the three tiny bones of the ear and to the structure of joint cartilage.",
+      "answer": "Manganese is an essential part of the developmental process and the physical structure of the three fragile ear bones and joint cartilage. Because of this role, a shortage of manganese shows up as defects in cartilage and in the ear's bony structure. This is why Wallach links manganese deficiency to both joint problems and hearing loss.",
+      "verbatim": "Manganese is an essential part of the developmental\nprocess and the physical structure of the three fragile ear\nbones and joint cartilage.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "joint-health",
+        "bone-health",
+        "ear-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000349",
+      "subject": "manganese",
+      "also_about": [
+        "infertility",
+        "miscarriage"
+      ],
+      "facet": "physiology",
+      "question": "Does manganese deficiency affect fertility and libido?",
+      "answer_short": "Yes, Wallach lists infertility (failure to ovulate, testicular atrophy), miscarriages, and loss of libido in both sexes among manganese-deficiency diseases.",
+      "answer": "Among the deficiency diseases of manganese, Wallach lists infertility, meaning failure to ovulate in women and testicular atrophy in men, as well as still births and spontaneous abortions (miscarriages). He also names loss of libido in both males and females. In his framework, reproductive failure and low sex drive can be signs that the body is short of manganese.",
+      "verbatim": "Infertility (failure to ovulate, testicular atrophy)\nStill births/ spontaneous abortions (miscarriages)\nLoss of libido in both males and females",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "fertility",
+        "mens-health",
+        "womens-health",
+        "reproduction"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000350",
+      "subject": "manganese",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name manganese come from?",
+      "answer_short": "Manganese was identified in 1774 by Carl Wilhelm Scheele, who named it from the Latin magnes ('magnet') for the magnetic properties of its ore.",
+      "answer": "Manganese was identified in 1774 by the chemist Carl Wilhelm Scheele. He named it from the Latin word magnes, meaning 'magnet,' a nod to the magnetic properties of pyrolusite, the manganese ore. The nutrient's name thus ties it directly to the magnetic mineral it was first drawn from.",
+      "verbatim": "Manganese was identified in 1774 by Carl Wilhelm\nScheele who named it from the Latin word magnes, which\ntranslates to “magnet,” referring to the magnetic properties\nof pyrolusite.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "minerals",
+        "history-of-medicine",
+        "word-origins"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000351",
+      "subject": "boron",
+      "also_about": [
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "basics",
+      "question": "What is boron?",
+      "answer_short": "Boron is a scarce trace mineral Wallach counts among the nutrients essential for human health, needed for bone metabolism, the efficient use of calcium and magnesium, and normal sex-hormone levels.",
+      "answer": "Boron is a scarce, non-metallic trace mineral that never occurs pure in nature, turning up instead in combined compounds such as borax and boric acid. Wallach counts it among the nutrients essential for human health. In his framework boron is required for bone metabolism and the efficient use of calcium and magnesium, for the proper function of the endocrine glands (the ovaries, testes, and adrenals), and for maintaining normal blood levels of estrogen and testosterone. Although it was accepted as a human essential only in 1990, it now sits firmly among the minerals Wallach says the body must have.",
+      "verbatim": "Boron is essential for bone metabolism including the\nefficient use of calcium and magnesium and proper function\nof endocrine glands (i.e. - ovaries, testes and adrenals).",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "what is boron",
+        "minerals",
+        "trace minerals",
+        "bone health",
+        "essential nutrients"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000352",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is boron found in nature?",
+      "answer_short": "Boron concentrates in plants, especially brown algae and land plants, at far higher levels than in animals.",
+      "answer": "Boron is far more concentrated in plants than in animals. Marine plants carry 120 ppm (highest in brown algae) and land plants 150 ppm, while marine animals hold 20 to 50 ppm and land animals only 0.5 ppm. Wallach notes that the plant families Chenopodiaceae and Plumbaginaceae are indicator plant families for boron. The pattern shows that plants take up and hold far more boron than animals do.",
+      "verbatim": "marine plants 120 ppm (highest levels found in brown\nalgae), terrestrial plants at 150 ppm (chenopodiaceae and\nplumboginaceae are indicator plant families), marine animals\nat 20 to 50 ppm, and terrestrial animals at 0.5 ppm.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "food sources",
+        "plants",
+        "brown algae",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000353",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "history",
+      "question": "When was boron recognized as an essential nutrient?",
+      "answer_short": "Boron was not considered essential before 1981; it was first shown essential in growing chicks, and was not accepted as essential for humans until 1990.",
+      "answer": "Prior to 1981, boron was not considered an essential nutrient at all. It was first shown to be an essential mineral for growing chicks, and it was not until 1990 that boron was accepted as an essential nutrient for humans. Boron's recognized status as a human essential is therefore a relatively recent development.",
+      "verbatim": "Prior to 1981, boron was not considered an essential\nnutrient. Boron was first shown to be an essential mineral for\ngrowing chicks. It was not until 1990 that boron was accepted\nas an essential nutrient for humans.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "essential nutrients",
+        "history",
+        "nutrition science"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000354",
+      "subject": "boron",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered boron?",
+      "answer_short": "Boron was first isolated in 1808 by English chemist Sir Humphry Davy together with French chemists Joseph Louis Gay-Lussac and Louis-Jacques Thenard.",
+      "answer": "Boron was first isolated in 1808 by the English chemist Sir Humphry Davy, working alongside two French chemists, Joseph Louis Gay-Lussac and Louis-Jacques Thenard. Before this, boron existed only in its combined mineral forms, since it is never found pure in nature.",
+      "verbatim": "English chemist Sir Humphry Davy and two French chemists,\nJoseph Louis Gay-Lussac and Louis-Jacques Thenard.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "discovery",
+        "history",
+        "chemistry",
+        "Humphry Davy"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000355",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "basics",
+      "question": "What is cobalt?",
+      "answer_short": "Cobalt is a rare trace mineral that's essential to all life — a single cobalt atom sits at the center of vitamin B12, so needing cobalt really means needing B12 (for blood, DNA, nerve myelin and thyroid hormone).",
+      "answer": "In Wallach's framework, cobalt is an essential trace mineral required by every form of life, from blue-green algae, bacteria and fungi to plants, insects and all the vertebrates including humans. It works as a cofactor and activator for enzymes and helps \"fix\" nitrogen during amino-acid production, but its defining role is nutritional: a single cobalt atom sits at the very center of vitamin B12 (the cobamide coenzymes). Because of that, the body's cobalt requirement is really a requirement for the finished B12 molecule — cobalt/B12 is needed to build DNA and RNA, form red blood cells, make the myelin that insulates nerves, and produce the thyroid hormone thyroxine. Cobalt is a rare element, making up only about 0.003% of the earth's crust, and where soils are cobalt-depleted the crops, animals and people that depend on them fall deficient.",
+      "verbatim": "Cobalt is essential for all forms of life including blue-green algae, some bacteria and fungi, some plants, insects,\nbirds, reptiles, amphibians and mammals including man.\nCobalt functions as a cofactor and an activator for enzymes,\n“fixes” nitrogen during amino acid production, and a single\ncobalt atom is the central metal component of vitamin B12,\nwhich itself is a cofactor and activator (cobamide coenzymes)\nfor several essential enzymes.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "trace-minerals",
+        "enzymes"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000356",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "Why is vitamin B12 red?",
+      "answer_short": "B12's red color comes from the cobalt atom in the molecule, and about 30% of its activity is lost during cooking.",
+      "answer": "Wallach explains that vitamin B12 is a water-soluble red crystalline substance, and its red color is due to the cobalt atom in the molecule. B12 is slowly deactivated by acid, alkali, light, and oxidizing or reducing substances. About 30% of B12 activity is lost during cooking, whether by electric, gas, microwave, wood, or charcoal.",
+      "verbatim": "Vitamin B12 is a red crystalline substance that is water\nsoluble. The red color is due to the cobalt atom in the molecule.\nVitamin B12 is slowly deactivated by exposure to acid, alkali,\nlight, and oxidizing or reducing substances. About 30% of\nB12 activity is lost during cooking (electric, gas, microwave,\nwood, charcoal, etc.).",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "cooking"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000357",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "What happens to extra vitamin B12 in the body?",
+      "answer_short": "The body stores a maximum of 2 mg of B12, releasing it slowly to the bone marrow; any excess is simply shed in the urine ('expensive urine').",
+      "answer": "Wallach explains that the maximum storage level of B12 is 2 mg, which the body slowly releases to the bone marrow as needed. Any intake above the body's storage capacity is simply shed in the urine - what he memorably calls 'expensive urine.'",
+      "verbatim": "The maximum storage level of B12 is 2 mg which is slowly\nreleased to the bone marrow as needed. Excess intake of B12\nabove the body’s storage capacity is shed in the urine (expensive\nurine).",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "storage",
+        "supplements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000358",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12",
+        "hypochlorhydria",
+        "sodium"
+      ],
+      "facet": "sources",
+      "question": "Why do older people often need B12 shots?",
+      "answer_short": "Cobalt/B12 only absorbs when intrinsic factor is present and stomach pH is 2.0 or less; low stomach acid (often from too little salt) blocks it, so doctors give shots.",
+      "answer": "Wallach explains that metallic cobalt is absorbed at only 20 to 26.2%, and only if intrinsic factor is present and the stomach pH is 2.0 or less. Intrinsic factor is a mucoprotein enzyme (Castle's intrinsic factor) that is part of normal stomach secretions. When a person has hypochlorhydria - low stomach acid, usually from a NaCl (salt) deficiency - the intrinsic factor won't work and B12/cobalt is not absorbed, which is why doctors frequently give B12 shots to older people on salt-restricted diets.",
+      "verbatim": "Metallic cobalt itself is absorbed at the rate of 20 to\n26.2% by mice and in humans if intrinsic factor is present\nin the stomach and the stomach pH is 2.0 or less. Intrinsic\nfactor is a mucoprotein enzyme known as Castle’s intrinsic\nfactor and is part of normal stomach secretions. If a person\nhas hypochlorhydria (low stomach acid- usually a NaCl\ndeficiency) the intrinsic factor will not work and B12 cobalt is\nnot absorbed - this is why doctors frequently give B12 shots\nto older people on salt restricted diets.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "b12",
+        "absorption",
+        "stomach-acid",
+        "b12-shots"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000359",
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "warning",
+      "question": "Can you get too much cobalt?",
+      "answer_short": "Yes—cobalt excess of 20 to 30 mg a day can drive up red blood cell production by stimulating the kidney hormone erythropoietin.",
+      "answer": "Wallach cautions that cobalt excess in man, of 20 to 30 mg per day, may create an accelerated erythropoiesis, or red blood cell production, by stimulating an increased production of the kidney hormone erythropoietin.",
+      "verbatim": "Cobalt excess in man (20 to 30 mg/day) may create an\naccelerated erythropoiesis (RBC -red blood cell- production)\nby stimulating an increased production of the kidney hormone\nerythropoietin.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "toxicity",
+        "red-blood-cells"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000360",
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Can cobalt-poor soil cause deficiency in people?",
+      "answer_short": "Yes—less than 0.07 ppm cobalt in soil causes deficiency in the animals and people who eat crops from it, while 0.11 ppm prevents and cures it.",
+      "answer": "Wallach states that less than 0.07 ppm of cobalt in the soil results in cobalt deficiency in the animals and people who eat crops grown from those soils, while 0.11 ppm of cobalt in the soil prevents and cures the deficiency.",
+      "verbatim": "Less than 0.07 ppm Co in the soil results in cobalt\ndeficiency in animals and people who eat crops grown from\nthose soils; 0.11 ppm Co in the soil prevents and cures Co\ndeficiency.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "soil",
+        "deficiency",
+        "farming"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000361",
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "history",
+      "question": "How rare is cobalt and when was it discovered?",
+      "answer_short": "Cobalt is a rare element, only 0.003% of the earth's crust, and was first isolated as a metal by Swedish chemist Georg Brandt in 1739.",
+      "answer": "Wallach notes that cobalt is a rare element, making up only 0.003 percent of the earth's crust, with cobalite - a compound of cobalt, arsenic and sulfur - as one of its common ores. The pure metal has a characteristic bright bluish-white color and is obtained by roasting the ore in air. Cobalt metal was first isolated by the Swedish chemist Georg Brandt in 1739.",
+      "verbatim": "Cobalt is a rare element, making up only 0.003 percent\nof the earth’s crust. Cobalite is one of its common ores, a\ncompound made up of cobalt, arsenic and sulfur. The pure\nmetal, which has a characteristic bright bluish-white color,\nis obtained by roasting this ore in air. Cobalt metal was first\nisolated by the Swedish chemist Georg Brandt in 1739.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "history",
+        "geology",
+        "discovery"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000362",
+      "subject": "cobalt",
+      "also_about": [
+        "nickel"
+      ],
+      "facet": "history",
+      "question": "Is cobalt magnetic and what is it used for?",
+      "answer_short": "Cobalt is easily magnetized and holds its magnetism at high temperatures; about a quarter of world production goes into 'alnico,' a super-magnetic alloy.",
+      "answer": "Wallach describes cobalt as well known for its ability to be magnetized - it is easily magnetized and retains its magnetism at temperatures far higher than those that demagnetize iron. Twenty-five percent of all the cobalt produced in the world is used to make a super-magnetic substance called 'alnico,' an alloy of aluminum, nickel and cobalt used for making industrial magnets.",
+      "verbatim": "Cobalt is well known for its ability to be magnetized. It\nis easily magnetized and retains its magnetism at temperatures\nfar higher than those that demagnetize iron. Twenty five\npercent of all of the cobalt produced in the world is used to\nmake a super magnetic substance called “alnico.” Alnico is an\nalloy of aluminum, nickel and cobalt and is used for making\nindustrial magnets.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "magnets",
+        "industry"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000363",
+      "subject": "lithium",
+      "also_about": [
+        "depression",
+        "adhd"
+      ],
+      "facet": "basics",
+      "question": "What is lithium?",
+      "answer_short": "Lithium is the lightest of all metals and an essential trace mineral Wallach ties directly to mood and behavior — he treats depression, bipolar disorder, and aggression as hallmarks of a lithium deficiency.",
+      "answer": "Lithium is an alkali metal so light it can actually float on water, and in Wallach's framework it is one of the essential trace minerals the body must have — not merely a psychiatric drug. He treats it as a nutrient central to mental and emotional health: he holds that depression, manic-depression (bipolar disorder), hyperactivity, ADD/ADHD, certain forms of autism, and even rage and violent behavior are, at root, hallmarks of a lithium deficiency aggravated by high sugar and alcohol intake. He points to conventional medicine's own use of lithium for bipolar disorder, and to research linking higher lithium in drinking water to lower rates of crime and suicide, as evidence of how essential this mineral is — and calls for lithium, not fluoride, to be added to public water.",
+      "verbatim": "Lithium’s density is so low\nthat a small piece can actually float on water.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "lithium",
+        "trace-minerals",
+        "mental-health",
+        "essential-nutrients"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000364",
+      "subject": "lithium",
+      "also_about": [
+        "sodium",
+        "potassium"
+      ],
+      "facet": "basics",
+      "question": "What kind of metal is lithium?",
+      "answer_short": "Lithium is an extremely reactive metal so light a small piece can float on water, and so reactive it must be stored in oil or kerosene.",
+      "answer": "Wallach describes lithium as an extremely reactive metal whose density is so low that a small piece can actually float on water. It reacts vigorously with water to produce hydrogen gas and with oxygen to form lithium oxide, so free lithium is usually stored in oil or kerosene to keep these reactions from occurring.",
+      "verbatim": "Lithiumisanextremely reactive metal. Itreacts vigorously\nwith water, to produce hydrogen gas, and with oxygen to form\nlithium oxide (Li,O). To prevent these reactions from occurring,\nfree lithium is usually stored in oil or kerosene.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "lithium",
+        "chemistry",
+        "alkali-metals",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000365",
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "mechanism",
+      "question": "Why is lithium used to treat bipolar disorder?",
+      "answer_short": "Lithium carbonate is routinely prescribed for severe bipolar disorder — over 3 million prescriptions a year — with its effect thought to involve how brain cells respond to certain hormones and neurotransmitters.",
+      "answer": "Wallach notes that lithium carbonate is regularly used to treat patients with the severe form of bipolar disorder, with more than 3 million prescriptions for this trace mineral filled yearly. He explains that lithium's role is thought to be related to the way brain cells respond to certain hormones and neurotransmitters.",
+      "verbatim": "Lithium carbonate is regularly used to treat patients\nwith the severe form of bipolar disorder. More than 3 million\nprescriptions for this trace mineral are filled yearly. The role of\nlithium is thought to be related to the role the brain cells play\nand respond to certain hormones and neurotransmitters.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "brain",
+        "bipolar",
+        "mental-health",
+        "neurotransmitters"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000366",
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "stance",
+      "question": "Is depression caused by a lithium deficiency?",
+      "answer_short": "Wallach holds that depression and manic depression are simply a lithium deficiency aggravated by high sugar consumption.",
+      "answer": "While psychiatrists attribute depression and manic depression to feelings of being out of control, negative thinking and self-recrimination, Wallach points out that they nonetheless treat it successfully with the trace mineral lithium. In his framework, depression and manic depression with all that the diagnosis implies are simply a lithium deficiency aggravated by a high consumption of sugar.",
+      "verbatim": "While the professional psychiatrist says that depression\nand manic depression are due to feelings that “we are out of\ncontrol of our lives,” negative thinking, and self recrimination\n(‘I'm a loser”), they treat depression successfully with the\ntrace mineral lithium. Depression and manic depression with\nall that implies, are simply a lithium deficiency aggravated by\na high consumption of sugar.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "depression",
+        "mental-health",
+        "mood",
+        "sugar"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000367",
+      "subject": "lithium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "How did lithium get its name?",
+      "answer_short": "Lithium was discovered in 1817 by Swedish chemist Johan August Arfvedson and named after the Greek word 'lithos,' meaning 'stone.'",
+      "answer": "Lithium was discovered in 1817 by the Swedish chemist Johan August Arfvedson during a routine chemical assay of ore from a mine in Sweden. Wallach notes it was named for the Greek word 'lithos,' which translates to 'stone.'",
+      "verbatim": "Lithium was discovered in 1817 by the Swedish chemist\nJohan August Arfvedson during a routine chemical assay of\nore from a mine in Sweden. It was named for the Greek word\nlithos, which translates to “stone.”",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "lithium",
+        "chemistry",
+        "minerals",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000368",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is molybdenum?",
+      "answer_short": "Molybdenum is an essential trace mineral in Wallach's framework — a hard, silvery metal mined from the ore molybdenite — that every living organism needs as a building block of several key enzymes.",
+      "answer": "Wallach classes molybdenum as one of the essential trace minerals every living organism requires, even though it is technically a hard, silvery metal. It is extracted from an ore called molybdenite, with large deposits in Colorado, and was identified as a distinct element in 1778. In the body it works as a constituent of numerous metalloenzymes — Wallach names it an integral part of at least three: xanthine oxidase, aldehyde oxidase, and sulfite oxidase. He cites an RDA of 250 mcg per day but recommends far more as a supplement, and warns that a molybdenum deficiency is among the causes of goiter.",
+      "verbatim": "Molybdenum is a hard, silvery metal that is extracted\nfrom an ore called molybdenite (MoS,). There are large\ndeposits of “Moly” molybdenite in Colorado.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "minerals",
+        "trace-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000369",
+      "subject": "molybdenum",
+      "also_about": [
+        "copper",
+        "gout"
+      ],
+      "facet": "warning",
+      "question": "Can you take too much molybdenum? Is it toxic?",
+      "answer_short": "Wallach says molybdenum toxicity occurs at 10 mg per day, showing up as a gout-like disease and as interference with copper metabolism.",
+      "answer": "According to Wallach, molybdenum toxicity occurs at an intake of 10 mg per day. The clinical signs of toxicity appear as a gout-like disease and as interference with copper metabolism. This 10 mg toxic threshold is many times higher than the 250 mcg RDA he cites in the same passage.",
+      "verbatim": "Toxicity occurs at 10 mg per day; clinical signs\nof toxicity appear as a gout-like disease and interference with\ncopper metabolism.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "minerals",
+        "toxicity",
+        "safety"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000370",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can too much molybdenum in soil poison animals?",
+      "answer_short": "Wallach says a few soils worldwide are rich enough in molybdenum to poison animals grazing on the plants, while numerous other soils are molybdenum-deficient.",
+      "answer": "Wallach notes that molybdenum in soil is strongly concentrated by humus, especially in alkaline soils, and that a few soils worldwide hold enough of it to cause molybdenum poisoning in animals that consume the local plants. At the same time, he says numerous soils are known to be molybdenum-deficient. He gives a typical soil concentration of about 2 ppm.",
+      "verbatim": "soil at 2.0\nppm (strongly concentrated by humus, especially in alkaline\nsoils; a few soils worldwide are rich enough in molybdenum\nto cause molybdenum poisoning in animals consuming\nthe plants). Numerous soils are known to be molybdenum\ndeficient.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "minerals",
+        "soil",
+        "toxicity",
+        "agriculture"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000371",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered molybdenum and when?",
+      "answer_short": "Molybdenum was first extracted from molybdenite and identified as a new element in 1778 by a Swedish chemist named Scheele.",
+      "answer": "According to Wallach, molybdenum was originally extracted from the ore molybdenite and identified as a new element in 1778 by a Swedish chemist named Scheele. It was recognized as a distinct new element at that time.",
+      "verbatim": "In 1778, molybdenum was originally extracted from\nmolybdenite and identified as a new element by the Swedish\nchemist Carl Eilhelm Scheele who identified it as a new\nelement.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "minerals",
+        "history",
+        "chemistry"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000004",
       "subject": "calcium",
       "also_about": [
@@ -17410,6 +19494,44 @@
           "convulsions",
           "rapid_pulse",
           "palpitations"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000017",
+      "subject": "manganese",
+      "also_about": [
+        "tinnitus",
+        "atherosclerosis"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of manganese deficiency and manganese toxicity?",
+      "answer_short": "Deficiency brings ataxia, atherosclerosis, dizziness, hearing loss, high cholesterol, low blood sugar, and tinnitus; toxicity brings anorexia, impaired judgment, Parkinsonism, and memory loss.",
+      "answer": "Wallach lists the signs of manganese deficiency: ataxia (loss of coordination), atherosclerosis, dizziness, hearing loss, high cholesterol, hypoglycemia (low blood sugar), \"muscle therapy\" (printed thus in the source — an apparent misprint whose intended term is unclear), pancreatic atrophy, and tinnitus (ringing in the ears).",
+      "verbatim": "MANGANESE DEFICIENCY\nataxia\natherosclerosis\ndizziness\nhearing loss\nhypercholesterolemia\nhypoglycemia\nmuscle therapy\npancreatic atrophy\ntinnitus",
+      "page": 46,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "toxicity",
+        "deficiency-signs",
+        "brain-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "manganese"
+        ],
+        "conditions": [
+          "atherosclerosis",
+          "high_cholesterol",
+          "hypoglycemia",
+          "tinnitus"
+        ],
+        "symptoms": [
+          "ataxia",
+          "dizziness",
+          "hearing_loss",
+          "muscle_atrophy",
+          "pancreatic_atrophy"
         ]
       }
     },
@@ -17794,6 +19916,28 @@
       "tier1_link": {
         "essentials": [
           "magnesium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000058",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much molybdenum should I take as a supplement?",
+      "answer_short": "Wallach's Base Line Nutritional Supplement Program for adults lists molybdenum at a true supplement need of 500 mcg per day, versus an RDA of only 15 mcg, with a pharmacologic daily dose of 1,000 mcg.",
+      "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives molybdenum a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
+      "verbatim": "MOLYBDENUM 15 mcg 500 mcg 1,000 mcg\nNIACIN 18 mg 50 mg 2,000 to 6,000 mg",
+      "page": 73,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "minerals",
+        "supplements",
+        "dosage"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "molybdenum"
         ]
       }
     },
@@ -20349,6 +22493,28 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000513",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "chromium",
+        "malabsorption"
+      ],
+      "facet": "stance",
+      "question": "Are diabetes and hypoglycemia really caused by vanadium deficiency?",
+      "answer_short": "Wallach says diabetes and hypoglycemia are, in reality, deficiencies of chromium and vanadium created by malabsorption from celiac-type intestinal changes.",
+      "answer": "Wallach reframes diabetes and hypoglycemia as, in reality, deficiencies of chromium and vanadium—deficiencies created by malabsorption resulting from celiac-type changes in the small intestine. In his view these are nutritional-deficiency diseases with a correctable cause, not the incurable conditions conventional medicine treats them as.",
+      "verbatim": "In reality, diabetes and hypoglycemia are de-\nficiencies of chromium and vanadium cre-\nated by malabsorption as a result ofceliac type\nchanges in the small intestine;",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "diabetes",
+        "blood sugar",
+        "malabsorption"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000010",
       "subject": "zinc",
       "also_about": [
@@ -20397,6 +22563,64 @@
         "colloidal-minerals",
         "rare-earths"
       ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000029",
+      "subject": "lithium",
+      "also_about": [
+        "fluoride",
+        "depression"
+      ],
+      "facet": "big_question",
+      "question": "Does Wallach want lithium added to drinking water?",
+      "answer_short": "Yes -- Wallach wants lithium added to the public water supply and fluoride eliminated; conventional medicine limits lithium to psychiatric use, especially manic depression.",
+      "answer": "Wallach recommends adding lithium to the public water supply and eliminating fluoride; conventional medicine confines lithium to psychiatric use (manic depression).",
+      "verbatim": "The current medical use of lithium is limited to psychiatric patients, especially manic depression. We would like to see lithium added to the public water supply and eliminate fluoride!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "water",
+        "fluoride",
+        "public-health",
+        "crime"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lithium"
+        ],
+        "conditions": [
+          "bipolar_disorder"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000041",
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "history",
+      "question": "Is there a link between lithium in drinking water and crime rates?",
+      "answer_short": "Wallach cites a University of California, San Diego study relating violent crime in 27 Texas counties (1978-1987) to drinking-water lithium, finding significantly higher rates of suicide, homicide and rape in counties with little or no lithium.",
+      "answer": "Lithium has measurable mood- and behavior-moderating effects even at the trace levels found in municipal drinking water. A study of 27 Texas counties (1978–1987) by Dr. Gerhard Schrauzer found significantly higher rates of suicide, homicide and rape in counties whose water contained little or no lithium than in those with water-lithium levels of 70–170 µg/L; Wallach argues lithium, not fluoride, belongs in community drinking water.",
+      "verbatim": "These results suggest that lithium has moderating effects on suicidal and violent criminal behavior at levels that may be encountered in municipal water supplies.",
+      "page": 97,
+      "book_id": "rare-earths",
+      "topics": [
+        "crime",
+        "violence",
+        "suicide",
+        "water"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lithium"
+        ],
+        "conditions": [
+          "criminal_behavior",
+          "violent_behavior"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000043",
@@ -20641,6 +22865,41 @@
           "iodine",
           "iron",
           "chromium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000081",
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "chromium"
+      ],
+      "facet": "physiology",
+      "question": "Does hair analysis show a vanadium deficiency?",
+      "answer_short": "Wallach says the diabetes/hypoglycemia hair-analysis pattern shows low chromium, vanadium, sodium, potassium, manganese, and zinc.",
+      "answer": "Wallach lists well-documented hair-analysis mineral patterns for disease: schizophrenia = high calcium, low iron, high copper; arthritis (osteoporosis/hyperparathyroidism) = high lead, calcium and phosphorus, low iron and copper; anemia = low iron, copper, selenium, cobalt; diabetes (prediabetes/hypoglycemia) = low chromium, vanadium, sodium, potassium, manganese and zinc.",
+      "verbatim": "Schizophrenia - high Ca; low Iron; high Copper.\n\nSociopath/violent (Dr. Jekyll/Mr. Hyde rages) - low in copper, zinc, sodium, chromium, vanadium and lithium.\n\nArthritis - (osteoporosis/ hyperparathyroidism) - high Lead, Calcium and Phosphorus; low Iron and Copper.\n\nAnemia - low Iron, Copper, Selenium, Cobalt.\n\nDiabetes (prediabetes/hypoglycemia) - low Chromium, Vanadium, sodium, potassium, manganese, Zinc.",
+      "page": 275,
+      "book_id": "rare-earths",
+      "topics": [
+        "hair analysis",
+        "testing",
+        "diabetes"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron",
+          "copper",
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "schizophrenia",
+          "arthritis",
+          "anemia",
+          "diabetes"
         ]
       }
     },
@@ -20944,6 +23203,83 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000167",
+      "subject": "lithium",
+      "also_about": [
+        "vitamin-b12",
+        "vanadium"
+      ],
+      "facet": "warning",
+      "question": "Does taking lithium affect vitamin B12 or other minerals?",
+      "answer_short": "Wallach notes that short-term lithium supplementation raises serum vitamin B12 but long-term use lowers it, while raising the hair concentrations of vanadium, aluminum, lead, arsenic and cobalt.",
+      "answer": "Wallach reports that lithium supplementation increases hair concentrations of vanadium, aluminum, lead, arsenic, and cobalt; short-term supplementation raises serum vitamin B12, while long-term supplementation lowers it.",
+      "verbatim": "Lithium supplementation increases the hair concentrations of V, Al, Pb, As and Co. Short term supplementation of Li elevates serum B12 levels; with long term supplementation serum B12 drops.",
+      "page": 350,
+      "book_id": "rare-earths",
+      "topics": [
+        "supplements",
+        "interactions",
+        "b12",
+        "bioavailability"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lithium",
+          "vitamin-b12"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000175",
+      "subject": "manganese",
+      "also_about": [
+        "schizophrenia"
+      ],
+      "facet": "warning",
+      "question": "Can too much manganese be harmful?",
+      "answer_short": "Yes, excessive manganese from water supplies or industry can cause a Parkinson-like syndrome or a schizophrenia-like disorder called locura manganica.",
+      "answer": "Wallach notes that excessive manganese — from certain community water supplies and industrial processes — can produce a Parkinsonian syndrome or a psychiatric disorder (locura manganica) resembling schizophrenia.",
+      "verbatim": "Excessive levels of Mn found in certain community water supplies and in some industrial processes can produce a Parkinsonian syndrome or a psychiatric disorder (locura manganica) resembling schizophrenia.",
+      "page": 351,
+      "book_id": "rare-earths",
+      "topics": [
+        "toxicity",
+        "brain-health",
+        "heavy-metals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "manganese"
+        ],
+        "conditions": [
+          "schizophrenia",
+          "parkinsonism"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000180",
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the RDA for molybdenum and how much do people usually get?",
+      "answer_short": "Wallach cites an RDA for molybdenum of 250 mcg per day, with average American dietary intake ranging from 76 to 109 mcg per day.",
+      "answer": "Wallach notes the average American's daily molybdenum intake from food ranges from 76 to 109 mcg, while the RDA for molybdenum is 250 mcg per day.",
+      "verbatim": "The average American daily intake in food ranges from 76 to 109 mcg per day - the RDA for Mo is 250 mcg per day.",
+      "page": 352,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "rda",
+        "intake"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "molybdenum"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-RARE-000240",
       "subject": "biotin",
       "also_about": [
@@ -20980,6 +23316,29 @@
           "gray_hair",
           "white_hair",
           "paresthesia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000256",
+      "subject": "vanadium",
+      "also_about": [
+        "cholesterol"
+      ],
+      "facet": "uses",
+      "question": "Does vanadium lower cholesterol?",
+      "answer_short": "Wallach says vanadium inhibits cholesterol synthesis, lowering blood cholesterol and cholesterol in the aorta.",
+      "answer": "Wallach reports that vanadium inhibits cholesterol synthesis in animals and humans, which is followed by decreased plasma cholesterol levels and reduced aortic cholesterol.",
+      "verbatim": "Vanadium inhibits cholesterol synthesis in animals and humans; this is followed by decreased plasma levels of cholesterol and reduced aortic cholesterol.",
+      "page": 412,
+      "book_id": "rare-earths",
+      "topics": [
+        "cholesterol",
+        "heart health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vanadium"
         ]
       }
     },
@@ -22042,6 +24401,190 @@
         "alzheimers",
         "veterinary",
         "selenium"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000358",
+      "subject": "vanadium",
+      "also_about": [
+        "chromium",
+        "selenium"
+      ],
+      "facet": "history",
+      "question": "Was vanadium once considered toxic?",
+      "answer_short": "Wallach says vanadium was among soil elements once deemed totally toxic with no possibility of being essential, and that doctors made sure it stayed out of our food.",
+      "answer": "Wallach recounts that dozens of the sixty formerly abundant soil elements—including selenium, arsenic, tin, aluminum, chromium, vanadium, molybdenum, and nickel—were, until recently, thought by the allopathic medical profession to be totally toxic with no possibility of being essential. He charges that this belief led them to make sure these minerals, vanadium among them, were kept out of our food.",
+      "verbatim": "Dozens of the sixty formerly abundant soil elements (selenium, arsenic, tin, aluminum, chromium, vanadium, molybdenum, nickel, etc.) were, just a short time ago, thought to be totally toxic with no possibility of essentiality by the allopathic medical profession and they made sure they were not in our food!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "trace minerals",
+        "history",
+        "soil depletion"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000359",
+      "subject": "vanadium",
+      "also_about": [
+        "zinc",
+        "copper"
+      ],
+      "facet": "history",
+      "question": "Is vanadium found in living creatures?",
+      "answer_short": "Wallach notes that a vanadium respiratory compound was found in the blood of sea squirts, among the early discoveries of trace minerals in animals.",
+      "answer": "In his history of trace-element science, Wallach notes that a vanadium respiratory compound was identified in the blood of sea squirts—alongside early findings such as copper in snail blood and a zinc blood pigment in mollusks. He says these discoveries were at first treated as curiosities, before the broader importance of metals in physiology was recognized.",
+      "verbatim": "sycotypin, a zinc containing blood pigment\nin mullussca and a vanadium respiratory\ncompound in the blood of sea squirts.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "trace minerals",
+        "history",
+        "biology"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000360",
+      "subject": "manganese",
+      "also_about": [
+        "iron",
+        "antioxidants"
+      ],
+      "facet": "basics",
+      "question": "What is manganese?",
+      "answer_short": "Manganese is an essential trace mineral — the body holds only 10 to 20 mg in all — that activates key enzymes and helps build bones, joint cartilage, and the tiny bones of the ear.",
+      "answer": "Manganese is a hard, gray-white metal, chemically and physically similar to iron, that Wallach counts among the essential nutrients every human body must have. Although the total body content is only 10 to 20 mg, manganese is essential to all living organisms: it activates numerous enzyme systems — including those for glucose metabolism, energy production, and the antioxidant superoxide dismutase (SOD) — and is a major constituent of several metalloenzymes, hormones, and proteins. It is also built into the physical structure of joint cartilage and the three fragile bones of the ear, which is why Wallach ties a manganese shortage to both joint breakdown and hearing loss.",
+      "verbatim": "the total body content of Mn in humans is only 10 to 20 mg.\n\nManganese is essential to all known living organisms; it activates numerous enzyme systems including those involved with glucose metabolism, energy production and superoxide dismutase; it is a major constituent of several metalloenzymes, hormones, and proteins of humans. Manganese is part of the developmental process and the structure of the fragile ear bones and joint cartilage.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "trace-minerals",
+        "nutrition-basics"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000361",
+      "subject": "manganese",
+      "also_about": [
+        "anemia",
+        "scabies",
+        "amenorrhea"
+      ],
+      "facet": "history",
+      "question": "How was manganese used as a medicine historically?",
+      "answer_short": "In the 1800s manganese cured miners' scabies dermatitis, treated certain anemias better than iron, and was used for menstrual disorders like amenorrhea.",
+      "answer": "Manganese has a long medicinal history. In 1884 manganese as permanganate of potash was used as an emetic, reported in the Medical Gazette by Alexander Ure, and its therapeutic use was first reported in Macon, France, where manganese miners were uniformly cured of scabies dermatitis, which led to manganese skin ointments for external skin diseases. The French also found that oral manganese could be superior to iron in curing certain anemias, and during the 1800s it was used effectively to treat amenorrhea, the absence of menstrual flow.",
+      "verbatim": "In 1884 manganese as permanganate of\npotash was used as an emetic (produced\nvomiting) and was so reported in the Medi-\ncal Gazette by Alexander Ure. The thera-\npeutic use of manganese was first reported\nin Macon, France where manganese min-\ners were “uniformly cured” of scabies\n(mites) dermatitis of various forms. These\nreports by the miners lead to a general use\nof manganese for skin ointments to cure\nexternal skin diseases.\n\nThe French also found that oral man-\nganese could be “superior” to iron in cur-\ning certain anemias. During the 1800's\nmanganese was used very effectively in\ntreating amenorrhea (deficiency of men-\nstrual flow).",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "history-of-medicine",
+        "womens-health",
+        "skin-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000362",
+      "subject": "boron",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "How is boron used to treat brain tumors?",
+      "answer_short": "Boron neutron capture therapy combines a boron-containing drug with neutron irradiation of the brain to treat brain tumors.",
+      "answer": "Boron neutron capture therapy combines a boron-containing drug with neutron irradiation of the brain to attack brain tumors. Dr. Hiroshi Hatanaka, a Japanese neurosurgeon, was internationally recognized for advancing the treatment, persevering with the research when most of his peers had given up on it. He succeeded in curing some patients and prolonging the lives of others.",
+      "verbatim": "Dr. Hatanaka was internationally\nrecognized for advancing the treat-\nment known as the boron neutron\ncapture therapy. The therapy com-\nbines the use of a boron-containing\ndrug with neutron irradiation of the\nbrain.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "cancer",
+        "brain tumor",
+        "neutron capture therapy",
+        "medicine"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000363",
+      "subject": "cobalt",
+      "also_about": [
+        "selenium",
+        "zinc",
+        "molybdenum"
+      ],
+      "facet": "sources",
+      "question": "What foods are a good source of cobalt?",
+      "answer_short": "Organ meats like liver and kidney significantly boost the availability of cobalt, along with selenium, sulfur, molybdenum and zinc.",
+      "answer": "Wallach points out that eating organ meats such as liver and kidney can significantly increase the availability of cobalt, along with selenium, sulfur, molybdenum and zinc. He cautions, though, that an exclusively meat-based diet still leaves out adequate calcium, magnesium and manganese.",
+      "verbatim": "Eating organ meats such as liver and\nkidney can significantly increase the\navailability of selenium, sulfur, cobalt,\nmolybdenum and zinc",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "cobalt",
+        "food-sources",
+        "organ-meats",
+        "liver"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000364",
+      "subject": "lithium",
+      "also_about": [
+        "gout"
+      ],
+      "facet": "history",
+      "question": "What was lithium used to treat before modern medicine?",
+      "answer_short": "Lithium's medicinal use goes back to 400 AD for mental illness, and in the 1840s lithium salts were used to treat kidney stones, gout and rheumatism.",
+      "answer": "Wallach traces lithium's use in mental illness back to 400 AD, when Caelius Aurelianus prescribed lithium-containing waters for the mentally ill. In the 1840s lithium salts were found to dissolve urate deposits when combined with uric acid, and lithium was then used to treat kidney stones, 'gravel,' gout, rheumatism and a plethora of other physical and mental diseases. Health spas later capitalized on lithium's reputation, even adding the word 'lithia' to their names to woo the public.",
+      "verbatim": "Its use in men-\ntal illness dates back to 400 A.D. when\nCaelius Aurelianus prescribed lithium con-\ntaining waters for mental illness.\n\nIn the 1840's it was reported that lithium\nsalts combined with uric acid dissolved\nurate deposits. Lithium was then used to\ntreat kidney stones, “gravel”, gout, rheuma-\ntism as well as a plethora of physical and\nmental diseases.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "lithium",
+        "history",
+        "medicine",
+        "arthritis"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000365",
+      "subject": "lithium",
+      "also_about": [
+        "vanadium",
+        "selenium"
+      ],
+      "facet": "discovery",
+      "question": "Is lithium an essential nutrient?",
+      "answer_short": "Yes — Wallach counts lithium among the trace elements whose essentiality was established in mice in the late 20th century.",
+      "answer": "Wallach recounts that at the end of the third quarter and beginning of the fourth quarter of the 20th century, research in mice established the 'new' trace-element essentiality of lithium, along with fluorine, silica, vanadium, nickel, arsenic, cadmium, tin and lead. In his framework this places lithium firmly among the essential minerals the body requires, not an optional additive.",
+      "verbatim": "At the end of the third quarter and the\nbegining of the fourth quarter of the 20th\ncentury, the identification in mice of “new”\ntrace element essentiality for lithium, fluo-\ntine, silica, vanadium, nickel, arsenic, cad-\nmium, tin, and lead exploded.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "trace-minerals",
+        "essential-nutrients",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000366",
+      "subject": "molybdenum",
+      "also_about": [
+        "selenium",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "stance",
+      "question": "Was molybdenum once considered toxic or non-essential?",
+      "answer_short": "Yes - Wallach says molybdenum was one of dozens of soil elements the medical profession recently dismissed as totally toxic with no possibility of being essential.",
+      "answer": "Wallach argues that molybdenum is among dozens of the sixty formerly abundant soil elements - alongside selenium, arsenic, tin, aluminum, chromium, vanadium, and nickel - that the allopathic medical profession, just a short time ago, considered totally toxic with no possibility of essentiality. He contends they made sure these elements were kept out of our food. This, in his view, is part of why our Earth's soils and food supply are now depleted of nutrients the body needs.",
+      "verbatim": "Dozens of the sixty formerly abundant soil elements (selenium, arsenic, tin, aluminum, chromium, vanadium, molybdenum, nickel, etc.) were, just a short time ago, thought to be totally toxic with no possibility of essentiality by the allopathic medical profession and they made sure they were not in our food!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "soil-depletion",
+        "medicine"
       ]
     }
   ]

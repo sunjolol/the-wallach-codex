@@ -1,198 +1,96 @@
 # Extraction report — rare-earths (Rare Earths: Forbidden Cures)
 
-_15 claim(s) drafted 2026-07-27T00:11:51+00:00. Review then run corpus_seal.py to promote._
+_9 claim(s) drafted 2026-07-27T01:51:12+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×3, definition×4, diagnostic_pattern×1, dose×1, interaction×1, mechanism×4, prognosis×1
+Kinds: definition×5, food_source×1, quote×3
 
-### WAL-CLM-RARE-000343 · prognosis
+### WAL-CLM-RARE-000358 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach argues that while spina bifida is a well-known embryonic result of a folic acid deficiency, folic acid supplementation only prevents 50% of this defect. The other 50%, he says, is preventable by zinc supplementation. He frames zinc's 'metal finger' role in DNA and RNA replication as so critical that just about every physical defect described in man can be produced by an embryonic zinc deficiency — so folic acid on its own is only half the answer.
-- **verbatim** (offset 411139): “for example spina bifida is a well
-known embryonic result of a folic acid de-
-ficiency, yet folic acid supplementation only
-prevents 50 % of this defect - the other 50%”
+- **claim:** Wallach recounts that dozens of the sixty formerly abundant soil elements—including selenium, arsenic, tin, aluminum, chromium, vanadium, molybdenum, and nickel—were, until recently, thought by the allopathic medical profession to be totally toxic with no possibility of being essential. He charges that this belief led them to make sure these minerals, vanadium among them, were kept out of our food.
+- **verbatim** (offset 28715): “Dozens of the sixty formerly abundant soil elements (selenium, arsenic, tin, aluminum, chromium, vanadium, molybdenum, nickel, etc.) were, just a short time ago, thought to be totally toxic with no possibility of essentiality by the allopathic medical profession and they made sure they were not in our food!!!”
 
-### WAL-CLM-RARE-000344 · mechanism
+### WAL-CLM-RARE-000359 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that hair pigment is a type of melanin formed by the enzyme tyrosinase acting on the amino acid tyrosine, and that copper is required as the cofactor for this reaction. When copper is deficient, pigment production fails and the hair turns white, silver or gray.
-- **verbatim** (offset 694255): “Hair pigment
-is a type of melanin which is formed in the
-presence of the enzyme tyrosinase and its
-effects on the essential amino acid tyrosine
-(copper is required as a cofactor for this
-reaction - therefore a copper deficiency re-
-sults in white, silver or gray hair).”
+- **claim:** In his history of trace-element science, Wallach notes that a vanadium respiratory compound was identified in the blood of sea squirts—alongside early findings such as copper in snail blood and a zinc blood pigment in mollusks. He says these discoveries were at first treated as curiosities, before the broader importance of metals in physiology was recognized.
+- **verbatim** (offset 673614): “sycotypin, a zinc containing blood pigment
+in mullussca and a vanadium respiratory
+compound in the blood of sea squirts.”
 
-### WAL-CLM-RARE-000345 · mechanism
+### WAL-CLM-RARE-000360 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that copper works as a cofactor and activator of numerous cuproenzymes involved in fetal development. When a pregnant female is deficient in copper, the result can be congenital defects of the heart, such as Kawasaki disease, and of the brain, such as cerebral palsy and hypoplasia of the cerebellum.
-- **verbatim** (offset 780487): “Copper functions as a co-factor and ac-
-tivator of numerous cuproenzymes that are
-involved in the development (deficiency of
-Cu in the pregnant female results in con-
-genital defects of the heart,i.e.-Kawasaki
-Disease and brain - i.e.- cerebral palsy and
-hypoplasia of the cerebellum)”
+- **claim:** Manganese is a hard, gray-white metal, chemically and physically similar to iron, that Wallach counts among the essential nutrients every human body must have. Although the total body content is only 10 to 20 mg, manganese is essential to all living organisms: it activates numerous enzyme systems — including those for glucose metabolism, energy production, and the antioxidant superoxide dismutase (SOD) — and is a major constituent of several metalloenzymes, hormones, and proteins. It is also built into the physical structure of joint cartilage and the three fragile bones of the ear, which is why Wallach ties a manganese shortage to both joint breakdown and hearing loss.
+- **verbatim** (offset 845065): “the total body content of Mn in humans is only 10 to 20 mg.
 
-### WAL-CLM-RARE-000346 · interaction
+Manganese is essential to all known living organisms; it activates numerous enzyme systems including those involved with glucose metabolism, energy production and superoxide dismutase; it is a major constituent of several metalloenzymes, hormones, and proteins of humans. Manganese is part of the developmental process and the structure of the fragile ear bones and joint cartilage.”
+
+### WAL-CLM-RARE-000361 · quote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts that while studying copper poisoning in sheep in Australia, Dick found in the 1950s that a three-way interaction exists between copper, molybdenum and inorganic sulfate. In the same passage he notes that molybdenum's ability to limit copper retention in animals can only occur when adequate sulfate is present.
-- **verbatim** (offset 677853): “while
-studying copper poisoning in sheep in Aus-
-tralia, Dick (1950's) found that a three way
-interaction exists between copper, molyb-
-denum and inorganic sulfate”
+- **claim:** Manganese has a long medicinal history. In 1884 manganese as permanganate of potash was used as an emetic, reported in the Medical Gazette by Alexander Ure, and its therapeutic use was first reported in Macon, France, where manganese miners were uniformly cured of scabies dermatitis, which led to manganese skin ointments for external skin diseases. The French also found that oral manganese could be superior to iron in curing certain anemias, and during the 1800s it was used effectively to treat amenorrhea, the absence of menstrual flow.
+- **verbatim** (offset 93842): “In 1884 manganese as permanganate of
+potash was used as an emetic (produced
+vomiting) and was so reported in the Medi-
+cal Gazette by Alexander Ure. The thera-
+peutic use of manganese was first reported
+in Macon, France where manganese min-
+ers were “uniformly cured” of scabies
+(mites) dermatitis of various forms. These
+reports by the miners lead to a general use
+of manganese for skin ointments to cure
+external skin diseases.
 
-### WAL-CLM-RARE-000347 · deficiency_sign
+The French also found that oral man-
+ganese could be “superior” to iron in cur-
+ing certain anemias. During the 1800's
+manganese was used very effectively in
+treating amenorrhea (deficiency of men-
+strual flow).”
+
+### WAL-CLM-RARE-000362 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states that neutropenia (reduced neutrophil white blood cells) and leukopenia (reduced total white blood cells) are the earliest indicators of copper deficiency in infants. Infants whose diets are primarily cow's milk frequently develop anemia, and chronic copper deficiency can lead to iron storage disease.
-- **verbatim** (offset 781315): “Neutropenia (reduced numbers of
-neutophillic WBC) and leukopenia (re-
-duced total WBC) are the earliest indica-
-tors of copper deficiency in infants; infants
-whose diets are primarily cows milk fre-
-quently develop anemia; iron storage dis-
-ease can result from chronic copper defi-
-ciency.”
+- **claim:** Boron neutron capture therapy combines a boron-containing drug with neutron irradiation of the brain to attack brain tumors. Dr. Hiroshi Hatanaka, a Japanese neurosurgeon, was internationally recognized for advancing the treatment, persevering with the research when most of his peers had given up on it. He succeeded in curing some patients and prolonging the lives of others.
+- **verbatim** (offset 939526): “Dr. Hatanaka was internationally
+recognized for advancing the treat-
+ment known as the boron neutron
+capture therapy. The therapy com-
+bines the use of a boron-containing
+drug with neutron irradiation of the
+brain.”
 
-### WAL-CLM-RARE-000348 · dose
+### WAL-CLM-RARE-000363 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states that the average well-nourished adult body contains between 80 and 120 mg of copper, with higher concentrations in the brain, liver, heart and kidneys, while bone and muscle hold half of the body's total copper reserves because of their mass. The greatest concentration of copper is found in newborns, whose daily requirement is 0.08 mg/kg. Toddlers require 0.04 mg/kg and adults only 0.03 mg/kg.
-- **verbatim** (offset 779840): “The average well-nourished adult hu-
-man body contains between 80 and 120 mg
-of copper. Concentrations are higher in the
+- **claim:** Wallach points out that eating organ meats such as liver and kidney can significantly increase the availability of cobalt, along with selenium, sulfur, molybdenum and zinc. He cautions, though, that an exclusively meat-based diet still leaves out adequate calcium, magnesium and manganese.
+- **verbatim** (offset 1119674): “Eating organ meats such as liver and
+kidney can significantly increase the
+availability of selenium, sulfur, cobalt,
+molybdenum and zinc”
 
-brain, liver, heart and kidneys. Bone and
-muscle have lower percentages of copper
-but contain 50 percent of the body total
-copper reserves because of their mass. It is
-of interest that the greatest concentration
-of copper is found in the newborm and their
-daily requirement is 0.08 mg/kg, toddlers
-require 0.04 mg/kg and adults only 0.03 mg/
-kg.”
-
-### WAL-CLM-RARE-000349 · definition
+### WAL-CLM-RARE-000364 · quote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that chelated minerals are about 40% bioavailable — a significant improvement over metallic minerals, where the other 60% is wasted. He says chelated minerals are recognized on a supplement label by an amino-acid suffix, such as chromium picolinate or selenium aspartate, or simply as an "amino acid chelate."
-- **verbatim** (offset 660767): “Chelated minerals are approximately
-40 % bioavailable, a significant improve-
-ment over the original metallic minerals -
-your septic tank in the back yard gets the
-other 60 % (Table 10 - 4).
+- **claim:** Wallach traces lithium's use in mental illness back to 400 AD, when Caelius Aurelianus prescribed lithium-containing waters for the mentally ill. In the 1840s lithium salts were found to dissolve urate deposits when combined with uric acid, and lithium was then used to treat kidney stones, 'gravel,' gout, rheumatism and a plethora of other physical and mental diseases. Health spas later capitalized on lithium's reputation, even adding the word 'lithia' to their names to woo the public.
+- **verbatim** (offset 99202): “Its use in men-
+tal illness dates back to 400 A.D. when
+Caelius Aurelianus prescribed lithium con-
+taining waters for mental illness.
 
-Chelated minerals are easily recognized
-on the label of a multiple vitamin/mineral
-supplement by the amino acid suffix such
-as selenium aspartate, chromium
-picolinate, or sometimes as an “amino acid
-chelate.””
+In the 1840's it was reported that lithium
+salts combined with uric acid dissolved
+urate deposits. Lithium was then used to
+treat kidney stones, “gravel”, gout, rheuma-
+tism as well as a plethora of physical and
+mental diseases.”
 
-### WAL-CLM-RARE-000350 · definition
+### WAL-CLM-RARE-000365 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Potassium is an essential mineral that Wallach counts among the roughly 60 minerals the body must obtain to stay healthy. It is the major cation (positively charged ion) inside your cells and makes up about five percent of the body's total mineral content. Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic (fluid-pressure) equilibrium and acid-base (pH) balance, and working with calcium it regulates neuromuscular (nerve-and-muscle) activity. The body stores essentially none and excretes about 90% of what you take in through the urine, so Wallach says it must be replenished every day.
-- **verbatim** (offset 828801): “Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.”
+- **claim:** Wallach recounts that at the end of the third quarter and beginning of the fourth quarter of the 20th century, research in mice established the 'new' trace-element essentiality of lithium, along with fluorine, silica, vanadium, nickel, arsenic, cadmium, tin and lead. In his framework this places lithium firmly among the essential minerals the body requires, not an optional additive.
+- **verbatim** (offset 678875): “At the end of the third quarter and the
+begining of the fourth quarter of the 20th
+century, the identification in mice of “new”
+trace element essentiality for lithium, fluo-
+tine, silica, vanadium, nickel, arsenic, cad-
+mium, tin, and lead exploded.”
 
-### WAL-CLM-RARE-000351 · diagnostic_pattern
+### WAL-CLM-RARE-000366 · quote
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In interpreting hair mineral analysis, Wallach notes that elevated hair levels of sodium, potassium and chloride point to a deficiency of essential fatty acids. The mechanism is that the fatty-acid shortfall makes the skin glands malfunction and lose electrolytes rather than conserve them, so the 'high' reading actually signals a problem elsewhere. He adds that these false elevations return to normal once mineral and essential fatty acid supplementation is corrected.
-- **verbatim** (offset 700376): “Elevated hair levels of sodium, potassium and chloride indicate deficiencies of essential fatty acids, with resultant malfunctions of the skin glands which loose electrolytes instead of conserving them.”
-
-### WAL-CLM-RARE-000352 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Citing research on hypertension, Wallach notes that among Black and elderly white people with essential (high) blood pressure, it is restricted intake of calcium and potassium, rather than elevated salt consumption, that is responsible for salt sensitivity. This reframes the usual 'too much salt' story: the shortfall of protective minerals like potassium is the real problem. It suggests that correcting mineral intake, not just cutting salt, matters for blood pressure.
-- **verbatim** (offset 750558): “Among
-black and elderly whites with essential hy-
-pertension, restricted intakes of calcium
-and potassium, rather than elevated salt
-consumption is responsible for salt sensi-
-tivity.”
-
-### WAL-CLM-RARE-000353 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In Rare Earths, Wallach includes potassium in his table of 'The 60 Essential Elements, Metals and Minerals' — the roster of minerals he holds the human body must obtain to stay healthy. Potassium appears alongside calcium, magnesium, sodium, selenium, zinc and dozens of others. Its place on this list reflects his core doctrine that the body needs a broad spectrum of some 60 minerals, not just a handful.
-- **verbatim** (offset 1127829): “Cobalt Neodymium
-Copper Nickle
-Dysprosium Niobium
-Erbium Nitrogen
-Europium Oxygen
-Gadolinium Phosphorus
-Gallium Potassium
-Germanium Praseodymium”
-
-### WAL-CLM-RARE-000354 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that the Earth's more recent geological history — spanning less than 1.3 billion years — is investigated using the 'potassium-argon' method. Potassium 40, a rare radioisotope of potassium, decays into a stable, heavy form of the inert gas argon (argon 40), which has a half-life of 1.3 billion years. By measuring the accumulated argon 40 in potassium-rich rocks, scientists can estimate when the rock became solid.
-- **verbatim** (offset 48813): “The Earth’s more recent geological his-
-tory (less than 1.3 billion years) is investi-
-gated by the “potassium-argon” method.
-Potassium 40, a rare radioisotope of potas-
-sium decays to a stable form of argon - ar-
-gon 40, a heavy form of the inert gas argon
-which has a half life of 1.3 billion years.”
-
-### WAL-CLM-RARE-000355 · deficiency_sign
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In Rare Earths, Wallach argues that doctors die at a disproportionately high rate of preventable nutritional deficiency diseases because they refuse to supplement the essential 90 nutrients. In his list of the causes of death in American allopathic physicians, he ties vitamin E deficiency — alongside selenium and other nutrients — to cardiomyopathy, coronary and cerebrovascular disease, cancer of all types, and Alzheimer's disease. He treats physicians who don't supplement as a control group that shows what these deficiencies produce.
-- **verbatim** (offset 1089148): “Table 12-2. Causes of Death In American Allopathic Physicians.
-
-Cause of Death
-Cardiomyopathy
-
-Coronary disease
-(including aneurysms & stroke)
-
-Cerebrovascular disease
-(including aneurysms & stroke)
-
-Aneurysms
-Diabetes
-Liver cirrhosis
-
-Cancer
-
-Suicide
-
-Alzheimer's disease
-
-Nutritional Deficiency
-Selenium, Vitamin E, essential fatty acids
-
-Selenium, Vitamin E, vitamin C
-magnesium, copper, essential fatty acids
-
-Same as above
-
-Copper
-Chromium, Vanadium, Zinc
-Selenium, Copper, Sulfur
-
-Selenium, Tin, Zinc, Gallium, Vitamin E (all types) ,
-beta carotene, Germanium, Vitamin C
-
-Lithium, Chromium, Vanadium
-
-Vitamin E, Selenium, Thiamine”
-
-### WAL-CLM-RARE-000356 · deficiency_sign
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach cites the Register General of England finding that physicians had a higher death rate from intestinal disease than any other profession or trade. He states that the nutritional deficiencies which result in intestinal disease include niacin, thiamine, selenium, vitamin E, beta carotene, zinc, and vitamin C. He uses this to argue that people must depend on their own nutritional knowledge rather than on doctors.
-- **verbatim** (offset 1091354): “According to the Register General of
-England physicians had a higher death
-rate from intestinal disease than any other
-profession or trade (Table 12-3).
-Nutritional deficiencies that result in
-intestinal disease include niacin,
-thiamine, selenium, vitamin E, beta
-carotene, zinc, vitamin C, etc.”
-
-### WAL-CLM-RARE-000357 · mechanism
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach is not surprised that vitamin E relieves memory loss in Alzheimer's patients, and he explains why through veterinary medicine. In poultry, a brain-wasting condition called 'star-gazing,' or encephalomalacia, which he likens to Alzheimer's disease, is prevented and, in its early stages, cured by high doses of vitamin E and selenium. This animal precedent is the basis for his view on vitamin E and human brain disease.
-- **verbatim** (offset 718746): “not too surprising in light of the history of
-“star-gazing” in poultry, where
-encephalomalacia or brain wasting
-(Alzheimer’s Disease) was prevented and
-in the early stages cured by high doses of
-vitamin E and selenium.”
+- **claim:** Wallach argues that molybdenum is among dozens of the sixty formerly abundant soil elements - alongside selenium, arsenic, tin, aluminum, chromium, vanadium, and nickel - that the allopathic medical profession, just a short time ago, considered totally toxic with no possibility of essentiality. He contends they made sure these elements were kept out of our food. This, in his view, is part of why our Earth's soils and food supply are now depleted of nutrients the body needs.
+- **verbatim** (offset 28715): “Dozens of the sixty formerly abundant soil elements (selenium, arsenic, tin, aluminum, chromium, vanadium, molybdenum, nickel, etc.) were, just a short time ago, thought to be totally toxic with no possibility of essentiality by the allopathic medical profession and they made sure they were not in our food!!!”
 

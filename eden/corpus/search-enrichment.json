@@ -6,7 +6,8 @@
       "subject": "diabetes",
       "also_about": [
         "chromium",
-        "vanadium"
+        "vanadium",
+        "selenium"
       ],
       "facet": "history",
       "question": "How did Wallach first connect diabetes to a mineral deficiency?",
@@ -37,7 +38,9 @@
     },
     "WAL-CLM-DDDL-000034": {
       "subject": "diabetes",
-      "also_about": [],
+      "also_about": [
+        "vanadium"
+      ],
       "facet": "mechanism",
       "question": "How does vanadium help with diabetes?",
       "answer_short": "Vanadium mimics insulin — it makes the cell's insulin receptors more sensitive, helping the body handle glucose and carbohydrates.",
@@ -2274,7 +2277,9 @@
       "subject": "cobalt",
       "also_about": [
         "digestion",
-        "absorption"
+        "absorption",
+        "vitamin-b12",
+        "sodium"
       ],
       "facet": "mechanism",
       "question": "Why can’t I absorb vitamin B12?",
@@ -2291,7 +2296,8 @@
       "subject": "cobalt",
       "also_about": [
         "iron",
-        "magnesium"
+        "magnesium",
+        "vitamin-b12"
       ],
       "facet": "mechanism",
       "question": "What does cobalt have to do with vitamin B12?",
@@ -6704,7 +6710,10 @@
       "subject": "zinc",
       "also_about": [
         "chromium",
-        "vanadium"
+        "vanadium",
+        "boron",
+        "calcium",
+        "copper"
       ],
       "facet": "protocol",
       "question": "How much zinc should I take a day?",
@@ -11614,7 +11623,8 @@
       "also_about": [
         "choline",
         "methionine",
-        "cholesterol"
+        "cholesterol",
+        "cobalt"
       ],
       "facet": "physiology",
       "question": "What does vitamin B12 do in the body?",
@@ -13007,6 +13017,1504 @@
         "sleep",
         "niacinamide",
         "niacin-dose"
+      ]
+    },
+    "WAL-CLM-DDDL-000222": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "chromium",
+        "hypoglycemia",
+        "obesity"
+      ],
+      "facet": "basics",
+      "question": "What is vanadium?",
+      "answer_short": "Vanadium is an essential trace mineral—proven essential in 1971—that works much like insulin to help the body control blood sugar.",
+      "topics": [
+        "blood sugar",
+        "trace minerals",
+        "diabetes",
+        "insulin",
+        "metabolism"
+      ]
+    },
+    "WAL-CLM-DDDL-000223": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes"
+      ],
+      "facet": "basics",
+      "question": "What is vanadium?",
+      "answer_short": "Vanadium is an essential trace mineral, proven essential in 1971, that works like insulin to help control blood sugar.",
+      "topics": [
+        "blood sugar",
+        "trace minerals",
+        "diabetes",
+        "metabolism"
+      ]
+    },
+    "WAL-CLM-DDDL-000224": {
+      "subject": "vanadium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What form of vanadium is best absorbed?",
+      "answer_short": "Plant-derived colloidal vanadium is absorbed at up to 98%, versus 40% for chelates and only 0.1-1% for metallic vanadyl sulfate.",
+      "topics": [
+        "absorption",
+        "supplements",
+        "colloidal minerals",
+        "forms"
+      ]
+    },
+    "WAL-CLM-DDDL-000225": {
+      "subject": "vanadium",
+      "also_about": [
+        "hypoglycemia",
+        "chromium",
+        "diabetes"
+      ],
+      "facet": "protocol",
+      "question": "How much vanadium should I take for low blood sugar?",
+      "answer_short": "Wallach calls chromium and vanadium the 'magic bullets' for hypoglycemia, at 50-200 mcg three times a day with meals.",
+      "topics": [
+        "dosage",
+        "hypoglycemia",
+        "low blood sugar",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-DDDL-000226": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "obesity",
+        "depression",
+        "adhd",
+        "infertility"
+      ],
+      "facet": "warning",
+      "question": "What diseases does vanadium deficiency cause?",
+      "answer_short": "Wallach links vanadium deficiency to diabetes, hypoglycemia, high cholesterol and triglycerides, obesity, infertility, ADD/ADHD, depression, and bipolar disease.",
+      "topics": [
+        "deficiency",
+        "diabetes",
+        "obesity",
+        "mental health",
+        "blood sugar"
+      ]
+    },
+    "WAL-CLM-DDDL-000227": {
+      "subject": "germanium",
+      "also_about": [
+        "silica",
+        "carbon",
+        "oxygen"
+      ],
+      "facet": "basics",
+      "question": "What is germanium?",
+      "answer_short": "Germanium is a trace mineral and metalloid element that Wallach counts among the body's essential nutrients; biologically it acts as a highly effective electrical impulse initiator inside cells and as a metallic cofactor for oxygen utilization.",
+      "topics": [
+        "trace-minerals",
+        "oxygen",
+        "basics"
+      ]
+    },
+    "WAL-CLM-DDDL-000228": {
+      "subject": "germanium",
+      "also_about": [
+        "oxygen",
+        "silica",
+        "carbon"
+      ],
+      "facet": "mechanism",
+      "question": "How does germanium work in the body?",
+      "answer_short": "In the body germanium acts as a highly effective intracellular electrical-impulse initiator and as a metallic cofactor for oxygen utilization.",
+      "topics": [
+        "oxygen",
+        "cellular-energy",
+        "trace-minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000229": {
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "mechanism",
+      "question": "Does germanium boost the immune system?",
+      "answer_short": "Germanium enhances the immune system by stimulating natural killer cells, interferon, macrophages, and T-suppressor cells.",
+      "topics": [
+        "immune-health",
+        "interferon",
+        "natural-killer-cells"
+      ]
+    },
+    "WAL-CLM-DDDL-000230": {
+      "subject": "germanium",
+      "also_about": [
+        "absorption"
+      ],
+      "facet": "sources",
+      "question": "What is GE-132 (organic germanium)?",
+      "answer_short": "GE-132, carboxyethyl germanium sesquioxide, is the organic form of germanium Asai synthesized in 1967; it is absorbed at about 30% efficiency and fully excreted within a week.",
+      "topics": [
+        "supplements",
+        "organic-germanium",
+        "absorption",
+        "forms"
+      ]
+    },
+    "WAL-CLM-DDDL-000231": {
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Can germanium help prevent or fight cancer?",
+      "answer_short": "Germanium can be used for cancer prevention or therapy -- it raises oxygen flow into cells (cancer cells dislike oxygen) and stimulates immune cells and interferon.",
+      "topics": [
+        "cancer",
+        "oxygen",
+        "immune-health",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-DDDL-000232": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How is germanium used to treat Alzheimer's disease?",
+      "answer_short": "Wallach's Alzheimer's protocol includes germanium IM (5 ml of standard solution every other day for 24 days), then oral germanium at 150 mg twice a day.",
+      "topics": [
+        "alzheimers",
+        "brain-health",
+        "protocol",
+        "dosage"
+      ]
+    },
+    "WAL-CLM-DDDL-000233": {
+      "subject": "germanium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "history",
+      "question": "How was germanium's healing potential discovered?",
+      "answer_short": "In 1950 Japanese chemist Dr. Kazuhiko Asai found germanium in fossilized plant life and linked healing herbs to their high germanium levels, while Russian researchers tied it to anti-cancer activity.",
+      "topics": [
+        "history",
+        "cancer",
+        "herbs",
+        "research"
+      ]
+    },
+    "WAL-CLM-DDDL-000234": {
+      "subject": "manganese",
+      "also_about": [
+        "tin",
+        "deafness"
+      ],
+      "facet": "physiology",
+      "question": "Can manganese deficiency cause hearing loss in children?",
+      "answer_short": "Yes, in children a manganese and/or tin deficiency can cause reversible hearing loss.",
+      "topics": [
+        "ear-health",
+        "childrens-health",
+        "hearing"
+      ]
+    },
+    "WAL-CLM-DDDL-000235": {
+      "subject": "manganese",
+      "also_about": [
+        "choline",
+        "arsenic",
+        "zinc",
+        "vitamin-b6"
+      ],
+      "facet": "uses",
+      "question": "How does Wallach treat carpal tunnel syndrome without surgery?",
+      "answer_short": "He treats it as a deficiency of arsenic, manganese, and choline, using B6, zinc, and plant-derived colloidal arsenic, manganese, and choline instead of wrist surgery.",
+      "topics": [
+        "joint-health",
+        "repetitive-strain",
+        "protocols"
+      ]
+    },
+    "WAL-CLM-DDDL-000236": {
+      "subject": "manganese",
+      "also_about": [
+        "epilepsy",
+        "choline",
+        "taurine",
+        "zinc"
+      ],
+      "facet": "uses",
+      "question": "Does Wallach use manganese for seizures or epilepsy?",
+      "answer_short": "Yes, manganese at 50 mg/day is part of his epilepsy protocol, alongside zinc, essential fatty acids, choline, taurine, and DMG.",
+      "topics": [
+        "brain-health",
+        "seizures",
+        "protocols"
+      ]
+    },
+    "WAL-CLM-DDDL-000237": {
+      "subject": "manganese",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is carpal tunnel syndrome really caused by a mineral deficiency?",
+      "answer_short": "Wallach argues that repetitive motion injuries, and the millions of people wearing wrist, knee, and back supports, are all suffering from simple manganese deficiency.",
+      "topics": [
+        "joint-health",
+        "repetitive-strain",
+        "workplace-health"
+      ]
+    },
+    "WAL-CLM-DDDL-000238": {
+      "subject": "boron",
+      "also_about": [
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "physiology",
+      "question": "What does boron do in the body?",
+      "answer_short": "Boron supports bone metabolism, helps the body use calcium and magnesium efficiently, and is needed for proper function of the ovaries, testes, and adrenal glands.",
+      "topics": [
+        "bone health",
+        "hormones",
+        "adrenal glands",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000239": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "Why can vegans go years before a B12 deficiency shows up?",
+      "answer_short": "The body recycles B12 through an enterohepatic (gut-to-liver) circulation, so a deficiency in vegans may not appear for five to ten years after giving up meat.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "vegan",
+        "recycling",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-DDDL-000240": {
+      "subject": "lithium",
+      "also_about": [
+        "adhd"
+      ],
+      "facet": "uses",
+      "question": "What does Wallach recommend for ADD and ADHD?",
+      "answer_short": "For ADD/ADHD, Wallach calls for removing all sugar and alcohol from the diet and taking plant-derived colloidal lithium, chromium and vanadium as specific supplements.",
+      "topics": [
+        "adhd",
+        "children",
+        "behavior",
+        "sugar"
+      ]
+    },
+    "WAL-CLM-DDDL-000241": {
+      "subject": "molybdenum",
+      "also_about": [
+        "goiter",
+        "hypothyroidism",
+        "iodine",
+        "copper",
+        "tyrosine"
+      ],
+      "facet": "physiology",
+      "question": "Can a molybdenum deficiency cause goiter?",
+      "answer_short": "Wallach lists molybdenum among the nutrient deficiencies that cause goiter, along with iodine, copper, and the amino acid tyrosine.",
+      "topics": [
+        "minerals",
+        "thyroid",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000307": {
+      "subject": "vanadium",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Does vanadium fight cancer?",
+      "answer_short": "Wallach says vanadium has known anticarcinogenic properties and blocked mammary tumor growth in mice.",
+      "topics": [
+        "cancer",
+        "cancer prevention",
+        "tumors"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000308": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "chromium",
+        "hypoglycemia"
+      ],
+      "facet": "big_question",
+      "question": "Is type 2 diabetes really a mineral deficiency?",
+      "answer_short": "Wallach argues type 2 diabetes is not genetic but a simple deficiency of chromium and vanadium.",
+      "topics": [
+        "diabetes",
+        "genetics",
+        "mineral deficiency",
+        "blood sugar",
+        "prevention"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000309": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What foods and herbs contain germanium?",
+      "answer_short": "Beans and tuna carry small amounts, while healing herbs like garlic, ginseng, aloe, comfrey, chlorella and Shiitake mushroom concentrate germanium at 100 to 2,000 ppm.",
+      "topics": [
+        "food-sources",
+        "herbs",
+        "diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000310": {
+      "subject": "germanium",
+      "also_about": [
+        "silica",
+        "carbon"
+      ],
+      "facet": "discovery",
+      "question": "Who discovered germanium and when?",
+      "answer_short": "Its existence was predicted by Mendeleev's periodic table, and the element was finally isolated in 1886 by a German chemist, Clemens Winkler, who named it germanium.",
+      "topics": [
+        "history",
+        "periodic-table",
+        "trace-minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000311": {
+      "subject": "manganese",
+      "also_about": [
+        "deafness"
+      ],
+      "facet": "physiology",
+      "question": "Can a mother's manganese deficiency make a baby deaf?",
+      "answer_short": "Yes, Wallach reports that infants born deaf are the result of mothers being deficient in manganese during pregnancy.",
+      "topics": [
+        "ear-health",
+        "pregnancy",
+        "birth-defects"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000312": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why is boron so rare?",
+      "answer_short": "Boron is produced by cosmic ray spallation rather than by stellar nucleosynthesis, making it a low-abundance element in both the solar system and Earth's crust.",
+      "topics": [
+        "chemistry",
+        "cosmic origin",
+        "rare element",
+        "science"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000313": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is boric acid used for?",
+      "answer_short": "Boric acid has antiseptic, antifungal, and antiviral properties, and mild solutions are used as wound disinfectants and eye washes.",
+      "topics": [
+        "boric acid",
+        "antiseptic",
+        "wound care",
+        "eye wash"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000314": {
+      "subject": "boron",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "Is boron used to treat cancer?",
+      "answer_short": "Yes, boron is the active ingredient in Bortezomib, a first-of-its-kind drug used to treat multiple myeloma and certain lymphomas.",
+      "topics": [
+        "cancer",
+        "multiple myeloma",
+        "lymphoma",
+        "medicine"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000315": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is boron toxic or safe to take?",
+      "answer_short": "Borates have low toxicity in mammals, similar to table salt, but are more toxic to insects and so are used as insecticides.",
+      "topics": [
+        "safety",
+        "toxicity",
+        "insecticide",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000316": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is boron essential for all living things?",
+      "answer_short": "Yes, Wallach states that boron is essential to life for all organisms, including both plants and animals.",
+      "topics": [
+        "essential nutrients",
+        "plants",
+        "biology",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000317": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is the story behind 20 Mule Team Borax?",
+      "answer_short": "Large borax deposits were discovered in Death Valley in 1881, and the mined borax was hauled out by the famous 20-mule-team wagons.",
+      "topics": [
+        "borax",
+        "Death Valley",
+        "20 mule team",
+        "mining history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000318": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name boron come from?",
+      "answer_short": "The name 'boron' comes from the Arabic word 'buraq' and the Persian 'burah,' both names for borax.",
+      "topics": [
+        "etymology",
+        "name origin",
+        "borax",
+        "history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000319": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "history",
+      "question": "How was vitamin B12 discovered?",
+      "answer_short": "In 1948 two teams (in the UK and US) isolated pure B12, the anti-pernicious-anemia factor, gleaning just 20 mg from a ton of liver.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "history",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-HELLS-000055": {
+      "subject": "vanadium",
+      "also_about": [
+        "obesity",
+        "chromium"
+      ],
+      "facet": "mechanism",
+      "question": "Can low vanadium cause weight gain?",
+      "answer_short": "Without enough chromium and vanadium, blood glucose is converted into blood fats and body fat instead of being burned for energy.",
+      "topics": [
+        "weight gain",
+        "obesity",
+        "fat storage",
+        "cravings",
+        "metabolism"
+      ]
+    },
+    "WAL-CLM-HELLS-000056": {
+      "subject": "manganese",
+      "also_about": [
+        "vitamin-e"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in manganese?",
+      "answer_short": "Hazelnuts (filberts) are a standout, with 24 nuts supplying ninety percent of the daily value for manganese.",
+      "topics": [
+        "food-sources",
+        "nuts",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-HELLS-000057": {
+      "subject": "molybdenum",
+      "also_about": [
+        "manganese",
+        "boron",
+        "copper",
+        "zinc"
+      ],
+      "facet": "physiology",
+      "question": "Is molybdenum essential for plants?",
+      "answer_short": "Wallach lists molybdenum among the micronutrients that plants require for optimal health.",
+      "topics": [
+        "minerals",
+        "plants",
+        "agriculture"
+      ]
+    },
+    "WAL-CLM-HELLS-000058": {
+      "subject": "molybdenum",
+      "also_about": [
+        "cancer",
+        "selenium",
+        "vitamin-e"
+      ],
+      "facet": "history",
+      "question": "Does molybdenum help prevent cancer?",
+      "answer_short": "In a large China study Wallach cites, molybdenum had no statistically significant protective effect against cancer deaths, unlike beta carotene, vitamin E, and selenium.",
+      "topics": [
+        "cancer",
+        "antioxidants",
+        "research"
+      ]
+    },
+    "WAL-CLM-IMMORT-000344": {
+      "subject": "vanadium",
+      "also_about": [
+        "chromium",
+        "hypoglycemia",
+        "obesity"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of a vanadium deficiency?",
+      "answer_short": "Wallach says carbohydrate and candy cravings, the 'munchies,' and a strong thirst for sweet drinks are sure signs of chromium and vanadium deficiency.",
+      "topics": [
+        "cravings",
+        "deficiency signs",
+        "sugar",
+        "munchies",
+        "chocolate"
+      ]
+    },
+    "WAL-CLM-IMMORT-000345": {
+      "subject": "vanadium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "How did vanadium get its name?",
+      "answer_short": "Vanadium was named for the Scandinavian goddess Vanadis because of its many beautifully colored compounds.",
+      "topics": [
+        "name origin",
+        "history",
+        "chemistry",
+        "trace minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000346": {
+      "subject": "germanium",
+      "also_about": [
+        "silica",
+        "carbon",
+        "gallium"
+      ],
+      "facet": "basics",
+      "question": "Is germanium used in electronics or computers?",
+      "answer_short": "Germanium is a poor conductor classed as a semiconductor, and when 'doped' with trace elements it is used to make transistors and microcomputers.",
+      "topics": [
+        "electronics",
+        "technology",
+        "semiconductor",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000347": {
+      "subject": "manganese",
+      "also_about": [
+        "antioxidants"
+      ],
+      "facet": "mechanism",
+      "question": "What does manganese do in the body?",
+      "answer_short": "Manganese activates many enzyme systems, including those for glucose metabolism, energy production, and the antioxidant SOD, and is built into metalloenzymes, hormones, and proteins.",
+      "topics": [
+        "minerals",
+        "enzymes",
+        "energy",
+        "antioxidants"
+      ]
+    },
+    "WAL-CLM-IMMORT-000348": {
+      "subject": "manganese",
+      "also_about": [
+        "arthritis"
+      ],
+      "facet": "physiology",
+      "question": "Does manganese help build bones and cartilage?",
+      "answer_short": "Yes, manganese is essential to forming the three tiny bones of the ear and to the structure of joint cartilage.",
+      "topics": [
+        "joint-health",
+        "bone-health",
+        "ear-health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000349": {
+      "subject": "manganese",
+      "also_about": [
+        "infertility",
+        "miscarriage"
+      ],
+      "facet": "physiology",
+      "question": "Does manganese deficiency affect fertility and libido?",
+      "answer_short": "Yes, Wallach lists infertility (failure to ovulate, testicular atrophy), miscarriages, and loss of libido in both sexes among manganese-deficiency diseases.",
+      "topics": [
+        "fertility",
+        "mens-health",
+        "womens-health",
+        "reproduction"
+      ]
+    },
+    "WAL-CLM-IMMORT-000350": {
+      "subject": "manganese",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name manganese come from?",
+      "answer_short": "Manganese was identified in 1774 by Carl Wilhelm Scheele, who named it from the Latin magnes ('magnet') for the magnetic properties of its ore.",
+      "topics": [
+        "minerals",
+        "history-of-medicine",
+        "word-origins"
+      ]
+    },
+    "WAL-CLM-IMMORT-000351": {
+      "subject": "boron",
+      "also_about": [
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "basics",
+      "question": "What is boron?",
+      "answer_short": "Boron is a scarce trace mineral Wallach counts among the nutrients essential for human health, needed for bone metabolism, the efficient use of calcium and magnesium, and normal sex-hormone levels.",
+      "topics": [
+        "what is boron",
+        "minerals",
+        "trace minerals",
+        "bone health",
+        "essential nutrients"
+      ]
+    },
+    "WAL-CLM-IMMORT-000352": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where is boron found in nature?",
+      "answer_short": "Boron concentrates in plants, especially brown algae and land plants, at far higher levels than in animals.",
+      "topics": [
+        "food sources",
+        "plants",
+        "brown algae",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000353": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "history",
+      "question": "When was boron recognized as an essential nutrient?",
+      "answer_short": "Boron was not considered essential before 1981; it was first shown essential in growing chicks, and was not accepted as essential for humans until 1990.",
+      "topics": [
+        "essential nutrients",
+        "history",
+        "nutrition science"
+      ]
+    },
+    "WAL-CLM-IMMORT-000354": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered boron?",
+      "answer_short": "Boron was first isolated in 1808 by English chemist Sir Humphry Davy together with French chemists Joseph Louis Gay-Lussac and Louis-Jacques Thenard.",
+      "topics": [
+        "discovery",
+        "history",
+        "chemistry",
+        "Humphry Davy"
+      ]
+    },
+    "WAL-CLM-IMMORT-000355": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "basics",
+      "question": "What is cobalt?",
+      "answer_short": "Cobalt is a rare trace mineral that's essential to all life — a single cobalt atom sits at the center of vitamin B12, so needing cobalt really means needing B12 (for blood, DNA, nerve myelin and thyroid hormone).",
+      "topics": [
+        "cobalt",
+        "b12",
+        "trace-minerals",
+        "enzymes"
+      ]
+    },
+    "WAL-CLM-IMMORT-000356": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "Why is vitamin B12 red?",
+      "answer_short": "B12's red color comes from the cobalt atom in the molecule, and about 30% of its activity is lost during cooking.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "cooking"
+      ]
+    },
+    "WAL-CLM-IMMORT-000357": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "What happens to extra vitamin B12 in the body?",
+      "answer_short": "The body stores a maximum of 2 mg of B12, releasing it slowly to the bone marrow; any excess is simply shed in the urine ('expensive urine').",
+      "topics": [
+        "cobalt",
+        "b12",
+        "storage",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-IMMORT-000358": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12",
+        "hypochlorhydria",
+        "sodium"
+      ],
+      "facet": "sources",
+      "question": "Why do older people often need B12 shots?",
+      "answer_short": "Cobalt/B12 only absorbs when intrinsic factor is present and stomach pH is 2.0 or less; low stomach acid (often from too little salt) blocks it, so doctors give shots.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "absorption",
+        "stomach-acid",
+        "b12-shots"
+      ]
+    },
+    "WAL-CLM-IMMORT-000359": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "warning",
+      "question": "Can you get too much cobalt?",
+      "answer_short": "Yes—cobalt excess of 20 to 30 mg a day can drive up red blood cell production by stimulating the kidney hormone erythropoietin.",
+      "topics": [
+        "cobalt",
+        "toxicity",
+        "red-blood-cells"
+      ]
+    },
+    "WAL-CLM-IMMORT-000360": {
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Can cobalt-poor soil cause deficiency in people?",
+      "answer_short": "Yes—less than 0.07 ppm cobalt in soil causes deficiency in the animals and people who eat crops from it, while 0.11 ppm prevents and cures it.",
+      "topics": [
+        "cobalt",
+        "soil",
+        "deficiency",
+        "farming"
+      ]
+    },
+    "WAL-CLM-IMMORT-000361": {
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "history",
+      "question": "How rare is cobalt and when was it discovered?",
+      "answer_short": "Cobalt is a rare element, only 0.003% of the earth's crust, and was first isolated as a metal by Swedish chemist Georg Brandt in 1739.",
+      "topics": [
+        "cobalt",
+        "history",
+        "geology",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000362": {
+      "subject": "cobalt",
+      "also_about": [
+        "nickel"
+      ],
+      "facet": "history",
+      "question": "Is cobalt magnetic and what is it used for?",
+      "answer_short": "Cobalt is easily magnetized and holds its magnetism at high temperatures; about a quarter of world production goes into 'alnico,' a super-magnetic alloy.",
+      "topics": [
+        "cobalt",
+        "magnets",
+        "industry"
+      ]
+    },
+    "WAL-CLM-IMMORT-000363": {
+      "subject": "lithium",
+      "also_about": [
+        "depression",
+        "adhd"
+      ],
+      "facet": "basics",
+      "question": "What is lithium?",
+      "answer_short": "Lithium is the lightest of all metals and an essential trace mineral Wallach ties directly to mood and behavior — he treats depression, bipolar disorder, and aggression as hallmarks of a lithium deficiency.",
+      "topics": [
+        "lithium",
+        "trace-minerals",
+        "mental-health",
+        "essential-nutrients"
+      ]
+    },
+    "WAL-CLM-IMMORT-000364": {
+      "subject": "lithium",
+      "also_about": [
+        "sodium",
+        "potassium"
+      ],
+      "facet": "basics",
+      "question": "What kind of metal is lithium?",
+      "answer_short": "Lithium is an extremely reactive metal so light a small piece can float on water, and so reactive it must be stored in oil or kerosene.",
+      "topics": [
+        "lithium",
+        "chemistry",
+        "alkali-metals",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000365": {
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "mechanism",
+      "question": "Why is lithium used to treat bipolar disorder?",
+      "answer_short": "Lithium carbonate is routinely prescribed for severe bipolar disorder — over 3 million prescriptions a year — with its effect thought to involve how brain cells respond to certain hormones and neurotransmitters.",
+      "topics": [
+        "brain",
+        "bipolar",
+        "mental-health",
+        "neurotransmitters"
+      ]
+    },
+    "WAL-CLM-IMMORT-000366": {
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "stance",
+      "question": "Is depression caused by a lithium deficiency?",
+      "answer_short": "Wallach holds that depression and manic depression are simply a lithium deficiency aggravated by high sugar consumption.",
+      "topics": [
+        "depression",
+        "mental-health",
+        "mood",
+        "sugar"
+      ]
+    },
+    "WAL-CLM-IMMORT-000367": {
+      "subject": "lithium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "How did lithium get its name?",
+      "answer_short": "Lithium was discovered in 1817 by Swedish chemist Johan August Arfvedson and named after the Greek word 'lithos,' meaning 'stone.'",
+      "topics": [
+        "lithium",
+        "chemistry",
+        "minerals",
+        "history"
+      ]
+    },
+    "WAL-CLM-IMMORT-000368": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is molybdenum?",
+      "answer_short": "Molybdenum is an essential trace mineral in Wallach's framework — a hard, silvery metal mined from the ore molybdenite — that every living organism needs as a building block of several key enzymes.",
+      "topics": [
+        "minerals",
+        "trace-minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000369": {
+      "subject": "molybdenum",
+      "also_about": [
+        "copper",
+        "gout"
+      ],
+      "facet": "warning",
+      "question": "Can you take too much molybdenum? Is it toxic?",
+      "answer_short": "Wallach says molybdenum toxicity occurs at 10 mg per day, showing up as a gout-like disease and as interference with copper metabolism.",
+      "topics": [
+        "minerals",
+        "toxicity",
+        "safety"
+      ]
+    },
+    "WAL-CLM-IMMORT-000370": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can too much molybdenum in soil poison animals?",
+      "answer_short": "Wallach says a few soils worldwide are rich enough in molybdenum to poison animals grazing on the plants, while numerous other soils are molybdenum-deficient.",
+      "topics": [
+        "minerals",
+        "soil",
+        "toxicity",
+        "agriculture"
+      ]
+    },
+    "WAL-CLM-IMMORT-000371": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered molybdenum and when?",
+      "answer_short": "Molybdenum was first extracted from molybdenite and identified as a new element in 1778 by a Swedish chemist named Scheele.",
+      "topics": [
+        "minerals",
+        "history",
+        "chemistry"
+      ]
+    },
+    "WAL-CLM-LETS-000513": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "chromium",
+        "malabsorption"
+      ],
+      "facet": "stance",
+      "question": "Are diabetes and hypoglycemia really caused by vanadium deficiency?",
+      "answer_short": "Wallach says diabetes and hypoglycemia are, in reality, deficiencies of chromium and vanadium created by malabsorption from celiac-type intestinal changes.",
+      "topics": [
+        "diabetes",
+        "blood sugar",
+        "malabsorption"
+      ]
+    },
+    "WAL-CLM-RARE-000358": {
+      "subject": "vanadium",
+      "also_about": [
+        "chromium",
+        "selenium"
+      ],
+      "facet": "history",
+      "question": "Was vanadium once considered toxic?",
+      "answer_short": "Wallach says vanadium was among soil elements once deemed totally toxic with no possibility of being essential, and that doctors made sure it stayed out of our food.",
+      "topics": [
+        "trace minerals",
+        "history",
+        "soil depletion"
+      ]
+    },
+    "WAL-CLM-RARE-000359": {
+      "subject": "vanadium",
+      "also_about": [
+        "zinc",
+        "copper"
+      ],
+      "facet": "history",
+      "question": "Is vanadium found in living creatures?",
+      "answer_short": "Wallach notes that a vanadium respiratory compound was found in the blood of sea squirts, among the early discoveries of trace minerals in animals.",
+      "topics": [
+        "trace minerals",
+        "history",
+        "biology"
+      ]
+    },
+    "WAL-CLM-RARE-000360": {
+      "subject": "manganese",
+      "also_about": [
+        "iron",
+        "antioxidants"
+      ],
+      "facet": "basics",
+      "question": "What is manganese?",
+      "answer_short": "Manganese is an essential trace mineral — the body holds only 10 to 20 mg in all — that activates key enzymes and helps build bones, joint cartilage, and the tiny bones of the ear.",
+      "topics": [
+        "minerals",
+        "trace-minerals",
+        "nutrition-basics"
+      ]
+    },
+    "WAL-CLM-RARE-000361": {
+      "subject": "manganese",
+      "also_about": [
+        "anemia",
+        "scabies",
+        "amenorrhea"
+      ],
+      "facet": "history",
+      "question": "How was manganese used as a medicine historically?",
+      "answer_short": "In the 1800s manganese cured miners' scabies dermatitis, treated certain anemias better than iron, and was used for menstrual disorders like amenorrhea.",
+      "topics": [
+        "history-of-medicine",
+        "womens-health",
+        "skin-health"
+      ]
+    },
+    "WAL-CLM-RARE-000362": {
+      "subject": "boron",
+      "also_about": [
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "How is boron used to treat brain tumors?",
+      "answer_short": "Boron neutron capture therapy combines a boron-containing drug with neutron irradiation of the brain to treat brain tumors.",
+      "topics": [
+        "cancer",
+        "brain tumor",
+        "neutron capture therapy",
+        "medicine"
+      ]
+    },
+    "WAL-CLM-RARE-000363": {
+      "subject": "cobalt",
+      "also_about": [
+        "selenium",
+        "zinc",
+        "molybdenum"
+      ],
+      "facet": "sources",
+      "question": "What foods are a good source of cobalt?",
+      "answer_short": "Organ meats like liver and kidney significantly boost the availability of cobalt, along with selenium, sulfur, molybdenum and zinc.",
+      "topics": [
+        "cobalt",
+        "food-sources",
+        "organ-meats",
+        "liver"
+      ]
+    },
+    "WAL-CLM-RARE-000364": {
+      "subject": "lithium",
+      "also_about": [
+        "gout"
+      ],
+      "facet": "history",
+      "question": "What was lithium used to treat before modern medicine?",
+      "answer_short": "Lithium's medicinal use goes back to 400 AD for mental illness, and in the 1840s lithium salts were used to treat kidney stones, gout and rheumatism.",
+      "topics": [
+        "lithium",
+        "history",
+        "medicine",
+        "arthritis"
+      ]
+    },
+    "WAL-CLM-RARE-000365": {
+      "subject": "lithium",
+      "also_about": [
+        "vanadium",
+        "selenium"
+      ],
+      "facet": "discovery",
+      "question": "Is lithium an essential nutrient?",
+      "answer_short": "Yes — Wallach counts lithium among the trace elements whose essentiality was established in mice in the late 20th century.",
+      "topics": [
+        "trace-minerals",
+        "essential-nutrients",
+        "history"
+      ]
+    },
+    "WAL-CLM-RARE-000366": {
+      "subject": "molybdenum",
+      "also_about": [
+        "selenium",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "stance",
+      "question": "Was molybdenum once considered toxic or non-essential?",
+      "answer_short": "Yes - Wallach says molybdenum was one of dozens of soil elements the medical profession recently dismissed as totally toxic with no possibility of being essential.",
+      "topics": [
+        "minerals",
+        "soil-depletion",
+        "medicine"
+      ]
+    },
+    "WAL-CLM-RARE-000081": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "chromium"
+      ],
+      "facet": "physiology",
+      "question": "Does hair analysis show a vanadium deficiency?",
+      "answer_short": "Wallach says the diabetes/hypoglycemia hair-analysis pattern shows low chromium, vanadium, sodium, potassium, manganese, and zinc.",
+      "topics": [
+        "hair analysis",
+        "testing",
+        "diabetes"
+      ]
+    },
+    "WAL-CLM-RARE-000256": {
+      "subject": "vanadium",
+      "also_about": [
+        "cholesterol"
+      ],
+      "facet": "uses",
+      "question": "Does vanadium lower cholesterol?",
+      "answer_short": "Wallach says vanadium inhibits cholesterol synthesis, lowering blood cholesterol and cholesterol in the aorta.",
+      "topics": [
+        "cholesterol",
+        "heart health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000138": {
+      "subject": "vanadium",
+      "also_about": [
+        "chromium",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What is the recommended daily dose of vanadium?",
+      "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children.",
+      "topics": [
+        "dosage",
+        "daily dose",
+        "supplements",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000035": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "hypoglycemia",
+        "hyperinsulinemia"
+      ],
+      "facet": "uses",
+      "question": "Can vanadium help with diabetes and low blood sugar?",
+      "answer_short": "Wallach says vanadium acts like insulin—making cell receptors more sensitive—and could reduce or even eliminate most adult-onset diabetes.",
+      "topics": [
+        "diabetes",
+        "blood sugar",
+        "insulin resistance"
+      ]
+    },
+    "WAL-CLM-DDDL-000047": {
+      "subject": "vanadium",
+      "also_about": [
+        "diabetes",
+        "chromium"
+      ],
+      "facet": "stance",
+      "question": "Can vanadium replace insulin for diabetes?",
+      "answer_short": "Wallach cites a medical school's finding that vanadium will replace insulin for adult-onset diabetics.",
+      "topics": [
+        "diabetes",
+        "insulin",
+        "blood sugar",
+        "adult onset diabetes"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000086": {
+      "subject": "germanium",
+      "also_about": [
+        "arthritis",
+        "osteoarthritis",
+        "cancer"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of germanium deficiency?",
+      "answer_short": "Germanium deficiency is typified by a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
+      "topics": [
+        "deficiency",
+        "immune-health",
+        "low-energy"
+      ]
+    },
+    "WAL-CLM-DDDL-000011": {
+      "subject": "germanium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much germanium should I take a day?",
+      "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body.",
+      "topics": [
+        "dosage",
+        "supplements",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000134": {
+      "subject": "manganese",
+      "also_about": [
+        "magnesium",
+        "molybdenum"
+      ],
+      "facet": "protocol",
+      "question": "How much manganese should I take each day?",
+      "answer_short": "In Wallach's Base Line Nutritional Supplement Program the True Supplement Need for manganese is 5 mg a day (vs. the 2.5 mg government RDA), with a 30-day pharmacologic dose range of 2 to 50 mg.",
+      "topics": [
+        "dosage",
+        "supplements",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000175": {
+      "subject": "manganese",
+      "also_about": [
+        "schizophrenia"
+      ],
+      "facet": "warning",
+      "question": "Can too much manganese be harmful?",
+      "answer_short": "Yes, excessive manganese from water supplies or industry can cause a Parkinson-like syndrome or a schizophrenia-like disorder called locura manganica.",
+      "topics": [
+        "toxicity",
+        "brain-health",
+        "heavy-metals"
+      ]
+    },
+    "WAL-CLM-LETS-000017": {
+      "subject": "manganese",
+      "also_about": [
+        "tinnitus",
+        "atherosclerosis"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of manganese deficiency and manganese toxicity?",
+      "answer_short": "Deficiency brings ataxia, atherosclerosis, dizziness, hearing loss, high cholesterol, low blood sugar, and tinnitus; toxicity brings anorexia, impaired judgment, Parkinsonism, and memory loss.",
+      "topics": [
+        "toxicity",
+        "deficiency-signs",
+        "brain-health"
+      ]
+    },
+    "WAL-CLM-DDDL-000026": {
+      "subject": "manganese",
+      "also_about": [
+        "asthma",
+        "tmj",
+        "deafness"
+      ],
+      "facet": "warning",
+      "question": "What diseases does manganese deficiency cause?",
+      "answer_short": "Wallach calls manganese deficiency striking, causing birth defects like congenital ataxia and deafness, plus asthma, convulsions, stunted growth, skeletal defects, and joint disorders like TMJ and carpal tunnel.",
+      "topics": [
+        "deficiency-diseases",
+        "birth-defects",
+        "joint-health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000043": {
+      "subject": "boron",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Does boron raise testosterone and estrogen?",
+      "answer_short": "Wallach reports that boron supplementation doubles blood levels of both estrogen (estradiol) and testosterone in men and women.",
+      "topics": [
+        "testosterone",
+        "estrogen",
+        "hormones",
+        "menopause",
+        "men's health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000079": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "physiology",
+      "question": "What does cobalt do in the body?",
+      "answer_short": "Cobalt is essential for all forms of life; it activates enzymes, helps fix nitrogen, and sits at the very center of vitamin B12.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "enzymes",
+        "trace-minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000084": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "protocol",
+      "question": "How much cobalt or vitamin B12 should I take a day?",
+      "answer_short": "The RDA is only 3–4 mcg a day, but Wallach prefers 250 to 400 mcg for a real safety margin, especially before and during pregnancy and nursing.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "dose",
+        "supplements",
+        "pregnancy"
+      ]
+    },
+    "WAL-CLM-IMMORT-000083": {
+      "subject": "cobalt",
+      "also_about": [
+        "vitamin-b12"
+      ],
+      "facet": "warning",
+      "question": "What diseases does a cobalt or vitamin B12 deficiency cause?",
+      "answer_short": "Failing to absorb B12/cobalt causes pernicious anemia and demyelination of the spinal cord and large nerve trunks.",
+      "topics": [
+        "cobalt",
+        "b12",
+        "anemia",
+        "nerves",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000082": {
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was cobalt discovered to be essential?",
+      "answer_short": "It came from 'bush sickness,' a fatal wasting disease of cattle and sheep in Australia and New Zealand that was cured and prevented by cobalt.",
+      "topics": [
+        "cobalt",
+        "discovery",
+        "bush-sickness",
+        "anemia",
+        "livestock"
+      ]
+    },
+    "WAL-CLM-IMMORT-000200": {
+      "subject": "lithium",
+      "also_about": [
+        "depression",
+        "adhd",
+        "autism"
+      ],
+      "facet": "physiology",
+      "question": "What are the signs of a lithium deficiency?",
+      "answer_short": "In animals lithium deficiency causes reproductive failure, infertility, poor growth and shortened life; in humans it shows as manic depression, rages, hyperactivity, ADD/ADHD, some autism and 'bad seed' behavior.",
+      "topics": [
+        "mental-health",
+        "behavior",
+        "violence",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000202": {
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "physiology",
+      "question": "Do violent criminals have low lithium levels?",
+      "answer_short": "Wallach reports that normal controls have almost 400 times more hair lithium than violent criminals from California, Florida, Texas and Oregon.",
+      "topics": [
+        "crime",
+        "violence",
+        "hair-analysis",
+        "diagnosis"
+      ]
+    },
+    "WAL-CLM-IMMORT-000199": {
+      "subject": "lithium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much lithium should you take and in what form?",
+      "answer_short": "Wallach cites chelated lithium at 1,000 to 2,000 micrograms per day, which raises hair lithium levels over weeks — unlike metallic lithium carbonate.",
+      "topics": [
+        "dose",
+        "supplements",
+        "lithium",
+        "hair-analysis"
+      ]
+    },
+    "WAL-CLM-RARE-000167": {
+      "subject": "lithium",
+      "also_about": [
+        "vitamin-b12",
+        "vanadium"
+      ],
+      "facet": "warning",
+      "question": "Does taking lithium affect vitamin B12 or other minerals?",
+      "answer_short": "Wallach notes that short-term lithium supplementation raises serum vitamin B12 but long-term use lowers it, while raising the hair concentrations of vanadium, aluminum, lead, arsenic and cobalt.",
+      "topics": [
+        "supplements",
+        "interactions",
+        "b12",
+        "bioavailability"
+      ]
+    },
+    "WAL-CLM-RARE-000029": {
+      "subject": "lithium",
+      "also_about": [
+        "fluoride",
+        "depression"
+      ],
+      "facet": "big_question",
+      "question": "Does Wallach want lithium added to drinking water?",
+      "answer_short": "Yes -- Wallach wants lithium added to the public water supply and fluoride eliminated; conventional medicine limits lithium to psychiatric use, especially manic depression.",
+      "topics": [
+        "water",
+        "fluoride",
+        "public-health",
+        "crime"
+      ]
+    },
+    "WAL-CLM-RARE-000041": {
+      "subject": "lithium",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "history",
+      "question": "Is there a link between lithium in drinking water and crime rates?",
+      "answer_short": "Wallach cites a University of California, San Diego study relating violent crime in 27 Texas counties (1978-1987) to drinking-water lithium, finding significantly higher rates of suicide, homicide and rape in counties with little or no lithium.",
+      "topics": [
+        "crime",
+        "violence",
+        "suicide",
+        "water"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000100": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does molybdenum do in the body?",
+      "answer_short": "Molybdenum is essential to all organisms as part of metalloenzymes and is an integral part of at least three enzymes: xanthine oxidase, aldehyde oxidase, and sulfite oxidase.",
+      "topics": [
+        "minerals",
+        "enzymes",
+        "metabolism"
+      ]
+    },
+    "WAL-CLM-RARE-000180": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the RDA for molybdenum and how much do people usually get?",
+      "answer_short": "Wallach cites an RDA for molybdenum of 250 mcg per day, with average American dietary intake ranging from 76 to 109 mcg per day.",
+      "topics": [
+        "minerals",
+        "rda",
+        "intake"
+      ]
+    },
+    "WAL-CLM-LETS-000058": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much molybdenum should I take as a supplement?",
+      "answer_short": "Wallach's Base Line Nutritional Supplement Program for adults lists molybdenum at a true supplement need of 500 mcg per day, versus an RDA of only 15 mcg, with a pharmacologic daily dose of 1,000 mcg.",
+      "topics": [
+        "minerals",
+        "supplements",
+        "dosage"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000133": {
+      "subject": "molybdenum",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the recommended daily amount of molybdenum?",
+      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+      "topics": [
+        "minerals",
+        "supplements",
+        "dosage"
       ]
     }
   }

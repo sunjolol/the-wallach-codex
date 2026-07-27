@@ -551,6 +551,11 @@
       "category": "nutrition"
     },
     {
+      "term": "cobamide",
+      "plain": "a cobalt-containing form of vitamin B12",
+      "category": "biology"
+    },
+    {
       "term": "coenzyme",
       "plain": "a helper molecule an enzyme needs in order to work",
       "category": "biology"
@@ -830,6 +835,11 @@
       "category": "medical"
     },
     {
+      "term": "enterohepatic",
+      "plain": "describing the recycling of substances between the intestines and the liver",
+      "category": "biology"
+    },
+    {
       "term": "enzootic",
       "plain": "a disease regularly present in an animal population",
       "category": "medical"
@@ -858,9 +868,19 @@
       "category": "biology"
     },
     {
+      "term": "erythropoiesis",
+      "plain": "the body's production of red blood cells",
+      "category": "biology"
+    },
+    {
       "term": "erythropoietin",
       "plain": "a hormone that signals the body to make red blood cells",
       "category": "medical"
+    },
+    {
+      "term": "estradiol",
+      "plain": "the main and most active form of the hormone estrogen",
+      "category": "biology"
     },
     {
       "term": "excitability",
@@ -1565,9 +1585,22 @@
       ]
     },
     {
+      "term": "lithium carbonate",
+      "plain": "the prescription drug form of lithium used for mood disorders",
+      "category": "medical"
+    },
+    {
       "term": "lordosis",
       "plain": "excessive inward curve of the lower spine (swayback)",
       "category": "medical"
+    },
+    {
+      "term": "lymphokine",
+      "plain": "a signaling molecule released by immune cells to coordinate a response",
+      "category": "biology",
+      "aliases": [
+        "lymphokines"
+      ]
     },
     {
       "term": "macrophage",
@@ -1594,6 +1627,11 @@
       "aliases": [
         "malignancy"
       ]
+    },
+    {
+      "term": "manic-depression",
+      "plain": "an older name for bipolar disorder",
+      "category": "medical"
     },
     {
       "term": "megaloblastic",
@@ -1648,6 +1686,11 @@
       "aliases": [
         "metalloenzymes"
       ]
+    },
+    {
+      "term": "metalloid",
+      "plain": "an element with properties in between a metal and a non-metal",
+      "category": "chemistry"
     },
     {
       "term": "metamorphosis",
@@ -1706,6 +1749,14 @@
       "category": "medical"
     },
     {
+      "term": "micronutrient",
+      "plain": "a nutrient the body needs only in small amounts, such as a vitamin or mineral",
+      "category": "nutrition",
+      "aliases": [
+        "micronutrients"
+      ]
+    },
+    {
       "term": "Mineral Toddy",
       "plain": "Historical name (1980s-90s) for the plant-derived colloidal mineral liquid Wallach built his framework around. Made by Rockland U.S.A. (Elmer Heinrich) from a prehistoric plant deposit. Distributed through Eagle, which was renamed SupraLife International in 1998. Wallach founded American Longevity in 1997 (today's Youngevity). Youngevity later acquired SupraLife; today's direct descendants in the Youngevity line are Ultra Body Toddy and Cal Toddy.",
       "category": "product-history",
@@ -1713,6 +1764,16 @@
         "Rockland Mineral Toddy",
         "the Toddy"
       ]
+    },
+    {
+      "term": "molybdenite",
+      "plain": "the main ore mineral from which molybdenum is obtained",
+      "category": "chemistry"
+    },
+    {
+      "term": "mucoprotein",
+      "plain": "a protein bound to sugar chains, found in mucus and body fluids",
+      "category": "biology"
     },
     {
       "term": "mucoviscidosis",
@@ -1737,6 +1798,11 @@
       "plain": "scarring of the bone marrow that crowds out normal blood-cell production",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "myeloma",
+      "plain": "a cancer of plasma cells (a type of white blood cell) in the bone marrow",
+      "category": "medical"
     },
     {
       "term": "myelosclerosis",
@@ -1852,6 +1918,11 @@
       "term": "nitric oxide",
       "plain": "a gas the body makes to relax and widen blood vessels",
       "category": "biology"
+    },
+    {
+      "term": "nucleosynthesis",
+      "plain": "the formation of chemical elements, as happens inside stars",
+      "category": "chemistry"
     },
     {
       "term": "omphalocele",
@@ -2014,6 +2085,11 @@
     {
       "term": "paresthesia",
       "plain": "an abnormal tingling, prickling, or numb feeling in the skin",
+      "category": "medical"
+    },
+    {
+      "term": "parkinsonian",
+      "plain": "resembling Parkinson's disease — tremors, stiffness, and slowed movement",
       "category": "medical"
     },
     {
@@ -2195,6 +2271,11 @@
       "category": "biology"
     },
     {
+      "term": "prediabetes",
+      "plain": "blood sugar that is higher than normal but not yet in the diabetes range",
+      "category": "medical"
+    },
+    {
       "term": "prostaglandins",
       "plain": "hormone-like substances that regulate inflammation and other body functions",
       "category": "medical",
@@ -2361,6 +2442,11 @@
       "category": "biology"
     },
     {
+      "term": "semiconductor",
+      "plain": "a material that conducts electricity partially — the basis of computer chips",
+      "category": "chemistry"
+    },
+    {
       "term": "sinusitis",
       "plain": "inflammation of the sinuses",
       "category": "medical"
@@ -2416,6 +2502,15 @@
       "category": "medical"
     },
     {
+      "term": "superoxide dismutase",
+      "plain": "an antioxidant enzyme that neutralizes damaging oxygen molecules; one form needs manganese",
+      "category": "biology",
+      "aliases": [
+        "dismutase",
+        "SOD"
+      ]
+    },
+    {
       "term": "SupraLife",
       "plain": "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
       "category": "product-history",
@@ -2449,6 +2544,14 @@
       "term": "systemic",
       "plain": "affecting the whole body, not just one part",
       "category": "medical"
+    },
+    {
+      "term": "T-suppressor cell",
+      "plain": "a type of immune cell that dampens or regulates the immune response",
+      "category": "biology",
+      "aliases": [
+        "t-suppressor"
+      ]
     },
     {
       "term": "t.i.d.",
@@ -2627,6 +2730,11 @@
       "category": "nutrition"
     },
     {
+      "term": "vanadyl sulfate",
+      "plain": "a common supplement form of the mineral vanadium",
+      "category": "nutrition"
+    },
+    {
       "term": "varicose",
       "plain": "swollen, twisted veins, usually in the legs",
       "category": "medical"
@@ -2662,6 +2770,11 @@
       "term": "Wilson's disease",
       "plain": "an inherited disorder in which copper builds up to toxic levels",
       "category": "medical"
+    },
+    {
+      "term": "xanthine oxidase",
+      "plain": "a molybdenum-dependent enzyme involved in producing uric acid",
+      "category": "biology"
     },
     {
       "term": "xerophthalmia",
