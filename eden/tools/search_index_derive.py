@@ -34,6 +34,13 @@ SEARCH_FACETS = [
     'uses', 'stance', 'protocol', 'history', 'big_question', 'biography',
 ]
 
+# The runtime SearchEntitySchema.type enum — MUST mirror core/schemas/search.ts. The runtime
+# Zod REJECTS THE WHOLE INDEX on an unknown type -> EMPTY_INDEX fallback -> every enriched search
+# page blanks while the board stays GREEN (the Python derive validated everything else). Added
+# 2026-07-27 after type:'compound'/'food' shipped past this gate and emptied the search index
+# (mercury/ask/enriched all blank; only the corpus-embed-backed condition/essential pages survived).
+ENTITY_TYPES = ['element', 'nutrient', 'substance', 'condition', 'concept', 'topic', 'person', 'event']
+
 ARTIFACT = 'dashboard/assets/data/search/search-index.json'
 
 
@@ -124,6 +131,9 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
                     errs.append(f'{cid}: see_also phrase {ph!r} does not occur in the answer')
 
     for slug, r in reg.items():
+        t = r.get('type')
+        if t is not None and t not in ENTITY_TYPES:
+            errs.append(f'registry {slug!r}: type {t!r} not in the runtime SearchEntitySchema enum {ENTITY_TYPES}')
         if r.get('canon_ref'):
             if slug not in canon_slugs:
                 errs.append(f'registry {slug!r}: canon_ref but not an essentials-canon slug')

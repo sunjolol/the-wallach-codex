@@ -9592,6 +9592,111 @@
       "extracted_at": "2026-07-27T18:16:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000288",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Korsakoff's syndrome is a form of recent-memory loss that Wallach calls a \"false Alzheimer's disease\": the person can still perform detailed tasks they learned before the illness began, but can no longer record or store new memories or learn even the simplest new task. A telltale feature is confabulation — inventing imaginary experiences to fill in for memories that can't be recalled. Wallach traces it to a single vitamin B1 (thiamine) deficiency, usually caused by chronic alcoholism combined with a diet heavy in sugar and simple carbohydrates; it can also follow a blow to the head. Because it is a thiamine deficiency and not true Alzheimer's, he considers it reversible — patients are routinely misdiagnosed with Alzheimer's yet can be cured within a week once given megadoses of thiamine. His treatment centers on high-dose vitamin B1 (100 mg three times a day) along with lecithin, strict avoidance of alcohol and sugar, chromium and vanadium, betaine HCl and pancreatic enzymes, and other memory-supporting agents. When alcohol has actually damaged the brain tissue, the alcoholic form is called Wernicke-Korsakoff syndrome and is harder to treat.",
+      "verbatim": "KORSAKOFF’S SYNDROME (recent memory loss, false Alzheimer’s\nDisease) is characterized by an inability to record and store new memory.\nThe patient can perform detailed tasks learned before onset but cannot learn\nthe simplest of new tasks.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 829702
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "korsakoff",
+        "dementia",
+        "memory-loss",
+        "brain-health",
+        "alcoholism",
+        "thiamine",
+        "alzheimers",
+        "neurological"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T20:07:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000289",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach ranks protein quality with two measures — a 'chemical score' (how well a food's amino-acid pattern matches the body's needs) and '% utilization' (how much of it the body actually uses). Whole egg is the gold standard, scoring 100 with 94% utilization, the highest of any source he lists. Animal proteins sit at the top: human milk 100/87 and cow's milk 95/82. Plant proteins score lower — cotton seed 81/59, soy bean 74/65, rice 67/59, peanut 65/47, millet 63/44, wheat 53/48, sesame 50/54, and corn (maize) 49/52 — because each is short on or missing certain amino acids. Mixing plant sources (beans with rice, wheat with legumes) or combining vegetable with animal protein raises the usable value and makes up for the missing amino acids. Quality matters because protein repairs and builds tissue, forms enzymes, hormones, and antibodies, and holds blood fluid and acid-base balance in check; a shortfall of complete protein leads to poor growth, weakened immunity, edema, and Kwashiorkor.",
+      "verbatim": "The availability and usability of N from various foods are\nquite different and must be considered when choosing N sources.\nNitrogen/Protein Utilization Values of Common Foods\nNitrogen Source (Protein) Chemical Score % Utilization\nWhole egg 100 94\nHuman milk 100 87\nCow’s milk 95 82\nSoy bean 74 65\nSesame 50 54\nPeanut 65 47\nCotton seed 81 59",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 559521
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "protein",
+        "nutrition",
+        "diet",
+        "amino-acids",
+        "muscle-building",
+        "vegetarian-diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T20:07:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000290",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Wallach ties testosterone directly to the trace mineral boron. He says the body requires boron to maintain normal blood levels of both estrogen and testosterone, and that boron supplementation actually doubles testosterone levels. He describes the effect as fast and measurable: within 8 days, supplementing boron cut urinary mineral losses (40% less calcium, 33% less magnesium, and less phosphorus) and doubled a key estrogen (estradiol) to the levels seen in women on estrogen-replacement therapy — with testosterone likewise doubling. So in Wallach's framework, low testosterone is in part a boron-deficiency problem, and boron is a direct nutritional lever to raise it.",
+      "verbatim": "Boron is required for the maintenance of bone density and normal blood\nlevels of estrogen and testosterone. Within eight days of supplementing\nboron, women lost 40 percent less calcium, 33 percent less magnesium, and\nless phosphorus through their urine. Women receiving boron\nsupplementation had blood levels of estradiol 17B doubled to “levels found\nin women on estrogen replacement therapy.” Levels of testosterone also\ndouble with Boron supplementation.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 483747
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "testosterone",
+        "mens-health",
+        "hormones",
+        "libido"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T20:07:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

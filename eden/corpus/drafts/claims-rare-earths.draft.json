@@ -14069,6 +14069,77 @@
       "extracted_at": "2026-07-27T18:16:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000398",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his chapter on toxic metals, Wallach lists canned foods as a hidden dietary source of lead: the sealant used to close the seams of steel and tin cans leaches lead into the food sitting inside. He points to tuna as the clearest example, citing a study in which canned tuna carried nearly double the level of lead found in the same fish sold fresh. He frames this as just one of several everyday routes — alongside leaded-gasoline residue settled on crops, chipping old lead paint, and lead-glazed imported pottery mistakenly used for food — by which lead, which he calls one of the most universally dangerous toxic metals, quietly enters the body.",
+      "verbatim": "Another source of lead in our food chain\nis the sealant materials used to close the\nseams in steel or tin canned foods. One\nstudy showed that canned tuna has nearly\ndouble the level of lead as fresh tuna.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 702700
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "tuna",
+        "heavy-metals",
+        "food-safety",
+        "lead-contamination",
+        "canned-food",
+        "toxic-metals"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T20:07:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000399",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Silver nitrate — historically called 'lunar caustic,' a name rooted in silver's ancient association with the moon (the same link behind words like 'moonstruck' and 'lunacy') — has a long medicinal history. In 1637 Angelus Sala used it as a purgative and for brain and uterine illness, and Robert Boyle rolled silver nitrate and nitre into bread-crust pills the size of small peas as a laxative. Beginning in 1826, John Higginbottom of Nottingham, England used lunar caustic to treat wounds and ulcers (from needles, hooks, bayonets, saws, leech and rabid-animal bites, and insect stings), to remove tumors, and to cauterize surgical wounds, and later described its use against erysipelas, varicose ulcers, diabetic (senile) gangrene, and burns. Its most enduring application came in 1884, when the German obstetrician Carl Sigmund Crede began placing a single drop of 2% silver nitrate in each newborn's eyes at birth to prevent gonorrheal conjunctivitis (ophthalmia neonatorum); a diluted 1/2% solution became a standard burn treatment only after Carl A. Moyer's work in 1965.",
+      "verbatim": "Angelus Sala (1637) em-\nployed silver nitrate (lunar caustic) as a\npurgative and in brain and uterine illnesses.\nRobert Boyle concocted pilulae lunara by\ncreating a mixture of silver nitrate and nitre,\ndried and formed with bread crusts into pills\nthe size of small peas as a laxative.",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 127038
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "silver-nitrate",
+        "silver",
+        "wound-care",
+        "antiseptic",
+        "cautery",
+        "history-of-medicine",
+        "eye-health"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T20:07:30+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

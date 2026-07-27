@@ -1710,7 +1710,8 @@
       "related": [
         "fish",
         "omega-3",
-        "cholesterol"
+        "cholesterol",
+        "tuna"
       ]
     },
     "salt": {
@@ -1781,7 +1782,8 @@
         "immune_depression",
         "gold",
         "colloidal_minerals",
-        "essential_nutrients"
+        "essential_nutrients",
+        "silver-nitrate"
       ]
     },
     "somatic_therapies": {
@@ -1834,7 +1836,16 @@
         "canned tuna",
         "albacore",
         "tuna steak",
-        "bluefin"
+        "bluefin",
+        "tuna fish",
+        "tinned tuna",
+        "tuna in a can",
+        "is canned tuna safe",
+        "lead in canned tuna",
+        "lead in tuna",
+        "does tuna have lead",
+        "canned fish lead",
+        "tuna heavy metals"
       ],
       "related": [
         "fish",
@@ -2349,7 +2360,8 @@
         "alzheimers",
         "congestive_heart_failure",
         "alcoholism",
-        "cancer"
+        "cancer",
+        "korsakoff"
       ]
     },
     "vitamin-b2": {
@@ -2487,7 +2499,9 @@
         "anemia",
         "eczema",
         "alopecia",
-        "edema"
+        "edema",
+        "coenzyme-a",
+        "acetylcholine"
       ]
     },
     "vitamin-b6": {
@@ -3044,7 +3058,8 @@
         "copper",
         "chromium",
         "cancer",
-        "estrogen"
+        "estrogen",
+        "testosterone"
       ]
     },
     "lithium": {
@@ -3341,7 +3356,10 @@
         "taurine",
         "tyrosine",
         "lysine",
-        "erectile_dysfunction"
+        "erectile_dysfunction",
+        "ornithine",
+        "citrulline",
+        "nitric-oxide"
       ]
     },
     "taurine": {
@@ -3416,7 +3434,9 @@
         "phenylalanine",
         "tyrosine",
         "depression",
-        "pellagra"
+        "pellagra",
+        "serotonin",
+        "melatonin"
       ]
     },
     "phenylalanine": {
@@ -3695,7 +3715,9 @@
       ],
       "related": [
         "omega-3",
-        "arachidonic-acid"
+        "arachidonic-acid",
+        "gamma-linolenic-acid",
+        "docosahexaenoic-acid"
       ]
     },
     "nitrogen": {
@@ -3726,7 +3748,10 @@
         "chromium",
         "liver_disease",
         "kidney_disease",
-        "cancer"
+        "cancer",
+        "protein",
+        "nitrates",
+        "nitrites"
       ]
     },
     "oxygen": {
@@ -3912,7 +3937,8 @@
         "magnesium",
         "hafnium",
         "scandium",
-        "zirconium"
+        "zirconium",
+        "berylliosis"
       ]
     },
     "terbium": {
@@ -4177,7 +4203,8 @@
         "arsenic_toxicity",
         "psoriasis",
         "syphilis",
-        "cancer"
+        "cancer",
+        "arsenic-trioxide"
       ]
     },
     "tin": {
@@ -4350,7 +4377,8 @@
         "Re rhenium"
       ],
       "related": [
-        "molybdenum"
+        "molybdenum",
+        "iodine"
       ]
     },
     "gadolinium": {
@@ -4649,6 +4677,343 @@
       "related": [
         "omega-6",
         "omega-3"
+      ]
+    },
+    "ornithine": {
+      "display_name": "Ornithine",
+      "type": "substance",
+      "synonyms": [
+        "ornithine",
+        "L-ornithine",
+        "ornithine HGH",
+        "ornithine growth hormone",
+        "ornithine and arginine",
+        "does ornithine boost growth hormone",
+        "ornithine supplement",
+        "ornithine pituitary"
+      ],
+      "related": [
+        "arginine"
+      ]
+    },
+    "citrulline": {
+      "display_name": "Citrulline",
+      "type": "substance",
+      "synonyms": [
+        "citrulline",
+        "L-citrulline",
+        "citrulline arginine",
+        "citrulline precursor",
+        "is citrulline converted to arginine",
+        "citrulline supplement",
+        "citrulline to arginine"
+      ],
+      "related": [
+        "arginine"
+      ]
+    },
+    "nitric-oxide": {
+      "display_name": "Nitric oxide",
+      "type": "substance",
+      "synonyms": [
+        "nitric oxide",
+        "NO",
+        "nitric oxide blood pressure",
+        "does nitric oxide lower blood pressure",
+        "nitric oxide arginine",
+        "nitric oxide blood flow",
+        "what is nitric oxide",
+        "nitric oxide circulation"
+      ],
+      "related": [
+        "arginine"
+      ]
+    },
+    "serotonin": {
+      "display_name": "Serotonin",
+      "type": "substance",
+      "synonyms": [
+        "serotonin",
+        "5-HT",
+        "5-hydroxytryptamine",
+        "happy hormone",
+        "mood neurotransmitter",
+        "brain serotonin",
+        "what is serotonin",
+        "serotonin and tryptophan"
+      ],
+      "related": [
+        "tryptophan",
+        "phenylalanine"
+      ]
+    },
+    "melatonin": {
+      "display_name": "Melatonin",
+      "type": "substance",
+      "synonyms": [
+        "melatonin",
+        "sleep hormone",
+        "neurohormone",
+        "melatonin supplement",
+        "what is melatonin",
+        "where does melatonin come from"
+      ],
+      "related": [
+        "tryptophan"
+      ]
+    },
+    "coenzyme-a": {
+      "display_name": "Coenzyme A",
+      "type": "substance",
+      "synonyms": [
+        "coenzyme A",
+        "coenzyme a",
+        "CoA",
+        "co-enzyme A",
+        "what is coenzyme A",
+        "coenzyme A function",
+        "acyl carrier",
+        "vitamin B5 active form"
+      ],
+      "related": [
+        "vitamin-b5"
+      ]
+    },
+    "acetylcholine": {
+      "display_name": "Acetylcholine",
+      "type": "substance",
+      "synonyms": [
+        "acetylcholine",
+        "acetyl choline",
+        "ACh",
+        "what is acetylcholine",
+        "acetylcholine neurotransmitter",
+        "nerve signal chemical",
+        "brain chemical messenger"
+      ],
+      "related": [
+        "choline",
+        "vitamin-b5"
+      ]
+    },
+    "gamma-linolenic-acid": {
+      "display_name": "Gamma-Linolenic Acid (GLA)",
+      "type": "substance",
+      "synonyms": [
+        "GLA",
+        "gamma-linolenic acid",
+        "gamma linolenic acid",
+        "is GLA essential",
+        "conditionally essential omega-6",
+        "GLA omega 6 fatty acid",
+        "what is gamma-linolenic acid"
+      ],
+      "related": [
+        "omega-6",
+        "omega-3",
+        "omega-9"
+      ]
+    },
+    "docosahexaenoic-acid": {
+      "display_name": "Docosahexaenoic Acid (DHA)",
+      "type": "substance",
+      "synonyms": [
+        "DHA",
+        "docosahexaenoic acid",
+        "omega-3 DHA",
+        "DHA and depression",
+        "DHA brain health",
+        "fish oil omega-3 DHA",
+        "does DHA help depression",
+        "what does DHA do"
+      ],
+      "related": [
+        "omega-3",
+        "omega-6",
+        "omega-9"
+      ]
+    },
+    "nitrates": {
+      "display_name": "Nitrates",
+      "type": "substance",
+      "synonyms": [
+        "nitrates",
+        "sodium nitrate",
+        "potassium nitrate",
+        "saltpeter",
+        "nitrates in bacon",
+        "nitrates in processed meat",
+        "are nitrates bad for you",
+        "cured meat chemicals",
+        "nitrate preservatives",
+        "deli meat nitrates",
+        "nitrates in hot dogs"
+      ],
+      "related": [
+        "nitrogen",
+        "iodine",
+        "sodium",
+        "potassium"
+      ]
+    },
+    "nitrites": {
+      "display_name": "Nitrites",
+      "type": "substance",
+      "synonyms": [
+        "nitrites",
+        "sodium nitrite",
+        "curing salt",
+        "pink salt",
+        "nitrites in bacon",
+        "nitrites in processed meat",
+        "are nitrites bad for you",
+        "meat preservative",
+        "nitrite preservatives",
+        "deli meat nitrites",
+        "nitrites in hot dogs"
+      ],
+      "related": [
+        "nitrogen",
+        "iodine",
+        "sodium",
+        "potassium"
+      ]
+    },
+    "arsenic-trioxide": {
+      "display_name": "Arsenic Trioxide",
+      "type": "substance",
+      "synonyms": [
+        "arsenic trioxide",
+        "arsenic for cancer",
+        "arsenic leukemia treatment",
+        "arsenic cancer cure",
+        "can arsenic treat cancer",
+        "arsenic as medicine",
+        "Fowler's solution",
+        "arsenic trioxide APL",
+        "arsenic acute promyelocytic leukemia"
+      ],
+      "related": [
+        "arsenic"
+      ]
+    },
+    "korsakoff": {
+      "display_name": "Korsakoff's Syndrome",
+      "type": "topic",
+      "synonyms": [
+        "Korsakoff syndrome",
+        "Korsakoff's syndrome",
+        "Wernicke-Korsakoff",
+        "Wernicke-Korsakoff syndrome",
+        "false Alzheimer's",
+        "alcoholic dementia",
+        "thiamine deficiency dementia",
+        "vitamin B1 deficiency memory loss",
+        "recent memory loss",
+        "amnesia from alcoholism",
+        "confabulation",
+        "cerebral beriberi",
+        "memory loss from drinking",
+        "misdiagnosed as Alzheimer's"
+      ],
+      "related": [
+        "vitamin-b1",
+        "chromium",
+        "vanadium"
+      ]
+    },
+    "berylliosis": {
+      "display_name": "Berylliosis",
+      "type": "topic",
+      "synonyms": [
+        "berylliosis",
+        "chronic beryllium disease",
+        "beryllium lung disease",
+        "beryllium poisoning",
+        "beryllium oxide dust disease",
+        "acute beryllium disease",
+        "chemical pneumonitis from beryllium",
+        "lung disease from beryllium dust",
+        "beryllium toxicity lungs",
+        "what is berylliosis"
+      ],
+      "related": [
+        "beryllium"
+      ]
+    },
+    "silver-nitrate": {
+      "display_name": "Silver Nitrate",
+      "type": "substance",
+      "synonyms": [
+        "silver nitrate",
+        "lunar caustic",
+        "AgNO3",
+        "caustic silver",
+        "silver nitrate uses",
+        "silver nitrate history",
+        "pilulae lunara",
+        "tincture of the moon",
+        "silver medicine",
+        "silver nitrate eye drops"
+      ],
+      "related": [
+        "silver",
+        "gold"
+      ]
+    },
+    "protein": {
+      "display_name": "Protein",
+      "type": "concept",
+      "synonyms": [
+        "protein",
+        "best protein",
+        "highest quality protein",
+        "protein quality",
+        "complete protein",
+        "which protein is best",
+        "best protein source",
+        "best source of protein",
+        "animal protein vs plant protein",
+        "protein utilization",
+        "chemical score of protein",
+        "biological value of protein",
+        "egg protein",
+        "how good is soy protein",
+        "incomplete protein",
+        "what makes a good protein"
+      ],
+      "related": [
+        "nitrogen",
+        "lysine",
+        "methionine",
+        "tryptophan",
+        "leucine",
+        "isoleucine",
+        "valine",
+        "threonine",
+        "phenylalanine",
+        "histidine"
+      ]
+    },
+    "testosterone": {
+      "display_name": "Testosterone",
+      "type": "substance",
+      "synonyms": [
+        "testosterone",
+        "low testosterone",
+        "raise testosterone",
+        "boost testosterone naturally",
+        "increase testosterone",
+        "testosterone deficiency",
+        "low T",
+        "male hormone",
+        "T levels",
+        "sex drive hormone",
+        "boron and testosterone"
+      ],
+      "related": [
+        "boron",
+        "zinc"
       ]
     }
   }

@@ -2441,6 +2441,40 @@
       "extracted_at": "2026-07-27T18:16:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000073",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Ornithine is an amino acid that, taken together with L-arginine in significant doses, can cause the pituitary gland to release human growth hormone (HGH). Wallach raises this in a discussion of age-related HGH decline: he cites the New England Journal of Medicine that HGH can reverse symptoms of human biological aging — restoring muscle mass, thickening skin and reducing wrinkles, restoring lost hair and hair color, and increasing energy, sex drive, memory, immune function, and wound-healing capacity. In that light, supplementing ornithine (with arginine) is presented as a way to stimulate the body's own growth-hormone output.",
+      "verbatim": "The amino acids L-arginine and ornithine can cause HGH to be \nreleased from the pituitary gland if supplemented in significant doses.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 527686
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "ornithine",
+        "amino-acids",
+        "growth-hormone",
+        "hgh",
+        "anti-aging"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T20:07:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

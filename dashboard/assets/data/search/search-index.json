@@ -53,6 +53,24 @@
       ],
       "claim_count": 5
     },
+    "acetylcholine": {
+      "display_name": "Acetylcholine",
+      "type": "substance",
+      "synonyms": [
+        "acetylcholine",
+        "acetyl choline",
+        "ACh",
+        "what is acetylcholine",
+        "acetylcholine neurotransmitter",
+        "nerve signal chemical",
+        "brain chemical messenger"
+      ],
+      "related": [
+        "choline",
+        "vitamin-b5"
+      ],
+      "claim_count": 1
+    },
     "aluminum": {
       "display_name": "Aluminum",
       "common_name": "Aluminum",
@@ -168,7 +186,10 @@
         "taurine",
         "tyrosine",
         "lysine",
-        "erectile_dysfunction"
+        "erectile_dysfunction",
+        "ornithine",
+        "citrulline",
+        "nitric-oxide"
       ],
       "claim_count": 12
     },
@@ -216,10 +237,30 @@
         "arsenic_toxicity",
         "psoriasis",
         "syphilis",
-        "cancer"
+        "cancer",
+        "arsenic-trioxide"
       ],
       "claim_count": 8,
       "symbol": "As"
+    },
+    "arsenic-trioxide": {
+      "display_name": "Arsenic Trioxide",
+      "type": "substance",
+      "synonyms": [
+        "arsenic trioxide",
+        "arsenic for cancer",
+        "arsenic leukemia treatment",
+        "arsenic cancer cure",
+        "can arsenic treat cancer",
+        "arsenic as medicine",
+        "Fowler's solution",
+        "arsenic trioxide APL",
+        "arsenic acute promyelocytic leukemia"
+      ],
+      "related": [
+        "arsenic"
+      ],
+      "claim_count": 1
     },
     "ayurveda": {
       "display_name": "Ayurveda",
@@ -303,6 +344,26 @@
       ],
       "claim_count": 10
     },
+    "berylliosis": {
+      "display_name": "Berylliosis",
+      "type": "topic",
+      "synonyms": [
+        "berylliosis",
+        "chronic beryllium disease",
+        "beryllium lung disease",
+        "beryllium poisoning",
+        "beryllium oxide dust disease",
+        "acute beryllium disease",
+        "chemical pneumonitis from beryllium",
+        "lung disease from beryllium dust",
+        "beryllium toxicity lungs",
+        "what is berylliosis"
+      ],
+      "related": [
+        "beryllium"
+      ],
+      "claim_count": 1
+    },
     "beryllium": {
       "display_name": "Beryllium",
       "common_name": "Beryllium",
@@ -329,7 +390,8 @@
         "magnesium",
         "hafnium",
         "scandium",
-        "zirconium"
+        "zirconium",
+        "berylliosis"
       ],
       "claim_count": 6,
       "symbol": "Be"
@@ -435,7 +497,8 @@
         "copper",
         "chromium",
         "cancer",
-        "estrogen"
+        "estrogen",
+        "testosterone"
       ],
       "claim_count": 15,
       "symbol": "B"
@@ -861,6 +924,23 @@
       "claim_count": 27,
       "symbol": "Cr"
     },
+    "citrulline": {
+      "display_name": "Citrulline",
+      "type": "substance",
+      "synonyms": [
+        "citrulline",
+        "L-citrulline",
+        "citrulline arginine",
+        "citrulline precursor",
+        "is citrulline converted to arginine",
+        "citrulline supplement",
+        "citrulline to arginine"
+      ],
+      "related": [
+        "arginine"
+      ],
+      "claim_count": 1
+    },
     "cobalt": {
       "display_name": "Cobalt",
       "common_name": "Cobalt",
@@ -922,6 +1002,24 @@
       ],
       "claim_count": 19,
       "symbol": "Co"
+    },
+    "coenzyme-a": {
+      "display_name": "Coenzyme A",
+      "type": "substance",
+      "synonyms": [
+        "coenzyme A",
+        "coenzyme a",
+        "CoA",
+        "co-enzyme A",
+        "what is coenzyme A",
+        "coenzyme A function",
+        "acyl carrier",
+        "vitamin B5 active form"
+      ],
+      "related": [
+        "vitamin-b5"
+      ],
+      "claim_count": 1
     },
     "colloidal_minerals": {
       "display_name": "Colloidal Minerals",
@@ -1163,6 +1261,26 @@
       ],
       "claim_count": 13,
       "intro_claim": "WAL-CLM-DDDL-000131"
+    },
+    "docosahexaenoic-acid": {
+      "display_name": "Docosahexaenoic Acid (DHA)",
+      "type": "substance",
+      "synonyms": [
+        "DHA",
+        "docosahexaenoic acid",
+        "omega-3 DHA",
+        "DHA and depression",
+        "DHA brain health",
+        "fish oil omega-3 DHA",
+        "does DHA help depression",
+        "what does DHA do"
+      ],
+      "related": [
+        "omega-3",
+        "omega-6",
+        "omega-9"
+      ],
+      "claim_count": 1
     },
     "drug_safety_elderly": {
       "display_name": "Drug Safety in the Elderly",
@@ -1577,6 +1695,25 @@
       ],
       "claim_count": 9,
       "symbol": "Ga"
+    },
+    "gamma-linolenic-acid": {
+      "display_name": "Gamma-Linolenic Acid (GLA)",
+      "type": "substance",
+      "synonyms": [
+        "GLA",
+        "gamma-linolenic acid",
+        "gamma linolenic acid",
+        "is GLA essential",
+        "conditionally essential omega-6",
+        "GLA omega 6 fatty acid",
+        "what is gamma-linolenic acid"
+      ],
+      "related": [
+        "omega-6",
+        "omega-3",
+        "omega-9"
+      ],
+      "claim_count": 1
     },
     "germanium": {
       "display_name": "Germanium",
@@ -2142,6 +2279,32 @@
       ],
       "claim_count": 5
     },
+    "korsakoff": {
+      "display_name": "Korsakoff's Syndrome",
+      "type": "topic",
+      "synonyms": [
+        "Korsakoff syndrome",
+        "Korsakoff's syndrome",
+        "Wernicke-Korsakoff",
+        "Wernicke-Korsakoff syndrome",
+        "false Alzheimer's",
+        "alcoholic dementia",
+        "thiamine deficiency dementia",
+        "vitamin B1 deficiency memory loss",
+        "recent memory loss",
+        "amnesia from alcoholism",
+        "confabulation",
+        "cerebral beriberi",
+        "memory loss from drinking",
+        "misdiagnosed as Alzheimer's"
+      ],
+      "related": [
+        "vitamin-b1",
+        "chromium",
+        "vanadium"
+      ],
+      "claim_count": 1
+    },
     "krypton": {
       "display_name": "Krypton",
       "type": "element",
@@ -2557,6 +2720,22 @@
       ],
       "claim_count": 2
     },
+    "melatonin": {
+      "display_name": "Melatonin",
+      "type": "substance",
+      "synonyms": [
+        "melatonin",
+        "sleep hormone",
+        "neurohormone",
+        "melatonin supplement",
+        "what is melatonin",
+        "where does melatonin come from"
+      ],
+      "related": [
+        "tryptophan"
+      ],
+      "claim_count": 1
+    },
     "mercury": {
       "display_name": "Mercury",
       "type": "element",
@@ -2782,6 +2961,72 @@
       "claim_count": 3,
       "symbol": "Nb"
     },
+    "nitrates": {
+      "display_name": "Nitrates",
+      "type": "substance",
+      "synonyms": [
+        "nitrates",
+        "sodium nitrate",
+        "potassium nitrate",
+        "saltpeter",
+        "nitrates in bacon",
+        "nitrates in processed meat",
+        "are nitrates bad for you",
+        "cured meat chemicals",
+        "nitrate preservatives",
+        "deli meat nitrates",
+        "nitrates in hot dogs"
+      ],
+      "related": [
+        "nitrogen",
+        "iodine",
+        "sodium",
+        "potassium"
+      ],
+      "claim_count": 1
+    },
+    "nitric-oxide": {
+      "display_name": "Nitric oxide",
+      "type": "substance",
+      "synonyms": [
+        "nitric oxide",
+        "NO",
+        "nitric oxide blood pressure",
+        "does nitric oxide lower blood pressure",
+        "nitric oxide arginine",
+        "nitric oxide blood flow",
+        "what is nitric oxide",
+        "nitric oxide circulation"
+      ],
+      "related": [
+        "arginine"
+      ],
+      "claim_count": 1
+    },
+    "nitrites": {
+      "display_name": "Nitrites",
+      "type": "substance",
+      "synonyms": [
+        "nitrites",
+        "sodium nitrite",
+        "curing salt",
+        "pink salt",
+        "nitrites in bacon",
+        "nitrites in processed meat",
+        "are nitrites bad for you",
+        "meat preservative",
+        "nitrite preservatives",
+        "deli meat nitrites",
+        "nitrites in hot dogs"
+      ],
+      "related": [
+        "nitrogen",
+        "iodine",
+        "sodium",
+        "potassium"
+      ],
+      "claim_count": 1
+    },
     "nitrogen": {
       "display_name": "Nitrogen",
       "common_name": "Nitrogen",
@@ -2811,7 +3056,10 @@
         "chromium",
         "liver_disease",
         "kidney_disease",
-        "cancer"
+        "cancer",
+        "protein",
+        "nitrates",
+        "nitrites"
       ],
       "claim_count": 6,
       "symbol": "N"
@@ -2932,7 +3180,9 @@
       ],
       "related": [
         "omega-3",
-        "arachidonic-acid"
+        "arachidonic-acid",
+        "gamma-linolenic-acid",
+        "docosahexaenoic-acid"
       ],
       "claim_count": 4
     },
@@ -2992,6 +3242,24 @@
         "longevity"
       ],
       "claim_count": 9
+    },
+    "ornithine": {
+      "display_name": "Ornithine",
+      "type": "substance",
+      "synonyms": [
+        "ornithine",
+        "L-ornithine",
+        "ornithine HGH",
+        "ornithine growth hormone",
+        "ornithine and arginine",
+        "does ornithine boost growth hormone",
+        "ornithine supplement",
+        "ornithine pituitary"
+      ],
+      "related": [
+        "arginine"
+      ],
+      "claim_count": 1
     },
     "oxygen": {
       "display_name": "Oxygen",
@@ -3312,6 +3580,41 @@
       ],
       "claim_count": 1
     },
+    "protein": {
+      "display_name": "Protein",
+      "type": "concept",
+      "synonyms": [
+        "protein",
+        "best protein",
+        "highest quality protein",
+        "protein quality",
+        "complete protein",
+        "which protein is best",
+        "best protein source",
+        "best source of protein",
+        "animal protein vs plant protein",
+        "protein utilization",
+        "chemical score of protein",
+        "biological value of protein",
+        "egg protein",
+        "how good is soy protein",
+        "incomplete protein",
+        "what makes a good protein"
+      ],
+      "related": [
+        "nitrogen",
+        "lysine",
+        "methionine",
+        "tryptophan",
+        "leucine",
+        "isoleucine",
+        "valine",
+        "threonine",
+        "phenylalanine",
+        "histidine"
+      ],
+      "claim_count": 1
+    },
     "quackbusters": {
       "display_name": "Quackbusters & Medical Freedom",
       "type": "topic",
@@ -3377,7 +3680,8 @@
         "Re rhenium"
       ],
       "related": [
-        "molybdenum"
+        "molybdenum",
+        "iodine"
       ],
       "claim_count": 5,
       "symbol": "Re"
@@ -3512,6 +3816,25 @@
       "claim_count": 17,
       "symbol": "Se"
     },
+    "serotonin": {
+      "display_name": "Serotonin",
+      "type": "substance",
+      "synonyms": [
+        "serotonin",
+        "5-HT",
+        "5-hydroxytryptamine",
+        "happy hormone",
+        "mood neurotransmitter",
+        "brain serotonin",
+        "what is serotonin",
+        "serotonin and tryptophan"
+      ],
+      "related": [
+        "tryptophan",
+        "phenylalanine"
+      ],
+      "claim_count": 1
+    },
     "sexual_health": {
       "display_name": "Sexual Health",
       "type": "topic",
@@ -3593,10 +3916,32 @@
         "immune_depression",
         "gold",
         "colloidal_minerals",
-        "essential_nutrients"
+        "essential_nutrients",
+        "silver-nitrate"
       ],
       "claim_count": 10,
       "symbol": "Ag"
+    },
+    "silver-nitrate": {
+      "display_name": "Silver Nitrate",
+      "type": "substance",
+      "synonyms": [
+        "silver nitrate",
+        "lunar caustic",
+        "AgNO3",
+        "caustic silver",
+        "silver nitrate uses",
+        "silver nitrate history",
+        "pilulae lunara",
+        "tincture of the moon",
+        "silver medicine",
+        "silver nitrate eye drops"
+      ],
+      "related": [
+        "silver",
+        "gold"
+      ],
+      "claim_count": 1
     },
     "sodium": {
       "display_name": "Sodium",
@@ -3869,6 +4214,28 @@
       "claim_count": 4,
       "symbol": "Tb"
     },
+    "testosterone": {
+      "display_name": "Testosterone",
+      "type": "substance",
+      "synonyms": [
+        "testosterone",
+        "low testosterone",
+        "raise testosterone",
+        "boost testosterone naturally",
+        "increase testosterone",
+        "testosterone deficiency",
+        "low T",
+        "male hormone",
+        "T levels",
+        "sex drive hormone",
+        "boron and testosterone"
+      ],
+      "related": [
+        "boron",
+        "zinc"
+      ],
+      "claim_count": 1
+    },
     "threonine": {
       "display_name": "Threonine",
       "common_name": "Threonine",
@@ -4017,9 +4384,38 @@
         "phenylalanine",
         "tyrosine",
         "depression",
-        "pellagra"
+        "pellagra",
+        "serotonin",
+        "melatonin"
       ],
       "claim_count": 12
+    },
+    "tuna": {
+      "display_name": "Tuna",
+      "type": "substance",
+      "synonyms": [
+        "tuna",
+        "canned tuna",
+        "albacore",
+        "tuna steak",
+        "bluefin",
+        "tuna fish",
+        "tinned tuna",
+        "tuna in a can",
+        "is canned tuna safe",
+        "lead in canned tuna",
+        "lead in tuna",
+        "does tuna have lead",
+        "canned fish lead",
+        "tuna heavy metals"
+      ],
+      "related": [
+        "fish",
+        "mercury",
+        "selenium",
+        "germanium"
+      ],
+      "claim_count": 1
     },
     "tyrosine": {
       "display_name": "Tyrosine",
@@ -4266,7 +4662,8 @@
         "alzheimers",
         "congestive_heart_failure",
         "alcoholism",
-        "cancer"
+        "cancer",
+        "korsakoff"
       ],
       "claim_count": 10
     },
@@ -4462,7 +4859,9 @@
         "anemia",
         "eczema",
         "alopecia",
-        "edema"
+        "edema",
+        "coenzyme-a",
+        "acetylcholine"
       ],
       "claim_count": 8
     },
@@ -9882,6 +10281,71 @@
         "hair regrowth",
         "colloidal tin",
         "baldness"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000288",
+      "subject": "korsakoff",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "basics",
+      "question": "What is Korsakoff's syndrome?",
+      "answer_short": "Wallach's \"false Alzheimer's\": recent-memory loss driven by a vitamin B1 (thiamine) deficiency — often from alcoholism plus sugar — and reversible with high-dose thiamine.",
+      "answer": "Korsakoff's syndrome is a form of recent-memory loss that Wallach calls a \"false Alzheimer's disease\": the person can still perform detailed tasks they learned before the illness began, but can no longer record or store new memories or learn even the simplest new task. A telltale feature is confabulation — inventing imaginary experiences to fill in for memories that can't be recalled. Wallach traces it to a single vitamin B1 (thiamine) deficiency, usually caused by chronic alcoholism combined with a diet heavy in sugar and simple carbohydrates; it can also follow a blow to the head. Because it is a thiamine deficiency and not true Alzheimer's, he considers it reversible — patients are routinely misdiagnosed with Alzheimer's yet can be cured within a week once given megadoses of thiamine. His treatment centers on high-dose vitamin B1 (100 mg three times a day) along with lecithin, strict avoidance of alcohol and sugar, chromium and vanadium, betaine HCl and pancreatic enzymes, and other memory-supporting agents. When alcohol has actually damaged the brain tissue, the alcoholic form is called Wernicke-Korsakoff syndrome and is harder to treat.",
+      "verbatim": "KORSAKOFF’S SYNDROME (recent memory loss, false Alzheimer’s\nDisease) is characterized by an inability to record and store new memory.\nThe patient can perform detailed tasks learned before onset but cannot learn\nthe simplest of new tasks.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "dementia",
+        "memory-loss",
+        "brain-health",
+        "alcoholism",
+        "thiamine",
+        "alzheimers",
+        "neurological"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000289",
+      "subject": "protein",
+      "also_about": [
+        "nitrogen"
+      ],
+      "facet": "sources",
+      "question": "What is the best quality protein?",
+      "answer_short": "Whole egg is the highest-quality protein Wallach lists — a chemical score of 100 and 94% utilization; animal proteins outrank plant proteins, and mixing plant sources fills in the missing amino acids.",
+      "answer": "Wallach ranks protein quality with two measures — a 'chemical score' (how well a food's amino-acid pattern matches the body's needs) and '% utilization' (how much of it the body actually uses). Whole egg is the gold standard, scoring 100 with 94% utilization, the highest of any source he lists. Animal proteins sit at the top: human milk 100/87 and cow's milk 95/82. Plant proteins score lower — cotton seed 81/59, soy bean 74/65, rice 67/59, peanut 65/47, millet 63/44, wheat 53/48, sesame 50/54, and corn (maize) 49/52 — because each is short on or missing certain amino acids. Mixing plant sources (beans with rice, wheat with legumes) or combining vegetable with animal protein raises the usable value and makes up for the missing amino acids. Quality matters because protein repairs and builds tissue, forms enzymes, hormones, and antibodies, and holds blood fluid and acid-base balance in check; a shortfall of complete protein leads to poor growth, weakened immunity, edema, and Kwashiorkor.",
+      "verbatim": "The availability and usability of N from various foods are\nquite different and must be considered when choosing N sources.\nNitrogen/Protein Utilization Values of Common Foods\nNitrogen Source (Protein) Chemical Score % Utilization\nWhole egg 100 94\nHuman milk 100 87\nCow’s milk 95 82\nSoy bean 74 65\nSesame 50 54\nPeanut 65 47\nCotton seed 81 59",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "protein",
+        "nutrition",
+        "diet",
+        "amino-acids",
+        "muscle-building",
+        "vegetarian-diet"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000290",
+      "subject": "testosterone",
+      "also_about": [
+        "boron"
+      ],
+      "facet": "mechanism",
+      "question": "How can I raise my testosterone naturally?",
+      "answer_short": "Wallach's main lever for testosterone is the mineral boron — he says the body needs it to keep testosterone (and estrogen) at normal levels, and that supplementing boron doubles testosterone.",
+      "answer": "Dr. Wallach ties testosterone directly to the trace mineral boron. He says the body requires boron to maintain normal blood levels of both estrogen and testosterone, and that boron supplementation actually doubles testosterone levels. He describes the effect as fast and measurable: within 8 days, supplementing boron cut urinary mineral losses (40% less calcium, 33% less magnesium, and less phosphorus) and doubled a key estrogen (estradiol) to the levels seen in women on estrogen-replacement therapy — with testosterone likewise doubling. So in Wallach's framework, low testosterone is in part a boron-deficiency problem, and boron is a direct nutritional lever to raise it.",
+      "verbatim": "Boron is required for the maintenance of bone density and normal blood\nlevels of estrogen and testosterone. Within eight days of supplementing\nboron, women lost 40 percent less calcium, 33 percent less magnesium, and\nless phosphorus through their urine. Women receiving boron\nsupplementation had blood levels of estradiol 17B doubled to “levels found\nin women on estrogen replacement therapy.” Levels of testosterone also\ndouble with Boron supplementation.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "mens-health",
+        "testosterone",
+        "hormones",
+        "libido"
       ]
     },
     {
@@ -17864,6 +18328,188 @@
       ]
     },
     {
+      "id": "WAL-CLM-EPIGEN-000444",
+      "subject": "citrulline",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "mechanism",
+      "question": "How is citrulline related to arginine?",
+      "answer_short": "Citrulline is the precursor the body converts into arginine, using the enzymes argininosuccinate synthetase (ASS) and argininosuccinate lyase (ASL).",
+      "answer": "Citrulline is the raw material the body uses to make the amino acid arginine. Wallach's Epigenetics explains that arginine is synthesized from citrulline through two cytosolic enzymes — argininosuccinate synthetase (ASS) and argininosuccinate lyase (ASL). The book notes this conversion is energy-expensive, because producing each molecule of argininosuccinate along the way requires spending ATP (adenosine triphosphate, the cell's energy currency); one reason it gives for supplementing arginine directly is that doing so leaves more ATP available to fuel other cell functions. In short, citrulline sits one step upstream of arginine in the body's biochemistry.",
+      "verbatim": "Arginine (Arg) was first isolated in 1886 from a lupin seedling by the Swiss\nchemist Ernst Schultze and is synthesized from citrulline by the sequential\nemployment of the cytosolic enzymes argininosuccinate synthetase (ASS) and\n\nargininosuccinate lyase (ASL).",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "amino-acids",
+        "arginine-metabolism"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000445",
+      "subject": "nitric-oxide",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "physiology",
+      "question": "What does nitric oxide do, and how does the body make it?",
+      "answer_short": "Nitric oxide (NO) is made from the amino acid arginine; producing it lowers blood pressure and increases blood flow through obstructed blood vessels.",
+      "answer": "Nitric oxide (NO) is a compound the body produces from the amino acid arginine. According to Wallach's Epigenetics, oral arginine supplementation is required for nitric oxide synthesis, and it lowers blood pressure and increases blood flow through obstructed (narrowed or blocked) blood vessels. The same passage also credits oral arginine with reducing healing time after trauma — and being particularly useful for bone trauma — alongside supporting cell division, wound healing, and immune function. In Wallach's framing, nitric oxide is the molecule behind arginine's circulation benefits: easier blood flow and lower blood pressure.",
+      "verbatim": "The oral supplementation of\narginine is required for the synthesis of nitric oxide (NO), the reduction of healing\ntime following trauma, and is particularly useful for bone trauma; it reduces\nblood pressure and increases blood flow through obstructed blood vessels.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "circulation",
+        "blood-pressure",
+        "amino-acids",
+        "nitric-oxide"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000446",
+      "subject": "serotonin",
+      "also_about": [
+        "tryptophan"
+      ],
+      "facet": "basics",
+      "question": "What is serotonin?",
+      "answer_short": "A neurotransmitter the body makes from the amino acid tryptophan (via the enzyme tryptophan hydroxylase); it can then be converted onward into melatonin.",
+      "answer": "Serotonin is a neurotransmitter — a chemical that carries signals in the nervous system. The body builds it from the essential amino acid tryptophan using the enzyme tryptophan hydroxylase, which is why tryptophan is called serotonin's biochemical precursor. Serotonin can then be converted a step further into the neurohormone melatonin. In the same discussion Wallach notes that conditions cutting tryptophan absorption — fructose malabsorption, lactose intolerance, and gluten intolerance — lower blood tryptophan and are tied to clinical depression, and that a tryptophan metabolite (5-HTP) rapidly crosses into the brain where it is converted to serotonin (also called 5-hydroxytryptamine, or 5-HT).",
+      "verbatim": "Tryptophan is employed as a building block of protein\nbiosynthesis and is a biochemical precursor of serotonin (a neurotransmitter),\nsynthesized via tryptophan hydroxylase. Serotonin can be converted to melatonin\n(a neurohormone)",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "neurotransmitter",
+        "brain-chemistry",
+        "mood",
+        "depression",
+        "tryptophan-metabolism"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000447",
+      "subject": "melatonin",
+      "also_about": [
+        "tryptophan"
+      ],
+      "facet": "basics",
+      "question": "What is melatonin?",
+      "answer_short": "A neurohormone the body makes from serotonin, which in turn comes from the amino acid tryptophan (tryptophan to serotonin to melatonin).",
+      "answer": "Melatonin is a neurohormone — a hormone that acts on the nervous system. Wallach describes the body producing it from serotonin, which is itself built from the essential amino acid tryptophan, so the pathway runs tryptophan to serotonin to melatonin. The book covers melatonin only briefly, within its discussion of tryptophan — an amino acid it notes is sold as a sleep aid — rather than as a standalone topic.",
+      "verbatim": "Tryptophan is employed as a building block of protein\nbiosynthesis and is a biochemical precursor of serotonin (a neurotransmitter),\nsynthesized via tryptophan hydroxylase. Serotonin can be converted to melatonin\n(a neurohormone)",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "neurohormone",
+        "sleep",
+        "tryptophan-metabolism",
+        "brain-chemistry"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000448",
+      "subject": "coenzyme-a",
+      "also_about": [
+        "vitamin-b5"
+      ],
+      "facet": "mechanism",
+      "question": "What is coenzyme A and what does it do?",
+      "answer_short": "Coenzyme A is the active form of vitamin B5 (pantothenic acid) — it activates and transfers acyl groups, the reactions that release energy from carbohydrates, build and break down fatty acids, and make sterols, steroid hormones, and acetylcholine.",
+      "answer": "Coenzyme A is the active molecule that vitamin B5 (pantothenic acid) becomes part of. It works in acyl-group activation and transfer reactions — the chemistry that hands molecular fragments from one step to the next — and these reactions are essential for releasing energy from carbohydrates, for gluconeogenesis (making new glucose), for both building up and breaking down fatty acids, and for synthesizing important compounds including sterols, steroid hormones, porphyrins, and the neurotransmitter acetylcholine.",
+      "verbatim": "that serves in acyl-group activation and transfer reactions. These reactions are\nessential for the release of energy from carbohydrates; in gluconeogenesis; in\nthe synthesis and degradation of fatty acids; in the synthesis of such essential\ncompounds as sterols and steroid hormones, porphyrins, and acetylcholine; and\nin acylation reactions.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "metabolism",
+        "energy-metabolism",
+        "b-vitamins",
+        "fatty-acid-synthesis"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000449",
+      "subject": "acetylcholine",
+      "also_about": [
+        "choline",
+        "vitamin-b5"
+      ],
+      "facet": "basics",
+      "question": "What is acetylcholine?",
+      "answer_short": "Acetylcholine is one of the body's most common neurotransmitters — the chemical nerve cells use to signal each other; the body builds it in the nervous system with choline as a structural component.",
+      "answer": "Acetylcholine is one of the body's most common neurotransmitters — a chemical messenger that carries a signal across the gap between nerve cells. It works by binding to receptors on the receiving cell and altering that membrane's permeability to specific ions, which either fires the cell (depolarizing it) or quiets it (hyperpolarizing it). The body assembles acetylcholine in the central nervous system, drawing on choline as a structural component, and its production also relies on the acyl-transfer reactions run by coenzyme A, the active form of vitamin B5.",
+      "verbatim": "in the central\nnervous system, choline functions as a structural component of sphingomyelin\nand the neurotransmitter acetylcholine.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "neurotransmitters",
+        "nervous-system",
+        "brain-health",
+        "choline"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000450",
+      "subject": "gamma-linolenic-acid",
+      "also_about": [
+        "omega-6"
+      ],
+      "facet": "basics",
+      "question": "Is gamma-linolenic acid (GLA) an essential fatty acid?",
+      "answer_short": "An omega-6 fatty acid Wallach lists as \"conditionally essential\" — not strictly essential like linoleic and alpha-linolenic acid, but needed from the diet under certain conditions.",
+      "answer": "Gamma-linolenic acid (GLA) is an omega-6 fatty acid that Wallach places in the \"conditionally essential\" group of fats — fatty acids the body can normally make on its own but that must come from the diet under certain conditions. This sets it apart from the two fatty acids he calls strictly essential (alpha-linolenic acid, an omega-3, and linoleic acid, an omega-6). Alongside GLA, the conditionally essential group includes arachidonic acid (an omega-6) and docosahexaenoic acid or DHA (an omega-3).",
+      "verbatim": "Some fatty acids are classified as “conditionally essential.” This group includes:\narachidonic acid (an omega-6 fatty acid), docosahexaenoic acid (an omega-3 fatty\nacid) and gamma-linolenic acid (an omega-6 fatty acid).",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "fatty-acids",
+        "omega-6",
+        "essential-fatty-acids",
+        "conditionally-essential-fats"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000451",
+      "subject": "docosahexaenoic-acid",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "mechanism",
+      "question": "What is DHA and how is low DHA linked to depression?",
+      "answer_short": "An omega-3 fatty acid; Wallach says low blood DHA signals low brain 5-HIAA (a serotonin breakdown marker), which is directly tied to higher rates of depression and suicide.",
+      "answer": "DHA (docosahexaenoic acid) is an omega-3 fatty acid. Wallach explains that DHA together with EPA (eicosapentaenoic acid) is required for the enzyme pathways the body uses to process long-chain polyunsaturated fats. He ties DHA directly to mental health: a low level of DHA in the blood is a marker for low brain levels of 5-HIAA (a serotonin breakdown product), and low brain 5-HIAA is directly associated with higher rates of depression and suicide. Elsewhere he places DHA in the \"conditionally essential\" group of fats and lists DHA and EPA among the nutrients that support memory and cognition.",
+      "verbatim": "Omega-3 fatty acids, docosahexaenoic acid (DHA) and eicosapentaenoic acid\n(EPA) are essential for enzymatic pathways required to metabolize long-chain\npolyunsaturated fatty acids (PUFA). Low plasma concentrations of DHA is a\nmarker for low cerebral spinal fluid levels of 5-hydroxyindoleacetic acid (S-HIAA).\nLow brain concentrations of 5-HIAA is directly associated with increased rates of\n\ndepression and suicide.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "fatty-acids",
+        "omega-3",
+        "essential-fatty-acids",
+        "conditionally-essential-fats",
+        "depression",
+        "brain-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000452",
+      "subject": "arsenic-trioxide",
+      "also_about": [
+        "arsenic"
+      ],
+      "facet": "uses",
+      "question": "Can arsenic be used to treat cancer?",
+      "answer_short": "Once a notorious poison, arsenic trioxide became an FDA-approved cancer drug in 2000; low doses put acute promyelocytic leukemia (APL) patients into lasting remission.",
+      "answer": "Arsenic trioxide — the arsenic compound that 18th-century physician Thomas Fowler turned into a medicine — has been used medicinally for roughly 500 years, most often against cancer. In 2000 the U.S. Food and Drug Administration approved it to treat acute promyelocytic leukemia (APL), an often-fatal cancer of the blood and bone marrow. A 1998 New England Journal of Medicine report from Memorial Sloan-Kettering researchers found that low doses of arsenic trioxide destroyed the cancerous cells in 12 seriously ill APL patients and brought them into remission; Chinese researchers had reported the same result in 1997 (journal Blood), and their survivors were still leukemia-free ten years later. Arsenic is also used, as \"Fowler's solution,\" to treat psoriasis.",
+      "verbatim": "The doctors were the first in Western medicine to show that low\ndoses of arsenic trioxide are effective in destroying such cancerous cells.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "cancer",
+        "leukemia",
+        "cancer-treatment",
+        "arsenic-medicine"
+      ]
+    },
+    {
       "id": "WAL-CLM-HELLS-000001",
       "subject": "beef",
       "also_about": [
@@ -19302,6 +19948,26 @@
         "humic shale",
         "plant-derived minerals",
         "essential elements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000073",
+      "subject": "ornithine",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "mechanism",
+      "question": "Does ornithine boost human growth hormone (HGH)?",
+      "answer_short": "Yes — Wallach says the amino acids L-arginine and ornithine can make the pituitary gland release HGH when supplemented in significant doses.",
+      "answer": "Ornithine is an amino acid that, taken together with L-arginine in significant doses, can cause the pituitary gland to release human growth hormone (HGH). Wallach raises this in a discussion of age-related HGH decline: he cites the New England Journal of Medicine that HGH can reverse symptoms of human biological aging — restoring muscle mass, thickening skin and reducing wrinkles, restoring lost hair and hair color, and increasing energy, sex drive, memory, immune function, and wound-healing capacity. In that light, supplementing ornithine (with arginine) is presented as a way to stimulate the body's own growth-hormone output.",
+      "verbatim": "The amino acids L-arginine and ornithine can cause HGH to be \nreleased from the pituitary gland if supplemented in significant doses.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "amino-acids",
+        "growth-hormone",
+        "hgh",
+        "anti-aging"
       ]
     },
     {
@@ -27938,6 +28604,75 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000463",
+      "subject": "nitrates",
+      "also_about": [
+        "nitrogen",
+        "iodine"
+      ],
+      "facet": "warning",
+      "question": "Are nitrates in processed meat bad for you?",
+      "answer_short": "Salt compounds added to cured meats and canned food to block bacteria and keep meat red; Wallach warns the stomach converts them into cancer-causing nitrosamines and they suppress the thyroid, making them a goitrogen.",
+      "answer": "Nitrates are salt compounds formed when nitric acid is neutralized by bases such as sodium or potassium hydroxide. Wallach explains they are added to canned foods and cured, preserved meats to prevent bacteria from growing and to keep the meat colored red. His health concern is what happens after you eat them: in the acid environment of the stomach, nitrates (and the related nitrites) are converted into nitrosamines, compounds that can become cancer-causing chemicals (carcinogens) and can suppress thyroid function. For that reason he classes both dietary nitrates (deli slices, sandwich meats) and water-borne nitrates among the \"goitrogens\" — substances that interfere with normal thyroid metabolism and can produce thyroid disease.",
+      "verbatim": "When nitric acid is neutralized with bases including\nsodium and potassium hydroxide, it forms compounds called\nnitrates. Nitrates and nitrites are added to canned foods and\npreserved meats to help prevent the growth of bacteria and to\ncolor meat red.\n\nNitrates and nitrites are converted to nitrosamines in\nthe acid environment of the stomach; these compounds can\nbe converted to cancer causing chemicals (carcinogens) and\ncan suppress thyroid function.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "processed-meat",
+        "food-additives",
+        "preservatives",
+        "cured-meat",
+        "thyroid",
+        "cancer",
+        "goitrogens"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000464",
+      "subject": "nitrites",
+      "also_about": [
+        "nitrogen",
+        "iodine"
+      ],
+      "facet": "warning",
+      "question": "Are nitrites in bacon and cured meat bad for you?",
+      "answer_short": "Preservatives added with nitrates to cured meats to block bacteria and redden meat; Wallach warns the stomach converts them into cancer-causing nitrosamines, they suppress the thyroid, and he counts them as a dietary free radical to avoid.",
+      "answer": "Nitrites are preservative compounds added, alongside nitrates, to canned foods and cured or preserved meats — bacon, ham, sausage, bologna, salami, pepperoni, jerky and deli meats — to stop bacteria from growing and to keep the meat looking red. Wallach's warning is about what happens once they are eaten: in the acid environment of the stomach, nitrites (and nitrates) are converted into nitrosamines, compounds that can turn into cancer-causing chemicals (carcinogens) and can suppress thyroid function. He therefore counts nitrites among the \"goitrogens\" that interfere with normal thyroid metabolism, and lists them among the dietary free radicals a person should cut down on to slow aging.",
+      "verbatim": "Nitrates and nitrites are added to canned foods and\npreserved meats to help prevent the growth of bacteria and to\ncolor meat red.\n\nNitrates and nitrites are converted to nitrosamines in\nthe acid environment of the stomach; these compounds can\nbe converted to cancer causing chemicals (carcinogens) and\ncan suppress thyroid function.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "processed-meat",
+        "food-additives",
+        "preservatives",
+        "cured-meat",
+        "thyroid",
+        "cancer",
+        "goitrogens",
+        "free-radicals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000465",
+      "subject": "berylliosis",
+      "also_about": [
+        "beryllium"
+      ],
+      "facet": "basics",
+      "question": "What is berylliosis?",
+      "answer_short": "A painful, sometimes fatal lung disease caused by inhaling beryllium oxide dust from mining and industry; its chronic form resembles pulmonary sarcoidosis.",
+      "answer": "Berylliosis is a painful and sometimes fatal lung disease caused by inhaling beryllium oxide dust, which is released as a contaminant during the mining and industrial handling of the metal. Beryllium itself is a mineral — the scientific name of the gemstone beryl is beryllium aluminum silicate — so the hazard comes not from the element in food but from breathing its powdered oxide. Wallach describes two forms: an acute form (acute beryllium disease, or chemical pneumonitis) first reported in Europe in 1933 and in the United States in 1943, and a chronic form — chronic berylliosis — that resembles pulmonary sarcoidosis, another chronic lung disease.",
+      "verbatim": "Inhalation of beryllium oxide dust (mining and\nindustrial contaminants) can lead to “berylliosis,” a painful\nand sometimes fatal lung disease.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "lung-disease",
+        "beryllium-toxicity",
+        "occupational-disease",
+        "mineral-safety"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000004",
       "subject": "calcium",
       "also_about": [
@@ -35755,6 +36490,47 @@
         "worms",
         "folk medicine",
         "alchemy"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000398",
+      "subject": "tuna",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Does canned tuna contain lead, and is it safe to eat?",
+      "answer_short": "Wallach cites a study finding canned tuna carries nearly double the lead of fresh tuna — the lead leaches in from the sealant used to close the seams of steel and tin cans.",
+      "answer": "In his chapter on toxic metals, Wallach lists canned foods as a hidden dietary source of lead: the sealant used to close the seams of steel and tin cans leaches lead into the food sitting inside. He points to tuna as the clearest example, citing a study in which canned tuna carried nearly double the level of lead found in the same fish sold fresh. He frames this as just one of several everyday routes — alongside leaded-gasoline residue settled on crops, chipping old lead paint, and lead-glazed imported pottery mistakenly used for food — by which lead, which he calls one of the most universally dangerous toxic metals, quietly enters the body.",
+      "verbatim": "Another source of lead in our food chain\nis the sealant materials used to close the\nseams in steel or tin canned foods. One\nstudy showed that canned tuna has nearly\ndouble the level of lead as fresh tuna.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "heavy-metals",
+        "food-safety",
+        "lead-contamination",
+        "canned-food",
+        "toxic-metals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000399",
+      "subject": "silver-nitrate",
+      "also_about": [
+        "silver"
+      ],
+      "facet": "history",
+      "question": "What is silver nitrate (lunar caustic) and what has it been used for?",
+      "answer_short": "Silver nitrate, historically called 'lunar caustic,' has centuries of medicinal use — as a purgative, a cautery for wounds and tumors, and famously a 2% drop placed in newborns' eyes from 1884 to prevent gonorrheal blindness.",
+      "answer": "Silver nitrate — historically called 'lunar caustic,' a name rooted in silver's ancient association with the moon (the same link behind words like 'moonstruck' and 'lunacy') — has a long medicinal history. In 1637 Angelus Sala used it as a purgative and for brain and uterine illness, and Robert Boyle rolled silver nitrate and nitre into bread-crust pills the size of small peas as a laxative. Beginning in 1826, John Higginbottom of Nottingham, England used lunar caustic to treat wounds and ulcers (from needles, hooks, bayonets, saws, leech and rabid-animal bites, and insect stings), to remove tumors, and to cauterize surgical wounds, and later described its use against erysipelas, varicose ulcers, diabetic (senile) gangrene, and burns. Its most enduring application came in 1884, when the German obstetrician Carl Sigmund Crede began placing a single drop of 2% silver nitrate in each newborn's eyes at birth to prevent gonorrheal conjunctivitis (ophthalmia neonatorum); a diluted 1/2% solution became a standard burn treatment only after Carl A. Moyer's work in 1965.",
+      "verbatim": "Angelus Sala (1637) em-\nployed silver nitrate (lunar caustic) as a\npurgative and in brain and uterine illnesses.\nRobert Boyle concocted pilulae lunara by\ncreating a mixture of silver nitrate and nitre,\ndried and formed with bread crusts into pills\nthe size of small peas as a laxative.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "silver",
+        "wound-care",
+        "antiseptic",
+        "cautery",
+        "history-of-medicine",
+        "eye-health"
       ]
     }
   ]

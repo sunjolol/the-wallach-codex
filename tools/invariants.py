@@ -3508,6 +3508,12 @@ def check_search_index_wellformed():
             py_facets = set(search_index_derive.SEARCH_FACETS)
             if ts_facets != py_facets:
                 errs.append(f"facet taxonomy DRIFT TS vs Python: {sorted(ts_facets ^ py_facets)}")
+        mt = re.search(r"type:\s*z\.enum\(\[(.*?)\]\)", ts_p.read_text(encoding="utf-8"), re.S)
+        if mt:
+            ts_types = set(re.findall(r"'([a-z_]+)'", mt.group(1)))
+            py_types = set(search_index_derive.ENTITY_TYPES)
+            if ts_types != py_types:
+                errs.append(f"entity type enum DRIFT TS vs Python: {sorted(ts_types ^ py_types)}")
     if errs:
         return False, ("search index NOT well-formed (" + str(len(errs)) + "): "
                        + "; ".join(errs[:6]) + (" ..." if len(errs) > 6 else ""))

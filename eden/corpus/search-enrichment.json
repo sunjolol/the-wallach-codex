@@ -21012,6 +21012,293 @@
         "linolenic-acid",
         "omega-6"
       ]
+    },
+    "WAL-CLM-HELLS-000073": {
+      "subject": "ornithine",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "mechanism",
+      "question": "Does ornithine boost human growth hormone (HGH)?",
+      "answer_short": "Yes — Wallach says the amino acids L-arginine and ornithine can make the pituitary gland release HGH when supplemented in significant doses.",
+      "topics": [
+        "amino-acids",
+        "growth-hormone",
+        "hgh",
+        "anti-aging"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000444": {
+      "subject": "citrulline",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "mechanism",
+      "question": "How is citrulline related to arginine?",
+      "answer_short": "Citrulline is the precursor the body converts into arginine, using the enzymes argininosuccinate synthetase (ASS) and argininosuccinate lyase (ASL).",
+      "topics": [
+        "amino-acids",
+        "arginine-metabolism"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000445": {
+      "subject": "nitric-oxide",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "physiology",
+      "question": "What does nitric oxide do, and how does the body make it?",
+      "answer_short": "Nitric oxide (NO) is made from the amino acid arginine; producing it lowers blood pressure and increases blood flow through obstructed blood vessels.",
+      "topics": [
+        "circulation",
+        "blood-pressure",
+        "amino-acids",
+        "nitric-oxide"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000446": {
+      "subject": "serotonin",
+      "also_about": [
+        "tryptophan"
+      ],
+      "facet": "basics",
+      "question": "What is serotonin?",
+      "answer_short": "A neurotransmitter the body makes from the amino acid tryptophan (via the enzyme tryptophan hydroxylase); it can then be converted onward into melatonin.",
+      "topics": [
+        "neurotransmitter",
+        "brain-chemistry",
+        "mood",
+        "depression",
+        "tryptophan-metabolism"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000447": {
+      "subject": "melatonin",
+      "also_about": [
+        "tryptophan"
+      ],
+      "facet": "basics",
+      "question": "What is melatonin?",
+      "answer_short": "A neurohormone the body makes from serotonin, which in turn comes from the amino acid tryptophan (tryptophan to serotonin to melatonin).",
+      "topics": [
+        "neurohormone",
+        "sleep",
+        "tryptophan-metabolism",
+        "brain-chemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000448": {
+      "subject": "coenzyme-a",
+      "also_about": [
+        "vitamin-b5"
+      ],
+      "facet": "mechanism",
+      "question": "What is coenzyme A and what does it do?",
+      "answer_short": "Coenzyme A is the active form of vitamin B5 (pantothenic acid) — it activates and transfers acyl groups, the reactions that release energy from carbohydrates, build and break down fatty acids, and make sterols, steroid hormones, and acetylcholine.",
+      "topics": [
+        "metabolism",
+        "energy-metabolism",
+        "b-vitamins",
+        "fatty-acid-synthesis"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000449": {
+      "subject": "acetylcholine",
+      "also_about": [
+        "choline",
+        "vitamin-b5"
+      ],
+      "facet": "basics",
+      "question": "What is acetylcholine?",
+      "answer_short": "Acetylcholine is one of the body's most common neurotransmitters — the chemical nerve cells use to signal each other; the body builds it in the nervous system with choline as a structural component.",
+      "topics": [
+        "neurotransmitters",
+        "nervous-system",
+        "brain-health",
+        "choline"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000450": {
+      "subject": "gamma-linolenic-acid",
+      "also_about": [
+        "omega-6"
+      ],
+      "facet": "basics",
+      "question": "Is gamma-linolenic acid (GLA) an essential fatty acid?",
+      "answer_short": "An omega-6 fatty acid Wallach lists as \"conditionally essential\" — not strictly essential like linoleic and alpha-linolenic acid, but needed from the diet under certain conditions.",
+      "topics": [
+        "fatty-acids",
+        "omega-6",
+        "essential-fatty-acids",
+        "conditionally-essential-fats"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000451": {
+      "subject": "docosahexaenoic-acid",
+      "also_about": [
+        "omega-3"
+      ],
+      "facet": "mechanism",
+      "question": "What is DHA and how is low DHA linked to depression?",
+      "answer_short": "An omega-3 fatty acid; Wallach says low blood DHA signals low brain 5-HIAA (a serotonin breakdown marker), which is directly tied to higher rates of depression and suicide.",
+      "topics": [
+        "fatty-acids",
+        "omega-3",
+        "essential-fatty-acids",
+        "conditionally-essential-fats",
+        "depression",
+        "brain-health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000463": {
+      "subject": "nitrates",
+      "also_about": [
+        "nitrogen",
+        "iodine"
+      ],
+      "facet": "warning",
+      "question": "Are nitrates in processed meat bad for you?",
+      "answer_short": "Salt compounds added to cured meats and canned food to block bacteria and keep meat red; Wallach warns the stomach converts them into cancer-causing nitrosamines and they suppress the thyroid, making them a goitrogen.",
+      "topics": [
+        "processed-meat",
+        "food-additives",
+        "preservatives",
+        "cured-meat",
+        "thyroid",
+        "cancer",
+        "goitrogens"
+      ]
+    },
+    "WAL-CLM-IMMORT-000464": {
+      "subject": "nitrites",
+      "also_about": [
+        "nitrogen",
+        "iodine"
+      ],
+      "facet": "warning",
+      "question": "Are nitrites in bacon and cured meat bad for you?",
+      "answer_short": "Preservatives added with nitrates to cured meats to block bacteria and redden meat; Wallach warns the stomach converts them into cancer-causing nitrosamines, they suppress the thyroid, and he counts them as a dietary free radical to avoid.",
+      "topics": [
+        "processed-meat",
+        "food-additives",
+        "preservatives",
+        "cured-meat",
+        "thyroid",
+        "cancer",
+        "goitrogens",
+        "free-radicals"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000452": {
+      "subject": "arsenic-trioxide",
+      "also_about": [
+        "arsenic"
+      ],
+      "facet": "uses",
+      "question": "Can arsenic be used to treat cancer?",
+      "answer_short": "Once a notorious poison, arsenic trioxide became an FDA-approved cancer drug in 2000; low doses put acute promyelocytic leukemia (APL) patients into lasting remission.",
+      "topics": [
+        "cancer",
+        "leukemia",
+        "cancer-treatment",
+        "arsenic-medicine"
+      ]
+    },
+    "WAL-CLM-RARE-000398": {
+      "subject": "tuna",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Does canned tuna contain lead, and is it safe to eat?",
+      "answer_short": "Wallach cites a study finding canned tuna carries nearly double the lead of fresh tuna — the lead leaches in from the sealant used to close the seams of steel and tin cans.",
+      "topics": [
+        "heavy-metals",
+        "food-safety",
+        "lead-contamination",
+        "canned-food",
+        "toxic-metals"
+      ]
+    },
+    "WAL-CLM-DDDL-000288": {
+      "subject": "korsakoff",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "basics",
+      "question": "What is Korsakoff's syndrome?",
+      "answer_short": "Wallach's \"false Alzheimer's\": recent-memory loss driven by a vitamin B1 (thiamine) deficiency — often from alcoholism plus sugar — and reversible with high-dose thiamine.",
+      "topics": [
+        "dementia",
+        "memory-loss",
+        "brain-health",
+        "alcoholism",
+        "thiamine",
+        "alzheimers",
+        "neurological"
+      ]
+    },
+    "WAL-CLM-IMMORT-000465": {
+      "subject": "berylliosis",
+      "also_about": [
+        "beryllium"
+      ],
+      "facet": "basics",
+      "question": "What is berylliosis?",
+      "answer_short": "A painful, sometimes fatal lung disease caused by inhaling beryllium oxide dust from mining and industry; its chronic form resembles pulmonary sarcoidosis.",
+      "topics": [
+        "lung-disease",
+        "beryllium-toxicity",
+        "occupational-disease",
+        "mineral-safety"
+      ]
+    },
+    "WAL-CLM-RARE-000399": {
+      "subject": "silver-nitrate",
+      "also_about": [
+        "silver"
+      ],
+      "facet": "history",
+      "question": "What is silver nitrate (lunar caustic) and what has it been used for?",
+      "answer_short": "Silver nitrate, historically called 'lunar caustic,' has centuries of medicinal use — as a purgative, a cautery for wounds and tumors, and famously a 2% drop placed in newborns' eyes from 1884 to prevent gonorrheal blindness.",
+      "topics": [
+        "silver",
+        "wound-care",
+        "antiseptic",
+        "cautery",
+        "history-of-medicine",
+        "eye-health"
+      ]
+    },
+    "WAL-CLM-DDDL-000289": {
+      "subject": "protein",
+      "also_about": [
+        "nitrogen"
+      ],
+      "facet": "sources",
+      "question": "What is the best quality protein?",
+      "answer_short": "Whole egg is the highest-quality protein Wallach lists — a chemical score of 100 and 94% utilization; animal proteins outrank plant proteins, and mixing plant sources fills in the missing amino acids.",
+      "topics": [
+        "protein",
+        "nutrition",
+        "diet",
+        "amino-acids",
+        "muscle-building",
+        "vegetarian-diet"
+      ]
+    },
+    "WAL-CLM-DDDL-000290": {
+      "subject": "testosterone",
+      "also_about": [
+        "boron"
+      ],
+      "facet": "mechanism",
+      "question": "How can I raise my testosterone naturally?",
+      "answer_short": "Wallach's main lever for testosterone is the mineral boron — he says the body needs it to keep testosterone (and estrogen) at normal levels, and that supplementing boron doubles testosterone.",
+      "topics": [
+        "mens-health",
+        "testosterone",
+        "hormones",
+        "libido"
+      ]
     }
   }
 }
