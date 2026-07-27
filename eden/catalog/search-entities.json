@@ -260,7 +260,7 @@
         "osteoporosis",
         "arthritis",
         "hypertension",
-        "kidney-stones",
+        "kidney_stones",
         "essential_nutrients",
         "colloidal_minerals"
       ]
@@ -2343,7 +2343,7 @@
         "dementia",
         "alzheimers",
         "korsakoff",
-        "congestive-heart-failure",
+        "congestive_heart_failure",
         "alcoholism",
         "cancer"
       ]
@@ -2530,7 +2530,7 @@
       "related": [
         "vitamin-b2",
         "vitamin-b12",
-        "folic-acid",
+        "vitamin-b9",
         "epilepsy",
         "depression",
         "anemia",
@@ -2578,10 +2578,10 @@
         "zinc",
         "iron",
         "anemia",
-        "spina-bifida",
+        "spina_bifida",
         "anencephaly",
-        "celiac-disease",
-        "pernicious-anemia"
+        "celiac_disease",
+        "pernicious_anemia"
       ]
     },
     "vitamin-b12": {
@@ -2625,7 +2625,7 @@
       ],
       "related": [
         "cobalt",
-        "folic-acid",
+        "vitamin-b9",
         "hypochlorhydria",
         "salt",
         "choline",
@@ -2669,7 +2669,7 @@
         "selenium",
         "alzheimers",
         "cancer",
-        "muscular-dystrophy",
+        "muscular_dystrophy",
         "infertility",
         "cardiomyopathy",
         "vitamin-c",
@@ -2800,7 +2800,7 @@
         "inositol",
         "methionine",
         "vitamin-b12",
-        "folic-acid",
+        "vitamin-b9",
         "biotin",
         "arsenic",
         "manganese",
@@ -3343,7 +3343,7 @@
         "ornithine",
         "citrulline",
         "nitric-oxide",
-        "erectile-dysfunction"
+        "erectile_dysfunction"
       ]
     },
     "taurine": {
@@ -3414,7 +3414,7 @@
         "amino acid tryptophan"
       ],
       "related": [
-        "niacin",
+        "vitamin-b3",
         "serotonin",
         "melatonin",
         "phenylalanine",
@@ -3726,7 +3726,7 @@
       ],
       "related": [
         "protein",
-        "amino-acids",
+        "amino_acids",
         "phosphorus",
         "iron",
         "sulfur",
@@ -3869,7 +3869,7 @@
       ],
       "related": [
         "cerium",
-        "rare-earths",
+        "rare_earth_elements",
         "chronic_fatigue",
         "candidiasis"
       ]
@@ -3895,7 +3895,7 @@
       ],
       "related": [
         "calcium",
-        "rare-earths"
+        "rare_earth_elements"
       ]
     },
     "beryllium": {
@@ -4024,7 +4024,7 @@
         "erbium symbol Er"
       ],
       "related": [
-        "rare-earths",
+        "rare_earth_elements",
         "vanadium",
         "terbium",
         "yttrium",
@@ -4294,7 +4294,7 @@
       "related": [
         "neodymium",
         "cerium",
-        "rare-earths"
+        "rare_earth_elements"
       ]
     },
     "titanium": {
@@ -4471,7 +4471,7 @@
         "rare earth minerals"
       ],
       "related": [
-        "rare-earths"
+        "rare_earth_elements"
       ]
     },
     "ytterbium": {
@@ -4610,7 +4610,7 @@
         "scandium",
         "thorium",
         "beryllium",
-        "rare-earths"
+        "rare_earth_elements"
       ]
     }
   }

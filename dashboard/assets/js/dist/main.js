@@ -75694,7 +75694,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "ornithine",
           "citrulline",
           "nitric-oxide",
-          "erectile-dysfunction"
+          "erectile_dysfunction"
         ],
         claim_count: 12
       },
@@ -76070,7 +76070,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "osteoporosis",
           "arthritis",
           "hypertension",
-          "kidney-stones",
+          "kidney_stones",
           "essential_nutrients",
           "colloidal_minerals"
         ],
@@ -76150,7 +76150,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         related: [
           "calcium",
-          "rare-earths"
+          "rare_earth_elements"
         ],
         claim_count: 5,
         symbol: "Ce"
@@ -76312,7 +76312,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "inositol",
           "methionine",
           "vitamin-b12",
-          "folic-acid",
+          "vitamin-b9",
           "biotin",
           "arsenic",
           "manganese",
@@ -76792,7 +76792,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "erbium symbol Er"
         ],
         related: [
-          "rare-earths",
+          "rare_earth_elements",
           "vanadium",
           "terbium",
           "yttrium",
@@ -77640,7 +77640,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         related: [
           "cerium",
-          "rare-earths",
+          "rare_earth_elements",
           "chronic_fatigue",
           "candidiasis"
         ],
@@ -78264,7 +78264,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         related: [
           "protein",
-          "amino-acids",
+          "amino_acids",
           "phosphorus",
           "iron",
           "sulfur",
@@ -78729,7 +78729,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "neodymium",
           "cerium",
-          "rare-earths"
+          "rare_earth_elements"
         ],
         claim_count: 5,
         symbol: "Pr"
@@ -78918,7 +78918,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rare earth minerals"
         ],
         related: [
-          "rare-earths"
+          "rare_earth_elements"
         ],
         claim_count: 5,
         symbol: "Sm"
@@ -79485,7 +79485,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "amino acid tryptophan"
         ],
         related: [
-          "niacin",
+          "vitamin-b3",
           "serotonin",
           "melatonin",
           "phenylalanine",
@@ -79740,7 +79740,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dementia",
           "alzheimers",
           "korsakoff",
-          "congestive-heart-failure",
+          "congestive_heart_failure",
           "alcoholism",
           "cancer"
         ],
@@ -79788,7 +79788,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         related: [
           "cobalt",
-          "folic-acid",
+          "vitamin-b9",
           "hypochlorhydria",
           "salt",
           "choline",
@@ -79987,7 +79987,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "vitamin-b2",
           "vitamin-b12",
-          "folic-acid",
+          "vitamin-b9",
           "epilepsy",
           "depression",
           "anemia",
@@ -80037,10 +80037,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "zinc",
           "iron",
           "anemia",
-          "spina-bifida",
+          "spina_bifida",
           "anencephaly",
-          "celiac-disease",
-          "pernicious-anemia"
+          "celiac_disease",
+          "pernicious_anemia"
         ],
         claim_count: 17
       },
@@ -80185,7 +80185,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "alzheimers",
           "cancer",
-          "muscular-dystrophy",
+          "muscular_dystrophy",
           "infertility",
           "cardiomyopathy",
           "vitamin-c",
@@ -80435,7 +80435,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "scandium",
           "thorium",
           "beryllium",
-          "rare-earths"
+          "rare_earth_elements"
         ],
         claim_count: 6,
         symbol: "Zr"
@@ -145857,7 +145857,7 @@ Verified: build_embeds \u2192 build.mjs \u2192 invariants 77/77 \u2192 render_pr
 
 Seal: corpus_seal (user-authorized "You can seal") kv409\u2192kv410, 1968\u21922017 claims, corpus_verify PASS, 15 goldens rewritten. 49 new search-only claims finalized (epig +36, dddl +9, immortality +2, rare +2) + 19 reuse claims enriched = 68 enrichment entries keyed to final claim ids (methionine 5, phe 13, lys 10, tyr 9, leu 9, val 7, his 6, ile 5, thr 4). 9 amino entities registered with lay synonyms + related cross-links. Source purification: 4 OCR typos fixed in epigenetics/rare-earths .txt (Erlenmeyer, photosystem II, Kendall, post-translational x2) then corpus_resnap (0 BROKEN, book hashes updated, drafts synced). Canker sealed-claim fix: LETS-000202 claim_text dropped "cold sores, fever blisters" (herpes terms the source explicitly differentiates canker from). Glossary: +352 explainers (490\u2192842) via gloss_add; 18 case-variant alias collisions de-duped to clear glossary_wellformed. Method: three fan-out workflows \u2014 (1) 8 per-amino authoring agents over curated byte-exact source bundles I extracted, (2) adversarial faithfulness/richness/gloss verifiers, (3) 9 exhaustive-glossing agents calibrated to Luneth's word-by-word density bar. I then byte-verified every verbatim against the books (0 of 49 failures), resolved 3 reuse collisions (Parkinsonism\u2192leucine, depression\u2192phenylalanine, precursor\u2192phenylalanine), stripped 1 injected clause (lysine antagonism), dropped 1 poor-fit table-row claim, merged valine etymology+discovery (60-char floor), extended histidine histamine verbatim (table normalization). Pre-seal RED gates all PASS. Verified: invariants 77/77; build OK; render_probe_search + render_probe_knowledge PASS (cancer 65 / mercury 18 / calcium 134 answers live). Deferrals: 137 unresolvable also_about cross-links dropped (future entity-registration pass); 3 scrambled OCR spans (histidine "His jidazole" opening, methionine SAM cycle, leucine India/sorghum tail) need page-image reconstruction, non-blocking (unquoted). Lesson re-affirmed by execution: EVERY claim ships a full answer, not just a short one \u2014 a mechanical guard now flags any claim whose full answer is missing or thinner than its quote.` }, { id: "lg_ms3k434q_rynbfu", ts: "2026-07-27T13:24:57.050996-05:00", surface: "corpus", kind: "round-close", summary: "Night-2: sealed Ask-Wallach enrichment for all 42 remaining unenriched essentials + Luneth's post-review fixes (single-source group claim, source-purification, sentence-case); kv412, 152 new + 98 reuse claims, 445 gloss terms", detail: `Overnight I gave every essential that still had no Ask-Wallach "Worth knowing" content its search answers \u2014 the core dietary minerals (oxygen, nitrogen, silica, hydrogen, carbon), both remaining fatty acids (omega-6, omega-9), the common-metal top-ups (silver, aluminum, gold, gallium), and all 31 rare-earths. Then Luneth reviewed in the morning and I applied his corrections before sealing.
 
-kv410->kv412 (2017->2169 claims). 152 new mine_new claims + 98 reuse across 6 books; 445 new glossary explainers (842->1288). SINGLE-SOURCE GROUP FIX (Luneth): removed 19 per-element rare-earth "do I need X?" stance duplicates, added ONE group claim (about:[colloidal-minerals], subject colloidal_minerals) that propagates to all 34 trace_pdm element pages via entity_page_derive group_record \u2014 every plant-derived page now shows 33 group claims from one source. Added a dedicated Strontium-90 lore claim (DDDL "does not occur in nature"). Stripped Wallach's REVERSED "avoid aluminum" advice from LETS-000130 (Alzheimer's) + LETS-000243 (dementia) claim_texts, protocols + food-allergy advice kept (safe stance already in IMMORT-000034). Two epigenetics source typos purified via safe_write + corpus_resnap (43 relocated, 0 broken): ytterbium bone 1.3->0.3 ppm (sandstone bleed-in), strontium-90 restored dropped "not". All 250 questions sentence-cased. Post-seal gate fixes: 2 enrichment facets prognosis->uses (gallium brain-cancer), 36 canon_ref entities stripped of display_name/symbol (pulled from canon), 3 Carya claims glossed "hickory", 8 glossary alias-collisions cleaned. Omega-9/silica/gold/beryllium unchanged (already faithful; my earlier "contradiction" flags were wrong). Method: deterministic dossier over 7 sealed books -> per-element authoring prompts -> 3 author/adversarial-verify Workflow waves (84 agents, 0 errors, ~11.2M tok) -> byte-verify every verbatim against the books (0/152 fail) -> 42-agent gloss Workflow -> stage -> finalize -> seal. Verified: corpus_verify PASS kv412; invariants 77/77; build OK; render_probe_search PASS; search index confirms silica/strontium-90/zirconium/oleic-acid searchable + group_record propagation (33 per trace_pdm page).` }];
+kv410->kv412 (2017->2169 claims). 152 new mine_new claims + 98 reuse across 6 books; 445 new glossary explainers (842->1288). SINGLE-SOURCE GROUP FIX (Luneth): removed 19 per-element rare-earth "do I need X?" stance duplicates, added ONE group claim (about:[colloidal-minerals], subject colloidal_minerals) that propagates to all 34 trace_pdm element pages via entity_page_derive group_record \u2014 every plant-derived page now shows 33 group claims from one source. Added a dedicated Strontium-90 lore claim (DDDL "does not occur in nature"). Stripped Wallach's REVERSED "avoid aluminum" advice from LETS-000130 (Alzheimer's) + LETS-000243 (dementia) claim_texts, protocols + food-allergy advice kept (safe stance already in IMMORT-000034). Two epigenetics source typos purified via safe_write + corpus_resnap (43 relocated, 0 broken): ytterbium bone 1.3->0.3 ppm (sandstone bleed-in), strontium-90 restored dropped "not". All 250 questions sentence-cased. Post-seal gate fixes: 2 enrichment facets prognosis->uses (gallium brain-cancer), 36 canon_ref entities stripped of display_name/symbol (pulled from canon), 3 Carya claims glossed "hickory", 8 glossary alias-collisions cleaned. Omega-9/silica/gold/beryllium unchanged (already faithful; my earlier "contradiction" flags were wrong). Method: deterministic dossier over 7 sealed books -> per-element authoring prompts -> 3 author/adversarial-verify Workflow waves (84 agents, 0 errors, ~11.2M tok) -> byte-verify every verbatim against the books (0/152 fail) -> 42-agent gloss Workflow -> stage -> finalize -> seal. Verified: corpus_verify PASS kv412; invariants 77/77; build OK; render_probe_search PASS; search index confirms silica/strontium-90/zirconium/oleic-acid searchable + group_record propagation (33 per trace_pdm page).` }, { id: "lg_ms3kxw30_oqw0qx", ts: "2026-07-27T13:48:07.596141-05:00", surface: "search", kind: "round-close", summary: "Entity-registration pass (option C), plumbing half: re-pointed 11 dead Ask-Wallach \u2018related\u2019 cross-link chips so they open real pages instead of dead buttons.", detail: "The Ask-Wallach entity pages show little \u2018related\u2019 chips that jump to other pages. 11 of them were pointing at names with no page \u2014 so they rendered as dead grey buttons. I fixed the pointers so they land on pages that already exist. No new content, no guessing \u2014 just correcting broken links.\n\nSCOPE. The handoff called option C \u2018restore the dropped also_about cross-links.\u2019 On investigation there was no saved stripped-list; the concrete, bounded problem was dangling related[] chips in eden/catalog/search-entities.json. I computed the complete universe runtime-accurately (replicating knowledge-topic.ts relTarget: a chip resolves iff its slug is a derived-index entity (=claim subject), a canon essential with a layout_key, or a corpus condition) and fixed the 11 whose target page ALREADY exists:\n  rare-earths\u2192rare_earth_elements (\xD76; the group topic page, 7 claims)\n  folic-acid\u2192vitamin-b9 (\xD73; essential page titled \u2018Folic Acid (Folate)\u2019)\n  niacin\u2192vitamin-b3; amino-acids\u2192amino_acids\n  7 hyphen\u2192underscore condition-slug typos: kidney_stones, celiac_disease, spina_bifida, pernicious_anemia, muscular_dystrophy, congestive_heart_failure, erectile_dysfunction\n= 11 distinct slugs / 19 chip instances. Scoped to related[] arrays ONLY \u2014 a raw string replace would have corrupted synonyms (\u2018niacin\u2019 is legitimately vitamin-b3\u2019s synonym). Structured JSON edit via safe_write; indent=2 re-serialization is byte-identical to the source, so the diff is minimal.\n\nPIPELINE. search-entities.json (source, NOT sealed) \u2192 build_embeds regenerates search-index.json (entity-page-data.json came out byte-identical \u2014 its related[] derives from co-occurrence, not the registry) \u2192 build.mjs rebuilds the bundle.\n\nVERIFY. invariants 77/77 (derived_artifacts_fresh + search_index_wellformed green); render_probe_search + render_probe_search_routing + render_probe_knowledge PASS, 0 page errors; a replicated relTarget() check confirms all 11 targets route to live pages. Runtime-accurate registry related-chip dead count fell ~52\u219233 instances.\n\nREMAINING (needs content, not registration). 27 dead chips: 3 diseases (korsakoff, berylliosis, whooping_cough) that would be new CONDITION pages in the SEALED conditions.json, and ~22 concepts (thorium \xD76, cadmium \xD72, testosterone, serotonin, melatonin, the fatty-acid intermediates\u2026) that need mined Ask-Wallach claims to become resolvable entity pages. Luneth chose to proceed to that Bucket-D mining track next. The 137 also_about cross-links dropped in the night2 seal are the same concept-resolvability gap and become restorable once those concepts are mined." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
