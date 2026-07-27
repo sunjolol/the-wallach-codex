@@ -16389,6 +16389,1028 @@
         "supplements",
         "dosage"
       ]
+    },
+    "WAL-CLM-EPIGEN-000358": {
+      "subject": "methionine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why is methionine the 'start' amino acid in protein synthesis?",
+      "answer_short": "Methionine's codon, AUG, doubles as the cell's main 'Start' signal for building a protein, so nearly every protein begins with a methionine.",
+      "topics": [
+        "protein synthesis",
+        "codons",
+        "molecular genetics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000359": {
+      "subject": "methionine",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "mechanism",
+      "question": "Can restricting methionine extend lifespan?",
+      "answer_short": "Wallach cites studies where restricting methionine lengthened lab-animal lifespans; a Nature fruit-fly study found that adding it back restored fertility without cancelling the lifespan gain from calorie restriction.",
+      "topics": [
+        "longevity",
+        "caloric restriction",
+        "lifespan"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000360": {
+      "subject": "methionine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does methionine do in plants?",
+      "answer_short": "In plants, methionine is the raw material for making ethylene (a plant hormone), through a pathway called the Yang Cycle — also known as the methionine cycle.",
+      "topics": [
+        "plants",
+        "ethylene",
+        "botany"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000361": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "tyrosine"
+      ],
+      "facet": "basics",
+      "question": "What is phenylalanine?",
+      "answer_short": "Phenylalanine is one of the nine classic essential amino acids—a nonpolar protein building block the body can't make and must get from food every day.",
+      "topics": [
+        "amino acids",
+        "essential amino acids",
+        "nutrition basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000362": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "arginine",
+        "taurine",
+        "tyrosine"
+      ],
+      "facet": "stance",
+      "question": "Is phenylalanine an essential amino acid?",
+      "answer_short": "Yes—Wallach lists phenylalanine among the nine classic essential amino acids the body cannot make on its own and must be supplied daily from food to prevent deficiency and disease.",
+      "topics": [
+        "amino acids",
+        "essential amino acids",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000363": {
+      "subject": "phenylalanine",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "When was phenylalanine discovered and who first isolated it?",
+      "answer_short": "Phenylalanine was first isolated in 1879 by Schulze and Barbieri from yellow lupine, and first synthesized in the lab in 1882 by Erlenmeyer and Lipp.",
+      "topics": [
+        "amino acids",
+        "history of science",
+        "chemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000364": {
+      "subject": "phenylalanine",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is phenylketonuria (PKU) really a genetic disease?",
+      "answer_short": "Wallach calls PKU—the inability to metabolize phenylalanine—'falsely believed' to be a genetically transmitted disease, and notes its symptoms are prevented simply by avoiding phenylalanine.",
+      "topics": [
+        "phenylketonuria",
+        "genetics",
+        "metabolic disease"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000365": {
+      "subject": "phenylalanine",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Does aspartame (Equal, NutraSweet) contain phenylalanine?",
+      "answer_short": "Yes—aspartame, sold as Equal and NutraSweet, breaks down into phenylalanine, which is why aspartame products carry a 'Contains phenylalanine' warning label.",
+      "topics": [
+        "aspartame",
+        "artificial sweeteners",
+        "food labeling",
+        "phenylketonuria"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000366": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "depression",
+        "insomnia",
+        "pain"
+      ],
+      "facet": "uses",
+      "question": "What is DL-phenylalanine (DLPA) used for?",
+      "answer_short": "Wallach notes DL-phenylalanine is sold as a nutritional supplement for three purposes: as a sleep aid, as an anti-depressant, and as an analgesic (pain reliever).",
+      "topics": [
+        "supplements",
+        "pain relief",
+        "sleep",
+        "depression"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000367": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "tryptophan"
+      ],
+      "facet": "warning",
+      "question": "Can large doses of phenylalanine lower serotonin?",
+      "answer_short": "Yes—phenylalanine shares the same brain-entry transport channel as tryptophan, so in large doses it can crowd tryptophan out and interfere with serotonin production.",
+      "topics": [
+        "serotonin",
+        "mood",
+        "amino acids",
+        "brain chemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000368": {
+      "subject": "tyrosine",
+      "also_about": [
+        "phenylalanine",
+        "goiter"
+      ],
+      "facet": "basics",
+      "question": "What is tyrosine?",
+      "answer_short": "Tyrosine is one of 22 amino acids the body uses to build proteins; Wallach adds it to the essential list because a deficiency drives goiter, and it is the raw material for thyroid hormone and key neurotransmitters.",
+      "topics": [
+        "amino acids",
+        "thyroid health",
+        "brain and mood",
+        "nutrition basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000369": {
+      "subject": "tyrosine",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the word tyrosine come from?",
+      "answer_short": "The name tyrosine comes from the Greek word for cheese, because the amino acid was first isolated from cheese in 1846 by the German chemist Justus von Liebig.",
+      "topics": [
+        "amino acids",
+        "science history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000370": {
+      "subject": "tyrosine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does tyrosine do in cell signaling?",
+      "answer_short": "Tyrosine's phenol group lets it act as a docking point in cell signaling: enzymes called protein kinases attach phosphate groups to it, which switches the activity of the target protein.",
+      "topics": [
+        "amino acids",
+        "cell biology"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000371": {
+      "subject": "tyrosine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What role does tyrosine play in plants and photosynthesis?",
+      "answer_short": "In plants, tyrosine is essential to photosynthesis: inside the chloroplasts it donates an electron to re-charge oxidized chlorophyll during the light reactions.",
+      "topics": [
+        "amino acids",
+        "plant biology",
+        "science history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000372": {
+      "subject": "lysine",
+      "also_about": [
+        "arginine",
+        "histidine"
+      ],
+      "facet": "basics",
+      "question": "What is lysine?",
+      "answer_short": "Lysine is an essential amino acid the body can't make and must get daily from food; it drives protein production and, through its derivative allysine, helps build the collagen and elastin that strengthen tissues and blood vessels.",
+      "topics": [
+        "amino-acids",
+        "protein",
+        "essential-nutrients"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000373": {
+      "subject": "lysine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How does the body break down lysine?",
+      "answer_short": "In mammals, lysine is metabolized into acetyl-CoA, a central fuel molecule, in a process that starts with a transamination reaction with alpha-ketoglutarate.",
+      "topics": [
+        "metabolism",
+        "energy",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000374": {
+      "subject": "lysine",
+      "also_about": [],
+      "facet": "history",
+      "question": "What is the 'lysine contingency' in Jurassic Park?",
+      "answer_short": "Wallach recounts how the film Jurassic Park gave its cloned dinosaurs a 'lysine contingency', engineering them so they couldn't make their own lysine, keeping them dependent on lysine supplements and unable to survive outside the park.",
+      "topics": [
+        "amino-acids",
+        "popular-culture",
+        "essential-nutrients"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000375": {
+      "subject": "lysine",
+      "also_about": [
+        "arginine",
+        "taurine",
+        "tyrosine"
+      ],
+      "facet": "stance",
+      "question": "Why is lysine considered an essential amino acid?",
+      "answer_short": "Lysine is one of the nine amino acids Wallach lists as classically essential: the body cannot synthesize them, so they must be eaten every day to prevent deficiencies and disease.",
+      "topics": [
+        "amino-acids",
+        "essential-nutrients",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000376": {
+      "subject": "leucine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What kind of amino acid is leucine and what proteins is it part of?",
+      "answer_short": "Leucine is a branched-chain, hydrophobic alpha amino acid encoded by six codons; Wallach says it forms a significant part of the ferritin and astacin protein subunits and a class of 'buffer' proteins.",
+      "topics": [
+        "amino-acids",
+        "biochemistry",
+        "branched-chain-amino-acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000377": {
+      "subject": "leucine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Does leucine help build muscle?",
+      "answer_short": "Yes—Wallach calls leucine a catalyst for muscle growth and muscle 'insurance,' and says it activates the mTOR kinase, the master switch that regulates cell growth.",
+      "topics": [
+        "muscle-building",
+        "amino-acids",
+        "mtor"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000378": {
+      "subject": "leucine",
+      "also_about": [
+        "cholesterol"
+      ],
+      "facet": "mechanism",
+      "question": "Where in the body does leucine work?",
+      "answer_short": "Leucine has major functions in the liver, fat (adipose) tissue, and muscle; in muscle and fat it is used to synthesize sterols, and its combined use there is greater than in the liver.",
+      "topics": [
+        "amino-acids",
+        "metabolism",
+        "cholesterol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000379": {
+      "subject": "leucine",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can leucine be toxic?",
+      "answer_short": "Yes—Wallach warns that leucine toxicity, as in decompensated Maple Syrup Urine Disease (MSUD), produces delirium and neurologic compromise and can be life-threatening.",
+      "topics": [
+        "amino-acid-toxicity",
+        "maple-syrup-urine-disease",
+        "neurology"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000380": {
+      "subject": "leucine",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "warning",
+      "question": "Can too much leucine cause pellagra?",
+      "answer_short": "Wallach says excessive leucine intake can produce a clinical pellagra—the classic 'four D's': diarrhea, dermatitis, dementia, and death.",
+      "topics": [
+        "pellagra",
+        "amino-acid-toxicity",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000381": {
+      "subject": "leucine",
+      "also_about": [
+        "isoleucine",
+        "valine"
+      ],
+      "facet": "stance",
+      "question": "Is leucine an essential amino acid?",
+      "answer_short": "Yes—Wallach lists leucine among the nine classic essential amino acids the body can't make itself and must get from the diet every day to prevent deficiency and disease.",
+      "topics": [
+        "essential-amino-acids",
+        "amino-acids",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000382": {
+      "subject": "valine",
+      "also_about": [
+        "histidine",
+        "isoleucine",
+        "leucine",
+        "lysine",
+        "methionine",
+        "phenylalanine",
+        "threonine",
+        "tryptophan"
+      ],
+      "facet": "stance",
+      "question": "Is valine an essential amino acid?",
+      "answer_short": "Yes. Wallach lists valine among the nine classic essential amino acids—ones the body can't make on its own, so you must get them from food every day to avoid deficiency and disease.",
+      "topics": [
+        "amino-acids",
+        "valine",
+        "essential-amino-acids",
+        "deficiency",
+        "diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000383": {
+      "subject": "valine",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Where does the name valine come from, and who discovered it?",
+      "answer_short": "Valine — a branched-chain amino acid named after the flowering plant valerian — was first isolated in 1901 from casein (the main protein in milk) by the chemist Emil Fischer.",
+      "topics": [
+        "amino-acids",
+        "discovery",
+        "etymology",
+        "history",
+        "valine"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000384": {
+      "subject": "valine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What are the codons for valine?",
+      "answer_short": "Valine (abbreviated Val) is an alpha amino acid encoded by four genetic codons: GUU, GUC, GUA, and GUG.",
+      "topics": [
+        "amino-acids",
+        "valine",
+        "genetics",
+        "codons",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000385": {
+      "subject": "valine",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "What does valine have to do with sickle cell disease?",
+      "answer_short": "In sickle-cell disease valine takes the place of glutamic acid in hemoglobin; because valine repels water while glutamic acid attracts it, the hemoglobin becomes more likely to clump together.",
+      "topics": [
+        "amino-acids",
+        "valine",
+        "sickle-cell",
+        "hemoglobin",
+        "disease"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000386": {
+      "subject": "histidine",
+      "also_about": [
+        "lysine",
+        "tryptophan",
+        "methionine",
+        "valine"
+      ],
+      "facet": "stance",
+      "question": "Is histidine an essential amino acid?",
+      "answer_short": "Yes—Wallach lists histidine among the nine classic essential amino acids, which the body can't make and must get from the diet every day to avoid deficiency disease.",
+      "topics": [
+        "amino-acids",
+        "essential-nutrients",
+        "protein"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000387": {
+      "subject": "histidine",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered histidine and when?",
+      "answer_short": "Histidine was first isolated in 1896 by the German physician Albrecht Kossel, and is one of the 22 amino acids the body uses to build proteins.",
+      "topics": [
+        "amino-acids",
+        "science-history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000388": {
+      "subject": "histidine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does histidine work in enzymes?",
+      "answer_short": "Histidine's imidazole side chain binds metals and sits in enzyme catalytic sites, where it pulls a proton off serine, threonine, or cysteine to switch them on as nucleophiles.",
+      "topics": [
+        "amino-acids",
+        "enzymes",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000389": {
+      "subject": "isoleucine",
+      "also_about": [
+        "leucine",
+        "valine"
+      ],
+      "facet": "basics",
+      "question": "What is isoleucine?",
+      "answer_short": "Isoleucine is one of the nine classically essential amino acids—an alpha amino acid with a hydrocarbon side chain that makes it hydrophobic, and the body uses it to build protein.",
+      "topics": [
+        "amino-acids",
+        "protein",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000390": {
+      "subject": "isoleucine",
+      "also_about": [
+        "leucine",
+        "valine",
+        "lysine",
+        "tryptophan"
+      ],
+      "facet": "physiology",
+      "question": "Is isoleucine an essential amino acid?",
+      "answer_short": "Yes—isoleucine is one of nine classically essential amino acids the human body cannot synthesize, so it must be eaten every day to prevent deficiency and disease.",
+      "topics": [
+        "amino-acids",
+        "nutrition",
+        "deficiency",
+        "diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000391": {
+      "subject": "isoleucine",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered isoleucine and when?",
+      "answer_short": "Isoleucine was isolated in 1903 by Felix Ehrlich, a German chemist, who obtained it from hemoglobin.",
+      "topics": [
+        "amino-acids",
+        "history-of-science"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000392": {
+      "subject": "threonine",
+      "also_about": [
+        "histidine",
+        "isoleucine",
+        "leucine",
+        "lysine",
+        "methionine",
+        "phenylalanine",
+        "tryptophan",
+        "valine"
+      ],
+      "facet": "stance",
+      "question": "Is threonine an essential amino acid?",
+      "answer_short": "Yes—Wallach lists threonine among the nine classic essential amino acids the body can't make itself, so it must be eaten every day to prevent deficiency diseases.",
+      "topics": [
+        "amino acids",
+        "threonine",
+        "essential amino acids",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000393": {
+      "subject": "threonine",
+      "also_about": [
+        "epigenetics"
+      ],
+      "facet": "mechanism",
+      "question": "How does the body process and metabolize threonine?",
+      "answer_short": "After it's built into proteins threonine can be tagged by glycosylation and phosphorylation, and it's broken down via threonine dehydrogenase into intermediates like pyruvate, acetyl-CoA, and glycine.",
+      "topics": [
+        "amino acids",
+        "threonine",
+        "metabolism",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-DDDL-000274": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "insomnia",
+        "tryptophan",
+        "inositol",
+        "hypoglycemia"
+      ],
+      "facet": "protocol",
+      "question": "How much phenylalanine does Wallach recommend for insomnia?",
+      "answer_short": "For insomnia, Wallach's protocol includes dl-phenylalanine at 250 mg three times a day, along with avoiding caffeine, plus calcium, chromium, l-tryptophan, inositol and niacinamide.",
+      "topics": [
+        "insomnia",
+        "sleep",
+        "amino acids",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-DDDL-000275": {
+      "subject": "tyrosine",
+      "also_about": [
+        "arginine",
+        "taurine",
+        "goiter"
+      ],
+      "facet": "stance",
+      "question": "Is tyrosine an essential amino acid?",
+      "answer_short": "Mainstream science calls tyrosine non-essential, but Wallach adds it to the essential list because, over the long haul, a deficiency causes a specific disease -- goiter.",
+      "topics": [
+        "amino acids",
+        "thyroid health",
+        "nutrition basics"
+      ]
+    },
+    "WAL-CLM-DDDL-000276": {
+      "subject": "tyrosine",
+      "also_about": [
+        "iodine",
+        "goiter",
+        "copper",
+        "molybdenum"
+      ],
+      "facet": "physiology",
+      "question": "How does tyrosine relate to the thyroid and goiter?",
+      "answer_short": "Tyrosine combines with iodine to build the thyroid hormone thyroxin, so a shortage of tyrosine, along with iodine, copper, or molybdenum, is one cause of goiter.",
+      "topics": [
+        "thyroid health",
+        "amino acids",
+        "minerals",
+        "nutrition basics"
+      ]
+    },
+    "WAL-CLM-DDDL-000277": {
+      "subject": "lysine",
+      "also_about": [
+        "arginine"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in lysine?",
+      "answer_short": "Wallach lists meat, potatoes, milk, yeast, fish, chicken, beans, and eggs as high-lysine foods, recommending them (while avoiding high-arginine foods) for people dealing with herpes.",
+      "topics": [
+        "food-sources",
+        "diet",
+        "amino-acids",
+        "herpes"
+      ]
+    },
+    "WAL-CLM-DDDL-000278": {
+      "subject": "lysine",
+      "also_about": [
+        "shingles",
+        "zinc",
+        "vitamin-c",
+        "vitamin-b12",
+        "vitamin-e"
+      ],
+      "facet": "protocol",
+      "question": "How much lysine does Wallach recommend for shingles?",
+      "answer_short": "For shingles, Wallach's treatment of choice includes lysine at 5 grams a day, along with the antivirals Isoprinosin and Ribavirin, vitamin B12, vitamin C to bowel tolerance, vitamin E, and zinc.",
+      "topics": [
+        "shingles",
+        "protocol",
+        "antiviral",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-DDDL-000279": {
+      "subject": "valine",
+      "also_about": [
+        "lysine",
+        "threonine",
+        "leucine",
+        "isoleucine"
+      ],
+      "facet": "uses",
+      "question": "What is valine's function in the body?",
+      "answer_short": "In Wallach's essential-amino-acid chart, valine's function is protein production—it serves as one of the raw building blocks the body uses to make its proteins.",
+      "topics": [
+        "amino-acids",
+        "valine",
+        "protein",
+        "essential-amino-acids",
+        "function"
+      ]
+    },
+    "WAL-CLM-DDDL-000280": {
+      "subject": "histidine",
+      "also_about": [
+        "allergies"
+      ],
+      "facet": "physiology",
+      "question": "What does histidine do in the body?",
+      "answer_short": "In Wallach's amino-acid function table, histidine's job is the formation of histamine — the compound the body releases during allergic reactions and immune responses.",
+      "topics": [
+        "amino-acids",
+        "allergies",
+        "immune-system"
+      ]
+    },
+    "WAL-CLM-DDDL-000281": {
+      "subject": "isoleucine",
+      "also_about": [
+        "leucine",
+        "valine",
+        "lysine",
+        "threonine"
+      ],
+      "facet": "uses",
+      "question": "What does isoleucine do in the body?",
+      "answer_short": "In Wallach's essential amino-acid function table, isoleucine's role is protein production—it serves as a direct building block for the body's proteins.",
+      "topics": [
+        "amino-acids",
+        "protein",
+        "muscle",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-DDDL-000282": {
+      "subject": "threonine",
+      "also_about": [
+        "valine",
+        "lysine",
+        "leucine",
+        "isoleucine",
+        "tryptophan",
+        "phenylalanine"
+      ],
+      "facet": "physiology",
+      "question": "What does threonine do in the body?",
+      "answer_short": "In Wallach's function table, threonine's role is protein production—it's a building block the body uses to manufacture its proteins, alongside valine, lysine, leucine, and isoleucine.",
+      "topics": [
+        "amino acids",
+        "threonine",
+        "protein",
+        "function"
+      ]
+    },
+    "WAL-CLM-IMMORT-000386": {
+      "subject": "methionine",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "stance",
+      "question": "Why is selenomethionine called the 13th essential amino acid?",
+      "answer_short": "Selenium researcher Dr. Gerhard Schrauzer called selenomethionine — methionine with a selenium atom in place of its sulfur — the '13th essential amino acid,' Wallach notes.",
+      "topics": [
+        "selenomethionine",
+        "selenium",
+        "essential amino acids"
+      ]
+    },
+    "WAL-CLM-IMMORT-000387": {
+      "subject": "leucine",
+      "also_about": [
+        "pellagra",
+        "tryptophan"
+      ],
+      "facet": "history",
+      "question": "Why do people who eat mostly sorghum or millet get pellagra?",
+      "answer_short": "Wallach notes that in India, where sorghum or millet is a staple, the diet delivers high levels of leucine—and he separately warns that excessive leucine can itself produce pellagra.",
+      "topics": [
+        "pellagra",
+        "diet",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-RARE-000381": {
+      "subject": "tyrosine",
+      "also_about": [
+        "copper"
+      ],
+      "facet": "mechanism",
+      "question": "What does tyrosine have to do with hair and skin color?",
+      "answer_short": "Tyrosine is the raw material for melanin, the pigment in hair and skin; the enzyme tyrosinase acts on it with copper as a cofactor, so a copper shortage can turn hair white, silver, or gray.",
+      "topics": [
+        "amino acids",
+        "hair and skin",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000382": {
+      "subject": "tyrosine",
+      "also_about": [
+        "iodine",
+        "goiter"
+      ],
+      "facet": "history",
+      "question": "Who discovered thyroxin, the thyroid hormone?",
+      "answer_short": "Wallach recounts that in the first quarter of the 20th century a chemist he names as Kenall isolated a crystalline iodine-tyrosine complex, about 65% iodine, and called it thyroxin -- the thyroid hormone.",
+      "topics": [
+        "thyroid health",
+        "amino acids",
+        "science history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000052": {
+      "subject": "methionine",
+      "also_about": [
+        "taurine"
+      ],
+      "facet": "basics",
+      "question": "What is methionine?",
+      "answer_short": "Methionine is a sulfur-containing essential amino acid; its derivative SAM is the body's main methyl donor, and it's the raw material the body uses to build cysteine, carnitine, taurine, lecithin and phosphatidylcholine.",
+      "topics": [
+        "amino acids",
+        "sulfur",
+        "methylation"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000053": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "tyrosine",
+        "copper"
+      ],
+      "facet": "mechanism",
+      "question": "What does phenylalanine turn into in the body?",
+      "answer_short": "Phenylalanine is the precursor to tyrosine and, through it, the signaling molecules dopamine, norepinephrine, and epinephrine, plus the pigment melanin (a step that needs copper).",
+      "topics": [
+        "amino acids",
+        "neurotransmitters",
+        "brain chemistry",
+        "skin pigment"
+      ]
+    },
+    "WAL-CLM-LETS-000244": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "depression",
+        "tryptophan",
+        "tyrosine",
+        "hypoglycemia",
+        "pms"
+      ],
+      "facet": "protocol",
+      "question": "How much phenylalanine does Wallach recommend for depression?",
+      "answer_short": "For depression, Wallach's protocol includes dl-phenylalanine (with l-tryptophan and l-tyrosine) at 2 grams three times daily, alongside addressing food allergies and hypoglycemia.",
+      "topics": [
+        "depression",
+        "mental health",
+        "hypoglycemia",
+        "amino acids"
+      ]
+    },
+    "WAL-CLM-LETS-000371": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "als",
+        "cholesterol"
+      ],
+      "facet": "protocol",
+      "question": "How much phenylalanine does Wallach recommend for multiple sclerosis (MS)?",
+      "answer_short": "For MS, Wallach's protocol includes D-phenylalanine at 500 mg three times a day, alongside removing mercury fillings, fish and flaxseed oil, and other steps.",
+      "topics": [
+        "multiple sclerosis",
+        "ALS",
+        "mercury",
+        "nervous system"
+      ]
+    },
+    "WAL-CLM-LETS-000462": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "vitiligo",
+        "copper"
+      ],
+      "facet": "protocol",
+      "question": "How much phenylalanine does Wallach recommend for vitiligo?",
+      "answer_short": "For vitiligo (loss of skin pigment), Wallach's protocol includes phenylalanine at 50 mg per kilogram of body weight per day, with PABA, copper, vitamin A, zinc and B-vitamins.",
+      "topics": [
+        "vitiligo",
+        "skin health",
+        "pigment",
+        "amino acids"
+      ]
+    },
+    "WAL-CLM-LETS-000159": {
+      "subject": "phenylalanine",
+      "also_about": [
+        "hypoglycemia",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "protocol",
+      "question": "How much phenylalanine does Wallach recommend for bipolar disorder?",
+      "answer_short": "For bipolar disorder (manic depression), Wallach's home protocol includes DL-phenylalanine at 5 grams twice daily, alongside chromium/vanadium, essential fatty acids and other steps.",
+      "topics": [
+        "bipolar disorder",
+        "mental health",
+        "hypoglycemia",
+        "amino acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000057": {
+      "subject": "tyrosine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What is tyrosine good for?",
+      "answer_short": "Tyrosine is the precursor for dopamine and norepinephrine, and Wallach reports studies show it helps with stress, fatigue, colds, grief, long work hours, and sleep deprivation, easing stress hormones and boosting mental and physical performance.",
+      "topics": [
+        "amino acids",
+        "brain and mood",
+        "stress",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000051": {
+      "subject": "lysine",
+      "also_about": [
+        "hemorrhoids",
+        "aneurysm",
+        "copper"
+      ],
+      "facet": "mechanism",
+      "question": "How does lysine help build collagen, elastin, and healthy veins?",
+      "answer_short": "Through its derivative allysine, lysine lets the enzyme lysyl oxidase form the crosslinks that stabilize collagen and elastin, which Wallach says helps prevent and repair spider veins, varicose veins, hemorrhoids, and aneurysms.",
+      "topics": [
+        "collagen",
+        "connective-tissue",
+        "vascular-health",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-LETS-000202": {
+      "subject": "lysine",
+      "also_about": [
+        "zinc",
+        "vitamin-e",
+        "vitamin-a"
+      ],
+      "facet": "protocol",
+      "question": "How much lysine does Wallach recommend for canker sores?",
+      "answer_short": "For canker sores, Wallach's protocol includes lysine at 1,500 mg per day, alongside allergen avoidance, zinc, vitamin E, a B-complex, and vitamin A as beta carotene.",
+      "topics": [
+        "canker-sores",
+        "protocol",
+        "mouth-health",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-LETS-000299": {
+      "subject": "lysine",
+      "also_about": [
+        "arginine",
+        "zinc",
+        "vitamin-c"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach treat herpes with lysine?",
+      "answer_short": "For herpes, Wallach uses L-lysine at 1-6 grams a day to effect, then 500 mg daily for maintenance, plus a high-lysine, low-arginine diet, UV light, vitamin C, bioflavonoids, zinc, and antivirals.",
+      "topics": [
+        "herpes",
+        "cold-sores",
+        "protocol",
+        "antiviral",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-LETS-000332": {
+      "subject": "lysine",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b6"
+      ],
+      "facet": "uses",
+      "question": "Does Wallach use lysine to treat kidney stones?",
+      "answer_short": "Yes; lysine (with glutamic acid) is part of Wallach's kidney-stone protocol, alongside calcium and magnesium, reduced phosphorus, vitamin A as beta carotene, vitamin B-6, and specific herbs.",
+      "topics": [
+        "kidney-stones",
+        "protocol",
+        "minerals",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000050": {
+      "subject": "leucine",
+      "also_about": [
+        "isoleucine",
+        "valine"
+      ],
+      "facet": "basics",
+      "question": "What is leucine?",
+      "answer_short": "Leucine is a branched-chain essential amino acid Wallach says is solely responsible for building muscle protein—a catalyst for muscle growth that also switches on the mTOR kinase controlling cell growth.",
+      "topics": [
+        "amino-acids",
+        "muscle-building",
+        "branched-chain-amino-acids"
+      ]
+    },
+    "WAL-CLM-LETS-000396": {
+      "subject": "leucine",
+      "also_about": [
+        "methionine",
+        "tyrosine",
+        "phenylalanine"
+      ],
+      "facet": "protocol",
+      "question": "How much leucine does Wallach recommend for Parkinson's disease?",
+      "answer_short": "For drug-induced Parkinsonism, Wallach's protocol includes leucine at 10 grams a day, alongside octacosanol, L-methionine, L-tyrosine, DL-phenylalanine, B-vitamins, essential fatty acids, and digestive enzymes.",
+      "topics": [
+        "parkinsons-disease",
+        "brain-health",
+        "protocols"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000058": {
+      "subject": "valine",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is valine?",
+      "answer_short": "Valine is a branched-chain amino acid Wallach counts among the essentials—it supports cognitive function, builds and maintains muscle, and aids exercise recovery and endurance.",
+      "topics": [
+        "amino-acids",
+        "valine",
+        "essential-amino-acids",
+        "muscle",
+        "exercise",
+        "cognition"
+      ]
+    },
+    "WAL-CLM-LETS-000320": {
+      "subject": "valine",
+      "also_about": [
+        "inflammation",
+        "phenylalanine",
+        "tryptophan"
+      ],
+      "facet": "protocol",
+      "question": "Can valine help with inflammation?",
+      "answer_short": "Yes—Wallach's inflammation protocol includes DL-valine at 1.5 grams per day, alongside DMSO, proteolytic enzymes, vitamins C and E, zinc, and other nutrients and herbs.",
+      "topics": [
+        "valine",
+        "inflammation",
+        "protocol",
+        "amino-acids",
+        "treatment"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000048": {
+      "subject": "histidine",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is histidine?",
+      "answer_short": "Histidine is an amino acid whose imidazole side chain works in enzyme active sites and binds metals; Wallach also notes it's required for hemoglobin, aiding oxygen binding and resisting carbon monoxide.",
+      "topics": [
+        "amino-acids",
+        "hemoglobin",
+        "protein"
+      ]
+    },
+    "WAL-CLM-LETS-000419": {
+      "subject": "histidine",
+      "also_about": [
+        "arthritis"
+      ],
+      "facet": "protocol",
+      "question": "How much histidine does Wallach recommend for rheumatoid arthritis?",
+      "answer_short": "For rheumatoid arthritis, Wallach's protocol includes L-histidine at 1,000 mg three times a day, alongside treatment for Mycoplasma and many other nutrients.",
+      "topics": [
+        "rheumatoid-arthritis",
+        "arthritis",
+        "joint-pain",
+        "autoimmune"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000049": {
+      "subject": "isoleucine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "How does the body use isoleucine for energy—is it glucogenic or ketogenic?",
+      "answer_short": "Isoleucine is both glucogenic and ketogenic: part of it can be turned into glucose, while another part is routed into ketone bodies or fatty acids for fuel.",
+      "topics": [
+        "amino-acids",
+        "energy-metabolism",
+        "biochemistry",
+        "glucose"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000055": {
+      "subject": "threonine",
+      "also_about": [
+        "epigenetics"
+      ],
+      "facet": "basics",
+      "question": "What is threonine?",
+      "answer_short": "Threonine is a polar, protein-building essential amino acid that, with serine, is one of only two amino acids carrying an alcohol group—making it a site for chemical modification and energy production.",
+      "topics": [
+        "amino acids",
+        "threonine",
+        "biochemistry",
+        "protein"
+      ]
     }
   }
 }

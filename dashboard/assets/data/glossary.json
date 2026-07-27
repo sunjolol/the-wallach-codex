@@ -44,6 +44,41 @@
       "category": "medical"
     },
     {
+      "term": "active sites",
+      "plain": "the working spots on an enzyme where it grabs and changes other molecules",
+      "category": "chemistry",
+      "aliases": [
+        "active site",
+        "enzyme active sites"
+      ]
+    },
+    {
+      "term": "active transport channel",
+      "plain": "a gateway in a cell that actively pulls substances across a barrier",
+      "category": "biology",
+      "aliases": [
+        "active transport",
+        "transport channel"
+      ]
+    },
+    {
+      "term": "acupuncture",
+      "plain": "a treatment that inserts very thin needles into the skin at set points",
+      "category": "biology",
+      "aliases": [
+        "acu-puncture"
+      ]
+    },
+    {
+      "term": "adipose tissue",
+      "plain": "the body's fat tissue",
+      "category": "biology",
+      "aliases": [
+        "adipose",
+        "fat tissue"
+      ]
+    },
+    {
       "term": "adrenocortical",
       "plain": "relating to the outer layer of the adrenal gland, which makes steroid hormones",
       "category": "biology"
@@ -85,6 +120,11 @@
       "category": "medical"
     },
     {
+      "term": "alcohol group",
+      "plain": "a matched oxygen-and-hydrogen pair attached to a molecule, a spot where other chemicals can be added",
+      "category": "chemistry"
+    },
+    {
       "term": "aldehyde",
       "plain": "a reactive type of organic molecule",
       "category": "medical",
@@ -103,16 +143,57 @@
       "category": "medical"
     },
     {
+      "term": "allergic reactions",
+      "plain": "the body's overblown response to something harmless like pollen or a food, causing symptoms such as sneezing or a rash",
+      "category": "biology",
+      "aliases": [
+        "allergic",
+        "allergic reaction",
+        "allergies"
+      ]
+    },
+    {
+      "term": "allergic shiners",
+      "plain": "dark circles under the eyes linked to allergies",
+      "category": "biology"
+    },
+    {
+      "term": "allysine",
+      "plain": "a changed form of lysine the body makes so it can lock protein fibers together",
+      "category": "biology"
+    },
+    {
       "term": "alopecia",
       "plain": "hair loss or baldness",
       "category": "medical"
+    },
+    {
+      "term": "alpha amino acid",
+      "plain": "the standard kind of amino acid the body strings together to build proteins",
+      "category": "nutrition",
+      "aliases": [
+        "alpha amino acids"
+      ]
+    },
+    {
+      "term": "alpha-ketobutyrate",
+      "plain": "a small acid molecule that acts as a stepping-stone during the breakdown of amino acids",
+      "category": "nutrition"
+    },
+    {
+      "term": "alpha-ketoglutarate",
+      "plain": "a molecule in the body's central energy cycle that takes on nitrogen parts",
+      "category": "chemistry",
+      "aliases": [
+        "alpha ketogluterate",
+        "alphaketogluterate"
+      ]
     },
     {
       "term": "alpha-linolenic acid",
       "plain": "a plant-source essential fat (the omega-three kind) the body cannot make, found in flax and leafy greens",
       "category": "nutrition",
       "aliases": [
-        "alpha linolenic acid",
         "linolenic acid"
       ]
     },
@@ -124,13 +205,65 @@
     {
       "term": "American Longevity",
       "plain": "The name Youngevity was founded under, in March 1997. Wallach called Elmer Heinrich at Rockland the day the company opened and secured mineral supply for the new line. American Longevity paid its first commissions on June 15, 1997, and later renamed to Youngevity.",
-      "category": "product-history",
-      "aliases": []
+      "category": "product-history"
+    },
+    {
+      "term": "amino acid",
+      "plain": "one of the small building blocks that link together to form the proteins your body is made of",
+      "category": "biology",
+      "aliases": [
+        "amino acid metabolism",
+        "amino acids"
+      ]
+    },
+    {
+      "term": "amino group",
+      "plain": "the nitrogen-containing part of an amino acid",
+      "category": "nutrition"
+    },
+    {
+      "term": "amino-acid substitution",
+      "plain": "when one amino acid takes the place of another in a protein, which can change how the protein works",
+      "category": "nutrition",
+      "aliases": [
+        "substitute",
+        "substitution"
+      ]
+    },
+    {
+      "term": "ammonia",
+      "plain": "a sharp-smelling chemical made of nitrogen and hydrogen",
+      "category": "chemistry"
+    },
+    {
+      "term": "amyotrophic lateral sclerosis",
+      "plain": "a disease that destroys the nerves controlling muscle movement",
+      "category": "medical",
+      "aliases": [
+        "ALS",
+        "Lou Gehrig's Disease"
+      ]
     },
     {
       "term": "anaerobic",
       "plain": "happening without oxygen",
       "category": "medical"
+    },
+    {
+      "term": "analgesic",
+      "plain": "a substance that relieves pain",
+      "category": "biology",
+      "aliases": [
+        "pain reliever"
+      ]
+    },
+    {
+      "term": "analog",
+      "plain": "a substance with almost the same structure as another, with one part swapped out",
+      "category": "biology",
+      "aliases": [
+        "analogue"
+      ]
     },
     {
       "term": "androstenedione",
@@ -164,12 +297,28 @@
       "category": "medical"
     },
     {
+      "term": "anti-depressant",
+      "plain": "something taken to lift low mood",
+      "category": "biology",
+      "aliases": [
+        "antidepressant"
+      ]
+    },
+    {
       "term": "anti-rachitic",
       "plain": "preventing rickets, the childhood disease of soft, bending bones",
       "category": "medical",
       "aliases": [
         "antirachitic",
         "anti-rickets"
+      ]
+    },
+    {
+      "term": "antibiotic",
+      "plain": "a medicine that kills bacteria or stops them from growing",
+      "category": "biology",
+      "aliases": [
+        "antibiotics"
       ]
     },
     {
@@ -189,6 +338,19 @@
       "term": "antioxidant",
       "plain": "a substance that protects the body's cells from damage by unstable molecules",
       "category": "nutrition"
+    },
+    {
+      "term": "antiviral",
+      "plain": "a medicine that fights viruses",
+      "category": "biology",
+      "aliases": [
+        "antivirals"
+      ]
+    },
+    {
+      "term": "aphthous stomatitis",
+      "plain": "the medical name for canker sores inside the mouth",
+      "category": "biology"
     },
     {
       "term": "aplasia",
@@ -211,6 +373,11 @@
       "category": "nutrition"
     },
     {
+      "term": "arginine",
+      "plain": "an amino acid Wallach counts as essential; the body can normally make some on its own",
+      "category": "nutrition"
+    },
+    {
       "term": "arteriosclerosis",
       "plain": "hardening and thickening of artery walls",
       "category": "medical"
@@ -224,13 +391,37 @@
       ]
     },
     {
+      "term": "artificial sweetener",
+      "plain": "a man-made substance that tastes sweet but is not sugar",
+      "category": "biology",
+      "aliases": [
+        "non-food source",
+        "non-sugar sweetener",
+        "sweetener"
+      ]
+    },
+    {
       "term": "ascorbic acid",
       "plain": "the chemical name for vitamin C",
       "category": "nutrition"
     },
     {
+      "term": "aspartame",
+      "plain": "a common man-made sweetener used in place of sugar",
+      "category": "biology",
+      "aliases": [
+        "Equal",
+        "NutraSweet"
+      ]
+    },
+    {
       "term": "aspergillus",
       "plain": "a common mold; some kinds produce harmful toxins",
+      "category": "biology"
+    },
+    {
+      "term": "astacin",
+      "plain": "A family of body enzymes that cut and reshape other proteins",
       "category": "biology"
     },
     {
@@ -262,6 +453,11 @@
       "category": "medical"
     },
     {
+      "term": "AUG",
+      "plain": "the three-letter genetic code word that stands for methionine and also marks where to start building a protein",
+      "category": "biology"
+    },
+    {
       "term": "autoimmune",
       "plain": "when the body's immune system attacks its own healthy tissue",
       "category": "medical",
@@ -270,9 +466,32 @@
       ]
     },
     {
+      "term": "autoimmune urine therapy",
+      "plain": "an unconventional treatment that reuses a person's own urine",
+      "category": "biology",
+      "aliases": [
+        "autoimmune urine and blood therapies",
+        "autoimmune urine/blood therapies"
+      ]
+    },
+    {
       "term": "avitaminosis",
       "plain": "a disease caused by a severe lack of one or more vitamins",
       "category": "medical"
+    },
+    {
+      "term": "B-6",
+      "plain": "one of the B vitamins, needed for many of the body's chemical reactions",
+      "category": "nutrition",
+      "aliases": [
+        "B6",
+        "vitamin B-6"
+      ]
+    },
+    {
+      "term": "B-complex",
+      "plain": "a supplement that combines the whole family of B vitamins together",
+      "category": "nutrition"
     },
     {
       "term": "b.i.d.",
@@ -283,14 +502,58 @@
       ]
     },
     {
+      "term": "backbone",
+      "plain": "the main chain of a molecule that its other parts hang off of",
+      "category": "chemistry",
+      "aliases": [
+        "methionine backbone"
+      ]
+    },
+    {
+      "term": "bacteria",
+      "plain": "tiny living germs, some of which can cause infection",
+      "category": "medical",
+      "aliases": [
+        "bacterium"
+      ]
+    },
+    {
       "term": "barbiturate",
       "plain": "a class of strong sedative drug",
       "category": "medical"
     },
     {
+      "term": "basal ganglia",
+      "plain": "A group of control centers deep in the brain that help steady and smooth out movement",
+      "category": "anatomy"
+    },
+    {
+      "term": "base-line supplement program",
+      "plain": "Wallach's standard everyday set of vitamins and minerals",
+      "category": "nutrition",
+      "aliases": [
+        "baseline nutritional supplementation program",
+        "baseline supplement program"
+      ]
+    },
+    {
+      "term": "basic nitrogen",
+      "plain": "a nitrogen part of histidine that behaves like a base, meaning it can grab hydrogen particles",
+      "category": "biology"
+    },
+    {
       "term": "benign",
       "plain": "not cancerous; harmless",
       "category": "medical"
+    },
+    {
+      "term": "benzyl side chain",
+      "plain": "a ring-shaped carbon part that sticks out from this amino acid",
+      "category": "nutrition",
+      "aliases": [
+        "benzyl",
+        "benzyl group"
+      ]
     },
     {
       "term": "beriberi",
@@ -321,6 +584,21 @@
       ]
     },
     {
+      "term": "binds",
+      "plain": "sticks tightly to and holds onto something, such as a metal atom",
+      "category": "chemistry",
+      "aliases": [
+        "bind",
+        "binding",
+        "binds metals"
+      ]
+    },
+    {
+      "term": "biochemically",
+      "plain": "through the ordinary chemistry that goes on inside living cells",
+      "category": "biology"
+    },
+    {
       "term": "bioflavonoid",
       "plain": "another name for a flavonoid, the colorful plant compounds with vitamin-like effects",
       "category": "nutrition",
@@ -342,9 +620,27 @@
       "category": "biology"
     },
     {
+      "term": "bipolar disorder",
+      "plain": "a condition with swings between very high and very low moods",
+      "category": "medical"
+    },
+    {
       "term": "bitters",
       "plain": "bitter-tasting herbal preparations taken before meals to stimulate digestion",
       "category": "supplement"
+    },
+    {
+      "term": "black mustard",
+      "plain": "a mustard plant used here as an herbal remedy",
+      "category": "biology",
+      "aliases": [
+        "Brassica nigra"
+      ]
+    },
+    {
+      "term": "black walnut",
+      "plain": "a tree whose parts are used as a herbal remedy",
+      "category": "biology"
     },
     {
       "term": "blepharitis",
@@ -360,6 +656,31 @@
       "category": "anatomy"
     },
     {
+      "term": "bowel tolerance",
+      "plain": "the largest amount that can be taken before it loosens the stools",
+      "category": "biology"
+    },
+    {
+      "term": "branched-chain amino acid",
+      "plain": "A type of protein building block, named for its forked shape, that muscle burns and builds with directly",
+      "category": "biology",
+      "aliases": [
+        "BCAA",
+        "BCAAs",
+        "branched-chain",
+        "branched-chain amino acids"
+      ]
+    },
+    {
+      "term": "bromelain",
+      "plain": "an enzyme from pineapple used to reduce swelling and aid digestion",
+      "category": "biology",
+      "aliases": [
+        "bromeliad",
+        "bromelin"
+      ]
+    },
+    {
       "term": "bromine",
       "plain": "a chemical element in the same family as chlorine and iodine (a halogen)",
       "category": "chemistry"
@@ -370,9 +691,32 @@
       "category": "medical"
     },
     {
+      "term": "buffer proteins",
+      "plain": "proteins that help keep the body's internal chemistry steady and balanced",
+      "category": "biology",
+      "aliases": [
+        "'buffer' proteins",
+        "buffer protein"
+      ]
+    },
+    {
       "term": "bursitis",
       "plain": "inflammation of a cushioning joint sac (bursa)",
       "category": "medical"
+    },
+    {
+      "term": "byproduct",
+      "plain": "a substance left over when something is broken down or made",
+      "category": "biology",
+      "aliases": [
+        "byproducts",
+        "chemical byproducts"
+      ]
+    },
+    {
+      "term": "cadmium",
+      "plain": "a poisonous heavy metal that can slowly build up in the body",
+      "category": "biology"
     },
     {
       "term": "calcareous",
@@ -390,9 +734,46 @@
       "category": "medical"
     },
     {
+      "term": "calcium",
+      "plain": "a mineral the body needs for strong bones and many other functions",
+      "category": "nutrition"
+    },
+    {
+      "term": "calcium 2-aminoethylphosphate",
+      "plain": "a special form of calcium given as a supplement, shortened to CaEAP",
+      "category": "nutrition",
+      "aliases": [
+        "CaEAP"
+      ]
+    },
+    {
       "term": "calculi",
       "plain": "the medical term for hard stones that form in the body, such as kidney stones",
       "category": "medical"
+    },
+    {
+      "term": "caloric restriction",
+      "plain": "eating fewer calories than usual, studied as a way to live longer",
+      "category": "biology",
+      "aliases": [
+        "calorie restriction",
+        "dietary calorie restriction",
+        "dietary restriction"
+      ]
+    },
+    {
+      "term": "camphor",
+      "plain": "a strong-smelling substance from a tree, rubbed on the skin to relieve pain",
+      "category": "biology",
+      "aliases": [
+        "Cinnamomum camphora",
+        "Cinnamonum camphora"
+      ]
+    },
+    {
+      "term": "canker sores",
+      "plain": "small painful open sores inside the mouth, not caused by a virus",
+      "category": "biology"
     },
     {
       "term": "capillaries",
@@ -400,9 +781,36 @@
       "category": "anatomy"
     },
     {
+      "term": "carbidopa",
+      "plain": "A medicine given together with L-Dopa in standard Parkinson's treatment",
+      "category": "biology"
+    },
+    {
+      "term": "carbohydrate",
+      "plain": "sugars and starches, the body's main quick source of energy from food",
+      "category": "biology",
+      "aliases": [
+        "carbohydrates"
+      ]
+    },
+    {
       "term": "carbon monoxide",
       "plain": "a colorless, poisonous gas that competes with oxygen in the blood",
       "category": "chemistry"
+    },
+    {
+      "term": "carbon skeleton",
+      "plain": "the backbone of carbon atoms left after a building block's nitrogen part is removed",
+      "category": "chemistry"
+    },
+    {
+      "term": "carbon-monoxide hemoglobin",
+      "plain": "hemoglobin that has grabbed the poison gas carbon monoxide instead of oxygen",
+      "category": "chemistry",
+      "aliases": [
+        "CO haemoglobin",
+        "carbon monoxide haemoglobin"
+      ]
     },
     {
       "term": "carbonic anhydrase",
@@ -449,6 +857,11 @@
       "category": "medical"
     },
     {
+      "term": "cardiovascular disease",
+      "plain": "disease of the heart and blood vessels",
+      "category": "medical"
+    },
+    {
       "term": "carnitine",
       "plain": "a compound that helps the body turn fat into usable energy",
       "category": "biology"
@@ -468,6 +881,11 @@
       "category": "medical"
     },
     {
+      "term": "cartilage",
+      "plain": "the tough, rubbery tissue in joints, taken here as a supplement",
+      "category": "nutrition"
+    },
+    {
       "term": "casein",
       "plain": "the main protein in milk",
       "category": "nutrition"
@@ -476,6 +894,35 @@
       "term": "catalase",
       "plain": "an iron-containing enzyme that breaks down harmful peroxide",
       "category": "biology"
+    },
+    {
+      "term": "catalysis",
+      "plain": "the speeding up of a chemical reaction by a helper that is not used up in it",
+      "category": "chemistry"
+    },
+    {
+      "term": "catalyst",
+      "plain": "something that speeds up or makes a process happen without being used up itself",
+      "category": "biology",
+      "aliases": [
+        "catalysts"
+      ]
+    },
+    {
+      "term": "catalytic sites",
+      "plain": "the exact spots on an enzyme where it speeds up a chemical reaction",
+      "category": "chemistry",
+      "aliases": [
+        "catalytic site"
+      ]
+    },
+    {
+      "term": "catalytic triad",
+      "plain": "a team of three amino acids inside an enzyme that work together to speed up a reaction",
+      "category": "nutrition",
+      "aliases": [
+        "catalytic triads"
+      ]
     },
     {
       "term": "cation",
@@ -491,9 +938,30 @@
       "category": "unit"
     },
     {
+      "term": "cell growth",
+      "plain": "the process by which cells get bigger and multiply to build and repair the body",
+      "category": "biology",
+      "aliases": [
+        "regulates cell growth"
+      ]
+    },
+    {
+      "term": "cell signaling",
+      "plain": "the way cells send and receive messages to coordinate what they do",
+      "category": "biology",
+      "aliases": [
+        "cellular signaling"
+      ]
+    },
+    {
       "term": "cellulose",
       "plain": "the fiber that makes up plant cell walls",
       "category": "nutrition"
+    },
+    {
+      "term": "central nervous system",
+      "plain": "the brain and the spinal cord",
+      "category": "biology"
     },
     {
       "term": "cerebellum",
@@ -514,6 +982,11 @@
       "category": "biology"
     },
     {
+      "term": "Charcot's triad",
+      "plain": "a set of three nerve-damage signs seen together in some diseases",
+      "category": "medical"
+    },
+    {
       "term": "cheilosis",
       "plain": "cracking and inflammation at the corners of the mouth",
       "category": "medical",
@@ -527,13 +1000,63 @@
       "category": "nutrition"
     },
     {
+      "term": "chelation",
+      "plain": "a treatment that grabs onto unwanted metals so the body can flush them out",
+      "category": "biology"
+    },
+    {
+      "term": "chemical bond",
+      "plain": "the force that holds atoms together in a molecule",
+      "category": "chemistry",
+      "aliases": [
+        "bond",
+        "bonds"
+      ]
+    },
+    {
+      "term": "chemical complex",
+      "plain": "two or more substances bonded together into a single structure",
+      "category": "biology",
+      "aliases": [
+        "crystalline complex",
+        "iodine-amino acid complex"
+      ]
+    },
+    {
+      "term": "chemical reaction",
+      "plain": "a process where substances change into different substances",
+      "category": "biology",
+      "aliases": [
+        "reaction",
+        "reactions"
+      ]
+    },
+    {
       "term": "chlorophyll",
       "plain": "the green pigment plants use to capture sunlight; it is built around a magnesium atom",
       "category": "biology"
     },
     {
+      "term": "chloroplast",
+      "plain": "the tiny green structure inside plant cells where photosynthesis happens",
+      "category": "biology",
+      "aliases": [
+        "chloroplasts"
+      ]
+    },
+    {
       "term": "cholecalciferol",
       "plain": "vitamin D3, the form the skin makes from sunlight",
+      "category": "nutrition"
+    },
+    {
+      "term": "cholesterol",
+      "plain": "a waxy fatty substance the body uses to build cells and to insulate nerves",
+      "category": "nutrition"
+    },
+    {
+      "term": "choline",
+      "plain": "a vitamin-like nutrient the body uses for the brain and for cell walls",
       "category": "nutrition"
     },
     {
@@ -549,8 +1072,17 @@
     {
       "term": "chromatolysis",
       "plain": "breakdown of the protein-making structures inside a damaged nerve cell",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
+    },
+    {
+      "term": "chromium",
+      "plain": "a trace mineral that helps the body handle blood sugar",
+      "category": "nutrition"
+    },
+    {
+      "term": "chymotrypsin",
+      "plain": "a digestive enzyme that helps break down proteins",
+      "category": "biology"
     },
     {
       "term": "cirrhosis",
@@ -564,6 +1096,11 @@
       "term": "citrulline",
       "plain": "an amino acid the body can convert into arginine",
       "category": "nutrition"
+    },
+    {
+      "term": "clinical",
+      "plain": "full-blown and medically obvious, as opposed to mild or hidden",
+      "category": "biology"
     },
     {
       "term": "coagulation",
@@ -581,6 +1118,33 @@
       "category": "biology"
     },
     {
+      "term": "cod liver oil",
+      "plain": "a fish oil rich in healthy fats and certain vitamins",
+      "category": "nutrition",
+      "aliases": [
+        "cod liver",
+        "fish oil",
+        "salmon oil"
+      ]
+    },
+    {
+      "term": "codon",
+      "plain": "a three-letter word in the genetic code that stands for one protein building block",
+      "category": "biology",
+      "aliases": [
+        "AAA",
+        "AAG",
+        "ACA",
+        "ACC",
+        "ACG",
+        "ACU",
+        "AUG codon",
+        "UUC",
+        "UUU",
+        "codons"
+      ]
+    },
+    {
       "term": "coenzyme",
       "plain": "a helper molecule an enzyme needs in order to work",
       "category": "biology"
@@ -593,6 +1157,24 @@
     {
       "term": "cofactor",
       "plain": "a helper substance an enzyme needs before it can do its job in the body",
+      "category": "biology"
+    },
+    {
+      "term": "cognitive",
+      "plain": "having to do with thinking, memory, and mental sharpness",
+      "category": "biology"
+    },
+    {
+      "term": "cognitive function",
+      "plain": "the brain's thinking work, such as memory, focus, and reasoning",
+      "category": "biology",
+      "aliases": [
+        "cognition"
+      ]
+    },
+    {
+      "term": "cold sores",
+      "plain": "small blisters around the lips caused by the herpes virus",
       "category": "biology"
     },
     {
@@ -611,6 +1193,38 @@
       ]
     },
     {
+      "term": "colloidal calcium",
+      "plain": "calcium suspended as extremely fine particles in a liquid",
+      "category": "biology",
+      "aliases": [
+        "plant-derived colloidal calcium"
+      ]
+    },
+    {
+      "term": "comfrey",
+      "plain": "a herb traditionally applied to the skin to soothe injuries",
+      "category": "biology",
+      "aliases": [
+        "Symphytum officinale"
+      ]
+    },
+    {
+      "term": "compound",
+      "plain": "a substance made of two or more building blocks joined together",
+      "category": "biology",
+      "aliases": [
+        "compounds"
+      ]
+    },
+    {
+      "term": "compress",
+      "plain": "a cloth pad pressed onto the skin as a treatment",
+      "category": "biology",
+      "aliases": [
+        "herb compress"
+      ]
+    },
+    {
       "term": "congenital",
       "plain": "present from birth",
       "category": "medical"
@@ -626,13 +1240,33 @@
       "category": "medical"
     },
     {
+      "term": "connective tissue",
+      "plain": "the body's supportive material that holds organs, skin, and vessels together",
+      "category": "biology"
+    },
+    {
       "term": "contractility",
       "plain": "a muscle's ability to contract",
       "category": "biology"
     },
     {
+      "term": "coordinating ligand",
+      "plain": "a molecule that grips and holds onto another atom, usually a metal",
+      "category": "chemistry"
+    },
+    {
+      "term": "copper",
+      "plain": "a mineral the body needs in tiny amounts for certain reactions, including making pigment",
+      "category": "nutrition"
+    },
+    {
       "term": "coronary thrombosis",
       "plain": "a blood clot blocking an artery that feeds the heart",
+      "category": "medical"
+    },
+    {
+      "term": "cortisone",
+      "plain": "a steroid medicine used to calm inflammation",
       "category": "medical"
     },
     {
@@ -641,9 +1275,22 @@
       "category": "chemistry"
     },
     {
+      "term": "creatine phosphate",
+      "plain": "a molecule muscles use to store quick bursts of energy",
+      "category": "chemistry"
+    },
+    {
       "term": "cretinism",
       "plain": "severe physical and mental impairment from iodine deficiency in infancy",
       "category": "medical"
+    },
+    {
+      "term": "crosslink",
+      "plain": "a chemical bridge that ties fibers together to make a tissue strong",
+      "category": "chemistry",
+      "aliases": [
+        "crosslinks"
+      ]
     },
     {
       "term": "cryptogenic",
@@ -654,6 +1301,11 @@
       "term": "cryptoxanthin",
       "plain": "a plant pigment related to beta-carotene that yields some vitamin A",
       "category": "nutrition"
+    },
+    {
+      "term": "crystalline",
+      "plain": "in the form of solid crystals, a sign a pure substance has been separated out",
+      "category": "biology"
     },
     {
       "term": "cyanocobalamin",
@@ -672,6 +1324,11 @@
       "term": "cyanotic",
       "plain": "bluish from low blood oxygen",
       "category": "medical"
+    },
+    {
+      "term": "cyclic",
+      "plain": "coming and going in a repeating cycle",
+      "category": "biology"
     },
     {
       "term": "cyclohexanehexol",
@@ -699,13 +1356,67 @@
       "category": "medical"
     },
     {
+      "term": "D and L forms",
+      "plain": "the two mirror-image versions of the same molecule, like a left and a right hand",
+      "category": "chemistry",
+      "aliases": [
+        "D and L",
+        "mirror-image forms",
+        "mirror-image versions"
+      ]
+    },
+    {
+      "term": "dandelion",
+      "plain": "a common yellow-flowered weed used here as a herbal remedy",
+      "category": "biology",
+      "aliases": [
+        "Taraxacum officinale"
+      ]
+    },
+    {
       "term": "decarboxylation",
       "plain": "a chemical reaction that removes a carbon-dioxide group from a molecule",
       "category": "chemistry"
     },
     {
+      "term": "decompensated",
+      "plain": "the point where the body can no longer keep a problem under control and it spirals out of hand",
+      "category": "biology",
+      "aliases": [
+        "decompensate",
+        "decompensation"
+      ]
+    },
+    {
+      "term": "deficiency",
+      "plain": "a shortage of a nutrient the body needs",
+      "category": "nutrition",
+      "aliases": [
+        "deficiencies"
+      ]
+    },
+    {
+      "term": "degeneration",
+      "plain": "the gradual breaking down or wearing out of a body part",
+      "category": "biology",
+      "aliases": [
+        "degenerate",
+        "degenerative"
+      ]
+    },
+    {
       "term": "dehydrocholesterol",
       "plain": "the cholesterol-like compound in skin that sunlight converts into vitamin D",
+      "category": "biology"
+    },
+    {
+      "term": "delirium",
+      "plain": "A sudden state of confusion and disordered thinking",
+      "category": "medical"
+    },
+    {
+      "term": "dementia",
+      "plain": "A serious, lasting loss of memory and thinking ability",
       "category": "biology"
     },
     {
@@ -727,6 +1438,19 @@
       ]
     },
     {
+      "term": "deprotonation",
+      "plain": "the removal of a positively charged hydrogen particle from a molecule",
+      "category": "chemistry"
+    },
+    {
+      "term": "derivative",
+      "plain": "a new substance the body makes by slightly changing another one",
+      "category": "biology",
+      "aliases": [
+        "derivatives"
+      ]
+    },
+    {
       "term": "dermatitis",
       "plain": "inflamed, itchy skin",
       "category": "medical"
@@ -737,8 +1461,44 @@
       "category": "medical"
     },
     {
+      "term": "destabilization",
+      "plain": "making something looser or more likely to come apart",
+      "category": "biology",
+      "aliases": [
+        "destabilize",
+        "destabilizes"
+      ]
+    },
+    {
+      "term": "devil's claw",
+      "plain": "an herb used to ease joint pain and inflammation",
+      "category": "medical",
+      "aliases": [
+        "Harpagophytum procumbens",
+        "grappie"
+      ]
+    },
+    {
+      "term": "diabetes",
+      "plain": "a disease in which blood sugar stays too high",
+      "category": "medical"
+    },
+    {
       "term": "dicumarol",
       "plain": "a natural blood-thinning compound that works by blocking vitamin K",
+      "category": "medical"
+    },
+    {
+      "term": "dimethyl sulfoxide",
+      "plain": "a liquid that soaks through the skin and is used to carry substances in and ease pain",
+      "category": "biology",
+      "aliases": [
+        "DMSO"
+      ]
+    },
+    {
+      "term": "discharges",
+      "plain": "fluid leaking from a wound or infected area, a sign of inflammation",
       "category": "medical"
     },
     {
@@ -752,11 +1512,39 @@
       "category": "medical"
     },
     {
+      "term": "DL-phenylalanine",
+      "plain": "a supplement that blends the two mirror-image forms of phenylalanine",
+      "category": "nutrition",
+      "aliases": [
+        "D-phenylalanine",
+        "DLPA"
+      ]
+    },
+    {
+      "term": "DNA engineering",
+      "plain": "changing a living thing's genetic instructions on purpose",
+      "category": "biology"
+    },
+    {
       "term": "docosahexaenoic acid",
       "plain": "DHA, a long-chain omega fat important for the brain and eyes",
       "category": "nutrition",
       "aliases": [
         "DHA"
+      ]
+    },
+    {
+      "term": "dopamine",
+      "plain": "a brain chemical tied to motivation, focus, and reward",
+      "category": "chemistry"
+    },
+    {
+      "term": "dose",
+      "plain": "the amount of a substance taken at one time",
+      "category": "biology",
+      "aliases": [
+        "doses",
+        "large doses"
       ]
     },
     {
@@ -768,6 +1556,11 @@
       "term": "duodenum",
       "plain": "the first section of the small intestine, just past the stomach",
       "category": "anatomy"
+    },
+    {
+      "term": "dwarf elder",
+      "plain": "a plant used as a herbal remedy",
+      "category": "biology"
     },
     {
       "term": "dyskinesia",
@@ -836,8 +1629,7 @@
     {
       "term": "electrolysis",
       "plain": "using an electric current to split a compound into its parts",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
     },
     {
       "term": "electrolytes",
@@ -845,9 +1637,27 @@
       "category": "biology"
     },
     {
+      "term": "electron",
+      "plain": "a tiny negatively charged particle that moves between atoms during chemical reactions",
+      "category": "chemistry",
+      "aliases": [
+        "electrons"
+      ]
+    },
+    {
+      "term": "electron donor",
+      "plain": "a molecule that gives up an electron to another, helping drive a chemical reaction",
+      "category": "chemistry"
+    },
+    {
       "term": "elemental",
       "plain": "the weight of the pure mineral itself, apart from whatever it is bound to",
       "category": "nutrition"
+    },
+    {
+      "term": "Emil Fischer",
+      "plain": "the German chemist who first obtained pure valine from milk protein long ago",
+      "category": "biology"
     },
     {
       "term": "encephalitis",
@@ -865,6 +1675,20 @@
       "category": "medical"
     },
     {
+      "term": "encode",
+      "plain": "to spell out in the genetic code which amino acid the body should use",
+      "category": "nutrition",
+      "aliases": [
+        "coded for",
+        "encoded"
+      ]
+    },
+    {
+      "term": "endemic goiter",
+      "plain": "thyroid swelling that is common across a whole region, usually from low iodine",
+      "category": "biology"
+    },
+    {
       "term": "endocrine",
       "plain": "the body's system of glands and the hormones they release",
       "category": "biology"
@@ -878,6 +1702,14 @@
       ]
     },
     {
+      "term": "enterically coated",
+      "plain": "covered with a coating so a pill passes the stomach and dissolves in the intestine",
+      "category": "biology",
+      "aliases": [
+        "enteric coating"
+      ]
+    },
+    {
       "term": "enteritis",
       "plain": "inflammation of the intestine",
       "category": "medical"
@@ -888,9 +1720,34 @@
       "category": "biology"
     },
     {
+      "term": "environmental allergens",
+      "plain": "things in the surroundings, like dust or pollen, that trigger a reaction",
+      "category": "biology",
+      "aliases": [
+        "environmental allergen",
+        "environmental sensitivities"
+      ]
+    },
+    {
       "term": "enzootic",
       "plain": "a disease regularly present in an animal population",
       "category": "medical"
+    },
+    {
+      "term": "enzyme",
+      "plain": "a special protein that speeds up a particular chemical reaction in the body",
+      "category": "chemistry",
+      "aliases": [
+        "enzymes"
+      ]
+    },
+    {
+      "term": "epinephrine",
+      "plain": "the fight-or-flight hormone, also called adrenaline",
+      "category": "biology",
+      "aliases": [
+        "adrenaline"
+      ]
     },
     {
       "term": "epistaxis",
@@ -931,9 +1788,43 @@
       "category": "medical"
     },
     {
+      "term": "essential amino acid",
+      "plain": "a protein building block your body cannot make on its own, so you have to get it from food every day",
+      "category": "biology",
+      "aliases": [
+        "classically essential",
+        "essential",
+        "essential amino acids",
+        "essentials"
+      ]
+    },
+    {
+      "term": "essential fatty acids",
+      "plain": "healthy fats the body cannot make and must get from food",
+      "category": "biology",
+      "aliases": [
+        "EFAs",
+        "essential fatty acid"
+      ]
+    },
+    {
       "term": "estradiol",
       "plain": "the main and most active form of the hormone estrogen",
       "category": "biology"
+    },
+    {
+      "term": "ethylene",
+      "plain": "a gas that acts as a plant hormone, best known for ripening fruit",
+      "category": "chemistry"
+    },
+    {
+      "term": "eukaryotic cells",
+      "plain": "cells that keep their genetic material inside a central compartment, like the cells of people, animals, and plants",
+      "category": "biology",
+      "aliases": [
+        "eukaryote",
+        "eukaryotic"
+      ]
     },
     {
       "term": "excitability",
@@ -961,6 +1852,27 @@
       "category": "nutrition"
     },
     {
+      "term": "fatty acids",
+      "plain": "the building blocks of fats, which the body can store and burn for energy",
+      "category": "biology",
+      "aliases": [
+        "fatty acid"
+      ]
+    },
+    {
+      "term": "fatty liver disease",
+      "plain": "a condition where too much fat collects inside the liver",
+      "category": "medical"
+    },
+    {
+      "term": "fecundity",
+      "plain": "the ability to produce offspring",
+      "category": "biology",
+      "aliases": [
+        "fertility"
+      ]
+    },
+    {
       "term": "feminization",
       "plain": "the appearance of female physical traits in a male",
       "category": "medical"
@@ -969,6 +1881,19 @@
       "term": "ferritin",
       "plain": "the protein that stores iron inside the body",
       "category": "biology"
+    },
+    {
+      "term": "fever blisters",
+      "plain": "another name for cold sores on the lips",
+      "category": "biology"
+    },
+    {
+      "term": "feverfew",
+      "plain": "a daisy-like herb used traditionally for pain and headaches",
+      "category": "biology",
+      "aliases": [
+        "Chrysanthemum parthenium"
+      ]
     },
     {
       "term": "fibrin",
@@ -1036,6 +1961,11 @@
       ]
     },
     {
+      "term": "flaxseed oil",
+      "plain": "an oil pressed from flax seeds, rich in healthy fats",
+      "category": "biology"
+    },
+    {
       "term": "fluorine",
       "plain": "the chemical element itself; its ion and compounds (the form in toothpaste and treated water) are called fluoride",
       "category": "chemistry"
@@ -1055,12 +1985,21 @@
       ]
     },
     {
+      "term": "food allergen",
+      "plain": "a food that triggers an allergic reaction in the body",
+      "category": "biology",
+      "aliases": [
+        "allergen",
+        "allergens",
+        "food allergens"
+      ]
+    },
+    {
       "term": "free radical",
       "plain": "an unstable molecule that can damage cells",
       "category": "chemistry",
       "aliases": [
-        "free radicals",
-        "free-radical"
+        "free radicals"
       ]
     },
     {
@@ -1105,6 +2044,29 @@
       "category": "anatomy"
     },
     {
+      "term": "general base",
+      "plain": "a helper that speeds up a body reaction by pulling a tiny hydrogen piece off another molecule",
+      "category": "chemistry"
+    },
+    {
+      "term": "genetic code",
+      "plain": "the set of instructions in DNA that tells cells which amino acids to use",
+      "category": "nutrition",
+      "aliases": [
+        "gene",
+        "genes",
+        "genetic"
+      ]
+    },
+    {
+      "term": "genetically transmitted",
+      "plain": "passed down from parent to child through the genes",
+      "category": "biology",
+      "aliases": [
+        "genetically transmitted disease"
+      ]
+    },
+    {
       "term": "geophagia",
       "plain": "compulsive eating of dirt or clay",
       "category": "medical"
@@ -1117,8 +2079,15 @@
     {
       "term": "Glacial Milk",
       "plain": "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
-      "category": "science",
-      "aliases": []
+      "category": "science"
+    },
+    {
+      "term": "gland",
+      "plain": "an organ that makes and releases substances such as hormones the body uses",
+      "category": "biology",
+      "aliases": [
+        "glands"
+      ]
     },
     {
       "term": "glaucoma",
@@ -1131,8 +2100,18 @@
       "category": "medical"
     },
     {
+      "term": "glucogenic",
+      "plain": "able to be turned into glucose, the sugar the body burns for energy",
+      "category": "biology"
+    },
+    {
       "term": "gluconeogenesis",
       "plain": "the body's making of new glucose from non-sugar sources",
+      "category": "biology"
+    },
+    {
+      "term": "glucose",
+      "plain": "the sugar in the blood that the body's cells burn for energy",
       "category": "biology"
     },
     {
@@ -1142,6 +2121,19 @@
       "aliases": [
         "GTF"
       ]
+    },
+    {
+      "term": "glucose tolerance test",
+      "plain": "a test of how the body handles sugar over several hours",
+      "category": "biology",
+      "aliases": [
+        "six-hour glucose tolerance test"
+      ]
+    },
+    {
+      "term": "glutamic acid",
+      "plain": "one of the amino acids, a protein building block",
+      "category": "nutrition"
     },
     {
       "term": "glutathione",
@@ -1157,6 +2149,11 @@
       "term": "glycogen",
       "plain": "the body's stored form of glucose, kept in the liver and muscles",
       "category": "nutrition"
+    },
+    {
+      "term": "glycosylation",
+      "plain": "the attaching of a sugar unit onto a protein",
+      "category": "biology"
     },
     {
       "term": "goiter",
@@ -1183,9 +2180,27 @@
       ]
     },
     {
+      "term": "gold shots",
+      "plain": "injections of gold compounds once used to treat arthritis",
+      "category": "biology",
+      "aliases": [
+        "gold injections"
+      ]
+    },
+    {
+      "term": "goldenrod",
+      "plain": "a yellow-flowered plant used as a herbal remedy",
+      "category": "biology"
+    },
+    {
       "term": "gonorrhea",
       "plain": "a sexually transmitted bacterial infection",
       "category": "medical"
+    },
+    {
+      "term": "hair analysis",
+      "plain": "a test that checks a sample of hair for minerals and toxic metals",
+      "category": "nutrition"
     },
     {
       "term": "half-life",
@@ -1201,6 +2216,20 @@
       "term": "halogen",
       "plain": "a chemical family that includes iodine, chlorine, and fluorine",
       "category": "chemistry"
+    },
+    {
+      "term": "haloperidol",
+      "plain": "A prescription drug for mental illness that can trigger Parkinson-like symptoms",
+      "category": "biology"
+    },
+    {
+      "term": "helices E and F",
+      "plain": "two coiled sections of the hemoglobin molecule that cradle the oxygen-carrying core",
+      "category": "chemistry",
+      "aliases": [
+        "helices",
+        "helix"
+      ]
     },
     {
       "term": "hematuria",
@@ -1268,8 +2297,7 @@
     {
       "term": "hepatocholangiocarcinoma",
       "plain": "a rare cancer arising from both liver cells and bile-duct cells",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
     },
     {
       "term": "hepatomegaly",
@@ -1277,8 +2305,46 @@
       "category": "medical"
     },
     {
+      "term": "herb",
+      "plain": "a plant or plant part used as a natural remedy or flavoring",
+      "category": "biology",
+      "aliases": [
+        "herbal remedy",
+        "herbs"
+      ]
+    },
+    {
+      "term": "herpes",
+      "plain": "a common virus that causes recurring cold sores or genital sores",
+      "category": "biology"
+    },
+    {
+      "term": "herpes simplex",
+      "plain": "the virus behind cold sores on the lips and sores on the genitals",
+      "category": "biology"
+    },
+    {
+      "term": "histamine",
+      "plain": "a compound the body releases during allergic reactions",
+      "category": "biology"
+    },
+    {
+      "term": "histidine",
+      "plain": "one of the essential amino acids the body must get from food",
+      "category": "nutrition",
+      "aliases": [
+        "1-histidine",
+        "L-histidine"
+      ]
+    },
+    {
       "term": "holocarboxylase",
       "plain": "the active form of a carboxylase enzyme, with biotin attached",
+      "category": "biology"
+    },
+    {
+      "term": "homeopathy",
+      "plain": "an alternative practice using heavily watered-down substances as remedies",
       "category": "biology"
     },
     {
@@ -1287,6 +2353,28 @@
       "category": "biology",
       "aliases": [
         "homeostasis"
+      ]
+    },
+    {
+      "term": "hormone",
+      "plain": "a chemical the body makes in one place to send instructions to other parts",
+      "category": "chemistry",
+      "aliases": [
+        "hormones"
+      ]
+    },
+    {
+      "term": "horsetail",
+      "plain": "a reed-like plant used as a herbal remedy",
+      "category": "biology"
+    },
+    {
+      "term": "hydrocarbon side chain",
+      "plain": "the water-repelling arm of carbon and hydrogen that sticks out from this building block",
+      "category": "biology",
+      "aliases": [
+        "hydrocarbon",
+        "side chain"
       ]
     },
     {
@@ -1305,15 +2393,58 @@
       "category": "medical"
     },
     {
+      "term": "hydrogen",
+      "plain": "the lightest, simplest chemical element, part of water and many molecules",
+      "category": "chemistry"
+    },
+    {
+      "term": "hydrogen bonding",
+      "plain": "a weak pull between molecules that helps hold body structures in the right shape",
+      "category": "chemistry",
+      "aliases": [
+        "hydrogen bond"
+      ]
+    },
+    {
+      "term": "hydrogen cyanide",
+      "plain": "a poisonous chemical used here only as a lab raw material",
+      "category": "chemistry"
+    },
+    {
+      "term": "hydrogen ions",
+      "plain": "hydrogen particles carrying a positive charge, the same thing as protons here",
+      "category": "biology",
+      "aliases": [
+        "hydrogen ion"
+      ]
+    },
+    {
+      "term": "hydrogen peroxide",
+      "plain": "a common disinfectant liquid, used here as a treatment",
+      "category": "biology"
+    },
+    {
       "term": "hydrolysis",
       "plain": "a chemical reaction that splits a compound apart using water",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
+    },
+    {
+      "term": "hydrophilic",
+      "plain": "water-attracting; tends to mix with or dissolve in water",
+      "category": "biology",
+      "aliases": [
+        "water loving"
+      ]
     },
     {
       "term": "hydrophobic",
       "plain": "water-repelling",
       "category": "medical"
+    },
+    {
+      "term": "hydrotherapy",
+      "plain": "using water, such as baths or soaks, as a treatment",
+      "category": "biology"
     },
     {
       "term": "hydroxocobalamin",
@@ -1324,6 +2455,16 @@
       "term": "hydroxyapatite",
       "plain": "the hard calcium-and-phosphorus crystal that gives bones and teeth their rigid structure",
       "category": "biology"
+    },
+    {
+      "term": "hydroxyl group",
+      "plain": "an oxygen-and-hydrogen pair attached to a molecule that can accept a phosphate tag",
+      "category": "chemistry",
+      "aliases": [
+        "OH group",
+        "hydroxyl",
+        "phenolic OH group"
+      ]
     },
     {
       "term": "hyperbilirubinemia",
@@ -1390,6 +2531,11 @@
       "term": "hypervitaminosis",
       "plain": "toxicity from an excess of vitamins",
       "category": "medical"
+    },
+    {
+      "term": "hypervitaminosis D",
+      "plain": "having too much vitamin D built up in the body",
+      "category": "nutrition"
     },
     {
       "term": "hypochlorhydria",
@@ -1459,6 +2605,88 @@
       "category": "medical"
     },
     {
+      "term": "imidazole side chain",
+      "plain": "a ring-shaped chemical part sticking out of histidine that gives it its special ability to grab hydrogen and metals",
+      "category": "chemistry",
+      "aliases": [
+        "imidazole",
+        "imidazole sidechain"
+      ]
+    },
+    {
+      "term": "immune responses",
+      "plain": "the body's defensive actions against germs and other threats",
+      "category": "biology",
+      "aliases": [
+        "immune response",
+        "immune system"
+      ]
+    },
+    {
+      "term": "immune-system disease",
+      "plain": "an illness caused by the body's own defenses attacking it",
+      "category": "biology"
+    },
+    {
+      "term": "immunity",
+      "plain": "the body's built-in defense system against germs and disease",
+      "category": "medical",
+      "aliases": [
+        "immune"
+      ]
+    },
+    {
+      "term": "inborn error of metabolism",
+      "plain": "a flaw in the body's chemistry that a person is born with",
+      "category": "biology"
+    },
+    {
+      "term": "infection",
+      "plain": "germs invading the body and multiplying, making a person sick",
+      "category": "biology"
+    },
+    {
+      "term": "inflammation",
+      "plain": "the body's swelling, redness, and heat in response to injury or irritation",
+      "category": "biology"
+    },
+    {
+      "term": "initiation",
+      "plain": "the starting step of a process, here the moment protein-building begins",
+      "category": "biology"
+    },
+    {
+      "term": "inositol",
+      "plain": "a vitamin-like nutrient the body uses to pass signals inside cells",
+      "category": "nutrition"
+    },
+    {
+      "term": "insomnia",
+      "plain": "trouble falling asleep or staying asleep",
+      "category": "biology"
+    },
+    {
+      "term": "intention tremor",
+      "plain": "shaking of the hand that gets worse as it reaches toward something",
+      "category": "biology"
+    },
+    {
+      "term": "intermediate",
+      "plain": "a middle-step substance the body makes on the way to producing something else",
+      "category": "biology",
+      "aliases": [
+        "intermediates"
+      ]
+    },
+    {
+      "term": "international units",
+      "plain": "a standard way of measuring the strength of certain vitamins",
+      "category": "nutrition",
+      "aliases": [
+        "IU"
+      ]
+    },
+    {
       "term": "intervertebral",
       "plain": "located between the bones (vertebrae) of the spine",
       "category": "anatomy"
@@ -1493,9 +2721,22 @@
       ]
     },
     {
+      "term": "iodine",
+      "plain": "a mineral the body needs to build thyroid hormone",
+      "category": "nutrition"
+    },
+    {
       "term": "ionized",
       "plain": "in the dissolved, electrically charged form the body can use directly",
       "category": "chemistry"
+    },
+    {
+      "term": "iron",
+      "plain": "a mineral the body needs to carry oxygen in the blood",
+      "category": "nutrition",
+      "aliases": [
+        "iron-based"
+      ]
     },
     {
       "term": "ischemia",
@@ -1503,6 +2744,57 @@
       "category": "medical",
       "aliases": [
         "ischemic"
+      ]
+    },
+    {
+      "term": "isolate",
+      "plain": "to separate a pure substance out from a natural material",
+      "category": "biology",
+      "aliases": [
+        "isolated",
+        "isolation"
+      ]
+    },
+    {
+      "term": "isoleucine",
+      "plain": "one of the essential amino acids the body must get from food",
+      "category": "nutrition",
+      "aliases": [
+        "Ile"
+      ]
+    },
+    {
+      "term": "isoprinosine",
+      "plain": "an antiviral medicine",
+      "category": "biology",
+      "aliases": [
+        "Isoprinosin"
+      ]
+    },
+    {
+      "term": "Java tea",
+      "plain": "a herbal tea used as a remedy for the urinary system",
+      "category": "biology"
+    },
+    {
+      "term": "joint membranes",
+      "plain": "the thin linings inside joints that the infection is said to attack",
+      "category": "medical",
+      "aliases": [
+        "joint membrane"
+      ]
+    },
+    {
+      "term": "Juglans nigra",
+      "plain": "the scientific name for the black walnut tree",
+      "category": "biology"
+    },
+    {
+      "term": "juniper",
+      "plain": "an evergreen shrub whose berries are used as an herbal remedy",
+      "category": "biology",
+      "aliases": [
+        "Juniperus communis"
       ]
     },
     {
@@ -1544,6 +2836,29 @@
       "category": "medical"
     },
     {
+      "term": "ketogenic",
+      "plain": "able to be turned into ketones, a backup fuel the body burns when sugar runs short",
+      "category": "biology"
+    },
+    {
+      "term": "ketone bodies",
+      "plain": "backup fuel molecules the body makes from fat when sugar is running low",
+      "category": "chemistry",
+      "aliases": [
+        "ketone body",
+        "ketones"
+      ]
+    },
+    {
+      "term": "kidney stones",
+      "plain": "hard mineral lumps that form in the kidneys and can be very painful to pass",
+      "category": "nutrition",
+      "aliases": [
+        "kidney disease",
+        "kidney stone"
+      ]
+    },
+    {
       "term": "kinase",
       "plain": "an enzyme that switches proteins on or off by adding a phosphate group",
       "category": "medical",
@@ -1559,6 +2874,11 @@
         "korsakoff's",
         "korsakoff"
       ]
+    },
+    {
+      "term": "Kozak consensus sequence",
+      "plain": "the short pattern in the genetic code that tells the cell where to begin reading a gene",
+      "category": "biology"
     },
     {
       "term": "Krebs cycle",
@@ -1579,6 +2899,14 @@
       "category": "medical"
     },
     {
+      "term": "L-Dopa",
+      "plain": "a compound one step closer to dopamine, used as a medicine for Parkinson's disease",
+      "category": "medical",
+      "aliases": [
+        "levodopa"
+      ]
+    },
+    {
       "term": "laryngitis",
       "plain": "inflammation of the voice box",
       "category": "medical"
@@ -1589,9 +2917,30 @@
       "category": "nutrition"
     },
     {
+      "term": "legume",
+      "plain": "a plant in the bean and pea family",
+      "category": "biology"
+    },
+    {
       "term": "leptospirosis",
       "plain": "a bacterial infection spread through animal urine",
       "category": "medical"
+    },
+    {
+      "term": "lesion",
+      "plain": "a sore or damaged patch on the skin or inside the body",
+      "category": "biology",
+      "aliases": [
+        "lesions"
+      ]
+    },
+    {
+      "term": "leucine",
+      "plain": "one of the essential amino acids the body must get from food",
+      "category": "nutrition",
+      "aliases": [
+        "Leu"
+      ]
     },
     {
       "term": "leukemia",
@@ -1648,9 +2997,24 @@
       ]
     },
     {
+      "term": "lithium",
+      "plain": "a mineral used in very small amounts and linked to steadying mood",
+      "category": "nutrition"
+    },
+    {
       "term": "lithium carbonate",
       "plain": "the prescription drug form of lithium used for mood disorders",
       "category": "medical"
+    },
+    {
+      "term": "lithotripter",
+      "plain": "a machine that uses sound waves to shatter stones without surgery",
+      "category": "biology"
+    },
+    {
+      "term": "live cell therapy",
+      "plain": "an unconventional treatment that injects cells taken from animal tissue",
+      "category": "biology"
     },
     {
       "term": "lordosis",
@@ -1666,12 +3030,37 @@
       ]
     },
     {
+      "term": "lye",
+      "plain": "A strong, caustic substance used to soak corn so the body can absorb its nutrients",
+      "category": "nutrition"
+    },
+    {
       "term": "lymphokine",
       "plain": "a signaling molecule released by immune cells to coordinate a response",
       "category": "biology",
       "aliases": [
         "lymphokines"
       ]
+    },
+    {
+      "term": "lysine",
+      "plain": "one of the essential amino acids the body must get from food",
+      "category": "nutrition",
+      "aliases": [
+        "1-Lysine",
+        "L-Lysine",
+        "Lys"
+      ]
+    },
+    {
+      "term": "lysine contingency",
+      "plain": "a made-up movie idea of building animals so they cannot make their own lysine",
+      "category": "biology"
+    },
+    {
+      "term": "lysyl oxidase",
+      "plain": "the enzyme that welds collagen and elastin fibers together for strength",
+      "category": "biology"
     },
     {
       "term": "macrophage",
@@ -1687,6 +3076,21 @@
       "category": "medical"
     },
     {
+      "term": "macular degeneration",
+      "plain": "loss of central vision caused by damage to the part of the eye that sees fine detail",
+      "category": "biology"
+    },
+    {
+      "term": "magnesium",
+      "plain": "a mineral the body needs for muscles, nerves, and bones",
+      "category": "nutrition"
+    },
+    {
+      "term": "maintenance",
+      "plain": "a smaller steady dose taken afterward to keep the results going",
+      "category": "biology"
+    },
+    {
       "term": "malabsorption",
       "plain": "poor absorption of nutrients from the digestive tract",
       "category": "medical"
@@ -1700,9 +3104,48 @@
       ]
     },
     {
+      "term": "mammalian target of rapamycin",
+      "plain": "A master control protein, usually shortened to mTOR, that tells cells when to grow and build",
+      "category": "biology",
+      "aliases": [
+        "mTOR",
+        "mTOR kinase",
+        "mammalian target of rapamycin kinase"
+      ]
+    },
+    {
+      "term": "mammals",
+      "plain": "warm-blooded animals, including people, that feed their young milk",
+      "category": "biology"
+    },
+    {
+      "term": "manganese",
+      "plain": "a trace mineral that plants and the body need in tiny amounts",
+      "category": "nutrition",
+      "aliases": [
+        "manganese clusters"
+      ]
+    },
+    {
+      "term": "mania",
+      "plain": "a period of abnormally high, over-excited mood and energy",
+      "category": "biology",
+      "aliases": [
+        "manic"
+      ]
+    },
+    {
       "term": "manic-depression",
       "plain": "an older name for bipolar disorder",
       "category": "medical"
+    },
+    {
+      "term": "Maple Syrup Urine Disease",
+      "plain": "an inherited disorder in which branched-chain protein building blocks pile up, giving the urine a sweet, syrup-like smell",
+      "category": "medical",
+      "aliases": [
+        "MSUD"
+      ]
     },
     {
       "term": "megaloblastic",
@@ -1756,6 +3199,39 @@
       ]
     },
     {
+      "term": "mercury fillings",
+      "plain": "old silver-colored tooth fillings that contain the toxic metal mercury",
+      "category": "biology",
+      "aliases": [
+        "amalgam",
+        "amalgam fillings",
+        "mercury (amalgam) fillings"
+      ]
+    },
+    {
+      "term": "mercury poisoning",
+      "plain": "illness caused by too much of the toxic metal mercury in the body",
+      "category": "biology"
+    },
+    {
+      "term": "messenger RNA",
+      "plain": "a working copy of a gene that carries its instructions to the protein-building machinery",
+      "category": "biology",
+      "aliases": [
+        "mRNA"
+      ]
+    },
+    {
+      "term": "metabolism",
+      "plain": "the body's process of turning food into energy and building material",
+      "category": "biology",
+      "aliases": [
+        "metabolize",
+        "metabolized",
+        "metabolizes"
+      ]
+    },
+    {
       "term": "metalloenzyme",
       "plain": "an enzyme that needs a specific mineral to work",
       "category": "medical",
@@ -1767,6 +3243,14 @@
       "term": "metalloid",
       "plain": "an element with properties in between a metal and a non-metal",
       "category": "chemistry"
+    },
+    {
+      "term": "metalloproteins",
+      "plain": "proteins that carry a metal atom as part of how they work",
+      "category": "chemistry",
+      "aliases": [
+        "metalloprotein"
+      ]
     },
     {
       "term": "metamorphosis",
@@ -1787,9 +3271,19 @@
       "category": "nutrition"
     },
     {
+      "term": "methionine cycle",
+      "plain": "another name for the chain of steps that recycles methionine in the body and in plants",
+      "category": "biology"
+    },
+    {
       "term": "methotrexate",
       "plain": "a drug that blocks folate, used against cancer and psoriasis",
       "category": "medical"
+    },
+    {
+      "term": "methyl donor",
+      "plain": "a molecule that hands off a small chemical tag which turns body reactions on or off",
+      "category": "chemistry"
     },
     {
       "term": "methyl group",
@@ -1798,6 +3292,11 @@
       "aliases": [
         "methyl"
       ]
+    },
+    {
+      "term": "methylation",
+      "plain": "the body attaching a tiny chemical tag onto a molecule to switch a process on or off",
+      "category": "chemistry"
     },
     {
       "term": "methylcobalamin",
@@ -1820,6 +3319,15 @@
       ]
     },
     {
+      "term": "mg/kg",
+      "plain": "an amount of a substance scaled to a person's body weight",
+      "category": "biology",
+      "aliases": [
+        "mg per kilogram",
+        "milligrams per kilogram"
+      ]
+    },
+    {
       "term": "microcytic",
       "plain": "describing abnormally small red blood cells",
       "category": "medical"
@@ -1833,6 +3341,19 @@
       ]
     },
     {
+      "term": "millet",
+      "plain": "A small-seeded cereal grain eaten as a staple in parts of Asia and Africa",
+      "category": "biology"
+    },
+    {
+      "term": "mineral",
+      "plain": "a simple nutrient element, like iron or selenium, that the body needs from food",
+      "category": "nutrition",
+      "aliases": [
+        "minerals"
+      ]
+    },
+    {
       "term": "Mineral Toddy",
       "plain": "Historical name (1980s-90s) for the plant-derived colloidal mineral liquid Wallach built his framework around. Made by Rockland U.S.A. (Elmer Heinrich) from a prehistoric plant deposit. Distributed through Eagle, which was renamed SupraLife International in 1998. Wallach founded American Longevity in 1997 (today's Youngevity). Youngevity later acquired SupraLife; today's direct descendants in the Youngevity line are Ultra Body Toddy and Cal Toddy.",
       "category": "product-history",
@@ -1842,9 +3363,32 @@
       ]
     },
     {
+      "term": "molecule",
+      "plain": "a single tiny particle made of atoms joined together, the basic unit of a substance",
+      "category": "chemistry",
+      "aliases": [
+        "molecules"
+      ]
+    },
+    {
       "term": "molybdenite",
       "plain": "the main ore mineral from which molybdenum is obtained",
       "category": "chemistry"
+    },
+    {
+      "term": "molybdenum",
+      "plain": "a trace mineral the body needs in tiny amounts for certain enzymes",
+      "category": "nutrition"
+    },
+    {
+      "term": "monoamine",
+      "plain": "a class of small brain-signaling chemicals that includes dopamine and adrenaline",
+      "category": "chemistry"
+    },
+    {
+      "term": "morphine",
+      "plain": "a strong prescription painkiller",
+      "category": "biology"
     },
     {
       "term": "mucoprotein",
@@ -1857,11 +3401,40 @@
       "category": "medical"
     },
     {
+      "term": "mugwort",
+      "plain": "a plant used as a herbal remedy",
+      "category": "biology"
+    },
+    {
+      "term": "multiple sclerosis",
+      "plain": "a disease in which the body damages the protective coating on its own nerves",
+      "category": "medical",
+      "aliases": [
+        "MS"
+      ]
+    },
+    {
       "term": "muscular dystrophy",
       "plain": "a group of diseases causing progressive muscle weakness and wasting",
       "category": "medical",
       "aliases": [
         "dystrophy"
+      ]
+    },
+    {
+      "term": "muscular rigidity",
+      "plain": "stiff, tight muscles that resist being moved",
+      "category": "biology",
+      "aliases": [
+        "rigidity"
+      ]
+    },
+    {
+      "term": "Mycoplasma",
+      "plain": "a very tiny type of bacteria Wallach blames for triggering rheumatoid arthritis",
+      "category": "biology",
+      "aliases": [
+        "PPLO"
       ]
     },
     {
@@ -1872,8 +3445,7 @@
     {
       "term": "myelofibrosis",
       "plain": "scarring of the bone marrow that crowds out normal blood-cell production",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
     },
     {
       "term": "myeloma",
@@ -1899,12 +3471,22 @@
       "category": "biology"
     },
     {
+      "term": "Nature",
+      "plain": "a well-known scientific magazine where researchers publish new findings",
+      "category": "biology"
+    },
+    {
       "term": "necrosis",
       "plain": "death of body tissue",
       "category": "medical",
       "aliases": [
         "necrotic"
       ]
+    },
+    {
+      "term": "nervous system",
+      "plain": "the brain, spinal cord, and nerves that carry signals all around the body",
+      "category": "biology"
     },
     {
       "term": "neural tube",
@@ -1922,10 +3504,26 @@
       "category": "medical"
     },
     {
+      "term": "Neuro-Gen",
+      "plain": "A branded supplement product used in Wallach's nerve-support protocols",
+      "category": "nutrition",
+      "aliases": [
+        "NeuroGen"
+      ]
+    },
+    {
       "term": "neuroencephalopathy",
       "plain": "brain damage caused by a toxin",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
+    },
+    {
+      "term": "neurologic compromise",
+      "plain": "damage to, or failing of, the nerves and brain",
+      "category": "biology",
+      "aliases": [
+        "neurologic",
+        "neurological"
+      ]
     },
     {
       "term": "neuromuscular",
@@ -2001,9 +3599,73 @@
       "category": "biology"
     },
     {
+      "term": "nitrogen",
+      "plain": "a common chemical element found in every amino acid and protein",
+      "category": "nutrition"
+    },
+    {
+      "term": "non-essential amino acid",
+      "plain": "an amino acid the body can make on its own, so food is not strictly required",
+      "category": "nutrition",
+      "aliases": [
+        "non-essential"
+      ]
+    },
+    {
+      "term": "nonpolar",
+      "plain": "describes a part of a molecule that does not mix with water",
+      "category": "chemistry",
+      "aliases": [
+        "non-polar"
+      ]
+    },
+    {
+      "term": "norepinephrine",
+      "plain": "an alertness-and-stress chemical, also called noradrenaline",
+      "category": "chemistry",
+      "aliases": [
+        "noradrenaline"
+      ]
+    },
+    {
+      "term": "nucleophile",
+      "plain": "a reactive molecule that donates electrons to attack and break a chemical bond",
+      "category": "chemistry"
+    },
+    {
       "term": "nucleosynthesis",
       "plain": "the formation of chemical elements, as happens inside stars",
       "category": "chemistry"
+    },
+    {
+      "term": "nutrient",
+      "plain": "something in food the body needs to live and stay healthy",
+      "category": "biology",
+      "aliases": [
+        "nutrients"
+      ]
+    },
+    {
+      "term": "nutritional supplement",
+      "plain": "a product taken to add a nutrient the diet may be missing",
+      "category": "nutrition",
+      "aliases": [
+        "supplement",
+        "supplements"
+      ]
+    },
+    {
+      "term": "nystagmus",
+      "plain": "involuntary jerking or drifting movements of the eyes",
+      "category": "biology"
+    },
+    {
+      "term": "octacosanol",
+      "plain": "a natural waxy substance taken as a supplement for the nerves and muscles",
+      "category": "nutrition",
+      "aliases": [
+        "octocosanol"
+      ]
     },
     {
       "term": "omphalocele",
@@ -2022,6 +3684,11 @@
       "term": "ophthalmoplegia",
       "plain": "paralysis of the eye muscles",
       "category": "medical"
+    },
+    {
+      "term": "oral",
+      "plain": "taken by mouth",
+      "category": "biology"
     },
     {
       "term": "organelle",
@@ -2103,9 +3770,22 @@
       ]
     },
     {
+      "term": "oxaloacetate",
+      "plain": "a molecule in the energy cycle that can serve as a starting point for making new blood sugar",
+      "category": "chemistry"
+    },
+    {
       "term": "oxidase",
       "plain": "an enzyme that drives a reaction using oxygen",
       "category": "biology"
+    },
+    {
+      "term": "oxidation",
+      "plain": "breaking a molecule down with oxygen to release its stored energy",
+      "category": "chemistry",
+      "aliases": [
+        "oxidize"
+      ]
     },
     {
       "term": "oxidation-reduction",
@@ -2116,6 +3796,27 @@
       "term": "oxidative stress",
       "plain": "cell damage caused by an excess of unstable molecules called free radicals",
       "category": "biology"
+    },
+    {
+      "term": "oxidized",
+      "plain": "having lost electrons, leaving a molecule needing to be re-charged",
+      "category": "chemistry"
+    },
+    {
+      "term": "oxyhemoglobin",
+      "plain": "hemoglobin that is carrying oxygen",
+      "category": "biology",
+      "aliases": [
+        "oxyhaemoglobin"
+      ]
+    },
+    {
+      "term": "PABA",
+      "plain": "para-aminobenzoic acid, a compound related to the B vitamins",
+      "category": "nutrition",
+      "aliases": [
+        "para-aminobenzoic acid"
+      ]
     },
     {
       "term": "pagophagia",
@@ -2170,8 +3871,7 @@
           "WAL-CLM-RARE-000071"
         ],
         "approved": "Luneth 2026-07-21 (manual override + review)"
-      },
-      "aliases": []
+      }
     },
     {
       "term": "paresthesia",
@@ -2179,9 +3879,35 @@
       "category": "medical"
     },
     {
+      "term": "Parkinson's disease",
+      "plain": "a brain disease that causes tremors and stiff, slow movement",
+      "category": "medical",
+      "aliases": [
+        "Parkinson's",
+        "Parkinsons disease",
+        "true Parkinson's disease"
+      ]
+    },
+    {
       "term": "parkinsonian",
       "plain": "resembling Parkinson's disease — tremors, stiffness, and slowed movement",
       "category": "medical"
+    },
+    {
+      "term": "Parkinsonism",
+      "plain": "A set of Parkinson's-like symptoms—stiffness, slowed movement, and shaking—that can have several causes",
+      "category": "biology",
+      "aliases": [
+        "drug-induced Parkinsonism"
+      ]
+    },
+    {
+      "term": "pathway",
+      "plain": "a chain of chemical steps the body or a plant follows to make or break down a substance",
+      "category": "chemistry",
+      "aliases": [
+        "pathways"
+      ]
     },
     {
       "term": "pediculosis",
@@ -2237,6 +3963,29 @@
       "category": "biology"
     },
     {
+      "term": "phenol group",
+      "plain": "a ring-shaped part of tyrosine that gives it its special chemical behavior",
+      "category": "chemistry",
+      "aliases": [
+        "phenol chemistry",
+        "phenol functionality",
+        "phenolic"
+      ]
+    },
+    {
+      "term": "phenothiazines",
+      "plain": "A class of prescription drugs, mainly for mental illness, that can trigger Parkinson-like symptoms",
+      "category": "biology",
+      "aliases": [
+        "phenothiazine"
+      ]
+    },
+    {
+      "term": "phenylacetaldehyde",
+      "plain": "a sweet-smelling chemical used as a raw material to build other chemicals",
+      "category": "chemistry"
+    },
+    {
       "term": "phenylalanine",
       "plain": "an essential amino acid and a building block of protein",
       "category": "nutrition"
@@ -2245,6 +3994,11 @@
       "term": "phenylketonuria",
       "plain": "an inherited inability to process the amino acid phenylalanine",
       "category": "medical"
+    },
+    {
+      "term": "Phenylketonurics",
+      "plain": "people who have PKU and cannot process phenylalanine",
+      "category": "biology"
     },
     {
       "term": "phlebitis",
@@ -2262,6 +4016,14 @@
       "category": "chemistry"
     },
     {
+      "term": "phosphate group",
+      "plain": "a small cluster of atoms that cells attach to a protein as an on-or-off tag",
+      "category": "chemistry",
+      "aliases": [
+        "phosphate groups"
+      ]
+    },
+    {
       "term": "phosphatidylcholine",
       "plain": "the main choline-containing fat in cell membranes and the active part of lecithin",
       "category": "biology",
@@ -2275,14 +4037,38 @@
       "category": "biology"
     },
     {
+      "term": "phosphorus",
+      "plain": "a mineral found in bones and in many everyday foods",
+      "category": "nutrition"
+    },
+    {
       "term": "phosphorylase",
       "plain": "an enzyme that breaks down stored sugar (glycogen) for energy",
       "category": "biology"
     },
     {
+      "term": "phosphorylation",
+      "plain": "adding a phosphate tag to a molecule, which often switches it on or off",
+      "category": "chemistry"
+    },
+    {
       "term": "photophobia",
       "plain": "abnormal discomfort or sensitivity of the eyes to light",
       "category": "medical"
+    },
+    {
+      "term": "photosynthesis",
+      "plain": "the process plants use to turn sunlight into food energy",
+      "category": "biology"
+    },
+    {
+      "term": "photosystem",
+      "plain": "a light-capturing protein cluster inside a plant that powers photosynthesis",
+      "category": "biology",
+      "aliases": [
+        "photosystem II",
+        "photosystem Il"
+      ]
     },
     {
       "term": "phylloquinone",
@@ -2304,6 +4090,30 @@
       "category": "nutrition"
     },
     {
+      "term": "pigment",
+      "plain": "a substance that gives color to skin, hair, or eyes",
+      "category": "biology",
+      "aliases": [
+        "pigments"
+      ]
+    },
+    {
+      "term": "pill rolling tremor",
+      "plain": "A trembling of the thumb and finger that looks like rolling a small pill between them",
+      "category": "biology",
+      "aliases": [
+        "'pill rolling' tremor"
+      ]
+    },
+    {
+      "term": "placenta extracts",
+      "plain": "preparations made from the organ that nourishes a baby in the womb",
+      "category": "biology",
+      "aliases": [
+        "extracts of placenta"
+      ]
+    },
+    {
       "term": "plant derived",
       "plain": "The mineral's SOURCE, not its physical form: pulled from rock or soil by a living plant and rebuilt into an organic, cell-ready form your body can use — a step your body cannot do for itself. Wallach's contrast is 'metallic' minerals ground straight from rock: about 98% of the plant-processed form is absorbed, versus only 8–12% when the same minerals come as ground-up rock.",
       "category": "nutrition",
@@ -2315,10 +4125,13 @@
         "approved": "Luneth 2026-07-21 (manual override + review)"
       },
       "aliases": [
-        "plant-derived",
-        "plant derived minerals",
-        "plant-derived minerals"
+        "plant derived minerals"
       ]
+    },
+    {
+      "term": "plant hormone",
+      "plain": "a natural chemical that controls how a plant grows, flowers, or ripens",
+      "category": "chemistry"
     },
     {
       "term": "platelet",
@@ -2334,9 +4147,27 @@
       "category": "medical"
     },
     {
+      "term": "pleuropneumonia-like organism",
+      "plain": "the full name behind the abbreviation PPLO, a kind of very small bacteria",
+      "category": "biology"
+    },
+    {
+      "term": "PMS",
+      "plain": "the mood and body symptoms some women get in the days before a period",
+      "category": "biology",
+      "aliases": [
+        "premenstrual syndrome"
+      ]
+    },
+    {
       "term": "pneumonitis",
       "plain": "inflammation of lung tissue",
       "category": "medical"
+    },
+    {
+      "term": "polar",
+      "plain": "describes a molecule whose electric charge sits unevenly, which lets it mix easily with water",
+      "category": "chemistry"
     },
     {
       "term": "polycythemia",
@@ -2367,6 +4198,16 @@
       "category": "medical"
     },
     {
+      "term": "post-translational modification",
+      "plain": "a change the body makes to a protein after it has finished building it",
+      "category": "biology",
+      "aliases": [
+        "post-transitional modification",
+        "post-transitional modifications",
+        "post-translational modifications"
+      ]
+    },
+    {
       "term": "precursor",
       "plain": "a substance the body converts into another substance",
       "category": "biology"
@@ -2374,6 +4215,11 @@
     {
       "term": "prediabetes",
       "plain": "blood sugar that is higher than normal but not yet in the diabetes range",
+      "category": "medical"
+    },
+    {
+      "term": "prednisone",
+      "plain": "a steroid medicine used to calm inflammation",
       "category": "medical"
     },
     {
@@ -2385,14 +4231,55 @@
       ]
     },
     {
+      "term": "protein",
+      "plain": "a large molecule the body builds from amino acids to form and run its tissues",
+      "category": "nutrition",
+      "aliases": [
+        "protein production",
+        "proteins"
+      ]
+    },
+    {
+      "term": "protein synthesis",
+      "plain": "the body's process of building proteins from their building blocks",
+      "category": "biology"
+    },
+    {
+      "term": "proteinogenic",
+      "plain": "used as one of the standard building blocks the body strings together to make proteins",
+      "category": "biology",
+      "aliases": [
+        "protein-building",
+        "protein-building amino acids"
+      ]
+    },
+    {
       "term": "proteinuria",
       "plain": "protein leaking into the urine",
       "category": "medical"
     },
     {
+      "term": "proteolytic enzymes",
+      "plain": "enzymes that break proteins down into smaller pieces",
+      "category": "biology"
+    },
+    {
       "term": "prothrombin",
       "plain": "the inactive blood protein the body converts into thrombin to make a clot",
       "category": "medical"
+    },
+    {
+      "term": "proton",
+      "plain": "a tiny positively charged particle that a molecule can give up",
+      "category": "chemistry",
+      "aliases": [
+        "protons"
+      ]
+    },
+    {
+      "term": "proton shuttle",
+      "plain": "a molecule that quickly carries hydrogen particles from one place to another",
+      "category": "chemistry"
     },
     {
       "term": "provitamin",
@@ -2426,6 +4313,11 @@
       "category": "anatomy"
     },
     {
+      "term": "pulse test",
+      "plain": "a simple self-test that watches for a jump in heart rate after eating a suspected food",
+      "category": "biology"
+    },
+    {
       "term": "pyridine",
       "plain": "a ring-shaped chemical structure that forms part of the niacin molecule",
       "category": "chemistry"
@@ -2453,6 +4345,21 @@
       ]
     },
     {
+      "term": "quercetin",
+      "plain": "a plant pigment taken as a supplement for its antioxidant effect",
+      "category": "nutrition"
+    },
+    {
+      "term": "radical",
+      "plain": "a highly reactive molecule left with an unpaired electron",
+      "category": "chemistry"
+    },
+    {
+      "term": "rate-limiting enzyme",
+      "plain": "the slowest step in a chain of reactions, which sets how fast the whole process can go",
+      "category": "biology"
+    },
+    {
       "term": "RDA",
       "plain": "the government's Recommended Dietary Allowance — a bare-minimum intake meant only to prevent deficiency disease, which Wallach considers far too low for real health",
       "category": "nutrition",
@@ -2466,9 +4373,45 @@
       "category": "biology"
     },
     {
+      "term": "red blood cells",
+      "plain": "the cells in blood whose main job is carrying oxygen to the rest of the body",
+      "category": "biology",
+      "aliases": [
+        "red blood cell"
+      ]
+    },
+    {
       "term": "redox",
       "plain": "a reaction in which electrons pass from one molecule to another",
       "category": "medical"
+    },
+    {
+      "term": "reduce in chemistry",
+      "plain": "to give electrons back to a molecule, re-charging it",
+      "category": "chemistry",
+      "aliases": [
+        "reduced",
+        "reduction"
+      ]
+    },
+    {
+      "term": "remission",
+      "plain": "a stretch of time when a disease goes quiet and causes no symptoms",
+      "category": "medical"
+    },
+    {
+      "term": "reserpine",
+      "plain": "an older prescription drug, once used for high blood pressure, that can trigger Parkinson-like symptoms",
+      "category": "biology"
+    },
+    {
+      "term": "residue",
+      "plain": "a single building block after it has been joined into a protein chain",
+      "category": "biology",
+      "aliases": [
+        "residues",
+        "threonine residue"
+      ]
     },
     {
       "term": "retinol",
@@ -2486,15 +4429,27 @@
       "category": "medical"
     },
     {
+      "term": "ribavirin",
+      "plain": "an antiviral medicine",
+      "category": "biology"
+    },
+    {
       "term": "riboflavin",
       "plain": "another name for vitamin B2",
       "category": "nutrition"
     },
     {
+      "term": "ribosome",
+      "plain": "the tiny machine inside a cell that reads the genetic code and assembles proteins",
+      "category": "biology",
+      "aliases": [
+        "ribosomes"
+      ]
+    },
+    {
       "term": "rock flour",
       "plain": "Rock ground by a glacier into a powder as fine as flour or clay — the fine mineral dust suspended in 'Glacial Milk.'",
-      "category": "science",
-      "aliases": []
+      "category": "science"
     },
     {
       "term": "Rockland U.S.A.",
@@ -2502,6 +4457,25 @@
       "category": "product-history",
       "aliases": [
         "Rockland"
+      ]
+    },
+    {
+      "term": "rotation diet",
+      "plain": "an eating plan that rotates foods to spot or avoid ones that cause trouble",
+      "category": "biology",
+      "aliases": [
+        "rotation",
+        "rotation diets",
+        "rotation elimination diet"
+      ]
+    },
+    {
+      "term": "S-adenosyl methionine",
+      "plain": "the active form of methionine that carries a small chemical tag the body uses to switch reactions on or off; its short name is SAM",
+      "category": "chemistry",
+      "aliases": [
+        "S-adenosylmethionine",
+        "SAM"
       ]
     },
     {
@@ -2518,6 +4492,11 @@
       "term": "sarcopenia",
       "plain": "the age-related loss of muscle mass and strength",
       "category": "medical"
+    },
+    {
+      "term": "scanning speech",
+      "plain": "slow, halting speech with pauses between syllables",
+      "category": "biology"
     },
     {
       "term": "sclerosis",
@@ -2543,9 +4522,29 @@
       "category": "biology"
     },
     {
+      "term": "selenium",
+      "plain": "a mineral the body needs in tiny amounts to protect its cells; it can take the place of sulfur in methionine",
+      "category": "nutrition"
+    },
+    {
+      "term": "selenomethionine",
+      "plain": "a form of methionine that carries the mineral selenium; a common way selenium is delivered in food and supplements",
+      "category": "nutrition"
+    },
+    {
       "term": "semiconductor",
       "plain": "a material that conducts electricity partially — the basis of computer chips",
       "category": "chemistry"
+    },
+    {
+      "term": "serine",
+      "plain": "an amino acid that histidine can switch on inside an enzyme",
+      "category": "nutrition"
+    },
+    {
+      "term": "serine dehydrogenase",
+      "plain": "an enzyme that sends threonine down an alternate breakdown route",
+      "category": "biology"
     },
     {
       "term": "serotonin",
@@ -2553,14 +4552,70 @@
       "category": "biology"
     },
     {
+      "term": "shaking palsy",
+      "plain": "an old name for Parkinson's disease, describing its trembling and stiffness",
+      "category": "medical"
+    },
+    {
+      "term": "shingles",
+      "plain": "a painful, blistering rash that follows the path of a nerve",
+      "category": "biology"
+    },
+    {
+      "term": "sickle-cell disease",
+      "plain": "an inherited blood disorder in which red blood cells turn stiff and crescent-shaped, making it hard for them to carry oxygen",
+      "category": "medical",
+      "aliases": [
+        "sickle-cell"
+      ]
+    },
+    {
+      "term": "signal transduction",
+      "plain": "the way a cell passes an incoming message along inside itself to trigger a response",
+      "category": "biology"
+    },
+    {
+      "term": "signaling molecule",
+      "plain": "a chemical the body uses to carry a message from one place to another",
+      "category": "chemistry",
+      "aliases": [
+        "monoamine signaling molecules",
+        "signaling chemicals",
+        "signaling molecules"
+      ]
+    },
+    {
       "term": "sinusitis",
       "plain": "inflammation of the sinuses",
       "category": "medical"
     },
     {
+      "term": "sleep aid",
+      "plain": "something taken to help a person fall asleep",
+      "category": "biology"
+    },
+    {
+      "term": "snake venom injections",
+      "plain": "shots of treated snake poison used as an unconventional treatment",
+      "category": "biology"
+    },
+    {
+      "term": "sorghum",
+      "plain": "A cereal grain eaten as a staple food in parts of Africa and Asia",
+      "category": "biology"
+    },
+    {
       "term": "sphingomyelin",
       "plain": "a fatty compound that forms part of the protective sheath around nerves",
       "category": "biology"
+    },
+    {
+      "term": "spider veins",
+      "plain": "small, thread-like veins visible just under the skin",
+      "category": "biology",
+      "aliases": [
+        "spider vein"
+      ]
     },
     {
       "term": "spina bifida",
@@ -2578,6 +4633,24 @@
       "category": "medical"
     },
     {
+      "term": "stabilization",
+      "plain": "making something hold together steadily rather than fall apart",
+      "category": "biology",
+      "aliases": [
+        "stabilize",
+        "stabilizes"
+      ]
+    },
+    {
+      "term": "Start signal",
+      "plain": "the marker in the genetic code that tells the cell where to begin building a protein",
+      "category": "biology",
+      "aliases": [
+        "Start",
+        "start codon"
+      ]
+    },
+    {
       "term": "steatohepatitis",
       "plain": "fatty inflammation of the liver",
       "category": "medical"
@@ -2593,9 +4666,34 @@
       "category": "medical"
     },
     {
+      "term": "steroid compounds",
+      "plain": "A family of fat-based body chemicals, including some hormones, built from the same waxy backbone as cholesterol",
+      "category": "chemistry",
+      "aliases": [
+        "steroid",
+        "steroids"
+      ]
+    },
+    {
       "term": "sterol",
       "plain": "a family of fat-related compounds; cholesterol and vitamin D are sterols",
       "category": "chemistry"
+    },
+    {
+      "term": "stinging nettle",
+      "plain": "a wild plant used as an herbal remedy for joint problems",
+      "category": "biology",
+      "aliases": [
+        "Urtica dioica"
+      ]
+    },
+    {
+      "term": "stocking and glove",
+      "plain": "a numbness pattern in the feet and hands, as if wearing socks and gloves",
+      "category": "biology",
+      "aliases": [
+        "stocking and glove pattern"
+      ]
     },
     {
       "term": "stomatitis",
@@ -2603,9 +4701,49 @@
       "category": "medical"
     },
     {
+      "term": "stress hormone",
+      "plain": "a chemical the body releases when it is under stress",
+      "category": "chemistry",
+      "aliases": [
+        "stress hormone levels"
+      ]
+    },
+    {
       "term": "subcutaneous",
       "plain": "located or given just under the skin",
       "category": "medical"
+    },
+    {
+      "term": "subunit",
+      "plain": "one of the separate pieces that join together to form a complete protein",
+      "category": "biology",
+      "aliases": [
+        "subunits"
+      ]
+    },
+    {
+      "term": "succinyl coenzyme A",
+      "plain": "a helper molecule that carries fuel into the body's main energy-producing cycle",
+      "category": "chemistry",
+      "aliases": [
+        "Succinyl CoA"
+      ]
+    },
+    {
+      "term": "sulfur",
+      "plain": "a yellow nutrient element the body needs, found built into methionine",
+      "category": "nutrition",
+      "aliases": [
+        "sulphur"
+      ]
+    },
+    {
+      "term": "sulfur-containing",
+      "plain": "having sulfur, a yellow nutrient element the body needs, built into its structure",
+      "category": "nutrition",
+      "aliases": [
+        "sulphur-containing"
+      ]
     },
     {
       "term": "superoxide dismutase",
@@ -2630,6 +4768,15 @@
       "category": "biology",
       "aliases": [
         "surfactants"
+      ]
+    },
+    {
+      "term": "sweet vernal grass",
+      "plain": "a fragrant grass used here as an herbal remedy",
+      "category": "biology",
+      "aliases": [
+        "Anthoxanthum odoratum",
+        "sweat vernal grass"
       ]
     },
     {
@@ -2673,6 +4820,11 @@
       "category": "medical"
     },
     {
+      "term": "taurine",
+      "plain": "a substance found in the body and in energy drinks that supports the heart, eyes, and nerves",
+      "category": "biology"
+    },
+    {
       "term": "telomere",
       "plain": "the protective cap on the end of a chromosome",
       "category": "medical",
@@ -2689,6 +4841,14 @@
       "term": "tetany",
       "plain": "muscle cramps and spasms, often from low calcium",
       "category": "medical"
+    },
+    {
+      "term": "tetracyclines",
+      "plain": "a family of antibiotics that kill bacteria",
+      "category": "biology",
+      "aliases": [
+        "tetracycline"
+      ]
     },
     {
       "term": "thiaminase",
@@ -2711,6 +4871,29 @@
         "TPP",
         "cocarboxylase"
       ]
+    },
+    {
+      "term": "thiolysis",
+      "plain": "a splitting reaction that uses a sulfur-containing helper to break a molecule apart",
+      "category": "chemistry"
+    },
+    {
+      "term": "threonine",
+      "plain": "one of the essential amino acids the body must get from food",
+      "category": "nutrition",
+      "aliases": [
+        "Thr"
+      ]
+    },
+    {
+      "term": "threonine dehydrogenase",
+      "plain": "an enzyme that starts breaking threonine down",
+      "category": "biology"
+    },
+    {
+      "term": "threonine kinase",
+      "plain": "an enzyme that adds a phosphate tag onto threonine",
+      "category": "biology"
     },
     {
       "term": "thrombin",
@@ -2737,11 +4920,24 @@
       "category": "anatomy"
     },
     {
+      "term": "thyroid hormone",
+      "plain": "the chemical the thyroid gland releases to control how fast the body uses energy",
+      "category": "anatomy"
+    },
+    {
       "term": "thyroxine",
       "plain": "the main thyroid hormone, built from iodine",
       "category": "biology",
       "aliases": [
         "thyroxin"
+      ]
+    },
+    {
+      "term": "time-release",
+      "plain": "made to dissolve and release slowly over hours instead of all at once",
+      "category": "biology",
+      "aliases": [
+        "time-release tablets"
       ]
     },
     {
@@ -2751,6 +4947,19 @@
       "aliases": [
         "tinnitis"
       ]
+    },
+    {
+      "term": "tissue",
+      "plain": "a group of similar cells forming a part of the body, such as skin or muscle",
+      "category": "biology",
+      "aliases": [
+        "tissues"
+      ]
+    },
+    {
+      "term": "to effect",
+      "plain": "raising the dose bit by bit until it produces the result you want",
+      "category": "biology"
     },
     {
       "term": "tocopherol",
@@ -2773,6 +4982,21 @@
       "category": "medical"
     },
     {
+      "term": "topical",
+      "plain": "put directly onto the skin rather than swallowed",
+      "category": "biology"
+    },
+    {
+      "term": "toxicity",
+      "plain": "harm caused by too much of a substance",
+      "category": "biology",
+      "aliases": [
+        "toxic",
+        "toxin",
+        "toxins"
+      ]
+    },
+    {
       "term": "toxoplasmosis",
       "plain": "a parasite infection, especially risky in pregnancy",
       "category": "medical"
@@ -2785,6 +5009,33 @@
     {
       "term": "transaminase",
       "plain": "a vitamin-B6-dependent enzyme that helps build and recycle amino acids",
+      "category": "biology"
+    },
+    {
+      "term": "transamination",
+      "plain": "swapping the nitrogen-containing part from one molecule onto another",
+      "category": "chemistry"
+    },
+    {
+      "term": "translation",
+      "plain": "the step where a cell reads genetic instructions and builds a protein from them",
+      "category": "biology",
+      "aliases": [
+        "protein translation",
+        "translating"
+      ]
+    },
+    {
+      "term": "tremor",
+      "plain": "an uncontrollable shaking or trembling of part of the body",
+      "category": "biology",
+      "aliases": [
+        "tremors"
+      ]
+    },
+    {
+      "term": "tricosiverin",
+      "plain": "the iron-based pigment that gives red hair its color",
       "category": "biology"
     },
     {
@@ -2806,6 +5057,21 @@
       "category": "nutrition"
     },
     {
+      "term": "trypsin",
+      "plain": "a digestive enzyme that breaks proteins down",
+      "category": "biology"
+    },
+    {
+      "term": "tryptophan",
+      "plain": "an amino acid the body uses to make a mood-and-sleep brain chemical",
+      "category": "nutrition",
+      "aliases": [
+        "1-tryptophane",
+        "L-tryptophan",
+        "L-tryptophane"
+      ]
+    },
+    {
       "term": "tuberculosis",
       "plain": "a contagious bacterial lung infection",
       "category": "medical"
@@ -2816,13 +5082,69 @@
       "category": "medical"
     },
     {
+      "term": "Tylosin",
+      "plain": "an antibiotic used mainly in animals, which Wallach suggests against the arthritis bacteria",
+      "category": "biology"
+    },
+    {
+      "term": "Type I / Type II",
+      "plain": "labels telling apart the herpes virus affecting the lips from the form affecting the genitals",
+      "category": "biology",
+      "aliases": [
+        "Type I",
+        "Type II"
+      ]
+    },
+    {
+      "term": "tyrosinase",
+      "plain": "the enzyme that turns tyrosine into the pigment melanin",
+      "category": "biology"
+    },
+    {
       "term": "tyrosine",
       "plain": "an amino acid the thyroid combines with iodine to make its hormones",
       "category": "biology"
     },
     {
+      "term": "tyrosine hydroxylase",
+      "plain": "the enzyme that starts turning tyrosine into brain-signaling chemicals, and the slow step that limits how fast that happens",
+      "category": "chemistry"
+    },
+    {
+      "term": "ulcer",
+      "plain": "an open sore on the skin or on a body lining",
+      "category": "biology",
+      "aliases": [
+        "ulcers"
+      ]
+    },
+    {
+      "term": "ultrasound",
+      "plain": "high-pitched sound waves used to see inside the body or, here, to break up stones",
+      "category": "biology"
+    },
+    {
       "term": "ultraviolet",
       "plain": "the invisible part of sunlight that triggers vitamin D production in skin",
+      "category": "biology"
+    },
+    {
+      "term": "ultraviolet light",
+      "plain": "an invisible part of sunlight, here shone directly onto a sore",
+      "category": "biology",
+      "aliases": [
+        "UV",
+        "UV light"
+      ]
+    },
+    {
+      "term": "upper-respiratory infection",
+      "plain": "an infection of the nose, throat, or sinuses, like a cold",
+      "category": "medical"
+    },
+    {
+      "term": "ureter",
+      "plain": "the tube that carries urine from the kidney down to the bladder",
       "category": "biology"
     },
     {
@@ -2836,6 +5158,20 @@
       "category": "nutrition"
     },
     {
+      "term": "valine",
+      "plain": "one of the essential amino acids the body must get from food",
+      "category": "nutrition",
+      "aliases": [
+        "DL-valine",
+        "Val"
+      ]
+    },
+    {
+      "term": "vanadium",
+      "plain": "a trace mineral involved in blood-sugar control",
+      "category": "nutrition"
+    },
+    {
       "term": "vanadyl sulfate",
       "plain": "a common supplement form of the mineral vanadium",
       "category": "nutrition"
@@ -2846,21 +5182,72 @@
       "category": "medical"
     },
     {
+      "term": "varicose veins",
+      "plain": "swollen, twisted veins, usually seen in the legs",
+      "category": "biology"
+    },
+    {
       "term": "vascular",
       "plain": "relating to the body's blood vessels",
       "category": "medical"
     },
     {
+      "term": "veterinary medicine",
+      "plain": "the branch of medicine that treats animals",
+      "category": "biology"
+    },
+    {
       "term": "Virgin Earth",
       "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
-      "category": "product-history",
-      "aliases": []
+      "category": "product-history"
+    },
+    {
+      "term": "vitamin",
+      "plain": "one of the natural substances the body needs in small amounts to work properly",
+      "category": "biology",
+      "aliases": [
+        "vitamins"
+      ]
+    },
+    {
+      "term": "vitamin A",
+      "plain": "a vitamin needed for eyesight, skin, and growth",
+      "category": "nutrition"
+    },
+    {
+      "term": "vitamin B-12",
+      "plain": "one of the B vitamins, needed for the nerves and blood",
+      "category": "nutrition",
+      "aliases": [
+        "B-12",
+        "B12",
+        "vitamin B12"
+      ]
+    },
+    {
+      "term": "vitamin C",
+      "plain": "a vitamin that supports the immune system and helps the body build collagen",
+      "category": "nutrition"
+    },
+    {
+      "term": "vitamin D",
+      "plain": "a vitamin the body can make from sunlight, important for strong bones",
+      "category": "nutrition"
+    },
+    {
+      "term": "vitamin E",
+      "plain": "a vitamin that helps protect the body's cells from damage",
+      "category": "nutrition"
+    },
+    {
+      "term": "vitiligo",
+      "plain": "a condition in which patches of skin lose their color",
+      "category": "medical"
     },
     {
       "term": "Wallach's Fibrous Dysplasia",
       "plain": "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
-      "category": "medical",
-      "aliases": []
+      "category": "medical"
     },
     {
       "term": "warfarin",
@@ -2886,6 +5273,20 @@
       "term": "xerophthalmia",
       "plain": "severe eye dryness and damage caused by vitamin A deficiency",
       "category": "medical"
+    },
+    {
+      "term": "yellow lupine",
+      "plain": "a yellow-flowered plant in the bean and pea family",
+      "category": "biology",
+      "aliases": [
+        "Lupinus luteus",
+        "lupine"
+      ]
+    },
+    {
+      "term": "zinc",
+      "plain": "a mineral the body needs for healing, immunity, and many enzymes",
+      "category": "nutrition"
     },
     {
       "term": "Zumbani",

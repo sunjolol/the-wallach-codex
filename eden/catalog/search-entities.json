@@ -3313,6 +3313,234 @@
         "pellagra",
         "5-htp"
       ]
+    },
+    "phenylalanine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "phenylalanine",
+        "l-phenylalanine",
+        "dl-phenylalanine",
+        "dlpa",
+        "d-phenylalanine",
+        "phe",
+        "phenylalanine supplement",
+        "phenylalanine amino acid",
+        "phenylalanine deficiency",
+        "what is phenylalanine",
+        "phenylalanine for depression"
+      ],
+      "related": [
+        "als",
+        "arginine",
+        "cholesterol",
+        "chromium",
+        "copper",
+        "depression",
+        "hypoglycemia",
+        "inositol",
+        "insomnia",
+        "pain",
+        "pms",
+        "taurine",
+        "tryptophan",
+        "tyrosine",
+        "vanadium",
+        "vitiligo"
+      ]
+    },
+    "valine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "valine",
+        "l-valine",
+        "valine supplement",
+        "branched-chain amino acid",
+        "valine amino acid",
+        "valine deficiency",
+        "what is valine"
+      ],
+      "related": [
+        "histidine",
+        "inflammation",
+        "isoleucine",
+        "leucine",
+        "lysine",
+        "methionine",
+        "phenylalanine",
+        "threonine",
+        "tryptophan"
+      ]
+    },
+    "leucine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "leucine",
+        "l-leucine",
+        "leucine supplement",
+        "branched chain amino acid",
+        "bcaa",
+        "leucine amino acid",
+        "leucine deficiency",
+        "what is leucine",
+        "leucine for muscle",
+        "leucine muscle growth"
+      ],
+      "related": [
+        "cholesterol",
+        "isoleucine",
+        "methionine",
+        "pellagra",
+        "phenylalanine",
+        "tryptophan",
+        "tyrosine",
+        "valine"
+      ]
+    },
+    "histidine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "histidine",
+        "l-histidine",
+        "histidine supplement",
+        "histidine amino acid",
+        "histidine deficiency",
+        "what is histidine",
+        "histidine for arthritis"
+      ],
+      "related": [
+        "allergies",
+        "arthritis",
+        "lysine",
+        "methionine",
+        "tryptophan",
+        "valine"
+      ]
+    },
+    "methionine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "methionine",
+        "l-methionine",
+        "methionine supplement",
+        "methionine amino acid",
+        "methionine deficiency",
+        "sulfur amino acid",
+        "what is methionine",
+        "selenomethionine",
+        "s-adenosyl methionine"
+      ],
+      "related": [
+        "longevity",
+        "selenium",
+        "taurine"
+      ]
+    },
+    "threonine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "threonine",
+        "l-threonine",
+        "threonine supplement",
+        "threonine amino acid",
+        "threonine deficiency",
+        "what is threonine"
+      ],
+      "related": [
+        "epigenetics",
+        "histidine",
+        "isoleucine",
+        "leucine",
+        "lysine",
+        "methionine",
+        "phenylalanine",
+        "tryptophan",
+        "valine"
+      ]
+    },
+    "tyrosine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "tyrosine",
+        "l-tyrosine",
+        "tyrosine supplement",
+        "tyrosine amino acid",
+        "tyrosine deficiency",
+        "what is tyrosine",
+        "tyrosine for stress",
+        "tyrosine for depression",
+        "tyrosine for thyroid",
+        "n-acetyl-tyrosine"
+      ],
+      "related": [
+        "arginine",
+        "copper",
+        "goiter",
+        "iodine",
+        "molybdenum",
+        "phenylalanine",
+        "taurine"
+      ]
+    },
+    "isoleucine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "isoleucine",
+        "l-isoleucine",
+        "isoleucine supplement",
+        "branched chain amino acid",
+        "isoleucine amino acid",
+        "isoleucine deficiency",
+        "what is isoleucine"
+      ],
+      "related": [
+        "leucine",
+        "lysine",
+        "threonine",
+        "tryptophan",
+        "valine"
+      ]
+    },
+    "lysine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "lysine",
+        "l-lysine",
+        "lysine supplement",
+        "lysine amino acid",
+        "lysine deficiency",
+        "what is lysine",
+        "lysine for herpes",
+        "lysine for cold sores",
+        "high lysine foods",
+        "lysine for shingles"
+      ],
+      "related": [
+        "aneurysm",
+        "arginine",
+        "calcium",
+        "copper",
+        "hemorrhoids",
+        "histidine",
+        "magnesium",
+        "shingles",
+        "taurine",
+        "tyrosine",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
     }
   }
 }

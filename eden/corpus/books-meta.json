@@ -31,8 +31,8 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/rare-earths-forbidden-cures.txt",
-      "content_sha256": "dd55311f6808a5335a3e5a94ddb4028d08094233ddf8f604300f6ca09591129f",
-      "content_bytes": 1179098,
+      "content_sha256": "295fc117af4687f9da57d8c3419912c4d2480c3047ae6b58425953d2493a1756",
+      "content_bytes": 1179099,
       "line_count": 37984,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",
@@ -68,8 +68,8 @@
         "Gerhard N. Schrauzer"
       ],
       "file": "eden/corpus/books/epigenetics.txt",
-      "content_sha256": "6957bb3c7895898d16d0d9ebc653ddd9ab4373090dfb0667d96950b5bf8ee889",
-      "content_bytes": 1558887,
+      "content_sha256": "0bf5b8ec6ea88a53a63a17e14cf0542167a68dcce9df01c0dedcdf99be166ad2",
+      "content_bytes": 1558889,
       "line_count": 32107,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",

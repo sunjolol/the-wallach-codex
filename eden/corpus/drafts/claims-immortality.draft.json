@@ -13206,6 +13206,72 @@
       "extracted_at": "2026-07-27T03:06:37+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000386",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach relays that the selenium researcher Dr. Gerhard Schrauzer considered selenomethionine — the form of methionine in which a selenium atom replaces the sulfur — to be the '13th essential amino acid.' Selenomethionine is the compound that carries selenium on the methionine backbone, which is why it appears on supplement labels as a chelated, well-absorbed source of the mineral Wallach regards as one of the body's most important antioxidants.",
+      "verbatim": "Selenium researcher, Dr. Gerhard Schrauzer, considers selenomethionine,\nthe selenium analog of methionine the 13th essential amino acid.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 110527
+      },
+      "dose": null,
+      "tags": [
+        "methionine",
+        "selenomethionine",
+        "selenium",
+        "essential amino acids",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T05:56:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000387",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach links the grain a population eats to its pellagra risk. In corn-eating societies of Mexico, Central and South America, the corn is soaked in lye and wood ashes overnight, which frees its tryptophan for absorption so pellagra stays rare. By contrast, in India, where sorghum or millet is a common staple food, the diet carries high levels of leucine—and elsewhere Wallach warns that excessive leucine intake can itself produce a clinical pellagra. Together these are part of his explanation for why some grain-based diets breed the disease while others do not.",
+      "verbatim": "in India where sorghum\nor millet is a common food, high levels of leucine in the",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 121312
+      },
+      "dose": null,
+      "tags": [
+        "leucine",
+        "pellagra",
+        "diet",
+        "nutrition",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T05:56:12+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

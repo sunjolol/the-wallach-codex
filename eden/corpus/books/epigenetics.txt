@@ -21008,7 +21008,7 @@ Lysine
 
 Lysine (Lys) is an essential amino acid with the codons AAA and AAG. Lysine is
 a base, as are arginine and histidine. Lysine participates in hydrogen bonding
-and a general base in catalysis. Common post-transitional modifications of lysine
+and a general base in catalysis. Common post-translational modifications of lysine
 include methylation producing methyl-, dimethyl-, and trimethyllysine.
 
 Lysine in mammals is metabolized to produce acetyl-CoA through an initial
@@ -21075,7 +21075,7 @@ The codons for phenylalanine are UUU and UUC.
 
 The first reports of the isolation of phenylalanine were made in 1879 by
 Schulze and Barbieri, who isolated the amino acid from the yellow Lupine (Lupinus
-luteus). In 1882, Erienmeyer and Lipp first synthesized phenylalanine from
+luteus). In 1882, Erlenmeyer and Lipp first synthesized phenylalanine from
 phenylacetaldehyde, hydrogen cyanide and ammonia.
 
 Phenylalanine is a precursor for tyrosine, the monoamine signaling molecules
@@ -21129,7 +21129,7 @@ Threonine
 Threonine (Thr) is an alpha amino acid that is classified as polar; its codons
 are ACU, ACA, ACC, and ACG. Together with serine, threonine is one of only
 two proteinogenic amino acids that bear an alcohol group. The threonine
-residue is susceptible to numerous post-transitional modifications; it can undergo
+residue is susceptible to numerous post-translational modifications; it can undergo
 glycosylation and phosphorylation through the action of threonine kinase.
 Threonine is converted to pyruvate via threonine dehydrogenase, an
 
@@ -21191,7 +21191,7 @@ alters the activity of the target protein.
 In plants, tyrosine residues play an essential role in photosynthesis. In
 chloroplasts, tyrosine acts as an electron donor in the reduction of oxidized
 chlorophyll. In this process tyrosine undergoes deprotonation of its phenolic OH-
-group. This radical is ultimately reduced in the photosystem Il by the four core
+group. This radical is ultimately reduced in the photosystem II by the four core
 manganese clusters.
 
 Tyrosine phosphorylation is believed to be one of the key steps in signal

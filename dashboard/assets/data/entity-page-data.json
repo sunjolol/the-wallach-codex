@@ -12963,7 +12963,15 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "histidine",
+        "l-histidine",
+        "histidine supplement",
+        "histidine amino acid",
+        "histidine deficiency",
+        "what is histidine",
+        "histidine for arthritis"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12978,7 +12986,44 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000048"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000280"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000388"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000419"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000386"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000387"
+          ]
+        }
+      ],
       "conditions": [
         "arthritis",
         "rheumatoid_arthritis"
@@ -13006,7 +13051,15 @@
       "books": [
         "epigenetics"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "isoleucine",
+        "l-isoleucine",
+        "isoleucine supplement",
+        "branched chain amino acid",
+        "isoleucine amino acid",
+        "isoleucine deficiency",
+        "what is isoleucine"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -13015,7 +13068,38 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000389"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000390"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000049"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000281"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000391"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": []
@@ -13032,7 +13116,18 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "leucine",
+        "l-leucine",
+        "leucine supplement",
+        "branched chain amino acid",
+        "bcaa",
+        "leucine amino acid",
+        "leucine deficiency",
+        "what is leucine",
+        "leucine for muscle",
+        "leucine muscle growth"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13047,7 +13142,57 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000050"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000379",
+            "WAL-CLM-EPIGEN-000380"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000376"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000378"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000377"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000396"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000381"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000387"
+          ]
+        }
+      ],
       "conditions": [
         "parkinsonism"
       ],
@@ -13074,7 +13219,18 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "lysine",
+        "l-lysine",
+        "lysine supplement",
+        "lysine amino acid",
+        "lysine deficiency",
+        "what is lysine",
+        "lysine for herpes",
+        "lysine for cold sores",
+        "high lysine foods",
+        "lysine for shingles"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13091,7 +13247,58 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000372"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000373"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000051"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000277"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-LETS-000332"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000278",
+            "WAL-CLM-LETS-000202",
+            "WAL-CLM-LETS-000299"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000375"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000374"
+          ]
+        }
+      ],
       "conditions": [
         "aneurysm",
         "canker_sores",
@@ -13127,7 +13334,17 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "methionine",
+        "l-methionine",
+        "methionine supplement",
+        "methionine amino acid",
+        "methionine deficiency",
+        "sulfur amino acid",
+        "what is methionine",
+        "selenomethionine",
+        "s-adenosyl methionine"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13149,7 +13366,28 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000052"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000358",
+            "WAL-CLM-EPIGEN-000359",
+            "WAL-CLM-EPIGEN-000360"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000386"
+          ]
+        }
+      ],
       "conditions": [
         "anemia",
         "fatty_liver",
@@ -13183,7 +13421,19 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "phenylalanine",
+        "l-phenylalanine",
+        "dl-phenylalanine",
+        "dlpa",
+        "d-phenylalanine",
+        "phe",
+        "phenylalanine supplement",
+        "phenylalanine amino acid",
+        "phenylalanine deficiency",
+        "what is phenylalanine",
+        "phenylalanine for depression"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13205,7 +13455,61 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000361"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000367"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000053"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000365"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000366"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000274",
+            "WAL-CLM-LETS-000159",
+            "WAL-CLM-LETS-000244",
+            "WAL-CLM-LETS-000371",
+            "WAL-CLM-LETS-000462"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000362",
+            "WAL-CLM-EPIGEN-000364"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000363"
+          ]
+        }
+      ],
       "conditions": [
         "als",
         "bipolar_disorder",
@@ -13239,7 +13543,14 @@
       "books": [
         "epigenetics"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "threonine",
+        "l-threonine",
+        "threonine supplement",
+        "threonine amino acid",
+        "threonine deficiency",
+        "what is threonine"
+      ],
       "record": [
         {
           "kind": "mechanism",
@@ -13248,7 +13559,32 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000055"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000282"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000393"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000392"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": []
@@ -13399,7 +13735,18 @@
         "immortality",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "tyrosine",
+        "l-tyrosine",
+        "tyrosine supplement",
+        "tyrosine amino acid",
+        "tyrosine deficiency",
+        "what is tyrosine",
+        "tyrosine for stress",
+        "tyrosine for depression",
+        "tyrosine for thyroid",
+        "n-acetyl-tyrosine"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13428,7 +13775,52 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000368"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000276",
+            "WAL-CLM-EPIGEN-000371"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000370",
+            "WAL-CLM-RARE-000381"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000057"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000275"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000369"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-RARE-000382"
+          ]
+        }
+      ],
       "conditions": [
         "depression",
         "parkinsonism"
@@ -13457,7 +13849,15 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "valine",
+        "l-valine",
+        "valine supplement",
+        "branched-chain amino acid",
+        "valine amino acid",
+        "valine deficiency",
+        "what is valine"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -13472,7 +13872,50 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000058"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000384"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000279"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000320"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000382"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000385"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000383"
+          ]
+        }
+      ],
       "conditions": [
         "inflammation"
       ],
