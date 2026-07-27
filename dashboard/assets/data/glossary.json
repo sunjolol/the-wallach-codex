@@ -11,6 +11,11 @@
       ]
     },
     {
+      "term": "acetyl-CoA",
+      "plain": "a central molecule the body uses to burn fuel for energy and to build fats",
+      "category": "biology"
+    },
+    {
       "term": "acetylcholine",
       "plain": "a chemical messenger nerves use to signal muscles and the brain",
       "category": "biology"
@@ -70,6 +75,11 @@
       ]
     },
     {
+      "term": "aggregation",
+      "plain": "clumping together, as when platelets stick to one another to form a clot",
+      "category": "biology"
+    },
+    {
       "term": "albuminuria",
       "plain": "the blood protein albumin leaking into the urine",
       "category": "medical"
@@ -90,6 +100,11 @@
     {
       "term": "alkalosis",
       "plain": "too much alkali (base) in the body fluids",
+      "category": "medical"
+    },
+    {
+      "term": "alopecia",
+      "plain": "hair loss or baldness",
       "category": "medical"
     },
     {
@@ -158,6 +173,14 @@
       ]
     },
     {
+      "term": "anticoagulant",
+      "plain": "a substance that slows or prevents blood clotting",
+      "category": "medical",
+      "aliases": [
+        "anticoagulants"
+      ]
+    },
+    {
       "term": "antioxidant",
       "plain": "a substance that protects the body's cells from damage by unstable molecules",
       "category": "nutrition"
@@ -166,6 +189,11 @@
       "term": "aplasia",
       "plain": "the failure of a tissue or organ to develop properly",
       "category": "medical"
+    },
+    {
+      "term": "apocarboxylase",
+      "plain": "the inactive form of a carboxylase enzyme, before biotin is attached",
+      "category": "biology"
     },
     {
       "term": "appendicitis",
@@ -288,6 +316,22 @@
       ]
     },
     {
+      "term": "bioflavonoid",
+      "plain": "another name for a flavonoid, the colorful plant compounds with vitamin-like effects",
+      "category": "nutrition",
+      "aliases": [
+        "bioflavonoids"
+      ]
+    },
+    {
+      "term": "biomembrane",
+      "plain": "the thin fatty layer that forms the boundary of a cell or its internal parts",
+      "category": "biology",
+      "aliases": [
+        "biomembranes"
+      ]
+    },
+    {
       "term": "bitters",
       "plain": "bitter-tasting herbal preparations taken before meals to stimulate digestion",
       "category": "supplement"
@@ -349,6 +393,11 @@
       ]
     },
     {
+      "term": "carboxylase",
+      "plain": "an enzyme that attaches a carbon-dioxide unit onto another molecule; several need biotin to work",
+      "category": "biology"
+    },
+    {
       "term": "carboxypeptidase",
       "plain": "a zinc-dependent enzyme that helps digest proteins",
       "category": "biology"
@@ -394,6 +443,11 @@
       ]
     },
     {
+      "term": "carpal tunnel",
+      "plain": "a pinched-nerve condition in the wrist that causes pain, tingling, and numbness",
+      "category": "medical"
+    },
+    {
       "term": "catalase",
       "plain": "an iron-containing enzyme that breaks down harmful peroxide",
       "category": "biology"
@@ -423,6 +477,11 @@
       "aliases": [
         "cerebellar"
       ]
+    },
+    {
+      "term": "cerebrospinal",
+      "plain": "relating to the fluid that surrounds and cushions the brain and spinal cord",
+      "category": "anatomy"
     },
     {
       "term": "ceruloplasmin",
@@ -475,6 +534,11 @@
       "aliases": [
         "cirrhotic"
       ]
+    },
+    {
+      "term": "coagulation",
+      "plain": "the process of blood clotting",
+      "category": "medical"
     },
     {
       "term": "cobalamin",
@@ -537,6 +601,11 @@
       "category": "medical"
     },
     {
+      "term": "coumarin",
+      "plain": "a plant compound that can thin the blood by interfering with vitamin K",
+      "category": "chemistry"
+    },
+    {
       "term": "cretinism",
       "plain": "severe physical and mental impairment from iodine deficiency in infancy",
       "category": "medical"
@@ -568,6 +637,11 @@
       "term": "cyanotic",
       "plain": "bluish from low blood oxygen",
       "category": "medical"
+    },
+    {
+      "term": "cyclohexanehexol",
+      "plain": "the chemical name for inositol",
+      "category": "chemistry"
     },
     {
       "term": "cystitis",
@@ -605,6 +679,11 @@
       "category": "medical"
     },
     {
+      "term": "dicumarol",
+      "plain": "a natural blood-thinning compound that works by blocking vitamin K",
+      "category": "medical"
+    },
+    {
       "term": "disulfide",
       "plain": "a sulfur-to-sulfur bond that holds a protein's shape",
       "category": "medical"
@@ -633,6 +712,11 @@
       "category": "anatomy"
     },
     {
+      "term": "dyskinesia",
+      "plain": "abnormal, involuntary muscle movements",
+      "category": "medical"
+    },
+    {
       "term": "dysmenorrhea",
       "plain": "painful menstrual periods",
       "category": "medical"
@@ -645,6 +729,11 @@
     {
       "term": "dysplasia",
       "plain": "abnormal growth or development of cells or tissue",
+      "category": "medical"
+    },
+    {
+      "term": "dyspnea",
+      "plain": "difficult or labored breathing; shortness of breath",
       "category": "medical"
     },
     {
@@ -723,6 +812,14 @@
       "category": "biology"
     },
     {
+      "term": "endothelium",
+      "plain": "the thin layer of cells lining the inside of blood vessels",
+      "category": "biology",
+      "aliases": [
+        "endothelial"
+      ]
+    },
+    {
       "term": "enteritis",
       "plain": "inflammation of the intestine",
       "category": "medical"
@@ -730,6 +827,11 @@
     {
       "term": "enzootic",
       "plain": "a disease regularly present in an animal population",
+      "category": "medical"
+    },
+    {
+      "term": "epistaxis",
+      "plain": "the medical term for a nosebleed",
       "category": "medical"
     },
     {
@@ -827,6 +929,14 @@
       ]
     },
     {
+      "term": "flavanol",
+      "plain": "a subgroup of flavonoids found in cocoa, tea, and apples",
+      "category": "nutrition",
+      "aliases": [
+        "flavanols"
+      ]
+    },
+    {
       "term": "flavin",
       "plain": "the yellow pigment at the core of vitamin B2 and its coenzymes",
       "category": "biology"
@@ -864,6 +974,15 @@
       "aliases": [
         "folacin",
         "folic acid"
+      ]
+    },
+    {
+      "term": "free radical",
+      "plain": "an unstable molecule that can damage cells",
+      "category": "chemistry",
+      "aliases": [
+        "free radicals",
+        "free-radical"
       ]
     },
     {
@@ -1023,11 +1142,24 @@
       ]
     },
     {
+      "term": "hemolytic",
+      "plain": "involving the breakdown or destruction of red blood cells",
+      "category": "medical"
+    },
+    {
       "term": "hemorrhage",
       "plain": "heavy or uncontrolled bleeding",
       "category": "medical",
       "aliases": [
         "hemorrhagic"
+      ]
+    },
+    {
+      "term": "hemorrhoid",
+      "plain": "a swollen vein in the lower rectum or anus",
+      "category": "medical",
+      "aliases": [
+        "hemorrhoids"
       ]
     },
     {
@@ -1055,6 +1187,11 @@
       "term": "hepatomegaly",
       "plain": "an enlarged liver",
       "category": "medical"
+    },
+    {
+      "term": "holocarboxylase",
+      "plain": "the active form of a carboxylase enzyme, with biotin attached",
+      "category": "biology"
     },
     {
       "term": "homeostatic",
@@ -1101,8 +1238,23 @@
       "category": "biology"
     },
     {
+      "term": "hyperbilirubinemia",
+      "plain": "an excess of bilirubin, the yellow pigment that builds up in jaundice",
+      "category": "medical"
+    },
+    {
       "term": "hypercalcemia",
       "plain": "high calcium levels in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hypercholesterolemia",
+      "plain": "an abnormally high level of cholesterol in the blood",
+      "category": "medical"
+    },
+    {
+      "term": "hyperesthesia",
+      "plain": "an abnormally heightened sensitivity of the skin or senses",
       "category": "medical"
     },
     {
@@ -1131,6 +1283,11 @@
     {
       "term": "hyperplasia",
       "plain": "tissue enlargement from an increased number of cells",
+      "category": "medical"
+    },
+    {
+      "term": "hypertension",
+      "plain": "high blood pressure",
       "category": "medical"
     },
     {
@@ -1284,6 +1441,11 @@
       "category": "medical"
     },
     {
+      "term": "kernicterus",
+      "plain": "brain damage in a newborn caused by very high levels of the yellow pigment bilirubin",
+      "category": "medical"
+    },
+    {
       "term": "ketoacidosis",
       "plain": "dangerous acid buildup from unmanaged fat-burning, seen in diabetes",
       "category": "medical"
@@ -1327,6 +1489,11 @@
       "term": "laryngitis",
       "plain": "inflammation of the voice box",
       "category": "medical"
+    },
+    {
+      "term": "lecithin",
+      "plain": "a fatty substance found in cells and used as a supplement; a common source of choline",
+      "category": "nutrition"
     },
     {
       "term": "leptospirosis",
@@ -1380,6 +1547,14 @@
       "category": "biology"
     },
     {
+      "term": "lipotropic",
+      "plain": "helping the body move and break down fat, especially in the liver",
+      "category": "biology",
+      "aliases": [
+        "lipotrophic"
+      ]
+    },
+    {
       "term": "lordosis",
       "plain": "excessive inward curve of the lower spine (swayback)",
       "category": "medical"
@@ -1426,6 +1601,19 @@
       "category": "medical"
     },
     {
+      "term": "menadione",
+      "plain": "a synthetic form of vitamin K (vitamin K3)",
+      "category": "nutrition"
+    },
+    {
+      "term": "menaquinone",
+      "plain": "the vitamin K2 family, made by gut bacteria and found in some animal and fermented foods",
+      "category": "nutrition",
+      "aliases": [
+        "menaquinones"
+      ]
+    },
+    {
       "term": "meningitis",
       "plain": "inflammation of the membranes around the brain and spinal cord",
       "category": "medical"
@@ -1465,9 +1653,22 @@
       ]
     },
     {
+      "term": "methionine",
+      "plain": "an essential amino acid used to build proteins and to pass along methyl groups",
+      "category": "nutrition"
+    },
+    {
       "term": "methotrexate",
       "plain": "a drug that blocks folate, used against cancer and psoriasis",
       "category": "medical"
+    },
+    {
+      "term": "methyl group",
+      "plain": "a small chemical unit of one carbon and three hydrogens that the body shuffles between molecules",
+      "category": "chemistry",
+      "aliases": [
+        "methyl"
+      ]
     },
     {
       "term": "methylcobalamin",
@@ -1531,6 +1732,14 @@
       "term": "myelosclerosis",
       "plain": "hardening and scarring of the bone marrow",
       "category": "medical"
+    },
+    {
+      "term": "myo-inositol",
+      "plain": "the main natural form of inositol in the body",
+      "category": "biology",
+      "aliases": [
+        "myoinositol"
+      ]
     },
     {
       "term": "myoglobin",
@@ -1630,6 +1839,11 @@
       ]
     },
     {
+      "term": "nitric oxide",
+      "plain": "a gas the body makes to relax and widen blood vessels",
+      "category": "biology"
+    },
+    {
       "term": "omphalocele",
       "plain": "a birth defect where organs protrude through the navel",
       "category": "medical"
@@ -1669,6 +1883,11 @@
       "term": "osteoarthritis",
       "plain": "wear-and-tear arthritis from cartilage breakdown",
       "category": "medical"
+    },
+    {
+      "term": "osteocalcin",
+      "plain": "a vitamin-K-dependent bone protein that helps bind calcium into the bone",
+      "category": "biology"
     },
     {
       "term": "osteofibrosis",
@@ -1720,6 +1939,11 @@
       "term": "oxidation-reduction",
       "plain": "paired reactions that transfer energy by moving electrons between molecules",
       "category": "chemistry"
+    },
+    {
+      "term": "oxidative stress",
+      "plain": "cell damage caused by an excess of unstable molecules called free radicals",
+      "category": "biology"
     },
     {
       "term": "pagophagia",
@@ -1816,6 +2040,11 @@
       "category": "medical"
     },
     {
+      "term": "permeability",
+      "plain": "how easily substances can pass through a barrier, such as a blood-vessel wall",
+      "category": "biology"
+    },
+    {
       "term": "pernicious anemia",
       "plain": "anemia caused by being unable to absorb vitamin B12",
       "category": "medical"
@@ -1846,6 +2075,14 @@
       "category": "biology"
     },
     {
+      "term": "phosphatidylcholine",
+      "plain": "the main choline-containing fat in cell membranes and the active part of lecithin",
+      "category": "biology",
+      "aliases": [
+        "phosphatidyl choline"
+      ]
+    },
+    {
       "term": "phospholipids",
       "plain": "fat molecules that form the membranes around the body's cells",
       "category": "biology"
@@ -1859,6 +2096,11 @@
       "term": "photophobia",
       "plain": "abnormal discomfort or sensitivity of the eyes to light",
       "category": "medical"
+    },
+    {
+      "term": "phylloquinone",
+      "plain": "the plant form of vitamin K (vitamin K1), found in green leafy vegetables",
+      "category": "nutrition"
     },
     {
       "term": "phytate",
@@ -1892,6 +2134,14 @@
       ]
     },
     {
+      "term": "platelet",
+      "plain": "a tiny blood-cell fragment that helps form clots",
+      "category": "biology",
+      "aliases": [
+        "platelets"
+      ]
+    },
+    {
       "term": "pleuritis",
       "plain": "inflammation of the lung lining (pleurisy)",
       "category": "medical"
@@ -1899,6 +2149,11 @@
     {
       "term": "pneumonitis",
       "plain": "inflammation of lung tissue",
+      "category": "medical"
+    },
+    {
+      "term": "polycythemia",
+      "plain": "an overproduction of red blood cells that thickens the blood",
       "category": "medical"
     },
     {
@@ -1923,6 +2178,11 @@
       "term": "polyuria",
       "plain": "excessive urination",
       "category": "medical"
+    },
+    {
+      "term": "precursor",
+      "plain": "a substance the body converts into another substance",
+      "category": "biology"
     },
     {
       "term": "prostaglandins",
@@ -2076,9 +2336,24 @@
       "category": "medical"
     },
     {
+      "term": "seborrheic",
+      "plain": "relating to oily, flaky skin, as in seborrheic dermatitis",
+      "category": "medical"
+    },
+    {
+      "term": "second messenger",
+      "plain": "a molecule inside a cell that relays a signal from a hormone acting at the cell surface",
+      "category": "biology"
+    },
+    {
       "term": "sinusitis",
       "plain": "inflammation of the sinuses",
       "category": "medical"
+    },
+    {
+      "term": "sphingomyelin",
+      "plain": "a fatty compound that forms part of the protective sheath around nerves",
+      "category": "biology"
     },
     {
       "term": "spina bifida",
@@ -2121,11 +2396,24 @@
       "category": "medical"
     },
     {
+      "term": "subcutaneous",
+      "plain": "located or given just under the skin",
+      "category": "medical"
+    },
+    {
       "term": "SupraLife",
       "plain": "The name Eagle took in 1998. Youngevity later acquired SupraLife; today's Ultra Body Toddy descends from SupraLife's Toddy line.",
       "category": "product-history",
       "aliases": [
         "SupraLife International"
+      ]
+    },
+    {
+      "term": "surfactant",
+      "plain": "a substance that lowers surface tension; in the lungs it keeps the air sacs from collapsing",
+      "category": "biology",
+      "aliases": [
+        "surfactants"
       ]
     },
     {
@@ -2136,6 +2424,11 @@
         "synapse",
         "synapses"
       ]
+    },
+    {
+      "term": "synthetase",
+      "plain": "an enzyme that joins two molecules together using cellular energy",
+      "category": "biology"
     },
     {
       "term": "systemic",
@@ -2149,6 +2442,11 @@
       "aliases": [
         "tid"
       ]
+    },
+    {
+      "term": "tardive dyskinesia",
+      "plain": "involuntary, repetitive movements that can develop after long-term use of certain drugs",
+      "category": "medical"
     },
     {
       "term": "telomere",
@@ -2314,6 +2612,11 @@
       "category": "medical"
     },
     {
+      "term": "vascular",
+      "plain": "relating to the body's blood vessels",
+      "category": "medical"
+    },
+    {
       "term": "Virgin Earth",
       "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
       "category": "product-history",
@@ -2324,6 +2627,11 @@
       "plain": "Wallach's own name for osteoporosis of the skull and spine, in which normal bone (including the marrow cavity) is replaced by connective tissue.",
       "category": "medical",
       "aliases": []
+    },
+    {
+      "term": "warfarin",
+      "plain": "a common prescription blood thinner that works by blocking vitamin K",
+      "category": "medical"
     },
     {
       "term": "water-soluble",

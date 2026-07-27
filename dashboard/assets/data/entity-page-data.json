@@ -10856,7 +10856,42 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "vitamin k",
+        "vitamin-k",
+        "vit k",
+        "vitk",
+        "vitamin k1",
+        "vitamin k2",
+        "vitamin k3",
+        "k1",
+        "k2",
+        "phylloquinone",
+        "menaquinone",
+        "menaquinones",
+        "menadione",
+        "koagulation vitamin",
+        "coagulation vitamin",
+        "clotting vitamin",
+        "the clotting vitamin",
+        "activator x",
+        "vitamin k deficiency",
+        "low vitamin k",
+        "vitamin k supplement",
+        "vitamin k dose",
+        "vitamin k dosage",
+        "how much vitamin k",
+        "vitamin k foods",
+        "foods with vitamin k",
+        "vitamin k for bones",
+        "vitamin k for bruising",
+        "vitamin k and warfarin",
+        "vitamin k blood thinner",
+        "vitamin k benefits",
+        "vitamin k for nosebleeds",
+        "vitiman k",
+        "vitamine k"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -10889,7 +10924,67 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000285"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000034",
+            "WAL-CLM-EPIGEN-000289"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000324",
+            "WAL-CLM-IMMORT-000326"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000286",
+            "WAL-CLM-IMMORT-000325"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000287",
+            "WAL-CLM-EPIGEN-000288"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000213",
+            "WAL-CLM-DDDL-000214"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000076"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000327"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000290"
+          ]
+        }
+      ],
       "conditions": [
         "bleeding_bowels",
         "ecchymosis",
@@ -10923,7 +11018,38 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "biotin",
+        "vitamin H",
+        "vitamin B7",
+        "vitamin B-7",
+        "B7",
+        "coenzyme R",
+        "biotin deficiency",
+        "biotin supplement",
+        "biotin pills",
+        "biotin for hair",
+        "biotin for hair growth",
+        "biotin hair loss",
+        "biotin for nails",
+        "biotin for skin",
+        "biotin gray hair",
+        "biotin dandruff",
+        "biotin eczema",
+        "biotin dosage",
+        "how much biotin",
+        "biotin benefits",
+        "biotin foods",
+        "biotin rich foods",
+        "biotin overdose",
+        "too much biotin",
+        "biotin side effects",
+        "biotine",
+        "byotin",
+        "bioten",
+        "biontin",
+        "vit H"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -10953,7 +11079,63 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000291"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000293"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000328",
+            "WAL-CLM-RARE-000240"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000292"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000215"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000512"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000294"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000295"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000329"
+          ]
+        }
+      ],
       "conditions": [
         "alopecia",
         "anemia",
@@ -10997,7 +11179,29 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "choline",
+        "colline",
+        "cholene",
+        "choln",
+        "choline deficiency",
+        "choline deficiency symptoms",
+        "choline supplement",
+        "choline supplements",
+        "choline dosage",
+        "how much choline",
+        "choline benefits",
+        "choline vitamin",
+        "vitamin choline",
+        "phosphatidylcholine",
+        "phosphatidyl choline",
+        "lecithin",
+        "choline for liver",
+        "choline fatty liver",
+        "choline for brain",
+        "choline for memory",
+        "choline and b12"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -11034,7 +11238,62 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000330",
+            "WAL-CLM-IMMORT-000331",
+            "WAL-CLM-IMMORT-000332"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000044"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000333"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000216",
+            "WAL-CLM-EPIGEN-000296",
+            "WAL-CLM-IMMORT-000334"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000217",
+            "WAL-CLM-IMMORT-000335"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000218",
+            "WAL-CLM-IMMORT-000336"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000219"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000297"
+          ]
+        }
+      ],
       "conditions": [
         "absence_attacks",
         "alzheimers",
@@ -11077,7 +11336,33 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "inositol",
+        "myo-inositol",
+        "myoinositol",
+        "muscle sugar",
+        "vitamin B8",
+        "vitamin B-8",
+        "B8",
+        "inositol deficiency",
+        "inositol supplement",
+        "inositol dose",
+        "inositol dosage",
+        "inositol benefits",
+        "cyclohexanehexol",
+        "inositol hexaphosphate",
+        "phytic acid",
+        "phytates",
+        "inositol for hair loss",
+        "inositol for insomnia",
+        "inositol for sleep",
+        "inositol for diabetes",
+        "inositol for diabetic neuropathy",
+        "inositol for cataracts",
+        "inosital",
+        "inisitol",
+        "inositole"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -11101,7 +11386,60 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000298"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000300",
+            "WAL-CLM-LETS-000012"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000045",
+            "WAL-CLM-IMMORT-000337"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000299"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000338"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000339"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000220",
+            "WAL-CLM-LETS-000052",
+            "WAL-CLM-LETS-000322"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000301"
+          ]
+        }
+      ],
       "conditions": [
         "alopecia",
         "cataracts",
@@ -11139,7 +11477,39 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "flavonoids",
+        "flavonoid",
+        "bioflavonoids",
+        "bioflavonoid",
+        "flavanoids",
+        "flavinoids",
+        "flavonoides",
+        "vitamin p",
+        "vitamin p deficiency",
+        "flavanols",
+        "flavanol",
+        "flavonols",
+        "polyphenols",
+        "polyphenol",
+        "epicatechins",
+        "epicatechin",
+        "isoflavonoids",
+        "neoflavonoids",
+        "procyanidins",
+        "grape seed extract",
+        "cocoa flavonoids",
+        "dark chocolate flavonoids",
+        "flavonoids deficiency",
+        "flavonoid deficiency",
+        "bioflavonoids deficiency",
+        "flavonoids supplement",
+        "bioflavonoids supplement",
+        "flavonoids benefits",
+        "flavonoids dose",
+        "how much bioflavonoids",
+        "what are flavonoids"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -11174,7 +11544,63 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000302"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000046"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000340"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000303"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000126"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000304",
+            "WAL-CLM-IMMORT-000341"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000342"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000305"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000343"
+          ]
+        }
+      ],
       "conditions": [
         "allergies",
         "bruises",

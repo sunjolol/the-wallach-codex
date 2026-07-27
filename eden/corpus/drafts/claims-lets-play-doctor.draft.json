@@ -19816,6 +19816,41 @@
       "extracted_at": "2026-07-27T00:10:10+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000512",
+      "kind": "dose",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In his Base Line Nutritional Supplement Program for adults, Wallach contrasts the official RDA for biotin (200 mcg) with a much larger pharmacologic daily dose of 500 to 3,000 mcg used therapeutically. He puts the true supplemental need at 200 mcg.",
+      "verbatim": "FIG. 8-1 : Base Line Nutritional Supplement Program For Adults*\nNutrient RDA True Supplement 30-Day Pharma-\nNeed cologic Daily Dose\nBIOTIN 200 mcg 200 mcg 500 to 3,000 mcg",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 139025
+      },
+      "dose": null,
+      "tags": [
+        "biotin",
+        "dosage",
+        "rda",
+        "therapeutic-dose",
+        "supplements",
+        "dose",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:00:33+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

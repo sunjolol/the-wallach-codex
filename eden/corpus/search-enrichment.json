@@ -1459,7 +1459,8 @@
     "WAL-CLM-EPIGEN-000178": {
       "subject": "antioxidants",
       "also_about": [
-        "orac"
+        "orac",
+        "flavonoids"
       ],
       "facet": "mechanism",
       "question": "Do flavonoids raise your ORAC?",
@@ -3284,7 +3285,8 @@
       "also_about": [
         "calcium",
         "iron",
-        "zinc"
+        "zinc",
+        "inositol"
       ],
       "facet": "basics",
       "question": "What are phytates, and which minerals do they block?",
@@ -12156,6 +12158,838 @@
         "vitamin-e",
         "womens-health",
         "breast-health"
+      ]
+    },
+    "WAL-CLM-DDDL-000213": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "ecchymosis",
+        "vitamin-c",
+        "vitamin-e"
+      ],
+      "facet": "uses",
+      "question": "Can vitamin K help with easy bruising?",
+      "answer_short": "For ecchymosis (easy bruising), Wallach's treatment includes vitamin K at 15 mg/day along with vitamin C, vitamin E, alfalfa and plenty of green vegetables.",
+      "topics": [
+        "easy bruising",
+        "therapeutic use",
+        "dosage"
+      ]
+    },
+    "WAL-CLM-DDDL-000214": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "nosebleeds",
+        "vitamin-c"
+      ],
+      "facet": "uses",
+      "question": "Can a vitamin K deficiency cause nosebleeds?",
+      "answer_short": "Yes — Wallach says nosebleeds (epistaxis) are usually the result of vitamin K and/or vitamin C deficiency.",
+      "topics": [
+        "nosebleeds",
+        "deficiency signs",
+        "gut health"
+      ]
+    },
+    "WAL-CLM-DDDL-000215": {
+      "subject": "biotin",
+      "also_about": [
+        "dandruff"
+      ],
+      "facet": "uses",
+      "question": "How do you treat dandruff or seborrheic dermatitis with biotin?",
+      "answer_short": "Wallach's protocol for seborrheic dermatitis (dandruff, cradle cap) uses biotin at 100 mcg three times daily plus folic acid, B6, vitamin E, EFAs, vitamin A, zinc, and Selsun Blue shampoo.",
+      "topics": [
+        "dandruff",
+        "skin",
+        "protocol",
+        "hair"
+      ]
+    },
+    "WAL-CLM-DDDL-000216": {
+      "subject": "choline",
+      "also_about": [
+        "vitamin-b12",
+        "methionine"
+      ],
+      "facet": "mechanism",
+      "question": "How do choline, B12 and folic acid work together?",
+      "answer_short": "Choline joins vitamin B12/cobalt, folic acid and methionine to transfer single-carbon methyl groups used to build RNA and DNA.",
+      "topics": [
+        "methylation",
+        "dna",
+        "gene function"
+      ]
+    },
+    "WAL-CLM-DDDL-000217": {
+      "subject": "choline",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Is phosphatidylcholine better than lecithin?",
+      "answer_short": "Wallach says lecithin is useful but phosphatidyl choline is the more efficient form of choline.",
+      "topics": [
+        "supplement forms",
+        "brain health",
+        "choline sources"
+      ]
+    },
+    "WAL-CLM-DDDL-000218": {
+      "subject": "choline",
+      "also_about": [
+        "epilepsy",
+        "taurine"
+      ],
+      "facet": "uses",
+      "question": "Does choline help seizures?",
+      "answer_short": "For absence attacks (petit mal seizures), Wallach's treatment leads with choline at 4 grams a day.",
+      "topics": [
+        "seizures",
+        "epilepsy",
+        "brain health"
+      ]
+    },
+    "WAL-CLM-DDDL-000219": {
+      "subject": "choline",
+      "also_about": [
+        "arsenic",
+        "manganese"
+      ],
+      "facet": "stance",
+      "question": "Is carpal tunnel syndrome caused by choline deficiency?",
+      "answer_short": "Wallach says carpal tunnel syndrome is caused by a deficiency of arsenic, manganese and choline, and treats it nutritionally rather than with wrist surgery.",
+      "topics": [
+        "carpal tunnel",
+        "nerve health",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-DDDL-000220": {
+      "subject": "inositol",
+      "also_about": [
+        "cataracts",
+        "selenium",
+        "zinc"
+      ],
+      "facet": "protocol",
+      "question": "What dose of inositol is used for cataracts?",
+      "answer_short": "Wallach includes inositol at 150 mg/day in his cataract treatment protocol.",
+      "topics": [
+        "cataracts",
+        "eye-health",
+        "dosage",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000285": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "calcium",
+        "vitamin-d"
+      ],
+      "facet": "basics",
+      "question": "What is Vitamin K?",
+      "answer_short": "Vitamin K is a fat-soluble vitamin your liver needs to make prothrombin and other blood-clotting proteins and to lay calcium down properly in bone — so it governs both normal clotting and bone strength.",
+      "topics": [
+        "what is vitamin k",
+        "fat-soluble vitamins",
+        "blood clotting",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000286": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "What does vitamin K do in the body?",
+      "answer_short": "Vitamin K is a fat-soluble vitamin the liver needs to make prothrombin and other clotting proteins and to deposit calcium properly in bone.",
+      "topics": [
+        "blood clotting",
+        "bone health",
+        "how vitamins work"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000287": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Does your body make its own vitamin K?",
+      "answer_short": "Yes — Wallach says roughly half of your vitamin K requirement is produced by probiotic bacteria in the colon.",
+      "topics": [
+        "gut health",
+        "probiotics",
+        "where vitamins come from"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000288": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What are the different forms of vitamin K and where does it come from?",
+      "answer_short": "Vitamin K comes in two forms — K1 (phylloquinone) from plants and K2 (menaquinones) made by gut bacteria — and is concentrated in foods like alfalfa and hog liver fat.",
+      "topics": [
+        "food sources",
+        "forms of vitamin K",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000289": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "jaundice"
+      ],
+      "facet": "warning",
+      "question": "Can you take too much vitamin K?",
+      "answer_short": "Wallach says overdose signs include jaundice in newborns, and that injected phylloquinone or large doses of synthetic menadione can cause serious reactions and even death.",
+      "topics": [
+        "toxicity",
+        "overdose",
+        "supplement safety"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000290": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Why is it called vitamin K?",
+      "answer_short": "Dam named it vitamin K after 'Koagulation' (coagulation), because the nutrient resolved bleeding diseases that no other vitamin could cure.",
+      "topics": [
+        "name origin",
+        "vitamin history",
+        "blood clotting"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000291": {
+      "subject": "biotin",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is biotin?",
+      "answer_short": "Biotin — also called vitamin H or coenzyme R — is a sulfur-containing B vitamin the body needs for glucose metabolism and the production of fatty acids.",
+      "topics": [
+        "vitamins",
+        "b-vitamins",
+        "metabolism",
+        "basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000292": {
+      "subject": "biotin",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "What does biotin do in the body?",
+      "answer_short": "Biotin is a sulfur-containing vitamin required for glucose metabolism and the production of fatty acids, working through enzymes that carry carboxyl units and fix carbon dioxide.",
+      "topics": [
+        "metabolism",
+        "b-vitamins",
+        "vitamins",
+        "how-it-works"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000293": {
+      "subject": "biotin",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can you take too much biotin? Is biotin toxic?",
+      "answer_short": "No credible toxicity has been reported from large biotin doses, even above 10 mg daily, and its lethal dose is unknown.",
+      "topics": [
+        "safety",
+        "toxicity",
+        "dosage",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000294": {
+      "subject": "biotin",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Can large doses of biotin overcome an inborn error of metabolism?",
+      "answer_short": "Yes; Wallach says multiple carboxylase deficiencies from defective holocarboxylase synthetase can be overcome in an epigenetic fashion with large doses of biotin.",
+      "topics": [
+        "epigenetics",
+        "metabolism",
+        "high-dose",
+        "genetics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000295": {
+      "subject": "biotin",
+      "also_about": [
+        "alopecia"
+      ],
+      "facet": "discovery",
+      "question": "How was biotin discovered?",
+      "answer_short": "Biotin was found through the 'egg white syndrome': rats fed egg whites developed skin inflammation, baldness, paralysis, and hemorrhaging, and in 1940 Paul Gyorgy identified biotin (vitamin H) as the cure.",
+      "topics": [
+        "history",
+        "discovery",
+        "vitamins"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000296": {
+      "subject": "choline",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does choline do in the body?",
+      "answer_short": "Choline is a structural building block of all cell membranes, plasma lipoproteins and lung surfactants, and part of the nervous system's sphingomyelin and acetylcholine.",
+      "topics": [
+        "cell membranes",
+        "brain health",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000297": {
+      "subject": "choline",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "When was choline discovered?",
+      "answer_short": "Choline was first discovered and isolated from hog bile in 1862 and has been known in human and mammalian tissue ever since.",
+      "topics": [
+        "history",
+        "discovery",
+        "nutrition science"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000298": {
+      "subject": "inositol",
+      "also_about": [
+        "choline"
+      ],
+      "facet": "basics",
+      "question": "What is Inositol?",
+      "answer_short": "Inositol (myo-inositol) is a cyclic alcohol chemically similar to glucose that Wallach counts among the essential vitamins; in animals it is a major constituent of the phospholipids that build cell membranes.",
+      "topics": [
+        "vitamins",
+        "nutrition",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000299": {
+      "subject": "inositol",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "How does inositol work in the body?",
+      "answer_short": "Myo-inositol triphosphate acts as a second messenger that mobilizes intracellular calcium in response to hormonal signals, and inositol is a building block of cell membranes.",
+      "topics": [
+        "cell-signaling",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000300": {
+      "subject": "inositol",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can you overdose on inositol?",
+      "answer_short": "Wallach reports that no signs of inositol overdose are known, even with large supplemental doses.",
+      "topics": [
+        "safety",
+        "supplements",
+        "dosage"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000301": {
+      "subject": "inositol",
+      "also_about": [
+        "choline",
+        "biotin"
+      ],
+      "facet": "stance",
+      "question": "Does Wallach consider inositol a vitamin?",
+      "answer_short": "Yes — Wallach classifies inositol as one of the 16 essential vitamins for humans and non-human vertebrates.",
+      "topics": [
+        "vitamins",
+        "essential-nutrients",
+        "wallach-framework"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000302": {
+      "subject": "flavonoids",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What are flavonoids?",
+      "answer_short": "Flavonoids are biologically active plant pigments — the yellow, red, and blue colors in flowers — that come in three classes and that Wallach argues are essential nutrients.",
+      "topics": [
+        "antioxidants",
+        "plant-pigments",
+        "nutrition-basics"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000303": {
+      "subject": "flavonoids",
+      "also_about": [
+        "hypertension",
+        "atherosclerosis",
+        "cholesterol"
+      ],
+      "facet": "uses",
+      "question": "How do flavonoids help the heart and cardiovascular system?",
+      "answer_short": "Wallach says flavonoids cut cardiovascular risk by reducing clotting, atherosclerosis, and blood pressure, easing oxidative and inflammatory stress on vessels, and improving endothelial function.",
+      "topics": [
+        "heart-health",
+        "blood-pressure",
+        "antioxidants"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000304": {
+      "subject": "flavonoids",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Are flavonoids essential nutrients?",
+      "answer_short": "Wallach says that although flavonoids aren't officially classed as essential, there is more than enough evidence to support a claim for their essentiality.",
+      "topics": [
+        "essential-nutrients",
+        "supplementation",
+        "antioxidants"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000305": {
+      "subject": "flavonoids",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Why are flavonoids called that, and what is vitamin P?",
+      "answer_short": "The name comes from the Latin flavus (yellow); flavonoids were originally called vitamin P because they were related to the permeability levels of small blood vessels.",
+      "topics": [
+        "vitamin-p",
+        "name-origin",
+        "capillary-health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000324": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "osteoporosis",
+        "vitamin-d",
+        "calcium"
+      ],
+      "facet": "physiology",
+      "question": "Is vitamin K important for your bones?",
+      "answer_short": "Yes — Wallach says vitamin K is as essential to healthy bone maintenance as vitamin D, because the vitamin K-dependent protein osteocalcin directs calcium into bone.",
+      "topics": [
+        "bone health",
+        "osteoporosis",
+        "calcium"
+      ]
+    },
+    "WAL-CLM-IMMORT-000325": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Do blood thinners like warfarin affect vitamin K?",
+      "answer_short": "Yes — Wallach says the coumarin blood thinners warfarin and dicumarol work by antagonizing (blocking) the action of vitamin K.",
+      "topics": [
+        "drug interactions",
+        "blood thinners",
+        "blood clotting"
+      ]
+    },
+    "WAL-CLM-IMMORT-000326": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Is vitamin K deficiency common?",
+      "answer_short": "No — Wallach says vitamin K deficiency is uncommon, except with a diet low in green leafy vegetables, antibiotic-suppressed gut flora, or a fat-absorption problem.",
+      "topics": [
+        "deficiency",
+        "risk factors",
+        "gut health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000327": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "How was vitamin K discovered?",
+      "answer_short": "In 1935 the researcher Dam observed a fatal bleeding disease in chicks on a complete diet that was cured when hog liver fat or alfalfa was added, revealing the missing clotting nutrient.",
+      "topics": [
+        "vitamin history",
+        "discovery",
+        "blood clotting"
+      ]
+    },
+    "WAL-CLM-IMMORT-000328": {
+      "subject": "biotin",
+      "also_about": [
+        "alopecia"
+      ],
+      "facet": "physiology",
+      "question": "Can low biotin cause hair loss and gray hair?",
+      "answer_short": "Yes; biotin deficiency causes a progressive loss of both hair and hair color, along with skin lesions and nerve symptoms.",
+      "topics": [
+        "hair",
+        "hair-loss",
+        "gray-hair",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000329": {
+      "subject": "biotin",
+      "also_about": [],
+      "facet": "history",
+      "question": "When was biotin discovered, and what else is it called?",
+      "answer_short": "Biotin - also called vitamin H or coenzyme R - was first isolated in 1936 and synthesized in 1943.",
+      "topics": [
+        "history",
+        "names",
+        "discovery",
+        "vitamins"
+      ]
+    },
+    "WAL-CLM-IMMORT-000330": {
+      "subject": "choline",
+      "also_about": [
+        "methionine",
+        "inositol",
+        "vitamin-b12"
+      ],
+      "facet": "basics",
+      "question": "What is choline?",
+      "answer_short": "Choline is an essential, vitamin-like nutrient the body cannot make in sufficient amounts on its own, needed to build cell membranes, carry fat out of the liver, and form the nerve-signal acetylcholine.",
+      "topics": [
+        "essential nutrients",
+        "vitamins",
+        "brain health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000331": {
+      "subject": "choline",
+      "also_about": [
+        "vitamin-b12",
+        "methionine"
+      ],
+      "facet": "basics",
+      "question": "What is choline?",
+      "answer_short": "Choline is an essential nutrient with a vitamin-like coenzyme function that has been recognized as essential for over a hundred years.",
+      "topics": [
+        "vitamins",
+        "essential nutrients",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-IMMORT-000332": {
+      "subject": "choline",
+      "also_about": [
+        "biotin",
+        "vitamin-c",
+        "inositol"
+      ],
+      "facet": "basics",
+      "question": "Is choline a vitamin?",
+      "answer_short": "Wallach groups choline with the water-soluble vitamins, alongside the B-complex, biotin and vitamin C.",
+      "topics": [
+        "vitamins",
+        "water-soluble vitamins",
+        "nutrition"
+      ]
+    },
+    "WAL-CLM-IMMORT-000333": {
+      "subject": "choline",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How does choline help the brain and nerves?",
+      "answer_short": "Choline builds sphingomyelin in the brain and peripheral nerves and is the precursor for acetylcholine, so it is involved in transmitting nerve impulses.",
+      "topics": [
+        "brain health",
+        "nerve health",
+        "memory"
+      ]
+    },
+    "WAL-CLM-IMMORT-000334": {
+      "subject": "choline",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does choline affect the liver?",
+      "answer_short": "Choline transports fat out of the liver, so a deficiency lets fat build up as a fatty liver that in severe cases can require a liver transplant.",
+      "topics": [
+        "liver health",
+        "fat metabolism",
+        "triglycerides"
+      ]
+    },
+    "WAL-CLM-IMMORT-000335": {
+      "subject": "choline",
+      "also_about": [
+        "methionine",
+        "vitamin-b12"
+      ],
+      "facet": "sources",
+      "question": "Can the body make its own choline?",
+      "answer_short": "The body can make some choline from methionine or serine with vitamin B12 and folate, but not enough to meet daily needs, so it must come from the diet.",
+      "topics": [
+        "nutrition",
+        "supplements",
+        "essential nutrients"
+      ]
+    },
+    "WAL-CLM-IMMORT-000336": {
+      "subject": "choline",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can choline help tardive dyskinesia or Huntington's disease?",
+      "answer_short": "Wallach says large doses of choline have proved beneficial for managing and easing the symptoms of tardive dyskinesia and Huntington's disease in humans.",
+      "topics": [
+        "brain health",
+        "movement disorders",
+        "therapeutic use"
+      ]
+    },
+    "WAL-CLM-IMMORT-000337": {
+      "subject": "inositol",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Where is inositol found in the body and why is it called muscle sugar?",
+      "answer_short": "Myoinositol, nicknamed \"muscle sugar,\" resembles glucose and is concentrated in the brain, cerebrospinal fluid, muscle, heart, and especially the male reproductive organs and semen.",
+      "topics": [
+        "mens-health",
+        "fertility",
+        "brain",
+        "muscle"
+      ]
+    },
+    "WAL-CLM-IMMORT-000338": {
+      "subject": "inositol",
+      "also_about": [],
+      "facet": "sources",
+      "question": "What foods are high in inositol?",
+      "answer_short": "Inositol occurs abundantly in whole grains and raw vegetables, present as inositol phospholipids and phytic acid.",
+      "topics": [
+        "food-sources",
+        "diet",
+        "whole-grains",
+        "vegetables"
+      ]
+    },
+    "WAL-CLM-IMMORT-000339": {
+      "subject": "inositol",
+      "also_about": [
+        "diabetes"
+      ],
+      "facet": "uses",
+      "question": "Can inositol help diabetic neuropathy?",
+      "answer_short": "Wallach says inositol has been shown to have a therapeutic role in diabetic neuropathy.",
+      "topics": [
+        "nerves",
+        "blood-sugar",
+        "therapeutic-use"
+      ]
+    },
+    "WAL-CLM-IMMORT-000340": {
+      "subject": "flavonoids",
+      "also_about": [
+        "hypertension",
+        "vitamin-c"
+      ],
+      "facet": "mechanism",
+      "question": "How do flavonoids improve blood flow?",
+      "answer_short": "Wallach says flavanols in dark chocolate strengthen capillaries and boost nitric oxide, which relaxes blood-vessel muscle to lower blood pressure and improve blood flow.",
+      "topics": [
+        "blood-flow",
+        "nitric-oxide",
+        "chocolate",
+        "heart-health"
+      ]
+    },
+    "WAL-CLM-IMMORT-000341": {
+      "subject": "flavonoids",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Are flavonoids a vitamin?",
+      "answer_short": "Wallach says flavonoids — vitamin P, found in cocoa, tea, and wine — are now recognized as a third category of vitamins alongside the fat- and water-soluble groups.",
+      "topics": [
+        "vitamin-p",
+        "vitamins",
+        "chocolate"
+      ]
+    },
+    "WAL-CLM-IMMORT-000342": {
+      "subject": "flavonoids",
+      "also_about": [
+        "cancer",
+        "diabetes",
+        "stroke"
+      ],
+      "facet": "big_question",
+      "question": "Do the flavonoids in cocoa really prevent disease?",
+      "answer_short": "Wallach cites Harvard's Norman Hollenberg, who found the cocoa-drinking Kuna people have a 10% lower risk of four of the five most common killer diseases.",
+      "topics": [
+        "chocolate",
+        "longevity",
+        "heart-health",
+        "disease-prevention"
+      ]
+    },
+    "WAL-CLM-IMMORT-000343": {
+      "subject": "flavonoids",
+      "also_about": [],
+      "facet": "history",
+      "question": "Who first discovered flavonoids and what were they first used to treat?",
+      "answer_short": "Flavonoids were first used clinically in 1936 by Szent-Gyorgyi to treat patients with capillary fragility and hemorrhages.",
+      "topics": [
+        "history-of-medicine",
+        "capillary-health",
+        "vitamin-p"
+      ]
+    },
+    "WAL-CLM-LETS-000512": {
+      "subject": "biotin",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What is the therapeutic dose of biotin compared to the RDA?",
+      "answer_short": "Wallach's Base Line program lists biotin at a 200 mcg RDA and true need, with a therapeutic (pharmacologic) daily dose of 500 to 3,000 mcg.",
+      "topics": [
+        "dosage",
+        "rda",
+        "therapeutic-dose",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-LETS-000076": {
+      "subject": "vitamin-k",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much vitamin K should you take?",
+      "answer_short": "Wallach's Base Line Nutritional Supplement Program lists vitamin K at 140 mcg/day as his target (140 mcg is also the 30-day dose); the 70 mcg in the same row is the government RDA he prints only to argue against.",
+      "topics": [
+        "dosage",
+        "supplements",
+        "how much to take"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000034": {
+      "subject": "vitamin-k",
+      "also_about": [
+        "ecchymosis",
+        "osteoporosis"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of vitamin K deficiency?",
+      "answer_short": "Vitamin K deficiency shows up as prolonged clotting time and abnormal bleeding — bruises, nosebleeds, blood in the urine and gut — plus bone problems like osteoporosis.",
+      "topics": [
+        "deficiency signs",
+        "bleeding",
+        "bone health"
+      ]
+    },
+    "WAL-CLM-RARE-000240": {
+      "subject": "biotin",
+      "also_about": [
+        "eczema",
+        "alopecia",
+        "depression",
+        "blepharitis"
+      ],
+      "facet": "physiology",
+      "question": "What are the symptoms of a biotin deficiency?",
+      "answer_short": "Biotin deficiency causes eczema, alopecia (baldness), depression, hyperesthesia, paraesthesia, blepharitis, and gray or white hair.",
+      "topics": [
+        "deficiency",
+        "hair",
+        "skin",
+        "symptoms"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000044": {
+      "subject": "choline",
+      "also_about": [
+        "dementia"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of choline deficiency?",
+      "answer_short": "Choline deficiency can cause fatty liver, liver cirrhosis, kidney hemorrhage, Alzheimer's disease, dementia, tardive dyskinesia and Huntington's disease, with no known overdose.",
+      "topics": [
+        "deficiency",
+        "liver health",
+        "brain health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000045": {
+      "subject": "inositol",
+      "also_about": [
+        "diabetes"
+      ],
+      "facet": "physiology",
+      "question": "What diseases does inositol deficiency cause?",
+      "answer_short": "Inositol deficiency can result in fat metabolism problems, fatty liver, diabetes, diabetic neuropathy, slow nerve conduction, and renal failure.",
+      "topics": [
+        "deficiency",
+        "blood-sugar",
+        "liver",
+        "nerves"
+      ]
+    },
+    "WAL-CLM-LETS-000052": {
+      "subject": "inositol",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much inositol should I take daily?",
+      "answer_short": "Wallach's baseline supplement program lists a True Supplement Need of 90 mg of inositol daily, with a 30-day pharmacologic range of 500 to 2,000 mg.",
+      "topics": [
+        "dosage",
+        "supplements",
+        "daily-intake"
+      ]
+    },
+    "WAL-CLM-LETS-000322": {
+      "subject": "inositol",
+      "also_about": [
+        "insomnia",
+        "tryptophan"
+      ],
+      "facet": "protocol",
+      "question": "Can inositol help with insomnia and sleep?",
+      "answer_short": "Wallach includes inositol at 500 mg/day in his insomnia treatment protocol.",
+      "topics": [
+        "sleep",
+        "insomnia",
+        "dosage",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-LETS-000012": {
+      "subject": "inositol",
+      "also_about": [
+        "alopecia",
+        "eczema",
+        "constipation"
+      ],
+      "facet": "warning",
+      "question": "Can inositol deficiency cause hair loss or eczema?",
+      "answer_short": "Wallach's deficiency chart lists alopecia (hair loss), constipation, eczema, and high cholesterol as signs of inositol deficiency.",
+      "topics": [
+        "deficiency",
+        "hair-loss",
+        "skin",
+        "cholesterol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000126": {
+      "subject": "flavonoids",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much bioflavonoids should I take per day?",
+      "answer_short": "Wallach's daily-supplement table in Epigenetics lists bioflavonoids at 1,000 to 5,000 mg per day.",
+      "topics": [
+        "dosage",
+        "supplementation",
+        "daily-intake"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000046": {
+      "subject": "flavonoids",
+      "also_about": [
+        "hemorrhoids",
+        "nosebleeds"
+      ],
+      "facet": "warning",
+      "question": "What are the signs of a bioflavonoid deficiency?",
+      "answer_short": "Wallach lists capillary hemorrhage, easy bruising, nosebleeds, hemorrhoids, venous insufficiency, leg ulcers, weakened immunity, higher cancer risk, and a shortened lifespan.",
+      "topics": [
+        "deficiency-signs",
+        "capillary-health",
+        "antioxidants"
       ]
     }
   }
