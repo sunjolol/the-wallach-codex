@@ -19885,6 +19885,109 @@
       "extracted_at": "2026-07-27T01:51:12+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000514",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach classifies sodium (Na) as an essential \"macro\" mineral required in the diet. It maintains proper acid-base balance in the blood and tissues, regulates fluid pressure in the blood vessels and cells, and supports neuromuscular function. Elevated blood sodium points to dehydration, kidney disease, or adrenal dysfunction, while low blood sodium is typical of excessive water intake, diabetes, or pituitary disorders; the normal blood range is 135-147 mEq/L.",
+      "verbatim": "Na (sodium) is an essential \"macro\"mineral\nrequired in our diet. Sodium is required to\nmaintain the proper acid-base balance in our\nblood and tissues, the fluid pressure in our\nblood and tissues, the fluid pressure in our\nblood vessels, cells and neuromuscular func-\ntion. Elevated sodium levels are characteristic\nof dehydration, kidney disease and adrenal\ngland dysfunction. Low blood levels of so-\ndium are typical of excessive water consump-\ntion, diabetes and pituitary disorders.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 72524
+      },
+      "dose": null,
+      "tags": [
+        "sodium",
+        "electrolytes",
+        "macro-minerals",
+        "blood-test",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:58:44+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000515",
+      "kind": "diagnostic_pattern",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Phosphorus is a macro-mineral tied to calcium, vitamin D, and parathyroid function, and its blood level is held within very narrow physiologic limits by parathyroid hormone. Wallach gives the normal range as 3.1 to 4.5 mg%. He cautions that too much phosphorus in the diet—from soft drinks, meat, and grains—results in considerable calcium loss from the bones.",
+      "verbatim": "Phosphorus is another \"macro\"mineral as-\nsociated with calcium, vitamin D and parathy-\nroid function. Blood levels are again kept\nwithin very narrow physiologic limits by the\nparathyroid hormone. Too much phospho-\nrus in the diet (i.e., soft drinks, meat, grains)\nwill result in considerable calcium loss from\nyourbones. The normal range is 3- 1-4.5 mg%.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 69415
+      },
+      "dose": null,
+      "tags": [
+        "phosphorus",
+        "blood-test",
+        "normal-range",
+        "parathyroid",
+        "diagnostic_pattern",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:58:44+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-LETS-000516",
+      "kind": "diagnostic_pattern",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that chloride in the blood is involved in digestion (stomach HCl), the oxygen-carrying ability of the blood, and adrenal and kidney function, with a normal range of 95 to 110 mEq/L. Elevated chloride shows up in kidney and adrenal disorders and bowel dysfunctions, while decreased chloride is typical of diarrhea, infections, diabetes, and reduced adrenal function. He presents this as part of learning to read your own lab data.",
+      "verbatim": "CI (chloride) is involved in digestion (stom-\nach HCl), oxygen-canying ability ofthe blood,\nadrenal function and kidney function. El-\nevated levels are seen in kidney and adrenal\ndisorders and bowel dysfunctions. Decreased\nlevels are typical ofdiarrhea, infections, diabe-\ntes, reduced adrenal function. The normal\nrange is 95-110 mEq/L.",
+      "locator": {
+        "book": "lets-play-doctor",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 73560
+      },
+      "dose": null,
+      "tags": [
+        "chloride",
+        "blood test",
+        "electrolytes",
+        "normal range",
+        "lab values",
+        "diagnostic_pattern",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:58:44+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

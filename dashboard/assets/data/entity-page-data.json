@@ -280,7 +280,53 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "sodium",
+        "salt",
+        "table salt",
+        "sodium chloride",
+        "NaCl",
+        "Na",
+        "sea salt",
+        "rock salt",
+        "iodized salt",
+        "salt substitute",
+        "salt intake",
+        "sodium intake",
+        "dietary salt",
+        "sodium deficiency",
+        "salt deficiency",
+        "low sodium",
+        "low salt",
+        "low-salt diet",
+        "low-sodium diet",
+        "salt-restricted diet",
+        "salt-free diet",
+        "no-salt diet",
+        "sodium supplement",
+        "salt supplement",
+        "too much salt",
+        "too little salt",
+        "high sodium",
+        "sodium levels",
+        "blood sodium",
+        "salt craving",
+        "salt cravings",
+        "craving salt",
+        "salt hunger",
+        "salt sensitivity",
+        "salt and blood pressure",
+        "is salt bad",
+        "salt lick",
+        "salt block",
+        "water intoxication",
+        "hyponatremia",
+        "hypernatremia",
+        "electrolyte",
+        "electrolytes",
+        "soduim",
+        "sodiam"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -332,7 +378,100 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000372",
+            "WAL-CLM-IMMORT-000373"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000244",
+            "WAL-CLM-DDDL-000245",
+            "WAL-CLM-EPIGEN-000325",
+            "WAL-CLM-EPIGEN-000326",
+            "WAL-CLM-EPIGEN-000327",
+            "WAL-CLM-HELLS-000060",
+            "WAL-CLM-LETS-000033"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000242",
+            "WAL-CLM-DDDL-000243",
+            "WAL-CLM-EPIGEN-000320",
+            "WAL-CLM-EPIGEN-000321",
+            "WAL-CLM-EPIGEN-000322",
+            "WAL-CLM-LETS-000032",
+            "WAL-CLM-LETS-000514",
+            "WAL-CLM-RARE-000368"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000323",
+            "WAL-CLM-HELLS-000059",
+            "WAL-CLM-IMMORT-000374",
+            "WAL-CLM-RARE-000367"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000375",
+            "WAL-CLM-IMMORT-000376",
+            "WAL-CLM-RARE-000369"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000324",
+            "WAL-CLM-LETS-000065"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000328",
+            "WAL-CLM-EPIGEN-000329",
+            "WAL-CLM-EPIGEN-000330",
+            "WAL-CLM-EPIGEN-000332",
+            "WAL-CLM-HELLS-000061"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000331"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000377"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000334"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000333",
+            "WAL-CLM-HELLS-000062",
+            "WAL-CLM-HELLS-000063"
+          ]
+        }
+      ],
       "conditions": [
         "addisons_disease",
         "ageusia",
@@ -735,7 +874,37 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "phosphorus",
+        "phosphorous",
+        "phosphorus deficiency",
+        "phosphorous deficiency",
+        "phosphorus supplement",
+        "phosphorus supplementation",
+        "low phosphorus",
+        "high phosphorus",
+        "too much phosphorus",
+        "phosphorus levels",
+        "blood phosphorus",
+        "low blood phosphorus",
+        "hypophosphatemia",
+        "phosphate",
+        "phosphates",
+        "phosphorus in food",
+        "phosphorus foods",
+        "phosphorus rich foods",
+        "calcium phosphorus ratio",
+        "calcium to phosphorus ratio",
+        "phosphorus deficiency symptoms",
+        "phosphate appetite",
+        "colloidal phosphorus",
+        "chelated phosphorus",
+        "white phosphorus",
+        "calcium phosphate",
+        "phosphorus mineral",
+        "phosphorus and bones",
+        "phosphorus and calcium"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -780,7 +949,81 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000246"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000252",
+            "WAL-CLM-EPIGEN-000335",
+            "WAL-CLM-LETS-000023",
+            "WAL-CLM-RARE-000206"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000247",
+            "WAL-CLM-LETS-000515"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000248"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000249",
+            "WAL-CLM-DDDL-000250",
+            "WAL-CLM-DDDL-000251"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000061"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000253",
+            "WAL-CLM-EPIGEN-000336"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000064"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000378"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000337"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000254"
+          ]
+        }
+      ],
       "conditions": [
         "anorexia",
         "anxiety",
@@ -810,7 +1053,30 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "sulfur",
+        "sulphur",
+        "sulfer",
+        "sulphar",
+        "sulfur mineral",
+        "sulphur mineral",
+        "elemental sulfur",
+        "sulfur deficiency",
+        "sulphur deficiency",
+        "low sulfur",
+        "not enough sulfur",
+        "sulfur supplement",
+        "sulphur supplement",
+        "sulfur amino acids",
+        "sulphur amino acids",
+        "sulfur bearing amino acids",
+        "sulfur ointment",
+        "sulfhydryl",
+        "sulfhydryl group",
+        "brimstone",
+        "MSM",
+        "methylsulfonylmethane"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -847,7 +1113,62 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000379"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000259"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000255",
+            "WAL-CLM-DDDL-000256",
+            "WAL-CLM-DDDL-000257",
+            "WAL-CLM-IMMORT-000381",
+            "WAL-CLM-IMMORT-000382",
+            "WAL-CLM-RARE-000370"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000380"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-RARE-000371"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000258"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000260",
+            "WAL-CLM-RARE-000372"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000338"
+          ]
+        }
+      ],
       "conditions": [
         "anemia",
         "arthritis",
@@ -883,7 +1204,34 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "chloride",
+        "chlorine",
+        "chloride deficiency",
+        "chlorine deficiency",
+        "chloride supplement",
+        "low chloride",
+        "high chloride",
+        "chloride levels",
+        "normal chloride level",
+        "chloride blood test",
+        "chloride in blood",
+        "hypochloremia",
+        "chloride ions",
+        "salt",
+        "table salt",
+        "sodium chloride",
+        "NaCl",
+        "salt deficiency",
+        "low salt diet",
+        "low-salt diet",
+        "chloride of soda",
+        "natrum mur",
+        "nat mur",
+        "chloride mineral",
+        "cloride",
+        "chlorid"
+      ],
       "record": [
         {
           "kind": "dose",
@@ -907,7 +1255,76 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000261",
+            "WAL-CLM-RARE-000373"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000265"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000263",
+            "WAL-CLM-DDDL-000264",
+            "WAL-CLM-LETS-000516",
+            "WAL-CLM-RARE-000374",
+            "WAL-CLM-RARE-000376"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000262",
+            "WAL-CLM-RARE-000375"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-RARE-000377"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000047"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000065",
+            "WAL-CLM-RARE-000379"
+          ]
+        },
+        {
+          "facet": "big_question",
+          "claim_ids": [
+            "WAL-CLM-RARE-000378"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000340"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000339",
+            "WAL-CLM-RARE-000380"
+          ]
+        }
+      ],
       "conditions": [],
       "works_with": [],
       "related": [

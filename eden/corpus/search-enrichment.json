@@ -139,7 +139,9 @@
         "selenium",
         "vitamin-e",
         "fibromyalgia",
-        "margarine"
+        "margarine",
+        "sulfur",
+        "methionine"
       ],
       "facet": "mechanism",
       "question": "What does Wallach say causes fibromyalgia?",
@@ -253,7 +255,9 @@
     "WAL-CLM-DDDL-000105": {
       "subject": "carbonated_beverages",
       "also_about": [
-        "osteoporosis"
+        "osteoporosis",
+        "phosphorus",
+        "calcium"
       ],
       "facet": "warning",
       "question": "Are carbonated soft drinks bad for you?",
@@ -14515,6 +14519,1345 @@
         "minerals",
         "supplements",
         "dosage"
+      ]
+    },
+    "WAL-CLM-DDDL-000242": {
+      "subject": "sodium",
+      "also_about": [
+        "potassium"
+      ],
+      "facet": "physiology",
+      "question": "What is Addison's disease and why does it cause salt cravings?",
+      "answer_short": "Addison's disease is failure of the adrenal cortex; Wallach says it causes the body to lose sodium and produces a marked 'salt hunger' relieved by salt.",
+      "topics": [
+        "addisons-disease",
+        "salt-craving",
+        "salt-hunger",
+        "adrenal",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-DDDL-000243": {
+      "subject": "sodium",
+      "also_about": [
+        "pica"
+      ],
+      "facet": "physiology",
+      "question": "Does craving salt mean something is wrong?",
+      "answer_short": "Wallach says craving salt is a form of pica — a symptom caused only by one or more mineral deficiencies.",
+      "topics": [
+        "salt-craving",
+        "pica",
+        "mineral-deficiency",
+        "cravings",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-DDDL-000244": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Can not getting enough salt actually kill you?",
+      "answer_short": "Yes — Wallach blames the 1993 US heat wave deaths on simple salt deficiency, noting almost all who died were on salt-restricted diets.",
+      "topics": [
+        "salt-deficiency",
+        "heat-stroke",
+        "low-salt-diet",
+        "sodium",
+        "heat-wave"
+      ]
+    },
+    "WAL-CLM-DDDL-000245": {
+      "subject": "sodium",
+      "also_about": [
+        "eclampsia",
+        "preeclampsia"
+      ],
+      "facet": "warning",
+      "question": "Should pregnant women go on a low-salt diet?",
+      "answer_short": "No — Wallach says pregnancy toxemia (eclampsia) is the result of the low-protein, low-salt diets some women adopt to limit weight gain in pregnancy, not something salt restriction prevents.",
+      "topics": [
+        "salt",
+        "pregnancy",
+        "eclampsia",
+        "toxemia",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-DDDL-000246": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "basics",
+      "question": "What is phosphorus?",
+      "answer_short": "Phosphorus is an extremely important essential mineral that Wallach says has more functions in the body than any other mineral, yet nutritionists ignore it because it is in nearly all foods.",
+      "topics": [
+        "phosphorus",
+        "minerals",
+        "essential nutrients",
+        "bone health",
+        "energy"
+      ]
+    },
+    "WAL-CLM-DDDL-000247": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "physiology",
+      "question": "How much phosphorus is in the human body and where is it stored?",
+      "answer_short": "The body holds about 800 grams of phosphorus — just under two pounds — with 700 grams locked in the bones and teeth as insoluble calcium phosphate.",
+      "topics": [
+        "phosphorus",
+        "minerals",
+        "bone health",
+        "body composition"
+      ]
+    },
+    "WAL-CLM-DDDL-000248": {
+      "subject": "phosphorus",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "mechanism",
+      "question": "Do B vitamins need phosphorus to work?",
+      "answer_short": "Yes — Wallach says B-complex vitamins only function as coenzymes for intracellular metabolism when they are combined with phosphorus.",
+      "topics": [
+        "phosphorus",
+        "b vitamins",
+        "coenzymes",
+        "metabolism"
+      ]
+    },
+    "WAL-CLM-DDDL-000249": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "sources",
+      "question": "How much phosphorus do we eat and how well is it absorbed?",
+      "answer_short": "Adults eat 1,000-1,500 mg of phosphorus a day, but absorb only 3-5% of metallic phosphorus, 40-50% of chelated forms, and up to 98% of organically bound colloidal phosphorus.",
+      "topics": [
+        "phosphorus",
+        "absorption",
+        "daily intake",
+        "colloidal minerals"
+      ]
+    },
+    "WAL-CLM-DDDL-000250": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "sources",
+      "question": "Which foods have too much phosphorus compared to calcium?",
+      "answer_short": "All the basic foods are lopsided — grain 1:8, red meat and fish 1:12, carbonated drinks 1:8, and organ meat as extreme as 1:44 calcium to phosphorus.",
+      "topics": [
+        "phosphorus",
+        "calcium ratio",
+        "meat",
+        "soft drinks",
+        "diet"
+      ]
+    },
+    "WAL-CLM-DDDL-000251": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium",
+        "iron",
+        "zinc"
+      ],
+      "facet": "sources",
+      "question": "Does phosphorus in grains block absorption of other minerals?",
+      "answer_short": "Yes — phosphorus in grains occurs as phytates, and phytic acid in unleavened bread binds calcium, iron, zinc and other minerals, lowering their absorption.",
+      "topics": [
+        "phosphorus",
+        "phytates",
+        "grains",
+        "mineral absorption"
+      ]
+    },
+    "WAL-CLM-DDDL-000252": {
+      "subject": "phosphorus",
+      "also_about": [
+        "pica"
+      ],
+      "facet": "warning",
+      "question": "What happens if you are deficient in phosphorus?",
+      "answer_short": "Phosphorus deficiency is widespread and ultimately fatal, collapsing ATP synthesis into complete metabolic energy failure with neuromuscular, skeletal, blood and kidney disease.",
+      "topics": [
+        "phosphorus",
+        "deficiency",
+        "energy failure",
+        "atp"
+      ]
+    },
+    "WAL-CLM-DDDL-000253": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium",
+        "gingivitis",
+        "osteoporosis"
+      ],
+      "facet": "stance",
+      "question": "Do Americans get too much phosphorus?",
+      "answer_short": "Yes — Wallach says most American diets run 15 to 20 parts phosphorus to 1 part calcium, the reverse of the healthy 2:1 calcium-to-phosphorus ratio.",
+      "topics": [
+        "phosphorus",
+        "calcium ratio",
+        "american diet",
+        "gum disease"
+      ]
+    },
+    "WAL-CLM-DDDL-000254": {
+      "subject": "phosphorus",
+      "also_about": [
+        "pica"
+      ],
+      "facet": "history",
+      "question": "Why do phosphorus-deficient animals chew on bones and wood?",
+      "answer_short": "A 'phosphate appetite' drives phosphorus-deficient cattle to anxiously search pastures for discarded bones (osteophagia) and to gnaw on wood and each other's horns.",
+      "topics": [
+        "phosphorus",
+        "deficiency",
+        "animals",
+        "pica",
+        "bone chewing"
+      ]
+    },
+    "WAL-CLM-DDDL-000255": {
+      "subject": "sulfur",
+      "also_about": [
+        "biotin"
+      ],
+      "facet": "physiology",
+      "question": "Which proteins in the body contain sulfur?",
+      "answer_short": "Sulfur is built into hemoglobin, hormones such as insulin and the adrenal cortical hormones, enzymes, and antibodies.",
+      "topics": [
+        "protein",
+        "hormones",
+        "enzymes",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-DDDL-000256": {
+      "subject": "sulfur",
+      "also_about": [
+        "zinc"
+      ],
+      "facet": "physiology",
+      "question": "Why are my fingernails brittle?",
+      "answer_short": "Wallach reads brittle fingernails as a sign of sulfur amino acid and protein deficiency.",
+      "topics": [
+        "nails",
+        "deficiency-signs",
+        "diagnosis"
+      ]
+    },
+    "WAL-CLM-DDDL-000257": {
+      "subject": "sulfur",
+      "also_about": [
+        "malabsorption"
+      ],
+      "facet": "physiology",
+      "question": "Why do farts smell like rotten eggs?",
+      "answer_short": "Wallach says the rotten-egg smell is sulfur released when unabsorbed proteins reach the colon and are fermented by bowel organisms.",
+      "topics": [
+        "digestion",
+        "bowel-gas",
+        "gut-health"
+      ]
+    },
+    "WAL-CLM-DDDL-000258": {
+      "subject": "sulfur",
+      "also_about": [
+        "scabies"
+      ],
+      "facet": "uses",
+      "question": "Can sulfur treat scabies?",
+      "answer_short": "For scabies, Wallach recommends a 5-10% sulfur ointment for infants, in place of the adult chemical treatments, to avoid potential neurotoxicity.",
+      "topics": [
+        "skin",
+        "topical",
+        "children"
+      ]
+    },
+    "WAL-CLM-DDDL-000259": {
+      "subject": "sulfur",
+      "also_about": [
+        "osteoarthritis",
+        "arthritis",
+        "lupus"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of sulfur deficiency?",
+      "answer_short": "Wallach says a sulfur deficiency produces degenerative arthritis and cartilage breakdown, weakened ligaments and tendons, lupus, sickle cell anemia, and other collagen diseases.",
+      "topics": [
+        "deficiency-signs",
+        "joint-health",
+        "connective-tissue"
+      ]
+    },
+    "WAL-CLM-DDDL-000260": {
+      "subject": "sulfur",
+      "also_about": [
+        "lupus",
+        "copper",
+        "selenium"
+      ],
+      "facet": "stance",
+      "question": "Is lupus caused by a nutritional deficiency?",
+      "answer_short": "Wallach argues lupus features multiple mineral deficiencies of sulfur, copper, and selenium, and that its autoimmune damage is a result of the disease, not its cause.",
+      "topics": [
+        "autoimmune",
+        "lupus",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-DDDL-000261": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium",
+        "potassium",
+        "achlorhydria",
+        "vitamin-b12"
+      ],
+      "facet": "basics",
+      "question": "What is Chloride?",
+      "answer_short": "Chloride is an essential mineral and one of the body's three key electrolytes; Wallach says its most important job is supplying the raw material your stomach uses to make hydrochloric acid.",
+      "topics": [
+        "what is chloride",
+        "electrolytes",
+        "stomach acid",
+        "essential minerals",
+        "chloride basics"
+      ]
+    },
+    "WAL-CLM-DDDL-000262": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium",
+        "achlorhydria",
+        "vitamin-b12"
+      ],
+      "facet": "mechanism",
+      "question": "What does chloride actually do in the body?",
+      "answer_short": "Chloride is the raw material your stomach uses to make hydrochloric acid; it is essential to all living things and activates numerous enzymes.",
+      "topics": [
+        "stomach acid",
+        "digestion",
+        "enzymes",
+        "electrolytes",
+        "mineral absorption"
+      ]
+    },
+    "WAL-CLM-DDDL-000263": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium",
+        "potassium"
+      ],
+      "facet": "physiology",
+      "question": "How much of the body is chloride, and what does it do with sodium and potassium?",
+      "answer_short": "Chlorine makes up three percent of the body's total mineral content and works with sodium and potassium as one of three indispensable electrolytes.",
+      "topics": [
+        "electrolytes",
+        "acid-base balance",
+        "water balance",
+        "body composition"
+      ]
+    },
+    "WAL-CLM-DDDL-000264": {
+      "subject": "chloride",
+      "also_about": [
+        "potassium",
+        "sodium"
+      ],
+      "facet": "physiology",
+      "question": "What does the sweat test measure and is it really specific to cystic fibrosis?",
+      "answer_short": "It measures sodium, chloride, and potassium in sweat; Wallach says it is nonspecific, turning positive in 17 different diseases.",
+      "topics": [
+        "sweat test",
+        "cystic fibrosis",
+        "electrolytes",
+        "diagnosis"
+      ]
+    },
+    "WAL-CLM-DDDL-000265": {
+      "subject": "chloride",
+      "also_about": [
+        "achlorhydria",
+        "sodium"
+      ],
+      "facet": "warning",
+      "question": "Can a low-salt diet cause low stomach acid?",
+      "answer_short": "Yes—Wallach says sodium chloride is the raw material for stomach acid, so a salt-restricted diet makes achlorhydria more likely.",
+      "topics": [
+        "stomach acid",
+        "low-salt diet",
+        "aging",
+        "digestion"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000320": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "How much salt do you lose when you sweat?",
+      "answer_short": "Wallach says soldiers sweating in the desert can lose up to 70 to 100 grams of salt per day — enough that sodium loss historically killed troops.",
+      "topics": [
+        "salt",
+        "sweating",
+        "salt-loss",
+        "dehydration",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000321": {
+      "subject": "sodium",
+      "also_about": [
+        "chloride",
+        "potassium"
+      ],
+      "facet": "physiology",
+      "question": "What does sodium do in the body?",
+      "answer_short": "Sodium is one of the three indispensable electrolytes and, with chloride and potassium, runs the body's water balance, osmotic and acid-base equilibrium, and nerve and muscle function.",
+      "topics": [
+        "electrolytes",
+        "salt",
+        "water-balance",
+        "nerve-function"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000322": {
+      "subject": "sodium",
+      "also_about": [
+        "chloride"
+      ],
+      "facet": "physiology",
+      "question": "Why do I crave salt?",
+      "answer_short": "Salt hunger is one of the oldest and most basic cravings of living things, and plant-eaters crave it far more than meat-eaters because grains, vegetables and fruit contain little or no natural salt.",
+      "topics": [
+        "salt",
+        "cravings",
+        "salt-hunger",
+        "vegetarian-diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000323": {
+      "subject": "sodium",
+      "also_about": [
+        "vitamin-b12",
+        "cobalt"
+      ],
+      "facet": "mechanism",
+      "question": "Can a low-salt diet cause a vitamin B12 deficiency?",
+      "answer_short": "Yes, too little salt lowers stomach acid, which stops the intrinsic factor from working, so vitamin B12 cannot be absorbed.",
+      "topics": [
+        "low-sodium-diet",
+        "b12",
+        "stomach-acid",
+        "anemia"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000324": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much salt do you actually need each day?",
+      "answer_short": "Wallach puts the average human salt requirement at about six to ten grams per day — roughly 0.5% of the dry weight of the daily diet.",
+      "topics": [
+        "salt",
+        "how-much-salt",
+        "daily-salt",
+        "sodium",
+        "heart-attack"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000325": {
+      "subject": "sodium",
+      "also_about": [
+        "iron",
+        "anemia"
+      ],
+      "facet": "warning",
+      "question": "Can cutting back on salt cause anemia or low iron?",
+      "answer_short": "Yes, salt-restricted diets lower stomach acid, and that impaired stomach acid is one of Wallach's listed causes of iron deficiency.",
+      "topics": [
+        "low-sodium-diet",
+        "iron",
+        "anemia",
+        "stomach-acid"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000326": {
+      "subject": "sodium",
+      "also_about": [
+        "iodine",
+        "goiter",
+        "hypothyroidism"
+      ],
+      "facet": "warning",
+      "question": "Can restricting salt cause thyroid problems or goiter?",
+      "answer_short": "Yes, Wallach says Americans restricting their salt on doctors' orders has driven goiter and hypothyroidism to epidemic levels.",
+      "topics": [
+        "low-sodium-diet",
+        "thyroid",
+        "iodine",
+        "goiter"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000327": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What happens if you don't get enough sodium?",
+      "answer_short": "Sodium deficiency strikes mainly in heat and heavy sweating, and low-sodium infant formulas have caused fatal 'water intoxication' with brain swelling; the treatment is water and salt.",
+      "topics": [
+        "salt",
+        "dehydration",
+        "heat-exhaustion",
+        "infant-health",
+        "electrolytes"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000328": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is salt actually bad for you?",
+      "answer_short": "No — Wallach teaches that salt is not intrinsically harmful; its only real danger is that it can trick the body into thinking it already has enough minerals.",
+      "topics": [
+        "salt",
+        "is-salt-bad",
+        "sodium",
+        "mineral-deficiency",
+        "heart-health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000329": {
+      "subject": "sodium",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "stance",
+      "question": "Do low-salt diets actually help high blood pressure?",
+      "answer_short": "Wallach says no — he claims there is not a single double-blind study showing any benefit from a salt-restricted or low-sodium diet.",
+      "topics": [
+        "salt",
+        "low-salt-diet",
+        "high-blood-pressure",
+        "hypertension",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000330": {
+      "subject": "sodium",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "stance",
+      "question": "If salt causes high blood pressure, why don't farm animals get it?",
+      "answer_short": "Wallach points out that livestock eat all the salt they want from salt blocks yet never develop high blood pressure or stroke.",
+      "topics": [
+        "salt",
+        "salt-blocks",
+        "livestock",
+        "high-blood-pressure",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000331": {
+      "subject": "sodium",
+      "also_about": [
+        "pica"
+      ],
+      "facet": "big_question",
+      "question": "Can your body actually know when it needs salt?",
+      "answer_short": "Wallach cites a 1940 case of a boy whose intense salt craving kept his undiagnosed Addison's disease at bay — he died 48 hours after doctors restricted his salt.",
+      "topics": [
+        "salt-craving",
+        "wisdom-of-the-body",
+        "addisons-disease",
+        "pica",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000332": {
+      "subject": "sodium",
+      "also_about": [
+        "calcium",
+        "potassium",
+        "hypertension"
+      ],
+      "facet": "stance",
+      "question": "Is salt really the cause of high blood pressure?",
+      "answer_short": "No, Wallach argues that the 'salt sensitivity' seen in hypertension is actually driven by low calcium and potassium intake, not by salt itself.",
+      "topics": [
+        "blood-pressure",
+        "salt",
+        "hypertension",
+        "calcium",
+        "potassium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000333": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why was salt so valuable in ancient times?",
+      "answer_short": "Wallach says salt was so essential a necessity of life that people in salt-poor Africa gave up everything they owned — even their wives and children — to obtain it, and that African tribesmen said, 'He who has salt has war.'",
+      "topics": [
+        "salt",
+        "history-of-salt",
+        "salt-trade",
+        "sodium",
+        "salt-value"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000334": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Why is salt connected to the word 'salary'?",
+      "answer_short": "Roman soldiers were partly paid in a salt ration called a 'salarium' — the origin of the word 'salary' and the phrase 'worth their salt.'",
+      "topics": [
+        "salt",
+        "salary-etymology",
+        "word-origin",
+        "history-of-salt",
+        "sodium"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000335": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium",
+        "hyperparathyroidism"
+      ],
+      "facet": "warning",
+      "question": "What causes low blood phosphorus?",
+      "answer_short": "Low blood phosphorus (hypophosphatemia) results from IV glucose or TPN without phosphorus, excessive antacids, hyperparathyroidism, diuretics, sweating from exercise, and alcoholism.",
+      "topics": [
+        "phosphorus",
+        "hypophosphatemia",
+        "low blood phosphorus",
+        "antacids",
+        "alcoholism"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000336": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium",
+        "zinc",
+        "copper",
+        "chromium"
+      ],
+      "facet": "stance",
+      "question": "Do vegetarians get enough phosphorus?",
+      "answer_short": "Yes — Wallach says vegetarians and vegans who don't supplement with minerals rarely have a phosphorus deficiency (unless they have chronic gluten intolerance from heavy whole-grain consumption), though because of their high phytic-acid intake they always have other mineral deficiencies, such as calcium, copper, chromium, vanadium, lithium and zinc, unless they supplement.",
+      "topics": [
+        "phosphorus",
+        "vegetarian",
+        "vegan",
+        "phytic acid",
+        "mineral deficiency"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000337": {
+      "subject": "phosphorus",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "How did phosphorus get its name?",
+      "answer_short": "In 1669 the German alchemist Hennig Brandt heated human urine with beach sand; the glowing white residue he named 'phosphorus', Greek for 'I bear light.'",
+      "topics": [
+        "phosphorus",
+        "name origin",
+        "history",
+        "alchemy"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000338": {
+      "subject": "sulfur",
+      "also_about": [
+        "mercury"
+      ],
+      "facet": "history",
+      "question": "What did alchemists believe about sulfur?",
+      "answer_short": "Alchemists held that all metals were made of sulphur and mercury, and that the proportions of each decided whether a metal became gold, silver, copper, or tin.",
+      "topics": [
+        "history",
+        "alchemy",
+        "chemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000339": {
+      "subject": "chloride",
+      "also_about": [
+        "iodine",
+        "bromine"
+      ],
+      "facet": "history",
+      "question": "Why is chlorine put in drinking water?",
+      "answer_short": "Since a 1918 U.S. decree, chlorine has disinfected public water—Wallach notes it kills E. coli far better than bromine or iodine.",
+      "topics": [
+        "drinking water",
+        "disinfectant",
+        "chlorine",
+        "public health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000340": {
+      "subject": "chloride",
+      "also_about": [
+        "bromine",
+        "iodine"
+      ],
+      "facet": "etymology",
+      "question": "Why is chlorine called chlorine, and what does the word mean?",
+      "answer_short": "Sir Humphry Davy named it in 1810 from the Greek 'chloros,' meaning green-yellow.",
+      "topics": [
+        "name origin",
+        "halogens",
+        "chemistry",
+        "chlorine"
+      ]
+    },
+    "WAL-CLM-HELLS-000059": {
+      "subject": "sodium",
+      "also_about": [
+        "chloride",
+        "vitamin-b12"
+      ],
+      "facet": "mechanism",
+      "question": "Why does the body need salt?",
+      "answer_short": "Salt is the raw material for stomach acid, which digests food, absorbs minerals, and activates pepsin and B12's intrinsic factor.",
+      "topics": [
+        "salt",
+        "stomach-acid",
+        "hydrochloric-acid",
+        "pepsin",
+        "digestion",
+        "mineral-absorption"
+      ]
+    },
+    "WAL-CLM-HELLS-000060": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What happens if you don't eat enough salt?",
+      "answer_short": "Wallach says restricting salt causes heat intolerance, digestive problems like GERD, and low stomach acid that raises disease risk.",
+      "topics": [
+        "salt",
+        "low-salt-diet",
+        "gerd",
+        "stomach-acid",
+        "hypochlorhydria",
+        "digestion"
+      ]
+    },
+    "WAL-CLM-HELLS-000061": {
+      "subject": "sodium",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "stance",
+      "question": "Does salt cause high blood pressure?",
+      "answer_short": "No — Wallach says salt does not cause high blood pressure, and restricting it actually shortens your life.",
+      "topics": [
+        "salt",
+        "blood-pressure",
+        "hypertension",
+        "heart-health",
+        "low-salt-diet"
+      ]
+    },
+    "WAL-CLM-HELLS-000062": {
+      "subject": "sodium",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "history",
+      "question": "Is a low-salt diet actually bad for your heart?",
+      "answer_short": "Yes — Wallach cites a 1997 Sodium Task Force report that heavy salt-restrictors had 600% more heart attacks.",
+      "topics": [
+        "salt",
+        "low-salt-diet",
+        "heart-attack",
+        "sodium-task-force",
+        "heart-health"
+      ]
+    },
+    "WAL-CLM-HELLS-000063": {
+      "subject": "sodium",
+      "also_about": [
+        "hypertension"
+      ],
+      "facet": "history",
+      "question": "Why do the Japanese eat so much salt but have less heart disease?",
+      "answer_short": "Wallach notes the Japanese ate 15 grams of salt a day yet had 85% less cardiovascular disease and hypertension than Americans.",
+      "topics": [
+        "salt",
+        "japan",
+        "heart-disease",
+        "hypertension",
+        "longevity",
+        "sodium-intake"
+      ]
+    },
+    "WAL-CLM-HELLS-000064": {
+      "subject": "phosphorus",
+      "also_about": [
+        "iron",
+        "obesity",
+        "pica"
+      ],
+      "facet": "big_question",
+      "question": "Can mineral deficiency cause binge eating and obesity?",
+      "answer_short": "Yes — Wallach says iron and phosphorus deficiencies occurring together trigger an almost psychotic binge-eating and soft-drink rampage that results in morbid obesity.",
+      "topics": [
+        "phosphorus",
+        "obesity",
+        "binge eating",
+        "mineral deficiency",
+        "cravings"
+      ]
+    },
+    "WAL-CLM-HELLS-000065": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium"
+      ],
+      "facet": "stance",
+      "question": "Is a low-salt diet actually bad for you?",
+      "answer_short": "Wallach says salt deficiency is common and is often caused by doctors wrongly telling patients to cut salt—the profession, he says, thinks humans are dumber than cows.",
+      "topics": [
+        "low-salt diet",
+        "salt",
+        "doctors",
+        "minerals",
+        "salt deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000372": {
+      "subject": "sodium",
+      "also_about": [
+        "chloride",
+        "potassium"
+      ],
+      "facet": "basics",
+      "question": "What is sodium?",
+      "answer_short": "Sodium is a soft, highly reactive silvery metal and the sixth most abundant element in the earth's crust, known best as sodium chloride — common table salt. Wallach treats it as an essential macro-mineral and one of the body's three indispensable electrolytes.",
+      "topics": [
+        "sodium",
+        "salt",
+        "electrolyte",
+        "mineral",
+        "table-salt",
+        "macro-mineral"
+      ]
+    },
+    "WAL-CLM-IMMORT-000373": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is sodium?",
+      "answer_short": "Sodium is a highly reactive, soft silvery metal, light enough to float on water and the sixth most abundant element in the earth's crust.",
+      "topics": [
+        "sodium",
+        "mineral",
+        "electrolyte",
+        "chemistry"
+      ]
+    },
+    "WAL-CLM-IMMORT-000374": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why do animals crave salt and need salt licks?",
+      "answer_short": "Animals have an instinctive salt hunger, so farmers use salt blocks (at least 85% sodium chloride) to make them consume trace minerals.",
+      "topics": [
+        "salt",
+        "salt-lick",
+        "animals",
+        "trace-minerals"
+      ]
+    },
+    "WAL-CLM-IMMORT-000375": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Where does table salt come from?",
+      "answer_short": "Wallach says table salt (sodium chloride) is mined from ancient salt mines on every continent, and seawater holds a quarter pound of salt per gallon.",
+      "topics": [
+        "salt",
+        "sodium-chloride",
+        "sea-water",
+        "salt-mines",
+        "sources"
+      ]
+    },
+    "WAL-CLM-IMMORT-000376": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Is processed table salt as good as natural salt?",
+      "answer_short": "No — unprocessed salt once carried trace minerals and rare earths, while modern processed salt fools the body into thinking it is getting minerals.",
+      "topics": [
+        "salt",
+        "processed-food",
+        "trace-minerals",
+        "table-salt"
+      ]
+    },
+    "WAL-CLM-IMMORT-000377": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered sodium and where does its name come from?",
+      "answer_short": "Sir Humphry Davy isolated sodium in 1807; the name comes from 'soda,' from the Latin 'sodanum,' an ancient Roman headache remedy.",
+      "topics": [
+        "sodium",
+        "history",
+        "humphry-davy",
+        "etymology",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000378": {
+      "subject": "phosphorus",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered phosphorus?",
+      "answer_short": "The German physician Hennig Brand discovered phosphorus in 1669 by distilling boiled-down urine, producing a substance that glowed in the dark.",
+      "topics": [
+        "history",
+        "chemistry",
+        "discovery"
+      ]
+    },
+    "WAL-CLM-IMMORT-000379": {
+      "subject": "sulfur",
+      "also_about": [
+        "methionine",
+        "selenium"
+      ],
+      "facet": "basics",
+      "question": "What is sulfur?",
+      "answer_short": "In Wallach's framework sulfur is one of the 60 essential minerals — a structural atom built into most proteins through the sulfur amino acids cystine, cysteine, and methionine.",
+      "topics": [
+        "essential-minerals",
+        "protein",
+        "amino-acids",
+        "nutrition-basics"
+      ]
+    },
+    "WAL-CLM-IMMORT-000380": {
+      "subject": "sulfur",
+      "also_about": [
+        "methionine"
+      ],
+      "facet": "mechanism",
+      "question": "What does sulfur do in the body?",
+      "answer_short": "Sulfur is a structural atom in most proteins, carried by the sulfur amino acids cystine, cysteine, and methionine, and it is essential to glutathione.",
+      "topics": [
+        "protein",
+        "amino-acids",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-IMMORT-000381": {
+      "subject": "sulfur",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Where is sulfur stored in the body?",
+      "answer_short": "Sulfur concentrates in cartilage, tendons, keratin, skin, intervertebral discs, hair, and nails, and is lowest in the bones.",
+      "topics": [
+        "body-distribution",
+        "physiology",
+        "connective-tissue"
+      ]
+    },
+    "WAL-CLM-IMMORT-000382": {
+      "subject": "sulfur",
+      "also_about": [
+        "selenium",
+        "methionine"
+      ],
+      "facet": "physiology",
+      "question": "Do sulfur amino acids help you live longer?",
+      "answer_short": "Wallach counts the sulfur-bearing amino acids among the antioxidants shown to significantly extend the average lifespan of a population.",
+      "topics": [
+        "longevity",
+        "antioxidants",
+        "aging"
+      ]
+    },
+    "WAL-CLM-LETS-000514": {
+      "subject": "sodium",
+      "also_about": [
+        "chloride",
+        "potassium"
+      ],
+      "facet": "physiology",
+      "question": "What does sodium do in the body?",
+      "answer_short": "Sodium is an essential macro-mineral that maintains acid-base balance, fluid pressure in the blood and tissues, and neuromuscular function.",
+      "topics": [
+        "sodium",
+        "electrolytes",
+        "macro-minerals",
+        "blood-test"
+      ]
+    },
+    "WAL-CLM-LETS-000515": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "physiology",
+      "question": "What is a normal phosphorus level on a blood test?",
+      "answer_short": "Wallach gives a normal blood phosphorus range of 3.1–4.5 mg%, kept within narrow limits by parathyroid hormone.",
+      "topics": [
+        "blood-test",
+        "normal-range",
+        "parathyroid"
+      ]
+    },
+    "WAL-CLM-LETS-000516": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium",
+        "potassium"
+      ],
+      "facet": "physiology",
+      "question": "What is a normal chloride level in the blood?",
+      "answer_short": "Wallach gives a normal blood chloride range of 95–110 mEq/L; low levels point to diarrhea, infection, diabetes, or weak adrenals.",
+      "topics": [
+        "blood test",
+        "electrolytes",
+        "normal range",
+        "lab values"
+      ]
+    },
+    "WAL-CLM-RARE-000367": {
+      "subject": "sodium",
+      "also_about": [
+        "calcium",
+        "osteoporosis"
+      ],
+      "facet": "mechanism",
+      "question": "Does eating salt make you lose calcium?",
+      "answer_short": "Yes — diets heavy in salt raise the body's calcium 'cost,' pushing urinary calcium loss up (from 96 to 148 mg a day when food was heavily salted).",
+      "topics": [
+        "calcium",
+        "salt",
+        "bone-health"
+      ]
+    },
+    "WAL-CLM-RARE-000368": {
+      "subject": "sodium",
+      "also_about": [
+        "edema"
+      ],
+      "facet": "physiology",
+      "question": "Do pregnant women need more salt?",
+      "answer_short": "Yes — Wallach says pregnancy requires a net increase in salt to keep water in the blood vessels, so salty-food cravings make sense.",
+      "topics": [
+        "pregnancy",
+        "salt",
+        "cravings",
+        "swelling"
+      ]
+    },
+    "WAL-CLM-RARE-000369": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "sources",
+      "question": "Do vegetarians need more salt?",
+      "answer_short": "Yes — Wallach notes grains and green foods are very low in sodium, so vegetarians need a significant salt supplement, as Gandhi argued for India.",
+      "topics": [
+        "salt",
+        "vegetarian",
+        "sodium-sources",
+        "history"
+      ]
+    },
+    "WAL-CLM-RARE-000370": {
+      "subject": "sulfur",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "Why does hair need sulfur?",
+      "answer_short": "Hair keratin contains cystine, a sulfur amino acid, and perms, bleaches, dyes, and depilatories significantly decrease its cystine levels, changing the hair's physical characteristics and its ability to bind trace minerals.",
+      "topics": [
+        "hair",
+        "keratin",
+        "beauty"
+      ]
+    },
+    "WAL-CLM-RARE-000371": {
+      "subject": "sulfur",
+      "also_about": [
+        "selenium",
+        "molybdenum"
+      ],
+      "facet": "sources",
+      "question": "What foods are high in sulfur?",
+      "answer_short": "Wallach says organ meats such as liver and kidney can significantly increase the availability of sulfur, along with selenium, cobalt, molybdenum, and zinc.",
+      "topics": [
+        "food-sources",
+        "diet",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000372": {
+      "subject": "sulfur",
+      "also_about": [
+        "selenium",
+        "calcium",
+        "magnesium",
+        "zinc"
+      ],
+      "facet": "stance",
+      "question": "Is sulfur an essential mineral the body needs?",
+      "answer_short": "Yes—Wallach counts sulphur among the 60 essential elements, metals and minerals the body must obtain.",
+      "topics": [
+        "essential minerals",
+        "essential nutrients",
+        "nutrition basics",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-RARE-000373": {
+      "subject": "chloride",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Where is chlorine found in nature?",
+      "answer_short": "Wallach reports chlorine spread across rocks, soils, and water — most concentrated in sea water, and in land animals highest in hair and skin.",
+      "topics": [
+        "chloride",
+        "chlorine",
+        "seawater",
+        "soil-minerals",
+        "natural-occurrence"
+      ]
+    },
+    "WAL-CLM-RARE-000374": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium",
+        "potassium"
+      ],
+      "facet": "physiology",
+      "question": "What do high chloride levels in a hair mineral analysis mean?",
+      "answer_short": "Wallach says elevated hair sodium, potassium, and chloride point to an essential fatty acid deficiency, not a true excess.",
+      "topics": [
+        "chloride",
+        "hair-analysis",
+        "electrolytes",
+        "essential-fatty-acids",
+        "mineral-testing"
+      ]
+    },
+    "WAL-CLM-RARE-000375": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium"
+      ],
+      "facet": "mechanism",
+      "question": "What causes the body to lose chloride?",
+      "answer_short": "Wallach ties chloride (as NaCl) loss to conditions like cystic fibrosis and Addison's disease, which disturbs the body's acid-base balance.",
+      "topics": [
+        "chloride",
+        "acid-base-balance",
+        "ph",
+        "electrolyte-loss"
+      ]
+    },
+    "WAL-CLM-RARE-000376": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium"
+      ],
+      "facet": "physiology",
+      "question": "Does sodium chloride control water balance in the body?",
+      "answer_short": "Wallach describes sodium chloride (the cell salt Natrum Mur) as regulating cellular moisture by attracting and distributing water.",
+      "topics": [
+        "chloride",
+        "sodium-chloride",
+        "water-balance",
+        "hydration",
+        "cell-salts"
+      ]
+    },
+    "WAL-CLM-RARE-000377": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium"
+      ],
+      "facet": "sources",
+      "question": "Where does the body get chloride?",
+      "answer_short": "Wallach says ordinary table salt (sodium chloride) is the universal source of chloride ions.",
+      "topics": [
+        "chloride",
+        "salt",
+        "sodium-chloride",
+        "dietary-sources"
+      ]
+    },
+    "WAL-CLM-RARE-000378": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium"
+      ],
+      "facet": "big_question",
+      "question": "Isn't chlorine a poisonous gas—how can it be essential?",
+      "answer_short": "Wallach opens his minerals chapter with a quote noting salt joins an explosive metal (sodium) and a lethal gas (chlorine), yet becomes an absolute necessity for life.",
+      "topics": [
+        "salt",
+        "chlorine gas",
+        "stomach acid",
+        "chemistry"
+      ]
+    },
+    "WAL-CLM-RARE-000379": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium"
+      ],
+      "facet": "stance",
+      "question": "Is salt bad for you?",
+      "answer_short": "Wallach says salt itself is not harmful, contrary to popular belief, though relying on it can fool the body into thinking it's getting minerals.",
+      "topics": [
+        "chloride",
+        "salt",
+        "sodium-chloride",
+        "salt-safety",
+        "processed-food"
+      ]
+    },
+    "WAL-CLM-RARE-000380": {
+      "subject": "chloride",
+      "also_about": [
+        "sulfur",
+        "mercury"
+      ],
+      "facet": "history",
+      "question": "Who discovered that chloride had medical value?",
+      "answer_short": "Wallach credits Paracelsus, whose research into minerals and disease led him to the medical value of chloride.",
+      "topics": [
+        "history",
+        "paracelsus",
+        "medicine",
+        "minerals"
+      ]
+    },
+    "WAL-CLM-LETS-000032": {
+      "subject": "sodium",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What are the symptoms of sodium deficiency?",
+      "answer_short": "Sodium deficiency can cause abdominal cramps, confusion, dizziness, fatigue, muscular weakness, seizures, and loss of taste, among other signs.",
+      "topics": [
+        "sodium-deficiency",
+        "salt",
+        "electrolytes",
+        "deficiency-signs"
+      ]
+    },
+    "WAL-CLM-LETS-000065": {
+      "subject": "sodium",
+      "also_about": [
+        "potassium",
+        "chloride"
+      ],
+      "facet": "protocol",
+      "question": "How much sodium should you take a day?",
+      "answer_short": "In his adult Base Line Nutritional Supplement Program table, Wallach lists sodium with three figures: an RDA of 1,100 mg, a supplement level of 3,300 mg, and a daily range of 300 to 3,000 mg.",
+      "topics": [
+        "sodium-dose",
+        "salt",
+        "supplement-program",
+        "how-much"
+      ]
+    },
+    "WAL-CLM-LETS-000033": {
+      "subject": "sodium",
+      "also_about": [
+        "hypertension",
+        "edema"
+      ],
+      "facet": "warning",
+      "question": "What happens if you get too much sodium?",
+      "answer_short": "Sodium excess can cause high blood pressure, edema, congestive heart failure, kidney failure, seizures, and weight gain.",
+      "topics": [
+        "sodium-toxicity",
+        "salt",
+        "hypertension",
+        "toxicity-signs"
+      ]
+    },
+    "WAL-CLM-LETS-000061": {
+      "subject": "phosphorus",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How much phosphorus should I supplement?",
+      "answer_short": "None—phosphorus is the one nutrient in Wallach's Base Line supplement program listed at zero supplemental need.",
+      "topics": [
+        "supplements",
+        "dosage",
+        "base-line-program"
+      ]
+    },
+    "WAL-CLM-RARE-000206": {
+      "subject": "phosphorus",
+      "also_about": [
+        "calcium",
+        "osteoporosis",
+        "arthritis"
+      ],
+      "facet": "warning",
+      "question": "Can too much phosphorus be bad for you?",
+      "answer_short": "Yes — high phosphorus intake from high-protein diets raises your calcium requirement and can aggravate osteoporosis, arthritis, high blood pressure and loose teeth.",
+      "topics": [
+        "phosphorus",
+        "high protein diet",
+        "calcium",
+        "bone loss"
+      ]
+    },
+    "WAL-CLM-LETS-000023": {
+      "subject": "phosphorus",
+      "also_about": [
+        "osteoporosis",
+        "pica"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of phosphorus deficiency and too much phosphorus?",
+      "answer_short": "Deficiency brings anorexia, anxiety, bone pain, fatigue, numbness, pica, and weakness; excess causes calcium malabsorption, loose teeth, osteoporosis, and secondary hyperparathyroidism.",
+      "topics": [
+        "deficiency-symptoms",
+        "toxicity",
+        "bone-health"
+      ]
+    },
+    "WAL-CLM-LETS-000047": {
+      "subject": "chloride",
+      "also_about": [
+        "sodium",
+        "potassium",
+        "calcium"
+      ],
+      "facet": "protocol",
+      "question": "How much chloride do I need each day?",
+      "answer_short": "In his Base Line Nutritional Supplement Program, Wallach lists chloride at a True Supplement Need of 2,500 mg per day (30-day pharmacologic dose 500 to 2,500 mg), against a government RDA of 1,700 mg.",
+      "topics": [
+        "daily dose",
+        "supplement",
+        "base line program",
+        "RDA"
       ]
     }
   }
