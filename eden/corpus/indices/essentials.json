@@ -1457,7 +1457,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 61,
+    "claim_count": 60,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1527,7 +1527,6 @@
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000331",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000334",
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000381",
@@ -2570,7 +2569,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 105,
+    "claim_count": 104,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-EPIGEN-000177"
@@ -2628,7 +2627,6 @@
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-EPIGEN-000005",
-        "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-EPIGEN-000172",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000137",
@@ -2811,7 +2809,6 @@
       "thrush",
       "tonsillitis",
       "torticollis",
-      "wernicke_korsakoff_syndrome",
       "white_muscle_disease"
     ],
     "interacts_with": [
@@ -2932,7 +2929,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 33,
+    "claim_count": 32,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -2975,7 +2972,6 @@
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000307",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-RARE-000278",
         "WAL-CLM-RARE-000280",
         "WAL-CLM-RARE-000282"
@@ -3016,7 +3012,6 @@
       "hypoglycemia",
       "infertility",
       "insomnia",
-      "korsakoffs_syndrome",
       "obesity",
       "panic_attacks",
       "schizophrenia",
@@ -4601,7 +4596,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 21,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -4614,7 +4609,6 @@
         "WAL-CLM-LETS-000068"
       ],
       "protocol": [
-        "WAL-CLM-EPIGEN-000014",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000142",
         "WAL-CLM-LETS-000159",
@@ -4623,7 +4617,6 @@
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000244",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000377",
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000396",

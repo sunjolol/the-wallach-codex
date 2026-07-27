@@ -14140,6 +14140,43 @@
       "extracted_at": "2026-07-27T20:07:30+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-RARE-000400",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach ties adolescent violence partly to hormones interacting with nutrition. He points to the surge of the 'male hormone testosterone' during puberty, roughly ages 14 to 18, and argues that when it lands on top of specific mineral deficiencies — he names copper, chromium, vanadium and lithium — and a high-sugar diet (fruit juices, sodas, candy, ice cream, sugary cereals), the result fills jails and death rows with teenage killers. He calls testosterone surges, high sugar intake and mineral deficiencies 'as explosive a mixture as matches, nitroglycerine and gun powder combined.' It is a characteristic Wallach stance: behavior conventionally blamed on psychology or environment, reframed as a fixable hormonal-and-nutritional problem.",
+      "verbatim": "Putting together the appearence of the\nmale hormone testosterone during puberty\nbetween 14 and 18, mineral deficiencies\n(especially copper, chromium, vanadium\nand lithium ) and high sugar intakes (i.e.-\napple juice, grape juice, sugar drinks, co-\nlas, ice cream, candy, boxed cereals, past-\nties of all kinds, etc.), it is not surprising\nthat our jails are full and death row is popu-\nlated by hundreds of teens waiting to be\nexecuted for murder!!! Testosterone surges,\nhigh sugar intake and mineral deficiencies\nare as explosive a mixture as matches, ni-\ntroglycerine and gun powder combined!!!",
+      "locator": {
+        "book": "rare-earths",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 292345
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "testosterone",
+        "teen violence",
+        "crime",
+        "aggression",
+        "men's health",
+        "behavior",
+        "sugar",
+        "puberty"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T21:47:39+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

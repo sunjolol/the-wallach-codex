@@ -677,7 +677,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 51,
+    "claim_count": 50,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000122",
@@ -717,7 +717,6 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000374",
@@ -779,7 +778,6 @@
       "infarction",
       "infertility",
       "irritable_bowel_syndrome",
-      "korsakoffs_syndrome",
       "learning_disabilities",
       "menopause",
       "migraine",
@@ -1594,12 +1592,11 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -3854,12 +3851,11 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -3896,7 +3892,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 46,
+    "claim_count": 45,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-LETS-000190"
@@ -3931,7 +3927,6 @@
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000345",
         "WAL-CLM-LETS-000349",
@@ -3980,7 +3975,6 @@
       "infarction",
       "infection",
       "intermittent_claudication",
-      "korsakoffs_syndrome",
       "leukemia",
       "leukorrhea",
       "otitis",
@@ -4503,7 +4497,7 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
@@ -4512,7 +4506,6 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000283",
         "WAL-CLM-LETS-000306",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000409"
       ]
     },
@@ -4523,7 +4516,6 @@
       "diabetes",
       "gallstones",
       "hypertension",
-      "korsakoffs_syndrome",
       "psoriasis"
     ],
     "books_cited": [
@@ -5521,7 +5513,7 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 44,
+    "claim_count": 43,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000123",
@@ -5554,7 +5546,6 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000374",
@@ -5609,7 +5600,6 @@
       "infertility",
       "inflammation",
       "irritable_bowel_syndrome",
-      "korsakoffs_syndrome",
       "learning_disabilities",
       "menopause",
       "migraine",
@@ -5934,12 +5924,11 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -7384,12 +7373,11 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },

@@ -447,7 +447,7 @@
         "korsakoffs_syndrome"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's second dementia: Korsakoff's syndrome, which he classifies as part of the Beriberi (thiamine, or vitamin B1, deficiency) family of diseases. He holds it is reversible by eliminating sugar, fried foods, processed meats, oils, and gluten from the diet and following a supplement program providing all 90 essential nutrients with a special emphasis on thiamine (vitamin B1). In Wallach's words: \"The disease can be reversed by the elimination of sugar, fried foods, processed meats, oils, and gluten from the diet as well as a supplement program that provides all 90 essential nutrients with a special emphasis on the supplementation of thiamine...\"",
+      "claim_text": "In Wallach's framework, dementia is not one disease but at least four, and Korsakoff's syndrome is the second of them. He classifies it within the Beriberi family — the cluster of diseases caused by a deficiency of thiamine (vitamin B1). Because he treats it as a nutrient-deficiency disease rather than permanent brain damage, he holds that it can be reversed: eliminate sugar, fried foods, processed meats, added oils, and gluten from the diet, and follow a supplement program that provides all 90 essential nutrients with a special emphasis on thiamine.",
       "verbatim": "Korsakoff’s syndrome occurs as part of the Beriberi (thiamine or vitamin\n\nB1 deficiency) collection of diseases. The disease can be reversed by the\n\n\nelimination of sugar, fried foods, processed meats, oils, and gluten from\nthe diet as well as a supplement program that provides all 90 essential\nnutrients with a special emphasis on the supplementation of thiamine",
       "locator": {
         "book": "epigenetics",
@@ -465,7 +465,8 @@
         "dementia",
         "vitamin-b1",
         "beriberi",
-        "protocol"
+        "protocol",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -486,7 +487,7 @@
         "multiple_sclerosis"
       ],
       "symptoms": [],
-      "claim_text": "Wallach's third dementia: Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's'), which he describes as a two-part syndrome in which the patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) simultaneously. He holds it is reversible by treating both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin (as occurs in MS), the addition of 6-8 eggs per day to supply raw materials for myelin maintenance and repair, and a program of all 90 essential nutrients with special emphasis on antioxidants, including selenium. In Wallach's words: \"The disease syndrome can be reversed by dealing with both diseases. To stop the ongoing inflammatory damage to the myelin of the brain (that occurs in MS) with a dietary change, add 6-8 eggs per day to provide raw materials to help support maintenance and repair of the myelin and supplement with all 90 essential nutrients with a special emphasis on antioxidants, including selenium.\"",
+      "claim_text": "Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's') is the third of the four dementias in Wallach's framework. He describes it as a two-part disease in which a patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) at the same time. Because two things are going wrong at once, he reverses it by dealing with both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin — the tissue that MS attacks — the addition of 6-8 eggs per day to supply the raw materials to maintain and repair that myelin, and a program of all 90 essential nutrients with a special emphasis on antioxidants, including selenium.",
       "verbatim": "Wernecke-Korsakoff's syndrome is a two-part disease syndrome in\n\nwhich the patient is diagnosed with both Korsakoff’s syndrome and\nmultiple sclerosis (MS) simultaneously",
       "locator": {
         "book": "epigenetics",
@@ -504,7 +505,8 @@
         "dementia",
         "multiple-sclerosis",
         "selenium",
-        "protocol"
+        "protocol",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",
@@ -16180,6 +16182,40 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-27T20:07:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000453",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach labels Korsakoff's syndrome 'cerebral beriberi' — beriberi being the classic thiamine (vitamin B1) deficiency disease, here affecting the brain. He places it in a family of brain-lesion diseases — multiple sclerosis, ALS (Lou Gehrig's disease), Alzheimer's, Wernicke-Korsakoff's (which he calls 'cerebral beriberi and multiple sclerosis combined'), and Creutzfeld-Jakob disease (mad cow disease) — that he says all share a broad symptom list and brain-lesion pattern with Huntington's disease. The label reinforces his central claim that this 'dementia' is a reversible nutrient-deficiency problem, not permanent damage.",
+      "verbatim": "Many individuals diagnosed with multiple sclerosis, ALS (Lou Gehrig's\ndisease), Alzheimer's disease, Korsakoff’s syndrome (cerebral beriberi), Wernicke-\nKorsakoff's syndrome (cerebral beriberi and multiple sclerosis combined), and\nCreutzfeld-Jakob disease (BSE, Mad Cow Disease, enzootic ataxia, etc.) share the\nbroad symptom list and brain lesion list with Huntington's disease.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 540579
+      },
+      "dose": null,
+      "tags": [
+        "search-only",
+        "korsakoff",
+        "cerebral beriberi",
+        "thiamine",
+        "brain lesions",
+        "dementia"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T21:47:39+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

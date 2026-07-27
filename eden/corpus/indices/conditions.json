@@ -7744,14 +7744,12 @@
   },
   "korsakoffs_syndrome": {
     "display_name": "Korsakoffs Syndrome",
-    "claim_count": 4,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000035"
       ],
       "protocols": [
-        "WAL-CLM-EPIGEN-000014",
-        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -7759,18 +7757,13 @@
       "choline",
       "chromium",
       "selenium",
-      "vanadium",
       "vitamin-b1",
       "vitamin-e"
     ],
     "other_substances_involved": [
       "b-complex",
-      "betaine-hcl",
       "centrophenoxine",
       "hydergine",
-      "hydrogen-peroxide",
-      "lecithin",
-      "pancreatic-enzymes",
       "piracetam",
       "vasopressin"
     ],
@@ -8978,7 +8971,7 @@
   },
   "multiple_sclerosis": {
     "display_name": "Multiple Sclerosis",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000227",
@@ -8988,7 +8981,6 @@
         "WAL-CLM-RARE-000087"
       ],
       "protocols": [
-        "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-EPIGEN-000172",
         "WAL-CLM-LETS-000371"
       ],
@@ -12900,18 +12892,14 @@
   },
   "wernicke_korsakoff_syndrome": {
     "display_name": "Wernicke Korsakoff Syndrome",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000035",
         "WAL-CLM-RARE-000233"
-      ],
-      "protocols": [
-        "WAL-CLM-EPIGEN-000015"
       ]
     },
     "essentials_involved": [
-      "selenium",
       "vitamin-b1"
     ],
     "other_substances_involved": [],

@@ -2497,7 +2497,7 @@
       "symbol": "Cr",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 61,
+      "claim_count": 60,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2590,7 +2590,6 @@
             "WAL-CLM-LETS-000316",
             "WAL-CLM-LETS-000322",
             "WAL-CLM-LETS-000331",
-            "WAL-CLM-LETS-000333",
             "WAL-CLM-LETS-000334",
             "WAL-CLM-LETS-000356",
             "WAL-CLM-LETS-000381",
@@ -4120,7 +4119,7 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 105,
+      "claim_count": 104,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4185,7 +4184,6 @@
             "WAL-CLM-DDDL-000081",
             "WAL-CLM-DDDL-000085",
             "WAL-CLM-EPIGEN-000005",
-            "WAL-CLM-EPIGEN-000015",
             "WAL-CLM-EPIGEN-000172",
             "WAL-CLM-LETS-000126",
             "WAL-CLM-LETS-000137",
@@ -4749,7 +4747,7 @@
       "symbol": "V",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 33,
+      "claim_count": 32,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4828,7 +4826,6 @@
             "WAL-CLM-LETS-000244",
             "WAL-CLM-LETS-000246",
             "WAL-CLM-LETS-000307",
-            "WAL-CLM-LETS-000333",
             "WAL-CLM-RARE-000278",
             "WAL-CLM-RARE-000280",
             "WAL-CLM-RARE-000282"
@@ -11497,7 +11494,7 @@
       "symbol": null,
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 21,
+      "claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11557,7 +11554,6 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000014",
             "WAL-CLM-LETS-000130",
             "WAL-CLM-LETS-000142",
             "WAL-CLM-LETS-000159",
@@ -11566,7 +11562,6 @@
             "WAL-CLM-LETS-000229",
             "WAL-CLM-LETS-000243",
             "WAL-CLM-LETS-000244",
-            "WAL-CLM-LETS-000333",
             "WAL-CLM-LETS-000377",
             "WAL-CLM-LETS-000394",
             "WAL-CLM-LETS-000396",
@@ -29684,7 +29679,7 @@
     "korsakoffs_syndrome": {
       "type": "condition",
       "name": "Korsakoffs Syndrome",
-      "claim_count": 4,
+      "claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -29713,8 +29708,6 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000014",
-            "WAL-CLM-LETS-000333",
             "WAL-CLM-LETS-000356"
           ]
         }
@@ -31817,7 +31810,7 @@
     "multiple_sclerosis": {
       "type": "condition",
       "name": "Multiple Sclerosis",
-      "claim_count": 7,
+      "claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -31852,7 +31845,6 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000015",
             "WAL-CLM-EPIGEN-000172",
             "WAL-CLM-LETS-000371"
           ]
@@ -38952,7 +38944,7 @@
     "wernicke_korsakoff_syndrome": {
       "type": "condition",
       "name": "Wernicke Korsakoff Syndrome",
-      "claim_count": 3,
+      "claim_count": 2,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -38971,12 +38963,6 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000035",
             "WAL-CLM-RARE-000233"
-          ]
-        },
-        {
-          "kind": "protocol",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000015"
           ]
         }
       ],

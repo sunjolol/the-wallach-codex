@@ -13193,7 +13193,8 @@
       "dose": null,
       "tags": [
         "materia-medica",
-        "ch10"
+        "ch10",
+        "search-only"
       ],
       "confidence": "high",
       "review_state": "draft",

@@ -2303,7 +2303,7 @@
         "chromium",
         "vanadium"
       ],
-      "claim_count": 1
+      "claim_count": 6
     },
     "krypton": {
       "display_name": "Krypton",
@@ -4234,7 +4234,7 @@
         "boron",
         "zinc"
       ],
-      "claim_count": 1
+      "claim_count": 4
     },
     "threonine": {
       "display_name": "Threonine",
@@ -7332,8 +7332,9 @@
       "id": "WAL-CLM-DDDL-000146",
       "subject": "zinc",
       "also_about": [
+        "impotence",
         "testicular_atrophy",
-        "impotence"
+        "testosterone"
       ],
       "facet": "uses",
       "question": "Does zinc help shrinking testicles or low sex drive in men?",
@@ -8101,7 +8102,8 @@
       "id": "WAL-CLM-DDDL-000183",
       "subject": "vitamin-b1",
       "also_about": [
-        "alcoholism"
+        "alcoholism",
+        "korsakoff"
       ],
       "facet": "physiology",
       "question": "What causes Korsakoff's syndrome?",
@@ -10349,6 +10351,64 @@
       ]
     },
     {
+      "id": "WAL-CLM-DDDL-000291",
+      "subject": "testosterone",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Do you need cholesterol to make testosterone?",
+      "answer_short": "Yes — Wallach says the body builds testosterone out of cholesterol, and warns that driving cholesterol too low can leave a man 'totally disinterested in sex.'",
+      "answer": "Wallach frames cholesterol as an essential raw material, not merely a villain: the body uses it to build cell walls, the myelin of the brain and spinal cord, vitamin D, bile acids, and hormones — including the adrenal-cortical hormones, estrogen, progesterone, and testosterone. Because testosterone is manufactured from cholesterol, he warns that pushing cholesterol too low backfires on men: a cholesterol deficiency, in his words, 'will turn hubby into a TV watching steer who is totally disinterested in sex.' So in Wallach's view, adequate cholesterol is a prerequisite for normal testosterone and male sex drive.",
+      "verbatim": "Cholesterol is an essential part\nof the structure of cell walls, brain and spinal cord (myelin), the raw\nmaterial for the production of vitamin D in the human body, bile acids,\nadrenal cortical hormones, estrogen (a cholesterol deficiency makes\nmenopause a living hell), progesterone, and testosterone (a cholesterol\ndeficiency will turn hubby into a TV watching steer who is totally\ndisinterested in sex).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "men's health",
+        "libido",
+        "cholesterol",
+        "hormones",
+        "sex drive"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000292",
+      "subject": "testosterone",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Does Wallach recommend taking testosterone for impotence or low libido?",
+      "answer_short": "Yes — among his impotence remedies Wallach lists 'oral testosterone,' which he specifies as glandular food supplements plus testosterone by injection (IM), alongside herbs like ginseng and saw palmetto.",
+      "answer": "For impotence, Wallach's plan starts with the non-nutritional basics — relaxation, time with your mate, and setting up romantic situations — then adds acupuncture, homeopathy, and herbs such as ginseng, nux vomica, sarsaparilla, saw palmetto and Zumbani. Notably it also includes 'oral testosterone,' which he specifies as glandular food supplements plus testosterone given by injection (IM, intramuscular). This is a notable case where Wallach endorses supplying testosterone directly, rather than only raising it through a mineral like boron. He adds that the drug Viagra can help maintain an erection but comes with side effects, and reminds readers to keep up the base-line nutrition program with plant-derived colloidal minerals.",
+      "verbatim": "Treatment of impotence should include relaxation, spending time with your\nmate, and setting up romantic situations. The interpretation of the word\nromantic is an individual thing: flowers excite some people and turn others\noff, alcohol excites some people and anesthetizes others.\nAlso, acupuncture, homeopathy, and herbs to include ginseng (Panax\nginseng), nux vomica (Strychnos nux vomica), sarsapilla (Smilax\nofficinalis), saw palmetto (Serenoa serrulata), Zumbani, and oral testosterone\n(i.e. glandular food supplements and testosterone IM), can be of value.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "impotence",
+        "erectile dysfunction",
+        "libido",
+        "men's health",
+        "sex drive",
+        "testosterone therapy"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000293",
+      "subject": "korsakoff",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Has Wallach's memory-loss treatment actually restored anyone's memory?",
+      "answer_short": "Yes — Wallach cites his multi-drug Korsakoff protocol (nootropics like centrophenoxine and piracetam, plus IV chelation, vitamin B1, lecithin and chromium/vanadium) as the exact program used to restore the memory of Princess Diana's bodyguard.",
+      "answer": "Wallach caps his drug protocol for Korsakoff's syndrome — IV chelation and IV hydrogen peroxide, vitamin B1 at 100 mg three times a day, lecithin, chromium and vanadium, betaine HCl with pancreatic enzymes, and the memory nootropics hydergine, vasopressin nasal spray, centrophenoxine and piracetam — with a real-world result: he says this is the exact program used to restore the memory of Princess Diana's bodyguard. He offers it as evidence that the recent-memory loss he calls a 'false Alzheimer's' is treatable rather than permanent.",
+      "verbatim": "centrophenoxine at 4.4-8.0 gm per day, and piracetam\n(Dinagen) at 1.6-4.8 gm per day. This is the drug treatment program used to\nrestore Princess Di’s bodyguard’s memory.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "korsakoff",
+        "memory loss",
+        "case study",
+        "nootropics",
+        "treatment outcome"
+      ]
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000008",
       "subject": "homosexuality",
       "also_about": [
@@ -10386,6 +10446,48 @@
         "preconception-nutrition",
         "prevention",
         "congenital"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000014",
+      "subject": "korsakoff",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "protocol",
+      "question": "Can Korsakoff's syndrome be reversed?",
+      "answer_short": "Yes — Wallach places Korsakoff's syndrome in the Beriberi (vitamin B1 deficiency) family and holds it reversible by cutting sugar, fried foods, processed meats, oils and gluten and supplying all 90 essential nutrients with extra thiamine.",
+      "answer": "In Wallach's framework, dementia is not one disease but at least four, and Korsakoff's syndrome is the second of them. He classifies it within the Beriberi family — the cluster of diseases caused by a deficiency of thiamine (vitamin B1). Because he treats it as a nutrient-deficiency disease rather than permanent brain damage, he holds that it can be reversed: eliminate sugar, fried foods, processed meats, added oils, and gluten from the diet, and follow a supplement program that provides all 90 essential nutrients with a special emphasis on thiamine.",
+      "verbatim": "Korsakoff’s syndrome occurs as part of the Beriberi (thiamine or vitamin\n\nB1 deficiency) collection of diseases. The disease can be reversed by the\n\n\nelimination of sugar, fried foods, processed meats, oils, and gluten from\nthe diet as well as a supplement program that provides all 90 essential\nnutrients with a special emphasis on the supplementation of thiamine",
+      "page": 581,
+      "book_id": "epigenetics",
+      "topics": [
+        "dementia",
+        "beriberi",
+        "thiamine",
+        "reversible",
+        "diet"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000015",
+      "subject": "korsakoff",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "basics",
+      "question": "What is Wernicke-Korsakoff syndrome?",
+      "answer_short": "Wallach's 'third dementia': a two-part syndrome in which a patient has both Korsakoff's syndrome and multiple sclerosis at once — reversed by treating both, with 6-8 eggs a day to rebuild the brain's myelin plus all 90 nutrients and antioxidants like selenium.",
+      "answer": "Wernicke-Korsakoff's syndrome (printed 'Wernecke-Korsakoff's') is the third of the four dementias in Wallach's framework. He describes it as a two-part disease in which a patient is diagnosed with both Korsakoff's syndrome and multiple sclerosis (MS) at the same time. Because two things are going wrong at once, he reverses it by dealing with both: a dietary change to stop the ongoing inflammatory damage to the brain's myelin — the tissue that MS attacks — the addition of 6-8 eggs per day to supply the raw materials to maintain and repair that myelin, and a program of all 90 essential nutrients with a special emphasis on antioxidants, including selenium.",
+      "verbatim": "Wernecke-Korsakoff's syndrome is a two-part disease syndrome in\n\nwhich the patient is diagnosed with both Korsakoff’s syndrome and\nmultiple sclerosis (MS) simultaneously",
+      "page": 581,
+      "book_id": "epigenetics",
+      "topics": [
+        "dementia",
+        "multiple sclerosis",
+        "myelin",
+        "eggs",
+        "selenium"
       ]
     },
     {
@@ -14281,7 +14383,8 @@
       "id": "WAL-CLM-EPIGEN-000239",
       "subject": "vitamin-b1",
       "also_about": [
-        "dementia"
+        "dementia",
+        "korsakoff"
       ],
       "facet": "uses",
       "question": "Can vitamin B1 reverse memory loss or dementia?",
@@ -16484,7 +16587,9 @@
     {
       "id": "WAL-CLM-EPIGEN-000352",
       "subject": "tryptophan",
-      "also_about": [],
+      "also_about": [
+        "serotonin"
+      ],
       "facet": "mechanism",
       "question": "What does tryptophan turn into in the body?",
       "answer_short": "Tryptophan is a building block of protein and a precursor of serotonin, which the body can convert to melatonin, and it is also used to make niacin.",
@@ -16526,7 +16631,8 @@
       "id": "WAL-CLM-EPIGEN-000354",
       "subject": "tryptophan",
       "also_about": [
-        "phenylalanine"
+        "phenylalanine",
+        "serotonin"
       ],
       "facet": "mechanism",
       "question": "Does phenylalanine affect tryptophan and serotonin?",
@@ -16547,7 +16653,8 @@
       "id": "WAL-CLM-EPIGEN-000355",
       "subject": "tryptophan",
       "also_about": [
-        "depression"
+        "depression",
+        "serotonin"
       ],
       "facet": "uses",
       "question": "What is 5-HTP used for?",
@@ -16771,6 +16878,7 @@
       "id": "WAL-CLM-EPIGEN-000367",
       "subject": "phenylalanine",
       "also_about": [
+        "serotonin",
         "tryptophan"
       ],
       "facet": "warning",
@@ -18507,6 +18615,27 @@
         "leukemia",
         "cancer-treatment",
         "arsenic-medicine"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000453",
+      "subject": "korsakoff",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "etymology",
+      "question": "Why does Wallach call Korsakoff's syndrome 'cerebral beriberi'?",
+      "answer_short": "Because he classifies it as beriberi — thiamine (vitamin B1) deficiency — striking the brain; he groups it with MS, ALS, Alzheimer's and Creutzfeld-Jakob as brain-lesion diseases that share a broad symptom list.",
+      "answer": "Wallach labels Korsakoff's syndrome 'cerebral beriberi' — beriberi being the classic thiamine (vitamin B1) deficiency disease, here affecting the brain. He places it in a family of brain-lesion diseases — multiple sclerosis, ALS (Lou Gehrig's disease), Alzheimer's, Wernicke-Korsakoff's (which he calls 'cerebral beriberi and multiple sclerosis combined'), and Creutzfeld-Jakob disease (mad cow disease) — that he says all share a broad symptom list and brain-lesion pattern with Huntington's disease. The label reinforces his central claim that this 'dementia' is a reversible nutrient-deficiency problem, not permanent damage.",
+      "verbatim": "Many individuals diagnosed with multiple sclerosis, ALS (Lou Gehrig's\ndisease), Alzheimer's disease, Korsakoff’s syndrome (cerebral beriberi), Wernicke-\nKorsakoff's syndrome (cerebral beriberi and multiple sclerosis combined), and\nCreutzfeld-Jakob disease (BSE, Mad Cow Disease, enzootic ataxia, etc.) share the\nbroad symptom list and brain lesion list with Huntington's disease.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "korsakoff",
+        "cerebral beriberi",
+        "thiamine",
+        "brain lesions",
+        "dementia"
       ]
     },
     {
@@ -30053,7 +30182,8 @@
       "id": "WAL-CLM-LETS-000094",
       "subject": "aromatherapy",
       "also_about": [
-        "hypertension"
+        "hypertension",
+        "testosterone"
       ],
       "facet": "uses",
       "question": "What are specific essential oils used for?",
@@ -31345,6 +31475,28 @@
           "kidney_stones"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-LETS-000333",
+      "subject": "korsakoff",
+      "also_about": [
+        "vitamin-b1"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach treat Korsakoff's syndrome?",
+      "answer_short": "Wallach's Korsakoff protocol: IV chelation and IV hydrogen peroxide, vitamin B1 100 mg 3x/day, lecithin 2,500 mg 3x/day, no alcohol or sugar, chromium/vanadium, betaine HCl and pancreatic enzymes, plus the nootropics hydergine, vasopressin nasal spray, centrophenoxine and piracetam.",
+      "answer": "Korsakoff's syndrome (recent memory loss, false Alzheimer's disease) is an inability to record new memory — the patient can still perform detailed tasks learned before onset but cannot learn the simplest new tasks; confabulation (inventing imaginary experiences to fill the gaps) is characteristic. It can result from a blow to the head (good chance of recovery) or from chronic alcoholism and vitamin B-1 deficiency (harder to treat). Treatment: chelation, hydrogen peroxide intravenously, vitamin B-1 at 100 milligrams three times daily, lecithin at 2,500 milligrams three times daily, avoid alcohol and sugar, chromium/vanadium at 50-200 micrograms three times daily, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals, hydergine at 4.5-9 milligrams per day, vasopressin (Diapid) at 12-16 units per day as a nasal spray, centrophenoxine at 4.4-8.0 grams per day, and piracetam (Dinagen) at 1.6-4.8 grams per day.",
+      "verbatim": "Treatment of Korsakoff's syndrome includes\nchelation, hydrogen peroxide IV, vitamin B-l\nat 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,\navoid alcohol, avoid sugar, chromium/vanadium at 50-200 mcg t.i.d., betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before\nmeals; hydergine at 4.5-9 mg/day, vasopressin (Diapid) at 12-16 units per day as a nasal\nspray, centrophenoxine at 4.4-8.0 gm per day\nand piracetam (Dinagen) at 1.6-4.8 gm per\nday",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "treatment",
+        "thiamine",
+        "lecithin",
+        "chelation",
+        "memory",
+        "nootropics"
+      ]
     },
     {
       "id": "WAL-CLM-LETS-000347",
@@ -36531,6 +36683,32 @@
         "cautery",
         "history-of-medicine",
         "eye-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000400",
+      "subject": "testosterone",
+      "also_about": [
+        "copper",
+        "chromium",
+        "vanadium",
+        "lithium"
+      ],
+      "facet": "stance",
+      "question": "Does testosterone cause teenage violence or aggression?",
+      "answer_short": "Wallach argues the puberty testosterone surge (ages 14–18), landing on top of mineral deficiencies and a high-sugar diet, is an 'explosive' driver of teen crime and murder.",
+      "answer": "Wallach ties adolescent violence partly to hormones interacting with nutrition. He points to the surge of the 'male hormone testosterone' during puberty, roughly ages 14 to 18, and argues that when it lands on top of specific mineral deficiencies — he names copper, chromium, vanadium and lithium — and a high-sugar diet (fruit juices, sodas, candy, ice cream, sugary cereals), the result fills jails and death rows with teenage killers. He calls testosterone surges, high sugar intake and mineral deficiencies 'as explosive a mixture as matches, nitroglycerine and gun powder combined.' It is a characteristic Wallach stance: behavior conventionally blamed on psychology or environment, reframed as a fixable hormonal-and-nutritional problem.",
+      "verbatim": "Putting together the appearence of the\nmale hormone testosterone during puberty\nbetween 14 and 18, mineral deficiencies\n(especially copper, chromium, vanadium\nand lithium ) and high sugar intakes (i.e.-\napple juice, grape juice, sugar drinks, co-\nlas, ice cream, candy, boxed cereals, past-\nties of all kinds, etc.), it is not surprising\nthat our jails are full and death row is popu-\nlated by hundreds of teens waiting to be\nexecuted for murder!!! Testosterone surges,\nhigh sugar intake and mineral deficiencies\nare as explosive a mixture as matches, ni-\ntroglycerine and gun powder combined!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "teen violence",
+        "crime",
+        "aggression",
+        "men's health",
+        "behavior",
+        "sugar",
+        "puberty"
       ]
     }
   ]
