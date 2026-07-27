@@ -1,23 +1,37 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-26 session close · ENRICHMENT QUEUE COMPLETE + CLEAN at kv409; all follow-ups closed)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · AMINO-ACID CATEGORY COMPLETE at kv410)
 
 # ★★★★★ READ FIRST (plain language)
-The 39-element "Worth knowing" search-enrichment queue is **DONE and CLEAN**. Every canon essential has search claims live in Ask-Wallach, every per-mineral dose question resolves to the right quote, and both flagged follow-ups are closed. **corpus at kv409, 1968 claims, enrichment 1105 entries, board green 77/77.** Nothing is pending from the enrichment work.
+The **entire amino-acid category is now enriched** in Ask-Wallach. Batch 8 (2026-07-27) sealed the last 9 amino acids — every amino now has rich "Worth knowing" search answers, each with a SHORT and a FULL answer plus dotted-underline hover explainers for the dense science terms. **corpus at kv410, 2017 claims, enrichment 1173 entries, glossary 842 terms, board green 77/77.**
 
-## What shipped this session (2026-07-26)
-- **Batch 4 corrective seal** (kv405): re-homed the flavonoids "good for?" + B3-insomnia answers onto grounded claims.
-- **Batches 5–7** (kv406→kv408): the last 14 elements — 7 trace/rare minerals, 4 macro minerals, 3 amino acids — sealed live autonomously while Luneth was away. Self-reviewed against the Batch-4 grounding lessons; 8 objective mis-points fixed, 6 pre-seal RED issues caught+fixed, glossary 393→490.
-- **Cobalt "kobold" etymology** (kv409): Luneth approved the one held occult-adjacent item; Lourdes content kept live as-is.
-- **Epigenetics dose-table re-homing**: fixed 3 mis-placed dose answers (zinc/folic-acid/molybdenum) + restored boron's; audited every supplement-dose question corpus-wide — all now grounded. Enrichment-only, no re-seal.
+Two hard-won calibrations from this session (Luneth corrected both, MID-batch — honor them going forward):
+1. **Every claim ships BOTH a short and a FULL answer** — the full answer is the STAR (it synthesizes context from across the book), the quote is supporting evidence. Short-only is a rare per-claim exception, NEVER the default. A mechanical guard now flags any claim whose full answer is missing or thinner than its quote. Memory [[claim-summary-verbatim-format]].
+2. **Gloss density for hard domains is MUCH higher than instinct** — for the aminos Luneth flagged ~every technical word (sulfur-containing, S-adenosyl methionine, methyl donor, biosynthesis, cysteine, lecithin…). Default to EXPLAINING, not assuming. Memory [[gloss-scientific-terms-as-you-enrich]].
 
-## ★★★ NEXT MAJOR TASK: DESIGN ELEMENTS (the illustrated per-element hero screens)
-With every element's claims sealed, the next phase is the **illustrated hero per element** (selenium/omega-style detail screens — the "gold-standard page" visual pass, deliberately deferred until claims were done). This is a VISUAL / human-verification-gated task: build ONE surface to 100%, STOP for Luneth's sign-off, then the next (memory [[visual-verification]] · [[gold-standard-page-workflow]] · [[demo-elements-still-to-do]] · [[visual-design-bar-and-principles]]). Start together — Luneth is the test gate at each chunk boundary.
+## What shipped this session (2026-07-27, Batch 8, kv409→kv410)
+- 49 new search-only claims (epig +36, dddl +9, immortality +2, rare +2) + 19 reuse enriched = 68 enrichment entries; 9 amino entities w/ lay synonyms.
+- 4 OCR source typos purified (Erlenmeyer / photosystem II / Kendall / post-translational ×2) + corpus_resnap (epig+rare, 0 BROKEN). Canker sealed-claim defect fixed (LETS-000202 dropped the "cold sores/fever blisters" herpes mislabel). Glossary +352 (490→842).
+- Method: three fan-out workflows (authoring → adversarial verify → exhaustive gloss) + deterministic byte-verify (0/49 fail) + all pre-seal RED gates PASS. Scripts persisted in temporary/enrichment-queue/pilot/scripts/ + this session's workflow scripts in the session scratchpad.
 
-## STILL DEFERRED (unchanged, lower priority)
-- **vitamin-d / vitamin-k heroes may show the canonical chemical name** ("Cholecalciferol" / "Phylloquinone") — possible "display the common vitamin name" preference (applies to any vitamin whose canon name is the chemical form: B1 Thiamine, B3 Niacin, B9 Folate too).
-- **~11 elements NOT yet mined at all**: omega-6, omega-9, silica, silver, tin, nickel, oxygen, hydrogen, carbon, nitrogen (+ any others). (All 9 amino acids incl. arginine/taurine/tryptophan are now DONE.)
-- **35 rare-earth trace minerals** → the plant-derived-mineral GROUP treatment (never individual).
-- **Memory index ~21KB** — run the consolidate-memory skill at a natural break (the "approaching limit" hook fires early per [[memory-consolidation-threshold]]; deferred all session).
-- **Charged-content policy** — Luneth's 2026-07-26 ruling (hold only Christianity/occult; all else fair game + list) is in memory [[charged-content-2026-07-26-update]]; reconcile [[editorial-fringe-exclusion-policy]] + [[editorial-spiritual-vs-mystical]] once he confirms it's durable.
+## ENRICHMENT SCOREBOARD (subject-level, post-kv410)
+| category | OK (≥7) | THIN (1-6) | NONE (0) | total |
+|---|---|---|---|---|
+| mineral | 20 | 6 | 34 | 60 |
+| vitamin | 16 | 0 | 0 | 16 |
+| amino_acid | 8 | 4 | 0 | 12 (DONE — thin ones are source-limited) |
+| fatty_acid | 1 | 0 | 2 | 3 |
 
-## THE PROVEN ENRICHMENT PIPELINE (persisted, reusable for any future enrichment)
-Generic scripts in `temporary/enrichment-queue/pilot/scripts/` (gitignored, survive on this machine): review_analyze · review_html · seal_stage · verify_drafts_gen · compute_wiring_gen · precheck_new_claims · gloss_audit · gloss_add. Recipe: review_analyze (self-review flags: (A) enrich verbatim≠sealed = mis-pointed id → re-point to the FREE correct target; (B) collision preview; (C) charged scan) → seal_stage → finalize per book → precheck_new_claims (fix ATP/table-ref → reset draft + re-finalize) → pre-flight → verify_drafts_gen → corpus_seal (USER-authorized) → compute_wiring_gen → safe_write enrichment+entities → build_embeds → gloss_audit + gloss_add → build → invariants → probes → round-close.
+## ★★★ TWO WAYS TO GO (Luneth picks at genesis)
+**(A) Continue enrichment** — the not-scouted list, biggest-value first (memory [[mining-serves-ask-wallach]], [[small-batch-build-test-log-mandate]]):
+  - NONE, high-value dietary: **omega-6, omega-9** (fatty_acid), **nitrogen, oxygen, silica** (core minerals) — 5 elements.
+  - NONE, plant-derived / rare-earth group (31): strontium, arsenic, barium, beryllium, bromine, cerium, cesium, dysprosium, erbium, europium, gadolinium, hafnium, holmium, lanthanum, lutetium, niobium, neodymium, nickel, praseodymium, rubidium, rhenium, scandium, samarium, tin, tantalum, terbium, titanium, thulium, yttrium, ytterbium, zirconium. **Luneth's directive: individual claims for EACH (group claims already exist; ≥7 unique each is the ideal, thin OK).**
+  - THIN top-ups (want ≥7): minerals hydrogen(6), carbon(1), silver(1), aluminum(2), gold(2), gallium(2).
+
+**(B) DESIGN ELEMENTS** — the deferred illustrated per-element hero screens (selenium/omega gold-standard visual pass). VISUAL / human-verification-gated: build ONE to 100%, STOP for sign-off, then next ([[visual-verification]] · [[gold-standard-page-workflow]] · [[demo-elements-still-to-do]] · [[visual-design-bar-and-principles]]).
+
+## DEFERRED / FOLLOW-UPS (non-blocking)
+- **137 unresolvable also_about cross-links dropped** this batch (dopamine, serotonin, collagen, parkinsons-disease, multiple-sclerosis, herpes, etc.) — a future entity-registration pass would register these as search entities + restore the cross-links.
+- **3 scrambled OCR spans need page-image reconstruction** (histidine "His jidazole" opening L20947-53, methionine SAM cycle L21046-56, leucine India/sorghum tail immortality L3181-86) — NOT quoted by any claim, so non-blocking; fix in a source-purification pass against the page images.
+- **Memory index ~22KB** — run consolidate-memory at a natural break (the "approaching limit" hook fires early per [[memory-consolidation-threshold]]).
+
+## THE PROVEN ENRICHMENT PIPELINE (reusable)
+seal_stage-equivalent (build the STAGE dir: raw/<book>.raw.json + enrichmap + enrich_existing + entities) → corpus_extract finalize per book (once per cycle — [[corpus-extract-finalize-not-additive]]) → precheck_new_claims → byte-verify verbatims → compute_wiring_gen → safe_write enrichment+entities → gloss_add → corpus_seal (USER-ONLY, "You can seal" = valid per-invocation approval) → build_embeds + search_index_derive + entity_page_derive → build → invariants → probes → round-close. Source edits: safe_write .txt → corpus_resnap --write → sync draft ← shard → finalize.
