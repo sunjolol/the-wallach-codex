@@ -679,7 +679,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 18,
+      "claim_count": 19,
       "symbol": "Co"
     },
     "colloidal_minerals": {
@@ -21492,6 +21492,24 @@
         "niacin",
         "traditional-food",
         "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000385",
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name cobalt come from?",
+      "answer_short": "From the German 'kobald,' an evil gnome or spirit that miners blamed for their mining accidents.",
+      "answer": "Wallach relates that the name cobalt was derived in the 18th century from the German word 'kobald,' which refers to an evil gnome or spirit. Cobalt miners commonly blamed their mining accidents on the evil 'kobald,' or cobalt.",
+      "verbatim": "The name cobalt was derived in the 18th century\nfrom the German word “kobald” that refers to an evil gnome\nor spirit. Cobalt miners commonly blamed mining accidents\non the evil “kobald” or cobalt.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "cobalt",
+        "etymology",
+        "history",
+        "name-origin"
       ]
     },
     {

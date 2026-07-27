@@ -2294,6 +2294,12 @@
           ]
         },
         {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000385"
+          ]
+        },
+        {
           "facet": "history",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000319",

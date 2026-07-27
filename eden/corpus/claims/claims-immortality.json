@@ -13174,6 +13174,38 @@
       "extracted_at": "2026-07-27T02:04:01+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000385",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach relates that the name cobalt was derived in the 18th century from the German word 'kobald,' which refers to an evil gnome or spirit. Cobalt miners commonly blamed their mining accidents on the evil 'kobald,' or cobalt.",
+      "verbatim": "The name cobalt was derived in the 18th century\nfrom the German word “kobald” that refers to an evil gnome\nor spirit. Cobalt miners commonly blamed mining accidents\non the evil “kobald” or cobalt.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 227221
+      },
+      "dose": null,
+      "tags": [
+        "cobalt",
+        "etymology",
+        "history",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T03:06:37+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

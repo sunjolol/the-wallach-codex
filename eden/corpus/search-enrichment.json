@@ -16359,6 +16359,19 @@
         "supplements",
         "protocol"
       ]
+    },
+    "WAL-CLM-IMMORT-000385": {
+      "subject": "cobalt",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name cobalt come from?",
+      "answer_short": "From the German 'kobald,' an evil gnome or spirit that miners blamed for their mining accidents.",
+      "topics": [
+        "cobalt",
+        "etymology",
+        "history",
+        "name-origin"
+      ]
     }
   }
 }
