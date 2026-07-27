@@ -1,44 +1,59 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · NIGHT-2 ENRICHMENT SEALED at kv412)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · ENTITY-FILL CAMPAIGN set up)
 
 # ★★★★★ READ FIRST (plain language)
-**Every remaining unenriched essential is now enriched + SEALED.** The overnight run + Luneth's morning
-corrections shipped all 42 that had no Ask-Wallach "Worth knowing" content — the core dietary minerals
-(oxygen, nitrogen, silica, hydrogen, carbon), both remaining fatty acids (omega-6, omega-9), the common-metal
-top-ups (silver, aluminum, gold, gallium), and all 31 rare-earths. **With this, the full 90/91 essentials are
-enriched.** Corpus **kv412, 2169 claims, enrichment 1388 entries, glossary 1288 terms, board green 77/77.**
+The task for the NEXT session: **fill out the 18 newly-mined Ask-Wallach entity pages with ALL their
+unique claims.** Right now each has exactly ONE claim — Luneth's directive: an entity/topic page must
+surface as many unique claims as genuinely exist, never just 1 (unless only 1 legitimately exists).
+Luneth will **span out agents** to do this efficiently + completely + **high quality, no corner-cutting.**
 
-## What shipped this session (2026-07-27, kv410→kv412)
-- 152 new mine_new claims + 98 reuse across 6 books; 445 new glossary explainers (842→1288).
-- **THE SINGLE-SOURCE GROUP MECHANISM (learn this):** a shared claim about the plant-derived/rare-earth group
-  is authored ONCE with `about:["colloidal-minerals"]` and propagates to ALL 34 trace_pdm element pages via
-  `entity_page_derive`'s `group_record` (each page now shows 33 group claims from one source). NEVER duplicate
-  a group stance per-element — Luneth caught 19 such dupes this session; they were removed and folded into one
-  group claim. When a claim is about the GROUP, not the specific element, it is a group claim.
-- Corrections: +1 dedicated Strontium-90 lore claim; aluminum reversed-stance clause stripped from LETS-000130/243
-  (protocols kept; safe stance in IMMORT-000034); 2 epigenetics source typos purified (ytterbium bone 1.3→0.3,
-  Sr-90 restored dropped-"not") via safe_write→corpus_resnap; all 250 questions sentence-cased.
+**Corpus: kv415, 2187 claims, board green 77/77, 18 entities live at 1 claim each.**
 
-## Hard-won rules honored this session (keep going forward)
-1. **Questions display in SENTENCE CASE** (capitalize first letter) — matches the sealed convention (0/1173 were lowercase). [[claim-summary-verbatim-format]]
-2. **Never defer a fixable issue — fix it as found** (Luneth, "for the 100th time"). Source typos, gloss gaps, entity-shape errors get fixed in the same pass, not flagged for later. [[source-correction-policy]] [[correct-everything-uniformly]]
-3. **Group claims are single-source** (`about:[colloidal-minerals]` → propagates); never duplicate per-element.
-4. Every claim ships a SHORT + FULL answer; gloss density is high (default to explaining). [[gloss-scientific-terms-as-you-enrich]]
-5. Two gate-shape rules for enrichment: `canon_ref` entities OMIT display_name/symbol (pulled from canon); `facet` ∈ the 13-facet taxonomy (NOT a kind like "prognosis").
+## The inventory is already computed → `temporary/entity-fill/inventory.md`
+Per-entity candidate claim IDs, each tagged:
+- `[LIVE subject]` — the 1 claim already on the page.
+- `[ENRICHED-as:<subj>] -> also_about` — a claim ALREADY enriched under another subject that discusses
+  this entity → **add this entity to that claim's `also_about`** to surface it on the page (NO new claim, cheap + faithful).
+- `[UNENRICHED] -> enrich or mine` — enrich it `subject=<entity>` if it's primarily about the entity, else mine a fresh claim.
+~87 strong candidates total. Rich pages: **protein (44), nitrates (11), serotonin (8), korsakoff (7),
+testosterone (5)**, then the 4s (coenzyme-a, nitrites, tuna). Legitimately thin (1–2, leave small):
+DHA, arsenic-trioxide, ornithine, GLA, berylliosis, silver-nitrate, melatonin, nitric-oxide, acetylcholine.
+NOTE: "candidate" is a mention-based UPPER estimate — verify each is genuinely relevant before adding.
 
-## ★ NEXT OPTIONS (Luneth picks at genesis)
-- **(A) DESIGN ELEMENTS** — the deferred illustrated per-element hero screens (selenium/omega gold-standard visual
-  pass). VISUAL / human-verification-gated: build ONE to 100%, STOP for sign-off, then next ([[visual-verification]] ·
-  [[gold-standard-page-workflow]] · [[demo-elements-still-to-do]] · [[visual-design-bar-and-principles]]).
-- **(B) Broaden Ask-Wallach** — enrich conditions / broader topics (search is the LARGER consumer; [[mining-serves-ask-wallach]]).
-- **(C) Entity-registration pass** — register the dropped `also_about` cross-links (dopamine/serotonin/collagen/
-  parkinsons-disease etc.) so those cross-links resolve + restore.
+## ★ THE QUALITY BAR — non-negotiable (Luneth has corrected the short-answer failure SIX times)
+- Every claim ships a **SHORT answer + a RICH FULL answer** (~90% carry both). The FULL answer IS the
+  sealed `claim_text`; if a reused/thin claim's claim_text is terse, ENRICH the claim_text from the
+  surrounding book paragraphs (mine_batch → re-seal). Do NOT bolt a short summary onto a thin claim.
+  [[claim-summary-verbatim-format]] [[review-claims-in-exact-form]]. No padding, no memify, case-by-case.
+- **Never guess / never guess silently.** Byte-verify every verbatim against the sealed book; fact-check
+  synthesized details appear in source. Only mine what Wallach actually wrote. [[say-unreadable-never-guess]]
+- **Never remove/skip a chip or claim that HAS content** — mine it. Only drop the genuinely-empty, and
+  confirm which. (This session's mistake: I removed minable chips; Luneth: "asinine… MINE THEM.")
 
-## DEFERRED / FOLLOW-UPS (non-blocking)
-- Cross-element `also_about` drops (entity-registration candidates, option C).
-- 3 scrambled OCR spans from the amino batch (histidine/methionine/leucine) still need page-image reconstruction (not quoted by any claim).
-- Memory index ~21KB — run consolidate-memory at a natural break ([[memory-consolidation-threshold]]).
+## The proven method (Luneth authorized workflow-draft for this campaign)
+1. Workflow: one agent per entity/cluster drafts byte-faithful claims (or `also_about` proposals) from the
+   book — reference script saved at `temporary/entity-fill/mine-workflow-reference.js`.
+2. I DETERMINISTICALLY byte-verify every verbatim + fact-check + validate cross-links resolve.
+3. Luneth reviews the batch (Q→short→FULL→quote) BEFORE seal. `corpus_seal` is USER-ONLY.
+4. Assemble: `also_about` edits (search-enrichment.json) + new claims (corpus_extract finalize per book,
+   ONE finalize per book per seal cycle — [[corpus-extract-finalize-not-additive]]) + enrich → seal → build_embeds → build → invariants → probes → round-close.
 
-## Deliverables + scripts (this session)
-`temporary/enrichment-queue/night2/` — queue.json (source of truth), stage/, review/, RULINGS-NEEDED.md,
-SEAL-RUNBOOK.md, scripts/ (dossier→author-prompts→assemble→stage→wire→gloss→review/rulings/runbook + the
-seal-pass helpers apply_source_fix / apply_aluminum_edit). Reusable for the next enrichment campaign.
+## ★ ENTITY-TYPE TRAP (this session's green-board bug — the gate now catches it)
+A registry entity's `type` MUST be one of the runtime enum: **element·nutrient·substance·condition·concept·
+topic·person·event** (core/schemas/search.ts). `compound`/`food` are NOT valid → the runtime Zod REJECTS
+THE WHOLE search index → EMPTY_INDEX → every enriched page blanks while the board stays GREEN. Foods use
+`substance` (salmon/beef/eggs). Non-catalog diseases (korsakoff/berylliosis) use `topic`, NOT `condition`
+(condition type expects a catalog page). NEW GATE (2026-07-27): search_index_derive.ENTITY_TYPES + a
+validate() check + a TS↔Python cross-check in search_index_wellformed. [[build-gate-vs-runtime-schema-drift]]
+
+## What shipped this session (2026-07-27, kv410→kv415)
+- Bucket A (347b7f41): re-pointed 11 dead related-chip slugs to existing pages.
+- Bucket D (066baff1): enriched cadmium/estrogen/hydrogen-peroxide/arachidonic-acid (rich short+full after
+  the short-answer correction); removed then RE-mined the dangling concepts.
+- Mining (7321abcf): 18 new entities mined (workflow-drafted, byte-verified), chips restored, iodine→rhenium;
+  fixed the entity-type green-board bug + added the gate; korsakoff/berylliosis→topic; citrulline ATP gloss.
+
+## DEFERRED / FOLLOW-UPS
+- The entity-fill campaign above (the main next task).
+- Broader Ask-Wallach: extend the same treatment to more topics/conditions (search is the LARGER consumer,
+  [[mining-serves-ask-wallach]] [[search-is-a-catch-all-over-everything]]).
+- Memory index ~22KB — consolidate at a natural break ([[memory-consolidation-threshold]]).
