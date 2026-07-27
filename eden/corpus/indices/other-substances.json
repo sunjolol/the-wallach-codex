@@ -122,9 +122,10 @@
   },
   "alfalfa": {
     "display_name": "Alfalfa",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000127",
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000157",
         "WAL-CLM-LETS-000163",
@@ -155,6 +156,7 @@
       "rheumatoid_arthritis"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -677,8 +679,11 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 50,
+    "claim_count": 52,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000347"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000122",
         "WAL-CLM-LETS-000123",
@@ -717,6 +722,7 @@
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000374",
@@ -778,6 +784,7 @@
       "infarction",
       "infertility",
       "irritable_bowel_syndrome",
+      "korsakoffs_syndrome",
       "learning_disabilities",
       "menopause",
       "migraine",
@@ -871,6 +878,19 @@
     "books_cited": [
       "epigenetics",
       "rare-earths"
+    ]
+  },
+  "bismuth-subsalicylate": {
+    "display_name": "Bismuth Subsalicylate",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000046"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "bitter-orange": {
@@ -1018,8 +1038,11 @@
   },
   "blood-therapy": {
     "display_name": "Blood Therapy",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000194"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000203",
@@ -1030,6 +1053,7 @@
       ]
     },
     "conditions_treated": [
+      "cancer",
       "candidiasis",
       "cardiac_arrhythmia",
       "chronic_fatigue_syndrome",
@@ -1592,11 +1616,12 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -1902,12 +1927,13 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 57,
+    "claim_count": 59,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-DDDL-000116",
         "WAL-CLM-DDDL-000117",
         "WAL-CLM-DDDL-000120",
+        "WAL-CLM-LETS-000347",
         "WAL-CLM-LETS-000352"
       ],
       "mechanism": [
@@ -1965,7 +1991,8 @@
         "WAL-CLM-LETS-000451",
         "WAL-CLM-LETS-000457",
         "WAL-CLM-LETS-000462",
-        "WAL-CLM-LETS-000464"
+        "WAL-CLM-LETS-000464",
+        "WAL-CLM-LETS-000489"
       ]
     },
     "conditions_treated": [
@@ -2653,8 +2680,11 @@
   },
   "edta": {
     "display_name": "Edta",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000266"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000394",
         "WAL-CLM-LETS-000400",
@@ -2667,6 +2697,7 @@
       "poor_circulation"
     ],
     "books_cited": [
+      "immortality",
       "lets-play-doctor"
     ]
   },
@@ -3405,8 +3436,11 @@
   },
   "ginseng": {
     "display_name": "Ginseng",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000263"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000308",
@@ -3851,11 +3885,12 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -3892,7 +3927,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 45,
+    "claim_count": 46,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-LETS-000190"
@@ -3927,6 +3962,7 @@
         "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000344",
         "WAL-CLM-LETS-000345",
         "WAL-CLM-LETS-000349",
@@ -3975,6 +4011,7 @@
       "infarction",
       "infection",
       "intermittent_claudication",
+      "korsakoffs_syndrome",
       "leukemia",
       "leukorrhea",
       "otitis",
@@ -4497,7 +4534,7 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
@@ -4506,6 +4543,7 @@
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000283",
         "WAL-CLM-LETS-000306",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000409"
       ]
     },
@@ -4516,6 +4554,7 @@
       "diabetes",
       "gallstones",
       "hypertension",
+      "korsakoffs_syndrome",
       "psoriasis"
     ],
     "books_cited": [
@@ -4884,12 +4923,15 @@
   },
   "mercury": {
     "display_name": "Mercury",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-RARE-000137",
         "WAL-CLM-RARE-000138",
         "WAL-CLM-RARE-000139"
+      ],
+      "protocol": [
+        "WAL-CLM-IMMORT-000265"
       ],
       "toxicity_sign": [
         "WAL-CLM-EPIGEN-000091",
@@ -4901,6 +4943,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "immortality",
       "rare-earths"
     ]
   },
@@ -5215,16 +5258,18 @@
   },
   "nitrates": {
     "display_name": "Nitrates",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "interaction": [
         "WAL-CLM-IMMORT-000184"
       ],
       "mechanism": [
-        "WAL-CLM-IMMORT-000230"
+        "WAL-CLM-IMMORT-000230",
+        "WAL-CLM-IMMORT-000393"
       ]
     },
     "conditions_treated": [
+      "cancer",
       "goiter",
       "thyroid_disease"
     ],
@@ -5234,16 +5279,18 @@
   },
   "nitrites": {
     "display_name": "Nitrites",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "interaction": [
         "WAL-CLM-IMMORT-000184"
       ],
       "mechanism": [
-        "WAL-CLM-IMMORT-000230"
+        "WAL-CLM-IMMORT-000230",
+        "WAL-CLM-IMMORT-000393"
       ]
     },
     "conditions_treated": [
+      "cancer",
       "goiter",
       "thyroid_disease"
     ],
@@ -5513,8 +5560,11 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 43,
+    "claim_count": 45,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000347"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000130",
@@ -5546,6 +5596,7 @@
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000323",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000364",
         "WAL-CLM-LETS-000371",
         "WAL-CLM-LETS-000374",
@@ -5600,6 +5651,7 @@
       "infertility",
       "inflammation",
       "irritable_bowel_syndrome",
+      "korsakoffs_syndrome",
       "learning_disabilities",
       "menopause",
       "migraine",
@@ -5779,8 +5831,11 @@
   },
   "pennyroyal": {
     "display_name": "Pennyroyal",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-LETS-000370"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000228",
         "WAL-CLM-LETS-000453"
@@ -5924,11 +5979,12 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },
@@ -7293,8 +7349,11 @@
   },
   "urine-therapy": {
     "display_name": "Urine Therapy",
-    "claim_count": 20,
+    "claim_count": 21,
     "claims_by_kind": {
+      "mechanism": [
+        "WAL-CLM-LETS-000194"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000203",
@@ -7319,6 +7378,7 @@
       ]
     },
     "conditions_treated": [
+      "cancer",
       "candidiasis",
       "cardiac_arrhythmia",
       "chronic_fatigue_syndrome",
@@ -7373,11 +7433,12 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
+        "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
       ]
     },

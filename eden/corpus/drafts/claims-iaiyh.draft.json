@@ -1,682 +1,679 @@
 {
-  "schema_version": 1,
-  "book_id": "iaiyh",
-  "knowledge_version": null,
-  "claims": [
-    {
-      "id": "WAL-CLM-IAIYH-000001",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "osteoporosis",
-        "pagets_disease"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach teaches that the single common cause of the cranial-nerve and spinal-cord neuropathies behind as many as 25 different diseases is osteoporosis of the skull (which he also names Paget's Disease or Wallach's Fibrous Dysplasia). Nutritional deficiency drives a universal mineral loss and an over-production of bone matrix that fills the bony tunnels the nerves travel through, narrowing them and incarcerating (pinching) the nerve -- and he holds this is preventable and reversible.",
-      "verbatim": "It turns out that the common cause\nof these neuropathies is osteoporosis of the skull which results in a universal\nmineral loss and an increase in bone matrix production. The bone matrix fills up\nthe tunnels that the cranial nerves and spinal cord travel through, reducing the\ninside caliber of the tunnels which then produces an incarceration of the nerve.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "Prologue",
-        "page": 9,
-        "screenshot": 746,
-        "kindle_location": null,
-        "char_offset": 12006
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "prologue",
-        "cranial-nerve-etiology"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T20:16:49+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000002",
-      "kind": "definition",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "osteoporosis",
-        "pagets_disease",
-        "anemia"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
-      "verbatim": "The Replacement of normal boney architecture, including the bone\nmarrow cavity, with connective tissue. Resulting in reduced production\nof platelets, white blood cells, red blood cells, and stem cells that make\n\nantibodies.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "Definition: Wallach's Fibrous Dysplasia",
-        "page": 13,
-        "screenshot": 749,
-        "kindle_location": null,
-        "char_offset": 14604
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "definition",
-        "wallachs-fibrous-dysplasia"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T20:16:49+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000003",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "periodontal_disease",
-        "gingivitis",
-        "trigeminal_neuralgia",
-        "headache",
-        "tooth_decay"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach holds that many common cranial and dental problems -- headaches, sinus trouble, tooth migration and tooth loss, receding gums, periodontal disease, jaw pain (trigeminal neuralgia), and even a change in the shape of the head (Hunter's syndrome) -- are not caused by poor flossing, brushing, or skipped dental visits, nor by autoimmune, familial, or genetic factors, but are in reality manifestations of osteoporosis of the skull.",
-      "verbatim": "A wide variety of cranial (head aches, sinus, etc.) and dental issues, including\n\ntooth migration, tooth loss, receding gums, periodontal disease, jaw pain\n(trigeminal neuralgia), change in the shape of the head (Hunter's syndrome)",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "1. The Skull",
-        "page": 14,
-        "screenshot": 750,
-        "kindle_location": null,
-        "char_offset": 15356
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "ch1-the-skull",
-        "skull-osteoporosis"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T20:16:49+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000004",
-      "kind": "protocol",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "osteoporosis",
-        "pagets_disease"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach's prescribed solution: osteoporosis of the skull and spine (Wallach's Fibrous Dysplasia) is preventable and reversible by supplementing the full set of 90 essential nutrients -- 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- dosed for bodyweight, and by protecting absorption through avoiding 'bad foods' and gluten (wheat, barley, rye, oats).",
-      "verbatim": "Osteoporosis of the skull and spine, Wallach’s Fibrous Dysplasia, are\npreventable, amenable, and reversible with supplementation with the 90\nessential nutrients, 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids\nappropriate for bodyweight. Absorption is essential and so avoiding the bad\nfoods AND gluten (wheat, barley, rye, oats) is imperative to get maximum\nbenefit.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "15. The Solution",
-        "page": 46,
-        "screenshot": 767,
-        "kindle_location": null,
-        "char_offset": 37042
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "the-solution",
-        "90-essentials",
-        "gluten"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T20:16:49+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000005",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "anosmia"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach explains that the olfactory (first cranial) nerve carries the sense of smell from the lining of the nose through the cribriform plate of the skull to the brain. When osteoporosis of the skull narrows that bony channel, the nerve is pinched and the sense of smell is reduced or lost entirely (anosmia).",
-      "verbatim": "The olfactory nerve originates in the nasal mucosa and travels through the\ncribriform plate of the ethmoid bone to the olfactory lobe of the brain to\nproduce the sense of smell. Osteoporosis of the skull will reduce the caliber of\nthe tunnels resulting in the reduction of or the total loss of the sense of smell.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "2. Cranial Nerve #1 - Olfactory",
-        "page": 16,
-        "screenshot": 751,
-        "kindle_location": null,
-        "char_offset": 16802
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-1",
-        "olfactory"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000006",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "optic_nerve_atrophy"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach teaches that the optic (second cranial) nerve carries vision from the retina through the optic canal of the skull to the brain. Skull osteoporosis narrows that canal and pinches the nerve, causing optic nerve atrophy -- a gradual vision loss that eyeglasses (lens prescriptions) cannot correct.",
-      "verbatim": "Osteoporosis of the skull causes a reduction of the internal caliber of the\noptic canal resulting in optic nerve atrophy (ONA) which produces a gradual\nvision loss that will not benefit from lens prescriptions.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "3. Cranial Nerve #2 - Optic",
-        "page": 18,
-        "screenshot": 752,
-        "kindle_location": null,
-        "char_offset": 18891
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-2",
-        "optic"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000007",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "ptosis"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach maps the oculomotor (third cranial) nerve, which controls the pupil's response to light and four of the six eye muscles -- including the elevator palpebrae that lifts the upper eyelid. When skull osteoporosis pinches this nerve (per his disease table) the result is ptosis (a drooping eyelid) and a pupil that no longer responds to light.",
-      "verbatim": "This nerve travels through the eye via\n\nthe superior orbital fissure to activate the eye muscles elevator palpebrae, superior rectus, medial rectus and inferior rectus motor muscles.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "4. Cranial Nerve #3 - Oculomotor",
-        "page": 20,
-        "screenshot": 753,
-        "kindle_location": null,
-        "char_offset": 19649
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-3",
-        "oculomotor"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000008",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "diplopia"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach describes the trochlear (fourth cranial) nerve as the motor nerve of the superior oblique muscle, which controls downward, outward and inward eye movement. When skull osteoporosis pinches it (per his disease table) the eyes no longer move together, producing double vision (diplopia), palsy, and pain above the eyebrow.",
-      "verbatim": "The trochlear nerve is a motor nerve that travels through the superior\norbital fissure. This nerve enervates the somatomotor muscle and the superior\noblique muscle that controls the superior oblique muscle which controls the\ndownward, outward and inward eye movement.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "5. Cranial Nerve #4 - Trochlear",
-        "page": 22,
-        "screenshot": 754,
-        "kindle_location": null,
-        "char_offset": 20382
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-4",
-        "trochlear"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000009",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "trigeminal_neuralgia"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach identifies the trigeminal (fifth cranial) nerve -- the largest cranial nerve, carrying sensation from the face and motor control of the jaw -- as the source of classic trigeminal neuralgia when osteoporosis of the skull strangles (pinches) it. This reframes trigeminal neuralgia as a nutritional/structural problem rather than an idiopathic one.",
-      "verbatim": "Strangulation of the trigeminal nerve is secondary to osteoporosis of the\nskull which produces the classic trigeminal neuralgia.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "6. Cranial Nerve #5 - Trigeminal",
-        "page": 24,
-        "screenshot": 755,
-        "kindle_location": null,
-        "char_offset": 22283
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-5",
-        "trigeminal"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000010",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "strabismus"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach explains the abducens (sixth cranial) nerve controls the lateral rectus muscle that turns the eye outward. When it is squeezed in the superior orbital fissure it produces an 'eye palsy' in which the eyes cross inward toward the nose -- strabismus.",
-      "verbatim": "This nerve originates in the\npons region of the brain stem then enters the eye socket where it controls the\nlateral rectus muscle. When squeezed as it travels through the superior orbital\n\nfissure it produces an “eye palsy” where the eyes cross inward toward the nose.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "7. Cranial Nerve #6 - Abducens",
-        "page": 26,
-        "screenshot": 756,
-        "kindle_location": null,
-        "char_offset": 23212
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-6",
-        "abducens"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000011",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "bells_palsy"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach attributes Bell's palsy (facial paralysis) to strangulation of the facial (seventh cranial) nerve as it passes through bony tunnels narrowed by skull osteoporosis (Paget's Disease / Wallach's Fibrous Dysplasia), which he says produces many forms of neuralgia including the classic Bell's palsy.",
-      "verbatim": "Strangulation of the facial nerves as it passes through the obstructed\ntunnels (Paget's Disease / Wallach’s Fibrous Dysplasia) produces many forms\nof neuralgia including the classic Bell’s palsy.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "8. Cranial Nerve #7 - Facial",
-        "page": 29,
-        "screenshot": 758,
-        "kindle_location": null,
-        "char_offset": 26006
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-7",
-        "facial"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000012",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "tinnitus",
-        "deafness",
-        "vertigo",
-        "menieres_disease"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach maps the vestibulocochlear (eighth cranial) nerve, which carries hearing and balance. When its cochlear branch is incarcerated by skull osteoporosis a tinnitus (ringing tone) is produced and gradual deafness can follow; when its vestibular branch is incarcerated it produces vertigo. Wallach renames this vertigo 'Wallach's Vertigo' and (in his disease table) equates it with Meniere's disease -- recasting Meniere's as a treatable nerve-incarceration rather than an unexplained inner-ear disorder.",
-      "verbatim": "When the cochlear branch is incarcerated a “tinnitus” or tone is produced\n(gradual deafness can occur); when the vestibular nerve is incarcerated it\nproduces a vertigo (Wallach’s Vertigo).",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "9. Cranial Nerve #8 - Vestibulocochlear",
-        "page": 32,
-        "screenshot": 759,
-        "kindle_location": null,
-        "char_offset": 27449
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-8",
-        "vestibulocochlear",
-        "wallachs-vertigo"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000013",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "dysphagia"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach describes the glossopharyngeal (ninth cranial) nerve, which carries taste from the rear of the tongue and sensation from the throat, and drives the stylopharyngeal swallowing muscle. When skull osteoporosis pinches it (per his disease table) the result is loss of the gag reflex, loss of taste, difficulty swallowing (dysphagia), and voice change.",
-      "verbatim": "This nerve sends sensory information from the sinuses, back of the throat, inner ear, and posterior region of the tongue; it records the sense of taste from the rear of the tongue. Through its motor branches it provides voluntary movement of the stylopharyngeal throat muscle",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "10. Cranial Nerve #9 - Glossopharyngeal",
-        "page": 34,
-        "screenshot": 760,
-        "kindle_location": null,
-        "char_offset": 28428
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-9",
-        "glossopharyngeal"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000014",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "gastroparesis",
-        "chronic_obstructive_pulmonary_disease",
-        "atrial_fibrillation"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach ties several major conditions to incarceration of the vagus (tenth cranial) nerve -- the longest cranial nerve, which carries signals to the heart, lungs, and digestive tract. When skull osteoporosis pinches it, he says it produces throat and esophageal problems, gastroparesis (a sluggish, bloated stomach with reflux and diarrhea), chronic obstructive pulmonary disease (COPD), atrial fibrillation (A-fib, an abnormal heart rhythm), and hiccups when the recurrent branch is involved.",
-      "verbatim": "When the vagus nerve is incarcerated it will produce throat and esophageal\nissues, gastroparesis (bloating, reflux, diarrhea, etc.) COPD, A-fib, and hiccups\nif the recurrent branch is also involved.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "11. Cranial Nerve #10 - Vagus",
-        "page": 37,
-        "screenshot": 762,
-        "kindle_location": null,
-        "char_offset": 30904
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-10",
-        "vagus"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000015",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach describes the accessory (eleventh cranial) nerve as the motor nerve that rotates, flexes, and extends the neck and shoulders by driving the trapezius and sternocleidomastoid muscles. When skull osteoporosis pinches it as it passes through the foramen magnum and jugular foramen (per his disease table) the result is loss of function of those neck and shoulder muscles.",
-      "verbatim": "The accessory nerve travels through the foramen magnum into the skull\nand then exits quickly through the jugular foramen to innervate the motor\nfunctions of the trapezius and sternocleidomastoid muscles.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "12. Cranial Nerve #11 - Accessory",
-        "page": 39,
-        "screenshot": 763,
-        "kindle_location": null,
-        "char_offset": 32657
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-11",
-        "accessory"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000016",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "tongue_atrophy"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach describes the hypoglossal (twelfth cranial) nerve as the motor nerve of the tongue, supplying all the tongue muscles except the palatoglossus. When skull osteoporosis pinches it in the hypoglossal canal (per his disease table) the tongue wastes away (atrophy) and speech malfunctions.",
-      "verbatim": "The hypoglossal nerve is involved with the motor function of the tongue, it originates in the medulla oblongata then travels into the jaw and tongue. The\nhypoglossal nerve travels through the hypoglossal canal and provides motor\n\ninnervation for all of the tongue muscles except for the palate glossus.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "13. Cranial Nerve #12 - Hypoglossal",
-        "page": 41,
-        "screenshot": 764,
-        "kindle_location": null,
-        "char_offset": 33471
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "cranial-nerve-12",
-        "hypoglossal"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000017",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "erbs_palsy",
-        "carpal_tunnel_syndrome",
-        "fibromyalgia",
-        "sciatica",
-        "lupus",
-        "atrial_fibrillation"
-      ],
-      "symptoms": [],
-      "claim_text": "Wallach extends the same mechanism to the spinal cord: impingement where it exits the skull through the foramen magnum (which he names Erb's Palsy / Wallach's Fibrous Dysplasia) produces numerous diseases. He says it is often misdiagnosed as carpal tunnel syndrome (numbness and tingling in the arms, wrist, and hands), behaves like a sciatica of the shoulder girdle, and that fibromyalgia, atrial fibrillation (A-fib), lupus, and sciatica are among its other manifestations.",
-      "verbatim": "Fibromyalgia, A-fib, Lupus, and Sciatica are some of the other symptoms of\nErb's Palsy / Wallach’s Fibrous Dysplasia.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "14. The Spinal Cord",
-        "page": 43,
-        "screenshot": 765,
-        "kindle_location": null,
-        "char_offset": 34950
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "spinal-cord",
-        "erbs-palsy"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-29T21:55:38+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000018",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach explains why the 90 essential nutrients matter at the cellular level: vitamins and minerals act as cofactors that enzymes and coenzymes require to do their work, and if an essential cofactor is missing the enzyme cannot perform properly, if at all. He notes that most people never reach optimal levels of all 90 nutrients — a state he calls subclinical (marginal) deficiency — which typically shows up as chronic fatigue, lethargy, depression, and lack of concentration.",
-      "verbatim": "The general role of vitamins and minerals is their requirement as cofactors to\nimplement the activity of enzymes and coenzymes.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "15. The Solution",
-        "page": 46,
-        "screenshot": 767,
-        "kindle_location": null,
-        "char_offset": 37915
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "the-solution",
-        "search-only",
-        "search-topic:supplementation-rationale"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-30T15:57:44+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000019",
-      "kind": "mechanism",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach argues you cannot eat your way to full nutrition because the food supply itself is depleted: vitamin levels in food fell more than 37% (1950 to 1999) and trace minerals 77% (1940 to 1991). He attributes this not to fertilizers or seed types but to two facts — minerals occur in veins rather than spread evenly through the soil and plants cannot manufacture them, and the traditional renewal of farm-soil minerals through wood ashes ended once the Industrialized World switched from wood fuel to electricity, natural gas, and propane after Thomas Edison's first commercial power plant opened in 1882. Even organic and vegetarian diets fall short, so he calls a complete 90-nutrient supplementation program a cornerstone of optimal health.",
-      "verbatim": "Vitamin levels in food\nhave decreased by more than 37% between 1950 and 1999, and trace mineral\nlevels have decreased by 77% between 1940 and 1991.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "15. The Solution",
-        "page": 48,
-        "screenshot": 768,
-        "kindle_location": null,
-        "char_offset": 39714
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "the-solution",
-        "search-only",
-        "search-topic:soil-depletion"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-30T15:57:44+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
-      "id": "WAL-CLM-IAIYH-000020",
-      "kind": "quote",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [],
-      "symptoms": [],
-      "claim_text": "Wallach's About-the-Author biography records the recognition his trace-mineral research has received: the 1988 Wooster Beach Gold Medal for a breakthrough in understanding the cause of cystic fibrosis, a 1991 Nobel Prize in Medicine nomination for linking selenium deficiency to cystic fibrosis, and the 2011 Klaus Schwarz Commemorative Medal for discovering the animal model of cystic fibrosis and elucidating its cause in humans. He is also credited as a co-author of the Dietary Supplement and Health Education Act — the law that keeps nutritional supplements legally categorized as food rather than pharmaceuticals. Accepting the Klaus Schwarz Medal, the awards committee wrote: \"From a Historical perspective, Wallach is to be regarded as one of the first practitioners, if not founders, of epigenetics, the new research discipline that investigates heritable alterations in gene expression caused by mechanisms other than changes in DNA sequence.\"",
-      "verbatim": "From a\nHistorical perspective, Wallach is to be regarded as one of the first practitioners, if not\nfounders, of epigenetics, the new research discipline that investigates heritable alterations\nin gene expression caused by mechanisms other than changes in DNA sequence.",
-      "locator": {
-        "book": "iaiyh",
-        "scheme": "screenshot",
-        "chapter": "About the Author",
-        "page": 6,
-        "screenshot": 744,
-        "kindle_location": null,
-        "char_offset": 8482
-      },
-      "dose": null,
-      "tags": [
-        "iaiyh",
-        "about-the-author",
-        "search-only",
-        "search-topic:wallach-biography"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-06-30T15:57:44+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    }
-  ]
+ "schema_version": 1,
+ "book_id": "iaiyh",
+ "knowledge_version": null,
+ "claims": [
+  {
+   "id": "WAL-CLM-IAIYH-000001",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "osteoporosis",
+    "pagets_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach teaches that the single common cause of the cranial-nerve and spinal-cord neuropathies behind as many as 25 different diseases is osteoporosis of the skull (which he also names Paget's Disease or Wallach's Fibrous Dysplasia). Nutritional deficiency drives a universal mineral loss and an over-production of bone matrix that fills the bony tunnels the nerves travel through, narrowing them and incarcerating (pinching) the nerve -- and he holds this is preventable and reversible.",
+   "verbatim": "It turns out that the common cause\nof these neuropathies is osteoporosis of the skull which results in a universal\nmineral loss and an increase in bone matrix production. The bone matrix fills up\nthe tunnels that the cranial nerves and spinal cord travel through, reducing the\ninside caliber of the tunnels which then produces an incarceration of the nerve.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "Prologue",
+    "page": 9,
+    "screenshot": 746,
+    "kindle_location": null,
+    "char_offset": 12006
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "prologue",
+    "cranial-nerve-etiology"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T20:16:49+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000002",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "osteoporosis",
+    "pagets_disease",
+    "anemia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach defines 'Wallach's Fibrous Dysplasia' as the replacement of normal bony architecture -- including the bone-marrow cavity -- with connective tissue, which in turn reduces the body's production of platelets, white blood cells, red blood cells, and the stem cells that make antibodies.",
+   "verbatim": "The Replacement of normal boney architecture, including the bone\nmarrow cavity, with connective tissue. Resulting in reduced production\nof platelets, white blood cells, red blood cells, and stem cells that make\n\nantibodies.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "Definition: Wallach's Fibrous Dysplasia",
+    "page": 13,
+    "screenshot": 749,
+    "kindle_location": null,
+    "char_offset": 14604
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "definition",
+    "wallachs-fibrous-dysplasia"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T20:16:49+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000003",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "periodontal_disease",
+    "gingivitis",
+    "trigeminal_neuralgia",
+    "headache",
+    "tooth_decay"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach holds that many common cranial and dental problems -- headaches, sinus trouble, tooth migration and tooth loss, receding gums, periodontal disease, jaw pain (trigeminal neuralgia), and even a change in the shape of the head (Hunter's syndrome) -- are not caused by poor flossing, brushing, or skipped dental visits, nor by autoimmune, familial, or genetic factors, but are in reality manifestations of osteoporosis of the skull.",
+   "verbatim": "A wide variety of cranial (head aches, sinus, etc.) and dental issues, including\n\ntooth migration, tooth loss, receding gums, periodontal disease, jaw pain\n(trigeminal neuralgia), change in the shape of the head (Hunter's syndrome)",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "1. The Skull",
+    "page": 14,
+    "screenshot": 750,
+    "kindle_location": null,
+    "char_offset": 15356
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "ch1-the-skull",
+    "skull-osteoporosis"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T20:16:49+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000004",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "osteoporosis",
+    "pagets_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's prescribed solution: osteoporosis of the skull and spine (Wallach's Fibrous Dysplasia) is preventable and reversible by supplementing the full set of 90 essential nutrients -- 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- dosed for bodyweight, and by protecting absorption through avoiding 'bad foods' and gluten (wheat, barley, rye, oats).",
+   "verbatim": "Osteoporosis of the skull and spine, Wallach’s Fibrous Dysplasia, are\npreventable, amenable, and reversible with supplementation with the 90\nessential nutrients, 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids\nappropriate for bodyweight. Absorption is essential and so avoiding the bad\nfoods AND gluten (wheat, barley, rye, oats) is imperative to get maximum\nbenefit.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "15. The Solution",
+    "page": 46,
+    "screenshot": 767,
+    "kindle_location": null,
+    "char_offset": 37042
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "the-solution",
+    "90-essentials",
+    "gluten"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T20:16:49+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000005",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "anosmia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains that the olfactory (first cranial) nerve carries the sense of smell from the lining of the nose through the cribriform plate of the skull to the brain. When osteoporosis of the skull narrows that bony channel, the nerve is pinched and the sense of smell is reduced or lost entirely (anosmia).",
+   "verbatim": "The olfactory nerve originates in the nasal mucosa and travels through the\ncribriform plate of the ethmoid bone to the olfactory lobe of the brain to\nproduce the sense of smell. Osteoporosis of the skull will reduce the caliber of\nthe tunnels resulting in the reduction of or the total loss of the sense of smell.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "2. Cranial Nerve #1 - Olfactory",
+    "page": 16,
+    "screenshot": 751,
+    "kindle_location": null,
+    "char_offset": 16802
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-1",
+    "olfactory"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000006",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "optic_nerve_atrophy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach teaches that the optic (second cranial) nerve carries vision from the retina through the optic canal of the skull to the brain. Skull osteoporosis narrows that canal and pinches the nerve, causing optic nerve atrophy -- a gradual vision loss that eyeglasses (lens prescriptions) cannot correct.",
+   "verbatim": "Osteoporosis of the skull causes a reduction of the internal caliber of the\noptic canal resulting in optic nerve atrophy (ONA) which produces a gradual\nvision loss that will not benefit from lens prescriptions.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "3. Cranial Nerve #2 - Optic",
+    "page": 18,
+    "screenshot": 752,
+    "kindle_location": null,
+    "char_offset": 18891
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-2",
+    "optic"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000007",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "ptosis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach maps the oculomotor (third cranial) nerve, which controls the pupil's response to light and four of the six eye muscles -- including the elevator palpebrae that lifts the upper eyelid. When skull osteoporosis pinches this nerve (per his disease table) the result is ptosis (a drooping eyelid) and a pupil that no longer responds to light.",
+   "verbatim": "This nerve travels through the eye via\n\nthe superior orbital fissure to activate the eye muscles elevator palpebrae, superior rectus, medial rectus and inferior rectus motor muscles.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "4. Cranial Nerve #3 - Oculomotor",
+    "page": 20,
+    "screenshot": 753,
+    "kindle_location": null,
+    "char_offset": 19649
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-3",
+    "oculomotor"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000008",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "diplopia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach describes the trochlear (fourth cranial) nerve as the motor nerve of the superior oblique muscle, which controls downward, outward and inward eye movement. When skull osteoporosis pinches it (per his disease table) the eyes no longer move together, producing double vision (diplopia), palsy, and pain above the eyebrow.",
+   "verbatim": "The trochlear nerve is a motor nerve that travels through the superior\norbital fissure. This nerve enervates the somatomotor muscle and the superior\noblique muscle that controls the superior oblique muscle which controls the\ndownward, outward and inward eye movement.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "5. Cranial Nerve #4 - Trochlear",
+    "page": 22,
+    "screenshot": 754,
+    "kindle_location": null,
+    "char_offset": 20382
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-4",
+    "trochlear"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000009",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "trigeminal_neuralgia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach identifies the trigeminal (fifth cranial) nerve -- the largest cranial nerve, carrying sensation from the face and motor control of the jaw -- as the source of classic trigeminal neuralgia when osteoporosis of the skull strangles (pinches) it. This reframes trigeminal neuralgia as a nutritional/structural problem rather than an idiopathic one.",
+   "verbatim": "Strangulation of the trigeminal nerve is secondary to osteoporosis of the\nskull which produces the classic trigeminal neuralgia.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "6. Cranial Nerve #5 - Trigeminal",
+    "page": 24,
+    "screenshot": 755,
+    "kindle_location": null,
+    "char_offset": 22283
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-5",
+    "trigeminal"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000010",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "strabismus"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains the abducens (sixth cranial) nerve controls the lateral rectus muscle that turns the eye outward. When it is squeezed in the superior orbital fissure it produces an 'eye palsy' in which the eyes cross inward toward the nose -- strabismus.",
+   "verbatim": "This nerve originates in the\npons region of the brain stem then enters the eye socket where it controls the\nlateral rectus muscle. When squeezed as it travels through the superior orbital\n\nfissure it produces an “eye palsy” where the eyes cross inward toward the nose.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "7. Cranial Nerve #6 - Abducens",
+    "page": 26,
+    "screenshot": 756,
+    "kindle_location": null,
+    "char_offset": 23212
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-6",
+    "abducens"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000011",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "bells_palsy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach attributes Bell's palsy (facial paralysis) to strangulation of the facial (seventh cranial) nerve as it passes through bony tunnels narrowed by skull osteoporosis (Paget's Disease / Wallach's Fibrous Dysplasia), which he says produces many forms of neuralgia including the classic Bell's palsy.",
+   "verbatim": "Strangulation of the facial nerves as it passes through the obstructed\ntunnels (Paget's Disease / Wallach’s Fibrous Dysplasia) produces many forms\nof neuralgia including the classic Bell’s palsy.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "8. Cranial Nerve #7 - Facial",
+    "page": 29,
+    "screenshot": 758,
+    "kindle_location": null,
+    "char_offset": 26006
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-7",
+    "facial"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000012",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "tinnitus",
+    "deafness",
+    "vertigo",
+    "menieres_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach maps the vestibulocochlear (eighth cranial) nerve, which carries hearing and balance. When its cochlear branch is incarcerated by skull osteoporosis a tinnitus (ringing tone) is produced and gradual deafness can follow; when its vestibular branch is incarcerated it produces vertigo. Wallach renames this vertigo 'Wallach's Vertigo' and (in his disease table) equates it with Meniere's disease -- recasting Meniere's as a treatable nerve-incarceration rather than an unexplained inner-ear disorder.",
+   "verbatim": "When the cochlear branch is incarcerated a “tinnitus” or tone is produced\n(gradual deafness can occur); when the vestibular nerve is incarcerated it\nproduces a vertigo (Wallach’s Vertigo).",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "9. Cranial Nerve #8 - Vestibulocochlear",
+    "page": 32,
+    "screenshot": 759,
+    "kindle_location": null,
+    "char_offset": 27449
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-8",
+    "vestibulocochlear",
+    "wallachs-vertigo"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000013",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "dysphagia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach describes the glossopharyngeal (ninth cranial) nerve, which carries taste from the rear of the tongue and sensation from the throat, and drives the stylopharyngeal swallowing muscle. When skull osteoporosis pinches it (per his disease table) the result is loss of the gag reflex, loss of taste, difficulty swallowing (dysphagia), and voice change.",
+   "verbatim": "This nerve sends sensory information from the sinuses, back of the throat, inner ear, and posterior region of the tongue; it records the sense of taste from the rear of the tongue. Through its motor branches it provides voluntary movement of the stylopharyngeal throat muscle",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "10. Cranial Nerve #9 - Glossopharyngeal",
+    "page": 34,
+    "screenshot": 760,
+    "kindle_location": null,
+    "char_offset": 28428
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-9",
+    "glossopharyngeal"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000014",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "gastroparesis",
+    "chronic_obstructive_pulmonary_disease",
+    "atrial_fibrillation"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach ties several major conditions to incarceration of the vagus (tenth cranial) nerve -- the longest cranial nerve, which carries signals to the heart, lungs, and digestive tract. When skull osteoporosis pinches it, he says it produces throat and esophageal problems, gastroparesis (a sluggish, bloated stomach with reflux and diarrhea), chronic obstructive pulmonary disease (COPD), atrial fibrillation (A-fib, an abnormal heart rhythm), and hiccups when the recurrent branch is involved.",
+   "verbatim": "When the vagus nerve is incarcerated it will produce throat and esophageal\nissues, gastroparesis (bloating, reflux, diarrhea, etc.) COPD, A-fib, and hiccups\nif the recurrent branch is also involved.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "11. Cranial Nerve #10 - Vagus",
+    "page": 37,
+    "screenshot": 762,
+    "kindle_location": null,
+    "char_offset": 30904
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-10",
+    "vagus"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000015",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach describes the accessory (eleventh cranial) nerve as the motor nerve that rotates, flexes, and extends the neck and shoulders by driving the trapezius and sternocleidomastoid muscles. When skull osteoporosis pinches it as it passes through the foramen magnum and jugular foramen (per his disease table) the result is loss of function of those neck and shoulder muscles.",
+   "verbatim": "The accessory nerve travels through the foramen magnum into the skull\nand then exits quickly through the jugular foramen to innervate the motor\nfunctions of the trapezius and sternocleidomastoid muscles.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "12. Cranial Nerve #11 - Accessory",
+    "page": 39,
+    "screenshot": 763,
+    "kindle_location": null,
+    "char_offset": 32657
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-11",
+    "accessory"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000016",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "tongue_atrophy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach describes the hypoglossal (twelfth cranial) nerve as the motor nerve of the tongue, supplying all the tongue muscles except the palatoglossus. When skull osteoporosis pinches it in the hypoglossal canal (per his disease table) the tongue wastes away (atrophy) and speech malfunctions.",
+   "verbatim": "The hypoglossal nerve is involved with the motor function of the tongue, it originates in the medulla oblongata then travels into the jaw and tongue. The\nhypoglossal nerve travels through the hypoglossal canal and provides motor\n\ninnervation for all of the tongue muscles except for the palate glossus.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "13. Cranial Nerve #12 - Hypoglossal",
+    "page": 41,
+    "screenshot": 764,
+    "kindle_location": null,
+    "char_offset": 33471
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "cranial-nerve-12",
+    "hypoglossal"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000017",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "erbs_palsy",
+    "carpal_tunnel_syndrome",
+    "fibromyalgia",
+    "sciatica",
+    "lupus",
+    "atrial_fibrillation"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach extends the same mechanism to the spinal cord: impingement where it exits the skull through the foramen magnum (which he names Erb's Palsy / Wallach's Fibrous Dysplasia) produces numerous diseases. He says it is often misdiagnosed as carpal tunnel syndrome (numbness and tingling in the arms, wrist, and hands), behaves like a sciatica of the shoulder girdle, and that fibromyalgia, atrial fibrillation (A-fib), lupus, and sciatica are among its other manifestations.",
+   "verbatim": "Fibromyalgia, A-fib, Lupus, and Sciatica are some of the other symptoms of\nErb's Palsy / Wallach’s Fibrous Dysplasia.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "14. The Spinal Cord",
+    "page": 43,
+    "screenshot": 765,
+    "kindle_location": null,
+    "char_offset": 34950
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "spinal-cord",
+    "erbs-palsy"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-29T21:55:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000018",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach explains why the 90 essential nutrients matter at the cellular level: vitamins and minerals act as cofactors that enzymes and coenzymes require to do their work, and if an essential cofactor is missing the enzyme cannot perform properly, if at all. He notes that most people never reach optimal levels of all 90 nutrients — a state he calls subclinical (marginal) deficiency — which typically shows up as chronic fatigue, lethargy, depression, and lack of concentration.",
+   "verbatim": "The general role of vitamins and minerals is their requirement as cofactors to\nimplement the activity of enzymes and coenzymes.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "15. The Solution",
+    "page": 46,
+    "screenshot": 767,
+    "kindle_location": null,
+    "char_offset": 37915
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "the-solution",
+    "search-topic:supplementation-rationale"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-30T15:57:44+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000019",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach argues you cannot eat your way to full nutrition because the food supply itself is depleted: vitamin levels in food fell more than 37% (1950 to 1999) and trace minerals 77% (1940 to 1991). He attributes this not to fertilizers or seed types but to two facts — minerals occur in veins rather than spread evenly through the soil and plants cannot manufacture them, and the traditional renewal of farm-soil minerals through wood ashes ended once the Industrialized World switched from wood fuel to electricity, natural gas, and propane after Thomas Edison's first commercial power plant opened in 1882. Even organic and vegetarian diets fall short, so he calls a complete 90-nutrient supplementation program a cornerstone of optimal health.",
+   "verbatim": "Vitamin levels in food\nhave decreased by more than 37% between 1950 and 1999, and trace mineral\nlevels have decreased by 77% between 1940 and 1991.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "15. The Solution",
+    "page": 48,
+    "screenshot": 768,
+    "kindle_location": null,
+    "char_offset": 39714
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "the-solution",
+    "search-topic:soil-depletion"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-30T15:57:44+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-IAIYH-000020",
+   "kind": "quote",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach's About-the-Author biography records the recognition his trace-mineral research has received: the 1988 Wooster Beach Gold Medal for a breakthrough in understanding the cause of cystic fibrosis, a 1991 Nobel Prize in Medicine nomination for linking selenium deficiency to cystic fibrosis, and the 2011 Klaus Schwarz Commemorative Medal for discovering the animal model of cystic fibrosis and elucidating its cause in humans. He is also credited as a co-author of the Dietary Supplement and Health Education Act — the law that keeps nutritional supplements legally categorized as food rather than pharmaceuticals. Accepting the Klaus Schwarz Medal, the awards committee wrote: \"From a Historical perspective, Wallach is to be regarded as one of the first practitioners, if not founders, of epigenetics, the new research discipline that investigates heritable alterations in gene expression caused by mechanisms other than changes in DNA sequence.\"",
+   "verbatim": "From a\nHistorical perspective, Wallach is to be regarded as one of the first practitioners, if not\nfounders, of epigenetics, the new research discipline that investigates heritable alterations\nin gene expression caused by mechanisms other than changes in DNA sequence.",
+   "locator": {
+    "book": "iaiyh",
+    "scheme": "screenshot",
+    "chapter": "About the Author",
+    "page": 6,
+    "screenshot": 744,
+    "kindle_location": null,
+    "char_offset": 8482
+   },
+   "dose": null,
+   "tags": [
+    "iaiyh",
+    "about-the-author",
+    "search-topic:wallach-biography"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-30T15:57:44+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  }
+ ]
 }

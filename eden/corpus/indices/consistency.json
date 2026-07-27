@@ -6,6 +6,18 @@
     "kind": "contraindication",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-DDDL-000100",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000164",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000157",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000224",
         "book": "immortality"
       },
@@ -14,11 +26,265 @@
         "book": "lets-play-doctor"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 2
+    "books_repeating": 4,
+    "claim_count": 5
   },
   {
     "id": "CG-0002",
+    "essentials": [],
+    "conditions": [],
+    "kind": "deficiency_sign",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000137",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000141",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000150",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000153",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000154",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000162",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000165",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000166",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000169",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000170",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000183",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000185",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000191",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000194",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000205",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000211",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000214",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000219",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000226",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000234",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000241",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000242",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000243",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000252",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000254",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000259",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000151",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000186",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000191",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000196",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000200",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000254",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000269",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000311",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000327",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000335",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000021",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000044",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000045",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000047",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000060",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000007",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000270",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000273",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000294",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000298",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000319",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000328",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000344",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000349",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000360",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000495",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000499",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000501",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000079",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000323",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000325",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000341",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000347",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000355",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000356",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 6,
+    "claim_count": 61
+  },
+  {
+    "id": "CG-0003",
     "essentials": [],
     "conditions": [],
     "kind": "definition",
@@ -44,11 +310,1303 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000138",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000139",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000140",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000174",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000181",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000199",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000222",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000223",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000227",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000230",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000233",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000246",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000247",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000261",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000274",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000275",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000277",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000278",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000279",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000281",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000283",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000284",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000285",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000286",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000288",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000296",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000089",
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-EPIGEN-000140",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000158",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000159",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000179",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000192",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000197",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000204",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000205",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000212",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000213",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000214",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000220",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000222",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000225",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000226",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000232",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000237",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000241",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000242",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000244",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000249",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000250",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000253",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000255",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000260",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000271",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000273",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000279",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000283",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000285",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000290",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000291",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000297",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000298",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000301",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000302",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000305",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000310",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000312",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000313",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000314",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000316",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000317",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000318",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000319",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000334",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000337",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000338",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000339",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000340",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000341",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000346",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000347",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000350",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000351",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000357",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000361",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000362",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000363",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000364",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000365",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000366",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000368",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000369",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000372",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000374",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000375",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000377",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000381",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000382",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000383",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000385",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000386",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000387",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000389",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000391",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000392",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000394",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000396",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000402",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000404",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000406",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000407",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000408",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000409",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000410",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000412",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000414",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000416",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000417",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000419",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000420",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000421",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000422",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000423",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000424",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000425",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000426",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000427",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000428",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000429",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000431",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000432",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000433",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000434",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000435",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000436",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000438",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000439",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000440",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000441",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000442",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000443",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000446",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000447",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000449",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000450",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000452",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000453",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000013",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000031",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000037",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000041",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000042",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000054",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000057",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000069",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000070",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000071",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000003",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000004",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000006",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000013",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000014",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000017",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000023",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000024",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000026",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000031",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000033",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000034",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000035",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000040",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000041",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000046",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000048",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000050",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000051",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000052",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000055",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000056",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000057",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000059",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000062",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000065",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000074",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000085",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000093",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000095",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000097",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000116",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000117",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000118",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000124",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000156",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000157",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000159",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000171",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000185",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000186",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000195",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000196",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000197",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000228",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000235",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000236",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000239",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000266",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000268",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000271",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000272",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000274",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000276",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000286",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000293",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000297",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000299",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000301",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000304",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000305",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000308",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000309",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000311",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000312",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000315",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000316",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000318",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000322",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000323",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000327",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000329",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000330",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000331",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000332",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000337",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000341",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000345",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000346",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000350",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000351",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000353",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000354",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000355",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000361",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000362",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000363",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000364",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000367",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000368",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000371",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000372",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000373",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000377",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000379",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000381",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000385",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000386",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000387",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000388",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000390",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000391",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000392",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000399",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000400",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000401",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000402",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000403",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000404",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000405",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000406",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000407",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000408",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000409",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000410",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000411",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000412",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000413",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000414",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000415",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000416",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000417",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000418",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000419",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000420",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000421",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000422",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000423",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000424",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000425",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000426",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000427",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000428",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000429",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000430",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000431",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000432",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000433",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000434",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000435",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000436",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000437",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000438",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000439",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000440",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000441",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000442",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000443",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000444",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000445",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000446",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000447",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000448",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000449",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000450",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000451",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000452",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000453",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000454",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000455",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000456",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000457",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000458",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000459",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000460",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000461",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000462",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000463",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000465",
         "book": "immortality"
       },
       {
@@ -56,7 +1614,87 @@
         "book": "lets-play-doctor"
       },
       {
+        "claim_id": "WAL-CLM-LETS-000088",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000090",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000091",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000092",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000095",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000097",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000098",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000099",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000101",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000102",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000103",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000104",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000106",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000108",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000110",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000112",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000114",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000232",
+        "book": "lets-play-doctor"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000250",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000263",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000312",
         "book": "lets-play-doctor"
       },
       {
@@ -69,6 +1707,46 @@
       },
       {
         "claim_id": "WAL-CLM-LETS-000339",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000347",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000362",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000467",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000468",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000469",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000473",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000475",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000476",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000478",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000481",
         "book": "lets-play-doctor"
       },
       {
@@ -198,13 +1876,285 @@
       {
         "claim_id": "WAL-CLM-RARE-000319",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000330",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000331",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000333",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000337",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000349",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000350",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000353",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000354",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000358",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000359",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000360",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000362",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000365",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000372",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000373",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000380",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000382",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000384",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000385",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000391",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000392",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000393",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000396",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000399",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 6,
+    "claim_count": 421
+  },
+  {
+    "id": "CG-0004",
+    "essentials": [],
+    "conditions": [],
+    "kind": "diagnostic_pattern",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000156",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000256",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000264",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000229",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000275",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000245",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000503",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000510",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000515",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000516",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000334",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000351",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000374",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 5,
-    "claim_count": 44
+    "claim_count": 13
   },
   {
-    "id": "CG-0003",
+    "id": "CG-0005",
+    "essentials": [],
+    "conditions": [],
+    "kind": "dose",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000163",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000171",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000172",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000188",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000197",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000218",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000221",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000225",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000236",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000249",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000266",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000267",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000269",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000270",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000271",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000272",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000324",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000353",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000023",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000277",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000491",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000504",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000506",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000509",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000512",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000348",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 6,
+    "claim_count": 26
+  },
+  {
+    "id": "CG-0006",
     "essentials": [],
     "conditions": [],
     "kind": "food_source",
@@ -214,19 +2164,325 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000161",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000178",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000206",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000217",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000250",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000268",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000289",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000187",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000267",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000268",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000276",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000288",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000309",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000418",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000430",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000014",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000017",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000019",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000020",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000024",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000032",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000034",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000038",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000039",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000050",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000051",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000056",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000067",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000068",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000240",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000241",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000249",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000257",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000263",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000264",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000275",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000285",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000290",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000296",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000338",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000352",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000375",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000376",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000316",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000327",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000335",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000363",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000369",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000371",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000377",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 2
+    "books_repeating": 5,
+    "claim_count": 51
   },
   {
-    "id": "CG-0004",
+    "id": "CG-0007",
+    "essentials": [],
+    "conditions": [],
+    "kind": "interaction",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000148",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000184",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000208",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000251",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000194",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000257",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000263",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000266",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000354",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000405",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000269",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000278",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000281",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000295",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000302",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000307",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000321",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000325",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000496",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000338",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000346",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000367",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 5,
+    "claim_count": 22
+  },
+  {
+    "id": "CG-0008",
     "essentials": [],
     "conditions": [],
     "kind": "mechanism",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000096",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000097",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000105",
+        "book": "dddl-3e-2011"
+      },
       {
         "claim_id": "WAL-CLM-DDDL-000110",
         "book": "dddl-3e-2011"
@@ -240,7 +2496,171 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000135",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000136",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000142",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000147",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000149",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000155",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000157",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000158",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000159",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000160",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000173",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000175",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000176",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000177",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000180",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000193",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000195",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000200",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000201",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000204",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000216",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000224",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000228",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000229",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000231",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000238",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000239",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000248",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000255",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000257",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000260",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000262",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000263",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000265",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000276",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000280",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000282",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000290",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000291",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000295",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000001",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000060",
         "book": "epigenetics"
       },
       {
@@ -252,7 +2672,331 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-EPIGEN-000148",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000149",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000178",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000189",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000190",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000198",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000199",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000201",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000206",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000207",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000208",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000215",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000216",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000227",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000233",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000234",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000238",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000243",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000245",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000246",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000247",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000251",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000256",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000261",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000262",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000272",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000274",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000277",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000278",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000280",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000286",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000287",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000292",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000294",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000296",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000299",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000303",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000306",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000307",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000320",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000321",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000322",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000323",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000325",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000332",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000342",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000343",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000344",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000345",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000348",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000352",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000355",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000358",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000359",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000360",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000370",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000371",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000373",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000376",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000378",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000384",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000388",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000390",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000393",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000395",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000398",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000399",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000400",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000415",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000444",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000445",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000448",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000451",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-HELLS-000003",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000029",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000036",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000043",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000055",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000059",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000064",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000066",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000073",
         "book": "hells-kitchen"
       },
       {
@@ -260,8 +3004,236 @@
         "book": "iaiyh"
       },
       {
+        "claim_id": "WAL-CLM-IAIYH-000018",
+        "book": "iaiyh"
+      },
+      {
+        "claim_id": "WAL-CLM-IAIYH-000019",
+        "book": "iaiyh"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000025",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000066",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000067",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000069",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000070",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000086",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000160",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000162",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000163",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000165",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000225",
         "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000237",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000243",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000244",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000256",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000261",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000284",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000287",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000288",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000291",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000292",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000300",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000306",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000310",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000314",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000317",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000320",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000324",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000333",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000334",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000335",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000340",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000347",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000348",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000356",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000357",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000358",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000365",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000374",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000380",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000382",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000383",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000384",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000394",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000464",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000089",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000096",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000105",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000113",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000470",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000494",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000498",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000505",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000508",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000513",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000514",
+        "book": "lets-play-doctor"
       },
       {
         "claim_id": "WAL-CLM-RARE-000002",
@@ -334,13 +3306,73 @@
       {
         "claim_id": "WAL-CLM-RARE-000258",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000320",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000321",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000344",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000345",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000352",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000357",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000368",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000370",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000375",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000376",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000381",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000383",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000389",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000398",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000400",
+        "book": "rare-earths"
       }
     ],
-    "books_repeating": 6,
-    "claim_count": 27
+    "books_repeating": 7,
+    "claim_count": 224
   },
   {
-    "id": "CG-0005",
+    "id": "CG-0009",
     "essentials": [],
     "conditions": [],
     "kind": "personal_anecdote",
@@ -354,8 +3386,68 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000182",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000210",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000293",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000180",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000181",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000185",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000193",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000236",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000040",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000002",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000005",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000075",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000161",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000234",
         "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000502",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000507",
+        "book": "lets-play-doctor"
       },
       {
         "claim_id": "WAL-CLM-RARE-000008",
@@ -368,13 +3460,21 @@
       {
         "claim_id": "WAL-CLM-RARE-000054",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000339",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000340",
+        "book": "rare-earths"
       }
     ],
-    "books_repeating": 3,
-    "claim_count": 6
+    "books_repeating": 6,
+    "claim_count": 23
   },
   {
-    "id": "CG-0006",
+    "id": "CG-0010",
     "essentials": [],
     "conditions": [],
     "kind": "prevalence",
@@ -382,6 +3482,98 @@
       {
         "claim_id": "WAL-CLM-DDDL-000001",
         "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000253",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000028",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000141",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000224",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000240",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000259",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000326",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000336",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000035",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000048",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000062",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000063",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000120",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000122",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000254",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000262",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000303",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000313",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000326",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000474",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000477",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000479",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000480",
+        "book": "lets-play-doctor"
       },
       {
         "claim_id": "WAL-CLM-RARE-000064",
@@ -406,24 +3598,318 @@
       {
         "claim_id": "WAL-CLM-RARE-000162",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000336",
+        "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 7
+    "books_repeating": 6,
+    "claim_count": 31
   },
   {
-    "id": "CG-0007",
+    "id": "CG-0011",
+    "essentials": [],
+    "conditions": [],
+    "kind": "prognosis",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000145",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000151",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000152",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000196",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000244",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000245",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000188",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000230",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000235",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000239",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000284",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000331",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000022",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000025",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000026",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000030",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000033",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000046",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000053",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000246",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000248",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000251",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000252",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000253",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000259",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000260",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000279",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000280",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000289",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000336",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000339",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000511",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000078",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000322",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000326",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000343",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 6,
+    "claim_count": 36
+  },
+  {
+    "id": "CG-0012",
     "essentials": [],
     "conditions": [],
     "kind": "protocol",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-DDDL-000099",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000101",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000102",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000104",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-DDDL-000109",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000127",
         "book": "dddl-3e-2011"
       },
       {
         "claim_id": "WAL-CLM-DDDL-000131",
         "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000143",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000144",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000146",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000167",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000168",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000186",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000187",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000189",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000190",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000192",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000198",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000202",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000203",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000207",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000213",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000215",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000220",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000232",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000235",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000240",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000258",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000273",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000292",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000294",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000142",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000145",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000154",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000155",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000161",
+        "book": "epigenetics"
       },
       {
         "claim_id": "WAL-CLM-EPIGEN-000169",
@@ -446,19 +3932,83 @@
         "book": "hells-kitchen"
       },
       {
+        "claim_id": "WAL-CLM-HELLS-000015",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000016",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000238",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000242",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000247",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000250",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000255",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000258",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000398",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000376",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000489",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000490",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000493",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000497",
+        "book": "lets-play-doctor"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000500",
         "book": "lets-play-doctor"
       },
       {
         "claim_id": "WAL-CLM-RARE-000314",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000332",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000394",
+        "book": "rare-earths"
       }
     ],
-    "books_repeating": 5,
-    "claim_count": 9
+    "books_repeating": 6,
+    "claim_count": 59
   },
   {
-    "id": "CG-0008",
+    "id": "CG-0013",
     "essentials": [],
     "conditions": [],
     "kind": "quote",
@@ -480,6 +4030,118 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000179",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000212",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000237",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000027",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000153",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000156",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000182",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000183",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000184",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000202",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000203",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000210",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000211",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000218",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000219",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000221",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000223",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000231",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000265",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000282",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000295",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000304",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000308",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000328",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000329",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000330",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000333",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000397",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-HELLS-000001",
         "book": "hells-kitchen"
       },
@@ -494,6 +4156,50 @@
       {
         "claim_id": "WAL-CLM-HELLS-000008",
         "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000018",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000027",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000028",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000049",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000052",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000058",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000061",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000065",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000072",
+        "book": "hells-kitchen"
+      },
+      {
+        "claim_id": "WAL-CLM-IAIYH-000020",
+        "book": "iaiyh"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000010",
+        "book": "immortality"
       },
       {
         "claim_id": "WAL-CLM-IMMORT-000222",
@@ -516,6 +4222,38 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000267",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000282",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000283",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000342",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000343",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000366",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000378",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000395",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000033",
         "book": "rare-earths"
       },
@@ -530,17 +4268,69 @@
       {
         "claim_id": "WAL-CLM-RARE-000273",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000312",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000324",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000328",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000329",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000342",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000361",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000364",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000366",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000378",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000379",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000395",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000397",
+        "book": "rare-earths"
       }
     ],
-    "books_repeating": 4,
-    "claim_count": 17
+    "books_repeating": 6,
+    "claim_count": 76
   },
   {
-    "id": "CG-0009",
+    "id": "CG-0014",
     "essentials": [],
     "conditions": [],
     "kind": "toxicity_sign",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000209",
+        "book": "dddl-3e-2011"
+      },
       {
         "claim_id": "WAL-CLM-EPIGEN-000082",
         "book": "epigenetics"
@@ -554,15 +4344,119 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-EPIGEN-000195",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000209",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000217",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000228",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000248",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000252",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000258",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000264",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000270",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000281",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000289",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000293",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000300",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000315",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000349",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000356",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000367",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000379",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000380",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000403",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000411",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000413",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000359",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000369",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000370",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000492",
+        "book": "lets-play-doctor"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000318",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 4
+    "books_repeating": 5,
+    "claim_count": 31
   },
   {
-    "id": "CG-0010",
+    "id": "CG-0015",
     "essentials": [],
     "conditions": [
       "achlorhydria"
@@ -582,13 +4476,21 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0011",
+    "id": "CG-0016",
     "essentials": [],
     "conditions": [
       "birth_defects"
     ],
     "kind": "mechanism",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000017",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000018",
+        "book": "epigenetics"
+      },
       {
         "claim_id": "WAL-CLM-RARE-000015",
         "book": "rare-earths"
@@ -598,17 +4500,25 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 2
+    "books_repeating": 2,
+    "claim_count": 4
   },
   {
-    "id": "CG-0012",
+    "id": "CG-0017",
     "essentials": [],
     "conditions": [
       "cancer"
     ],
     "kind": "mechanism",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000393",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000396",
+        "book": "immortality"
+      },
       {
         "claim_id": "WAL-CLM-LETS-000180",
         "book": "lets-play-doctor"
@@ -638,6 +4548,10 @@
         "book": "lets-play-doctor"
       },
       {
+        "claim_id": "WAL-CLM-LETS-000194",
+        "book": "lets-play-doctor"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000198",
         "book": "lets-play-doctor"
       },
@@ -650,11 +4564,11 @@
         "book": "lets-play-doctor"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 10
+    "books_repeating": 2,
+    "claim_count": 13
   },
   {
-    "id": "CG-0013",
+    "id": "CG-0018",
     "essentials": [],
     "conditions": [
       "flatulence"
@@ -674,7 +4588,55 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0014",
+    "id": "CG-0019",
+    "essentials": [],
+    "conditions": [
+      "homosexuality"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000008",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000019",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000022",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000023",
+        "book": "epigenetics"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 4
+  },
+  {
+    "id": "CG-0020",
+    "essentials": [],
+    "conditions": [
+      "intersex"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000009",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000025",
+        "book": "epigenetics"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0021",
     "essentials": [],
     "conditions": [
       "labor"
@@ -694,7 +4656,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0015",
+    "id": "CG-0022",
     "essentials": [],
     "conditions": [
       "obesity"
@@ -714,7 +4676,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0016",
+    "id": "CG-0023",
     "essentials": [],
     "conditions": [
       "parasites"
@@ -734,7 +4696,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0017",
+    "id": "CG-0024",
     "essentials": [],
     "conditions": [
       "peptic_ulcers"
@@ -754,7 +4716,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0018",
+    "id": "CG-0025",
     "essentials": [],
     "conditions": [
       "pica"
@@ -774,7 +4736,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0019",
+    "id": "CG-0026",
     "essentials": [],
     "conditions": [
       "vaginitis"
@@ -794,7 +4756,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0020",
+    "id": "CG-0027",
     "essentials": [
       "aluminum"
     ],
@@ -814,7 +4776,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0021",
+    "id": "CG-0028",
     "essentials": [
       "arsenic"
     ],
@@ -834,7 +4796,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0022",
+    "id": "CG-0029",
     "essentials": [
       "barium"
     ],
@@ -854,7 +4816,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0023",
+    "id": "CG-0030",
     "essentials": [
       "beryllium"
     ],
@@ -874,7 +4836,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0024",
+    "id": "CG-0031",
     "essentials": [
       "biotin"
     ],
@@ -894,7 +4856,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0025",
+    "id": "CG-0032",
     "essentials": [
       "boron"
     ],
@@ -914,7 +4876,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0026",
+    "id": "CG-0033",
     "essentials": [
       "boron",
       "calcium",
@@ -936,7 +4898,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0027",
+    "id": "CG-0034",
     "essentials": [
       "bromine"
     ],
@@ -956,7 +4918,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0028",
+    "id": "CG-0035",
     "essentials": [
       "calcium"
     ],
@@ -970,13 +4932,17 @@
       {
         "claim_id": "WAL-CLM-IMMORT-000061",
         "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000482",
+        "book": "lets-play-doctor"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 2
+    "books_repeating": 2,
+    "claim_count": 3
   },
   {
-    "id": "CG-0029",
+    "id": "CG-0036",
     "essentials": [
       "calcium"
     ],
@@ -996,13 +4962,29 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0030",
+    "id": "CG-0037",
     "essentials": [
       "calcium"
     ],
     "conditions": [],
     "kind": "mechanism",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000143",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000144",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000146",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000217",
+        "book": "immortality"
+      },
       {
         "claim_id": "WAL-CLM-RARE-000104",
         "book": "rare-earths"
@@ -1016,11 +4998,11 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 3
+    "books_repeating": 3,
+    "claim_count": 7
   },
   {
-    "id": "CG-0031",
+    "id": "CG-0038",
     "essentials": [
       "calcium"
     ],
@@ -1042,7 +5024,35 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0032",
+    "id": "CG-0039",
+    "essentials": [
+      "calcium",
+      "chromium",
+      "lithium",
+      "magnesium",
+      "vanadium"
+    ],
+    "conditions": [],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000276",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000277",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000278",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0040",
     "essentials": [
       "calcium",
       "magnesium"
@@ -1065,7 +5075,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0033",
+    "id": "CG-0041",
     "essentials": [
       "calcium",
       "magnesium",
@@ -1089,7 +5099,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0034",
+    "id": "CG-0042",
     "essentials": [
       "cesium"
     ],
@@ -1112,7 +5122,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0035",
+    "id": "CG-0043",
     "essentials": [
       "chloride"
     ],
@@ -1132,7 +5142,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0036",
+    "id": "CG-0044",
     "essentials": [
       "choline"
     ],
@@ -1152,7 +5162,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0037",
+    "id": "CG-0045",
     "essentials": [
       "chromium"
     ],
@@ -1172,13 +5182,17 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0038",
+    "id": "CG-0046",
     "essentials": [
       "chromium"
     ],
     "conditions": [],
     "kind": "mechanism",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000091",
+        "book": "immortality"
+      },
       {
         "claim_id": "WAL-CLM-RARE-000117",
         "book": "rare-earths"
@@ -1188,11 +5202,31 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
+    "books_repeating": 2,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0047",
+    "essentials": [
+      "chromium"
+    ],
+    "conditions": [],
+    "kind": "prevalence",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000015",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000092",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 2,
     "claim_count": 2
   },
   {
-    "id": "CG-0039",
+    "id": "CG-0048",
     "essentials": [
       "chromium"
     ],
@@ -1212,7 +5246,28 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0040",
+    "id": "CG-0049",
+    "essentials": [
+      "chromium",
+      "vanadium"
+    ],
+    "conditions": [],
+    "kind": "deficiency_sign",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-RARE-000039",
+        "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000313",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0050",
     "essentials": [
       "cobalt",
       "vitamin-b12"
@@ -1233,7 +5288,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0041",
+    "id": "CG-0051",
     "essentials": [
       "cobalt",
       "vitamin-b12"
@@ -1254,7 +5309,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0042",
+    "id": "CG-0052",
     "essentials": [
       "copper"
     ],
@@ -1274,7 +5329,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0043",
+    "id": "CG-0053",
     "essentials": [
       "copper"
     ],
@@ -1294,7 +5349,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0044",
+    "id": "CG-0054",
     "essentials": [
       "copper"
     ],
@@ -1314,7 +5369,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0045",
+    "id": "CG-0055",
     "essentials": [
       "copper"
     ],
@@ -1342,7 +5397,27 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0046",
+    "id": "CG-0056",
+    "essentials": [
+      "copper"
+    ],
+    "conditions": [],
+    "kind": "prevalence",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000106",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000111",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0057",
     "essentials": [
       "copper"
     ],
@@ -1368,7 +5443,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0047",
+    "id": "CG-0058",
     "essentials": [
       "copper"
     ],
@@ -1390,7 +5465,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0048",
+    "id": "CG-0059",
     "essentials": [
       "copper",
       "iodine"
@@ -1417,7 +5492,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0049",
+    "id": "CG-0060",
     "essentials": [
       "dysprosium"
     ],
@@ -1429,15 +5504,39 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000112",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000288",
         "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 3,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0061",
+    "essentials": [
+      "erbium"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000080",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000113",
+        "book": "immortality"
       }
     ],
     "books_repeating": 2,
     "claim_count": 2
   },
   {
-    "id": "CG-0050",
+    "id": "CG-0062",
     "essentials": [
       "europium"
     ],
@@ -1457,7 +5556,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0051",
+    "id": "CG-0063",
     "essentials": [
       "gadolinium"
     ],
@@ -1469,15 +5568,67 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000137",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000290",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
+    "books_repeating": 3,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0064",
+    "essentials": [
+      "gallium"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000134",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000136",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 1,
     "claim_count": 2
   },
   {
-    "id": "CG-0052",
+    "id": "CG-0065",
+    "essentials": [
+      "germanium"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000138",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000142",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000144",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000146",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 4
+  },
+  {
+    "id": "CG-0066",
     "essentials": [
       "germanium"
     ],
@@ -1501,7 +5652,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0053",
+    "id": "CG-0067",
     "essentials": [
       "germanium"
     ],
@@ -1525,7 +5676,27 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0054",
+    "id": "CG-0068",
+    "essentials": [
+      "germanium"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000141",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000143",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0069",
     "essentials": [
       "hafnium"
     ],
@@ -1537,15 +5708,19 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000158",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000291",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 2
+    "books_repeating": 3,
+    "claim_count": 3
   },
   {
-    "id": "CG-0055",
+    "id": "CG-0070",
     "essentials": [
       "holmium"
     ],
@@ -1557,15 +5732,67 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000172",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000292",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 2
+    "books_repeating": 3,
+    "claim_count": 3
   },
   {
-    "id": "CG-0056",
+    "id": "CG-0071",
+    "essentials": [
+      "hydrogen"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000147",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000149",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000154",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0072",
+    "essentials": [
+      "hydrogen"
+    ],
+    "conditions": [],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000087",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000150",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000152",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0073",
     "essentials": [
       "hydrogen"
     ],
@@ -1588,7 +5815,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0057",
+    "id": "CG-0074",
     "essentials": [
       "inositol"
     ],
@@ -1608,13 +5835,33 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0058",
+    "id": "CG-0075",
     "essentials": [
       "iodine"
     ],
     "conditions": [],
     "kind": "definition",
     "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000173",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000175",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000176",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000178",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000181",
+        "book": "immortality"
+      },
       {
         "claim_id": "WAL-CLM-RARE-000144",
         "book": "rare-earths"
@@ -1624,11 +5871,11 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 2
+    "books_repeating": 2,
+    "claim_count": 7
   },
   {
-    "id": "CG-0059",
+    "id": "CG-0076",
     "essentials": [
       "iodine"
     ],
@@ -1648,7 +5895,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0060",
+    "id": "CG-0077",
     "essentials": [
       "iodine"
     ],
@@ -1674,7 +5921,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0061",
+    "id": "CG-0078",
     "essentials": [
       "iodine"
     ],
@@ -1698,7 +5945,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0062",
+    "id": "CG-0079",
     "essentials": [
       "iodine"
     ],
@@ -1721,7 +5968,27 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0063",
+    "id": "CG-0080",
+    "essentials": [
+      "iron"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000125",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000130",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0081",
     "essentials": [
       "iron"
     ],
@@ -1741,7 +6008,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0064",
+    "id": "CG-0082",
     "essentials": [
       "iron"
     ],
@@ -1750,6 +6017,10 @@
     "repetitions": [
       {
         "claim_id": "WAL-CLM-IMMORT-000126",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000127",
         "book": "immortality"
       },
       {
@@ -1762,10 +6033,10 @@
       }
     ],
     "books_repeating": 2,
-    "claim_count": 3
+    "claim_count": 4
   },
   {
-    "id": "CG-0065",
+    "id": "CG-0083",
     "essentials": [
       "lithium"
     ],
@@ -1788,7 +6059,27 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0066",
+    "id": "CG-0084",
+    "essentials": [
+      "lutetium"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000097",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000203",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0085",
     "essentials": [
       "magnesium"
     ],
@@ -1812,7 +6103,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0067",
+    "id": "CG-0086",
     "essentials": [
       "magnesium"
     ],
@@ -1832,7 +6123,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0068",
+    "id": "CG-0087",
     "essentials": [
       "magnesium"
     ],
@@ -1856,7 +6147,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0069",
+    "id": "CG-0088",
     "essentials": [
       "magnesium"
     ],
@@ -1878,7 +6169,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0070",
+    "id": "CG-0089",
     "essentials": [
       "manganese"
     ],
@@ -1898,7 +6189,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0071",
+    "id": "CG-0090",
     "essentials": [
       "manganese"
     ],
@@ -1918,7 +6209,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0072",
+    "id": "CG-0091",
     "essentials": [
       "molybdenum"
     ],
@@ -1938,7 +6229,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0073",
+    "id": "CG-0092",
     "essentials": [
       "molybdenum"
     ],
@@ -1958,7 +6249,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0074",
+    "id": "CG-0093",
     "essentials": [
       "molybdenum"
     ],
@@ -1978,7 +6269,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0075",
+    "id": "CG-0094",
     "essentials": [
       "neodymium"
     ],
@@ -1998,7 +6289,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0076",
+    "id": "CG-0095",
     "essentials": [
       "niobium"
     ],
@@ -2018,7 +6309,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0077",
+    "id": "CG-0096",
     "essentials": [
       "nitrogen"
     ],
@@ -2038,7 +6329,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0078",
+    "id": "CG-0097",
     "essentials": [
       "nitrogen"
     ],
@@ -2062,7 +6353,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0079",
+    "id": "CG-0098",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -2083,7 +6374,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0080",
+    "id": "CG-0099",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -2104,7 +6395,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0081",
+    "id": "CG-0100",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -2128,7 +6419,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0082",
+    "id": "CG-0101",
     "essentials": [
       "oxygen"
     ],
@@ -2156,7 +6447,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0083",
+    "id": "CG-0102",
     "essentials": [
       "oxygen"
     ],
@@ -2178,7 +6469,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0084",
+    "id": "CG-0103",
     "essentials": [
       "phosphorus"
     ],
@@ -2202,7 +6493,43 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0085",
+    "id": "CG-0104",
+    "essentials": [
+      "potassium"
+    ],
+    "conditions": [],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-IMMORT-000187",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000188",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000189",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000190",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000191",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000152",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 6
+  },
+  {
+    "id": "CG-0105",
     "essentials": [
       "potassium"
     ],
@@ -2226,7 +6553,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0086",
+    "id": "CG-0106",
     "essentials": [
       "potassium"
     ],
@@ -2246,7 +6573,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0087",
+    "id": "CG-0107",
     "essentials": [
       "potassium"
     ],
@@ -2269,7 +6596,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0088",
+    "id": "CG-0108",
     "essentials": [
       "selenium"
     ],
@@ -2289,7 +6616,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0089",
+    "id": "CG-0109",
     "essentials": [
       "selenium"
     ],
@@ -2301,6 +6628,14 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000126",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000150",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000225",
         "book": "rare-earths"
       },
@@ -2309,11 +6644,11 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 3
+    "books_repeating": 3,
+    "claim_count": 5
   },
   {
-    "id": "CG-0090",
+    "id": "CG-0110",
     "essentials": [
       "selenium"
     ],
@@ -2335,7 +6670,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0091",
+    "id": "CG-0111",
     "essentials": [
       "selenium"
     ],
@@ -2357,7 +6692,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0092",
+    "id": "CG-0112",
     "essentials": [
       "selenium"
     ],
@@ -2379,7 +6714,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0093",
+    "id": "CG-0113",
     "essentials": [
       "selenium"
     ],
@@ -2401,7 +6736,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0094",
+    "id": "CG-0114",
     "essentials": [
       "silica"
     ],
@@ -2421,7 +6756,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0095",
+    "id": "CG-0115",
     "essentials": [
       "silver"
     ],
@@ -2441,7 +6776,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0096",
+    "id": "CG-0116",
     "essentials": [
       "silver"
     ],
@@ -2465,7 +6800,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0097",
+    "id": "CG-0117",
     "essentials": [
       "sodium"
     ],
@@ -2487,7 +6822,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0098",
+    "id": "CG-0118",
     "essentials": [
       "sulfur"
     ],
@@ -2511,7 +6846,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0099",
+    "id": "CG-0119",
     "essentials": [
       "vanadium"
     ],
@@ -2531,7 +6866,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0100",
+    "id": "CG-0120",
     "essentials": [
       "vanadium"
     ],
@@ -2555,7 +6890,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0101",
+    "id": "CG-0121",
     "essentials": [
       "vitamin-a"
     ],
@@ -2579,7 +6914,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0102",
+    "id": "CG-0122",
     "essentials": [
       "vitamin-a"
     ],
@@ -2599,7 +6934,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0103",
+    "id": "CG-0123",
     "essentials": [
       "vitamin-b1"
     ],
@@ -2619,7 +6954,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0104",
+    "id": "CG-0124",
     "essentials": [
       "vitamin-b12"
     ],
@@ -2639,7 +6974,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0105",
+    "id": "CG-0125",
     "essentials": [
       "vitamin-b12"
     ],
@@ -2659,7 +6994,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0106",
+    "id": "CG-0126",
     "essentials": [
       "vitamin-b2"
     ],
@@ -2679,7 +7014,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0107",
+    "id": "CG-0127",
     "essentials": [
       "vitamin-b3"
     ],
@@ -2699,7 +7034,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0108",
+    "id": "CG-0128",
     "essentials": [
       "vitamin-b5"
     ],
@@ -2719,7 +7054,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0109",
+    "id": "CG-0129",
     "essentials": [
       "vitamin-b6"
     ],
@@ -2739,7 +7074,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0110",
+    "id": "CG-0130",
     "essentials": [
       "vitamin-b9"
     ],
@@ -2759,7 +7094,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0111",
+    "id": "CG-0131",
     "essentials": [
       "vitamin-c"
     ],
@@ -2779,7 +7114,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0112",
+    "id": "CG-0132",
     "essentials": [
       "vitamin-d"
     ],
@@ -2799,7 +7134,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0113",
+    "id": "CG-0133",
     "essentials": [
       "vitamin-e"
     ],
@@ -2819,7 +7154,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0114",
+    "id": "CG-0134",
     "essentials": [
       "vitamin-k"
     ],
@@ -2839,7 +7174,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0115",
+    "id": "CG-0135",
     "essentials": [
       "vitamin-k"
     ],
@@ -2859,7 +7194,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0116",
+    "id": "CG-0136",
     "essentials": [
       "vitamin-k"
     ],
@@ -2881,7 +7216,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0117",
+    "id": "CG-0137",
     "essentials": [
       "yttrium"
     ],
@@ -2901,7 +7236,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0118",
+    "id": "CG-0138",
     "essentials": [
       "zinc"
     ],
@@ -2921,7 +7256,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0119",
+    "id": "CG-0139",
     "essentials": [
       "zinc"
     ],
@@ -2957,7 +7292,7 @@
     "claim_count": 6
   },
   {
-    "id": "CG-0120",
+    "id": "CG-0140",
     "essentials": [
       "zinc"
     ],

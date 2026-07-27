@@ -104,6 +104,26 @@
       "claim_count": 10,
       "symbol": "Al"
     },
+    "alzheimers": {
+      "display_name": "Alzheimers",
+      "type": "condition",
+      "synonyms": [
+        "alzheimer's",
+        "alzheimers disease",
+        "alzheimer's disease",
+        "alzheimer",
+        "early onset alzheimers",
+        "AD"
+      ],
+      "related": [
+        "memory_loss",
+        "korsakoff",
+        "cholesterol",
+        "vitamin-e",
+        "germanium"
+      ],
+      "claim_count": 3
+    },
     "amino_acids": {
       "display_name": "Amino Acids",
       "type": "concept",
@@ -118,6 +138,18 @@
         "selenium"
       ],
       "claim_count": 2
+    },
+    "antidepressants": {
+      "display_name": "Antidepressants",
+      "type": "topic",
+      "synonyms": [
+        "antidepressants",
+        "prozac",
+        "depression medication",
+        "ssri"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "antioxidants": {
       "display_name": "Antioxidants",
@@ -456,7 +488,7 @@
         "obscure_elements",
         "colloidal_minerals"
       ],
-      "claim_count": 1,
+      "claim_count": 2,
       "symbol": "Bi"
     },
     "boron": {
@@ -685,6 +717,20 @@
         "absorption"
       ],
       "claim_count": 3
+    },
+    "centenarian-cultures": {
+      "display_name": "Centenarian Cultures",
+      "type": "concept",
+      "synonyms": [
+        "long lived cultures",
+        "longest living people",
+        "people who live to 100",
+        "hunza",
+        "vilcabamba",
+        "cultures that live longest"
+      ],
+      "related": [],
+      "claim_count": 2
     },
     "cerium": {
       "display_name": "Cerium",
@@ -1036,7 +1082,7 @@
         "selenium",
         "essential_nutrients"
       ],
-      "claim_count": 34
+      "claim_count": 35
     },
     "color_therapy": {
       "display_name": "Color Therapy",
@@ -1116,6 +1162,19 @@
       ],
       "claim_count": 34,
       "symbol": "Cu"
+    },
+    "cranial-nerves": {
+      "display_name": "Cranial Nerves",
+      "type": "concept",
+      "synonyms": [
+        "cranial nerve",
+        "cranial nerves",
+        "accessory nerve",
+        "eleventh cranial nerve",
+        "pinched nerve neck shoulder"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "cruciferous_vegetables": {
       "display_name": "Cruciferous Vegetables & Goitrogens",
@@ -1308,7 +1367,7 @@
         "colloidal_minerals",
         "essential_nutrients"
       ],
-      "claim_count": 2
+      "claim_count": 4
     },
     "dysprosium": {
       "display_name": "Dysprosium",
@@ -1432,7 +1491,7 @@
         "amino_acids",
         "macronutrients"
       ],
-      "claim_count": 5
+      "claim_count": 6
     },
     "estrogen": {
       "display_name": "Estrogen",
@@ -1600,7 +1659,7 @@
         "tooth_decay",
         "essential_nutrients"
       ],
-      "claim_count": 6,
+      "claim_count": 7,
       "symbol": "F"
     },
     "free_radicals": {
@@ -1714,6 +1773,19 @@
         "omega-9"
       ],
       "claim_count": 1
+    },
+    "genetic-potential": {
+      "display_name": "Genetic Potential",
+      "type": "concept",
+      "synonyms": [
+        "genetic potential",
+        "maximum human lifespan",
+        "how long can humans live",
+        "genetic ceiling",
+        "human potential for height"
+      ],
+      "related": [],
+      "claim_count": 4
     },
     "germanium": {
       "display_name": "Germanium",
@@ -1847,6 +1919,19 @@
       "claim_count": 2,
       "symbol": "Hf"
     },
+    "hair-analysis": {
+      "display_name": "Hair Mineral Analysis",
+      "type": "concept",
+      "synonyms": [
+        "hair analysis",
+        "hair mineral analysis",
+        "tissue mineral test",
+        "hair test",
+        "mineral test"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "helium": {
       "display_name": "Helium",
       "type": "element",
@@ -1879,7 +1964,7 @@
         "homeopathy",
         "be_your_own_doctor"
       ],
-      "claim_count": 2
+      "claim_count": 5
     },
     "histidine": {
       "display_name": "Histidine",
@@ -2081,6 +2166,21 @@
         "be_your_own_doctor"
       ],
       "claim_count": 2
+    },
+    "iatrogenic-medicine": {
+      "display_name": "Iatrogenic Medicine",
+      "type": "concept",
+      "synonyms": [
+        "iatrogenic",
+        "doctor caused death",
+        "medical mistakes",
+        "dead doctors dont lie",
+        "why do doctors die young",
+        "medical errors",
+        "harm from doctors"
+      ],
+      "related": [],
+      "claim_count": 4
     },
     "inositol": {
       "display_name": "Inositol",
@@ -2317,7 +2417,7 @@
         "helium",
         "essential_nutrients"
       ],
-      "claim_count": 3,
+      "claim_count": 4,
       "symbol": "Kr"
     },
     "lanthanum": {
@@ -2349,6 +2449,18 @@
       ],
       "claim_count": 4,
       "symbol": "La"
+    },
+    "lead": {
+      "display_name": "Lead",
+      "type": "element",
+      "synonyms": [
+        "lead",
+        "lead poisoning",
+        "pb",
+        "lead toxicity"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "leucine": {
       "display_name": "Leucine",
@@ -2456,7 +2568,7 @@
         "be_your_own_doctor",
         "negative_ion_therapy"
       ],
-      "claim_count": 16,
+      "claim_count": 24,
       "intro_claim": "WAL-CLM-IMMORT-000250"
     },
     "lutetium": {
@@ -2736,6 +2848,32 @@
       ],
       "claim_count": 1
     },
+    "memory_loss": {
+      "display_name": "Memory Loss",
+      "type": "condition",
+      "synonyms": [
+        "memory loss",
+        "dementia",
+        "senile dementia",
+        "senility",
+        "forgetfulness",
+        "poor memory",
+        "losing my memory",
+        "cant remember things",
+        "cognitive decline",
+        "brain fog",
+        "confusion in the elderly",
+        "forgetting",
+        "absent minded"
+      ],
+      "related": [
+        "korsakoff",
+        "alzheimers",
+        "vitamin-b1",
+        "choline"
+      ],
+      "claim_count": 6
+    },
     "mercury": {
       "display_name": "Mercury",
       "type": "element",
@@ -2750,7 +2888,7 @@
         "minamata_disease",
         "vaccines"
       ],
-      "claim_count": 13,
+      "claim_count": 16,
       "symbol": "Hg"
     },
     "methionine": {
@@ -2797,6 +2935,20 @@
         "colloidal_minerals"
       ],
       "claim_count": 1
+    },
+    "minerals": {
+      "display_name": "Minerals",
+      "type": "concept",
+      "synonyms": [
+        "minerals",
+        "trace minerals",
+        "mineral supplements",
+        "currency of life",
+        "why minerals matter",
+        "are minerals important"
+      ],
+      "related": [],
+      "claim_count": 8
     },
     "molybdenum": {
       "display_name": "Molybdenum",
@@ -3241,7 +3393,7 @@
         "free_radicals",
         "longevity"
       ],
-      "claim_count": 9
+      "claim_count": 11
     },
     "ornithine": {
       "display_name": "Ornithine",
@@ -3291,6 +3443,19 @@
       ],
       "claim_count": 6,
       "symbol": "O"
+    },
+    "pelvic-floor-exercises": {
+      "display_name": "Kegel & Pelvic-Floor Exercises",
+      "type": "topic",
+      "synonyms": [
+        "kegel exercises",
+        "kegels",
+        "pelvic floor exercises",
+        "how to do kegels",
+        "pelvic floor muscles"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "ph": {
       "display_name": "Body pH & Acid-Base Balance",
@@ -3636,6 +3801,18 @@
       ],
       "claim_count": 1
     },
+    "radon": {
+      "display_name": "Radon",
+      "type": "element",
+      "synonyms": [
+        "radon",
+        "radon gas",
+        "rn",
+        "radon test"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "rare_earth_elements": {
       "display_name": "Rare Earth Elements",
       "type": "concept",
@@ -3658,6 +3835,19 @@
         "essential_nutrients"
       ],
       "claim_count": 7
+    },
+    "rda-critique": {
+      "display_name": "The RDA Problem",
+      "type": "concept",
+      "synonyms": [
+        "rda",
+        "recommended daily allowance",
+        "is the rda enough",
+        "rdi",
+        "daily value"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "rhenium": {
       "display_name": "Rhenium",
@@ -4007,6 +4197,20 @@
       "claim_count": 37,
       "symbol": "Na"
     },
+    "soil-depletion": {
+      "display_name": "Soil Depletion",
+      "type": "concept",
+      "synonyms": [
+        "soil depletion",
+        "depleted soil",
+        "mineral depleted soil",
+        "anemic soil",
+        "senate document 264",
+        "are our soils depleted"
+      ],
+      "related": [],
+      "claim_count": 12
+    },
     "somatic_therapies": {
       "display_name": "Somatic Therapies",
       "type": "topic",
@@ -4122,6 +4326,19 @@
       "claim_count": 14,
       "symbol": "S"
     },
+    "supplement-dosing": {
+      "display_name": "Supplement Dosing",
+      "type": "concept",
+      "synonyms": [
+        "how much to take",
+        "supplement dosage",
+        "preventive dose",
+        "megavitamin dose",
+        "how much vitamins should i take"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "tantalum": {
       "display_name": "Tantalum",
       "common_name": "Tantalum",
@@ -4235,6 +4452,18 @@
         "zinc"
       ],
       "claim_count": 4
+    },
+    "thallium": {
+      "display_name": "Thallium",
+      "type": "element",
+      "synonyms": [
+        "thallium",
+        "tl",
+        "thallium poisoning",
+        "toxic metal"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "threonine": {
       "display_name": "Threonine",
@@ -5218,6 +5447,18 @@
       ],
       "claim_count": 2
     },
+    "xenon": {
+      "display_name": "Xenon",
+      "type": "element",
+      "synonyms": [
+        "xenon",
+        "xe",
+        "noble gas",
+        "xenon anesthetic"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "ytterbium": {
       "display_name": "Ytterbium",
       "common_name": "Ytterbium",
@@ -5361,6 +5602,26 @@
     }
   },
   "claims": [
+    {
+      "id": "WAL-CLM-DDDL-000001",
+      "subject": "iatrogenic-medicine",
+      "also_about": [
+        "hospital_dangers",
+        "wallach"
+      ],
+      "facet": "history",
+      "question": "what is the average lifespan of doctors?",
+      "answer_short": "Wallach cites an 1895 Journal of the American Medical Association report that put doctors' own average lifespan at just 55 years.",
+      "answer": "An 1895 Journal of the American Medical Association report found the average lifespan of doctors was just 55 years.",
+      "verbatim": "what he discovered, in an 1895 edition of the Journal of the American\nMedical Association was that the average life of doctors was just 55 years.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "conventional-medicine",
+        "doctors",
+        "iatrogenic"
+      ]
+    },
     {
       "id": "WAL-CLM-DDDL-000003",
       "subject": "copper",
@@ -6381,7 +6642,11 @@
     {
       "id": "WAL-CLM-DDDL-000099",
       "subject": "eggs",
-      "also_about": [],
+      "also_about": [
+        "memory_loss",
+        "alzheimers",
+        "cholesterol"
+      ],
       "facet": "protocol",
       "question": "How does Wallach say to cook eggs, and how much red meat, for Alzheimer's?",
       "answer_short": "Soft-scrambled (not fried) eggs every day and 72 oz of red meat each month, to replace cholesterol needed to rebuild myelin.",
@@ -6907,7 +7172,12 @@
         "detox",
         "pollution",
         "plastics"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000127",
@@ -7497,7 +7767,8 @@
       "also_about": [
         "dementia",
         "cerebrovascular_disease",
-        "vitamin-b1"
+        "vitamin-b1",
+        "memory_loss"
       ],
       "facet": "warning",
       "question": "Can a magnesium deficiency cause memory loss or dementia?",
@@ -8103,7 +8374,8 @@
       "subject": "vitamin-b1",
       "also_about": [
         "alcoholism",
-        "korsakoff"
+        "korsakoff",
+        "memory_loss"
       ],
       "facet": "physiology",
       "question": "What causes Korsakoff's syndrome?",
@@ -8805,7 +9077,10 @@
     {
       "id": "WAL-CLM-DDDL-000217",
       "subject": "choline",
-      "also_about": [],
+      "also_about": [
+        "memory_loss",
+        "alzheimers"
+      ],
       "facet": "sources",
       "question": "Is phosphatidylcholine better than lecithin?",
       "answer_short": "Wallach says lecithin is useful but phosphatidyl choline is the more efficient form of choline.",
@@ -9116,7 +9391,10 @@
     {
       "id": "WAL-CLM-DDDL-000232",
       "subject": "germanium",
-      "also_about": [],
+      "also_about": [
+        "memory_loss",
+        "alzheimers"
+      ],
       "facet": "protocol",
       "question": "How is germanium used to treat Alzheimer's disease?",
       "answer_short": "Wallach's Alzheimer's protocol includes germanium IM (5 ml of standard solution every other day for 24 days), then oral germanium at 150 mg twice a day.",
@@ -10283,13 +10561,20 @@
         "hair regrowth",
         "colloidal tin",
         "baldness"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "male_pattern_baldness",
+          "alopecia"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000288",
       "subject": "korsakoff",
       "also_about": [
-        "vitamin-b1"
+        "vitamin-b1",
+        "memory_loss"
       ],
       "facet": "basics",
       "question": "What is Korsakoff's syndrome?",
@@ -10392,7 +10677,9 @@
     {
       "id": "WAL-CLM-DDDL-000293",
       "subject": "korsakoff",
-      "also_about": [],
+      "also_about": [
+        "memory_loss"
+      ],
       "facet": "uses",
       "question": "Has Wallach's memory-loss treatment actually restored anyone's memory?",
       "answer_short": "Yes — Wallach cites his multi-drug Korsakoff protocol (nootropics like centrophenoxine and piracetam, plus IV chelation, vitamin B1, lecithin and chromium/vanadium) as the exact program used to restore the memory of Princess Diana's bodyguard.",
@@ -10406,6 +10693,100 @@
         "case study",
         "nootropics",
         "treatment outcome"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000294",
+      "subject": "memory_loss",
+      "also_about": [
+        "dementia",
+        "alzheimers",
+        "korsakoff",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "protocol",
+      "question": "What causes memory loss, and how does Wallach treat it?",
+      "answer_short": "Wallach says memory loss has many causes, not one -- so check each, including food allergies and low blood sugar -- then treats it by cutting allergens/sugar/fried food/margarine/alcohol and adding chromium, vanadium, selenium, vitamin E, B-complex, and the memory agents Diapid, Lucidril, Dinagen (with choline), and hydergine.",
+      "answer": "Wallach treats memory loss as an umbrella covering senile dementia, Korsakoff's syndrome, and Alzheimer's, and stresses it has a variety of causes rather than one -- so each possible cause should be looked up separately, including food allergies and hypoglycemia (low blood sugar). He recommends a pulse test to find food sensitivities and a six-hour glucose tolerance test (GTT) to confirm or rule out hypoglycemia. His treatment: avoid the offending food allergens plus sugar, fried food, margarine, and alcohol; then supplement chromium and vanadium at 25-200 mcg three times a day, selenium at 200-1,000 mcg a day, vitamin E at 800-1,200 IU a day, and B-complex at 50 mg three times a day. He adds the memory agents Diapid (vasopressin nasal spray) at 12-16 units a day, Lucidril (centrophenoxine) at 4.4-8.0 gm a day, Dinagen (piracetam) at 1.6-4.8 gm a day taken with choline, and hydergine at 9-20 mg a day. In Wallach's words: \"MEMORY LOSS (senile dementia, Korsakoff's syndrome, Alzheimer's) can be much more devastating than a physical disability. There are a variety of causes of memory loss and it is suggested that you look up each one separately including food allergies and hypoglycemia.\"",
+      "verbatim": "MEMORY LOSS (senile dementia, Korsakoff’s syndrome, Alzheimer’s)\ncan be much more devastating than a physical disability. There are a variety\nof causes of memory loss and it is suggested that you look up each one\nseparately including food allergies and hypoglycemia. You should do the\npulse test to determine allergies or sensitivities to various foods and do a\nsix-hour GTT to rule in or rule out hypoglycemia.\nTreatment of memory loss should include avoidance of offending food\nallergens, sugar, fried food, and margarine, avoidance of alcohol, the taking\nof chromium and vanadium at 25-200 mcg t.i.d., selenium at 200-1,000\nmcg per day, vitamin E at 800-1,200 IU per day, B-complex at 50 mg t.i.d.,\nDiapid (vasopressin) at 12-16 U/day (this is a nasal spray), Lucidril\n(centrophenoxine) at 4.4-8.0 gm/day, Dinagen (piracetam) at\n1.6-4.8 gm/day (should take choline with this product), and hydergine at 9-\n20 mg per day.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "memory loss",
+        "dementia",
+        "brain health",
+        "supplements",
+        "food allergies"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000295",
+      "subject": "memory_loss",
+      "also_about": [
+        "dementia",
+        "magnesium",
+        "vitamin-d"
+      ],
+      "facet": "mechanism",
+      "question": "What causes senile dementia?",
+      "answer_short": "Wallach ties senile dementia to cerebrovascular disease: the brain's main artery hardens and starves the brain of oxygen -- and he blames cholesterol-linked and (in his view) vitamin-D-driven arterial scarring plus magnesium-deficiency 'malignant calcification.'",
+      "answer": "Wallach describes cerebrovascular disease -- what he equates with senile dementia -- as more common in the United States than anywhere else. It develops when the middle cerebral artery (the brain's main blood supply) 'hardens,' cutting oxygen to the brain and producing loss of memory and the typical 'senile' changes. As with arteriosclerosis elsewhere in the body, that hardening comes from smooth-muscle scarring followed by calcification and fatty cholesterol deposits. He flags elevated blood cholesterol as a risk factor because cholesterol is a building block of vitamin D, which he considers angiotoxic (toxic to blood vessels) -- in his view it scars arterial smooth muscle and drives further calcification. He adds that magnesium deficiency causes 'malignant calcification' of the cerebral arteries, so optimal magnesium (with all nutrients) is protective. In Wallach's words: \"CEREBROVASCULAR DISEASE (senile dementia) is more common in the United States than anywhere else. The “hardening” of the middle cerebral artery (the main blood supply to the brain) results in poor oxygen supply to the brain, which causes loss of memory and typical “senile” changes.\"",
+      "verbatim": "CEREBROVASCULAR DISEASE (senile dementia) is more common in\nthe United States than anywhere else. The “hardening” of the middle\ncerebral artery (the main blood supply to the brain) results in poor oxygen\nsupply to the brain, which causes loss of memory and typical “senile”\nchanges. As with arteriosclerosis, the “hardening” of the arteries is caused\nby smooth muscle scaring, followed by calcification and fatty cholesterol\ndeposits. The risk factors include elevated blood cholesterol which is a\nbuilding block of vitamin D. Vitamin D is angiotoxic (toxic to blood\nvessels) causing scaring of arterial smooth muscle and subsequent\ncalcification. Magnesium deficiency also results in “malignant\ncalcification” of cerebral arteries.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "senile dementia",
+        "cerebrovascular disease",
+        "memory loss",
+        "arteries",
+        "brain health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000296",
+      "subject": "alzheimers",
+      "also_about": [
+        "memory_loss",
+        "cholesterol"
+      ],
+      "facet": "basics",
+      "question": "What is Alzheimer's disease and what causes it, according to Wallach?",
+      "answer_short": "Wallach defines Alzheimer's as a physician-caused disease of progressive memory loss, first identified in 1979, caused by a cholesterol and fat deficiency -- and in his view not genetic.",
+      "answer": "Wallach defines Alzheimer's disease as a 'physician-caused' disease -- one he blames on the medical campaign against dietary cholesterol and saturated fat (what he calls 'cholesterol and saturated fat bashing'). He describes it as a progressive loss of memory, with difficulties in arousal and motor function appearing in the disease's later stages. He says it was identified in 1979 and holds that it results from a cholesterol and fat deficiency, not from genetics -- stating flatly that 'Alzheimer's disease is not genetic.' In his framing the brain needs cholesterol to rebuild myelin, so a diet stripped of cholesterol and fat starves it of that raw material.",
+      "verbatim": "ALZHEIMER’S DISEASE appears to be a physician-caused disease\n(resulting from cholesterol and saturated fat bashing) in which those\nafflicted suffer from a progressive loss of memory. Difficulties with arousal\nand motor function appear in the later stages of the disease. Identified in\n1979, it appears to be due to a cholesterol and fat deficiency. Alzheimer’s\ndisease is not genetic.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "alzheimers",
+        "memory-loss",
+        "dementia",
+        "brain-health",
+        "what-is-alzheimers",
+        "causes"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000001",
+      "subject": "essential_nutrients",
+      "also_about": [
+        "minerals",
+        "vitamins",
+        "amino_acids",
+        "epigenetics"
+      ],
+      "facet": "mechanism",
+      "question": "what are the 90 essential nutrients?",
+      "answer_short": "Wallach's cornerstone: DNA must have constant access to all 90 essentials -- 60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids -- each in optimal amounts and proper ratios, because genes need nutrient-supplied energy, raw materials and on/off cofactors.",
+      "answer": "Wallach's epigenetic cornerstone: a healthy zygote and a properly functioning genome depend on the DNA having constant access to all 90 essential nutrients -- which he counts as 60 minerals, 16 vitamins, 12 amino acids, and 3 fatty acids -- each present in optimal amounts and in proper ratios to one another. The genes are not free-standing proteins that work in a vacuum; they require energy, raw materials, and on/off switching co-factors supplied by these nutrients.",
+      "verbatim": "To function properly, it is imperative for the DNA\nto constantly have access to all 90 essential nutrients (60 minerals, 16 vitamins,\n12 amino acids and 3 fatty acids), and each one must be available in optimal\namounts and in the proper ratios to each other.",
+      "page": 560,
+      "book_id": "epigenetics",
+      "topics": [
+        "nutrition",
+        "genes",
+        "epigenetics",
+        "90-essentials"
       ]
     },
     {
@@ -10426,7 +10807,12 @@
         "barr-body",
         "brain",
         "congenital"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000009",
@@ -10446,13 +10832,75 @@
         "preconception-nutrition",
         "prevention",
         "congenital"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "intersex"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000012",
+      "subject": "memory_loss",
+      "also_about": [
+        "korsakoff",
+        "alzheimers",
+        "dementia"
+      ],
+      "facet": "basics",
+      "question": "What are the different types of dementia?",
+      "answer_short": "Wallach frames dementia as at least four separate nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's -- and says a person can have some degree of two, three, or all four at the same time.",
+      "answer": "Wallach frames dementia not as one disease but as a minimum of four distinct nutritional diseases, and stresses that a person can have some degree of two, three, or all four at the same time. (1) Vascular dementia -- the brain's arteries become obstructed by atherosclerosis/arteriosclerosis from inflammation of the arterial lining, driven by low dietary antioxidants plus fried foods, processed meats, oils, and gluten. (2) Korsakoff's syndrome -- part of the beriberi family (thiamine/vitamin B1 deficiency), reversible by removing sugar, fried foods, processed meats, oils, and gluten and supplementing all 90 essential nutrients with special emphasis on thiamine. (3) Wernicke-Korsakoff's syndrome -- Korsakoff's syndrome plus multiple sclerosis (MS) at the same time; addressed by treating both, adding 6-8 eggs a day to give the brain raw material to rebuild myelin, and emphasizing antioxidants including selenium. (4) Alzheimer's disease -- which Wallach calls a 'physician-caused' disease, produced by lowering the patient's cholesterol and saturated fat, prescribing statin drugs, and telling them to avoid vitamin and mineral supplements. In Wallach's words: \"Dementia manifests itself as a minimum of four different diseases. Sometimes, individuals will have some degree of two, three, or all four of the classic dementias at the same time.\"",
+      "verbatim": "Dementia manifests itself as a minimum of four different diseases. Sometimes,\nindividuals will have some degree of two, three, or all four of the classic\ndementias at the same time",
+      "page": 581,
+      "book_id": "epigenetics",
+      "topics": [
+        "dementia",
+        "memory loss",
+        "types of dementia",
+        "brain health",
+        "aging"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "dementia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000013",
+      "subject": "memory_loss",
+      "also_about": [
+        "dementia",
+        "antioxidants"
+      ],
+      "facet": "mechanism",
+      "question": "What is vascular dementia and what causes it?",
+      "answer_short": "Vascular dementia is Wallach's first dementia: the brain's arteries get obstructed by atherosclerosis from the same inflammation that clogs the heart, eye, and kidney arteries -- low antioxidants plus fried foods, processed meats, oils, and gluten.",
+      "answer": "Wallach's first of the four dementias: vascular dementia, which occurs when the cerebral arteries become obstructed by atherosclerosis and/or arteriosclerosis. He attributes the obstruction to inflammation of the arterial lining (intima) by the same forces that obstruct the coronary, ocular, and renal arteries -- low dietary antioxidant levels plus inflammatory foods (fried foods, processed meats, oils, and gluten). His nutritional-therapy approach: stop the ongoing inflammation with an elimination diet that avoids inflammatory foods, supplement with all 90 essential nutrients plus antioxidants, and provide significant vascular care. In Wallach's words: \"Vascular dementia occurs when the cerebral arteries become obstructed with atherosclerosis and/or arteriosclerosis. The cause of these obstructions is inflammation of the arterial lining (intima) by the same forces that also obstruct coronary, ocular, and renal arteries.\"",
+      "verbatim": "Vascular dementia occurs when the cerebral arteries become\nobstructed with atherosclerosis and/or arteriosclerosis. The cause of\nthese obstructions is inflammation of the arterial lining (intima) by the\nsame forces that also obstruct coronary, ocular, and renal arteries.",
+      "page": 581,
+      "book_id": "epigenetics",
+      "topics": [
+        "vascular dementia",
+        "dementia",
+        "arteriosclerosis",
+        "brain health",
+        "inflammation"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "vascular_dementia",
+          "dementia"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000014",
       "subject": "korsakoff",
       "also_about": [
-        "vitamin-b1"
+        "vitamin-b1",
+        "memory_loss"
       ],
       "facet": "protocol",
       "question": "Can Korsakoff's syndrome be reversed?",
@@ -10467,13 +10915,22 @@
         "thiamine",
         "reversible",
         "diet"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b1"
+        ],
+        "conditions": [
+          "korsakoffs_syndrome"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000015",
       "subject": "korsakoff",
       "also_about": [
-        "selenium"
+        "selenium",
+        "memory_loss"
       ],
       "facet": "basics",
       "question": "What is Wernicke-Korsakoff syndrome?",
@@ -10488,7 +10945,50 @@
         "myelin",
         "eggs",
         "selenium"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ],
+        "conditions": [
+          "wernicke_korsakoff_syndrome",
+          "multiple_sclerosis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000016",
+      "subject": "alzheimers",
+      "also_about": [
+        "memory_loss",
+        "dementia",
+        "cholesterol",
+        "omega-3"
+      ],
+      "facet": "protocol",
+      "question": "Can Alzheimer's disease be prevented?",
+      "answer_short": "Yes -- Wallach cites a Johns Hopkins 10-year study (published 2004) of nearly 5,000 people over 65 showing a special diet, avoiding certain foods, and nutrient supplementation cut Alzheimer's risk by 78%. He calls Alzheimer's a physician-caused disease driven by low-cholesterol diets, statin drugs, and being told to avoid supplements.",
+      "answer": "Wallach's fourth dementia: Alzheimer's disease, which he calls a 'physician-caused' disease -- produced by lowering the patient's dietary cholesterol and saturated fat, prescribing statin drugs, and directing patients to avoid vitamin and mineral supplements. His prevention/treatment protocol is the same anti-dementia regimen used for the other three dementias: no fried foods, no processed meats, no oils; 4-6 eggs per hundred pounds of body weight per day; avoidance of all statin drugs (he cites an April 2012 FDA warning that statin drugs increase the risk of dementia and type 2 diabetes); and DHA and EPA essential fatty acids (omega-3) to support production of the neurotransmitters of memory and cognition. He cites a Johns Hopkins randomized double-blind ten-year study, published in 2004 on nearly 5,000 people over age 65, showing that a special diet plus nutrient supplementation can reduce Alzheimer's risk by 78%. In Wallach's words: \"Prevention of Alzheimer's has been documented by a Johns Hopkins randomized and double blind study on almost 5,000 people over the age of 65. The ten-year study published in 2004 demonstrated clearly that the consumption of a special diet, avoidance of certain foods and the supplementation of nutrients can reduce the risk of Alzheimer's disease by 78%!\"",
+      "verbatim": "Prevention\nof Alzheimer's has been documented by a Johns Hopkins randomized\nand double blind study on almost 5,000 people over the age of 65.\nThe ten-year study published in 2004 demonstrated clearly that the\nconsumption of a special diet, avoidance of certain foods and the\nsupplementation of nutrients can reduce the risk of Alzheimer's disease\nby 78%!",
+      "page": 581,
+      "book_id": "epigenetics",
+      "topics": [
+        "alzheimers",
+        "dementia",
+        "memory-loss",
+        "prevention",
+        "statins",
+        "brain-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3"
+        ],
+        "conditions": [
+          "alzheimers",
+          "dementia"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000017",
@@ -10506,7 +11006,12 @@
         "thalidomide",
         "history",
         "monsters"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "birth_defects"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000018",
@@ -10526,7 +11031,12 @@
         "preconception",
         "animal-industry",
         "genetic-theory"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "birth_defects"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000019",
@@ -10544,7 +11054,12 @@
         "prenatal",
         "choice-vs-biology",
         "prevention"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000020",
@@ -10562,7 +11077,12 @@
         "definition",
         "congenital",
         "anatomy"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "intersex"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000021",
@@ -10582,7 +11102,13 @@
         "etymology",
         "christine-jorgenson",
         "olympics"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "intersex",
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000022",
@@ -10600,7 +11126,12 @@
         "brain-anatomy",
         "hypothalamus",
         "testosterone"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000023",
@@ -10618,7 +11149,12 @@
         "gay-gene",
         "dean-hamer",
         "genetics-vs-congenital"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000024",
@@ -10636,7 +11172,12 @@
         "soil-minerals",
         "kinsey",
         "food-supply"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000025",
@@ -10656,7 +11197,12 @@
         "animal-model",
         "veterinary",
         "embryonic-nutrition"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "intersex"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000026",
@@ -10676,7 +11222,12 @@
         "preconception-nutrition",
         "survey",
         "90-nutrients"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "homosexuality"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000027",
@@ -11046,7 +11597,8 @@
       "id": "WAL-CLM-EPIGEN-000044",
       "subject": "choline",
       "also_about": [
-        "dementia"
+        "dementia",
+        "memory_loss"
       ],
       "facet": "warning",
       "question": "What are the signs of choline deficiency?",
@@ -11603,6 +12155,25 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000071",
+      "subject": "bismuth",
+      "also_about": [
+        "digestion"
+      ],
+      "facet": "uses",
+      "question": "what is bismuth used for?",
+      "answer_short": "Bismuth subsalicylate is the antidiarrheal active ingredient in Pepto-Bismol; combined with tetracycline it was FDA-approved in 1994 to cure H. pylori gastric ulcers -- the bacterial cause Marshall and Warren proposed in 1983.",
+      "answer": "Wallach describes bismuth (which chemically resembles arsenic and antimony) and its medicinal use: bismuth subsalicylate is the antidiarrheal active ingredient in 'Pink Bismuth' compounds such as Pepto-Bismol, as well as the 2004 reformulation of Kaopectate. He recounts that a combination of bismuth subsalicylate, bismuth subcitrate, and the antibiotic tetracycline -- used in pigs since 1952 to treat gastric ulcers -- was approved by the United States Food and Drug Administration in 1994 for curing gastric ulcers in humans. Stress, he notes, has historically been blamed for stomach and peptic ulcers of the stomach and duodenum; however, the same bacterium that causes gastric ulcers in pigs, Helicobacter pylori, has been proven to be the cause in humans -- the bacterial cause Australian gastroenterologist Barry Marshall, M.D. and pathologist J. Robbin Warren proposed in 1983.",
+      "verbatim": "Bismuth subsalicylate is used as an antidiarrheal; it is the active ingredient\nin “Pink Bismuth” compounds such as Pepto-Bismol",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "digestion",
+        "ulcers",
+        "medicine"
+      ]
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000074",
       "subject": "cadmium",
       "also_about": [
@@ -11729,6 +12300,25 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000082",
+      "subject": "fluoride",
+      "also_about": [
+        "water"
+      ],
+      "facet": "warning",
+      "question": "does fluoride in drinking water cause cancer?",
+      "answer_short": "Wallach accepts fluoride as an essential trace mineral (proven 1972) yet ties water fluoridation to cancer: a 1990 National Toxicology Program study found oral squamous-cell carcinoma, a rare osteosarcoma, and thyroid and liver tumors in fluoride-fed rats.",
+      "answer": "Wallach holds a dual stance on fluorine/fluoride. On one hand he accepts it as an essential trace mineral: prior to 1972 fluoride was thought essential only for warding off dental caries (cavities) via tooth enamel, and in 1972 the researcher Schwarz proved fluoride to be a genuine essential mineral. On the other hand he treats water fluoridation as highly controversial and links it to cancer. Following 1977 epidemiological studies by Yiamouyiannis and Burk, full-scale congressional hearings examined the charge that 10,000 excess cancer deaths were caused by fluoridating certain public water systems. The resulting U.S. National Toxicology Program animal study, reported in 1990, found increased precancerous lesions and squamous-cell carcinoma of the oral mucous membranes, a rare osteosarcoma (bone cancer) at double the rate in males as females, and a significant increase in thyroid follicular-cell tumors and liver cancer. Clinical fluoride toxicity appears as dental fluorosis at 2 to 7 parts-per-million and osteosclerosis at 8 to 20 parts-per-million, with chronic systemic toxicity at 20 to 80 milligrams per day over years; the average American already takes in about 4.4 milligrams per day from food, toothpaste, supplements and water.",
+      "verbatim": "In 1990 the results of the fluoride study showed an increase in rat\nprecancerous lesions in the oral mucus membrane cells; there was an increase\nin cancers of the oral mucus membranes (squamous cell carcinoma); a rare\nform of osteosarcoma appeared at double the rate in males as females;",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "water",
+        "cancer",
+        "fluoride"
+      ]
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000084",
       "subject": "gallium",
       "also_about": [],
@@ -11812,6 +12402,49 @@
           "osteoarthritis"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000089",
+      "subject": "colloidal_minerals",
+      "also_about": [
+        "minerals",
+        "rare_earth_elements",
+        "essential_nutrients"
+      ],
+      "facet": "protocol",
+      "question": "how much colloidal minerals should I take?",
+      "answer_short": "In Epigenetics Wallach recommends liquid plant-derived colloidal minerals at one ounce per 100 pounds of body weight per day, listing a parts-per-million profile that spans rare-earth, trace and bulk minerals.",
+      "answer": "In the supplement-recommendation section of Epigenetics -- following his vitamin and mineral daily-dose tables -- Wallach lists liquid plant-derived colloidal minerals at one ounce per 100 pounds of body weight per day. He gives the product's mineral profile as a table of concentrations in parts-per-million, covering the rare-earth elements alongside the trace and bulk minerals.",
+      "verbatim": "Liquid Plant Derived Coloidal Minerals One Ounce/ 100 pounds/day PPM",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "supplements",
+        "dosing",
+        "colloidal-minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000091",
+      "subject": "mercury",
+      "also_about": [
+        "fish",
+        "tuna",
+        "detox"
+      ],
+      "facet": "warning",
+      "question": "is mercury in fish dangerous?",
+      "answer_short": "Methyl mercury from fish (highest in shark, tuna and swordfish) crosses the placenta and is chiefly neurotoxic -- tremors, depression, loss of coordination -- and Wallach notes selenium is mutually antagonistic, protecting against it.",
+      "answer": "Mercury occurs universally in living things and is a well-known toxic element; Wallach traces its accumulation to industry, mining, agriculture, dental amalgam fillings, and micro-organisms that convert it to methyl mercury in aquatic sediments. Methyl mercury (the form in fish) crosses the placenta easily and has a biological half-life of about 70 days; heavy fish eaters, especially of large predators such as shark, tuna and swordfish, can reach tissue levels up to 400 micrograms per kilogram. Direct mercury poisoning is primarily neurological -- tremors, vertigo, irritability, moodiness, depression, salivation, inflammation of the mouth (stomatitis) and diarrhea -- while poisoning with the more toxic alkyl mercury progresses to loss of coordination, vision and hearing. Wallach notes selenium and mercury are mutually antagonistic: selenium protects the kidney from mercury-induced tissue death (necrosis) and limits placental transfer. He cites the 1962 Minamata Bay disaster in Japan and a mass poisoning in Iran (bread from mercury-treated seed grain) as producing congenital brain defects, cerebral palsy and infant deaths, and relays the theory that dental-amalgam vapor is linked to multiple sclerosis, amyotrophic lateral sclerosis (ALS, Lou Gehrig's disease) and Parkinson's disease.",
+      "verbatim": "The manifestations of direct Hg poisoning are primarily neurological\n(ie, tremors, vertigo, irritability, moodiness [suicidal], depression, salivation,\ninflammation of the mouth [stomatitis] and diarrhea).",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "heavy-metals",
+        "toxicity",
+        "fish",
+        "fillings"
+      ]
     },
     {
       "id": "WAL-CLM-EPIGEN-000095",
@@ -12361,7 +12994,12 @@
         "nuts",
         "grain-bran",
         "oatmeal"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000144",
@@ -12384,7 +13022,12 @@
         "spinach",
         "chard",
         "greens"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000145",
@@ -12426,7 +13069,12 @@
         "coffee",
         "tea",
         "mineral-absorption"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000147",
@@ -12449,7 +13097,13 @@
         "junk-food",
         "calcium",
         "supplementation"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "phosphorus"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000148",
@@ -12512,7 +13166,12 @@
         "selenium",
         "relative-deficiency",
         "polyunsaturated-oils"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000151",
@@ -12700,7 +13359,12 @@
         "hypothyroidism",
         "goiter",
         "iodine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000161",
@@ -14384,7 +15048,8 @@
       "subject": "vitamin-b1",
       "also_about": [
         "dementia",
-        "korsakoff"
+        "korsakoff",
+        "memory_loss"
       ],
       "facet": "uses",
       "question": "Can vitamin B1 reverse memory loss or dementia?",
@@ -15203,7 +15868,8 @@
       "also_about": [
         "selenium",
         "alzheimers",
-        "cardiomyopathy"
+        "cardiomyopathy",
+        "memory_loss"
       ],
       "facet": "physiology",
       "question": "What does vitamin E do for the body?",
@@ -15241,7 +15907,8 @@
       "id": "WAL-CLM-EPIGEN-000282",
       "subject": "vitamin-e",
       "also_about": [
-        "alzheimers"
+        "alzheimers",
+        "memory_loss"
       ],
       "facet": "big_question",
       "question": "Why does Wallach say Alzheimer's disease isn't genetic?",
@@ -17563,7 +18230,12 @@
         "gallium treatment",
         "gallium for infection",
         "gallium brain cancer"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "brain_cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000402",
@@ -17609,7 +18281,8 @@
       "id": "WAL-CLM-EPIGEN-000404",
       "subject": "aluminum",
       "also_about": [
-        "alzheimers"
+        "alzheimers",
+        "memory_loss"
       ],
       "facet": "uses",
       "question": "Is aluminum cookware and deodorant safe?",
@@ -18310,7 +18983,12 @@
         "deafness",
         "tin deficiency",
         "aging"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "deafness"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000438",
@@ -18621,7 +19299,8 @@
       "id": "WAL-CLM-EPIGEN-000453",
       "subject": "korsakoff",
       "also_about": [
-        "vitamin-b1"
+        "vitamin-b1",
+        "memory_loss"
       ],
       "facet": "etymology",
       "question": "Why does Wallach call Korsakoff's syndrome 'cerebral beriberi'?",
@@ -19051,7 +19730,8 @@
       "subject": "omega-3",
       "also_about": [
         "dementia",
-        "alzheimers"
+        "alzheimers",
+        "memory_loss"
       ],
       "facet": "history",
       "question": "Does omega-3 help prevent dementia or Alzheimer's?",
@@ -19107,7 +19787,9 @@
       "id": "WAL-CLM-HELLS-000025",
       "subject": "vitamin-c",
       "also_about": [
-        "vitamin-e"
+        "vitamin-e",
+        "alzheimers",
+        "memory_loss"
       ],
       "facet": "uses",
       "question": "Can vitamin C help prevent Alzheimer's disease?",
@@ -19654,7 +20336,8 @@
       "subject": "vitamin-e",
       "also_about": [
         "alzheimers",
-        "dementia"
+        "dementia",
+        "memory_loss"
       ],
       "facet": "uses",
       "question": "Does vitamin E help with Alzheimer's disease?",
@@ -20100,6 +20783,26 @@
       ]
     },
     {
+      "id": "WAL-CLM-IAIYH-000015",
+      "subject": "cranial-nerves",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "physiology",
+      "question": "what does the accessory nerve (11th cranial nerve) do?",
+      "answer_short": "Wallach describes the accessory (11th cranial) nerve as the motor nerve driving the trapezius and sternocleidomastoid to rotate, flex and extend the neck and shoulders; skull osteoporosis pinching it at the foramina causes loss of those muscles' function.",
+      "answer": "Wallach describes the accessory (eleventh cranial) nerve as the motor nerve that rotates, flexes, and extends the neck and shoulders by driving the trapezius and sternocleidomastoid muscles. When skull osteoporosis pinches it as it passes through the foramen magnum and jugular foramen (per his disease table) the result is loss of function of those neck and shoulder muscles.",
+      "verbatim": "The accessory nerve travels through the foramen magnum into the skull\nand then exits quickly through the jugular foramen to innervate the motor\nfunctions of the trapezius and sternocleidomastoid muscles.",
+      "page": 39,
+      "book_id": "iaiyh",
+      "topics": [
+        "cranial-nerves",
+        "neck-pain",
+        "shoulder",
+        "iaiyh"
+      ]
+    },
+    {
       "id": "WAL-CLM-IAIYH-000018",
       "subject": "essential_nutrients",
       "also_about": [],
@@ -20303,7 +21006,12 @@
         "oral-contraceptives",
         "vitamin-b6",
         "drug-depletion"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000010",
@@ -20597,7 +21305,8 @@
       "id": "WAL-CLM-IMMORT-000034",
       "subject": "aluminum",
       "also_about": [
-        "alzheimers"
+        "alzheimers",
+        "memory_loss"
       ],
       "facet": "big_question",
       "question": "Does aluminum cause Alzheimer's disease?",
@@ -21643,7 +22352,12 @@
         "sugar",
         "colloidal",
         "rda"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000092",
@@ -21660,7 +22374,12 @@
         "chromium-decline",
         "aging",
         "deficiency"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000093",
@@ -21900,7 +22619,12 @@
         "blood-levels",
         "ceruloplasmin",
         "plasma"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "copper"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000107",
@@ -21954,7 +22678,12 @@
         "copper-overload",
         "kayser-fleischer",
         "ceruloplasmin"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "copper"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000112",
@@ -21974,7 +22703,12 @@
         "dysprosium",
         "rare-earth",
         "discovery"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "dysprosium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000113",
@@ -21994,7 +22728,12 @@
         "erbium",
         "rare-earth",
         "pink-glass"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "erbium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000114",
@@ -22013,7 +22752,12 @@
         "europium",
         "rare-earth",
         "monazite"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "europium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000115",
@@ -22167,7 +22911,12 @@
         "iron",
         "iron-age",
         "geochemistry"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000126",
@@ -22213,7 +22962,12 @@
         "carbon-monoxide",
         "hemoglobin",
         "poisoning"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000128",
@@ -22230,7 +22984,12 @@
         "body-content",
         "hemoglobin",
         "ferritin"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000129",
@@ -22280,7 +23039,12 @@
         "iron-deficiency",
         "causes",
         "menstruation"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000131",
@@ -22336,7 +23100,12 @@
         "vitamin-c",
         "phytates",
         "rda"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000133",
@@ -22391,7 +23160,12 @@
         "melting-point",
         "mendeleyev",
         "france"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "gallium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000135",
@@ -22440,7 +23214,12 @@
         "gallium-67",
         "melanoma",
         "nuclear-medicine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "gallium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000137",
@@ -22460,7 +23239,12 @@
         "gadolinium",
         "rare-earth",
         "bone"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "gadolinium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000138",
@@ -22477,7 +23261,12 @@
         "semiconductor",
         "discovery",
         "transistor"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000141",
@@ -22494,7 +23283,12 @@
         "semiconductor",
         "electron-transfer",
         "oxygen"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000142",
@@ -22513,7 +23307,12 @@
         "asai",
         "research",
         "anti-cancer"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000143",
@@ -22530,7 +23329,12 @@
         "immune-system",
         "natural-killer-cells",
         "interferon"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000144",
@@ -22547,7 +23351,12 @@
         "ge-132",
         "supplement",
         "organic-germanium"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000146",
@@ -22566,7 +23375,12 @@
         "lourdes",
         "lithium",
         "folklore"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000147",
@@ -22583,7 +23397,12 @@
         "hydrogen",
         "simplest-atom",
         "abundance"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000148",
@@ -22600,7 +23419,12 @@
         "cavendish",
         "discovery",
         "history-of-science"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000149",
@@ -22617,7 +23441,12 @@
         "hindenburg",
         "lift-gas",
         "helium"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000150",
@@ -22637,7 +23466,12 @@
         "acid-base",
         "hydrogen-ion",
         "homeostasis"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000151",
@@ -22686,7 +23520,12 @@
         "kidney",
         "excretion",
         "urine-ph"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000153",
@@ -22733,7 +23572,12 @@
         "biomolecules",
         "water",
         "dna"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hydrogen"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000155",
@@ -22823,7 +23667,12 @@
         "hafnium",
         "zirconium",
         "discovery"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hafnium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000159",
@@ -23128,7 +23977,12 @@
         "holmium",
         "rare-earth",
         "stockholm"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "holmium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000173",
@@ -23145,7 +23999,12 @@
         "geochemistry",
         "seaweed",
         "humus"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000175",
@@ -23163,7 +24022,12 @@
         "chile",
         "kelp",
         "brine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000176",
@@ -23180,7 +24044,12 @@
         "antiseptic",
         "water-purification",
         "radioiodine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000177",
@@ -23228,7 +24097,12 @@
         "sweat-loss",
         "toxicity",
         "safety-margin"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000180",
@@ -23278,7 +24152,12 @@
         "thyroid",
         "metabolism",
         "hormones"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000185",
@@ -23329,7 +24208,12 @@
         "geochemistry",
         "soil",
         "marine-plants"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "potassium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000188",
@@ -23349,7 +24233,12 @@
         "alkali-metal",
         "davy",
         "electrolysis"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "potassium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000189",
@@ -23366,7 +24255,12 @@
         "potassium-40",
         "radioactivity",
         "background-radiation"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "potassium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000190",
@@ -23383,7 +24277,12 @@
         "potash",
         "fertilizer",
         "agriculture"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "potassium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000191",
@@ -23400,7 +24299,12 @@
         "saltpeter",
         "gunpowder",
         "preservative"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "potassium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000192",
@@ -23639,7 +24543,12 @@
         "lutetium",
         "rare-earth",
         "lanthanide"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "lutetium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000205",
@@ -23770,7 +24679,14 @@
         "whole-grains",
         "raw-vegetables",
         "anti-nutrient"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "iron",
+          "zinc"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000216",
@@ -23794,7 +24710,12 @@
         "colloidal-minerals",
         "chelated-calcium",
         "supplementation"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000217",
@@ -23817,7 +24738,12 @@
         "calcium-leaching",
         "mineral-absorption",
         "bone-loss"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000218",
@@ -24342,7 +25268,8 @@
       "subject": "free_radicals",
       "also_about": [
         "orac",
-        "antioxidants"
+        "antioxidants",
+        "memory_loss"
       ],
       "facet": "physiology",
       "question": "What do free radicals actually do to your body?",
@@ -24383,7 +25310,8 @@
       "id": "WAL-CLM-IMMORT-000245",
       "subject": "free_radicals",
       "also_about": [
-        "orac"
+        "orac",
+        "memory_loss"
       ],
       "facet": "warning",
       "question": "Are age spots a warning sign of something worse?",
@@ -24748,6 +25676,47 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000263",
+      "subject": "orac",
+      "also_about": [
+        "longevity",
+        "antioxidants",
+        "free_radicals"
+      ],
+      "facet": "sources",
+      "question": "which foods have the highest ORAC antioxidant score?",
+      "answer_short": "On Wallach's centenarian-foods ORAC table the pecan tops all nuts at 17,940, ahead of raspberry 6,058, strawberry 5,938 and Red Delicious apple 5,900.",
+      "answer": "Continuing Wallach's per-serving ORAC table of centenarian foods, the pecan stands out at 17,940 — the highest-scoring nut on his list — among a run of berries and fruits: raspberry 6,058, strawberry 5,938, Red Delicious apple 5,900, Granny Smith apple 5,381, sweet cherry 4,873, black plum 4,844, plum 4,118, gala apple 3,903 and acai 1,842. The same block also lists russet potato 4,649, black bean 4,181, and four commercial baby foods (peaches 6,257, apple-blueberry 4,822, strained applesauce 4,123 and bananas 2,658).",
+      "verbatim": "Acai 1,842\nRaspberry 6,058\nStrawberry 5,938\nRed Delicious apple 5,900\nGranny Smith apple 5,381\nPecan 17,940\nSweet cherry 4,873\nBlack plum 4,844\nRusset potato 4,649\nBlack bean 4,181\nPlum 4,118\nBaby food, (peaches) 6,257\nBaby food, (apple/ blueberry) 4,822\nBaby food, (applesauce-strained) 4,123\nBaby food, (bananas) 2,658\nGala apple 3,903",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "antioxidants",
+        "foods",
+        "longevity"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000264",
+      "subject": "orac",
+      "also_about": [
+        "antioxidants",
+        "longevity"
+      ],
+      "facet": "sources",
+      "question": "which juices and nuts have the highest ORAC antioxidant values?",
+      "answer_short": "On Wallach's ORAC table blueberry juice leads the juices at 9,019 with prune juice at 7,291; hazelnuts reach 9,275 among nuts and raw lentils score 7,282.",
+      "answer": "The table's final block gathers juices, the remaining nuts, and everyday produce. Among juices, blueberry juice leads at 9,019 and prune juice at 7,291, ahead of pomegranate 2,341, acai berry 1,842, pomegranate-blueberry blend 962, mangosteen 498, noni 398 and wolfberry (goji) 363. Hazelnuts reach 9,275 and almonds 4,282; raw lentils 7,282, prune 5,770, and dark chocolate pieces 3,040 (dark liquid/juice blend 3,000). A tail of everyday produce follows: raisins 2,830, baked sweet potato 2,115, raw avocado 1,933, raw pears 1,911, navel oranges 1,785, kale 1,770, kiwi 1,159, brewed green tea 1,128 and raw mangos 988.",
+      "verbatim": "Raisins 2,830\nAvocado, raw 1,933\nKale 1,770\nNoni juice 398\nMangosteen juice 498\nWolfberry (Gogi) juice 363\nAlmonds 4,282\nHazelnuts (filberts) 9,275\nAcai berry juice 1,842\nKiwi 1,159\nLentils, raw 7,282\nPrune juice 7,291\nPrune 5,770\nBlueberry juice 9,019\nPomagranate juice (100%) 2,341\nChocolate (dark liquid) /juice blend 3,000\nDark chocolate pieces 3,040\nSweet potato, baked 2,115\nGreen tea, brewed 1,128\nMangos, raw 988\nOranges, navel 1,785\nPears, raw 1,911\nPomagranate/ Blueberry 962",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "antioxidants",
+        "foods",
+        "juices"
+      ]
+    },
+    {
       "id": "WAL-CLM-IMMORT-000265",
       "subject": "detox",
       "also_about": [
@@ -24768,7 +25737,12 @@
         "dental-amalgams",
         "detox",
         "chelation"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000266",
@@ -27194,7 +28168,12 @@
         "prenatal gallium",
         "childhood brain cancer",
         "gallium during pregnancy"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "brain_cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000390",
@@ -27276,7 +28255,12 @@
         "nitrosamines",
         "cancer",
         "preserved meat"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000394",
@@ -27340,7 +28324,12 @@
         "anaerobic",
         "aerobic",
         "fermentation"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000397",
@@ -27362,7 +28351,12 @@
         "stroke",
         "sports injury",
         "healing"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "stroke"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000398",
@@ -28802,6 +29796,28 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000002",
+      "subject": "supplement-dosing",
+      "also_about": [
+        "rda-critique",
+        "vitamins",
+        "essential_nutrients"
+      ],
+      "facet": "basics",
+      "question": "what is a preventive dose versus a megavitamin dose?",
+      "answer_short": "Wallach defines 'preventive doses' as well above the RDA but below megavitamin levels, and reserves megavitamin doses for extraordinary situations and specific diseases.",
+      "answer": "Wallach distinguishes \"preventive doses\" of vitamins and minerals — fairly well established, and considerably higher than the Recommended Daily Allowance (RDA) but below the \"megavitamin\" range — from megavitamin levels, which he reserves for extraordinary situations and specific diseases.",
+      "verbatim": "\"Preventive doses\" of vitamin\nand minerals are fairly well established (Table\n8-1). These are considerably higher than\nRDAs but not in the \"megavitamin\" range.",
+      "page": 71,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "supplement-dosing",
+        "vitamins",
+        "rda",
+        "dose-tiers"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000004",
       "subject": "calcium",
       "also_about": [
@@ -29995,7 +31011,13 @@
         "gluten",
         "celiac",
         "brown-rice"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "celiac_disease",
+          "malabsorption"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000084",
@@ -30015,7 +31037,22 @@
         "ultraviolet",
         "vitamin-d",
         "skin"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-d"
+        ],
+        "conditions": [
+          "vaginitis",
+          "ringworm",
+          "athletes_foot",
+          "eczema",
+          "dermatitis"
+        ],
+        "symptoms": [
+          "sore_throat"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000085",
@@ -30034,7 +31071,14 @@
         "infrared",
         "trigger-point",
         "immune"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "chronic_wounds",
+          "bedsores",
+          "arthritis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000086",
@@ -30053,7 +31097,16 @@
         "ultraviolet",
         "eye-safety",
         "germicidal"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-d"
+        ],
+        "conditions": [
+          "skin_diseases",
+          "arthritis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000087",
@@ -30072,7 +31125,12 @@
         "uv-spectrum",
         "angstrom",
         "vitamin-d"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-d"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000088",
@@ -30176,7 +31234,12 @@
         "essential-oils",
         "massage",
         "skin"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "acne"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000094",
@@ -30196,7 +31259,12 @@
         "essential-oils",
         "calamus",
         "hormones"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hypertension"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000095",
@@ -30299,7 +31367,36 @@
         "color-map",
         "blue",
         "green"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hypertension",
+          "teething",
+          "boils",
+          "dysentery",
+          "colic",
+          "jaundice",
+          "cuts",
+          "burns",
+          "hypotension",
+          "anxiety",
+          "arthritis",
+          "gallstones",
+          "kidney_stones",
+          "diabetes",
+          "peptic_ulcers",
+          "common_cold",
+          "influenza",
+          "breast_cancer",
+          "cancer"
+        ],
+        "symptoms": [
+          "fever",
+          "inflammation",
+          "paralysis",
+          "constipation"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000101",
@@ -30423,7 +31520,21 @@
         "baths",
         "detox",
         "colonic"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "arthritis",
+          "hemorrhoids",
+          "edema",
+          "food_allergy",
+          "liver_disease",
+          "heavy_metal_toxicity",
+          "infected_wounds"
+        ],
+        "symptoms": [
+          "constipation"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000108",
@@ -30460,7 +31571,15 @@
         "respiration",
         "asthma",
         "brain"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "asthma",
+          "respiratory_disease",
+          "cystic_fibrosis",
+          "allergies"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000110",
@@ -30497,7 +31616,16 @@
         "injection",
         "filtration",
         "allergies"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "allergies",
+          "asthma",
+          "migraine",
+          "arthritis",
+          "cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000112",
@@ -30571,7 +31699,12 @@
         "ohsawa",
         "japan",
         "history"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "tuberculosis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000116",
@@ -30591,7 +31724,14 @@
         "yin-yang",
         "diet",
         "balance"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "food_allergy",
+          "diabetes",
+          "celiac_disease"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000117",
@@ -30612,7 +31752,17 @@
         "megavitamin",
         "orthomolecular",
         "pauling"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "common_cold",
+          "alcoholism",
+          "osteoarthritis",
+          "schizophrenia",
+          "depression",
+          "food_allergy"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000122",
@@ -30635,6 +31785,42 @@
       "tier1_link": {
         "conditions": [
           "achlorhydria"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000130",
+      "subject": "alzheimers",
+      "also_about": [
+        "memory_loss",
+        "germanium",
+        "choline",
+        "vitamin-e"
+      ],
+      "facet": "protocol",
+      "question": "What is Wallach's full treatment protocol for Alzheimer's disease?",
+      "answer_short": "Wallach's Alzheimer's regimen: germanium (5 ml injected every other day for 24 days, then 150 mg oral twice daily), hydergine 6-12 mg/day, piracetam/choline 1.6 g four times a day, vasopressin nasal spray, centrophenoxine, lecithin 2,500 mg three times a day, the baseline 90 nutrients with colloidal minerals, betaine HCl and pancreatic enzymes, oral and IV hydrogen peroxide, vitamin B-1 200 mg three times a day, vitamin E 1,200 IU/day, and IV chelation.",
+      "answer": "For Alzheimer's disease (progressive memory loss with later difficulties in arousal and motor function), Wallach advises a treatment of: germanium 5 ml intramuscularly every other day for 24 days, then oral germanium 150 mg twice daily; hydergine 6-12 mg per day; piracetam/choline 1.6 grams four times daily; vasopressin (Diapid) one whiff per nostril four times daily; centrophenoxine (Lucidril) 6.2-8.0 grams per day; lecithin (phosphatidyl choline) 2,500 mg three times daily; baseline supplements including colloidal minerals; betaine hydrochloride and pancreatic enzymes 75-200 mg three times daily; oral and intravenous hydrogen peroxide; vitamin B-1 200 mg three times daily; vitamin E 1200 IU daily; and intravenous chelation.",
+      "verbatim": "should include germanium IM 5 ml of standard solution every other day for 24 days\nfollowed by oral germanium at 150 mg b.i.d.;\nhydergine 6-12 mg/day; piracetam/choline\n1.6 grams q.i.d.; vasopressin (Diapid) at a rate\nof one whiff in each nostril q.i.d. which deliv-\ners a total daily dose of 12-16 units of U.S.P.\nPosterior Pituitary; centrophenoxine (Lucidril)\n6.2-8.0 gram/day. Lecithin at 2,500 mg t.i.d. is\nvery useful at all stages (phosphatydil choline\nis more efficient). Don't forget the baseline\nnutritional supplements ( including colloidal\nminerals), betaine HCl and pancreatic en-\nzymes 75-200 mg t.i.d., oral andIVH202; 200\nmg vitamin B-l t.i.d., vitamin E at 1200 iu daily\nand IV chelation will be of value.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "alzheimers",
+        "dementia",
+        "memory-loss",
+        "protocol",
+        "germanium",
+        "brain-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium",
+          "choline",
+          "vitamin-b1",
+          "vitamin-e"
+        ],
+        "conditions": [
+          "alzheimers"
         ]
       }
     },
@@ -31010,7 +32196,12 @@
         "immune",
         "cancer",
         "autoimmune"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000202",
@@ -31125,6 +32316,51 @@
       ]
     },
     {
+      "id": "WAL-CLM-LETS-000243",
+      "subject": "memory_loss",
+      "also_about": [
+        "dementia",
+        "vitamin-b1",
+        "choline",
+        "magnesium",
+        "zinc"
+      ],
+      "facet": "protocol",
+      "question": "What is Wallach's treatment for dementia?",
+      "answer_short": "Wallach treats dementia as reversible, not inevitable aging: B-vitamins (B1, B3, B6, folic acid), choline and lecithin, vitamins C and E, copper, magnesium, and zinc, plus the memory drugs hydergine, vasopressin, centrophenoxine, and piracetam -- after ruling out food allergies and hypoglycemia.",
+      "answer": "Dementia (memory loss, as in senility) is a common symptom but not a true result of aging — Wallach attributes it to nutritional deficiencies and alcoholism, and says memory-enhancing drugs such as hydergine and piracetam help prevent it when added to good nutrition. He advises checking for food allergies and hypoglycemia. His treatment is vitamin B-1 at 100 mg three times daily, B-6 at 50 mg three times daily, B-3 at 450 mg four times daily (time release), folic acid at 3-5 mg per day, choline at 500-1,000 mg per day, lecithin at 2,500 mg twice daily, vitamin E at 800-1,200 IU per day, vitamin C to bowel tolerance, copper at 2-3 mg per day, magnesium at 1,000 mg per day, zinc at 50 mg three times daily, hydergine at 9 mg per day, vasopressin (Diapid) at 12-16 units per day, centrophenoxine (Lucidril) at 4.4-8.0 gm per day, Piracetam at 2.4-4.8 mg per day, and betaine HCl and pancreatic enzymes at 75-200 mg three times daily 15-20 minutes before meals.",
+      "verbatim": "Treatment of dementia includes B-l at 100 mg\nt.i.d., B-6 at 50 mg t.i.d., B-3 at 450 mg q.i.d.\n(time release), folic acid at 3-5 mg/day, choline at 500-1,000 mg/day, lecithin at 2,500 mg\nb.i.d., vitamin E at 800-1 ,200 IU/day, vitamin C\nto bowel tolerance, copper at 2-3 mg/day,\nmagnesium at 1,000 mg/clay, zinc at 50 mg\nt.i.d., hydergine at 9 mg/day, vasopressin\n(Diapid) at 12-16 units/day, centrophenoxine\n(Lucidril) at 4.4-8.0 gm/day",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "dementia",
+        "memory loss",
+        "treatment",
+        "supplements",
+        "brain health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b1",
+          "vitamin-b6",
+          "vitamin-b3",
+          "vitamin-b9",
+          "choline",
+          "vitamin-e",
+          "vitamin-c",
+          "copper",
+          "magnesium",
+          "zinc"
+        ],
+        "conditions": [
+          "dementia"
+        ],
+        "symptoms": [
+          "memory_loss"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-LETS-000244",
       "subject": "phenylalanine",
       "also_about": [
@@ -31203,6 +32439,25 @@
           "eczema"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-LETS-000250",
+      "subject": "herbal_medicine",
+      "also_about": [
+        "home_remedies"
+      ],
+      "facet": "uses",
+      "question": "what herbs act as natural diuretics?",
+      "answer_short": "Wallach lists broom-corn (Sorghum vulgare) as a diuretic, asparagus as a diuretic and laxative, and broom (Cytisus scoparius) as a diuretic and cathartic.",
+      "answer": "Wallach lists several herbs by their diuretic action: broom-corn (Sorghum vulgare) as a diuretic; asparagus (Asparagus officinalis) as a diuretic and laxative; and broom (Cytisus scoparius) as a diuretic and cathartic.",
+      "verbatim": "DIURETIC: broom-corn (Sorghum vulgare)\nDIURETIC &LAXATIVE: asparagus (Asparagus officinalis)\nDnjRETIC & CATHARTIC: broom (Cystisus\nscoparius",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "herbal-remedies",
+        "diuretics",
+        "materia-medica"
+      ]
     },
     {
       "id": "WAL-CLM-LETS-000255",
@@ -31441,6 +32696,27 @@
       }
     },
     {
+      "id": "WAL-CLM-LETS-000327",
+      "subject": "pelvic-floor-exercises",
+      "also_about": [
+        "pregnancy_birth",
+        "sexual_health"
+      ],
+      "facet": "protocol",
+      "question": "how do you do kegel exercises?",
+      "answer_short": "Wallach's Kegel exercise conditions the pelvic-floor muscles -- tighten them as if stopping a bowel movement (or stopping the urine stream), several hundred a day -- for urinary incontinence, urgency, and prenatal conditioning.",
+      "answer": "Kegel's exercise is a way to condition the voluntary muscles of the pelvic floor in both males and females. It is useful for prenatal conditioning of the pelvic, vaginal, and urethral muscles and for urinary incontinence and urgency. To perform it, tighten the pelvic-floor muscles as if trying to stop a bowel movement; you can also add the variation of stopping your urine stream at will. Wallach suggests doing several hundred each day.",
+      "verbatim": "KEGEL'S EXERCISE: is a great way to condition the voluntary muscles of the pelvic floor\nin both males and females. This exercise is\nuseful for prenatal conditioning of the pelvic\nmuscles, vaginal muscles, urethral muscles in\nboth male and female for urinary incontinence and urgency. To perform the Kegel's\nexercise you tighten the muscles of the pelvic\nfloor as if you were trying stop a bowel movement",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "pelvic-floor",
+        "incontinence",
+        "exercise",
+        "materia-medica"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000332",
       "subject": "lysine",
       "also_about": [
@@ -31480,7 +32756,8 @@
       "id": "WAL-CLM-LETS-000333",
       "subject": "korsakoff",
       "also_about": [
-        "vitamin-b1"
+        "vitamin-b1",
+        "memory_loss"
       ],
       "facet": "protocol",
       "question": "How does Wallach treat Korsakoff's syndrome?",
@@ -31496,6 +32773,57 @@
         "chelation",
         "memory",
         "nootropics"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b1",
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "korsakoffs_syndrome"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000336",
+      "subject": "herbal_medicine",
+      "also_about": [
+        "pregnancy_birth"
+      ],
+      "facet": "uses",
+      "question": "what herbs increase breast milk?",
+      "answer_short": "Wallach says milkweed, caraway, fenugreek and goat's rue can induce or enhance lactation, while goldenrod reduces milk and relieves the pain of engorgement.",
+      "answer": "Lactation (breast-milk production) can be induced or enhanced with herbs — milkweed (Asclepias galioides), caraway (Carum carvi), fenugreek (Trigonella foenum-graecum), and goat's rue (Galega officinalis). Conversely, lactation can be reduced, and the breast pain of engorgement relieved, with goldenrod (Solidago petradoria).",
+      "verbatim": "LACTATION (induce): can be induced or\nenhanced with herbs including milkweed\n(Asclepias galioides), caraway (Camm carvi),\nfenugreek (Trigonella foenum-graecum) and\ngoat's rue (Galega officinalis).",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "herbal-remedies",
+        "lactation",
+        "breastfeeding",
+        "materia-medica"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000339",
+      "subject": "herbal_medicine",
+      "also_about": [
+        "home_remedies",
+        "digestion"
+      ],
+      "facet": "uses",
+      "question": "what are natural laxatives?",
+      "answer_short": "Wallach lists laxatives including OTC Ex-Lax and Milk of Magnesia plus herbs -- senna, flaxseed/flaxseed oil, alder buckthorn, cascara sagrada, juniper and manna ash.",
+      "answer": "Laxatives include many over-the-counter preparations such as Ex-Lax and Milk of Magnesia, and herbs including senna (Cassia acutifolia), flaxseed or flaxseed oil (Linum usitatissimum), alder buckthorn (Rhamnus frangula), cascara sagrada (Rhamnus purshiana), juniper (Juniperus communis), and manna ash (Fraxinus ornus).",
+      "verbatim": "LAXATIVE: includes many OTC preparations\nsuch as Ex-Lax and Milk of Magnesia and\nherbs including senna (Cassia aqutifolia), flaxseed or flaxseed oil (Linum ustatissimum),\nalder buckthorn (Rhamnus fragula), cascara\nsagrada (Rhamnus purshiana), juniper\n(Juniperus communis) and manna ash\n(Fraxinus ornus",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "herbal-remedies",
+        "laxatives",
+        "constipation",
+        "materia-medica"
       ]
     },
     {
@@ -31539,6 +32867,42 @@
       "tier1_link": {
         "conditions": [
           "malnutrition"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000356",
+      "subject": "memory_loss",
+      "also_about": [
+        "korsakoff"
+      ],
+      "facet": "protocol",
+      "question": "How does Wallach treat memory loss (senile dementia, Korsakoff's, Alzheimer's)?",
+      "answer_short": "First rule out food allergies (pulse test) and hypoglycemia (six-hour glucose tolerance test); then avoid the offending foods, sugar and alcohol, and add chromium, selenium, vitamin E, B-complex, plus the nootropics vasopressin nasal spray, centrophenoxine, piracetam (with choline) and hydergine.",
+      "answer": "For memory loss (senile dementia, Korsakoff's syndrome, Alzheimer's disease) Wallach says there are many causes that should each be looked up separately, including food allergies and hypoglycemia; he advises the pulse test for food allergies/sensitivities and a six-hour glucose tolerance test to rule hypoglycemia in or out. His treatment is: avoid offending food allergens, sugar and alcohol; chromium at 25-200 micrograms three times a day; selenium at 200-1,000 micrograms per day; vitamin E at 800-1,200 international units per day; B-complex at 50 milligrams three times a day; Diapid (vasopressin) nasal spray at 12-16 units per day; Lucidril (centrophenoxine) at 4.4-8.0 grams per day; Dinagen (piracetam) at 1.6-4.8 grams per day (take choline with it); and hydergine at 9-20 milligrams per day.",
+      "verbatim": "Treatment of memory loss should include\navoidance of offending food allergens, avoidance of sugar, avoidance of alcohol, chromium at 25-200 mcg t.i.d., selenium at 200-\n1,000 mcg per day, vitamin E at 800-1,200 IU\nper day, B-complex at 50 mg t.i.d., Diapid\n(vasopressin) at 12-16 U/day (this is a nasal\nspray), Lucidril (centrophenoxine) at 4.4-8.0\ngm/day, Dinagen (piracetam) at 1.6-4.8 gm/\nday (should take choline with this product)\nand hydergine at 9-20 mg per day",
+      "page": 147,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "memory loss",
+        "dementia",
+        "food allergies",
+        "hypoglycemia",
+        "treatment",
+        "alzheimers"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "selenium",
+          "vitamin-e",
+          "choline"
+        ],
+        "conditions": [
+          "memory_loss",
+          "dementia",
+          "alzheimers",
+          "korsakoffs_syndrome"
         ]
       }
     },
@@ -31612,7 +32976,12 @@
         "mosquito-repellent",
         "pennyroyal",
         "vitamin-b1"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b1"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000371",
@@ -31929,7 +33298,16 @@
         "selenium",
         "essential-fatty-acids",
         "deficiency-thesis"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium",
+          "omega-3"
+        ],
+        "conditions": [
+          "cystic_fibrosis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000472",
@@ -31948,7 +33326,12 @@
         "infertility",
         "malabsorption",
         "preconception"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "infertility"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000473",
@@ -32134,7 +33517,12 @@
         "vegetarian-diet",
         "calcium-availability",
         "bad-foods"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000483",
@@ -32157,7 +33545,15 @@
         "osteoporosis",
         "sugar",
         "caffeine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ],
+        "conditions": [
+          "osteoporosis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-LETS-000484",
@@ -32869,6 +34265,133 @@
         "kidney test",
         "protein metabolism",
         "blood test"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_disease",
+          "kidney_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000001",
+      "subject": "minerals",
+      "also_about": [
+        "essential_nutrients",
+        "colloidal_minerals"
+      ],
+      "facet": "stance",
+      "question": "why does Wallach say minerals are the most important nutrients?",
+      "answer_short": "Wallach calls minerals 'the currency of life' -- the body's basic functions depend on them -- and argues the medical profession ignores this truth to a point past the absurd.",
+      "answer": "Minerals are the currency of life — the body's basic functions depend on them, and Wallach argues the medical profession ignores this truth to the point past the absurd.",
+      "verbatim": "Simply said, minerals are the currency of life. The medical profession ignores this truth to the point past the absurd",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "nutrition"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000002",
+      "subject": "minerals",
+      "also_about": [
+        "essential_nutrients",
+        "vitamins"
+      ],
+      "facet": "mechanism",
+      "question": "what do minerals do in the body?",
+      "answer_short": "Wallach holds that no basic life function can run without minerals -- either as a major part of the function or as a catalytic cofactor for RNA, DNA, sub-cellular and digestive enzymes, and the utilization of vitamins.",
+      "answer": "The basic functions of life cannot be performed without minerals — either as a major part of the function or as a catalytic cofactor (for RNA, DNA, sub-cellular and digestive enzymes, and the utilization of vitamins).",
+      "verbatim": "The basic functions of life itself cannot be performed without minerals, either as a major part of the function or as a catalytic cofactor",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "enzymes",
+        "cofactors"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000005",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals",
+        "essential_nutrients",
+        "rare_earth_elements"
+      ],
+      "facet": "basics",
+      "question": "are the world's soils depleted of minerals?",
+      "answer_short": "Wallach cites U.S. Senate Document 264 (1936) and the 1992 Rio Earth Summit report to argue the world's farm and range soils are 'anemic' -- soils that should hold 60 elements now have few or none.",
+      "answer": "Wallach cites U.S. Senate Document 264 (1936) and the 1992 Rio Earth Summit report on soil mineral-depletion rates: the world's farm and range soils are 'anemic' — soils that should contain 60 elements have few or none.",
+      "verbatim": "U.S Senate Document 264 (1936) and the 1992 Earth Summit Report (Rio) on mineral depletion rates of the world's farm and range soils point out graphically that our Earth's soils are anemic - the soil should contain 60 of them, there are few or none",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil",
+        "farming",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000006",
+      "subject": "longevity",
+      "also_about": [
+        "genetic-potential",
+        "minerals",
+        "essential_nutrients"
+      ],
+      "facet": "big_question",
+      "question": "how long can humans actually live?",
+      "answer_short": "Wallach puts the human genetic potential for longevity at 120 to 140 years -- the US average lifespan falls as much as 50% short of it.",
+      "answer": "Wallach puts the human genetic potential for longevity at 120 to 140 years — the US average life span falls as much as 50% short of it.",
+      "verbatim": "falls far short (as much as 50% short) of our human genetic potential for longevity of 120 to 140 years",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "aging",
+        "lifespan"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000007",
+      "subject": "longevity",
+      "also_about": [
+        "minerals",
+        "essential_nutrients"
+      ],
+      "facet": "mechanism",
+      "question": "does calorie restriction make you live longer?",
+      "answer_short": "Wallach argues the extended rat lifespans in calorie-restriction studies came not from fewer calories but from the higher concentration of minerals per calorie in the diet.",
+      "answer": "Wallach argues the extended rat lifespans in calorie-restriction studies came not from fewer calories but from the higher concentration of minerals per calorie in the diet.",
+      "verbatim": "It is not the reduced calorie level that gave the rats their extended life spans by 30, 40 and 50%, but rather it is the increased concentration of mineral per calorie in the diet",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "calorie-restriction",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000009",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals",
+        "essential_nutrients"
+      ],
+      "facet": "stance",
+      "question": "Is the Earth running out of the minerals life needs?",
+      "answer_short": "Wallach frames Earth as a finite, limited resource for the raw-material elements that underlie all plant, animal and human life.",
+      "answer": "Wallach frames the Earth as a finite, limited resource for the raw-material elements that are the basis of all plant, animal, and human life.",
+      "verbatim": "our planet is a limited finite resource for\nthe raw materials that are the basis of all\nplant, animal and human life as we know\nit.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil",
+        "minerals",
+        "environment"
       ]
     },
     {
@@ -32904,6 +34427,140 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000017",
+      "subject": "genetic-potential",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "basics",
+      "question": "What is the maximum lifespan a human is capable of?",
+      "answer_short": "Every species has a longevity ceiling — Wallach lists mice 700 days, dogs 23 yrs, horses 32, elephants 45, chimps 52, and humans 145 years.",
+      "answer": "Every species has a genetic-potential ceiling for longevity — Wallach lists mice 700 days, dogs 23 years, horses 32, elephants 45, chimpanzees 52, and humans 145 years.",
+      "verbatim": "All species have a “genetic potential” or\nupper limit for longevity - mice 700 days,\ndogs 23 years, horses 32 years, elephant\n45 years, chimpanzee 52 years and man\n145 years",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "lifespan",
+        "aging"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000018",
+      "subject": "longevity",
+      "also_about": [
+        "essential_nutrients",
+        "genetic-potential"
+      ],
+      "facet": "protocol",
+      "question": "How do you live to 145 according to Wallach?",
+      "answer_short": "Reaching the 145-year potential requires consuming each of the 90 essential nutrients in optimal amounts every single day.",
+      "answer": "Reaching the 145-year longevity potential requires consuming each of the 90 essential nutrients in optimal amounts every day.",
+      "verbatim": "Do those positive things necessary to make it to 145 including consuming each of the 90 essential nutrients in optimal amounts each day",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "supplements",
+        "90 nutrients"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000019",
+      "subject": "longevity",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "history",
+      "question": "How fast is the human population doubling?",
+      "answer_short": "Doubling time collapsed from 100,000 years before history to 700 after farming to just 35–40 years today — intensifying competition for the body's raw materials.",
+      "answer": "The human population's doubling time has collapsed — 100,000 years before written history, 700 years after the dawn of agriculture, and only 35 to 40 years today — intensifying the competition for the body's basic raw materials.",
+      "verbatim": "Before written history, it took 100,000 years to double the Earth’s human populations; after the dawn of agriculture, (5,000 to 8,000 years ago) it took 700 years to double the population of human kind; today at the brink of the 21st century, it takes only 35 to 40 years to double our numbers!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "population",
+        "environment",
+        "raw materials"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000020",
+      "subject": "longevity",
+      "also_about": [
+        "genetic-potential"
+      ],
+      "facet": "stance",
+      "question": "How does the American lifespan compare to human potential?",
+      "answer_short": "The 75.5-year US average is only 62% of the 120–140-year genetic potential and ranks just 17th among industrialized nations.",
+      "answer": "The 75.5-year average American lifespan is only 62% of the human genetic potential for longevity of 120 to 140 years and ranks 17th among industrialized nations — falling as much as 50% short of that potential.",
+      "verbatim": "The 75.5 year average life span for Americans places us at 17th in longevity when we are compared with the other industrialized nations and this level of boastful “success” falls far short (as much as 50% short) of our human genetic potential for longevity of 120 to 140 years.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "lifespan"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000021",
+      "subject": "longevity",
+      "also_about": [
+        "macrobiotics",
+        "genetic-potential"
+      ],
+      "facet": "stance",
+      "question": "Do vegetarianism, yoga and meditation make you live longer?",
+      "answer_short": "Wallach says vegetarianism, macrobiotics, biofeedback, meditation, exercise, yoga and free medical care haven't pushed US lifespan past 75.5 years — 62% of potential.",
+      "answer": "Popular health movements — vegetarianism, macrobiotics, biofeedback, meditation, exercise, yoga, free medical care — have not extended the American lifespan beyond 75.5 years, only 62% of the 120-to-140-year genetic potential.",
+      "verbatim": "evangelize vegetarianism, macrobiotics, biofeedback, meditation, exercise, pure thought, yoga and free medical care for all (usually vote-buying politicians!); yet none of these practices have extended the human lifespan in America to more than 75.5 years- only 62% of our human genetic potential for longevity of 120 to 140 years.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "diet",
+        "lifestyle"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000022",
+      "subject": "soil-depletion",
+      "also_about": [
+        "essential_nutrients",
+        "minerals"
+      ],
+      "facet": "stance",
+      "question": "Can you get all your nutrients from food alone?",
+      "answer_short": "The full set of 90 essential nutrients is no longer reliably in food — either absent or so variable that getting them from food alone is a gamble.",
+      "answer": "The full complement of 90 essential nutrients once present in Earthly foods is no longer reliably there — either totally absent or so highly variable that obtaining them from food alone is a gamble.",
+      "verbatim": "Unfortunately, the entire complement of the 90 essential nutrients required for optimal health and longevity historically found in our Earthly foods are no longer there - they are either totally absent or their availability is so highly variable that your chances of obtaining them from food alone is more of a gamble than a Las Vegas “crap-shoot”!!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "diet",
+        "supplements",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000023",
+      "subject": "genetic-potential",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "mechanism",
+      "question": "Can your genes work without minerals?",
+      "answer_short": "Genetic potential is useless without mineral raw materials — Wallach likens engineered flesh with no minerals to running a Mercedes with no oil or coolant.",
+      "answer": "Genetic potential is meaningless without the basic mineral raw materials to support development and maintenance — Wallach likens engineered flesh without minerals to running a Mercedes with no oil or coolant.",
+      "verbatim": "genetic potential without the basic raw materials to support the process of development and extended maintenance of the flesh is inherently faulty in its premise!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "genetics",
+        "minerals"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000024",
       "subject": "colloidal_minerals",
       "also_about": [],
@@ -32919,6 +34576,44 @@
         "longevity",
         "colloidal-minerals",
         "rare-earths"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000025",
+      "subject": "minerals",
+      "also_about": [
+        "colloidal_minerals"
+      ],
+      "facet": "history",
+      "question": "Have humans always taken mineral supplements?",
+      "answer_short": "Wallach calls mineral supplementation a necessity of life — since before recorded history humans craved minerals as clays, salts, animal tissue and colloidal-rich plants.",
+      "answer": "Mineral supplementation is a necessity of life — since before recorded history humans craved and consumed minerals (major minerals, trace minerals, and rare earths) as clays, salts, animal tissue, and colloidal-mineral-rich plants.",
+      "verbatim": "Minerals and mineral supplements to our meals are in fact a necessity of life. Since before recorded history man craved and consciously consumed minerals including the major minerals, trace minerals and Rare Earths in the form of clays, salts, animal tissue (bones and meat) or colloidal mineral rich plants.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "supplements",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000028",
+      "subject": "minerals",
+      "also_about": [
+        "essential_nutrients"
+      ],
+      "facet": "basics",
+      "question": "How many minerals does the human body actually need?",
+      "answer_short": "Of 75 metals on the periodic chart — all found in human body fluids — at least 60 have physiological value, and no bodily function happens without a mineral cofactor.",
+      "answer": "Of the 75 metals on the periodic chart — all detected in human blood and body fluids — at least 60 have physiological value for humans, and not a single function in the body can take place without at least one mineral or metal cofactor.",
+      "verbatim": "There are 75 metals listed in the periodic chart, all of which have been detected in human blood and other body fluids - we know that at least 60 of these metals (minerals) have physiological value for man. Organically not a single function in the human body can take place without at least one mineral or metal cofactor.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "biology",
+        "cofactors"
       ]
     },
     {
@@ -32949,6 +34644,102 @@
           "bipolar_disorder"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-RARE-000030",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "mechanism",
+      "question": "Why are our soils depleted of minerals?",
+      "answer_short": "Wallach calls Earth's soils 'anemic' — mining, deforestation, farming, irrigation and acid rain have shifted, eroded and leached minerals from once-rich land.",
+      "answer": "The Earth's soils are \"anemic\" — mining, deforestation, farming, irrigation, and acid rain have shifted, eroded, and leached the life-sustaining minerals from once mineral-rich land.",
+      "verbatim": "Our Earth is anemic!!!! A potentially apocalyptic mixture of mining, deforestation, farming, irrigation and acid rain has shifted, eroded or leached our life giving and life-sustaining raw materials from our formerly mineral rich land.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil",
+        "farming",
+        "environment"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000031",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "stance",
+      "question": "Can we just put the minerals back into the soil?",
+      "answer_short": "Remineralizing farmland is technically possible but economically impossible — Wallach says it would mean grinding up a Mauna Loa yearly, pushing beef to $275/lb and corn to $35 an ear.",
+      "answer": "Remineralizing the Earth is technically possible but, as a realistic project, an economic impossibility. Wallach's reasoning is one of scale: to remineralize the Earth for a single growing season would mean grinding up the equivalent of Mauna Loa — the most massive mountain on Earth — every year and spreading the rock dust across the fields several times a season to match planting. He puts the result in grocery terms: a hamburger would hit $275 a pound and corn $35 an ear.",
+      "verbatim": "To remineralize the Earth is technically possible but as a realistic project would be an economic impossibility.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil",
+        "farming",
+        "economics"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000032",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "mechanism",
+      "question": "Are minerals spread evenly through farm soil?",
+      "answer_short": "Minerals aren't a uniform blanket in cropland but occur in veins — like chocolate swirls in ripple ice cream — so relying on food alone for them is a gamble.",
+      "answer": "Minerals are unevenly distributed in soil — croplands hold no uniform blanket of minerals but veins (like chocolate swirls in ripple ice cream), so relying on food alone for minerals is a risky gamble.",
+      "verbatim": "It is obvious that minerals are not equally distributed in soils. The scary part is that fields where our food crops are grown do not contain a uniform blanket of minerals, if they contain any nutritional minerals at all, they occur in veins much like the chocolate swirls found in chocolate ripple ice cream - at best depending solely on getting minerals from food grown in soil is a very risky crap shoot!!",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil",
+        "farming",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000033",
+      "subject": "minerals",
+      "also_about": [
+        "vitamins",
+        "soil-depletion"
+      ],
+      "facet": "stance",
+      "question": "Are minerals or vitamins more important?",
+      "answer_short": "Wallach ranks minerals as more fundamental: the body can make some use of minerals without vitamins, but lacking minerals, vitamins are useless.",
+      "answer": "Minerals are more fundamental than vitamins: the body can make some use of minerals without vitamins, but lacking minerals, vitamins are useless. (Wallach reproduces this within his U.S. Senate Document 264 discussion.)",
+      "verbatim": "Lacking vitamins, the system can make some use of minerals, but lacking minerals, vitamins are useless.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "vitamins",
+        "senate-doc-264"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000034",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "mechanism",
+      "question": "Does modern fertilizer deplete the minerals in soil?",
+      "answer_short": "NPK fertilizer replaces only nitrogen, phosphorus and potassium, so cropping 'mines' out the soil's other minerals within 5 to 10 years, and irrigation speeds the leaching.",
+      "answer": "Modern NPK (nitrogen, phosphorus, potassium) fertilizer replaces only three elements, so cropping \"mines\" the soil's minerals within 5 to 10 years and irrigation speeds the leaching — after 100+ years the result is rising rates of degenerative disease.",
+      "verbatim": "It only takes 5 to 10 years for agriculture to “mine” the minerals from the soil by cropping. Irrigation while providing water for increased production in terms of tons and bushels actually speeds up the leaching of nutritional minerals from the land",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil-depletion",
+        "farming",
+        "fertilizer"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000041",
@@ -33036,6 +34827,66 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000052",
+      "subject": "genetic-potential",
+      "also_about": [
+        "minerals",
+        "essential_nutrients"
+      ],
+      "facet": "physiology",
+      "question": "How tall are humans genetically meant to be?",
+      "answer_short": "Wallach puts human genetic potential for height near seven feet -- against an average American male of 5'8\" and female 5'4\" -- blaming nutrition, not genetics, for the gap.",
+      "answer": "Wallach puts the human genetic potential for height at roughly seven feet — against an average American male of five-foot-eight and female of five-foot-four — and attributes the gap to nutrition (calories, protein and minerals) rather than genetics.",
+      "verbatim": "The average American male is five foot eight inches tall and the average female is five foot four inches tall, even though our human genetic potential for height is is approximately seven feet.",
+      "page": 161,
+      "book_id": "rare-earths",
+      "topics": [
+        "genetic-potential",
+        "height",
+        "growth"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000053",
+      "subject": "genetic-potential",
+      "also_about": [
+        "essential_nutrients",
+        "minerals"
+      ],
+      "facet": "discovery",
+      "question": "What did Wallach's duckling experiment show?",
+      "answer_short": "Of 100 ducklings split into four diets, only the two groups fed pellets containing all known nutrients came close to their genetic growth potential at one month; the lettuce- and barley-only groups grew almost not at all.",
+      "answer": "In Wallach's duckling experiment, 100 identical ducklings split into four diet groups showed that only the two groups fed supplemented pellets containing all known nutrients came close to their genetic potential for growth at one month — the lettuce and barley-only groups grew almost not at all.",
+      "verbatim": "only group 3 and 4 came close to fulfilling their genetic potential for physical growth and development at age one month; only group 3 and 4 were fed supplemented pellets that contained all of the known nutrients required by ducklings.",
+      "page": 163,
+      "book_id": "rare-earths",
+      "topics": [
+        "genetic-potential",
+        "complete-nutrition",
+        "experiment"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000054",
+      "subject": "minerals",
+      "also_about": [
+        "longevity"
+      ],
+      "facet": "uses",
+      "question": "Do mineral supplements improve athletic performance?",
+      "answer_short": "In a marathon comparison Wallach cites, runners on a broad mineral supplement (plus a 72-mineral clay) improved their race time by 16:57 after six months of training, versus only 5:27 for the unsupplemented group.",
+      "answer": "Wallach cites a marathon-runner comparison in which the group taking a broad mineral supplement (Ca, P, I, Fe, Mg, Cu, K, Zn, Mn, Cr, Se plus a 72-mineral clay) improved their average race time by 16:57 after six months of training, versus only 5:27 for the unsupplemented group.",
+      "verbatim": "The unsupplemented group showed an improvement of 5:27 minutes following training, while the supplemented group showed an improvement of a whopping 16:57 minutes following training!!!",
+      "page": 163,
+      "book_id": "rare-earths",
+      "topics": [
+        "minerals",
+        "athletic-performance",
+        "marathon",
+        "supplements"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000055",
       "subject": "omega-3",
       "also_about": [],
@@ -33050,6 +34901,47 @@
         "omega-3",
         "essential-nutrients",
         "immune-system"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000056",
+      "subject": "centenarian-cultures",
+      "also_about": [
+        "minerals",
+        "longevity"
+      ],
+      "facet": "mechanism",
+      "question": "What do the world's longest-lived cultures eat?",
+      "answer_short": "Wallach says the healthiest, longest-lived cultures consistently consume 60 to 72 minerals with every meal, generation after generation -- the basis of their drug-free, disease-free longevity.",
+      "answer": "Wallach asserts that the healthiest, longest-lived cultures on Earth consistently consume high levels of 60 to 72 minerals with every meal, generation after generation, and that this is the basis of their drug-free, disease-free longevity.",
+      "verbatim": "The healthiest and longest lived cultures on the planet consistently consume high levels of 60 to 72 minerals with each meal, generation after generation",
+      "page": 167,
+      "book_id": "rare-earths",
+      "topics": [
+        "centenarian-cultures",
+        "longevity",
+        "minerals"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000057",
+      "subject": "longevity",
+      "also_about": [
+        "essential_nutrients",
+        "genetic-potential",
+        "iatrogenic-medicine"
+      ],
+      "facet": "protocol",
+      "question": "How do you reach your maximum lifespan?",
+      "answer_short": "Wallach frames it as two moves: avoid the 'land mines' (predators, accidents, smoking, excess alcohol, illegal and prescription drugs, chemicals and toxins, even going to the doctor) and take in each of the 90 essential nutrients in optimal amounts daily.",
+      "answer": "Wallach frames reaching one's longevity potential as two concepts: first, avoiding the \"land mines\" (predators, accidents, smoking, excess alcohol, illegal and prescription drugs, chemicals/toxic wastes, and even going to the doctor); and second, taking in each of the 90 essential nutrients in optimal amounts daily.",
+      "verbatim": "Avoiding the “land mines” or eliminating unnecessary and wasteful death from predators or road accidents, not smoking, not drinking alcohol to excess, avoiding the use of illegal (and prescription) drugs, avoiding chemicals and toxic wastes in our food, air and water and avoid going to the doctor.",
+      "page": 171,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "prevention",
+        "90-nutrients"
       ]
     },
     {
@@ -33068,6 +34960,26 @@
         "glacial-milk",
         "colloidal-minerals",
         "mechanism"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000060",
+      "subject": "centenarian-cultures",
+      "also_about": [
+        "minerals",
+        "longevity"
+      ],
+      "facet": "basics",
+      "question": "What do people in long-lived cultures die of?",
+      "answer_short": "Wallach says centenarians in the long-lived cultures don't get the West's degenerative diseases (which he blames on mineral deficiency) -- when they die it is usually of hypothermia in the cold high-altitude winter.",
+      "answer": "Wallach asserts that the centenarians of the long-lived cultures do not die of the degenerative diseases (which he attributes to mineral deficiencies) that plague the West — when they die it is usually of hypothermia in the cold high-altitude winter.",
+      "verbatim": "When a centenarian does die it is usually in the cold of the winter, which can be quite cold above the 8,500 foot level. Hypothermia is usually the most common cause of death in these long lived cultures",
+      "page": 212,
+      "book_id": "rare-earths",
+      "topics": [
+        "centenarian-cultures",
+        "longevity",
+        "degenerative-disease"
       ]
     },
     {
@@ -33104,6 +35016,122 @@
         "long-lived-cultures",
         "colloidal-minerals",
         "sources"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000063",
+      "subject": "longevity",
+      "also_about": [
+        "minerals",
+        "centenarian-cultures"
+      ],
+      "facet": "discovery",
+      "question": "Can micronutrients extend maximum lifespan?",
+      "answer_short": "Wallach cites Roy Walford's UCLA lab extending the maximum lifespan of fish by 300% by maximizing the micronutrients fed to them and lowering the water temperature a few degrees.",
+      "answer": "Wallach cites Roy Walford's University of California, Los Angeles (UCLA) laboratory, where the maximum lifespan of fish was extended by 300% by maximizing the micronutrients fed to them (and lowering the water temperature a few degrees).",
+      "verbatim": "The maximum survival rate or longevity for fish has been extended by 300 % in the UCLA laboratory of Roy Walford by maximizing the micronutrients fed to the fish as well as lowering the water temperature by just a few degrees.",
+      "page": 186,
+      "book_id": "rare-earths",
+      "topics": [
+        "longevity",
+        "micronutrients",
+        "lifespan-extension"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000064",
+      "subject": "iatrogenic-medicine",
+      "also_about": [
+        "hospital_dangers"
+      ],
+      "facet": "warning",
+      "question": "How many people die from medical errors in hospitals?",
+      "answer_short": "Wallach cites a 1991 Harvard study finding 1.3 million injuries and 198,000 deaths a year in US hospitals from doctor-caused (iatrogenic) mishaps -- 4 to 5 times the highway toll, with 7 of 10 judged avoidable and about a third due to negligence.",
+      "answer": "Wallach cites a 1991 Harvard School of Public Health study finding 1.3 million injuries and 198,000 deaths a year in American hospitals from iatrogenic (doctor-caused) mishaps — four to five times the toll of the highways, with seven of ten adverse results judged totally avoidable and about a third due to negligence.",
+      "verbatim": "In 1991 a Harvard University, School of Public Health study revealed that 1.3 million injuries and 198,000 deaths occur in American Hospitals each year as a result of “iatrogenic” or doctor caused mishaps or “adverse events.”",
+      "page": 215,
+      "book_id": "rare-earths",
+      "topics": [
+        "iatrogenic",
+        "hospital-safety",
+        "medical-errors"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000065",
+      "subject": "iatrogenic-medicine",
+      "also_about": [
+        "hospital_dangers"
+      ],
+      "facet": "warning",
+      "question": "Are you safer in a hospital or a war zone?",
+      "answer_short": "Wallach cites Dr. Sidney Wolfe's estimate of 300,000 US hospital-negligence deaths a year (he calls it conservative and suspects it could be double) -- set against 56,000 US troops lost over the entire 10-year Vietnam War.",
+      "answer": "Wallach drives the iatrogenic toll home by comparison: Dr. Sidney Wolfe (Public Citizen) put hospital-negligence deaths at 300,000 Americans a year. Wallach calls Wolfe's figure conservative -- Nader's group used mortality numbers supplied by the medical profession -- and himself speculates the real number could be double, 600,000. He sets it against the 56,000 US troops lost over the entire 10-year Vietnam War: safer on the battlefield than in an American hospital.",
+      "verbatim": "To appreciate how big a figure 300,000 dead is, we have to compare Wolfes figures of Americans killed by “friendly fire” in American hospitals with our U.S. military losses in Vietnam over the course of the 10 year war where we lost 56,000 for an average loss of 5,600 per year",
+      "page": 226,
+      "book_id": "rare-earths",
+      "topics": [
+        "iatrogenic",
+        "hospital-safety",
+        "medical-negligence"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000066",
+      "subject": "drug_safety_elderly",
+      "also_about": [
+        "iatrogenic-medicine"
+      ],
+      "facet": "warning",
+      "question": "Is it dangerous for elderly people to take many medications at once?",
+      "answer_short": "Wallach warns 'poly-pharmacy' -- inappropriate or multiple prescriptions -- endangers 25% or more of Americans over 65 living at home, with many drugs prescribed only to counteract the side effects of an earlier drug.",
+      "answer": "Wallach warns that inappropriate or multiple prescriptions (\"poly-pharmacy\") endanger 25% or more of Americans over 65 living at home — many drugs being prescribed only to counteract the side effects of an earlier drug.",
+      "verbatim": "Inappropriate prescriptions or multiple prescriptions (“Poly-pharmacy”) are dangerous to 25 percent or more of Americans over the age of 65 living at home.",
+      "page": 226,
+      "book_id": "rare-earths",
+      "topics": [
+        "poly-pharmacy",
+        "elderly",
+        "prescription-drugs"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000067",
+      "subject": "iatrogenic-medicine",
+      "also_about": [
+        "drug_safety_elderly",
+        "wallach"
+      ],
+      "facet": "warning",
+      "question": "Do doctors prescribe the wrong drugs to seniors?",
+      "answer_short": "Wallach cites a 1994 survey in which 70% of doctors flunked a quiz on prescribing to seniors, and reports they incorrectly prescribe drugs to 25% of American senior citizens.",
+      "answer": "Wallach reports that 70% of allopathic doctors flunked a 1994 survey quiz on prescription drugs and prescribing to seniors, and that they incorrectly prescribe pharmaceuticals to 25% of American senior citizens (per a July 1994 New England Journal of Medicine study).",
+      "verbatim": "Allopathic doctors (70 % of whom flunked a 1994 survey quiz on prescription drugs and prescribing to seniors!!) are incorrectly prescribing pharmaceuticals to 25 percent of American senior citizens",
+      "page": 226,
+      "book_id": "rare-earths",
+      "topics": [
+        "seniors",
+        "prescription-errors",
+        "doctors"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000068",
+      "subject": "drug_safety_elderly",
+      "also_about": [
+        "iatrogenic-medicine"
+      ],
+      "facet": "warning",
+      "question": "What drugs should elderly people never take?",
+      "answer_short": "An expert panel flagged 20 drugs that should never be given to the elderly -- yet Wallach says they are still prescribed to more than 6.6 million seniors a year, often several at once.",
+      "answer": "Wallach cites an expert panel finding that 20 drugs from a list that should never be given to the elderly are nonetheless prescribed to more than 6.6 million seniors a year — often several at once via the poly-pharmacy trap.",
+      "verbatim": "An expert panel found that 20 drugs (Table 9-1) from a list that should never be taken by the elderly are in fact prescribed to more than 6.6 million seniors each year",
+      "page": 226,
+      "book_id": "rare-earths",
+      "topics": [
+        "seniors",
+        "medications-to-avoid",
+        "poly-pharmacy"
       ]
     },
     {
@@ -33226,6 +35254,84 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000075",
+      "subject": "rda-critique",
+      "also_about": [
+        "minerals",
+        "essential_nutrients"
+      ],
+      "facet": "stance",
+      "question": "Are RDAs enough if you're sick?",
+      "answer_short": "Wallach says the RDA was set only to meet the needs of 'practically all healthy people' and does not apply to anyone with health challenges or a full-blown disease.",
+      "answer": "Wallach asserts that the Recommended Dietary Allowance (RDA) and other dietary recommendations for trace minerals — conceived by the National Science Foundation to meet the needs of \"practically all healthy people\" — are not applicable to people with health challenges or full-blown disease states.",
+      "verbatim": "The RDA and other dietary recommendations for trace minerals are conceived by the National Science Foundation to meet the needs of “practically all healthy people” - they are not applicable to people with “health challenges” or full blown disease states.",
+      "page": 270,
+      "book_id": "rare-earths",
+      "topics": [
+        "rda",
+        "supplements",
+        "nutrition-standards"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000076",
+      "subject": "soil-depletion",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "history",
+      "question": "Did old foods have more minerals than today's?",
+      "answer_short": "Wallach cites 3,000-year-old Japanese temple-monk bones holding a wider spectrum and greater amount of minerals than the bones of modern-day Japanese.",
+      "answer": "As evidence of progressive soil and food mineral depletion over time, Wallach cites that the 3,000-year-old bones of Japanese temple monks contained a greater spectrum of minerals and a greater amount of each mineral than the bones of modern-day Japanese.",
+      "verbatim": "Mineral analysis of 3,000 year old bones of Japanese temple monks showed that they contained a greater spectrum of minerals and greater amount of each mineral than the bones of modern day Japanese.",
+      "page": 270,
+      "book_id": "rare-earths",
+      "topics": [
+        "mineral-depletion",
+        "food-quality",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000078",
+      "subject": "minerals",
+      "also_about": [
+        "hair-analysis",
+        "essential_nutrients"
+      ],
+      "facet": "mechanism",
+      "question": "Can a mineral deficiency be reversed?",
+      "answer_short": "Wallach says most trace-mineral deficiencies go undiagnosed, but simply replacing the missing element can bring results in 48 hours to 30 days -- unless permanent damage has already set in.",
+      "answer": "Wallach contends that most clinical-phase trace-mineral deficiencies go undiagnosed by orthodox physicians, yet the cure is simply replacing the missing element: a correct diagnosis can produce a rapid positive clinical response within 48 hours to 30 days — unless permanent biochemical, chromosomal or physical damage has already occurred.",
+      "verbatim": "the cure, however, is simply a matter of replacement of the trace element (a correct diagnosis can lead to a remarkably rapid positive clinical response ranging from 48 hours to 30 days for recognizable results)",
+      "page": 272,
+      "book_id": "rare-earths",
+      "topics": [
+        "mineral-deficiency",
+        "reversible",
+        "treatment"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000080",
+      "subject": "hair-analysis",
+      "also_about": [
+        "minerals"
+      ],
+      "facet": "basics",
+      "question": "What is a hair mineral analysis?",
+      "answer_short": "A hair analysis reads non-perishable tissue minerals to record months of mineral status; hair holds trace minerals and rare earths at 200 times blood levels, where reserves mask a deficiency.",
+      "answer": "Wallach explains that a hair analysis reads non-perishable body-tissue minerals and records the body's mineral status over several months; hair concentrations of trace minerals and Rare Earths run 200 times greater than those found in blood (where calcium and other essentials are held at normal levels by drawing on body reserves even during a raging deficiency).",
+      "verbatim": "Hair analysis are performed on nonperishable samples of body tissue minerals and are a recording of the bodies mineral status over a period of several months - additionally hair concentration of trace minerals and Rare Earths are 200 times greater than those found in blood.",
+      "page": 274,
+      "book_id": "rare-earths",
+      "topics": [
+        "diagnostic-test",
+        "mineral-deficiency",
+        "hair"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000081",
       "subject": "vanadium",
       "also_about": [
@@ -33297,6 +35403,25 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000085",
+      "subject": "lead",
+      "also_about": [
+        "mercury"
+      ],
+      "facet": "warning",
+      "question": "How common is lead poisoning in America?",
+      "answer_short": "Wallach reports over 400,000 tons of industrial lead enter the American biosphere every year, insidiously poisoning more than 38 million Americans annually.",
+      "answer": "Wallach reports the scale of lead toxicity in America: more than 400,000 tons of industrial lead is pumped into the American biosphere each year, insidiously poisoning over 38 million Americans annually.",
+      "verbatim": "more than 400,000 tons of industrial lead is pumped into the American bios annually resulting in the insidious poisoning of over 38 million Americans each year!!",
+      "page": 276,
+      "book_id": "rare-earths",
+      "topics": [
+        "lead-poisoning",
+        "toxic-metals",
+        "environment"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000086",
       "subject": "zinc",
       "also_about": [
@@ -33352,6 +35477,25 @@
         "dr-todd",
         "colloidal-minerals",
         "lead-cadmium-mercury"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000089",
+      "subject": "minerals",
+      "also_about": [
+        "essential_nutrients",
+        "colloidal_minerals"
+      ],
+      "facet": "basics",
+      "question": "How many minerals does the body actually need?",
+      "answer_short": "Some 79 minerals have been detected in human and animal tissue, and thousands of studies document at least 60 as essential cofactors for DNA, RNA, enzymes, or vitamin utilization.",
+      "answer": "Wallach states that some 79 minerals have been detected in animal and human tissue, and that thousands of animal studies have documented the essentiality of at least 60 of them — acting as mineral cofactors for DNA, RNA, enzyme systems or vitamin utilization.",
+      "verbatim": "have documented additional support for the essentiality of at least 60 minerals (i.e.- act as mineral cofactors for DNA, RNA or enzyme systems or vitamin utilization).",
+      "page": 279,
+      "book_id": "rare-earths",
+      "topics": [
+        "essential-minerals",
+        "cofactors"
       ]
     },
     {
@@ -33531,7 +35675,12 @@
         "cerium",
         "rare-earth",
         "burns"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cerium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000116",
@@ -33670,6 +35819,41 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000138",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can mercury fillings cause antibiotic resistance?",
+      "answer_short": "In monkeys, mercury vapor from dental amalgam raised antibiotic-resistant gut bacteria from 9% to 70%, which fell back to 12% once the fillings were removed.",
+      "answer": "Wallach cites a striking experiment on mercury and antibiotic resistance: mercury vapor from dental amalgam increased the percentage of antibiotic-resistant bacteria in the gut from 9% to 70% in monkeys given dental mercury fillings, and the drug-resistant bacterial population dropped back to 12% once the fillings were removed.",
+      "verbatim": "Mercury vapor from dental amalgam\nhas been shown to increase the percent of\nantibiotic resistant bacteria in the gut from\n9 percent to 70 percent in monkeys given\ndental mercury fillings; the drug resistant\nbacterial population dropped to 12 percent\nwhen the fillings were removed.",
+      "page": 337,
+      "book_id": "rare-earths",
+      "topics": [
+        "dental-amalgam",
+        "antibiotic-resistance",
+        "fillings"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000139",
+      "subject": "mercury",
+      "also_about": [],
+      "facet": "history",
+      "question": "Why do they say 'mad as a hatter'?",
+      "answer_short": "Victorian hatters were poisoned by mercuric-nitrate hat paste ('mad as a hatter'); Wallach adds that dentists develop mental disease from chronic mercury vapor and have the highest suicide rate of all health professionals.",
+      "answer": "Wallach recounts mercury's history as a vapor toxin: Victorian 'hatters' who used mercuric-nitrate paste on felt hats developed mercury poisoning ('mad as a hatter,' from Alice in Wonderland), as did goldsmiths and mirror workers; in modern times dentists have developed mental disease from chronic mercury-vapor exposure and have the highest suicide rate among all health professionals.",
+      "verbatim": "in modern times dentists\nhave developed mental disease from\nchronic exposure to mercury vapors (they\nhave the highest rate of suicide amongst all\nthe health professionals)",
+      "page": 337,
+      "book_id": "rare-earths",
+      "topics": [
+        "mercury-poisoning",
+        "dentists",
+        "occupational-hazard",
+        "mad-as-a-hatter"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000142",
       "subject": "copper",
       "also_about": [],
@@ -33768,6 +35952,44 @@
           "lanthanum"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-RARE-000159",
+      "subject": "krypton",
+      "also_about": [
+        "obscure_elements"
+      ],
+      "facet": "basics",
+      "question": "Is krypton dangerous to humans?",
+      "answer_short": "Despite the Superman legend, Wallach says krypton is totally harmless to humans and may in fact even be an essential element.",
+      "answer": "Wallach remarks that krypton, despite its fictional debilitating effect on 'Superman', is in fact totally harmless to humans and may even be an essential element.",
+      "verbatim": "Krypton is legendary for having debilitating effects on “Superman” but in fact is totally harmless for humans and may in fact be an essential element.",
+      "page": 344,
+      "book_id": "rare-earths",
+      "topics": [
+        "noble-gas",
+        "superman",
+        "trace-elements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000162",
+      "subject": "antidepressants",
+      "also_about": [
+        "iatrogenic-medicine"
+      ],
+      "facet": "history",
+      "question": "When did Prozac come out and how big did it get?",
+      "answer_short": "Prozac launched in 1987; Wallach notes sales hit $350 million by 1989 and were projected past $1 billion by 1995, with doctors writing 650,000 prescriptions a month.",
+      "answer": "Wallach notes Prozac, America's leading antidepressant, was introduced in 1987 and sales soared to $350 million by 1989 (more than was spent on all antidepressants two years earlier), with projections to top $1 billion by 1995 as allopathic doctors generated 650,000 prescriptions per month.",
+      "verbatim": "Prozac, America’s “leading” antidepressant pharmaceutical was introduced in 1987, sales soared to $350 million in 1989, more than was spent on all antidepressants just two years earlier",
+      "page": 350,
+      "book_id": "rare-earths",
+      "topics": [
+        "prozac",
+        "depression",
+        "big-pharma"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000167",
@@ -34201,6 +36423,26 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000218",
+      "subject": "radon",
+      "also_about": [
+        "obscure_elements"
+      ],
+      "facet": "warning",
+      "question": "Is radon gas dangerous in the home?",
+      "answer_short": "Wallach says every isotope of radon is radioactive and it is carcinogenic and highly toxic when inhaled -- an odorless, colorless household hazard detectable only with a test kit.",
+      "answer": "Wallach notes that all isotopes of radon are radioactive (half-life 54 seconds to 3.8 days) and that radon is carcinogenic and highly toxic when inhaled — a common household hazard that is odorless and colorless, so detecting it requires a test kit (which are generally available).",
+      "verbatim": "Rn is carcinogenic and highly toxic when inhaled. Radon is a common household hazard, it is odorless and colorless; detection requires the use of a kit which are generally available.",
+      "page": 376,
+      "book_id": "rare-earths",
+      "topics": [
+        "radon",
+        "household-hazard",
+        "carcinogen",
+        "radioactive"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000240",
       "subject": "biotin",
       "also_about": [
@@ -34461,6 +36703,27 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000252",
+      "subject": "thallium",
+      "also_about": [
+        "mercury",
+        "cadmium"
+      ],
+      "facet": "warning",
+      "question": "is thallium toxic to humans?",
+      "answer_short": "Wallach notes thallium accumulates in the mammalian kidney and is highly toxic to mammals, including humans.",
+      "answer": "Wallach notes that thallium accumulates in the mammalian kidney and is highly toxic to mammals, including humans.",
+      "verbatim": "land animals at 0.4 ppm (accumulates in the mammalian kidney and is highly toxic to mammals including man).",
+      "page": 411,
+      "book_id": "rare-earths",
+      "topics": [
+        "toxic-metals",
+        "heavy-metals",
+        "poisoning",
+        "kidney"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000256",
       "subject": "vanadium",
       "also_about": [
@@ -34482,6 +36745,25 @@
           "vanadium"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-RARE-000258",
+      "subject": "xenon",
+      "also_about": [
+        "krypton",
+        "helium"
+      ],
+      "facet": "mechanism",
+      "question": "is xenon an anesthetic?",
+      "answer_short": "Wallach notes xenon binds to mammalian hemoglobin and myoglobin, producing an anesthetic effect.",
+      "answer": "Wallach notes that xenon binds to mammalian hemoglobin and myoglobin, producing an anesthetic effect.",
+      "verbatim": "Xenon binds to mammalian hemoglobin and myoglobin producing an anesthetic effect.",
+      "page": 413,
+      "book_id": "rare-earths",
+      "topics": [
+        "noble-gases",
+        "anesthesia"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000259",
@@ -34591,6 +36873,89 @@
       }
     },
     {
+      "id": "WAL-CLM-RARE-000271",
+      "subject": "soil-depletion",
+      "also_about": [
+        "essential_nutrients",
+        "minerals"
+      ],
+      "facet": "warning",
+      "question": "are fruits and vegetables less nutritious than they used to be?",
+      "answer_short": "Wallach quotes 1936 U.S. Senate Document 264: foods grown on mineral-depleted land are 'starving us,' no matter how much of them we eat.",
+      "answer": "Wallach quotes U.S. Senate Document 264 (1936): the alarming fact is that foods — fruits, vegetables, and grains — now raised on millions of acres of land that no longer contain enough of certain needed minerals are 'starving us,' no matter how much of them we eat.",
+      "verbatim": "“The alarming fact is that foods - fruits and vegetables and grains, now being raised on millions of acres of land that no longer contains enough of certain needed minerals, are starving us - no matter how much of them we eat! “",
+      "page": 42,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil-depletion",
+        "nutrient-decline",
+        "food-quality",
+        "senate-doc-264"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000272",
+      "subject": "soil-depletion",
+      "also_about": [
+        "essential_nutrients",
+        "minerals",
+        "supplement-dosing"
+      ],
+      "facet": "mechanism",
+      "question": "can you get all your minerals from eating fruits and vegetables?",
+      "answer_short": "Wallach quotes Senate Document 264: no one can eat enough fruits and vegetables to supply the mineral salts needed for perfect health -- the stomach isn't big enough to hold them.",
+      "answer": "Wallach quotes U.S. Senate Document 264 (1936): no person today can eat enough fruits and vegetables to supply the stomach with the mineral salts required for perfect health, because the stomach is not big enough to hold them.",
+      "verbatim": "“No man of today can eat enough fruits and vegetables to supply his stomach with the mineral salts he requires for perfect health, because his stomach isn’t big enough to hold them!”",
+      "page": 42,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil-depletion",
+        "supplementation",
+        "minerals",
+        "senate-doc-264"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000273",
+      "subject": "soil-depletion",
+      "also_about": [
+        "essential_nutrients",
+        "minerals"
+      ],
+      "facet": "warning",
+      "question": "how many Americans are mineral deficient?",
+      "answer_short": "Wallach quotes Senate Document 264: 99% of Americans are deficient in these minerals, and a marked deficiency in any one of the more important minerals actually results in disease.",
+      "answer": "Wallach quotes U.S. Senate Document 264 (1936): leading authorities report that 99% of the American people are deficient in these minerals, and that a marked deficiency in any one of the more important minerals actually results in disease — any considerable lack of an element, however microscopic the body's requirement, makes us sicken, suffer, and shorten our lives.",
+      "verbatim": "“It is bad news to learn from our leading authorities that 99 % of the American people are deficient in these minerals, and that a marked deficiency in any one of the more important minerals actually results in disease. Any upset of the balance, any considerable lack of one or another element, however microscopic the body requirement might be, and we sicken, suffer, and shorten our lives.”",
+      "page": 42,
+      "book_id": "rare-earths",
+      "topics": [
+        "mineral-deficiency",
+        "soil-depletion",
+        "senate-doc-264"
+      ]
+    },
+    {
+      "id": "WAL-CLM-RARE-000274",
+      "subject": "soil-depletion",
+      "also_about": [
+        "essential_nutrients",
+        "minerals"
+      ],
+      "facet": "history",
+      "question": "how much have soil minerals declined over the last 100 years?",
+      "answer_short": "Per the 1992 Rio Earth Summit report Wallach cites, soil minerals fell most in North America (85%), then Asia and South America (76%), Africa (74%), Europe (72%), and Australia (55%) over 100 years.",
+      "answer": "Wallach cites the June 1992 Rio Earth Summit Report on the decline of nutritional minerals in the world's farm and range soils over the last 100 years, by continent: North America (United States, Canada, Mexico) is the most depleted at 85%, followed by Asia and South America at 76%, Africa at 74%, Europe at 72%, and Australia at 55% — giving numerical weight to the 1936 U.S. Senate Document 264 warning.",
+      "verbatim": "Minerals\nContinent % Depleted over 100 years\nAfrica 74 %\nAsia 76 %\nAustralia 55 %\nEurope 72 %\nNorth America 85 %\nSouth America 76 %",
+      "page": 44,
+      "book_id": "rare-earths",
+      "topics": [
+        "soil-depletion",
+        "earth-summit-1992",
+        "mineral-decline"
+      ]
+    },
+    {
       "id": "WAL-CLM-RARE-000276",
       "subject": "drug_safety_elderly",
       "also_about": [
@@ -34611,7 +36976,16 @@
         "tranquilizers",
         "benzodiazepines",
         "falls-in-elderly"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium",
+          "lithium",
+          "chromium",
+          "vanadium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000277",
@@ -34634,7 +37008,16 @@
         "sleeping-pills",
         "barbiturates",
         "falls-in-elderly"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium",
+          "lithium",
+          "chromium",
+          "vanadium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000283",
@@ -34906,7 +37289,13 @@
         "vanadium",
         "mineral-deficiency",
         "pica"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000314",
@@ -36412,7 +38801,12 @@
         "crede",
         "ophthalmia neonatorum",
         "eye infection"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "conjunctivitis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000387",
@@ -36433,7 +38827,12 @@
         "melancholia",
         "mania",
         "moonstruck"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "epilepsy"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000388",
@@ -36455,7 +38854,14 @@
         "cystitis",
         "whooping cough",
         "shingles"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "tonsillitis",
+          "cystitis",
+          "shingles"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000389",
@@ -36495,7 +38901,12 @@
         "bjorn nordstrom",
         "karolinska institute",
         "alternative cancer therapy"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "cancer"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000391",

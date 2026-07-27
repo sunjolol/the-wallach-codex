@@ -61,13 +61,11 @@ def _by_kind(rel):
 def derive_indices(shards):
     """Map index-name -> index object, derived purely from the claim shards."""
     claims = _load_claims(shards)
-    # Tier-2 / "search-only" claims (the Ch7 modality survey: color/light/aromatherapy/
-    # faith-healing/etc.) feed ONLY the offline search feature -- never the operational
-    # 90-essentials indices below. Excluding them here keeps the conditions/symptoms/
-    # essentials tabs to Wallach's solid-cure doctrine; the structured conditions[]/
-    # symptoms[] stay on the claims for the search pills + a future manual tier-2 -> tier-1
-    # promotion review. See memory: search-vs-operational-index-separation.
-    claims = [c for c in claims if "search-only" not in c.get("tags", [])]
+    # 2026-07-27 (Luneth): the "search-only" tier-2 exclusion was REMOVED ENTIRELY. Search is
+    # not a separate silo -- it pulls from the same three homes as every tab (essentials,
+    # conditions, explore). So every claim with an operational essentials[]/conditions[]/
+    # symptoms[] mapping feeds these indices (which drive "The Full Record" on each page);
+    # the enriched subset is layered on top as "Worth Knowing". No claim is hidden by a tag.
     canon = json.loads(CANON_PATH.read_text(encoding="utf-8"))["essentials"]
 
     # ---- essentials index: all 90 canon slugs, in canon order ----

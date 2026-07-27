@@ -157,7 +157,11 @@
   },
   "WAL-CLM-DDDL-000099": {
    "subject": "eggs",
-   "also_about": [],
+   "also_about": [
+    "memory_loss",
+    "alzheimers",
+    "cholesterol"
+   ],
    "facet": "protocol",
    "question": "How does Wallach say to cook eggs, and how much red meat, for Alzheimer's?",
    "answer_short": "Soft-scrambled (not fried) eggs every day and 72 oz of red meat each month, to replace cholesterol needed to rebuild myelin.",
@@ -1960,7 +1964,8 @@
   "WAL-CLM-IMMORT-000034": {
    "subject": "aluminum",
    "also_about": [
-    "alzheimers"
+    "alzheimers",
+    "memory_loss"
    ],
    "facet": "big_question",
    "question": "Does aluminum cause Alzheimer's disease?",
@@ -3747,7 +3752,8 @@
    "subject": "free_radicals",
    "also_about": [
     "orac",
-    "antioxidants"
+    "antioxidants",
+    "memory_loss"
    ],
    "facet": "physiology",
    "question": "What do free radicals actually do to your body?",
@@ -3778,7 +3784,8 @@
   "WAL-CLM-IMMORT-000245": {
    "subject": "free_radicals",
    "also_about": [
-    "orac"
+    "orac",
+    "memory_loss"
    ],
    "facet": "warning",
    "question": "Are age spots a warning sign of something worse?",
@@ -6099,7 +6106,8 @@
    "also_about": [
     "dementia",
     "cerebrovascular_disease",
-    "vitamin-b1"
+    "vitamin-b1",
+    "memory_loss"
    ],
    "facet": "warning",
    "question": "Can a magnesium deficiency cause memory loss or dementia?",
@@ -8049,7 +8057,8 @@
    "subject": "omega-3",
    "also_about": [
     "dementia",
-    "alzheimers"
+    "alzheimers",
+    "memory_loss"
    ],
    "facet": "history",
    "question": "Does omega-3 help prevent dementia or Alzheimer's?",
@@ -8090,7 +8099,9 @@
   "WAL-CLM-HELLS-000025": {
    "subject": "vitamin-c",
    "also_about": [
-    "vitamin-e"
+    "vitamin-e",
+    "alzheimers",
+    "memory_loss"
    ],
    "facet": "uses",
    "question": "Can vitamin C help prevent Alzheimer's disease?",
@@ -9156,7 +9167,8 @@
    "subject": "vitamin-b1",
    "also_about": [
     "alcoholism",
-    "korsakoff"
+    "korsakoff",
+    "memory_loss"
    ],
    "facet": "physiology",
    "question": "What causes Korsakoff's syndrome?",
@@ -9655,7 +9667,8 @@
    "subject": "vitamin-b1",
    "also_about": [
     "dementia",
-    "korsakoff"
+    "korsakoff",
+    "memory_loss"
    ],
    "facet": "uses",
    "question": "Can vitamin B1 reverse memory loss or dementia?",
@@ -10269,7 +10282,8 @@
    "also_about": [
     "selenium",
     "alzheimers",
-    "cardiomyopathy"
+    "cardiomyopathy",
+    "memory_loss"
    ],
    "facet": "physiology",
    "question": "What does vitamin E do for the body?",
@@ -10297,7 +10311,8 @@
   "WAL-CLM-EPIGEN-000282": {
    "subject": "vitamin-e",
    "also_about": [
-    "alzheimers"
+    "alzheimers",
+    "memory_loss"
    ],
    "facet": "big_question",
    "question": "Why does Wallach say Alzheimer's disease isn't genetic?",
@@ -10662,7 +10677,8 @@
    "subject": "vitamin-e",
    "also_about": [
     "alzheimers",
-    "dementia"
+    "dementia",
+    "memory_loss"
    ],
    "facet": "uses",
    "question": "Does vitamin E help with Alzheimer's disease?",
@@ -12238,7 +12254,10 @@
   },
   "WAL-CLM-DDDL-000217": {
    "subject": "choline",
-   "also_about": [],
+   "also_about": [
+    "memory_loss",
+    "alzheimers"
+   ],
    "facet": "sources",
    "question": "Is phosphatidylcholine better than lecithin?",
    "answer_short": "Wallach says lecithin is useful but phosphatidyl choline is the more efficient form of choline.",
@@ -12909,7 +12928,8 @@
   "WAL-CLM-EPIGEN-000044": {
    "subject": "choline",
    "also_about": [
-    "dementia"
+    "dementia",
+    "memory_loss"
    ],
    "facet": "warning",
    "question": "What are the signs of choline deficiency?",
@@ -13203,7 +13223,10 @@
   },
   "WAL-CLM-DDDL-000232": {
    "subject": "germanium",
-   "also_about": [],
+   "also_about": [
+    "memory_loss",
+    "alzheimers"
+   ],
    "facet": "protocol",
    "question": "How is germanium used to treat Alzheimer's disease?",
    "answer_short": "Wallach's Alzheimer's protocol includes germanium IM (5 ml of standard solution every other day for 24 days), then oral germanium at 150 mg twice a day.",
@@ -17720,7 +17743,8 @@
   "WAL-CLM-EPIGEN-000404": {
    "subject": "aluminum",
    "also_about": [
-    "alzheimers"
+    "alzheimers",
+    "memory_loss"
    ],
    "facet": "uses",
    "question": "Is aluminum cookware and deodorant safe?",
@@ -21230,7 +21254,8 @@
   "WAL-CLM-DDDL-000288": {
    "subject": "korsakoff",
    "also_about": [
-    "vitamin-b1"
+    "vitamin-b1",
+    "memory_loss"
    ],
    "facet": "basics",
    "question": "What is Korsakoff's syndrome?",
@@ -21312,7 +21337,8 @@
   "WAL-CLM-EPIGEN-000014": {
    "subject": "korsakoff",
    "also_about": [
-    "vitamin-b1"
+    "vitamin-b1",
+    "memory_loss"
    ],
    "facet": "protocol",
    "question": "Can Korsakoff's syndrome be reversed?",
@@ -21328,7 +21354,8 @@
   "WAL-CLM-EPIGEN-000015": {
    "subject": "korsakoff",
    "also_about": [
-    "selenium"
+    "selenium",
+    "memory_loss"
    ],
    "facet": "basics",
    "question": "What is Wernicke-Korsakoff syndrome?",
@@ -21344,7 +21371,8 @@
   "WAL-CLM-LETS-000333": {
    "subject": "korsakoff",
    "also_about": [
-    "vitamin-b1"
+    "vitamin-b1",
+    "memory_loss"
    ],
    "facet": "protocol",
    "question": "How does Wallach treat Korsakoff's syndrome?",
@@ -21410,7 +21438,9 @@
   },
   "WAL-CLM-DDDL-000293": {
    "subject": "korsakoff",
-   "also_about": [],
+   "also_about": [
+    "memory_loss"
+   ],
    "facet": "uses",
    "question": "Has Wallach's memory-loss treatment actually restored anyone's memory?",
    "answer_short": "Yes — Wallach cites his multi-drug Korsakoff protocol (nootropics like centrophenoxine and piracetam, plus IV chelation, vitamin B1, lecithin and chromium/vanadium) as the exact program used to restore the memory of Princess Diana's bodyguard.",
@@ -21425,7 +21455,8 @@
   "WAL-CLM-EPIGEN-000453": {
    "subject": "korsakoff",
    "also_about": [
-    "vitamin-b1"
+    "vitamin-b1",
+    "memory_loss"
    ],
    "facet": "etymology",
    "question": "Why does Wallach call Korsakoff's syndrome 'cerebral beriberi'?",
@@ -21436,6 +21467,1105 @@
     "thiamine",
     "brain lesions",
     "dementia"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000012": {
+   "subject": "memory_loss",
+   "also_about": [
+    "korsakoff",
+    "alzheimers",
+    "dementia"
+   ],
+   "facet": "basics",
+   "question": "What are the different types of dementia?",
+   "answer_short": "Wallach frames dementia as at least four separate nutritional diseases -- vascular dementia, Korsakoff's syndrome, Wernicke-Korsakoff's syndrome, and Alzheimer's -- and says a person can have some degree of two, three, or all four at the same time.",
+   "topics": [
+    "dementia",
+    "memory loss",
+    "types of dementia",
+    "brain health",
+    "aging"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000013": {
+   "subject": "memory_loss",
+   "also_about": [
+    "dementia",
+    "antioxidants"
+   ],
+   "facet": "mechanism",
+   "question": "What is vascular dementia and what causes it?",
+   "answer_short": "Vascular dementia is Wallach's first dementia: the brain's arteries get obstructed by atherosclerosis from the same inflammation that clogs the heart, eye, and kidney arteries -- low antioxidants plus fried foods, processed meats, oils, and gluten.",
+   "topics": [
+    "vascular dementia",
+    "dementia",
+    "arteriosclerosis",
+    "brain health",
+    "inflammation"
+   ]
+  },
+  "WAL-CLM-LETS-000243": {
+   "subject": "memory_loss",
+   "also_about": [
+    "dementia",
+    "vitamin-b1",
+    "choline",
+    "magnesium",
+    "zinc"
+   ],
+   "facet": "protocol",
+   "question": "What is Wallach's treatment for dementia?",
+   "answer_short": "Wallach treats dementia as reversible, not inevitable aging: B-vitamins (B1, B3, B6, folic acid), choline and lecithin, vitamins C and E, copper, magnesium, and zinc, plus the memory drugs hydergine, vasopressin, centrophenoxine, and piracetam -- after ruling out food allergies and hypoglycemia.",
+   "topics": [
+    "dementia",
+    "memory loss",
+    "treatment",
+    "supplements",
+    "brain health"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000016": {
+   "subject": "alzheimers",
+   "also_about": [
+    "memory_loss",
+    "dementia",
+    "cholesterol",
+    "omega-3"
+   ],
+   "facet": "protocol",
+   "question": "Can Alzheimer's disease be prevented?",
+   "answer_short": "Yes -- Wallach cites a Johns Hopkins 10-year study (published 2004) of nearly 5,000 people over 65 showing a special diet, avoiding certain foods, and nutrient supplementation cut Alzheimer's risk by 78%. He calls Alzheimer's a physician-caused disease driven by low-cholesterol diets, statin drugs, and being told to avoid supplements.",
+   "topics": [
+    "alzheimers",
+    "dementia",
+    "memory-loss",
+    "prevention",
+    "statins",
+    "brain-health"
+   ]
+  },
+  "WAL-CLM-LETS-000130": {
+   "subject": "alzheimers",
+   "also_about": [
+    "memory_loss",
+    "germanium",
+    "choline",
+    "vitamin-e"
+   ],
+   "facet": "protocol",
+   "question": "What is Wallach's full treatment protocol for Alzheimer's disease?",
+   "answer_short": "Wallach's Alzheimer's regimen: germanium (5 ml injected every other day for 24 days, then 150 mg oral twice daily), hydergine 6-12 mg/day, piracetam/choline 1.6 g four times a day, vasopressin nasal spray, centrophenoxine, lecithin 2,500 mg three times a day, the baseline 90 nutrients with colloidal minerals, betaine HCl and pancreatic enzymes, oral and IV hydrogen peroxide, vitamin B-1 200 mg three times a day, vitamin E 1,200 IU/day, and IV chelation.",
+   "topics": [
+    "alzheimers",
+    "dementia",
+    "memory-loss",
+    "protocol",
+    "germanium",
+    "brain-health"
+   ]
+  },
+  "WAL-CLM-LETS-000356": {
+   "subject": "memory_loss",
+   "also_about": [
+    "korsakoff"
+   ],
+   "facet": "protocol",
+   "question": "How does Wallach treat memory loss (senile dementia, Korsakoff's, Alzheimer's)?",
+   "answer_short": "First rule out food allergies (pulse test) and hypoglycemia (six-hour glucose tolerance test); then avoid the offending foods, sugar and alcohol, and add chromium, selenium, vitamin E, B-complex, plus the nootropics vasopressin nasal spray, centrophenoxine, piracetam (with choline) and hydergine.",
+   "topics": [
+    "memory loss",
+    "dementia",
+    "food allergies",
+    "hypoglycemia",
+    "treatment",
+    "alzheimers"
+   ]
+  },
+  "WAL-CLM-DDDL-000294": {
+   "subject": "memory_loss",
+   "also_about": [
+    "dementia",
+    "alzheimers",
+    "korsakoff",
+    "chromium",
+    "vanadium"
+   ],
+   "facet": "protocol",
+   "question": "What causes memory loss, and how does Wallach treat it?",
+   "answer_short": "Wallach says memory loss has many causes, not one -- so check each, including food allergies and low blood sugar -- then treats it by cutting allergens/sugar/fried food/margarine/alcohol and adding chromium, vanadium, selenium, vitamin E, B-complex, and the memory agents Diapid, Lucidril, Dinagen (with choline), and hydergine.",
+   "topics": [
+    "memory loss",
+    "dementia",
+    "brain health",
+    "supplements",
+    "food allergies"
+   ]
+  },
+  "WAL-CLM-DDDL-000295": {
+   "subject": "memory_loss",
+   "also_about": [
+    "dementia",
+    "magnesium",
+    "vitamin-d"
+   ],
+   "facet": "mechanism",
+   "question": "What causes senile dementia?",
+   "answer_short": "Wallach ties senile dementia to cerebrovascular disease: the brain's main artery hardens and starves the brain of oxygen -- and he blames cholesterol-linked and (in his view) vitamin-D-driven arterial scarring plus magnesium-deficiency 'malignant calcification.'",
+   "topics": [
+    "senile dementia",
+    "cerebrovascular disease",
+    "memory loss",
+    "arteries",
+    "brain health"
+   ]
+  },
+  "WAL-CLM-DDDL-000296": {
+   "subject": "alzheimers",
+   "also_about": [
+    "memory_loss",
+    "cholesterol"
+   ],
+   "facet": "basics",
+   "question": "What is Alzheimer's disease and what causes it, according to Wallach?",
+   "answer_short": "Wallach defines Alzheimer's as a physician-caused disease of progressive memory loss, first identified in 1979, caused by a cholesterol and fat deficiency -- and in his view not genetic.",
+   "topics": [
+    "alzheimers",
+    "memory-loss",
+    "dementia",
+    "brain-health",
+    "what-is-alzheimers",
+    "causes"
+   ]
+  },
+  "WAL-CLM-DDDL-000001": {
+   "subject": "iatrogenic-medicine",
+   "also_about": [
+    "hospital_dangers",
+    "wallach"
+   ],
+   "facet": "history",
+   "question": "what is the average lifespan of doctors?",
+   "answer_short": "Wallach cites an 1895 Journal of the American Medical Association report that put doctors' own average lifespan at just 55 years.",
+   "topics": [
+    "conventional-medicine",
+    "doctors",
+    "iatrogenic"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000001": {
+   "subject": "essential_nutrients",
+   "also_about": [
+    "minerals",
+    "vitamins",
+    "amino_acids",
+    "epigenetics"
+   ],
+   "facet": "mechanism",
+   "question": "what are the 90 essential nutrients?",
+   "answer_short": "Wallach's cornerstone: DNA must have constant access to all 90 essentials -- 60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids -- each in optimal amounts and proper ratios, because genes need nutrient-supplied energy, raw materials and on/off cofactors.",
+   "topics": [
+    "nutrition",
+    "genes",
+    "epigenetics",
+    "90-essentials"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000071": {
+   "subject": "bismuth",
+   "also_about": [
+    "digestion"
+   ],
+   "facet": "uses",
+   "question": "what is bismuth used for?",
+   "answer_short": "Bismuth subsalicylate is the antidiarrheal active ingredient in Pepto-Bismol; combined with tetracycline it was FDA-approved in 1994 to cure H. pylori gastric ulcers -- the bacterial cause Marshall and Warren proposed in 1983.",
+   "topics": [
+    "digestion",
+    "ulcers",
+    "medicine"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000082": {
+   "subject": "fluoride",
+   "also_about": [
+    "water"
+   ],
+   "facet": "warning",
+   "question": "does fluoride in drinking water cause cancer?",
+   "answer_short": "Wallach accepts fluoride as an essential trace mineral (proven 1972) yet ties water fluoridation to cancer: a 1990 National Toxicology Program study found oral squamous-cell carcinoma, a rare osteosarcoma, and thyroid and liver tumors in fluoride-fed rats.",
+   "topics": [
+    "water",
+    "cancer",
+    "fluoride"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000089": {
+   "subject": "colloidal_minerals",
+   "also_about": [
+    "minerals",
+    "rare_earth_elements",
+    "essential_nutrients"
+   ],
+   "facet": "protocol",
+   "question": "how much colloidal minerals should I take?",
+   "answer_short": "In Epigenetics Wallach recommends liquid plant-derived colloidal minerals at one ounce per 100 pounds of body weight per day, listing a parts-per-million profile that spans rare-earth, trace and bulk minerals.",
+   "topics": [
+    "supplements",
+    "dosing",
+    "colloidal-minerals"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000091": {
+   "subject": "mercury",
+   "also_about": [
+    "fish",
+    "tuna",
+    "detox"
+   ],
+   "facet": "warning",
+   "question": "is mercury in fish dangerous?",
+   "answer_short": "Methyl mercury from fish (highest in shark, tuna and swordfish) crosses the placenta and is chiefly neurotoxic -- tremors, depression, loss of coordination -- and Wallach notes selenium is mutually antagonistic, protecting against it.",
+   "topics": [
+    "heavy-metals",
+    "toxicity",
+    "fish",
+    "fillings"
+   ]
+  },
+  "WAL-CLM-IMMORT-000263": {
+   "subject": "orac",
+   "also_about": [
+    "longevity",
+    "antioxidants",
+    "free_radicals"
+   ],
+   "facet": "sources",
+   "question": "which foods have the highest ORAC antioxidant score?",
+   "answer_short": "On Wallach's centenarian-foods ORAC table the pecan tops all nuts at 17,940, ahead of raspberry 6,058, strawberry 5,938 and Red Delicious apple 5,900.",
+   "topics": [
+    "antioxidants",
+    "foods",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000264": {
+   "subject": "orac",
+   "also_about": [
+    "antioxidants",
+    "longevity"
+   ],
+   "facet": "sources",
+   "question": "which juices and nuts have the highest ORAC antioxidant values?",
+   "answer_short": "On Wallach's ORAC table blueberry juice leads the juices at 9,019 with prune juice at 7,291; hazelnuts reach 9,275 among nuts and raw lentils score 7,282.",
+   "topics": [
+    "antioxidants",
+    "foods",
+    "juices"
+   ]
+  },
+  "WAL-CLM-RARE-000001": {
+   "subject": "minerals",
+   "also_about": [
+    "essential_nutrients",
+    "colloidal_minerals"
+   ],
+   "facet": "stance",
+   "question": "why does Wallach say minerals are the most important nutrients?",
+   "answer_short": "Wallach calls minerals 'the currency of life' -- the body's basic functions depend on them -- and argues the medical profession ignores this truth to a point past the absurd.",
+   "topics": [
+    "minerals",
+    "nutrition"
+   ]
+  },
+  "WAL-CLM-RARE-000002": {
+   "subject": "minerals",
+   "also_about": [
+    "essential_nutrients",
+    "vitamins"
+   ],
+   "facet": "mechanism",
+   "question": "what do minerals do in the body?",
+   "answer_short": "Wallach holds that no basic life function can run without minerals -- either as a major part of the function or as a catalytic cofactor for RNA, DNA, sub-cellular and digestive enzymes, and the utilization of vitamins.",
+   "topics": [
+    "minerals",
+    "enzymes",
+    "cofactors"
+   ]
+  },
+  "WAL-CLM-RARE-000005": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals",
+    "essential_nutrients",
+    "rare_earth_elements"
+   ],
+   "facet": "basics",
+   "question": "are the world's soils depleted of minerals?",
+   "answer_short": "Wallach cites U.S. Senate Document 264 (1936) and the 1992 Rio Earth Summit report to argue the world's farm and range soils are 'anemic' -- soils that should hold 60 elements now have few or none.",
+   "topics": [
+    "soil",
+    "farming",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-RARE-000006": {
+   "subject": "longevity",
+   "also_about": [
+    "genetic-potential",
+    "minerals",
+    "essential_nutrients"
+   ],
+   "facet": "big_question",
+   "question": "how long can humans actually live?",
+   "answer_short": "Wallach puts the human genetic potential for longevity at 120 to 140 years -- the US average lifespan falls as much as 50% short of it.",
+   "topics": [
+    "longevity",
+    "aging",
+    "lifespan"
+   ]
+  },
+  "WAL-CLM-RARE-000007": {
+   "subject": "longevity",
+   "also_about": [
+    "minerals",
+    "essential_nutrients"
+   ],
+   "facet": "mechanism",
+   "question": "does calorie restriction make you live longer?",
+   "answer_short": "Wallach argues the extended rat lifespans in calorie-restriction studies came not from fewer calories but from the higher concentration of minerals per calorie in the diet.",
+   "topics": [
+    "longevity",
+    "calorie-restriction",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-RARE-000009": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals",
+    "essential_nutrients"
+   ],
+   "facet": "stance",
+   "question": "Is the Earth running out of the minerals life needs?",
+   "answer_short": "Wallach frames Earth as a finite, limited resource for the raw-material elements that underlie all plant, animal and human life.",
+   "topics": [
+    "soil",
+    "minerals",
+    "environment"
+   ]
+  },
+  "WAL-CLM-RARE-000017": {
+   "subject": "genetic-potential",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "basics",
+   "question": "What is the maximum lifespan a human is capable of?",
+   "answer_short": "Every species has a longevity ceiling — Wallach lists mice 700 days, dogs 23 yrs, horses 32, elephants 45, chimps 52, and humans 145 years.",
+   "topics": [
+    "longevity",
+    "lifespan",
+    "aging"
+   ]
+  },
+  "WAL-CLM-RARE-000018": {
+   "subject": "longevity",
+   "also_about": [
+    "essential_nutrients",
+    "genetic-potential"
+   ],
+   "facet": "protocol",
+   "question": "How do you live to 145 according to Wallach?",
+   "answer_short": "Reaching the 145-year potential requires consuming each of the 90 essential nutrients in optimal amounts every single day.",
+   "topics": [
+    "longevity",
+    "supplements",
+    "90 nutrients"
+   ]
+  },
+  "WAL-CLM-RARE-000019": {
+   "subject": "longevity",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "history",
+   "question": "How fast is the human population doubling?",
+   "answer_short": "Doubling time collapsed from 100,000 years before history to 700 after farming to just 35–40 years today — intensifying competition for the body's raw materials.",
+   "topics": [
+    "population",
+    "environment",
+    "raw materials"
+   ]
+  },
+  "WAL-CLM-RARE-000020": {
+   "subject": "longevity",
+   "also_about": [
+    "genetic-potential"
+   ],
+   "facet": "stance",
+   "question": "How does the American lifespan compare to human potential?",
+   "answer_short": "The 75.5-year US average is only 62% of the 120–140-year genetic potential and ranks just 17th among industrialized nations.",
+   "topics": [
+    "longevity",
+    "lifespan"
+   ]
+  },
+  "WAL-CLM-RARE-000021": {
+   "subject": "longevity",
+   "also_about": [
+    "macrobiotics",
+    "genetic-potential"
+   ],
+   "facet": "stance",
+   "question": "Do vegetarianism, yoga and meditation make you live longer?",
+   "answer_short": "Wallach says vegetarianism, macrobiotics, biofeedback, meditation, exercise, yoga and free medical care haven't pushed US lifespan past 75.5 years — 62% of potential.",
+   "topics": [
+    "longevity",
+    "diet",
+    "lifestyle"
+   ]
+  },
+  "WAL-CLM-RARE-000022": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "essential_nutrients",
+    "minerals"
+   ],
+   "facet": "stance",
+   "question": "Can you get all your nutrients from food alone?",
+   "answer_short": "The full set of 90 essential nutrients is no longer reliably in food — either absent or so variable that getting them from food alone is a gamble.",
+   "topics": [
+    "diet",
+    "supplements",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-RARE-000023": {
+   "subject": "genetic-potential",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "mechanism",
+   "question": "Can your genes work without minerals?",
+   "answer_short": "Genetic potential is useless without mineral raw materials — Wallach likens engineered flesh with no minerals to running a Mercedes with no oil or coolant.",
+   "topics": [
+    "genetics",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-RARE-000025": {
+   "subject": "minerals",
+   "also_about": [
+    "colloidal_minerals"
+   ],
+   "facet": "history",
+   "question": "Have humans always taken mineral supplements?",
+   "answer_short": "Wallach calls mineral supplementation a necessity of life — since before recorded history humans craved minerals as clays, salts, animal tissue and colloidal-rich plants.",
+   "topics": [
+    "minerals",
+    "supplements",
+    "history"
+   ]
+  },
+  "WAL-CLM-RARE-000028": {
+   "subject": "minerals",
+   "also_about": [
+    "essential_nutrients"
+   ],
+   "facet": "basics",
+   "question": "How many minerals does the human body actually need?",
+   "answer_short": "Of 75 metals on the periodic chart — all found in human body fluids — at least 60 have physiological value, and no bodily function happens without a mineral cofactor.",
+   "topics": [
+    "minerals",
+    "biology",
+    "cofactors"
+   ]
+  },
+  "WAL-CLM-RARE-000030": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "mechanism",
+   "question": "Why are our soils depleted of minerals?",
+   "answer_short": "Wallach calls Earth's soils 'anemic' — mining, deforestation, farming, irrigation and acid rain have shifted, eroded and leached minerals from once-rich land.",
+   "topics": [
+    "soil",
+    "farming",
+    "environment"
+   ]
+  },
+  "WAL-CLM-RARE-000031": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "stance",
+   "question": "Can we just put the minerals back into the soil?",
+   "answer_short": "Remineralizing farmland is technically possible but economically impossible — Wallach says it would mean grinding up a Mauna Loa yearly, pushing beef to $275/lb and corn to $35 an ear.",
+   "topics": [
+    "soil",
+    "farming",
+    "economics"
+   ]
+  },
+  "WAL-CLM-RARE-000032": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "mechanism",
+   "question": "Are minerals spread evenly through farm soil?",
+   "answer_short": "Minerals aren't a uniform blanket in cropland but occur in veins — like chocolate swirls in ripple ice cream — so relying on food alone for them is a gamble.",
+   "topics": [
+    "soil",
+    "farming",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-RARE-000033": {
+   "subject": "minerals",
+   "also_about": [
+    "vitamins",
+    "soil-depletion"
+   ],
+   "facet": "stance",
+   "question": "Are minerals or vitamins more important?",
+   "answer_short": "Wallach ranks minerals as more fundamental: the body can make some use of minerals without vitamins, but lacking minerals, vitamins are useless.",
+   "topics": [
+    "minerals",
+    "vitamins",
+    "senate-doc-264"
+   ]
+  },
+  "WAL-CLM-RARE-000034": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "mechanism",
+   "question": "Does modern fertilizer deplete the minerals in soil?",
+   "answer_short": "NPK fertilizer replaces only nitrogen, phosphorus and potassium, so cropping 'mines' out the soil's other minerals within 5 to 10 years, and irrigation speeds the leaching.",
+   "topics": [
+    "soil-depletion",
+    "farming",
+    "fertilizer"
+   ]
+  },
+  "WAL-CLM-RARE-000052": {
+   "subject": "genetic-potential",
+   "also_about": [
+    "minerals",
+    "essential_nutrients"
+   ],
+   "facet": "physiology",
+   "question": "How tall are humans genetically meant to be?",
+   "answer_short": "Wallach puts human genetic potential for height near seven feet -- against an average American male of 5'8\" and female 5'4\" -- blaming nutrition, not genetics, for the gap.",
+   "topics": [
+    "genetic-potential",
+    "height",
+    "growth"
+   ]
+  },
+  "WAL-CLM-RARE-000053": {
+   "subject": "genetic-potential",
+   "also_about": [
+    "essential_nutrients",
+    "minerals"
+   ],
+   "facet": "discovery",
+   "question": "What did Wallach's duckling experiment show?",
+   "answer_short": "Of 100 ducklings split into four diets, only the two groups fed pellets containing all known nutrients came close to their genetic growth potential at one month; the lettuce- and barley-only groups grew almost not at all.",
+   "topics": [
+    "genetic-potential",
+    "complete-nutrition",
+    "experiment"
+   ]
+  },
+  "WAL-CLM-RARE-000054": {
+   "subject": "minerals",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "uses",
+   "question": "Do mineral supplements improve athletic performance?",
+   "answer_short": "In a marathon comparison Wallach cites, runners on a broad mineral supplement (plus a 72-mineral clay) improved their race time by 16:57 after six months of training, versus only 5:27 for the unsupplemented group.",
+   "topics": [
+    "minerals",
+    "athletic-performance",
+    "marathon",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-RARE-000056": {
+   "subject": "centenarian-cultures",
+   "also_about": [
+    "minerals",
+    "longevity"
+   ],
+   "facet": "mechanism",
+   "question": "What do the world's longest-lived cultures eat?",
+   "answer_short": "Wallach says the healthiest, longest-lived cultures consistently consume 60 to 72 minerals with every meal, generation after generation -- the basis of their drug-free, disease-free longevity.",
+   "topics": [
+    "centenarian-cultures",
+    "longevity",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-RARE-000057": {
+   "subject": "longevity",
+   "also_about": [
+    "essential_nutrients",
+    "genetic-potential",
+    "iatrogenic-medicine"
+   ],
+   "facet": "protocol",
+   "question": "How do you reach your maximum lifespan?",
+   "answer_short": "Wallach frames it as two moves: avoid the 'land mines' (predators, accidents, smoking, excess alcohol, illegal and prescription drugs, chemicals and toxins, even going to the doctor) and take in each of the 90 essential nutrients in optimal amounts daily.",
+   "topics": [
+    "longevity",
+    "prevention",
+    "90-nutrients"
+   ]
+  },
+  "WAL-CLM-RARE-000060": {
+   "subject": "centenarian-cultures",
+   "also_about": [
+    "minerals",
+    "longevity"
+   ],
+   "facet": "basics",
+   "question": "What do people in long-lived cultures die of?",
+   "answer_short": "Wallach says centenarians in the long-lived cultures don't get the West's degenerative diseases (which he blames on mineral deficiency) -- when they die it is usually of hypothermia in the cold high-altitude winter.",
+   "topics": [
+    "centenarian-cultures",
+    "longevity",
+    "degenerative-disease"
+   ]
+  },
+  "WAL-CLM-RARE-000063": {
+   "subject": "longevity",
+   "also_about": [
+    "minerals",
+    "centenarian-cultures"
+   ],
+   "facet": "discovery",
+   "question": "Can micronutrients extend maximum lifespan?",
+   "answer_short": "Wallach cites Roy Walford's UCLA lab extending the maximum lifespan of fish by 300% by maximizing the micronutrients fed to them and lowering the water temperature a few degrees.",
+   "topics": [
+    "longevity",
+    "micronutrients",
+    "lifespan-extension"
+   ]
+  },
+  "WAL-CLM-RARE-000064": {
+   "subject": "iatrogenic-medicine",
+   "also_about": [
+    "hospital_dangers"
+   ],
+   "facet": "warning",
+   "question": "How many people die from medical errors in hospitals?",
+   "answer_short": "Wallach cites a 1991 Harvard study finding 1.3 million injuries and 198,000 deaths a year in US hospitals from doctor-caused (iatrogenic) mishaps -- 4 to 5 times the highway toll, with 7 of 10 judged avoidable and about a third due to negligence.",
+   "topics": [
+    "iatrogenic",
+    "hospital-safety",
+    "medical-errors"
+   ]
+  },
+  "WAL-CLM-RARE-000065": {
+   "subject": "iatrogenic-medicine",
+   "also_about": [
+    "hospital_dangers"
+   ],
+   "facet": "warning",
+   "question": "Are you safer in a hospital or a war zone?",
+   "answer_short": "Wallach cites Dr. Sidney Wolfe's estimate of 300,000 US hospital-negligence deaths a year (he calls it conservative and suspects it could be double) -- set against 56,000 US troops lost over the entire 10-year Vietnam War.",
+   "topics": [
+    "iatrogenic",
+    "hospital-safety",
+    "medical-negligence"
+   ]
+  },
+  "WAL-CLM-RARE-000066": {
+   "subject": "drug_safety_elderly",
+   "also_about": [
+    "iatrogenic-medicine"
+   ],
+   "facet": "warning",
+   "question": "Is it dangerous for elderly people to take many medications at once?",
+   "answer_short": "Wallach warns 'poly-pharmacy' -- inappropriate or multiple prescriptions -- endangers 25% or more of Americans over 65 living at home, with many drugs prescribed only to counteract the side effects of an earlier drug.",
+   "topics": [
+    "poly-pharmacy",
+    "elderly",
+    "prescription-drugs"
+   ]
+  },
+  "WAL-CLM-RARE-000067": {
+   "subject": "iatrogenic-medicine",
+   "also_about": [
+    "drug_safety_elderly",
+    "wallach"
+   ],
+   "facet": "warning",
+   "question": "Do doctors prescribe the wrong drugs to seniors?",
+   "answer_short": "Wallach cites a 1994 survey in which 70% of doctors flunked a quiz on prescribing to seniors, and reports they incorrectly prescribe drugs to 25% of American senior citizens.",
+   "topics": [
+    "seniors",
+    "prescription-errors",
+    "doctors"
+   ]
+  },
+  "WAL-CLM-RARE-000068": {
+   "subject": "drug_safety_elderly",
+   "also_about": [
+    "iatrogenic-medicine"
+   ],
+   "facet": "warning",
+   "question": "What drugs should elderly people never take?",
+   "answer_short": "An expert panel flagged 20 drugs that should never be given to the elderly -- yet Wallach says they are still prescribed to more than 6.6 million seniors a year, often several at once.",
+   "topics": [
+    "seniors",
+    "medications-to-avoid",
+    "poly-pharmacy"
+   ]
+  },
+  "WAL-CLM-RARE-000075": {
+   "subject": "rda-critique",
+   "also_about": [
+    "minerals",
+    "essential_nutrients"
+   ],
+   "facet": "stance",
+   "question": "Are RDAs enough if you're sick?",
+   "answer_short": "Wallach says the RDA was set only to meet the needs of 'practically all healthy people' and does not apply to anyone with health challenges or a full-blown disease.",
+   "topics": [
+    "rda",
+    "supplements",
+    "nutrition-standards"
+   ]
+  },
+  "WAL-CLM-RARE-000076": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "history",
+   "question": "Did old foods have more minerals than today's?",
+   "answer_short": "Wallach cites 3,000-year-old Japanese temple-monk bones holding a wider spectrum and greater amount of minerals than the bones of modern-day Japanese.",
+   "topics": [
+    "mineral-depletion",
+    "food-quality",
+    "history"
+   ]
+  },
+  "WAL-CLM-RARE-000078": {
+   "subject": "minerals",
+   "also_about": [
+    "hair-analysis",
+    "essential_nutrients"
+   ],
+   "facet": "mechanism",
+   "question": "Can a mineral deficiency be reversed?",
+   "answer_short": "Wallach says most trace-mineral deficiencies go undiagnosed, but simply replacing the missing element can bring results in 48 hours to 30 days -- unless permanent damage has already set in.",
+   "topics": [
+    "mineral-deficiency",
+    "reversible",
+    "treatment"
+   ]
+  },
+  "WAL-CLM-RARE-000080": {
+   "subject": "hair-analysis",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "basics",
+   "question": "What is a hair mineral analysis?",
+   "answer_short": "A hair analysis reads non-perishable tissue minerals to record months of mineral status; hair holds trace minerals and rare earths at 200 times blood levels, where reserves mask a deficiency.",
+   "topics": [
+    "diagnostic-test",
+    "mineral-deficiency",
+    "hair"
+   ]
+  },
+  "WAL-CLM-RARE-000085": {
+   "subject": "lead",
+   "also_about": [
+    "mercury"
+   ],
+   "facet": "warning",
+   "question": "How common is lead poisoning in America?",
+   "answer_short": "Wallach reports over 400,000 tons of industrial lead enter the American biosphere every year, insidiously poisoning more than 38 million Americans annually.",
+   "topics": [
+    "lead-poisoning",
+    "toxic-metals",
+    "environment"
+   ]
+  },
+  "WAL-CLM-RARE-000089": {
+   "subject": "minerals",
+   "also_about": [
+    "essential_nutrients",
+    "colloidal_minerals"
+   ],
+   "facet": "basics",
+   "question": "How many minerals does the body actually need?",
+   "answer_short": "Some 79 minerals have been detected in human and animal tissue, and thousands of studies document at least 60 as essential cofactors for DNA, RNA, enzymes, or vitamin utilization.",
+   "topics": [
+    "essential-minerals",
+    "cofactors"
+   ]
+  },
+  "WAL-CLM-RARE-000138": {
+   "subject": "mercury",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Can mercury fillings cause antibiotic resistance?",
+   "answer_short": "In monkeys, mercury vapor from dental amalgam raised antibiotic-resistant gut bacteria from 9% to 70%, which fell back to 12% once the fillings were removed.",
+   "topics": [
+    "dental-amalgam",
+    "antibiotic-resistance",
+    "fillings"
+   ]
+  },
+  "WAL-CLM-RARE-000139": {
+   "subject": "mercury",
+   "also_about": [],
+   "facet": "history",
+   "question": "Why do they say 'mad as a hatter'?",
+   "answer_short": "Victorian hatters were poisoned by mercuric-nitrate hat paste ('mad as a hatter'); Wallach adds that dentists develop mental disease from chronic mercury vapor and have the highest suicide rate of all health professionals.",
+   "topics": [
+    "mercury-poisoning",
+    "dentists",
+    "occupational-hazard",
+    "mad-as-a-hatter"
+   ]
+  },
+  "WAL-CLM-RARE-000159": {
+   "subject": "krypton",
+   "also_about": [
+    "obscure_elements"
+   ],
+   "facet": "basics",
+   "question": "Is krypton dangerous to humans?",
+   "answer_short": "Despite the Superman legend, Wallach says krypton is totally harmless to humans and may in fact even be an essential element.",
+   "topics": [
+    "noble-gas",
+    "superman",
+    "trace-elements"
+   ]
+  },
+  "WAL-CLM-RARE-000162": {
+   "subject": "antidepressants",
+   "also_about": [
+    "iatrogenic-medicine"
+   ],
+   "facet": "history",
+   "question": "When did Prozac come out and how big did it get?",
+   "answer_short": "Prozac launched in 1987; Wallach notes sales hit $350 million by 1989 and were projected past $1 billion by 1995, with doctors writing 650,000 prescriptions a month.",
+   "topics": [
+    "prozac",
+    "depression",
+    "big-pharma"
+   ]
+  },
+  "WAL-CLM-RARE-000218": {
+   "subject": "radon",
+   "also_about": [
+    "obscure_elements"
+   ],
+   "facet": "warning",
+   "question": "Is radon gas dangerous in the home?",
+   "answer_short": "Wallach says every isotope of radon is radioactive and it is carcinogenic and highly toxic when inhaled -- an odorless, colorless household hazard detectable only with a test kit.",
+   "topics": [
+    "radon",
+    "household-hazard",
+    "carcinogen",
+    "radioactive"
+   ]
+  },
+  "WAL-CLM-RARE-000252": {
+   "subject": "thallium",
+   "also_about": [
+    "mercury",
+    "cadmium"
+   ],
+   "facet": "warning",
+   "question": "is thallium toxic to humans?",
+   "answer_short": "Wallach notes thallium accumulates in the mammalian kidney and is highly toxic to mammals, including humans.",
+   "topics": [
+    "toxic-metals",
+    "heavy-metals",
+    "poisoning",
+    "kidney"
+   ]
+  },
+  "WAL-CLM-RARE-000258": {
+   "subject": "xenon",
+   "also_about": [
+    "krypton",
+    "helium"
+   ],
+   "facet": "mechanism",
+   "question": "is xenon an anesthetic?",
+   "answer_short": "Wallach notes xenon binds to mammalian hemoglobin and myoglobin, producing an anesthetic effect.",
+   "topics": [
+    "noble-gases",
+    "anesthesia"
+   ]
+  },
+  "WAL-CLM-RARE-000271": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "essential_nutrients",
+    "minerals"
+   ],
+   "facet": "warning",
+   "question": "are fruits and vegetables less nutritious than they used to be?",
+   "answer_short": "Wallach quotes 1936 U.S. Senate Document 264: foods grown on mineral-depleted land are 'starving us,' no matter how much of them we eat.",
+   "topics": [
+    "soil-depletion",
+    "nutrient-decline",
+    "food-quality",
+    "senate-doc-264"
+   ]
+  },
+  "WAL-CLM-RARE-000272": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "essential_nutrients",
+    "minerals",
+    "supplement-dosing"
+   ],
+   "facet": "mechanism",
+   "question": "can you get all your minerals from eating fruits and vegetables?",
+   "answer_short": "Wallach quotes Senate Document 264: no one can eat enough fruits and vegetables to supply the mineral salts needed for perfect health -- the stomach isn't big enough to hold them.",
+   "topics": [
+    "soil-depletion",
+    "supplementation",
+    "minerals",
+    "senate-doc-264"
+   ]
+  },
+  "WAL-CLM-RARE-000273": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "essential_nutrients",
+    "minerals"
+   ],
+   "facet": "warning",
+   "question": "how many Americans are mineral deficient?",
+   "answer_short": "Wallach quotes Senate Document 264: 99% of Americans are deficient in these minerals, and a marked deficiency in any one of the more important minerals actually results in disease.",
+   "topics": [
+    "mineral-deficiency",
+    "soil-depletion",
+    "senate-doc-264"
+   ]
+  },
+  "WAL-CLM-RARE-000274": {
+   "subject": "soil-depletion",
+   "also_about": [
+    "essential_nutrients",
+    "minerals"
+   ],
+   "facet": "history",
+   "question": "how much have soil minerals declined over the last 100 years?",
+   "answer_short": "Per the 1992 Rio Earth Summit report Wallach cites, soil minerals fell most in North America (85%), then Asia and South America (76%), Africa (74%), Europe (72%), and Australia (55%) over 100 years.",
+   "topics": [
+    "soil-depletion",
+    "earth-summit-1992",
+    "mineral-decline"
+   ]
+  },
+  "WAL-CLM-LETS-000002": {
+   "subject": "supplement-dosing",
+   "also_about": [
+    "rda-critique",
+    "vitamins",
+    "essential_nutrients"
+   ],
+   "facet": "basics",
+   "question": "what is a preventive dose versus a megavitamin dose?",
+   "answer_short": "Wallach defines 'preventive doses' as well above the RDA but below megavitamin levels, and reserves megavitamin doses for extraordinary situations and specific diseases.",
+   "topics": [
+    "supplement-dosing",
+    "vitamins",
+    "rda",
+    "dose-tiers"
+   ]
+  },
+  "WAL-CLM-LETS-000250": {
+   "subject": "herbal_medicine",
+   "also_about": [
+    "home_remedies"
+   ],
+   "facet": "uses",
+   "question": "what herbs act as natural diuretics?",
+   "answer_short": "Wallach lists broom-corn (Sorghum vulgare) as a diuretic, asparagus as a diuretic and laxative, and broom (Cytisus scoparius) as a diuretic and cathartic.",
+   "topics": [
+    "herbal-remedies",
+    "diuretics",
+    "materia-medica"
+   ]
+  },
+  "WAL-CLM-LETS-000327": {
+   "subject": "pelvic-floor-exercises",
+   "also_about": [
+    "pregnancy_birth",
+    "sexual_health"
+   ],
+   "facet": "protocol",
+   "question": "how do you do kegel exercises?",
+   "answer_short": "Wallach's Kegel exercise conditions the pelvic-floor muscles -- tighten them as if stopping a bowel movement (or stopping the urine stream), several hundred a day -- for urinary incontinence, urgency, and prenatal conditioning.",
+   "topics": [
+    "pelvic-floor",
+    "incontinence",
+    "exercise",
+    "materia-medica"
+   ]
+  },
+  "WAL-CLM-LETS-000336": {
+   "subject": "herbal_medicine",
+   "also_about": [
+    "pregnancy_birth"
+   ],
+   "facet": "uses",
+   "question": "what herbs increase breast milk?",
+   "answer_short": "Wallach says milkweed, caraway, fenugreek and goat's rue can induce or enhance lactation, while goldenrod reduces milk and relieves the pain of engorgement.",
+   "topics": [
+    "herbal-remedies",
+    "lactation",
+    "breastfeeding",
+    "materia-medica"
+   ]
+  },
+  "WAL-CLM-LETS-000339": {
+   "subject": "herbal_medicine",
+   "also_about": [
+    "home_remedies",
+    "digestion"
+   ],
+   "facet": "uses",
+   "question": "what are natural laxatives?",
+   "answer_short": "Wallach lists laxatives including OTC Ex-Lax and Milk of Magnesia plus herbs -- senna, flaxseed/flaxseed oil, alder buckthorn, cascara sagrada, juniper and manna ash.",
+   "topics": [
+    "herbal-remedies",
+    "laxatives",
+    "constipation",
+    "materia-medica"
+   ]
+  },
+  "WAL-CLM-IAIYH-000015": {
+   "subject": "cranial-nerves",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "physiology",
+   "question": "what does the accessory nerve (11th cranial nerve) do?",
+   "answer_short": "Wallach describes the accessory (11th cranial) nerve as the motor nerve driving the trapezius and sternocleidomastoid to rotate, flex and extend the neck and shoulders; skull osteoporosis pinching it at the foramina causes loss of those muscles' function.",
+   "topics": [
+    "cranial-nerves",
+    "neck-pain",
+    "shoulder",
+    "iaiyh"
    ]
   }
  }
