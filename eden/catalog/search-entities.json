@@ -3205,6 +3205,114 @@
         "calcium",
         "bromine"
       ]
+    },
+    "arginine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "arginine",
+        "l-arginine",
+        "l arginine",
+        "arg",
+        "arginine supplement",
+        "l-arginine supplement",
+        "arginine deficiency",
+        "arginine amino acid",
+        "arginine and ornithine",
+        "arginine ornithine",
+        "argenine",
+        "arginene",
+        "arganine",
+        "arginin",
+        "nitric oxide amino acid"
+      ],
+      "related": [
+        "taurine",
+        "tyrosine",
+        "lysine",
+        "ornithine",
+        "citrulline",
+        "nitric-oxide",
+        "erectile-dysfunction"
+      ]
+    },
+    "taurine": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "taurine",
+        "taurin",
+        "l-taurine",
+        "taurine deficiency",
+        "taurine supplement",
+        "taurine supplements",
+        "taurine dose",
+        "taurine dosage",
+        "taurine amino acid",
+        "taurine benefits",
+        "taurine for eyes",
+        "taurine for the heart",
+        "taurine for macular degeneration",
+        "taurine for seizures",
+        "taurine epilepsy",
+        "taurine blood pressure",
+        "too much taurine",
+        "taurine side effects",
+        "taurine psoriasis",
+        "is taurine essential",
+        "what is taurine"
+      ],
+      "related": [
+        "methionine",
+        "arginine",
+        "tyrosine",
+        "choline",
+        "cataracts",
+        "epilepsy",
+        "selenium",
+        "vitamin-e"
+      ]
+    },
+    "tryptophan": {
+      "canon_ref": true,
+      "type": "nutrient",
+      "synonyms": [
+        "tryptophan",
+        "tryptophane",
+        "tryptofan",
+        "triptophan",
+        "tryptaphan",
+        "trp",
+        "tryp",
+        "l-tryptophan",
+        "l tryptophan",
+        "l-trp",
+        "d-tryptophan",
+        "5-htp",
+        "5 htp",
+        "5-hydroxytryptophan",
+        "s-hydroxytryptophan",
+        "tryptophan deficiency",
+        "low tryptophan",
+        "tryptophan supplement",
+        "tryptophan supplements",
+        "tryptophan for sleep",
+        "tryptophan sleep aid",
+        "tryptophan for depression",
+        "tryptophan for anxiety",
+        "tryptophan and serotonin",
+        "amino acid tryptophan"
+      ],
+      "related": [
+        "niacin",
+        "serotonin",
+        "melatonin",
+        "phenylalanine",
+        "tyrosine",
+        "depression",
+        "pellagra",
+        "5-htp"
+      ]
     }
   }
 }

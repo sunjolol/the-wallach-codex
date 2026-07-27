@@ -2197,6 +2197,40 @@
       "extracted_at": "2026-07-27T01:58:43+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000066",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The amino acids L-arginine and ornithine can cause human growth hormone (HGH) to be released from the pituitary gland when supplemented in significant doses. This matters because, per studies cited from the New England Journal of Medicine, HGH can reverse symptoms of human biological aging.",
+      "verbatim": "The amino acids L-arginine and ornithine can cause HGH to be \nreleased from the pituitary gland if supplemented in significant doses.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 527686
+      },
+      "dose": null,
+      "tags": [
+        "arginine",
+        "hgh",
+        "growth-hormone",
+        "anti-aging",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T02:04:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

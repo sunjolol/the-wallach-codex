@@ -13102,6 +13102,78 @@
       "extracted_at": "2026-07-27T01:58:44+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000383",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Pellagra is common in corn-based diets because corn contains very little niacin, and the tryptophan present in corn is unavailable and cannot be absorbed from the intestine. With no absorbable tryptophan to be converted into niacin, and little niacin in the corn itself, the body is left deficient and pellagra results.",
+      "verbatim": "There is very little niacin in corn\nand the tryptophan in the corn is unavailable and can’t be\nabsorbed from the intestine, as a result there is no available\ntryptophan to be converted into niacin.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 120891
+      },
+      "dose": null,
+      "tags": [
+        "tryptophan",
+        "pellagra",
+        "niacin",
+        "corn",
+        "diet",
+        "deficiency",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T02:04:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000384",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In corn-consuming societies that soak their corn in lye and wood ashes overnight before eating it, pellagra is rare. The alkali in the lye and wood ashes makes the corn's tryptophan absorbable, so the body can take it up and convert it into niacin, preventing the deficiency disease pellagra.",
+      "verbatim": "soaked in lye and wood ashes overnight before it is consumed\n- the alkali in the lye and wood ashes allows the tryptophan\nto be absorbed and pellagra is rare",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 121153
+      },
+      "dose": null,
+      "tags": [
+        "tryptophan",
+        "pellagra",
+        "corn",
+        "niacin",
+        "traditional-food",
+        "history",
+        "mechanism",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T02:04:01+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

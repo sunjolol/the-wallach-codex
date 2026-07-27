@@ -15859,6 +15859,506 @@
         "base line program",
         "RDA"
       ]
+    },
+    "WAL-CLM-DDDL-000266": {
+      "subject": "arginine",
+      "also_about": [
+        "infertility"
+      ],
+      "facet": "protocol",
+      "question": "How much arginine does Wallach recommend for infertility?",
+      "answer_short": "For infertility, Wallach's protocol includes l-arginine at 500 mg three times a day (t.i.d.).",
+      "topics": [
+        "infertility",
+        "fertility"
+      ]
+    },
+    "WAL-CLM-DDDL-000267": {
+      "subject": "arginine",
+      "also_about": [
+        "cataracts"
+      ],
+      "facet": "protocol",
+      "question": "How much arginine is used for cataracts?",
+      "answer_short": "For cataracts, Wallach's protocol includes l-arginine at 300 mg per day.",
+      "topics": [
+        "cataracts",
+        "eye-health",
+        "vision"
+      ]
+    },
+    "WAL-CLM-DDDL-000268": {
+      "subject": "arginine",
+      "also_about": [
+        "lysine"
+      ],
+      "facet": "warning",
+      "question": "Should I avoid arginine if I get cold sores or herpes?",
+      "answer_short": "Yes—for herpes, Wallach says to avoid high-arginine foods like chocolate, nuts, seeds and grains, and to eat high-lysine foods instead.",
+      "topics": [
+        "herpes",
+        "cold-sores",
+        "diet"
+      ]
+    },
+    "WAL-CLM-DDDL-000269": {
+      "subject": "taurine",
+      "also_about": [
+        "selenium",
+        "vitamin-e",
+        "methionine"
+      ],
+      "facet": "protocol",
+      "question": "How much taurine should I take for macular degeneration?",
+      "answer_short": "Wallach's macular degeneration protocol includes taurine at 2 to 5 grams per day, alongside all 90 essential nutrients.",
+      "topics": [
+        "eye-health",
+        "vision",
+        "dosage",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-DDDL-000270": {
+      "subject": "taurine",
+      "also_about": [
+        "epilepsy",
+        "vitamin-b6",
+        "choline"
+      ],
+      "facet": "protocol",
+      "question": "Does taurine help with epilepsy or seizures?",
+      "answer_short": "Wallach lists taurine at 500 mg three times a day among the nutrients indicated for epilepsy.",
+      "topics": [
+        "seizures",
+        "brain-health",
+        "dosage",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-DDDL-000271": {
+      "subject": "taurine",
+      "also_about": [
+        "gallstones"
+      ],
+      "facet": "protocol",
+      "question": "Does taurine help with gallstones or gallbladder problems?",
+      "answer_short": "Wallach's treatment for gallbladder disease and gallstones includes taurine at 500 mg three times a day.",
+      "topics": [
+        "digestive-health",
+        "liver",
+        "dosage",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-DDDL-000272": {
+      "subject": "taurine",
+      "also_about": [
+        "epilepsy",
+        "choline"
+      ],
+      "facet": "protocol",
+      "question": "What is the treatment for absence seizures (petit mal)?",
+      "answer_short": "Wallach's treatment for absence attacks (petit mal) includes taurine at 500 mg three times a day.",
+      "topics": [
+        "seizures",
+        "brain-health",
+        "dosage",
+        "children"
+      ]
+    },
+    "WAL-CLM-DDDL-000273": {
+      "subject": "tryptophan",
+      "also_about": [
+        "depression",
+        "phenylalanine",
+        "tyrosine"
+      ],
+      "facet": "uses",
+      "question": "How much tryptophan for depression?",
+      "answer_short": "For depression, Wallach's program uses dl-phenylalanine, L-tryptophan, and L-tyrosine at 2 grams three times a day each, on top of the base-line supplement program.",
+      "topics": [
+        "depression",
+        "mood",
+        "mental-health",
+        "supplements",
+        "protocol"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000341": {
+      "subject": "arginine",
+      "also_about": [
+        "taurine",
+        "tyrosine",
+        "lysine"
+      ],
+      "facet": "basics",
+      "question": "What is arginine?",
+      "answer_short": "Arginine is an amino acid Wallach counts among the essentials—required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
+      "topics": [
+        "arginine",
+        "amino-acids",
+        "essential-amino-acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000342": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does supplementing with arginine help fuel the cells?",
+      "answer_short": "Making arginine internally burns ATP, so supplementing it directly frees up more ATP to fuel cell function.",
+      "topics": [
+        "energy",
+        "atp",
+        "metabolism",
+        "cell-fuel"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000343": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What does arginine do in the body?",
+      "answer_short": "Arginine is required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
+      "topics": [
+        "wound-healing",
+        "immunity",
+        "hormones",
+        "cell-division"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000344": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does arginine lower blood pressure and improve circulation?",
+      "answer_short": "Yes—oral arginine is required to synthesize nitric oxide, and it reduces blood pressure and increases blood flow through obstructed blood vessels.",
+      "topics": [
+        "nitric-oxide",
+        "blood-pressure",
+        "circulation",
+        "heart-health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000345": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can arginine help with tooth pain or sensitivity?",
+      "answer_short": "An 8% arginine toothpaste gives rapid, effective relief from dental pain by rebuilding a dentin-like layer.",
+      "topics": [
+        "dental-pain",
+        "teeth",
+        "tooth-sensitivity"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000346": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "When and how was arginine discovered?",
+      "answer_short": "Arginine was first isolated in 1886 from a lupin seedling by Swiss chemist Ernst Schultze.",
+      "topics": [
+        "amino-acids",
+        "arginine",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000347": {
+      "subject": "taurine",
+      "also_about": [
+        "methionine",
+        "arginine",
+        "tyrosine"
+      ],
+      "facet": "basics",
+      "question": "What is taurine?",
+      "answer_short": "Taurine is an amino acid Wallach counts as essential -- a sulfur-based compound that conjugates bile acids, acts as an antioxidant, and is vital to the heart, muscles, eyes, and nervous system.",
+      "topics": [
+        "amino-acids",
+        "essential-nutrients",
+        "antioxidants",
+        "heart-health",
+        "eye-health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000348": {
+      "subject": "taurine",
+      "also_about": [
+        "methionine"
+      ],
+      "facet": "mechanism",
+      "question": "How does the body make taurine?",
+      "answer_short": "Taurine is synthesized from methionine — Wallach lists it among the compounds methionine is an intermediate in producing.",
+      "topics": [
+        "amino-acids",
+        "metabolism",
+        "biochemistry"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000349": {
+      "subject": "taurine",
+      "also_about": [
+        "psoriasis"
+      ],
+      "facet": "warning",
+      "question": "Can you take too much taurine?",
+      "answer_short": "Wallach warns that doses of taurine above 2 grams a day have been shown to contribute to psoriasis.",
+      "topics": [
+        "supplements",
+        "dosage",
+        "skin-health",
+        "safety"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000350": {
+      "subject": "taurine",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name taurine come from?",
+      "answer_short": "Taurine is named after the Latin Taurus, meaning bull or ox, because it was first isolated from ox bile in 1827.",
+      "topics": [
+        "amino-acids",
+        "history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000351": {
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is Tryptophan?",
+      "answer_short": "Tryptophan is an essential amino acid the body must get from dietary protein; it is a building block for the body's structural enzyme proteins and the raw material it uses to make serotonin, melatonin, and niacin.",
+      "topics": [
+        "amino-acids",
+        "protein",
+        "essential-amino-acids",
+        "serotonin",
+        "niacin"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000352": {
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does tryptophan turn into in the body?",
+      "answer_short": "Tryptophan is a building block of protein and a precursor of serotonin, which the body can convert to melatonin, and it is also used to make niacin.",
+      "topics": [
+        "serotonin",
+        "melatonin",
+        "niacin",
+        "mood",
+        "brain-health",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000353": {
+      "subject": "tryptophan",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "mechanism",
+      "question": "How much tryptophan equals a milligram of niacin?",
+      "answer_short": "By convention, 60 mg of tryptophan is considered equivalent to 1 mg of niacin, though measurements found the amount ranged from 39 to 86 mg.",
+      "topics": [
+        "niacin",
+        "conversion",
+        "pellagra",
+        "amino-acids",
+        "vitamins"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000354": {
+      "subject": "tryptophan",
+      "also_about": [
+        "phenylalanine"
+      ],
+      "facet": "mechanism",
+      "question": "Does phenylalanine affect tryptophan and serotonin?",
+      "answer_short": "Phenylalanine uses the same transport channel as tryptophan to cross into the brain, so large doses of phenylalanine interfere with serotonin production.",
+      "topics": [
+        "phenylalanine",
+        "serotonin",
+        "brain-health",
+        "amino-acids",
+        "interactions"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000355": {
+      "subject": "tryptophan",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "uses",
+      "question": "What is 5-HTP used for?",
+      "answer_short": "5-HTP, a metabolite of tryptophan, has been suggested as a treatment for seizure disorders and depression; it rapidly crosses into the brain and is converted to serotonin.",
+      "topics": [
+        "5-htp",
+        "depression",
+        "seizures",
+        "serotonin",
+        "brain-health",
+        "supplements"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000356": {
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is tryptophan dangerous? What was the 1989 tryptophan outbreak?",
+      "answer_short": "In 1989 a tryptophan-associated outbreak of eosinophilia-myalgia syndrome (EMS) caused at least 1,500 cases of permanent disability and at least 37 deaths, traced to a supply of L-tryptophan from a single Japanese manufacturer (Showa Denko KK).",
+      "topics": [
+        "safety",
+        "supplements",
+        "toxicity",
+        "history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000357": {
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered tryptophan and when?",
+      "answer_short": "Tryptophan was isolated in 1901 by Frederick Hopkins through the hydrolysis of casein, the protein in milk.",
+      "topics": [
+        "history",
+        "discovery",
+        "amino-acids"
+      ]
+    },
+    "WAL-CLM-HELLS-000066": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can arginine raise growth hormone (HGH)?",
+      "answer_short": "Yes—L-arginine with ornithine can trigger HGH release from the pituitary gland when supplemented in significant doses.",
+      "topics": [
+        "hgh",
+        "growth-hormone",
+        "anti-aging"
+      ]
+    },
+    "WAL-CLM-IMMORT-000383": {
+      "subject": "tryptophan",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "mechanism",
+      "question": "Why do corn-based diets cause pellagra?",
+      "answer_short": "Corn has very little niacin and its tryptophan is unavailable and can't be absorbed from the intestine, so there is no tryptophan to convert into niacin, causing pellagra.",
+      "topics": [
+        "pellagra",
+        "niacin",
+        "corn",
+        "diet",
+        "deficiency"
+      ]
+    },
+    "WAL-CLM-IMMORT-000384": {
+      "subject": "tryptophan",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "history",
+      "question": "Why does soaking corn in lye prevent pellagra?",
+      "answer_short": "Soaking corn in lye and wood ashes overnight lets the alkali free the tryptophan so it can be absorbed, which is why pellagra is rare where corn is prepared this way.",
+      "topics": [
+        "pellagra",
+        "corn",
+        "niacin",
+        "traditional-food",
+        "history"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000047": {
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Is arginine used for erectile dysfunction?",
+      "answer_short": "Yes—arginine is commonly used together with proanthocyanidins or yohimbine to relieve erectile dysfunction.",
+      "topics": [
+        "erectile-dysfunction",
+        "mens-health",
+        "libido"
+      ]
+    },
+    "WAL-CLM-IMMORT-000058": {
+      "subject": "arginine",
+      "also_about": [
+        "cancer",
+        "taurine",
+        "tyrosine"
+      ],
+      "facet": "stance",
+      "question": "Does Wallach consider arginine an essential amino acid?",
+      "answer_short": "Yes—Wallach adds arginine to the classic essential amino acids, tying its long-term deficiency to cancer and PAD.",
+      "topics": [
+        "essential-amino-acids",
+        "cancer",
+        "arginine"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000054": {
+      "subject": "taurine",
+      "also_about": [
+        "cataracts"
+      ],
+      "facet": "warning",
+      "question": "What does taurine deficiency cause?",
+      "answer_short": "A taurine deficiency can produce cataracts and retinal damage; taurine is also needed to maintain skeletal muscle and healthy blood pressure.",
+      "topics": [
+        "eye-health",
+        "vision",
+        "blood-pressure",
+        "muscle-health"
+      ]
+    },
+    "WAL-CLM-DDDL-000066": {
+      "subject": "taurine",
+      "also_about": [
+        "arginine",
+        "tyrosine"
+      ],
+      "facet": "stance",
+      "question": "Is taurine an essential amino acid?",
+      "answer_short": "Wallach adds taurine to the classic list of essential amino acids, saying that over the long haul it helps prevent a specific disease — macular degeneration.",
+      "topics": [
+        "amino-acids",
+        "essential-nutrients",
+        "eye-health"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000056": {
+      "subject": "tryptophan",
+      "also_about": [
+        "depression",
+        "gluten"
+      ],
+      "facet": "physiology",
+      "question": "Can gluten intolerance cause depression?",
+      "answer_short": "Yes; gluten intolerance, lactose intolerance, and fructose malabsorption all reduce tryptophan absorption from the gut, lowering blood tryptophan and producing clinical depression.",
+      "topics": [
+        "depression",
+        "gut-health",
+        "gluten",
+        "mood",
+        "mental-health",
+        "absorption"
+      ]
+    },
+    "WAL-CLM-LETS-000142": {
+      "subject": "tryptophan",
+      "also_about": [
+        "anxiety"
+      ],
+      "facet": "uses",
+      "question": "What does Wallach recommend for anxiety and panic attacks?",
+      "answer_short": "For anxiety and panic attacks, Wallach's program includes a high dose of L-tryptophan at 10 grams three times a day, plus caffeine and sugar avoidance, chromium, B vitamins, calcium, and magnesium.",
+      "topics": [
+        "anxiety",
+        "panic-attacks",
+        "mood",
+        "supplements",
+        "protocol"
+      ]
     }
   }
 }

@@ -1,201 +1,135 @@
 # Extraction report — epigenetics (Epigenetics: The Death of the Genetic Theory of Disease Transmission)
 
-_21 claim(s) drafted 2026-07-27T01:58:43+00:00. Review then run corpus_seal.py to promote._
+_17 claim(s) drafted 2026-07-27T02:04:28+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×2, definition×5, dose×1, mechanism×6, prevalence×2, prognosis×1, quote×4
+Kinds: definition×6, dose×1, interaction×1, mechanism×7, toxicity_sign×2
 
-### WAL-CLM-EPIGEN-000320 · mechanism
+### WAL-CLM-EPIGEN-000341 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach notes that death of soldiers from sodium loss was historically common during military operations in tropical countries. Men in the desert could lose up to twenty-four pints of water per day as sweat, and that sweat was not just water but a soup carrying the nutrients in their blood, including up to seventy to one hundred grams of salt per day. It illustrates why heavy sweating creates a real, sometimes fatal need to replace salt and not just water.
-- **verbatim** (offset 653030): “The death of soldiers from a sodium loss was historically common during
-military operations in tropical countries. Soldiers in the desert could lose up to
-twenty-four pints of water per day as sweat. And that much sweat was not just
-water, it was a soup that contained all the nutrients floating around in their blood
-including up to seventy to one hundred grams of salt per day.”
+- **claim:** Arginine is an amino acid that Wallach adds to the classic list of essential amino acids. Mainstream science treats it as non-essential, but Wallach holds that a long-term deficiency drives specific diseases—notably cancer and peripheral arterial disease (PAD). The body can make arginine from citrulline, but only at a steep energy cost, so supplementing it directly frees up cellular fuel (adenosine triphosphate, ATP). Arginine is required for complete and efficient cell division, wound healing, the excretion of ammonia, immune support, and the availability of stored hormones, and it is the raw material for nitric oxide, which lowers blood pressure and increases blood flow through obstructed vessels.
+- **verbatim** (offset 1110881): “Arginine is required for complete and efficient cell division, wound healing,
+facilitating the biological use of and the excretion of ammonia, immune system
+support, and the availability of stored hormones.”
 
-### WAL-CLM-EPIGEN-000321 · mechanism
+### WAL-CLM-EPIGEN-000342 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach groups sodium, chloride and potassium together as the three indispensable 'electrolytes.' Sodium makes up about two percent of the body's total mineral content, and along with chloride sits mostly outside the cells (extracellular) while potassium works inside them. Together these three minerals carry out at least four vital jobs: maintaining normal water balance and distribution, osmotic equilibrium, acid-base balance, and the muscular irritability and nerve-impulse transmission behind movement and signaling.
-- **verbatim** (offset 1276021): “Sodium, K and Cl are involved
-in at least four important physiological functions in the body:
+- **claim:** Building arginine from citrulline is energetically expensive: producing each molecule of argininosuccinate requires hydrolyzing adenosine triphosphate (ATP) down to adenosine monophosphate (AMP). By supplementing with arginine directly, the body is spared that cost, leaving more ATP available to provide fuel for cell function.
+- **verbatim** (offset 1110384): “This process is expensive in terms of energy
+since the production of each molecule of argininosuccinate requires hydrolysis
+of adenosine triphosphate (ATP) to adenosine monophosphate (AMP), and by
 
-1. Maintenance of normal water balance and distribution
 
-2, Maintenance of normal osmotic equilibrium
+supplementing with arginine, more ATP is available to provide cell function fuel.”
 
-3. Maintenance of normal acid-base balance
-
-4, Maintenance of normal muscular irritability and neurological impulse
-and neurological transmission”
-
-### WAL-CLM-EPIGEN-000322 · mechanism
+### WAL-CLM-EPIGEN-000343 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** According to Wallach, the craving for salt dates back to the very beginning of animals and man and is one of the most basic drives of all living organisms. Carnivores, man or beast, do not show a strong salt craving because meat naturally contains fairly large amounts of sodium chloride. Herbivores and human vegetarians, by contrast, demand large amounts of salt because there is little or no natural NaCl in grains, vegetables and fruit.
-- **verbatim** (offset 1274995): ““salt hunger” dates back to the very beginning of animals and man and is one
-of the very basic cravings of living organisms. Carnivores (man or beast) do not
-typically show the great craving for salt because meat contains relatively large
-amounts of NaCl, but herbivores and human vegetarians demand large amounts
-of NaCl because there is little or no natural NaCl in grains, vegetables and frui”
+- **claim:** Arginine is required for complete and efficient cell division and for wound healing. It also facilitates the biological use and excretion of ammonia, supports the immune system, and helps make stored hormones available to the body.
+- **verbatim** (offset 1110881): “Arginine is required for complete and efficient cell division, wound healing,
+facilitating the biological use of and the excretion of ammonia, immune system
+support, and the availability of stored hormones.”
 
-### WAL-CLM-EPIGEN-000323 · mechanism
+### WAL-CLM-EPIGEN-000344 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach ties low salt directly to B12 status. When a person has hypochlorhydria, low stomach acid usually caused by a NaCl (salt) deficiency, the intrinsic factor needed to absorb vitamin B12 will not work, so the B12 (cobalt) is not absorbed. This, he notes, is why doctors frequently give B12 shots to older people who are on salt-restricted diets.
-- **verbatim** (offset 1209836): “If a person has hypochlorhydria (low stomach acid—usually a NaCl deficiency)
-the intrinsic factor will not work, and By, cobalt is not absorbed. This is
-why doctors frequently give By, shots to older people on salt-restricted diets.”
+- **claim:** Oral supplementation of arginine is required for the synthesis of nitric oxide (NO). It also reduces blood pressure, increases blood flow through obstructed blood vessels, shortens healing time following trauma, and is particularly useful for bone trauma.
+- **verbatim** (offset 1111088): “The oral supplementation of
+arginine is required for the synthesis of nitric oxide (NO), the reduction of healing
+time following trauma, and is particularly useful for bone trauma; it reduces
+blood pressure and increases blood flow through obstructed blood vessels.”
 
-### WAL-CLM-EPIGEN-000324 · dose
+### WAL-CLM-EPIGEN-000345 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states that the average human salt requirement is approximately 0.5 percent of the dry weight of the daily diet, or about six to ten grams per day. He warns that following a doctor's advice to restrict salt to less than one gram per day can increase the risk of a heart attack by as much as six hundred percent.
-- **verbatim** (offset 653922): “The average salt requirement for a human is
-approximately 0.5% of the dry weight of the daily diet or six to ten grams per day.
-If you are very good at following a doctor's advice and restrict salt to less than
-one gram per day, you can increase your risk of a heart attack by as much as six
-hundred percent.”
+- **claim:** Arginine (8%) toothpaste produces rapid and effective relief from dental pain. It works by forming a dentin-like material made of calcium and phosphate that is deposited in the dentin tubules and on the surface of the dentin.
+- **verbatim** (offset 1111355): “Arginine (8%) toothpaste produces rapid and effective relief from dental pain
+by producing a dentin-like material that is made up of calcium and phosphate
+that is deposited in the dentin tubules and on the surface of dentin.”
 
-### WAL-CLM-EPIGEN-000325 · mechanism
+### WAL-CLM-EPIGEN-000346 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach lists hypochlorhydria, low stomach acid from salt-restricted diets or from proton pump inhibitors, among the causes of iron deficiency, alongside unsupplemented pregnancy, menstruation, chronic infection, chronic bleeding and impaired absorption. Because stomach hydrochloric acid is required for optimal iron absorption, cutting salt can undermine iron status. Iron deficiency in turn can lead to hypochromic microcytic anemia.
-- **verbatim** (offset 1236246): “Iron deficiency can result from an unsupplemented pregnancy, menstruation,
-chronic infections, hypochlorhydria (low stomach acid from salt-restricted diets
-or use of proton pump inhibitors), chronic diarrhea, chronic bleeding (from illness
-from cancer, uncers, parasites, etc.) and impaired absorption (caused by high-fat
-diets, high phytate diets, gluten intolerance, etc).”
+- **claim:** Arginine (Arg) was first isolated in 1886 from a lupin seedling by the Swiss chemist Ernst Schultze. In the body it is synthesized from citrulline through the sequential work of the cytosolic enzymes argininosuccinate synthetase (ASS) and argininosuccinate lyase (ASL).
+- **verbatim** (offset 1110124): “Arginine (Arg) was first isolated in 1886 from a lupin seedling by the Swiss
+chemist Ernst Schultze and is synthesized from citrulline by the sequential
+employment of the cytosolic enzymes argininosuccinate synthetase (ASS) and
 
-### WAL-CLM-EPIGEN-000326 · prevalence
+argininosuccinate lyase (ASL).”
+
+### WAL-CLM-EPIGEN-000347 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach notes that iodine intake in the human diet is usually low to begin with. He says that since Americans have begun restricting their salt intake at their doctors' instruction, the rate of 'allopath'-caused goiter and hypothyroidism has become epidemic. In his account, cutting dietary salt is what drove this surge in thyroid disease.
-- **verbatim** (offset 1251557): “lodine intake in the human diet is usually low to begin
-with, but since Americans have begun restricting their salt intake at their doctors
-instruction, the rate of “allopath” caused goiter and hypothyroidism has become
-epidemic.”
+- **claim:** Taurine is one of the amino acids Wallach adds to the classic list of essentials, because over the long haul a deficiency drives a specific disease -- macular degeneration. Chemically it is unusual: a sulfonic acid rather than the carboxyl-acid form most biologically occurring acids take, and the body can synthesize it from methionine. Wallach describes taurine as essential to the cardiovascular system, skeletal muscle, the retina, and the central nervous system, where it conjugates bile acids, acts as an antioxidant, stabilizes membranes, and modulates calcium signaling.
+- **verbatim** (offset 1119414): “Taurine (Ta) has many biological roles including the conjugation of bile acids,
+acts as an antioxidant, osmoregulation, membrane stabilization, and modulation
+of calcium signaling. Taurine is essential for the functioning of the cardiovascular
+system, skeletal muscle, the retina and the central nervous system.”
 
-### WAL-CLM-EPIGEN-000327 · deficiency_sign
+### WAL-CLM-EPIGEN-000348 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach says deficiencies of salt (NaCl) occur mainly in hot weather or during heavy work or exercise in the heat, when large volumes of sweat are lost for body cooling. He warns that 'water intoxication' occurred in infants fed low-sodium formulas out of allopathic doctors' fear of sodium; their brains swelled and they died from a simple sodium deficiency. The treatment for sodium deficiency, he notes, is water and salt, taken orally or given intravenously as 0.9% saline.
-- **verbatim** (offset 1276804): “Deficiencies of NaCl occur primarily in hot weather (the heat wave of July
+- **claim:** Taurine is one of the compounds the body builds from the amino acid methionine. Wallach describes methionine as an intermediate in the biosynthesis of cysteine, carnitine, taurine, lecithin, phosphatidylcholine, and other phospholipids, meaning the body can produce taurine from methionine.
+- **verbatim** (offset 1116000): “Methionine is an intermediate
+in the biosynthesis of cysteine, carnitine, taurine, lecithin, phosphatidylcholine,
+and other phospholipids.”
 
-1993) or heavy work or exercise in a hot environment when large volumes of
-sweat are required for body cooling. “Water intoxication” occurred in infants fed
-low Na formulas because of the allopathic doctor's paranoia about Na. Their
-brains swelled causing death from a simple Na deficiency.
-
-The treatment for Na deficiency is water and salt either orally or IV (saline
-0.9%).”
-
-### WAL-CLM-EPIGEN-000328 · quote
+### WAL-CLM-EPIGEN-000349 · toxicity_sign
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach rejects the popular belief that salt is inherently dangerous. He argues that salt itself is not intrinsically harmful; the real problem is that eating salt lets the body falsely perceive it is getting sufficient minerals, so a salt-satisfied craving can mask an underlying mineral deficiency. He calls this the mineral equivalent of the 'empty calorie diet' — just as white flour and sugar satisfy hunger while supplying no protein, essential fatty acids, or vitamins, salt intake convinces the body it has adequate minerals when it may not.
-- **verbatim** (offset 642811): “Today, contrary to popular belief, salt is not intrinsically harmful as doctors
-would have you believe. It does present the problem of allowing our bodies to
-falsely perceive that we are getting sufficient minerals when we eat salt. This
-is the mineral equivalent of the "empty calorie diet” concept.”
+- **claim:** Taurine is not risk-free at high intakes. Wallach warns that doses of taurine in excess of 2 grams per day have been shown to contribute to the genesis of psoriasis.
+- **verbatim** (offset 1120203): “Doses of taurine in excess of 2 gm/day have been shown to contribute to the
+genesis of psoriasis.”
 
-### WAL-CLM-EPIGEN-000329 · quote
+### WAL-CLM-EPIGEN-000350 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach is sharply critical of the medical profession's routine advice to cut salt for hypertension and heart disease, calling it a 'paranoia about salt.' He states flatly that there is not a single double-blind study demonstrating any benefit from a salt-restricted or low-sodium diet. In his account of the 1993 heat wave he blames this low-salt advice for putting vulnerable heart and blood-pressure patients at fatal risk.
-- **verbatim** (offset 646540): “The human tragedy of the heat wave of '93 was the direct result of the medical
-profession's paranoia about salt. They put their human charges on a low-sodium
-or low-salt diet for prevention of hypertension and heart disease. There is not a
-single double-blind study that will show any benefit of a salt-restricted or low-
-sodium diet.”
+- **claim:** Taurine takes its name from the Latin word Taurus, which means bull or ox. Wallach notes that it was first isolated from ox bile in 1827 by the German scientists Friedrich Tiedermann and Leopold Gmelin, which is the origin of the name.
+- **verbatim** (offset 1119857): “Taurine is named after the Latin Taurus, which means bull or ox, as it was first
+isolated from ox bile in 1827 by the German scientists Friedrich Tiedermann and
+Leopold Gmelin.”
 
-### WAL-CLM-EPIGEN-000330 · quote
+### WAL-CLM-EPIGEN-000351 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Farmers and ranchers put out salt blocks made of at least 85 percent sodium chloride to guarantee their animals get essential minerals — anything less than 85 percent salt gets ignored, even by mineral-deficient animals. Wallach notes these salt-consuming animals never get high blood pressure or stroke, even though by design they eat about 0.5 percent of their diet as salt. He uses this as evidence that free salt intake does not cause hypertension.
-- **verbatim** (offset 643351): “Farmers and husbandrymen use the salt-hunger behavior to ensure the
-consumption of trace minerals in livestock by incorporating trace minerals into
-the formulation of salt blocks containing a minimum of eighty-five percent
-sodium chloride. Anything less than eighty-five percent sodium chloride would
-be ignored by the animals, even if they were to have major mineral deficiencies.
-The salt-consuming animals never get high blood pressure or stroke, even though
-by design they will consume 0.5 percent of their diet as salt.”
+- **claim:** Tryptophan (Trp) is an essential amino acid — the body cannot synthesize it, so it must come from protein in the diet. It is used to build the body's structural enzyme proteins, and it is the biochemical precursor from which the body makes serotonin (a neurotransmitter), which in turn can become melatonin (a sleep hormone); niacin (vitamin B3) is also synthesized from it. Because its absorption from the intestine is reduced by gluten intolerance, lactose intolerance, and fructose malabsorption, a shortfall lowers blood tryptophan and can produce clinical depression.
+- **verbatim** (offset 1121002): “Tryptophan (Trp) is an essential amino acid encoded in the standard genetic code
+as the codon UGG. Only L-tryptophan is used in structural enzyme proteins.”
 
-### WAL-CLM-EPIGEN-000331 · prognosis
+### WAL-CLM-EPIGEN-000352 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts a 1940 case published by psychologist Curt Richter in which a young boy showed a 'morbid craving for salt,' licking it off crackers and eating it from the shaker before age two. At three-and-a-half he was hospitalized to restrict his salt intake and died 48 hours later; his autopsy revealed Addison's disease (adrenal cortical insufficiency). Wallach's point is that the boy's salt cravings — a form of pica — were correct and had kept him alive, and that restricting his salt is what killed him. He uses it to support the 'wisdom of the body' idea that cravings can signal a real physiological need.
-- **verbatim** (offset 32955): “Richter published one of his own cases in 1940 in which a young boy
-demonstrated a “morbid craving for salt.” The child had begun licking salt off of
-soda crackers at the age one year and he then ate salt from the shaker at 18
-months old. At age three-and-a-half years, the boy was hospitalized to restrict his
-salt intake. Forty-eight hours after being denied salt the boy died (another great
-victory for psychology).”
+- **claim:** Beyond serving as a building block for protein biosynthesis, tryptophan is a biochemical precursor of serotonin (a neurotransmitter), which it forms via the enzyme tryptophan hydroxylase. Serotonin can in turn be converted to melatonin (a neurohormone). Tryptophan is also the raw material from which niacin is synthesized, by way of kynurenine and quinolinic acid intermediates. In plants it is even converted into the phytohormone auxin.
+- **verbatim** (offset 1121328): “Tryptophan is employed as a building block of protein
+biosynthesis and is a biochemical precursor of serotonin (a neurotransmitter),
+synthesized via tryptophan hydroxylase. Serotonin can be converted to melatonin
+(a neurohormone); niacin is synthesized from tryptophan via kynurenine and
+quinolinic acids as essential biosynthetic intermediates; auxin (a phytohormone)
+is produced when sieve tube elements undergo apoptosis (programed cell-death),
+tryptophan is converted to auxins.”
 
-### WAL-CLM-EPIGEN-000332 · mechanism
+### WAL-CLM-EPIGEN-000353 · dose
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach defines 'salt sensitivity' as a rise in blood pressure and a sustained increase in urinary calcium loss in response to eating salt. But he argues that among black and elderly white patients with essential hypertension, it is restricted intakes of calcium and potassium, rather than high salt consumption itself, that is responsible for the salt sensitivity. In his framework the blood-pressure problem traces to mineral deficiencies, not to the salt.
-- **verbatim** (offset 1195858): “The phenomenon of salt sensitivity consists of a rise in blood pressure and
-sustained increase in urinary loss of Ca in response to salt consumption. Among
-black and elderly whites with essential hypertension, restricted intakes of Ca
-and K, rather than elevated salt consumption itself, is responsible for the “salt
-sensitivity.””
+- **claim:** The body can make niacin (vitamin B3) from tryptophan, and researchers measured how much is needed. When niacin status was gauged by urinary metabolite levels, the amount of supplementary tryptophan required to give the same response as one milligram of niacin ranged from 39 to 86 mg. By convention, 60 mg of tryptophan is treated as equivalent to one mg of niacin.
+- **verbatim** (offset 1087124): “When niacin status was gauged by urinary metablyte levels,
+the quantities of supplementary tryptophan required to give the same response
+as one mg of niacin ranged from 39 to 86 mg. Convention allows that 60 mg of
+tryptophan is equivalent to one mg of niacin,”
 
-### WAL-CLM-EPIGEN-000333 · quote
+### WAL-CLM-EPIGEN-000354 · interaction
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach describes salt as an absolute necessity of life that was fiercely coveted wherever it was scarce. In salt-poor parts of Africa, people drank cattle blood and urine to obtain it, and residents of the Sierra Leone coast gave up everything they owned — including their wives and children — in exchange for salt. Because salt, like other minerals, is not distributed equally around the earth, it was coveted by the have-nots; as African tribesmen put it, 'He who has salt has war.'
-- **verbatim** (offset 651688): “In other parts of salt-poor Africa, humans developed the practice of drinking
-cattle blood and urine to obtain salt. The residence of the Sierra Leone coast
-gave all they possessed, including their wives and children, in exchange for salt—
-after all, salt was a necessity of life. Salt, like other elements and minerals, is not
-distributed equally around the earth and is therefore coveted by the have-nots. It
-is said by African tribesmen that, “He who has salt has war.””
+- **claim:** Phenylalanine and tryptophan compete for entry into the brain: phenylalanine employs the same active transport channel as tryptophan to cross the blood-brain barrier. As a result, large doses of phenylalanine will interfere with the production of serotonin, the neurotransmitter the brain makes from tryptophan.
+- **verbatim** (offset 1118193): “Phenylalanine employs the same active transport channel as tryptophan to cross
+the blood-brain barrier, in large doses it will interfere with the production of
+serotonin.”
 
-### WAL-CLM-EPIGEN-000334 · definition
+### WAL-CLM-EPIGEN-000355 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach traces the word 'salary' to salt: Roman soldiers 'worth their salt' were paid a 'salary,' derived from salarium, a soldier's 'salt ration.' Rome's major highway, the Via Salacia or Salt Road, was used to carry salt up from the Tiber River, where barges brought it from the salt pans of Ostia. The detail underscores how valuable salt was in the ancient world.
-- **verbatim** (offset 648293): “Rome's major highway was called Via Salacia or the Salt Road. Soldiers used
-the Salt Road to carry salt up from the Tiber River where barges brought salt from
-the salt pans of Ostia. Soldiers “worth their salt” were paid a “salary.” The word
-salary is derived from salarium, a soldier's “salt ration.””
+- **claim:** A metabolite of tryptophan called 5-HTP (5-hydroxytryptophan) has been suggested as a treatment for seizure disorders and depression. It acts quickly because it rapidly crosses the blood-brain barrier and is then rapidly decarboxylated into serotonin (5-hydroxytryptamine, or 5-HT).
+- **verbatim** (offset 1122096): “A metabolite of tryptophan, S-hydroxytryptophan (S-HTP), has been
+suggested as a treatment for seizure disorders and depression. It rapidly
+crosses the blood brain barrier and is rapidly decarboxylated to serotonin (5-
+hydroxytryptamine or 5-HT).”
 
-### WAL-CLM-EPIGEN-000335 · deficiency_sign
+### WAL-CLM-EPIGEN-000356 · toxicity_sign
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach lists the clinical causes of phosphorus depletion and resulting low blood phosphorus (hypophosphatemia): IV administration of glucose or total parenteral nutrition without phosphorus supplementation, excessive use of antacids, hyperparathyroidism (which he attributes to low-calcium/high-phosphate diets), improper treatment of diabetic acidosis, use of diuretics, sweating during exercise, and alcoholism with and without liver disease.
-- **verbatim** (offset 1292509): “Clinical P depletion and resultant low blood P (hypophosphatemia) result
-from IV administration of glucose or TPN (Total Parenteral Nutrition) without P
-supplementation, excessive use of antacids, hyperparathyroidism (low calcium/
-high phosphate diets are the cause of this one), improper treatment of diabetic
-acidosis, use of diuretics, sweating during exercise, and alcoholism with and
-without liver disease.”
+- **claim:** In 1989 there was a large tryptophan-associated outbreak of eosinophilia-myalgia syndrome (EMS) that caused at least 1,500 cases of permanent disability and at least 37 deaths. The problem was traced to a batch of L-tryptophan produced and exported to the United States by the Japanese manufacturer Showa Denko KK. The final explanation offered was that large doses of tryptophan gave rise to metabolites that inhibit the normal degradation of histamine, and that the resulting excess histamine caused EMS.
+- **verbatim** (offset 1122344): “In 1989 there was a large tryptophan-associated outbreak of eosinophilia-
+myalgia syndrome (EMS) which caused at least 1,500 cases of permanent
+disability and at least 37 deaths.”
 
-### WAL-CLM-EPIGEN-000336 · prevalence
+### WAL-CLM-EPIGEN-000357 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach observes that vegetarians and vegans who do not supplement with minerals rarely have a phosphorus deficiency — unless they have chronic gluten intolerance from heavy whole-grain consumption. However, because of their high phytic-acid intake from raw vegetables, they always have other mineral deficiencies, such as calcium, copper, chromium, vanadium, lithium and zinc, unless they supplement.
-- **verbatim** (offset 1292922): “Vegetarians and vegans, who do not supplement with minerals, rarely have P
-deficiency (unless they have a chronic gluten intolerance from high whole-grain
-consumption). However, because of their high phytic acid intake (raw vegetables)
-they always have other mineral deficiencies (such as lack of Ca, Cu, Cr, V, Li, Zn,
-etc.) unless they supplement.”
-
-### WAL-CLM-EPIGEN-000337 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts that in 1669 the German alchemist Hennig Brandt, trying to transmute materials into gold, reasoned that nothing could be more noble than the human body. Brandt combined human urine with common beach sand and heated the mix in an oven; the soft white residue glowed in a dark room, and he named it 'phosphorus,' Greek for 'I bear light.' Robert Boyle later procured a sample and began manufacturing it in large quantities to sell throughout Europe.
-- **verbatim** (offset 156281): “Brandt combined human urine with common beach sand, then heated the mix
-in an oven. The soft white residue glowed in a dark room and Brandt named it
-“phosphorus” (Greek for “I bear light”).”
-
-### WAL-CLM-EPIGEN-000338 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In his history of chemistry, Wallach recounts that alchemists believed all metals were alloys containing sulphur and mercury, and that the varying proportions of each determined whether a metal became gold, silver, copper, tin, or another metal. Gold was supposedly a large amount of mercury with little sulphur; copper held equal amounts of each; and tin was an imperfect blend of impure mercury and a large quantity of sulphur.
-- **verbatim** (offset 136158): “They
-believed that metals were alloys of unrelated substances, yet all metals contained
-sulphur and mercury, and it was the varying proportions of each one that
-determined whether the metal would become gold, silver, copper, tin, or other
-metals.”
-
-### WAL-CLM-EPIGEN-000339 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts that by 1918 the U.S. Department of the Treasury decreed that all public drinking-water systems must be disinfected with chlorine. He notes chlorine in water is more than three times as effective a disinfectant against E. coli as an equal concentration of bromine, and more than six times as effective as iodine. In the same history he credits chlorine solutions with ending childbed fever after Semmelweis used them to disinfect doctors' hands in 1847.
-- **verbatim** (offset 1204689): “By 1918 the U.S. department of the Treasury decreed that all public drinking-
-water systems must be disinfected by the use of chlorine. Chlorine in water is
-more than three times as effective as a disinfectant against Escherichia coli, than
-an equivalent concentration of bromine, and is more than six times more effective
-than an equivalent concentration of iodine.”
-
-### WAL-CLM-EPIGEN-000340 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts that in 1810 Sir Humphry Davy concluded chlorine is an element, not a compound, and named it from the Greek word 'chloros,' meaning 'green-yellow.' In the same account he notes the term 'halogen,' meaning 'salt producer,' was introduced in 1811 to describe chlorine before becoming the generic name for the whole family that includes fluorine, bromine, and iodine.
-- **verbatim** (offset 1200710): “In 1810 Sir Humphry Davy concluded that chlorine is an element not a
-compound, and he named the new element chlorine from the Greek word chloros
-or “green-yellow.””
+- **claim:** Tryptophan was first isolated in 1901 by Frederick Hopkins, who obtained it through the hydrolysis (chemical breakdown) of casein, the main protein found in milk.
+- **verbatim** (offset 1121234): “Tryptophan was isolated in 1901 by Frederick Hopkins via hydrolysis of
+casein (milk protein).”
 

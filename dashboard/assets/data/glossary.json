@@ -337,6 +337,11 @@
       ]
     },
     {
+      "term": "biosynthesis",
+      "plain": "the making of a substance by living cells",
+      "category": "biology"
+    },
+    {
       "term": "bitters",
       "plain": "bitter-tasting herbal preparations taken before meals to stimulate digestion",
       "category": "supplement"
@@ -348,6 +353,11 @@
       "aliases": [
         "blephritis"
       ]
+    },
+    {
+      "term": "blood-brain barrier",
+      "plain": "a protective filter that controls what passes from the blood into the brain",
+      "category": "anatomy"
     },
     {
       "term": "bromine",
@@ -458,6 +468,11 @@
       "category": "medical"
     },
     {
+      "term": "casein",
+      "plain": "the main protein in milk",
+      "category": "nutrition"
+    },
+    {
       "term": "catalase",
       "plain": "an iron-containing enzyme that breaks down harmful peroxide",
       "category": "biology"
@@ -544,6 +559,11 @@
       "aliases": [
         "cirrhotic"
       ]
+    },
+    {
+      "term": "citrulline",
+      "plain": "an amino acid the body can convert into arginine",
+      "category": "nutrition"
     },
     {
       "term": "coagulation",
@@ -692,6 +712,11 @@
       "term": "demyelination",
       "plain": "the stripping of the protective sheath around nerves",
       "category": "medical"
+    },
+    {
+      "term": "dentin",
+      "plain": "the hard tissue beneath tooth enamel that makes up most of a tooth",
+      "category": "anatomy"
     },
     {
       "term": "depilatory",
@@ -1122,6 +1147,11 @@
       "term": "glutathione",
       "plain": "the body's main built-in antioxidant molecule",
       "category": "biology"
+    },
+    {
+      "term": "glycine",
+      "plain": "the simplest amino acid, a building block of protein",
+      "category": "nutrition"
     },
     {
       "term": "glycogen",
@@ -1690,6 +1720,11 @@
       "category": "medical"
     },
     {
+      "term": "melatonin",
+      "plain": "a hormone that regulates the sleep-wake cycle",
+      "category": "biology"
+    },
+    {
       "term": "menadione",
       "plain": "a synthetic form of vitamin K (vitamin K3)",
       "category": "nutrition"
@@ -1997,6 +2032,11 @@
       ]
     },
     {
+      "term": "ornithine",
+      "plain": "an amino acid closely related to arginine in the body's urea cycle",
+      "category": "nutrition"
+    },
+    {
       "term": "orthomolecular",
       "plain": "an approach that treats illness with high doses of substances natural to the body",
       "category": "medical"
@@ -2195,6 +2235,11 @@
       "term": "peroxidation",
       "plain": "the damaging oxidation of fats by unstable oxygen molecules",
       "category": "biology"
+    },
+    {
+      "term": "phenylalanine",
+      "plain": "an essential amino acid and a building block of protein",
+      "category": "nutrition"
     },
     {
       "term": "phenylketonuria",
@@ -2501,6 +2546,11 @@
       "term": "semiconductor",
       "plain": "a material that conducts electricity partially — the basis of computer chips",
       "category": "chemistry"
+    },
+    {
+      "term": "serotonin",
+      "plain": "a brain chemical that affects mood, sleep, and appetite",
+      "category": "biology"
     },
     {
       "term": "sinusitis",

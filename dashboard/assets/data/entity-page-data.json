@@ -12699,7 +12699,23 @@
         "immortality",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "arginine",
+        "l-arginine",
+        "l arginine",
+        "arg",
+        "arginine supplement",
+        "l-arginine supplement",
+        "arginine deficiency",
+        "arginine amino acid",
+        "arginine and ornithine",
+        "arginine ornithine",
+        "argenine",
+        "arginene",
+        "arganine",
+        "arginin",
+        "nitric oxide amino acid"
+      ],
       "record": [
         {
           "kind": "protocol",
@@ -12728,7 +12744,60 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000341"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000268"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000343"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000342",
+            "WAL-CLM-EPIGEN-000344",
+            "WAL-CLM-HELLS-000066"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000047",
+            "WAL-CLM-EPIGEN-000345"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000266",
+            "WAL-CLM-DDDL-000267"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000058"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000346"
+          ]
+        }
+      ],
       "conditions": [
         "cataracts",
         "infertility"
@@ -12759,7 +12828,29 @@
         "immortality",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "taurine",
+        "taurin",
+        "l-taurine",
+        "taurine deficiency",
+        "taurine supplement",
+        "taurine supplements",
+        "taurine dose",
+        "taurine dosage",
+        "taurine amino acid",
+        "taurine benefits",
+        "taurine for eyes",
+        "taurine for the heart",
+        "taurine for macular degeneration",
+        "taurine for seizures",
+        "taurine epilepsy",
+        "taurine blood pressure",
+        "too much taurine",
+        "taurine side effects",
+        "taurine psoriasis",
+        "is taurine essential",
+        "what is taurine"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -12788,7 +12879,48 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000347"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000054",
+            "WAL-CLM-EPIGEN-000349"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000348"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000269",
+            "WAL-CLM-DDDL-000270",
+            "WAL-CLM-DDDL-000271",
+            "WAL-CLM-DDDL-000272"
+          ]
+        },
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000066"
+          ]
+        },
+        {
+          "facet": "etymology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000350"
+          ]
+        }
+      ],
       "conditions": [
         "absence_attacks",
         "cataracts",
@@ -13122,7 +13254,33 @@
         "epigenetics",
         "lets-play-doctor"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "tryptophan",
+        "tryptophane",
+        "tryptofan",
+        "triptophan",
+        "tryptaphan",
+        "trp",
+        "tryp",
+        "l-tryptophan",
+        "l tryptophan",
+        "l-trp",
+        "d-tryptophan",
+        "5-htp",
+        "5 htp",
+        "5-hydroxytryptophan",
+        "s-hydroxytryptophan",
+        "tryptophan deficiency",
+        "low tryptophan",
+        "tryptophan supplement",
+        "tryptophan supplements",
+        "tryptophan for sleep",
+        "tryptophan sleep aid",
+        "tryptophan for depression",
+        "tryptophan for anxiety",
+        "tryptophan and serotonin",
+        "amino acid tryptophan"
+      ],
       "record": [
         {
           "kind": "deficiency_sign",
@@ -13147,7 +13305,55 @@
           ]
         }
       ],
-      "search": [],
+      "search": [
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000351"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000356"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000056"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000352",
+            "WAL-CLM-EPIGEN-000353",
+            "WAL-CLM-EPIGEN-000354",
+            "WAL-CLM-IMMORT-000383"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000273",
+            "WAL-CLM-EPIGEN-000355",
+            "WAL-CLM-LETS-000142"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000357"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000384"
+          ]
+        }
+      ],
       "conditions": [
         "anxiety",
         "depression",

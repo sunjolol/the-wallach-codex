@@ -111,6 +111,38 @@
       ],
       "claim_count": 7
     },
+    "arginine": {
+      "display_name": "Arginine",
+      "common_name": "Arginine",
+      "type": "nutrient",
+      "synonyms": [
+        "arginine",
+        "l-arginine",
+        "l arginine",
+        "arg",
+        "arginine supplement",
+        "l-arginine supplement",
+        "arginine deficiency",
+        "arginine amino acid",
+        "arginine and ornithine",
+        "arginine ornithine",
+        "argenine",
+        "arginene",
+        "arganine",
+        "arginin",
+        "nitric oxide amino acid"
+      ],
+      "related": [
+        "taurine",
+        "tyrosine",
+        "lysine",
+        "ornithine",
+        "citrulline",
+        "nitric-oxide",
+        "erectile-dysfunction"
+      ],
+      "claim_count": 12
+    },
     "aromatherapy": {
       "display_name": "Aromatherapy",
       "type": "topic",
@@ -2566,6 +2598,88 @@
       "claim_count": 14,
       "symbol": "S"
     },
+    "taurine": {
+      "display_name": "Taurine",
+      "common_name": "Taurine",
+      "type": "nutrient",
+      "synonyms": [
+        "taurine",
+        "taurin",
+        "l-taurine",
+        "taurine deficiency",
+        "taurine supplement",
+        "taurine supplements",
+        "taurine dose",
+        "taurine dosage",
+        "taurine amino acid",
+        "taurine benefits",
+        "taurine for eyes",
+        "taurine for the heart",
+        "taurine for macular degeneration",
+        "taurine for seizures",
+        "taurine epilepsy",
+        "taurine blood pressure",
+        "too much taurine",
+        "taurine side effects",
+        "taurine psoriasis",
+        "is taurine essential",
+        "what is taurine"
+      ],
+      "related": [
+        "methionine",
+        "arginine",
+        "tyrosine",
+        "choline",
+        "cataracts",
+        "epilepsy",
+        "selenium",
+        "vitamin-e"
+      ],
+      "claim_count": 10
+    },
+    "tryptophan": {
+      "display_name": "Tryptophan",
+      "common_name": "Tryptophan",
+      "type": "nutrient",
+      "synonyms": [
+        "tryptophan",
+        "tryptophane",
+        "tryptofan",
+        "triptophan",
+        "tryptaphan",
+        "trp",
+        "tryp",
+        "l-tryptophan",
+        "l tryptophan",
+        "l-trp",
+        "d-tryptophan",
+        "5-htp",
+        "5 htp",
+        "5-hydroxytryptophan",
+        "s-hydroxytryptophan",
+        "tryptophan deficiency",
+        "low tryptophan",
+        "tryptophan supplement",
+        "tryptophan supplements",
+        "tryptophan for sleep",
+        "tryptophan sleep aid",
+        "tryptophan for depression",
+        "tryptophan for anxiety",
+        "tryptophan and serotonin",
+        "amino acid tryptophan"
+      ],
+      "related": [
+        "niacin",
+        "serotonin",
+        "melatonin",
+        "phenylalanine",
+        "tyrosine",
+        "depression",
+        "pellagra",
+        "5-htp"
+      ],
+      "claim_count": 12
+    },
     "urine_therapy": {
       "display_name": "Urine Therapy",
       "type": "topic",
@@ -4032,6 +4146,38 @@
         "essentials": [
           "omega-3",
           "omega-6"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000066",
+      "subject": "taurine",
+      "also_about": [
+        "arginine",
+        "tyrosine"
+      ],
+      "facet": "stance",
+      "question": "Is taurine an essential amino acid?",
+      "answer_short": "Wallach adds taurine to the classic list of essential amino acids, saying that over the long haul it helps prevent a specific disease — macular degeneration.",
+      "answer": "Wallach adds arginine, taurine, and tyrosine to the classic essential amino acids — over the long haul these three help prevent cancer, macular degeneration, and goiter respectively.",
+      "verbatim": "To the classic list of essential amino\nacids, I would add arginine, taurine, and tyrosine. Over the long haul, these\nthree amino acids help prevent certain specific diseases. Respectively, those\ndiseases are cancer, macular degeneration, and goiter.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "amino-acids",
+        "essential-nutrients",
+        "eye-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "arginine",
+          "tyrosine",
+          "taurine"
+        ],
+        "conditions": [
+          "cancer",
+          "macular_degeneration",
+          "goiter"
         ]
       }
     },
@@ -7670,6 +7816,170 @@
       ]
     },
     {
+      "id": "WAL-CLM-DDDL-000266",
+      "subject": "arginine",
+      "also_about": [
+        "infertility"
+      ],
+      "facet": "protocol",
+      "question": "How much arginine does Wallach recommend for infertility?",
+      "answer_short": "For infertility, Wallach's protocol includes l-arginine at 500 mg three times a day (t.i.d.).",
+      "answer": "In Wallach's infertility program, l-arginine is dosed at 500 mg three times a day (t.i.d.). It is one part of a broader plan that includes a high-protein diet of up to 200 g/day, essential fatty acids, zinc, and selenium.",
+      "verbatim": "Eat high protein diets (up to 200 gm/day),\nEFA at 5 gm t.i.d., l-arginine at 500 mg t.i.d., zinc at 15 mg t.i.d., selenium\nat 250 mcg/day",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "infertility",
+        "fertility"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000267",
+      "subject": "arginine",
+      "also_about": [
+        "cataracts"
+      ],
+      "facet": "protocol",
+      "question": "How much arginine is used for cataracts?",
+      "answer_short": "For cataracts, Wallach's protocol includes l-arginine at 300 mg per day.",
+      "answer": "Wallach's cataract protocol includes l-arginine at 300 mg per day. It sits alongside other targeted nutrients such as glycine, l-glutamine, l-cysteine, and glutathione, on top of the baseline vitamin/mineral supplement.",
+      "verbatim": "bioflavonoids at 300 mg, glycine at 200 mg, l-glutamine at 200 mg,\nl-arginine at 300 mg/day, l-cysteine at 400 mg/day, and glutathione at 40\nmg/day.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cataracts",
+        "eye-health",
+        "vision"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000268",
+      "subject": "arginine",
+      "also_about": [
+        "lysine"
+      ],
+      "facet": "warning",
+      "question": "Should I avoid arginine if I get cold sores or herpes?",
+      "answer_short": "Yes—for herpes, Wallach says to avoid high-arginine foods like chocolate, nuts, seeds and grains, and to eat high-lysine foods instead.",
+      "answer": "As part of treating herpes, Wallach advises avoiding high-arginine foods—chocolate, peanuts, nuts, seeds, and grains—and eating high-lysine foods such as meat, potatoes, milk, yeast, fish, chicken, beans, and eggs. Other measures include applying ultraviolet light directly on the lesion for 1–6 minutes per day.",
+      "verbatim": "Treatment includes ultra violet light directly on lesion for 1-6 minutes per\nday, avoid high arginine foods (i.e. avoid chocolate, peanuts, nuts, seeds,\ngrains), eat high lysine foods (i.e. meat, potatoes, milk, yeast, fish, chicken,\nbeans, eggs)",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "herpes",
+        "cold-sores",
+        "diet"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000269",
+      "subject": "taurine",
+      "also_about": [
+        "selenium",
+        "vitamin-e",
+        "methionine"
+      ],
+      "facet": "protocol",
+      "question": "How much taurine should I take for macular degeneration?",
+      "answer_short": "Wallach's macular degeneration protocol includes taurine at 2 to 5 grams per day, alongside all 90 essential nutrients.",
+      "answer": "For macular degeneration — a free-radical degeneration of the retina and a common cause of blindness in aging individuals — Wallach's treatment approach includes taurine at 2 to 5 grams per day. It is paired with eliminating all fried foods, margarine, and all sugar, supplementing with all 90 essential nutrients (including selenium, vitamin E, and methionine), and taking the 60 essential minerals in plant-derived colloidal form.",
+      "verbatim": "Treatment approach includes elimination of all fried foods and\nmargarine, elimination of all sugar (natural and processed), supplement with all 90 essential nutrients\n(including selenium—500 mcg., vitamin E—1,200 iu., methionine), taurine 2-5 grams per day, and\nthe 60 essential minerals in the plant derived colloidal form.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "eye-health",
+        "vision",
+        "dosage",
+        "supplements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000270",
+      "subject": "taurine",
+      "also_about": [
+        "epilepsy",
+        "vitamin-b6",
+        "choline"
+      ],
+      "facet": "protocol",
+      "question": "Does taurine help with epilepsy or seizures?",
+      "answer_short": "Wallach lists taurine at 500 mg three times a day among the nutrients indicated for epilepsy.",
+      "answer": "In Wallach's nutritional approach to epilepsy, taurine at 500 mg three times a day is one of the indicated nutrients. It sits alongside vitamin B6 (which he says frequently 'cures' epilepsy at 50-100 mg), calcium and magnesium, folic acid, B12, manganese, zinc, essential fatty acids, choline, and dimethyl glycine. He adds that high-fat, high-cholesterol diets often help resolve acquired seizure disorders not related to trauma.",
+      "verbatim": "Vitamin B6 alone will frequently “cure” epilepsy at 50-100\nmg ti.d.. Long-term administration can cause some numbness and tingling\nin the face or hands. Adding Calcium magnesium at 2,000 and 1,000\nmg/day, folic acid at 15-25 mg/day and B12 at 1,000 mcg/day IM can also\nbe curative. Manganese at 50 mg/day, zinc at 50 mg t.i.d., essential fatty\nacids at 5 gm t.i.d., choline at 4 gm/day, taurine at 500 mg t.i.d., and\ndimethyl glycine at 100 mg b.i.d. are also indicated.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "seizures",
+        "brain-health",
+        "dosage",
+        "supplements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000271",
+      "subject": "taurine",
+      "also_about": [
+        "gallstones"
+      ],
+      "facet": "protocol",
+      "question": "Does taurine help with gallstones or gallbladder problems?",
+      "answer_short": "Wallach's treatment for gallbladder disease and gallstones includes taurine at 500 mg three times a day.",
+      "answer": "For gallbladder disease and gallstones, Wallach's treatment includes taurine at 500 mg three times a day. It is combined with a high-fiber diet aimed at 2-3 bowel movements per day, lecithin at 2,500 mg, essential fatty acids, vitamin E at 800-1,200 IU per day, vitamin C to bowel tolerance, and selenium.",
+      "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high\nfiber diets (i.e. make sure you are having 2-3 bowel movements per day),\nlecithin at 2,500 mg t.i.d., EFA at 5 gm t.i.d., vitamin E at 800-1,200 IU per\nday, vitamin C to bowel tolerance, selenium at 200 mcg t.i.d., and taurine at\n500 mg t.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "digestive-health",
+        "liver",
+        "dosage",
+        "supplements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000272",
+      "subject": "taurine",
+      "also_about": [
+        "epilepsy",
+        "choline"
+      ],
+      "facet": "protocol",
+      "question": "What is the treatment for absence seizures (petit mal)?",
+      "answer_short": "Wallach's treatment for absence attacks (petit mal) includes taurine at 500 mg three times a day.",
+      "answer": "Absence attacks (petit mal) are brief episodes in which a person stops what they are doing and rapidly blinks, then resumes the activity where they left off. Wallach's recommended treatment includes taurine at 500 mg three times a day, along with choline, dimethyl glycine, phosphatidyl choline, and vitamin B6.",
+      "verbatim": "ABSENCE ATTACKS {petit mal): patient stops what he is doing and rapidly\nblinks eyes then starts the activity again where he left off. Treatment should\ninclude choline 4 gm/day, taurine 500 mg t.i.d., dimethyl glycine 100 mg\nb.i.d., phosphytidyl choline, and B6 100-300 mg/day.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "seizures",
+        "brain-health",
+        "dosage",
+        "children"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000273",
+      "subject": "tryptophan",
+      "also_about": [
+        "depression",
+        "phenylalanine",
+        "tyrosine"
+      ],
+      "facet": "uses",
+      "question": "How much tryptophan for depression?",
+      "answer_short": "For depression, Wallach's program uses dl-phenylalanine, L-tryptophan, and L-tyrosine at 2 grams three times a day each, on top of the base-line supplement program.",
+      "answer": "Wallach's depression protocol pairs L-tryptophan with dl-phenylalanine and L-tyrosine, each taken at 2 grams three times a day (t.i.d.). This sits on top of the base-line supplement program and steps to address food allergies and hypoglycemia, together with chromium/vanadium, B vitamins, vitamin C, calcium and magnesium, potassium, and essential fatty acids.",
+      "verbatim": "Treatment of depression should include dealing with the food allergies (i.e.\navoidance, rotation diets) and hypoglycemia (i.e. hypoglycemia diet). In\naddition to the base line supplement program, also use chromium/vanadium\nsupplementation at 50-200 mcg t.i.d, iron at 15 mg/day, B6, B2, Bl at 50 mg\nt.i.d., B12 at 1,000 mcg/day, vitamin C to bowel tolerance, calcium and\nmagnesium at 2,000 mg and 1,000 mg/day, potassium at 250 mg q.i.d.,\nessential fatty acids at 5 gm t.i.d., and dl-phenylalanine, l-tryptophan, and\nl-tyrosine at 2 gm t.i.d. each.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "depression",
+        "mood",
+        "mental-health",
+        "supplements",
+        "protocol"
+      ]
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000008",
       "subject": "homosexuality",
       "also_about": [
@@ -8362,6 +8672,90 @@
         "symptoms": [
           "capillary_hemorrhage",
           "shortened_lifespan"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000047",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Is arginine used for erectile dysfunction?",
+      "answer_short": "Yes—arginine is commonly used together with proanthocyanidins or yohimbine to relieve erectile dysfunction.",
+      "answer": "Arginine is required for complete cell division, wound healing, the excretion of ammonia, immune support, and the synthesis of nitric oxide -- and supplementing it makes more adenosine triphosphate (cellular fuel) available. Wallach notes oral arginine reduces healing time after trauma (especially bone trauma), lowers blood pressure, and increases blood flow through obstructed blood vessels; an 8% arginine toothpaste relieves dental pain by depositing a calcium-phosphate dentin-like material, and arginine is commonly used (with proanthocyanidines or yohimbine) for erectile dysfunction.",
+      "verbatim": "Arginine is commonly employed concurrently with proanthocyanidines or\nyohimbine for the relief of erectile dysfunction",
+      "page": 634,
+      "book_id": "epigenetics",
+      "topics": [
+        "erectile-dysfunction",
+        "mens-health",
+        "libido"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "arginine"
+        ],
+        "conditions": [
+          "erectile_dysfunction"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000054",
+      "subject": "taurine",
+      "also_about": [
+        "cataracts"
+      ],
+      "facet": "warning",
+      "question": "What does taurine deficiency cause?",
+      "answer_short": "A taurine deficiency can produce cataracts and retinal damage; taurine is also needed to maintain skeletal muscle and healthy blood pressure.",
+      "answer": "Taurine -- a sulfonic-acid amino acid that conjugates bile acids, acts as an antioxidant, and modulates calcium signaling -- is essential to the cardiovascular system, skeletal muscle, the retina, and the central nervous system. Wallach states that taurine is required for the maintenance of skeletal muscle and healthy blood pressure, and that taurine deficiency can produce cataracts and retinal damage; he also notes that doses above 2 grams per day have been shown to contribute to psoriasis.",
+      "verbatim": "Taurine is required for the maintenance of skeletal muscle and the\nmaintenance of healthy blood pressure. Taurine deficiency can produce cataracts\nand retinal damage.",
+      "page": 640,
+      "book_id": "epigenetics",
+      "topics": [
+        "eye-health",
+        "vision",
+        "blood-pressure",
+        "muscle-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "taurine"
+        ],
+        "conditions": [
+          "cataracts"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000056",
+      "subject": "tryptophan",
+      "also_about": [
+        "depression",
+        "gluten"
+      ],
+      "facet": "physiology",
+      "question": "Can gluten intolerance cause depression?",
+      "answer_short": "Yes; gluten intolerance, lactose intolerance, and fructose malabsorption all reduce tryptophan absorption from the gut, lowering blood tryptophan and producing clinical depression.",
+      "answer": "Tryptophan is the biochemical precursor of the neurotransmitter serotonin (which can be converted to the sleep hormone melatonin), and niacin is also synthesized from it. Wallach explains that fructose malabsorption, lactose intolerance, and gluten intolerance reduce tryptophan absorption from the intestine, lowering blood tryptophan and producing clinical depression, and that tryptophan supplements are sold as sleep aids while its metabolite 5-hydroxytryptophan has been suggested for seizure disorders and depression.",
+      "verbatim": "The disorders, fructose malabsorption, lactose intolerance, and gluten\nintolerance cause a reduced state of tryptophan absorption from the intestine,\ntherefore causing reduced levels of tryptophan in the blood and clinical\ndepression. Tryptophan supplements are sold as sleep aids.",
+      "page": 640,
+      "book_id": "epigenetics",
+      "topics": [
+        "depression",
+        "gut-health",
+        "gluten",
+        "mood",
+        "mental-health",
+        "absorption"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "tryptophan"
+        ],
+        "conditions": [
+          "depression"
         ]
       }
     },
@@ -12856,6 +13250,331 @@
       ]
     },
     {
+      "id": "WAL-CLM-EPIGEN-000341",
+      "subject": "arginine",
+      "also_about": [
+        "taurine",
+        "tyrosine",
+        "lysine"
+      ],
+      "facet": "basics",
+      "question": "What is arginine?",
+      "answer_short": "Arginine is an amino acid Wallach counts among the essentials—required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
+      "answer": "Arginine is an amino acid that Wallach adds to the classic list of essential amino acids. Mainstream science treats it as non-essential, but Wallach holds that a long-term deficiency drives specific diseases—notably cancer and peripheral arterial disease (PAD). The body can make arginine from citrulline, but only at a steep energy cost, so supplementing it directly frees up cellular fuel (adenosine triphosphate, ATP). Arginine is required for complete and efficient cell division, wound healing, the excretion of ammonia, immune support, and the availability of stored hormones, and it is the raw material for nitric oxide, which lowers blood pressure and increases blood flow through obstructed vessels.",
+      "verbatim": "Arginine is required for complete and efficient cell division, wound healing,\nfacilitating the biological use of and the excretion of ammonia, immune system\nsupport, and the availability of stored hormones.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "arginine",
+        "amino-acids",
+        "essential-amino-acids"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000342",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does supplementing with arginine help fuel the cells?",
+      "answer_short": "Making arginine internally burns ATP, so supplementing it directly frees up more ATP to fuel cell function.",
+      "answer": "Building arginine from citrulline is energetically expensive: producing each molecule of argininosuccinate requires hydrolyzing adenosine triphosphate (ATP) down to adenosine monophosphate (AMP). By supplementing with arginine directly, the body is spared that cost, leaving more ATP available to provide fuel for cell function.",
+      "verbatim": "This process is expensive in terms of energy\nsince the production of each molecule of argininosuccinate requires hydrolysis\nof adenosine triphosphate (ATP) to adenosine monophosphate (AMP), and by\n\n\nsupplementing with arginine, more ATP is available to provide cell function fuel.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "energy",
+        "atp",
+        "metabolism",
+        "cell-fuel"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000343",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "physiology",
+      "question": "What does arginine do in the body?",
+      "answer_short": "Arginine is required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
+      "answer": "Arginine is required for complete and efficient cell division and for wound healing. It also facilitates the biological use and excretion of ammonia, supports the immune system, and helps make stored hormones available to the body.",
+      "verbatim": "Arginine is required for complete and efficient cell division, wound healing,\nfacilitating the biological use of and the excretion of ammonia, immune system\nsupport, and the availability of stored hormones.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "wound-healing",
+        "immunity",
+        "hormones",
+        "cell-division"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000344",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Does arginine lower blood pressure and improve circulation?",
+      "answer_short": "Yes—oral arginine is required to synthesize nitric oxide, and it reduces blood pressure and increases blood flow through obstructed blood vessels.",
+      "answer": "Oral supplementation of arginine is required for the synthesis of nitric oxide (NO). It also reduces blood pressure, increases blood flow through obstructed blood vessels, shortens healing time following trauma, and is particularly useful for bone trauma.",
+      "verbatim": "The oral supplementation of\narginine is required for the synthesis of nitric oxide (NO), the reduction of healing\ntime following trauma, and is particularly useful for bone trauma; it reduces\nblood pressure and increases blood flow through obstructed blood vessels.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "nitric-oxide",
+        "blood-pressure",
+        "circulation",
+        "heart-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000345",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "uses",
+      "question": "Can arginine help with tooth pain or sensitivity?",
+      "answer_short": "An 8% arginine toothpaste gives rapid, effective relief from dental pain by rebuilding a dentin-like layer.",
+      "answer": "Arginine (8%) toothpaste produces rapid and effective relief from dental pain. It works by forming a dentin-like material made of calcium and phosphate that is deposited in the dentin tubules and on the surface of the dentin.",
+      "verbatim": "Arginine (8%) toothpaste produces rapid and effective relief from dental pain\nby producing a dentin-like material that is made up of calcium and phosphate\nthat is deposited in the dentin tubules and on the surface of dentin.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "dental-pain",
+        "teeth",
+        "tooth-sensitivity"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000346",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "When and how was arginine discovered?",
+      "answer_short": "Arginine was first isolated in 1886 from a lupin seedling by Swiss chemist Ernst Schultze.",
+      "answer": "Arginine (Arg) was first isolated in 1886 from a lupin seedling by the Swiss chemist Ernst Schultze. In the body it is synthesized from citrulline through the sequential work of the cytosolic enzymes argininosuccinate synthetase (ASS) and argininosuccinate lyase (ASL).",
+      "verbatim": "Arginine (Arg) was first isolated in 1886 from a lupin seedling by the Swiss\nchemist Ernst Schultze and is synthesized from citrulline by the sequential\nemployment of the cytosolic enzymes argininosuccinate synthetase (ASS) and\n\nargininosuccinate lyase (ASL).",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "amino-acids",
+        "arginine",
+        "biochemistry"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000347",
+      "subject": "taurine",
+      "also_about": [
+        "methionine",
+        "arginine",
+        "tyrosine"
+      ],
+      "facet": "basics",
+      "question": "What is taurine?",
+      "answer_short": "Taurine is an amino acid Wallach counts as essential -- a sulfur-based compound that conjugates bile acids, acts as an antioxidant, and is vital to the heart, muscles, eyes, and nervous system.",
+      "answer": "Taurine is one of the amino acids Wallach adds to the classic list of essentials, because over the long haul a deficiency drives a specific disease -- macular degeneration. Chemically it is unusual: a sulfonic acid rather than the carboxyl-acid form most biologically occurring acids take, and the body can synthesize it from methionine. Wallach describes taurine as essential to the cardiovascular system, skeletal muscle, the retina, and the central nervous system, where it conjugates bile acids, acts as an antioxidant, stabilizes membranes, and modulates calcium signaling.",
+      "verbatim": "Taurine (Ta) has many biological roles including the conjugation of bile acids,\nacts as an antioxidant, osmoregulation, membrane stabilization, and modulation\nof calcium signaling. Taurine is essential for the functioning of the cardiovascular\nsystem, skeletal muscle, the retina and the central nervous system.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "amino-acids",
+        "essential-nutrients",
+        "antioxidants",
+        "heart-health",
+        "eye-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000348",
+      "subject": "taurine",
+      "also_about": [
+        "methionine"
+      ],
+      "facet": "mechanism",
+      "question": "How does the body make taurine?",
+      "answer_short": "Taurine is synthesized from methionine — Wallach lists it among the compounds methionine is an intermediate in producing.",
+      "answer": "Taurine is one of the compounds the body builds from the amino acid methionine. Wallach describes methionine as an intermediate in the biosynthesis of cysteine, carnitine, taurine, lecithin, phosphatidylcholine, and other phospholipids, meaning the body can produce taurine from methionine.",
+      "verbatim": "Methionine is an intermediate\nin the biosynthesis of cysteine, carnitine, taurine, lecithin, phosphatidylcholine,\nand other phospholipids.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "amino-acids",
+        "metabolism",
+        "biochemistry"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000349",
+      "subject": "taurine",
+      "also_about": [
+        "psoriasis"
+      ],
+      "facet": "warning",
+      "question": "Can you take too much taurine?",
+      "answer_short": "Wallach warns that doses of taurine above 2 grams a day have been shown to contribute to psoriasis.",
+      "answer": "Taurine is not risk-free at high intakes. Wallach warns that doses of taurine in excess of 2 grams per day have been shown to contribute to the genesis of psoriasis.",
+      "verbatim": "Doses of taurine in excess of 2 gm/day have been shown to contribute to the\ngenesis of psoriasis.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "supplements",
+        "dosage",
+        "skin-health",
+        "safety"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000350",
+      "subject": "taurine",
+      "also_about": [],
+      "facet": "etymology",
+      "question": "Where does the name taurine come from?",
+      "answer_short": "Taurine is named after the Latin Taurus, meaning bull or ox, because it was first isolated from ox bile in 1827.",
+      "answer": "Taurine takes its name from the Latin word Taurus, which means bull or ox. Wallach notes that it was first isolated from ox bile in 1827 by the German scientists Friedrich Tiedermann and Leopold Gmelin, which is the origin of the name.",
+      "verbatim": "Taurine is named after the Latin Taurus, which means bull or ox, as it was first\nisolated from ox bile in 1827 by the German scientists Friedrich Tiedermann and\nLeopold Gmelin.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "amino-acids",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000351",
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is Tryptophan?",
+      "answer_short": "Tryptophan is an essential amino acid the body must get from dietary protein; it is a building block for the body's structural enzyme proteins and the raw material it uses to make serotonin, melatonin, and niacin.",
+      "answer": "Tryptophan (Trp) is an essential amino acid — the body cannot synthesize it, so it must come from protein in the diet. It is used to build the body's structural enzyme proteins, and it is the biochemical precursor from which the body makes serotonin (a neurotransmitter), which in turn can become melatonin (a sleep hormone); niacin (vitamin B3) is also synthesized from it. Because its absorption from the intestine is reduced by gluten intolerance, lactose intolerance, and fructose malabsorption, a shortfall lowers blood tryptophan and can produce clinical depression.",
+      "verbatim": "Tryptophan (Trp) is an essential amino acid encoded in the standard genetic code\nas the codon UGG. Only L-tryptophan is used in structural enzyme proteins.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "amino-acids",
+        "protein",
+        "essential-amino-acids",
+        "serotonin",
+        "niacin"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000352",
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What does tryptophan turn into in the body?",
+      "answer_short": "Tryptophan is a building block of protein and a precursor of serotonin, which the body can convert to melatonin, and it is also used to make niacin.",
+      "answer": "Beyond serving as a building block for protein biosynthesis, tryptophan is a biochemical precursor of serotonin (a neurotransmitter), which it forms via the enzyme tryptophan hydroxylase. Serotonin can in turn be converted to melatonin (a neurohormone). Tryptophan is also the raw material from which niacin is synthesized, by way of kynurenine and quinolinic acid intermediates. In plants it is even converted into the phytohormone auxin.",
+      "verbatim": "Tryptophan is employed as a building block of protein\nbiosynthesis and is a biochemical precursor of serotonin (a neurotransmitter),\nsynthesized via tryptophan hydroxylase. Serotonin can be converted to melatonin\n(a neurohormone); niacin is synthesized from tryptophan via kynurenine and\nquinolinic acids as essential biosynthetic intermediates; auxin (a phytohormone)\nis produced when sieve tube elements undergo apoptosis (programed cell-death),\ntryptophan is converted to auxins.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "serotonin",
+        "melatonin",
+        "niacin",
+        "mood",
+        "brain-health",
+        "amino-acids"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000353",
+      "subject": "tryptophan",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "mechanism",
+      "question": "How much tryptophan equals a milligram of niacin?",
+      "answer_short": "By convention, 60 mg of tryptophan is considered equivalent to 1 mg of niacin, though measurements found the amount ranged from 39 to 86 mg.",
+      "answer": "The body can make niacin (vitamin B3) from tryptophan, and researchers measured how much is needed. When niacin status was gauged by urinary metabolite levels, the amount of supplementary tryptophan required to give the same response as one milligram of niacin ranged from 39 to 86 mg. By convention, 60 mg of tryptophan is treated as equivalent to one mg of niacin.",
+      "verbatim": "When niacin status was gauged by urinary metablyte levels,\nthe quantities of supplementary tryptophan required to give the same response\nas one mg of niacin ranged from 39 to 86 mg. Convention allows that 60 mg of\ntryptophan is equivalent to one mg of niacin,",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "niacin",
+        "conversion",
+        "pellagra",
+        "amino-acids",
+        "vitamins"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000354",
+      "subject": "tryptophan",
+      "also_about": [
+        "phenylalanine"
+      ],
+      "facet": "mechanism",
+      "question": "Does phenylalanine affect tryptophan and serotonin?",
+      "answer_short": "Phenylalanine uses the same transport channel as tryptophan to cross into the brain, so large doses of phenylalanine interfere with serotonin production.",
+      "answer": "Phenylalanine and tryptophan compete for entry into the brain: phenylalanine employs the same active transport channel as tryptophan to cross the blood-brain barrier. As a result, large doses of phenylalanine will interfere with the production of serotonin, the neurotransmitter the brain makes from tryptophan.",
+      "verbatim": "Phenylalanine employs the same active transport channel as tryptophan to cross\nthe blood-brain barrier, in large doses it will interfere with the production of\nserotonin.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "phenylalanine",
+        "serotonin",
+        "brain-health",
+        "amino-acids",
+        "interactions"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000355",
+      "subject": "tryptophan",
+      "also_about": [
+        "depression"
+      ],
+      "facet": "uses",
+      "question": "What is 5-HTP used for?",
+      "answer_short": "5-HTP, a metabolite of tryptophan, has been suggested as a treatment for seizure disorders and depression; it rapidly crosses into the brain and is converted to serotonin.",
+      "answer": "A metabolite of tryptophan called 5-HTP (5-hydroxytryptophan) has been suggested as a treatment for seizure disorders and depression. It acts quickly because it rapidly crosses the blood-brain barrier and is then rapidly decarboxylated into serotonin (5-hydroxytryptamine, or 5-HT).",
+      "verbatim": "A metabolite of tryptophan, S-hydroxytryptophan (S-HTP), has been\nsuggested as a treatment for seizure disorders and depression. It rapidly\ncrosses the blood brain barrier and is rapidly decarboxylated to serotonin (5-\nhydroxytryptamine or 5-HT).",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "5-htp",
+        "depression",
+        "seizures",
+        "serotonin",
+        "brain-health",
+        "supplements"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000356",
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is tryptophan dangerous? What was the 1989 tryptophan outbreak?",
+      "answer_short": "In 1989 a tryptophan-associated outbreak of eosinophilia-myalgia syndrome (EMS) caused at least 1,500 cases of permanent disability and at least 37 deaths, traced to a supply of L-tryptophan from a single Japanese manufacturer (Showa Denko KK).",
+      "answer": "In 1989 there was a large tryptophan-associated outbreak of eosinophilia-myalgia syndrome (EMS) that caused at least 1,500 cases of permanent disability and at least 37 deaths. The problem was traced to a batch of L-tryptophan produced and exported to the United States by the Japanese manufacturer Showa Denko KK. The final explanation offered was that large doses of tryptophan gave rise to metabolites that inhibit the normal degradation of histamine, and that the resulting excess histamine caused EMS.",
+      "verbatim": "In 1989 there was a large tryptophan-associated outbreak of eosinophilia-\nmyalgia syndrome (EMS) which caused at least 1,500 cases of permanent\ndisability and at least 37 deaths.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "safety",
+        "supplements",
+        "toxicity",
+        "history"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000357",
+      "subject": "tryptophan",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Who discovered tryptophan and when?",
+      "answer_short": "Tryptophan was isolated in 1901 by Frederick Hopkins through the hydrolysis of casein, the protein in milk.",
+      "answer": "Tryptophan was first isolated in 1901 by Frederick Hopkins, who obtained it through the hydrolysis (chemical breakdown) of casein, the main protein found in milk.",
+      "verbatim": "Tryptophan was isolated in 1901 by Frederick Hopkins via hydrolysis of\ncasein (milk protein).",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "history",
+        "discovery",
+        "amino-acids"
+      ]
+    },
+    {
       "id": "WAL-CLM-HELLS-000001",
       "subject": "beef",
       "also_about": [
@@ -14161,6 +14880,23 @@
       ]
     },
     {
+      "id": "WAL-CLM-HELLS-000066",
+      "subject": "arginine",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can arginine raise growth hormone (HGH)?",
+      "answer_short": "Yes—L-arginine with ornithine can trigger HGH release from the pituitary gland when supplemented in significant doses.",
+      "answer": "The amino acids L-arginine and ornithine can cause human growth hormone (HGH) to be released from the pituitary gland when supplemented in significant doses. This matters because, per studies cited from the New England Journal of Medicine, HGH can reverse symptoms of human biological aging.",
+      "verbatim": "The amino acids L-arginine and ornithine can cause HGH to be \nreleased from the pituitary gland if supplemented in significant doses.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "hgh",
+        "growth-hormone",
+        "anti-aging"
+      ]
+    },
+    {
       "id": "WAL-CLM-IAIYH-000018",
       "subject": "essential_nutrients",
       "also_about": [],
@@ -14849,6 +15585,40 @@
         "tryptophan",
         "methionine"
       ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000058",
+      "subject": "arginine",
+      "also_about": [
+        "cancer",
+        "taurine",
+        "tyrosine"
+      ],
+      "facet": "stance",
+      "question": "Does Wallach consider arginine an essential amino acid?",
+      "answer_short": "Yes—Wallach adds arginine to the classic essential amino acids, tying its long-term deficiency to cancer and PAD.",
+      "answer": "Beyond the classic list, Wallach singles out three amino acids that, over the long haul, help prevent specific diseases: arginine guards against cancer and PAD (peripheral arterial disease, clogged arteries in the limbs), taurine against macular degeneration (an eye disease that erodes central vision), and tyrosine against goiter (a swollen thyroid).",
+      "verbatim": "To the classic list of essential amino acids, we would\nadd arginine, taurine, and tyrosine. Over the long haul, these\nthree amino acids help prevent certain specific diseases,\nrespectively, these diseases are cancer and PAD, macular\ndegeneration and goiter.",
+      "page": 113,
+      "book_id": "immortality",
+      "topics": [
+        "essential-amino-acids",
+        "cancer",
+        "arginine"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "arginine",
+          "tyrosine",
+          "taurine"
+        ],
+        "conditions": [
+          "cancer",
+          "peripheral_arterial_disease",
+          "macular_degeneration",
+          "goiter"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000059",
@@ -20683,6 +21453,48 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000383",
+      "subject": "tryptophan",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "mechanism",
+      "question": "Why do corn-based diets cause pellagra?",
+      "answer_short": "Corn has very little niacin and its tryptophan is unavailable and can't be absorbed from the intestine, so there is no tryptophan to convert into niacin, causing pellagra.",
+      "answer": "Pellagra is common in corn-based diets because corn contains very little niacin, and the tryptophan present in corn is unavailable and cannot be absorbed from the intestine. With no absorbable tryptophan to be converted into niacin, and little niacin in the corn itself, the body is left deficient and pellagra results.",
+      "verbatim": "There is very little niacin in corn\nand the tryptophan in the corn is unavailable and can’t be\nabsorbed from the intestine, as a result there is no available\ntryptophan to be converted into niacin.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "pellagra",
+        "niacin",
+        "corn",
+        "diet",
+        "deficiency"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000384",
+      "subject": "tryptophan",
+      "also_about": [
+        "pellagra"
+      ],
+      "facet": "history",
+      "question": "Why does soaking corn in lye prevent pellagra?",
+      "answer_short": "Soaking corn in lye and wood ashes overnight lets the alkali free the tryptophan so it can be absorbed, which is why pellagra is rare where corn is prepared this way.",
+      "answer": "In corn-consuming societies that soak their corn in lye and wood ashes overnight before eating it, pellagra is rare. The alkali in the lye and wood ashes makes the corn's tryptophan absorbable, so the body can take it up and convert it into niacin, preventing the deficiency disease pellagra.",
+      "verbatim": "soaked in lye and wood ashes overnight before it is consumed\n- the alkali in the lye and wood ashes allows the tryptophan\nto be absorbed and pellagra is rare",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "pellagra",
+        "corn",
+        "niacin",
+        "traditional-food",
+        "history"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000004",
       "subject": "calcium",
       "also_about": [
@@ -22586,6 +23398,43 @@
         ],
         "conditions": [
           "anosmia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000142",
+      "subject": "tryptophan",
+      "also_about": [
+        "anxiety"
+      ],
+      "facet": "uses",
+      "question": "What does Wallach recommend for anxiety and panic attacks?",
+      "answer_short": "For anxiety and panic attacks, Wallach's program includes a high dose of L-tryptophan at 10 grams three times a day, plus caffeine and sugar avoidance, chromium, B vitamins, calcium, and magnesium.",
+      "answer": "For anxiety (panic attacks, affecting women twice as often as men), Wallach traces the base cause to a food allergy or a severe reactive hypoglycemic 'crash and burn' glucose curve (use a pulse test and six-hour glucose tolerance test). Treatment: avoid caffeine and sugar in all forms; chromium 200-300 mcg per day; vitamin B-6 100 mg three times daily; vitamin B-3 450 mg three times daily as time-release tablets; vitamins B-1, B-2, and B-5 at 50 mg three times daily; L-tryptophan 10 grams three times daily; calcium 2000 mg per day and magnesium 800 mg per day; betaine hydrochloride 100-250 mg three times daily before meals; and herbs such as valerian (Valeriana officinalis).",
+      "verbatim": "Treatment should include avoidance of caffeine and sugar in all forms (fruit, juices, etc.):\nchromium 200-300 mcg/ day; B-6 100 mg\nt.i.d.; B-3 450 mg t.i.d. as time-release tablets;\nB-l,B-2, and B-5 at the rate of 50 mg t.i.d.; L-tryptophan 10 grams t.i.d.; calcium 2000 mg/\nday and magnesium at 800 mg/day",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "anxiety",
+        "panic-attacks",
+        "mood",
+        "supplements",
+        "protocol"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vitamin-b6",
+          "vitamin-b3",
+          "vitamin-b1",
+          "vitamin-b2",
+          "vitamin-b5",
+          "tryptophan",
+          "calcium",
+          "magnesium"
+        ],
+        "conditions": [
+          "anxiety"
         ]
       }
     },
