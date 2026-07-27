@@ -181,6 +181,11 @@
       ]
     },
     {
+      "term": "antimicrobial",
+      "plain": "able to kill or slow the growth of microbes like bacteria, viruses, and fungi",
+      "category": "biology"
+    },
+    {
       "term": "antioxidant",
       "plain": "a substance that protects the body's cells from damage by unstable molecules",
       "category": "nutrition"
@@ -1020,6 +1025,11 @@
       "term": "gastroenteritis",
       "plain": "inflammation of the stomach and intestines ('stomach flu')",
       "category": "medical"
+    },
+    {
+      "term": "gastrointestinal",
+      "plain": "relating to the stomach and intestines (the digestive tract)",
+      "category": "anatomy"
     },
     {
       "term": "geophagia",
@@ -2229,6 +2239,11 @@
       "category": "medical"
     },
     {
+      "term": "pulmonary",
+      "plain": "relating to the lungs",
+      "category": "anatomy"
+    },
+    {
       "term": "pyridine",
       "plain": "a ring-shaped chemical structure that forms part of the niacin molecule",
       "category": "chemistry"
@@ -2605,6 +2620,11 @@
       "term": "vaginitis",
       "plain": "inflammation of the vagina",
       "category": "medical"
+    },
+    {
+      "term": "valerian",
+      "plain": "a herb traditionally used as a calming sleep aid",
+      "category": "nutrition"
     },
     {
       "term": "varicose",

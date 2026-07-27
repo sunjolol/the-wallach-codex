@@ -9082,13 +9082,13 @@
           "facet": "uses",
           "claim_ids": [
             "WAL-CLM-DDDL-000049",
-            "WAL-CLM-DDDL-000075",
             "WAL-CLM-DDDL-000187"
           ]
         },
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000221",
             "WAL-CLM-LETS-000059"
           ]
         },
@@ -11566,7 +11566,8 @@
         {
           "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000303"
+            "WAL-CLM-EPIGEN-000303",
+            "WAL-CLM-EPIGEN-000306"
           ]
         },
         {

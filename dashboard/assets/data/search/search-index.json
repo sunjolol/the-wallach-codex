@@ -944,7 +944,7 @@
         "cholesterol",
         "diabetes"
       ],
-      "claim_count": 10
+      "claim_count": 11
     },
     "fluoride": {
       "display_name": "Fluoride",
@@ -3430,37 +3430,6 @@
         ],
         "conditions": [
           "muscle_cramps"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-DDDL-000075",
-      "subject": "vitamin-b3",
-      "also_about": [
-        "insomnia",
-        "tryptophan"
-      ],
-      "facet": "uses",
-      "question": "Can niacin help with insomnia?",
-      "answer_short": "Wallach's insomnia protocol includes niacinamide at 1,000 mg at bedtime plus time-release niacin (B3) at 450 mg three times a day.",
-      "answer": "Insomnia treatment includes avoiding caffeine and food allergens, calcium (especially plant-derived colloidal), and chromium + vanadium at 25-200 mcg three times daily.",
-      "verbatim": "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 mcg t.i.d.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "insomnia",
-        "sleep",
-        "niacinamide",
-        "niacin-dose"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "calcium",
-          "chromium",
-          "vanadium"
-        ],
-        "conditions": [
-          "insomnia"
         ]
       }
     },
@@ -6122,6 +6091,27 @@
         "eye-health",
         "dosage",
         "protocol"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000221",
+      "subject": "vitamin-b3",
+      "also_about": [
+        "insomnia",
+        "tryptophan"
+      ],
+      "facet": "protocol",
+      "question": "Can niacin help with insomnia?",
+      "answer_short": "Wallach's insomnia protocol includes niacinamide at 1,000 mg at bedtime plus time-release niacin (B3) at 450 mg three times a day.",
+      "answer": "In Wallach's treatment protocol for insomnia, vitamin B3 appears in two forms: niacinamide at 1,000 mg at bedtime, and time-release niacin (B3) at 450 mg three times a day. These sit within a broader sleep protocol that also uses calcium, chromium, tryptophan, inositol, and calming herbs such as valerian, passion flower, hops, and California poppy.",
+      "verbatim": "niacinamide at 1,000 mg at bedtime, and herbs including valerian (Valeriana\nofficinalis), passion flower (Passiflora incarnata), hops (Humulus lupulus), and California poppy\n(Eschscholzia California), and B3 (niacin) at 450 mg t.i.d. (time release).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "insomnia",
+        "sleep",
+        "niacinamide",
+        "niacin-dose"
       ]
     },
     {
@@ -10481,6 +10471,28 @@
         "vitamin-p",
         "name-origin",
         "capillary-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000306",
+      "subject": "flavonoids",
+      "also_about": [
+        "allergies",
+        "inflammation",
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "What are flavonoids good for?",
+      "answer_short": "Wallach says flavonoid supplements reduce or eliminate allergies and inflammation, raise antioxidant activity, fight microbes, improve gut function, and support immunity in cancer patients.",
+      "answer": "Wallach draws a line between test-tube results and whole-person results, and puts raising ORAC antioxidant activity on the whole-person side. In in-vivo studies he lists flavonoid supplementation as clinically effective for reducing or eliminating allergies, calming vascular and pulmonary inflammation, raising ORAC antioxidant activity, antimicrobial action against bacteria, viruses, yeast and fungus, improving gastrointestinal function, and supporting the immune system in cancer patients. Flavonoids themselves are plant pigments - the yellow, red and blue in flower petals.",
+      "verbatim": "In the whole person\n(in vivo studies) supplementation with flavonoids have demonstrated clinical\neffectiveness for reducing or eliminating allergies, vascular and pulmonary\ninflammation, for increasing ORAC antioxidant activity, antimicrobial properties\n(eg,, bacteria, viruses, yeast, fungus), improving gastrointestinal function and\nsupporting the immune system in cancer patients.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "antioxidants",
+        "allergies",
+        "anti-inflammatory",
+        "immune-support"
       ]
     },
     {

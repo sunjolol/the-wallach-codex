@@ -7275,6 +7275,39 @@
       "extracted_at": "2026-07-27T01:00:32+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000221",
+      "kind": "dose",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In Wallach's treatment protocol for insomnia, vitamin B3 appears in two forms: niacinamide at 1,000 mg at bedtime, and time-release niacin (B3) at 450 mg three times a day. These sit within a broader sleep protocol that also uses calcium, chromium, tryptophan, inositol, and calming herbs such as valerian, passion flower, hops, and California poppy.",
+      "verbatim": "niacinamide at 1,000 mg at bedtime, and herbs including valerian (Valeriana\nofficinalis), passion flower (Passiflora incarnata), hops (Humulus lupulus), and California poppy\n(Eschscholzia California), and B3 (niacin) at 450 mg t.i.d. (time release).",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 820057
+      },
+      "dose": null,
+      "tags": [
+        "vitamin-b3",
+        "niacin",
+        "insomnia",
+        "dose",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:37:06+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

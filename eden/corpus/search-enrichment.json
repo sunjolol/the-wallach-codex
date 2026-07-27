@@ -11472,22 +11472,6 @@
         "time-release"
       ]
     },
-    "WAL-CLM-DDDL-000075": {
-      "subject": "vitamin-b3",
-      "also_about": [
-        "insomnia",
-        "tryptophan"
-      ],
-      "facet": "uses",
-      "question": "Can niacin help with insomnia?",
-      "answer_short": "Wallach's insomnia protocol includes niacinamide at 1,000 mg at bedtime plus time-release niacin (B3) at 450 mg three times a day.",
-      "topics": [
-        "insomnia",
-        "sleep",
-        "niacinamide",
-        "niacin-dose"
-      ]
-    },
     "WAL-CLM-DDDL-000049": {
       "subject": "vitamin-b3",
       "also_about": [
@@ -12990,6 +12974,39 @@
         "deficiency-signs",
         "capillary-health",
         "antioxidants"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000306": {
+      "subject": "flavonoids",
+      "also_about": [
+        "allergies",
+        "inflammation",
+        "cancer"
+      ],
+      "facet": "uses",
+      "question": "What are flavonoids good for?",
+      "answer_short": "Wallach says flavonoid supplements reduce or eliminate allergies and inflammation, raise antioxidant activity, fight microbes, improve gut function, and support immunity in cancer patients.",
+      "topics": [
+        "antioxidants",
+        "allergies",
+        "anti-inflammatory",
+        "immune-support"
+      ]
+    },
+    "WAL-CLM-DDDL-000221": {
+      "subject": "vitamin-b3",
+      "also_about": [
+        "insomnia",
+        "tryptophan"
+      ],
+      "facet": "protocol",
+      "question": "Can niacin help with insomnia?",
+      "answer_short": "Wallach's insomnia protocol includes niacinamide at 1,000 mg at bedtime plus time-release niacin (B3) at 450 mg three times a day.",
+      "topics": [
+        "insomnia",
+        "sleep",
+        "niacinamide",
+        "niacin-dose"
       ]
     }
   }

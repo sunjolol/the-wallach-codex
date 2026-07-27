@@ -11091,6 +11091,39 @@
       "extracted_at": "2026-07-27T01:03:04+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000306",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach draws a line between test-tube results and whole-person results, and puts raising ORAC antioxidant activity on the whole-person side. In in-vivo studies he lists flavonoid supplementation as clinically effective for reducing or eliminating allergies, calming vascular and pulmonary inflammation, raising ORAC antioxidant activity, antimicrobial action against bacteria, viruses, yeast and fungus, improving gastrointestinal function, and supporting the immune system in cancer patients. Flavonoids themselves are plant pigments - the yellow, red and blue in flower petals.",
+      "verbatim": "In the whole person\n(in vivo studies) supplementation with flavonoids have demonstrated clinical\neffectiveness for reducing or eliminating allergies, vascular and pulmonary\ninflammation, for increasing ORAC antioxidant activity, antimicrobial properties\n(eg,, bacteria, viruses, yeast, fungus), improving gastrointestinal function and\nsupporting the immune system in cancer patients.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1106358
+      },
+      "dose": null,
+      "tags": [
+        "flavonoids",
+        "antioxidants",
+        "uses",
+        "nutrition-basics",
+        "search-only"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-27T01:37:05+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }
