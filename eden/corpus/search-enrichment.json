@@ -22635,6 +22635,53 @@
     "fluid balance",
     "edema"
    ]
+  },
+  "WAL-CLM-IMMORT-000466": {
+   "subject": "rare_earth_elements",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What are the rare earth elements?",
+   "answer_short": "Wallach defines the rare earths as a large family of chemically very similar metal oxides, drawn from minerals that are widely distributed but relatively scarce.",
+   "topics": [
+    "rare-earth",
+    "minerals",
+    "lanthanides"
+   ]
+  },
+  "WAL-CLM-IAIYH-000021": {
+   "subject": "cranial-nerves",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "What are the cranial nerves and how do they affect my health?",
+   "answer_short": "The cranial nerves pass through bony tunnels in the skull; Wallach says skull osteoporosis narrows those tunnels and pinches the nerves, which can drive as many as 25 different diseases.",
+   "topics": [
+    "cranial-nerves",
+    "osteoporosis",
+    "neuropathy"
+   ]
+  },
+  "WAL-CLM-HELLS-000074": {
+   "subject": "meat",
+   "also_about": [],
+   "facet": "basics",
+   "question": "Does Wallach think red meat is healthy?",
+   "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids — with one caveat: don't cook it well-done or burn the fat, which forms cancer-linked heterocyclic amines.",
+   "topics": [
+    "meat",
+    "red-meat",
+    "protein"
+   ]
+  },
+  "WAL-CLM-LETS-000518": {
+   "subject": "home_remedies",
+   "also_about": [],
+   "facet": "stance",
+   "question": "Why treat yourself at home instead of going to the doctor?",
+   "answer_short": "Wallach frames his whole self-care approach around one purpose: giving you enough information to avoid unnecessary doctor or hospital visits.",
+   "topics": [
+    "home-remedies",
+    "self-care"
+   ]
   }
  }
 }

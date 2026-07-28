@@ -1179,7 +1179,8 @@
         "pinched nerve neck shoulder"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-IAIYH-000021"
     },
     "cruciferous_vegetables": {
       "display_name": "Cruciferous Vegetables & Goitrogens",
@@ -2042,7 +2043,8 @@
         "herbal_medicine",
         "be_your_own_doctor"
       ],
-      "claim_count": 1
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-LETS-000518"
     },
     "homeopathy": {
       "display_name": "Homeopathy",
@@ -2840,7 +2842,8 @@
         "vitamin-a",
         "vitamin-d"
       ],
-      "claim_count": 2
+      "claim_count": 3,
+      "intro_claim": "WAL-CLM-HELLS-000074"
     },
     "melatonin": {
       "display_name": "Melatonin",
@@ -3844,7 +3847,8 @@
         "colloidal_minerals",
         "essential_nutrients"
       ],
-      "claim_count": 7
+      "claim_count": 8,
+      "intro_claim": "WAL-CLM-IMMORT-000466"
     },
     "rda-critique": {
       "display_name": "The RDA Problem",
@@ -4051,7 +4055,8 @@
         "be_your_own_doctor",
         "herbal_medicine"
       ],
-      "claim_count": 1
+      "claim_count": 1,
+      "intro_claim": "WAL-CLM-LETS-000327"
     },
     "silica": {
       "display_name": "Silica",
@@ -5458,7 +5463,8 @@
         "absorption",
         "carbonated_beverages"
       ],
-      "claim_count": 2
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-DDDL-000104"
     },
     "xenon": {
       "display_name": "Xenon",
@@ -20818,6 +20824,23 @@
       ]
     },
     {
+      "id": "WAL-CLM-HELLS-000074",
+      "subject": "meat",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Does Wallach think red meat is healthy?",
+      "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids — with one caveat: don't cook it well-done or burn the fat, which forms cancer-linked heterocyclic amines.",
+      "answer": "Wallach calls red meat an unequaled source of animal protein and essential lipids. His one caveat is preparation: don't eat it cooked well-done or with the fat burnt, because that forms heterocyclic amines (compounds tied to cancer risk).",
+      "verbatim": "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "meat",
+        "red-meat",
+        "protein"
+      ]
+    },
+    {
       "id": "WAL-CLM-IAIYH-000015",
       "subject": "cranial-nerves",
       "also_about": [
@@ -20889,6 +20912,23 @@
         "credentials",
         "nobel-nomination",
         "cystic-fibrosis"
+      ]
+    },
+    {
+      "id": "WAL-CLM-IAIYH-000021",
+      "subject": "cranial-nerves",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What are the cranial nerves and how do they affect my health?",
+      "answer_short": "The cranial nerves pass through bony tunnels in the skull; Wallach says skull osteoporosis narrows those tunnels and pinches the nerves, which can drive as many as 25 different diseases.",
+      "answer": "Wallach's central thesis on the cranial nerves: neuropathies of one or more of them (and the spinal cord) can produce as many as 25 different diseases. He argues the common cause is osteoporosis of the skull — a universal mineral loss that increases bone matrix, filling the bony tunnels the nerves travel through, narrowing them and pinching (incarcerating) the nerve.",
+      "verbatim": "Peripheral neuropathies of one or more of the cranial nerves and spinal cord\ncan produce as many as 25 different diseases. It turns out that the common cause\nof these neuropathies is osteoporosis of the skull which results in a universal\nmineral loss and an increase in bone matrix production. The bone matrix fills up\nthe tunnels that the cranial nerves and spinal cord travel through, reducing the\ninside caliber of the tunnels which then produces an incarceration of the nerve.",
+      "page": null,
+      "book_id": "iaiyh",
+      "topics": [
+        "cranial-nerves",
+        "osteoporosis",
+        "neuropathy"
       ]
     },
     {
@@ -29848,6 +29888,23 @@
       ]
     },
     {
+      "id": "WAL-CLM-IMMORT-000466",
+      "subject": "rare_earth_elements",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What are the rare earth elements?",
+      "answer_short": "Wallach defines the rare earths as a large family of chemically very similar metal oxides, drawn from minerals that are widely distributed but relatively scarce.",
+      "answer": "Wallach describes the rare earths as a whole category of chemically very similar metal oxides, not a single element. He says they are drawn from minerals that are widely distributed across the earth yet relatively scarce, and treats this large family of related metals as one class.",
+      "verbatim": "The term, rare earths, refers to any of a large series of\nvery similar oxides of metals obtained from widely distributed\nbut relatively scarce minerals.",
+      "page": null,
+      "book_id": "immortality",
+      "topics": [
+        "rare-earth",
+        "minerals",
+        "lanthanides"
+      ]
+    },
+    {
       "id": "WAL-CLM-LETS-000002",
       "subject": "supplement-dosing",
       "also_about": [
@@ -34324,6 +34381,22 @@
           "kidney_disease"
         ]
       }
+    },
+    {
+      "id": "WAL-CLM-LETS-000518",
+      "subject": "home_remedies",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Why treat yourself at home instead of going to the doctor?",
+      "answer_short": "Wallach frames his whole self-care approach around one purpose: giving you enough information to avoid unnecessary doctor or hospital visits.",
+      "answer": "Wallach states the purpose behind his whole self-care approach in his own words: to give you enough information that you can avoid unnecessary doctor or hospital visits.",
+      "verbatim": "Lastly, the purpose of this book is to give you enough information so you can avoid\nunnecessary doctor or hospital visits.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "home-remedies",
+        "self-care"
+      ]
     },
     {
       "id": "WAL-CLM-RARE-000001",

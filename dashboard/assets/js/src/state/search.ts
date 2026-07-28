@@ -165,11 +165,14 @@ const LEDE_MAX = 340;
 export function entityLede(subject: string): string {
   const e = getEntity(subject);
   // A hand-picked lede claim wins when the facet-priority default is not the best overview for a
-  // topic (e.g. cholesterol's "deficiency → disease states" line, or pork's clean red-meat stance):
-  // derive-validated to be this entity's OWN enriched claim, so it stays faithful + traceable (R1/§00.A).
+  // topic (e.g. cholesterol's "deficiency → disease states" line, or pork's clean red-meat stance).
+  // The pick may be a claim PRIMARILY about another entity but genuinely also_about THIS one (e.g.
+  // sexual_health opening with the Kegel claim whose primary home is pelvic-floor-exercises) — safe
+  // because this is the DELIBERATE override path; the auto facet-priority path below still requires
+  // subject===entity, so a tangential also_about never auto-ledes. Derive-validated either way (Luneth 2026-07-27).
   if (e !== null && e.intro_claim !== undefined) {
     const picked = getSearchClaim(e.intro_claim);
-    if (picked !== null && picked.subject === subject) {
+    if (picked !== null && (picked.subject === subject || picked.also_about.includes(subject))) {
       return softClamp(picked.answer_short, LEDE_MAX);
     }
   }

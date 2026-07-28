@@ -1030,7 +1030,8 @@
    "related": [
     "herbal_medicine",
     "be_your_own_doctor"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-LETS-000518"
   },
   "homeopathy": {
    "display_name": "Homeopathy",
@@ -1377,7 +1378,8 @@
     "dairy",
     "vitamin-a",
     "vitamin-d"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-HELLS-000074"
   },
   "mercury": {
    "display_name": "Mercury",
@@ -1703,7 +1705,8 @@
     "obscure_elements",
     "colloidal_minerals",
     "essential_nutrients"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000466"
   },
   "salmon": {
    "display_name": "Salmon",
@@ -1757,7 +1760,8 @@
     "pregnancy_birth",
     "be_your_own_doctor",
     "herbal_medicine"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-LETS-000327"
   },
   "silver": {
    "canon_ref": true,
@@ -1941,7 +1945,8 @@
     "fluoride",
     "absorption",
     "carbonated_beverages"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-DDDL-000104"
   },
   "epigenetics": {
    "display_name": "Epigenetics",
@@ -5236,7 +5241,8 @@
     "accessory nerve",
     "eleventh cranial nerve",
     "pinched nerve neck shoulder"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-IAIYH-000021"
   }
  }
 }

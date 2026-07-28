@@ -934,6 +934,10 @@
         "book": "hells-kitchen"
       },
       {
+        "claim_id": "WAL-CLM-HELLS-000074",
+        "book": "hells-kitchen"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000003",
         "book": "immortality"
       },
@@ -1610,6 +1614,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000466",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000002",
         "book": "lets-play-doctor"
       },
@@ -1975,7 +1983,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 421
+    "claim_count": 423
   },
   {
     "id": "CG-0004",
@@ -3012,6 +3020,10 @@
         "book": "iaiyh"
       },
       {
+        "claim_id": "WAL-CLM-IAIYH-000021",
+        "book": "iaiyh"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000025",
         "book": "immortality"
       },
@@ -3369,7 +3381,7 @@
       }
     ],
     "books_repeating": 7,
-    "claim_count": 224
+    "claim_count": 225
   },
   {
     "id": "CG-0009",
@@ -4254,6 +4266,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-LETS-000518",
+        "book": "lets-play-doctor"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000033",
         "book": "rare-earths"
       },
@@ -4318,8 +4334,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 6,
-    "claim_count": 76
+    "books_repeating": 7,
+    "claim_count": 77
   },
   {
     "id": "CG-0014",

@@ -164,8 +164,8 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
         if ic is not None:
             if ic not in enr:
                 errs.append(f'registry {slug!r}: intro_claim {ic!r} is not an enriched claim')
-            elif enr[ic].get('subject') != slug:
-                errs.append(f'registry {slug!r}: intro_claim {ic!r} is on a different subject (must be this entity\'s own claim)')
+            elif enr[ic].get('subject') != slug and slug not in enr[ic].get('also_about', []):
+                errs.append(f'registry {slug!r}: intro_claim {ic!r} is not this entity\'s claim (subject or also_about)')
     return errs
 
 
