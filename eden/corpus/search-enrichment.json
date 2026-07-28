@@ -1197,7 +1197,7 @@
    ],
    "facet": "warning",
    "question": "Are cruciferous vegetables like broccoli and kale bad for the thyroid?",
-   "answer_short": "Wallach lists cruciferous vegetables — cabbage, broccoli, cauliflower, Brussels sprouts, kale — as goitrogens that interfere with normal thyroid metabolism.",
+   "answer_short": "Wallach lists cruciferous vegetables — cabbage, broccoli, cauliflower, Brussels sprouts, kale — among the goitrogens that interfere with normal thyroid metabolism when eaten in inordinate amounts.",
    "topics": [
     "cruciferous-vegetables",
     "goitrogens",
@@ -9571,7 +9571,7 @@
    ],
    "facet": "warning",
    "question": "What foods block iodine or cause goiter?",
-   "answer_short": "Goitrogens, such as nitrates in processed meats and well water plus cabbage, broccoli, and Brussels sprouts, trigger goiter.",
+   "answer_short": "Goitrogens, such as nitrates in processed meats and well water plus cabbage, broccoli, and Brussels sprouts, trigger goiter when eaten in inordinate amounts.",
    "topics": [
     "iodine",
     "goitrogens",
@@ -34199,7 +34199,7 @@
    ],
    "facet": "warning",
    "question": "What foods interfere with the thyroid?",
-   "answer_short": "Wallach names goitrogens, nitrates and nitrites in processed meats (ham, bacon, sausage, deli meats) and cruciferous vegetables (broccoli, Brussels sprouts, cabbage, cauliflower), as foods that disrupt thyroid metabolism.",
+   "answer_short": "Wallach names goitrogens, nitrates and nitrites in processed meats (ham, bacon, sausage, deli meats) and cruciferous vegetables (broccoli, Brussels sprouts, cabbage, cauliflower), as foods that disrupt thyroid metabolism when eaten in inordinate amounts.",
    "topics": [
     "iodine",
     "goitrogens",
@@ -34262,7 +34262,7 @@
    ],
    "facet": "mechanism",
    "question": "Why do some people get goiter even with high iodine intake?",
-   "answer_short": "Wallach notes goiter develops in Japanese living on the sea coast despite high iodine intake, and in a feeding study every group developed goiter except the one fed seaweed.",
+   "answer_short": "Because goitrogens — foods that block thyroid metabolism — can override iodine: Wallach notes goiter develops in Japanese living on the sea coast despite high iodine intake, and in a feeding study every group developed goiter except the one fed seaweed (the other foods it lists — cabbage, turnips, buckwheat — are goitrogens).",
    "topics": [
     "iodine",
     "goiter",
@@ -36172,7 +36172,7 @@
    ],
    "facet": "warning",
    "question": "Does grilled or charred meat cause cancer?",
-   "answer_short": "Wallach says heterocyclic amines — free radicals formed in well-done meat and burnt animal fat — can raise the risk of breast, prostate, and colon cancer by as much as 462 percent.",
+   "answer_short": "Wallach says heterocyclic amines — free radicals formed in well-done meat and burnt animal fat — can raise the risk of breast, prostate, and colon cancer by as much as 462 percent compared with meat cooked medium-rare; it is the burning, not the meat, that harms you.",
    "topics": [
     "cancer",
     "diet",
