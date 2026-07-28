@@ -13285,7 +13285,8 @@
       "id": "WAL-CLM-EPIGEN-000157",
       "subject": "processed_meat",
       "also_about": [
-        "nitrates"
+        "nitrates",
+        "nitrites"
       ],
       "facet": "warning",
       "question": "Which processed meats does Wallach say to avoid?",
@@ -15299,7 +15300,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000251",
       "subject": "vitamin-b5",
-      "also_about": [],
+      "also_about": [
+        "coenzyme-a",
+        "acetylcholine"
+      ],
       "facet": "mechanism",
       "question": "Does vitamin B5 help make energy and hormones?",
       "answer_short": "Yes — through coenzyme A, vitamin B5 helps release energy from carbohydrates and helps build fatty acids, steroid hormones, and acetylcholine.",
@@ -17112,7 +17116,9 @@
     {
       "id": "WAL-CLM-EPIGEN-000344",
       "subject": "arginine",
-      "also_about": [],
+      "also_about": [
+        "nitric-oxide"
+      ],
       "facet": "mechanism",
       "question": "Does arginine lower blood pressure and improve circulation?",
       "answer_short": "Yes—oral arginine is required to synthesize nitric oxide, and it reduces blood pressure and increases blood flow through obstructed blood vessels.",
@@ -18122,7 +18128,8 @@
       "subject": "omega-6",
       "also_about": [
         "omega-3",
-        "docosahexaenoic-acid"
+        "docosahexaenoic-acid",
+        "gamma-linolenic-acid"
       ],
       "facet": "basics",
       "question": "Is arachidonic acid an omega-6 fatty acid?",
@@ -20643,7 +20650,9 @@
     {
       "id": "WAL-CLM-HELLS-000066",
       "subject": "arginine",
-      "also_about": [],
+      "also_about": [
+        "ornithine"
+      ],
       "facet": "mechanism",
       "question": "Can arginine raise growth hormone (HGH)?",
       "answer_short": "Yes—L-arginine with ornithine can trigger HGH release from the pituitary gland when supplemented in significant doses.",
@@ -21507,7 +21516,9 @@
     {
       "id": "WAL-CLM-IMMORT-000045",
       "subject": "beryllium",
-      "also_about": [],
+      "also_about": [
+        "berylliosis"
+      ],
       "facet": "warning",
       "question": "What is berylliosis?",
       "answer_short": "Berylliosis is a painful, sometimes fatal lung disease Wallach says comes from inhaling beryllium oxide dust from mining and industry.",
@@ -25045,7 +25056,8 @@
       "id": "WAL-CLM-IMMORT-000230",
       "subject": "pork",
       "also_about": [
-        "nitrates"
+        "nitrates",
+        "nitrites"
       ],
       "facet": "mechanism",
       "question": "Why does Wallach warn against ham, bacon, and sausage?",
@@ -28263,7 +28275,8 @@
       "id": "WAL-CLM-IMMORT-000393",
       "subject": "nitrogen",
       "also_about": [
-        "nitrates"
+        "nitrates",
+        "nitrites"
       ],
       "facet": "warning",
       "question": "Are the nitrates and nitrites in processed meat bad for you?",
@@ -38849,7 +38862,9 @@
     {
       "id": "WAL-CLM-RARE-000386",
       "subject": "silver",
-      "also_about": [],
+      "also_about": [
+        "silver-nitrate"
+      ],
       "facet": "history",
       "question": "Why are newborn babies given silver drops in their eyes?",
       "answer_short": "Wallach recounts that in 1884 Carl Sigmund Crede began the practice of putting a single prophylactic drop of 2% silver nitrate in every newborn's eyes to prevent gonorrheal eye infection at birth.",
