@@ -3428,8 +3428,9 @@ def check_search_index_wellformed():
     """Search-corpus doctrine + Charter R4/R5 -- every ENRICHED search claim is STRUCTURED, not a
     blob: the authored fields (subject/facet/question/answer_short) are present, facet is in the
     closed taxonomy, subject resolves to the entity registry OR essentials-canon, every also_about
-    resolves to a registry/canon/condition slug, and the DERIVED answer + sealed verbatim are
-    non-empty. Delegates to eden/tools/search_index_derive.validate() -- the SAME check build_index()
+    resolves to a registry/canon/condition slug, the DERIVED answer + sealed verbatim are
+    non-empty, and the authored question starts capitalized (never a lowercase opener; 25 shipped
+    machine-lowercased 2026-07-27, hand-fixed to 0 + gated so it cannot regress). Delegates to eden/tools/search_index_derive.validate() -- the SAME check build_index()
     refuses to derive on -- so a bad facet / unresolved subject / empty answer can never reach the
     shipped search-index.json (R7: the gate ships with the derive; negative-tested by
     tools/test_search_index_wellformed.py). Also cross-checks that the TS schema's SEARCH_FACETS
@@ -3476,7 +3477,7 @@ def check_search_index_wellformed():
                            f"index otherwise: {bad_page[:5]}")
     enr = json.loads(enr_p.read_text(encoding="utf-8"))["enrichment"]
     return True, (f"all {len(enr)} enriched search claim(s) well-formed (facet in taxonomy, subject "
-                  f"resolves, answer+verbatim present; page int|null) + TS/Python facet taxonomy in sync")
+                  f"resolves, answer+verbatim present, question capitalized; page int|null) + TS/Python facet taxonomy in sync")
 
 
 def check_verbatim_names_mapped_conditions():

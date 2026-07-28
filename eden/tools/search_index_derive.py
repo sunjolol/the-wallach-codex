@@ -17,8 +17,9 @@ R1: this artifact is registered in eden/derived/MANIFEST.json, so derived_artifa
 re-runs build_index() and byte-compares to disk — a hand-edit or stale build is un-shippable.
 build_index() is pure + deterministic (sorted). validate() (also called by the
 search_index_wellformed invariant) hard-fails on a bad facet, an unresolved subject/also_about,
-a missing authored field, an enrichment entry that is not a search-only claim, or an empty
-derived answer/verbatim — so poison can never reach the shipped index.
+a missing authored field, a lowercase-initial question, or an empty derived answer/verbatim
+— so poison can never reach the shipped index. (The old "must be search-only" check is retired:
+search-only was killed 2026-07-27; an enriched claim may be dual-home tier-1.)
 
 §00.A: every answer/verbatim shipped here is a byte-faithful projection of a sealed Wallach
 claim; the derive never invents content, only re-homes + joins it.
@@ -40,6 +41,13 @@ SEARCH_FACETS = [
 # 2026-07-27 after type:'compound'/'food' shipped past this gate and emptied the search index
 # (mercury/ask/enriched all blank; only the corpus-embed-backed condition/essential pages survived).
 ENTITY_TYPES = ['element', 'nutrient', 'substance', 'condition', 'concept', 'topic', 'person', 'event']
+
+# Every authored `question` must read like a sentence a person would type -> it starts capitalized.
+# A lowercase-initial question is the tell of a machine-lowercased or half-authored entry (2026-07-27:
+# 25 shipped that way, hand-fixed to 0). Gated here so it can regress past neither the derive nor the
+# search_index_wellformed invariant. LOWERCASE_OK_PREFIXES allowlists the rare genuinely-lowercase
+# technical opener; extend it with a reason + a test case if one ever legitimately appears.
+LOWERCASE_OK_PREFIXES = ('pH', 'mRNA', 'tRNA', 'rRNA')
 
 ARTIFACT = 'dashboard/assets/data/search/search-index.json'
 
@@ -106,6 +114,12 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
                 errs.append(f'{cid}: missing authored field {fld!r}')
         if a.get('facet') not in SEARCH_FACETS:
             errs.append(f'{cid}: facet {a.get("facet")!r} not in the closed taxonomy')
+        # Question must read as a real sentence -> starts capitalized (never a lowercase opener).
+        _q = str(a.get('question', ''))
+        _qs = _q.lstrip('\'"\u201c\u201d\u2018\u2019 \t')
+        _first_alpha = next((ch for ch in _qs if ch.isalpha()), '')
+        if _first_alpha.islower() and not _qs.startswith(LOWERCASE_OK_PREFIXES):
+            errs.append(f'{cid}: question must start capitalized (got {_q[:40]!r})')
         subj = a.get('subject')
         if subj and subj not in (reg_slugs | canon_slugs):
             errs.append(f'{cid}: subject {subj!r} resolves to neither the registry nor essentials-canon')

@@ -64,6 +64,13 @@ case("unresolved-subject", mutate_enr=lambda e: e[A_CLAIM].__setitem__("subject"
 case("unresolved-also_about", mutate_enr=lambda e: e[A_CLAIM].__setitem__("also_about", ["florbium"]), needle="also_about")
 # 4) missing authored field (empty question)
 case("empty-question", mutate_enr=lambda e: e[A_CLAIM].__setitem__("question", "  "), needle="question")
+# 4b) lowercase-initial question -> must start capitalized (2026-07-27 recurrence gate)
+case("lowercase-question", mutate_enr=lambda e: e[A_CLAIM].__setitem__("question", "how does calcium work?"), needle="capitalized")
+# 4c) allowlisted lowercase opener (pH) is SPARED -> no capitalization error fires
+_enr_ph = copy.deepcopy(ENR); _enr_ph[A_CLAIM]["question"] = "pH balance and disease?"
+_ph_errs = [x for x in sid.validate(_enr_ph, REG, CANON, CLAIMS) if "capitalized" in x.lower()]
+print(f"  [{'OK' if not _ph_errs else 'FAIL'}] pH-opener-spared             expect no 'capitalized' err | got={_ph_errs}")
+results.append(not _ph_errs)
 # 5) enrichment points at a claim id that does not exist
 case("ghost-claim", mutate_enr=lambda e: e.__setitem__("WAL-CLM-NOPE-999999", copy.deepcopy(e[A_CLAIM])), needle="does not exist")
 # 6) registry canon_ref that hand-stores a display_name (no_hand_duplicated_canonical)
