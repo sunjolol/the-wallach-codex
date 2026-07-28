@@ -1,43 +1,39 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · QUALITY-REMEDIATION SESSION)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · ENTITY-FILL + RECURRENCE-GATE SESSION)
 
 # ★★★★★ READ FIRST (plain language)
-Two doctrines still bind from before:
+Two doctrines still bind:
 1. **"search-only" is DEAD.** Every claim lives in ONE of three homes — the 90 essentials, conditions,
    or Explore — and Search is a retrieval layer over all three. NEVER reintroduce a search-only tag/split.
 2. **Wallach's supplement thesis:** essential nutrients come from the **DIET (food OR supplements)**, never
    "from food" alone — the soil is depleted, so food no longer suffices. Never write "must get X from food."
 
-**Corpus: kv420 · 2195 claims · board 76/76 green.**
+**Corpus: kv420 · 2195 claims · board 76/76 green.** (This session was ENRICHMENT-ONLY — no reseal, kv unchanged.)
 
-## ★ WHAT THIS SESSION FIXED (Luneth-directed quality remediation, all sealed + pushed)
-Luneth caught a batch of real defects; every fix was proven mechanically (not asserted):
-- **Glossary:** removed **45** too-basic dotted-line terms (kept anemia/antibiotic/antioxidant/thyroid/
-  thyroid-hormone); removed the **"WHO" alias** that fired a hover on every pronoun "who" (root cause:
-  `state/glossary.ts::normKey` lowercases all keys — a caps-only match would need an engine change);
-  fixed **12** "from food"→"the diet" definitions (essential-nutrient uses his exact wording). 1243 terms now.
-- **Questions:** capitalized **25** lowercase-first questions (0 remain in built index).
-- **"From food" thesis violations:** 5 answer_short + 4 sealed claim_text fixed (kv418). 0 remain.
-- **Says-nothing:** rewrote **ALL 100** flagged claim_texts (27 pure-restatement + 73 mirror) into real,
-  Wallach-faithful answers grounded in each claim's own source span (kv420). Verbatims untouched.
-  Anti-fabrication number-check: 0 fabrications. 0 un-enrichable.
-- **Sweep:** 6 also_about cross-links (citrulline/nitric-oxide/melatonin/acetylcholine/DHA).
-- `invariants.py`: added "arthritis" to `_JARGON_SKIP` (R9, with reason).
-
-## ★★★ CHARGED-CLAIMS DECISION — RESOLVED (Luneth ruled 2026-07-27)
-The 3 fetal-testosterone→homosexuality/intersex claims (`WAL-CLM-EPIGEN-000008/21/25`) exposed to the
-Conditions tab when search-only died: **Luneth ruled KEEP them on the condition pages with the mapping.**
-No further action; do not re-surface this as a pending decision.
+## ★ WHAT THIS SESSION DID (all committed + pushed to master)
+1. **Entity-fill campaign — COMPLETE.** All 15 newly-mined entities filled by surfacing already-approved
+   sealed claims (also_about links) + a few enrich-existing entries — NO new claims, NO corpus_seal.
+   - **protein** 1→12 (`5e535cd2`) · **nitrates** 1→8 (`be3f5054`) · **8-entity tail** (`d10a5d2b`:
+     nitrites/coenzyme-a/acetylcholine/ornithine/nitric-oxide/GLA/silver-nitrate/berylliosis).
+   - 5 entities were already complete (tuna, citrulline, melatonin, DHA, arsenic-trioxide). Several honestly
+     top out at ~2 claims — real thinness, the corpus says no more. Mechanics: [[entity-fill-enrichment-mechanics]].
+   - Curation lesson: the inventory (`temporary/entity-fill/inventory.md`) is a TOKEN-HIT superset — don't
+     over-link tangential claims (a sulfur-mechanism claim isn't a protein-page claim just because it says "protein").
+2. **Recurrence gate — SHIPPED** (`94333c94`). Built the **lowercase-question gate** into
+   `search_index_derive.validate()` — blocks at BOTH the derive (build raises) and the `search_index_wellformed`
+   invariant; `LOWERCASE_OK_PREFIXES` allowlist; negative-tested 16/16 (`tools/test_search_index_wellformed.py`).
+   **Deliberately did NOT gate** from-food (26 hits are the CORRECT thesis) or says-nothing (padding-incentive) —
+   recorded as evidence-based non-gates in `.claude/rules/search-corpus.md` so they aren't blindly re-attempted.
+3. **Memory consolidation — safe part done.** Shortened all index hooks (24.2→20.4KB, under the read-limit),
+   retired 3 done-milestone orphans, added [[entity-fill-enrichment-mechanics]], corrected the stale
+   [[memory-consolidation-threshold]] (real trigger = BYTE size, not line count; shorten hooks before deleting).
 
 ## DEFERRED / FOLLOW-UPS
-- ✓ **render_probe_search baselines — RESOLVED this session:** bumped cancer 65→71, calcium 134→145
-  (Luneth counted + confirmed). Probe PASSES, PAGE_ERRORS=0. No open probe issues.
-- ★ **Glossary:** Luneth ruled on the ~50 flagged-basic candidates. The FULL 1243-term list
-  (`temporary/entity-fill/…` / regenerate via the audit) may still merit a broader pass for other too-basic
-  terms he hasn't seen yet — ask before mass-removing.
-- **Entity-fill campaign (STILL PENDING, pre-empted by the remediation):** ~13 of the original 18 newly-mined
-  entities still need filling — ornithine/citrulline/nitric-oxide were found THIN (corpus supports only 1-2
-  claims each; the biochem cluster is genuinely sparse). Richer targets remain: nitrates (11), protein (44),
-  tuna, coenzyme-a. Per [[mining-serves-ask-wallach]] do biggest/most-searched first.
-- **Consider a machine gate** to prevent says-nothing / lowercase-question / from-food recurrence (§00.B
-  codify-don't-promise) — Luneth was open to it. A claim_text≈verbatim similarity gate is the candidate.
-- Memory index ~large — consolidate at a natural break ([[memory-consolidation-threshold]]).
+- **Ask-Wallach enrichment continues** per [[mining-serves-ask-wallach]] — biggest/most-searched entities first.
+  The 15 newly-mined entities are done; the broader campaign (the 90 essentials + big condition/topic pages) is
+  the ongoing wow-factor work. Enrichment-only where a sealed claim already exists; mine-fresh (needs YOUR seal)
+  only when none does.
+- **Memory deeper cull** — Luneth ruled LEAVE IT at ~178 lines/20.4KB (under both hard read-limits) and revisit
+  at ~195. The PostToolUse hooks nag for <140 lines / <17.1KB but that needs retiring ~35 memories; deferred.
+  The deferred mining-mechanics memory merge ([[consolidate-mining-mechanics-before-phase-g]]) rides along.
+- **Charged-claims ruling** (3 fetal-testosterone→homosexuality/intersex claims) stays RESOLVED — keep on the
+  condition pages; do not re-surface.
