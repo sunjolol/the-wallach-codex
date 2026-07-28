@@ -4817,6 +4817,26 @@
       "lets-play-doctor"
     ]
   },
+  "mangosteen": {
+    "display_name": "Mangosteen",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000476"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000091"
+      ],
+      "protocol": [
+        "WAL-CLM-HELLS-000090"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "hells-kitchen",
+      "immortality"
+    ]
+  },
   "manna-ash": {
     "display_name": "Manna Ash",
     "claim_count": 1,
@@ -5319,6 +5339,26 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "noni": {
+    "display_name": "Noni",
+    "claim_count": 3,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000476"
+      ],
+      "food_source": [
+        "WAL-CLM-HELLS-000091"
+      ],
+      "protocol": [
+        "WAL-CLM-HELLS-000090"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "hells-kitchen",
+      "immortality"
     ]
   },
   "nutritional-fiber": {
@@ -6110,6 +6150,19 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "pomegranate": {
+    "display_name": "Pomegranate",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "food_source": [
+        "WAL-CLM-HELLS-000091"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "hells-kitchen"
     ]
   },
   "poultry-dusting-powder": {
@@ -7694,6 +7747,19 @@
     ],
     "books_cited": [
       "lets-play-doctor"
+    ]
+  },
+  "wolfberry": {
+    "display_name": "Wolfberry",
+    "claim_count": 1,
+    "claims_by_kind": {
+      "definition": [
+        "WAL-CLM-IMMORT-000476"
+      ]
+    },
+    "conditions_treated": [],
+    "books_cited": [
+      "immortality"
     ]
   },
   "wormwood": {

@@ -15990,7 +15990,11 @@
       "id": "WAL-CLM-IMMORT-000476",
       "kind": "definition",
       "essentials": [],
-      "other_substances": [],
+      "other_substances": [
+        "mangosteen",
+        "noni",
+        "wolfberry"
+      ],
       "conditions": [],
       "symptoms": [],
       "claim_text": "In the ORAC table of common foods and drinks that Dr. Wallach reproduces in Immortality, noni juice is listed with an ORAC (Oxygen Radical Absorbance Capacity) value of 398 per serving, near the other exotic juices he cites (mangosteen juice at 498 and wolfberry/goji juice at 363). Wallach uses ORAC as the measure of a food's antioxidant / free-radical-neutralizing power, and states that the optimal total daily intake to reach the age of 100 is 20,000 to 25,000 ORAC points per day.",

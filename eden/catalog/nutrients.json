@@ -1091,6 +1091,10 @@
       "display_name": "Male Fern",
       "canon_slug": null
     },
+    "mangosteen": {
+      "display_name": "Mangosteen",
+      "canon_slug": null
+    },
     "manna-ash": {
       "display_name": "Manna Ash",
       "canon_slug": null
@@ -1201,6 +1205,10 @@
     },
     "nitroglycerine": {
       "display_name": "Nitroglycerine",
+      "canon_slug": null
+    },
+    "noni": {
+      "display_name": "Noni",
       "canon_slug": null
     },
     "nutritional-fiber": {
@@ -1353,6 +1361,10 @@
     },
     "polyerga": {
       "display_name": "Polyerga",
+      "canon_slug": null
+    },
+    "pomegranate": {
+      "display_name": "Pomegranate",
       "canon_slug": null
     },
     "poultry-dusting-powder": {
@@ -1711,6 +1723,10 @@
       "display_name": "Witch Hazel",
       "canon_slug": null
     },
+    "wolfberry": {
+      "display_name": "Wolfberry",
+      "canon_slug": null
+    },
     "wormwood": {
       "display_name": "Wormwood",
       "canon_slug": null
@@ -1744,5 +1760,5 @@
       "canon_slug": null
     }
   },
-  "sealed_at": "2026-07-09T22:14:11+00:00"
+  "sealed_at": "2026-07-28T19:18:55+00:00"
 }

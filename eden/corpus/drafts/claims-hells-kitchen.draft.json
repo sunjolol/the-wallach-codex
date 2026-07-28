@@ -2938,7 +2938,10 @@
       "id": "WAL-CLM-HELLS-000090",
       "kind": "protocol",
       "essentials": [],
-      "other_substances": [],
+      "other_substances": [
+        "mangosteen",
+        "noni"
+      ],
       "conditions": [],
       "symptoms": [],
       "claim_text": "Dr. Wallach recommends using a high-ORAC-value antioxidant juice such as noni (or mangosteen) as a salad dressing at home, as part of his weight-loss eating plan. In his Hell's Kitchen recipes he specifically calls for 'mineral enriched noni juice' as a salad dressing (which he says 'tastes like vinaigrette') and even as a marinade for pork tenderloin. When dining out, where a noni dressing isn't available, he instead uses his 'Salad Fork Trick' of barely dipping the fork into the dressing, which he says gives up about ninety-five percent of the calories.",
@@ -2971,7 +2974,11 @@
       "id": "WAL-CLM-HELLS-000091",
       "kind": "food_source",
       "essentials": [],
-      "other_substances": [],
+      "other_substances": [
+        "mangosteen",
+        "noni",
+        "pomegranate"
+      ],
       "conditions": [],
       "symptoms": [],
       "claim_text": "Dr. Wallach lists noni among the fruits that contain antioxidants in substantial quantities, alongside blueberries, cherries, kiwis, pink grapefruit, oranges, plums, prunes, raisins, raspberries, red grapes, strawberries, boysenberries, pomegranate and mangosteen. He believes antioxidants will be added to the list of essential nutrients, because without them the body cannot protect itself from dietary and environmental free radicals or attain maximum life spans. He stresses this especially for people burning body fat, since burned fat produces free-radical waste products (trans fats, oxidized fats and ceroid lipofuscin).",
