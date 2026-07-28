@@ -1,39 +1,43 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · ENTITY-FILL + RECURRENCE-GATE SESSION)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-27 · DRAWER-FIX + OPENER-AUDIT + MINING SESSION)
 
 # ★★★★★ READ FIRST (plain language)
-Two doctrines still bind:
+Three doctrines still bind:
 1. **"search-only" is DEAD.** Every claim lives in ONE of three homes — the 90 essentials, conditions,
    or Explore — and Search is a retrieval layer over all three. NEVER reintroduce a search-only tag/split.
 2. **Wallach's supplement thesis:** essential nutrients come from the **DIET (food OR supplements)**, never
-   "from food" alone — the soil is depleted, so food no longer suffices. Never write "must get X from food."
+   "from food" alone — the soil is depleted, so food no longer suffices.
+3. **NEVER GUESS when mining.** Mine only from the sealed book source (verbatim ⊆ book, snapped by finalize).
+   If the source has no proper passage, say so — do NOT fabricate. (This session: 2 of 8 topics honestly
+   left un-mined because the source genuinely lacked a clean overview.)
 
-**Corpus: kv420 · 2195 claims · board 76/76 green.** (This session was ENRICHMENT-ONLY — no reseal, kv unchanged.)
+**Corpus: kv421 · 2199 claims · board 76/76 green.** (Sealed this session: +4 new overview claims.)
 
 ## ★ WHAT THIS SESSION DID (all committed + pushed to master)
-1. **Entity-fill campaign — COMPLETE.** All 15 newly-mined entities filled by surfacing already-approved
-   sealed claims (also_about links) + a few enrich-existing entries — NO new claims, NO corpus_seal.
-   - **protein** 1→12 (`5e535cd2`) · **nitrates** 1→8 (`be3f5054`) · **8-entity tail** (`d10a5d2b`:
-     nitrites/coenzyme-a/acetylcholine/ornithine/nitric-oxide/GLA/silver-nitrate/berylliosis).
-   - 5 entities were already complete (tuna, citrulline, melatonin, DHA, arsenic-trioxide). Several honestly
-     top out at ~2 claims — real thinness, the corpus says no more. Mechanics: [[entity-fill-enrichment-mechanics]].
-   - Curation lesson: the inventory (`temporary/entity-fill/inventory.md`) is a TOKEN-HIT superset — don't
-     over-link tangential claims (a sulfur-mechanism claim isn't a protein-page claim just because it says "protein").
-2. **Recurrence gate — SHIPPED** (`94333c94`). Built the **lowercase-question gate** into
-   `search_index_derive.validate()` — blocks at BOTH the derive (build raises) and the `search_index_wellformed`
-   invariant; `LOWERCASE_OK_PREFIXES` allowlist; negative-tested 16/16 (`tools/test_search_index_wellformed.py`).
-   **Deliberately did NOT gate** from-food (26 hits are the CORRECT thesis) or says-nothing (padding-incentive) —
-   recorded as evidence-based non-gates in `.claude/rules/search-corpus.md` so they aren't blindly re-attempted.
-3. **Memory consolidation — safe part done.** Shortened all index hooks (24.2→20.4KB, under the read-limit),
-   retired 3 done-milestone orphans, added [[entity-fill-enrichment-mechanics]], corrected the stale
-   [[memory-consolidation-threshold]] (real trigger = BYTE size, not line count; shorten hooks before deleting).
+1. **Knowledge-drawer fixes** (`8cc0964f`): removed the covered/not-covered legend + per-tile status dot
+   from the drawer's Essentials tab ONLY (Coverage page keeps its own); made the Home search find Explore
+   topics (was essentials+conditions only), purple-dotted like the others.
+2. **Topic-opener audit** (`d4c1078b`): the Explore opener (lede) is auto-picked by facet-priority, which
+   surfaced sensational/tangential claims (testosterone opened with a teen-crime stance). Audited all 103
+   auto-lede topic pages (13-agent review + adversarial verify): 82 keep, **13 reordered** via a per-page
+   `intro_claim` pointer to a better EXISTING approved claim, 8 flagged needs-mining. Mechanism + fix:
+   [[topic-opener-lede-mechanism]]. Essentials + conditions are immune (approved lede / template synopsis).
+3. **Mined 6 of the 8 needs-mining openers** (`79d52af6`, corpus kv420->kv421): read-only 8-agent source
+   research + byte-verification found real overview passages. SEALED 4 new claims — rare_earth_elements
+   (IMMORT-000466), cranial-nerves (IAIYH-000021), meat (HELLS-000074), home_remedies (LETS-000518);
+   water reordered to its existing DDDL-000104; sexual_health opens with the existing Kegel claim per Luneth.
+   **intro_claim now accepts an also_about claim on the hand-picked path ONLY** (auto path still needs
+   subject===entity) — so sexual_health opens with the Kegel claim without emptying pelvic-floor-exercises.
 
 ## DEFERRED / FOLLOW-UPS
-- **Ask-Wallach enrichment continues** per [[mining-serves-ask-wallach]] — biggest/most-searched entities first.
-  The 15 newly-mined entities are done; the broader campaign (the 90 essentials + big condition/topic pages) is
-  the ongoing wow-factor work. Enrichment-only where a sealed claim already exists; mine-fresh (needs YOUR seal)
-  only when none does.
-- **Memory deeper cull** — Luneth ruled LEAVE IT at ~178 lines/20.4KB (under both hard read-limits) and revisit
-  at ~195. The PostToolUse hooks nag for <140 lines / <17.1KB but that needs retiring ~35 memories; deferred.
-  The deferred mining-mechanics memory merge ([[consolidate-mining-mechanics-before-phase-g]]) rides along.
-- **Charged-claims ruling** (3 fetal-testosterone→homosexuality/intersex claims) stays RESOLVED — keep on the
-  condition pages; do not re-surface.
+- **2 pre-existing search-routing failures** (NOT caused this session, flagged): `render_probe_search_routing`
+  fails 2/6 on antioxidant-FOOD query routing ("which foods have the most antioxidants", "best antioxidant
+  foods"). Orthogonal to the opener work (routing logic untouched). A future session should investigate the
+  antioxidant food-sources routing (resolveQuery/scoreClaim/entityInQuery/heroByIntent + the ORAC food claims).
+- **DHA + antidepressants openers left as-is** (honest): DHA's "conditionally essential" definition is shared
+  verbatim with the omega-6/GLA claims (can't duplicate); its current opener already defines it. Antidepressants
+  has no on-topic overview in the source (Wallach never overviews the drug class; the lithium-deficiency line is
+  the lithium claim's and never names antidepressants). Improving these needs a NEW distinct passage or a code
+  path that surfaces an also_about answer — not a fabrication.
+- **Ask-Wallach enrichment continues** per [[mining-serves-ask-wallach]] — biggest/most-searched entities first;
+  the wow-factor campaign (rich synonyms + question-inventory) over the 90 essentials + big condition/topic pages.
+- **Memory index** at 180 lines (Luneth: leave until ~195). Deferred deeper cull + the mining-mechanics merge.
