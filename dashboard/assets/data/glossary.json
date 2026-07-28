@@ -11,16 +11,6 @@
       ]
     },
     {
-      "term": "absorption",
-      "plain": "The way the body takes a substance in through the gut and into the blood.",
-      "category": "biology",
-      "aliases": [
-        "absorb",
-        "absorbed",
-        "absorbing"
-      ]
-    },
-    {
       "term": "acetyl-CoA",
       "plain": "a central molecule the body uses to burn fuel for energy and to build fats",
       "category": "biology"
@@ -385,15 +375,6 @@
       ]
     },
     {
-      "term": "amino acid",
-      "plain": "one of the small building blocks that link together to form the proteins your body is made of",
-      "category": "biology",
-      "aliases": [
-        "amino acid metabolism",
-        "amino acids"
-      ]
-    },
-    {
       "term": "amino group",
       "plain": "the nitrogen-containing part of an amino acid",
       "category": "nutrition"
@@ -671,14 +652,6 @@
       "category": "medical"
     },
     {
-      "term": "arthritis",
-      "plain": "joint inflammation causing pain and stiffness",
-      "category": "medical",
-      "aliases": [
-        "arthritic"
-      ]
-    },
-    {
       "term": "artificial sweetener",
       "plain": "a man-made substance that tastes sweet but is not sugar",
       "category": "biology",
@@ -711,11 +684,6 @@
       "term": "astacin",
       "plain": "A family of body enzymes that cut and reshape other proteins",
       "category": "biology"
-    },
-    {
-      "term": "asthma",
-      "plain": "A condition where the airways narrow and swell, causing wheezing and trouble breathing.",
-      "category": "medical"
     },
     {
       "term": "ataxia",
@@ -849,14 +817,6 @@
       "category": "chemistry",
       "aliases": [
         "methionine backbone"
-      ]
-    },
-    {
-      "term": "bacteria",
-      "plain": "tiny living germs, some of which can cause infection",
-      "category": "medical",
-      "aliases": [
-        "bacterium"
       ]
     },
     {
@@ -1277,11 +1237,6 @@
       "term": "calcitonin",
       "plain": "a hormone that lowers blood calcium by moving it into the bones",
       "category": "medical"
-    },
-    {
-      "term": "calcium",
-      "plain": "a mineral the body needs for strong bones and many other functions",
-      "category": "nutrition"
     },
     {
       "term": "calcium 2-aminoethylphosphate",
@@ -1744,11 +1699,6 @@
       "category": "nutrition"
     },
     {
-      "term": "cholesterol",
-      "plain": "a waxy fatty substance the body uses to build cells and to insulate nerves",
-      "category": "nutrition"
-    },
-    {
       "term": "choline",
       "plain": "a vitamin-like nutrient the body uses for the brain and for cell walls",
       "category": "nutrition"
@@ -2000,7 +1950,7 @@
     },
     {
       "term": "conditionally essential",
-      "plain": "Describing a nutrient the body can usually make for itself but sometimes cannot make enough of, so at those times it must come from food.",
+      "plain": "Describing a nutrient the body can usually make for itself but sometimes cannot make enough of, so at those times it must come from the diet.",
       "category": "nutrition"
     },
     {
@@ -2244,22 +2194,6 @@
       ]
     },
     {
-      "term": "deficiency",
-      "plain": "a shortage of a nutrient the body needs",
-      "category": "nutrition",
-      "aliases": [
-        "deficiencies"
-      ]
-    },
-    {
-      "term": "deficiency disease",
-      "plain": "A sickness caused by not getting enough of a certain vitamin or mineral.",
-      "category": "medical",
-      "aliases": [
-        "deficiency diseases"
-      ]
-    },
-    {
       "term": "degeneration",
       "plain": "the gradual breaking down or wearing out of a body part",
       "category": "biology",
@@ -2374,11 +2308,6 @@
       ]
     },
     {
-      "term": "diabetes",
-      "plain": "a disease in which blood sugar stays too high",
-      "category": "medical"
-    },
-    {
       "term": "diatomic",
       "plain": "Describes a gas whose smallest natural unit is a pair of atoms bonded together rather than a single atom.",
       "category": "chemistry"
@@ -2477,15 +2406,6 @@
       "term": "dopamine",
       "plain": "a brain chemical tied to motivation, focus, and reward",
       "category": "chemistry"
-    },
-    {
-      "term": "dose",
-      "plain": "the amount of a substance taken at one time",
-      "category": "biology",
-      "aliases": [
-        "doses",
-        "large doses"
-      ]
     },
     {
       "term": "double bond",
@@ -2649,14 +2569,6 @@
       "category": "chemistry"
     },
     {
-      "term": "element",
-      "plain": "A pure, basic substance that cannot be broken down into anything simpler, and that everything else is built from.",
-      "category": "chemistry",
-      "aliases": [
-        "elements"
-      ]
-    },
-    {
       "term": "elemental",
       "plain": "the weight of the pure mineral itself, apart from whatever it is bound to",
       "category": "nutrition"
@@ -2770,14 +2682,6 @@
       "category": "medical"
     },
     {
-      "term": "enzyme",
-      "plain": "a special protein that speeds up a particular chemical reaction in the body",
-      "category": "chemistry",
-      "aliases": [
-        "enzymes"
-      ]
-    },
-    {
       "term": "epilepsy",
       "plain": "A brain condition in which sudden bursts of electrical activity cause seizures.",
       "category": "medical",
@@ -2843,7 +2747,7 @@
     },
     {
       "term": "essential amino acid",
-      "plain": "a protein building block your body cannot make on its own, so you have to get it from food every day",
+      "plain": "a protein building block your body cannot make on its own, so you have to get it from the diet every day",
       "category": "biology",
       "aliases": [
         "classically essential",
@@ -2853,30 +2757,12 @@
       ]
     },
     {
-      "term": "essential element",
-      "plain": "A substance the body cannot make on its own and must get from food to stay healthy.",
-      "category": "nutrition",
-      "aliases": [
-        "essential elements"
-      ]
-    },
-    {
       "term": "essential fatty acids",
-      "plain": "healthy fats the body cannot make and must get from food",
+      "plain": "healthy fats the body cannot make and must get from the diet",
       "category": "biology",
       "aliases": [
         "EFAs",
         "essential fatty acid"
-      ]
-    },
-    {
-      "term": "essential nutrient",
-      "plain": "A substance the body must get from food because it cannot make enough of it on its own.",
-      "category": "nutrition",
-      "aliases": [
-        "essential nutrients",
-        "essential mineral",
-        "essential minerals"
       ]
     },
     {
@@ -2964,14 +2850,6 @@
       "category": "nutrition"
     },
     {
-      "term": "fatty acids",
-      "plain": "the building blocks of fats, which the body can store and burn for energy",
-      "category": "biology",
-      "aliases": [
-        "fatty acid"
-      ]
-    },
-    {
       "term": "fatty liver disease",
       "plain": "a condition where too much fat collects inside the liver",
       "category": "medical"
@@ -3038,16 +2916,6 @@
       "category": "biology",
       "aliases": [
         "Chrysanthemum parthenium"
-      ]
-    },
-    {
-      "term": "fiber",
-      "plain": "The part of plant foods that the body cannot digest, which helps keep the gut working smoothly.",
-      "category": "nutrition",
-      "aliases": [
-        "high-fiber",
-        "fibre",
-        "high-fibre"
       ]
     },
     {
@@ -3348,14 +3216,6 @@
       "term": "Glacial Milk",
       "plain": "The cloudy, mineral-rich meltwater that springs from under a glacier, loaded with the ultra-fine rock powder the ice grinds off the mountain. The long-lived cultures irrigate their crops with it, and the plants turn its rock minerals into the absorbable, plant-derived form.",
       "category": "science"
-    },
-    {
-      "term": "gland",
-      "plain": "an organ that makes and releases substances such as hormones the body uses",
-      "category": "biology",
-      "aliases": [
-        "glands"
-      ]
     },
     {
       "term": "glaucoma",
@@ -3698,7 +3558,7 @@
     },
     {
       "term": "histidine",
-      "plain": "one of the essential amino acids the body must get from food",
+      "plain": "one of the essential amino acids the body must get from the diet",
       "category": "nutrition",
       "aliases": [
         "1-histidine",
@@ -3734,14 +3594,6 @@
       "category": "biology",
       "aliases": [
         "homeostasis"
-      ]
-    },
-    {
-      "term": "hormone",
-      "plain": "a chemical the body makes in one place to send instructions to other parts",
-      "category": "chemistry",
-      "aliases": [
-        "hormones"
       ]
     },
     {
@@ -4098,14 +3950,6 @@
       ]
     },
     {
-      "term": "immunity",
-      "plain": "the body's built-in defense system against germs and disease",
-      "category": "medical",
-      "aliases": [
-        "immune"
-      ]
-    },
-    {
       "term": "impurity",
       "plain": "A small amount of an unwanted substance mixed in with an otherwise pure material.",
       "category": "chemistry",
@@ -4146,11 +3990,6 @@
       ]
     },
     {
-      "term": "infection",
-      "plain": "germs invading the body and multiplying, making a person sick",
-      "category": "biology"
-    },
-    {
       "term": "infectious disease",
       "plain": "An illness caused by germs such as bacteria or viruses that can spread from one living thing to another.",
       "category": "medical",
@@ -4175,11 +4014,6 @@
       "term": "inflammable air",
       "plain": "An old-fashioned name early chemists gave to hydrogen because it catches fire so readily.",
       "category": "chemistry"
-    },
-    {
-      "term": "inflammation",
-      "plain": "the body's swelling, redness, and heat in response to injury or irritation",
-      "category": "biology"
     },
     {
       "term": "infusion",
@@ -4224,11 +4058,6 @@
         "water-insoluble",
         "water insoluble"
       ]
-    },
-    {
-      "term": "insomnia",
-      "plain": "trouble falling asleep or staying asleep",
-      "category": "biology"
     },
     {
       "term": "insulin",
@@ -4338,14 +4167,6 @@
       "category": "chemistry"
     },
     {
-      "term": "iron",
-      "plain": "a mineral the body needs to carry oxygen in the blood",
-      "category": "nutrition",
-      "aliases": [
-        "iron-based"
-      ]
-    },
-    {
       "term": "ischemia",
       "plain": "reduced blood flow to tissue",
       "category": "medical",
@@ -4364,7 +4185,7 @@
     },
     {
       "term": "isoleucine",
-      "plain": "one of the essential amino acids the body must get from food",
+      "plain": "one of the essential amino acids the body must get from the diet",
       "category": "nutrition",
       "aliases": [
         "Ile"
@@ -4590,7 +4411,7 @@
     },
     {
       "term": "leucine",
-      "plain": "one of the essential amino acids the body must get from food",
+      "plain": "one of the essential amino acids the body must get from the diet",
       "category": "nutrition",
       "aliases": [
         "Leu"
@@ -4721,11 +4542,6 @@
       "category": "biology"
     },
     {
-      "term": "longevity",
-      "plain": "Living for a very long time; a long lifespan.",
-      "category": "general"
-    },
-    {
       "term": "lordosis",
       "plain": "excessive inward curve of the lower spine (swayback)",
       "category": "medical"
@@ -4763,7 +4579,7 @@
     },
     {
       "term": "lysine",
-      "plain": "one of the essential amino acids the body must get from food",
+      "plain": "one of the essential amino acids the body must get from the diet",
       "category": "nutrition",
       "aliases": [
         "1-Lysine",
@@ -4826,14 +4642,6 @@
       "term": "maintenance",
       "plain": "a smaller steady dose taken afterward to keep the results going",
       "category": "biology"
-    },
-    {
-      "term": "major minerals",
-      "plain": "The minerals the body needs in fairly large amounts, such as calcium, unlike the trace minerals it needs only a little of.",
-      "category": "nutrition",
-      "aliases": [
-        "major mineral"
-      ]
     },
     {
       "term": "malabsorption",
@@ -5049,16 +4857,6 @@
       ]
     },
     {
-      "term": "metabolism",
-      "plain": "the body's process of turning food into energy and building material",
-      "category": "biology",
-      "aliases": [
-        "metabolize",
-        "metabolized",
-        "metabolizes"
-      ]
-    },
-    {
       "term": "metalloenzyme",
       "plain": "an enzyme that needs a specific mineral to work",
       "category": "medical",
@@ -5203,14 +5001,6 @@
       "category": "biology"
     },
     {
-      "term": "mineral",
-      "plain": "a simple nutrient element, like iron or selenium, that the body needs from food",
-      "category": "nutrition",
-      "aliases": [
-        "minerals"
-      ]
-    },
-    {
       "term": "Mineral Toddy",
       "plain": "Historical name (1980s-90s) for the plant-derived colloidal mineral liquid Wallach built his framework around. Made by Rockland U.S.A. (Elmer Heinrich) from a prehistoric plant deposit. Distributed through Eagle, which was renamed SupraLife International in 1998. Wallach founded American Longevity in 1997 (today's Youngevity). Youngevity later acquired SupraLife; today's direct descendants in the Youngevity line are Ultra Body Toddy and Cal Toddy.",
       "category": "product-history",
@@ -5241,14 +5031,6 @@
       "term": "mineralogy",
       "plain": "The scientific study of minerals, including what they are made of and how they form.",
       "category": "geology"
-    },
-    {
-      "term": "molecule",
-      "plain": "a single tiny particle made of atoms joined together, the basic unit of a substance",
-      "category": "chemistry",
-      "aliases": [
-        "molecules"
-      ]
     },
     {
       "term": "molten",
@@ -5683,23 +5465,6 @@
       "term": "nucleosynthesis",
       "plain": "the formation of chemical elements, as happens inside stars",
       "category": "chemistry"
-    },
-    {
-      "term": "nutrient",
-      "plain": "something in food the body needs to live and stay healthy",
-      "category": "biology",
-      "aliases": [
-        "nutrients"
-      ]
-    },
-    {
-      "term": "nutritional supplement",
-      "plain": "a product taken to add a nutrient the diet may be missing",
-      "category": "nutrition",
-      "aliases": [
-        "supplement",
-        "supplements"
-      ]
     },
     {
       "term": "nystagmus",
@@ -6488,11 +6253,6 @@
       ]
     },
     {
-      "term": "plant hormone",
-      "plain": "a natural chemical that controls how a plant grows, flowers, or ripens",
-      "category": "chemistry"
-    },
-    {
       "term": "plaque",
       "plain": "A fatty deposit that builds up on the inside walls of arteries and can clog them.",
       "category": "medical",
@@ -6586,11 +6346,6 @@
       "category": "anatomy"
     },
     {
-      "term": "potassium",
-      "plain": "A mineral the body needs for healthy nerves and muscles, found in foods like bananas and leafy greens.",
-      "category": "nutrition"
-    },
-    {
       "term": "potassium bromide",
       "plain": "A compound made of potassium and bromine that was once used as a calming, sleep-inducing medicine.",
       "category": "chemistry"
@@ -6648,15 +6403,6 @@
         "prostheses",
         "prosthetic",
         "prosthetics"
-      ]
-    },
-    {
-      "term": "protein",
-      "plain": "a large molecule the body builds from amino acids to form and run its tissues",
-      "category": "nutrition",
-      "aliases": [
-        "protein production",
-        "proteins"
       ]
     },
     {
@@ -7090,14 +6836,6 @@
       ]
     },
     {
-      "term": "salt",
-      "plain": "In chemistry, any compound formed when a metal or metal-like part joins with another part, not just the grains you sprinkle on food.",
-      "category": "chemistry",
-      "aliases": [
-        "salts"
-      ]
-    },
-    {
       "term": "salt marsh",
       "plain": "A low, muddy coastal wetland that is regularly flooded by salty seawater.",
       "category": "geology",
@@ -7315,16 +7053,6 @@
       "category": "biology"
     },
     {
-      "term": "signaling molecule",
-      "plain": "a chemical the body uses to carry a message from one place to another",
-      "category": "chemistry",
-      "aliases": [
-        "monoamine signaling molecules",
-        "signaling chemicals",
-        "signaling molecules"
-      ]
-    },
-    {
       "term": "silica",
       "plain": "A hard, glassy compound of silicon and oxygen that makes up most sand and quartz.",
       "category": "chemistry"
@@ -7428,11 +7156,6 @@
       "aliases": [
         "sodium carbonate"
       ]
-    },
-    {
-      "term": "sodium",
-      "plain": "A common mineral element the body needs; it is one of the two parts of ordinary table salt.",
-      "category": "chemistry"
     },
     {
       "term": "sodium bromide",
@@ -7600,14 +7323,6 @@
       "term": "stomatitis",
       "plain": "inflammation of the mouth",
       "category": "medical"
-    },
-    {
-      "term": "stress hormone",
-      "plain": "a chemical the body releases when it is under stress",
-      "category": "chemistry",
-      "aliases": [
-        "stress hormone levels"
-      ]
     },
     {
       "term": "stroke",
@@ -7903,7 +7618,7 @@
     },
     {
       "term": "threonine",
-      "plain": "one of the essential amino acids the body must get from food",
+      "plain": "one of the essential amino acids the body must get from the diet",
       "category": "nutrition",
       "aliases": [
         "Thr"
@@ -7987,14 +7702,6 @@
       ]
     },
     {
-      "term": "tissue",
-      "plain": "a group of similar cells forming a part of the body, such as skin or muscle",
-      "category": "biology",
-      "aliases": [
-        "tissues"
-      ]
-    },
-    {
       "term": "to effect",
       "plain": "raising the dose bit by bit until it produces the result you want",
       "category": "biology"
@@ -8025,16 +7732,6 @@
       "category": "biology"
     },
     {
-      "term": "toxicity",
-      "plain": "harm caused by too much of a substance",
-      "category": "biology",
-      "aliases": [
-        "toxic",
-        "toxin",
-        "toxins"
-      ]
-    },
-    {
       "term": "toxicology",
       "plain": "The science of studying poisons and measuring how harmful different substances are to living things.",
       "category": "medical",
@@ -8048,16 +7745,6 @@
       "category": "medical"
     },
     {
-      "term": "trace element",
-      "plain": "A mineral the body needs only in very tiny amounts to stay healthy.",
-      "category": "nutrition",
-      "aliases": [
-        "trace-element",
-        "trace elements",
-        "trace-elements"
-      ]
-    },
-    {
       "term": "trace levels",
       "plain": "Amounts so tiny they can barely be measured, yet still matter for the body's health.",
       "category": "nutrition",
@@ -8066,16 +7753,6 @@
         "trace amounts",
         "trace amount",
         "trace"
-      ]
-    },
-    {
-      "term": "trace mineral",
-      "plain": "A mineral the body needs in only very tiny amounts to stay healthy.",
-      "category": "nutrition",
-      "aliases": [
-        "trace minerals",
-        "trace-mineral",
-        "trace and rare-earth minerals"
       ]
     },
     {
@@ -8287,7 +7964,7 @@
     },
     {
       "term": "valine",
-      "plain": "one of the essential amino acids the body must get from food",
+      "plain": "one of the essential amino acids the body must get from the diet",
       "category": "nutrition",
       "aliases": [
         "DL-valine",
@@ -8349,22 +8026,6 @@
       "term": "Virgin Earth",
       "plain": "Wallach's own plant-derived colloidal mineral line, launched under American Longevity in 1997. Made using Rockland-sourced minerals (Elmer Heinrich agreed to supply Wallach's new company from the outset).",
       "category": "product-history"
-    },
-    {
-      "term": "viruses",
-      "plain": "Tiny germs that can only multiply by invading the cells of a living host, often causing disease.",
-      "category": "biology",
-      "aliases": [
-        "virus"
-      ]
-    },
-    {
-      "term": "vitamin",
-      "plain": "one of the natural substances the body needs in small amounts to work properly",
-      "category": "biology",
-      "aliases": [
-        "vitamins"
-      ]
     },
     {
       "term": "vitamin A",
@@ -8456,10 +8117,7 @@
     {
       "term": "World Health Organization",
       "plain": "A global health agency that guides and coordinates health matters for countries around the world.",
-      "category": "general",
-      "aliases": [
-        "WHO"
-      ]
+      "category": "general"
     },
     {
       "term": "X-ray opacity",
@@ -8517,11 +8175,6 @@
         "ytterbium group",
         "yttrium ytterbium group"
       ]
-    },
-    {
-      "term": "zinc",
-      "plain": "a mineral the body needs for healing, immunity, and many enzymes",
-      "category": "nutrition"
     },
     {
       "term": "zircon",

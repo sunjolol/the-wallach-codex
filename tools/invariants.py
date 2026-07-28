@@ -3880,6 +3880,7 @@ _JARGON_SKIP = {
     "hypoallergenic", "allergenic", "photography", "orthotic", "glucogenic", "ketogenic",
     "proteinogenic", "pathogenic", "bronchogenic", "bronchiogenic", "glycolysis", "hemolysis",
     "paralysis", "clematitis", "vesiculosis", "oklahoma",
+    "arthritis",  # common word, gloss removed per Luneth 2026-07-27 (deemed too-basic)
 }
 
 

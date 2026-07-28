@@ -7444,7 +7444,7 @@
    ],
    "facet": "basics",
    "question": "What is Omega-3?",
-   "answer_short": "Omega-3 is one of the two fatty acids Wallach classes as truly essential — alpha-linolenic acid — a fat the body cannot make and must get from food.",
+   "answer_short": "Omega-3 is one of the two fatty acids Wallach classes as truly essential — alpha-linolenic acid — a fat the body cannot make and must get from the diet.",
    "topics": [
     "omega-3",
     "essential fatty acids",
@@ -12721,7 +12721,9 @@
   },
   "WAL-CLM-IMMORT-000333": {
    "subject": "choline",
-   "also_about": [],
+   "also_about": [
+    "acetylcholine"
+   ],
    "facet": "physiology",
    "question": "How does choline help the brain and nerves?",
    "answer_short": "Choline builds sphingomyelin in the brain and peripheral nerves and is the precursor for acetylcholine, so it is involved in transmitting nerve impulses.",
@@ -12814,7 +12816,8 @@
    "subject": "flavonoids",
    "also_about": [
     "hypertension",
-    "vitamin-c"
+    "vitamin-c",
+    "nitric-oxide"
    ],
    "facet": "mechanism",
    "question": "How do flavonoids improve blood flow?",
@@ -16032,7 +16035,9 @@
   },
   "WAL-CLM-EPIGEN-000342": {
    "subject": "arginine",
-   "also_about": [],
+   "also_about": [
+    "citrulline"
+   ],
    "facet": "mechanism",
    "question": "Why does supplementing with arginine help fuel the cells?",
    "answer_short": "Making arginine internally burns ATP, so supplementing it directly frees up more ATP to fuel cell function.",
@@ -16168,7 +16173,8 @@
   "WAL-CLM-EPIGEN-000352": {
    "subject": "tryptophan",
    "also_about": [
-    "serotonin"
+    "serotonin",
+    "melatonin"
    ],
    "facet": "mechanism",
    "question": "What does tryptophan turn into in the body?",
@@ -16514,7 +16520,7 @@
    ],
    "facet": "basics",
    "question": "What is phenylalanine?",
-   "answer_short": "Phenylalanine is one of the nine classic essential amino acids—a nonpolar protein building block the body can't make and must get from food every day.",
+   "answer_short": "Phenylalanine is one of the nine classic essential amino acids—a nonpolar protein building block the body can't make and must get from the diet every day.",
    "topics": [
     "amino acids",
     "essential amino acids",
@@ -16530,7 +16536,7 @@
    ],
    "facet": "stance",
    "question": "Is phenylalanine an essential amino acid?",
-   "answer_short": "Yes—Wallach lists phenylalanine among the nine classic essential amino acids the body cannot make on its own and must be supplied daily from food to prevent deficiency and disease.",
+   "answer_short": "Yes—Wallach lists phenylalanine among the nine classic essential amino acids the body cannot make on its own and must be supplied daily from the diet to prevent deficiency and disease.",
    "topics": [
     "amino acids",
     "essential amino acids",
@@ -16665,7 +16671,7 @@
    ],
    "facet": "basics",
    "question": "What is lysine?",
-   "answer_short": "Lysine is an essential amino acid the body can't make and must get daily from food; it drives protein production and, through its derivative allysine, helps build the collagen and elastin that strengthen tissues and blood vessels.",
+   "answer_short": "Lysine is an essential amino acid the body can't make and must get daily from the diet; it drives protein production and, through its derivative allysine, helps build the collagen and elastin that strengthen tissues and blood vessels.",
    "topics": [
     "amino-acids",
     "protein",
@@ -16805,7 +16811,7 @@
    ],
    "facet": "stance",
    "question": "Is valine an essential amino acid?",
-   "answer_short": "Yes. Wallach lists valine among the nine classic essential amino acids—ones the body can't make on its own, so you must get them from food every day to avoid deficiency and disease.",
+   "answer_short": "Yes. Wallach lists valine among the nine classic essential amino acids—ones the body can't make on its own, so you must get them from the diet every day to avoid deficiency and disease.",
    "topics": [
     "amino-acids",
     "valine",
@@ -17584,7 +17590,8 @@
    "subject": "omega-9",
    "also_about": [
     "omega-3",
-    "omega-6"
+    "omega-6",
+    "docosahexaenoic-acid"
    ],
    "facet": "basics",
    "question": "What are the omega-3, omega-6, and omega-9 fatty acid groups?",
@@ -17617,7 +17624,8 @@
   "WAL-CLM-EPIGEN-000396": {
    "subject": "omega-6",
    "also_about": [
-    "omega-3"
+    "omega-3",
+    "docosahexaenoic-acid"
    ],
    "facet": "basics",
    "question": "Is arachidonic acid an omega-6 fatty acid?",
@@ -21644,7 +21652,7 @@
     "wallach"
    ],
    "facet": "history",
-   "question": "what is the average lifespan of doctors?",
+   "question": "What is the average lifespan of doctors?",
    "answer_short": "Wallach cites an 1895 Journal of the American Medical Association report that put doctors' own average lifespan at just 55 years.",
    "topics": [
     "conventional-medicine",
@@ -21661,7 +21669,7 @@
     "epigenetics"
    ],
    "facet": "mechanism",
-   "question": "what are the 90 essential nutrients?",
+   "question": "What are the 90 essential nutrients?",
    "answer_short": "Wallach's cornerstone: DNA must have constant access to all 90 essentials -- 60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids -- each in optimal amounts and proper ratios, because genes need nutrient-supplied energy, raw materials and on/off cofactors.",
    "topics": [
     "nutrition",
@@ -21676,7 +21684,7 @@
     "digestion"
    ],
    "facet": "uses",
-   "question": "what is bismuth used for?",
+   "question": "What is bismuth used for?",
    "answer_short": "Bismuth subsalicylate is the antidiarrheal active ingredient in Pepto-Bismol; combined with tetracycline it was FDA-approved in 1994 to cure H. pylori gastric ulcers -- the bacterial cause Marshall and Warren proposed in 1983.",
    "topics": [
     "digestion",
@@ -21690,7 +21698,7 @@
     "water"
    ],
    "facet": "warning",
-   "question": "does fluoride in drinking water cause cancer?",
+   "question": "Does fluoride in drinking water cause cancer?",
    "answer_short": "Wallach accepts fluoride as an essential trace mineral (proven 1972) yet ties water fluoridation to cancer: a 1990 National Toxicology Program study found oral squamous-cell carcinoma, a rare osteosarcoma, and thyroid and liver tumors in fluoride-fed rats.",
    "topics": [
     "water",
@@ -21706,7 +21714,7 @@
     "essential_nutrients"
    ],
    "facet": "protocol",
-   "question": "how much colloidal minerals should I take?",
+   "question": "How much colloidal minerals should I take?",
    "answer_short": "In Epigenetics Wallach recommends liquid plant-derived colloidal minerals at one ounce per 100 pounds of body weight per day, listing a parts-per-million profile that spans rare-earth, trace and bulk minerals.",
    "topics": [
     "supplements",
@@ -21722,7 +21730,7 @@
     "detox"
    ],
    "facet": "warning",
-   "question": "is mercury in fish dangerous?",
+   "question": "Is mercury in fish dangerous?",
    "answer_short": "Methyl mercury from fish (highest in shark, tuna and swordfish) crosses the placenta and is chiefly neurotoxic -- tremors, depression, loss of coordination -- and Wallach notes selenium is mutually antagonistic, protecting against it.",
    "topics": [
     "heavy-metals",
@@ -21739,7 +21747,7 @@
     "free_radicals"
    ],
    "facet": "sources",
-   "question": "which foods have the highest ORAC antioxidant score?",
+   "question": "Which foods have the highest ORAC antioxidant score?",
    "answer_short": "On Wallach's centenarian-foods ORAC table the pecan tops all nuts at 17,940, ahead of raspberry 6,058, strawberry 5,938 and Red Delicious apple 5,900.",
    "topics": [
     "antioxidants",
@@ -21754,7 +21762,7 @@
     "longevity"
    ],
    "facet": "sources",
-   "question": "which juices and nuts have the highest ORAC antioxidant values?",
+   "question": "Which juices and nuts have the highest ORAC antioxidant values?",
    "answer_short": "On Wallach's ORAC table blueberry juice leads the juices at 9,019 with prune juice at 7,291; hazelnuts reach 9,275 among nuts and raw lentils score 7,282.",
    "topics": [
     "antioxidants",
@@ -21769,7 +21777,7 @@
     "colloidal_minerals"
    ],
    "facet": "stance",
-   "question": "why does Wallach say minerals are the most important nutrients?",
+   "question": "Why does Wallach say minerals are the most important nutrients?",
    "answer_short": "Wallach calls minerals 'the currency of life' -- the body's basic functions depend on them -- and argues the medical profession ignores this truth to a point past the absurd.",
    "topics": [
     "minerals",
@@ -21783,7 +21791,7 @@
     "vitamins"
    ],
    "facet": "mechanism",
-   "question": "what do minerals do in the body?",
+   "question": "What do minerals do in the body?",
    "answer_short": "Wallach holds that no basic life function can run without minerals -- either as a major part of the function or as a catalytic cofactor for RNA, DNA, sub-cellular and digestive enzymes, and the utilization of vitamins.",
    "topics": [
     "minerals",
@@ -21799,7 +21807,7 @@
     "rare_earth_elements"
    ],
    "facet": "basics",
-   "question": "are the world's soils depleted of minerals?",
+   "question": "Are the world's soils depleted of minerals?",
    "answer_short": "Wallach cites U.S. Senate Document 264 (1936) and the 1992 Rio Earth Summit report to argue the world's farm and range soils are 'anemic' -- soils that should hold 60 elements now have few or none.",
    "topics": [
     "soil",
@@ -21815,7 +21823,7 @@
     "essential_nutrients"
    ],
    "facet": "big_question",
-   "question": "how long can humans actually live?",
+   "question": "How long can humans actually live?",
    "answer_short": "Wallach puts the human genetic potential for longevity at 120 to 140 years -- the US average lifespan falls as much as 50% short of it.",
    "topics": [
     "longevity",
@@ -21830,7 +21838,7 @@
     "essential_nutrients"
    ],
    "facet": "mechanism",
-   "question": "does calorie restriction make you live longer?",
+   "question": "Does calorie restriction make you live longer?",
    "answer_short": "Wallach argues the extended rat lifespans in calorie-restriction studies came not from fewer calories but from the higher concentration of minerals per calorie in the diet.",
    "topics": [
     "longevity",
@@ -22389,7 +22397,7 @@
     "cadmium"
    ],
    "facet": "warning",
-   "question": "is thallium toxic to humans?",
+   "question": "Is thallium toxic to humans?",
    "answer_short": "Wallach notes thallium accumulates in the mammalian kidney and is highly toxic to mammals, including humans.",
    "topics": [
     "toxic-metals",
@@ -22405,7 +22413,7 @@
     "helium"
    ],
    "facet": "mechanism",
-   "question": "is xenon an anesthetic?",
+   "question": "Is xenon an anesthetic?",
    "answer_short": "Wallach notes xenon binds to mammalian hemoglobin and myoglobin, producing an anesthetic effect.",
    "topics": [
     "noble-gases",
@@ -22419,7 +22427,7 @@
     "minerals"
    ],
    "facet": "warning",
-   "question": "are fruits and vegetables less nutritious than they used to be?",
+   "question": "Are fruits and vegetables less nutritious than they used to be?",
    "answer_short": "Wallach quotes 1936 U.S. Senate Document 264: foods grown on mineral-depleted land are 'starving us,' no matter how much of them we eat.",
    "topics": [
     "soil-depletion",
@@ -22436,7 +22444,7 @@
     "supplement-dosing"
    ],
    "facet": "mechanism",
-   "question": "can you get all your minerals from eating fruits and vegetables?",
+   "question": "Can you get all your minerals from eating fruits and vegetables?",
    "answer_short": "Wallach quotes Senate Document 264: no one can eat enough fruits and vegetables to supply the mineral salts needed for perfect health -- the stomach isn't big enough to hold them.",
    "topics": [
     "soil-depletion",
@@ -22452,7 +22460,7 @@
     "minerals"
    ],
    "facet": "warning",
-   "question": "how many Americans are mineral deficient?",
+   "question": "How many Americans are mineral deficient?",
    "answer_short": "Wallach quotes Senate Document 264: 99% of Americans are deficient in these minerals, and a marked deficiency in any one of the more important minerals actually results in disease.",
    "topics": [
     "mineral-deficiency",
@@ -22467,7 +22475,7 @@
     "minerals"
    ],
    "facet": "history",
-   "question": "how much have soil minerals declined over the last 100 years?",
+   "question": "How much have soil minerals declined over the last 100 years?",
    "answer_short": "Per the 1992 Rio Earth Summit report Wallach cites, soil minerals fell most in North America (85%), then Asia and South America (76%), Africa (74%), Europe (72%), and Australia (55%) over 100 years.",
    "topics": [
     "soil-depletion",
@@ -22483,7 +22491,7 @@
     "essential_nutrients"
    ],
    "facet": "basics",
-   "question": "what is a preventive dose versus a megavitamin dose?",
+   "question": "What is a preventive dose versus a megavitamin dose?",
    "answer_short": "Wallach defines 'preventive doses' as well above the RDA but below megavitamin levels, and reserves megavitamin doses for extraordinary situations and specific diseases.",
    "topics": [
     "supplement-dosing",
@@ -22498,7 +22506,7 @@
     "home_remedies"
    ],
    "facet": "uses",
-   "question": "what herbs act as natural diuretics?",
+   "question": "What herbs act as natural diuretics?",
    "answer_short": "Wallach lists broom-corn (Sorghum vulgare) as a diuretic, asparagus as a diuretic and laxative, and broom (Cytisus scoparius) as a diuretic and cathartic.",
    "topics": [
     "herbal-remedies",
@@ -22513,7 +22521,7 @@
     "sexual_health"
    ],
    "facet": "protocol",
-   "question": "how do you do kegel exercises?",
+   "question": "How do you do kegel exercises?",
    "answer_short": "Wallach's Kegel exercise conditions the pelvic-floor muscles -- tighten them as if stopping a bowel movement (or stopping the urine stream), several hundred a day -- for urinary incontinence, urgency, and prenatal conditioning.",
    "topics": [
     "pelvic-floor",
@@ -22528,7 +22536,7 @@
     "pregnancy_birth"
    ],
    "facet": "uses",
-   "question": "what herbs increase breast milk?",
+   "question": "What herbs increase breast milk?",
    "answer_short": "Wallach says milkweed, caraway, fenugreek and goat's rue can induce or enhance lactation, while goldenrod reduces milk and relieves the pain of engorgement.",
    "topics": [
     "herbal-remedies",
@@ -22544,7 +22552,7 @@
     "digestion"
    ],
    "facet": "uses",
-   "question": "what are natural laxatives?",
+   "question": "What are natural laxatives?",
    "answer_short": "Wallach lists laxatives including OTC Ex-Lax and Milk of Magnesia plus herbs -- senna, flaxseed/flaxseed oil, alder buckthorn, cascara sagrada, juniper and manna ash.",
    "topics": [
     "herbal-remedies",
@@ -22559,7 +22567,7 @@
     "longevity"
    ],
    "facet": "physiology",
-   "question": "what does the accessory nerve (11th cranial nerve) do?",
+   "question": "What does the accessory nerve (11th cranial nerve) do?",
    "answer_short": "Wallach describes the accessory (11th cranial) nerve as the motor nerve driving the trapezius and sternocleidomastoid to rotate, flex and extend the neck and shoulders; skull osteoporosis pinching it at the foramina causes loss of those muscles' function.",
    "topics": [
     "cranial-nerves",

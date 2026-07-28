@@ -106,7 +106,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach counts 12 essential amino acids - the protein building blocks the body cannot make for itself and so must obtain from food: valine, tyrosine, tryptophan, lysine, isoleucine, threonine, methionine, histidine, phenylalanine, arginine, taurine, and leucine. He warns that if any essential amino acid is missing from the diet for any length of time, a specific - sometimes reversible - disease results. A footnote adds that selenium researcher Dr. Gerhard Schrauzer considered selenomethionine (the selenium analog of methionine) a 13th essential amino acid.",
+   "claim_text": "Wallach counts 12 essential amino acids - the protein building blocks the body cannot make for itself and so must obtain from the diet: valine, tyrosine, tryptophan, lysine, isoleucine, threonine, methionine, histidine, phenylalanine, arginine, taurine, and leucine. He warns that if any essential amino acid is missing from the diet for any length of time, a specific - sometimes reversible - disease results. A footnote adds that selenium researcher Dr. Gerhard Schrauzer considered selenomethionine (the selenium analog of methionine) a 13th essential amino acid.",
    "verbatim": "There are 12 amino acids that are required by the body\nas protein building blocks, and because the body is unable to\nmanufacture them, they are termed “essential amino acids.”",
    "locator": {
     "book": "immortality",
@@ -1673,7 +1673,7 @@
     "immune_depression"
    ],
    "symptoms": [],
-   "claim_text": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from food. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
+   "claim_text": "Essential fatty acids (EFA) are the fats the body cannot make for itself and so must get from the diet. Wallach names three polyunsaturated ones - linoleic, linolenic and arachidonic acid - and notes only two (linoleic and linolenic) are strictly essential, since the body can build arachidonic acid from linolenic; 3% of daily calories must come from EFAs. They do vitamin-like jobs: carrying and processing fat, keeping cell membranes intact, lowering blood cholesterol, and serving as the raw material for prostaglandins that help regulate blood pressure, heart rate, blood-vessel and airway width, blood clotting, and brain and spinal-cord function. A shortage is especially damaging in infants.",
    "verbatim": "EFA deficiency in human infants results in a poor growth rate,\nlowered IQ, seizures, learning disabilities, eczema, asthma,\nand a lowered resistance to infectious diseases.",
    "locator": {
     "book": "immortality",
@@ -6813,7 +6813,7 @@
     "infertility"
    ],
    "symptoms": [],
-   "claim_text": "What lithium deficiency does in animal studies. A deficiency of lithium produces reproductive failure, infertility, reduced growth rate, shortened life expectancy, and behavioral problems.",
+   "claim_text": "Animal studies, Wallach reports, show that a lithium deficiency causes reproductive failure and infertility, slowed growth, a shortened life expectancy, and behavioral problems. He builds on this to argue lithium is a genuine essential trace mineral for the brain — tying its shortage in people (worsened by heavy sugar or alcohol) to depression, manic-depression, and outbursts of rage, the very condition treated with lithium carbonate as a bipolar drug.",
    "verbatim": "Animal studies show that a deficiency of lithium\nresults in reproductive failure, infertility, reduced growth\nrate, shortened life expectancy, and behavioral problems.",
    "locator": {
     "book": "immortality",
@@ -9743,7 +9743,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "According to Wallach, heme iron from meat is 10 percent available for absorption, while iron from fresh plant sources are only one percent available because of the endogenous phytates in the plant. Iron absorption takes place mainly in the duodenum, where the intestinal environment is still acidic.",
+   "claim_text": "Not all dietary iron is equal, Wallach explains: heme iron from meat is about 10% absorbable, while iron from fresh plant sources is only about 1% available, because the plants' own phytates lock it up. Absorption happens mainly in the duodenum — the first stretch of the small intestine, where the contents are still acidic — which is one reason low stomach acid worsens iron status. It underlies his caution that vegetarians are especially prone to iron deficiency.",
    "verbatim": "Iron is stored in bone marrow and liver (i.e. hemosiderin\nand ferritin). Heme iron from meat is 10% available for\nabsorption, while iron from fresh plant sources are only one\npercent available because of the endogenous phytates in the\nplant. Iron absorption takes place primarily in the duodenum\nwhere the intestinal environment is still acid.",
    "locator": {
     "book": "immortality",
@@ -9946,7 +9946,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "According to Wallach, riboflavin is present in small amounts in milk, cheddar and cottage cheese, organ meats such as liver, heart and kidney, eggs, and green leafy vegetables.",
+   "claim_text": "Where to get riboflavin (vitamin B2): Wallach lists milk, cheddar and cottage cheese, organ meats such as liver, heart, and kidney, eggs, and green leafy vegetables — but only in small amounts, so variety matters. He adds that B2 was first spotted in 1879 as the yellow-green fluorescent pigment in milk whey, and that a shortage shows up first as soreness and burning of the lips, mouth, and tongue, along with light-sensitive, itchy eyes.",
    "verbatim": "Riboflavin is present in small amounts in milk, cheddar\nand cottage cheese, organ meats (liver, heart, kidney, etc.),\neggs and green leafy vegetables.",
    "locator": {
     "book": "immortality",
@@ -10589,7 +10589,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach records that potassium was first isolated by Sir Humphrey Davy in 1807. Davy used electrolysis as the method for separating elemental potassium from its compounds.",
+   "claim_text": "Potassium was first isolated in 1807 by the English chemist Sir Humphry Davy, Wallach records, who pried the highly reactive metal from its compounds using electrolysis — passing an electric current through them. He adds context that makes the element feel less abstract: the human body holds roughly 140 grams of potassium, and because a small fraction is the naturally radioactive isotope potassium-40, each of us carries a lifelong trace of internal background radiation.",
    "verbatim": "Potassium was first isolated by Sir Humphrey Davy\nin 1807 using electrolysis as a means of separating elemental\npotassium from its compounds.",
    "locator": {
     "book": "immortality",
@@ -11282,7 +11282,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach reports that large doses of choline have proved beneficial for managing and alleviating the symptoms of tardive dyskinesia and Huntington's disease in people.",
+   "claim_text": "Because choline is a raw material for acetylcholine — a key nerve-signaling chemical — and a building block of the brain's and nerves' insulating sphingomyelin, Wallach reports it has real value in movement disorders. Large doses of choline, he says, have proven beneficial for managing and easing the symptoms of tardive dyskinesia (the involuntary movements that can follow long-term drug use) and of Huntington's disease in people. He notes, too, that a choline shortage produces a 'fatty liver.'",
    "verbatim": "Large\ndoses of choline have proved to be beneficial for managing\nand alleviating the symptoms of tardive dyskinesia and\nHuntington’s disease in humans.",
    "locator": {
     "book": "immortality",
@@ -11349,7 +11349,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach notes that inositol — first identified as a vitamin in 1940 — occurs abundantly in diets containing whole grains and raw vegetables. In these foods it is present as inositol phospholipids and as phytic acid (inositol hexaphosphate, also called \"phytates\").",
+   "claim_text": "Inositol — recognized as a vitamin in 1940 — is plentiful in whole grains and raw vegetables, Wallach notes, where it occurs both as inositol phospholipids and as phytic acid (inositol hexaphosphate, the 'phytates'). He flags the double edge: the very phytic acid that carries inositol also binds calcium, iron, and zinc in the gut and blocks their absorption, so what is a nutrient in one sense is an anti-nutrient in another.",
    "verbatim": "Inositol was identified as a vitamin in 1940. It\noccurs abundantly in diets containing whole grains and\nraw vegetables as inositol phospholipids and as phytic acid\n(inositol hexaphosphate or “phytates”).",
    "locator": {
     "book": "immortality",
@@ -11988,7 +11988,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach explains that the maximum storage level of B12 is 2 mg, which the body slowly releases to the bone marrow as needed. Any intake above the body's storage capacity is simply shed in the urine - what he memorably calls 'expensive urine.'",
+   "claim_text": "Wallach explains why megadosing vitamin B12 has limits: the body can store at most about 2 mg of B12, which it releases slowly to the bone marrow as needed, and any intake beyond that storage ceiling is simply flushed out in the urine — what he memorably calls 'expensive urine.' He adds the body recycles B12 through the liver and bile so efficiently that a vegan's deficiency may not surface for five to ten years after giving up meat.",
    "verbatim": "The maximum storage level of B12 is 2 mg which is slowly\nreleased to the bone marrow as needed. Excess intake of B12\nabove the body’s storage capacity is shed in the urine (expensive\nurine).",
    "locator": {
     "book": "immortality",
@@ -12055,7 +12055,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach cautions that cobalt excess in man, of 20 to 30 mg per day, may create an accelerated erythropoiesis, or red blood cell production, by stimulating an increased production of the kidney hormone erythropoietin.",
+   "claim_text": "Too much cobalt has a specific effect Wallach flags: in humans, an excess of about 20 to 30 mg a day can drive accelerated erythropoiesis — an over-production of red blood cells — by stimulating the kidney to release more erythropoietin, the hormone that signals the marrow to make red cells. He stresses that the body's real cobalt need is tiny, since it is required mainly as the cobalt atom at the center of vitamin B12 (an RDA of just 3 to 4 mcg a day).",
    "verbatim": "Cobalt excess in man (20 to 30 mg/day) may create an\naccelerated erythropoiesis (RBC -red blood cell- production)\nby stimulating an increased production of the kidney hormone\nerythropoietin.",
    "locator": {
     "book": "immortality",
@@ -12087,7 +12087,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach states that less than 0.07 ppm of cobalt in the soil results in cobalt deficiency in the animals and people who eat crops grown from those soils, while 0.11 ppm of cobalt in the soil prevents and cures the deficiency.",
+   "claim_text": "Cobalt puts Wallach's soil-to-people thesis in sharp numbers: when farmland holds less than 0.07 ppm of cobalt, the animals — and the people — that live on crops grown there develop cobalt deficiency, while just 0.11 ppm in the soil is enough to prevent and cure it. Because the body needs cobalt mainly as the core of vitamin B12, he links this shortfall to pernicious anemia and to demyelination of the spinal cord and major nerves — serious, sometimes permanent nerve damage.",
    "verbatim": "Less than 0.07 ppm Co in the soil results in cobalt\ndeficiency in animals and people who eat crops grown from\nthose soils; 0.11 ppm Co in the soil prevents and cures Co\ndeficiency.",
    "locator": {
     "book": "immortality",
@@ -12251,7 +12251,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach notes that lithium carbonate is regularly used to treat patients with the severe form of bipolar disorder, with more than 3 million prescriptions for this trace mineral filled yearly. He explains that lithium's role is thought to be related to the way brain cells respond to certain hormones and neurotransmitters.",
+   "claim_text": "Wallach points out that mainstream medicine already treats severe bipolar disorder with a trace mineral: lithium, given as lithium carbonate, with more than 3 million prescriptions filled a year. Its exact mechanism, he notes, is thought to involve how brain cells respond to certain hormones and neurotransmitters. He turns this into a larger argument — that if a mineral can steady the most severe mood disorder, everyday depression and irritability may likewise reflect a simple lithium shortage.",
    "verbatim": "Lithium carbonate is regularly used to treat patients\nwith the severe form of bipolar disorder. More than 3 million\nprescriptions for this trace mineral are filled yearly. The role of\nlithium is thought to be related to the role the brain cells play\nand respond to certain hormones and neurotransmitters.",
    "locator": {
     "book": "immortality",
@@ -12319,7 +12319,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Lithium was discovered in 1817 by the Swedish chemist Johan August Arfvedson during a routine chemical assay of ore from a mine in Sweden. Wallach notes it was named for the Greek word 'lithos,' which translates to 'stone.'",
+   "claim_text": "Lithium was discovered in 1817 by the Swedish chemist Johan August Arfvedson while assaying ore from a Swedish mine, Wallach recounts, and was named from the Greek word 'lithos,' meaning 'stone.' He adds a memorable quirk of the metal: it is so light that a small piece will actually float on water, and so reactive that pure lithium must be stored under oil or kerosene to keep it from reacting with air and moisture.",
    "verbatim": "Lithium was discovered in 1817 by the Swedish chemist\nJohan August Arfvedson during a routine chemical assay of\nore from a mine in Sweden. It was named for the Greek word\nlithos, which translates to “stone.”",
    "locator": {
     "book": "immortality",
@@ -12586,7 +12586,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach explains that sodium chloride — the chemical name for common table salt — is mined in large quantities from ancient salt mines found on every continent on earth. Seawater is another common source of salt: he notes that every gallon of seawater contains about a quarter pound of salt.",
+   "claim_text": "Sodium chloride — the chemical name for ordinary table salt — is mined in vast quantities from ancient salt mines on every continent, Wallach notes, and can also be drawn from the sea, where every gallon of seawater holds about a quarter-pound of salt. He frames salt as one of humanity's oldest essentials: prized as a nutrient, preservative, and flavoring since before Roman times, when soldiers were paid an allowance in salt — the very origin of the word 'salary.'",
    "verbatim": "Sodium chloride, the chemical name for common table\nsalt, is mined in large quantities from ancient salt mines on\nevery continent on earth. Sea water is another common source\nof salt, every gallon of sea water contains a quarter pound of\nsalt.",
    "locator": {
     "book": "immortality",
@@ -12655,7 +12655,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach recounts that the English chemist Sir Humphry Davy first isolated and identified sodium as a new element in 1807 by separating it from molten sodium hydroxide. The name sodium comes from the English word soda, which itself derives from the Latin word sodanum — a common headache remedy of ancient Rome.",
+   "claim_text": "Sodium was first isolated in 1807 by the English chemist Sir Humphry Davy, Wallach recounts, who separated the reactive, silvery metal from molten sodium hydroxide. Its name carries an old-medicine root: 'sodium' comes from 'soda,' which traces back to the Latin 'sodanum,' a common headache remedy in ancient Rome. He adds that the pure metal is light enough to float on water and soft enough to cut with a knife.",
    "verbatim": "The English chemist, Sir Humphry Davy first isolated and\nidentified sodium as a new element in 1807 by separating it from\nmolten sodium hydroxide. The name, sodium is taken from the\nEnglish word soda, which itself is derived from the Latin word\nsodanum, a common headache remedy of ancient Rome.",
    "locator": {
     "book": "immortality",
@@ -12925,7 +12925,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach relates that the name cobalt was derived in the 18th century from the German word 'kobald,' which refers to an evil gnome or spirit. Cobalt miners commonly blamed their mining accidents on the evil 'kobald,' or cobalt.",
+   "claim_text": "Cobalt's name carries an old superstition. Wallach relates that it derives from the 18th-century German word 'kobald,' meaning an evil gnome or spirit — miners of the day commonly blamed their accidents on the malicious 'kobald' hiding in the ore. He adds the metal was first isolated by the Swedish chemist Georg Brandt in 1739, though the ancient Egyptians had already used traces of cobalt to make blue glass thousands of years before.",
    "verbatim": "The name cobalt was derived in the 18th century\nfrom the German word “kobald” that refers to an evil gnome\nor spirit. Cobalt miners commonly blamed mining accidents\non the evil “kobald” or cobalt.",
    "locator": {
     "book": "immortality",

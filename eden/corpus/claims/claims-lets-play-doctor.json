@@ -375,7 +375,7 @@
     "myalgia",
     "nervousness"
    ],
-   "claim_text": "Wallach lists the signs of copper toxicity (excess): depression, irritability, joint pain, muscle pain, and nervousness.",
+   "claim_text": "Copper is essential, but Wallach notes it turns problematic in excess too. His copper-toxicity list is mostly neuropsychiatric: depression, irritability, and nervousness, alongside joint and muscle pain. It reinforces his theme that minerals work in balance — copper both too low and too high can disturb mood and the nervous system.",
    "verbatim": "COPPER TOXICITY\ndepression\nirritability\njoint pain\nmuscle pain\nnervousness",
    "locator": {
     "book": "lets-play-doctor",
@@ -967,7 +967,7 @@
     "fatigue",
     "gray_hair"
    ],
-   "claim_text": "Wallach lists the signs of para-aminobenzoic acid (PABA) deficiency: constipation; depression, headache and irritability; gastrointestinal disorders; fatigue; and graying hair.",
+   "claim_text": "Para-aminobenzoic acid (PABA), a lesser-known member of the B-vitamin family, earns a place in Wallach's deficiency map. He lists the signs of a shortage as constipation, depression with headaches and irritability, gastrointestinal upset, fatigue, and — the one it is best known for — graying hair, which is why PABA turns up in some 'anti-gray' hair formulas.",
    "verbatim": "PARA AMINOBENZOIC ACID (PABA)\nDEFICIENCY\nconstipation\ndepression/headache/irritability\nG I disorders\nfatigue\ngraying hair",
    "locator": {
     "book": "lets-play-doctor",
@@ -1055,7 +1055,7 @@
     "tooth_loss",
     "weight_loss"
    ],
-   "claim_text": "Wallach lists the signs of phosphorus toxicity (excess): calcium malabsorption, loose teeth, osteoporosis and arthritis, secondary hyperparathyroidism, tooth loss, and weight loss.",
+   "claim_text": "Too much phosphorus works against calcium in the body, and Wallach lists the toll of phosphorus toxicity: calcium malabsorption, loosening and loss of teeth, osteoporosis and arthritis, secondary hyperparathyroidism (the parathyroid glands overworking to pull calcium out of bone), and weight loss. It reflects his recurring point that the phosphorus-to-calcium balance, not calcium intake alone, governs bone health.",
    "verbatim": "PHOSPHORUS TOXICITY\ncalcium malabsorption\nloose teeth\nosteoporosis / arthritis\nsecondary hyperparathyroidism\ntooth loss\nweight loss",
    "locator": {
     "book": "lets-play-doctor",
@@ -1376,7 +1376,7 @@
     "garlic_breath",
     "metallic_taste"
    ],
-   "claim_text": "Wallach lists the signs of selenium toxicity (excess): hair loss (alopecia), arthritis, brittle nails, garlic breath, metallic taste, kidney dysfunction, and liver dysfunction.",
+   "claim_text": "Selenium is powerfully protective in trace amounts but toxic in excess, and Wallach lists the tell-tale signs of too much: hair loss, arthritis, brittle nails, a distinctive garlic breath and metallic taste in the mouth, and kidney and liver dysfunction. The garlic odor — from selenium compounds breathed out through the lungs — is a classic early warning that the dose has climbed too high.",
    "verbatim": "SELENIUM TOXICITY\nalopecia\narthritis\nbrittle nails\ngarlic breath\nmetallic taste\nkidney dysfunction\nliver dysfunction",
    "locator": {
     "book": "lets-play-doctor",
@@ -1728,7 +1728,7 @@
     "irritability",
     "joint_pain"
    ],
-   "claim_text": "Wallach lists the signs of vitamin C deficiency: bleeding gums and loose teeth, depression with malaise and tiredness, easy bruising, impaired wound healing, irritability, and joint pain.",
+   "claim_text": "In Wallach's deficiency map, a shortage of vitamin C shows up as bleeding gums and loosening teeth, easy bruising, and impaired wound healing — all signs of failing collagen, the structural protein vitamin C helps build — along with depression, malaise and tiredness, irritability, and joint pain. It is the everyday, sub-scurvy face of low vitamin C, short of the full-blown disease.",
    "verbatim": "VITAMIN C DEFICIENCY\nbleeding gums/loose teeth\ndepression/malaise/tiredness\neasy bruising\nimpaired wound healing\nirritability\njoint pain",
    "locator": {
     "book": "lets-play-doctor",
@@ -1807,7 +1807,7 @@
    "symptoms": [
     "ectopic_calcification"
    ],
-   "claim_text": "Wallach lists the signs of vitamin D toxicity (excess): angiotoxicity (calcification of the blood vessels), arteriosclerosis (angiotoxicity), liver dysfunction, and \"malignant\" calcification.",
+   "claim_text": "Excess vitamin D is one of the few vitamin toxicities Wallach takes seriously, and he ties it squarely to the blood vessels: the signs he lists are 'angiotoxicity' — calcification of the arteries — along with arteriosclerosis, 'malignant' calcification of soft tissue, and liver dysfunction. In his framework the danger of too much vitamin D is that it drives calcium out of solution and into the artery walls, hardening them.",
    "verbatim": "VITAMIN D TOXICITY\nangiotoxicity (calcification)\narteriosclerosis (angiotoxicity)\nliver dysfunction\n\"malignant\" calcification",
    "locator": {
     "book": "lets-play-doctor",
@@ -7227,7 +7227,7 @@
     "cancer"
    ],
    "symptoms": [],
-   "claim_text": "Laetrile, in short, releases small amounts of cyanide that normal cells can detoxify but cancer cells cannot; the cyanide then kills the cancer cell. Wallach says it may be taken as a preventive measure or as a therapy.",
+   "claim_text": "Laetrile (amygdalin) works, in Wallach's short explanation, by releasing small amounts of cyanide: normal cells can detoxify that trace of cyanide, but cancer cells cannot, so the cyanide selectively kills the cancer cell while sparing healthy tissue. He says it can be used either as a preventive or as an active therapy, and lists it among the targeted, low-toxicity agents in his cancer survey.",
    "verbatim": "LAETRILE: in short, releases small amounts of\ncyanide which normal cells can detoxify but\ncancer cells can't. The cyanide from the laetrile\nthen kills the cancer cell. Laetrile may be taken\nas a preventative measure or a therapy.",
    "locator": {
     "book": "lets-play-doctor",
@@ -7371,7 +7371,7 @@
     "cancer"
    ],
    "symptoms": [],
-   "claim_text": "The Hoxey herbal formula is, in Wallach's words, one of the granddaddies of the modern cancer remedies. It is nonspecific and may be used like laetrile as either a preventive or a remedy.",
+   "claim_text": "Wallach calls the Hoxsey herbal formula (which he spells 'Hoxey') 'one of the granddaddies of the modern cancer remedies' — a long-used botanical mixture from the alternative-cancer tradition. He describes it as nonspecific, meaning it is not aimed at a single cancer type, and says it can be used much like laetrile either as a preventive or as an active remedy. It appears in his survey of cancer approaches, orthodox and alternative alike.",
    "verbatim": "HOXEY HERBAL FORMULA: is one of the\ngranddaddies ofthe modern cancer remedies.\nIt is nonspecific and may be used like Laetrile\nas a preventive or remedy.",
    "locator": {
     "book": "lets-play-doctor",
@@ -7487,7 +7487,7 @@
     "cancer"
    ],
    "symptoms": [],
-   "claim_text": "Polyerga inhibits tumor growth by reducing glycolysis. Wallach says it is effective against tumor-forming cancer and can be easily administered at home, making it very economical.",
+   "claim_text": "Polyerga is one of the cancer agents in Wallach's survey. He describes it as inhibiting tumor growth by cutting glycolysis — the sugar-burning process that cancer cells lean on heavily for energy — and calls it effective against tumor-forming cancers. A practical selling point in his eyes: it can be given easily at home, which makes it inexpensive.",
    "verbatim": "POLYERGA: inhibits tumor growth by reduction of glycolysis. Polyerga is effective against\ntumor forming cancer and can be easily administered at home - it is, therefore, veiy\neconomical",
    "locator": {
     "book": "lets-play-doctor",
@@ -7701,7 +7701,7 @@
     "liver_disease"
    ],
    "symptoms": [],
-   "claim_text": "Carbamide (urea) is in keeping with autoimmune urine therapy and is, per Wallach, particularly effective for liver cancer.",
+   "claim_text": "Carbamide — the chemical name for urea — fits into what Wallach calls autoimmune urine therapy, an approach he likens to allergy shots for training the body's own defenses against cancer proteins. He singles it out as particularly effective against liver cancer. It sits among the unconventional cancer agents he catalogs, alongside DMSO (dimethyl sulfoxide), thymus extracts, and high-dose beta-carotene.",
    "verbatim": "Carbamide (urea) is in keeping with\nthe autoimmune urine therapy. Carbamide is\nparticularly effective for LIVER CANCER.",
    "locator": {
     "book": "lets-play-doctor",
@@ -7811,7 +7811,7 @@
     "cancer"
    ],
    "symptoms": [],
-   "claim_text": "Shark cartilage and shark liver oil contain substances that stop the formation of the new capillaries that feed metastatic cancer growths (antiangiogenesis).",
+   "claim_text": "Wallach points to shark cartilage and shark liver oil as cancer adjuncts because they contain substances that block angiogenesis — the growth of the new capillaries (tiny blood vessels) that a spreading, metastatic tumor must build to feed itself. Choke off that new blood supply, the reasoning goes, and the growth starves. He lists them among his broader nutritional and alternative cancer measures.",
    "verbatim": "Shark cartilage and shark liver oil\ncontain substances that stop the formation\nof capillaries that feed new metastatic\ngrowths of cancer.",
    "locator": {
     "book": "lets-play-doctor",
@@ -8930,7 +8930,7 @@
     "congested_lungs"
    ],
    "symptoms": [],
-   "claim_text": "Wallach treats congested lungs (with bronchitis) with homeopathy, acupuncture, hydrotherapy including a steam sauna, massage, and herbs including pennyroyal (Mentha pulegium) taken as a concentrated tea.",
+   "claim_text": "For congested lungs with bronchitis, Wallach's home-care approach combines several non-drug methods: homeopathy, acupuncture, hydrotherapy (including a steam sauna to help loosen congestion), massage, and herbal support — notably pennyroyal (Mentha pulegium) taken as a concentrated tea. It is a representative example of the layered, nutrition-and-herb-first strategy he applies to respiratory complaints.",
    "verbatim": "CONGESTED LUNGS (with bronchitis):\ncan be treated with homeopathy, acupuncture, hydrotherapy to include a steam sauna,\nmassage, and herbs including penny royal\n(Mentha pulegium) as concentrated tea",
    "locator": {
     "book": "lets-play-doctor",
@@ -11402,7 +11402,7 @@
     "pyorrhea"
    ],
    "symptoms": [],
-   "claim_text": "Gums (sore gums, pyorrhea) are addressed under gingivitis; in addition, Wallach says you may wish to rinse the mouth with a tea made from the root of the white pond lily (Nymphaea odorata).",
+   "claim_text": "For sore, bleeding gums and pyorrhea (advanced gum disease), Wallach points readers to his gingivitis entry and adds one traditional remedy: rinsing the mouth with a tea brewed from the root of the white pond lily (Nymphaea odorata), long used as a folk astringent for inflamed tissues. It is a small example of the herbal home-care that fills his materia medica.",
    "verbatim": "GUMS (sore, pyorrhea): see gingivitis. You\nmay also wish to rinse mouth with a tea from\nthe root of the white pond lily (Nymphae\nodorata).",
    "locator": {
     "book": "lets-play-doctor",
@@ -14253,7 +14253,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach defines 'metabolic therapy' as the resolving or curing of disease processes by correcting the whole-body metabolism through nutrition, herbs, homeopathy, acupuncture, manipulation and hydrotherapy.",
+   "claim_text": "'Metabolic therapy' is Wallach's umbrella term for his whole approach to healing. He defines it as resolving or curing disease processes by correcting the body's overall metabolism — rather than treating one symptom — using a combination of nutrition, herbs, homeopathy, acupuncture, manipulation, and hydrotherapy. The definition reflects his central premise: that chronic disease is best addressed by fixing whole-body nutrition and metabolism, not by isolating a single organ or complaint.",
    "verbatim": "METABOLIC THERAPY: is the resolving or\ncuring of disease processes by conecting the\nwhole body metabolism through nutrition,\nherbs, homeopathy, acupuncture, manipulation and hydrotherapy",
    "locator": {
     "book": "lets-play-doctor",
@@ -15993,7 +15993,7 @@
     "labor"
    ],
    "symptoms": [],
-   "claim_text": "Pregnancy labor can be enhanced, Wallach says, by the use of herbs including raspberry (Rubus idaeus) and blue cohosh (Caulophyllum thalictroides).",
+   "claim_text": "In his home-medicine guide, Wallach lists two traditional herbs for strengthening labor during childbirth: red raspberry (Rubus idaeus) and blue cohosh (Caulophyllum thalictroides), both long used in folk midwifery to encourage effective uterine contractions. He discusses them alongside the tools for controlling postpartum bleeding, such as ergot, in his practical chapter on remedies.",
    "verbatim": "PREGNANCY LABOR (labor): can be en\nhanced by the use of herbs including raspberry (Rubus idaeus) and blue cohosh\n(Caulophyllum thalictroides",
    "locator": {
     "book": "lets-play-doctor",
@@ -17009,7 +17009,7 @@
     "dermatitis"
    ],
    "symptoms": [],
-   "claim_text": "Skin ailments (dermatitis) are caused by a variety of diseases. Treatment of skin disease should include specific treatment for the underlying problem, homeopathy, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and herbs including horsetail (Equisetum arvense), pansy (Viola tricolor), quack grass (Agropyron repens), soapwort (Saponaria officinalis), stinging nettle (Urtica dioica), slippery elm (Ulmus fulva), and globe mallow (Sphaeralcea spp.).",
+   "claim_text": "For skin ailments and dermatitis — which Wallach says arise from a variety of underlying diseases rather than one single cause — his program begins by treating the root problem, then layers on nutritional support: essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU a day taken as beta-carotene, and zinc at 50 mg three times a day. He rounds it out with traditional skin herbs including horsetail, pansy, stinging nettle, slippery elm, and globe mallow.",
    "verbatim": "SKIN AILMENTS (dermatitis): are caused\nby a variety of diseases (see dermatitis).\nTreatment of skin disease should include specific treatment for the underlying problem,\nhomeopathy, essential fatty acids at 5 gm t.i.d.,\nvitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg t.i.d., essential fatty acids at\n5 gm t.i.d., and herbs including horsetail (Equisetum arvense), pansy (Viola tricolor), Quack\ngrass (Agropyron repens), soap wort\n(Saponaria officinalis), stinging nettle (Urtica\ndioica), slippery elm (Ulmus fulva) and globe\nmallow (Sphaeralcea spp",
    "locator": {
     "book": "lets-play-doctor",
@@ -18034,7 +18034,7 @@
     "motion_sickness"
    ],
    "symptoms": [],
-   "claim_text": "Vertigo (dizziness, car sickness, motion sickness) is addressed under car sickness; in addition, take powdered peppercorns (Piper nigrum).",
+   "claim_text": "For vertigo — the spinning dizziness that also underlies car and motion sickness — Wallach cross-references his car-sickness entry and offers one simple folk remedy: powdered black peppercorns (Piper nigrum). It is a minor but characteristic example of the plain, kitchen-shelf tactics that fill his home-medicine chapter.",
    "verbatim": "VERTIGO (dizziness, car sickness, motion sickness): see car sickness. Take powdered peppercorns (Piper nignim",
    "locator": {
     "book": "lets-play-doctor",
@@ -18150,7 +18150,7 @@
     "white_spots_fingernails"
    ],
    "symptoms": [],
-   "claim_text": "White spots on the fingernails are caused by zinc deficiency. Treatment should include zinc at 50 mg three times a day and the baseline nutritional program including plant-derived colloidal minerals.",
+   "claim_text": "Those small white spots on the fingernails are, in Wallach's reading, a visible marker of zinc deficiency rather than a random blemish. His remedy is straightforward: zinc at 50 mg three times a day, plus the baseline nutritional program built around plant-derived colloidal minerals. It fits his broader habit of reading a person's nutritional status off the skin, hair, and nails.",
    "verbatim": "WHITE SPOTS, FINGERNAILS: are caused\nby zinc deficiency.\nTreatment should include zinc at 50 mg t.i.d.;\ntake the base line nutritional program to include plant derived colloidal minerals",
    "locator": {
     "book": "lets-play-doctor",
@@ -18227,7 +18227,7 @@
     "wounds"
    ],
    "symptoms": [],
-   "claim_text": "Wounds (chronic ulcers) can be treated topically with herbs including euphorbia (Chamaesyce spp.), cliff rose (Allionia coccinea), arnica (Arnica montana), snake root (Aristolochia clematitis), German chamomile (Matricaria chamomilla), marigold (Calendula officinalis), snake root (Sanicula europaea), and witch hazel (Hamamelis virginiana).",
+   "claim_text": "For chronic, slow-healing wounds and ulcers, Wallach's materia medica points to a set of topical (applied-to-the-skin) herbal remedies used directly on the affected area rather than treatments taken by mouth. His list includes euphorbia, cliff rose, arnica, snake root, German chamomile, marigold (calendula), and witch hazel — long-standing traditional wound- and skin-healing herbs.",
    "verbatim": "WOUNDS (chronic ulcers): treat topically\nwith herbs including euphorbia (Chamaesyce\nspp.), cliff rose (Allionia coccinea), arnica\n(Arnica montana), snake root (Aristolochia\nclematitis), German chamomile (Matricaria\nchamomilla), marigold (Calendula officinalis),\nsnake root (Sanicula europaea) and witch\nhazel (Hamamelis virginiana)",
    "locator": {
     "book": "lets-play-doctor",
