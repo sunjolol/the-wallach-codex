@@ -1145,7 +1145,9 @@
   },
   "WAL-CLM-EPIGEN-000157": {
    "subject": "processed_meat",
-   "also_about": [],
+   "also_about": [
+    "nitrates"
+   ],
    "facet": "warning",
    "question": "Which processed meats does Wallach say to avoid?",
    "answer_short": "Deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats.",
@@ -3279,7 +3281,9 @@
   },
   "WAL-CLM-IMMORT-000191": {
    "subject": "potassium",
-   "also_about": [],
+   "also_about": [
+    "nitrates"
+   ],
    "facet": "history",
    "question": "What is saltpeter?",
    "answer_short": "Potassium nitrate (KNO3) - 'saltpeter,' looks and tastes like salt, used for centuries as a preservative and fertilizer, and one of gunpowder's three ingredients.",
@@ -3586,7 +3590,9 @@
   },
   "WAL-CLM-IMMORT-000230": {
    "subject": "pork",
-   "also_about": [],
+   "also_about": [
+    "nitrates"
+   ],
    "facet": "mechanism",
    "question": "Why does Wallach warn against ham, bacon, and sausage?",
    "answer_short": "The nitrates and nitrites cured into processed meats such as ham, bacon, and sausage act as goitrogens, interfering with normal thyroid metabolism and capable of producing thyroid disease.",
@@ -9564,7 +9570,8 @@
    "subject": "iodine",
    "also_about": [
     "goiter",
-    "hypothyroidism"
+    "hypothyroidism",
+    "nitrates"
    ],
    "facet": "warning",
    "question": "What foods block iodine or cause goiter?",
@@ -9595,7 +9602,8 @@
    "subject": "iodine",
    "also_about": [
     "goiter",
-    "hypothyroidism"
+    "hypothyroidism",
+    "nitrates"
    ],
    "facet": "biography",
    "question": "How did Wallach discover that nitrates cause goiter?",
@@ -18545,7 +18553,9 @@
   },
   "WAL-CLM-IMMORT-000393": {
    "subject": "nitrogen",
-   "also_about": [],
+   "also_about": [
+    "nitrates"
+   ],
    "facet": "warning",
    "question": "Are the nitrates and nitrites in processed meat bad for you?",
    "answer_short": "Wallach warns that nitrates and nitrites in cured and canned foods turn into nitrosamines in the stomach -- potential carcinogens that can also suppress the thyroid.",
@@ -21228,7 +21238,8 @@
    "subject": "nitrites",
    "also_about": [
     "nitrogen",
-    "iodine"
+    "iodine",
+    "nitrates"
    ],
    "facet": "warning",
    "question": "Are nitrites in bacon and cured meat bad for you?",
