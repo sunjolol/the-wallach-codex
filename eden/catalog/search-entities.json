@@ -117,7 +117,8 @@
     "herbal_medicine",
     "homeopathy",
     "be_your_own_doctor"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-LETS-000095"
   },
   "be_your_own_doctor": {
    "display_name": "Be Your Own Doctor",
@@ -134,7 +135,8 @@
     "pregnancy_birth",
     "essential_nutrients",
     "negative_ion_therapy"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-LETS-000475"
   },
   "beef": {
    "display_name": "Beef",
@@ -191,7 +193,8 @@
     "vitamin-k",
     "eggs",
     "margarine"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-EPIGEN-000162"
   },
   "cadmium": {
    "display_name": "Cadmium",
@@ -318,7 +321,8 @@
     "phosphorus",
     "osteoporosis",
     "absorption"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-DDDL-000105"
   },
   "chicken": {
    "display_name": "Chicken",
@@ -578,7 +582,8 @@
     "iodine",
     "hypothyroidism",
     "gluten"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-EPIGEN-000160"
   },
   "cystic_fibrosis": {
    "catalog_ref": true,
@@ -743,7 +748,8 @@
     "biotin",
     "meat",
     "dietary_oils"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-DDDL-000112"
   },
   "essential_nutrients": {
    "display_name": "Essential Nutrients",
@@ -945,7 +951,8 @@
     "absorption",
     "malabsorption",
     "phytates"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-EPIGEN-000030"
   },
   "gold": {
    "canon_ref": true,
@@ -1074,7 +1081,8 @@
    ],
    "related": [
     "be_your_own_doctor"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-LETS-000477"
   },
   "hydrogen": {
    "canon_ref": true,
@@ -1732,7 +1740,8 @@
     "hypochlorhydria",
     "achlorhydria",
     "absorption"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-DDDL-000095"
   },
   "sexual_health": {
    "display_name": "Sexual Health",
@@ -1826,7 +1835,8 @@
     "vanadium",
     "calcium",
     "absorption"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000217"
   },
   "tuna": {
    "display_name": "Tuna",
@@ -5014,7 +5024,8 @@
    "related": [
     "boron",
     "zinc"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-DDDL-000290"
   },
   "memory_loss": {
    "catalog_ref": true,
@@ -5071,7 +5082,8 @@
     "why do doctors die young",
     "medical errors",
     "harm from doctors"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-RARE-000064"
   },
   "minerals": {
    "display_name": "Minerals",
@@ -5118,7 +5130,8 @@
     "hunza",
     "vilcabamba",
     "cultures that live longest"
-   ]
+   ],
+   "intro_claim": "WAL-CLM-RARE-000056"
   },
   "rda-critique": {
    "display_name": "The RDA Problem",

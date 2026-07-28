@@ -76287,7 +76287,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "homeopathy",
           "be_your_own_doctor"
         ],
-        claim_count: 2
+        claim_count: 2,
+        intro_claim: "WAL-CLM-LETS-000095"
       },
       barium: {
         display_name: "Barium",
@@ -76331,7 +76332,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "negative_ion_therapy"
         ],
-        claim_count: 6
+        claim_count: 6,
+        intro_claim: "WAL-CLM-LETS-000475"
       },
       beef: {
         display_name: "Beef",
@@ -76561,7 +76563,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "eggs",
           "margarine"
         ],
-        claim_count: 9
+        claim_count: 9,
+        intro_claim: "WAL-CLM-EPIGEN-000162"
       },
       cadmium: {
         display_name: "Cadmium",
@@ -76696,7 +76699,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "osteoporosis",
           "absorption"
         ],
-        claim_count: 3
+        claim_count: 3,
+        intro_claim: "WAL-CLM-DDDL-000105"
       },
       "centenarian-cultures": {
         display_name: "Centenarian Cultures",
@@ -76710,7 +76714,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cultures that live longest"
         ],
         related: [],
-        claim_count: 2
+        claim_count: 2,
+        intro_claim: "WAL-CLM-RARE-000056"
       },
       cerium: {
         display_name: "Cerium",
@@ -77173,7 +77178,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "hypothyroidism",
           "gluten"
         ],
-        claim_count: 2
+        claim_count: 2,
+        intro_claim: "WAL-CLM-EPIGEN-000160"
       },
       cystic_fibrosis: {
         display_name: "Cystic Fibrosis",
@@ -77397,7 +77403,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "meat",
           "dietary_oils"
         ],
-        claim_count: 13
+        claim_count: 13,
+        intro_claim: "WAL-CLM-DDDL-000112"
       },
       epigenetics: {
         display_name: "Epigenetics",
@@ -77833,7 +77840,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "malabsorption",
           "phytates"
         ],
-        claim_count: 7
+        claim_count: 7,
+        intro_claim: "WAL-CLM-EPIGEN-000030"
       },
       gold: {
         display_name: "Gold",
@@ -78068,7 +78076,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "be_your_own_doctor"
         ],
-        claim_count: 3
+        claim_count: 3,
+        intro_claim: "WAL-CLM-LETS-000477"
       },
       hydrogen: {
         display_name: "Hydrogen",
@@ -78160,7 +78169,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "harm from doctors"
         ],
         related: [],
-        claim_count: 4
+        claim_count: 4,
+        intro_claim: "WAL-CLM-RARE-000064"
       },
       inositol: {
         display_name: "Inositol",
@@ -79902,7 +79912,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "achlorhydria",
           "absorption"
         ],
-        claim_count: 2
+        claim_count: 2,
+        intro_claim: "WAL-CLM-DDDL-000095"
       },
       samarium: {
         display_name: "Samarium",
@@ -80263,7 +80274,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "calcium",
           "absorption"
         ],
-        claim_count: 3
+        claim_count: 3,
+        intro_claim: "WAL-CLM-IMMORT-000217"
       },
       sulfur: {
         display_name: "Sulfur",
@@ -80431,7 +80443,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "boron",
           "zinc"
         ],
-        claim_count: 4
+        claim_count: 4,
+        intro_claim: "WAL-CLM-DDDL-000290"
       },
       thallium: {
         display_name: "Thallium",
@@ -150035,7 +150048,9 @@ WHAT I DID NOT BUILD, AND WHY (measured, not assumed): the two sibling defects a
 
 Luneth was asked and chose "lowercase gate only." Also fixed a stale docstring in search_index_derive.py (the old "must be search-only" line - search-only was killed 2026-07-27). Files touched: eden/tools/search_index_derive.py, tools/test_search_index_wellformed.py, tools/invariants.py (docstring + success message), .claude/rules/search-corpus.md. Verify: --check VALID; negative test 16/16; invariants 76/76 (0 failed); derived_artifacts_fresh unchanged (validation-only logic does not alter build_index output); no_operating_doc_contradiction green. Task 2 complete.` }, { id: "lg_ms43wzb3_3jq168", ts: "2026-07-27T22:39:17.823921-05:00", surface: "knowledge", kind: "round-close", summary: "Knowledge drawer: dropped the duplicate covered/not-covered legend + per-tile status dots from the Essentials tab (Coverage keeps its own), and fixed Home search so Explore topics surface \u2014 purple-dotted, colour-coded like essentials & conditions", detail: `Three drawer fixes Luneth asked for. The hidden Essentials screen was showing a covered/not-covered colour key plus a status dot on every element tile \u2014 a duplicate of what the Coverage page already does \u2014 so both are gone from THAT screen only (Coverage keeps its own). And the drawer's Home search box couldn't find any Explore topic: typing "testosterone" returned nothing, because it only searched the 90 essentials and the conditions. It now finds topics too, shown in their own "Explore" group with a purple dot that matches the topic colour used everywhere else.
 
-knowledge.ts::renderEssentialsTab \u2014 removed legendHTML (.kd-cov-legend, COV_STATES covered/partial/uncovered/present) and the per-tile <span class=kd-cov-dot>; deleted the now-dead statusOf/dotState/COV_STATES helpers and the unused CoverageStatus import. Scoped to this tab; views/coverage.ts untouched (its own dot classes; render_probe.js still covered:5/gap:37). knowledge-home.ts::homeMatches now iterates entityList(), adding non-nutrient/non-condition registry entities as kind:'topic' (navAttr data-kd-topic), matched on display_name/spaced-slug/synonyms, deduped vs essentials via a \`taken\` slug set; charged entities (homosexuality/intersex) excluded from live-suggest per the never-ambush rule. renderHomeSuggestions folds topics into \`shown\` and renders a third group via ui('kh_group_topics'). view-copy.json adds kh_group_topics='Explore'. drawer-knowledge.css adds .sh-res[data-kd-topic] .sh-res__dot{background:var(--fam-story)} \u2014 the same purple the Explore chips use. render_probe_knowledge.js: the two assertions that REQUIRED the dots now assert their ABSENCE (hasLegend===false, withDot===0), plus a new check that typing "testosterone" surfaces a data-kd-topic row. Verified: build OK, invariants 76/76, knowledge probe PASS, Coverage probe unaffected, screenshots reviewed + signed off by Luneth.` }];
+knowledge.ts::renderEssentialsTab \u2014 removed legendHTML (.kd-cov-legend, COV_STATES covered/partial/uncovered/present) and the per-tile <span class=kd-cov-dot>; deleted the now-dead statusOf/dotState/COV_STATES helpers and the unused CoverageStatus import. Scoped to this tab; views/coverage.ts untouched (its own dot classes; render_probe.js still covered:5/gap:37). knowledge-home.ts::homeMatches now iterates entityList(), adding non-nutrient/non-condition registry entities as kind:'topic' (navAttr data-kd-topic), matched on display_name/spaced-slug/synonyms, deduped vs essentials via a \`taken\` slug set; charged entities (homosexuality/intersex) excluded from live-suggest per the never-ambush rule. renderHomeSuggestions folds topics into \`shown\` and renders a third group via ui('kh_group_topics'). view-copy.json adds kh_group_topics='Explore'. drawer-knowledge.css adds .sh-res[data-kd-topic] .sh-res__dot{background:var(--fam-story)} \u2014 the same purple the Explore chips use. render_probe_knowledge.js: the two assertions that REQUIRED the dots now assert their ABSENCE (hasLegend===false, withDot===0), plus a new check that typing "testosterone" surfaces a data-kd-topic row. Verified: build OK, invariants 76/76, knowledge probe PASS, Coverage probe unaffected, screenshots reviewed + signed off by Luneth.` }, { id: "lg_ms44cxkj_tg1l08", ts: "2026-07-27T22:51:42.067222-05:00", surface: "search", kind: "round-close", summary: "Explore topic openers: audited all 103 auto-lede pages (13-agent review+adversarial verify), reordered 13 that led with a tangential/alarming claim to a proper topical opener (testosterone: teen-crime stance -> boron mechanism); 8 flagged for fresh mining", detail: `Luneth caught the Testosterone Explore page opening with a jarring line \u2014 Wallach's claim tying the teen testosterone surge to crime and murder \u2014 instead of a useful statement about testosterone. The opener on every Explore topic page is auto-chosen by a facet-priority rule, which ranks a "stance" claim above a "mechanism" claim; testosterone has no plain "what is it" claim, so its most sensational stance won the top slot. He asked me to sweep ALL such pages and fix the pattern, not just this one. I ran a 13-agent audit over all 103 auto-lede topic pages and reordered the 13 that were leading with a tangential/alarming/narrow claim to a proper topical opener \u2014 always choosing from that page's OWN already-approved Wallach claims (nothing rewritten, no new claim). Testosterone now opens with his boron lever. 82 pages were already fine; 8 have no proper overview claim at all and are flagged for fresh mining (which needs your seal).
+
+MECHANISM: state/search.ts::entityLede picks the answer_short of the highest-priority facet a topic has (INTRO_ORDER_DEFAULT: basics > stance > uses > mechanism > ...), UNLESS the entity carries a hand-picked intro_claim override (6 already existed: cholesterol, digestion, homosexuality, longevity, ph, pork). Essentials (essentialLede) + conditions (conditionSynopsis template) are immune \u2014 only the 103 non-nutrient/non-condition topic pages use entityLede. WORKFLOW: opener_audit.workflow.mjs \u2014 103-entity workload embedded, 10 balanced review batches (rubric: prefer definition / main lever / on-topic stance; demote downstream-tangential, sensitive-as-first-impression, bare-warning, niche-protocol, anecdote openers), then adversarial verify of every proposed change + every sensitive keep (24 verified). Result: 82 keep, 13 reorder, 8 needs_mining, 0 invalid (after fixing a parser bug \u2014 enrichment is keyed under d['enrichment']). APPLIED: 13 intro_claim pointers added to eden/catalog/search-entities.json (each subject==slug, re-validated by search_index_derive --check = VALID). Two needs_mining pages (rare_earth_elements, water) had an "interim" pick identical to the current auto-lede, so NOT pinned (pinning would block a future mined overview). VERIFIED: derive regenerated search-index.json, build OK, invariants 76/76 (derived_artifacts_fresh + search_index_wellformed green), knowledge + search render probes PASS, and a custom probe opened all 13 pages and confirmed each rendered its new lede (13/13), testosterone screenshotted. DEFERRED for your mining (no adequate existing opener): antidepressants (Prozac market anecdote only), cranial-nerves (only the 11th nerve), docosahexaenoic-acid (1 claim, depression pivot), home_remedies (mosquito protocol only), meat (narrow protocols), sexual_health (1 explicit PE protocol), rare_earth_elements (per-element defs, no category def), water (narrow advice only).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

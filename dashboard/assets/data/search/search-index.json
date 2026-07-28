@@ -307,7 +307,8 @@
         "homeopathy",
         "be_your_own_doctor"
       ],
-      "claim_count": 2
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-LETS-000095"
     },
     "barium": {
       "display_name": "Barium",
@@ -351,7 +352,8 @@
         "essential_nutrients",
         "negative_ion_therapy"
       ],
-      "claim_count": 6
+      "claim_count": 6,
+      "intro_claim": "WAL-CLM-LETS-000475"
     },
     "beef": {
       "display_name": "Beef",
@@ -581,7 +583,8 @@
         "eggs",
         "margarine"
       ],
-      "claim_count": 9
+      "claim_count": 9,
+      "intro_claim": "WAL-CLM-EPIGEN-000162"
     },
     "cadmium": {
       "display_name": "Cadmium",
@@ -716,7 +719,8 @@
         "osteoporosis",
         "absorption"
       ],
-      "claim_count": 3
+      "claim_count": 3,
+      "intro_claim": "WAL-CLM-DDDL-000105"
     },
     "centenarian-cultures": {
       "display_name": "Centenarian Cultures",
@@ -730,7 +734,8 @@
         "cultures that live longest"
       ],
       "related": [],
-      "claim_count": 2
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-RARE-000056"
     },
     "cerium": {
       "display_name": "Cerium",
@@ -1193,7 +1198,8 @@
         "hypothyroidism",
         "gluten"
       ],
-      "claim_count": 2
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-EPIGEN-000160"
     },
     "cystic_fibrosis": {
       "display_name": "Cystic Fibrosis",
@@ -1417,7 +1423,8 @@
         "meat",
         "dietary_oils"
       ],
-      "claim_count": 13
+      "claim_count": 13,
+      "intro_claim": "WAL-CLM-DDDL-000112"
     },
     "epigenetics": {
       "display_name": "Epigenetics",
@@ -1853,7 +1860,8 @@
         "malabsorption",
         "phytates"
       ],
-      "claim_count": 7
+      "claim_count": 7,
+      "intro_claim": "WAL-CLM-EPIGEN-000030"
     },
     "gold": {
       "display_name": "Gold",
@@ -2088,7 +2096,8 @@
       "related": [
         "be_your_own_doctor"
       ],
-      "claim_count": 3
+      "claim_count": 3,
+      "intro_claim": "WAL-CLM-LETS-000477"
     },
     "hydrogen": {
       "display_name": "Hydrogen",
@@ -2180,7 +2189,8 @@
         "harm from doctors"
       ],
       "related": [],
-      "claim_count": 4
+      "claim_count": 4,
+      "intro_claim": "WAL-CLM-RARE-000064"
     },
     "inositol": {
       "display_name": "Inositol",
@@ -3922,7 +3932,8 @@
         "achlorhydria",
         "absorption"
       ],
-      "claim_count": 2
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-DDDL-000095"
     },
     "samarium": {
       "display_name": "Samarium",
@@ -4283,7 +4294,8 @@
         "calcium",
         "absorption"
       ],
-      "claim_count": 3
+      "claim_count": 3,
+      "intro_claim": "WAL-CLM-IMMORT-000217"
     },
     "sulfur": {
       "display_name": "Sulfur",
@@ -4451,7 +4463,8 @@
         "boron",
         "zinc"
       ],
-      "claim_count": 4
+      "claim_count": 4,
+      "intro_claim": "WAL-CLM-DDDL-000290"
     },
     "thallium": {
       "display_name": "Thallium",
