@@ -40,7 +40,6 @@ import {
 } from '../state/corpus.js';
 import {
   type CoverageSnapshot,
-  type CoverageStatus,
   essentialGlyph,
   getOrCompute,
 } from '../state/coverage.js';
@@ -160,37 +159,6 @@ const ESS_SUBSECTIONS = buildSubsections();
 // The tab left the menu on 2026-07-23 and nothing else read the constant, so it went with it
 // rather than lingering as dead code. Coverage still owns and displays the count.
 
-// ─── Status → presentation ─────────────────────────────────────────────────
-
-function statusOf(snapshot: CoverageSnapshot | null, key: string): CoverageStatus {
-  if (snapshot === null) {
-    return '';
-  }
-  return snapshot.tiles.find(t => t.name === key)?.status ?? '';
-}
-
-/**
- * The tile's coverage-dot state. green covered · yellow partial · red uncovered/absent ·
- * hollow-blue present-but-unquantified.
- *
- * PURE PRESENTATION — this maps an ALREADY-DECIDED status to a dot class and decides nothing
- * itself. The foundational-present rule (H/C/N/O read covered) moved to state/coverage.ts on
- * 2026-07-14: holding it here made the drawer disagree with Coverage about 4 essentials over
- * the same snapshot. Coverage verdicts belong to the state layer.
- */
-function dotState(status: CoverageStatus): string {
-  if (status === 'covered' || status === 'trace') {
-    return 'covered';
-  }
-  if (status === 'partial') {
-    return 'partial';
-  }
-  if (status === 'present') {
-    return 'present';
-  }
-  return 'uncovered';
-}
-
 // ─── Render helpers ────────────────────────────────────────────────────────
 
 function escHTML(s: unknown): string {
@@ -262,25 +230,20 @@ const SEC_LABEL_KEY: Record<string, string> = {
   'FATTY ACIDS': 'kd_esssec_fatty',
 };
 
-/** The 4 coverage-dot states, in legend order. */
-const COV_STATES = ['covered', 'partial', 'uncovered', 'present'] as const;
-
 const ESSENTIAL_CAT_SCROLL: Record<string, string> = { mineral: '#2b6fb0', vitamin: '#ff7e3c', amino_acid: '#5aa82c', fatty_acid: '#8a52d6' };
 
 function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: string | null): string {
   const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : '';
-  const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML(ui('kd_covlegend_label'))}</span>${COV_STATES.map(s => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML(ui(`kd_covlegend_${s}`))}</span>`).join('')}</div>`;
   const groupsHTML = ESS_SUBSECTIONS.map((group) => {
     const tilesHTML = group.items.map((e) => {
-      const dot = dotState(statusOf(snapshot, e.key));
       const sel = e.key === selectedKey ? ' is-selected' : '';
-      return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(e.key)}" title="${escHTML(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML(e.symbol)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML(plural(e.claimCount, 'claim'))}</span></button>`;
+      return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(e.key)}" title="${escHTML(e.name)}"><span class="sh-tile__sym">${escHTML(e.symbol)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML(plural(e.claimCount, 'claim'))}</span></button>`;
     }).join('');
     const key = SEC_LABEL_KEY[group.label];
     const label = key !== undefined ? ui(key) : group.label;
     return `<div class="sh-subhead">${escHTML(label)}</div><div class="sh-grid${group.wide ? ' sh-grid--wide' : ''}">${tilesHTML}</div>`;
   }).join('');
-  return `${deepHTML}${legendHTML}${groupsHTML}`;
+  return `${deepHTML}${groupsHTML}`;
 }
 
 function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, fromProductsTab: boolean): string {

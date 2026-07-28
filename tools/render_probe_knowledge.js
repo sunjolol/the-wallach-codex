@@ -80,6 +80,23 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     };
   });
 
+  // 2f. Home live-suggest now covers Explore TOPICS, not just essentials/conditions. Typing a topic
+  //     name ("testosterone") must surface a data-kd-topic result -- previously it matched NOTHING
+  //     (the reported bug: Explore topics were absent from the home search index).
+  await page.click('#drawer-knowledge-mount .kh-search');
+  await page.type('#drawer-knowledge-mount .kh-search', 'testosterone', { delay: 10 });
+  await wait(200);
+  const homeTopicSearch = await page.evaluate(() => {
+    const root = document.getElementById('drawer-knowledge-mount');
+    const res = root ? root.querySelector('.sh-search__results') : null;
+    const rows = res ? [...res.querySelectorAll('.sh-res')] : [];
+    const topicRow = rows.find(r => r.getAttribute('data-kd-topic') === 'testosterone') || null;
+    const groups = res ? [...res.querySelectorAll('.sh-res__group')].map(g => (g.textContent || '').trim()) : [];
+    return { rowCount: rows.length, hasTopic: topicRow !== null, groups };
+  });
+  await page.evaluate(() => { const i = document.querySelector('#drawer-knowledge-mount .kh-search'); if (i) { i.value = ''; i.dispatchEvent(new Event('input', { bubbles: true })); } });
+  await wait(120);
+
   // 2e. Foods & Absorption tab -- the curated "second prong" landing: a hero with the
   //     mantra lede + the two-pronged thesis rendered as the sealed crown-jewel claim cards,
   //     facet-grouped (basics teal, protocol green) and Wallach-cited. Section 04 ("You can't
@@ -239,7 +256,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const heads = root ? [...root.querySelectorAll('.sh-subhead')].map(e => e.textContent.trim()) : [];
     const withDot = tiles.filter(t => t.querySelector('.kd-cov-dot')).length;
     const stateTiles = tiles.filter(t => t.querySelector('.kd-cov-dot--covered, .kd-cov-dot--partial')).length;
-    return { tileCount: tiles.length, sectionCount: heads.length, withDot, stateTiles };
+    const hasLegend = root ? root.querySelector('.kd-cov-legend') !== null : false;
+    return { tileCount: tiles.length, sectionCount: heads.length, withDot, stateTiles, hasLegend };
   });
   // Click Magnesium (11+ sealed claims) — its tile expands the data-driven entity page.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount [data-kd-essential="Magnesium"]')?.click());
@@ -476,7 +494,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await wait(200);
   const afterK = await drawerState();
 
-  const out = { boot, afterClick, tabBar, homeConds, homeExplore, foods, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic, kickerBack, foodsTopic, foodsBack };
+  const out = { boot, afterClick, tabBar, homeConds, homeExplore, homeTopicSearch, foods, products, productDeep, prodSearch, prodClear, chipToProduct, essentials, deep, traceMeter, conditions, condDeep, unitGloss, umbrellaTip, afterEsc, afterK, search, highlight, searchClear, explore, topic, kickerBack, foodsTopic, foodsBack };
   console.log('KNOWLEDGE', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -492,6 +510,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['home: Common conditions shelf shows top-8 rows', homeConds.count === 8],
     ['home: every condition row carries the nav attr', homeConds.allNav === true],
     ['home: condition row meta = "N claims · M nutrients"', /\d+ claims? · \d+ nutrients?/.test(homeConds.firstMeta)],
+    ['home search: Explore topic surfaces (testosterone -> data-kd-topic result)', homeTopicSearch.hasTopic === true],
     ['products count parsed from head', products.count > 0],
     ['products: ALL listed (no 30 cap)', products.rowCount === products.count && products.rowCount >= 200],
     ['products: every row is clickable', products.clickable === products.rowCount],
@@ -502,8 +521,11 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['best-source row opens the product panel on the Products tab', chipToProduct.productShown === true && chipToProduct.onProductsTab === true],
     ['essentials: all shown (>= 90 tiles)', essentials.tileCount >= 90],
     ['essentials: 6 demo subsections', essentials.sectionCount >= 6],
-    ['essentials: every tile has a coverage dot', essentials.withDot === essentials.tileCount && essentials.tileCount > 0],
-    ['essentials: coverage states rendered', essentials.stateTiles > 0],
+    // Luneth 2026-07-27: the covered/not-covered LEGEND + the per-tile status DOT were removed from
+    // THIS drawer screen (they duplicated the Coverage page, which keeps its own). Asserting their
+    // ABSENCE makes a future re-addition a regression -- same guard style as "Essentials absent" above.
+    ['essentials screen: coverage legend removed (this screen only)', essentials.hasLegend === false],
+    ['essentials screen: no coverage dot on any tile (this screen only)', essentials.withDot === 0],
     ['essentials: Magnesium tile expands the entity page', deep.shown === true && deep.hasName === true && deep.hasGlance === true],
     ['entity page: the full record renders with claim cards (Magnesium)', deep.recordShown === true && deep.recordClaimCount > 0],
     ['coverage: numeric target shows the real ep-bar (Magnesium)', deep.hasBar === true],

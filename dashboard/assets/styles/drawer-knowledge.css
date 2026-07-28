@@ -1931,6 +1931,7 @@
 #drawer-knowledge-mount .sh-res__dot{ width:8px; height:8px; border-radius:50%; background:var(--ds-ink-faint); flex:0 0 auto; }
 #drawer-knowledge-mount .sh-res[data-kd-essential] .sh-res__dot{ background:var(--fam-science); }
 #drawer-knowledge-mount .sh-res[data-kd-condition] .sh-res__dot{ background:var(--ds-accent); }
+#drawer-knowledge-mount .sh-res[data-kd-topic] .sh-res__dot{ background:var(--fam-story); }
 #drawer-knowledge-mount .sh-res__nm{ font-family:var(--ds-font-display-interface); font-size:var(--ds-text-sm); font-weight:600; color:var(--ds-ink); }
 #drawer-knowledge-mount .sh-res__meta{ margin-left:auto; font-family:var(--ds-font-mono); font-size:9px; color:var(--ds-ink-faint); }
 #drawer-knowledge-mount .sh-res__empty{ padding:var(--ds-space-3); color:var(--ds-ink-soft); font-size:var(--ds-text-sm); }

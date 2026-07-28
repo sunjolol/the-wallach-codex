@@ -18777,6 +18777,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kh_explore_link: "see all topics \u2192",
       kh_group_conditions: "Conditions",
       kh_group_essentials: "Essentials",
+      kh_group_topics: "Explore",
       kh_hero_headline: "Everything Wallach taught, in one place.",
       kh_hero_placeholder: "Try \u201Cselenium\u201D, \u201Costeoporosis\u201D, or \u201Ccolloidal minerals\u201D\u2026",
       kh_hero_sub: "Search {claims} sourced claims from {books} of Dr. Joel Wallach\u2019s books \u2014 or{br}browse the essentials, {conditions} conditions, and the topics in between.",
@@ -146330,6 +146331,7 @@ deaths, blood clots, sterility`,
     }
     const spaced = (s) => s.replace(/[-_]/g, " ");
     const out = [];
+    const taken = /* @__PURE__ */ new Set();
     for (const e of listEssentialPages()) {
       const nm = e.name.toLowerCase();
       const sci = e.scientific_name.toLowerCase();
@@ -146338,13 +146340,26 @@ deaths, blood clots, sterility`,
         if (c === null) {
           continue;
         }
+        taken.add(e.slug);
         out.push({ kind: "essential", name: e.name, navAttr: "data-kd-essential", navVal: c.layout_key, claimCount: e.claim_count, startsWith: nm.startsWith(q) });
       }
     }
     for (const cnd of listConditionPages()) {
       const nm = cnd.name.toLowerCase();
       if (nm.includes(q) || spaced(cnd.slug).includes(q)) {
+        taken.add(cnd.slug);
         out.push({ kind: "condition", name: cnd.name, navAttr: "data-kd-condition", navVal: cnd.slug, claimCount: cnd.claim_count, startsWith: nm.startsWith(q) });
+      }
+    }
+    for (const t of entityList()) {
+      if (t.type === "nutrient" || t.type === "condition" || taken.has(t.slug) || isChargedEntity(t.slug)) {
+        continue;
+      }
+      const nm = t.display_name.toLowerCase();
+      const full = getEntity(t.slug);
+      const synHit = full !== null && full.synonyms.some((s) => s.toLowerCase().includes(q));
+      if (nm.includes(q) || spaced(t.slug).includes(q) || synHit) {
+        out.push({ kind: "topic", name: t.display_name, navAttr: "data-kd-topic", navVal: t.slug, claimCount: t.claim_count, startsWith: nm.startsWith(q) });
       }
     }
     return out;
@@ -146365,7 +146380,8 @@ deaths, blood clots, sterility`,
     }
     const shown = [
       ...matches.filter((m) => m.kind === "essential").sort(byRelevance),
-      ...matches.filter((m) => m.kind === "condition").sort(byRelevance)
+      ...matches.filter((m) => m.kind === "condition").sort(byRelevance),
+      ...matches.filter((m) => m.kind === "topic").sort(byRelevance)
     ].slice(0, 10);
     let html = "";
     let idx = 0;
@@ -146382,6 +146398,7 @@ deaths, blood clots, sterility`,
     };
     group(ui("kh_group_essentials"), "essential");
     group(ui("kh_group_conditions"), "condition");
+    group(ui("kh_group_topics"), "topic");
     return html;
   }
 
@@ -146880,24 +146897,6 @@ deaths, blood clots, sterility`,
     return out;
   }
   var ESS_SUBSECTIONS = buildSubsections();
-  function statusOf(snapshot, key) {
-    if (snapshot === null) {
-      return "";
-    }
-    return snapshot.tiles.find((t) => t.name === key)?.status ?? "";
-  }
-  function dotState(status) {
-    if (status === "covered" || status === "trace") {
-      return "covered";
-    }
-    if (status === "partial") {
-      return "partial";
-    }
-    if (status === "present") {
-      return "present";
-    }
-    return "uncovered";
-  }
   function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
@@ -146942,22 +146941,19 @@ deaths, blood clots, sterility`,
     "AMINO ACIDS": "kd_esssec_amino",
     "FATTY ACIDS": "kd_esssec_fatty"
   };
-  var COV_STATES = ["covered", "partial", "uncovered", "present"];
   var ESSENTIAL_CAT_SCROLL = { mineral: "#2b6fb0", vitamin: "#ff7e3c", amino_acid: "#5aa82c", fatty_acid: "#8a52d6" };
   function renderEssentialsTab(snapshot, selectedKey) {
     const deepHTML = selectedKey !== null ? renderEssentialDeep(selectedKey, snapshot) : "";
-    const legendHTML = `<div class="ep-legend kd-cov-legend"><span class="ep-legend__lbl">${escHTML12(ui("kd_covlegend_label"))}</span>${COV_STATES.map((s) => `<span class="ep-legend__item"><span class="kd-cov-dot kd-cov-dot--${s}"></span>${escHTML12(ui(`kd_covlegend_${s}`))}</span>`).join("")}</div>`;
     const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
-        const dot = dotState(statusOf(snapshot, e.key));
         const sel = e.key === selectedKey ? " is-selected" : "";
-        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML12(e.category)}" data-kd-essential="${escHTML12(e.key)}" title="${escHTML12(e.name)}"><span class="kd-cov-dot kd-cov-dot--${dot}"></span><span class="sh-tile__sym">${escHTML12(e.symbol)}</span><span class="sh-tile__nm">${escHTML12(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML12(plural(e.claimCount, "claim"))}</span></button>`;
+        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML12(e.category)}" data-kd-essential="${escHTML12(e.key)}" title="${escHTML12(e.name)}"><span class="sh-tile__sym">${escHTML12(e.symbol)}</span><span class="sh-tile__nm">${escHTML12(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML12(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
       const key = SEC_LABEL_KEY[group.label];
       const label = key !== void 0 ? ui(key) : group.label;
       return `<div class="sh-subhead">${escHTML12(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
     }).join("");
-    return `${deepHTML}${legendHTML}${groupsHTML}`;
+    return `${deepHTML}${groupsHTML}`;
   }
   function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab) {
     if (selectedTopic !== null) {
@@ -150037,7 +150033,9 @@ WHAT I BUILT: a capitalization gate. Every authored search \`question\` must sta
 
 WHAT I DID NOT BUILD, AND WHY (measured, not assumed): the two sibling defects are not cleanly gateable. (1) "From food" thesis-violations: a regex for "from food" hits 26 occurrences in the live corpus that are almost all the CORRECT statement of Wallach's thesis - "impossible to hit from food alone", "we must get it from food or supplements". The real violation is semantic (claiming food SUFFICES), which no robust regex separates from the correct "food-alone-is-a-gamble" wording. A gate here would be net-negative noise. (2) "Says-nothing" claim_texts: a claim_text-vs-verbatim similarity gate has no clean threshold - a FAITHFUL summary of a quote naturally reuses the quote's vocabulary (mineral names, numbers, diseases), so containment runs high even when real context is added; and even the highest textual near-copies (choline's structure, the flavonoid-history fact) are legitimate short factual claims. Worse, any similarity floor incentivizes PADDING - the exact defect the rule forbids, and the exact reason the logging-doctrine already refused a minimum-length floor (its rule-7 minimum-force note). Both defects stay on the human-review gate, and I recorded them as WISH-by-evidence in .claude/rules/search-corpus.md's Enforcement section so a future session does not blindly re-attempt them.
 
-Luneth was asked and chose "lowercase gate only." Also fixed a stale docstring in search_index_derive.py (the old "must be search-only" line - search-only was killed 2026-07-27). Files touched: eden/tools/search_index_derive.py, tools/test_search_index_wellformed.py, tools/invariants.py (docstring + success message), .claude/rules/search-corpus.md. Verify: --check VALID; negative test 16/16; invariants 76/76 (0 failed); derived_artifacts_fresh unchanged (validation-only logic does not alter build_index output); no_operating_doc_contradiction green. Task 2 complete.` }];
+Luneth was asked and chose "lowercase gate only." Also fixed a stale docstring in search_index_derive.py (the old "must be search-only" line - search-only was killed 2026-07-27). Files touched: eden/tools/search_index_derive.py, tools/test_search_index_wellformed.py, tools/invariants.py (docstring + success message), .claude/rules/search-corpus.md. Verify: --check VALID; negative test 16/16; invariants 76/76 (0 failed); derived_artifacts_fresh unchanged (validation-only logic does not alter build_index output); no_operating_doc_contradiction green. Task 2 complete.` }, { id: "lg_ms43wzb3_3jq168", ts: "2026-07-27T22:39:17.823921-05:00", surface: "knowledge", kind: "round-close", summary: "Knowledge drawer: dropped the duplicate covered/not-covered legend + per-tile status dots from the Essentials tab (Coverage keeps its own), and fixed Home search so Explore topics surface \u2014 purple-dotted, colour-coded like essentials & conditions", detail: `Three drawer fixes Luneth asked for. The hidden Essentials screen was showing a covered/not-covered colour key plus a status dot on every element tile \u2014 a duplicate of what the Coverage page already does \u2014 so both are gone from THAT screen only (Coverage keeps its own). And the drawer's Home search box couldn't find any Explore topic: typing "testosterone" returned nothing, because it only searched the 90 essentials and the conditions. It now finds topics too, shown in their own "Explore" group with a purple dot that matches the topic colour used everywhere else.
+
+knowledge.ts::renderEssentialsTab \u2014 removed legendHTML (.kd-cov-legend, COV_STATES covered/partial/uncovered/present) and the per-tile <span class=kd-cov-dot>; deleted the now-dead statusOf/dotState/COV_STATES helpers and the unused CoverageStatus import. Scoped to this tab; views/coverage.ts untouched (its own dot classes; render_probe.js still covered:5/gap:37). knowledge-home.ts::homeMatches now iterates entityList(), adding non-nutrient/non-condition registry entities as kind:'topic' (navAttr data-kd-topic), matched on display_name/spaced-slug/synonyms, deduped vs essentials via a \`taken\` slug set; charged entities (homosexuality/intersex) excluded from live-suggest per the never-ambush rule. renderHomeSuggestions folds topics into \`shown\` and renders a third group via ui('kh_group_topics'). view-copy.json adds kh_group_topics='Explore'. drawer-knowledge.css adds .sh-res[data-kd-topic] .sh-res__dot{background:var(--fam-story)} \u2014 the same purple the Explore chips use. render_probe_knowledge.js: the two assertions that REQUIRED the dots now assert their ABSENCE (hasLegend===false, withDot===0), plus a new check that typing "testosterone" surfaces a data-kd-topic row. Verified: build OK, invariants 76/76, knowledge probe PASS, Coverage probe unaffected, screenshots reviewed + signed off by Luneth.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

@@ -27,6 +27,7 @@ import { conditionDisplayName, getEssentialBySlug, listBooks, listConditions } f
 import { essentialGlyph } from '../state/coverage.js';
 import { type ConditionSummary, type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
 import { homeExploreTopics } from '../state/home-curation.js';
+import { entityList, getEntity, isChargedEntity } from '../state/search.js';
 
 // The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
 // quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
@@ -169,7 +170,7 @@ export function renderHomeTab(): string {
 // ─── Live-suggest ───────────────────────────────────────────────────────────
 
 interface HomeMatch {
-  kind: 'essential' | 'condition';
+  kind: 'essential' | 'condition' | 'topic';
   name: string;
   navAttr: string;
   navVal: string;
@@ -185,6 +186,9 @@ function homeMatches(query: string): HomeMatch[] {
   }
   const spaced = (s: string): string => s.replace(/[-_]/g, ' ');
   const out: HomeMatch[] = [];
+  // Slugs already surfaced as an essential/condition, so an entity that is BOTH (e.g. potassium is
+  // a registry element AND a canon essential) is not listed twice — the essential row wins.
+  const taken = new Set<string>();
   for (const e of listEssentialPages()) {
     const nm = e.name.toLowerCase();
     const sci = e.scientific_name.toLowerCase();
@@ -193,13 +197,32 @@ function homeMatches(query: string): HomeMatch[] {
       if (c === null) {
         continue;
       }
+      taken.add(e.slug);
       out.push({ kind: 'essential', name: e.name, navAttr: 'data-kd-essential', navVal: c.layout_key, claimCount: e.claim_count, startsWith: nm.startsWith(q) });
     }
   }
   for (const cnd of listConditionPages()) {
     const nm = cnd.name.toLowerCase();
     if (nm.includes(q) || spaced(cnd.slug).includes(q)) {
+      taken.add(cnd.slug);
       out.push({ kind: 'condition', name: cnd.name, navAttr: 'data-kd-condition', navVal: cnd.slug, claimCount: cnd.claim_count, startsWith: nm.startsWith(q) });
+    }
+  }
+  // Explore TOPICS — the search-registry entities that are NOT essentials/conditions (those have
+  // their own pages, handled above). Without this branch, typing any Explore topic (e.g.
+  // 'testosterone') matched nothing at all. Nav via data-kd-topic — the same contract the Explore
+  // chips use — so a hit opens the topic overlay. Charged entities (homosexuality/intersex) are
+  // never surfaced in live-suggest (they stay browsable only on the Explore tab) — the same
+  // never-ambush rule the main search gate enforces.
+  for (const t of entityList()) {
+    if (t.type === 'nutrient' || t.type === 'condition' || taken.has(t.slug) || isChargedEntity(t.slug)) {
+      continue;
+    }
+    const nm = t.display_name.toLowerCase();
+    const full = getEntity(t.slug);
+    const synHit = full !== null && full.synonyms.some(s => s.toLowerCase().includes(q));
+    if (nm.includes(q) || spaced(t.slug).includes(q) || synHit) {
+      out.push({ kind: 'topic', name: t.display_name, navAttr: 'data-kd-topic', navVal: t.slug, claimCount: t.claim_count, startsWith: nm.startsWith(q) });
     }
   }
   return out;
@@ -231,10 +254,11 @@ export function renderHomeSuggestions(query: string): string {
   const shown = [
     ...matches.filter(m => m.kind === 'essential').sort(byRelevance),
     ...matches.filter(m => m.kind === 'condition').sort(byRelevance),
+    ...matches.filter(m => m.kind === 'topic').sort(byRelevance),
   ].slice(0, 10);
   let html = '';
   let idx = 0;
-  const group = (label: string, kind: 'essential' | 'condition'): void => {
+  const group = (label: string, kind: 'essential' | 'condition' | 'topic'): void => {
     const rows = shown.filter(m => m.kind === kind);
     if (rows.length === 0) {
       return;
@@ -247,5 +271,6 @@ export function renderHomeSuggestions(query: string): string {
   };
   group(ui('kh_group_essentials'), 'essential');
   group(ui('kh_group_conditions'), 'condition');
+  group(ui('kh_group_topics'), 'topic');
   return html;
 }
