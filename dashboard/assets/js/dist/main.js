@@ -27860,7 +27860,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
-              "WAL-CLM-RARE-000183"
+              "WAL-CLM-RARE-000183",
+              "WAL-CLM-RARE-000184"
             ]
           }
         ],
@@ -79191,7 +79192,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "nitrates",
           "nitrites"
         ],
-        claim_count: 6,
+        claim_count: 7,
         symbol: "N"
       },
       obscure_elements: {
@@ -82883,7 +82884,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000112",
         subject: "eggs",
         also_about: [
-          "nitrogen"
+          "nitrogen",
+          "protein"
         ],
         facet: "physiology",
         question: "Is egg a high-quality protein compared to other foods?",
@@ -93371,7 +93373,9 @@ Uterine fibroids`,
       {
         id: "WAL-CLM-EPIGEN-000358",
         subject: "methionine",
-        also_about: [],
+        also_about: [
+          "protein"
+        ],
         facet: "mechanism",
         question: "Why is methionine the 'start' amino acid in protein synthesis?",
         answer_short: "Methionine's codon, AUG, doubles as the cell's main 'Start' signal for building a protein, so nearly every protein begins with a methionine.",
@@ -95318,7 +95322,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-HELLS-000001",
         subject: "beef",
         also_about: [
-          "eggs"
+          "eggs",
+          "protein"
         ],
         facet: "stance",
         question: "Does Dr. Wallach think beef and red meat are good for you?",
@@ -96891,7 +96896,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-IMMORT-000004",
         subject: "amino_acids",
         also_about: [
-          "selenium"
+          "selenium",
+          "protein"
         ],
         facet: "basics",
         question: "How many essential amino acids are there?",
@@ -97725,7 +97731,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "phosphorus",
           "iron",
           "sulfur",
-          "cobalt"
+          "cobalt",
+          "protein"
         ],
         facet: "physiology",
         question: "What are proteins?",
@@ -97745,7 +97752,8 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "macronutrients",
         also_about: [
           "kidney_disease",
-          "liver_disease"
+          "liver_disease",
+          "protein"
         ],
         facet: "warning",
         question: "Can you eat too much protein?",
@@ -112102,7 +112110,9 @@ deaths, blood clots, sterility`,
       {
         id: "WAL-CLM-RARE-000182",
         subject: "nitrogen",
-        also_about: [],
+        also_about: [
+          "protein"
+        ],
         facet: "basics",
         question: "What is nitrogen and what does it do in the body?",
         answer_short: "Nitrogen is a structural atom in protein, in the nucleic acids RNA and DNA, and in many organic molecules, supplied to the body as dietary protein.",
@@ -112127,7 +112137,9 @@ deaths, blood clots, sterility`,
       {
         id: "WAL-CLM-RARE-000183",
         subject: "nitrogen",
-        also_about: [],
+        also_about: [
+          "protein"
+        ],
         facet: "uses",
         question: "What does the body use protein for?",
         answer_short: "Protein's core uses are repairing worn-out tissue, building new tissue (muscle, growth, pregnancy), and serving as an emergency source of heat and energy.",
@@ -112150,9 +112162,41 @@ deaths, blood clots, sterility`,
         }
       },
       {
+        id: "WAL-CLM-RARE-000184",
+        subject: "nitrogen",
+        also_about: [
+          "protein"
+        ],
+        facet: "uses",
+        question: "What else does the body use protein for?",
+        answer_short: "Beyond repair, growth, and energy, protein forms your enzymes, hormones, mucus, milk and antibodies, holds fluid and acid-base balance in check, and ferries minerals, fats, and vitamins around the body.",
+        answer: "Wallach continues the body's uses of protein (functions 4-9): forming essential secretions and fluids (enzymes, hormones, mucus, milk, semen); maintaining osmotic fluid balance via blood-plasma proteins (low plasma protein, or hypoproteinemia, causes edema); maintaining acid-base balance; transporting minerals, fats, and vitamins; forming immunoglobulins (antibodies); and providing a nitrogen pool for synthesizing amino acids and new proteins.",
+        verbatim: "4) Proteins make up essential body secretions and fluids (i.e.- enzymes, hormones, mucus, milk, semen, etc.)\n5) Blood plasma proteins maintain osmotic fluid balance (hypoproteinemia results in edema)\n6) Proteins maintain acid-base balance of blood and tissues\n7) Proteins aid in transport of other essential substances (i.e. - minerals, fats, vitamins, etc.)\n8) Proteins make up basic immunoglobulins (antibodies)\n9) Proteins provide a N pool for the synthesis of amino acids and new proteins",
+        page: 354,
+        book_id: "rare-earths",
+        topics: [
+          "nitrogen",
+          "protein functions",
+          "what protein is used for",
+          "enzymes",
+          "hormones",
+          "antibodies",
+          "immunoglobulins",
+          "fluid balance",
+          "edema"
+        ],
+        tier1_link: {
+          essentials: [
+            "nitrogen"
+          ]
+        }
+      },
+      {
         id: "WAL-CLM-RARE-000185",
         subject: "nitrogen",
-        also_about: [],
+        also_about: [
+          "protein"
+        ],
         facet: "warning",
         question: "What happens if you don't get enough protein?",
         answer_short: "Classic protein deficiency causes infertility, poor growth, lowered immune status, edema, and Kwashiorkor -- the potbellied, thin children of third-world countries.",
@@ -112372,7 +112416,8 @@ deaths, blood clots, sterility`,
         also_about: [
           "calcium",
           "osteoporosis",
-          "arthritis"
+          "arthritis",
+          "protein"
         ],
         facet: "warning",
         question: "Can too much phosphorus be bad for you?",
@@ -149958,7 +150003,9 @@ MEMORY-LOSS FAMILY: memory_loss + alzheimers registered as catalog_ref search-en
 
 SEAL: corpus_seal USER-AUTHORIZED kv416->kv417 (2195 claims, corpus_verify PASS). It EXPOSED 36 pre-existing verbatim_names_mapped_conditions violations (claims mapping a condition their verbatim doesn't literally name -- hidden while search-only skipped them). 33 mundane (same class as 183 already tolerated) baselined; 3 CHARGED (EPIGEN-8/21 homosexuality, EPIGEN-25 intersex) FLAGGED FOR YOUR REVIEW -- removing search-only exposed the fetal-testosterone->homosexuality/intersex claims to the operational Conditions tab. Per charged-content-2026-07-26-update they stay included + listed for you to decide keep/drop/hide.
 
-VERIFIED: build_embeds (15 artifacts) -> build -> invariants 76/76 -> LIVE APP: Explore 88->103 chips, all 15 new concepts render, memory_loss/alzheimers present, 0 page errors.` }, { id: "lg_ms3xzplv_jwz0jz", ts: "2026-07-27T19:53:27.523170-05:00", surface: "corpus", kind: "milestone", summary: "Quality remediation Luneth caught: removed 45 over-basic glosses + the WHO-pronoun hover, fixed 25 question caps + 17 from-food thesis violations, and rewrote all 100 says-nothing claim_texts into real Wallach-faithful answers (0 fabrications). Sealed kv420, board 76/76.", detail: 'Luneth caught several real quality failures today and I fixed every one, proving each mechanically instead of just asserting it. The glossary had 1,288 dotted-line hovers including basic words like mineral and vitamin (plus a false WHO hover firing on the pronoun who); 25 search questions were lowercase; some definitions said essential nutrients come from food, which contradicts Wallach thesis that depleted soil means we must supplement; and 100 claim full-answers merely restated their quote (the xenon case he flagged). All fixed and re-sealed with his explicit permission.\n\nGLOSSARY (unsealed, safe_write): removed 45 too-basic terms he selected for removal; kept anemia/antibiotic/antioxidant/thyroid/thyroid-hormone per his ruling; removed the WHO alias on the World Health Organization entry (case-insensitive normKey made it hover every pronoun who); fixed 12 from-food -> the-diet essential-nutrient definitions (essential-nutrient uses his exact wording: "required for normal functioning but cannot be synthesized by the body and therefore must be included in the diet"). Root-cause on WHO: state/glossary.ts normKey lowercases all keys.\n\nQUESTIONS: 25 lowercase-first questions capitalized (search-enrichment.json), 0 remain in the built search-index (1494 questions). answer_short: 5 from-food thesis fixes (EPIGEN-197/205-excluded/361/362/372/382). SWEEP: 6 also_about cross-links (citrulline<-EPIGEN-342, nitric-oxide<-IMMORT-340, melatonin<-EPIGEN-352, acetylcholine<-IMMORT-333, DHA<-EPIGEN-394/396); dedup-checked to avoid duplicate quotes.\n\nSEALED claim_text kv418: 4 from-food->diet (EPIGEN-361/382 phenylalanine/valine, IMMORT-004 12-essential-aminos, IMMORT-053 EFA). SAYS-NOTHING kv420: all 100 flagged claim_texts (27 tierA pure-restatement + 73 tierB) rewritten to add real Wallach-faithful context pulled from each claim own source span; verbatims untouched; anti-fabrication check confirmed every numeric traces to source (9 apparent flags all false positives: spelled-out numbers, B1/B2/B3 vitamin names, pre-existing Senate-264/1936 attribution). 0 un-enrichable. invariants.py: added arthritis to _JARGON_SKIP with reason (R9). Two red-then-green gate refinements during the run: jargon_terms_glossed (arthritis) and claim_text_term_gloss (DMSO -> explained inline).\n\nVERIFY: node build.mjs OK; invariants 76/76; says-nothing 100->0, question-caps 25->0, thesis-from-food 4->0; corpus_verify PASS kv420 (2195 claims); render_probe_search PAGE_ERRORS=0. DEFERRED: render_probe_search has 2 PRE-EXISTING stale count assertions (cancer expects 65 vs live 71, calcium 134 vs 145) from last session search-only rip-out - proven identical at HEAD/kv417, NOT this session; left for Luneth to update. Charged-claims ruling (keep on condition pages) recorded per his decision.' }, { id: "lg_ms3zj52h_22s48f", ts: "2026-07-27T20:36:33.641291-05:00", surface: "testing", kind: "round-close", summary: "Bumped 2 stale render_probe_search hero-count assertions to match live corpus (cancer 65->71, calcium 134->145); Luneth counted and confirmed. Probe PASS, board 76/76, no corpus change.", detail: "The search render probe asserted cancer=65 and calcium=134 total answers, but the live corpus shows 71 and 145. These counts grew last session when the search-only doctrine was killed (~1000 claims re-homed) and the probe baseline was never updated. Proven pre-existing (identical at HEAD/kv417), not a regression from this session. Luneth counted the claims himself, confirmed 71/145 are correct, and authorized bumping the assertions.\n\ntools/render_probe_search.js: 2 assertions updated (65->71 label+regex for cancer.heroMeta; 134->145 for calcium.heroMeta). No corpus/pillar change, so no reseal. Verify: render_probe_search PAGE_ERRORS=0 and PASS; invariants 76/76." }];
+VERIFIED: build_embeds (15 artifacts) -> build -> invariants 76/76 -> LIVE APP: Explore 88->103 chips, all 15 new concepts render, memory_loss/alzheimers present, 0 page errors.` }, { id: "lg_ms3xzplv_jwz0jz", ts: "2026-07-27T19:53:27.523170-05:00", surface: "corpus", kind: "milestone", summary: "Quality remediation Luneth caught: removed 45 over-basic glosses + the WHO-pronoun hover, fixed 25 question caps + 17 from-food thesis violations, and rewrote all 100 says-nothing claim_texts into real Wallach-faithful answers (0 fabrications). Sealed kv420, board 76/76.", detail: 'Luneth caught several real quality failures today and I fixed every one, proving each mechanically instead of just asserting it. The glossary had 1,288 dotted-line hovers including basic words like mineral and vitamin (plus a false WHO hover firing on the pronoun who); 25 search questions were lowercase; some definitions said essential nutrients come from food, which contradicts Wallach thesis that depleted soil means we must supplement; and 100 claim full-answers merely restated their quote (the xenon case he flagged). All fixed and re-sealed with his explicit permission.\n\nGLOSSARY (unsealed, safe_write): removed 45 too-basic terms he selected for removal; kept anemia/antibiotic/antioxidant/thyroid/thyroid-hormone per his ruling; removed the WHO alias on the World Health Organization entry (case-insensitive normKey made it hover every pronoun who); fixed 12 from-food -> the-diet essential-nutrient definitions (essential-nutrient uses his exact wording: "required for normal functioning but cannot be synthesized by the body and therefore must be included in the diet"). Root-cause on WHO: state/glossary.ts normKey lowercases all keys.\n\nQUESTIONS: 25 lowercase-first questions capitalized (search-enrichment.json), 0 remain in the built search-index (1494 questions). answer_short: 5 from-food thesis fixes (EPIGEN-197/205-excluded/361/362/372/382). SWEEP: 6 also_about cross-links (citrulline<-EPIGEN-342, nitric-oxide<-IMMORT-340, melatonin<-EPIGEN-352, acetylcholine<-IMMORT-333, DHA<-EPIGEN-394/396); dedup-checked to avoid duplicate quotes.\n\nSEALED claim_text kv418: 4 from-food->diet (EPIGEN-361/382 phenylalanine/valine, IMMORT-004 12-essential-aminos, IMMORT-053 EFA). SAYS-NOTHING kv420: all 100 flagged claim_texts (27 tierA pure-restatement + 73 tierB) rewritten to add real Wallach-faithful context pulled from each claim own source span; verbatims untouched; anti-fabrication check confirmed every numeric traces to source (9 apparent flags all false positives: spelled-out numbers, B1/B2/B3 vitamin names, pre-existing Senate-264/1936 attribution). 0 un-enrichable. invariants.py: added arthritis to _JARGON_SKIP with reason (R9). Two red-then-green gate refinements during the run: jargon_terms_glossed (arthritis) and claim_text_term_gloss (DMSO -> explained inline).\n\nVERIFY: node build.mjs OK; invariants 76/76; says-nothing 100->0, question-caps 25->0, thesis-from-food 4->0; corpus_verify PASS kv420 (2195 claims); render_probe_search PAGE_ERRORS=0. DEFERRED: render_probe_search has 2 PRE-EXISTING stale count assertions (cancer expects 65 vs live 71, calcium 134 vs 145) from last session search-only rip-out - proven identical at HEAD/kv417, NOT this session; left for Luneth to update. Charged-claims ruling (keep on condition pages) recorded per his decision.' }, { id: "lg_ms3zj52h_22s48f", ts: "2026-07-27T20:36:33.641291-05:00", surface: "testing", kind: "round-close", summary: "Bumped 2 stale render_probe_search hero-count assertions to match live corpus (cancer 65->71, calcium 134->145); Luneth counted and confirmed. Probe PASS, board 76/76, no corpus change.", detail: "The search render probe asserted cancer=65 and calcium=134 total answers, but the live corpus shows 71 and 145. These counts grew last session when the search-only doctrine was killed (~1000 claims re-homed) and the probe baseline was never updated. Proven pre-existing (identical at HEAD/kv417), not a regression from this session. Luneth counted the claims himself, confirmed 71/145 are correct, and authorized bumping the assertions.\n\ntools/render_probe_search.js: 2 assertions updated (65->71 label+regex for cancer.heroMeta; 134->145 for calcium.heroMeta). No corpus/pillar change, so no reseal. Verify: render_probe_search PAGE_ERRORS=0 and PASS; invariants 76/76." }, { id: "lg_ms40kwg0_p23kqn", ts: "2026-07-27T21:05:55.392949-05:00", surface: "search", kind: "round-close", summary: "Protein Explore page filled 1 to 12 claims: surfaced 10 approved Wallach claims + authored 1 new search entry (protein functions 4-9); enrichment-only, no reseal. Entity-fill campaign, entity 1 of 15, biggest-first.", detail: `The Protein page in Explore was almost empty - just one "what is protein" answer. I made it a real page by pulling in Wallach claims that already existed but were filed under other topics (egg and beef protein quality, the essential amino acids, what protein does, what happens when you run short), plus authored one new search entry for protein's other functions. Luneth reviewed and approved the exact set, and ruled that Kwashiorkor (protein starvation) belongs on its own condition page, not here.
+
+Enrichment-source edits only (eden/corpus/search-enrichment.json) - no new Wallach claims and no corpus_seal. Added also_about:"protein" to 10 sealed+approved claims: DDDL-112(eggs), HELLS-1(beef), IMMORT-4(amino_acids), IMMORT-55/56(macronutrients), RARE-182/183/185(nitrogen), EPIGEN-358(methionine), RARE-206(phosphorus). Authored 1 entry: RARE-184 subject=nitrogen also_about=[protein] facet=uses question "What else does the body use protein for?" (mirrors its sealed sibling RARE-183, functions 1-3). Curated from the kv415 inventory's 44 token-hit candidates; deliberately excluded ~13 protein-incidental claims (copper/cadmium/vitamin-K/colloidal-minerals/sulfur-mechanism/individual amino-acid basics) to keep the page about protein rather than every claim that says the word. Pipeline: safe_write rewrite (11 entries changed, +761 B) -> search_index_derive.py + entity_page_derive.py -> build.mjs. Verify: search_index_derive --check VALID; invariants 76/76 (0 failed, incl. derived_artifacts_fresh + search_index_wellformed); render_probe_search PASS PAGE_ERRORS=0; protein-page claim count 1->12 confirmed at the enrichment source. First of 15 entities in the entity-fill campaign (Luneth chose one-at-a-time, biggest first). Nitrates next.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

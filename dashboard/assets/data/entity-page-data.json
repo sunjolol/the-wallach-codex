@@ -308,7 +308,8 @@
         {
           "facet": "uses",
           "claim_ids": [
-            "WAL-CLM-RARE-000183"
+            "WAL-CLM-RARE-000183",
+            "WAL-CLM-RARE-000184"
           ]
         }
       ],

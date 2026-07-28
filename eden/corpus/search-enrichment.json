@@ -347,7 +347,8 @@
   "WAL-CLM-DDDL-000112": {
    "subject": "eggs",
    "also_about": [
-    "nitrogen"
+    "nitrogen",
+    "protein"
    ],
    "facet": "physiology",
    "question": "Is egg a high-quality protein compared to other foods?",
@@ -1488,7 +1489,8 @@
   "WAL-CLM-HELLS-000001": {
    "subject": "beef",
    "also_about": [
-    "eggs"
+    "eggs",
+    "protein"
    ],
    "facet": "stance",
    "question": "Does Dr. Wallach think beef and red meat are good for you?",
@@ -1769,7 +1771,8 @@
   "WAL-CLM-IMMORT-000004": {
    "subject": "amino_acids",
    "also_about": [
-    "selenium"
+    "selenium",
+    "protein"
    ],
    "facet": "basics",
    "question": "How many essential amino acids are there?",
@@ -2105,7 +2108,8 @@
     "phosphorus",
     "iron",
     "sulfur",
-    "cobalt"
+    "cobalt",
+    "protein"
    ],
    "facet": "physiology",
    "question": "What are proteins?",
@@ -2120,7 +2124,8 @@
    "subject": "macronutrients",
    "also_about": [
     "kidney_disease",
-    "liver_disease"
+    "liver_disease",
+    "protein"
    ],
    "facet": "warning",
    "question": "Can you eat too much protein?",
@@ -15849,7 +15854,8 @@
    "also_about": [
     "calcium",
     "osteoporosis",
-    "arthritis"
+    "arthritis",
+    "protein"
    ],
    "facet": "warning",
    "question": "Can too much phosphorus be bad for you?",
@@ -16477,7 +16483,9 @@
   },
   "WAL-CLM-EPIGEN-000358": {
    "subject": "methionine",
-   "also_about": [],
+   "also_about": [
+    "protein"
+   ],
    "facet": "mechanism",
    "question": "Why is methionine the 'start' amino acid in protein synthesis?",
    "answer_short": "Methionine's codon, AUG, doubles as the cell's main 'Start' signal for building a protein, so nearly every protein begins with a methionine.",
@@ -19975,7 +19983,9 @@
   },
   "WAL-CLM-RARE-000182": {
    "subject": "nitrogen",
-   "also_about": [],
+   "also_about": [
+    "protein"
+   ],
    "facet": "basics",
    "question": "What is nitrogen and what does it do in the body?",
    "answer_short": "Nitrogen is a structural atom in protein, in the nucleic acids RNA and DNA, and in many organic molecules, supplied to the body as dietary protein.",
@@ -19990,7 +20000,9 @@
   },
   "WAL-CLM-RARE-000185": {
    "subject": "nitrogen",
-   "also_about": [],
+   "also_about": [
+    "protein"
+   ],
    "facet": "warning",
    "question": "What happens if you don't get enough protein?",
    "answer_short": "Classic protein deficiency causes infertility, poor growth, lowered immune status, edema, and Kwashiorkor -- the potbellied, thin children of third-world countries.",
@@ -20005,7 +20017,9 @@
   },
   "WAL-CLM-RARE-000183": {
    "subject": "nitrogen",
-   "also_about": [],
+   "also_about": [
+    "protein"
+   ],
    "facet": "uses",
    "question": "What does the body use protein for?",
    "answer_short": "Protein's core uses are repairing worn-out tissue, building new tissue (muscle, growth, pregnancy), and serving as an emergency source of heat and energy.",
@@ -22574,6 +22588,26 @@
     "neck-pain",
     "shoulder",
     "iaiyh"
+   ]
+  },
+  "WAL-CLM-RARE-000184": {
+   "subject": "nitrogen",
+   "also_about": [
+    "protein"
+   ],
+   "facet": "uses",
+   "question": "What else does the body use protein for?",
+   "answer_short": "Beyond repair, growth, and energy, protein forms your enzymes, hormones, mucus, milk and antibodies, holds fluid and acid-base balance in check, and ferries minerals, fats, and vitamins around the body.",
+   "topics": [
+    "nitrogen",
+    "protein functions",
+    "what protein is used for",
+    "enzymes",
+    "hormones",
+    "antibodies",
+    "immunoglobulins",
+    "fluid balance",
+    "edema"
    ]
   }
  }
