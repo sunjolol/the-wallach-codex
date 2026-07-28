@@ -1,62 +1,63 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-28, end of the 4-task autonomous run)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (updated 2026-07-28, end of the thin-claim session)
 
 # ★★★★★ READ FIRST (plain language)
-All four tasks from the last agenda were addressed while you were away. **Task 3 is DONE + committed + pushed** (real
-canon change, corpus now **kv425**, board **76/76 green**). Tasks 1, 2, and 4 each produced **staged proposals that
-await your ratification** — nothing was applied for those, by design (memory deletion, claim-classification, and the
-nuance rewrites are all yours to approve). Corpus **kv425 · 2263 claims · board 76/76 green · repo clean + pushed**
-(commits `ffaa1b18` Tasks 1-3, plus a logs commit for Task 4).
+Board **76/76 green · corpus kv428 · repo clean + pushed** (HEAD `a138e921`). This session did the original 4-task
+agenda AND uncovered + started fixing a real quality problem (thin one-line claims). The MAIN unfinished work is
+**25 staged thin-claim re-mines** that need a REFINED method — read TASK A below FIRST, it carries a hard-won lesson.
 
 ---
 
-## AWAITING YOUR RATIFICATION (the action list)
+## TASK A — ★ THE MAIN JOB: finish the thin-claim re-mine (25 claims staged) — READ THE LESSON
+**Context:** Luneth found that many "enriched" claims were thin one-liners saying LESS than their verbatim (worst:
+bare-table verbatims like Table 7-8's "Cancer: Se"). His approved method: **answer the question from real Wallach
+DOCTRINE across all books; re-source the verbatim to the EXPLANATORY passage; tables are for dosage, not doctrine;
+GAP (don't pad) when no doctrine exists.** A 10-agent workflow produced 76 proposals; **51 landed clean** (22 full
+re-mines + 29 answer-short-only, kv428). **25 are staged, NOT applied**, in `temporary/enrichment-queue/thin-claims/`:
+- `proposals.json` (all 76), `REVIEW.md` (human-readable OLD→NEW), `targets.json` (the 76 with current text), `revert.json` (the 9).
 
-### From TASK 4 — the nuance scan (the main event) → `temporary/enrichment-queue/task4-scan/REVIEW.md`
-**Honest result: the Night3 enrichment was high-quality — NOT ~30-40 issues, a handful of real ones.** Most apparent
-defects are "implicit-by-qualifier" (rare *beef*, well-*done* meat) or would need a good-form Wallach never wrote
-(fabrication, correctly refused). Method: 2 agent runs (first mis-calibrated to precision → ~0; re-ran high-recall →
-42 candidates; strict verifier rejected all 42) then **I arbitrated all 42 by hand + did the Wallach-book good-form
-search myself.** Read REVIEW.md — it has **5 Tier-1 findings with exact proposed corrections** (all Wallach-sourced):
-- **B1 cruciferous** (EPIGEN-000160/IMMORT-000184/DDDL-000208) branded flat goitrogens; Wallach's own softener "when
-  consumed in inordinate amounts" (Rare Earths) — but newer Epigenetics omits it → **your favor-newest call**.
-- **B2 well-done meat** (HELLS-000087) omits "medium-rare" that its sibling HELLS-000002 names — internal inconsistency.
-- **A1 HELLS-000083** "rude awakening" cliffhanger in claim_text (the exact pattern you named).
-- **A2 RARE-000147** "why goiter despite iodine" never names the cause (goitrogens — Wallach's own, verifier was wrong).
-- Tier 2 (optional, your honey-standard) + Tier 3 (reviewed, no action) also listed. Full data: `task4_candidates.json`.
-- **To apply after you pick:** mine_batch (answer_short→enrichment, claim_text→draft) → search_index_derive → re-seal → build → invariants.
+**★ THE LESSON (memory [[remine-verbatim-vs-condition-gate]]) — why the 25 didn't land:**
+1. **9 GATE-CONFLICT (reverted):** re-sourcing the verbatim to doctrine prose DROPPED the condition-name or dose the
+   gates require → `verbatim_names_mapped_conditions` + `dose_amount_in_verbatim` went RED. Ids: DDDL-022/035/047/053,
+   EPIGEN-137, LETS-486, RARE-004/308/311.
+2. **13 BROKEN at resnap:** the new verbatim couldn't be relocated in the claim's OWN id-book — because (a) the doctrine
+   was CROSS-BOOK (a claim's verbatim MUST come from its id-book; IMMORT-000001's goiter doctrine is in DDDL), (b) table
+   clusters, (c) RARE-000306's agent verbatim differs from the anticarcinogenic passage Luneth already approved.
+3. **3 GAP (correct, leave):** chromium/niacin/B6 TOXICITY — no doctrine in the books, only a flow-chart table row.
 
-### From TASK 1 — memory → `temporary/memory-consol-proposal.md`
-Index hooks already trimmed losslessly (21.4→20.0KB, all links resolve — DONE, in the memory dir). The <140-line nag
-needs retiring ~40 memories, which per your [[memory-consolidation-threshold]] rule needs YOUR sign-off. Staged: the
-pre-identified mining-mechanics merge (6→1) + one superseded entry. Say "do the memory merge" to execute.
+**THE REFINED METHOD for the 22 (13+9; the 3 gaps stay):** the new verbatim must BOTH explain the doctrine AND name
+the mapped condition / contain the dose. Where no single in-book passage does both → keep the condition-naming (or
+dose-bearing) verbatim and enrich ONLY claim_text+answer_short (which MAY synthesize across books). Cross-book doctrine
+→ find an in-book passage OR keep in-book verbatim + cross-book answer. NEVER drop a condition mapping to pass the gate.
+**Apply process that worked:** per-book `corpus_resnap --fix` DRY-RUN first (catch BROKEN before writing) → --write →
+sync shard→draft → claim_text in draft → answer_short to enrichment → seal → if board reddens, revert offenders from
+`git show <green-sha>:<shard>` → re-seal. Mechanically verify every verbatim is real book text (resnap heal = proof).
+- RARE-000306 specifically: use the anticarcinogenic passage Luneth approved (Rare Earths p.382 "versatile
+  anticarcinogenic agent…"), NOT the agent's "depressed immune system" version.
 
-### From TASK 2 — antioxidant-FOOD routing → `temporary/enrichment-queue/night3/TASK2-reverify-kv424.md`
-The kv420 ruling is **STALE** — I re-verified as instructed: probe is now **5/6 fail (not 2/6)**; Night3 moved the
-routing. NOTHING applied. A verified 6/6 is unreachable without your call on **Check 6** ("what causes cancer" now
-heroes the selenium=cancer answer — arguably correct; the probe still expects the old entity-routing). Read the packet;
-it has per-failure root-cause + proposed fixes for your ratification.
-
----
-
-## TASK 3 — DONE (committed, kv425). For your awareness:
-Registered noni/mangosteen/pomegranate/wolfberry (catalog 408→412, sealed) + attached to the 3 ORAC claims
-(HELLS-000090/091, IMMORT-000476) via mine_batch, corpus re-sealed (**seals were pre-authorized by you this session**).
-**Scope note:** I widened beyond your literal "mangosteen + pomegranate" to include **noni** (the PRIMARY fruit in all
-3 claims — attaching secondaries while dropping it would ship an incoherent canon) and **wolfberry** (476's ORAC table).
-Every attachment is strictly verbatim-grounded. **DEFERRED for you:** HELLS-000091's verbatim also names 11 COMMON
-fruits (blueberries, cherries, kiwis, pink grapefruit, oranges, plums, prunes, raisins, raspberries, red grapes,
-strawberries, boysenberries) — registering those as substance pages is a bigger scope call. All reversible via purge.
+## Categorization requirement — ✓ VERIFIED MET (Luneth asked; confirmed 0 uncategorized)
+All 2255 enriched claims appear in their correct FACET category in the enriched section of their page: essentials +
+conditions have a facet-grouped "Worth knowing" section (entity-page-data `page.search[].facet`), and explore-topic
+claims render on their subject's faceted page. 0 enriched claims uncategorized/orphaned. Driven by facet + home mapping
+(which the re-mine never changes), so it holds. entity-page-data.json is derived + freshness-gated (green board = fresh).
 
 ---
+
+## DONE THIS SESSION (all committed + pushed)
+- **Task 3 (kv425):** registered noni/mangosteen/pomegranate/wolfberry + attached to the 3 ORAC claims.
+- **Task 4 Tier-1 (kv426):** 5 nuance fixes (cruciferous "inordinate amounts", well-done-meat medium-rare, goiter
+  goitrogen-cause, rude-awakening resolution). Tier 2/3 SKIPPED per Luneth.
+- **Thin-claim re-mine (kv428):** 51/76 applied (above).
+- **RARE-000306 investigation:** it renders fine on both pages; Luneth's "no result" was searching the QUESTION while
+  the entity-page filter indexes claim_text/verbatim. **STILL OPEN (small): make the entity-page filter also index the
+  enrichment question** (Luneth approved; entity-page.ts:1328-1332 matches card.textContent — add the question).
+- **Task 1 memory:** hooks trimmed lossless; the merge/retire is WITHDRAWN (Luneth: not needed, bytes are fine).
+- **Task 2 routing:** re-verified STALE, corrected ruling staged (`temporary/enrichment-queue/night3/TASK2-reverify-kv424.md`),
+  Check-6 cancer-routing is Luneth's reserved call. NOT applied.
 
 ## STANDING DOCTRINES (unchanged)
-1. **"search-only" is DEAD** — every claim lives in one of three homes (essentials / conditions / Explore); Search is a
-   retrieval layer over all three.
-2. **Diet not food** — nutrients come from the DIET (food OR supplements), never "from food" alone.
-3. **NEVER GUESS / NEVER FABRICATE** — verbatim ⊆ the sealed book, or honestly surface the gap. (Task 4 upheld this: no
-   good-form was invented; where Wallach names none, the finding says GAP.)
-4. **corpus_seal + catalog_seal are USER-ONLY** — sealing is your act of ratifying canon. (This session's Task-3 seals
-   were a one-time pre-authorization you gave explicitly; the default remains user-only.)
-5. **A staged batch's `validation_report: clean` is NOT the real gates** — [[staged-batch-validation-report-not-real-gate]].
+1. Every claim lives in ONE of three homes (essentials/conditions/Explore); search is a retrieval layer. 0 orphans.
+2. Diet not food; nutrients from the DIET (food OR supplements).
+3. NEVER fabricate — verbatim ⊆ the sealed book, or GAP. (The re-mine upheld this: 0 fabrications; 3 honest gaps.)
+4. corpus_seal + catalog_seal are USER-ONLY (this session's were explicit one-time authorizations).
 
-**Corpus: kv425 · 2263 sealed claims · board 76/76 green · repo clean + pushed. 3 staged packets await your ratification.**
+**Corpus kv428 · 2263 sealed claims · board 76/76 green · repo clean + pushed. Fresh-session ready.**
