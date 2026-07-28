@@ -28,7 +28,7 @@
    ],
    "facet": "sources",
    "question": "What helps or blocks iron absorption?",
-   "answer_short": "Vitamin C sharply increases iron absorption, while clays and phytates work the other way and decrease it — so what you eat alongside a mineral changes how much you actually take up.",
+   "answer_short": "Stomach acid and vitamin C boost iron absorption; clays and phytates block it — so low stomach acid or a high-fiber, high-phytate diet leaves you absorbing far less.",
    "topics": [
     "iron",
     "vitamin-c",
@@ -5069,7 +5069,7 @@
    "also_about": [],
    "facet": "warning",
    "question": "Is there any condition where Wallach says to avoid beef entirely?",
-   "answer_short": "Yes. For lupus (SLE), Wallach explicitly says to avoid beef, along with dairy and alfalfa, as part of treatment.",
+   "answer_short": "Lupus. In systemic lupus erythematosus (SLE), Wallach tells patients to cut beef out entirely -- along with dairy and alfalfa -- as part of eliminating offending food allergens.",
    "topics": [
     "lupus",
     "sle",
@@ -5112,7 +5112,7 @@
    ],
    "facet": "warning",
    "question": "Can you get parasites or tapeworms from pork?",
-   "answer_short": "Yes. Wallach warns that raw pork is one of the foods that transmits tapeworm; the encysted larvae hatch in the gut and latch onto the intestinal wall.",
+   "answer_short": "Yes -- raw pork is one of Wallach's named tapeworm sources (alongside raw beef, raw fish, and contaminated watercress); once eaten, the larvae grip the intestinal wall with the hooks or suckers on their head.",
    "topics": [
     "tapeworm",
     "parasites",
@@ -5467,7 +5467,7 @@
    ],
    "facet": "warning",
    "question": "Is canned tuna worse than fresh tuna?",
-   "answer_short": "Canned tuna carries nearly double the lead of fresh tuna, because the sealant used on can seams leaches lead into the food.",
+   "answer_short": "Yes — canned tuna tests at nearly twice the lead of fresh, because the lead-based sealant on the can seams leaches into the fish.",
    "topics": [
     "lead",
     "canned-tuna",
@@ -9116,7 +9116,7 @@
    ],
    "facet": "uses",
    "question": "Can osteoporosis be cured?",
-   "answer_short": "Wallach says osteoporosis is easy to prevent and cure with proper supplementation of stomach acid (HCl) and calcium—estrogen and fluoride alone don't solve it.",
+   "answer_short": "Yes -- Wallach calls it easy to prevent and cure. Estrogen and fluoride miss the point; the fix is restoring stomach acid (HCl) plus calcium and magnesium so the bone can actually be rebuilt.",
    "topics": [
     "osteoporosis",
     "bone-health",
@@ -11887,7 +11887,7 @@
    ],
    "facet": "discovery",
    "question": "How was it discovered that copper deficiency causes aneurysms?",
-   "answer_short": "Turkeys raised on copper-poor complete feed pellets died in droves from ruptured aortic aneurysms; the next year, doubling the copper in the feed stopped the deaths entirely, because copper is required to manufacture the heavy elastic fibers in arteries.",
+   "answer_short": "In 1950s turkeys: half a flock on copper-poor feed pellets died of ruptured aortic aneurysms, a pathologist pinned it on copper deficiency (copper builds arteries' elastic fibers), and doubling the feed's copper the next year stopped the deaths entirely.",
    "topics": [
     "copper",
     "aneurysm",
@@ -11934,7 +11934,7 @@
    ],
    "facet": "uses",
    "question": "Can chromium prevent or cure diabetes?",
-   "answer_short": "Since 1958 it has been known that supplemental chromium will prevent and treat both diabetes and hypoglycemia.",
+   "answer_short": "Yes — Wallach says supplemental chromium has prevented and treated both diabetes and hypoglycemia since 1958. He counts adult-onset diabetes a chromium (and vanadium) deficiency, so the mineral corrects the root cause.",
    "topics": [
     "diabetes",
     "blood-sugar",
@@ -11979,7 +11979,7 @@
    ],
    "facet": "history",
    "question": "Does chromium supplementation extend lifespan?",
-   "answer_short": "Gary Evans of Bemidji State University showed chromium supplementation increased laboratory animals' lifespan by 33.3 percent.",
+   "answer_short": "Yes — Wallach cites Gary Evans' study showing chromium lengthened lab animals' lifespan by 33.3%, upending the belief that only severe calorie restriction could extend life.",
    "topics": [
     "longevity",
     "lifespan",
@@ -20228,7 +20228,7 @@
    ],
    "facet": "basics",
    "question": "What is strontium?",
-   "answer_short": "Strontium is a trace mineral that can substitute for calcium in the body and is most highly concentrated in bone.",
+   "answer_short": "A bone-seeking trace mineral that can stand in for calcium. Wallach considers it essential in mammals and ties its deficiency to calcium- and boron-resistant osteoporosis and arthritis.",
    "topics": [
     "strontium",
     "what is strontium",
@@ -20245,7 +20245,7 @@
    ],
    "facet": "warning",
    "question": "Can a strontium deficiency cause osteoporosis?",
-   "answer_short": "Wallach links strontium deficiency to certain calcium- and boron-resistant forms of osteoporosis and arthritis.",
+   "answer_short": "Yes — Wallach ties a strontium shortage to the stubborn forms of osteoporosis and arthritis that don't respond to calcium and boron alone.",
    "topics": [
     "strontium deficiency",
     "osteoporosis",
@@ -21687,7 +21687,7 @@
    ],
    "facet": "history",
    "question": "What is the average lifespan of doctors?",
-   "answer_short": "Wallach cites an 1895 Journal of the American Medical Association report that put doctors' own average lifespan at just 55 years.",
+   "answer_short": "Startlingly short. An 1895 JAMA report put it at 55 years, and Wallach says a century of medicine added only three more — doctors average about 58, still dying younger than the ~75.5-year-old average American.",
    "topics": [
     "conventional-medicine",
     "doctors",
@@ -21858,7 +21858,7 @@
    ],
    "facet": "big_question",
    "question": "How long can humans actually live?",
-   "answer_short": "Wallach puts the human genetic potential for longevity at 120 to 140 years -- the US average lifespan falls as much as 50% short of it.",
+   "answer_short": "About 120 to 140 years -- the human genetic potential for longevity, per Wallach. Real-world lifespans fall as much as 50% short of it.",
    "topics": [
     "longevity",
     "aging",
@@ -21888,7 +21888,7 @@
    ],
    "facet": "stance",
    "question": "Is the Earth running out of the minerals life needs?",
-   "answer_short": "Wallach frames Earth as a finite, limited resource for the raw-material elements that underlie all plant, animal and human life.",
+   "answer_short": "Wallach's starting premise: the Earth is a finite, limited store of the raw-material elements that all plant, animal, and human life is built from -- not an endless supply.",
    "topics": [
     "soil",
     "minerals",
@@ -21917,7 +21917,7 @@
    ],
    "facet": "protocol",
    "question": "How do you live to 145 according to Wallach?",
-   "answer_short": "Reaching the 145-year potential requires consuming each of the 90 essential nutrients in optimal amounts every single day.",
+   "answer_short": "Dodge the “land mines” — tobacco, heavy alcohol, drugs, toxins, needless doctoring — and feed the body all 90 essential nutrients in optimal amounts every day. That is Wallach's entire recipe for reaching humanity's 145-year genetic ceiling.",
    "topics": [
     "longevity",
     "supplements",
@@ -26351,7 +26351,7 @@
    ],
    "facet": "protocol",
    "question": "How do you treat cradle cap?",
-   "answer_short": "Wallach treats cradle cap with regular shampooing to loosen the greasy scale plus vitamin B-6 at 10-25 mg per day and zinc at 15-25 mg per day.",
+   "answer_short": "Loosen the greasy scale with regular shampooing, then fix the deficiency underneath -- vitamin B6 10-25 mg/day and zinc 15-25 mg/day -- and pulse-test for the food allergies that can drive it.",
    "topics": [
     "cradle cap",
     "baby scalp",
@@ -26639,7 +26639,7 @@
    ],
    "facet": "physiology",
    "question": "What deficiencies cause arthritis?",
-   "answer_short": "Wallach attributes arthritis to a deficiency of calcium, magnesium, boron, copper and sulfur.",
+   "answer_short": "A shortage of calcium, magnesium, boron, copper and sulfur. Sulfur deficiency especially drives degenerative arthritis by letting cartilage, ligaments and tendons break down.",
    "topics": [
     "arthritis",
     "joint pain",
@@ -26660,7 +26660,7 @@
    ],
    "facet": "physiology",
    "question": "What deficiencies cause high blood pressure?",
-   "answer_short": "Wallach attributes high blood pressure to a deficiency of calcium, magnesium and boron.",
+   "answer_short": "Chiefly a calcium deficiency — Wallach points to 30-plus studies tying low calcium to high blood pressure — with magnesium and boron shortfalls (and excess dietary phosphorus) making it worse.",
    "topics": [
     "high blood pressure",
     "hypertension",
@@ -26678,7 +26678,7 @@
    ],
    "facet": "physiology",
    "question": "What causes bone spurs and heel spurs?",
-   "answer_short": "Wallach attributes bone spurs, heel spurs and calcium deposits to a deficiency of calcium, magnesium and boron.",
+   "answer_short": "Calcium deficiency, not too much calcium. When the body bleeds calcium (osteoporosis, excess phosphorus, etc.), spurs and deposits form where tendons and ligaments meet bone — and calcium supplementation can reverse them.",
    "topics": [
     "bone spurs",
     "heel spurs",
@@ -26741,7 +26741,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much choline should you take daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives choline a daily range of 10 to 100 mg.",
+   "answer_short": "10 to 100 mg a day.",
    "topics": [
     "choline",
     "choline dosage",
@@ -26792,7 +26792,7 @@
    "also_about": [],
    "facet": "stance",
    "question": "How many Americans are deficient in chromium?",
-   "answer_short": "Per USDA researcher Richard Anderson, 90 percent of Americans are deficient in chromium.",
+   "answer_short": "Almost everyone — the USDA's Richard Anderson put it at 90% of all Americans.",
    "topics": [
     "chromium",
     "chromium deficiency",
@@ -27662,7 +27662,7 @@
    ],
    "facet": "mechanism",
    "question": "What causes osteoporosis?",
-   "answer_short": "Wallach attributes osteoporosis to a deficiency of calcium, magnesium, boron, copper and sulfur.",
+   "answer_short": "A calcium deficiency disease. Too little dietary calcium — worsened by shortfalls of magnesium, boron, copper and sulfur and by excess phosphorus — forces the body to strip calcium from the bones until they thin and break.",
    "topics": [
     "osteoporosis",
     "bone loss",
@@ -28716,7 +28716,7 @@
    ],
    "facet": "stance",
    "question": "Can selenium prevent and reverse disease?",
-   "answer_short": "Wallach reports that in each case selenium supplementation prevented the disease and often reversed or cured existing selenium-deficiency diseases, which were significant causes of animal losses to the livestock industry.",
+   "answer_short": "Yes — Wallach says selenium prevents an entire family of deficiency diseases, from cardiomyopathy and muscular dystrophy to cystic fibrosis, and in many cases reverses or cures them, all for a few pennies a day in livestock.",
    "topics": [
     "selenium",
     "selenium deficiency",
@@ -29360,7 +29360,7 @@
    ],
    "facet": "physiology",
    "question": "What are the signs of germanium deficiency?",
-   "answer_short": "Wallach says germanium deficiency is typified by reduced immune status, arthritis, osteoporosis, low energy and cancer.",
+   "answer_short": "A crashing immune system is the hallmark — Wallach also ties a germanium shortfall to arthritis, osteoporosis, low energy, and cancer.",
    "topics": [
     "germanium",
     "germanium deficiency",
@@ -29924,7 +29924,7 @@
    ],
    "facet": "uses",
    "question": "What is high-pH therapy for cancer?",
-   "answer_short": "Cesium chloride is used in alternative cancer therapy as 'high-pH therapy,' entering the cancer cell to produce an alkaline environment.",
+   "answer_short": "Cesium chloride pushed into the cancer cell to make its interior alkaline — the 'high-pH' approach used in alternative cancer programs.",
    "topics": [
     "cesium",
     "cesium chloride",
@@ -30239,7 +30239,7 @@
    "also_about": [],
    "facet": "mechanism",
    "question": "How do thymus extracts help fight cancer?",
-   "answer_short": "Wallach says thymus extracts enhance thymus-gland function and the immune system, supporting the body's defenses in cancer programs.",
+   "answer_short": "They boost the thymus gland, which in turn strengthens the immune system -- one of several adjunctive tools Wallach stacks into a multi-mode cancer program.",
    "topics": [
     "thymus extract",
     "thymus gland",
@@ -30565,7 +30565,7 @@
    ],
    "facet": "protocol",
    "question": "How do you treat arthritis with supplements?",
-   "answer_short": "Wallach's arthritis treatment includes calcium at 2,000 mg a day (more if you eat meat) plus magnesium at 800-1,000 mg a day.",
+   "answer_short": "Rebuild the joint, don't just kill the pain: calcium 2,000 mg/day (more with meat), magnesium 800-1,000 mg/day, and glucosamine/chondroitin cartilage 1,000 mg three times daily, over the full vitamin-mineral base -- and for rheumatoid arthritis add an antibiotic to clear the Mycoplasma.",
    "topics": [
     "arthritis",
     "joint pain",
@@ -30677,7 +30677,7 @@
    ],
    "facet": "mechanism",
    "question": "What causes osteoarthritis and rheumatoid arthritis?",
-   "answer_short": "Wallach says osteoarthritis and degenerative arthritis are a complex of nutritional deficiencies, while rheumatoid arthritis's overt cause is a chronic Mycoplasma infection.",
+   "answer_short": "Two very different causes: the wear-and-tear kind (osteoarthritis / degenerative arthritis) is a cluster of nutritional deficiencies, while rheumatoid arthritis is really a chronic Mycoplasma infection -- not the autoimmune mystery 'orthodox' medicine claims.",
    "topics": [
     "arthritis",
     "osteoarthritis",
@@ -31493,7 +31493,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How do you treat a sodium deficiency?",
-   "answer_short": "Wallach says the treatment for sodium deficiency is water and salt, taken either orally or intravenously as 0.9% saline.",
+   "answer_short": "Put back exactly what was lost — salt and water. Mild cases take it by mouth; a serious deficiency is corrected intravenously with 0.9% saline.",
    "topics": [
     "sodium",
     "salt",
@@ -31619,7 +31619,7 @@
    ],
    "facet": "physiology",
    "question": "Does tin deficiency cause hair loss?",
-   "answer_short": "Wallach reports that tin deficiency in rats produced poor growth, hearing loss, and bilateral male-pattern hair loss, and he links tin to male-pattern baldness and hearing loss.",
+   "answer_short": "In Wallach's account, rats deprived of tin grew poorly and developed hearing loss and bilateral male-pattern hair loss — the basis for his link between tin deficiency, male-pattern baldness, and hearing loss.",
    "topics": [
     "tin",
     "tin deficiency",
@@ -31797,7 +31797,7 @@
    ],
    "facet": "physiology",
    "question": "What deficiency causes spina bifida and cleft palate in babies?",
-   "answer_short": "Wallach says a folic acid or zinc deficiency causes spina bifida and serious cleft palate in infants.",
+   "answer_short": "A folic-acid and/or zinc deficiency (also B12) in the mother. Wallach calls these 'birth defects' simple mineral deficiencies, not true genetic flaws — and preventable by supplementing before conception.",
    "topics": [
     "folic acid",
     "folate",
@@ -31970,7 +31970,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin D does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin D a range of 1,000 to 2,000 IU per day.",
+   "answer_short": "1,000 to 2,000 IU per day.",
    "topics": [
     "vitamin d",
     "cholecalciferol",
@@ -32080,7 +32080,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin E does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin E (mixed tocopherols) a range of 100 to 200 IU per day.",
+   "answer_short": "100 to 200 IU per day, as mixed tocopherols.",
    "topics": [
     "vitamin e",
     "tocopherols",
@@ -32141,7 +32141,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin K does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin K (K1 or K2) a range of 60 to 300 mcg per day.",
+   "answer_short": "60 to 300 mcg daily, taken as either K1 or K2.",
    "topics": [
     "vitamin k",
     "vitamin k dose",
@@ -32207,7 +32207,7 @@
    "also_about": [],
    "facet": "mechanism",
    "question": "What role does zinc play in DNA and cell division?",
-   "answer_short": "Zinc is an integral part of the RNA molecule (the 'metallic fingers') and takes part in cell division and DNA synthesis.",
+   "answer_short": "Zinc forms the 'metallic fingers' built into RNA and drives cell division and DNA synthesis; the DNA-dependent RNA polymerase and thymidine kinase are both zinc-dependent enzymes.",
    "topics": [
     "zinc",
     "rna",
@@ -32278,7 +32278,7 @@
    ],
    "facet": "physiology",
    "question": "What causes an enlarged prostate?",
-   "answer_short": "Wallach says age-related prostate enlargement (benign prostatic hyperplasia) is usually the result of a zinc deficiency.",
+   "answer_short": "A zinc deficiency. As the prostate enlarges with age its tight outer capsule squeezes down on the neck of the bladder, producing the classic urgency and frequency.",
    "topics": [
     "zinc",
     "enlarged prostate",
@@ -32735,7 +32735,7 @@
    ],
    "facet": "protocol",
    "question": "How do you treat Bell's palsy?",
-   "answer_short": "Wallach treats Bell's palsy with B-12 at 1,000 mcg/day to a total of 20,000 mcg, calcium and magnesium at 2,000 and 800 mg/day, and essential fatty acids at 5 g three times daily.",
+   "answer_short": "Bell's palsy is a facial nerve pinched by bone loss (osteoporosis), so Wallach rebuilds the bone: B12 (1,000 mcg/day up to 20,000 mcg total), calcium/magnesium at 2,000/800 mg, and EFAs 5 g three times daily -- treated properly, up to an 80 percent chance of significant recovery.",
    "topics": [
     "bells palsy",
     "facial paralysis",
@@ -32859,7 +32859,7 @@
    ],
    "facet": "protocol",
    "question": "How do you prevent kidney stones?",
-   "answer_short": "For kidney stones, Wallach says calcium and magnesium at 2,000 and 1,000 mg is imperative to stop calcium loss from the bones, along with reducing meat to fix the calcium-to-phosphorus ratio.",
+   "answer_short": "The stones form because a calcium/magnesium-deficient diet leaches those minerals out of your own bones — so you prevent them by supplying calcium (2,000 mg) and magnesium (1,000 mg) and cutting meat to right the calcium-to-phosphorus ratio.",
    "topics": [
     "kidney stones",
     "calcium",
@@ -33122,7 +33122,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much magnesium does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives magnesium a daily range of 250 to 500 mg.",
+   "answer_short": "250 to 500 mg a day, per 100 lb of body weight.",
    "topics": [
     "magnesium",
     "magnesium dose",
@@ -34057,7 +34057,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much inositol should you take daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives inositol a daily range of 10 to 100 mg.",
+   "answer_short": "10 to 100 mg a day.",
    "topics": [
     "inositol",
     "inositol dose",
@@ -34089,7 +34089,7 @@
    ],
    "facet": "mechanism",
    "question": "Can copper deficiency cause goiter?",
-   "answer_short": "Yes; Wallach says copper is a required cofactor to use iodine, so a copper deficiency can drive an iodine-deficiency (goiter) state even where soil iodine is adequate.",
+   "answer_short": "Yes — because copper is the cofactor the body needs to use iodine, a copper shortage can produce goiter even when iodine in the soil and diet is adequate.",
    "topics": [
     "copper",
     "iodine",
@@ -34316,7 +34316,7 @@
    "also_about": [],
    "facet": "physiology",
    "question": "What is pica a sign of?",
-   "answer_short": "Wallach says pica, a compulsion to eat ice, dirt, or lead paint, is a specific sign of iron deficiency.",
+   "answer_short": "It's a red flag for iron deficiency — the compulsion to eat ice, dirt, or lead paint.",
    "topics": [
     "iron",
     "pica",
@@ -34333,7 +34333,7 @@
    ],
    "facet": "physiology",
    "question": "What are the symptoms of iron deficiency?",
-   "answer_short": "Wallach says iron deficiency symptoms include fatigue, heart palpitations on exertion, reduced cognition and memory, sore tongue, and hypochromic microcytic anemia.",
+   "answer_short": "Low iron shows up as tiredness and listlessness, a pounding heart on exertion, fuzzy thinking and memory slips, a sore tongue, and a pale, small-cell (hypochromic microcytic) anemia.",
    "topics": [
     "iron",
     "iron deficiency",
@@ -34474,7 +34474,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin A does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin A as beta-carotene a daily range of 5,000 to 25,000 IU.",
+   "answer_short": "5,000 to 25,000 IU per day, supplied as beta-carotene.",
    "topics": [
     "vitamin a",
     "beta-carotene",
@@ -34596,7 +34596,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B1 does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin B1 (thiamine) a daily range of 10 to 100 mg.",
+   "answer_short": "10 to 100 mg of thiamine daily.",
    "topics": [
     "vitamin b1",
     "thiamine",
@@ -34672,7 +34672,7 @@
    ],
    "facet": "basics",
    "question": "Why is vitamin B12 red?",
-   "answer_short": "Vitamin B12 is a water-soluble red crystalline substance, and its red color comes from the cobalt atom at its center.",
+   "answer_short": "Because of cobalt — the single cobalt atom bound at the center of the B12 molecule is what gives the water-soluble crystal its red color.",
    "topics": [
     "vitamin b12",
     "cobalamin",
@@ -34799,7 +34799,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B2 does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin B2 (riboflavin) a daily range of 10 to 50 mg.",
+   "answer_short": "10 to 50 mg of riboflavin daily.",
    "topics": [
     "vitamin b2",
     "riboflavin",
@@ -34859,7 +34859,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B3 does Wallach recommend daily?",
-   "answer_short": "In his Epigenetics daily multiple, Wallach gives vitamin B3 (niacin) a daily range of 10 to 100 mg.",
+   "answer_short": "10 to 100 mg of niacin daily.",
    "topics": [
     "vitamin b3",
     "niacin",
@@ -35129,7 +35129,7 @@
    "also_about": [],
    "facet": "mechanism",
    "question": "How does selenium work as an antioxidant?",
-   "answer_short": "Wallach calls selenium the most efficient antioxidant, working through the glutathione peroxidase enzyme system to keep body fats from going rancid.",
+   "answer_short": "Selenium is the body's most efficient antioxidant: acting through the glutathione peroxidase enzyme system, it stops fats from peroxidizing — that is, from going rancid inside your cells.",
    "topics": [
     "selenium",
     "antioxidant",
@@ -35146,7 +35146,7 @@
    ],
    "facet": "warning",
    "question": "Is vegetable oil bad for your heart?",
-   "answer_short": "Wallach says that eating a lot of vegetable oil while low in selenium is the quickest route to a heart attack and cancer.",
+   "answer_short": "Yes — Wallach says lots of vegetable oil plus low selenium is the fastest path to heart attack and cancer, because polyunsaturated oils (especially heated or hydrogenated into trans fats) go rancid and free-radical-damage your cells.",
    "topics": [
     "selenium",
     "vegetable oil",
@@ -35215,7 +35215,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much selenium should you take daily?",
-   "answer_short": "In his Epigenetics daily mineral recommendations, per 100 lb of body weight, Wallach gives selenium a range of 100 to 200 mcg a day.",
+   "answer_short": "100 to 200 mcg a day, per 100 lb of body weight.",
    "topics": [
     "selenium",
     "dosage",
@@ -35556,7 +35556,7 @@
    ],
    "facet": "stance",
    "question": "What causes cataracts?",
-   "answer_short": "Wallach attributes cataracts to a selenium deficiency.",
+   "answer_short": "Wallach counts cataracts as a selenium-deficiency disease of adults — oxidative clouding of the lens for want of the body's chief antioxidant.",
    "topics": [
     "cataracts",
     "selenium",

@@ -18765,8 +18765,8 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "For lupus (SLE), Wallach explicitly tells patients to avoid beef, along with dairy and alfalfa, as part of the treatment program.",
-   "verbatim": "Treatment of SLE includes avoidance of offending food allergens and rotation of non\nallergic foods, autoimmune urine therapy,\nchelation with total nutrition for 15-25 infusions, essential fatty acids (salmon oil and\nflaxseed oil) at 5 gm t.i.d., selenium at 500-\n1,000 mcg per day, B-carnitine at 500 mg per day, AVOID BEEF, DAIRY AND ALFALFA.",
+   "claim_text": "Yes -- systemic lupus erythematosus (SLE, lupus). Wallach's treatment of SLE centers on avoiding offending food allergens and rotating non-allergic foods, and within that program he explicitly directs patients to AVOID BEEF, along with dairy and alfalfa. The beef avoidance sits inside the wider lupus protocol he describes, which also uses autoimmune urine therapy, intravenous chelation with total nutrition, essential fatty acids, selenium, and carnitine.",
+   "verbatim": "Treatment of SLE includes avoidance of offending food allergens and rotation of non\nallergic foods, autoimmune urine therapy,\nchelation with total nutrition for 15-25 infusions, essential fatty acids (salmon oil and\nflaxseed oil) at 5 gm t.i.d., selenium at 500-\n1,000 mcg per day, B-carnitine at 500 mg per day, AVOID BEEF, DAIRY AND ALFALFA",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
