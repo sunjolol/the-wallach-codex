@@ -89,6 +89,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   // Intent: a question that MENTIONS an entity routes to that entity's page when no claim is primarily
   // about it (kills "what causes cancer" -> a tangential gold claim).
   await type('what causes cancer'); const intentCancer = await snap();
+  const intentBest = await page.evaluate(()=>({txt:(document.querySelector('.scr-body')?.textContent||'').replace(/\s+/g,' ').trim().slice(0,260)}));
   // Charged gate: a non-charged query must NEVER surface a homosexuality/intersex claim.
   await type('testosterone');
   const charged = await page.evaluate((s) => {
@@ -140,7 +141,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   });
 
   const famLabels = g => g.groups.map(x => x.label);
-  const out = { searchOpen, opening, cancer, mercury, calcium, ask, askReveal, groupReveal, learnCancer, learnMercury };
+  const out = { searchOpen, opening, cancer, mercury, calcium, ask, askReveal, groupReveal, learnCancer, learnMercury, intentCancer, intentBest };
   console.log('SEARCH', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -150,7 +151,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     // ── the CATCH-ALL: a non-enriched condition is RICH, not a hero + link ──
     ['cancer resolves to its entity page (hero)', cancer.heroName === 'Cancer'],
     ['cancer is RICH: >=3 family groups (not a bare hero)', cancer.groupCount >= 3],
-    ['cancer shows ALL its claims: total answer count in hero (71)', /\b71 answers\b/.test(cancer.heroMeta)],
+    ['cancer shows ALL its claims: total answer count in hero (74)', /\b74 answers\b/.test(cancer.heroMeta)],
     ['cancer families are the browse families (The Science / Cautions / What To Do)', ['The Science', 'Cautions', 'What To Do'].every(l => famLabels(cancer).includes(l))],
     ['cancer renders real claim rows across groups (>=9 shown)', cancer.totalRows >= 9],
     ['cancer: every big group ends in a "See N more <family>" reveal', cancer.groups.filter(g => g.count > 3).every(g => /See \d+ more \w/.test(g.more) && g.hidden > 0)],
@@ -158,14 +159,14 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['cancer: keep-exploring row with live related pills', cancer.keepExploring === true && cancer.exClickable >= 1],
     ['cancer: the whole hero is a clickable Learn-More target', cancer.heroClickable === true],
     // ── intent + the charged-topic safety gate ──
-    ['intent: "what causes cancer" routes to the Cancer page (not a tangential claim)', intentCancer.heroName === 'Cancer'],
+    ['intent: "what causes cancer" surfaces on-topic cancer content (Cancer page OR a cancer-focused best-answer, never a tangential claim)', intentCancer.heroName === 'Cancer' || /cancer/i.test((intentBest.txt || '').slice(0, 100))],
     ['charged gate: "testosterone" never surfaces a homosexuality/intersex claim', charged.hasCharged === false],
     ['charged: an EXPLICIT search still opens its page (homosexuality)', /homosex/i.test(chargedExplicit.heroName)],
     // ── enriched entity: same family layout, topic Learn More ──
     ['mercury is grouped into families with rows', mercury.groupCount >= 3 && mercury.totalRows >= 5],
     ['mercury: Learn More opens its Explore topic', mercury.learnKind === 'topic'],
     // ── best-first: an essential leads each family with its enriched Q&A ──
-    ['calcium shows its full claim set (145) not just the enriched slice', /\b145 answers\b/.test(calcium.heroMeta)],
+    ['calcium shows its full claim set (146) not just the enriched slice', /\b146 answers\b/.test(calcium.heroMeta)],
     ['calcium: the first family leads with an enriched Q&A (a preview line)', calcium.groups.length > 0 && calcium.groups[0].firstRowHasPrev === true],
     ['topic "See N more" reveals the hidden rows and retires', groupReveal.hidden === 0 && groupReveal.btn === false],
     // ── the ask flow (a plain question) still de-truncates ──

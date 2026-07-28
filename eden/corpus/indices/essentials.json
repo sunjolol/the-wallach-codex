@@ -325,7 +325,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 90,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000053",
@@ -366,6 +366,9 @@
         "WAL-CLM-RARE-000099",
         "WAL-CLM-RARE-000170",
         "WAL-CLM-RARE-000171"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000309"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000051",
@@ -756,7 +759,7 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000223",
@@ -773,6 +776,9 @@
         "WAL-CLM-RARE-000220",
         "WAL-CLM-RARE-000221",
         "WAL-CLM-RARE-000222"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000309"
       ],
       "protocol": [
         "WAL-CLM-LETS-000276"
@@ -794,10 +800,12 @@
       "copper",
       "iron",
       "magnesium",
+      "manganese",
       "omega-3",
       "zinc"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1034,7 +1042,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 113,
+    "claim_count": 114,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1091,6 +1099,9 @@
         "WAL-CLM-RARE-000108",
         "WAL-CLM-RARE-000153",
         "WAL-CLM-RARE-000170"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000309"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009",
@@ -1389,7 +1400,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275",
@@ -1408,6 +1419,9 @@
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099"
       ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000309"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000391",
         "WAL-CLM-RARE-000279"
@@ -1425,10 +1439,12 @@
       "copper",
       "lithium",
       "magnesium",
+      "manganese",
       "selenium",
       "sulfur"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "epigenetics",
       "immortality",
       "lets-play-doctor",
@@ -1487,13 +1503,14 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 66,
+    "claim_count": 67,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-IMMORT-000089",
+        "WAL-CLM-IMMORT-000467",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
@@ -1760,7 +1777,6 @@
         "WAL-CLM-RARE-000141",
         "WAL-CLM-RARE-000149",
         "WAL-CLM-RARE-000275",
-        "WAL-CLM-RARE-000302",
         "WAL-CLM-RARE-000303",
         "WAL-CLM-RARE-000308"
       ],
@@ -1791,6 +1807,7 @@
         "WAL-CLM-RARE-000142"
       ],
       "personal_anecdote": [
+        "WAL-CLM-DDDL-000309",
         "WAL-CLM-IMMORT-000104"
       ],
       "prevalence": [
@@ -1934,6 +1951,7 @@
       "iron",
       "lithium",
       "magnesium",
+      "manganese",
       "molybdenum",
       "omega-3",
       "phenylalanine",
@@ -2456,7 +2474,7 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
@@ -2479,6 +2497,9 @@
       "mechanism": [
         "WAL-CLM-DDDL-000027",
         "WAL-CLM-RARE-000178"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000309"
       ],
       "prevalence": [
         "WAL-CLM-RARE-000177"
@@ -2571,11 +2592,14 @@
       "tmj"
     ],
     "interacts_with": [
+      "boron",
       "calcium",
       "choline",
+      "copper",
       "magnesium",
       "omega-3",
       "selenium",
+      "sulfur",
       "taurine",
       "tin",
       "vitamin-b12",
@@ -2633,7 +2657,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 109,
+    "claim_count": 113,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-EPIGEN-000177"
@@ -2682,6 +2706,12 @@
         "WAL-CLM-RARE-000094",
         "WAL-CLM-RARE-000225",
         "WAL-CLM-RARE-000226"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-DDDL-000301",
+        "WAL-CLM-EPIGEN-000456",
+        "WAL-CLM-EPIGEN-000457",
+        "WAL-CLM-EPIGEN-000458"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
@@ -2999,10 +3029,11 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 36,
+    "claim_count": 37,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
+        "WAL-CLM-IMMORT-000467",
         "WAL-CLM-LETS-000043",
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
@@ -3123,6 +3154,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]

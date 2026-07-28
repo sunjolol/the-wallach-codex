@@ -636,40 +636,6 @@
       "reviewed_by": null
     },
     {
-      "id": "WAL-CLM-IMMORT-000020",
-      "kind": "definition",
-      "essentials": [],
-      "other_substances": [],
-      "conditions": [
-        "homosexuality"
-      ],
-      "symptoms": [],
-      "claim_text": "For searchers looking for Wallach's position: among the developmental problems he attributes to nutritional deficiency during fetal development, he lists sexual orientation - 'gay orientation' - alongside dyslexia, spina bifida, neural tube defects, cleft lip and palate, heart defects, cerebral palsy and Down syndrome. Consistent with his other writing, he frames it as a preventable congenital event tied to maternal nutritional deficiency rather than a lifestyle choice. Presented faithfully and neutrally as his view.",
-      "verbatim": "developmental (i.e.\n- dyslexia, gay orientation, spina bifida, neural tube defects,\ncleft lip, cleft palate, heart defects, cerebral palsy, Downs\nSyndrome, etc.)",
-      "locator": {
-        "book": "immortality",
-        "scheme": "screenshot",
-        "chapter": null,
-        "page": 86,
-        "screenshot": 56,
-        "kindle_location": null,
-        "char_offset": 155905
-      },
-      "dose": null,
-      "tags": [
-        "search-topic:homosexuality",
-        "developmental",
-        "congenital",
-        "wallach-stance"
-      ],
-      "confidence": "high",
-      "review_state": "draft",
-      "superseded_by": null,
-      "extracted_at": "2026-07-03T14:11:20+00:00",
-      "reviewed_at": null,
-      "reviewed_by": null
-    },
-    {
       "id": "WAL-CLM-IMMORT-000022",
       "kind": "definition",
       "essentials": [
@@ -15725,6 +15691,362 @@
       "review_state": "draft",
       "superseded_by": null,
       "extracted_at": "2026-07-28T04:37:23+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000467",
+      "kind": "deficiency_sign",
+      "essentials": [
+        "chromium",
+        "vanadium"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "According to Wallach, reaching first for high-fructose-corn-syrup-laden soft drinks is a sign of mineral deficiency rather than simple thirst. Chromium and vanadium deficiencies manifest as an intense thirst for liquid — and minerally deficient people reach for HFCS soft drinks first and plain water last — together with a hunger for carbohydrates such as soft drinks, sweetened coffee and tea, alcohol, pasta, desserts, and bread.",
+      "verbatim": "Chromium and vanadium deficiencies are manifested\nby an intense thirst for liquid (high fructose corn syrup laden\nsoft drinks being the usual first choice and water the last for\nminerally deficient humans) and hunger for carbohydrates\n(i.e. - soft drinks, coffee and tea with added sugar, alcohol,\npasta, deserts, bread, etc.).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 471626
+      },
+      "dose": null,
+      "tags": [
+        "high_fructose_corn_syrup",
+        "chromium",
+        "vanadium",
+        "cravings",
+        "soft-drinks"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000468",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach explains that high-fructose corn syrup is a manufactured sweetener made from grains (corn) as well as from sugar beet and sugar cane. Fructose — also called levulose or fruit sugar — occurs naturally with glucose and sucrose in honey and fruit and is the sweetest of the natural sugars; sweeteners containing glucose and levulose are processed from these crops to make high-fructose corn syrup.",
+      "verbatim": "Fructose: (levulose, fruit sugar) is found together with\nglucose and sucrose in honey and fruit. It is the sweetest of the\nnatural sugars. Sweeteners containing glucose and levulose\ncan be made from grains (corn) as well as from the sugar beet\nand sugar cane to make high-fructose corn syrup.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 104841
+      },
+      "dose": null,
+      "tags": [
+        "high_fructose_corn_syrup",
+        "fructose",
+        "sweeteners",
+        "sugar"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000469",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach recounts that in the 1940s professors A.H. Carlson and F. Holzol added a \"creative twist\" to the caloric-restriction (CR) longevity approach by testing intermittent periods of fasting in rats. The animals were free-choice fed a high-quality diet rich in vitamins and minerals in unlimited amounts, but were fasted completely every other day (one group), every third day (another group), or every fourth day (a third group). As Wallach reports the result, the un-fasted rats reached a maximum life span of 800 days, while all three intermittently fasted groups extended maximum life span to 1,000 to 1,100 days — a 20 to 30% increase. Wallach presents intermittent fasting here as a variant of his \"under-nutrition without malnutrition\" theme: the fasting is paired with a nutrient-dense diet on the eating days, not with starvation.",
+      "verbatim": "In the 1940s, professors A.H. Carlson and F. Holzol\nadded a creative twist to the concept of the CR diet by studying\nthe effects of intermittent periods of fasting on the life span\nof rats. They free choice fed rats a high-quality diet rich in\nvitamins and minerals in unlimited amounts, but fasted them\ncompletely every other day; another group was fasted every\nthird day and another group fasted every fourth day.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 58695
+      },
+      "dose": null,
+      "tags": [
+        "intermittent_fasting",
+        "fasting",
+        "longevity",
+        "caloric-restriction"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000470",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites Dr. Charles Goodrick of the National Institute on Aging (Gerontology Research Unit), who studied intermittent fasting by giving the control group a \"perfect diet\" while fasting the study group every other day. According to Wallach, the every-other-day fasted rats increased maximum life span from 875 days (the normally fed rats) to 1,295 days, and raised the 50% survival point from 630 days to 980 days. Wallach presents this as further evidence that intermittent fasting — alternating fed days with complete fast days on a nutrient-rich diet — increases both the average and the maximum life span of animals.",
+      "verbatim": "Dr. Charles Goodrick of the National Institute on\nAging (Gerontology Research Unit) studied intermittent\nfasting by feeding the control a perfect diet while the study\ngroup was fasted every other day. Maximum life span was\nincreased from the 875 days of the normally fed rats to 1,295\nin the restricted rats, from 630 days 50% survival to 980 days.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 59326
+      },
+      "dose": null,
+      "tags": [
+        "intermittent_fasting",
+        "fasting",
+        "longevity",
+        "every-other-day-fasting"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000471",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "As a comparative pathologist, Dr. Joel Wallach performed more than 20,000 autopsies: over 17,500 on captive wild animals, laboratory species, and domestic animals spanning more than 454 species, plus 3,000 humans for comparison. Each autopsy included a review of the clinical records, microscopic and electron-microscopic examination of the tissues, microbiology cultures for fungi, bacteria and viruses, and chemical and biochemical profiles. This body of comparative autopsy work is the foundation Wallach cites for his nutritional framework.",
+      "verbatim": "As a comparative pathologist, I (Wallach) performed\nmore than 20,000 autopsies of over 17,500 captive wild\nanimals, laboratory species and domestic animals, of over 454\nspecies and 3,000 humans for a comparison.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 97839
+      },
+      "dose": null,
+      "tags": [
+        "twenty_thousand_autopsies",
+        "wallach",
+        "comparative-pathology",
+        "autopsies"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000472",
+      "kind": "personal_anecdote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach's autopsy program grew out of a $7.5 million grant from the National Institutes of Health, secured by zoo director Marlin Perkins and Washington University botany professor Dr. Barry Commoner. The project, the Center for the Biology of Natural Systems, was created to autopsy zoo animals and urban-dwelling humans who had died of natural causes, to determine whether environmental pollution or food contamination might be a factor in their deaths. What the autopsies actually found was that every animal and every human dying of natural causes died of a nutritional deficiency disease rather than of pollution.",
+      "verbatim": "Perkins and Dr. Barry Commoner, a professor of Botany\nat Washington University, had gotten a $7.5 million grant\nfrom the National Institutes of Health, to perform autopsies\non zoo animals and urban dwelling humans who had died of\n“natural causes” to determine whether or not pollution might\nbe a factor in their causes of death.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 97509
+      },
+      "dose": null,
+      "tags": [
+        "twenty_thousand_autopsies",
+        "wallach",
+        "history",
+        "nih",
+        "pollution"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000473",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach recounts that in 1912 Dr. Alexis Carrel, a Nobel laureate for pioneering end-to-end anastomosis (the suturing together of blood vessels), began growing undifferentiated fibroblasts, connective-tissue cells he calls 'stem cells,' from chicken hearts in flasks at the Rockefeller Institute. Fed on filtered extracts of blended chicken embryos, these cultures kept multiplying and growing for 34 years, including two years after Carrel's own death. Wallach presents this as the basis of 'cellular immortality': the theory that cells are inherently immortal if they are fed a perfect diet and kept in a perfect environment.",
+      "verbatim": "In 1912, Dr. Alexis Carrel, who had won the Nobel\nPrize for developing the original technique for “end to end\nanastomosis (joining) of blood vessels with fine suture,”\nbegan to grow undifferentiated fibroblasts (connective tissue\ncells aka “stem cells”) from chicken hearts in flasks in his\nlaboratory at the Rockefeller Institute.\n\nHe fed these isolated and undifferentiated fibroblast or\n“stem cells” with filtered extracts of blended chicken embryos\nand the “stem cells” kept multiplying and growing for 34\nyears (including 2 years after Carrel’s own death).",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 38686
+      },
+      "dose": null,
+      "tags": [
+        "stem_cells",
+        "cellular immortality",
+        "aging",
+        "longevity"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000474",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach states that a high-protein, low-carbohydrate diet is relatively forgiving of a low vitamin intake, but unforgiving of a low mineral diet — meaning that on this kind of eating plan a shortfall of minerals is far more damaging than a shortfall of vitamins.",
+      "verbatim": "A high protein, low carbohydrate diet is relatively\nforgiving of a low vitamin intake, but unforgiving of a low\nmineral diet.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 713561
+      },
+      "dose": null,
+      "tags": [
+        "low_carb_diet",
+        "high-protein",
+        "minerals",
+        "vitamins"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000475",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Ma Lan is Dr. Joel Wallach's wife and long-time co-author. She was educated in the People's Republic of China, received her MD from Beijing Medical University, took her residency at the People's Hospital in Beijing, and served as a staff surgeon at the Canton Air Force Hospital. She earned an MS in transplantation immunology from Zhongshan Medical University in Canton and, like all Chinese doctors, was trained in Traditional Chinese Medicine (acupuncture, herbs, manipulation, food medicine, massage, and hydrotherapy) before entering Western-style medical school. She has ten peer-reviewed publications, co-authored nine best-selling alternative-health books with Wallach, and attained the rank of Lieutenant in the Chinese Air Force as a general surgeon.",
+      "verbatim": "Dr. Ma Lan was educated in the Peoples Republic of\nChina. Dr. Ma Lan received her MD (medical degree)from the\nBeijing Medical University; took her residency at the People’s\nHospital, Beijing and was staff surgeon at the Canton Air\nForce Hospital; she received her MS (Master of Science)\nin transplantation immunology from Zhongshan Medical\nUniversity, Canton, Peoples Republic of China; as with\nall Chinese doctors, Dr. Ma Lan was trained in Traditional\nChinese Medicine (i.e.- acupuncture, herbs, manipulation,\nfood medicine, massage and hydrotherapy) prior to entering\nthe Western-style medical schools.",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 8290
+      },
+      "dose": null,
+      "tags": [
+        "ma_lan",
+        "wallach",
+        "biography"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000476",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In the ORAC table of common foods and drinks that Dr. Wallach reproduces in Immortality, noni juice is listed with an ORAC (Oxygen Radical Absorbance Capacity) value of 398 per serving, near the other exotic juices he cites (mangosteen juice at 498 and wolfberry/goji juice at 363). Wallach uses ORAC as the measure of a food's antioxidant / free-radical-neutralizing power, and states that the optimal total daily intake to reach the age of 100 is 20,000 to 25,000 ORAC points per day.",
+      "verbatim": "Noni juice 398\nMangosteen juice 498\nWolfberry (Gogi) juice 363",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 644765
+      },
+      "dose": null,
+      "tags": [
+        "noni_juice",
+        "orac",
+        "antioxidants"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-IMMORT-000477",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In Immortality, cataloging long-lived populations, Wallach notes that the classical Mediterranean diet is \"legendary for its health benefits,\" citing the Greek island of Symi as a well-known success story with the wish \"may you live to be one hundred and more.\" He describes Symi (population 2,700) as having the region's best health record and highest longevity, with men and women still working their herds, gardens and yogurt into their nineties on a diet of fish, olive oil, tomato sauces, goat's cheese, Greek yogurt, red meat, vegetables, salads, fruit and red wine.",
+      "verbatim": "The classical Mediterranean diet is legendary for its\nhealth benefits and the Greek island of Symi is a well known\nsuccess story - “may you live to be one hundred and more.”",
+      "locator": {
+        "book": "immortality",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 549712
+      },
+      "dose": null,
+      "tags": [
+        "mediterranean_diet",
+        "longevity",
+        "blue zones",
+        "symi",
+        "diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
     }

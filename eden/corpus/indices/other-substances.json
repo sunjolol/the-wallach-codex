@@ -1,14 +1,13 @@
 {
   "acetaminophen": {
     "display_name": "Acetaminophen",
-    "claim_count": 6,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000392",
         "WAL-CLM-LETS-000393",
-        "WAL-CLM-LETS-000447",
         "WAL-CLM-LETS-000453"
       ]
     },
@@ -18,7 +17,6 @@
       "headache",
       "otitis",
       "pain",
-      "teething",
       "tooth_decay",
       "toothache"
     ],
@@ -445,7 +443,7 @@
   },
   "aspirin": {
     "display_name": "Aspirin",
-    "claim_count": 7,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000274",
@@ -453,7 +451,6 @@
         "WAL-CLM-LETS-000392",
         "WAL-CLM-LETS-000393",
         "WAL-CLM-LETS-000418",
-        "WAL-CLM-LETS-000447",
         "WAL-CLM-LETS-000453"
       ]
     },
@@ -464,7 +461,6 @@
       "otitis",
       "pain",
       "rheumatic_fever",
-      "teething",
       "tooth_decay",
       "toothache"
     ],
@@ -1562,9 +1558,10 @@
   },
   "cayenne": {
     "display_name": "Cayenne",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000375",
         "WAL-CLM-LETS-000404",
@@ -1578,6 +1575,7 @@
       "raynauds_disease"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -3388,7 +3386,7 @@
   },
   "german-chamomile": {
     "display_name": "German Chamomile",
-    "claim_count": 9,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000269",
@@ -3397,7 +3395,6 @@
         "WAL-CLM-LETS-000375",
         "WAL-CLM-LETS-000397",
         "WAL-CLM-LETS-000434",
-        "WAL-CLM-LETS-000447",
         "WAL-CLM-LETS-000452",
         "WAL-CLM-LETS-000466"
       ]
@@ -3411,7 +3408,6 @@
       "periodontal_disease",
       "sore_throat",
       "sty",
-      "teething",
       "tonsillitis",
       "wounds"
     ],
@@ -3670,9 +3666,11 @@
   },
   "hawthorn": {
     "display_name": "Hawthorn",
-    "claim_count": 9,
+    "claim_count": 11,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000315",
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000253",
@@ -3696,6 +3694,7 @@
       "tachycardia"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -3835,9 +3834,10 @@
   },
   "horsetail": {
     "display_name": "Horsetail",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000332",
         "WAL-CLM-LETS-000404",
         "WAL-CLM-LETS-000433"
@@ -3850,6 +3850,7 @@
       "poor_circulation"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -4467,9 +4468,10 @@
   },
   "lavender": {
     "display_name": "Lavender",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000272",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000377",
@@ -4496,6 +4498,7 @@
       "toothache"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -4683,9 +4686,10 @@
   },
   "lily-of-the-valley": {
     "display_name": "Lily Of The Valley",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000253",
         "WAL-CLM-LETS-000378",
@@ -4703,6 +4707,7 @@
       "tachycardia"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -6402,9 +6407,10 @@
   },
   "rosemary": {
     "display_name": "Rosemary",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000272",
         "WAL-CLM-LETS-000308",
         "WAL-CLM-LETS-000379",
@@ -6422,6 +6428,7 @@
       "sore_throat"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -6630,9 +6637,10 @@
   },
   "scotch-pine": {
     "display_name": "Scotch Pine",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000317",
         "WAL-CLM-LETS-000375",
         "WAL-CLM-LETS-000404"
       ]
@@ -6642,6 +6650,7 @@
       "poor_circulation"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -6682,16 +6691,24 @@
   },
   "shark-cartilage": {
     "display_name": "Shark Cartilage",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-DDDL-000312",
         "WAL-CLM-LETS-000198"
+      ],
+      "protocol": [
+        "WAL-CLM-DDDL-000313"
+      ],
+      "quote": [
+        "WAL-CLM-DDDL-000314"
       ]
     },
     "conditions_treated": [
       "cancer"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -6713,9 +6730,10 @@
   },
   "shark-liver-oil": {
     "display_name": "Shark Liver Oil",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
+        "WAL-CLM-DDDL-000312",
         "WAL-CLM-LETS-000198"
       ]
     },
@@ -6723,6 +6741,7 @@
       "cancer"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },

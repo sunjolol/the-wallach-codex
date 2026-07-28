@@ -3101,7 +3101,7 @@
   },
   "nausea": {
     "display_name": "Nausea",
-    "claim_count": 10,
+    "claim_count": 11,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -3159,6 +3159,7 @@
       }
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"
@@ -3403,7 +3404,7 @@
   },
   "palpitations": {
     "display_name": "Palpitations",
-    "claim_count": 8,
+    "claim_count": 10,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -3485,6 +3486,7 @@
       }
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -4476,7 +4478,7 @@
   },
   "tachycardia": {
     "display_name": "Tachycardia",
-    "claim_count": 1,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "flavonoids",
@@ -4633,7 +4635,7 @@
   },
   "vomiting": {
     "display_name": "Vomiting",
-    "claim_count": 4,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "sodium",
@@ -4661,6 +4663,7 @@
       }
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor",
       "rare-earths"
     ]

@@ -2441,6 +2441,695 @@
       "extracted_at": "2026-07-28T04:37:23+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000075",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach takes a moderate view of sugar substitutes such as Splenda. He acknowledges there is considerable public controversy over their use, but states that used in moderation they are “considered” safe and have been used for years, and that they let you satisfy a sweet tooth without adding significant calories. Practically, he notes Splenda can be substituted teaspoon for teaspoon for sugar in baking.",
+      "verbatim": "used in moderation they are “considered” safe and have been \nused for years. Typically, Splenda can be used teaspoon for teaspoon \nof sugar for baking.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 492357
+      },
+      "dose": null,
+      "tags": [
+        "sucralose",
+        "splenda",
+        "sugar-substitutes",
+        "sweeteners",
+        "diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000076",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes Splenda — also known as Sucralose — as a natural substance extracted from sugar cane. He sets it apart from the man-made sweeteners: aspartame (sold as Nutrasweet and Equal), which is created by joining two amino acids, and saccharin (Sweet and Low), a man-made chemical discovered in the 1800s. Stevia, the fourth substitute he lists, is an herb (Stevia rebaudiana).",
+      "verbatim": "1. Aspartamine - (also known as Nutrasweet and Equal) \nA man made sweetener created by joining two amino acids. \n2. Splenda - (also known as Sucralose) A natural substance \nextracted from sugar cane.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 492510
+      },
+      "dose": null,
+      "tags": [
+        "sucralose",
+        "splenda",
+        "sugar-substitutes",
+        "sweeteners",
+        "diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000077",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach notes that during 2004 Splenda became the number one blended sweetener in the United States, selling more than all the other brands of “faux” and real sugar. He adds that sugar substitutes have nonetheless failed to fully replace sugar for baking, because sugar does more than sweeten — it helps a cake rise, gives it volume and texture, caramelizes to produce the golden-brown color of quality baked goods, and provides greater shelf life.",
+      "verbatim": "During 2004, Splenda became the number one blended sweet- \nener in the U.S., selling more than all the other brands of “faux” and \nreal sugar.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 492864
+      },
+      "dose": null,
+      "tags": [
+        "sucralose",
+        "splenda",
+        "sugar-substitutes",
+        "sweeteners"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000078",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes high-fructose corn syrup as a cheap industrial sweetener that has taken over the American food supply. About five percent of U.S. corn is converted into it because it is more economical, sweeter, and easier to handle than granulated sugar. Soft drink and juice manufacturers are encouraged to use the low-priced corn syrup in just about every canned, bottled, frozen, baked, and bagged \"food,\" where it replaced the far more nutritious materials — one of the ways the modern processed diet lost its nutrition.",
+      "verbatim": "About fifty seven percent of the American corn that is produced is fed \nto livestock, five percent is converted to high fructose corn syrup, which is \nmore economical, sweeter and easier to handle than granulated sugar. \nSoft drink and juice manufacturers are encouraged to use the low priced \ncorn syrup in just about every canned, bottled, frozen, baked and bagged \n“food,” in which it replaced the far more nutritious materials.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 345846
+      },
+      "dose": null,
+      "tags": [
+        "high_fructose_corn_syrup",
+        "hfcs",
+        "processed-food",
+        "sugar",
+        "diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000079",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "As part of his program to eliminate sugar from the diet, Wallach warns against low-fat and 98% fat-free yogurt because they are loaded with sugar. He lists them among the sweetened foods to give up — alongside candy, ice cream, pastries, boxed cereals, fruit juices, honey and colas — in order to reduce the risk of obesity, diabetes, cardiovascular disease, the Metabolic Syndrome, dementia and cancer.",
+      "verbatim": "No low fat yogurt or 98% fat free yogurt (they are loaded \nwith sugar)",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 491731
+      },
+      "dose": null,
+      "tags": [
+        "yogurt",
+        "sugar",
+        "diet",
+        "weight-loss"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000080",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach describes how a microwave oven cooks food: it bombards the food with ultra-short microwaves, and when those microwaves strike the food they make the water molecules inside vibrate millions of times per second. That vibration generates friction, and the friction produces the heat that cooks the food \"from the inside out.\" He notes this in the context of the first home microwave ovens going on sale.",
+      "verbatim": "The first home microwave ovens go on sale. The ovens work by \nbombarding food with ultra-short microwaves. When the microwaves \nstrike the food, they cause the water molecules inside to vibrate mil- \nlions of times per second which generates friction, which produces \nheat that cooks the food “from the inside out.”",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 308502
+      },
+      "dose": null,
+      "tags": [
+        "microwaving_food",
+        "microwave",
+        "cooking",
+        "food-handling"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000081",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "According to Wallach's history of the modern kitchen, the first microwave ovens were marketed in the United States in 1947, but sales were initially far less than had been hoped for. Home microwave ovens did not go on sale until roughly two decades later.",
+      "verbatim": "In 1947, the first microwave ovens were marketed in the United \nStates, however, sales were initially far less than had been hoped for.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 268026
+      },
+      "dose": null,
+      "tags": [
+        "microwaving_food",
+        "microwave",
+        "history",
+        "kitchen-appliances"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000082",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Wallach considers his own 'See Food Diet' the best of the low-carbohydrate, low-glycemic-index diets. What sets it apart from every other low-carb plan, he says, is that it weights mineral intake far more heavily and treats it as more important than parsing the exact percentages of carbohydrates, fats and proteins.",
+      "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and pro- \nteins.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 500480
+      },
+      "dose": null,
+      "tags": [
+        "low_carb_diet",
+        "atkins",
+        "weight-loss",
+        "minerals",
+        "see-food-diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000083",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "obesity"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach argues low-carbohydrate diets are not the solution to obesity on their own: if they were, he says, we wouldn't be facing a projection of forty percent of Americans being obese by 2010. He grants that low-carb eating and low glycemic loads can speed up weight loss, but warns that if cutting carbs is your sole consideration you are 'in for a rude awakening.'",
+      "verbatim": "If low carbohydrate diets were the answer to our obesity problem \nwe wouldn't have the projection of forty percent of Americans being \nobese by 2010.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 501147
+      },
+      "dose": null,
+      "tags": [
+        "low_carb_diet",
+        "obesity",
+        "weight-loss",
+        "atkins"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000084",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach warns that low-carb weight loss is not automatically safe. To lose weight safely and avoid its common pitfalls — heart attacks, liver damage, high blood pressure, Beriberi, arthritis, osteoporosis, periodontal disease, cancer, sudden death, stroke and kidney stones — a dieter must protect against mineral nutritional deficiencies, which he says drive 'psychotic eating,' and against the free-radical damage generated by burning body fat.",
+      "verbatim": "To lose weight safely and prevent the \ncommon pitfalls of weight loss (i.e. - heart attacks, liver damage, \nhigh blood pressure, Beriberi, arthritis, osteoporosis, periodontal dis- \nease, cancer, sudden death, stroke, kidney stones, etc.), one has to \nprotect themselves from the ravages of mineral nutritional deficien- \ncies that result in psychotic eating and free radical damage generated \nby burning body fat.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 501605
+      },
+      "dose": null,
+      "tags": [
+        "low_carb_diet",
+        "atkins",
+        "weight-loss",
+        "safety",
+        "minerals"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000085",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cautions that burning body fat for fuel — the goal of a low-carb diet — is not a danger-free process. Like the combustion of any fuel (wood, coal, oil, gasoline, sugar or fat), it produces wastes, pollution and dangerous byproducts including free radicals, which he says must be neutralized with an aggressive, proactive antioxidant plan.",
+      "verbatim": "The burning of body fat is not a danger free process. The com- \nbustion of all fuels, including wood, coal, oil, gasoline, sugar and fat, \nproduces wastes, pollution and dangerous combustion byproducts \nincluding free radicals.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 502021
+      },
+      "dose": null,
+      "tags": [
+        "low_carb_diet",
+        "free-radicals",
+        "antioxidants",
+        "ketosis"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000086",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "In Wallach's shortest description, a low-carb diet is conceived to keep blood sugar levels from having wild fluctuations. Its purpose is to 'steady' blood sugar, which helps reduce episodes of ravenous hunger; the amount and type of carbohydrates are limited to lower the body's glucose and insulin levels and make weight management easier.",
+      "verbatim": "In the shortest possible description and purpose of a low carb \ndiet, one can say that it is conceived to keep blood sugar levels from \nhaving wild fluctuations. The purpose is to “steady” blood sugar lev- \nels, which will help reduce episodes of ravenous hunger.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 502454
+      },
+      "dose": null,
+      "tags": [
+        "low_carb_diet",
+        "atkins",
+        "blood-sugar",
+        "diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000087",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "breast_cancer",
+        "prostate_cancer",
+        "colon_cancer"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach identifies heterocyclic amines as free radicals that form in well-done meat and burnt animal fat. He calls them extremely dangerous, warning that they can raise a person's risk of breast, prostate, and colon cancer by as much as 462 percent. It is the reason he tells people never to eat meat cooked well done or with the fat burnt.",
+      "verbatim": "Heterocyclic amines are free radicals that are found in well done \nmeat and burnt animal fat. They are extremely dangerous and can \nincrease one’s risk of breast, prostate and colon cancer by as much as \n462 percent!",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 487337
+      },
+      "dose": null,
+      "tags": [
+        "grilled_bbq_meat",
+        "cancer",
+        "heterocyclic-amines",
+        "red-meat",
+        "diet"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000088",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Joel Wallach recounts that the dialysis machine — the \"artificial kidney\" — was developed by Dr. Willem Kolff, a Dutch physician, and was first employed in the United States. He describes how it works: blood from a patient's artery is diverted into the machine, which looks like a large rotating cylinder or drum. The blood enters a cellulose membrane wrapped around the drum, and as the drum rotates the cellulose is submerged in a saline solution. The membrane allows metabolic wastes to pass out of the blood while the blood cells are too large to pass through, and the cleansed blood is then pumped back into the patient.",
+      "verbatim": "Dr. Willem Kolff, a Dutch physician, developed an “artificial kid- \nney” or dialysis machine, which was first employed in the United \nStates. Blood from a patient's artery is diverted into the dialysis ma- \nchine, which looks like a large rotating cylinder or drum. The blood \nenters a cellulose membrane, which is wrapped around the drum. As \nthe drum rotates, the cellulose in submerged in a saline solution. The \nmembrane allows metabolic wastes to pass out of the blood. The \nblood cells are too large to pass through the membrane. The cleansed \nblood is then pumped back into the patient.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 299569
+      },
+      "dose": null,
+      "tags": [
+        "dialysis",
+        "artificial-kidney",
+        "medical-history",
+        "kidney"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000089",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Joel Wallach defines dialysis as a separation process: inorganic colloidal material that readily passes through filter paper can be separated from dissolved substances such as starch, sugar or salt by placing the mixture in a parchment shell surrounded by distilled water. The inorganic colloids are \"too large\" to pass through the semi-permeable membrane, while the molecules of salt, starch and sugar (which separate into individual atoms or very small molecules) pass readily through it. Wallach invokes this principle to explain mineral absorption: during digestion, minerals from food or supplements become inorganic colloids too large to cross the intestinal wall, and only a small percentage — chelated by amino acids into organic \"crystalloids\" — can be dialyzed through the intestinal membrane into the bloodstream.",
+      "verbatim": "Inorganic colloidal material which readily passes through filter \npaper may be separated from dissolved substances, such as starch, \nsugar or salt, by placing the mixture of mineral colloid and non- \ncolloid in a parchment shell surrounded by distilled water. The inor- \nganic colloids are “too large” to pass through the membrane, but the \nmolecules of salt, starch and sugar or any other dissolved substance \npass readily through the semi-permeable membrane (they separate \ninto individual atoms or very small molecules). This kind of separa- \ntion process is called dialysis.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 426432
+      },
+      "dose": null,
+      "tags": [
+        "dialysis",
+        "colloidal-minerals",
+        "minerals",
+        "absorption"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000090",
+      "kind": "protocol",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Wallach recommends using a high-ORAC-value antioxidant juice such as noni (or mangosteen) as a salad dressing at home, as part of his weight-loss eating plan. In his Hell's Kitchen recipes he specifically calls for 'mineral enriched noni juice' as a salad dressing (which he says 'tastes like vinaigrette') and even as a marinade for pork tenderloin. When dining out, where a noni dressing isn't available, he instead uses his 'Salad Fork Trick' of barely dipping the fork into the dressing, which he says gives up about ninety-five percent of the calories.",
+      "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 508786
+      },
+      "dose": null,
+      "tags": [
+        "noni_juice",
+        "antioxidants",
+        "orac",
+        "weight-loss",
+        "salad-dressing"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000091",
+      "kind": "food_source",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Wallach lists noni among the fruits that contain antioxidants in substantial quantities, alongside blueberries, cherries, kiwis, pink grapefruit, oranges, plums, prunes, raisins, raspberries, red grapes, strawberries, boysenberries, pomegranate and mangosteen. He believes antioxidants will be added to the list of essential nutrients, because without them the body cannot protect itself from dietary and environmental free radicals or attain maximum life spans. He stresses this especially for people burning body fat, since burned fat produces free-radical waste products (trans fats, oxidized fats and ceroid lipofuscin).",
+      "verbatim": "An- \ntioxidants are found in substantial quantities in: \nFruit - blueberries, cherries, kiwis, pink grapefruit, oranges, plums, \nprunes, raisins, raspberries, red grapes, strawberries, boysenberries, \npomegranate, noni and mangostein.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 614780
+      },
+      "dose": null,
+      "tags": [
+        "noni_juice",
+        "antioxidants",
+        "free-radicals",
+        "aging"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000092",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Dr. Wallach endorses low-carbohydrate, low-glycemic-index eating and calls his own 'See Food Diet' the best of the best among such diets. What sets his approach apart is that it weights mineral intake as more important than parsing the exact percentages of carbohydrates, fats and proteins, because in his framework the root cause of obesity is mineral deficiency, not the macronutrient ratio. Low-carbohydrate diets and low glycemic loads can speed up weight loss, but if low carbs are your sole consideration, he warns, you are in for a rude awakening.",
+      "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and pro- \nteins.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 500480
+      },
+      "dose": null,
+      "tags": [
+        "keto_diet",
+        "low-carb",
+        "weight-loss",
+        "dieting"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000093",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "weight_loss"
+      ],
+      "symptoms": [],
+      "claim_text": "A low-carbohydrate (keto) diet limits both the total amount and the type of carbohydrate to lower the body's glucose and insulin levels and make weight loss and weight management easier. In its initial phase the dieter can eat unlimited meat and fat but must keep carbohydrates to twenty grams or less per day, about one slice of bread, and for the first fourteen days eats no fruit, bread, pasta, grains, milk or even ketchup. Its stated purpose, as Wallach describes it, is 'to create a state of ketosis, encouraging your body to burn fat for energy rather than carbohydrates.'",
+      "verbatim": "3. Low Carb - The total amount and the type of carbohydrates \nare limited to reduce the body’ glucose and insulin levels in an effort \nto make weight loss and weight management easier. \nIn the diet’s initial phase, one can eat unlimited meat and fat, \nhowever, carbohydrates must be limited to twenty grams of carbo- \nhydrates or less per day (approximately one slice of bread). \nFor the first fourteen days, the dieter consumes no fruit, bread, \npasta, grains, milk or even ketchup. The stated purpose of the low \ncarb diet, “is to create a state of ketosis, encouraging your body to \nburn fat for energy rather than carbohydrates.”",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 498236
+      },
+      "dose": null,
+      "tags": [
+        "keto_diet",
+        "low-carb",
+        "ketosis"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000094",
+      "kind": "quote",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [
+        "kidney_stones"
+      ],
+      "symptoms": [],
+      "claim_text": "Wallach warns that popular low-carb, high-protein weight-loss diets have forgotten the minerals: an unsupplemented high-protein diet can increase the risk of kidney stones. This is a central reason his own low-carb approach weights mineral supplementation more heavily than the carbohydrate, fat and protein percentages that other low-carb diets fixate on.",
+      "verbatim": "They certainly have forgot- \nten the minerals and an unsupplemented high protein diet can in- \ncrease the risk of kidney stones.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 499946
+      },
+      "dose": null,
+      "tags": [
+        "keto_diet",
+        "low-carb",
+        "kidney-stones",
+        "high-protein"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000095",
+      "kind": "definition",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "The 'See Food Diet' is Dr. Wallach's own weight-loss plan. He argues that other diets fail universally because they don't address what he considers the real root cause of obesity -- mineral deficiency. The See Food Diet's defining difference is that, by correcting that deficiency, it eliminates the pica, cravings, binge-eating, 'munchies,' and 'stand in front of the open refrigerator' syndrome that make other diets fail -- which, he says, is what makes lasting success achievable for everyone.",
+      "verbatim": "The basic reasons for the universal failure of “weight loss diets” \nof any ilk, is that they don’t deal with the basic root cause of obesity \n- the mineral deficiencies. Therefore, the primary difference of the \nDr. Wallach’s See Food Diet, the principal that sets it apart from the \nothers is that the pica, cribbing, cravings, binge eating, the munchies \nand the “stand in front of the open refrigerator” syndrome is dealt \nwith and eliminated - these basic failure factors having been removed \nwill guaranty success for everyone.",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 496161
+      },
+      "dose": null,
+      "tags": [
+        "see-food-diet",
+        "weight-loss",
+        "low-carb",
+        "minerals",
+        "obesity"
+      ],
+      "confidence": "medium",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-28T18:14:11+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

@@ -5243,6 +5243,6749 @@
     "pinched nerve neck shoulder"
    ],
    "intro_claim": "WAL-CLM-IAIYH-000021"
+  },
+  "tachycardia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "fast heartbeat",
+    "rapid heart rate",
+    "racing heart",
+    "heart racing",
+    "fast pulse"
+   ],
+   "related": [
+    "congestive_heart_failure"
+   ]
+  },
+  "tapeworms": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tapeworm",
+    "tape worm",
+    "tape worms",
+    "intestinal worms",
+    "parasitic worms",
+    "worms in gut"
+   ],
+   "related": [
+    "toxoplasmosis"
+   ]
+  },
+  "teething": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "baby teething",
+    "teething pain",
+    "cutting teeth",
+    "teething baby",
+    "sore gums baby",
+    "teething trouble"
+   ],
+   "related": [
+    "diaper_rash"
+   ]
+  },
+  "toxoplasmosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "toxo",
+    "toxoplasma",
+    "cat parasite",
+    "cat poop parasite",
+    "toxoplasmosis infection",
+    "toxoplasma infection"
+   ],
+   "related": [
+    "tapeworms"
+   ]
+  },
+  "vomiting": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "throwing up",
+    "being sick",
+    "puking",
+    "throw up",
+    "nausea and vomiting"
+   ],
+   "related": [
+    "diarrhea",
+    "motion_sickness"
+   ]
+  },
+  "wounds": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cuts",
+    "wound healing",
+    "sores",
+    "injuries",
+    "open wound"
+   ],
+   "related": []
+  },
+  "abrasions": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "abrasion",
+    "scrape",
+    "scrapes",
+    "grazes",
+    "skinned knee",
+    "raw skin",
+    "road rash"
+   ],
+   "related": [
+    "bleeding"
+   ]
+  },
+  "abscess": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "boil",
+    "pus pocket",
+    "absess",
+    "skin infection lump",
+    "pus filled bump",
+    "infected lump"
+   ],
+   "related": [
+    "anal_abscess"
+   ]
+  },
+  "absence_attacks": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "absence seizure",
+    "absence seizures",
+    "petit mal",
+    "petit mal seizure",
+    "staring spells",
+    "blanking out",
+    "absence attack"
+   ],
+   "related": []
+  },
+  "achalasia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "trouble swallowing",
+    "food stuck in throat",
+    "swallowing disorder",
+    "akalasia",
+    "esophagus won't open",
+    "cant swallow food"
+   ],
+   "related": []
+  },
+  "adrenal_exhaustion": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "adrenal fatigue",
+    "tired adrenals",
+    "burnout",
+    "adrenal burnout",
+    "worn out adrenals",
+    "exhausted adrenals"
+   ],
+   "related": []
+  },
+  "aids": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hiv",
+    "hiv/aids",
+    "hiv aids",
+    "acquired immunodeficiency",
+    "immune deficiency virus",
+    "aids virus"
+   ],
+   "related": [
+    "autoimmune_disorders"
+   ]
+  },
+  "airway_obstruction": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "choking",
+    "blocked airway",
+    "cant breathe",
+    "obstructed airway",
+    "airway blockage",
+    "throat blocked"
+   ],
+   "related": []
+  },
+  "amblyopia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lazy eye",
+    "weak eye",
+    "lazy eye in kids",
+    "amblyopa",
+    "amblyopia eye",
+    "wandering eye"
+   ],
+   "related": [
+    "diplopia"
+   ]
+  },
+  "anal_abscess": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "abscess near anus",
+    "butt abscess",
+    "rectal abscess",
+    "perianal abscess",
+    "pus near anus",
+    "anal boil"
+   ],
+   "related": [
+    "abscess"
+   ]
+  },
+  "anaphylaxis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "severe allergic reaction",
+    "allergic shock",
+    "anaphylactic shock",
+    "anaphalaxis",
+    "life threatening allergy",
+    "anaphylactic reaction"
+   ],
+   "related": [
+    "bee_stings",
+    "hay_fever"
+   ]
+  },
+  "autoimmune_disorders": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "autoimmune disease",
+    "autoimmune disorder",
+    "autoimmunity",
+    "auto immune",
+    "immune system attacking body",
+    "autoimmune condition"
+   ],
+   "related": []
+  },
+  "bad_breath": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "halitosis",
+    "stinky breath",
+    "mouth odor",
+    "smelly breath",
+    "morning breath",
+    "foul breath"
+   ],
+   "related": [
+    "dental_calculus"
+   ]
+  },
+  "bee_stings": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bee sting",
+    "wasp sting",
+    "insect sting",
+    "stung by bee",
+    "sting",
+    "hornet sting"
+   ],
+   "related": [
+    "anaphylaxis",
+    "chiggers"
+   ]
+  },
+  "bleeding": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "blood loss",
+    "hemorrhage",
+    "wont stop bleeding",
+    "cut bleeding",
+    "bleeding out",
+    "excessive bleeding"
+   ],
+   "related": [
+    "abrasions"
+   ]
+  },
+  "breast_tenderness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sore breasts",
+    "tender breasts",
+    "breast pain",
+    "painful breasts",
+    "achy breasts",
+    "breast soreness"
+   ],
+   "related": []
+  },
+  "bursitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "joint inflammation",
+    "shoulder bursitis",
+    "hip bursitis",
+    "swollen joint",
+    "bursa inflammation",
+    "inflamed bursa"
+   ],
+   "related": [
+    "repetitive_motion_syndrome"
+   ]
+  },
+  "cardiac_arrhythmia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "irregular heartbeat",
+    "arrhythmia",
+    "heart palpitations",
+    "skipped heartbeat",
+    "heart flutter",
+    "arrythmia",
+    "irregular heart rhythm"
+   ],
+   "related": []
+  },
+  "catarrh": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "mucus buildup",
+    "phlegm",
+    "throat mucus",
+    "post nasal drip",
+    "stuffy nose mucus",
+    "excess mucus"
+   ],
+   "related": [
+    "congested_lungs",
+    "colds"
+   ]
+  },
+  "cervical_dysplasia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "abnormal pap smear",
+    "precancerous cervix cells",
+    "abnormal cervical cells",
+    "cin",
+    "cervical cell changes",
+    "abnormal cervix"
+   ],
+   "related": []
+  },
+  "chalazion": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "eyelid bump",
+    "eyelid cyst",
+    "lump on eyelid",
+    "chalazon",
+    "bump on eyelid",
+    "eyelid lump"
+   ],
+   "related": []
+  },
+  "chiggers": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "chigger bites",
+    "red bugs",
+    "harvest mites",
+    "itchy mite bites",
+    "jiggers",
+    "chigger rash"
+   ],
+   "related": [
+    "bee_stings"
+   ]
+  },
+  "chills": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "shivering",
+    "feeling cold",
+    "cold shivers",
+    "the chills",
+    "shivers",
+    "cold and shivery"
+   ],
+   "related": [
+    "fever"
+   ]
+  },
+  "chorea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "involuntary movements",
+    "jerky movements",
+    "twitching movements",
+    "st vitus dance",
+    "uncontrollable movements",
+    "chorea movements"
+   ],
+   "related": []
+  },
+  "cluster_headaches": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cluster headache",
+    "severe one sided headache",
+    "suicide headache",
+    "eye headache",
+    "cluster migraine",
+    "one sided head pain"
+   ],
+   "related": []
+  },
+  "colds": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cold",
+    "common cold",
+    "head cold",
+    "runny nose",
+    "cold virus",
+    "catching a cold"
+   ],
+   "related": [
+    "catarrh",
+    "congested_lungs",
+    "hay_fever"
+   ]
+  },
+  "congested_lungs": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "chest congestion",
+    "lung congestion",
+    "mucus in lungs",
+    "chest full of phlegm",
+    "congested chest",
+    "chest full of mucus"
+   ],
+   "related": [
+    "catarrh",
+    "colds"
+   ]
+  },
+  "constipation": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cant poop",
+    "irregular bowel movements",
+    "hard stools",
+    "backed up",
+    "constapation",
+    "trouble pooping"
+   ],
+   "related": []
+  },
+  "dental_calculus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tartar",
+    "plaque buildup",
+    "tartar on teeth",
+    "hardened plaque",
+    "calculus teeth",
+    "teeth tartar"
+   ],
+   "related": [
+    "bad_breath"
+   ]
+  },
+  "diaper_rash": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nappy rash",
+    "baby bottom rash",
+    "diaper rash baby",
+    "red diaper area",
+    "baby diaper rash",
+    "sore baby bottom"
+   ],
+   "related": [
+    "teething"
+   ]
+  },
+  "diplopia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "double vision",
+    "seeing double",
+    "seeing two of everything",
+    "blurred double vision",
+    "double sight",
+    "twin vision"
+   ],
+   "related": [
+    "amblyopia"
+   ]
+  },
+  "dropsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "swelling",
+    "water retention",
+    "fluid buildup",
+    "edema old name",
+    "body swelling",
+    "fluid retention"
+   ],
+   "related": [
+    "edema"
+   ]
+  },
+  "opiate_withdrawal": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "opioid withdrawal",
+    "heroin withdrawal",
+    "getting off opioids",
+    "withdrawal symptoms",
+    "dope sickness",
+    "painkiller withdrawal"
+   ],
+   "related": [
+    "drug_addiction"
+   ]
+  },
+  "drug_addiction": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "addiction",
+    "substance abuse",
+    "drug dependence",
+    "substance addiction",
+    "drug habit",
+    "drug dependency"
+   ],
+   "related": [
+    "opiate_withdrawal"
+   ]
+  },
+  "dry_skin": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "flaky skin",
+    "rough skin",
+    "dry itchy skin",
+    "cracked skin",
+    "scaly skin",
+    "dry flaky skin"
+   ],
+   "related": []
+  },
+  "electric_shock": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "electrocution",
+    "shocked by electricity",
+    "electrical shock",
+    "electrical injury",
+    "getting shocked",
+    "electric jolt"
+   ],
+   "related": []
+  },
+  "exophthalmos": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bulging eyes",
+    "protruding eyes",
+    "eyes popping out",
+    "thyroid eye",
+    "proptosis",
+    "eyes bulging out"
+   ],
+   "related": []
+  },
+  "fever": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "high temperature",
+    "feverish",
+    "running a temperature",
+    "high fever",
+    "temperature",
+    "raised temperature"
+   ],
+   "related": [
+    "chills"
+   ]
+  },
+  "freckles": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "brown spots skin",
+    "sun spots",
+    "freckels",
+    "spots on skin",
+    "skin freckles",
+    "tan spots"
+   ],
+   "related": []
+  },
+  "growing_pains": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "leg pains in kids",
+    "child leg aches",
+    "growing pain",
+    "kids leg pain at night",
+    "childhood leg pain",
+    "kids aching legs"
+   ],
+   "related": []
+  },
+  "hangnails": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hangnail",
+    "torn cuticle",
+    "skin around nail",
+    "hang nail",
+    "ripped nail skin",
+    "loose nail skin"
+   ],
+   "related": []
+  },
+  "hay_fever": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "allergies",
+    "seasonal allergies",
+    "pollen allergy",
+    "allergic rhinitis",
+    "hayfever",
+    "runny nose allergy"
+   ],
+   "related": [
+    "anaphylaxis",
+    "colds"
+   ]
+  },
+  "heartburn": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "acid reflux",
+    "burning chest",
+    "indigestion",
+    "acid indigestion",
+    "gerd",
+    "burning stomach"
+   ],
+   "related": [
+    "hyperacidity",
+    "hiatal_hernia"
+   ]
+  },
+  "hiatal_hernia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hiatus hernia",
+    "stomach hernia",
+    "hernia in diaphragm",
+    "hital hernia",
+    "hiatal hernia stomach",
+    "diaphragm hernia"
+   ],
+   "related": [
+    "heartburn",
+    "hyperacidity"
+   ]
+  },
+  "hiccoughs": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hiccups",
+    "the hiccups",
+    "hiccup",
+    "hicups",
+    "getting hiccups",
+    "hiccuping"
+   ],
+   "related": []
+  },
+  "hyperacidity": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "too much stomach acid",
+    "acid stomach",
+    "excess stomach acid",
+    "acidity",
+    "high stomach acid",
+    "overly acidic stomach"
+   ],
+   "related": [
+    "heartburn",
+    "hiatal_hernia"
+   ]
+  },
+  "hypothermia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low body temperature",
+    "dangerously cold",
+    "body too cold",
+    "freezing body temp",
+    "hypethermia",
+    "cold body temperature"
+   ],
+   "related": [
+    "chills"
+   ]
+  },
+  "hysteria": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hysteria",
+    "hysterical",
+    "hysterics",
+    "emotional breakdown",
+    "uncontrollable emotion",
+    "fit of hysteria"
+   ],
+   "related": []
+  },
+  "impetigo": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "impetigo",
+    "school sores",
+    "skin infection sores",
+    "crusty skin infection",
+    "impatigo",
+    "impetigo rash"
+   ],
+   "related": [
+    "ringworm"
+   ]
+  },
+  "incontinence": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "incontinence",
+    "bladder leakage",
+    "leaking urine",
+    "loss of bladder control",
+    "cant hold my pee",
+    "urinary leakage",
+    "overactive bladder",
+    "leaky bladder"
+   ],
+   "related": []
+  },
+  "infection": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "infection",
+    "infected",
+    "bacterial infection",
+    "viral infection",
+    "getting sick",
+    "germs",
+    "infected wound"
+   ],
+   "related": []
+  },
+  "intermittent_claudication": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "intermittent claudication",
+    "leg pain when walking",
+    "leg cramps when walking",
+    "calf pain walking",
+    "claudication",
+    "aching legs walking"
+   ],
+   "related": [
+    "poor_circulation"
+   ]
+  },
+  "kernicterus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "kernicterus",
+    "newborn jaundice brain damage",
+    "bilirubin brain damage",
+    "baby jaundice brain",
+    "jaundice brain injury"
+   ],
+   "related": [
+    "jaundice"
+   ]
+  },
+  "ketoacidosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ketoacidosis",
+    "dka",
+    "diabetic ketoacidosis",
+    "keto acidosis",
+    "high blood acid diabetes"
+   ],
+   "related": [
+    "ketosis"
+   ]
+  },
+  "ketosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ketosis",
+    "keto",
+    "fat burning state",
+    "ketones",
+    "keto diet state",
+    "in ketosis"
+   ],
+   "related": [
+    "ketoacidosis"
+   ]
+  },
+  "legionnaires_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "legionnaires disease",
+    "legionella",
+    "legionnaires",
+    "legionnaire's disease",
+    "legionnaires pneumonia",
+    "legionaires disease"
+   ],
+   "related": []
+  },
+  "leptospirosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "leptospirosis",
+    "weils disease",
+    "weil's disease",
+    "rat urine disease",
+    "lepto"
+   ],
+   "related": [
+    "weils_disease"
+   ]
+  },
+  "weils_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "weils disease",
+    "weil's disease",
+    "leptospirosis",
+    "rat urine infection",
+    "weil disease"
+   ],
+   "related": [
+    "leptospirosis"
+   ]
+  },
+  "flatulence": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gas",
+    "farting",
+    "bloating",
+    "intestinal gas",
+    "passing gas",
+    "wind"
+   ],
+   "related": [
+    "diarrhea"
+   ]
+  },
+  "geographic_tongue": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "geographic tongue",
+    "map tongue",
+    "patchy tongue",
+    "tongue patches",
+    "weird tongue patterns",
+    "spots on tongue"
+   ],
+   "related": []
+  },
+  "glaucoma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "glaucoma",
+    "eye pressure",
+    "high eye pressure",
+    "optic nerve eye disease",
+    "glacoma",
+    "increased eye pressure"
+   ],
+   "related": [
+    "optic_nerve_atrophy"
+   ]
+  },
+  "headache": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "head pain",
+    "headaches",
+    "head ache",
+    "sore head"
+   ],
+   "related": [
+    "migraine"
+   ]
+  },
+  "hoarseness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hoarseness",
+    "hoarse voice",
+    "raspy voice",
+    "losing my voice",
+    "scratchy voice",
+    "voice going hoarse"
+   ],
+   "related": []
+  },
+  "laryngitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hoarse voice",
+    "lost voice",
+    "voice box inflammation",
+    "hoarseness",
+    "sore throat hoarse"
+   ],
+   "related": []
+  },
+  "impotence": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "erectile dysfunction",
+    "ed",
+    "cant get erection",
+    "impotency",
+    "cant perform"
+   ],
+   "related": [
+    "benign_prostatic_hyperplasia"
+   ]
+  },
+  "erectile_dysfunction": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "erectile dysfunction",
+    "ed",
+    "impotence",
+    "cant get hard",
+    "cant get an erection",
+    "impotent",
+    "weak erection"
+   ],
+   "related": []
+  },
+  "irritable_bowel_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "irritable bowel syndrome",
+    "ibs",
+    "spastic colon",
+    "irritable bowel",
+    "nervous stomach",
+    "ibs stomach"
+   ],
+   "related": []
+  },
+  "itching": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "itching",
+    "itchy",
+    "itchy skin",
+    "itch",
+    "scratching",
+    "skin itch"
+   ],
+   "related": [
+    "pruritus"
+   ]
+  },
+  "pruritus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pruritus",
+    "itching",
+    "itchy skin",
+    "severe itching",
+    "chronic itch",
+    "pruritis"
+   ],
+   "related": [
+    "itching"
+   ]
+  },
+  "jaundice": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "jaundice",
+    "yellow skin",
+    "yellow eyes",
+    "yellowing skin",
+    "yellow jaundice",
+    "yellowish skin"
+   ],
+   "related": [
+    "kernicterus"
+   ]
+  },
+  "joint_pain": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "joint pain",
+    "achy joints",
+    "sore joints",
+    "painful joints",
+    "joint ache",
+    "aching joints"
+   ],
+   "related": []
+  },
+  "keratosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "rough skin patches",
+    "skin growths",
+    "keratoses",
+    "scaly skin patches",
+    "actinic keratosis"
+   ],
+   "related": []
+  },
+  "labor": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "childbirth",
+    "labour",
+    "giving birth",
+    "labor pains",
+    "delivery"
+   ],
+   "related": []
+  },
+  "lactase_deficiency": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lactase deficiency",
+    "cant digest milk sugar",
+    "low lactase",
+    "lactase enzyme deficiency",
+    "lactose intolerance",
+    "missing lactase"
+   ],
+   "related": [
+    "lactose_intolerance"
+   ]
+  },
+  "lactose_intolerance": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lactose intolerance",
+    "cant digest milk",
+    "dairy intolerance",
+    "milk intolerance",
+    "lactose intolerant",
+    "dairy makes me sick"
+   ],
+   "related": [
+    "lactase_deficiency"
+   ]
+  },
+  "malnutrition": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "malnutrition",
+    "malnourished",
+    "undernourished",
+    "poor nutrition",
+    "not eating enough nutrients",
+    "nutrient deficiency",
+    "starvation"
+   ],
+   "related": []
+  },
+  "menkes_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "menkes",
+    "menkes disease",
+    "kinky hair disease",
+    "copper deficiency disease",
+    "menke syndrome"
+   ],
+   "related": []
+  },
+  "minamata_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "minamata disease",
+    "mercury poisoning disease",
+    "methylmercury poisoning",
+    "minimata disease",
+    "mercury toxicity"
+   ],
+   "related": []
+  },
+  "morning_sickness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "morning sickness",
+    "pregnancy nausea",
+    "nausea during pregnancy",
+    "pregnant throwing up",
+    "morning nausea",
+    "sick while pregnant"
+   ],
+   "related": []
+  },
+  "motion_sickness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "car sickness",
+    "sea sickness",
+    "travel sickness",
+    "seasickness",
+    "carsick",
+    "nausea from motion"
+   ],
+   "related": [
+    "vomiting"
+   ]
+  },
+  "otitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ear infection",
+    "middle ear infection",
+    "otitis media",
+    "inflamed ear",
+    "ear inflammation"
+   ],
+   "related": [
+    "earache"
+   ]
+  },
+  "earache": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ear pain",
+    "sore ear",
+    "aching ear",
+    "ear ache",
+    "painful ear"
+   ],
+   "related": [
+    "otitis"
+   ]
+  },
+  "parasites": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "worms",
+    "intestinal parasites",
+    "parasitic infection",
+    "intestinal worms",
+    "gut parasites"
+   ],
+   "related": []
+  },
+  "psoriasis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "scaly skin",
+    "skin plaques",
+    "psorisis",
+    "flaky red patches",
+    "itchy scaly patches",
+    "psoriasis rash",
+    "silvery skin scales"
+   ],
+   "related": []
+  },
+  "ringworm": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ringworm",
+    "ring worm",
+    "fungal skin infection",
+    "circular skin rash",
+    "tinea",
+    "skin fungus"
+   ],
+   "related": [
+    "impetigo"
+   ]
+  },
+  "scoliosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "curved spine",
+    "curvature of the spine",
+    "crooked spine",
+    "bent spine",
+    "spine curve",
+    "skoliosis",
+    "sideways spine curve"
+   ],
+   "related": []
+  },
+  "stress": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "stress",
+    "stressed",
+    "stressed out",
+    "tension",
+    "overwhelmed",
+    "under stress"
+   ],
+   "related": [
+    "nervous_tension"
+   ]
+  },
+  "leukorrhea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "leukorrhea",
+    "white vaginal discharge",
+    "vaginal discharge",
+    "leucorrhea",
+    "whitish discharge",
+    "white discharge"
+   ],
+   "related": []
+  },
+  "lice": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lice",
+    "head lice",
+    "nits",
+    "lice infestation",
+    "hair lice",
+    "lice bugs"
+   ],
+   "related": [
+    "pediculosis",
+    "pubic_lice"
+   ]
+  },
+  "pediculosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pediculosis",
+    "lice",
+    "lice infestation",
+    "head lice",
+    "body lice",
+    "pediculosis lice"
+   ],
+   "related": [
+    "lice",
+    "pubic_lice"
+   ]
+  },
+  "lyme_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lyme disease",
+    "lyme",
+    "tick disease",
+    "tick bite disease",
+    "limes disease",
+    "lyme's disease"
+   ],
+   "related": []
+  },
+  "measles": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "measles",
+    "rubeola",
+    "measles rash",
+    "red measles",
+    "childhood measles",
+    "measels"
+   ],
+   "related": [
+    "mumps"
+   ]
+  },
+  "melasma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "melasma",
+    "dark facial patches",
+    "pregnancy mask",
+    "brown face patches",
+    "skin discoloration on face",
+    "malasma"
+   ],
+   "related": []
+  },
+  "meningitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "meningitis",
+    "brain lining infection",
+    "spinal meningitis",
+    "meningitis infection",
+    "meningities",
+    "swelling around brain"
+   ],
+   "related": []
+  },
+  "mitral_valve_prolapse": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "mitral valve prolapse",
+    "mvp",
+    "heart valve problem",
+    "leaky heart valve",
+    "floppy heart valve",
+    "mitral valve"
+   ],
+   "related": [
+    "palpitations"
+   ]
+  },
+  "monckebergs_arteriosclerosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "monckebergs arteriosclerosis",
+    "monckeberg's sclerosis",
+    "calcified arteries",
+    "artery calcification",
+    "hardened arteries",
+    "calcium in arteries"
+   ],
+   "related": [
+    "poor_circulation"
+   ]
+  },
+  "mumps": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "mumps",
+    "swollen glands in neck",
+    "swollen cheeks virus",
+    "parotitis",
+    "childhood mumps",
+    "swollen jaw virus"
+   ],
+   "related": [
+    "measles"
+   ]
+  },
+  "nasal_catarrh": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nasal catarrh",
+    "stuffy nose",
+    "nasal congestion",
+    "runny nose",
+    "mucus in nose",
+    "catarrh"
+   ],
+   "related": []
+  },
+  "nervous_heart": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nervous heart",
+    "heart palpitations from anxiety",
+    "racing heart from nerves",
+    "anxious heart",
+    "heart flutters from stress"
+   ],
+   "related": [
+    "palpitations",
+    "nervous_tension"
+   ]
+  },
+  "nervous_tension": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nervous tension",
+    "tension",
+    "stress",
+    "anxiety",
+    "nervousness",
+    "feeling tense"
+   ],
+   "related": [
+    "stress"
+   ]
+  },
+  "night_terrors": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "night terrors",
+    "night terror",
+    "sleep terrors",
+    "waking up screaming",
+    "kids screaming at night",
+    "sleep terror"
+   ],
+   "related": []
+  },
+  "omphalocele": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "omphalocele",
+    "belly button birth defect",
+    "abdominal wall birth defect",
+    "intestines outside belly baby",
+    "exomphalos"
+   ],
+   "related": [
+    "umbilical_hernia"
+   ]
+  },
+  "umbilical_hernia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "umbilical hernia",
+    "belly button hernia",
+    "navel hernia",
+    "outie hernia",
+    "belly button bulge"
+   ],
+   "related": [
+    "omphalocele"
+   ]
+  },
+  "optic_nerve_atrophy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "optic nerve atrophy",
+    "optic nerve damage",
+    "damaged optic nerve",
+    "eye nerve wasting",
+    "vision loss from nerve"
+   ],
+   "related": [
+    "glaucoma"
+   ]
+  },
+  "ornithosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ornithosis",
+    "parrot fever",
+    "bird disease",
+    "psittacosis",
+    "sickness from birds"
+   ],
+   "related": []
+  },
+  "pain": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pain",
+    "hurts",
+    "aches",
+    "achy",
+    "hurting",
+    "sore"
+   ],
+   "related": [
+    "joint_pain"
+   ]
+  },
+  "palpitations": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "palpitations",
+    "heart palpitations",
+    "racing heart",
+    "heart pounding",
+    "skipped heartbeat",
+    "fluttering heart",
+    "heart racing"
+   ],
+   "related": [
+    "nervous_heart",
+    "mitral_valve_prolapse"
+   ]
+  },
+  "pilonidal_cyst": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pilonidal cyst",
+    "tailbone cyst",
+    "cyst on tailbone",
+    "butt crack cyst",
+    "pilonidal",
+    "cyst near buttocks"
+   ],
+   "related": []
+  },
+  "poison_ivy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "poison ivy",
+    "poison ivy rash",
+    "poison oak",
+    "poison ivy itch",
+    "ivy rash",
+    "poison sumac"
+   ],
+   "related": []
+  },
+  "poor_circulation": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "poor circulation",
+    "bad circulation",
+    "cold hands and feet",
+    "circulation problems",
+    "poor blood flow",
+    "low circulation"
+   ],
+   "related": [
+    "intermittent_claudication"
+   ]
+  },
+  "post_partum_hemorrhage": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "post partum hemorrhage",
+    "postpartum bleeding",
+    "bleeding after birth",
+    "heavy bleeding after delivery",
+    "pph",
+    "hemorrhage after childbirth"
+   ],
+   "related": []
+  },
+  "preeclampsia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "preeclampsia",
+    "pre eclampsia",
+    "pregnancy high blood pressure",
+    "toxemia of pregnancy",
+    "pre-eclampsia",
+    "high bp in pregnancy"
+   ],
+   "related": [
+    "eclampsia",
+    "pregnancy_toxemia"
+   ]
+  },
+  "pregnancy_toxemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pregnancy toxemia",
+    "toxemia",
+    "toxemia of pregnancy",
+    "preeclampsia",
+    "pregnancy poisoning"
+   ],
+   "related": [
+    "preeclampsia",
+    "eclampsia"
+   ]
+  },
+  "eclampsia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "eclampsia",
+    "pregnancy seizures",
+    "preeclampsia seizures",
+    "toxemia seizures",
+    "seizures in pregnancy"
+   ],
+   "related": [
+    "preeclampsia",
+    "pregnancy_toxemia"
+   ]
+  },
+  "pubic_lice": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pubic lice",
+    "crabs",
+    "crab lice",
+    "genital lice",
+    "crotch lice"
+   ],
+   "related": [
+    "lice",
+    "pediculosis"
+   ]
+  },
+  "q_fever": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "q fever",
+    "query fever",
+    "coxiella",
+    "q-fever",
+    "fever from farm animals"
+   ],
+   "related": []
+  },
+  "quinsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "quinsy",
+    "peritonsillar abscess",
+    "throat abscess",
+    "tonsil abscess",
+    "abscess behind tonsil",
+    "quinsey"
+   ],
+   "related": [
+    "peritonsillar_abscess"
+   ]
+  },
+  "peritonsillar_abscess": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "peritonsillar abscess",
+    "quinsy",
+    "throat abscess",
+    "tonsil abscess",
+    "abscess near tonsils"
+   ],
+   "related": [
+    "quinsy"
+   ]
+  },
+  "rabies": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "rabies",
+    "hydrophobia",
+    "dog bite disease",
+    "rabid animal bite",
+    "rabies virus"
+   ],
+   "related": []
+  },
+  "radial_nerve_palsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "radial nerve palsy",
+    "wrist drop",
+    "saturday night palsy",
+    "radial nerve damage",
+    "cant lift my wrist"
+   ],
+   "related": []
+  },
+  "raynauds_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "raynauds",
+    "raynaud syndrome",
+    "cold fingers",
+    "white fingers",
+    "numb fingers",
+    "poor circulation hands",
+    "fingers turn white",
+    "cold hands and feet"
+   ],
+   "related": [
+    "hypotension"
+   ]
+  },
+  "rectal_itching": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "itchy bum",
+    "itchy anus",
+    "itchy bottom",
+    "anal itching",
+    "itchy butt",
+    "itchy backside",
+    "pruritus ani"
+   ],
+   "related": [
+    "hemorrhoids",
+    "thrush"
+   ]
+  },
+  "night_blindness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cant see at night",
+    "poor night vision",
+    "trouble seeing in the dark",
+    "night vision problems",
+    "nyctalopia"
+   ],
+   "related": []
+  },
+  "xerophthalmia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "dry eyes",
+    "xerophthalmia",
+    "vitamin a deficiency eyes",
+    "night blindness",
+    "dry eye disease"
+   ],
+   "related": []
+  },
+  "pms": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pms",
+    "premenstrual syndrome",
+    "period symptoms",
+    "before period",
+    "menstrual symptoms",
+    "pre menstrual"
+   ],
+   "related": [
+    "menopause"
+   ]
+  },
+  "anosmia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "loss of smell",
+    "cant smell",
+    "no sense of smell",
+    "smell loss",
+    "lost my smell"
+   ],
+   "related": []
+  },
+  "cardiovascular_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heart disease",
+    "cvd",
+    "heart and blood vessel disease",
+    "cardiac disease",
+    "heart problems"
+   ],
+   "related": [
+    "arteriosclerosis",
+    "congestive_heart_failure",
+    "stroke"
+   ]
+  },
+  "heart_attack": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heart attack",
+    "mi",
+    "myocardial infarction",
+    "cardiac arrest",
+    "coronary",
+    "cardiac event"
+   ],
+   "related": [
+    "cardiomyopathy",
+    "high_cholesterol"
+   ]
+  },
+  "congestive_heart_failure": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heart failure",
+    "chf",
+    "weak heart",
+    "fluid around the heart",
+    "failing heart"
+   ],
+   "related": [
+    "cardiovascular_disease",
+    "tachycardia"
+   ]
+  },
+  "conjunctivitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pink eye",
+    "pinkeye",
+    "red eye",
+    "eye infection",
+    "conjuctivitis",
+    "itchy red eye",
+    "goopy eye"
+   ],
+   "related": []
+  },
+  "food_allergy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "food allergies",
+    "allergic to food",
+    "food intolerance",
+    "food sensitivity",
+    "allergic reaction to food",
+    "food reaction"
+   ],
+   "related": []
+  },
+  "high_triglycerides": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "high triglycerides",
+    "high blood fats",
+    "elevated triglycerides",
+    "high trigs",
+    "triglyceride levels",
+    "high blood lipids"
+   ],
+   "related": [
+    "fatty_liver",
+    "prediabetes"
+   ]
+  },
+  "migraine": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "migraine headache",
+    "bad headache",
+    "migrane",
+    "severe headache",
+    "migraines"
+   ],
+   "related": [
+    "headache"
+   ]
+  },
+  "sciatica": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sciatic nerve pain",
+    "leg nerve pain",
+    "back and leg pain",
+    "pinched nerve leg",
+    "siatica",
+    "sciatic pain"
+   ],
+   "related": []
+  },
+  "tinnitus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ringing in the ears",
+    "ear ringing",
+    "ringing ears",
+    "buzzing in ears",
+    "tinitus"
+   ],
+   "related": []
+  },
+  "trigeminal_neuralgia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "face nerve pain",
+    "facial nerve pain",
+    "tic douloureux",
+    "face pain",
+    "trigeminal nerve pain"
+   ],
+   "related": []
+  },
+  "allergies": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "allergy",
+    "allergic reaction",
+    "hay fever",
+    "allergic rhinitis",
+    "seasonal allergies",
+    "alergies",
+    "sneezing and itching"
+   ],
+   "related": []
+  },
+  "angina": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "chest pain",
+    "heart chest pain",
+    "angina pectoris",
+    "chest tightness",
+    "chest pressure",
+    "anjina",
+    "heart pain"
+   ],
+   "related": []
+  },
+  "benign_prostatic_hyperplasia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "enlarged prostate",
+    "bph",
+    "prostate enlargement",
+    "swollen prostate",
+    "prostate problems"
+   ],
+   "related": [
+    "prostate_cancer",
+    "impotence"
+   ]
+  },
+  "fibrocystic_breast_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "breast lumps",
+    "lumpy breasts",
+    "fibrocystic breasts",
+    "breast cysts",
+    "fibrocystic breast changes",
+    "painful lumpy breasts"
+   ],
+   "related": [
+    "breast_cancer"
+   ]
+  },
+  "breast_cysts": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "breast lump",
+    "lump in breast",
+    "cyst in breast",
+    "fibrocystic breast",
+    "breast lumps",
+    "lumpy breasts"
+   ],
+   "related": []
+  },
+  "chicken_pox": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "chickenpox",
+    "varicella",
+    "chicken pox spots",
+    "itchy spots",
+    "chicken pocks"
+   ],
+   "related": []
+  },
+  "shingles": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "herpes zoster",
+    "shingles rash",
+    "nerve rash",
+    "painful rash",
+    "zoster"
+   ],
+   "related": []
+  },
+  "common_cold": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cold",
+    "head cold",
+    "runny nose",
+    "stuffy nose",
+    "cold virus",
+    "catching a cold",
+    "sniffles"
+   ],
+   "related": [
+    "allergies"
+   ]
+  },
+  "cystitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bladder infection",
+    "uti",
+    "urinary tract infection",
+    "bladder inflammation",
+    "painful urination",
+    "cistitis"
+   ],
+   "related": [
+    "vaginitis"
+   ]
+  },
+  "urinary_tract_infection": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "uti",
+    "bladder infection",
+    "water infection",
+    "urine infection",
+    "cystitis",
+    "burning when peeing",
+    "burning pee",
+    "u.t.i"
+   ],
+   "related": []
+  },
+  "dyspepsia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "indigestion",
+    "upset stomach",
+    "heartburn",
+    "stomach upset",
+    "acid indigestion",
+    "dispepsia"
+   ],
+   "related": []
+  },
+  "gallstones": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gall stones",
+    "gallbladder stones",
+    "stones in gallbladder",
+    "gall bladder attack",
+    "gallstone"
+   ],
+   "related": [
+    "indigestion"
+   ]
+  },
+  "indigestion": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "upset stomach",
+    "heartburn",
+    "dyspepsia",
+    "acid stomach",
+    "stomach ache after eating",
+    "acid indigestion",
+    "sour stomach"
+   ],
+   "related": [
+    "gallstones",
+    "gastroparesis"
+   ]
+  },
+  "lead_poisoning": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lead poisoning",
+    "lead toxicity",
+    "lead exposure",
+    "high lead",
+    "lead in blood"
+   ],
+   "related": []
+  },
+  "plumbism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lead poisoning",
+    "lead toxicity",
+    "lead poison",
+    "lead exposure"
+   ],
+   "related": [
+    "mercury_poisoning",
+    "arsenic_toxicity",
+    "thallium_poisoning"
+   ]
+  },
+  "mercury_poisoning": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "mercury toxicity",
+    "mercury poison",
+    "heavy metal poisoning",
+    "mercury exposure"
+   ],
+   "related": [
+    "plumbism",
+    "arsenic_toxicity",
+    "thallium_poisoning"
+   ]
+  },
+  "heavy_metal_toxicity": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heavy metal poisoning",
+    "metal toxicity",
+    "lead poisoning",
+    "mercury poisoning",
+    "heavy metals",
+    "metal poisoning"
+   ],
+   "related": []
+  },
+  "oligospermia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low sperm count",
+    "low sperm",
+    "poor sperm count",
+    "male infertility",
+    "not enough sperm",
+    "reduced sperm count"
+   ],
+   "related": []
+  },
+  "osteitis_fibrosa": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "osteitis fibrosa",
+    "brown tumor",
+    "bone softening",
+    "soft bones",
+    "bone disease"
+   ],
+   "related": [
+    "osteopenia",
+    "osteosclerosis",
+    "bone_pain"
+   ]
+  },
+  "pagets_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pagets disease",
+    "paget's disease",
+    "paget disease",
+    "bone deformity",
+    "enlarged bones"
+   ],
+   "related": [
+    "osteoporosis"
+   ]
+  },
+  "tooth_decay": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cavities",
+    "tooth cavity",
+    "dental caries",
+    "rotten teeth",
+    "decayed teeth",
+    "caries"
+   ],
+   "related": [
+    "gingivitis",
+    "periodontal_disease",
+    "pyorrhea"
+   ]
+  },
+  "toothache": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tooth pain",
+    "sore tooth",
+    "tooth ache",
+    "aching tooth",
+    "dental pain",
+    "painful tooth"
+   ],
+   "related": [
+    "bleeding_gums"
+   ]
+  },
+  "amenorrhea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "missed period",
+    "no period",
+    "absent period",
+    "periods stopped",
+    "no menstruation",
+    "missing period",
+    "period stopped"
+   ],
+   "related": [
+    "menorrhagia"
+   ]
+  },
+  "bedwetting": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bed wetting",
+    "nocturnal enuresis",
+    "enuresis",
+    "wetting the bed",
+    "child bedwetting",
+    "night wetting"
+   ],
+   "related": []
+  },
+  "bleeding_gums": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gums bleeding",
+    "bleeding when brushing",
+    "sore bleeding gums",
+    "bloody gums",
+    "gum bleeding"
+   ],
+   "related": [
+    "toothache"
+   ]
+  },
+  "candidiasis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "candida",
+    "yeast infection",
+    "thrush",
+    "candida overgrowth",
+    "fungal infection",
+    "yeast overgrowth"
+   ],
+   "related": []
+  },
+  "canker_sores": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "mouth ulcers",
+    "mouth sores",
+    "canker sore",
+    "cankers",
+    "ulcers in mouth",
+    "aphthous ulcers"
+   ],
+   "related": [
+    "aphthous_stomatitis"
+   ]
+  },
+  "aphthous_stomatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "canker sores",
+    "mouth ulcers",
+    "mouth sores",
+    "aphthous ulcers",
+    "recurring mouth ulcers",
+    "stomatitis"
+   ],
+   "related": [
+    "canker_sores"
+   ]
+  },
+  "chronic_fatigue": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "always tired",
+    "constant tiredness",
+    "chronic tiredness",
+    "exhaustion",
+    "persistent fatigue",
+    "low energy",
+    "worn out all the time"
+   ],
+   "related": [
+    "chronic_fatigue_syndrome"
+   ]
+  },
+  "dysmenorrhea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "period pain",
+    "menstrual cramps",
+    "painful periods",
+    "cramps",
+    "period cramps",
+    "dismenorrhea"
+   ],
+   "related": []
+  },
+  "menorrhagia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heavy periods",
+    "heavy bleeding",
+    "heavy menstrual bleeding",
+    "heavy period",
+    "excessive bleeding period",
+    "heavy flow"
+   ],
+   "related": [
+    "amenorrhea"
+   ]
+  },
+  "tonsillitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sore throat",
+    "swollen tonsils",
+    "tonsil infection",
+    "inflamed tonsils",
+    "strep throat",
+    "tonsilitis"
+   ],
+   "related": []
+  },
+  "enuresis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bedwetting",
+    "bed wetting",
+    "wetting the bed",
+    "bed-wetting",
+    "child wets bed",
+    "nighttime wetting"
+   ],
+   "related": []
+  },
+  "epilepsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "seizures",
+    "seizure disorder",
+    "convulsions",
+    "epileptic seizures",
+    "epilepsi",
+    "fits"
+   ],
+   "related": []
+  },
+  "fractures": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "broken bone",
+    "bone fracture",
+    "broken bones",
+    "cracked bone",
+    "fracture",
+    "hairline fracture"
+   ],
+   "related": [
+    "osteopenia",
+    "bone_pain",
+    "osteitis_fibrosa"
+   ]
+  },
+  "atrial_fibrillation": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "afib",
+    "a-fib",
+    "irregular heartbeat",
+    "heart flutter",
+    "atrial fib",
+    "irregular heart rhythm",
+    "heart palpitations"
+   ],
+   "related": []
+  },
+  "gastroparesis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "slow stomach emptying",
+    "delayed gastric emptying",
+    "stomach paralysis",
+    "food sits in stomach",
+    "slow digestion"
+   ],
+   "related": [
+    "indigestion",
+    "dysphagia"
+   ]
+  },
+  "chronic_obstructive_pulmonary_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "copd",
+    "emphysema",
+    "chronic bronchitis",
+    "breathing problems",
+    "shortness of breath lungs",
+    "c.o.p.d"
+   ],
+   "related": [
+    "bronchitis",
+    "cough"
+   ]
+  },
+  "influenza": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "flu",
+    "the flu",
+    "seasonal flu",
+    "flu bug",
+    "influenza virus",
+    "coming down with flu"
+   ],
+   "related": [
+    "cough",
+    "bronchitis"
+   ]
+  },
+  "kwashiorkor": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "protein deficiency",
+    "protein malnutrition",
+    "severe malnutrition",
+    "swollen belly malnutrition",
+    "kwashiorkor",
+    "protein starvation"
+   ],
+   "related": []
+  },
+  "lupus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sle",
+    "systemic lupus",
+    "autoimmune lupus",
+    "lupus disease"
+   ],
+   "related": [
+    "hashimotos_disease"
+   ]
+  },
+  "nosebleeds": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nose bleed",
+    "bloody nose",
+    "nose bleeding",
+    "nosebleed",
+    "epistaxis",
+    "bleeding nose"
+   ],
+   "related": [
+    "prolonged_clotting_time",
+    "bleeding_gums"
+   ]
+  },
+  "ptosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "drooping eyelid",
+    "droopy eyelid",
+    "sagging eyelid",
+    "eyelid droop",
+    "lazy eyelid",
+    "falling eyelid"
+   ],
+   "related": []
+  },
+  "pyorrhea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gum disease",
+    "bleeding gums",
+    "pyorrhoea",
+    "gum infection",
+    "receding gums"
+   ],
+   "related": [
+    "gingivitis",
+    "periodontal_disease",
+    "tooth_decay"
+   ]
+  },
+  "tardive_dyskinesia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "involuntary movements",
+    "tardive dyskinesia",
+    "uncontrollable movements",
+    "facial twitching from meds",
+    "drug-induced movements",
+    "medication movement disorder"
+   ],
+   "related": []
+  },
+  "thallium_poisoning": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "thallium toxicity",
+    "thallium poison",
+    "thallium exposure"
+   ],
+   "related": [
+    "plumbism",
+    "mercury_poisoning",
+    "arsenic_toxicity"
+   ]
+  },
+  "thrush": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "oral thrush",
+    "yeast infection mouth",
+    "candida",
+    "white tongue",
+    "mouth fungus",
+    "white patches mouth"
+   ],
+   "related": [
+    "rectal_itching"
+   ]
+  },
+  "vaginitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "vaginal infection",
+    "vaginal inflammation",
+    "yeast infection",
+    "vaginal irritation",
+    "vaginitis",
+    "bacterial vaginosis"
+   ],
+   "related": [
+    "cystitis"
+   ]
+  },
+  "weight_loss": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "losing weight",
+    "unexplained weight loss",
+    "dropping weight",
+    "slimming",
+    "sudden weight loss",
+    "wasting away"
+   ],
+   "related": [
+    "anorexia_nervosa"
+   ]
+  },
+  "arsenic_toxicity": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "arsenic poisoning",
+    "arsenic poison",
+    "arsenic exposure",
+    "arsenic toxicity"
+   ],
+   "related": [
+    "plumbism",
+    "mercury_poisoning",
+    "thallium_poisoning"
+   ]
+  },
+  "athletes_foot": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "athlete's foot",
+    "foot fungus",
+    "itchy feet",
+    "foot rash",
+    "tinea pedis",
+    "fungal feet",
+    "peeling feet"
+   ],
+   "related": [
+    "thrush"
+   ]
+  },
+  "backache": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "back pain",
+    "sore back",
+    "aching back",
+    "bad back",
+    "lower back pain",
+    "backache",
+    "back ache"
+   ],
+   "related": [
+    "bone_pain",
+    "neuralgia"
+   ]
+  },
+  "bedsores": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pressure sores",
+    "pressure ulcer",
+    "bed sore",
+    "pressure ulcers",
+    "bed sores",
+    "pressure wounds"
+   ],
+   "related": [
+    "cuts"
+   ]
+  },
+  "bleeding_bowels": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "blood in stool",
+    "rectal bleeding",
+    "bloody stool",
+    "blood in poop",
+    "blood when pooping",
+    "bowel bleeding"
+   ],
+   "related": [
+    "hemorrhoids",
+    "colitis",
+    "dysentery"
+   ]
+  },
+  "boils": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "skin boil",
+    "abscess",
+    "boil on skin",
+    "pus filled bump",
+    "skin abscess",
+    "boil"
+   ],
+   "related": [
+    "cuts"
+   ]
+  },
+  "brittle_nails": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "weak nails",
+    "nails breaking",
+    "splitting nails",
+    "cracked nails",
+    "nails splitting",
+    "peeling nails"
+   ],
+   "related": []
+  },
+  "bronchitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "chest infection",
+    "chest cold",
+    "bronchitis cough",
+    "inflamed airways",
+    "chesty cough"
+   ],
+   "related": [
+    "cough",
+    "chronic_obstructive_pulmonary_disease",
+    "influenza"
+   ]
+  },
+  "cheilosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cracked lips",
+    "cracked mouth corners",
+    "cracks at corners of mouth",
+    "angular cheilitis",
+    "chapped lip corners",
+    "sore lip corners"
+   ],
+   "related": []
+  },
+  "chronic_fatigue_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cfs",
+    "me/cfs",
+    "myalgic encephalomyelitis",
+    "constant exhaustion",
+    "always exhausted",
+    "chronic fatigue"
+   ],
+   "related": [
+    "chronic_fatigue",
+    "fibromyalgia"
+   ]
+  },
+  "colic": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "baby colic",
+    "crying baby",
+    "infant colic",
+    "colicky baby",
+    "baby stomach cramps",
+    "colicky"
+   ],
+   "related": []
+  },
+  "colitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "inflamed colon",
+    "colon inflammation",
+    "ulcerative colitis",
+    "bowel inflammation",
+    "inflamed bowel"
+   ],
+   "related": [
+    "crohns_disease",
+    "diverticulitis",
+    "bleeding_bowels"
+   ]
+  },
+  "cor_pulmonale": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "right heart failure",
+    "cor pulmonale",
+    "lung-related heart failure",
+    "heart failure from lung disease",
+    "pulmonary heart disease"
+   ],
+   "related": []
+  },
+  "cough": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "coughing",
+    "dry cough",
+    "persistent cough",
+    "chesty cough",
+    "cant stop coughing",
+    "hacking cough"
+   ],
+   "related": [
+    "bronchitis",
+    "influenza"
+   ]
+  },
+  "cradle_cap": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cradle cap",
+    "baby scalp flakes",
+    "infant scalp crust",
+    "baby dandruff",
+    "scalp crust on baby",
+    "flaky baby scalp"
+   ],
+   "related": [
+    "dandruff"
+   ]
+  },
+  "crohns_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "crohns",
+    "crohn's",
+    "crohn's disease",
+    "inflammatory bowel disease",
+    "ibd",
+    "gut inflammation"
+   ],
+   "related": [
+    "colitis",
+    "diverticulitis"
+   ]
+  },
+  "cuts": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "skin cut",
+    "wound",
+    "laceration",
+    "cut skin",
+    "open wound",
+    "gash"
+   ],
+   "related": [
+    "boils",
+    "bedsores"
+   ]
+  },
+  "dandruff": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "flaky scalp",
+    "itchy scalp",
+    "dandruf",
+    "scalp flakes",
+    "white flakes in hair",
+    "dry scalp flakes"
+   ],
+   "related": [
+    "cradle_cap"
+   ]
+  },
+  "dental_fluorosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "fluoride stains on teeth",
+    "tooth fluorosis",
+    "fluoride teeth spots",
+    "mottled teeth",
+    "white spots on teeth",
+    "dental fluorosis"
+   ],
+   "related": []
+  },
+  "osteosclerosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bone hardening",
+    "hardened bones",
+    "dense bones",
+    "bone density increase",
+    "hard bones"
+   ],
+   "related": [
+    "osteopenia",
+    "osteitis_fibrosa",
+    "bone_pain"
+   ]
+  },
+  "disagreeable_attitude": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bad attitude",
+    "irritability",
+    "grumpy",
+    "bad temper",
+    "moodiness",
+    "irritable",
+    "short temper"
+   ],
+   "related": []
+  },
+  "diverticulitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "diverticular disease",
+    "inflamed pouches colon",
+    "diverticula",
+    "colon pouches",
+    "diverticulosis"
+   ],
+   "related": [
+    "colitis",
+    "crohns_disease"
+   ]
+  },
+  "dysentery": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bloody diarrhea",
+    "severe diarrhea",
+    "dysentery",
+    "gut infection diarrhea",
+    "amoebic dysentery"
+   ],
+   "related": [
+    "bleeding_bowels",
+    "colitis"
+   ]
+  },
+  "dysphagia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "trouble swallowing",
+    "difficulty swallowing",
+    "hard to swallow",
+    "swallowing problems",
+    "cant swallow",
+    "painful swallowing"
+   ],
+   "related": [
+    "gastroparesis"
+   ]
+  },
+  "ecchymosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bruising",
+    "bruise",
+    "easy bruising",
+    "black and blue mark",
+    "bruise easily",
+    "skin bruising"
+   ],
+   "related": [
+    "prolonged_clotting_time"
+   ]
+  },
+  "eye_redness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "red eyes",
+    "bloodshot eyes",
+    "red eye",
+    "pink eye",
+    "bloodshot",
+    "irritated eyes"
+   ],
+   "related": [
+    "sty"
+   ]
+  },
+  "sty": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "stye",
+    "eye stye",
+    "eyelid bump",
+    "stye on eye",
+    "eye stye bump",
+    "lump on eyelid"
+   ],
+   "related": [
+    "eye_redness"
+   ]
+  },
+  "arthritis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "joint pain",
+    "joint inflammation",
+    "achy joints",
+    "stiff joints",
+    "arthritic",
+    "rheumatism",
+    "sore joints"
+   ],
+   "related": [
+    "osteoporosis",
+    "chondroitin"
+   ]
+  },
+  "hypertension": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "high blood pressure",
+    "high bp",
+    "elevated blood pressure",
+    "raised blood pressure",
+    "hypertension"
+   ],
+   "related": [
+    "high_cholesterol",
+    "aneurysm"
+   ]
+  },
+  "bone_spurs": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bone spur",
+    "heel spur",
+    "bony growth",
+    "bone growth",
+    "osteophyte"
+   ],
+   "related": []
+  },
+  "fatty_liver": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "fatty liver disease",
+    "liver fat",
+    "nafld",
+    "fat in liver",
+    "fatty liver",
+    "hepatic steatosis"
+   ],
+   "related": [
+    "high_triglycerides",
+    "prediabetes"
+   ]
+  },
+  "huntingtons_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "huntingtons",
+    "huntington's",
+    "huntington disease",
+    "huntington chorea",
+    "huntington's chorea"
+   ],
+   "related": []
+  },
+  "dementia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "dementia",
+    "memory loss",
+    "senility",
+    "alzheimers",
+    "losing memory",
+    "confusion in elderly"
+   ],
+   "related": []
+  },
+  "liver_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "liver problems",
+    "bad liver",
+    "liver damage",
+    "liver condition",
+    "sick liver",
+    "hepatic disease"
+   ],
+   "related": [
+    "liver_cirrhosis"
+   ]
+  },
+  "hypoglycemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low blood sugar",
+    "low sugar",
+    "hypoglycemia",
+    "blood sugar crash",
+    "sugar crash",
+    "hypoglycaemia"
+   ],
+   "related": []
+  },
+  "prediabetes": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pre diabetes",
+    "pre-diabetes",
+    "borderline diabetes",
+    "high blood sugar",
+    "prediabetic",
+    "insulin resistance"
+   ],
+   "related": [
+    "fatty_liver",
+    "high_triglycerides"
+   ]
+  },
+  "adhd": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "adhd",
+    "add",
+    "hyperactivity",
+    "attention deficit",
+    "hyperactive",
+    "cant focus"
+   ],
+   "related": [
+    "autism",
+    "learning_disabilities"
+   ]
+  },
+  "depression": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "depressed",
+    "feeling down",
+    "low mood",
+    "clinical depression",
+    "major depression",
+    "sadness",
+    "feeling sad"
+   ],
+   "related": [
+    "bipolar_disorder"
+   ]
+  },
+  "bipolar_disorder": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bipolar",
+    "manic depression",
+    "mood swings",
+    "bipolar disorder",
+    "manic depressive"
+   ],
+   "related": [
+    "depression"
+   ]
+  },
+  "high_cholesterol": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "high cholesterol",
+    "cholesterol",
+    "elevated cholesterol",
+    "bad cholesterol",
+    "high ldl",
+    "raised cholesterol"
+   ],
+   "related": [
+    "hypertension",
+    "heart_attack"
+   ]
+  },
+  "autism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "autism",
+    "autistic",
+    "autism spectrum",
+    "asd",
+    "aspergers"
+   ],
+   "related": [
+    "adhd",
+    "learning_disabilities"
+   ]
+  },
+  "obesity": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "obese",
+    "overweight",
+    "being fat",
+    "excess weight",
+    "weight problem",
+    "morbidly obese"
+   ],
+   "related": [
+    "high_cholesterol"
+   ]
+  },
+  "anxiety": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "anxious",
+    "worry",
+    "nervousness",
+    "panic",
+    "anxiety disorder",
+    "feeling anxious",
+    "stress and anxiety"
+   ],
+   "related": []
+  },
+  "dermatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "skin inflammation",
+    "skin rash",
+    "inflamed skin",
+    "itchy skin",
+    "rash",
+    "irritated skin"
+   ],
+   "related": [
+    "eczema",
+    "seborrheic_dermatitis"
+   ]
+  },
+  "peptic_ulcers": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "stomach ulcer",
+    "peptic ulcer",
+    "ulcer",
+    "stomach ulcers",
+    "gastric ulcer",
+    "duodenal ulcer"
+   ],
+   "related": []
+  },
+  "kidney_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "kidney problems",
+    "renal disease",
+    "kidney failure",
+    "bad kidneys",
+    "kidney trouble"
+   ],
+   "related": []
+  },
+  "pernicious_anemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "b12 anemia",
+    "b12 deficiency anemia",
+    "vitamin b12 anemia",
+    "pernicious anaemia"
+   ],
+   "related": []
+  },
+  "anemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low iron",
+    "iron deficiency",
+    "low blood count",
+    "anaemia",
+    "low hemoglobin",
+    "tired blood",
+    "low red blood cells"
+   ],
+   "related": [
+    "pica"
+   ]
+  },
+  "alopecia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hair loss",
+    "balding",
+    "bald spots",
+    "losing hair",
+    "hair falling out",
+    "baldness"
+   ],
+   "related": []
+  },
+  "eczema": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "eczema",
+    "itchy skin",
+    "dry itchy skin",
+    "skin rash",
+    "atopic dermatitis",
+    "eczma"
+   ],
+   "related": [
+    "dermatitis"
+   ]
+  },
+  "insomnia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cant sleep",
+    "trouble sleeping",
+    "sleeplessness",
+    "cannot sleep",
+    "sleep problems",
+    "insomia"
+   ],
+   "related": []
+  },
+  "osteoporosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "brittle bones",
+    "bone loss",
+    "weak bones",
+    "thinning bones",
+    "low bone density",
+    "porous bones",
+    "fragile bones"
+   ],
+   "related": [
+    "arthritis",
+    "pagets_disease"
+   ]
+  },
+  "kidney_stones": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "kidney stones",
+    "kidney stone",
+    "renal stones",
+    "stones in kidney",
+    "kidney gravel"
+   ],
+   "related": []
+  },
+  "neuropathy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nerve damage",
+    "nerve pain",
+    "numbness and tingling",
+    "tingling nerves",
+    "neurapathy",
+    "pinched nerve pain"
+   ],
+   "related": [
+    "peripheral_neuropathy"
+   ]
+  },
+  "bells_palsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bells palsy",
+    "facial paralysis",
+    "face droop",
+    "facial palsy",
+    "one sided face droop"
+   ],
+   "related": []
+  },
+  "panic_attacks": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "panic attack",
+    "anxiety attack",
+    "panic disorder",
+    "sudden anxiety",
+    "anxiety attacks"
+   ],
+   "related": []
+  },
+  "osteopenia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low bone density",
+    "thinning bones",
+    "pre-osteoporosis",
+    "bone loss",
+    "weak bones",
+    "bone thinning"
+   ],
+   "related": [
+    "fractures",
+    "osteosclerosis",
+    "osteitis_fibrosa",
+    "bone_pain"
+   ]
+  },
+  "osteomalacia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "soft bones",
+    "softening of bones",
+    "adult rickets",
+    "weak bones",
+    "bone softening"
+   ],
+   "related": [
+    "rickets"
+   ]
+  },
+  "menieres_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "menieres",
+    "meniere's disease",
+    "vertigo disease",
+    "inner ear vertigo",
+    "dizziness and ringing",
+    "ear balance disorder"
+   ],
+   "related": []
+  },
+  "restless_leg_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "rls",
+    "restless legs",
+    "restless leg",
+    "leg twitching at night",
+    "urge to move legs",
+    "creepy crawly legs"
+   ],
+   "related": []
+  },
+  "prolonged_clotting_time": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "slow blood clotting",
+    "blood wont clot",
+    "clotting problems",
+    "bleeding disorder",
+    "blood doesnt clot",
+    "poor clotting"
+   ],
+   "related": [
+    "ecchymosis",
+    "nosebleeds"
+   ]
+  },
+  "psychosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "psychotic",
+    "losing touch with reality",
+    "hallucinations",
+    "delusions",
+    "psychotic episode",
+    "psychosis"
+   ],
+   "related": []
+  },
+  "neuralgia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nerve pain",
+    "shooting nerve pain",
+    "burning nerve pain",
+    "facial nerve pain",
+    "nerve ache"
+   ],
+   "related": [
+    "backache",
+    "bone_pain"
+   ]
+  },
+  "bone_pain": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "aching bones",
+    "sore bones",
+    "painful bones",
+    "bone ache",
+    "bones hurt",
+    "hurting bones"
+   ],
+   "related": [
+    "osteopenia",
+    "fractures",
+    "osteosclerosis",
+    "backache"
+   ]
+  },
+  "convulsions": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "seizures",
+    "seizure",
+    "fits",
+    "convulsion",
+    "spasms"
+   ],
+   "related": []
+  },
+  "deafness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hearing loss",
+    "deaf",
+    "cant hear",
+    "hard of hearing",
+    "loss of hearing"
+   ],
+   "related": []
+  },
+  "dyslexia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "reading difficulty",
+    "reading disorder",
+    "trouble reading",
+    "dislexia",
+    "learning disability reading",
+    "word blindness"
+   ],
+   "related": []
+  },
+  "failure_to_thrive": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "not gaining weight baby",
+    "poor growth",
+    "baby not growing",
+    "failure to grow",
+    "underweight child"
+   ],
+   "related": []
+  },
+  "gingivitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gum inflammation",
+    "inflamed gums",
+    "bleeding gums",
+    "sore gums",
+    "swollen gums"
+   ],
+   "related": [
+    "periodontal_disease",
+    "pyorrhea",
+    "tooth_decay"
+   ]
+  },
+  "periodontal_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gum disease",
+    "periodontitis",
+    "gum infection",
+    "advanced gum disease",
+    "gum and bone disease"
+   ],
+   "related": [
+    "gingivitis",
+    "pyorrhea",
+    "tooth_decay"
+   ]
+  },
+  "hemorrhoids": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "piles",
+    "haemorrhoids",
+    "hemroids",
+    "swollen veins bottom",
+    "hemorrhoid",
+    "bum veins"
+   ],
+   "related": [
+    "rectal_itching",
+    "bleeding_bowels"
+   ]
+  },
+  "infarction": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tissue death",
+    "blocked artery",
+    "infarct",
+    "blood supply cut off",
+    "dead tissue"
+   ],
+   "related": [
+    "phlebitis"
+   ]
+  },
+  "stroke": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "brain attack",
+    "cva",
+    "cerebrovascular accident",
+    "mini stroke",
+    "brain bleed"
+   ],
+   "related": [
+    "cardiovascular_disease",
+    "arteriosclerosis"
+   ]
+  },
+  "kawasaki_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "kawasaki",
+    "kawasaki syndrome",
+    "childhood vasculitis",
+    "kawaski"
+   ],
+   "related": []
+  },
+  "menopause": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "menopause",
+    "hot flashes",
+    "change of life",
+    "menopausal",
+    "hot flushes",
+    "the change"
+   ],
+   "related": [
+    "pms"
+   ]
+  },
+  "multiple_sclerosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ms",
+    "ms disease",
+    "multiple sclerosis"
+   ],
+   "related": [
+    "als",
+    "parkinsons_disease"
+   ]
+  },
+  "als": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lou gehrigs disease",
+    "amyotrophic lateral sclerosis",
+    "motor neuron disease",
+    "lou gehrig"
+   ],
+   "related": [
+    "multiple_sclerosis",
+    "parkinsons_disease"
+   ]
+  },
+  "parkinsons_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "parkinsons",
+    "parkinson's",
+    "parkinson disease",
+    "shaking palsy",
+    "tremor disease"
+   ],
+   "related": [
+    "als",
+    "multiple_sclerosis"
+   ]
+  },
+  "phlebitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "vein inflammation",
+    "inflamed vein",
+    "swollen vein",
+    "blood clot vein",
+    "sore vein",
+    "painful vein"
+   ],
+   "related": [
+    "infarction"
+   ]
+  },
+  "varicose_veins": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bulging veins",
+    "spider veins",
+    "swollen veins",
+    "leg veins",
+    "varicose vein"
+   ],
+   "related": []
+  },
+  "vertigo": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "vertigo",
+    "dizziness",
+    "dizzy",
+    "spinning sensation",
+    "room spinning",
+    "balance problems"
+   ],
+   "related": []
+  },
+  "hypotension": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low blood pressure",
+    "low bp",
+    "low blood pressure symptoms",
+    "blood pressure too low",
+    "dizzy low pressure"
+   ],
+   "related": [
+    "raynauds_disease"
+   ]
+  },
+  "keratomalacia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "corneal softening",
+    "dry eyes vitamin a",
+    "eye softening",
+    "softening of cornea",
+    "vitamin a eye damage"
+   ],
+   "related": [
+    "eye_redness"
+   ]
+  },
+  "meningocele": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "spina bifida",
+    "spinal defect",
+    "neural tube defect",
+    "spinal sac defect",
+    "birth defect spine"
+   ],
+   "related": [
+    "anencephaly"
+   ]
+  },
+  "spina_bifida": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "spina bifida",
+    "spine defect",
+    "open spine",
+    "neural tube defect",
+    "split spine"
+   ],
+   "related": [
+    "birth_defects"
+   ]
+  },
+  "anencephaly": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "neural tube defect",
+    "missing brain",
+    "birth defect brain",
+    "no brain birth defect",
+    "brain not formed"
+   ],
+   "related": [
+    "meningocele"
+   ]
+  },
+  "birth_defects": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "birth defect",
+    "congenital defect",
+    "born with defect",
+    "birth abnormality",
+    "congenital abnormality",
+    "deformity at birth"
+   ],
+   "related": [
+    "spina_bifida",
+    "down_syndrome"
+   ]
+  },
+  "seborrheic_dermatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "seborrheic dermatitis",
+    "dandruff",
+    "flaky scalp",
+    "scalp dermatitis",
+    "cradle cap",
+    "seborrhea"
+   ],
+   "related": [
+    "dermatitis"
+   ]
+  },
+  "anorexia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "loss of appetite",
+    "not eating",
+    "no appetite",
+    "eating disorder",
+    "anorexic",
+    "wont eat"
+   ],
+   "related": []
+  },
+  "anorexia_nervosa": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "anorexia",
+    "eating disorder",
+    "not eating",
+    "starving self",
+    "refusing to eat",
+    "anorexic"
+   ],
+   "related": [
+    "weight_loss"
+   ]
+  },
+  "hepatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "liver inflammation",
+    "inflamed liver",
+    "hep",
+    "hep c",
+    "hep b",
+    "liver infection",
+    "hepatitus"
+   ],
+   "related": []
+  },
+  "liver_cirrhosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cirrhosis",
+    "liver cirrhosis",
+    "scarred liver",
+    "liver scarring",
+    "cirrosis"
+   ],
+   "related": [
+    "liver_disease"
+   ]
+  },
+  "infertility": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cant get pregnant",
+    "unable to conceive",
+    "sterility",
+    "trouble conceiving",
+    "fertility problems",
+    "barren",
+    "cannot conceive"
+   ],
+   "related": []
+  },
+  "goiter": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "swollen thyroid",
+    "enlarged thyroid",
+    "goitre",
+    "thyroid swelling",
+    "neck swelling",
+    "swollen neck"
+   ],
+   "related": [
+    "hypothyroidism"
+   ]
+  },
+  "hypothyroidism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "underactive thyroid",
+    "low thyroid",
+    "hypothyroid",
+    "slow thyroid",
+    "underactive thyroid gland"
+   ],
+   "related": [
+    "goiter"
+   ]
+  },
+  "hyperthyroidism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "overactive thyroid",
+    "overactive thyroid gland",
+    "high thyroid",
+    "hyperthyroid",
+    "fast thyroid",
+    "hyperthyroidsm"
+   ],
+   "related": [
+    "graves_disease",
+    "thyroid_disease"
+   ]
+  },
+  "graves_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "graves",
+    "graves' disease",
+    "grave's disease",
+    "bulging eyes thyroid",
+    "autoimmune hyperthyroid",
+    "overactive thyroid autoimmune"
+   ],
+   "related": [
+    "hyperthyroidism",
+    "thyroid_disease"
+   ]
+  },
+  "atopic_dermatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "eczema",
+    "atopic eczema",
+    "itchy skin rash",
+    "skin allergy rash",
+    "dermatitis",
+    "eczyma",
+    "dry itchy skin"
+   ],
+   "related": [
+    "atopic_asthma"
+   ]
+  },
+  "cardiomyopathy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heart muscle disease",
+    "enlarged heart",
+    "weak heart muscle",
+    "heart muscle weakness",
+    "diseased heart muscle"
+   ],
+   "related": [
+    "heart_attack",
+    "keshan_disease"
+   ]
+  },
+  "white_muscle_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "selenium deficiency muscle disease",
+    "stiff lamb disease",
+    "nutritional muscular dystrophy",
+    "muscle degeneration selenium",
+    "white muscle"
+   ],
+   "related": []
+  },
+  "muscular_dystrophy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "muscular dystrophy",
+    "md",
+    "muscle wasting",
+    "muscle degeneration",
+    "muscle weakness disease",
+    "wasting muscles"
+   ],
+   "related": []
+  },
+  "keshan_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "keshan disease",
+    "keshan",
+    "selenium deficiency heart",
+    "heart disease selenium"
+   ],
+   "related": [
+    "cardiomyopathy"
+   ]
+  },
+  "asthma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "asthma",
+    "wheezing",
+    "trouble breathing",
+    "asma",
+    "asthma attack",
+    "breathing problems"
+   ],
+   "related": []
+  },
+  "atopic_asthma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "allergic asthma",
+    "allergy asthma",
+    "asthma from allergies",
+    "allergen asthma",
+    "asma"
+   ],
+   "related": [
+    "atopic_dermatitis"
+   ]
+  },
+  "pica": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pica",
+    "eating dirt",
+    "eating non-food",
+    "craving non-food",
+    "eating chalk",
+    "eating strange things",
+    "eating things that arent food"
+   ],
+   "related": [
+    "anemia"
+   ]
+  },
+  "criminal_behavior": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "crime",
+    "criminal behaviour",
+    "delinquency",
+    "violence",
+    "criminality",
+    "violent behavior"
+   ],
+   "related": [
+    "hyperactivity"
+   ]
+  },
+  "cerebral_palsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cerebral palsy",
+    "cp",
+    "spastic paralysis",
+    "brain palsy"
+   ],
+   "related": [
+    "birth_defects"
+   ]
+  },
+  "learning_disabilities": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "learning disability",
+    "learning disabilities",
+    "learning disorder",
+    "slow learner",
+    "dyslexia",
+    "trouble learning"
+   ],
+   "related": [
+    "adhd",
+    "autism"
+   ]
+  },
+  "neutropenia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low white blood cells",
+    "low neutrophils",
+    "low white cell count",
+    "weak immune system"
+   ],
+   "related": []
+  },
+  "enzootic_ataxia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "swayback",
+    "copper deficiency ataxia",
+    "enzootic ataxia",
+    "lamb swayback",
+    "wobbly gait copper",
+    "ataxia from copper deficiency"
+   ],
+   "related": []
+  },
+  "mad_cow_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bse",
+    "bovine spongiform encephalopathy",
+    "creutzfeldt jakob",
+    "cjd",
+    "prion disease",
+    "mad cow"
+   ],
+   "related": [
+    "encephalopathy"
+   ]
+  },
+  "leukopenia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low white blood cells",
+    "low white blood count",
+    "low wbc",
+    "low immune cells",
+    "leukopenia",
+    "low white count"
+   ],
+   "related": []
+  },
+  "aneurysm": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "aneurysm",
+    "aneurism",
+    "burst blood vessel",
+    "bulging artery",
+    "brain aneurysm",
+    "ballooning artery"
+   ],
+   "related": [
+    "hypertension"
+   ]
+  },
+  "hernia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ruptured",
+    "bulging groin",
+    "herniated",
+    "inguinal hernia",
+    "hiatal hernia",
+    "hernias",
+    "belly bulge"
+   ],
+   "related": []
+  },
+  "thyroid_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "thyroid problem",
+    "thyroid disorder",
+    "thyroid condition",
+    "thyroid issues",
+    "underactive thyroid",
+    "thyroid gland problem"
+   ],
+   "related": [
+    "hyperthyroidism",
+    "graves_disease",
+    "thyroid_cancer"
+   ]
+  },
+  "brain_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "brain tumor",
+    "brain tumour",
+    "brain cancer",
+    "tumor in the brain",
+    "malignant brain tumor",
+    "glioma"
+   ],
+   "related": []
+  },
+  "cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tumor",
+    "tumour",
+    "malignancy",
+    "carcinoma",
+    "cancerous",
+    "the big c",
+    "malignant"
+   ],
+   "related": [
+    "chemotherapy"
+   ]
+  },
+  "immune_depression": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "weak immune system",
+    "low immunity",
+    "suppressed immune system",
+    "immune deficiency",
+    "weakened immunity",
+    "poor immune function"
+   ],
+   "related": []
+  },
+  "rheumatic_fever": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "rheumatic fever",
+    "strep heart complication",
+    "rheumatic heart disease",
+    "joint fever after strep",
+    "rheumatic feaver"
+   ],
+   "related": []
+  },
+  "rocky_mountain_spotted_fever": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "rmsf",
+    "tick fever",
+    "spotted fever",
+    "tick bite fever",
+    "tick borne fever"
+   ],
+   "related": [
+    "tularemia"
+   ]
+  },
+  "roseola": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sixth disease",
+    "roseola infantum",
+    "baby rash fever",
+    "three day fever",
+    "roseola rash"
+   ],
+   "related": [
+    "rubella",
+    "scarlatina"
+   ]
+  },
+  "rubella": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "german measles",
+    "three day measles",
+    "rubela",
+    "rubella rash",
+    "measles german"
+   ],
+   "related": [
+    "scarlatina",
+    "roseola"
+   ]
+  },
+  "scabies": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "itch mites",
+    "skin mites",
+    "mite infestation",
+    "scabbies",
+    "itchy skin mites",
+    "scabies rash",
+    "seven year itch"
+   ],
+   "related": []
+  },
+  "scarlatina": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "scarlet fever",
+    "red rash fever",
+    "strep rash",
+    "scarlet rash",
+    "scarletina"
+   ],
+   "related": [
+    "sore_throat",
+    "rubella"
+   ]
+  },
+  "schistosomiasis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "snail fever",
+    "bilharzia",
+    "blood fluke",
+    "parasitic flatworm",
+    "schisto",
+    "worm infection water"
+   ],
+   "related": []
+  },
+  "sebaceous_cyst": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "skin cyst",
+    "oil gland cyst",
+    "lump under skin",
+    "epidermoid cyst",
+    "sebasious cyst",
+    "cyst on skin"
+   ],
+   "related": []
+  },
+  "sore_throat": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "throat pain",
+    "painful throat",
+    "scratchy throat",
+    "throat hurts",
+    "strep throat",
+    "sore throught"
+   ],
+   "related": [
+    "scarlatina",
+    "throat_cancer"
+   ]
+  },
+  "spider_bite": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "spider bites",
+    "bit by a spider",
+    "spider sting",
+    "arachnid bite",
+    "spyder bite"
+   ],
+   "related": []
+  },
+  "sprain": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sprained ankle",
+    "twisted ankle",
+    "sprained joint",
+    "pulled ligament",
+    "sprained wrist",
+    "sprane"
+   ],
+   "related": [
+    "strain"
+   ]
+  },
+  "strabismus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "crossed eyes",
+    "cross eyed",
+    "lazy eye",
+    "wandering eye",
+    "eye squint",
+    "misaligned eyes"
+   ],
+   "related": []
+  },
+  "strain": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pulled muscle",
+    "muscle strain",
+    "strained muscle",
+    "muscle pull",
+    "pulled a muscle"
+   ],
+   "related": [
+    "sprain"
+   ]
+  },
+  "swimmers_ear": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "swimmer's ear",
+    "outer ear infection",
+    "ear infection from swimming",
+    "otitis externa",
+    "swimmers ear"
+   ],
+   "related": []
+  },
+  "syphilis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "std",
+    "sti",
+    "syphillis",
+    "siphilis",
+    "the pox",
+    "sexually transmitted infection"
+   ],
+   "related": []
+  },
+  "teeth_discoloration": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "stained teeth",
+    "yellow teeth",
+    "discolored teeth",
+    "tooth stains",
+    "teeth staining",
+    "brown teeth"
+   ],
+   "related": []
+  },
+  "tetanus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lockjaw",
+    "tetnus",
+    "tetanus infection",
+    "jaw lock",
+    "tetanis"
+   ],
+   "related": []
+  },
+  "tongue_atrophy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "shrinking tongue",
+    "smooth tongue",
+    "tongue wasting",
+    "sore smooth tongue",
+    "atrophic tongue"
+   ],
+   "related": []
+  },
+  "torticollis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "wry neck",
+    "twisted neck",
+    "stiff neck",
+    "neck spasm",
+    "crick in neck",
+    "wryneck"
+   ],
+   "related": []
+  },
+  "toxic_shock_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tss",
+    "tampon infection",
+    "tampon disease",
+    "toxic shock",
+    "staph shock"
+   ],
+   "related": []
+  },
+  "tularemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "rabbit fever",
+    "deer fly fever",
+    "tularaemia",
+    "tularemia infection",
+    "hunter's disease"
+   ],
+   "related": [
+    "rabbit_fever",
+    "rocky_mountain_spotted_fever"
+   ]
+  },
+  "rabbit_fever": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tularemia",
+    "rabbit disease",
+    "deer fly fever",
+    "rabbit fever infection"
+   ],
+   "related": [
+    "tularemia"
+   ]
+  },
+  "warts": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "wart",
+    "skin warts",
+    "plantar wart",
+    "hpv wart",
+    "verruca",
+    "wort",
+    "warts on skin"
+   ],
+   "related": []
+  },
+  "white_spots_fingernails": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "white spots on nails",
+    "white marks on nails",
+    "nail white spots",
+    "white spots on fingernails",
+    "white dots nails"
+   ],
+   "related": []
+  },
+  "arteriosclerosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hardening of the arteries",
+    "hardened arteries",
+    "arterial hardening",
+    "clogged arteries",
+    "atherosclerosis",
+    "stiff arteries",
+    "plaque in arteries"
+   ],
+   "related": [
+    "cardiovascular_disease",
+    "stroke"
+   ]
+  },
+  "colon_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bowel cancer",
+    "colorectal cancer",
+    "cancer of the colon",
+    "colon tumor",
+    "intestinal cancer",
+    "colon tumour"
+   ],
+   "related": [
+    "liver_cancer",
+    "prostate_cancer",
+    "colonics"
+   ]
+  },
+  "oral_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "mouth cancer",
+    "tongue cancer",
+    "gum cancer",
+    "oral tumor",
+    "cancer of the mouth",
+    "lip cancer"
+   ],
+   "related": [
+    "throat_cancer"
+   ]
+  },
+  "osteosarcoma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bone cancer",
+    "bone tumor",
+    "osteosarcoma",
+    "malignant bone tumor",
+    "cancer of the bone"
+   ],
+   "related": []
+  },
+  "thyroid_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "thyroid cancer",
+    "thyroid tumor",
+    "cancer of the thyroid",
+    "thyroid gland cancer",
+    "thyroid nodule cancer"
+   ],
+   "related": [
+    "thyroid_disease"
+   ]
+  },
+  "liver_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cancer of the liver",
+    "hepatic cancer",
+    "liver tumor",
+    "liver tumour",
+    "hepatocellular carcinoma"
+   ],
+   "related": [
+    "colon_cancer",
+    "prostate_cancer"
+   ]
+  },
+  "sarcoma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "soft tissue cancer",
+    "bone cancer",
+    "connective tissue cancer",
+    "sarcoma tumor",
+    "muscle cancer"
+   ],
+   "related": []
+  },
+  "lung_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "lung tumor",
+    "lung carcinoma",
+    "smoker's cancer",
+    "cancer of the lung",
+    "lung cancers"
+   ],
+   "related": []
+  },
+  "breast_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "breast cancer",
+    "breast tumor",
+    "breast lump cancer",
+    "cancer of the breast",
+    "malignant breast tumor"
+   ],
+   "related": [
+    "fibrocystic_breast_disease"
+   ]
+  },
+  "prostate_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cancer of the prostate",
+    "prostate tumor",
+    "prostate tumour",
+    "prostate malignancy"
+   ],
+   "related": [
+    "benign_prostatic_hyperplasia",
+    "colon_cancer"
+   ]
+  },
+  "throat_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "voice box cancer",
+    "laryngeal cancer",
+    "pharyngeal cancer",
+    "cancer of the throat",
+    "larynx cancer"
+   ],
+   "related": [
+    "oral_cancer",
+    "esophageal_cancer"
+   ]
+  },
+  "esophageal_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "esophagus cancer",
+    "food pipe cancer",
+    "gullet cancer",
+    "cancer of the esophagus",
+    "esophogeal cancer"
+   ],
+   "related": [
+    "throat_cancer",
+    "stomach_cancer"
+   ]
+  },
+  "stomach_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gastric cancer",
+    "stomach tumor",
+    "cancer of the stomach",
+    "belly cancer"
+   ],
+   "related": [
+    "esophageal_cancer",
+    "pancreatic_cancer"
+   ]
+  },
+  "pancreatic_cancer": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pancreas cancer",
+    "pancreas tumor",
+    "cancer of the pancreas",
+    "pancreatic tumor"
+   ],
+   "related": [
+    "stomach_cancer"
+   ]
+  },
+  "melanoma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "skin cancer",
+    "melanoma",
+    "mole cancer",
+    "malignant mole",
+    "black skin cancer",
+    "cancerous mole"
+   ],
+   "related": []
+  },
+  "basal_cell_carcinoma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bcc",
+    "skin cancer",
+    "basal cell skin cancer",
+    "basal cell",
+    "skin cancer basal"
+   ],
+   "related": []
+  },
+  "leukemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "blood cancer",
+    "leukemia",
+    "leukaemia",
+    "cancer of the blood",
+    "white blood cell cancer",
+    "bone marrow cancer"
+   ],
+   "related": []
+  },
+  "organic_brain_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "obs",
+    "brain dysfunction",
+    "organic brain disorder",
+    "brain disorder",
+    "organic brain disease"
+   ],
+   "related": [
+    "encephalopathy",
+    "schizophrenia"
+   ]
+  },
+  "schizophrenia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "schizophrenic",
+    "split personality",
+    "psychosis",
+    "schizophrania",
+    "skitzophrenia",
+    "hearing voices"
+   ],
+   "related": [
+    "paranoia"
+   ]
+  },
+  "rheumatoid_arthritis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "ra",
+    "rheumatoid arthritis",
+    "autoimmune arthritis",
+    "rheumatoid",
+    "inflamed joints arthritis",
+    "rheumatiod arthritis"
+   ],
+   "related": []
+  },
+  "cataracts": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cataracts",
+    "cataract",
+    "cloudy eyes",
+    "clouded lens",
+    "cloudy vision",
+    "catarcts"
+   ],
+   "related": []
+  },
+  "gout": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "gout",
+    "gouty arthritis",
+    "big toe pain",
+    "uric acid arthritis",
+    "gout attack",
+    "painful big toe joint"
+   ],
+   "related": []
+  },
+  "osteoarthritis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "oa",
+    "wear and tear arthritis",
+    "degenerative arthritis",
+    "joint arthritis",
+    "worn joints",
+    "osteo arthritis"
+   ],
+   "related": []
+  },
+  "encephalopathy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "brain disease",
+    "brain damage",
+    "brain dysfunction",
+    "encefalopathy",
+    "damaged brain"
+   ],
+   "related": [
+    "organic_brain_syndrome"
+   ]
+  },
+  "down_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "down syndrome",
+    "downs syndrome",
+    "trisomy 21",
+    "downs",
+    "down's syndrome"
+   ],
+   "related": [
+    "birth_defects"
+   ]
+  },
+  "neural_tube_defects": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "neural tube defect",
+    "spina bifida",
+    "birth defect of the spine",
+    "ntd",
+    "folic acid birth defect",
+    "open spine birth defect"
+   ],
+   "related": []
+  },
+  "cleft_lip": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "harelip",
+    "hare lip",
+    "split lip",
+    "cleft palate",
+    "cleft lip and palate"
+   ],
+   "related": [
+    "heart_defects"
+   ]
+  },
+  "cleft_palate": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cleft palate",
+    "cleft lip",
+    "split lip birth defect",
+    "harelip",
+    "cleft lip and palate",
+    "roof of mouth birth defect"
+   ],
+   "related": []
+  },
+  "heart_defects": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "congenital heart defect",
+    "hole in the heart",
+    "heart malformation",
+    "birth heart problem",
+    "heart defect",
+    "born with heart problem"
+   ],
+   "related": [
+    "cleft_lip"
+   ]
+  },
+  "ageusia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "loss of taste",
+    "no taste",
+    "cant taste",
+    "taste loss",
+    "lost sense of taste",
+    "cannot taste"
+   ],
+   "related": []
+  },
+  "hypogonadism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low testosterone",
+    "low hormones",
+    "underactive gonads",
+    "low sex hormones",
+    "low t",
+    "hormone deficiency"
+   ],
+   "related": []
+  },
+  "acrodermatitis_enteropathica": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "zinc deficiency rash",
+    "zinc deficiency skin",
+    "zinc deficiency dermatitis",
+    "acrodermatitis"
+   ],
+   "related": []
+  },
+  "diarrhea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "loose stools",
+    "runny stool",
+    "the runs",
+    "loose bowels",
+    "diarrhoea",
+    "watery stools",
+    "diarreah",
+    "upset stomach"
+   ],
+   "related": [
+    "vomiting",
+    "flatulence"
+   ]
+  },
+  "paranoia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "paranoid",
+    "feeling paranoid",
+    "persecution feelings",
+    "paranoid thoughts",
+    "paranoya",
+    "suspiciousness"
+   ],
+   "related": [
+    "schizophrenia"
+   ]
+  },
+  "bulimia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "binge and purge",
+    "eating disorder",
+    "bulimia nervosa",
+    "bulemia",
+    "self induced vomiting",
+    "binge purge"
+   ],
+   "related": []
+  },
+  "addisons_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "addisons",
+    "addison's disease",
+    "adrenal insufficiency",
+    "underactive adrenals",
+    "low cortisol disease",
+    "adrenal failure"
+   ],
+   "related": []
+  },
+  "water_intoxication": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "water poisoning",
+    "overhydration",
+    "too much water",
+    "water toxicity",
+    "hyponatremia",
+    "drinking too much water"
+   ],
+   "related": []
+  },
+  "heat_stroke": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heatstroke",
+    "heat stroke",
+    "overheating",
+    "sunstroke",
+    "heat exhaustion",
+    "overheated body"
+   ],
+   "related": []
+  },
+  "sickle_cell_anemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sickle cell",
+    "sickle cell disease",
+    "sickle cell anemia",
+    "sickle cell anaemia",
+    "sickle cell blood disorder",
+    "sicle cell"
+   ],
+   "related": []
+  },
+  "collagen_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "connective tissue disease",
+    "collagen disorder",
+    "autoimmune connective tissue",
+    "collagen vascular disease"
+   ],
+   "related": []
+  },
+  "male_pattern_baldness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "balding",
+    "hair loss in men",
+    "receding hairline",
+    "androgenic alopecia",
+    "going bald",
+    "male hair loss",
+    "thinning hair"
+   ],
+   "related": []
+  },
+  "peripheral_neuropathy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nerve damage in feet",
+    "numbness in feet and hands",
+    "peripheral nerve damage",
+    "tingling hands and feet",
+    "burning feet nerves",
+    "peripheral neuropathy"
+   ],
+   "related": [
+    "neuropathy"
+   ]
+  },
+  "tourette_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "tourettes",
+    "tourette's",
+    "tics",
+    "tic disorder",
+    "vocal tics",
+    "involuntary tics"
+   ],
+   "related": []
+  },
+  "scurvy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "vitamin c deficiency",
+    "scurvey",
+    "bleeding gums vitamin c",
+    "scurvy disease",
+    "lack of vitamin c"
+   ],
+   "related": []
+  },
+  "rickets": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "soft bones in children",
+    "bowed legs",
+    "bendy bones",
+    "vitamin d deficiency bones",
+    "weak bones child"
+   ],
+   "related": [
+    "osteomalacia"
+   ]
+  },
+  "myopia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "nearsighted",
+    "near sighted",
+    "short sighted",
+    "cant see far",
+    "blurry distance vision",
+    "myopic"
+   ],
+   "related": []
+  },
+  "malabsorption": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "poor absorption",
+    "not absorbing nutrients",
+    "malabsorption",
+    "nutrient absorption problem",
+    "gut absorption issue",
+    "malabsorbtion"
+   ],
+   "related": []
+  },
+  "ischemic_heart_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "coronary artery disease",
+    "cad",
+    "clogged heart arteries",
+    "reduced blood flow to heart",
+    "ischaemic heart disease",
+    "coronary heart disease"
+   ],
+   "related": []
+  },
+  "acne": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pimples",
+    "zits",
+    "breakouts",
+    "spots",
+    "skin breakouts",
+    "acne vulgaris"
+   ],
+   "related": []
+  },
+  "hyperactivity": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hyper kids",
+    "adhd",
+    "add",
+    "overactive child",
+    "cant sit still",
+    "restless child",
+    "hyperactive"
+   ],
+   "related": [
+    "criminal_behavior"
+   ]
+  },
+  "hyperkinesis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hyperactivity",
+    "hyperactive",
+    "overactive",
+    "restlessness",
+    "cant sit still",
+    "hyper kids"
+   ],
+   "related": []
+  },
+  "carpal_tunnel_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "carpal tunnel",
+    "cts",
+    "wrist pain",
+    "numb hands",
+    "hand numbness",
+    "carpel tunnel"
+   ],
+   "related": []
+  },
+  "erbs_palsy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "erb's palsy",
+    "birth arm palsy",
+    "brachial plexus injury",
+    "shoulder nerve injury",
+    "erbs palsy",
+    "arm nerve damage birth"
+   ],
+   "related": []
+  },
+  "fibromyalgia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "fibro",
+    "fibromyalgia",
+    "widespread muscle pain",
+    "chronic muscle pain",
+    "fibromialgia",
+    "body-wide pain and fatigue"
+   ],
+   "related": [
+    "chronic_fatigue_syndrome"
+   ]
+  },
+  "repetitive_motion_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "repetitive strain injury",
+    "rsi",
+    "repetitive stress injury",
+    "overuse injury",
+    "repetitive motion injury",
+    "strain from typing"
+   ],
+   "related": [
+    "bursitis"
+   ]
+  },
+  "bladder_stones": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bladder stone",
+    "stones in bladder",
+    "urinary stones",
+    "bladder stones",
+    "stone in the bladder"
+   ],
+   "related": []
+  },
+  "blind_rage": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "uncontrollable anger",
+    "fits of rage",
+    "violent anger",
+    "rage",
+    "raging fits",
+    "sudden rage"
+   ],
+   "related": []
+  },
+  "violent_behavior": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "aggression",
+    "violence",
+    "aggressive behavior",
+    "rage",
+    "anger issues",
+    "violent tendencies",
+    "hostility",
+    "angry outbursts"
+   ],
+   "related": []
+  },
+  "tetany": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "muscle spasms",
+    "muscle cramps",
+    "involuntary muscle contractions",
+    "muscle twitching",
+    "calcium spasms",
+    "cramping muscles"
+   ],
+   "related": [
+    "edema"
+   ]
+  },
+  "congenital_ataxia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "balance disorder at birth",
+    "coordination disorder",
+    "ataxia",
+    "birth balance problem",
+    "unsteady from birth"
+   ],
+   "related": []
+  },
+  "chondrodystrophy": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cartilage disorder",
+    "abnormal cartilage growth",
+    "dwarfism",
+    "bone growth disorder",
+    "cartilage growth problem"
+   ],
+   "related": []
+  },
+  "tmj": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "jaw pain",
+    "tmj disorder",
+    "jaw joint pain",
+    "temporomandibular joint",
+    "clicking jaw",
+    "tmd"
+   ],
+   "related": []
+  },
+  "chondromalacia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "chondromalacia patella",
+    "runner's knee",
+    "runners knee",
+    "kneecap pain",
+    "softening of cartilage",
+    "knee cartilage softening",
+    "cartilage damage in knee",
+    "chondromalasia"
+   ],
+   "related": [
+    "muscle_cramps"
+   ]
+  },
+  "miscarriage": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "miscarriage",
+    "pregnancy loss",
+    "lost pregnancy",
+    "losing a baby",
+    "spontaneous abortion",
+    "early pregnancy loss",
+    "lost the baby",
+    "miscariage"
+   ],
+   "related": []
+  },
+  "parkinsonism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "parkinsons",
+    "parkinson's",
+    "parkinsons disease",
+    "shaking hands",
+    "tremors",
+    "movement disorder",
+    "parkinson like symptoms",
+    "shaking disease",
+    "parkinsonism"
+   ],
+   "related": []
+  },
+  "edema": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "swelling",
+    "water retention",
+    "fluid retention",
+    "swollen legs",
+    "swollen ankles",
+    "puffiness",
+    "oedema",
+    "fluid buildup"
+   ],
+   "related": [
+    "dropsy"
+   ]
+  },
+  "hyperparathyroidism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "overactive parathyroid",
+    "high parathyroid hormone",
+    "high pth",
+    "parathyroid problem",
+    "overactive parathyroid gland",
+    "too much parathyroid hormone",
+    "hyperparathyroid"
+   ],
+   "related": []
+  },
+  "hypophosphatemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low phosphate",
+    "low phosphorus",
+    "phosphate deficiency",
+    "low blood phosphate",
+    "phosphorus deficiency",
+    "low phosphate levels"
+   ],
+   "related": [
+    "hypokalemia"
+   ]
+  },
+  "cardiac_arrest": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cardiac arrest",
+    "heart stopped",
+    "heart stopping",
+    "sudden heart stop",
+    "no heartbeat",
+    "flatline",
+    "heart failure stop",
+    "cardiac arest"
+   ],
+   "related": [
+    "sudden_cardiac_death",
+    "heart_failure",
+    "cardiac_failure"
+   ]
+  },
+  "acidosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "acidosis",
+    "too acidic blood",
+    "blood too acidic",
+    "acid buildup",
+    "low blood ph",
+    "body too acidic",
+    "acidic body"
+   ],
+   "related": [
+    "alkalosis"
+   ]
+  },
+  "alkalosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "alkalosis",
+    "blood too alkaline",
+    "high blood ph",
+    "too alkaline",
+    "body too alkaline",
+    "alkaline blood"
+   ],
+   "related": [
+    "acidosis"
+   ]
+  },
+  "hashimotos_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hashimotos",
+    "hashimoto's",
+    "autoimmune thyroid",
+    "hashimotos thyroiditis",
+    "underactive thyroid autoimmune"
+   ],
+   "related": [
+    "lupus"
+   ]
+  },
+  "cretinism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cretinism",
+    "congenital hypothyroidism",
+    "stunted growth thyroid",
+    "iodine deficiency in babies",
+    "underactive thyroid baby",
+    "cretin"
+   ],
+   "related": []
+  },
+  "wilsons_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "wilson's syndrome",
+    "wilsons syndrome",
+    "wilson temperature syndrome",
+    "wilson's disease",
+    "copper buildup",
+    "copper overload",
+    "low body temperature thyroid"
+   ],
+   "related": []
+  },
+  "heart_failure": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "heart failure",
+    "congestive heart failure",
+    "chf",
+    "weak heart",
+    "failing heart",
+    "heart can't pump",
+    "enlarged heart",
+    "heart faliure"
+   ],
+   "related": [
+    "cardiac_failure",
+    "cardiac_arrest",
+    "sudden_cardiac_death"
+   ]
+  },
+  "angular_stomatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cracked mouth corners",
+    "cracks at corners of mouth",
+    "angular cheilitis",
+    "sore mouth corners",
+    "mouth corner cracks"
+   ],
+   "related": []
+  },
+  "hyperinsulinemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "high insulin",
+    "too much insulin",
+    "high blood insulin",
+    "insulin resistance",
+    "elevated insulin",
+    "excess insulin"
+   ],
+   "related": []
+  },
+  "blindness": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "blindness",
+    "loss of vision",
+    "can't see",
+    "going blind",
+    "vision loss",
+    "losing eyesight",
+    "sightless",
+    "no vision"
+   ],
+   "related": [
+    "keratitis"
+   ]
+  },
+  "keratitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "keratitis",
+    "cornea inflammation",
+    "inflamed cornea",
+    "eye inflammation",
+    "corneal infection",
+    "sore eye",
+    "corneal inflammation"
+   ],
+   "related": [
+    "blindness"
+   ]
+  },
+  "corneal_ulcers": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "corneal ulcer",
+    "eye ulcer",
+    "ulcer on eye",
+    "sore on cornea",
+    "eye ulcer infection",
+    "ulcerated eye"
+   ],
+   "related": []
+  },
+  "carcinoma": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "carcinoma",
+    "cancer",
+    "malignant tumor",
+    "skin cancer",
+    "tumor",
+    "malignancy",
+    "cancerous growth",
+    "carsinoma"
+   ],
+   "related": []
+  },
+  "beriberi": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "beri beri",
+    "beri-beri",
+    "thiamine deficiency",
+    "vitamin b1 deficiency",
+    "beriberi disease"
+   ],
+   "related": [
+    "wernicke_korsakoff_syndrome"
+   ]
+  },
+  "wernicke_korsakoff_syndrome": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "wernicke korsakoff",
+    "korsakoff syndrome",
+    "wet brain",
+    "alcohol brain damage",
+    "wernicke's encephalopathy",
+    "korsakoff psychosis",
+    "thiamine deficiency brain"
+   ],
+   "related": [
+    "beriberi"
+   ]
+  },
+  "achlorhydria": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low stomach acid",
+    "no stomach acid",
+    "lack of stomach acid",
+    "low hcl",
+    "not enough stomach acid",
+    "achlorhydria",
+    "stomach acid deficiency"
+   ],
+   "related": []
+  },
+  "photophobia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "light sensitivity",
+    "sensitivity to light",
+    "eyes hurt in light",
+    "light hurts eyes",
+    "sensitive to bright light",
+    "sensitive eyes"
+   ],
+   "related": []
+  },
+  "pellagra": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "niacin deficiency",
+    "vitamin b3 deficiency",
+    "pelagra",
+    "pellagra disease",
+    "three d's disease"
+   ],
+   "related": [
+    "beriberi"
+   ]
+  },
+  "muscle_cramps": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "muscle cramps",
+    "charley horse",
+    "charlie horse",
+    "leg cramps",
+    "muscle spasm",
+    "cramping",
+    "muscle knot",
+    "night cramps"
+   ],
+   "related": [
+    "hypokalemia"
+   ]
+  },
+  "stomatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "stomatitis",
+    "mouth sores",
+    "mouth inflammation",
+    "sore mouth",
+    "inflamed mouth",
+    "mouth ulcers",
+    "canker sores",
+    "sore in mouth"
+   ],
+   "related": []
+  },
+  "hypokalemia": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "low potassium",
+    "potassium deficiency",
+    "low blood potassium",
+    "not enough potassium",
+    "low potassium levels",
+    "hypokalemia"
+   ],
+   "related": [
+    "muscle_cramps"
+   ]
+  },
+  "cardiac_failure": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cardiac failure",
+    "heart failure",
+    "congestive heart failure",
+    "chf",
+    "failing heart",
+    "weak heart",
+    "heart not pumping"
+   ],
+   "related": [
+    "heart_failure",
+    "cardiac_arrest"
+   ]
+  },
+  "sudden_cardiac_death": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sudden cardiac death",
+    "scd",
+    "sudden death",
+    "dropping dead",
+    "sudden heart death",
+    "died suddenly",
+    "dropped dead heart"
+   ],
+   "related": [
+    "cardiac_arrest",
+    "heart_failure",
+    "sids"
+   ]
+  },
+  "hiv_aids": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "hiv",
+    "aids",
+    "hiv aids",
+    "hiv positive",
+    "immune deficiency virus",
+    "acquired immune deficiency",
+    "aids virus"
+   ],
+   "related": []
+  },
+  "pancreatitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "pancreatitis",
+    "inflamed pancreas",
+    "pancreas inflammation",
+    "pancreas pain",
+    "swollen pancreas",
+    "pancreatic inflammation"
+   ],
+   "related": []
+  },
+  "sids": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "sids",
+    "crib death",
+    "cot death",
+    "sudden infant death",
+    "sudden infant death syndrome",
+    "baby dies in sleep",
+    "cradle death"
+   ],
+   "related": [
+    "sudden_cardiac_death"
+   ]
+  },
+  "garlic": {
+   "display_name": "Garlic",
+   "type": "substance",
+   "synonyms": [
+    "garlic",
+    "raw garlic",
+    "garlic clove",
+    "garlic supplement",
+    "allium",
+    "garlic extract"
+   ],
+   "related": []
+  },
+  "dmso": {
+   "display_name": "DMSO",
+   "type": "substance",
+   "synonyms": [
+    "dmso",
+    "dimethyl sulfoxide",
+    "dimethyl sulphoxide"
+   ],
+   "related": []
+  },
+  "antibiotics": {
+   "display_name": "Antibiotics",
+   "type": "concept",
+   "synonyms": [
+    "antibiotic",
+    "penicillin",
+    "antimicrobial",
+    "antibacterial",
+    "infection medicine",
+    "antibiotics"
+   ],
+   "related": []
+  },
+  "aloe_vera": {
+   "display_name": "Aloe Vera",
+   "type": "substance",
+   "synonyms": [
+    "aloe",
+    "aloe vera",
+    "aloe gel",
+    "aloe plant",
+    "aloe juice"
+   ],
+   "related": []
+  },
+  "ginseng": {
+   "display_name": "Ginseng",
+   "type": "substance",
+   "synonyms": [
+    "ginseng",
+    "panax",
+    "korean ginseng",
+    "ginseng root",
+    "red ginseng",
+    "asian ginseng"
+   ],
+   "related": []
+  },
+  "adrenal_fatigue": {
+   "display_name": "Adrenal Fatigue",
+   "type": "concept",
+   "synonyms": [
+    "adrenal fatigue",
+    "tired adrenals",
+    "adrenal exhaustion",
+    "burnout",
+    "adrenal burnout",
+    "exhausted adrenals"
+   ],
+   "related": []
+  },
+  "chemotherapy": {
+   "display_name": "Chemotherapy",
+   "type": "concept",
+   "synonyms": [
+    "chemo",
+    "chemotherapy",
+    "cancer treatment",
+    "cancer drugs",
+    "chemo therapy"
+   ],
+   "related": [
+    "cancer"
+   ]
+  },
+  "aspirin": {
+   "display_name": "Aspirin",
+   "type": "substance",
+   "synonyms": [
+    "aspirin",
+    "acetylsalicylic acid",
+    "asprin",
+    "asa",
+    "baby aspirin"
+   ],
+   "related": []
+  },
+  "gelatin": {
+   "display_name": "Gelatin",
+   "type": "substance",
+   "synonyms": [
+    "gelatin",
+    "gelatine",
+    "jello",
+    "gelatin powder",
+    "collagen gelatin"
+   ],
+   "related": []
+  },
+  "cayenne": {
+   "display_name": "Cayenne",
+   "type": "substance",
+   "synonyms": [
+    "cayenne",
+    "cayenne pepper",
+    "red pepper",
+    "chili pepper",
+    "capsicum",
+    "hot pepper"
+   ],
+   "related": []
+  },
+  "echinacea": {
+   "display_name": "Echinacea",
+   "type": "substance",
+   "synonyms": [
+    "echinacea",
+    "coneflower",
+    "cone flower",
+    "echinacea supplement",
+    "echanacea"
+   ],
+   "related": []
+  },
+  "chondroitin": {
+   "display_name": "Chondroitin",
+   "type": "substance",
+   "synonyms": [
+    "chondroitin",
+    "chondroitin sulfate",
+    "joint supplement",
+    "condroitin"
+   ],
+   "related": [
+    "arthritis"
+   ]
+  },
+  "coq10": {
+   "display_name": "Coenzyme Q10",
+   "type": "substance",
+   "synonyms": [
+    "coq10",
+    "coenzyme q10",
+    "ubiquinone",
+    "co q10",
+    "coenzyme q"
+   ],
+   "related": []
+  },
+  "carnitine": {
+   "display_name": "Carnitine",
+   "type": "substance",
+   "synonyms": [
+    "l-carnitine",
+    "l carnitine",
+    "acetyl l-carnitine",
+    "carnatine",
+    "carntine",
+    "carnitine supplement"
+   ],
+   "related": []
+  },
+  "quercetin": {
+   "display_name": "Quercetin",
+   "type": "substance",
+   "synonyms": [
+    "quercitin",
+    "quercetine",
+    "kwercetin",
+    "quercetin bioflavonoid",
+    "quercetin supplement",
+    "quercetin flavonoid"
+   ],
+   "related": []
+  },
+  "valerian": {
+   "display_name": "Valerian",
+   "type": "substance",
+   "synonyms": [
+    "valerian root",
+    "valerian herb",
+    "sleep herb",
+    "valeriana",
+    "natural sleep aid"
+   ],
+   "related": []
+  },
+  "colonics": {
+   "display_name": "Colon Cleansing",
+   "type": "concept",
+   "synonyms": [
+    "bowel cleanse",
+    "colon cleanse",
+    "colon cleansing",
+    "colon detox",
+    "colon hydrotherapy",
+    "colonic",
+    "colonic irrigation",
+    "colonics",
+    "enema",
+    "high colonic",
+    "retention enema"
+   ],
+   "related": [
+    "colon_cancer"
+   ]
+  },
+  "msg": {
+   "display_name": "MSG",
+   "type": "substance",
+   "synonyms": [
+    "chinese restaurant syndrome",
+    "e621",
+    "flavor enhancer",
+    "flavour enhancer",
+    "glutamate",
+    "monosodium glutamate",
+    "msg",
+    "msg allergy",
+    "msg sensitivity"
+   ],
+   "related": []
+  },
+  "fermented_foods": {
+   "display_name": "Fermented Foods",
+   "type": "concept",
+   "synonyms": [
+    "fermented foods",
+    "fermented vegetables",
+    "cultured foods",
+    "fermented dairy",
+    "sauerkraut",
+    "kimchi",
+    "fermentation",
+    "sprouted grains",
+    "soaked grains"
+   ],
+   "related": [
+    "diet",
+    "traditional-diet",
+    "digestion"
+   ]
+  },
+  "gmo_foods": {
+   "display_name": "GMO Foods",
+   "type": "concept",
+   "synonyms": [
+    "gmo",
+    "gmos",
+    "genetically modified food",
+    "genetically modified organism",
+    "genetically modified organisms",
+    "genetically engineered food",
+    "genetically engineered crops",
+    "frankenstein food",
+    "franken food",
+    "non-gmo",
+    "non gmo",
+    "gm food",
+    "gmo crops",
+    "modified food"
+   ],
+   "related": []
+  },
+  "sucralose": {
+   "display_name": "Sucralose (Splenda)",
+   "type": "substance",
+   "synonyms": [
+    "splenda",
+    "sucralose",
+    "splenda lite",
+    "splenda sugar blend",
+    "sugar substitute",
+    "artificial sweetener",
+    "no-calorie sweetener",
+    "faux sugar"
+   ],
+   "related": [
+    "sugar",
+    "aspartame",
+    "stevia",
+    "saccharin"
+   ]
+  },
+  "high_fructose_corn_syrup": {
+   "display_name": "High-Fructose Corn Syrup",
+   "type": "substance",
+   "synonyms": [
+    "hfcs",
+    "high fructose corn syrup",
+    "high-fructose corn syrup",
+    "corn syrup",
+    "corn sugar",
+    "fructose corn syrup"
+   ],
+   "related": [
+    "chromium",
+    "vanadium",
+    "sugar",
+    "soft-drinks"
+   ]
+  },
+  "ginger": {
+   "display_name": "Ginger",
+   "type": "substance",
+   "synonyms": [
+    "ginger",
+    "ginger root",
+    "ginger for nausea",
+    "ginger for motion sickness",
+    "ginger for seasickness",
+    "fresh ginger",
+    "zingiber"
+   ],
+   "related": [
+    "motion_sickness",
+    "nausea"
+   ]
+  },
+  "emory_university": {
+   "display_name": "Emory University",
+   "type": "topic",
+   "synonyms": [
+    "emory",
+    "emory university",
+    "yerkes",
+    "yerkes primate research center",
+    "yerkes regional primate research center",
+    "emory university atlanta"
+   ],
+   "related": [
+    "cystic_fibrosis",
+    "selenium"
+   ]
+  },
+  "yogurt": {
+   "display_name": "Yogurt",
+   "type": "substance",
+   "synonyms": [
+    "yogurt",
+    "yoghurt",
+    "greek yogurt",
+    "low-fat yogurt",
+    "fat-free yogurt",
+    "frozen yogurt",
+    "plain yogurt",
+    "live yogurt"
+   ],
+   "related": [
+    "sugar",
+    "dairy",
+    "lactobacillus-acidophilus",
+    "vaginitis"
+   ]
+  },
+  "honey": {
+   "display_name": "Honey",
+   "type": "substance",
+   "synonyms": [
+    "honey",
+    "raw honey",
+    "bee honey"
+   ],
+   "related": [
+    "chromium",
+    "hypoglycemia",
+    "dyslexia"
+   ]
+  },
+  "nobel_prize_nomination": {
+   "display_name": "Nobel Prize Nomination",
+   "type": "event",
+   "synonyms": [
+    "nobel prize",
+    "nobel",
+    "nobel nomination",
+    "nobel prize in medicine",
+    "wallach nobel prize",
+    "did wallach win a nobel prize",
+    "wallach nobel",
+    "nobel laureate"
+   ],
+   "related": [
+    "selenium",
+    "cystic_fibrosis"
+   ]
+  },
+  "intermittent_fasting": {
+   "display_name": "Intermittent Fasting",
+   "type": "concept",
+   "synonyms": [
+    "intermittent fasting",
+    "fasting",
+    "alternate day fasting",
+    "every other day fasting",
+    "time restricted eating",
+    "if"
+   ],
+   "related": [
+    "longevity"
+   ]
+  },
+  "microwaving_food": {
+   "display_name": "Microwaving Food",
+   "type": "concept",
+   "synonyms": [
+    "microwave",
+    "microwave oven",
+    "microwaving",
+    "microwaved food",
+    "nuking food",
+    "microwave cooking",
+    "microwave ovens"
+   ],
+   "related": [
+    "vitamin-b12"
+   ]
+  },
+  "twenty_thousand_autopsies": {
+   "display_name": "20,000 Autopsies",
+   "type": "concept",
+   "synonyms": [
+    "20,000 autopsies",
+    "20000 autopsies",
+    "wallach autopsies",
+    "how many autopsies did wallach do",
+    "wallach autopsy studies",
+    "17,500 autopsies",
+    "3,000 human autopsies",
+    "wallach comparative pathology",
+    "wallach autopsy research",
+    "wallach pathology"
+   ],
+   "related": [
+    "wallach",
+    "selenium",
+    "cystic_fibrosis",
+    "keshan_disease"
+   ]
+  },
+  "stem_cells": {
+   "display_name": "Stem cells",
+   "type": "concept",
+   "synonyms": [
+    "stem cell",
+    "stem cells",
+    "stem cell therapy",
+    "stem cell injections",
+    "stem cell treatment",
+    "undifferentiated cells",
+    "cell cultures",
+    "cellular immortality"
+   ],
+   "related": [
+    "silver",
+    "arthritis",
+    "wounds",
+    "colloidal_minerals"
+   ]
+  },
+  "low_carb_diet": {
+   "display_name": "Low-Carb / Atkins Diet",
+   "type": "concept",
+   "synonyms": [
+    "low-carb",
+    "low carb diet",
+    "low carbohydrate diet",
+    "atkins",
+    "atkins diet",
+    "keto",
+    "ketogenic diet",
+    "carbohydrate restriction",
+    "south beach diet",
+    "see food diet",
+    "low glycemic diet"
+   ],
+   "related": [
+    "obesity",
+    "diabetes",
+    "weight_loss",
+    "essential_nutrients"
+   ]
+  },
+  "ma_lan": {
+   "display_name": "Ma Lan",
+   "type": "person",
+   "synonyms": [
+    "ma lan",
+    "dr. ma lan",
+    "wallach's wife",
+    "joel wallach's wife",
+    "wallach wife",
+    "mrs. wallach",
+    "wallach's spouse",
+    "ma lan md",
+    "ma lan wallach"
+   ],
+   "related": [
+    "wallach",
+    "calcium",
+    "selenium"
+   ]
+  },
+  "grilled_bbq_meat": {
+   "display_name": "Grilled / BBQ meat",
+   "type": "topic",
+   "synonyms": [
+    "bbq",
+    "barbecue",
+    "barbeque",
+    "grilled meat",
+    "grilling",
+    "charred meat",
+    "charbroiled meat",
+    "burnt meat",
+    "well done meat",
+    "well-done steak",
+    "overcooked meat",
+    "char",
+    "cookout",
+    "grilled steak",
+    "burnt animal fat"
+   ],
+   "related": [
+    "heterocyclic_amines",
+    "red_meat",
+    "breast_cancer",
+    "prostate_cancer",
+    "colon_cancer"
+   ]
+  },
+  "dialysis": {
+   "display_name": "Dialysis",
+   "type": "concept",
+   "synonyms": [
+    "dialysis",
+    "kidney dialysis",
+    "artificial kidney",
+    "dialysis machine",
+    "hemodialysis",
+    "kidney machine",
+    "renal dialysis",
+    "dialysis patient"
+   ],
+   "related": [
+    "kidney_disease",
+    "renal_failure",
+    "colloidal_minerals",
+    "minerals"
+   ]
+  },
+  "noni_juice": {
+   "display_name": "Noni juice",
+   "type": "substance",
+   "synonyms": [
+    "noni",
+    "noni juice",
+    "noni fruit",
+    "mineral enriched noni juice"
+   ],
+   "related": [
+    "mangosteen",
+    "antioxidants",
+    "orac"
+   ]
+  },
+  "mediterranean_diet": {
+   "display_name": "Mediterranean diet",
+   "type": "concept",
+   "synonyms": [
+    "med diet",
+    "mediterranean way of eating",
+    "olive oil diet",
+    "greek diet",
+    "cretan diet"
+   ],
+   "related": []
+  },
+  "keto_diet": {
+   "display_name": "Ketogenic (keto) diet",
+   "type": "concept",
+   "synonyms": [
+    "keto",
+    "keto diet",
+    "ketogenic diet",
+    "low carb diet",
+    "low carbohydrate diet",
+    "low carb",
+    "ketosis",
+    "atkins diet",
+    "atkins",
+    "low glycemic diet",
+    "see food diet"
+   ],
+   "related": [
+    "obesity",
+    "weight_loss",
+    "diabetes",
+    "kidney_stones",
+    "colloidal_minerals"
+   ]
+  },
+  "shark_cartilage": {
+   "display_name": "Shark cartilage",
+   "type": "substance",
+   "synonyms": [
+    "shark cartilage",
+    "shark cartilage supplement",
+    "shark cartilage for cancer",
+    "shark cartilage cancer treatment",
+    "cartilage supplement",
+    "angiostatin",
+    "endostatin"
+   ],
+   "related": [
+    "cancer",
+    "shark-liver-oil"
+   ]
+  },
+  "ginkgo": {
+   "display_name": "Ginkgo biloba",
+   "type": "substance",
+   "synonyms": [
+    "ginkgo",
+    "gingko",
+    "ginkgo biloba",
+    "ginko",
+    "maidenhair tree",
+    "ginkgo leaf",
+    "ginkgo extract"
+   ],
+   "related": [
+    "angina",
+    "dementia",
+    "poor_circulation",
+    "hawthorn"
+   ]
+  },
+  "see_food_diet": {
+   "display_name": "Dr. Wallach's See Food Diet",
+   "type": "concept",
+   "synonyms": [
+    "see food diet",
+    "see-food diet",
+    "sea food diet",
+    "wallach diet",
+    "wallach's diet",
+    "dr wallach diet",
+    "dr. wallach's diet",
+    "wallach weight loss diet",
+    "see food and eat it"
+   ],
+   "related": [
+    "obesity",
+    "weight_loss",
+    "colloidal_minerals",
+    "low_carb_diet"
+   ]
+  },
+  "hawthorn": {
+   "display_name": "Hawthorn",
+   "type": "substance",
+   "synonyms": [
+    "hawthorn",
+    "english hawthorn",
+    "hawthorn berry",
+    "hawthorn berries",
+    "crataegus",
+    "crataegus oxyacantha"
+   ],
+   "related": [
+    "angina",
+    "poor_circulation",
+    "ginkgo"
+   ]
   }
  }
 }
