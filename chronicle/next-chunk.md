@@ -29,10 +29,8 @@ Conditions tab when search-only died: **Luneth ruled KEEP them on the condition 
 No further action; do not re-surface this as a pending decision.
 
 ## DEFERRED / FOLLOW-UPS
-- ★ **render_probe_search stale baselines:** it asserts cancer=65 and calcium=134, but live is 71 / 145.
-  PROVEN pre-existing (identical at HEAD/kv417 — last session's search-only rip-out grew them, probe not
-  updated). NOT a regression. Update the two hardcoded counts in `tools/render_probe_search.js` (65→71,
-  134→145) after confirming those are the intended "show ALL" totals.
+- ✓ **render_probe_search baselines — RESOLVED this session:** bumped cancer 65→71, calcium 134→145
+  (Luneth counted + confirmed). Probe PASSES, PAGE_ERRORS=0. No open probe issues.
 - ★ **Glossary:** Luneth ruled on the ~50 flagged-basic candidates. The FULL 1243-term list
   (`temporary/entity-fill/…` / regenerate via the audit) may still merit a broader pass for other too-basic
   terms he hasn't seen yet — ask before mass-removing.

@@ -150,7 +150,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     // ── the CATCH-ALL: a non-enriched condition is RICH, not a hero + link ──
     ['cancer resolves to its entity page (hero)', cancer.heroName === 'Cancer'],
     ['cancer is RICH: >=3 family groups (not a bare hero)', cancer.groupCount >= 3],
-    ['cancer shows ALL its claims: total answer count in hero (65)', /\b65 answers\b/.test(cancer.heroMeta)],
+    ['cancer shows ALL its claims: total answer count in hero (71)', /\b71 answers\b/.test(cancer.heroMeta)],
     ['cancer families are the browse families (The Science / Cautions / What To Do)', ['The Science', 'Cautions', 'What To Do'].every(l => famLabels(cancer).includes(l))],
     ['cancer renders real claim rows across groups (>=9 shown)', cancer.totalRows >= 9],
     ['cancer: every big group ends in a "See N more <family>" reveal', cancer.groups.filter(g => g.count > 3).every(g => /See \d+ more \w/.test(g.more) && g.hidden > 0)],
@@ -165,7 +165,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['mercury is grouped into families with rows', mercury.groupCount >= 3 && mercury.totalRows >= 5],
     ['mercury: Learn More opens its Explore topic', mercury.learnKind === 'topic'],
     // ── best-first: an essential leads each family with its enriched Q&A ──
-    ['calcium shows its full claim set (134) not just the enriched slice', /\b134 answers\b/.test(calcium.heroMeta)],
+    ['calcium shows its full claim set (145) not just the enriched slice', /\b145 answers\b/.test(calcium.heroMeta)],
     ['calcium: the first family leads with an enriched Q&A (a preview line)', calcium.groups.length > 0 && calcium.groups[0].firstRowHasPrev === true],
     ['topic "See N more" reveals the hidden rows and retires', groupReveal.hidden === 0 && groupReveal.btn === false],
     // ── the ask flow (a plain question) still de-truncates ──
