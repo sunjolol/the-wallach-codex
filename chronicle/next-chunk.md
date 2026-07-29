@@ -1,5 +1,9 @@
 # Next chunk — ★ AUTHORITATIVE HANDOFF (set 2026-07-29, after Copper's header SHIPPED + the lessons were codified)
 
+# ⚠ HOW THIS SESSION STARTS
+Luneth types `genesis` HIMSELF, in a NEW session. Claude runs `tools/genesis.py` ONLY in response
+to that — never as a self-initiated in-session "reboot" ([[reboot-after-boot-file-changes]]).
+
 # ★★★★★ READ FIRST (plain language)
 Board **78/78 green · corpus kv432 · 2267 sealed claims · repo clean + pushed**.
 **Copper's element header is LIVE** — the first bespoke per-essential header. The task now is
