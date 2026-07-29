@@ -226,7 +226,13 @@ function renderRecordClaim(claim: CorpusClaim, open = false): string {
     : null;
   const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
   const verbatimCls = isTable ? 'kd-ep-claim__verbatim kd-ep-claim__verbatim--rows' : 'kd-ep-claim__verbatim';
-  return `<details class="kd-ep-claim kd-ep-claim--record"${open ? ' open' : ''}>
+  // The Full-Record filter (applyRecordFilter) matches the card's rendered TEXT, but a record
+  // card never prints the enrichment QUESTION (the words a user would type) — only the paraphrase
+  // + verbatim. Carry the question as a data-attr so the filter can match it too, without changing
+  // what the card shows (Luneth 2026-07-28; closes the RARE-000306 "no result" finding).
+  const enrichQ = getSearchClaim(claim.id)?.question ?? '';
+  const qAttr = enrichQ.length > 0 ? ` data-question="${escHTML(enrichQ)}"` : '';
+  return `<details class="kd-ep-claim kd-ep-claim--record"${open ? ' open' : ''}${qAttr}>
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
       <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
@@ -1329,7 +1335,11 @@ export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
   scope.querySelectorAll<HTMLElement>('.kd-ep-kind').forEach((group) => {
     let any = false;
     group.querySelectorAll<HTMLElement>('.kd-ep-claim').forEach((card) => {
-      const match = q.length === 0 || (card.textContent ?? '').toLowerCase().includes(q);
+      // Match the card's visible text AND its data-question (the enrichment question is carried
+      // as an attr, never printed on a record card — see renderRecordClaim). So a user who types
+      // the question they'd naturally ask still finds the claim.
+      const haystack = `${card.textContent ?? ''} ${card.dataset['question'] ?? ''}`.toLowerCase();
+      const match = q.length === 0 || haystack.includes(q);
       card.classList.toggle('kd-hidden', !match);
       if (match) {
         any = true;

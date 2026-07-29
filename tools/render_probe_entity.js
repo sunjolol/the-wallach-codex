@@ -121,6 +121,43 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { visible: [...d.querySelectorAll('.kd-ep-kind')].filter(k => !k.classList.contains('kd-hidden')).length };
   });
 
+  // Prove the enrichment-question filter path (Luneth 2026-07-28 fix): pick a record card whose
+  // data-question carries a distinctive word ABSENT from the card's visible text, filter on that
+  // word, and confirm the card surfaces — only possible if the filter reads data-question.
+  const qPick = await page.evaluate(() => {
+    const d = document.querySelector('#drawer-knowledge-mount .kd-essential-deep.kd-ep');
+    for (const card of d.querySelectorAll('.kd-ep-kind .kd-ep-claim')) {
+      const q = (card.getAttribute('data-question') || '').toLowerCase();
+      if (q.length === 0) { continue; }
+      const vis = (card.textContent || '').toLowerCase();
+      const term = q.replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).find(w => w.length >= 6 && !vis.includes(w));
+      if (term) { return { found: true, term }; }
+    }
+    return { found: false, term: '' };
+  });
+  let qFilter = { skipped: true, cardVisible: false, termInVisibleText: true, someHidden: false };
+  if (qPick.found) {
+    await page.click('#drawer-knowledge-mount .kd-ep-filter');
+    await page.type('#drawer-knowledge-mount .kd-ep-filter', qPick.term, { delay: 8 });
+    await wait(150);
+    qFilter = await page.evaluate((term) => {
+      const d = document.querySelector('#drawer-knowledge-mount .kd-essential-deep.kd-ep');
+      const kinds = [...d.querySelectorAll('.kd-ep-kind')];
+      const card = [...d.querySelectorAll('.kd-ep-kind .kd-ep-claim')].find(c => (c.getAttribute('data-question') || '').toLowerCase().includes(term));
+      return {
+        skipped: false,
+        cardVisible: card ? !card.classList.contains('kd-hidden') : false,
+        termInVisibleText: card ? (card.textContent || '').toLowerCase().includes(term) : true,
+        someHidden: kinds.some(k => k.classList.contains('kd-hidden')),
+      };
+    }, qPick.term);
+    await page.evaluate(() => {
+      const i = document.querySelector('#drawer-knowledge-mount .kd-ep-filter');
+      if (i) { i.value = ''; i.dispatchEvent(new Event('input', { bubbles: true })); }
+    });
+    await wait(120);
+  }
+
   // A best-source row opens the product detail panel on the Products tab.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-ep-src[data-kd-product]')?.click());
   await wait(250);
@@ -144,7 +181,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return { name: (d?.querySelector('.kd-ep-hero__name')?.textContent || '').trim() };
   });
 
-  const out = { s, claimOpen, facetOpen, filtered, cleared, srcNav, nav };
+  const out = { s, claimOpen, facetOpen, filtered, cleared, qPick, qFilter, srcNav, nav };
   console.log('ENTITY', JSON.stringify(out));
   console.log('PAGE_ERRORS', errs.length, errs.slice(0, 5).join(' | '));
 
@@ -168,6 +205,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['a facet Q&A card opens to answer + verbatim (when enriched)', facetOpen.present === false || (facetOpen.opened === true && facetOpen.hasAnswer === true && facetOpen.hasVerbatim === true)],
     ['record filter: a no-match query hides every kind group', filtered.total > 0 && filtered.visible === 0],
     ['record filter: clearing restores the groups', cleared.visible === filtered.total],
+    ['record filter matches the enrichment question even when its words are absent from the card body', qPick.found === true && qFilter.cardVisible === true && qFilter.termInVisibleText === false],
     ['a best-source row opens the product panel on the Products tab', srcNav.productShown === true && srcNav.onProductsTab === true],
     ['a works-with pill navigates to that essential (same-tab)', nav.name.length > 0 && nav.name !== 'Calcium'],
     ['no page errors', errs.length === 0],
