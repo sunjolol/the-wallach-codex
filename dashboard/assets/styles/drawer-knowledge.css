@@ -1401,13 +1401,13 @@
 /* section labels */
 #drawer-knowledge-mount .kd-ep-seclabel { display: flex; align-items: center; gap: var(--ds-space-3); margin: var(--ds-space-6) 0 var(--ds-space-3); font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink); }
 #drawer-knowledge-mount .kd-ep-seclabel::after { content: ''; flex: 1; height: 1px; background: var(--ds-rule-soft); }
-#drawer-knowledge-mount .kd-ep-seclabel__hint { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 400; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-ep-seclabel__hint { font-family: var(--ds-font-mono); font-size: 0.7rem; font-weight: 400; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); }
 
 /* operational "at a glance" card */
 #drawer-knowledge-mount .kd-ep-op { border: 1px solid var(--ds-rule); background: var(--ds-paper-deep); border-radius: var(--ds-radius-md); padding: var(--ds-space-4) var(--ds-space-5); }
 #drawer-knowledge-mount .kd-ep-op__grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-4) var(--ds-space-6); }
 #drawer-knowledge-mount .kd-ep-op__grid > div { min-width: 0; }
-#drawer-knowledge-mount .kd-ep-k { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: var(--ds-space-1); }
+#drawer-knowledge-mount .kd-ep-k { font-family: var(--ds-font-mono); font-size: 0.7rem; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: var(--ds-space-1); }
 #drawer-knowledge-mount .kd-ep-v { font-family: var(--ds-font-display-interface); font-size: 1.7rem; font-weight: 700; line-height: 1; color: var(--ds-ink); }
 #drawer-knowledge-mount .kd-ep-v small { font-family: var(--ds-font-mono); font-size: .9rem; font-weight: 400; color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-ep-gap { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-soft); line-height: 1.45; }
@@ -1846,7 +1846,7 @@
 #drawer-knowledge-mount .kd-ep-mirror__eyebrow { color: var(--ds-accent-deep); margin-bottom: var(--ds-space-2); }
 /* Omega-6 "fatty-acid family" experience — the 2-vs-3 EFA explainer (Luneth 2026-07-20). */
 #drawer-knowledge-mount .kd-ep-fam { margin-top: var(--ds-space-5); padding: var(--ds-space-5); background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-md); }
-#drawer-knowledge-mount .kd-ep-fam__eyebrow { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .kd-ep-fam__eyebrow { display: block; font-family: var(--ds-font-mono); font-size: 0.7rem; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-fam__kill { font-family: var(--ds-font-display); font-size: var(--ds-text-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; color: var(--ds-ink); margin: var(--ds-space-1) 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-ep-fam__figure { margin: 0 auto 19px; max-width: 560px; }
 /* The PDM figure carries 4 wider boxes (+20 screen px each). Its viewBox is 1050 (vs the omega 918),
@@ -2250,7 +2250,7 @@
 /* the grafted visible age spot — muted brown-gold ceroid lipofuscin; low-opacity so it never fights the accent */
 #drawer-knowledge-mount .kd-ep-fam__ceroid       { fill: color-mix(in srgb, var(--ds-status-warn) 55%, var(--ds-paper-shadow)); opacity: .8; }
 #drawer-knowledge-mount .kd-ep-fam__spot         { fill: color-mix(in srgb, var(--ds-status-warn) 40%, transparent); }
-#drawer-knowledge-mount .kd-ep-fam__flabel       { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 11px; letter-spacing: .04em; }
+#drawer-knowledge-mount .kd-ep-fam__flabel       { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 0.85rem; letter-spacing: .04em; }
 #drawer-knowledge-mount .kd-ep-fam__flabel--rancid { fill: var(--ds-ink-faint); }
 
 /* data-forward pull-stat — mono readout on its own line, then the oversized numeral + label CENTRED beside each other */
@@ -2259,13 +2259,13 @@
   margin: var(--ds-space-5) 0 var(--ds-space-1); padding-top: var(--ds-space-4);
   border-top: 1px solid var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-ep-fam__statread {
-  flex: 1 0 100%; margin-bottom: var(--ds-space-1); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  flex: 1 0 100%; margin-bottom: var(--ds-space-1); font-family: var(--ds-font-mono); font-size: 0.75rem;
   letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-ep-fam__statnum {
   flex: 0 0 auto; font-family: var(--ds-font-display); font-weight: 700;
   font-size: clamp(2rem, 4.4vw, 2.85rem); line-height: .95; letter-spacing: var(--ds-track-tight); }
 #drawer-knowledge-mount .kd-ep-fam__statlbl {
-  flex: 1; min-width: 16ch; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  flex: 1; min-width: 16ch; font-family: var(--ds-font-mono); font-size: 0.7rem;
   letter-spacing: var(--ds-track-wide); text-transform: uppercase;
   color: var(--ds-ink-soft); line-height: 1.5; max-width: 40ch; }
 

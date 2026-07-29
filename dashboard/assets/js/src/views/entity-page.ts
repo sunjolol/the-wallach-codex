@@ -1276,7 +1276,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     const nm = escHTML(corpusEss?.common_name ?? layoutKey);
     return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
-      ${seclabel('At a glance', 'the essentials, in one place')}
+      ${seclabel('At a glance', 'Daily Needs & How It Works')}
       ${glanceHTML}
       <div class="kd-ep-empty">${escHTML(ui('ep_empty_record'))}</div>
     </div>`;
@@ -1311,7 +1311,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     </div>
     ${nonEss}
     ${lede}
-    ${seclabel('At a glance', 'the essentials, in one place')}
+    ${seclabel('At a glance', 'Daily Needs & How It Works')}
     ${glanceHTML}
     ${fattyAcidBlockFor(layoutKey, page.name, tile)}
     ${renderMechanism(slug, layoutKey, corpusEss?.category ?? null)}
