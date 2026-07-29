@@ -158,13 +158,18 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     await wait(120);
   }
 
-  // A best-source row opens the product detail panel on the Products tab.
+  // A best-source row opens the product detail panel on the Products tab. The panel is the kd-ep
+  // entity page carrying the --prod modifier (renderProductDeep); the old .kd-product-deep class
+  // was retired in the Phase-H entity-page unification, so assert on .kd-ep--prod WITH a product
+  // name (an empty panel would mean the id didn't resolve). Fixed 2026-07-28: the probe still
+  // checked the dead .kd-product-deep, so this had been a false FAIL while the nav actually worked.
   await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-ep-src[data-kd-product]')?.click());
-  await wait(250);
+  await wait(400);
   const srcNav = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
+    const deep = root.querySelector('.kd-ep--prod');
     return {
-      productShown: root.querySelector('.kd-product-deep') !== null,
+      productShown: deep !== null && (deep.querySelector('.kd-ep-hero__name')?.textContent || '').trim().length > 0,
       onProductsTab: /Products/i.test(root.querySelector('.kd-knh__tab.active')?.textContent || ''),
     };
   });
