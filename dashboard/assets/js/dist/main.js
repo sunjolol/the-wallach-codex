@@ -72610,6 +72610,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         why: "From Wallach's Epigenetics (2014) mineral table: 100\u2013200 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 310 mcg/day. (His earlier Let's Play Doctor Base Line program lists a flat 200 mcg maintenance figure.)"
       },
       copper: {
+        lede: "A cofactor for hundreds of enzymes \u2014 it colours your hair and gives artery walls their elasticity, which is why Wallach reads premature grey as the first sign of a shortage.",
         why: "From Wallach's Epigenetics (2014) mineral table: 1\u20132 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 3.1 mg/day. (His earlier Let's Play Doctor Base Line program lists 3 to 4 mg.)"
       }
     },
@@ -184524,7 +184525,17 @@ TWO REGRESSIONS FOUND AND GATED. (1) The base rule \`#drawer-knowledge-mount .kd
 
 VERIFY. Build OK. Invariants 76/76 \u2014 no_new_dead_code caught an unused MechFigure type export, which was removed rather than baselined. New tools/render_probe_copper.js passes 47/47: scale==1 and 12px labels on all three figures, a pairwise bounding-box collision check across every figure label, evidence-row top-alignment, the 100-mark field partitioned 4+2+40, exactly one quote, the turn-beat accent, the bold cause label, why-this-number present, sources docked at the block bottom, plus the selenium regression. render_probe_mechanism / omega / pdm_presence / entity / knowledge all PASS. The live page was screenshot-verified against the approved mockup at 867px.
 
-DEFERRAL. entity-copy.json still holds 3 of 91 essentials, so the why-this-number line remains absent on the other 88; it needs an entry per element.` }];
+DEFERRAL. entity-copy.json still holds 3 of 91 essentials, so the why-this-number line remains absent on the other 88; it needs an entry per element.` }, { id: "lg_ms6fv4s2_s0znmp", ts: "2026-07-29T13:49:19.346929-05:00", surface: "headers", kind: "round-close", summary: "Copper had no opening lede \u2014 Luneth caught it; added one sourced to RARE-000119/000344 + DDDL-000003, and audited the whole entity-copy store instead of the single field I had in mind", detail: `Copper's page had no opening line. Selenium and Calcium both lead with a single sentence saying what the mineral IS before any numbers appear; Copper jumped straight from the title to "At a glance". Luneth spotted it. It now has one.
+
+WHY IT WAS MISSING \u2014 worth recording, because the shape of the mistake will recur. Shipping the header I added only copper's \`why\` to entity-copy.json and skipped \`lede\`, judging it out of the asked-for scope. That judgment may even have been defensible; not SURFACING it was not. The store has exactly two fields, lede + why, and a half-filled entry is indistinguishable from a complete one unless you diff the fields. This time I audited the whole store \u2014 every field against every entry \u2014 instead of checking the one field I already had in mind.
+
+THE COPY. copper.lede = "A cofactor for hundreds of enzymes \u2014 it colours your hair and gives artery walls their elasticity, which is why Wallach reads premature grey as the first sign of a shortage." Every clause traces to a sealed claim: "cofactor for hundreds of enzymes" -> WAL-CLM-RARE-000119 ("a universally important cofactor for many hundreds of metalloenzymes"); "colours your hair" -> RARE-000119 + RARE-000344 (tyrosinase acting on tyrosine to make melanin); "gives artery walls their elasticity" -> RARE-000119 (lysyl-oxidase cofactor, pro-elastin to elastin, the tensile strength of the elastic fibers in blood vessels); "premature grey as the first sign" -> DDDL-000003 ("presents itself first as white, gray, or silver hair"). It deliberately does not restate the header's opening beat \u2014 the lede says what copper IS, the header block below tells the two-endings story.
+
+STATUS: awaiting Luneth's ratification. entity-copy.json is hand-authored and user-approved by design, so a lede I wrote is a proposal until he signs off on the wording.
+
+VERIFY. Build OK; invariants 76/76; render_probe_copper 47/47; render_probe_entity PASS (it asserts the store lede actually renders); the lede was screenshot-verified on the live page next to Selenium's for voice and length.
+
+DEFERRAL, now sharper: entity-copy.json holds 3 of 91 essentials, so BOTH the lede and the why-this-number line are absent on the other 88. Each of those needs a COMPLETE entry \u2014 both fields \u2014 not just the one that happens to be in view.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
