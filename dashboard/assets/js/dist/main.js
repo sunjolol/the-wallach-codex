@@ -84374,6 +84374,41 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         claim_count: 5
       },
+      frequent_urination: {
+        display_name: "Frequent Urination",
+        type: "concept",
+        synonyms: [
+          "pee all the time",
+          "pee constantly",
+          "pee frequently",
+          "have to pee all the time",
+          "have to pee constantly",
+          "have to pee frequently",
+          "peeing all the time",
+          "peeing constantly",
+          "peeing frequently",
+          "peeing a lot",
+          "have to pee a lot",
+          "frequent urination",
+          "urinary frequency",
+          "urinating a lot",
+          "urinating frequently",
+          "urinate frequently",
+          "always peeing",
+          "always have to pee",
+          "getting up at night to pee",
+          "up all night peeing",
+          "peeing all night",
+          "excessive urination"
+        ],
+        related: [
+          "benign_prostatic_hyperplasia",
+          "diabetes",
+          "cystitis",
+          "sodium"
+        ],
+        claim_count: 3
+      },
       gadolinium: {
         display_name: "Gadolinium",
         common_name: "Gadolinium",
@@ -84854,6 +84889,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "migraine"
         ],
         claim_count: 2
+      },
+      healthy_foods: {
+        display_name: "The Best Foods to Eat",
+        type: "concept",
+        synonyms: [
+          "best foods for you",
+          "best foods to eat",
+          "healthiest foods",
+          "healthiest foods to eat",
+          "good foods to eat",
+          "healthy foods to eat",
+          "best foods for health",
+          "what are the best foods",
+          "what to eat to be healthy"
+        ],
+        related: [
+          "see_food_diet",
+          "orac",
+          "centenarian-cultures",
+          "meat",
+          "eggs",
+          "butter",
+          "fermented_foods"
+        ],
+        claim_count: 9,
+        intro_claim: "WAL-CLM-IMMORT-000250"
       },
       heartburn: {
         display_name: "Heartburn",
@@ -85621,6 +85682,47 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         related: [],
         claim_count: 1
+      },
+      intelligence: {
+        display_name: "Intelligence & IQ",
+        type: "concept",
+        synonyms: [
+          "iq",
+          "intelligence",
+          "raise my iq",
+          "raise iq",
+          "increase iq",
+          "boost iq",
+          "improve iq",
+          "higher iq",
+          "iq points",
+          "raising iq",
+          "how to raise iq",
+          "increase intelligence",
+          "raise intelligence",
+          "boost intelligence",
+          "improve intelligence",
+          "brain development",
+          "brain power",
+          "get smarter",
+          "smarter",
+          "foods for iq",
+          "best foods for iq",
+          "foods for intelligence",
+          "child's iq",
+          "raise my child's iq"
+        ],
+        related: [
+          "zinc",
+          "iodine",
+          "omega-3",
+          "lead",
+          "down_syndrome",
+          "learning_disabilities",
+          "cretinism"
+        ],
+        claim_count: 18,
+        intro_claim: "WAL-CLM-IMMORT-000053"
       },
       intermittent_claudication: {
         display_name: "Intermittent Claudication",
@@ -87142,6 +87244,41 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "measles"
         ],
         claim_count: 1
+      },
+      muscle_strength: {
+        display_name: "Muscle & Strength",
+        type: "topic",
+        synonyms: [
+          "get stronger",
+          "get strong",
+          "how to get stronger",
+          "increase strength",
+          "build strength",
+          "gain strength",
+          "foods for strength",
+          "best foods for strength",
+          "build muscle",
+          "building muscle",
+          "gain muscle",
+          "muscle building",
+          "grow muscle",
+          "put on muscle",
+          "muscle mass",
+          "physical strength",
+          "muscle strength",
+          "muscular strength",
+          "more muscular"
+        ],
+        related: [
+          "protein",
+          "selenium",
+          "amino_acids",
+          "meat",
+          "muscular_dystrophy",
+          "zinc"
+        ],
+        claim_count: 12,
+        intro_claim: "WAL-CLM-IMMORT-000055"
       },
       muscular_dystrophy: {
         display_name: "Muscular Dystrophy",
@@ -90366,6 +90503,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [],
         claim_count: 1
       },
+      veganism: {
+        display_name: "Veganism & Vegetarianism",
+        type: "topic",
+        synonyms: [
+          "vegan",
+          "vegetarian",
+          "vegetarianism",
+          "veganism",
+          "plant-based",
+          "plant based",
+          "plant-based diet",
+          "vegan diet",
+          "vegetarian diet",
+          "meat-free",
+          "meatless",
+          "going vegan"
+        ],
+        related: [
+          "vitamin-b12",
+          "beef",
+          "chicken",
+          "iron",
+          "phosphorus",
+          "zinc",
+          "colloidal_minerals"
+        ],
+        claim_count: 9,
+        intro_claim: "WAL-CLM-IMMORT-000222"
+      },
       vertigo: {
         display_name: "Vertigo",
         type: "condition",
@@ -91804,7 +91970,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000020",
         subject: "iron",
         also_about: [
-          "anemia"
+          "anemia",
+          "intelligence"
         ],
         facet: "physiology",
         question: "What are the symptoms of iron deficiency?",
@@ -91901,7 +92068,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         also_about: [
           "tyrosine",
           "hypothyroidism",
-          "goiter"
+          "goiter",
+          "intelligence"
         ],
         facet: "mechanism",
         question: "What does iodine do in the body?",
@@ -92395,7 +92563,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "zinc",
         also_about: [
           "copper",
-          "iron"
+          "iron",
+          "veganism"
         ],
         facet: "sources",
         question: "What blocks zinc absorption?",
@@ -93243,7 +93412,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "vitamin-d",
         also_about: [
           "menopause",
-          "adrenal_fatigue"
+          "adrenal_fatigue",
+          "intelligence"
         ],
         facet: "mechanism",
         question: "What is cholesterol used for in the body?",
@@ -93743,7 +93913,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000084",
         subject: "zinc",
         also_about: [
-          "benign_prostatic_hyperplasia"
+          "benign_prostatic_hyperplasia",
+          "frequent_urination"
         ],
         facet: "physiology",
         question: "What causes an enlarged prostate?",
@@ -93776,7 +93947,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         also_about: [
           "zinc",
           "vitamin-a",
-          "selenium"
+          "selenium",
+          "frequent_urination"
         ],
         facet: "protocol",
         question: "How do you treat an enlarged prostate naturally?",
@@ -94451,7 +94623,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "eggs",
         also_about: [
           "nitrogen",
-          "protein"
+          "protein",
+          "healthy_foods"
         ],
         facet: "physiology",
         question: "Is egg a high-quality protein compared to other foods?",
@@ -95127,7 +95300,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000145",
         subject: "zinc",
         also_about: [
-          "down_syndrome"
+          "down_syndrome",
+          "intelligence"
         ],
         facet: "uses",
         question: "Can zinc improve Down's syndrome?",
@@ -96127,7 +96301,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000193",
         subject: "vitamin-b12",
         also_about: [
-          "cobalt"
+          "cobalt",
+          "veganism"
         ],
         facet: "physiology",
         question: "Why does it take years for vegans to become B12 deficient?",
@@ -98145,7 +98320,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000289",
         subject: "protein",
         also_about: [
-          "nitrogen"
+          "nitrogen",
+          "muscle_strength"
         ],
         facet: "sources",
         question: "What is the best quality protein?",
@@ -99961,7 +100137,8 @@ Uterine fibroids`,
         also_about: [
           "depression",
           "stomatitis",
-          "vomiting"
+          "vomiting",
+          "intelligence"
         ],
         facet: "physiology",
         question: "What are the signs of vitamin B6 deficiency?",
@@ -101529,7 +101706,8 @@ Uterine fibroids`,
           "hypothyroidism",
           "hashimotos_disease",
           "goiter",
-          "cretinism"
+          "cretinism",
+          "intelligence"
         ],
         facet: "physiology",
         question: "What happens if you don't get enough iodine?",
@@ -102966,7 +103144,9 @@ Uterine fibroids`,
       {
         id: "WAL-CLM-EPIGEN-000145",
         subject: "fermented_foods",
-        also_about: [],
+        also_about: [
+          "healthy_foods"
+        ],
         facet: "stance",
         question: "Are fermented foods good for you?",
         answer_short: "Wallach presents fermented foods -- fermented vegetables, fruit, dairy, meats, and condiments, plus soaked, sprouted, and fermented seeds, grains, and nuts -- as a hallmark of the healthy traditional diets documented by Weston Price.",
@@ -103330,7 +103510,8 @@ Uterine fibroids`,
         also_about: [
           "cholesterol",
           "eggs",
-          "fish"
+          "fish",
+          "healthy_foods"
         ],
         facet: "sources",
         question: "What vitamins does butter give you, and why do they matter?",
@@ -103493,7 +103674,8 @@ Uterine fibroids`,
         subject: "pork",
         also_about: [
           "beef",
-          "chicken"
+          "chicken",
+          "muscle_strength"
         ],
         facet: "sources",
         question: "Is pork good for building muscle or for muscular dystrophy?",
@@ -104179,7 +104361,8 @@ Uterine fibroids`,
         id: "WAL-CLM-EPIGEN-000198",
         subject: "omega-3",
         also_about: [
-          "depression"
+          "depression",
+          "intelligence"
         ],
         facet: "mechanism",
         question: "Can omega-3 help with depression?",
@@ -104237,7 +104420,8 @@ Uterine fibroids`,
         id: "WAL-CLM-EPIGEN-000201",
         subject: "omega-3",
         also_about: [
-          "asthma"
+          "asthma",
+          "intelligence"
         ],
         facet: "mechanism",
         question: "What does omega-3 do in the body?",
@@ -105547,7 +105731,8 @@ Uterine fibroids`,
         id: "WAL-CLM-EPIGEN-000267",
         subject: "vitamin-b12",
         also_about: [
-          "cobalt"
+          "cobalt",
+          "veganism"
         ],
         facet: "sources",
         question: "Where does vitamin B12 come from?",
@@ -106888,7 +107073,8 @@ Uterine fibroids`,
           "calcium",
           "zinc",
           "copper",
-          "chromium"
+          "chromium",
+          "veganism"
         ],
         facet: "stance",
         question: "Do vegetarians get enough phosphorus?",
@@ -109167,7 +109353,8 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "acetylcholine",
         also_about: [
           "choline",
-          "vitamin-b5"
+          "vitamin-b5",
+          "intelligence"
         ],
         facet: "basics",
         question: "What is acetylcholine?",
@@ -109207,7 +109394,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-EPIGEN-000451",
         subject: "docosahexaenoic-acid",
         also_about: [
-          "omega-3"
+          "omega-3",
+          "intelligence"
         ],
         facet: "mechanism",
         question: "What is DHA and how is low DHA linked to depression?",
@@ -109270,7 +109458,9 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000455",
         subject: "gmo_foods",
-        also_about: [],
+        also_about: [
+          "healthy_foods"
+        ],
         facet: "protocol",
         question: "Does Wallach recommend eating non-GMO food?",
         answer_short: "Yes \u2014 Wallach lists consuming and stockpiling organic, non-GMO, fresh foods among his core principles for maximizing health and longevity.",
@@ -109886,7 +110076,8 @@ diarrhea, dermatitis, dementia, and death.`,
         also_about: [
           "dementia",
           "alzheimers",
-          "memory_loss"
+          "memory_loss",
+          "intelligence"
         ],
         facet: "history",
         question: "Does omega-3 help prevent dementia or Alzheimer's?",
@@ -110334,7 +110525,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "diabetes",
           "hypoglycemia",
           "vanadium",
-          "nitrogen"
+          "nitrogen",
+          "muscle_strength"
         ],
         facet: "physiology",
         question: "What are the symptoms of chromium deficiency?",
@@ -110923,7 +111115,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-HELLS-000073",
         subject: "ornithine",
         also_about: [
-          "arginine"
+          "arginine",
+          "muscle_strength"
         ],
         facet: "mechanism",
         question: "Does ornithine boost human growth hormone (HGH)?",
@@ -110942,7 +111135,10 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-HELLS-000074",
         subject: "meat",
-        also_about: [],
+        also_about: [
+          "muscle_strength",
+          "healthy_foods"
+        ],
         facet: "basics",
         question: "Is red meat good or bad for you, and does Wallach think it is healthy?",
         answer_short: "Wallach calls red meat an unequaled source of animal protein and essential lipids \u2014 with one caveat: don't cook it well-done or burn the fat, which forms cancer-linked heterocyclic amines.",
@@ -111965,7 +112161,8 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "amino_acids",
         also_about: [
           "selenium",
-          "protein"
+          "protein",
+          "muscle_strength"
         ],
         facet: "basics",
         question: "How many essential amino acids are there?",
@@ -112001,7 +112198,9 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-IMMORT-000006",
         subject: "cholesterol",
-        also_about: [],
+        also_about: [
+          "intelligence"
+        ],
         facet: "stance",
         question: "Is cholesterol bad for you?",
         answer_short: "No \u2014 Wallach calls cholesterol an essential nutrient: it builds every cell membrane, all the steroid hormones, and the brain's myelin.",
@@ -113037,7 +113236,8 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "omega-3",
         also_about: [
           "eczema",
-          "asthma"
+          "asthma",
+          "intelligence"
         ],
         facet: "physiology",
         question: "Why do babies and children need omega-3?",
@@ -113100,7 +113300,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "iron",
           "sulfur",
           "cobalt",
-          "protein"
+          "protein",
+          "muscle_strength"
         ],
         facet: "physiology",
         question: "What are proteins?",
@@ -113121,7 +113322,8 @@ diarrhea, dermatitis, dementia, and death.`,
         also_about: [
           "kidney_disease",
           "liver_disease",
-          "protein"
+          "protein",
+          "muscle_strength"
         ],
         facet: "warning",
         question: "Can you eat too much protein?",
@@ -113140,7 +113342,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-IMMORT-000057",
         subject: "amino_acids",
         also_about: [
-          "vitamin-b3"
+          "vitamin-b3",
+          "muscle_strength"
         ],
         facet: "mechanism",
         question: "What does each amino acid do?",
@@ -113667,7 +113870,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "choline",
           "methionine",
           "cholesterol",
-          "cobalt"
+          "cobalt",
+          "intelligence"
         ],
         facet: "physiology",
         question: "What does vitamin B12 do in the body?",
@@ -116601,7 +116805,9 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-IMMORT-000194",
         subject: "potassium",
-        also_about: [],
+        also_about: [
+          "intelligence"
+        ],
         facet: "warning",
         question: "What are the signs of potassium deficiency?",
         answer_short: "Muscular weakness and mental apathy are the hallmark signs, and the most serious event is low-potassium (hypokalemic) heart failure.",
@@ -117374,7 +117580,9 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "beef",
         also_about: [
           "meat",
-          "pork"
+          "pork",
+          "veganism",
+          "healthy_foods"
         ],
         facet: "stance",
         question: "Does Wallach think red meat like beef is healthy, or should I avoid it like the vegans say?",
@@ -117398,7 +117606,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "fish",
           "eggs",
           "pork",
-          "beef"
+          "beef",
+          "veganism"
         ],
         facet: "stance",
         question: "Does Wallach think chicken and other poultry belong in a healthy diet, or should we go vegan?",
@@ -117506,7 +117715,9 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-IMMORT-000228",
         subject: "chicken",
-        also_about: [],
+        also_about: [
+          "veganism"
+        ],
         facet: "etymology",
         question: "What is a pollo-vegetarian?",
         answer_short: "Wallach defines a 'pollo-vegetarian' as really an omnivore who eats poultry on top of grains, vegetables, fruit and nuts \u2014 part of his point that most self-described vegetarians actually eat animal foods.",
@@ -117966,7 +118177,8 @@ diarrhea, dermatitis, dementia, and death.`,
         also_about: [
           "orac",
           "antioxidants",
-          "free_radicals"
+          "free_radicals",
+          "healthy_foods"
         ],
         facet: "protocol",
         question: "What are the four things that get you to 100?",
@@ -118228,7 +118440,8 @@ diarrhea, dermatitis, dementia, and death.`,
         also_about: [
           "longevity",
           "antioxidants",
-          "free_radicals"
+          "free_radicals",
+          "healthy_foods"
         ],
         facet: "sources",
         question: "Which foods have the highest ORAC antioxidant score?",
@@ -118780,7 +118993,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-IMMORT-000290",
         subject: "iron",
         also_about: [
-          "phytates"
+          "phytates",
+          "veganism"
         ],
         facet: "sources",
         question: "Is iron from plants as good as iron from meat?",
@@ -118860,7 +119074,9 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-IMMORT-000294",
         subject: "vitamin-b1",
-        also_about: [],
+        also_about: [
+          "intelligence"
+        ],
         facet: "physiology",
         question: "What are the symptoms of vitamin B1 deficiency?",
         answer_short: "Mild thiamine deficiency causes mental confusion, muscle weakness, fatigue and appetite loss; chronic deficiency progresses to polyneuritis and congestive heart failure.",
@@ -119625,7 +119841,8 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-IMMORT-000333",
         subject: "choline",
         also_about: [
-          "acetylcholine"
+          "acetylcholine",
+          "intelligence"
         ],
         facet: "physiology",
         question: "How does choline help the brain and nerves?",
@@ -123956,7 +124173,8 @@ Shwachman's syndrome`,
         subject: "sodium",
         also_about: [
           "hypertension",
-          "edema"
+          "edema",
+          "frequent_urination"
         ],
         facet: "warning",
         question: "What happens if you get too much sodium?",
@@ -138909,7 +139127,8 @@ deaths, blood clots, sterility`,
         subject: "longevity",
         also_about: [
           "macrobiotics",
-          "genetic-potential"
+          "genetic-potential",
+          "veganism"
         ],
         facet: "stance",
         question: "Do vegetarianism, yoga and meditation make you live longer?",
@@ -139778,7 +139997,8 @@ deaths, blood clots, sterility`,
         subject: "centenarian-cultures",
         also_about: [
           "minerals",
-          "longevity"
+          "longevity",
+          "healthy_foods"
         ],
         facet: "mechanism",
         question: "What do the world's longest-lived cultures eat?",
@@ -144166,7 +144386,8 @@ Goiter`,
         subject: "lead",
         also_about: [
           "hyperactivity",
-          "learning_disabilities"
+          "learning_disabilities",
+          "intelligence"
         ],
         facet: "warning",
         question: "What are the long-term effects of lead poisoning?",
@@ -145875,7 +146096,9 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000268",
         subject: "zinc",
-        also_about: [],
+        also_about: [
+          "muscle_strength"
+        ],
         facet: "physiology",
         question: "Do athletes need more zinc?",
         answer_short: "Yes \u2014 Wallach notes that heavy zinc losses occur in sweat, so unsupplemented athletes are especially prone to zinc deficiency.",
@@ -147316,7 +147539,8 @@ Sickle cell anemia`,
         subject: "selenium",
         also_about: [
           "muscular_dystrophy",
-          "vitamin-e"
+          "vitamin-e",
+          "muscle_strength"
         ],
         facet: "stance",
         question: "What causes muscular dystrophy, according to Wallach?",
@@ -147361,7 +147585,8 @@ Sickle cell anemia`,
         also_about: [
           "cancer",
           "cystic_fibrosis",
-          "multiple_sclerosis"
+          "multiple_sclerosis",
+          "muscle_strength"
         ],
         facet: "big_question",
         question: "What diseases does Wallach link to selenium deficiency?",
@@ -183870,7 +184095,17 @@ PROBE: refreshed tools/render_probe_search_routing.js. It was 5/6 red AT HEAD (b
 
 VERIFY: a puppeteer harness over all 34 test queries + 17 guard/collision queries (17 improved, HEAD-vs-now diff clean, zero guard regressions \u2014 e.g. "which supplements are best for arthritis?" still routes to Arthritis, not hijacked); invariants 76/76 (0 failed) after re-deriving search-index + entity-page + orac embeds; render_probe_search + render_probe_search_browse + render_probe_search_routing all PASS; build OK.
 
-DEFERRED / KEPT (Luneth-approved): Checkpoint 2 = new hub pages (muscle_strength, intelligence, veganism, healthy-foods, gender-neutral frequent_urination) \u2014 these create new pages so they wait for his visual sign-off. Checkpoint 3 = mining aspirin/ibuprofen safety (Wallach states it in the books but it was never mined into a claim). Honest residuals kept: "which supplements are best?" is genuinely ambiguous (best for what?) and any fix hijacks "best supplements for <condition>", so left as-is; "sharp pain in lower right abdomen" stays on the generic Pain page (the corpus has no acute-abdomen/appendicitis-diagnosis content \u2014 refused to fabricate a route); dark-urine queries soft-land on the Water page (no Wallach urine-color content exists \u2014 an honest least-bad landing).` }];
+DEFERRED / KEPT (Luneth-approved): Checkpoint 2 = new hub pages (muscle_strength, intelligence, veganism, healthy-foods, gender-neutral frequent_urination) \u2014 these create new pages so they wait for his visual sign-off. Checkpoint 3 = mining aspirin/ibuprofen safety (Wallach states it in the books but it was never mined into a claim). Honest residuals kept: "which supplements are best?" is genuinely ambiguous (best for what?) and any fix hijacks "best supplements for <condition>", so left as-is; "sharp pain in lower right abdomen" stays on the generic Pain page (the corpus has no acute-abdomen/appendicitis-diagnosis content \u2014 refused to fabricate a route); dark-urine queries soft-land on the Water page (no Wallach urine-color content exists \u2014 an honest least-bad landing).` }, { id: "lg_ms5j5mcu_08eczs", ts: "2026-07-28T22:33:41.358537-05:00", surface: "search", kind: "round-close", summary: "Search Checkpoint 2: 5 hub pages (strength, IQ, veganism, best-foods, frequent-urination) fix 14 more queries. A hub:true derive flag registers also_about-only hubs (512 to 517). Deduped veganism B12; enriched Intelligence to 18 brain claims. 76/76, screenshot-verified.", detail: `Checkpoint 2 of the search round: I built 5 brand-new "hub" pages for the plain-language questions Luneth typed that had no home in the app, so each now lands on a rich, categorized Wallach page instead of a wrong guess: Muscle & Strength, Intelligence & IQ, Veganism & Vegetarianism, The Best Foods to Eat, and a gender-neutral Frequent Urination. Nothing was invented \u2014 each hub gathers real Wallach claims that were scattered across other pages (protein/selenium/zinc for strength, the anti-vegan stance + B12/iron for veganism, etc.). This fixed 14 more of his test queries. Two follow-ups he asked for after seeing the first draft are included: a near-duplicate B12 entry removed from the veganism page, and the Intelligence page expanded from 3 to 18 answers with brain-nutrition content (EFAs, iodine, choline, cholesterol/myelin, B-vitamins).
+
+WHY A DERIVE CHANGE WAS NEEDED: a hub gathers its claims via the "also_about" cross-link, not by being a claim's primary subject. But the index builder (eden/tools/search_index_derive.py, build_index) registered an entity in the search index ONLY when some claim had subject==that entity. So a hub was invisible \u2014 routing (entityInQuery / entityHit / entityPhrases) and the browse grid both iterate index().entities, and the hub wasn't in there. Fix: an explicit \`hub: true\` flag on the registry entity. build_index now registers every claim SUBJECT plus every hub-flagged registry entity, giving a hub a claim_count equal to its also_about count. It is EXPLICIT (not "auto-register every entity referenced via also_about") on purpose: 150+ conditions are referenced via also_about and would have flooded the browse registry (index would jump 512 -> 671); the flag keeps it to exactly the 5 deliberate hubs (512 -> 517). Critically, \`_entity_record\` never copies the flag into the shipped index entity record, so the runtime Zod SearchEntitySchema never sees an unknown field \u2014 no blank-index risk (the class of bug where a stray field empties the whole index while the board stays green).
+
+THE 5 HUBS (search-entities.json, all type topic/concept, pure search hubs with no catalog page): muscle_strength ("Muscle & Strength", 19 lay synonyms, intro IMMORT-055) \xB7 intelligence ("Intelligence & IQ", 24 synonyms incl. bare "iq", intro IMMORT-053) \xB7 veganism ("Veganism & Vegetarianism", 12 synonyms incl. "vegan"/"vegetarian", intro IMMORT-222 the anti-vegan stance) \xB7 healthy_foods ("The Best Foods to Eat", 9 overview-phrase synonyms \u2014 deliberately NOT bare "best foods" so "best foods for calcium" still routes to Calcium, intro IMMORT-250) \xB7 frequent_urination ("Frequent Urination", 22 synonyms, NO intro_claim so the gender-neutral page shows all causes rather than leading with the male-specific enlarged-prostate claim).
+
+WIRING + LUNETH FOLLOW-UPS (search-enrichment.json also_about): muscle_strength <- 12 claims (protein, amino acids, selenium/muscular-dystrophy, pork/muscle-meat, athlete zinc, chromium); veganism <- 10 -> 9 (dropped the shorter duplicate B12 claim); healthy_foods <- 9 (eggs, red meat, butter, ORAC, minerals, non-GMO, longevity framework); frequent_urination <- 3 (enlarged-prostate cause + treatment, sodium polyuria). Intelligence <- 3 + 15 = 18: the 15 brain-nutrition additions are omega-3 function/dementia-prevention/DHA, iodine->thyroid-hormone + iodine-deficiency->cretinism, choline->brain-and-nerves + acetylcholine, cholesterol->brain/myelin (x2), B12->myelin, B1->mental-confusion, B6->mental, potassium->mental-apathy, iron->fuzzy-thinking. Deliberately EXCLUDED: full disease-treatment protocols (Alzheimer's/dementia/depression/epilepsy regimens \u2014 they have their own condition pages) and all charged content (homosexuality/intersex), per the charged-search gate. Curation principle: brain-BUILDING / FUNCTION / DEVELOPMENT / cognitive-deficiency-signs, "genuinely not a stretch" (Luneth's words), not brain-disease dumping.
+
+VERIFY: a puppeteer harness confirms all 14 hub queries route to their hub entity page; index grew 512 -> 517 (exactly +5, verified NOT the 159-entity flood); guard queries all unchanged (what-should-i-eat-for-diabetes -> Diabetes, vegan-b12 -> Vitamin B12, best-foods-for-calcium -> Calcium, best-supplements-for-energy -> Vitamin B5, which-supplements-best-for-arthritis -> Arthritis \u2014 zero hijacks); derive --check VALID; invariants 76/76 (0 failed) after re-deriving search-index + entity-page embeds; render_probe_search + render_probe_search_browse + render_probe_search_routing all PASS; and the 5 hub pages were SCREENSHOT-verified (not just DOM-counted) \u2014 real Wallach content, categorized into the five families (The Science / Cautions / What To Do / Wallach's Take / The Story), working cross-links, 0 page errors.
+
+REMAINING: Checkpoint 3 \u2014 mining the aspirin / ibuprofen safety answer. Wallach states it plainly in DDDL/Epigenetics/Rare-Earths ("aspirin doesn't fix arthritis and can cause gastric bleeding and death"; NSAIDs cause liver damage in 5-10% of users) but it was never mined into a claim, so the aspirin entity is empty and those two queries still mis-route. Per the mining doctrine this needs Luneth's ratification (Claude proposes, Luneth ratifies) + a corpus seal.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

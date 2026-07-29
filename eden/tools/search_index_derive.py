@@ -272,7 +272,21 @@ def build_index():
             b = books_meta[bid]
             books[bid] = {'title': b['title'], 'year': b['year']}
 
-    entities = {slug: _entity_record(slug, reg, canon, cond_names, counts[slug]) for slug in sorted(counts.keys())}
+    # Entities in the index = every claim SUBJECT, PLUS any registry entity flagged `hub: true`.
+    # A hub is an aggregation page whose claims attach via also_about (not subject) — e.g. muscle_strength,
+    # veganism, healthy_foods. Without registering it here the hub is invisible to routing (entityInQuery /
+    # entityHit / entityPhrases all iterate index().entities) and to the browse landing. A hub carries no
+    # subject claims, so its claim_count is its also_about count. The flag is EXPLICIT (not "every entity
+    # that appears in some also_about") on purpose: 150+ conditions are referenced via also_about and would
+    # otherwise flood the registry/browse grid — only deliberately-authored hubs opt in. (2026-07-28)
+    aa_counts = {}
+    for a in enr.values():
+        for s in a.get('also_about', []):
+            aa_counts[s] = aa_counts.get(s, 0) + 1
+    hub_slugs = {slug for slug, r in reg.items() if r.get('hub')}
+    entity_slugs = sorted(set(counts.keys()) | hub_slugs)
+    entities = {slug: _entity_record(slug, reg, canon, cond_names, counts.get(slug) or aa_counts.get(slug, 0))
+                for slug in entity_slugs}
 
     return {
         'schema_version': 1,

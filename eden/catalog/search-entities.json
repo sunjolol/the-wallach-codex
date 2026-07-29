@@ -12048,6 +12048,172 @@
     "poor_circulation",
     "ginkgo"
    ]
+  },
+  "muscle_strength": {
+   "display_name": "Muscle & Strength",
+   "type": "topic",
+   "synonyms": [
+    "get stronger",
+    "get strong",
+    "how to get stronger",
+    "increase strength",
+    "build strength",
+    "gain strength",
+    "foods for strength",
+    "best foods for strength",
+    "build muscle",
+    "building muscle",
+    "gain muscle",
+    "muscle building",
+    "grow muscle",
+    "put on muscle",
+    "muscle mass",
+    "physical strength",
+    "muscle strength",
+    "muscular strength",
+    "more muscular"
+   ],
+   "related": [
+    "protein",
+    "selenium",
+    "amino_acids",
+    "meat",
+    "muscular_dystrophy",
+    "zinc"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000055",
+   "hub": true
+  },
+  "intelligence": {
+   "display_name": "Intelligence & IQ",
+   "type": "concept",
+   "synonyms": [
+    "iq",
+    "intelligence",
+    "raise my iq",
+    "raise iq",
+    "increase iq",
+    "boost iq",
+    "improve iq",
+    "higher iq",
+    "iq points",
+    "raising iq",
+    "how to raise iq",
+    "increase intelligence",
+    "raise intelligence",
+    "boost intelligence",
+    "improve intelligence",
+    "brain development",
+    "brain power",
+    "get smarter",
+    "smarter",
+    "foods for iq",
+    "best foods for iq",
+    "foods for intelligence",
+    "child's iq",
+    "raise my child's iq"
+   ],
+   "related": [
+    "zinc",
+    "iodine",
+    "omega-3",
+    "lead",
+    "down_syndrome",
+    "learning_disabilities",
+    "cretinism"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000053",
+   "hub": true
+  },
+  "veganism": {
+   "display_name": "Veganism & Vegetarianism",
+   "type": "topic",
+   "synonyms": [
+    "vegan",
+    "vegetarian",
+    "vegetarianism",
+    "veganism",
+    "plant-based",
+    "plant based",
+    "plant-based diet",
+    "vegan diet",
+    "vegetarian diet",
+    "meat-free",
+    "meatless",
+    "going vegan"
+   ],
+   "related": [
+    "vitamin-b12",
+    "beef",
+    "chicken",
+    "iron",
+    "phosphorus",
+    "zinc",
+    "colloidal_minerals"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000222",
+   "hub": true
+  },
+  "healthy_foods": {
+   "display_name": "The Best Foods to Eat",
+   "type": "concept",
+   "synonyms": [
+    "best foods for you",
+    "best foods to eat",
+    "healthiest foods",
+    "healthiest foods to eat",
+    "good foods to eat",
+    "healthy foods to eat",
+    "best foods for health",
+    "what are the best foods",
+    "what to eat to be healthy"
+   ],
+   "related": [
+    "see_food_diet",
+    "orac",
+    "centenarian-cultures",
+    "meat",
+    "eggs",
+    "butter",
+    "fermented_foods"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000250",
+   "hub": true
+  },
+  "frequent_urination": {
+   "display_name": "Frequent Urination",
+   "type": "concept",
+   "synonyms": [
+    "pee all the time",
+    "pee constantly",
+    "pee frequently",
+    "have to pee all the time",
+    "have to pee constantly",
+    "have to pee frequently",
+    "peeing all the time",
+    "peeing constantly",
+    "peeing frequently",
+    "peeing a lot",
+    "have to pee a lot",
+    "frequent urination",
+    "urinary frequency",
+    "urinating a lot",
+    "urinating frequently",
+    "urinate frequently",
+    "always peeing",
+    "always have to pee",
+    "getting up at night to pee",
+    "up all night peeing",
+    "peeing all night",
+    "excessive urination"
+   ],
+   "related": [
+    "benign_prostatic_hyperplasia",
+    "diabetes",
+    "cystitis",
+    "sodium"
+   ],
+   "hub": true
   }
  }
 }
