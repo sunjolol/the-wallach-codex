@@ -3137,6 +3137,33 @@
       "extracted_at": "2026-07-28T18:14:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-HELLS-000096",
+      "kind": "mechanism",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach cites a 1996 Johns Hopkins 14-year study of 2,065 elderly people finding that those taking ibuprofen had a 60 percent lower risk of Alzheimer's disease, an effect he attributes to a unique antioxidant property of ibuprofen.",
+      "verbatim": "In March of 1996, Johns Hopkins University released a 14-year \nstudy of 2,065 elderly people who were tracked to determine long \nterm effects of Ibuprofen use for arthritis pain - they were surprised \nto learn that those individuals taking Ibuprofen had a 60 percent \nreduction in the risk of Alzheimer’s disease (the effect was attributed \nto a unique antioxidant property of Ibuprofen).",
+      "locator": {
+        "book": "hells-kitchen",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 617415
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-29T03:52:00+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

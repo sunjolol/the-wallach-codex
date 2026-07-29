@@ -11458,7 +11458,8 @@
     "asa",
     "baby aspirin"
    ],
-   "related": []
+   "related": [],
+   "intro_claim": "WAL-CLM-DDDL-000318"
   },
   "gelatin": {
    "display_name": "Gelatin",
@@ -12214,6 +12215,34 @@
     "sodium"
    ],
    "hub": true
+  },
+  "painkillers": {
+   "display_name": "Painkillers & NSAIDs",
+   "type": "concept",
+   "synonyms": [
+    "ibuprofen",
+    "advil",
+    "motrin",
+    "nuprin",
+    "aleve",
+    "naproxen",
+    "nsaid",
+    "nsaids",
+    "non-steroidal anti-inflammatory",
+    "anti-inflammatory drug",
+    "painkiller",
+    "pain killer",
+    "pain reliever",
+    "is ibuprofen safe",
+    "is ibuprofen okay to take",
+    "is naproxen safe"
+   ],
+   "related": [
+    "aspirin",
+    "arthritis",
+    "pain"
+   ],
+   "intro_claim": "WAL-CLM-DDDL-000319"
   }
  }
 }

@@ -10465,6 +10465,60 @@
       "extracted_at": "2026-07-28T18:15:11+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000318",
+      "kind": "contraindication",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach warns that aspirin doesn't fix arthritis and can cause gastric bleeding and death; he groups it with the painkillers and anti-inflammatory drugs that are the arthritis 'treatment of choice' but whose dangerous, even deadly side effects are rarely mentioned.",
+      "verbatim": "Painkillers and anti-inflammatory drugs are the arthritis treatment of choice\nin humans, though they’re dangerous—even deadly side effects are rarely\nmentioned. None prevent or cure arthritis.\nAspirin doesn’t fix arthritis and can cause gastric bleeding and death.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 64753
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-29T03:51:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-DDDL-000319",
+      "kind": "contraindication",
+      "essentials": [],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Wallach warns that ibuprofen, Advil, and Aleve don't fix arthritis and can cause liver damage in up to ten percent of users, some even requiring a liver transplant.",
+      "verbatim": "Ibuprofen, Advil™, and\nAleve™ don’t fix arthritis either, but they can cause liver damage in up to\nten percent of users, some even requiring a liver transplant.",
+      "locator": {
+        "book": "dddl-3e-2011",
+        "scheme": "chapter_page",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 65211
+      },
+      "dose": null,
+      "tags": [],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-07-29T03:51:59+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

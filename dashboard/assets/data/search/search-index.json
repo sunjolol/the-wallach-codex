@@ -651,6 +651,20 @@
       ],
       "claim_count": 5
     },
+    "aspirin": {
+      "display_name": "Aspirin",
+      "type": "substance",
+      "synonyms": [
+        "aspirin",
+        "acetylsalicylic acid",
+        "asprin",
+        "asa",
+        "baby aspirin"
+      ],
+      "related": [],
+      "claim_count": 1,
+      "intro_claim": "WAL-CLM-DDDL-000318"
+    },
     "asthma": {
       "display_name": "Asthma",
       "type": "condition",
@@ -7333,6 +7347,35 @@
         "joint_pain"
       ],
       "claim_count": 1
+    },
+    "painkillers": {
+      "display_name": "Painkillers & NSAIDs",
+      "type": "concept",
+      "synonyms": [
+        "ibuprofen",
+        "advil",
+        "motrin",
+        "nuprin",
+        "aleve",
+        "naproxen",
+        "nsaid",
+        "nsaids",
+        "non-steroidal anti-inflammatory",
+        "anti-inflammatory drug",
+        "painkiller",
+        "pain killer",
+        "pain reliever",
+        "is ibuprofen safe",
+        "is ibuprofen okay to take",
+        "is naproxen safe"
+      ],
+      "related": [
+        "aspirin",
+        "arthritis",
+        "pain"
+      ],
+      "claim_count": 2,
+      "intro_claim": "WAL-CLM-DDDL-000319"
     },
     "palpitations": {
       "display_name": "Palpitations",
@@ -18226,6 +18269,50 @@
         "poor-circulation",
         "cold-hands-feet",
         "herbs"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000318",
+      "subject": "aspirin",
+      "also_about": [
+        "painkillers"
+      ],
+      "facet": "warning",
+      "question": "Is aspirin safe to take?",
+      "answer_short": "Wallach's take: aspirin doesn't fix the underlying problem (like arthritis) and can cause gastric bleeding and even death — he groups painkillers and anti-inflammatory drugs as the 'treatment of choice' whose dangerous, even deadly side effects are rarely mentioned.",
+      "answer": "Wallach warns that aspirin doesn't fix arthritis and can cause gastric bleeding and death; he groups it with the painkillers and anti-inflammatory drugs that are the arthritis 'treatment of choice' but whose dangerous, even deadly side effects are rarely mentioned.",
+      "verbatim": "Painkillers and anti-inflammatory drugs are the arthritis treatment of choice\nin humans, though they’re dangerous—even deadly side effects are rarely\nmentioned. None prevent or cure arthritis.\nAspirin doesn’t fix arthritis and can cause gastric bleeding and death.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "aspirin",
+        "painkillers",
+        "gastric-bleeding",
+        "arthritis",
+        "drug-safety"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000319",
+      "subject": "painkillers",
+      "also_about": [
+        "aspirin"
+      ],
+      "facet": "warning",
+      "question": "Is ibuprofen safe to take?",
+      "answer_short": "Wallach's take: ibuprofen, Advil, and Aleve don't fix the underlying problem and can cause liver damage in up to ten percent of users — some even needing a liver transplant.",
+      "answer": "Wallach warns that ibuprofen, Advil, and Aleve don't fix arthritis and can cause liver damage in up to ten percent of users, some even requiring a liver transplant.",
+      "verbatim": "Ibuprofen, Advil™, and\nAleve™ don’t fix arthritis either, but they can cause liver damage in up to\nten percent of users, some even requiring a liver transplant.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "ibuprofen",
+        "advil",
+        "aleve",
+        "nsaid",
+        "liver-damage",
+        "arthritis",
+        "drug-safety"
       ]
     },
     {
@@ -30793,6 +30880,27 @@
         "low carb",
         "minerals",
         "diet"
+      ]
+    },
+    {
+      "id": "WAL-CLM-HELLS-000096",
+      "subject": "painkillers",
+      "also_about": [
+        "alzheimers"
+      ],
+      "facet": "uses",
+      "question": "Can ibuprofen lower your Alzheimer's risk?",
+      "answer_short": "Wallach cites a 1996 Johns Hopkins 14-year study of 2,065 people: those taking ibuprofen had a 60 percent lower risk of Alzheimer's disease, which he attributes to a unique antioxidant property of ibuprofen.",
+      "answer": "Wallach cites a 1996 Johns Hopkins 14-year study of 2,065 elderly people finding that those taking ibuprofen had a 60 percent lower risk of Alzheimer's disease, an effect he attributes to a unique antioxidant property of ibuprofen.",
+      "verbatim": "In March of 1996, Johns Hopkins University released a 14-year \nstudy of 2,065 elderly people who were tracked to determine long \nterm effects of Ibuprofen use for arthritis pain - they were surprised \nto learn that those individuals taking Ibuprofen had a 60 percent \nreduction in the risk of Alzheimer’s disease (the effect was attributed \nto a unique antioxidant property of Ibuprofen).",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "ibuprofen",
+        "alzheimers",
+        "antioxidant",
+        "brain",
+        "dementia"
       ]
     },
     {

@@ -36553,6 +36553,56 @@
         "regulation",
         "fda"
       ]
+    },
+    "WAL-CLM-DDDL-000318": {
+      "subject": "aspirin",
+      "also_about": [
+        "painkillers"
+      ],
+      "facet": "warning",
+      "question": "Is aspirin safe to take?",
+      "answer_short": "Wallach's take: aspirin doesn't fix the underlying problem (like arthritis) and can cause gastric bleeding and even death — he groups painkillers and anti-inflammatory drugs as the 'treatment of choice' whose dangerous, even deadly side effects are rarely mentioned.",
+      "topics": [
+        "aspirin",
+        "painkillers",
+        "gastric-bleeding",
+        "arthritis",
+        "drug-safety"
+      ]
+    },
+    "WAL-CLM-DDDL-000319": {
+      "subject": "painkillers",
+      "also_about": [
+        "aspirin"
+      ],
+      "facet": "warning",
+      "question": "Is ibuprofen safe to take?",
+      "answer_short": "Wallach's take: ibuprofen, Advil, and Aleve don't fix the underlying problem and can cause liver damage in up to ten percent of users — some even needing a liver transplant.",
+      "topics": [
+        "ibuprofen",
+        "advil",
+        "aleve",
+        "nsaid",
+        "liver-damage",
+        "arthritis",
+        "drug-safety"
+      ]
+    },
+    "WAL-CLM-HELLS-000096": {
+      "subject": "painkillers",
+      "also_about": [
+        "alzheimers"
+      ],
+      "facet": "uses",
+      "question": "Can ibuprofen lower your Alzheimer's risk?",
+      "answer_short": "Wallach cites a 1996 Johns Hopkins 14-year study of 2,065 people: those taking ibuprofen had a 60 percent lower risk of Alzheimer's disease, which he attributes to a unique antioxidant property of ibuprofen.",
+      "topics": [
+        "ibuprofen",
+        "alzheimers",
+        "antioxidant",
+        "brain",
+        "dementia"
+      ]
     }
   }
 }

@@ -14,6 +14,14 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000318",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000319",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000157",
         "book": "epigenetics"
       },
@@ -27,7 +35,7 @@
       }
     ],
     "books_repeating": 4,
-    "claim_count": 5
+    "claim_count": 7
   },
   {
     "id": "CG-0002",
@@ -3088,6 +3096,10 @@
         "book": "hells-kitchen"
       },
       {
+        "claim_id": "WAL-CLM-HELLS-000096",
+        "book": "hells-kitchen"
+      },
+      {
         "claim_id": "WAL-CLM-IAIYH-000015",
         "book": "iaiyh"
       },
@@ -3465,7 +3477,7 @@
       }
     ],
     "books_repeating": 7,
-    "claim_count": 229
+    "claim_count": 230
   },
   {
     "id": "CG-0009",
