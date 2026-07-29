@@ -36,6 +36,8 @@ import {
   type EntityKindGroup,
   type EssentialPage,
   FattyAcidClaritySchema,
+  type MechField,
+  type MechSide,
   MechanismClaritySchema,
   type OmegaFamily,
   SEARCH_FACETS,
@@ -1083,43 +1085,209 @@ function rancidityFigure(alt: string): string {
     </svg>`;
 }
 
+/** Label lookup for a figure. Absent -> '' (an unlabelled mark, never a guessed default). */
+function figLabel(labels: Record<string, string> | undefined, id: string): string {
+  return escHTML(labels?.[id] ?? '');
+}
+
+/** The cofactor FORK — one element feeding two enzymes, and the two very different things
+ *  that fail when it runs short. Deterministic (no Math.random, stable for probes).
+ *  Authored at scale 1 (viewBox width == the figure's CSS max-width) so a size in here is a
+ *  size on screen; label sizes match the shipped selenium figure's 12px. Every string is a
+ *  label from the store. The left outcome shows FOUR natural hair colours converging on one
+ *  accented pale swatch — the point is that any starting colour ends in the same place. */
+function cofactorForkFigure(alt: string, labels: Record<string, string> | undefined): string {
+  const HAIR = ['black', 'brown', 'auburn', 'blond'];
+  const swatches = HAIR.map((h, k) =>
+    `<rect class="kd-ep-fam__hair kd-ep-fam__hair--${h}" x="${80 + k * 31}" y="222" width="26" height="40" rx="4"/>`).join('');
+  return `<svg class="kd-ep-fam__art kd-ep-fam__art--fork" viewBox="0 0 700 322" role="img" aria-label="${escHTML(alt)}">
+      <defs><marker id="mech-fork-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
+        <path class="kd-ep-fam__ghead" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
+      <rect class="kd-ep-fam__gnode kd-ep-fam__gnode--el" x="300" y="8" width="100" height="52" rx="10"/>
+      <text class="kd-ep-fam__gglyph" x="350" y="43" text-anchor="middle">${figLabel(labels, 'glyph')}</text>
+      <path class="kd-ep-fam__gline" d="M350 60 V88 H175 V132" marker-end="url(#mech-fork-tip)"/>
+      <path class="kd-ep-fam__gline" d="M350 60 V88 H525 V132" marker-end="url(#mech-fork-tip)"/>
+      <rect class="kd-ep-fam__gnode" x="75" y="140" width="200" height="36" rx="8"/>
+      <text class="kd-ep-fam__gname" x="175" y="163" text-anchor="middle">${figLabel(labels, 'enzyme_left')}</text>
+      <rect class="kd-ep-fam__gnode" x="425" y="140" width="200" height="36" rx="8"/>
+      <text class="kd-ep-fam__gname" x="525" y="163" text-anchor="middle">${figLabel(labels, 'enzyme_right')}</text>
+      <text class="kd-ep-fam__gsub" x="175" y="198" text-anchor="middle">${figLabel(labels, 'sub_left')}</text>
+      <text class="kd-ep-fam__gsub" x="525" y="198" text-anchor="middle">${figLabel(labels, 'sub_right')}</text>
+      ${swatches}
+      <path class="kd-ep-fam__gline" d="M205 242 H221" marker-end="url(#mech-fork-tip)"/>
+      <rect class="kd-ep-fam__hair kd-ep-fam__hair--lost" x="231" y="218" width="40" height="48" rx="5"/>
+      <text class="kd-ep-fam__glabel" x="175" y="288" text-anchor="middle">${figLabel(labels, 'outcome_left')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--warn" x="175" y="310" text-anchor="middle">${figLabel(labels, 'tag_left')}</text>
+      <path class="kd-ep-fam__lumen" d="M435 228 H495 C513 228 511 214 525 214 C540 214 538 228 555 228 H615
+                                        L615 256 H555 C538 256 540 270 525 270 C511 270 513 256 495 256 H435 Z"/>
+      <path class="kd-ep-fam__vghost" d="M495 228 H555 M495 256 H555"/>
+      <path class="kd-ep-fam__vessel" d="M435 228 H495 C513 228 511 214 525 214 C540 214 538 228 555 228 H615"/>
+      <path class="kd-ep-fam__vessel" d="M435 256 H495 C513 256 511 270 525 270 C540 270 538 256 555 256 H615"/>
+      <text class="kd-ep-fam__glabel" x="525" y="288" text-anchor="middle">${figLabel(labels, 'outcome_right')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="525" y="310" text-anchor="middle">${figLabel(labels, 'tag_right')}</text>
+    </svg>`;
+}
+
+/** The DECLINE rail — an ordered march of failures ending at a terminal marker, braced as
+ *  one long span. The terminal carries no sub-caption, so its baseline sits at 59 to centre
+ *  optically on the other stops' two-line blocks (title 48 / sub 70) rather than floating. */
+function declineRailFigure(alt: string, labels: Record<string, string> | undefined): string {
+  const STOPS = [120, 280, 440];
+  const stops = STOPS.map((x, k) => `
+      <text class="kd-ep-fam__gstop" x="${x}" y="48" text-anchor="middle">${figLabel(labels, `stop${k + 1}`)}</text>
+      <text class="kd-ep-fam__gsub" x="${x}" y="70" text-anchor="middle">${figLabel(labels, `stop${k + 1}_sub`)}</text>
+      <circle class="kd-ep-fam__gstopdot" cx="${x}" cy="100" r="7"/>`).join('');
+  return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 172" role="img" aria-label="${escHTML(alt)}">
+      <defs><marker id="mech-rail-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+        <path class="kd-ep-fam__ghead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+      <path class="kd-ep-fam__grail" d="M60 100 H576" marker-end="url(#mech-rail-tip)"/>
+      ${stops}
+      <rect class="kd-ep-fam__gterm" x="588" y="88" width="24" height="24" rx="4"/>
+      <text class="kd-ep-fam__gstop kd-ep-fam__gstop--term" x="600" y="59" text-anchor="middle">${figLabel(labels, 'terminal')}</text>
+      <path class="kd-ep-fam__gbrace" d="M60 124 V134 H600 V124"/>
+      <text class="kd-ep-fam__glabel" x="330" y="158" text-anchor="middle">${figLabel(labels, 'span')}</text>
+    </svg>`;
+}
+
+/** The REVERSAL rail — the same 60..600 span run backwards, in the category accent. Renders
+ *  BELOW the beats so the turn reads as their consequence; the cause is the bold end label. */
+function reversalRailFigure(alt: string, labels: Record<string, string> | undefined): string {
+  return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 84" role="img" aria-label="${escHTML(alt)}">
+      <defs><marker id="mech-turn-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+        <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+      <text class="kd-ep-fam__gsub kd-ep-fam__gsub--acc" x="330" y="22" text-anchor="middle">${figLabel(labels, 'duration')}</text>
+      <path class="kd-ep-fam__greturn" d="M600 40 H60" marker-end="url(#mech-turn-tip)"/>
+      <circle class="kd-ep-fam__gretdot" cx="600" cy="40" r="7"/>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="60" y="70" text-anchor="start">${figLabel(labels, 'end')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc kd-ep-fam__gtag--cause" x="600" y="70" text-anchor="end">${figLabel(labels, 'start')}</text>
+    </svg>`;
+}
+
 /** Figure dispatch on a GENERIC key (never a slug) — keeps renderMechanism a pure projection. */
-function mechanismFigure(key: string, alt: string): string {
+function mechanismFigure(key: string, alt: string, labels?: Record<string, string>): string {
   switch (key) {
     case 'rancidity':
       return rancidityFigure(alt);
+    case 'cofactor_fork':
+      return cofactorForkFigure(alt, labels);
+    case 'decline_rail':
+      return declineRailFigure(alt, labels);
+    case 'reversal_rail':
+      return reversalRailFigure(alt, labels);
     default:
       return '';
   }
 }
 
+/** A proportion field — `total` marks, `bands` of them styled, the remainder neutral. The
+ *  picture IS the number, so no numeral is printed inside it; the legend rows carry the
+ *  reading in text (which is also what a screen reader gets — the art is decorative). */
+function proportionField(f: MechField): string {
+  const band: string[] = [];
+  f.bands.forEach((b) => {
+    for (let k = 0; k < b.count; k++) {
+      band.push(b.key);
+    }
+  });
+  const marks: string[] = [];
+  for (let k = 0; k < f.total; k++) {
+    const key = band[k];
+    const mod = key !== undefined ? ` kd-ep-fam__mark--${escHTML(key)}` : '';
+    marks.push(`<circle class="kd-ep-fam__mark${mod}" cx="${6 + (k % f.columns) * 12}" cy="${6 + Math.floor(k / f.columns) * 12}" r="4.5"/>`);
+  }
+  const rows = Math.ceil(f.total / f.columns);
+  const legend = f.bands.filter(b => b.label.length > 0).map(b =>
+    `<div class="kd-ep-fam__fieldleg"><span class="kd-ep-fam__fieldkey kd-ep-fam__fieldkey--${escHTML(b.key)}"></span>${escHTML(b.label)}</div>`).join('');
+  return `<svg class="kd-ep-fam__fieldart" viewBox="0 0 ${12 + (f.columns - 1) * 12} ${12 + (rows - 1) * 12}" aria-hidden="true">${marks.join('')}</svg>${legend}`;
+}
+
+/** A split side's evidence: a sealed-claim quote pulled BY ID (R3 — never hand-typed) or a
+ *  proportion field. '' when the side carries neither, or the claim does not resolve. */
+function mechEvidence(side: MechSide): string {
+  if (side.field !== undefined) {
+    return proportionField(side.field);
+  }
+  const c = side.quote_claim !== undefined ? getClaim(side.quote_claim) : null;
+  if (c === null) {
+    return '';
+  }
+  return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(c.verbatim))}<cite>${escHTML(getBookLabel(c.book))}</cite></blockquote>`;
+}
+
+/** The two-column split, emitted as a 2x2 GRID (both prose cells, then both evidence cells)
+ *  so the evidence row top-aligns by construction whatever the prose does — a flex column
+ *  with an auto top margin only moves the gap inside the shorter side. */
+function renderMechSplit(left: MechSide, right: MechSide): string {
+  const R = ' kd-ep-fam__splitcell--r';
+  const prose = (s: MechSide, mod: string): string => `<div class="kd-ep-fam__splitcell${mod}">
+        <div class="kd-ep-fam__splithd">${escHTML(s.head)}</div>
+        <p class="kd-ep-fam__splittx">${glossify(collapseWS(s.text))}</p>
+      </div>`;
+  const evid = (s: MechSide, mod: string): string => {
+    const body = mechEvidence(s);
+    if (body.length === 0) {
+      return `<div class="kd-ep-fam__splitcell${mod}"></div>`;
+    }
+    const cap = s.evidence_caption !== undefined
+      ? `<div class="kd-ep-fam__evcap">${escHTML(s.evidence_caption)}</div>`
+      : '';
+    return `<div class="kd-ep-fam__splitcell kd-ep-fam__splitcell--ev${mod}">${cap}${body}</div>`;
+  };
+  return `<div class="kd-ep-fam__split">${prose(left, '')}${prose(right, R)}${evid(left, '')}${evid(right, R)}</div>`;
+}
+
 /** The per-element mechanism hero. Renders ONLY for a slug that has a mechanism-clarity entry
- *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug branch. */
+ *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug
+ *  branch. Each element's header is composed bespoke to that element's content: the split,
+ *  bridge, and the two extra figure slots are all OPTIONAL and self-suppress, so an entry that
+ *  carries none (selenium's) renders exactly the shape it always did. */
 function renderMechanism(slug: string | null, layoutKey: string, category: string | null): string {
   const m = slug !== null ? MECH_BY_SLUG.get(slug) : undefined;
   if (m === undefined) {
     return '';
   }
-  const beats = m.beats.map(b => `
-      <div class="kd-ep-fam__step">
+  const beats = m.beats.map((b) => {
+    const hook = (b.hook !== undefined && b.hook.length > 0)
+      ? `<p class="kd-ep-fam__hook">${escHTML(b.hook)}</p>`
+      : '';
+    const turn = b.turn === true ? ' kd-ep-fam__step--turn' : '';
+    return `
+      <div class="kd-ep-fam__step${turn}">
         <span class="kd-ep-fam__num">${escHTML(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
-          <p class="kd-ep-fam__hook">${escHTML(b.hook)}</p>
+          ${hook}
         </div>
-      </div>`).join('');
+      </div>`;
+  }).join('');
   const stat = m.stat !== undefined ? `
       <div class="kd-ep-fam__stat">
         <span class="kd-ep-fam__statread">${escHTML(m.stat.readout)}</span>
         <span class="kd-ep-fam__statnum">${escHTML(m.stat.value)}</span>
         <span class="kd-ep-fam__statlbl">${escHTML(m.stat.label)}</span>
       </div>` : '';
+  const split = m.split !== undefined ? renderMechSplit(m.split.left, m.split.right) : '';
+  const bridge = m.bridge !== undefined
+    ? `<p class="kd-ep-fam__bridge">${glossify(collapseWS(m.bridge))}</p>`
+    : '';
+  const preFig = m.figure_pre_beats !== undefined
+    ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail">${mechanismFigure(m.figure_pre_beats.key, m.figure_pre_beats.alt, m.figure_pre_beats.labels)}</div>`
+    : '';
+  const postFig = m.figure_post_beats !== undefined
+    ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail kd-ep-fam__figure--turn">${mechanismFigure(m.figure_post_beats.key, m.figure_post_beats.alt, m.figure_post_beats.labels)}</div>`
+    : '';
+  const stepsMod = m.beats_layout === 'row' ? ' kd-ep-fam__steps--row' : '';
+  const heroFigMod = m.figure_labels !== undefined ? ' kd-ep-fam__figure--fork' : ' kd-ep-fam__figure--mech';
   return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML(category ?? '')}">
       <span class="kd-ep-fam__eyebrow">${escHTML(m.eyebrow)}</span>
       <h3 class="kd-ep-fam__kill">${escHTML(m.kill)}</h3>
-      <div class="kd-ep-fam__figure kd-ep-fam__figure--mech">${mechanismFigure(m.figure, m.figure_alt)}</div>
-      <div class="kd-ep-fam__steps">${beats}</div>
+      <div class="kd-ep-fam__figure${heroFigMod}">${mechanismFigure(m.figure, m.figure_alt, m.figure_labels)}</div>
+      ${split}
+      ${bridge}
+      ${preFig}
+      <div class="kd-ep-fam__steps${stepsMod}">${beats}</div>
+      ${postFig}
       ${stat}
       ${fatFamilyQuote(m.quote_claim, m.highlight)}
       <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>

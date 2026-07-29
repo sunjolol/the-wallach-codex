@@ -8,6 +8,9 @@
     "selenium": {
       "lede": "The body's most efficient antioxidant — a trace mineral needed in only micrograms, yet the one Wallach ties to cystic fibrosis, Keshan heart failure, and much of cancer.",
       "why": "From Wallach's Epigenetics (2014) mineral table: 100–200 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 310 mcg/day. (His earlier Let's Play Doctor Base Line program lists a flat 200 mcg maintenance figure.)"
+    },
+    "copper": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 1–2 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 3.1 mg/day. (His earlier Let's Play Doctor Base Line program lists 3 to 4 mg.)"
     }
   },
   "conditions": {}

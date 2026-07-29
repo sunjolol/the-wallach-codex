@@ -2269,6 +2269,110 @@
   letter-spacing: var(--ds-track-wide); text-transform: uppercase;
   color: var(--ds-ink-soft); line-height: 1.5; max-width: 40ch; }
 
+/* ── Composed mechanism header (copper, 2026-07-29) — the optional blocks a bespoke per-element
+   header can carry on top of the selenium shape: a two-column split with evidence, a connective
+   bridge line, a beats ROW, and figures in the slots before/after the beats. Every selector here
+   is NEW, so selenium/omega/plant-derived render byte-identically.
+
+   FIGURE TYPE IS PINNED TO THE SELENIUM STANDARD, measured off the shipped page: labels 12px on
+   screen, element glyph 17.6px. These figures are authored at SCALE 1 (viewBox width == the
+   figure's max-width below), so the px here ARE the screen px — no ~0.61x surprise. Sizing a
+   figure ABOVE this standard is the regression to avoid; it reads as shouting next to selenium. ── */
+#drawer-knowledge-mount .kd-ep-fam__figure--fork { max-width: 700px; }
+#drawer-knowledge-mount .kd-ep-fam__figure--rail { max-width: 660px; }
+/* the reversal rail sits under the beats, tucked close so it reads as their payoff */
+#drawer-knowledge-mount .kd-ep-fam__figure--turn { margin-top: 22px; margin-bottom: 4px; }
+
+#drawer-knowledge-mount .kd-ep-fam__gglyph { fill: var(--kd-ep-fam); font-family: var(--ds-font-display); font-weight: 700; font-size: 17.6px; }
+#drawer-knowledge-mount .kd-ep-fam__gname  { fill: var(--ds-ink); font-family: var(--ds-font-mono); font-size: 12px; letter-spacing: .06em; }
+#drawer-knowledge-mount .kd-ep-fam__gsub   { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 12px; }
+#drawer-knowledge-mount .kd-ep-fam__gsub--acc { fill: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam__glabel { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 12px; letter-spacing: .04em; }
+#drawer-knowledge-mount .kd-ep-fam__gtag   { font-family: var(--ds-font-mono); font-size: 12px; letter-spacing: .1em; }
+#drawer-knowledge-mount .kd-ep-fam__gtag--warn  { fill: var(--ds-status-warn-deep, #8a6d20); }
+#drawer-knowledge-mount .kd-ep-fam__gtag--mute  { fill: var(--ds-ink-faint); }
+#drawer-knowledge-mount .kd-ep-fam__gtag--acc   { fill: var(--kd-ep-fam); }
+/* the reversal's CAUSE — the one thing that was implicit everywhere and explicit nowhere */
+#drawer-knowledge-mount .kd-ep-fam__gtag--cause { font-weight: 700; }
+#drawer-knowledge-mount .kd-ep-fam__gstop  { fill: var(--ds-ink); font-family: var(--ds-font-display); font-weight: 700; font-size: 12px; }
+#drawer-knowledge-mount .kd-ep-fam__gstop--term { fill: var(--ds-ink-soft); }
+
+#drawer-knowledge-mount .kd-ep-fam__gnode     { fill: var(--ds-paper-light); stroke: var(--ds-rule); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__gnode--el { fill: color-mix(in srgb, var(--kd-ep-fam) 14%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__gline     { fill: none; stroke: var(--ds-rule-bright); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__ghead     { fill: var(--ds-rule-bright); }
+#drawer-knowledge-mount .kd-ep-fam__ghead--acc { fill: var(--kd-ep-fam); }
+
+/* Hair swatches are DEPICTIVE — they stand for real hair colours, so they are literal values
+   rather than --ds-* tokens (a themed token would drift and stop being hair). Four naturals
+   converge on ONE accented pale swatch: the point is that any starting colour ends the same. */
+#drawer-knowledge-mount .kd-ep-fam__hair         { stroke: var(--ds-rule); stroke-width: 1; }
+#drawer-knowledge-mount .kd-ep-fam__hair--black  { fill: #17120f; }
+#drawer-knowledge-mount .kd-ep-fam__hair--brown  { fill: #4a3325; }
+#drawer-knowledge-mount .kd-ep-fam__hair--auburn { fill: #7c3a1c; }
+#drawer-knowledge-mount .kd-ep-fam__hair--blond  { fill: #c9a561; }
+#drawer-knowledge-mount .kd-ep-fam__hair--lost   { fill: #eceae4; stroke: var(--kd-ep-fam); stroke-width: 2; }
+
+/* the vessel: a filled lumen so it reads as a tube, with the dashed ghost marking where the
+   wall SHOULD run — that is what makes the balloon read as a deviation, not decoration */
+#drawer-knowledge-mount .kd-ep-fam__lumen  { fill: color-mix(in srgb, var(--kd-ep-fam) 9%, var(--ds-paper-light)); stroke: none; }
+#drawer-knowledge-mount .kd-ep-fam__vessel { fill: none; stroke: var(--ds-ink-soft); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__vghost { fill: none; stroke: var(--ds-rule-bright); stroke-width: 1; stroke-dasharray: 4 4; }
+
+#drawer-knowledge-mount .kd-ep-fam__grail    { fill: none; stroke: var(--ds-rule-bright); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__gstopdot { fill: var(--ds-paper-light); stroke: var(--ds-ink-soft); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__gterm    { fill: var(--ds-paper-shadow); stroke: var(--ds-ink-soft); stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__gbrace   { fill: none; stroke: var(--ds-rule); stroke-width: 1; }
+#drawer-knowledge-mount .kd-ep-fam__greturn  { fill: none; stroke: var(--kd-ep-fam); stroke-width: 1.8; }
+#drawer-knowledge-mount .kd-ep-fam__gretdot  { fill: color-mix(in srgb, var(--kd-ep-fam) 20%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); stroke-width: 2; }
+
+/* The split is a 2x2 GRID — both prose cells, then both evidence cells — so the evidence row
+   top-aligns BY CONSTRUCTION however long the prose runs. (A flex column with an auto top
+   margin does not solve this: it only moves the dead space inside the shorter side.) */
+#drawer-knowledge-mount .kd-ep-fam__split { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; column-gap: var(--ds-space-5); margin-top: 6px; }
+#drawer-knowledge-mount .kd-ep-fam__splitcell--r  { padding-left: var(--ds-space-5); border-left: 1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-ep-fam__splitcell--ev { padding-top: var(--ds-space-4); border-top: 1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-ep-fam__splithd { font-family: var(--ds-font-display); font-size: var(--ds-text-base); font-weight: 700; color: var(--ds-ink); margin-bottom: 7px; }
+#drawer-knowledge-mount .kd-ep-fam__splittx { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.55; color: var(--ds-ink); margin: 0 0 var(--ds-space-4); }
+#drawer-knowledge-mount .kd-ep-fam__evcap { font-family: var(--ds-font-mono); font-size: 0.7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-soft); margin-bottom: 10px; }
+#drawer-knowledge-mount .kd-ep-fam__miniq {
+  margin: 0; padding: 11px 15px; border-left: 2px solid var(--kd-ep-fam); background: var(--ds-paper-light);
+  font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-sm); line-height: 1.55; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-ep-fam__miniq cite {
+  display: block; margin-top: 7px; font-family: var(--ds-font-mono); font-style: normal;
+  font-size: 0.68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ds-ink-faint); }
+
+/* the proportion field — the picture IS the number, so no numeral is drawn inside it */
+#drawer-knowledge-mount .kd-ep-fam__fieldart { width: 100%; max-width: 300px; height: auto; display: block; }
+#drawer-knowledge-mount .kd-ep-fam__fieldleg { display: flex; align-items: baseline; gap: 8px; margin-top: 8px; font-family: var(--ds-font-mono); font-size: 0.7rem; line-height: 1.45; color: var(--ds-ink-soft); }
+#drawer-knowledge-mount .kd-ep-fam__fieldkey { flex: 0 0 auto; width: 10px; height: 10px; border-radius: 50%; transform: translateY(1px); }
+#drawer-knowledge-mount .kd-ep-fam__fieldkey--dead  { background: var(--ds-ink); }
+#drawer-knowledge-mount .kd-ep-fam__fieldkey--carry { background: color-mix(in srgb, var(--kd-ep-fam) 16%, var(--ds-paper-light)); box-shadow: inset 0 0 0 1.5px var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam__mark            { fill: var(--ds-paper-darker); stroke: var(--ds-rule); stroke-width: .9; }
+#drawer-knowledge-mount .kd-ep-fam__mark--carry     { fill: color-mix(in srgb, var(--kd-ep-fam) 16%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); stroke-width: 1.3; }
+#drawer-knowledge-mount .kd-ep-fam__mark--dead      { fill: var(--ds-ink); stroke: var(--ds-ink); }
+/* the dashed edge marks carry a RANGE ("four to six") honestly — solid would post a false precision */
+#drawer-knowledge-mount .kd-ep-fam__mark--dead_edge { fill: var(--ds-ink-soft); stroke: var(--ds-ink); stroke-width: 1; stroke-dasharray: 2.2 2.2; }
+
+/* the one connective sentence that turns two halves into a single arc */
+#drawer-knowledge-mount .kd-ep-fam__bridge {
+  margin: var(--ds-space-5) 0 30px; padding-top: 17px; border-top: 1px solid var(--ds-rule-soft);
+  font-family: var(--ds-font-serif-light); font-style: italic; font-size: var(--ds-text-md);
+  line-height: 1.55; color: var(--ds-ink-medium); max-width: 72ch; }
+
+/* beats as a ROW: three side-by-side columns with a rule over each, instead of the stack */
+#drawer-knowledge-mount .kd-ep-fam__steps--row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-5); }
+#drawer-knowledge-mount .kd-ep-fam__steps--row .kd-ep-fam__step { display: block; padding-top: 13px; border-top: 2px solid var(--ds-rule); }
+#drawer-knowledge-mount .kd-ep-fam__steps--row .kd-ep-fam__num {
+  display: block; font-family: var(--ds-font-mono); font-size: 0.7rem; font-weight: 400;
+  letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 5px; }
+#drawer-knowledge-mount .kd-ep-fam__steps--row .kd-ep-fam__steptext { margin-top: 0; }
+/* the TURN — the only beat in the category accent, so a skim-reader lands on the cause */
+#drawer-knowledge-mount .kd-ep-fam__steps--row .kd-ep-fam__step--turn { border-top-color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam__step--turn .kd-ep-fam__num       { color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam__step--turn .kd-ep-fam__steptitle { color: var(--kd-ep-fam); }
+
+
 /* -- Category theming: the whole detail screen adopts the element's CATEGORY accent by overriding
    the --ds-accent FAMILY on the container, so the hero tile, outer border, why-link, back button and
    the mechanism block all recolour together. minerals=blue; vitamins keep the default orange;

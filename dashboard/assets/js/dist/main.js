@@ -4923,8 +4923,38 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     n: external_exports.string(),
     title: external_exports.string(),
     text: external_exports.string(),
-    hook: external_exports.string(),
-    traces: external_exports.array(external_exports.string())
+    // `hook` is the selenium-era editorial payoff line; a beat that carries none omits it.
+    hook: external_exports.string().optional(),
+    traces: external_exports.array(external_exports.string()),
+    // Marks the beat where the story TURNS (deficiency -> remedy). Semantic, not a colour:
+    // the stylesheet decides that a turn beat reads in the category accent.
+    turn: external_exports.boolean().optional()
+  }).passthrough();
+  var MechFigureSchema = external_exports.object({
+    key: external_exports.string(),
+    alt: external_exports.string(),
+    labels: external_exports.record(external_exports.string(), external_exports.string())
+  }).passthrough();
+  var MechFieldBandSchema = external_exports.object({
+    key: external_exports.string(),
+    count: external_exports.number(),
+    label: external_exports.string()
+  }).passthrough();
+  var MechFieldSchema = external_exports.object({
+    total: external_exports.number(),
+    columns: external_exports.number(),
+    bands: external_exports.array(MechFieldBandSchema)
+  }).passthrough();
+  var MechSideSchema = external_exports.object({
+    head: external_exports.string(),
+    text: external_exports.string(),
+    evidence_caption: external_exports.string().optional(),
+    quote_claim: external_exports.string().optional(),
+    field: MechFieldSchema.optional()
+  }).passthrough();
+  var MechSplitSchema = external_exports.object({
+    left: MechSideSchema,
+    right: MechSideSchema
   }).passthrough();
   var MechanismSchema = external_exports.object({
     slug: external_exports.string(),
@@ -4933,7 +4963,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     kill: external_exports.string(),
     figure: external_exports.string(),
     figure_alt: external_exports.string(),
+    figure_labels: external_exports.record(external_exports.string(), external_exports.string()).optional(),
+    split: MechSplitSchema.optional(),
+    bridge: external_exports.string().optional(),
+    figure_pre_beats: MechFigureSchema.optional(),
     beats: external_exports.array(MechBeatSchema),
+    // 'row' lays the beats out as side-by-side columns; absent = the selenium stack.
+    beats_layout: external_exports.string().optional(),
+    figure_post_beats: MechFigureSchema.optional(),
     quote_claim: external_exports.string(),
     highlight: external_exports.string().optional(),
     stat: MechStatSchema.optional()
@@ -72406,21 +72443,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             title: "Your cells are fat",
             text: "Every cell and every mitochondrion is wrapped in a membrane made of fat \u2014 and fat oxidizes, goes rancid, the same way cooking oil does once it's heated or left out.",
             hook: "The rancidity that spoils oil in the pan can happen inside your own cell walls.",
-            traces: ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000135"]
+            traces: [
+              "WAL-CLM-RARE-000320",
+              "WAL-CLM-DDDL-000135"
+            ]
           },
           {
             n: "02",
             title: "The most efficient antioxidant",
             text: "Selenium \u2014 working through the glutathione-peroxidase enzyme system \u2014 is, in Wallach's telling, the most efficient antioxidant there is, standing guard over those fatty membranes right at the subcellular level.",
             hook: "A trace mineral you need in millionths of a gram is the bodyguard on every membrane you own.",
-            traces: ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000138"]
+            traces: [
+              "WAL-CLM-RARE-000320",
+              "WAL-CLM-DDDL-000138"
+            ]
           },
           {
             n: "03",
             title: "Rancid, made visible",
             text: 'Pull selenium out and the fats peroxidize \u2014 the brown-gold residue (ceroid lipofuscin) surfaces on skin as "age spots" or "liver spots," while selenium-starved heart muscle can fail outright, as in Keshan disease and the sudden collapse of young athletes.',
             hook: "An age spot is rancid fat you can see \u2014 Wallach reads it as a warning, not a blemish.",
-            traces: ["WAL-CLM-RARE-000321", "WAL-CLM-EPIGEN-000186"]
+            traces: [
+              "WAL-CLM-RARE-000321",
+              "WAL-CLM-EPIGEN-000186"
+            ]
           }
         ],
         quote_claim: "WAL-CLM-RARE-000321",
@@ -72431,6 +72477,122 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           label: "Keshan-disease cases per 1,000 children, after selenium was added",
           claim: "WAL-CLM-RARE-000322"
         }
+      },
+      {
+        slug: "copper",
+        facet: "mechanism",
+        eyebrow: "One cofactor \xB7 two endings",
+        kill: "The same shortage shows up in your mirror and in your arteries.",
+        figure: "cofactor_fork",
+        figure_alt: "Copper feeds two enzymes. Tyrosinase makes hair pigment: black, brown, auburn or blond hair all turn white or grey when copper runs short \u2014 the first visible sign. Lysyl oxidase makes the elastin in artery walls, and without it the wall balloons into an aneurysm.",
+        figure_labels: {
+          glyph: "Cu",
+          enzyme_left: "TYROSINASE",
+          enzyme_right: "LYSYL OXIDASE",
+          sub_left: "tyrosine \u2192 melanin",
+          sub_right: "pro-elastin \u2192 elastin",
+          outcome_left: "HAIR COLOUR \u2192 WHITE \xB7 GREY",
+          outcome_right: "ARTERY WALL \xB7 ANEURYSM",
+          tag_left: "THE FIRST VISIBLE SIGN",
+          tag_right: "THE SILENT ONE"
+        },
+        split: {
+          left: {
+            head: "The one you can see",
+            text: "Copper is the cofactor for tyrosinase \u2014 the enzyme that works on tyrosine to make the melanin that colours hair. Whatever your natural colour, short the copper and the pigment stops being made: it grows back white, grey or silver.",
+            evidence_caption: "The first thing you\u2019d notice",
+            quote_claim: "WAL-CLM-DDDL-000003"
+          },
+          right: {
+            head: "The one you can\u2019t",
+            text: "Copper is also the cofactor for lysyl oxidase \u2014 the enzyme that converts pro-elastin into the elastin that gives an artery wall its tensile strength. Short the copper and the wall gives where the pressure is highest.",
+            evidence_caption: "Of every 100 Americans autopsied",
+            field: {
+              total: 100,
+              columns: 25,
+              bands: [
+                {
+                  key: "dead",
+                  count: 4,
+                  label: "4\u20136 had died of a ruptured aneurysm"
+                },
+                {
+                  key: "dead_edge",
+                  count: 2,
+                  label: ""
+                },
+                {
+                  key: "carry",
+                  count: 40,
+                  label: "40 carrying one, not yet ruptured \u2014 Wallach names Einstein, Airola and Twitty"
+                }
+              ]
+            }
+          }
+        },
+        bridge: "They don\u2019t arrive together \u2014 and that is the whole point. The visible one runs decades ahead of the silent one, which is what makes grey hair worth reading rather than covering up.",
+        figure_pre_beats: {
+          key: "decline_rail",
+          alt: "A timeline: pigment goes first, then structure, then the artery wall, ending in rupture \u2014 decades of warning.",
+          labels: {
+            stop1: "PIGMENT",
+            stop1_sub: "grey hair",
+            stop2: "STRUCTURE",
+            stop2_sub: "wrinkles \xB7 veins",
+            stop3: "THE WALL",
+            stop3_sub: "aneurysm",
+            terminal: "RUPTURE",
+            span: "DECADES OF WARNING"
+          }
+        },
+        beats_layout: "row",
+        beats: [
+          {
+            n: "First",
+            title: "Pigment goes",
+            text: "Tyrosinase needs copper to make melanin. Pigment is the first thing to fail \u2014 and the first thing you can see.",
+            traces: [
+              "WAL-CLM-RARE-000344",
+              "WAL-CLM-DDDL-000003"
+            ]
+          },
+          {
+            n: "Then",
+            title: "Structure goes",
+            text: "The same shortage, further along. Elastin thins: skin wrinkles deeply, spider and varicose veins surface, and artery walls lose the tensile strength that keeps them from ballooning.",
+            traces: [
+              "WAL-CLM-RARE-000119",
+              "WAL-CLM-RARE-000120"
+            ]
+          },
+          {
+            n: "After",
+            title: "Copper restores it",
+            turn: true,
+            text: "Wallach reports the sequence running in reverse on plant-derived colloidal copper \u2014 original hair colour returning, veins receding, and some aneurysms healing.",
+            traces: [
+              "WAL-CLM-DDDL-000196",
+              "WAL-CLM-RARE-000121"
+            ]
+          }
+        ],
+        figure_post_beats: {
+          key: "reversal_rail",
+          alt: "A return track in blue running right to left across the same span: add plant-derived colloidal copper, and normal hair colour returns in six months.",
+          labels: {
+            duration: "six months",
+            end: "COLOUR RETURNS",
+            start: "+ COLLOIDAL COPPER"
+          }
+        },
+        stat: {
+          value: "6 months",
+          readout: "// RARE EARTHS \xB7 COLLOIDAL COPPER SUPPLEMENTATION",
+          label: "until normal hair colour returned",
+          claim: "WAL-CLM-RARE-000121"
+        },
+        quote_claim: "WAL-CLM-DDDL-000196",
+        highlight: "some aneurysms can heal"
       }
     ]
   };
@@ -72446,6 +72608,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       selenium: {
         lede: "The body's most efficient antioxidant \u2014 a trace mineral needed in only micrograms, yet the one Wallach ties to cystic fibrosis, Keshan heart failure, and much of cancer.",
         why: "From Wallach's Epigenetics (2014) mineral table: 100\u2013200 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 310 mcg/day. (His earlier Let's Play Doctor Base Line program lists a flat 200 mcg maintenance figure.)"
+      },
+      copper: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 1\u20132 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 3.1 mg/day. (His earlier Let's Play Doctor Base Line program lists 3 to 4 mg.)"
       }
     },
     conditions: {}
@@ -179372,39 +179537,163 @@ Sickle cell anemia`,
       <text class="kd-ep-fam__flabel kd-ep-fam__flabel--rancid" x="560" y="130" text-anchor="middle">RANCID \xB7 AGE SPOT</text>
     </svg>`;
   }
-  function mechanismFigure(key, alt) {
+  function figLabel(labels, id) {
+    return escHTML6(labels?.[id] ?? "");
+  }
+  function cofactorForkFigure(alt, labels) {
+    const HAIR = ["black", "brown", "auburn", "blond"];
+    const swatches = HAIR.map((h, k) => `<rect class="kd-ep-fam__hair kd-ep-fam__hair--${h}" x="${80 + k * 31}" y="222" width="26" height="40" rx="4"/>`).join("");
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--fork" viewBox="0 0 700 322" role="img" aria-label="${escHTML6(alt)}">
+      <defs><marker id="mech-fork-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
+        <path class="kd-ep-fam__ghead" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
+      <rect class="kd-ep-fam__gnode kd-ep-fam__gnode--el" x="300" y="8" width="100" height="52" rx="10"/>
+      <text class="kd-ep-fam__gglyph" x="350" y="43" text-anchor="middle">${figLabel(labels, "glyph")}</text>
+      <path class="kd-ep-fam__gline" d="M350 60 V88 H175 V132" marker-end="url(#mech-fork-tip)"/>
+      <path class="kd-ep-fam__gline" d="M350 60 V88 H525 V132" marker-end="url(#mech-fork-tip)"/>
+      <rect class="kd-ep-fam__gnode" x="75" y="140" width="200" height="36" rx="8"/>
+      <text class="kd-ep-fam__gname" x="175" y="163" text-anchor="middle">${figLabel(labels, "enzyme_left")}</text>
+      <rect class="kd-ep-fam__gnode" x="425" y="140" width="200" height="36" rx="8"/>
+      <text class="kd-ep-fam__gname" x="525" y="163" text-anchor="middle">${figLabel(labels, "enzyme_right")}</text>
+      <text class="kd-ep-fam__gsub" x="175" y="198" text-anchor="middle">${figLabel(labels, "sub_left")}</text>
+      <text class="kd-ep-fam__gsub" x="525" y="198" text-anchor="middle">${figLabel(labels, "sub_right")}</text>
+      ${swatches}
+      <path class="kd-ep-fam__gline" d="M205 242 H221" marker-end="url(#mech-fork-tip)"/>
+      <rect class="kd-ep-fam__hair kd-ep-fam__hair--lost" x="231" y="218" width="40" height="48" rx="5"/>
+      <text class="kd-ep-fam__glabel" x="175" y="288" text-anchor="middle">${figLabel(labels, "outcome_left")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--warn" x="175" y="310" text-anchor="middle">${figLabel(labels, "tag_left")}</text>
+      <path class="kd-ep-fam__lumen" d="M435 228 H495 C513 228 511 214 525 214 C540 214 538 228 555 228 H615
+                                        L615 256 H555 C538 256 540 270 525 270 C511 270 513 256 495 256 H435 Z"/>
+      <path class="kd-ep-fam__vghost" d="M495 228 H555 M495 256 H555"/>
+      <path class="kd-ep-fam__vessel" d="M435 228 H495 C513 228 511 214 525 214 C540 214 538 228 555 228 H615"/>
+      <path class="kd-ep-fam__vessel" d="M435 256 H495 C513 256 511 270 525 270 C540 270 538 256 555 256 H615"/>
+      <text class="kd-ep-fam__glabel" x="525" y="288" text-anchor="middle">${figLabel(labels, "outcome_right")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="525" y="310" text-anchor="middle">${figLabel(labels, "tag_right")}</text>
+    </svg>`;
+  }
+  function declineRailFigure(alt, labels) {
+    const STOPS = [120, 280, 440];
+    const stops = STOPS.map((x, k) => `
+      <text class="kd-ep-fam__gstop" x="${x}" y="48" text-anchor="middle">${figLabel(labels, `stop${k + 1}`)}</text>
+      <text class="kd-ep-fam__gsub" x="${x}" y="70" text-anchor="middle">${figLabel(labels, `stop${k + 1}_sub`)}</text>
+      <circle class="kd-ep-fam__gstopdot" cx="${x}" cy="100" r="7"/>`).join("");
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 172" role="img" aria-label="${escHTML6(alt)}">
+      <defs><marker id="mech-rail-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+        <path class="kd-ep-fam__ghead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+      <path class="kd-ep-fam__grail" d="M60 100 H576" marker-end="url(#mech-rail-tip)"/>
+      ${stops}
+      <rect class="kd-ep-fam__gterm" x="588" y="88" width="24" height="24" rx="4"/>
+      <text class="kd-ep-fam__gstop kd-ep-fam__gstop--term" x="600" y="59" text-anchor="middle">${figLabel(labels, "terminal")}</text>
+      <path class="kd-ep-fam__gbrace" d="M60 124 V134 H600 V124"/>
+      <text class="kd-ep-fam__glabel" x="330" y="158" text-anchor="middle">${figLabel(labels, "span")}</text>
+    </svg>`;
+  }
+  function reversalRailFigure(alt, labels) {
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 84" role="img" aria-label="${escHTML6(alt)}">
+      <defs><marker id="mech-turn-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
+        <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
+      <text class="kd-ep-fam__gsub kd-ep-fam__gsub--acc" x="330" y="22" text-anchor="middle">${figLabel(labels, "duration")}</text>
+      <path class="kd-ep-fam__greturn" d="M600 40 H60" marker-end="url(#mech-turn-tip)"/>
+      <circle class="kd-ep-fam__gretdot" cx="600" cy="40" r="7"/>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="60" y="70" text-anchor="start">${figLabel(labels, "end")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc kd-ep-fam__gtag--cause" x="600" y="70" text-anchor="end">${figLabel(labels, "start")}</text>
+    </svg>`;
+  }
+  function mechanismFigure(key, alt, labels) {
     switch (key) {
       case "rancidity":
         return rancidityFigure(alt);
+      case "cofactor_fork":
+        return cofactorForkFigure(alt, labels);
+      case "decline_rail":
+        return declineRailFigure(alt, labels);
+      case "reversal_rail":
+        return reversalRailFigure(alt, labels);
       default:
         return "";
     }
+  }
+  function proportionField(f) {
+    const band = [];
+    f.bands.forEach((b) => {
+      for (let k = 0; k < b.count; k++) {
+        band.push(b.key);
+      }
+    });
+    const marks = [];
+    for (let k = 0; k < f.total; k++) {
+      const key = band[k];
+      const mod = key !== void 0 ? ` kd-ep-fam__mark--${escHTML6(key)}` : "";
+      marks.push(`<circle class="kd-ep-fam__mark${mod}" cx="${6 + k % f.columns * 12}" cy="${6 + Math.floor(k / f.columns) * 12}" r="4.5"/>`);
+    }
+    const rows = Math.ceil(f.total / f.columns);
+    const legend = f.bands.filter((b) => b.label.length > 0).map((b) => `<div class="kd-ep-fam__fieldleg"><span class="kd-ep-fam__fieldkey kd-ep-fam__fieldkey--${escHTML6(b.key)}"></span>${escHTML6(b.label)}</div>`).join("");
+    return `<svg class="kd-ep-fam__fieldart" viewBox="0 0 ${12 + (f.columns - 1) * 12} ${12 + (rows - 1) * 12}" aria-hidden="true">${marks.join("")}</svg>${legend}`;
+  }
+  function mechEvidence(side) {
+    if (side.field !== void 0) {
+      return proportionField(side.field);
+    }
+    const c = side.quote_claim !== void 0 ? getClaim(side.quote_claim) : null;
+    if (c === null) {
+      return "";
+    }
+    return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(c.verbatim))}<cite>${escHTML6(getBookLabel(c.book))}</cite></blockquote>`;
+  }
+  function renderMechSplit(left, right) {
+    const R = " kd-ep-fam__splitcell--r";
+    const prose = (s, mod) => `<div class="kd-ep-fam__splitcell${mod}">
+        <div class="kd-ep-fam__splithd">${escHTML6(s.head)}</div>
+        <p class="kd-ep-fam__splittx">${glossify(collapseWS(s.text))}</p>
+      </div>`;
+    const evid = (s, mod) => {
+      const body = mechEvidence(s);
+      if (body.length === 0) {
+        return `<div class="kd-ep-fam__splitcell${mod}"></div>`;
+      }
+      const cap = s.evidence_caption !== void 0 ? `<div class="kd-ep-fam__evcap">${escHTML6(s.evidence_caption)}</div>` : "";
+      return `<div class="kd-ep-fam__splitcell kd-ep-fam__splitcell--ev${mod}">${cap}${body}</div>`;
+    };
+    return `<div class="kd-ep-fam__split">${prose(left, "")}${prose(right, R)}${evid(left, "")}${evid(right, R)}</div>`;
   }
   function renderMechanism(slug, layoutKey, category) {
     const m = slug !== null ? MECH_BY_SLUG.get(slug) : void 0;
     if (m === void 0) {
       return "";
     }
-    const beats = m.beats.map((b) => `
-      <div class="kd-ep-fam__step">
+    const beats = m.beats.map((b) => {
+      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
+      const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
+      return `
+      <div class="kd-ep-fam__step${turn}">
         <span class="kd-ep-fam__num">${escHTML6(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
-          <p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>
+          ${hook}
         </div>
-      </div>`).join("");
+      </div>`;
+    }).join("");
     const stat = m.stat !== void 0 ? `
       <div class="kd-ep-fam__stat">
         <span class="kd-ep-fam__statread">${escHTML6(m.stat.readout)}</span>
         <span class="kd-ep-fam__statnum">${escHTML6(m.stat.value)}</span>
         <span class="kd-ep-fam__statlbl">${escHTML6(m.stat.label)}</span>
       </div>` : "";
+    const split = m.split !== void 0 ? renderMechSplit(m.split.left, m.split.right) : "";
+    const bridge2 = m.bridge !== void 0 ? `<p class="kd-ep-fam__bridge">${glossify(collapseWS(m.bridge))}</p>` : "";
+    const preFig = m.figure_pre_beats !== void 0 ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail">${mechanismFigure(m.figure_pre_beats.key, m.figure_pre_beats.alt, m.figure_pre_beats.labels)}</div>` : "";
+    const postFig = m.figure_post_beats !== void 0 ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail kd-ep-fam__figure--turn">${mechanismFigure(m.figure_post_beats.key, m.figure_post_beats.alt, m.figure_post_beats.labels)}</div>` : "";
+    const stepsMod = m.beats_layout === "row" ? " kd-ep-fam__steps--row" : "";
+    const heroFigMod = m.figure_labels !== void 0 ? " kd-ep-fam__figure--fork" : " kd-ep-fam__figure--mech";
     return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML6(category ?? "")}">
       <span class="kd-ep-fam__eyebrow">${escHTML6(m.eyebrow)}</span>
       <h3 class="kd-ep-fam__kill">${escHTML6(m.kill)}</h3>
-      <div class="kd-ep-fam__figure kd-ep-fam__figure--mech">${mechanismFigure(m.figure, m.figure_alt)}</div>
-      <div class="kd-ep-fam__steps">${beats}</div>
+      <div class="kd-ep-fam__figure${heroFigMod}">${mechanismFigure(m.figure, m.figure_alt, m.figure_labels)}</div>
+      ${split}
+      ${bridge2}
+      ${preFig}
+      <div class="kd-ep-fam__steps${stepsMod}">${beats}</div>
+      ${postFig}
       ${stat}
       ${fatFamilyQuote(m.quote_claim, m.highlight)}
       <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
@@ -184221,7 +184510,21 @@ WIRED (search layer): a NEW \`painkillers\` entity ("Painkillers & NSAIDs" - pai
 
 VERIFY: "is aspirin okay to take?" -> Aspirin page, warning hero "Is aspirin safe to take?"; "is ibuprofen okay to take?" -> the Painkillers ENTITY page showing BOTH warnings (Cautions) AND the Alzheimer's benefit (What To Do) - the honest two-sided answer on one page; "can ibuprofen prevent alzheimer's" -> heroes the benefit claim; "is naproxen okay to take?" -> Painkillers. Guard "arthritis" -> Arthritis (unchanged). corpus_verify PASS (kv432); invariants 76/76; render_probe_search + render_probe_search_browse + render_probe_search_routing all PASS; the Painkillers page was SCREENSHOT-verified (Cautions x2 aspirin+ibuprofen warnings, What To Do x1 Alzheimer's benefit, cross-links to Aspirin/Arthritis/Pain).
 
-ROUND COMPLETE: the whole search-enhancement round (all 34 of Luneth's test queries) is done across Checkpoints 1-3 - Checkpoint 1 (punctuation-proof resolver + 17 existing-entity fixes), Checkpoint 2 (5 new hub pages, 14 fixes), Checkpoint 3 (aspirin/ibuprofen mining, 2 fixes). Honest items left un-forced by Luneth's explicit call: "which supplements are best?" (genuinely ambiguous - best for what?), "sharp pain in lower right abdomen" (Wallach's corpus has no acute-abdomen/appendicitis-diagnosis content - refused to fabricate a route), dark-urine queries soft-land on the Water page (no Wallach urine-color content). NEXT SESSION (fresh genesis): agenda item 2, the 90-essentials page HEADERS - the visual/design work Luneth has been looking forward to (visual-verification gate applies).` }, { id: "lg_ms66z3qn_pfzhwl", ts: "2026-07-29T09:40:28.079482-05:00", surface: "headers", kind: "round-close", summary: "Header round: landed Luneth's global header font-size + 'Daily Needs & How It Works' hint; the first bespoke Copper header (cross-link figure + 4 fresh mockups) was rejected and fully reverted \u2014 mockups ignored the tan .kd-ep-fam content box + exact entity width.", detail: "Two things this round. The part that stuck: Luneth's readability tweaks \u2014 bigger fonts on every element header's small labels (eyebrow, figure captions, stat readout/label, section hints, the at-a-glance keys), and a clearer \u201CDaily Needs & How It Works\u201D hint replacing the nonsensical \u201Cthe essentials, in one place.\u201D The miss: I tried to build Copper's illustrative header, Luneth rejected it, I offered 4 fresh mockups, and he rejected all 4 \u2014 because I built them as standalone WHITE pages at the wrong width instead of inside the real TAN content box the header actually lives in. Reverted the whole Copper attempt to zero, kept only the font/copy wins, and deleted the mockups so they can't mislead the next try.\n\nKEPT: drawer-knowledge.css \u2014 6 shared header font-sizes (kd-ep-fam__eyebrow .7rem, __flabel .85rem, __statread .75rem, __statlbl .7rem, kd-ep-seclabel__hint .7rem, kd-ep-k .7rem); each is a single shared definition under #drawer-knowledge-mount, so it propagates to every current + future header. entity-page.ts \u2014 seclabel hint 'the essentials, in one place' -> 'Daily Needs & How It Works' (x2). REVERTED to committed baseline (net zero): the Copper mechanism-clarity-data.json entry + copperFigure() + the 'cross-link' mechanismFigure case + the copper cross-link CSS block. DELETED at Luneth's request: temporary/copper-header-mockups.html (the rejected mockups \u2014 removed so they can't poison the next attempt). THE LESSON (for the next session): an element header renders INSIDE the tan .kd-ep-fam content box (background --ds-paper-deep) at the EXACT entity-page width \u2014 so every mockup must be authored AND previewed in that real container (tan bg, exact width), never a standalone white full-width page. The mockups this round also read misaligned/corny (esp. the human-figure one). The 4-distinct-mockups-per-element process itself stands; it just has to be constrained to the real box. Verify: build OK, invariants 76/76, render_probe_mechanism (selenium) PASS, render_probe_entity PASS." }];
+ROUND COMPLETE: the whole search-enhancement round (all 34 of Luneth's test queries) is done across Checkpoints 1-3 - Checkpoint 1 (punctuation-proof resolver + 17 existing-entity fixes), Checkpoint 2 (5 new hub pages, 14 fixes), Checkpoint 3 (aspirin/ibuprofen mining, 2 fixes). Honest items left un-forced by Luneth's explicit call: "which supplements are best?" (genuinely ambiguous - best for what?), "sharp pain in lower right abdomen" (Wallach's corpus has no acute-abdomen/appendicitis-diagnosis content - refused to fabricate a route), dark-urine queries soft-land on the Water page (no Wallach urine-color content). NEXT SESSION (fresh genesis): agenda item 2, the 90-essentials page HEADERS - the visual/design work Luneth has been looking forward to (visual-verification gate applies).` }, { id: "lg_ms66z3qn_pfzhwl", ts: "2026-07-29T09:40:28.079482-05:00", surface: "headers", kind: "round-close", summary: "Header round: landed Luneth's global header font-size + 'Daily Needs & How It Works' hint; the first bespoke Copper header (cross-link figure + 4 fresh mockups) was rejected and fully reverted \u2014 mockups ignored the tan .kd-ep-fam content box + exact entity width.", detail: "Two things this round. The part that stuck: Luneth's readability tweaks \u2014 bigger fonts on every element header's small labels (eyebrow, figure captions, stat readout/label, section hints, the at-a-glance keys), and a clearer \u201CDaily Needs & How It Works\u201D hint replacing the nonsensical \u201Cthe essentials, in one place.\u201D The miss: I tried to build Copper's illustrative header, Luneth rejected it, I offered 4 fresh mockups, and he rejected all 4 \u2014 because I built them as standalone WHITE pages at the wrong width instead of inside the real TAN content box the header actually lives in. Reverted the whole Copper attempt to zero, kept only the font/copy wins, and deleted the mockups so they can't mislead the next try.\n\nKEPT: drawer-knowledge.css \u2014 6 shared header font-sizes (kd-ep-fam__eyebrow .7rem, __flabel .85rem, __statread .75rem, __statlbl .7rem, kd-ep-seclabel__hint .7rem, kd-ep-k .7rem); each is a single shared definition under #drawer-knowledge-mount, so it propagates to every current + future header. entity-page.ts \u2014 seclabel hint 'the essentials, in one place' -> 'Daily Needs & How It Works' (x2). REVERTED to committed baseline (net zero): the Copper mechanism-clarity-data.json entry + copperFigure() + the 'cross-link' mechanismFigure case + the copper cross-link CSS block. DELETED at Luneth's request: temporary/copper-header-mockups.html (the rejected mockups \u2014 removed so they can't poison the next attempt). THE LESSON (for the next session): an element header renders INSIDE the tan .kd-ep-fam content box (background --ds-paper-deep) at the EXACT entity-page width \u2014 so every mockup must be authored AND previewed in that real container (tan bg, exact width), never a standalone white full-width page. The mockups this round also read misaligned/corny (esp. the human-figure one). The 4-distinct-mockups-per-element process itself stands; it just has to be constrained to the real box. Verify: build OK, invariants 76/76, render_probe_mechanism (selenium) PASS, render_probe_entity PASS." }, { id: "lg_ms6dxydn_6pn3x4", ts: "2026-07-29T12:55:31.787206-05:00", surface: "headers", kind: "round-close", summary: "Copper element header LIVE \u2014 the first bespoke per-essential header: one continuous story (two enzymes, two failures, one reversal), composed from optional schema blocks so selenium is untouched", detail: `Copper's page now opens with one continuous story instead of a list of facts. Copper feeds two enzymes, so a single shortage shows up in two places \u2014 hair losing its colour, and an artery wall losing its strength. The visible one arrives decades before the silent one, and plant-derived colloidal copper runs the whole sequence backwards in six months. Luneth picked this from four mockups and approved the merge; it is the first bespoke per-essential header to ship.
+
+WHY IT WORKED THIS TIME. Last session's four mockups were rejected because they were standalone white full-width pages; a header actually renders inside the tan .kd-ep-fam box at a fixed width, so those comparisons proved nothing. Every mockup this round was authored + previewed in a shell reproducing the live DOM ancestry (#drawer-knowledge-mount > .kd-body > .kd-essential-deep[data-category=mineral]) loading the app's real stylesheets \u2014 tan --ds-paper-deep, mineral-blue accent, and the headlessly-measured 867px content width as hard constraints.
+
+SCHEMA (core/schemas/mechanism-clarity.ts). Added optional composition blocks so a header can be composed bespoke per element with no slug branch: figure_labels; split{left,right:{head,text,evidence_caption,quote_claim|field{total,columns,bands[]}}}; bridge; figure_pre_beats/figure_post_beats{key,alt,labels}; beats_layout; beat.turn; beat.hook made optional. All optional and self-suppressing, so selenium's entry is untouched \u2014 proven by a selenium regression pass inside the new probe, not assumed.
+
+DATA. mechanism-clarity-data.json carries the copper entry: every user-facing string, including all in-figure labels, lives there (views_no_inline_prose / R4), and every number + quote is pulled BY CLAIM ID at render (R3) \u2014 quote DDDL-000196 highlighting "some aneurysms can heal", stat RARE-000121, split quote DDDL-000003, beat traces RARE-000344 / DDDL-000003 / RARE-000119 / RARE-000120 / DDDL-000196 / RARE-000121. No verbatim is hand-typed. entity-copy.json gains copper's \`why\`: the why-this-number explainer was MISSING on the live page because the store held only calcium and selenium. Its text derives from the documented chain in essentials-targets-data.json \u2014 EPIGEN-000130 "Copper 1 - 2 mg" per 100 lb, upper 2.0 x 1.54 for 154 lb, 3.1 mg at 2sf, with the older LETS-000050 3-4 mg noted.
+
+VIEW + CSS. views/entity-page.ts gains three deterministic SVG figures dispatched on GENERIC keys (cofactor_fork / decline_rail / reversal_rail \u2014 never a slug), proportionField(), and renderMechSplit(); renderMechanism emits the optional blocks. drawer-knowledge.css gains all-new kd-ep-fam__ selectors \u2014 no existing rule was modified.
+
+TWO REGRESSIONS FOUND AND GATED. (1) The base rule \`#drawer-knowledge-mount .kd-ep-fam__figure { max-width: 560px }\` is an ID selector, so a bare-class width override loses the cascade: an 800-unit viewBox rendered at 560px, scale 0.70, silently shrinking every label inside by 30%. That \u2014 not the font choices \u2014 was the real cause of "the illustration text is too small." Figures are now authored at scale 1 with the override at matching specificity. (2) Figure type is pinned to the MEASURED selenium standard, labels 12.0px and glyph 17.6px, after a first pass at 15/17/18/32 overshot it. Selenium is the ceiling, not the floor.
+
+VERIFY. Build OK. Invariants 76/76 \u2014 no_new_dead_code caught an unused MechFigure type export, which was removed rather than baselined. New tools/render_probe_copper.js passes 47/47: scale==1 and 12px labels on all three figures, a pairwise bounding-box collision check across every figure label, evidence-row top-alignment, the 100-mark field partitioned 4+2+40, exactly one quote, the turn-beat accent, the bold cause label, why-this-number present, sources docked at the block bottom, plus the selenium regression. render_probe_mechanism / omega / pdm_presence / entity / knowledge all PASS. The live page was screenshot-verified against the approved mockup at 867px.
+
+DEFERRAL. entity-copy.json still holds 3 of 91 essentials, so the why-this-number line remains absent on the other 88; it needs an entry per element.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

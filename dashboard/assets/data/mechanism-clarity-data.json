@@ -15,21 +15,30 @@
           "title": "Your cells are fat",
           "text": "Every cell and every mitochondrion is wrapped in a membrane made of fat — and fat oxidizes, goes rancid, the same way cooking oil does once it's heated or left out.",
           "hook": "The rancidity that spoils oil in the pan can happen inside your own cell walls.",
-          "traces": ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000135"]
+          "traces": [
+            "WAL-CLM-RARE-000320",
+            "WAL-CLM-DDDL-000135"
+          ]
         },
         {
           "n": "02",
           "title": "The most efficient antioxidant",
           "text": "Selenium — working through the glutathione-peroxidase enzyme system — is, in Wallach's telling, the most efficient antioxidant there is, standing guard over those fatty membranes right at the subcellular level.",
           "hook": "A trace mineral you need in millionths of a gram is the bodyguard on every membrane you own.",
-          "traces": ["WAL-CLM-RARE-000320", "WAL-CLM-DDDL-000138"]
+          "traces": [
+            "WAL-CLM-RARE-000320",
+            "WAL-CLM-DDDL-000138"
+          ]
         },
         {
           "n": "03",
           "title": "Rancid, made visible",
           "text": "Pull selenium out and the fats peroxidize — the brown-gold residue (ceroid lipofuscin) surfaces on skin as \"age spots\" or \"liver spots,\" while selenium-starved heart muscle can fail outright, as in Keshan disease and the sudden collapse of young athletes.",
           "hook": "An age spot is rancid fat you can see — Wallach reads it as a warning, not a blemish.",
-          "traces": ["WAL-CLM-RARE-000321", "WAL-CLM-EPIGEN-000186"]
+          "traces": [
+            "WAL-CLM-RARE-000321",
+            "WAL-CLM-EPIGEN-000186"
+          ]
         }
       ],
       "quote_claim": "WAL-CLM-RARE-000321",
@@ -40,6 +49,122 @@
         "label": "Keshan-disease cases per 1,000 children, after selenium was added",
         "claim": "WAL-CLM-RARE-000322"
       }
+    },
+    {
+      "slug": "copper",
+      "facet": "mechanism",
+      "eyebrow": "One cofactor · two endings",
+      "kill": "The same shortage shows up in your mirror and in your arteries.",
+      "figure": "cofactor_fork",
+      "figure_alt": "Copper feeds two enzymes. Tyrosinase makes hair pigment: black, brown, auburn or blond hair all turn white or grey when copper runs short — the first visible sign. Lysyl oxidase makes the elastin in artery walls, and without it the wall balloons into an aneurysm.",
+      "figure_labels": {
+        "glyph": "Cu",
+        "enzyme_left": "TYROSINASE",
+        "enzyme_right": "LYSYL OXIDASE",
+        "sub_left": "tyrosine → melanin",
+        "sub_right": "pro-elastin → elastin",
+        "outcome_left": "HAIR COLOUR → WHITE · GREY",
+        "outcome_right": "ARTERY WALL · ANEURYSM",
+        "tag_left": "THE FIRST VISIBLE SIGN",
+        "tag_right": "THE SILENT ONE"
+      },
+      "split": {
+        "left": {
+          "head": "The one you can see",
+          "text": "Copper is the cofactor for tyrosinase — the enzyme that works on tyrosine to make the melanin that colours hair. Whatever your natural colour, short the copper and the pigment stops being made: it grows back white, grey or silver.",
+          "evidence_caption": "The first thing you’d notice",
+          "quote_claim": "WAL-CLM-DDDL-000003"
+        },
+        "right": {
+          "head": "The one you can’t",
+          "text": "Copper is also the cofactor for lysyl oxidase — the enzyme that converts pro-elastin into the elastin that gives an artery wall its tensile strength. Short the copper and the wall gives where the pressure is highest.",
+          "evidence_caption": "Of every 100 Americans autopsied",
+          "field": {
+            "total": 100,
+            "columns": 25,
+            "bands": [
+              {
+                "key": "dead",
+                "count": 4,
+                "label": "4–6 had died of a ruptured aneurysm"
+              },
+              {
+                "key": "dead_edge",
+                "count": 2,
+                "label": ""
+              },
+              {
+                "key": "carry",
+                "count": 40,
+                "label": "40 carrying one, not yet ruptured — Wallach names Einstein, Airola and Twitty"
+              }
+            ]
+          }
+        }
+      },
+      "bridge": "They don’t arrive together — and that is the whole point. The visible one runs decades ahead of the silent one, which is what makes grey hair worth reading rather than covering up.",
+      "figure_pre_beats": {
+        "key": "decline_rail",
+        "alt": "A timeline: pigment goes first, then structure, then the artery wall, ending in rupture — decades of warning.",
+        "labels": {
+          "stop1": "PIGMENT",
+          "stop1_sub": "grey hair",
+          "stop2": "STRUCTURE",
+          "stop2_sub": "wrinkles · veins",
+          "stop3": "THE WALL",
+          "stop3_sub": "aneurysm",
+          "terminal": "RUPTURE",
+          "span": "DECADES OF WARNING"
+        }
+      },
+      "beats_layout": "row",
+      "beats": [
+        {
+          "n": "First",
+          "title": "Pigment goes",
+          "text": "Tyrosinase needs copper to make melanin. Pigment is the first thing to fail — and the first thing you can see.",
+          "traces": [
+            "WAL-CLM-RARE-000344",
+            "WAL-CLM-DDDL-000003"
+          ]
+        },
+        {
+          "n": "Then",
+          "title": "Structure goes",
+          "text": "The same shortage, further along. Elastin thins: skin wrinkles deeply, spider and varicose veins surface, and artery walls lose the tensile strength that keeps them from ballooning.",
+          "traces": [
+            "WAL-CLM-RARE-000119",
+            "WAL-CLM-RARE-000120"
+          ]
+        },
+        {
+          "n": "After",
+          "title": "Copper restores it",
+          "turn": true,
+          "text": "Wallach reports the sequence running in reverse on plant-derived colloidal copper — original hair colour returning, veins receding, and some aneurysms healing.",
+          "traces": [
+            "WAL-CLM-DDDL-000196",
+            "WAL-CLM-RARE-000121"
+          ]
+        }
+      ],
+      "figure_post_beats": {
+        "key": "reversal_rail",
+        "alt": "A return track in blue running right to left across the same span: add plant-derived colloidal copper, and normal hair colour returns in six months.",
+        "labels": {
+          "duration": "six months",
+          "end": "COLOUR RETURNS",
+          "start": "+ COLLOIDAL COPPER"
+        }
+      },
+      "stat": {
+        "value": "6 months",
+        "readout": "// RARE EARTHS · COLLOIDAL COPPER SUPPLEMENTATION",
+        "label": "until normal hair colour returned",
+        "claim": "WAL-CLM-RARE-000121"
+      },
+      "quote_claim": "WAL-CLM-DDDL-000196",
+      "highlight": "some aneurysms can heal"
     }
   ]
 }
