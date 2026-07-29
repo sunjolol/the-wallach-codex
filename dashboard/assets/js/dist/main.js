@@ -47088,8 +47088,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "irregular heartbeat",
           "heart flutter",
           "atrial fib",
-          "irregular heart rhythm",
-          "heart palpitations"
+          "irregular heart rhythm"
         ],
         protocol_claim_ids: [],
         restore: [
@@ -48008,7 +48007,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "stones in bladder",
           "urinary stones",
           "bladder stones",
-          "stone in the bladder"
+          "stone in the bladder",
+          "blood in urine",
+          "blood in the urine",
+          "bloody urine",
+          "blood in pee",
+          "peeing blood",
+          "pee blood",
+          "red urine",
+          "blood when i pee"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000161"
@@ -48100,7 +48107,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "bloody stool",
           "blood in poop",
           "blood when pooping",
-          "bowel bleeding"
+          "bowel bleeding",
+          "bleed when i poop",
+          "bleeding when i poop",
+          "poop blood",
+          "bloody poop",
+          "pooping blood",
+          "blood when i poop"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000163"
@@ -49734,7 +49747,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [
           "irregular heartbeat",
           "arrhythmia",
-          "heart palpitations",
           "skipped heartbeat",
           "heart flutter",
           "arrythmia",
@@ -50876,7 +50888,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "exhaustion",
           "persistent fatigue",
           "low energy",
-          "worn out all the time"
+          "worn out all the time",
+          "tired",
+          "fatigue",
+          "exhausted",
+          "no energy",
+          "feel tired",
+          "tired all the time",
+          "feel tired all the time",
+          "no pep"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000272"
@@ -51897,7 +51917,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "hard stools",
           "backed up",
           "constapation",
-          "trouble pooping"
+          "trouble pooping",
+          "constipated",
+          "cant go",
+          "hard to poop",
+          "not pooping",
+          "wont poop",
+          "havent pooped",
+          "trouble going to the bathroom",
+          "cant have a bowel movement"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000231",
@@ -81400,8 +81428,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "irregular heartbeat",
           "heart flutter",
           "atrial fib",
-          "irregular heart rhythm",
-          "heart palpitations"
+          "irregular heart rhythm"
         ],
         related: [],
         claim_count: 1
@@ -81770,7 +81797,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "stones in bladder",
           "urinary stones",
           "bladder stones",
-          "stone in the bladder"
+          "stone in the bladder",
+          "blood in urine",
+          "blood in the urine",
+          "bloody urine",
+          "blood in pee",
+          "peeing blood",
+          "pee blood",
+          "red urine",
+          "blood when i pee"
         ],
         related: [],
         claim_count: 1
@@ -81800,7 +81835,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "bloody stool",
           "blood in poop",
           "blood when pooping",
-          "bowel bleeding"
+          "bowel bleeding",
+          "bleed when i poop",
+          "bleeding when i poop",
+          "poop blood",
+          "bloody poop",
+          "pooping blood",
+          "blood when i poop"
         ],
         related: [
           "hemorrhoids",
@@ -82215,7 +82256,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [
           "irregular heartbeat",
           "arrhythmia",
-          "heart palpitations",
           "skipped heartbeat",
           "heart flutter",
           "arrythmia",
@@ -82680,7 +82720,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "exhaustion",
           "persistent fatigue",
           "low energy",
-          "worn out all the time"
+          "worn out all the time",
+          "tired",
+          "fatigue",
+          "exhausted",
+          "no energy",
+          "feel tired",
+          "tired all the time",
+          "feel tired all the time",
+          "no pep"
         ],
         related: [
           "chronic_fatigue_syndrome"
@@ -82871,7 +82919,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "colloidal",
           "plant-derived minerals",
           "mineral bioavailability",
-          "chelated minerals"
+          "chelated minerals",
+          "most important supplements",
+          "supplements are most important",
+          "which supplements should i take first",
+          "where to start with supplements",
+          "supplements to take first",
+          "what supplements are most important"
         ],
         related: [
           "chromium",
@@ -82990,7 +83044,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "hard stools",
           "backed up",
           "constapation",
-          "trouble pooping"
+          "trouble pooping",
+          "constipated",
+          "cant go",
+          "hard to poop",
+          "not pooping",
+          "wont poop",
+          "havent pooped",
+          "trouble going to the bathroom",
+          "cant have a bowel movement"
         ],
         related: [],
         claim_count: 1
@@ -83457,7 +83519,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "trans fats",
           "rancid fat",
           "oxidized oils",
-          "free radicals"
+          "free radicals",
+          "fried food",
+          "deep fried"
         ],
         related: [
           "cholesterol",
@@ -86648,7 +86712,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "organ meats",
           "liver",
           "shellfish",
-          "animal fats"
+          "animal fats",
+          "meats"
         ],
         related: [
           "cholesterol",
@@ -88347,7 +88412,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "sausage",
           "nitrates",
           "nitrites",
-          "cured meat"
+          "cured meat",
+          "which meats are bad",
+          "bad meats",
+          "worst meats",
+          "meats to avoid",
+          "unhealthy meats",
+          "processed meats"
         ],
         related: [
           "dietary_oils",
@@ -90990,7 +91061,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "distilled water",
           "tap water",
           "alkaline water",
-          "drinking water"
+          "drinking water",
+          "dehydrated",
+          "dehydration",
+          "am i dehydrated",
+          "hydration",
+          "hydrated",
+          "staying hydrated",
+          "how much water",
+          "water intake",
+          "daily water",
+          "how much water should i drink",
+          "how much water do i need",
+          "dark urine",
+          "dark pee",
+          "brown urine",
+          "dark colored urine",
+          "urine color",
+          "why is my urine dark",
+          "why is my pee dark",
+          "why is my urine so dark"
         ],
         related: [
           "fluoride",
@@ -99457,7 +99547,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "malabsorption"
         ],
         facet: "mechanism",
-        question: "Why is gluten so damaging to the gut?",
+        question: "Why is gluten bad for the gut, and what damage does it do?",
         answer_short: "Wallach frames gluten not as an allergy but a 'contact enteritis' \u2014 like poison ivy, but on the gut lining \u2014 that gradually destroys the intestinal villi and leaves you unable to absorb nutrients.",
         answer: "Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten.",
         verbatim: "includes celiac disease (wheat allergy that occurs concurrently with contact\nenteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory\nbowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,\ngastritis, bloating, and reflux.\n\nThe gradual and progressive loss of intestinal villi as a result of contact\nenteritis produces a kaleidoscope of nutritional-deficiency diseases as a result\nof malabsorption",
@@ -102974,7 +103064,7 @@ Uterine fibroids`,
           "margarine"
         ],
         facet: "warning",
-        question: "What does Wallach say overusing dietary oils and eating fried foods does to the body?",
+        question: "Are fried foods bad for you, and what does overusing dietary oils do to the body?",
         answer_short: "He calls it self-destruction: too many fried/burnt foods and overused margarines, salad dressings and cooking oils load the body with trans fats, heterocyclic amines and acrylamides.",
         answer: "After 17,500 animal and 3,000 human autopsies, Wallach concluded that beyond nutritional deficiency, a leading cause of disease is self-inflicted: eating too many fried and overcooked (burnt) foods, overusing dietary oils (margarines, salad dressings, cooking oils, canned fish packed in oil), and eating nitrate-preserved processed meats, all of which raise the daily load of trans fatty acids, heterocyclic amines and acrylamides.",
         verbatim: "eating too many fried and overcooked (burnt) foods by\nthe overuse of dietary oils, including margarines, salad dressings, cooking oils,\nas well as the consumption of canned fish packed in oils and processed meats\npreserved with nitrates and nitrites\u2014all of which increased the daily load of\ndietary trans fatty acids, heterocyclic amines, and acrylamides!",
@@ -102986,7 +103076,8 @@ Uterine fibroids`,
           "margarine",
           "salad-dressing",
           "cooking-oil",
-          "trans-fat"
+          "trans-fat",
+          "bad-for-you"
         ]
       },
       {
@@ -109640,7 +109731,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "food-sources",
           "berries",
           "prunes",
-          "kale"
+          "kale",
+          "get more antioxidants"
         ]
       },
       {
@@ -110852,7 +110944,7 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "meat",
         also_about: [],
         facet: "basics",
-        question: "Does Wallach think red meat is healthy?",
+        question: "Is red meat good or bad for you, and does Wallach think it is healthy?",
         answer_short: "Wallach calls red meat an unequaled source of animal protein and essential lipids \u2014 with one caveat: don't cook it well-done or burn the fat, which forms cancer-linked heterocyclic amines.",
         answer: "Wallach calls red meat an unequaled source of animal protein and essential lipids. His one caveat is preparation: don't eat it cooked well-done or with the fat burnt, because that forms heterocyclic amines (compounds tied to cancer risk).",
         verbatim: "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines.",
@@ -127562,7 +127654,8 @@ mothers-to-be`,
           "irritable bowel",
           "vitamin c",
           "mullein",
-          "alfalfa"
+          "alfalfa",
+          "blood in stool"
         ],
         tier1_link: {
           essentials: [
@@ -128793,7 +128886,8 @@ doesn't like elevated oxygen levels`,
           "vitamin-b6",
           "coq10",
           "carnitine",
-          "msg"
+          "msg",
+          "palpitations"
         ],
         facet: "protocol",
         question: "How do you treat an irregular heartbeat naturally?",
@@ -129700,7 +129794,10 @@ and St. John's wort (Hypericum perforatum`,
           "food allergies",
           "psyllium",
           "senna",
-          "cascara sagrada"
+          "cascara sagrada",
+          "poop",
+          "cant poop",
+          "constipated"
         ],
         tier1_link: {
           conditions: [
@@ -130995,7 +131092,11 @@ thapsus`,
           "epstein-barr virus",
           "hypoglycemia",
           "ginseng",
-          "tiredness"
+          "tiredness",
+          "tired",
+          "no energy",
+          "exhausted",
+          "always tired"
         ],
         tier1_link: {
           conditions: [
@@ -149003,29 +149104,33 @@ Sickle cell anemia`,
     }
     return claimByIdCache.get(id) ?? null;
   }
+  function matchKey(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\s+/g, " ").trim();
+  }
   function normalize2(s) {
-    return s.trim().toLowerCase();
+    return matchKey(s);
   }
   function entityHit(q) {
     for (const [slug, e] of Object.entries(index2().entities)) {
-      if (slug === q || e.display_name.toLowerCase() === q) {
+      if (matchKey(slug) === q || matchKey(e.display_name) === q) {
         return slug;
       }
-      if (e.synonyms.some((s) => s.toLowerCase() === q)) {
+    }
+    for (const [slug, e] of Object.entries(index2().entities)) {
+      if (e.synonyms.some((s) => matchKey(s) === q)) {
         return slug;
       }
     }
     return null;
   }
   function wideEntityHit(q) {
-    const spaced = (slug) => slug.replace(/[_-]+/g, " ");
     for (const c of listConditionPages()) {
-      if (c.slug === q || spaced(c.slug) === q || c.name.toLowerCase() === q) {
+      if (matchKey(c.slug) === q || matchKey(c.name) === q) {
         return c.slug;
       }
     }
     for (const e of listEssentialPages()) {
-      if (e.slug === q || spaced(e.slug) === q || e.name.toLowerCase() === q) {
+      if (matchKey(e.slug) === q || matchKey(e.name) === q) {
         return e.slug;
       }
     }
@@ -149079,8 +149184,8 @@ Sickle cell anemia`,
     const pad = ` ${q} `;
     for (const slug of CHARGED) {
       const e = getEntity(slug);
-      const names = e !== null ? [e.display_name.toLowerCase(), ...e.synonyms.map((s) => s.toLowerCase())] : [];
-      names.push(slug.replace(/[_-]+/g, " "));
+      const names = e !== null ? [matchKey(e.display_name), ...e.synonyms.map((s) => matchKey(s))] : [];
+      names.push(matchKey(slug));
       for (const t of names) {
         if (pad.includes(` ${t} `)) {
           return true;
@@ -149088,7 +149193,7 @@ Sickle cell anemia`,
       }
     }
     for (const t of CHARGED_TERMS) {
-      if (pad.includes(` ${t} `)) {
+      if (pad.includes(` ${matchKey(t)} `)) {
         return true;
       }
     }
@@ -149105,16 +149210,16 @@ Sickle cell anemia`,
     if (phraseCache === null) {
       const arr = [];
       for (const [slug, e] of Object.entries(index2().entities)) {
-        arr.push({ phrase: e.display_name.toLowerCase(), slug });
+        arr.push({ phrase: matchKey(e.display_name), slug });
         for (const s of e.synonyms) {
-          arr.push({ phrase: s.toLowerCase(), slug });
+          arr.push({ phrase: matchKey(s), slug });
         }
       }
       for (const c of listConditionPages()) {
-        arr.push({ phrase: c.name.toLowerCase(), slug: c.slug });
+        arr.push({ phrase: matchKey(c.name), slug: c.slug });
       }
       for (const es of listEssentialPages()) {
-        arr.push({ phrase: es.name.toLowerCase(), slug: es.slug });
+        arr.push({ phrase: matchKey(es.name), slug: es.slug });
       }
       const seen = /* @__PURE__ */ new Set();
       const dedup = [];
@@ -183755,7 +183860,17 @@ Technical: EPIGEN-137 potassium-cap follow-up. Corpus kv430 \u2192 kv431 (2263 \
 
 Verify: draft==shard+1 (only 463 added, 0 changed, EPIGEN-137 claim byte-identical), corpus_verify PASS (kv431, 2264 claims, hashes match), re-derived corpus_embed/search_index/entity_page/targets, build OK, invariants 76/76 (0 failed), render_probe_search PASS. Confirmed WAL-CLM-EPIGEN-000463 is in search-index.json (Ask-Wallach answers the potassium question) and homes on the potassium page. This completes both Task A follow-ups (question-index fix + this). Remaining staged, deliberately un-applied: only the 3 honest toxicity GAPs (chromium/niacin/B6 \u2014 no doctrine, correct to leave).` }, { id: "lg_ms5f45m3_91afxn", ts: "2026-07-28T20:40:34.539133-05:00", surface: "entity-page", kind: "round-close", summary: "Fixed the long-failing render_probe_entity product-panel check: STALE PROBE (asserted the retired .kd-product-deep; panel renders as .kd-ep--prod). Nav always worked; probe now PASSES in full. Board 76/76.", detail: `Plain: the one nagging test failure I flagged all session turned out NOT to be a real bug. The "click a best-source product row \u2192 open its detail panel" feature works fine for users. The test was just looking for the panel by an old CSS class name that got renamed a while back, so it always reported failure. I confirmed the feature works by driving it in a headless browser, then fixed the test to look for the current class.
 
-Technical: render_probe_entity.js "best-source row opens the product panel" was a STALE PROBE. Empirical repro: clicking the first Calcium best-source row (ReVERSE!\xAE, product_id="reverse" \u2014 a valid product) switches to the Products tab and renderProductDeep() emits <div class="kd-essential-deep kd-ep kd-ep--prod"> with the product's hero name. The probe checked for .kd-product-deep, which no longer exists in the source \u2014 it was renamed to .kd-ep--prod during the Phase-H entity-page unification (the old kd-product-deep__* classes are documented in the 2026-07-08 Creator's-Log entry that first built the panel; that historical text baked into dist/main.js was the only other grep hit). Fix: srcNav now asserts .kd-ep--prod exists AND has a non-empty .kd-ep-hero__name (an empty panel would mean the id didn't resolve), and the settle wait went 250\u2192400ms. Verify: entity probe now PASS in full (srcNav productShown:true, onProductsTab:true, 0 page errors; the self-proving question-filter check added earlier this session still green), invariants 76/76 (the probe is not invariant-gated; ran it to confirm no regression). No source/data change, so the bundle is unaffected. This closes the loose end flagged during the thin-claim work \u2014 it was never a real defect, just a test asserting on a retired selector.` }, { id: "lg_ms5fgn6i_93dhua", ts: "2026-07-28T20:50:17.178384-05:00", surface: "session", kind: "session-end", summary: "Session close: thin-claim re-mine done + potassium follow-up + stale product-panel probe fixed; kv431, board 76/76, 4 commits pushed. Handoff set for next session: SEARCH enhancements, then the 90-essentials HEADERS.", detail: "Plain: closing out this session cleanly. We finished the thin-claim clean-up, handled the potassium follow-up, and proved the last nagging test failure was harmless (a renamed CSS class, not a bug). Everything's green and pushed. I've set up the handoff so the next session starts fresh with the new plan Luneth's excited about: search enhancements first, then FINALLY building the headers for all 90 essentials \u2014 the fun visual part.\n\nTechnical: session-end. Final state: corpus kv431, 2264 sealed claims, board 76/76 green, repo clean + pushed at HEAD 6c2c9ebb. Shipped this session (4 commits): entity-page question-indexing filter fix (aaaf4c30); Task A thin-claim re-mine finished \u2014 21 keep-verbatim upgrades kv428\u2192kv430 (85ac75e2); EPIGEN-137 potassium-cap follow-up \u2014 new claim WAL-CLM-EPIGEN-000463 + silica enrichment fix kv430\u2192kv431 (8dcea900); stale product-panel probe fixed .kd-product-deep\u2192.kd-ep--prod (6c2c9ebb). New lesson memory: remap-claim-can-orphan-target. Handoff (chronicle/next-chunk.md) rewritten for the NEW agenda IN ORDER: (1) SEARCH enhancements, (2) the 90-essentials HEADERS \u2014 both enhancement/design tasks that START by getting the spec from Luneth (visual-verification gate applies to the headers). Context pointers loaded in the handoff for each (search-corpus rules/blueprint/plan + search memories; trace-mineral-tile-detail.html demo + visual-design memories + entity-page kd-ep-hero). Only deferred item from the old agenda: the 3 honest toxicity GAPs (correct to leave). Next session boots with genesis." }];
+Technical: render_probe_entity.js "best-source row opens the product panel" was a STALE PROBE. Empirical repro: clicking the first Calcium best-source row (ReVERSE!\xAE, product_id="reverse" \u2014 a valid product) switches to the Products tab and renderProductDeep() emits <div class="kd-essential-deep kd-ep kd-ep--prod"> with the product's hero name. The probe checked for .kd-product-deep, which no longer exists in the source \u2014 it was renamed to .kd-ep--prod during the Phase-H entity-page unification (the old kd-product-deep__* classes are documented in the 2026-07-08 Creator's-Log entry that first built the panel; that historical text baked into dist/main.js was the only other grep hit). Fix: srcNav now asserts .kd-ep--prod exists AND has a non-empty .kd-ep-hero__name (an empty panel would mean the id didn't resolve), and the settle wait went 250\u2192400ms. Verify: entity probe now PASS in full (srcNav productShown:true, onProductsTab:true, 0 page errors; the self-proving question-filter check added earlier this session still green), invariants 76/76 (the probe is not invariant-gated; ran it to confirm no regression). No source/data change, so the bundle is unaffected. This closes the loose end flagged during the thin-claim work \u2014 it was never a real defect, just a test asserting on a retired selector.` }, { id: "lg_ms5fgn6i_93dhua", ts: "2026-07-28T20:50:17.178384-05:00", surface: "session", kind: "session-end", summary: "Session close: thin-claim re-mine done + potassium follow-up + stale product-panel probe fixed; kv431, board 76/76, 4 commits pushed. Handoff set for next session: SEARCH enhancements, then the 90-essentials HEADERS.", detail: "Plain: closing out this session cleanly. We finished the thin-claim clean-up, handled the potassium follow-up, and proved the last nagging test failure was harmless (a renamed CSS class, not a bug). Everything's green and pushed. I've set up the handoff so the next session starts fresh with the new plan Luneth's excited about: search enhancements first, then FINALLY building the headers for all 90 essentials \u2014 the fun visual part.\n\nTechnical: session-end. Final state: corpus kv431, 2264 sealed claims, board 76/76 green, repo clean + pushed at HEAD 6c2c9ebb. Shipped this session (4 commits): entity-page question-indexing filter fix (aaaf4c30); Task A thin-claim re-mine finished \u2014 21 keep-verbatim upgrades kv428\u2192kv430 (85ac75e2); EPIGEN-137 potassium-cap follow-up \u2014 new claim WAL-CLM-EPIGEN-000463 + silica enrichment fix kv430\u2192kv431 (8dcea900); stale product-panel probe fixed .kd-product-deep\u2192.kd-ep--prod (6c2c9ebb). New lesson memory: remap-claim-can-orphan-target. Handoff (chronicle/next-chunk.md) rewritten for the NEW agenda IN ORDER: (1) SEARCH enhancements, (2) the 90-essentials HEADERS \u2014 both enhancement/design tasks that START by getting the spec from Luneth (visual-verification gate applies to the headers). Context pointers loaded in the handoff for each (search-corpus rules/blueprint/plan + search memories; trace-mineral-tile-detail.html demo + visual-design memories + entity-page kd-ep-hero). Only deferred item from the old agenda: the 3 honest toxicity GAPs (correct to leave). Next session boots with genesis." }, { id: "lg_ms5i9q6t_8atmby", ts: "2026-07-28T22:08:53.333713-05:00", surface: "search", kind: "round-close", summary: "Search Checkpoint 1: fixed 17 mis-routing test queries + made the resolver punctuation-proof (matchKey symmetric; two-pass entityHit). Lay synonyms on 9 entities, 3 hero-refinements, palpitations de-dup, antioxidants mis-hero fix; routing probe refreshed 6/6.", detail: `Checkpoint 1 of the search-enhancement round. I fixed 17 of the plain-language test queries Luneth typed that were pointing to the wrong Wallach answer \u2014 e.g. "which meats are bad for you?" used to open the BAD BREATH page (it matched the word "bad"), "is meat good or bad for you?" heroed a multiple-sclerosis claim, and "why can't i poop" returned NOTHING. And I made the search engine punctuation-proof, so a normal question typed with a trailing "?" ("how can i raise my iq?", "how should you cook steak?") still finds its topic. Nothing was invented: every one of these queries now points to a Wallach answer that ALREADY existed in the corpus \u2014 it just was not wired up. The bigger new pages (strength, IQ, vegan/vegetarian, best-foods, frequent-urination) and the aspirin/ibuprofen answer come in the next two checkpoints.
+
+CODE (dashboard/assets/js/src/state/search.ts): added matchKey() \u2014 lowercases + collapses every non-alphanumeric run to a single space \u2014 and applied it SYMMETRICALLY to the query AND every entity slug/display/synonym across normalize / entityHit / wideEntityHit / entityPhrases / chargedExplicit. So a trailing "?", an internal hyphen ("a-fib" -> "a fib") or apostrophe ("crohn's" -> "crohn s") normalize the same on both sides and route. tokenize() left unchanged; the charged-topic gate preserved (still whole-word). entityHit was made TWO-PASS (a canonical slug/display match wins over a synonym collision) after the first cut regressed "vitamin-b12" to cobalt (the slug "vitamin-b12" collapsed to "vitamin b12", which is also a cobalt synonym). Verified via a HEAD-vs-now routing diff: the code change altered exactly 5 queries \u2014 4 improvements + the one vitamin-b12 regression, now fixed.
+
+DATA (eden/catalog/search-entities.json + eden/corpus/search-enrichment.json, both UNSEALED source files): (1) lay synonyms added to 9 existing entities so the colloquial words route to the clinical entity that already holds the answer \u2014 chronic_fatigue (tired/exhausted/no energy), constipation (can't poop/backed up), bleeding_bowels (blood in stool/bleed when i poop), bladder_stones (blood in urine), water (dehydrated + how much water + dark-urine soft-land), processed_meat (which meats are bad), meat (meats), dietary_oils (fried food), colloidal_minerals (most important supplements / where to start). (2) removed the duplicate "heart palpitations" synonym from atrial_fibrillation + cardiac_arrhythmia so it uniquely reaches the richer Palpitations page, and added palpitations to WAL-CLM-LETS-000203's also_about so the fuller arrhythmia protocol shows there. (3) front-loaded 3 claim questions with the user's own words \u2014 gluten WAL-CLM-EPIGEN-000030 ("Why is gluten bad for the gut..."), fried WAL-CLM-EPIGEN-000149 ("Are fried foods bad for you..."), meat WAL-CLM-HELLS-000074 ("Is red meat good or bad for you...") \u2014 plus intent topics on the fatigue/constipation claims. (4) fixed a real antioxidants mis-hero: "how to get more antioxidants" heroed the weight-loss WARNING (WAL-CLM-HELLS-000016) because it alone carried the token "more"; added a "get more antioxidants" topic to the top-foods claim WAL-CLM-HELLS-000014 so a neutral how-to query heroes a FOOD answer.
+
+PROBE: refreshed tools/render_probe_search_routing.js. It was 5/6 red AT HEAD (before any change) because routing evolved after last session's re-mine \u2014 NOT a regression: "what causes cancer" now heroes a real "What causes cancer according to Wallach?" answer (better than the old route-to-entity-page expectation), and "which foods..." heroes a real ORAC-foods answer. Rewrote the checks to assert the current, verified-correct behavior; now 6/6.
+
+VERIFY: a puppeteer harness over all 34 test queries + 17 guard/collision queries (17 improved, HEAD-vs-now diff clean, zero guard regressions \u2014 e.g. "which supplements are best for arthritis?" still routes to Arthritis, not hijacked); invariants 76/76 (0 failed) after re-deriving search-index + entity-page + orac embeds; render_probe_search + render_probe_search_browse + render_probe_search_routing all PASS; build OK.
+
+DEFERRED / KEPT (Luneth-approved): Checkpoint 2 = new hub pages (muscle_strength, intelligence, veganism, healthy-foods, gender-neutral frequent_urination) \u2014 these create new pages so they wait for his visual sign-off. Checkpoint 3 = mining aspirin/ibuprofen safety (Wallach states it in the books but it was never mined into a claim). Honest residuals kept: "which supplements are best?" is genuinely ambiguous (best for what?) and any fix hijacks "best supplements for <condition>", so left as-is; "sharp pain in lower right abdomen" stays on the generic Pain page (the corpus has no acute-abdomen/appendicitis-diagnosis content \u2014 refused to fabricate a route); dark-urine queries soft-land on the Water page (no Wallach urine-color content exists \u2014 an honest least-bad landing).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

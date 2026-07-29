@@ -269,17 +269,37 @@ export interface SearchResult {
   noMatch: boolean;
 }
 
+/**
+ * Shared matching key: lowercase, collapse every non-alphanumeric run to a single space, trim. Applied
+ * SYMMETRICALLY to the query AND every entity slug/name/synonym (see the matchKey() calls in entityHit /
+ * wideEntityHit / entityPhrases / chargedExplicit) so punctuation never defeats a whole-word route: a
+ * trailing '?' ("...my iq?" -> "my iq"), an internal hyphen ("a-fib" -> "a fib") or apostrophe ("crohn's"
+ * -> "crohn s") all normalize the same on both sides. tokenize() is intentionally NOT routed through this
+ * (it already splits on non-alphanumerics); scoreClaim's substring reads the collapsed q, which is cleaner.
+ * (2026-07-28: repairs the class of natural questions that ended in the entity word immediately before '?'.)
+ */
+function matchKey(s: string): string {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
 function normalize(s: string): string {
-  return s.trim().toLowerCase();
+  return matchKey(s);
 }
 
 /** Entity slug whose slug / synonym / display_name matches the query exactly-ish, else null. */
 function entityHit(q: string): string | null {
+  // Pass 1 — a canonical identity match (slug or display name) wins over any synonym collision. WHY two
+  // passes: collapsing punctuation (matchKey) can make a hyphenated slug tie a RIVAL entity's synonym
+  // ("vitamin-b12" -> "vitamin b12", which is also a cobalt synonym); the entity that OWNS the name must
+  // win regardless of registry iteration order, else "vitamin-b12" would resolve to cobalt.
   for (const [slug, e] of Object.entries(index().entities)) {
-    if (slug === q || e.display_name.toLowerCase() === q) {
+    if (matchKey(slug) === q || matchKey(e.display_name) === q) {
       return slug;
     }
-    if (e.synonyms.some(s => s.toLowerCase() === q)) {
+  }
+  // Pass 2 — otherwise the first synonym match.
+  for (const [slug, e] of Object.entries(index().entities)) {
+    if (e.synonyms.some(s => matchKey(s) === q)) {
       return slug;
     }
   }
@@ -296,14 +316,13 @@ function entityHit(q: string): string | null {
  * a separate follow-up). entityHit (the enriched 73) is tried FIRST, so an enriched entity still wins.
  */
 function wideEntityHit(q: string): string | null {
-  const spaced = (slug: string): string => slug.replace(/[_-]+/g, ' ');
   for (const c of listConditionPages()) {
-    if (c.slug === q || spaced(c.slug) === q || c.name.toLowerCase() === q) {
+    if (matchKey(c.slug) === q || matchKey(c.name) === q) {
       return c.slug;
     }
   }
   for (const e of listEssentialPages()) {
-    if (e.slug === q || spaced(e.slug) === q || e.name.toLowerCase() === q) {
+    if (matchKey(e.slug) === q || matchKey(e.name) === q) {
       return e.slug;
     }
   }
@@ -392,8 +411,8 @@ function chargedExplicit(q: string): boolean {
   const pad = ` ${q} `;
   for (const slug of CHARGED) {
     const e = getEntity(slug);
-    const names = e !== null ? [e.display_name.toLowerCase(), ...e.synonyms.map(s => s.toLowerCase())] : [];
-    names.push(slug.replace(/[_-]+/g, ' '));
+    const names = e !== null ? [matchKey(e.display_name), ...e.synonyms.map(s => matchKey(s))] : [];
+    names.push(matchKey(slug));
     for (const t of names) {
       if (pad.includes(` ${t} `)) {
         return true;
@@ -401,7 +420,7 @@ function chargedExplicit(q: string): boolean {
     }
   }
   for (const t of CHARGED_TERMS) {
-    if (pad.includes(` ${t} `)) {
+    if (pad.includes(` ${matchKey(t)} `)) {
       return true;
     }
   }
@@ -429,16 +448,16 @@ function entityPhrases(): { phrase: string; slug: string }[] {
   if (phraseCache === null) {
     const arr: { phrase: string; slug: string }[] = [];
     for (const [slug, e] of Object.entries(index().entities)) {
-      arr.push({ phrase: e.display_name.toLowerCase(), slug });
+      arr.push({ phrase: matchKey(e.display_name), slug });
       for (const s of e.synonyms) {
-        arr.push({ phrase: s.toLowerCase(), slug });
+        arr.push({ phrase: matchKey(s), slug });
       }
     }
     for (const c of listConditionPages()) {
-      arr.push({ phrase: c.name.toLowerCase(), slug: c.slug });
+      arr.push({ phrase: matchKey(c.name), slug: c.slug });
     }
     for (const es of listEssentialPages()) {
-      arr.push({ phrase: es.name.toLowerCase(), slug: es.slug });
+      arr.push({ phrase: matchKey(es.name), slug: es.slug });
     }
     const seen = new Set<string>();
     const dedup: { phrase: string; slug: string }[] = [];

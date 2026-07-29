@@ -19535,8 +19535,7 @@
         "irregular heartbeat",
         "heart flutter",
         "atrial fib",
-        "irregular heart rhythm",
-        "heart palpitations"
+        "irregular heart rhythm"
       ],
       "protocol_claim_ids": [],
       "restore": [
@@ -20455,7 +20454,15 @@
         "stones in bladder",
         "urinary stones",
         "bladder stones",
-        "stone in the bladder"
+        "stone in the bladder",
+        "blood in urine",
+        "blood in the urine",
+        "bloody urine",
+        "blood in pee",
+        "peeing blood",
+        "pee blood",
+        "red urine",
+        "blood when i pee"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000161"
@@ -20547,7 +20554,13 @@
         "bloody stool",
         "blood in poop",
         "blood when pooping",
-        "bowel bleeding"
+        "bowel bleeding",
+        "bleed when i poop",
+        "bleeding when i poop",
+        "poop blood",
+        "bloody poop",
+        "pooping blood",
+        "blood when i poop"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000163"
@@ -22181,7 +22194,6 @@
       "synonyms": [
         "irregular heartbeat",
         "arrhythmia",
-        "heart palpitations",
         "skipped heartbeat",
         "heart flutter",
         "arrythmia",
@@ -23323,7 +23335,15 @@
         "exhaustion",
         "persistent fatigue",
         "low energy",
-        "worn out all the time"
+        "worn out all the time",
+        "tired",
+        "fatigue",
+        "exhausted",
+        "no energy",
+        "feel tired",
+        "tired all the time",
+        "feel tired all the time",
+        "no pep"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000272"
@@ -24344,7 +24364,15 @@
         "hard stools",
         "backed up",
         "constapation",
-        "trouble pooping"
+        "trouble pooping",
+        "constipated",
+        "cant go",
+        "hard to poop",
+        "not pooping",
+        "wont poop",
+        "havent pooped",
+        "trouble going to the bathroom",
+        "cant have a bowel movement"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-LETS-000231",

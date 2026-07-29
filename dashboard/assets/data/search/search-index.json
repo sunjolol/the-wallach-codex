@@ -691,8 +691,7 @@
         "irregular heartbeat",
         "heart flutter",
         "atrial fib",
-        "irregular heart rhythm",
-        "heart palpitations"
+        "irregular heart rhythm"
       ],
       "related": [],
       "claim_count": 1
@@ -1061,7 +1060,15 @@
         "stones in bladder",
         "urinary stones",
         "bladder stones",
-        "stone in the bladder"
+        "stone in the bladder",
+        "blood in urine",
+        "blood in the urine",
+        "bloody urine",
+        "blood in pee",
+        "peeing blood",
+        "pee blood",
+        "red urine",
+        "blood when i pee"
       ],
       "related": [],
       "claim_count": 1
@@ -1091,7 +1098,13 @@
         "bloody stool",
         "blood in poop",
         "blood when pooping",
-        "bowel bleeding"
+        "bowel bleeding",
+        "bleed when i poop",
+        "bleeding when i poop",
+        "poop blood",
+        "bloody poop",
+        "pooping blood",
+        "blood when i poop"
       ],
       "related": [
         "hemorrhoids",
@@ -1506,7 +1519,6 @@
       "synonyms": [
         "irregular heartbeat",
         "arrhythmia",
-        "heart palpitations",
         "skipped heartbeat",
         "heart flutter",
         "arrythmia",
@@ -1971,7 +1983,15 @@
         "exhaustion",
         "persistent fatigue",
         "low energy",
-        "worn out all the time"
+        "worn out all the time",
+        "tired",
+        "fatigue",
+        "exhausted",
+        "no energy",
+        "feel tired",
+        "tired all the time",
+        "feel tired all the time",
+        "no pep"
       ],
       "related": [
         "chronic_fatigue_syndrome"
@@ -2162,7 +2182,13 @@
         "colloidal",
         "plant-derived minerals",
         "mineral bioavailability",
-        "chelated minerals"
+        "chelated minerals",
+        "most important supplements",
+        "supplements are most important",
+        "which supplements should i take first",
+        "where to start with supplements",
+        "supplements to take first",
+        "what supplements are most important"
       ],
       "related": [
         "chromium",
@@ -2281,7 +2307,15 @@
         "hard stools",
         "backed up",
         "constapation",
-        "trouble pooping"
+        "trouble pooping",
+        "constipated",
+        "cant go",
+        "hard to poop",
+        "not pooping",
+        "wont poop",
+        "havent pooped",
+        "trouble going to the bathroom",
+        "cant have a bowel movement"
       ],
       "related": [],
       "claim_count": 1
@@ -2748,7 +2782,9 @@
         "trans fats",
         "rancid fat",
         "oxidized oils",
-        "free radicals"
+        "free radicals",
+        "fried food",
+        "deep fried"
       ],
       "related": [
         "cholesterol",
@@ -5939,7 +5975,8 @@
         "organ meats",
         "liver",
         "shellfish",
-        "animal fats"
+        "animal fats",
+        "meats"
       ],
       "related": [
         "cholesterol",
@@ -7638,7 +7675,13 @@
         "sausage",
         "nitrates",
         "nitrites",
-        "cured meat"
+        "cured meat",
+        "which meats are bad",
+        "bad meats",
+        "worst meats",
+        "meats to avoid",
+        "unhealthy meats",
+        "processed meats"
       ],
       "related": [
         "dietary_oils",
@@ -10281,7 +10324,26 @@
         "distilled water",
         "tap water",
         "alkaline water",
-        "drinking water"
+        "drinking water",
+        "dehydrated",
+        "dehydration",
+        "am i dehydrated",
+        "hydration",
+        "hydrated",
+        "staying hydrated",
+        "how much water",
+        "water intake",
+        "daily water",
+        "how much water should i drink",
+        "how much water do i need",
+        "dark urine",
+        "dark pee",
+        "brown urine",
+        "dark colored urine",
+        "urine color",
+        "why is my urine dark",
+        "why is my pee dark",
+        "why is my urine so dark"
       ],
       "related": [
         "fluoride",
@@ -18748,7 +18810,7 @@
         "malabsorption"
       ],
       "facet": "mechanism",
-      "question": "Why is gluten so damaging to the gut?",
+      "question": "Why is gluten bad for the gut, and what damage does it do?",
       "answer_short": "Wallach frames gluten not as an allergy but a 'contact enteritis' — like poison ivy, but on the gut lining — that gradually destroys the intestinal villi and leaves you unable to absorb nutrients.",
       "answer": "Wallach frames gluten intolerance not as an allergy but as a 'contact enteritis' -- an irritant reaction of the small-grain proteins on the gut lining, analogous to the contact dermatitis poison ivy causes on skin (no one is allergic to poison ivy, yet nearly everyone is intolerant of it). The gastrointestinal damage from this gluten-contact enteritis includes celiac disease, diverticulitis, appendicitis, irritable bowel syndrome, inflammatory bowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease, gastritis, bloating, and reflux. The gradual, progressive loss of intestinal villi it causes produces malabsorption and, through it, a wide range of nutritional-deficiency diseases -- so the corrective action is to avoid gluten.",
       "verbatim": "includes celiac disease (wheat allergy that occurs concurrently with contact\nenteritis), diverticulitis, appendicitis, irritable bowel syndrome, inflammatory\nbowel syndrome, leaky gut syndrome, colitis, ulcerative colitis, Crohn's disease,\ngastritis, bloating, and reflux.\n\nThe gradual and progressive loss of intestinal villi as a result of contact\nenteritis produces a kaleidoscope of nutritional-deficiency diseases as a result\nof malabsorption",
@@ -22252,7 +22314,7 @@
         "margarine"
       ],
       "facet": "warning",
-      "question": "What does Wallach say overusing dietary oils and eating fried foods does to the body?",
+      "question": "Are fried foods bad for you, and what does overusing dietary oils do to the body?",
       "answer_short": "He calls it self-destruction: too many fried/burnt foods and overused margarines, salad dressings and cooking oils load the body with trans fats, heterocyclic amines and acrylamides.",
       "answer": "After 17,500 animal and 3,000 human autopsies, Wallach concluded that beyond nutritional deficiency, a leading cause of disease is self-inflicted: eating too many fried and overcooked (burnt) foods, overusing dietary oils (margarines, salad dressings, cooking oils, canned fish packed in oil), and eating nitrate-preserved processed meats, all of which raise the daily load of trans fatty acids, heterocyclic amines and acrylamides.",
       "verbatim": "eating too many fried and overcooked (burnt) foods by\nthe overuse of dietary oils, including margarines, salad dressings, cooking oils,\nas well as the consumption of canned fish packed in oils and processed meats\npreserved with nitrates and nitrites—all of which increased the daily load of\ndietary trans fatty acids, heterocyclic amines, and acrylamides!",
@@ -22264,7 +22326,8 @@
         "margarine",
         "salad-dressing",
         "cooking-oil",
-        "trans-fat"
+        "trans-fat",
+        "bad-for-you"
       ]
     },
     {
@@ -28917,7 +28980,8 @@
         "food-sources",
         "berries",
         "prunes",
-        "kale"
+        "kale",
+        "get more antioxidants"
       ]
     },
     {
@@ -30129,7 +30193,7 @@
       "subject": "meat",
       "also_about": [],
       "facet": "basics",
-      "question": "Does Wallach think red meat is healthy?",
+      "question": "Is red meat good or bad for you, and does Wallach think it is healthy?",
       "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids — with one caveat: don't cook it well-done or burn the fat, which forms cancer-linked heterocyclic amines.",
       "answer": "Wallach calls red meat an unequaled source of animal protein and essential lipids. His one caveat is preparation: don't eat it cooked well-done or with the fat burnt, because that forms heterocyclic amines (compounds tied to cancer risk).",
       "verbatim": "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines.",
@@ -46806,7 +46870,8 @@
         "irritable bowel",
         "vitamin c",
         "mullein",
-        "alfalfa"
+        "alfalfa",
+        "blood in stool"
       ],
       "tier1_link": {
         "essentials": [
@@ -48031,7 +48096,8 @@
         "vitamin-b6",
         "coq10",
         "carnitine",
-        "msg"
+        "msg",
+        "palpitations"
       ],
       "facet": "protocol",
       "question": "How do you treat an irregular heartbeat naturally?",
@@ -48929,7 +48995,10 @@
         "food allergies",
         "psyllium",
         "senna",
-        "cascara sagrada"
+        "cascara sagrada",
+        "poop",
+        "cant poop",
+        "constipated"
       ],
       "tier1_link": {
         "conditions": [
@@ -50183,7 +50252,11 @@
         "epstein-barr virus",
         "hypoglycemia",
         "ginseng",
-        "tiredness"
+        "tiredness",
+        "tired",
+        "no energy",
+        "exhausted",
+        "always tired"
       ],
       "tier1_link": {
         "conditions": [

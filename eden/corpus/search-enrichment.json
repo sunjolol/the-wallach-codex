@@ -862,7 +862,7 @@
         "malabsorption"
       ],
       "facet": "mechanism",
-      "question": "Why is gluten so damaging to the gut?",
+      "question": "Why is gluten bad for the gut, and what damage does it do?",
       "answer_short": "Wallach frames gluten not as an allergy but a 'contact enteritis' — like poison ivy, but on the gut lining — that gradually destroys the intestinal villi and leaves you unable to absorb nutrients.",
       "topics": [
         "contact-enteritis",
@@ -1034,7 +1034,7 @@
         "margarine"
       ],
       "facet": "warning",
-      "question": "What does Wallach say overusing dietary oils and eating fried foods does to the body?",
+      "question": "Are fried foods bad for you, and what does overusing dietary oils do to the body?",
       "answer_short": "He calls it self-destruction: too many fried/burnt foods and overused margarines, salad dressings and cooking oils load the body with trans fats, heterocyclic amines and acrylamides.",
       "topics": [
         "fried-foods",
@@ -1042,7 +1042,8 @@
         "margarine",
         "salad-dressing",
         "cooking-oil",
-        "trans-fat"
+        "trans-fat",
+        "bad-for-you"
       ]
     },
     "WAL-CLM-EPIGEN-000150": {
@@ -1672,7 +1673,8 @@
         "food-sources",
         "berries",
         "prunes",
-        "kale"
+        "kale",
+        "get more antioxidants"
       ]
     },
     "WAL-CLM-HELLS-000015": {
@@ -22656,7 +22658,7 @@
       "subject": "meat",
       "also_about": [],
       "facet": "basics",
-      "question": "Does Wallach think red meat is healthy?",
+      "question": "Is red meat good or bad for you, and does Wallach think it is healthy?",
       "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids — with one caveat: don't cook it well-done or burn the fat, which forms cancer-linked heterocyclic amines.",
       "topics": [
         "meat",
@@ -23092,7 +23094,8 @@
         "vitamin-b6",
         "coq10",
         "carnitine",
-        "msg"
+        "msg",
+        "palpitations"
       ],
       "facet": "protocol",
       "question": "How do you treat an irregular heartbeat naturally?",
@@ -23289,7 +23292,10 @@
         "food allergies",
         "psyllium",
         "senna",
-        "cascara sagrada"
+        "cascara sagrada",
+        "poop",
+        "cant poop",
+        "constipated"
       ]
     },
     "WAL-CLM-LETS-000177": {
@@ -25656,7 +25662,11 @@
         "epstein-barr virus",
         "hypoglycemia",
         "ginseng",
-        "tiredness"
+        "tiredness",
+        "tired",
+        "no energy",
+        "exhausted",
+        "always tired"
       ]
     },
     "WAL-CLM-LETS-000357": {
@@ -26146,7 +26156,8 @@
         "irritable bowel",
         "vitamin c",
         "mullein",
-        "alfalfa"
+        "alfalfa",
+        "blood in stool"
       ]
     },
     "WAL-CLM-LETS-000167": {

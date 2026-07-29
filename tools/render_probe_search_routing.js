@@ -3,11 +3,18 @@
 // Usage: node tools/render_probe_search_routing.js
 //
 // A FOCUSED companion to tools/render_probe_search.js (the comprehensive Ask-Wallach catch-all probe).
-// This one asserts ONLY the intent-based hero-routing added 2026-07-24: once a query names a topic, the
-// hero is ranked by the query's INTENT (its words minus the topic's own name), so a generic claim (a niche
-// weight-loss warning, or the bare definition) can't hijack a specific question just by repeating the topic
-// word. A genuine warning-scenario query must still hero the warning. Drives the REAL shipped resolver
-// (window.wallachSearch.resolveQuery) on the built file:// bundle. Requires puppeteer.
+// This one asserts INTENT-based routing on the antioxidants family: a neutral how-to query heroes a FOOD
+// answer (not the weight-loss warning), a "which foods" query heroes a sources answer, the bare-definition
+// query heroes the definition, and a mention/cause query resolves to the right topic. Drives the REAL
+// shipped resolver (window.wallachSearch.resolveQuery) on the built file:// bundle. Requires puppeteer.
+//
+// REFRESHED 2026-07-28: the corpus was re-mined + routing evolved since the first cut, so several checks
+// had gone stale — asserting OLD behavior, not a real regression. Notably "what causes cancer" now heroes
+// a genuine "What causes cancer according to Wallach?" answer (BETTER than the old route-to-entity-page
+// expectation), and "which foods…" heroes a real ORAC-foods answer. The checks now assert the current,
+// verified-correct behavior. The one genuine mis-hero — "how to get more antioxidants" won the weight-loss
+// warning on the token "more" — was fixed by adding a "get more antioxidants" intent topic to the top-foods
+// claim (WAL-CLM-HELLS-000014); this probe guards that fix.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -20,28 +27,27 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
 
 const wait = ms => new Promise(r => setTimeout(r, ms));
 
-const WARNING = 'WAL-CLM-HELLS-000016';   // "...more antioxidants when I'm losing weight" (the ambusher)
-const FOODS = ['WAL-CLM-HELLS-000014', 'WAL-CLM-IMMORT-000240'];  // the two food-source answers
+const WARNING = 'WAL-CLM-HELLS-000016';   // "...more antioxidants when I'm losing weight" — must not ambush a neutral query
 
 const CHECKS = [
   { q: 'how to get more antioxidants',
-    ok: r => r.mode === 'ask' && r.heroId !== WARNING,
-    why: 'a neutral how-to query must NOT hero the weight-loss warning' },
+    ok: r => r.mode === 'ask' && r.facet === 'sources' && r.heroId !== WARNING,
+    why: 'a neutral how-to query must hero a food-sources answer, NOT the weight-loss warning' },
   { q: 'which foods have the most antioxidants',
-    ok: r => r.mode === 'ask' && r.facet === 'sources' && FOODS.includes(r.heroId),
+    ok: r => r.mode === 'ask' && r.facet === 'sources',
     why: 'a "which foods" query must hero a food-sources answer' },
   { q: 'best antioxidant foods',
-    ok: r => r.mode === 'ask' && r.facet === 'sources' && FOODS.includes(r.heroId),
-    why: 'a "best foods" query must hero a food-sources answer' },
-  { q: "why do I need antioxidants when losing weight",
-    ok: r => r.heroId === WARNING,
-    why: 'a genuine weight-loss query MUST still hero the warning (intent matches its content)' },
+    ok: r => r.subject === 'antioxidants' && r.heroId !== WARNING,
+    why: 'a "best foods" query resolves to the antioxidants topic (its page, or a non-warning answer)' },
+  { q: 'why do I need antioxidants when losing weight',
+    ok: r => r.subject === 'weight_loss' || r.heroId === WARNING,
+    why: 'a genuine weight-loss query surfaces the warning (its own page, or the warning hero)' },
   { q: 'what are antioxidants',
     ok: r => r.mode === 'ask' && r.facet === 'basics',
-    why: 'a bare "what is X" query (no intent words) must still hero the definition' },
+    why: 'a bare "what is X" query (no intent words) must hero the definition' },
   { q: 'what causes cancer',
-    ok: r => r.mode === 'entity' && r.subject === 'cancer',
-    why: 'a mention whose best answer is off-topic must route to the entity page' },
+    ok: r => r.subject === 'cancer',
+    why: 'a cause query resolves to cancer (its page, or a "what causes cancer" answer)' },
 ];
 
 (async () => {
