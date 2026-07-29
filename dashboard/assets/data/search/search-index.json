@@ -8407,7 +8407,7 @@
         "nickel",
         "cardiovascular_disease"
       ],
-      "claim_count": 7,
+      "claim_count": 8,
       "symbol": "Si"
     },
     "silver": {
@@ -21959,21 +21959,19 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000137",
-      "subject": "potassium",
-      "also_about": [
-        "silica"
-      ],
+      "subject": "silica",
+      "also_about": [],
       "facet": "protocol",
-      "question": "Why are potassium supplements limited to only 99 mg?",
-      "answer_short": "Wallach's book notes the FDA restricts the amount of potassium allowed in a supplement to 99 mg.",
+      "question": "How much silica does Wallach recommend a day?",
+      "answer_short": "Wallach's daily mineral program lists silica at 1–25 mg per 100 lb of body weight.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives silica a daily range of 1 to 25 mg.",
       "verbatim": "Silica 1 - 25 mg\nVanadium 50 - 100 mcg\nZinc 15 - 30 mg\n\n\nINA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
-        "supplements",
-        "regulation",
-        "daily-dose"
+        "silica",
+        "daily-dose",
+        "minerals"
       ],
       "tier1_link": {
         "essentials": [
@@ -28635,6 +28633,29 @@
         "nutrition advice",
         "fad diets"
       ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000463",
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Why are potassium supplements limited to only 99 mg?",
+      "answer_short": "Because the FDA caps the amount of potassium allowed in a single dietary supplement at 99 mg — Wallach cites it as a regulatory limit, not his own recommended dose.",
+      "answer": "Wallach records that the FDA restricts the amount of potassium allowed in a dietary supplement to 99 mg — a regulatory cap he notes alongside his mineral program, not one of his own recommended doses.",
+      "verbatim": "The FDA restricts the amount of potassium in supplements to 99 mg.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "potassium",
+        "supplements",
+        "regulation",
+        "fda"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "potassium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-HELLS-000001",

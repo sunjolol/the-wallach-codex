@@ -12016,17 +12016,15 @@
       ]
     },
     "WAL-CLM-EPIGEN-000137": {
-      "subject": "potassium",
-      "also_about": [
-        "silica"
-      ],
+      "subject": "silica",
+      "also_about": [],
       "facet": "protocol",
-      "question": "Why are potassium supplements limited to only 99 mg?",
-      "answer_short": "Wallach's book notes the FDA restricts the amount of potassium allowed in a supplement to 99 mg.",
+      "question": "How much silica does Wallach recommend a day?",
+      "answer_short": "Wallach's daily mineral program lists silica at 1–25 mg per 100 lb of body weight.",
       "topics": [
-        "supplements",
-        "regulation",
-        "daily-dose"
+        "silica",
+        "daily-dose",
+        "minerals"
       ]
     },
     "WAL-CLM-LETS-000062": {
@@ -36471,6 +36469,19 @@
         "low carb",
         "minerals",
         "diet"
+      ]
+    },
+    "WAL-CLM-EPIGEN-000463": {
+      "subject": "potassium",
+      "also_about": [],
+      "facet": "basics",
+      "question": "Why are potassium supplements limited to only 99 mg?",
+      "answer_short": "Because the FDA caps the amount of potassium allowed in a single dietary supplement at 99 mg — Wallach cites it as a regulatory limit, not his own recommended dose.",
+      "topics": [
+        "potassium",
+        "supplements",
+        "regulation",
+        "fda"
       ]
     }
   }

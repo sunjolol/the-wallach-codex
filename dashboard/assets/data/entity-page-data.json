@@ -1578,7 +1578,7 @@
       "symbol": "K",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 26,
+      "claim_count": 27,
       "books": [
         "epigenetics",
         "immortality",
@@ -1670,6 +1670,7 @@
         {
           "kind": "definition",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000463",
             "WAL-CLM-IMMORT-000187",
             "WAL-CLM-IMMORT-000188",
             "WAL-CLM-IMMORT-000189",
@@ -1692,6 +1693,7 @@
         {
           "facet": "basics",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000463",
             "WAL-CLM-IMMORT-000188",
             "WAL-CLM-RARE-000152",
             "WAL-CLM-RARE-000350"
@@ -1744,7 +1746,6 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000203",
-            "WAL-CLM-EPIGEN-000137",
             "WAL-CLM-IMMORT-000193",
             "WAL-CLM-LETS-000062",
             "WAL-CLM-RARE-000154"
@@ -4859,6 +4860,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000137",
             "WAL-CLM-RARE-000246"
           ]
         }

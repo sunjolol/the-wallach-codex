@@ -846,7 +846,7 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000094",
@@ -855,6 +855,7 @@
         "WAL-CLM-RARE-000155"
       ],
       "definition": [
+        "WAL-CLM-EPIGEN-000463",
         "WAL-CLM-IMMORT-000187",
         "WAL-CLM-IMMORT-000188",
         "WAL-CLM-IMMORT-000189",

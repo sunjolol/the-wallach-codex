@@ -6785,6 +6785,10 @@
     "kind": "definition",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-EPIGEN-000463",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000187",
         "book": "immortality"
       },
@@ -6809,8 +6813,8 @@
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 6
+    "books_repeating": 3,
+    "claim_count": 7
   },
   {
     "id": "CG-0108",
