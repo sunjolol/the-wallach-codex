@@ -99,6 +99,7 @@ Read the matching file before the first write in that domain:
 | the Charter's enforceable rules (R1–R9) + their gate status | `charter.md` |
 | logging · history · what & why to record | `logging-doctrine.md` |
 | building/perfecting a page or any visual/UX surface | `visual-verification.md` |
+| building an ELEMENT HEADER (the 90 essentials' illustrative blocks) | `element-headers.md` |
 
 ---
 

@@ -5164,6 +5164,94 @@ def check_entity_render_is_projection():
 
 
 
+
+# ── Element-header contract (2026-07-29) ─────────────────────────────────────
+# Two misses cost a full design session on copper's header, so both are codified here
+# rather than left to memory + review:
+#   (1) a shipped header whose entity-copy entry is only HALF-filled. Copper went live
+#       with `why` but no `lede`; on the page a partial entry is indistinguishable from a
+#       complete one, so nothing surfaced it until the user noticed the missing opening line.
+#   (2) figure type drifting ABOVE the selenium standard. Selenium's shipped figure renders
+#       its labels at 12.0px and its element glyph at 17.6px (MEASURED headlessly, not
+#       chosen); an invented "bigger" scale reads as shouting beside it and was rejected.
+# The build playbook these enforce: .claude/rules/element-headers.md
+_FIGURE_LABEL_PX = 12.0   # measured: selenium .kd-ep-fam__flabel renders at 12.0px on screen
+_FIGURE_GLYPH_PX = 17.6   # measured: selenium .kd-ep-fam__seglyph renders at 17.6px -- the CEILING
+_FIGURE_LABEL_CLASSES = ("__glabel", "__gsub", "__gname", "__gtag", "__gstop")
+
+
+def _element_header_complete_impl(mech_store, copy_store):
+    """RED if an essential with a shipped composed HEADER carries an incomplete entity-copy
+    entry -- both `lede` (the opening line) and `why` (the target's provenance) must be
+    present and non-empty. Params for the negative test."""
+    mechs = mech_store.get("mechanisms", [])
+    ess = copy_store.get("essentials", {})
+    viol = []
+    for m in mechs:
+        slug = str(m.get("slug", ""))
+        entry = ess.get(slug) or {}
+        missing = [f for f in ("lede", "why") if not str(entry.get(f) or "").strip()]
+        if missing:
+            viol.append(f"{slug}: entity-copy missing {' + '.join(missing)}")
+    if viol:
+        return False, ("a shipped element header has an INCOMPLETE entity-copy entry -- every "
+                       "header carries BOTH the opening lede and the why-this-number "
+                       "provenance: " + "; ".join(viol))
+    return True, (f"all {len(mechs)} shipped element header(s) carry a complete entity-copy "
+                  "entry (lede + why)")
+
+
+def check_element_header_complete():
+    """Every element that ships a composed mechanism header also ships its opening lede AND
+    its why-this-number provenance. SCOPE, stated honestly: this binds on the elements that
+    HAVE a header (the mechanism-clarity entries), not on all 91 -- the other essentials have
+    no entity-copy entry yet, and gating them would be a red for work not yet started. That
+    remainder is a labelled WISH in .claude/rules/element-headers.md, not a silent gap.
+    Truth anchor: the two hand-authored store files' bytes, re-read each run."""
+    base = ROOT / "dashboard" / "assets" / "data"
+    mech_p, copy_p = base / "mechanism-clarity-data.json", base / "entity-copy.json"
+    if not mech_p.exists() or not copy_p.exists():
+        return False, "mechanism-clarity-data.json or entity-copy.json missing"
+    mech = json.loads(mech_p.read_text(encoding="utf-8"))
+    copy = json.loads(copy_p.read_text(encoding="utf-8"))
+    return _element_header_complete_impl(mech, copy)
+
+
+def _figure_type_within_standard_impl(css_text):
+    """RED if a generic element-figure text class (.kd-ep-fam__g*) declares a font-size above
+    the selenium glyph, or a LABEL-tier class is not exactly the selenium label size. Param
+    for the negative test."""
+    viol = []
+    for m in re.finditer(r"\.(kd-ep-fam__g[a-z-]*)[^{}]*\{([^{}]*)\}", css_text):
+        cls, body = m.group(1), m.group(2)
+        fm = re.search(r"font-size:\s*([0-9.]+)px", body)
+        if fm is None:
+            continue
+        px = float(fm.group(1))
+        if px > _FIGURE_GLYPH_PX:
+            viol.append(f".{cls}: {px}px exceeds the selenium glyph ceiling {_FIGURE_GLYPH_PX}px")
+        elif any(cls.endswith(t) for t in _FIGURE_LABEL_CLASSES) and px != _FIGURE_LABEL_PX:
+            viol.append(f".{cls}: {px}px is not the selenium label standard {_FIGURE_LABEL_PX}px")
+    if viol:
+        return False, ("element-figure type is off the SELENIUM standard (labels "
+                       f"{_FIGURE_LABEL_PX}px, glyph ceiling {_FIGURE_GLYPH_PX}px, both measured "
+                       "off the shipped selenium figure): " + "; ".join(viol[:6]))
+    return True, (f"element-figure type within the selenium standard (labels {_FIGURE_LABEL_PX}px, "
+                  f"ceiling {_FIGURE_GLYPH_PX}px)")
+
+
+def check_figure_type_within_standard():
+    """Element-figure label type matches the MEASURED selenium standard and nothing exceeds its
+    glyph. This is the SOURCE-side half; the RENDERED half (scale == 1, so a declared px is a
+    screen px, plus a pairwise label-collision check) is proven per element by
+    tools/render_probe_copper.js -- a declared size means nothing if the figure renders at a
+    fraction of its viewBox. Truth anchor: drawer-knowledge.css bytes, scanned each run."""
+    p = ROOT / "dashboard" / "assets" / "styles" / "drawer-knowledge.css"
+    if not p.exists():
+        return False, "drawer-knowledge.css missing"
+    return _figure_type_within_standard_impl(p.read_text(encoding="utf-8"))
+
+
 def _kind_label_covers_corpus_impl(store_path, claims_dir):
     """RED if a distinct claim.kind in the sealed corpus has no entry in the
     view-copy content store's kind_labels map. `store_path`, `claims_dir` are
@@ -6107,6 +6195,24 @@ INVARIANTS = [
         truth_anchor="the real entity-id sets from the pillars (canon slugs + catalog condition/symptom ids + product ids) x the entity-view .ts bytes, recomputed each run",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 2 gate row 2 -- a hand-built {calcium:{...},osteoporosis:{...}} content map (2 keys) slips under the >10-element inline-data gate; this closes it. Negative test: tools/test_entity_render_is_projection.py.",
+    ),
+    Invariant(
+        name="element_header_complete",
+        anchor_class="consistency",  # our mechanism store vs our entity-copy store -- catches a half-filled entry, not a wrong one
+        description="Every element shipping a composed mechanism header also ships BOTH its opening lede and its why-this-number provenance in entity-copy.json. Copper went live with `why` and no `lede`, and a partial entry looks identical to a complete one on the page. Scoped to elements that HAVE a header; the remaining essentials are a labelled WISH in .claude/rules/element-headers.md",
+        check_fn=check_element_header_complete,
+        truth_anchor="the bytes of the two hand-authored stores (mechanism-clarity-data.json x entity-copy.json), re-read and cross-checked each run",
+        severity="critical",
+        lesson_ref="Luneth caught copper's missing opening line after the header shipped; the why-this-number line had been missing on the live page for the same reason (the store held only calcium + selenium). Half-filled entries are invisible from the page. Negative test: tools/test_element_header_complete.py. Playbook: .claude/rules/element-headers.md",
+    ),
+    Invariant(
+        name="figure_type_within_standard",
+        anchor_class="structural",  # shape only -- says nothing about whether a figure is GOOD, only that its type is on-standard
+        description="Element-figure label type matches the MEASURED selenium standard (labels 12.0px) and nothing exceeds its element glyph (17.6px). Selenium is the CEILING for figure type, not a floor -- an invented larger scale was rejected on sight. Source-side half only; the rendered half (scale == 1 + no label collisions) is proven per element by the render probe",
+        check_fn=check_figure_type_within_standard,
+        truth_anchor="drawer-knowledge.css bytes scanned each run against two sizes measured headlessly off the shipped selenium figure",
+        severity="critical",
+        lesson_ref="Two rounds lost to figure type: first too small (the real cause was an ID-specificity width override losing the cascade, rendering an 800-unit viewBox at 560px -- scale 0.70, every label silently 30% smaller), then overcorrected to 15/17/18/32 above the selenium standard. Negative test: tools/test_figure_type_within_standard.py. Playbook: .claude/rules/element-headers.md",
     ),
     Invariant(
         name="views_no_ciphered_data",
