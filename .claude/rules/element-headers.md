@@ -128,6 +128,15 @@ to any CSS class rule.** A white glyph written `<text class="kd-ep-fam__gglyph" 
 accent shape rendered accent-on-accent — invisible. Use `style="fill:#fff"`. This shipped twice on one
 page before a screenshot caught it.
 
+**★ A STROKE THROUGH A LABEL IS THE #1 REJECTION CAUSE (Luneth, 2026-07-30, third occurrence).**
+"a lot of weird lines cutting through text and just chaotic illustrations in general that aren't
+engaging." A rail, arrow, dashed guide or needle routed across a label is INVISIBLE to the probe,
+which compares text against text only — a needle drawn through the word "normal" passed every check
+and shipped. **Route strokes around text, or move the label off the stroke.** And the bar is
+ENGAGING, not merely legible: multi-exit funnels, two-lane bars and tick fields were all rejected as
+diagram-clutter, the same failure family as the 21-label plumbing circuit. One idea per figure,
+fewest possible elements.
+
 **Gated:** `figure_type_within_standard` (source side) + the per-element render probe (rendered
 side: scale == 1, and a pairwise bounding-box collision check over every `<text>`).
 **Probe gap found 2026-07-30:** a text-vs-text collision check is blind to a label painted BEFORE an
