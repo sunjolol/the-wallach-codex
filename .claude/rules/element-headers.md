@@ -18,9 +18,56 @@ session re-derives them.
 3. Build the winner into the live entity page.
 4. **STOP for his visual sign-off** before logging or committing (`visual-verification.md`).
 
+## ★★★ Rule 0 — ONLY FOUR THINGS ARE FIXED. The rest is not a template. (Luneth 2026-07-30)
+He rejected **eight** calcium mockups across two rounds for one reason, and it outranks every other
+rule in this file:
+
+> "you keep following the same structure/template. There's no way 3 minerals in a row fit cleanly as
+> an illustration > into a 1-2-3 point > into a big number statement > into a wallach quote — as the
+> BEST way to display all of these… stop constraining yourself under this template which I've
+> explicitly told you to avoid over and over."
+
+**The ONLY fixed parts of an element header:**
+1. The **opening statement** (the `lede` above "At a glance").
+2. **"why this number?"** (the daily-target provenance tip).
+3. The **width** — it must match the element detail screen exactly.
+4. The **background colour / main content box** — because it leads into the Best Youngevity
+   sources block.
+
+**Everything else in the main block adapts to the content and the claims.** The number of sections,
+whether there are beats at all, whether there is a big stat number, whether there is a pull quote,
+what the illustration is, and the ORDER of all of it — all of that is a per-element design decision.
+A header with no beats, or two figures and no quote, or a quote first, or nothing but an annotated
+illustration, are all legitimate if that is what the element's material wants.
+
+### ⚠ WHY PROSE ALONE DID NOT STOP THIS — the schema IS the template
+This file has said "bespoke, not stamped from a template" since it was written, and it did not help,
+because **the data structure only permits one shape.** Measured 2026-07-30 in
+`core/schemas/mechanism-clarity.ts`:
+
+- `MechanismSchema` **REQUIRES**: `eyebrow` · `kill` · `figure` · `figure_alt` · `beats[]` ·
+  `quote_claim`. That mandatory set *is* the rejected chassis.
+- Everything that looks like design freedom — `hook` · `split` · `bridge` · `figure_pre_beats` ·
+  `figure_post_beats` · `beats_layout` · `coda` · `stat` — is an OPTIONAL EXTRA bolted onto it.
+- `views/entity-page.ts::renderMechanism` emits those blocks in ONE hard-coded order.
+
+So "compose it bespoke from the optional blocks" can only ever produce the same skeleton wearing
+different clothes. **Do not start the next element by designing mockups.** Either give the renderer
+an ordered, self-describing block list (each entry declaring its own type, so an entry can omit
+beats/stat/quote entirely and set its own sequence), or accept a per-element render path. Until the
+structure can express a different shape, every "bespoke" header will regress to this one.
+
 ## ★ Rule 1 — mock up inside the REAL container, never a bespoke sheet
 A header does not live on a blank page. It renders inside the tan `.kd-ep-fam` box
-(`--ds-paper-deep`) at a **measured 867px** content width, tinted by the element's category accent.
+(`--ds-paper-deep`), tinted by the element's category accent.
+
+**Two different widths, and confusing them silently mis-scales every label (measured 2026-07-30):**
+the `.kd-ep` detail screen is ~867px, but `.kd-ep-fam` has `clientWidth` **865px** and carries
+`padding: var(--ds-space-5)` (24px a side), so the real ceiling for a FIGURE is **817px**. A figure
+authored at 820 rendered at scale 0.996 and quietly taxed every label in it. Prefer the two shipped
+slots, which are exact and need no new CSS: `--fork` = **700px**, `--rail` = **660px**.
+*(This line previously read "a measured 867px content width" with no distinction — that number is the
+outer screen, not the figure box.)*
 
 Build the mockup shell by reproducing the live DOM ancestry and loading the app's real stylesheets:
 
@@ -60,8 +107,18 @@ smaller node than copper's and was cramped at 17.6, so it ships at **14.6px** vi
 rule and the size silently does not change. Any override of a `kd-ep-fam__*` property needs
 matching specificity, not just width.
 
+**A THIRD invisible-in-source trap (2026-07-30): an SVG `fill="…"` presentation attribute LOSES
+to any CSS class rule.** A white glyph written `<text class="kd-ep-fam__gglyph" fill="#fff">` over an
+accent shape rendered accent-on-accent — invisible. Use `style="fill:#fff"`. This shipped twice on one
+page before a screenshot caught it.
+
 **Gated:** `figure_type_within_standard` (source side) + the per-element render probe (rendered
 side: scale == 1, and a pairwise bounding-box collision check over every `<text>`).
+**Probe gap found 2026-07-30:** a text-vs-text collision check is blind to a label painted BEFORE an
+opaque shape that covers it — it renders truncated and every check stays green. Add a paint-order
+occlusion check, intersect each shape against its nearest `clip-path` ancestor (a clipped-away shape
+still reports a full bounding box, which over-fires), and ship it with a negative control proving the
+detector fires ([[negative-control-or-it-proves-nothing]]).
 
 ## ★ Rule 7 — grep the class name before you claim it, and keep a regression pass
 Two failures, both from the zinc header, both invisible on the element's own page:

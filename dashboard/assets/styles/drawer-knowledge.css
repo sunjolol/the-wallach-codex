@@ -2397,8 +2397,8 @@
    Same precedent as the hair swatches above. FILL and OUTLINE are separate passes: the white tip
    and the half-moon are clipped to the nail and drawn between them, so the outline lands on top
    and neither can overshoot the nail bed (Luneth 2026-07-29 — it overshot when merely inset). */
-#drawer-knowledge-mount .kd-ep-fam__skin     { fill: #e8bb9a; stroke: #ba8560; stroke-width: 1.4; }
-#drawer-knowledge-mount .kd-ep-fam__nail     { fill: #f5d2b8; stroke: none; }
+#drawer-knowledge-mount .kd-ep-fam__skin     { fill: #f2c5a3; stroke: #ba8560; stroke-width: 1.4; }
+#drawer-knowledge-mount .kd-ep-fam__nail     { fill: #f9d7c2; stroke: none; }
 #drawer-knowledge-mount .kd-ep-fam__nailline { fill: none; stroke: #c08c66; stroke-width: 1.2; }
 #drawer-knowledge-mount .kd-ep-fam__ntip     { fill: #fffefb; stroke: none; }
 #drawer-knowledge-mount .kd-ep-fam__nlun     { fill: #fae2d0; stroke: none; }
