@@ -240,6 +240,113 @@
       },
       "quote_claim": "WAL-CLM-RARE-000046",
       "highlight": "DNA and genes are powerless"
+    },
+    {
+      "slug": "calcium",
+      "facet": "mechanism",
+      "cards": true,
+      "blocks": [
+        {
+          "type": "eyebrow",
+          "text": "The highest leverage essential"
+        },
+        {
+          "type": "kill",
+          "text": "Miss any mineral and about 10 diseases can follow.\nMiss calcium, and Wallach counts 147."
+        },
+        {
+          "type": "figure",
+          "width": "fork",
+          "figure": {
+            "key": "disease_scale",
+            "alt": "A comparison of two numbers. On the left, about 10, labelled any other mineral. On the right, a much larger 147 in blue, labelled calcium.",
+            "labels": {
+              "scale_top": "DEFICIENCY DISEASES PER MISSING MINERAL",
+              "scale_small": "~10",
+              "scale_small_label": "any other mineral",
+              "scale_big": "147",
+              "scale_big_label": "CALCIUM"
+            }
+          }
+        },
+        {
+          "type": "prose",
+          "tone": "bridge",
+          "text": "Why does one mineral reach so far? Because nearly all of it is locked in bone — and the little that isn’t runs every heartbeat, nerve and muscle."
+        },
+        {
+          "type": "split",
+          "left": {
+            "head": "When it’s there",
+            "text": "Every heartbeat, nerve signal and muscle contraction spends a little calcium. It is the current that lets a cell fire and reset — which is why the working pool is defended so fiercely.",
+            "evidence_caption": "Why the timing matters",
+            "quote_claim": "WAL-CLM-LETS-000078"
+          },
+          "right": {
+            "head": "When it’s short",
+            "text": "The signals misfire first: cramps, twitches, a twitching eyelid. Wallach warns the danger is inside the cell, where levels fall far enough to cause convulsions before a low blood reading ever appears.",
+            "evidence_caption": "What the working pool costs to defend",
+            "note": "To keep that current flowing, the parathyroid glands pull calcium from bone on demand. Run the deficiency long enough and they enlarge from overwork — which a surgeon can mistake for a tumour."
+          }
+        },
+        {
+          "type": "figure",
+          "width": "fork",
+          "figure": {
+            "key": "heartbeat",
+            "alt": "An anatomical heart in warm red, centred, with a blue heartbeat-monitor line running the full width and a white beat lighting up as it crosses the heart. Caption: every heartbeat spends a little calcium.",
+            "labels": {
+              "heart_title": "CALCIUM · THE LIVING 1%",
+              "heart_caption": "Every heartbeat spends a little calcium"
+            }
+          }
+        },
+        {
+          "type": "beats",
+          "layout": "row",
+          "items": [
+            {
+              "n": "First",
+              "title": "The current runs down",
+              "text": "Cell-level calcium falls before the blood level does. Muscles cramp, the eyelid twitches — the signalling system starting to stutter.",
+              "hook": "The first symptoms are electrical, not skeletal.",
+              "traces": [
+                "WAL-CLM-LETS-000078"
+              ]
+            },
+            {
+              "n": "Then",
+              "title": "The reserve is raided",
+              "text": "The parathyroids pull harder from bone to defend the current. Left running, they swell from overwork — and the gland gets mistakenly called a tumour.",
+              "hook": "A gland worked to exhaustion, mistaken for a growth.",
+              "traces": [
+                "WAL-CLM-IMMORT-000073",
+                "WAL-CLM-DDDL-000088"
+              ]
+            },
+            {
+              "n": "After",
+              "title": "Absorbable calcium",
+              "turn": true,
+              "text": "Not just any calcium — the metallic kind ground into most tablets and “fortified” foods is barely absorbed. Wallach’s fix is calcium a plant has already made cell-ready, plus the stomach acid to take it up.",
+              "hook": "Feed the current, and the raid on the bone stops.",
+              "cta": {
+                "label": "Explore the absorption facts",
+                "tab": "foods"
+              },
+              "traces": [
+                "WAL-CLM-RARE-000106",
+                "WAL-CLM-DDDL-000058"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "claim": "WAL-CLM-IMMORT-000015",
+          "highlight": "147 different diseases"
+        }
+      ]
     }
   ]
 }

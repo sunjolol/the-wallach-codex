@@ -4928,7 +4928,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     traces: external_exports.array(external_exports.string()),
     // Marks the beat where the story TURNS (deficiency -> remedy). Semantic, not a colour:
     // the stylesheet decides that a turn beat reads in the category accent.
-    turn: external_exports.boolean().optional()
+    turn: external_exports.boolean().optional(),
+    // An optional CTA button (calcium's "After" beat -> the absorption tab). `tab` is a
+    // data-kd-tab target the knowledge-drawer tab handler already switches on; `label` is prose.
+    cta: external_exports.object({ label: external_exports.string(), tab: external_exports.string() }).passthrough().optional()
   }).passthrough();
   var MechFigureSchema = external_exports.object({
     key: external_exports.string(),
@@ -4950,7 +4953,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     text: external_exports.string(),
     evidence_caption: external_exports.string().optional(),
     quote_claim: external_exports.string().optional(),
-    field: MechFieldSchema.optional()
+    field: MechFieldSchema.optional(),
+    // A prose evidence card (calcium's "what the working pool costs" cell): a plain-language gloss
+    // in the evidence row when the side's evidence is neither a sealed quote nor a field. Mutually
+    // exclusive with quote_claim/field by authoring convention.
+    note: external_exports.string().optional()
   }).passthrough();
   var MechSplitSchema = external_exports.object({
     left: MechSideSchema,
@@ -5022,7 +5029,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var MechComposedSchema = external_exports.object({
     slug: external_exports.string(),
     facet: external_exports.string(),
-    blocks: external_exports.array(MechBlockSchema).min(1)
+    blocks: external_exports.array(MechBlockSchema).min(1),
+    // Opt-in to the card treatment (calcium): the renderer adds `kd-ep-fam--cards` to the section and
+    // the stylesheet restyles THIS entry's split cells + beat steps as tinted cards. Scoped so the
+    // signed-off legacy headers (which never carry this field) render visually unchanged.
+    cards: external_exports.boolean().optional()
   }).passthrough();
   var MechanismClaritySchema = external_exports.object({
     disclaimer: external_exports.string(),
@@ -72724,6 +72735,113 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         quote_claim: "WAL-CLM-RARE-000046",
         highlight: "DNA and genes are powerless"
+      },
+      {
+        slug: "calcium",
+        facet: "mechanism",
+        cards: true,
+        blocks: [
+          {
+            type: "eyebrow",
+            text: "The highest leverage essential"
+          },
+          {
+            type: "kill",
+            text: "Miss any mineral and about 10 diseases can follow.\nMiss calcium, and Wallach counts 147."
+          },
+          {
+            type: "figure",
+            width: "fork",
+            figure: {
+              key: "disease_scale",
+              alt: "A comparison of two numbers. On the left, about 10, labelled any other mineral. On the right, a much larger 147 in blue, labelled calcium.",
+              labels: {
+                scale_top: "DEFICIENCY DISEASES PER MISSING MINERAL",
+                scale_small: "~10",
+                scale_small_label: "any other mineral",
+                scale_big: "147",
+                scale_big_label: "CALCIUM"
+              }
+            }
+          },
+          {
+            type: "prose",
+            tone: "bridge",
+            text: "Why does one mineral reach so far? Because nearly all of it is locked in bone \u2014 and the little that isn\u2019t runs every heartbeat, nerve and muscle."
+          },
+          {
+            type: "split",
+            left: {
+              head: "When it\u2019s there",
+              text: "Every heartbeat, nerve signal and muscle contraction spends a little calcium. It is the current that lets a cell fire and reset \u2014 which is why the working pool is defended so fiercely.",
+              evidence_caption: "Why the timing matters",
+              quote_claim: "WAL-CLM-LETS-000078"
+            },
+            right: {
+              head: "When it\u2019s short",
+              text: "The signals misfire first: cramps, twitches, a twitching eyelid. Wallach warns the danger is inside the cell, where levels fall far enough to cause convulsions before a low blood reading ever appears.",
+              evidence_caption: "What the working pool costs to defend",
+              note: "To keep that current flowing, the parathyroid glands pull calcium from bone on demand. Run the deficiency long enough and they enlarge from overwork \u2014 which a surgeon can mistake for a tumour."
+            }
+          },
+          {
+            type: "figure",
+            width: "fork",
+            figure: {
+              key: "heartbeat",
+              alt: "An anatomical heart in warm red, centred, with a blue heartbeat-monitor line running the full width and a white beat lighting up as it crosses the heart. Caption: every heartbeat spends a little calcium.",
+              labels: {
+                heart_title: "CALCIUM \xB7 THE LIVING 1%",
+                heart_caption: "Every heartbeat spends a little calcium"
+              }
+            }
+          },
+          {
+            type: "beats",
+            layout: "row",
+            items: [
+              {
+                n: "First",
+                title: "The current runs down",
+                text: "Cell-level calcium falls before the blood level does. Muscles cramp, the eyelid twitches \u2014 the signalling system starting to stutter.",
+                hook: "The first symptoms are electrical, not skeletal.",
+                traces: [
+                  "WAL-CLM-LETS-000078"
+                ]
+              },
+              {
+                n: "Then",
+                title: "The reserve is raided",
+                text: "The parathyroids pull harder from bone to defend the current. Left running, they swell from overwork \u2014 and the gland gets mistakenly called a tumour.",
+                hook: "A gland worked to exhaustion, mistaken for a growth.",
+                traces: [
+                  "WAL-CLM-IMMORT-000073",
+                  "WAL-CLM-DDDL-000088"
+                ]
+              },
+              {
+                n: "After",
+                title: "Absorbable calcium",
+                turn: true,
+                text: "Not just any calcium \u2014 the metallic kind ground into most tablets and \u201Cfortified\u201D foods is barely absorbed. Wallach\u2019s fix is calcium a plant has already made cell-ready, plus the stomach acid to take it up.",
+                hook: "Feed the current, and the raid on the bone stops.",
+                cta: {
+                  label: "Explore the absorption facts",
+                  tab: "foods"
+                },
+                traces: [
+                  "WAL-CLM-RARE-000106",
+                  "WAL-CLM-DDDL-000058"
+                ]
+              }
+            ]
+          },
+          {
+            type: "quote",
+            claim: "WAL-CLM-IMMORT-000015",
+            highlight: "147 different diseases"
+          }
+        ]
       }
     ]
   };
@@ -179791,6 +179909,49 @@ Sickle cell anemia`,
       <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="520" y="202" text-anchor="middle">${figLabel(labels, "outcome_off")}</text>
     </svg>`;
   }
+  function diseaseScaleFigure(alt, labels) {
+    const L = labels ?? {};
+    const g = (k) => escHTML6(L[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 176" role="img" aria-label="${escHTML6(alt)}">
+      <defs><linearGradient id="kd-ep-scale-num" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:var(--ds-accent-bright)"/><stop offset="0.6" style="stop-color:var(--ds-accent)"/><stop offset="1" style="stop-color:var(--ds-accent-deep)"/>
+      </linearGradient></defs>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute kd-ep-fam__gtag--strong" x="350" y="18" text-anchor="middle">${g("scale_top")}</text>
+      <line class="kd-ep-fam__scaledash" x1="250" y1="46" x2="250" y2="150"/>
+      <text class="kd-ep-fam__scalenum kd-ep-fam__scalenum--sm" x="130" y="120" text-anchor="middle">${g("scale_small")}</text>
+      <text class="kd-ep-fam__glabel" x="130" y="144" text-anchor="middle">${g("scale_small_label")}</text>
+      <text class="kd-ep-fam__scalenum" x="474" y="140" text-anchor="middle" fill="url(#kd-ep-scale-num)">${g("scale_big")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="474" y="166" text-anchor="middle">${g("scale_big_label")}</text>
+    </svg>`;
+  }
+  function heartbeatFigure(alt, labels) {
+    const L = labels ?? {};
+    const g = (k) => escHTML6(L[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 249" role="img" aria-label="${escHTML6(alt)}">
+      <defs>
+        <linearGradient id="kd-ep-heart-fill" x1="0" y1="0" x2="0.4" y2="1">
+          <stop offset="0" stop-color="#e07a5f"/><stop offset="0.55" stop-color="#c0392b"/><stop offset="1" stop-color="#8f271c"/>
+        </linearGradient>
+        <radialGradient id="kd-ep-heart-glow" cx="0.5" cy="0.45" r="0.62">
+          <stop offset="0" stop-color="#f0c9be" stop-opacity="0.5"/><stop offset="1" stop-color="#c0392b" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="kd-ep-heart-fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.11" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="0.89" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="kd-ep-heart-mask"><rect x="0" y="0" width="700" height="249" fill="url(#kd-ep-heart-fade)"/></mask>
+      </defs>
+      <text class="kd-ep-fam__figtitle" x="350" y="26" text-anchor="middle">${g("heart_title")}</text>
+      <path class="kd-ep-fam__ecgbase" mask="url(#kd-ep-heart-mask)" d="M30 145 H150 L157 136 L164 154 L171 145 H526 L533 136 L540 154 L547 145 H670"/>
+      <g transform="translate(270,49)">
+        <circle cx="90" cy="82" r="100" fill="url(#kd-ep-heart-glow)"/>
+        <path fill="url(#kd-ep-heart-fill)" d="M90 42 C78 14 40 8 22 30 C2 54 8 94 42 124 L90 170 L138 124 C172 94 178 54 158 30 C140 8 102 14 90 42 Z"/>
+      </g>
+      <path class="kd-ep-fam__ecgglow" d="M307 145 H325 L331 137 L337 145 H347 L352 152 L358 112 L364 162 L370 145 H383 L392 134 L401 145 H411"/>
+      <path class="kd-ep-fam__ecgbeat" d="M307 145 H325 L331 137 L337 145 H347 L352 152 L358 112 L364 162 L370 145 H383 L392 134 L401 145 H411"/>
+      <text class="kd-ep-fam__figcap" x="350" y="240" text-anchor="middle">${g("heart_caption")}</text>
+    </svg>`;
+  }
   function mechanismFigure(key, alt, labels) {
     switch (key) {
       case "rancidity":
@@ -179805,6 +179966,10 @@ Sickle cell anemia`,
         return nailSpotsFigure(alt, labels);
       case "metal_fingers":
         return metalFingersFigure(alt, labels);
+      case "disease_scale":
+        return diseaseScaleFigure(alt, labels);
+      case "heartbeat":
+        return heartbeatFigure(alt, labels);
       default:
         return "";
     }
@@ -179829,6 +179994,9 @@ Sickle cell anemia`,
   function mechEvidence(side) {
     if (side.field !== void 0) {
       return proportionField(side.field);
+    }
+    if (side.note !== void 0 && side.note.length > 0) {
+      return `<p class="kd-ep-fam__splittx kd-ep-fam__evnote">${glossify(collapseWS(side.note))}</p>`;
     }
     const c = side.quote_claim !== void 0 ? getClaim(side.quote_claim) : null;
     if (c === null) {
@@ -179879,13 +180047,14 @@ Sickle cell anemia`,
     const steps = items.map((b) => {
       const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
       const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
+      const cta = b.cta !== void 0 ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML6(b.cta.tab)}">${escHTML6(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>` : "";
       return `
       <div class="kd-ep-fam__step${turn}">
         <span class="kd-ep-fam__num">${escHTML6(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
-          ${hook}
+          ${cta}${hook}
         </div>
       </div>`;
     }).join("");
@@ -179958,8 +180127,10 @@ Sickle cell anemia`,
     if (m === void 0) {
       return "";
     }
-    const body = isComposedMech(m) ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
-    return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML6(category ?? "")}">
+    const composed = isComposedMech(m);
+    const body = composed ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
+    const cardsMod = composed && m.cards === true ? " kd-ep-fam--cards" : "";
+    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}" data-category="${escHTML6(category ?? "")}">
       ${body}
       <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}
@@ -184837,7 +185008,7 @@ TWO OPEN BLOCKERS, both carried into the handoff. The 99/1 split has no home on 
 
 Re-reading 26 load-bearing claims at the byte level also produced a source-purification queue, all in calcium's best passages: LETS-000079 ("nonnal" plus front-severed, which leaves calcium's strongest rhetorical passage unprintable), LETS-000285 ("phosphoms" four times), LETS-000168 ("magnesiumat", "t.i.d.foras"), EPIGEN-000232 (a stray period mid-sentence), DDDL-000088 (missing its terminal period). It caught two agent errors as well: two evidence packets disagreed about whether DDDL-000088 was severed (it has no terminal period and co-bills magnesium, so it can never be presented as calcium-only), and one packet claimed a scan found zero verbatim hits for the 99/1 split when it is present in word form.
 
-Verified at close: build OK, invariants 78/78 with zero new reds, render_probe_zinc 57/57, no_operating_doc_contradiction clean after the playbook rewrite. Nothing touched is a pillar or a sealed canonical, so no seal was needed. The calcium content that survived both rounds is preserved in chronicle/next-chunk.md with every claim id and every forbidden claim named, so the next session re-derives nothing.` }, { id: "lg_ms7h9rve_rzyl0h", ts: "2026-07-30T07:16:28.250869-05:00", surface: "headers", kind: "milestone", summary: "Element headers can now be a DIFFERENT SHAPE: the mechanism schema takes an ordered self-describing block list where nothing is required, and the three signed-off headers are proven byte-identical", detail: "Element headers can finally be a DIFFERENT SHAPE, not just different clothes on the same body.\n\nEight calcium header mockups were rejected across two rounds, and the reason was not taste \u2014 it was the data structure. The schema REQUIRED eyebrow, headline, figure, beats[] and a quote on every entry, and the renderer emitted them in one hard-coded order. Everything that looked like design freedom (the hook, the split, the bridge, the two extra figure slots, the coda, the stat) was an optional extra bolted onto that one skeleton. So \"design it bespoke\" could not succeed: the only thing a new header could change was its clothes. The playbook had said \"bespoke, not a template\" since the day it was written and it never helped, because the structure outvoted the prose.\n\nWHAT LANDED. core/schemas/mechanism-clarity.ts now accepts either of two shapes. LEGACY (MechanismSchema) is untouched, and selenium/copper/zinc stay on it. COMPOSED is {slug, facet, blocks[]} \u2014 an ordered, self-describing list over a 9-type discriminated union: eyebrow, kill, opener, figure, prose (tone bridge|coda), split, beats (items[], layout stack|row), stat, quote. Nothing is required. An entry may carry no beats, no stat, no quote, the quote first, two figures and nothing else, or nothing but an annotated illustration. figure.width is a CLOSED enum (mech 600 / fork 700 / rail 660) and REQUIRED, because the base .kd-ep-fam__figure rule is an ID selector \u2014 a width override at lower specificity silently loses and the figure renders at 560px with every label inside quietly shrunk. A closed enum turns that trap into a parse error. isComposedMech is a type predicate rather than an `'blocks' in m` check, because zod .passthrough() infers an index signature on both union members, so `in` narrows nothing.\n\nviews/entity-page.ts was restructured so the markup for each renderable unit exists exactly ONCE: mechEyebrow, mechKill, mechOpener, mechFigureRow, mechProse, mechBeats, mechStat, plus the existing renderMechSplit and fatFamilyQuote. Both paths call those emitters. renderMechLegacy now declares the old ORDER and nothing else; renderMechBlocks walks the order the data declares. Its switch is exhaustive with no default returning '', so adding a block type to the schema without a render case is a COMPILE error instead of a block that silently renders nothing. The frame Rule 0 fixes \u2014 the tan content box, the disclaimer, and the Best-Youngevity-sources dock at the bottom \u2014 is the only fixed structure left.\n\nPROOF, not assertion. The three headers Luneth signed off had to not move. Before touching anything, the rendered .kd-ep-fam--mech section for each was captured from the pre-refactor bundle; after the refactor, all three are byte-identical by sha256 (selenium 4e12ec2a67, copper 91d46b8494, zinc adddec26c5 \u2014 pre == post). Those bytes are committed as tools/goldens/mechanism-sections.json and re-checked every run by tools/render_probe_mech_shape.js (18/18), which also carries a negative control: it mutates the live DOM by one character and asserts the comparison then FAILS, so the byte comparison is proven to fire rather than assumed to.\n\nNEW GATE. mechanism_blocks_wellformed (critical, 17-case negative test) closes the failure class the composed shape buys: a data-driven dispatch fails SILENTLY. It proves the schema's block types and renderMechBlocks' cases are the same set in BOTH directions, that every figure key the store names is one mechanismFigure actually draws, and that every claim the store cites resolves in the sealed corpus. The last two now cover the legacy entries as well, which never had them.\n\nTWO TOOLING TRAPS, both found by running things rather than reading them, both recorded in the handoff. (1) safe_write writes text in Windows text mode, so an LF snapshot lands on disk as CRLF \u2014 the first golden comparison read as \"all 256 lines differ\" against a completely unchanged render, and the first reading wrongly blamed the source file's line endings (a template literal's CRLF normalises to LF when evaluated, so line endings never reach the DOM at all). Byte-exact snapshots now live INSIDE JSON, where a newline is a two-character \\n escape that survives that write path, so the comparison stays raw with no normalisation that could hide a real change. (2) The sealed claim shards key the id as `id`, not `claim_id`. The new gate's first draft read claim_id, built an empty id set, and reddened all 26 genuine references \u2014 a gate lying about clean data. Both are pinned as test cases.\n\nHONEST GAP (R7). The composed RENDER path has no runtime coverage yet, because no element declares blocks. Its data contract is gated and its code is type-exhaustive, but the first composed header must bring a probe that actually renders it. Labelled, not covered.\n\nVERIFIED: tsc clean; eslint zero new errors (4 pre-existing multiline-ternary errors cleared as a side effect); build OK; invariants 79/79 (was 78/78, +1 new); render_probe_mech_shape 18/18; render_probe_zinc 57/57; render_probe_copper 47/47; render_probe_mechanism, render_probe_entity, render_probe_knowledge all PASS. No visual change to any surface, so no visual sign-off was required or claimed." }, { id: "lg_ms7mdqza_hz0jdz", ts: "2026-07-30T09:39:31.798271-05:00", surface: "headers", kind: "incident", summary: "Second failed calcium attempt: 12 mockups now rejected. Wrong quote font and sparse headers were fixed mid-session; the illustrations were not \u2014 strokes through labels, chaotic figures. All four measured perfectly, which is the lesson.", detail: 'A second failed calcium attempt, recorded honestly. Twelve header mockups have now been rejected across three rounds and nothing about calcium has shipped.\n\nWHAT I FIXED MID-SESSION. Two of his three complaints were real defects with identifiable causes. (1) The quotes rendered in the wrong font because I hand-wrote `<blockquote class="ds-pull-quote">text<footer>` instead of the live structure, which is three nested elements: `.ds-pull-quote-wrap.kd-ep-fam__quote > blockquote.ds-pull-quote > p + footer`. The outer wrapper carries the --mech size (clamp(1.05rem,1.05vw,1.35rem)) and the inner <p> carries the serif; omitting both dropped the text to the display face at the 2vw base. I had also invented mk-diptych / mk-col__tx / mk-mini-q / mk-bridge / mk-chip__* as look-alikes for real classes, and four SVG classes that do not exist at all (__sieve, __rail, __return, __retdot \u2014 the real ones are __vessel, __grail, __greturn, __gretdot). Rebuilt using only markup read out of tools/goldens/mechanism-sections.json, which holds the exact rendered DOM of the three shipped headers. (2) The headers were far too sparse \u2014 3 to 5 blocks. He said he would rather have the repetitive selenium/copper chassis than a sparse bespoke one, which is the correct reading: freeing the block ORDER was never a licence to ship less. Rebuilt every variant to copper\'s density or above.\n\nWHAT I DID NOT FIX, AND IT IS THE ACTUAL PROBLEM. The illustrations. His closing words: "Still missing the mark, also a lot of weird lines cutting through text and just chaotic illustrations in general that aren\'t engaging." Strokes routed through labels shipped twice in one session \u2014 including a needle drawn straight through the word "normal" \u2014 and the figures read as diagram-clutter (multi-exit funnels, two-lane bars, tick fields), the same failure family as the 21-label plumbing circuit rejected in round 1.\n\nTHE MEASUREMENT LESSON, which is the durable one. All four rejected variants measured PERFECTLY: every figure at scale 1, only 12px and 17.6px type, zero text-vs-text overlaps, zero escapes, split evidence cells top-aligned, no page errors, board 79/79. The instrument certified work that failed on sight, because the collision check compares text against text and is structurally blind to a STROKE crossing a label. That gap is now the blocking item before anyone attempts calcium again: add a stroke/shape-vs-text intersection check, intersect each shape against its nearest clip-path ancestor (a clipped-away shape still reports a full bbox and would over-fire), and ship it with a negative control proving the detector fires. Specified in the handoff, not built.\n\nONE NEW SOURCE FINDING worth keeping: the "cofactor and activator for numerous enzyme systems" phrase for calcium lives ONLY in WAL-CLM-EPIGEN-000232 and WAL-CLM-IMMORT-000065 \u2014 the same two claims that carry the 99/1 split and have an EMPTY essentials[] array. So that phrase is equally unusable until the mapping is closed and Luneth re-seals. Separately, RARE-000061\'s 98%-vs-8-12% absorption figure is about plant-derived minerals generally and is NOT mapped to calcium, so I removed an ~87% bar fill that would have implied an unsourced proportion for calcium.\n\nSTATE AT CLOSE: board 79/79 green, working tree clean apart from the rejected mockup page left uncommitted for reference. The structural work from earlier in this session (the composed blocks[] shape, its gate, and the byte-identity proof for the three signed-off headers) is committed at 974f5574 and stands \u2014 that half succeeded. Luneth is moving to Opus 4.8 for the calcium design.' }];
+Verified at close: build OK, invariants 78/78 with zero new reds, render_probe_zinc 57/57, no_operating_doc_contradiction clean after the playbook rewrite. Nothing touched is a pillar or a sealed canonical, so no seal was needed. The calcium content that survived both rounds is preserved in chronicle/next-chunk.md with every claim id and every forbidden claim named, so the next session re-derives nothing.` }, { id: "lg_ms7h9rve_rzyl0h", ts: "2026-07-30T07:16:28.250869-05:00", surface: "headers", kind: "milestone", summary: "Element headers can now be a DIFFERENT SHAPE: the mechanism schema takes an ordered self-describing block list where nothing is required, and the three signed-off headers are proven byte-identical", detail: "Element headers can finally be a DIFFERENT SHAPE, not just different clothes on the same body.\n\nEight calcium header mockups were rejected across two rounds, and the reason was not taste \u2014 it was the data structure. The schema REQUIRED eyebrow, headline, figure, beats[] and a quote on every entry, and the renderer emitted them in one hard-coded order. Everything that looked like design freedom (the hook, the split, the bridge, the two extra figure slots, the coda, the stat) was an optional extra bolted onto that one skeleton. So \"design it bespoke\" could not succeed: the only thing a new header could change was its clothes. The playbook had said \"bespoke, not a template\" since the day it was written and it never helped, because the structure outvoted the prose.\n\nWHAT LANDED. core/schemas/mechanism-clarity.ts now accepts either of two shapes. LEGACY (MechanismSchema) is untouched, and selenium/copper/zinc stay on it. COMPOSED is {slug, facet, blocks[]} \u2014 an ordered, self-describing list over a 9-type discriminated union: eyebrow, kill, opener, figure, prose (tone bridge|coda), split, beats (items[], layout stack|row), stat, quote. Nothing is required. An entry may carry no beats, no stat, no quote, the quote first, two figures and nothing else, or nothing but an annotated illustration. figure.width is a CLOSED enum (mech 600 / fork 700 / rail 660) and REQUIRED, because the base .kd-ep-fam__figure rule is an ID selector \u2014 a width override at lower specificity silently loses and the figure renders at 560px with every label inside quietly shrunk. A closed enum turns that trap into a parse error. isComposedMech is a type predicate rather than an `'blocks' in m` check, because zod .passthrough() infers an index signature on both union members, so `in` narrows nothing.\n\nviews/entity-page.ts was restructured so the markup for each renderable unit exists exactly ONCE: mechEyebrow, mechKill, mechOpener, mechFigureRow, mechProse, mechBeats, mechStat, plus the existing renderMechSplit and fatFamilyQuote. Both paths call those emitters. renderMechLegacy now declares the old ORDER and nothing else; renderMechBlocks walks the order the data declares. Its switch is exhaustive with no default returning '', so adding a block type to the schema without a render case is a COMPILE error instead of a block that silently renders nothing. The frame Rule 0 fixes \u2014 the tan content box, the disclaimer, and the Best-Youngevity-sources dock at the bottom \u2014 is the only fixed structure left.\n\nPROOF, not assertion. The three headers Luneth signed off had to not move. Before touching anything, the rendered .kd-ep-fam--mech section for each was captured from the pre-refactor bundle; after the refactor, all three are byte-identical by sha256 (selenium 4e12ec2a67, copper 91d46b8494, zinc adddec26c5 \u2014 pre == post). Those bytes are committed as tools/goldens/mechanism-sections.json and re-checked every run by tools/render_probe_mech_shape.js (18/18), which also carries a negative control: it mutates the live DOM by one character and asserts the comparison then FAILS, so the byte comparison is proven to fire rather than assumed to.\n\nNEW GATE. mechanism_blocks_wellformed (critical, 17-case negative test) closes the failure class the composed shape buys: a data-driven dispatch fails SILENTLY. It proves the schema's block types and renderMechBlocks' cases are the same set in BOTH directions, that every figure key the store names is one mechanismFigure actually draws, and that every claim the store cites resolves in the sealed corpus. The last two now cover the legacy entries as well, which never had them.\n\nTWO TOOLING TRAPS, both found by running things rather than reading them, both recorded in the handoff. (1) safe_write writes text in Windows text mode, so an LF snapshot lands on disk as CRLF \u2014 the first golden comparison read as \"all 256 lines differ\" against a completely unchanged render, and the first reading wrongly blamed the source file's line endings (a template literal's CRLF normalises to LF when evaluated, so line endings never reach the DOM at all). Byte-exact snapshots now live INSIDE JSON, where a newline is a two-character \\n escape that survives that write path, so the comparison stays raw with no normalisation that could hide a real change. (2) The sealed claim shards key the id as `id`, not `claim_id`. The new gate's first draft read claim_id, built an empty id set, and reddened all 26 genuine references \u2014 a gate lying about clean data. Both are pinned as test cases.\n\nHONEST GAP (R7). The composed RENDER path has no runtime coverage yet, because no element declares blocks. Its data contract is gated and its code is type-exhaustive, but the first composed header must bring a probe that actually renders it. Labelled, not covered.\n\nVERIFIED: tsc clean; eslint zero new errors (4 pre-existing multiline-ternary errors cleared as a side effect); build OK; invariants 79/79 (was 78/78, +1 new); render_probe_mech_shape 18/18; render_probe_zinc 57/57; render_probe_copper 47/47; render_probe_mechanism, render_probe_entity, render_probe_knowledge all PASS. No visual change to any surface, so no visual sign-off was required or claimed." }, { id: "lg_ms7mdqza_hz0jdz", ts: "2026-07-30T09:39:31.798271-05:00", surface: "headers", kind: "incident", summary: "Second failed calcium attempt: 12 mockups now rejected. Wrong quote font and sparse headers were fixed mid-session; the illustrations were not \u2014 strokes through labels, chaotic figures. All four measured perfectly, which is the lesson.", detail: 'A second failed calcium attempt, recorded honestly. Twelve header mockups have now been rejected across three rounds and nothing about calcium has shipped.\n\nWHAT I FIXED MID-SESSION. Two of his three complaints were real defects with identifiable causes. (1) The quotes rendered in the wrong font because I hand-wrote `<blockquote class="ds-pull-quote">text<footer>` instead of the live structure, which is three nested elements: `.ds-pull-quote-wrap.kd-ep-fam__quote > blockquote.ds-pull-quote > p + footer`. The outer wrapper carries the --mech size (clamp(1.05rem,1.05vw,1.35rem)) and the inner <p> carries the serif; omitting both dropped the text to the display face at the 2vw base. I had also invented mk-diptych / mk-col__tx / mk-mini-q / mk-bridge / mk-chip__* as look-alikes for real classes, and four SVG classes that do not exist at all (__sieve, __rail, __return, __retdot \u2014 the real ones are __vessel, __grail, __greturn, __gretdot). Rebuilt using only markup read out of tools/goldens/mechanism-sections.json, which holds the exact rendered DOM of the three shipped headers. (2) The headers were far too sparse \u2014 3 to 5 blocks. He said he would rather have the repetitive selenium/copper chassis than a sparse bespoke one, which is the correct reading: freeing the block ORDER was never a licence to ship less. Rebuilt every variant to copper\'s density or above.\n\nWHAT I DID NOT FIX, AND IT IS THE ACTUAL PROBLEM. The illustrations. His closing words: "Still missing the mark, also a lot of weird lines cutting through text and just chaotic illustrations in general that aren\'t engaging." Strokes routed through labels shipped twice in one session \u2014 including a needle drawn straight through the word "normal" \u2014 and the figures read as diagram-clutter (multi-exit funnels, two-lane bars, tick fields), the same failure family as the 21-label plumbing circuit rejected in round 1.\n\nTHE MEASUREMENT LESSON, which is the durable one. All four rejected variants measured PERFECTLY: every figure at scale 1, only 12px and 17.6px type, zero text-vs-text overlaps, zero escapes, split evidence cells top-aligned, no page errors, board 79/79. The instrument certified work that failed on sight, because the collision check compares text against text and is structurally blind to a STROKE crossing a label. That gap is now the blocking item before anyone attempts calcium again: add a stroke/shape-vs-text intersection check, intersect each shape against its nearest clip-path ancestor (a clipped-away shape still reports a full bbox and would over-fire), and ship it with a negative control proving the detector fires. Specified in the handoff, not built.\n\nONE NEW SOURCE FINDING worth keeping: the "cofactor and activator for numerous enzyme systems" phrase for calcium lives ONLY in WAL-CLM-EPIGEN-000232 and WAL-CLM-IMMORT-000065 \u2014 the same two claims that carry the 99/1 split and have an EMPTY essentials[] array. So that phrase is equally unusable until the mapping is closed and Luneth re-seals. Separately, RARE-000061\'s 98%-vs-8-12% absorption figure is about plant-derived minerals generally and is NOT mapped to calcium, so I removed an ~87% bar fill that would have implied an unsourced proportion for calcium.\n\nSTATE AT CLOSE: board 79/79 green, working tree clean apart from the rejected mockup page left uncommitted for reference. The structural work from earlier in this session (the composed blocks[] shape, its gate, and the byte-identity proof for the three signed-off headers) is committed at 974f5574 and stands \u2014 that half succeeded. Luneth is moving to Opus 4.8 for the calcium design.' }, { id: "lg_ms7vhg9m_8qaye8", ts: "2026-07-30T13:54:21.082953-05:00", surface: "headers/calcium", kind: "milestone", summary: "Calcium element header ported LIVE (element #3): 147-vs-10 comparison, the 1% heartbeat heart, four when-there/short cards, First/Then/After beats with a working absorption CTA, Wallach's 147 quote \u2014 a CHECKPOINT commit; porting issues to fix next session", detail: 'Calcium\'s how-it-works header is now live on its entity page \u2014 the payoff of ~four rounds of mockups and Luneth\'s sign-off on temporary/calcium-header-v5.html. Opening Calcium in Knowledge now shows the big "147 vs ~10 diseases" comparison, a bridge, the mechanism as four designed cards, a heart lit by a full-width heartbeat-monitor line ("the living 1%"), the First/Then/After correction beats (After = a blue "Absorbable calcium" card with a working button that jumps to the absorption tab), and closes on Wallach\'s 147 quote.\n\nTECHNICAL: calcium is the FIRST composed mechanism entry. Schema (core/schemas/mechanism-clarity.ts) gained an opt-in `cards` flag (composed), a `note` prose-evidence field (split side), and a beat `cta`. Renderer (views/entity-page.ts): two figure fns on generic keys \u2014 diseaseScaleFigure (disease_scale) + heartbeatFigure (heartbeat) \u2014 plus the mechEvidence note branch, the mechBeats cta (empty for legacy \u2192 byte-identical), and the renderMechanism kd-ep-fam--cards modifier. Data: mechanism-clarity-data.json calcium entry (quotes by claim-ID LETS-000078 + IMMORT-000015, cards:true). CSS: drawer-knowledge.css figure text tiers (hero numerals/title/caption sit OUTSIDE the .kd-ep-fam__g* family the 12px figure-type gate governs, like statnum) + card treatment SCOPED to .kd-ep-fam--cards + Chakra Petch @font-face. Verified: build clean, invariants 79/79, render_probe_mech_shape 18/18 with copper/selenium/zinc BYTE-IDENTICAL, figures scale 1.0, CTA data-kd-tab=foods, kill pre-line, hook Chakra Petch, closing quote + 51 sources in DOM.\n\nKNOWN ISSUES \u2014 CHECKPOINT, NOT a sign-off (Luneth: "tons of mistakes porting it live", will fix next session, low on usage): (1) the "Why the timing matters" card shows LETS-000078\'s FULL sealed verbatim, ending "\u2026The normal range is 9-10.8 mg" \u2014 the number Luneth wants gone; R3 forbids hand-excerpting a live quote, so fix = prose note or a re-sealed trimmed claim. (2) other porting imperfections to review live. Deferred: render_probe_calcium.js; the "1%" formal source-mapping.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

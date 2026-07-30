@@ -1244,6 +1244,60 @@ function metalFingersFigure(alt: string, labels: Record<string, string> | undefi
 }
 
 /** Figure dispatch on a GENERIC key (never a slug) — keeps renderMechanism a pure projection. */
+/** The 10-vs-147 comparison (calcium): a small muted "~10" for any other mineral beside a giant
+ *  gradient "147" for calcium. The two hero numerals are DISPLAY-tier (.kd-ep-fam__scalenum, sized
+ *  like the pull-stat number and deliberately OUTSIDE the .kd-ep-fam__g* label/glyph family the 12px
+ *  standard governs -- a hero figure, not a data label); the two mono captions ARE 12px g-labels. */
+function diseaseScaleFigure(alt: string, labels?: Record<string, string>): string {
+  const L = labels ?? {};
+  const g = (k: string): string => escHTML(L[k] ?? '');
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 700 176" role="img" aria-label="${escHTML(alt)}">
+      <defs><linearGradient id="kd-ep-scale-num" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:var(--ds-accent-bright)"/><stop offset="0.6" style="stop-color:var(--ds-accent)"/><stop offset="1" style="stop-color:var(--ds-accent-deep)"/>
+      </linearGradient></defs>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute kd-ep-fam__gtag--strong" x="350" y="18" text-anchor="middle">${g('scale_top')}</text>
+      <line class="kd-ep-fam__scaledash" x1="250" y1="46" x2="250" y2="150"/>
+      <text class="kd-ep-fam__scalenum kd-ep-fam__scalenum--sm" x="130" y="120" text-anchor="middle">${g('scale_small')}</text>
+      <text class="kd-ep-fam__glabel" x="130" y="144" text-anchor="middle">${g('scale_small_label')}</text>
+      <text class="kd-ep-fam__scalenum" x="474" y="140" text-anchor="middle" fill="url(#kd-ep-scale-num)">${g('scale_big')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="474" y="166" text-anchor="middle">${g('scale_big_label')}</text>
+    </svg>`;
+}
+
+/** The living-1% heart (calcium): an anatomical heart (its red is DEPICTIVE, literal like copper's
+ *  hair colours, not a theme token) with a blue full-width heartbeat-monitor baseline that lights up
+ *  WHITE -- a reduced-height PQRST kept below the heart's top arch -- as it crosses the heart. The
+ *  two texts are a figure TITLE (accent) and a figure CAPTION (a sans sentence); neither is a 12px
+ *  mono data-label, so both sit outside the g-family. */
+function heartbeatFigure(alt: string, labels?: Record<string, string>): string {
+  const L = labels ?? {};
+  const g = (k: string): string => escHTML(L[k] ?? '');
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 700 249" role="img" aria-label="${escHTML(alt)}">
+      <defs>
+        <linearGradient id="kd-ep-heart-fill" x1="0" y1="0" x2="0.4" y2="1">
+          <stop offset="0" stop-color="#e07a5f"/><stop offset="0.55" stop-color="#c0392b"/><stop offset="1" stop-color="#8f271c"/>
+        </linearGradient>
+        <radialGradient id="kd-ep-heart-glow" cx="0.5" cy="0.45" r="0.62">
+          <stop offset="0" stop-color="#f0c9be" stop-opacity="0.5"/><stop offset="1" stop-color="#c0392b" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="kd-ep-heart-fade" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="0.11" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="0.89" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="kd-ep-heart-mask"><rect x="0" y="0" width="700" height="249" fill="url(#kd-ep-heart-fade)"/></mask>
+      </defs>
+      <text class="kd-ep-fam__figtitle" x="350" y="26" text-anchor="middle">${g('heart_title')}</text>
+      <path class="kd-ep-fam__ecgbase" mask="url(#kd-ep-heart-mask)" d="M30 145 H150 L157 136 L164 154 L171 145 H526 L533 136 L540 154 L547 145 H670"/>
+      <g transform="translate(270,49)">
+        <circle cx="90" cy="82" r="100" fill="url(#kd-ep-heart-glow)"/>
+        <path fill="url(#kd-ep-heart-fill)" d="M90 42 C78 14 40 8 22 30 C2 54 8 94 42 124 L90 170 L138 124 C172 94 178 54 158 30 C140 8 102 14 90 42 Z"/>
+      </g>
+      <path class="kd-ep-fam__ecgglow" d="M307 145 H325 L331 137 L337 145 H347 L352 152 L358 112 L364 162 L370 145 H383 L392 134 L401 145 H411"/>
+      <path class="kd-ep-fam__ecgbeat" d="M307 145 H325 L331 137 L337 145 H347 L352 152 L358 112 L364 162 L370 145 H383 L392 134 L401 145 H411"/>
+      <text class="kd-ep-fam__figcap" x="350" y="240" text-anchor="middle">${g('heart_caption')}</text>
+    </svg>`;
+}
+
 function mechanismFigure(key: string, alt: string, labels?: Record<string, string>): string {
   switch (key) {
     case 'rancidity':
@@ -1258,6 +1312,10 @@ function mechanismFigure(key: string, alt: string, labels?: Record<string, strin
       return nailSpotsFigure(alt, labels);
     case 'metal_fingers':
       return metalFingersFigure(alt, labels);
+    case 'disease_scale':
+      return diseaseScaleFigure(alt, labels);
+    case 'heartbeat':
+      return heartbeatFigure(alt, labels);
     default:
       return '';
   }
@@ -1290,6 +1348,9 @@ function proportionField(f: MechField): string {
 function mechEvidence(side: MechSide): string {
   if (side.field !== undefined) {
     return proportionField(side.field);
+  }
+  if (side.note !== undefined && side.note.length > 0) {
+    return `<p class="kd-ep-fam__splittx kd-ep-fam__evnote">${glossify(collapseWS(side.note))}</p>`;
   }
   const c = side.quote_claim !== undefined ? getClaim(side.quote_claim) : null;
   if (c === null) {
@@ -1378,13 +1439,16 @@ function mechBeats(items: readonly MechBeat[], mod: string): string {
       ? `<p class="kd-ep-fam__hook">${escHTML(b.hook)}</p>`
       : '';
     const turn = b.turn === true ? ' kd-ep-fam__step--turn' : '';
+    const cta = (b.cta !== undefined)
+      ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML(b.cta.tab)}">${escHTML(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>`
+      : '';
     return `
       <div class="kd-ep-fam__step${turn}">
         <span class="kd-ep-fam__num">${escHTML(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
-          ${hook}
+          ${cta}${hook}
         </div>
       </div>`;
   }).join('');
@@ -1483,8 +1547,10 @@ function renderMechanism(slug: string | null, layoutKey: string, category: strin
   if (m === undefined) {
     return '';
   }
-  const body = isComposedMech(m) ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
-  return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML(category ?? '')}">
+  const composed = isComposedMech(m);
+  const body = composed ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
+  const cardsMod = composed && m.cards === true ? ' kd-ep-fam--cards' : '';
+  return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}" data-category="${escHTML(category ?? '')}">
       ${body}
       <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}

@@ -52,6 +52,9 @@ const MechBeatSchema = z.object({
   // Marks the beat where the story TURNS (deficiency -> remedy). Semantic, not a colour:
   // the stylesheet decides that a turn beat reads in the category accent.
   turn: z.boolean().optional(),
+  // An optional CTA button (calcium's "After" beat -> the absorption tab). `tab` is a
+  // data-kd-tab target the knowledge-drawer tab handler already switches on; `label` is prose.
+  cta: z.object({ label: z.string(), tab: z.string() }).passthrough().optional(),
 }).passthrough();
 
 /** A figure slot: which GENERIC figure to draw (never a slug), its alt text, and the
@@ -87,6 +90,10 @@ const MechSideSchema = z.object({
   evidence_caption: z.string().optional(),
   quote_claim: z.string().optional(),
   field: MechFieldSchema.optional(),
+  // A prose evidence card (calcium's "what the working pool costs" cell): a plain-language gloss
+  // in the evidence row when the side's evidence is neither a sealed quote nor a field. Mutually
+  // exclusive with quote_claim/field by authoring convention.
+  note: z.string().optional(),
 }).passthrough();
 
 const MechSplitSchema = z.object({
@@ -184,6 +191,10 @@ const MechComposedSchema = z.object({
   slug: z.string(),
   facet: z.string(),
   blocks: z.array(MechBlockSchema).min(1),
+  // Opt-in to the card treatment (calcium): the renderer adds `kd-ep-fam--cards` to the section and
+  // the stylesheet restyles THIS entry's split cells + beat steps as tinted cards. Scoped so the
+  // signed-off legacy headers (which never carry this field) render visually unchanged.
+  cards: z.boolean().optional(),
 }).passthrough();
 
 export const MechanismClaritySchema = z.object({

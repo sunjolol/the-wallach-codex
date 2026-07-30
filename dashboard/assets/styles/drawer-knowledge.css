@@ -2429,3 +2429,88 @@
   --ds-accent-deep: #1e5088; --ds-accent-soft: #bcd3ea; --ds-accent-wash: #e3edf7;
   box-shadow: 0 4px 14px -3px rgba(43, 111, 176, 0.25);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════════════════════════
+   CALCIUM (element #3) — bespoke figures + the CARD treatment for its split/beats. The card look is
+   SCOPED to .kd-ep-fam--cards (only calcium opts in, via `cards:true` on its composed entry), so the
+   signed-off selenium / copper / zinc headers render byte-for-byte unchanged (they never carry the
+   class). Figures dispatch on generic keys (disease_scale, heartbeat) in views/entity-page.ts; their
+   text is TIERED so the 12px mono LABELS stay in the .kd-ep-fam__g* family the figure-type gate
+   governs, while the hero numerals / figure title / caption are DISPLAY / TITLE / CAPTION tiers
+   (like .kd-ep-fam__statnum) that legitimately sit outside it. Built 2026-07-30 from the signed-off
+   temporary/calcium-header-v5.html.
+   ═══════════════════════════════════════════════════════════════════════════════════════════════ */
+
+/* Chakra Petch — in-housed; the futuristic-but-readable small-text face paired with Unbounded,
+   used for calcium's beat-hook payoff lines (Luneth 2026-07-30). */
+@font-face { font-family: 'Chakra Petch'; font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Chakra Petch'; font-weight: 600; font-style: normal; font-display: swap;
+  src: url('../fonts/ChakraPetch-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Chakra Petch'; font-weight: 700; font-style: normal; font-display: swap;
+  src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype'); }
+
+/* -- calcium figure text tiers -- */
+#drawer-knowledge-mount .kd-ep-fam__scalenum { fill: var(--ds-ink-faint); font-family: var(--ds-font-display); font-weight: 800; font-size: 116px; letter-spacing: -0.03em; }
+#drawer-knowledge-mount .kd-ep-fam__scalenum--sm { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; }
+#drawer-knowledge-mount .kd-ep-fam__scaledash { stroke: var(--ds-rule); stroke-width: 1; }
+#drawer-knowledge-mount .kd-ep-fam__gtag--strong { font-weight: 700; }
+#drawer-knowledge-mount .kd-ep-fam__figtitle { fill: var(--ds-accent-deep); font-family: var(--ds-font-mono); font-size: 14px; font-weight: 700; letter-spacing: .1em; }
+#drawer-knowledge-mount .kd-ep-fam__figcap { fill: var(--ds-ink-medium); font-family: var(--ds-font-sans); font-size: 15px; font-weight: 600; }
+#drawer-knowledge-mount .kd-ep-fam__ecgbase { fill: none; stroke: var(--kd-ep-fam); stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+#drawer-knowledge-mount .kd-ep-fam__ecgglow { fill: none; stroke: #fff; stroke-width: 6.5; stroke-opacity: .24; stroke-linejoin: round; stroke-linecap: round; }
+#drawer-knowledge-mount .kd-ep-fam__ecgbeat { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
+/* the heart figure (the fork figure immediately after the split) wants air above it */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split + .kd-ep-fam__figure { margin-top: 42px; }
+
+/* -- CARD TREATMENT (scoped to calcium) -- */
+/* the kill breaks at the authored newline */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__kill { white-space: pre-line; }
+
+/* split -> four cards */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split { gap: 14px; column-gap: 14px; margin-top: 4px; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splitcell {
+  background: linear-gradient(158deg, var(--ds-paper-light), var(--ds-paper)); border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-lg); padding: 16px 18px 17px; box-shadow: 0 1px 3px rgba(43,111,176,.05); }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splittx { margin: 0; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__evnote { margin: 0; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splitcell--ev {
+  background: linear-gradient(158deg, var(--ds-paper), var(--ds-paper-darker)); border-left: 3px solid var(--kd-ep-fam); }
+/* the evidence miniq is plain inside its card (the card's accent border carries the emphasis) */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__miniq { margin: 0; padding: 0; border-left: 0; background: transparent; }
+
+/* beats -> three cards with a distinguished hook footer */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row { gap: 14px; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__step {
+  display: flex; flex-direction: column; padding: 0; border-top: 0; overflow: hidden;
+  background: linear-gradient(165deg, var(--ds-paper-light), var(--ds-paper)); border: 1px solid var(--ds-rule-soft);
+  border-radius: var(--ds-radius-lg); box-shadow: 0 1px 3px rgba(43,111,176,.05); }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__num { padding: 13px 16px 0; margin-bottom: 0; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__num::before {
+  content: ''; display: inline-block; width: 14px; height: 2px; margin-right: 8px; vertical-align: middle; background: var(--ds-rule-bright); }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__step--turn .kd-ep-fam__num::before { background: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__stepbody { display: flex; flex-direction: column; flex: 1; padding: 0; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steptitle { padding: 3px 16px 0; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steptext { padding: 6px 16px 12px; margin: 0; flex: 1; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__hook {
+  margin: 0; padding: 11px 16px; background: var(--ds-paper-darker); border-top: 1px solid var(--ds-rule-soft);
+  font-family: 'Chakra Petch', var(--ds-font-sans); font-style: normal; font-weight: 600; font-size: 0.9rem;
+  line-height: 1.45; letter-spacing: .005em; text-align: center; color: var(--ds-ink-medium); }
+/* the turn card leans blue */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__step--turn {
+  border-color: color-mix(in srgb, var(--kd-ep-fam) 42%, var(--ds-rule-soft));
+  background: linear-gradient(165deg, var(--ds-accent-wash), var(--ds-paper-light)); }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__step--turn .kd-ep-fam__hook {
+  background: color-mix(in srgb, var(--kd-ep-fam) 11%, var(--ds-paper-light));
+  border-top-color: color-mix(in srgb, var(--kd-ep-fam) 26%, var(--ds-rule-soft)); }
+
+/* CTA button (calcium's After beat -> the absorption tab) */
+#drawer-knowledge-mount .kd-ep-fam__cta {
+  display: flex; box-sizing: border-box; width: calc(100% - 32px); margin: 0 16px 13px; align-items: center;
+  justify-content: center; gap: 6px; padding: 9px 8px; background: var(--ds-paper-light);
+  border: 1px solid var(--kd-ep-fam); border-radius: var(--ds-radius-pill); font-family: var(--ds-font-sans);
+  font-size: .79rem; font-weight: 600; letter-spacing: 0; white-space: nowrap; color: var(--ds-accent-deep);
+  cursor: pointer; transition: background .18s ease, color .18s ease; }
+#drawer-knowledge-mount .kd-ep-fam__cta:hover { background: var(--kd-ep-fam); color: #fff; }
+#drawer-knowledge-mount .kd-ep-fam__cta-arrow { transition: transform .18s ease; }
+#drawer-knowledge-mount .kd-ep-fam__cta:hover .kd-ep-fam__cta-arrow { transform: translateX(3px); }
