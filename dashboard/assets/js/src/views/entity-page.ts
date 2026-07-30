@@ -36,7 +36,11 @@ import {
   type EntityKindGroup,
   type EssentialPage,
   FattyAcidClaritySchema,
+  isComposedMech,
+  type MechBeat,
+  type MechBlock,
   type MechField,
+  type MechLegacy,
   type MechSide,
   MechanismClaritySchema,
   type OmegaFamily,
@@ -1316,17 +1320,60 @@ function renderMechSplit(left: MechSide, right: MechSide): string {
   return `<div class="kd-ep-fam__split">${prose(left, '')}${prose(right, R)}${evid(left, '')}${evid(right, R)}</div>`;
 }
 
-/** The per-element mechanism hero. Renders ONLY for a slug that has a mechanism-clarity entry
- *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug
- *  branch. Each element's header is composed bespoke to that element's content: the split,
- *  bridge, and the two extra figure slots are all OPTIONAL and self-suppress, so an entry that
- *  carries none (selenium's) renders exactly the shape it always did. */
-function renderMechanism(slug: string | null, layoutKey: string, category: string | null): string {
-  const m = slug !== null ? MECH_BY_SLUG.get(slug) : undefined;
-  if (m === undefined) {
-    return '';
-  }
-  const beats = m.beats.map((b) => {
+// ── The mechanism block emitters ─────────────────────────────────────────────────────────────────
+// One emitter per renderable unit. BOTH render paths call these, so the markup for a unit lives
+// exactly once (R3): the legacy path calls them in a fixed order, the composed path calls them in
+// whatever order its data declares. Their whitespace is deliberately identical to what the legacy
+// template emitted inline, so the three signed-off headers render byte-for-byte unchanged — proven
+// against committed snapshots by tools/render_probe_mech_shape.js.
+//
+// Line endings do NOT reach the DOM: this file is CRLF, but a template literal's CR-LF pairs are
+// normalised to LF when it is evaluated (ECMAScript), so every newline in these templates renders
+// as \n. Checked, because the first reading of the snapshot diff blamed the source endings — the
+// real cause was safe_write's text-mode write turning the snapshot file itself into CRLF.
+
+// The separator the frame puts between blocks — a newline plus the frame's indent. Authored as a
+// template literal so it picks up this file's CRLF exactly like the frame does.
+const MECH_BLOCK_SEP = `
+      `;
+
+function mechEyebrow(text: string): string {
+  return `<span class="kd-ep-fam__eyebrow">${escHTML(text)}</span>`;
+}
+
+function mechKill(text: string): string {
+  return `<h3 class="kd-ep-fam__kill">${escHTML(text)}</h3>`;
+}
+
+/** A figure on its own row. `mod` is the modifier suffix INCLUDING its leading space. The composed
+ *  block's `width` enum is closed for a measured reason: the base rule
+ *  `#drawer-knowledge-mount .kd-ep-fam__figure { max-width: 560px }` is an ID selector, so a figure
+ *  whose width override loses the cascade renders at 560px — scale < 1, every label inside silently
+ *  shrunk, and nothing wrong in the source. */
+function mechFigureRow(figSvg: string, mod: string): string {
+  return `<div class="kd-ep-fam__figure${mod}">${figSvg}</div>`;
+}
+
+/** The opener/hook: a small figure beside an opening line and a pivot line — something the reader
+ *  can check on their own body before any mechanism is explained. */
+function mechOpener(figSvg: string, text: string, pivot: string): string {
+  return `<div class="kd-ep-fam__opener">
+        <div class="kd-ep-fam__openerart">${figSvg}</div>
+        <div>
+          <p class="kd-ep-fam__openertx">${glossify(collapseWS(text))}</p>
+          <p class="kd-ep-fam__openerq">${glossify(collapseWS(pivot))}</p>
+        </div>
+      </div>`;
+}
+
+/** One connective paragraph — a `bridge` INTO what follows, or a `coda` that closes the block. */
+function mechProse(tone: 'bridge' | 'coda', text: string): string {
+  return `<p class="kd-ep-fam__${tone}">${glossify(collapseWS(text))}</p>`;
+}
+
+/** The numbered steps. `mod` is the layout modifier suffix (' kd-ep-fam__steps--row' or ''). */
+function mechBeats(items: readonly MechBeat[], mod: string): string {
+  const steps = items.map((b) => {
     const hook = (b.hook !== undefined && b.hook.length > 0)
       ? `<p class="kd-ep-fam__hook">${escHTML(b.hook)}</p>`
       : '';
@@ -1341,49 +1388,104 @@ function renderMechanism(slug: string | null, layoutKey: string, category: strin
         </div>
       </div>`;
   }).join('');
-  const stat = m.stat !== undefined ? `
+  return `<div class="kd-ep-fam__steps${mod}">${steps}</div>`;
+}
+
+/** The pull-stat. The leading newline is carried over from the legacy template verbatim. */
+function mechStat(readout: string, value: string, label: string): string {
+  return `
       <div class="kd-ep-fam__stat">
-        <span class="kd-ep-fam__statread">${escHTML(m.stat.readout)}</span>
-        <span class="kd-ep-fam__statnum">${escHTML(m.stat.value)}</span>
-        <span class="kd-ep-fam__statlbl">${escHTML(m.stat.label)}</span>
-      </div>` : '';
-  // The hook opens the block on something checkable before any mechanism is explained; the coda
-  // returns to it at the end. Both optional, so an entry carrying neither renders as before.
-  const hook = m.hook !== undefined ? `<div class="kd-ep-fam__opener">
-        <div class="kd-ep-fam__openerart">${mechanismFigure(m.hook.figure.key, m.hook.figure.alt, m.hook.figure.labels)}</div>
-        <div>
-          <p class="kd-ep-fam__openertx">${glossify(collapseWS(m.hook.text))}</p>
-          <p class="kd-ep-fam__openerq">${glossify(collapseWS(m.hook.pivot))}</p>
-        </div>
-      </div>` : '';
-  const coda = m.coda !== undefined
-    ? `<p class="kd-ep-fam__coda">${glossify(collapseWS(m.coda))}</p>`
-    : '';
+        <span class="kd-ep-fam__statread">${escHTML(readout)}</span>
+        <span class="kd-ep-fam__statnum">${escHTML(value)}</span>
+        <span class="kd-ep-fam__statlbl">${escHTML(label)}</span>
+      </div>`;
+}
+
+/** Draw a figure SLOT — the `{key, alt, labels}` shape both the legacy fields and the composed
+ *  `figure`/`opener` blocks carry. Exists so every call site fits on one line. */
+function mechSlotFigure(f: { key: string; alt: string; labels: Record<string, string> }): string {
+  return mechanismFigure(f.key, f.alt, f.labels);
+}
+
+/** The LEGACY order — the selenium-era sequence, unchanged, used by the three signed-off headers.
+ *  Every optional slot self-suppresses to ''. This function now declares an ORDER and nothing else:
+ *  all of its markup comes from the shared emitters above, so there is no second copy to drift. */
+function renderMechLegacy(m: MechLegacy): string {
+  const hook = m.hook !== undefined ? mechOpener(mechSlotFigure(m.hook.figure), m.hook.text, m.hook.pivot) : '';
   const split = m.split !== undefined ? renderMechSplit(m.split.left, m.split.right) : '';
-  const bridge = m.bridge !== undefined
-    ? `<p class="kd-ep-fam__bridge">${glossify(collapseWS(m.bridge))}</p>`
-    : '';
-  const preFig = m.figure_pre_beats !== undefined
-    ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail">${mechanismFigure(m.figure_pre_beats.key, m.figure_pre_beats.alt, m.figure_pre_beats.labels)}</div>`
-    : '';
-  const postFig = m.figure_post_beats !== undefined
-    ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail kd-ep-fam__figure--turn">${mechanismFigure(m.figure_post_beats.key, m.figure_post_beats.alt, m.figure_post_beats.labels)}</div>`
-    : '';
+  const bridge = m.bridge !== undefined ? mechProse('bridge', m.bridge) : '';
+  const preFig = m.figure_pre_beats !== undefined ? mechFigureRow(mechSlotFigure(m.figure_pre_beats), ' kd-ep-fam__figure--rail') : '';
+  const postFig = m.figure_post_beats !== undefined ? mechFigureRow(mechSlotFigure(m.figure_post_beats), ' kd-ep-fam__figure--rail kd-ep-fam__figure--turn') : '';
+  const coda = m.coda !== undefined ? mechProse('coda', m.coda) : '';
+  const stat = m.stat !== undefined ? mechStat(m.stat.readout, m.stat.value, m.stat.label) : '';
   const stepsMod = m.beats_layout === 'row' ? ' kd-ep-fam__steps--row' : '';
   const heroFigMod = m.figure_labels !== undefined ? ' kd-ep-fam__figure--fork' : ' kd-ep-fam__figure--mech';
-  return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML(category ?? '')}">
-      <span class="kd-ep-fam__eyebrow">${escHTML(m.eyebrow)}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML(m.kill)}</h3>
+  return `${mechEyebrow(m.eyebrow)}
+      ${mechKill(m.kill)}
       ${hook}
-      <div class="kd-ep-fam__figure${heroFigMod}">${mechanismFigure(m.figure, m.figure_alt, m.figure_labels)}</div>
+      ${mechFigureRow(mechanismFigure(m.figure, m.figure_alt, m.figure_labels), heroFigMod)}
       ${split}
       ${bridge}
       ${preFig}
-      <div class="kd-ep-fam__steps${stepsMod}">${beats}</div>
+      ${mechBeats(m.beats, stepsMod)}
       ${postFig}
       ${coda}
       ${stat}
-      ${fatFamilyQuote(m.quote_claim, m.highlight)}
+      ${fatFamilyQuote(m.quote_claim, m.highlight)}`;
+}
+
+/** The COMPOSED order — emit exactly the blocks the entry declares, in the order it declares them.
+ *  Nothing is required and nothing is implied: an entry may carry no beats, no stat, no quote, the
+ *  quote first, or nothing but an annotated figure. This is the whole point of the block list — the
+ *  legacy shape above could only ever be dressed differently, never re-shaped (Rule 0, after eight
+ *  calcium mockups were rejected for being the same chassis). The switch is EXHAUSTIVE with no
+ *  default branch that returns '': adding a block type to the schema without a case here is a
+ *  COMPILE error, not a block that silently renders nothing. */
+function renderMechBlocks(blocks: readonly MechBlock[]): string {
+  return blocks.map((b): string => {
+    switch (b.type) {
+      case 'eyebrow':
+        return mechEyebrow(b.text);
+      case 'kill':
+        return mechKill(b.text);
+      case 'opener':
+        return mechOpener(mechSlotFigure(b.figure), b.text, b.pivot);
+      case 'figure':
+        return mechFigureRow(mechSlotFigure(b.figure), ` kd-ep-fam__figure--${b.width}${b.turn === true ? ' kd-ep-fam__figure--turn' : ''}`);
+      case 'prose':
+        return mechProse(b.tone, b.text);
+      case 'split':
+        return renderMechSplit(b.left, b.right);
+      case 'beats':
+        return mechBeats(b.items, b.layout === 'row' ? ' kd-ep-fam__steps--row' : '');
+      case 'stat':
+        return mechStat(b.readout, b.value, b.label);
+      case 'quote':
+        return fatFamilyQuote(b.claim, b.highlight);
+      default: {
+        const unreached: never = b;
+        return unreached;
+      }
+    }
+  }).join(MECH_BLOCK_SEP);
+}
+
+/** The per-element mechanism hero. Renders ONLY for a slug that has a mechanism-clarity entry
+ *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug
+ *  branch.
+ *
+ *  THE FRAME IS THE ONLY FIXED STRUCTURE (Rule 0, .claude/rules/element-headers.md): the tan
+ *  `.kd-ep-fam` content box, the disclaimer, and the Best-Youngevity-sources dock at the bottom.
+ *  What sits between them is either a data-declared block list or the legacy fixed order — the two
+ *  differ ONLY in what decides the sequence, and both emit through the same emitters. */
+function renderMechanism(slug: string | null, layoutKey: string, category: string | null): string {
+  const m = slug !== null ? MECH_BY_SLUG.get(slug) : undefined;
+  if (m === undefined) {
+    return '';
+  }
+  const body = isComposedMech(m) ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
+  return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML(category ?? '')}">
+      ${body}
       <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}
     </section>`;

@@ -1,52 +1,47 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (set 2026-07-30, after EIGHT calcium mockups were rejected)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (set 2026-07-30, after the block-list refactor landed)
 
 # ⚠ HOW THIS SESSION STARTS
 Luneth types `genesis` HIMSELF, in a NEW session. Claude runs `tools/genesis.py` ONLY in response
 to that — never as a self-initiated in-session "reboot" ([[reboot-after-boot-file-changes]]).
 
-# ★★★★★ READ FIRST — THE SESSION THAT PRODUCED THIS HANDOFF FAILED. Read why before you build.
-Board **78/78 green · corpus kv432 · 2267 sealed claims**. Three element headers are shipped
-(selenium, copper, zinc). **Calcium is element #3 and it is NOT done. Two full rounds of four
-mockups each — eight designs — were rejected outright.** Both mockup pages were deleted at his
-instruction. Nothing about calcium's header survives except the lessons below.
+# ★★★★★ READ FIRST — THE BLOCKER IS GONE. Calcium's header can now be designed to its content.
+Board **79/79 green · corpus kv432 · 2267 sealed claims**. Three element headers are shipped
+(selenium, copper, zinc). **Calcium is element #3 and its header is still NOT designed** — eight
+mockups were rejected across two rounds on 2026-07-29/30, and both mockup pages were deleted.
 
-## ★ THE ONE THING THAT MATTERS: only FOUR things are fixed. The rest is NOT a template.
-His words, verbatim, and they are now **Rule 0** in `.claude/rules/element-headers.md`:
+The previous handoff said the FIRST task was structural, not visual, because the schema itself only
+permitted one shape. **That work is DONE (2026-07-30).** What changed:
 
-> "you keep following the same structure/template. There's no way 3 minerals in a row fit cleanly as
-> an illustration > into a 1-2-3 point > into a big number statement > into a wallach quote — as the
-> BEST way to display all of these, you need to actually consider what Calcium NEEDS to be displayed
-> in the best way possible and stop constraining yourself under this template which I've explicitly
-> told you to avoid over and over. The only thing that should be a template is the opening statement,
-> 'why this number?', the width so it matches the element detail screen exactly and the background
-> color/main content box because it leads into the best Youngevity sources block, everything else in
-> this main block should adapt to the content/claims themselves, not this weird regression you keep
-> doing into the same old template over and over"
+- `core/schemas/mechanism-clarity.ts` now takes EITHER shape. Legacy (`MechanismSchema`, untouched)
+  or **COMPOSED**: `{slug, facet, blocks:[…]}` — an ordered, self-describing list where NOTHING is
+  required. Types: `eyebrow` · `kill` · `opener` · `figure` · `prose`(`tone: bridge|coda`) ·
+  `split` · `beats`(`items[]`, `layout: stack|row`) · `stat` · `quote`. An entry may carry no beats,
+  no stat, no quote, the quote first, or nothing but an annotated figure.
+- `views/entity-page.ts` — every renderable unit is now ONE shared emitter called by both paths;
+  `renderMechBlocks` walks the declared order, `renderMechLegacy` declares the old fixed order and
+  nothing else. The frame (tan box · disclaimer · Best-Youngevity-sources dock) is the only fixed
+  structure, exactly what Rule 0 fixes.
+- **Proof the three signed-off headers did not move:** `tools/render_probe_mech_shape.js` (18/18)
+  byte-compares each live section to `tools/goldens/mechanism-sections.json`, captured from the
+  PRE-refactor bundle. All three are byte-identical (same sha256, verified pre vs post). It carries a
+  negative control that mutates the live DOM by one character and asserts the comparison fails.
+- **New gate:** `mechanism_blocks_wellformed` (critical, 17-case negative test) — schema block types
+  and `renderMechBlocks` cases must be the SAME set in both directions, every figure key must be one
+  `mechanismFigure` draws, every cited claim must resolve in the sealed corpus. It also covers the
+  legacy entries, which never had the last two.
 
-FIXED: (1) the opening statement/lede · (2) "why this number?" · (3) the width, matching the element
-detail screen exactly · (4) the background colour / main content box, because it leads into the Best
-Youngevity sources block. **EVERYTHING ELSE ADAPTS TO THE CONTENT.** Section count, whether beats
-exist at all, whether there is a big stat number, whether there is a pull quote, what the
-illustration is, and the ORDER of all of it.
+**So the next task IS the design.** Read `.claude/rules/element-headers.md` (Rule 0 first, then the
+"THE SCHEMA WAS THE TEMPLATE" section, which now documents the block vocabulary). Build calcium's
+header as a COMPOSED entry, shaped to calcium's material. Do not build a new header on the legacy
+shape.
 
-## ★★ DO NOT START BY DESIGNING MOCKUPS. The schema is the template — that is the real bug.
-This is why two rounds of "design it bespoke" both regressed, and why more instructions would not
-have helped. Measured 2026-07-30 in `dashboard/assets/js/src/core/schemas/mechanism-clarity.ts`:
+## ⚠ ONE HONEST GAP in what just landed
+The composed RENDER path has no runtime coverage yet, because no element declares `blocks`. Its DATA
+contract is gated (the invariant above) and its code is type-exhaustive (adding a schema type without
+a render case is a COMPILE error, not a silent ''), but the first composed header must bring its own
+probe that actually renders it. That is not a covered gap — it is a labelled one (R7).
 
-- `MechanismSchema` **REQUIRES** `eyebrow` · `kill` · `figure` · `figure_alt` · `beats[]` ·
-  `quote_claim`. **That mandatory set IS the rejected chassis.**
-- Everything that looks like freedom (`hook` · `split` · `bridge` · `figure_pre_beats` ·
-  `figure_post_beats` · `beats_layout` · `coda` · `stat`) is an OPTIONAL EXTRA on that skeleton.
-- `views/entity-page.ts::renderMechanism` (~line 1324) emits the blocks in ONE hard-coded order.
-
-**So the first task is structural, not visual.** Give the renderer an ordered, self-describing block
-list — each entry declaring its own type, so an entry can omit beats/stat/quote entirely and set its
-own sequence — or accept a per-element render path. Until the structure can express a different
-shape, every "bespoke" header regresses to this one. Selenium/copper/zinc must keep rendering
-byte-identically (they are signed off), so this is an ADDITIVE change with a gate proving the three
-shipped entries are unchanged.
-
-## What was rejected, so it is not re-attempted (all eight)
+## What was rejected, so it is not re-attempted (all eight calcium mockups)
 **Round 1** — (A) a drawn human FACE: *"looks psychotic and low quality… absurd, ridiculous."* Note
 the scope: zinc's fingertip/nail crop is fine and shipped; a whole face is not. (B) a plain bar chart
 of the 1,000 mg tablet table: *"straight up boring and a waste of space."* (C) a 21-label plumbing
@@ -57,11 +52,11 @@ random"* — an object must be REQUIRED by the argument and earned in the first 
 
 **Round 2** — cut to 4/5/7/8 labels, one figure each, ≤3 beats, adversarially critiqued. Still
 rejected, for Rule 0: every one was the same chassis. The content was right by then; the SHAPE was
-the problem. **Do not simply re-simplify. Change the shape.**
+the problem — and the shape is now free, so this is the round to get it right.
 
 ## The content IS solved — reuse it, do not re-derive it
-Every claim below was re-read at the BYTE level from the sealed shards this session. The story that
-survived both rounds (he confirmed round-1 C was "closest" on content):
+Every claim below was re-read at the BYTE level from the sealed shards. The story that survived both
+rounds (he confirmed round-1 C was "closest" on content):
 
   1. **Importance.** Calcium is not a bone mineral. The 1% outside bone is "a cofactor and activator
      for numerous enzyme systems" — it clots blood, fires nerves. Wallach counts **147** diseases
@@ -81,7 +76,7 @@ survived both rounds (he confirmed round-1 C was "closest" on content):
 payoff) · LETS-000285 ("phosphoms" ×4) · LETS-000168 ("magnesiumat", "t.i.d.foras") ·
 EPIGEN-000232 (stray period mid-sentence) · RARE-000082 and EPIGEN-000143 (both open mid-sentence).
 
-## ⚠ TWO BLOCKERS FOUND, both still open
+## ⚠ TWO CALCIUM BLOCKERS, both still open (unchanged — neither was touched this session)
 1. **The 99/1 split has NO HOME on calcium's page.** Both carriers — `WAL-CLM-IMMORT-000065` and
    `WAL-CLM-EPIGEN-000232` — have an **empty `essentials` array**, so Wallach's most famous calcium
    fact maps to nothing and cannot be pulled by claim id. Rule 6 requires numbers pulled BY ID. Any
@@ -91,42 +86,39 @@ EPIGEN-000232 (stray period mid-sentence) · RARE-000082 and EPIGEN-000143 (both
    and teeth, the last 1% running your muscles, nerves and heartbeat." Any header built on 99/1
    restates it three lines later. The lede is APPROVED prose — his call, never a silent edit.
 
-## Source-purification queue found while verifying (a separate pass, needs his re-seal)
+## Source-purification queue (a separate pass, needs his re-seal)
 `LETS-000079` "nonnal" → normal (+ front-severed) · `LETS-000285` "phosphoms" ×4 ·
 `LETS-000168` "magnesiumat"/"t.i.d.foras" · `EPIGEN-000232` "one percent is. found in" ·
 `DDDL-000088` missing terminal period. All are in calcium's BEST passages.
 
-## What DID ship this session (committed, verified)
-Zinc's nail figure recoloured at his instruction: `.kd-ep-fam__nail` → `#f9d7c2`,
-`.kd-ep-fam__skin` → `#f2c5a3` (`drawer-knowledge.css:2400`). Build + 78/78 invariants +
-`render_probe_zinc` 57/57 green. **Flagged, not fixed:** lightening the nail moved it much closer to
-the lunula `__nlun` (`#fae2d0`) — the blue-channel gap fell 24 → 14, so the half-moon reads fainter.
-His call whether to nudge it.
+## ★ A TOOLING TRAP found this session — it will bite the next snapshot
+`tools/safe_write.py` writes text in Windows text mode, so **an LF payload lands on disk as CRLF.**
+A byte-exact HTML snapshot committed through it read as "all 256 lines differ" against an
+unchanged render, and the first reading blamed the source file's line endings (wrongly — a template
+literal's CRLF normalises to LF when evaluated, so line endings never reach the DOM). Store any
+byte-exact snapshot **inside JSON**, where a newline is a two-char `\n` escape and survives the write
+path; then the comparison can be RAW, with no normalisation to hide a real change.
+Second trap from the same hour: the sealed claim shards key the id as **`id`, not `claim_id`** — the
+new gate's first draft read `claim_id`, got an empty set, and reddened all 26 genuine references.
+A gate can lie about clean data; run it, do not read it. ([[the-instrument-lies-before-the-eye]])
 
-## Playbook changes landed this session (`.claude/rules/element-headers.md`, now 217 lines)
-- **Rule 0** added — the four fixed things + the schema-is-the-template diagnosis. It outranks
-  everything else in the file.
-- **Rule 1 width CORRECTED.** It said "a measured 867px content width" with no distinction. That is
-  the outer `.kd-ep` screen. `.kd-ep-fam` clientWidth is 865 and it carries 24px padding a side, so
-  the real FIGURE ceiling is **817px**. A figure authored at 820 rendered at scale 0.996 and taxed
-  every label. Prefer the shipped exact slots: `--fork` 700px, `--rail` 660px.
-- **Rule 2 gained a third invisible-in-source trap:** an SVG `fill="…"` attribute LOSES to a CSS
-  class rule (a white glyph rendered accent-on-accent, invisible). Use `style="fill:…"`.
-- **Probe gap recorded:** text-vs-text collision checks are blind to a label painted under an opaque
-  shape. Add a paint-order occlusion check, intersect each shape with its nearest `clip-path`
-  ancestor (clipped-away shapes still report a full bbox and over-fire), and ship a negative control.
+## Zinc, still open (flagged, not fixed)
+Lightening the nail to `#f9d7c2` moved it much closer to the lunula `__nlun` (`#fae2d0`) — the
+blue-channel gap fell 24 → 14, so the half-moon reads fainter. His call whether to nudge it.
 
 ## LOAD FIRST next session
-- `.claude/rules/element-headers.md` — **Rule 0 first**, then the rest.
+- `.claude/rules/element-headers.md` — **Rule 0 first**, then "THE SCHEMA WAS THE TEMPLATE" for the
+  block vocabulary.
 - `.claude/rules/visual-verification.md` (the STOP gate) + `.claude/rules/data-flow.md`.
-- `core/schemas/mechanism-clarity.ts` + `views/entity-page.ts::renderMechanism` — the structural
-  work is here, and it comes BEFORE any mockup.
+- `core/schemas/mechanism-clarity.ts` + `views/entity-page.ts::renderMechBlocks` — read the composed
+  shape before authoring calcium's entry.
 - `temporary/copper-header-combined.html` / `zinc-header-B3.html` — the real-container mockup shells
   to copy (rule 1). **Both calcium pages were deleted; do not look for them.**
 - Memories: [[element-header-playbook]] · [[element-header-illustration-failure-modes]] ·
-  [[svg-render-traps-fill-and-content-width]] · [[measured-change-not-extremes]] ·
-  [[header-mockups-in-real-container]] · [[negative-control-or-it-proves-nothing]] ·
-  [[screenshot-verify-visual-chunks]] · [[daily-target-provenance-always]].
+  [[element-header-only-four-things-fixed]] · [[svg-render-traps-fill-and-content-width]] ·
+  [[measured-change-not-extremes]] · [[header-mockups-in-real-container]] ·
+  [[negative-control-or-it-proves-nothing]] · [[screenshot-verify-visual-chunks]] ·
+  [[daily-target-provenance-always]].
 
 ## OPEN DEFERRAL (unchanged, carry forward)
 `entity-copy.json` holds **4 of 91** (calcium · selenium · copper · zinc). The other 87 have neither
@@ -134,7 +126,7 @@ a `lede` nor a why-this-number line. `element_header_complete` binds only on ele
 header, so this is a labelled WISH, not a covered gap ([[daily-target-provenance-always]]).
 
 ## MAINTENANCE
-The memory index crossed **188 lines** (limit 200). Compact by shortening HOOKS first — that is
+The memory index crossed **190 lines** (limit 200). Compact by shortening HOOKS first — that is
 lossless — never by dropping entries ([[memory-consolidation-threshold]]).
 
 ## STANDING DOCTRINES (unchanged)
@@ -142,5 +134,5 @@ lossless — never by dropping entries ([[memory-consolidation-threshold]]).
 2. Diet not food; nutrients from the DIET (food OR supplements). 3. NEVER fabricate — verbatim ⊆ sealed book, or GAP.
 4. `corpus_seal` + `catalog_seal` are USER-ONLY (per-invocation authorization). 5. A DOM probe is not a visual check — screenshot it, then STOP for his eyes.
 
-**Corpus kv432 · 2267 claims · board 78/78 green. Next: make the renderer able to express a
-different SHAPE, then design calcium's header to its own content — not to the chassis.**
+**Corpus kv432 · 2267 claims · board 79/79 green. Next: design calcium's header to calcium's own
+content as a COMPOSED entry — the structure can finally express a different shape.**

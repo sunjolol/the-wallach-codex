@@ -5252,6 +5252,203 @@ def check_figure_type_within_standard():
     return _figure_type_within_standard_impl(p.read_text(encoding="utf-8"))
 
 
+def _mech_span(src, opener):
+    """The balanced-paren text of ONE declaration: from `opener` to the paren that closes the call it
+    opens. Paren-MATCHED rather than scanned to a fixed closer string: the first cut looked for a
+    literal "\n);" which the real declaration (ending "\n]);") never contains, so the span silently
+    ran to end-of-file and any z.literal() declared later would have answered for this vocabulary.
+    It passed only because no such literal existed yet. Pinned by the ghost-literal test case."""
+    i = src.find(opener)
+    if i < 0:
+        return ""
+    j = src.find("(", i)
+    if j < 0:
+        return ""
+    depth, k = 0, j
+    while k < len(src):
+        if src[k] == "(":
+            depth += 1
+        elif src[k] == ")":
+            depth -= 1
+            if depth == 0:
+                return src[i:k + 1]
+        k += 1
+    return src[i:]
+
+
+def _mech_fn_body(src, signature):
+    """A function's body by brace matching from its signature. Brace-aware rather than
+    regex-to-the-next-'}' so a nested block cannot end the scan early (the same swallow bug
+    regimen_state_mutation_routing was re-codified for)."""
+    i = src.find(signature)
+    if i < 0:
+        return ""
+    i = src.find("{", i)
+    if i < 0:
+        return ""
+    depth, k = 0, i
+    while k < len(src):
+        if src[k] == "{":
+            depth += 1
+        elif src[k] == "}":
+            depth -= 1
+            if depth == 0:
+                return src[i:k + 1]
+        k += 1
+    return src[i:]
+
+
+def _mech_refs(store):
+    """Every (kind, value) reference a mechanism store makes to a sealed claim, across BOTH
+    shapes: the legacy fields and the composed blocks. Beat `traces` are included -- they are
+    provenance-only and never rendered, but a trace that resolves to nothing is a broken
+    audit trail, which is the thing they exist for."""
+    refs = []
+
+    def side_refs(sp, where):
+        for name in ("left", "right"):
+            s = (sp or {}).get(name) or {}
+            if s.get("quote_claim"):
+                refs.append((f"{where}.{name}.quote_claim", str(s["quote_claim"])))
+
+    def beat_refs(beats, where):
+        for b in beats or []:
+            for t in (b.get("traces") or []):
+                refs.append((f"{where}.traces", str(t)))
+
+    for m in store.get("mechanisms", []):
+        slug = str(m.get("slug", "?"))
+        blocks = m.get("blocks")
+        if isinstance(blocks, list):
+            for n, b in enumerate(blocks):
+                if not isinstance(b, dict):
+                    continue
+                t = b.get("type")
+                if t == "quote" and b.get("claim"):
+                    refs.append((f"{slug}.blocks[{n}].claim", str(b["claim"])))
+                elif t == "stat" and b.get("claim"):
+                    refs.append((f"{slug}.blocks[{n}].claim", str(b["claim"])))
+                elif t == "split":
+                    side_refs(b, f"{slug}.blocks[{n}]")
+                elif t == "beats":
+                    beat_refs(b.get("items"), f"{slug}.blocks[{n}]")
+            continue
+        if m.get("quote_claim"):
+            refs.append((f"{slug}.quote_claim", str(m["quote_claim"])))
+        if (m.get("stat") or {}).get("claim"):
+            refs.append((f"{slug}.stat.claim", str(m["stat"]["claim"])))
+        side_refs(m.get("split"), f"{slug}.split")
+        beat_refs(m.get("beats"), slug)
+    return refs
+
+
+def _mech_figure_keys(store):
+    """Every (where, figure key) the store asks the renderer to draw, across both shapes."""
+    keys = []
+    for m in store.get("mechanisms", []):
+        slug = str(m.get("slug", "?"))
+        blocks = m.get("blocks")
+        if isinstance(blocks, list):
+            for n, b in enumerate(blocks):
+                if isinstance(b, dict) and b.get("type") in ("figure", "opener"):
+                    f = b.get("figure") or {}
+                    keys.append((f"{slug}.blocks[{n}]", str(f.get("key", ""))))
+            continue
+        if m.get("figure"):
+            keys.append((f"{slug}.figure", str(m["figure"])))
+        if (m.get("hook") or {}).get("figure"):
+            keys.append((f"{slug}.hook", str(m["hook"]["figure"].get("key", ""))))
+        for fld in ("figure_pre_beats", "figure_post_beats"):
+            if m.get(fld):
+                keys.append((f"{slug}.{fld}", str(m[fld].get("key", ""))))
+    return keys
+
+
+def _mechanism_blocks_wellformed_impl(store, schema_src, view_src, claim_ids):
+    """RED if the composed block vocabulary and its renderer have drifted apart, or if the
+    mechanism store names a figure the renderer cannot draw or a claim that does not resolve.
+    Params for the negative test.
+
+    The failure mode this exists for: the composed shape moves the ORDER and SELECTION of a
+    header's blocks out of the renderer and into data, and a data-driven dispatch fails SILENTLY
+    -- an unknown block type or a mistyped figure key renders '' and the page just looks a bit
+    empty. Nothing else catches that, so it is caught here at the source."""
+    declared = set(re.findall(r"z\.literal\('([a-z_]+)'\)",
+                              _mech_span(schema_src, "const MechBlockSchema = z.discriminatedUnion(")))
+    dispatched = set(re.findall(r"case '([a-z_]+)':",
+                                _mech_fn_body(view_src, "function renderMechBlocks(")))
+    drawable = set(re.findall(r"case '([a-z_]+)':",
+                              _mech_fn_body(view_src, "function mechanismFigure(")))
+    viol = []
+    if not declared or not dispatched or not drawable:
+        return False, ("could not read the block vocabulary -- MechBlockSchema, renderMechBlocks or "
+                       f"mechanismFigure not found (declared={len(declared)}, "
+                       f"dispatched={len(dispatched)}, drawable={len(drawable)})")
+    for t in sorted(declared - dispatched):
+        viol.append(f"block type '{t}' is in the schema but renderMechBlocks has no case -- it "
+                    "would render NOTHING")
+    for t in sorted(dispatched - declared):
+        viol.append(f"renderMechBlocks handles '{t}' but no schema literal declares it -- the data "
+                    "could never reach it")
+    for where, key in _mech_figure_keys(store):
+        if key not in drawable:
+            viol.append(f"{where}: figure key '{key}' is not one mechanismFigure draws -- renders ''")
+    for where, cid in _mech_refs(store):
+        if cid not in claim_ids:
+            viol.append(f"{where}: claim '{cid}' does not resolve to a sealed corpus claim")
+    for m in store.get("mechanisms", []):
+        blocks = m.get("blocks")
+        if isinstance(blocks, list) and len(blocks) == 0:
+            viol.append(f"{m.get('slug', '?')}: composed entry with an EMPTY block list renders an "
+                        "empty header")
+    if viol:
+        return False, ("mechanism block list is not well-formed: " + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    return True, (f"{len(declared)} block types declared == dispatched; "
+                  f"{len(_mech_figure_keys(store))} figure ref(s) drawable, "
+                  f"{len(_mech_refs(store))} claim ref(s) resolve")
+
+
+def check_mechanism_blocks_wellformed():
+    """The element-header block list is well-formed (2026-07-30, the composed-shape gate).
+
+    Three things, each anchored outside the thing it checks: (a) the schema's block vocabulary and
+    renderMechBlocks' dispatch are the SAME set, in both directions -- a type declared with no case
+    would silently render nothing, and a case with no declaration is unreachable; (b) every figure
+    key the store names is one mechanismFigure actually draws; (c) every claim the store cites
+    resolves in the sealed corpus. Covers BOTH shapes: the legacy entries get (b) and (c) too, which
+    they never had.
+
+    SCOPE, honestly: this proves the composed path cannot silently DROP a block or a figure. It says
+    nothing about whether a header is well DESIGNED -- that is Luneth's visual sign-off
+    (.claude/rules/visual-verification.md), and the byte-identity of the three signed-off headers is
+    proven separately by tools/render_probe_mech_shape.js.
+
+    Truth anchor: the schema .ts bytes x the view .ts bytes x the hand-authored store x the sealed
+    corpus shards, all re-read each run."""
+    base = ROOT / "dashboard" / "assets"
+    store_p = base / "data" / "mechanism-clarity-data.json"
+    schema_p = base / "js" / "src" / "core" / "schemas" / "mechanism-clarity.ts"
+    view_p = base / "js" / "src" / "views" / "entity-page.ts"
+    for p in (store_p, schema_p, view_p):
+        if not p.exists():
+            return False, f"{p.relative_to(ROOT)} missing"
+    claim_ids = set()
+    for shard in sorted((ROOT / "eden" / "corpus" / "claims").glob("claims-*.json")):
+        for c in (json.loads(shard.read_text(encoding="utf-8")).get("claims") or []):
+            # The sealed shard field is `id`, NOT `claim_id`. Written as claim_id first, which
+            # loaded an EMPTY set and reddened all 26 real references -- a gate lying about clean
+            # data. Caught only by running it; hence the negative test's positive-control case.
+            if isinstance(c, dict) and c.get("id"):
+                claim_ids.add(str(c["id"]))
+    return _mechanism_blocks_wellformed_impl(
+        json.loads(store_p.read_text(encoding="utf-8")),
+        schema_p.read_text(encoding="utf-8"),
+        view_p.read_text(encoding="utf-8"),
+        claim_ids,
+    )
+
+
 def _kind_label_covers_corpus_impl(store_path, claims_dir):
     """RED if a distinct claim.kind in the sealed corpus has no entry in the
     view-copy content store's kind_labels map. `store_path`, `claims_dir` are
@@ -6213,6 +6410,15 @@ INVARIANTS = [
         truth_anchor="drawer-knowledge.css bytes scanned each run against two sizes measured headlessly off the shipped selenium figure",
         severity="critical",
         lesson_ref="Two rounds lost to figure type: first too small (the real cause was an ID-specificity width override losing the cascade, rendering an 800-unit viewBox at 560px -- scale 0.70, every label silently 30% smaller), then overcorrected to 15/17/18/32 above the selenium standard. Negative test: tools/test_figure_type_within_standard.py. Playbook: .claude/rules/element-headers.md",
+    ),
+    Invariant(
+        name="mechanism_blocks_wellformed",
+        anchor_class="consistency",  # our schema vs our renderer vs our store vs the sealed corpus -- proves nothing is silently DROPPED, not that a header is good
+        description="The element-header block list is well-formed. The composed shape (2026-07-30) moves the ORDER and SELECTION of a header's blocks out of the renderer and into data, and a data-driven dispatch fails SILENTLY: an unknown block type or a mistyped figure key renders '' and the page just looks a little empty. So: the schema's block vocabulary and renderMechBlocks' dispatch must be the SAME set in BOTH directions, every figure key the store names must be one mechanismFigure actually draws, and every claim the store cites must resolve in the sealed corpus. Covers the legacy entries too, which never had the last two",
+        check_fn=check_mechanism_blocks_wellformed,
+        truth_anchor="the schema .ts bytes x the view .ts bytes x the hand-authored mechanism store x the sealed corpus shards, all re-read and cross-checked each run",
+        severity="critical",
+        lesson_ref="Eight calcium header mockups were rejected because the SCHEMA was the template -- the required set (eyebrow/kill/figure/beats/quote) WAS the rejected chassis, so every 'bespoke' header regressed to it (Luneth 2026-07-30, Rule 0 in .claude/rules/element-headers.md). Freeing the shape means the data now decides which blocks render, which buys a new silent-failure class this gate closes. Negative test: tools/test_mechanism_blocks_wellformed.py. The byte-identity of the three signed-off headers is proven separately by tools/render_probe_mech_shape.js",
     ),
     Invariant(
         name="views_no_ciphered_data",

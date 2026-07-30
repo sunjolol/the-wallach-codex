@@ -8,12 +8,29 @@
  * verbatim, R3). Keyed as an ARRAY (built into a Map by .map) so no id-keyed literal — the entity
  * page stays a pure projection (entity_render_is_projection). Mirrors fatty-acid-clarity.ts.
  *
- * OPTIONAL COMPOSITION BLOCKS (added 2026-07-29 for copper's header). Each element's header is
- * designed bespoke to that element's content, so a mechanism may carry extra sections beyond the
- * selenium shape: a two-column `split`, a connective `bridge` line, and figures in the slots
- * before/after the beats. EVERY one is optional and self-suppresses, so selenium's entry is
- * untouched and renders byte-identically. In-figure LABELS live here too (`labels`), never as
- * view literals — views_no_inline_prose (R4) puts every user-facing string in this store.
+ * TWO SHAPES live here, and the second one is the whole point (2026-07-30):
+ *   • LEGACY — `MechanismSchema`. A fixed skeleton plus optional extras, emitted by
+ *     renderMechanism in ONE hard-coded order. Selenium, copper and zinc are this shape and are
+ *     signed off; the legacy schema and its render path are deliberately UNCHANGED.
+ *   • COMPOSED — `MechComposedSchema`. An ORDERED, self-describing `blocks` list: the entry names
+ *     its own blocks in its own sequence and may omit ANY of them.
+ *
+ * WHY the composed shape exists: the legacy REQUIRED set (eyebrow · kill · figure · figure_alt ·
+ * beats · quote_claim) IS the chassis eight calcium mockups were rejected for — "you keep following
+ * the same structure/template… stop constraining yourself under this template" (Luneth 2026-07-30,
+ * now Rule 0 in .claude/rules/element-headers.md). Everything that LOOKED like design freedom —
+ * hook, split, bridge, the two figure slots, coda, stat — was an optional extra bolted onto that one
+ * skeleton, and the renderer fixed their order, so a "bespoke" header could only ever wear different
+ * clothes on the same body. Playbook prose could not fix that: the STRUCTURE had to be able to say a
+ * different shape. A composed entry can carry no beats, no stat, no quote, the quote first, or
+ * nothing but an annotated figure.
+ *
+ * What stays fixed is only what Rule 0 fixes, and NONE of it lives in the block list: the opening
+ * lede and the why-this-number line live in entity-copy.json, and the width + the tan content box +
+ * the Best-Youngevity-sources dock are the frame renderMechanism emits AROUND the blocks.
+ *
+ * In-figure LABELS live here too (`labels`), never as view literals — views_no_inline_prose (R4)
+ * puts every user-facing string in this store.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 import { z } from 'zod';
@@ -110,12 +127,90 @@ const MechanismSchema = z.object({
   stat: MechStatSchema.optional(),
 }).passthrough();
 
+// ── THE COMPOSED SHAPE: an ordered, self-describing block list ────────────────────────────────
+// Each block declares its OWN type, so the data — not the renderer — decides which blocks exist
+// and in what order. Every type below maps 1:1 onto a unit the renderer already draws: this patch
+// frees the ORDER and the SELECTION, it does not invent new visual vocabulary (that is a per-element
+// design decision Luneth picks, and a new type is then one case in the block dispatch).
+
+/** The figure width slot. REQUIRED and CLOSED on purpose (R9 codification of a trap that cost two
+ *  rounds): the base rule `#drawer-knowledge-mount .kd-ep-fam__figure { max-width: 560px }` is an
+ *  ID selector, so a figure with no matching-specificity width override silently renders at 560px
+ *  — scale < 1, and every label inside is quietly shrunk with nothing wrong in the source. Naming
+ *  the slot from a closed set means a typo is a LOUD parse failure instead. Values are the shipped
+ *  modifiers in drawer-knowledge.css: --mech 600px · --fork 700px · --rail 660px. A new width needs
+ *  a new CSS modifier AND an entry here, in the same patch. */
+const MechFigureWidthSchema = z.enum(['mech', 'fork', 'rail']);
+
+const MechBlockSchema = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('eyebrow'), text: z.string() }).passthrough(),
+  z.object({ type: z.literal('kill'), text: z.string() }).passthrough(),
+  // The opener/hook: a figure plus an opening line and a pivot line.
+  MechHookSchema.extend({ type: z.literal('opener') }),
+  // A figure on its own row. `turn` adds the accent spacing the post-beats slot used.
+  z.object({
+    type: z.literal('figure'),
+    figure: MechFigureSchema,
+    width: MechFigureWidthSchema,
+    turn: z.boolean().optional(),
+  }).passthrough(),
+  // One connective paragraph. `tone` picks the shipped class — a bridge INTO what follows, or a
+  // coda that closes the block. Required: the two read differently, so defaulting would guess.
+  z.object({
+    type: z.literal('prose'),
+    text: z.string(),
+    tone: z.enum(['bridge', 'coda']),
+  }).passthrough(),
+  MechSplitSchema.extend({ type: z.literal('split') }),
+  // The numbered steps. `items` rather than `beats` so a block never shadows the legacy field.
+  z.object({
+    type: z.literal('beats'),
+    items: z.array(MechBeatSchema),
+    layout: z.enum(['stack', 'row']).optional(),
+  }).passthrough(),
+  MechStatSchema.extend({ type: z.literal('stat') }),
+  // The pull quote, BY CLAIM ID (R3) — `highlight` is the phrase .ds-mark emphasises.
+  z.object({
+    type: z.literal('quote'),
+    claim: z.string(),
+    highlight: z.string().optional(),
+  }).passthrough(),
+]);
+
+/** A composed entry. `slug` + `facet` are the only non-block fields, and `blocks` must be
+ *  non-empty — an entry that renders nothing is a bug, not a design. Nothing else is required:
+ *  there is deliberately no minimum shape, because a minimum shape is how the chassis got in. */
+const MechComposedSchema = z.object({
+  slug: z.string(),
+  facet: z.string(),
+  blocks: z.array(MechBlockSchema).min(1),
+}).passthrough();
+
 export const MechanismClaritySchema = z.object({
   disclaimer: z.string(),
-  mechanisms: z.array(MechanismSchema),
+  // COMPOSED IS TRIED FIRST, and the order is load-bearing: a legacy entry carries no `blocks`, so
+  // it fails the composed member and falls through to the untouched legacy schema. A composed entry
+  // matches on its first try. A composed entry with a bad block (unknown `type`, missing `width`)
+  // fails BOTH members and throws at module load — loud, which is the point.
+  mechanisms: z.array(z.union([MechComposedSchema, MechanismSchema])),
 }).passthrough();
 
 // Only the types the view actually consumes are exported — an unused alias is dead code
 // (no_new_dead_code catches it). A figure slot flows through renderMechanism inline.
 export type MechField = z.infer<typeof MechFieldSchema>;
 export type MechSide = z.infer<typeof MechSideSchema>;
+export type MechBlock = z.infer<typeof MechBlockSchema>;
+export type MechLegacy = z.infer<typeof MechanismSchema>;
+export type MechComposed = z.infer<typeof MechComposedSchema>;
+
+/** Which shape an entry is. A bare `'blocks' in m` CANNOT narrow this union: every member is
+ *  `.passthrough()`, which infers an index signature, so TypeScript considers any key present on
+ *  both members and the check discriminates nothing. A type predicate narrows explicitly — and it
+ *  tests the ARRAY rather than the key, so a malformed `blocks: null` reads as legacy instead of
+ *  crashing the block walk. */
+export function isComposedMech(m: MechLegacy | MechComposed): m is MechComposed {
+  return Array.isArray((m as MechComposed).blocks);
+}
+// A single beat, shared by the legacy `beats` field and the composed `beats` block, so both render
+// paths hand the SAME shape to the one beats emitter (no second copy of the step markup).
+export type MechBeat = z.infer<typeof MechBeatSchema>;

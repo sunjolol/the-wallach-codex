@@ -40,22 +40,38 @@ what the illustration is, and the ORDER of all of it — all of that is a per-el
 A header with no beats, or two figures and no quote, or a quote first, or nothing but an annotated
 illustration, are all legitimate if that is what the element's material wants.
 
-### ⚠ WHY PROSE ALONE DID NOT STOP THIS — the schema IS the template
-This file has said "bespoke, not stamped from a template" since it was written, and it did not help,
-because **the data structure only permits one shape.** Measured 2026-07-30 in
-`core/schemas/mechanism-clarity.ts`:
+### ✔ THE SCHEMA WAS THE TEMPLATE — fixed 2026-07-30, a composed shape now exists
+The diagnosis, kept because it is the WHY: this file had said "bespoke, not stamped from a template"
+since it was written and it did not help, because **the data structure only permitted one shape.**
+`MechanismSchema` REQUIRED `eyebrow` · `kill` · `figure` · `figure_alt` · `beats[]` · `quote_claim`
+— that mandatory set *is* the rejected chassis — and everything that looked like design freedom
+(`hook` · `split` · `bridge` · `figure_pre_beats` · `figure_post_beats` · `beats_layout` · `coda` ·
+`stat`) was an OPTIONAL EXTRA bolted onto it, emitted by `renderMechanism` in ONE hard-coded order.
+So "compose it bespoke from the optional blocks" could only ever produce the same skeleton wearing
+new clothes. No amount of prose here could have fixed that.
 
-- `MechanismSchema` **REQUIRES**: `eyebrow` · `kill` · `figure` · `figure_alt` · `beats[]` ·
-  `quote_claim`. That mandatory set *is* the rejected chassis.
-- Everything that looks like design freedom — `hook` · `split` · `bridge` · `figure_pre_beats` ·
-  `figure_post_beats` · `beats_layout` · `coda` · `stat` — is an OPTIONAL EXTRA bolted onto it.
-- `views/entity-page.ts::renderMechanism` emits those blocks in ONE hard-coded order.
+**A mechanism entry now takes either of two shapes:**
 
-So "compose it bespoke from the optional blocks" can only ever produce the same skeleton wearing
-different clothes. **Do not start the next element by designing mockups.** Either give the renderer
-an ordered, self-describing block list (each entry declaring its own type, so an entry can omit
-beats/stat/quote entirely and set its own sequence), or accept a per-element render path. Until the
-structure can express a different shape, every "bespoke" header will regress to this one.
+- **LEGACY** — the fixed skeleton. Selenium, copper and zinc are this shape, are signed off, and
+  render byte-for-byte what they always did. Do not build a new header this way.
+- **COMPOSED** — `{slug, facet, blocks:[…]}`: an ORDERED, self-describing list. Each entry declares
+  its own `type`, NOTHING is required, and the sequence is whatever the element's material wants.
+  The vocabulary: `eyebrow` · `kill` · `opener` (figure + line + pivot) · `figure` · `prose`
+  (`tone: bridge|coda`) · `split` · `beats` (`items[]`, `layout: stack|row`) · `stat` · `quote`.
+  An entry may carry no beats, no stat, no quote, the quote first, two figures and nothing else, or
+  nothing but an annotated illustration.
+
+A `figure` block names its own `width` from a CLOSED set (`mech` 600px · `fork` 700px · `rail` 660px)
+and it is REQUIRED — because a width override that loses the cascade renders at the 560px base and
+silently shrinks every label in the figure (Rule 2's trap). A typo is now a loud parse failure.
+
+**Adding a new block type = one literal in `MechBlockSchema` + one case in `renderMechBlocks`.**
+`mechanism_blocks_wellformed` REDDENS if you add one without the other, in either direction: a
+data-driven dispatch fails SILENTLY, so an undispatched type would just render nothing.
+
+So designing an element header now starts from its content and lets the shape follow. What is
+unchanged: four genuinely distinct mockups, not four variations of one idea — and the chassis is no
+longer the path of least resistance, but it is still reachable, so do not drift back into it.
 
 ## ★ Rule 1 — mock up inside the REAL container, never a bespoke sheet
 A header does not live on a blank page. It renders inside the tan `.kd-ep-fam` box
@@ -194,23 +210,28 @@ a header, not all 91 — the rest have no entry yet and gating them would redden
 - **Copy** — ALL of it, including every in-figure label — `mechanism-clarity-data.json`
   (`views_no_inline_prose` / R4). The view holds no user-facing string.
 - **Numbers + quotes** — pulled BY CLAIM ID at render (R3). Never hand-typed verbatim.
-- **Composition** — the optional schema blocks in `core/schemas/mechanism-clarity.ts`:
-  `figure_labels` · `split{left,right}` (2×2 grid; evidence = a claim quote OR a
-  `field{total,columns,bands[]}` proportion figure) · `bridge` · `figure_pre_beats` /
-  `figure_post_beats` · `beats_layout` · `beat.turn`. All optional and self-suppressing — compose
-  from these before adding to the schema.
+- **Composition** — the `blocks[]` vocabulary in `core/schemas/mechanism-clarity.ts`
+  (`MechBlockSchema`), rendered in the declared order by `views/entity-page.ts::renderMechBlocks`.
+  A `split` side's evidence is either a claim quote or a `field{total,columns,bands[]}` proportion
+  figure. Compose from the existing types before adding one; adding one means a schema literal AND
+  a render case, together, or `mechanism_blocks_wellformed` reddens.
 - **Figures** — dispatch on a **generic key**, never a slug (`entity_render_is_projection`).
-  Live: `rancidity` · `cofactor_fork` · `decline_rail` · `reversal_rail`.
+  Live: `rancidity` · `cofactor_fork` · `decline_rail` · `reversal_rail` · `nail_spots` ·
+  `metal_fingers`. A key the dispatch does not know renders '' — gated by
+  `mechanism_blocks_wellformed`.
 - **CSS** — the `kd-ep-fam__*` vocabulary in `drawer-knowledge.css`. Reuse before adding.
 - **Probe** — copy `tools/render_probe_copper.js` (47 checks) per element. It must include a
   **regression pass on a previously-shipped element**: the optional blocks make it easy to change
   shared code and not notice.
 
 ## Enforcement
-- **LIVE:** `element_header_complete` · `figure_type_within_standard` (negative tests:
-  `tools/test_element_header_complete.py`, `tools/test_figure_type_within_standard.py`) ·
+- **LIVE:** `element_header_complete` · `figure_type_within_standard` ·
+  `mechanism_blocks_wellformed` (negative tests: `tools/test_element_header_complete.py`,
+  `tools/test_figure_type_within_standard.py`, `tools/test_mechanism_blocks_wellformed.py`) ·
   `views_no_inline_prose` · `entity_render_is_projection` · `view_category_not_hardcoded` ·
-  per-element render probes.
+  per-element render probes · `tools/render_probe_mech_shape.js` (every signed-off header renders
+  BYTE-IDENTICAL to `tools/goldens/mechanism-sections.json`, with a negative control proving the
+  byte comparison fires).
 - **Discipline (WISH, R7):** rules 1, 3, 4 and 5 — container fidelity, measured placement,
   alignment construction, and narrative cohesion — rest on review and Luneth's visual sign-off. No
   machine check can tell a cohesive story from a stitched one. The STOP-for-sign-off gate IS the

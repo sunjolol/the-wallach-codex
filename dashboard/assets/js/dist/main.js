@@ -4984,10 +4984,57 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     highlight: external_exports.string().optional(),
     stat: MechStatSchema.optional()
   }).passthrough();
+  var MechFigureWidthSchema = external_exports.enum(["mech", "fork", "rail"]);
+  var MechBlockSchema = external_exports.discriminatedUnion("type", [
+    external_exports.object({ type: external_exports.literal("eyebrow"), text: external_exports.string() }).passthrough(),
+    external_exports.object({ type: external_exports.literal("kill"), text: external_exports.string() }).passthrough(),
+    // The opener/hook: a figure plus an opening line and a pivot line.
+    MechHookSchema.extend({ type: external_exports.literal("opener") }),
+    // A figure on its own row. `turn` adds the accent spacing the post-beats slot used.
+    external_exports.object({
+      type: external_exports.literal("figure"),
+      figure: MechFigureSchema,
+      width: MechFigureWidthSchema,
+      turn: external_exports.boolean().optional()
+    }).passthrough(),
+    // One connective paragraph. `tone` picks the shipped class — a bridge INTO what follows, or a
+    // coda that closes the block. Required: the two read differently, so defaulting would guess.
+    external_exports.object({
+      type: external_exports.literal("prose"),
+      text: external_exports.string(),
+      tone: external_exports.enum(["bridge", "coda"])
+    }).passthrough(),
+    MechSplitSchema.extend({ type: external_exports.literal("split") }),
+    // The numbered steps. `items` rather than `beats` so a block never shadows the legacy field.
+    external_exports.object({
+      type: external_exports.literal("beats"),
+      items: external_exports.array(MechBeatSchema),
+      layout: external_exports.enum(["stack", "row"]).optional()
+    }).passthrough(),
+    MechStatSchema.extend({ type: external_exports.literal("stat") }),
+    // The pull quote, BY CLAIM ID (R3) — `highlight` is the phrase .ds-mark emphasises.
+    external_exports.object({
+      type: external_exports.literal("quote"),
+      claim: external_exports.string(),
+      highlight: external_exports.string().optional()
+    }).passthrough()
+  ]);
+  var MechComposedSchema = external_exports.object({
+    slug: external_exports.string(),
+    facet: external_exports.string(),
+    blocks: external_exports.array(MechBlockSchema).min(1)
+  }).passthrough();
   var MechanismClaritySchema = external_exports.object({
     disclaimer: external_exports.string(),
-    mechanisms: external_exports.array(MechanismSchema)
+    // COMPOSED IS TRIED FIRST, and the order is load-bearing: a legacy entry carries no `blocks`, so
+    // it fails the composed member and falls through to the untouched legacy schema. A composed entry
+    // matches on its first try. A composed entry with a bad block (unknown `type`, missing `width`)
+    // fails BOTH members and throws at module load — loud, which is the point.
+    mechanisms: external_exports.array(external_exports.union([MechComposedSchema, MechanismSchema]))
   }).passthrough();
+  function isComposedMech(m) {
+    return Array.isArray(m.blocks);
+  }
 
   // assets/js/src/core/schemas/recommender.ts
   var RecommenderCandidateSchema = external_exports.object({
@@ -179805,13 +179852,32 @@ Sickle cell anemia`,
     };
     return `<div class="kd-ep-fam__split">${prose(left, "")}${prose(right, R)}${evid(left, "")}${evid(right, R)}</div>`;
   }
-  function renderMechanism(slug, layoutKey, category) {
-    const m = slug !== null ? MECH_BY_SLUG.get(slug) : void 0;
-    if (m === void 0) {
-      return "";
-    }
-    const beats = m.beats.map((b) => {
-      const hook2 = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
+  var MECH_BLOCK_SEP = `
+      `;
+  function mechEyebrow(text) {
+    return `<span class="kd-ep-fam__eyebrow">${escHTML6(text)}</span>`;
+  }
+  function mechKill(text) {
+    return `<h3 class="kd-ep-fam__kill">${escHTML6(text)}</h3>`;
+  }
+  function mechFigureRow(figSvg, mod) {
+    return `<div class="kd-ep-fam__figure${mod}">${figSvg}</div>`;
+  }
+  function mechOpener(figSvg, text, pivot) {
+    return `<div class="kd-ep-fam__opener">
+        <div class="kd-ep-fam__openerart">${figSvg}</div>
+        <div>
+          <p class="kd-ep-fam__openertx">${glossify(collapseWS(text))}</p>
+          <p class="kd-ep-fam__openerq">${glossify(collapseWS(pivot))}</p>
+        </div>
+      </div>`;
+  }
+  function mechProse(tone, text) {
+    return `<p class="kd-ep-fam__${tone}">${glossify(collapseWS(text))}</p>`;
+  }
+  function mechBeats(items, mod) {
+    const steps = items.map((b) => {
+      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
       const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
       return `
       <div class="kd-ep-fam__step${turn}">
@@ -179819,43 +179885,82 @@ Sickle cell anemia`,
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
-          ${hook2}
+          ${hook}
         </div>
       </div>`;
     }).join("");
-    const stat = m.stat !== void 0 ? `
+    return `<div class="kd-ep-fam__steps${mod}">${steps}</div>`;
+  }
+  function mechStat(readout, value, label) {
+    return `
       <div class="kd-ep-fam__stat">
-        <span class="kd-ep-fam__statread">${escHTML6(m.stat.readout)}</span>
-        <span class="kd-ep-fam__statnum">${escHTML6(m.stat.value)}</span>
-        <span class="kd-ep-fam__statlbl">${escHTML6(m.stat.label)}</span>
-      </div>` : "";
-    const hook = m.hook !== void 0 ? `<div class="kd-ep-fam__opener">
-        <div class="kd-ep-fam__openerart">${mechanismFigure(m.hook.figure.key, m.hook.figure.alt, m.hook.figure.labels)}</div>
-        <div>
-          <p class="kd-ep-fam__openertx">${glossify(collapseWS(m.hook.text))}</p>
-          <p class="kd-ep-fam__openerq">${glossify(collapseWS(m.hook.pivot))}</p>
-        </div>
-      </div>` : "";
-    const coda = m.coda !== void 0 ? `<p class="kd-ep-fam__coda">${glossify(collapseWS(m.coda))}</p>` : "";
+        <span class="kd-ep-fam__statread">${escHTML6(readout)}</span>
+        <span class="kd-ep-fam__statnum">${escHTML6(value)}</span>
+        <span class="kd-ep-fam__statlbl">${escHTML6(label)}</span>
+      </div>`;
+  }
+  function mechSlotFigure(f) {
+    return mechanismFigure(f.key, f.alt, f.labels);
+  }
+  function renderMechLegacy(m) {
+    const hook = m.hook !== void 0 ? mechOpener(mechSlotFigure(m.hook.figure), m.hook.text, m.hook.pivot) : "";
     const split = m.split !== void 0 ? renderMechSplit(m.split.left, m.split.right) : "";
-    const bridge2 = m.bridge !== void 0 ? `<p class="kd-ep-fam__bridge">${glossify(collapseWS(m.bridge))}</p>` : "";
-    const preFig = m.figure_pre_beats !== void 0 ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail">${mechanismFigure(m.figure_pre_beats.key, m.figure_pre_beats.alt, m.figure_pre_beats.labels)}</div>` : "";
-    const postFig = m.figure_post_beats !== void 0 ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail kd-ep-fam__figure--turn">${mechanismFigure(m.figure_post_beats.key, m.figure_post_beats.alt, m.figure_post_beats.labels)}</div>` : "";
+    const bridge2 = m.bridge !== void 0 ? mechProse("bridge", m.bridge) : "";
+    const preFig = m.figure_pre_beats !== void 0 ? mechFigureRow(mechSlotFigure(m.figure_pre_beats), " kd-ep-fam__figure--rail") : "";
+    const postFig = m.figure_post_beats !== void 0 ? mechFigureRow(mechSlotFigure(m.figure_post_beats), " kd-ep-fam__figure--rail kd-ep-fam__figure--turn") : "";
+    const coda = m.coda !== void 0 ? mechProse("coda", m.coda) : "";
+    const stat = m.stat !== void 0 ? mechStat(m.stat.readout, m.stat.value, m.stat.label) : "";
     const stepsMod = m.beats_layout === "row" ? " kd-ep-fam__steps--row" : "";
     const heroFigMod = m.figure_labels !== void 0 ? " kd-ep-fam__figure--fork" : " kd-ep-fam__figure--mech";
-    return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML6(category ?? "")}">
-      <span class="kd-ep-fam__eyebrow">${escHTML6(m.eyebrow)}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML6(m.kill)}</h3>
+    return `${mechEyebrow(m.eyebrow)}
+      ${mechKill(m.kill)}
       ${hook}
-      <div class="kd-ep-fam__figure${heroFigMod}">${mechanismFigure(m.figure, m.figure_alt, m.figure_labels)}</div>
+      ${mechFigureRow(mechanismFigure(m.figure, m.figure_alt, m.figure_labels), heroFigMod)}
       ${split}
       ${bridge2}
       ${preFig}
-      <div class="kd-ep-fam__steps${stepsMod}">${beats}</div>
+      ${mechBeats(m.beats, stepsMod)}
       ${postFig}
       ${coda}
       ${stat}
-      ${fatFamilyQuote(m.quote_claim, m.highlight)}
+      ${fatFamilyQuote(m.quote_claim, m.highlight)}`;
+  }
+  function renderMechBlocks(blocks) {
+    return blocks.map((b) => {
+      switch (b.type) {
+        case "eyebrow":
+          return mechEyebrow(b.text);
+        case "kill":
+          return mechKill(b.text);
+        case "opener":
+          return mechOpener(mechSlotFigure(b.figure), b.text, b.pivot);
+        case "figure":
+          return mechFigureRow(mechSlotFigure(b.figure), ` kd-ep-fam__figure--${b.width}${b.turn === true ? " kd-ep-fam__figure--turn" : ""}`);
+        case "prose":
+          return mechProse(b.tone, b.text);
+        case "split":
+          return renderMechSplit(b.left, b.right);
+        case "beats":
+          return mechBeats(b.items, b.layout === "row" ? " kd-ep-fam__steps--row" : "");
+        case "stat":
+          return mechStat(b.readout, b.value, b.label);
+        case "quote":
+          return fatFamilyQuote(b.claim, b.highlight);
+        default: {
+          const unreached = b;
+          return unreached;
+        }
+      }
+    }).join(MECH_BLOCK_SEP);
+  }
+  function renderMechanism(slug, layoutKey, category) {
+    const m = slug !== null ? MECH_BY_SLUG.get(slug) : void 0;
+    if (m === void 0) {
+      return "";
+    }
+    const body = isComposedMech(m) ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
+    return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML6(category ?? "")}">
+      ${body}
       <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}
     </section>`;
@@ -184732,7 +184837,7 @@ TWO OPEN BLOCKERS, both carried into the handoff. The 99/1 split has no home on 
 
 Re-reading 26 load-bearing claims at the byte level also produced a source-purification queue, all in calcium's best passages: LETS-000079 ("nonnal" plus front-severed, which leaves calcium's strongest rhetorical passage unprintable), LETS-000285 ("phosphoms" four times), LETS-000168 ("magnesiumat", "t.i.d.foras"), EPIGEN-000232 (a stray period mid-sentence), DDDL-000088 (missing its terminal period). It caught two agent errors as well: two evidence packets disagreed about whether DDDL-000088 was severed (it has no terminal period and co-bills magnesium, so it can never be presented as calcium-only), and one packet claimed a scan found zero verbatim hits for the 99/1 split when it is present in word form.
 
-Verified at close: build OK, invariants 78/78 with zero new reds, render_probe_zinc 57/57, no_operating_doc_contradiction clean after the playbook rewrite. Nothing touched is a pillar or a sealed canonical, so no seal was needed. The calcium content that survived both rounds is preserved in chronicle/next-chunk.md with every claim id and every forbidden claim named, so the next session re-derives nothing.` }];
+Verified at close: build OK, invariants 78/78 with zero new reds, render_probe_zinc 57/57, no_operating_doc_contradiction clean after the playbook rewrite. Nothing touched is a pillar or a sealed canonical, so no seal was needed. The calcium content that survived both rounds is preserved in chronicle/next-chunk.md with every claim id and every forbidden claim named, so the next session re-derives nothing.` }, { id: "lg_ms7h9rve_rzyl0h", ts: "2026-07-30T07:16:28.250869-05:00", surface: "headers", kind: "milestone", summary: "Element headers can now be a DIFFERENT SHAPE: the mechanism schema takes an ordered self-describing block list where nothing is required, and the three signed-off headers are proven byte-identical", detail: "Element headers can finally be a DIFFERENT SHAPE, not just different clothes on the same body.\n\nEight calcium header mockups were rejected across two rounds, and the reason was not taste \u2014 it was the data structure. The schema REQUIRED eyebrow, headline, figure, beats[] and a quote on every entry, and the renderer emitted them in one hard-coded order. Everything that looked like design freedom (the hook, the split, the bridge, the two extra figure slots, the coda, the stat) was an optional extra bolted onto that one skeleton. So \"design it bespoke\" could not succeed: the only thing a new header could change was its clothes. The playbook had said \"bespoke, not a template\" since the day it was written and it never helped, because the structure outvoted the prose.\n\nWHAT LANDED. core/schemas/mechanism-clarity.ts now accepts either of two shapes. LEGACY (MechanismSchema) is untouched, and selenium/copper/zinc stay on it. COMPOSED is {slug, facet, blocks[]} \u2014 an ordered, self-describing list over a 9-type discriminated union: eyebrow, kill, opener, figure, prose (tone bridge|coda), split, beats (items[], layout stack|row), stat, quote. Nothing is required. An entry may carry no beats, no stat, no quote, the quote first, two figures and nothing else, or nothing but an annotated illustration. figure.width is a CLOSED enum (mech 600 / fork 700 / rail 660) and REQUIRED, because the base .kd-ep-fam__figure rule is an ID selector \u2014 a width override at lower specificity silently loses and the figure renders at 560px with every label inside quietly shrunk. A closed enum turns that trap into a parse error. isComposedMech is a type predicate rather than an `'blocks' in m` check, because zod .passthrough() infers an index signature on both union members, so `in` narrows nothing.\n\nviews/entity-page.ts was restructured so the markup for each renderable unit exists exactly ONCE: mechEyebrow, mechKill, mechOpener, mechFigureRow, mechProse, mechBeats, mechStat, plus the existing renderMechSplit and fatFamilyQuote. Both paths call those emitters. renderMechLegacy now declares the old ORDER and nothing else; renderMechBlocks walks the order the data declares. Its switch is exhaustive with no default returning '', so adding a block type to the schema without a render case is a COMPILE error instead of a block that silently renders nothing. The frame Rule 0 fixes \u2014 the tan content box, the disclaimer, and the Best-Youngevity-sources dock at the bottom \u2014 is the only fixed structure left.\n\nPROOF, not assertion. The three headers Luneth signed off had to not move. Before touching anything, the rendered .kd-ep-fam--mech section for each was captured from the pre-refactor bundle; after the refactor, all three are byte-identical by sha256 (selenium 4e12ec2a67, copper 91d46b8494, zinc adddec26c5 \u2014 pre == post). Those bytes are committed as tools/goldens/mechanism-sections.json and re-checked every run by tools/render_probe_mech_shape.js (18/18), which also carries a negative control: it mutates the live DOM by one character and asserts the comparison then FAILS, so the byte comparison is proven to fire rather than assumed to.\n\nNEW GATE. mechanism_blocks_wellformed (critical, 17-case negative test) closes the failure class the composed shape buys: a data-driven dispatch fails SILENTLY. It proves the schema's block types and renderMechBlocks' cases are the same set in BOTH directions, that every figure key the store names is one mechanismFigure actually draws, and that every claim the store cites resolves in the sealed corpus. The last two now cover the legacy entries as well, which never had them.\n\nTWO TOOLING TRAPS, both found by running things rather than reading them, both recorded in the handoff. (1) safe_write writes text in Windows text mode, so an LF snapshot lands on disk as CRLF \u2014 the first golden comparison read as \"all 256 lines differ\" against a completely unchanged render, and the first reading wrongly blamed the source file's line endings (a template literal's CRLF normalises to LF when evaluated, so line endings never reach the DOM at all). Byte-exact snapshots now live INSIDE JSON, where a newline is a two-character \\n escape that survives that write path, so the comparison stays raw with no normalisation that could hide a real change. (2) The sealed claim shards key the id as `id`, not `claim_id`. The new gate's first draft read claim_id, built an empty id set, and reddened all 26 genuine references \u2014 a gate lying about clean data. Both are pinned as test cases.\n\nHONEST GAP (R7). The composed RENDER path has no runtime coverage yet, because no element declares blocks. Its data contract is gated and its code is type-exhaustive, but the first composed header must bring a probe that actually renders it. Labelled, not covered.\n\nVERIFIED: tsc clean; eslint zero new errors (4 pre-existing multiline-ternary errors cleared as a side effect); build OK; invariants 79/79 (was 78/78, +1 new); render_probe_mech_shape 18/18; render_probe_zinc 57/57; render_probe_copper 47/47; render_probe_mechanism, render_probe_entity, render_probe_knowledge all PASS. No visual change to any surface, so no visual sign-off was required or claimed." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
