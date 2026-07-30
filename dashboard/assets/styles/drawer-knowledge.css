@@ -2373,6 +2373,53 @@
 #drawer-knowledge-mount .kd-ep-fam__step--turn .kd-ep-fam__steptitle { color: var(--kd-ep-fam); }
 
 
+/* ── Element-header OPENER + CODA (zinc, 2026-07-29). NAMED __opener, NOT __hook: the beat
+   payoff line above already owns .kd-ep-fam__hook, and reusing it silently restyled selenium's
+   and copper's beat hooks into this grid (same ID specificity, mine landing later in the file). The hook opens the block on something the
+   reader can check on their own body (zinc's white nail spots) before any mechanism is explained;
+   the coda returns to it so the opening is paid off rather than abandoned. Both self-suppress. ── */
+#drawer-knowledge-mount .kd-ep-fam__opener {
+  display: grid; grid-template-columns: 380px 1fr; gap: var(--ds-space-5); align-items: center;
+  margin: 2px 0 30px; padding-bottom: var(--ds-space-5); border-bottom: 1px solid var(--ds-rule-soft); }
+#drawer-knowledge-mount .kd-ep-fam__openerart { max-width: 380px; }
+#drawer-knowledge-mount .kd-ep-fam__openertx {
+  margin: 0; font-family: var(--ds-font-sans); font-size: var(--ds-text-md);
+  line-height: 1.6; color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-ep-fam__openerq {
+  margin: var(--ds-space-3) 0 0; font-family: var(--ds-font-serif-light); font-style: italic;
+  font-size: var(--ds-text-md); line-height: 1.5; color: var(--ds-ink-medium); }
+#drawer-knowledge-mount .kd-ep-fam__coda {
+  margin: var(--ds-space-4) 0 4px; font-family: var(--ds-font-serif-light); font-style: italic;
+  font-size: var(--ds-text-md); line-height: 1.55; color: var(--ds-ink-medium); max-width: 72ch; }
+
+/* SKIN + NAIL are DEPICTIVE, not design tokens — they stand for real skin and a real nail, so
+   they are literal values rather than --ds-* (a themed token would drift and stop being skin).
+   Same precedent as the hair swatches above. FILL and OUTLINE are separate passes: the white tip
+   and the half-moon are clipped to the nail and drawn between them, so the outline lands on top
+   and neither can overshoot the nail bed (Luneth 2026-07-29 — it overshot when merely inset). */
+#drawer-knowledge-mount .kd-ep-fam__skin     { fill: #e8bb9a; stroke: #ba8560; stroke-width: 1.4; }
+#drawer-knowledge-mount .kd-ep-fam__nail     { fill: #f5d2b8; stroke: none; }
+#drawer-knowledge-mount .kd-ep-fam__nailline { fill: none; stroke: #c08c66; stroke-width: 1.2; }
+#drawer-knowledge-mount .kd-ep-fam__ntip     { fill: #fffefb; stroke: none; }
+#drawer-knowledge-mount .kd-ep-fam__nlun     { fill: #fae2d0; stroke: none; }
+#drawer-knowledge-mount .kd-ep-fam__nspot    { fill: #ffffff; stroke: #edd3bd; stroke-width: .8; }
+
+/* the metal-fingers figure: one molecule, twice — with the element built in, and without */
+#drawer-knowledge-mount .kd-ep-fam__strand        { fill: none; stroke: var(--ds-ink-soft); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__znode         { fill: color-mix(in srgb, var(--kd-ep-fam) 22%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); stroke-width: 2; }
+#drawer-knowledge-mount .kd-ep-fam__znode--empty  { fill: none; stroke: var(--ds-rule-bright); stroke-width: 1.5; stroke-dasharray: 3 3; }
+#drawer-knowledge-mount .kd-ep-fam__zstem         { fill: none; stroke: var(--kd-ep-fam); stroke-width: 1.8; }
+#drawer-knowledge-mount .kd-ep-fam__zstem--gone   { stroke: var(--ds-rule-bright); stroke-dasharray: 4 4; }
+#drawer-knowledge-mount .kd-ep-fam__gbar          { fill: color-mix(in srgb, var(--kd-ep-fam) 16%, var(--ds-paper-light)); stroke: var(--kd-ep-fam); stroke-width: 1.6; }
+/* the OFF state must read EMPTIER than the on state — an opaque fill made the dead bars the most
+   solid thing in the figure, which inverted the whole point of the comparison */
+#drawer-knowledge-mount .kd-ep-fam__gbar--off     { fill: none; stroke: var(--ds-rule-bright); stroke-width: 1; stroke-dasharray: 4 3; }
+#drawer-knowledge-mount .kd-ep-fam__zdiv          { stroke: var(--ds-rule); stroke-width: 1; stroke-dasharray: 5 5; }
+/* 14.6px, not the shared 17.6px: this node is smaller than copper's, so the glyph was cramped
+   inside it. UNDER the selenium ceiling, which is a ceiling and not a floor, so
+   figure_type_within_standard stays green. ID-scoped because the base rule is. */
+#drawer-knowledge-mount .kd-ep-fam__gglyph--sm { font-size: 14.6px; }
+
 /* -- Category theming: the whole detail screen adopts the element's CATEGORY accent by overriding
    the --ds-accent FAMILY on the container, so the hero tile, outer border, why-link, back button and
    the mechanism block all recolour together. minerals=blue; vitamins keep the default orange;

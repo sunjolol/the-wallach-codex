@@ -4956,11 +4956,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     left: MechSideSchema,
     right: MechSideSchema
   }).passthrough();
+  var MechHookSchema = external_exports.object({
+    figure: MechFigureSchema,
+    text: external_exports.string(),
+    pivot: external_exports.string()
+  }).passthrough();
   var MechanismSchema = external_exports.object({
     slug: external_exports.string(),
     facet: external_exports.string(),
     eyebrow: external_exports.string(),
     kill: external_exports.string(),
+    hook: MechHookSchema.optional(),
     figure: external_exports.string(),
     figure_alt: external_exports.string(),
     figure_labels: external_exports.record(external_exports.string(), external_exports.string()).optional(),
@@ -4971,6 +4977,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     // 'row' lays the beats out as side-by-side columns; absent = the selenium stack.
     beats_layout: external_exports.string().optional(),
     figure_post_beats: MechFigureSchema.optional(),
+    // The CODA: one closing line that returns the block to whatever its hook opened on, so an
+    // opening the reader checked on themselves is paid off rather than abandoned.
+    coda: external_exports.string().optional(),
     quote_claim: external_exports.string(),
     highlight: external_exports.string().optional(),
     stat: MechStatSchema.optional()
@@ -72593,6 +72602,81 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         quote_claim: "WAL-CLM-DDDL-000196",
         highlight: "some aneurysms can heal"
+      },
+      {
+        slug: "zinc",
+        facet: "mechanism",
+        eyebrow: "What zinc actually does",
+        kill: "Most nutrients are fuel. Zinc is a part.",
+        hook: {
+          figure: {
+            key: "nail_spots",
+            alt: "Three fingers of a hand seen from the back, running off the bottom of the frame. Each nail has a thin white crescent at its tip and a pale half-moon at its base; two of the nails carry small white spots.",
+            labels: {
+              spots: "WHITE SPOTS"
+            }
+          },
+          text: "Look at your own fingernails. Those little white spots almost everyone has? Wallach reads them as a sign you are short of zinc.",
+          pivot: "So why would a missing metal show up in a fingernail? Because zinc is not burned like fuel. It is built in."
+        },
+        figure: "metal_fingers",
+        figure_alt: "Two states side by side. With zinc: the RNA molecule carries three zinc atoms built into it, each putting down a finger that reaches a gene below, and all three instructions get read. Without it: the same molecule has three empty sockets, the fingers reach only part of the way and stop, and although the genes are all still there nothing can read them.",
+        figure_labels: {
+          with: "WITH ZINC",
+          without: "WITHOUT IT",
+          molecule_on: "THE RNA MOLECULE",
+          molecule_off: "THE SAME MOLECULE",
+          glyph: "Zn",
+          no_finger: "NO METAL FINGER",
+          bar_is_on: "EACH BAR IS ONE GENE",
+          bar_is_off: "STILL THERE, ALL OF THEM",
+          outcome_on: "THE INSTRUCTIONS GET READ",
+          outcome_off: "NOTHING CAN READ THEM"
+        },
+        bridge: "That is the difference between fuel and a part. Run low on fuel and you feel tired. Lose a part and you feel nothing \u2014 a job just stops being done, and stays undone until the part is back.",
+        beats: [
+          {
+            n: "01",
+            title: "Zinc holds the shape",
+            text: "An enzyme only works if it is the right shape to grip what it works on. Wallach says zinc is what holds that shape \u2014 take it out and the tool is still there, just fitting nothing.",
+            hook: "It is not the fuel. It is the part.",
+            traces: [
+              "WAL-CLM-RARE-000265",
+              "WAL-CLM-EPIGEN-000189"
+            ]
+          },
+          {
+            n: "02",
+            title: "Seventy tools take the same part",
+            text: "No fewer than seventy enzymes need zinc before they work at all. So one shortage does not stall one job \u2014 it stalls seventy.",
+            hook: "One missing part, seventy tools.",
+            traces: [
+              "WAL-CLM-DDDL-000037",
+              "WAL-CLM-RARE-000265"
+            ]
+          },
+          {
+            n: "03",
+            title: "One of them reads your DNA",
+            turn: true,
+            text: "A gene is an instruction for building something. Zinc sits inside the molecule that carries it, and the tool that reads it is a zinc tool too.",
+            hook: "The instruction stays there, perfect, forever. Nothing can read it.",
+            traces: [
+              "WAL-CLM-DDDL-000038",
+              "WAL-CLM-EPIGEN-000190",
+              "WAL-CLM-RARE-000046"
+            ]
+          }
+        ],
+        coda: "Which is why he starts at a fingernail. Zinc is stored there, and he reads nails as a barometer of what you are absorbing.",
+        stat: {
+          value: "70",
+          readout: "// RARE EARTHS \xB7 ZINC METALLOENZYMES",
+          label: "tools that will not work until the part is back",
+          claim: "WAL-CLM-RARE-000265"
+        },
+        quote_claim: "WAL-CLM-RARE-000046",
+        highlight: "DNA and genes are powerless"
       }
     ]
   };
@@ -72612,6 +72696,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       copper: {
         lede: "A cofactor for hundreds of enzymes \u2014 it colours your hair and gives artery walls their elasticity, which is why Wallach reads premature grey as the first sign of a shortage.",
         why: "From Wallach's Epigenetics (2014) mineral table: 1\u20132 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 3.1 mg/day. (His earlier Let's Play Doctor Base Line program lists 3 to 4 mg.)"
+      },
+      zinc: {
+        lede: "A trace mineral the body holds barely two grams of \u2014 and one of the few that is never burned for energy, but built into the tools your cells work with.",
+        why: "From Wallach's Epigenetics (2014) mineral table: 15\u201330 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 46 mg/day. (His earlier Let's Play Doctor Base Line program lists 25 mg as the daily maintenance figure, and 150 mg as a 30-day therapeutic dose.)"
       }
     },
     conditions: {}
@@ -179599,6 +179687,63 @@ Sickle cell anemia`,
       <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc kd-ep-fam__gtag--cause" x="600" y="70" text-anchor="end">${figLabel(labels, "start")}</text>
     </svg>`;
   }
+  function nailSpotsFigure(alt, labels) {
+    const FINGERS = [{ x: 70, t: 34 }, { x: 133, t: 14 }, { x: 196, t: 26 }];
+    const SPOTS = [
+      { cx: 155, cy: 40, rx: 6, ry: 4.4 },
+      { cx: 169, cy: 52, rx: 4.6, ry: 3.4 },
+      { cx: 152, cy: 58, rx: 3.8, ry: 2.8 },
+      { cx: 226, cy: 58, rx: 6.4, ry: 4.8 }
+    ];
+    const skin = (x, t) => `M${x} ${t + 30} C${x} ${t + 13} ${x + 13} ${t} ${x + 30} ${t} C${x + 47} ${t} ${x + 60} ${t + 13} ${x + 60} ${t + 30} V132 H${x} Z`;
+    const nail = (x, t) => `M${x + 8} ${t + 29} C${x + 8} ${t + 12} ${x + 17} ${t + 5} ${x + 30} ${t + 5} C${x + 43} ${t + 5} ${x + 52} ${t + 12} ${x + 52} ${t + 29} V${t + 61} C${x + 52} ${t + 67} ${x + 43} ${t + 70} ${x + 30} ${t + 70} C${x + 17} ${t + 70} ${x + 8} ${t + 67} ${x + 8} ${t + 61} Z`;
+    const tip2 = (x, t) => `M${x + 11} ${t + 17} C${x + 11} ${t + 11} ${x + 18} ${t + 5} ${x + 30} ${t + 5} C${x + 42} ${t + 5} ${x + 49} ${t + 11} ${x + 49} ${t + 17} C${x + 45} ${t + 13} ${x + 39} ${t + 11} ${x + 30} ${t + 11} C${x + 21} ${t + 11} ${x + 15} ${t + 13} ${x + 11} ${t + 17} Z`;
+    const lun = (x, t) => `M${x + 13} ${t + 61} C${x + 19} ${t + 52} ${x + 41} ${t + 52} ${x + 47} ${t + 61} C${x + 41} ${t + 67} ${x + 19} ${t + 67} ${x + 13} ${t + 61} Z`;
+    const clips = FINGERS.map((f, k) => `<clipPath id="mech-nail-${k}"><path d="${nail(f.x, f.t)}"/></clipPath>`).join("");
+    const skins = FINGERS.map((f) => `<path class="kd-ep-fam__skin" d="${skin(f.x, f.t)}"/>`).join("");
+    const nails = FINGERS.map((f, k) => `<path class="kd-ep-fam__nail" d="${nail(f.x, f.t)}"/>
+      <g clip-path="url(#mech-nail-${k})">
+        <path class="kd-ep-fam__ntip" d="${tip2(f.x, f.t)}"/>
+        <path class="kd-ep-fam__nlun" d="${lun(f.x, f.t)}"/>
+      </g>
+      <path class="kd-ep-fam__nailline" d="${nail(f.x, f.t)}"/>`).join("");
+    const spots = SPOTS.map((s) => `<ellipse class="kd-ep-fam__nspot" cx="${s.cx}" cy="${s.cy}" rx="${s.rx}" ry="${s.ry}"/>`).join("");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 380 132" role="img" aria-label="${escHTML6(alt)}">
+      <defs>${clips}</defs>${skins}${nails}${spots}
+      <path class="kd-ep-fam__gline" d="M260 50 H274"/>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="280" y="54">${figLabel(labels, "spots")}</text>
+    </svg>`;
+  }
+  function metalFingersFigure(alt, labels) {
+    const STOPS = [104, 180, 256];
+    const side = (dx, on2) => {
+      const nodes = STOPS.map((x, k) => {
+        const big = k === 1;
+        const cls = on2 ? "kd-ep-fam__znode" : "kd-ep-fam__znode kd-ep-fam__znode--empty";
+        return `<circle class="${cls}" cx="${x + dx}" cy="${big ? 74 : 76}" r="${big ? 14 : 7}"/>`;
+      }).join("");
+      const stems = STOPS.map((x, k) => on2 ? `<path class="kd-ep-fam__zstem" d="M${x + dx} ${k === 1 ? 92 : 87} V126" marker-end="url(#mech-mf-tip)"/>` : `<path class="kd-ep-fam__zstem kd-ep-fam__zstem--gone" d="M${x + dx} ${k === 1 ? 92 : 87} V108"/>`).join("");
+      const bars = STOPS.map((x) => `<rect class="kd-ep-fam__gbar${on2 ? "" : " kd-ep-fam__gbar--off"}" x="${x + dx - 32}" y="140" width="64" height="22" rx="4"/>`).join("");
+      return `<path class="kd-ep-fam__strand" d="M${52 + dx} 74 C${82 + dx} 58 ${112 + dx} 90 ${142 + dx} 74 C${172 + dx} 58 ${202 + dx} 90 ${232 + dx} 74 C${262 + dx} 58 ${292 + dx} 90 ${308 + dx} 80"/>${nodes}${stems}${bars}`;
+    };
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 216" role="img" aria-label="${escHTML6(alt)}">
+      <defs><marker id="mech-mf-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
+        <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="180" y="18" text-anchor="middle">${figLabel(labels, "with")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="520" y="18" text-anchor="middle">${figLabel(labels, "without")}</text>
+      <line class="kd-ep-fam__zdiv" x1="350" y1="32" x2="350" y2="212"/>
+      <text class="kd-ep-fam__glabel" x="180" y="46" text-anchor="middle">${figLabel(labels, "molecule_on")}</text>
+      ${side(0, true)}
+      <text class="kd-ep-fam__gglyph kd-ep-fam__gglyph--sm" x="180" y="79" text-anchor="middle">${figLabel(labels, "glyph")}</text>
+      <text class="kd-ep-fam__glabel" x="180" y="178" text-anchor="middle">${figLabel(labels, "bar_is_on")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="180" y="202" text-anchor="middle">${figLabel(labels, "outcome_on")}</text>
+      <text class="kd-ep-fam__glabel" x="520" y="46" text-anchor="middle">${figLabel(labels, "molecule_off")}</text>
+      ${side(340, false)}
+      <text class="kd-ep-fam__glabel" x="520" y="126" text-anchor="middle">${figLabel(labels, "no_finger")}</text>
+      <text class="kd-ep-fam__glabel" x="520" y="178" text-anchor="middle">${figLabel(labels, "bar_is_off")}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="520" y="202" text-anchor="middle">${figLabel(labels, "outcome_off")}</text>
+    </svg>`;
+  }
   function mechanismFigure(key, alt, labels) {
     switch (key) {
       case "rancidity":
@@ -179609,6 +179754,10 @@ Sickle cell anemia`,
         return declineRailFigure(alt, labels);
       case "reversal_rail":
         return reversalRailFigure(alt, labels);
+      case "nail_spots":
+        return nailSpotsFigure(alt, labels);
+      case "metal_fingers":
+        return metalFingersFigure(alt, labels);
       default:
         return "";
     }
@@ -179662,7 +179811,7 @@ Sickle cell anemia`,
       return "";
     }
     const beats = m.beats.map((b) => {
-      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
+      const hook2 = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
       const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
       return `
       <div class="kd-ep-fam__step${turn}">
@@ -179670,7 +179819,7 @@ Sickle cell anemia`,
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
-          ${hook}
+          ${hook2}
         </div>
       </div>`;
     }).join("");
@@ -179680,6 +179829,14 @@ Sickle cell anemia`,
         <span class="kd-ep-fam__statnum">${escHTML6(m.stat.value)}</span>
         <span class="kd-ep-fam__statlbl">${escHTML6(m.stat.label)}</span>
       </div>` : "";
+    const hook = m.hook !== void 0 ? `<div class="kd-ep-fam__opener">
+        <div class="kd-ep-fam__openerart">${mechanismFigure(m.hook.figure.key, m.hook.figure.alt, m.hook.figure.labels)}</div>
+        <div>
+          <p class="kd-ep-fam__openertx">${glossify(collapseWS(m.hook.text))}</p>
+          <p class="kd-ep-fam__openerq">${glossify(collapseWS(m.hook.pivot))}</p>
+        </div>
+      </div>` : "";
+    const coda = m.coda !== void 0 ? `<p class="kd-ep-fam__coda">${glossify(collapseWS(m.coda))}</p>` : "";
     const split = m.split !== void 0 ? renderMechSplit(m.split.left, m.split.right) : "";
     const bridge2 = m.bridge !== void 0 ? `<p class="kd-ep-fam__bridge">${glossify(collapseWS(m.bridge))}</p>` : "";
     const preFig = m.figure_pre_beats !== void 0 ? `<div class="kd-ep-fam__figure kd-ep-fam__figure--rail">${mechanismFigure(m.figure_pre_beats.key, m.figure_pre_beats.alt, m.figure_pre_beats.labels)}</div>` : "";
@@ -179689,12 +179846,14 @@ Sickle cell anemia`,
     return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML6(category ?? "")}">
       <span class="kd-ep-fam__eyebrow">${escHTML6(m.eyebrow)}</span>
       <h3 class="kd-ep-fam__kill">${escHTML6(m.kill)}</h3>
+      ${hook}
       <div class="kd-ep-fam__figure${heroFigMod}">${mechanismFigure(m.figure, m.figure_alt, m.figure_labels)}</div>
       ${split}
       ${bridge2}
       ${preFig}
       <div class="kd-ep-fam__steps${stepsMod}">${beats}</div>
       ${postFig}
+      ${coda}
       ${stat}
       ${fatFamilyQuote(m.quote_claim, m.highlight)}
       <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
@@ -184535,7 +184694,27 @@ STATUS: awaiting Luneth's ratification. entity-copy.json is hand-authored and us
 
 VERIFY. Build OK; invariants 76/76; render_probe_copper 47/47; render_probe_entity PASS (it asserts the store lede actually renders); the lede was screenshot-verified on the live page next to Selenium's for voice and length.
 
-DEFERRAL, now sharper: entity-copy.json holds 3 of 91 essentials, so BOTH the lede and the why-this-number line are absent on the other 88. Each of those needs a COMPLETE entry \u2014 both fields \u2014 not just the one that happens to be in view.` }, { id: "lg_ms6gbssp_2stfge", ts: "2026-07-29T14:02:16.970005-05:00", surface: "headers", kind: "design-decision", summary: "Codified the copper session's lessons: 2 new gates (element_header_complete, figure_type_within_standard) + the .claude/rules/element-headers.md playbook, so the other 89 headers don't re-litigate font size, alignment, cohesion, lede or why", detail: "Everything Luneth had to re-explain during the copper header is now either a machine gate or a written playbook, so the other 89 elements go fast instead of re-litigating the same four arguments. His instruction: \"KEEP THE LESSONS LEARNED FROM YOUR MISTAKES, I DON'T WANT TO HAVE TO RE-EXPLAIN EVERYTHING AGAIN ABOUT HOW DEMO PAGES SHOULD LOOK FONT-SIZE-WISE, ALIGNMENT-WISE AND COHESION-WISE FOR THESE HEADERS, NOR THE 'WHY THIS NUMBER?' AND LEDE.\"\n\nGATE 1 \u2014 element_header_complete (critical, consistency). Every element with a shipped composed header must carry BOTH `lede` and `why` in entity-copy.json. This is the defect that shipped twice on copper: the why-this-number line never rendered because the store held only calcium + selenium, and then the header went live with `why` and no `lede`. A half-filled entry is INVISIBLE from the rendered page \u2014 that is precisely why nothing surfaced it and the user had to. Negative test tools/test_element_header_complete.py, 10 cases, including the exact shipped defect, blank-string variants, an out-of-scope entry, and the vacuous-green case. Scope is stated in the check's own docstring: it binds on elements that HAVE a header, not all 91, because gating the rest would redden work not yet started. That remainder is a labelled WISH, not a covered gap.\n\nGATE 2 \u2014 figure_type_within_standard (critical, structural). Every .kd-ep-fam__g* label class is exactly 12.0px and nothing exceeds the 17.6px element glyph \u2014 both MEASURED headlessly off the shipped selenium figure rather than chosen. It catches drift in BOTH directions: too small, and the overcorrection to 15/17/18/32 that was rejected on sight. Selenium is the CEILING, not a floor. Negative test tools/test_figure_type_within_standard.py, 12 cases. It gates the SOURCE side only, and the check says so plainly: the RENDERED side (scale == 1, plus a pairwise bounding-box collision check over every label) is proven per element by the render probe, because a declared px means nothing if the figure renders at a fraction of its viewBox.\n\nTHE PLAYBOOK \u2014 .claude/rules/element-headers.md, wired into CLAUDE.md's rules table. Six rules, each one a mistake actually made: (1) mock up inside the REAL container \u2014 the live DOM ancestry with the app's real stylesheets, tan --ds-paper-deep at the measured 867px; copy temporary/copper-header-combined.html rather than rebuilding a shell. (2) The selenium type ceiling, and the ID-SPECIFICITY WIDTH TRAP that is the real cause of \"the illustration text is too small\": `.kd-ep-fam__figure { max-width: 560px }` is an ID selector, so a bare-class override loses the cascade and an 800-unit viewBox renders at 560px \u2014 scale 0.70, every label inside silently 30% smaller, with nothing in the source looking wrong. (3) Measure label widths, never estimate \u2014 197px measured against a ~140px guess produced two collisions. (4) Alignment is a CONSTRUCTION: unequal columns want a 2xN grid so the evidence row top-aligns by itself, since margin-top:auto only moves the dead space inside the shorter column; two-track figures share one x-span and one centre axis; a marker with no sub-caption needs its baseline shifted to the others' optical centre. (5) One arc \u2014 one eyebrow, one kill, a connective sentence instead of a divider, problem then solution, closing on the resolution, and never print scaffolding the reader cannot interpret (a \"-- 02 --\" movement bar shipped once and read as inside info leaking out). (6) Every header ships a COMPLETE entity-copy entry.\n\nRules 1, 3, 4 and 5 are labelled WISH in that file. No machine check distinguishes a cohesive story from a stitched one, so the STOP-for-visual-sign-off gate is the control, and the file says so rather than implying coverage it does not have.\n\nMEMORY. New element-header-playbook (a pointer to the rules file plus the five one-liners). illustration-type-scale was CORRECTED \u2014 it had recorded my invented 15/17/18/32 scale as if it were the standard, and would have reproduced the exact mistake it was written to prevent.\n\nVERIFY. Build OK; invariants 78/78 (the previous 76 plus the two new); both negative tests pass (10/10, 12/12); render_probe_copper 47/47 and mechanism / entity / knowledge / omega / pdm_presence all PASS; no_operating_doc_contradiction clean across 17 operating docs after the CLAUDE.md rules-table addition. No seal was needed \u2014 nothing touched is a pillar or a *.golden.sha256 canonical.\n\nDEFERRAL unchanged: entity-copy.json holds 3 of 91 essentials, so 88 elements still lack BOTH fields." }];
+DEFERRAL, now sharper: entity-copy.json holds 3 of 91 essentials, so BOTH the lede and the why-this-number line are absent on the other 88. Each of those needs a COMPLETE entry \u2014 both fields \u2014 not just the one that happens to be in view.` }, { id: "lg_ms6gbssp_2stfge", ts: "2026-07-29T14:02:16.970005-05:00", surface: "headers", kind: "design-decision", summary: "Codified the copper session's lessons: 2 new gates (element_header_complete, figure_type_within_standard) + the .claude/rules/element-headers.md playbook, so the other 89 headers don't re-litigate font size, alignment, cohesion, lede or why", detail: "Everything Luneth had to re-explain during the copper header is now either a machine gate or a written playbook, so the other 89 elements go fast instead of re-litigating the same four arguments. His instruction: \"KEEP THE LESSONS LEARNED FROM YOUR MISTAKES, I DON'T WANT TO HAVE TO RE-EXPLAIN EVERYTHING AGAIN ABOUT HOW DEMO PAGES SHOULD LOOK FONT-SIZE-WISE, ALIGNMENT-WISE AND COHESION-WISE FOR THESE HEADERS, NOR THE 'WHY THIS NUMBER?' AND LEDE.\"\n\nGATE 1 \u2014 element_header_complete (critical, consistency). Every element with a shipped composed header must carry BOTH `lede` and `why` in entity-copy.json. This is the defect that shipped twice on copper: the why-this-number line never rendered because the store held only calcium + selenium, and then the header went live with `why` and no `lede`. A half-filled entry is INVISIBLE from the rendered page \u2014 that is precisely why nothing surfaced it and the user had to. Negative test tools/test_element_header_complete.py, 10 cases, including the exact shipped defect, blank-string variants, an out-of-scope entry, and the vacuous-green case. Scope is stated in the check's own docstring: it binds on elements that HAVE a header, not all 91, because gating the rest would redden work not yet started. That remainder is a labelled WISH, not a covered gap.\n\nGATE 2 \u2014 figure_type_within_standard (critical, structural). Every .kd-ep-fam__g* label class is exactly 12.0px and nothing exceeds the 17.6px element glyph \u2014 both MEASURED headlessly off the shipped selenium figure rather than chosen. It catches drift in BOTH directions: too small, and the overcorrection to 15/17/18/32 that was rejected on sight. Selenium is the CEILING, not a floor. Negative test tools/test_figure_type_within_standard.py, 12 cases. It gates the SOURCE side only, and the check says so plainly: the RENDERED side (scale == 1, plus a pairwise bounding-box collision check over every label) is proven per element by the render probe, because a declared px means nothing if the figure renders at a fraction of its viewBox.\n\nTHE PLAYBOOK \u2014 .claude/rules/element-headers.md, wired into CLAUDE.md's rules table. Six rules, each one a mistake actually made: (1) mock up inside the REAL container \u2014 the live DOM ancestry with the app's real stylesheets, tan --ds-paper-deep at the measured 867px; copy temporary/copper-header-combined.html rather than rebuilding a shell. (2) The selenium type ceiling, and the ID-SPECIFICITY WIDTH TRAP that is the real cause of \"the illustration text is too small\": `.kd-ep-fam__figure { max-width: 560px }` is an ID selector, so a bare-class override loses the cascade and an 800-unit viewBox renders at 560px \u2014 scale 0.70, every label inside silently 30% smaller, with nothing in the source looking wrong. (3) Measure label widths, never estimate \u2014 197px measured against a ~140px guess produced two collisions. (4) Alignment is a CONSTRUCTION: unequal columns want a 2xN grid so the evidence row top-aligns by itself, since margin-top:auto only moves the dead space inside the shorter column; two-track figures share one x-span and one centre axis; a marker with no sub-caption needs its baseline shifted to the others' optical centre. (5) One arc \u2014 one eyebrow, one kill, a connective sentence instead of a divider, problem then solution, closing on the resolution, and never print scaffolding the reader cannot interpret (a \"-- 02 --\" movement bar shipped once and read as inside info leaking out). (6) Every header ships a COMPLETE entity-copy entry.\n\nRules 1, 3, 4 and 5 are labelled WISH in that file. No machine check distinguishes a cohesive story from a stitched one, so the STOP-for-visual-sign-off gate is the control, and the file says so rather than implying coverage it does not have.\n\nMEMORY. New element-header-playbook (a pointer to the rules file plus the five one-liners). illustration-type-scale was CORRECTED \u2014 it had recorded my invented 15/17/18/32 scale as if it were the standard, and would have reproduced the exact mistake it was written to prevent.\n\nVERIFY. Build OK; invariants 78/78 (the previous 76 plus the two new); both negative tests pass (10/10, 12/12); render_probe_copper 47/47 and mechanism / entity / knowledge / omega / pdm_presence all PASS; no_operating_doc_contradiction clean across 17 operating docs after the CLAUDE.md rules-table addition. No seal was needed \u2014 nothing touched is a pillar or a *.golden.sha256 canonical.\n\nDEFERRAL unchanged: entity-copy.json holds 3 of 91 essentials, so 88 elements still lack BOTH fields." }, { id: "lg_ms6y87lt_o0igu4", ts: "2026-07-29T22:23:22.625152-05:00", surface: "headers", kind: "milestone", summary: "Zinc's element header shipped \u2014 element #2 of 90, the first to open on a sign the reader can check on their own hand (white nail spots), landing on 'zinc is a PART, not fuel'", detail: `Zinc's page now has its own illustrated header \u2014 the second of the 90 essentials to get one. In plain terms: it opens with a drawing of three fingernails carrying white spots, because Wallach reads those as a zinc sign and almost everyone has them. It asks why a missing metal would show up in a fingernail, and answers with the idea Luneth said was the real revelation \u2014 most nutrients are fuel your body burns, but zinc is a moving PART of the machinery. The illustration shows one molecule twice, with zinc built in and without, and its labels now say what that means in plain words rather than "genes activated": each bar is one gene, the instructions get read \u2014 versus, they are all still there, and nothing can read them.
+
+ELEMENT CHOSEN BY EVIDENCE. Six candidates (zinc, magnesium, chromium, iodine, vanadium, lithium) had every sealed claim read end-to-end before the pick. Zinc won on two grounds: Wallach hands over the PICTURE himself ("metallic fingers"; a "repeatable fingerprint" on one gene), so the figure invents no mechanism; and it structurally cannot repeat copper's trick, since copper already owns 3 of the 4 shipped figure keys (cofactor_fork, decline_rail, reversal_rail) and both fork- and rail-shaped figures now read as copper's territory.
+
+SHIPPED. Schema: 2 new OPTIONAL self-suppressing blocks \u2014 \`hook\` {figure,text,pivot} and \`coda\` \u2014 so selenium/copper/omega/pdm render byte-identically. View: nailSpotsFigure() + metalFingersFigure(), dispatched on GENERIC keys ('nail_spots','metal_fingers'), never a slug (entity_render_is_projection). CSS: the __opener*/__coda/__skin/__nail*/__strand/__znode/__zstem/__gbar vocabulary + a __gglyph--sm modifier. Data: zinc's mechanism entry (all copy incl. every in-figure label, R4; numbers and the quote pulled BY CLAIM ID, R3) and zinc's entity-copy lede + why, both fields.
+
+ANCHORS. RARE-000265 carries the whole mechanism and the "aha" \u2014 zinc binds enzymes to their substrates "by maintaining spatial and configurational relationships", i.e. it holds the SHAPE. Plus DDDL-000037 (70 metalloenzymes), DDDL-000038 + EPIGEN-000190 (zinc inside the RNA molecule; DNA-dependent RNA polymerase itself zinc-dependent), RARE-000046 (the pull-quote, "DNA and genes are powerless"), LETS-000464 (the nail sign), RARE-000266 (zinc stored in the fingernails), DDDL-000256 (nails as an absorption barometer).
+
+TWO NUMBERS REJECTED, recorded so nobody reaches for them again. The 98% birth-defect-prevention figure (DDDL-000042) lives in our claim_text and in NO verbatim. RARE-000326's spina-bifida "the other 50%" verbatim stops dead mid-sentence before attributing that half to zinc \u2014 the severed-quote signature. Both need re-mining before use.
+
+WHAT WAS DELIBERATELY NOT WRITTEN. Wallach never says a white spot is the layer of nail laid down while the zinc ran short. That is the obvious bridge and it would be my invention, so it is absent; the coda states his two facts without welding them into a mechanism he never claimed.
+
+THREE CORRECTIONS FROM LUNETH, all of them me over-reaching. (1) Asked for slight clarity changes to the illustration, I redrew it as a clamp-and-pivot; reverted to the original with only four labels changed, and deleted both the clamp and a second DNA-chain figure. (2) The beats had grown to five lines each and he stopped reading them; cut to two sentences, and the nail paragraph lost a filler organ list. (3) The glyph is 14.6px, not the shared 17.6 \u2014 zinc's node is smaller than copper's so it was cramped; 17.6 is a CEILING not a floor, and the modifier must be declared at ID specificity or the base ID-scoped rule silently wins (Rule 2's cascade trap, hit on font-size this time).
+
+A REAL DEFECT THE REGRESSION PASS CAUGHT. The opener row was first named .kd-ep-fam__hook \u2014 a class that ALREADY EXISTS as the per-beat payoff line. Same ID specificity, my rule later in the file, so it silently restyled selenium's and copper's beat hooks into a 380px grid with a bottom border. Renamed to __opener*, with the trap named in the CSS comment. The zinc page itself looked perfect; only the copper/selenium regression checks found it.
+
+The nail's white tip is CLIPPED to the nail path (one clipPath per nail) with the outline stroked last, so it cannot overshoot the nail bed by construction \u2014 insetting it alone was not enough and it still overshot. Skin and nail are DEPICTIVE literal colours rather than --ds-* tokens, the same precedent as copper's hair swatches.
+
+VERIFY. build OK; invariants 78/78 with zero new reds (element_header_complete now reads "all 3 shipped element header(s)"); render_probe_zinc 57/57; render_probe_copper 47/47; render_probe_knowledge PASS; render_probe.js PASS; tsc clean. Live page screenshot-verified against the approved mockup, and zinc/copper/selenium measured identical on block-tail geometry (25px each), so the shared-block changes moved nothing. No seal needed \u2014 nothing touched is a pillar or a *.golden.sha256 canonical.
+
+DEFERRAL. entity-copy.json holds 4 of 91 (calcium, selenium, copper, zinc); 87 elements still lack both fields.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

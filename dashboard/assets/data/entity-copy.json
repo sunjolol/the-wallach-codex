@@ -12,6 +12,10 @@
     "copper": {
       "lede": "A cofactor for hundreds of enzymes — it colours your hair and gives artery walls their elasticity, which is why Wallach reads premature grey as the first sign of a shortage.",
       "why": "From Wallach's Epigenetics (2014) mineral table: 1–2 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 3.1 mg/day. (His earlier Let's Play Doctor Base Line program lists 3 to 4 mg.)"
+    },
+    "zinc": {
+      "lede": "A trace mineral the body holds barely two grams of — and one of the few that is never burned for energy, but built into the tools your cells work with.",
+      "why": "From Wallach's Epigenetics (2014) mineral table: 15–30 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 46 mg/day. (His earlier Let's Play Doctor Base Line program lists 25 mg as the daily maintenance figure, and 150 mg as a 30-day therapeutic dose.)"
     }
   },
   "conditions": {}

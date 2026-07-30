@@ -165,6 +165,81 @@
       },
       "quote_claim": "WAL-CLM-DDDL-000196",
       "highlight": "some aneurysms can heal"
+    },
+    {
+      "slug": "zinc",
+      "facet": "mechanism",
+      "eyebrow": "What zinc actually does",
+      "kill": "Most nutrients are fuel. Zinc is a part.",
+      "hook": {
+        "figure": {
+          "key": "nail_spots",
+          "alt": "Three fingers of a hand seen from the back, running off the bottom of the frame. Each nail has a thin white crescent at its tip and a pale half-moon at its base; two of the nails carry small white spots.",
+          "labels": {
+            "spots": "WHITE SPOTS"
+          }
+        },
+        "text": "Look at your own fingernails. Those little white spots almost everyone has? Wallach reads them as a sign you are short of zinc.",
+        "pivot": "So why would a missing metal show up in a fingernail? Because zinc is not burned like fuel. It is built in."
+      },
+      "figure": "metal_fingers",
+      "figure_alt": "Two states side by side. With zinc: the RNA molecule carries three zinc atoms built into it, each putting down a finger that reaches a gene below, and all three instructions get read. Without it: the same molecule has three empty sockets, the fingers reach only part of the way and stop, and although the genes are all still there nothing can read them.",
+      "figure_labels": {
+        "with": "WITH ZINC",
+        "without": "WITHOUT IT",
+        "molecule_on": "THE RNA MOLECULE",
+        "molecule_off": "THE SAME MOLECULE",
+        "glyph": "Zn",
+        "no_finger": "NO METAL FINGER",
+        "bar_is_on": "EACH BAR IS ONE GENE",
+        "bar_is_off": "STILL THERE, ALL OF THEM",
+        "outcome_on": "THE INSTRUCTIONS GET READ",
+        "outcome_off": "NOTHING CAN READ THEM"
+      },
+      "bridge": "That is the difference between fuel and a part. Run low on fuel and you feel tired. Lose a part and you feel nothing — a job just stops being done, and stays undone until the part is back.",
+      "beats": [
+        {
+          "n": "01",
+          "title": "Zinc holds the shape",
+          "text": "An enzyme only works if it is the right shape to grip what it works on. Wallach says zinc is what holds that shape — take it out and the tool is still there, just fitting nothing.",
+          "hook": "It is not the fuel. It is the part.",
+          "traces": [
+            "WAL-CLM-RARE-000265",
+            "WAL-CLM-EPIGEN-000189"
+          ]
+        },
+        {
+          "n": "02",
+          "title": "Seventy tools take the same part",
+          "text": "No fewer than seventy enzymes need zinc before they work at all. So one shortage does not stall one job — it stalls seventy.",
+          "hook": "One missing part, seventy tools.",
+          "traces": [
+            "WAL-CLM-DDDL-000037",
+            "WAL-CLM-RARE-000265"
+          ]
+        },
+        {
+          "n": "03",
+          "title": "One of them reads your DNA",
+          "turn": true,
+          "text": "A gene is an instruction for building something. Zinc sits inside the molecule that carries it, and the tool that reads it is a zinc tool too.",
+          "hook": "The instruction stays there, perfect, forever. Nothing can read it.",
+          "traces": [
+            "WAL-CLM-DDDL-000038",
+            "WAL-CLM-EPIGEN-000190",
+            "WAL-CLM-RARE-000046"
+          ]
+        }
+      ],
+      "coda": "Which is why he starts at a fingernail. Zinc is stored there, and he reads nails as a barometer of what you are absorbing.",
+      "stat": {
+        "value": "70",
+        "readout": "// RARE EARTHS · ZINC METALLOENZYMES",
+        "label": "tools that will not work until the part is back",
+        "claim": "WAL-CLM-RARE-000265"
+      },
+      "quote_claim": "WAL-CLM-RARE-000046",
+      "highlight": "DNA and genes are powerless"
     }
   ]
 }

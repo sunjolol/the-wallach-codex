@@ -1163,6 +1163,82 @@ function reversalRailFigure(alt: string, labels: Record<string, string> | undefi
     </svg>`;
 }
 
+/** The nail-spots HOOK figure: three fingertips of a hand, two of the nails carrying white
+ *  spots. Skin and nail colours are DEPICTIVE literals in CSS — they stand for real skin, so a
+ *  themed --ds-* token would drift and stop being skin (same precedent as copper's four hair
+ *  swatches). The white tip and the half-moon are CLIPPED to the nail path and the nail OUTLINE
+ *  is stroked last, so neither can overshoot the nail bed by construction rather than by
+ *  nudging coordinates (Luneth 2026-07-29 — it overshot when the tip was merely inset). */
+function nailSpotsFigure(alt: string, labels: Record<string, string> | undefined): string {
+  const FINGERS = [{ x: 70, t: 34 }, { x: 133, t: 14 }, { x: 196, t: 26 }];
+  const SPOTS = [
+    { cx: 155, cy: 40, rx: 6, ry: 4.4 }, { cx: 169, cy: 52, rx: 4.6, ry: 3.4 },
+    { cx: 152, cy: 58, rx: 3.8, ry: 2.8 }, { cx: 226, cy: 58, rx: 6.4, ry: 4.8 },
+  ];
+  const skin = (x: number, t: number): string =>
+    `M${x} ${t + 30} C${x} ${t + 13} ${x + 13} ${t} ${x + 30} ${t} C${x + 47} ${t} ${x + 60} ${t + 13} ${x + 60} ${t + 30} V132 H${x} Z`;
+  const nail = (x: number, t: number): string =>
+    `M${x + 8} ${t + 29} C${x + 8} ${t + 12} ${x + 17} ${t + 5} ${x + 30} ${t + 5} C${x + 43} ${t + 5} ${x + 52} ${t + 12} ${x + 52} ${t + 29} V${t + 61} C${x + 52} ${t + 67} ${x + 43} ${t + 70} ${x + 30} ${t + 70} C${x + 17} ${t + 70} ${x + 8} ${t + 67} ${x + 8} ${t + 61} Z`;
+  const tip = (x: number, t: number): string =>
+    `M${x + 11} ${t + 17} C${x + 11} ${t + 11} ${x + 18} ${t + 5} ${x + 30} ${t + 5} C${x + 42} ${t + 5} ${x + 49} ${t + 11} ${x + 49} ${t + 17} C${x + 45} ${t + 13} ${x + 39} ${t + 11} ${x + 30} ${t + 11} C${x + 21} ${t + 11} ${x + 15} ${t + 13} ${x + 11} ${t + 17} Z`;
+  const lun = (x: number, t: number): string =>
+    `M${x + 13} ${t + 61} C${x + 19} ${t + 52} ${x + 41} ${t + 52} ${x + 47} ${t + 61} C${x + 41} ${t + 67} ${x + 19} ${t + 67} ${x + 13} ${t + 61} Z`;
+  const clips = FINGERS.map((f, k) =>
+    `<clipPath id="mech-nail-${k}"><path d="${nail(f.x, f.t)}"/></clipPath>`).join('');
+  const skins = FINGERS.map(f => `<path class="kd-ep-fam__skin" d="${skin(f.x, f.t)}"/>`).join('');
+  const nails = FINGERS.map((f, k) => `<path class="kd-ep-fam__nail" d="${nail(f.x, f.t)}"/>
+      <g clip-path="url(#mech-nail-${k})">
+        <path class="kd-ep-fam__ntip" d="${tip(f.x, f.t)}"/>
+        <path class="kd-ep-fam__nlun" d="${lun(f.x, f.t)}"/>
+      </g>
+      <path class="kd-ep-fam__nailline" d="${nail(f.x, f.t)}"/>`).join('');
+  const spots = SPOTS.map(s =>
+    `<ellipse class="kd-ep-fam__nspot" cx="${s.cx}" cy="${s.cy}" rx="${s.rx}" ry="${s.ry}"/>`).join('');
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 380 132" role="img" aria-label="${escHTML(alt)}">
+      <defs>${clips}</defs>${skins}${nails}${spots}
+      <path class="kd-ep-fam__gline" d="M260 50 H274"/>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="280" y="54">${figLabel(labels, 'spots')}</text>
+    </svg>`;
+}
+
+/** The metal-fingers figure: the same molecule twice, with the element's atoms built into it and
+ *  without them. The bottom labels name what a bar IS and what does or does not happen to it —
+ *  an earlier pass labelled the outcome "genes activated", which named nothing a reader could
+ *  picture (Luneth 2026-07-29). Authored at SCALE 1 against the 700px --fork width. */
+function metalFingersFigure(alt: string, labels: Record<string, string> | undefined): string {
+  const STOPS = [104, 180, 256];
+  const side = (dx: number, on: boolean): string => {
+    const nodes = STOPS.map((x, k) => {
+      const big = k === 1;
+      const cls = on ? 'kd-ep-fam__znode' : 'kd-ep-fam__znode kd-ep-fam__znode--empty';
+      return `<circle class="${cls}" cx="${x + dx}" cy="${big ? 74 : 76}" r="${big ? 14 : 7}"/>`;
+    }).join('');
+    const stems = STOPS.map((x, k) => on
+      ? `<path class="kd-ep-fam__zstem" d="M${x + dx} ${k === 1 ? 92 : 87} V126" marker-end="url(#mech-mf-tip)"/>`
+      : `<path class="kd-ep-fam__zstem kd-ep-fam__zstem--gone" d="M${x + dx} ${k === 1 ? 92 : 87} V108"/>`).join('');
+    const bars = STOPS.map(x =>
+      `<rect class="kd-ep-fam__gbar${on ? '' : ' kd-ep-fam__gbar--off'}" x="${x + dx - 32}" y="140" width="64" height="22" rx="4"/>`).join('');
+    return `<path class="kd-ep-fam__strand" d="M${52 + dx} 74 C${82 + dx} 58 ${112 + dx} 90 ${142 + dx} 74 C${172 + dx} 58 ${202 + dx} 90 ${232 + dx} 74 C${262 + dx} 58 ${292 + dx} 90 ${308 + dx} 80"/>${nodes}${stems}${bars}`;
+  };
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 700 216" role="img" aria-label="${escHTML(alt)}">
+      <defs><marker id="mech-mf-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
+        <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="180" y="18" text-anchor="middle">${figLabel(labels, 'with')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="520" y="18" text-anchor="middle">${figLabel(labels, 'without')}</text>
+      <line class="kd-ep-fam__zdiv" x1="350" y1="32" x2="350" y2="212"/>
+      <text class="kd-ep-fam__glabel" x="180" y="46" text-anchor="middle">${figLabel(labels, 'molecule_on')}</text>
+      ${side(0, true)}
+      <text class="kd-ep-fam__gglyph kd-ep-fam__gglyph--sm" x="180" y="79" text-anchor="middle">${figLabel(labels, 'glyph')}</text>
+      <text class="kd-ep-fam__glabel" x="180" y="178" text-anchor="middle">${figLabel(labels, 'bar_is_on')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="180" y="202" text-anchor="middle">${figLabel(labels, 'outcome_on')}</text>
+      <text class="kd-ep-fam__glabel" x="520" y="46" text-anchor="middle">${figLabel(labels, 'molecule_off')}</text>
+      ${side(340, false)}
+      <text class="kd-ep-fam__glabel" x="520" y="126" text-anchor="middle">${figLabel(labels, 'no_finger')}</text>
+      <text class="kd-ep-fam__glabel" x="520" y="178" text-anchor="middle">${figLabel(labels, 'bar_is_off')}</text>
+      <text class="kd-ep-fam__gtag kd-ep-fam__gtag--mute" x="520" y="202" text-anchor="middle">${figLabel(labels, 'outcome_off')}</text>
+    </svg>`;
+}
+
 /** Figure dispatch on a GENERIC key (never a slug) — keeps renderMechanism a pure projection. */
 function mechanismFigure(key: string, alt: string, labels?: Record<string, string>): string {
   switch (key) {
@@ -1174,6 +1250,10 @@ function mechanismFigure(key: string, alt: string, labels?: Record<string, strin
       return declineRailFigure(alt, labels);
     case 'reversal_rail':
       return reversalRailFigure(alt, labels);
+    case 'nail_spots':
+      return nailSpotsFigure(alt, labels);
+    case 'metal_fingers':
+      return metalFingersFigure(alt, labels);
     default:
       return '';
   }
@@ -1267,6 +1347,18 @@ function renderMechanism(slug: string | null, layoutKey: string, category: strin
         <span class="kd-ep-fam__statnum">${escHTML(m.stat.value)}</span>
         <span class="kd-ep-fam__statlbl">${escHTML(m.stat.label)}</span>
       </div>` : '';
+  // The hook opens the block on something checkable before any mechanism is explained; the coda
+  // returns to it at the end. Both optional, so an entry carrying neither renders as before.
+  const hook = m.hook !== undefined ? `<div class="kd-ep-fam__opener">
+        <div class="kd-ep-fam__openerart">${mechanismFigure(m.hook.figure.key, m.hook.figure.alt, m.hook.figure.labels)}</div>
+        <div>
+          <p class="kd-ep-fam__openertx">${glossify(collapseWS(m.hook.text))}</p>
+          <p class="kd-ep-fam__openerq">${glossify(collapseWS(m.hook.pivot))}</p>
+        </div>
+      </div>` : '';
+  const coda = m.coda !== undefined
+    ? `<p class="kd-ep-fam__coda">${glossify(collapseWS(m.coda))}</p>`
+    : '';
   const split = m.split !== undefined ? renderMechSplit(m.split.left, m.split.right) : '';
   const bridge = m.bridge !== undefined
     ? `<p class="kd-ep-fam__bridge">${glossify(collapseWS(m.bridge))}</p>`
@@ -1282,12 +1374,14 @@ function renderMechanism(slug: string | null, layoutKey: string, category: strin
   return `<section class="kd-ep-fam kd-ep-fam--mech" data-category="${escHTML(category ?? '')}">
       <span class="kd-ep-fam__eyebrow">${escHTML(m.eyebrow)}</span>
       <h3 class="kd-ep-fam__kill">${escHTML(m.kill)}</h3>
+      ${hook}
       <div class="kd-ep-fam__figure${heroFigMod}">${mechanismFigure(m.figure, m.figure_alt, m.figure_labels)}</div>
       ${split}
       ${bridge}
       ${preFig}
       <div class="kd-ep-fam__steps${stepsMod}">${beats}</div>
       ${postFig}
+      ${coda}
       ${stat}
       ${fatFamilyQuote(m.quote_claim, m.highlight)}
       <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>

@@ -50,8 +50,48 @@ label inside is silently 30% smaller.** Nothing in the source looks wrong. Write
 matching specificity:
 `#drawer-knowledge-mount .kd-ep-fam__figure.<modifier> { max-width: …px; }`
 
+**A CEILING, NOT A FLOOR.** 17.6px is the maximum, not the required value. Zinc's glyph sits in a
+smaller node than copper's and was cramped at 17.6, so it ships at **14.6px** via a
+`--sm` modifier — and `figure_type_within_standard` stays green, because it only fires on
+`px > 17.6`. Do not "restore" a smaller glyph to 17.6 thinking it has drifted.
+
+**The same cascade trap bites font-size too.** That `--sm` modifier had to be declared as
+`#drawer-knowledge-mount .kd-ep-fam__gglyph--sm`; a bare-class rule loses to the ID-scoped base
+rule and the size silently does not change. Any override of a `kd-ep-fam__*` property needs
+matching specificity, not just width.
+
 **Gated:** `figure_type_within_standard` (source side) + the per-element render probe (rendered
 side: scale == 1, and a pairwise bounding-box collision check over every `<text>`).
+
+## ★ Rule 7 — grep the class name before you claim it, and keep a regression pass
+Two failures, both from the zinc header, both invisible on the element's own page:
+
+1. **A reused class name silently restyles the shipped headers.** The new opener row was first
+   named `.kd-ep-fam__hook` — which **already exists** as the per-beat payoff line. Both rules are
+   ID-scoped, mine landed later in the file, so it turned selenium's and copper's beat hooks into a
+   380px grid with a bottom border. **Zinc's page looked perfect.** Only the copper/selenium
+   regression checks in the probe caught it. `grep -c 'kd-ep-fam__<name>'` before naming anything.
+2. **Containment must be structural.** Zinc's white nail tip overshot the nail bed; insetting the
+   coordinates was not enough. The fix is a `clipPath` per nail with the outline stroked **last**,
+   so overshoot is impossible rather than merely unlikely — Rule 4 applied to fills.
+
+So: every per-element probe **keeps its regression pass on the already-shipped elements**, and that
+pass asserts the shipped headers did NOT gain the new block (`!cu.hook && cu.coda === ''`), not just
+that they still render.
+
+## ★ Rule 8 — a request for "slightly clearer" is not a licence to redesign
+Luneth asked for small clarity tweaks to zinc's illustration; it came back as a total redraw and he
+rejected it ("MUCH worse... the previous was wayyyy better. I only wanted SLIGHT changes"). The same
+turn, the beat prose had grown to five lines each and he stopped reading it altogether ("so long now
+I don't even want to read them... no one will dive into walls of text that big").
+
+- **Change the labels before the geometry.** Zinc's figure was fixed by editing four text labels and
+  nothing else — `GENES ACTIVATED` (which names nothing a reader can picture) became
+  `each bar is one gene` → `THE INSTRUCTIONS GET READ`, and `still there, all of them` →
+  `NOTHING CAN READ THEM`. That was the whole fix.
+- **Beat prose ceiling: 2 sentences.** More than that and it does not get read, however good it is.
+  Padding is worse than brevity — cut the filler list, keep the claim.
+- Memory: [[measured-change-not-extremes]].
 
 ## ★ Rule 3 — measure label widths, never estimate them
 The display face is far wider than a chars × guess: "STRUCTURE GOES" measured **197px** against a

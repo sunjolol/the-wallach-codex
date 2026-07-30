@@ -77,11 +77,21 @@ const MechSplitSchema = z.object({
   right: MechSideSchema,
 }).passthrough();
 
+/** The HOOK: a small figure plus two short lines that open the block on something the reader
+ *  can check on their own body before the mechanism is explained (zinc's white nail spots are
+ *  the first instance). Optional, so every earlier entry renders unchanged. */
+const MechHookSchema = z.object({
+  figure: MechFigureSchema,
+  text: z.string(),
+  pivot: z.string(),
+}).passthrough();
+
 const MechanismSchema = z.object({
   slug: z.string(),
   facet: z.string(),
   eyebrow: z.string(),
   kill: z.string(),
+  hook: MechHookSchema.optional(),
   figure: z.string(),
   figure_alt: z.string(),
   figure_labels: z.record(z.string(), z.string()).optional(),
@@ -92,6 +102,9 @@ const MechanismSchema = z.object({
   // 'row' lays the beats out as side-by-side columns; absent = the selenium stack.
   beats_layout: z.string().optional(),
   figure_post_beats: MechFigureSchema.optional(),
+  // The CODA: one closing line that returns the block to whatever its hook opened on, so an
+  // opening the reader checked on themselves is paid off rather than abandoned.
+  coda: z.string().optional(),
   quote_claim: z.string(),
   highlight: z.string().optional(),
   stat: MechStatSchema.optional(),
