@@ -695,8 +695,8 @@
       "symbol": "Mg",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 91,
-      "distinct_claim_count": 115,
+      "claim_count": 95,
+      "distinct_claim_count": 117,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -855,6 +855,7 @@
             "WAL-CLM-IMMORT-000209",
             "WAL-CLM-RARE-000098",
             "WAL-CLM-RARE-000099",
+            "WAL-CLM-RARE-000130",
             "WAL-CLM-RARE-000170",
             "WAL-CLM-RARE-000171"
           ]
@@ -862,10 +863,13 @@
         {
           "kind": "definition",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000085",
             "WAL-CLM-IMMORT-000208",
+            "WAL-CLM-IMMORT-000271",
             "WAL-CLM-RARE-000168",
             "WAL-CLM-RARE-000169",
-            "WAL-CLM-RARE-000173"
+            "WAL-CLM-RARE-000173",
+            "WAL-CLM-RARE-000331"
           ]
         },
         {
@@ -2472,7 +2476,7 @@
       "symbol": "Co",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 12,
+      "claim_count": 13,
       "distinct_claim_count": 26,
       "books": [
         "dddl-3e-2011",
@@ -2551,6 +2555,7 @@
           "kind": "definition",
           "claim_ids": [
             "WAL-CLM-IMMORT-000079",
+            "WAL-CLM-IMMORT-000085",
             "WAL-CLM-IMMORT-000233"
           ]
         }
@@ -3547,8 +3552,8 @@
       "symbol": "Fe",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 35,
-      "distinct_claim_count": 51,
+      "claim_count": 36,
+      "distinct_claim_count": 52,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -3667,6 +3672,7 @@
         {
           "kind": "definition",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000085",
             "WAL-CLM-IMMORT-000125",
             "WAL-CLM-IMMORT-000130",
             "WAL-CLM-IMMORT-000215"
@@ -3805,9 +3811,9 @@
         "calcium",
         "omega-3",
         "copper",
+        "magnesium",
         "pica",
-        "vitamin-b12",
-        "chromium"
+        "vitamin-b12"
       ]
     },
     "iodine": {

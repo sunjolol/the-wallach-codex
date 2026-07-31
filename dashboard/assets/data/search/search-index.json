@@ -33439,7 +33439,14 @@
         "cobalt",
         "vitamin-b12",
         "cyanocobalamine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium",
+          "iron",
+          "cobalt"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000086",
@@ -38040,7 +38047,12 @@
         "essential nutrient",
         "enzymes",
         "chlorophyll"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000272",
@@ -61220,7 +61232,8 @@
       ],
       "tier1_link": {
         "essentials": [
-          "iron"
+          "iron",
+          "magnesium"
         ]
       }
     },
@@ -66998,7 +67011,12 @@
         "why plants are green",
         "photosynthesis",
         "olivine"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000332",

@@ -325,7 +325,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 91,
+    "claim_count": 95,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000053",
@@ -343,10 +343,13 @@
         "WAL-CLM-RARE-000305"
       ],
       "definition": [
+        "WAL-CLM-IMMORT-000085",
         "WAL-CLM-IMMORT-000208",
+        "WAL-CLM-IMMORT-000271",
         "WAL-CLM-RARE-000168",
         "WAL-CLM-RARE-000169",
-        "WAL-CLM-RARE-000173"
+        "WAL-CLM-RARE-000173",
+        "WAL-CLM-RARE-000331"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000082",
@@ -364,6 +367,7 @@
         "WAL-CLM-IMMORT-000209",
         "WAL-CLM-RARE-000098",
         "WAL-CLM-RARE-000099",
+        "WAL-CLM-RARE-000130",
         "WAL-CLM-RARE-000170",
         "WAL-CLM-RARE-000171"
       ],
@@ -610,6 +614,7 @@
       "calcium",
       "choline",
       "chromium",
+      "cobalt",
       "copper",
       "flavonoids",
       "histidine",
@@ -1456,7 +1461,7 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000077",
@@ -1466,6 +1471,7 @@
       ],
       "definition": [
         "WAL-CLM-IMMORT-000079",
+        "WAL-CLM-IMMORT-000085",
         "WAL-CLM-IMMORT-000233"
       ],
       "dose": [
@@ -1491,6 +1497,8 @@
       "pernicious_anemia"
     ],
     "interacts_with": [
+      "iron",
+      "magnesium",
       "vitamin-b12"
     ],
     "books_cited": [
@@ -2085,7 +2093,7 @@
     "display_name": "Iron",
     "canon_slug": "iron",
     "category": "mineral",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000022"
@@ -2100,6 +2108,7 @@
         "WAL-CLM-RARE-000037"
       ],
       "definition": [
+        "WAL-CLM-IMMORT-000085",
         "WAL-CLM-IMMORT-000125",
         "WAL-CLM-IMMORT-000130",
         "WAL-CLM-IMMORT-000215"
@@ -2239,6 +2248,7 @@
     "interacts_with": [
       "calcium",
       "chromium",
+      "cobalt",
       "copper",
       "iodine",
       "lithium",

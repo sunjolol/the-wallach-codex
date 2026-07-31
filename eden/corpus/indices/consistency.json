@@ -1070,10 +1070,6 @@
         "book": "immortality"
       },
       {
-        "claim_id": "WAL-CLM-IMMORT-000085",
-        "book": "immortality"
-      },
-      {
         "claim_id": "WAL-CLM-IMMORT-000093",
         "book": "immortality"
       },
@@ -1159,10 +1155,6 @@
       },
       {
         "claim_id": "WAL-CLM-IMMORT-000268",
-        "book": "immortality"
-      },
-      {
-        "claim_id": "WAL-CLM-IMMORT-000271",
         "book": "immortality"
       },
       {
@@ -1942,10 +1934,6 @@
         "book": "rare-earths"
       },
       {
-        "claim_id": "WAL-CLM-RARE-000331",
-        "book": "rare-earths"
-      },
-      {
         "claim_id": "WAL-CLM-RARE-000333",
         "book": "rare-earths"
       },
@@ -2035,7 +2023,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 434
+    "claim_count": 431
   },
   {
     "id": "CG-0004",
@@ -6284,16 +6272,12 @@
         "book": "immortality"
       },
       {
-        "claim_id": "WAL-CLM-RARE-000130",
-        "book": "rare-earths"
-      },
-      {
         "claim_id": "WAL-CLM-RARE-000131",
         "book": "rare-earths"
       }
     ],
     "books_repeating": 2,
-    "claim_count": 4
+    "claim_count": 3
   },
   {
     "id": "CG-0086",
@@ -6351,16 +6335,24 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000271",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000168",
         "book": "rare-earths"
       },
       {
         "claim_id": "WAL-CLM-RARE-000173",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000331",
+        "book": "rare-earths"
       }
     ],
     "books_repeating": 2,
-    "claim_count": 3
+    "claim_count": 5
   },
   {
     "id": "CG-0089",
