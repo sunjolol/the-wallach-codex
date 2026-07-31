@@ -30,10 +30,25 @@ function escHTML(s: unknown): string {
  * are emitted. First-occurrence-per-block keeps a paragraph from becoming a field of
  * dotted words.
  */
-export function glossify(raw: string): string {
+/**
+ * Author-only inline emphasis: *phrase* -> <em>phrase</em>. Runs on ALREADY-ESCAPED text, so the
+ * only markup it introduces is the <em> it controls and the inner phrase stays escaped (§00.B #5).
+ * Opt-in via glossify's `emph` flag — OFF for corpus verbatims, so a literal asterisk in a quote is
+ * never reinterpreted. Emphasis around a GLOSS term is not supported (it lives in the gaps between
+ * gloss spans); the only current use is a non-glossed word ("before").
+ */
+function emphasize(escaped: string): string {
+  return escaped.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
+export function glossify(raw: string, emph = false): string {
+  // Every gap segment is HTML-escaped; when emph is on it is ALSO run through emphasize (which only
+  // adds <em> around already-escaped text). emph defaults off, so every existing caller — including
+  // corpus verbatims — is byte-unchanged.
+  const esc = (s: string): string => (emph ? emphasize(escHTML(s)) : escHTML(s));
   const re = glossaryRegex();
   if (re === null) {
-    return escHTML(raw);
+    return esc(raw);
   }
   const seen = new Set<string>();
   let out = '';
@@ -49,10 +64,10 @@ export function glossify(raw: string): string {
       continue;
     }
     seen.add(key);
-    out += escHTML(raw.slice(last, m.index));
+    out += esc(raw.slice(last, m.index));
     out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML(word)}: ${escHTML(def)}" data-def="${escHTML(def)}">${escHTML(word)}</span>`;
     last = m.index + word.length;
   }
-  out += escHTML(raw.slice(last));
+  out += esc(raw.slice(last));
   return out;
 }

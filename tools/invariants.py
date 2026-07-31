@@ -5449,6 +5449,80 @@ def check_mechanism_blocks_wellformed():
     )
 
 
+def _mech_quote_trims(store):
+    """Every (where, quote_claim, quote_trim) a split side declares, across BOTH shapes. A quote_trim
+    DISPLAYS a trimmed literal quote; it must be a contiguous slice of the sealed verbatim (gated),
+    so a 'prose quote' can only ever TRIM Wallach, never fabricate."""
+    out = []
+
+    def side_trims(sp, where):
+        for name in ("left", "right"):
+            s = (sp or {}).get(name) or {}
+            if s.get("quote_trim"):
+                out.append((f"{where}.{name}", s.get("quote_claim"), str(s["quote_trim"])))
+
+    for m in store.get("mechanisms", []):
+        slug = str(m.get("slug", "?"))
+        blocks = m.get("blocks")
+        if isinstance(blocks, list):
+            for n, b in enumerate(blocks):
+                if isinstance(b, dict) and b.get("type") == "split":
+                    side_trims(b, f"{slug}.blocks[{n}]")
+            continue
+        side_trims(m.get("split"), f"{slug}.split")
+    return out
+
+
+def _mech_quote_trim_faithful_impl(store, claims_by_id):
+    """RED if a split side's quote_trim is not a contiguous (whitespace-normalised) slice of its
+    quote_claim's sealed verbatim -- a 'prose quote' that fabricates rather than trims -- or names no
+    resolving claim (no source for its cite). claims_by_id is a param so the negative test drives it."""
+    def norm(s):
+        return re.sub(r"\s+", " ", s or "").strip()
+    trims = _mech_quote_trims(store)
+    viol = []
+    for where, cid, trim in trims:
+        if not cid:
+            viol.append(f"{where}: quote_trim with no quote_claim -- a cited quote needs a source")
+            continue
+        verb = claims_by_id.get(cid)
+        if verb is None:
+            viol.append(f"{where}: quote_claim '{cid}' does not resolve to a sealed claim")
+            continue
+        if norm(trim) not in norm(verb):
+            viol.append(f"{where}: quote_trim is NOT a contiguous slice of {cid}'s sealed verbatim "
+                        "(a prose quote may only TRIM Wallach, never fabricate)")
+    if viol:
+        return False, ("mechanism quote_trim not faithful: " + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    return True, (f"{len(trims)} trimmed quote(s) are each a faithful contiguous slice of their sealed "
+                  "verbatim (a prose quote trims Wallach, never fabricates)")
+
+
+def check_mech_quote_trim_faithful():
+    """A displayed 'prose quote' (a split card's quote_trim) is a faithful TRIM of the sealed verbatim.
+
+    The mechanism split can show a card that LOOKS like a cited Wallach quote but is authored prose, so
+    a card can stop the quote before a trailing sentence (calcium drops '...The normal range is
+    9-10.8 mg') without re-sealing canon. That is exactly the surface where a cited quote could drift
+    into words Wallach never wrote -- a misattribution the source rule (00.A) exists to stop. This
+    anchors every quote_trim to the sealed claim's verbatim: it must be a contiguous whitespace-
+    normalised slice, and it must name a resolving quote_claim (its cite's source). Truth anchor: the
+    sealed corpus claim shards, re-read each run."""
+    base = ROOT / "dashboard" / "assets"
+    store_p = base / "data" / "mechanism-clarity-data.json"
+    if not store_p.exists():
+        return False, f"{store_p.relative_to(ROOT)} missing"
+    claims_by_id = {}
+    for shard in sorted((ROOT / "eden" / "corpus" / "claims").glob("claims-*.json")):
+        for c in (json.loads(shard.read_text(encoding="utf-8")).get("claims") or []):
+            if isinstance(c, dict) and c.get("id"):
+                claims_by_id[str(c["id"])] = str(c.get("verbatim", ""))
+    return _mech_quote_trim_faithful_impl(
+        json.loads(store_p.read_text(encoding="utf-8")), claims_by_id)
+
+
+
 def _kind_label_covers_corpus_impl(store_path, claims_dir):
     """RED if a distinct claim.kind in the sealed corpus has no entry in the
     view-copy content store's kind_labels map. `store_path`, `claims_dir` are
@@ -6419,6 +6493,15 @@ INVARIANTS = [
         truth_anchor="the schema .ts bytes x the view .ts bytes x the hand-authored mechanism store x the sealed corpus shards, all re-read and cross-checked each run",
         severity="critical",
         lesson_ref="Eight calcium header mockups were rejected because the SCHEMA was the template -- the required set (eyebrow/kill/figure/beats/quote) WAS the rejected chassis, so every 'bespoke' header regressed to it (Luneth 2026-07-30, Rule 0 in .claude/rules/element-headers.md). Freeing the shape means the data now decides which blocks render, which buys a new silent-failure class this gate closes. Negative test: tools/test_mechanism_blocks_wellformed.py. The byte-identity of the three signed-off headers is proven separately by tools/render_probe_mech_shape.js",
+    ),
+    Invariant(
+        name="mech_quote_trim_faithful",
+        anchor_class="external",  # anchored to the SEALED verbatim bytes -- catches a cited "quote" that fabricates, which no our-file-vs-our-file check could
+        description="00.A -- a mechanism split card may DISPLAY a trimmed literal quote (quote_trim) so it can stop before a trailing sentence (calcium drops '...The normal range is 9-10.8 mg') without re-sealing canon, while the cite still composes from the sealed claim. That is exactly where a cited quote could drift into words Wallach never wrote. So every quote_trim must be a contiguous whitespace-normalised SLICE of its quote_claim's sealed verbatim, and must name a resolving claim -- a prose quote may only TRIM Wallach, never fabricate",
+        check_fn=check_mech_quote_trim_faithful,
+        truth_anchor="the sealed corpus claim shards (verbatim bytes), re-read each run and substring-matched against the hand-authored quote_trim",
+        severity="critical",
+        lesson_ref="Luneth's ruling (2026-07-30): a card can trim a quote into prose to drop an unwanted trailing sentence while keeping the real cite -- 'still LITERAL Wallach quotes, we're just trimming where the quote stops'. Codifying the 'literal' half so it cannot later become fabrication behind a real cite. Negative test: tools/test_mech_quote_trim_faithful.py",
     ),
     Invariant(
         name="views_no_ciphered_data",

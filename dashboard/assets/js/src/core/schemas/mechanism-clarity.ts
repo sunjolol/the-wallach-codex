@@ -89,10 +89,18 @@ const MechSideSchema = z.object({
   text: z.string(),
   evidence_caption: z.string().optional(),
   quote_claim: z.string().optional(),
+  // A TRIMMED literal quote: the card DISPLAYS quote_trim (a contiguous slice of quote_claim's
+  // sealed verbatim -- gated by mech_quote_trim_faithful, so it can only TRIM Wallach, never
+  // fabricate) while the cite still composes from quote_claim's book_id (R3). Lets a card stop the
+  // quote before a trailing sentence (calcium drops "The normal range is 9-10.8 mg") WITHOUT
+  // re-sealing the claim, so the full verbatim stays intact everywhere else it is used.
+  quote_trim: z.string().optional(),
   field: MechFieldSchema.optional(),
-  // A prose evidence card (calcium's "what the working pool costs" cell): a plain-language gloss
-  // in the evidence row when the side's evidence is neither a sealed quote nor a field. Mutually
-  // exclusive with quote_claim/field by authoring convention.
+  // A prose evidence card. ALONE it renders as plain prose. PAIRED with quote_claim (and no
+  // quote_trim) it is a SOURCED PARAPHRASE — our tightened summary of that claim, shown in the quote
+  // style with the claim's composed cite so a reader can trace it, but NOT a verbatim quote (no
+  // quote marks; faithfulness human-reviewed, not gated — Luneth's ruling 2026-07-30). Mutually
+  // exclusive with quote_trim, which is the gated-verbatim path.
   note: z.string().optional(),
 }).passthrough();
 

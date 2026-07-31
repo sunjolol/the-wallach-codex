@@ -2451,8 +2451,11 @@
   src: url('../fonts/ChakraPetch-Bold.ttf') format('truetype'); }
 
 /* -- calcium figure text tiers -- */
-#drawer-knowledge-mount .kd-ep-fam__scalenum { fill: var(--ds-ink-faint); font-family: var(--ds-font-display); font-weight: 800; font-size: 116px; letter-spacing: -0.03em; }
-#drawer-knowledge-mount .kd-ep-fam__scalenum--sm { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; }
+/* the 147 (base scalenum) is painted by its INLINE fill="url(#kd-ep-scale-num)" blue gradient; the
+   base class must NOT set fill or the CSS beats that presentation attribute (element-headers Rule 2)
+   and paints 147 grey. ink-faint belongs on the ~10 (--sm), the muted one. weight 700 = the mockup. */
+#drawer-knowledge-mount .kd-ep-fam__scalenum { font-family: var(--ds-font-display); font-weight: 700; font-size: 116px; letter-spacing: -0.03em; }
+#drawer-knowledge-mount .kd-ep-fam__scalenum--sm { fill: var(--ds-ink-faint); font-size: 48px; font-weight: 700; letter-spacing: -0.02em; }
 #drawer-knowledge-mount .kd-ep-fam__scaledash { stroke: var(--ds-rule); stroke-width: 1; }
 #drawer-knowledge-mount .kd-ep-fam__gtag--strong { font-weight: 700; }
 #drawer-knowledge-mount .kd-ep-fam__figtitle { fill: var(--ds-accent-deep); font-family: var(--ds-font-mono); font-size: 14px; font-weight: 700; letter-spacing: .1em; }
@@ -2460,12 +2463,16 @@
 #drawer-knowledge-mount .kd-ep-fam__ecgbase { fill: none; stroke: var(--kd-ep-fam); stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
 #drawer-knowledge-mount .kd-ep-fam__ecgglow { fill: none; stroke: #fff; stroke-width: 6.5; stroke-opacity: .24; stroke-linejoin: round; stroke-linecap: round; }
 #drawer-knowledge-mount .kd-ep-fam__ecgbeat { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
-/* the heart figure (the fork figure immediately after the split) wants air above it */
-#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split + .kd-ep-fam__figure { margin-top: 42px; }
+/* 10px of air above the heart figure (Luneth 2026-07-30). Base is 0-top / 19-bottom; the mockup's
+   .mk-heartfig{margin-top:42px} lost the cascade to the ID-scoped base rule so it rendered flush, and
+   42px (my first --cards port) read as too much -- 10px is the measured middle Luneth chose. */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split + .kd-ep-fam__figure { margin-top: 10px; }
+/* the connective bridge line runs tighter than the base 24/30/72ch (mockup .mk-bridge) */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__bridge { margin: 22px 0 24px; padding-top: 16px; max-width: 74ch; }
 
 /* -- CARD TREATMENT (scoped to calcium) -- */
 /* the kill breaks at the authored newline */
-#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__kill { white-space: pre-line; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__kill { white-space: pre-line; line-height: 1.3; }
 
 /* split -> four cards */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split { gap: 14px; column-gap: 14px; margin-top: 4px; }
@@ -2474,10 +2481,16 @@
   border-radius: var(--ds-radius-lg); padding: 16px 18px 17px; box-shadow: 0 1px 3px rgba(43,111,176,.05); }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splittx { margin: 0; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__evnote { margin: 0; }
+/* card heads: mockup tightened the base (7px, no tracking); LEFT card ("When it's there") is accent */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splithd { margin-bottom: 8px; letter-spacing: -0.01em; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split > .kd-ep-fam__splitcell:first-child .kd-ep-fam__splithd { color: var(--ds-accent); }
+/* evidence caption: mockup runs it smaller + wider-tracked than the base .7rem/.1em/10px */
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__evcap { font-size: .66rem; letter-spacing: .11em; margin-bottom: 9px; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splitcell--ev {
   background: linear-gradient(158deg, var(--ds-paper), var(--ds-paper-darker)); border-left: 3px solid var(--kd-ep-fam); }
 /* the evidence miniq is plain inside its card (the card's accent border carries the emphasis) */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__miniq { margin: 0; padding: 0; border-left: 0; background: transparent; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__miniq cite { margin-top: 8px; font-size: .62rem; }
 
 /* beats -> three cards with a distinguished hook footer */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row { gap: 14px; }
@@ -2485,13 +2498,13 @@
   display: flex; flex-direction: column; padding: 0; border-top: 0; overflow: hidden;
   background: linear-gradient(165deg, var(--ds-paper-light), var(--ds-paper)); border: 1px solid var(--ds-rule-soft);
   border-radius: var(--ds-radius-lg); box-shadow: 0 1px 3px rgba(43,111,176,.05); }
-#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__num { padding: 13px 16px 0; margin-bottom: 0; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__num { padding: 13px 16px 0; margin-bottom: 0; font-size: .68rem; letter-spacing: .16em; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steps--row .kd-ep-fam__num::before {
   content: ''; display: inline-block; width: 14px; height: 2px; margin-right: 8px; vertical-align: middle; background: var(--ds-rule-bright); }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__step--turn .kd-ep-fam__num::before { background: var(--kd-ep-fam); }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__stepbody { display: flex; flex-direction: column; flex: 1; padding: 0; }
-#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steptitle { padding: 3px 16px 0; }
-#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steptext { padding: 6px 16px 12px; margin: 0; flex: 1; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steptitle { padding: 3px 16px 0; letter-spacing: -0.01em; }
+#drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__steptext { padding: 6px 16px 14px; margin: 0; flex: 1; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__hook {
   margin: 0; padding: 11px 16px; background: var(--ds-paper-darker); border-top: 1px solid var(--ds-rule-soft);
   font-family: 'Chakra Petch', var(--ds-font-sans); font-style: normal; font-weight: 600; font-size: 0.9rem;

@@ -5848,6 +5848,9 @@
   },
   {
    "term": "parathyroid",
+   "aliases": [
+    "parathyroids"
+   ],
    "plain": "the tiny neck glands that keep the blood's calcium level in balance",
    "category": "anatomy"
   },

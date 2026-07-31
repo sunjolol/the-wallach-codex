@@ -280,13 +280,15 @@
             "head": "When it’s there",
             "text": "Every heartbeat, nerve signal and muscle contraction spends a little calcium. It is the current that lets a cell fire and reset — which is why the working pool is defended so fiercely.",
             "evidence_caption": "Why the timing matters",
-            "quote_claim": "WAL-CLM-LETS-000078"
+            "quote_claim": "WAL-CLM-LETS-000078",
+            "quote_trim": "Muscle cramps and twitches (eye twitches) are signals of calcium deficiency (although the blood calcium will be in the \"normal\" range). Serious life threatening convulsions from low cell levels of calcium will occur before low blood levels show up."
           },
           "right": {
             "head": "When it’s short",
-            "text": "The signals misfire first: cramps, twitches, a twitching eyelid. Wallach warns the danger is inside the cell, where levels fall far enough to cause convulsions before a low blood reading ever appears.",
+            "text": "The signals misfire first: cramps, twitches, a twitching eyelid. Wallach warns the danger is inside the cell, where levels fall far enough to cause convulsions *before* a low blood reading ever appears.",
             "evidence_caption": "What the working pool costs to defend",
-            "note": "To keep that current flowing, the parathyroid glands pull calcium from bone on demand. Run the deficiency long enough and they enlarge from overwork — which a surgeon can mistake for a tumour."
+            "quote_claim": "WAL-CLM-IMMORT-000073",
+            "note": "The parathyroids attempt to compensate and enlarge in an attempt to absorb more calcium from the gut. This scenario will almost always result in the surgeon calling the enlarged or hypertrophied parathyroid glands a “tumor” and they will recommend surgery."
           }
         },
         {
@@ -317,7 +319,7 @@
             {
               "n": "Then",
               "title": "The reserve is raided",
-              "text": "The parathyroids pull harder from bone to defend the current. Left running, they swell from overwork — and the gland gets mistakenly called a tumour.",
+              "text": "The parathyroids pull harder from bone to defend the current. Left running, they swell from overwork — and the gland gets mistakenly called a tumour by surgeons.",
               "hook": "A gland worked to exhaustion, mistaken for a growth.",
               "traces": [
                 "WAL-CLM-IMMORT-000073",

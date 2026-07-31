@@ -1349,14 +1349,28 @@ function mechEvidence(side: MechSide): string {
   if (side.field !== undefined) {
     return proportionField(side.field);
   }
+  const c = side.quote_claim !== undefined ? getClaim(side.quote_claim) : null;
+  // A SOURCED PARAPHRASE (note + quote_claim, NO quote_trim): our own tightened summary of a sealed
+  // claim, shown in the quote style with the claim's COMPOSED cite so a reader can trace it -- but it
+  // is NOT a verbatim quote (no quote marks). Its faithfulness to the source is HUMAN-REVIEWED, not
+  // gated like quote_trim: Wallach's book prose does not always fit a card verbatim, so a tightened
+  // summary that says nothing he did not say may keep the source cite (Luneth's ruling 2026-07-30,
+  // logged to chronicle/contradictions/). A `note` with NO resolving claim stays plain prose. The
+  // --sourced modifier marks it in the DOM as a paraphrase (renders identically) for later audit.
   if (side.note !== undefined && side.note.length > 0) {
+    if (c !== null) {
+      return `<blockquote class="kd-ep-fam__miniq kd-ep-fam__miniq--sourced">${glossify(collapseWS(side.note))}<cite>${escHTML(getBookLabel(c.book))}</cite></blockquote>`;
+    }
     return `<p class="kd-ep-fam__splittx kd-ep-fam__evnote">${glossify(collapseWS(side.note))}</p>`;
   }
-  const c = side.quote_claim !== undefined ? getClaim(side.quote_claim) : null;
   if (c === null) {
     return '';
   }
-  return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(c.verbatim))}<cite>${escHTML(getBookLabel(c.book))}</cite></blockquote>`;
+  // quote_trim, when present, is a faithful contiguous slice of c.verbatim (gated by
+  // mech_quote_trim_faithful) -- it lets a card stop the quote before a trailing sentence while the
+  // cite still composes from the sealed claim's book. Absent -> the whole verbatim, as before.
+  const shown = (side.quote_trim !== undefined && side.quote_trim.length > 0) ? side.quote_trim : c.verbatim;
+  return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(shown))}<cite>${escHTML(getBookLabel(c.book))}</cite></blockquote>`;
 }
 
 /** The two-column split, emitted as a 2x2 GRID (both prose cells, then both evidence cells)
@@ -1366,7 +1380,7 @@ function renderMechSplit(left: MechSide, right: MechSide): string {
   const R = ' kd-ep-fam__splitcell--r';
   const prose = (s: MechSide, mod: string): string => `<div class="kd-ep-fam__splitcell${mod}">
         <div class="kd-ep-fam__splithd">${escHTML(s.head)}</div>
-        <p class="kd-ep-fam__splittx">${glossify(collapseWS(s.text))}</p>
+        <p class="kd-ep-fam__splittx">${glossify(collapseWS(s.text), true)}</p>
       </div>`;
   const evid = (s: MechSide, mod: string): string => {
     const body = mechEvidence(s);
