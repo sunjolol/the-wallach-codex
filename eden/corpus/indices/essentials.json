@@ -7809,7 +7809,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 84,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -7820,6 +7820,9 @@
       ],
       "definition": [
         "WAL-CLM-DDDL-000063",
+        "WAL-CLM-EPIGEN-000197",
+        "WAL-CLM-EPIGEN-000204",
+        "WAL-CLM-EPIGEN-000394",
         "WAL-CLM-IMMORT-000053",
         "WAL-CLM-RARE-000109"
       ],
@@ -7828,6 +7831,8 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000064",
+        "WAL-CLM-EPIGEN-000398",
+        "WAL-CLM-EPIGEN-000399",
         "WAL-CLM-LETS-000488",
         "WAL-CLM-RARE-000110"
       ],
@@ -7904,6 +7909,10 @@
         "WAL-CLM-LETS-000457",
         "WAL-CLM-RARE-000283",
         "WAL-CLM-RARE-000286"
+      ],
+      "quote": [
+        "WAL-CLM-EPIGEN-000202",
+        "WAL-CLM-EPIGEN-000397"
       ]
     },
     "deficiency_signs": [
@@ -8091,7 +8100,7 @@
     "display_name": "Omega-6",
     "canon_slug": "omega-6",
     "category": "fatty_acid",
-    "claim_count": 10,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -8101,6 +8110,10 @@
       ],
       "definition": [
         "WAL-CLM-DDDL-000063",
+        "WAL-CLM-EPIGEN-000197",
+        "WAL-CLM-EPIGEN-000204",
+        "WAL-CLM-EPIGEN-000394",
+        "WAL-CLM-EPIGEN-000450",
         "WAL-CLM-IMMORT-000053",
         "WAL-CLM-RARE-000109"
       ],
@@ -8109,7 +8122,13 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000064",
+        "WAL-CLM-EPIGEN-000398",
+        "WAL-CLM-EPIGEN-000399",
         "WAL-CLM-RARE-000110"
+      ],
+      "quote": [
+        "WAL-CLM-EPIGEN-000202",
+        "WAL-CLM-EPIGEN-000397"
       ]
     },
     "deficiency_signs": [

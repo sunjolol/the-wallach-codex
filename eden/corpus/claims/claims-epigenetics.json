@@ -7260,7 +7260,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000197",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -7423,7 +7426,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000202",
       "kind": "quote",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -7489,7 +7495,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000204",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -13855,7 +13864,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000394",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -13959,7 +13971,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000397",
       "kind": "quote",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -13993,7 +14008,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000398",
       "kind": "mechanism",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -14027,7 +14045,10 @@
     {
       "id": "WAL-CLM-EPIGEN-000399",
       "kind": "mechanism",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -15774,7 +15795,9 @@
     {
       "id": "WAL-CLM-EPIGEN-000450",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],

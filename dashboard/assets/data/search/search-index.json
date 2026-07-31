@@ -23692,7 +23692,13 @@
         "omega-3",
         "essential fatty acids",
         "nutrition basics"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000198",
@@ -23790,7 +23796,13 @@
         "diet",
         "nutrition-basics",
         "ancestral-diet"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000203",
@@ -23829,7 +23841,13 @@
         "nutrition-basics",
         "chemistry",
         "essential-fatty-acids"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000205",
@@ -27555,7 +27573,13 @@
         "DHA",
         "EPA",
         "cholesterol"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000395",
@@ -27618,7 +27642,13 @@
         "1923",
         "linoleic acid",
         "when discovered"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000398",
@@ -27639,7 +27669,13 @@
         "omega-6 to omega-3",
         "essential fatty acid ratio",
         "balance"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000399",
@@ -27660,7 +27696,13 @@
         "omega-6 function",
         "prostaglandins",
         "inflammation"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000400",
@@ -28724,7 +28766,12 @@
         "omega-6",
         "essential-fatty-acids",
         "conditionally-essential-fats"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000451",
