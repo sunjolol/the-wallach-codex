@@ -2696,7 +2696,11 @@
     {
       "id": "WAL-CLM-IMMORT-000085",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "magnesium",
+        "iron",
+        "cobalt"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
@@ -9058,7 +9062,9 @@
     {
       "id": "WAL-CLM-IMMORT-000271",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "magnesium"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],

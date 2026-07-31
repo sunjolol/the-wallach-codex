@@ -4516,7 +4516,8 @@
       "id": "WAL-CLM-RARE-000130",
       "kind": "mechanism",
       "essentials": [
-        "iron"
+        "iron",
+        "magnesium"
       ],
       "other_substances": [],
       "conditions": [],
@@ -11672,7 +11673,9 @@
     {
       "id": "WAL-CLM-RARE-000331",
       "kind": "definition",
-      "essentials": [],
+      "essentials": [
+        "magnesium"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],
