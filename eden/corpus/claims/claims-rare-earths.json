@@ -11779,7 +11779,10 @@
     {
       "id": "WAL-CLM-RARE-000334",
       "kind": "diagnostic_pattern",
-      "essentials": [],
+      "essentials": [
+        "omega-3",
+        "omega-6"
+      ],
       "other_substances": [],
       "conditions": [],
       "symptoms": [],

@@ -67060,7 +67060,13 @@
         "omega-3",
         "deficiency",
         "testing"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-RARE-000335",

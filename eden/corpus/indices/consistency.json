@@ -2088,10 +2088,6 @@
         "book": "lets-play-doctor"
       },
       {
-        "claim_id": "WAL-CLM-RARE-000334",
-        "book": "rare-earths"
-      },
-      {
         "claim_id": "WAL-CLM-RARE-000351",
         "book": "rare-earths"
       },
@@ -2101,7 +2097,7 @@
       }
     ],
     "books_repeating": 5,
-    "claim_count": 14
+    "claim_count": 13
   },
   {
     "id": "CG-0005",

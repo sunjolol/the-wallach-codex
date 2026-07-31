@@ -16361,7 +16361,7 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 91,
+      "claim_count": 92,
       "distinct_claim_count": 112,
       "books": [
         "dddl-3e-2011",
@@ -16538,6 +16538,12 @@
             "WAL-CLM-EPIGEN-000394",
             "WAL-CLM-IMMORT-000053",
             "WAL-CLM-RARE-000109"
+          ]
+        },
+        {
+          "kind": "diagnostic_pattern",
+          "claim_ids": [
+            "WAL-CLM-RARE-000334"
           ]
         },
         {
@@ -16750,8 +16756,8 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 18,
-      "distinct_claim_count": 19,
+      "claim_count": 19,
+      "distinct_claim_count": 20,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16811,6 +16817,12 @@
             "WAL-CLM-EPIGEN-000450",
             "WAL-CLM-IMMORT-000053",
             "WAL-CLM-RARE-000109"
+          ]
+        },
+        {
+          "kind": "diagnostic_pattern",
+          "claim_ids": [
+            "WAL-CLM-RARE-000334"
           ]
         },
         {

@@ -7809,7 +7809,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 91,
+    "claim_count": 92,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -7825,6 +7825,9 @@
         "WAL-CLM-EPIGEN-000394",
         "WAL-CLM-IMMORT-000053",
         "WAL-CLM-RARE-000109"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000334"
       ],
       "dose": [
         "WAL-CLM-DDDL-000115"
@@ -8100,7 +8103,7 @@
     "display_name": "Omega-6",
     "canon_slug": "omega-6",
     "category": "fatty_acid",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -8116,6 +8119,9 @@
         "WAL-CLM-EPIGEN-000450",
         "WAL-CLM-IMMORT-000053",
         "WAL-CLM-RARE-000109"
+      ],
+      "diagnostic_pattern": [
+        "WAL-CLM-RARE-000334"
       ],
       "dose": [
         "WAL-CLM-DDDL-000115"
