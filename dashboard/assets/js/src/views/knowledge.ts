@@ -119,7 +119,7 @@ const ESS_META: Map<string, EssMeta> = (() => {
   for (const e of listEssentialPages()) {
     const lk = getEssentialBySlug(e.slug)?.layout_key;
     if (lk !== undefined) {
-      m.set(lk, { name: e.name, claimCount: e.claim_count });
+      m.set(lk, { name: e.name, claimCount: e.distinct_claim_count });
     }
   }
   return m;

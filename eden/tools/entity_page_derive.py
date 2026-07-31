@@ -258,6 +258,17 @@ def build_data() -> dict:
         ecorp = embed_ess.get(slug, {})
         cbk = ecorp.get("claims_by_kind", {})
         si_ent = si_entities.get(slug, {})
+        search_secs = search_sections(slug, "essential")
+        # distinct_claim_count = the TILE/HERO count: how many distinct claims a reader actually sees
+        # on the element-SPECIFIC surfaces = The Full Record (operational record) UNION Worth Knowing
+        # (enrichment), deduped across the two homes (a claim BOTH operationally mapped AND enriched
+        # is ONE claim, rendered once per section). It DELIBERATELY excludes group_record -- the ~33
+        # plant-derived claims are SHARED across all 34 trace_pdm elements and rendered under "shared
+        # across the 34", so counting them would make every rare-earth tile read ~identical (Luneth
+        # 2026-07-30). claim_count above stays the operational-only number labelling "The full
+        # record - All N claims"; the two are intentionally different values.
+        rec_ids = {cid for ids in cbk.values() for cid in ids}
+        srch_ids = {cid for sec in search_secs for cid in sec["claim_ids"]}
         rec = {
             "type": "essential",
             "name": e.get("common_name") or e.get("display_name", slug),
@@ -266,10 +277,11 @@ def build_data() -> dict:
             "category": e.get("category"),
             "is_essential": e.get("essential") is not False,
             "claim_count": ecorp.get("claim_count", 0),
+            "distinct_claim_count": len(rec_ids | srch_ids),
             "books": ecorp.get("books_cited", []),
             "synonyms": si_ent.get("synonyms", []),
             "record": [{"kind": k, "claim_ids": cbk[k]} for k in _ordered(cbk, KIND_PRIORITY)],
-            "search": search_sections(slug, "essential"),
+            "search": search_secs,
             "conditions": sorted(ess_conditions.get(slug, set())),   # directed pills (H1)
             "works_with": sorted(works_with.get(slug, set())),       # interaction partners (H1)
             "related": related(slug),                                # co-occurrence (keep-exploring)

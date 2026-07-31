@@ -59,6 +59,9 @@ export interface EssentialSummary {
   symbol: string;
   category: string;
   claim_count: number;
+  /** Tile/hero count: distinct claims on the element-specific surfaces (Full Record + Worth
+   *  Knowing, deduped, excluding the shared plant-derived group). The number the browse tiles show. */
+  distinct_claim_count: number;
 }
 
 /** Lean summary of one condition for the Home tab's search + shelves. */
@@ -79,6 +82,7 @@ export function listEssentialPages(): EssentialSummary[] {
     symbol: e.symbol ?? '',
     category: e.category ?? '',
     claim_count: e.claim_count,
+    distinct_claim_count: e.distinct_claim_count,
   }));
 }
 

@@ -21,6 +21,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 12,
+      "distinct_claim_count": 16,
       "books": [
         "epigenetics",
         "immortality",
@@ -167,6 +168,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality"
@@ -240,6 +242,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 5,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -337,6 +340,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 10,
+      "distinct_claim_count": 16,
       "books": [
         "rare-earths"
       ],
@@ -456,6 +460,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 14,
+      "distinct_claim_count": 49,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -691,6 +696,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 91,
+      "distinct_claim_count": 115,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1077,6 +1083,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 13,
+      "distinct_claim_count": 28,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1268,6 +1275,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 10,
+      "distinct_claim_count": 24,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -1435,6 +1443,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 6,
+      "distinct_claim_count": 23,
       "books": [
         "epigenetics",
         "immortality",
@@ -1579,6 +1588,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 27,
+      "distinct_claim_count": 39,
       "books": [
         "epigenetics",
         "immortality",
@@ -1818,6 +1828,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 114,
+      "distinct_claim_count": 146,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2281,6 +2292,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 12,
+      "distinct_claim_count": 25,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2461,6 +2473,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 12,
+      "distinct_claim_count": 26,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2645,6 +2658,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 67,
+      "distinct_claim_count": 87,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2976,6 +2990,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 61,
+      "distinct_claim_count": 81,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -3336,6 +3351,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 27,
+      "distinct_claim_count": 37,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -3532,6 +3548,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 35,
+      "distinct_claim_count": 51,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -3801,6 +3818,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 32,
+      "distinct_claim_count": 42,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4024,6 +4042,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 20,
+      "distinct_claim_count": 32,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4255,6 +4274,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 7,
+      "distinct_claim_count": 15,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4391,6 +4411,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 113,
+      "distinct_claim_count": 130,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4778,6 +4799,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 4,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -4881,6 +4903,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "rare-earths"
@@ -5054,6 +5077,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 37,
+      "distinct_claim_count": 50,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5302,6 +5326,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 109,
+      "distinct_claim_count": 133,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5725,6 +5750,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 10,
+      "distinct_claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5857,6 +5883,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 12,
       "books": [
         "epigenetics",
         "immortality",
@@ -6051,6 +6078,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 7,
+      "distinct_claim_count": 13,
       "books": [
         "epigenetics",
         "immortality",
@@ -6257,6 +6285,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 13,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -6464,6 +6493,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "immortality",
@@ -6647,6 +6677,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -6814,6 +6845,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 7,
       "books": [
         "epigenetics",
         "immortality",
@@ -6981,6 +7013,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -7144,6 +7177,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 5,
+      "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -7315,6 +7349,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -7469,6 +7504,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality"
@@ -7609,6 +7645,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 4,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -7776,6 +7813,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 6,
+      "distinct_claim_count": 11,
       "books": [
         "epigenetics",
         "immortality",
@@ -7977,6 +8015,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality",
@@ -8113,6 +8152,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -8258,6 +8298,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -8408,6 +8449,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 4,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -8565,6 +8607,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 27,
+      "distinct_claim_count": 35,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -8871,6 +8914,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality"
@@ -9017,6 +9061,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -9164,6 +9209,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -9321,6 +9367,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 4,
+      "distinct_claim_count": 9,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -9525,6 +9572,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "rare-earths"
       ],
@@ -9681,6 +9729,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "rare-earths"
       ],
@@ -9837,6 +9886,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "rare-earths"
       ],
@@ -9993,6 +10043,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 4,
       "books": [
         "rare-earths"
       ],
@@ -10144,6 +10195,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "rare-earths"
       ],
@@ -10300,6 +10352,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 8,
+      "distinct_claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -10515,6 +10568,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "rare-earths"
       ],
@@ -10672,6 +10726,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 4,
       "books": [
         "rare-earths"
       ],
@@ -10822,6 +10877,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "rare-earths"
       ],
@@ -10978,6 +11034,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 6,
       "books": [
         "rare-earths"
       ],
@@ -11141,6 +11198,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 6,
       "books": [
         "rare-earths"
       ],
@@ -11300,6 +11358,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 3,
       "books": [
         "rare-earths"
       ],
@@ -11445,6 +11504,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 6,
       "books": [
         "rare-earths"
       ],
@@ -11608,6 +11668,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 69,
+      "distinct_claim_count": 90,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11947,6 +12008,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 22,
+      "distinct_claim_count": 31,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12132,6 +12194,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 12,
+      "distinct_claim_count": 18,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -12296,6 +12359,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 25,
+      "distinct_claim_count": 38,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12498,6 +12562,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 10,
+      "distinct_claim_count": 15,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -12652,6 +12717,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 50,
+      "distinct_claim_count": 60,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12911,6 +12977,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 24,
+      "distinct_claim_count": 39,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13123,6 +13190,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 37,
+      "distinct_claim_count": 54,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13364,6 +13432,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 73,
+      "distinct_claim_count": 95,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13683,6 +13752,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 18,
+      "distinct_claim_count": 28,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13909,6 +13979,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 68,
+      "distinct_claim_count": 90,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -14223,6 +14294,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 10,
+      "distinct_claim_count": 22,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -14388,6 +14460,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 7,
+      "distinct_claim_count": 16,
       "books": [
         "epigenetics",
         "immortality",
@@ -14552,6 +14625,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 14,
+      "distinct_claim_count": 27,
       "books": [
         "epigenetics",
         "immortality",
@@ -14719,6 +14793,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 6,
+      "distinct_claim_count": 15,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -14861,6 +14936,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 17,
+      "distinct_claim_count": 26,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -15039,6 +15115,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 6,
+      "distinct_claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15168,6 +15245,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 6,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15293,6 +15371,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -15382,6 +15461,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics"
       ],
@@ -15446,6 +15526,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 9,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -15549,6 +15630,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 4,
+      "distinct_claim_count": 10,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -15663,6 +15745,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 4,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15750,6 +15833,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 9,
+      "distinct_claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15874,6 +15958,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 1,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics"
       ],
@@ -15931,6 +16016,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 7,
+      "distinct_claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16064,6 +16150,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 6,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16180,6 +16267,7 @@
       "category": "amino_acid",
       "is_essential": true,
       "claim_count": 2,
+      "distinct_claim_count": 7,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -16274,6 +16362,7 @@
       "category": "fatty_acid",
       "is_essential": true,
       "claim_count": 84,
+      "distinct_claim_count": 108,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16650,6 +16739,7 @@
       "category": "fatty_acid",
       "is_essential": true,
       "claim_count": 10,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16768,6 +16858,7 @@
       "category": "fatty_acid",
       "is_essential": false,
       "claim_count": 0,
+      "distinct_claim_count": 2,
       "books": [],
       "synonyms": [
         "omega-9",

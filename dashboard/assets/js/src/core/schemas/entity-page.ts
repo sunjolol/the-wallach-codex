@@ -39,6 +39,10 @@ export const EssentialPageSchema = z.object({
   category: z.string().nullable(),
   is_essential: z.boolean(),
   claim_count: z.number(),
+  /** TILE/HERO count: distinct claims on the element-SPECIFIC surfaces (Full Record UNION Worth
+   * Knowing, deduped) -- EXCLUDES the shared plant-derived group_record. claim_count above stays
+   * the operational-only number that labels "The full record - All N". See entity_page_derive.py. */
+  distinct_claim_count: z.number(),
   books: z.array(z.string()),
   synonyms: z.array(z.string()),
   record: z.array(EntityKindGroupSchema),

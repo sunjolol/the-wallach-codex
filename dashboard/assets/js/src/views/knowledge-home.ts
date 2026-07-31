@@ -79,7 +79,7 @@ const LEGEND_CATS = ['mineral', 'vitamin', 'amino_acid', 'fatty_acid'] as const;
 function shelfTile(e: EssentialSummary): string {
   const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
   const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
-  return `<button class="sh-tile" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(layoutKey)}" title="${escHTML(e.name)}"><span class="sh-tile__sym">${escHTML(glyph)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, 'claim')}</span></button>`;
+  return `<button class="sh-tile" data-cat="${escHTML(e.category)}" data-kd-essential="${escHTML(layoutKey)}" title="${escHTML(e.name)}"><span class="sh-tile__sym">${escHTML(glyph)}</span><span class="sh-tile__nm">${escHTML(e.name)}</span><span class="sh-tile__ct">${e.distinct_claim_count} ${plural(e.distinct_claim_count, 'claim')}</span></button>`;
 }
 
 /**
@@ -89,7 +89,7 @@ function shelfTile(e: EssentialSummary): string {
  * data-kd-essential contract.
  */
 function renderEssentialsShelf(): string {
-  const top = listEssentialPages().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 18);
+  const top = listEssentialPages().slice().sort((a, b) => b.distinct_claim_count - a.distinct_claim_count).slice(0, 18);
   const legend = LEGEND_CATS.map(cat =>
     `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML(ui(`kh_legend_${cat}`))}</span>`).join('');
   return `<div class="ep-seclabel ep-seclabel--tight">${escHTML(ui('kh_essentials_label'))} <span class="ep-seclabel__hint">${escHTML(ui('kh_essentials_hint'))}</span><a data-kd-tab="essentials">${escHTML(ui('kh_essentials_link'))}</a></div>
@@ -198,7 +198,7 @@ function homeMatches(query: string): HomeMatch[] {
         continue;
       }
       taken.add(e.slug);
-      out.push({ kind: 'essential', name: e.name, navAttr: 'data-kd-essential', navVal: c.layout_key, claimCount: e.claim_count, startsWith: nm.startsWith(q) });
+      out.push({ kind: 'essential', name: e.name, navAttr: 'data-kd-essential', navVal: c.layout_key, claimCount: e.distinct_claim_count, startsWith: nm.startsWith(q) });
     }
   }
   for (const cnd of listConditionPages()) {

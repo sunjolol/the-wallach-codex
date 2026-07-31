@@ -1726,7 +1726,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     </div>`;
   }
 
-  const metaBits = [escHTML(page.category ?? ''), `${page.claim_count} ${plural(page.claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`]
+  const metaBits = [escHTML(page.category ?? ''), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`]
     .filter(s => s.length > 0).join(' · ');
   // Friendly name is the H1 (page.name = common_name); the scientific name shows as a
   // muted subtitle only when it differs (Vitamin A -> Retinol; omitted for Calcium).

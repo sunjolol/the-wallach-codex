@@ -5238,6 +5238,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     category: external_exports.string().nullable(),
     is_essential: external_exports.boolean(),
     claim_count: external_exports.number(),
+    /** TILE/HERO count: distinct claims on the element-SPECIFIC surfaces (Full Record UNION Worth
+     * Knowing, deduped) -- EXCLUDES the shared plant-derived group_record. claim_count above stays
+     * the operational-only number that labels "The full record - All N". See entity_page_derive.py. */
+    distinct_claim_count: external_exports.number(),
     books: external_exports.array(external_exports.string()),
     synonyms: external_exports.array(external_exports.string()),
     record: external_exports.array(EntityKindGroupSchema),
@@ -27686,6 +27690,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 12,
+        distinct_claim_count: 16,
         books: [
           "epigenetics",
           "immortality",
@@ -27832,6 +27837,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality"
@@ -27905,6 +27911,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 5,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "rare-earths"
@@ -28002,6 +28009,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 10,
+        distinct_claim_count: 16,
         books: [
           "rare-earths"
         ],
@@ -28121,6 +28129,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 14,
+        distinct_claim_count: 49,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -28356,6 +28365,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 91,
+        distinct_claim_count: 115,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -28742,6 +28752,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 13,
+        distinct_claim_count: 28,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -28933,6 +28944,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 10,
+        distinct_claim_count: 24,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -29100,6 +29112,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 6,
+        distinct_claim_count: 23,
         books: [
           "epigenetics",
           "immortality",
@@ -29244,6 +29257,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 27,
+        distinct_claim_count: 39,
         books: [
           "epigenetics",
           "immortality",
@@ -29483,6 +29497,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 114,
+        distinct_claim_count: 146,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -29946,6 +29961,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 12,
+        distinct_claim_count: 25,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -30126,6 +30142,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 12,
+        distinct_claim_count: 26,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -30310,6 +30327,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 67,
+        distinct_claim_count: 87,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -30641,6 +30659,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 61,
+        distinct_claim_count: 81,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31001,6 +31020,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 27,
+        distinct_claim_count: 37,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31197,6 +31217,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 35,
+        distinct_claim_count: 51,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31466,6 +31487,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 32,
+        distinct_claim_count: 42,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31689,6 +31711,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 20,
+        distinct_claim_count: 32,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31920,6 +31943,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 7,
+        distinct_claim_count: 15,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32056,6 +32080,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 113,
+        distinct_claim_count: 130,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32443,6 +32468,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 4,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "rare-earths"
@@ -32546,6 +32572,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "rare-earths"
@@ -32719,6 +32746,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 37,
+        distinct_claim_count: 50,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32967,6 +32995,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 109,
+        distinct_claim_count: 133,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -33390,6 +33419,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 10,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -33522,6 +33552,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 12,
         books: [
           "epigenetics",
           "immortality",
@@ -33716,6 +33747,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 7,
+        distinct_claim_count: 13,
         books: [
           "epigenetics",
           "immortality",
@@ -33922,6 +33954,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 13,
         books: [
           "epigenetics",
           "rare-earths"
@@ -34129,6 +34162,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "immortality",
@@ -34312,6 +34346,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "immortality",
@@ -34479,6 +34514,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 7,
         books: [
           "epigenetics",
           "immortality",
@@ -34646,6 +34682,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "rare-earths"
@@ -34809,6 +34846,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 5,
+        distinct_claim_count: 7,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -34980,6 +35018,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -35134,6 +35173,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality"
@@ -35274,6 +35314,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 4,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "immortality",
@@ -35441,6 +35482,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 6,
+        distinct_claim_count: 11,
         books: [
           "epigenetics",
           "immortality",
@@ -35642,6 +35684,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality",
@@ -35778,6 +35821,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -35923,6 +35967,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -36073,6 +36118,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 4,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "immortality",
@@ -36230,6 +36276,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 27,
+        distinct_claim_count: 35,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -36536,6 +36583,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality"
@@ -36682,6 +36730,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "rare-earths"
@@ -36829,6 +36878,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "rare-earths"
@@ -36986,6 +37036,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 4,
+        distinct_claim_count: 9,
         books: [
           "epigenetics",
           "rare-earths"
@@ -37190,6 +37241,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "rare-earths"
         ],
@@ -37346,6 +37398,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "rare-earths"
         ],
@@ -37502,6 +37555,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "rare-earths"
         ],
@@ -37658,6 +37712,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 4,
         books: [
           "rare-earths"
         ],
@@ -37809,6 +37864,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "rare-earths"
         ],
@@ -37965,6 +38021,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 8,
+        distinct_claim_count: 13,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -38180,6 +38237,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "rare-earths"
         ],
@@ -38337,6 +38395,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 4,
         books: [
           "rare-earths"
         ],
@@ -38487,6 +38546,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "rare-earths"
         ],
@@ -38643,6 +38703,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 6,
         books: [
           "rare-earths"
         ],
@@ -38806,6 +38867,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 6,
         books: [
           "rare-earths"
         ],
@@ -38965,6 +39027,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 3,
         books: [
           "rare-earths"
         ],
@@ -39110,6 +39173,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 6,
         books: [
           "rare-earths"
         ],
@@ -39273,6 +39337,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 69,
+        distinct_claim_count: 90,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -39612,6 +39677,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 22,
+        distinct_claim_count: 31,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -39797,6 +39863,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 12,
+        distinct_claim_count: 18,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -39961,6 +40028,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 25,
+        distinct_claim_count: 38,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40163,6 +40231,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 10,
+        distinct_claim_count: 15,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -40317,6 +40386,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 50,
+        distinct_claim_count: 60,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40576,6 +40646,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 24,
+        distinct_claim_count: 39,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40788,6 +40859,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 37,
+        distinct_claim_count: 54,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41029,6 +41101,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 73,
+        distinct_claim_count: 95,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41348,6 +41421,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 18,
+        distinct_claim_count: 28,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41574,6 +41648,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 68,
+        distinct_claim_count: 90,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41888,6 +41963,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 10,
+        distinct_claim_count: 22,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42053,6 +42129,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 7,
+        distinct_claim_count: 16,
         books: [
           "epigenetics",
           "immortality",
@@ -42217,6 +42294,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 14,
+        distinct_claim_count: 27,
         books: [
           "epigenetics",
           "immortality",
@@ -42384,6 +42462,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 6,
+        distinct_claim_count: 15,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -42526,6 +42605,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 17,
+        distinct_claim_count: 26,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -42704,6 +42784,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 6,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42833,6 +42914,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 6,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42958,6 +43040,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -43047,6 +43130,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
           "epigenetics"
         ],
@@ -43111,6 +43195,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 9,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -43214,6 +43299,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 4,
+        distinct_claim_count: 10,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -43328,6 +43414,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 4,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43415,6 +43502,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 9,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43539,6 +43627,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 1,
+        distinct_claim_count: 4,
         books: [
           "epigenetics"
         ],
@@ -43596,6 +43685,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 7,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43729,6 +43819,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 6,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43845,6 +43936,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 2,
+        distinct_claim_count: 7,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -43939,6 +44031,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "fatty_acid",
         is_essential: true,
         claim_count: 84,
+        distinct_claim_count: 108,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -44315,6 +44408,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "fatty_acid",
         is_essential: true,
         claim_count: 10,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -44433,6 +44527,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "fatty_acid",
         is_essential: false,
         claim_count: 0,
+        distinct_claim_count: 2,
         books: [],
         synonyms: [
           "omega-9",
@@ -72419,7 +72514,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       scientific_name: e.scientific_name,
       symbol: e.symbol ?? "",
       category: e.category ?? "",
-      claim_count: e.claim_count
+      claim_count: e.claim_count,
+      distinct_claim_count: e.distinct_claim_count
     }));
   }
   function listConditionPages() {
@@ -72734,7 +72830,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        coda: "Which is why he starts at a fingernail. Zinc is stored there, and he reads nails as a barometer of what you are absorbing.",
+        coda: "Which is why Wallach starts at a fingernail. Zinc is stored there, and he reads nails as a barometer of what you are absorbing.",
         stat: {
           value: "70",
           readout: "// RARE EARTHS \xB7 ZINC METALLOENZYMES",
@@ -180257,7 +180353,7 @@ Sickle cell anemia`,
       <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
     </div>`;
     }
-    const metaBits = [escHTML6(page.category ?? ""), `${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
+    const metaBits = [escHTML6(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
     const sciSub = page.scientific_name !== page.name ? `<div class="kd-ep-hero__sci">${escHTML6(page.scientific_name)}</div>` : "";
     const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
     const ledeText = slug !== null ? essentialLede(slug) : "";
@@ -181112,10 +181208,10 @@ Sickle cell anemia`,
   function shelfTile(e) {
     const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
     const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
-    return `<button class="sh-tile" data-cat="${escHTML9(e.category)}" data-kd-essential="${escHTML9(layoutKey)}" title="${escHTML9(e.name)}"><span class="sh-tile__sym">${escHTML9(glyph)}</span><span class="sh-tile__nm">${escHTML9(e.name)}</span><span class="sh-tile__ct">${e.claim_count} ${plural(e.claim_count, "claim")}</span></button>`;
+    return `<button class="sh-tile" data-cat="${escHTML9(e.category)}" data-kd-essential="${escHTML9(layoutKey)}" title="${escHTML9(e.name)}"><span class="sh-tile__sym">${escHTML9(glyph)}</span><span class="sh-tile__nm">${escHTML9(e.name)}</span><span class="sh-tile__ct">${e.distinct_claim_count} ${plural(e.distinct_claim_count, "claim")}</span></button>`;
   }
   function renderEssentialsShelf() {
-    const top = listEssentialPages().slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 18);
+    const top = listEssentialPages().slice().sort((a, b) => b.distinct_claim_count - a.distinct_claim_count).slice(0, 18);
     const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML9(ui(`kh_legend_${cat}`))}</span>`).join("");
     return `<div class="ep-seclabel ep-seclabel--tight">${escHTML9(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML9(ui("kh_essentials_link"))}</a></div>
     <div class="sh-grid">${top.map(shelfTile).join("")}</div>
@@ -181180,7 +181276,7 @@ Sickle cell anemia`,
           continue;
         }
         taken.add(e.slug);
-        out.push({ kind: "essential", name: e.name, navAttr: "data-kd-essential", navVal: c.layout_key, claimCount: e.claim_count, startsWith: nm.startsWith(q) });
+        out.push({ kind: "essential", name: e.name, navAttr: "data-kd-essential", navVal: c.layout_key, claimCount: e.distinct_claim_count, startsWith: nm.startsWith(q) });
       }
     }
     for (const cnd of listConditionPages()) {
@@ -181704,7 +181800,7 @@ Sickle cell anemia`,
     for (const e of listEssentialPages()) {
       const lk = getEssentialBySlug(e.slug)?.layout_key;
       if (lk !== void 0) {
-        m.set(lk, { name: e.name, claimCount: e.claim_count });
+        m.set(lk, { name: e.name, claimCount: e.distinct_claim_count });
       }
     }
     return m;
@@ -185037,7 +185133,9 @@ Cards, now symmetric: LEFT is a gated VERBATIM quote \u2014 quote_trim of LETS-0
 
 Also: glossify gained an opt-in *emphasis* hook (runs on already-escaped text, only adds <em>; off by default so corpus verbatims are untouched) \u2014 "before" is now italic; "parathyroids" plural glosses via an alias of "parathyroid"; "by surgeons" added to the Then beat.
 
-Verified: build OK; board 80/80 (0 new red, +1 gate); render_probe_mech_shape 18/18 byte-identical (selenium/copper/zinc untouched \u2014 every edit scoped to --cards or calcium-only classes); headless measurements matched the mockup and were re-confirmed at the true 11px-narrowed width; both evidence cards 189px (symmetric). DEFERRED: render_probe_calcium.js still unwritten (and should be scrollbar-aware); codify the headless-scrollbar / mockup-overflow width trap in element-headers.md Rule 1; the right card double-glosses "parathyroids" + "parathyroid" (redundant, harmless \u2014 dedup glossify by def later). Nothing under a pillar/golden seal changed, so nothing to re-seal.` }];
+Verified: build OK; board 80/80 (0 new red, +1 gate); render_probe_mech_shape 18/18 byte-identical (selenium/copper/zinc untouched \u2014 every edit scoped to --cards or calcium-only classes); headless measurements matched the mockup and were re-confirmed at the true 11px-narrowed width; both evidence cards 189px (symmetric). DEFERRED: render_probe_calcium.js still unwritten (and should be scrollbar-aware); codify the headless-scrollbar / mockup-overflow width trap in element-headers.md Rule 1; the right card double-glosses "parathyroids" + "parathyroid" (redundant, harmless \u2014 dedup glossify by def later). Nothing under a pillar/golden seal changed, so nothing to re-seal.` }, { id: "lg_ms88v6jw_jr6lx9", ts: "2026-07-30T20:08:56.684919-05:00", surface: "knowledge/counts", kind: "round-close", summary: "Side tasks: fixed undercounting claim-counts on element cards (they ignored the Worth-Knowing enrichment layer) via a new distinct_claim_count; zinc header 'he'->'Wallach'. Conditions verified already-correct and left alone (their pages have no Worth-Knowing section).", detail: `Two small fixes Luneth asked for as side tasks. (1) Zinc's element-header now says "Wallach starts at a fingernail" instead of "he." (2) The "N claims" number on every element card was wrong \u2014 it counted only the operational claims and ignored the whole "Worth knowing" section the page actually shows, so Calcium's card said 114 when the page has 146. I added a separate distinct count for the cards. I nearly extended the same fix to condition cards, but checked and condition pages have NO "Worth knowing" section \u2014 their counts were already right \u2014 so extending would have BROKEN them (memory_loss would say 8 while the page shows 3). I reverted that part.
+
+TECHNICAL: card/tile/hero count read entity-page-data.json.claim_count (= corpus-embed operational count). Verified it is a SINGLE consistent source: card==record for all 91 essentials, nothing stale \u2014 the definition simply predated the enrichment campaign. Added derived distinct_claim_count = |record UNION search|, deduped, EXCLUDING the 33 shared plant-derived group claims (Luneth chose element-specific so the 34 rare-earths stay distinguishable). Wired into: 90-tab tile (knowledge.ts), home shelf display+sort + live-search meta (knowledge-home.ts), essential detail hero (entity-page.ts). claim_count untouched so "The full record \xB7 All N" keeps the operational number. Zinc: mechanism-clarity-data.json coda first-"he"-only + goldens/mechanism-sections.json regenerated. Files: eden/tools/entity_page_derive.py, core/schemas/entity-page.ts, state/entity-page.ts, views/{entity-page,knowledge,knowledge-home}.ts, mechanism-clarity-data.json, entity-page-data.json (regen), goldens/mechanism-sections.json, dist/main.js. Verified: tsc clean; build OK; board 80/80 (0 new red; derived_artifacts_fresh confirms byte-match); render_probe_knowledge PASS; render_probe_mech_shape 18/18 byte-identical; screenshots confirm Calcium 146 / Zinc 133 / Gold hero 13 vs full-record 3 \u2014 Luneth signed off. CONDITIONS: extension built then reverted after DOM-verifying condition pages render no Worth-Knowing section (hasWorthKnowing=false, facetCount=0). DEFERRED: omega-6 remap \u2014 a background 5-book scan found omega-6 is under-MAPPED not under-mined (14 already-mined claims with empty essentials[] but omega-6 in verbatim/tags; count 10 -> ~19-23 with zero new source mining) \u2014 pending Luneth's per-claim ratification.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
