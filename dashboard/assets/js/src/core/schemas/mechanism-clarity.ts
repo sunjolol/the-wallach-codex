@@ -182,12 +182,21 @@ const MechBlockSchema = z.discriminatedUnion('type', [
     type: z.literal('beats'),
     items: z.array(MechBeatSchema),
     layout: z.enum(['stack', 'row']).optional(),
+    // Opt-in to big Unbounded step numerals (magnesium's cycle). Scoped, so other headers keep
+    // their existing mono numbers.
+    bignum: z.boolean().optional(),
   }).passthrough(),
   MechStatSchema.extend({ type: z.literal('stat') }),
   // The pull quote, BY CLAIM ID (R3) — `highlight` is the phrase .ds-mark emphasises.
   z.object({
     type: z.literal('quote'),
     claim: z.string(),
+    // A faithful contiguous slice of the sealed verbatim (gated by mech_quote_trim_faithful, now
+    // extended to composed quote blocks) so a standalone pull-quote can stop before a trailing
+    // sentence while the cite still composes from `claim` (R3). Trims Wallach, never fabricates.
+    trim: z.string().optional(),
+    // Opt-in to a larger pull-quote (a short quote can read bigger). Scoped; other quotes unchanged.
+    big: z.boolean().optional(),
     highlight: z.string().optional(),
   }).passthrough(),
 ]);

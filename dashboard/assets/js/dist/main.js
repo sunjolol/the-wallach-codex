@@ -5024,13 +5024,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     external_exports.object({
       type: external_exports.literal("beats"),
       items: external_exports.array(MechBeatSchema),
-      layout: external_exports.enum(["stack", "row"]).optional()
+      layout: external_exports.enum(["stack", "row"]).optional(),
+      // Opt-in to big Unbounded step numerals (magnesium's cycle). Scoped, so other headers keep
+      // their existing mono numbers.
+      bignum: external_exports.boolean().optional()
     }).passthrough(),
     MechStatSchema.extend({ type: external_exports.literal("stat") }),
     // The pull quote, BY CLAIM ID (R3) — `highlight` is the phrase .ds-mark emphasises.
     external_exports.object({
       type: external_exports.literal("quote"),
       claim: external_exports.string(),
+      // A faithful contiguous slice of the sealed verbatim (gated by mech_quote_trim_faithful, now
+      // extended to composed quote blocks) so a standalone pull-quote can stop before a trailing
+      // sentence while the cite still composes from `claim` (R3). Trims Wallach, never fabricates.
+      trim: external_exports.string().optional(),
+      // Opt-in to a larger pull-quote (a short quote can read bigger). Scoped; other quotes unchanged.
+      big: external_exports.boolean().optional(),
       highlight: external_exports.string().optional()
     }).passthrough()
   ]);
@@ -72991,6 +73000,83 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             highlight: "147 different diseases"
           }
         ]
+      },
+      {
+        slug: "magnesium",
+        facet: "mechanism",
+        blocks: [
+          {
+            type: "eyebrow",
+            text: "The cycle of life of magnesium"
+          },
+          {
+            type: "kill",
+            text: "One magnesium atom, from volcanic soil to the spark in your cells"
+          },
+          {
+            type: "figure",
+            width: "fork",
+            figure: {
+              key: "mg_cycle",
+              alt: "A left-to-right cycle following one magnesium atom: held in volcanic soil where roots pull it up, then locked at the centre of a green chlorophyll ring inside a sunlit leaf, then glowing inside a featureless human figure where it now gives energy and acts as the relaxer; a faint dashed arc returns the cycle to the soil.",
+              labels: {
+                glyph: "Mg",
+                soil: "IN THE SOIL",
+                soil_sub: "roots pull it up",
+                leaf: "CHLOROPHYLL",
+                leaf_sub: "magnesium at its centre",
+                leaf_sub2: "stores the sun's energy",
+                eat: "you eat the leaf",
+                eat_sub: "or supplement it",
+                you: "IN YOU",
+                you_sub: "now GIVES energy",
+                you_sub2: "calcium's relaxer"
+              }
+            }
+          },
+          {
+            type: "prose",
+            tone: "bridge",
+            text: "Magnesium never changes. The same atom that volcanic soil holds is the atom a leaf locks inside its green, and the atom your body later runs on \u2014 one mineral, followed through three lives."
+          },
+          {
+            type: "beats",
+            bignum: true,
+            items: [
+              {
+                n: "1",
+                title: "From the ground",
+                text: "Magnesium is a mineral of the soil \u2014 Hawaii's rain forests are so green because their volcanic (olivine) soil is packed with it. Roots pull that magnesium up out of the ground and into the plant.",
+                traces: [
+                  "WAL-CLM-RARE-000331"
+                ]
+              },
+              {
+                n: "2",
+                title: "In the leaf",
+                text: "That same magnesium sits locked at the exact centre of chlorophyll, the molecule whose green colours the leaf. The green is the plant's solar panel, and magnesium is the atom at its heart storing the sun's energy.",
+                traces: [
+                  "WAL-CLM-IMMORT-000208"
+                ]
+              },
+              {
+                n: "3",
+                title: "In you",
+                text: "You eat the plant (or supplement it in plant-derived form) and absorb that same magnesium \u2014 only now it stops gathering energy and starts giving it, powering your cells. It is also calcium's relaxer, letting every muscle and nerve rest.",
+                traces: [
+                  "WAL-CLM-IMMORT-000206"
+                ]
+              }
+            ]
+          },
+          {
+            type: "quote",
+            claim: "WAL-CLM-IMMORT-000208",
+            trim: "Magnesium, the source of the deep green color of plants, is the ultimate source of all biological energy!",
+            highlight: "all biological energy",
+            big: true
+          }
+        ]
       }
     ]
   };
@@ -73014,6 +73100,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       zinc: {
         lede: "A trace mineral the body holds barely two grams of \u2014 and one of the few that is never burned for energy, but built into the tools your cells work with.",
         why: "From Wallach's Epigenetics (2014) mineral table: 15\u201330 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 46 mg/day. (His earlier Let's Play Doctor Base Line program lists 25 mg as the daily maintenance figure, and 150 mg as a 30-day therapeutic dose.)"
+      },
+      magnesium: {
+        lede: `The mineral at the centre of chlorophyll \u2014 what makes plants green and stores the sun's energy \u2014 and, inside you, calcium's counterweight: the "relaxer" that lets every muscle and nerve stand down.`,
+        why: "From Wallach's Epigenetics (2014) mineral table: 250\u2013500 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 770 mg/day."
       }
     },
     conditions: {}
@@ -179966,15 +180056,15 @@ Sickle cell anemia`,
       </div>
     </div>`;
   }
-  function fatFamilyQuote(claimId, highlight) {
+  function fatFamilyQuote(claimId, highlight, trim, big = false) {
     const c = claimId !== void 0 ? getClaim(claimId) : null;
     if (c === null) {
       return "";
     }
-    const raw = collapseWS(c.verbatim);
+    const raw = trim !== void 0 && trim.length > 0 ? collapseWS(trim) : collapseWS(c.verbatim);
     const at = highlight !== void 0 ? raw.indexOf(highlight) : -1;
     const body = at >= 0 && highlight !== void 0 ? `${glossify(raw.slice(0, at))}<mark class="ds-mark">${glossify(highlight)}</mark>${glossify(raw.slice(at + highlight.length))}` : glossify(raw);
-    return `<div class="ds-pull-quote-wrap kd-ep-fam__quote">
+    return `<div class="ds-pull-quote-wrap kd-ep-fam__quote${big ? " kd-ep-fam__quote--big" : ""}">
       <blockquote class="ds-pull-quote">
         <p>${body}</p>
         <footer>\u2014 Dr. Joel Wallach \xB7 ${escHTML6(getBookLabel(c.book))}</footer>
@@ -180179,6 +180269,70 @@ Sickle cell anemia`,
       <text class="kd-ep-fam__figcap" x="350" y="240" text-anchor="middle">${g("heart_caption")}</text>
     </svg>`;
   }
+  function mgCycleFigure(alt, labels) {
+    const g = (k) => escHTML6(labels?.[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 270" role="img" aria-label="${escHTML6(alt)}">
+      <defs>
+        <radialGradient id="kd-ep-mg-sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#e8b13e" stop-opacity="0.5"/><stop offset="100%" stop-color="#e8b13e" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="kd-ep-mg-beam" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#e8b13e" stop-opacity="0.34"/><stop offset="100%" stop-color="#e8b13e" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="kd-ep-mg-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="var(--kd-ep-fam)" stop-opacity="0.55"/><stop offset="100%" stop-color="var(--kd-ep-fam)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path class="kd-ep-fam__mgreturn" d="M602 68 C500 12 208 12 102 60"/>
+      <path class="kd-ep-fam__mgreturnhd" d="M102 64 L94 54 L108 53 Z"/>
+      <rect class="kd-ep-fam__mgsoil" x="28" y="72" width="120" height="92" rx="11"/>
+      <path class="kd-ep-fam__mgsoildp" d="M28 122 L148 122 L148 153 Q148 164 137 164 L39 164 Q28 164 28 153 Z"/>
+      <circle class="kd-ep-fam__mgspeck" cx="52" cy="140" r="2.5"/>
+      <circle class="kd-ep-fam__mgspeck" cx="120" cy="150" r="2.5"/>
+      <circle class="kd-ep-fam__mgspeck" cx="132" cy="132" r="2"/>
+      <path class="kd-ep-fam__mgroot" d="M80 132 Q70 146 64 158"/>
+      <path class="kd-ep-fam__mgroot" d="M88 134 L88 160"/>
+      <path class="kd-ep-fam__mgroot" d="M96 132 Q106 146 110 158"/>
+      <circle class="kd-ep-fam__gnode--el" cx="87" cy="112" r="18"/>
+      <text class="kd-ep-fam__mgglyph" x="87" y="117" text-anchor="middle">${g("glyph")}</text>
+      <path class="kd-ep-fam__gline" d="M152 116 L276 116"/>
+      <path class="kd-ep-fam__ghead--acc" d="M276 116 L266 110 L266 122 Z"/>
+      <ellipse cx="296" cy="80" rx="104" ry="82" fill="url(#kd-ep-mg-sun)"/>
+      <polygon points="176,16 258,16 344,102 268,128" fill="url(#kd-ep-mg-beam)"/>
+      <path class="kd-ep-fam__mgmacro" d="M361 63 Q398 74 409 105"/>
+      <path class="kd-ep-fam__mgmacro" d="M409 131 Q400 163 361 175"/>
+      <path class="kd-ep-fam__mgmacro" d="M339 175 Q296 163 291 131"/>
+      <path class="kd-ep-fam__mgmacro" d="M291 105 Q298 74 339 63"/>
+      <polygon class="kd-ep-fam__mgpyr" points="338,60 362,60 366,74 350,84 334,74"/>
+      <polygon class="kd-ep-fam__mgpyr" points="410,106 410,130 396,134 386,118 396,102"/>
+      <polygon class="kd-ep-fam__mgpyr" points="338,178 362,178 366,164 350,154 334,164"/>
+      <polygon class="kd-ep-fam__mgpyr" points="290,106 290,130 304,134 314,118 304,102"/>
+      <path class="kd-ep-fam__mgnbond" d="M350 84 L350 101"/>
+      <path class="kd-ep-fam__mgnbond" d="M386 118 L369 118"/>
+      <path class="kd-ep-fam__mgnbond" d="M350 154 L350 135"/>
+      <path class="kd-ep-fam__mgnbond" d="M314 118 L331 118"/>
+      <circle class="kd-ep-fam__gnode--el" cx="350" cy="118" r="18"/>
+      <text class="kd-ep-fam__mgglyph" x="350" y="123" text-anchor="middle">${g("glyph")}</text>
+      <path class="kd-ep-fam__gline" d="M420 118 L550 118"/>
+      <path class="kd-ep-fam__ghead--acc" d="M550 118 L540 112 L540 124 Z"/>
+      <text class="kd-ep-fam__glabel" x="485" y="104" text-anchor="middle">${g("eat")}</text>
+      <text class="kd-ep-fam__gsub" x="485" y="136" text-anchor="middle">${g("eat_sub")}</text>
+      <path class="kd-ep-fam__mgbody" d="M560 172 C560 138 580 122 608 122 C636 122 656 138 656 172 Z"/>
+      <circle class="kd-ep-fam__mgbody" cx="608" cy="90" r="25"/>
+      <circle cx="608" cy="150" r="34" fill="url(#kd-ep-mg-glow)"/>
+      <circle class="kd-ep-fam__gnode--el" cx="608" cy="150" r="18"/>
+      <text class="kd-ep-fam__mgglyph" x="608" y="155" text-anchor="middle">${g("glyph")}</text>
+      <path class="kd-ep-fam__mgbolt" d="M639 133 L631 147 L638 147 L633 159 L647 143 L640 143 Z"/>
+      <text class="kd-ep-fam__glabel" x="87" y="205" text-anchor="middle">${g("soil")}</text>
+      <text class="kd-ep-fam__gsub" x="87" y="223" text-anchor="middle">${g("soil_sub")}</text>
+      <text class="kd-ep-fam__figtitle" x="350" y="205" text-anchor="middle">${g("leaf")}</text>
+      <text class="kd-ep-fam__gsub--acc" x="350" y="223" text-anchor="middle">${g("leaf_sub")}</text>
+      <text class="kd-ep-fam__gsub" x="350" y="240" text-anchor="middle">${g("leaf_sub2")}</text>
+      <text class="kd-ep-fam__glabel" x="608" y="205" text-anchor="middle">${g("you")}</text>
+      <text class="kd-ep-fam__gsub--acc" x="608" y="223" text-anchor="middle">${g("you_sub")}</text>
+      <text class="kd-ep-fam__gsub" x="608" y="240" text-anchor="middle">${g("you_sub2")}</text>
+    </svg>`;
+  }
   function mechanismFigure(key, alt, labels) {
     switch (key) {
       case "rancidity":
@@ -180197,6 +180351,8 @@ Sickle cell anemia`,
         return diseaseScaleFigure(alt, labels);
       case "heartbeat":
         return heartbeatFigure(alt, labels);
+      case "mg_cycle":
+        return mgCycleFigure(alt, labels);
       default:
         return "";
     }
@@ -180274,14 +180430,14 @@ Sickle cell anemia`,
   function mechProse(tone, text) {
     return `<p class="kd-ep-fam__${tone}">${glossify(collapseWS(text))}</p>`;
   }
-  function mechBeats(items, mod) {
+  function mechBeats(items, mod, bignum = false) {
     const steps = items.map((b) => {
       const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
       const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
       const cta = b.cta !== void 0 ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML6(b.cta.tab)}">${escHTML6(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>` : "";
       return `
       <div class="kd-ep-fam__step${turn}">
-        <span class="kd-ep-fam__num">${escHTML6(b.n)}</span>
+        <span class="kd-ep-fam__num${bignum ? " kd-ep-fam__num--big" : ""}">${escHTML6(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
@@ -180341,11 +180497,11 @@ Sickle cell anemia`,
         case "split":
           return renderMechSplit(b.left, b.right);
         case "beats":
-          return mechBeats(b.items, b.layout === "row" ? " kd-ep-fam__steps--row" : "");
+          return mechBeats(b.items, b.layout === "row" ? " kd-ep-fam__steps--row" : "", b.bignum === true);
         case "stat":
           return mechStat(b.readout, b.value, b.label);
         case "quote":
-          return fatFamilyQuote(b.claim, b.highlight);
+          return fatFamilyQuote(b.claim, b.highlight, b.trim, b.big === true);
         default: {
           const unreached = b;
           return unreached;
@@ -185257,7 +185413,17 @@ TECHNICAL: RARE-000334 -> [omega-3, omega-6] (kind=diagnostic_pattern, no collec
 
 Three rounds, via two concept workflows + hand-built HTML mockups in the real .kd-ep-fam container (temporary/magnesium-header-mockups{,-r2,-r3}.html; gitignored scaffolding, reference copy is r3). R1 = 4 directions (numbers / muscle-cramp / chlorophyll-ring / artery); only the sunlight idea was liked, the ring "explained nothing." R2 = the sunlight mechanism explained via twin porphyrin rings; still "gibberish," too technical. R3 = plain layman terms led by Wallach's Hawaii/olivine example; the CONTENT landed but all four were rejected on VISUAL DESIGN \u2014 verbatim "garbage tier... children's books or a child's presentation, not a high end highly designed and thought out USER EXPERIENCE." Diagnosis: cartoonish literal icons (cartoon sun, leaf, hexagon-sugar, stick-figure person, lumpy green island) instead of the shipped headers' refined editorial SVG (selenium rancid membrane, copper cofactor-fork, calcium anatomical heart) and the gold-standard bar. Grounding for every quote was verbatim-verified vs the sealed corpus: IMMORT-000208 (chlorophyll / photosynthesis / "solar currency" / "ultimate source of all biological energy"), RARE-000331 (Hawaii / olivine / "the magnesium is part of the chlorophyll molecule"), RARE-000130 ("iron is to hemoglobin what Mg is to chlorophyll"), IMMORT-000085/271/207/206/205, DDDL-000082/074, EPIGEN-000133. Handoff rewritten (chronicle/next-chunk.md); memory written (magnesium-header-content-settled-design-failed). Board 80/80 green \u2014 no app or pillar changed. Deferrals: build the header with HIGH-END editorial design next session; remap 3 under-mapped chlorophyll claims to magnesium (task chip task_1754bb6e); MEMORY.md index (192 lines) needs a dedicated consolidation pass.` }, { id: "lg_ms98p0la_fp6zxp", ts: "2026-07-31T12:51:55.198120-05:00", surface: "corpus/magnesium", kind: "round-close", summary: "Remapped 4 under-mapped chlorophyll claims to magnesium and sealed it (Luneth ratified + authorized the seal). They now show on magnesium's Full Record. Corpus kv436->437, board 80/80 green, entity render probe PASS.", detail: `Fixed a real gap: four of Wallach's claims about magnesium being the atom in chlorophyll were not attached to the magnesium essential, so they never showed up on the magnesium page's "The Full Record" (they already answered in Ask-Wallach, via the search layer). Luneth ratified the mappings and gave explicit permission to seal, so I staged the edits, sealed the corpus, regenerated everything, and verified all four now appear under magnesium.
 
-Under-mapping remediation, same class as the 2026-07-30 omega-6 remap. Edits (mine_batch apply -> drafts, safe_write-routed, semantic fields only): WAL-CLM-IMMORT-000271 []->[magnesium]; WAL-CLM-IMMORT-000085 []->[magnesium,iron,cobalt] (the shared porphyrin-ring claim linking chlorophyll/hemoglobin/B12); WAL-CLM-RARE-000331 []->[magnesium] (the Hawaii/olivine "the magnesium is part of the chlorophyll molecule" claim); WAL-CLM-RARE-000130 [iron]->[iron,magnesium] ("iron is to hemoglobin what Mg is to chlorophyll"). Discipline followed: orphan check CLEAN (no coverage target's source_claim_id or other_claims points at any of the four; none is a superseded_by target), all target slugs valid canon essentials so references_resolve stayed green, verbatim/offset/id untouched (mine_batch rejects those). Pipeline: corpus_seal (user-authorized; kv436->437, corpus_verify PASS, 15 golden hashes rewritten) -> build_embeds (15 derived artifacts regenerated, incl. corpus-embed.json / search-index.json / entity-page-data.json) -> node tools/build.mjs -> invariants 80/80 green (derived_artifacts_fresh: all 15 in sync; references_resolve green) -> render_probe_entity PASS (0 page errors). Verified all four IDs now live under essentials.magnesium in entity-page-data.json. The drafts were committed earlier as 860edea1 (staged, awaiting seal); this closes the seal + derive. Follow-up chip task_1754bb6e resolved.` }];
+Under-mapping remediation, same class as the 2026-07-30 omega-6 remap. Edits (mine_batch apply -> drafts, safe_write-routed, semantic fields only): WAL-CLM-IMMORT-000271 []->[magnesium]; WAL-CLM-IMMORT-000085 []->[magnesium,iron,cobalt] (the shared porphyrin-ring claim linking chlorophyll/hemoglobin/B12); WAL-CLM-RARE-000331 []->[magnesium] (the Hawaii/olivine "the magnesium is part of the chlorophyll molecule" claim); WAL-CLM-RARE-000130 [iron]->[iron,magnesium] ("iron is to hemoglobin what Mg is to chlorophyll"). Discipline followed: orphan check CLEAN (no coverage target's source_claim_id or other_claims points at any of the four; none is a superseded_by target), all target slugs valid canon essentials so references_resolve stayed green, verbatim/offset/id untouched (mine_batch rejects those). Pipeline: corpus_seal (user-authorized; kv436->437, corpus_verify PASS, 15 golden hashes rewritten) -> build_embeds (15 derived artifacts regenerated, incl. corpus-embed.json / search-index.json / entity-page-data.json) -> node tools/build.mjs -> invariants 80/80 green (derived_artifacts_fresh: all 15 in sync; references_resolve green) -> render_probe_entity PASS (0 page errors). Verified all four IDs now live under essentials.magnesium in entity-page-data.json. The drafts were committed earlier as 860edea1 (staged, awaiting seal); this closes the seal + derive. Follow-up chip task_1754bb6e resolved.` }, { id: "lg_ms9lipeb_xnxb5y", ts: "2026-07-31T18:50:55.763780-05:00", surface: "element #5 (magnesium header)", kind: "milestone", summary: "Shipped the magnesium 'cycle of life' header live \u2014 one Mg atom followed soil to chlorophyll to you \u2014 plus a global fix to the too-faint bridge divider under every element header.", detail: `Element #5 (magnesium) is LIVE. Its "how it works" header now tells the whole mechanism as the cycle of life of one magnesium atom: it rises from magnesium-rich volcanic soil through a plant's roots, sits at the dead centre of chlorophyll (the molecule that makes leaves green and catches the sun), and then you eat the plant and that same atom switches jobs inside you \u2014 powering your cells and relaxing your muscles and nerves. Luneth converged this content over three painful mockup rounds in prior sessions; here I designed four fresh HIGH-END editorial concepts, then two refined "cycle" takes, he picked the left-to-right journey, and I ported it into the real app with his refinements. I also fixed a faint divider line that sits under every element header and was too invisible to see.
+
+PORT (composed shape). mechanism-clarity-data.json gained a magnesium {slug,facet,blocks[]} entry: eyebrow \xB7 kill \xB7 figure(key mg_cycle, width fork) \xB7 prose(tone bridge) \xB7 beats(bignum, 3 items, beat-3 NOT a turn so "In you" reads dark like beats 1-2) \xB7 quote(claim WAL-CLM-IMMORT-000208, trim=last sentence, big, highlight "all biological energy"). views/entity-page.ts: new mgCycleFigure(alt,labels) \u2014 the soil block, chlorophyll porphyrin ring, and a featureless human silhouette, the SAME teal Mg node recurring at each stage, a dashed return arc, gold sun gradient; every string comes from the labels store (R4, views_no_inline_prose) and the accent is --kd-ep-fam (mineral blue set by data-category, never hardcoded \u2014 view_category_not_hardcoded). Dispatched by the GENERIC key mg_cycle (entity_render_is_projection). fatFamilyQuote + mechBeats gained optional trim/big/bignum params that DEFAULT to the old output, so the three signed-off headers render byte-identical (proven by render_probe_mech_shape 18/18). drawer-knowledge.css: the mg figure classes + skin-tone silhouette (#e8b393, Luneth's tweak) + big-Unbounded numerals (.kd-ep-fam__num--big) + a scoped bigger pull-quote (.kd-ep-fam__quote--big, +20%). entity-copy.json: magnesium lede + why (770 mg, from Wallach's Epigenetics 2014 mineral table, 250-500 mg/100 lb scaled to 154 lb).
+
+FAITHFULNESS. The quote is pulled BY CLAIM ID and TRIMMED to Wallach's final sentence ("Magnesium, the source of the deep green color of plants, is the ultimate source of all biological energy!") \u2014 gated: mech_quote_trim_faithful + _mech_quote_trims were EXTENDED to cover composed standalone quote blocks (previously split-only), so a trimmed quote behind a real cite can only TRIM Wallach, never fabricate (R7). test_mech_quote_trim_faithful.py +4 composed-path cases -> 13/13. Beat traces resolve to WAL-CLM-{RARE-000331, IMMORT-000208, IMMORT-000206}.
+
+GLOBAL bridge fix (Luneth): .kd-ep-fam__bridge -> centered, weight 500, non-italic, border-top #ddd3b9 (the old --ds-rule-soft was "way too invisible"), max-width 74ch, -10px top gap. Applies everywhere a bridge appears; verified on the signed-off copper header (byte-identical DOM, improved appearance).
+
+VERIFY. node tools/build.mjs OK (tsc clean); invariants 80/80 (element_header_complete now 5 headers; mechanism_blocks_wellformed 9 types + 9 drawable figs + 38 claim refs; mech_quote_trim_faithful 2 trims); render_probe_mech_shape 18/18; NEW render_probe_magnesium.js 19/19 (figure scale 1, all labels >=12px, glyph <=17.6, no collisions, trimmed quote + cite, 3 big numerals, sources dock, + a copper regression pass); 0 NEW eslint (15 pre-existing untouched). Screenshot-verified after each of Luneth's rounds.
+
+SESSION SHAPE. Two Workflow fan-outs (R4: 4 distinct editorial concepts; R5: 2 cycle takes + 1 botanical) \u2014 Luneth picked B1, gave 6 refinements then 3 final tweaks, all applied+re-verified. NO golden/corpus seal needed (only design-system.css carries a golden; untouched). Concept mockups live gitignored under temporary/magnesium-header-mockups-r{4,5}.html.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

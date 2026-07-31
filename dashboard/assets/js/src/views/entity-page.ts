@@ -1020,17 +1020,17 @@ function fatFamilyStep(num: string, tKey: string, bKey: string): string {
 
 /** Wallach's OWN designation statement, from the sealed claim DDDL-000063 (it names both the omega-3 and omega-6 acids).
  *  Verbatim + cite come from the claim, never hand-typed (R3). '' if the claim is unresolved. */
-function fatFamilyQuote(claimId: string | undefined, highlight: string | undefined): string {
+function fatFamilyQuote(claimId: string | undefined, highlight: string | undefined, trim?: string, big = false): string {
   const c = claimId !== undefined ? getClaim(claimId) : null;
   if (c === null) {
     return '';
   }
-  const raw = collapseWS(c.verbatim);
+  const raw = (trim !== undefined && trim.length > 0) ? collapseWS(trim) : collapseWS(c.verbatim);
   const at = highlight !== undefined ? raw.indexOf(highlight) : -1;
   const body = at >= 0 && highlight !== undefined
     ? `${glossify(raw.slice(0, at))}<mark class="ds-mark">${glossify(highlight)}</mark>${glossify(raw.slice(at + highlight.length))}`
     : glossify(raw);
-  return `<div class="ds-pull-quote-wrap kd-ep-fam__quote">
+  return `<div class="ds-pull-quote-wrap kd-ep-fam__quote${big ? ' kd-ep-fam__quote--big' : ''}">
       <blockquote class="ds-pull-quote">
         <p>${body}</p>
         <footer>— Dr. Joel Wallach · ${escHTML(getBookLabel(c.book))}</footer>
@@ -1298,6 +1298,81 @@ function heartbeatFigure(alt: string, labels?: Record<string, string>): string {
     </svg>`;
 }
 
+/** The MAGNESIUM cycle-of-life figure: ONE magnesium atom followed through three lives, left to
+ *  right -- held in volcanic soil (roots pull it up), locked at the centre of chlorophyll inside a
+ *  sunlit leaf (the solar panel), then glowing inside a featureless human silhouette where it now
+ *  GIVES energy and is calcium's relaxer. A faint dashed arc closes the cycle back to the soil. The
+ *  SAME teal Mg node (kd-ep-fam__gnode--el) recurs at every stage -- magnesium is the throughline.
+ *  Every user-facing string is a label from the store (views_no_inline_prose, R4); the accent is
+ *  --kd-ep-fam (the mineral blue set by category), never a hardcoded colour
+ *  (view_category_not_hardcoded). Depictive colours (soil brown, chlorophyll green, sun gold) are
+ *  literal, the same licence the shipped figures take. Authored at SCALE 1 against the 700px --fork
+ *  width, so a size in here is a size on screen. */
+function mgCycleFigure(alt: string, labels: Record<string, string> | undefined): string {
+  const g = (k: string): string => escHTML(labels?.[k] ?? '');
+  return `<svg class="kd-ep-fam__art" viewBox="0 0 700 270" role="img" aria-label="${escHTML(alt)}">
+      <defs>
+        <radialGradient id="kd-ep-mg-sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#e8b13e" stop-opacity="0.5"/><stop offset="100%" stop-color="#e8b13e" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="kd-ep-mg-beam" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#e8b13e" stop-opacity="0.34"/><stop offset="100%" stop-color="#e8b13e" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="kd-ep-mg-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="var(--kd-ep-fam)" stop-opacity="0.55"/><stop offset="100%" stop-color="var(--kd-ep-fam)" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path class="kd-ep-fam__mgreturn" d="M602 68 C500 12 208 12 102 60"/>
+      <path class="kd-ep-fam__mgreturnhd" d="M102 64 L94 54 L108 53 Z"/>
+      <rect class="kd-ep-fam__mgsoil" x="28" y="72" width="120" height="92" rx="11"/>
+      <path class="kd-ep-fam__mgsoildp" d="M28 122 L148 122 L148 153 Q148 164 137 164 L39 164 Q28 164 28 153 Z"/>
+      <circle class="kd-ep-fam__mgspeck" cx="52" cy="140" r="2.5"/>
+      <circle class="kd-ep-fam__mgspeck" cx="120" cy="150" r="2.5"/>
+      <circle class="kd-ep-fam__mgspeck" cx="132" cy="132" r="2"/>
+      <path class="kd-ep-fam__mgroot" d="M80 132 Q70 146 64 158"/>
+      <path class="kd-ep-fam__mgroot" d="M88 134 L88 160"/>
+      <path class="kd-ep-fam__mgroot" d="M96 132 Q106 146 110 158"/>
+      <circle class="kd-ep-fam__gnode--el" cx="87" cy="112" r="18"/>
+      <text class="kd-ep-fam__mgglyph" x="87" y="117" text-anchor="middle">${g('glyph')}</text>
+      <path class="kd-ep-fam__gline" d="M152 116 L276 116"/>
+      <path class="kd-ep-fam__ghead--acc" d="M276 116 L266 110 L266 122 Z"/>
+      <ellipse cx="296" cy="80" rx="104" ry="82" fill="url(#kd-ep-mg-sun)"/>
+      <polygon points="176,16 258,16 344,102 268,128" fill="url(#kd-ep-mg-beam)"/>
+      <path class="kd-ep-fam__mgmacro" d="M361 63 Q398 74 409 105"/>
+      <path class="kd-ep-fam__mgmacro" d="M409 131 Q400 163 361 175"/>
+      <path class="kd-ep-fam__mgmacro" d="M339 175 Q296 163 291 131"/>
+      <path class="kd-ep-fam__mgmacro" d="M291 105 Q298 74 339 63"/>
+      <polygon class="kd-ep-fam__mgpyr" points="338,60 362,60 366,74 350,84 334,74"/>
+      <polygon class="kd-ep-fam__mgpyr" points="410,106 410,130 396,134 386,118 396,102"/>
+      <polygon class="kd-ep-fam__mgpyr" points="338,178 362,178 366,164 350,154 334,164"/>
+      <polygon class="kd-ep-fam__mgpyr" points="290,106 290,130 304,134 314,118 304,102"/>
+      <path class="kd-ep-fam__mgnbond" d="M350 84 L350 101"/>
+      <path class="kd-ep-fam__mgnbond" d="M386 118 L369 118"/>
+      <path class="kd-ep-fam__mgnbond" d="M350 154 L350 135"/>
+      <path class="kd-ep-fam__mgnbond" d="M314 118 L331 118"/>
+      <circle class="kd-ep-fam__gnode--el" cx="350" cy="118" r="18"/>
+      <text class="kd-ep-fam__mgglyph" x="350" y="123" text-anchor="middle">${g('glyph')}</text>
+      <path class="kd-ep-fam__gline" d="M420 118 L550 118"/>
+      <path class="kd-ep-fam__ghead--acc" d="M550 118 L540 112 L540 124 Z"/>
+      <text class="kd-ep-fam__glabel" x="485" y="104" text-anchor="middle">${g('eat')}</text>
+      <text class="kd-ep-fam__gsub" x="485" y="136" text-anchor="middle">${g('eat_sub')}</text>
+      <path class="kd-ep-fam__mgbody" d="M560 172 C560 138 580 122 608 122 C636 122 656 138 656 172 Z"/>
+      <circle class="kd-ep-fam__mgbody" cx="608" cy="90" r="25"/>
+      <circle cx="608" cy="150" r="34" fill="url(#kd-ep-mg-glow)"/>
+      <circle class="kd-ep-fam__gnode--el" cx="608" cy="150" r="18"/>
+      <text class="kd-ep-fam__mgglyph" x="608" y="155" text-anchor="middle">${g('glyph')}</text>
+      <path class="kd-ep-fam__mgbolt" d="M639 133 L631 147 L638 147 L633 159 L647 143 L640 143 Z"/>
+      <text class="kd-ep-fam__glabel" x="87" y="205" text-anchor="middle">${g('soil')}</text>
+      <text class="kd-ep-fam__gsub" x="87" y="223" text-anchor="middle">${g('soil_sub')}</text>
+      <text class="kd-ep-fam__figtitle" x="350" y="205" text-anchor="middle">${g('leaf')}</text>
+      <text class="kd-ep-fam__gsub--acc" x="350" y="223" text-anchor="middle">${g('leaf_sub')}</text>
+      <text class="kd-ep-fam__gsub" x="350" y="240" text-anchor="middle">${g('leaf_sub2')}</text>
+      <text class="kd-ep-fam__glabel" x="608" y="205" text-anchor="middle">${g('you')}</text>
+      <text class="kd-ep-fam__gsub--acc" x="608" y="223" text-anchor="middle">${g('you_sub')}</text>
+      <text class="kd-ep-fam__gsub" x="608" y="240" text-anchor="middle">${g('you_sub2')}</text>
+    </svg>`;
+}
+
 function mechanismFigure(key: string, alt: string, labels?: Record<string, string>): string {
   switch (key) {
     case 'rancidity':
@@ -1316,6 +1391,8 @@ function mechanismFigure(key: string, alt: string, labels?: Record<string, strin
       return diseaseScaleFigure(alt, labels);
     case 'heartbeat':
       return heartbeatFigure(alt, labels);
+    case 'mg_cycle':
+      return mgCycleFigure(alt, labels);
     default:
       return '';
   }
@@ -1447,7 +1524,7 @@ function mechProse(tone: 'bridge' | 'coda', text: string): string {
 }
 
 /** The numbered steps. `mod` is the layout modifier suffix (' kd-ep-fam__steps--row' or ''). */
-function mechBeats(items: readonly MechBeat[], mod: string): string {
+function mechBeats(items: readonly MechBeat[], mod: string, bignum = false): string {
   const steps = items.map((b) => {
     const hook = (b.hook !== undefined && b.hook.length > 0)
       ? `<p class="kd-ep-fam__hook">${escHTML(b.hook)}</p>`
@@ -1458,7 +1535,7 @@ function mechBeats(items: readonly MechBeat[], mod: string): string {
       : '';
     return `
       <div class="kd-ep-fam__step${turn}">
-        <span class="kd-ep-fam__num">${escHTML(b.n)}</span>
+        <span class="kd-ep-fam__num${bignum ? ' kd-ep-fam__num--big' : ''}">${escHTML(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
           <div class="kd-ep-fam__steptitle">${escHTML(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
@@ -1535,11 +1612,11 @@ function renderMechBlocks(blocks: readonly MechBlock[]): string {
       case 'split':
         return renderMechSplit(b.left, b.right);
       case 'beats':
-        return mechBeats(b.items, b.layout === 'row' ? ' kd-ep-fam__steps--row' : '');
+        return mechBeats(b.items, b.layout === 'row' ? ' kd-ep-fam__steps--row' : '', b.bignum === true);
       case 'stat':
         return mechStat(b.readout, b.value, b.label);
       case 'quote':
-        return fatFamilyQuote(b.claim, b.highlight);
+        return fatFamilyQuote(b.claim, b.highlight, b.trim, b.big === true);
       default: {
         const unreached: never = b;
         return unreached;

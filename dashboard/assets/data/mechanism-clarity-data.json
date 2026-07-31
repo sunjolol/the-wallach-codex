@@ -349,6 +349,83 @@
           "highlight": "147 different diseases"
         }
       ]
+    },
+    {
+      "slug": "magnesium",
+      "facet": "mechanism",
+      "blocks": [
+        {
+          "type": "eyebrow",
+          "text": "The cycle of life of magnesium"
+        },
+        {
+          "type": "kill",
+          "text": "One magnesium atom, from volcanic soil to the spark in your cells"
+        },
+        {
+          "type": "figure",
+          "width": "fork",
+          "figure": {
+            "key": "mg_cycle",
+            "alt": "A left-to-right cycle following one magnesium atom: held in volcanic soil where roots pull it up, then locked at the centre of a green chlorophyll ring inside a sunlit leaf, then glowing inside a featureless human figure where it now gives energy and acts as the relaxer; a faint dashed arc returns the cycle to the soil.",
+            "labels": {
+              "glyph": "Mg",
+              "soil": "IN THE SOIL",
+              "soil_sub": "roots pull it up",
+              "leaf": "CHLOROPHYLL",
+              "leaf_sub": "magnesium at its centre",
+              "leaf_sub2": "stores the sun's energy",
+              "eat": "you eat the leaf",
+              "eat_sub": "or supplement it",
+              "you": "IN YOU",
+              "you_sub": "now GIVES energy",
+              "you_sub2": "calcium's relaxer"
+            }
+          }
+        },
+        {
+          "type": "prose",
+          "tone": "bridge",
+          "text": "Magnesium never changes. The same atom that volcanic soil holds is the atom a leaf locks inside its green, and the atom your body later runs on — one mineral, followed through three lives."
+        },
+        {
+          "type": "beats",
+          "bignum": true,
+          "items": [
+            {
+              "n": "1",
+              "title": "From the ground",
+              "text": "Magnesium is a mineral of the soil — Hawaii's rain forests are so green because their volcanic (olivine) soil is packed with it. Roots pull that magnesium up out of the ground and into the plant.",
+              "traces": [
+                "WAL-CLM-RARE-000331"
+              ]
+            },
+            {
+              "n": "2",
+              "title": "In the leaf",
+              "text": "That same magnesium sits locked at the exact centre of chlorophyll, the molecule whose green colours the leaf. The green is the plant's solar panel, and magnesium is the atom at its heart storing the sun's energy.",
+              "traces": [
+                "WAL-CLM-IMMORT-000208"
+              ]
+            },
+            {
+              "n": "3",
+              "title": "In you",
+              "text": "You eat the plant (or supplement it in plant-derived form) and absorb that same magnesium — only now it stops gathering energy and starts giving it, powering your cells. It is also calcium's relaxer, letting every muscle and nerve rest.",
+              "traces": [
+                "WAL-CLM-IMMORT-000206"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "quote",
+          "claim": "WAL-CLM-IMMORT-000208",
+          "trim": "Magnesium, the source of the deep green color of plants, is the ultimate source of all biological energy!",
+          "highlight": "all biological energy",
+          "big": true
+        }
+      ]
     }
   ]
 }

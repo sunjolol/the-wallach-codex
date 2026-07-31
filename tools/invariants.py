@@ -5466,8 +5466,14 @@ def _mech_quote_trims(store):
         blocks = m.get("blocks")
         if isinstance(blocks, list):
             for n, b in enumerate(blocks):
-                if isinstance(b, dict) and b.get("type") == "split":
+                if not isinstance(b, dict):
+                    continue
+                if b.get("type") == "split":
                     side_trims(b, f"{slug}.blocks[{n}]")
+                elif b.get("type") == "quote" and b.get("trim"):
+                    # A composed standalone pull-quote may trim its verbatim too -- policed here so a
+                    # trimmed quote behind a real cite can only TRIM Wallach, never fabricate (R7).
+                    out.append((f"{slug}.blocks[{n}]", b.get("claim"), str(b["trim"])))
             continue
         side_trims(m.get("split"), f"{slug}.split")
     return out

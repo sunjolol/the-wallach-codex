@@ -48,6 +48,15 @@ def split_store(side):
         {"type": "split", "left": side, "right": {"head": "h", "text": "t"}}]}]}
 
 
+def composed_quote_store(claim, trim):
+    # The COMPOSED standalone pull-quote path (magnesium): the trim lives on the quote block itself,
+    # keyed `claim`/`trim` (not the split's quote_claim/quote_trim). Gated since 2026-07-31.
+    block = {"type": "quote", "claim": claim}
+    if trim is not None:
+        block["trim"] = trim
+    return {"mechanisms": [{"slug": "magnesium", "blocks": [block]}]}
+
+
 CASES = [
     ("no quote_trim anywhere passes (nothing to check)",
      split_store({"head": "h", "text": "t", "quote_claim": "WAL-CLM-LETS-000078"}), CLAIMS, True),
@@ -69,6 +78,15 @@ CASES = [
      split_store({"quote_claim": "WAL-CLM-NOPE-000999", "quote_trim": TRIM_OK}), CLAIMS, False),
     ("empty claims map makes a real trim REDDEN (loader-bug guard)",
      split_store({"quote_claim": "WAL-CLM-LETS-000078", "quote_trim": TRIM_OK}), {}, False),
+    # -- composed standalone pull-quote (magnesium) path, gated 2026-07-31 --
+    ("composed quote block with a faithful trim passes",
+     composed_quote_store("WAL-CLM-LETS-000078", TRIM_OK), CLAIMS, True),
+    ("composed quote block with no trim is not checked (passes)",
+     composed_quote_store("WAL-CLM-LETS-000078", None), CLAIMS, True),
+    ("composed quote block with a fabricated trim REDDENS",
+     composed_quote_store("WAL-CLM-LETS-000078", TRIM_FABRICATED), CLAIMS, False),
+    ("composed quote block whose claim does not resolve REDDENS",
+     composed_quote_store("WAL-CLM-NOPE-000999", TRIM_OK), CLAIMS, False),
 ]
 
 

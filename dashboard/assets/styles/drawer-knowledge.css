@@ -2356,9 +2356,9 @@
 
 /* the one connective sentence that turns two halves into a single arc */
 #drawer-knowledge-mount .kd-ep-fam__bridge {
-  margin: var(--ds-space-5) 0 30px; padding-top: 17px; border-top: 1px solid var(--ds-rule-soft);
-  font-family: var(--ds-font-serif-light); font-style: italic; font-size: var(--ds-text-md);
-  line-height: 1.55; color: var(--ds-ink-medium); max-width: 72ch; }
+  margin: calc(var(--ds-space-5) - 10px) 0 30px; padding-top: 17px; border-top: 1px solid #ddd3b9;
+  font-family: var(--ds-font-serif-light); font-size: var(--ds-text-md);
+  line-height: 1.55; color: var(--ds-ink-medium); max-width: 74ch; text-align: center; font-weight: 500; }
 
 /* beats as a ROW: three side-by-side columns with a rule over each, instead of the stack */
 #drawer-knowledge-mount .kd-ep-fam__steps--row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-5); }
@@ -2527,3 +2527,29 @@
 #drawer-knowledge-mount .kd-ep-fam__cta:hover { background: var(--kd-ep-fam); color: #fff; }
 #drawer-knowledge-mount .kd-ep-fam__cta-arrow { transition: transform .18s ease; }
 #drawer-knowledge-mount .kd-ep-fam__cta:hover .kd-ep-fam__cta-arrow { transform: translateX(3px); }
+
+/* ═══════════════════════════════════════════════════════════════════════════════════════════════
+   MAGNESIUM cycle-of-life figure (mg_cycle) + big Unbounded beat numerals. Depictive colours (soil
+   brown, chlorophyll green, sun gold) are literal like the shipped figures; the Mg atom + energy
+   bolt read the category accent via --kd-ep-fam (mineral blue), never hardcoded. Luneth-approved B1.
+   ═══════════════════════════════════════════════════════════════════════════════════════════════ */
+#drawer-knowledge-mount .kd-ep-fam__mgglyph   { fill: var(--kd-ep-fam); font-family: var(--ds-font-display); font-size: 15px; font-weight: 700; letter-spacing: .01em; }
+#drawer-knowledge-mount .kd-ep-fam__mgbody    { fill: #e8b393; }
+#drawer-knowledge-mount .kd-ep-fam__mgsoil    { fill: #b7946b; }
+#drawer-knowledge-mount .kd-ep-fam__mgsoildp  { fill: #8a6a44; }
+#drawer-knowledge-mount .kd-ep-fam__mgspeck   { fill: #6b4a2a; }
+#drawer-knowledge-mount .kd-ep-fam__mgroot    { fill: none; stroke: #6b4a2a; stroke-width: 2; stroke-linecap: round; }
+#drawer-knowledge-mount .kd-ep-fam__mgpyr     { fill: #3f8f4a; stroke: #2c6a34; stroke-width: 1.5; stroke-linejoin: round; }
+#drawer-knowledge-mount .kd-ep-fam__mgmacro   { fill: none; stroke: #2c6a34; stroke-width: 2.5; stroke-linecap: round; }
+#drawer-knowledge-mount .kd-ep-fam__mgnbond   { stroke: #2c6a34; stroke-width: 1.5; }
+#drawer-knowledge-mount .kd-ep-fam__mgbolt    { fill: var(--kd-ep-fam); }
+#drawer-knowledge-mount .kd-ep-fam__mgreturn  { fill: none; stroke: var(--ds-ink-faint); stroke-width: 1.5; stroke-dasharray: 4 6; }
+#drawer-knowledge-mount .kd-ep-fam__mgreturnhd{ fill: var(--ds-ink-faint); }
+
+/* Big Unbounded step numerals — opt-in via the composed beats block's `bignum`, so only this header
+   gets them and the signed-off headers keep their mono numbers (Luneth 2026-07-31). */
+#drawer-knowledge-mount .kd-ep-fam__num--big { font-family: var(--ds-font-display); font-size: 2.7rem; font-weight: 700; line-height: 0.92; letter-spacing: -0.02em; align-self: flex-start; min-width: 1.1em; }
+#drawer-knowledge-mount .kd-ep-fam__step:has(.kd-ep-fam__num--big) { align-items: flex-start; }
+
+/* A larger pull-quote for a short quote (magnesium opt-in via the composed quote block's `big`); id+3-class specificity == the base mech-quote rule, appended later so it wins. */
+#drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__quote--big .ds-pull-quote { font-size: clamp(1.26rem, 1.26vw, 1.62rem); }
