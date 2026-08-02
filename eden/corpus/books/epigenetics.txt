@@ -11410,11 +11410,11 @@ a-car part in a factory. In the factory, molten metal or plastic gets poured
 into the mould thousands of times and, unless something goes wrong in the
 process, out pop thousands of identical car parts.
 
-But DNA isn’t really like that. It's more like a script. Think of Romeo
+But DNA isn’t really like that. It’s more like a script. Think of Romeo
 and Juliet, for example. In 1936 George Cukor directed Leslie Howard and
 Norma Shearer in a film version. Sixty years later Baz Luhrmann directed
 Leonardo DiCaprio and Claire Danes in another movie version of this play.
-Both productions used Shakespeare's script, yet the two movies are entirely
+Both productions used Shakespeare’s script, yet the two movies are entirely
 different. Identical starting points, different outcomes.
 
 That's what happens when cells read the genetic code that's in DNA (that
@@ -11667,13 +11667,13 @@ primarily stored in the liver of all species.
 
 Pellagra is considered a “new disease” in the civilized world, as it was unknown
 in Europe until Christopher Columbus delivered the first corn seeds from the
-“New World" to Europe. The European peasant looked upon corn as an easy to
+“New World” to Europe. The European peasant looked upon corn as an easy to
 produce miracle crop; it spread quickly as a food crop and the peasants became
 dependent on corn.
 
 Corn was the beginning of the end for millions of people. Complete villages
 and towns came down with a plague of skin disease (dermatitis), dementia,
-diarthea, and death (the four Ds—pellagra had arrived.)
+diarrhea, and death (the four Ds—pellagra had arrived.)
 
 
 Producti
@@ -11988,7 +11988,7 @@ reported increase of 400 percent between 1995 and 2011. This is a result of
 fears of increased risk of skin cancer from skin exposure to the sun as well as
 
 widespread use of sun screens, fear of cholesterol in egg yolks (a good source
-of vitamin D), and instructions from pediatricians to avoit
+of vitamin D), and instructions from pediatricians to avoid
 
 
 supplementation of
@@ -17999,13 +17999,13 @@ orientation.
 At 18 days of age the embryo is a white oval disc approximately one millimeter
 in length along its axis. There are no clearly defined organs at that point; however,
 the three tissue layers and a definite geometry have emerged. Within 28 to 30
-days the embryo is recognizable as human with a head, neck, spinal column, Gl
+days the embryo is recognizable as human with a head, neck, spinal column, GI
 tract, and a heart. It forms a trough, then the edges fold together, and by the
 23rd day it is to become a tube which evolves into the central nervous system (the
 brain and spinal cord); the mesoderm at this point clearly surrounds the neural
 tube to become the forty-four vertebrae, muscles, and the dermas of the skin;
 the ventral surface of the embryo and its yolk sac is pulled up into the embryo
-and evolves into the Gl tract; the right and left edges of the embryo join together
+and evolves into the GI tract; the right and left edges of the embryo join together
 ventrally to form the abdominal cavity. It will soon become what William Harvey
 described as “The Foundation of Life, the P
 
@@ -19594,7 +19594,7 @@ The 16 Essential Vitamins for Humans and Non-human Vertebrates
 
 Vitamin A
 
-Vitamin 81 (Thiamin)
+Vitamin B1 (Thiamin)
 Vitamin B2 (Riboflavin)
 Vitamin B3 (Niacin)
 
@@ -19605,7 +19605,7 @@ Vitamin C
 
 Vitamin D
 
-Vitamin
+Vitamin E
 
 Vitamin K
 
@@ -20080,7 +20080,7 @@ for the production of prothrombin and at least five other proteins (factors VII,
 and X, and proteins C and S) and other biologically active substances essential
 for proper blood clotting and for the proper deposition of calcium in bones.
 Approximately 50% of the requirement for vitamin K is produced by probiotic
-bacteria in the colon,
+bacteria in the colon.
 
 Dam etal (1935, 1936) showed that hemorrhagic diseases that were not cured
 or prevented by any known vitamins could be quickly resolved by feeding an as
@@ -20103,7 +20103,7 @@ Osteocalcin deficiency
 
 Extended clotting time
 
-Ecchymoses, epistaxis (nose bleeds), hematuria, Gl bleeding, etc.
+Ecchymoses, epistaxis (nose bleeds), hematuria, GI bleeding, etc.
 Liver disease
 
 Dysfunction of calcium absorption and deposition in bones.
@@ -20290,7 +20290,7 @@ the quantities of supplementary tryptophan required to give the same response
 as one mg of niacin ranged from 39 to 86 mg. Convention allows that 60 mg of
 tryptophan is equivalent to one mg of niacin,
 
-Vitamin B, (niacin) deficiency health problems include:
+Vitamin B3 (niacin) deficiency health problems include:
 
 Pellagra which includes the “three Ds” (diarrhea, dermatitis, dementia)
 Retardation
@@ -20301,7 +20301,7 @@ Anorexia
 “Beef tongue" (swollen, sore, red tongue)
 Skin pigmentation
 
-Sealy, itchy dermatitis
+Scaly, itchy dermatitis
 
 Signs of overdose: Vitamin B; (nicotinic acid only) overdose can result in hot
 flushes of the skin, ulcers, liver disease, elevated blood sugar and uric acid, cardiac
@@ -20365,7 +20365,7 @@ Depressed immune system
 Tachycardia
 
 Fainting (“light headedness")
-Gl distress (gas, diarrhea, gut pain)
+GI distress (gas, diarrhea, gut pain)
 
 Signs of overdose: Vitamin B, overdose (10 to 20 grams per day) can result in a
 relative deficiency of thiamine, diarrhea, and edema.
@@ -20615,7 +20615,7 @@ Insomnia.
 Weight loss
 Hallucinations
 
-Signs of biotin overdose: The LDso is unknown and there have not been any
+Signs of biotin overdose: The LD50 is unknown and there have not been any
 credible reports of toxicity from large doses of biotin, even with doses greater
 than 10 mg daily.
 
@@ -21737,7 +21737,7 @@ to professor Gerhard Schrauzer, former head and professor emeritus of the
 department of chemistry at UCSD, should be listed as an essential mineral for all
 vertebrates including humans.
 
-Aluminum is remarkably nontoxic, aluminum sulfate having an LDSO of 6207
+Aluminum is remarkably nontoxic, aluminum sulfate having an LD50 of 6207
 mg/kg (oral/mouse), which would be the equivalent of 500 grams (more than a
 pound) for an 80 kg human per day.
 
@@ -21819,7 +21819,7 @@ function in human physiology.
 Arsenic promotes the growth rate of chicks at 90 to 120 ppm. The rate of
 growth and metamorphosis of tadpoles is enhanced by the presence of arsenic.
 
-The word “arsenic” was taken from the Syriac word al zarniga and the Persian
+The word “arsenic” was taken from the Syriac word al zarniqa and the Persian
 word Zarnikh, which translates to “yellow pigment," translated into Greek as
 arsenikos, and which translates into “masculine.” The word was adopted in Latin
 as arsenicum and Old French as arsenic from which the English word “arsenic” was
@@ -21923,7 +21923,7 @@ Gold compounds are not to be used in patients with liver or kidney disease,
 blood diseases, or SLE.
 
 Toxic reactions to gold therapies include pruritus (itching), dermatitis,
-stomatitis, Gl discomfort, increase in urine albumin, blood in the urine, aplastic
+stomatitis, GI discomfort, increase in urine albumin, blood in the urine, aplastic
 anemia, reduced WBC, hepatitis, and pneumonitis.
 
 B - Boron is an elemental chemical rather than a metallic mineral. It is

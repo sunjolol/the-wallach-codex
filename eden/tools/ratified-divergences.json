@@ -1,0 +1,120 @@
+{
+ "_doc": "RATIFIED DIVERGENCES + JUDGMENT-CALL CORRECTIONS. Two lists. `divergences` = places where our corpus text DELIBERATELY differs from what the source page legibly prints, each ratified. `pending_review` = corrections made on Claude's own contextual judgment (with outside knowledge, as sanctioned) and awaiting Luneth's end-of-campaign sweep. WHY IT EXISTS: on 2026-08-02 a vision sweep re-flagged WAL-CLM-LETS-000349 (toxin/antitoxin) and WAL-CLM-IMMORT-000024 (1n/1nm) as defects. BOTH had already been ruled on and corrected in earlier sessions, and neither was written down -- so each was re-derived at the cost of a render, a 20x-40x read and an adversarial second read. Luneth: 'we already fixed this ... note it this time so this doesn't need to be re-derived.'",
+ "_the_rule": "The page is EVIDENCE, not ground truth. Luneth 2026-08-02: 'the books are RIDDLED with errors ... we NEED outside information to correct it -- what we DON'T correct is true Wallach statements even if his statements disagree with outside norms, what we DO fix is when there's a clear typo or error.' So a genuine Wallach claim stands even against mainstream fact; a typesetter's or scanner's error gets fixed, using outside knowledge, and gets logged HERE for his review.",
+ "_internal_only": "A verification-audit artifact. Read by tooling only. MUST NOT be surfaced to the user, rendered on any app surface, or folded into a derived artifact. Nothing under eden/tools/ is consumed by corpus_derive/build_embeds/build.mjs -- verified 2026-08-02 -- and that must stay true.",
+ "_standard": "Each entry states what OUR text holds, what the PAGE prints, WHO decided, WHEN, and the EVIDENCE. An entry without a decider and a reason is not a ratified divergence -- it is an undisclosed change, which is the defect class this file prevents.",
+ "divergences": [
+  {
+   "claim_ids": ["WAL-CLM-RARE-000090", "WAL-CLM-DDDL-000013", "WAL-CLM-IMMORT-000027"],
+   "ours": "400 mcg of silver per day",
+   "page_prints": "400 mg of silver per day",
+   "class": "dangerous-dose-misprint",
+   "ratified_by": "Luneth",
+   "ratified_on": "2026-07-21",
+   "reason": "A 1000x misprint carried identically by all four books. 400 mg of elemental silver daily causes argyria and silver toxicity; Youngevity's own colloidal-silver products deliver 13-40 MCG, corroborating mcg as intended. Corrected under the dose-misprint safety mandate: safety outranks byte-faithfulness for a dose a reader could act on. NEVER restore the printed 400 mg.",
+   "evidence": "Recorded in memory dose-misprint-safety-mandate; all three ids re-measured 2026-08-02 and each still carries the corrected figure. WAL-CLM-EPIGEN-000064 was in the same 2026-07-21 sweep but its verbatim no longer contains the figure, so nothing there can regress.",
+   "proven_useful": "2026-08-02: a vision agent hit IMMORT-000027, checked this list, and returned DOCTRINE_OK instead of proposing a restore to 400 mg."
+  },
+  {
+   "claim_ids": ["WAL-CLM-LETS-000349"],
+   "ours": "tetanus-neutralizing (non-fixed) antitoxin",
+   "page_prints": "tetanus neutralizing non fixed toxin",
+   "class": "dangerous-semantic-misprint",
+   "ratified_by": "Luneth",
+   "ratified_on": "2026-08-02",
+   "reason": "The treatment is tetanus ANTItoxin (the neutralising antiserum). The page's 'toxin' is a book misprint that, left standing in a protocol a reader could act on, describes administering the poison. Luneth: 'We already fixed this, ours is correct, it's antitoxin.' The earlier fix was never logged, which is why this file exists.",
+   "evidence": "Page read 2026-08-02 at 14x-20x (lets-play-doctor PDF p157 = printed p145): no hyphens, no parentheses, no 'anti' prefix -- the line literally begins 'fixed toxin,'. The divergence is real and deliberate, not an OCR artifact on either side.",
+   "do_not_confuse": "The same claim carried a genuine OCR defect, FIXED 2026-08-02 and not a divergence: 'rv q6 h' -> 'IV q6 h'."
+  },
+  {
+   "claim_ids": ["WAL-CLM-LETS-000452"],
+   "ours": "vitamin A at 25,000-300,000 IU per day as beta carotene",
+   "page_prints": "vitamin C at 25,000-300,000 IU per day as beta carotene",
+   "class": "compositor-error",
+   "ratified_by": "Luneth",
+   "ratified_on": "2026-08-02",
+   "reason": "Beta carotene is the vitamin A precursor and 25,000-300,000 IU is an A dose, so 'vitamin C ... as beta carotene' is internally incoherent. The LEFT column of the same page prints 'vitamin A at 25,000-300,000 IU per day as beta carotene' with identical wording; the tonsillitis entry's 'C' is duplicated down from the preceding clause 'vitamin C to bowel tolerance'.",
+   "evidence": "Page read 2026-08-02 at 16x (lets-play-doctor PDF p184 = printed p172): the glyph is an unambiguous C, matching the C in 'vitamin C to bowel tolerance' two words earlier.",
+   "do_not_confuse": "The same claim carried a genuine OCR defect, FIXED 2026-08-02: 'Verataim viride' -> 'Veratrum viride'."
+  },
+  {
+   "claim_ids": ["WAL-CLM-IMMORT-000024"],
+   "ours": "(1nm to 100nm)",
+   "page_prints": "(1n to 100n)",
+   "class": "dropped-unit",
+   "ratified_by": "Luneth",
+   "ratified_on": "2026-08-02",
+   "reason": "The passage defines nanotechnology, where the unit is the nanometre. Luneth: 'we did the work before and nm is correct when talking about nanotechnology, clearly.' Another correction made in an earlier session and never logged -- re-derived from scratch on 2026-08-02, which is the cost this file removes.",
+   "evidence": "Page read 2026-08-02 at 36-40x (immortality Screenshot (58), right half, printed p91): the page really does print the bare 'n', with a real 'm' one line above proving an 'm' would have been visible. Three sibling books print the bare 'n' too (rare-earths, hk, epigenetics) -- so the divergence is OURS and deliberate, applied to immortality only.",
+   "open_item": "The other three books still carry the bare '1n to 100n'. Making them consistent is a judgment call not yet taken; flagged rather than silently swept."
+  },
+  {
+   "claim_ids": ["WAL-CLM-LETS-000205"],
+   "ours": "cartilage at 5 gm t.i.d.",
+   "page_prints": "cartilage at 5 mg t.i.d.",
+   "class": "book-self-inconsistency",
+   "ratified_by": "Claude, under Luneth's explicit delegation 2026-08-02 ('use context to figure it out yourself whether gm or mg is correct')",
+   "ratified_on": "2026-08-02",
+   "reason": "gm is correct and our text already holds it. Cartilage is a bulk supplement dosed in grams; 5 mg t.i.d. is a pharmacologically meaningless quantity. The SAME book prints 'cartilage at 5 gm t.i.d.' twice more -- WAL-CLM-LETS-000326 (joint pain, printed p139) and WAL-CLM-LETS-000435 (sprains, printed p169) -- and printed p139 also carries '5 gm flaxseed oil t.i.d.', so gm is this book's normal unit for bulk supplements. The carpal-tunnel entry's 'mg' is the book contradicting itself.",
+   "evidence": "printed p139 read by eye 2026-08-02 (gm, confirmed); p169 corroborated by the PDF text layer agreeing with our gm; the p111 'mg' page-read twice at 22x by independent agents. NO SOURCE CHANGE WAS MADE -- our text was already correct.",
+   "why_it_nearly_went_wrong": "A uniform 'fix all three occurrences of 5 gm' sweep would have rewritten two page-faithful values. The corroboration instrument distinguished them correctly: p111 disagreed between the two OCR passes, p151 and p181 agreed."
+  },
+  {
+   "claim_ids": ["WAL-CLM-EPIGEN-000023"],
+   "ours": "Dean Hamer",
+   "page_prints": "Dean Harmer",
+   "class": "proper-noun-typo",
+   "ratified_by": "Luneth",
+   "ratified_on": "2026-08-02",
+   "reason": "The geneticist's name is Hamer. Luneth ruled that correcting this is in scope and that hesitating over it was pedantic: the books are riddled with errors of exactly this kind and outside information is required to fix them. What is NOT corrected is a true Wallach statement that disagrees with outside norms.",
+   "evidence": "Page-read 2026-08-02; the page prints 'Harmer'. Kept as ours."
+  }
+ ],
+ "pending_review": {
+  "_doc": "Corrections applied on Claude's contextual judgment, using outside knowledge as Luneth sanctioned on 2026-08-02, and awaiting his end-of-campaign review sweep: 'these fixes should be noted for my review when they occur so I can do a review sweep at the end just in case you over-reach on this.' Every one was also seen on the page; the judgment is in the INTERPRETATION, not in whether the glyphs were read.",
+  "batch_2026-08-02": [
+   {"claim": "WAL-CLM-EPIGEN-000301", "was": "Vitamin 81 (Thiamin)", "now": "Vitamin B1 (Thiamin)",
+    "basis": "the printed list runs Vitamin A / 81 / B2 / B3 / B5 / B6 / B12 / C / D / [blank] / K -- the sequence itself fixes 81 as B1"},
+   {"claim": "WAL-CLM-EPIGEN-000301", "was": "Vitamin (bare, between D and K)", "now": "Vitamin E",
+    "basis": "same list; the only vitamin missing between D and K is E, dropped by OCR"},
+   {"claim": "WAL-CLM-EPIGEN-000037", "was": "Vitamin B, (niacin)", "now": "Vitamin B3 (niacin)",
+    "basis": "subscript digit read as a comma; the book's own preceding line names niacin, and niacin is B3"},
+   {"claim": "WAL-CLM-EPIGEN-000293 / -000403", "was": "LDso / LDSO", "now": "LD50",
+    "basis": "subscript 50 read as letters; LD50 is the standard toxicology term"},
+   {"claim": "WAL-CLM-RARE-000335", "was": "(not B,,)i", "now": "(not B12),",
+    "basis": "page-read at 22x: subscript 12 read as two commas AND the following comma read as 'i'"},
+   {"claim": "WAL-CLM-EPIGEN-000411 + 4 siblings", "was": "Gl tract / bleeding / distress / discomfort", "now": "GI ...",
+    "basis": "capital I read as lowercase l. DELIBERATELY SPARED: a sixth occurrence, 'the chemical symbol of Gl' for GLUCINUM (the old name for beryllium), whose symbol really was Gl -- a blanket Gl->GI would have corrupted a correct chemical symbol"},
+   {"claim": "WAL-CLM-LETS-000452", "was": "Verataim viride", "now": "Veratrum viride",
+    "basis": "the botanical name of green hellebore; page-read at 8x confirms Veratrum"},
+   {"claim": "WAL-CLM-LETS-000288", "was": "fmctose / chemes", "now": "fructose / cherries",
+    "basis": "page-read; ru read as m, rri read as m. Both were invisible to the corroboration pass because the second OCR shared the same error"},
+   {"claim": "WAL-CLM-LETS-000430", "was": "mcgt.i.d.,folicacidat", "now": "mcg t.i.d., folic acid at",
+    "basis": "tight justification; four spaces dropped by OCR. The letter-letter dropped-space class, previously recorded as unmeasured"},
+   {"claim": "WAL-CLM-LETS-000340", "was": "tolerance.chelation", "now": "tolerance,chelation",
+    "basis": "page-read at 34x: the mark has a descender (comma), and a period on the same page renders as a compact dot. Ours silently promoted a mid-sentence clause into a new sentence"},
+   {"claim": "WAL-CLM-EPIGEN-000287", "was": "bacteria in the colon,", "now": "bacteria in the colon.", "basis": "sentence-final period read as a comma"},
+   {"claim": "WAL-CLM-EPIGEN-000183", "was": "It's / Shakespeare's (straight)", "now": "It’s / Shakespeare’s (curly)",
+    "basis": "the page uses curly, and the adjacent 'isn’t' in the same sentence pair is already curly in our own text -- a local inconsistency, not a corpus-wide convention change"},
+   {"claim": "WAL-CLM-EPIGEN-000250", "was": "diarthea / “New World\"", "now": "diarrhea / “New World”", "basis": "rr read as th; closing curly quote read as straight ASCII"},
+   {"claim": "WAL-CLM-EPIGEN-000170", "was": "to avoit", "now": "to avoid", "basis": "d read as t"},
+   {"claim": "WAL-CLM-EPIGEN-000432", "was": "al zarniga", "now": "al zarniqa", "basis": "q read as g"},
+   {"claim": "WAL-CLM-EPIGEN-000037", "was": "Sealy, itchy", "now": "Scaly, itchy", "basis": "c read as e"},
+   {"claim": "WAL-CLM-RARE-000348", "was": "newborm", "now": "newborn", "basis": "page-read at 20x: two strokes, not three"},
+   {"claim": "WAL-CLM-RARE-000376", "was": "tegulates / Causes", "now": "regulates / causes", "basis": "page-read at 16x; the second is a mid-sentence line break, so the capital was ours"},
+   {"claim": "WAL-CLM-IMMORT-000430", "was": "Itisa", "now": "It is a", "basis": "two spaces dropped by OCR"},
+   {"claim": "WAL-CLM-LETS-000349", "was": "rv q6 h", "now": "IV q6 h",
+    "basis": "page-read at 20x; the line above prints 'two million u IV q 6 h' in the same form"},
+   {"claim": "hells-kitchen, 62 edits over 52 claims", "was": "accom- \\npanied (hyphen, space, newline)", "now": "accompanied",
+    "basis": "line-break hyphens rejoined only where the two halves concatenate into a real word; 1 kept its lexical hyphen. Scope held to front-facing verbatims -- the book carries 1650 such wraps overall and whole-book repair is out of mandate"}
+  ]
+ },
+ "_classes": [
+  {"class": "meg -> mcg", "status": "ORTHOGRAPHIC, not a divergence",
+   "note": "The scanned glyph 'meg' is genuinely ambiguous between mg and mcg. Resolving it to mcg is reading the page, not departing from it; 126 such fixes are recorded in memory dose-misprint-safety-mandate. Listed so a future pass does not mistake the class for a divergence -- but the UNIT MUST STILL BE READ OFF THE RENDER per claim, never inferred from what a dose ought to be."},
+  {"class": "HC1 -> HCl", "status": "ORTHOGRAPHIC, not a divergence",
+   "note": "Digit 1 misread for lowercase L in 'betaine HCl'. Book-wide OCR artifact, corrected uniformly."},
+  {"class": "book typo -> corrected spelling", "status": "DOCTRINE, not a divergence",
+   "note": "Under correct-everything-uniformly the books' own typos are corrected uniformly, INCLUDING inside the verbatim. Verified by eye on rare-earths printed p329, which really prints 'flourosis', 'flouride' x3, 'flouridation'. The class is large -- 278 hunks measured 2026-08-02 across the five unverified books -- and does not belong in a per-claim list."}
+ ]
+}

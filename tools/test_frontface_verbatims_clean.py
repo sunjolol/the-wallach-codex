@@ -30,6 +30,14 @@ print("=" * 96); print("detector cases (drives _frontface_defects)"); print("=" 
 # LOAD-BEARING: the shape of all 180 repaired splits.
 dcase("hyphen_split_fires", "a classic case of mal-\nabsorption. You know", ["hyphen_split"])
 dcase("hyphen_split_indented_fires", "had been try-\n  ing for a pregnancy", ["hyphen_split"])
+# R9, 2026-08-02: the SPACE-BEFORE-NEWLINE wrap. Hell's Kitchen is the ONLY book that wraps this
+# way, and the gate required the hyphen to ABUT the newline -- so it reported 0 for that book and
+# the book was recorded "clean" while 76 front-facing splits sat inside it unseen. If this case
+# ever goes silent, an entire book becomes invisible to the detector again.
+dcase("hyphen_split_space_before_newline_fires", "must be accom- \npanied by optimal", ["hyphen_split"])
+dcase("hyphen_split_tab_before_newline_fires", "a severe ribofla-\t\nvin shortage", ["hyphen_split"])
+# ...and the blank-line SPARING case must survive the loosened side, or the original over-fire is back.
+dcase("space_then_blank_line_spared", "the anti- \n\nNext paragraph starts", [])
 dcase("mojibake_fires", "trace minerals are essenti\uFFFDl for life", ["mojibake_or_control"])
 dcase("control_char_fires", "minerals are\u0007 the currency of life", ["mojibake_or_control"])
 dcase("both_fire", "mal-\nabsorption and \uFFFD", ["hyphen_split", "mojibake_or_control"])

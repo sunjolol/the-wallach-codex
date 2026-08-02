@@ -19255,7 +19255,7 @@
       "question": "What are the signs of vitamin K deficiency?",
       "answer_short": "Vitamin K deficiency shows up as prolonged clotting time and abnormal bleeding — bruises, nosebleeds, blood in the urine and gut — plus bone problems like osteoporosis.",
       "answer": "Vitamin K (menaquinone) is required by the liver to produce prothrombin and at least five other clotting proteins (factors VII, IX, and X, and proteins C and S) for proper blood clotting, and for the proper deposition of calcium in bones; about half of the body's requirement is produced by probiotic bacteria in the colon. Wallach lists the health problems of vitamin K deficiency: osteocalcin deficiency, extended clotting time, ecchymoses (bruising), epistaxis (nosebleeds), hematuria, gastrointestinal bleeding, liver disease, dysfunctional calcium absorption and deposition in the bones, osteoporosis with spontaneous fractures, and osteoarthritis.",
-      "verbatim": "K-deficiency health problems include:\n\nOsteocalcin deficiency\n\nExtended clotting time\n\nEcchymoses, epistaxis (nose bleeds), hematuria, Gl bleeding, etc.\nLiver disease",
+      "verbatim": "K-deficiency health problems include:\n\nOsteocalcin deficiency\n\nExtended clotting time\n\nEcchymoses, epistaxis (nose bleeds), hematuria, GI bleeding, etc.\nLiver disease",
       "page": 612,
       "book_id": "epigenetics",
       "topics": [
@@ -19388,7 +19388,7 @@
       "question": "What are the signs of vitamin B3 deficiency?",
       "answer_short": "Wallach ties niacin (B3) deficiency to pellagra and its 'three Ds' (diarrhea, dermatitis, dementia), plus retardation, muscular weakness, loss of appetite, 'beef tongue,' skin pigmentation, and a scaly, itchy dermatitis.",
       "answer": "Vitamin B3 (niacin) functions as part of the coenzymes nicotinamide adenine dinucleotide and nicotinamide adenine dinucleotide phosphate, which drive the oxidation-reduction reactions that release energy from carbohydrates, fats, and proteins. Wallach lists the health problems of niacin deficiency: pellagra, which includes the 'three Ds' (diarrhea, dermatitis, dementia), retardation, muscular weakness, loss of appetite (anorexia), 'beef tongue' (a swollen, sore, red tongue), skin pigmentation, and a scaly, itchy dermatitis.",
-      "verbatim": "Vitamin B, (niacin) deficiency health problems include:\n\nPellagra which includes the “three Ds” (diarrhea, dermatitis, dementia)\nRetardation\nMuscular weakness\n\nAnorexia\n\n“Beef tongue\" (swollen, sore, red tongue)\nSkin pigmentation\n\nSealy, itchy dermatitis",
+      "verbatim": "Vitamin B3 (niacin) deficiency health problems include:\n\nPellagra which includes the “three Ds” (diarrhea, dermatitis, dementia)\nRetardation\nMuscular weakness\n\nAnorexia\n\n“Beef tongue\" (swollen, sore, red tongue)\nSkin pigmentation\n\nScaly, itchy dermatitis",
       "page": 618,
       "book_id": "epigenetics",
       "topics": [
@@ -19432,7 +19432,7 @@
       "question": "What are the signs of vitamin B5 deficiency?",
       "answer_short": "Wallach ties pantothenic acid (B5) deficiency to dermatitis, burning feet, muscle cramps, loss of appetite, anemia, a quarrelsome and sullen attitude, depression, insomnia, a depressed immune system, rapid heartbeat, fainting, and gastrointestinal distress.",
       "answer": "Vitamin B5 (pantothenic acid) is a component of coenzyme A and of the acyl carrier protein of fatty-acid synthetase, essential for releasing energy from carbohydrates, building and breaking down fatty acids, and synthesizing sterols, steroid hormones, and acetylcholine. Wallach lists the health problems of pantothenic acid deficiency: dermatitis, burning feet, muscle cramps, loss of appetite (anorexia), anemia, a quarrelsome and sullen attitude, depression, insomnia, a depressed immune system, rapid heartbeat (tachycardia), fainting ('light headedness'), and gastrointestinal distress (gas, diarrhea, gut pain).",
-      "verbatim": "Pantothenic acid-deficiency health problems include:\n\nDermatitis\n\nBurning feet\n\nMuscle cramps\n\nAnorexia\n\nAnemia\n\nQuarrelsome attitude\n\nsullen\n\nDepressed\n\nInsomnia\n\nDepressed immune system\nTachycardia\n\nFainting (“light headedness\")\nGl distress (gas, diarrhea",
+      "verbatim": "Pantothenic acid-deficiency health problems include:\n\nDermatitis\n\nBurning feet\n\nMuscle cramps\n\nAnorexia\n\nAnemia\n\nQuarrelsome attitude\n\nsullen\n\nDepressed\n\nInsomnia\n\nDepressed immune system\nTachycardia\n\nFainting (“light headedness\")\nGI distress (gas, diarrhea",
       "page": 620,
       "book_id": "epigenetics",
       "topics": [
@@ -23065,7 +23065,7 @@
       "question": "Are egg yolks a good source of vitamin D, and is avoiding them harmful?",
       "answer_short": "Yes. Wallach calls egg yolks a good dietary source of vitamin D, and he treats the fear of their cholesterol as actively harmful. He blames 3 things for bringing rickets back in the industrialized world — heavy sunscreen use, the cholesterol-scare that made parents avoid egg yolks, and pediatricians telling parents to skip children's vitamin and mineral supplements — and points to a reported 400 percent rise in childhood rickets between 1995 and 2011 as the result. He labels the resurgence a 'physician-caused disease.'",
       "answer": "Yes. Wallach calls egg yolks a good dietary source of vitamin D, and he treats the fear of their cholesterol as actively harmful. He blames 3 things for bringing rickets back in the industrialized world — heavy sunscreen use, the cholesterol-scare that made parents avoid egg yolks, and pediatricians telling parents to skip children's vitamin and mineral supplements — and points to a reported 400 percent rise in childhood rickets between 1995 and 2011 as the result. He labels the resurgence a 'physician-caused disease.'",
-      "verbatim": "rickets reappeared in children in the industrialized world with a\nreported increase of 400 percent between 1995 and 2011. This is a result of\nfears of increased risk of skin cancer from skin exposure to the sun as well as\n\nwidespread use of sun screens, fear of cholesterol in egg yolks (a good source\nof vitamin D), and instructions from pediatricians to avoit\n\n\nsupplementation of\nvitamins and minerals to children because of overdose concerns.",
+      "verbatim": "rickets reappeared in children in the industrialized world with a\nreported increase of 400 percent between 1995 and 2011. This is a result of\nfears of increased risk of skin cancer from skin exposure to the sun as well as\n\nwidespread use of sun screens, fear of cholesterol in egg yolks (a good source\nof vitamin D), and instructions from pediatricians to avoid\n\n\nsupplementation of\nvitamins and minerals to children because of overdose concerns.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -23383,7 +23383,7 @@
       "question": "Why does Wallach say DNA is a script, not a blueprint?",
       "answer_short": "Because a blueprint stamps out identical copies, but DNA doesn't. Wallach borrows Nessa Carey's metaphor: DNA is more like a script — two film versions of Romeo & Juliet used the same script yet came out completely different. Same genes, different 'production' — and what directs the difference, Wallach adds, is nutrition.",
       "answer": "To explain the core idea, Wallach opens the chapter with a metaphor from Nessa Carey's The Epigenetics Revolution (2012): DNA is not a rigid template or blueprint that stamps out thousands of identical copies — it is more like a script. Carey compares it to Romeo and Juliet: two film versions made sixty years apart used the same Shakespearean script yet came out entirely different. Identical starting points, different outcomes. Wallach adopts and extends the metaphor, adding in his own words that the 'production' differs because the cell is reading a script from DNA that is nutritionally deficient — the difference is driven by diet and nutrition, not by any change to the genes themselves.",
-      "verbatim": "But DNA isn’t really like that. It's more like a script. Think of Romeo\nand Juliet, for example. In 1936 George Cukor directed Leslie Howard and\nNorma Shearer in a film version. Sixty years later Baz Luhrmann directed\nLeonardo DiCaprio and Claire Danes in another movie version of this play.\nBoth productions used Shakespeare's script, yet the two movies are entirely\ndifferent. Identical starting points, different outcomes.",
+      "verbatim": "But DNA isn’t really like that. It’s more like a script. Think of Romeo\nand Juliet, for example. In 1936 George Cukor directed Leslie Howard and\nNorma Shearer in a film version. Sixty years later Baz Luhrmann directed\nLeonardo DiCaprio and Claire Danes in another movie version of this play.\nBoth productions used Shakespeare’s script, yet the two movies are entirely\ndifferent. Identical starting points, different outcomes.",
       "page": 351,
       "book_id": "epigenetics",
       "topics": [
@@ -24755,7 +24755,7 @@
       "question": "Where did pellagra come from and why did it appear in Europe?",
       "answer_short": "Pellagra was unknown in Europe until Columbus brought corn from the New World; peasants who became dependent on corn developed the disease.",
       "answer": "Wallach traces pellagra to the arrival of corn: the disease was unknown in Europe until Christopher Columbus brought the first corn seeds back from the New World. European peasants embraced corn as an easy 'miracle crop' and became dependent on it, and whole villages and towns then came down with what Wallach calls the 'four Ds' — dermatitis (skin disease), dementia, diarrhea, and death. That was pellagra.",
-      "verbatim": "Pellagra is considered a “new disease” in the civilized world, as it was unknown\nin Europe until Christopher Columbus delivered the first corn seeds from the\n“New World\" to Europe. The European peasant looked upon corn as an easy to\nproduce miracle crop; it spread quickly as a food crop and the peasants became\ndependent on corn.\n\nCorn was the beginning of the end for millions of people. Complete villages\nand towns came down with a plague of skin disease (dermatitis), dementia,\ndiarthea, and death (the four Ds—pellagra had arrived.)",
+      "verbatim": "Pellagra is considered a “new disease” in the civilized world, as it was unknown\nin Europe until Christopher Columbus delivered the first corn seeds from the\n“New World” to Europe. The European peasant looked upon corn as an easy to\nproduce miracle crop; it spread quickly as a food crop and the peasants became\ndependent on corn.\n\nCorn was the beginning of the end for millions of people. Complete villages\nand towns came down with a plague of skin disease (dermatitis), dementia,\ndiarrhea, and death (the four Ds—pellagra had arrived.)",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25491,7 +25491,7 @@
       "question": "Does your body make its own vitamin K?",
       "answer_short": "Yes — Wallach says roughly half of your vitamin K requirement is produced by probiotic bacteria in the colon.",
       "answer": "According to Wallach, you don't get all your vitamin K from food. Approximately 50% of the body's vitamin K requirement is produced by probiotic (friendly) bacteria in the colon. This is the K2 form, made by gram-positive intestinal micro-organisms, which is why the health and balance of your gut flora directly affects your vitamin K status.",
-      "verbatim": "Approximately 50% of the requirement for vitamin K is produced by probiotic\nbacteria in the colon,",
+      "verbatim": "Approximately 50% of the requirement for vitamin K is produced by probiotic\nbacteria in the colon",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25599,7 +25599,7 @@
       "question": "Can you take too much biotin? Is biotin toxic?",
       "answer_short": "No credible toxicity has been reported from large biotin doses, even above 10 mg daily, and its lethal dose is unknown.",
       "answer": "Biotin appears remarkably safe even at high intakes. Wallach notes that biotin's LD50 (lethal dose) is unknown and that there have been no credible reports of toxicity from large doses, even at more than 10 mg per day.",
-      "verbatim": "Signs of biotin overdose: The LDso is unknown and there have not been any\ncredible reports of toxicity from large doses of biotin, even with doses greater\nthan 10 mg daily.",
+      "verbatim": "Signs of biotin overdose: The LD50 is unknown and there have not been any\ncredible reports of toxicity from large doses of biotin, even with doses greater\nthan 10 mg daily.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25745,7 +25745,7 @@
       "question": "Does Wallach consider inositol a vitamin?",
       "answer_short": "Yes — Wallach classifies inositol as one of the 16 essential vitamins for humans and non-human vertebrates.",
       "answer": "Wallach lists inositol among \"The 16 Essential Vitamins for Humans and Non-human Vertebrates,\" alongside vitamins A, C, D, K, the B-complex, biotin, choline, flavonoids and folic acid. This reflects his stance that inositol is a required, essential nutrient for both humans and animals.",
-      "verbatim": "The 16 Essential Vitamins for Humans and Non-human Vertebrates\n\nVitamin A\n\nVitamin 81 (Thiamin)\nVitamin B2 (Riboflavin)\nVitamin B3 (Niacin)\n\nVitamin B5 (Pantothenic acid)\nVitamin B6 (Pyridoxine)\nVitamin B12 (Cyanocobalamine)\nVitamin C\n\nVitamin D\n\nVitamin\n\nVitamin K\n\nBiotin\n\nCholine\n\nFlavonoids and bioflavonoids\nFolic Acid\n\nInositol",
+      "verbatim": "The 16 Essential Vitamins for Humans and Non-human Vertebrates\n\nVitamin A\n\nVitamin B1 (Thiamin)\nVitamin B2 (Riboflavin)\nVitamin B3 (Niacin)\n\nVitamin B5 (Pantothenic acid)\nVitamin B6 (Pyridoxine)\nVitamin B12 (Cyanocobalamine)\nVitamin C\n\nVitamin D\n\nVitamin E\n\nVitamin K\n\nBiotin\n\nCholine\n\nFlavonoids and bioflavonoids\nFolic Acid\n\nInositol",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -27779,7 +27779,7 @@
       "question": "Is aluminum toxic to humans?",
       "answer_short": "Wallach says aluminum is remarkably nontoxic - you'd have to swallow more than a pound of aluminum sulfate in a single day to reach a lethal dose.",
       "answer": "Wallach holds that aluminum is remarkably nontoxic, and backs it with hard toxicology: aluminum sulfate has an oral LD50 (the dose that kills half of test animals) of 6207 mg/kg in mice, which for an 80 kg person works out to about 500 grams - more than a pound of it - in a single day. He stresses that aluminum is not nearly as toxic as the true heavy metals, so the trace amounts in ordinary food and water are nowhere near a harmful level.",
-      "verbatim": "Aluminum is remarkably nontoxic, aluminum sulfate having an LDSO of 6207\nmg/kg (oral/mouse), which would be the equivalent of 500 grams (more than a\npound) for an 80 kg human per day.",
+      "verbatim": "Aluminum is remarkably nontoxic, aluminum sulfate having an LD50 of 6207\nmg/kg (oral/mouse), which would be the equivalent of 500 grams (more than a\npound) for an 80 kg human per day.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -27946,7 +27946,7 @@
       "question": "What are the side effects of gold treatment for arthritis?",
       "answer_short": "Wallach lists gold-therapy toxic reactions including itching, dermatitis, mouth inflammation, GI upset, protein or blood in the urine, aplastic anemia, low white cells, hepatitis and pneumonitis.",
       "answer": "Wallach warns that gold therapies carry a wide range of toxic reactions. Milder ones include pruritus (itching), dermatitis, stomatitis (inflammation of the mouth), and gastrointestinal (GI) discomfort, along with increased albumin or blood in the urine. More serious reactions can involve aplastic anemia, a drop in white blood cell count, hepatitis, and pneumonitis (lung inflammation).",
-      "verbatim": "Toxic reactions to gold therapies include pruritus (itching), dermatitis,\nstomatitis, Gl discomfort, increase in urine albumin, blood in the urine, aplastic\nanemia, reduced WBC, hepatitis, and pneumonitis.",
+      "verbatim": "Toxic reactions to gold therapies include pruritus (itching), dermatitis,\nstomatitis, GI discomfort, increase in urine albumin, blood in the urine, aplastic\nanemia, reduced WBC, hepatitis, and pneumonitis.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -28380,7 +28380,7 @@
       "question": "Where does the word arsenic come from?",
       "answer_short": "Wallach traces 'arsenic' from the Syriac al zarniga and Persian Zarnikh ('yellow pigment') through Greek arsenikos (meaning 'masculine'), then Latin arsenicum and Old French arsenic.",
       "answer": "Wallach gives arsenic a colorful word-history. The name was taken from the Syriac word al zarniga and the Persian word Zarnikh, both meaning 'yellow pigment' (a nod to the gold-colored ore orpiment). Rendered into Greek as arsenikos, it carried the sense of 'masculine.' From there it was adopted into Latin as arsenicum and into Old French as arsenic, which is where the English word we use today came from.",
-      "verbatim": "The word “arsenic” was taken from the Syriac word al zarniga and the Persian\nword Zarnikh, which translates to “yellow pigment,\" translated into Greek as\narsenikos, and which translates into “masculine.” The word was adopted in Latin\nas arsenicum and Old French as arsenic from which the English word “arsenic” was\ncoined.",
+      "verbatim": "The word “arsenic” was taken from the Syriac word al zarniqa and the Persian\nword Zarnikh, which translates to “yellow pigment,\" translated into Greek as\narsenikos, and which translates into “masculine.” The word was adopted in Latin\nas arsenicum and Old French as arsenic from which the English word “arsenic” was\ncoined.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -29089,7 +29089,7 @@
       "question": "Does Dr. Wallach think beef and red meat are good for you?",
       "answer_short": "Wallach calls red meat an unequaled source of animal protein and essential lipids, and says the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
       "answer": "Wallach calls red meat an unequaled source of animal protein and essential lipids; the only trick is to cook it no more than medium, since well-done or burnt fat forms heterocyclic amines. He even recommends raw steak tartare.",
-      "verbatim": "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines. Medium rare and me- \ndium are the safe way to eat beef. Steak Tartar is a half pound of raw, \nfreshly ground sirloin, served with chopped onions, pepper corns \nand topped with a raw egg - it doesn’t get any better than this!",
+      "verbatim": "Red meat is an unequaled source of animal protein and essential \nlipids - the secret is to not eat meat cooked well done or eat the fat \nburnt as they become heterocyclic amines. Medium rare and medium are the safe way to eat beef. Steak Tartar is a half pound of raw, \nfreshly ground sirloin, served with chopped onions, pepper corns \nand topped with a raw egg - it doesn’t get any better than this!",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29109,7 +29109,7 @@
       "question": "Is it dangerous to eat beef cooked well done?",
       "answer_short": "Wallach cites a study of 930 women where eating beef and pork very well done raised breast-cancer risk 462% versus medium-rare; his point is that it is not the fat that harms you but how you cook it, because burnt animal fat becomes heterocyclic amines, powerful carcinogens.",
       "answer": "Wallach cites a 930-woman study where eating beef and pork very well done raised breast-cancer risk 462% versus medium-rare; his point is that it is not the fat but the cooking that harms you, because burnt animal fat becomes heterocyclic amines, powerful carcinogens.",
-      "verbatim": "On November 18, 1998, Dr. Wei Zheng of the University of South \nCarolina reported that in a study of 930 women, those who ate their \nbeef and pork cooked very well done increased their risk of breast \ncancer by 462 percent over those women who ate their meat cooked \nmedium rare - it is not the amount of fat in the diet that counts, but \nrather, how you cook the fat that counts. Burnt animal fat is con- \nverted to heterocyclic amines which are extremely powerful carcino- \ngens.",
+      "verbatim": "On November 18, 1998, Dr. Wei Zheng of the University of South \nCarolina reported that in a study of 930 women, those who ate their \nbeef and pork cooked very well done increased their risk of breast \ncancer by 462 percent over those women who ate their meat cooked \nmedium rare - it is not the amount of fat in the diet that counts, but \nrather, how you cook the fat that counts. Burnt animal fat is converted to heterocyclic amines which are extremely powerful carcinogens.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29132,7 +29132,7 @@
       "question": "How does fattening beef cattle explain human obesity in Wallach's view?",
       "answer_short": "Wallach's 'Feedlot Syndrome' analogy: ranchers fatten beef cattle on a steady stream of carbohydrate feed paired with optimal nutrients that drive the animal to eat with endless, fervent hunger, growing a 40-lb calf to 900-1,100 lb in a year. He argues humans are fattened by the same carb-heavy diet — but, unlike the optimally-supplemented cattle, humans eat it while mineral-deficient, which is what leaves them with a ravenous appetite.",
       "answer": "Wallach's 'Feedlot Syndrome' analogy: ranchers fatten beef cattle on a steady stream of carbohydrate feed paired with optimal nutrients that drive the animal to eat with endless, fervent hunger, growing a 40-lb calf to 900-1,100 lb in a year. He argues humans are fattened by the same carb-heavy diet — but, unlike the optimally-supplemented cattle, humans eat it while mineral-deficient, which is what leaves them with a ravenous appetite.",
-      "verbatim": "Raising prime beef successfully, requires a steady stream of car- \nbohydrate, protein and fat calories in the proper ratios specifically \ndesigned for fattening. \nThe intense weight gain, high carbohydrate diet must be accom- \npanied by optimal mixes of nutrients designed to encourage weight \ngain and drive the animal to eat with an endless and fervent hunger. \nFeed, based on corn or other carbohydrates, is made available in \na steady stream. Beef cattle will grow from a forty pound calf to 900 \n- 1,100 pounds in about a year under optimal feedlot conditions.",
+      "verbatim": "Raising prime beef successfully, requires a steady stream of carbohydrate, protein and fat calories in the proper ratios specifically \ndesigned for fattening. \nThe intense weight gain, high carbohydrate diet must be accompanied by optimal mixes of nutrients designed to encourage weight \ngain and drive the animal to eat with an endless and fervent hunger. \nFeed, based on corn or other carbohydrates, is made available in \na steady stream. Beef cattle will grow from a forty pound calf to 900 \n- 1,100 pounds in about a year under optimal feedlot conditions.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29310,7 +29310,7 @@
       "question": "What does ORAC stand for?",
       "answer_short": "Oxygen Radical Absorbance Capacity - a lab score for how strongly a food, drink or supplement neutralizes free radicals.",
       "answer": "ORAC stands for Oxygen Radical Absorbance Capacity, a lab score for how strongly a food, drink or supplement neutralises free radicals. The test scores one specific attacker, the peroxyl radical, chosen because it is among the most common reactive oxygen species in the human body. Worth noting that Wallach's books print the name two ways - Absorbance in Immortality, Absorption in Hell's Kitchen.",
-      "verbatim": "A good way to measure the antioxidant activity of foods includ- \ning juices is by means of the ORAC point system. ORAC stands for \nOxygen Radical Absorption Capacity, a measure of the scavenging",
+      "verbatim": "A good way to measure the antioxidant activity of foods including juices is by means of the ORAC point system. ORAC stands for \nOxygen Radical Absorption Capacity, a measure of the scavenging",
       "page": 252,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29372,7 +29372,7 @@
       "question": "Why do I need more antioxidants when I'm losing weight?",
       "answer_short": "Because burning fat generates free radicals - losing weight itself creates the damage antioxidants defend against.",
       "answer": "Losing weight itself creates the damage antioxidants defend against. Wallach says the byproducts of burning fat can turn into free radicals that inflame the intima, the lining of the arteries, which then drives arteriosclerosis, cardiovascular disease, cancer and Alzheimer's disease. His instruction is not a single daily pill but flooding yourself with multiple antioxidants at every meal, framed as an insurance policy against the free radicals you will eat without knowing it.",
-      "verbatim": "To reduce the risk of the complications \nof weight loss, people need to flood themselves with antioxi- \ndants in order to protect themselves.",
+      "verbatim": "To reduce the risk of the complications \nof weight loss, people need to flood themselves with antioxidants in order to protect themselves.",
       "page": 252,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29390,7 +29390,7 @@
       "question": "Is zinc gluconate a good form of zinc?",
       "answer_short": "In Wallach's view, no — zinc gluconate is a 'metallic mineral' form, and he says metallic minerals are only 8–12% absorbed, dropping to just 3–5% after age 35–40.",
       "answer": "Wallach classes common supplement forms such as zinc gluconate as 'metallic minerals,' which in his framework are poorly absorbed. He states that metallic minerals — sold as gluconates, lactates, sulphates, carbonates and oxides — are only eight to twelve percent biologically available in younger people, and that after age thirty-five to forty their availability plummets to three to five percent. This is the basis for his preference for plant-derived colloidal minerals, which he considers the most efficient form of trace-mineral supplement.",
-      "verbatim": "Typically, metallic minerals are found in tablets and powders as \ngluconate (calcium gluconate, zinc gluconate, etc.), lactate, sulphates, \ncarbonates and oxides (iron oxide, etc.). \nMetallic minerals, despite wild claims to the contrary are only \neight to twelve percent biologically available to younger animals and \nhumans; after attaining the age of thirty five to forty years, the avail- \nability of metallic minerals plummets to three to five percent.",
+      "verbatim": "Typically, metallic minerals are found in tablets and powders as \ngluconate (calcium gluconate, zinc gluconate, etc.), lactate, sulphates, \ncarbonates and oxides (iron oxide, etc.). \nMetallic minerals, despite wild claims to the contrary are only \neight to twelve percent biologically available to younger animals and \nhumans; after attaining the age of thirty five to forty years, the availability of metallic minerals plummets to three to five percent.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29414,7 +29414,7 @@
       "question": "Does zinc prevent cancer?",
       "answer_short": "Not according to the study Wallach cites: in a five-year Chinese cancer trial, zinc showed no statistically significant protective effect against cancer deaths, while a beta carotene, vitamin E and selenium combination did.",
       "answer": "Wallach points to a National Cancer Institute five-year study in Henan Province, China, that tested nutrients against a placebo in about 29,000 people aged forty to sixty-nine. He reports that zinc — along with vitamin C, retinol, riboflavin, molybdenum and niacin — had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking a combination of beta carotene, vitamin E and selenium saw dramatic results: 13% fewer deaths from all cancers, a 21% reduction in stomach-cancer deaths, and a 9% drop in deaths from all causes. In Wallach's account, zinc was not among the standout cancer-protective nutrients in that trial.",
-      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, ribofla- \nvin, molybdenum and niacin had no statistically significant (protec- \ntive) effect on cancer deaths after five years.” \nThe group that took the combination of beta carotene, vitamin E \nand selenium for five years had dramatically positive results: 13 per- \ncent fewer deaths from all cancers, 21 percent reduction in deaths \nfrom stomach cancer and a 9 percent decrease in deaths from all \ncauses.",
+      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, riboflavin, molybdenum and niacin had no statistically significant (protective) effect on cancer deaths after five years.” \nThe group that took the combination of beta carotene, vitamin E \nand selenium for five years had dramatically positive results: 13 percent fewer deaths from all cancers, 21 percent reduction in deaths \nfrom stomach cancer and a 9 percent decrease in deaths from all \ncauses.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29436,7 +29436,7 @@
       "question": "Are cashews a good source of magnesium?",
       "answer_short": "Yes — per Wallach, a handful of cashews supplies about 20 percent of the recommended daily allowance of magnesium.",
       "answer": "Among nuts, Wallach singles out cashews as a good magnesium source: a handful supplies about 20 percent of the USDA recommended daily allowance of magnesium, along with 30 percent of copper and 10 percent of iron. An ounce — roughly 18 roasted nuts — carries 160 calories and 13 grams of fat.",
-      "verbatim": "Cashews: a handful contains 20 percent of the USDA recom- \nmended daily allowance of magnesium, 30 percent of copper, and \n10 percent of iron. One ounce (18 roasted nuts) contains 160 calo- \nries and 13 grams of fat.",
+      "verbatim": "Cashews: a handful contains 20 percent of the USDA recommended daily allowance of magnesium, 30 percent of copper, and \n10 percent of iron. One ounce (18 roasted nuts) contains 160 calories and 13 grams of fat.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29456,7 +29456,7 @@
       "question": "Which nuts have the most omega-3?",
       "answer_short": "Walnuts — Wallach says English walnuts are the only nut with significant levels of omega-3 fatty acids.",
       "answer": "Among nuts, Wallach singles out English walnuts as nutritionally special: they are a good source of iron, phosphorus, zinc, potassium, and vitamin E, and — uniquely — the only nut with significant levels of omega-3 fatty acids, the anti-inflammatory fats usually associated with fish. An ounce (about 14 halves) carries 190 calories and 18 grams of fat. He raises them within a broader point that nuts, far from being junk food, are tied to lower rates of heart disease.",
-      "verbatim": "Walnuts: English walnuts are a good source of iron, phospho- \nrus, zinc, potassium, and vitamin E; they are the only nut with sig- \nnificant levels of omega-3 fatty acids. One ounce (14 halves) con- \ntains 190 calories and 18 grams of fat.",
+      "verbatim": "Walnuts: English walnuts are a good source of iron, phosphorus, zinc, potassium, and vitamin E; they are the only nut with significant levels of omega-3 fatty acids. One ounce (14 halves) contains 190 calories and 18 grams of fat.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29477,7 +29477,7 @@
       "question": "Does low omega-3 raise cholesterol or cause obesity?",
       "answer_short": "Wallach ties omega-3 deficiency to elevated total cholesterol and LDL, obesity, peripheral neuropathies, thrombotic disease, and atherosclerosis.",
       "answer": "Wallach considers the Metabolic Syndrome a product of multiple nutrient deficiencies rather than genetics. In his deficiency table he lists omega-3 essential fatty acid deficiency as producing elevated total cholesterol, elevated LDL, obesity, peripheral neuropathies, thrombotic disease, and atherosclerosis.",
-      "verbatim": "Omega -3 essential fatty acids _ elevated total cholesterol, elevated \nLDL, obesity, peripheral neuropa- \nthies, thrombotic disease, athero- \nsclerosis",
+      "verbatim": "Omega -3 essential fatty acids _ elevated total cholesterol, elevated \nLDL, obesity, peripheral neuropathies, thrombotic disease, atherosclerosis",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29500,7 +29500,7 @@
       "question": "Does omega-3 help prevent dementia or Alzheimer's?",
       "answer_short": "Wallach cites a Framingham/Tufts study in which diets rich in omega-3 cut the risk of new dementia by 48 percent.",
       "answer": "Wallach points to a November 2003 Tufts University analysis of fatty-acid blood levels from 1,137 Framingham Heart Study patients, followed for about ten years for new dementia including Alzheimer's. He reports the finding that those with diets rich in omega-3 fatty acids had a significant 48 percent reduction in the risk for the onset of dementia.",
-      "verbatim": "On November 18, 2003, researchers at Tufts University reviewed \nthe fatty acid levels of blood collected from 1,137 patients on the \nFramingham Heart Study, their diets were assessed and those free of \ndementia were followed for a mean of ten years. During the study \nthey were assessed for the onset of new dementia including Alzheimers \ndisease. Those with, “diets rich in Omega-3 fatty acids had a signifi- \ncant 48 percent reduction in the risk for the onset of dementia.”",
+      "verbatim": "On November 18, 2003, researchers at Tufts University reviewed \nthe fatty acid levels of blood collected from 1,137 patients on the \nFramingham Heart Study, their diets were assessed and those free of \ndementia were followed for a mean of ten years. During the study \nthey were assessed for the onset of new dementia including Alzheimers \ndisease. Those with, “diets rich in Omega-3 fatty acids had a significant 48 percent reduction in the risk for the onset of dementia.”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29558,7 +29558,7 @@
       "question": "Can vitamin C help prevent Alzheimer's disease?",
       "answer_short": "In a Johns Hopkins study, people taking vitamin C and vitamin E had a 78% lower risk of Alzheimer's disease.",
       "answer": "Wallach cites a January 2004 Johns Hopkins University study of 4,740 men and women over age 65 which found that those taking vitamin C and vitamin E together had a 78 percent reduced risk of Alzheimer's disease. He groups this with other antioxidant and omega-3 findings, concluding that antioxidant intake can substantially lower the onset of Alzheimer's.",
-      "verbatim": "On January 20, 2004, researchers from the Johns Hopkins Uni- \nversity School of Public Health, released the results of a study on \n4,740 men and women over the age of sixty five that showed, those \ntaking vitamin C and vitamin E had a reduced risk of Alzheimer’s \ndisease by 78 percent.",
+      "verbatim": "On January 20, 2004, researchers from the Johns Hopkins University School of Public Health, released the results of a study on \n4,740 men and women over the age of sixty five that showed, those \ntaking vitamin C and vitamin E had a reduced risk of Alzheimer’s \ndisease by 78 percent.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29580,7 +29580,7 @@
       "question": "Does vitamin C prevent cancer?",
       "answer_short": "In a large five-year National Cancer Institute study, vitamin C showed no statistically significant protective effect on cancer deaths.",
       "answer": "Wallach cites a 1993 National Cancer Institute study of 29,000 people in China's Henan Province, which found that vitamin C - along with retinol, zinc, riboflavin, molybdenum and niacin - had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking beta carotene, vitamin E and selenium had markedly better results, with fewer cancer deaths. In this trial vitamin C on its own did not lower cancer mortality.",
-      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, ribofla- \nvin, molybdenum and niacin had no statistically significant (protec- \ntive) effect on cancer deaths after five years.”",
+      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, riboflavin, molybdenum and niacin had no statistically significant (protective) effect on cancer deaths after five years.”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29597,7 +29597,7 @@
       "question": "Is synthetic vitamin C the same as natural vitamin C?",
       "answer_short": "Wallach recounts that when vitamin C was first synthesized in 1933, the artificial form was identical to the natural one.",
       "answer": "Wallach recounts that in 1933 Tadeus Reichstein became the first person to produce a vitamin synthetically in the laboratory, and that his artificial form of vitamin C was identical to the natural one. In other words, lab-made ascorbic acid is chemically the same molecule as the vitamin C found in food.",
-      "verbatim": "In 1933, Tadeus Reichstein has become the first to produce a \nvitamin synthetically in the laboratory, and his “artificial form of vita- \nmin C is identical to the natural one.”",
+      "verbatim": "In 1933, Tadeus Reichstein has become the first to produce a \nvitamin synthetically in the laboratory, and his “artificial form of vitamin C is identical to the natural one.”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29638,7 +29638,7 @@
       "question": "Can iron deficiency make you fat?",
       "answer_short": "Wallach says a combined iron and phosphorus deficiency can trigger almost psychotic binge eating and soft-drink bingeing that ends in morbid obesity.",
       "answer": "In Wallach's framework, deficiencies of two or more essential minerals produce significant pica, cravings, and binge eating. He states that iron and phosphorus deficiencies occurring at the same time will result in an almost psychotic binge eating and soft-drink consumption rampage that ends in morbid obesity. The craving, in his view, is the mineral-starved body driving the person to eat — not simple gluttony.",
-      "verbatim": "The deficiency of two or more essential minerals will pro- \nduce a significant level of pica, cravings and binge eating. Iron \nand phosphorus deficiencies occurring at the same time will re- \nsult in an almost psychotic binge eating and soft drink consump- \ntion rampage that results in morbid obesity.",
+      "verbatim": "The deficiency of two or more essential minerals will produce a significant level of pica, cravings and binge eating. Iron \nand phosphorus deficiencies occurring at the same time will result in an almost psychotic binge eating and soft drink consumption rampage that results in morbid obesity.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29660,7 +29660,7 @@
       "question": "Does calcium help with weight loss?",
       "answer_short": "Wallach says consuming 1,200 mg of calcium a day cuts your risk of being overweight by 65 percent, and combined with dropping 500 calories a day it doubles the rate of weight loss—without exercise.",
       "answer": "In Hell's Kitchen, Wallach frames calcium as a weight-control mineral: consuming 1,200 mg of calcium each day, even if you do nothing else, will reduce your risk of being overweight by sixty-five percent. If you are already overweight, cutting 500 calories a day (about one burger) while taking the 1,200 mg of calcium will double your rate of weight loss—he says, even without the need for exercise.",
-      "verbatim": "We know that if you do nothing else, consuming 1,200 mg of ) \ncalcium each day will reduce your risk of being overweight by sixty \nfive percent! If you are overweight, give up 500 calories each day \n(one burger), and consume the 1,200 mg of calcium per day and you \nwill double your rate of weight loss - even without the need for exer- \ncise!",
+      "verbatim": "We know that if you do nothing else, consuming 1,200 mg of ) \ncalcium each day will reduce your risk of being overweight by sixty \nfive percent! If you are overweight, give up 500 calories each day \n(one burger), and consume the 1,200 mg of calcium per day and you \nwill double your rate of weight loss - even without the need for exercise!",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29680,7 +29680,7 @@
       "question": "Who first described pellagra?",
       "answer_short": "Gaspar Casal published the first account of pellagra — a vitamin B3 deficiency — in Spain in 1755, calling it a 'new disease.'",
       "answer": "In 1755 the Spanish physician Gaspar Casal (1680-1759) published an account of pellagra — a vitamin B3 deficiency — then considered 'a new disease' in Spain. He described it by the 'Three D's': dermatitis (a horrible dry, scabby crust crossed with cracks), diarrhea, and dementia, plus premature death, and noted the disease flared up each spring.",
-      "verbatim": "In 1755, Gaspar Casal (1680-1759), published an account of \npellagra (a vitamin B3 deficiency), then “a new disease” in Spain. \nPellagra is characterized by the “Three D’s” including dermatitis (“a \nhorrible crust, dry, scabby...crossed with cracks”), diarrhea, demen- \ntia and premature death - this disease flared up each Spring.",
+      "verbatim": "In 1755, Gaspar Casal (1680-1759), published an account of \npellagra (a vitamin B3 deficiency), then “a new disease” in Spain. \nPellagra is characterized by the “Three D’s” including dermatitis (“a \nhorrible crust, dry, scabby...crossed with cracks”), diarrhea, dementia and premature death - this disease flared up each Spring.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29716,7 +29716,7 @@
       "question": "Does folic acid help prevent breast cancer?",
       "answer_short": "Wallach cites research that folic acid supplementation can reduce the risk of breast cancer for nondrinkers and drinkers alike.",
       "answer": "Discussing alcohol and breast cancer, Wallach notes that one large study put the lifetime risk of breast cancer at 8.8 percent in nondrinkers and 10.1 percent in women who consume two drinks per day. He adds that research also shows folic acid supplementation can reduce the risk of breast cancer for nondrinkers and drinkers alike. In his framing, folic acid is protective regardless of alcohol intake.",
-      "verbatim": "One large study indicates that the lifetime risk of breast cancer is \n8.8 percent in nondrinkers and 10.1 percent in those women who \nconsume two drinks per day - research also shows that folic acid \nsupplementation can reduce the risk of breast cancer for nondrink- \ners and drinkers alike.",
+      "verbatim": "One large study indicates that the lifetime risk of breast cancer is \n8.8 percent in nondrinkers and 10.1 percent in those women who \nconsume two drinks per day - research also shows that folic acid \nsupplementation can reduce the risk of breast cancer for nondrinkers and drinkers alike.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29738,7 +29738,7 @@
       "question": "What foods are high in folic acid?",
       "answer_short": "Wallach points to liver as rich in folic acid (along with iron, copper, selenium, B12, and vitamins A, C, and D), citing Whipple's 1925 experiment where liver-fed dogs rebuilt red blood cells fastest.",
       "answer": "Wallach recounts that in 1925 the pathologist George Hoyt Whipple bled dogs to produce anemia, then fed them varying diets to see which best rebuilt red blood cells. Dogs that ate liver — which is rich in iron, copper, selenium, vitamin B12, vitamins A, C, and D, folic acid, and essential fatty acids — formed red blood cells more quickly than the others. The passage highlights liver as a dense natural source of folic acid and the other blood-building nutrients.",
-      "verbatim": "In 1925, Dr. George Hoyt Whipple, an American pathologist took \nlarge amounts of blood from dogs to produce anemia. Whipple fed \nthe dogs varying diets to learn how different diets affect the produc- \ntion of red blood cells. He recorded that dogs that ate liver, which is \nrich in iron (and copper, selenium, vitamin B12, vitamin A, vitamin \nC, vitamin D, folic acid and essential fatty acids), formed red blood \ncells more quickly than those that did not.",
+      "verbatim": "In 1925, Dr. George Hoyt Whipple, an American pathologist took \nlarge amounts of blood from dogs to produce anemia. Whipple fed \nthe dogs varying diets to learn how different diets affect the production of red blood cells. He recorded that dogs that ate liver, which is \nrich in iron (and copper, selenium, vitamin B12, vitamin A, vitamin \nC, vitamin D, folic acid and essential fatty acids), formed red blood \ncells more quickly than those that did not.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29756,7 +29756,7 @@
       "question": "Why did it take so long to add folic acid to food?",
       "answer_short": "Wallach says the FDA's 1963 restrictions on folic acid stayed in place for thirty-one years; the FDA only ordered folic acid fortification of flour in 1996, and by 1998 the spina bifida rate had dropped twenty percent.",
       "answer": "Wallach charges that the FDA's 1963 restrictions on folic acid remained in place for thirty-one years. He notes that by 1998, following the institution of folic acid supplementation, the spina bifida rate had dropped by twenty percent. Only in 1996 did the FDA, in his words 'being dragged, kicking and screaming to the end,' finally order folic acid fortification of flour.",
-      "verbatim": "The 1963 restrictions on folic acid remained in place for thirty \none years - by 1998, and the institution of folic acid supplementa- \ntion, the spina bifida rate had dropped by twenty percent. \nIn 1996, the FDA (being dragged, kicking and screaming to the \nend), finally orders folic acid fortification of flour.",
+      "verbatim": "The 1963 restrictions on folic acid remained in place for thirty \none years - by 1998, and the institution of folic acid supplementation, the spina bifida rate had dropped by twenty percent. \nIn 1996, the FDA (being dragged, kicking and screaming to the \nend), finally orders folic acid fortification of flour.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29778,7 +29778,7 @@
       "question": "Can a low-salt diet cause a B12 deficiency?",
       "answer_short": "Yes — salt is the raw material for stomach acid, and stomach acid is needed to activate the intrinsic factor that absorbs vitamin B12.",
       "answer": "Wallach holds that salt is the raw material the body uses to manufacture stomach acid, and that stomach acid (hydrochloric acid) is what digests food, ensures mineral absorption, activates the digestive enzyme pepsin, and activates the 'intrinsic factor.' That intrinsic factor is exactly what is needed to absorb vitamin B12. By this logic, restricting salt undercuts stomach acid and can therefore drive a vitamin B12 deficiency.",
-      "verbatim": "Salt is the raw material needed to manufacture stomach acid. \nStomach acid is hydrochloric acid that is necessary to digest food, \nensure absorption of minerals, activate pepsin (protein digestive en- \nzyme produced by the stomach) and activate the “intrinsic factor”\n\nHELLS KITCHEN 257 \nnecessary to absorb vitamin B12.",
+      "verbatim": "Salt is the raw material needed to manufacture stomach acid. \nStomach acid is hydrochloric acid that is necessary to digest food, \nensure absorption of minerals, activate pepsin (protein digestive enzyme produced by the stomach) and activate the “intrinsic factor”\n\nHELLS KITCHEN 257 \nnecessary to absorb vitamin B12.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29799,7 +29799,7 @@
       "question": "What is pernicious anemia and how is it related to B12?",
       "answer_short": "Pernicious anemia is a fatal anemia, first reported in 1849, caused by missing vitamin B12; absorbing B12 requires both stomach acid and an acid-dependent 'intrinsic factor.'",
       "answer": "In 1849 Thomas Addison described a fatal anemia, later named pernicious anemia, marked by a low count of abnormally enlarged red blood cells. Vitamin B12 was eventually identified as the missing nutrient, but the disease had a second twist: the stomach must produce two things, stomach acid and an acid-dependent 'intrinsic factor,' or B12 cannot be absorbed. Wallach notes that B12 injections can cure the disease by bypassing the stomach entirely, and that stomach-acid substitutes like betaine HCl can be used to reactivate intrinsic factor and restore absorption.",
-      "verbatim": "In 1849, Thomas Addison reported the existence of a hitherto \nunknown fatal anemia, that was eventually called pernicious anemia \n- it was characterized by a low red blood cell count, but the cells that \nwere observed were enlarged red blood cells. Vitamin B12 was even- \ntually identified as the missing essential nutrient, however, there was \nanother feature unique to pernicious anemia - the stomach had to \nproduce two important substances: 1) stomach acid and 2) an acid \ndependent cofactor known as “intrinsic factor” - without either or \nboth vitamin B12 could not be absorbed.",
+      "verbatim": "In 1849, Thomas Addison reported the existence of a hitherto \nunknown fatal anemia, that was eventually called pernicious anemia \n- it was characterized by a low red blood cell count, but the cells that \nwere observed were enlarged red blood cells. Vitamin B12 was eventually identified as the missing essential nutrient, however, there was \nanother feature unique to pernicious anemia - the stomach had to \nproduce two important substances: 1) stomach acid and 2) an acid \ndependent cofactor known as “intrinsic factor” - without either or \nboth vitamin B12 could not be absorbed.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29842,7 +29842,7 @@
       "question": "Are cashews a good source of copper?",
       "answer_short": "Yes, Wallach notes a handful of cashews supplies about 30 percent of the recommended daily allowance of copper, along with magnesium and iron.",
       "answer": "Wallach notes that a handful of cashews contains about 30 percent of the USDA recommended daily allowance of copper, plus 20 percent of magnesium and 10 percent of iron. This makes cashews one of the concrete everyday foods he cites as a copper source.",
-      "verbatim": "Cashews: a handful contains 20 percent of the USDA recom- \nmended daily allowance of magnesium, 30 percent of copper, and \n10 percent of iron.",
+      "verbatim": "Cashews: a handful contains 20 percent of the USDA recommended daily allowance of magnesium, 30 percent of copper, and \n10 percent of iron.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29925,7 +29925,7 @@
       "question": "Which form of chromium is active in the body?",
       "answer_short": "Only trivalent chromium is biologically active, and it does more than manage blood sugar — it also drives amino acid transport and protein synthesis.",
       "answer": "Wallach explains that only the trivalent state of chromium is biologically active, working by forming complexes with organic compounds. Chromium's role is not limited to glucose metabolism. Animal studies show it also stimulates amino acid transport and protein synthesis.",
-      "verbatim": "Only the trivalent state of chromium is biologically active and it \nworks by forming complexes with organic compounds. Insulin-chro- \nmium relationships are not restricted to glucose metabolism. Animal \nstudies have shown that chromium stimulates amino acid transport \nand protein synthesis.",
+      "verbatim": "Only the trivalent state of chromium is biologically active and it \nworks by forming complexes with organic compounds. Insulin-chromium relationships are not restricted to glucose metabolism. Animal \nstudies have shown that chromium stimulates amino acid transport \nand protein synthesis.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29971,7 +29971,7 @@
       "question": "What causes intense sugar, carb, and chocolate cravings?",
       "answer_short": "According to Wallach, obsessive carb cravings and the 'munchies' — especially for chocolate and sweets — are sure signs of a chromium and vanadium deficiency.",
       "answer": "Wallach says chromium and vanadium deficiencies show up as a thirst for liquids like soft drinks, juices, and alcohol, with plain water the last choice, plus an obsessive hunger for carbohydrates of all kinds. The 'munchies' and cravings for alcohol and candy, especially chocolate, are in his view sure signs of a chromium and vanadium deficiency. He cites Reagan's craving for jelly beans as an example.",
-      "verbatim": "Chromium and vanadium deficiencies are manifested by thirst \nfor liquids (soft drinks, juices, alcohol, etc.), with water being the \nlast choice and an obsessive hunger for carbohydrates of all types. \nThe “munchies,” cravings for alcohol and candy cravings (Regan’s \ncravings for jelly beans), especially chocolate, are sure signs of a chro- \nmium and vanadium deficiency.",
+      "verbatim": "Chromium and vanadium deficiencies are manifested by thirst \nfor liquids (soft drinks, juices, alcohol, etc.), with water being the \nlast choice and an obsessive hunger for carbohydrates of all types. \nThe “munchies,” cravings for alcohol and candy cravings (Regan’s \ncravings for jelly beans), especially chocolate, are sure signs of a chromium and vanadium deficiency.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -29992,7 +29992,7 @@
       "question": "Can chromium replace insulin injections?",
       "answer_short": "In 1977 K. N. Jeejeebhoy reported that intravenous chromium eliminated the need for medical insulin in human diabetics and reversed their peripheral neuropathy.",
       "answer": "Wallach cites K. N. Jeejeebhoy, who by 1977 reported that chromium could eliminate the need for medical insulin in human patients. His intravenous use of chromium in human diabetics eliminated peripheral neuropathies and removed the need for insulin treatments to stabilize blood sugar. Wallach uses this as evidence that chromium addresses the root of the disease.",
-      "verbatim": "By 1977, K. N. Jeejeebhoy reported that chromium could elimi- \nnate the need for medical insulin in human patients. His intravenous \nuse of chromium in human diabetics eliminated peripheral neuropa- \nthies and well as eliminated the need for insulin treatments to stabi- \nlize blood sugar.",
+      "verbatim": "By 1977, K. N. Jeejeebhoy reported that chromium could eliminate the need for medical insulin in human patients. His intravenous \nuse of chromium in human diabetics eliminated peripheral neuropathies and well as eliminated the need for insulin treatments to stabilize blood sugar.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30012,7 +30012,7 @@
       "question": "What happens to animals that lack potassium?",
       "answer_short": "Potassium-deficient rats turn hyper-alert and hyperactive and lick everything in sight — cage, equipment, each other, even urine.",
       "answer": "Wallach reports that potassium-deficient laboratory rats become hyper-alert and hyperactive and start licking everything within reach — their metal cage, lab equipment, each other, and even urine puddles. Even under a severe potassium deficiency, he notes, the rats still show a strong craving for sodium chloride (common salt). He uses these animal observations to show how a mineral shortfall can drive compulsive licking and craving behavior.",
-      "verbatim": "Potassium deficient rats are hyper alert, hyper active and tend to \nlick everything including their metal cage, lab equipment, each other \nand urine puddles (beer and urine have a similar taste). It is also \ninteresting to note that even with a severe potassium deficiency labo- \nratory rats have a strong craving for sodium chloride (salt).",
+      "verbatim": "Potassium deficient rats are hyper alert, hyper active and tend to \nlick everything including their metal cage, lab equipment, each other \nand urine puddles (beer and urine have a similar taste). It is also \ninteresting to note that even with a severe potassium deficiency laboratory rats have a strong craving for sodium chloride (salt).",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30029,7 +30029,7 @@
       "question": "Can you actually become deficient in potassium?",
       "answer_short": "Naturally it's rare because grains, fruits and vegetables are potassium-rich, but diuretics or a junk-food diet can cause it.",
       "answer": "Wallach says a natural potassium deficiency is highly unlikely, because grains, fruits and vegetables all tend to be rich in potassium (the K in NPK fertilizer). Where it does appear, he points to two causes: taking diuretics, and eating a diet where the only 'vegetable' is French fries and ketchup. In his view, genuine deficiency usually comes from drugs or a produce-free diet rather than from ordinary eating.",
-      "verbatim": "A natural potassium deficiency is highly unlikely in nature, as all \ngrains, fruits and vegetables tend to be rich in potassium (NPK fertil- \nizer) - a potassium deficiency can be found in individuals given di- \nuretics and individuals whose only vegetable intake is French fries \nand ketchup.",
+      "verbatim": "A natural potassium deficiency is highly unlikely in nature, as all \ngrains, fruits and vegetables tend to be rich in potassium (NPK fertilizer) - a potassium deficiency can be found in individuals given diuretics and individuals whose only vegetable intake is French fries \nand ketchup.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30128,7 +30128,7 @@
       "question": "Does vitamin E help prevent cancer?",
       "answer_short": "In a five-year China study Wallach cites, beta carotene, vitamin E and selenium together gave 13% fewer cancer deaths and 21% fewer stomach-cancer deaths.",
       "answer": "Wallach points to a large study in Henan Province, China, in which one group took a combination of beta carotene, vitamin E and selenium for five years. That group had dramatically positive results: 13 percent fewer deaths from all cancers, a 21 percent reduction in deaths from stomach cancer, and a 9 percent decrease in deaths from all causes. Other single nutrients tested showed no statistically significant protective effect, which he takes as evidence for this antioxidant trio.",
-      "verbatim": "The group that took the combination of beta carotene, vitamin E \nand selenium for five years had dramatically positive results: 13 per- \ncent fewer deaths from all cancers, 21 percent reduction in deaths \nfrom stomach cancer and a 9 percent decrease in deaths from all \ncauses.",
+      "verbatim": "The group that took the combination of beta carotene, vitamin E \nand selenium for five years had dramatically positive results: 13 percent fewer deaths from all cancers, 21 percent reduction in deaths \nfrom stomach cancer and a 9 percent decrease in deaths from all \ncauses.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30146,7 +30146,7 @@
       "question": "Why is it called vitamin E?",
       "answer_short": "The newly found fertility factor was fat-soluble but not related to any known vitamin, so it was named vitamin E.",
       "answer": "Wallach explains that the newly found fertility factor was fat-soluble but not related to any of the vitamins already identified, so it was named vitamin E. Its discovery came out of work by Herbert McLean Evans and Katherine Scott Bishop, who found it abundant in green leafy vegetables and wheat germ.",
-      "verbatim": "The fertility factor was fat soluble but not related to any other vita- \nmin so it was called vitamin E.",
+      "verbatim": "The fertility factor was fat soluble but not related to any other vitamin so it was called vitamin E.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30231,7 +30231,7 @@
       "question": "Does molybdenum help prevent cancer?",
       "answer_short": "In a large China study Wallach cites, molybdenum had no statistically significant protective effect against cancer deaths, unlike beta carotene, vitamin E, and selenium.",
       "answer": "Wallach recounts a National Cancer Institute study in Henan Province, China, in which molybdenum was one of the nutrients tested against cancer. He reports that vitamin C, retinol, zinc, riboflavin, molybdenum, and niacin had no statistically significant protective effect on cancer deaths after five years. By contrast, the group taking beta carotene, vitamin E, and selenium saw dramatically positive results, including 13 percent fewer deaths from all cancers.",
-      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, ribofla- \nvin, molybdenum and niacin had no statistically significant (protec- \ntive) effect on cancer deaths after five years.”",
+      "verbatim": "The investigators reported that, “vitamin C, retinol, zinc, riboflavin, molybdenum and niacin had no statistically significant (protective) effect on cancer deaths after five years.”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30251,7 +30251,7 @@
       "question": "Why does the body need salt?",
       "answer_short": "Salt is the raw material for stomach acid, which digests food, absorbs minerals, and activates pepsin and B12's intrinsic factor.",
       "answer": "Wallach frames salt as essential because it is the raw material the body needs to manufacture stomach acid. That stomach acid is hydrochloric acid, which he says is necessary to digest food, ensure the absorption of minerals, activate pepsin (the stomach's protein-digesting enzyme) and activate the intrinsic factor required to absorb vitamin B12. In his view, cutting salt undermines this entire digestive chain.",
-      "verbatim": "Salt is the raw material needed to manufacture stomach acid. \nStomach acid is hydrochloric acid that is necessary to digest food, \nensure absorption of minerals, activate pepsin (protein digestive en- \nzyme produced by the stomach) and activate the “intrinsic factor”",
+      "verbatim": "Salt is the raw material needed to manufacture stomach acid. \nStomach acid is hydrochloric acid that is necessary to digest food, \nensure absorption of minerals, activate pepsin (protein digestive enzyme produced by the stomach) and activate the “intrinsic factor”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30271,7 +30271,7 @@
       "question": "What happens if you don't eat enough salt?",
       "answer_short": "Wallach says restricting salt causes heat intolerance, digestive problems like GERD, and low stomach acid that raises disease risk.",
       "answer": "According to Wallach, restricting salt backfires badly. He says low salt intake makes you heat intolerant and, over the long term, produces digestive problems including belching, burping, intestinal gas and GERD (gastroesophageal reflux disease). The resulting hypochlorhydria, or low stomach acid, then raises the risk of nutritional deficiency diseases he lists as obesity, diabetes, high blood pressure, arthritis, osteoporosis, kidney stones, cataracts and fibromyalgia.",
-      "verbatim": "Restricted salt intakes will make you heat intolerant and over the \nlong term will result in digestive problems including belching, burp- \ning, intestinal gas and G.E.R.D. (gastro esophageal reflux disease). \nRestricted salt diets with the resultant hypochlorhydria (low stom- \nach acid) will increase risks of nutritional deficiency diseases includ- \ning obesity (reduced absorption of minerals increases the munchies), \ndiabetes, high blood pressure, arthritis, osteoporosis, kidney stones, \ncataracts, fibromyalgia, etc.",
+      "verbatim": "Restricted salt intakes will make you heat intolerant and over the \nlong term will result in digestive problems including belching, burping, intestinal gas and G.E.R.D. (gastro esophageal reflux disease). \nRestricted salt diets with the resultant hypochlorhydria (low stomach acid) will increase risks of nutritional deficiency diseases including obesity (reduced absorption of minerals increases the munchies), \ndiabetes, high blood pressure, arthritis, osteoporosis, kidney stones, \ncataracts, fibromyalgia, etc.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30314,7 +30314,7 @@
       "question": "Is a low-salt diet actually bad for your heart?",
       "answer_short": "Yes — Wallach cites a 1997 Sodium Task Force report that heavy salt-restrictors had 600% more heart attacks.",
       "answer": "Wallach turns the anti-salt message on its head with evidence that cutting salt harms the heart. He reports that in April 1997 the Sodium Task Force found that people who restricted their salt intake to one gram per day had a 600 percent higher rate of heart attacks than those who consumed more than two grams of salt per day. He uses this finding to argue that aggressive salt restriction is dangerous rather than protective.",
-      "verbatim": "In April 1997, The Sodium Task Force reported that those indi- \nviduals who restricted their salt intake to one gram per day had a \n600 percent higher rate of heart attacks than those who consumed \nmore than two grams of salt per day.",
+      "verbatim": "In April 1997, The Sodium Task Force reported that those individuals who restricted their salt intake to one gram per day had a \n600 percent higher rate of heart attacks than those who consumed \nmore than two grams of salt per day.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30359,7 +30359,7 @@
       "question": "Can mineral deficiency cause binge eating and obesity?",
       "answer_short": "Yes — Wallach says iron and phosphorus deficiencies occurring together trigger an almost psychotic binge-eating and soft-drink rampage that results in morbid obesity.",
       "answer": "In Hell's Kitchen, Wallach argues that a deficiency of two or more essential minerals produces significant pica, cravings and binge eating. He singles out iron and phosphorus deficiencies occurring at the same time as capable of driving an almost psychotic binge-eating and soft-drink consumption rampage that results in morbid obesity. In his framework, obesity is a mineral-deficiency disease, not simply a matter of overeating or too little exercise.",
-      "verbatim": "The deficiency of two or more essential minerals will pro- \nduce a significant level of pica, cravings and binge eating. Iron \nand phosphorus deficiencies occurring at the same time will re- \nsult in an almost psychotic binge eating and soft drink consump- \ntion rampage that results in morbid obesity.",
+      "verbatim": "The deficiency of two or more essential minerals will produce a significant level of pica, cravings and binge eating. Iron \nand phosphorus deficiencies occurring at the same time will result in an almost psychotic binge eating and soft drink consumption rampage that results in morbid obesity.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30380,7 +30380,7 @@
       "question": "Is a low-salt diet actually bad for you?",
       "answer_short": "Wallach says salt deficiency is common and is often caused by doctors wrongly telling patients to cut salt—the profession, he says, thinks humans are dumber than cows.",
       "answer": "Wallach argues that salt (NaCl) deficiency occurs commonly and is oftentimes caused by ignorant and over-zealous doctors who demand their patients reduce or eliminate salt intake. He mocks the advice, saying the medical profession must think humans are dumber than cows, since the first thing a farmer puts in the pasture is a salt block. Livestock, he points out, are given free-choice access to salt and other minerals in uncontrolled, unlimited amounts.",
-      "verbatim": "Salt (NaCl) deficiency occurs commonly, and is oftentimes caused \nby ignorant and over zealous doctors who demand that “their” pa- \ntients reduce or eliminate salt intake. The medical profession must \nthink that humans are dumber than cows! The first thing that a farmer \nor rancher puts in the pasture for their livestock is a salt block (and \nthey have been doing it for tens of thousands of years) - the animals \nhave free choice access to salt and other minerals in uncontrolled \nand unlimited amounts.",
+      "verbatim": "Salt (NaCl) deficiency occurs commonly, and is oftentimes caused \nby ignorant and over zealous doctors who demand that “their” patients reduce or eliminate salt intake. The medical profession must \nthink that humans are dumber than cows! The first thing that a farmer \nor rancher puts in the pasture for their livestock is a salt block (and \nthey have been doing it for tens of thousands of years) - the animals \nhave free choice access to salt and other minerals in uncontrolled \nand unlimited amounts.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30458,7 +30458,7 @@
       "question": "Is cesium an essential mineral?",
       "answer_short": "Yes, Wallach lists cesium among the essential minerals found in high-quality humic shale, holding that it meets the criteria for an essential nutrient even though it isn't 'classically' considered one.",
       "answer": "Wallach counts cesium among the essential minerals found in a high-quality humic shale, the plant-derived colloidal mineral source at the heart of his program. He grants that many of the minerals on that list, cesium included, are not 'classically' regarded as essential, but argues each one meets at least two of the criteria used to declare a nutrient essential. On that reasoning he treats cesium as one of the plant minerals modern diets have lost and should consciously replace, rather than an optional trace element.",
-      "verbatim": "Essential Minerals Found ina \nHigh Quality Humic Shale * \nAluminum Gold Rhenium \nArsenic Hafnium Rubidium \nBarium Holmium Samarium \nBeryllium Hydrogen Scandium \nBoron Iodine Selenium \nBromine Iron Silica \nCalcium Lanthanum Silver \nCarbon Lithium Sodium \nCerium Lutecium Strontium \nCesium Magnesium Sulfur \nChloride Manganese Tantalum \nChromium Molybdenum Terbium \nCobalt Neodymium Thulium \nCopper Nickel Tin \nDysprosium Niobium Titanium \nErbium Nitrgen Vanadium \nEuropium Oxygen Ytterbium \nGadolinium Phosphorus Ytrium \nGallium Potassium Zinc \nGermanium Praseodymium Zirconium \n* Many of the minerals listed are not “classically” considered to be “es- \nsential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
+      "verbatim": "Essential Minerals Found ina \nHigh Quality Humic Shale * \nAluminum Gold Rhenium \nArsenic Hafnium Rubidium \nBarium Holmium Samarium \nBeryllium Hydrogen Scandium \nBoron Iodine Selenium \nBromine Iron Silica \nCalcium Lanthanum Silver \nCarbon Lithium Sodium \nCerium Lutecium Strontium \nCesium Magnesium Sulfur \nChloride Manganese Tantalum \nChromium Molybdenum Terbium \nCobalt Neodymium Thulium \nCopper Nickel Tin \nDysprosium Niobium Titanium \nErbium Nitrgen Vanadium \nEuropium Oxygen Ytterbium \nGadolinium Phosphorus Ytrium \nGallium Potassium Zinc \nGermanium Praseodymium Zirconium \n* Many of the minerals listed are not “classically” considered to be “essential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30478,7 +30478,7 @@
       "question": "Does Wallach say titanium is an essential mineral?",
       "answer_short": "Yes — Wallach lists titanium among the essential minerals in humic shale, holding it meets two or more criteria for an essential nutrient.",
       "answer": "Wallach counts titanium among the essential minerals found in high-quality humic shale — the plant-derived colloidal minerals he argues modern diets have lost. He acknowledges that titanium and many of the minerals on that list are not 'classically' considered essential, but holds that they each meet two or more of the criteria for an essential nutrient. In his framework that places titanium among the trace minerals worth replacing through plant-derived colloidal minerals, not one to dismiss.",
-      "verbatim": "Dysprosium Niobium Titanium \nErbium Nitrgen Vanadium \nEuropium Oxygen Ytterbium \nGadolinium Phosphorus Ytrium \nGallium Potassium Zinc \nGermanium Praseodymium Zirconium \n* Many of the minerals listed are not “classically” considered to be “es- \nsential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
+      "verbatim": "Dysprosium Niobium Titanium \nErbium Nitrgen Vanadium \nEuropium Oxygen Ytterbium \nGadolinium Phosphorus Ytrium \nGallium Potassium Zinc \nGermanium Praseodymium Zirconium \n* Many of the minerals listed are not “classically” considered to be “essential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30498,7 +30498,7 @@
       "question": "Does Wallach consider tantalum an essential mineral?",
       "answer_short": "Yes -- Wallach lists tantalum among the essential minerals found in high-quality humic shale, holding that although such minerals aren't classically considered essential, they each meet two or more criteria for an essential nutrient.",
       "answer": "Wallach places tantalum on his roster of essential minerals found in a high-quality humic shale -- the plant-derived colloidal minerals he champions. He acknowledges that many of the minerals on that list, tantalum among them, are not 'classically' considered essential by conventional nutrition. His position is that they nonetheless qualify, because each meets two or more of the criteria for an essential nutrient. On that basis Wallach treats tantalum as one of the plant-derived trace minerals the body needs.",
-      "verbatim": "* Many of the minerals listed are not “classically” considered to be “es- \nsential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
+      "verbatim": "* Many of the minerals listed are not “classically” considered to be “essential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30517,7 +30517,7 @@
       "question": "Is zirconium an essential nutrient?",
       "answer_short": "Wallach argues that although zirconium isn't 'classically' considered essential, it -- like the other plant-derived humic-shale minerals -- meets two or more of the criteria used to declare a nutrient essential.",
       "answer": "Zirconium doesn't appear on the conventional lists of essential nutrients, and Wallach acknowledges it isn't 'classically' considered one. But he argues that zirconium -- along with the many other minerals and elements found in high-quality humic shale, his plant-derived colloidal mineral source -- meets two or more of the criteria used to declare a substance an essential nutrient. On that basis he includes it among the essential elements the body should be getting.",
-      "verbatim": "Many of the minerals listed are not “classically” considered to be “es- \nsential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
+      "verbatim": "Many of the minerals listed are not “classically” considered to be “essential,” however, they all meet two or more of the criteria for an essential \nnutrient.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30613,7 +30613,7 @@
       "question": "When did Splenda become the most popular sweetener?",
       "answer_short": "Wallach notes that during 2004 Splenda became the number one blended sweetener in the U.S., outselling every other brand of faux and real sugar.",
       "answer": "Wallach notes that during 2004 Splenda became the number one blended sweetener in the United States, selling more than all the other brands of “faux” and real sugar. He adds that sugar substitutes have nonetheless failed to fully replace sugar for baking, because sugar does more than sweeten — it helps a cake rise, gives it volume and texture, caramelizes to produce the golden-brown color of quality baked goods, and provides greater shelf life.",
-      "verbatim": "During 2004, Splenda became the number one blended sweet- \nener in the U.S., selling more than all the other brands of “faux” and \nreal sugar.",
+      "verbatim": "During 2004, Splenda became the number one blended sweetener in the U.S., selling more than all the other brands of “faux” and \nreal sugar.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30667,7 +30667,7 @@
       "question": "How does a microwave oven cook food?",
       "answer_short": "Wallach simply describes the mechanism, without judging microwaves good or bad: the oven bombards food with ultra-short microwaves that make its water molecules vibrate millions of times per second, and the friction produces heat that cooks the food 'from the inside out.'",
       "answer": "Wallach describes how a microwave oven cooks food: it bombards the food with ultra-short microwaves, and when those microwaves strike the food they make the water molecules inside vibrate millions of times per second. That vibration generates friction, and the friction produces the heat that cooks the food \"from the inside out.\" He notes this in the context of the first home microwave ovens going on sale.",
-      "verbatim": "The first home microwave ovens go on sale. The ovens work by \nbombarding food with ultra-short microwaves. When the microwaves \nstrike the food, they cause the water molecules inside to vibrate mil- \nlions of times per second which generates friction, which produces \nheat that cooks the food “from the inside out.”",
+      "verbatim": "The first home microwave ovens go on sale. The ovens work by \nbombarding food with ultra-short microwaves. When the microwaves \nstrike the food, they cause the water molecules inside to vibrate millions of times per second which generates friction, which produces \nheat that cooks the food “from the inside out.”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30705,7 +30705,7 @@
       "question": "What does Dr. Wallach think of the keto or low-carb diet?",
       "answer_short": "Wallach favors low-carb, low-glycemic diets and counts his own See Food Diet -- his low-carb plan built around supplementing all 90 essential nutrients to kill cravings -- among them, but insists mineral intake matters far more than the exact ratio of carbs, fat, and protein, because he blames obesity on mineral deficiency, not carbohydrates.",
       "answer": "Dr. Wallach considers his own 'See Food Diet' the best of the low-carbohydrate, low-glycemic-index diets. What sets it apart from every other low-carb plan, he says, is that it weights mineral intake far more heavily and treats it as more important than parsing the exact percentages of carbohydrates, fats and proteins.",
-      "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and pro- \nteins.",
+      "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and proteins.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30753,7 +30753,7 @@
       "question": "Are low-carb diets dangerous?",
       "answer_short": "Low-carb weight loss can bring pitfalls like heart attacks, kidney stones, osteoporosis and stroke; Wallach says you must guard against mineral deficiencies and the free-radical damage from burning body fat.",
       "answer": "Wallach warns that low-carb weight loss is not automatically safe. To lose weight safely and avoid its common pitfalls — heart attacks, liver damage, high blood pressure, Beriberi, arthritis, osteoporosis, periodontal disease, cancer, sudden death, stroke and kidney stones — a dieter must protect against mineral nutritional deficiencies, which he says drive 'psychotic eating,' and against the free-radical damage generated by burning body fat.",
-      "verbatim": "To lose weight safely and prevent the \ncommon pitfalls of weight loss (i.e. - heart attacks, liver damage, \nhigh blood pressure, Beriberi, arthritis, osteoporosis, periodontal dis- \nease, cancer, sudden death, stroke, kidney stones, etc.), one has to \nprotect themselves from the ravages of mineral nutritional deficien- \ncies that result in psychotic eating and free radical damage generated \nby burning body fat.",
+      "verbatim": "To lose weight safely and prevent the \ncommon pitfalls of weight loss (i.e. - heart attacks, liver damage, \nhigh blood pressure, Beriberi, arthritis, osteoporosis, periodontal disease, cancer, sudden death, stroke, kidney stones, etc.), one has to \nprotect themselves from the ravages of mineral nutritional deficiencies that result in psychotic eating and free radical damage generated \nby burning body fat.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30772,7 +30772,7 @@
       "question": "Do low-carb diets create free radicals?",
       "answer_short": "Yes — Wallach says burning body fat, like burning any fuel, produces free radicals and other harmful byproducts that must be countered with an antioxidant plan.",
       "answer": "Wallach cautions that burning body fat for fuel — the goal of a low-carb diet — is not a danger-free process. Like the combustion of any fuel (wood, coal, oil, gasoline, sugar or fat), it produces wastes, pollution and dangerous byproducts including free radicals, which he says must be neutralized with an aggressive, proactive antioxidant plan.",
-      "verbatim": "The burning of body fat is not a danger free process. The com- \nbustion of all fuels, including wood, coal, oil, gasoline, sugar and fat, \nproduces wastes, pollution and dangerous combustion byproducts \nincluding free radicals.",
+      "verbatim": "The burning of body fat is not a danger free process. The combustion of all fuels, including wood, coal, oil, gasoline, sugar and fat, \nproduces wastes, pollution and dangerous combustion byproducts \nincluding free radicals.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30791,7 +30791,7 @@
       "question": "What is a low-carb diet?",
       "answer_short": "A low-carb diet limits the amount and type of carbohydrates to steady blood sugar and lower glucose and insulin levels, reducing bouts of ravenous hunger.",
       "answer": "In Wallach's shortest description, a low-carb diet is conceived to keep blood sugar levels from having wild fluctuations. Its purpose is to 'steady' blood sugar, which helps reduce episodes of ravenous hunger; the amount and type of carbohydrates are limited to lower the body's glucose and insulin levels and make weight management easier.",
-      "verbatim": "In the shortest possible description and purpose of a low carb \ndiet, one can say that it is conceived to keep blood sugar levels from \nhaving wild fluctuations. The purpose is to “steady” blood sugar lev- \nels, which will help reduce episodes of ravenous hunger.",
+      "verbatim": "In the shortest possible description and purpose of a low carb \ndiet, one can say that it is conceived to keep blood sugar levels from \nhaving wild fluctuations. The purpose is to “steady” blood sugar levels, which will help reduce episodes of ravenous hunger.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30843,7 +30843,7 @@
       "question": "Who invented the dialysis machine?",
       "answer_short": "Wallach credits Dr. Willem Kolff, a Dutch physician, with developing the \"artificial kidney\" or dialysis machine, first employed in the United States, which cleanses metabolic wastes from the blood through a cellulose membrane.",
       "answer": "Dr. Joel Wallach recounts that the dialysis machine — the \"artificial kidney\" — was developed by Dr. Willem Kolff, a Dutch physician, and was first employed in the United States. He describes how it works: blood from a patient's artery is diverted into the machine, which looks like a large rotating cylinder or drum. The blood enters a cellulose membrane wrapped around the drum, and as the drum rotates the cellulose is submerged in a saline solution. The membrane allows metabolic wastes to pass out of the blood while the blood cells are too large to pass through, and the cleansed blood is then pumped back into the patient.",
-      "verbatim": "Dr. Willem Kolff, a Dutch physician, developed an “artificial kid- \nney” or dialysis machine, which was first employed in the United \nStates. Blood from a patient's artery is diverted into the dialysis ma- \nchine, which looks like a large rotating cylinder or drum. The blood \nenters a cellulose membrane, which is wrapped around the drum. As \nthe drum rotates, the cellulose in submerged in a saline solution. The \nmembrane allows metabolic wastes to pass out of the blood. The \nblood cells are too large to pass through the membrane. The cleansed \nblood is then pumped back into the patient.",
+      "verbatim": "Dr. Willem Kolff, a Dutch physician, developed an “artificial kidney” or dialysis machine, which was first employed in the United \nStates. Blood from a patient's artery is diverted into the dialysis machine, which looks like a large rotating cylinder or drum. The blood \nenters a cellulose membrane, which is wrapped around the drum. As \nthe drum rotates, the cellulose in submerged in a saline solution. The \nmembrane allows metabolic wastes to pass out of the blood. The \nblood cells are too large to pass through the membrane. The cleansed \nblood is then pumped back into the patient.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30861,7 +30861,7 @@
       "question": "What is dialysis?",
       "answer_short": "Wallach defines dialysis as a separation process in which inorganic colloids are too large to cross a semi-permeable membrane while dissolved salt, starch and sugar pass through as individual atoms or small molecules.",
       "answer": "Dr. Joel Wallach defines dialysis as a separation process: inorganic colloidal material that readily passes through filter paper can be separated from dissolved substances such as starch, sugar or salt by placing the mixture in a parchment shell surrounded by distilled water. The inorganic colloids are \"too large\" to pass through the semi-permeable membrane, while the molecules of salt, starch and sugar (which separate into individual atoms or very small molecules) pass readily through it. Wallach invokes this principle to explain mineral absorption: during digestion, minerals from food or supplements become inorganic colloids too large to cross the intestinal wall, and only a small percentage — chelated by amino acids into organic \"crystalloids\" — can be dialyzed through the intestinal membrane into the bloodstream.",
-      "verbatim": "Inorganic colloidal material which readily passes through filter \npaper may be separated from dissolved substances, such as starch, \nsugar or salt, by placing the mixture of mineral colloid and non- \ncolloid in a parchment shell surrounded by distilled water. The inor- \nganic colloids are “too large” to pass through the membrane, but the \nmolecules of salt, starch and sugar or any other dissolved substance \npass readily through the semi-permeable membrane (they separate \ninto individual atoms or very small molecules). This kind of separa- \ntion process is called dialysis.",
+      "verbatim": "Inorganic colloidal material which readily passes through filter \npaper may be separated from dissolved substances, such as starch, \nsugar or salt, by placing the mixture of mineral colloid and non-colloid in a parchment shell surrounded by distilled water. The inorganic colloids are “too large” to pass through the membrane, but the \nmolecules of salt, starch and sugar or any other dissolved substance \npass readily through the semi-permeable membrane (they separate \ninto individual atoms or very small molecules). This kind of separation process is called dialysis.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30879,7 +30879,7 @@
       "question": "Is noni an antioxidant?",
       "answer_short": "Yes, Wallach lists noni among the fruits that contain antioxidants in substantial quantities.",
       "answer": "Dr. Wallach lists noni among the fruits that contain antioxidants in substantial quantities, alongside blueberries, cherries, kiwis, pink grapefruit, oranges, plums, prunes, raisins, raspberries, red grapes, strawberries, boysenberries, pomegranate and mangosteen. He believes antioxidants will be added to the list of essential nutrients, because without them the body cannot protect itself from dietary and environmental free radicals or attain maximum life spans. He stresses this especially for people burning body fat, since burned fat produces free-radical waste products (trans fats, oxidized fats and ceroid lipofuscin).",
-      "verbatim": "An- \ntioxidants are found in substantial quantities in: \nFruit - blueberries, cherries, kiwis, pink grapefruit, oranges, plums, \nprunes, raisins, raspberries, red grapes, strawberries, boysenberries, \npomegranate, noni and mangostein.",
+      "verbatim": "Antioxidants are found in substantial quantities in: \nFruit - blueberries, cherries, kiwis, pink grapefruit, oranges, plums, \nprunes, raisins, raspberries, red grapes, strawberries, boysenberries, \npomegranate, noni and mangostein.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30900,7 +30900,7 @@
       "question": "How does the keto or low-carb diet work?",
       "answer_short": "Carbohydrates are cut to about twenty grams a day, with unlimited meat and fat, to lower glucose and insulin and push the body into ketosis so it burns fat for energy instead of carbohydrates.",
       "answer": "A low-carbohydrate (keto) diet limits both the total amount and the type of carbohydrate to lower the body's glucose and insulin levels and make weight loss and weight management easier. In its initial phase the dieter can eat unlimited meat and fat but must keep carbohydrates to twenty grams or less per day, about one slice of bread, and for the first fourteen days eats no fruit, bread, pasta, grains, milk or even ketchup. Its stated purpose, as Wallach describes it, is 'to create a state of ketosis, encouraging your body to burn fat for energy rather than carbohydrates.'",
-      "verbatim": "3. Low Carb - The total amount and the type of carbohydrates \nare limited to reduce the body’ glucose and insulin levels in an effort \nto make weight loss and weight management easier. \nIn the diet’s initial phase, one can eat unlimited meat and fat, \nhowever, carbohydrates must be limited to twenty grams of carbo- \nhydrates or less per day (approximately one slice of bread). \nFor the first fourteen days, the dieter consumes no fruit, bread, \npasta, grains, milk or even ketchup. The stated purpose of the low \ncarb diet, “is to create a state of ketosis, encouraging your body to \nburn fat for energy rather than carbohydrates.”",
+      "verbatim": "3. Low Carb - The total amount and the type of carbohydrates \nare limited to reduce the body’ glucose and insulin levels in an effort \nto make weight loss and weight management easier. \nIn the diet’s initial phase, one can eat unlimited meat and fat, \nhowever, carbohydrates must be limited to twenty grams of carbohydrates or less per day (approximately one slice of bread). \nFor the first fourteen days, the dieter consumes no fruit, bread, \npasta, grains, milk or even ketchup. The stated purpose of the low \ncarb diet, “is to create a state of ketosis, encouraging your body to \nburn fat for energy rather than carbohydrates.”",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -30925,7 +30925,7 @@
       "question": "Is the keto or low-carb diet dangerous?",
       "answer_short": "An unsupplemented high-protein low-carb diet forgets the minerals and can increase the risk of kidney stones, which is why Wallach insists on mineral supplementation alongside it.",
       "answer": "Wallach warns that popular low-carb, high-protein weight-loss diets have forgotten the minerals: an unsupplemented high-protein diet can increase the risk of kidney stones. This is a central reason his own low-carb approach weights mineral supplementation more heavily than the carbohydrate, fat and protein percentages that other low-carb diets fixate on.",
-      "verbatim": "They certainly have forgot- \nten the minerals and an unsupplemented high protein diet can in- \ncrease the risk of kidney stones.",
+      "verbatim": "They certainly have forgotten the minerals and an unsupplemented high protein diet can increase the risk of kidney stones.",
       "page": null,
       "book_id": "hells-kitchen",
       "topics": [
@@ -41265,7 +41265,7 @@
       "question": "What is praseodymium?",
       "answer_short": "Praseodymium is a soft, silvery-white 'light' rare earth metal that tarnishes to a green oxide, one of the rare-earth minerals Wallach counts among the essential nutrients.",
       "answer": "In Wallach's framework praseodymium is one of the 'light' rare earth elements — a soft, silvery-white metal that tarnishes to form a green oxide. He notes it was not produced in its pure elemental form until 1931. Wallach counts it among the plant-derived rare-earth minerals he holds the human body needs.",
-      "verbatim": "Praseodymium\nwas not produced in its pure elemental state until 1931. Itisa\nsoft, silvery-white metal that tarnishes to form a green oxide.",
+      "verbatim": "Praseodymium\nwas not produced in its pure elemental state until 1931. It is a\nsoft, silvery-white metal that tarnishes to form a green oxide.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -51211,7 +51211,7 @@
       "question": "How do you treat gout naturally?",
       "answer_short": "Wallach's gout treatment is avoiding alcohol, organ meats, seafood, lentils, beans, peas and fructose, plus folic acid at 10-75 mg a day, cherries and cherry juice, and herbs like gout weed and saffron; orthodox doctors instead use colchicine and prednisone.",
       "answer": "Gout (gouty arthritis) is caused by deposits of uric-acid crystals in the joints and surrounding tissues — classically the great toe of each foot — and chronic untreated cases can develop kidney disease and uric-acid kidney stones; elevated blood uric acid (above 7 milligrams per 100 milliliters of serum) with sudden tender joints is a red flag. Wallach's treatment should include avoiding alcohol, organ meats, seafood, lentils, beans, peas, and fructose sources; folic acid at 10-75 milligrams a day; cherries and cherry juice; and herbs including gout weed (Aegopodium podagraria) and saffron/autumn crocus (Colchicum autumnale). He notes orthodox doctors use colchicine almost exclusively, adding prednisone for inflammation.",
-      "verbatim": "Treatment for gout should include an avoidance of alcohol, organ meats, sea food, lentils,\nbeans, peas and fmctose sources, folic acid at\n10-75 mg/day,chemes and cherry juice, herbs\nincluding gout weed (Aegopodium\npodagraria) and saffron (Colchicium\nautumnale). The \"orthodox\" doctors use colchicine almost exclusively as the treatment of\nchoice, but add prednisone for inflammation",
+      "verbatim": "Treatment for gout should include an avoidance of alcohol, organ meats, sea food, lentils,\nbeans, peas and fructose sources, folic acid at\n10-75 mg/day,cherries and cherry juice, herbs\nincluding gout weed (Aegopodium\npodagraria) and saffron (Colchicium\nautumnale). The \"orthodox\" doctors use colchicine almost exclusively as the treatment of\nchoice, but add prednisone for inflammation",
       "page": null,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -52924,7 +52924,7 @@
       "question": "How do you treat lead poisoning naturally?",
       "answer_short": "Wallach treats lead poisoning with vitamin C, EDTA or D-penicillamine chelation, and the baseline supplement with colloidal minerals to replace minerals lost during chelation, noting selenium is of particular value.",
       "answer": "Lead poisoning (plumbism) can cause a wide variety of symptoms — learning disabilities, kidney disease, stunted bone growth, headaches, and gastrointestinal disease; often the lead is eaten because of 'pica', a compulsive eating of unusual things driven by mineral deficiencies. Sources include paint chips, window caulking, pottery glaze, lead-arsenate garden sprays, leaded-fuel pollution, smoke from burning batteries, and lead-insulated wire; diagnose via hair analysis (chronic cases) or blood (sudden, acute cases). Treatment: vitamin C to bowel tolerance; chelation with calcium EDTA at 10-25 infusions and/or oral D-penicillamine; and the baseline supplement program with plant-derived colloidal minerals, because chelation depletes the body's mineral stores (selenium is of particular value).",
-      "verbatim": "Treatment of lead poisoning includes vitamin\nC to bowel tolerance.chelation with calcium\nEDTA at 10-25 infusions and/or oral D-penicillamine. Don't forget the base line nutritional supplement program containing plant\nderived colloidal minerals because the chelation process will tend to deplete body stores of\nminerals ( selenium is of particular value",
+      "verbatim": "Treatment of lead poisoning includes vitamin\nC to bowel tolerance,chelation with calcium\nEDTA at 10-25 infusions and/or oral D-penicillamine. Don't forget the base line nutritional supplement program containing plant\nderived colloidal minerals because the chelation process will tend to deplete body stores of\nminerals ( selenium is of particular value",
       "page": null,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -53213,7 +53213,7 @@
       "question": "How do you prevent and treat tetanus (lockjaw)?",
       "answer_short": "Wallach stresses prevention — make a puncture wound bleed, clean with soap and water, disinfect with 3% hydrogen peroxide, and take cramp bark tea — and says once lockjaw develops it needs tetanus antitoxin, wound cleaning, IV penicillin or tetracycline, sedation, and IV fluids.",
       "answer": "For lockjaw (tetanus) — caused by the toxin of Clostridium tetani, a normal inhabitant of animal manure that enters through puncture wounds and paralyzes the voluntary muscles including the jaw (masseter) muscles — Wallach stresses prevention as the best option: make the puncture wound bleed by squeezing it, open small foot or hand punctures to clean with soap and water, then disinfect with 3% hydrogen peroxide, and take cramp bark tea (Viburnum opulus) in tablespoon doses as needed; he says these minimal steps prevent lockjaw almost 100% of the time. Once it develops, treatment requires tetanus-neutralizing (non-fixed) antitoxin, cleaning and disinfecting the infected wound with hydrogen peroxide, penicillin at two million units intravenously every 6 hours OR tetracycline at 500 milligrams intravenously every 6 hours, sedation to control muscle spasms, and intravenous fluids and electrolytes until the patient can eat and drink on their own.",
-      "verbatim": "Treatment of lockjaw after it develops requires the use of tetanus-neutralizing (non-fixed) antitoxin, clean infected wound, disinfect\nwound with hydrogen peroxide, penicillin at\ntwo million u IV q 6 h or tetracycline at 500 mg\nrv q6 h, sedation to control muscle spasms, IV\nfluids and electrolytes until the patient can eat\nand drink on their own",
+      "verbatim": "Treatment of lockjaw after it develops requires the use of tetanus-neutralizing (non-fixed) antitoxin, clean infected wound, disinfect\nwound with hydrogen peroxide, penicillin at\ntwo million u IV q 6 h or tetracycline at 500 mg\nIV q6 h, sedation to control muscle spasms, IV\nfluids and electrolytes until the patient can eat\nand drink on their own",
       "page": 145,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -55771,7 +55771,7 @@
       "question": "How do you treat dandruff and seborrheic dermatitis naturally?",
       "answer_short": "Wallach's treatment for seborrheic dermatitis (dandruff) includes biotin, folic acid, vitamin B-6, vitamin E, essential fatty acids, vitamin A as beta carotene, zinc, and topical Selsun Blue shampoo, noting celiac-type malabsorption can underlie it.",
       "answer": "Seborrheic dermatitis (dandruff) is a scaling dermatitis of the scalp and face with normal sebum composition and amount; celiac-type intestinal lesions can be the underlying cause of a malabsorption syndrome. Treatment should include biotin at 100 mcg three times a day, folic acid at 15-25 mg per day, B-6 at 100 mg three times a day, vitamin E at 800-1,200 IU per day, essential fatty acids at 5 grams three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times a day, and Selsun Blue shampoo topically.",
-      "verbatim": "SEBORRHEIC DERMATIS (dandruff): is a\nscaling dermatitis of the scalp and face; the\ncomposition and amount of sebum are normal. Celiac disease type intestinal lesions can\nbe the cause of a malabsorption syndrome.\nTreatment of seborrheic dermatitis should include biotin at 100 mcgt.i.d.,folicacidat 15-25\nmg per day, B-6 at 100 mg t.i.d., vitamin E at\n800-1,200 mg IU per day, essential fatty acids\nat 5 gm t.i.d., vitamin A at 300,000 IU per day\nas beta carotene, zinc at 50 mg t.i.d. and Selson\nBlue shampoo topically",
+      "verbatim": "SEBORRHEIC DERMATIS (dandruff): is a\nscaling dermatitis of the scalp and face; the\ncomposition and amount of sebum are normal. Celiac disease type intestinal lesions can\nbe the cause of a malabsorption syndrome.\nTreatment of seborrheic dermatitis should include biotin at 100 mcg t.i.d., folic acid at 15-25\nmg per day, B-6 at 100 mg t.i.d., vitamin E at\n800-1,200 mg IU per day, essential fatty acids\nat 5 gm t.i.d., vitamin A at 300,000 IU per day\nas beta carotene, zinc at 50 mg t.i.d. and Selson\nBlue shampoo topically",
       "page": 168,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -56394,7 +56394,7 @@
       "question": "How do you treat tonsillitis?",
       "answer_short": "Wallach treats tonsillitis with hydrogen peroxide mouthwash and gargle, vitamin C, vitamin A, zinc, selenium, and herbs like marshmallow, chamomile, and sage.",
       "answer": "Tonsillitis is an inflamed sore throat caused by viruses or Streptococcus organisms. Treatment should include hydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance, vitamin A at 25,000-300,000 IU per day as beta carotene, zinc at 50 mg three times a day, selenium at 25-1,000 mcg per day, and herbs including green hellebore (Veratrum viride), marshmallow (Althaea officinalis), flaxseed (Linum usitatissimum), German chamomile (Matricaria chamomilla), marjoram (Origanum vulgare), and garden sage (Salvia officinalis).",
-      "verbatim": "Treatment of tonsillitis should include hydrogen peroxide mouthwash and gargle, vitamin\nC to bowel tolerance, vitamin A at 25,000-\n300,000 IU per day as beta carotene, zinc at 50\nmg t.i.d., selenium at 25-1,000 mcg per day,\nherbs to include green hellebore (Verataim\nviride), marshmallow (Althaea\nofficinalis), flaxseed (Linum usitatissimum),\nGerman chamomile (Matricaria chamomilla),\nmarjoram (Origanum vulgare) garden sage\n(Salvia officinalis",
+      "verbatim": "Treatment of tonsillitis should include hydrogen peroxide mouthwash and gargle, vitamin\nC to bowel tolerance, vitamin A at 25,000-\n300,000 IU per day as beta carotene, zinc at 50\nmg t.i.d., selenium at 25-1,000 mcg per day,\nherbs to include green hellebore (Veratrum\nviride), marshmallow (Althaea\nofficinalis), flaxseed (Linum usitatissimum),\nGerman chamomile (Matricaria chamomilla),\nmarjoram (Origanum vulgare) garden sage\n(Salvia officinalis",
       "page": 172,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -67130,7 +67130,7 @@
       "question": "What's the best way to get beta carotene naturally?",
       "answer_short": "Wallach says juicing is one of the greatest ways he knows to get fresh, natural beta carotene, though it can't supply the full spectrum of essential minerals.",
       "answer": "Wallach points to juicing as one of the best ways to obtain fresh, natural sources of beta carotene, along with vitamin C, folic acid, and some of the B-complex vitamins. He cautions, however, that juicing alone will not deliver a warrantied spectrum of all 60 essential minerals or sufficient amounts of each.",
-      "verbatim": "of beta carotene, vitamin C, folic acid and\nsome of the B-complex vitamins (not B,,)i\nhowever, juicing will not provide a\nwarrantied spectrum of all 60 essential\nminerals or sufficient amounts of each\nmineral.",
+      "verbatim": "of beta carotene, vitamin C, folic acid and\nsome of the B-complex vitamins (not B12),\nhowever, juicing will not provide a\nwarrantied spectrum of all 60 essential\nminerals or sufficient amounts of each\nmineral.",
       "page": null,
       "book_id": "rare-earths",
       "topics": [
@@ -67388,7 +67388,7 @@
       "question": "How much copper does the body need each day?",
       "answer_short": "A well-nourished adult body holds 80-120 mg of copper; the daily need is 0.08 mg/kg for newborns, 0.04 for toddlers and 0.03 for adults.",
       "answer": "Wallach states that the average well-nourished adult body contains between 80 and 120 mg of copper, with higher concentrations in the brain, liver, heart and kidneys, while bone and muscle hold half of the body's total copper reserves because of their mass. The greatest concentration of copper is found in newborns, whose daily requirement is 0.08 mg/kg. Toddlers require 0.04 mg/kg and adults only 0.03 mg/kg.",
-      "verbatim": "The average well-nourished adult human body contains between 80 and 120 mg\nof copper. Concentrations are higher in the\n\nbrain, liver, heart and kidneys. Bone and\nmuscle have lower percentages of copper\nbut contain 50 percent of the body total\ncopper reserves because of their mass. It is\nof interest that the greatest concentration\nof copper is found in the newborm and their\ndaily requirement is 0.08 mg/kg, toddlers\nrequire 0.04 mg/kg and adults only 0.03 mg/\nkg.",
+      "verbatim": "The average well-nourished adult human body contains between 80 and 120 mg\nof copper. Concentrations are higher in the\n\nbrain, liver, heart and kidneys. Bone and\nmuscle have lower percentages of copper\nbut contain 50 percent of the body total\ncopper reserves because of their mass. It is\nof interest that the greatest concentration\nof copper is found in the newborn and their\ndaily requirement is 0.08 mg/kg, toddlers\nrequire 0.04 mg/kg and adults only 0.03 mg/\nkg.",
       "page": null,
       "book_id": "rare-earths",
       "topics": [
@@ -67955,7 +67955,7 @@
       "question": "Does sodium chloride control water balance in the body?",
       "answer_short": "Wallach describes sodium chloride (the cell salt Natrum Mur) as regulating cellular moisture by attracting and distributing water.",
       "answer": "Wallach presents sodium chloride — known in cell-salt terms as Natrum Mur, the chloride of soda — as a constituent of every liquid and solid part of the body. He says it regulates the moisture inside cells by attracting and distributing water, and since the body is about 70% water, that water would be inert and useless without it. A deficiency, in this account, throws off the body's water balance, leaving a watery, bloated appearance.",
-      "verbatim": "Natrum Mur (Chloride of soda or Sodium chloride) - this tissue salt is a constituant of every liquid and solid part of the body. It\ntegulates the degree of moisture within the cells by virtue of its property of attracting and distributing water. The human body is\ncomposed of about 70 % of water, which in the absence of Natrum Nur, would be inert and useless. Any deficiency of this tissue salt\nCauses an imbalance of water in the human organism. The patient then shows a watery, bloated appearance; is languid, drowsy and\ninclined to watery exudations; and sometimes there is the opposite condition of excessive dryness.",
+      "verbatim": "Natrum Mur (Chloride of soda or Sodium chloride) - this tissue salt is a constituant of every liquid and solid part of the body. It\nregulates the degree of moisture within the cells by virtue of its property of attracting and distributing water. The human body is\ncomposed of about 70 % of water, which in the absence of Natrum Nur, would be inert and useless. Any deficiency of this tissue salt\ncauses an imbalance of water in the human organism. The patient then shows a watery, bloated appearance; is languid, drowsy and\ninclined to watery exudations; and sometimes there is the opposite condition of excessive dryness.",
       "page": null,
       "book_id": "rare-earths",
       "topics": [

@@ -3974,7 +3974,17 @@ _JARGON_SKIP = {
 # A word wrap never crosses a BLANK line: "anti-\n\nNext paragraph" is a paragraph break, not a
 # split word. The first cut used \s* and over-fired on exactly that -- caught by this gate's own
 # negative-test sparing case (R9: tighten, never loosen). Horizontal whitespace only.
-_FF_MID_WORD_HYPHEN = re.compile(r"[A-Za-z]{2,}-\n[ \t]*[A-Za-z]{2,}")
+#
+# TIGHTENED 2026-08-02 (R9 again, same direction). The pattern allowed horizontal space AFTER
+# the newline but required the hyphen to ABUT it. Hell's Kitchen wraps with a space BEFORE the
+# newline, and it is the ONLY book that does (measured: hk.txt 1650 loose / 0 tight; every other
+# book the exact reverse). So this gate read 0 for that book and it was recorded as "0 hyphen
+# defects found; treat as clean". It was clean to a BLIND DETECTOR: 76 front-facing splits sat
+# inside it unseen (me-/dium, carcino-/gens, ribofla-/vin). Allowing the horizontal-space class on
+# BOTH sides keeps the blank-line exclusion intact -- a second newline still breaks the match, so
+# the original over-fire cannot return -- and catches exactly those 76, adding no new hit in any
+# of the other six books.
+_FF_MID_WORD_HYPHEN = re.compile(r"[A-Za-z]{2,}-[ \t]*\n[ \t]*[A-Za-z]{2,}")
 _FF_MOJIBAKE = re.compile(r"[\uFFFD\u0000-\u0008\u000B\u000C\u000E-\u001F]")
 
 # Five further classes, promoted 2026-08-02 after every residual hit was read off its page image.
