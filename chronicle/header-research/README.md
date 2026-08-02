@@ -50,16 +50,16 @@ concept, not individual headers).
 | 16 | Manganese | 20 | ✅ done |
 | 17 | Omega-6 | 19 | ✅ done |
 | 18 | Flavonoids | 17 | ✅ done |
-| 19 | Sodium | 14 | pending |
-| 20 | Choline | 14 | pending |
-| 21 | Phosphorus | 13 | pending |
-| 22 | Boron | 12 | pending |
-| 23 | Vitamin B2 | 12 | pending |
-| 24 | Sulfur | 10 | pending |
+| 19 | Sodium | 14 | ✅ done |
+| 20 | Choline | 14 | ✅ done |
+| 21 | Phosphorus | 13 | ✅ done |
+| 22 | Boron | 12 | ✅ done |
+| 23 | Vitamin B2 | 12 | ✅ done |
+| 24 | Sulfur | 10 | ✅ done |
 | 25 | Vitamin B5 | 10 | pending |
 | 26 | Vitamin K | 10 | pending |
 | 27 | Silver | 10 | pending |
 | 28 | Cobalt (mirrors B12) | 13 | pending |
 | 29 | Oxygen | 10 | pending |
 
-**18 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
+**24 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
