@@ -1,8 +1,21 @@
 # Front-Facing Quote OCR Remediation — BLUEPRINT
 
-_Created 2026-08-02. Owner: Luneth. This is the authoritative, self-contained plan for the
-next session(s). Do NOT start executing without reading this in full. The mandate is narrow and
-exact — read the SCOPE line before anything._
+_Created 2026-08-02. Owner: Luneth. The MANDATE (§0) and the METHOD (§3–§4) still stand. The
+counts, the tool paths and the gate scope below were written before the corroboration + vision
+campaign of 2026-08-02 and have been corrected in place; where a section is superseded it says so._
+
+> ★ **CURRENT STATE LIVES ELSEWHERE — read these two first.**
+> - `chronicle/next-chunk.md` — the live handoff: measured board, backlog, priorities, traps.
+> - `tools/frontface/README.md` — the toolkit, what each instrument proves, and what it does not.
+>
+> ★ **THE RESULT THAT CHANGED THE PLAN:** a SECOND independent OCR of every page now exists (PDF
+> text layer for three books, vendored Tesseract for the two capture books). It narrows the work
+> enormously — but **agreement between the two passes is NOT verification**. Measured: of 30 claims
+> where both passes agreed, page-read end to end, **7 still carried a defect**. So corroboration
+> RANKS the reading; it never retires a claim.
+>
+> ★ **Backlog: 1,838 at freeze → 1,900 (re-counted) → 1,716 today.** Every "1,838" below is the
+> original scope figure, not the work remaining.
 
 ---
 
@@ -92,9 +105,19 @@ The verbatim is a byte-exact substring of the `.txt`; to fix a displayed quote w
 ## 5 · THE LOCK — how it stays fixed FOR GOOD (§00.B: codify, don't promise)
 **★ BOTH GATES LANDED 2026-08-02.** Status below is measured, not planned.
 
-- **`frontface_verbatims_clean` (critical, LIVE).** **ALL SEVEN mechanical classes gated** —
+- **`frontface_verbatims_clean` (critical, LIVE).** **ALL EIGHT mechanical classes gated** —
   hyphen split · mojibake/control · space-before-punct · number split · run-together · double
-  space · digit-in-word. Two shipped first (they reached zero immediately); the other five were
+  space · digit-in-word · **subscript damage** (added 2026-08-02 after 36 destroyed vitamin
+  subscripts were page-read and recovered: `Vitamin B,,` for B12, `LDso` for LD50). The hyphen
+  detector was also TIGHTENED that day (R9): it had required the hyphen to ABUT the newline, so
+  Hell's Kitchen's entire wrap style (`accom- 
+panied`, a space first) was invisible and the
+  book had been recorded "0 hyphen defects found; treat as clean" — it was clean to a BLIND
+  DETECTOR, with 76 front-facing splits inside it. Negative test 31 → 45 cases. TWO sibling
+  shapes remain UNSEEN and were deliberately left unpatched pending measurement: a hyphen-LESS
+  split (`en
+hanced`, where the OCR dropped the hyphen too) and a page-number injection
+  (`autoim- 132 mune`). Two shipped first (they reached zero immediately); the other five were
   held as labelled WISHes and **promoted the same day (2026-08-02)** once every residual hit had
   been read off its page image. The exclusions encode that verification (ordinals, decades,
   vitamin designations, unit/formula adjacency, table leader dots).
@@ -157,6 +180,11 @@ term-gloss lexicon (`eden/tools/term-gloss-lexicon.json` + the gloss gates); own
 ## 9 · ASSETS & TOOLS (exact)
 - Target list: `chronicle/frontface-ocr/worklist.json` (1,838 entries).
 - Page images: the two `Screenshot (N).png` dirs (epig/immort) + the two PDFs (lets/rare-earths) — §2 table.
+- ★ **THE TOOLKIT IS `tools/frontface/` (committed).** It replaces the scratchpad scripts and the
+  incomplete `temporary/frontface-ocr-tools/` (whose `render_page.py` knows only two of the three
+  PDF books). It carries the corroboration instruments, the self-scan detectors, the renderers,
+  the Tesseract harness, and `ocr-cache/` — 719 pre-computed page reads, ~50 min to regenerate.
+  Read its README before running anything.
 - Scanners: `eden/tools/book_purity.py` (`json --book <b>` / `report`), `anomaly_scan.py`.
 - Fix/seal: `book_purify_apply.py`, `corpus_resnap.py`, `corpus_seal.py` (USER-ONLY), `build_embeds.py`,
   `tools/build.mjs`. Write everything through `tools/safe_write.py` (§17).
@@ -165,7 +193,9 @@ term-gloss lexicon (`eden/tools/term-gloss-lexicon.json` + the gloss gates); own
   editing-sealed-corpus-claims · correct-everything-uniformly · refinalize-inflates-ids.
 
 ## 10 · DEFINITION OF DONE
-1. All 1,838 front-facing quotes vision-verified (or explicitly `UNVERIFIABLE` + surfaced to Luneth).
+1. All front-facing quotes vision-verified (or explicitly `UNVERIFIABLE` + surfaced to Luneth).
+   Progress is the ledger, not this document: `chronicle/frontface-ocr/verified.json` holds
+   `claims_verified` (209) against `grandfathered` (1,716). Corroboration alone does NOT count.
 2. Every located defect corrected in source, resnapped, sealed, rebuilt; board green.
 3. Both §5 gates live + negative-tested; all 4 books on `verified.json`.
 4. Luneth has visually signed off on a sample of the now-clean quotes.

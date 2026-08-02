@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>frontface OCR host</title>
+</head>
+<body>
+<!-- A file:// origin page. ocr_shots.js loads Tesseract into it and reads the vendored worker,
+     wasm core and lang-data over file://, which Chrome only allows from a file:// origin with
+     --allow-file-access-from-files. setContent/about:blank will NOT work. -->
+<p>frontface OCR host</p>
+</body>
+</html>

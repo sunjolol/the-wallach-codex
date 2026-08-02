@@ -6,6 +6,17 @@ two rounds; 11 named exceptions carry the verification. The finding below still 
 reason the gate's own message says what it covers rather than claiming the corpus is clean._
 
 ## ★ The finding: the five classes sit on a class I could not measure
+
+> ★ **PARTIALLY MEASURED 2026-08-02 (later that day).** The claim below that the dropped-space
+> class is of UNKNOWN size still holds for the corpus at large, but it is no longer unmeasured in
+> the front-facing set. Two instruments found real instances of it: the wave-1 control sample
+> (`LETS-000430` `mcgt.i.d.,folicacidat`) and the wave-3 non-word sweep (`ofceliac`, `ofjoint`,
+> `ofdiarrhea`, `yourbones`, `Itisa`, `3- 1-4.5`). All were fixed. The letter-letter cases remain
+> invisible to every DETECTOR — they were caught by reading, not by scanning — so no gate covers
+> the class and none is claimed. **A companion finding:** the same book prints `ofdiarrhea` run
+> together in one place and `of diarrhea` with a space 400 characters away, so this class cannot
+> be batch-fixed on a match; each occurrence is its own page read.
+
 `LETS-000415` reads `magnesium at2,000 mg` in our text. The page image shows **`magnesium at 2,000
 mg`** — with a space. So does `zinc at 5-15 mg b.i.d.` (we had `zincat5-15mgb.i.d.`) and `fatty acids
 at 5 gm t.i.d.` (we had `5gmt.i.d.`). Let's Play Doctor is **tightly justified**, the typesetter
