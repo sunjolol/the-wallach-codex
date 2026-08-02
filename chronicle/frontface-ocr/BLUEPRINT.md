@@ -81,18 +81,35 @@ The verbatim is a byte-exact substring of the `.txt`; to fix a displayed quote w
    needs re-derived" protects: after a seal, the embeds ARE stale until build_embeds runs.)
 
 ## 5 · THE LOCK — how it stays fixed FOR GOOD (§00.B: codify, don't promise)
-Two gates, both new, both required before this campaign is "done":
-- **`frontface_verbatims_clean` (new invariant).** Scans every DISPLAYED verbatim for the MECHANICAL
-  defect classes (`-\n` mid-word splits, run-togethers, `�`/control/mojibake chars, `digit_in_word`,
-  space-before-punct) and REDs on any. This can't see the invisible class — but it permanently blocks the
-  hyphen/spacing/mojibake regressions, which are the bulk. Ship with a negative test.
-- **`enriched_book_is_verified` (new invariant — the ROOT-CAUSE gate).** A claim may not carry a
-  search-enrichment entry (or a header quote ref) unless its book is on the `frontface-verified` ledger
-  OR the claim id is individually listed as verified. **This makes the original failure impossible:** you
-  cannot front-face a quote from an unverified book again. Maintain the ledger in
-  `chronicle/frontface-ocr/verified.json`.
-The invisible class is caught ONCE by the §3 vision pass; it stays fixed because **verbatims only ever
-change via resnap-from-corrected-source**, and any new front-facing claim must pass `enriched_book_is_verified`.
+**★ BOTH GATES LANDED 2026-08-02.** Status below is measured, not planned.
+
+- **`frontface_verbatims_clean` (critical, LIVE).** No sealed front-facing verbatim carries a
+  mid-word line-break hyphen or a mojibake/control character. **SCOPE, measured:** TWO detector
+  classes, because two are all that reach ZERO on legitimate content. Five more were built,
+  calibrated against all 2,268 verbatims and REJECTED rather than shipped red — `digit_in_word`
+  (44 hits, 33 of them ordinals/decades like "20th"/"1990s"; tightening still left 11),
+  `number_split` (7, mostly table columns "100 94"), `space_before_punct` (5, two of them table
+  leader dots), `run_together` (5, incl. "acCoy" = McCoy), `double_space` (2, column alignment).
+  Each needs a vision pass to separate defect from typesetting, so each is a labelled WISH (R7).
+  Named exceptions live in `eden/tools/frontface-exceptions.json` and must each carry a checkable
+  reason; a reason-less carve-out is itself RED. Currently 1 (LETS-000512, the table artefact).
+  Negative test: `tools/test_frontface_verbatims_clean.py` (16 cases).
+- **`enriched_book_is_verified` (critical, LIVE) — the ROOT-CAUSE gate.** A claim may not carry a
+  search-enrichment entry unless its book is in `books_verified`, its id is in `claims_verified`, or
+  its id is in the frozen grandfathered backlog. **This makes the original failure impossible:** you
+  cannot newly front-face a quote from an unverified book. Ledger:
+  `chronicle/frontface-ocr/verified.json` — 2 verified books (`dddl-3e-2011`, `iaiyh`), 11
+  individually verified claims (full verbatim char-diffed against a RENDERED PAGE IMAGE — deliberately
+  excluding claims resolved only by PDF text layer, line geometry or corpus-internal attestation),
+  and **1,925 grandfathered**. The backlog asserts only "already front-facing on 2026-08-02", NEVER
+  "correct"; the vision sweep shrinks it. Negative test:
+  `tools/test_enriched_book_is_verified.py` (7 cases).
+
+**What the pair does NOT do (R7, labelled).** Neither sees the INVISIBLE class — a valid-word swap.
+Four were found by eye on 2026-08-02 (`side`/`vide`, `tine`/`rine`, `Jute`/`lute`, `ties`/`ries`),
+every one inside a pair `frontface_verbatims_clean` calls clean. Those are caught ONCE by the §3
+vision pass and held afterwards because verbatims only ever change via resnap-from-corrected-source
+and any new front-facing claim must pass `enriched_book_is_verified`.
 
 ## 6 · EXECUTION PHASES (for the next session — small, verified, logged)
 - **Phase 0 — PILOT (do this first, always).** Run the §3 method on ~5 claims per book incl. the two

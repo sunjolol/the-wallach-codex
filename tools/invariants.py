@@ -3966,6 +3966,119 @@ _JARGON_SKIP = {
 }
 
 
+# ── §5 LOCK GATES — the front-facing OCR campaign's two permanent guards ──────────────────
+# WHY THEY EXIST: claims were ENRICHED (made front-facing) from books whose source .txt was never
+# verified, and the rule "we fix source quotes as we enrich" was a promise with NO gate. Luneth found
+# raw OCR in user-facing quotes (WAL-CLM-RARE-000336: "tisk"/"rea"/"ancer"; WAL-CLM-LETS-000502:
+# "1 20" for 120). §00.B: a rule with no gate is a WISH. These two turn the two halves into gates.
+# A word wrap never crosses a BLANK line: "anti-\n\nNext paragraph" is a paragraph break, not a
+# split word. The first cut used \s* and over-fired on exactly that -- caught by this gate's own
+# negative-test sparing case (R9: tighten, never loosen). Horizontal whitespace only.
+_FF_MID_WORD_HYPHEN = re.compile(r"[A-Za-z]{2,}-\n[ \t]*[A-Za-z]{2,}")
+_FF_MOJIBAKE = re.compile(r"[\uFFFD\u0000-\u0008\u000B\u000C\u000E-\u001F]")
+
+
+def _frontface_defects(verbatim):
+    """Detector classes that are MECHANICALLY decidable on a verbatim. Extracted so
+    tools/test_frontface_verbatims_clean.py drives them directly."""
+    out = []
+    if _FF_MID_WORD_HYPHEN.search(verbatim or ""):
+        out.append("hyphen_split")
+    if _FF_MOJIBAKE.search(verbatim or ""):
+        out.append("mojibake_or_control")
+    return out
+
+
+def check_frontface_verbatims_clean():
+    """No sealed (front-facing) verbatim carries a mid-word line-break hyphen or a
+    mojibake/control character. Blueprint §5 lock gate #1.
+
+    SCOPE, MEASURED 2026-08-02 — do not read more into it than this. Two detector classes are
+    gated because two are all that reach ZERO on legitimate content. Five candidates were built,
+    calibrated against all 2268 sealed verbatims, and REJECTED rather than shipped red:
+      digit_in_word   -- 44 hits, and 33 are ordinals/decades ("20th", "1990s"); tightening left 11
+      number_split    -- 7 hits, mostly TABLE columns ("100 94", "95 82"), not split numbers
+      space_b4_punct  -- 5 hits, 2 of them table leader dots ("PANTOTHENIC ACID ...4 mg")
+      run_together    -- 5 hits incl. "acCoy" (McCoy), a proper noun
+      double_space    -- 2 hits, both column alignment in a transcribed table
+    Each needs a vision pass to separate defect from typesetting, so each is a LABELLED WISH (R7),
+    not a gate. This one blocks the class that actually caused the campaign.
+
+    It CANNOT see the invisible class -- a valid-word swap ("side" for "vide", "Jute" for "lute").
+    Four of those were found by eye on 2026-08-02, every one inside a pair this gate would call
+    clean. Only the vision pass catches those; this gate holds the mechanical floor."""
+    exc_path = ROOT / "eden" / "tools" / "frontface-exceptions.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    shards = sorted(claims_dir.glob("claims-*.json"))
+    if not shards:
+        return True, "eden/corpus not installed (bootstrap-guard)"
+    allowed, unreasoned = {}, []
+    if exc_path.exists():
+        for e in json.loads(exc_path.read_text(encoding="utf-8")).get("exceptions", []):
+            if not (e.get("reason") or "").strip():
+                unreasoned.append(e.get("claim_id"))
+            allowed.setdefault(e.get("claim_id"), set()).add(e.get("detector"))
+    if unreasoned:
+        return False, (f"{len(unreasoned)} frontface exception(s) carry no reason: {unreasoned[:5]} -- "
+                       "an exception is a factual claim about the world and must be checkable (R9)")
+    violations, scanned = [], 0
+    for sh in shards:
+        for c in json.loads(sh.read_text(encoding="utf-8")).get("claims", []):
+            scanned += 1
+            for d in _frontface_defects(c.get("verbatim", "")):
+                if d not in allowed.get(c["id"], set()):
+                    violations.append(f"{c['id']}:{d}")
+    if violations:
+        return False, (f"{len(violations)} front-facing verbatim defect(s): {'; '.join(violations[:6])}"
+                       f"{' ...' if len(violations) > 6 else ''}")
+    n_exc = sum(len(v) for v in allowed.values())
+    return True, (f"{scanned} front-facing verbatim(s) clean of mid-word hyphen splits + mojibake "
+                  f"({n_exc} named exception(s)); 5 further defect classes are a labelled WISH, not gated")
+
+
+def check_enriched_book_is_verified():
+    """ROOT-CAUSE gate: a claim may not be FRONT-FACING (carry a search-enrichment entry) unless its
+    book is verified, the claim itself is verified, or it is in the frozen grandfathered backlog.
+    Blueprint §5 lock gate #2.
+
+    This is the gate whose absence caused the incident. Ledger: chronicle/frontface-ocr/verified.json.
+    A NEW enrichment on an unverified book is RED, so the original failure -- enriching from a raw
+    book and promising to fix it later -- cannot recur. The escape hatch is per-claim: vision-verify
+    the claim, add its id to claims_verified, then enrich it.
+
+    The grandfathered set is the 1,925 claims already enriched when the gate landed. It is an honest
+    BACKLOG, not a waiver: being in it asserts only 'this was already front-facing on 2026-08-02',
+    never 'this is correct'. It may shrink as books get verified; an id appearing in it that was not
+    frozen there is RED."""
+    led_path = ROOT / "chronicle" / "frontface-ocr" / "verified.json"
+    enr_path = ROOT / "eden" / "corpus" / "search-enrichment.json"
+    if not led_path.exists() or not enr_path.exists():
+        return True, "verification ledger or enrichment not installed (bootstrap-guard)"
+    led = json.loads(led_path.read_text(encoding="utf-8"))
+    gf = led.get("grandfathered", {})
+    if not (gf.get("reason") or "").strip():
+        return False, "grandfathered backlog carries no reason -- an unexplained waiver is not auditable (R9)"
+    books_ok = set(led.get("books_verified", []))
+    claims_ok = set(led.get("claims_verified", []))
+    frozen = {cid for lst in (gf.get("claim_ids") or {}).values() for cid in lst}
+    prefix_book = {}
+    for sh in sorted((ROOT / "eden" / "corpus" / "claims").glob("claims-*.json")):
+        d = json.loads(sh.read_text(encoding="utf-8"))
+        for c in d.get("claims", []):
+            prefix_book[c["id"]] = d.get("book_id")
+    enriched = [k for k in json.loads(enr_path.read_text(encoding="utf-8")).get("enrichment", {})
+                if k.startswith("WAL-CLM-")]
+    ungated = [cid for cid in enriched
+               if prefix_book.get(cid) not in books_ok and cid not in claims_ok and cid not in frozen]
+    if ungated:
+        return False, (f"{len(ungated)} claim(s) front-faced from an UNVERIFIED book and not in the "
+                       f"ledger: {ungated[:6]}{' ...' if len(ungated) > 6 else ''} -- verify the source "
+                       f"span against its page image and add the id to claims_verified")
+    return True, (f"{len(enriched)} enriched claim(s) all accounted: {len(books_ok)} verified book(s), "
+                  f"{len(claims_ok)} individually verified claim(s), {len(frozen)} grandfathered "
+                  f"(an honest backlog, NOT a correctness claim)")
+
+
 def check_jargon_terms_glossed():
     """Term-gloss coverage guard (SESSION 39 Phase 1): every medical-jargon word (a latinate
     -osis/-itis/-emia/... term, minus a small common-word + botanical-fragment skip list) that
@@ -6454,6 +6567,24 @@ INVARIANTS = [
         truth_anchor="eden/tools/term-gloss-lexicon.json glossary_key_denylist x every term+alias key in dashboard/assets/data/glossary.json, normalized exactly as state/glossary.ts::normKey does at runtime",
         severity="critical",
         lesson_ref="2026-08-02 -- the entry 'reduce in chemistry' could never match its own term and fired only via its aliases: measured across 9,211 front-facing blocks, 'reduced' decorated 105 sentences and 'reduction' 24, every one the ordinary-English sense and none the chemistry sense (129 wrong tooltips, 0 right), on a green 80/80 board. glossary_wellformed saw a perfectly-shaped entry; only Luneth reading the page caught it. R7-labeled limit: this closes the door behind a key a human removed, it does NOT discover the next common word (a frequency floor would redden deliberate high-firing keys like 'essential' 627x). Negative test tools/test_glossary_keys_denylisted.py",
+    ),
+    Invariant(
+        name="frontface_verbatims_clean",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="no sealed front-facing verbatim carries a mid-word line-break hyphen or a mojibake/control character; named exceptions in eden/tools/frontface-exceptions.json must each carry a checkable reason. SCOPE: 2 detector classes, because 2 are all that reach zero on legitimate content — 5 further classes (digit_in_word, number_split, space_before_punct, run_together, double_space) over-fire on ordinals, decades, table columns and proper nouns and are a labelled WISH, not gated",
+        check_fn=check_frontface_verbatims_clean,
+        truth_anchor="every sealed claim verbatim in eden/corpus/claims/ re-scanned each run, minus the reasoned exception list",
+        severity="critical",
+        lesson_ref="2026-08-02 front-facing OCR campaign, BLUEPRINT §5 lock gate #1 -- Luneth found raw OCR in user-facing quotes (RARE-000336 tisk/rea/ancer; LETS-000502 '1 20' for 120). 180 line-break hyphens were fixed across 91 quotes; this gate stops the class returning. HONEST LIMIT: it cannot see the invisible class -- four valid-word swaps (side/vide, tine/rine, Jute/lute, ties/ries) were found by EYE the same day, every one inside a pair this gate calls clean. Negative test tools/test_frontface_verbatims_clean.py",
+    ),
+    Invariant(
+        name="enriched_book_is_verified",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, blind to a value wrong in both
+        description="a claim may not carry a search-enrichment entry (i.e. be front-facing) unless its book is in books_verified, its id is in claims_verified, or its id is in the frozen grandfathered backlog (chronicle/frontface-ocr/verified.json). A NEW enrichment on an unverified book is RED",
+        check_fn=check_enriched_book_is_verified,
+        truth_anchor="eden/corpus/search-enrichment.json keys x the verification ledger x each claim's book_id from the sealed shards",
+        severity="critical",
+        lesson_ref="2026-08-02, BLUEPRINT §5 lock gate #2 -- THE ROOT CAUSE. Claims were enriched from books officially 'raw' in purity-status.json on the promise that quotes get fixed as we enrich; the promise had no gate and was not kept, and nothing caught it. This makes it impossible: you cannot newly front-face a quote from an unverified book. The 1,925 grandfathered claims are an honest BACKLOG (asserting only 'already front-facing on 2026-08-02', never 'correct'), which the vision sweep shrinks. Negative test tools/test_enriched_book_is_verified.py",
     ),
     Invariant(
         name="jargon_terms_glossed",
