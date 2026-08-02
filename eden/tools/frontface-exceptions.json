@@ -1,10 +1,12 @@
 {
- "_doc": "Named exceptions for frontface_verbatims_clean (tools/invariants.py). Each entry is a FACTUAL CLAIM about the world and must carry a reason a reviewer can check. An entry with no reason is itself RED (memory: gate-exceptions-are-world-claims).",
- "exceptions": [
+ "_doc": "Named exceptions for frontface_verbatims_clean (tools/invariants.py). Each entry is a FACTUAL CLAIM about the world and must carry a reason a reviewer can check. An entry with no reason is itself RED (memory: gate-exceptions-are-world-claims). EMPTY IS THE GOAL: an exception is a defect we chose to live with, so the list shrinking is progress and it growing needs review.",
+ "_history": [
   {
    "claim_id": "WAL-CLM-LETS-000512",
    "detector": "hyphen_split",
-   "reason": "Not a hyphen defect. Vision-verified 2026-08-02 against Let's Play Doctor p85: the page is a TABLE whose headers read 'Nutrient | RDA | True Supplement Need | 30-Day Pharmacologic Daily Dose'. The OCR read ACROSS columns, splicing 'Pharma-' (from 'Pharmacologic', broken inside its own column) onto 'Need' from the neighbouring column. Rejoining would produce 'PharmaNeed', which appears nowhere. Needs a table-structure correction, tracked in chronicle/frontface-ocr/vision-held-hyphens.md."
+   "status": "RETIRED 2026-08-02",
+   "why": "Added the same day the gate landed, for a real table-column artefact: the OCR read ACROSS columns on Let's Play Doctor p85, splicing 'Pharma-' (from 'Pharmacologic', broken inside its own column) onto 'Need' from the neighbouring 'True Supplement Need' column. RETIRED because the defect was FIXED, not waived — the header was normalized column-wise to 'Nutrient RDA True Supplement Need 30-Day Pharmacologic Daily Dose' against the page image, with every dose figure re-read by eye (BIOTIN: RDA 200 mcg / True Supplement Need 200 mcg / 30-Day Pharmacologic Daily Dose 500 to 3,000 mcg). Kept here so the exception's whole life is on the record rather than vanishing."
   }
- ]
+ ],
+ "exceptions": []
 }
