@@ -56,10 +56,10 @@ concept, not individual headers).
 | 22 | Boron | 12 | ✅ done |
 | 23 | Vitamin B2 | 12 | ✅ done |
 | 24 | Sulfur | 10 | ✅ done |
-| 25 | Vitamin B5 | 10 | pending |
-| 26 | Vitamin K | 10 | pending |
-| 27 | Silver | 10 | pending |
-| 28 | Cobalt (mirrors B12) | 13 | pending |
-| 29 | Oxygen | 10 | pending |
+| 25 | Vitamin B5 | 10 | ✅ done |
+| 26 | Vitamin K | 10 | ✅ done |
+| 27 | Silver | 10 | ✅ done |
+| 28 | Cobalt (mirrors B12) | 13 | ✅ done |
+| 29 | Oxygen | 10 | ✅ done |
 
-**24 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
+**29 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
