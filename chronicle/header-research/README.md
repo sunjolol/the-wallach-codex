@@ -91,4 +91,4 @@ concept, not individual headers).
 
 ## Design-prep build sheets (design-prep/<slug>.md — byte-exact quotes + numbers + figure labels per concept)
 
-**14 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
+**22 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
