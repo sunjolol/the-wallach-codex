@@ -44,6 +44,7 @@ Run corpus_seal.py afterwards to re-derive indices + re-seal goldens.
 import argparse
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -90,6 +91,21 @@ def relocate(book_text: str, sk_text: str, map_text: str, raw_vb: str):
         return "ambiguous", None, None
     start = map_text[pos]
     end = map_text[pos + len(sk_vb) - 1]
+    # The skeleton anchors the FIRST and LAST alphanumeric only, so a verbatim's leading/trailing
+    # NON-alphanumeric run (a closing period, quote, paren, "!!!!") falls OUTSIDE the anchor and
+    # would be silently dropped. Measured 2026-08-02: a de-hyphenation pass healed 77 claims and
+    # 69 came back trimmed -- 68 lost a trailing '.'/'"'/')' and RARE-000342 lost all four of its
+    # '!!!!' -- while FOUR also gained a stray leading letter. Nothing caught it: the healed text
+    # is still a byte-exact substring of the source, so corpus_verify check #2, check #9 and the
+    # whole board stay green on a quote that now ends mid-punctuation in the user's face.
+    # Fix: re-attach the ORIGINAL verbatim's own edge runs, and only where the corrected book text
+    # actually still carries them -- so this restores the true span and never invents one.
+    lead_run = re.match(r"^[^0-9A-Za-z]*", raw_vb).group(0)
+    trail_run = re.search(r"[^0-9A-Za-z]*$", raw_vb).group(0)
+    if lead_run and book_text[start - len(lead_run):start] == lead_run:
+        start -= len(lead_run)
+    if trail_run and book_text[end + 1:end + 1 + len(trail_run)] == trail_run:
+        end += len(trail_run)
     new_vb = book_text[start:end + 1]
     if not (MIN_VB <= len(new_vb) <= MAX_VB):
         return "short", new_vb, start

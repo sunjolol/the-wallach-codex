@@ -20095,8 +20095,7 @@ vegetable oils). Considerable quantities of vitamin K are found in feces of huma
 and animals because it is produced by enteric microorganisms.
 
 Vitamin K occurs in two forms: (1) K, (phylloquinone) is produced by plants
-and (2) K, (menaquinones) is synthesized by gram positive intestinal micro-
-organisms and appears as several compounds. The normal physiological function
+and (2) K, (menaquinones) is synthesized by gram positive intestinal microorganisms and appears as several compounds. The normal physiological function
 of vitamin K is to promote the hepatic biosynthesis of prothrombin, proconvertin
 (factor VIN), plasma thromboplastin component (PTC, Christmas factor, factor IX),
 and the Stuart factor (factor X).

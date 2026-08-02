@@ -1,0 +1,334 @@
+PHASE 1a — per-claim before/after (BEFORE = git HEAD, AFTER = disk)
+77 claim verbatims changed · 158 hyphen joins visible in the diff
+
+====================================================================================================
+EPIGENETICS
+====================================================================================================
+
+WAL-CLM-EPIGEN-000288  (1 join(s))
+    ✓ micro-|organisms -> microorganisms
+
+====================================================================================================
+LETS-PLAY-DOCTOR
+====================================================================================================
+
+WAL-CLM-LETS-000130  (2 join(s))
+    ✓ deliv-|ers -> delivers
+    ✓ en-|zymes -> enzymes
+
+WAL-CLM-LETS-000306  (2 join(s))
+    ✓ vegetar-|ian -> vegetarian
+    ✓ flax-|seed -> flaxseed
+
+WAL-CLM-LETS-000315  (1 join(s))
+    ✓ de-|rived -> derived
+
+WAL-CLM-LETS-000326  (1 join(s))
+    ✓ acupunc-|ture -> acupuncture
+
+WAL-CLM-LETS-000391  (1 join(s))
+    ✓ cal-|cium -> calcium
+
+WAL-CLM-LETS-000419  (4 join(s))
+    ✓ punc-|ture -> puncture
+    ✓ topi-|cal -> topical
+    ✓ Taraxa-|cum -> Taraxacum
+    ✓ de-|rived -> derived
+
+WAL-CLM-LETS-000485  (2 join(s))
+    ✓ inhal-|ing -> inhaling
+    ✓ infec-|tion -> infection
+
+WAL-CLM-LETS-000487  (1 join(s))
+    ✓ intes-|tinal -> intestinal
+
+WAL-CLM-LETS-000495  (2 join(s))
+    ✓ vari-|ous -> various
+    ✓ mag-|nesium -> magnesium
+
+WAL-CLM-LETS-000496  (1 join(s))
+    ✓ supplementa-|tion -> supplementation
+
+WAL-CLM-LETS-000498  (2 join(s))
+    ✓ irra-|tional -> irrational
+    ✓ debili-|tating -> debilitating
+
+WAL-CLM-LETS-000499  (2 join(s))
+    ✓ deficien-|cies -> deficiencies
+    ✓ cap-|illaries -> capillaries
+
+WAL-CLM-LETS-000501  (1 join(s))
+    ✓ dyspla-|sia -> dysplasia
+
+WAL-CLM-LETS-000502  (3 join(s))
+    ✓ try-|ing -> trying
+    ✓ de-|spite -> despite
+    ✓ mal-|absorption -> malabsorption
+
+WAL-CLM-LETS-000509  (1 join(s))
+    ✓ Chro-|mium -> Chromium
+
+WAL-CLM-LETS-000510  (7 join(s))
+    ✓ impor-|tant -> important
+    ✓ main-|taining -> maintaining
+    ✓ bal-|ance -> balance
+    ✓ defi-|ciency -> deficiency
+    ✓ po-|tassium -> potassium
+    ✓ hyperac-|tive -> hyperactive
+    ✓ pos-|ture -> posture
+
+WAL-CLM-LETS-000513  (2 join(s))
+    ✓ de-|ficiencies -> deficiencies
+    ✓ cre-|ated -> created
+
+WAL-CLM-LETS-000514  (3 join(s))
+    ✓ func-|tion -> function
+    ✓ so-|dium -> sodium
+    ✓ consump-|tion -> consumption
+
+WAL-CLM-LETS-000515  (3 join(s))
+    ✓ as-|sociated -> associated
+    ✓ parathy-|roid -> parathyroid
+    ✓ phospho-|rus -> phosphorus
+
+WAL-CLM-LETS-000516  (3 join(s))
+    ✓ stom-|ach -> stomach
+    ✓ El-|evated -> Elevated
+    ✓ diabe-|tes -> diabetes
+
+WAL-CLM-LETS-000517  (2 join(s))
+    ✓ dis-|ease -> disease
+    ✓ dis-|ease -> disease
+    · held: by-|products STILL SPLIT
+
+WAL-CLM-LETS-000519  (1 join(s))
+    ✓ irregu-|lar -> irregular
+
+WAL-CLM-LETS-000520  (1 join(s))
+    ✓ res-|taurant -> restaurant
+
+====================================================================================================
+RARE-EARTHS
+====================================================================================================
+
+WAL-CLM-RARE-000011  (1 join(s))
+    ✓ arthri-|tis -> arthritis
+
+WAL-CLM-RARE-000016  (1 join(s))
+    ✓ chil-|dren -> children
+
+WAL-CLM-RARE-000275  (3 join(s))
+    ✓ recog-|nize -> recognize
+    ✓ cal-|cium -> calcium
+    ✓ mecha-|nism -> mechanism
+
+WAL-CLM-RARE-000304  (1 join(s))
+    ✓ un-|treated -> untreated
+
+WAL-CLM-RARE-000305  (2 join(s))
+    ✓ ac-|tive -> active
+    ✓ de-|velop -> develop
+
+WAL-CLM-RARE-000312  (4 join(s))
+    ✓ par-|ticularly -> particularly
+    ✓ punish-|ment -> punishment
+    ✓ condi-|ment -> condiment
+    ✓ con-|sider -> consider
+
+WAL-CLM-RARE-000315  (3 join(s))
+    ✓ Wash-|ington -> Washington
+    ✓ effec-|tive -> effective
+    ✓ Coun-|try -> Country
+
+WAL-CLM-RARE-000316  (2 join(s))
+    ✓ ani-|mal -> animal
+    ✓ avo-|cados -> avocados
+
+WAL-CLM-RARE-000317  (2 join(s))
+    ✓ defi-|ciency -> deficiency
+    ✓ symp-|tom -> symptom
+
+WAL-CLM-RARE-000326  (1 join(s))
+    ✓ de-|ficiency -> deficiency
+
+WAL-CLM-RARE-000329  (2 join(s))
+    ✓ es-|sential -> essential
+    ✓ Aspergil-|lus -> Aspergillus
+
+WAL-CLM-RARE-000332  (1 join(s))
+    ✓ Insti-|tute -> Institute
+
+WAL-CLM-RARE-000333  (1 join(s))
+    ✓ medi-|cal -> medical
+
+WAL-CLM-RARE-000337  (1 join(s))
+    ✓ pig-|ment -> pigment
+    · held: iron-|containing STILL SPLIT
+
+WAL-CLM-RARE-000338  (2 join(s))
+    ✓ biologi-|cally -> biologically
+    ✓ af-|ter -> after
+
+WAL-CLM-RARE-000339  (2 join(s))
+    ✓ jour-|nal -> journal
+    ✓ be-|came -> became
+    · held: pre-|mature STILL SPLIT
+
+WAL-CLM-RARE-000340  (2 join(s))
+    ✓ defi-|cient -> deficient
+    ✓ par-|tially -> partially
+
+WAL-CLM-RARE-000342  (3 join(s))
+    ✓ em-|phasized -> emphasized
+    ✓ treat-|ment -> treatment
+    ✓ physi-|cians -> physicians
+
+WAL-CLM-RARE-000343  (1 join(s))
+    ✓ de-|ficiency -> deficiency
+
+WAL-CLM-RARE-000344  (1 join(s))
+    ✓ re-|sults -> results
+
+WAL-CLM-RARE-000345  (2 join(s))
+    ✓ ac-|tivator -> activator
+    ✓ con-|genital -> congenital
+
+WAL-CLM-RARE-000346  (2 join(s))
+    ✓ Aus-|tralia -> Australia
+    ✓ molyb-|denum -> molybdenum
+
+WAL-CLM-RARE-000347  (5 join(s))
+    ✓ re-|duced -> reduced
+    ✓ indica-|tors -> indicators
+    ✓ fre-|quently -> frequently
+    ✓ dis-|ease -> disease
+    ✓ defi-|ciency -> deficiency
+
+WAL-CLM-RARE-000348  (1 join(s))
+    ✓ hu-|man -> human
+
+WAL-CLM-RARE-000349  (1 join(s))
+    ✓ improve-|ment -> improvement
+
+WAL-CLM-RARE-000352  (2 join(s))
+    ✓ hy-|pertension -> hypertension
+    ✓ sensi-|tivity -> sensitivity
+
+WAL-CLM-RARE-000354  (4 join(s))
+    ✓ his-|tory -> history
+    ✓ investi-|gated -> investigated
+    ✓ potas-|sium -> potassium
+    ✓ ar-|gon -> argon
+
+WAL-CLM-RARE-000361  (6 join(s))
+    ✓ Medi-|cal -> Medical
+    ✓ thera-|peutic -> therapeutic
+    ✓ min-|ers -> miners
+    ✓ man-|ganese -> manganese
+    ✓ cur-|ing -> curing
+    ✓ men-|strual -> menstrual
+
+WAL-CLM-RARE-000362  (2 join(s))
+    ✓ treat-|ment -> treatment
+    ✓ com-|bines -> combines
+
+WAL-CLM-RARE-000364  (3 join(s))
+    ✓ men-|tal -> mental
+    ✓ con-|taining -> containing
+    ✓ rheuma-|tism -> rheumatism
+
+WAL-CLM-RARE-000365  (1 join(s))
+    ✓ cad-|mium -> cadmium
+    · held: fluo-|tine STILL SPLIT
+
+WAL-CLM-RARE-000367  (1 join(s))
+    ✓ pro-|tein -> protein
+
+WAL-CLM-RARE-000369  (2 join(s))
+    ✓ so-|dium -> sodium
+    ✓ re-|quired -> required
+
+WAL-CLM-RARE-000370  (2 join(s))
+    ✓ or-|ganic -> organic
+    ✓ char-|acteristics -> characteristics
+
+WAL-CLM-RARE-000373  (1 join(s))
+    ✓ mam-|malian -> mammalian
+
+WAL-CLM-RARE-000375  (2 join(s))
+    ✓ hydro-|gen -> hydrogen
+    ✓ emphy-|sema -> emphysema
+
+WAL-CLM-RARE-000378  (2 join(s))
+    ✓ un-|stable -> unstable
+    ✓ stom-|achs -> stomachs
+
+WAL-CLM-RARE-000379  (2 join(s))
+    ✓ harm-|ful -> harmful
+    ✓ vita-|mins -> vitamins
+
+WAL-CLM-RARE-000380  (2 join(s))
+    ✓ re-|search -> research
+    ✓ sul-|fur -> sulfur
+
+WAL-CLM-RARE-000381  (1 join(s))
+    ✓ re-|sults -> results
+
+WAL-CLM-RARE-000382  (1 join(s))
+    ✓ thy-|roxin -> thyroxin
+
+WAL-CLM-RARE-000386  (1 join(s))
+    ✓ in-|stituted -> instituted
+
+WAL-CLM-RARE-000387  (3 join(s))
+    ✓ Tinc-|ture -> Tincture
+    ✓ melancho-|lia -> melancholia
+    ✓ em-|ployed -> employed
+
+WAL-CLM-RARE-000388  (4 join(s))
+    ✓ ben-|eficial -> beneficial
+    ✓ condi-|tions -> conditions
+    ✓ includ-|ing -> including
+    ✓ sep-|ticemia -> septicemia
+    · held: whooping-|cough STILL SPLIT
+
+WAL-CLM-RARE-000389  (1 join(s))
+    ✓ colloi-|dal -> colloidal
+    · held: di-|Jute STILL SPLIT
+
+WAL-CLM-RARE-000391  (4 join(s))
+    ✓ pro-|duced -> produced
+    ✓ Monu-|ment -> Monument
+    ✓ alumi-|num -> aluminum
+    ✓ monu-|ments -> monuments
+
+WAL-CLM-RARE-000393  (3 join(s))
+    ✓ Uni-|versity -> University
+    ✓ sick-|ness -> sickness
+    ✓ pul-|monary -> pulmonary
+
+WAL-CLM-RARE-000394  (2 join(s))
+    ✓ simi-|lar -> similar
+    ✓ hypochon-|driacal -> hypochondriacal
+
+WAL-CLM-RARE-000395  (2 join(s))
+    ✓ tuberculo-|sis -> tuberculosis
+    ✓ appe-|tite -> appetite
+
+WAL-CLM-RARE-000396  (2 join(s))
+    ✓ peni-|cillin -> penicillin
+    ✓ syphi-|lis -> syphilis
+
+WAL-CLM-RARE-000397  (3 join(s))
+    ✓ distill-|ing -> distilling
+    ✓ hysteri-|cal -> hysterical
+    ✓ dis-|eases -> diseases
+
+WAL-CLM-RARE-000399  (1 join(s))
+    ✓ em-|ployed -> employed
+
+WAL-CLM-RARE-000400  (2 join(s))
+    ✓ popu-|lated -> populated
+    ✓ ni-|troglycerine -> nitroglycerine
+    · held: co-|las STILL SPLIT
+    · held: past-|ties STILL SPLIT
