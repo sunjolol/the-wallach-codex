@@ -4725,8 +4725,8 @@ Wallach always treats all four forms of dementia diagnosis
 simultaneously as 65% of the time the doctors get the wrong diagnosis—
 in this case the pateint was diagnosed with Alzheimer's disease; however,
 he was afflicted with Korsakoff’s syndrome, a disease of a single vitamin
-deficiency (thiamin B,) first diagnosed and solved in the late 1700s by a
-Japanese naval surgeon, Because mega doses of thiamine were included
+deficiency (thiamin B1) first diagnosed and solved in the late 1700s by a
+Japanese naval surgeon. Because mega doses of thiamine were included
 in the treatment, the patient was cured in a week—if he had continued to
 treated only with Alzheimer’s drug programs he would have died of “the
 complications of Alzheimers"!
@@ -10155,8 +10155,7 @@ Causes for Disease Symdomes with Br:
 Lesions That Share a Broad Symptom List
 
 Many individuals diagnosed with multiple sclerosis, ALS (Lou Gehrig's
-disease), Alzheimer's disease, Korsakoff’s syndrome (cerebral beriberi), Wernicke-
-Korsakoff's syndrome (cerebral beriberi and multiple sclerosis combined), and
+disease), Alzheimer's disease, Korsakoff’s syndrome (cerebral beriberi), Wernicke-Korsakoff's syndrome (cerebral beriberi and multiple sclerosis combined), and
 Creutzfeld-Jakob disease (BSE, Mad Cow Disease, enzootic ataxia, etc.) share the
 broad symptom list and brain lesion list with Huntington's disease.
 
@@ -12144,8 +12143,7 @@ restricted diet by “their medical doctors” This was a physician-caused disas
 The human tragedy of the heat wave of '93 was the direct result of the medical
 profession's paranoia about salt. They put their human charges on a low-sodium
 or low-salt diet for prevention of hypertension and heart disease. There is not a
-single double-blind study that will show any benefit of a salt-restricted or low-
-sodium diet.
+single double-blind study that will show any benefit of a salt-restricted or low-sodium diet.
 
 About a week after the carnage, the state medical examiners again marveled
 from their pulpit, “The only common denominator of those who had died or were
@@ -12420,8 +12418,7 @@ After three to four months, eleven of the thirteen children given iron were cure
 of their pica behavior compared to three of the twelve given saline.
 
 Reynolds et al. (1968) reported on thirty-eight people with anemia who
-exhibited “pagophagia,” or ice eating, as the most common form of pica. Twenty-
-two of the thirty-eight had their pica symptoms disappear after correcting an iron
+exhibited “pagophagia,” or ice eating, as the most common form of pica. Twenty-two of the thirty-eight had their pica symptoms disappear after correcting an iron
 depletion anemia.
 
 Woods and Weisinger (1970) reproduced pagophagia experimentally in rats
@@ -18581,8 +18578,7 @@ performance athlete with additional selenium can increase one’s risk of a
 sudden heart death significantly.
 
 
-Kawasaki Disease, thought by the medical community to be a genetically-
-transmitted disease, is in fact a congenital copper deficiency that has two parts.
+Kawasaki Disease, thought by the medical community to be a genetically-transmitted disease, is in fact a congenital copper deficiency that has two parts.
 The human infant born with Kawasaki Disease is born with a congenital coronary
 artery aneurysm (a separation of the middle and inner layers of the artery or
 a ballooning of a weakened coronary artery), which is in fact initiated by a
@@ -20328,8 +20324,7 @@ way, investigators found a substance that would support the growth of yeast, tha
 when missing in animal diets would produce deficiency diseases.
 
 The symptoms of pantothenic acid deficiency varied from one animal species
-to another. In general, however, animals that were placed on pantothenic acid-
-deficient diets demonstrated a reduced growth rate, anemia, nerve degenerative
+to another. In general, however, animals that were placed on pantothenic acid-deficient diets demonstrated a reduced growth rate, anemia, nerve degenerative
 diseases, reduced immune functions, gastric ulcers, and a wide variety of birth
 defects.
 
@@ -20528,8 +20523,7 @@ that folic acid was isolated.
 
 Many medications interfere with folic acid absorption and metabolism
 
-including methotrexate, aspirin, oral contraceptives, anti-convulsives, anti-
-psoriatic, and cancer treatment pharmaceuticals.
+including methotrexate, aspirin, oral contraceptives, anti-convulsives, anti-psoriatic, and cancer treatment pharmaceuticals.
 
 
 Deficiency: The deficiency of folic can result from a diet lacking in
@@ -20752,8 +20746,7 @@ Overdose: None known
 Inositol function:
 
 Inositol—aka myo-inositol, is a cyclic alcohol (cyclohexanehexol) that is
-chemically similar to glucose. There are nine inositol isomers, however, myo-
-inositol is the only one of metabolic importance for plant and animal metabolism.
+chemically similar to glucose. There are nine inositol isomers, however, myo-inositol is the only one of metabolic importance for plant and animal metabolism.
 It is found in plants as phytic acid and in animals myo-inositol is a major
 constituent of phospholipids in biomembranes. Myo-inositol is believed to be
 an essential nutrient because myo-inositol triphosphate is a second messenger
@@ -21132,8 +21125,7 @@ residue is susceptible to numerous post-translational modifications; it can unde
 glycosylation and phosphorylation through the action of threonine kinase.
 Threonine is converted to pyruvate via threonine dehydrogenase, an
 
-intermediate in this pathway can undergo thiolysis with CoA to produce acetyl-
-CoA and glycine; it can also be converted to alpha ketobutyrate via the enzyme
+intermediate in this pathway can undergo thiolysis with CoA to produce acetyl-CoA and glycine; it can also be converted to alpha ketobutyrate via the enzyme
 serine dehydrogenase entering the pathway leading to succinyl-CoA.
 
 Tryotophan
@@ -21161,8 +21153,7 @@ suggested as a treatment for seizure disorders and depression. It rapidly
 crosses the blood brain barrier and is rapidly decarboxylated to serotonin (5-
 hydroxytryptamine or 5-HT).
 
-In 1989 there was a large tryptophan-associated outbreak of eosinophilia-
-myalgia syndrome (EMS) which caused at least 1,500 cases of permanent
+In 1989 there was a large tryptophan-associated outbreak of eosinophilia-myalgia syndrome (EMS) which caused at least 1,500 cases of permanent
 disability and at least 37 deaths. The problem was traced to a supply of L-
 
 ===== Screenshot (590) -- Page 642 of 936 =====
@@ -21189,8 +21180,7 @@ alters the activity of the target protein.
 
 In plants, tyrosine residues play an essential role in photosynthesis. In
 chloroplasts, tyrosine acts as an electron donor in the reduction of oxidized
-chlorophyll. In this process tyrosine undergoes deprotonation of its phenolic OH-
-group. This radical is ultimately reduced in the photosystem II by the four core
+chlorophyll. In this process tyrosine undergoes deprotonation of its phenolic OH-group. This radical is ultimately reduced in the photosystem II by the four core
 manganese clusters.
 
 Tyrosine phosphorylation is believed to be one of the key steps in signal
@@ -22784,8 +22774,7 @@ efforts, Semmelweis was forcibly committed to an insane asylum by his fellow
 doctors, and shortly thereafter was found dead from blunt trauma to the head.
 His medical colleagues claimed that he committed suicide.
 
-By 1918 the U.S. department of the Treasury decreed that all public drinking-
-water systems must be disinfected by the use of chlorine. Chlorine in water is
+By 1918 the U.S. department of the Treasury decreed that all public drinking-water systems must be disinfected by the use of chlorine. Chlorine in water is
 more than three times as effective as a disinfectant against Escherichia coli, than
 an equivalent concentration of bromine, and is more than six times more effective
 than an equivalent concentration of iodine.
