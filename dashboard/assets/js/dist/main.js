@@ -79930,15 +79930,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "medical"
       },
       {
-        term: "reduce in chemistry",
-        plain: "to give electrons back to a molecule, re-charging it",
-        category: "chemistry",
-        aliases: [
-          "reduced",
-          "reduction"
-        ]
-      },
-      {
         term: "refraction",
         plain: "The bending of light when it passes from one material into another, like the way a straw looks bent in a glass of water.",
         category: "physics",
@@ -185678,7 +185669,21 @@ ARTIFACTS THIS SESSION: chronicle/frontface-ocr/BLUEPRINT.md (the full plan \u20
 
 STATE: board 80/80, all 15 derived artifacts in sync, dist fresh \u2014 nothing needs re-deriving. Uncommitted (all consistent): the earlier sealed thiamine claim round (WAL-CLM-EPIGEN-000464), the amino review docs, the redesigned Vitamin C demos (awaiting Luneth's direction pick), and this campaign's blueprint+worklist. Nothing committed/pushed (awaiting Luneth). Deferred: Vitamin C demo pick+refine, Vitamin A shipped-header quote shortening (he rejected 4 options, was finding his own when the OCR issue surfaced), the 29-header review, and the "reduced" gloss bug.
 
-HONESTY NOTE: no false completeness assurance was given. The guarantee offered is a PROCESS (vision ground-truth + two gates), explicitly NOT "a scanner finds every error" \u2014 because it cannot, and the project's own purity doc says so.` }];
+HONESTY NOTE: no false completeness assurance was given. The guarantee offered is a PROCESS (vision ground-truth + two gates), explicitly NOT "a scanner finds every error" \u2014 because it cannot, and the project's own purity doc says so.` }, { id: "lg_msc3x0tw_3o3it0", ts: "2026-08-02T13:01:29.204423-05:00", surface: "Knowledge/glossary", kind: "round-close", summary: "Removed the 'reduce in chemistry' gloss entry \u2014 measured over 9,211 front-facing blocks it fired 129 irrelevant tooltips on the ordinary words 'reduced'/'reduction' and 0 correct ones \u2014 and shipped a critical gate so a removed key can't return.", detail: `Hovering the ordinary word "reduced" used to pop up a chemistry definition \u2014 "to give electrons back to a molecule" \u2014 which had nothing to do with the sentence. Luneth caught it by reading the page. The entry behind it was a trap: its own name, "reduce in chemistry", is a phrase nobody ever writes, so it could never match text directly. It only ever fired through its two aliases, and every firing was the wrong sense of the word. It is gone, and a new gate now stops any word we remove for this reason from being added back.
+
+MEASURED BEFORE TOUCHING ANYTHING. Rebuilt the runtime matcher (state/glossary.ts normKey + keyToPattern + longest-first alternation) in Python and ran it over 9,211 front-facing blocks \u2014 every claim_text and verbatim in the sealed corpus, every search-enrichment question/answer/answer_short, and the mechanism-clarity + entity-copy prose stores \u2014 counting BLOCKS, because glossify() wraps only the first occurrence per block. Result: term "reduce in chemistry" 0 firings; alias "reduced" 105; alias "reduction" 24. Every sample was the ordinary-English sense ("Germanium deficiency is typified by a severely reduced immune status", "a reduction in inflammation markers", "the reduction or absence of acid in the stomach"). Zero chemistry-sense firings. 129 wrong tooltips, 0 right ones.
+
+SCOPE DECISION, stated rather than assumed. The reported word was "reduced". Removing only that alias would have left "reduction" over-firing 24x; removing both aliases leaves an entry that can never fire. So the whole entry was deleted \u2014 dashboard/assets/data/glossary.json, 1246 -> 1245 definitions (hand-authored R4 prose store, MANIFEST-allowlisted, \xA717 safe_write). Nothing was lost: the chemistry concept keeps its own two entries, "redox" and "oxidation-reduction", and the latter still fires 9x correctly because longest-first alternation prefers it.
+
+THE GATE, SHIPPED IN THE SAME PATCH (\xA700.B #2 codify-don't-promise; next-chunk standing doctrine 7). New reviewed block \`glossary_key_denylist\` in eden/tools/term-gloss-lexicon.json \u2014 the existing single source of truth for term-gloss decisions \u2014 holding 4 keys (reduced, reduction, plus the never-registered family members reduce and reducing), each carrying the measurement that condemned it. New critical invariant \`glossary_keys_denylisted\` (tools/invariants.py) re-implements the runtime normalization exactly (lower-case, curly apostrophes folded, [\\s-] runs collapsed to one space) and matches on key EQUALITY, never containment \u2014 so "oxidation-reduction" and a hypothetical "reduced glutathione" are spared by construction, and only the bare common word is closed. Denylisting the morphological family follows the R9 lesson already recorded on term_gloss_ratified_present: a literal key match misses near-variants. A denylist entry with no recorded reason is itself RED, so a future removal cannot be slipped in unreviewed.
+
+WHY THIS GATE AND NOT A SMARTER ONE (R7, labeled honestly). It closes the door behind a key a human has judged and removed. It does NOT discover the next over-firing common word, and I did not pretend otherwise: there is no non-gaming machine test for "is this key a common English word", and a frequency floor is actively wrong here \u2014 the same scan shows 'essential' firing 627x, 'trace' 257x, 'isolated' 154x and 'chronic' 137x, all deliberate. Finding the next one stays a review job. What no gate could have done here is what actually happened: Luneth read the page.
+
+VERIFICATIONS. Negative test tools/test_glossary_keys_denylisted.py \u2014 15/15 cases. Load-bearing: the exact shipped entry shape re-added (fires), the word promoted from alias to term (fires). Laundering: capitalisation and whitespace padding (both fire). Sparing (R9, tighten-never-over-fire): oxidation-reduction, reduced glutathione, "reduction of healing time", an unrelated entry, and the live repo (all silent) \u2014 a containment match instead of equality would redden all three multi-word cases. Reviewability: a reason-less denylist entry (fires); an empty denylist (vacuously clean). Board 81/81, up from 80/80 by exactly the new gate, 0 new reds; glossary_wellformed reports 1245 defs; jargon_terms_glossed still clean at 2100 keys. Build OK. render_probe_knowledge PASS, 0 page errors.
+
+LIVE PROOF, AND THE INSTRUMENT THAT LIED ON THE WAY THERE. The first live sweep returned PASS across three pages \u2014 but two rows carried an identical gloss count of 570, and re-instrumenting with a per-page hero assertion showed the second page had never navigated (the selector "Vitamin B-12" does not exist; the real value is "Vitamin B12 (Cobalamin)") and the third rendered no glosses at all. That PASS proved ONE page, not three. Re-run properly across 11 pages \u2014 7 essentials + 4 conditions, each page's navigation asserted by its rendered hero \u2014 the banned words are visible 8x across 6 pages and glossed 0x, while 13,122 other glosses still render, so the layer is alive rather than merely silent. Screenshot confirms the Germanium sentence "\u2026a severely reduced immune status\u2026" carries no dotted underline. memory: the-instrument-lies-before-the-eye, null-result-needs-a-scope-check.
+
+DEFERRED: none for this item. Next: the front-facing quote OCR remediation, Phase 0 pilot (chronicle/frontface-ocr/BLUEPRINT.md).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

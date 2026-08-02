@@ -6681,15 +6681,6 @@
    "category": "medical"
   },
   {
-   "term": "reduce in chemistry",
-   "plain": "to give electrons back to a molecule, re-charging it",
-   "category": "chemistry",
-   "aliases": [
-    "reduced",
-    "reduction"
-   ]
-  },
-  {
    "term": "refraction",
    "plain": "The bending of light when it passes from one material into another, like the way a straw looks bent in a glass of water.",
    "category": "physics",

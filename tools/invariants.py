@@ -3870,6 +3870,87 @@ def check_glossary_wellformed():
     return True, f"glossary.json well-formed -- {len(terms)} plain-language definitions{tail}"
 
 
+# --- the OTHER failure direction: a key that fires where it must NOT -------------------------
+# glossary_wellformed proves an entry is well-SHAPED and that its keys do not collide. It is
+# blind to a key that is a perfectly-formed COMMON ENGLISH WORD, which decorates hundreds of
+# unrelated sentences with an irrelevant tooltip. Measured 2026-08-02 across 9,211 front-facing
+# blocks (claim_text + verbatim + search answers + the mechanism/entity prose stores): the entry
+# "reduce in chemistry" ("to give electrons back to a molecule") could never match its own term,
+# and fired ONLY through its aliases -- "reduced" 105x and "reduction" 24x, every single one the
+# ordinary-English sense ("reduced immune status", "a reduction in inflammation markers"). 129
+# wrong tooltips, 0 right ones, on a green 80/80 board, for weeks. Luneth found it by reading the
+# page; no gate could have.
+#
+# The lock is a reviewed DENYLIST in eden/tools/term-gloss-lexicon.json (the single source of
+# truth for term-gloss decisions), each key carrying the measurement that condemned it. Matching
+# is on the EXACT normalized key, using the same normalization the runtime applies, so the ban is
+# surgical: "oxidation-reduction" and a hypothetical "reduced glutathione" are untouched by
+# construction -- only the bare common word is closed. The morphological family ("reduce",
+# "reducing") is denylisted alongside the two that actually shipped, because the R9 lesson from
+# term_gloss_ratified_present is that a literal key match misses near-variants.
+#
+# WHAT THIS DOES NOT DO (R7, labeled): it does not DISCOVER the next over-firing common word --
+# there is no non-gaming machine test for "is this key a common English word", and a frequency
+# floor would redden the many high-firing keys that are deliberate ('essential' 627x, 'chronic'
+# 137x). It closes the door behind a key a human has judged and removed. Finding the next one
+# stays a review job. Extracted as helpers so tools/test_glossary_keys_denylisted.py drives them.
+def _glossary_norm_key(s):
+    """The runtime's key normalization, mirrored (dashboard/assets/js/src/state/glossary.ts::normKey):
+    lower-cased, curly apostrophes folded to straight, every whitespace-or-hyphen run collapsed to ONE
+    space. Anchoring to the RUNTIME form is the point -- a denylisted word re-added as "Reduced" or
+    "re-duced" would normalize to the same key and fire identically, so it must fail identically."""
+    return re.sub(r"[\s\-]+", " ", (s or "").lower().replace("\u2018", "'").replace("\u2019", "'")).strip()
+
+
+def _glossary_denylist_violations(terms, denylist):
+    """Returns (violations, checked_key_count). A violation = a glossary term or alias whose
+    normalized key EQUALS a denylisted key. Equality, never containment: a multi-word key that
+    merely contains the word is legitimate and must stay silent."""
+    banned = {_glossary_norm_key(k): v for k, v in denylist.items()}
+    violations, checked = [], 0
+    for t in terms:
+        name = (t.get("term") or "").strip()
+        pairs = ([("term", name)] if name else []) + [("alias", (a or "").strip())
+                                                      for a in (t.get("aliases") or []) if (a or "").strip()]
+        for role, k in pairs:
+            checked += 1
+            nk = _glossary_norm_key(k)
+            if nk in banned:
+                why = banned[nk].split(":")[0] if banned[nk] else "denylisted"
+                violations.append(f"{role} {k!r} of entry {name!r} re-registers denylisted key {nk!r} ({why})")
+    return violations, checked
+
+
+def check_glossary_keys_denylisted():
+    """A glossary key removed for over-firing may not be re-registered as a term or an alias.
+
+    Complement to check_glossary_wellformed (shape + collisions only, blind to a well-formed key
+    that decorates the wrong words). The reviewed denylist lives in eden/tools/term-gloss-lexicon.json
+    under `glossary_key_denylist`, each key carrying the measurement that condemned it.
+    memory: term-gloss-standard. Negative test: tools/test_glossary_keys_denylisted.py."""
+    gp = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
+    lex_path = ROOT / "eden" / "tools" / "term-gloss-lexicon.json"
+    if not gp.exists() or not lex_path.exists():
+        return True, "glossary.json or term-gloss lexicon not installed (bootstrap-guard)"
+    try:
+        terms = json.loads(gp.read_text(encoding="utf-8")).get("terms", [])
+    except Exception as e:
+        return False, f"glossary.json does not parse: {e}"
+    denylist = json.loads(lex_path.read_text(encoding="utf-8")).get("glossary_key_denylist", {})
+    if not denylist:
+        return True, "no glossary key denylisted (vacuously clean)"
+    unreasoned = sorted(k for k, v in denylist.items() if not (v or "").strip())
+    if unreasoned:
+        return False, (f"{len(unreasoned)} denylist entr(ies) carry no reason: {unreasoned[:6]} -- "
+                       "a removal without its measurement is not reviewable (R9)")
+    violations, checked = _glossary_denylist_violations(terms, denylist)
+    if violations:
+        return False, (f"{len(violations)} denylisted glossary key(s) back in play: "
+                       f"{'; '.join(violations[:4])}{' ...' if len(violations) > 4 else ''}")
+    return True, (f"no denylisted glossary key re-registered -- {len(denylist)} banned key(s) "
+                  f"({', '.join(sorted(denylist)[:4])}) absent from {checked} term/alias keys")
+
+
 _JARGON_SUFFIX = re.compile(
     r"\b[a-z]{4,}(osis|itis|emia|aemia|uria|pathy|plasia|trophy|algia|ectomy|otomy|graphy|"
     r"genic|lysis|stasis|sclerosis|megaly|penia|rrhea|rrhage|edema|oma|cele|plegia|otic)\b", re.I)
@@ -6364,6 +6445,15 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/glossary.json structural scan",
         severity="critical",
         lesson_ref="SESSION 39 (2026-07-02) -- glossary/tooltip layer Phase 1; plain-language term definitions carry no §00.A obligation but must never assert a number; memory term-gloss-standard",
+    ),
+    Invariant(
+        name="glossary_keys_denylisted",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="a glossary key REMOVED for over-firing may not be re-registered as a term or alias: every reviewed key in eden/tools/term-gloss-lexicon.json glossary_key_denylist (each carrying the measurement that condemned it) stays absent from glossary.json, matched on the EXACT runtime-normalized key so a multi-word term merely containing the word is spared",
+        check_fn=check_glossary_keys_denylisted,
+        truth_anchor="eden/tools/term-gloss-lexicon.json glossary_key_denylist x every term+alias key in dashboard/assets/data/glossary.json, normalized exactly as state/glossary.ts::normKey does at runtime",
+        severity="critical",
+        lesson_ref="2026-08-02 -- the entry 'reduce in chemistry' could never match its own term and fired only via its aliases: measured across 9,211 front-facing blocks, 'reduced' decorated 105 sentences and 'reduction' 24, every one the ordinary-English sense and none the chemistry sense (129 wrong tooltips, 0 right), on a green 80/80 board. glossary_wellformed saw a perfectly-shaped entry; only Luneth reading the page caught it. R7-labeled limit: this closes the door behind a key a human removed, it does NOT discover the next common word (a frequency floor would redden deliberate high-firing keys like 'essential' 627x). Negative test tools/test_glossary_keys_denylisted.py",
     ),
     Invariant(
         name="jargon_terms_glossed",
