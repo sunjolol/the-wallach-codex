@@ -80,15 +80,15 @@ concept, not individual headers).
 | Taurine | 6 | ✅ done |
 | Tyrosine | 6 | ✅ done |
 | Lysine | 4 | ✅ done |
-| Methionine | 4 | pending |
-| Histidine | 2 | pending |
-| Leucine | 2 | pending |
-| Valine | 2 | pending |
-| Isoleucine | 1 | pending |
-| Threonine | 1 | pending |
+| Methionine | 4 | ✅ done |
+| Histidine | 2 | ✅ done |
+| Leucine | 2 | ✅ done |
+| Valine | 2 | ✅ done |
+| Isoleucine | 1 | ✅ done |
+| Threonine | 1 | ✅ done |
 
-**12 / 18 thin-essential dossiers complete.** NOT researched (deferred / covered elsewhere): the plant-derived rare-earth/trace-mineral set (35) is already handled as ONE group via the colloidal-minerals "rock your body can't absorb until a plant" box; omega-9 has 0 sealed claims (nothing to ground).
+**18 / 18 thin-essential dossiers complete.** NOT researched (deferred / covered elsewhere): the plant-derived rare-earth/trace-mineral set (35) is already handled as ONE group via the colloidal-minerals "rock your body can't absorb until a plant" box; omega-9 has 0 sealed claims (nothing to ground).
 
 ## Design-prep build sheets (design-prep/<slug>.md — byte-exact quotes + numbers + figure labels per concept)
 
-**5 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
+**6 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
