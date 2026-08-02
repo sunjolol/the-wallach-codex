@@ -74,6 +74,30 @@ dcase("chemical_formula_spared", "Eighteen percent of dietary As2O3 was stored",
 dcase("medical_frequency_spared", "tetracycline at 500 mg IV q6 h, sedation", [])
 dcase("vitamin_b12_spared", "absorption of minerals and B12 (intrinsic factor)", [])
 
+# ── class 8, subscript_damage, added 2026-08-02 after 36 destroyed subscripts were page-read ──
+# It DESTROYS A VITAMIN IDENTITY on a surface the user reads: 'Vitamin B,,' rendered where the page
+# prints B12. Firing cases:
+dcase("subscript_vitamin_comma_fires", "Vitamin B,, discovered in 1879 and isolated", ["subscript_damage"])
+dcase("subscript_bare_double_comma_fires", "oral consumption of B,, in doses of up to", ["subscript_damage"])
+dcase("subscript_paren_designation_fires", "Pyridoxine (B,) deficiency health problems", ["subscript_damage"])
+dcase("subscript_ld50_fires", "Signs of biotin overdose: The LDso is unknown", ["subscript_damage"])
+dcase("subscript_vitamin_eight_fires", "Vitamin A Vitamin 81 (Thiamin) Vitamin B2", ["subscript_damage"])
+dcase("subscript_formula_fires", "the role of H,O in cellular transport", ["subscript_damage"])
+# ★ THE SPARING CASES ARE THE LOAD-BEARING ONES HERE. A bare 'B,' is ambiguous between a destroyed
+# vitamin subscript and the element BORON followed by a real list comma; rare-earths Table 7-8
+# prints 'Ca, Mg, B, Cu, S' and 10 such hits were PAGE-VERIFIED as boron. A pattern wide enough to
+# catch every real case would turn boron into a vitamin in 5 claims, so the gate deliberately
+# covers only the unambiguous shapes (R9: tighten, never loosen; the residue stays a labelled WISH).
+dcase("boron_in_mineral_list_spared", "Osteoporosis: Ca, Mg, B, Cu, S Arthritis", [])
+dcase("boron_second_list_spared", "Mineral Replacement: Ca, Mg, B, Cu, Se, Li", [])
+# 'Preparation H,' is a product name, page-verified -- the formula clause requires an UPPERCASE
+# follower so it cannot fire here.
+dcase("preparation_h_spared", "herbal washes, Preparation H, sitz baths with", [])
+# A CORRECT subscript followed by a REAL comma must stay silent -- this is what the page prints
+# once the defect is fixed, so if it fired the gate could never go green.
+dcase("good_subscript_then_real_comma_spared", "Vitamin B2, discovered in 1879 and isolated", [])
+dcase("good_subscript_spared", "Vitamin B6 overdose (10 to 20 grams per day)", [])
+
 print(); print("=" * 96); print("end-to-end cases (drives check_frontface_verbatims_clean on disk)"); print("=" * 96)
 
 def fcase(name, claims, exceptions, want_clean):
@@ -117,7 +141,8 @@ res.append(ok_flag)
 print("-" * 96)
 if not all(res):
     print(f"FAIL — {sum(1 for r in res if not r)}/{len(res)} case(s) misbehaved."); sys.exit(1)
-print(f"PASS — all {len(res)} cases: the gate catches all SEVEN mechanical classes, spares the legitimate "
+print(f"PASS — all {len(res)} cases: the gate catches all EIGHT mechanical classes, spares the legitimate "
       f"typography each one lives beside (compound hyphens, table leader dots, vitamin designations, "
-      f"ordinals, decades, units, chemical formulae), honours an exception ONLY for the claim+detector "
-      f"it names, and rejects a carve-out with no reason.")
+      f"ordinals, decades, units, chemical formulae, BORON in a mineral list, a correct subscript "
+      f"followed by a real comma), honours an exception ONLY for the claim+detector it names, and "
+      f"rejects a carve-out with no reason.")

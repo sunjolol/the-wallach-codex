@@ -19481,7 +19481,7 @@
       "question": "What are the signs of vitamin B6 deficiency?",
       "answer_short": "Wallach's signs of pyridoxine (B6) deficiency include depression and mental confusion, inflammation and lesions of the oral mucous membranes, nausea, vomiting, PMS, seborrheic dermatitis, carpal tunnel syndrome, TMJ problems, peripheral neuritis, ataxia, head tics (Tourette's syndrome), and seizures.",
       "answer": "Vitamin B6 (pyridoxine) is converted to pyridoxal phosphate, the coenzyme for transamination and other reactions in amino-acid, lipid, and nucleic-acid metabolism, and for glycogen phosphorylase. Wallach lists the health problems of pyridoxine deficiency: depression and mental confusion, inflammation and lesions of the oral mucous membranes, nausea, vomiting, premenstrual syndrome, seborrheic dermatitis, itchy scaly skin, carpal tunnel syndrome, temporomandibular joint problems, peripheral neuritis, ataxia (instability), hyperirritability, head tic (Tourette's syndrome), seizures, and convulsions.",
-      "verbatim": "Pyridoxine (B,) deficiency health problems include:\n\nDepression, mental confusion\n\nInflammation of the oral mucus membranes\nNausea\n\nVomiting",
+      "verbatim": "Pyridoxine (B6) deficiency health problems include:\n\nDepression, mental confusion\n\nInflammation of the oral mucus membranes\nNausea\n\nVomiting",
       "page": 620,
       "book_id": "epigenetics",
       "topics": [
@@ -24589,7 +24589,7 @@
       "question": "What is Vitamin B2?",
       "answer_short": "Vitamin B2 (riboflavin) is a water-soluble B vitamin that acts as a cofactor for the flavin coenzymes FMN and FAD, which the body needs for energy production.",
       "answer": "In Wallach's framework, vitamin B2 — riboflavin — is a water-soluble B vitamin and a key cofactor for two flavin coenzymes, flavin mononucleotide (FMN) and flavin adenine dinucleotide (FAD), that drive the oxidation-reduction reactions behind cellular energy production. Riboflavin-dependent enzymes also activate vitamin B6 and help convert tryptophan into niacin, and the vitamin is required to maintain healthy skin, mucous membranes, the cornea of the eye, and nerve sheaths. A shortage shows up early as cracks at the corners of the mouth (cheilosis), a sore burning tongue, and light-sensitive eyes.",
-      "verbatim": "Vitamin B,, discovered in 1879 and isolated in 1932, is a key cofactor for\ntwo flavin coenzymes that are required for oxidation-reduction reactions and\n\nenergy production flavin mononucleotide (FMN) and flavin adenine dinucleotide\n\n\n(FAD).",
+      "verbatim": "Vitamin B2, discovered in 1879 and isolated in 1932, is a key cofactor for\ntwo flavin coenzymes that are required for oxidation-reduction reactions and\n\nenergy production flavin mononucleotide (FMN) and flavin adenine dinucleotide\n\n\n(FAD).",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24610,7 +24610,7 @@
       "question": "What does vitamin B2 (riboflavin) do in the body?",
       "answer_short": "Riboflavin is a cofactor for the flavin coenzymes FMN and FAD that drive oxidation-reduction reactions and energy production.",
       "answer": "Wallach describes vitamin B2 (riboflavin) as a key cofactor for two flavin coenzymes — flavin mononucleotide (FMN) and flavin adenine dinucleotide (FAD) — that are required for oxidation-reduction reactions and energy production. Riboflavin-dependent enzymes also activate vitamin B6 (converting phosphorylated pyridoxine into its functional coenzyme) and help convert tryptophan into niacin. On top of that, it is needed to maintain healthy skin, mucous membranes, the cornea of the eye, and nerve sheaths.",
-      "verbatim": "Vitamin B,, discovered in 1879 and isolated in 1932, is a key cofactor for\ntwo flavin coenzymes that are required for oxidation-reduction reactions and\n\nenergy production flavin mononucleotide (FMN) and flavin adenine dinucleotide\n\n\n(FAD). Among the enzymes that require riboflavin is the FMN-dependent oxidase\nresponsible for conversion of phosphorylated pyridoxine to functional coenzyme\nand the FAD-dependent hydroxylase involved in the conversion of tryptophan to\nniacin. Riboflavin is also required to maintain healthy skin, mucus membranes,\ncornea of the eye, and nerve sheaths.",
+      "verbatim": "Vitamin B2, discovered in 1879 and isolated in 1932, is a key cofactor for\ntwo flavin coenzymes that are required for oxidation-reduction reactions and\n\nenergy production flavin mononucleotide (FMN) and flavin adenine dinucleotide\n\n\n(FAD). Among the enzymes that require riboflavin is the FMN-dependent oxidase\nresponsible for conversion of phosphorylated pyridoxine to functional coenzyme\nand the FAD-dependent hydroxylase involved in the conversion of tryptophan to\nniacin. Riboflavin is also required to maintain healthy skin, mucus membranes,\ncornea of the eye, and nerve sheaths.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24631,7 +24631,7 @@
       "question": "What is niacin (vitamin B3)?",
       "answer_short": "Niacin, or vitamin B3, is a water-soluble B vitamin the body turns into the coenzymes NAD and NADP to release energy from food; a severe deficiency causes pellagra.",
       "answer": "Niacin — vitamin B3 — is a water-soluble B vitamin that Wallach also names nicotinic acid, nicotinamide, or niacinamide. Isolated in 1900, it works in the body as part of two coenzymes, NAD and NADP (the pyridine nucleotides), which cells use to release energy from carbohydrates, fats, and proteins. The body can also make its own niacin from the amino acid tryptophan. A severe niacin deficiency produces pellagra — the classic 'three Ds' of dermatitis, dementia, and diarrhea — and Wallach uses niacin at doses far above the RDA for problems ranging from high cholesterol to schizophrenia.",
-      "verbatim": "Vitamin B,, isolated in 1900, functions in humans as a part of the coenzymes\nnicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide\nphosphate (NADP), known as the pyridine nucleotides.",
+      "verbatim": "Vitamin B3, isolated in 1900, functions in humans as a part of the coenzymes\nnicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide\nphosphate (NADP), known as the pyridine nucleotides.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24652,7 +24652,7 @@
       "question": "What does vitamin B3 (niacin) actually do in the body?",
       "answer_short": "Niacin forms the coenzymes NAD and NADP, which cells use to release energy from carbohydrates, fats, and proteins.",
       "answer": "Niacin (also called nicotinic acid, nicotinamide, or niacinamide) was isolated in 1900 and works as part of two coenzymes: nicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide phosphate (NADP), together known as the pyridine nucleotides. These coenzymes interact with the cell's respiratory enzymes and are essential to the oxidation-reduction reactions that release energy from carbohydrates, fats, and proteins. In their reduced forms they become NADH and NADPH, and NAD is also required for glycogen synthesis.",
-      "verbatim": "Vitamin B, (niacin, nicotinic acid, nicotinamide, niacinamide) function:\n\nVitamin B,, isolated in 1900, functions in humans as a part of the coenzymes\nnicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide\nphosphate (NADP), known as the pyridine nucleotides. These coenzymes interact\nwith cellular respiratory enzymes. They are essential to the oxidation-reduction\nreactions in the release of energy from carbohydrates, fats and proteins. These\ncoenzymes in their reduced forms are NADH and NADPH. In addition NAD is\nrequired for glycogen synthesis.",
+      "verbatim": "Vitamin B3 (niacin, nicotinic acid, nicotinamide, niacinamide) function:\n\nVitamin B3, isolated in 1900, functions in humans as a part of the coenzymes\nnicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide\nphosphate (NADP), known as the pyridine nucleotides. These coenzymes interact\nwith cellular respiratory enzymes. They are essential to the oxidation-reduction\nreactions in the release of energy from carbohydrates, fats and proteins. These\ncoenzymes in their reduced forms are NADH and NADPH. In addition NAD is\nrequired for glycogen synthesis.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24800,7 +24800,7 @@
       "question": "Can you take too much vitamin B5?",
       "answer_short": "Only at extreme amounts — pantothenic acid at 10 to 20 grams a day can cause a relative thiamine deficiency, diarrhea, and edema.",
       "answer": "Wallach warns that pantothenic acid (vitamin B5) can be overdone at very high amounts. Signs of overdose appear at 10 to 20 grams per day and can include a relative deficiency of thiamine (vitamin B1), diarrhea, and edema (fluid swelling). These are gram-level doses, far above the milligram amounts used for ordinary daily supplementation.",
-      "verbatim": "Signs of overdose: Vitamin B, overdose (10 to 20 grams per day) can result in a\nrelative deficiency of thiamine, diarrhea, and edema.",
+      "verbatim": "Signs of overdose: Vitamin B5 overdose (10 to 20 grams per day) can result in a\nrelative deficiency of thiamine, diarrhea, and edema.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24912,7 +24912,7 @@
       "question": "Can you take too much vitamin B6?",
       "answer_short": "Yes — excess B6 can cause peripheral neuropathy, with nerve damage in the fingers and legs.",
       "answer": "Wallach warns that vitamin B6 can cause harm at excessive intakes. The sign of overdose is peripheral neuropathy — nerve damage that shows up in the fingers and legs.",
-      "verbatim": "Signs of overdose: Vitamin B, overdose can result in peripheral neuropathies in\nfingers and legs.",
+      "verbatim": "Signs of overdose: Vitamin B6 overdose can result in peripheral neuropathies in\nfingers and legs.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24972,7 +24972,7 @@
       "question": "What does folic acid do in the body?",
       "answer_short": "Folic acid works as a coenzyme that shuttles single carbon units in amino acid and DNA/RNA synthesis, working hand-in-hand with vitamin B12.",
       "answer": "Folic acid (folate) acts metabolically as a coenzyme that transports single carbon units from one compound to another during amino acid metabolism and the synthesis of nucleic acids (DNA and RNA). Folate and vitamin B12 work interdependently, so a shortage of either vitamin produces the same kind of megaloblastic, macrocytic anemia. This role in building DNA and RNA makes folic acid essential to cell division and the formation of red blood cells.",
-      "verbatim": "Folates act metabolically as coenzymes that transport single carbon units\nfrom one compound to another in amino acid metabolism and nucleic acid (DNA\nand RNA) synthesis. Folates and vitamin B,, work interdependently. A deficiency\nof either vitamin produces a megaloblastic, macrocytic anemia.",
+      "verbatim": "Folates act metabolically as coenzymes that transport single carbon units\nfrom one compound to another in amino acid metabolism and nucleic acid (DNA\nand RNA) synthesis. Folates and vitamin B12 work interdependently. A deficiency\nof either vitamin produces a megaloblastic, macrocytic anemia.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -24993,7 +24993,7 @@
       "question": "Can you be deficient in folic acid even if you take enough of it?",
       "answer_short": "Yes — because vitamin B12 is needed to release folate into a usable form, a B12 deficiency causes a folic acid deficiency even when folic acid intake is optimal.",
       "answer": "Vitamin B12 plays a key role in folic acid metabolism: it is required to release free folate from its bound form so the folate can be absorbed, transported, and stored. Because of this, a deficiency of vitamin B12 will produce a folic acid deficiency even though the intake of folic acid is optimal. B12 also supports bone marrow function and the production of myelin, the insulating coating around nerve fibers.",
-      "verbatim": "Vitamin B,, is required to support the function of bone marrow\nand the production of myelin (nerve fiber insulation coating) and a key role in\nfolic acid metabolism. It is required to release free folate from its bound form so it,\ncan be absorbed, transported and stored. A deficiency of vitamin B,, will result in\na folic acid deficiency even though the intake of folic acid is optimal.",
+      "verbatim": "Vitamin B12 is required to support the function of bone marrow\nand the production of myelin (nerve fiber insulation coating) and a key role in\nfolic acid metabolism. It is required to release free folate from its bound form so it,\ncan be absorbed, transported and stored. A deficiency of vitamin B12 will result in\na folic acid deficiency even though the intake of folic acid is optimal.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25071,7 +25071,7 @@
       "question": "How are vitamin B12 and folic acid related?",
       "answer_short": "B12 is required to release folate from its bound form, so a B12 deficiency creates a folic acid deficiency even when folate intake is high.",
       "answer": "Vitamin B12 and folate are both required to synthesize the DNA and RNA that carry the human genome in every cell, and B12 plays a key role in folic acid metabolism. Specifically, B12 is needed to release free folate from its bound form so folate can be absorbed, transported, and stored. As a result, a deficiency of B12 produces a folic acid deficiency even when folic acid intake is optimal, and a deficiency of either vitamin produces the same kind of macrocytic, megaloblastic anemia.",
-      "verbatim": "Vitamin B,, and folate are both\nrequired for the synthesis of DNA and RNA, which carry the human genome for\nevery living cell. Vitamin B,, is required to support the function of bone marrow\nand the production of myelin (nerve fiber insulation coating) and a key role in\nfolic acid metabolism. It is required to release free folate from its bound form so it,\ncan be absorbed, transported and stored. A deficiency of vitamin B,, will result in\na folic acid deficiency even though the intake of folic acid is optimal. A deficiency\nof either vitamin produces a similar form of macrocytic, megaloblastic anemia.",
+      "verbatim": "Vitamin B12 and folate are both\nrequired for the synthesis of DNA and RNA, which carry the human genome for\nevery living cell. Vitamin B12 is required to support the function of bone marrow\nand the production of myelin (nerve fiber insulation coating) and a key role in\nfolic acid metabolism. It is required to release free folate from its bound form so it,\ncan be absorbed, transported and stored. A deficiency of vitamin B12 will result in\na folic acid deficiency even though the intake of folic acid is optimal. A deficiency\nof either vitamin produces a similar form of macrocytic, megaloblastic anemia.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25093,7 +25093,7 @@
       "question": "Where does vitamin B12 come from?",
       "answer_short": "B12 comes from animal products and bacterial fermentation, because only bacteria, fungi, and algae can actually make it — plants and animals cannot.",
       "answer": "Animal products and bacterial fermentation are the most common sources of vitamin B12. In meat the most common forms are adenosyl- and hydroxocobalamin, while in dairy products (including human breast milk) they are methyl- and hydroxocobalamin. The key reason B12 is essentially an animal-food nutrient is that only bacteria, fungi, and algae can synthesize it; yeast, higher plants, and all animals cannot make it themselves.",
-      "verbatim": "Animal products and bacterial\nfermentation are the most common sources of B,2. The most common forms\nof By, in meat are adenosyl-and hydroxocobalamin; in dairy products (including\nhuman breast milk) the most common forms are methyl-and hydroxocobalamin.\n\nBacteria, fungi, and algae can synthesize vitamin B,>. However, yeast, higher\nplants and animals of all forms are unable to.",
+      "verbatim": "Animal products and bacterial\nfermentation are the most common sources of B,2. The most common forms\nof By, in meat are adenosyl-and hydroxocobalamin; in dairy products (including\nhuman breast milk) the most common forms are methyl-and hydroxocobalamin.\n\nBacteria, fungi, and algae can synthesize vitamin B12. However, yeast, higher\nplants and animals of all forms are unable to.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25115,7 +25115,7 @@
       "question": "What is the difference between cyanocobalamin and the natural forms of B12?",
       "answer_short": "Cyanocobalamin is the primary commercial form of B12 in supplements; the body strips off the cyanide and converts it to the metabolically useful forms found in the tissues.",
       "answer": "Cyanocobalamin is the primary commercial form of vitamin B12 found in vitamin pills and pharmaceuticals. It is water soluble and heat resistant, and once ingested or injected the body converts it, by removing the cyanide, into the forms that are actually useful in the tissues. In plasma and tissue the primary forms of B12 are methylcobalamin, adenosylcobalamin, and hydroxocobalamin.",
-      "verbatim": "Cyanocobalamin is the primary commercial form of vitamin B;>\nfound in vitamin pills and pharmaceuticals. This form is water soluble and heat\nresistant, and when it is ingested or injected it is converted (by the removal\nof cyanide) to the forms that are metabolically useful in vertebrates including\nhumans.\n\nIn plasma and tissue, the primary forms of B,, are methylcobalamin,\nadenosylcobalamin, and hydroxocobalamin.",
+      "verbatim": "Cyanocobalamin is the primary commercial form of vitamin B;>\nfound in vitamin pills and pharmaceuticals. This form is water soluble and heat\nresistant, and when it is ingested or injected it is converted (by the removal\nof cyanide) to the forms that are metabolically useful in vertebrates including\nhumans.\n\nIn plasma and tissue, the primary forms of B12 are methylcobalamin,\nadenosylcobalamin, and hydroxocobalamin.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25157,7 +25157,7 @@
       "question": "Can you take too much vitamin B12?",
       "answer_short": "Wallach reports that no clear toxicity has been reported from daily oral B12 in doses of up to 100 mcg.",
       "answer": "On the question of vitamin B12 overdose, Wallach reports that no clear toxicity has been documented — specifically, that 'no clear toxicity has been reported from daily oral consumption of B12 in doses of up to 100 ug' (100 micrograms).",
-      "verbatim": "Signs of overdose: For vitamin B,, overdose: “No clear toxicity has been reported\nfrom daily oral consumption of B,, in doses of up to 100 ug.",
+      "verbatim": "Signs of overdose: For vitamin B12 overdose: “No clear toxicity has been reported\nfrom daily oral consumption of B12 in doses of up to 100 ug.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -25176,7 +25176,7 @@
       "question": "How was vitamin B12 discovered?",
       "answer_short": "The search began in 1926 after doctors found that eating a pound of raw liver a day cured pernicious anemia; the pure vitamin was finally isolated in 1948.",
       "answer": "The hunt for vitamin B12 began in 1926, prompted by the observation that people with pernicious anemia could cure themselves by eating a pound of raw liver every day. Dr. William Castle theorized that liver held an 'antipernicious anemia' (APA) factor, and that sufferers were missing an 'intrinsic factor' needed to use it. The search dragged on for decades because humans store and recycle B12, until 1948, when two independent teams in the UK and the US finally isolated the pure vitamin, extracting just 20 mg from a ton of liver.",
-      "verbatim": "The search for vitamin B,, began in 1926, following the observation that\nindividuals with pernicious anemia could cure the disease by consuming a pound\n\n\nof raw liver per day.",
+      "verbatim": "The search for vitamin B12 began in 1926, following the observation that\nindividuals with pernicious anemia could cure the disease by consuming a pound\n\n\nof raw liver per day.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -26084,7 +26084,7 @@
       "question": "How was vitamin B12 discovered?",
       "answer_short": "In 1948 two teams (in the UK and US) isolated pure B12, the anti-pernicious-anemia factor, gleaning just 20 mg from a ton of liver.",
       "answer": "Wallach recounts that Dr. William Castle theorized the liver contained an anti-pernicious-anemia (APA) factor. The hunt was slow because humans store and recycle B12, until a microorganism, Lactobacillus lactis, was found that could be used to test for it. Later in 1948, two independent teams - one in the UK and one in the US - isolated the pure APA factor, vitamin B12, managing to glean only 20 mg from a ton of liver.",
-      "verbatim": "Later in 1948, two independent teams (one in the UK and the other in the U.S)\nwere able to isolate the pure APA factor: vitamin B,>. They were able to glean 20\n\nmg of the B,, from a ton of liver.",
+      "verbatim": "Later in 1948, two independent teams (one in the UK and the other in the U.S)\nwere able to isolate the pure APA factor: vitamin B12. They were able to glean 20\n\nmg of the B12 from a ton of liver.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -28848,7 +28848,7 @@
       "question": "Does Wallach recommend eating non-GMO food?",
       "answer_short": "Yes — Wallach lists consuming and stockpiling organic, non-GMO, fresh foods among his core principles for maximizing health and longevity.",
       "answer": "Wallach recommends avoiding GMO food as part of his core health-and-longevity protocol. Under the first of the \"three principals\" he says must be practiced to the level of an obsession — eliminating acute and chronic damage and growing as much of your own organic food as possible — he directs the reader to consume as much organic food, non-GMO food, and fresh foods as possible, and to store and keep available as much freeze-dried organic and non-GMO food as possible, including a serving in each meal. He pairs this with drinking clean slightly-alkaline water, avoiding processed and nitrate/nitrite-cured meats, and being as gluten-free as possible.",
-      "verbatim": "A. Consume as much organic food, non-GMO food, and fresh foods\nas possible.\nB, Store and have available as much freeze-dried organic food and\nnon-GMO food as possible",
+      "verbatim": "A. Consume as much organic food, non-GMO food, and fresh foods\nas possible.\nB. Store and have available as much freeze-dried organic food and\nnon-GMO food as possible",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -36952,7 +36952,7 @@
       "question": "What are Wallach's best food sources of vitamin B12, and is pasteurized milk as good?",
       "answer_short": "Fresh whole milk, eggs, cheese, muscle meats, liver and kidney; pasteurized and evaporated milk lose 40-90% of their B12.",
       "answer": "Wallach lists fresh whole milk, eggs, cheese and muscle meats (along with liver and kidney) as rich sources of vitamin B12, and warns that pasteurized and evaporated milk have lost 40 to 90 percent of their B12.",
-      "verbatim": "Vitamin B,, is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources. Pasteurized\nand evaporated milk have lost 40 to 90% of vitamin B,,.",
+      "verbatim": "Vitamin B12 is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources. Pasteurized\nand evaporated milk have lost 40 to 90% of vitamin B12.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -37256,7 +37256,7 @@
       "question": "Are eggs a good source of vitamin B12?",
       "answer_short": "Wallach lists eggs among the rich dietary sources of vitamin B12, alongside liver, kidney, whole milk, cheese, and muscle meats, relevant because vegans risk B12 deficiency without it.",
       "answer": "Wallach lists eggs among the rich dietary sources of vitamin B12, alongside liver, kidney, whole milk, cheese, and muscle meats, which matters because vegans risk B12 deficiency without such foods.",
-      "verbatim": "Vitamin B,, is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources.",
+      "verbatim": "Vitamin B12 is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -38587,7 +38587,7 @@
       "question": "How was vitamin B2 (riboflavin) discovered?",
       "answer_short": "Riboflavin was first seen in 1879 as a yellow-green pigment in milk whey, isolated in 1932, then synthesized and named in 1935 by Kuhn.",
       "answer": "Wallach recounts that riboflavin (vitamin B2) was recognized in 1879 as a yellow-green fluorescent pigment in milk whey, but its biological significance was not understood until 1932, when a team of German investigators isolated 'Warburg's yellow enzyme' from yeast and demonstrated that the substance was necessary for an intracellular enzyme to function. The substance was synthesized in 1935 by Kuhn, who gave it the name riboflavin.",
-      "verbatim": "Riboflavin or vitamin B, was recognized in 1879 as a\nyellow-green fluorescent pigment in milk whey. The biological\nsignificance of this yellow pigment was not understood\nuntil 1932 when a team of German investigators isolated\n“Warburg’s yellow enzyme” from yeast and demonstrated\nthat the substance was necessary for the functioning of an\nintracellular enzyme. The substance was synthesized in 1935\nby Kuhn and named riboflavin.",
+      "verbatim": "Riboflavin or vitamin B2 was recognized in 1879 as a\nyellow-green fluorescent pigment in milk whey. The biological\nsignificance of this yellow pigment was not understood\nuntil 1932 when a team of German investigators isolated\n“Warburg’s yellow enzyme” from yeast and demonstrated\nthat the substance was necessary for the functioning of an\nintracellular enzyme. The substance was synthesized in 1935\nby Kuhn and named riboflavin.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -38647,7 +38647,7 @@
       "question": "Does vitamin B6 help children with seizures or convulsions?",
       "answer_short": "Some children have convulsions from an inborn error of B6 metabolism and need large daily B6 doses to make GABA and prevent permanent retardation.",
       "answer": "Wallach describes a pyridoxine deficiency syndrome in mentally retarded children who also have convulsions caused by an inborn error of B6 metabolism. These children are thought to be unable to synthesize GABA, and correcting the syndrome requires daily ingestion of large amounts of B6 to prevent permanent retardation. He adds that children with cryptogenic epilepsy appearing at several years of age likewise need large oral doses of B6 to improve the EEG and control seizures.",
-      "verbatim": "A deficiency syndrome for pyridoxine has been\nidentified in mentally retarded children that also have\nconvulsions due to an inborn error of B, metabolism. It is\nthought that these children are unable to synthesize GABA;\ncorrection of this syndrome requires daily ingestion of large\namounts of B, to prevent permanent retardation.",
+      "verbatim": "A deficiency syndrome for pyridoxine has been\nidentified in mentally retarded children that also have\nconvulsions due to an inborn error of B6 metabolism. It is\nthought that these children are unable to synthesize GABA;\ncorrection of this syndrome requires daily ingestion of large\namounts of B6 to prevent permanent retardation.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -38665,7 +38665,7 @@
       "question": "When was vitamin B6 discovered?",
       "answer_short": "Pyridoxine (vitamin B6) was identified in 1938 as a distinct part of the B-complex, and is really a family of three related compounds.",
       "answer": "Wallach recounts that pyridoxine, or vitamin B6, was identified in 1938 as a separate entity within the vitamin 'B-complex.' Rather than a single molecule, B6 is a functional complex of three closely related chemical compounds: pyridoxine, pyridoxamine, and pyridoxal. Together these forms carry out the vitamin's roles in the body.",
-      "verbatim": "Pyridoxine or vitamin B, was identified in 1938 as a\nfraction or separate entity of the vitamin “B-complex.” Vitamin\nB, is a functional complex of three closely related chemical\ncompounds - pyridoxine, pyridoxamine and pyridoxal.",
+      "verbatim": "Pyridoxine or vitamin B6 was identified in 1938 as a\nfraction or separate entity of the vitamin “B-complex.” Vitamin\nB6 is a functional complex of three closely related chemical\ncompounds - pyridoxine, pyridoxamine and pyridoxal.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -38684,7 +38684,7 @@
       "question": "Why can taking folic acid be risky if you have a B12 deficiency?",
       "answer_short": "Folic acid can mask a B12 deficiency — it corrects the anemia while the nerve damage silently keeps getting worse.",
       "answer": "In pernicious anemia, which is caused by a vitamin B12 deficiency, folic acid will produce a marked improvement in the anemia. However, the gastrointestinal symptoms and the neurologic lesions continue to progress unchecked. Wallach calls this the 'masking effect' of folic acid, because the corrected blood picture hides the ongoing B12-related nerve and gut damage.",
-      "verbatim": "In pernicious anemia (B,, deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
+      "verbatim": "In pernicious anemia (B12 deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -38790,7 +38790,7 @@
       "question": "Can folic acid hide a vitamin B12 deficiency?",
       "answer_short": "Yes — in pernicious anemia, folic acid improves the anemia but lets the nerve and gut damage keep progressing, an effect Wallach calls the 'masking effect.'",
       "answer": "In pernicious anemia, which is a B12 deficiency, taking folic acid will produce a marked improvement in the anemia itself. However, the gastrointestinal symptoms and the neurologic lesions continue to progress unchecked. Wallach calls this the 'masking effect' of folic acid, because the visible improvement in the blood hides the ongoing nerve and gastrointestinal damage of untreated B12 deficiency.",
-      "verbatim": "In pernicious anemia (B,, deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
+      "verbatim": "In pernicious anemia (B12 deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -39335,7 +39335,7 @@
       "question": "Can the body make its own choline?",
       "answer_short": "The body can make some choline from methionine or serine with vitamin B12 and folate, but not enough to meet daily needs, so it must come from the diet.",
       "answer": "The body can synthesize choline from the amino acids methionine or serine, a process that requires vitamin B12 and folacin (folate). However, the rate of that internal synthesis is too slow to meet daily requirements, which is exactly why Wallach counts choline as an essential nutrient that must be supplied.",
-      "verbatim": "Man can synthesize choline from the amino acids methionine\nor serine in the presence of vitamin B,, and folacin. The rate at\nwhich choline can be synthesized is insufficient to meet daily\nrequirements and for this reason it is considered an essential\nnutrient.",
+      "verbatim": "Man can synthesize choline from the amino acids methionine\nor serine in the presence of vitamin B12 and folacin. The rate at\nwhich choline can be synthesized is insufficient to meet daily\nrequirements and for this reason it is considered an essential\nnutrient.",
       "page": null,
       "book_id": "immortality",
       "topics": [
@@ -60812,7 +60812,7 @@
       "question": "What causes pernicious anemia?",
       "answer_short": "Wallach says a failure to absorb vitamin B12/cobalt — from stomach or ileum surgery, low stomach acid, parasites or celiac disease — causes pernicious anemia and demyelination of the spinal cord and large nerve trunks.",
       "answer": "Wallach states that in humans a failure to absorb vitamin B12/cobalt causes deficiency disease — from surgical removal of part of the stomach or the ileum, low stomach acid, parasites (tapeworm), celiac disease, or other malabsorption — and that pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic signs of B12/cobalt deficiency. Vitamin B12 was isolated from liver extract in 1948 and shown to have anti-pernicious-anemia activity.",
-      "verbatim": "Pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic for B, /cobalt deficiency.",
+      "verbatim": "Pernicious anemia and demyelination of the spinal cord and large nerve trunks are classic for B12 /cobalt deficiency.",
       "page": 306,
       "book_id": "rare-earths",
       "topics": [

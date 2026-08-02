@@ -7417,7 +7417,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach lists fresh whole milk, eggs, cheese and muscle meats (along with liver and kidney) as rich sources of vitamin B12, and warns that pasteurized and evaporated milk have lost 40 to 90 percent of their B12.",
-   "verbatim": "Vitamin B,, is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources. Pasteurized\nand evaporated milk have lost 40 to 90% of vitamin B,,.",
+   "verbatim": "Vitamin B12 is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources. Pasteurized\nand evaporated milk have lost 40 to 90% of vitamin B12.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -7842,7 +7842,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach lists eggs among the rich dietary sources of vitamin B12, alongside liver, kidney, whole milk, cheese, and muscle meats, which matters because vegans risk B12 deficiency without such foods.",
-   "verbatim": "Vitamin B,, is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources.",
+   "verbatim": "Vitamin B12 is found in liver, kidney, fresh whole milk,\neggs, cheese and muscle meats are rich sources.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -9953,7 +9953,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach recounts that riboflavin (vitamin B2) was recognized in 1879 as a yellow-green fluorescent pigment in milk whey, but its biological significance was not understood until 1932, when a team of German investigators isolated 'Warburg's yellow enzyme' from yeast and demonstrated that the substance was necessary for an intracellular enzyme to function. The substance was synthesized in 1935 by Kuhn, who gave it the name riboflavin.",
-   "verbatim": "Riboflavin or vitamin B, was recognized in 1879 as a\nyellow-green fluorescent pigment in milk whey. The biological\nsignificance of this yellow pigment was not understood\nuntil 1932 when a team of German investigators isolated\n“Warburg’s yellow enzyme” from yeast and demonstrated\nthat the substance was necessary for the functioning of an\nintracellular enzyme. The substance was synthesized in 1935\nby Kuhn and named riboflavin.",
+   "verbatim": "Riboflavin or vitamin B2 was recognized in 1879 as a\nyellow-green fluorescent pigment in milk whey. The biological\nsignificance of this yellow pigment was not understood\nuntil 1932 when a team of German investigators isolated\n“Warburg’s yellow enzyme” from yeast and demonstrated\nthat the substance was necessary for the functioning of an\nintracellular enzyme. The substance was synthesized in 1935\nby Kuhn and named riboflavin.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -10056,7 +10056,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach describes a pyridoxine deficiency syndrome in mentally retarded children who also have convulsions caused by an inborn error of B6 metabolism. These children are thought to be unable to synthesize GABA, and correcting the syndrome requires daily ingestion of large amounts of B6 to prevent permanent retardation. He adds that children with cryptogenic epilepsy appearing at several years of age likewise need large oral doses of B6 to improve the EEG and control seizures.",
-   "verbatim": "A deficiency syndrome for pyridoxine has been\nidentified in mentally retarded children that also have\nconvulsions due to an inborn error of B, metabolism. It is\nthought that these children are unable to synthesize GABA;\ncorrection of this syndrome requires daily ingestion of large\namounts of B, to prevent permanent retardation.",
+   "verbatim": "A deficiency syndrome for pyridoxine has been\nidentified in mentally retarded children that also have\nconvulsions due to an inborn error of B6 metabolism. It is\nthought that these children are unable to synthesize GABA;\ncorrection of this syndrome requires daily ingestion of large\namounts of B6 to prevent permanent retardation.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -10090,7 +10090,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach recounts that pyridoxine, or vitamin B6, was identified in 1938 as a separate entity within the vitamin 'B-complex.' Rather than a single molecule, B6 is a functional complex of three closely related chemical compounds: pyridoxine, pyridoxamine, and pyridoxal. Together these forms carry out the vitamin's roles in the body.",
-   "verbatim": "Pyridoxine or vitamin B, was identified in 1938 as a\nfraction or separate entity of the vitamin “B-complex.” Vitamin\nB, is a functional complex of three closely related chemical\ncompounds - pyridoxine, pyridoxamine and pyridoxal.",
+   "verbatim": "Pyridoxine or vitamin B6 was identified in 1938 as a\nfraction or separate entity of the vitamin “B-complex.” Vitamin\nB6 is a functional complex of three closely related chemical\ncompounds - pyridoxine, pyridoxamine and pyridoxal.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -10123,7 +10123,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "In pernicious anemia, which is caused by a vitamin B12 deficiency, folic acid will produce a marked improvement in the anemia. However, the gastrointestinal symptoms and the neurologic lesions continue to progress unchecked. Wallach calls this the 'masking effect' of folic acid, because the corrected blood picture hides the ongoing B12-related nerve and gut damage.",
-   "verbatim": "In pernicious anemia (B,, deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
+   "verbatim": "In pernicious anemia (B12 deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -10293,7 +10293,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "In pernicious anemia, which is a B12 deficiency, taking folic acid will produce a marked improvement in the anemia itself. However, the gastrointestinal symptoms and the neurologic lesions continue to progress unchecked. Wallach calls this the 'masking effect' of folic acid, because the visible improvement in the blood hides the ongoing nerve and gastrointestinal damage of untreated B12 deficiency.",
-   "verbatim": "In pernicious anemia (B,, deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
+   "verbatim": "In pernicious anemia (B12 deficiency), folic acid will\nproduce a marked improvement in the anemia, however,\nthe gastrointestinal symptoms and neurologic lesions will\ncontinue to progress - this is referred to as the “masking\neffect” of folic acid.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",
@@ -11222,7 +11222,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "The body can synthesize choline from the amino acids methionine or serine, a process that requires vitamin B12 and folacin (folate). However, the rate of that internal synthesis is too slow to meet daily requirements, which is exactly why Wallach counts choline as an essential nutrient that must be supplied.",
-   "verbatim": "Man can synthesize choline from the amino acids methionine\nor serine in the presence of vitamin B,, and folacin. The rate at\nwhich choline can be synthesized is insufficient to meet daily\nrequirements and for this reason it is considered an essential\nnutrient.",
+   "verbatim": "Man can synthesize choline from the amino acids methionine\nor serine in the presence of vitamin B12 and folacin. The rate at\nwhich choline can be synthesized is insufficient to meet daily\nrequirements and for this reason it is considered an essential\nnutrient.",
    "locator": {
     "book": "immortality",
     "scheme": "screenshot",

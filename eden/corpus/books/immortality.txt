@@ -3118,7 +3118,7 @@ ataxia (a type of staggering gait).
 Simple consumption of thiamine and elimination of
 sugar from the diet oftentimes will produce a rapid cure.
 
-Riboflavin or vitamin B, was recognized in 1879 as a
+Riboflavin or vitamin B2 was recognized in 1879 as a
 yellow-green fluorescent pigment in milk whey. The biological
 significance of this yellow pigment was not understood
 until 1932 when a team of German investigators isolated
@@ -3206,9 +3206,9 @@ appetite, nausea and indigestion -many become quarrelsome,
 sullen and depressed, fainting attacks and tachycardia (rapid
 pulse rate) are common.
 
-Pyridoxine or vitamin B, was identified in 1938 as a
+Pyridoxine or vitamin B6 was identified in 1938 as a
 fraction or separate entity of the vitamin “B-complex.” Vitamin
-B, is a functional complex of three closely related chemical
+B6 is a functional complex of three closely related chemical
 compounds - pyridoxine, pyridoxamine and pyridoxal.
 
 Deficiency of B, produces depression, nausea, vomiting,
@@ -3230,10 +3230,10 @@ malaise, depression and glucose intolerance.
 
 A deficiency syndrome for pyridoxine has been
 identified in mentally retarded children that also have
-convulsions due to an inborn error of B, metabolism. It is
+convulsions due to an inborn error of B6 metabolism. It is
 thought that these children are unable to synthesize GABA;
 correction of this syndrome requires daily ingestion of large
-amounts of B, to prevent permanent retardation.
+amounts of B6 to prevent permanent retardation.
 
 Children with cryptogenic epilepsy that appears at
 several years of age will require large oral doses of vitamin B,
@@ -3258,7 +3258,7 @@ function of folicin and conditions in which the requirements
 are unusually great, such as pregnancy, hemolytic anemia,
 leukemia, I lodgkin’s disease and drugs (methotrexate).
 
-In pernicious anemia (B,, deficiency), folic acid will
+In pernicious anemia (B12 deficiency), folic acid will
 produce a marked improvement in the anemia, however,
 the gastrointestinal symptoms and neurologic lesions will
 continue to progress - this is referred to as the “masking
@@ -3305,9 +3305,9 @@ conservation pathway is the reason why vitamin B,, deficiency
 can take so long to develop in vegans. 7 ‘
 
 Vitamin B,, is present in significant levels in animal
-proteins. Vitamin B,, is found in liver, kidney, fresh whole milk,
+proteins. Vitamin B12 is found in liver, kidney, fresh whole milk,
 eggs, cheese and muscle meats are rich sources. Pasteurized
-and evaporated milk have lost 40 to 90% of vitamin B,,. While
+and evaporated milk have lost 40 to 90% of vitamin B12. While
 a small amount of bacterial synthesis of vitamin B,, occurs in
 the colon, distal to the terminal ileum, it can’t be absorbed.
 
@@ -3348,7 +3348,7 @@ and hair color.
 Choline has been known for more than 100 years as
 being essential and it has a vitamin-like coenzyme function.
 Man can synthesize choline from the amino acids methionine
-or serine in the presence of vitamin B,, and folacin. The rate at
+or serine in the presence of vitamin B12 and folacin. The rate at
 which choline can be synthesized is insufficient to meet daily
 requirements and for this reason it is considered an essential
 nutrient.

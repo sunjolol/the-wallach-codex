@@ -20197,7 +20197,7 @@ of B, and Bg.
 
 Vitamin B, (riboflavin) function:
 
-Vitamin B,, discovered in 1879 and isolated in 1932, is a key cofactor for
+Vitamin B2, discovered in 1879 and isolated in 1932, is a key cofactor for
 two flavin coenzymes that are required for oxidation-reduction reactions and
 
 energy production flavin mononucleotide (FMN) and flavin adenine dinucleotide
@@ -20237,9 +20237,9 @@ itamin B, overdose can result in a relative deficiency in B, and
 6
 
 
-Vitamin B, (niacin, nicotinic acid, nicotinamide, niacinamide) function:
+Vitamin B3 (niacin, nicotinic acid, nicotinamide, niacinamide) function:
 
-Vitamin B,, isolated in 1900, functions in humans as a part of the coenzymes
+Vitamin B3, isolated in 1900, functions in humans as a part of the coenzymes
 nicotinamide adenine dinucleotide (NAD) and nicotinamide adenine dinucleotide
 phosphate (NADP), known as the pyridine nucleotides. These coenzymes interact
 with cellular respiratory enzymes. They are essential to the oxidation-reduction
@@ -20367,7 +20367,7 @@ Tachycardia
 Fainting (“light headedness")
 GI distress (gas, diarrhea, gut pain)
 
-Signs of overdose: Vitamin B, overdose (10 to 20 grams per day) can result in a
+Signs of overdose: Vitamin B5 overdose (10 to 20 grams per day) can result in a
 relative deficiency of thiamine, diarrhea, and edema.
 Vitamin B, (pyridoxine) function:
 
@@ -20398,7 +20398,7 @@ or penicillamine, increases the need for pyridoxine. There are some individuals
 with an inborn error of metabolism and sickle-cell anemia that will respond to Bg
 supplementation.
 
-Pyridoxine (B,) deficiency health problems include:
+Pyridoxine (B6) deficiency health problems include:
 
 Depression, mental confusion
 
@@ -20430,11 +20430,11 @@ Hyperirritability.
 Head tic (Tourette's syndrome)
 Seizures. Convulsions
 
-Signs of overdose: Vitamin B, overdose can result in peripheral neuropathies in
+Signs of overdose: Vitamin B6 overdose can result in peripheral neuropathies in
 fingers and legs.
 Vitamin B,, (cyanocobalamin) function:
 
-The search for vitamin B,, began in 1926, following the observation that
+The search for vitamin B12 began in 1926, following the observation that
 individuals with pernicious anemia could cure the disease by consuming a pound
 
 
@@ -20449,9 +20449,9 @@ was discovered that could be used for testing. The ideal laboratory animal turne
 out to be a microorganism, Lactobacillus lactis.
 
 Later in 1948, two independent teams (one in the UK and the other in the U.S)
-were able to isolate the pure APA factor: vitamin B,>. They were able to glean 20
+were able to isolate the pure APA factor: vitamin B12. They were able to glean 20
 
-mg of the B,, from a ton of liver.
+mg of the B12 from a ton of liver.
 
 The terms vitamin B,, and cobalamin are used for all of the cobalt-
 containing corrinoids that can be converted to methylcobalamin or 5'-
@@ -20462,19 +20462,19 @@ resistant, and when it is ingested or injected it is converted (by the removal
 of cyanide) to the forms that are metabolically useful in vertebrates including
 humans.
 
-In plasma and tissue, the primary forms of B,, are methylcobalamin,
+In plasma and tissue, the primary forms of B12 are methylcobalamin,
 adenosylcobalamin, and hydroxocobalamin. Animal products and bacterial
 fermentation are the most common sources of B,2. The most common forms
 of By, in meat are adenosyl-and hydroxocobalamin; in dairy products (including
 human breast milk) the most common forms are methyl-and hydroxocobalamin.
 
-Bacteria, fungi, and algae can synthesize vitamin B,>. However, yeast, higher
-plants and animals of all forms are unable to. Vitamin B,, and folate are both
+Bacteria, fungi, and algae can synthesize vitamin B12. However, yeast, higher
+plants and animals of all forms are unable to. Vitamin B12 and folate are both
 required for the synthesis of DNA and RNA, which carry the human genome for
-every living cell. Vitamin B,, is required to support the function of bone marrow
+every living cell. Vitamin B12 is required to support the function of bone marrow
 and the production of myelin (nerve fiber insulation coating) and a key role in
 folic acid metabolism. It is required to release free folate from its bound form so it,
-can be absorbed, transported and stored. A deficiency of vitamin B,, will result in
+can be absorbed, transported and stored. A deficiency of vitamin B12 will result in
 a folic acid deficiency even though the intake of folic acid is optimal. A deficiency
 of either vitamin produces a similar form of macrocytic, megaloblastic anemia.
 
@@ -20502,8 +20502,8 @@ General weakness
 
 Liver disease
 
-Signs of overdose: For vitamin B,, overdose: “No clear toxicity has been reported
-from daily oral consumption of B,, in doses of up to 100 ug.”
+Signs of overdose: For vitamin B12 overdose: “No clear toxicity has been reported
+from daily oral consumption of B12 in doses of up to 100 ug.”
 
 Folic Acid (Folacin) vitamin By function:
 
@@ -20515,7 +20515,7 @@ pteridine rings and many glutamic acids attached (polyglutamates).
 
 Folates act metabolically as coenzymes that transport single carbon units
 from one compound to another in amino acid metabolism and nucleic acid (DNA
-and RNA) synthesis. Folates and vitamin B,, work interdependently. A deficiency
+and RNA) synthesis. Folates and vitamin B12 work interdependently. A deficiency
 of either vitamin produces a megaloblastic, macrocytic anemia. In 1930 Lucy
 Wills and her investigating team reported that “yeast contained a substance that
 could cure macrocytic anemia in pregnant women. However, it was not until 1946
@@ -26607,7 +26607,7 @@ of the human species:
 environmental (grow as much of your own organic food as possible).
 A. Consume as much organic food, non-GMO food, and fresh foods
 as possible.
-B, Store and have available as much freeze-dried organic food and
+B. Store and have available as much freeze-dried organic food and
 non-GMO food as possible—include a servi
 
 

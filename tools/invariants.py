@@ -4018,6 +4018,28 @@ _FF_DIGIT_OK = re.compile(
     r"|\bq\s?\d+\b", re.I)
 _FF_DIGIT_IN_WORD = re.compile(r"[a-z]\d|\d[a-z]")
 
+# CLASS 8, added 2026-08-02 after the subscript sweep. A typeset subscript digit that OCR flattened
+# into a comma or a lookalike letter: 'Vitamin B,,' for B12, 'Vitamin B,' for B3/B6, '(B,)' for
+# (B6), 'LDso' for LD50, 'Vitamin 81' for Vitamin B1. It DESTROYS A VITAMIN IDENTITY on a surface
+# the user reads, and 36 instances were live across 32 claims until they were page-read.
+#
+# ★ WHAT THIS PATTERN DELIBERATELY CANNOT SEE, and why it is not loosened to catch it: a BARE
+# 'B,' with a single comma is ambiguous between a destroyed vitamin subscript and the element
+# BORON followed by a real list comma. rare-earths Table 7-8 prints 'Ca, Mg, B, Cu, S' -- 10 such
+# hits, all page-verified as boron. A pattern wide enough to catch 'amounts of B, to prevent'
+# (which really was B6) would turn boron into a vitamin in 5 claims. So the gate covers the
+# UNAMBIGUOUS shapes only and the bare-'B,' case stays a WISH resting on the vision pass (R7).
+# The chemical-formula clause requires an UPPERCASE follower so 'Preparation H, sitz baths' -- a
+# product name, page-verified -- does not fire.
+_FF_SUBSCRIPT_DAMAGE = re.compile(
+    r"[Vv]itamin\s+B\s*,"                  # vitamin B, / vitamin B,,
+    r"|\bB\s*,,"                            # B,, -- two destroyed digits
+    r"|\(\s*B\s*,\s*\)"                  # (B,) parenthesised designation
+    r"|\bLD\s*(?:so|SO|s0|5o)\b"           # LD50 read as letters
+    r"|[Vv]itamin\s+8[0-9]?\b"                # vitamin B read as the digit 8
+    r"|\b(?:CO|H|SO|NO)\s*,\s*(?=[A-Z0-9])"  # CO,/H, formula subscript
+)
+
 
 def _frontface_defects(verbatim):
     """Detector classes that are MECHANICALLY decidable on a verbatim. Extracted so
@@ -4038,6 +4060,8 @@ def _frontface_defects(verbatim):
         out.append("double_space")
     if _FF_DIGIT_IN_WORD.search(_FF_DIGIT_OK.sub(" ", v)):
         out.append("digit_in_word")
+    if _FF_SUBSCRIPT_DAMAGE.search(v):
+        out.append("subscript_damage")
     return out
 
 
@@ -4045,7 +4069,8 @@ def check_frontface_verbatims_clean():
     """No sealed (front-facing) verbatim carries a mid-word line-break hyphen or a
     mojibake/control character. Blueprint §5 lock gate #1.
 
-    SCOPE, MEASURED 2026-08-02. SEVEN detector classes, all gated. Two shipped first (hyphen split,
+    SCOPE, MEASURED 2026-08-02. EIGHT detector classes, all gated. The eighth, subscript_damage,
+    was added the same day after 36 destroyed vitamin subscripts were page-read and recovered. Two shipped first (hyphen split,
     mojibake) because they reached zero immediately; the other five were held as labelled WISHes
     until every residual hit had been read off its page image, then promoted the same day. That
     verification is what the exclusions encode -- ordinals, decades, vitamin designations, unit and
@@ -4081,9 +4106,9 @@ def check_frontface_verbatims_clean():
         return False, (f"{len(violations)} front-facing verbatim defect(s): {'; '.join(violations[:6])}"
                        f"{' ...' if len(violations) > 6 else ''}")
     n_exc = sum(len(v) for v in allowed.values())
-    return True, (f"{scanned} front-facing verbatim(s) clean across ALL 7 mechanical defect classes "
+    return True, (f"{scanned} front-facing verbatim(s) clean across ALL 8 mechanical defect classes "
                   f"(hyphen split, mojibake, space-before-punct, number split, run-together, double "
-                  f"space, digit-in-word) with {n_exc} named exception(s), each carrying its evidence")
+                  f"space, digit-in-word, subscript damage) with {n_exc} named exception(s), each carrying its evidence")
 
 
 def check_enriched_book_is_verified():
@@ -6622,7 +6647,7 @@ INVARIANTS = [
     Invariant(
         name="frontface_verbatims_clean",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="no sealed front-facing verbatim carries any of SEVEN mechanical defect classes — mid-word line-break hyphen, mojibake/control char, space-before-punctuation, split number, run-together, double space, digit welded into a word. Exclusions (ordinals, decades, vitamin designations, unit/formula adjacency, table leader dots) and 11 named exceptions in eden/tools/frontface-exceptions.json encode the page-image verification behind each; an exception with no reason is itself RED",
+        description="no sealed front-facing verbatim carries any of EIGHT mechanical defect classes — mid-word line-break hyphen, mojibake/control char, space-before-punctuation, split number, run-together, double space, digit welded into a word, typeset subscript flattened to a comma or lookalike (Vitamin B,, for B12; LDso for LD50). Exclusions (ordinals, decades, vitamin designations, unit/formula adjacency, table leader dots) and 11 named exceptions in eden/tools/frontface-exceptions.json encode the page-image verification behind each; an exception with no reason is itself RED",
         check_fn=check_frontface_verbatims_clean,
         truth_anchor="every sealed claim verbatim in eden/corpus/claims/ re-scanned each run, minus the reasoned exception list",
         severity="critical",
