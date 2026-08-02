@@ -1660,7 +1660,7 @@ Phosphorus is another "macro"mineral associated with calcium, vitamin D and para
 within very narrow physiologic limits by the
 parathyroid hormone. Too much phosphorus in the diet (i.e., soft drinks, meat, grains)
 will result in considerable calcium loss from
-yourbones. The normal range is 3- 1-4.5 mg%.
+your bones. The normal range is 3.1-4.5 mg%.
 34
 Total protein is a measure ofthe protein level
 in your serum. Low levels indicate insufficient
@@ -1737,13 +1737,13 @@ gland dysfunction. Low blood levels of sodium are typical of excessive water con
 normal range is 135-147 mEq/L.
 K (potassium) is another one of the important "macro" minerals and is involved in maintaining proper heart rhythm, acid base balance, osmotic balance (fluid pressure) and
 kidney function. Elevated levels of potassium
-are typical of heart block, adrenal gland deficiency, and hypoventilation. Decreased potassium levels are typical ofdiarrhea, hyperactive adrenals, weakness, fatigue, poor posture, palpitations and ircegular heartbeat and
+are typical of heart block, adrenal gland deficiency, and hypoventilation. Decreased potassium levels are typical of diarrhea, hyperactive adrenals, weakness, fatigue, poor posture, palpitations and irregular heartbeat and
 chronic kidney disease. The normal range is
 3.5-4.4 mEq/L.
 CI (chloride) is involved in digestion (stomach HCl), oxygen-canying ability ofthe blood,
 adrenal function and kidney function. Elevated levels are seen in kidney and adrenal
 disorders and bowel dysfunctions. Decreased
-levels are typical ofdiarrhea, infections, diabetes, reduced adrenal function. The normal
+levels are typical of diarrhea, infections, diabetes, reduced adrenal function. The normal
 range is 95-110 mEq/L.
 C02 (carbon dioxide) is a toxic cellular
 waste; it is part of the acid/base balance sys-
@@ -2157,7 +2157,7 @@ headache
 insomnia
 memory loss
 paranoia
-vitaligo
+vitiligo
 weakness
 ESSENTIAL FATTY ACID DEFICIENCY
 acne
@@ -5097,7 +5097,7 @@ up.
 Treatment of tartar includes flossing, use a
 "dental pick" that you can purchase from a
 pharmacy to pop off large "plates" of hardened tartar from the back of and between
-teeth, use a firm toothbnish and hydrogen
+teeth, use a firm toothbrush and hydrogen
 peroxide tooth gels and tartar control toothpaste.
 CANCER (carcinoma, sarcoma, neoplasm,
 tumor and malignancy): is one of the more
@@ -5108,7 +5108,7 @@ of cancer.
 Prevention of cancer (CA) takes a considerable conscious effort, but then, aren't you
 worth the same or more effort than the maintenance of your Porsche!!!!! Don't forget the
 base line vitamins and colloidal minerals, be
-sure to incorporate dietaiy fiber in each meal,
+sure to incorporate dietary fiber in each meal,
 try to OD on beta carotene (almost impossible
 - first sign is dry skin) at about a vitamin A
 equivalent of 300,000 IU per clay, lowfat diet
@@ -5197,7 +5197,7 @@ any tumor type cancer.
 CESIUM CHLORIDE: provides "high pH
 therapy for cancer" by entering the cancer cell
 and causing an alkaline environment. It is
-recommended forall types of cancer but is
+recommended for all types of cancer but is
 particularly effective for SARCOMA,
 BRONCHOGENIC CARCINOMA (with bone
 metastasis) and a spectacular 97% improvement of COLON CANCER.
@@ -5817,7 +5817,7 @@ estrogens should not be accompanied by progesterone as they increase the cancer 
 base line supplement program, calcium and
 magnesium at 2,000 mg and 1 ,000 mg per day
 and herbs to include Lady's mantle (Alchemilla
-vulgaris), motherwort (Leo nurus cardiaca)
+vulgaris), motherwort (Leonurus cardiaca)
 and St. John's wort (Hypericum perforatum).
 Don't forget calcium and magnesium at 2,000
 mg and 1,000 mg per day. Betaine HCl and
@@ -7165,7 +7165,7 @@ have convulsions which must be reduced
 quickly by immersion in tepid water.
 Treatment of fever can include a number of
 commercial products including aspirin, tylenol
-Nuprin, etc., ice packs on the forehead, mnning cool water over the wrists, cool baths and
+Nuprin, etc., ice packs on the forehead, running cool water over the wrists, cool baths and
 herbs to include feverfew (Chrysanthemum
 parthenium), meadow-sweet (Filipendula
 ulmaria), sea buckthorn (Hippophae
@@ -8447,7 +8447,7 @@ JOINT PAIN: can be caused by a variety of
 disease processes including arthritis,
 osteoporosis, rickets, gout,obesity and various nutritional deficiencies (i.e. , calcium, magnesium, sulfur, sulfur bearing amino acids and
 copper) and food allergies/ sensitivities.
-Treatment ofjoint pain includes the correction
+Treatment of joint pain includes the correction
 of any overt or underlying disease, calcium
 and magnesium at 2,000 and 1,000 mg per
 day, cartilage at 5 gm t.i.d., gelatin
@@ -8988,7 +8988,7 @@ ease changes in the small intestine lining oc-
 cur as a result of "subclinical" allergies to
 wheat, cow's milk albumen and soy as well as
 other foods (i.e., rye, barley, beef, eggs, etc.).
-In reality, diabetes and hypoglycemia are deficiencies of chromium and vanadium created by malabsorption as a result ofceliac type
+In reality, diabetes and hypoglycemia are deficiencies of chromium and vanadium created by malabsorption as a result of celiac type
 changes in the small intestine; cystic fibrosis is,
 in reality, a deficiency of selenium and essen-
 tial fatty acids brought on by celiac disease
@@ -9194,7 +9194,7 @@ is excreted in sweat.
 The use of selenium containing colloidal minerals is very effective in removing mercury
 from the tissues.
 METABOLIC THERAPY: is the resolving or
-curing of disease processes by conecting the
+curing of disease processes by correcting the
 whole body metabolism through nutrition,
 herbs, homeopathy, acupuncture, manipulation and hydrotherapy.
 METHADONE: is the drug used to facilitate
@@ -9337,8 +9337,8 @@ cephalitis in North America and malaria, yel-
 low fever, meningitis and encephalitis in South
 America. There are numerous OTC flying
 insect sprays, herbs like pennyroyal (Mentha
-pulegium) oil nibbed on the skin and vitamins
-such as B-l at 500 mg/day will also "repel"
+pulegium) oil rubbed on the skin and vitamins
+such as B-1 at 500 mg/day will also "repel"
 mosquitoes.
 MULTIPLE SCLEROSIS (MS): is a progres-
 sive disease of the central nervous system. MS
@@ -9454,7 +9454,7 @@ biopsy is usually done by a neurologist to
 make the diagnosis of MD. If selenium and
 vitamin E were to be given IM or IV at the veiy
 first onset of symptoms the disease will be
-anested or cured. The "orthodox" doctors
+arrested or cured. The "orthodox" doctors
 resort to prednisone and surgery!!!! Death is
 the inevitable end for those kids with MD if
 they are "treated" in the "orthodox" method -
@@ -9853,7 +9853,7 @@ hormone. (It is interesting to note that "ortho-
 dox" orthopedic doctors think of Paget's Dis-
 ease as a viral infection).
 Treatment of Paget's Disease should include a
-vigorous effort to conect the dietary calcium/
+vigorous effort to correct the dietary calcium/
 phosphorus ratio, reduce or eliminate red
 meat intake, avoid phosphate containing soft
 drinks, avoid all phosphate containing supplements, reduce vitamin D intake and exposure
@@ -10047,7 +10047,7 @@ analysis will be invaluable to determine the
 patient's mineral status. Do a pulse test to
 determine if a celiac disease type malabsorp-
 tion problem exists.
-Treatment of periodontal disease should include a correction of the dietaiy calcium/
+Treatment of periodontal disease should include a correction of the dietary calcium/
 phosphorus ratio (i.e., give up phosphate
 containing soft drinks, reduce red meat consumption, reduce phytate intake (raw vegetables), supplement calcium at 2,000 mg per
 day and magnesium at 1,000 mg per day,
@@ -10122,7 +10122,7 @@ and herbs in-cluding ginkgo (Ginkgo biloba),
 hawthorn (Crataegus oxyacantha), horsetail
 (Equisetum arvense), lavender (Lavandula
 angustifolia), lily-of-the-valley (Convallaria
-majalis), rosemaiy (Rosmarinus officinalis),
+majalis), rosemary (Rosmarinus officinalis),
 scotch pine (Pinus sylvestris) and cayenne
 pepper (Capsicum minimum).
 POX (chicken pox): see chicken pox
@@ -10137,8 +10137,7 @@ include firm digital pressure on the fundus of
 the uterus to stimulate contraction; the use of
 ergot (Claviceps purpurea) orally at 10-20
 minims or by injection will add sufficient contraction power.
-PREGNANCY LABOR (labor): can be en
-hanced by the use of herbs including raspberry (Rubus idaeus) and blue cohosh
+PREGNANCY LABOR (labor): can be enhanced by the use of herbs including raspberry (Rubus idaeus) and blue cohosh
 (Caulophyllum thalictroides).
 PREGNANCY TOXEMIA (eclampsia): is
 the result of low protein, low salt diets entered
@@ -10168,7 +10167,7 @@ mg per at parturition (birth) if you plan to
 breast freed as high levels of B-6 will reduce
 production of breast milk), base line nutritional supplement program and 10-12 glasses
 of water and/or juice per day, especially in
-thewarm summer months.
+the warm summer months.
 Q FEVER: is an acute rickettsial disease caused
 by Coxiella burnetii and characterized by sud-
 den onset, fever, headache, weakness and
@@ -11030,7 +11029,7 @@ adrenals give out). Prevention ofulcers should
 include distress systems (i.e., hobby, projects,
 exercise, etc.).
 Treatment of gastric ulcers should include
-alfalfa (Medicago sadva), for its "vitamin U"
+alfalfa (Medicago sativa), for its "vitamin U"
 factor, bioflavonoids at 1,000 mg q.i.d., B-6 at
 100 mg t.i.d., vitamin A at 300,000 IU per day
 as beta carotene, zinc at 20 mg t.i.d., glutamine
@@ -11073,7 +11072,7 @@ vitamin C to bowel tolerance, vitamin E at 800-
 bioflavonoids at 600 mg t.i.d., DMSO, hydrotherapy, copper at 2 mg per day (tiy a copper
 bracelet) and herbs including marigold (Calendula officinalis) topically, aie (Ruta graveolens),
 yellow sweet clover (Uelilotus officinalis).
-VERTIGO (dizziness, car sickness, motion sickness): see car sickness. Take powdered peppercorns (Piper nignim).
+VERTIGO (dizziness, car sickness, motion sickness): see car sickness. Take powdered peppercorns (Piper nigrum).
 VITILIGO (loss of skin color): is a loss of
 skin color, especially in dark or black skinned
 people.
@@ -11095,7 +11094,7 @@ application of cashew nut (Anacardium
 occidentale), oil of yellow cedar (Thuja
 occidentalis) and milk-weed juice. There are
 commercial wart removal kits available from
-your pharmacy that employ salacylic acid
+your pharmacy that employ salicylic acid
 topically.
 WEIGHT LOSS: see diets
 WHITE SPOTS, FINGERNAILS: are caused
@@ -11483,8 +11482,8 @@ the last five years, the "medical industrial"
 Bermuda Triangle has cost the American
 people more than the Pentagon and national
 defense budget!! Yet, Americans are rated
-17th in longivity, 19th in healthfulness, 23rd in
-live births and first year surviability and 32nd
+17th in longevity, 19th in healthfulness, 23rd in
+live births and first year survivability and 32nd
 in birth defects when compared with the
 western industrialized nations by the WHO.
 The 20 countries that are healthier than us

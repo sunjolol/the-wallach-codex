@@ -2008,7 +2008,7 @@ the idea that the 50% survival rate of a population can be
 extended significantly by the consumption of combinations
 of antioxidants, including vitamins A, C, E, selenium, sulfur
 bearing amino acids (methionine, cysteine, cystine, etc.) and
-phytochemicals such as catechens (green tea, coffee, red wine,
+phytochemicals such as catechins (green tea, coffee, red wine,
 dark berries, exotic fruit, etc.), resveratrol (red wine, red
 grape juice, giant Japanese knotweed, etc.), proanthocyanins
 (red grape skins and seeds), leutines (green leafy vegetables),
@@ -5823,7 +5823,7 @@ mammals at 0.5 ppm and terrestrial animals at 0.03 (greatest
 concentrations in bone and liver).
 
 Cobalt is a rare element, making up only 0.003 percent
-of the earth’s crust. Cobalite is one of its common ores, a
+of the earth’s crust. Cobaltite is one of its common ores, a
 compound made up of cobalt, arsenic and sulfur. The pure
 metal, which has a characteristic bright bluish-white color,
 is obtained by roasting this ore in air. Cobalt metal was first

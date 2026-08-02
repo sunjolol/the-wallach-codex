@@ -18994,7 +18994,7 @@ of 2009 a cover article in Time magazine declared “The Myth About Exercise:
 Exercise won't make you lose weight.”
 
 Obesity is not a genetically-generated disease, not a result of lack of exercise,
-and not a disease that can be attributed soley to overeating. Obesity is in fact
+and not a disease that can be attributed solely to overeating. Obesity is in fact
 caused by a deficiency of minerals that universally manifests symptomatically as
 cravings, binge eating, munchies and pica! In 1994 Wallach and Ma published
 their original review on obesity in the book Rare Earths: Forbidden Cures, and in
@@ -20285,7 +20285,7 @@ Physicians remained skeptical until 1937, when Conrad Elvehjem at the
 University of Wisconsin reported that dogs with experimentally produced
 pellagra could be cured with a form of “niacin” named nicotinic acid. Purified
 niacin was then used on human patients with classic signs of pellagra and their
-disease was cured When niacin status was gauged by urinary metablyte levels,
+disease was cured When niacin status was gauged by urinary metabolite levels,
 the quantities of supplementary tryptophan required to give the same response
 as one mg of niacin ranged from 39 to 86 mg. Convention allows that 60 mg of
 tryptophan is equivalent to one mg of niacin,
@@ -21253,8 +21253,8 @@ cytokine production.
 
 Essential fatty acid deficiencies will produce thrombosis (i.e., cerebral stroke,
 coronary thrombosis, pulmonary embolism, and deep vein thrombosis), skin
-disease (including dry/cracked skin, dermatitis, eczema, psoriasis, rosacea acnea,
-etc,), respiratory disease (including asthma, chonic bronchitis, unremitting cough,
+disease (including dry/cracked skin, dermatitis, eczema, psoriasis, rosacea acne,
+etc,), respiratory disease (including asthma, chronic bronchitis, unremitting cough,
 etc,), and depression.
 
 Omega-3 fatty acids, docosahexaenoic acid (DHA) and eicosapentaenoic acid
@@ -23423,7 +23423,7 @@ iron deficiency. Pica (obsessive cravings) can drive children and adults to eat 
 Iron deficiency can result from an unsupplemented pregnancy, menstruation,
 chronic infections, hypochlorhydria (low stomach acid from salt-restricted diets
 or use of proton pump inhibitors), chronic diarrhea, chronic bleeding (from illness
-from cancer, uncers, parasites, etc.) and impaired absorption (caused by high-fat
+from cancer, ulcers, parasites, etc.) and impaired absorption (caused by high-fat
 diets, high phytate diets, gluten intolerance, etc).
 
 Symptoms of iron deficiency include listlessness, fatigue, heart palpitations
@@ -23478,7 +23478,7 @@ inflammation, and certain infectious diseases.
 Gd - Gadolium, a rare earth mineral, is found in igneous rocks at 5.4 ppm; shale
 at 4.3 ppm; sandstone at 2.6 ppm; limestone at 0.7 ppm; land plants at up to
 70 ppm by Carya spp.; marine animals at 0.06 ppm; land animals accumulate
-gadolium in bone and liver very quickly after absorption.
+gadolinium in bone and liver very quickly after absorption.
 
 Ge - Germanium is found in igneous rocks at 5.4 ppm; shale at 1.6 ppm;
 sandstone at 0.8 ppm; limestone at 0.2 ppm; sea water at 0.00007 ppm; soil at
