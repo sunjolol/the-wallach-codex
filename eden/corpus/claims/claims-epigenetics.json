@@ -16264,6 +16264,46 @@
       "extracted_at": "2026-07-29T01:15:33+00:00",
       "reviewed_at": null,
       "reviewed_by": null
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000464",
+      "kind": "mechanism",
+      "essentials": [
+        "vitamin-b1",
+        "methionine",
+        "threonine",
+        "leucine",
+        "isoleucine",
+        "valine"
+      ],
+      "other_substances": [],
+      "conditions": [],
+      "symptoms": [],
+      "claim_text": "Thiamine's active coenzyme form, TPP (thiamine pyrophosphate), is required to oxidatively decarboxylate the 2-keto acids produced from five amino acids — methionine, threonine, leucine, isoleucine and valine — so the body relies on vitamin B1 to metabolize them.",
+      "verbatim": "TPP is critical\nfor the oxidative decarboxylation of 2-ketocarboxylates produced from the amino\nacids methionine, threonine, leucine, isoleucine and valine.",
+      "locator": {
+        "book": "epigenetics",
+        "scheme": "screenshot",
+        "chapter": null,
+        "page": null,
+        "screenshot": null,
+        "kindle_location": null,
+        "char_offset": 1081200
+      },
+      "dose": null,
+      "tags": [
+        "thiamine",
+        "tpp",
+        "branched-chain-amino-acids",
+        "amino-acid-metabolism",
+        "epigenetics"
+      ],
+      "confidence": "high",
+      "review_state": "draft",
+      "superseded_by": null,
+      "extracted_at": "2026-08-02T14:17:29+00:00",
+      "reviewed_at": null,
+      "reviewed_by": null
     }
   ]
 }

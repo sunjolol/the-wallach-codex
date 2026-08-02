@@ -36603,6 +36603,25 @@
         "brain",
         "dementia"
       ]
+    },
+    "WAL-CLM-EPIGEN-000464": {
+      "subject": "vitamin-b1",
+      "also_about": [
+        "leucine",
+        "isoleucine",
+        "valine",
+        "methionine",
+        "threonine"
+      ],
+      "facet": "mechanism",
+      "question": "Why do you need vitamin B1 (thiamine) to use branched-chain amino acids?",
+      "answer_short": "Thiamine's active form, TPP, is required to break down the keto-acids made from methionine, threonine, leucine, isoleucine and valine — so metabolizing those amino acids depends on B1.",
+      "topics": [
+        "thiamine",
+        "tpp",
+        "branched-chain-amino-acids",
+        "amino-acid-metabolism"
+      ]
     }
   }
 }

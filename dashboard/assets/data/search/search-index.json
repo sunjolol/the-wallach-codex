@@ -9958,7 +9958,7 @@
         "cancer",
         "korsakoff"
       ],
-      "claim_count": 15
+      "claim_count": 16
     },
     "vitamin-b12": {
       "display_name": "Cobalamin",
@@ -29041,6 +29041,40 @@
       "tier1_link": {
         "essentials": [
           "potassium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000464",
+      "subject": "vitamin-b1",
+      "also_about": [
+        "leucine",
+        "isoleucine",
+        "valine",
+        "methionine",
+        "threonine"
+      ],
+      "facet": "mechanism",
+      "question": "Why do you need vitamin B1 (thiamine) to use branched-chain amino acids?",
+      "answer_short": "Thiamine's active form, TPP, is required to break down the keto-acids made from methionine, threonine, leucine, isoleucine and valine — so metabolizing those amino acids depends on B1.",
+      "answer": "Thiamine's active coenzyme form, TPP (thiamine pyrophosphate), is required to oxidatively decarboxylate the 2-keto acids produced from five amino acids — methionine, threonine, leucine, isoleucine and valine — so the body relies on vitamin B1 to metabolize them.",
+      "verbatim": "TPP is critical\nfor the oxidative decarboxylation of 2-ketocarboxylates produced from the amino\nacids methionine, threonine, leucine, isoleucine and valine.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "thiamine",
+        "tpp",
+        "branched-chain-amino-acids",
+        "amino-acid-metabolism"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b1",
+          "methionine",
+          "threonine",
+          "leucine",
+          "isoleucine",
+          "valine"
         ]
       }
     },

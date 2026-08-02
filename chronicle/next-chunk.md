@@ -1,46 +1,59 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (set 2026-08-01; header DEMOS built — REVIEW + REFINE next)
+# Next chunk — ★ AUTHORITATIVE HANDOFF (set 2026-08-02)
 
 # ⚠ HOW THIS SESSION STARTS
-Luneth types `genesis` HIMSELF in a NEW session; Claude runs `tools/genesis.py` ONLY in response. After the
-report, ask what to resume. **This session is explicitly for REVIEWING + REFINING the header demo pages.**
+Luneth types `genesis` in a NEW session; Claude runs `tools/genesis.py` ONLY in response, reports,
+then asks what to resume.
 
-# ★ THE TASK THIS SESSION: review + refine the demo pages, one element at a time
-For each element (Luneth's order — richest first is natural): he opens the demo page, picks a DIRECTION (one of
-the 4, or a mix), then Claude refines the chosen concept and builds it into the live composed-blocks pipeline →
-**STOP for full-page visual sign-off at the TRUE 756px width** → round-close. Follow `.claude/rules/element-headers.md`
-IN FULL. The figures in the demos are FIRST-PASS (agents can't self-render) — the refine step is where measurement,
-screenshots, and Luneth's eye come in.
+# ★★★ TOP PRIORITY — front-facing quote OCR remediation ("for good")
+Luneth found enriched (USER-FACING) quotes shown with OCR garbage — e.g. `WAL-CLM-RARE-000336`
+("tisk"→risk, "rea"→area, "ancer"→cancer, "doses f"→of) and `WAL-CLM-LETS-000502` (line-break splits
+"try-\ning", "de-\nspite", "mal-\nabsorption", "1 20"→120). Root cause: 3 books are officially `raw`
+(untouched OCR) in `eden/tools/purity-status.json` — epigenetics, lets-play-doctor, rare-earths; immortality
+`purifying`. Claims were enriched from them anyway; "fix as we enrich" was a promise with NO gate.
+He wants **every front-facing quote that is wrong found + cleaned + LOCKED so it can never recur.**
+NOT whole-book cleanup.
 
-# ★ WHERE EVERYTHING IS
-- **Demo pages (LOCAL — temporary/, gitignored, NOT on origin; persist on disk):** `temporary/<slug>-demos.html`
-  for all 29 name-brand essentials, + a navigation index `temporary/_header-demos-index.html`. Each page = 4
-  distinct first-pass mockups in the real `.kd-ep-fam` container. (Force-commit available if Luneth wants an
-  origin backup — `git add -f`.)
-- **Concept dossiers (on origin):** `chronicle/header-research/<slug>.md` — the 4 concepts + recommended lead + gaps.
-- **Design-prep build sheets (on origin):** `chronicle/header-research/design-prep/<slug>.md` — the BYTE-EXACT
-  quotes/numbers/figure-labels per concept. **READ the dossier + design-prep sheet BEFORE refining any element** —
-  the content is already grounded and byte-verified (1261/1261 quotes); do not re-mine.
+→ **READ IN FULL:** `chronicle/frontface-ocr/BLUEPRINT.md` — self-contained: exact scope (1,838 quotes),
+  ground-truth vision method (diff each verbatim vs its source PAGE IMAGE), per-book page mapping, the
+  fix pipeline (source-correct → resnap → USER seals → rebuild), the TWO lock-gates that make it permanent,
+  and the phases (start at Phase 0 PILOT — 5/book incl. the two known-bad — prove before scaling).
+→ **Target list ready:** `chronicle/frontface-ocr/worklist.json` (1,838 entries, per-claim offset +
+  Screenshot(N) + verbatim). Page images: epig/immort `Screenshot (N).png` dirs in temporary/; lets +
+  rare-earths PDFs (both text-layered) — lets PDF now in `temporary/lets-play-doctor-pdf/`.
+→ Honest limit (state it, don't soften): no scanner is 100% (invisible class = valid-word swaps,
+  subscript B,→B6). The vision pass catches those once; the gate holds mechanical classes. See BLUEPRINT §5,§7.
 
-# ★ CRITICAL design-time input (from the design-prep sheets)
-Several elements' recommended-lead concept has **NO quotable verbatim for its hook** — use the fact as our composed
-gloss only, never a Wallach quote, or pick a different lead: **B5** (coenzyme-A), **vitamin K** (gut-synthesis "half" /
-"K2"), **sulfur** (bond-notation/hemoglobin/insulin — Concept B is the verbatim-safe one), **germanium** (transistor
-hook), **flavonoids** ("vitamin P"). Each design-prep §"trap resolutions" names the verbatim-backed claim id to cite
-for every number ([[claim-text-numbers-unguarded]]).
+# ★ STATE IS CLEAN — nothing needs re-deriving
+Board 80/80, all 15 derived artifacts in sync, dist fresh (verified 2026-08-02).
+UNCOMMITTED in the working tree (all internally consistent; board green):
+- **Sealed claim round:** `WAL-CLM-EPIGEN-000464` (mechanism — thiamine/TPP is needed to metabolize 5
+  aminos: Met/Thr/Leu/Ile/Val) — SEALED (knowledge_version=438), enriched + confirmed live in search,
+  embeds + bundle rebuilt. (Creator's Log `lg_msbwch6z_uzad5p`.)
+- **Amino review docs** (gitignored): `temporary/amino-claim-candidates.md`, `temporary/amino-claims-verified.md`.
+  Discovery→verify found 3 clean-new; only Claim C sealed. Dropped/deferred: fibromyalgia (already sealed
+  DDDL-000098/-000136), methionine→SAMe (OCR-garbled source), alkaptonuria + arginine codons (Luneth's call).
+- **Vitamin C demos** (gitignored): `temporary/vitamin-c-demos.html` — 4 redesigned distinct demos
+  (1 Come-Apart-Seams lead · 2 Number War · 3 On Every Page · 4 fresh "Unlocks Iron"); jargon "why this
+  number" + throwaway micro-quotes removed. **AWAITING Luneth's direction pick.**
+- `chronicle/frontface-ocr/` (BLUEPRINT + worklist) — the campaign above.
+→ **Nothing committed/pushed.** Commit when Luneth says.
 
-# ★ DEFERRED (Luneth's call, not started)
-The 18 thin essentials (thin minerals molybdenum/chloride/silica; structural H/C/N; all 12 amino acids) have NO
-demos — their dossiers mostly self-assessed "too thin, group it, not a solo header." Standout = **phenylalanine
-("strong")**. These are a group-vs-solo decision. Amino group evidence already surfaced: "the three Wallach added"
-(arginine/taurine/tyrosine) + the precursor-table set. Rare-earth/plant-derived 35 = one colloidal-minerals group box.
+# ★ DEFERRED header work (resume after the OCR campaign, or on redirect)
+- **Vitamin C:** Luneth reviewing the 4 redesigned demos → pick direction → refine → build live → visual sign-off.
+- **Vitamin A** (SHIPPED header): pull-quote is a ~240-char run-on he wants shorter. He REJECTED the 4
+  options offered (DDDL-000056 / DDDL-000165-trim / LETS-000196 / DDDL-000041) and was finding his own when
+  he hit the OCR issue. Re-ask after the OCR campaign clears (his own quote may itself be a raw-book quote to
+  verify first). Lives in `mechanism-clarity-data.json` vitamin-a `quote` block (claim DDDL-000165 + trim + highlight).
+- The 29 header demos review/refine (prior campaign) — still open (see the earlier handoff in git history / build-log).
 
-# ★ HEADERS ALREADY SHIPPED (6): selenium · copper · zinc · calcium · magnesium · vitamin A. 29 now have demos.
+# ★ SEPARATE BUG (don't lose)
+"reduced" gets a dotted-underline term-gloss with irrelevant hover — the gloss matcher over-firing on a
+common word (NOT OCR). Fix in `eden/tools/term-gloss-lexicon.json` + gloss gates. See BLUEPRINT §8.
 
 # STANDING DOCTRINES (unchanged)
-1. Every claim lives in ONE of three homes; search is a retrieval layer. 2. Diet not food; no "plate" language.
-3. NEVER fabricate — verbatim ⊆ sealed book (by claim id) or GAP. 4. corpus_seal / catalog_seal are USER-ONLY.
-5. A DOM probe is NOT a visual check — screenshot the FULL PAGE at the TRUE 756px width and STOP for his eyes
-   ([[headless-scrollbar-hides-real-width]]). 6. NEVER build live without his explicit permission. 7. Small,
-   reviewed increments. 8. Do EXACTLY what's asked; don't over-engineer.
+1. `corpus_seal`/`catalog_seal` are USER-ONLY. 2. NEVER fabricate — verbatim ⊆ sealed source (by claim id)
+or GAP; say UNREADABLE, never guess. 3. Every claim lives in ONE of 3 homes; search is a retrieval layer.
+4. A DOM probe is NOT a visual check — screenshot + STOP for his eyes. 5. NEVER build a header live without
+explicit permission. 6. Small, reviewed increments. 7. No "for good" without a GATE (§00.B: codify, don't promise).
 
-**Board 80/80 · 47 dossiers + 29 design-prep sheets on origin (93183a36) · 116 demo pages local in temporary/ · Next: review + refine each demo, pick a direction, build the winner with visual sign-off.**
+**Board 80/80 · state clean, nothing to re-derive · TOP PRIORITY = front-facing OCR remediation (chronicle/frontface-ocr/BLUEPRINT.md) · header work deferred · nothing committed.**

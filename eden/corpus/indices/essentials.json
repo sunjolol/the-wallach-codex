@@ -4743,7 +4743,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -4757,6 +4757,9 @@
       "dose": [
         "WAL-CLM-EPIGEN-000112",
         "WAL-CLM-LETS-000068"
+      ],
+      "mechanism": [
+        "WAL-CLM-EPIGEN-000464"
       ],
       "protocol": [
         "WAL-CLM-EPIGEN-000014",
@@ -4939,6 +4942,7 @@
       "germanium",
       "inositol",
       "iron",
+      "isoleucine",
       "leucine",
       "lithium",
       "magnesium",
@@ -4948,8 +4952,10 @@
       "phenylalanine",
       "potassium",
       "selenium",
+      "threonine",
       "tryptophan",
       "tyrosine",
+      "valine",
       "vanadium",
       "vitamin-b12",
       "vitamin-b2",
@@ -7452,15 +7458,22 @@
     "display_name": "Isoleucine",
     "canon_slug": "isoleucine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
-        "WAL-CLM-EPIGEN-000049"
+        "WAL-CLM-EPIGEN-000049",
+        "WAL-CLM-EPIGEN-000464"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [],
-    "interacts_with": [],
+    "interacts_with": [
+      "leucine",
+      "methionine",
+      "threonine",
+      "valine",
+      "vitamin-b1"
+    ],
     "books_cited": [
       "epigenetics"
     ]
@@ -7469,10 +7482,11 @@
     "display_name": "Leucine",
     "canon_slug": "leucine",
     "category": "amino_acid",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
-        "WAL-CLM-EPIGEN-000050"
+        "WAL-CLM-EPIGEN-000050",
+        "WAL-CLM-EPIGEN-000464"
       ],
       "protocol": [
         "WAL-CLM-LETS-000396"
@@ -7483,10 +7497,13 @@
       "parkinsonism"
     ],
     "interacts_with": [
+      "isoleucine",
       "methionine",
       "omega-3",
       "phenylalanine",
+      "threonine",
       "tyrosine",
+      "valine",
       "vitamin-b1",
       "vitamin-b6"
     ],
@@ -7540,13 +7557,14 @@
     "display_name": "Methionine",
     "canon_slug": "methionine",
     "category": "amino_acid",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000052"
       ],
       "mechanism": [
-        "WAL-CLM-DDDL-000067"
+        "WAL-CLM-DDDL-000067",
+        "WAL-CLM-EPIGEN-000464"
       ],
       "protocol": [
         "WAL-CLM-LETS-000373",
@@ -7564,12 +7582,15 @@
     ],
     "interacts_with": [
       "choline",
+      "isoleucine",
       "leucine",
       "omega-3",
       "phenylalanine",
       "selenium",
+      "threonine",
       "tryptophan",
       "tyrosine",
+      "valine",
       "vitamin-b1",
       "vitamin-b6",
       "vitamin-e"
@@ -7651,15 +7672,22 @@
     "display_name": "Threonine",
     "canon_slug": "threonine",
     "category": "amino_acid",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
-        "WAL-CLM-EPIGEN-000055"
+        "WAL-CLM-EPIGEN-000055",
+        "WAL-CLM-EPIGEN-000464"
       ]
     },
     "deficiency_signs": [],
     "conditions_treated": [],
-    "interacts_with": [],
+    "interacts_with": [
+      "isoleucine",
+      "leucine",
+      "methionine",
+      "valine",
+      "vitamin-b1"
+    ],
     "books_cited": [
       "epigenetics"
     ]
@@ -7788,10 +7816,11 @@
     "display_name": "Valine",
     "canon_slug": "valine",
     "category": "amino_acid",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
-        "WAL-CLM-EPIGEN-000058"
+        "WAL-CLM-EPIGEN-000058",
+        "WAL-CLM-EPIGEN-000464"
       ],
       "protocol": [
         "WAL-CLM-LETS-000320"
@@ -7803,9 +7832,14 @@
     ],
     "interacts_with": [
       "flavonoids",
+      "isoleucine",
+      "leucine",
+      "methionine",
       "omega-3",
       "phenylalanine",
+      "threonine",
       "tryptophan",
+      "vitamin-b1",
       "vitamin-c",
       "vitamin-e",
       "zinc"

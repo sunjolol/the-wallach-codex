@@ -12013,8 +12013,8 @@
       "symbol": "B1",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 22,
-      "distinct_claim_count": 31,
+      "claim_count": 23,
+      "distinct_claim_count": 32,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12092,6 +12092,12 @@
           ]
         },
         {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000464"
+          ]
+        },
+        {
           "kind": "definition",
           "claim_ids": [
             "WAL-CLM-LETS-000370"
@@ -12125,6 +12131,7 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000238",
+            "WAL-CLM-EPIGEN-000464",
             "WAL-CLM-IMMORT-000295"
           ]
         },
@@ -15466,8 +15473,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 1,
-      "distinct_claim_count": 5,
+      "claim_count": 2,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics"
       ],
@@ -15484,7 +15491,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000049"
+            "WAL-CLM-EPIGEN-000049",
+            "WAL-CLM-EPIGEN-000464"
           ]
         }
       ],
@@ -15522,7 +15530,13 @@
       ],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [
+        "leucine",
+        "methionine",
+        "threonine",
+        "valine",
+        "vitamin-b1"
+      ]
     },
     "leucine": {
       "type": "essential",
@@ -15531,8 +15545,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 2,
-      "distinct_claim_count": 9,
+      "claim_count": 3,
+      "distinct_claim_count": 10,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -15559,7 +15573,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000050"
+            "WAL-CLM-EPIGEN-000050",
+            "WAL-CLM-EPIGEN-000464"
           ]
         }
       ],
@@ -15620,12 +15635,13 @@
       "works_with": [],
       "related": [
         "methionine",
+        "vitamin-b1",
+        "isoleucine",
         "omega-3",
         "parkinsonism",
         "phenylalanine",
-        "tyrosine",
-        "vitamin-b1",
-        "vitamin-b6"
+        "threonine",
+        "tyrosine"
       ]
     },
     "lysine": {
@@ -15750,8 +15766,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 4,
-      "distinct_claim_count": 8,
+      "claim_count": 5,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15785,7 +15801,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000067"
+            "WAL-CLM-DDDL-000067",
+            "WAL-CLM-EPIGEN-000464"
           ]
         }
       ],
@@ -15821,14 +15838,14 @@
       ],
       "works_with": [],
       "related": [
+        "leucine",
         "omega-3",
         "phenylalanine",
+        "vitamin-b1",
         "anemia",
         "choline",
         "fatty_liver",
-        "keshan_disease",
-        "leucine",
-        "liver_disease"
+        "isoleucine"
       ]
     },
     "phenylalanine": {
@@ -15963,8 +15980,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 1,
-      "distinct_claim_count": 4,
+      "claim_count": 2,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics"
       ],
@@ -15980,7 +15997,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000055"
+            "WAL-CLM-EPIGEN-000055",
+            "WAL-CLM-EPIGEN-000464"
           ]
         }
       ],
@@ -16012,7 +16030,13 @@
       ],
       "conditions": [],
       "works_with": [],
-      "related": []
+      "related": [
+        "isoleucine",
+        "leucine",
+        "methionine",
+        "valine",
+        "vitamin-b1"
+      ]
     },
     "tryptophan": {
       "type": "essential",
@@ -16272,8 +16296,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 2,
-      "distinct_claim_count": 7,
+      "claim_count": 3,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -16297,7 +16321,8 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000058"
+            "WAL-CLM-EPIGEN-000058",
+            "WAL-CLM-EPIGEN-000464"
           ]
         }
       ],
@@ -16352,12 +16377,12 @@
       "related": [
         "flavonoids",
         "inflammation",
+        "isoleucine",
+        "leucine",
+        "methionine",
         "omega-3",
         "phenylalanine",
-        "tryptophan",
-        "vitamin-c",
-        "vitamin-e",
-        "zinc"
+        "threonine"
       ]
     },
     "omega-3": {
