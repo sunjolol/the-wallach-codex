@@ -20,6 +20,10 @@
     "magnesium": {
       "lede": "The mineral at the centre of chlorophyll — what makes plants green and stores the sun's energy — and, inside you, calcium's counterweight: the \"relaxer\" that lets every muscle and nerve stand down.",
       "why": "From Wallach's Epigenetics (2014) mineral table: 250–500 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 770 mg/day."
+    },
+    "vitamin-a": {
+      "lede": "The vitamin your eyes need to see in dim light — and, beyond vision, the one Wallach ties to healthy skin and mucous membranes, to bone and teeth, and to a lower risk of epithelial cancers.",
+      "why": "From Wallach's Epigenetics (2014): retinol 2,500–5,000 IU and β-carotene 5,000–25,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU ≈ 1,500 mcg retinol + 7,500 mcg β-carotene = 9,000 mcg RAE/day. (His earlier Let's Play Doctor, 1995, lists 5,000 IU.)"
     }
   },
   "conditions": {}

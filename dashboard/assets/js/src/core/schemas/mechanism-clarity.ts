@@ -157,6 +157,24 @@ const MechanismSchema = z.object({
  *  a new CSS modifier AND an entry here, in the same patch. */
 const MechFigureWidthSchema = z.enum(['mech', 'fork', 'rail']);
 
+/** One card of the two-column COMPARE block (vitamin A's β-carotene vs retinol trade-off). Carries
+ *  its own kicker, a big form-name label (optionally struck through, with a `star`/`tick` marker),
+ *  a fine caption, and PRO then CON rows — each an editorial `lead` + `body`. All strings are prose
+ *  (R4): they live here in data, never in the view. Chip colour (green/rust) is depictive and lives
+ *  in the stylesheet, not as a per-card literal. */
+const MechCompareCardSchema = z.object({
+  kicker: z.string(),
+  big: z.object({
+    text: z.string(),
+    struck: z.boolean().optional(),
+    mark: z.enum(['star', 'tick']).optional(),
+  }).passthrough(),
+  fine: z.string(),
+  accent: z.boolean().optional(),
+  pros: z.array(z.object({ lead: z.string(), body: z.string() }).passthrough()),
+  cons: z.array(z.object({ lead: z.string(), body: z.string() }).passthrough()),
+}).passthrough();
+
 const MechBlockSchema = z.discriminatedUnion('type', [
   z.object({ type: z.literal('eyebrow'), text: z.string() }).passthrough(),
   z.object({ type: z.literal('kill'), text: z.string() }).passthrough(),
@@ -199,6 +217,28 @@ const MechBlockSchema = z.discriminatedUnion('type', [
     big: z.boolean().optional(),
     highlight: z.string().optional(),
   }).passthrough(),
+  // The two-column COMPARE block — two trade-off cards side by side (vitamin A #6, 2026-08-01).
+  z.object({
+    type: z.literal('compare'),
+    left: MechCompareCardSchema,
+    right: MechCompareCardSchema,
+  }).passthrough(),
+  // A titled EXPLAIN callout — a mono section label plus one accent-bordered paragraph. `text` may
+  // carry the controlled inline <b>/<em> the compare/curio bodies use.
+  z.object({
+    type: z.literal('explain'),
+    label: z.string(),
+    text: z.string(),
+  }).passthrough(),
+  // A "did you know?" CURIO box — its own eyebrow, a display headline, a prose body (inline
+  // <b>/<em> allowed), and a composed cite line.
+  z.object({
+    type: z.literal('curio'),
+    eyebrow: z.string(),
+    head: z.string(),
+    body: z.string(),
+    cite: z.string(),
+  }).passthrough(),
 ]);
 
 /** A composed entry. `slug` + `facet` are the only non-block fields, and `blocks` must be
@@ -212,6 +252,10 @@ const MechComposedSchema = z.object({
   // the stylesheet restyles THIS entry's split cells + beat steps as tinted cards. Scoped so the
   // signed-off legacy headers (which never carry this field) render visually unchanged.
   cards: z.boolean().optional(),
+  // Opt-in to a per-header scoping modifier `kd-ep-fam--<variant>` on the section, so a header can
+  // tighten a SHARED class (vitamin A adjusts .kd-ep-fam__eyebrow/__kill) without disturbing the
+  // signed-off headers. Same containment pattern as `cards`.
+  variant: z.string().optional(),
 }).passthrough();
 
 export const MechanismClaritySchema = z.object({
@@ -228,6 +272,7 @@ export const MechanismClaritySchema = z.object({
 export type MechField = z.infer<typeof MechFieldSchema>;
 export type MechSide = z.infer<typeof MechSideSchema>;
 export type MechBlock = z.infer<typeof MechBlockSchema>;
+export type MechCompareCard = z.infer<typeof MechCompareCardSchema>;
 export type MechLegacy = z.infer<typeof MechanismSchema>;
 export type MechComposed = z.infer<typeof MechComposedSchema>;
 

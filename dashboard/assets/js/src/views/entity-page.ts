@@ -39,6 +39,7 @@ import {
   isComposedMech,
   type MechBeat,
   type MechBlock,
+  type MechCompareCard,
   type MechField,
   type MechLegacy,
   type MechSide,
@@ -1556,6 +1557,60 @@ function mechStat(readout: string, value: string, label: string): string {
       </div>`;
 }
 
+/** Controlled inline emphasis for composed prose that needs bold/italic (vitamin A's compare cards,
+ *  explain callout, and curio body). Escape-by-default (§00.B #5): everything is HTML-escaped first,
+ *  then ONLY author-vetted <b>/<em> tags are re-enabled — so a stray '<' in real content stays inert
+ *  and no raw author HTML is ever injected. */
+function mechInline(raw: string): string {
+  return escHTML(raw)
+    .replace(/&lt;b&gt;/g, '<b>').replace(/&lt;\/b&gt;/g, '</b>')
+    .replace(/&lt;em&gt;/g, '<em>').replace(/&lt;\/em&gt;/g, '</em>');
+}
+
+/** One card of the two-column compare block. The big label may be struck through and carry a
+ *  `star`/`tick` marker; PRO rows render before CON rows, each a coloured chip + lead + body. */
+function mechCompareCard(c: MechCompareCard): string {
+  const marker = c.big.mark === 'star'
+    ? '<sup>*</sup>'
+    : c.big.mark === 'tick'
+      ? ' <span class="mkA-tick">&#10003;</span>'
+      : '';
+  const bigMod = c.big.struck === true ? ' mkA-big--muted' : '';
+  const cardMod = c.accent === true ? ' mkA-card--animal' : '';
+  const rows = (items: readonly { lead: string; body: string }[], dir: 'up' | 'down'): string =>
+    items.map((r) => `<div class="mkA-pt mkA-pt--${dir}"><span class="mkA-pt__chip">${dir === 'up' ? '+' : '&minus;'}</span><div class="mkA-pt__txt"><span class="mkA-pt__lead">${escHTML(r.lead)}</span> ${mechInline(r.body)}</div></div>`).join('');
+  return `<div class="mkA-card${cardMod}">
+        <div class="mkA-kicker">${escHTML(c.kicker)}</div>
+        <div class="mkA-big${bigMod}">${escHTML(c.big.text)}${marker}</div>
+        <p class="mkA-fine">${mechInline(c.fine)}</p>
+        ${rows(c.pros, 'up')}${rows(c.cons, 'down')}
+      </div>`;
+}
+
+/** The two-column compare block — two trade-off cards side by side. */
+function mechCompare(left: MechCompareCard, right: MechCompareCard): string {
+  return `<div class="mkA-grid">
+        ${mechCompareCard(left)}
+        ${mechCompareCard(right)}
+      </div>`;
+}
+
+/** A titled explainer callout — a mono section label above one accent-bordered paragraph. */
+function mechExplain(label: string, text: string): string {
+  return `<div class="mk-section-label">${escHTML(label)}</div>
+      <div class="mk-explain">${mechInline(text)}</div>`;
+}
+
+/** A "did you know?" curio box — eyebrow, display headline, prose body, composed cite. */
+function mechCurio(eyebrow: string, head: string, body: string, cite: string): string {
+  return `<div class="mk-curio">
+        <div class="mk-curio__eyebrow">${escHTML(eyebrow)}</div>
+        <h4 class="mk-curio__head">${escHTML(head)}</h4>
+        <p class="mk-curio__body">${mechInline(body)}</p>
+        <div class="mk-curio__cite">${escHTML(cite)}</div>
+      </div>`;
+}
+
 /** Draw a figure SLOT — the `{key, alt, labels}` shape both the legacy fields and the composed
  *  `figure`/`opener` blocks carry. Exists so every call site fits on one line. */
 function mechSlotFigure(f: { key: string; alt: string; labels: Record<string, string> }): string {
@@ -1617,6 +1672,12 @@ function renderMechBlocks(blocks: readonly MechBlock[]): string {
         return mechStat(b.readout, b.value, b.label);
       case 'quote':
         return fatFamilyQuote(b.claim, b.highlight, b.trim, b.big === true);
+      case 'compare':
+        return mechCompare(b.left, b.right);
+      case 'explain':
+        return mechExplain(b.label, b.text);
+      case 'curio':
+        return mechCurio(b.eyebrow, b.head, b.body, b.cite);
       default: {
         const unreached: never = b;
         return unreached;
@@ -1641,7 +1702,8 @@ function renderMechanism(slug: string | null, layoutKey: string, category: strin
   const composed = isComposedMech(m);
   const body = composed ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
   const cardsMod = composed && m.cards === true ? ' kd-ep-fam--cards' : '';
-  return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}" data-category="${escHTML(category ?? '')}">
+  const variantMod = composed && typeof m.variant === 'string' && m.variant.length > 0 ? ` kd-ep-fam--${m.variant}` : '';
+  return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML(category ?? '')}">
       ${body}
       <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}
@@ -1795,7 +1857,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     // Graceful fallback: an essential with no sealed page record yet (e.g. the
     // non-essential 91st). Coverage meter + sources still join by layoutKey.
     const nm = escHTML(corpusEss?.common_name ?? layoutKey);
-    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}">
+    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}" data-essential="${escHTML(slug ?? '')}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel('At a glance', 'Daily Needs & How It Works')}
       ${glanceHTML}
@@ -1803,13 +1865,12 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     </div>`;
   }
 
-  const metaBits = [escHTML(page.category ?? ''), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`]
+  // The scientific name (Retinol) LEADS the meta line when it differs from the friendly H1
+  // (Vitamin A), instead of its own subtitle row -- one less line of vertical space. An essential
+  // whose scientific name equals its name (Calcium) contributes nothing, exactly as before.
+  const sciBit = page.scientific_name !== page.name ? escHTML(page.scientific_name) : '';
+  const metaBits = [sciBit, escHTML(page.category ?? ''), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`]
     .filter(s => s.length > 0).join(' · ');
-  // Friendly name is the H1 (page.name = common_name); the scientific name shows as a
-  // muted subtitle only when it differs (Vitamin A -> Retinol; omitted for Calcium).
-  const sciSub = page.scientific_name !== page.name
-    ? `<div class="kd-ep-hero__sci">${escHTML(page.scientific_name)}</div>`
-    : '';
   // The non-essential GLANCE now carries this "not one of the 90" line, so suppress the top flag
   // when that treatment renders - the point is made once per card, not twice.
   const nonEss = (page.is_essential || tile?.noTargetReason === 'non_essential')
@@ -1820,12 +1881,11 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ? `<p class="kd-ep-lede">${escHTML(ledeText)}</p>`
     : '';
 
-  return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}">
+  return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}" data-essential="${escHTML(slug ?? '')}">
     <div class="kd-ep-hero">
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML(page.symbol)}</div>` : ''}
       <div class="kd-ep-hero__idblock">
         <h1 class="kd-ep-hero__name">${escHTML(page.name)}</h1>
-        ${sciSub}
         <div class="kd-ep-hero__meta">${metaBits}</div>
       </div>
       ${backButton()}

@@ -5000,6 +5000,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     stat: MechStatSchema.optional()
   }).passthrough();
   var MechFigureWidthSchema = external_exports.enum(["mech", "fork", "rail"]);
+  var MechCompareCardSchema = external_exports.object({
+    kicker: external_exports.string(),
+    big: external_exports.object({
+      text: external_exports.string(),
+      struck: external_exports.boolean().optional(),
+      mark: external_exports.enum(["star", "tick"]).optional()
+    }).passthrough(),
+    fine: external_exports.string(),
+    accent: external_exports.boolean().optional(),
+    pros: external_exports.array(external_exports.object({ lead: external_exports.string(), body: external_exports.string() }).passthrough()),
+    cons: external_exports.array(external_exports.object({ lead: external_exports.string(), body: external_exports.string() }).passthrough())
+  }).passthrough();
   var MechBlockSchema = external_exports.discriminatedUnion("type", [
     external_exports.object({ type: external_exports.literal("eyebrow"), text: external_exports.string() }).passthrough(),
     external_exports.object({ type: external_exports.literal("kill"), text: external_exports.string() }).passthrough(),
@@ -5041,6 +5053,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       // Opt-in to a larger pull-quote (a short quote can read bigger). Scoped; other quotes unchanged.
       big: external_exports.boolean().optional(),
       highlight: external_exports.string().optional()
+    }).passthrough(),
+    // The two-column COMPARE block — two trade-off cards side by side (vitamin A #6, 2026-08-01).
+    external_exports.object({
+      type: external_exports.literal("compare"),
+      left: MechCompareCardSchema,
+      right: MechCompareCardSchema
+    }).passthrough(),
+    // A titled EXPLAIN callout — a mono section label plus one accent-bordered paragraph. `text` may
+    // carry the controlled inline <b>/<em> the compare/curio bodies use.
+    external_exports.object({
+      type: external_exports.literal("explain"),
+      label: external_exports.string(),
+      text: external_exports.string()
+    }).passthrough(),
+    // A "did you know?" CURIO box — its own eyebrow, a display headline, a prose body (inline
+    // <b>/<em> allowed), and a composed cite line.
+    external_exports.object({
+      type: external_exports.literal("curio"),
+      eyebrow: external_exports.string(),
+      head: external_exports.string(),
+      body: external_exports.string(),
+      cite: external_exports.string()
     }).passthrough()
   ]);
   var MechComposedSchema = external_exports.object({
@@ -5050,7 +5084,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     // Opt-in to the card treatment (calcium): the renderer adds `kd-ep-fam--cards` to the section and
     // the stylesheet restyles THIS entry's split cells + beat steps as tinted cards. Scoped so the
     // signed-off legacy headers (which never carry this field) render visually unchanged.
-    cards: external_exports.boolean().optional()
+    cards: external_exports.boolean().optional(),
+    // Opt-in to a per-header scoping modifier `kd-ep-fam--<variant>` on the section, so a header can
+    // tighten a SHARED class (vitamin A adjusts .kd-ep-fam__eyebrow/__kill) without disturbing the
+    // signed-off headers. Same containment pattern as `cards`.
+    variant: external_exports.string().optional()
   }).passthrough();
   var MechanismClaritySchema = external_exports.object({
     disclaimer: external_exports.string(),
@@ -39348,7 +39386,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin A",
         scientific_name: "Retinol",
-        symbol: null,
+        symbol: "A",
         category: "vitamin",
         is_essential: true,
         claim_count: 69,
@@ -39688,7 +39726,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin B1",
         scientific_name: "Thiamine",
-        symbol: null,
+        symbol: "B1",
         category: "vitamin",
         is_essential: true,
         claim_count: 22,
@@ -39874,7 +39912,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin B2",
         scientific_name: "Riboflavin",
-        symbol: null,
+        symbol: "B2",
         category: "vitamin",
         is_essential: true,
         claim_count: 12,
@@ -40039,7 +40077,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Niacin",
         scientific_name: "Niacin",
-        symbol: null,
+        symbol: "B3",
         category: "vitamin",
         is_essential: true,
         claim_count: 25,
@@ -40242,7 +40280,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin B5",
         scientific_name: "Pantothenic Acid",
-        symbol: null,
+        symbol: "B5",
         category: "vitamin",
         is_essential: true,
         claim_count: 10,
@@ -40397,7 +40435,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin B6",
         scientific_name: "Pyridoxine",
-        symbol: null,
+        symbol: "B6",
         category: "vitamin",
         is_essential: true,
         claim_count: 50,
@@ -40657,7 +40695,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Folate",
         scientific_name: "Folate",
-        symbol: null,
+        symbol: "B9",
         category: "vitamin",
         is_essential: true,
         claim_count: 24,
@@ -40870,7 +40908,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin B12",
         scientific_name: "Cobalamin",
-        symbol: null,
+        symbol: "B12",
         category: "vitamin",
         is_essential: true,
         claim_count: 37,
@@ -41112,7 +41150,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin C",
         scientific_name: "Ascorbic Acid",
-        symbol: null,
+        symbol: "C",
         category: "vitamin",
         is_essential: true,
         claim_count: 73,
@@ -41432,7 +41470,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin D",
         scientific_name: "Cholecalciferol",
-        symbol: null,
+        symbol: "D3",
         category: "vitamin",
         is_essential: true,
         claim_count: 18,
@@ -41659,7 +41697,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin E",
         scientific_name: "Tocopherol",
-        symbol: null,
+        symbol: "E",
         category: "vitamin",
         is_essential: true,
         claim_count: 68,
@@ -41974,7 +42012,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Vitamin K",
         scientific_name: "Phylloquinone",
-        symbol: null,
+        symbol: "K",
         category: "vitamin",
         is_essential: true,
         claim_count: 10,
@@ -42140,7 +42178,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Biotin",
         scientific_name: "Biotin",
-        symbol: null,
+        symbol: "H",
         category: "vitamin",
         is_essential: true,
         claim_count: 7,
@@ -42305,7 +42343,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Choline",
         scientific_name: "Choline",
-        symbol: null,
+        symbol: "Ch",
         category: "vitamin",
         is_essential: true,
         claim_count: 14,
@@ -42473,7 +42511,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Inositol",
         scientific_name: "Inositol",
-        symbol: null,
+        symbol: "In",
         category: "vitamin",
         is_essential: true,
         claim_count: 6,
@@ -42616,7 +42654,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         type: "essential",
         name: "Flavonoids",
         scientific_name: "Flavonoids",
-        symbol: null,
+        symbol: "Fl",
         category: "vitamin",
         is_essential: true,
         claim_count: 17,
@@ -73077,6 +73115,59 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             big: true
           }
         ]
+      },
+      {
+        slug: "vitamin-a",
+        facet: "mechanism",
+        variant: "vita",
+        blocks: [
+          { type: "eyebrow", text: "One vitamin \xB7 two very different forms" },
+          { type: "kill", text: "A carrot doesn\u2019t hand you vitamin A \u2014 only the raw material." },
+          {
+            type: "compare",
+            left: {
+              kicker: "what a carrot\u2019s label calls \u201CVitamin A\u201D",
+              big: { text: "Vitamin A", struck: true, mark: "star" },
+              fine: "<b>* really \u03B2-carotene</b> \u2014 a <em>precursor</em>, not the vitamin.",
+              pros: [
+                { lead: "Safe to mega-dose", body: "\u2014 it\u2019s an <b>antioxidant</b> in its own form, so overdosing becomes nearly impossible." }
+              ],
+              cons: [
+                { lead: "Less convenient daily", body: "\u2014 your <b>liver</b> must convert it first (needs <b>zinc</b>), a less direct way to hit your target." }
+              ]
+            },
+            right: {
+              kicker: "in liver \xB7 butter \xB7 egg",
+              big: { text: "Vitamin A", mark: "tick" },
+              accent: true,
+              fine: "The active form \u2014 <b>retinol</b>.",
+              pros: [
+                { lead: "Ready to use", body: "\u2014 the active form, so it\u2019s the direct way to hit your daily target." }
+              ],
+              cons: [
+                { lead: "Toxic in excess", body: "\u2014 above about 50,000 IU a day, kept up over time." }
+              ]
+            }
+          },
+          {
+            type: "explain",
+            label: "In practice",
+            text: "Not better vs. worse \u2014 a <b>difference in job</b>. Because you almost can\u2019t overdose on \u03B2-carotene, it\u2019s the form Wallach doses at <b>pharmacologic extremes</b> \u2014 300,000 IU, even 600,000 with vitamin E \u2014 to <b>treat disease</b>. Retinol turns toxic past ~50,000 IU, so it stays at everyday <b>maintenance</b> amounts \u2014 the small dose that meets your daily target."
+          },
+          {
+            type: "curio",
+            eyebrow: "Did you know?",
+            head: "A cure that arrived four thousand years early",
+            body: "Around <b>2000 BC</b>, Egyptian healers treated night blindness by pressing <b>beef-liver juice</b> onto the eyes \u2014 <em>not eating it</em> \u2014 and it worked. Science took four thousand years to catch up: vitamin A wasn\u2019t isolated until 1913, and only then did we learn the liver stores it and the eye is the first thing to fail without it. The Egyptians had no chemistry to find a vitamin hidden in fat, no way to link a liver to an eye \u2014 yet they went straight to it. It reads less like something worked out than something <b>handed down</b> \u2014 complete, and already correct.",
+            cite: "Egyptian cure & vitamin-A liver storage \u2014 Wallach, Epigenetics (2014)"
+          },
+          {
+            type: "quote",
+            claim: "WAL-CLM-DDDL-000165",
+            trim: "NIGHT BLINDNESS (xerophthalmia) is caused by a vitamin A deficiency which can be overt dietary deficiency, fat malabsorption syndrome (vitamin A is fat soluble), zinc deficiency which results in poor conversion of carotene to vitamin A by the liver",
+            highlight: "poor conversion of carotene to vitamin A by the liver"
+          }
+        ]
       }
     ]
   };
@@ -73104,6 +73195,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       magnesium: {
         lede: `The mineral at the centre of chlorophyll \u2014 what makes plants green and stores the sun's energy \u2014 and, inside you, calcium's counterweight: the "relaxer" that lets every muscle and nerve stand down.`,
         why: "From Wallach's Epigenetics (2014) mineral table: 250\u2013500 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 770 mg/day."
+      },
+      "vitamin-a": {
+        lede: "The vitamin your eyes need to see in dim light \u2014 and, beyond vision, the one Wallach ties to healthy skin and mucous membranes, to bone and teeth, and to a lower risk of epithelial cancers.",
+        why: "From Wallach's Epigenetics (2014): retinol 2,500\u20135,000 IU and \u03B2-carotene 5,000\u201325,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU \u2248 1,500 mcg retinol + 7,500 mcg \u03B2-carotene = 9,000 mcg RAE/day. (His earlier Let's Play Doctor, 1995, lists 5,000 IU.)"
       }
     },
     conditions: {}
@@ -180455,6 +180550,39 @@ Sickle cell anemia`,
         <span class="kd-ep-fam__statlbl">${escHTML6(label)}</span>
       </div>`;
   }
+  function mechInline(raw) {
+    return escHTML6(raw).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>").replace(/&lt;em&gt;/g, "<em>").replace(/&lt;\/em&gt;/g, "</em>");
+  }
+  function mechCompareCard(c) {
+    const marker = c.big.mark === "star" ? "<sup>*</sup>" : c.big.mark === "tick" ? ' <span class="mkA-tick">&#10003;</span>' : "";
+    const bigMod = c.big.struck === true ? " mkA-big--muted" : "";
+    const cardMod = c.accent === true ? " mkA-card--animal" : "";
+    const rows = (items, dir) => items.map((r) => `<div class="mkA-pt mkA-pt--${dir}"><span class="mkA-pt__chip">${dir === "up" ? "+" : "&minus;"}</span><div class="mkA-pt__txt"><span class="mkA-pt__lead">${escHTML6(r.lead)}</span> ${mechInline(r.body)}</div></div>`).join("");
+    return `<div class="mkA-card${cardMod}">
+        <div class="mkA-kicker">${escHTML6(c.kicker)}</div>
+        <div class="mkA-big${bigMod}">${escHTML6(c.big.text)}${marker}</div>
+        <p class="mkA-fine">${mechInline(c.fine)}</p>
+        ${rows(c.pros, "up")}${rows(c.cons, "down")}
+      </div>`;
+  }
+  function mechCompare(left, right) {
+    return `<div class="mkA-grid">
+        ${mechCompareCard(left)}
+        ${mechCompareCard(right)}
+      </div>`;
+  }
+  function mechExplain(label, text) {
+    return `<div class="mk-section-label">${escHTML6(label)}</div>
+      <div class="mk-explain">${mechInline(text)}</div>`;
+  }
+  function mechCurio(eyebrow, head, body, cite) {
+    return `<div class="mk-curio">
+        <div class="mk-curio__eyebrow">${escHTML6(eyebrow)}</div>
+        <h4 class="mk-curio__head">${escHTML6(head)}</h4>
+        <p class="mk-curio__body">${mechInline(body)}</p>
+        <div class="mk-curio__cite">${escHTML6(cite)}</div>
+      </div>`;
+  }
   function mechSlotFigure(f) {
     return mechanismFigure(f.key, f.alt, f.labels);
   }
@@ -180502,6 +180630,12 @@ Sickle cell anemia`,
           return mechStat(b.readout, b.value, b.label);
         case "quote":
           return fatFamilyQuote(b.claim, b.highlight, b.trim, b.big === true);
+        case "compare":
+          return mechCompare(b.left, b.right);
+        case "explain":
+          return mechExplain(b.label, b.text);
+        case "curio":
+          return mechCurio(b.eyebrow, b.head, b.body, b.cite);
         default: {
           const unreached = b;
           return unreached;
@@ -180517,7 +180651,8 @@ Sickle cell anemia`,
     const composed = isComposedMech(m);
     const body = composed ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
     const cardsMod = composed && m.cards === true ? " kd-ep-fam--cards" : "";
-    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}" data-category="${escHTML6(category ?? "")}">
+    const variantMod = composed && typeof m.variant === "string" && m.variant.length > 0 ? ` kd-ep-fam--${m.variant}` : "";
+    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML6(category ?? "")}">
       ${body}
       <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}
@@ -180616,24 +180751,23 @@ Sickle cell anemia`,
     const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
     if (page === null) {
       const nm = escHTML6(corpusEss?.common_name ?? layoutKey);
-      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}">
+      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}" data-essential="${escHTML6(slug ?? "")}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel("At a glance", "Daily Needs & How It Works")}
       ${glanceHTML}
       <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
     </div>`;
     }
-    const metaBits = [escHTML6(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
-    const sciSub = page.scientific_name !== page.name ? `<div class="kd-ep-hero__sci">${escHTML6(page.scientific_name)}</div>` : "";
+    const sciBit = page.scientific_name !== page.name ? escHTML6(page.scientific_name) : "";
+    const metaBits = [sciBit, escHTML6(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
     const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
     const ledeText = slug !== null ? essentialLede(slug) : "";
     const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML6(ledeText)}</p>` : "";
-    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}">
+    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}" data-essential="${escHTML6(slug ?? "")}">
     <div class="kd-ep-hero">
       ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML6(page.symbol)}</div>` : ""}
       <div class="kd-ep-hero__idblock">
         <h1 class="kd-ep-hero__name">${escHTML6(page.name)}</h1>
-        ${sciSub}
         <div class="kd-ep-hero__meta">${metaBits}</div>
       </div>
       ${backButton()}
@@ -185425,7 +185559,13 @@ VERIFY. node tools/build.mjs OK (tsc clean); invariants 80/80 (element_header_co
 
 SESSION SHAPE. Two Workflow fan-outs (R4: 4 distinct editorial concepts; R5: 2 cycle takes + 1 botanical) \u2014 Luneth picked B1, gave 6 refinements then 3 final tweaks, all applied+re-verified. NO golden/corpus seal needed (only design-system.css carries a golden; untouched). Concept mockups live gitignored under temporary/magnesium-header-mockups-r{4,5}.html.` }, { id: "lg_msaubcem_3eubo8", ts: "2026-08-01T15:44:55.054573-05:00", surface: "element #6 vitamin A header", kind: "milestone", summary: "Finalized the vitamin A header design (r7) after ~7 review rounds with Luneth \u2014 a two-form trade-off plus a subtle Egyptian did-you-know mystery. Approved and ready to port live next session; nothing shipped/live changed.", detail: `Spent the session designing vitamin A's element header with Luneth, round by round. It landed as a "trade-off" \u2014 two cards comparing beta-carotene vs retinol with color-coded pros and cons \u2014 followed by a subtle Egyptian "did you know" mystery. He approved it as r7 after many small tweaks. Nothing in the live app changed yet; the next session ports r7 into the real page.
 
-Final approved design = temporary/vitamin-a-header-r7.html (force-added to git past the temporary/ gitignore so the port session cannot lose it). Arc r2->r7: the flowchart illustrations were rejected as shallow; studied the approved copper header to find the real bar (a genuine thesis carried by meaningful marks); landed "the label lie" and refined it into a two-sided TRADE-OFF \u2014 beta-carotene = the pharmacologic mega-dose form (safe at extremes, an antioxidant), retinol = the ready maintenance form (toxic if pushed high). Added the Egyptian curio (2000 BC beef-liver-to-the-eyes cure; a subtle "handed down / already correct" mystery with nothing stated about spirits/Nephilim/pyramids/aliens). Final hierarchy pass: filled green/rust pro-con chips + bold colored leads, IN PRACTICE / DID YOU KNOW chapter labels, tuned type + spacing. Content rulings: Egyptian date = 2000 BC (EPIGEN-000214, not 000167's 1000 BC); beta-carotene is a trade-off not "inferior" (a logic error Luneth caught); no "plate" diet language (new memory no-plate-diet-language). Source rule: every fact sourced (EPIGEN-000213/214/031/175/167/217/110, DDDL-000165/056/041/167, IMMORT-000249, HELLS-000053, RARE-000336, LETS-000071); the "body stops converting once it has enough retinol" mechanism is NOT in the corpus and was deliberately left out. Verified headless with puppeteer (verify_r7.js): cards equal, no overflow/collision/stroke-through-text, kill one line at live 1.12, composed cite. Board 80/80 green; build fresh; corpus unchanged (no seal). Comprehensive port handoff in chronicle/next-chunk.md: r7 (NOT r6) is final, with the full spec, tuned CSS values, the sourcing map, and the real porting scope (new mech block types + prose-store content + entity-copy lede/why still TODO + vitamin-A-scoped shared-class overrides).` }];
+Final approved design = temporary/vitamin-a-header-r7.html (force-added to git past the temporary/ gitignore so the port session cannot lose it). Arc r2->r7: the flowchart illustrations were rejected as shallow; studied the approved copper header to find the real bar (a genuine thesis carried by meaningful marks); landed "the label lie" and refined it into a two-sided TRADE-OFF \u2014 beta-carotene = the pharmacologic mega-dose form (safe at extremes, an antioxidant), retinol = the ready maintenance form (toxic if pushed high). Added the Egyptian curio (2000 BC beef-liver-to-the-eyes cure; a subtle "handed down / already correct" mystery with nothing stated about spirits/Nephilim/pyramids/aliens). Final hierarchy pass: filled green/rust pro-con chips + bold colored leads, IN PRACTICE / DID YOU KNOW chapter labels, tuned type + spacing. Content rulings: Egyptian date = 2000 BC (EPIGEN-000214, not 000167's 1000 BC); beta-carotene is a trade-off not "inferior" (a logic error Luneth caught); no "plate" diet language (new memory no-plate-diet-language). Source rule: every fact sourced (EPIGEN-000213/214/031/175/167/217/110, DDDL-000165/056/041/167, IMMORT-000249, HELLS-000053, RARE-000336, LETS-000071); the "body stops converting once it has enough retinol" mechanism is NOT in the corpus and was deliberately left out. Verified headless with puppeteer (verify_r7.js): cards equal, no overflow/collision/stroke-through-text, kill one line at live 1.12, composed cite. Board 80/80 green; build fresh; corpus unchanged (no seal). Comprehensive port handoff in chronicle/next-chunk.md: r7 (NOT r6) is final, with the full spec, tuned CSS values, the sourcing map, and the real porting scope (new mech block types + prose-store content + entity-copy lede/why still TODO + vitamin-A-scoped shared-class overrides).` }, { id: "lg_msb1knq6_8wmetj", ts: "2026-08-01T19:08:06.942114-05:00", surface: "element #6 (vitamin A header)", kind: "milestone", summary: "Vitamin A header (#6) SHIPPED: r7 ported (\u03B2-carotene-vs-retinol cards + In-practice callout + Egyptian curio) + 4 tweaks \u2014 [A] element box, Retinol in meta line, curio reword, 72ch lede. Quote-highlight wrap attempted then reverted to exact original (deferred, Luneth's call).", detail: `Element #6, the vitamin A header, is live in the app. I ported Luneth's finalized r7 design \u2014 the \u03B2-carotene-vs-retinol trade-off cards, the "In practice" explainer, and the Egyptian "did you know?" curio \u2014 into the real render pipeline, and shipped four tweaks he asked for: vitamins now show their letter in the element box (orange [A], like a mineral's blue [Ca]/[S]), the scientific name "Retinol" now leads the meta line instead of taking its own row, the curio was reworded tighter around the fact that vitamin A wasn't isolated until 1913, and the lede is one notch wider. I also tried to make the quote-highlight wrap across lines while keeping its exact parchment texture, found it can't be done without a hack, and reverted the highlight to exactly the original at his direction.
+
+Technical. NEW composed block types compare/explain/curio: core/schemas/mechanism-clarity.ts gains MechCompareCardSchema, 3 discriminated-union members, and an optional \`variant\` scope field on MechComposedSchema; views/entity-page.ts gains mechInline (escape-then-reintroduce a controlled <b>/<em> allowlist), mechCompare/mechCompareCard, mechExplain, mechCurio emitters + their renderMechBlocks cases + a variantMod on the section. All editorial prose lives in mechanism-clarity-data.json (vitamin-a composed entry, variant:"vita"); the pull-quote pulls WAL-CLM-DDDL-000165 as Option A \u2014 the full contiguous case-exact slice Luneth chose over the tighter/elided forms (mech_quote_trim_faithful requires a contiguous slice, so r7's re-cased/elided display could not be reproduced); curio facts anchor EPIGEN-000167/000214 (2000 BC, applied to the eyes) + 000213 (isolated 1913). CSS: .mkA-*/.mk-section-label/.mk-explain/.mk-curio* added to drawer-knowledge.css; the two shared overrides (.kd-ep-fam__eyebrow/__kill) scoped under .kd-ep-fam--vita so the 5 shipped headers stay byte-identical; the green(+)/rust(-) pro/con chips are depictive literals (vitamin keeps the default orange accent, no [data-category="vitamin"] override). Hero: entity_page_derive.py now sets symbol = e.get("symbol") or e.get("letter") \u2192 the 16 letter-only nutrients gain a box (regenerated entity-page-data.json, derived_artifacts_fresh green); scientific name folded into metaBits + the kd-ep-hero__sci row removed; a data-essential=slug attribute added to the .kd-essential-deep container for per-page CSS (lede max-width:72ch scoped to vitamin-a, gate-safe because entity_render_is_projection only bans id-keyed object literals and slug=== branches). entity-copy.json vitamin-a lede + why (why = IU\u2192mcg RAE at 0.3: retinol 2,500\u20135,000 + \u03B2-carotene 5,000\u201325,000 = 9,000 mcg/day, explicitly NOT the \xD71.54 mineral weight-scale). Gates/probes: build exits 0; invariants 80/80 (mechanism_blocks_wellformed = 12 block types declared==dispatched, mech_quote_trim_faithful, element_header_complete, view_category_not_hardcoded, views_no_inline_prose all green); new tools/render_probe_vitamin_a.js passes 23/23 including a selenium regression pass; vitamin-a sealed into tools/goldens/mechanism-sections.json (inserted before zinc to keep the negative control's last-slug stable), render_probe_mech_shape 23/23 with 4 headers byte-identical; knowledge + coverage probes report 0 page-errors.
+
+Process note (recurring, worth not repeating): headless Chrome renders a 0px scrollbar, so every headless screenshot was ~15px wider than the live app \u2014 the real .kd-body scrollbar is 15px and the r7 demo hid it with overflow:visible, so line-breaks tuned on the demo wrap early live. I called a headless render a "pixel match" and Luneth rightly called it out; all verification since was at the true 754px content width.
+
+Deferred: (1) the quote-highlight cross-line wrap \u2014 the sealed .ds-mark texture is an absolutely-positioned ::before that box-decoration-break cannot reach, so the only design-preserving wrap is splitting the phrase into two real .ds-mark segments per line (proven to read as one continuous highlight in temporary/highlight-hack-proto.html); Luneth declined the hack for now, so the highlight is left EXACTLY original \u2014 and it sits on one line here anyway, so nothing is broken. (2) The lede still ends "cancers." on its own line at 72ch, which is Luneth's explicit value; left as-is pending his call.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

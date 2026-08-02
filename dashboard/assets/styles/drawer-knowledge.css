@@ -2553,3 +2553,57 @@
 
 /* A larger pull-quote for a short quote (magnesium opt-in via the composed quote block's `big`); id+3-class specificity == the base mech-quote rule, appended later so it wins. */
 #drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__quote--big .ds-pull-quote { font-size: clamp(1.26rem, 1.26vw, 1.62rem); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════════════════════════
+   VITAMIN A (element #6) — the β-carotene vs retinol TRADE-OFF cards + the "In practice" explainer
+   + the Egyptian "Did you know?" curio. Ported from the signed-off temporary/vitamin-a-header-r7.html
+   (Luneth, 2026-08-01). The mkA- and mk- class names are NEW (no collision with the shipped headers). Two
+   SHARED classes are tightened — .kd-ep-fam__eyebrow + .kd-ep-fam__kill — so those are scoped under
+   .kd-ep-fam--vita (opt-in via the composed entry's `variant:"vita"`), leaving the 5 signed-off
+   headers byte-unchanged. Vitamin A keeps the DEFAULT orange accent (no [data-category="vitamin"]
+   override), so --kd-ep-fam resolves to orange; the green(+)/rust(−) PRO/CON chips are DEPICTIVE
+   literals (good vs caution), like the shipped figures' literal colours.
+   ═══════════════════════════════════════════════════════════════════════════════════════════════ */
+/* the two SHARED overrides — scoped to vitamin A only */
+#drawer-knowledge-mount .kd-ep-fam--vita .kd-ep-fam__eyebrow { font-size: .79rem; font-weight: 600; letter-spacing: 0.09rem; }
+#drawer-knowledge-mount .kd-ep-fam--vita .kd-ep-fam__kill { margin-top: calc(var(--ds-space-1) + 5px); margin-bottom: 20px; }
+
+/* FORM A · the trade-off cards */
+#drawer-knowledge-mount .mkA-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 10px; align-items: stretch; }
+#drawer-knowledge-mount .mkA-card { border: 1px solid var(--ds-rule); border-radius: 13px; padding: 18px 20px 20px; background: var(--ds-paper-light); display: flex; flex-direction: column; }
+#drawer-knowledge-mount .mkA-card--animal { border-color: color-mix(in srgb, var(--kd-ep-fam) 42%, var(--ds-rule)); }
+#drawer-knowledge-mount .mkA-kicker { font-family: var(--ds-font-mono); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 12px; }
+#drawer-knowledge-mount .mkA-big { font-family: var(--ds-font-display); font-weight: 700; font-size: 1.9rem; color: var(--ds-ink); line-height: 1.05; }
+#drawer-knowledge-mount .mkA-big sup { font-size: .95rem; color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .mkA-big--muted { color: var(--ds-ink-faint); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--kd-ep-fam) 65%, transparent); text-decoration-thickness: 2.5px; }
+#drawer-knowledge-mount .mkA-tick { color: var(--kd-ep-fam); }
+#drawer-knowledge-mount .mkA-fine { margin: 12px 0 2px; font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.5; color: var(--ds-ink); }
+#drawer-knowledge-mount .mkA-fine b { color: var(--kd-ep-fam); font-weight: 700; }
+#drawer-knowledge-mount .mkA-pt { display: flex; gap: 11px; margin-top: 14px; align-items: flex-start; font-family: var(--ds-font-sans); }
+#drawer-knowledge-mount .mkA-pt__chip { flex: 0 0 auto; width: 21px; height: 21px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; font-family: var(--ds-font-display); font-weight: 800; font-size: .95rem; line-height: 1; color: #fff; margin-top: 1px; }
+#drawer-knowledge-mount .mkA-pt--up .mkA-pt__chip { background: #2f7a33; }
+#drawer-knowledge-mount .mkA-pt--down .mkA-pt__chip { background: #b0442e; }
+#drawer-knowledge-mount .mkA-pt__txt { font-size: 0.9rem; line-height: 1.5; color: var(--ds-ink); }
+#drawer-knowledge-mount .mkA-pt__lead { font-weight: 700; }
+#drawer-knowledge-mount .mkA-pt--up .mkA-pt__lead { color: #2f7a33; }
+#drawer-knowledge-mount .mkA-pt--down .mkA-pt__lead { color: #b0442e; }
+#drawer-knowledge-mount .mkA-pt__txt b { font-weight: 700; }
+
+/* the "In practice" section label + explainer callout */
+#drawer-knowledge-mount .mk-section-label { font-family: var(--ds-font-mono); font-size: .79rem; font-weight: 600; letter-spacing: 0.09rem; text-transform: uppercase; color: var(--kd-ep-fam); margin: 26px 0 9px; }
+#drawer-knowledge-mount .mk-explain { margin: 13px 0 2px; padding: 13px 17px; border-left: 3px solid var(--kd-ep-fam); background: color-mix(in srgb, var(--kd-ep-fam) 6%, var(--ds-paper-light)); border-radius: 0 9px 9px 0; font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.6; color: var(--ds-ink); }
+#drawer-knowledge-mount .mk-explain b { font-weight: 700; color: var(--ds-ink); }
+
+/* the Egyptian "Did you know?" curio */
+#drawer-knowledge-mount .mk-curio { margin-top: 24px; padding: 20px 22px 20px; border: 1px solid var(--ds-rule); border-radius: 13px; background: color-mix(in srgb, var(--ds-ink) 4.5%, var(--ds-paper-light)); }
+#drawer-knowledge-mount .mk-curio__eyebrow { font-family: var(--ds-font-mono); font-weight: 600; font-size: .79rem; letter-spacing: 0.09rem; text-transform: uppercase; color: var(--kd-ep-fam); margin-bottom: 8px; }
+#drawer-knowledge-mount .mk-curio__head { font-family: var(--ds-font-display); font-weight: 700; font-size: var(--ds-text-base); color: var(--ds-ink); margin: 0 0 12px; line-height: 1.22; }
+#drawer-knowledge-mount .mk-curio__body { font-family: var(--ds-font-sans); font-size: 0.91rem; line-height: 1.68; color: var(--ds-ink); margin: 0; }
+#drawer-knowledge-mount .mk-curio__body b { font-weight: 700; }
+#drawer-knowledge-mount .mk-curio__body em { font-style: italic; }
+#drawer-knowledge-mount .mk-curio__cite { margin-top: 14px; font-family: var(--ds-font-mono); font-size: .66rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ds-ink-faint); }
+
+/* vitamin A lede: one notch wider than the 69ch base so it doesn't break to an orphan word
+   (Luneth 2026-08-01). Scoped to this page via data-essential so no other lede changes. */
+#drawer-knowledge-mount .kd-essential-deep[data-essential="vitamin-a"] .kd-ep-lede { max-width: 72ch; }

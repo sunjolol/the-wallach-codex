@@ -273,7 +273,7 @@ def build_data() -> dict:
             "type": "essential",
             "name": e.get("common_name") or e.get("display_name", slug),
             "scientific_name": e.get("display_name", slug),
-            "symbol": e.get("symbol"),
+            "symbol": e.get("symbol") or e.get("letter"),  # vitamins/letter-only nutrients show their canon letter in the element box, like a mineral symbol
             "category": e.get("category"),
             "is_essential": e.get("essential") is not False,
             "claim_count": ecorp.get("claim_count", 0),

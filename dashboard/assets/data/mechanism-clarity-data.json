@@ -426,6 +426,59 @@
           "big": true
         }
       ]
+    },
+    {
+      "slug": "vitamin-a",
+      "facet": "mechanism",
+      "variant": "vita",
+      "blocks": [
+        { "type": "eyebrow", "text": "One vitamin · two very different forms" },
+        { "type": "kill", "text": "A carrot doesn’t hand you vitamin A — only the raw material." },
+        {
+          "type": "compare",
+          "left": {
+            "kicker": "what a carrot’s label calls “Vitamin A”",
+            "big": { "text": "Vitamin A", "struck": true, "mark": "star" },
+            "fine": "<b>* really β-carotene</b> — a <em>precursor</em>, not the vitamin.",
+            "pros": [
+              { "lead": "Safe to mega-dose", "body": "— it’s an <b>antioxidant</b> in its own form, so overdosing becomes nearly impossible." }
+            ],
+            "cons": [
+              { "lead": "Less convenient daily", "body": "— your <b>liver</b> must convert it first (needs <b>zinc</b>), a less direct way to hit your target." }
+            ]
+          },
+          "right": {
+            "kicker": "in liver · butter · egg",
+            "big": { "text": "Vitamin A", "mark": "tick" },
+            "accent": true,
+            "fine": "The active form — <b>retinol</b>.",
+            "pros": [
+              { "lead": "Ready to use", "body": "— the active form, so it’s the direct way to hit your daily target." }
+            ],
+            "cons": [
+              { "lead": "Toxic in excess", "body": "— above about 50,000 IU a day, kept up over time." }
+            ]
+          }
+        },
+        {
+          "type": "explain",
+          "label": "In practice",
+          "text": "Not better vs. worse — a <b>difference in job</b>. Because you almost can’t overdose on β-carotene, it’s the form Wallach doses at <b>pharmacologic extremes</b> — 300,000 IU, even 600,000 with vitamin E — to <b>treat disease</b>. Retinol turns toxic past ~50,000 IU, so it stays at everyday <b>maintenance</b> amounts — the small dose that meets your daily target."
+        },
+        {
+          "type": "curio",
+          "eyebrow": "Did you know?",
+          "head": "A cure that arrived four thousand years early",
+          "body": "Around <b>2000 BC</b>, Egyptian healers treated night blindness by pressing <b>beef-liver juice</b> onto the eyes — <em>not eating it</em> — and it worked. Science took four thousand years to catch up: vitamin A wasn’t isolated until 1913, and only then did we learn the liver stores it and the eye is the first thing to fail without it. The Egyptians had no chemistry to find a vitamin hidden in fat, no way to link a liver to an eye — yet they went straight to it. It reads less like something worked out than something <b>handed down</b> — complete, and already correct.",
+          "cite": "Egyptian cure & vitamin-A liver storage — Wallach, Epigenetics (2014)"
+        },
+        {
+          "type": "quote",
+          "claim": "WAL-CLM-DDDL-000165",
+          "trim": "NIGHT BLINDNESS (xerophthalmia) is caused by a vitamin A deficiency which can be overt dietary deficiency, fat malabsorption syndrome (vitamin A is fat soluble), zinc deficiency which results in poor conversion of carotene to vitamin A by the liver",
+          "highlight": "poor conversion of carotene to vitamin A by the liver"
+        }
+      ]
     }
   ]
 }
