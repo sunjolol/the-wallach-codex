@@ -1,12 +1,68 @@
 {
- "_doc": "Named exceptions for frontface_verbatims_clean (tools/invariants.py). Each entry is a FACTUAL CLAIM about the world and must carry a reason a reviewer can check. An entry with no reason is itself RED (memory: gate-exceptions-are-world-claims). EMPTY IS THE GOAL: an exception is a defect we chose to live with, so the list shrinking is progress and it growing needs review.",
+ "_doc": "Named exceptions for frontface_verbatims_clean (tools/invariants.py). Each entry is a FACTUAL CLAIM about the world and must carry a reason a reviewer can check; an entry with no reason is itself RED (memory: gate-exceptions-are-world-claims). EMPTY IS THE GOAL: an exception is a defect -- or a legitimate pattern -- we chose to live with, so the list shrinking is progress and it growing needs review. Each reason states its EVIDENCE TYPE: 'PAGE-VERIFIED' means the page image was read; anything weaker says so.",
  "_history": [
   {
    "claim_id": "WAL-CLM-LETS-000512",
    "detector": "hyphen_split",
    "status": "RETIRED 2026-08-02",
-   "why": "Added the same day the gate landed, for a real table-column artefact: the OCR read ACROSS columns on Let's Play Doctor p85, splicing 'Pharma-' (from 'Pharmacologic', broken inside its own column) onto 'Need' from the neighbouring 'True Supplement Need' column. RETIRED because the defect was FIXED, not waived — the header was normalized column-wise to 'Nutrient RDA True Supplement Need 30-Day Pharmacologic Daily Dose' against the page image, with every dose figure re-read by eye (BIOTIN: RDA 200 mcg / True Supplement Need 200 mcg / 30-Day Pharmacologic Daily Dose 500 to 3,000 mcg). Kept here so the exception's whole life is on the record rather than vanishing."
+   "why": "A real table-column artefact: the OCR read ACROSS columns on Let's Play Doctor p85, splicing 'Pharma-' onto 'Need' from the neighbouring column. RETIRED because the defect was FIXED, not waived -- the header was normalized column-wise against the page image and every dose figure re-read by eye. Kept so the exception's whole life stays on the record."
   }
  ],
- "exceptions": []
+ "exceptions": [
+  {
+   "claim_id": "WAL-CLM-LETS-000126",
+   "detector": "space_before_punct",
+   "reason": "PAGE-VERIFIED (Let's Play Doctor p94, 2026-08-02): the page itself prints '(Levamisol , hydrazine sulfate)' WITH the space before the comma. The book's own typography, not OCR. Two sibling cases on other pages WERE defects and were fixed (LETS-000324 'Caladryl ,', LETS-000348 'tolerance ,') -- the book is simply inconsistent, which is exactly why each was read rather than batch-fixed."
+  },
+  {
+   "claim_id": "WAL-CLM-EPIGEN-000317",
+   "detector": "digit_in_word",
+   "reason": "PAGE-VERIFIED (Epigenetics, Screenshot(601), 2026-08-02): the page itself prints 'were discovered in Death Valley in1881.' with no space. The book's own typo, faithfully transcribed. Whole-book typo repair is explicitly out of scope for this campaign (mandate §0)."
+  },
+  {
+   "claim_id": "WAL-CLM-DDDL-000112",
+   "detector": "number_split",
+   "reason": "TWO-COLUMN TABLE, proven by the claim's own text: the verbatim carries its header, 'Source (Protein) Chemical Score % Utilization', so 'Whole egg 100 94' is chemical score 100 and utilization 94 -- two figures in two columns, not one split number. Internal evidence (the header is inside the verbatim), not a page read."
+  },
+  {
+   "claim_id": "WAL-CLM-DDDL-000289",
+   "detector": "number_split",
+   "reason": "TWO-COLUMN TABLE, same table and same header as DDDL-000112 ('Source (Protein) Chemical Score % Utilization'); this claim quotes more rows of it. Internal evidence, not a page read."
+  },
+  {
+   "claim_id": "WAL-CLM-DDDL-000250",
+   "detector": "number_split",
+   "reason": "TWO-COLUMN TABLE, proven by the claim's own header 'FOOD CALCIUM PHOSPHORUS': 'red meat 1 12' is a calcium-to-phosphorus ratio of 1 to 12, two figures in two columns. Internal evidence, not a page read."
+  },
+  {
+   "claim_id": "WAL-CLM-EPIGEN-000365",
+   "detector": "run_together",
+   "reason": "BRAND NAME: 'NutraSweet', the aspartame trade name, is camelCase by design. The detector is left STRICT rather than loosened, because loosening it would blind the class to real damage of exactly this shape -- RARE-000375's 'anWor' (page: 'and/or') was found by it and fixed the same day."
+  },
+  {
+   "claim_id": "WAL-CLM-HELLS-000012",
+   "detector": "run_together",
+   "reason": "SURNAME: 'MacCoy' in an author list (Wallach, J.D., MacCoy, B., Henry, L. and Schrauzer, G.N.). camelCase surnames are normal; see the NutraSweet entry for why the detector stays strict."
+  },
+  {
+   "claim_id": "WAL-CLM-LETS-000227",
+   "detector": "run_together",
+   "reason": "BRAND NAME: 'SuperOxy Plus', a product name, camelCase by design."
+  },
+  {
+   "claim_id": "WAL-CLM-LETS-000298",
+   "detector": "run_together",
+   "reason": "BRAND NAME: 'SuperOxy Plus', the same product as LETS-000227."
+  },
+  {
+   "claim_id": "WAL-CLM-IMMORT-000261",
+   "detector": "double_space",
+   "reason": "TRANSCRIBED TABLE: 'Age  % intracellular volume occupied' with rows '30 - 40  35', '50 - 60  41' -- the double spaces are column alignment deliberately preserved in the transcription, not OCR noise."
+  },
+  {
+   "claim_id": "WAL-CLM-LETS-000094",
+   "detector": "double_space",
+   "reason": "TRANSCRIBED TABLE: a herb-to-use table ('BIRTH CONTROL           Mexican yam', 'TESTOSTERONE            Sarsaparilla'); the runs of spaces are the column gutter, deliberately preserved."
+  }
+ ]
 }

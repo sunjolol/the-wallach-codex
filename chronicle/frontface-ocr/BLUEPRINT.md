@@ -32,8 +32,8 @@ Enumerated deterministically (displayed = union of ids in `corpus-embed.json` + 
 
 | Book | Front-facing quotes | Page-source | Claim→page mapping |
 |---|--:|---|---|
-| epigenetics | 460 | `temporary/Epigenetics The Death of the Genetic Theory of Disease Transmission/Screenshot (N).png` (465 imgs) | `.txt` `Screenshot (N)` marker nearest-BEFORE `char_offset` (1:1, already computed) |
-| immortality | 470 | `temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN/Screenshot (N).png` (254 imgs) | same `Screenshot (N)` marker method (1:1, already computed) |
+| epigenetics | 460 | `temporary/Epigenetics .../Screenshot (N).png` (465 imgs) | marker nearest-BEFORE `char_offset` — **NOT 1:1, see the warning below** |
+| immortality | 470 | `temporary/The Age Beaters .../Screenshot (N).png` (254 imgs) | same marker method — **NOT 1:1, see the warning below** |
 | lets-play-doctor | 513 | `temporary/lets-play-doctor-pdf/Lets-Play-Doctor-PDF-by-Joel-Wallach-Lan-Ma.pdf` (222pp, TEXT LAYER) | NO markers → phrase-search the PDF text layer for a distinctive verbatim n-gram → page# → verify |
 | rare-earths | 395 | `temporary/rare earths forbidden cures/rare-earths-forbidden-cures-pdf-by-joel-wallach-lan-ma-pdf.pdf` (520pp, TEXT LAYER) | same phrase-search method |
 | **TOTAL** | **1,838** | | |
@@ -41,6 +41,15 @@ Enumerated deterministically (displayed = union of ids in `corpus-embed.json` + 
 **The work-list is already built:** `chronicle/frontface-ocr/worklist.json` — per book, each entry =
 `{id, kind, char_offset, screenshot, verbatim_len, verbatim}`. `screenshot` is pre-filled for
 epig/immort (the exact `Screenshot (N).png`) and null for the two PDFs (resolve by phrase-search).
+
+**★ CORRECTED 2026-08-02 — the marker mapping is NOT 1:1.** Each `Screenshot (N).png` is a
+**TWO-PAGE SPREAD**: ~2 book pages per file (459→p371, 460→p374, 346→p145, 613→p689). The frame is
+3840×1080 DUAL-MONITOR — the book is the left ~26 %, the right ~74 % is a Claude Code window. Crop
+**x ≈ 0.028–0.48** to capture BOTH pages, and retry the adjacent screenshot before declaring a
+passage unverifiable. An agent cropping one page reports "not found" or, worse, diffs against a
+NEIGHBOURING page. `low-sodium` sits under marker 459 on the RIGHT page — that is how this was found.
+Also: **`pdftoppm` is NOT installed**, so the Read tool cannot rasterise a PDF page; use
+`temporary/frontface-ocr-tools/render_page.py` (PyMuPDF) instead.
 
 Books NOT in scope (already clean): `dddl-3e-2011` (314), `iaiyh` (21), `hells-kitchen` (93 — 0 hyphen
 defects found; treat as clean unless a defect surfaces).
@@ -83,17 +92,17 @@ The verbatim is a byte-exact substring of the `.txt`; to fix a displayed quote w
 ## 5 · THE LOCK — how it stays fixed FOR GOOD (§00.B: codify, don't promise)
 **★ BOTH GATES LANDED 2026-08-02.** Status below is measured, not planned.
 
-- **`frontface_verbatims_clean` (critical, LIVE).** No sealed front-facing verbatim carries a
-  mid-word line-break hyphen or a mojibake/control character. **SCOPE, measured:** TWO detector
-  classes, because two are all that reach ZERO on legitimate content. Five more were built,
-  calibrated against all 2,268 verbatims and REJECTED rather than shipped red — `digit_in_word`
-  (44 hits, 33 of them ordinals/decades like "20th"/"1990s"; tightening still left 11),
-  `number_split` (7, mostly table columns "100 94"), `space_before_punct` (5, two of them table
-  leader dots), `run_together` (5, incl. "acCoy" = McCoy), `double_space` (2, column alignment).
-  Each needs a vision pass to separate defect from typesetting, so each is a labelled WISH (R7).
+- **`frontface_verbatims_clean` (critical, LIVE).** **ALL SEVEN mechanical classes gated** —
+  hyphen split · mojibake/control · space-before-punct · number split · run-together · double
+  space · digit-in-word. Two shipped first (they reached zero immediately); the other five were
+  held as labelled WISHes and **promoted the same day (2026-08-02)** once every residual hit had
+  been read off its page image. The exclusions encode that verification (ordinals, decades,
+  vitamin designations, unit/formula adjacency, table leader dots).
   Named exceptions live in `eden/tools/frontface-exceptions.json` and must each carry a checkable
-  reason; a reason-less carve-out is itself RED. Currently 1 (LETS-000512, the table artefact).
-  Negative test: `tools/test_frontface_verbatims_clean.py` (16 cases).
+  reason; a reason-less carve-out is itself RED. Currently **11**, each stating its evidence type
+  (2 PAGE-VERIFIED-faithful, 3 tables proven by their own in-verbatim header, 4 camelCase brands
+  and a surname, 2 transcribed tables). Negative test:
+  `tools/test_frontface_verbatims_clean.py` (**31 cases**).
 - **`enriched_book_is_verified` (critical, LIVE) — the ROOT-CAUSE gate.** A claim may not carry a
   search-enrichment entry unless its book is in `books_verified`, its id is in `claims_verified`, or
   its id is in the frozen grandfathered backlog. **This makes the original failure impossible:** you
@@ -101,11 +110,15 @@ The verbatim is a byte-exact substring of the `.txt`; to fix a displayed quote w
   `chronicle/frontface-ocr/verified.json` — 2 verified books (`dddl-3e-2011`, `iaiyh`), 11
   individually verified claims (full verbatim char-diffed against a RENDERED PAGE IMAGE — deliberately
   excluding claims resolved only by PDF text layer, line geometry or corpus-internal attestation),
-  and **1,925 grandfathered**. The backlog asserts only "already front-facing on 2026-08-02", NEVER
+  and **1,900 grandfathered** (1,925 at freeze; it shrinks as claims move into `claims_verified`). The backlog asserts only "already front-facing on 2026-08-02", NEVER
   "correct"; the vision sweep shrinks it. Negative test:
   `tools/test_enriched_book_is_verified.py` (7 cases).
 
-**What the pair does NOT do (R7, labelled).** Neither sees the INVISIBLE class — a valid-word swap.
+**What the pair does NOT do (R7, labelled).** (a) Neither sees the DROPPED-SPACE class beyond its
+letter↔digit and camelCase EDGES: tight justification cost real spaces (page `magnesium at 2,000 mg`,
+ours `at2,000`) and the letter-letter cases (`andelectrolytes`, `ratherthan`) are invisible to every
+detector. Its size is **UNMEASURED** — a vocabulary attempt returned 387 candidates that were almost
+all legitimate words, so no number is claimed. (b) Neither sees the INVISIBLE class — a valid-word swap.
 Four were found by eye on 2026-08-02 (`side`/`vide`, `tine`/`rine`, `Jute`/`lute`, `ties`/`ries`),
 every one inside a pair `frontface_verbatims_clean` calls clean. Those are caught ONCE by the §3
 vision pass and held afterwards because verbatims only ever change via resnap-from-corrected-source

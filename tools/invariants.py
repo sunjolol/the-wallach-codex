@@ -3977,15 +3977,57 @@ _JARGON_SKIP = {
 _FF_MID_WORD_HYPHEN = re.compile(r"[A-Za-z]{2,}-\n[ \t]*[A-Za-z]{2,}")
 _FF_MOJIBAKE = re.compile(r"[\uFFFD\u0000-\u0008\u000B\u000C\u000E-\u001F]")
 
+# Five further classes, promoted 2026-08-02 after every residual hit was read off its page image.
+# Each carries the exclusion that made it reach ZERO on legitimate content -- the exclusions ARE
+# the gate; without them each detector fires on ordinary typography and gets switched off.
+#   space_before_punct : a table LEADER-DOT run ('PANTOTHENIC ACID ...4 mg') is not a defect,
+#                        so a punctuation mark followed by another dot is excluded.
+#   number_split       : a vitamin designation ('B-2 50 mg') is a name plus a dose, not a split
+#                        number, so 'B-<n>' is stripped first.
+#   digit_in_word      : ordinals (20th), decades (1990s), vitamin designations (B12) and UNIT or
+#                        formula adjacency (1nm, 2-5ug/kg, 1cm, 146mcg/day, As2O3, q6 h) are all
+#                        legitimate; only a digit welded to ordinary prose survives.
+#   run_together       : camelCase is normal in brands and surnames (NutraSweet, MacCoy,
+#                        SuperOxy) -- those are named exceptions rather than a looser regex,
+#                        because loosening it would blind the class to real damage like 'anWor'.
+#   double_space       : column alignment inside a transcribed table is deliberate; both current
+#                        cases are named exceptions.
+_FF_SPACE_B4_PUNCT = re.compile(r"[A-Za-z]\s+[,;:](?!\.)|[A-Za-z]\s+\.(?!\.)")
+_FF_RUN_TOGETHER = re.compile(r"[a-z]{2}[A-Z][a-z]{2}")
+_FF_DOUBLE_SPACE = re.compile(r"\S  +\S")
+_FF_VITAMIN_DESIG = re.compile(r"\bB-\d\b")
+_FF_NUMBER_SPLIT = re.compile(r"\b\d+ \d{2}\b")
+# stripped BEFORE the digit-in-word scan: ordinals, decades, vitamin designations, and any digit
+# sitting against a unit or a chemical formula.
+_FF_DIGIT_OK = re.compile(
+    r"\b\d+(st|nd|rd|th)\b"
+    r"|\b\d{2,4}s\b"
+    r"|\b[A-K]-?\d{1,2}\b"
+    r"|\d\s*(nm|mm|cm|km|ug|mcg|mg|gm|gms|g|kg|ml|cc|IU|ppm|oz|lb|%)\b"
+    r"|\b[A-Z][a-z]?\d+[A-Z][a-z]?\d*\b"
+    r"|\bq\s?\d+\b", re.I)
+_FF_DIGIT_IN_WORD = re.compile(r"[a-z]\d|\d[a-z]")
+
 
 def _frontface_defects(verbatim):
     """Detector classes that are MECHANICALLY decidable on a verbatim. Extracted so
     tools/test_frontface_verbatims_clean.py drives them directly."""
+    v = verbatim or ""
     out = []
-    if _FF_MID_WORD_HYPHEN.search(verbatim or ""):
+    if _FF_MID_WORD_HYPHEN.search(v):
         out.append("hyphen_split")
-    if _FF_MOJIBAKE.search(verbatim or ""):
+    if _FF_MOJIBAKE.search(v):
         out.append("mojibake_or_control")
+    if _FF_SPACE_B4_PUNCT.search(v):
+        out.append("space_before_punct")
+    if _FF_NUMBER_SPLIT.search(_FF_VITAMIN_DESIG.sub(" ", v)):
+        out.append("number_split")
+    if _FF_RUN_TOGETHER.search(v):
+        out.append("run_together")
+    if _FF_DOUBLE_SPACE.search(v):
+        out.append("double_space")
+    if _FF_DIGIT_IN_WORD.search(_FF_DIGIT_OK.sub(" ", v)):
+        out.append("digit_in_word")
     return out
 
 
@@ -3993,16 +4035,13 @@ def check_frontface_verbatims_clean():
     """No sealed (front-facing) verbatim carries a mid-word line-break hyphen or a
     mojibake/control character. Blueprint §5 lock gate #1.
 
-    SCOPE, MEASURED 2026-08-02 — do not read more into it than this. Two detector classes are
-    gated because two are all that reach ZERO on legitimate content. Five candidates were built,
-    calibrated against all 2268 sealed verbatims, and REJECTED rather than shipped red:
-      digit_in_word   -- 44 hits, and 33 are ordinals/decades ("20th", "1990s"); tightening left 11
-      number_split    -- 7 hits, mostly TABLE columns ("100 94", "95 82"), not split numbers
-      space_b4_punct  -- 5 hits, 2 of them table leader dots ("PANTOTHENIC ACID ...4 mg")
-      run_together    -- 5 hits incl. "acCoy" (McCoy), a proper noun
-      double_space    -- 2 hits, both column alignment in a transcribed table
-    Each needs a vision pass to separate defect from typesetting, so each is a LABELLED WISH (R7),
-    not a gate. This one blocks the class that actually caused the campaign.
+    SCOPE, MEASURED 2026-08-02. SEVEN detector classes, all gated. Two shipped first (hyphen split,
+    mojibake) because they reached zero immediately; the other five were held as labelled WISHes
+    until every residual hit had been read off its page image, then promoted the same day. That
+    verification is what the exclusions encode -- ordinals, decades, vitamin designations, unit and
+    formula adjacency, table leader dots -- and what the 11 named exceptions record. Two of the six
+    residual cases turned out to be FAITHFUL, not defects: the page really does print "(Levamisol ,"
+    and really does print "in1881". Batch-fixing on the detector's say-so would have corrupted both.
 
     It CANNOT see the invisible class -- a valid-word swap ("side" for "vide", "Jute" for "lute").
     Four of those were found by eye on 2026-08-02, every one inside a pair this gate would call
@@ -4032,8 +4071,9 @@ def check_frontface_verbatims_clean():
         return False, (f"{len(violations)} front-facing verbatim defect(s): {'; '.join(violations[:6])}"
                        f"{' ...' if len(violations) > 6 else ''}")
     n_exc = sum(len(v) for v in allowed.values())
-    return True, (f"{scanned} front-facing verbatim(s) clean of mid-word hyphen splits + mojibake "
-                  f"({n_exc} named exception(s)); 5 further defect classes are a labelled WISH, not gated")
+    return True, (f"{scanned} front-facing verbatim(s) clean across ALL 7 mechanical defect classes "
+                  f"(hyphen split, mojibake, space-before-punct, number split, run-together, double "
+                  f"space, digit-in-word) with {n_exc} named exception(s), each carrying its evidence")
 
 
 def check_enriched_book_is_verified():
@@ -4046,10 +4086,11 @@ def check_enriched_book_is_verified():
     book and promising to fix it later -- cannot recur. The escape hatch is per-claim: vision-verify
     the claim, add its id to claims_verified, then enrich it.
 
-    The grandfathered set is the 1,925 claims already enriched when the gate landed. It is an honest
-    BACKLOG, not a waiver: being in it asserts only 'this was already front-facing on 2026-08-02',
-    never 'this is correct'. It may shrink as books get verified; an id appearing in it that was not
-    frozen there is RED."""
+    The grandfathered set is the claims already enriched when the gate landed -- 1,925 at freeze,
+    and DESIGNED TO SHRINK as ids move into claims_verified (do not hard-code the current number
+    anywhere; the gate's own output is the live count). It is an honest BACKLOG, not a waiver: being
+    in it asserts only 'this was already front-facing on 2026-08-02', never 'this is correct'. An id
+    appearing in it that was not frozen there is RED."""
     led_path = ROOT / "chronicle" / "frontface-ocr" / "verified.json"
     enr_path = ROOT / "eden" / "corpus" / "search-enrichment.json"
     if not led_path.exists() or not enr_path.exists():
@@ -6571,11 +6612,11 @@ INVARIANTS = [
     Invariant(
         name="frontface_verbatims_clean",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="no sealed front-facing verbatim carries a mid-word line-break hyphen or a mojibake/control character; named exceptions in eden/tools/frontface-exceptions.json must each carry a checkable reason. SCOPE: 2 detector classes, because 2 are all that reach zero on legitimate content — 5 further classes (digit_in_word, number_split, space_before_punct, run_together, double_space) over-fire on ordinals, decades, table columns and proper nouns and are a labelled WISH, not gated",
+        description="no sealed front-facing verbatim carries any of SEVEN mechanical defect classes — mid-word line-break hyphen, mojibake/control char, space-before-punctuation, split number, run-together, double space, digit welded into a word. Exclusions (ordinals, decades, vitamin designations, unit/formula adjacency, table leader dots) and 11 named exceptions in eden/tools/frontface-exceptions.json encode the page-image verification behind each; an exception with no reason is itself RED",
         check_fn=check_frontface_verbatims_clean,
         truth_anchor="every sealed claim verbatim in eden/corpus/claims/ re-scanned each run, minus the reasoned exception list",
         severity="critical",
-        lesson_ref="2026-08-02 front-facing OCR campaign, BLUEPRINT §5 lock gate #1 -- Luneth found raw OCR in user-facing quotes (RARE-000336 tisk/rea/ancer; LETS-000502 '1 20' for 120). 180 line-break hyphens were fixed across 91 quotes; this gate stops the class returning. HONEST LIMIT: it cannot see the invisible class -- four valid-word swaps (side/vide, tine/rine, Jute/lute, ties/ries) were found by EYE the same day, every one inside a pair this gate calls clean. Negative test tools/test_frontface_verbatims_clean.py",
+        lesson_ref="2026-08-02 front-facing OCR campaign, BLUEPRINT §5 lock gate #1 -- Luneth found raw OCR in user-facing quotes (RARE-000336 tisk/rea/ancer; LETS-000502 '1 20' for 120). 180 line-break hyphens fixed across 91 quotes, then 5 further classes promoted the same day once every residual hit was read off its page image. HONEST LIMITS, both measured: (1) it cannot see the INVISIBLE class -- four valid-word swaps (side/vide, tine/rine, Jute/lute, ties/ries) were found by EYE, every one inside a pair this gate calls clean; (2) it sees only the letter-digit and camelCase EDGES of the DROPPED-SPACE class caused by tight justification (page: 'magnesium at 2,000 mg', ours: 'at2,000'), whose letter-letter cases (andelectrolytes, ratherthan) are invisible to every detector here and whose size is UNMEASURED -- an attempted vocabulary measurement returned 387 candidates that were almost all legitimate words. Negative test tools/test_frontface_verbatims_clean.py",
     ),
     Invariant(
         name="enriched_book_is_verified",
@@ -6584,7 +6625,7 @@ INVARIANTS = [
         check_fn=check_enriched_book_is_verified,
         truth_anchor="eden/corpus/search-enrichment.json keys x the verification ledger x each claim's book_id from the sealed shards",
         severity="critical",
-        lesson_ref="2026-08-02, BLUEPRINT §5 lock gate #2 -- THE ROOT CAUSE. Claims were enriched from books officially 'raw' in purity-status.json on the promise that quotes get fixed as we enrich; the promise had no gate and was not kept, and nothing caught it. This makes it impossible: you cannot newly front-face a quote from an unverified book. The 1,925 grandfathered claims are an honest BACKLOG (asserting only 'already front-facing on 2026-08-02', never 'correct'), which the vision sweep shrinks. Negative test tools/test_enriched_book_is_verified.py",
+        lesson_ref="2026-08-02, BLUEPRINT §5 lock gate #2 -- THE ROOT CAUSE. Claims were enriched from books officially 'raw' in purity-status.json on the promise that quotes get fixed as we enrich; the promise had no gate and was not kept, and nothing caught it. This makes it impossible: you cannot newly front-face a quote from an unverified book. The grandfathered claims (1,925 at freeze) are an honest BACKLOG asserting only 'already front-facing on 2026-08-02', never 'correct'; the count SHRINKS as ids move into claims_verified, so read the gate's live output rather than any number written down elsewhere. Negative test tools/test_enriched_book_is_verified.py",
     ),
     Invariant(
         name="jargon_terms_glossed",

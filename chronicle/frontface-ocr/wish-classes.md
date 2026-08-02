@@ -1,7 +1,9 @@
 # The five WISH detector classes — triage + progress (2026-08-02)
 
-_Started after the two §5 lock gates landed. NOT finished: 6 defects vision-verified and fixed
-(sealed kv=443), and one finding below changes what "finish" even means._
+_★ COMPLETE 2026-08-02 (sealed kv=444). All five classes are now GATED inside
+`frontface_verbatims_clean`, which covers SEVEN mechanical classes in total. 10 defects fixed across
+two rounds; 11 named exceptions carry the verification. The finding below still stands and is the
+reason the gate's own message says what it covers rather than claiming the corpus is clean._
 
 ## ★ The finding: the five classes sit on a class I could not measure
 `LETS-000415` reads `magnesium at2,000 mg` in our text. The page image shows **`magnesium at 2,000
@@ -53,7 +55,14 @@ board will imply something it does not mean.
 Remaining to finish: **6 page reads**, two provably-correct detector refinements, and 9 named
 exceptions each carrying its reason.
 
-## What was deliberately NOT done
-No detector was promoted to a gate while its class still carries unverified hits. A gate that is red
-on day one gets switched off. A gate that is green because its exceptions paper over unverified
-defects is worse — it asserts a cleanliness nobody established. Both are refused here.
+## How it finished
+Six more page reads settled every residual hit, and **two of the six turned out FAITHFUL** — the page
+really prints `(Levamisol , hydrazine sulfate)` and really prints `in1881`. Both are now named
+exceptions rather than "fixes", which is the whole argument for reading the page before batch-fixing
+on a detector's say-so.
+
+Final: 4 more defects fixed (`Caladryl ,` · `bowel tolerance ,` · `(i.e. ,` + `1 20 gms` in
+LETS-000334 · `anWor`→`and/or`), all five classes promoted, 11 exceptions each stating its evidence
+type, negative test extended 16 → **31 cases**. No detector was promoted while its class still
+carried an unverified hit — that rule is what made the two faithful cases surface instead of being
+quietly corrupted.

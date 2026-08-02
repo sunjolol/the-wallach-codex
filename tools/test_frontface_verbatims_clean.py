@@ -39,6 +39,33 @@ dcase("hyphen_then_newline_word_spared", "the anti-\n\nNext paragraph starts", [
 dcase("clean_verbatim_spared", "minerals are the currency of life.", [])
 dcase("empty_spared", "", [])
 
+# ── the five classes promoted 2026-08-02, each with its FIRING case and its SPARING case ──
+# space_before_punct: a spurious space before a comma is a defect (LETS-000324/-000348 were fixed)...
+dcase("space_before_punct_fires", "topical applications of Caladryl , aloe vera", ["space_before_punct"])
+# ...but a table LEADER-DOT run is not (PANTOTHENIC ACID ...4 mg). This exclusion IS the gate.
+dcase("leader_dots_spared", "PANTOTHENIC ACID ...4 mg 50 mg 300 to 1,000 mg", [])
+# number_split: "1 20 days" was really 120 (page-verified)...
+dcase("number_split_fires", "supplementation (1 20 days - BINGO!!", ["number_split"])
+# ...but a vitamin designation is a NAME plus a dose, not a split number.
+dcase("vitamin_designation_spared", "zinc 50 mg t.i.d., B-2 50 mg b.i.d.", [])
+# run_together: "anWor" was really "and/or" (page-verified) -- the detector must stay strict...
+dcase("run_together_fires", "hydrogen ions may be generated anWor retained", ["run_together"])
+# ...and camelCase brands/surnames are handled by NAMED EXCEPTIONS, not by loosening the regex,
+# which is why this still fires here and is excused per-claim in the exception list.
+dcase("brand_camelcase_still_fires", "marketed as Equal and NutraSweet, both of which", ["run_together"])
+# double_space: OCR noise fires...
+dcase("double_space_fires", "the currency  of life", ["double_space"])
+# digit_in_word: "in1881" shape fires (that specific claim is a page-verified book typo, excused)...
+dcase("digit_in_word_fires", "were discovered in Death Valley in1881. The deposits", ["digit_in_word"])
+# ...but ordinals, decades, vitamin designations, units and chemical formulae must NOT.
+dcase("ordinal_spared", "the fourth quarter of the 20th century", [])
+dcase("decade_spared", "common in the 1990s and again in the 1880s", [])
+dcase("unit_adjacency_spared", "colloids (1nm to 100nm) and up to 146mcg/day and a 1cm hole", [])
+dcase("mercury_unit_spared", "low levels of mercury (2-5ug/kg); moderate consumers", [])
+dcase("chemical_formula_spared", "Eighteen percent of dietary As2O3 was stored", [])
+dcase("medical_frequency_spared", "tetracycline at 500 mg IV q6 h, sedation", [])
+dcase("vitamin_b12_spared", "absorption of minerals and B12 (intrinsic factor)", [])
+
 print(); print("=" * 96); print("end-to-end cases (drives check_frontface_verbatims_clean on disk)"); print("=" * 96)
 
 def fcase(name, claims, exceptions, want_clean):
@@ -82,6 +109,7 @@ res.append(ok_flag)
 print("-" * 96)
 if not all(res):
     print(f"FAIL — {sum(1 for r in res if not r)}/{len(res)} case(s) misbehaved."); sys.exit(1)
-print(f"PASS — all {len(res)} cases: the gate catches mid-word splits and mojibake, spares a correct "
-      f"mid-line compound hyphen, honours an exception ONLY for the claim+detector it names, and "
-      f"rejects a carve-out with no reason.")
+print(f"PASS — all {len(res)} cases: the gate catches all SEVEN mechanical classes, spares the legitimate "
+      f"typography each one lives beside (compound hyphens, table leader dots, vitamin designations, "
+      f"ordinals, decades, units, chemical formulae), honours an exception ONLY for the claim+detector "
+      f"it names, and rejects a carve-out with no reason.")

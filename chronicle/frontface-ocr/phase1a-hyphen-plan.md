@@ -138,3 +138,15 @@ probe → build-log + Creator's Log.
 - The **18 KEEP + 3 REVIEW** hyphens wait for the vision pass, and **the hyphen pass must be re-run
   after vision corrections land** — `pro-|vide` reclassifies to JOIN once `side`→`vide`.
 - Every class-(a) OCR defect is untouched by design: `WAL-CLM-LETS-000502` still reads `(1 20 days`.
+
+---
+
+# ★ CLOSED 2026-08-02 — the holds are resolved
+The 18 KEEP + 3 REVIEW hyphens this plan deferred were all vision-verified the same day and are
+no longer open. **4 of the 18 "real compounds" were OCR misreads** (`pro-|side`→provide,
+`fluo-|tine`→fluorine, `di-|Jute`→dilute, `past-|ties`→pastries) — exactly the KEEP-is-negative-
+evidence risk this plan predicted in writing. `by-products` was kept per Luneth. `Pharma-|Need`
+turned out to be a table-column artefact and was fixed at the source.
+
+**Front-facing line-break splits corpus-wide: 0.** Full results:
+`chronicle/frontface-ocr/vision-held-hyphens.md`. Do not re-run this plan.
