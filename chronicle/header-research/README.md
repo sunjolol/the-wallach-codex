@@ -74,12 +74,12 @@ concept, not individual headers).
 | Hydrogen | 12 | ✅ done |
 | Carbon | 2 | ✅ done |
 | Nitrogen | 5 | ✅ done |
-| Phenylalanine | 9 | pending |
-| Tryptophan | 7 | pending |
-| Arginine | 6 | pending |
-| Taurine | 6 | pending |
-| Tyrosine | 6 | pending |
-| Lysine | 4 | pending |
+| Phenylalanine | 9 | ✅ done |
+| Tryptophan | 7 | ✅ done |
+| Arginine | 6 | ✅ done |
+| Taurine | 6 | ✅ done |
+| Tyrosine | 6 | ✅ done |
+| Lysine | 4 | ✅ done |
 | Methionine | 4 | pending |
 | Histidine | 2 | pending |
 | Leucine | 2 | pending |
@@ -87,8 +87,8 @@ concept, not individual headers).
 | Isoleucine | 1 | pending |
 | Threonine | 1 | pending |
 
-**6 / 18 thin-essential dossiers complete.** NOT researched (deferred / covered elsewhere): the plant-derived rare-earth/trace-mineral set (35) is already handled as ONE group via the colloidal-minerals "rock your body can't absorb until a plant" box; omega-9 has 0 sealed claims (nothing to ground).
+**12 / 18 thin-essential dossiers complete.** NOT researched (deferred / covered elsewhere): the plant-derived rare-earth/trace-mineral set (35) is already handled as ONE group via the colloidal-minerals "rock your body can't absorb until a plant" box; omega-9 has 0 sealed claims (nothing to ground).
 
 ## Design-prep build sheets (design-prep/<slug>.md — byte-exact quotes + numbers + figure labels per concept)
 
-**0 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
+**5 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
