@@ -62,4 +62,33 @@ concept, not individual headers).
 | 28 | Cobalt (mirrors B12) | 13 | ✅ done |
 | 29 | Oxygen | 10 | ✅ done |
 
-**29 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
+**29 / 29 name-brand dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
+
+## Thin individual essentials (no-padding, honest solo-vs-group)
+
+| Element | Claims | Status |
+|---------|-------:|--------|
+| Molybdenum | 7 | ✅ done |
+| Chloride | 6 | ✅ done |
+| Silica | 4 | ✅ done |
+| Hydrogen | 12 | ✅ done |
+| Carbon | 2 | ✅ done |
+| Nitrogen | 5 | ✅ done |
+| Phenylalanine | 9 | pending |
+| Tryptophan | 7 | pending |
+| Arginine | 6 | pending |
+| Taurine | 6 | pending |
+| Tyrosine | 6 | pending |
+| Lysine | 4 | pending |
+| Methionine | 4 | pending |
+| Histidine | 2 | pending |
+| Leucine | 2 | pending |
+| Valine | 2 | pending |
+| Isoleucine | 1 | pending |
+| Threonine | 1 | pending |
+
+**6 / 18 thin-essential dossiers complete.** NOT researched (deferred / covered elsewhere): the plant-derived rare-earth/trace-mineral set (35) is already handled as ONE group via the colloidal-minerals "rock your body can't absorb until a plant" box; omega-9 has 0 sealed claims (nothing to ground).
+
+## Design-prep build sheets (design-prep/<slug>.md — byte-exact quotes + numbers + figure labels per concept)
+
+**0 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
