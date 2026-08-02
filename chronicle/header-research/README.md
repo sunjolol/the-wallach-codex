@@ -38,12 +38,12 @@ concept, not individual headers).
 | 4 | Chromium | 67 | ✅ done |
 | 5 | Vitamin B6 | 50 | ✅ done |
 | 6 | Vitamin B12 | 37 | ✅ done |
-| 7 | Iron | 36 | pending |
-| 8 | Iodine | 32 | pending |
-| 9 | Potassium | 27 | pending |
-| 10 | Vitamin B3 (Niacin) | 25 | pending |
-| 11 | Vitamin B9 (Folate) | 24 | pending |
-| 12 | Vitamin B1 | 22 | pending |
+| 7 | Iron | 36 | ✅ done |
+| 8 | Iodine | 32 | ✅ done |
+| 9 | Potassium | 27 | ✅ done |
+| 10 | Vitamin B3 (Niacin) | 25 | ✅ done |
+| 11 | Vitamin B9 (Folate) | 24 | ✅ done |
+| 12 | Vitamin B1 | 22 | ✅ done |
 | 13 | Vitamin D | 18 | pending |
 | 14 | Vanadium | 37 | pending |
 | 15 | Germanium | 27 | pending |
@@ -62,4 +62,4 @@ concept, not individual headers).
 | 28 | Cobalt (mirrors B12) | 13 | pending |
 | 29 | Oxygen | 10 | pending |
 
-**6 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
+**12 / 29 dossiers complete.** Done (shipped, not in this pass): selenium · copper · zinc · calcium · magnesium · vitamin-a.
