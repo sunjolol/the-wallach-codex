@@ -460,7 +460,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 14,
-      "distinct_claim_count": 49,
+      "distinct_claim_count": 48,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -569,7 +569,6 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-IMMORT-000372",
-            "WAL-CLM-IMMORT-000373",
             "WAL-CLM-RARE-000187"
           ]
         },
@@ -1592,7 +1591,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 27,
-      "distinct_claim_count": 39,
+      "distinct_claim_count": 38,
       "books": [
         "epigenetics",
         "immortality",
@@ -1709,8 +1708,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000463",
             "WAL-CLM-IMMORT-000188",
-            "WAL-CLM-RARE-000152",
-            "WAL-CLM-RARE-000350"
+            "WAL-CLM-RARE-000152"
           ]
         },
         {
@@ -2296,7 +2294,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 12,
-      "distinct_claim_count": 25,
+      "distinct_claim_count": 24,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2380,8 +2378,7 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000042",
-            "WAL-CLM-IMMORT-000351"
+            "WAL-CLM-IMMORT-000042"
           ]
         },
         {
@@ -2663,7 +2660,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 67,
-      "distinct_claim_count": 87,
+      "distinct_claim_count": 86,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2823,7 +2820,6 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-HELLS-000041",
-            "WAL-CLM-HELLS-000042",
             "WAL-CLM-IMMORT-000087",
             "WAL-CLM-IMMORT-000311",
             "WAL-CLM-IMMORT-000312"
@@ -2995,7 +2991,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 61,
-      "distinct_claim_count": 81,
+      "distinct_claim_count": 80,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -3171,8 +3167,7 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-IMMORT-000097",
-            "WAL-CLM-IMMORT-000098",
-            "WAL-CLM-IMMORT-000309"
+            "WAL-CLM-IMMORT-000098"
           ]
         },
         {
@@ -3553,7 +3548,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 36,
-      "distinct_claim_count": 52,
+      "distinct_claim_count": 51,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -3704,7 +3699,6 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000225",
             "WAL-CLM-EPIGEN-000226",
             "WAL-CLM-IMMORT-000125"
           ]
@@ -4047,8 +4041,8 @@
       "symbol": "Mn",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 20,
-      "distinct_claim_count": 32,
+      "claim_count": 19,
+      "distinct_claim_count": 31,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4146,12 +4140,6 @@
           ]
         },
         {
-          "kind": "definition",
-          "claim_ids": [
-            "WAL-CLM-RARE-000174"
-          ]
-        },
-        {
           "kind": "personal_anecdote",
           "claim_ids": [
             "WAL-CLM-DDDL-000309"
@@ -4168,7 +4156,6 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-RARE-000174",
             "WAL-CLM-RARE-000360"
           ]
         },
@@ -4417,7 +4404,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 113,
-      "distinct_claim_count": 130,
+      "distinct_claim_count": 128,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4617,10 +4604,8 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000030",
-            "WAL-CLM-DDDL-000135",
             "WAL-CLM-EPIGEN-000186",
-            "WAL-CLM-LETS-000031",
-            "WAL-CLM-LETS-000492"
+            "WAL-CLM-LETS-000031"
           ]
         },
         {
@@ -5083,7 +5068,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 37,
-      "distinct_claim_count": 50,
+      "distinct_claim_count": 49,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5215,8 +5200,7 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-DDDL-000222",
-            "WAL-CLM-DDDL-000223"
+            "WAL-CLM-DDDL-000222"
           ]
         },
         {
@@ -11674,7 +11658,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 69,
-      "distinct_claim_count": 90,
+      "distinct_claim_count": 89,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11831,7 +11815,6 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000213",
             "WAL-CLM-EPIGEN-000214"
           ]
         },
@@ -13203,7 +13186,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 37,
-      "distinct_claim_count": 54,
+      "distinct_claim_count": 53,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13326,7 +13309,6 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-DDDL-000044",
-            "WAL-CLM-IMMORT-000304",
             "WAL-CLM-IMMORT-000305"
           ]
         },
@@ -14638,7 +14620,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 14,
-      "distinct_claim_count": 27,
+      "distinct_claim_count": 26,
       "books": [
         "epigenetics",
         "immortality",
@@ -14709,7 +14691,6 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-IMMORT-000330",
-            "WAL-CLM-IMMORT-000331",
             "WAL-CLM-IMMORT-000332"
           ]
         },

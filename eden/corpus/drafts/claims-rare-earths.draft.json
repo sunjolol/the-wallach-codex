@@ -5338,7 +5338,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach states potassium is essential to all organisms and is the major cation (positive ion) in the cell cytoplasm, with a wide variety of electrochemical and catalytic functions for enzyme systems; it makes up about five percent of the body's total mineral content.",
+   "claim_text": "Potassium is an essential mineral that Wallach counts among the roughly 60 minerals the body must obtain to stay healthy. It is the major cation (positively charged ion) inside your cells and makes up about five percent of the body's total mineral content. Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic (fluid-pressure) equilibrium and acid-base (pH) balance, and working with calcium it regulates neuromuscular (nerve-and-muscle) activity. The body stores essentially none and excretes about 90% of what you take in through the urine, so Wallach says it must be replenished every day.",
    "verbatim": "Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.",
    "locator": {
     "book": "rare-earths",
@@ -6128,41 +6128,6 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-06-25T17:35:18+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-RARE-000174",
-   "kind": "definition",
-   "essentials": [
-    "manganese"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach states manganese is essential to all known living organisms; it activates numerous enzyme systems (including glucose metabolism, energy production, and superoxide dismutase) and is a major constituent of several metalloenzymes, hormones, and proteins. Total body content in humans is only 10 to 20 mg.",
-   "verbatim": "Manganese is essential to all known living organisms; it activates numerous enzyme systems including those involved with glucose metabolism, energy production and superoxide dismutase; it is a major constituent of several metalloenzymes, hormones, and proteins of humans.",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": "Chapter 11",
-    "page": 351,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 844905
-   },
-   "dose": null,
-   "tags": [
-    "manganese",
-    "essentiality",
-    "enzyme-cofactor",
-    "superoxide-dismutase",
-    "body-content"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-25T17:48:54+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },
@@ -12309,40 +12274,6 @@
     "chelated-minerals",
     "supplements",
     "bioavailability",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T00:11:51+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-RARE-000350",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Potassium is an essential mineral that Wallach counts among the roughly 60 minerals the body must obtain to stay healthy. It is the major cation (positively charged ion) inside your cells and makes up about five percent of the body's total mineral content. Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic (fluid-pressure) equilibrium and acid-base (pH) balance, and working with calcium it regulates neuromuscular (nerve-and-muscle) activity. The body stores essentially none and excretes about 90% of what you take in through the urine, so Wallach says it must be replenished every day.",
-   "verbatim": "Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 828580
-   },
-   "dose": null,
-   "tags": [
-    "potassium",
-    "minerals",
-    "electrolytes",
-    "element-basics",
-    "cell-function",
     "definition"
    ],
    "confidence": "high",

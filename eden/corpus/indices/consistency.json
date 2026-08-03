@@ -346,10 +346,6 @@
         "book": "dddl-3e-2011"
       },
       {
-        "claim_id": "WAL-CLM-DDDL-000223",
-        "book": "dddl-3e-2011"
-      },
-      {
         "claim_id": "WAL-CLM-DDDL-000227",
         "book": "dddl-3e-2011"
       },
@@ -454,10 +450,6 @@
         "book": "epigenetics"
       },
       {
-        "claim_id": "WAL-CLM-EPIGEN-000213",
-        "book": "epigenetics"
-      },
-      {
         "claim_id": "WAL-CLM-EPIGEN-000214",
         "book": "epigenetics"
       },
@@ -467,10 +459,6 @@
       },
       {
         "claim_id": "WAL-CLM-EPIGEN-000222",
-        "book": "epigenetics"
-      },
-      {
-        "claim_id": "WAL-CLM-EPIGEN-000225",
         "book": "epigenetics"
       },
       {
@@ -906,10 +894,6 @@
         "book": "hells-kitchen"
       },
       {
-        "claim_id": "WAL-CLM-HELLS-000042",
-        "book": "hells-kitchen"
-      },
-      {
         "claim_id": "WAL-CLM-HELLS-000054",
         "book": "hells-kitchen"
       },
@@ -1190,19 +1174,11 @@
         "book": "immortality"
       },
       {
-        "claim_id": "WAL-CLM-IMMORT-000304",
-        "book": "immortality"
-      },
-      {
         "claim_id": "WAL-CLM-IMMORT-000305",
         "book": "immortality"
       },
       {
         "claim_id": "WAL-CLM-IMMORT-000308",
-        "book": "immortality"
-      },
-      {
-        "claim_id": "WAL-CLM-IMMORT-000309",
         "book": "immortality"
       },
       {
@@ -1246,10 +1222,6 @@
         "book": "immortality"
       },
       {
-        "claim_id": "WAL-CLM-IMMORT-000331",
-        "book": "immortality"
-      },
-      {
         "claim_id": "WAL-CLM-IMMORT-000332",
         "book": "immortality"
       },
@@ -1271,10 +1243,6 @@
       },
       {
         "claim_id": "WAL-CLM-IMMORT-000350",
-        "book": "immortality"
-      },
-      {
-        "claim_id": "WAL-CLM-IMMORT-000351",
         "book": "immortality"
       },
       {
@@ -1319,10 +1287,6 @@
       },
       {
         "claim_id": "WAL-CLM-IMMORT-000372",
-        "book": "immortality"
-      },
-      {
-        "claim_id": "WAL-CLM-IMMORT-000373",
         "book": "immortality"
       },
       {
@@ -1946,10 +1910,6 @@
         "book": "rare-earths"
       },
       {
-        "claim_id": "WAL-CLM-RARE-000350",
-        "book": "rare-earths"
-      },
-      {
         "claim_id": "WAL-CLM-RARE-000353",
         "book": "rare-earths"
       },
@@ -2023,7 +1983,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 431
+    "claim_count": 421
   },
   {
     "id": "CG-0004",
@@ -2545,10 +2505,6 @@
       },
       {
         "claim_id": "WAL-CLM-DDDL-000119",
-        "book": "dddl-3e-2011"
-      },
-      {
-        "claim_id": "WAL-CLM-DDDL-000135",
         "book": "dddl-3e-2011"
       },
       {
@@ -3437,7 +3393,7 @@
       }
     ],
     "books_repeating": 7,
-    "claim_count": 228
+    "claim_count": 227
   },
   {
     "id": "CG-0009",
@@ -4624,16 +4580,12 @@
         "book": "immortality"
       },
       {
-        "claim_id": "WAL-CLM-LETS-000492",
-        "book": "lets-play-doctor"
-      },
-      {
         "claim_id": "WAL-CLM-RARE-000318",
         "book": "rare-earths"
       }
     ],
-    "books_repeating": 5,
-    "claim_count": 31
+    "books_repeating": 4,
+    "claim_count": 30
   },
   {
     "id": "CG-0015",

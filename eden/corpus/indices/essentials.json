@@ -2485,7 +2485,7 @@
     "display_name": "Manganese",
     "canon_slug": "manganese",
     "category": "mineral",
-    "claim_count": 20,
+    "claim_count": 19,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000175"
@@ -2497,9 +2497,6 @@
         "WAL-CLM-EPIGEN-000099",
         "WAL-CLM-LETS-000017",
         "WAL-CLM-RARE-000176"
-      ],
-      "definition": [
-        "WAL-CLM-RARE-000174"
       ],
       "dose": [
         "WAL-CLM-EPIGEN-000134",

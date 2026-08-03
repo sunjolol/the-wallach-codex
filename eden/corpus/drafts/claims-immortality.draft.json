@@ -1276,7 +1276,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Boron is one of the 60 minerals Wallach counts as essential - though mainstream science was slow to agree, accepting it as an essential nutrient for humans only in 1990 (it had been shown essential for growing chicks about a decade earlier). Its core job, per Wallach, is in bone metabolism: it helps the body use calcium and magnesium efficiently and keeps the endocrine glands - the hormone-producing ovaries, testes and adrenals - working properly.",
+   "claim_text": "Boron is a scarce, non-metallic trace mineral that never occurs pure in nature, turning up instead in combined compounds such as borax and boric acid. Wallach counts it among the nutrients essential for human health. In his framework boron is required for bone metabolism and the efficient use of calcium and magnesium, for the proper function of the endocrine glands (the ovaries, testes, and adrenals), and for maintaining normal blood levels of estrogen and testosterone. Although it was accepted as a human essential only in 1990, it now sits firmly among the minerals Wallach says the body must have.",
    "verbatim": "Boron is essential for bone metabolism including the\nefficient use of calcium and magnesium and proper function\nof endocrine glands (i.e. - ovaries, testes and adrenals).",
    "locator": {
     "book": "immortality",
@@ -3172,7 +3172,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Copper is a genuine essential nutrient for every living thing. Wallach frames it as a universally important cofactor — a helper the body's enzymes need to work — for many hundreds of metalloenzymes (enzymes built around a metal atom). He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real impact on human populations.",
+   "claim_text": "Copper is a genuine essential nutrient -- every living organism needs it. Wallach frames it as a universally important cofactor, the helper mineral that many hundreds of the body's metalloenzymes (enzymes built around a metal atom) depend on to work. Through those enzymes copper builds the pigment in hair and skin, forms the elastic fibers that give tensile strength to blood vessels, skin and vertebral discs, and helps cells use oxygen. He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real, under-recognized impact on human populations -- which is why he ties so many conditions, from gray hair to aneurysms, back to too little copper.",
    "verbatim": "Copper is an essential nutrient for all living organisms\nand is a universally important cofactor for many hundreds\nof metalloenzymes. Copper deficiency is widespread and\ncommon and copper deficiency diseases have an important\nimpact on human populations.",
    "locator": {
     "book": "immortality",
@@ -10183,47 +10183,13 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000304",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In Wallach's framework, vitamin B12 -- also called cobalamin -- is a red, water-soluble vitamin, and both its color and its function trace to a single cobalt atom held at the center of the molecule, which makes B12 the body's main way of using the essential mineral cobalt. It is a fragile compound, slowly deactivated by acid, alkali, light, and oxidizing or reducing substances, and about 30% of its activity is destroyed during cooking. B12 works together with folic acid to build DNA and RNA, supports the bone marrow in making red blood cells, and is needed to form the myelin that insulates nerves -- so a deficiency shows up as pernicious anemia and progressive nerve damage. Because only bacteria, fungi, and algae can actually manufacture it, B12 reaches people mainly through animal foods and supplements, and absorbing it depends on adequate stomach acid plus an acid-dependent 'intrinsic factor.'",
-   "verbatim": "Vitamin B12 is a red crystalline substance that is water\nsoluble. The red color is due to the cobalt atom in the molecule.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 228669
-   },
-   "dose": null,
-   "tags": [
-    "vitamin-b12",
-    "b-vitamins",
-    "cobalt",
-    "nutrition",
-    "supplements",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T00:10:09+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000305",
    "kind": "definition",
    "essentials": [],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Vitamin B12 is a red crystalline, water-soluble vitamin, and its red color comes directly from the cobalt atom held inside the molecule. It is a fragile compound, slowly deactivated by acid, alkali, light, and oxidizing or reducing substances. Because of this fragility, roughly 30% of B12's activity is destroyed during cooking, whether by electric, gas, microwave, wood, or charcoal heat.",
+   "claim_text": "In Wallach's framework, vitamin B12 -- also called cobalamin -- is a red, water-soluble vitamin, and both its color and its function trace to a single cobalt atom held at the center of the molecule, which makes B12 the body's main way of using the essential mineral cobalt. It is a fragile compound, slowly deactivated by acid, alkali, light, and oxidizing or reducing substances, and about 30% of its activity is destroyed during cooking. B12 works together with folic acid to build DNA and RNA, supports the bone marrow in making red blood cells, and is needed to form the myelin that insulates nerves -- so a deficiency shows up as pernicious anemia and progressive nerve damage. Because only bacteria, fungi, and algae can actually manufacture it, B12 reaches people mainly through animal foods and supplements, and absorbing it depends on adequate stomach acid plus an acid-dependent 'intrinsic factor.'",
    "verbatim": "Vitamin B12 is a red crystalline substance that is water\nsoluble. The red color is due to the cobalt atom in the molecule.\nVitamin B12 is slowly deactivated by exposure to acid, alkali,\nlight, and oxidizing or reducing substances. About 30% of\nB12 activity is lost during cooking (electric, gas, microwave,\nwood, charcoal, etc.).",
    "locator": {
     "book": "immortality",
@@ -10342,40 +10308,6 @@
     "name-origin",
     "cyanocobalamin",
     "supplements",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T00:10:09+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000309",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Copper is a genuine essential nutrient -- every living organism needs it. Wallach frames it as a universally important cofactor, the helper mineral that many hundreds of the body's metalloenzymes (enzymes built around a metal atom) depend on to work. Through those enzymes copper builds the pigment in hair and skin, forms the elastic fibers that give tensile strength to blood vessels, skin and vertebral discs, and helps cells use oxygen. He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real, under-recognized impact on human populations -- which is why he ties so many conditions, from gray hair to aneurysms, back to too little copper.",
-   "verbatim": "Copper is an essential nutrient for all living organisms\nand is a universally important cofactor for many hundreds\nof metalloenzymes. Copper deficiency is widespread and\ncommon and copper deficiency diseases have an important\nimpact on human populations.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 241901
-   },
-   "dose": null,
-   "tags": [
-    "copper",
-    "minerals",
-    "trace-minerals",
-    "essential-nutrients",
-    "enzymes",
     "definition"
    ],
    "confidence": "high",
@@ -11082,39 +11014,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000331",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Choline is an essential nutrient that has been known to be essential for more than a hundred years, and it acts with a vitamin-like coenzyme function. Wallach counts it among the nutrients the body must obtain because, although the body can make some of it internally, it cannot make enough to meet daily needs.",
-   "verbatim": "Choline has been known for more than 100 years as\nbeing essential and it has a vitamin-like coenzyme function.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 127978
-   },
-   "dose": null,
-   "tags": [
-    "choline",
-    "vitamins",
-    "essential nutrients",
-    "supplements",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:00:33+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000332",
    "kind": "definition",
    "essentials": [],
@@ -11742,41 +11641,6 @@
     "minerals",
     "history-of-medicine",
     "word-origins",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:51:12+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000351",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Boron is a scarce, non-metallic trace mineral that never occurs pure in nature, turning up instead in combined compounds such as borax and boric acid. Wallach counts it among the nutrients essential for human health. In his framework boron is required for bone metabolism and the efficient use of calcium and magnesium, for the proper function of the endocrine glands (the ovaries, testes, and adrenals), and for maintaining normal blood levels of estrogen and testosterone. Although it was accepted as a human essential only in 1990, it now sits firmly among the minerals Wallach says the body must have.",
-   "verbatim": "Boron is essential for bone metabolism including the\nefficient use of calcium and magnesium and proper function\nof endocrine glands (i.e. - ovaries, testes and adrenals).",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 186690
-   },
-   "dose": null,
-   "tags": [
-    "boron",
-    "what is boron",
-    "minerals",
-    "trace minerals",
-    "bone health",
-    "essential nutrients",
     "definition"
    ],
    "confidence": "high",
@@ -12474,39 +12338,6 @@
     "mineral",
     "table-salt",
     "macro-mineral",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:58:44+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000373",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In his mineral encyclopedia, Wallach describes sodium as a highly reactive, bright, silvery metal that is light enough to float on water and soft enough to cut with a knife. He notes it is the sixth most abundant element in the crust of the earth. It is most familiar to people in the form of sodium chloride, common table salt.",
-   "verbatim": "Sodium is a highly reactive, bright, silvery metal, light\nenough to float on water and soft enough to cut witha knife. It\nis the sixth most abundant element in the crust of the earth.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 322959
-   },
-   "dose": null,
-   "tags": [
-    "sodium",
-    "mineral",
-    "electrolyte",
-    "chemistry",
     "definition"
    ],
    "confidence": "high",

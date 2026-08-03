@@ -1231,7 +1231,7 @@
         "estrogen",
         "testosterone"
       ],
-      "claim_count": 18,
+      "claim_count": 17,
       "symbol": "B"
     },
     "breast_tenderness": {
@@ -1925,7 +1925,7 @@
         "manganese",
         "taurine"
       ],
-      "claim_count": 17
+      "claim_count": 16
     },
     "chorea": {
       "display_name": "Chorea",
@@ -1984,7 +1984,7 @@
         "colloidal_minerals",
         "essential_nutrients"
       ],
-      "claim_count": 41,
+      "claim_count": 40,
       "symbol": "Cr"
     },
     "chronic_fatigue": {
@@ -2409,7 +2409,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 51,
+      "claim_count": 50,
       "symbol": "Cu"
     },
     "cor_pulmonale": {
@@ -5163,7 +5163,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 35,
+      "claim_count": 34,
       "symbol": "Fe"
     },
     "irritable_bowel_syndrome": {
@@ -6039,7 +6039,7 @@
         "tmj",
         "asthma"
       ],
-      "claim_count": 23,
+      "claim_count": 22,
       "symbol": "Mn"
     },
     "margarine": {
@@ -7772,7 +7772,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 32,
+      "claim_count": 31,
       "symbol": "K"
     },
     "praseodymium": {
@@ -8531,7 +8531,7 @@
         "antioxidants",
         "cardiomyopathy"
       ],
-      "claim_count": 37,
+      "claim_count": 35,
       "symbol": "Se"
     },
     "serotonin": {
@@ -8754,7 +8754,7 @@
         "iron",
         "achlorhydria"
       ],
-      "claim_count": 45,
+      "claim_count": 44,
       "symbol": "Na"
     },
     "soil-depletion": {
@@ -9793,7 +9793,7 @@
         "cancer",
         "hyperinsulinemia"
       ],
-      "claim_count": 24,
+      "claim_count": 23,
       "symbol": "V"
     },
     "varicose_veins": {
@@ -9910,7 +9910,7 @@
         "cancer",
         "xerophthalmia"
       ],
-      "claim_count": 30
+      "claim_count": 29
     },
     "vitamin-b1": {
       "display_name": "Thiamine",
@@ -10010,7 +10010,7 @@
         "gluten",
         "zinc"
       ],
-      "claim_count": 24
+      "claim_count": 23
     },
     "vitamin-b2": {
       "display_name": "Riboflavin",
@@ -11582,7 +11582,7 @@
       "facet": "warning",
       "question": "Is vegetable oil bad for your heart?",
       "answer_short": "Yes — Wallach says lots of vegetable oil plus low selenium is the fastest path to heart attack and cancer, because polyunsaturated oils (especially heated or hydrogenated into trans fats) go rancid and free-radical-damage your cells.",
-      "answer": "Wallach's answer is yes, especially alongside low selenium. He calls high intakes of vegetable oils — salad dressings and cooking oils — together with a selenium deficiency the quickest route to a heart attack and cancer. The reason is the oils' polyunsaturated structure: when heated or hydrogenated into trans fatty acids they go rancid, inflicting free-radical damage on cellular fat — the very peroxidation that selenium, the body's antioxidant, normally prevents.",
+      "answer": "Selenium's job is to keep the fats in your cells from oxidizing; vegetable oils are polyunsaturated fats that oxidize easily — especially once heated or hydrogenated into trans fats. So Wallach's warning is about the combination: flood the body with rancidity-prone oils while selenium (the antioxidant that would protect them) runs low, and the oils go rancid inside your cells, driving free-radical damage. He calls high vegetable-oil intake concurrent with selenium deficiency “the quickest route to a heart attack and cancer,” and ties the same pairing — including too much fish oil — to birth defects, arteriosclerosis, cardiomyopathy, and sudden cardiac death. The practical point: to him these oils aren't just empty calories, they actively consume the protection selenium is meant to provide.",
       "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer. The polyun‐\nsaturated configuration of the oils when heated or treated with hydrogen\n(“trans fatty acids”) literally causes the rancidity (“free radical” damage) of\ncellular fat",
       "page": null,
       "book_id": "dddl-3e-2011",
@@ -14393,29 +14393,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-DDDL-000135",
-      "subject": "selenium",
-      "also_about": [
-        "dietary_oils",
-        "cancer",
-        "free_radicals"
-      ],
-      "facet": "warning",
-      "question": "Why does Wallach warn about vegetable oils?",
-      "answer_short": "Because, in his framework, polyunsaturated vegetable oils plus a selenium deficiency are a lethal pairing — together he calls them “the quickest route to a heart attack and cancer.”",
-      "answer": "Selenium's job is to keep the fats in your cells from oxidizing; vegetable oils are polyunsaturated fats that oxidize easily — especially once heated or hydrogenated into trans fats. So Wallach's warning is about the combination: flood the body with rancidity-prone oils while selenium (the antioxidant that would protect them) runs low, and the oils go rancid inside your cells, driving free-radical damage. He calls high vegetable-oil intake concurrent with selenium deficiency “the quickest route to a heart attack and cancer,” and ties the same pairing — including too much fish oil — to birth defects, arteriosclerosis, cardiomyopathy, and sudden cardiac death. The practical point: to him these oils aren't just empty calories, they actively consume the protection selenium is meant to provide.",
-      "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "vegetable-oils",
-        "trans-fats",
-        "rancidity",
-        "heart-attack",
-        "cancer"
-      ]
-    },
-    {
       "id": "WAL-CLM-DDDL-000136",
       "subject": "selenium",
       "also_about": [
@@ -16227,26 +16204,6 @@
         "trace minerals",
         "diabetes",
         "insulin",
-        "metabolism"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000223",
-      "subject": "vanadium",
-      "also_about": [
-        "diabetes"
-      ],
-      "facet": "basics",
-      "question": "What is vanadium?",
-      "answer_short": "Vanadium is an essential trace mineral, proven essential in 1971, that works like insulin to help control blood sugar.",
-      "answer": "Wallach describes vanadium as an essential trace mineral that was proven to be essential in 1971. It stimulates blood sugar (glucose) oxidation and transport in fat cells and glycogen synthesis in liver and muscle, while inhibiting the liver's production of glucose from fat and the absorption of glucose from the gut. It also enhances the stimulating effect of insulin on DNA synthesis, giving it a central role in carbohydrate metabolism.",
-      "verbatim": "Vanadium was proven to be essential in 1971. Vanadium stimulates blood\nsugar (glucose) oxidation and transport in fat cells and glycogen (animal\nstarch) synthesis in liver and muscle, and inhibits liver gluconeogenesis\n(production of glucose from fat) and absorption of glucose from the gut.\nVanadium enhances the stimulating effect of insulin on DNA synthesis.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "blood sugar",
-        "trace minerals",
-        "diabetes",
         "metabolism"
       ]
     },
@@ -24008,32 +23965,13 @@
       ]
     },
     {
-      "id": "WAL-CLM-EPIGEN-000213",
-      "subject": "vitamin-a",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is Vitamin A?",
-      "answer_short": "Vitamin A is a fat-soluble vitamin, isolated in 1913, that exists in several active forms — retinol, retinoic acid, and retinyl esters — and is essential for vision, healthy skin and mucous membranes, and strong bones and teeth.",
-      "answer": "Vitamin A is a fat-soluble vitamin, first isolated in 1913, that exists in several active forms — retinol, retinoic acid, and retinyl esters — plus precursors. Beta-carotene is the fat-soluble precursor the body converts into vitamin A. Wallach teaches that it is required to maintain vision and night vision, healthy skin and mucous membranes, and bones and teeth, and that it has been shown to reduce the risk of epithelial cancers. Because it is fat-soluble it is stored mainly in the liver and absorbed along with dietary fats, which is why a low-fat diet or any condition that blocks fat absorption can leave you short of it.",
-      "verbatim": "This vitamin, isolated in 1913, which has many active forms including, retinol,\nretinoic acid and retinyl esters and precursors.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "vitamins",
-        "fat-soluble-vitamins",
-        "basics",
-        "vision",
-        "skin"
-      ]
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000214",
       "subject": "vitamin-a",
       "also_about": [],
       "facet": "basics",
       "question": "What is vitamin A?",
-      "answer_short": "Vitamin A is a fat-soluble vitamin, isolated in 1913, that exists in several active forms and is essential for vision, skin, mucous membranes, bones, and teeth.",
-      "answer": "Vitamin A is a fat-soluble vitamin first isolated in 1913 that exists in several active forms, including retinol, retinoic acid, and retinyl esters, along with precursors. Beta-carotene is a fat-soluble precursor the body uses to make vitamin A, and it is required to maintain vision and night vision, healthy skin and mucous membranes, and bones and teeth. Wallach notes it has been shown to reduce the risk of epithelial cancers, and that the ancient Egyptians used beef liver juice, a natural source of vitamin A, to cure night blindness.",
+      "answer_short": "Vitamin A is a fat-soluble vitamin, isolated in 1913, that exists in several active forms — retinol, retinoic acid, and retinyl esters — and is essential for vision, healthy skin and mucous membranes, and strong bones and teeth.",
+      "answer": "Vitamin A is a fat-soluble vitamin, first isolated in 1913, that exists in several active forms — retinol, retinoic acid, and retinyl esters — plus precursors. Beta-carotene is the fat-soluble precursor the body converts into vitamin A. Wallach teaches that it is required to maintain vision and night vision, healthy skin and mucous membranes, and bones and teeth, and that it has been shown to reduce the risk of epithelial cancers. Because it is fat-soluble it is stored mainly in the liver and absorbed along with dietary fats, which is why a low-fat diet or any condition that blocks fat absorption can leave you short of it.",
       "verbatim": "This vitamin, isolated in 1913, which has many active forms including, retinol,\nretinoic acid and retinyl esters and precursors. Beta carotene is a fat soluble\nvitamin A precursor that is required for maintenance of vision and night vision\n(the Egyptians employed beef liver juice, a natural source of vitamin A, to\ncure night blindness in 2000 BC), to maintain healthy skin and healthy mucus\nmembranes, bones, and teeth; it has been shown to reduce the risk if epithelial\ncancers.",
       "page": null,
       "book_id": "epigenetics",
@@ -24245,26 +24183,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-EPIGEN-000225",
-      "subject": "iron",
-      "also_about": [
-        "anemia",
-        "oxygen"
-      ],
-      "facet": "basics",
-      "question": "What is iron?",
-      "answer_short": "Iron is an essential mineral found in nearly every living thing; in the body it sits at the heart of hemoglobin, the protein that carries oxygen in the blood, and a healthy adult holds about 3 to 5 grams of it.",
-      "answer": "Iron is a necessary element present in nearly all living organisms, and one of the 60 essential minerals Wallach says the body must obtain from diet or supplements. It works through iron-containing enzymes and proteins, many of them built around heme groups, that drive biological oxidation and oxygen transport, including hemoglobin, myoglobin, cytochrome, and catalase. A healthy adult carries 3 to 5 grams of total iron, a newborn nearly double that per kilogram of body weight; roughly 60 to 70 percent is functional iron doing active work and 30 to 40 percent is held in storage. In Wallach's framework iron is the metal that lets blood carry oxygen, and running short of it, a deficiency he treats as common given how many everyday conditions drain it, drives fatigue, anemia, poor memory, and the strange cravings of pica.",
-      "verbatim": "Iron is a necessary element found in nearly all living organisms.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "iron",
-        "minerals",
-        "nutrition-basics"
-      ]
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000226",
       "subject": "iron",
       "also_about": [
@@ -24273,8 +24191,8 @@
       ],
       "facet": "basics",
       "question": "What is iron and what does it do in the body?",
-      "answer_short": "Iron is an essential element in nearly all living things; a healthy adult carries 3 to 5 grams of it, mostly in hemoglobin and other oxygen-handling proteins.",
-      "answer": "Iron is a necessary element found in nearly all living organisms, working through iron-containing enzymes and proteins that often carry heme groups to drive biological oxidation and transport. Examples in higher organisms include hemoglobin, cytochrome, and catalase. A healthy adult holds an average of 3 to 5 grams of total iron, and a newborn carries nearly double that amount per kilogram of body weight. Roughly 60 to 70 percent of tissue iron is essential or functional iron, while 30 to 40 percent is stored.",
+      "answer_short": "Iron is an essential mineral found in nearly every living thing; in the body it sits at the heart of hemoglobin, the protein that carries oxygen in the blood, and a healthy adult holds about 3 to 5 grams of it.",
+      "answer": "Iron is a necessary element present in nearly all living organisms, and one of the 60 essential minerals Wallach says the body must obtain from diet or supplements. It works through iron-containing enzymes and proteins, many of them built around heme groups, that drive biological oxidation and oxygen transport, including hemoglobin, myoglobin, cytochrome, and catalase. A healthy adult carries 3 to 5 grams of total iron, a newborn nearly double that per kilogram of body weight; roughly 60 to 70 percent is functional iron doing active work and 30 to 40 percent is held in storage. In Wallach's framework iron is the metal that lets blood carry oxygen, and running short of it, a deficiency he treats as common given how many everyday conditions drain it, drives fatigue, anemia, poor memory, and the strange cravings of pica.",
       "verbatim": "Iron is a necessary element found in nearly all living organisms. Iron containing\nenzymes and proteins, often containing heme prosthetic groups, participate in\n\nmany biological oxidations and in transport. Examples of iron containing proteins\nfound in higher organisms include hemoglobin, cytochrome, and catalase.\n\nIn a healthy adult human there is an average of 3 to 5 gms of total iron.\nThe newborn infant has nearly double the amount of iron per kg than adults.\nSixty to 70 percent of tissue iron is classed as essential or functional iron, and\n30 to 40 percent as storage iron.",
       "page": null,
       "book_id": "epigenetics",
@@ -29895,27 +29813,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-HELLS-000042",
-      "subject": "chromium",
-      "also_about": [
-        "vanadium",
-        "diabetes"
-      ],
-      "facet": "basics",
-      "question": "What is chromium and what does it do?",
-      "answer_short": "Chromium is an essential trace mineral required for normal glucose metabolism, and its job is tied directly to how insulin works.",
-      "answer": "In Wallach's framework chromium is an essential trace element the body must have for normal glucose metabolism. Its function is directly tied to insulin, and chromium is required for the glucose tolerance factor to work properly so blood sugar can be managed. Without enough chromium, insulin cannot do its job efficiently.",
-      "verbatim": "Chromium is required for circulating glucose tolerance factor to \nfunction properly. Chromium is an essential trace element necessary \nfor the normal glucose metabolism, It’s function is directly related to \nthe function of insulin.",
-      "page": null,
-      "book_id": "hells-kitchen",
-      "topics": [
-        "blood-sugar",
-        "trace-minerals",
-        "insulin",
-        "glucose-metabolism"
-      ]
-    },
-    {
       "id": "WAL-CLM-HELLS-000043",
       "subject": "chromium",
       "also_about": [
@@ -32428,7 +32325,7 @@
       "facet": "basics",
       "question": "What is boron and what does it do?",
       "answer_short": "Boron is one of Wallach's essential minerals — accepted as essential for humans only in 1990 — and its core job is bone metabolism, helping the body use calcium and magnesium and keeping the ovaries, testes and adrenals working properly.",
-      "answer": "Boron is one of the 60 minerals Wallach counts as essential - though mainstream science was slow to agree, accepting it as an essential nutrient for humans only in 1990 (it had been shown essential for growing chicks about a decade earlier). Its core job, per Wallach, is in bone metabolism: it helps the body use calcium and magnesium efficiently and keeps the endocrine glands - the hormone-producing ovaries, testes and adrenals - working properly.",
+      "answer": "Boron is a scarce, non-metallic trace mineral that never occurs pure in nature, turning up instead in combined compounds such as borax and boric acid. Wallach counts it among the nutrients essential for human health. In his framework boron is required for bone metabolism and the efficient use of calcium and magnesium, for the proper function of the endocrine glands (the ovaries, testes, and adrenals), and for maintaining normal blood levels of estrogen and testosterone. Although it was accepted as a human essential only in 1990, it now sits firmly among the minerals Wallach says the body must have.",
       "verbatim": "Boron is essential for bone metabolism including the\nefficient use of calcium and magnesium and proper function\nof endocrine glands (i.e. - ovaries, testes and adrenals).",
       "page": 103,
       "book_id": "immortality",
@@ -33808,8 +33705,8 @@
       "also_about": [],
       "facet": "basics",
       "question": "What is copper and why is it essential?",
-      "answer_short": "Wallach calls copper a genuine essential nutrient for all living things — a cofactor for hundreds of metalloenzymes — and says copper deficiency is widespread and common.",
-      "answer": "Copper is a genuine essential nutrient for every living thing. Wallach frames it as a universally important cofactor — a helper the body's enzymes need to work — for many hundreds of metalloenzymes (enzymes built around a metal atom). He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real impact on human populations.",
+      "answer_short": "Copper is an essential nutrient for every living organism and a cofactor for many hundreds of enzymes; Wallach considers copper deficiency widespread, common, and behind many everyday diseases.",
+      "answer": "Copper is a genuine essential nutrient -- every living organism needs it. Wallach frames it as a universally important cofactor, the helper mineral that many hundreds of the body's metalloenzymes (enzymes built around a metal atom) depend on to work. Through those enzymes copper builds the pigment in hair and skin, forms the elastic fibers that give tensile strength to blood vessels, skin and vertebral discs, and helps cells use oxygen. He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real, under-recognized impact on human populations -- which is why he ties so many conditions, from gray hair to aneurysms, back to too little copper.",
       "verbatim": "Copper is an essential nutrient for all living organisms\nand is a universally important cofactor for many hundreds\nof metalloenzymes. Copper deficiency is widespread and\ncommon and copper deficiency diseases have an important\nimpact on human populations.",
       "page": 134,
       "book_id": "immortality",
@@ -38715,27 +38612,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-IMMORT-000304",
-      "subject": "vitamin-b12",
-      "also_about": [
-        "cobalt"
-      ],
-      "facet": "basics",
-      "question": "What is Vitamin B12?",
-      "answer_short": "Vitamin B12 (cobalamin) is a red, water-soluble vitamin whose color and biological activity both come from a single cobalt atom at the center of its molecule.",
-      "answer": "In Wallach's framework, vitamin B12 -- also called cobalamin -- is a red, water-soluble vitamin, and both its color and its function trace to a single cobalt atom held at the center of the molecule, which makes B12 the body's main way of using the essential mineral cobalt. It is a fragile compound, slowly deactivated by acid, alkali, light, and oxidizing or reducing substances, and about 30% of its activity is destroyed during cooking. B12 works together with folic acid to build DNA and RNA, supports the bone marrow in making red blood cells, and is needed to form the myelin that insulates nerves -- so a deficiency shows up as pernicious anemia and progressive nerve damage. Because only bacteria, fungi, and algae can actually manufacture it, B12 reaches people mainly through animal foods and supplements, and absorbing it depends on adequate stomach acid plus an acid-dependent 'intrinsic factor.'",
-      "verbatim": "Vitamin B12 is a red crystalline substance that is water\nsoluble. The red color is due to the cobalt atom in the molecule.",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "vitamin-b12",
-        "b-vitamins",
-        "cobalt",
-        "nutrition",
-        "supplements"
-      ]
-    },
-    {
       "id": "WAL-CLM-IMMORT-000305",
       "subject": "vitamin-b12",
       "also_about": [
@@ -38743,8 +38619,8 @@
       ],
       "facet": "basics",
       "question": "What is vitamin B12?",
-      "answer_short": "Vitamin B12 is a red, water-soluble vitamin whose color and function come from a single cobalt atom at its center.",
-      "answer": "Vitamin B12 is a red crystalline, water-soluble vitamin, and its red color comes directly from the cobalt atom held inside the molecule. It is a fragile compound, slowly deactivated by acid, alkali, light, and oxidizing or reducing substances. Because of this fragility, roughly 30% of B12's activity is destroyed during cooking, whether by electric, gas, microwave, wood, or charcoal heat.",
+      "answer_short": "Vitamin B12 (cobalamin) is a red, water-soluble vitamin whose color and biological activity both come from a single cobalt atom at the center of its molecule.",
+      "answer": "In Wallach's framework, vitamin B12 -- also called cobalamin -- is a red, water-soluble vitamin, and both its color and its function trace to a single cobalt atom held at the center of the molecule, which makes B12 the body's main way of using the essential mineral cobalt. It is a fragile compound, slowly deactivated by acid, alkali, light, and oxidizing or reducing substances, and about 30% of its activity is destroyed during cooking. B12 works together with folic acid to build DNA and RNA, supports the bone marrow in making red blood cells, and is needed to form the myelin that insulates nerves -- so a deficiency shows up as pernicious anemia and progressive nerve damage. Because only bacteria, fungi, and algae can actually manufacture it, B12 reaches people mainly through animal foods and supplements, and absorbing it depends on adequate stomach acid plus an acid-dependent 'intrinsic factor.'",
       "verbatim": "Vitamin B12 is a red crystalline substance that is water\nsoluble. The red color is due to the cobalt atom in the molecule.\nVitamin B12 is slowly deactivated by exposure to acid, alkali,\nlight, and oxidizing or reducing substances. About 30% of\nB12 activity is lost during cooking (electric, gas, microwave,\nwood, charcoal, etc.).",
       "page": null,
       "book_id": "immortality",
@@ -38818,30 +38694,6 @@
         "name-origin",
         "cyanocobalamin",
         "supplements"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000309",
-      "subject": "copper",
-      "also_about": [
-        "aneurysm",
-        "anemia",
-        "hemorrhoids",
-        "goiter"
-      ],
-      "facet": "basics",
-      "question": "What is copper?",
-      "answer_short": "Copper is an essential nutrient for every living organism and a cofactor for many hundreds of enzymes; Wallach considers copper deficiency widespread, common, and behind many everyday diseases.",
-      "answer": "Copper is a genuine essential nutrient -- every living organism needs it. Wallach frames it as a universally important cofactor, the helper mineral that many hundreds of the body's metalloenzymes (enzymes built around a metal atom) depend on to work. Through those enzymes copper builds the pigment in hair and skin, forms the elastic fibers that give tensile strength to blood vessels, skin and vertebral discs, and helps cells use oxygen. He stresses that copper deficiency is widespread and common, and that copper-deficiency diseases have a real, under-recognized impact on human populations -- which is why he ties so many conditions, from gray hair to aneurysms, back to too little copper.",
-      "verbatim": "Copper is an essential nutrient for all living organisms\nand is a universally important cofactor for many hundreds\nof metalloenzymes. Copper deficiency is widespread and\ncommon and copper deficiency diseases have an important\nimpact on human populations.",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "copper",
-        "minerals",
-        "trace-minerals",
-        "essential-nutrients",
-        "enzymes"
       ]
     },
     {
@@ -39246,26 +39098,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-IMMORT-000331",
-      "subject": "choline",
-      "also_about": [
-        "vitamin-b12",
-        "methionine"
-      ],
-      "facet": "basics",
-      "question": "What is choline?",
-      "answer_short": "Choline is an essential nutrient with a vitamin-like coenzyme function that has been recognized as essential for over a hundred years.",
-      "answer": "Choline is an essential nutrient that has been known to be essential for more than a hundred years, and it acts with a vitamin-like coenzyme function. Wallach counts it among the nutrients the body must obtain because, although the body can make some of it internally, it cannot make enough to meet daily needs.",
-      "verbatim": "Choline has been known for more than 100 years as\nbeing essential and it has a vitamin-like coenzyme function.",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "vitamins",
-        "essential nutrients",
-        "supplements"
-      ]
-    },
-    {
       "id": "WAL-CLM-IMMORT-000332",
       "subject": "choline",
       "also_about": [
@@ -39631,28 +39463,6 @@
         "minerals",
         "history-of-medicine",
         "word-origins"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000351",
-      "subject": "boron",
-      "also_about": [
-        "calcium",
-        "magnesium"
-      ],
-      "facet": "basics",
-      "question": "What is boron?",
-      "answer_short": "Boron is a scarce trace mineral Wallach counts among the nutrients essential for human health, needed for bone metabolism, the efficient use of calcium and magnesium, and normal sex-hormone levels.",
-      "answer": "Boron is a scarce, non-metallic trace mineral that never occurs pure in nature, turning up instead in combined compounds such as borax and boric acid. Wallach counts it among the nutrients essential for human health. In his framework boron is required for bone metabolism and the efficient use of calcium and magnesium, for the proper function of the endocrine glands (the ovaries, testes, and adrenals), and for maintaining normal blood levels of estrogen and testosterone. Although it was accepted as a human essential only in 1990, it now sits firmly among the minerals Wallach says the body must have.",
-      "verbatim": "Boron is essential for bone metabolism including the\nefficient use of calcium and magnesium and proper function\nof endocrine glands (i.e. - ovaries, testes and adrenals).",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "what is boron",
-        "minerals",
-        "trace minerals",
-        "bone health",
-        "essential nutrients"
       ]
     },
     {
@@ -40056,24 +39866,6 @@
         "mineral",
         "table-salt",
         "macro-mineral"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000373",
-      "subject": "sodium",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is sodium?",
-      "answer_short": "Sodium is a highly reactive, soft silvery metal, light enough to float on water and the sixth most abundant element in the earth's crust.",
-      "answer": "In his mineral encyclopedia, Wallach describes sodium as a highly reactive, bright, silvery metal that is light enough to float on water and soft enough to cut with a knife. He notes it is the sixth most abundant element in the crust of the earth. It is most familiar to people in the form of sodium chloride, common table salt.",
-      "verbatim": "Sodium is a highly reactive, bright, silvery metal, light\nenough to float on water and soft enough to cut witha knife. It\nis the sixth most abundant element in the crust of the earth.",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "sodium",
-        "mineral",
-        "electrolyte",
-        "chemistry"
       ]
     },
     {
@@ -43520,8 +43312,8 @@
       ],
       "facet": "warning",
       "question": "What are the signs of too much selenium?",
-      "answer_short": "Wallach warns that selenium is toxic in excess, with tell-tale signs of hair loss, arthritis, brittle nails, garlic breath, a metallic taste, and kidney and liver dysfunction.",
-      "answer": "Selenium is powerfully protective in trace amounts but toxic in excess, and Wallach lists the tell-tale signs of too much: hair loss, arthritis, brittle nails, a distinctive garlic breath and metallic taste in the mouth, and kidney and liver dysfunction. The garlic odor — from selenium compounds breathed out through the lungs — is a classic early warning that the dose has climbed too high.",
+      "answer_short": "Yes — although Wallach uses high therapeutic doses, he also lists clear signs of selenium excess: hair loss, brittle nails, a garlic odor on the breath, a metallic taste, and arthritis, with kidney and liver dysfunction at more serious levels.",
+      "answer": "Selenium is one of the minerals where the gap between “enough” and “too much” genuinely matters, and Wallach documents both ends. The tell-tale signs of selenium toxicity, in his listing, are alopecia (hair loss), brittle nails, a distinctive garlic odor on the breath, a metallic taste in the mouth, and arthritis — with kidney and liver dysfunction at more serious excess. It's the necessary counterweight to his high therapeutic doses: the 500–3,000 mcg ranges he cites are deliberate, time-limited treatment levels rather than open-ended daily habits, and these symptoms are the body's signal to pull back.",
       "verbatim": "SELENIUM TOXICITY\nalopecia\narthritis\nbrittle nails\ngarlic breath\nmetallic taste\nkidney dysfunction\nliver dysfunction",
       "page": 48,
       "book_id": "lets-play-doctor",
@@ -57376,25 +57168,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-LETS-000492",
-      "subject": "selenium",
-      "also_about": [],
-      "facet": "warning",
-      "question": "Can you take too much selenium?",
-      "answer_short": "Yes — although Wallach uses high therapeutic doses, he also lists clear signs of selenium excess: hair loss, brittle nails, a garlic odor on the breath, a metallic taste, and arthritis, with kidney and liver dysfunction at more serious levels.",
-      "answer": "Selenium is one of the minerals where the gap between “enough” and “too much” genuinely matters, and Wallach documents both ends. The tell-tale signs of selenium toxicity, in his listing, are alopecia (hair loss), brittle nails, a distinctive garlic odor on the breath, a metallic taste in the mouth, and arthritis — with kidney and liver dysfunction at more serious excess. It's the necessary counterweight to his high therapeutic doses: the 500–3,000 mcg ranges he cites are deliberate, time-limited treatment levels rather than open-ended daily habits, and these symptoms are the body's signal to pull back.",
-      "verbatim": "SELENIUM TOXICITY\nalopecia\narthritis\nbrittle nails\ngarlic breath\nmetallic taste\nkidney dysfunction\nliver dysfunction",
-      "page": null,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "toxicity",
-        "overdose",
-        "garlic-breath",
-        "hair-loss",
-        "safe-dosing"
-      ]
-    },
-    {
       "id": "WAL-CLM-LETS-000493",
       "subject": "zinc",
       "also_about": [
@@ -61878,8 +61651,8 @@
       "also_about": [],
       "facet": "basics",
       "question": "What is potassium and what does it do in the body?",
-      "answer_short": "Wallach describes potassium as an essential mineral and the main positive ion inside cells, driving many enzyme and electrochemical functions, and making up about five percent of the body's total mineral content.",
-      "answer": "Wallach states potassium is essential to all organisms and is the major cation (positive ion) in the cell cytoplasm, with a wide variety of electrochemical and catalytic functions for enzyme systems; it makes up about five percent of the body's total mineral content.",
+      "answer_short": "Potassium is an essential mineral — the major positively charged ion inside your cells — that runs fluid balance, nerve signaling and muscle activity, and makes up about five percent of the body's total mineral content.",
+      "answer": "Potassium is an essential mineral that Wallach counts among the roughly 60 minerals the body must obtain to stay healthy. It is the major cation (positively charged ion) inside your cells and makes up about five percent of the body's total mineral content. Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic (fluid-pressure) equilibrium and acid-base (pH) balance, and working with calcium it regulates neuromuscular (nerve-and-muscle) activity. The body stores essentially none and excretes about 90% of what you take in through the urine, so Wallach says it must be replenished every day.",
       "verbatim": "Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.",
       "page": 343,
       "book_id": "rare-earths",
@@ -62507,31 +62280,6 @@
       "tier1_link": {
         "essentials": [
           "magnesium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000174",
-      "subject": "manganese",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is manganese and what does it do?",
-      "answer_short": "Wallach states manganese is essential to all living organisms, activating numerous enzyme systems (glucose metabolism, energy production, superoxide dismutase) and forming part of many metalloenzymes, hormones and proteins, with only 10 to 20 mg total in the body.",
-      "answer": "Wallach states manganese is essential to all known living organisms; it activates numerous enzyme systems (including glucose metabolism, energy production, and superoxide dismutase) and is a major constituent of several metalloenzymes, hormones, and proteins. Total body content in humans is only 10 to 20 mg.",
-      "verbatim": "Manganese is essential to all known living organisms; it activates numerous enzyme systems including those involved with glucose metabolism, energy production and superoxide dismutase; it is a major constituent of several metalloenzymes, hormones, and proteins of humans.",
-      "page": 351,
-      "book_id": "rare-earths",
-      "topics": [
-        "manganese",
-        "what is manganese",
-        "enzymes",
-        "superoxide dismutase",
-        "body content",
-        "minerals"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "manganese"
         ]
       }
     },
@@ -67414,27 +67162,6 @@
         "chelated-minerals",
         "supplements",
         "bioavailability"
-      ]
-    },
-    {
-      "id": "WAL-CLM-RARE-000350",
-      "subject": "potassium",
-      "also_about": [
-        "sodium",
-        "calcium"
-      ],
-      "facet": "basics",
-      "question": "What is potassium?",
-      "answer_short": "Potassium is an essential mineral — the major positively charged ion inside your cells — that runs fluid balance, nerve signaling and muscle activity, and makes up about five percent of the body's total mineral content.",
-      "answer": "Potassium is an essential mineral that Wallach counts among the roughly 60 minerals the body must obtain to stay healthy. It is the major cation (positively charged ion) inside your cells and makes up about five percent of the body's total mineral content. Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic (fluid-pressure) equilibrium and acid-base (pH) balance, and working with calcium it regulates neuromuscular (nerve-and-muscle) activity. The body stores essentially none and excretes about 90% of what you take in through the urine, so Wallach says it must be replenished every day.",
-      "verbatim": "Potassium is essential to all organisms and is the major cation in cell cytoplasm with wide variety of electrochemical and catalytic functions for enzyme systems.",
-      "page": null,
-      "book_id": "rare-earths",
-      "topics": [
-        "minerals",
-        "electrolytes",
-        "element-basics",
-        "cell-function"
       ]
     },
     {

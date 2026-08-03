@@ -897,7 +897,7 @@
     "cancer"
    ],
    "symptoms": [],
-   "claim_text": "Wallach's answer is yes, especially alongside low selenium. He calls high intakes of vegetable oils — salad dressings and cooking oils — together with a selenium deficiency the quickest route to a heart attack and cancer. The reason is the oils' polyunsaturated structure: when heated or hydrogenated into trans fatty acids they go rancid, inflicting free-radical damage on cellular fat — the very peroxidation that selenium, the body's antioxidant, normally prevents.",
+   "claim_text": "Selenium's job is to keep the fats in your cells from oxidizing; vegetable oils are polyunsaturated fats that oxidize easily — especially once heated or hydrogenated into trans fats. So Wallach's warning is about the combination: flood the body with rancidity-prone oils while selenium (the antioxidant that would protect them) runs low, and the oils go rancid inside your cells, driving free-radical damage. He calls high vegetable-oil intake concurrent with selenium deficiency “the quickest route to a heart attack and cancer,” and ties the same pairing — including too much fish oil — to birth defects, arteriosclerosis, cardiomyopathy, and sudden cardiac death. The practical point: to him these oils aren't just empty calories, they actively consume the protection selenium is meant to provide.",
    "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer. The polyun‐\nsaturated configuration of the oils when heated or treated with hydrogen\n(“trans fatty acids”) literally causes the rancidity (“free radical” damage) of\ncellular fat",
    "locator": {
     "book": "dddl-3e-2011",
@@ -4274,39 +4274,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-DDDL-000135",
-   "kind": "mechanism",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Selenium's job is to keep the fats in your cells from oxidizing; vegetable oils are polyunsaturated fats that oxidize easily — especially once heated or hydrogenated into trans fats. So Wallach's warning is about the combination: flood the body with rancidity-prone oils while selenium (the antioxidant that would protect them) runs low, and the oils go rancid inside your cells, driving free-radical damage. He calls high vegetable-oil intake concurrent with selenium deficiency “the quickest route to a heart attack and cancer,” and ties the same pairing — including too much fish oil — to birth defects, arteriosclerosis, cardiomyopathy, and sudden cardiac death. The practical point: to him these oils aren't just empty calories, they actively consume the protection selenium is meant to provide.",
-   "verbatim": "High intakes of vegetable oils,\nincluding salad dressing and cooking oils, concurrent with a selenium\ndeficiency is the quickest route to a heart attack and cancer.",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 585539
-   },
-   "dose": null,
-   "tags": [
-    "selenium",
-    "vegetable-oils",
-    "trans-fats",
-    "rancidity",
-    "mechanism"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-25T18:56:42+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-DDDL-000136",
    "kind": "mechanism",
    "essentials": [],
@@ -7237,40 +7204,6 @@
     "trace minerals",
     "diabetes",
     "insulin",
-    "metabolism",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:51:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-DDDL-000223",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach describes vanadium as an essential trace mineral that was proven to be essential in 1971. It stimulates blood sugar (glucose) oxidation and transport in fat cells and glycogen synthesis in liver and muscle, while inhibiting the liver's production of glucose from fat and the absorption of glucose from the gut. It also enhances the stimulating effect of insulin on DNA synthesis, giving it a central role in carbohydrate metabolism.",
-   "verbatim": "Vanadium was proven to be essential in 1971. Vanadium stimulates blood\nsugar (glucose) oxidation and transport in fat cells and glycogen (animal\nstarch) synthesis in liver and muscle, and inhibits liver gluconeogenesis\n(production of glucose from fat) and absorption of glucose from the gut.\nVanadium enhances the stimulating effect of insulin on DNA synthesis.",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 596961
-   },
-   "dose": null,
-   "tags": [
-    "vanadium",
-    "blood sugar",
-    "trace minerals",
-    "diabetes",
     "metabolism",
     "definition"
    ],

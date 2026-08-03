@@ -12,12 +12,29 @@ then asks what to resume. Never a flair-only boot.
 Luneth's call at the close of the audit campaign: **we go back to enriching headers.** Start there
 unless he redirects.
 
+# ★★ FIRST, THOUGH — ONE OWED GATE (30 min, do it before the headers)
+**`no_duplicate_claims` does not exist, and the class it would catch SHIPPED TO LUNETH'S SCREEN.**
+On 2026-08-03 he found two near-identical "What is Vitamin A?" cards on one entity page; 13
+duplicate claims were removed (kv=458). Nothing caught them, and §00.B says codify rather than
+promise. The gate: same book + same `char_offset` + verbatim containment + same subject/facet = RED.
+Measured after the cleanup it yields exactly **2 pairs**, and both are Luneth-approved keep-boths, so
+they go in `.claude/invariant-baseline.json` as R9 exceptions with a reason + a test:
+`WAL-CLM-DDDL-000071`/`-000137` (selenium/physiology) and `WAL-CLM-IMMORT-000135`/`-000389`
+(gallium/uses). Ship it with a negative test that re-catches the vitamin-A pair. It was deliberately
+NOT rushed in at session close — a gate authored without its negative test is how misfiring gates
+ship ([[negative-control-or-it-proves-nothing]]).
+
+**Two duplicate mechanisms it must catch** (both measured, both real): SAME-BATCH DOUBLE EMISSION
+(one extraction emits a truncated take AND a full take — identical offset AND identical
+`extracted_at`) and CROSS-BATCH RE-MINING (a later pass re-mines a span an earlier pass covered —
+same offset, different `extracted_at`).
+
 ---
 
 # ★ STATE — measured 2026-08-03
 
 - **Board 84/84**, 0 reds. (21 external · 22 consistency · 39 structural · 2 meta.)
-- **Corpus sealed at `knowledge_version=457`**, `corpus_verify` PASS — 2,268 claims · 7 books ·
+- **Corpus sealed at `knowledge_version=458`** (2,255 claims after the 2026-08-03 de-dup), `corpus_verify` PASS — 2,268 claims · 7 books ·
   hashes match. Build fresh, all derived artifacts in sync.
 - **Tree clean, pushed.** (The only file that ever shows dirty is `tools/canaries/safe-write-probe.txt`;
   it rewrites its own nonce every time `safe_write` runs. Normal, not a change.)
@@ -71,6 +88,16 @@ CLOSED.** There is no open decision waiting on Luneth from this campaign.
    offsets. Weaving prose back into interleaved table bleed is a structural repair, not a line fix.
 2. **`hk.txt` index OCR junk** — `mrsenic 155`, `Ashes177` and neighbours. A different class from
    anything the campaign covered.
+
+### Duplicate claims — 13 removed 2026-08-03, 4 groups left (subject slugs differ, outside the agreed rule)
+`RARE-000199`/`RARE-000383` (hydrogen-peroxide vs hydrogen) · `EPIGEN-000271`/`EPIGEN-000319`
+(vitamin-b12 vs cobalt) · `DDDL-000064`/`DDDL-000157` (omega-3 mechanism vs physiology — SAME
+subject, different facet) · `IMMORT-000045`/`IMMORT-000465` (beryllium/warning vs berylliosis/basics,
+identical 142-char verbatim). Each needs Luneth's read; none is a blind delete.
+
+### A stale git worktree
+`.claude/worktrees/nervous-shannon-71b572/` holds a full old copy of the corpus. Harmless, but
+repo-wide greps DOUBLE-COUNT because of it — it turned up in the pre-delete reference scan.
 
 ### The mining backlog (a separate track the campaign never claimed to cover)
 - **174 destroyed B-vitamin subscripts** in source text no claim quotes. **PROVABLY NOT
@@ -169,6 +196,6 @@ in them are the lesson**, not the edit lists.
 
 ---
 
-**Board 84/84 · kv=457 · tree clean, pushed · the AUDIT CAMPAIGN IS CLOSED (all 3 decisions
+**Board 84/84 · kv=458 · tree clean, pushed · the AUDIT CAMPAIGN IS CLOSED (all 3 decisions
 answered, 0 awaiting Luneth) · divergences 73 + a 36-token register · backlog 1,283 ·
 claims_verified 642 · NEXT = ELEMENT HEADER ENRICHMENT.**

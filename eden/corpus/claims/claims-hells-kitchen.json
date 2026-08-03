@@ -1327,40 +1327,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-HELLS-000042",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In Wallach's framework chromium is an essential trace element the body must have for normal glucose metabolism. Its function is directly tied to insulin, and chromium is required for the glucose tolerance factor to work properly so blood sugar can be managed. Without enough chromium, insulin cannot do its job efficiently.",
-   "verbatim": "Chromium is required for circulating glucose tolerance factor to \nfunction properly. Chromium is an essential trace element necessary \nfor the normal glucose metabolism, It’s function is directly related to \nthe function of insulin.",
-   "locator": {
-    "book": "hells-kitchen",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 456328
-   },
-   "dose": null,
-   "tags": [
-    "chromium",
-    "blood-sugar",
-    "trace-minerals",
-    "insulin",
-    "glucose-metabolism",
-    "definition"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T00:10:09+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-HELLS-000043",
    "kind": "mechanism",
    "essentials": [],
