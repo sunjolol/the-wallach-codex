@@ -1,75 +1,112 @@
-# Next chunk — ★ AUTHORITATIVE HANDOFF (rewritten 2026-08-02, end of the corroboration + vision session)
+# Next chunk — ★ AUTHORITATIVE HANDOFF
+
+_Rewritten from scratch 2026-08-03 at the close of the front-facing page-read campaign. The previous
+version had accumulated three strata of edits and was contradicting itself (a struck-through "FIXED"
+note sitting directly above the same item marked "NOT fixed", and a footer reading `Board 83/83 ·
+kv=448 · backlog 1,716`). **Every number in this file was MEASURED at handoff by running the tool,
+not carried forward.** Where an older document disagrees with this one, this one wins._
 
 # ⚠ HOW THIS SESSION STARTS
-Luneth types `genesis` in a NEW session; Claude runs `tools/genesis.py` ONLY in response, reports,
-then asks what to resume.
+Luneth types `genesis`; Claude runs `PYTHONUTF8=1 python tools/genesis.py` ONLY in response, reports,
+then asks what to resume. Never a flair-only boot.
 
-# ★ STATE — every number below was MEASURED at handoff, not remembered
-- **Board 84/84**, 0 reds. Corpus sealed at **knowledge_version=454**, `corpus_verify` PASS
-  (2268 claims · 7 books · hashes match). Build fresh, all derived artifacts in sync.
-- **Everything is committed and pushed** (`master`, through `9df9a075`).
-- **Front-facing backlog: 1,283** (1,900 → 1,716 → 1,505 → 1,292 → 1,283). `claims_verified` holds
-  **642**. `books_verified` = `dddl-3e-2011` · `iaiyh` — but see the ⚠ below before trusting that.
-  Per book remaining: epigenetics 326 · immortality 255 · lets-play-doctor 336 · rare-earths 284 ·
-  hells-kitchen 82.
-- ✔ **THE PRE-EXISTING SEARCH-ROUTING BUG IS FIXED** (it is no longer an open item). Root cause:
-  `tokenize()` drops stopwords, so a bare `"what are antioxidants"` reduces to the topic word ALONE
-  and every claim about the topic scored IDENTICALLY (23 each) — leaving `rankClaims`' tie-break,
-  **claim id ASCENDING**, to pick the hero alphabetically. The weight-loss warning beat the
-  definition because H sorts before I. `heroByIntent` now heroes the topic's `basics` answer when
-  the intent is empty. `render_probe_search_routing` 6/6.
-- ✔ **The "reduced" gloss bug is CLOSED too** — all four forms (`reduced`/`reduction`/`reduce`/
-  `reducing`) are in `term-gloss-lexicon.json::glossary_key_denylist` behind the live critical gate
-  `glossary_keys_denylisted`. Older handoffs listing it as open are STALE.
-- ⚠ **`books_verified` IS WEAKER THAN IT SOUNDS — Luneth's ruling needed.** `dddl-3e-2011`, one of
-  only two books asserted "audited-pristine", wrote B1 as `Bl` **17 times** plus 7 botanical typos.
-  The purity gate never saw them because the book's OWN reviewed-OK allowlist
-  (`eden/tools/purity-baselines/dddl-3e-2011.json::spell_ok`, 1,325 entries) **contained the
-  misspellings** (aqutifolia, blepherisma, ustatissimum, fragula, phosphytidyl, phosphatydil,
-  tinnitis). All are now fixed and the stale carve-outs removed — but the question of what
-  `books_verified` asserts is open. There is also **no page image or PDF for DDDL in the repo**, so
-  it cannot be page-read at all.
-- `frontface_verbatims_clean` gates **EIGHT** mechanical classes (negative test 45 cases), and a
-  NINTH gate shipped 2026-08-02: **`verbatim_no_transcription_scaffolding`** (critical, 21-case
-  negative test) — no sealed verbatim may contain the capture harness's frame name, the reader's
-  "Page N of M" readout, a `===`-run separator, or a Kindle location marker.
-- ~~ONE PRE-EXISTING PROBE FAILURE~~ — ✔ FIXED, see the state block above. Original note kept:
-  `tools/render_probe_search_routing.js` fails 1/6 — "what are antioxidants" heroes
-  `WAL-CLM-HELLS-000016` (facet=warning) instead of the definition. Attributed by evidence: the
-  search index's ordered id list and its `entities` block were byte-identical across the wave-1
-  change, only `verbatim` differed, and the wrongly-picked hero is itself unchanged. Own ticket.
-- ⚠ **ONE PRE-EXISTING PROBE FAILURE, not caused by the wave-1 work and NOT fixed:**
-  `tools/render_probe_search_routing.js` fails 1/6 — "what are antioxidants" heroes
-  `WAL-CLM-HELLS-000016` (facet=warning) instead of the definition. Attributed to before this work by
-  evidence, not by re-running at HEAD: the search index's ordered id list is identical, `entities` is
-  byte-identical, exactly 42 entries changed (precisely the wave-1 fix set), and the ONLY field
-  differing in any of them is `verbatim` — every routing field is untouched and the wrongly-picked
-  hero is itself unchanged. Different subsystem; own ticket.
+---
 
-# ★★★ READ THIS FIRST: `tools/frontface/README.md`
-The whole toolkit moved OUT of the session scratchpad INTO the repo this session, precisely so
-nothing here has to be rebuilt. It is committed, it runs, and it was smoke-tested from its new home.
-The README explains each instrument AND what each does not prove. **Do not rebuild any of it.**
+# ★ STATE — measured 2026-08-03
 
-- **`tools/frontface/ocr-cache/` is committed** — 719 Tesseract page reads of the epigenetics and
-  immortality captures, ~50 minutes of wall clock. Never regenerate unless a capture changes.
-- `tools/frontface/work/` is gitignored and holds generated analysis; it regenerates in seconds.
-- The old `temporary/frontface-ocr-tools/` still exists but is SUPERSEDED and incomplete
-  (`render_page.py` there knows only two of the three PDF books). Use `tools/frontface/`.
+- **Board 84/84**, 0 reds. (21 external · 22 consistency · 39 structural · 2 meta.)
+- **Corpus sealed at `knowledge_version=454`**, `corpus_verify` PASS — 2,268 claims · 7 books ·
+  hashes match. Build fresh, all derived artifacts in sync.
+- **Tree clean, everything pushed** — `master` through **`e67196a9`**. (The only file that ever shows
+  dirty is `tools/canaries/safe-write-probe.txt`; it rewrites its own nonce every time `safe_write`
+  runs. That is normal, not a change.)
+- **Front-facing backlog: 1,283.** Per book: **epigenetics 328 · lets-play-doctor 335 ·
+  rare-earths 283 · immortality 255 · hells-kitchen 82.**
+- **`claims_verified` = 642.** `books_verified` = `dddl-3e-2011` · `iaiyh` — **but read ⚠ DECISION 1
+  below before trusting that label.**
+- Campaign arc this session: backlog **1,900 → 1,716 → 1,505 → 1,292 → 1,283**;
+  `claims_verified` **25 → 642**.
 
-# ★ THE ONE RESULT THAT SHAPES EVERYTHING ELSE
-**Two machines agreeing is NOT verification.** 30 claims where BOTH independent OCR passes agreed
-were page-read end to end; **7 still carried a defect** (`fmctose`/`chemes` — both passes shared the
-error; `mcgt.i.d.,folicacidat`; `zarniga`; a comma read as a period; two punctuation cases). One of
-the seven was a slice-end false positive, so ~6 real in 30.
+---
 
-Consequence, and it is a MEASUREMENT not a caution: the **997 claims that currently agree with their
-second OCR remain in the backlog**. They cannot be retired on agreement. Luneth chose "read the 508,
-then decide" before this was measured; the measurement now backs that choice with evidence.
+# ★★★ THE ONE FACT THAT CHANGES WHAT COMES NEXT
 
-# ★ WHAT LUNETH RULED THIS SESSION — read before touching any corpus text
-Saved as memory **`books-are-riddled-use-outside-info`**. It corrected a premise I was working from
-all session and it changes the economics of this campaign:
+**The corroboration instrument is EXHAUSTED.** Regenerated end to end at handoff
+(`build_targets` → `corr2` → `corr_shots` → `select_reads`) against the current sealed corpus:
+
+```
+book                  claims  located   AGREE  has hunks
+rare-earths              283      283     219         64
+lets-play-doctor         335      335     176        159
+hells-kitchen             82       82      81          1
+epigenetics              328      328     300         28
+immortality              255      255     155        100
+TOTAL                   1283     1283     931        352
+```
+
+`select_reads` now yields **TIER A1 = 0 · A2 = 0 · A3 = 0 · B-alignment-slip = 0 ·
+B-dropped-text = 0 · UNLOCATED = 0**, and a fresh 30-claim **control** sample. The 352 claims that
+still produce hunks produce ONLY suppressed-with-reason ones (pdf-spacing 203 · uniform-typo-fix 109
+· unit-ocr-resolved 103 · subscript-normalized 24 · pdf-page-number-bleed 5 · silver-400mcg 1 = 445).
+
+**What this means, precisely:** every disagreement the second-OCR instrument can SEE has been read
+and resolved. The remaining 1,283 are not "unexamined" — they are the class the instrument is
+STRUCTURALLY BLIND TO, because both passes read the same physical scan and share their errors.
+Do not expect another `select_reads` run to produce work. It will not. The next reduction in that
+1,283 has to come from a different instrument or from whole-page reading.
+
+---
+
+# ★ THE MEASUREMENT THAT GOVERNS THE BACKLOG
+
+**Three independent control samples, page-read end to end, of claims where BOTH OCR passes AGREED:**
+
+| sample | defects found |
+|---|---|
+| control 1 | 7 of 30 |
+| control 2 | 4 of 30 |
+| control 3 | 2 of 30 |
+| **total** | **13 of 90 ≈ 14%** |
+
+Agreement is corroboration, **never** verification. That is why the 931 agreeing claims stay in the
+backlog. The rate is trending down as the corpus gets cleaner, but it is not zero. Changing this
+policy is Luneth's call and it changes what `claims_verified` MEANS.
+
+---
+
+# ⚠ DECISIONS WAITING ON LUNETH (do not resolve these unilaterally)
+
+### DECISION 1 — what does `books_verified` actually assert?
+`dddl-3e-2011` is one of only TWO books marked "audited-pristine". It wrote **B1 as `Bl` seventeen
+times** plus seven botanical/technical typos. The purity gate never saw them because the book's own
+reviewed-OK allowlist — `eden/tools/purity-baselines/dddl-3e-2011.json::spell_ok`, 1,325 entries —
+**CONTAINED the misspellings** (`aqutifolia`, `blepherisma`, `ustatissimum`, `fragula`,
+`phosphytidyl`, `phosphatydil`, `tinnitis`). The audit's allowlist had absorbed them, so the book
+stayed green while carrying them.
+
+All 17 `Bl` and all seven typos are now FIXED and the stale carve-outs REMOVED. What is open is the
+label: if an "audited-pristine" allowlist can bless typos, `books_verified` means less than it
+sounds like — and `iaiyh` (the other one) has a 125-entry baseline nobody has re-examined.
+**There is also no page image or PDF for DDDL anywhere in the repo**, so it cannot be page-read at
+all; its 17 `Bl` were resolved from unambiguous context, not from a page.
+
+### DECISION 2 — the pending-review sweep
+`eden/tools/ratified-divergences.json::pending_review` now holds **five batches / ~213 logged
+judgment calls** awaiting his end-of-campaign sweep, exactly as he asked. Batches:
+`batch_2026-08-02` (21) · `_nonword` (19 + 3) · `wave1` (41 applied + 41 unlogged divergences +
+8 proposals + 4 extent) · `wave2` (28 + 25 + 4 + 4 + 1) · `wave3-and-booktypos` (11 + 1 + 1 + 1 +
+three prose findings). Two in the first batch are flagged **SEMANTIC** (`borytes`→barytes,
+`Aspartamine`→Aspartame) — corrected from meaning rather than spelling, so check those first.
+
+### DECISION 3 — 12 book-typo proposals were APPLIED, not escalated
+Under his standing ruling ("what we DO fix is when there's a clear typo … these fixes should be
+noted for my review"), the whole class was applied and logged rather than queued. If he wanted those
+held, this is the batch to reverse.
+
+---
+
+# ★ THE DOCTRINE RULING THAT GOVERNS ALL CORPUS TEXT
+Saved as memory **`books-are-riddled-use-outside-info`**. Verbatim, because the WHY is the point:
 
 > "the book has MANY misprints — so the PDFs and screenshots of the actual book are not always
 > correct and should not be treated that way, this heavy level of auditing real info is what has
@@ -82,204 +119,211 @@ all session and it changes the economics of this campaign:
 > review sweep at the end just in case you over-reach"
 
 - The page is **EVIDENCE, NOT GROUND TRUTH**.
-- **FIX** clear typos/garbles/wrong units/destroyed subscripts/misspelled proper nouns, using outside
-  knowledge — it is explicitly sanctioned.
+- **FIX** clear typos / garbles / wrong units / destroyed subscripts / misspelled proper nouns, using
+  outside knowledge — explicitly sanctioned.
 - **NEVER TOUCH** a genuine Wallach statement, even when it contradicts mainstream fact.
 - **DECIDE IT YOURSELF, then LOG IT.** Do not escalate every case; that is the pedantry he named.
 
-# ★ `eden/tools/ratified-divergences.json` — CHECK IT BEFORE FLAGGING ANY DEFECT
-New this session, internal-only (nothing under `eden/tools/` is consumed by
-`corpus_derive`/`build_embeds`/`build.mjs` — verified, keep it that way). Two sections:
+---
 
-- **`divergences`** — 6 places our text DELIBERATELY differs from a legible page and must NEVER be
-  "restored": silver `400 mcg` (page prints `400 mg` — restoring it reintroduces a toxic dose),
-  `antitoxin` (page: `toxin`), `vitamin A … as beta carotene` (page: `vitamin C`), `1nm to 100nm`
-  (page: `1n to 100n`), cartilage `5 gm` (page: `5 mg`), `Dean Hamer` (page: `Dean Harmer`).
-- **`pending_review`** — 40+ judgment-call corrections awaiting Luneth's end-of-campaign sweep, each
-  with what changed and why. Two are flagged **SEMANTIC** (`borytes`→barytes,
-  `Aspartamine`→Aspartame) because they were corrected from meaning rather than spelling.
+# ★ `eden/tools/ratified-divergences.json` — CHECK BEFORE FLAGGING ANY DEFECT
+Internal-only (nothing under `eden/tools/` is consumed by `corpus_derive` / `build_embeds` /
+`build.mjs` — keep it that way).
 
-**Why it exists:** TWO of this session's "findings" (`antitoxin`, `1nm`) were corrections already
-made in earlier sessions and never logged, so each was re-derived at the cost of a render, a 20–40×
-read and an adversarial second read. It has already paid off once — an agent hit the silver claim,
-checked the list, and returned DOCTRINE_OK instead of proposing the restore.
+**`divergences` — SEVEN places our text DELIBERATELY differs from a legible page. NEVER "restore":**
 
-# ★ NEXT WORK, in priority order
+| claim | ours | the page prints |
+|---|---|---|
+| `RARE-000090` · `DDDL-000013` · `IMMORT-000027` | `400 mcg of silver per day` | `400 mg` — restoring it reintroduces a toxic dose |
+| `LETS-000349` | `antitoxin` | `toxin` |
+| `LETS-000452` | `vitamin A … as beta carotene` | `vitamin C` |
+| `IMMORT-000024` | `(1nm to 100nm)` | `(1n to 100n)` |
+| `LETS-000205` | `cartilage at 5 gm t.i.d.` | `5 mg` |
+| `EPIGEN-000023` | `Dean Hamer` | `Dean Harmer` |
+| `IMMORT-000197` | `(KrF2)` | `(KrF4)` — **Luneth ruled 2026-08-02** |
 
-## 1. ✔✔ THE 443-CLAIM PAGE-READ LIST IS COMPLETE (2026-08-02). Both waves shipped.
-**Wave 1** — tier A + control, 213 claims / 141 groups: 118 CLEAN · 44 defects fixed · 41 unlogged
-divergences recorded · 2 refuted. **Wave 2** — tier B + the 2 residual tier-A + a third control,
-212 claims / 140 groups: 151 CLEAN · 26 defects · 1 real dropped-text · 25 unlogged divergences ·
-4 book-typo proposals · 4 refuted. Regenerate the chain (`build_targets` → `corr2`/`corr_shots` →
-`select_reads` → `build_wave.py`) before any new wave — wave 2 had to, because wave 1's fixes had
-changed the corpus underneath the list.
+It has paid off repeatedly: an agent hit the silver claim, checked the list, and returned DOCTRINE_OK
+instead of proposing a restore to a toxic dose.
 
-**★ THE CONTROL, NOW THREE INDEPENDENT SAMPLES: 7/30, 4/30, 2/30 = 13 of 90 (14%)** of claims where
-BOTH OCR passes AGREED still carried a defect. That is the measurement keeping the ~880
-corroborated-but-unread claims in the backlog. It is trending down as the corpus gets cleaner, but
-it is not zero and it never was.
+---
 
-**★ TWO GATE-SHAPED LESSONS FROM WAVE 2, both worth re-reading before the next batch:**
-- **A gate can be green because of the defect.** Trimming scaffolding out of EPIGEN-000124/-000125
-  dropped them under `corpus_seal`'s 60-char floor — the scaffolding had been the only thing
-  clearing it. And `verbatim_names_mapped_conditions` only passed on IMMORT-000230 because the bad
-  cut had swallowed the word "Goiter" from the previous page.
-- **An END-TRUNCATION is invisible to `corpus_resnap`.** A truncated verbatim is still a valid
-  SUBSTRING of the corrected text, so resnap relocates it and never says BROKEN. Any fix that
-  LENGTHENS a verbatim at its end needs an explicit `--fix`. Caught only because the post-fix
-  re-scan asserts each CORRECTION is PRESENT, not merely that each defect is gone — do both.
+# ★ THE TOOLKIT — `tools/frontface/` (committed; DO NOT REBUILD)
+**Read `tools/frontface/README.md` first.** It explains each instrument AND what each does not prove.
 
-## 1b. (superseded) the original wave-2 planning note
-Regenerate with `build_targets` → `corr2`/`corr_shots` → `select_reads` (seconds), then
-`python tools/frontface/build_wave.py wave2 B` — it PAGE-GROUPS the list, which is the whole
-economy: 443 claims sit on only 216 distinct pages. Wave 2 is **230 claims / 144 page groups**
-(alignment-slip 130 · dropped-text 100; immortality 112 · lets-play-doctor 47 · epigenetics 40 ·
-rare-earths 31).
+- **`ocr-cache/` is committed** — 719 Tesseract page reads of the epigenetics + immortality captures,
+  ~50 min of wall clock. Never regenerate unless a capture changes.
+- `tools/frontface/work/` is gitignored generated analysis; the whole chain regenerates in ~3 min.
+- The old `temporary/frontface-ocr-tools/` is SUPERSEDED and incomplete. Use `tools/frontface/`.
 
-**Wave-1 result, for calibration:** 118 CLEAN · 44 defects in our text (all fixed) · 8 book-typo
-proposals · 41 unlogged divergences · 2 refuted. Expect MOSTLY CLEAN; a reader who needs to find
-something invents something.
+**Instruments:** `render.py` (all 3 PDF books) · `render_shot.py` (the 2 capture books) ·
+`pdf_corroborate.py` · `corr2.py` (positional alignment) · `corr_shots.py` · `ocr_shots.js` +
+`ocrhost.html` · `build_targets.py` · `select_reads.py` · `selfscan.py` · `triage_nonword.py` ·
+`rank_nonword.py` · `scan_b_subscripts.py` · `sync_drafts.py` · `make_fixes*.py` ·
+`build_wave.py` (page-GROUPS a readlist — the whole economy: claims collapse onto ~half as many
+pages) · `build_wave3.py` · `build_extent_fixes.py` · `workflow-template.js`.
 
-**★ TIER B IS SMALLER THAN IT LOOKS — measured 2026-08-02, use this in the agent brief:** of the
-dropped-text inserts, **52 are the ebook reader's own page-number chrome** (`page 531 of etics`,
-`936 74 epigen`) **or table/figure banners**, i.e. machine artifacts, not lost text. Only **6**
-genuinely interior mid-verbatim gaps exist across the three PDF books — two of them dropped DOSE
-lines (`LETS-000147` "IU day Bcomplex at 50", `LETS-000051` "gm INOSITOL 75"), which are the
-highest-value reads in the whole tier. `corr2` already trims pure head/tail spill, but it keeps a
-25-word slack band, so an "insert" near either edge is usually excerpt boundary, not a drop.
+**`apply_*.py` are kept as worked examples — THE GUARDS IN THEM ARE THE LESSON**, not the edit lists:
+per-edit occurrence-count assertions, post-conditions (every old gone AND every new present), and in
+`apply_wave3.py` an **unread-sibling count assertion** that aborts the batch if untouched occurrences
+change. A partial batch across six books is far worse than no batch.
 
-**Immortality is still the least trustworthy slice**: 106 of 238 tier-A hunks were the second OCR
-merely shaving letters off a word (`The`→`he`, `Gallium`→`allium`), **95 of them in immortality**.
-Tell the readers this explicitly — it was in the wave-1 brief and it is why 118 came back clean.
+---
 
-## 1c. ★ THE NEXT REAL TARGETS, ranked by what wave 2 measured
-1. **Destroyed B-vitamin subscripts — 185 occurrences, 5 books, only 7 reach a reader.**
-   `tools/frontface/scan_b_subscripts.py`. **PROVABLY NOT BATCH-FIXABLE:** the identical token
-   `Bg,` is **B5** in "Pantothenic acid, aka vitamin Bg," and **B6** in "Vitamin Bg, originally
-   designated B3"; and `Bi, Ca, Li` in RARE-000285 is **BISMUTH** in a mineral-replacement list,
-   not B1. Each instance is resolvable from its OWN sentence, because these books name the vitamin
-   adjacently ("Vitamin B, (riboflavin) function:"), so this is a page-read campaign, not a rule.
-2. **⚠ `books_verified` MAY BE OVERSTATING ITSELF — needs Luneth's ruling.** `dddl-3e-2011`, one of
-   the only two books asserted "audited-pristine", writes B1 correctly 7 times and as **`Bl` 17
-   times**, and 3 of those reach readers (DDDL-000078, -000150, -000220). There is **no page image
-   or PDF for DDDL in the toolkit**, so it cannot be page-read here and the never-guess rule forbids
-   resolving it unilaterally. Either the audit missed a class, or `books_verified` means less than
-   it sounds like.
-3. **The damaged region around epigenetics Screenshot(629)** — the right-column serial-killer table
-   has bled into the prose as garbage (`Saton Strangler`, `707-35 Kile`, `ageuepen es`, a trailing
-   `Minos`). Three dropped lines were restored there; the bled-in table was left alone because no
-   claim quotes it and it is a structural repair, not a line fix.
-4. **Sibling occurrences deliberately left unread**: ASCII apostrophes where the page prints curly
-   (`Tourette's` ×3, `Alzheimer's` ×4), and 4 remaining `1 ,000 mg`. Policy unchanged — two
-   `ofdiarrhea` occurrences in this corpus DISAGREE about the space, so nothing is batch-replaced.
+# ★ NEXT TARGETS — ranked, with measured numbers
 
-## 1d. ✔ CLOSED THIS SESSION (do not re-open these)
-The search-routing bug · the "reduced" gloss bug (already closed before, handoff was stale) · the
-443-claim read list (both waves) · the 12 book-typo proposals AND the whole class behind them (48
-edits across all 6 books) · the 4 claim-extent defects · the 3 claims shipping OCR scaffolding
-(plus a new gate so it cannot recur) · the 11 apostrophe/number siblings · DDDL's 17 `Bl`.
+### 1. Destroyed B-vitamin subscripts — **174 occurrences**, 4 books, **0 currently reach a reader**
+`tools/frontface/scan_b_subscripts.py`. epigenetics 72 · immortality 53 · rare-earths 47 · hk 2.
+(Was 185; DDDL's 8 and the 3 reader-facing ones are fixed.) They sit in source text no claim quotes
+today — so this is pre-emptive hygiene, and any future mining of those spans would inherit them.
 
-## 2. The non-word residue — REMEASURED 2026-08-03: 345 hits in 212 claims (was 599 in 337)
-`selfscan.py` → `triage_nonword.py` → `rank_nonword.py`. **Expect to CONFIRM, not fix**: of 105 such
-tokens page-read this session, 62 were legitimate (botanical Latin, British spellings, trade names).
-The spellchecker's suggestions carry NO authority — it wanted `castro` for `gastro`, `penis` for
+**★ PROVABLY NOT BATCH-FIXABLE, and the proof is inside the class:** the identical token `Bg,` is
+**B5** in "Pantothenic acid, aka vitamin Bg," and **B6** in "Vitamin Bg, originally designated B3".
+Separately `Bi, Ca, Li` in RARE-000285 is **BISMUTH** in a mineral-replacement list, not B1 — the
+scanner false-fires on element symbols starting with B, exactly as a subscript rule would have turned
+BORON into a vitamin. Each instance IS resolvable from its own sentence, because these books name the
+vitamin adjacently ("Vitamin B, (riboflavin) function:"). A page-read campaign, never a rule.
+
+### 2. The non-word residue — **343 hits / 210 claims / 316 distinct tokens** (was 599 / 337)
+`selfscan.py` → `triage_nonword.py` → `rank_nonword.py`. **Expect to CONFIRM, not fix:** of 105 such
+tokens page-read, **62 were legitimate** — botanical Latin (*Leonurus cardiaca*, *Tinea pedis*),
+British/older spellings (`caesium`, `paraesthesia`, `nitre`), trade names (`Silicea`, `Hoxsey`). The
+spellchecker's suggestions carry **no authority**: it wanted `castro` for `gastro`, `penis` for
 `pedis`, `honey` for `HOXEY`.
 
-## 2b. ✔ MEASURED 2026-08-02 — three classes now sized, none gated (deliberate)
-- **page-number injection** (`autoim- 132 mune`): **12** in sources, **1 shipping** (`LETS-000306`).
-- **hyphen-LESS split** (`constipa\ntion`): **9** in sources, **0 shipping**.
-- **capital I read as lowercase l** (NEW, 9th class): **53** occurrences / 12 tokens
-  (`lowa`→Iowa 22 · `lodine`→Iodine 12 · `lan`→Ian 8 · `lonic` · `lonia` · `latrogenic` · `lliad` ·
-  `lodized`). The one that reached a reader is fixed; 52 sit in source text no claim quotes.
-- **`subscript_damage` HAS A HOLE**: its formula clause is a hard-coded `CO|H|SO|NO`, so `ZrSiO,`
-  and `SiO,` pass, as does `By,`→B12. ★ A generalised formula pattern was TRIED and **REJECTED** —
-  it fires on 51 innocent things (`TMJ,` `DNA,` `ADD,` `VII,` and RNA codons `ACU, ACA, ACC`); a
-  vitamin D/E/K pattern scored 2 true against 4 false. **Only the `By,`/`Bg,` shape (4 hits, 3
-  claims) is tight enough to gate.** Do not re-attempt the other two without new evidence.
+### 3. The damaged region around **epigenetics Screenshot(629)**
+The right-column serial-killer table has bled into the prose as garbage (`Saton Strangler`,
+`707-35 Kile`, `ageuepen es`, a trailing `Minos`). Three dropped lines were restored there; the
+bled-in table was left alone because **no claim quotes it** and it is a structural repair, not a line
+fix. Worth doing before anything is mined from that page.
 
-## 3. The original hyphen-gap note (superseded by 2b above, kept for its reasoning)
-`_FF_MID_WORD_HYPHEN` was tightened this session to `[A-Za-z]{2,}-[ \t]*\n[ \t]*[A-Za-z]{2,}` (it had
-required the hyphen to ABUT the newline, which made Hell's Kitchen's whole wrap style invisible — 76
-splits). Two sibling shapes are still invisible:
-- **hyphen-LESS split**: `can be en\nhanced` — the page prints `en-`/`hanced` and our OCR dropped the
-  hyphen too, so a detector that requires a hyphen cannot see it.
-- **page-number injection**: `autoim- 132 mune` — a page number landed between the halves.
+### 4. Sibling occurrences deliberately left unread — **38**
+`Tourette's` ×4 and `Alzheimer's` ×19 in epigenetics, `1 ,000` ×15 in lets-play-doctor. Only the ten
+that were page-read were fixed. **A bulk replace was measured and REFUSED:** these books have no
+apostrophe convention to lean on — lets-play-doctor is 100% ASCII (386/386), dddl 100% curly
+(1156/1156), but epigenetics runs 68% ASCII and rare-earths 40%, **MIXED inside the same book**.
 
-Both were left unpatched ON PURPOSE: tightening a gate from a single instance is how the earlier
-over-fire happened. **Measure the class first**, then codify with a negative test.
+### 5. The 931 corroborated-but-unread claims
+Backlog by measurement (the 14% control). Clearing them means whole-page reads — roughly six more
+waves at this session's rate (~210 claims/wave, ~45 min, ~110 agents).
 
-## 3b. FOUR CLAIM-EXTENT DEFECTS — a repair route no source edit can take
-`EPIGEN-000124` · `EPIGEN-000125` · `IMMORT-000230` each swallowed a transcription page separator
-(`===== Screenshot (675) -- Page 818 of 936 =====`) INTO the verbatim, i.e. the app can render OCR
-scaffolding to a user. **Do NOT edit the .txt for these** — those separators are legitimate
-scaffolding (466 in epigenetics, 255 in immortality); the repair is a verbatim RE-CUT via the EDIT
-route (`mine_batch apply`). `LETS-000278`'s verbatim stops two characters short of the page's
-`pepper (Piper nigrum).`. All four are held out of `claims_verified` or unread; logged in
-`ratified-divergences.json::pending_review::batch_2026-08-02-wave1::claim_extent_defects_held`.
+---
 
-## 3c. `WAL-CLM-RARE-000372` HOLDS 50 OF THE 60 ELEMENTS
-Its column 3 stops at `Sulphur`, dropping Tantalum · Terbium · Thulium · Tin · Titanium · Vanadium ·
-Ytterbium · Ytrium · Zinc · Zirconium; it also interleaves three table captions into one list.
-**The canon did NOT inherit this** — `essentials-canon` carries all 60 correctly (diffed
-2026-08-02; the only differences are 4 modern spellings: lutetium/lutecium, nickel/nickle,
-sulfur/sulphur, yttrium/ytrium). Source page: rare-earths PDF **p499** (printed folio 477).
+# ✔ CLOSED THIS SESSION — DO NOT RE-OPEN
+- **The 443-claim page-read list** — both waves shipped; the instrument is now exhausted (see above).
+- **The search-routing bug.** Root cause: `tokenize()` drops stopwords, so a bare
+  `"what are antioxidants"` reduced to the topic word ALONE and all seven antioxidant claims scored
+  **identically (23 each)** — leaving `rankClaims`' tie-break, **claim id ASCENDING**, to pick the
+  hero alphabetically (the weight-loss warning beat the definition because H sorts before I).
+  `heroByIntent` now heroes the topic's `basics` answer when the intent is empty.
+  `render_probe_search_routing` **6/6**.
+- **The "reduced" gloss bug.** All four forms (`reduced`/`reduction`/`reduce`/`reducing`) are in
+  `term-gloss-lexicon.json::glossary_key_denylist` behind the live critical gate
+  `glossary_keys_denylisted`. Older docs listing it as open are STALE.
+- **The 4 claim-extent defects** (`EPIGEN-000124` · `-000125` · `IMMORT-000230` · `LETS-000278`).
+- **The 3 claims that were shipping OCR scaffolding to users** — plus a new gate so it cannot recur.
+- **The 12 book-typo proposals and the whole class behind them** — 48 edits across all 6 books.
+- **DDDL's 17 `Bl`** and the 7 baseline-blessed typos.
+- **The 11 apostrophe / `1 ,000` siblings** that were page-read.
 
-## 4. The 997 corroborated-but-unread claims
-They stay in the backlog by measurement. Clearing them means page reads. If that ever needs to
-change, it is Luneth's call and it changes what `claims_verified` MEANS.
+---
+
+# ★ GATES — what is enforced now
+`frontface_verbatims_clean` gates **EIGHT** mechanical classes (negative test: 45 cases). A **NINTH**
+gate shipped 2026-08-02: **`verbatim_no_transcription_scaffolding`** (critical, 21-case negative
+test) — no sealed verbatim or `claim_text` may contain the capture harness's frame name
+(`Screenshot (N)`), the reader's `Page N of M` readout, a `===`-run separator, or a Kindle location
+marker. It needs **no exception list**, because scaffolding is text WE inserted and can never
+legitimately appear in a quote. It deliberately does NOT police asterisk or underscore runs — a
+printed page can carry those.
+
+---
 
 # ⚠ TRAPS THAT WILL COST A SESSION
-1. **`corpus_seal` is normally USER-ONLY.** Luneth granted permission for this session specifically;
-   do not assume it carries forward. Ask.
+1. **`corpus_seal` is USER-ONLY by default.** Permission was granted for the 2026-08-02/03 session
+   specifically. **Do not assume it carries forward — ask.**
 2. **Sync the drafts after every resnap.** `corpus_resnap --write` updates the SHARD only; sealing
-   without `tools/frontface/sync_drafts.py` silently restores stale offsets. This has bitten FOUR
-   times. Prove it with `corpus_seal.draft_offset_failures()` == 0 before sealing. It caught 735
-   failures this session and 1 more later.
-3. **`Screenshot (N).png` is a TWO-PAGE SPREAD** inside a 3840×1080 dual-monitor frame; the book is
-   the left ~26 % and the gutter sits at **x = 0.2506**. Crop one half and you will report "not
-   found" or diff against a neighbouring page.
-4. **`pdftoppm` is NOT installed** — the `Read` tool cannot open a PDF page. Use
+   without `tools/frontface/sync_drafts.py` silently restores stale offsets. This has bitten FIVE
+   times. Prove `corpus_seal.draft_offset_failures() == []` before every seal.
+3. **★ A GATE CAN BE GREEN *BECAUSE OF* THE DEFECT.** Twice in one batch: trimming scaffolding out of
+   `EPIGEN-000124/-000125` dropped them under `corpus_seal`'s 60-char floor — the scaffolding had been
+   the only thing clearing it; and `verbatim_names_mapped_conditions` only passed on `IMMORT-000230`
+   because a bad cut had swallowed the word "Goiter" from the previous page. On a post-fix RED, ask
+   *what was making this pass before?* If the answer is the defect, repair the data — never widen the
+   gate. Memory: `a-gate-can-be-green-because-of-the-defect`.
+4. **★ AN END-TRUNCATION IS INVISIBLE TO `corpus_resnap`.** A truncated verbatim is still a valid
+   SUBSTRING of the corrected text, so resnap RELOCATES it and never reports BROKEN — it would stay
+   cut mid-word on a fully green board. Any fix that LENGTHENS a verbatim at its end needs an explicit
+   `--fix`. **Always assert the CORRECTION is PRESENT, not merely that the defect is gone.**
+5. **`Screenshot (N).png` is a TWO-PAGE SPREAD** in a 3840×1080 dual-monitor frame; the book is the
+   left ~26 % and the gutter sits at **x = 0.2506**. Render `both` FIRST.
+6. **`pdftoppm` is NOT installed** — the `Read` tool cannot open a PDF page. Use
    `tools/frontface/render.py`.
-5. **`coverage < 0.85` means the page index is UNRELIABLE**, not that the claim is dirty. The
-   locator sent `RARE-000335` to p412 instead of p495 and manufactured a phantom hunk.
-6. **Never bare-token replace.** `uncers`, `ofdiarrhea` and `dietaiy` each occur more than once, and
-   the two `ofdiarrhea` occurrences DISAGREE — one page prints the space, the other does not. Anchor
-   on a window from the claim's own verbatim, widened until unique.
-7. **A claim can hold the same damaged token twice**, and two claims can quote ONE span. Both cases
-   bit this session; both are handled in the `apply_*.py` guards. Reuse them.
-8. **Read the page before batch-fixing a detector's hits.** 11 of 47 subscript hits were BORON in a
-   mineral list (`Ca, Mg, B, Cu, S`) — a rule would have turned boron into a vitamin in 5 claims.
-   Earlier in the campaign, 2 of 6 "obvious" defects turned out FAITHFUL.
+7. **`coverage < 0.85` means the page index is UNRELIABLE**, not that the claim is dirty. The locator
+   once sent `RARE-000335` to p412 instead of p495 and manufactured a phantom hunk.
+8. **Never bare-token replace.** `uncers`, `ofdiarrhea` and `dietaiy` each occur more than once, and
+   the two `ofdiarrhea` occurrences **DISAGREE** — one page prints the space, the other does not.
+   Anchor on a window from the claim's OWN verbatim, widened until unique.
+9. **A claim can hold the same damaged token twice**, and two claims can quote ONE span. Both bit this
+   campaign; both are handled in the `apply_*.py` guards.
+10. **Read the page before batch-fixing a detector's hits.** 11 of 47 subscript hits were BORON in a
+    mineral list — a rule would have turned boron into a vitamin in 5 claims.
+11. **A frequency-based innocence test cannot be used on the SUSPECT side of a systematic error.** A
+    repeated OCR defect certifies itself as "corpus vocabulary" and hides from the scan hunting it —
+    `lodine` occurs 13× and did exactly that. Memory: `frequency-cannot-prove-innocence`.
+12. **Nested heredocs inside `$( )` break bash here.** Write long `--detail` bodies to a file and pass
+    the path, or the whole compound command dies with `unexpected EOF`.
 
-# ★ HONEST GAPS — state them, do not let a green board imply otherwise
-- The gates hold a MECHANICAL floor over EIGHT classes. They do not see a **valid-word swap**
-  (`he`/`the`, `side`/`vide`) — only a page read finds those.
+---
+
+# ★ HONEST GAPS — do not let a green board imply otherwise
+- The gates hold a MECHANICAL floor over nine classes. They cannot see a **valid-word swap**
+  (`he`/`the`, `side`/`vide`). Only a page read finds those.
 - `subscript_damage` **deliberately cannot see a bare single-comma `B,`** that really is a vitamin,
-  because that is indistinguishable from boron. Labelled WISH (R7), not a covered case.
-- `selfscan.py` is LOOSER than the shipped gate by design; its 1 remaining subscript hit is the
-  known `Preparation H,` false positive.
-- `build_targets.py` reads the BACKLOG, so every number these tools print describes work REMAINING,
-  not work total. They shrink as claims move into `claims_verified`.
+  because it is indistinguishable from boron. Labelled WISH (R7), not a covered case. Its formula
+  clause is a hard-coded `CO|H|SO|NO`. **A generalised formula pattern was TRIED and REJECTED** — it
+  fires on 51 innocent things (`TMJ,` `DNA,` `ADD,` `VII,` and RNA codons `ACU, ACA, ACC`); a vitamin
+  D/E/K pattern scored 2 true against 4 false. Only the `By,`/`Bg,` shape is tight enough. **Do not
+  re-attempt the other two without new evidence.**
+- `selfscan.py` is LOOSER than the shipped gate by design; its 1 remaining subscript hit is the known
+  `Preparation H,` false positive.
+- `build_targets.py` reads the BACKLOG, so every number these tools print describes work REMAINING.
+- **`claims_verified` holds two grades** and the ledger's `_standard` says which is which:
+  WHOLE-VERBATIM (waves 1–2, the stronger) and DEFECT-SPAN (wave 3, marks measured but not the whole
+  quote). Do not blur them.
 
-# ★ OTHER OPEN WORK (unchanged, none blocked)
-- **Vitamin C header:** 4 redesigned demos in `temporary/vitamin-c-demos.html` await Luneth's
-  direction pick → refine → build live → visual sign-off.
-- **Vitamin A header (SHIPPED):** its pull-quote is a ~240-char run-on he wants shorter. He REJECTED
-  4 options (DDDL-000056 / DDDL-000165-trim / LETS-000196 / DDDL-000041) and was choosing his own
-  when the OCR issue surfaced. Lives in `mechanism-clarity-data.json` vitamin-a `quote`.
-- **The 29 header demos** review/refine campaign — still open.
-- **Element headers:** 6 shipped (selenium, copper, zinc, calcium, magnesium, vitamin A). Read
-  `.claude/rules/element-headers.md` BEFORE any header work; NEVER build one live without explicit
-  permission.
-- **The "reduced" gloss bug** (BLUEPRINT §8): the term-gloss matcher over-fires on a common word.
-  Different subsystem, own ticket, untouched.
+---
 
-# STANDING DOCTRINES (unchanged)
-1. `corpus_seal` / `catalog_seal` are USER-ONLY by default. 2. NEVER fabricate — verbatim ⊆ sealed
-source, or say UNREADABLE; never guess. 3. Every claim lives in ONE of 3 homes; search is a
-retrieval layer. 4. A DOM probe is NOT a visual check — screenshot + STOP for his eyes. 5. NEVER
-build a header live without explicit permission. 6. Small, reviewed increments. 7. No "for good"
-without a GATE.
+# ★ OTHER OPEN WORK — the enrichment / header track
+- **Element headers: 6 of 90 shipped** — selenium, copper, zinc, calcium, magnesium, vitamin A.
+- **`dashboard/assets/data/entity-copy.json` has entries for exactly those 6 essentials and ZERO
+  conditions.** Every header needs a complete `lede` + `why` pair (`element_header_complete`).
+- **47 research dossiers** sit in `chronicle/header-research/` (48 files incl. README) — grounded
+  head-starts for that many of the remaining 84. **Read the dossier before mocking up.**
+- **Vitamin C:** 4 redesigned demos in `temporary/vitamin-c-demos.html` await Luneth's direction pick
+  → refine → build live → visual sign-off.
+- **Vitamin A (SHIPPED):** its pull-quote is a ~240-char run-on he wants shorter. He REJECTED four
+  options (DDDL-000056 / DDDL-000165-trim / LETS-000196 / DDDL-000041) and was choosing his own when
+  the OCR work interrupted. Lives in `mechanism-clarity-data.json` under vitamin-a `quote`.
+- **★ READ `.claude/rules/element-headers.md` BEFORE ANY HEADER WORK.** Only FOUR things are fixed
+  (the `lede`, "why this number?", the width, the background); everything else is composed per
+  element from the `blocks[]` vocabulary. **NEVER build a header live without explicit permission.**
 
-**Board 83/83 · kv=448 · tree clean, all pushed · backlog 1,900 → 1,716 · 8 gated classes ·
-toolkit committed at `tools/frontface/` · TOP PRIORITY = the 443-claim read list.**
+---
+
+# STANDING DOCTRINES
+1. `corpus_seal` / `catalog_seal` are **USER-ONLY** by default.
+2. **NEVER fabricate** — verbatim ⊆ sealed source, or say UNREADABLE. Never guess, and never guess
+   silently. An honest unreadable beats a confident wrong reading (wave 3 refuted a real proposal to
+   UNREADABLE and left the text alone; that was the right outcome).
+3. Every claim lives in ONE of 3 homes; search is a retrieval layer, not a silo.
+4. A DOM probe is **NOT** a visual check — screenshot + STOP for his eyes.
+5. **NEVER build a header live without explicit permission.**
+6. Small, reviewed increments; report and stop at the chunk boundary.
+7. No "for good" without a GATE. A rule with no gate is a labelled WISH (R7).
+
+---
+
+**Board 84/84 · kv=454 · tree clean, pushed through `e67196a9` · backlog 1,283 · claims_verified 642
+· corroboration instrument EXHAUSTED (read list empty but for the control) · 9 gated classes ·
+TOP PRIORITY = Luneth's call: the pending-review sweep + the `books_verified` ruling, or pivot to
+the element headers.**
