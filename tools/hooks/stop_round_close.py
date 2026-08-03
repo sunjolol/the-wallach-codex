@@ -144,7 +144,7 @@ def main():
         _block(
             "ROUND NOT CLOSED — chronicle/build-log.md has a new line but the Creator's Log "
             "(chronicle/creators-log/log.jsonl) has no new entry this batch. The Creator's Log "
-            "is sacred and must fire every round-close (.claude/rules/logging-doctrine.md). Fire one:\n"
+            "is sacred and must fire every round-close (.claude/skills/round-close). Fire one:\n"
             "  PYTHONUTF8=1 python tools/creators_log.py append --surface <s> --kind round-close "
             "--summary <\u2264280>\nthen commit both together."
         )

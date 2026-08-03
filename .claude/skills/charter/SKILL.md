@@ -1,15 +1,17 @@
-# The Charter (R1–R9) — the non-negotiable enforceable rules
+---
+name: charter
+description: Read when proposing a new system, tool, or invariant, when auditing an operating file against the rules, or when deciding whether a rule may be presented as enforced. Holds the R1-R9 enforceable rules, each naming the gate that proves it and its honest status.
+---
 
-_Read when proposing a new system / tool / invariant, closing a chunk, or auditing an operating file against the rules. This is the **permanent home** of the Charter — promoted here 2026-07-05 from `chronicle/OVERHAUL-BLUEPRINT.md` §1, which is temporary + living (pruned as phases land). **This file is authoritative;** the blueprint section is the frozen design origin. If the two ever disagree, this file wins._
+# The Charter -- R1 through R9
 
-## Pattern
-A small, closed set of enforceable rules. Every rule names its **gate** — the code that proves it — and its current **status**, so a rule is never sold as safer than its enforcement. A rule whose full gate does not exist yet is labeled **WISH** (R7): documented honestly, resting on discipline + review until the gate lands, never presented as a guarantee.
+A small closed set of enforceable rules. **Every rule names its gate and its status**, so a rule is
+never sold as safer than its enforcement.
 
-- **LIVE** — the gate runs in `tools/invariants.py` (or a hook) today.
-- **PARTIAL** — some coverage is live now; the rest is a WISH landing in a named phase.
-- **WISH** — the gate arrives in a later phase; until then the rule binds by discipline + review, labeled as such.
-
-## The rules
+- **LIVE** -- the gate runs in `tools/invariants.py` or a hook today.
+- **PARTIAL** -- some coverage is live; the rest is a labeled WISH.
+- **WISH** -- no gate yet. The rule binds by discipline and review, and says so. The label *is* the
+  honesty (R7), not a waiver.
 
 | # | Rule | Gate (the proof) | Status |
 |---|---|---|---|
@@ -24,12 +26,16 @@ A small, closed set of enforceable rules. Every rule names its **gate** — the 
 | R9 | Refinements are codified too. A misfiring gate is fixed by re-codifying with proof — tighten the check, or add an auditable, versioned exception with a reason + a test. Never a silent loosening. | `exceptions_justified` — each baseline exception carries a reason + a test; an invariant fails on an unjustified exception. The refinement ships with the misfire it fixes (R9). | **LIVE (crack #2, 2026-07-06).** `exceptions_justified` — every entry in `.claude/invariant-baseline.json` must be an object `{invariant, reason, test}`; a bare-string or reason-less/test-less exception is RED. The baseline is empty today (vacuously clean), so the gate stands for the next exception. `stop_round_close.py` reads the same entries by their `invariant` name. |
 
 ## How to use
-- **Proposing a new system / tool / invariant (§00.B):** for each of R1–R9, name whether the change honors / stresses / violates it. A new rule that CAN be a gate ships its gate in the same patch (R7); if it cannot yet, label it WISH here — never sell it as safe.
-- **Closing a chunk:** R5 + R6's gates are part of the round-close board; a red R6 gate hard-blocks (`stop_round_close.py`).
-- **Auditing an operating file (blueprint §8 / Phase A):** every operating doc must agree with this table; a doc that contradicts the Charter or cites a deleted structure is a defect. **LIVE:** `no_operating_doc_contradiction` (critical) scans the operating surface — `CLAUDE.md` · `REVIEW.md` · every rules file — for (a) tokens naming an overhaul-deleted structure and (b) dangling rules-file pointers that no longer resolve on disk. **WISH (R7):** the SEMANTIC half — a doc that contradicts the Charter's substance without naming a deleted structure — has no non-gaming machine check and rests on the rules-audit discipline + review.
-- **When a gate is WISH:** the rule still binds by discipline + review; the WISH label IS the honesty (R7), not a waiver.
+- **Proposing a new system, tool, or invariant:** for each of R1-R9 name whether the change honors,
+  stresses, or violates it. A rule that CAN be a gate ships its gate in the same patch. If it cannot
+  yet, label it WISH here -- never sell it as safe.
+- **Closing a chunk:** R5 and R6's gates are on the round-close board; a red R6 hard-blocks.
+- **Auditing an operating doc:** every operating doc must agree with this table. `charter_gates_present`
+  catches this file OVER-selling its enforcement -- it does **not** catch under-selling, and this
+  file has drifted stale in both directions before. Nothing re-audits it automatically.
 
-## Relationship to the rest
-- **CLAUDE.md §00** — the two prime directives (§00.A Wallach source-of-truth, §00.B engineering standard) sit ABOVE the Charter; R1–R9 are their enforceable operationalization.
-- **The enforcement table** — `chronicle/OVERHAUL-BLUEPRINT.md` §4 maps each failure mode → gate → severity → status. That table and this file track the same gates from two angles: §4 is the failure-mode view, this is the rule view. §4 lives in the temporary blueprint; when it is pruned, its durable content folds here.
-- **The domain rules** — `source-rule.md` (§00.A / R2 detail), `engineering-doctrine.md` (§00.B), `logging-doctrine.md` (R6), `data-flow.md` (R1 / R3 / R4), `write-discipline.md` (§17), `chokepoint-discipline.md` (§31) carry the per-domain HOW; this file is the enforceable-rule spine they hang from.
+## Above and around it
+CLAUDE.md's two prime directives sit **above** the Charter; R1-R9 are their enforceable
+operationalization. The per-domain how lives in the sibling skills: `wallach-source-rule` (R2),
+`engineering-doctrine` (section 00.B), `round-close` (R6), `dashboard-code` (R1/R3/R4),
+`write-discipline` (section 17).

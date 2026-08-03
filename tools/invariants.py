@@ -1047,8 +1047,15 @@ def check_no_operating_doc_contradiction():
     design -- scanning them would flag correct history. Truth anchor: operating-doc
     bytes + os-level file existence, recomputed each run."""
     forbidden = ["legacy-dashboard", "legacy-workspace-host", "wild-west-mode"]
-    rules_dir = ROOT / ".claude" / "rules"
-    docs = [ROOT / "CLAUDE.md", ROOT / "REVIEW.md"] + sorted(rules_dir.glob("*.md"))
+    skills_dir = ROOT / ".claude" / "skills"
+    legacy_rules_dir = ROOT / ".claude" / "rules"
+    docs = ([ROOT / "CLAUDE.md", ROOT / "REVIEW.md"]
+            + sorted(skills_dir.glob("*/SKILL.md")))
+    # Both spellings resolve: a `.claude/skills/<name>` pointer must have a SKILL.md,
+    # and any surviving `.claude/rules/<name>.md` pointer must still resolve on disk.
+    # The rules form is kept ONLY so a stale pointer left behind by the 2026-08-03
+    # skills migration is caught rather than silently ignored.
+    skill_ref_re = re.compile(r"\.claude/skills/([A-Za-z0-9_-]+)")
     rule_ref_re = re.compile(r"\.claude/rules/([A-Za-z0-9_-]+\.md)")
     token_hits, dangling, scanned = [], [], 0
     for path in docs:
@@ -1063,19 +1070,28 @@ def check_no_operating_doc_contradiction():
         for tok in forbidden:
             if tok in text:
                 token_hits.append(f"{rel}:{tok}")
+        for m in skill_ref_re.finditer(text):
+            if not (skills_dir / m.group(1) / "SKILL.md").exists():
+                dangling.append(f"{rel}->.claude/skills/{m.group(1)}")
         for m in rule_ref_re.finditer(text):
-            if not (rules_dir / m.group(1)).exists():
+            if not (legacy_rules_dir / m.group(1)).exists():
                 dangling.append(f"{rel}->.claude/rules/{m.group(1)}")
+    # An EMPTY skills dir means the domain guidance vanished, not that it is clean.
+    # Without this the gate would go green precisely BECAUSE its subject was deleted --
+    # the "a gate can be green because of the defect" failure mode.
+    if not sorted(skills_dir.glob("*/SKILL.md")):
+        return False, (".claude/skills/ holds no SKILL.md — the on-demand domain "
+                       "guidance is missing entirely; this gate must not pass vacuously")
     problems = token_hits + dangling
     if problems:
         return False, (
             f"{len(problems)} operating-doc contradiction(s) — a doc cites a "
-            f"deleted structure or a non-existent rule file: "
+            f"deleted structure or a non-existent skill/rule file: "
             + "; ".join(problems[:6]) + (" ..." if len(problems) > 6 else "")
         )
     return True, (
         f"{scanned} operating docs clean — no deleted-structure token "
-        f"({len(forbidden)} guarded), no dangling .claude/rules pointer"
+        f"({len(forbidden)} guarded), no dangling .claude/skills or .claude/rules pointer"
     )
 
 
@@ -5145,9 +5161,14 @@ def _charter_gates_present_impl(charter_text, live):
 def check_charter_gates_present():
     """Charter R7 meta-gate wrapper -- see _charter_gates_present_impl for the full contract
     and the 2026-07-15 per-row -> per-name tightening."""
-    charter = ROOT / ".claude" / "rules" / "charter.md"
+    charter = ROOT / ".claude" / "skills" / "charter" / "SKILL.md"
+    # HARDENED 2026-08-03 (skills migration). This used to `return True` on a missing
+    # charter as a "bootstrap-guard" -- which meant DELETING the Charter turned its own
+    # meta-gate green. A gate that passes because its subject vanished is the exact
+    # failure mode next-chunk trap #3 names. Missing is now RED.
     if not charter.exists():
-        return True, ".claude/rules/charter.md missing (bootstrap-guard)"
+        return False, (".claude/skills/charter/SKILL.md missing — the Charter's own "
+                       "meta-gate cannot pass when the Charter is gone")
     return _charter_gates_present_impl(charter.read_text(encoding="utf-8"),
                                        {i.name for i in INVARIANTS})
 

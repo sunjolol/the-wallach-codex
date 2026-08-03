@@ -92,7 +92,7 @@ def main():
     # deleted/moved/renamed (the whole dir + any child, not just the one filename).
     if re.search(r"(?:^|[\n;&|(])\s*(?:sudo\s+)?(?:git\s+rm|rm|mv)\b[^\n;&|]*chronicle/creators-log", cmd):
         _block("the Creator's Log (chronicle/creators-log/) is SACRED + append-only "
-               "(.claude/rules/logging-doctrine.md). The ledger, its directory, and every "
+               "(.claude/skills/round-close). The ledger, its directory, and every "
                "entry are never deleted, moved, renamed, or truncated — not even under a "
                "broad delete authorization. Append only via tools/creators_log.py; if "
                "removal ever seems needed, STOP and ask the user.")

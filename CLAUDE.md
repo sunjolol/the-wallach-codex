@@ -1,180 +1,87 @@
 # CLAUDE.md — The Wallach Codex
 
-_Operating contract. Read at session start. ≤ 200 lines, self-enforced._
-_High-level orientation + repository layout + constraints that apply everywhere. Behavioral defaults live in `.claude/rules/` — read the matching file before working in that domain._
+_The operating contract. Everything else loads on demand._
 
-## First 5 minutes
+## What this is
 
-1. Read this file in full.
-2. Read `chronicle/OVERHAUL-BLUEPRINT.md` — the active plan (the full overhaul blueprint + its Charter). **Temporary + living**: pruned as phases land, so it never carries stale prose.
-3. Read `REVIEW.md` — enforcement contract.
-4. `tail -n 20 chronicle/build-log.md` — recent project state.
-5. `chronicle/next-chunk.md` — rolling session pointer + any active time-bound notes.
-6. `PYTHONUTF8=1 python tools/invariants.py` — confirm the board is green (baseline is empty by design; any red is a real regression).
+A single-page, offline-first health-coverage dashboard for Dr. Joel Wallach's framework. Opens from
+`file://`. No server, no backend, no accounts, no telemetry, **no network at runtime**. The user owns
+100% of their data on their device; export/import is JSON. Distributed as static files plus a pinned
+portable browser, so it cannot be taken offline or broken by an update, and runs for years with no
+upkeep.
 
----
+`eden/` holds the three sealed, hand-edited data pillars — Wallach Corpus, Youngevity Product DB,
+shared Catalog. `eden/tools/` derives them into `dashboard/assets/data/*.json`; esbuild inlines that
+into one bundle. `dashboard/dashboard.html` is a pure shell. The rest of the layout explains itself.
 
-## Mission
+## §00.A — Wallach is the only source of amounts (100/100)
 
-A single-HTML, offline-first health-coverage dashboard for Dr. Joel Wallach's framework. Opens from `file://`. No server, no backend, no accounts, no telemetry, no runtime network. The user owns 100 % of their data on their device; export/import is JSON. Distributed as static files (Cloudflare Pages) — plus, eventually, a portable permanently-offline browser — so it cannot be attacked into bankruptcy, taken offline, or broken by an update. Designed to run for years with no upkeep. Full architecture + phasing: `chronicle/OVERHAUL-BLUEPRINT.md`.
+**Every recommended amount, dose, range, daily target, deficiency sign, and health claim traces to a
+Wallach book.** No exceptions — including Luneth, who has retracted his own experience against it.
+The 7 books are registered in `eden/corpus/books-meta.json`; **that registry is the authority**, never
+a hand-typed citation and never a list memorized from a doc. Books only — no lectures or transcripts.
 
----
+Youngevity contributes **product composition only** — what a product contains. Composition is an
+input to the coverage math, never a target. Where the corpus has no dose claim yet, the honest answer
+is "no Wallach target stated" — never a fallback number from anywhere else.
 
-## §00 — The two prime directives
+Wrong doses hurt real people, so this is the one place to be rigid rather than clever. Never
+fabricate: a verbatim is a byte-exact slice of the sealed source or you say UNREADABLE. **Never
+guess, and never guess silently** — surface the uncertainty in the same turn.
 
-Ranked. Every other rule yields to these. Behavioral rules under `.claude/rules/` are sub-directives.
+Changing this rule needs the three-turn override in the `wallach-source-rule` skill. Load that skill
+before touching any number, dose, or claim.
 
-**§00.A — Wallach source-of-truth mandate (100 / 100).**
-Every numeric target, dose, deficiency sign, and health claim traces to a Wallach allowlist primary — his BOOKS only — the **7** registered in the sealed registry `eden/corpus/books-meta.json` (the registry is the truth; ids: `dddl-3e-2011` · `rare-earths` · `lets-play-doctor` · `epigenetics` · `immortality` · `iaiyh` · `hells-kitchen`); no lectures/transcripts, Luneth 2026-07-05, plus `ygy` for Youngevity composition. **Wallach drives every recommended amount / dose / range; Youngevity products contribute composition only — NEVER a target** *(the RULE is universal; its GATE is not — `amounts_wallach_only` covers the 38 numeric targets in one artifact, and the other 53 essentials rest on discipline. Do not read the rule's scope off the gate, or the gate's off the rule.)* (no Youngevity-derived amounts; the old "two-role split" was poison and is retired). Book citations reference the sealed registry (`eden/corpus/books-meta.json`), never hand-typed. No outside source contradicts Wallach without explicit user review. Purpose: (a) one durable source of truth — the project's reason for existing; (b) legal defensibility — every claim attributable, not invented; (c) one consistent voice across surfaces. Sealed canonical data lives in the `eden/` pillars. Detail: `.claude/rules/source-rule.md`. Enforcement (per the blueprint): `amounts_wallach_only` + `citations_reference_registry`.
+## §00.B — Engineering standard
 
-**§00.B — Engineering standard of an elite open-source maintainer (99 / 100).**
-Operational consequences (detail: `.claude/rules/engineering-doctrine.md` + the Charter, `.claude/rules/charter.md` (blueprint §1 is the design origin)):
+1. **Two hand-edited sources, everything else generated.** Only the sealed `eden/` pillars are
+   hand-edited. No canonical value lives in two hand-maintained places.
+2. **Codify, don't promise.** A rule that can be a gate *is* one, shipped in the same patch. A rule
+   with no gate is labeled **WISH** — honestly, never sold as safe.
+3. **Surface uncertainty loudly.** A comment that has drifted out of sync with its code is a defect
+   worse than no comment.
 
-1. **Two hand-edited sources, everything else generated.** Only the three sealed `eden/` pillars are hand-edited; every shipped artifact is derived from them and a freshness gate regenerates + byte-compares it, so drift can't ship. No canonical value lives in two hand-maintained places.
-2. **Codify, don't promise.** Every rule that can be a hook / lint / invariant *is* one, shipped in the same patch as the thing it governs. A rule with no gate is labeled a WISH, never sold as safe.
-3. **Code + prose stay pristine + contained.** Comments are the truthful WHY/decision audit-trail (never WHAT-noise; a drifted comment is a defect). Surface uncertainty LOUDLY. User-facing prose (summaries, glosses, alerts) lives single-copy in the segregated content store, never inline in code or a fact field. Session narrative belongs in `chronicle/` + commits. Detail: `.claude/rules/typescript.md`.
+When §00.A and §00.B conflict: stop, write `chronicle/contradictions/<date>-<slug>.md`, surface it
+prefixed `⚠ PRIME DIRECTIVE CONFLICT`. A wins by default; silently picking is itself the violation.
 
-**Conflict protocol.** §00.A and §00.B disagree → STOP, write `chronicle/contradictions/<date>-<slug>.md`, surface in chat prefixed `⚠ PRIME DIRECTIVE CONFLICT`, user resolves. Default precedence A > B; silent prioritization is itself a violation.
+## What a green board actually means
 
----
+`PYTHONUTF8=1 python tools/invariants.py` — 85 gates. Green means **nothing drifted**. It does *not*
+mean anything is right. Only the ~21 gates anchored outside our own files (book bytes, physical
+constants, git) can catch a value that is wrong but self-consistent. Report the split, never hand
+Luneth the total as evidence about Wallach.
 
-## Architecture (one paragraph)
+A seal proves a pillar has not **changed** — never that it is **right**. The canon's mineral tiers
+were mockup-derived, sealed, and green for three weeks.
 
-**Three sealed data pillars are the only hand-edited data:** the Wallach Corpus (`eden/corpus/`, exists), the Youngevity Product DB (`eden/products/`, hand-built), and the shared Catalog (`eden/catalog/`: conditions · symptoms; the 90/91 essentials live in `corpus/essentials-canon`, and the nutrient/ingredient vocabulary rebuilds with the Product DB in Phase F — the too-basic `nutrients.json` was deleted 2026-07-05). *(products/ is being built per the blueprint; corpus/ + catalog/ are live.)* Every shipped artifact is **generated** from the pillars — `eden/tools/` derive scripts project them into `dashboard/assets/data/*.json`, which esbuild inlines into one bundle at `dashboard/assets/js/dist/main.js`. The page loads from `dashboard/dashboard.html` (a pure shell). Surfaces: Coverage (⌘1), Regimen (⌘2), Scanner (⌘3), Knowledge (K), Journey (J, rebuilt last), Command Palette (⌘K), Search (offline retrieval helper), Profile. User state persists to `localStorage` through the §31 chokepoint only — regimen state is one atomic slot document (`rgSlots_v1`) written by a single private writer that the five legacy helpers + the P3 slot ops all delegate to, each emitting a typed `regimen:changed` event; `localStorage` itself is touched in `core/storage.ts` alone. **Gated** by `regimen_state_mutation_routing` (critical), with ESLint `no-restricted-globals` as a second layer at WARN. *(This sentence was an UNQUALIFIED claim resting on a WARN-level lint rule for 10 days: the gate was removed 2026-07-05 'to return in Phase C', Phase C landed the same day, and nobody re-checked. Restored + re-gated 2026-07-15.)* The scanner lets users add any item but can **never** write a pillar (Eden's wall). OCR runs locally via vendored Tesseract.js (~22 MB, `assets/vendor/tesseract/`, gitignored). Sealed canonicals carry a `*.golden.sha256` sibling (user-only writer): `design-system.css` + every pillar.
+## Gotchas that will cost you a session
 
----
+1. **`corpus_seal` and `catalog_seal` are USER-ONLY.** Permission from a past session never carries
+   forward. Ask every time.
+2. **Never build a live element header without explicit permission.** Demo-only until Luneth approves.
+3. **A DOM probe is not a visual check.** Screenshot it, then stop for his eyes.
+4. **A gate can be green *because of* the defect** — and can go red *because of* the correction. On a
+   post-fix red, ask what was making it pass before.
+5. **Searching book text or a sealed verbatim literally is blind.** Both are byte-exact OCR with hard
+   line breaks inside sentences; `"pure cobalt requirement"` returns a confident null. Use `\s+`
+   between words, or enumerate the entity's claims instead of grepping for a string you expect.
+6. **Confirm a defect in the encoding the file actually uses before "fixing" it.** PowerShell reads
+   UTF-8 as cp1252 and git escapes non-ASCII paths — both have produced convincing false alarms.
+7. **`.claude/invariant-baseline.json` is invariant-scoped**: one entry tolerates a whole gate
+   forever. Per-case exceptions go *in* the gate with a reason and a test. It is empty by design.
 
-## Module layers — enforced by `eslint-plugin-boundaries`
+## Skills
 
-```
-views/   ──imports──▶  state/   ──imports──▶  core/
-  │                       │                      │
-  └──────────────may import────────────▶────────┘
-                  but not the reverse
-```
+Domain guidance lives in `.claude/skills/` and loads when the work matches — source rule, write
+discipline, mining, round-close, dashboard code, testing, element headers, visual verification,
+charter, engineering doctrine. Read the one that matches before your first write in that domain.
+Do not preload them all.
 
-- `core/` — primitives. Imports only `zod`.
-- `state/` — reactive state + §31 chokepoint mutations. Imports `core/`. May not import `views/`.
-- `views/` — render + DOM handlers. Imports `state/`, `core/`. May not write `localStorage` directly.
-- `main.ts` — entry. Imports all layers; wires once at boot.
+## Genesis
 
-Path aliases: `@core/*`, `@state/*`, `@views/*`. Cross-layer relative imports are banned by lint.
+Luneth types `genesis`; run `PYTHONUTF8=1 python tools/genesis.py`, report, then **ask which task to
+resume** — never a flair-only boot. If a new invariant red appears, that is the only response. If he
+opens with substantive work instead, do a silent micro-check and proceed.
 
-**Data flow (every surface):** `pillars (eden/) → generators (eden/tools/) → assets/data/*.json → core/ → state/ → views/`. No view holds a canonical value as a literal. **Roughly HALF of `assets/data/` is derived; the other half is hand-authored.** 12 files are DERIVED from the pillars and byte-gated (`derived_artifacts_fresh`); 11 are HAND-AUTHORED (curation layers, R4 prose stores, the Coverage skeleton) and are gated only for REGISTRATION — `data_artifacts_accounted` proves every file is declared in `eden/derived/MANIFEST.json` with a disposition + reason, but nothing proves a hand-authored file is CORRECT. **Corrected 2026-07-15:** this line read `no artifact under assets/data/ is hand-edited`, which was false for 11 of 23 files.
-
----
-
-## Disciplines (each is a transferable pattern with this project's instance)
-
-- **§00 — Ranked prime directives.** Instance: §00.A · §00.B above.
-- **§17 — Write discipline.** Every project-file write routes through one atomic-verify primitive; direct write tools are hook-blocked. Instance: `tools/safe_write.py` + `tools/hooks/{pre_write_guard,post_write_verify}.py`. Detail: `.claude/rules/write-discipline.md`.
-- **§31 — Chokepoint discipline.** All mutations of a sensitive state surface flow through a small fixed set of named helpers that emit typed events; direct paths are lint-blocked. Instance: one atomic slot document (`rgSlots_v1`) written by a single writer that the five legacy helpers + the P3 slot ops delegate to (+ ESLint `no-restricted-globals` on `localStorage`). Detail: `.claude/rules/chokepoint-discipline.md`.
-- **Derive-don't-duplicate.** Generated artifacts are never hand-edited; a freshness gate regenerates + byte-compares them. Instance: `derived_artifacts_fresh` over `eden/derived/MANIFEST.json` (absorbed `corpus_embed_synced`; grows to all artifacts through Phase C). Detail: blueprint §3.
-- **Hooks-enforce-everything.** Every machine-checkable rule is wired to a `PreToolUse` / `PostToolUse` / `Stop` hook. Instance: `.claude/settings.json` + `tools/hooks/*.py`.
-- **Round-close ritual.** A unit of work is not "done" until: build → invariants → render probe → build-log line → Creator's Log → re-inline build → commit + push. Detail: `.claude/rules/commits-and-rounds.md`.
-- **Render-probe contract.** Views are verified by headless end-to-end probes that assert visible state. Instance: `tools/render_probe*.js`. Detail: `.claude/rules/testing.md`.
-- **Anti-fakery.** If a render needs data that does not exist yet, add it to a pillar behind a schema; never fake or stub in a view. Instance: invariant `views_state_no_inline_data`.
-- **Sealed canonical.** High-value source files carry a `*.golden.sha256` sibling; agents read freely, writes require explicit user sign-off. Instance: `design-system.css` + the `eden/` pillars.
-- **Logs are sacred.** The Creator's Log (+ named working logs) are append-only — never deleted/edited/reordered; deletion needs the 3-part ALL-CAPS override ritual. `build → test → log → repeat` is non-negotiable. Detail: `.claude/rules/logging-doctrine.md`.
-
----
-
-## Behavioral rules — `.claude/rules/`
-
-Read the matching file before the first write in that domain:
-
-| When working on… | Read |
-|---|---|
-| any project-file write | `write-discipline.md` |
-| anything under `state/` | `chokepoint-discipline.md` |
-| anything touching a pillar or a view render | `data-flow.md` |
-| anything under `dashboard/assets/js/src/` | `typescript.md` |
-| render probes, vitest | `testing.md` |
-| chunk close, commit, push | `commits-and-rounds.md` |
-| bash / python on the Windows host | `windows-host.md` |
-| any health number / dose / claim (§00.A) | `source-rule.md` |
-| resuming book mining · choosing what to mine (Phase G) | `mining-veins.md` |
-| mining for search · building the Search surface | `search-corpus.md` |
-| proposing a new system, tool, or invariant (§00.B) | `engineering-doctrine.md` |
-| the Charter's enforceable rules (R1–R9) + their gate status | `charter.md` |
-| logging · history · what & why to record | `logging-doctrine.md` |
-| building/perfecting a page or any visual/UX surface | `visual-verification.md` |
-| building an ELEMENT HEADER (the 90 essentials' illustrative blocks) | `element-headers.md` |
-
----
-
-## Size budgets — enforced by `size-limit`
-
-| What | Budget |
-|---|---|
-| `dist/main.js` gzipped | ≤ 250 KB |
-| `assets/styles/*.css` combined gzipped | ≤ 150 KB |
-| `dashboard/` total shipped | ≤ 350 MB (warn at 150 MB) |
-
-JS budget failure splits into a lazy-loaded chunk. Design generosity lives in CSS, fonts, assets.
-
----
-
-## File layout
-
-```
-eden/                                       ← THE SOURCE — three sealed pillars + tooling
-├── corpus/{books,books-meta,claims,drafts,indices,essentials-canon}   ← Wallach pillar (live)
-├── products/                               ← Youngevity Product DB pillar (hand-built)
-├── catalog/{conditions,symptoms}                                     ← shared ID Catalog pillar (nutrients → Phase F; essentials in corpus/essentials-canon)
-├── graphics/ · derived/ (GENERATED) · tools/  ← mining + derive pipeline; *.golden.sha256 siblings
-                                            ← eden-catalog.json folds into catalog/ (blueprint D3)
-
-dashboard/                                  ← the app (pure views over generated data)
-├── dashboard.html                          ← slim shell (no baked data)
-├── assets/
-│   ├── styles/{design-system.css + *.golden.sha256, dashboard.css, …}
-│   ├── fonts/                              ← 7 in-housed TTF families (SIL OFL 1.1)
-│   ├── data/*.json                         ← 12 GENERATED + gated · 11 HAND-AUTHORED (MANIFEST-registered)
-│   ├── vendor/tesseract/                   ← 22 MB offline OCR (gitignored)
-│   └── js/{src/{core,state,views}/, dist/main.js}  ← dist GENERATED
-├── package.json · tsconfig.json · eslint.config.js
-└── components/                             ← v3 design-mockup references (read-only)
-
-chronicle/                                  ← discipline ledger
-├── OVERHAUL-BLUEPRINT.md                   ← active plan (temporary/living)
-├── build-log.md · next-chunk.md            ← pre-write contract + handoff pointer
-├── creators-log/ (SACRED, append-only) · CHANGELOG.md · versions/ · contradictions/ · genesis-origin-plan.md (frozen origin archive)
-
-schemas/                                    ← JSON Schemas (versions; product schema → eden/products/)
-
-tools/{build.mjs, genesis.py (the `genesis` boot script), invariants.py, safe_write.py, creators_log.py, render_probe*.js, hooks/*}
-.claude/{settings.json, settings.local.json (gitignored), invariant-baseline.json, rules/}
-```
-
----
-
-## Glossary
-
-- **§00 / §17 / §31** — Prime directives · Write discipline · Chokepoint discipline.
-- **Pillar** — One of the three sealed, hand-edited data sources under `eden/`: Corpus · Products · Catalog. Everything else is generated from them.
-- **Generated artifact** — A file DERIVED from the pillars (12 of the `assets/data/*.json` files, plus the indices + the bundle). Never hand-edited; `derived_artifacts_fresh` regenerates it and byte-compares. **NOT every `assets/data` file is one** — 11 are hand-authored (curation, prose stores, the Coverage skeleton), each registered in `eden/derived/MANIFEST.json` with a reason. A hand-authored artifact is gated for REGISTRATION, never for correctness. Corrected 2026-07-15.
-- **The Charter** — The R1–R9 enforceable rules + their machine gates; permanent home `.claude/rules/charter.md` (blueprint §1 is the design origin). A rule with no gate is a labeled WISH.
-- **Sealed canonical** — File with a `*.golden.sha256` sibling. User-only writer.
-- **Eden** — The three sealed pillars under `eden/`. Every Wallach / Youngevity number originates here.
-- **Round / Chunk** — Closed unit of work that ends with the Round-close ritual.
-- **Chronicle** — The discipline ledger (`chronicle/`). The Creator's Log within it is SACRED (append-only).
-- **The bridge** — `window.*` exports in `state/*` (`persistRegimen`, `lcScan`, …) that let DOM handlers + headless probes reach the engines.
-- **Render probe** — A headless puppeteer script under `tools/render_probe_*.js` that drives one surface end-to-end and asserts visible state.
-- **Genesis** — The session-start boot ritual.
-
----
-
-## Genesis — session-start boot
-
-User types **`genesis`** as the first message of a session. Claude runs the boot command, presents the report, then **asks which task to resume — never a flair-only boot.** One command:
-
-```
-PYTHONUTF8=1 python tools/genesis.py
-```
-
-It prints the banner + scoreboard (invariants · build parity · last Creator's Log entry · build-log tail) and the live pass-off (`chronicle/next-chunk.md`). Then Claude: (1) if a NEW invariant red appears, STOP and surface it as the only response; (2) else report + end with the action question — "resume <next-order task>, or redirect?". If the user opens with substantive work and skips `genesis`, run a silent micro-check (contract loaded + board green) and proceed.
-
----
-
-If anything in this file conflicts with anything older, older loses. This file is the operating contract.
+The live handoff is `chronicle/next-chunk.md`. If anything here conflicts with an older document,
+older loses.

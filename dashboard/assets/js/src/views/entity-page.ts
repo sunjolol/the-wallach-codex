@@ -1690,7 +1690,7 @@ function renderMechBlocks(blocks: readonly MechBlock[]): string {
  *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug
  *  branch.
  *
- *  THE FRAME IS THE ONLY FIXED STRUCTURE (Rule 0, .claude/rules/element-headers.md): the tan
+ *  THE FRAME IS THE ONLY FIXED STRUCTURE (Rule 0, .claude/skills/element-headers): the tan
  *  `.kd-ep-fam` content box, the disclaimer, and the Best-Youngevity-sources dock at the bottom.
  *  What sits between them is either a data-declared block list or the legacy fixed order — the two
  *  differ ONLY in what decides the sequence, and both emit through the same emitters. */

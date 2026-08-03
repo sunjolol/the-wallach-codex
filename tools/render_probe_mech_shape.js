@@ -5,7 +5,7 @@
 // WHY THIS EXISTS. The mechanism renderer grew a second shape on 2026-07-30: alongside the legacy
 // fixed skeleton, an entry may now declare an ordered `blocks` list and render in ANY order with any
 // subset of blocks. That was necessary — the required legacy set (eyebrow/kill/figure/beats/quote)
-// WAS the chassis eight calcium mockups were rejected for (Rule 0, .claude/rules/element-headers.md).
+// WAS the chassis eight calcium mockups were rejected for (Rule 0, .claude/skills/element-headers).
 // But it meant touching the one function that draws three headers Luneth has already signed off.
 //
 // So this probe answers exactly one question, byte-for-byte: do the SIGNED-OFF headers still render

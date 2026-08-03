@@ -5,7 +5,7 @@
 // Drives the live Magnesium entity page and asserts the composed header: the mg_cycle hero figure
 // (ONE Mg atom followed soil -> chlorophyll -> you), the centred bridge, the three big-Unbounded
 // beats, the TRIMMED Wallach pull-quote pulled BY CLAIM ID, and the Best-Youngevity-sources dock.
-// Guards the two figure regressions per .claude/rules/element-headers.md:
+// Guards the two figure regressions per .claude/skills/element-headers:
 //   1. FIGURE TYPE — scale == 1 (a declared px is a screen px) + every label >= 12px, glyph <= 17.6.
 //   2. LABEL COLLISIONS — pairwise bounding-box check on every <text> in the figure.
 // Plus a COPPER regression pass: a previously-shipped header must be unchanged (the shared emitters

@@ -18,7 +18,7 @@
  * WHY the composed shape exists: the legacy REQUIRED set (eyebrow · kill · figure · figure_alt ·
  * beats · quote_claim) IS the chassis eight calcium mockups were rejected for — "you keep following
  * the same structure/template… stop constraining yourself under this template" (Luneth 2026-07-30,
- * now Rule 0 in .claude/rules/element-headers.md). Everything that LOOKED like design freedom —
+ * now Rule 0 in .claude/skills/element-headers). Everything that LOOKED like design freedom —
  * hook, split, bridge, the two figure slots, coda, stat — was an optional extra bolted onto that one
  * skeleton, and the renderer fixed their order, so a "bespoke" header could only ever wear different
  * clothes on the same body. Playbook prose could not fix that: the STRUCTURE had to be able to say a

@@ -9,7 +9,7 @@
 // selector list, and prints ONLY the deltas. Fix until `TOTAL DIFFS: 0`. Residual
 // diffs where the LIVE uses a correct --ds-* token vs the mockup's UNSET browser
 // default (black / Times New Roman) are the live being BETTER than the demo — keep
-// them. See .claude/rules/visual-verification.md "Getting to exact".
+// them. See .claude/skills/visual-verification "Getting to exact".
 //
 // Edit SELS / PROPS for the surface you are matching.
 const path = require('path');

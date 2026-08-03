@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """tools/creators_log.py — CLI writer for the Creator's Log file-mirror.
 
-The Creator's Log is the §00 sacred audit trail (.claude/rules/logging-doctrine.md
+The Creator's Log is the §00 sacred audit trail (.claude/skills/round-close
 — "The two layers" + "The sacred covenant"). In-app it lives in localStorage via
 state/log.ts::log(); this tool is the CLI mirror that makes the Round-close
 ritual's step 5 fireable from the terminal and keeps the log in the repo as a
@@ -200,7 +200,7 @@ def render_digest() -> str:
         "     Canonical source of truth: log.jsonl (append-only). -->\n"
         "# The Creator's Log\n\n"
         "The sacred, append-only audit trail of this project — what we did and why,\n"
-        "so the path is never lost (see `.claude/rules/logging-doctrine.md`). The\n"
+        "so the path is never lost (see `.claude/skills/round-close`). The\n"
         "machine source of truth is `log.jsonl` (one entry per line, never edited);\n"
         "this file is a generated human-readable view, **newest first**.\n\n"
         + scope
