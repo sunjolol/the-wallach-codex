@@ -5,18 +5,35 @@ Luneth types `genesis` in a NEW session; Claude runs `tools/genesis.py` ONLY in 
 then asks what to resume.
 
 # ★ STATE — every number below was MEASURED at handoff, not remembered
-- **Board 84/84**, 0 reds. Corpus sealed at **knowledge_version=452**, `corpus_verify` PASS
+- **Board 84/84**, 0 reds. Corpus sealed at **knowledge_version=454**, `corpus_verify` PASS
   (2268 claims · 7 books · hashes match). Build fresh, all derived artifacts in sync.
-- **Everything is committed and pushed** (`master`, through `4faa67f7`).
-- **Front-facing backlog: 1,292** (1,900 → 1,716 → 1,505 → 1,292). `claims_verified` holds **633**.
-  `books_verified` = `dddl-3e-2011` · `iaiyh`.
-  Per book remaining: epigenetics 332 · immortality 255 · lets-play-doctor 339 · rare-earths 284 ·
+- **Everything is committed and pushed** (`master`, through `9df9a075`).
+- **Front-facing backlog: 1,283** (1,900 → 1,716 → 1,505 → 1,292 → 1,283). `claims_verified` holds
+  **642**. `books_verified` = `dddl-3e-2011` · `iaiyh` — but see the ⚠ below before trusting that.
+  Per book remaining: epigenetics 326 · immortality 255 · lets-play-doctor 336 · rare-earths 284 ·
   hells-kitchen 82.
+- ✔ **THE PRE-EXISTING SEARCH-ROUTING BUG IS FIXED** (it is no longer an open item). Root cause:
+  `tokenize()` drops stopwords, so a bare `"what are antioxidants"` reduces to the topic word ALONE
+  and every claim about the topic scored IDENTICALLY (23 each) — leaving `rankClaims`' tie-break,
+  **claim id ASCENDING**, to pick the hero alphabetically. The weight-loss warning beat the
+  definition because H sorts before I. `heroByIntent` now heroes the topic's `basics` answer when
+  the intent is empty. `render_probe_search_routing` 6/6.
+- ✔ **The "reduced" gloss bug is CLOSED too** — all four forms (`reduced`/`reduction`/`reduce`/
+  `reducing`) are in `term-gloss-lexicon.json::glossary_key_denylist` behind the live critical gate
+  `glossary_keys_denylisted`. Older handoffs listing it as open are STALE.
+- ⚠ **`books_verified` IS WEAKER THAN IT SOUNDS — Luneth's ruling needed.** `dddl-3e-2011`, one of
+  only two books asserted "audited-pristine", wrote B1 as `Bl` **17 times** plus 7 botanical typos.
+  The purity gate never saw them because the book's OWN reviewed-OK allowlist
+  (`eden/tools/purity-baselines/dddl-3e-2011.json::spell_ok`, 1,325 entries) **contained the
+  misspellings** (aqutifolia, blepherisma, ustatissimum, fragula, phosphytidyl, phosphatydil,
+  tinnitis). All are now fixed and the stale carve-outs removed — but the question of what
+  `books_verified` asserts is open. There is also **no page image or PDF for DDDL in the repo**, so
+  it cannot be page-read at all.
 - `frontface_verbatims_clean` gates **EIGHT** mechanical classes (negative test 45 cases), and a
   NINTH gate shipped 2026-08-02: **`verbatim_no_transcription_scaffolding`** (critical, 21-case
   negative test) — no sealed verbatim may contain the capture harness's frame name, the reader's
   "Page N of M" readout, a `===`-run separator, or a Kindle location marker.
-- ⚠ **ONE PRE-EXISTING PROBE FAILURE, still unfixed and NOT caused by this work:**
+- ~~ONE PRE-EXISTING PROBE FAILURE~~ — ✔ FIXED, see the state block above. Original note kept:
   `tools/render_probe_search_routing.js` fails 1/6 — "what are antioxidants" heroes
   `WAL-CLM-HELLS-000016` (facet=warning) instead of the definition. Attributed by evidence: the
   search index's ordered id list and its `entities` block were byte-identical across the wave-1
@@ -156,7 +173,13 @@ Tell the readers this explicitly — it was in the wave-1 brief and it is why 11
    (`Tourette's` ×3, `Alzheimer's` ×4), and 4 remaining `1 ,000 mg`. Policy unchanged — two
    `ofdiarrhea` occurrences in this corpus DISAGREE about the space, so nothing is batch-replaced.
 
-## 2. The non-word residue — 599 hits in 337 claims
+## 1d. ✔ CLOSED THIS SESSION (do not re-open these)
+The search-routing bug · the "reduced" gloss bug (already closed before, handoff was stale) · the
+443-claim read list (both waves) · the 12 book-typo proposals AND the whole class behind them (48
+edits across all 6 books) · the 4 claim-extent defects · the 3 claims shipping OCR scaffolding
+(plus a new gate so it cannot recur) · the 11 apostrophe/number siblings · DDDL's 17 `Bl`.
+
+## 2. The non-word residue — REMEASURED 2026-08-03: 345 hits in 212 claims (was 599 in 337)
 `selfscan.py` → `triage_nonword.py` → `rank_nonword.py`. **Expect to CONFIRM, not fix**: of 105 such
 tokens page-read this session, 62 were legitimate (botanical Latin, British spellings, trade names).
 The spellchecker's suggestions carry NO authority — it wanted `castro` for `gastro`, `penis` for
