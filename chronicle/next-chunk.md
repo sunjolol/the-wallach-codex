@@ -12,28 +12,51 @@ then asks what to resume. Never a flair-only boot.
 Luneth's call at the close of the audit campaign: **we go back to enriching headers.** Start there
 unless he redirects.
 
-# ★★ FIRST, THOUGH — ONE OWED GATE (30 min, do it before the headers)
-**`no_duplicate_claims` does not exist, and the class it would catch SHIPPED TO LUNETH'S SCREEN.**
-On 2026-08-03 he found two near-identical "What is Vitamin A?" cards on one entity page; 13
-duplicate claims were removed (kv=458). Nothing caught them, and §00.B says codify rather than
-promise. The gate: same book + same `char_offset` + verbatim containment + same subject/facet = RED.
-Measured after the cleanup it yields exactly **2 pairs**, and both are Luneth-approved keep-boths, so
-they go in `.claude/invariant-baseline.json` as R9 exceptions with a reason + a test:
-`WAL-CLM-DDDL-000071`/`-000137` (selenium/physiology) and `WAL-CLM-IMMORT-000135`/`-000389`
-(gallium/uses). Ship it with a negative test that re-catches the vitamin-A pair. It was deliberately
-NOT rushed in at session close — a gate authored without its negative test is how misfiring gates
-ship ([[negative-control-or-it-proves-nothing]]).
+# ✔ THE OWED GATE IS DONE — 2026-08-03, commit 88e00882
+`no_duplicate_claims` (critical, structural) SHIPPED with its 13-case negative test
+`tools/test_no_duplicate_claims.py`. **Board 84/84 → 85/85** (structural 39 → 40), 0 reds.
+Signature: same book · verbatim **CONTAINMENT** · same `subject` · same `facet`. Catches both
+measured mechanisms (same-batch double emission · cross-batch re-mining) without keying on
+either's tell — it reads neither timestamp nor offset.
 
-**Two duplicate mechanisms it must catch** (both measured, both real): SAME-BATCH DOUBLE EMISSION
-(one extraction emits a truncated take AND a full take — identical offset AND identical
-`extracted_at`) and CROSS-BATCH RE-MINING (a later pass re-mines a span an earlier pass covered —
-same offset, different `extracted_at`).
+**★★ TWO THINGS THE PREVIOUS VERSION OF THIS FILE GOT WRONG. Both are corrected here rather than
+left to poison the next session (logging-doctrine rule 5).**
+
+1. **The signature it specified was too narrow.** It said "same book + same `char_offset` +
+   verbatim containment + same subject/facet." **Same-offset yields 1 pair, not 2** — the gallium
+   pair sits at DIFFERENT offsets (262400 vs 262639), one span being the tail of the other. The
+   correct join is **containment**, which yields exactly the 2 pairs, matching b3551834's own
+   measurement. A null from a too-narrow join proves nothing ([[null-result-needs-a-scope-check]]).
+2. **★ The exception mechanism it prescribed would have NEUTERED the gate, and was not followed.**
+   It said the 2 keep-both pairs "go in `.claude/invariant-baseline.json` as R9 exceptions."
+   **They must not.** That file is INVARIANT-SCOPED — `stop_round_close.py::_tolerated` returns a
+   set of invariant NAMES — so ONE entry tolerates EVERY duplicate the gate will ever find. It
+   would have shipped green while blessing the exact class it exists to stop. The identical trap
+   was already proven here for `dose_amount_in_verbatim` (the "NO BASELINE EXCEPTION" note above
+   `_DOSE_UNIT_SYN`). The 2 pairs live **in-gate** in `_DUPLICATE_KEEP_BOTH`, each stating both
+   reader questions the shared span answers; **the baseline is still EMPTY BY DESIGN.** A carve-out
+   that STOPS firing is itself RED, so a dead exception cannot linger pretending to bless something.
+
+**Honest scope (WISH, R7):** a duplicate whose two takes each add bytes the other lacks — neither
+contained — escapes. None exists today; tighten with a measurement if one ships, never with a
+guessed threshold (an overlap floor reddens 9 legitimate pairs, incl. 5 adjacent Base-Line dose rows).
+
+# ⚠ ONE PRE-EXISTING TEST FAILURE, LEFT FOR LUNETH (not caused by the above)
+`tools/test_collective_doses_not_fanned.py::same_substance_pair_still_allowed` **FAILS (7/8)**, and
+**fails at HEAD too** — proven by running that exact case against `git show HEAD:tools/invariants.py`,
+not inferred. `_SAME_SUBSTANCE_SLUGS` (`tools/invariants.py:2376`) was emptied 2026-07-15 when the
+cobalt/B12 carve-out was found to refute itself; the test case still asserts that refuted chemistry
+as fact. **Deliberately not fixed** — flipping it takes a position on a question
+`chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md` still records as
+**"OPEN — needs Luneth's call."** ★ That is a second finding: `tools/invariants.py:2370` cites that
+same file as **"Luneth's ruling."** One of the two is wrong. Needs his read, not a quiet edit.
 
 ---
 
 # ★ STATE — measured 2026-08-03
 
-- **Board 84/84**, 0 reds. (21 external · 22 consistency · 39 structural · 2 meta.)
+- **Board 85/85**, 0 reds. (21 external · 22 consistency · 40 structural · 2 meta.) The new one is
+  `no_duplicate_claims` — see above.
 - **Corpus sealed at `knowledge_version=458`** (2,255 claims after the 2026-08-03 de-dup), `corpus_verify` PASS — 2,268 claims · 7 books ·
   hashes match. Build fresh, all derived artifacts in sync.
 - **Tree clean, pushed.** (The only file that ever shows dirty is `tools/canaries/safe-write-probe.txt`;
@@ -196,6 +219,6 @@ in them are the lesson**, not the edit lists.
 
 ---
 
-**Board 84/84 · kv=458 · tree clean, pushed · the AUDIT CAMPAIGN IS CLOSED (all 3 decisions
+**Board 85/85 · kv=458 · tree clean, pushed · the OWED GATE IS DONE · the AUDIT CAMPAIGN IS CLOSED (all 3 decisions
 answered, 0 awaiting Luneth) · divergences 73 + a 36-token register · backlog 1,283 ·
 claims_verified 642 · NEXT = ELEMENT HEADER ENRICHMENT.**
