@@ -20754,7 +20754,7 @@ for receptor-mediated hormonal stimuli for mobilizing intracellular calcium.
 Additionally, myo-inositol appears to have a lipotrophic function that may
 originate from its vital role as a substrate for the biosynthesis of phosphatidyl
 
-inositol and polyphos-hoinositides, which are essential for the structure of
+inositol and polyphosphoinositides, which are essential for the structure of
 biomembranes.
 
 Inositol defi
@@ -21777,7 +21777,7 @@ rubies or sapphires, which in addition to being used as jewelry, these gems have
 also been used as medicine for thousands of years in the practice of Ayruvedic
 medicine.
 
-Sir Humphrey Davy, a distinguished English chemist of the 16th century gave
+Sir Humphry Davy, a distinguished English chemist of the 16th century gave
 the name “aluminum” to the metal of clay.
 
 The Danish physicist, Hans Christian Oerstad in 1825 “discovered”
@@ -22374,7 +22374,7 @@ plants at 18,000 ppm; marine animals at 1,500 to 20,000 ppm (up to 350,000 in
 calcareous tissues: sponges, coral, molluscs, echinoderms, etc.); land animals at
 200 to 85,000 ppm (260,000 ppm in mammalian bone, 200 to 500 ppm in soft
 tissue and less than 5.0 in RBC). Calcium was not isolated as a pure metal until
-1808 by Sir Humphrey Davy in England.
+1808 by Sir Humphry Davy in England.
 
 Calcium, combined with phosphate forms hydroxyapatite, which is the mineral
 portion of animal and human bones and teeth; the mineral content of some
@@ -23898,7 +23898,7 @@ EPIGENETICS
 mammals at 0.1 ppm; land animals at 0.0001 ppm in soft tissue and 0.27 ppm in
 bone.
 
-The growth of the protozoa Blepherisma and Tetrahymena pyriformis is
+The growth of the protozoa Blepharisma and Tetrahymena pyriformis is
 stimulated and life span doubled by the presence of La at concentrations of 0.32
 ppm.
 

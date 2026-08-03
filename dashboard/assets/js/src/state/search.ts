@@ -550,7 +550,15 @@ function heroByIntent(subject: string, best: SearchClaim, ranked: SearchClaim[],
   const strip = entityNameTokens(subject);
   const intent = tokenize(q).filter(t => !strip.has(t));
   if (intent.length === 0) {
-    return best;
+    // A BARE definitional query ("what are antioxidants") tokenizes down to the topic word ALONE,
+    // because tokenize() drops stopwords — so every claim about the topic scores IDENTICALLY (all
+    // seven antioxidant claims scored 23), and rankClaims' tie-break — claim id, ascending — picks
+    // the hero ALPHABETICALLY. That is how the weight-loss warning WAL-CLM-HELLS-000016 beat the
+    // definition WAL-CLM-IMMORT-000268 on "what are antioxidants": H sorts before I. Returning `best`
+    // here was therefore returning an arbitrary claim, not the top one. A bare definitional query is
+    // asking for the DEFINITION, so hero the topic's `basics` answer when it has one.
+    return ranked.find(c => c.facet === 'basics'
+      && (c.subject === subject || c.also_about.includes(subject))) ?? best;
   }
   let hero = best;
   let heroScore = -1;

@@ -2720,7 +2720,7 @@ Many of Franklin’ originally coined terms such as battery, charged,
 neutral, condense, and conductor are still used today in the fields of 
 electricity and the greater subject of energy. “He has written equally 
 for the uninitiated as well as the philosopher,” the 19th century En- 
-glish chemist Sir Humphrey Davy noted, “and he has rendered his 
+glish chemist Sir Humphry Davy noted, “and he has rendered his 
 details as amusing as well as perspicuous.” 
 Franklin’s discovery that the creation of a positive charge was 
 accompanied by the generation of an equal negative charge became 
@@ -2845,7 +2845,7 @@ village of Marly on the northern suburbs of Paris, a retired soldier,
 drafted to perform the experiment drew sparks as Franklin had pre- 
 dicted. An enthusiastic prior grabbed the insulated wire and repeated 
 the experiment six times! 
-Franklin correctly surmised that “lightening rods” could render |
+Franklin correctly surmised that “lightning rods” could render |
 
 HELLS KITCHEN 75 
 safe one of the greatest natural dangers faced by humans. “Houses, 
@@ -6725,7 +6725,7 @@ Despite these observations on the value of “salts” (the minerals
 found in the ash of burned food plants), the belief that humus (or- 
 ganic material) was the basic “food” of plants was upheld well into 
 the 19th century and was supported by such renowned chemists as 
-Theodore de Saussure (1767 - 1845) and Sir Humphrey Davy (1778 
+Theodore de Saussure (1767 - 1845) and Sir Humphry Davy (1778 
 - 1829). 
 The source and function of the inorganic elements of plant ash 
 was unknown. A prize was offered in Germany, “to resolve the ques- 

@@ -4214,7 +4214,7 @@ stops what he is doing and rapidly blinks eyes
 then starts the activity again where he left off.
 Treatment should include choline 4 gm/day;
 taurine 500 mg t.i.d.; dimethyl glycine 100 mg
-b.i.d., phosphytidyl choline and B-6 100-300
+b.i.d., phosphatidyl choline and B-6 100-300
 mg/day.
 ACHALASIA (megaesophagus): enervation
 of the esophagus resulting in failure of cardiac
@@ -4376,7 +4376,7 @@ hydergine 6-12 mg/day; piracetam/choline
 of one whiff in each nostril q.i.d. which delivers a total daily dose of 12-16 units of U.S.P.
 Posterior Pituitary; centrophenoxine (Lucidril)
 6.2-8.0 gram/day. Lecithin at 2,500 mg t.i.d. is
-very useful at all stages (phosphatydil choline
+very useful at all stages (phosphatidyl choline
 is more efficient). Don't forget the baseline
 nutritional supplements ( including colloidal
 minerals), betaine HCl and pancreatic enzymes 75-200 mg t.i.d., oral and IV H2O2; 200
@@ -8690,8 +8690,8 @@ avoid these drugs as they are teratogenic in lab
 animals).
 LAXATIVE: includes many OTC preparations
 such as Ex-Lax and Milk of Magnesia and
-herbs including senna (Cassia aqutifolia), flaxseed or flaxseed oil (Linum ustatissimum),
-alder buckthorn (Rhamnus fragula), cascara
+herbs including senna (Cassia acutifolia), flaxseed or flaxseed oil (Linum usitatissimum),
+alder buckthorn (Rhamnus frangula), cascara
 sagrada (Rhamnus purshiana), juniper
 (Juniperus communis) and manna ash
 (Fraxinus ornus).
@@ -9794,7 +9794,7 @@ Treatment should include avoidance of food
 allergens, rotation diets, betaine HCl and pancreatic enzymes at 75-200 mg. t.i.d. 15 minutes
 before meals, B-3 (niacin) at 450 mg t.i.d. as
 time release tablets, essential fatty acids as
-salmon and flaxseed oils at 5 mg each t.i.d.,
+salmon and flaxseed oils at 5 gm each t.i.d.,
 chromium at 25-200 mcg t.i.d. and zinc at 50
 mg t.i.d. Don't forget the base line nutritional
 supplement program.
