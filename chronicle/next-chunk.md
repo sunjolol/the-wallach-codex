@@ -63,15 +63,27 @@ not-a-subset · equals-every-essential · declared-but-not-honoured) and shipped
 them — four branches never proven to fire. All four now have negative cases; `applies_to_teeth` plants
 the fabricated 400 mcg cobalt target RETURNING and asserts RED.
 
-# ★ STILL OPEN — the ruling's keystone sentence is UNSEALED (re-measured 2026-08-03)
-*"A pure cobalt requirement is only found in some bacteria and algae"* — the sentence the B12-only
-ruling rests on — is in **NO sealed claim's verbatim**. It IS in 3 books (`dddl-3e-2011`,
-`rare-earths`, `epigenetics`, 1 occurrence each), so it is genuinely Wallach's; but in our corpus it
-survives only as our own `claim_text` prose on `WAL-CLM-RARE-000114`, whose verbatim does not contain
-it. Flagged as STILL OPEN in the 823b8823 commit body on 2026-07-16 and again 2026-08-03 — not yet
-done. Needs mining (and a user-only `corpus_seal`) so the ruling rests on sealed evidence. ★ Capture
-BOTH sides: §3 of the contradictions file shows the same encyclopedia entry also says cobalt is
-*"also required as a necessary cofactor for the production of the thyroid hormone thyroxin"* (3 books).
+# ✔✔ THE "UNSEALED KEYSTONE" WAS A FALSE ALARM — AND THE FALSE ALARM IS THE LESSON
+This section previously read *"★ STILL OPEN — the ruling's keystone sentence is UNSEALED … 3 books
+… needs mining."* **Every part of that is wrong.** The sentence was mined on 2026-07-16, hours after
+it was flagged: `WAL-CLM-IMMORT-000233` (definition; essentials `[cobalt, vitamin-b12]`;
+immortality.txt char_offset 229062; sealed kv=338, commit **`cb5107f4`** — *"Close the 3 cobalt
+follow-ups: mine the keystone claim…"*). Its question is the ruling's own: *"Does the body need
+cobalt or vitamin B12?"* **DO NOT MINE IT. A second copy would be a duplicate claim.**
+
+**★★ HOW A FALSE NULL SURVIVED THREE HANDOFFS AND GOT A TASK SPAWNED FOR IT.** The 2026-08-03 check
+searched for the literal string `pure cobalt requirement`. Corpus verbatims are byte-exact OCR with
+**line wraps inside sentences** — IMMORT-000233 stores it as `"A pure\ncobalt requirement…"` — so the
+search **could not** return a hit, and its NULL agreed with a stale doc bullet, which made it look
+confirmed. The same blindness reported **3** books when there are **4** (`immortality` also wraps it).
+It was then written into the contradictions file, the build-log, the Creator's Log, commit
+`a362a546`, this handoff, AND a spawned mining task — all describing it as *"re-measured, not
+inherited."* The measurement was the weakest link, not the inheritance.
+
+★ **THE RULE THIS BUYS:** any search over book text or claim verbatims is **whitespace-insensitive or
+it is blind** — `re.compile(r"pure\s+cobalt\s+requirement")`, never `"pure cobalt requirement" in t`.
+And confirm existence by **reading the entity's claims**, not by grepping for a string you expect.
+Memory: [[verification-doctrine]] §3.
 
 ---
 

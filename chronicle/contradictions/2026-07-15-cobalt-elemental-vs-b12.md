@@ -27,13 +27,26 @@ alert rests on the provable ground: **he states no amount.** He then rejected th
   `trace_pdm` and rendered **COBALT: COVERED while VITAMIN B12: GAP** on one screen. 2 of 4
   adversarial judges killed that option by asking what the USER would SEE.
 
-**★ STILL OPEN, and it is §4's last bullet, not the ruling itself.** The keystone sentence for the
-B12-only side — *"A pure cobalt requirement is only found in some bacteria and algae"* — is in NO
-sealed claim's verbatim. Re-measured 2026-08-03: it is present in `dddl-3e-2011`, `rare-earths` and
-`epigenetics` (1 occurrence each), so it is genuinely Wallach's, but in our corpus it exists only as
-our own `claim_text` prose on `WAL-CLM-RARE-000114`, whose attached verbatim
-(*"a single cobalt atom is the central metal component of vitamin B12…"*) does not contain it.
-**It should be MINED as a real claim** so the ruling's evidence is sealed rather than paraphrased.
+**✔ NOTHING IS OPEN. The keystone sentence WAS mined — the same day, 2026-07-16.**
+`WAL-CLM-IMMORT-000233` (kind=definition, essentials `[cobalt, vitamin-b12]`, immortality.txt
+char_offset 229062, sealed kv=338 in commit **`cb5107f4`** — *"Close the 3 cobalt follow-ups: mine
+the keystone claim…"*). Its verbatim carries the sentence in full, and its question is the ruling's
+own question: *"Does the body need cobalt or vitamin B12?"* So `823b8823`'s "STILL OPEN" note was
+already obsolete hours after it was written, and §4's last bullet below has been stale ever since.
+
+**★★ CORRECTION OF A CORRECTION — 2026-08-03. This paragraph previously said the sentence was in NO
+sealed claim's verbatim and "should be MINED", claiming it had been *re-measured*. That was FALSE,
+and the measurement is why.** The check searched for the literal string `pure cobalt requirement`,
+but every verbatim in this corpus is byte-exact OCR text with **line wraps inside sentences** —
+IMMORT-000233 stores it as `"A pure\ncobalt requirement…"` — a real newline mid-sentence — so a
+literal substring search **cannot** match it. The same blindness undercounted the books (reported
+"3", actually **4**: `immortality` line 5879 wraps it as `"A pure\ncobalt"` and was missed). A whitespace-insensitive search
+(`re.compile(r"pure\s+cobalt\s+requirement")`) finds all 4 books and the sealed claim immediately.
+**A literal-substring search over line-wrapped OCR text is a blind instrument; its NULL is not
+evidence** ([[null-result-needs-a-scope-check]] — prove the instrument could have returned a hit).
+The false null was propagated into the build-log, the Creator's Log, commit `a362a546`, the session
+handoff, and a spawned mining task, before the claim itself was found by reading cobalt's sealed
+claims rather than grepping for a string.
 
 **In plain terms.** Our board tells you to get 400 micrograms of cobalt a day. Wallach never wrote
 that number for cobalt — it is his number for vitamin B12, which got copied onto cobalt because he
@@ -203,10 +216,14 @@ hardcodes a reduction his own book refuses.
 - **`WAL-CLM-RARE-000014`'s verbatim** — *"250 to 400 mcg per day, especially while preparing for a
   pregnancy and nursing"* — names **neither** substance, and sits in an OCR-garbled region
   (`B,,` for `B12`, `meg` for `mcg`). It cannot by itself settle whose number it is.
-- **"A pure cobalt requirement is only found in some bacteria and algae"** — ★ this sentence, the
-  keystone of Side A, **is in no sealed claim's verbatim.** It exists in the corpus only as our own
-  `claim_text` prose on `WAL-CLM-RARE-000114`, whose attached verbatim does not support it. If the
-  decision rests on it, **it needs to be mined as a real claim first.**
+- **"A pure cobalt requirement is only found in some bacteria and algae"** — ★ **RESOLVED
+  2026-07-16, and this bullet was the stale source that misled two later sessions.** It read: *"this
+  sentence, the keystone of Side A, is in no sealed claim's verbatim … it needs to be mined as a real
+  claim first."* True when written (2026-07-15); **false from `cb5107f4` onward**, which mined it as
+  `WAL-CLM-IMMORT-000233`. Left uncorrected, it was re-asserted on 2026-08-03 by a check whose
+  literal-substring grep could not match the claim's line-wrapped verbatim. **Kept here rather than
+  deleted** — a decision file that quietly edits its own evidence is worse than one that shows where
+  it went stale.
 
 ---
 
