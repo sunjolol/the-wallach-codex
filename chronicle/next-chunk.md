@@ -15,8 +15,9 @@ then asks what to resume. Never a flair-only boot.
 # ★ STATE — measured 2026-08-03
 
 - **Board 84/84**, 0 reds. (21 external · 22 consistency · 39 structural · 2 meta.)
-- **Corpus sealed at `knowledge_version=454`**, `corpus_verify` PASS — 2,268 claims · 7 books ·
-  hashes match. Build fresh, all derived artifacts in sync.
+- **Corpus sealed at `knowledge_version=456`**, `corpus_verify` PASS — 2,268 claims · 7 books ·
+  hashes match. Build fresh, all derived artifacts in sync. *(454 → 455 → 456 in the 2026-08-03
+  review sweep; see the SWEEP block below.)*
 - **Tree clean, everything pushed** — `master` through **`e67196a9`**. (The only file that ever shows
   dirty is `tools/canaries/safe-write-probe.txt`; it rewrites its own nonce every time `safe_write`
   runs. That is normal, not a change.)
@@ -26,6 +27,44 @@ then asks what to resume. Never a flair-only boot.
   below before trusting that label.**
 - Campaign arc this session: backlog **1,900 → 1,716 → 1,505 → 1,292 → 1,283**;
   `claims_verified` **25 → 642**.
+
+---
+
+# ✔ THE 2026-08-03 REVIEW SWEEP — CLOSED (read before touching the ledger)
+
+Luneth's end-of-campaign sweep ran. **Every logged item was verified against the SEALED CORPUS
+before he was shown any of it** — 198 checks, 177 exact matches. That verification, not the log,
+is what the rulings were made on, and it found ten places where the log and the disk disagreed.
+
+**★ The finding worth carrying forward: `claim_text` is UNGATED and had drifted.** The book-typo
+class was applied to `eden/corpus/books/*.txt` and to the verbatims and **stopped there**, so seven
+claims carried the corrected word in Wallach's quote and the old misspelling in our own summary
+beside it (`Blepherisma`, `Walter Nodack` ×2, `Sir Humphrey Davy` ×2, `attributed soley to`,
+`'borytes'`). All six tokens were already 0 in the sources — claims-only drift. `corpus_resnap` and
+the verbatim gates check the quote against the book; **`claim_text` is checked against nothing.**
+Related memory: `claim-text-numbers-unguarded`. No gate covers this today (WISH, R7).
+
+**★ Handoff trap #4 was live in the DATA, not just in the warning.** Two verbatims held LESS than
+the log said: `EPIGEN-000151` was one character short, and `EPIGEN-000096` held 183 chars against a
+logged 479-char restoration — the whole "Animal studies show that a deficiency of Li results in
+reproductive failure, infertility…" sentence was missing from the claim while the log said it had
+been restored. Both invisible to `corpus_resnap` because a shorter span is still a valid substring.
+
+**★ "Whole class" in a log is a claim about the world and needs measuring like any other.** Writing
+the book-typo class into the ledger surfaced that it had never been finished: six of 36 tokens still
+had live occurrences, **two reader-facing** (`IMMORT-000249` "catechens (EGCGs)", `RARE-000376`
+"a constituant of every liquid"). And the `Bl`→`B1` sweep had been **dddl-ONLY** despite the
+build-log reading "48 EDITS ACROSS ALL SIX BOOKS … the whole class" — the same token was live in
+hk and lets-play-doctor. All 8 fixed (each `Bl` site first verified to name its vitamin adjacently,
+per trap #10).
+
+**Ledger state now:** `divergences[]` = 73 · `book_typo_divergences` = 36 token entries, each with a
+count MEASURED against the sealed corpus (a stale measurement asserting a clean state that does not
+exist is worse than no entry). Scope limit written into the key and repeated here: it covers the
+tokens the waves + the class batch corrected. It is **NOT** a proof that every book typo is either
+corrected or listed — no gate establishes that (WISH, R7).
+
+**Still open from the sweep:** DECISION 1 (`books_verified`) — Luneth has not ruled.
 
 ---
 
@@ -90,18 +129,24 @@ sounds like — and `iaiyh` (the other one) has a 125-entry baseline nobody has 
 **There is also no page image or PDF for DDDL anywhere in the repo**, so it cannot be page-read at
 all; its 17 `Bl` were resolved from unambiguous context, not from a page.
 
-### DECISION 2 — the pending-review sweep
-`eden/tools/ratified-divergences.json::pending_review` now holds **five batches / ~213 logged
-judgment calls** awaiting his end-of-campaign sweep, exactly as he asked. Batches:
+### ✔ DECISION 2 — the pending-review sweep — **CLOSED 2026-08-03. Do not re-open.**
+Luneth ran it. All 198 logged items were verified MECHANICALLY against the sealed corpus first
+(177 matched; the rest produced the ten log-vs-disk defects listed in the SWEEP block below), then
+he ratified **all 65** still-unprotected divergences in bulk **and** the **whole book-typo class**.
+`divergences[]` went 7 → 73, plus a new 36-token `book_typo_divergences` register. The historical
+batch list is kept below as the record of what was swept:
 `batch_2026-08-02` (21) · `_nonword` (19 + 3) · `wave1` (41 applied + 41 unlogged divergences +
 8 proposals + 4 extent) · `wave2` (28 + 25 + 4 + 4 + 1) · `wave3-and-booktypos` (11 + 1 + 1 + 1 +
 three prose findings). Two in the first batch are flagged **SEMANTIC** (`borytes`→barytes,
 `Aspartamine`→Aspartame) — corrected from meaning rather than spelling, so check those first.
 
-### DECISION 3 — 12 book-typo proposals were APPLIED, not escalated
-Under his standing ruling ("what we DO fix is when there's a clear typo … these fixes should be
-noted for my review"), the whole class was applied and logged rather than queued. If he wanted those
-held, this is the batch to reverse.
+### ✔ DECISION 3 — the 12 book-typo proposals — **CLOSED 2026-08-03.**
+Ratified with the rest. Two corrections to what this section used to say, both measured:
+(a) the ledger's `proposals_not_applied` headings (wave1 ×8, wave2 ×4) were a **STALE LABEL** —
+all 14 tokens were already applied, swept up by wave 3's whole-class batch without the headings
+being updated, so they read as "awaiting his decision" when the decision had been executed;
+(b) the whole-class batch **was not whole** — six of its 36 tokens still had live occurrences,
+two of them reader-facing. All eight fixed. Both annotated in place in the ledger.
 
 ---
 
@@ -130,7 +175,15 @@ Saved as memory **`books-are-riddled-use-outside-info`**. Verbatim, because the 
 Internal-only (nothing under `eden/tools/` is consumed by `corpus_derive` / `build_embeds` /
 `build.mjs` — keep it that way).
 
-**`divergences` — SEVEN places our text DELIBERATELY differs from a legible page. NEVER "restore":**
+**`divergences` — now **73** entries (was 7), plus a **36-token `book_typo_divergences`
+register**. Places our text DELIBERATELY differs from a legible page. NEVER "restore".** The
+original seven are below; the other 66 came from the 2026-08-03 bulk ratification and each carries
+its reader's evidence verbatim. ★ Three of the new ones are SAFETY-CRITICAL dose divergences in the
+silver-400mcg class: `LETS-000433` (page prints zinc at **50 gm** t.i.d., ours 50 mg — lethal if
+restored), `LETS-000399` (copper at **2 gm**/day, ours 2 mg), `LETS-000051` (folic acid **gm**,
+ours mg). ★ The class register exists because **every book-typo correction is a page-divergence by
+construction** — we fix the .txt, the page keeps the typo — and 48+19 had been applied with exactly
+one written down.
 
 | claim | ours | the page prints |
 |---|---|---|
@@ -190,11 +243,16 @@ British/older spellings (`caesium`, `paraesthesia`, `nitre`), trade names (`Sili
 spellchecker's suggestions carry **no authority**: it wanted `castro` for `gastro`, `penis` for
 `pedis`, `honey` for `HOXEY`.
 
-### 3. The damaged region around **epigenetics Screenshot(629)**
+### 3. The damaged region around **epigenetics Screenshot(629)** — WORSE THAN THIS SAID
 The right-column serial-killer table has bled into the prose as garbage (`Saton Strangler`,
-`707-35 Kile`, `ageuepen es`, a trailing `Minos`). Three dropped lines were restored there; the
-bled-in table was left alone because **no claim quotes it** and it is a structural repair, not a line
-fix. Worth doing before anything is mined from that page.
+`707-35 Kile`, `ageuepen es`, a trailing `Minos`). ★ **CORRECTED 2026-08-03:** "three dropped lines
+were restored there" understates what happened. The repair did NOT repair the damaged paragraph —
+it **APPENDED a clean reconstruction after the table bleed and left the mangled original in place**,
+so `epigenetics.txt` carries three of those typeset lines **TWICE** (offsets ~1261106 and ~1262225):
+`650,000 prescriptions`, `infertility, reduced growth rate`, and the Jekyll/Hyde line. `EPIGEN-000096`
+now quotes the clean copy unambiguously (its first line occurs once), so nothing is broken — but the
+duplication is real and inflates the book's byte count and offsets. Still a structural repair, not a
+line fix. Worth doing before anything is mined from that page.
 
 ### 4. Sibling occurrences deliberately left unread — **38**
 `Tourette's` ×4 and `Alzheimer's` ×19 in epigenetics, `1 ,000` ×15 in lets-play-doctor. Only the ten
@@ -323,7 +381,8 @@ printed page can carry those.
 
 ---
 
-**Board 84/84 · kv=454 · tree clean, pushed through `e67196a9` · backlog 1,283 · claims_verified 642
+**Board 84/84 · kv=456 · tree clean, pushed through `47b7d6cf` · backlog 1,283 · claims_verified 642
 · corroboration instrument EXHAUSTED (read list empty but for the control) · 9 gated classes ·
-TOP PRIORITY = Luneth's call: the pending-review sweep + the `books_verified` ruling, or pivot to
+divergences 73 + a 36-token class register · the pending-review sweep is CLOSED ·
+TOP PRIORITY = Luneth's call: the still-open `books_verified` ruling (DECISION 1), or pivot to
 the element headers.**
