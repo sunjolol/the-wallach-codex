@@ -3445,7 +3445,7 @@ The fat soluble vitamins are absorbed along with other
 common and essential dietary lipids and any health challenge
 or health practice that interferes with the absorption of fats
 (antibiotic use, gall bladder disease, celiac disease, dietary
-fat deficiencies, high fiber diets, mineral oil
+fat deficiencies, extremely high fiber diets, mineral oil
 consumption during meals and overt deficiencies) interferes
 with fat soluble vitamin absorption and function.
 
@@ -3463,7 +3463,7 @@ longer on fat free diets developed inflammation and infections
 of the eyes - these conditions were quickly rever sed when fats
 from butter or cod liver oil were added to the diet.
 
-In 1924, Bloch, showed that
+In 1924, Bloch, a Danish investigator, showed that
 xerophthalmia in children was the same disease described in
 1913 in laboratory rats, and that the disease could be prevented
 or cured by adding liver, butter or cod liver oil to their diet.
@@ -3544,11 +3544,11 @@ exposed to ultraviolet light or sun light.
 
 In 2006 Dr. Michael Holick, a professor of medicine,
 physiology and biophysics at Boston University said, “The
-bottom line is, we now recognize that vitamin D, is important
+bottom line is, we now recognize that vitamin D3 is important
 for health for both children and adults and may help prevent
 many serious chronic diseases.”
 Holick’s studies have shown that deficiencies of
-vitamin D, in adults results in an increase in risk of heart
+vitamin D3 in adults results in an increase in risk of heart
 
 attacks, increased mortality in breast and colon cancer
 
@@ -3579,11 +3579,9 @@ with sun blockers, long sleeves, gloves and hats.
 
 Vitamin D Functions:
 
-Stimulates the active, intestinal
+Stimulates the active, energy requiring intestinal
 
 absorption of calcium.
-
-energy requiring
 
 Stimulates the active phosphate-transport system in
 the intestine.
@@ -3985,7 +3983,7 @@ full blown disease states.
 
 
 More than 79 elements and minerals have been detected
-in animal and human tissue (i.e. - blood, liver, muscle, brain,
+in animal and human tissue (i.e.- blood, liver, muscle, brain,
 bones, connective tissue, etc.) in the 20th and 21st centuries. Their
 presence in human tissue fulfills the first criteria for designating
 an element or mineral an “essential nutrient.” Literally thousands
@@ -4154,7 +4152,7 @@ new form of minerals.
 
 The original chelating agent use was calcium EDTA, a
 man-made amino acid that was created by the Germans just
-prior to WWI to antidote arsenic and lead exposure in chemical
+prior to WWII to antidote arsenic and lead exposure in chemical
 warfare attacks (calcium EDTA is used today for intravenous
 chelation therapy to open up obstructed arteries).
 
@@ -7478,7 +7476,7 @@ Goiter
  
 
 
-Many foods and food additives are known
+Many foods and food additives are known as
 
 “goitrogens” because they interfere with the normal thyroid
 
@@ -9167,7 +9165,7 @@ mineralogy. He separated a mineral called didymium into
 two new and distinct elements, one of which contained
 praseodymium; it was named from two Greek words, prasios,
 which translates to “green,” and didymos, which translates to
-“twin.” The name refers to the green color of the element's
+“twin.” The name refers to the green color of the element’s
 oxide; the second element was neodymium. Praseodymium
 was not produced in its pure elemental state until 1931. It is a
 soft, silvery-white metal that tarnishes to form a green oxide.
@@ -9687,7 +9685,7 @@ Parkinson’s Alzheimer’s palpitations
 increased risk for cancer (i.e. prostate, breast, colon, lung, etc.).
 Selenium acts as an antagonist of mercury. Those at
 risk for chronic mercury toxicity (dental amalgams, industrial
-pollution, etc.) supplement with
+pollution, preservatives, etc.) should supplement with
 selenium prior to, during and after detoxification activities.
 
 Disease, Disease,
@@ -9758,7 +9756,7 @@ Silicon was first produced in its pure state in 1824 by
 the Swedish scientist Jons Jakob Berzelius (1779-1848).
 
 The most important silicon compound is silica, or
-silicon dioxide (SiO,). It exists in two familiar forms in nature:
+silicon dioxide (SiO2). It exists in two familiar forms in nature:
 a crystalline form called quartz, small chips of which are
 found in sand, a a noncrystalline form called flint. Small gems
 and semiprecious stones such as amethyst, opal, agate and
@@ -9891,7 +9889,7 @@ shale at 0.8 ppm, sandstone and limestone at 0.05 ppm, sea
 water at 0.0000025 ppm, and in marine animals accumulates
 up to 410 ppm.
 
-Anders Gustav Ekeberg, aSwedish chemist, discovered
+Anders Gustav Ekeberg, a Swedish chemist, discovered
 the new element in 1802 near the Swedish town of Ytterby,
 which played an important role in the history of chemistry,
 particularly as a source of minerals for the discovery of rare
@@ -10219,7 +10217,7 @@ the small Swedish village of Ytterby, near Stockholm. The
 greatest quantity of yttrium is extracted from monazite sand.
 
 Yttrium is a silver-gray metal that is reactive enough to
-burn spontaneously in air w hen it is cut into tiny pieces.
+burn spontaneously in air when it is cut into tiny pieces.
 
 Yttrium enhances normal cell growth and doubles the
 life span of laboratory species. Exposure of pregnant mice to
@@ -10405,7 +10403,7 @@ Zirconium derives its name from zargun, which is the Arabic
 name for zircon and translates to “gold color.”
 
 Zircon is a crystalline compound of zirconium silicate
-(ZrSiO,). Itis found ina variety of colors, and when the crystal
+(ZrSiO4). It is found in a variety of colors, and when the crystal
 is cut and polished, the stone is regarded as a semiprecious
 gem. Zircon has a very high index of refraction, which means
 that it has the property of bending light through large angles.
@@ -16719,7 +16717,7 @@ Daily consumption of antioxidant rich food and drink is a universal feature of t
 living in Blue Zones and in particular centenarians. These potent carbon compounds
 quench or neutralize free radicals that attack our cells, cell walls, mitochondria and
 physiological processes and increase our risk of cardiovascular disease, cancer,
-Alzheimer's disease and other dementias, cataracts, diabetes and aggressively speed up
+Alzheimer’s disease and other dementias, cataracts, diabetes and aggressively speed up
 the process and damage of aging itself.
 
 A universally agreed upon method of predicting the antioxidant power and free radical
@@ -16785,7 +16783,7 @@ Russet potato 4,649
 Black bean 4,181
 Plum 4,118
 Baby food, (peaches) 6,257
-Baby food, (apple/ blueberry) 4,822
+Baby food, (apple/blueberry) 4,822
 Baby food, (applesauce-strained) 4,123
 Baby food, (bananas) 2,658
 Gala apple 3,903

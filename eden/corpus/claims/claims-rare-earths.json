@@ -3900,7 +3900,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach states chloride is essential for all living species — serving electrochemical and catalytic functions and activating numerous enzymes — and is the basic raw material the stomach uses to make stomach acid (hydrochloric acid, HCl) for protein digestion (pepsin), vitamin B12 absorption (intrinsic factor), and absorption of metallic minerals. Sodium chloride (salt) is the universal source of chloride ions.",
-   "verbatim": "Essential for all living species - electrochemical and catalytic functions, activates numerous enzymes and is the basic raw material for our stomachs to make stomach acid (HC]) for protein digestion (pepsin)",
+   "verbatim": "Essential for all living species - electrochemical and catalytic functions, activates numerous enzymes and is the basic raw material for our stomachs to make stomach acid (HCl) for protein digestion (pepsin)",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -10611,7 +10611,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "In Rare Earths: Forbidden Cures, Wallach catalogs terbium -- a rare-earth metal -- in his periodic-table survey. His entry records only its natural distribution: 0.9 parts-per-million in igneous rock down to trace levels, 0.0015 in land plants, and 0.0004 parts-per-million in land animals, accumulating in bone.",
-   "verbatim": "Tb -terbium is found in igneous rock\nat 0.9 ppm; shale at 0.58 ppm; sandstone\nat 0.41 ppm; limestone at 0.071 ppm; land\nplants at 0.0015 ppm; marine animals at\n0.006 to 0.01 ppm; land animals at 0.0004\nppm (accumulates in mammalian bone).",
+   "verbatim": "Tb -Terbium is found in igneous rock\nat 0.9 ppm; shale at 0.58 ppm; sandstone\nat 0.41 ppm; limestone at 0.071 ppm; land\nplants at 0.0015 ppm; marine animals at\n0.006 to 0.01 ppm; land animals at 0.0004\nppm (accumulates in mammalian bone).",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -13059,7 +13059,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "In Dr. Wallach's framework, sulphur (sulfur) is one of the 60 essential elements, metals and minerals — the inorganic nutrients he holds the body requires. It appears in the same list as calcium, magnesium, selenium, zinc and the other minerals he considers dietary essentials. Its place on that list marks sulfur as a required nutrient in his classification, not an optional extra.",
-   "verbatim": "Table 12-5. The 60 Essential Elements,\nMetals and Minerals\n\nTable 12-7. The Essential\nAmino Acids\n\nAluminum Gold\nArsenic Hafnium\nBarium Holmium\nBeryllium Hydrogen\nBoron lodine\nBromine Iron\n\nCalcium Lanthanum\nCarbon Lithium\nCerium Lutecium\nCesium Magnesium\nChloride Manganese\nChromium Molybdenum\nCobalt Neodymium\nCopper Nickle\nDysprosium Niobium\nErbium Nitrogen\nEuropium Oxygen\nGadolinium Phosphorus\nGallium Potassium\nGermanium Praseodymium\n\nTable 12-6. Essential Vitamins\nfor Human Health\n\nRhenium\nRubidium\nSamarium\nScandium\nSelenium\nSilica\nSilver\nSodium\nStrontium\nSulphur",
+   "verbatim": "Table 12-5. The 60 Essential Elements,\nMetals and Minerals\n\nTable 12-7. The Essential\nAmino Acids\n\nAluminum Gold\nArsenic Hafnium\nBarium Holmium\nBeryllium Hydrogen\nBoron Iodine\nBromine Iron\n\nCalcium Lanthanum\nCarbon Lithium\nCerium Lutecium\nCesium Magnesium\nChloride Manganese\nChromium Molybdenum\nCobalt Neodymium\nCopper Nickle\nDysprosium Niobium\nErbium Nitrogen\nEuropium Oxygen\nGadolinium Phosphorus\nGallium Potassium\nGermanium Praseodymium\n\nTable 12-6. Essential Vitamins\nfor Human Health\n\nRhenium\nRubidium\nSamarium\nScandium\nSelenium\nSilica\nSilver\nSodium\nStrontium\nSulphur",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",

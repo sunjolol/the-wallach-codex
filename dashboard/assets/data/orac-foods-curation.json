@@ -111,7 +111,7 @@
   ],
   "omit": [
     { "raw": "Baby food, (peaches)", "reason": "the signed-off demo omits baby food from the league tables" },
-    { "raw": "Baby food, (apple/ blueberry)", "reason": "the signed-off demo omits baby food from the league tables" },
+    { "raw": "Baby food, (apple/blueberry)", "reason": "the signed-off demo omits baby food from the league tables. Raw key re-pointed 2026-08-02: the corpus verbatim carried a spurious space after the slash (IMMORT-000263), page-verified and corrected, and this curation layer is keyed on the raw string" },
     { "raw": "Baby food, (applesauce-strained)", "reason": "the signed-off demo omits baby food from the league tables" },
     { "raw": "Baby food, (bananas)", "reason": "the signed-off demo omits baby food from the league tables" }
   ]

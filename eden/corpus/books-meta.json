@@ -31,7 +31,7 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/rare-earths-forbidden-cures.txt",
-      "content_sha256": "958db5beb1dd4717d332e8dd28e74b81acc48122563bbb209a49969e7d7a0534",
+      "content_sha256": "6014d8cbcb5e679a657a43e2d165882b03e9bba9a1e2327176fba20467a6aaf1",
       "content_bytes": 1178881,
       "line_count": 37868,
       "hash_basis": "lf_normalized_utf8",
@@ -49,7 +49,7 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
-      "content_sha256": "d2c822af97592460ae848fda6f0fdc00fb56152aab6219c69eb37ef0fe463e4f",
+      "content_sha256": "afccb39adb04cc5b8da9ee1c72c49fc2274c8dc4a8f59cd13b8802555a4edf4a",
       "content_bytes": 515946,
       "line_count": 12536,
       "hash_basis": "lf_normalized_utf8",
@@ -68,8 +68,8 @@
         "Gerhard N. Schrauzer"
       ],
       "file": "eden/corpus/books/epigenetics.txt",
-      "content_sha256": "0e693bf8be1e562c3e2e5fed5b88a1570974bb57bee10f4bc5c7e8b2a57137d5",
-      "content_bytes": 1558892,
+      "content_sha256": "9c22e83ddb45ee72a0795c6ca8a5f20e172d52183a5967fd5971ee615780dead",
+      "content_bytes": 1558900,
       "line_count": 32095,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",
@@ -85,9 +85,9 @@
         "Joel D. Wallach"
       ],
       "file": "eden/corpus/books/immortality.txt",
-      "content_sha256": "5470f24195abd52c49844f86d42af9aa2d85035c9ba3c7eeb5920c80792b9071",
-      "content_bytes": 800068,
-      "line_count": 22683,
+      "content_sha256": "87cdbe71b12bc4392de7ec0fe1a2b2a04bc0c4d0800640d3e0b8a9859abf6666",
+      "content_bytes": 800130,
+      "line_count": 22681,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",
       "ocr_confidence_band": "high",

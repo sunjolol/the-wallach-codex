@@ -19649,9 +19649,9 @@ Linotenic Acid
 
 Arachidonic Acid
 
-Cholesterol?
-while not generally considered a classic essential pd, its deficiency does result in disease states (e..,
-Alzheimer’s disease, type 2 diabetes, erectile dysfunction, low-T, menopause, adrenal exhaustion, etc).
+Cholesterol*
+*While not generally considered a classic essential lipid, its deficiency does result in disease states (e.g.,
+Alzheimer’s disease, type 2 diabetes, erectile dysfunction, low-T, menopause, adrenal exhaustion, etc.).
 The Recommended Dietary Allowances (RDAs) have been prepared by the Food
 and Nutrition Board since 1941. "RDAs are defined as the levels of intake of
 essential nutrients that, on the basis of scientific knowledge, are judged by the
@@ -19892,7 +19892,7 @@ EPIGENETICS
 
 Vitamin D function
 
-This vitamin has two active forms: D, the plant source and D; the animal source,
+This vitamin has two active forms: D2 the plant source and D3 the animal source,
 which is created by exposing the skin deposits of cholesterol to UV light. Vitamin
 D is required for the absorption, metabolism, and proper deposition of calcium
 and phosphorus in the bones and teeth.
@@ -20412,7 +20412,7 @@ EPIGENETICS
 
 PMS
 
-Seborrheic dermatitis,
+Seborrheic dermatitis
 
 Itchy scaly skin
 
@@ -21778,7 +21778,7 @@ also been used as medicine for thousands of years in the practice of Ayruvedic
 medicine.
 
 Sir Humphrey Davy, a distinguished English chemist of the 16th century gave
-the name “aluminum’ to the metal of clay.
+the name “aluminum” to the metal of clay.
 
 The Danish physicist, Hans Christian Oerstad in 1825 “discovered”
 electromagnetics, and was the first to purify aluminum by treating alumina-
@@ -22867,8 +22867,8 @@ less. Intrinsic factor is a mucoprotein enzyme known as Castle's Intrinsic Facto
 and is part of normal gastric secretions.
 
 If a person has hypochlorhydria (low stomach acid—usually a NaCl deficiency)
-the intrinsic factor will not work, and By, cobalt is not absorbed. This is
-why doctors frequently give By, shots to older people on salt-restricted diets.
+the intrinsic factor will not work, and B12 cobalt is not absorbed. This is
+why doctors frequently give B12 shots to older people on salt-restricted diets.
 Sublingual (under the tongue) and oral spray B,, is available; plant derived cobalt
 
 is very bioavailable, however, because of low salt diets and cobalt depleted soils,
@@ -22939,7 +22939,7 @@ serpentine); marine plants at 1 ppm; land plants at 0.23 ppm; marine animals 0.2
 = 1.0 ppm; land animals 0.075 ppm; and it is accumulated by RNA and insulin.
 
 Chromium oxide was employed by the Chinese in the Qin dynasty over 2,000
-years ago in the late 34 century BC to coat the metal weapons found in Xi'an
+years ago in the late 3rd century BC to coat the metal weapons found in Xi'an
 with the Terracotta Army. The ancient bronze tips of crossbow bolts and swords
 found at the site had very little oxidation or corrosion because the bronze was
 deliberately coated with a thin layer of chromium oxide.
@@ -24217,7 +24217,7 @@ Carpal Tunnel Syndrome
 
 Convulsions
 
-Infertility (.e., failure to ovulate, testicular atrophy)
+Infertility (i.e., failure to ovulate, testicular atrophy)
 
 Still births (miscarriages)
 
@@ -25266,7 +25266,7 @@ of ingested Y can be detected in newborn mice.
 Yb - Ytterbium is a rare earth element found in igneous rocks at 3 ppm; shale
 at 1.8 ppm; sandstone at 1.3 ppm; limestone at 0.43 ppm; land plants at 0.0015
 ppm; marine animals at 0.02 ppm; land animals at 0.00012 ppm (accumulates up
-to 0.3 ppm in bone, teeth and liver).
+to 1.3 ppm in bone, teeth and liver).
 
 Exposure of Yb to pregnant mice produces a rapid placental transfer; 14% of
 the ingested Yb can be detected in the newborn mice.
@@ -27247,7 +27247,7 @@ Vanadium 50 - 100 mcg
 Zinc 15 - 30 mg
 
 
-INA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, MT. and Pizzorno, J:
+NA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, M.T. and Pizzorno, J.:
 ‘The Encyclopedia of Natural Medicine. ed, 2012.
 
 Liquid Plant Derived Coloidal Minerals One Ounce/ 100 pounds/day PPM

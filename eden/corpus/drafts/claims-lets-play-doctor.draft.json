@@ -5210,7 +5210,7 @@
    ],
    "symptoms": [],
    "claim_text": "For Alzheimer's disease (progressive memory loss with later difficulties in arousal and motor function), Wallach advises a treatment of: germanium 5 ml intramuscularly every other day for 24 days, then oral germanium 150 mg twice daily; hydergine 6-12 mg per day; piracetam/choline 1.6 grams four times daily; vasopressin (Diapid) one whiff per nostril four times daily; centrophenoxine (Lucidril) 6.2-8.0 grams per day; lecithin (phosphatidyl choline) 2,500 mg three times daily; baseline supplements including colloidal minerals; betaine hydrochloride and pancreatic enzymes 75-200 mg three times daily; oral and intravenous hydrogen peroxide; vitamin B-1 200 mg three times daily; vitamin E 1200 IU daily; and intravenous chelation.",
-   "verbatim": "should include germanium IM 5 ml of standard solution every other day for 24 days\nfollowed by oral germanium at 150 mg b.i.d.;\nhydergine 6-12 mg/day; piracetam/choline\n1.6 grams q.i.d.; vasopressin (Diapid) at a rate\nof one whiff in each nostril q.i.d. which delivers a total daily dose of 12-16 units of U.S.P.\nPosterior Pituitary; centrophenoxine (Lucidril)\n6.2-8.0 gram/day. Lecithin at 2,500 mg t.i.d. is\nvery useful at all stages (phosphatydil choline\nis more efficient). Don't forget the baseline\nnutritional supplements ( including colloidal\nminerals), betaine HCl and pancreatic enzymes 75-200 mg t.i.d., oral andIVH202; 200\nmg vitamin B-l t.i.d., vitamin E at 1200 iu daily\nand IV chelation will be of value.",
+   "verbatim": "should include germanium IM 5 ml of standard solution every other day for 24 days\nfollowed by oral germanium at 150 mg b.i.d.;\nhydergine 6-12 mg/day; piracetam/choline\n1.6 grams q.i.d.; vasopressin (Diapid) at a rate\nof one whiff in each nostril q.i.d. which delivers a total daily dose of 12-16 units of U.S.P.\nPosterior Pituitary; centrophenoxine (Lucidril)\n6.2-8.0 gram/day. Lecithin at 2,500 mg t.i.d. is\nvery useful at all stages (phosphatydil choline\nis more efficient). Don't forget the baseline\nnutritional supplements ( including colloidal\nminerals), betaine HCl and pancreatic enzymes 75-200 mg t.i.d., oral and IV H2O2; 200\nmg vitamin B-1 t.i.d., vitamin E at 1200 iu daily\nand IV chelation will be of value.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -5260,7 +5260,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 168099
+    "char_offset": 168101
    },
    "dose": null,
    "tags": [
@@ -5294,7 +5294,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 168476
+    "char_offset": 168478
    },
    "dose": {
     "amount": 1000,
@@ -5341,7 +5341,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 169551
+    "char_offset": 169553
    },
    "dose": null,
    "tags": [
@@ -5375,7 +5375,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 170471
+    "char_offset": 170473
    },
    "dose": null,
    "tags": [
@@ -5411,7 +5411,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 170611
+    "char_offset": 170613
    },
    "dose": null,
    "tags": [
@@ -5461,7 +5461,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 171163
+    "char_offset": 171165
    },
    "dose": null,
    "tags": [
@@ -5503,7 +5503,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 173433
+    "char_offset": 173435
    },
    "dose": null,
    "tags": [
@@ -5543,7 +5543,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 174058
+    "char_offset": 174060
    },
    "dose": null,
    "tags": [
@@ -5577,7 +5577,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 174664
+    "char_offset": 174666
    },
    "dose": {
     "amount": 50,
@@ -5629,7 +5629,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 175423
+    "char_offset": 175425
    },
    "dose": null,
    "tags": [
@@ -5666,7 +5666,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 175839
+    "char_offset": 175841
    },
    "dose": null,
    "tags": [
@@ -5702,7 +5702,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 176626
+    "char_offset": 176628
    },
    "dose": null,
    "tags": [
@@ -5745,7 +5745,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 177787
+    "char_offset": 177789
    },
    "dose": null,
    "tags": [
@@ -5799,7 +5799,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 180128
+    "char_offset": 180130
    },
    "dose": null,
    "tags": [
@@ -5846,7 +5846,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 181353
+    "char_offset": 181355
    },
    "dose": null,
    "tags": [
@@ -5885,7 +5885,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 182709
+    "char_offset": 182711
    },
    "dose": null,
    "tags": [
@@ -5925,7 +5925,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 183086
+    "char_offset": 183088
    },
    "dose": null,
    "tags": [
@@ -5966,7 +5966,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 183481
+    "char_offset": 183483
    },
    "dose": null,
    "tags": [
@@ -6003,7 +6003,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 184229
+    "char_offset": 184231
    },
    "dose": null,
    "tags": [
@@ -6042,7 +6042,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 185331
+    "char_offset": 185333
    },
    "dose": null,
    "tags": [
@@ -6079,7 +6079,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 185479
+    "char_offset": 185481
    },
    "dose": {
     "amount": 50,
@@ -6127,7 +6127,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 185801
+    "char_offset": 185803
    },
    "dose": null,
    "tags": [
@@ -6166,7 +6166,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 186597
+    "char_offset": 186599
    },
    "dose": null,
    "tags": [
@@ -6202,7 +6202,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 187240
+    "char_offset": 187242
    },
    "dose": null,
    "tags": [
@@ -6250,7 +6250,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 188358
+    "char_offset": 188360
    },
    "dose": null,
    "tags": [
@@ -6290,7 +6290,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 189371
+    "char_offset": 189373
    },
    "dose": null,
    "tags": [
@@ -6335,7 +6335,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 190917
+    "char_offset": 190919
    },
    "dose": null,
    "tags": [
@@ -6370,7 +6370,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 192188
+    "char_offset": 192190
    },
    "dose": null,
    "tags": [
@@ -6414,7 +6414,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 193660
+    "char_offset": 193662
    },
    "dose": null,
    "tags": [
@@ -6448,7 +6448,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 194665
+    "char_offset": 194667
    },
    "dose": null,
    "tags": [
@@ -6485,7 +6485,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 195194
+    "char_offset": 195196
    },
    "dose": {
     "amount": 1000,
@@ -6533,7 +6533,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 195624
+    "char_offset": 195626
    },
    "dose": null,
    "tags": [
@@ -6570,7 +6570,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196283
+    "char_offset": 196285
    },
    "dose": null,
    "tags": [
@@ -6610,7 +6610,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196488
+    "char_offset": 196490
    },
    "dose": null,
    "tags": [
@@ -6652,7 +6652,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196906
+    "char_offset": 196908
    },
    "dose": null,
    "tags": [
@@ -6693,7 +6693,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 197903
+    "char_offset": 197905
    },
    "dose": null,
    "tags": [
@@ -6721,7 +6721,7 @@
    ],
    "symptoms": [],
    "claim_text": "Breast cysts (fibrocystic breast disease) are painful but benign, with normal breast tissue overgrown by scar tissue and multiple cysts. Prevention and treatment center on avoiding methyl xanthines (caffeine, coffee, tea, chocolate). Wallach's treatment is elimination of methyl xanthines from the diet, essential fatty acids at 5 grams three times daily, and vitamin E at 800-1200 IU per day.",
-   "verbatim": "Treatment includes elimination of methyl\nxanthines from the diet, essential fatty acids 5\ngm t.i.d. and vitamin E at 800-1 ,200 IU per day.",
+   "verbatim": "Treatment includes elimination of methyl\nxanthines from the diet, essential fatty acids 5\ngm t.i.d. and vitamin E at 800-1,200 IU per day.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -6729,7 +6729,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 198627
+    "char_offset": 198629
    },
    "dose": null,
    "tags": [
@@ -6764,7 +6764,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 198767
+    "char_offset": 198768
    },
    "dose": null,
    "tags": [
@@ -6806,7 +6806,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 199400
+    "char_offset": 199401
    },
    "dose": null,
    "tags": [
@@ -6854,7 +6854,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 199999
+    "char_offset": 200000
    },
    "dose": null,
    "tags": [
@@ -6896,7 +6896,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 200719
+    "char_offset": 200720
    },
    "dose": null,
    "tags": [
@@ -6932,7 +6932,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 201340
+    "char_offset": 201341
    },
    "dose": null,
    "tags": [
@@ -6971,7 +6971,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 202204
+    "char_offset": 202205
    },
    "dose": null,
    "tags": [
@@ -7018,7 +7018,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 203359
+    "char_offset": 203360
    },
    "dose": null,
    "tags": [
@@ -7054,7 +7054,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 204342
+    "char_offset": 204343
    },
    "dose": null,
    "tags": [
@@ -7095,7 +7095,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 204840
+    "char_offset": 204841
    },
    "dose": null,
    "tags": [
@@ -7128,7 +7128,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 207226
+    "char_offset": 207227
    },
    "dose": null,
    "tags": [
@@ -7163,7 +7163,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 208428
+    "char_offset": 208429
    },
    "dose": null,
    "tags": [
@@ -7201,7 +7201,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 208937
+    "char_offset": 208938
    },
    "dose": null,
    "tags": [
@@ -7236,7 +7236,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 209239
+    "char_offset": 209240
    },
    "dose": null,
    "tags": [
@@ -7271,7 +7271,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 209469
+    "char_offset": 209470
    },
    "dose": null,
    "tags": [
@@ -7308,7 +7308,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 209941
+    "char_offset": 209942
    },
    "dose": null,
    "tags": [
@@ -7345,7 +7345,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 210326
+    "char_offset": 210327
    },
    "dose": null,
    "tags": [
@@ -7380,7 +7380,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 210732
+    "char_offset": 210733
    },
    "dose": null,
    "tags": [
@@ -7424,7 +7424,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 210886
+    "char_offset": 210887
    },
    "dose": null,
    "tags": [
@@ -7461,7 +7461,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211148
+    "char_offset": 211149
    },
    "dose": null,
    "tags": [
@@ -7496,7 +7496,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211359
+    "char_offset": 211360
    },
    "dose": null,
    "tags": [
@@ -7531,7 +7531,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211546
+    "char_offset": 211547
    },
    "dose": null,
    "tags": [
@@ -7566,7 +7566,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211841
+    "char_offset": 211842
    },
    "dose": null,
    "tags": [
@@ -7602,7 +7602,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212106
+    "char_offset": 212107
    },
    "dose": null,
    "tags": [
@@ -7637,7 +7637,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212220
+    "char_offset": 212221
    },
    "dose": null,
    "tags": [
@@ -7673,7 +7673,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212312
+    "char_offset": 212313
    },
    "dose": null,
    "tags": [
@@ -7710,7 +7710,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212518
+    "char_offset": 212519
    },
    "dose": null,
    "tags": [
@@ -7749,7 +7749,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212638
+    "char_offset": 212639
    },
    "dose": null,
    "tags": [
@@ -7784,7 +7784,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212934
+    "char_offset": 212935
    },
    "dose": null,
    "tags": [
@@ -7820,7 +7820,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 213178
+    "char_offset": 213179
    },
    "dose": null,
    "tags": [
@@ -7855,7 +7855,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 213316
+    "char_offset": 213317
    },
    "dose": null,
    "tags": [
@@ -7890,7 +7890,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 213442
+    "char_offset": 213443
    },
    "dose": null,
    "tags": [
@@ -7931,7 +7931,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 216639
+    "char_offset": 216640
    },
    "dose": null,
    "tags": [
@@ -7970,7 +7970,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 217938
+    "char_offset": 217939
    },
    "dose": null,
    "tags": [
@@ -8017,7 +8017,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 218945
+    "char_offset": 218946
    },
    "dose": null,
    "tags": [
@@ -8055,7 +8055,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 220555
+    "char_offset": 220556
    },
    "dose": null,
    "tags": [
@@ -8092,7 +8092,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 221391
+    "char_offset": 221392
    },
    "dose": null,
    "tags": [
@@ -8127,7 +8127,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 221933
+    "char_offset": 221934
    },
    "dose": null,
    "tags": [
@@ -8178,7 +8178,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 222549
+    "char_offset": 222550
    },
    "dose": null,
    "tags": [
@@ -8216,7 +8216,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 223239
+    "char_offset": 223240
    },
    "dose": null,
    "tags": [
@@ -8250,7 +8250,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 225011
+    "char_offset": 225012
    },
    "dose": null,
    "tags": [
@@ -8286,7 +8286,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 225424
+    "char_offset": 225425
    },
    "dose": null,
    "tags": [
@@ -8323,7 +8323,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 227824
+    "char_offset": 227825
    },
    "dose": null,
    "tags": [
@@ -8360,7 +8360,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 228374
+    "char_offset": 228375
    },
    "dose": null,
    "tags": [
@@ -8394,7 +8394,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 228816
+    "char_offset": 228817
    },
    "dose": {
     "amount": 75,
@@ -8438,7 +8438,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 229467
+    "char_offset": 229468
    },
    "dose": null,
    "tags": [
@@ -8474,7 +8474,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 230058
+    "char_offset": 230059
    },
    "dose": null,
    "tags": [
@@ -8508,7 +8508,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 230391
+    "char_offset": 230392
    },
    "dose": null,
    "tags": [
@@ -8540,7 +8540,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 230867
+    "char_offset": 230868
    },
    "dose": null,
    "tags": [
@@ -8583,7 +8583,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 231561
+    "char_offset": 231562
    },
    "dose": null,
    "tags": [
@@ -8623,7 +8623,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 232795
+    "char_offset": 232796
    },
    "dose": null,
    "tags": [
@@ -8665,7 +8665,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 233860
+    "char_offset": 233861
    },
    "dose": null,
    "tags": [
@@ -8708,7 +8708,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 235256
+    "char_offset": 235257
    },
    "dose": null,
    "tags": [
@@ -8750,7 +8750,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 236492
+    "char_offset": 236493
    },
    "dose": null,
    "tags": [
@@ -8788,7 +8788,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 237870
+    "char_offset": 237871
    },
    "dose": null,
    "tags": [
@@ -8829,7 +8829,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 238630
+    "char_offset": 238631
    },
    "dose": null,
    "tags": [
@@ -8868,7 +8868,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 240485
+    "char_offset": 240486
    },
    "dose": null,
    "tags": [
@@ -8905,7 +8905,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 241644
+    "char_offset": 241645
    },
    "dose": null,
    "tags": [
@@ -8939,7 +8939,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 241944
+    "char_offset": 241945
    },
    "dose": null,
    "tags": [
@@ -8980,7 +8980,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 242143
+    "char_offset": 242144
    },
    "dose": null,
    "tags": [
@@ -9015,7 +9015,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 243345
+    "char_offset": 243346
    },
    "dose": null,
    "tags": [
@@ -9059,7 +9059,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 244097
+    "char_offset": 244098
    },
    "dose": null,
    "tags": [
@@ -9089,7 +9089,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 245280
+    "char_offset": 245281
    },
    "dose": null,
    "tags": [
@@ -9136,7 +9136,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 245741
+    "char_offset": 245742
    },
    "dose": null,
    "tags": [
@@ -9174,7 +9174,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 247415
+    "char_offset": 247416
    },
    "dose": null,
    "tags": [
@@ -9216,7 +9216,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 247941
+    "char_offset": 247942
    },
    "dose": null,
    "tags": [
@@ -9250,7 +9250,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 248708
+    "char_offset": 248709
    },
    "dose": null,
    "tags": [
@@ -9289,7 +9289,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 248846
+    "char_offset": 248847
    },
    "dose": null,
    "tags": [
@@ -9334,7 +9334,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 250106
+    "char_offset": 250107
    },
    "dose": null,
    "tags": [
@@ -9368,7 +9368,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 251108
+    "char_offset": 251109
    },
    "dose": null,
    "tags": [
@@ -9406,7 +9406,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 256265
+    "char_offset": 256266
    },
    "dose": null,
    "tags": [
@@ -9446,7 +9446,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 258544
+    "char_offset": 258545
    },
    "dose": null,
    "tags": [
@@ -9489,7 +9489,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 259190
+    "char_offset": 259191
    },
    "dose": null,
    "tags": [
@@ -9542,7 +9542,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 260249
+    "char_offset": 260250
    },
    "dose": null,
    "tags": [
@@ -9596,7 +9596,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 262510
+    "char_offset": 262511
    },
    "dose": null,
    "tags": [
@@ -9631,7 +9631,7 @@
    ],
    "symptoms": [],
    "claim_text": "Dermatitis (atopic dermatitis, eczema, and dermatitis herpetiformis) is a common skin disease that Wallach says is treated incorrectly with cortisone or prednisone creams; 97% of these patients have wheat-gluten food allergies and almost as many are sensitive to cow's milk, with the same lesions occurring in the small-intestine lining and causing serious, life-threatening, immune-depleting malabsorption (a precursor to diabetes, cancer, arthritis, and birth defects). His treatment for all three forms is a gluten-free and cow's-milk-free diet, a pulse test on frequently eaten foods, essential fatty acids at 5 gm four times daily, para-aminobenzoic acid (PABA) at 200 mg four times daily, betaine HCl and digestive enzymes at 75-200 mg each three times daily before meals, vitamin A at 300,000 IU per day as beta carotene, zinc at 50 mg three times daily, and colloidal minerals on top of the base-line supplement program; healing the intestinal lesions takes 60-90 days.",
-   "verbatim": "Treatment of all three of the above manifestations of dermatitis should include a gluten free\nand cow's milk free diet. It is also prudent to\ndo a \"pulse test\" on frequently consumed\nfoods to determine if they are also affecting\nyou. The supplementation of essential fatty\nacids are 5 gm q. i. d. ,PABA at 200 mg q.i.d. and\nbetaine HCl and digestive enzymes at 75-200\nmg each t.i.d. before meals should be added\non top of the base line supplement program.\nHave patience, it will take 60-90 days to heal\nthe intestinal lesions to the point where you\ncan absorb nutrients efficiently. Vitamin A at\n300,000 IU/day as beta carotene and zinc at 50\nmg t.i.d. and colloidal minerals.",
+   "verbatim": "Treatment of all three of the above manifestations of dermatitis should include a gluten free\nand cow's milk free diet. It is also prudent to\ndo a \"pulse test\" on frequently consumed\nfoods to determine if they are also affecting\nyou. The supplementation of essential fatty\nacids are 5 gm q.i.d., PABA at 200 mg q.i.d. and\nbetaine HCl and digestive enzymes at 75-200\nmg each t.i.d. before meals should be added\non top of the base line supplement program.\nHave patience, it will take 60-90 days to heal\nthe intestinal lesions to the point where you\ncan absorb nutrients efficiently. Vitamin A at\n300,000 IU/day as beta carotene and zinc at 50\nmg t.i.d. and colloidal minerals.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -9639,7 +9639,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 264493
+    "char_offset": 264494
    },
    "dose": null,
    "tags": [
@@ -9691,7 +9691,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 267716
+    "char_offset": 267715
    },
    "dose": null,
    "tags": [
@@ -9731,7 +9731,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 268600
+    "char_offset": 268599
    },
    "dose": null,
    "tags": [
@@ -9776,7 +9776,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 269859
+    "char_offset": 269858
    },
    "dose": null,
    "tags": [
@@ -9816,7 +9816,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 272041
+    "char_offset": 272040
    },
    "dose": null,
    "tags": [
@@ -9850,7 +9850,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 272440
+    "char_offset": 272439
    },
    "dose": null,
    "tags": [
@@ -9886,7 +9886,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 273246
+    "char_offset": 273245
    },
    "dose": null,
    "tags": [
@@ -9923,7 +9923,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 273667
+    "char_offset": 273666
    },
    "dose": null,
    "tags": [
@@ -9968,7 +9968,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 274514
+    "char_offset": 274513
    },
    "dose": null,
    "tags": [
@@ -10006,7 +10006,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 275677
+    "char_offset": 275676
    },
    "dose": null,
    "tags": [
@@ -10043,7 +10043,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 276423
+    "char_offset": 276422
    },
    "dose": null,
    "tags": [
@@ -10080,7 +10080,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 277452
+    "char_offset": 277451
    },
    "dose": null,
    "tags": [
@@ -10118,7 +10118,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 279228
+    "char_offset": 279227
    },
    "dose": null,
    "tags": [
@@ -10160,7 +10160,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 280301
+    "char_offset": 280300
    },
    "dose": null,
    "tags": [
@@ -10199,7 +10199,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 281612
+    "char_offset": 281611
    },
    "dose": null,
    "tags": [
@@ -10237,7 +10237,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 282617
+    "char_offset": 282616
    },
    "dose": null,
    "tags": [
@@ -10277,7 +10277,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 283113
+    "char_offset": 283112
    },
    "dose": null,
    "tags": [
@@ -10309,7 +10309,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 285324
+    "char_offset": 285323
    },
    "dose": null,
    "tags": [
@@ -10342,7 +10342,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 288388
+    "char_offset": 288387
    },
    "dose": null,
    "tags": [
@@ -10379,7 +10379,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 289430
+    "char_offset": 289429
    },
    "dose": null,
    "tags": [
@@ -10420,7 +10420,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 290918
+    "char_offset": 290917
    },
    "dose": null,
    "tags": [
@@ -10467,7 +10467,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 292427
+    "char_offset": 292426
    },
    "dose": null,
    "tags": [
@@ -10499,7 +10499,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 292879
+    "char_offset": 292878
    },
    "dose": null,
    "tags": [
@@ -10541,7 +10541,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 293787
+    "char_offset": 293786
    },
    "dose": null,
    "tags": [
@@ -10575,7 +10575,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 294027
+    "char_offset": 294026
    },
    "dose": null,
    "tags": [
@@ -10611,7 +10611,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 294706
+    "char_offset": 294705
    },
    "dose": null,
    "tags": [
@@ -10651,7 +10651,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 295006
+    "char_offset": 295005
    },
    "dose": null,
    "tags": [
@@ -10689,7 +10689,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 296099
+    "char_offset": 296098
    },
    "dose": null,
    "tags": [
@@ -10732,7 +10732,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 296887
+    "char_offset": 296886
    },
    "dose": null,
    "tags": [
@@ -10770,7 +10770,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 297728
+    "char_offset": 297727
    },
    "dose": null,
    "tags": [
@@ -10815,7 +10815,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 298177
+    "char_offset": 298176
    },
    "dose": null,
    "tags": [
@@ -10849,7 +10849,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 298750
+    "char_offset": 298749
    },
    "dose": null,
    "tags": [
@@ -10890,7 +10890,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 299436
+    "char_offset": 299435
    },
    "dose": null,
    "tags": [
@@ -10946,7 +10946,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 300749
+    "char_offset": 300748
    },
    "dose": null,
    "tags": [
@@ -10985,7 +10985,7 @@
    ],
    "symptoms": [],
    "claim_text": "Food allergies (sensitivities) are a concern for everyone, because the celiac-disease-type changes they cause in the intestines prevent absorption of essential nutrients; Wallach says anyone with a chronic disease (cancer, diabetes, arthritis, heart disease) and/or emotional problems (hypoglycemia, depression, neurosis, schizophrenia, hyperactivity, paranoia) has food allergies, identifiable by the Coca pulse test and a diet diary. His treatment includes religious use of hypoallergenic baseline nutritional supplements (no corn, wheat, soy, egg, or milk); avoiding vaccinations of egg, blood, or beef origin; vitamin C to bowel tolerance; vitamin A at 300,000 international units a day as beta carotene; bioflavonoids at 150-300 milligrams a day; zinc at 50 milligrams three times a day; essential fatty acids at 5 grams three times a day; selenium at 200 micrograms three times a day; chromium at 50-200 micrograms three times a day; betaine hydrochloride and pancreatic enzymes at 75-500 milligrams three times a day before meals; adrenal cortical extract; autoimmune urine therapy; five-day rotation diets; and avoidance of offending foods (intestinal repair takes up to 90 days, and intravenous hydrogen peroxide speeds healing).",
-   "verbatim": "Treatment of food allergies includes religious\nuse of the base line nutritional supplements\n(be sure to use hypoallergenic supplements -\n- no corn, wheat, soy, egg or milk), avoid\nvaccinations that have egg, blood or beef\norigins; vitamin C to bowel tolerance levels,\nvitamin A at 300,000 IU/day as beta carotene,\nbioflavonoids at 150-300 mg/day, zinc at 50\nmg t.i.d., essential fatty acids at 5 gm t.i.d.,\nseleniumat 200 mcg t.i.d. , chromium at 50-200\nmcg t.i.d., betaine HCl and pancreatic en",
+   "verbatim": "Treatment of food allergies includes religious\nuse of the base line nutritional supplements\n(be sure to use hypoallergenic supplements -\n- no corn, wheat, soy, egg or milk), avoid\nvaccinations that have egg, blood or beef\norigins; vitamin C to bowel tolerance levels,\nvitamin A at 300,000 IU/day as beta carotene,\nbioflavonoids at 150-300 mg/day, zinc at 50\nmg t.i.d., essential fatty acids at 5 gm t.i.d.,\nselenium at 200 mcg t.i.d. , chromium at 50-200\nmcg t.i.d., betaine HCl and pancreatic en",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -10993,7 +10993,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 304943
+    "char_offset": 304942
    },
    "dose": null,
    "tags": [
@@ -11166,7 +11166,7 @@
    ],
    "symptoms": [],
    "claim_text": "Geographic tongue (benign migratory glossitis), like allergic 'shiners,' is a red flag that you are not absorbing vitamin B-3, B-2, B-6, B-5, B-12, folic acid, or zinc — usually from malabsorption due to celiac-disease-like changes in the small intestine; it shows as irregular denuded areas on the top and sides of the tongue. Wallach's treatment includes avoiding any offending food allergens, autoimmune urine therapy, zinc at 50 milligrams three times a day, betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals, B-complex intramuscularly in the early stages of therapy, and getting on the baseline supplement program.",
-   "verbatim": "Treatment of geographic tongue includes\navoidance of any offending food allergens,\nautoimmune urine therapy,zinc at 50 mg t.i.d.,\nbetaine HCl and pancreatic enzymes at 75-200\nmg t.i.d. before meals, B-complex IM in the\nearly stages of therapy, be sure to get on the\nbase line supplement program.",
+   "verbatim": "Treatment of geographic tongue includes\navoidance of any offending food allergens,\nautoimmune urine therapy, zinc at 50 mg t.i.d.,\nbetaine HCl and pancreatic enzymes at 75-200\nmg t.i.d. before meals, B-complex IM in the\nearly stages of therapy, be sure to get on the\nbase line supplement program.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -11219,7 +11219,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312358
+    "char_offset": 312359
    },
    "dose": null,
    "tags": [
@@ -11250,7 +11250,7 @@
    ],
    "symptoms": [],
    "claim_text": "Glaucoma is caused by increased pressure inside the eye that changes its shape and obstructs the normal flow of fluid; Wallach says food allergies are among the most common causes of increased eye pressure, so a pulse test is warranted. He notes orthodox treatment is limited to a prescription of pilocarpine 4% every 15 minutes, surgery, or cortisone. His approach is to do pulse testing and eliminate foods you are sensitive to, betaine hydrochloride at 75-200 milligrams three times a day before meals, vitamin C to bowel tolerance, rutin at 20-50 milligrams three times a day, and the baseline nutritional supplement.",
-   "verbatim": "Treatment of glaucoma by the \"orthodox\"\ndoctor is limited to a prescription of pilocarpine 4% every 15 minutes, surgery or cortisone. You must do pulse testing and eliminate foods you are sensitive to, betaine HCl at\n75-200 mg t.i.d. before meals, vitamin C\ntobowel tolerance, nitin at 20-50 mg t.i.d. , and\nthe base line nutritional supplement",
+   "verbatim": "Treatment of glaucoma by the \"orthodox\"\ndoctor is limited to a prescription of pilocarpine 4% every 15 minutes, surgery or cortisone. You must do pulse testing and eliminate foods you are sensitive to, betaine HCl at\n75-200 mg t.i.d. before meals, vitamin C\ntobowel tolerance, rutin at 20-50 mg t.i.d. , and\nthe base line nutritional supplement",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -11258,7 +11258,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312012
+    "char_offset": 312013
    },
    "dose": null,
    "tags": [
@@ -11295,7 +11295,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 313854
+    "char_offset": 313855
    },
    "dose": null,
    "tags": [
@@ -11336,7 +11336,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 314548
+    "char_offset": 314549
    },
    "dose": null,
    "tags": [
@@ -11369,7 +11369,7 @@
    ],
    "symptoms": [],
    "claim_text": "Growing pains are common in American children but, Wallach says, totally unnecessary and a red flag for one or more nutritional deficiencies. Prevention is a baseline nutritional supplement rich in calcium, magnesium, selenium, vitamin E, and vitamin C. His treatment of growing pains includes calcium and magnesium at 2,000 milligrams and 1,000 milligrams per day, selenium at 50-200 micrograms twice a day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.",
-   "verbatim": "Treatment of growing pains includes calcium\nand magnesium at 2,000 mg and 1 ,000 mg per\nday, selenium at 50-200 mcg b.i.d. and betaine\nHCl and pancreatic\" enzymes at 75-200 mg\nt.i.d. before meals.",
+   "verbatim": "Treatment of growing pains includes calcium\nand magnesium at 2,000 mg and 1,000 mg per\nday, selenium at 50-200 mcg b.i.d. and betaine\nHCl and pancreatic\" enzymes at 75-200 mg\nt.i.d. before meals.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -11377,7 +11377,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 315342
+    "char_offset": 315343
    },
    "dose": null,
    "tags": [
@@ -11655,7 +11655,7 @@
    ],
    "symptoms": [],
    "claim_text": "Heartburn (dyspepsia, reflux) is one of the more common complaints in the USA; Wallach attributes it to stress and aging decreasing stomach-acid production, which lets opportunistic bacteria grow and generate the gas and acid behind the 'belch, burp, and bloat' syndrome. Prevention includes small meals, no fried foods, and eight glasses of water a day to prevent constipation. His treatment includes betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before each meal; for acute attacks, commercial products advertised on TV (such as Rolaids) and herbs including peppermint (Mentha piperita) and angelica (Angelica archangelica).",
-   "verbatim": "Treatment should include betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before\neach meal; for acute attacks of \"heartburn\"\nincludes any ofthe commercial products advertised on TV (i.e. , R-O-L-A-I-D-S) and herbs\nto include peppennint (Mentha piperita) and\nangelica (Angelica archangelica",
+   "verbatim": "Treatment should include betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before\neach meal; for acute attacks of \"heartburn\"\nincludes any ofthe commercial products advertised on TV (i.e. , R-O-L-A-I-D-S) and herbs\nto include peppermint (Mentha piperita) and\nangelica (Angelica archangelica",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12400,7 +12400,7 @@
    ],
    "symptoms": [],
    "claim_text": "Impotence (inability to have an erection) can stem from many causes — an unstimulating or domineering partner, guilt, malnutrition, hypothyroidism, low blood pressure, adrenal exhaustion, hypoglycemia, or post-surgical (prostate) damage — and resolving any associated problem first is key. Treatment: relaxation, spending time with your mate, and setting up romantic situations; acupuncture; homeopathy; herbs including ginseng (Panax ginseng), nux vomica (Strychnos nux vomica), sarsaparilla (Smilax officinalis), saw palmetto (Serenoa serrulata), and Zumbani; oral testosterone (glandular food supplements plus testosterone intramuscularly); and the baseline nutrition program with plant-derived colloidal minerals. Wallach also recommends the Masters-and-Johnson technique as a self-help approach: Step 1 nongenital pleasuring (massage, reflexology), Step 2 genital pleasuring (foreplay), and Step 3 nondemand lovemaking (neither partner expecting to reach a climax).",
-   "verbatim": "others!!!!), acupuncture, homeopathy and\nherbs to include ginseng (Panax ginseng),\nnux vomica (Strychnos nux vomica), sarsaparilla\n(Smilax officinalis), saw palmetto (Serenoa\nserrulata), Zumbani, oral testosterone (i.e., glandular food supplements and testosterone IM)\ncan be of value. Don't forget the base line\nnutrition program and include the plant derived colloidal minerals ( most satisfied wives\nask for it by the 55 gallon dnim !!).",
+   "verbatim": "others!!!!), acupuncture, homeopathy and\nherbs to include ginseng (Panax ginseng),\nnux vomica (Strychnos nux vomica), sarsaparilla\n(Smilax officinalis), saw palmetto (Serenoa\nserrulata), Zumbani, oral testosterone (i.e., glandular food supplements and testosterone IM)\ncan be of value. Don't forget the base line\nnutrition program and include the plant derived colloidal minerals ( most satisfied wives\nask for it by the 55 gallon drum !!).",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12442,7 +12442,7 @@
    ],
    "symptoms": [],
    "claim_text": "Incontinence (inability to control the bowels or bladder) can be caused by many diseases (benign prostatic hyperplasia, muscular dystrophy, multiple sclerosis, cancer, amyotrophic lateral sclerosis, stroke), injury (including surgery and obstetrical procedures), food allergies, and hypoglycemia — correcting the underlying disease or injury is a must. Treatment: Kegel's exercises (contracting the pelvic floor as if to stop a bowel movement) about 250-500 per day; essential fatty acids at 5 grams three times daily; selenium at 500 micrograms per day; vitamin E at 800-1,200 international units per day; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; avoidance and rotation diets for offending food allergens; chromium at 25-200 micrograms per day; and herbs saw palmetto (Serenoa serrulata) and ginseng (Panax ginseng).",
-   "verbatim": "Treatment of incontinence should include\nKegel's exercises (i.e. , con-tracting the floor of\nthe pelvis as if trying to stop a bowel movement) at about 250-500/day, essential fatty\nacids at 5 gm t.i.d., selenium at 500 mcg/day,\nvitamin E at 800-1,200 IU/day, betaine HCl\nand pancreatic enzymes at 75-200 mg t.i.d.\nbefore meals, avoidance and rotation diets of\noffending food allergens, chromium at 25-200\nmcg/day",
+   "verbatim": "Treatment of incontinence should include\nKegel's exercises (i.e., con-tracting the floor of\nthe pelvis as if trying to stop a bowel movement) at about 250-500/day, essential fatty\nacids at 5 gm t.i.d., selenium at 500 mcg/day,\nvitamin E at 800-1,200 IU/day, betaine HCl\nand pancreatic enzymes at 75-200 mg t.i.d.\nbefore meals, avoidance and rotation diets of\noffending food allergens, chromium at 25-200\nmcg/day",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12486,7 +12486,7 @@
    ],
    "symptoms": [],
    "claim_text": "Infarction is the death of an area of tissue because its blood supply was cut off by a plug or thrombus (a blood clot, or a clump of tumor or bacterial cells); in vital areas of the heart or brain a stroke or heart attack can be fatal, and Wallach stresses prevention is always better than trying to repair after the fact. Treatment and repair of infarction: vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; selenium at 500-1,000 micrograms per day orally or intramuscularly; vitamin A at 300,000 international units per day as beta carotene; chelation with EDTA; hydrogen peroxide intravenously; and betaine hydrochloride and pancreatic enzymes at 200-500 milligrams three times daily, 15 minutes before meals. If clumps of bacteria are involved (as in rheumatic fever), antibiotics (penicillin or tetracycline) are required.",
-   "verbatim": "Prevention is always\ntetter than trying to \"come from behind\" and\nrepair a \"stroke\" or \"heart attack.\"\nTreatment and repair of infarction should include vitamin C to bowel tolerance, vitamin E\nat 800-1,200 IU/day, selenium at 500-1,000\nmcg/day orally or IM, vitamin A at 300,000 IU/\nday as beta carotene, chelation with EDTA,\nhydrogen peroxide IV, betaine HCl and pancreatic enzymes at 200-500 mg t.i.d. 15 minutes before meals",
+   "verbatim": "Prevention is always\nbetter than trying to \"come from behind\" and\nrepair a \"stroke\" or \"heart attack.\"\nTreatment and repair of infarction should include vitamin C to bowel tolerance, vitamin E\nat 800-1,200 IU/day, selenium at 500-1,000\nmcg/day orally or IM, vitamin A at 300,000 IU/\nday as beta carotene, chelation with EDTA,\nhydrogen peroxide IV, betaine HCl and pancreatic enzymes at 200-500 mg t.i.d. 15 minutes before meals",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12494,7 +12494,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 345831
+    "char_offset": 345830
    },
    "dose": null,
    "tags": [
@@ -12539,7 +12539,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 347102
+    "char_offset": 347101
    },
    "dose": null,
    "tags": [
@@ -12583,7 +12583,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 347950
+    "char_offset": 347949
    },
    "dose": null,
    "tags": [
@@ -12632,7 +12632,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 348652
+    "char_offset": 348651
    },
    "dose": null,
    "tags": [
@@ -12680,7 +12680,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 349547
+    "char_offset": 349546
    },
    "dose": null,
    "tags": [
@@ -12725,7 +12725,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 350537
+    "char_offset": 350536
    },
    "dose": null,
    "tags": [
@@ -12763,7 +12763,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 351600
+    "char_offset": 351599
    },
    "dose": null,
    "tags": [
@@ -12803,7 +12803,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 352319
+    "char_offset": 352318
    },
    "dose": null,
    "tags": [
@@ -12846,7 +12846,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 353300
+    "char_offset": 353299
    },
    "dose": null,
    "tags": [
@@ -12887,7 +12887,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 354039
+    "char_offset": 354038
    },
    "dose": null,
    "tags": [
@@ -12917,7 +12917,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 354743
+    "char_offset": 354742
    },
    "dose": null,
    "tags": [
@@ -12953,7 +12953,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 355276
+    "char_offset": 355275
    },
    "dose": null,
    "tags": [
@@ -12988,7 +12988,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 356317
+    "char_offset": 356316
    },
    "dose": null,
    "tags": [
@@ -13020,7 +13020,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 356832
+    "char_offset": 356831
    },
    "dose": null,
    "tags": [
@@ -13055,7 +13055,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 357673
+    "char_offset": 357672
    },
    "dose": null,
    "tags": [
@@ -13104,7 +13104,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 358860
+    "char_offset": 358859
    },
    "dose": null,
    "tags": [
@@ -13149,7 +13149,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 360705
+    "char_offset": 360704
    },
    "dose": null,
    "tags": [
@@ -13184,7 +13184,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 361682
+    "char_offset": 361681
    },
    "dose": null,
    "tags": [
@@ -13220,7 +13220,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 361903
+    "char_offset": 361902
    },
    "dose": null,
    "tags": [
@@ -13256,7 +13256,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 362529
+    "char_offset": 362528
    },
    "dose": null,
    "tags": [
@@ -13292,7 +13292,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 363467
+    "char_offset": 363466
    },
    "dose": null,
    "tags": [
@@ -13337,7 +13337,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 364107
+    "char_offset": 364106
    },
    "dose": null,
    "tags": [
@@ -13376,7 +13376,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 364746
+    "char_offset": 364745
    },
    "dose": null,
    "tags": [
@@ -13417,7 +13417,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 365696
+    "char_offset": 365695
    },
    "dose": null,
    "tags": [
@@ -13451,7 +13451,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 366805
+    "char_offset": 366804
    },
    "dose": null,
    "tags": [
@@ -13490,7 +13490,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 367291
+    "char_offset": 367290
    },
    "dose": null,
    "tags": [
@@ -13526,7 +13526,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 368245
+    "char_offset": 368244
    },
    "dose": null,
    "tags": [
@@ -13574,7 +13574,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 368917
+    "char_offset": 368916
    },
    "dose": null,
    "tags": [
@@ -13612,7 +13612,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 369768
+    "char_offset": 369767
    },
    "dose": null,
    "tags": [
@@ -13649,7 +13649,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 370596
+    "char_offset": 370595
    },
    "dose": null,
    "tags": [
@@ -13683,7 +13683,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 371099
+    "char_offset": 371098
    },
    "dose": null,
    "tags": [
@@ -13734,7 +13734,7 @@
     "page": 144,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 373128
+    "char_offset": 373127
    },
    "dose": null,
    "tags": [
@@ -13772,7 +13772,7 @@
     "page": 145,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 374493
+    "char_offset": 374492
    },
    "dose": null,
    "tags": [
@@ -13812,7 +13812,7 @@
     "page": 145,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 375987
+    "char_offset": 375986
    },
    "dose": null,
    "tags": [
@@ -13847,7 +13847,7 @@
     "page": 146,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 377521
+    "char_offset": 377520
    },
    "dose": null,
    "tags": [
@@ -13881,7 +13881,7 @@
     "page": 146,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 378950
+    "char_offset": 378949
    },
    "dose": null,
    "tags": [
@@ -13923,7 +13923,7 @@
     "page": 146,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 380152
+    "char_offset": 380151
    },
    "dose": null,
    "tags": [
@@ -13955,7 +13955,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 380940
+    "char_offset": 380939
    },
    "dose": null,
    "tags": [
@@ -13989,7 +13989,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 381235
+    "char_offset": 381234
    },
    "dose": null,
    "tags": [
@@ -14035,7 +14035,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 382028
+    "char_offset": 382027
    },
    "dose": null,
    "tags": [
@@ -14087,7 +14087,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 383613
+    "char_offset": 383612
    },
    "dose": null,
    "tags": [
@@ -14119,7 +14119,7 @@
     "page": 148,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 384634
+    "char_offset": 384633
    },
    "dose": null,
    "tags": [
@@ -14159,7 +14159,7 @@
     "page": 148,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 385109
+    "char_offset": 385108
    },
    "dose": null,
    "tags": [
@@ -14193,7 +14193,7 @@
     "page": 148,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 386302
+    "char_offset": 386301
    },
    "dose": null,
    "tags": [
@@ -14232,7 +14232,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 387384
+    "char_offset": 387383
    },
    "dose": null,
    "tags": [
@@ -14262,7 +14262,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 387730
+    "char_offset": 387729
    },
    "dose": null,
    "tags": [
@@ -14298,7 +14298,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 388269
+    "char_offset": 388268
    },
    "dose": null,
    "tags": [
@@ -14337,7 +14337,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 389346
+    "char_offset": 389345
    },
    "dose": null,
    "tags": [
@@ -14378,7 +14378,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 389672
+    "char_offset": 389671
    },
    "dose": null,
    "tags": [
@@ -14416,7 +14416,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 390874
+    "char_offset": 390873
    },
    "dose": null,
    "tags": [
@@ -14453,7 +14453,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 391392
+    "char_offset": 391391
    },
    "dose": null,
    "tags": [
@@ -14488,7 +14488,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 391580
+    "char_offset": 391579
    },
    "dose": null,
    "tags": [
@@ -14527,7 +14527,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 393242
+    "char_offset": 393241
    },
    "dose": null,
    "tags": [
@@ -14561,7 +14561,7 @@
     "page": 151,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 394149
+    "char_offset": 394148
    },
    "dose": null,
    "tags": [
@@ -14604,7 +14604,7 @@
     "page": 151,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 395790
+    "char_offset": 395789
    },
    "dose": null,
    "tags": [
@@ -14638,7 +14638,7 @@
     "page": 151,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 397101
+    "char_offset": 397100
    },
    "dose": null,
    "tags": [
@@ -14680,7 +14680,7 @@
     "page": 152,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 399750
+    "char_offset": 399749
    },
    "dose": null,
    "tags": [
@@ -14722,7 +14722,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 400521
+    "char_offset": 400520
    },
    "dose": null,
    "tags": [
@@ -14760,7 +14760,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 401281
+    "char_offset": 401280
    },
    "dose": null,
    "tags": [
@@ -14798,7 +14798,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 401819
+    "char_offset": 401818
    },
    "dose": null,
    "tags": [
@@ -14841,7 +14841,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 401981
+    "char_offset": 401980
    },
    "dose": null,
    "tags": [
@@ -14879,7 +14879,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 402680
+    "char_offset": 402679
    },
    "dose": null,
    "tags": [
@@ -14927,7 +14927,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 403238
+    "char_offset": 403237
    },
    "dose": null,
    "tags": [
@@ -14963,7 +14963,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 404688
+    "char_offset": 404687
    },
    "dose": null,
    "tags": [
@@ -14997,7 +14997,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 405501
+    "char_offset": 405500
    },
    "dose": null,
    "tags": [
@@ -15039,7 +15039,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 405940
+    "char_offset": 405939
    },
    "dose": null,
    "tags": [
@@ -15081,7 +15081,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 406775
+    "char_offset": 406774
    },
    "dose": null,
    "tags": [
@@ -15124,7 +15124,7 @@
     "page": 155,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 409634
+    "char_offset": 409633
    },
    "dose": null,
    "tags": [
@@ -15156,7 +15156,7 @@
     "page": 155,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 411055
+    "char_offset": 411054
    },
    "dose": null,
    "tags": [
@@ -15191,7 +15191,7 @@
     "page": 156,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 412668
+    "char_offset": 412667
    },
    "dose": null,
    "tags": [
@@ -15227,7 +15227,7 @@
     "page": 156,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 412907
+    "char_offset": 412906
    },
    "dose": null,
    "tags": [
@@ -15278,7 +15278,7 @@
     "page": 156,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 414862
+    "char_offset": 414861
    },
    "dose": null,
    "tags": [
@@ -15313,7 +15313,7 @@
     "page": 157,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 415946
+    "char_offset": 415945
    },
    "dose": null,
    "tags": [
@@ -15352,7 +15352,7 @@
     "page": 157,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 417567
+    "char_offset": 417566
    },
    "dose": null,
    "tags": [
@@ -15392,7 +15392,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 418782
+    "char_offset": 418781
    },
    "dose": null,
    "tags": [
@@ -15430,7 +15430,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 419820
+    "char_offset": 419819
    },
    "dose": null,
    "tags": [
@@ -15472,7 +15472,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 420508
+    "char_offset": 420507
    },
    "dose": null,
    "tags": [
@@ -15518,7 +15518,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 421163
+    "char_offset": 421162
    },
    "dose": null,
    "tags": [
@@ -15557,7 +15557,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 422282
+    "char_offset": 422281
    },
    "dose": null,
    "tags": [
@@ -15602,7 +15602,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 423072
+    "char_offset": 423071
    },
    "dose": null,
    "tags": [
@@ -15640,7 +15640,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 424210
+    "char_offset": 424209
    },
    "dose": null,
    "tags": [
@@ -15685,7 +15685,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 426393
+    "char_offset": 426392
    },
    "dose": null,
    "tags": [
@@ -15731,7 +15731,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 425663
+    "char_offset": 425662
    },
    "dose": null,
    "tags": [
@@ -15766,7 +15766,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 427375
+    "char_offset": 427374
    },
    "dose": null,
    "tags": [
@@ -15806,7 +15806,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 427841
+    "char_offset": 427840
    },
    "dose": null,
    "tags": [
@@ -15849,7 +15849,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 428742
+    "char_offset": 428741
    },
    "dose": null,
    "tags": [
@@ -15887,7 +15887,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 429199
+    "char_offset": 429198
    },
    "dose": null,
    "tags": [
@@ -15933,7 +15933,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 429580
+    "char_offset": 429579
    },
    "dose": null,
    "tags": [
@@ -15967,7 +15967,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 430334
+    "char_offset": 430333
    },
    "dose": null,
    "tags": [
@@ -16002,7 +16002,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 430577
+    "char_offset": 430576
    },
    "dose": null,
    "tags": [
@@ -16038,7 +16038,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 431527
+    "char_offset": 431526
    },
    "dose": null,
    "tags": [
@@ -16109,7 +16109,7 @@
    ],
    "symptoms": [],
    "claim_text": "Psoriasis is a cosmetically disfiguring dermatitis ('the heartbreak of psoriasis'), marked by dry, sharply demarcated, silvery scaling plaques that appear mainly behind the joints (elbows and knees), on the scalp, and behind the ears. Wallach attributes it to celiac-type changes in the intestines that cause malabsorption of essential nutrients, and advises a pulse test to identify specific food allergens. Treatment should include avoiding offending food allergens, rotation diets, folic acid at 15-25 milligrams per day, vitamin A at 300,000 IU per day as beta carotene, lecithin at 2,500 milligrams three times a day with meals, flaxseed oil at one tablespoon twice a day, vitamin E at 800-1,200 IU per day, zinc at 50 milligrams three times a day, copper at 2 milligrams per day, selenium at 500-1,000 micrograms per day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams per day. Topical herbal washes and topical vitamin A & D creams are of palliative value.",
-   "verbatim": "Treatment of psoriasis should include avoidance of offending food allergens, rotation\ndiets, folic acid at 1 5-25 mg per day, vitamin A\nat 300,000 IUper day as beta carotene, lecithin\nat 2,500 mg t.i.d. with meals, flaxseed oil at one\ntbsp. bid., vitamin E at 800-1 ,200 IU per day,\nzinc at 50 mg t.i.d., copper at 2 mg per day,\nselenium at 500-1,000 mcg per day and betaine HCl and pancreatic enzymes at 75-200\nmg per day",
+   "verbatim": "Treatment of psoriasis should include avoidance of offending food allergens, rotation\ndiets, folic acid at 15-25 mg per day, vitamin A\nat 300,000 IU per day as beta carotene, lecithin\nat 2,500 mg t.i.d. with meals, flaxseed oil at one\ntbsp. b.i.d., vitamin E at 800-1,200 IU per day,\nzinc at 50 mg t.i.d., copper at 2 mg per day,\nselenium at 500-1,000 mcg per day and betaine HCl and pancreatic enzymes at 75-200\nmg per day",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -16117,7 +16117,7 @@
     "page": 162,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 432972
+    "char_offset": 432971
    },
    "dose": null,
    "tags": [
@@ -18704,7 +18704,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 179347
+    "char_offset": 179349
    },
    "dose": null,
    "tags": [
@@ -18738,7 +18738,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 408570
+    "char_offset": 408569
    },
    "dose": null,
    "tags": [
@@ -18774,7 +18774,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 375987
+    "char_offset": 375986
    },
    "dose": null,
    "tags": [
@@ -19143,7 +19143,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 353775
+    "char_offset": 353774
    },
    "dose": null,
    "tags": [
@@ -19177,7 +19177,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 313003
+    "char_offset": 313004
    },
    "dose": null,
    "tags": [
@@ -19211,7 +19211,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 255753
+    "char_offset": 255754
    },
    "dose": null,
    "tags": [
@@ -19243,7 +19243,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 428496
+    "char_offset": 428495
    },
    "dose": null,
    "tags": [
@@ -19275,7 +19275,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 405711
+    "char_offset": 405710
    },
    "dose": null,
    "tags": [
@@ -19309,7 +19309,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 301512
+    "char_offset": 301511
    },
    "dose": null,
    "tags": [
@@ -19343,7 +19343,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 227674
+    "char_offset": 227675
    },
    "dose": null,
    "tags": [
@@ -19444,7 +19444,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 383681
+    "char_offset": 383680
    },
    "dose": null,
    "tags": [
@@ -19479,7 +19479,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 378699
+    "char_offset": 378698
    },
    "dose": null,
    "tags": [
@@ -19683,7 +19683,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 399345
+    "char_offset": 399344
    },
    "dose": null,
    "tags": [
@@ -19749,7 +19749,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 378344
+    "char_offset": 378343
    },
    "dose": null,
    "tags": [
