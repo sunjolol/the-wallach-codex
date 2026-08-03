@@ -104,6 +104,598 @@
    "decided_at": "2026-08-03",
    "evidence": "'Aspartamine' is not a substance; the sweetener sold as Nutrasweet and Equal is aspartame. hk.txt printed it twice (body text p258 + the index entry 'Aspartamine 258'); both were corrected, so the sealed source no longer matches the printed page. Ruled in the review sweep after verification found the correction had been logged as applied but had only ever reached claim_text — the QUOTE still said 'Aspartamine' for a day.",
    "note": "★ THIS ENTRY IS A CLASS, NOT A ONE-OFF. Every book-typo correction creates a page-divergence by construction: we change the .txt, the page keeps the typo. 48+19 such corrections have been applied and only this one is written down here. A future page-read of any of the others will 'find' our text wrong. Flagged 2026-08-03; not resolved unilaterally."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000436",
+   "ours": "(see page_prints)",
+   "page_prints": "(Helianthus annus) soaked for 30 minutes.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE PAGE AND OUR TEXT DISAGREE and the divergence is not yet logged. At 22x the page unambiguously prints 'annus' - five letters, a single u. The sunflower's botanical name is Helianthus annuus L.; 'annus' is Latin for 'year' and is not a valid epithet, so this is a book typo of exactly the class already logged for 'Leo nurus cardiaca' -> 'Leonurus cardiaca'. The flagged hunk ours='annuus' pdf='annus' is therefore the second OCR being FAITHFUL to a defective page, not catching an error in ours. Rest of the verbatim read at 14x and exact: 'Treatment for spider bites should include soak-ing bite",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000109",
+   "ours": "be synthesized by the human from linoleic\nacid.",
+   "page_prints": "be synthesized by the human from lenoleic acid.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "This is the inverse of the usual finding and it needs saying plainly: the SECOND OCR WAS RIGHT and the page really does print 'lenoleic'. At 14x the comparison is decisive because the same sentence prints 'linoleic' correctly two lines above -- there the second character is a dotted i, and in 'lenoleic' it is an undotted, closed-loop e. So the page carries a typo of a substance name in an EFA passage, and OUR corpus already holds the corrected 'linoleic'. That is a real, deliberate divergence between our text and a legible page, and it is NOT on the ratified list, so nothing currently protects",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000202",
+   "ours": "3,100 ug/day, however, much of the",
+   "page_prints": "3,100 ug/day, however,, much of the",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "The PAGE carries a doubled comma: at 8x it unmistakably prints 'however,,' with two commas before 'much'. Our text holds the single comma, i.e. our text already silently corrects a mechanical page typo. Reporting it so it is on the record rather than re-derived later — this is an undisclosed (unlogged) divergence and belongs in eden/tools/ratified-divergences.json, but nothing on disk should change. Safety-critical figures were read at 8x and match ours exactly: 'almost 400 times more hair lithium', 'ranges from 650 to 3,100 ug/day' (lowercase u, not µ — ours matches). The flagged 'the'/'th' h",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000234",
+   "ours": "lacrimation (tearing), cheilosis, angular stomatitis",
+   "page_prints": "lacrimation (tearing), chelosis, angular stomatitis",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "At 16x the page unambiguously prints 'chelosis' — no i between the e and the l. 'Chelosis' is not a word; the sign is cheilosis (Greek cheilos, lip — cracking at the lip corners), and it sits in a riboflavin-deficiency list beside angular stomatitis, which is the same lesion, so the term is certain from context as well as spelling. Our text already carries the correction, so nothing on disk should change; I am reporting it because it is an undisclosed divergence not in eden/tools/ratified-divergences.json, and the second OCR agreed with the page, meaning a future corroboration-only pass would ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000008",
+   "ours": "aneurysm / cerebral hemorrhage  |  exostosis (\"lipping\" of epiphyseal plates)  |  weakness / liver cirrhosis  |  Shwachman's syndrome",
+   "page_prints": "aneutysm / cerebral hemorrage  |  otosis (\"lipping\" of epiphyseal / plates)  |  weakness / liver cirritosis  |  Swachman's syndrome",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "The PAGE carries FIVE defects in this one list; our corpus already holds the corrected form of all five, so nothing needs changing. Recording them so the divergence is documented rather than re-derived.\n(a) page 'aneutysm' (a-n-e-u-T-y-s-m; the glyph has a full ascender with crossbar, read at 10x) - ours 'aneurysm'. CORRECT.\n(b) page 'hemorrage' (single h in the middle) - ours 'hemorrhage'. CORRECT.\n(c) page 'cirritosis' (c-i-r-r-i-t-o-s-i-s, read at 26x) - ours 'cirrhosis'. CORRECT.\n(d) page 'Swachman's' (no h after the S, read at 26x, straight apostrophe) - ours 'Shwachman's'. CORRECT; the e",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-EPIGEN-000372",
+   "ours": "post-translational",
+   "page_prints": "Common post-transitional modifications of lysine include methylation producing methyl-, dimethyl-, and trimethyllysine.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Whole verbatim compared word-for-word against the page. Every other word, comma and period matches exactly: 'Lysine (Lys) is an essential amino acid with the codons AAA and AAG. Lysine is a base, as are arginine and histidine. Lysine participates in hydrogen bonding and a general base in catalysis. ... include methylation producing methyl-, dimethyl-, and trimethyllysine.' The ONLY difference is the flagged token, and it goes the other way from what the hunk implies: the second OCR ('transitional') was reading the page CORRECTLY, and the page itself is wrong. 'Post-translational modification' ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000262",
+   "ours": "Atlanta",
+   "page_prints": "In a CDC (Atlantha, GA) and WHO survey in 1990,",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Whole verbatim compared word-for-word; every number verified at 9x: 1990, 17th, 2000, 24th, 2005, 46th, 2008, 48th — all match ours, as do every semicolon and comma. The three flagged hunks were the second OCR dropping a leading character ('2000'->'000', 'in'->'n', 'and'->'nd'); ours is right in all three. The one REAL difference is one nobody flagged: the page misspells Atlanta as 'Atlantha' (read at 26x, unambiguous A-t-l-a-n-t-h-a). Ours already carries the corrected proper noun — same class as the ratified 'Dean Hamer'/'Dean Harmer' entry. Keep ours; logging it so the divergence is on the ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000116",
+   "ours": "(see page_prints)",
+   "page_prints": "Hyperirratability  |  “Bi-polar” disesase  |  Dr. Jykell/Mr. Hyde rages (“Bad Seeds”)  |  Negative nitrogen balance( protein loss)  |  Diabetes (ulcers/gangrene) (Fig. 11-6)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "All 21 lines compared item by item. THE FLAGGED HUNK GOES THE OTHER WAY: the second OCR's 'Hyperirratability' was reading the page correctly — the page really does print it, and ours already carries the corrected spelling. Two MORE page typos on the same list that nobody flagged, both already corrected in ours: the page prints '“Bi-polar” disesase' (ours: disease) and 'Dr. Jykell/Mr. Hyde' (ours: Dr. Jekyll). All three read at 11x, unambiguous. This falls squarely under the 'book typo -> corrected spelling = DOCTRINE, not a divergence' class already recorded in ratified-divergences.json for th",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-EPIGEN-000393",
+   "ours": "(see page_prints)",
+   "page_prints": "residue is susceptible to numerous post-transitional modifications; it can undergo",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "The flagged hunk was NOT a second-OCR error — the second pass agreed with the page. The PAGE genuinely prints 'post-transitional'. The universal term in molecular biology is post-translational modification (PTM), and the sentence's own examples (glycosylation, phosphorylation) are textbook PTMs, so 'transitional' is a clear book typo. Our text already carries the fix. Everything else in the whole verbatim matches the page character-for-character, including the acetyl-CoA / succinyl-CoA hyphens, the two semicolons, 'alpha ketobutyrate' (unhyphenated), and the joined line-wrap 'acetyl-CoA'. This",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000099",
+   "ours": "(see page_prints)",
+   "page_prints": "Mad Cow Disease in cattle (same disease as enzootic antoxia-sheep)  /  Krotzfeld-Jakob Disease (Humans-madcow disease)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "TWO divergences found, both with OUR side correct — and one of them was NOT in the flagged hunks, which is the whole-verbatim-read paying for itself. (1) The page prints 'antoxia-sheep' where ours has 'ataxia-sheep'; the immediately preceding list item on the same page prints 'Enzootic ataxia in sheep' correctly, so the book contradicts itself two lines apart and ours took the right one. This hunk was NOT flagged by either detector. (2) The page prints 'Krotzfeld-Jakob Disease'; ours holds 'Creutzfeldt-Jakob Disease'. The parenthetical '(Humans-madcow disease)' identifies it unambiguously as C",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000298",
+   "ours": "(see page_prints)",
+   "page_prints": "chicory (Chichorium intybus) and dandelion",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 30x: the page unambiguously prints C-h-i-c-h-o-r-i-u-m. The genus of chicory is Cichorium; 'Chichorium' is a book typo and ours already carries the correction. The OTHER flagged hunk, 'Glycyrrhiza' -> 'Glycynhiza', was the second OCR's error — the page prints 'Glycyrrhiza glabra' correctly and ours matches. Whole verbatim verified, every dose read at 14x: 'vitamin B-12 at 1,000 mcg/day', 'folic acid at 5-10 mg/day', 'catechin at 1.5 gm/day', 'germanium at 25-50 mg/day', 'selenium at 200-500 mcg/day', 'SuperOxy Plus at one ounce on awakening and retiring.' All match, including the comma",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000101",
+   "ours": "(see page_prints)",
+   "page_prints": "Consists of two (2) plates of glass with a solution of diocene (indigo/violet solution);",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 30x: the page prints d-i-o-c-e-n-e, and the second OCR agreed with it, so this is NOT an OCR artifact on either side — ours genuinely diverges. Walter Kilner's screen was a pair of glass plates holding a solution of the coal-tar dye DICYANIN; 'diocene' is not a substance, and the page's own gloss '(indigo/violet solution)' describes dicyanin. Our text already carries the correction. FLAG FOR LUNETH'S EYE only because it is a substance name, the safety-critical class. The rest of the verbatim matches the page exactly, including 'two (2)', the underlined run-in head 'Kilner screen - a di",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000158",
+   "ours": "(see page_prints)",
+   "page_prints": "The growth of the protozoa Blepherisma and Tetrahymena pyriformis is stimulated",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 40x: the fifth letter is unambiguously an 'e' (closed bowl with a horizontal bar), visually distinct from the italic terminal 'a' in the same word. The page prints 'Blepherisma'; the ciliate genus is Blepharisma, and ours already carries the correction. The OTHER flagged hunk, 'Tetrahymena' -> 'Tetrahywena', was the second OCR's error — the page prints 'Tetrahymena pyriformis' correctly (italic) and ours matches. '0.32 ppm.' read at 16x and confirmed, decimal point not a comma.",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-EPIGEN-000371",
+   "ours": "photosystem II",
+   "page_prints": "photosystem ll",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Page prints two LOWERCASE L's, proven three ways not by eye: (1) the two strokes top at y=5729, identical to ascenders of b/h/f on the same line, while cap-height sits 7-8px lower (H of 'OH-' tops 5472 vs ascender 5465); (2) widths 27/29px match the three l's of 'chlorophyll' (30/29/27), NOT the capital I of 'In' above (17px); (3) magnified side-by-side: the I of 'In' is a bare stem, both 'll' pairs carry the same curved bottom-right tail. So the SECOND OCR was faithful here and OUR 'II' is the corrected form — the standard term is photosystem II. Same class as the already-logged 'Gl tract -> ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000107",
+   "ours": "atresia",
+   "page_prints": "atrisia",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THREE page typos in this one verbatim, all already corrected in our text — the page is the garbled side each time. (1) page 'atrisia', ours 'atresia' (the standard term; read at 18x, unambiguous). (2) page 'conversation of proelastin to elastin', ours 'conversion' — read at 18x, the page really does print c-o-n-v-e-r-s-a-t-i-o-n, which is nonsense for the proelastin-to-elastin step. (3) page 'cerebellum)).' with a DOUBLE closing paren against a single opener; ours has the balanced 'cerebellum).'. Separately, the flagged hunk ours='functions as' / pdf='is bound in' is a second-OCR MISALIGNMENT,",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000109",
+   "ours": "keratinization",
+   "page_prints": "keratization",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Two page typos, both already corrected in ours. (1) page 'poor hair keratization' (no 'in'), ours 'keratinization'. (2) page 'neutrophillic WBCs' (double l), ours 'neutrophilic'. Both read at 18x and unambiguous; both OCR passes were faithful to the page, ours is the corrected side. Falls squarely in the 'book typo -> corrected spelling' DOCTRINE class already recorded in ratified-divergences.json _classes. Rest of the verbatim matches, including the curly apostrophe in cow's milk and 'and/or iron storage disease.'",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000176",
+   "ours": "otoliths",
+   "page_prints": "otolithes",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Two page typos, both already corrected in ours. (1) page 'deafness (malformation of otolithes)', ours 'otoliths' — the correct English plural; read at 16x. (2) page 'abortions (miscarriges)', ours 'miscarriages' — the page really does omit the 'a' between i and g. THE SECOND ONE WAS NOT FLAGGED BY EITHER OCR PASS and surfaced only because the whole table was compared bullet by bullet; it is the same shared-blind-spot class as the 'drum/dnim' find in LETS-000315. All 16 bullets are present, in the page's order, and everything else matches — including the curly quotes on “Slipped Tendon”, the se",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000167",
+   "ours": "(see page_prints)",
+   "page_prints": "sagebrush (Artemisia fififolia), enchinacea (Echinaca angustifolia) and/or hydrogen peroxide",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "IMPORTANT: page and our text DISAGREE, but ours is the CORRECTED side, so this is a page-carries-the-typo case with the fix already applied. Read at 12x, the page unambiguously prints THREE errors: 'Artemisia fififolia' (f-i-f-i-f-o-l-i-a; correct botanical name is Artemisia filifolia, sand sagebrush), 'enchinacea' (spurious n), and '(Echinaca angustifolia)' (genus is Echinacea). The second OCR read all three correctly off the page — it is the corroborating side here, not the garbled one. Everything else matches: 'Boils can occur at a site of irritation - usually the neck near a collar line. T",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000223",
+   "ours": "(see page_prints)",
+   "page_prints": "tendons, Systemic Lupus Erythematosis, Sicklecell anemia and various “collagen diseases.”",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Page and our text DISAGREE, but ours is the CORRECTED side. At 16x the page unambiguously prints 'Erythematosis' (…-o-s-i-s) where the disease is Systemic Lupus Erythematosus, and prints 'Sicklecell' run together as one word where ours has the hyphenated 'Sickle-cell'. The second OCR read the page correctly here — it is the corroborating side, not the garbled one. The rest of the verbatim is byte-faithful: 'Deficiency of sulfur results in degenerative types of arthritis involving degeneration of cartilage, ligaments, tendons, … anemia and various \"collagen diseases.\"' with curly quotes and the",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000303",
+   "ours": "(see page_prints)",
+   "page_prints": "tendons, Systemic Lupus Erythematosis, Sicklecell anemia and various “collagen diseases.”",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "This claim's verbatim is BYTE-IDENTICAL to WAL-CLM-RARE-000223 and the group assigns both to rare-earths p400, so one page read covers both — same findings, same verdict. SCOPE CAVEAT, stated rather than glossed: I verified this text against the p378 occurrence only. If -000303 was actually mined from a DIFFERENT occurrence elsewhere in the book (Wallach reuses passages across and within books), that occurrence was not separately located and could print differently. Nothing in the group data indicated a second location.",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000320",
+   "ours": "(see page_prints)",
+   "page_prints": "Selenium is the most efficient anti-\\noxident (anti-peroxident) and is found at the subcellular level in the glutathione peroxidase enzyme system and metallo amino acids (selenomethionine, etc.).",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Page and our text DISAGREE, but ours is the CORRECTED side, and this one is doubly worth logging because TWO different things happened at once. (1) SPELLING: at 16x the page plainly prints 'oxident' and 'peroxident' — an 'e' where 'oxidant'/'peroxidant' take an 'a'. The second OCR read the page correctly ('peroxident'); it is the corroborating side here. (2) HYPHEN: the page breaks 'anti-' / 'oxident' across a line, and ours rejoined it WITHOUT the hyphen as 'antioxidant', which is the correct modern form — but note the same sentence keeps a real lexical hyphen in '(anti-peroxident)', which ou",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000123",
+   "ours": "(hepatocholangiocarcinoma)",
+   "page_prints": "(hepatocholangio carcinoma).",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "The flagged hunk ('There' vs pdf 'here') is the second OCR's error — the page prints 'There' at 10x. The real finding is elsewhere: at 22x the gap between 'hepatocholangio' and 'carcinoma' is plainly a full word space, wider than any inter-letter gap on the line and equal to the space in 'liver cancer' above it. Our .txt (and epigenetics' and rare-earths' .txt) hold the joined form; only dddl's .txt carries the split. So our text is the correct side; the immortality PAGE carries the typo. Everything else in the verbatim — '1990', '(squamous cell carcinoma)', 'double the rate in males as female",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000335",
+   "ours": "Caulophyllum",
+   "page_prints": "(Caulophyllus thalictroides)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "At 40x the terminal letters are unmistakably u-s ('...yllus th...') — an 's' bowl, not an 'm' with three stems. So the second OCR's 'Caulophyllus' was RIGHT about the page and our text is the corrected side. Strong corroboration inside the source: the same book's .txt prints 'Caulophyllum thalictroides' at all EIGHT occurrences, so this page alone carries the error. Everything else in the verbatim verified at 10x and matches exactly: 'Rubus idaeus', 'corn ergot (Ustilago maydis)', 'postpartum hemorrhage', '(orally or IM)'.",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000133",
+   "ours": "toxic effects of iron",
+   "page_prints": "toxic affects of iron",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 14x: the page really does print 'the direct result of toxic affects of iron'. 'affects' as a noun is not the intended word and the phrase 'toxic effects' is unambiguous, so this is the clear-typo class, not a Wallach assertion. The second hunk ('zinc' vs pdf 'zing') is a second-OCR garble — the page prints 'zinc, etc.' as we do. ONE THING FOR YOUR EYE, not flagged as a defect: the page opens this paragraph with a curly OPENING DOUBLE QUOTE — '“Excesses of iron can result…' — which our verbatim omits. The quotation mark may signal that Wallach is quoting a source here (cf. the verbatim-",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000231",
+   "ours": "castor oil (Ricinus communis) … blackroot (Leptandra virginica)",
+   "page_prints": "castor oil (Rincinus communis) … blackroot F(Leptondra virginica)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 14x, all three page defects are unambiguous. Both flagged hunks ('Rincinus', 'F Leptondra') are the second OCR faithfully reproducing the PAGE, not garbling it — our text is the corrected side. The rest of the verbatim matches the page exactly: 'eight to ten glasses of water per day', 'fiber/protein at 1 tbsp. in 8 oz. of juice b.i.d.', 'four to six cups of vegetables per day', 'exercise for 30 minutes per day', '(Olea europaea)', '(Podophyllum peltatum)', '(Rhamnus frangula'. Note our verbatim ends mid-list at '(Rhamnus frangula' with no closing parenthesis — a quote truncation, not a",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000233",
+   "ours": "peony (Paeonia officinalis), catnip (Nepeta cataria) and skullcap",
+   "page_prints": "peony (Paeonia officinalia), catnip (Nepeta cataria) andskullcap",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "EVERY DOSE RE-READ AT 14x AND ALL MATCH OURS: 'calcium and magnesium at 2,000 and 1,000 mg', 'B-6 at 100 mg b.i.d.', 'chromium at 75-100 mcg t.i.d.' — the unit on the chromium line is mcg, read off the glyphs, not inferred. Also confirmed identical to ours: 'High \"fevers\" of 104.0-105.0 F', 'EEG (electroencephalogram)', the straight double quotes around fevers/orthodox/allergy/rotation, 'doesn't', 'Dilantin and/or phenobarbital', '(Nepeta cataria)', '(Scutellaria lateriflora)'. The flagged hunk ('officinalis' vs pdf 'officinalia') is the second OCR reproducing the PAGE — ours is the corrected ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000338",
+   "ours": "sunflower (Helianthus annuus) … pine oils (Pinus sylvestris) … wild ginger (Asarum europaeum)",
+   "page_prints": "sunflower (Helianthus annus) … pine oils (Pinnus sylvestris) … wild ginger (Asarum europium)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE THIRD DEFECT ('europium') WAS FLAGGED BY NEITHER OCR PASS — it surfaced only because the whole verbatim was compared, and it sits in the right-hand column, i.e. a span-only check of the two flagged tokens would have missed it entirely. All three read at 14x and unambiguous. Doses verified at 14x and matching ours: 'penicillin or tetracyclines for \"Strep\" throat at 250 mg orally q 6 h for 10-12 days'. Also matching: '(Melaleuca leucadendron)', '(Pimpinella saxifraga)', '(Salvia officinalis)', '(Malva sylvestris)', '(Eucalyptus globulus).'",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000262",
+   "ours": "hydroencephalocele) … Micro- or anophthalmia … Umbilical hernias",
+   "page_prints": "hydroencephaloceol  [NO closing parenthesis] … Micro- or anopthalmia … Umbilical; hernias",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Both flagged hunks are the second OCR reproducing the PAGE ('hydroencephaloceol', 'anopthalmia'); ours is the corrected side. The 'Umbilical;' semicolon was flagged by neither pass and surfaced only from the whole-table read. Every other row matches at 14x: 'Table 11-24. Congenital Birth defects associated with Zinc Deficiency.', Down's Syndrome, Cleft lip, Cleft palate, '(dorsal herniation,', '(small or absent eyes)', 'Micro- or agnathia', 'Spina bifida', lowercase 'clubbed limbs', 'Syndactyly (webbed toes and fingers)', 'Diaphragmatic hernias (hiatal hernia)', 'Heart defects', lowercase 'lun",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000026",
+   "ours": "(hydrophilic)",
+   "page_prints": "(hydrophyllic)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "This is an UNDISCLOSED DIVERGENCE, not a defect: the page carries the typo and our corpus already carries the correct spelling. Read at ~22x, the page unmistakably prints 'hydrophyllic' (p-h-y-l-l-i-c). The book is consistent in the error -- the facing page (p93) prints '(lipophyllic or fat or oil loving)' the same way -- and our immortality .txt holds 'hydrophilic' 1x and 'lipophilic' 1x, i.e. the correction was applied at some earlier point and never logged. That is exactly the class ratified-divergences.json exists to stop being re-derived. EVERYTHING ELSE in the verbatim was compared and i",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000144",
+   "ours": "Ge-132 is absorbed",
+   "page_prints": "GE-132 is absorbed  (the SECOND occurrence only; the first occurrence four lines above prints 'Ge-132')",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Same shape as the hydrophyllic case: our text already normalised a page inconsistency and it was never logged. Read at ~24x, the second occurrence is unambiguously a capital G AND a capital E. EVERYTHING ELSE compared and byte-exact: 'Asai synthesized Ge-132, carboxyethyl germanium sesquioxide, in 1967 by a hydrolysis reaction... at the rate of 30% efficiency and the total intake is completely excreted in one week.' 1967 and 30% both read at high zoom. The flagged hunk (ours 'This' vs pdf 'his') is the second OCR shaving the leading T -- the page prints 'This'.",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000253",
+   "ours": "lily-of-the-valley (Convallaria majalis), English\nhawthorn (Crataegus oxyacantha), Canadian\nfleabane (Erigeron canadensis",
+   "page_prints": "lily-of-the-valley (Convallaria magalis), English hawthorne (Crataegus oxycanthus), Canadian fleabane (Erigeron canadense), kidney bean",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "FOUR unratified divergences, all in the CORRECTIVE direction: the page carries the typos and our sealed text already fixes them. The rest of the verbatim matches the page exactly at 14x, including 'IV amino acids', 'diuresis', '(Digitalis purpurea) - BE CAREFUL HERE;' and the all-caps 'THIS PLANT IS POTENTIALLY DANGEROUS,'. STRONG INTERNAL CORROBORATION for (2) and (3): PDF page 97 of the SAME book (printed folio 85, right column) prints 'English hawthorn (Crataegus oxyacantha)' correctly — I read it at 3x while checking WAL-CLM-LETS-000140 — so p116's 'hawthorne (Crataegus oxycanthus)' is a l",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000151",
+   "ours": "Graves' disease",
+   "page_prints": "Grave's disease",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "IMPORTANT: this is an UNDISCLOSED DIVERGENCE, not a defect. Ours = \"Graves'\" (apostrophe after the s); the page prints \"Grave's\" (apostrophe before the s), read unambiguously at 40x. Ours is the correct world spelling and a clear misspelled-proper-noun page typo, so per the ruling it must NOT be 'restored'. It is not on eden/tools/ratified-divergences.json -- recommend adding it, or a future byte-comparison will keep re-flagging it. Everything else in the verbatim matches at 16x: 7.30 / 7.44 / 6.8 / 7.8 / 6.0 and 7.4 all confirmed, and the flagged hunk (ours '0 and' vs pdf 'O0and') is the seco",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000378",
+   "ours": "sweet woodruff (Galium odoratum), wild celery (Apium graveolens) and lily-of-the valley (Convallaria majalis",
+   "page_prints": "sweet woodruff (Gallium odoraturm), wild celery (Apium graveolens) and lily-of-the valley (Convallaria magalis).",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THREE undisclosed divergences in one claim, all the same class (garbled Latin binomial in the printed page, already corrected in our text): (1) page 'Gallium' (double L, the metal) vs ours 'Galium' (the plant genus) -- read at 30x, unmistakable double L; (2) page 'odoraturm' vs ours 'odoratum' -- read at 60x, four stems after the 'u' (r + m) where 'odoratum' would show three; the second OCR independently read 'odoraturm' too, so page and pdf AGREE and ours is the deliberate correction; (3) page 'magalis' vs ours 'majalis' -- read at 30x, plainly a 'g'. All three are clear typesetting typos in ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000094",
+   "ours": "ESTROGENS               hops, anise seed,\nfennel",
+   "page_prints": "ESTROGENS               hope, anise seed,\nfennel",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Undisclosed divergence, ours is the correct side. At 40x the page glyph is plainly 'e' (open bowl with a crossbar), not 's' -- the page really prints 'hope'. 'hope' is not a herb; hops (Humulus lupulus) is the classic estrogenic herb and THIS SAME BOOK prints 'hops (Humulus lupulus)' on printed p153. So it is a clear one-letter typesetting typo that must not be restored. Not on ratified-divergences.json -- recommend adding. Every other row matches the page exactly: BIRTH CONTROL/Mexican yam, TESTOSTERONE/Sarsaparilla, INTESTINAL ANTISPASMODIC/peppermint, cardamon, REDUCE BLOOD PRESSURE/calamus",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000172",
+   "ours": "(see page_prints)",
+   "page_prints": "they referred to the unknown element as “element X.” In 1979,",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "★ HERE THE SECOND OCR WAS RIGHT AND THE PAGE IS WRONG. The page genuinely prints 'In 1979' — read at 24x, the second glyph is an unmistakable single-bowl 9 with a descending tail, and I pulled a 40x control on 'In 1878' three lines earlier in the same typeface where the 8's double bowl is obvious. So page='1979', ours='1879'. 1979 is impossible in context: the sentence before it says two Swiss chemists saw the spectral lines 'In 1878', and Per Teodor Cleve — a 19th-century Swedish chemist — isolated holmium in 1879. This is a clear book typo, and OUR corpus already carries the corrected 1879 (",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000451",
+   "ours": "(see page_prints)",
+   "page_prints": "they referred to the unknown element as “element X.” In 1979,",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Same sentence as WAL-CLM-IMMORT-000172 — this claim's verbatim is that claim's second paragraph, so it carries the identical divergence and the identical resolution. Full verbatim re-read at 7x per half-line: 'In 1878, two Swiss chemists noticed holmium's characteristic spectral lines, but could not identify them, so they referred to the unknown element as \"element X.\"' then '[page: In 1979 / ours: In 1879], a Swedish chemist, Per Teodor Cleve isolated and identified the element and called it Holmia, Latin for his home town of Stockholm.' Everything except the year matches the page exactly. Ou",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000175",
+   "ours": "(see page_prints)",
+   "page_prints": "seaweed, including the giant kelp that grows of the coast of California.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "★ SECOND CASE WHERE THE SECOND OCR WAS RIGHT ABOUT THE PAGE. At 60x the word after 'grows' is unambiguously 'of' — one f, then a clear word space, then 'the'. There is no faint second f. So page='grows of the coast', ours='grows off the coast'. 'grows of the coast' is ungrammatical; 'off' is plainly intended, and our corpus already holds it (verified in eden/corpus/books/immortality.txt). Another unlogged, correct, deliberate divergence — add it to the ledger; do not touch the text. Whole verbatim otherwise re-read line by line and matching: 'Commercial quantities of iodine are extracted from ",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000340",
+   "ours": "nitric oxide",
+   "page_prints": "improve blood flow via increased production of nitric acid",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "The page plainly prints 'nitric acid' — read at 30x, four clean glyphs a-c-i-d, no ambiguity. OUR TEXT IS THE CORRECTED SIDE AND SHOULD STAY. The book's own parenthetical on the very next line — '(a molecule used by the vascular endothelium to signal the surrounding muscle to relax)' — is the textbook description of nitric OXIDE (NO, endothelium-derived relaxing factor). Nitric acid (HNO3) is a corrosive mineral acid, is not made by endothelium, and signals nothing. So the page carries a clear substance-name typo, exactly the 'Dean Hamer/Harmer' class already ratified. I verified the correctio",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000180",
+   "ours": "Adriatic Islands",
+   "page_prints": "Northern parts of the Adictis Islands had more clinical goiter",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "At 22x the page reads seven unambiguous glyphs A-d-i-c-t-i-s — no 'r', no second 'a'. 'Adictis' is not a place. OUR 'Adriatic' IS THE CORRECTED SIDE AND SHOULD STAY: the three villages the same sentence names — Pisila, Polje, Milahnici — are Dalmatian/Croatian toponyms, and the Adriatic islands are the classic endemic-goiter study region. Verified the correction is already in the sealed source (eden/corpus/books/immortality.txt:7389). Same class as the ratified 'Dean Hamer', and likewise NOT on the ratified-divergences list — an unlogged earlier fix; recommend adding it. IMPORTANT: this diverg",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000402",
+   "ours": "essential fatty acids at 5 mg t.i.d.",
+   "page_prints": "PMS entry prints 'essential fatty acids at 5 mg t.i.d.' AND 'blue cohosh (Caulophyllus thalictroides)'",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "TWO findings on this claim. (A) THE FLAGGED HUNK, ours='Caulophyllum' / pdf='Caulophyllus': the SECOND OCR IS RIGHT ABOUT THE PAGE — at 14x the page really prints 'Caulophyllus thalictroides'. But ours is the correct side and must stay: the genus is Caulophyllum (blue cohosh), the RIGHT column of the SAME page prints 'blue cohosh (Caulophyllum thalictroides)' correctly under PREGNANCY LABOR, and our own source .txt spells it Caulophyllum at all 8 occurrences. So the page carries a one-letter proper-noun typo already corrected uniformly — worth logging, no edit. (B) NOT FLAGGED BY EITHER OCR, f",
+   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000433",
+   "ours": "zinc at 50 mg t.i.d.",
+   "page_prints": "zinc at 50 gm t.i.d.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE ONE SUBSTANTIVE FINDING IN MY SET. The page's SKIN AILMENTS entry plainly prints 'zinc at 50 gm t.i.d.' -- read at 34x, the glyph is a descender-bearing g, unmistakably 'gm'. Our corpus holds 'zinc at 50 mg t.i.d.' (confirmed by reading eden/corpus/claims/claims-lets-play-doctor.json; the claim_text carries '50 mg' too). 50 gm of zinc three times a day is a lethal dose, so the page is the garbled side. EVIDENCE THAT IT IS A BOOK TYPO, measured on the SAME PAGE, not inferred: the SEBORRHEIC DERMATITIS entry prints 'zinc at 50 mg t.i.d.' and the SHARK SKIN entry prints 'zinc at 50 mg t.i.d.' -- both read at 30x. Same author, same page, same dose, correct unit twice. So our 'mg' is a prior deliberate correction, not a defect. Rest of the verbatim verified word for word at 12x and matches, including 'essential fatty acids at 5 gm t.i.d.' twice, '300,000 IU', and every herb binomial (Equisetum arvense, Viola tricolor, Agropyron repens, Saponaria officinalis, Urtica dioica, Ulmus fulva, Sphaeralcea). ONE SEPARATE COSMETIC NOTE: our verbatim ends mid-token at 'globe mallow (Sphaeralcea spp' where the page prints '(Sphaeralcea spp.).' -- that is a truncated excerpt TAIL, not an interior gap, so I did not treat it as dropped text; a human may want the '.).' restored for tidiness.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000225",
+   "ours": "is known as ceroid lipofuscin",
+   "page_prints": "is known as ceroid lipofucsin",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "UNLOGGED DELIBERATE DIVERGENCE -- worth adding to eden/tools/ratified-divergences.json (it is not there today; I checked all seven entries plus pending_review). The page prints the transposed 'lipofucsin' (read at 12x: l-i-p-o-f-u-c-s-i-n) and OUR corpus holds the correct 'lipofuscin'. The flagged hunk confirms it from the other side: the second OCR read 'lipofucsin', matching the page, so the disagreement is our earlier correction, not damage. Corroboration that the fix is right: the same passage in Immortality folio 207 (screenshot 116, which I also read this pass for another claim) prints 'ceroid lipofuscin' correctly. Nothing to change. The rest of the verbatim is exact at 12x -- 'Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid ...)'; the page sets a double space after 'peroxidized' where we have one, which is whitespace normalization, not a difference.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000321",
+   "ours": "is known as ceroid lipofuscin",
+   "page_prints": "is known as ceroid lipofucsin",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Verbatim identical to WAL-CLM-RARE-000225 and read against the same lines of folio 378 at 12x. Same finding: the page prints the transposed 'lipofucsin', our text already carries the corrected 'lipofuscin'. Nothing to change; both claim ids should go into the ratified-divergences ledger together so this is not re-derived a third time. Rest of the verbatim exact.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000107",
+   "ours": "calcium deficiency as the cause of\\nhypertension",
+   "page_prints": "calcium deficiency as the cause of\\nhypertention,",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE PAGE CARRIES THE TYPO AND WE ALREADY HOLD THE FIX. At 26x the second occurrence unambiguously reads 'hypertention,' — h-y-p-e-r-t-e-n-t-i-o-n — the ninth glyph being a t with stem, crossbar and curved foot, identical to the t six letters earlier in the same word, and nothing like the s two lines above. The FIRST occurrence in the same paragraph ('probably led to hypertension. More than 30 subsequent') is spelled correctly with an s, read at 8x, so the book contradicts itself inside one paragraph — the same self-refuting shape recorded for the KNO2/KNO3 case. Our corpus holds 'hypertension' in both places. This divergence is NOT in eden/tools/ratified-divergences.json (I checked all ten of my claim ids against that file; none appear) and should be added there.\\nTHE FLAGGED 'dropped-text' HUNK IS AN ARTIFACT OF EXACTLY THIS TYPO. The aligner could not match our final 'hypertension' to the page's 'hypertention', so it matched it to the NEXT, correctly-spelled occurrence forty words later ('...in humans with untreated hypertension'), which made everything in between — 'additionally recent studies have shown that serum ionized calcium is consistently lower in humans with untreated' — look dropped. It is not: that text follows our excerpt's end. No interior gap exists. Everything else in the verbatim is exact, including 'In 1980, McCarron, et al, theorized' and 'More than 30 subsequent'.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000258",
+   "ours": "producing an anesthetic effect.",
+   "page_prints": "producing an anesthetic affect.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE PAGE PRINTS 'affect.' AND WE ALREADY HOLD 'effect.'. At 24x the opening glyph is an unmistakable double-storey lowercase a followed by an ff ligature — a-f-f-e-c-t — not an e. The correction our corpus holds is right on meaning: 'producing an anesthetic effect' is the sense; 'affect' as a noun means emotional expression and is nonsensical for a gas binding haemoglobin. It is an author/compositor homophone error, the same fixable class as the logged 'Aspartamine'->'Aspartame' and 'borytes'->'barytes' entries. This divergence is NOT in eden/tools/ratified-divergences.json and should be added.\\nThe flagged alignment-slip hunk is the SECOND OCR BEING FAITHFUL to that defective page — it read 'affect' correctly and then spilled forward into the next entry ('Y Yttrium is a heavy Rare Earth found in igneous rocks at 33 ppm shale at 18 ppm...'), which is the following paragraph, i.e. excerpt boundary. The rest of the sentence matches the page exactly, including our correct rejoining of the page's line-break hyphenation 'hemoglo-/bin' into 'hemoglobin'.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000264",
+   "ours": "Anorexia & Bulimia",
+   "page_prints": "Anorexia & Bullemia",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Whole verbatim read; all eleven table rows matched exactly at 10x/14x — Alopecia (hair loss); Acrodermatitis enteropathica (Parakeratosis in pigs and calves); “Frizzy” hair; Diarrhea; Depression; Paranoia; Oral and perioral dermatitis; Weight loss (anorexia nervosa); Benign prostatic hypertrophy (prostate enlargement); Severe body odor (“smelly tennis shoe” syndrome). The final row is the only divergence: at 14x the page unmistakably prints 'Bullemia' (double-l, 'lem'), a plain misspelling of 'Bulimia', and OUR text already carries the correct spelling. So this is an EXISTING, UNLOGGED deliberate divergence, not a defect — nothing to change on disk. It is NOT on the seven-entry ratified-divergences list (checked eden/tools/ratified-divergences.json: only RARE-000090, DDDL-000013, IMMORT-000027, LETS-000349, LETS-000452, IMMORT-000024, LETS-000205, EPIGEN-000023, IMMORT-000197 are recorded), so it is a candidate for that ledger's pending_review list. The flagged hunk was this word plus the page text continuing outside the table box — tail boundary.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-EPIGEN-000014",
+   "ours": "Beriberi",
+   "page_prints": "BeriBeri",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "WHOLE VERBATIM READ, word by word, across the column break. The flagged hunk ours='' pdf='Page 531 of ETICS' is READER CHROME, not book text: the e-book viewer prints its own footer ('Page 581 of 936 - 66%' in my capture) and the second OCR swept it up at exactly the point where our quote crosses from the left column to the right column. Our verbatim legitimately omits it. NOT a dropped-text defect.\n\nEverything else matches the page exactly, including punctuation and the number: left column '2. Korsakoff’s syndrome occurs as part of the BeriBeri (thiamine or vitamin B1 deficiency) collection of diseases. The disease can be reversed by the' and right column 'elimination of sugar, fried foods, processed meats, oils, and gluten from the diet as well as a supplement program that provides all 90 essential nutrients with a special emphasis on the supplementation of thiamine'. Curly apostrophe in Korsakoff’s confirmed. '90' confirmed at 8x. The page then continues '(vitamin B1).' -- that is AFTER our quote ends, i.e. excerpt boundary, not a drop.\n\nTHE ONE DIVERGENCE, read at 26x and unambiguous: the page prints 'BeriBeri' with TWO capital B's; our verbatim holds 'Beriberi'. The second B has the two-bowl uppercase form, clearly taller and wider than the lowercase b's elsewhere on the line. This is a capitalisation normalisation already present in our corpus (eden/corpus/books/epigenetics.txt holds 'Beriberi' 6x and 'beriberi' 40x, never 'BeriBeri'), so it is internally consistent and restoring the page form would only reintroduce a mid-word capital. Verdict is 'no change needed' -> OURS_ALREADY_CORRECTED, logged as an undisclosed low-stakes divergence, not on eden/tools/ratified-divergences.json. Nothing safety-critical is involved.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000173",
+   "ours": "fresh\nwater at 0.002 ppm, sea water at 0.06 ppm",
+   "page_prints": "fresh water at 0.002 ppm,sea water at 0.06 ppm",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "WHOLE VERBATIM READ at 12x, every figure checked individually: igneous rocks 0.5 ppm, shale 2.3, sandstone 1.7, limestone 1.2, fresh water 0.002, sea water 0.06, soil 5, marine plants 30 to 1,500, terrestrial plants 0.42, marine animals 1.0 to 150, terrestrial animals 0.43. ALL match ours exactly, including the comma in '1,500' and the semicolon after it. 'humus- large' (hyphen then space) matches. The bold lead-in 'I-Iodine' matches. Line breaks match.\n\nThe alignment-slip hunk ours='hair' is the second OCR running past the end of our excerpt into the NEXT paragraph and mangling it ('thyroid rland and hai lodine is a violet black solid...'). The page plainly prints 'thyroid gland and hair)'. Ours is right.\n\nTHE ONE DIVERGENCE: the page prints 'ppm,sea water' with NO word space after the comma. Ours has the space. This is a page typesetting defect, not an OCR artifact -- the line is justified with WIDE inter-word gaps elsewhere on it, so a zero gap there cannot be compression. Our text already holds the normalised form, which is the same shape as the logged LETS-000516 'typical ofdiarrhea' judgment call. No change needed; recorded because it is an undisclosed divergence not on eden/tools/ratified-divergences.json.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000452",
+   "ours": "In 1879,\na Swedish chemist, Per Teodor Cleve isolated and identified",
+   "page_prints": "In 1979, a Swedish chemist, Per Teodor Cleve isolated and identified",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "WHOLE VERBATIM READ at 12x. Everything except the year matches the page exactly: 'a Swedish chemist, Per Teodor Cleve isolated and identified the element and called it Holmia, Latin for his home town of Stockholm.' (the page sets Holmia in italics; ours is plain, which is the corpus convention).\n\nTHE DIVERGENCE, read at 34x and unambiguous: the page prints 'In 1979,'. The second digit is a single closed bowl with a straight right-hand stem descending from it -- a 9. I pulled a template from the SAME page three lines above, 'In 1878,', where the 8 shows two stacked bowls; the two glyphs are plainly different shapes. The second OCR also read 1979, i.e. it was faithful to the page here.\n\nOur text holds 'In 1879,'. Ours is correct and the page is wrong: the immediately preceding sentence on the same page dates the spectral-line observation to 1878, Per Teodor Cleve isolated holmium in 1878-79, and Cleve died in 1905, so 1979 is impossible. This is a clear compositor/digit typo of exactly the class Luneth's ruling says to fix with outside knowledge, and OUR TEXT ALREADY HOLDS THE FIX -- so nothing on disk should change. I am reporting it because it is an UNLOGGED deliberate divergence: it is not among the seven entries in eden/tools/ratified-divergences.json, so a future page-faithfulness pass could 'restore' 1979 and corrupt the date. This is the highest-value finding in my nine groups.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000095",
+   "ours": "is recorded in the Atharva veda 1200 BC",
+   "page_prints": "is recorded in the Arthavara veda 1200 BC.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE LOCATOR WAS WRONG AND SAID SO (page_index_reliable=false, coverage 0.25). PDF p70 = printed p58 is Chiropractic / Color therapy and does not contain the passage; the second OCR's 'pdf' side in every hunk is p70's colour-therapy text, which is why nothing aligned. I searched outward and found the passage on PDF p65 = printed p53, right column, the AYURVEDIC MEDICINE entry. All five flagged hunks are therefore wrong-page artifacts, not drops. THE REAL FINDING: at 24x the page unambiguously prints 'in the Arthavara veda' - A-r-t-h-a-v-a-r-a. Our corpus holds 'Atharva veda', the correct Sanskrit text (the Atharvaveda, whose ~1200 BC date the page's own figure matches). So our text ALREADY corrects a garbled proper noun and nothing on disk should change - but this divergence is NOT on the seven-entry ratified list, so nothing currently protects it from being 'restored' by a future faithfulness pass. Same class as the ratified 'Dean Hamer'/'Dean Harmer'. The rest of the verbatim was read at 8x-9x and matches the page exactly, including the straight typewriter double quotes around \"life sciences.\" and the '=' signs in 'Ayur = life, veda = science'. Our quote stops before the page's final period after 'BC' - tail boundary.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000119",
+   "ours": "cofactor for many hundreds of metalloenzymes.",
+   "page_prints": "cofactor for many hundreds of metalloenzynes.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THE HUNK GOES THE OPPOSITE WAY FROM THE USUAL PATTERN: the second OCR ('metalloenzynes') was reading the page CORRECTLY and the page itself is wrong. At 40x the glyph after the 'y' has exactly TWO stems - an n - then 'e', 's', period; there is no third stem. It is the same 2-stem shape as the n earlier in the same word ('...oenz...'). The page prints 'metalloenzynes', which is not a word; the term is metalloenzymes, and our corpus already holds it. Nothing on disk should change. Not on the ratified list, so record it. The rest of the sentence was read at 14x and is exact: 'Copper is essential to all living organisms and is a universally important cofactor for many hundreds of...'. The page sets a wide justified gap between 'universally' and 'important' - that is justification, not a double space, and ours correctly holds one space.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000290",
+   "ours": "Gd - Gadolinium, a Rare Earth, is found ... land animals accumulate gadolinium in bone and liver very quickly after absorption.",
+   "page_prints": "Gd - Gadolium, a RareEarth,  is found ... land animals accumulate gadolium in bone and liver very quickly after absorption.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "THREE divergences, all in the same direction — the page carries the typo and our text already holds the fix, so nothing needs changing, but none of this is in the ratified-divergences ledger (I checked; RARE-000290 is not listed). At 14x the page plainly prints 'Gadolium' — G-a-d-o-l-i-u-m, the 'in' is missing — and 'RareEarth' as one word; at 12x the closing sentence prints 'accumulate gadolium in bone'. Our corpus holds the correct element name 'Gadolinium'/'gadolinium' and the spaced 'Rare Earth'. EVERY NUMBER MATCHES EXACTLY at 12x: igneous 5.4 ppm; shales 4.3 ppm; sandstones 2.6 ppm; limestones 0.7 ppm; land plants up to 70 ppm by Carya spp.; marine animals 0.06 ppm. The flagged alignment-slip hunk (a wall of Gallium/Spezioli citation text ending 'GCl Gadolium aRareEarth') is the positional window sliding back over the preceding Gallium reference block — not a real difference.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000051",
+   "ours": "FOLIC ACID 400 mcg 1,000 mcg 15 to 20 mg",
+   "page_prints": "FOLIC ACID ....400 mcg ....1,000 mcg ....15 to 20 gm",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "UNLOGGED DELIBERATE DIVERGENCE — A DOSE-MISPRINT FIX WE ALREADY MADE, NOT ON THE SEVEN-ENTRY RATIFIED LIST. The page's 30-Day Pharmacologic Daily Dose cell for FOLIC ACID reads 'gm', not 'mg'. I read it at 30x and the 'g' has an unmistakable descender loop; the independent second OCR also read 'gm', so both readings of the scan agree the PAGE says gm. Our corpus holds 'mg'. THE PAGE IS WRONG AND OURS IS THE FIX: 15-20 GRAMS of folic acid is 37,500-50,000x the same table's own RDA column (400 mcg) and is not a survivable supplement dose; 15-20 mg is 37-50x RDA, a coherent pharmacologic megadose that fits the table's escalation pattern (400 mcg RDA → 1,000 mcg true need → 15-20 mg pharmacologic). Every other cell in this 35-row table uses mg/mcg/IU; 'gm' appears exactly once. This is mechanical/typesetting damage of the class the owner's ruling says to fix, and it was already fixed. The FLUORIDE line of the same claim is exact, including the trailing '**' footnote markers ('** Use this level only with a prescription for osteoporosis.'). The flagged dropped-text hunk was just the second OCR carrying 'gm' plus the next row's 'INOSITOL 75' into the window. ACTION: none to the corpus — but log the divergence.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000359",
+   "ours": "erythropoietin",
+   "page_prints": "erythropoiten",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 22x: the page's last word is unambiguously 'erythropoiten.' -- the printed book drops the 'ie' and misspells the hormone. Our corpus holds the correct spelling 'erythropoietin', so the fix is ALREADY IN and nothing needs changing; I am recording it because it is not on the seven-entry ratified list. DOSE CONFIRMED AT 18x: '(20 to 30 mg/day)' matches ours exactly. Everything else matches, including 'accelerated erythropoiesis (RBC -red blood cell- production)' -- the page sets a double space after 'accelerated', which our whitespace normalization collapses. The second OCR agreed with the page ('erythropoiten'), which is corroboration that the misspelling is the PAGE's, not a scan artifact.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000353",
+   "ours": "pleurisy root (Asclepias tuberosa",
+   "page_prints": "pleurisy root (Asclepias tube-rose).",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 18x: the page hyphenates across two lines as '(Asclepias tube-' / 'rose).' -- i.e. it prints 'tuberose'. The plant is Asclepias TUBEROSA (butterfly weed / pleurisy root); 'tuberose' is a different plant entirely (Polianthes tuberosa), so the page carries a clear botanical typo and our text already holds the correct epithet. Nothing to change; recording it so it is not re-derived. TWO SECONDARY OBSERVATIONS, both minor and not the verdict: (a) our verbatim reads '(i.e.,Caladryl)' with no space -- at 12x the page does print a (very tight) space, '(i.e., Caladryl)'; same hairline-space class as the lithium entry, low priority. (b) our excerpt ends mid-token at 'tuberosa' with no closing ')' or period, leaving an unbalanced parenthesis; the page closes it 'tuberose).' That is an excerpt truncation, not dropped interior text. The alignment-slip hunk's 'pdf' side is the NEXT dictionary entry (MEASLES, GERMAN / rubella), i.e. the page continuing past our quote.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000149",
+   "ours": "Northern parts of the Adriatic Islands",
+   "page_prints": "Northern parts of the Adictis Islands",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Read at 30x: the page unambiguously prints 'the Adictis Islands'. 'Adictis' is not a place -- and the three settlements Wallach names (Pisila, Polje, Milahnici) are Dalmatian, i.e. ADRIATIC islands -- so the page carries a garbled proper noun and our text already holds the sensible correction. Nothing to change; recording it. EVERYTHING ELSE MATCHES, verified across the page break: 363 ends '...population of Milahnici); there is identical' and 365 opens 'iodine content of the soil in all three locations; however, there is a severe copper deficiency in the soils of the north and the south (copper is required to utilize iodine).' -- exactly our text. The percentages 46% / 40% / 3% match. BOTH flagged hunks are explained by the interleaved plate: '341 Fig 11 13 Goiter' and 'young women 342' are the folio numbers and the caption 'Fig. 11-13 Goiter in young women' of the full-page photo on 364, which physically interrupts the running text our verbatim legitimately joins. Figure-page chrome, not dropped prose. Minor: the page sets 'goiter-free( 46%' with the paren jammed against 'free'; ours normalizes to 'goiter-free (46%'.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000102",
+   "ours": "The brain lesions of Bovine Spongiform Encephalopathy",
+   "page_prints": "The brain lesions of Bovine Spongioform Encephalopathy",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "UNLOGGED DELIBERATE DIVERGENCE — nothing on disk should change, reporting so it is on the record. At 20x the page unambiguously prints 'Spongioform': S-p-o-n-g-i-o-f-o-r-m, with a clearly dotted i followed by a full round o before 'form'. Our corpus (eden/corpus/books/immortality.txt:6303) holds 'Spongiform', the correct medical term (Bovine Spongiform Encephalopathy). So the page carries a compositor typo and our text already silently corrects it. This divergence is NOT in eden/tools/ratified-divergences.json — I checked all seven entries and grepped the file for this claim id. Everything else in the verbatim is exact, including the em-dash-less '- a copper deficiency.' and '(BSE)'. The flagged alignment-slip hunk (ours='The', pdf=the preceding two sentences about prions and failed transmission) is the positional window sliding onto text BEFORE our excerpt — not a defect.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-IMMORT-000104",
+   "ours": "Paavo\\nAirola (ruptured cerebral aneurysm), Conway Twitty",
+   "page_prints": "Paavo Airola (ruptured cerebral aneurysum), Conway Twitty",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "UNLOGGED DELIBERATE DIVERGENCE — no disk change needed. At 20x the page prints 'aneurysum' (a-n-e-u-r-y-s-u-m) for the Paavo Airola entry only; the OTHER five occurrences in the same paragraph all print 'aneurysm'/'aneurysms' correctly, which is what proves this one is a compositor typo rather than the author's habit. Our text holds 'aneurysm'. Not in eden/tools/ratified-divergences.json. Everything else matches exactly, including 'Four to six out of every 100' and 'an additional 40%'. Two non-defects worth naming: (a) the flagged hunk pdf='1515 EE omatically with continued use Immortality 137' is READER CHROME — the ebook's 'Renews automatically with continued use' banner plus the running head 'Immortality 137' — captured in the screenshot between the left column's last line ('...have aneurysms that') and the right page's first line ('have not ruptured.'), which is exactly where our verbatim carries its '\\n\\n\\n \\n\\n' page-break gap; (b) the page appears to set a double space after 'white hair).' before 'Four', which ours normalises to one — typographic, not flagged.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
+   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000146",
+   "ours": "plant derived colloidal minerals are 98% absorbable and give excellent results!",
+   "page_prints": "plant derived colloidal minerals are 98% absorbable and give excellant results!",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "LOCATOR CORRECTION FIRST: this passage is not on PDF p100. Every flagged hunk's pdf side ('300,000 IU of vitamin A as beta carotene', 'selenium at 300-1000 mcg/day', 'Injectable thymus at 2-5 cc/day', 'the rate of 5 grams') is from the AUTOIMMUNE DISORDERS entry on p100, i.e. the aligner matched a different entry entirely. I found the real page via the PDF text layer: p99 = printed p87. THE WHOLE DOSE LINE WAS RE-READ THERE AND IS EXACT: calcium 2000 mg/day; magnesium 800-1000 mg/day; cartilage or chondroitin sulfate 1000 mg t.i.d.; tetracycline 250 mg q.i.d.; H2O2 (set plain, no subscripts, on the page too); B-6 100 mg b.i.d.; B-3 450 mg b.i.d.; vitamin E 1000 IU/day; copper 2 mg/day; selenium 300 mcg/day; zinc 50 mg t.i.d.; 98%. No text is dropped anywhere inside the span. The ONLY divergence in the whole verbatim: the page prints 'excellant' (a clear two-storey a at 20x, not an e) and our corpus (lets-play-doctor-fourth-edition-1995.txt:4638) holds 'excellent'. Page typo, already corrected by us, NOT in eden/tools/ratified-divergences.json. Nothing on disk should change.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000151",
+   "ours": "calcium and magnesium at double the supplement rate",
+   "page_prints": "calcium and magnesium at double thesupplement rate",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "Whole verbatim read against the page. Everything matches: the description sentences ('...aggravate the pre-sentation of autism.  Each must be dealt with as a separate entity if real progress is to be made.  (Don't forget the baseline vitamin/ minerals.)' — our text correctly rejoins the 'pre-'/'sentation' line-break hyphen and the 'vitamin/'/'minerals' slash break, and the apostrophe in Don't is straight on the page as it is in ours), and the whole treatment line. The ONE divergence: at 16x the page sets 'thesupplement' with NO word space — the e and s are adjacent while the space before 'rate' is plainly present on the same line. Our corpus (line 4654) holds 'the supplement'. Same dropped-space-under-tight-justification class already ratified for 'forall', 'thewarm' and 'typical ofdiarrhea'. Not in eden/tools/ratified-divergences.json; nothing on disk should change. All five flagged 'alignment-slip' hunks are the window sliding onto the LEFT column's ATOPIC DERMATITIS treatment paragraph, which sits at the same vertical position — none is a real difference.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000386",
+   "ours": "and herbal combinations such as Zumbani",
+   "page_prints": "and herbal combinations such as Zumba.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "NOTHING TO CHANGE — recording an UNLOGGED deliberate divergence for eden/tools/ratified-divergences.json. At 24x the page unambiguously prints 'tions such as Zumba.' — there is no 'ni', and the second OCR agrees with the page here. Our text holds 'Zumbani' and is the RIGHT side; the page dropped two letters. The corroboration is entirely IN-BOOK, no outside knowledge needed: the same book's own index prints 'zumbani - 136' (lets-play-doctor .txt line 12473) and three other passages in the same book print 'Zumbani' (lines 6962, 8222, 10853); DDDL 3e prints 'Zumbani' four more times. Everything else in the verbatim was verified at 12x word for word, including 'double the base line nutritional supplementation for 30-60 days'. Ours drops only the closing period.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000171",
+   "ours": "Vitamin D has no effect on Mg absorption; the presence of fat, phytates",
+   "page_prints": "Vitamin D has no effect on Mg absorption,; the presence of fat, phytates",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "NOTHING TO CHANGE — an unlogged divergence worth recording. Every word matches at 13x, including 'The rate of absorption of Mg ranges from 24 to 85 %' with the page's space before the % sign. The one difference: the page carries a DOUBLED punctuation mark, 'absorption,;' (comma immediately followed by semicolon), and our text already holds the clean ';'. That is a typesetting error, not a Wallach statement. (The page also prints 'efficiency of ab-sorption . High performance' with a space before the period; our quote ends at 'absorption.' so that is tail.) The flagged dropped-text hunk is Table 11-18 'Deficiency Diseases of Magnesium' and its fourteen bullets, which the scan interleaves BETWEEN the left-column and right-column halves of this running sentence — the table-banner artifact class named in the brief. Our quote correctly omits the table and is continuous prose across the column break.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-RARE-000179",
+   "ours": "Molybdenum is essential to all organisms as a constituent of numerous metalloenzymes.",
+   "page_prints": "Molybdenum is essential to all organisms as a constituant of numerous metalloenzymes.",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "NOTHING TO CHANGE — an unlogged divergence worth recording. The locator was wrong (min_coverage 0.412 warned as much); found two pages on. At 34x the page prints 'as a constituant of' — the ninth letter is unmistakably an 'a', the identical glyph to the 'a' in the adjacent 'as a', with none of the horizontal crossbar the 'e' in 'numerous' and 'metalloenzymes' shows. Our text holds the correct English 'constituent'. This is the book's own recurring misspelling, not a one-off: the sealed .txt still carries 'constituant' at lines 21165 and 24948, while line 25837 (this passage) already carries the fix. Everything else in the sentence matches word for word.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000147",
+   "ours": "colloidal mineral suspensions that contain magnesium and manganese",
+   "page_prints": "colloidal mineral suspentions that contain magnesium and manganese",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "UNLOGGED DELIBERATE DIVERGENCE, no change needed. PDF p100 plainly prints the misspelling 'suspentions' (a 't' where an 's' belongs) at 12x; our corpus already holds the corrected 'suspensions'. Everything else in the verbatim matches the page exactly, including 'ox bile at 75-200 mg each t.i.d. before meals. Autoimmune urine therapy;' and 'essential fatty acids at 5 gm t.i.d.' -- read at 12x on p99. ALL SIX flagged hunks are artifacts of the wrong page: they are fragments of the folio-160 dental/periodontal text and of the neighbouring LETS-000399 entry, not text our quote skips. Recommend correcting the page locator for this claim to PDF p99-100.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
+  },
+  {
+   "claim": "WAL-CLM-LETS-000399",
+   "ours": "copper at 2 mg per day",
+   "page_prints": "copper at 2 gm per day",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "TWO UNLOGGED DELIBERATE DIVERGENCES, both already in our favour -- nothing to change, but both should be written into eden/tools/ratified-divergences.json so they are not re-derived. (1) DOSE UNIT, safety-critical: at 12x the page unambiguously prints 'copper at 2 gm per day'. 2 gm of copper daily is a lethal dose (adult need ~2 mg); this is exactly the 'gm instead of mg' typo class the owner named as fixable, and our text already holds '2 mg'. NEVER restore the printed 'gm'. (2) SPECIES NAME: the page prints 'cascara sagrada (Rhamnus purshianus).'; our text holds '(Rhamnus purshiana' -- the correct botanical epithet ('purshiana' is not a prefix of 'purshianus', so this is a correction, not a truncation). Note our verbatim ends there WITHOUT the closing ')' and period; if the excerpt is meant to end mid-parenthesis that is cosmetic, otherwise it should close as '(Rhamnus purshiana).'. Everything else matches exactly: 'vitamin E at 800-1,200 IU/day', 'B-complex at 50 mg each t.i.d.', 'essential fatty acids at 5 gm t.i.d.', and all five herb binomials. The flagged alignment-slip hunk was the window running past our tail into the PICA entry.",
+   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
   }
  ],
  "pending_review": {
@@ -1646,5 +2238,518 @@
    "status": "DOCTRINE, not a divergence",
    "note": "Under correct-everything-uniformly the books' own typos are corrected uniformly, INCLUDING inside the verbatim. Verified by eye on rare-earths printed p329, which really prints 'flourosis', 'flouride' x3, 'flouridation'. The class is large -- 278 hunks measured 2026-08-02 across the five unverified books -- and does not belong in a per-claim list."
   }
- ]
+ ],
+ "book_typo_divergences": {
+  "_doc": "★ THE CLASS THE PER-CLAIM LIST WAS MISSING. Every book-typo correction is a page-divergence BY CONSTRUCTION: we correct the sealed .txt, the printed page keeps the typo. 48+19 such corrections had been applied and exactly ONE (Aspartamine) was written down, so a future page-read of any other would 'find' our text wrong and propose restoring the typo. Ratified in bulk by Luneth on 2026-08-03 during the end-of-campaign review sweep.",
+  "_how_to_use": "Before flagging any of these tokens as a defect: our spelling is DELIBERATE and ratified. The page prints `page_prints`; we hold `ours`. Do not restore.",
+  "_measured": "Each entry's counts were measured against the sealed corpus at ratification time, not copied from the log. old_in_* must be 0; a non-zero value means the class was applied incompletely and is reported rather than hidden.",
+  "_scope_limit": "This covers the tokens the waves + the whole-class batch corrected. It is NOT a proof that every book typo in the corpus is either corrected or listed — no gate establishes that, and it remains a labelled WISH (R7).",
+  "entries": [
+   {
+    "class_token": "Bl",
+    "ours": "B1",
+    "page_prints": "Bl",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "dddl writes vitamin B1 as 'Bl' 17x against 7 correct 'B1'. Every one sits beside its own chemical name ('thiamine (Bl)'), its own disease ('Bl (i.e. beriberi)'), or other B-numbers. No vitamin 'Bl' exists.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 282,
+     "new_in_sources": 169
+    }
+   },
+   {
+    "class_token": "Blepherisma",
+    "ours": "Blepharisma",
+    "page_prints": "Blepherisma",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the protozoan genus is Blepharisma; rare-earths spells it BOTH ways one page apart.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 5,
+     "new_in_sources": 6
+    }
+   },
+   {
+    "class_token": "Humphrey Davy",
+    "ours": "Humphry Davy",
+    "page_prints": "Humphrey Davy",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the chemist is Sir Humphry Davy; the corpus writes Humphry correctly 7x against 8 wrong.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 14,
+     "new_in_sources": 15
+    }
+   },
+   {
+    "class_token": "lightening rod",
+    "ours": "lightning rod",
+    "page_prints": "lightening rod",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "no correct instance existed anywhere in the corpus; corrected on plain meaning (5 occurrences, 4 books).",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 5
+    }
+   },
+   {
+    "class_token": "Blues Zones",
+    "ours": "Blue Zones",
+    "page_prints": "Blues Zones",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "against 21 correct 'Blue Zones' elsewhere.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 8,
+     "new_in_sources": 22
+    }
+   },
+   {
+    "class_token": "Tinnitis",
+    "ours": "Tinnitus",
+    "page_prints": "Tinnitis",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "attested correctly elsewhere in the corpus.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 5
+    }
+   },
+   {
+    "class_token": "Meneire",
+    "ours": "Meniere",
+    "page_prints": "Meneire",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "Meniere's disease; attested correctly elsewhere.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 3,
+     "new_in_sources": 2
+    }
+   },
+   {
+    "class_token": "ilemnite",
+    "ours": "ilmenite",
+    "page_prints": "ilemnite",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the titanium ore is ilmenite; attested correctly elsewhere.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 4,
+     "new_in_sources": 2
+    }
+   },
+   {
+    "class_token": "Nodack",
+    "ours": "Noddack",
+    "page_prints": "Nodack",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "Walter Noddack, co-discoverer of rhenium in 1925 with Ida Tacke.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 3,
+     "new_in_sources": 1
+    }
+   },
+   {
+    "class_token": "Cassiopia",
+    "ours": "Cassiopeia",
+    "page_prints": "Cassiopia",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the constellation is Cassiopeia. The historical element name 'cassiopium' was deliberately LEFT ALONE — variably attested, so correcting it would be inference beyond a clear typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 1
+    }
+   },
+   {
+    "class_token": "phosphytidyl",
+    "ours": "phosphatidyl",
+    "page_prints": "phosphytidyl",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "phosphatidyl choline (lecithin); 'phosphytidyl' is not a substance.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 21,
+     "new_in_sources": 11
+    }
+   },
+   {
+    "class_token": "phosphatydil",
+    "ours": "phosphatidyl",
+    "page_prints": "phosphatydil",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "same substance, second misspelling.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 21,
+     "new_in_sources": 11
+    }
+   },
+   {
+    "class_token": "polyphos-hoinositides",
+    "ours": "polyphosphoinositides",
+    "page_prints": "polyphos-hoinositides",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "OCR split + garble of one word.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 1
+    }
+   },
+   {
+    "class_token": "aqutifolia",
+    "ours": "acutifolia",
+    "page_prints": "aqutifolia",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "botanical Latin: Cassia acutifolia (senna).",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 2
+    }
+   },
+   {
+    "class_token": "ustatissimum",
+    "ours": "usitatissimum",
+    "page_prints": "ustatissimum",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "botanical Latin: Linum usitatissimum (flax).",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 9,
+     "new_in_sources": 10
+    }
+   },
+   {
+    "class_token": "fragula",
+    "ours": "frangula",
+    "page_prints": "fragula",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "botanical Latin: Rhamnus frangula (alder buckthorn).",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 4,
+     "new_in_sources": 4
+    }
+   },
+   {
+    "class_token": "uncers",
+    "ours": "ulcers",
+    "page_prints": "uncers",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo; the sentence is about ulcers.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 57,
+     "new_in_sources": 90
+    }
+   },
+   {
+    "class_token": "chonic",
+    "ours": "chronic",
+    "page_prints": "chonic",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 134,
+     "new_in_sources": 214
+    }
+   },
+   {
+    "class_token": "acnea",
+    "ours": "acne",
+    "page_prints": "acnea",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 31,
+     "new_in_sources": 33
+    }
+   },
+   {
+    "class_token": "gadolium",
+    "ours": "gadolinium",
+    "page_prints": "gadolium",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the rare earth is gadolinium.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 9,
+     "new_in_sources": 7
+    }
+   },
+   {
+    "class_token": "metablyte",
+    "ours": "metabolite",
+    "page_prints": "metablyte",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 14,
+     "new_in_sources": 9
+    }
+   },
+   {
+    "class_token": "soley",
+    "ours": "solely",
+    "page_prints": "soley",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 8,
+     "new_in_sources": 19
+    }
+   },
+   {
+    "class_token": "Cobalite",
+    "ours": "Cobaltite",
+    "page_prints": "Cobalite",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the cobalt ore is cobaltite.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 1,
+     "new_in_sources": 1
+    }
+   },
+   {
+    "class_token": "catechens",
+    "ours": "catechins",
+    "page_prints": "catechens",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the polyphenols are catechins.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 3,
+     "new_in_sources": 18
+    }
+   },
+   {
+    "class_token": "constituant",
+    "ours": "constituent",
+    "page_prints": "constituant",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 29,
+     "new_in_sources": 39
+    }
+   },
+   {
+    "class_token": "causitive",
+    "ours": "causative",
+    "page_prints": "causitive",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 4,
+     "new_in_sources": 13
+    }
+   },
+   {
+    "class_token": "watre",
+    "ours": "water",
+    "page_prints": "watre",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 447,
+     "new_in_sources": 1460
+    }
+   },
+   {
+    "class_token": "menapause",
+    "ours": "menopause",
+    "page_prints": "menapause",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 17,
+     "new_in_sources": 20
+    }
+   },
+   {
+    "class_token": "borytes",
+    "ours": "barytes",
+    "page_prints": "borytes",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "SEMANTIC: barytes is barium sulfate; 'borytes' is not a word. Flagged for Luneth's eye and ratified 2026-08-03.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 1
+    }
+   },
+   {
+    "class_token": "vitaligo",
+    "ours": "vitiligo",
+    "page_prints": "vitaligo",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "the depigmentation disorder is vitiligo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 4,
+     "new_in_sources": 6
+    }
+   },
+   {
+    "class_token": "forall",
+    "ours": "for all",
+    "page_prints": "forall",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "dropped word space.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 52,
+     "new_in_sources": 114
+    }
+   },
+   {
+    "class_token": "thewarm",
+    "ours": "the warm",
+    "page_prints": "thewarm",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "dropped word space.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 3,
+     "new_in_sources": 6
+    }
+   },
+   {
+    "class_token": "salacylic",
+    "ours": "salicylic",
+    "page_prints": "salacylic",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "salicylic acid.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 3
+    }
+   },
+   {
+    "class_token": "longivity",
+    "ours": "longevity",
+    "page_prints": "longivity",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 72,
+     "new_in_sources": 363
+    }
+   },
+   {
+    "class_token": "surviability",
+    "ours": "survivability",
+    "page_prints": "surviability",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "page typo.",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 3,
+     "new_in_sources": 12
+    }
+   },
+   {
+    "class_token": "Leo nurus cardiaca",
+    "ours": "Leonurus cardiaca",
+    "page_prints": "Leo nurus cardiaca",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-03",
+    "evidence": "split botanical genus: Leonurus (motherwort).",
+    "measured_2026-08-03": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 5,
+     "new_in_sources": 5
+    }
+   }
+  ],
+  "★_the_ratification_found_the_class_was_incomplete": "MEASURING INSTEAD OF COPYING THE LOG CAUGHT A REAL GAP. When these entries were first written from the logged corrections, six of the 36 tokens still had surviving occurrences — and two were READER-FACING, inside sealed verbatims: WAL-CLM-IMMORT-000249 held 'resveratrols, catechens (EGCGs)' and WAL-CLM-RARE-000376 held 'this tissue salt is a constituant of every liquid and solid part of the body'. Six more sat in source text no claim quotes: 'thiamine - Bl' (hk), the index line 'vitamin Bl - 49, 73' sitting directly above 'vitamin B12' (lets-play-doctor), 'a major constituant of water' (rare-earths), 'hair and vitaligo' (epigenetics), 'the Hunza secret of longivity' (lets-play-doctor), and 'motherwort (Leo nurus cardiaca)' (dddl). ★ THE Bl SWEEP HAD BEEN dddl-ONLY: the build-log records '48 EDITS ACROSS ALL SIX BOOKS ... the whole class', but the same token was live in two other books and was never swept there. All 8 were corrected on 2026-08-03 under Luneth's class ratification (applying his decision consistently, not making a new one), each 'Bl' site first verified to name its vitamin adjacently — the standard the original 17 required, because a bare 'Bl'/'B,' can be boron or bismuth. Sealed kv=456. LESSON: 'whole class' in a log is a claim about the world and needs measuring like any other."
+ }
 }
