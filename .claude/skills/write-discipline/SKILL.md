@@ -23,31 +23,49 @@ Guards: `tools/hooks/pre_write_guard.py` (Edit/Write/MultiEdit), `pre_bash_guard
 1. Never `Edit`, `Write`, or `MultiEdit` a project file.
 2. Never `eslint --fix`. Hand-fix, then route the corrected content through `safe_write`.
 3. Never write a project file from bash -- no `cat >`, `>>`, `tee`, `sed -i`, `cp`, `mv` into a target.
-4. `replace` payloads must be LF-terminated. A CRLF flip silently matches nothing.
+4. `replace` payloads must match the target's line endings **exactly** -- matching is
+   byte-exact. Run `check <path>` first; it prints the endings. A mismatch fails loudly
+   and names line endings as the cause, but it still fails.
 5. Multi-file mechanical changes: write one temp Python script that computes all new content and
    calls `safe_write.safe_rewrite` per file -- validate-all-then-write.
 6. Sealed canonicals (anything with a `*.golden.sha256` sibling) need explicit user sign-off in the
    same patch.
 
-## Known defect in the primitive itself
-`safe_write` writes and reads with `newline=` unset, so it operates in Python's translated-newline
-space: LF becomes CRLF on write, CRLF becomes LF on read. The symmetry makes its own verify pass
-while the disk bytes differ from intent. Consequences you will actually hit:
+## The byte-exact contract (fixed 2026-08-03)
+`safe_write` is a transparent pipe: the bytes you stage are the bytes that land. It performs no
+newline translation in either direction, its verify compares real disk bytes, and every size it
+reports is a true **byte** count.
 
-- **A CRLF -> LF repair is structurally impossible through this path.** The replacement happens in
-  LF space and the write re-CRLFs it, producing a byte-identical file and a cheerful `OK`.
-- A lone `\r` round-trips to `\n`: same length, different content, hence `intended=N landed=N` on a
-  *failing* check.
-- Every reported size is `len()` of a **string** (characters) while the message says `B on disk`.
-  Do not compare it against a byte count from another tool and conclude "unchanged."
+It was not always, and the wreckage is still visible. Until 2026-08-03 both ends ran in Python's
+translated-newline space (LF -> CRLF on write, CRLF -> LF on read). The symmetry made the tool's
+own verify a tautology: it passed while the disk differed from intent. If you meet these symptoms
+in an older log, this is why:
 
-**Verify a write landed by asserting the CORRECTION IS PRESENT, not that the byte count moved.**
+- It **rewrote every LF file it touched to CRLF** -- the origin of this tree's 554-CRLF /
+  154-LF split, against a repo that stores LF (`core.autocrlf=input`).
+- A CRLF -> LF repair was **structurally impossible**: the edit happened in LF space and the write
+  re-CRLF'd it, yielding a byte-identical file and a cheerful `OK`.
+- A lone `\r` round-tripped to `\n` -- same length, different content, hence `intended=N landed=N`
+  on a *failing* check.
+- Reported sizes were `len()` of a **string** printed as `B on disk`.
+
+`safe_write_canary` now round-trips LF, CRLF and a lone CR and compares true disk bytes via
+`os.open(O_BINARY)`. Its old reader omitted that flag, so on Windows it applied the same
+translation as the write it was auditing and stayed green through all of the above -- a truth
+anchor that shares the defect under test is not a truth anchor. Negative test:
+`tools/test_safe_write_byte_exact.py` re-breaks the primitive three ways and asserts the gate
+goes red each time.
+
+**Still true regardless:** verify a write landed by asserting the CORRECTION IS PRESENT, not that
+a byte count moved.
 
 ## Windows host, three things that bite every session
 1. **UTF-8.** Python defaults to cp1252 stdout here and crashes on em-dashes. Prefix every
    `python tools/*.py` with `PYTHONUTF8=1`.
 2. **CWD does not carry between bash calls.** Use a subshell: `(cd dashboard && ...)`.
-3. **Stage payloads with LF endings**, in the scratchpad, under fresh unique filenames.
+3. **Stage payloads in the scratchpad** under fresh unique filenames, with endings that
+   MATCH the target. `check <path>` tells you which; most of this tree is CRLF while the
+   `Write` tool stages LF, so a conversion step is usually needed.
 
 Two more that have produced false alarms: PowerShell's `Get-Content` decodes UTF-8 as cp1252, so a
 correct `·` displays as mojibake; and `git ls-files` escapes non-ASCII paths, so a correct `§`

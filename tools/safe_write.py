@@ -21,12 +21,39 @@ Operations:
   - rewrite : write payload as the full new file content.
   - check   : run integrity checks on a file without modifying it.
 
+BYTE-EXACT CONTRACT (2026-08-03)
+------------------------------
+This tool is a transparent pipe: the bytes you hand it are the bytes that land.
+It performs NO newline translation in either direction, so what you stage is what
+is written, and its verify compares real disk bytes against real intended bytes.
+
+It did not always. Until 2026-08-03 every read and write here ran in Python's
+translated-newline space (LF -> CRLF on write, CRLF -> LF on read). The round trip
+was symmetric, so the verify below passed while the disk bytes differed from intent.
+Three consequences, all reproduced before this fix:
+
+  * Every LF file it touched was silently rewritten to CRLF. That is the origin of
+    the working tree's 554-CRLF / 154-LF split, against a repo that stores LF.
+  * A CRLF -> LF repair was structurally impossible. The replacement happened in LF
+    space and the write re-CRLF'd it, so the file came back byte-identical with OK.
+  * A lone CR survived the write but read back as LF: same length, different content,
+    which is the useless "intended=NB landed=NB" on a FAILING check.
+
+Sizes reported by this tool are TRUE BYTE counts. They used to be len() of a str
+(characters) printed as "B on disk", which is very likely what made an earlier session
+read a successful write as a no-op.
+
+Because matching is now byte-exact, a payload staged with LF will NOT match a file
+holding CRLF. That failure is deliberate and loud: safe_replace names line endings as
+the cause and tells you which to restage with. Run `check <path>` to see a file's
+endings before staging.
+
 All operations:
-  1. Read current content via Python (disk truth).
+  1. Read current content via Python (disk truth, raw bytes).
   2. Compute new content in memory.
-  3. Write new content to <path>.tmp.
-  4. Read <path>.tmp back from disk.
-  5. Verify the on-disk content matches intent (byte-equal).
+  3. Write new content to <path>.tmp (exact bytes).
+  4. Read <path>.tmp back from disk (raw bytes).
+  5. Verify the on-disk BYTES match intent.
   6. Run file-type-specific parse / shape checks.
   7. os.replace(<path>.tmp, <path>) — atomic on POSIX.
   8. Read <path> back one more time and verify final state.
@@ -66,6 +93,69 @@ import sys
 
 class SafeWriteError(RuntimeError):
     """Raised when a write cannot be verified safe."""
+
+
+# ---------------------------------------------------------------------------
+# Disk I/O chokepoint — the ONLY place this module touches file content
+# ---------------------------------------------------------------------------
+#
+# Path.read_text / Path.write_text default to newline=None, i.e. Python's translated
+# space: LF becomes CRLF on write and CRLF becomes LF on read (on Windows). That
+# symmetry is what made this tool's own verify a tautology for months. Everything
+# below goes through raw bytes + an explicit UTF-8 codec so no translation can be
+# reintroduced by a future edit without deleting these two functions outright.
+
+
+def _read_exact(path: pathlib.Path) -> str:
+    """A file's exact bytes, decoded UTF-8. No newline translation."""
+    return path.read_bytes().decode("utf-8")
+
+
+def _write_exact(path: pathlib.Path, content: str) -> bytes:
+    """Write content's exact UTF-8 bytes. No newline translation. Returns them."""
+    data = content.encode("utf-8")
+    path.write_bytes(data)
+    return data
+
+
+def _eol_profile(b: bytes) -> str:
+    """Line-ending census — the diagnostic that turns 'intended=3B landed=3B' into
+    something a caller can act on."""
+    crlf = b.count(b"\r\n")
+    return (f"crlf={crlf} lf={b.count(b'\n') - crlf} "
+            f"lone_cr={b.count(b'\r') - crlf}")
+
+
+def _dominant_eol(s: str) -> str:
+    """Which ending a string mostly uses, for the restaging hint."""
+    crlf = s.count("\r\n")
+    counts = (("CRLF", crlf), ("LF", s.count("\n") - crlf), ("CR", s.count("\r") - crlf))
+    best = max(counts, key=lambda kv: kv[1])
+    return best[0] if best[1] else "no line endings"
+
+
+def _newline_hint(haystack: str, needle: str, found: int) -> str:
+    """When a replace misses, say whether line endings are the whole reason.
+
+    Matching is byte-exact, and this repo's working tree is mostly CRLF while git stores
+    LF (core.autocrlf=input), so an LF-staged payload missing a CRLF file is the single
+    most likely miss. Staying silent would send the caller hunting a content mismatch
+    that does not exist."""
+    if found:
+        return ""
+
+    def norm(s: str) -> str:
+        return s.replace("\r\n", "\n").replace("\r", "\n")
+
+    if not norm(needle):
+        return ""
+    n = norm(haystack).count(norm(needle))
+    if not n:
+        return ""
+    return (f" — but it matches {n}x once line endings are normalised. The file holds "
+            f"{_dominant_eol(haystack)} and the payload holds {_dominant_eol(needle)}. "
+            f"Matching is byte-exact by design: restage the payload with "
+            f"{_dominant_eol(haystack)} endings.")
 
 
 # ---------------------------------------------------------------------------
@@ -129,20 +219,24 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
     """
     tmp = path.with_suffix(path.suffix + ".tmp")
 
-    # 3. Write to .tmp
-    tmp.write_text(new_content, encoding="utf-8")
+    # 3. Write to .tmp — exact bytes, no translation
+    intended = _write_exact(tmp, new_content)
 
-    # 4. Read .tmp back from disk
-    landed = tmp.read_text(encoding="utf-8")
+    # 4. Read .tmp back from disk — raw bytes, so the comparison below is real
+    landed_bytes = tmp.read_bytes()
 
-    # 5. Verify byte-equal
-    if landed != new_content:
+    # 5. Verify byte-equal. Equal LENGTHS do not imply equal content (a lone CR used to
+    #    round-trip to LF), so always report the line-ending census alongside the sizes.
+    if landed_bytes != intended:
         # Don't os.remove(tmp) — leave for inspection
         raise SafeWriteError(
-            f"Disk content does not match intended write — "
-            f"intended={len(new_content)}B landed={len(landed)}B. "
+            f"Disk bytes do not match intended write — "
+            f"intended={len(intended)}B ({_eol_profile(intended)}) "
+            f"landed={len(landed_bytes)}B ({_eol_profile(landed_bytes)}). "
             f"Tmp file preserved at {tmp} for inspection."
         )
+
+    landed = landed_bytes.decode("utf-8")
 
     # 6. File-type shape check
     try:
@@ -164,18 +258,20 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
     pre_swap_content = None
     if path.exists() and _should_run_discipline_checks(path):
         try:
-            pre_swap_content = path.read_text(encoding="utf-8")
+            pre_swap_content = _read_exact(path)
         except Exception:
             pre_swap_content = None  # missing/unreadable; no rollback possible
 
     # 7. Atomic swap
     os.replace(tmp, path)
 
-    # 8. Final readback
-    final = path.read_text(encoding="utf-8")
-    if final != new_content:
+    # 8. Final readback — bytes again, not the translated view
+    final_bytes = path.read_bytes()
+    if final_bytes != intended:
         raise SafeWriteError(
-            f"Post-swap readback diverges from intended content. "
+            f"Post-swap readback diverges from intended content — "
+            f"intended={len(intended)}B ({_eol_profile(intended)}) "
+            f"on disk={len(final_bytes)}B ({_eol_profile(final_bytes)}). "
             f"This indicates a filesystem-level inconsistency."
         )
 
@@ -199,8 +295,8 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
                     # Restore atomically using direct tmp+replace (no recursion
                     # into _write_verify_swap to avoid re-triggering this hook).
                     rb_tmp = path.with_suffix(path.suffix + ".rollback.tmp")
-                    rb_tmp.write_text(pre_swap_content, encoding="utf-8")
-                    if rb_tmp.read_text(encoding="utf-8") != pre_swap_content:
+                    rb_bytes = _write_exact(rb_tmp, pre_swap_content)
+                    if rb_tmp.read_bytes() != rb_bytes:
                         raise SafeWriteError("rollback verify failed")
                     os.replace(rb_tmp, path)
                 except Exception as e2:
@@ -228,7 +324,8 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
             for w in warnings:
                 print(f"[safe_write] WARNING: {w}", file=sys.stderr)
 
-    return len(final)
+    # A byte count, not a character count. The CLI prints this as "B on disk".
+    return len(final_bytes)
 
 
 # ---------------------------------------------------------------------------
@@ -327,7 +424,7 @@ def safe_replace(path, old_string: str, new_string: str,
     Raises:  SafeWriteError on any verification failure or count mismatch.
     """
     path = pathlib.Path(path)
-    content = path.read_text(encoding="utf-8")
+    content = _read_exact(path)
 
     if expect_count > 0:
         n = content.count(old_string)
@@ -335,6 +432,7 @@ def safe_replace(path, old_string: str, new_string: str,
             raise SafeWriteError(
                 f"old_string appears {n} times in {path}, "
                 f"expected {expect_count}"
+                + _newline_hint(content, old_string, n)
             )
 
     new_content = content.replace(old_string, new_string, expect_count or -1)
@@ -359,7 +457,7 @@ def safe_append(path, payload: str) -> int:
     Returns: final file size in bytes.
     """
     path = pathlib.Path(path)
-    before = path.read_text(encoding="utf-8") if path.exists() else ""
+    before = _read_exact(path) if path.exists() else ""
     new_content = before + payload
 
     def intent_check(landed: str) -> None:
@@ -403,8 +501,11 @@ def check_file(path) -> tuple:
     if not path.exists():
         return False, [f"File does not exist: {path}"]
     try:
-        content = path.read_text(encoding="utf-8")
-        messages.append(f"size={len(content)}B")
+        raw = path.read_bytes()
+        content = raw.decode("utf-8")
+        # Report the endings too: matching is byte-exact, so a caller staging a payload
+        # for `replace` needs to know what this file actually holds before writing it.
+        messages.append(f"size={len(raw)}B ({len(content)} chars) — {_eol_profile(raw)}")
     except Exception as e:
         return False, [f"Read failed: {e}"]
     try:
@@ -420,8 +521,10 @@ def check_file(path) -> tuple:
 # ---------------------------------------------------------------------------
 
 def _read_payload(arg: str) -> str:
-    """Read content from a file path."""
-    return pathlib.Path(arg).read_text(encoding="utf-8")
+    """Read a staged payload's exact bytes. No newline translation — a payload staged
+    with LF stays LF, which is what makes the byte-exact contract end-to-end rather than
+    just internal."""
+    return _read_exact(pathlib.Path(arg))
 
 
 def _resolve_payload(args, field_file: str = "payload_file",
@@ -442,7 +545,9 @@ def _resolve_payload(args, field_file: str = "payload_file",
             "Specify exactly one of --payload-file or --payload-stdin, not both"
         )
     if stdin_flag:
-        return sys.stdin.read()
+        # .buffer bypasses the text layer's universal-newline translation, so a payload
+        # piped in arrives exactly as sent.
+        return sys.stdin.buffer.read().decode("utf-8")
     if file_arg:
         return _read_payload(file_arg)
     raise SafeWriteError(

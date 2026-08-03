@@ -121,8 +121,15 @@ def _lf_file_hash(path) -> str:
 
 
 def _read_via_os(path) -> bytes:
-    """Read file via low-level os.open + os.read (bypasses Python text cache)."""
-    fd = os.open(str(path), os.O_RDONLY)
+    """Read a file's TRUE disk bytes via low-level os.open + os.read.
+
+    ★ O_BINARY is load-bearing, not decoration. On Windows os.open defaults to TEXT mode,
+    so os.read silently translates CRLF -> LF. Without this flag the read applied the SAME
+    newline translation as the write it was meant to audit, which is how safe_write_canary
+    stayed green from Round 73 to 2026-08-03 while safe_write rewrote every LF payload to
+    CRLF on disk. A truth anchor that shares the defect under test is not a truth anchor.
+    os.O_BINARY does not exist on POSIX, where no translation happens either way."""
+    fd = os.open(str(path), os.O_RDONLY | getattr(os, "O_BINARY", 0))
     try:
         chunks = []
         while True:
@@ -140,10 +147,23 @@ def _read_via_os(path) -> bytes:
 # ---------------------------------------------------------------------------
 
 def check_safe_write_canary():
-    """Round-trip a known payload through safe_write and verify byte-equal
-    via low-level os.read. If safe_write itself is broken, this catches it
-    immediately. Doctrine §1 (no silent failures) applied to the write
-    primitive itself."""
+    """Round-trip a known payload through safe_write and verify the TRUE DISK BYTES
+    match it exactly, via os.open(O_BINARY) + os.read.
+
+    The payload deliberately carries all three newline forms and a non-ASCII character.
+    Each guards a way this primitive has actually failed (all three reproduced 2026-08-03):
+
+      LF / CRLF  safe_write read and wrote in Python's translated-newline space, so it
+                 rewrote every LF file to CRLF while its own verify passed. A CRLF -> LF
+                 repair was structurally impossible through it: the replacement happened
+                 in LF space and the write re-CRLF'd it, yielding a byte-identical file
+                 and a cheerful OK.
+      lone CR    survives a translated write but reads back as LF -- same length, different
+                 content, which is the 'intended=NB landed=NB' on a FAILING check.
+      non-ASCII  makes len(str) != len(bytes), so a size counted in characters but labelled
+                 'B on disk' can no longer masquerade as a byte count.
+
+    Doctrine §1 (no silent failures) applied to the write primitive itself."""
     sys.path.insert(0, str(ROOT / "tools"))
     from safe_write import safe_rewrite, SafeWriteError
 
@@ -152,18 +172,40 @@ def check_safe_write_canary():
 
     now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
     nonce = hashlib.sha256(str(datetime.datetime.now()).encode()).hexdigest()[:16]
-    payload = f"safe-write-canary {now_iso} nonce={nonce}\n"
+    payload = (
+        f"safe-write-canary {now_iso} nonce={nonce}\n"
+        "lf-terminated\n"
+        "crlf-terminated\r\n"
+        "lone-cr\rafter-lone-cr\n"
+        "non-ascii · § —\n"
+    )
+    expected = payload.encode("utf-8")
 
     try:
-        safe_rewrite(probe_path, payload)
+        reported = safe_rewrite(probe_path, payload)
     except SafeWriteError as e:
         return False, f"safe_write raised: {e}"
 
-    # Verify via os.read (bypasses any Python-level caching)
-    raw = _read_via_os(probe_path).decode("utf-8")
-    if raw != payload:
-        return False, f"canary mismatch: wrote {len(payload)}B intended, read {len(raw)}B"
-    return True, f"safe_write round-trip OK ({len(payload)}B)"
+    raw = _read_via_os(probe_path)
+    if raw != expected:
+        def _eol(b: bytes) -> str:
+            crlf = b.count(b"\r\n")
+            return (f"crlf={crlf} lf={b.count(chr(10).encode()) - crlf} "
+                    f"lone_cr={b.count(chr(13).encode()) - crlf}")
+        return False, (
+            f"DISK BYTES != intent -- intended {len(expected)}B ({_eol(expected)}), "
+            f"on disk {len(raw)}B ({_eol(raw)}). safe_write is translating newlines."
+        )
+
+    if reported != len(expected):
+        return False, (
+            f"safe_write reported {reported} for a {len(expected)}-byte file -- the return "
+            f"value is a CHARACTER count printed as 'B on disk'. Never compare it to a byte "
+            f"count from another tool."
+        )
+
+    return True, (f"byte-exact round-trip OK ({len(expected)}B; LF, CRLF and lone CR all "
+                  f"preserved; reported size is true bytes)")
 
 
 def check_tools_py_parse():
@@ -1093,6 +1135,58 @@ def check_no_operating_doc_contradiction():
         f"{scanned} operating docs clean — no deleted-structure token "
         f"({len(forbidden)} guarded), no dangling .claude/skills or .claude/rules pointer"
     )
+
+
+def check_board_claims_match_reality():
+    """CLAUDE.md's own account of the board must match the board.
+
+    §00.B rule 1 -- no canonical value lives in two hand-maintained places. The gate total
+    and the external-anchor count are COMPUTED here and RETYPED in CLAUDE.md's "What a green
+    board actually means" section: exactly the two-homes shape that rots. It did. The
+    2026-08-03 doctor sweep added 2 offline gates and CLAUDE.md silently kept saying
+    "85 gates / ~21 external" while the board ran 87 / 23.
+
+    That section is the one place the contract explains what a green board is WORTH, so a
+    stale number there misstates the size of the only anchor class that can catch a value
+    which is wrong but consistent with our own files. Understating it is not a harmless typo.
+
+    Both claims must be PRESENT and CORRECT. A reworded sentence is RED, not a silent pass --
+    otherwise this gate would go green precisely BECAUSE its subject vanished, which is the
+    failure mode the sweep hit twice.
+
+    Truth anchor: our own INVARIANTS registry vs CLAUDE.md bytes, recomputed each run. This is
+    a CONSISTENCY gate: it proves the contract DESCRIBES the board, never that a gate is right."""
+    doc = ROOT / "CLAUDE.md"
+    if not doc.exists():
+        return False, "CLAUDE.md missing -- the operating contract is this gate's subject"
+    text = doc.read_text(encoding="utf-8")
+
+    total = len(INVARIANTS)
+    external = sum(1 for i in INVARIANTS if i.anchor_class == "external")
+
+    m_total = re.search(r"invariants\.py`[^\n]*?(\d+)\s+gates", text)
+    m_ext = re.search(r"Only the\s+~?\s*(\d+)\s+gates anchored outside", text)
+
+    missing = []
+    if not m_total:
+        missing.append("the '<N> gates' claim beside the invariants.py command")
+    if not m_ext:
+        missing.append("the 'Only the <N> gates anchored outside' claim")
+    if missing:
+        return False, ("CLAUDE.md no longer states " + " and ".join(missing)
+                       + " -- restore the wording or re-anchor this gate, but never let the "
+                         "contract stop accounting for what a green board is worth")
+
+    wrong = []
+    if int(m_total.group(1)) != total:
+        wrong.append(f"total: doc says {m_total.group(1)}, board runs {total}")
+    if int(m_ext.group(1)) != external:
+        wrong.append(f"external: doc says {m_ext.group(1)}, board has {external}")
+    if wrong:
+        return False, "CLAUDE.md misdescribes the board -- " + "; ".join(wrong)
+
+    return True, (f"CLAUDE.md's board description matches reality: {total} gates, "
+                  f"{external} externally anchored")
 
 
 def check_creators_log_digest_synced():
@@ -6514,12 +6608,12 @@ INVARIANTS = [
     ),
     Invariant(
         name="safe_write_canary",
-        anchor_class="external",  # os.read readback bypasses the Python text cache — an independent read, not our own belief about the write
-        description="safe_write must round-trip a known payload byte-equal via os.read",
+        anchor_class="external",  # os.read WITH O_BINARY returns the true disk bytes, independent of whatever translation the write applied. Without that flag it shared the write's translation and was not external at all — it was green for weeks BECAUSE of the defect.
+        description="safe_write must round-trip LF, CRLF and a lone CR byte-exact, and report a true BYTE count",
         check_fn=check_safe_write_canary,
-        truth_anchor="tools/canaries/safe-write-probe.txt readback via os.read",
+        truth_anchor="tools/canaries/safe-write-probe.txt raw bytes via os.open(O_BINARY) + os.read",
         severity="critical",
-        lesson_ref="Round 73 §17 — Edit-tool ban + safe_write primacy",
+        lesson_ref="Round 73 §17 (Edit-tool ban) + 2026-08-03 — the newline round-trip made safe_write's own verify a tautology, and this gate's reader shared the defect",
     ),
     Invariant(
         name="tools_py_parse",
@@ -6664,6 +6758,15 @@ INVARIANTS = [
         truth_anchor="operating-doc bytes + os-level existence of every cited .claude/rules/*.md, scanned each run; living/planning docs (chronicle/, the blueprint, genesis/, next-chunk) are OUT of scope -- they narrate the deletions in past/planning tense",
         severity="critical",
         lesson_ref="Blueprint S8 / Phase A governance audit (Charter R1/R7) -- the rules that guide the work rot too; after the legacy-dashboard sever + wild-west-mode deletion, a machine gate keeps any operating doc from silently pointing a future session at a structure that no longer exists. Extends no_dead_legacy_paths from live-code to the doc surface; the semantic Charter-contradiction half stays a labeled WISH (no non-gaming machine check yet).",
+    ),
+    Invariant(
+        name="board_claims_match_reality",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
+        description="CLAUDE.md's 'what a green board actually means' section states the live gate total and the external-anchor count; both must be PRESENT and match the INVARIANTS registry (a reworded claim is RED, never a silent pass)",
+        check_fn=check_board_claims_match_reality,
+        truth_anchor="len(INVARIANTS) + the anchor_class census vs CLAUDE.md bytes, recomputed each run",
+        severity="critical",
+        lesson_ref="2026-08-03 — the doctor sweep added 2 offline gates and CLAUDE.md kept saying '85 gates / ~21 external' while the board ran 87/23. The contract's own account of what a green board is WORTH had drifted, in the one section that exists to stop the total being oversold as evidence about Wallach.",
     ),
     Invariant(
         name="creators_log_digest_synced",

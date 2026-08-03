@@ -1,1 +1,5 @@
-safe-write-canary 2026-08-03T17:00:16+00:00 nonce=1f120cbc9e5863c3
+safe-write-canary 2026-08-03T17:26:26+00:00 nonce=d00042504e7fd479
+lf-terminated
+crlf-terminated
+lone-crafter-lone-cr
+non-ascii · § —

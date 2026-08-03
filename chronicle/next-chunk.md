@@ -6,8 +6,8 @@ superseded in full. Numbers marked ✓ were measured at handoff. Where an older 
 this one wins._
 
 # ⚠ START HERE
-**Restart the session before working.** The sweep rewrote the files Claude loads at boot; a session
-started before it still holds the old 112 KB contract in context.
+**Restart the session before working.** CLAUDE.md changed again on 2026-08-03 (the board's stated
+gate counts); any session started before that holds a stale copy of the contract in context.
 
 Luneth types `genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, then **ask what to
 resume**. Never a flair-only boot.
@@ -15,9 +15,12 @@ resume**. Never a flair-only boot.
 ---
 
 # ★ STATE ✓measured
-- **Board 87/87, 0 reds** (was 85; +2 offline gates).
+- **Board 88/88, 0 reds** (87 + `board_claims_match_reality`, added 2026-08-03 because
+  CLAUDE.md still described an 85-gate / ~21-external board).
 - Corpus sealed at **kv=458 · 2,255 claims · 7 books**. Untouched by the sweep.
-- Tree clean, pushed through `08048166`. `tools/canaries/safe-write-probe.txt` always shows dirty —
+- Tree clean and pushed at the close of the `safe_write` chunk (2026-08-03) — run
+  `git log --oneline -1` for the exact commit; a hand-typed hash here rots every round.
+  `tools/canaries/safe-write-probe.txt` always shows dirty —
   it rewrites its own nonce every `safe_write` run. Normal.
 - **The operating contract changed shape.** CLAUDE.md is 5,252 B / 65 lines (was 16,765 B).
   `.claude/rules/` is **gone**; its content lives in **11 on-demand skills** under `.claude/skills/`
@@ -66,28 +69,40 @@ resume**. Never a flair-only boot.
 
 ---
 
-# ★ THE ONE REAL BUG STILL OPEN — `safe_write`, diagnosed but NOT fixed
+# ✔ THE `safe_write` BUG — FIXED 2026-08-03 (this was the NEXT item)
 
-`tools/safe_write.py:133` writes with `tmp.write_text(content, encoding="utf-8")` and `:136` reads
-back with `tmp.read_text(encoding="utf-8")`. **Neither passes `newline=`**, so both run in Python's
-translated-newline space: LF → CRLF on write, CRLF → LF on read. The round-trip is symmetric, so the
-`:139` `landed != new_content` verify **passes while the disk bytes differ from intent**.
+Both ends ran in Python's translated-newline space, and the round-trip was symmetric, so the tool's
+own verify compared two translated strings and **passed while the disk differed from intent**. All
+disk I/O now goes through `_read_exact` / `_write_exact` (raw bytes + an explicit UTF-8 codec),
+every reported size is a true byte count, and `--payload-stdin` reads `.buffer`. The three recorded
+symptoms were each reproduced first, then re-run clean.
 
-That explains both symptoms recorded on 2026-08-03:
-- *"reported OK while changing ZERO bytes"* — a CRLF→LF repair is structurally impossible here. The
-  replacement happens in LF space and the write re-CRLFs it, yielding a byte-identical file and a
-  cheerful `OK`.
-- *"`intended=1917147B landed=1917147B` on a failing check"* — a **lone `\r`** survives the write but
-  becomes `\n` on universal-newlines read: same length, different content.
+**Two things the diagnosis had NOT caught**, both measured:
 
-Separately, every size in those messages is `len()` of a **string** (characters) while the message
-says `B on disk` — this session's append reported 1,923,135 B for a file that is 1,950,744 bytes.
-**That mislabel is very likely what made a previous session read a successful write as a no-op.**
+1. It did not merely fail to repair CRLF — it **rewrote every LF file it touched to CRLF**. That is
+   the origin of the working tree's **554-CRLF / 154-LF** split, against a repo that stores LF
+   (`core.autocrlf=input`). `.gitattributes` records that this same mechanism already broke the
+   design-system.css seal once.
+2. **`safe_write_canary` could not have caught any of it.** Its reader used
+   `os.open(path, os.O_RDONLY)` — and on Windows that is TEXT mode, so `os.read` applied the *same*
+   CRLF→LF translation as the write. A gate classified `external`, the only anchor class that can
+   catch a wrong-but-consistent value, was sharing the defect it audited. Now `| O_BINARY`, comparing
+   raw bytes, with LF + CRLF + a lone CR + non-ASCII in the probe payload.
 
-**Left unfixed on purpose:** it is the primitive every other write depends on, so patching it mid-
-sweep risked corrupting the sweep. **The fix:** `newline=""` on both ends, report real byte length,
-and ship a negative test that fails if the round-trip stops being byte-exact. Do this as its own
-chunk, first thing.
+Order mattered: the canary was **re-codified first and proven RED against the broken primitive**,
+so its teeth are demonstrated rather than assumed. `tools/test_safe_write_byte_exact.py` (16 cases)
+re-breaks the primitive three ways — translating write, symmetric translation, character-count
+return — and asserts the gate reddens each time.
+
+★ **THE NEW COST, and it will bite you.** Matching is byte-exact, so an **LF payload will not match
+a CRLF file**. The failure is loud and names line endings as the cause, and `check <path>` now
+prints a file's ending census — but you must stage payloads that MATCH the target. Most of this
+tree is CRLF; the `Write` tool stages LF, so a conversion step is usually needed.
+
+★ **OPEN — needs Luneth's call.** Those 554 CRLF files are CRLF *only* because the broken primitive
+made them so; git already stores LF for every one. Normalising the working tree to LF would make
+payload staging uniform and match what git holds. It touches nearly every file in the repo, so it
+was deliberately NOT done unilaterally.
 
 ---
 
@@ -155,6 +170,10 @@ subjects differ, so they land on different pages. None is a blind delete.
 12. **Read the clock for every timestamp; never predict it.**
 13. **`.claude/invariant-baseline.json` is invariant-scoped** — one entry tolerates a whole gate
     forever. Per-case exceptions go IN the gate with a reason and a test. It is EMPTY by design.
+14. **★ Stage `replace` payloads with the TARGET's line endings.** Since 2026-08-03 safe_write
+    matches bytes, and most of this tree is CRLF while the `Write` tool stages LF. Run
+    `safe_write.py check <path>` first — it prints the census — then convert. A mismatch fails
+    loudly and names the cause, but it still fails.
 
 ---
 
@@ -186,5 +205,5 @@ returns **6** — those are the wrapper's metadata keys. The register is `["entr
 
 ---
 
-**Board 87/87 · kv=458 · 2,255 claims · tree clean, pushed · 2 items awaiting Luneth (the orphaned
-ledger entry, the browser choice) · NEXT = fix `safe_write`, then ask him.**
+**Board 88/88 · kv=458 · 2,255 claims · `safe_write` byte-exact · 3 items awaiting Luneth (the
+orphaned ledger entry, the browser choice, whether to normalise the tree to LF) · NEXT = ask him.**

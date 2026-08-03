@@ -185827,7 +185827,84 @@ chronicle/OVERHAUL-BLUEPRINT.md's "permanent home: .claude/rules/charter.md" lin
 
 VERIFIED. invariants 87/87, 0 failed - and 23 of those 87 now bear on truth outside our own files, up from 21 of 85, because both new offline gates are external anchor-class. Negative tests 36/36. build.mjs exit 0.
 
-STILL OPEN, and it is the one real bug. safe_write's newline translation: newline= is unset on both write_text and read_text, so the tool operates in translated-newline space, a CRLF-to-LF repair is structurally impossible, and it reports OK on a zero-byte change. Fully diagnosed in the handoff with the fix specified (newline="" on both ends, a real byte count, and a negative test that fails if the round-trip stops being byte-exact). Left for its own chunk because it is the primitive every other write depends on, and patching it mid-sweep risked corrupting the sweep.` }];
+STILL OPEN, and it is the one real bug. safe_write's newline translation: newline= is unset on both write_text and read_text, so the tool operates in translated-newline space, a CRLF-to-LF repair is structurally impossible, and it reports OK on a zero-byte change. Fully diagnosed in the handoff with the fix specified (newline="" on both ends, a real byte count, and a negative test that fails if the round-trip stops being byte-exact). Left for its own chunk because it is the primitive every other write depends on, and patching it mid-sweep risked corrupting the sweep.` }, { id: "lg_msdi3ioi_ims3gn", ts: "2026-08-03T12:26:13.074120-05:00", surface: "tools/safe-write", kind: "round-close", summary: "Fixed safe_write, the primitive every write in this project depends on: it silently rewrote line endings and its own verify could not see it \u2014 and neither could the gate built to catch exactly that.", detail: `Every file change in this project goes through one tool. That tool had a flaw it was
+structurally unable to notice.
+
+When it saved a file it quietly changed the invisible marks that end each line, and when it read
+the file back it changed them again in the opposite direction. Its own "did this save correctly?"
+check compared those two equally-altered copies, so it answered yes no matter what was really on
+the disk. Three things followed from that. It converted files to a different line-ending style
+without being asked, which is why 554 files in this project now sit in a style the repository
+itself does not store. It could never convert a file the other way, because the fix was undone by
+the very save that was meant to apply it -- so an earlier session was told a save succeeded when
+it had changed nothing whatsoever. And the sizes it reported were counts of characters while the
+message said bytes, which is very likely what made that session read a real, successful write as
+a no-op.
+
+The part worth remembering is the second discovery. There was already an alarm whose entire job
+was to prove this tool writes exactly what it is handed. It had been green for months. It read
+the file back with a low-level call that, on Windows, silently applies the very same alteration as
+the save -- so it was auditing the tool using the tool's own blind spot. It was filed under the
+one category of check this project says can catch a value that is wrong but consistent with our
+own files, and it could not have caught this. A check that shares the defect it is testing is not
+a check.
+
+So the alarm was repaired first, and deliberately run against the still-broken tool to watch it
+fail, before the tool was touched at all. Otherwise "it passes now" would have proved nothing.
+
+TECHNICAL RECORD
+
+tools/safe_write.py -- Path.read_text / Path.write_text default to newline=None, i.e. Python's
+translated-newline space: LF -> CRLF on write and CRLF -> LF on read. The round trip was
+symmetric, so the \`landed != new_content\` verify compared two translated strings. All disk I/O now
+routes through two new functions, _read_exact and _write_exact (raw bytes plus an explicit UTF-8
+codec), which are the only places the module touches file content -- translation cannot be
+reintroduced by a future edit without deleting them outright. The step-5 verify and the post-swap
+readback compare bytes and print a line-ending census next to the sizes, because equal LENGTHS
+never implied equal content. safe_replace, safe_append, check_file, _read_payload are byte-exact;
+--payload-stdin reads sys.stdin.buffer. Returned sizes are true byte counts.
+
+Because matching is now byte-exact, an LF payload will not match a CRLF file. That failure is
+deliberate and loud: a new _newline_hint names line endings as the cause and says which style to
+restage with, and stays silent on a genuine content miss. \`check <path>\` now prints a file's
+ending census so a caller can stage correctly in the first place.
+
+tools/invariants.py -- _read_via_os now passes | O_BINARY. On Windows os.open defaults to TEXT
+mode, so os.read translated CRLF to LF; the gate's "independent" readback applied the same
+transformation as the write. check_safe_write_canary now compares raw bytes, carries LF, CRLF, a
+lone CR and non-ASCII in its probe payload, and asserts the reported size is a true byte count.
+
+NEW GATE board_claims_match_reality (consistency) -- CLAUDE.md's "what a green board actually
+means" section retyped the gate total and the external-anchor count that invariants.py computes:
+a canonical value in two hand-maintained places, which section 00.B rule 1 forbids. It had already
+rotted -- the doctor sweep added two gates and the contract kept saying 85 / ~21 while the board
+ran 87 / 23. The gate reddens on a mismatch AND on a reworded claim, so it can never go green by
+losing its subject.
+
+NEW tools/test_safe_write_byte_exact.py -- 16 cases. Three are load-bearing: they re-break the
+primitive on purpose (a translating write, caught by the byte verify; a symmetric translation that
+corrupts the intent too, caught by intent_check; a character-count return, caught by the size
+assertion) and assert the canary goes red each time. A test that only showed today's code working
+would have passed just as happily on the broken version.
+
+Docs reconciled in the same patch: CLAUDE.md 85->88 gates and ~21->23 external; the
+write-discipline skill's "Known defect in the primitive" section replaced by the byte-exact
+contract, with rule 4 and Windows quirk 3 rewritten (payloads match the TARGET's endings, not
+always LF); chronicle/next-chunk.md no longer carries this as the open bug.
+
+VERIFIED. Pre-fix negative controls reproduced all three recorded symptoms: a pure-LF payload
+landed CRLF and reported 17 for a 20-byte file; a CRLF->LF repair returned OK having changed zero
+bytes; a lone CR produced "intended=3B landed=3B" on a failing check. The re-codified canary went
+RED against the broken primitive ("intended=136B landed=136B") and GREEN after ("byte-exact
+round-trip OK (140B; LF, CRLF and lone CR all preserved)"). board_claims_match_reality went RED
+against the stale contract ("doc says 85, board runs 88; doc says 21, board has 23") and GREEN
+after. test_safe_write_byte_exact 16/16, exit 0. node tools/build.mjs exit 0. invariants 88/88,
+zero reds -- 23 external, 23 consistency, 40 structural, 2 meta.
+
+LEFT FOR LUNETH. 554 working-tree files are CRLF only because this bug made them so; git stores LF
+for every one of them (core.autocrlf=input), and .gitattributes records that this same mechanism
+already broke the design-system.css seal once. Normalising the tree to LF would make payload
+staging uniform, but it touches nearly every file in the repo, so it was not done unilaterally.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

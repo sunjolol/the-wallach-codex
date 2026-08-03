@@ -46,8 +46,8 @@ prefixed `⚠ PRIME DIRECTIVE CONFLICT`. A wins by default; silently picking is 
 
 ## What a green board actually means
 
-`PYTHONUTF8=1 python tools/invariants.py` — 85 gates. Green means **nothing drifted**. It does *not*
-mean anything is right. Only the ~21 gates anchored outside our own files (book bytes, physical
+`PYTHONUTF8=1 python tools/invariants.py` — 88 gates. Green means **nothing drifted**. It does *not*
+mean anything is right. Only the 23 gates anchored outside our own files (book bytes, physical
 constants, git) can catch a value that is wrong but self-consistent. Report the split, never hand
 Luneth the total as evidence about Wallach.
 
