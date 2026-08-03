@@ -22,9 +22,17 @@ When presenting claims for his approval, every claim renders as four parts, in t
 3. **Full answer** -- the complete modern-voice answer, no inline verbatim
 4. **Quote** -- Wallach's byte-exact words
 
-He approves *the claim*, so he has to see the claim. This has been re-sent more times than any other
-instruction; if you are about to show him a table of ids, or a summary, or a truncated preview,
-you are about to repeat it.
+He approves *the claim*, so he has to see the claim.
+
+**Do not hand-format this. Run the renderer** — it cannot produce any other shape:
+```bash
+python tools/claim_review.py --entity zinc
+python tools/claim_review.py --entity copper --facet mechanism --out temporary/copper-review.md
+```
+It joins the sealed claim (full answer, verbatim, citation composed from the registry) to the
+authored enrichment (question, short answer). If you are about to show him a table of ids, a
+summary, or a truncated preview, you are about to repeat the most re-sent correction in this
+project's history.
 
 ## The input loop -- mine and purify in one pass
 1. Luneth pastes a section's PDF/OCR text.

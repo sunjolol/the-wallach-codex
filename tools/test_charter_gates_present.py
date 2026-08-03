@@ -39,7 +39,7 @@ spec.loader.exec_module(inv)
 impl = inv._charter_gates_present_impl
 wished = inv._charter_name_is_wished
 
-CHARTER = (ROOT / ".claude" / "rules" / "charter.md").read_text(encoding="utf-8")
+CHARTER = (ROOT / ".claude" / "skills" / "charter" / "SKILL.md").read_text(encoding="utf-8")
 LIVE = {i.name for i in inv.INVARIANTS}
 FAKE = "totally_fake_gate_xyz"
 

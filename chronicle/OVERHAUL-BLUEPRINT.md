@@ -14,7 +14,7 @@ _Status legend: `[DRAFT]` written, awaiting Luneth verification · `[LOCKED]` ve
 
 ## Section 1 — THE CHARTER (the non-negotiable rules)  `[LOCKED 2026-07-05]`
 
-**Permanent home: `.claude/rules/charter.md`** (promoted 2026-07-05) — the maintained, authoritative Charter, carrying each rule's live gate-status (LIVE / PARTIAL / WISH) and surviving this blueprint's pruning. This section is the frozen design origin; if the two disagree, the rule file wins.
+**Permanent home: `.claude/skills/charter/SKILL.md`** (promoted 2026-07-05 to `.claude/rules/charter.md`; MOVED 2026-08-03 in the doctor sweep, when the always-loaded rules directory became on-demand skills — the R1–R9 table was carried over byte-for-byte and `charter_gates_present` reads it there now) — the maintained, authoritative Charter, carrying each rule's live gate-status (LIVE / PARTIAL / WISH) and surviving this blueprint's pruning. This section is the frozen design origin; if the two disagree, the rule file wins.
 
 Every rule names its **gate** — the code that proves it. A rule with no gate is labeled `WISH`, never sold as a guarantee (R7).
 
