@@ -3168,7 +3168,7 @@ The early stages of niacin deficiency show up as
 muscular weakness, anorexia, indigestion and skin eruptions.
 Severe deficiency of niacin produces classic pellagra which is
 characterized by the “3 D’s” of pellagra (dermatitis, dementia
-and diarrhea), tremors and sore tongue or “ beef tongue.”
+and diarrhea), tremors and sore tongue or “beef tongue.”
 
 The role of corn based diets in the precipitation of
 pellagra is well known. There is very little niacin in corn
@@ -3191,7 +3191,7 @@ several of the enzymes in the tryptophan-niacin pathway are
 B, dependent, therefore a diet high in sorghum or millet can
 produce pellagra.
 
-Pantothenic acid or vitamin B. is part of coenzyme A,
+Pantothenic acid or vitamin B5 is part of coenzyme A,
 which functions in two-carbon unit metabolism. Pantothenic
 acid is required for the metabolism of carbohydrates, lipids
 and proteins.
@@ -3340,7 +3340,7 @@ create a biotin deficiency in humans. Avidin is denatured and
 rendered harmless by normal cooking temperatures.
 Symptoms of biotin deficiency in humans include skin
 lesions over the nose and mouth, depression, hyperesthesia
-and _ paresthesia particularly over the extremities, muscle
+and paresthesia particularly over the extremities, muscle
 pain, conjunctivitis, blepharitis and a progressive loss of hair
 
 and hair color.
@@ -3355,7 +3355,7 @@ nutrient.
 
 The function of choline in humans is part of the
 metabolism of and in the transport of fat from the liver. A
-deficiency of choline can result ina fatty liver. Asa component
+deficiency of choline can result in a fatty liver. As a component
 of phospholipids, choline functions in triglyceride transport
 and in cell membrane structure. In the liver, choline forms
 lecithin (phosphatidyl choline). During this process, fatty
@@ -7053,7 +7053,7 @@ helium nuclei is “alpha particles,” named by their discoverer,
 Sir Ernest Rutherford, a professor of physics at the Cavendish
 Laboratory at Cambridge University.
 
-Divers use helium/ oxygen “air” when working at great
+Divers use helium/oxygen “air” when working at great
 depths; helium being less soluble than nitrogen dissolves
 
 
@@ -7684,9 +7684,9 @@ Johan August Arfvedson during a routine chemical assay of
 ore from a mine in Sweden. It was named for the Greek word
 lithos, which translates to “stone.”
 
-Lithiumisanextremely reactive metal. Itreacts vigorously
+Lithium is an extremely reactive metal. It reacts vigorously
 with water, to produce hydrogen gas, and with oxygen to form
-lithium oxide (Li,O). To prevent these reactions from occurring,
+lithium oxide (Li2O). To prevent these reactions from occurring,
 free lithium is usually stored in oil or kerosene.
 
 Since 1915, the risk of clinical depression nearly doubles

@@ -5867,12 +5867,11 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 20,
+    "claim_count": 19,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000019",
         "WAL-CLM-IMMORT-000179",
-        "WAL-CLM-IMMORT-000230",
         "WAL-CLM-RARE-000147",
         "WAL-CLM-RARE-000148"
       ],
@@ -5913,8 +5912,6 @@
     ],
     "other_substances_involved": [
       "kelp",
-      "nitrates",
-      "nitrites",
       "thyroid"
     ],
     "books_cited": [

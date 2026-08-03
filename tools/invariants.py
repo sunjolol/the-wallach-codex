@@ -4065,6 +4065,66 @@ def _frontface_defects(verbatim):
     return out
 
 
+# Transcription scaffolding: text the TRANSCRIPTION inserted that is not on the printed page. A
+# verbatim asserts "these are Wallach's printed words", so scaffolding inside one is always a defect
+# — there is no legitimate case, which is why this gate needs no exception list and has no
+# false-positive surface. Contrast `subscript_damage`, whose candidate shapes are ambiguous with real
+# content (a bare `B,` really is boron in a mineral list) and which therefore must stay narrow.
+#
+# The shapes are taken from what the sources ACTUALLY contain, enumerated rather than guessed:
+# 1,512 equals-run separators, 757 `Screenshot (N)` frames, 497 `Page N of M` readouts and 3 Kindle
+# location markers across the seven books. DELIBERATELY EXCLUDED: asterisk runs (3 in epigenetics)
+# and underscore runs (5 in rare-earths), because a printed page can legitimately carry a rule of
+# asterisks or an underscore blank — those are plausible book content, the four below are not.
+_SCAFFOLDING = (
+    ("harness frame name", re.compile(r"Screenshot\s*\(\d+\)")),
+    ("reader page readout", re.compile(r"\bPage\s+\d+\s+of\s+\d+\b")),
+    ("separator rule", re.compile(r"={3,}")),
+    ("kindle location marker", re.compile(r"<\s*Page\s+\d+\s+of\s+\d+\s*\|")),
+)
+
+
+def check_verbatim_no_transcription_scaffolding():
+    """No sealed claim's verbatim or claim_text contains transcription scaffolding.
+
+    FOUND 2026-08-02 by wave 1 of the front-facing page-read campaign: three claims
+    (EPIGEN-000124, -000125, IMMORT-000230) carried `===== Screenshot (675) -- Page 818 of 936 =====`
+    INSIDE their verbatim, i.e. the app could render OCR scaffolding to a reader as though Wallach
+    had written it. A reader hit ONE of them; a grep found the other two.
+
+    The fix is never a source edit — those separators are legitimate scaffolding in the .txt (932 in
+    epigenetics alone) and deleting them would corrupt the transcription. The repair is a verbatim
+    RE-CUT via corpus_resnap --fix, which is why this gate guards the CLAIM and not the book.
+    """
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    shards = sorted(claims_dir.glob("claims-*.json"))
+    if not shards:
+        return True, "eden/corpus not installed (bootstrap-guard)"
+    hits = []
+    scanned = 0
+    for shard in shards:
+        data = json.loads(shard.read_text(encoding="utf-8"))
+        items = data if isinstance(data, list) else data.get("claims", [])
+        for c in items:
+            if not isinstance(c, dict):
+                continue
+            scanned += 1
+            for field in ("verbatim", "claim_text"):
+                v = c.get(field)
+                if not isinstance(v, str):
+                    continue
+                for label, rx in _SCAFFOLDING:
+                    m = rx.search(v)
+                    if m:
+                        hits.append(f"{c.get('id')}.{field}: {label} {m.group(0)!r}")
+    if hits:
+        return False, (f"{len(hits)} transcription-scaffolding fragment(s) inside sealed claim text "
+                       f"— a verbatim must contain only the printed page's words: "
+                       + "; ".join(sorted(hits)[:6])
+                       + (f" (+{len(hits) - 6} more)" if len(hits) > 6 else ""))
+    return True, f"{scanned} sealed claims carry no transcription scaffolding in verbatim or claim_text"
+
+
 def check_frontface_verbatims_clean():
     """No sealed (front-facing) verbatim carries a mid-word line-break hyphen or a
     mojibake/control character. Blueprint §5 lock gate #1.
@@ -6652,6 +6712,15 @@ INVARIANTS = [
         truth_anchor="every sealed claim verbatim in eden/corpus/claims/ re-scanned each run, minus the reasoned exception list",
         severity="critical",
         lesson_ref="2026-08-02 front-facing OCR campaign, BLUEPRINT §5 lock gate #1 -- Luneth found raw OCR in user-facing quotes (RARE-000336 tisk/rea/ancer; LETS-000502 '1 20' for 120). 180 line-break hyphens fixed across 91 quotes, then 5 further classes promoted the same day once every residual hit was read off its page image. HONEST LIMITS, both measured: (1) it cannot see the INVISIBLE class -- four valid-word swaps (side/vide, tine/rine, Jute/lute, ties/ries) were found by EYE, every one inside a pair this gate calls clean; (2) it sees only the letter-digit and camelCase EDGES of the DROPPED-SPACE class caused by tight justification (page: 'magnesium at 2,000 mg', ours: 'at2,000'), whose letter-letter cases (andelectrolytes, ratherthan) are invisible to every detector here and whose size is UNMEASURED -- an attempted vocabulary measurement returned 387 candidates that were almost all legitimate words. Negative test tools/test_frontface_verbatims_clean.py",
+    ),
+    Invariant(
+        name="verbatim_no_transcription_scaffolding",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="no sealed claim's verbatim or claim_text contains transcription scaffolding — the capture harness's frame name (Screenshot (N)), the ebook reader's position readout (Page N of M), a ===-run separator, or a Kindle location marker. A verbatim asserts 'these are Wallach's printed words', so scaffolding inside one is always a defect and this gate needs no exception list",
+        check_fn=check_verbatim_no_transcription_scaffolding,
+        truth_anchor="every sealed claim verbatim + claim_text in eden/corpus/claims/ re-scanned each run against the four marker shapes the transcriptions actually contain",
+        severity="critical",
+        lesson_ref="2026-08-02 wave 1 of the front-facing page-read campaign -- three claims (EPIGEN-000124, -000125, IMMORT-000230) carried '===== Screenshot (675) -- Page 818 of 936 =====' INSIDE their verbatim, i.e. the app could render OCR scaffolding to a reader as Wallach's words. A page-reading agent hit ONE; a grep found the other two, which is why the gate enumerates the marker shapes the sources CONTAIN rather than the one shape someone happened to hit. The fix is never a source edit -- those separators are legitimate scaffolding in the .txt (932 in epigenetics, 510 in immortality) -- so this guards the CLAIM, not the book. ★ SECOND FINDING, from the repair: stripping the separator dropped two verbatims to 40 and 20 chars, under corpus_seal check #2's 60-char floor -- THE SCAFFOLDING HAD BEEN THE ONLY THING CLEARING THAT FLOOR, so a length gate was being satisfied by text the page never printed. Both were extended into genuinely adjacent rows of the same dose table. DELIBERATELY NOT policed: asterisk runs (3 in epigenetics) and underscore runs (5 in rare-earths), because a printed page can legitimately carry a rule of asterisks or an underscore blank. Negative test tools/test_verbatim_no_transcription_scaffolding.py (21 cases, incl. those two sparing cases)",
     ),
     Invariant(
         name="enriched_book_is_verified",

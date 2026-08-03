@@ -23072,7 +23072,7 @@ accumulates to 320 ppm by Corya spp.; land
 animals 0.003 ppm (accumulates in bone).
 Cerium nitrate is used as a topical disinfectant for severe burn victims.
 
-Cl - chlorine is found in igneous rocks
+Cl - Chlorine is found in igneous rocks
 130 ppm; shales 180 ppm; sandstones 10
 ppm; limestone 150 ppm; fresh water 7 to
 8 ppm; sea water 19,000 ppm; soil 100 ppm
@@ -25032,7 +25032,7 @@ unsweetened cranberry juice.
 He- Helium is found in igneous rocks
 at 0.008 and sea water at 0.0000069 ppm.
 
-Hf - Hafniumis found in igneous rocks
+Hf - Hafnium is found in igneous rocks
 at 3 ppm; shale at 2.8 ppm; sandstone at
 3.4 ppm; limestone at 0.3 ppm; sea water
 at 0.000008 ppm; soil at 3.0 ppm; marine
@@ -33938,7 +33938,7 @@ Cancer
 
 Suicide
 
-Alzheimer's disease
+Alzheimer’s disease
 
 Nutritional Deficiency
 Selenium, Vitamin E, essential fatty acids

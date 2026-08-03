@@ -5295,7 +5295,6 @@
     },
     "conditions_treated": [
       "cancer",
-      "goiter",
       "thyroid_disease"
     ],
     "books_cited": [
@@ -5316,7 +5315,6 @@
     },
     "conditions_treated": [
       "cancer",
-      "goiter",
       "thyroid_disease"
     ],
     "books_cited": [

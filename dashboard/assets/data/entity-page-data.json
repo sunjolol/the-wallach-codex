@@ -29030,7 +29030,7 @@
     "goiter": {
       "type": "condition",
       "name": "Goiter",
-      "claim_count": 20,
+      "claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -29079,7 +29079,6 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000019",
             "WAL-CLM-IMMORT-000179",
-            "WAL-CLM-IMMORT-000230",
             "WAL-CLM-RARE-000147",
             "WAL-CLM-RARE-000148"
           ]
@@ -43187,21 +43186,21 @@
         "anemia",
         "aneurysm",
         "arthritis",
-        "goiter",
         "hernia",
         "kawasaki_disease",
         "liver_cirrhosis",
-        "liver_disease"
+        "liver_disease",
+        "varicose_veins"
       ],
       "related": [
         "anemia",
         "aneurysm",
         "arthritis",
         "copper",
-        "goiter",
         "hernia",
         "iodine",
-        "kawasaki_disease"
+        "kawasaki_disease",
+        "liver_cirrhosis"
       ]
     },
     "tinnitus": {

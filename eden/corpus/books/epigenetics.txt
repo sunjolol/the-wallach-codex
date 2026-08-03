@@ -18529,7 +18529,7 @@ As crazy as it seems on the surface, compare the “genetic” approach to human
 MD with the search for the genomic repair mechanism to the veterinary industry
 approach to MD (white muscle disease aka: muscular dystrophy) where muscle
 
-(meat) is “King” (.e., pork chops, beef steak, lamb chops, roasts, ground red meat,
+(meat) is “King” (i.e., pork chops, beef steak, lamb chops, roasts, ground red meat,
 chicken, turkey, etc.). Muscular dystrophy (MD) known as white muscle disease,
 stiff lamb disease, and mulberry heart disease (KSD in pigs), have been wiped
 out in the veterinary industry by the simple supplementation of selenium to
@@ -20371,7 +20371,7 @@ Signs of overdose: Vitamin B5 overdose (10 to 20 grams per day) can result in a
 relative deficiency of thiamine, diarrhea, and edema.
 Vitamin B, (pyridoxine) function:
 
-Vitamin Bg, originally designated B3, is found as three chemically, metabolically,
+Vitamin B6, originally designated B3, is found as three chemically, metabolically,
 and functionally related structures pyridoxine (pyridoxol, PN), pyridoxal (PL), and
 
 pyridoxamine (PM). These structures are converted in the liver, red blood cells,
@@ -20464,8 +20464,8 @@ humans.
 
 In plasma and tissue, the primary forms of B12 are methylcobalamin,
 adenosylcobalamin, and hydroxocobalamin. Animal products and bacterial
-fermentation are the most common sources of B,2. The most common forms
-of By, in meat are adenosyl-and hydroxocobalamin; in dairy products (including
+fermentation are the most common sources of B12. The most common forms
+of B12 in meat are adenosyl-and hydroxocobalamin; in dairy products (including
 human breast milk) the most common forms are methyl-and hydroxocobalamin.
 
 Bacteria, fungi, and algae can synthesize vitamin B12. However, yeast, higher
@@ -20853,7 +20853,7 @@ cells
 
 9. Modifying the mechanisms of aging
 
-Bioflavonoids deficiency can result in:
+Bioflavonoid deficiency can result in:
 
 Capillary hemorrhage
 Reduced immune capacity
@@ -21260,7 +21260,7 @@ etc,), and depression.
 Omega-3 fatty acids, docosahexaenoic acid (DHA) and eicosapentaenoic acid
 (EPA) are essential for enzymatic pathways required to metabolize long-chain
 polyunsaturated fatty acids (PUFA). Low plasma concentrations of DHA is a
-marker for low cerebral spinal fluid levels of 5-hydroxyindoleacetic acid (S-HIAA).
+marker for low cerebral spinal fluid levels of 5-hydroxyindoleacetic acid (5-HIAA).
 Low brain concentrations of 5-HIAA is directly associated with increased rates of
 
 depression and suicide.
@@ -22499,7 +22499,7 @@ Insomnia (sleep apnea, snoring, etc.) : Same as osteoporosis
 
 Calcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis
 
-Cramps & twitches (Tourette's syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis
+Cramps & twitches (Tourette’s syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis
 
 PMS (emotional & physical symptoms) : Same as osteoporosis
 
@@ -23034,7 +23034,7 @@ Manic depression
 
 “Bi-polar” disease
 
-Dr. Jekyll/Mr. Hyde rages ("Bad Seeds")
+Dr. Jekyll/Mr. Hyde rages (“Bad Seeds”)
 Impaired growth
 
 Peripheral neuropathy
@@ -23766,7 +23766,7 @@ reproductive system, general metabolism, and body weight.
 Many foods and food additives are known to be “goitrogens” because they
 interfere with the normal thyroid metabolism and function including:
 
-Dietary nitrates (e.g,, deli slices, sandwich meats, etc.)
+Dietary nitrates (e.g., deli slices, sandwich meats, etc.)
 Water borne nitrates
 
 Cruciferous vegetables (e.g., cabbage, broccoli, cauliflower, Brussel sprouts,
@@ -24020,15 +24020,12 @@ Larry Ele
 
 
 exceed $1 billion in sales by 1995 as a result of allopathic doctors generating
-
+650,000 prescriptions of the drug per month!
 
 Animal studies show that a deficiency of Li results in reproductive failure,
-
-*
-
+infertility, reduced growth rate, shortened life expectancy and serious behavioral
 problems. In humans, manic depression, clinical depression, “bi-polar” disease
-
-
+“Dr. Jekyll/Mr. Hyde” and “Bad Seed” behavior, hyperactivity, ADD, ADHD and
 autism are hallmarks of Li deficiency. Minos
 
 ageuepen es
@@ -24309,11 +24306,11 @@ proteins marine animals at 4,000 to 48,000 ppm; and land animals at 4,000 ppm.
 ===== Screenshot (634) -- Page 733 of 936 =====
 EPIGENETICS
 
-“salt hunger” dates back to the very beginning of animals and man and is one
+“Salt hunger” dates back to the very beginning of animals and man and is one
 of the very basic cravings of living organisms. Carnivores (man or beast) do not
 typically show the great craving for salt because meat contains relatively large
 amounts of NaCl, but herbivores and human vegetarians demand large amounts
-of NaCl because there is little or no natural NaCl in grains, vegetables and frui
+of NaCl because there is little or no natural NaCl in grains, vegetables and fruit.
 
 
 The average Na dietary intake per day in Western cultures is five to 12 G/day
