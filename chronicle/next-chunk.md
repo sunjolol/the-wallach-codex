@@ -5,14 +5,21 @@ Luneth types `genesis` in a NEW session; Claude runs `tools/genesis.py` ONLY in 
 then asks what to resume.
 
 # ★ STATE — every number below was MEASURED at handoff, not remembered
-- **Board 83/83**, 0 reds. Corpus sealed at **knowledge_version=448**, `corpus_verify` PASS
+- **Board 83/83**, 0 reds. Corpus sealed at **knowledge_version=449**, `corpus_verify` PASS
   (2268 claims · 7 books · hashes match). Build fresh, all derived artifacts in sync.
-- **Everything is committed and pushed** (`master`, through `647ba62d` + this handoff commit).
-- **Front-facing backlog: 1,716** (was 1,900 at session start). 184 claims were page-read and moved
-  into `claims_verified`, which now holds **209**. `books_verified` = `dddl-3e-2011` · `iaiyh`.
-  Per book: epigenetics 404 · immortality 441 · lets-play-doctor 436 · rare-earths 348 · hells-kitchen 87.
-- `frontface_verbatims_clean` now gates **EIGHT** mechanical classes (the 8th, `subscript_damage`,
-  landed this session). Negative test: **45 cases**, all passing.
+- **Everything is committed and pushed** (`master`, through `381b99b8`).
+- **Front-facing backlog: 1,505** (1,900 → 1,716 → 1,505). `claims_verified` holds **420**.
+  `books_verified` = `dddl-3e-2011` · `iaiyh`.
+  Per book remaining: epigenetics 378 · immortality 337 · lets-play-doctor 385 · rare-earths 322 ·
+  hells-kitchen 83.
+- `frontface_verbatims_clean` gates **EIGHT** mechanical classes. Negative test: **45 cases**, passing.
+- ⚠ **ONE PRE-EXISTING PROBE FAILURE, not caused by the wave-1 work and NOT fixed:**
+  `tools/render_probe_search_routing.js` fails 1/6 — "what are antioxidants" heroes
+  `WAL-CLM-HELLS-000016` (facet=warning) instead of the definition. Attributed to before this work by
+  evidence, not by re-running at HEAD: the search index's ordered id list is identical, `entities` is
+  byte-identical, exactly 42 entries changed (precisely the wave-1 fix set), and the ONLY field
+  differing in any of them is `verbatim` — every routing field is untouched and the wrongly-picked
+  hero is itself unchanged. Different subsystem; own ticket.
 
 # ★★★ READ THIS FIRST: `tools/frontface/README.md`
 The whole toolkit moved OUT of the session scratchpad INTO the repo this session, precisely so
@@ -74,16 +81,28 @@ checked the list, and returned DOCTRINE_OK instead of proposing the restore.
 
 # ★ NEXT WORK, in priority order
 
-## 1. The 443-claim page-read list — `tools/frontface/work/readlist.json`
-Regenerate it (seconds) then work it. Current composition:
-`A2` semantic disagreement **93** · `A3` both-sides-unreadable-by-machine **83** ·
-`B` alignment-slip **130** · `B` dropped-text **100** · `A` unlocated **7** · `C` control **30**.
-By book: immortality 217 · lets-play-doctor 99 · epigenetics 66 · rare-earths 57 · hells-kitchen 4.
+## 1. ✔ WAVE 1 DONE (2026-08-02) — tier A + control, 213 claims. WAVE 2 = tier B, 230 claims.
+Regenerate with `build_targets` → `corr2`/`corr_shots` → `select_reads` (seconds), then
+`python tools/frontface/build_wave.py wave2 B` — it PAGE-GROUPS the list, which is the whole
+economy: 443 claims sit on only 216 distinct pages. Wave 2 is **230 claims / 144 page groups**
+(alignment-slip 130 · dropped-text 100; immortality 112 · lets-play-doctor 47 · epigenetics 40 ·
+rare-earths 31).
 
-**`A1` (our text is the garbled side) is now EMPTY** — every one was fixed this session.
-**Immortality at 217 is the least trustworthy slice**: its Tesseract pass is noisier than the other
-books' (only 165 of 441 agree, vs 85/87 for hells-kitchen), so expect a high false-positive rate
-there rather than 217 real defects.
+**Wave-1 result, for calibration:** 118 CLEAN · 44 defects in our text (all fixed) · 8 book-typo
+proposals · 41 unlogged divergences · 2 refuted. Expect MOSTLY CLEAN; a reader who needs to find
+something invents something.
+
+**★ TIER B IS SMALLER THAN IT LOOKS — measured 2026-08-02, use this in the agent brief:** of the
+dropped-text inserts, **52 are the ebook reader's own page-number chrome** (`page 531 of etics`,
+`936 74 epigen`) **or table/figure banners**, i.e. machine artifacts, not lost text. Only **6**
+genuinely interior mid-verbatim gaps exist across the three PDF books — two of them dropped DOSE
+lines (`LETS-000147` "IU day Bcomplex at 50", `LETS-000051` "gm INOSITOL 75"), which are the
+highest-value reads in the whole tier. `corr2` already trims pure head/tail spill, but it keeps a
+25-word slack band, so an "insert" near either edge is usually excerpt boundary, not a drop.
+
+**Immortality is still the least trustworthy slice**: 106 of 238 tier-A hunks were the second OCR
+merely shaving letters off a word (`The`→`he`, `Gallium`→`allium`), **95 of them in immortality**.
+Tell the readers this explicitly — it was in the wave-1 brief and it is why 118 came back clean.
 
 ## 2. The non-word residue — 599 hits in 337 claims
 `selfscan.py` → `triage_nonword.py` → `rank_nonword.py`. **Expect to CONFIRM, not fix**: of 105 such
@@ -91,7 +110,19 @@ tokens page-read this session, 62 were legitimate (botanical Latin, British spel
 The spellchecker's suggestions carry NO authority — it wanted `castro` for `gastro`, `penis` for
 `pedis`, `honey` for `HOXEY`.
 
-## 3. Two hyphen-gap classes — FOUND, MEASURED-BUT-NOT-CLOSED (deliberate)
+## 2b. ✔ MEASURED 2026-08-02 — three classes now sized, none gated (deliberate)
+- **page-number injection** (`autoim- 132 mune`): **12** in sources, **1 shipping** (`LETS-000306`).
+- **hyphen-LESS split** (`constipa\ntion`): **9** in sources, **0 shipping**.
+- **capital I read as lowercase l** (NEW, 9th class): **53** occurrences / 12 tokens
+  (`lowa`→Iowa 22 · `lodine`→Iodine 12 · `lan`→Ian 8 · `lonic` · `lonia` · `latrogenic` · `lliad` ·
+  `lodized`). The one that reached a reader is fixed; 52 sit in source text no claim quotes.
+- **`subscript_damage` HAS A HOLE**: its formula clause is a hard-coded `CO|H|SO|NO`, so `ZrSiO,`
+  and `SiO,` pass, as does `By,`→B12. ★ A generalised formula pattern was TRIED and **REJECTED** —
+  it fires on 51 innocent things (`TMJ,` `DNA,` `ADD,` `VII,` and RNA codons `ACU, ACA, ACC`); a
+  vitamin D/E/K pattern scored 2 true against 4 false. **Only the `By,`/`Bg,` shape (4 hits, 3
+  claims) is tight enough to gate.** Do not re-attempt the other two without new evidence.
+
+## 3. The original hyphen-gap note (superseded by 2b above, kept for its reasoning)
 `_FF_MID_WORD_HYPHEN` was tightened this session to `[A-Za-z]{2,}-[ \t]*\n[ \t]*[A-Za-z]{2,}` (it had
 required the hyphen to ABUT the newline, which made Hell's Kitchen's whole wrap style invisible — 76
 splits). Two sibling shapes are still invisible:
@@ -101,6 +132,22 @@ splits). Two sibling shapes are still invisible:
 
 Both were left unpatched ON PURPOSE: tightening a gate from a single instance is how the earlier
 over-fire happened. **Measure the class first**, then codify with a negative test.
+
+## 3b. FOUR CLAIM-EXTENT DEFECTS — a repair route no source edit can take
+`EPIGEN-000124` · `EPIGEN-000125` · `IMMORT-000230` each swallowed a transcription page separator
+(`===== Screenshot (675) -- Page 818 of 936 =====`) INTO the verbatim, i.e. the app can render OCR
+scaffolding to a user. **Do NOT edit the .txt for these** — those separators are legitimate
+scaffolding (466 in epigenetics, 255 in immortality); the repair is a verbatim RE-CUT via the EDIT
+route (`mine_batch apply`). `LETS-000278`'s verbatim stops two characters short of the page's
+`pepper (Piper nigrum).`. All four are held out of `claims_verified` or unread; logged in
+`ratified-divergences.json::pending_review::batch_2026-08-02-wave1::claim_extent_defects_held`.
+
+## 3c. `WAL-CLM-RARE-000372` HOLDS 50 OF THE 60 ELEMENTS
+Its column 3 stops at `Sulphur`, dropping Tantalum · Terbium · Thulium · Tin · Titanium · Vanadium ·
+Ytterbium · Ytrium · Zinc · Zirconium; it also interleaves three table captions into one list.
+**The canon did NOT inherit this** — `essentials-canon` carries all 60 correctly (diffed
+2026-08-02; the only differences are 4 modern spellings: lutetium/lutecium, nickel/nickle,
+sulfur/sulphur, yttrium/ytrium). Source page: rare-earths PDF **p499** (printed folio 477).
 
 ## 4. The 997 corroborated-but-unread claims
 They stay in the backlog by measurement. Clearing them means page reads. If that ever needs to
