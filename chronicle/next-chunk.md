@@ -41,15 +41,37 @@ left to poison the next session (logging-doctrine rule 5).**
 contained — escapes. None exists today; tighten with a measurement if one ships, never with a
 guessed threshold (an overlap floor reddens 9 legitimate pairs, incl. 5 adjacent Base-Line dose rows).
 
-# ⚠ ONE PRE-EXISTING TEST FAILURE, LEFT FOR LUNETH (not caused by the above)
-`tools/test_collective_doses_not_fanned.py::same_substance_pair_still_allowed` **FAILS (7/8)**, and
-**fails at HEAD too** — proven by running that exact case against `git show HEAD:tools/invariants.py`,
-not inferred. `_SAME_SUBSTANCE_SLUGS` (`tools/invariants.py:2376`) was emptied 2026-07-15 when the
-cobalt/B12 carve-out was found to refute itself; the test case still asserts that refuted chemistry
-as fact. **Deliberately not fixed** — flipping it takes a position on a question
-`chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md` still records as
-**"OPEN — needs Luneth's call."** ★ That is a second finding: `tools/invariants.py:2370` cites that
-same file as **"Luneth's ruling."** One of the two is wrong. Needs his read, not a quiet edit.
+# ✔ THE PRE-EXISTING TEST FAILURE IS FIXED — 2026-08-03, commit a362a546
+`tools/test_collective_doses_not_fanned.py` **7/8 → 10/10**; the whole suite is now **36/36** (it
+had carried a permanently-failing member, which is exactly how a real regression hides).
+
+**The "open question" was settled 18 days ago.** `tools/invariants.py` cited the contradictions file
+as "Luneth's ruling" while that file's header still read "Status: OPEN — needs Luneth's call."
+`git log -S"_SAME_SUBSTANCE_SLUGS"` found commit `823b8823` (2026-07-16): *"Luneth made the call
+after reading Immortality and Let's Play Doctor himself… He ruled: no target ever + B12 auto-fills,"*
+visual signed off *"Much better."* **invariants.py was RIGHT; the chronicle file was stale.** Verified
+still live: canon cobalt `coverage_kind:"mirrors"` / `mirrors_slug:"vitamin-b12"`, both dose claims
+`dose.applies_to:["vitamin-b12"]`, `collective_doses_not_fanned` + `mirrors_resolve` green. The file
+now opens with a ★ RESOLVED header; §1–§6 preserved unedited.
+
+★ **The lesson, because it nearly cost a re-ask:** a chronicle STATUS LINE can outlive its ruling, and
+a later session will re-open a settled question on its authority. Resolve with `git log -S` on the
+symbol the decision changed, then read the implementing commit — do NOT trust a status header.
+
+**Gap closed while there:** the 2026-07-16 patch added FOUR `applies_to` enforcement branches (empty ·
+not-a-subset · equals-every-essential · declared-but-not-honoured) and shipped ZERO planted cases for
+them — four branches never proven to fire. All four now have negative cases; `applies_to_teeth` plants
+the fabricated 400 mcg cobalt target RETURNING and asserts RED.
+
+# ★ STILL OPEN — the ruling's keystone sentence is UNSEALED (re-measured 2026-08-03)
+*"A pure cobalt requirement is only found in some bacteria and algae"* — the sentence the B12-only
+ruling rests on — is in **NO sealed claim's verbatim**. It IS in 3 books (`dddl-3e-2011`,
+`rare-earths`, `epigenetics`, 1 occurrence each), so it is genuinely Wallach's; but in our corpus it
+survives only as our own `claim_text` prose on `WAL-CLM-RARE-000114`, whose verbatim does not contain
+it. Flagged as STILL OPEN in the 823b8823 commit body on 2026-07-16 and again 2026-08-03 — not yet
+done. Needs mining (and a user-only `corpus_seal`) so the ruling rests on sealed evidence. ★ Capture
+BOTH sides: §3 of the contradictions file shows the same encyclopedia entry also says cobalt is
+*"also required as a necessary cofactor for the production of the thyroid hormone thyroxin"* (3 books).
 
 ---
 
