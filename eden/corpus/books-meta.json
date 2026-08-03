@@ -102,8 +102,8 @@
         "Joel D. Wallach"
       ],
       "file": "eden/corpus/books/iaiyh.txt",
-      "content_sha256": "4c1f64c9439913381ad1ca21e5f1e4d58805c2973d3521cc08e31c9656997e32",
-      "content_bytes": 47207,
+      "content_sha256": "adb68082159d9c036cf9e2d784ddd551e85f9b44aa09e918d7dabaadeecbb7cc",
+      "content_bytes": 47206,
       "line_count": 1151,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",
