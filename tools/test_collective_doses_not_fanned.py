@@ -16,6 +16,20 @@ artifact this gate says RED on. If that case ever flips, the two gates have conv
 this one may be redundant -- but until then it is the only thing standing between a shared
 Wallach budget and a doubled board number.
 
+THE THREE CLASSIFICATIONS a multi-essential dose claim may declare, each a STATED FACT on the
+claim rather than an inference from arity: `dose.collective_group` (one budget shared across
+members) · `dose.applies_to` (the amount belongs to a proper SUBSET) · nothing, which is RED.
+
+★ A FOURTH ONCE EXISTED AND WAS A FABRICATION. `_SAME_SUBSTANCE_SLUGS` exempted cobalt/B12 on
+the reasoning that "cobalt is the metal atom at the centre of cobalamin", which is a PART-OF
+relation masquerading as IDENTITY -- it let a B12 dose post a 400 mcg elemental-cobalt target
+while this very gate reported green. Purged 2026-07-15/16 (commit 823b8823) after Luneth read
+Immortality and Let's Play Doctor himself and ruled: no elemental-cobalt target ever, cobalt
+auto-fills from B12 (kv=337; canon `coverage_kind: "mirrors"`). The case that asserted that
+fabrication lived here until 2026-08-03 and failed every run for 18 days; its successor,
+`applies_to_scopes_the_dose`, keeps its INTENT (don't red-board the 2 real claims) on the
+mechanism that actually shipped.
+
 Run:  PYTHONUTF8=1 python tools/test_collective_doses_not_fanned.py
 
 Exit 0 = every case behaves; non-zero = the gate stopped biting (a real regression)."""
@@ -161,26 +175,98 @@ def unannotated_multi_essential_fails_closed():
     return good
 
 
-def same_substance_pair_still_allowed():
-    """The fail-closed check must NOT over-fire on cobalt/vitamin-b12: ONE substance carrying
-    two canon names (cobalt is the metal atom at the centre of cobalamin), so a single dose
-    legitimately fans to both. If this REDs, the arity check has become a blanket ban and the
-    corpus's 2 real cobalt/B12 claims are collateral."""
+def _planted(claim, artifact_essentials=None):
+    """One planted dose claim + a targets artifact, in their own temp dir."""
     import tempfile as _tf
-    d = Path(_tf.mkdtemp(prefix="cdnf_same_"))
-    (d / "claims-planted.json").write_text(json.dumps({"claims": [{
-        "id": "WAL-CLM-PLANT-000002", "kind": "dose",
-        "essentials": ["cobalt", "vitamin-b12"],
-        "verbatim": "a vitamin B12/cobalt intake of 250 to 400 mcg/day",
-        "dose": {"amount": "250-400", "unit": "mcg", "period": "daily"},
-    }]}, ensure_ascii=False), encoding="utf-8")
+    d = Path(_tf.mkdtemp(prefix="cdnf_ap_"))
+    (d / "claims-planted.json").write_text(
+        json.dumps({"claims": [claim]}, ensure_ascii=False), encoding="utf-8")
     p2 = d / "targets.json"
-    p2.write_text(json.dumps({"essentials": []}, ensure_ascii=False), encoding="utf-8")
-    ok, msg = impl(p2, d)
-    print(f"  [same_substance   ] expect GREEN -> {'GREEN' if ok else 'RED'} | {msg[:62]}")
+    p2.write_text(json.dumps({"essentials": artifact_essentials or []}, ensure_ascii=False),
+                  encoding="utf-8")
+    return impl(p2, d)
+
+
+def _cobalt_claim(**dose_extra):
+    """The REAL shape of WAL-CLM-IMMORT-000084 / WAL-CLM-RARE-000014: Wallach writes
+    "B12/cobalt" as one token, so the claim is ABOUT both, but the 250-400 mcg is B12's."""
+    dz = {"amount": "250-400", "unit": "mcg", "period": "daily"}
+    dz.update(dose_extra)
+    return {"id": "WAL-CLM-PLANT-000002", "kind": "dose",
+            "essentials": ["cobalt", "vitamin-b12"],
+            "verbatim": "a vitamin B12/cobalt intake of 250 to 400 mcg/day",
+            "dose": dz}
+
+
+def applies_to_scopes_the_dose():
+    """THE SUCCESSOR TO A CASE THAT ASSERTED A FABRICATION. Until 2026-08-03 this slot held
+    `same_substance_pair_still_allowed`, which planted the cobalt/B12 claim with NO annotation
+    and expected GREEN, on the docstring reasoning that "cobalt is the metal atom at the centre
+    of cobalamin, so a single dose legitimately fans to both."
+
+    That reasoning was REFUTED and its exemption PURGED on 2026-07-15/16 (commit 823b8823):
+    "the metal atom at the centre of" is a PART-OF relation while "one intake described by both
+    names" is an IDENTITY relation -- 400 mcg of B12 carries ~4% of that mass as cobalt, so the
+    carve-out let a B12 dose post a 400 mcg ELEMENTAL COBALT target while the gate built to
+    catch exactly that reported green. `_SAME_SUBSTANCE_SLUGS` has been `()` ever since, so the
+    case asserted the very thing the purge removed and FAILED every run for 18 days.
+
+    Luneth ruled the underlying question himself after reading Immortality and Let's Play
+    Doctor: NO elemental-cobalt target ever, and cobalt's tile auto-fills from B12. Shipped at
+    kv=337 -- canon cobalt `coverage_kind: "mirrors"`, `mirrors_slug: "vitamin-b12"`, both real
+    claims carrying `dose.applies_to: ["vitamin-b12"]`.
+
+    So the ORIGINAL INTENT of this case still matters -- the arity check must not become a
+    blanket ban that red-boards the 2 real cobalt/B12 claims -- but the sanctioned escape hatch
+    is now `dose.applies_to`, a STATED FACT on the claim, not an inference from arity. This
+    pins that hatch."""
+    ok, msg = _planted(_cobalt_claim(applies_to=["vitamin-b12"]))
+    print(f"  [applies_to_scopes] expect GREEN -> {'GREEN' if ok else 'RED'} | {msg[:62]}")
     if not ok:
-        print(f"    FAIL: {msg}")
+        print(f"    FAIL: a dose scoped by applies_to to a PROPER SUBSET must pass, or the "
+              f"2 real cobalt/B12 claims are collateral: {msg}")
     return ok
+
+
+def applies_to_malformed_fails_closed():
+    """applies_to is VALIDATED, never trusted -- a malformed marker must not become a way to
+    silence the gate. All three shapes were enforced in code on 2026-07-16 but none had a
+    planted case until 2026-08-03, so none had ever been proven to fire."""
+    cases = [
+        ("empty", _cobalt_claim(applies_to=[]),
+         "an EMPTY applies_to states nothing and must not buy silence"),
+        ("not_subset", _cobalt_claim(applies_to=["selenium"]),
+         "applies_to naming an essential the claim does not map is incoherent"),
+        ("equals_all", _cobalt_claim(applies_to=["cobalt", "vitamin-b12"]),
+         "applies_to listing EVERY mapped essential is a fan-out with extra steps"),
+    ]
+    good = True
+    for label, claim, why in cases:
+        ok, msg = _planted(claim)
+        print(f"  [applies_to:{label:10}] expect RED   -> {'RED' if not ok else 'GREEN'} | {msg[:44]}")
+        if ok:
+            print(f"    FAIL: {why}")
+            good = False
+    return good
+
+
+def applies_to_enforced_not_merely_accepted():
+    """★ THE MARKER MUST HAVE TEETH. applies_to says the amount belongs to a SUBSET; if the
+    derive still posts that number on a mapped-but-UNDOSED essential, the marker is a comment,
+    not a gate. This plants exactly the world the 2026-07-15 fix existed to prevent: the claim
+    says the 400 mcg is B12's, and the artifact posts it on COBALT anyway -- the fabricated
+    elemental-cobalt target, returning."""
+    ok, msg = _planted(
+        _cobalt_claim(applies_to=["vitamin-b12"]),
+        artifact_essentials=[{"name": "Cobalt", "slug": "cobalt", "category": "minerals",
+                              "target": {"kind": "wallach", "low": 400.0, "unit": "mcg",
+                                         "source_claim_id": "WAL-CLM-PLANT-000002"}}])
+    good = (not ok) and "cobalt" in msg.lower()
+    print(f"  [applies_to_teeth ] expect RED   -> {'RED' if not ok else 'GREEN'} | {msg[:62]}")
+    if not good:
+        print("    FAIL: a numeric target on an essential the claim explicitly does NOT dose "
+              "must RED — otherwise applies_to is decorative and the 400 mcg comes back")
+    return good
 
 
 def main():
@@ -196,7 +282,9 @@ def main():
         case("label_derived", LABEL_DERIVED, expect_red=True, expect_named="3510"),
         control_r2_is_blind(),
         unannotated_multi_essential_fails_closed(),
-        same_substance_pair_still_allowed(),
+        applies_to_scopes_the_dose(),
+        applies_to_malformed_fails_closed(),
+        applies_to_enforced_not_merely_accepted(),
     ]
     passed = all(results)
     print(f"\n{'ALL PASS' if passed else 'FAILED'} ({sum(results)}/{len(results)})")

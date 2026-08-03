@@ -3010,11 +3010,22 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     says clean while the target doubles. The gate's own reason for existing (a 9 g EFA claim
     posting 18 g of board target) was an annotation nobody had needed to write yet.
 
-    Now every dose claim mapping >1 essential must be EITHER annotated collective OR a
-    declared same-substance pair (_SAME_SUBSTANCE_SLUGS below). Neither -> RED. The corpus has
-    exactly 3 such claims today (1 collective, 2 cobalt/B12), so this costs nothing now and
-    fails CLOSED on the next multi-essential dose mined -- forcing a deliberate call at mine
-    time instead of a silent fan-out discovered weeks later."""
+    Now every dose claim mapping >1 essential must DECLARE its classification -- one of
+    `dose.collective_group` (one budget shared across members) or `dose.applies_to` (the amount
+    belongs to a proper SUBSET). Neither -> RED. Both are STATED FACTS on the claim, never
+    inferred from arity, and applies_to is VALIDATED here (empty / not-a-subset / equals-every-
+    essential are all RED) and ENFORCED below, so a malformed marker cannot buy silence.
+    The corpus has exactly 3 such claims today: 1 collective (the 9 g EFA) + 2 applies_to-scoped
+    (the cobalt/B12 pair, whose 250-400 mcg is B12's). So this costs nothing now and fails
+    CLOSED on the next multi-essential dose mined -- forcing a deliberate call at mine time
+    instead of a silent fan-out discovered weeks later.
+
+    ★ A THIRD ROUTE ONCE EXISTED AND WAS A FABRICATION: `_SAME_SUBSTANCE_SLUGS` (still read
+    below, permanently EMPTY) exempted cobalt/B12 because "cobalt is the metal atom at the
+    centre of cobalamin" -- PART-OF masquerading as IDENTITY. Purged 2026-07-15/16 after Luneth
+    ruled the question himself; the 2 claims now carry applies_to instead. Corrected 2026-08-03:
+    this paragraph still described them as a "same-substance pair" 18 days after they stopped
+    being one, and omitted applies_to entirely. Negative test: tools/test_collective_doses_not_fanned.py."""
     import json as _json
     if not (embed_p.exists() and claims_dir.exists()):
         return True, "targets embed / corpus not installed (bootstrap-guard)"
@@ -3096,9 +3107,10 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
 
     if not collective:
         return True, ("no collective dose claims sealed; "
-                      f"{len(_SAME_SUBSTANCE_SLUGS)} same-substance pair(s) declared, "
-                      f"{len(scoped)} applies_to-scoped claim(s) honoured, and every "
-                      "multi-essential dose claim is classified (fails closed on the next one)")
+                      f"{len(scoped)} applies_to-scoped claim(s) honoured "
+                      f"({len(_SAME_SUBSTANCE_SLUGS)} same-substance exemption(s) — that route "
+                      "is a purged fabrication and must stay 0), and every multi-essential dose "
+                      "claim is classified (fails closed on the next one)")
 
     data = _json.loads(embed_p.read_text(encoding="utf-8"))
     bad = []

@@ -1,7 +1,39 @@
 # Cobalt — does a human need elemental cobalt, or only B12?
 
-_Opened 2026-07-15. **Status: OPEN — needs Luneth's call.** Written because Luneth asked to see the
-evidence before deciding (he was offered three mechanisms and declined all three pending this)._
+_Opened 2026-07-15. **Status: ★ RESOLVED 2026-07-16 — Luneth ruled. Shipped in commit `823b8823`
+at kv=337.** Header corrected 2026-08-03: it read "OPEN — needs Luneth's call" for 18 days AFTER
+the call was made and implemented, so a later session re-opened a settled question on its authority.
+The body below is preserved unedited — it is the evidence he read, and §7's framing of the question
+still explains what was decided and why. Nothing in §1–§6 is superseded; only the status line was._
+
+## ★ THE RULING (2026-07-16)
+
+**Luneth's answer: "no elemental-cobalt target ever, and cobalt auto-fills from B12."** He made the
+call after reading *Immortality* and *Let's Play Doctor* himself — this is not a Claude inference.
+One premise of his was corrected in the same pass ("cobalt is toxic if ingested directly" is NOT in
+the books; there is only an EXCESS note at 20–30 mg/day, ~50–75× the mcg scale), so the on-page
+alert rests on the provable ground: **he states no amount.** He then rejected the first visual
+("a wall of text is the opposite of clarity") and signed off the rebuild: *"Much better."*
+
+**What shipped, and is still live (verified 2026-08-03):**
+- canon `cobalt.coverage_kind: "mirrors"`, `mirrors_slug: "vitamin-b12"` (was `trace_pdm`).
+- Both dose claims (`WAL-CLM-IMMORT-000084`, `WAL-CLM-RARE-000014`) carry
+  `dose.applies_to: ["vitamin-b12"]` — so the 250–400 mcg doses B12 only, and cobalt posts no number.
+- `_SAME_SUBSTANCE_SLUGS` emptied — §1.6's self-refuting exemption is gone. **Removing it was the
+  negative control**, exactly as §1.6 predicted.
+- NEW gates, same patch (R7): `mirrors_resolve` (critical) + `tools/test_mirrors_resolve.py`
+  (8 cases, incl. "the 400 mcg returns") + `tools/render_probe_mirror.js` (5 worlds).
+- §5's trap was caught before shipping: deleting the target alone would have left cobalt on
+  `trace_pdm` and rendered **COBALT: COVERED while VITAMIN B12: GAP** on one screen. 2 of 4
+  adversarial judges killed that option by asking what the USER would SEE.
+
+**★ STILL OPEN, and it is §4's last bullet, not the ruling itself.** The keystone sentence for the
+B12-only side — *"A pure cobalt requirement is only found in some bacteria and algae"* — is in NO
+sealed claim's verbatim. Re-measured 2026-08-03: it is present in `dddl-3e-2011`, `rare-earths` and
+`epigenetics` (1 occurrence each), so it is genuinely Wallach's, but in our corpus it exists only as
+our own `claim_text` prose on `WAL-CLM-RARE-000114`, whose attached verbatim
+(*"a single cobalt atom is the central metal component of vitamin B12…"*) does not contain it.
+**It should be MINED as a real claim** so the ruling's evidence is sealed rather than paraphrased.
 
 **In plain terms.** Our board tells you to get 400 micrograms of cobalt a day. Wallach never wrote
 that number for cobalt — it is his number for vitamin B12, which got copied onto cobalt because he
