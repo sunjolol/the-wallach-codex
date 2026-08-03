@@ -46,6 +46,16 @@ real photography. Ask what would make someone *stop scrolling*.
 Read the dossier first if one exists -- `chronicle/header-research/` holds grounded head-starts for
 many of the remaining elements.
 
+**Generate the mockup shell, never hand-build it:**
+```bash
+python tools/mockup_harness.py --out temporary/<name>-demos.html --category mineral --title "..."
+node tools/mockup_measure.js temporary/<name>-demos.html
+```
+It reads its stylesheet list out of `dashboard.html` so it cannot drift, and reproduces the real
+container -- verified at 865px with an 817px figure ceiling. The measure step reports every figure's
+authored-vs-rendered scale; anything but 1.000 means the cascade trap below has bitten you. The
+vendored libraries are wired into the shell automatically -- see the `design-language` skill.
+
 ## Container physics -- these are real, and cheap to respect
 Mock up inside the **real container**, never a bespoke white full-width sheet. Four mockups were once
 rejected on sight for that alone. Reproduce the live ancestry and load the app's real stylesheets:

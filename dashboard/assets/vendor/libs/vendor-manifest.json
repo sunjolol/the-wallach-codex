@@ -1,0 +1,55 @@
+{
+  "_why": "Vendored browser-ready libraries. Standalone mockups load these directly; the app bundle gets them via esbuild from node_modules. Hash-pinned so a silent swap is detectable. Offline-first means vendored + pinned, never small.",
+  "libs": [
+    {
+      "package": "motion",
+      "version": "12.43.0",
+      "license": "MIT",
+      "file": "assets/vendor/libs/motion.js",
+      "from": "node_modules/motion/dist/motion.js",
+      "flavour": "iife-global:Motion",
+      "bytes": 139606,
+      "sha256": "d8b344a48578cb8616dad0110658017a1434cdb99873adc96d0efe64abc07e8c"
+    },
+    {
+      "package": "animejs",
+      "version": "4.5.0",
+      "license": "MIT",
+      "file": "assets/vendor/libs/anime.umd.min.js",
+      "from": "node_modules/animejs/dist/bundles/anime.umd.min.js",
+      "flavour": "umd",
+      "bytes": 118043,
+      "sha256": "8d5b3a58a1f64023a04a4cedeef135a2263b18da04b35177ac13438a0bad033b"
+    },
+    {
+      "package": "roughjs",
+      "version": "4.6.6",
+      "license": "MIT",
+      "file": "assets/vendor/libs/rough.js",
+      "from": "node_modules/roughjs/bundled/rough.js",
+      "flavour": "umd-global:rough",
+      "bytes": 27762,
+      "sha256": "6853af8619532f3939b156cd16824d2e14f31e71d3df306ad5558eeafacab194"
+    },
+    {
+      "package": "d3",
+      "version": "7.9.0",
+      "license": "ISC",
+      "file": "assets/vendor/libs/d3.min.js",
+      "from": "node_modules/d3/dist/d3.min.js",
+      "flavour": "umd-global:d3",
+      "bytes": 279706,
+      "sha256": "f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539"
+    },
+    {
+      "package": "lottie-web",
+      "version": "5.13.0",
+      "license": "MIT",
+      "file": "assets/vendor/libs/lottie.min.js",
+      "from": "node_modules/lottie-web/build/player/lottie.min.js",
+      "flavour": "umd-global:lottie",
+      "bytes": 305704,
+      "sha256": "2eb762973aec914d981f426123040bfac9d26217239605e225ddc7cee17618ac"
+    }
+  ]
+}

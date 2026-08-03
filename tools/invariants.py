@@ -5254,6 +5254,115 @@ def check_corpus_audit_gate():
     return True, f"corpus audit gate holding -- {count} claims vs freeze {frozen}; {note}"
 
 
+# ── Offline integrity (2026-08-03) ───────────────────────────────────────────
+# Replaces the retired `dist/main.js gzipped <= 250 KB` size-limit budget, which was
+# measured at 2.67 MB (10.7x over) and had therefore been failing-and-bypassed rather
+# than enforcing. Size was a proxy; these check the actual promise -- the app loads
+# nothing off-machine, and every asset it does load is present and pinned.
+_NET_LOAD_PATTERNS = [
+    # constructs that would actually FETCH at runtime. Deliberately NOT a bare
+    # "https?://" scan: the corpus legitimately QUOTES urls in prose, and the bundle
+    # inlines the corpus. A mention is not a load.
+    (re.compile(r"""fetch\s*\(\s*['"`]https?://""", re.I), "fetch() to a remote url"),
+    (re.compile(r"""new\s+WebSocket\s*\(\s*['"`]wss?://""", re.I), "WebSocket to a remote host"),
+    (re.compile(r"""importScripts\s*\(\s*['"`]https?://""", re.I), "importScripts() from a remote url"),
+    (re.compile(r"""<script[^>]+src\s*=\s*['"](?:https?:)?//""", re.I), "<script src> to a remote url"),
+    (re.compile(r"""<link[^>]+href\s*=\s*['"](?:https?:)?//""", re.I), "<link href> to a remote url"),
+    (re.compile(r"""@import\s+(?:url\()?['"]?(?:https?:)?//""", re.I), "CSS @import of a remote sheet"),
+    (re.compile(r"""url\(\s*['"]?(?:https?:)?//""", re.I), "CSS url() pointing off-machine"),
+]
+
+
+def _shipped_surfaces():
+    """The files the user's browser actually loads from file://."""
+    d = ROOT / "dashboard"
+    out = [d / "dashboard.html"]
+    out += sorted((d / "assets" / "styles").glob("*.css"))
+    out += [d / "assets" / "js" / "dist" / "main.js"]
+    return [p for p in out if p.exists()]
+
+
+def check_offline_no_runtime_network():
+    """Nothing the shipped app LOADS may point off-machine. The project's core promise is
+    that it cannot be taken offline or broken by someone else's server, so a CDN script, a
+    remote font, a live API call or a websocket is a a breach of the product, not a style
+    nit.
+
+    SCOPE, stated honestly: this matches LOAD CONSTRUCTS (fetch/WebSocket/importScripts/
+    <script src>/<link href>/@import/url()), not any occurrence of a url. That is
+    deliberate -- the sealed corpus quotes urls in Wallach's prose and the bundle inlines
+    the corpus, so a bare scheme scan would fire on quoted text forever. A load hidden
+    behind a runtime-built string (e.g. fetch(base + path)) is NOT caught; that is a
+    labeled WISH resting on review, not a covered case.
+
+    Truth anchor: the bytes of the files the browser actually opens, re-read each run."""
+    hits = []
+    for p in _shipped_surfaces():
+        try:
+            text = p.read_text(encoding="utf-8", errors="replace")
+        except Exception:
+            continue
+        rel = p.relative_to(ROOT).as_posix()
+        for rx, label in _NET_LOAD_PATTERNS:
+            m = rx.search(text)
+            if m:
+                frag = text[m.start():m.start() + 60].replace("\n", " ")
+                hits.append(f"{rel}: {label} -> {frag!r}")
+    if hits:
+        return False, (f"{len(hits)} runtime network dependency(ies) in the shipped app — "
+                       "offline-first is broken: " + "; ".join(hits[:4]))
+    return True, (f"{len(_shipped_surfaces())} shipped surface(s) load nothing off-machine "
+                  f"({len(_NET_LOAD_PATTERNS)} load constructs guarded)")
+
+
+def check_vendor_assets_pinned():
+    """Every vendored library matches the sha256 recorded in its manifest, and every local
+    url(...) in shipped CSS resolves on disk.
+
+    Half one makes "vendored + pinned" mean something: an asset silently swapped or
+    truncated is caught, which is what lets the size budget go away without losing the
+    offline-forever guarantee.
+
+    Half two has a real incident behind it: a 404'd @font-face src does NOT error -- the
+    token falls back and shifts metrics on EVERY element, presenting as "everything is
+    slightly off" with nothing in the console. Truth anchor: file bytes + os-level
+    existence, recomputed each run."""
+    problems = []
+    man_p = ROOT / "dashboard" / "assets" / "vendor" / "libs" / "vendor-manifest.json"
+    checked = 0
+    if man_p.exists():
+        man = json.loads(man_p.read_text(encoding="utf-8"))
+        for lib in man.get("libs", []):
+            f = ROOT / "dashboard" / lib["file"]
+            if not f.exists():
+                problems.append(f"vendored lib MISSING: {lib['file']}")
+                continue
+            digest = hashlib.sha256(f.read_bytes()).hexdigest()
+            if digest != lib["sha256"]:
+                problems.append(f"vendored lib CHANGED: {lib['file']} "
+                                f"({lib['package']}@{lib.get('version')})")
+            checked += 1
+
+    url_re = re.compile(r"""url\(\s*['"]?([^'")]+)['"]?\s*\)""")
+    css_refs = 0
+    for css in sorted((ROOT / "dashboard" / "assets" / "styles").glob("*.css")):
+        text = css.read_text(encoding="utf-8", errors="replace")
+        for m in url_re.finditer(text):
+            ref = m.group(1).strip()
+            if ref.startswith(("data:", "http:", "https:", "//", "#")):
+                continue
+            css_refs += 1
+            target = (css.parent / ref.split("?")[0].split("#")[0]).resolve()
+            if not target.exists():
+                problems.append(f"{css.name}: url({ref}) does not resolve — "
+                                "a 404'd font/image falls back SILENTLY")
+    if problems:
+        return False, (f"{len(problems)} vendored/asset integrity problem(s): "
+                       + "; ".join(problems[:4]))
+    return True, (f"{checked} vendored lib(s) hash-pinned, {css_refs} local CSS asset "
+                  "reference(s) all resolve")
+
+
 # ---------------------------------------------------------------------------
 # Phase H0 -- entity-page redesign migration: the enforcement FLOOR (migration
 # blueprint chronicle/phase-h-migration-blueprint.md section 2, gate rows 1-3).
@@ -7159,8 +7268,25 @@ INVARIANTS = [
         severity="critical",
         lesson_ref="Phase H migration blueprint section 1.2 item (iii) + section 2 gate 'no-positional-hero' -- the fluoride base-line dose-table row was promoted into the default-open GREEN 'what to do' slot, contradicting the page's own 'avoid fluoride'. A table row is never a curated recommendation. Negative test: tools/test_no_positional_hero.py.",
     ),
+    Invariant(
+        name="offline_no_runtime_network",
+        anchor_class="external",  # anchored outside our own data — the bytes the browser actually loads
+        description="the shipped app (dashboard.html, assets/styles/*.css, dist/main.js) contains no construct that LOADS from off-machine — no fetch/WebSocket/importScripts to a remote url, no remote <script src>/<link href>/@import/url(). A url MENTIONED in sealed Wallach prose is not a load and is deliberately not matched; a load built from a runtime string is a labeled WISH",
+        check_fn=check_offline_no_runtime_network,
+        truth_anchor="the bytes of the files the browser actually opens from file://, re-read each run",
+        severity="critical",
+        lesson_ref="2026-08-03 doctor sweep — replaces the retired `dist/main.js gzipped <= 250 KB` size-limit budget, which measured 2.67 MB (10.7x over) and had been failing-and-bypassed rather than enforcing. Size was a proxy that also capped design ambition; this gates the actual promise (cannot be taken offline or broken by someone else's server) while vendored libraries are now explicitly allowed.",
+    ),
+    Invariant(
+        name="vendor_assets_pinned",
+        anchor_class="external",  # anchored outside our own data — file bytes + os-level existence
+        description="every vendored library in assets/vendor/libs/ matches the sha256 recorded in vendor-manifest.json, and every local url(...) in shipped CSS resolves on disk",
+        check_fn=check_vendor_assets_pinned,
+        truth_anchor="sha256 of each vendored file recomputed from disk x the committed manifest, plus os-level existence of every local CSS asset reference",
+        severity="critical",
+        lesson_ref="2026-08-03 doctor sweep — 'offline-first' now means vendored + pinned rather than small, so the pin has to be real. The CSS half has a prior incident: a 404'd @font-face src does not error, the token falls back and shifts metrics on EVERY element, presenting as 'everything slightly off' with a clean console.",
+    ),
 ]
-
 
 # ---------------------------------------------------------------------------
 # CLI

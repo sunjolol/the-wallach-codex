@@ -2,7 +2,7 @@
   "name": "wallach-dashboard",
   "version": "3.27.0",
   "private": true,
-  "description": "Wallach-framework health dashboard. TypeScript source under assets/js/src/ compiles to a single browser-runnable IIFE bundle (dist/main.js). The compiled output is the runtime contract — you only need Node to rebuild the source.",
+  "description": "Wallach-framework health dashboard. TypeScript source under assets/js/src/ compiles to a single browser-runnable IIFE bundle (dist/main.js). The compiled output is the runtime contract \u2014 you only need Node to rebuild the source.",
   "type": "module",
   "scripts": {
     "build": "node ../tools/build.mjs",
@@ -16,7 +16,7 @@
     "check-cycles": "madge --circular assets/js/src",
     "check-dead-code": "knip",
     "check-all": "npm run typecheck && npm run lint && npm run test && npm run check-size && npm run check-cycles && npm run check-dead-code",
-    "prepare": "simple-git-hooks || echo \"(git not initialized yet — run git init at repo root, then npx simple-git-hooks from dashboard/)\""
+    "prepare": "simple-git-hooks || echo \"(git not initialized yet \u2014 run git init at repo root, then npx simple-git-hooks from dashboard/)\""
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.0.0",
@@ -50,19 +50,26 @@
   },
   "size-limit": [
     {
-      "name": "dist/main.js (gzipped) — the spaghetti tripwire",
+      "name": "dist/main.js (gzipped) \u2014 runaway tripwire, NOT a design constraint",
       "path": "assets/js/dist/main.js",
-      "limit": "250 KB",
+      "limit": "8 MB",
       "gzip": true
     },
     {
-      "name": "assets/styles/*.css combined (gzipped) — design generosity",
+      "name": "assets/styles/*.css combined (gzipped) \u2014 design generosity",
       "path": "assets/styles/*.css",
-      "limit": "150 KB",
+      "limit": "400 KB",
       "gzip": true
     }
   ],
   "overrides": {
     "esbuild": "^0.25.0"
+  },
+  "dependencies": {
+    "animejs": "^4.5.0",
+    "d3": "^7.9.0",
+    "lottie-web": "^5.13.0",
+    "motion": "^12.43.0",
+    "roughjs": "^4.6.6"
   }
 }

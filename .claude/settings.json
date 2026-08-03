@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python tools/hooks/pre_write_guard.py",
+            "command": "python \"C:/Users/Light/Desktop/claude/health expert/tools/hooks/pre_write_guard.py\"",
             "timeout": 30
           }
         ]
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python tools/hooks/pre_bash_guard.py",
+            "command": "python \"C:/Users/Light/Desktop/claude/health expert/tools/hooks/pre_bash_guard.py\"",
             "timeout": 10
           }
         ]
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python tools/hooks/post_write_verify.py",
+            "command": "python \"C:/Users/Light/Desktop/claude/health expert/tools/hooks/post_write_verify.py\"",
             "timeout": 30
           }
         ]
@@ -39,7 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python tools/hooks/stop_round_close.py",
+            "command": "python \"C:/Users/Light/Desktop/claude/health expert/tools/hooks/stop_round_close.py\"",
             "timeout": 150
           }
         ]

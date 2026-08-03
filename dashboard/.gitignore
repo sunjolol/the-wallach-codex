@@ -1,7 +1,12 @@
 # Node toolchain — needed only for rebuilding dist/main.js, never shipped.
 # The compiled dist/main.js IS the runtime contract and IS committed.
 node_modules/
-package-lock.json
+
+# package-lock.json is deliberately COMMITTED (2026-08-03). It used to be ignored as
+# "toolchain only", but five runtime design libraries (motion, animejs, roughjs, d3,
+# lottie-web) now have exact versions the offline-forever guarantee depends on. Without
+# the lockfile a future `npm install` resolves different versions and the rebuild
+# silently diverges from what was verified.
 
 # IDE noise
 .vscode/
