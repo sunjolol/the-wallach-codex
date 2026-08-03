@@ -6,10 +6,10 @@ A navigable map of the sacred ledger (`log.jsonl`). Full history lives in
 the monthly digests under `digests/`; `LOG.md` is the recent-window view.
 Newest first.
 
-_779 entries across 3 months._
+_780 entries across 3 months._
 
 | Month | Entries | Kinds | Digest |
 |---|---|---|---|
-| 2026-08 | 29 | round-close ×19, milestone ×6, incident ×2, session-end ×2 | [digests/2026-08.md](digests/2026-08.md) |
+| 2026-08 | 30 | round-close ×20, milestone ×6, incident ×2, session-end ×2 | [digests/2026-08.md](digests/2026-08.md) |
 | 2026-07 | 513 | round-close ×334, milestone ×81, design-decision ×31, session-end ×28, incident ×24, build ×10, note ×5 | [digests/2026-07.md](digests/2026-07.md) |
 | 2026-06 | 237 | round-close ×168, milestone ×26, design-decision ×17, session-end ×16, note ×6, incident ×3, invariant-pass ×1 | [digests/2026-06.md](digests/2026-06.md) |

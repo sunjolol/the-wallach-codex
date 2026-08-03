@@ -4690,6 +4690,185 @@ def check_internal_refs_out_of_prose():
                   "tag/header + the verbatim quote, never the reader-facing summary")
 
 
+# ---------------------------------------------------------------------------
+# no_duplicate_claims -- one span, one question
+# ---------------------------------------------------------------------------
+# THE DEFECT THIS EXISTS FOR, written out in full because a gate whose origin is
+# forgotten is a gate the next reader loosens:
+#   2026-08-03. Luneth opened the Vitamin A entity page and saw TWO near-identical
+#   "What is Vitamin A?" cards. One extraction had emitted a TRUNCATED take and a
+#   FULL take of the same span -- WAL-CLM-EPIGEN-000213 (128 chars) and -000214
+#   (481 chars), identical char_offset 1065286, identical extracted_at, identical
+#   subject/facet -- and both survived to the reader. 13 duplicates were removed
+#   corpus-wide (commit b3551834, kv=458). An 84-gate board caught NONE of it. The
+#   class was found by a human looking at a screen, which is not a control.
+#
+# TWO MECHANISMS, both measured in the real metadata, both must be caught:
+#   1. SAME-BATCH DOUBLE EMISSION -- one extraction emits a truncated take AND a
+#      full take. Identical offset AND identical extracted_at.
+#   2. CROSS-BATCH RE-MINING -- a later pass re-mines a span an earlier pass
+#      already covered. Same offset, DIFFERENT extracted_at.
+# The gate keys on NEITHER timestamp NOR offset. Both mechanisms land the same
+# reader-visible shape, and a third mechanism nobody has met yet would land it too;
+# keying on the metadata that happened to differ would gate the symptom of these two.
+#
+# THE SIGNATURE -- all four, or it is not a duplicate:
+#     same book . verbatim CONTAINMENT . same enrichment subject . same facet
+#
+# ★ CONTAINMENT ALONE IS NOT DUPLICATION. This is the trap that makes the naive
+# version of this gate unshippable: 297 overlapping and 209 containment pairs exist
+# corpus-wide BY DESIGN. Wallach writes one paragraph that answers several
+# questions, so one span is legitimately quoted by several claims -- DDDL-000030
+# (selenium/warning) and DDDL-000096 (dietary_oils/mechanism) quote the same bytes
+# to say different things. What makes a duplicate READER-VISIBLE is landing on the
+# SAME entity page under the SAME heading: `subject` routes both cards to one page,
+# `facet` groups them into one section. Measured 2026-08-03 over the sealed corpus:
+# containment + same subject + same facet = 2 pairs; containment alone = 209.
+#
+# WHY CONTAINMENT AND NOT OVERLAP: partial overlap is how ADJACENT claims look. The
+# Let's-Play-Doctor base-line dose table gives 5 same-subject/same-facet pairs at
+# 47-61% overlap (calcium, copper, inositol, iron, sodium) that are different doses
+# from neighbouring rows, plus 4 more prose pairs. All 9 are legitimate and all 9
+# are spared by requiring containment. HONEST GAP (WISH, R7): a duplicate whose two
+# takes each add bytes the other lacks -- neither contained -- escapes this gate.
+# None exists today; if one ever ships, TIGHTEN with the measurement, do not guess a
+# threshold now (a % floor picked without evidence would red-board those 9).
+#
+# WHY STRING CONTAINMENT, NOT SPAN ARITHMETIC: measured identical today (2 pairs
+# either way, 0 divergence, and every one of the 2,255 verbatims sits exactly at its
+# stated char_offset). String containment wins because it is anchored on the claim's
+# OWN bytes -- if a resnap ever drifted an offset, span arithmetic would quietly stop
+# firing, and a gate that goes silent when the data gets WORSE is the failure mode
+# this board keeps re-learning.
+#
+# TWO REJECTED DESIGNS, recorded so they are not re-proposed:
+#   * A BASELINE EXCEPTION. The handoff specified the two keep-both pairs go in
+#     .claude/invariant-baseline.json. They must NOT: that file is INVARIANT-scoped
+#     (stop_round_close.py::_tolerated returns a set of invariant NAMES), so one
+#     entry tolerates EVERY duplicate this gate will ever find -- it would ship the
+#     gate pre-neutered. Same trap already proven for dose_amount_in_verbatim; see
+#     the "NO BASELINE EXCEPTION" note above _DOSE_UNIT_SYN. Handled in-gate instead.
+#   * "SPARE THE PAIR IF ONLY ONE IS OPERATIONALLY MAPPED." Tempting, because in BOTH
+#     approved pairs exactly one member carries `essentials`. Rejected: it is an n=2
+#     generalization, and the next same-batch double emission that happens to map one
+#     take would be spared silently. An ID allowlist fails CLOSED and each entry is a
+#     deliberate, reviewable act.
+#
+# Truth anchor: the sealed claim verbatims x search-enrichment subject/facet,
+# recomputed each run. Structural, not external -- it proves no two claims are
+# REDUNDANT, never that any claim is RIGHT.
+
+# Pairs that trip the signature and are nonetheless correct. Each entry is a claim
+# about the WORLD (these two really do answer different reader questions), not a
+# build fix -- see the _SAME_SUBSTANCE_SLUGS lesson above (tools/invariants.py:2376):
+# the one exemption this repo ever wrote into gate source was a fabrication that
+# refuted itself in its own reason, and it sat green for weeks. Every
+# entry states the two questions and is pinned in tools/test_no_duplicate_claims.py.
+# A pair here that STOPS firing is itself RED (see the stale check below): a
+# carve-out that blesses nothing is a lie left in the source.
+_DUPLICATE_KEEP_BOTH = {
+    frozenset({"WAL-CLM-DDDL-000071", "WAL-CLM-DDDL-000137"}):
+        "selenium / physiology, the same 155-char preconception-selenium sentence, quoted twice to "
+        "answer two different questions: -000071 'Can selenium prevent muscular dystrophy?' "
+        "(essentials=[selenium], conditions=[muscular_dystrophy, keshan_disease]) and -000137 "
+        "'Does selenium affect fertility and pregnancy?' (no operational mapping; its summary is "
+        "the sterility / miscarriage / low-birth-weight / SIDS reproductive answer). Ruled "
+        "keep-both 2026-08-03 -- recorded in commit b3551834 and chronicle/next-chunk.md.",
+    frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}):
+        "gallium / uses, where -000389's 152-char British-research sentence is the tail of "
+        "-000135's 391-char paragraph. -000135 answers 'Does gallium help protect against brain "
+        "cancer?' -- the whole essentiality-plus-metalloenzyme case (essentials=[gallium], "
+        "conditions=[brain_cancer]); -000389 answers the narrower 'Can taking gallium during "
+        "pregnancy lower a child's risk of brain cancer?' (conditions=[brain_cancer], no "
+        "essentials). Ruled keep-both 2026-08-03 -- commit b3551834 / chronicle/next-chunk.md.",
+}
+
+
+def _no_duplicate_claims_impl(claims, enrichment, approved=None):
+    """The duplicate-claim signature, driven by data so a negative test can plant the real
+    2026-08-03 vitamin-A pair and prove this REDDENS on it. See the block comment above for the
+    defect, the two mechanisms, and the two rejected designs. `approved` defaults to the shipped
+    keep-both allowlist; a test passes {} to see the raw signature."""
+    approved = _DUPLICATE_KEEP_BOTH if approved is None else approved
+
+    # Bucket on exactly what makes a duplicate visible: one book, one entity page
+    # (subject), one section of it (facet). Claims with no enrichment bucket under
+    # (None, None) together -- fail-closed, and measured to be 0 pairs today.
+    buckets, n_scanned, books = {}, 0, set()
+    for c in claims:
+        loc = c.get("locator") or {}
+        book, verbatim = loc.get("book"), c.get("verbatim") or ""
+        if not book or not verbatim:
+            continue
+        n_scanned += 1
+        books.add(book)
+        e = enrichment.get(c.get("id")) or {}
+        buckets.setdefault((book, e.get("subject"), e.get("facet")), []).append(c)
+
+    viol, seen_approved = [], set()
+    for key in sorted(buckets, key=lambda k: (k[0], str(k[1]), str(k[2]))):
+        group = sorted(buckets[key], key=lambda c: c.get("id") or "")
+        if len(group) < 2:
+            continue
+        book, subject, facet = key
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                ca, cb = group[i], group[j]
+                va, vb = ca["verbatim"], cb["verbatim"]
+                if va not in vb and vb not in va:
+                    continue
+                pair = frozenset((ca.get("id"), cb.get("id")))
+                if pair in approved:
+                    seen_approved.add(pair)
+                    continue
+                short, long = (ca, cb) if len(va) <= len(vb) else (cb, ca)
+                viol.append(
+                    f"{short.get('id')} + {long.get('id')} [{book} / subject={subject!r} / "
+                    f"facet={facet!r}]: the {len(short['verbatim'])}-char verbatim is contained in "
+                    f"the {len(long['verbatim'])}-char one -- two cards, one span, one page section")
+
+    # An exception that no longer fires is a lie left in the source (R9). Deleting the
+    # claim, re-mapping its subject, or merging the pair all land here, and all of them
+    # mean the carve-out must go in the SAME patch that made it stale.
+    stale = sorted(" + ".join(sorted(p)) for p in approved if p not in seen_approved)
+
+    if viol or stale:
+        parts = []
+        if viol:
+            parts.append("duplicate claim pair(s) -- one span answering one question twice, which "
+                         "renders as twin cards on an entity page: " + "; ".join(viol[:6])
+                         + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+        if stale:
+            parts.append("stale keep-both exception(s) in _DUPLICATE_KEEP_BOTH -- no longer match "
+                         "the signature, so they now bless nothing and must be DELETED in the same "
+                         "patch that made them stale (R9): " + "; ".join(stale))
+        return False, " || ".join(parts)
+
+    return True, (f"no duplicate claim pair across {n_scanned} claim(s) / {len(books)} book(s) "
+                  f"(signature: same book + verbatim containment + same subject + same facet); "
+                  f"{len(approved)} pair(s) ruled keep-both are allowlisted in-gate, each with a "
+                  f"stated reason + a pinned test, and each still firing")
+
+
+def check_no_duplicate_claims():
+    """Charter R3 (one source per fact) / R7 -- see the block comment above _DUPLICATE_KEEP_BOTH for
+    the 2026-08-03 vitamin-A twin-card defect this was written for, the two duplication mechanisms,
+    why containment alone is NOT the signature, and the two designs that were rejected. Thin
+    path-binding shell over the impl so the negative test can drive the same logic with the real
+    duplicate pair planted back in."""
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    if not claims_dir.exists():
+        return True, "eden/corpus/claims missing (bootstrap-guard)"
+    claims = []
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        claims.extend(json.loads(shard.read_text(encoding="utf-8")).get("claims", []))
+    enr_p = ROOT / "eden" / "corpus" / "search-enrichment.json"
+    enrichment = {}
+    if enr_p.exists():
+        enrichment = json.loads(enr_p.read_text(encoding="utf-8")).get("enrichment", {})
+    return _no_duplicate_claims_impl(claims, enrichment)
+
+
 def check_no_hand_duplicated_canonical():
     """Charter R3 -- no canonical value is hand-written twice; the pillar is the single hand-edited
     home, and derived copies are proven fresh (derived_artifacts_fresh IS R3's 'derived copies only'
@@ -6766,6 +6945,15 @@ INVARIANTS = [
         truth_anchor="every sealed claim's claim_text, recomputed each run",
         severity="critical",
         lesson_ref="2026-07-09 pre-Phase-G audit (memory: labeled-table-header-view, front-facing-human-first) -- Luneth flagged render-time regex REWRITING of prose as a bad-habit trap; the durable fix cleans the sealed claim_text + moves the label to a structured tag->header, and this gate keeps refs out of reader summaries going forward (Phase G). Luneth 2026-07-09 also had the 33 Base-Line dose summaries stripped so the whole corpus is ref-free in prose.",
+    ),
+    Invariant(
+        name="no_duplicate_claims",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="no two sealed claims from the same book quote a CONTAINED verbatim under the same enrichment subject AND facet -- i.e. one span answering one question twice, which renders as twin cards in one section of one entity page (the 2026-08-03 vitamin-A defect). Containment ALONE is NOT the signature: 209 containment pairs exist by design, because one Wallach paragraph legitimately answers several questions. Two pairs ruled keep-both are allowlisted IN-GATE with stated reasons -- never in the baseline, which is invariant-scoped and would neuter the whole gate",
+        check_fn=check_no_duplicate_claims,
+        truth_anchor="the sealed claim verbatims (eden/corpus/claims/claims-*.json) x subject/facet from eden/corpus/search-enrichment.json, bucketed by book+subject+facet and containment-tested pairwise, recomputed each run; a keep-both exception that stops firing is itself RED",
+        severity="critical",
+        lesson_ref="2026-08-03 twin-card incident -- Luneth found two near-identical 'What is Vitamin A?' cards on one entity page; EPIGEN-000213/-000214 were a truncated and a full take of the same span, same offset, same extracted_at, and 13 duplicates were removed corpus-wide (commit b3551834). An 84-gate board caught none of it: the class was found by a human looking at a screen, which is not a control. Negative test: tools/test_no_duplicate_claims.py (replants the real vitamin-A pair). memory: a-gate-can-be-green-because-of-the-defect, negative-control-or-it-proves-nothing",
     ),
     Invariant(
         name="no_hand_duplicated_canonical",
