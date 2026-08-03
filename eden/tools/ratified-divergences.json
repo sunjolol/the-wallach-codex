@@ -95,6 +95,15 @@
    "reason": "The only well-characterized krypton fluoride is KrF2, so the printed subscript 4 is a compositor error and our KrF2 already holds the correction. Luneth ruled 2026-08-02, choosing this over the competing reading (that KrF4 is Wallach's own assertion, since a 1963 report of KrF4 did exist in the literature before it was shown to be misidentified KrF2). NEVER restore the printed KrF4.",
    "evidence": "Page read 2026-08-02 twice independently, immortality Screenshot (95) RIGHT half = printed p165. At the raw pixel level the subscript shows a diagonal stroke, a horizontal crossbar, and a vertical stem continuing BELOW the crossbar -- a topology present in neither a 2 nor a 3 in this face, both checked against templates elsewhere in the book. The page prints 4. The reader DECLINED to resolve it and escalated; the skeptic could not refute the glyph reading either. Our KrF2 is at eden/corpus/books/immortality.txt.",
    "do_not_confuse": "This is the opposite shape to the sibling KNO2/KNO3 case in IMMORT-000191, which WAS settled without a ruling: there the page contradicts its own words in the same clause ('potassium nitrate'/'saltpeter'), so the page is self-refuting. Here it is not."
+  },
+  {
+   "claim": "WAL-CLM-HELLS-000076",
+   "ours": "1. Aspartame - (also known as Nutrasweet and Equal)",
+   "page_prints": "1. Aspartamine - (also known as Nutrasweet and Equal)",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-03",
+   "evidence": "'Aspartamine' is not a substance; the sweetener sold as Nutrasweet and Equal is aspartame. hk.txt printed it twice (body text p258 + the index entry 'Aspartamine 258'); both were corrected, so the sealed source no longer matches the printed page. Ruled in the review sweep after verification found the correction had been logged as applied but had only ever reached claim_text — the QUOTE still said 'Aspartamine' for a day.",
+   "note": "★ THIS ENTRY IS A CLASS, NOT A ONE-OFF. Every book-typo correction creates a page-divergence by construction: we change the .txt, the page keeps the typo. 48+19 such corrections have been applied and only this one is written down here. A future page-read of any of the others will 'find' our text wrong. Flagged 2026-08-03; not resolved unilaterally."
   }
  ],
  "pending_review": {
@@ -955,7 +964,8 @@
      "count": "formula clause is a hard-coded CO|H|SO|NO, so ZrSiO, and SiO, pass; By,->B12 also passes",
      "status": "the 3 shipping instances are fixed. A generalised formula pattern was TRIED and REJECTED: it fires on 51 innocent things (TMJ, DNA, ADD, RNA codons ACU/ACA/ACC). A vitamin D/E/K pattern was also rejected at 2 true against 4 false. Only the By,/Bg, shape (4 hits, 3 claims) is tight enough to gate."
     }
-   ]
+   ],
+   "_proposals_not_applied_STATUS": "★ THE SECTION TITLE IS NO LONGER TRUE. Measured 2026-08-03: every proposal token in this list IS applied in the corpus — Blepharisma, Cassiopeia, phosphatidyl, Noddack, Blue Zones, '5 gm each t.i.d.', Tinnitus, Meniere, Humphry Davy, lightning rod, ilmenite, acutifolia, usitatissimum, polyphosphoinositides. Wave 3's booktypos_applied_whole_class swept the class up (48 edits across six books) without updating these two headings, so both read as 'awaiting Luneth's decision' when the decision had already been taken and executed. Entries kept verbatim as the record of what was proposed and why; the STATUS is this line."
   },
   "batch_2026-08-02-wave2": {
    "_doc": "Wave 2 of the 443-claim page-read list: 212 claims (the tier-B dropped-text and alignment-slip residue, the 2 remaining tier-A, and a fresh 30-claim control) across 140 page groups, read by 16 independent readers under a whole-verbatim contract, every claimed defect re-rendered and attacked by a separate skeptic. 4 of 35 proposals were REFUTED. Awaiting Luneth's end-of-campaign sweep.",
@@ -1440,7 +1450,8 @@
      "thyroid_disease"
     ],
     "basis": "the 'goiter' mapping was only ever satisfied by the word 'Goiter' that the bad verbatim cut had swallowed from the last item of a symptom list on the PREVIOUS page. The claim's own sentence says 'goitrogens' and 'thyroid disease' and never says 'goiter', so verbatim_names_mapped_conditions was right to redden and the DATA changed, not the gate."
-   }
+   },
+   "_proposals_not_applied_STATUS": "★ THE SECTION TITLE IS NO LONGER TRUE. Measured 2026-08-03: every proposal token in this list IS applied in the corpus — Blepharisma, Cassiopeia, phosphatidyl, Noddack, Blue Zones, '5 gm each t.i.d.', Tinnitus, Meniere, Humphry Davy, lightning rod, ilmenite, acutifolia, usitatissimum, polyphosphoinositides. Wave 3's booktypos_applied_whole_class swept the class up (48 edits across six books) without updating these two headings, so both read as 'awaiting Luneth's decision' when the decision had already been taken and executed. Entries kept verbatim as the record of what was proposed and why; the STATUS is this line."
   },
   "batch_2026-08-02-wave3-and-booktypos": {
    "_doc": "Two batches closing out the page-read campaign's open items. (a) WAVE 3 — the 11 reader-facing sibling occurrences waves 1 and 2 had left unread: 7 ASCII-vs-curly apostrophes and 4 spurious spaces inside '1 ,000 mg'. TOKEN-FOCUSED reads, not whole-verbatim. (b) THE BOOK-TYPO CLASS — places where the page carries a clear typo and our text faithfully reproduced it, decided here under Luneth's standing 'fix clear typos and note them for my review' ruling.",
@@ -1540,6 +1551,83 @@
    "booktypos_applied_whole_class": "48 edits across all six books — the whole class, not only the 12 claims the waves flagged, because each is corroborated by the CORPUS'S OWN correct usage elsewhere (stronger than one page read): Blue Zones 21 correct vs 1 wrong; Humphry Davy 7 vs 8; rare-earths spells Blepharisma correctly one line and Blepherisma another; ilmenite, Tinnitus, Meniere and phosphatidyl all attested correctly elsewhere. 'lightening rod' (5 occurrences, 4 books) has NO correct instance anywhere and was fixed on plain meaning. Full list in the build-log.",
    "★_books_verified_is_weaker_than_it_sounds": "THE FINDING THAT NEEDS LUNETH'S RULING. dddl-3e-2011 is one of only two books in books_verified ('audited-pristine') and it wrote B1 as 'Bl' SEVENTEEN times plus seven botanical/technical typos. The purity gate never saw them because the book's own reviewed-OK allowlist (eden/tools/purity-baselines/dddl-3e-2011.json::spell_ok, 1,325 entries) CONTAINED the misspellings themselves — aqutifolia, blepherisma, ustatissimum, fragula, phosphytidyl, phosphatydil, tinnitis. The audit's allowlist had absorbed them, so the book stayed green while carrying them. All seven were removed (each conditional on the token being absent from the corrected text) and the correct terms added to anomaly-lexicon.json. But the QUESTION stands: what does books_verified assert, if its allowlist can bless typos? There is also no page image or PDF for DDDL in the repo, so it cannot be page-read at all.",
    "search_bug_fixed": "state/search.ts::heroByIntent — a bare definitional query ('what are antioxidants') tokenizes to the topic word ALONE because tokenize() drops stopwords, so all seven antioxidant claims scored IDENTICALLY (23 each) and rankClaims' tie-break — claim id ASCENDING — picked the hero alphabetically: the weight-loss warning HELLS-000016 beat the definition IMMORT-000268 because H sorts before I. An empty intent now heroes the topic's `basics` answer. Routing probe 6/6."
+  },
+  "batch_2026-08-03-sweep-verification": {
+   "_doc": "Luneth's end-of-campaign review sweep, opened 2026-08-03. Before any item was put in front of him, all 198 logged pending_review items were checked MECHANICALLY against the sealed corpus, so the sweep is over reality rather than over a log. 177 matched exactly. The other 21 resolved into the findings below.",
+   "_what_he_ruled": "(1) Fix all 9 log-vs-disk residues, then seal. (2) HELLS-000076: correct the QUOTE to 'Aspartame' (not leave it page-faithful). (3) Review only the 33 unlogged divergences that still need ratifying, plus the 22 whose notes were unclassifiable — skip the ~110 mechanical fixes and the 11 explicit no-change notes.",
+   "★_the_finding": "A BOOK-TYPO CAMPAIGN THAT NEVER TOUCHED claim_text. The class was applied to the source .txt and to the verbatims and stopped there, so seven claims carried the corrected word in the quote and the old misspelling in our own summary beside it: Blepherisma (IMMORT-000198), Walter Nodack (IMMORT-000440/-000441), Sir Humphrey Davy (IMMORT-000188, EPIGEN-000406), 'attributed soley to' (EPIGEN-000011), 'borytes' (RARE-000395). All six tokens were already 0 occurrences in the sources — claims-only drift. NOTHING GATES IT: corpus_resnap and the verbatim gates check the quote against the book; claim_text is our prose and is checked against nothing. Related memory: claim-text-numbers-unguarded.",
+   "applied_2026-08-03": [
+    {
+     "claim": "WAL-CLM-HELLS-000076",
+     "field": "verbatim + source",
+     "was": "Aspartamine",
+     "now": "Aspartame",
+     "basis": "Luneth's ruling; hk.txt corrected at both occurrences first, because corpus_verify #2 requires the verbatim to be an exact substring of the book."
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000151",
+     "field": "verbatim",
+     "was": "...adrenal exhaustion, etc.)",
+     "now": "...adrenal exhaustion, etc.).",
+     "basis": "the logged fix included the sentence-final period; the claim was one character short. Invisible to corpus_resnap because a truncation is a valid substring."
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000096",
+     "field": "verbatim",
+     "was": "183 chars, starting mid-paragraph at 'In humans, manic depression'",
+     "now": "479 chars, the whole restored paragraph",
+     "basis": "wave 2 logged a 479-char restoration of three dropped typeset lines. The SOURCE repair landed; the claim never got it and held only the tail — so the 'Animal studies show that a deficiency of Li results in reproductive failure, infertility, reduced growth rate...' sentence was absent from the claim while the log said otherwise. Same invisible-to-resnap class as EPIGEN-000151."
+    },
+    {
+     "claim": "WAL-CLM-IMMORT-000198",
+     "field": "claim_text",
+     "was": "Blepherisma",
+     "now": "Blepharisma"
+    },
+    {
+     "claim": "WAL-CLM-IMMORT-000440",
+     "field": "claim_text",
+     "was": "Walter Nodack",
+     "now": "Walter Noddack"
+    },
+    {
+     "claim": "WAL-CLM-IMMORT-000441",
+     "field": "claim_text",
+     "was": "Walter Nodack",
+     "now": "Walter Noddack"
+    },
+    {
+     "claim": "WAL-CLM-IMMORT-000188",
+     "field": "claim_text",
+     "was": "Sir Humphrey Davy",
+     "now": "Sir Humphry Davy"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000406",
+     "field": "claim_text",
+     "was": "Sir Humphrey Davy",
+     "now": "Sir Humphry Davy"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000011",
+     "field": "claim_text",
+     "was": "attributed soley to",
+     "now": "attributed solely to"
+    },
+    {
+     "claim": "WAL-CLM-RARE-000395",
+     "field": "claim_text",
+     "was": "'borytes'",
+     "now": "'barytes'"
+    }
+   ],
+   "★_source_defect_found_not_fixed": "EPIGEN-000096's wave-2 repair did NOT repair the damaged paragraph — it APPENDED a clean reconstruction after the Screenshot(629) serial-killer table bleed and left the mangled original in place. epigenetics.txt therefore carries three of those typeset lines TWICE (offsets ~1261106 and ~1262225): '650,000 prescriptions', 'infertility, reduced growth rate' and the Jekyll/Hyde line. The restored verbatim anchors unambiguously on the clean copy (its first line occurs once), so the fix is sound — but the duplication is real, undocumented, and inflates the book's byte count and offsets. The handoff's open item #3 says only 'three dropped lines were restored there', which understates it. NOT repaired in this batch: weaving prose back into interleaved table bleed is a structural repair, not a line fix.",
+   "log_defects_found": [
+    "proposals_not_applied (wave1 x8, wave2 x4) is a STALE LABEL — all 14 proposal tokens are applied in the corpus today, swept up by wave 3's booktypos_applied_whole_class. Measured 2026-08-03. Annotated in place below rather than deleted.",
+    "wave3_confirmed lists 11 entries but WAL-CLM-EPIGEN-000016 is logged TWICE identically, so it is really 10 distinct reads.",
+    "batch_2026-08-02 item 21 reads 'hells-kitchen, 62 edits over 52 claims' with no per-claim record, so it cannot be verified from the log at all."
+   ],
+   "_how_it_was_verified": "Every applied correction was re-asserted PRESENT in the sealed shard after the seal — not merely the defect absent (handoff trap #4 / memory a-gate-can-be-green-because-of-the-defect). 34 assertions, 0 failures, plus a corpus-wide residue sweep proving all six old tokens are 0 in claims AND 0 in sources. Board 84/84, corpus_verify PASS at knowledge_version=455."
   }
  },
  "_classes": [

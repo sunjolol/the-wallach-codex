@@ -8727,7 +8727,7 @@ public controversy surrounding the use of sugar substitutes, how-
 ever, used in moderation they are “considered” safe and have been 
 used for years. Typically, Splenda can be used teaspoon for teaspoon 
 of sugar for baking. 
-1. Aspartamine - (also known as Nutrasweet and Equal) 
+1. Aspartame - (also known as Nutrasweet and Equal) 
 A man made sweetener created by joining two amino acids. 
 2. Splenda - (also known as Sucralose) A natural substance 
 extracted from sugar cane.
@@ -12340,7 +12340,7 @@ mrsenic 155, 203, 223
 Asclepiads 36 
 Asclepius 36 
 Asia 171 
-Aspartamine 258 
+Aspartame 258 
 Ash 8, 18, 22, 89, 17, 60 
 Ash Power 17 
 Ash dump 22 
