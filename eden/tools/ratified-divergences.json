@@ -1441,6 +1441,105 @@
     ],
     "basis": "the 'goiter' mapping was only ever satisfied by the word 'Goiter' that the bad verbatim cut had swallowed from the last item of a symptom list on the PREVIOUS page. The claim's own sentence says 'goitrogens' and 'thyroid disease' and never says 'goiter', so verbatim_names_mapped_conditions was right to redden and the DATA changed, not the gate."
    }
+  },
+  "batch_2026-08-02-wave3-and-booktypos": {
+   "_doc": "Two batches closing out the page-read campaign's open items. (a) WAVE 3 — the 11 reader-facing sibling occurrences waves 1 and 2 had left unread: 7 ASCII-vs-curly apostrophes and 4 spurious spaces inside '1 ,000 mg'. TOKEN-FOCUSED reads, not whole-verbatim. (b) THE BOOK-TYPO CLASS — places where the page carries a clear typo and our text faithfully reproduced it, decided here under Luneth's standing 'fix clear typos and note them for my review' ruling.",
+   "_why_these_could_not_be_bulk_fixed": "Measured before the wave: the books have NO apostrophe convention to lean on — lets-play-doctor is 100% ASCII (386/386), dddl 100% curly (1156/1156), but epigenetics runs 68% ASCII and rare-earths 40%, MIXED inside the same book. And the sources hold 6 Tourette's, 23 Alzheimer's and 19 '1 ,000' against only TEN page reads, so 38 unread occurrences were deliberately left untouched (asserted by a post-condition in apply_wave3.py, not merely intended).",
+   "_how_the_glyphs_were_decided": "Not by eye. Per-row ink-centroid drift, with a NULL control (true vertical stems on the same line drift 0.00px), a SYNTHETIC control across three sans faces (U+0027 drifts 0.00; U+2019 drifts 0.58-1.17), and a POSITIVE control against a known curly quote elsewhere on the same page. The disputed marks drift ~0.9px with a 5.8:1 ink taper, matching the page's own curly quotes row for row.",
+   "wave3_confirmed": [
+    {
+     "claim": "WAL-CLM-EPIGEN-000032",
+     "token": "Tourette's",
+     "correction": "Tourette's -> Tourette’s",
+     "page_used": "epigenetics Screenshot (574), LEFT page of the spread (reader footer 'Page 610 of 936 - 69%')"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000044",
+     "token": "Alzheimer's",
+     "correction": "Alzheimer's -> Alzheimer’s",
+     "page_used": "epigenetics Screenshot (584), LEFT page of the spread (reader footer 'Page 630 of 936 - 71%')"
+    },
+    {
+     "claim": "WAL-CLM-LETS-000223",
+     "token": "1 ,000",
+     "correction": "1 ,000 -> 1,000",
+     "page_used": "lets-play-doctor PDF page index 116 (printed folio 104) - the correct page, no neighbour search needed"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000108",
+     "token": "Tourette's",
+     "correction": "Tourette’s",
+     "page_used": "580"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000280",
+     "token": "Alzheimer's",
+     "correction": "Alzheimer’s",
+     "page_used": "575"
+    },
+    {
+     "claim": "WAL-CLM-LETS-000238",
+     "token": "1 ,000",
+     "correction": "1,000",
+     "page_used": "120"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000016",
+     "token": "Alzheimer's",
+     "correction": "Alzheimer's -> Alzheimer’s (U+0027 -> U+2019)",
+     "page_used": "560 (screenshot spread; RIGHT half — the page footer in the capture reads \"Page 581 of 936\")"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000016",
+     "token": "Alzheimer's",
+     "correction": "Alzheimer's -> Alzheimer’s (U+0027 -> U+2019)",
+     "page_used": "560 (screenshot spread; RIGHT half — the page footer in the capture reads \"Page 581 of 936\")"
+    },
+    {
+     "claim": "WAL-CLM-LETS-000391",
+     "token": "1 ,000",
+     "correction": "\"2,000 mg and 1 ,000 mg per day\" -> \"2,000 mg and 1,000 mg per day\"",
+     "page_used": "170 (PDF page index; folio printed on the paper is 158, OSTEOPOROSIS entry, left column)"
+    },
+    {
+     "claim": "WAL-CLM-EPIGEN-000033",
+     "token": "Alzheimer's",
+     "correction": "Alzheimer’s",
+     "page_used": "epigenetics Screenshot(575), LEFT page of the spread (reader footer reads 'Page 612 of 936')"
+    },
+    {
+     "claim": "WAL-CLM-LETS-000174",
+     "token": "1 ,000",
+     "correction": "1,000",
+     "page_used": "lets-play-doctor PDF page index 106 (printed folio 94)"
+    }
+   ],
+   "wave3_refuted_to_unreadable": [
+    {
+     "claim": "WAL-CLM-RARE-000237",
+     "token": "Tourette's",
+     "outcome": "LEFT ALONE. The reader called it a defect; the skeptic REFUTED that to UNREADABLE, proving rare-earths p317 uses curly DOUBLE quotes (opening marks bottom-heavy at width ratio 0.53-0.64, closing top-heavy at 1.23-1.73) but that the scan cannot resolve the SINGLE quote — and separately that the PDF text layer is worthless as evidence here: 0 occurrences of U+2019/U+201C/U+201D across all 348 pages against 1,400 ASCII apostrophes, i.e. it flattens everything. An honest unreadable."
+    }
+   ],
+   "wave3_side_finding_fixed": [
+    {
+     "claim": "WAL-CLM-EPIGEN-000032",
+     "was": "“bone to bone\" arthritis",
+     "now": "“bone to bone” arthritis",
+     "basis": "found while reading the assigned token: our text opened curly and closed with a STRAIGHT double quote. The page prints a MATCHED curly pair — the closing mark measures drift +0.91/+0.74, ink 312->87, statistically identical to the page's confirmed curly closing double quote."
+    }
+   ],
+   "straggler_fixed": [
+    {
+     "claim": "WAL-CLM-LETS-000410",
+     "was": "300,000\\nIUper day",
+     "now": "300,000\\nIU per day",
+     "basis": "caught by the post-fix self-scan, not by a wave. The identical defect was page-read and fixed in LETS-000409 during wave 1; this was the only remaining IUper/mgper/mcgper occurrence in the entire corpus."
+    }
+   ],
+   "booktypos_applied_whole_class": "48 edits across all six books — the whole class, not only the 12 claims the waves flagged, because each is corroborated by the CORPUS'S OWN correct usage elsewhere (stronger than one page read): Blue Zones 21 correct vs 1 wrong; Humphry Davy 7 vs 8; rare-earths spells Blepharisma correctly one line and Blepherisma another; ilmenite, Tinnitus, Meniere and phosphatidyl all attested correctly elsewhere. 'lightening rod' (5 occurrences, 4 books) has NO correct instance anywhere and was fixed on plain meaning. Full list in the build-log.",
+   "★_books_verified_is_weaker_than_it_sounds": "THE FINDING THAT NEEDS LUNETH'S RULING. dddl-3e-2011 is one of only two books in books_verified ('audited-pristine') and it wrote B1 as 'Bl' SEVENTEEN times plus seven botanical/technical typos. The purity gate never saw them because the book's own reviewed-OK allowlist (eden/tools/purity-baselines/dddl-3e-2011.json::spell_ok, 1,325 entries) CONTAINED the misspellings themselves — aqutifolia, blepherisma, ustatissimum, fragula, phosphytidyl, phosphatydil, tinnitis. The audit's allowlist had absorbed them, so the book stayed green while carrying them. All seven were removed (each conditional on the token being absent from the corrected text) and the correct terms added to anomaly-lexicon.json. But the QUESTION stands: what does books_verified assert, if its allowlist can bless typos? There is also no page image or PDF for DDDL in the repo, so it cannot be page-read at all.",
+   "search_bug_fixed": "state/search.ts::heroByIntent — a bare definitional query ('what are antioxidants') tokenizes to the topic word ALONE because tokenize() drops stopwords, so all seven antioxidant claims scored IDENTICALLY (23 each) and rankClaims' tie-break — claim id ASCENDING — picked the hero alphabetically: the weight-loss warning HELLS-000016 beat the definition IMMORT-000268 because H sorts before I. An empty intent now heroes the topic's `basics` answer. Routing probe 6/6."
   }
  },
  "_classes": [

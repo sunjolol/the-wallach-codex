@@ -49,8 +49,8 @@
         "Ma Lan"
       ],
       "file": "eden/corpus/books/lets-play-doctor-fourth-edition-1995.txt",
-      "content_sha256": "d0ad07cee86f81ca71c1662924f489354ffa55eb72f0b02f425ea985c2dced92",
-      "content_bytes": 515947,
+      "content_sha256": "4142c6ab288a3ab28ecc814e61bdc10f88a8c0e55f8ff87780467fd32c60c622",
+      "content_bytes": 515944,
       "line_count": 12536,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "chapter_page",
@@ -68,8 +68,8 @@
         "Gerhard N. Schrauzer"
       ],
       "file": "eden/corpus/books/epigenetics.txt",
-      "content_sha256": "970464b2475c18f5afd42c4b8dc986fa7b1d0bd2fd7debcc2f9ec7c383de8303",
-      "content_bytes": 1559111,
+      "content_sha256": "eaae73878bf1270c9756987cae7abcbd4cea106c4c4bd03a1eee49fde723058c",
+      "content_bytes": 1559125,
       "line_count": 32092,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",
