@@ -19,3 +19,9 @@ temporary/
 # frontface OCR campaign: generated analysis (regenerates in seconds from the committed scripts).
 # The SCRIPTS and the expensive Tesseract output (tools/frontface/ocr-cache/) ARE committed.
 tools/frontface/work/
+
+# The pinned browser engine, if and when one is installed here. Currently ABSENT by decision:
+# the choice is deferred to the very end (chronicle/decisions/2026-08-03-pinned-engine-acquisition.md
+# banks the candidate, its hash, the measured sizes and the trim plan). Kept ignored so a future
+# extraction can never reach git - a modern engine is 340-420 MB on disk.
+engine/

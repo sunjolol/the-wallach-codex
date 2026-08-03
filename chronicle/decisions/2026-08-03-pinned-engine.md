@@ -32,5 +32,16 @@ The **decision** is made and binds design choices from now on. The **artifact** 
 no browser has been chosen, downloaded, or pinned. Until it is, this rests on the decision rather
 than on something shipped, and nothing verifies it.
 
-Open when it is acquired: which engine and version, where it lives, how it is hash-pinned, and
-whether an invariant can prove the shipped app actually runs under it.
+**The engine choice is DEFERRED to the very end** (2026-08-03). It is a finishing touch, picked
+against the features actually shipped — not a foundation to design around. A candidate was
+acquired, measured, leak-tested and then deliberately removed; every number is banked in
+`2026-08-03-pinned-engine-acquisition.md` so none of it has to be redone.
+
+The status above therefore still stands, and will for a while: the decision to pin an engine binds
+design choices NOW, while the artifact does not exist. That is deliberate — Chromium is effectively
+unlimited for our purposes, so nothing we might build is waiting on it.
+
+Meanwhile, visual verification runs in **Luneth's own live browser**.
+
+Still a labelled WISH: whether an invariant could prove the shipped app actually RUNS under a pinned
+engine. No non-gaming machine check exists for it.

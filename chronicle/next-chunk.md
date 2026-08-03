@@ -54,18 +54,25 @@ resume**. Never a flair-only boot.
 
 ---
 
-# ★ TWO THINGS NEEDING LUNETH'S CALL
+# ★ NOTHING IS AWAITING LUNETH'S CALL
 
-1. **An orphaned Creator's Log entry.** `lg_ms2ceijb_ae6lys` (2026-07-26 16:59 CDT,
-   tooling/render-probe) existed only inside the stale worktree — master's ledger never had it
-   (783 entries vs that copy's 692). It is preserved at tag
-   **`archive/worktree-nervous-shannon-2026-07-26`**, along with its build-log line. Reconciling it
-   into the main ledger was deliberately NOT done unilaterally: the covenant says stop and ask.
-   Retrieve with `git show 42f1ba11:chronicle/creators-log/log.jsonl`.
-2. **The pinned browser is decided but not acquired.** `chronicle/decisions/2026-08-03-pinned-engine.md`
-   records the decision, and design now assumes it (no fallbacks, no polyfills). No browser has been
-   chosen, downloaded, or pinned, and **nothing verifies it**. Open: which engine and version, where
-   it lives, how it is hash-pinned.
+## ✓ Settled 2026-08-03 — do NOT re-raise these
+- **The pinned browser is DEFERRED to the very end.** It is a finishing touch, chosen against the
+  features actually shipped — not a foundation. A candidate (Ungoogled Chromium 151) WAS acquired,
+  measured, leak-tested and then **deleted** (428.9 MB + a 187.6 MB archive). Do not re-acquire it
+  as routine work, and do not treat it as an open question. All the research — hash, measured
+  sizes, the trim plan, the completed leak test, the accepted registry exception — is banked in
+  `chronicle/decisions/2026-08-03-pinned-engine-acquisition.md`. **Visual verification runs in
+  Luneth's own live browser** until then.
+- **`file://` is permanent.** Electron and Tauri ruled out for good, with the taxes this knowingly
+  accepts recorded as consequences rather than defects —
+  `chronicle/decisions/2026-08-03-file-protocol-is-sacred.md`.
+- **The orphaned Creator's Log entry stays archived.** SETTLED, with the reasoning and the retrieval
+  command in `chronicle/decisions/2026-08-03-orphaned-log-entry.md`. The work it narrates is already
+  in the codebase; only the ledger entry was orphaned. Do not reconcile it, and do not put it back
+  on this list.
+- **The CRLF working tree is left alone.** The 554 CRLF files are cosmetic — git stores LF for every
+  one of them, and they converge to LF naturally as tools rewrite them. No sweep.
 
 ---
 
@@ -205,5 +212,5 @@ returns **6** — those are the wrapper's metadata keys. The register is `["entr
 
 ---
 
-**Board 88/88 · kv=458 · 2,255 claims · `safe_write` byte-exact · 3 items awaiting Luneth (the
-orphaned ledger entry, the browser choice, whether to normalise the tree to LF) · NEXT = ask him.**
+**Board 88/88 · kv=458 · 2,255 claims · `safe_write` byte-exact · engine deferred to the end ·
+nothing awaiting Luneth · NEXT = the header track.**
