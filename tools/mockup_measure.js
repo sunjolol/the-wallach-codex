@@ -14,6 +14,14 @@
  * Also runs a text-collision pass. Note its blind spot, stated rather than implied:
  * it compares text against text, so it CANNOT see a stroke routed through a label or a
  * label painted before an opaque shape that covers it. Those need eyes.
+ *
+ * And it PROVES THE PAGE SCROLLS, by scrolling it. A standalone page that links the app
+ * CSS inherits `html, body { height:100%; overflow:hidden }` (dashboard.css:25 /
+ * workspace-coverage.css:79) and is locked to the first viewport. That has reached
+ * Luneth six times, every time past a green headless check, because element.screenshot()
+ * and fullPage:true both capture regardless of root overflow. The only honest test is to
+ * scroll and read scrollY back -- a computed-style check alone would still miss a page
+ * locked some other way.
  */
 const puppeteer = require('puppeteer');
 const path = require('path');
@@ -28,6 +36,35 @@ const path = require('path');
   const failed = [];
   page.on('requestfailed', r => failed.push(r.url()));
   await page.goto(url, { waitUntil: 'networkidle0' });
+
+  // ── CAN THE USER SCROLL? (the wheel, not a scripted jump) ─────────────────
+  // window.scrollTo() is NOT the user's path: `overflow: hidden` leaves an element a
+  // scroll CONTAINER and only blocks user input, so a scripted jump succeeds on a page
+  // the user cannot move at all. The first version of this check did exactly that and
+  // passed a page that was provably locked. Two honest signals instead:
+  //   1. the effective VIEWPORT overflow, using the real propagation rule -- the
+  //      viewport takes html's overflow unless that is `visible`, then body's;
+  //   2. a real wheel event dispatched through the browser's input pipeline.
+  const pre = await page.evaluate(() => {
+    const doc = document.documentElement;
+    const htmlOv = getComputedStyle(doc).overflowY;
+    const bodyOv = getComputedStyle(document.body).overflowY;
+    return {
+      needed: doc.scrollHeight > window.innerHeight + 4,
+      scrollHeight: doc.scrollHeight, viewport: window.innerHeight,
+      htmlOverflowY: htmlOv, bodyOverflowY: bodyOv,
+      effective: htmlOv === 'visible' ? bodyOv : htmlOv,
+    };
+  });
+  await page.mouse.move(700, 500);
+  await page.mouse.wheel({ deltaY: 900 });
+  await new Promise(r => setTimeout(r, 260));
+  const wheeled = await page.evaluate(() =>
+    window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  const scroll = Object.assign({}, pre, { wheeled });
+  const scrollLocked = scroll.needed
+    && (scroll.wheeled < 50 || ['hidden', 'clip'].includes(scroll.effective));
 
   const report = await page.evaluate(() => {
     const out = { containers: [], figures: [], collisions: [] };
@@ -64,6 +101,21 @@ const path = require('path');
       : `*** scale ${f.scale} -- a declared px is NOT a screen px ***`);
     console.log(`  #${f.i}  ${f.cls}  authored ${f.authored} -> rendered ${f.rendered}  ${flag}`);
   });
+  console.log('SCROLL (proved by scrolling, not by reading a style):');
+  if (!scroll.needed) {
+    console.log(`  page fits the viewport (${scroll.scrollHeight} <= ${scroll.viewport}) -- nothing to scroll`);
+  } else if (scrollLocked) {
+    console.log(`  *** LOCKED *** ${scroll.scrollHeight}px of content, viewport ${scroll.viewport}px,`);
+    console.log(`      a real wheel event moved ${scroll.wheeled}px; effective viewport overflow-y=${scroll.effective}.`);
+    console.log(`      html overflow-y=${scroll.htmlOverflowY}  body overflow-y=${scroll.bodyOverflowY}`);
+    console.log('      Cause: dashboard.css:25 / workspace-coverage.css:79 set');
+    console.log('      `html, body { height:100%; overflow:hidden }` for the fixed app shell.');
+    console.log('      Fix, in the page\'s own <style> AFTER the <link> tags:');
+    console.log('        html, body { height: auto !important; overflow: auto !important; }');
+    console.log('      `overflow-x: hidden` does NOT fix it -- overflow-y stays hidden.');
+  } else {
+    console.log(`  scrolls OK -- ${scroll.scrollHeight}px content, a real wheel moved ${scroll.wheeled}px (overflow-y=${scroll.effective})`);
+  }
   if (failed.length) { console.log('FAILED RESOURCES (a 404 font falls back SILENTLY):'); failed.forEach(u => console.log('  ' + u)); }
   if (report.collisions.length) {
     console.log(`TEXT COLLISIONS (${report.collisions.length}):`);
@@ -72,5 +124,5 @@ const path = require('path');
   console.log('NOTE: text-vs-text only. A stroke through a label, or a label hidden behind an');
   console.log('      opaque shape, is INVISIBLE here. Screenshot and use your eyes.');
   await browser.close();
-  process.exit(failed.length || report.collisions.length ? 1 : 0);
+  process.exit(failed.length || report.collisions.length || scrollLocked ? 1 : 0);
 })();

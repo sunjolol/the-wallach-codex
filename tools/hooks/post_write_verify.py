@@ -19,6 +19,7 @@ Per-file checks (open 'rb'):
   - no NUL byte (b"\\x00")        — the mass-corruption signature
   - decodes as UTF-8 round-trip  — caught incident #4 (mid-char cut at byte 2638)
   - non-empty                    — caught truncation-to-zero
+  - .html only: the standalone-page SCROLL UNLOCK is present (see below)
 
 Contract: stdin JSON {tool_name:"Bash", tool_input:{command}, tool_response:…}.
 exit 2 = surface the corruption to the agent (with a git-checkout recovery hint).
@@ -36,6 +37,47 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # share the em-dash shape but are NOT safe_write paths (else they parse as a bogus
 # path that then "vanished" — a false PostToolUse block, SESSION 37).
 OK_LINE = re.compile(r"^OK\s+(?!\[)(\S.*?)\s+—", re.MULTILINE)
+
+# ── standalone-page scroll lock ────────────────────────────────────────────
+# dashboard.css:25 AND workspace-coverage.css:79 both declare
+#     html, body { height: 100%; overflow: hidden; }
+# — correct for the fixed app shell, where the drawers scroll internally. ANY
+# standalone page (a temporary/ demo, a mockup) that links an app stylesheet
+# inherits it and is LOCKED to the first viewport: Luneth opens it and cannot
+# reach anything below the fold.
+#
+# This has shipped to him SIX times. It kept passing headless verification because
+# element.screenshot() and fullPage:true both capture the full element REGARDLESS of
+# root overflow — the instrument shared the blind spot with the defect. Writing
+# `overflow-x: hidden` does not undo it either; overflow-y stays hidden.
+#
+# So it is gated at write time, where nothing has to be remembered. This is a TEXT
+# check and it can only prove the rule is absent, never that it wins the cascade —
+# the rendered proof is `node tools/mockup_measure.js <file>`, which scrolls the
+# page and asserts it moved.
+LINKS_APP_CSS = re.compile(
+    r'<link[^>]+href="[^"]*dashboard/assets/styles/[^"]+\.css"', re.IGNORECASE)
+SCROLL_UNLOCK = re.compile(
+    r'html\s*,\s*body\s*\{[^}]*\boverflow(?:-y)?\s*:\s*(?:auto|visible|scroll)\b',
+    re.IGNORECASE)
+
+
+def _scroll_lock_defect(rel_path, data):
+    """Return a defect string if this .html links app CSS without unlocking scroll."""
+    try:
+        text = data.decode("utf-8")
+    except UnicodeDecodeError:
+        return None
+    if not LINKS_APP_CSS.search(text):
+        return None
+    if SCROLL_UNLOCK.search(text):
+        return None
+    return (
+        f"{rel_path}: links the app stylesheets but declares no scroll unlock. "
+        "dashboard.css:25 and workspace-coverage.css:79 both set "
+        "`html, body {{ height:100%; overflow:hidden }}`, so this page is LOCKED to "
+        "the first viewport."
+    )
 
 
 def _ok(note=""):
@@ -80,6 +122,7 @@ def main():
         return
 
     problems = []
+    defects = []
     for raw_path in paths:
         raw_path = raw_path.strip().strip('"').strip("'")
         try:
@@ -106,6 +149,23 @@ def main():
             problems.append(f"{raw_path}: not valid UTF-8 ({e})")
         if len(data) == 0:
             problems.append(f"{raw_path}: empty after write")
+        if target.suffix.lower() in (".html", ".htm"):
+            hit = _scroll_lock_defect(raw_path, data)
+            if hit:
+                defects.append(hit)
+
+    if defects and not problems:
+        _flag(
+            "STANDALONE-PAGE SCROLL LOCK (this page cannot be scrolled):\n  - "
+            + "\n  - ".join(defects)
+            + "\nAdd to the page's own <style>, AFTER the <link> tags:\n"
+            "  html, body { height: auto !important; overflow: auto !important; }\n"
+            "`overflow-x: hidden` does NOT fix it — overflow-y stays hidden.\n"
+            "Then prove it RENDERED (element.screenshot and fullPage:true both hide "
+            "this defect):\n"
+            "  node tools/mockup_measure.js <path>"
+        )
+        return
 
     if problems:
         _flag(

@@ -71,7 +71,13 @@ def vendored_libs():
 SHELL_CSS = """
 /* MOCKUP SHELL ONLY -- restores document flow by touching position/overflow only.
    Never width, padding, border or box-sizing: those ARE the geometry under test. */
-html, body { height: auto; overflow: auto; }
+/* SCROLL UNLOCK -- MANDATORY, NEVER WEAKEN THIS LINE.
+   dashboard.css:25 and workspace-coverage.css:79 both set
+   `html, body { height: 100%; overflow: hidden }` for the fixed app shell. Any
+   standalone page linking them inherits it and is LOCKED to the first viewport.
+   Narrowing this to `overflow-x` does NOT undo it -- overflow-y stays hidden, which
+   is exactly how it has reached Luneth six times. Both axes, !important. */
+html, body { height: auto !important; overflow: auto !important; }
 body { background: var(--ds-paper-deep); margin: 0; padding: 0 0 90px; }
 #drawer-knowledge-mount { position: relative; pointer-events: auto; }
 #drawer-knowledge-mount.kd-open { position: relative; top: auto; bottom: auto; left: auto;
