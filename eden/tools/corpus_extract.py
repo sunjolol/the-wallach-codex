@@ -205,7 +205,15 @@ def cmd_finalize(args) -> int:
         existing = json.loads(shard.read_text(encoding="utf-8")).get("claims", [])
     draft = {"schema_version": 1, "book_id": args.book, "knowledge_version": None, "claims": existing + claims}
     draft_path = DRAFTS_DIR / f"claims-{args.book}.draft.json"
-    draft_path.write_text(json.dumps(draft, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # Preserve the shard's own indent: the pillars are not uniform (lets-play-doctor is 2,
+    # the rest are 1) and a hardcoded value silently reformats the whole file. See mine_batch.
+    _shard_raw = shard.read_text(encoding="utf-8") if shard.exists() else None
+    _indent = 2
+    if _shard_raw is not None:
+        _shard_doc = json.loads(_shard_raw)
+        _indent = next((n for n in (1, 2, 3, 4)
+                        if json.dumps(_shard_doc, indent=n, ensure_ascii=False) + "\n" == _shard_raw), 2)
+    draft_path.write_text(json.dumps(draft, indent=_indent, ensure_ascii=False) + "\n", encoding="utf-8")
 
     # human review surface
     lines = [f"# Extraction report — {args.book} ({b.get('title')})", "",

@@ -117,6 +117,20 @@ def _fmt(v):
     return s if len(s) <= 60 else s[:57] + "..."
 
 
+def _detect_indent(raw: str, doc, path) -> int:
+    """Return the indent that reproduces `raw` byte-exactly, or refuse to write.
+
+    The pillars are NOT uniform -- lets-play-doctor is indent=2 and the other six
+    drafts are indent=1 -- so a hardcoded indent silently reformats every file it
+    guesses wrong about. That happened: a one-field claim_text edit here rewrote the
+    entire lets-play-doctor draft, and corpus_seal promoted the reformat onto the
+    sealed shard, burying a 2-line change in 40,000 diff lines. Measure, never assume.
+    """
+    for n in (1, 2, 3, 4):
+        if json.dumps(doc, indent=n, ensure_ascii=False) + "\n" == raw:
+            return n
+    raise SystemExit(f"REFUSING TO WRITE {path}: no indent 1-4 reproduces it byte-exactly")
+
 def cmd_apply(args) -> int:
     batch = json.loads(Path(args.batch).read_text(encoding="utf-8"))
     book = batch.get("book")
@@ -128,7 +142,9 @@ def cmd_apply(args) -> int:
     draft_path = DRAFTS_DIR / f"claims-{book}.draft.json"
     if not draft_path.exists():
         print(f"no draft for book {book!r}: {draft_path}"); return 1
-    draft = json.loads(draft_path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n"))
+    _raw = draft_path.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+    draft = json.loads(_raw)
+    indent = _detect_indent(_raw, draft, draft_path)
     claims = draft.get("claims", [])
     canon = load_canon()
 
@@ -151,7 +167,7 @@ def cmd_apply(args) -> int:
 
     for c, f, nv, ov in ops:
         c[f] = nv
-    payload = json.dumps(draft, indent=2, ensure_ascii=False) + "\n"
+    payload = json.dumps(draft, indent=indent, ensure_ascii=False) + "\n"
     nbytes = safe_write.safe_rewrite(draft_path, payload)
     print(f"APPLIED {len(ops)} change(s) -> {draft_path.relative_to(ROOT)} ({nbytes} B via safe_write).")
     print("Next (batch checkpoint): corpus_seal -> corpus_embed -> build -> invariants -> render probe.")

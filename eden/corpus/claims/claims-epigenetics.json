@@ -4674,47 +4674,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-EPIGEN-000123",
-   "kind": "dose",
-   "essentials": [
-    "vitamin-b9"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In his Epigenetics daily multiple recommendations, Wallach gives folic acid (folate) a daily amount of 400 mcg.",
-   "verbatim": "Folic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg\n",
-   "locator": {
-    "book": "epigenetics",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 1414086
-   },
-   "dose": {
-    "amount": "400",
-    "unit": "mcg",
-    "period": "daily",
-    "form": null,
-    "duration": null,
-    "for_condition": "daily multiple vitamin and mineral supplement program"
-   },
-   "tags": [
-    "dose-table",
-    "epigenetics-daily-multiple",
-    "supplement-program",
-    "maintenance-target"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-09T07:57:43+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-EPIGEN-000124",
    "kind": "dose",
    "essentials": [

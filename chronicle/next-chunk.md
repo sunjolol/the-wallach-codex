@@ -37,26 +37,43 @@ Corroborated outside the books: **his own Ultimate Classic formula uses exactly 
 ★ **Vitamin D panel A (`temporary/vitamin-d-demos-r2.html`) is built on the wrong premise and must be
 replaced when these demos are revamped.** Its why-line and lede also carry the framing.
 
-## ⧗ OPEN — folate is the ONE case where the OLDER book wins
-Epigenetics (2014) prints `Folic acid 400 mcg`; Let's Play Doctor (1995) gives **1,000 mcg**. His
-ruling: **the 2014 figure must be a misprint** — he has multiple supplements that go over 1,000 mcg,
-so 400 cannot be his position. His guess is the page reads **1,400** and the OCR garbled it.
+## ✔ SETTLED 2026-08-05 — folate SHIPPED at 1,000 mcg. Do not re-open.
+**Luneth read the real page (Epigenetics, Screenshot 674 / Page 816 of 936). It genuinely prints
+400 mcg** — not OCR damage, a misprint in the book. `WAL-CLM-EPIGEN-000123` was **DELETED** rather
+than corrected, because no corrected figure is readable from that page and inventing 1,400 would
+have been a guess. With it gone, `targets_derive`'s newest-wins picker falls through to
+`WAL-CLM-LETS-000052` on its own — **no exception exists anywhere in code.** Sealed **kv=460**,
+2254 claims. Live card now posts **1,000 mcg**, `other_claims=None`.
 
-**Next session, do this:**
-1. Read the real book page. **Epigenetics, Screenshot 674 / Page 816 of 936.** ⚠ There is NO PDF or
-   page image of Epigenetics in this repo — only the OCR'd `.txt`. This needs the actual book.
-2. If the page says **1,400** → correct `WAL-CLM-EPIGEN-000123` and log the divergence.
-3. If the page really says **400** → **DELETE `WAL-CLM-EPIGEN-000123` entirely** and let the older
-   **1,000 mcg** claim (`WAL-CLM-LETS-000052`) stand as folate's target.
+★★ **A TOOL DEFECT SURFACED MID-ROUND AND IS FIXED.** `mine_batch.py` and `corpus_extract.py` both
+hardcoded `indent=2`, but **6 of 7 pillars are indent=1** (only `lets-play-doctor` is 2). Editing one
+`claim_text` re-spaced all 512 claims in that book and `corpus_seal` promoted the reformat onto the
+sealed shard — **40,000 churn lines around a 2-line change.** Both writers now measure the indent
+they found and REFUSE to write if none reproduces the file byte-exactly. Repaired and re-sealed;
+diff collapsed 40,000 → 2. ⚠ The memory said "measure, never assume" for weeks — **and the sanctioned
+tool was the violator.** A memory binds a reader, never a tool (§00.B).
+⧗ **Still open, flagged not fixed:** `corpus_extract.py:208` writes via `write_text`, bypassing
+`safe_write` (§17). And **no gate proves indent stability** — there is no declared expected indent
+per pillar, so inventing one would be a WISH dressed as a gate.
 
-⚠ **Evidence that cuts against a simple digit-drop:** *two* rows in that same table are a bare
-`400 mcg` — `Folic acid` and `Vitamin B12 (methylcobalamin)` — while every other vitamin row in it is
-a range. Verified against `eden/corpus/books/epigenetics.txt` at char_offset 1414086. Take that to
-the page rather than assuming either way.
+Recorded as **`ratified-divergences` entry 74** (class `book-misprint-deletion`) carrying the
+deleted verbatim + offset, so the deletion is recoverable and can never be mistaken for a mining gap.
 
-★ **Folate's B9 panel A is therefore also built on the wrong framing** and must be replaced. The
-underlying fact (his own need was 1,000 mcg, the card shows 400) is still true and still needs
-fixing — but it is a DEFECT to repair, not a ruling to present to a reader.
+★ **The lesson worth keeping: purging a claim nearly deleted an ANSWER.** That claim's
+search-enrichment sidecar was the corpus's **only** protocol-facet vitamin-b9 entry — *"How much
+folic acid should I take?"*, the most obvious question anyone types about folate. Enrichment is
+strictly **one entry per claim** (2247 dicts, 0 lists). Deleting the claim without checking would
+have removed that answer **and left the board green**, because no gate knows a question is missing.
+It was also mis-attached: its `answer_short` recited LETS-000052's three columns while its own claim
+carried a single 400 mcg figure. Re-homed onto LETS-000052; the displaced inositol question was a
+duplicate of LETS-000053's same 90 mg.
+
+★ **Both answers were rewritten plain** after Luneth called them inside baseball — and the **sealed
+`claim_text` was the worse offender**, spending its back half explaining table column order. When an
+answer explains how to read a table, it is written for us, not for a reader.
+
+⚠ `temporary/vitamin-b9-demos-build.py` cites the deleted id; its id gate will now **kill that
+build**. That is the gate working. B9 panel A was already flagged for replacement.
 
 ## The smaller items — these were never rulings either, just disclosures
 Germanium's osteoarthritis/osteoporosis wording, germanium's high-dose trigger, manganese's
@@ -92,7 +109,7 @@ time the panel was rebuilt to quote a different clause or render the parsed valu
 # ★ STATE ✓measured
 - **Board 88/88, 0 failed, no new reds.** 23 external / 23 consistency / 40 structural / 2 meta.
 - `node tools/build.mjs` exits 0, rebuilt AFTER the Creator's Log append.
-- **Corpus sealed and untouched. No mining, no re-seal, no claim edited.**
+- ⚠ **SUPERSEDED 2026-08-05: the corpus WAS re-sealed TWICE** — kv=460, 2254 claims (1 deleted, 1 `claim_text` edited; the second seal repaired a tool-caused reformat), user-authorised each time. See the folate section above.
 - **No tracked file changed** except `chronicle/` (this handoff + the logs). Every generator,
   fragment and page is in gitignored `temporary/`.
 - `tools/canaries/safe-write-probe.txt` always shows dirty — it rewrites its own nonce. Normal.

@@ -12972,8 +12972,8 @@
       "symbol": "B9",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 24,
-      "distinct_claim_count": 39,
+      "claim_count": 23,
+      "distinct_claim_count": 38,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13016,7 +13016,6 @@
         {
           "kind": "dose",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000123",
             "WAL-CLM-LETS-000052"
           ]
         },
@@ -13101,7 +13100,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000123"
+            "WAL-CLM-LETS-000052"
           ]
         },
         {
@@ -14787,7 +14786,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 6,
-      "distinct_claim_count": 15,
+      "distinct_claim_count": 14,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -14886,7 +14885,6 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000220",
             "WAL-CLM-EPIGEN-000125",
-            "WAL-CLM-LETS-000052",
             "WAL-CLM-LETS-000053",
             "WAL-CLM-LETS-000322"
           ]

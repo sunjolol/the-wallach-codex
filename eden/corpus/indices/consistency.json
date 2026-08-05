@@ -7347,26 +7347,6 @@
   {
     "id": "CG-0135",
     "essentials": [
-      "vitamin-b9"
-    ],
-    "conditions": [],
-    "kind": "dose",
-    "repetitions": [
-      {
-        "claim_id": "WAL-CLM-EPIGEN-000123",
-        "book": "epigenetics"
-      },
-      {
-        "claim_id": "WAL-CLM-LETS-000052",
-        "book": "lets-play-doctor"
-      }
-    ],
-    "books_repeating": 2,
-    "claim_count": 2
-  },
-  {
-    "id": "CG-0136",
-    "essentials": [
       "vitamin-c"
     ],
     "conditions": [],
@@ -7385,7 +7365,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0137",
+    "id": "CG-0136",
     "essentials": [
       "vitamin-d"
     ],
@@ -7405,7 +7385,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0138",
+    "id": "CG-0137",
     "essentials": [
       "vitamin-e"
     ],
@@ -7425,7 +7405,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0139",
+    "id": "CG-0138",
     "essentials": [
       "vitamin-k"
     ],
@@ -7445,7 +7425,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0140",
+    "id": "CG-0139",
     "essentials": [
       "vitamin-k"
     ],
@@ -7465,7 +7445,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0141",
+    "id": "CG-0140",
     "essentials": [
       "vitamin-k"
     ],
@@ -7487,7 +7467,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0142",
+    "id": "CG-0141",
     "essentials": [
       "yttrium"
     ],
@@ -7507,7 +7487,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0143",
+    "id": "CG-0142",
     "essentials": [
       "zinc"
     ],
@@ -7527,7 +7507,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0144",
+    "id": "CG-0143",
     "essentials": [
       "zinc"
     ],
@@ -7563,7 +7543,7 @@
     "claim_count": 6
   },
   {
-    "id": "CG-0145",
+    "id": "CG-0144",
     "essentials": [
       "zinc"
     ],

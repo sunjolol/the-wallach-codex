@@ -12866,15 +12866,16 @@
    ]
   },
   "WAL-CLM-LETS-000052": {
-   "subject": "inositol",
+   "subject": "vitamin-b9",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much inositol should I take daily?",
-   "answer_short": "Wallach's baseline supplement program lists a True Supplement Need of 90 mg of inositol daily, with a 30-day pharmacologic range of 500 to 2,000 mg.",
+   "question": "How much folic acid should I take?",
+   "answer_short": "Wallach's daily target for folic acid is 1,000 mcg — not the 400 mcg government RDA.",
    "topics": [
-    "dosage",
-    "supplements",
-    "daily-intake"
+    "folic-acid",
+    "dose",
+    "supplement",
+    "rda"
    ]
   },
   "WAL-CLM-LETS-000322": {
@@ -16317,19 +16318,6 @@
     "supplements",
     "daily dose",
     "minerals"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000123": {
-   "subject": "vitamin-b9",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much folic acid should I take?",
-   "answer_short": "Wallach's Base Line program lists folic acid with an RDA of 400 mcg, a 'true supplement need' of 1,000 mcg, and a therapeutic (pharmacologic) daily dose of 15 to 20 mg.",
-   "topics": [
-    "folic-acid",
-    "dose",
-    "supplement",
-    "rda"
    ]
   },
   "WAL-CLM-EPIGEN-000135": {

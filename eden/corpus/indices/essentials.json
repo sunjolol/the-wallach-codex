@@ -5746,7 +5746,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 24,
+    "claim_count": 23,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -5755,7 +5755,6 @@
         "WAL-CLM-RARE-000239"
       ],
       "dose": [
-        "WAL-CLM-EPIGEN-000123",
         "WAL-CLM-LETS-000052"
       ],
       "protocol": [
