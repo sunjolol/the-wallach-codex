@@ -16,54 +16,52 @@ the four rulings below answered, because two of them change numbers that are cur
 
 ---
 
-# ★★★ THE FOUR RULINGS — TWO OF THEM CHANGE A NUMBER ON A LIVE CARD
+# ★★★ HE RULED. THE "FOUR RULINGS" SECTION WAS WRONG AND IS REPLACED.
 
-## 1. ★★ Vitamin D — his books disagree about DIRECTION, not size. Safety-relevant.
-Across the **24 rows of his 1995 base-line table this build can parse, vitamin D is the ONLY row
-where his own figure is LOWER than the government RDA** — 275 IU against 400. Computed, not asserted;
-the generator asserts it and dies if it stops being true.
-- **1995** `WAL-CLM-LETS-000074` — true supplement need **275 IU**, below the 400 IU RDA.
-- **2011** `WAL-CLM-DDDL-000106` — for cerebrovascular disease, **cap total intake at 400 IU/day**.
-- **2014** `WAL-CLM-EPIGEN-000119` — **1,000–2,000 IU**; the card takes the upper, **2,000 IU**.
+⚠ **SUPERSEDED 2026-08-04, same session.** The version of this file written earlier tonight framed
+four "rulings" for him. Three of them were not rulings at all — the favour-newest rule already
+settles them — and presenting them that way was the error. His words:
 
-The card is **7.3× his 1995 figure and 5× his own 2011 ceiling**, and his own toxicity entry for this
-vitamin is **calcification of the arteries** (`WAL-CLM-LETS-000040`, `WAL-CLM-DDDL-000083`). Nothing
-is fabricated and favour-newest is being applied correctly. **The question is whether a single number
-can honestly represent this vitamin at all.**
+> *"You need to stop bringing book contradictions front facing as if they're some fun thing worth
+> presenting, this is ABSURD. We ALWAYS favor the newer book numbers because Wallach learns and
+> changes his stance over time, so any contradiction DEFAULTS to the newest one."*
 
-## 2. ★★ Vitamin B9 — folate's card currently carries the government's number.
-The target **400 mcg** (`WAL-CLM-EPIGEN-000123`, 2014) is **numerically identical to the RDA** in
-column one of `WAL-CLM-LETS-000052` — the column he reprints in order to argue against it. His own
-"true supplement need" in that same printed row is **1,000 mcg**. Folate is the one essential whose
-card and the RDA coincide. Leave it, or let 1995 win?
+**A book contradiction is not a finding.** Resolve it with favour-newest, silently, and move on. Do
+not build editorial surface out of the fact that Wallach revised his own numbers. The only time a
+contradiction is worth raising is when the NEWEST number is itself suspect — and then it is a
+**defect report**, not a panel.
 
-## 3. ★ Lithium — should the 1,000–2,000 mcg become its target?
-The card says **no maintenance amount stated** and that is defensible: `WAL-CLM-IMMORT-000199` and
-`WAL-CLM-RARE-000164` give "chelated lithium at 1,000–2,000 ug/day" as a description of what
-supplementation *does to hair levels*, not as a recommendation. Promoting an observation to a target
-is a ruling and the round did not make it.
+## ✔ SETTLED — vitamin D. 50 mcg / 2,000 IU is CORRECT. Do not re-open.
+Corroborated outside the books: **his own Ultimate Classic formula uses exactly that amount.** The
+1995 → 2014 shift is Wallach learning, which is what the rule exists for.
+★ **Vitamin D panel A (`temporary/vitamin-d-demos-r2.html`) is built on the wrong premise and must be
+replaced when these demos are revamped.** Its why-line and lede also carry the framing.
 
-## 4. Germanium — Epigenetics prints "osteoarthritis" where three books print "osteoporosis".
-Same slot in the same sentence, different disease of a different tissue. **Not in
-`ratified-divergences.json`**, so it was not normalised — each book's own word is printed and the
-difference is drawn as the finding. Genuine one-word revision in 2014, or a source defect?
-`WAL-CLM-EPIGEN-000086` vs `WAL-CLM-RARE-000011` / `WAL-CLM-IMMORT-000139` / `WAL-CLM-DDDL-000012`.
+## ⧗ OPEN — folate is the ONE case where the OLDER book wins
+Epigenetics (2014) prints `Folic acid 400 mcg`; Let's Play Doctor (1995) gives **1,000 mcg**. His
+ruling: **the 2014 figure must be a misprint** — he has multiple supplements that go over 1,000 mcg,
+so 400 cannot be his position. His guess is the page reads **1,400** and the OCR garbled it.
 
-### Smaller rulings, all disclosed on their own panels
-- **Germanium** — the 50–100 mg high-dose *trigger* differs: "serious illness requiring increased
-  oxygen" (Dddl-000011, Rare-000012) vs "serious germanium deficiency" (Immort-000140).
-- **Manganese** — `WAL-CLM-LETS-000017` prints **"muscle therapy"** among the deficiency signs. A
-  misprint; the intended word is not recoverable from the page. *Muscle atrophy* is the obvious guess
-  and was deliberately NOT made. Printed as sealed and marked.
-- **Manganese** — the **154 lb reference weight is this project's choice, not his**. He gives a rate
-  (3–5 mg per 100 lb); somebody has to pick a body. Panel F draws the whole range and discloses it.
-- **B3 and B1** — both maintenance figures **doubled** between books (50 mg 1995 → 10–100 mg 2014)
-  with no stated reason. Favour-newest takes 100 for both.
-- **B3** — `WAL-CLM-LETS-000019` has an entry that is **incomplete in the seal**: "crying jags,
-  emotional" with no noun. The summary reads it as *emotional lability*; that word is not in the
-  sealed line and was not added.
+**Next session, do this:**
+1. Read the real book page. **Epigenetics, Screenshot 674 / Page 816 of 936.** ⚠ There is NO PDF or
+   page image of Epigenetics in this repo — only the OCR'd `.txt`. This needs the actual book.
+2. If the page says **1,400** → correct `WAL-CLM-EPIGEN-000123` and log the divergence.
+3. If the page really says **400** → **DELETE `WAL-CLM-EPIGEN-000123` entirely** and let the older
+   **1,000 mcg** claim (`WAL-CLM-LETS-000052`) stand as folate's target.
 
----
+⚠ **Evidence that cuts against a simple digit-drop:** *two* rows in that same table are a bare
+`400 mcg` — `Folic acid` and `Vitamin B12 (methylcobalamin)` — while every other vitamin row in it is
+a range. Verified against `eden/corpus/books/epigenetics.txt` at char_offset 1414086. Take that to
+the page rather than assuming either way.
+
+★ **Folate's B9 panel A is therefore also built on the wrong framing** and must be replaced. The
+underlying fact (his own need was 1,000 mcg, the card shows 400) is still true and still needs
+fixing — but it is a DEFECT to repair, not a ruling to present to a reader.
+
+## The smaller items — these were never rulings either, just disclosures
+Germanium's osteoarthritis/osteoporosis wording, germanium's high-dose trigger, manganese's
+"muscle therapy" misprint, the 154 lb reference weight, B3/B1's doubled figures. Handle them as
+defects or as silent favour-newest resolutions. **Do not build panels out of them.**
 
 # ★★★ A CORPUS-WIDE FIND — THREE OCR DEFECT CLASSES, NOW GATED
 
