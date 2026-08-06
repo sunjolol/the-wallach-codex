@@ -2471,7 +2471,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 74,
+    "claim_count": 73,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2503,7 +2503,6 @@
         "WAL-CLM-LETS-000199",
         "WAL-CLM-LETS-000200",
         "WAL-CLM-RARE-000132",
-        "WAL-CLM-RARE-000134",
         "WAL-CLM-RARE-000197",
         "WAL-CLM-RARE-000198",
         "WAL-CLM-RARE-000249"
@@ -2763,8 +2762,8 @@
     "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000194",
-        "WAL-CLM-RARE-000155"
+        "WAL-CLM-EPIGEN-000094",
+        "WAL-CLM-IMMORT-000194"
       ]
     },
     "essentials_involved": [
@@ -2772,8 +2771,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "immortality",
-      "rare-earths"
+      "epigenetics",
+      "immortality"
     ]
   },
   "cardiomyopathy": {
@@ -5854,12 +5853,11 @@
   },
   "goiter": {
     "display_name": "Goiter",
-    "claim_count": 19,
+    "claim_count": 18,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000019",
         "WAL-CLM-IMMORT-000179",
-        "WAL-CLM-RARE-000147",
         "WAL-CLM-RARE-000148"
       ],
       "deficiency_signs": [
@@ -6923,8 +6921,8 @@
     "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
-        "WAL-CLM-IMMORT-000194",
-        "WAL-CLM-RARE-000155"
+        "WAL-CLM-EPIGEN-000094",
+        "WAL-CLM-IMMORT-000194"
       ]
     },
     "essentials_involved": [
@@ -6932,8 +6930,8 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "immortality",
-      "rare-earths"
+      "epigenetics",
+      "immortality"
     ]
   },
   "hypophosphatemia": {
@@ -8326,12 +8324,11 @@
   },
   "liver_cancer": {
     "display_name": "Liver Cancer",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000187",
-        "WAL-CLM-LETS-000195",
-        "WAL-CLM-RARE-000134"
+        "WAL-CLM-LETS-000195"
       ],
       "toxicity_signs": [
         "WAL-CLM-IMMORT-000123"
@@ -8345,8 +8342,7 @@
     ],
     "books_cited": [
       "immortality",
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "liver_cirrhosis": {
@@ -8411,8 +8407,7 @@
         "WAL-CLM-DDDL-000010",
         "WAL-CLM-LETS-000107",
         "WAL-CLM-LETS-000187",
-        "WAL-CLM-LETS-000195",
-        "WAL-CLM-RARE-000134"
+        "WAL-CLM-LETS-000195"
       ],
       "contraindications": [
         "WAL-CLM-DDDL-000022"
@@ -8441,6 +8436,7 @@
         "WAL-CLM-LETS-000348"
       ],
       "toxicity_signs": [
+        "WAL-CLM-IMMORT-000123",
         "WAL-CLM-LETS-000005",
         "WAL-CLM-LETS-000007",
         "WAL-CLM-LETS-000020",
@@ -8490,6 +8486,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -9771,7 +9768,9 @@
       ]
     },
     "essentials_involved": [],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "fluoride"
+    ],
     "books_cited": [
       "immortality"
     ]
@@ -10033,11 +10032,8 @@
   },
   "osteosarcoma": {
     "display_name": "Osteosarcoma",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-RARE-000134"
-      ],
       "toxicity_signs": [
         "WAL-CLM-IMMORT-000123"
       ]
@@ -10047,8 +10043,7 @@
       "fluoride"
     ],
     "books_cited": [
-      "immortality",
-      "rare-earths"
+      "immortality"
     ]
   },
   "osteosclerosis": {
@@ -10561,7 +10556,7 @@
   },
   "pernicious_anemia": {
     "display_name": "Pernicious Anemia",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000040",
@@ -10570,6 +10565,9 @@
         "WAL-CLM-IMMORT-000083",
         "WAL-CLM-RARE-000115",
         "WAL-CLM-RARE-000238"
+      ],
+      "interactions": [
+        "WAL-CLM-IMMORT-000302"
       ]
     },
     "essentials_involved": [
@@ -12467,11 +12465,8 @@
   },
   "thyroid_cancer": {
     "display_name": "Thyroid Cancer",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_role": {
-      "causes": [
-        "WAL-CLM-RARE-000134"
-      ],
       "toxicity_signs": [
         "WAL-CLM-IMMORT-000123"
       ]
@@ -12481,8 +12476,7 @@
       "fluoride"
     ],
     "books_cited": [
-      "immortality",
-      "rare-earths"
+      "immortality"
     ]
   },
   "thyroid_disease": {

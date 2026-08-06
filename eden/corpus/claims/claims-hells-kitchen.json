@@ -19,7 +19,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488412
+    "char_offset": 488416
    },
    "dose": null,
    "tags": [
@@ -52,7 +52,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 317779
+    "char_offset": 317782
    },
    "dose": null,
    "tags": [
@@ -83,7 +83,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 340384
+    "char_offset": 340387
    },
    "dose": null,
    "tags": [
@@ -114,7 +114,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 442211
+    "char_offset": 442215
    },
    "dose": null,
    "tags": [
@@ -145,7 +145,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 603176
+    "char_offset": 603180
    },
    "dose": null,
    "tags": [
@@ -178,7 +178,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 274376
+    "char_offset": 274379
    },
    "dose": null,
    "tags": [
@@ -209,7 +209,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 326271
+    "char_offset": 326274
    },
    "dose": null,
    "tags": [
@@ -232,7 +232,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach's maintenance dose for the liquid plant-derived colloidal minerals: one ounce per 100 pounds of body weight per day, ideally split. A 100-pound person takes one ounce a day (or half an ounce — one tablespoon — twice daily); a 200-pound person, two ounces; a 300-pound person, three, and so on. He specifies the supplement should carry at least 77 minerals at a concentration of 19,000 mg per quart and cover all 90 essential nutrients. For anyone needing to lose 25 pounds or more, the level can be raised to one and one-quarter ounces per 100 pounds.",
-   "verbatim": "These liquid minerals should be taken at the rate of one ounce \nper hundred pounds of body weight as a maintenance dose.",
+   "verbatim": "The supplement program should include all of the \nninety (90) essential nutrients. Specifically, the minerals should come \nfrom a plant source. Obviously, for most of us (“culinary” ashes from \nwood fires are no longer available) that means the consumption of a \nliquid plant derived colloidal mineral supplement with a minimum \nof seventy seven minerals at the concentration of 19,000 mg per quart. \nThese liquid minerals should be taken at the rate of one ounce \nper hundred pounds of body weight as a maintenance dose.",
    "locator": {
     "book": "hells-kitchen",
     "scheme": "chapter_page",
@@ -240,7 +240,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 509558
+    "char_offset": 509161
    },
    "dose": null,
    "tags": [
@@ -273,7 +273,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 491669
+    "char_offset": 491673
    },
    "dose": null,
    "tags": [
@@ -306,7 +306,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 580874
+    "char_offset": 580878
    },
    "dose": null,
    "tags": [
@@ -339,7 +339,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 444971
+    "char_offset": 444975
    },
    "dose": null,
    "tags": [
@@ -372,7 +372,7 @@
     "page": 252,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 482514
+    "char_offset": 482518
    },
    "dose": null,
    "tags": [
@@ -402,7 +402,7 @@
     "page": 253,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 482781
+    "char_offset": 482785
    },
    "dose": null,
    "tags": [
@@ -420,7 +420,10 @@
    "id": "WAL-CLM-HELLS-000015",
    "kind": "protocol",
    "essentials": [],
-   "other_substances": [],
+   "other_substances": [
+    "mangosteen",
+    "noni"
+   ],
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach's practical trick is to replace salad dressing with a high-ORAC juice - noni or mangosteen - instead of oil. It sits inside his See Food Diet, where oils and dressings are a main target. For eating out he gives the Salad Fork Trick: dip the fork a quarter inch into the dressing and shake off the excess, which lets you taste it while giving up about ninety-five percent of the calories.",
@@ -432,12 +435,16 @@
     "page": 269,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 508623
+    "char_offset": 508627
    },
    "dose": null,
    "tags": [
     "orac",
-    "practical"
+    "practical",
+    "noni_juice",
+    "antioxidants",
+    "weight-loss",
+    "salad-dressing"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -462,7 +469,7 @@
     "page": 252,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 482213
+    "char_offset": 482217
    },
    "dose": null,
    "tags": [
@@ -493,7 +500,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 419959
+    "char_offset": 419962
    },
    "dose": null,
    "tags": [
@@ -529,7 +536,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312932
+    "char_offset": 312935
    },
    "dose": null,
    "tags": [
@@ -564,7 +571,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 556255
+    "char_offset": 556259
    },
    "dose": null,
    "tags": [
@@ -600,7 +607,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 554926
+    "char_offset": 554930
    },
    "dose": null,
    "tags": [
@@ -633,7 +640,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 460409
+    "char_offset": 460413
    },
    "dose": null,
    "tags": [
@@ -667,7 +674,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 618358
+    "char_offset": 618362
    },
    "dose": null,
    "tags": [
@@ -700,7 +707,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 309826
+    "char_offset": 309829
    },
    "dose": null,
    "tags": [
@@ -734,7 +741,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 252916
+    "char_offset": 252919
    },
    "dose": null,
    "tags": [
@@ -767,7 +774,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 618833
+    "char_offset": 618837
    },
    "dose": null,
    "tags": [
@@ -801,7 +808,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312932
+    "char_offset": 312935
    },
    "dose": null,
    "tags": [
@@ -834,7 +841,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 255337
+    "char_offset": 255340
    },
    "dose": null,
    "tags": [
@@ -867,7 +874,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 281867
+    "char_offset": 281870
    },
    "dose": null,
    "tags": [
@@ -900,7 +907,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 448450
+    "char_offset": 448454
    },
    "dose": null,
    "tags": [
@@ -935,7 +942,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 408667
+    "char_offset": 408670
    },
    "dose": null,
    "tags": [
@@ -968,7 +975,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 272582
+    "char_offset": 272585
    },
    "dose": null,
    "tags": [
@@ -994,7 +1001,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "In his discussion of nuts, Wallach points to pistachios as a source of vitamin B6: a handful supplies twenty-five percent of the USDA recommended daily value. One ounce (50 dry-roasted nuts) contains 160 calories and 13 grams of fat.",
-   "verbatim": "Pistachios: a handful of pistachios gives twenty five percent of \nthe USDA recommended daily value for vitamin B6.",
+   "verbatim": "Pistachios: a handful of pistachios gives twenty five percent of \nthe USDA recommended daily value for vitamin B6. One ounce (50 \ndry roasted nuts) contains 160 calories and 13 grams of fat.",
    "locator": {
     "book": "hells-kitchen",
     "scheme": "chapter_page",
@@ -1002,7 +1009,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 555704
+    "char_offset": 555708
    },
    "dose": null,
    "tags": [
@@ -1036,7 +1043,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 586431
+    "char_offset": 586435
    },
    "dose": null,
    "tags": [
@@ -1070,7 +1077,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 250558
+    "char_offset": 250561
    },
    "dose": null,
    "tags": [
@@ -1104,7 +1111,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 306560
+    "char_offset": 306563
    },
    "dose": null,
    "tags": [
@@ -1139,7 +1146,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489082
+    "char_offset": 489086
    },
    "dose": null,
    "tags": [
@@ -1173,7 +1180,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 275059
+    "char_offset": 275062
    },
    "dose": null,
    "tags": [
@@ -1207,7 +1214,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 71169
+    "char_offset": 71170
    },
    "dose": null,
    "tags": [
@@ -1240,7 +1247,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 556255
+    "char_offset": 556259
    },
    "dose": null,
    "tags": [
@@ -1274,7 +1281,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 613766
+    "char_offset": 613770
    },
    "dose": null,
    "tags": [
@@ -1299,7 +1306,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "In Wallach's framework chromium is an essential trace element the body must have for normal glucose metabolism, and its function is tied directly to insulin. It is the working core of GTF, the glucose tolerance factor (a complex of chromium III, dinicotinic acid, and glutathione), and only the trivalent form is biologically active. The whole body holds only about 1.5 mg, yet Wallach considers chromium so central to blood-sugar control that he names its deficiency, together with vanadium, a primary cause of diabetes and hypoglycemia. He cites the USDA's Richard Anderson that ninety percent of Americans are deficient in it.",
+   "claim_text": "In Wallach's framework chromium is an essential trace element the body must have for normal glucose metabolism, and its function is tied directly to insulin. It is required for the glucose tolerance factor (GTF) to function properly, and only the trivalent form is biologically active. Wallach considers chromium so central to blood-sugar control that he names its deficiency, together with vanadium, a primary cause of diabetes and hypoglycemia.",
    "verbatim": "Chromium is required for circulating glucose tolerance factor to \nfunction properly. Chromium is an essential trace element necessary \nfor the normal glucose metabolism, It’s function is directly related to \nthe function of insulin.",
    "locator": {
     "book": "hells-kitchen",
@@ -1308,7 +1315,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 456328
+    "char_offset": 456332
    },
    "dose": null,
    "tags": [
@@ -1342,7 +1349,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 456804
+    "char_offset": 456808
    },
    "dose": null,
    "tags": [
@@ -1376,7 +1383,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 457094
+    "char_offset": 457098
    },
    "dose": null,
    "tags": [
@@ -1410,7 +1417,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 368101
+    "char_offset": 368104
    },
    "dose": null,
    "tags": [
@@ -1445,7 +1452,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 458072
+    "char_offset": 458076
    },
    "dose": null,
    "tags": [
@@ -1478,7 +1485,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 367761
+    "char_offset": 367764
    },
    "dose": null,
    "tags": [
@@ -1511,7 +1518,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 367472
+    "char_offset": 367475
    },
    "dose": null,
    "tags": [
@@ -1544,7 +1551,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 251144
+    "char_offset": 251147
    },
    "dose": null,
    "tags": [
@@ -1578,7 +1585,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 282512
+    "char_offset": 282515
    },
    "dose": null,
    "tags": [
@@ -1612,7 +1619,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 555321
+    "char_offset": 555325
    },
    "dose": null,
    "tags": [
@@ -1645,7 +1652,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 617163
+    "char_offset": 617167
    },
    "dose": null,
    "tags": [
@@ -1678,7 +1685,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 313116
+    "char_offset": 313119
    },
    "dose": null,
    "tags": [
@@ -1712,7 +1719,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 282585
+    "char_offset": 282588
    },
    "dose": null,
    "tags": [
@@ -1746,7 +1753,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 450448
+    "char_offset": 450452
    },
    "dose": null,
    "tags": [
@@ -1773,7 +1780,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Among nuts, hazelnuts (filberts) are an outstanding source of manganese. Wallach notes that 24 hazelnuts provide ninety percent of the USDA recommended daily value of manganese, along with twenty percent of the daily value for vitamin E. A one-ounce serving of 20 nuts carries 180 calories and 17 grams of fat, making hazelnuts an easy whole-food way to boost manganese intake.",
-   "verbatim": "Hazelnuts (Filberts): 24 nuts provide twenty percent of the \nUSDA recommended daily value of vitamin E and ninety percent of \nthe manganese.",
+   "verbatim": "Hazelnuts (Filberts): 24 nuts provide twenty percent of the \nUSDA recommended daily value of vitamin E and ninety percent of \nthe manganese. One ounce (20 nuts) contain 180 calories and 17 \ngrams of fat.",
    "locator": {
     "book": "hells-kitchen",
     "scheme": "chapter_page",
@@ -1781,7 +1788,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 555321
+    "char_offset": 555325
    },
    "dose": null,
    "tags": [
@@ -1814,7 +1821,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 390283
+    "char_offset": 390286
    },
    "dose": null,
    "tags": [
@@ -1847,7 +1854,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312932
+    "char_offset": 312935
    },
    "dose": null,
    "tags": [
@@ -1880,7 +1887,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489082
+    "char_offset": 489086
    },
    "dose": null,
    "tags": [
@@ -1916,7 +1923,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489634
+    "char_offset": 489638
    },
    "dose": null,
    "tags": [
@@ -1952,7 +1959,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488820
+    "char_offset": 488824
    },
    "dose": null,
    "tags": [
@@ -1987,7 +1994,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489401
+    "char_offset": 489405
    },
    "dose": null,
    "tags": [
@@ -2022,7 +2029,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 605063
+    "char_offset": 605067
    },
    "dose": null,
    "tags": [
@@ -2058,7 +2065,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 448450
+    "char_offset": 448454
    },
    "dose": null,
    "tags": [
@@ -2092,7 +2099,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 368473
+    "char_offset": 368476
    },
    "dose": null,
    "tags": [
@@ -2127,7 +2134,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 527523
+    "char_offset": 527527
    },
    "dose": null,
    "tags": [
@@ -2160,7 +2167,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 530430
+    "char_offset": 530434
    },
    "dose": null,
    "tags": [
@@ -2194,7 +2201,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 593552
+    "char_offset": 593556
    },
    "dose": null,
    "tags": [
@@ -2228,7 +2235,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 432315
+    "char_offset": 432319
    },
    "dose": null,
    "tags": [
@@ -2263,7 +2270,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 432724
+    "char_offset": 432728
    },
    "dose": null,
    "tags": [
@@ -2297,7 +2304,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 432893
+    "char_offset": 432897
    },
    "dose": null,
    "tags": [
@@ -2330,7 +2337,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 432895
+    "char_offset": 432899
    },
    "dose": null,
    "tags": [
@@ -2364,7 +2371,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 527523
+    "char_offset": 527527
    },
    "dose": null,
    "tags": [
@@ -2397,7 +2404,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488412
+    "char_offset": 488416
    },
    "dose": null,
    "tags": [],
@@ -2424,7 +2431,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492223
+    "char_offset": 492227
    },
    "dose": null,
    "tags": [
@@ -2457,7 +2464,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492376
+    "char_offset": 492380
    },
    "dose": null,
    "tags": [
@@ -2490,7 +2497,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492728
+    "char_offset": 492732
    },
    "dose": null,
    "tags": [
@@ -2522,7 +2529,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 345796
+    "char_offset": 345799
    },
    "dose": null,
    "tags": [
@@ -2555,7 +2562,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 491597
+    "char_offset": 491601
    },
    "dose": null,
    "tags": [
@@ -2587,7 +2594,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 308476
+    "char_offset": 308479
    },
    "dose": null,
    "tags": [
@@ -2619,7 +2626,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 268018
+    "char_offset": 268021
    },
    "dose": null,
    "tags": [
@@ -2642,7 +2649,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Dr. Wallach considers his own 'See Food Diet' the best of the low-carbohydrate, low-glycemic-index diets. What sets it apart from every other low-carb plan, he says, is that it weights mineral intake far more heavily and treats it as more important than parsing the exact percentages of carbohydrates, fats and proteins.",
+   "claim_text": "Dr. Wallach considers his own 'See Food Diet' the best of the low-carbohydrate, low-glycemic-index diets. What sets it apart from every other low-carb plan, he says, is that it weights mineral intake far more heavily and treats it as more important than parsing the exact percentages of carbohydrates, fats and proteins. He does allow that low carbohydrates and a low glycemic load can speed weight loss — but warns that if low carbs are your sole consideration, you are in for a rude awakening.",
    "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and proteins.",
    "locator": {
     "book": "hells-kitchen",
@@ -2651,7 +2658,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 500332
+    "char_offset": 500336
    },
    "dose": null,
    "tags": [
@@ -2659,7 +2666,8 @@
     "atkins",
     "weight-loss",
     "minerals",
-    "see-food-diet"
+    "see-food-diet",
+    "low-carb"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -2686,7 +2694,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 500996
+    "char_offset": 501000
    },
    "dose": null,
    "tags": [
@@ -2718,7 +2726,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 501454
+    "char_offset": 501458
    },
    "dose": null,
    "tags": [
@@ -2751,7 +2759,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 501864
+    "char_offset": 501868
    },
    "dose": null,
    "tags": [
@@ -2783,7 +2791,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 502294
+    "char_offset": 502298
    },
    "dose": null,
    "tags": [
@@ -2819,7 +2827,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 487221
+    "char_offset": 487225
    },
    "dose": null,
    "tags": [
@@ -2852,7 +2860,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 299552
+    "char_offset": 299555
    },
    "dose": null,
    "tags": [
@@ -2884,7 +2892,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 426360
+    "char_offset": 426364
    },
    "dose": null,
    "tags": [
@@ -2892,42 +2900,6 @@
     "colloidal-minerals",
     "minerals",
     "absorption"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-28T18:14:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-HELLS-000090",
-   "kind": "protocol",
-   "essentials": [],
-   "other_substances": [
-    "mangosteen",
-    "noni"
-   ],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Dr. Wallach recommends using a high-ORAC-value antioxidant juice such as noni (or mangosteen) as a salad dressing at home, as part of his weight-loss eating plan. In his Hell's Kitchen recipes he specifically calls for 'mineral enriched noni juice' as a salad dressing (which he says 'tastes like vinaigrette') and even as a marinade for pork tenderloin. When dining out, where a noni dressing isn't available, he instead uses his 'Salad Fork Trick' of barely dipping the fork into the dressing, which he says gives up about ninety-five percent of the calories.",
-   "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing.",
-   "locator": {
-    "book": "hells-kitchen",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 508623
-   },
-   "dose": null,
-   "tags": [
-    "noni_juice",
-    "antioxidants",
-    "orac",
-    "weight-loss",
-    "salad-dressing"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -2956,7 +2928,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 614599
+    "char_offset": 614603
    },
    "dose": null,
    "tags": [
@@ -2964,38 +2936,6 @@
     "antioxidants",
     "free-radicals",
     "aging"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-28T18:14:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-HELLS-000092",
-   "kind": "quote",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Dr. Wallach endorses low-carbohydrate, low-glycemic-index eating and calls his own 'See Food Diet' the best of the best among such diets. What sets his approach apart is that it weights mineral intake as more important than parsing the exact percentages of carbohydrates, fats and proteins, because in his framework the root cause of obesity is mineral deficiency, not the macronutrient ratio. Low-carbohydrate diets and low glycemic loads can speed up weight loss, but if low carbs are your sole consideration, he warns, you are in for a rude awakening.",
-   "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and proteins.",
-   "locator": {
-    "book": "hells-kitchen",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 500332
-   },
-   "dose": null,
-   "tags": [
-    "keto_diet",
-    "low-carb",
-    "weight-loss",
-    "dieting"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -3022,7 +2962,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 498097
+    "char_offset": 498101
    },
    "dose": null,
    "tags": [
@@ -3055,7 +2995,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 499804
+    "char_offset": 499808
    },
    "dose": null,
    "tags": [
@@ -3087,7 +3027,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 496022
+    "char_offset": 496026
    },
    "dose": null,
    "tags": [
@@ -3120,7 +3060,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 617231
+    "char_offset": 617235
    },
    "dose": null,
    "tags": [],

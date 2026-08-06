@@ -36,12 +36,12 @@
           "text": "Pull selenium out and the fats peroxidize — the brown-gold residue (ceroid lipofuscin) surfaces on skin as \"age spots\" or \"liver spots,\" while selenium-starved heart muscle can fail outright, as in Keshan disease and the sudden collapse of young athletes.",
           "hook": "An age spot is rancid fat you can see — Wallach reads it as a warning, not a blemish.",
           "traces": [
-            "WAL-CLM-RARE-000321",
+            "WAL-CLM-RARE-000225",
             "WAL-CLM-EPIGEN-000186"
           ]
         }
       ],
-      "quote_claim": "WAL-CLM-RARE-000321",
+      "quote_claim": "WAL-CLM-RARE-000225",
       "highlight": "prevents body fats from going rancid",
       "stat": {
         "value": "13 → 1",
@@ -214,7 +214,7 @@
           "text": "No fewer than seventy enzymes need zinc before they work at all. So one shortage does not stall one job — it stalls seventy.",
           "hook": "One missing part, seventy tools.",
           "traces": [
-            "WAL-CLM-DDDL-000037",
+            "WAL-CLM-DDDL-000139",
             "WAL-CLM-RARE-000265"
           ]
         },
