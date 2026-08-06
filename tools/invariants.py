@@ -4991,6 +4991,157 @@ def check_no_duplicate_claims():
     return _no_duplicate_claims_impl(claims, enrichment)
 
 
+# Two claims on one entity page must not ask the reader the SAME QUESTION. This is the
+# reader-facing half of the duplicate problem, and it is the ONLY half that is decidable
+# without judgement: normalise the question, bucket by subject, and a collision is a
+# collision. Contrast no_duplicate_claims, which buckets on (book, subject, facet) with
+# `book` IN the key and additionally demands verbatim containment -- so it is blind
+# cross-book, blind cross-facet (even inside one book), and blind to two typesettings of
+# one fact. Measured 2026-08-06: 407 cross-book + 615 cross-facet candidate pairs it
+# cannot see. Luneth found two such cards on the vitamin D page by eye.
+#
+# DELIBERATELY NOT DONE: extending no_duplicate_claims to bucket on (book, subject) so
+# facet-differing containment pairs are compared. Measured before proposing it -- 28 pairs,
+# and most are the legitimate multi-facet mining pattern (a `basics` "What is X?" and a
+# `mechanism` "What does X do?" quoting one paragraph; `discovery` + `etymology` off one
+# catalog entry). A gate that fires on 28 correct cases is noise, not a gate.
+#
+# The allowlist below is per-case and lives IN the gate WITH a reason, never in
+# .claude/invariant-baseline.json, which is invariant-scoped and would tolerate the whole
+# class forever. Each entry is either "no honest split exists" (a strict content subset, or
+# the same Wallach passage reprinted in two books) or "adjudicated distinct, but its
+# answer_short must be re-cut before its question can move" -- because a question its own
+# card cannot answer is a worse defect than the duplicate it replaces. A stale entry FAILS
+# the gate (R9), so clearing one forces its removal in the same patch.
+_QUESTION_COLLISIONS_KNOWN = {
+    frozenset({'WAL-CLM-EPIGEN-000065', 'WAL-CLM-IMMORT-000034'}):
+        "[aluminum] Does aluminum cause Alzheimer's disease? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000076', 'WAL-CLM-LETS-000139'}):
+        "[angina] How do you treat angina naturally? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000238', 'WAL-CLM-RARE-000098'}):
+        "[boron] What does boron do in the body? -- NO HONEST SPLIT (agent-adjudicated 2026-08-06): The two verbatims are the same reused Wallach passage; the only content unique to WAL-CLM-RARE-000098 is the essentiality date, which I verified in the sealed source (rare-earths-forbidden-c",
+    frozenset({'WAL-CLM-EPIGEN-000072', 'WAL-CLM-IMMORT-000047'}):
+        "[bromine] What is bromine? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000052', 'WAL-CLM-DDDL-000180'}):
+        "[calcium] What is the ideal calcium to phosphorus ratio? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-IMMORT-000071', 'WAL-CLM-RARE-000107'}):
+        "[calcium] Can calcium deficiency cause high blood pressure? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-IMMORT-000212', 'WAL-CLM-RARE-000309'}):
+        "[cardiomyopathy] What causes cardiomyopathy? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-IMMORT-000079', 'WAL-CLM-RARE-000114'}):
+        "[cobalt] What does cobalt do in the body? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-IMMORT-000100', 'WAL-CLM-RARE-000119'}):
+        "[copper] What does copper do in the body? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000055', 'WAL-CLM-LETS-000237'}):
+        "[cradle_cap] How do you treat cradle cap? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000085', 'WAL-CLM-RARE-000290'}):
+        "[gadolinium] What is gadolinium? -- NO HONEST SPLIT (agent-adjudicated 2026-08-06): GENUINE DUPLICATE — no re-question offered, deliberately. These are the same periodic-table catalog entry reproduced in two books: identical distribution figures (5.4 ppm igneous, 4.3 shale,",
+    frozenset({'WAL-CLM-DDDL-000227', 'WAL-CLM-IMMORT-000138'}):
+        "[germanium] What is germanium? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000228', 'WAL-CLM-LETS-000183'}):
+        "[germanium] How does germanium work in the body? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000090', 'WAL-CLM-IMMORT-000456'}):
+        "[hafnium] What is hafnium? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000205', 'WAL-CLM-IMMORT-000001'}):
+        "[iodine] What causes goiter? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000020', 'WAL-CLM-IMMORT-000131'}):
+        "[iron] What are the symptoms of iron deficiency? -- NO HONEST SPLIT (agent-adjudicated 2026-08-06): This is the closest thing in the shard to a genuine duplicate, and the parent should know which way it had to be resolved. WAL-CLM-DDDL-000020 is a strict content SUBSET of WAL-CLM-IMMORT-00",
+    frozenset({'WAL-CLM-EPIGEN-000095', 'WAL-CLM-IMMORT-000198'}):
+        "[lanthanum] Can candida cause chronic fatigue? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000091', 'WAL-CLM-IMMORT-000163'}):
+        "[mercury] Is mercury in fish dangerous? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000005', 'WAL-CLM-RARE-000050'}):
+        "[muscular_dystrophy] Is muscular dystrophy caused by selenium deficiency? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-LETS-000011', 'WAL-CLM-RARE-000111'}):
+        "[omega-3] What are the signs of essential fatty acid deficiency? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000335', 'WAL-CLM-RARE-000209'}):
+        "[phosphorus] What causes low blood phosphorus? -- NO HONEST SPLIT (agent-adjudicated 2026-08-06): NO HONEST SPLIT EXISTS for this pair — leave both questions as they are. The two verbatims are the same reused Wallach passage reproduced word for word (the only textual difference is one co",
+    frozenset({'WAL-CLM-IMMORT-000269', 'WAL-CLM-RARE-000084'}):
+        "[selenium] Does selenium protect against mercury poisoning? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-DDDL-000013', 'WAL-CLM-DDDL-000014'}):
+        "[silver] How does silver kill germs? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000321', 'WAL-CLM-LETS-000514'}):
+        "[sodium] What does sodium do in the body? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000039', 'WAL-CLM-RARE-000237'}):
+        "[vitamin-b6] What are the signs of vitamin B6 deficiency? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000033', 'WAL-CLM-LETS-000041'}):
+        "[vitamin-e] What are the signs of vitamin E deficiency? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-EPIGEN-000034', 'WAL-CLM-LETS-000042'}):
+        "[vitamin-k] What are the signs of vitamin K deficiency? -- NO HONEST SPLIT (agent-adjudicated 2026-08-06): These two cannot be separated by re-questioning, and I recommend leaving both questions as they are. WAL-CLM-LETS-000042 contains exactly two signs — poor clotting time and osteoporosis — an",
+    frozenset({'WAL-CLM-DDDL-000039', 'WAL-CLM-RARE-000262'}):
+        "[zinc] What birth defects are linked to zinc deficiency? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+    frozenset({'WAL-CLM-LETS-000044', 'WAL-CLM-RARE-000263'}):
+        "[zinc] What are the signs of zinc deficiency? -- adjudicated DISTINCT 2026-08-06; its answer_short must be re-cut to lead with the distinguishing content BEFORE its question can move, or the card would not answer its own question",
+}
+
+_Q_STOP = frozenset("""the a an of to in is are do does did you your can what how why and for with
+on at be it that this wallach s""".split())
+
+
+def _norm_question(q):
+    """Lowercase, strip punctuation, drop stopwords, sort the remaining tokens. Sorting is
+    deliberate: 'What are the signs of X deficiency?' and 'What are X deficiency signs?' are
+    the same question to a reader and must collide."""
+    q = re.sub(r"[^a-z0-9 ]+", " ", (q or "").lower())
+    return " ".join(sorted(w for w in q.split() if w not in _Q_STOP))
+
+
+def _no_duplicate_questions_impl(enrichment, known=None):
+    known = _QUESTION_COLLISIONS_KNOWN if known is None else known
+    buckets = {}
+    for cid, e in (enrichment or {}).items():
+        subj, q = (e or {}).get("subject"), (e or {}).get("question")
+        if not subj or not q:
+            continue
+        buckets.setdefault((subj, _norm_question(q)), []).append(cid)
+
+    viol, seen_known = [], set()
+    for (subj, _), ids in sorted(buckets.items()):
+        if len(ids) < 2:
+            continue
+        key = frozenset(ids)
+        if key in known:
+            seen_known.add(key)
+            continue
+        qs = sorted({(enrichment[i] or {}).get("question") for i in ids})
+        viol.append(f"[{subj}] {sorted(ids)} ask the same question: " + " | ".join(str(q) for q in qs))
+
+    # An allowlist entry that no longer matches is a lie left in the source (R9): the
+    # collision was cleared, or a claim was deleted/re-subjected, and the carve-out must go
+    # in the SAME patch that made it stale.
+    stale = sorted(" + ".join(sorted(k)) for k in known if k not in seen_known)
+
+    if viol or stale:
+        parts = []
+        if viol:
+            parts.append(f"{len(viol)} un-allowlisted question collision(s) -- two claims on one "
+                         f"entity page asking the reader the same thing: " + "; ".join(viol[:5])
+                         + (f" ... (+{len(viol) - 5} more)" if len(viol) > 5 else ""))
+        if stale:
+            parts.append("stale _QUESTION_COLLISIONS_KNOWN entr(ies) -- they now bless nothing and "
+                         "must be DELETED in the same patch that cleared them (R9): "
+                         + "; ".join(stale[:5]) + (f" ... (+{len(stale) - 5} more)" if len(stale) > 5 else ""))
+        return False, " || ".join(parts)
+
+    n = sum(len(v) for v in buckets.values())
+    return True, (f"no un-allowlisted question collision across {n} enriched claim(s); "
+                  f"{len(known)} known group(s) carry a per-case reason and a clearing plan "
+                  f"(normalised subject+question, threshold-free)")
+
+
+def check_no_duplicate_questions():
+    """R3 -- no two claims on one entity page ask the reader the same question. See the block
+    comment above _QUESTION_COLLISIONS_KNOWN for why no_duplicate_claims cannot see this class,
+    what was deliberately NOT built, and why the allowlist lives in the gate rather than the
+    baseline. Thin path-binding shell over the impl so the negative test drives the same logic.
+    Negative test: tools/test_no_duplicate_questions.py."""
+    p = ROOT / "eden" / "corpus" / "search-enrichment.json"
+    if not p.exists():
+        return True, "search-enrichment.json missing (bootstrap-guard)"
+    enrichment = json.loads(p.read_text(encoding="utf-8")).get("enrichment", {})
+    return _no_duplicate_questions_impl(enrichment)
+
+
 def check_no_hand_duplicated_canonical():
     """Charter R3 -- no canonical value is hand-written twice; the pillar is the single hand-edited
     home, and derived copies are proven fresh (derived_artifacts_fresh IS R3's 'derived copies only'
@@ -7257,6 +7408,15 @@ INVARIANTS = [
         truth_anchor="the sealed claim verbatims (eden/corpus/claims/claims-*.json) x subject/facet from eden/corpus/search-enrichment.json, bucketed by book+subject+facet and containment-tested pairwise, recomputed each run; a keep-both exception that stops firing is itself RED",
         severity="critical",
         lesson_ref="2026-08-03 twin-card incident -- Luneth found two near-identical 'What is Vitamin A?' cards on one entity page; EPIGEN-000213/-000214 were a truncated and a full take of the same span, same offset, same extracted_at, and 13 duplicates were removed corpus-wide (commit b3551834). An 84-gate board caught none of it: the class was found by a human looking at a screen, which is not a control. Negative test: tools/test_no_duplicate_claims.py (replants the real vitamin-A pair). memory: a-gate-can-be-green-because-of-the-defect, negative-control-or-it-proves-nothing",
+    ),
+    Invariant(
+        name="no_duplicate_questions",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether an answer is correct
+        description="R3 -- no two claims sharing an enrichment SUBJECT ask the reader the same normalised QUESTION, regardless of book or facet. This is the reader-facing half of the duplicate problem and the only half decidable without judgement: normalise, bucket by subject, a collision is a collision, no threshold. It exists because no_duplicate_claims cannot see the class -- that gate puts `book` IN its bucket key and demands verbatim containment, so it is blind cross-book, blind cross-facet even inside one book, and blind to two typesettings of one fact (measured 2026-08-06: 407 cross-book + 615 cross-facet candidate pairs invisible to it). 29 groups are allowlisted IN-GATE, each with a per-case reason and a clearing plan; a carve-out that stops firing is itself RED",
+        check_fn=check_no_duplicate_questions,
+        truth_anchor="eden/corpus/search-enrichment.json subject+question, normalised (lowercased, punctuation stripped, stopwords dropped, tokens sorted) and bucketed, recomputed each run; a stale allowlist entry fails",
+        severity="critical",
+        lesson_ref="Luneth 2026-08-06, pointing at two cards on the vitamin D page: 'THESE TWO CLAIMS HERE WHICH ARE BASICALLY THE SAME, DID WE NOT DO MULTIPLE PASSES TO REMOVE THESE DUPLICATE CLAIMS'. He was right and the passes could not have worked -- the gate meant to catch them was blind three ways. ROOT CAUSE of the adjacency is a taxonomy defect, not authoring: the colour family named 'signs' in core/schemas/search.ts holds ONLY 'warning', so deficiency-SIGN claims are pulled there while their correct home 'physiology' sits in the 'science' family, and 'warning' is pinned at position 2 -- so the misfiled claim is PROMOTED above its correct twin. 46 claims re-faceted. A global kind->facet gate was considered and REJECTED on measured evidence: it would demand 941 re-facets (41.8% of the corpus) and kind:definition legitimately spans 13 facets. Negative test: tools/test_no_duplicate_questions.py. memory: duplicate-gate-blind-three-ways",
     ),
     Invariant(
         name="no_hand_duplicated_canonical",

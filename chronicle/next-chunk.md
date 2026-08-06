@@ -2,7 +2,8 @@
 
 - **Corpus SEALED at knowledge_version=469**, **2230 claims** (was 2250 — 20 duplicates deleted),
   `corpus_verify` PASS, 7 book hashes match.
-- **Board 89/89, 0 failed.** 23 external / 24 consistency / 40 structural / 2 meta. Green means
+- **Board 90/90, 0 failed.** 23 external / 24 consistency / 41 structural / 2 meta. NEW GATE
+  `no_duplicate_questions` shipped 2026-08-06 (see below). Green means
   NOTHING DRIFTED — only the 23 external gates catch a value that is wrong but self-consistent.
 - `build_embeds` + `node tools/build.mjs` exit 0. `render_probe_knowledge`, `render_probe_entity`,
   `render_probe_knowledge_filter` PASS, 0 page errors.
@@ -78,9 +79,16 @@ corruptions, 33 `800-1200` ranges intact, 13 B-1/B-2 intact.
 - **6 verbatim widenings deferred** — their span does not name a mapped condition, so `vb_apply`
   refuses (correctly). Ids in `scratchpad/widen-deferred.json` shape; re-derive if needed.
 - **16 TRIM_PROSE and 8 NEEDS_RESCOPE** from the sweep are unapplied.
-- **No new duplicate gate written yet.** The cross-book/cross-facet signature is semantic; the one
-  deterministic gate available (same subject + same normalised question) is being cleared to zero
-  first so it can ship green rather than red.
+- **GATE SHIPPED: `no_duplicate_questions`** (board 89 -> 90). Two claims sharing an enrichment
+  SUBJECT may not ask the same normalised question, regardless of book or facet. Threshold-free.
+  The 29 open collisions are allowlisted IN-GATE in `_QUESTION_COLLISIONS_KNOWN`, each with a
+  per-case reason -- and **a stale entry FAILS the gate**, so clearing a collision forces deleting
+  its carve-out in the same patch. Negative test `tools/test_no_duplicate_questions.py`, 7 cases.
+  ⚠ **DELIBERATELY NOT BUILT** (recorded in the gate's own comment so it is not re-proposed):
+  extending `no_duplicate_claims` to bucket on `(book, subject)`. The facet audit recommended it;
+  measuring first showed 28 pairs, MOST of them the legitimate multi-facet mining pattern
+  (`basics` + `mechanism` off one paragraph, `discovery` + `etymology` off one catalog entry).
+  A gate that fires on 28 correct cases is noise.
 - **#7 same-span groups: DONE.** 71 groups read (handoff said 47): 52 legit multi-row, 11 true
   duplicates deleted, 8 need rescope (still open).
 - **#6 Home `.kh-search` suggest dropdown** — `byRelevance` sorts alphabetically, ignores claim
