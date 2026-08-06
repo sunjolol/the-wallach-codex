@@ -24748,21 +24748,19 @@
    "subject": "cardiovascular_disease",
    "also_about": [
     "heart_attack",
-    "omega-3",
     "selenium",
     "vitamin-e"
    ],
    "facet": "protocol",
-   "question": "How do you prevent and treat heart disease naturally?",
-   "answer_short": "Wallach recommends essential fatty acids, selenium, and vitamin E while avoiding excess vitamin D to prevent heart disease, and after a heart attack adds EDTA chelation, higher selenium and vitamin E, alfalfa, and digestive enzymes.",
+   "question": "How do you treat heart disease after a heart attack?",
+   "answer_short": "After a heart attack Wallach's treatment is EDTA chelation with hydrogen peroxide — possibly two a day for 80 or more — plus selenium raised to 1,000 mcg and vitamin E to 1,200-2,000 IU a day, alfalfa tablets, Oxy-Toddy, and betaine hydrochloride with pancreatic enzymes before meals.",
    "topics": [
     "heart disease",
     "heart attack",
     "cardiovascular disease",
     "chelation",
     "selenium",
-    "vitamin e",
-    "essential fatty acids"
+    "vitamin e"
    ]
   },
   "WAL-CLM-LETS-000229": {

@@ -7847,7 +7847,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 91,
+    "claim_count": 90,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -7918,7 +7918,6 @@
         "WAL-CLM-LETS-000283",
         "WAL-CLM-LETS-000291",
         "WAL-CLM-LETS-000293",
-        "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000319",
@@ -8018,7 +8017,6 @@
       "bronchitis",
       "cancer",
       "cardiomyopathy",
-      "cardiovascular_disease",
       "chorea",
       "convulsions",
       "cough",
@@ -8042,7 +8040,6 @@
       "gallstones",
       "hangnails",
       "headache",
-      "heart_attack",
       "high_cholesterol",
       "high_triglycerides",
       "hyperkinesis",

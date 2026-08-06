@@ -15015,8 +15015,8 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 91,
-      "distinct_claim_count": 111,
+      "claim_count": 90,
+      "distinct_claim_count": 110,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15129,7 +15129,6 @@
             "WAL-CLM-LETS-000283",
             "WAL-CLM-LETS-000291",
             "WAL-CLM-LETS-000293",
-            "WAL-CLM-LETS-000295",
             "WAL-CLM-LETS-000310",
             "WAL-CLM-LETS-000316",
             "WAL-CLM-LETS-000319",
@@ -15183,7 +15182,7 @@
           ]
         }
       ],
-      "record_claim_count": 77,
+      "record_claim_count": 76,
       "search": [
         {
           "facet": "basics",
@@ -15301,7 +15300,6 @@
         "bronchitis",
         "cancer",
         "cardiomyopathy",
-        "cardiovascular_disease",
         "chorea",
         "cough",
         "cystic_fibrosis",
@@ -15323,7 +15321,6 @@
         "gallstones",
         "hangnails",
         "headache",
-        "heart_attack",
         "high_cholesterol",
         "high_triglycerides",
         "hyperkinesis",
@@ -20973,7 +20970,6 @@
       "restore": [
         "calcium",
         "magnesium",
-        "omega-3",
         "selenium",
         "silica",
         "vanadium",
@@ -27570,7 +27566,6 @@
         "WAL-CLM-LETS-000317"
       ],
       "restore": [
-        "omega-3",
         "selenium",
         "vitamin-a",
         "vitamin-c",

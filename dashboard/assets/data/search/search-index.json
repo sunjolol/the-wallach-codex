@@ -46177,7 +46177,7 @@
       "question": "How do you treat angina naturally?",
       "answer_short": "For angina, Wallach favors chelation (IV hydrogen peroxide and calcium EDTA, or oral supplements) over bypass surgery, plus avoiding sugar, caffeine and smoke, daily walking, calcium and magnesium, essential fatty acids, and hawthorn to increase coronary blood flow.",
       "answer": "For angina (sharp chest pain from arterial disease reducing the heart's oxygen supply), Wallach favors chelation -- intravenous with hydrogen peroxide and calcium EDTA, or oral with vitamin/mineral supplements -- over coronary bypass surgery. Avoid sugar, caffeine, and cigarette smoke; walk 30 minutes daily; calcium 2000 mg per day and magnesium 800 mg per day; essential fatty acids; and reduce vitamin D intake from sun and supplements. Nitroglycerine sublingual capsules and time-release patches relieve symptoms; hawthorn (Crataegus oxyacantha) is specific for angina by increasing coronary blood flow. Lifestyle changes and supplementation can reverse cardiovascular disease.",
-      "verbatim": "English hawthorn (Crataegus oxyacantha) is\nspecific for angina by increasing the blood\nflow through coronary arteries. Lifestyle\nchanges and supplementation can reverse\ncardiovascular disease!",
+      "verbatim": "ANGINA: is a sharp debilitating pain in the\ncenter front of the chest from arterial disease in\nthe heart which reduces the heart's oxygen\nsupply. Symptoms may appear after strenuous exercise or after a meal. The allopathic\napproach is the \"coronary by-pass\" surgery\nwhich after 20 years study has failed to prevent\nsecond heart attacks or to extend life ( it does\nextend the financial portfolio ofthe cardiovascular surgeon!)\nChelation, either IV with H202 and calcium\nEDTA or orally with vitamin/mineral supplements can effect a cure over a period of time.\nAvoid sugar, caffeine and cigarette smoke.\nExercise in the form of walking for 30 minutes\neach day is very helpful. Calcium (2000 mg/\nday) and magnesium(800 mg/day), essential\nfatty acids can help prevent progress of current disease and reduce vitamin D intake from\nthe sun and supplements. Nitroglycerine sublingual capsules and time-release transdermal\npatches are very useful in relieving symptoms.\nEnglish hawthorn (Crataegus oxyacantha) is\nspecific for angina by increasing the blood\nflow through coronary arteries. Lifestyle\nchanges and supplementation can reverse\ncardiovascular disease!",
       "page": null,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -51172,14 +51172,13 @@
       "subject": "cardiovascular_disease",
       "also_about": [
         "heart_attack",
-        "omega-3",
         "selenium",
         "vitamin-e"
       ],
       "facet": "protocol",
-      "question": "How do you prevent and treat heart disease naturally?",
-      "answer_short": "Wallach recommends essential fatty acids, selenium, and vitamin E while avoiding excess vitamin D to prevent heart disease, and after a heart attack adds EDTA chelation, higher selenium and vitamin E, alfalfa, and digestive enzymes.",
-      "answer": "For heart disease (heart attack, cardiovascular disease) Wallach cross-references cardiovascular disease and arteriosclerosis and stresses prevention: the baseline nutritional supplements, special attention to essential fatty acids (flaxseed and/or salmon oil) while avoiding other polyunsaturated fats, selenium at 500 micrograms a day and vitamin E at 800-1,200 international units a day, moderate exercise, and avoiding vitamin D as an adult (more than 400 international units a day calcifies the coronary arteries). He urges emergency preparedness — a home oxygen tank, learning CPR, and keeping nitroglycerin and an intravenous lactated-ringers set on hand. Treatment once you have had a heart attack includes EDTA chelation (with hydrogen peroxide added) — as many as two chelations a day for 80 or more — increasing selenium to 1,000 micrograms a day and vitamin E to 1,200-2,000 international units a day, 5-10 alfalfa tablets (Alfachlor) with each meal, two ounces of Oxy-Toddy morning and night, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.",
+      "question": "How do you treat heart disease after a heart attack?",
+      "answer_short": "After a heart attack Wallach's treatment is EDTA chelation with hydrogen peroxide — possibly two a day for 80 or more — plus selenium raised to 1,000 mcg and vitamin E to 1,200-2,000 IU a day, alfalfa tablets, Oxy-Toddy, and betaine hydrochloride with pancreatic enzymes before meals.",
+      "answer": "Once you have had a heart attack, Wallach's treatment centers on EDTA chelation with hydrogen peroxide added — he says you may need as many as two chelations a day for 80 or more to ensure full recovery for your heart, and tells you to be aggressive about it, because an \"orthodox\" cardiologist will not agree to this and you will have to arrange it yourself. On top of the baseline nutrition program he raises selenium to 1,000 micrograms a day and vitamin E to 1,200-2,000 international units a day, adds 5-10 alfalfa tablets (Alfachlor) with each meal, two ounces of Oxy-Toddy on waking and two ounces before retiring, and betaine hydrochloride with pancreatic enzymes at 75-200 milligrams three times a day before meals.",
       "verbatim": "Treatment once you have had a heart attack\nincludes EDTA chelation (with H202 added);\nyou may need as many as two chelations per\nday for 80 or more to ensure full recoveiy for\nyour heart, be aggressive - your \"orthodox\"\ncardiologist will not agree to this so you will\nhave to arrange it yourself!!! Increase your\nselenium intake to 1,000 mcg/day and your\nvitamin E to 1,200 to 2,000 IU/day, take 5-10\nalfalfa tablets (Alfachlor) with each meal in\naddition to the base line nutrition program.\nTake two ounces of Oxy-Toddy in the morning when you awake and two ounces before\nretiring, take betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals",
       "page": null,
       "book_id": "lets-play-doctor",
@@ -51189,12 +51188,10 @@
         "cardiovascular disease",
         "chelation",
         "selenium",
-        "vitamin e",
-        "essential fatty acids"
+        "vitamin e"
       ],
       "tier1_link": {
         "essentials": [
-          "omega-3",
           "selenium",
           "vitamin-e"
         ],

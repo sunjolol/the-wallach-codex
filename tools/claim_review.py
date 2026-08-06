@@ -32,9 +32,12 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CORPUS = ROOT / "eden" / "corpus"
 
 
-def load_claims():
+def load_claims(draft=False):
     out = {}
-    for p in sorted(glob.glob(str(CORPUS / "claims" / "*.json"))):
+    # --draft reads the UNSEALED drafts. Review happens BEFORE corpus_seal (which is
+    # Luneth's act), so the sealed-only default could not show him what he is approving.
+    sub = ("drafts", "*.draft.json") if draft else ("claims", "*.json")
+    for p in sorted(glob.glob(str(CORPUS / sub[0] / sub[1]))):
         d = json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
         arr = d["claims"] if isinstance(d, dict) and "claims" in d else (d if isinstance(d, list) else [])
         for c in arr:
@@ -116,11 +119,13 @@ def main():
     ap.add_argument("--ids", nargs="+", help="explicit claim ids")
     ap.add_argument("--facet", help="filter to one facet")
     ap.add_argument("--out", help="write markdown here instead of stdout")
+    ap.add_argument("--draft", action="store_true",
+                    help="read the unsealed drafts instead of the sealed shards")
     a = ap.parse_args()
     if not a.entity and not a.ids:
         ap.error("pass --entity or --ids")
 
-    claims, enr, books = load_claims(), load_enrichment(), load_books()
+    claims, enr, books = load_claims(a.draft), load_enrichment(), load_books()
 
     if a.ids:
         picked = [claims[i] for i in a.ids if i in claims]
