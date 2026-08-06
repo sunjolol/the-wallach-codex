@@ -1,8 +1,11 @@
 {
   "abrasions": {
     "display_name": "Abrasions",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "doses": [
+        "WAL-CLM-DDDL-000163"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000118"
       ]
@@ -17,6 +20,7 @@
       "plantain"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -3062,22 +3066,6 @@
       "immortality",
       "lets-play-doctor",
       "rare-earths"
-    ]
-  },
-  "cerebrovascular_disease": {
-    "display_name": "Cerebrovascular Disease",
-    "claim_count": 1,
-    "claims_by_role": {
-      "contraindications": [
-        "WAL-CLM-DDDL-000106"
-      ]
-    },
-    "essentials_involved": [
-      "vitamin-d"
-    ],
-    "other_substances_involved": [],
-    "books_cited": [
-      "dddl-3e-2011"
     ]
   },
   "cervical_dysplasia": {
@@ -6775,7 +6763,7 @@
   },
   "hypertension": {
     "display_name": "Hypertension",
-    "claim_count": 14,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000094",
@@ -6796,9 +6784,6 @@
         "WAL-CLM-RARE-000086",
         "WAL-CLM-RARE-000206"
       ],
-      "protocols": [
-        "WAL-CLM-LETS-000306"
-      ],
       "toxicity_signs": [
         "WAL-CLM-LETS-000005",
         "WAL-CLM-LETS-000033"
@@ -6809,23 +6794,12 @@
       "calcium",
       "copper",
       "magnesium",
-      "omega-3",
       "phosphorus",
       "selenium",
       "sodium",
       "zinc"
     ],
-    "other_substances_involved": [
-      "colloidal-minerals",
-      "coq10",
-      "edta-chelation",
-      "garlic",
-      "hawthorn",
-      "hydrogen-peroxide",
-      "lecithin",
-      "olive",
-      "rauwolfia"
-    ],
+    "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
       "immortality",
@@ -11430,7 +11404,7 @@
   },
   "rickets": {
     "display_name": "Rickets",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
@@ -11441,6 +11415,9 @@
       "definitions": [
         "WAL-CLM-EPIGEN-000165",
         "WAL-CLM-EPIGEN-000174"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000172"
       ],
       "food_sources": [
         "WAL-CLM-EPIGEN-000170"
@@ -11459,6 +11436,7 @@
       "cholesterol"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "epigenetics",
       "lets-play-doctor",
       "rare-earths"

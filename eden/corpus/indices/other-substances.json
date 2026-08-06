@@ -1925,7 +1925,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 59,
+    "claim_count": 58,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-DDDL-000116",
@@ -1964,7 +1964,6 @@
         "WAL-CLM-LETS-000270",
         "WAL-CLM-LETS-000281",
         "WAL-CLM-LETS-000285",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000311",
         "WAL-CLM-LETS-000315",
         "WAL-CLM-LETS-000319",
@@ -2026,7 +2025,6 @@
       "gingivitis",
       "heavy_metal_toxicity",
       "high_triglycerides",
-      "hypertension",
       "immune_depression",
       "impotence",
       "infertility",
@@ -2199,20 +2197,18 @@
   },
   "coq10": {
     "display_name": "Coq10",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-LETS-000191"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000203",
-        "WAL-CLM-LETS-000306"
+        "WAL-CLM-LETS-000203"
       ]
     },
     "conditions_treated": [
       "cancer",
-      "cardiac_arrhythmia",
-      "hypertension"
+      "cardiac_arrhythmia"
     ],
     "books_cited": [
       "lets-play-doctor"
@@ -2701,7 +2697,7 @@
   },
   "edta-chelation": {
     "display_name": "Edta Chelation",
-    "claim_count": 14,
+    "claim_count": 13,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000139",
@@ -2710,7 +2706,6 @@
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000295",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
@@ -2728,7 +2723,6 @@
       "cardiovascular_disease",
       "heart_attack",
       "heavy_metal_toxicity",
-      "hypertension",
       "infarction",
       "intermittent_claudication",
       "lead_poisoning",
@@ -3292,14 +3286,13 @@
   },
   "garlic": {
     "display_name": "Garlic",
-    "claim_count": 9,
+    "claim_count": 8,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000147",
         "WAL-CLM-LETS-000225",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000395",
@@ -3312,7 +3305,6 @@
       "asthma",
       "atopic_asthma",
       "colds",
-      "hypertension",
       "infection",
       "infertility",
       "parasites",
@@ -3666,7 +3658,7 @@
   },
   "hawthorn": {
     "display_name": "Hawthorn",
-    "claim_count": 11,
+    "claim_count": 10,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-DDDL-000315",
@@ -3674,7 +3666,6 @@
         "WAL-CLM-LETS-000139",
         "WAL-CLM-LETS-000229",
         "WAL-CLM-LETS-000253",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000366",
         "WAL-CLM-LETS-000377",
         "WAL-CLM-LETS-000394",
@@ -3686,7 +3677,6 @@
       "angina",
       "congestive_heart_failure",
       "dropsy",
-      "hypertension",
       "mitral_valve_prolapse",
       "nervous_heart",
       "palpitations",
@@ -3928,7 +3918,7 @@
   },
   "hydrogen-peroxide": {
     "display_name": "Hydrogen Peroxide",
-    "claim_count": 46,
+    "claim_count": 45,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-LETS-000190"
@@ -3960,7 +3950,6 @@
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000294",
         "WAL-CLM-LETS-000295",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
         "WAL-CLM-LETS-000333",
@@ -4008,7 +3997,6 @@
       "food_allergy",
       "gingivitis",
       "heart_attack",
-      "hypertension",
       "infarction",
       "infection",
       "intermittent_claudication",
@@ -4537,7 +4525,7 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000130",
@@ -4545,7 +4533,6 @@
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000283",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000409"
       ]
@@ -4556,7 +4543,6 @@
       "dementia",
       "diabetes",
       "gallstones",
-      "hypertension",
       "korsakoffs_syndrome",
       "psoriasis"
     ],
@@ -5481,21 +5467,6 @@
       "lets-play-doctor"
     ]
   },
-  "olive": {
-    "display_name": "Olive",
-    "claim_count": 1,
-    "claims_by_kind": {
-      "protocol": [
-        "WAL-CLM-LETS-000306"
-      ]
-    },
-    "conditions_treated": [
-      "hypertension"
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "olive-oil": {
     "display_name": "Olive Oil",
     "claim_count": 3,
@@ -6389,21 +6360,6 @@
     },
     "conditions_treated": [
       "labor"
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "rauwolfia": {
-    "display_name": "Rauwolfia",
-    "claim_count": 1,
-    "claims_by_kind": {
-      "protocol": [
-        "WAL-CLM-LETS-000306"
-      ]
-    },
-    "conditions_treated": [
-      "hypertension"
     ],
     "books_cited": [
       "lets-play-doctor"

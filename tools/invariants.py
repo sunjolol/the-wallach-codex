@@ -6307,6 +6307,64 @@ def check_kind_label_covers_corpus():
         ROOT / "dashboard" / "assets" / "data" / "view-copy.json",
         ROOT / "eden" / "corpus" / "claims")
 
+_DOSE_PROGRAMME_MARKERS = ("base-line", "base line", "true supplement need",
+                           "supplement program", "daily maintenance", "maintenance")
+_DOSE_PROGRAMME_STATED = re.compile(r"base.?line|daily multiple|\b(?:19|20)\d\d\b", re.I)
+
+
+def _dose_answers_state_their_programme_impl(claims_dir, enrichment_path):
+    """RED unless every GENERAL-PROGRAMME dose card names the programme or the year it came from.
+
+    27 of 91 essentials carry two or more different general-programme dose numbers, almost all of
+    them Wallach's 1995 Base Line table against his 2014 Epigenetics daily multiple. When the
+    reader-facing answer states a bare number, those land side by side on one element as rival
+    answers to a single question -- which is exactly how vitamin D came to show four different IU
+    figures under WHAT TO DO (Luneth, 2026-08-05: "there's literally 4 claims ALL saying completely
+    different things"). Naming the programme is what makes supersession legible instead of looking
+    like a contradiction.
+
+    Scope is deliberately narrow: only claims whose dose.for_condition marks a general programme.
+    A condition-scoped therapeutic dose ("400 IU orally b.i.d." for rickets) is not a rival to a
+    maintenance target and is not checked. A claim with no enrichment renders no card, so there is
+    nothing to scope. `claims_dir` and `enrichment_path` are parameters so the negative test can
+    drive the same logic against a tampered store.
+    """
+    try:
+        enrich = json.loads(pathlib.Path(enrichment_path).read_text(encoding="utf-8"))["enrichment"]
+    except Exception as e:
+        return False, f"search-enrichment store unreadable ({e})"
+    bad, checked = [], 0
+    for shard in sorted(pathlib.Path(claims_dir).glob("claims-*.json")):
+        doc = json.loads(shard.read_text(encoding="utf-8"))
+        for c in (doc.get("claims", doc) if isinstance(doc, dict) else doc):
+            if c.get("kind") != "dose":
+                continue
+            dz = c.get("dose") or {}
+            if dz.get("amount") is None:
+                continue
+            fc = str(dz.get("for_condition") or "").lower()
+            if not any(m in fc for m in _DOSE_PROGRAMME_MARKERS):
+                continue
+            entry = enrich.get(c.get("id"))
+            if not entry:
+                continue
+            checked += 1
+            if not _DOSE_PROGRAMME_STATED.search(entry.get("answer_short") or ""):
+                bad.append(c.get("id"))
+    if bad:
+        return False, (f"{len(bad)} of {checked} general-programme dose answer(s) give a number "
+                       f"with no programme and no year, so rival figures read as rival answers to "
+                       f"one question: " + ", ".join(sorted(bad)[:6]))
+    return True, f"all {checked} general-programme dose answers name their programme or year"
+
+
+def check_dose_answers_state_their_programme():
+    """Every general-programme dose card names its programme or year (R7 -- the 2026-08-05
+    supersession-legibility rule, shipped as a gate rather than a WISH)."""
+    return _dose_answers_state_their_programme_impl(
+        ROOT / "eden" / "corpus" / "claims",
+        ROOT / "eden" / "corpus" / "search-enrichment.json")
+
 
 _CATEGORY_FAMILIES = {"green", "teal", "amber", "orange", "violet", "red"}
 
@@ -7334,6 +7392,15 @@ INVARIANTS = [
         truth_anchor="distinct claim.kind values in the sealed claim shards x dashboard/assets/data/view-copy.json kind_labels keys, recomputed each run",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 2 (content-store) -- the 'centralize the display-label maps' item, gated per codify-don't-promise: the kind map cannot be exhaustively typed (claim.kind is an open z.string()), so a truth-anchored invariant proves coverage instead. Negative test: tools/test_kind_label_covers_corpus.py.",
+    ),
+    Invariant(
+        name="dose_answers_state_their_programme",
+        anchor_class="consistency",  # our sealed claims vs our enrichment store — catches drift, not a born-wrong number
+        description="Every general-programme dose card (dose.for_condition marking a base-line/daily-multiple/maintenance programme) names the programme or the year its number came from. 27 of 91 essentials carry rival general-programme figures -- mostly the 1995 Base Line table against the 2014 Epigenetics daily multiple -- and a bare number makes them read as rival answers to one question. Condition-scoped therapeutic doses are out of scope",
+        check_fn=check_dose_answers_state_their_programme,
+        truth_anchor="sealed claim shards (kind/dose.amount/dose.for_condition) x eden/corpus/search-enrichment.json answer_short, recomputed each run",
+        severity="critical",
+        lesson_ref="Luneth 2026-08-05, on reading vitamin D's WHAT TO DO: 'there's literally 4 claims ALL saying completely different things'. Three of the four were correctly scoped claims whose reader-facing text had dropped the scope. Fixed across 27 answers + 16 superseded questions; gated here so it cannot regress. Negative test: tools/test_dose_answers_state_their_programme.py.",
     ),
     Invariant(
         name="claim_category_mapping_total",

@@ -46,6 +46,10 @@ export const EssentialPageSchema = z.object({
   books: z.array(z.string()),
   synonyms: z.array(z.string()),
   record: z.array(EntityKindGroupSchema),
+  /** Rows in "The full record" AFTER enriched claims are removed (they render once, above, as
+   * Worth-Knowing cards). This labels "All N claims" and the filter placeholder; claim_count
+   * stays the operational total. Disjoint from `search` by construction — see entity_page_derive.py. */
+  record_claim_count: z.number(),
   search: z.array(EntityFacetGroupSchema),
   /** DIRECTED maps(E,C) pills — conditions this essential is Wallach-tied to (H1). */
   conditions: z.array(z.string()),
@@ -74,6 +78,10 @@ export const ConditionPageSchema = z.object({
   /** DIRECTED maps(E,C) pills — nutrients to restore for this condition (H1). */
   restore: z.array(z.string()),
   record: z.array(EntityKindGroupSchema),
+  /** Rows in "The full record" AFTER enriched claims are removed (they render once, above, as
+   * Worth-Knowing cards). This labels "All N claims" and the filter placeholder; claim_count
+   * stays the operational total. Disjoint from `search` by construction — see entity_page_derive.py. */
+  record_claim_count: z.number(),
   search: z.array(EntityFacetGroupSchema),
   related_conditions: z.array(z.string()),
   related: z.array(z.string()),

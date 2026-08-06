@@ -275,22 +275,6 @@
     "osteoporosis"
    ]
   },
-  "WAL-CLM-DDDL-000106": {
-   "subject": "butter",
-   "also_about": [
-    "vitamin-d",
-    "cholesterol"
-   ],
-   "facet": "warning",
-   "question": "Is there ever a reason to cut back on butter?",
-   "answer_short": "Yes — the one cautionary note. For cerebrovascular disease (where Wallach calls vitamin D angiotoxic and a driver of arterial calcification), he says hold total vitamin D under 400 IU/day, and flags butter — alongside animal fat, cholesterol, milk, cereals, supplements and sunshine — as a notable dietary vitamin D contributor that makes staying under the cap difficult.",
-   "topics": [
-    "vitamin-d",
-    "cerebrovascular-disease",
-    "arterial-calcification",
-    "caution"
-   ]
-  },
   "WAL-CLM-DDDL-000108": {
    "subject": "butter",
    "also_about": [],
@@ -5830,20 +5814,6 @@
     "male-sterility"
    ]
   },
-  "WAL-CLM-LETS-000491": {
-   "subject": "selenium",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much selenium does Wallach recommend a day?",
-   "answer_short": "For everyday maintenance, Wallach's Base Line program sets selenium at 200 mcg a day — with a much higher short-term therapeutic range (500–3,000 mcg) reserved for actively treating disease.",
-   "topics": [
-    "dose",
-    "maintenance",
-    "base-line-program",
-    "therapy-dose",
-    "colloidal-selenium"
-   ]
-  },
   "WAL-CLM-DDDL-000138": {
    "subject": "selenium",
    "also_about": [
@@ -6989,7 +6959,7 @@
     "calcium"
    ],
    "facet": "protocol",
-   "question": "How much magnesium should I take a day?",
+   "question": "How much magnesium did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line Nutritional Supplement Program Wallach gives magnesium a daily maintenance need (True Supplement Need) of 1,000 mg, with a 30-day pharmacologic dose also of 1,000 mg — well above the government RDA of 350 mg, which he reprints only to argue against.",
    "topics": [
     "magnesium",
@@ -7143,10 +7113,12 @@
   },
   "WAL-CLM-DDDL-000163": {
    "subject": "vitamin-c",
-   "also_about": [],
+   "also_about": [
+    "abrasions"
+   ],
    "facet": "protocol",
-   "question": "How much vitamin C should I take?",
-   "answer_short": "For treating abrasions, Wallach recommends taking vitamin C orally to bowel tolerance — anywhere from 1 to 5 grams.",
+   "question": "How much vitamin C does Wallach use for a scrape or abrasion?",
+   "answer_short": "For a scrape or abrasion he says to take vitamin C orally to bowel tolerance — anywhere from 1 to 5 grams. That is first-aid dosing from his home-care entry, not his daily target.",
    "topics": [
     "vitamin c",
     "how much vitamin c",
@@ -7264,21 +7236,6 @@
     "pregnancy",
     "deficiency",
     "prenatal"
-   ]
-  },
-  "WAL-CLM-DDDL-000171": {
-   "subject": "vitamin-d",
-   "also_about": [
-    "arteriosclerosis"
-   ],
-   "facet": "protocol",
-   "question": "How much vitamin D should an adult take?",
-   "answer_short": "Wallach advises adults to avoid vitamin D, warning that more than 400 IU a day results in calcification of the coronary arteries.",
-   "topics": [
-    "vitamin d",
-    "vitamin d dosage",
-    "how much vitamin d",
-    "heart health"
    ]
   },
   "WAL-CLM-DDDL-000172": {
@@ -8780,13 +8737,14 @@
    ]
   },
   "WAL-CLM-EPIGEN-000117": {
-   "subject": "vitamin-c",
+   "subject": "vitamin-b12",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin C should I take a day?",
-   "answer_short": "Wallach's daily multiple recommends 250 to 1,000 mg of vitamin C (ascorbic acid) for adults and children over 9.",
+   "question": "How much vitamin B12 does Wallach recommend daily?",
+   "answer_short": "400 mcg of methylcobalamin a day — from the daily multiple vitamin and mineral table in his 2014 book Epigenetics, for adults and children over 9 years old.",
    "topics": [
-    "how much vitamin c",
+    "vitamin b12",
+    "methylcobalamin",
     "daily dose",
     "supplements"
    ]
@@ -8964,19 +8922,16 @@
    ]
   },
   "WAL-CLM-LETS-000054": {
-   "subject": "iron",
-   "also_about": [
-    "anemia"
-   ],
+   "subject": "iodine",
+   "also_about": [],
    "facet": "protocol",
-   "question": "How much iron should you take a day?",
-   "answer_short": "Wallach's baseline adult program lists 45 mg of iron a day — well above the 18 mg RDA — with a therapeutic range of 50 to 100 mg.",
+   "question": "How much iodine did Wallach set in his 1995 Base Line program?",
+   "answer_short": "250 mcg a day as the True Supplement Need, against the 150 mcg government RDA, plus a 30-day pharmacologic dose of 1,000 mcg. His 2014 daily multiple lists 50 to 150 mcg per 100 lb of body weight.",
    "topics": [
-    "iron",
-    "dose",
-    "supplement",
-    "how-much",
-    "daily-intake"
+    "iodine",
+    "base line program",
+    "daily dose",
+    "minerals"
    ]
   },
   "WAL-CLM-IMMORT-000133": {
@@ -9049,18 +9004,16 @@
    ]
   },
   "WAL-CLM-LETS-000045": {
-   "subject": "calcium",
-   "also_about": [
-    "magnesium"
-   ],
+   "subject": "biotin",
+   "also_about": [],
    "facet": "protocol",
-   "question": "How much calcium should an adult take daily?",
-   "answer_short": "Wallach's baseline program sets a true daily need of 2,000 mg of calcium, with a therapeutic range of 2,000 to 5,000 mg — far above the 800 mg RDA.",
+   "question": "How much biotin did Wallach set in his 1995 Base Line program?",
+   "answer_short": "200 mcg a day as the True Supplement Need, plus a 30-day pharmacologic dose of 500 to 3,000 mcg. His 2014 daily multiple lists 100 to 300 mcg.",
    "topics": [
-    "calcium",
-    "dose",
-    "supplements",
-    "daily-intake"
+    "biotin",
+    "base line program",
+    "daily dose",
+    "supplements"
    ]
   },
   "WAL-CLM-IMMORT-000071": {
@@ -11408,8 +11361,8 @@
    "subject": "vitamin-b2",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin B2 should I take a day?",
-   "answer_short": "Wallach's supplement table lists riboflavin (vitamin B-2) at 50 mg a day - far above the 1.6 mg RDA - with a higher range of 200 to 500 mg.",
+   "question": "How much vitamin B2 did Wallach set in his 1995 Base Line program?",
+   "answer_short": "Wallach's supplement table lists riboflavin (vitamin B-2) at 50 mg a day - far above the 1.6 mg RDA - with a higher range of 200 to 500 mg. This figure is from his 1995 Base Line Nutritional Supplement Program.",
    "topics": [
     "dosage",
     "how much per day",
@@ -11439,7 +11392,7 @@
    "subject": "vitamin-b3",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much niacin should I take each day?",
+   "question": "How much niacin did Wallach set in his 1995 Base Line program?",
    "answer_short": "Wallach's baseline program lists niacin at a 50 mg daily supplement (vs an 18 mg RDA), with a pharmacologic range of 2,000 to 6,000 mg in time-release form.",
    "topics": [
     "niacin-dose",
@@ -11489,7 +11442,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B5 should I take daily?",
-   "answer_short": "Wallach recommends 25 to 100 mg of vitamin B5 (pantothenic acid) per day for adults and children over 9.",
+   "answer_short": "Wallach recommends 25 to 100 mg of vitamin B5 (pantothenic acid) per day for adults and children over 9. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin-b5",
     "pantothenic-acid",
@@ -11547,7 +11500,7 @@
    "subject": "vitamin-b6",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin B6 should I take?",
+   "question": "How much vitamin B6 did Wallach set in his 1995 Base Line program?",
    "answer_short": "Wallach's baseline program lists 50 mg of B6 a day (vs the 2.2 mg RDA), rising to 200-500 mg as a therapeutic dose.",
    "topics": [
     "dosage",
@@ -11594,16 +11547,15 @@
    ]
   },
   "WAL-CLM-EPIGEN-000116": {
-   "subject": "vitamin-b12",
+   "subject": "vitamin-b6",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin B12 should I take daily?",
-   "answer_short": "Wallach's recommended daily multiple lists vitamin B12 (as methylcobalamin) at 400 mcg for adults and children over 9.",
+   "question": "How much vitamin B6 is in Wallach's daily multiple?",
+   "answer_short": "25 to 100 mg of pyridoxine a day — from the daily multiple vitamin and mineral table in his 2014 book Epigenetics, for adults and children over 9 years old.",
    "topics": [
-    "vitamin-b12",
-    "dosage",
-    "daily-dose",
-    "methylcobalamin",
+    "vitamin b6",
+    "pyridoxine",
+    "daily dose",
     "supplements"
    ]
   },
@@ -11713,15 +11665,15 @@
    ]
   },
   "WAL-CLM-LETS-000049": {
-   "subject": "copper",
+   "subject": "chromium",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much copper should I take a day?",
-   "answer_short": "In Wallach's baseline program the copper RDA is 2 mg, the true supplement need is 3 to 4 mg, and the pharmacologic daily dose is 4 to 6 mg.",
+   "question": "How much chromium did Wallach set in his 1995 Base Line program?",
+   "answer_short": "200 mcg a day as the True Supplement Need, against the 50 mcg government RDA, plus a 30-day pharmacologic dose of 300 to 600 mcg. His 2014 daily multiple lists 200 to 400 mcg per 100 lb of body weight.",
    "topics": [
-    "dosage",
-    "supplements",
-    "how-much",
+    "chromium",
+    "base line program",
+    "daily dose",
     "minerals"
    ]
   },
@@ -11916,7 +11868,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much potassium do you need per day?",
-   "answer_short": "Because the body stores essentially none, Wallach says it needs a significant daily intake of 5,000 mg.",
+   "answer_short": "Because the body stores essentially none, Wallach says it needs a significant daily intake of 5,000 mg. This figure is from his 2008 book Immortality.",
    "topics": [
     "daily-dose",
     "supplements",
@@ -11928,7 +11880,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much silica does Wallach recommend a day?",
-   "answer_short": "Wallach's daily mineral program lists silica at 1–25 mg per 100 lb of body weight.",
+   "answer_short": "Wallach's daily mineral program lists silica at 1–25 mg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "silica",
     "daily-dose",
@@ -11939,7 +11891,7 @@
    "subject": "potassium",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much potassium does Wallach recommend supplementing daily?",
+   "question": "How much potassium did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line Nutritional Supplement Program for adults, Wallach lists potassium at 5,500 mg per day — far above the RDA of 1,875 mg.",
    "topics": [
     "supplement",
@@ -12077,8 +12029,8 @@
    "subject": "vitamin-e",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin E should I take?",
-   "answer_short": "In his Let's Play Doctor supplement table, the vitamin E row lists 15 IU, 400 IU and 1,200 IU per day across its three dose columns.",
+   "question": "How much vitamin E did Wallach set in his 1995 Base Line program?",
+   "answer_short": "In his 1995 Base Line program Wallach sets vitamin E at 400 IU a day as the True Supplement Need, with a 30-day pharmacologic dose of 1,200 IU. The 15 IU in the row is the government RDA, which he reprints only to argue against.",
    "topics": [
     "vitamin-e",
     "dosage",
@@ -12794,7 +12746,7 @@
    "subject": "vitamin-k",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin K should you take?",
+   "question": "How much vitamin K did Wallach set in his 1995 Base Line program?",
    "answer_short": "Wallach's Base Line Nutritional Supplement Program lists vitamin K at 140 mcg/day as his target (140 mcg is also the 30-day dose); the 70 mcg in the same row is the government RDA he prints only to argue against.",
    "topics": [
     "dosage",
@@ -12870,7 +12822,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much folic acid should I take?",
-   "answer_short": "Wallach's daily target for folic acid is 1,000 mcg — not the 400 mcg government RDA.",
+   "answer_short": "Wallach's daily target for folic acid is 1,000 mcg — not the 400 mcg government RDA. This figure is from his 1995 Base Line Nutritional Supplement Program.",
    "topics": [
     "folic-acid",
     "dose",
@@ -12916,7 +12868,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much bioflavonoids should I take per day?",
-   "answer_short": "Wallach's daily-supplement table in Epigenetics lists bioflavonoids at 1,000 to 5,000 mg per day.",
+   "answer_short": "Wallach's daily-supplement table in Epigenetics lists bioflavonoids at 1,000 to 5,000 mg per day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "dosage",
     "supplementation",
@@ -14099,7 +14051,7 @@
    ],
    "facet": "protocol",
    "question": "What is the recommended daily dose of vanadium?",
-   "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children.",
+   "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "dosage",
     "daily dose",
@@ -14160,7 +14112,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much germanium should I take a day?",
-   "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body.",
+   "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body. This figure is from his 2011 book Dead Doctors Don't Lie.",
    "topics": [
     "dosage",
     "supplements",
@@ -14422,7 +14374,7 @@
    "subject": "molybdenum",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much molybdenum should I take as a supplement?",
+   "question": "How much molybdenum did Wallach set in his 1995 Base Line program?",
    "answer_short": "Wallach's Base Line Nutritional Supplement Program for adults lists molybdenum at a true supplement need of 500 mcg per day, versus an RDA of only 15 mcg, with a pharmacologic daily dose of 1,000 mcg.",
    "topics": [
     "minerals",
@@ -15665,19 +15617,16 @@
    ]
   },
   "WAL-CLM-LETS-000065": {
-   "subject": "sodium",
-   "also_about": [
-    "potassium",
-    "chloride"
-   ],
+   "subject": "selenium",
+   "also_about": [],
    "facet": "protocol",
-   "question": "How much sodium should you take a day?",
-   "answer_short": "In his adult Base Line Nutritional Supplement Program table, Wallach lists sodium with three figures: an RDA of 1,100 mg, a supplement level of 3,300 mg, and a daily range of 300 to 3,000 mg.",
+   "question": "How much selenium did Wallach set in his 1995 Base Line program?",
+   "answer_short": "200 mcg a day as the True Supplement Need, plus a 30-day pharmacologic dose of 500 to 3,000 mcg; the table prints no RDA for selenium. His 2014 daily multiple lists 100 to 200 mcg per 100 lb of body weight.",
    "topics": [
-    "sodium-dose",
-    "salt",
-    "supplement-program",
-    "how-much"
+    "selenium",
+    "base line program",
+    "daily dose",
+    "minerals"
    ]
   },
   "WAL-CLM-LETS-000033": {
@@ -16294,7 +16243,7 @@
    ],
    "facet": "protocol",
    "question": "How much zinc should I take a day?",
-   "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+   "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "zinc dose",
     "how much zinc",
@@ -16312,7 +16261,7 @@
    ],
    "facet": "protocol",
    "question": "How much boron should you take per day?",
-   "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight.",
+   "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "dosage",
     "supplements",
@@ -16325,7 +16274,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "What is the recommended daily amount of molybdenum?",
-   "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+   "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "minerals",
     "supplements",
@@ -26601,7 +26550,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much choline should you take daily?",
-   "answer_short": "10 to 100 mg a day.",
+   "answer_short": "10 to 100 mg a day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "choline",
     "choline dosage",
@@ -26614,7 +26563,7 @@
    "subject": "choline",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much choline does Wallach recommend?",
+   "question": "How much choline did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line program, Wallach sets choline's daily maintenance target (True Supplement Need) at 600 mg, with a 30-day pharmacologic dose of 500 to 1,000 mg.",
    "topics": [
     "choline",
@@ -26691,7 +26640,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much chromium should you take a day?",
-   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives chromium a daily range of 200 to 400 mcg per 100 lb of body weight.",
+   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives chromium a daily range of 200 to 400 mcg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "chromium",
     "chromium dosage",
@@ -27243,7 +27192,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much calcium should you take daily?",
-   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives calcium 600 to 1,000 mg per day per 100 lb of body weight.",
+   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives calcium 600 to 1,000 mg per day per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "calcium",
     "calcium dose",
@@ -27397,7 +27346,7 @@
    "subject": "calcium",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much calcium does Wallach recommend?",
+   "question": "How much calcium did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line Nutritional Supplement Program, Wallach sets calcium's daily maintenance need at 2,000 mg, with a 30-day pharmacologic dose of 2,000 to 5,000 mg — the 800 mg RDA he reprints only to argue against, never as his recommendation.",
    "topics": [
     "calcium",
@@ -28607,27 +28556,6 @@
     "cure"
    ]
   },
-  "WAL-CLM-LETS-000306": {
-   "subject": "hypertension",
-   "also_about": [
-    "calcium",
-    "omega-3",
-    "garlic",
-    "coq10"
-   ],
-   "facet": "protocol",
-   "question": "How do you lower high blood pressure naturally?",
-   "answer_short": "Wallach stresses calcium-deficient diets as a major cause of hypertension and treats it with calcium (plant-derived colloidal minerals), a high-fiber low-fat vegetarian-leaning rotation diet, avoiding sugar/caffeine/excess vitamin D, EDTA chelation, flaxseed oil, garlic, CoQ10, lecithin, and herbs (hawthorn, rauwolfia, olive), noting weight loss can drop blood pressure dramatically.",
-   "topics": [
-    "high blood pressure",
-    "hypertension",
-    "calcium",
-    "colloidal minerals",
-    "garlic",
-    "coq10",
-    "heart"
-   ]
-  },
   "WAL-CLM-LETS-000307": {
    "subject": "hypoglycemia",
    "also_about": [
@@ -28830,7 +28758,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much copper should you take daily?",
-   "answer_short": "In Epigenetics, Wallach recommends 1 to 2 mg of copper daily per 100 lb of body weight.",
+   "answer_short": "In Epigenetics, Wallach recommends 1 to 2 mg of copper daily per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "copper",
     "copper dose",
@@ -29018,7 +28946,7 @@
    "subject": "copper",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much copper does Wallach recommend?",
+   "question": "How much copper did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line program, Wallach gives copper a daily maintenance need of 3 to 4 mg and a 30-day pharmacologic dose of 4 to 6 mg (the listed 2 mg is the government RDA he reprints only to argue against).",
    "topics": [
     "copper",
@@ -29257,7 +29185,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much germanium should you take daily?",
-   "answer_short": "Wallach recommends a maintenance dose of 20 to 30 mg of germanium per day, with 50 to 100 mg per day commonly used for a serious germanium deficiency.",
+   "answer_short": "Wallach recommends a maintenance dose of 20 to 30 mg of germanium per day, with 50 to 100 mg per day commonly used for a serious germanium deficiency. This figure is from his 2008 book Immortality.",
    "topics": [
     "germanium",
     "germanium dose",
@@ -30896,7 +30824,7 @@
    "subject": "zinc",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much zinc does Wallach recommend per day?",
+   "question": "How much zinc did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line program Wallach sets zinc's daily maintenance target at 25 mg and a 30-day pharmacologic dose at 150 mg, taken most efficiently as plant-derived colloidal liquid.",
    "topics": [
     "zinc",
@@ -31564,7 +31492,7 @@
    "subject": "vanadium",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vanadium does Wallach recommend a day?",
+   "question": "How much vanadium did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vanadium a daily maintenance target of 500 mcg and a 30-day pharmacologic dose of 2 to 5 mg.",
    "topics": [
     "vanadium",
@@ -31831,7 +31759,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin D does Wallach recommend daily?",
-   "answer_short": "1,000 to 2,000 IU per day.",
+   "answer_short": "1,000 to 2,000 IU a day — from the daily multiple vitamin and mineral table in his 2014 book Epigenetics, for adults and children over 9 years old. It replaces the 275 IU of his 1995 Base Line program.",
    "topics": [
     "vitamin d",
     "cholecalciferol",
@@ -31886,8 +31814,8 @@
    "subject": "vitamin-d",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much vitamin D should I take according to Wallach's baseline program?",
-   "answer_short": "In his Base Line program Wallach sets vitamin D at a daily maintenance target of 275 IU and a 30-day pharmacologic dose of 1,000 IU.",
+   "question": "How much vitamin D did Wallach set in his 1995 Base Line program?",
+   "answer_short": "In his 1995 Base Line program Wallach sets vitamin D at a daily maintenance target of 275 IU, plus a 30-day pharmacologic dose of 1,000 IU. His 2014 daily multiple raises the maintenance figure to 1,000-2,000 IU.",
    "topics": [
     "vitamin d",
     "cholecalciferol",
@@ -31941,7 +31869,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin E does Wallach recommend daily?",
-   "answer_short": "100 to 200 IU per day, as mixed tocopherols.",
+   "answer_short": "100 to 200 IU per day, as mixed tocopherols. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin e",
     "tocopherols",
@@ -32002,7 +31930,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin K does Wallach recommend daily?",
-   "answer_short": "60 to 300 mcg daily, taken as either K1 or K2.",
+   "answer_short": "60 to 300 mcg daily, taken as either K1 or K2. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin k",
     "vitamin k dose",
@@ -32754,7 +32682,7 @@
    "subject": "iron",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much iron does Wallach recommend daily?",
+   "question": "How much iron did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line program, Wallach sets iron's daily maintenance need at 45 mg, with a 30-day pharmacologic dose of 50 to 100 mg.",
    "topics": [
     "iron",
@@ -32985,7 +32913,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much magnesium does Wallach recommend daily?",
-   "answer_short": "250 to 500 mg a day, per 100 lb of body weight.",
+   "answer_short": "250 to 500 mg a day, per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "magnesium",
     "magnesium dose",
@@ -33241,7 +33169,7 @@
    "subject": "manganese",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much manganese does Wallach recommend daily?",
+   "question": "How much manganese did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line program, Wallach sets manganese's daily maintenance need at 5 mg, with a 30-day pharmacologic dose of 2 to 50 mg.",
    "topics": [
     "manganese",
@@ -33905,7 +33833,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much inositol should you take daily?",
-   "answer_short": "10 to 100 mg a day.",
+   "answer_short": "10 to 100 mg a day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "inositol",
     "inositol dose",
@@ -33918,7 +33846,7 @@
    "subject": "inositol",
    "also_about": [],
    "facet": "protocol",
-   "question": "What is Wallach's recommended inositol dose?",
+   "question": "How much inositol did Wallach set in his 1995 Base Line program?",
    "answer_short": "In his Base Line program, Wallach gives inositol a daily maintenance target of 90 mg and a 30-day pharmacologic dose of 500 to 2,000 mg.",
    "topics": [
     "inositol",
@@ -33975,7 +33903,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much iodine should you take daily?",
-   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iodine a daily range of 50 to 150 mcg per 100 lb of body weight.",
+   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iodine a daily range of 50 to 150 mcg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "iodine",
     "iodine dose",
@@ -34240,7 +34168,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much iron should you take daily?",
-   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iron a daily range of 15 to 30 mg per 100 lb of body weight.",
+   "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iron a daily range of 15 to 30 mg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "iron",
     "iron dose",
@@ -34324,7 +34252,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin A does Wallach recommend daily?",
-   "answer_short": "5,000 to 25,000 IU per day, supplied as beta-carotene.",
+   "answer_short": "5,000 to 25,000 IU per day, supplied as beta-carotene. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin a",
     "beta-carotene",
@@ -34446,7 +34374,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B1 does Wallach recommend daily?",
-   "answer_short": "10 to 100 mg of thiamine daily.",
+   "answer_short": "10 to 100 mg of thiamine daily. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin b1",
     "thiamine",
@@ -34649,7 +34577,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B2 does Wallach recommend daily?",
-   "answer_short": "10 to 50 mg of riboflavin daily.",
+   "answer_short": "10 to 50 mg of riboflavin daily. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin b2",
     "riboflavin",
@@ -34709,7 +34637,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much vitamin B3 does Wallach recommend daily?",
-   "answer_short": "10 to 100 mg of niacin daily.",
+   "answer_short": "10 to 100 mg of niacin daily. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "vitamin b3",
     "niacin",
@@ -35066,7 +34994,7 @@
    "also_about": [],
    "facet": "protocol",
    "question": "How much selenium should you take daily?",
-   "answer_short": "100 to 200 mcg a day, per 100 lb of body weight.",
+   "answer_short": "100 to 200 mcg a day, per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
    "topics": [
     "selenium",
     "dosage",

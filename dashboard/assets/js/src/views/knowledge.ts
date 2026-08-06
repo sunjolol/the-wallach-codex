@@ -413,6 +413,18 @@ function applyBestMatch(body: HTMLElement, tab: Tab, query: string): number {
     kdHoisted.push({ node: s.node, parent: s.node.parentNode as Node, next: s.node.nextSibling });
     rows.appendChild(s.node);
   }
+  // The open detail renders FIRST in the tab body, so this pinned block lands above it and the
+  // panel for a clicked result appears below the WHOLE list -- off-screen once the list is long
+  // (Luneth 2026-08-05: clicked the top "hyper" result, panel opened past nine other rows).
+  // Move it directly under the row it belongs to. The row already marks itself .is-selected, and
+  // the move is registered with kdHoisted so the next keystroke restores it instead of removing
+  // it with the block.
+  const detail = body.querySelector<HTMLElement>('.kd-essential-deep');
+  const openRow = rows.querySelector<HTMLElement>('.is-selected');
+  if (detail !== null && openRow !== null) {
+    kdHoisted.push({ node: detail, parent: detail.parentNode as Node, next: detail.nextSibling });
+    openRow.after(detail);
+  }
   return take.length;
 }
 

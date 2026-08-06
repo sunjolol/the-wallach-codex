@@ -1048,7 +1048,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 114,
+    "claim_count": 113,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1153,7 +1153,6 @@
         "WAL-CLM-LETS-000281",
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000289",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000326",
@@ -6117,7 +6116,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 73,
+    "claim_count": 74,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000043",
@@ -6125,6 +6124,7 @@
         "WAL-CLM-RARE-000241"
       ],
       "dose": [
+        "WAL-CLM-DDDL-000163",
         "WAL-CLM-EPIGEN-000118",
         "WAL-CLM-LETS-000073"
       ],
@@ -6415,11 +6415,10 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 18,
+    "claim_count": 17,
     "claims_by_kind": {
       "contraindication": [
-        "WAL-CLM-DDDL-000083",
-        "WAL-CLM-DDDL-000106"
+        "WAL-CLM-DDDL-000083"
       ],
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000032",
@@ -6505,7 +6504,6 @@
       "arthritis",
       "athletes_foot",
       "bone_spurs",
-      "cerebrovascular_disease",
       "convulsions",
       "dermatitis",
       "diarrhea",
@@ -7849,7 +7847,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 92,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -7921,7 +7919,6 @@
         "WAL-CLM-LETS-000291",
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000295",
-        "WAL-CLM-LETS-000306",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000319",
@@ -8049,7 +8046,6 @@
       "high_cholesterol",
       "high_triglycerides",
       "hyperkinesis",
-      "hypertension",
       "hypoglycemia",
       "hysteria",
       "immune_depression",

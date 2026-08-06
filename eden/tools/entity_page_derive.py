@@ -88,6 +88,27 @@ def _ordered(keys, priority):
     return head + tail
 
 
+def _record_minus_enriched(groups: list, enriched: set) -> list:
+    """Drop from The Full Record every claim already rendered under Worth Knowing.
+
+    A claim that is BOTH operationally mapped and enriched used to render TWICE on one page --
+    once as a raw corpus card in the record, once as the enriched Q&A card above it. Showing the
+    unenriched duplicate when an enriched one exists is noise (Luneth 2026-08-05), and it also made
+    the header's claim tally (distinct) disagree with the rows a reader can actually count:
+    vitamin D published 28 over 36 rendered rows.
+
+    Kind groups that empty out are dropped entirely. An entity whose every mapped claim is enriched
+    ends with NO record section -- renderRecord already returns '' for an empty record, so the
+    section disappears rather than rendering a hollow shell.
+    """
+    out = []
+    for g in groups:
+        ids = [cid for cid in g["claim_ids"] if cid not in enriched]
+        if ids:
+            out.append({"kind": g["kind"], "claim_ids": ids})
+    return out
+
+
 def build_data() -> dict:
     embed = _load(CORPUS_EMBED)
     si = _load(SEARCH_INDEX)
@@ -260,15 +281,18 @@ def build_data() -> dict:
         si_ent = si_entities.get(slug, {})
         search_secs = search_sections(slug, "essential")
         # distinct_claim_count = the TILE/HERO count: how many distinct claims a reader actually sees
-        # on the element-SPECIFIC surfaces = The Full Record (operational record) UNION Worth Knowing
-        # (enrichment), deduped across the two homes (a claim BOTH operationally mapped AND enriched
-        # is ONE claim, rendered once per section). It DELIBERATELY excludes group_record -- the ~33
-        # plant-derived claims are SHARED across all 34 trace_pdm elements and rendered under "shared
-        # across the 34", so counting them would make every rare-earth tile read ~identical (Luneth
-        # 2026-07-30). claim_count above stays the operational-only number labelling "The full
-        # record - All N claims"; the two are intentionally different values.
+        # on the element-SPECIFIC surfaces = The Full Record UNION Worth Knowing. Since 2026-08-05
+        # the record EXCLUDES anything already enriched, so the two sets are DISJOINT by construction
+        # and this number now equals the rows a reader can count -- it used to publish 28 over 36
+        # rendered rows on vitamin D. It DELIBERATELY excludes group_record -- the ~33 plant-derived
+        # claims are SHARED across all 34 trace_pdm elements and rendered under "shared across the
+        # 34", so counting them would make every rare-earth tile read ~identical (Luneth 2026-07-30).
+        # claim_count stays the OPERATIONAL total (every essentials-mapped claim, enriched or not);
+        # record_claim_count is what labels "The full record - All N claims".
         rec_ids = {cid for ids in cbk.values() for cid in ids}
         srch_ids = {cid for sec in search_secs for cid in sec["claim_ids"]}
+        record_secs = _record_minus_enriched(
+            [{"kind": k, "claim_ids": cbk[k]} for k in _ordered(cbk, KIND_PRIORITY)], srch_ids)
         rec = {
             "type": "essential",
             "name": e.get("common_name") or e.get("display_name", slug),
@@ -280,7 +304,8 @@ def build_data() -> dict:
             "distinct_claim_count": len(rec_ids | srch_ids),
             "books": ecorp.get("books_cited", []),
             "synonyms": si_ent.get("synonyms", []),
-            "record": [{"kind": k, "claim_ids": cbk[k]} for k in _ordered(cbk, KIND_PRIORITY)],
+            "record": record_secs,
+            "record_claim_count": sum(len(g["claim_ids"]) for g in record_secs),
             "search": search_secs,
             "conditions": sorted(ess_conditions.get(slug, set())),   # directed pills (H1)
             "works_with": sorted(works_with.get(slug, set())),       # interaction partners (H1)
@@ -298,6 +323,9 @@ def build_data() -> dict:
     for slug in sorted(embed_cond.keys()):
         ccorp = embed_cond[slug]
         si_ent = si_entities.get(slug, {})
+        csearch = search_sections(slug, "condition")
+        crecord = _record_minus_enriched(
+            cond_record(ccorp), {cid for sec in csearch for cid in sec["claim_ids"]})
         conditions_out[slug] = {
             "type": "condition",
             "name": (catcond.get(slug, {}) or {}).get("display_name", slug),
@@ -306,8 +334,9 @@ def build_data() -> dict:
             "synonyms": si_ent.get("synonyms", []),
             "protocol_claim_ids": protocol_claim_ids(slug),
             "restore": sorted(cond_essentials.get(slug, set())),     # directed pills (H1)
-            "record": cond_record(ccorp),
-            "search": search_sections(slug, "condition"),
+            "record": crecord,
+            "record_claim_count": sum(len(g["claim_ids"]) for g in crecord),
+            "search": csearch,
             "related_conditions": related(slug, only=cond_slugs),
             "related": related(slug),
         }

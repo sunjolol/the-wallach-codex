@@ -809,7 +809,7 @@ function renderGroupRecord(page: EssentialPage): string {
       </details>`;
 }
 
-function renderRecord(record: EntityKindGroup[], claimCount: number, label = 'The full record', hint = 'every claim · advanced'): string {
+function renderRecord(record: EntityKindGroup[], claimCount: number, label: string, hint: string): string {
   if (record.length === 0) {
     return '';
   }
@@ -1901,7 +1901,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
     ${renderConditionSection(page)}
     ${renderWorksWithSection(page)}
     ${renderGroupRecord(page)}
-    ${renderRecord(page.record, page.claim_count)}
+    ${renderRecord(page.record, page.record_claim_count, ui('ep_record_label'), ui('ep_record_hint'))}
     ${renderRelatedSection(page)}
   </div>`;
 }
@@ -2171,7 +2171,7 @@ export function renderConditionPage(slug: string): string {
     ${renderConditionProtocol(page)}
     ${renderNutrientsToRestore(page, c)}
     ${renderConditionProducts(page)}
-    ${renderRecord(page.record, page.claim_count, 'The full picture', 'every claim, grouped')}
+    ${renderRecord(page.record, page.record_claim_count, ui('ep_record_label_cond'), ui('ep_record_hint_cond'))}
     ${renderConditionRelated(page)}
   </div>`;
 }

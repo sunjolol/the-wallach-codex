@@ -3349,41 +3349,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-DDDL-000106",
-   "kind": "contraindication",
-   "essentials": [
-    "vitamin-d"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "cerebrovascular_disease"
-   ],
-   "symptoms": [],
-   "claim_text": "The one cautionary note: for cerebrovascular disease (where Wallach calls vitamin D angiotoxic and a driver of arterial calcification) he says hold total vitamin D under 400 IU/day, and flags butter — alongside animal fat, cholesterol, milk, cereals, supplements and sunshine — as a notable dietary vitamin D contributor that makes staying under the cap difficult.",
-   "verbatim": "Reduce the amount of vitamin D intake to a maximum of 400 IU/day (this\nis a real toughie when you consider animal fat, cholesterol, milk, butter,\nvarious prepared cereals and snack bars, supplements, and sunshine).\nOptimal levels of all nutrients including magnesium can also prevent\n“malignant calcification.”\nTreatment of cerebrovascular disease",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 684586
-   },
-   "dose": null,
-   "tags": [
-    "dddl-3e-2011",
-    "butter",
-    "food-topic"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-13T19:58:30+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-DDDL-000108",
    "kind": "definition",
    "essentials": [],
@@ -5205,12 +5170,16 @@
   {
    "id": "WAL-CLM-DDDL-000163",
    "kind": "dose",
-   "essentials": [],
+   "essentials": [
+    "vitamin-c"
+   ],
    "other_substances": [],
-   "conditions": [],
+   "conditions": [
+    "abrasions"
+   ],
    "symptoms": [],
    "claim_text": "In his home-care first-aid entry for abrasions, Wallach recommends taking vitamin C orally 'to bowel tolerance,' which he gives as anywhere from 1 to 5 grams.",
-   "verbatim": "Take Vitamin C orally to bowel tolerance\n(anywhere from 1-5 grams).",
+   "verbatim": "ABRASIONS (scrapes): clean wounds with soap and water to remove\ngross dirt and debris. Disinfect wounds with H2O2 (hydrogen peroxide).\nWounds may be bathed in a variety of herbal washes or poultice. Our choice\nis aloe, plantain (Plantago major), or comfrey (Symphytum officinale).\nColloidal silver is useful here. Take Vitamin C orally to bowel tolerance\n(anywhere from 1-5 grams).",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -5218,7 +5187,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 606113
+    "char_offset": 605799
    },
    "dose": null,
    "tags": [
@@ -5471,45 +5440,13 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-DDDL-000171",
-   "kind": "dose",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach's position is that adults should avoid vitamin D, because more than 400 IU per day results in calcification of the coronary arteries — which he calls the target tissue for vitamin D poisoning. He frames this alongside moderate exercise, such as a 30-minute walk each evening, as part of heart-disease prevention. This contrarian dose ceiling reflects his broader concern about vitamin D's angiotoxicity.",
-   "verbatim": "Exercise in moderation (i.e. a\n30-minute walk each evening is enough) and avoid vitamin D as an adult.\nMore than 400 IU/day results in calcification of coronary arteries—the\ntarget tissue for vitamin D poisoning!",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 786261
-   },
-   "dose": null,
-   "tags": [
-    "vitamin-d",
-    "vitamin d",
-    "vitamin d dosage",
-    "how much vitamin d",
-    "heart health",
-    "dose"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-26T23:03:23+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-DDDL-000172",
    "kind": "dose",
    "essentials": [],
    "other_substances": [],
-   "conditions": [],
+   "conditions": [
+    "rickets"
+   ],
    "symptoms": [],
    "claim_text": "Wallach teaches that rickets is caused by a deficiency of vitamin D and is marked by stunted growth, joint pain, and deformed long bones such as bow legs, dropped wrists, sickle shins, barrel chest, and rachitic rosary. His treatment is supplementation with vitamin D at 400 IU orally twice a day, calcium and magnesium at 2,000 mg and 1,000 mg per day, and exposure to sunshine for 30 minutes per day. Advanced cases may still require orthotic correction or orthopedic surgery.",
    "verbatim": "RICKETS is caused by a deficiency of vitamin D and is characterized by\nstunted growth, joint pain, and deformed long bones (i.e. bow legs, dropped\nwrists, “sickle shins,” barrel chest, rachitic rosary, etc.).\nTreatment of rickets includes supplementation with vitamin D at 400 IU\norally b.i.d., calcium and magnesium at 2,000 mg and 1,000 mg per day,\nand exposure to sunshine for 30 minutes per day.",

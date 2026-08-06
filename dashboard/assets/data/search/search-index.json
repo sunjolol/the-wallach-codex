@@ -1031,7 +1031,7 @@
         "inositol",
         "magnesium"
       ],
-      "claim_count": 13
+      "claim_count": 14
     },
     "birth_defects": {
       "display_name": "Birth Defects",
@@ -1341,7 +1341,7 @@
         "eggs",
         "margarine"
       ],
-      "claim_count": 9,
+      "claim_count": 8,
       "intro_claim": "WAL-CLM-EPIGEN-000162"
     },
     "cadmium": {
@@ -1425,7 +1425,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 57,
+      "claim_count": 56,
       "symbol": "Ca"
     },
     "cancer": {
@@ -1984,7 +1984,7 @@
         "colloidal_minerals",
         "essential_nutrients"
       ],
-      "claim_count": 40,
+      "claim_count": 41,
       "symbol": "Cr"
     },
     "chronic_fatigue": {
@@ -2409,7 +2409,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 50,
+      "claim_count": 49,
       "symbol": "Cu"
     },
     "cor_pulmonale": {
@@ -4654,7 +4654,7 @@
         "high_cholesterol",
         "aneurysm"
       ],
-      "claim_count": 2
+      "claim_count": 1
     },
     "hyperthyroidism": {
       "display_name": "Hyperthyroidism",
@@ -5093,7 +5093,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 32,
+      "claim_count": 33,
       "symbol": "I"
     },
     "iron": {
@@ -5163,7 +5163,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 34,
+      "claim_count": 33,
       "symbol": "Fe"
     },
     "irritable_bowel_syndrome": {
@@ -8754,7 +8754,7 @@
         "iron",
         "achlorhydria"
       ],
-      "claim_count": 44,
+      "claim_count": 43,
       "symbol": "Na"
     },
     "soil-depletion": {
@@ -10208,7 +10208,7 @@
         "alcoholism",
         "hypoglycemia"
       ],
-      "claim_count": 17
+      "claim_count": 18
     },
     "vitamin-b9": {
       "display_name": "Folate",
@@ -10300,7 +10300,7 @@
         "anemia",
         "antioxidants"
       ],
-      "claim_count": 29
+      "claim_count": 28
     },
     "vitamin-d": {
       "display_name": "Cholecalciferol",
@@ -10361,7 +10361,7 @@
         "vitamin-a",
         "arteriosclerosis"
       ],
-      "claim_count": 18
+      "claim_count": 17
     },
     "vitamin-e": {
       "display_name": "Tocopherol",
@@ -11030,7 +11030,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much germanium should I take a day?",
-      "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body.",
+      "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body. This figure is from his 2011 book Dead Doctors Don't Lie.",
       "answer": "The recommended maintenance dose for germanium is 20–30 mg per day (50–100 mg/day is used for serious illness requiring increased oxygenation).",
       "verbatim": "Twenty to 30 mg per day is the recommended maintenance dose for\ngermanium. Fifty to 100 mg per day doses are commonly used when an\nindividual has a serious illness that requires an increased oxygen level in\nthe body.",
       "page": null,
@@ -13823,35 +13823,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-DDDL-000106",
-      "subject": "butter",
-      "also_about": [
-        "vitamin-d",
-        "cholesterol"
-      ],
-      "facet": "warning",
-      "question": "Is there ever a reason to cut back on butter?",
-      "answer_short": "Yes — the one cautionary note. For cerebrovascular disease (where Wallach calls vitamin D angiotoxic and a driver of arterial calcification), he says hold total vitamin D under 400 IU/day, and flags butter — alongside animal fat, cholesterol, milk, cereals, supplements and sunshine — as a notable dietary vitamin D contributor that makes staying under the cap difficult.",
-      "answer": "The one cautionary note: for cerebrovascular disease (where Wallach calls vitamin D angiotoxic and a driver of arterial calcification) he says hold total vitamin D under 400 IU/day, and flags butter — alongside animal fat, cholesterol, milk, cereals, supplements and sunshine — as a notable dietary vitamin D contributor that makes staying under the cap difficult.",
-      "verbatim": "Reduce the amount of vitamin D intake to a maximum of 400 IU/day (this\nis a real toughie when you consider animal fat, cholesterol, milk, butter,\nvarious prepared cereals and snack bars, supplements, and sunshine).\nOptimal levels of all nutrients including magnesium can also prevent\n“malignant calcification.”\nTreatment of cerebrovascular disease",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "vitamin-d",
-        "cerebrovascular-disease",
-        "arterial-calcification",
-        "caution"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-d"
-        ],
-        "conditions": [
-          "cerebrovascular_disease"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-DDDL-000108",
       "subject": "butter",
       "also_about": [],
@@ -14979,12 +14950,14 @@
     {
       "id": "WAL-CLM-DDDL-000163",
       "subject": "vitamin-c",
-      "also_about": [],
+      "also_about": [
+        "abrasions"
+      ],
       "facet": "protocol",
-      "question": "How much vitamin C should I take?",
-      "answer_short": "For treating abrasions, Wallach recommends taking vitamin C orally to bowel tolerance — anywhere from 1 to 5 grams.",
+      "question": "How much vitamin C does Wallach use for a scrape or abrasion?",
+      "answer_short": "For a scrape or abrasion he says to take vitamin C orally to bowel tolerance — anywhere from 1 to 5 grams. That is first-aid dosing from his home-care entry, not his daily target.",
       "answer": "In his home-care first-aid entry for abrasions, Wallach recommends taking vitamin C orally 'to bowel tolerance,' which he gives as anywhere from 1 to 5 grams.",
-      "verbatim": "Take Vitamin C orally to bowel tolerance\n(anywhere from 1-5 grams).",
+      "verbatim": "ABRASIONS (scrapes): clean wounds with soap and water to remove\ngross dirt and debris. Disinfect wounds with H2O2 (hydrogen peroxide).\nWounds may be bathed in a variety of herbal washes or poultice. Our choice\nis aloe, plantain (Plantago major), or comfrey (Symphytum officinale).\nColloidal silver is useful here. Take Vitamin C orally to bowel tolerance\n(anywhere from 1-5 grams).",
       "page": null,
       "book_id": "dddl-3e-2011",
       "topics": [
@@ -14992,7 +14965,15 @@
         "how much vitamin c",
         "dosage",
         "bowel tolerance"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c"
+        ],
+        "conditions": [
+          "abrasions"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000164",
@@ -15142,26 +15123,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-DDDL-000171",
-      "subject": "vitamin-d",
-      "also_about": [
-        "arteriosclerosis"
-      ],
-      "facet": "protocol",
-      "question": "How much vitamin D should an adult take?",
-      "answer_short": "Wallach advises adults to avoid vitamin D, warning that more than 400 IU a day results in calcification of the coronary arteries.",
-      "answer": "Wallach's position is that adults should avoid vitamin D, because more than 400 IU per day results in calcification of the coronary arteries — which he calls the target tissue for vitamin D poisoning. He frames this alongside moderate exercise, such as a 30-minute walk each evening, as part of heart-disease prevention. This contrarian dose ceiling reflects his broader concern about vitamin D's angiotoxicity.",
-      "verbatim": "Exercise in moderation (i.e. a\n30-minute walk each evening is enough) and avoid vitamin D as an adult.\nMore than 400 IU/day results in calcification of coronary arteries—the\ntarget tissue for vitamin D poisoning!",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "vitamin d",
-        "vitamin d dosage",
-        "how much vitamin d",
-        "heart health"
-      ]
-    },
-    {
       "id": "WAL-CLM-DDDL-000172",
       "subject": "vitamin-d",
       "also_about": [
@@ -15181,7 +15142,12 @@
         "rickets",
         "rickets treatment",
         "bone health"
-      ]
+      ],
+      "tier1_link": {
+        "conditions": [
+          "rickets"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000173",
@@ -21611,7 +21577,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin A does Wallach recommend daily?",
-      "answer_short": "5,000 to 25,000 IU per day, supplied as beta-carotene.",
+      "answer_short": "5,000 to 25,000 IU per day, supplied as beta-carotene. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin A as beta-carotene a daily range of 5,000 to 25,000 IU.",
       "verbatim": "Vitamin A (beta-carotene) 5,000 - 25,000 IU\nVitamin B1 (thiamine) 10 - 100 mg",
       "page": null,
@@ -21636,7 +21602,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin B1 does Wallach recommend daily?",
-      "answer_short": "10 to 100 mg of thiamine daily.",
+      "answer_short": "10 to 100 mg of thiamine daily. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B1 (thiamine) a daily range of 10 to 100 mg.",
       "verbatim": "Vitamin B1 (thiamine) 10 - 100 mg\nVitamin B2 (riboflavin) 10 - 50 mg",
       "page": null,
@@ -21661,7 +21627,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin B2 does Wallach recommend daily?",
-      "answer_short": "10 to 50 mg of riboflavin daily.",
+      "answer_short": "10 to 50 mg of riboflavin daily. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B2 (riboflavin) a daily range of 10 to 50 mg.",
       "verbatim": "Vitamin B2 (riboflavin) 10 - 50 mg\nVitamin B3 (niacin) 10 - 100 mg",
       "page": null,
@@ -21686,7 +21652,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin B3 does Wallach recommend daily?",
-      "answer_short": "10 to 100 mg of niacin daily.",
+      "answer_short": "10 to 100 mg of niacin daily. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B3 (niacin) a daily range of 10 to 100 mg.",
       "verbatim": "Vitamin B3 (niacin) 10 - 100 mg\nVitamin B5 (pantothenic acid) 25 - 100 mg",
       "page": null,
@@ -21711,7 +21677,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin B5 should I take daily?",
-      "answer_short": "Wallach recommends 25 to 100 mg of vitamin B5 (pantothenic acid) per day for adults and children over 9.",
+      "answer_short": "Wallach recommends 25 to 100 mg of vitamin B5 (pantothenic acid) per day for adults and children over 9. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B5 (pantothenic acid) a daily range of 25 to 100 mg.",
       "verbatim": "Vitamin B5 (pantothenic acid) 25 - 100 mg\nVitamin B6 (pyridoxine) 25 - 100 mg",
       "page": null,
@@ -21731,20 +21697,19 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000116",
-      "subject": "vitamin-b12",
+      "subject": "vitamin-b6",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin B12 should I take daily?",
-      "answer_short": "Wallach's recommended daily multiple lists vitamin B12 (as methylcobalamin) at 400 mcg for adults and children over 9.",
+      "question": "How much vitamin B6 is in Wallach's daily multiple?",
+      "answer_short": "25 to 100 mg of pyridoxine a day — from the daily multiple vitamin and mineral table in his 2014 book Epigenetics, for adults and children over 9 years old.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B6 (pyridoxine) a daily range of 25 to 100 mg.",
       "verbatim": "Vitamin B6 (pyridoxine) 25 - 100 mg\nVitamin B12 (methylcobalamin) 400 mcg",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
-        "vitamin-b12",
-        "dosage",
-        "daily-dose",
-        "methylcobalamin",
+        "vitamin b6",
+        "pyridoxine",
+        "daily dose",
         "supplements"
       ],
       "tier1_link": {
@@ -21755,17 +21720,18 @@
     },
     {
       "id": "WAL-CLM-EPIGEN-000117",
-      "subject": "vitamin-c",
+      "subject": "vitamin-b12",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin C should I take a day?",
-      "answer_short": "Wallach's daily multiple recommends 250 to 1,000 mg of vitamin C (ascorbic acid) for adults and children over 9.",
+      "question": "How much vitamin B12 does Wallach recommend daily?",
+      "answer_short": "400 mcg of methylcobalamin a day — from the daily multiple vitamin and mineral table in his 2014 book Epigenetics, for adults and children over 9 years old.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin B12 (methylcobalamin) a daily amount of 400 mcg.",
       "verbatim": "Vitamin B12 (methylcobalamin) 400 mcg\nVitamin C (ascorbic acid) 250 - 1,000 mg",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
-        "how much vitamin c",
+        "vitamin b12",
+        "methylcobalamin",
         "daily dose",
         "supplements"
       ],
@@ -21806,8 +21772,8 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin D does Wallach recommend daily?",
-      "answer_short": "1,000 to 2,000 IU per day.",
-      "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin D a daily range of 1,000 to 2,000 IU.",
+      "answer_short": "1,000 to 2,000 IU a day — from the daily multiple vitamin and mineral table in his 2014 book Epigenetics, for adults and children over 9 years old. It replaces the 275 IU of his 1995 Base Line program.",
+      "answer": "In the daily multiple vitamin and mineral table of Epigenetics (2014), Wallach gives vitamin D a daily range of 1,000 to 2,000 IU. The table's own column header scopes the figure to adults and children over 9 years old. Wallach states no reason at the table for this number; his argument for a higher vitamin D intake appears elsewhere in the same book, where he calls the modern universal vitamin D deficiency a physician-caused disease and reports childhood rickets up 400 percent between 1995 and 2011.",
       "verbatim": "Vitamin D 1,000 - 2,000 IU\nVitamin E (mixed tocopherols) 100 - 200 IU",
       "page": null,
       "book_id": "epigenetics",
@@ -21831,7 +21797,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin E does Wallach recommend daily?",
-      "answer_short": "100 to 200 IU per day, as mixed tocopherols.",
+      "answer_short": "100 to 200 IU per day, as mixed tocopherols. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin E (mixed tocopherols) a daily range of 100 to 200 IU.",
       "verbatim": "Vitamin E (mixed tocopherols) 100 - 200 IU\nVitamin K1 or K2 60 - 300 mcg",
       "page": null,
@@ -21856,7 +21822,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin K does Wallach recommend daily?",
-      "answer_short": "60 to 300 mcg daily, taken as either K1 or K2.",
+      "answer_short": "60 to 300 mcg daily, taken as either K1 or K2. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives vitamin K (K1 or K2) a daily range of 60 to 300 mcg.",
       "verbatim": "Vitamin K1 or K2 60 - 300 mcg\nNiacinamide (niacin) 10 - 30 mg",
       "page": null,
@@ -21907,7 +21873,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much choline should you take daily?",
-      "answer_short": "10 to 100 mg a day.",
+      "answer_short": "10 to 100 mg a day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives choline a daily range of 10 to 100 mg.",
       "verbatim": "Niacinamide (niacin) 10 - 30 mg\nBiotin 100 - 300 mcg\nFolic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg",
       "page": null,
@@ -21931,7 +21897,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much inositol should you take daily?",
-      "answer_short": "10 to 100 mg a day.",
+      "answer_short": "10 to 100 mg a day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives inositol a daily range of 10 to 100 mg.",
       "verbatim": "Biotin 100 - 300 mcg\nFolic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg",
       "page": null,
@@ -21955,7 +21921,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much bioflavonoids should I take per day?",
-      "answer_short": "Wallach's daily-supplement table in Epigenetics lists bioflavonoids at 1,000 to 5,000 mg per day.",
+      "answer_short": "Wallach's daily-supplement table in Epigenetics lists bioflavonoids at 1,000 to 5,000 mg per day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily multiple recommendations, Wallach gives bioflavonoids a daily range of 1,000 to 5,000 mg.",
       "verbatim": "Bioflavonoids 1,000 - 5,000 mg\n\nMinerals Range for adults and children/100 pounds",
       "page": null,
@@ -21981,7 +21947,7 @@
       ],
       "facet": "protocol",
       "question": "How much boron should you take per day?",
-      "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight.",
+      "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives boron a daily range of 1 to 6 mg.",
       "verbatim": "Boron 1 - 6 mg\nCalcium 600 - 1,000 mg\nChromium 200 - 400 mcg",
       "page": null,
@@ -22004,7 +21970,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much calcium should you take daily?",
-      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives calcium 600 to 1,000 mg per day per 100 lb of body weight.",
+      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives calcium 600 to 1,000 mg per day per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives calcium a daily range of 600 to 1,000 mg.",
       "verbatim": "Calcium 600 - 1,000 mg\nChromium 200 - 400 mcg\nCopper 1 - 2 mg",
       "page": null,
@@ -22029,7 +21995,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much chromium should you take a day?",
-      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives chromium a daily range of 200 to 400 mcg per 100 lb of body weight.",
+      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives chromium a daily range of 200 to 400 mcg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives chromium a daily range of 200 to 400 mcg.",
       "verbatim": "Chromium 200 - 400 mcg\nCopper 1 - 2 mg\nIodine 50 - 150 mcg\nIron 15 - 30 mg",
       "page": null,
@@ -22053,7 +22019,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much copper should you take daily?",
-      "answer_short": "In Epigenetics, Wallach recommends 1 to 2 mg of copper daily per 100 lb of body weight.",
+      "answer_short": "In Epigenetics, Wallach recommends 1 to 2 mg of copper daily per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives copper a daily range of 1 to 2 mg.",
       "verbatim": "Copper 1 - 2 mg\nIodine 50 - 150 mcg\nIron 15 - 30 mg\nMagnesium 250 - 500 mg",
       "page": null,
@@ -22078,7 +22044,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much iodine should you take daily?",
-      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iodine a daily range of 50 to 150 mcg per 100 lb of body weight.",
+      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iodine a daily range of 50 to 150 mcg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives iodine a daily range of 50 to 150 mcg.",
       "verbatim": "Iodine 50 - 150 mcg\nIron 15 - 30 mg\nMagnesium 250 - 500 mg\nManganese 3 - 5 mg",
       "page": null,
@@ -22103,7 +22069,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much iron should you take daily?",
-      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iron a daily range of 15 to 30 mg per 100 lb of body weight.",
+      "answer_short": "In his Epigenetics daily mineral recommendations, Wallach gives iron a daily range of 15 to 30 mg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives iron a daily range of 15 to 30 mg.",
       "verbatim": "Iron 15 - 30 mg\nMagnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
       "page": null,
@@ -22128,7 +22094,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much magnesium does Wallach recommend daily?",
-      "answer_short": "250 to 500 mg a day, per 100 lb of body weight.",
+      "answer_short": "250 to 500 mg a day, per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives magnesium a daily range of 250 to 500 mg.",
       "verbatim": "Magnesium 250 - 500 mg\nManganese 3 - 5 mg\nMolybdenum 10 - 25 mcg",
       "page": null,
@@ -22177,7 +22143,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "What is the recommended daily amount of molybdenum?",
-      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children.",
+      "answer_short": "In Epigenetics, Wallach lists a molybdenum range of 10 to 25 mcg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives molybdenum a daily range of 10 to 25 mcg.",
       "verbatim": "Molybdenum 10 - 25 mcg\nPotassium NA\nSelenium 100 - 200 mcg\nSilica 1 - 25 mg",
       "page": null,
@@ -22199,7 +22165,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much selenium should you take daily?",
-      "answer_short": "100 to 200 mcg a day, per 100 lb of body weight.",
+      "answer_short": "100 to 200 mcg a day, per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives selenium a daily range of 100 to 200 mcg.",
       "verbatim": "Selenium 100 - 200 mcg\nSilica 1 - 25 mg\nVanadium 50 - 100 mcg",
       "page": null,
@@ -22224,7 +22190,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much silica does Wallach recommend a day?",
-      "answer_short": "Wallach's daily mineral program lists silica at 1–25 mg per 100 lb of body weight.",
+      "answer_short": "Wallach's daily mineral program lists silica at 1–25 mg per 100 lb of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives silica a daily range of 1 to 25 mg.",
       "verbatim": "Silica 1 - 25 mg\nVanadium 50 - 100 mcg\nZinc 15 - 30 mg\n\n\nNA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, M.T. and Pizzorno, J.:",
       "page": null,
@@ -22249,7 +22215,7 @@
       ],
       "facet": "protocol",
       "question": "What is the recommended daily dose of vanadium?",
-      "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children.",
+      "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives vanadium a daily range of 50 to 100 mcg.",
       "verbatim": "Vanadium 50 - 100 mcg\nZinc 15 - 30 mg\n\n\nNA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, M.T. and Pizzorno, J.:",
       "page": null,
@@ -22278,7 +22244,7 @@
       ],
       "facet": "protocol",
       "question": "How much zinc should I take a day?",
-      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children.",
+      "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
       "answer": "In his Epigenetics daily mineral recommendations (per 100 lb of body weight), Wallach gives zinc a daily range of 15 to 30 mg.",
       "verbatim": "Zinc 15 - 30 mg\n\n\nNA: The FDA restricts the amount of potassium in supplements to 99 mg. Murray, M.T. and Pizzorno, J.:",
       "page": null,
@@ -34824,7 +34790,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much germanium should you take daily?",
-      "answer_short": "Wallach recommends a maintenance dose of 20 to 30 mg of germanium per day, with 50 to 100 mg per day commonly used for a serious germanium deficiency.",
+      "answer_short": "Wallach recommends a maintenance dose of 20 to 30 mg of germanium per day, with 50 to 100 mg per day commonly used for a serious germanium deficiency. This figure is from his 2008 book Immortality.",
       "answer": "How much germanium to take. Wallach's recommended maintenance dose is 20 to 30 mg per day; higher doses of 50 to 100 mg per day are commonly used when someone has a serious germanium deficiency.",
       "verbatim": "Twenty to 30 mg per day is the recommended\nmaintenance dose for germanium. Fifty to 100 mg per day\ndoses are commonly used when an individual has a serious\ngermanium deficiency.",
       "page": 146,
@@ -36105,7 +36071,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much potassium do you need per day?",
-      "answer_short": "Because the body stores essentially none, Wallach says it needs a significant daily intake of 5,000 mg.",
+      "answer_short": "Because the body stores essentially none, Wallach says it needs a significant daily intake of 5,000 mg. This figure is from his 2008 book Immortality.",
       "answer": "How much potassium the body needs daily. Potassium is easily absorbed, but 90% of what you take in is excreted in the urine and the body stores essentially none — so it must be replaced constantly, requiring a significant daily intake of 5,000 mg (5 grams). This is Wallach's stated daily requirement for potassium.",
       "verbatim": "Potassium is easily absorbed. Ninety percent of ingested\npotassium is excreted through the urine. Essentially there is\nno storage of potassium in the human body, thus requiring a\nsignificant daily intake of 5,000 mg.",
       "page": 164,
@@ -43915,22 +43881,20 @@
     },
     {
       "id": "WAL-CLM-LETS-000045",
-      "subject": "calcium",
-      "also_about": [
-        "magnesium"
-      ],
+      "subject": "biotin",
+      "also_about": [],
       "facet": "protocol",
-      "question": "How much calcium should an adult take daily?",
-      "answer_short": "Wallach's baseline program sets a true daily need of 2,000 mg of calcium, with a therapeutic range of 2,000 to 5,000 mg — far above the 800 mg RDA.",
+      "question": "How much biotin did Wallach set in his 1995 Base Line program?",
+      "answer_short": "200 mcg a day as the True Supplement Need, plus a 30-day pharmacologic dose of 500 to 3,000 mcg. His 2014 daily multiple lists 100 to 300 mcg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives biotin a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "BIOTIN 200 mcg 200 mcg 500 to 3,000 mcg\nCALCIUM 800 mcg 2,000 mg 2,000 to 5,000 mg",
       "page": 73,
       "book_id": "lets-play-doctor",
       "topics": [
-        "calcium",
-        "dose",
-        "supplements",
-        "daily-intake"
+        "biotin",
+        "base line program",
+        "daily dose",
+        "supplements"
       ],
       "tier1_link": {
         "essentials": [
@@ -43943,7 +43907,7 @@
       "subject": "calcium",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much calcium does Wallach recommend?",
+      "question": "How much calcium did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line Nutritional Supplement Program, Wallach sets calcium's daily maintenance need at 2,000 mg, with a 30-day pharmacologic dose of 2,000 to 5,000 mg — the 800 mg RDA he reprints only to argue against, never as his recommendation.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives calcium a True Supplement Need (daily maintenance target) of 2,000 mg and a 30-day pharmacologic daily dose of 2,000 to 5,000 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "CALCIUM 800 mcg 2,000 mg 2,000 to 5,000 mg\nCHLORIDE 1,700 mg 2,500 mg 500 to 2,500 mg",
@@ -43996,7 +43960,7 @@
       "subject": "choline",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much choline does Wallach recommend?",
+      "question": "How much choline did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line program, Wallach sets choline's daily maintenance target (True Supplement Need) at 600 mg, with a 30-day pharmacologic dose of 500 to 1,000 mg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives choline a True Supplement Need (daily maintenance target) of 600 mg and a 30-day pharmacologic daily dose of 500 to 1,000 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "CHOLINE 150 mg 600 mg 500 to 1,000 mg\nCHROMIUM 50 mcg 200 mcg 300 to 600 mcg",
@@ -44017,19 +43981,19 @@
     },
     {
       "id": "WAL-CLM-LETS-000049",
-      "subject": "copper",
+      "subject": "chromium",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much copper should I take a day?",
-      "answer_short": "In Wallach's baseline program the copper RDA is 2 mg, the true supplement need is 3 to 4 mg, and the pharmacologic daily dose is 4 to 6 mg.",
+      "question": "How much chromium did Wallach set in his 1995 Base Line program?",
+      "answer_short": "200 mcg a day as the True Supplement Need, against the 50 mcg government RDA, plus a 30-day pharmacologic dose of 300 to 600 mcg. His 2014 daily multiple lists 200 to 400 mcg per 100 lb of body weight.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives chromium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 300 to 600 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "CHROMIUM 50 mcg 200 mcg 300 to 600 mcg\nCOPPER 2 mg 3 to 4 mg 4 to 6 mg",
       "page": 73,
       "book_id": "lets-play-doctor",
       "topics": [
-        "dosage",
-        "supplements",
-        "how-much",
+        "chromium",
+        "base line program",
+        "daily dose",
         "minerals"
       ],
       "tier1_link": {
@@ -44043,7 +44007,7 @@
       "subject": "copper",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much copper does Wallach recommend?",
+      "question": "How much copper did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line program, Wallach gives copper a daily maintenance need of 3 to 4 mg and a 30-day pharmacologic dose of 4 to 6 mg (the listed 2 mg is the government RDA he reprints only to argue against).",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives copper a True Supplement Need (daily maintenance target) of 3 to 4 mg and a 30-day pharmacologic daily dose of 4 to 6 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "COPPER 2 mg 3 to 4 mg 4 to 6 mg\nFLUORIDE 1.5 mg 1.5 mg 20 mg **",
@@ -44094,7 +44058,7 @@
       "also_about": [],
       "facet": "protocol",
       "question": "How much folic acid should I take?",
-      "answer_short": "Wallach's daily target for folic acid is 1,000 mcg — not the 400 mcg government RDA.",
+      "answer_short": "Wallach's daily target for folic acid is 1,000 mcg — not the 400 mcg government RDA. This figure is from his 1995 Base Line Nutritional Supplement Program.",
       "answer": "Wallach's daily target for folic acid (vitamin B-9) is 1,000 mcg — two and a half times the government RDA of 400 mcg, which he lists for comparison and does not recommend. For short-term therapeutic use he goes much higher: 15 to 20 mg a day for 30 days.",
       "verbatim": "FOLIC ACID 400 mcg 1,000 mcg 15 to 20 mg\nINOSITOL 75 mg 90 mg 500 to 2,000 mg",
       "page": 73,
@@ -44116,7 +44080,7 @@
       "subject": "inositol",
       "also_about": [],
       "facet": "protocol",
-      "question": "What is Wallach's recommended inositol dose?",
+      "question": "How much inositol did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line program, Wallach gives inositol a daily maintenance target of 90 mg and a 30-day pharmacologic dose of 500 to 2,000 mg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives inositol a True Supplement Need (daily maintenance target) of 90 mg and a 30-day pharmacologic daily dose of 500 to 2,000 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "INOSITOL 75 mg 90 mg 500 to 2,000 mg\nIODINE 150 mcg 250 mcg 1,000 mcg",
@@ -44138,23 +44102,20 @@
     },
     {
       "id": "WAL-CLM-LETS-000054",
-      "subject": "iron",
-      "also_about": [
-        "anemia"
-      ],
+      "subject": "iodine",
+      "also_about": [],
       "facet": "protocol",
-      "question": "How much iron should you take a day?",
-      "answer_short": "Wallach's baseline adult program lists 45 mg of iron a day — well above the 18 mg RDA — with a therapeutic range of 50 to 100 mg.",
+      "question": "How much iodine did Wallach set in his 1995 Base Line program?",
+      "answer_short": "250 mcg a day as the True Supplement Need, against the 150 mcg government RDA, plus a 30-day pharmacologic dose of 1,000 mcg. His 2014 daily multiple lists 50 to 150 mcg per 100 lb of body weight.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives iodine a True Supplement Need (daily maintenance target) of 250 mcg and a 30-day pharmacologic daily dose of 1,000 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "IODINE 150 mcg 250 mcg 1,000 mcg\nIRON 18 mg 45 mg 50 to 100 mg",
       "page": 73,
       "book_id": "lets-play-doctor",
       "topics": [
-        "iron",
-        "dose",
-        "supplement",
-        "how-much",
-        "daily-intake"
+        "iodine",
+        "base line program",
+        "daily dose",
+        "minerals"
       ],
       "tier1_link": {
         "essentials": [
@@ -44167,7 +44128,7 @@
       "subject": "iron",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much iron does Wallach recommend daily?",
+      "question": "How much iron did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line program, Wallach sets iron's daily maintenance need at 45 mg, with a 30-day pharmacologic dose of 50 to 100 mg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives iron a True Supplement Need (daily maintenance target) of 45 mg and a 30-day pharmacologic daily dose of 50 to 100 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "IRON 18 mg 45 mg 50 to 100 mg\nMAGNESIUM 350 mg 1,000 mg 1,000 mg",
@@ -44193,7 +44154,7 @@
         "calcium"
       ],
       "facet": "protocol",
-      "question": "How much magnesium should I take a day?",
+      "question": "How much magnesium did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line Nutritional Supplement Program Wallach gives magnesium a daily maintenance need (True Supplement Need) of 1,000 mg, with a 30-day pharmacologic dose also of 1,000 mg — well above the government RDA of 350 mg, which he reprints only to argue against.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives magnesium a True Supplement Need (daily maintenance target) of 1,000 mg and a 30-day pharmacologic daily dose of 1,000 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "MAGNESIUM 350 mg 1,000 mg 1,000 mg\nMANGANESE 2.5 mg 5 mg 2 to 50 mg",
@@ -44218,7 +44179,7 @@
       "subject": "manganese",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much manganese does Wallach recommend daily?",
+      "question": "How much manganese did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line program, Wallach sets manganese's daily maintenance need at 5 mg, with a 30-day pharmacologic dose of 2 to 50 mg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives manganese a True Supplement Need (daily maintenance target) of 5 mg and a 30-day pharmacologic daily dose of 2 to 50 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "MANGANESE 2.5 mg 5 mg 2 to 50 mg\nMOLYBDENUM 15 mcg 500 mcg 1,000 mcg",
@@ -44242,7 +44203,7 @@
       "subject": "molybdenum",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much molybdenum should I take as a supplement?",
+      "question": "How much molybdenum did Wallach set in his 1995 Base Line program?",
       "answer_short": "Wallach's Base Line Nutritional Supplement Program for adults lists molybdenum at a true supplement need of 500 mcg per day, versus an RDA of only 15 mcg, with a pharmacologic daily dose of 1,000 mcg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives molybdenum a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 1,000 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "MOLYBDENUM 15 mcg 500 mcg 1,000 mcg\nNIACIN 18 mg 50 mg 2,000 to 6,000 mg",
@@ -44264,7 +44225,7 @@
       "subject": "vitamin-b3",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much niacin should I take each day?",
+      "question": "How much niacin did Wallach set in his 1995 Base Line program?",
       "answer_short": "Wallach's baseline program lists niacin at a 50 mg daily supplement (vs an 18 mg RDA), with a pharmacologic range of 2,000 to 6,000 mg in time-release form.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives niacin (vitamin B-3) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 2,000 to 6,000 mg in time-release form. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "NIACIN 18 mg 50 mg 2,000 to 6,000 mg\n(time release)\nPANTOTHENIC ACID ...4 mg 50 mg 300 to 1,000 mg",
@@ -44334,7 +44295,7 @@
       "subject": "potassium",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much potassium does Wallach recommend supplementing daily?",
+      "question": "How much potassium did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line Nutritional Supplement Program for adults, Wallach lists potassium at 5,500 mg per day — far above the RDA of 1,875 mg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives potassium a True Supplement Need (daily maintenance target) of 5,500 mg and a 30-day pharmacologic daily dose of 5,500 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "POTASSIUM 1,875 mg 5,500 mg 5,500 mg\nPYRIDOXINE 2.2 mg 50 mg 200 to 500 mg",
@@ -44356,7 +44317,7 @@
       "subject": "vitamin-b6",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin B6 should I take?",
+      "question": "How much vitamin B6 did Wallach set in his 1995 Base Line program?",
       "answer_short": "Wallach's baseline program lists 50 mg of B6 a day (vs the 2.2 mg RDA), rising to 200-500 mg as a therapeutic dose.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives pyridoxine (vitamin B-6) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "PYRIDOXINE 2.2 mg 50 mg 200 to 500 mg\nRIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg",
@@ -44379,8 +44340,8 @@
       "subject": "vitamin-b2",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin B2 should I take a day?",
-      "answer_short": "Wallach's supplement table lists riboflavin (vitamin B-2) at 50 mg a day - far above the 1.6 mg RDA - with a higher range of 200 to 500 mg.",
+      "question": "How much vitamin B2 did Wallach set in his 1995 Base Line program?",
+      "answer_short": "Wallach's supplement table lists riboflavin (vitamin B-2) at 50 mg a day - far above the 1.6 mg RDA - with a higher range of 200 to 500 mg. This figure is from his 1995 Base Line Nutritional Supplement Program.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives riboflavin (vitamin B-2) a True Supplement Need (daily maintenance target) of 50 mg and a 30-day pharmacologic daily dose of 200 to 500 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "RIBOFLAVIN 1.6 mg 50 mg 200 to 500 mg\nSELENIUM ? 200 mcg 500 to 3,000 mcg",
       "page": 73,
@@ -44399,23 +44360,20 @@
     },
     {
       "id": "WAL-CLM-LETS-000065",
-      "subject": "sodium",
-      "also_about": [
-        "potassium",
-        "chloride"
-      ],
+      "subject": "selenium",
+      "also_about": [],
       "facet": "protocol",
-      "question": "How much sodium should you take a day?",
-      "answer_short": "In his adult Base Line Nutritional Supplement Program table, Wallach lists sodium with three figures: an RDA of 1,100 mg, a supplement level of 3,300 mg, and a daily range of 300 to 3,000 mg.",
-      "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg. The quoted row runs in column order — RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose — but the RDA column for selenium is printed as \"?\", so the row carries only Wallach's two figures. Where the table does print an RDA, Wallach reprints it only to argue against it; it is never his recommendation.",
+      "question": "How much selenium did Wallach set in his 1995 Base Line program?",
+      "answer_short": "200 mcg a day as the True Supplement Need, plus a 30-day pharmacologic dose of 500 to 3,000 mcg; the table prints no RDA for selenium. His 2014 daily multiple lists 100 to 200 mcg per 100 lb of body weight.",
+      "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives selenium a True Supplement Need (daily maintenance target) of 200 mcg and a 30-day pharmacologic daily dose of 500 to 3,000 mcg. The official RDA column for selenium is printed as a question mark — and where the table does print an RDA, Wallach reprints it only to argue that the government figures are too low to prevent disease.",
       "verbatim": "SELENIUM ? 200 mcg 500 to 3,000 mcg\nSODIUM 1,100 mg 3,300 mg 300 to 3,000 mg",
       "page": 73,
       "book_id": "lets-play-doctor",
       "topics": [
-        "sodium-dose",
-        "salt",
-        "supplement-program",
-        "how-much"
+        "selenium",
+        "base line program",
+        "daily dose",
+        "minerals"
       ],
       "tier1_link": {
         "essentials": [
@@ -44528,7 +44486,7 @@
       "subject": "vanadium",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vanadium does Wallach recommend a day?",
+      "question": "How much vanadium did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vanadium a daily maintenance target of 500 mcg and a 30-day pharmacologic dose of 2 to 5 mg.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vanadium a True Supplement Need (daily maintenance target) of 500 mcg and a 30-day pharmacologic daily dose of 2 to 5 mg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "VANADIUM ? 500 mcg 2 - 5 mg\nVITAMIN A 5,000 IU 20,000 IU - 300,000 IU",
@@ -44627,8 +44585,8 @@
       "subject": "vitamin-d",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin D should I take according to Wallach's baseline program?",
-      "answer_short": "In his Base Line program Wallach sets vitamin D at a daily maintenance target of 275 IU and a 30-day pharmacologic dose of 1,000 IU.",
+      "question": "How much vitamin D did Wallach set in his 1995 Base Line program?",
+      "answer_short": "In his 1995 Base Line program Wallach sets vitamin D at a daily maintenance target of 275 IU, plus a 30-day pharmacologic dose of 1,000 IU. His 2014 daily multiple raises the maintenance figure to 1,000-2,000 IU.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin D a True Supplement Need (daily maintenance target) of 275 IU and a 30-day pharmacologic daily dose of 1,000 IU. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "VITAMIN D 400 IU 275 IU 1,000 IU\nVITAMIN E 15 IU 400 IU 1,200 IU",
       "page": 73,
@@ -44651,8 +44609,8 @@
       "subject": "vitamin-e",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin E should I take?",
-      "answer_short": "In his Let's Play Doctor supplement table, the vitamin E row lists 15 IU, 400 IU and 1,200 IU per day across its three dose columns.",
+      "question": "How much vitamin E did Wallach set in his 1995 Base Line program?",
+      "answer_short": "In his 1995 Base Line program Wallach sets vitamin E at 400 IU a day as the True Supplement Need, with a 30-day pharmacologic dose of 1,200 IU. The 15 IU in the row is the government RDA, which he reprints only to argue against.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin E a True Supplement Need (daily maintenance target) of 400 IU and a 30-day pharmacologic daily dose of 1,200 IU. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "VITAMIN E 15 IU 400 IU 1,200 IU\nVITAMIN K 70 mcg 140 mcg 140 mcg",
       "page": 73,
@@ -44673,7 +44631,7 @@
       "subject": "vitamin-k",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much vitamin K should you take?",
+      "question": "How much vitamin K did Wallach set in his 1995 Base Line program?",
       "answer_short": "Wallach's Base Line Nutritional Supplement Program lists vitamin K at 140 mcg/day as his target (140 mcg is also the 30-day dose); the 70 mcg in the same row is the government RDA he prints only to argue against.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives vitamin K a True Supplement Need (daily maintenance target) of 140 mcg and a 30-day pharmacologic daily dose of 140 mcg. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "VITAMIN K 70 mcg 140 mcg 140 mcg\nZINC 15 mg 25 mg 150 mg\n* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.",
@@ -44695,7 +44653,7 @@
       "subject": "zinc",
       "also_about": [],
       "facet": "protocol",
-      "question": "How much zinc does Wallach recommend per day?",
+      "question": "How much zinc did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line program Wallach sets zinc's daily maintenance target at 25 mg and a 30-day pharmacologic dose at 150 mg, taken most efficiently as plant-derived colloidal liquid.",
       "answer": "In his Base Line Nutritional Supplement Program for adults, Wallach gives zinc a True Supplement Need (daily maintenance target) of 25 mg and a 30-day pharmacologic daily dose of 150 mg. He notes the most efficient way to take minerals is the plant-derived colloidal liquid form. The quoted row lists three figures in column order — the government RDA, then Wallach's True Supplement Need, then his 30-day pharmacologic dose. The first is the RDA, which Wallach reprints only to argue against it; it is never his recommendation.",
       "verbatim": "ZINC 15 mg 25 mg 150 mg\n* The most efficient way to get mineral supplements is in the plant derived colloidal liquid form.",
@@ -51549,41 +51507,6 @@
       }
     },
     {
-      "id": "WAL-CLM-LETS-000306",
-      "subject": "hypertension",
-      "also_about": [
-        "calcium",
-        "omega-3",
-        "garlic",
-        "coq10"
-      ],
-      "facet": "protocol",
-      "question": "How do you lower high blood pressure naturally?",
-      "answer_short": "Wallach stresses calcium-deficient diets as a major cause of hypertension and treats it with calcium (plant-derived colloidal minerals), a high-fiber low-fat vegetarian-leaning rotation diet, avoiding sugar/caffeine/excess vitamin D, EDTA chelation, flaxseed oil, garlic, CoQ10, lecithin, and herbs (hawthorn, rauwolfia, olive), noting weight loss can drop blood pressure dramatically.",
-      "answer": "Hypertension (high blood pressure) is blood pressure above 140/90 millimeters of mercury and can stem from many causes including nervousness, arteriosclerosis, kidney disease, endocrine disorders, and food allergies — and Wallach stresses that calcium-deficient diets are a major cause. Work-up includes a pulse test for offending foods and a hair analysis for heavy metals (lead, arsenic, cadmium, mercury). Treatment: calcium (especially plant-derived colloidal minerals, which are 98% absorbable) plus the baseline supplements; a high-fiber, rotation/avoidance, low-fat, vegetarian-leaning diet; avoid sugar and refined flour, caffeine, and more than 400 international units of vitamin D; autoimmune urine therapy; EDTA chelation and hydrogen-peroxide infusions; flaxseed oil at 5 grams three times daily; garlic; reduce red meat; 4-6 cups of vegetables and eight glasses of water daily; coenzyme Q10 at 60 milligrams per day; lecithin at 2,500 milligrams three times daily; and herbs hawthorn (Crataegus oxyacantha), rauwolfia (Rauwolfia serpentina), and olive (Olea europaea). Weight loss can drop elevated blood pressure dramatically.",
-      "verbatim": "Treatment of hypertension includes calcium\n(particularly useful is the plant derived colloidal minerals which are 98 % absorbable), high\nfiber diets, rotation/avoidance diets, autoim-\n132\nmune urine therapy, leaning toward vegetarian diet, low fat diet, avoid sugar and refined\nflour, avoid more than 400 IU of vitamin D,\navoid caffeinated coffee or tea, chelation with\nEDTA.infusions with hydrogen peroxide, flaxseed oil at 5 gm t.i.d., garlic, reduce red meat\nintake, consume 4-6 cups of vegetables per\nday, CO-Q 10 at 60 mg/day, eight glasses of\nwater per day, lecithin at 2,500 mg t.i.d., herbs\nincluding European hawthorn (Cra-taegus\noxyacantha), rauwolfia (Rauwolfia\nserpentina), olive (Olea europaea).",
-      "page": null,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "high blood pressure",
-        "hypertension",
-        "calcium",
-        "colloidal minerals",
-        "garlic",
-        "coq10",
-        "heart"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "calcium",
-          "omega-3"
-        ],
-        "conditions": [
-          "hypertension"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-LETS-000307",
       "subject": "hypoglycemia",
       "also_about": [
@@ -57124,25 +57047,6 @@
         "air-filtration",
         "detox",
         "environmental-toxins"
-      ]
-    },
-    {
-      "id": "WAL-CLM-LETS-000491",
-      "subject": "selenium",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much selenium does Wallach recommend a day?",
-      "answer_short": "For everyday maintenance, Wallach's Base Line program sets selenium at 200 mcg a day — with a much higher short-term therapeutic range (500–3,000 mcg) reserved for actively treating disease.",
-      "answer": "In his Base Line Nutritional Supplement Program, Wallach lists selenium's daily maintenance target (“True Supplement Need”) at 200 mcg — pointedly leaving the official RDA column as a question mark, since he rejects government RDAs as too low to prevent disease. In his Epigenetics dosing he frames it by body weight: roughly 100–200 mcg per 100 lb per day. Above maintenance he defines a 30-day “pharmacologic” range of 500 to 3,000 mcg for actively reversing a deficiency disease, and for cancer specifically names 1,000–3,000 mcg/day. He also stresses form over milligrams: plant-derived colloidal selenium, he says, is far better absorbed than the cheap metallic kind — so the number on the label only matters if your gut can take it up.",
-      "verbatim": "SELENIUM ? 200 mcg 500 to 3,000 mcg\nSODIUM 1,100 mg 3,300 mg 300 to 3,000 mg",
-      "page": null,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "dose",
-        "maintenance",
-        "base-line-program",
-        "therapy-dose",
-        "colloidal-selenium"
       ]
     },
     {
