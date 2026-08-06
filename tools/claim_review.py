@@ -45,8 +45,12 @@ def load_claims(draft=False):
     return out
 
 
-def load_enrichment():
-    p = CORPUS / "search-enrichment.json"
+def load_enrichment(path=None):
+    # --enrichment renders a PROPOSED enrichment store (same shape) through this same
+    # renderer. Questions and answer_shorts are reviewed BEFORE they are applied, so
+    # without this flag a proposal would have to be hand-formatted -- which is the exact
+    # failure this file exists to prevent.
+    p = pathlib.Path(path) if path else CORPUS / "search-enrichment.json"
     if not p.exists():
         return {}
     return json.loads(p.read_text(encoding="utf-8")).get("enrichment", {})
@@ -121,11 +125,13 @@ def main():
     ap.add_argument("--out", help="write markdown here instead of stdout")
     ap.add_argument("--draft", action="store_true",
                     help="read the unsealed drafts instead of the sealed shards")
+    ap.add_argument("--enrichment",
+                    help="render a PROPOSED search-enrichment store instead of the live one")
     a = ap.parse_args()
     if not a.entity and not a.ids:
         ap.error("pass --entity or --ids")
 
-    claims, enr, books = load_claims(a.draft), load_enrichment(), load_books()
+    claims, enr, books = load_claims(a.draft), load_enrichment(a.enrichment), load_books()
 
     if a.ids:
         picked = [claims[i] for i in a.ids if i in claims]
@@ -150,7 +156,10 @@ def main():
 
     head = (f"# Claim review — {a.entity or 'selected ids'}"
             + (f" · facet `{a.facet}`" if a.facet else "")
-            + f"\n\n_{len(picked)} claim(s), full text. Approve or reject each._\n")
+            + f"\n\n_{len(picked)} claim(s), full text. Approve or reject each._"
+            + (f"\n\n**The Question and Short lines below are PROPOSED, not applied** "
+               f"(`{a.enrichment}`). Full and Quote are the sealed claim, unchanged.\n"
+               if a.enrichment else "\n"))
     body = head + "\n" + "\n".join(
         render(c, enr, books, i + 1, len(picked)) for i, c in enumerate(picked))
 

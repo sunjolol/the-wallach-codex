@@ -3001,7 +3001,7 @@
   "WAL-CLM-IMMORT-000163": {
    "subject": "mercury",
    "also_about": [],
-   "facet": "mechanism",
+   "facet": "warning",
    "question": "Is the mercury in fish dangerous?",
    "answer_short": "Fish carry mercury as persistent methylmercury; heavy fish-eaters hold far more, and unlike inorganic mercury it crosses the placenta into the fetus.",
    "topics": [
@@ -3028,7 +3028,7 @@
   "WAL-CLM-IMMORT-000165": {
    "subject": "mercury",
    "also_about": [],
-   "facet": "mechanism",
+   "facet": "warning",
    "question": "Can dental mercury fillings affect gut bacteria?",
    "answer_short": "In monkeys, vapor from dental amalgam raised antibiotic-resistant gut bacteria from 9% to 70% — dropping back to 12% once the fillings were removed.",
    "topics": [
@@ -3175,7 +3175,7 @@
   "WAL-CLM-IMMORT-000178": {
    "subject": "iodine",
    "also_about": [],
-   "facet": "warning",
+   "facet": "physiology",
    "question": "How much iodine do we take in - and how much is safe?",
    "answer_short": "Americans average 170-250 mcg a day and can sweat out up to 146 mcg; metallic iodine isn't toxic even at 2,000 mcg/day long-term - a wide safety margin.",
    "topics": [
@@ -4494,7 +4494,7 @@
     "allergies"
    ],
    "facet": "uses",
-   "question": "Can negative ions help asthma or allergies?",
+   "question": "What does negative ion therapy do?",
    "answer_short": "Six effects - it lowers heart rate/BP, deepens breathing, speeds respiratory cilia, boosts glands and steadies brain rhythm - and Wallach says it especially helps asthma, allergies and cystic fibrosis.",
    "topics": [
     "respiration",
@@ -5463,6 +5463,21 @@
     "protocol"
    ]
   },
+  "WAL-CLM-RARE-000318": {
+   "subject": "fish",
+   "also_about": [
+    "tuna"
+   ],
+   "facet": "warning",
+   "question": "Is canned tuna worse than fresh tuna?",
+   "answer_short": "Yes — canned tuna tests at nearly twice the lead of fresh, because the lead-based sealant on the can seams leaches into the fish.",
+   "topics": [
+    "lead",
+    "canned-tuna",
+    "food-safety",
+    "toxins"
+   ]
+  },
   "WAL-CLM-RARE-000319": {
    "subject": "colloidal_minerals",
    "also_about": [],
@@ -5661,6 +5676,24 @@
     "mitochondria"
    ]
   },
+  "WAL-CLM-RARE-000321": {
+   "subject": "selenium",
+   "also_about": [
+    "free_radicals",
+    "antioxidants",
+    "longevity"
+   ],
+   "facet": "physiology",
+   "question": "What causes age spots and liver spots?",
+   "answer_short": "According to Wallach, those brown “age spots” or “liver spots” are literally rancid fat — a peroxidized lipid called ceroid lipofuscin — surfacing because selenium is too low to keep body fats from oxidizing. He calls their appearance in older adults an early sign of selenium deficiency.",
+   "topics": [
+    "age-spots",
+    "liver-spots",
+    "ceroid-lipofuscin",
+    "aging",
+    "oxidation"
+   ]
+  },
   "WAL-CLM-RARE-000322": {
    "subject": "selenium",
    "also_about": [
@@ -5704,7 +5737,7 @@
    ],
    "facet": "uses",
    "question": "Can selenium help fight cancer?",
-   "answer_short": "Wallach considers selenium one of the most important anti-cancer nutrients, citing a UCSD chemist's review that it works through several distinct mechanisms rather than through one enzyme alone.",
+   "answer_short": "Wallach considers selenium one of the most important anti-cancer nutrients — citing a UCSD chemist's review that it works through several distinct mechanisms — and puts the therapeutic dose at 1,000–3,000 mcg a day.",
    "topics": [
     "cancer",
     "anticarcinogen",
@@ -6043,7 +6076,7 @@
     "vitamin-b1",
     "memory_loss"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can a magnesium deficiency cause memory loss or dementia?",
    "answer_short": "Wallach lists magnesium deficiency — along with low vitamin B1 and cholesterol — as one of the common nutritional causes of dementia, which he says is not a true result of aging.",
    "topics": [
@@ -6061,7 +6094,7 @@
     "osteoporosis",
     "calcium"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can a magnesium deficiency cause bones to break easily?",
    "answer_short": "Wallach says fractures can result from malnutrition — including calcium/magnesium deficiency — and that good mineral status in your bones prevents most 'spontaneous' fractures and fractures from simple falls.",
    "topics": [
@@ -6148,7 +6181,7 @@
     "cleft_palate",
     "cerebral_palsy"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can a zinc deficiency cause birth defects?",
    "answer_short": "Yes — Wallach links zinc deficiency to a long list of congenital birth defects, from cleft lip and palate and spina bifida to Down's syndrome and heart defects.",
    "topics": [
@@ -6212,7 +6245,7 @@
     "calcium"
    ],
    "facet": "warning",
-   "question": "What does too much magnesium do to your bones?",
+   "question": "Can you take too much magnesium?",
    "answer_short": "Wallach's book reports that with healthy kidneys there is no evidence of magnesium toxicity even up to 6,000 mg a day — though he cautions that a true excess of magnesium can inhibit bone calcification.",
    "topics": [
     "magnesium",
@@ -6757,7 +6790,7 @@
    "also_about": [
     "miscarriage"
    ],
-   "facet": "protocol",
+   "facet": "warning",
    "question": "Can a zinc deficiency cause a miscarriage?",
    "answer_short": "Wallach holds that zinc is one of the nutrients essential to maintaining a pregnancy, and that deficiencies of it (along with vitamin A, folic acid, selenium and protein) are a common cause of miscarriage.",
    "topics": [
@@ -6962,7 +6995,7 @@
     "migraine",
     "anorexia"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the symptoms of magnesium deficiency?",
    "answer_short": "Wallach ties a long list of problems to magnesium shortage — including asthma, menstrual migraines, depression, tetany and convulsions, tremors, muscular weakness, vertigo, ECG changes, and abnormal calcification of arteries and soft tissue.",
    "topics": [
@@ -7067,7 +7100,7 @@
   "WAL-CLM-DDDL-000162": {
    "subject": "omega-3",
    "also_about": [],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Is dry skin a sign of omega-3 or essential fatty acid deficiency?",
    "answer_short": "Yes — Wallach says dry skin, cracked cuticles and hangnails signal essential fatty acid deficiency that can lead to cardiovascular disease; he sums it up as 'dry skin means essential fatty acids.'",
    "topics": [
@@ -7196,7 +7229,7 @@
     "zinc",
     "selenium"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can vitamin A deficiency cause miscarriage or birth defects?",
    "answer_short": "Wallach says miscarriage is usually due to deficiencies of vitamins, trace minerals, or protein, and names vitamin A, zinc, folic acid, selenium, and complete proteins as essential to maintaining a pregnancy.",
    "topics": [
@@ -7778,8 +7811,8 @@
    "also_about": [
     "gluten"
    ],
-   "facet": "mechanism",
-   "question": "Can gluten intolerance cause iron deficiency?",
+   "facet": "physiology",
+   "question": "What causes iron deficiency?",
    "answer_short": "Iron deficiency comes from unsupplemented pregnancy, menstruation, chronic infections, low stomach acid, chronic diarrhea or bleeding, and impaired absorption from high-fat, high-phytate, or gluten-intolerant diets.",
    "topics": [
     "iron-deficiency",
@@ -8393,7 +8426,7 @@
     "cancer",
     "zinc"
    ],
-   "facet": "physiology",
+   "facet": "uses",
    "question": "Is cervical dysplasia caused by vitamin A deficiency?",
    "answer_short": "Wallach considers cervical dysplasia a manifestation of chronic vitamin A deficiency and treats it with Lugol's iodine plus beta carotene and zinc.",
    "topics": [
@@ -8666,7 +8699,7 @@
     "eczema",
     "acne"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of essential fatty acid deficiency?",
    "answer_short": "Wallach lists acne, hair loss, eczema, brittle hair, arthritis, gallstones, impaired wound healing, infertility and more as signs of essential fatty acid deficiency.",
    "topics": [
@@ -8735,7 +8768,7 @@
     "scurvy",
     "cancer"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of vitamin C deficiency?",
    "answer_short": "Vitamin C deficiency can cause bleeding gums, loose teeth, bruising, dry rough skin, poor growth, slow wound healing, elevated cancer risk and scurvy.",
    "topics": [
@@ -8811,8 +8844,8 @@
     "arthritis",
     "tetany"
    ],
-   "facet": "physiology",
-   "question": "What health problems does vitamin D deficiency cause?",
+   "facet": "warning",
+   "question": "What are the symptoms of vitamin D deficiency?",
    "answer_short": "Vitamin D deficiency can cause facial tics, muscle cramps, tetany and convulsions, childhood rickets, osteoporosis, arthritis, kidney stones, and more.",
    "topics": [
     "vitamin d",
@@ -8830,7 +8863,7 @@
     "calcium"
    ],
    "facet": "warning",
-   "question": "What does vitamin D toxicity do to your arteries?",
+   "question": "Can too much vitamin D be dangerous?",
    "answer_short": "Yes — Wallach teaches that vitamin D toxicity is angiotoxic, targeting the elastic arteries and causing fibrosis of arterial smooth muscle and calcification of blood vessel walls.",
    "topics": [
     "vitamin d",
@@ -8880,7 +8913,7 @@
     "magnesium"
    ],
    "facet": "mechanism",
-   "question": "How does iron help your body use oxygen?",
+   "question": "What does iron do in the body?",
    "answer_short": "Iron builds hemoglobin and myoglobin and transfers electrons so the body can use oxygen—'iron is to hemoglobin what magnesium is to chlorophyll.'",
    "topics": [
     "hemoglobin",
@@ -8988,7 +9021,7 @@
    "also_about": [
     "hypertension"
    ],
-   "facet": "physiology",
+   "facet": "uses",
    "question": "Can calcium deficiency cause high blood pressure?",
    "answer_short": "Yes — Wallach cites research linking chronic calcium deficiency to hypertension, with more than 30 studies supporting it and lower ionized calcium found in untreated hypertensives.",
    "topics": [
@@ -9020,7 +9053,7 @@
     "arthritis",
     "tinnitus"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What diseases can calcium deficiency cause?",
    "answer_short": "Wallach ties calcium deficiency to as many as 147 different diseases, from osteoporosis and arthritis to Bell's palsy, tinnitus, and trigeminal neuralgia.",
    "topics": [
@@ -9510,7 +9543,7 @@
     "vitamin-k",
     "vitamin-c"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can vitamin E deficiency cause easy bruising?",
    "answer_short": "Yes — Wallach says fragile capillaries that bruise easily can result from vitamin E deficiency (along with copper, vitamin K or C deficiency or blood thinners).",
    "topics": [
@@ -10027,7 +10060,7 @@
     "salt",
     "gluten"
    ],
-   "facet": "mechanism",
+   "facet": "warning",
    "question": "What causes vitamin B12 deficiency?",
    "answer_short": "B12 deficiency comes from a poor diet, low stomach acid, salt deficiency, and gluten intolerance.",
    "topics": [
@@ -10723,8 +10756,7 @@
   "WAL-CLM-IMMORT-000302": {
    "subject": "vitamin-b9",
    "also_about": [
-    "vitamin-b12",
-    "neuropathy"
+    "vitamin-b12"
    ],
    "facet": "warning",
    "question": "Why can taking folic acid be risky if you have a B12 deficiency?",
@@ -10784,6 +10816,22 @@
     "elderly",
     "stomach-acid",
     "b12-shots"
+   ]
+  },
+  "WAL-CLM-IMMORT-000307": {
+   "subject": "vitamin-b12",
+   "also_about": [
+    "neuropathy"
+   ],
+   "facet": "warning",
+   "question": "Can folic acid hide a vitamin B12 deficiency?",
+   "answer_short": "Yes — in pernicious anemia, folic acid improves the anemia but lets the nerve and gut damage keep progressing, an effect Wallach calls the 'masking effect.'",
+   "topics": [
+    "vitamin-b12",
+    "folic-acid",
+    "pernicious-anemia",
+    "masking-effect",
+    "nerves"
    ]
   },
   "WAL-CLM-IMMORT-000308": {
@@ -11330,7 +11378,7 @@
     "photophobia",
     "dermatitis"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of vitamin B2 (riboflavin) deficiency?",
    "answer_short": "Riboflavin deficiency can cause cheilosis, cataracts, blurred vision, hair loss, dermatitis, depression, and growth retardation.",
    "topics": [
@@ -11517,7 +11565,7 @@
     "dementia",
     "neuropathy"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the symptoms of vitamin B12 deficiency?",
    "answer_short": "B12 deficiency causes pernicious anemia, dementia and neuropsychiatric changes, nerve demyelination and neuropathy, a sore tongue, general weakness, and liver disease.",
    "topics": [
@@ -11561,7 +11609,7 @@
   "WAL-CLM-IMMORT-000100": {
    "subject": "copper",
    "also_about": [],
-   "facet": "mechanism",
+   "facet": "physiology",
    "question": "What does copper do in the body?",
    "answer_short": "Copper is needed for RNA and DNA, lysyl oxidase and elastic fibers, melanin (skin and hair color), and the electron transport that powers cellular respiration.",
    "topics": [
@@ -11637,7 +11685,7 @@
     "aneurysm",
     "arthritis"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of copper deficiency?",
    "answer_short": "Wallach lists white, grey and silver hair, loss of skin pigment (vitiligo), and dry brittle hair among the first signs, alongside aneurysms, varicose veins, anemia and arthritis.",
    "topics": [
@@ -11710,7 +11758,7 @@
   "WAL-CLM-RARE-000123": {
    "subject": "copper",
    "also_about": [],
-   "facet": "physiology",
+   "facet": "history",
    "question": "Is cerebral palsy linked to copper deficiency?",
    "answer_short": "Wallach says the copper-deficiency disease in newborn lambs produces demyelination changes identical to human cerebral palsy.",
    "topics": [
@@ -11759,7 +11807,7 @@
    "also_about": [
     "vanadium"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can a chromium deficiency shorten your life?",
    "answer_short": "Yes — Wallach says chromium deficiency causes a wide variety of clinical diseases and a shortened life expectancy, made worse by a concurrent vanadium deficiency.",
    "topics": [
@@ -11805,7 +11853,7 @@
     "sodium",
     "calcium"
    ],
-   "facet": "mechanism",
+   "facet": "physiology",
    "question": "What does potassium do in the body?",
    "answer_short": "Potassium is the major positively-charged mineral inside your cells, running enzyme systems, fluid balance and nerve-muscle activity.",
    "topics": [
@@ -11871,7 +11919,7 @@
    "also_about": [
     "intelligence"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of potassium deficiency?",
    "answer_short": "Muscular weakness and mental apathy are the hallmark signs, and the most serious event is low-potassium (hypokalemic) heart failure.",
    "topics": [
@@ -12038,7 +12086,7 @@
     "nosebleeds",
     "vitamin-c"
    ],
-   "facet": "physiology",
+   "facet": "uses",
    "question": "Can a vitamin K deficiency cause nosebleeds?",
    "answer_short": "Yes — Wallach says nosebleeds (epistaxis) are usually the result of vitamin K and/or vitamin C deficiency.",
    "topics": [
@@ -12712,7 +12760,7 @@
     "ecchymosis",
     "osteoporosis"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of vitamin K deficiency?",
    "answer_short": "Vitamin K deficiency shows up as prolonged clotting time and abnormal bleeding — bruises, nosebleeds, blood in the urine and gut — plus bone problems like osteoporosis.",
    "topics": [
@@ -12745,7 +12793,7 @@
     "dementia",
     "memory_loss"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of choline deficiency?",
    "answer_short": "Choline deficiency can cause fatty liver, liver cirrhosis, kidney hemorrhage, Alzheimer's disease, dementia, tardive dyskinesia and Huntington's disease, with no known overdose.",
    "topics": [
@@ -12805,7 +12853,7 @@
     "eczema",
     "constipation"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "Can inositol deficiency cause hair loss or eczema?",
    "answer_short": "Wallach's deficiency chart lists alopecia (hair loss), constipation, eczema, and high cholesterol as signs of inositol deficiency.",
    "topics": [
@@ -12833,7 +12881,7 @@
     "hemorrhoids",
     "nosebleeds"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of a bioflavonoid deficiency?",
    "answer_short": "Wallach lists capillary hemorrhage, easy bruising, nosebleeds, hemorrhoids, venous insufficiency, leg ulcers, weakened immunity, higher cancer risk, and a shortened lifespan.",
    "topics": [
@@ -12934,7 +12982,7 @@
     "adhd",
     "infertility"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What diseases does vanadium deficiency cause?",
    "answer_short": "Wallach links vanadium deficiency to diabetes, hypoglycemia, high cholesterol and triglycerides, obesity, infertility, ADD/ADHD, depression, and bipolar disease.",
    "topics": [
@@ -13119,7 +13167,7 @@
     "calcium",
     "magnesium"
    ],
-   "facet": "mechanism",
+   "facet": "physiology",
    "question": "What does boron do in the body?",
    "answer_short": "Boron supports bone metabolism, helps the body use calcium and magnesium efficiently, and is needed for proper function of the ovaries, testes, and adrenal glands.",
    "topics": [
@@ -13127,6 +13175,22 @@
     "hormones",
     "adrenal glands",
     "minerals"
+   ]
+  },
+  "WAL-CLM-DDDL-000239": {
+   "subject": "cobalt",
+   "also_about": [
+    "vitamin-b12"
+   ],
+   "facet": "physiology",
+   "question": "Why can vegans go years before a B12 deficiency shows up?",
+   "answer_short": "The body recycles B12 through an enterohepatic (gut-to-liver) circulation, so a deficiency in vegans may not appear for five to ten years after giving up meat.",
+   "topics": [
+    "cobalt",
+    "b12",
+    "vegan",
+    "recycling",
+    "deficiency"
    ]
   },
   "WAL-CLM-DDDL-000240": {
@@ -14035,7 +14099,7 @@
     "cancer"
    ],
    "facet": "physiology",
-   "question": "Can low germanium cause arthritis?",
+   "question": "What are the signs of germanium deficiency?",
    "answer_short": "Germanium deficiency is typified by a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
    "topics": [
     "deficiency",
@@ -14106,7 +14170,7 @@
     "tmj",
     "deafness"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What diseases does manganese deficiency cause?",
    "answer_short": "Wallach calls manganese deficiency striking, causing birth defects like congenital ataxia and deafness, plus asthma, convulsions, stunted growth, skeletal defects, and joint disorders like TMJ and carpal tunnel.",
    "topics": [
@@ -14134,7 +14198,7 @@
    "also_about": [
     "vitamin-b12"
    ],
-   "facet": "mechanism",
+   "facet": "physiology",
    "question": "What does cobalt do in the body?",
    "answer_short": "Cobalt is essential for all forms of life; it activates enzymes, helps fix nitrogen, and sits at the very center of vitamin B12.",
    "topics": [
@@ -14198,7 +14262,7 @@
     "autism"
    ],
    "facet": "physiology",
-   "question": "Does sugar or alcohol make a lithium deficiency worse?",
+   "question": "What are the signs of a lithium deficiency?",
    "answer_short": "In animals lithium deficiency causes reproductive failure, infertility, poor growth and shortened life; in humans it shows as manic depression, rages, hyperactivity, ADD/ADHD, some autism and 'bad seed' behavior.",
    "topics": [
     "mental-health",
@@ -14481,7 +14545,7 @@
    "also_about": [
     "pica"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What happens if you are deficient in phosphorus?",
    "answer_short": "Phosphorus deficiency is widespread and ultimately fatal, collapsing ATP synthesis into complete metabolic energy failure with neuromuscular, skeletal, blood and kidney disease.",
    "topics": [
@@ -14529,7 +14593,7 @@
    "also_about": [
     "biotin"
    ],
-   "facet": "mechanism",
+   "facet": "physiology",
    "question": "Which proteins in the body contain sulfur?",
    "answer_short": "Sulfur is built into hemoglobin, hormones such as insulin and the adrenal cortical hormones, enzymes, and antibodies.",
    "topics": [
@@ -14588,7 +14652,7 @@
     "arthritis",
     "lupus"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the symptoms of sulfur deficiency?",
    "answer_short": "Wallach says a sulfur deficiency produces degenerative arthritis and cartilage breakdown, weakened ligaments and tendons, lupus, sickle cell anemia, and other collagen diseases.",
    "topics": [
@@ -14630,6 +14694,24 @@
     "stomach acid",
     "essential minerals",
     "chloride basics"
+   ]
+  },
+  "WAL-CLM-DDDL-000262": {
+   "subject": "chloride",
+   "also_about": [
+    "sodium",
+    "achlorhydria",
+    "vitamin-b12"
+   ],
+   "facet": "mechanism",
+   "question": "What does chloride actually do in the body?",
+   "answer_short": "Chloride is the raw material your stomach uses to make hydrochloric acid; it is essential to all living things and activates numerous enzymes.",
+   "topics": [
+    "stomach acid",
+    "digestion",
+    "enzymes",
+    "electrolytes",
+    "mineral absorption"
    ]
   },
   "WAL-CLM-DDDL-000263": {
@@ -14916,7 +14998,7 @@
     "calcium",
     "hyperparathyroidism"
    ],
-   "facet": "mechanism",
+   "facet": "warning",
    "question": "What causes low blood phosphorus?",
    "answer_short": "Low blood phosphorus (hypophosphatemia) results from IV glucose or TPN without phosphorus, excessive antacids, hyperparathyroidism, diuretics, sweating from exercise, and alcoholism.",
    "topics": [
@@ -14937,7 +15019,7 @@
     "veganism"
    ],
    "facet": "stance",
-   "question": "Can gluten intolerance cause a phosphorus deficiency?",
+   "question": "Do vegetarians get enough phosphorus?",
    "answer_short": "Yes — Wallach says vegetarians and vegans who don't supplement with minerals rarely have a phosphorus deficiency (unless they have chronic gluten intolerance from heavy whole-grain consumption), though because of their high phytic-acid intake they always have other mineral deficiencies, such as calcium, copper, chromium, vanadium, lithium and zinc, unless they supplement.",
    "topics": [
     "phosphorus",
@@ -16836,7 +16918,7 @@
     "lysine",
     "threonine"
    ],
-   "facet": "physiology",
+   "facet": "uses",
    "question": "What does isoleucine do in the body?",
    "answer_short": "In Wallach's essential amino-acid function table, isoleucine's role is protein production—it serves as a direct building block for the body's proteins.",
    "topics": [
@@ -19727,7 +19809,7 @@
    "also_about": [
     "protein"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What happens if you don't get enough protein?",
    "answer_short": "Classic protein deficiency causes infertility, poor growth, lowered immune status, edema, and Kwashiorkor -- the potbellied, thin children of third-world countries.",
    "topics": [
@@ -19776,7 +19858,7 @@
    "also_about": [
     "calcium"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the signs of silica deficiency?",
    "answer_short": "Wallach says silica deficiency shows up as dry brittle hair, brittle finger and toe nails, poor skin quality, poor calcium utilization, and arterial disease.",
    "topics": [
@@ -20179,7 +20261,7 @@
     "anemia",
     "dermatitis"
    ],
-   "facet": "physiology",
+   "facet": "warning",
    "question": "What are the symptoms of nickel deficiency?",
    "answer_short": "Wallach lists poor growth, anemia, depressed liver oxidative ability, high newborn mortality, a rough/dry coat, dermatitis, delayed puberty, and poor zinc absorption.",
    "topics": [
@@ -20991,9 +21073,7 @@
   },
   "WAL-CLM-RARE-000398": {
    "subject": "tuna",
-   "also_about": [
-    "fish"
-   ],
+   "also_about": [],
    "facet": "warning",
    "question": "Does canned tuna contain lead, and is it safe to eat?",
    "answer_short": "Wallach cites a study finding canned tuna carries nearly double the lead of fresh tuna — the lead leaches in from the sealant used to close the seams of steel and tin cans.",
@@ -21002,9 +21082,7 @@
     "food-safety",
     "lead-contamination",
     "canned-food",
-    "toxic-metals",
-    "lead",
-    "canned-tuna"
+    "toxic-metals"
    ]
   },
   "WAL-CLM-DDDL-000288": {
@@ -21418,7 +21496,7 @@
     "epigenetics"
    ],
    "facet": "mechanism",
-   "question": "Why does your DNA need all 90 essential nutrients?",
+   "question": "What are the 90 essential nutrients?",
    "answer_short": "Wallach's cornerstone: DNA must have constant access to all 90 essentials -- 60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids -- each in optimal amounts and proper ratios, because genes need nutrient-supplied energy, raw materials and on/off cofactors.",
    "topics": [
     "nutrition",
@@ -26504,7 +26582,7 @@
     "liver_disease"
    ],
    "facet": "physiology",
-   "question": "How much choline does it take to treat Huntington's disease?",
+   "question": "What are the signs of choline deficiency?",
    "answer_short": "Wallach lists the signs of choline deficiency as fatty liver, kidney hemorrhage, Alzheimer's disease, tardive dyskinesia and Huntington's disease, and says treatment can require high doses on the order of 20 grams a day.",
    "topics": [
     "choline",
@@ -26573,7 +26651,7 @@
    "subject": "chromium",
    "also_about": [],
    "facet": "basics",
-   "question": "What is glucose tolerance factor (GTF)?",
+   "question": "What is chromium and what does it do?",
    "answer_short": "Wallach describes chromium as a trace mineral that activates phosphoglucomutase and is the working core of glucose tolerance factor (GTF) — a complex of chromium III, dinicotinic acid and glutathione — with the body holding only about 1.5 mg, best read by hair analysis.",
    "topics": [
     "chromium",
@@ -28849,7 +28927,7 @@
     "alopecia"
    ],
    "facet": "physiology",
-   "question": "Can low copper cause fatigue and depression?",
+   "question": "What are the signs of copper deficiency?",
    "answer_short": "Wallach lists copper-deficiency signs including hair loss, microcytic anemia, aneurysm and cerebral hemorrhage, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, respiratory disease, and liver cirrhosis with weakness.",
    "topics": [
     "copper deficiency",
@@ -30088,6 +30166,27 @@
     "alkaline"
    ]
   },
+  "WAL-CLM-RARE-000134": {
+   "subject": "fluoride",
+   "also_about": [
+    "cancer",
+    "osteosarcoma",
+    "thyroid_cancer",
+    "liver_cancer"
+   ],
+   "facet": "warning",
+   "question": "Does fluoride in water cause cancer?",
+   "answer_short": "Wallach cites 1990 National Toxicology Program results in which fluoride increased oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males, and thyroid and liver cancers, following the Yiamouyiannis-Burk finding of 10,000 excess cancer deaths from fluoridation.",
+   "topics": [
+    "fluoride",
+    "fluoridation",
+    "water fluoridation",
+    "cancer",
+    "osteosarcoma",
+    "thyroid cancer",
+    "liver cancer"
+   ]
+  },
   "WAL-CLM-RARE-000203": {
    "subject": "cancer",
    "also_about": [
@@ -30866,6 +30965,36 @@
     "enzyme cofactor"
    ]
   },
+  "WAL-CLM-RARE-000266": {
+   "subject": "zinc",
+   "also_about": [],
+   "facet": "physiology",
+   "question": "How much zinc is in the human body?",
+   "answer_short": "Wallach reports the adult body holds 1.4 to 2.3 grams of zinc, with the largest reserves in the liver, pancreas, kidney, bone, and skeletal muscles.",
+   "topics": [
+    "zinc",
+    "body zinc content",
+    "zinc reserves",
+    "zinc distribution",
+    "liver",
+    "pancreas",
+    "kidney"
+   ]
+  },
+  "WAL-CLM-RARE-000267": {
+   "subject": "zinc",
+   "also_about": [],
+   "facet": "history",
+   "question": "When was zinc discovered to be essential for humans?",
+   "answer_short": "Wallach notes zinc was known to be essential for bread mold 100 years ago and for rats 50 years ago, but recognized as essential for humans only about 20 years ago.",
+   "topics": [
+    "zinc",
+    "essential mineral",
+    "history of zinc",
+    "essentiality",
+    "discovery"
+   ]
+  },
   "WAL-CLM-RARE-000058": {
    "subject": "genetic-potential",
    "also_about": [],
@@ -30885,7 +31014,7 @@
    "subject": "silver",
    "also_about": [],
    "facet": "protocol",
-   "question": "How does silver kill germs?",
+   "question": "How much silver can you take per day?",
    "answer_short": "Wallach says humans can take about 400 micrograms of silver a day, and that a silver deficiency results in an impaired immune system.",
    "topics": [
     "silver",
@@ -31180,8 +31309,8 @@
    "also_about": [
     "methionine"
    ],
-   "facet": "mechanism",
-   "question": "Why does glutathione need sulfur?",
+   "facet": "basics",
+   "question": "What does sulfur do in the body?",
    "answer_short": "Wallach explains sulfur is an important structural atom in most proteins — present as the sulfur amino acids cystine, cysteine, and methionine — and that glutathione, a cysteine-containing tripeptide, is essential to cellular reactions involving these sulfur amino acids.",
    "topics": [
     "sulfur",
@@ -31346,7 +31475,7 @@
     "hypoglycemia"
    ],
    "facet": "physiology",
-   "question": "Can a vanadium deficiency cause diabetes or low blood sugar?",
+   "question": "What are the signs of vanadium deficiency?",
    "answer_short": "Diabetes and hypoglycemia. Wallach counts vanadium (with chromium) as essential to blood-sugar control, so its deficiency drives insulin up — producing type II diabetes and low blood sugar — and shows up day-to-day as thirst and relentless carbohydrate and sugar cravings.",
    "topics": [
     "vanadium",
@@ -31570,7 +31699,7 @@
     "cancer"
    ],
    "facet": "physiology",
-   "question": "What does scurvy do to the body?",
+   "question": "What are the signs of vitamin C deficiency?",
    "answer_short": "A vitamin C shortage causes scurvy — bleeding gums, loosened teeth, and skin hemorrhages — plus anemia, poor appetite and growth, swollen wrist and ankle joints, rib and cartilage fractures, and a high risk of infection and cancer.",
    "topics": [
     "vitamin c",
@@ -31667,7 +31796,7 @@
     "liver_disease"
    ],
    "facet": "warning",
-   "question": "What are the signs of vitamin D toxicity?",
+   "question": "Can too much vitamin D be harmful?",
    "answer_short": "Wallach warns that excess vitamin D causes angiotoxicity — calcification and hardening of the arteries (arteriosclerosis), malignant calcification of soft tissue, and liver dysfunction — by driving calcium into the artery walls.",
    "topics": [
     "vitamin d",
@@ -31843,6 +31972,21 @@
     "bleeding",
     "osteoporosis",
     "osteocalcin"
+   ]
+  },
+  "WAL-CLM-DDDL-000037": {
+   "subject": "zinc",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Why is zinc so important in the body?",
+   "answer_short": "At least 70 metalloenzymes require zinc as a working cofactor — including carbonic anhydrase, alkaline phosphatase, and carboxypeptidase — and zinc also sits inside RNA (the 'zinc fingers') and drives DNA synthesis and cell division.",
+   "topics": [
+    "zinc",
+    "metalloenzymes",
+    "enzymes",
+    "dna synthesis",
+    "zinc fingers",
+    "cell division"
    ]
   },
   "WAL-CLM-DDDL-000038": {
@@ -32832,6 +32976,21 @@
     "kidneys"
    ]
   },
+  "WAL-CLM-RARE-000168": {
+   "subject": "magnesium",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What is magnesium and what does it do?",
+   "answer_short": "Wallach describes magnesium as essential to every living organism, with electrochemical, catalytic and structural roles — activating numerous enzymes, forming part of all chlorophylls, and totaling 20 to 28 grams in the body, mostly in bone and muscle.",
+   "topics": [
+    "magnesium",
+    "what is magnesium",
+    "enzymes",
+    "chlorophyll",
+    "body content",
+    "minerals"
+   ]
+  },
   "WAL-CLM-RARE-000169": {
    "subject": "magnesium",
    "also_about": [
@@ -32973,7 +33132,7 @@
     "chondroitin"
    ],
    "facet": "physiology",
-   "question": "What birth defects come from a manganese deficiency?",
+   "question": "What are the signs of manganese deficiency?",
    "answer_short": "Wallach lists striking manganese-deficiency diseases — congenital ataxia, deafness, chondromalacia, chondrodystrophy, 'slipped tendon,' asthma, convulsions, infertility, miscarriage, loss of libido, and joint problems like TMJ, carpal tunnel and repetitive-motion syndrome — while excess manganese can instead cause a Parkinson-like or schizophrenia-like disorder.",
    "topics": [
     "manganese",
@@ -33165,6 +33324,23 @@
     "infertility",
     "amino acids",
     "immunity"
+   ]
+  },
+  "WAL-CLM-DDDL-000064": {
+   "subject": "omega-3",
+   "also_about": [
+    "omega-6"
+   ],
+   "facet": "mechanism",
+   "question": "What do essential fatty acids do in the body?",
+   "answer_short": "Wallach explains essential fatty acids are the raw material the body uses to make prostaglandins, which help regulate blood pressure, heart rate, blood-vessel and airway dilation, clotting, and central nervous system function.",
+   "topics": [
+    "essential fatty acids",
+    "omega-3",
+    "omega-6",
+    "prostaglandins",
+    "blood pressure",
+    "heart rate"
    ]
   },
   "WAL-CLM-DDDL-000065": {
@@ -33364,6 +33540,22 @@
     "hyperparathyroidism"
    ]
   },
+  "WAL-CLM-RARE-000204": {
+   "subject": "phosphorus",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What does phosphorus do in the body?",
+   "answer_short": "Wallach describes phosphorus as a major structural mineral of bones and teeth with more functions than any other mineral — a constituent of nucleic acids, an enzyme activator, and a driver of the ATP energy cycle.",
+   "topics": [
+    "phosphorus",
+    "bones",
+    "teeth",
+    "atp",
+    "energy",
+    "nucleic acids",
+    "enzymes"
+   ]
+  },
   "WAL-CLM-RARE-000205": {
    "subject": "phosphorus",
    "also_about": [
@@ -33379,6 +33571,21 @@
     "teeth",
     "body content",
     "apatite"
+   ]
+  },
+  "WAL-CLM-RARE-000207": {
+   "subject": "phosphorus",
+   "also_about": [],
+   "facet": "sources",
+   "question": "How well is phosphorus absorbed?",
+   "answer_short": "Wallach gives average adult phosphorus intake as 1,000–1,500 mg a day, with absorption ranging from 3–5 percent for metallic phosphorus up to 98 percent for colloidal, and best absorption at a 1:1 calcium-to-phosphorus ratio.",
+   "topics": [
+    "phosphorus",
+    "absorption",
+    "colloidal",
+    "chelated",
+    "bioavailability",
+    "daily intake"
    ]
   },
   "WAL-CLM-RARE-000208": {
@@ -33416,7 +33623,7 @@
   "WAL-CLM-RARE-000210": {
    "subject": "phosphorus",
    "also_about": [],
-   "facet": "stance",
+   "facet": "warning",
    "question": "Do vegetarians get enough phosphorus?",
    "answer_short": "Wallach observes vegetarians and vegans who don't supplement rarely lack phosphorus, but their high phytic acid intake always leaves them short of other minerals like calcium, copper, chromium, vanadium, lithium, and zinc.",
    "topics": [
@@ -33484,7 +33691,7 @@
     "cancer"
    ],
    "facet": "physiology",
-   "question": "Why does low germanium lead to cancer?",
+   "question": "What are the signs of germanium deficiency?",
    "answer_short": "Wallach writes that germanium deficiency typically shows up as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer.",
    "topics": [
     "germanium",
@@ -33823,6 +34030,23 @@
     "mcg per day"
    ]
   },
+  "WAL-CLM-RARE-000147": {
+   "subject": "iodine",
+   "also_about": [
+    "goiter"
+   ],
+   "facet": "mechanism",
+   "question": "Why do some people get goiter even with high iodine intake?",
+   "answer_short": "Because goitrogens — foods that block thyroid metabolism — can override iodine: Wallach notes goiter develops in Japanese living on the sea coast despite high iodine intake, and in a feeding study every group developed goiter except the one fed seaweed (the other foods it lists — cabbage, turnips, buckwheat — are goitrogens).",
+   "topics": [
+    "iodine",
+    "goiter",
+    "goitrogens",
+    "seaweed",
+    "japan",
+    "feeding study"
+   ]
+  },
   "WAL-CLM-RARE-000148": {
    "subject": "iodine",
    "also_about": [
@@ -34047,7 +34271,7 @@
     "insomnia"
    ],
    "facet": "physiology",
-   "question": "Can low vitamin A cause hair loss and insomnia?",
+   "question": "What are the signs of vitamin A deficiency?",
    "answer_short": "Wallach's signs of vitamin A deficiency include acne, loss of smell, birth defects, dry hair and hair loss, fatigue, growth retardation, thickened rough skin, infections, infertility, insomnia, night blindness, weight loss, and dry eyes and skin.",
    "topics": [
     "vitamin a",
@@ -34580,7 +34804,7 @@
    "subject": "potassium",
    "also_about": [],
    "facet": "basics",
-   "question": "Does your body store potassium?",
+   "question": "What is potassium and what does it do in the body?",
    "answer_short": "Potassium is an essential mineral — the major positively charged ion inside your cells — that runs fluid balance, nerve signaling and muscle activity, and makes up about five percent of the body's total mineral content.",
    "topics": [
     "potassium",
@@ -34623,6 +34847,25 @@
     "absorption",
     "excretion",
     "5000 mg"
+   ]
+  },
+  "WAL-CLM-RARE-000155": {
+   "subject": "potassium",
+   "also_about": [
+    "hypokalemia",
+    "cardiac_failure"
+   ],
+   "facet": "physiology",
+   "question": "What are the signs of low potassium?",
+   "answer_short": "Wallach says low potassium first shows as muscular weakness and mental apathy, with its most serious form being hypokalemic cardiac failure, and that losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
+   "topics": [
+    "potassium",
+    "deficiency",
+    "muscular weakness",
+    "mental apathy",
+    "hypokalemia",
+    "cardiac failure",
+    "diuretics"
    ]
   },
   "WAL-CLM-RARE-000156": {
@@ -34946,11 +35189,7 @@
   },
   "WAL-CLM-RARE-000225": {
    "subject": "selenium",
-   "also_about": [
-    "free_radicals",
-    "antioxidants",
-    "longevity"
-   ],
+   "also_about": [],
    "facet": "mechanism",
    "question": "How does selenium keep body fats from going rancid?",
    "answer_short": "Wallach describes selenium as the most efficient antioxidant, acting in the glutathione peroxidase system to stop lipids from peroxidizing and keep body fats from going rancid, with the brown 'age spots' being that peroxidized lipid, ceroid lipofuscin.",
@@ -34961,11 +35200,7 @@
     "selenomethionine",
     "age spots",
     "ceroid lipofuscin",
-    "lipid peroxidation",
-    "age-spots",
-    "liver-spots",
-    "aging",
-    "oxidation"
+    "lipid peroxidation"
    ]
   },
   "WAL-CLM-RARE-000226": {

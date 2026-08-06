@@ -610,7 +610,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Iron absorption is governed by the gut environment: stomach hydrochloric acid is required for optimal absorption of iron, and ascorbic acid (vitamin C) increases it, while clays and phytates decrease it. Wallach adds that impaired absorption from high-fiber, high-phytate diets makes the standard 18 mg RDA too low for people eating that way.",
-   "verbatim": "Stomach hydrochloric acid is required for\noptimal absorption of iron. Ascorbic acid increases the absorption of iron;\nclays and phytates decrease the absorption of iron. The RDA of 18 mg per\nday as metallic iron is too low for those eating high fiber, high phytate diets.",
+   "verbatim": "Stomach hydrochloric acid is required for\noptimal absorption of iron. Ascorbic acid increases the absorption of iron;\nclays and phytates decrease the absorption of iron.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -1109,6 +1109,35 @@
    "reviewed_by": null
   },
   {
+   "id": "WAL-CLM-DDDL-000037",
+   "kind": "mechanism",
+   "essentials": [
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Zinc's importance is easy to underestimate until you count the enzymes that depend on it: at least 70 metalloenzymes require zinc as a working cofactor, Wallach notes — among them carbonic anhydrase, alkaline phosphatase, and carboxypeptidase, which handle jobs from carbon-dioxide transport to protein digestion. Zinc also sits inside the RNA molecule itself (the 'zinc fingers') and drives DNA synthesis and cell division, which is why a shortage reaches into so many systems at once.",
+   "verbatim": "There are no less than 70 metalloenzymes that require Zn as a\nfunctional cofactor.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 602167
+   },
+   "dose": null,
+   "tags": [],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-24T17:39:10+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
    "id": "WAL-CLM-DDDL-000038",
    "kind": "mechanism",
    "essentials": [
@@ -1545,7 +1574,7 @@
    ],
    "symptoms": [],
    "claim_text": "Wallach's arthritis protocol rebuilds joint tissue nutritionally rather than just masking pain. The core is calcium at 2,000 mg/day (more if you eat meat two or three times a day), magnesium at 800-1,000 mg/day, and cartilage -- collagen, glucosamine sulfate and chondroitin sulfate -- at 1,000 mg three times a day. He adds vitamin C to bowel tolerance, B6 100 mg twice daily, B3 450 mg twice daily, vitamin E 1,000 IU/day, copper 2 mg/day, selenium 300 mcg/day and zinc 50 mg three times daily, favoring plant-derived colloidal minerals (up to 98 percent absorbable). For rheumatoid arthritis he additionally treats the underlying Mycoplasma infection -- low-dose tetracycline or minocycline for a year (or oral food-grade H2O2) plus IV EDTA/H2O2 chelation.",
-   "verbatim": "Treatment of arthritis should include calcium at 2000 mg/day and more if\nyou eat meat two or three times per day. Also take magnesium at 800-1000\nmg/day, and cartilage (collagen, glucosamine sulfate and\nchondroitin sulfate) at 1000 mg t.i.d. For\nrheumatoid arthritis, add tetracycline or minocycline at the low dose acne\ntherapy level daily for one year, or oral food grade H2O2 to deal with the\nMycoplasma infection. IV chelation with EDTA and H2O2 is very helpful!\nTake Vitamin C to bowel tolerance, B6 100 mg b.i.d., B3 450 mg b.i.d. as\ntime-release capsules. Take Vitamin E at 1000 IU/day. Copper at 2 mg/day\n(may be absorbed from a copper bracelet), selenium 300 mcg/day, zinc 50\nmg t.i.d. Plant derived colloidal minerals are 98 percent absorbable and give\nexcellent results!",
+   "verbatim": "Treatment of arthritis should include calcium at 2000 mg/day and more if\nyou eat meat two or three times per day. Also take magnesium at 800-1000\nmg/day, and cartilage (collagen, glucosamine sulfate and\nchondroitin sulfate) at 1000 mg t.i.d. For\nrheumatoid arthritis, add tetracycline or minocycline at the low dose acne\ntherapy level daily for one year, or oral food grade H2O2 to deal with the\nMycoplasma infection.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -1819,7 +1848,7 @@
    ],
    "symptoms": [],
    "claim_text": "Yes -- Wallach says osteoporosis is easy to prevent and cure. He argues the orthodox push for estrogen and fluoride supplementation does not solve it, because the real problem is failure to absorb and supply calcium. In his experience it prevents and reverses with proper supplementation of stomach acid (HCl) and calcium: betaine HCl and pancreatic enzymes 75-200 mg three times daily before meals, plus calcium and magnesium at 2,000 mg and 1,000 mg/day (or more for the first 30 days), with plant-derived colloidal minerals supplying calcium, magnesium and boron. He also recommends a pulse test for the food allergies that cause celiac-type malabsorption.",
-   "verbatim": "The big push by the “orthodox”\ndoctors is for estrogen and fluoride supplementation, yet these two\ncompounds alone do not solve the problem. In our personal experience\nosteoporosis is easy to prevent and cure with proper supplementation of\nstomach acid (HCl) and calcium. Do a pulse test to identify any food\nallergens that might be causing a celiac disease type change and\nmalabsorption syndromes. The symptoms of osteoporosis are characterized\nby bone pain, joint pain, “dowagers” hump, and “spontaneous” fractures.\nOsteoporosis is the 12th most frequent cause of death in adults (following\nfractured hips, etc.).\nTreatment of osteoporosis should include betaine HCl and pancreatic\nenzymes at 75-200 mg t.i.d. 15 minutes before meals, and calcium and\nmagnesium at 2,000 mg and 1,000 mg per day or more for the first 30 days.\nEstrogen may be contraindicated because of the potential carcinogenic\neffect: it is known to cause breast and uterine cancer. Don’t forget the plant\nderived colloidal minerals that include calcium, magnesium, and boron.",
+   "verbatim": "The big push by the “orthodox”\ndoctors is for estrogen and fluoride supplementation, yet these two\ncompounds alone do not solve the problem. In our personal experience\nosteoporosis is easy to prevent and cure with proper supplementation of\nstomach acid (HCl) and calcium.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -1953,6 +1982,36 @@
     "screenshot": null,
     "kindle_location": null,
     "char_offset": 490117
+   },
+   "dose": null,
+   "tags": [],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-24T17:59:15+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000064",
+   "kind": "mechanism",
+   "essentials": [
+    "omega-3",
+    "omega-6"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "EFAs are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and central nervous system (CNS) function.",
+   "verbatim": "EFA’s are also the raw material for the human body to\nmanufacture prostaglandins that help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial dilation, and central nervous\nsystem (brain and spinal cord) function.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 490803
    },
    "dose": null,
    "tags": [],
@@ -2608,7 +2667,7 @@
    ],
    "symptoms": [],
    "claim_text": "Benign prostatic hyperplasia (enlarged prostate) treatment: zinc 50 mg three times daily, flaxseed-oil EFAs 9 g/day, high-fiber diet with pumpkin seeds, 300,000 International Units vitamin A as beta-carotene/day, and selenium 250 mcg three times daily.",
-   "verbatim": "Benign prostatic hypertrophy is treated with zinc at 50 mg t.i.d., essential\nfatty acids as flaxseed oil at 9 grams per day, high fiber diets including\npumpkin seeds and alfalfa, 300,000 IU vitamin A as beta carotene per day,\nvitamin C to bowel tolerance, chlorophyll (best source is alfalfa), amino\nacids (glycine, alanine, and glutamic acid) at five grams each daily for 90\ndays, hydrogen peroxide (20 drops per oz. of aloe juice) at 1 oz. b.i.d.,\nunsweetened cranberry juice at two pints per day, herbs including saw\npalmetto (Serenoa serrulata), and selenium at 250 mcg t.i.d.",
+   "verbatim": "Benign prostatic hypertrophy is treated with zinc at 50 mg t.i.d., essential\nfatty acids as flaxseed oil at 9 grams per day, high fiber diets including\npumpkin seeds and alfalfa, 300,000 IU vitamin A as beta carotene per day",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -2712,7 +2771,7 @@
    ],
    "symptoms": [],
    "claim_text": "Wallach teaches that bladder and kidney stones are, ironically, caused by a calcium- and/or magnesium-deficient diet together with raging osteoporosis — the minerals that form the stones are pulled from your own bones. Prevention therefore means correcting that deficiency rather than avoiding calcium: he calls calcium at 2,000 mg and magnesium at 1,000 mg daily imperative to stop the calcium loss from the bones, and adds reducing meat intake (shifting toward the vegetarian scale) to bring the dietary calcium-to-phosphorus ratio back in order.",
-   "verbatim": "BLADDER STONES (kidney stones, cystic calculi) are ironically caused\nby a calcium and/or a magnesium deficient diet and when you\nhave raging osteoporosis. The minerals in the\n“stones” come from your own bones!!! Diagnosis may require an x-ray (a\nflat “plate” of the abdomen). Don’t forget the gonadal shield!!! The signal\nto think “stones” is blood in the urine (use the urine test sticks) and pain or\n“colic” that gets worse in the bladder or kidney area. “Stones” are\npotentially very painful and may require Tylenol-3 or morphine to cope\nwith the pain if they are obstructing a ureter (the tube from the kidney to the\nbladder).\nTreatment should include an anti-inflammatory medication such as licorice\n(Glycyrrhiza glabra) to reduce swelling at the “log jam” so the “stones” can\npass. If this isn’t strong enough, you may have to resort to prednisone for\nthree (3) days to accomplish this part of the therapy. Calcium and\nmagnesium at 2,000 mg and 1,000 mg is imperative to stop calcium loss\nfrom the bones. Reduce meat intake (go more toward the vegetarian scale\ntemporarily) to get your dietary calcium/phosphorus ratio in order.",
+   "verbatim": "BLADDER STONES (kidney stones, cystic calculi) are ironically caused\nby a calcium and/or a magnesium deficient diet and when you\nhave raging osteoporosis. The minerals in the\n“stones” come from your own bones",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -4121,7 +4180,7 @@
    ],
    "symptoms": [],
    "claim_text": "Dumping syndrome — why an acid intestine disables your enzymes. Dumping syndrome is the sudden emptying of stomach contents into the small intestine all at once, overloading the intestine's natural buffer system. That matters because of where the body's acid is meant to sit: the stomach is supposed to be strongly acidic, the small intestine is not, and pancreatic enzymes require an alkaline environment to function — so when unbuffered acid floods in, they stop working properly. Wallach notes it is a common side effect of stomach surgery, and that anemia and osteoporosis are its common secondary diseases, which is what you would expect from a stretch of gut that can no longer digest and absorb. His treatment works with the mechanism rather than against it: any of the classic bitters such as gentian, folic acid at 3 to 5 mg a day, pectin at half an ounce in water before meals, high animal-protein diets, six to eight small meals a day rather than a few large ones, and lying down for half an hour after eating.",
-   "verbatim": "DUMPING SYNDROME is the sudden “dumping” of stomach contents\ninto the small intestine all at once, thus overloading the natural intestinal\nbuffer system. The resulting acid condition in the intestine prevents proper\nfunctioning of pancreatic enzymes, which require an alkaline environment.\nDumping syndrome is a common side effect of stomach surgery. Anemia\nand osteoporosis are common secondary diseases of the dumping\nsyndrome.\nTreatment of the dumping syndrome should include any of the classic\n“bitters” (i.e. gentian, Gentiana lutea), folic acid at 3-5 mg/day, pectin at 1/2\noz. in water before meals, and high animal protein diets. Eat six to eight\nsmall meals per day and you should lay down for a half hour after meals.",
+   "verbatim": "DUMPING SYNDROME is the sudden “dumping” of stomach contents\ninto the small intestine all at once, thus overloading the natural intestinal\nbuffer system. The resulting acid condition in the intestine prevents proper\nfunctioning of pancreatic enzymes, which require an alkaline environment.\nDumping syndrome is a common side effect of stomach surgery. Anemia\nand osteoporosis are common secondary diseases of the dumping\nsyndrome.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -4281,14 +4340,12 @@
   {
    "id": "WAL-CLM-DDDL-000139",
    "kind": "definition",
-   "essentials": [
-    "zinc"
-   ],
+   "essentials": [],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach counts zinc among the foundational essential minerals — a nutrient the body cannot make and has to be supplied daily. The adult body holds only about 1.4 to 2.3 grams of it, stored mainly in the liver, pancreas, kidney, bone, and muscle, yet that small amount does outsized work: no fewer than 70 metalloenzymes — including carbonic anhydrase, alkaline phosphatase, and carboxypeptidase — require zinc as a cofactor before they can work at all. Zinc is also built into the RNA molecule (the 'zinc fingers') and is needed for cell division, DNA synthesis, growth, immunity, wound healing, taste and smell, and healthy skin, hair, and nails. Because it touches so many systems, Wallach ties a long list of deficiency signs and birth defects to a shortage of it, and he includes zinc as a daily essential in his Base Line supplement program.",
-   "verbatim": "There are 1.4 to 2.3 grams of Zn in the adult human. The liver, pancreas,\nkidney, bone, and skeletal muscles have the greatest reserves of Zn. Lesser\namounts are found in the eye, prostate gland, semen, skin, hair, fingernails,\nand toenails. There are no less than 70 metalloenzymes that require Zn as a\nfunctional cofactor. These include carbonic anhydrase, alkaline\nphosphatase, lactic dehydrogenase, and carboxypep-tidase. Zinc helps to\nbind enzymes to substrates by maintaining spatial and configurational\nrelationships. Some enzymes bind Zn so tightly that even during severe Zn\ndepletion they can still function.\nZinc participates in the metabolism of nucleic acids and the synthesis of\nproteins. Zinc is also an integral part of the RNA molecule itself where Zinc\nprovides the “metallic fingers” and participates in cell division and\nsynthesis of DNA.",
+   "verbatim": "There are no less than 70 metalloenzymes that require Zn as a\nfunctional cofactor.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -4296,7 +4353,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 601925
+    "char_offset": 602167
    },
    "dose": null,
    "tags": [
@@ -4318,9 +4375,7 @@
   {
    "id": "WAL-CLM-DDDL-000140",
    "kind": "definition",
-   "essentials": [
-    "zinc"
-   ],
+   "essentials": [],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -4815,7 +4870,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach lists calcium/magnesium deficiency, a poor calcium-to-phosphorus ratio, and osteoporosis as forms of malnutrition that can lead to fractures, right alongside outright trauma. His key point is preventive: good mineral status in your bones will prevent most 'spontaneous' fractures, compression fractures, and fractures from simple falls. He recommends the base line nutritional supplements — his Pig Arthritis Formula with calcium and magnesium (2,000 and 1,000 mg per day) plus digestive aids — as an almost sure guarantee against non-trauma fractures.",
-   "verbatim": "FRACTURES (broken bones) can result from malnutrition (i.e.\ncalcium/magnesium deficiency, improper calcium/phosphorus ratio,\nosteoporosis) and severe trauma (i.e. a blow during a fight, auto accident,\nfall, etc.). Good mineral status in your bones will prevent most types of\n“spontaneous” fractures, compression fractures, and fractures from simple\nfalls. Diagnosis of a fracture can be made by seeing a digit or limb at an\nabnormal angle, noticing severe pain at a specific place on the bone, and\nuse a vibrating tuning fork to touch the suspected fracture site because the\nvibrations will be painful if there is a fracture present. X-rays in an\nemergency room may be warranted to differentiate between a fracture and a\nsprain or strain.\nThe use of the base line nutritional supplements (Dr. Wallach’s Pig Arthritis\nFormula) including calcium and magnesium at 2,000 mg and 1,000 mg per\nday, plant derived colloidal minerals and digestive aids (i.e.\nbetaine HCl and pancreatic enzymes at 75-200 mg\nt.i.d. before meals) is an almost sure guarantee against nontrauma fractures\nespecially in post-menopause women.",
+   "verbatim": "FRACTURES (broken bones) can result from malnutrition (i.e.\ncalcium/magnesium deficiency, improper calcium/phosphorus ratio,\nosteoporosis) and severe trauma (i.e. a blow during a fight, auto accident,\nfall, etc.). Good mineral status in your bones will prevent most types of\n“spontaneous” fractures, compression fractures, and fractures from simple\nfalls.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -5019,7 +5074,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach breaks with the idea that acne is just a teenage hormone or hygiene problem: he calls it primarily the result of an essential fatty acid deficiency, made worse by eating too much saturated and damaged polyunsaturated fat — the kind in fried foods and margarine. His fix is to cut the fast food, supply the missing good fats (essential fatty acids at about 3% of daily calories, or 9 grams a day), and check for food allergies, rather than reaching first for antibiotics.",
-   "verbatim": "Acne is primarily the result of an essential\nfatty acid deficiency with a concurrent intake of too much saturated fat and\npolyunsaturated fatty acids (fried foods and margarine). Eliminate “fast”\nfoods and other sources of fat and sugar. Check out the probability of food\nallergies (i.e., wheat, milk, soy) as a contributing factor. Betaine HCl and\npancreatic enzymes are of considerable benefit. Essential fatty acids are a\nmust and should be consumed at the rate of 3 percent of your total daily\ncalorie consumption or supplemented at the rate of 9 grams per day in\ncapsule form.",
+   "verbatim": "Acne is primarily the result of an essential\nfatty acid deficiency with a concurrent intake of too much saturated fat and\npolyunsaturated fatty acids (fried foods and margarine).",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -5192,7 +5247,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach teaches that night blindness (xerophthalmia) is caused by a vitamin A deficiency, which can arise several ways. It can come from an outright dietary shortage, from fat-malabsorption syndromes (vitamin A is fat-soluble), or from a zinc deficiency that leaves the liver unable to convert carotene into vitamin A. Conditions such as cystic fibrosis, celiac disease, and food allergies that damage the intestine and block absorption of fat-soluble vitamins, as well as a lack of essential fatty acids, can also cause it. He treats night blindness very specifically with 25,000 to 300,000 IU of vitamin A per day as beta-carotene plus zinc at 15 to 50 mg three times a day.",
-   "verbatim": "NIGHT BLINDNESS (xerophthalmia) is caused by a vitamin A deficiency\nwhich can be overt dietary deficiency, fat malabsorption syndrome (vitamin\nA is fat soluble), zinc deficiency which results in poor conversion of\ncarotene to vitamin A by the liver, cystic fibrosis, celiac disease and various\nfood allergies resulting in intestinal changes that prevent absorption of fat\nsoluble vitamins (i.e. vitamin A, vitamin E, vitamin D and vitamin K), as\nwell as a deficiency of essential fatty acids. Symptoms of night blindness\ninclude delayed adaption or complete failure of adaption to darkness.\nTreatment of night blindness is very specific with 25,000-300,000 IU of\nvitamin A per day as beta-carotene and zinc at 15-50 mg t.i.d.",
+   "verbatim": "NIGHT BLINDNESS (xerophthalmia) is caused by a vitamin A deficiency\nwhich can be overt dietary deficiency, fat malabsorption syndrome (vitamin\nA is fat soluble), zinc deficiency which results in poor conversion of\ncarotene to vitamin A by the liver, cystic fibrosis, celiac disease and various\nfood allergies resulting in intestinal changes that prevent absorption of fat\nsoluble vitamins (i.e. vitamin A, vitamin E, vitamin D and vitamin K), as\nwell as a deficiency of essential fatty acids.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -6301,7 +6356,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach challenges the orthodox view that Menkes kinky hair syndrome is a genetic disease, describing it instead as a malabsorption problem in early infancy, such as celiac disease, that results in a copper deficiency along with other deficiencies. He notes it has long been known in veterinary medicine that copper deficiency causes 'kinky wool' disease. His treatment addresses the malabsorption first, avoiding wheat, cow's milk, and soy and adding digestive enzymes and betaine HCl, then gives copper IV at 200 ug/kg/day and copper orally at 1 to 2 mg per day after symptoms relieve.",
-   "verbatim": "MENKE’S KINKY HAIR SYNDROME is thought by the “orthodox”\npediatrician to be a genetic disease, but it appears to be a malabsorption\nproblem in early infancy (i.e. celiac disease) that results in a copper\ndeficiency (along with other deficiencies). It has long been known in the\nveterinary field that a copper deficiency causes “kinky wool” disease.\nRetarded growth, anemia, progressive brain degeneration, sparse brittle\nhair, loss of hair color, arterial aneurysms, and scurvy-like bone disease\n(ostosis) are characteristic. Hair analysis will show very low copper levels\nand blood will show a low copper and low ceruloplasmin.\nTreatment of Menke’s syndrome includes dealing with the malabsorption\nproblems (i.e. avoid wheat, cow’s milk, and soy), supplement with digestive\nenzymes and betaine HCl, give copper IV at 200 ug/kg/day, and give\ncopper orally at 1-2 mg per day after relief of symptoms.",
+   "verbatim": "MENKE’S KINKY HAIR SYNDROME is thought by the “orthodox”\npediatrician to be a genetic disease, but it appears to be a malabsorption\nproblem in early infancy (i.e. celiac disease) that results in a copper\ndeficiency (along with other deficiencies). It has long been known in the\nveterinary field that a copper deficiency causes “kinky wool” disease.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -6334,7 +6389,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Chromium's blood-sugar role runs through a specific molecule Wallach describes: the glucose tolerance factor, or GTF, a complex of trivalent chromium (chromium III), dinicotinic acid (a form of niacin), and glutathione. In that form chromium activates phosphoglucomutase and other enzymes that let the body process glucose — which is why he treats chromium, not insulin alone, as central to blood-sugar control. He notes the whole body holds only about 1.5 mg of it.",
-   "verbatim": "Chromium activates phosphoglucomutase and other enzymes and is\nclosely associated with GTF or glucose tolerance factor. GTF is a\ncombination of chromium III, dinicotinic acid, and glutathione. The\nreported plasma levels of chromium in humans over the past 20 years has\nranged from 0.075 to 13 ng/ml. Concentrations of chromium in human hair\nare ten times greater than in blood, making hair analysis a much more\naccurate view of chromium tissue stores and function in the human. There\nis 1.5 mg in the human body.",
+   "verbatim": "Chromium activates phosphoglucomutase and other enzymes and is\nclosely associated with GTF or glucose tolerance factor. GTF is a\ncombination of chromium III, dinicotinic acid, and glutathione.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -7600,6 +7655,40 @@
    "reviewed_by": null
   },
   {
+   "id": "WAL-CLM-DDDL-000239",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach describes an enterohepatic circulation - a direct intestine-to-liver loop - that recycles vitamin B12 from bile and other intestinal secretions. This recycling is why a B12 deficiency in vegans may not appear for five to ten years after they give up meat.",
+   "verbatim": "There is an enterohepatic (intestine direct to the\nliver) circulation of Vitamin B12 that recycles B12 from bile and other\nintestinal secretions which explains why B12 deficiency in vegans may not\nappear for five to ten years after giving up meat.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 510813
+   },
+   "dose": null,
+   "tags": [
+    "cobalt",
+    "b12",
+    "vegan",
+    "recycling",
+    "deficiency",
+    "mechanism"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-07-27T01:51:11+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
    "id": "WAL-CLM-DDDL-000240",
    "kind": "protocol",
    "essentials": [],
@@ -7805,9 +7894,7 @@
   {
    "id": "WAL-CLM-DDDL-000246",
    "kind": "definition",
-   "essentials": [
-    "phosphorus"
-   ],
+   "essentials": [],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -7907,9 +7994,7 @@
   {
    "id": "WAL-CLM-DDDL-000249",
    "kind": "dose",
-   "essentials": [
-    "phosphorus"
-   ],
+   "essentials": [],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -8332,6 +8417,41 @@
     "essential minerals",
     "chloride basics",
     "definition"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-07-27T02:00:13+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000262",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach teaches that chlorine (chloride) is essential to every living species for electrochemical and catalytic functions and that it activates numerous enzymes. It also serves as the basic raw material the stomach uses to manufacture stomach acid (HCl), which drives protein digestion by pepsin, activates intrinsic factor for vitamin B12 absorption, and enables the absorption of minerals. He notes that sodium chloride (NaCl), or common table salt, is the universal source of chloride ions for all living things.",
+   "verbatim": "Chlorine is essential for all living species’ electrochemical and catalytic\nfunctions, activates numerous enzymes, and is the basic raw material for\nour stomachs to make stomach acid (HCl) for protein digestion by pepsin,\nB12 absorption (intrinsic factor activation), and absorption of minerals.\nSodium chloride (NaCl) or salt is the universal source of chloride ions for\nall living things.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 506573
+   },
+   "dose": null,
+   "tags": [
+    "chloride",
+    "stomach acid",
+    "digestion",
+    "enzymes",
+    "electrolytes",
+    "mineral absorption",
+    "mechanism"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -9188,7 +9308,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Korsakoff's syndrome is a form of recent-memory loss that Wallach calls a \"false Alzheimer's disease\": the person can still perform detailed tasks they learned before the illness began, but can no longer record or store new memories or learn even the simplest new task. A telltale feature is confabulation — inventing imaginary experiences to fill in for memories that can't be recalled. Wallach traces it to a single vitamin B1 (thiamine) deficiency, usually caused by chronic alcoholism combined with a diet heavy in sugar and simple carbohydrates; it can also follow a blow to the head. Because it is a thiamine deficiency and not true Alzheimer's, he considers it reversible — patients are routinely misdiagnosed with Alzheimer's yet can be cured within a week once given megadoses of thiamine. His treatment centers on high-dose vitamin B1 (100 mg three times a day) along with lecithin, strict avoidance of alcohol and sugar, chromium and vanadium, betaine HCl and pancreatic enzymes, and other memory-supporting agents. When alcohol has actually damaged the brain tissue, the alcoholic form is called Wernicke-Korsakoff syndrome and is harder to treat.",
-   "verbatim": "KORSAKOFF’S SYNDROME (recent memory loss, false Alzheimer’s\nDisease) is characterized by an inability to record and store new memory.\nThe patient can perform detailed tasks learned before onset but cannot learn\nthe simplest of new tasks. This type of “amnesia” can result from a blow to\nthe head or be the result of chronic alcoholism and vitamin B1 deficiency\nassociated with an excess intake of simple carbohydrate and sugar.\nConfabulation or producing imaginary experiences for those that cannot be\nrecalled is a consistent feature of Korsakoff s syndrome. If the disease is the\nresult of a blow to the head, there is a good chance of a gradual recovery; if\nthe brain tissue has been damaged by alcoholism (Wernecke-Korsakoff s\nSyndrome) or chronic vitamin B1 deficiency, the process may be difficult to\ntreat.\nTreatment of Korsakoff s syndrome includes IV chelation, hydrogen\nperoxide IV, vitamin B1 at 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,\navoidance of alcohol and sugar, chromium and vanadium at 50-200 mcg\nt.i.d., betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals,\nhydergine at 4.5-9 mg/day,",
+   "verbatim": "KORSAKOFF’S SYNDROME (recent memory loss, false Alzheimer’s\nDisease) is characterized by an inability to record and store new memory.\nThe patient can perform detailed tasks learned before onset but cannot learn\nthe simplest of new tasks.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -9359,7 +9479,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach caps his drug protocol for Korsakoff's syndrome — IV chelation and IV hydrogen peroxide, vitamin B1 at 100 mg three times a day, lecithin, chromium and vanadium, betaine HCl with pancreatic enzymes, and the memory nootropics hydergine, vasopressin nasal spray, centrophenoxine and piracetam — with a real-world result: he says this is the exact program used to restore the memory of Princess Diana's bodyguard. He offers it as evidence that the recent-memory loss he calls a 'false Alzheimer's' is treatable rather than permanent.",
-   "verbatim": "Treatment of Korsakoff s syndrome includes IV chelation, hydrogen\nperoxide IV, vitamin B1 at 100 mg t.i.d., lecithin at 2,500 mg. t.i.d.,\navoidance of alcohol and sugar, chromium and vanadium at 50-200 mcg\nt.i.d., betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before meals,\nhydergine at 4.5-9 mg/day, vasopressin (Diapid) at 12-16 units per day as a\nnasal spray, centrophenoxine at 4.4-8.0 gm per day, and piracetam\n(Dinagen) at 1.6-4.8 gm per day. This is the drug treatment program used to\nrestore Princess Di’s bodyguard’s memory.",
+   "verbatim": "centrophenoxine at 4.4-8.0 gm per day, and piracetam\n(Dinagen) at 1.6-4.8 gm per day. This is the drug treatment program used to\nrestore Princess Di’s bodyguard’s memory.",
    "locator": {
     "book": "dddl-3e-2011",
     "scheme": "chapter_page",
@@ -9367,7 +9487,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 830514
+    "char_offset": 830886
    },
    "dose": null,
    "tags": [

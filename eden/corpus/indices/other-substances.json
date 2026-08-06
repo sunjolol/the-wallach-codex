@@ -3160,11 +3160,11 @@
         "WAL-CLM-LETS-000051"
       ],
       "mechanism": [
-        "WAL-CLM-RARE-000133"
+        "WAL-CLM-RARE-000133",
+        "WAL-CLM-RARE-000134"
       ],
       "toxicity_sign": [
-        "WAL-CLM-EPIGEN-000082",
-        "WAL-CLM-IMMORT-000123"
+        "WAL-CLM-EPIGEN-000082"
       ]
     },
     "conditions_treated": [
@@ -3172,14 +3172,12 @@
       "dental_fluorosis",
       "liver_cancer",
       "liver_disease",
-      "oral_cancer",
       "osteoporosis",
       "osteosarcoma",
       "thyroid_cancer"
     ],
     "books_cited": [
       "epigenetics",
-      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -4510,7 +4508,7 @@
         "WAL-CLM-RARE-000214"
       ],
       "toxicity_sign": [
-        "WAL-CLM-RARE-000398"
+        "WAL-CLM-RARE-000318"
       ]
     },
     "conditions_treated": [
@@ -4816,7 +4814,7 @@
         "WAL-CLM-HELLS-000091"
       ],
       "protocol": [
-        "WAL-CLM-HELLS-000015"
+        "WAL-CLM-HELLS-000090"
       ]
     },
     "conditions_treated": [],
@@ -5338,7 +5336,7 @@
         "WAL-CLM-HELLS-000091"
       ],
       "protocol": [
-        "WAL-CLM-HELLS-000015"
+        "WAL-CLM-HELLS-000090"
       ]
     },
     "conditions_treated": [],

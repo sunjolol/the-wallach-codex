@@ -19,7 +19,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 81400
+    "char_offset": 81404
    },
    "dose": null,
    "tags": [
@@ -49,7 +49,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 80894
+    "char_offset": 80898
    },
    "dose": null,
    "tags": [
@@ -83,7 +83,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 82616
+    "char_offset": 82620
    },
    "dose": null,
    "tags": [
@@ -305,7 +305,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 402169
+    "char_offset": 402191
    },
    "dose": null,
    "tags": [
@@ -335,7 +335,7 @@
     "reduced_immune_status"
    ],
    "claim_text": "Germanium deficiency, Wallach writes, typically shows as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer. He connects these to germanium's job as an oxygen carrier at the cellular level — when cells cannot get enough oxygen, immunity, joints, bone, and energy all suffer, and cancer (which he says dislikes high-oxygen conditions) gets a foothold. He recommends 20 to 30 mg a day to maintain status.",
-   "verbatim": "Deficiencies of germanium are typified\nby severely reduced immune status, arthritis, osteoporosis, low energy and cancer.\n\nTwenty to 30 mg per day is the recommended maintenace dose for germanium;\n50 to 100 mg per day are commonly used\nwhen an individual has a serious illness that\nrequires an increased oxygen level in the\nbody.",
+   "verbatim": "Deficiencies of germanium are typified\nby severely reduced immune status, arthritis, osteoporosis, low energy and cancer.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -343,7 +343,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 810659
+    "char_offset": 810759
    },
    "dose": null,
    "tags": [
@@ -366,7 +366,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach gives a germanium maintenance dose of 20-30 mg/day; 50-100 mg/day is commonly used when an individual has a serious illness that requires an increased oxygen level in the body.",
-   "verbatim": "Twenty to 30 mg per day is the recommended maintenace dose for germanium;\n50 to 100 mg per day are commonly used\nwhen an individual has a serious illness that\nrequires an increased oxygen level in the\nbody.",
+   "verbatim": "50 to 100 mg per day are commonly used\nwhen an individual has a serious illness that\nrequires an increased oxygen level in the\nbody.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -374,7 +374,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 810782
+    "char_offset": 810958
    },
    "dose": {
     "amount": "50-100",
@@ -412,7 +412,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 810423
+    "char_offset": 810523
    },
    "dose": null,
    "tags": [
@@ -445,7 +445,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 765479
+    "char_offset": 765557
    },
    "dose": {
     "amount": "250-400",
@@ -488,7 +488,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 392549
+    "char_offset": 392571
    },
    "dose": null,
    "tags": [
@@ -521,7 +521,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 393009
+    "char_offset": 393031
    },
    "dose": null,
    "tags": [
@@ -552,7 +552,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473698
+    "char_offset": 473722
    },
    "dose": null,
    "tags": [
@@ -582,7 +582,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 474454
+    "char_offset": 474478
    },
    "dose": null,
    "tags": [
@@ -803,7 +803,7 @@
     "page": "19",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 80584
+    "char_offset": 80588
    },
    "dose": null,
    "tags": [
@@ -837,7 +837,7 @@
     "page": "19",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 81573
+    "char_offset": 81577
    },
    "dose": null,
    "tags": [
@@ -872,7 +872,7 @@
     "page": "20",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 82663
+    "char_offset": 82667
    },
    "dose": null,
    "tags": [
@@ -904,7 +904,7 @@
     "page": "25",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 100755
+    "char_offset": 100762
    },
    "dose": null,
    "tags": [
@@ -939,7 +939,7 @@
     "page": "25",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 99922
+    "char_offset": 99929
    },
    "dose": null,
    "tags": [
@@ -970,7 +970,7 @@
     "page": "37",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140694
+    "char_offset": 140705
    },
    "dose": null,
    "tags": [
@@ -1001,7 +1001,7 @@
     "page": "37",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 141453
+    "char_offset": 141464
    },
    "dose": null,
    "tags": [
@@ -1032,7 +1032,7 @@
     "page": "38",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 145291
+    "char_offset": 145302
    },
    "dose": null,
    "tags": [
@@ -1063,7 +1063,7 @@
     "page": "44",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 161593
+    "char_offset": 161606
    },
    "dose": null,
    "tags": [
@@ -1094,7 +1094,7 @@
     "page": "52",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 191383
+    "char_offset": 191396
    },
    "dose": null,
    "tags": [
@@ -1128,7 +1128,7 @@
     "page": "54",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 195369
+    "char_offset": 195382
    },
    "dose": null,
    "tags": [
@@ -1162,7 +1162,7 @@
     "page": "54",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196191
+    "char_offset": 196204
    },
    "dose": null,
    "tags": [
@@ -1198,7 +1198,7 @@
     "page": "56",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 202505
+    "char_offset": 202518
    },
    "dose": null,
    "tags": [
@@ -1232,7 +1232,7 @@
     "page": "57",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 205354
+    "char_offset": 205367
    },
    "dose": null,
    "tags": [
@@ -1266,7 +1266,7 @@
     "page": "57",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 206000
+    "char_offset": 206013
    },
    "dose": null,
    "tags": [
@@ -1300,7 +1300,7 @@
     "page": "57",
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 206134
+    "char_offset": 206147
    },
    "dose": null,
    "tags": [
@@ -1337,7 +1337,7 @@
     "page": 97,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 311529
+    "char_offset": 311543
    },
    "dose": null,
    "tags": [
@@ -1377,7 +1377,7 @@
     "page": 103,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 321879
+    "char_offset": 321895
    },
    "dose": null,
    "tags": [
@@ -1412,7 +1412,7 @@
     "page": 99,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 315984
+    "char_offset": 315998
    },
    "dose": null,
    "tags": [
@@ -1448,7 +1448,7 @@
     "page": 141,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 408072
+    "char_offset": 408094
    },
    "dose": null,
    "tags": [
@@ -1485,7 +1485,7 @@
     "page": 141,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 408807
+    "char_offset": 408829
    },
    "dose": null,
    "tags": [
@@ -1519,7 +1519,7 @@
     "page": 141,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 410536
+    "char_offset": 410558
    },
    "dose": null,
    "tags": [
@@ -1553,7 +1553,7 @@
     "page": 141,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 409040
+    "char_offset": 409062
    },
    "dose": null,
    "tags": [
@@ -1589,7 +1589,7 @@
     "page": 152,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 430538
+    "char_offset": 430560
    },
    "dose": {
     "amount": 1,
@@ -1632,7 +1632,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 423019
+    "char_offset": 423041
    },
    "dose": null,
    "tags": [
@@ -1669,7 +1669,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 431350
+    "char_offset": 431372
    },
    "dose": null,
    "tags": [
@@ -1705,7 +1705,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 433897
+    "char_offset": 433919
    },
    "dose": null,
    "tags": [
@@ -1737,7 +1737,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 457550
+    "char_offset": 457572
    },
    "dose": null,
    "tags": [
@@ -1768,7 +1768,7 @@
     "page": 163,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 460087
+    "char_offset": 460109
    },
    "dose": null,
    "tags": [
@@ -1799,7 +1799,7 @@
     "page": 163,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 462254
+    "char_offset": 462276
    },
    "dose": null,
    "tags": [
@@ -1831,7 +1831,7 @@
     "page": 165,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 465049
+    "char_offset": 465071
    },
    "dose": null,
    "tags": [
@@ -1862,7 +1862,7 @@
     "page": 167,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 469878
+    "char_offset": 469900
    },
    "dose": null,
    "tags": [
@@ -1893,7 +1893,7 @@
     "page": 171,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 474013
+    "char_offset": 474037
    },
    "dose": null,
    "tags": [
@@ -1925,7 +1925,7 @@
     "page": 171,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 474794
+    "char_offset": 474818
    },
    "dose": null,
    "tags": [
@@ -1956,7 +1956,7 @@
     "page": 212,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 561645
+    "char_offset": 561677
    },
    "dose": null,
    "tags": [
@@ -1993,7 +1993,7 @@
     "page": 212,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 562369
+    "char_offset": 562401
    },
    "dose": null,
    "tags": [
@@ -2028,7 +2028,7 @@
     "page": 213,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 562593
+    "char_offset": 562625
    },
    "dose": null,
    "tags": [
@@ -2061,7 +2061,7 @@
     "page": 213,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 562734
+    "char_offset": 562766
    },
    "dose": null,
    "tags": [
@@ -2098,7 +2098,7 @@
     "page": 186,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 506152
+    "char_offset": 506176
    },
    "dose": null,
    "tags": [
@@ -2130,7 +2130,7 @@
     "page": 215,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 564607
+    "char_offset": 564639
    },
    "dose": null,
    "tags": [
@@ -2162,7 +2162,7 @@
     "page": 226,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 586393
+    "char_offset": 586427
    },
    "dose": null,
    "tags": [
@@ -2195,7 +2195,7 @@
     "page": 226,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 587796
+    "char_offset": 587830
    },
    "dose": null,
    "tags": [
@@ -2227,7 +2227,7 @@
     "page": 226,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 588052
+    "char_offset": 588086
    },
    "dose": null,
    "tags": [
@@ -2259,7 +2259,7 @@
     "page": 226,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 588881
+    "char_offset": 588915
    },
    "dose": null,
    "tags": [
@@ -2294,7 +2294,7 @@
     "page": 251,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 646519
+    "char_offset": 646552
    },
    "dose": null,
    "tags": [
@@ -2331,7 +2331,7 @@
     "page": 251,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 646884
+    "char_offset": 646917
    },
    "dose": null,
    "tags": [
@@ -2368,7 +2368,7 @@
     "page": 252,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 648724
+    "char_offset": 648757
    },
    "dose": null,
    "tags": [
@@ -2402,7 +2402,7 @@
     "page": 253,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 651791
+    "char_offset": 651824
    },
    "dose": null,
    "tags": [
@@ -2439,7 +2439,7 @@
     "page": 253,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 652781
+    "char_offset": 652814
    },
    "dose": null,
    "tags": [
@@ -2480,7 +2480,7 @@
     "page": 270,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 681302
+    "char_offset": 681341
    },
    "dose": null,
    "tags": [
@@ -2516,7 +2516,7 @@
     "page": 270,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 681694
+    "char_offset": 681733
    },
    "dose": null,
    "tags": [
@@ -2547,7 +2547,7 @@
     "page": 270,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 681950
+    "char_offset": 681989
    },
    "dose": null,
    "tags": [
@@ -2584,7 +2584,7 @@
     "page": 272,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 689429
+    "char_offset": 689468
    },
    "dose": null,
    "tags": [
@@ -2615,7 +2615,7 @@
     "page": 272,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 689730
+    "char_offset": 689769
    },
    "dose": null,
    "tags": [
@@ -2651,7 +2651,7 @@
     "page": 270,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 684348
+    "char_offset": 684387
    },
    "dose": null,
    "tags": [
@@ -2682,7 +2682,7 @@
     "page": 274,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 696237
+    "char_offset": 696280
    },
    "dose": null,
    "tags": [
@@ -2724,7 +2724,7 @@
     "page": 275,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 699290
+    "char_offset": 699333
    },
    "dose": null,
    "tags": [
@@ -2765,7 +2765,7 @@
     "page": 275,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 699842
+    "char_offset": 699885
    },
    "dose": null,
    "tags": [
@@ -2804,7 +2804,7 @@
     "page": 275,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 700502
+    "char_offset": 700545
    },
    "dose": null,
    "tags": [
@@ -2839,7 +2839,7 @@
     "page": 276,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 700821
+    "char_offset": 700864
    },
    "dose": null,
    "tags": [
@@ -2872,7 +2872,7 @@
     "page": 276,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 701400
+    "char_offset": 701443
    },
    "dose": null,
    "tags": [
@@ -2918,7 +2918,7 @@
     "page": 276,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 703572
+    "char_offset": 703615
    },
    "dose": null,
    "tags": [
@@ -2954,7 +2954,7 @@
     "page": 279,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 705114
+    "char_offset": 705157
    },
    "dose": null,
    "tags": [
@@ -2986,7 +2986,7 @@
     "page": 279,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 706106
+    "char_offset": 706149
    },
    "dose": null,
    "tags": [
@@ -3022,7 +3022,7 @@
     "page": 279,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 707180
+    "char_offset": 707223
    },
    "dose": null,
    "tags": [
@@ -3058,7 +3058,7 @@
     "page": 282,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 711473
+    "char_offset": 711516
    },
    "dose": {
     "amount": 400,
@@ -3099,7 +3099,7 @@
     "page": 282,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 712459
+    "char_offset": 712502
    },
    "dose": null,
    "tags": [
@@ -3134,7 +3134,7 @@
     "page": 281,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 710845
+    "char_offset": 710888
    },
    "dose": null,
    "tags": [
@@ -3168,7 +3168,7 @@
     "page": 282,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 713255
+    "char_offset": 713298
    },
    "dose": null,
    "tags": [
@@ -3204,7 +3204,7 @@
     "page": 285,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 720375
+    "char_offset": 720418
    },
    "dose": null,
    "tags": [
@@ -3239,7 +3239,7 @@
     "page": 285,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 721254
+    "char_offset": 721297
    },
    "dose": null,
    "tags": [
@@ -3275,7 +3275,7 @@
     "page": 287,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 722784
+    "char_offset": 722827
    },
    "dose": {
     "amount": "10/25/50",
@@ -3316,7 +3316,7 @@
     "page": 287,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 723157
+    "char_offset": 723200
    },
    "dose": null,
    "tags": [
@@ -3352,7 +3352,7 @@
     "page": 287,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 723918
+    "char_offset": 723963
    },
    "dose": null,
    "tags": [
@@ -3389,7 +3389,7 @@
     "page": 287,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 725156
+    "char_offset": 725201
    },
    "dose": null,
    "tags": [
@@ -3424,7 +3424,7 @@
     "page": 288,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 725922
+    "char_offset": 725967
    },
    "dose": null,
    "tags": [
@@ -3458,7 +3458,7 @@
     "page": 288,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 726713
+    "char_offset": 726758
    },
    "dose": null,
    "tags": [
@@ -3493,7 +3493,7 @@
     "page": 288,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 728005
+    "char_offset": 728050
    },
    "dose": null,
    "tags": [
@@ -3528,7 +3528,7 @@
     "page": 288,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 728568
+    "char_offset": 728613
    },
    "dose": null,
    "tags": [
@@ -3562,7 +3562,7 @@
     "page": 293,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 738704
+    "char_offset": 738751
    },
    "dose": null,
    "tags": [
@@ -3620,7 +3620,7 @@
     "page": 296,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 744658
+    "char_offset": 744707
    },
    "dose": null,
    "tags": [
@@ -3655,7 +3655,7 @@
     "page": 298,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 747955
+    "char_offset": 748006
    },
    "dose": null,
    "tags": [
@@ -3684,7 +3684,7 @@
    ],
    "symptoms": [],
    "claim_text": "Wallach reports that McCarron and colleagues theorized in 1980 that chronic calcium deficiency leads to hypertension — a theory supported by more than 30 subsequent studies — and that serum ionized calcium runs consistently lower in people with untreated high blood pressure. In a four-year study of 58,218 nurses, hypertension was more likely in women taking in less than 800 mg of calcium per day.",
-   "verbatim": "In 1980, McCarron, et al, theorized that\nchronic calcium deficiency probably led to\nhypertension. More than 30 subsequent\nstudies supported the original theory of\ncalcium deficiency as the cause of\nhypertension, additionally recent studies\nhave shown that serum ionized calcium is\nconsistently lower in humans with untreated hypertension. In a recent review\narticle, Sowers, et al, noted that the association of calcium intake and blood pressure is most clear in people with daily calcium intakes of less than 500 mg a day.\n\nThe phenomenon of salt sensitivity consists of a rise in blood pressure and sustained increased in urinary loss of calcium\nin response to salt consumption. Among\nblack and elderly whites with essential hypertension, restricted intakes of calcium\nand potassium, rather than elevated salt\nconsumption is responsible for salt sensitivity. In a four year study of 58,218 nurses,\nhypertension was more likely to develop in\nfemales who took in less than 800 mg of\ncalcium per day.",
+   "verbatim": "In 1980, McCarron, et al, theorized that\nchronic calcium deficiency probably led to\nhypertension. More than 30 subsequent\nstudies supported the original theory of\ncalcium deficiency as the cause of\nhypertension",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -3692,7 +3692,7 @@
     "page": 298,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 749621
+    "char_offset": 749676
    },
    "dose": null,
    "tags": [
@@ -3719,7 +3719,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach cites a 19-year observational study of 1,954 men in which the incidence of colorectal cancer increased 300% as calcium intake decreased from 160 to 24.9 mg per 100 kcal of diet.",
-   "verbatim": "In a 19 year observational study of\n1,954 men, 49 cases of colorectal cancer\nwere identified. Analysis of the results\nshowed very clearly that the incidence of\ncolorectal cancer increased 300 % as the\ncalcium intake decreased from 160 mg/\n100 kcal to 24,9 mg/100 kcal of diet.",
+   "verbatim": "showed very clearly that the incidence of\ncolorectal cancer increased 300 % as the\ncalcium intake decreased",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -3727,7 +3727,7 @@
     "page": 299,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 750622
+    "char_offset": 750805
    },
    "dose": null,
    "tags": [
@@ -3762,7 +3762,7 @@
     "page": 291,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 733205
+    "char_offset": 733250
    },
    "dose": null,
    "tags": [
@@ -3798,7 +3798,7 @@
     "page": 291,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 733690
+    "char_offset": 733735
    },
    "dose": null,
    "tags": [
@@ -3837,7 +3837,7 @@
     "page": 291,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 733933
+    "char_offset": 733978
    },
    "dose": null,
    "tags": [
@@ -3873,7 +3873,7 @@
     "page": 304,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 758471
+    "char_offset": 758549
    },
    "dose": null,
    "tags": [
@@ -3908,7 +3908,7 @@
     "page": 304,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 758984
+    "char_offset": 759062
    },
    "dose": null,
    "tags": [
@@ -3944,7 +3944,7 @@
     "page": 305,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 760356
+    "char_offset": 760434
    },
    "dose": null,
    "tags": [
@@ -3983,7 +3983,7 @@
     "page": 306,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 765095
+    "char_offset": 765173
    },
    "dose": null,
    "tags": [
@@ -4041,7 +4041,7 @@
     "page": 306,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 767160
+    "char_offset": 767238
    },
    "dose": null,
    "tags": [
@@ -4079,7 +4079,7 @@
     "page": 307,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 767780
+    "char_offset": 767858
    },
    "dose": null,
    "tags": [
@@ -4116,7 +4116,7 @@
     "page": 307,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 768662
+    "char_offset": 768740
    },
    "dose": null,
    "tags": [
@@ -4151,7 +4151,7 @@
     "page": 315,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 778192
+    "char_offset": 778270
    },
    "dose": null,
    "tags": [
@@ -4188,7 +4188,7 @@
     "page": 315,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 779415
+    "char_offset": 779493
    },
    "dose": null,
    "tags": [
@@ -4223,7 +4223,7 @@
     "page": 316,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 781441
+    "char_offset": 781519
    },
    "dose": null,
    "tags": [
@@ -4269,7 +4269,7 @@
     "page": 315,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 777258
+    "char_offset": 777336
    },
    "dose": null,
    "tags": [
@@ -4308,7 +4308,7 @@
     "page": 315,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 779026
+    "char_offset": 779104
    },
    "dose": null,
    "tags": [
@@ -4343,7 +4343,7 @@
     "page": 314,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 775269
+    "char_offset": 775347
    },
    "dose": null,
    "tags": [
@@ -4381,7 +4381,7 @@
     "page": 314,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 776694
+    "char_offset": 776772
    },
    "dose": null,
    "tags": [
@@ -4453,7 +4453,7 @@
     "page": 114,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 356958
+    "char_offset": 356976
    },
    "dose": null,
    "tags": [
@@ -4496,7 +4496,7 @@
     "page": 275,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 699339
+    "char_offset": 699382
    },
    "dose": null,
    "tags": [
@@ -4523,7 +4523,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach states iron is essential to all land animals (first recognized as an essential nutrient by Boussingault in the 1860s). A healthy adult holds 3 to 5 grams of iron — 60 to 70 percent functional (built into hemoglobin, the muscle oxygen-store myoglobin, and respiratory enzymes) and 30 to 40 percent stored as ferritin and hemosiderin in bone marrow and liver. Iron's functions: enzyme/metalloenzyme cofactor, the respiratory pigment hemoglobin (iron is to hemoglobin what magnesium is to chlorophyll), and electron transfer for the utilization of oxygen.",
-   "verbatim": "Boussingault in the 1860's was the first\nto regard iron as an essential nutrient for\nanimals. During the 1920's an animal\nmodel for iron deficiency research was created by feeding rats on an exclusive milk\ndiet.\n\nIna healthy adult human there is 3 to 5\ngms of iron. The newborn infant has nearly\ndouble the amount of iron per kg than\nadults. Sixty to 70 percent of tissue iron is\nclassed as essential or functional iron, and\n30 to 40 percent as storage iron. The essential iron is found as an integral part of\nhemoglobin, myoglobin (muscle oxygen\nstoring pigments - particularly rich in deep\ndiving animals such as whales, walrus,\nseals, etc.) and respiratory enzymes involved with intracellular oxidation-reduction processes.\n\nFunctions of iron include cofactor and\nactivator of enzymes and metallo enzymes;\nrespiratory pigments (hemoglobin - iron is\nto hemoglobin what Mg is to chlorophyll)\nand electron transfer for utilization of oxygen.\n\nIron is stored in bone marrow and liver (i.e.- hemosiderin and ferritin).",
+   "verbatim": "Functions of iron include cofactor and\nactivator of enzymes and metallo enzymes;\nrespiratory pigments (hemoglobin - iron is\nto hemoglobin what Mg is to chlorophyll)",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -4531,7 +4531,7 @@
     "page": 329,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 799119
+    "char_offset": 799937
    },
    "dose": null,
    "tags": [
@@ -4558,7 +4558,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach reports heme iron from meat is 10 percent available for absorption, whereas iron from fresh plant sources is only 1 percent available because of phytates. Absorption occurs primarily in the duodenum where the environment is still acid; stomach hydrochloric acid is required for optimal iron absorption. The Recommended Dietary Allowance of 18 mg per day as metallic iron is very low for a vegan eating high-fiber, high-phytate plant material.",
-   "verbatim": "Heme iron from meat is 10 percent available for absorption while iron from fresh plant sources are only one percent available because of phytates. Absorption takes place primarily in the duodenum where the intestinal environment is still acid.\n\nExperimental evidence shows very\nclearly that “pica” is a specific sign of iron\ndeficiency. Pica can drive children and\nadults to eat ice (pagophagia), dirt\n(geophagia) or lead paint.\n\nIron deficiency results from pregnancy,\nmenstruation, chronic infections,\nhypochlorhydria (low stomach acid from\nsalt restricted diets), chronic diarrhea,\nchronic bleeding (i.e.- cancer, ulcers, parasites, etc.) and impaired absorption (i.e.-\nhigh fat diets, celiac disease, etc.).\n\nSymptoms of iron deficiency include listlessness, fatigue, heart palpitations on exertion, reduced cognation, memory deficits,\nsore tongue, angular stomatitis, dysphagia,\nhypochromic microcytic anemia.\n\nStomach hydrochloric acid is required\nfor optimal absorption of iron, ascorbic acid\nincreases absorption of iron, clays and\nphytates decrease absorption of iron. The\nRDA of 18 mg per day as metallic iron is\nvery low if one is a vegan eating high fiber,",
+   "verbatim": "Heme iron from meat is 10 percent available for absorption while iron from fresh plant sources are only one percent available because of phytates.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -4566,7 +4566,7 @@
     "page": 329,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 800136
+    "char_offset": 800228
    },
    "dose": null,
    "tags": [
@@ -4604,7 +4604,7 @@
     "page": 330,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 802047
+    "char_offset": 802145
    },
    "dose": null,
    "tags": [
@@ -4633,7 +4633,7 @@
    ],
    "symptoms": [],
    "claim_text": "Wallach gives fluoride's toxicity thresholds: clinical toxicity appears as dental fluorosis at fluoride concentrations of 2–7 ppm and osteosclerosis at 8–20 ppm, with chronic systemic toxicity when fluoride levels reach 20–80 mg per day for years. (About 10,000 American towns serving 100 million people fluoridate water at 1 mg/L, reportedly cutting dental cavities 60–70%, while some western states have a natural fluoride excess of 10–45 ppm that mottles children's teeth.)",
-   "verbatim": "Clinical toxicity is observed as dental\nfluorosis at fluoride concentrations of 2 to 7\nppm and osteosclerosis at 8 to 20 ppm;\nchronic systemic toxicity appears when the\nfluoride levels reach 20 to 80 mg per day\nfor years.\n\nApproximately 10,000 American tow:\nand cities serving 100 million people have\nadded fluoride to their drinking water at the\nrate of 1 mg /L which has reportedly reduced dental caries by 60 to 70 percent. In\ncertain western states in the United States,\nthere is an excess of fluoride, reaching levels of 10 to 45 ppm with resultant mottling\nof teeth in children.",
+   "verbatim": "Clinical toxicity is observed as dental\nfluorosis at fluoride concentrations of 2 to 7\nppm and osteosclerosis at 8 to 20 ppm;\nchronic systemic toxicity appears when the\nfluoride levels reach 20 to 80 mg per day\nfor years.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -4641,7 +4641,7 @@
     "page": 329,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 796941
+    "char_offset": 797019
    },
    "dose": null,
    "tags": [
@@ -4650,6 +4650,47 @@
     "dental-fluorosis",
     "osteosclerosis",
     "fluoridation"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-25T07:23:34+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000134",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [
+    "fluoride"
+   ],
+   "conditions": [
+    "cancer",
+    "osteosarcoma",
+    "thyroid_cancer",
+    "liver_cancer",
+    "liver_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach cites the cancer evidence against fluoridation: epidemiological studies by Yiamouyiannis and Burk (1977) prompted congressional hearings over a charge of 10,000 excess cancer deaths from fluoridated water, leading to mandated animal studies. The 1990 National Toxicology Program results showed increased precancerous oral-mucosa cells, oral squamous-cell carcinoma, a rare osteosarcoma at double the rate in males versus females, and increased thyroid follicular-cell tumors and liver cancer.",
+   "verbatim": "there was an increase in cancers of the oral mucus membranes (squamous cell carcinoma); a rare form of osteosarcoma appeared at double the rate in males as females; and there was an increase in thyroid follicular cell tumors and liver cancer (hepatocholangiocarcinoma).",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 329,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 798336
+   },
+   "dose": null,
+   "tags": [
+    "fluoride",
+    "cancer",
+    "osteosarcoma",
+    "national-toxicology-program",
+    "yiamouyiannis-burk"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -4679,7 +4720,7 @@
     "page": 335,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 812076
+    "char_offset": 812178
    },
    "dose": null,
    "tags": [
@@ -4717,7 +4758,7 @@
     "page": 336,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 814049
+    "char_offset": 814151
    },
    "dose": null,
    "tags": [
@@ -4754,7 +4795,7 @@
     "page": 337,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 816209
+    "char_offset": 816311
    },
    "dose": null,
    "tags": [
@@ -4789,7 +4830,7 @@
     "page": 337,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 817097
+    "char_offset": 817199
    },
    "dose": null,
    "tags": [
@@ -4824,7 +4865,7 @@
     "page": 337,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 817638
+    "char_offset": 817740
    },
    "dose": null,
    "tags": [
@@ -4859,7 +4900,7 @@
     "page": 327,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 792151
+    "char_offset": 792229
    },
    "dose": null,
    "tags": [
@@ -4894,7 +4935,7 @@
     "page": 327,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 790690
+    "char_offset": 790768
    },
    "dose": null,
    "tags": [
@@ -4929,7 +4970,7 @@
     "page": 327,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 791120
+    "char_offset": 791198
    },
    "dose": null,
    "tags": [
@@ -4964,7 +5005,7 @@
     "page": 304,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 758081
+    "char_offset": 758159
    },
    "dose": null,
    "tags": [
@@ -4998,7 +5039,7 @@
     "page": 341,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 825450
+    "char_offset": 825552
    },
    "dose": null,
    "tags": [
@@ -5031,7 +5072,7 @@
     "page": 343,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 826824
+    "char_offset": 826926
    },
    "dose": null,
    "tags": [
@@ -5064,7 +5105,7 @@
     "page": 341,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 825819
+    "char_offset": 825921
    },
    "dose": null,
    "tags": [
@@ -5075,6 +5116,42 @@
     "metallic"
    ],
    "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-25T14:15:07+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000147",
+   "kind": "mechanism",
+   "essentials": [
+    "iodine"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "goiter"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach observes that goiter develops in Japanese living along the sea coast despite high daily iodine intake; in a feeding study, subjects fed Chinese cabbage, turnips, buckwheat, noodles, iodine, or soybean developed goiter in every group except the one fed seaweed.",
+   "verbatim": "Goiter develops in Japanese living along the sea coast despite high daily iodine consumption.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 341,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 826126
+   },
+   "dose": null,
+   "tags": [
+    "iodine",
+    "goiter",
+    "seaweed",
+    "japan"
+   ],
+   "confidence": "medium",
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-06-25T14:15:07+00:00",
@@ -5101,7 +5178,7 @@
     "page": 343,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 827587
+    "char_offset": 827689
    },
    "dose": null,
    "tags": [
@@ -5138,7 +5215,7 @@
     "page": 343,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 826281
+    "char_offset": 826383
    },
    "dose": null,
    "tags": [
@@ -5187,7 +5264,7 @@
     "page": 343,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 826995
+    "char_offset": 827097
    },
    "dose": null,
    "tags": [
@@ -5236,7 +5313,7 @@
     "page": 343,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 827310
+    "char_offset": 827412
    },
    "dose": null,
    "tags": [
@@ -5270,7 +5347,7 @@
     "page": 343,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 828478
+    "char_offset": 828580
    },
    "dose": null,
    "tags": [
@@ -5306,7 +5383,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 828824
+    "char_offset": 828926
    },
    "dose": null,
    "tags": [
@@ -5341,7 +5418,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 829041
+    "char_offset": 829143
    },
    "dose": null,
    "tags": [
@@ -5349,6 +5426,46 @@
     "daily-intake",
     "excretion",
     "absorption"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-25T14:49:09+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000155",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "potassium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "hypokalemia",
+    "cardiac_failure"
+   ],
+   "symptoms": [
+    "muscular_weakness",
+    "mental_apathy"
+   ],
+   "claim_text": "Potassium deficiency shows up first as muscular weakness and mental apathy, Wallach says, but its gravest form is hypokalemic cardiac failure — the heart failing for lack of potassium. He stresses that potassium is barely stored in the body (roughly 90% of what you eat is excreted in the urine), so it needs a large daily intake of about 5,000 mg, and losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
+   "verbatim": "Muscular weakness and mental apathy are features of K deficiency, hypokalemic cardiac failure is the most serious K deficiency event.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 344,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 829327
+   },
+   "dose": null,
+   "tags": [
+    "potassium",
+    "deficiency",
+    "hypokalemia",
+    "cardiac-failure"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -5375,7 +5492,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 829359
+    "char_offset": 829461
    },
    "dose": null,
    "tags": [
@@ -5414,7 +5531,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 830059
+    "char_offset": 830161
    },
    "dose": null,
    "tags": [
@@ -5448,7 +5565,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 830336
+    "char_offset": 830438
    },
    "dose": null,
    "tags": [
@@ -5482,7 +5599,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 829642
+    "char_offset": 829744
    },
    "dose": null,
    "tags": [
@@ -5517,7 +5634,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 830816
+    "char_offset": 830918
    },
    "dose": null,
    "tags": [
@@ -5553,7 +5670,7 @@
     "page": 344,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 831488
+    "char_offset": 831590
    },
    "dose": null,
    "tags": [
@@ -5586,7 +5703,7 @@
     "page": 350,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 839529
+    "char_offset": 839631
    },
    "dose": null,
    "tags": [
@@ -5632,7 +5749,7 @@
     "page": 350,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 839865
+    "char_offset": 839967
    },
    "dose": null,
    "tags": [
@@ -5668,7 +5785,7 @@
     "page": 350,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 840195
+    "char_offset": 840297
    },
    "dose": null,
    "tags": [
@@ -5703,7 +5820,7 @@
     "page": 350,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 840887
+    "char_offset": 840989
    },
    "dose": null,
    "tags": [
@@ -5737,7 +5854,7 @@
     "page": 350,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 841042
+    "char_offset": 841144
    },
    "dose": null,
    "tags": [
@@ -5773,7 +5890,7 @@
     "page": 350,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 841186
+    "char_offset": 841288
    },
    "dose": null,
    "tags": [
@@ -5786,6 +5903,40 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-06-25T17:16:38+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000168",
+   "kind": "definition",
+   "essentials": [
+    "magnesium"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Magnesium is essential to every living organism, Wallach says, filling electrochemical, catalytic, and structural roles at once: it activates numerous enzymes and is a building block of all chlorophylls, the green pigment plants use to capture sunlight. In the human body he puts total magnesium at 20 to 28 grams — roughly 60% held in bone and about a quarter in skeletal muscle — and describes it as central to producing and transferring the body's energy.",
+   "verbatim": "Magnesium is essential to all living organisms and has electrochemical, catalytic and structural functions, activates numerous enzymes and is a constituent of all chlorophylls.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 350,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 842520
+   },
+   "dose": null,
+   "tags": [
+    "magnesium",
+    "essentiality",
+    "enzyme-cofactor",
+    "chlorophyll"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-25T17:35:18+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },
@@ -5808,7 +5959,7 @@
     "page": 351,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 842596
+    "char_offset": 842698
    },
    "dose": null,
    "tags": [
@@ -5844,7 +5995,7 @@
     "page": 351,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 843174
+    "char_offset": 843276
    },
    "dose": null,
    "tags": [
@@ -5879,7 +6030,7 @@
     "page": 351,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 843410
+    "char_offset": 843512
    },
    "dose": null,
    "tags": [
@@ -5928,7 +6079,7 @@
     "page": 351,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 843784
+    "char_offset": 843886
    },
    "dose": null,
    "tags": [
@@ -5965,7 +6116,7 @@
     "page": 351,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 844071
+    "char_offset": 844173
    },
    "dose": null,
    "tags": [
@@ -6001,7 +6152,7 @@
     "page": 351,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 845186
+    "char_offset": 845288
    },
    "dose": null,
    "tags": [
@@ -6054,7 +6205,7 @@
     "page": 352,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 846085
+    "char_offset": 846187
    },
    "dose": null,
    "tags": [
@@ -6094,7 +6245,7 @@
     "page": 352,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 845696
+    "char_offset": 845798
    },
    "dose": null,
    "tags": [
@@ -6128,7 +6279,7 @@
     "page": 352,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 847384
+    "char_offset": 847486
    },
    "dose": null,
    "tags": [
@@ -6155,7 +6306,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Molybdenum is a trace mineral Wallach counts as essential to all living things because it forms part of several metalloenzymes — enzymes that need a metal atom at their core to work. He names three in particular: xanthine oxidase, aldehyde oxidase, and sulfite oxidase, which help the body handle purines, aldehydes, and sulfites. Wallach puts the average American's intake at 76 to 109 micrograms a day against an RDA of 250 micrograms, and notes toxicity only at high intakes (around 10 mg a day), where it causes a gout-like disease and interferes with copper.",
-   "verbatim": "Molybdenum is essential to all organisms as a constituent of numerous metalloenzymes. Molybdenum is known to be an integral part of no less than three essential enzymes:\n1- Xanthine oxidase\n2- Aldehyde oxidase\n3- Sulfite oxidase\n\nThe average American daily intake in food ranges from 76 to 109 mcg per day - the RDA for Mo is 250 mcg per day.\n\nToxicity occurs at 10 mg per day as a gout-like disease and interference with copper metabolism.",
+   "verbatim": "Molybdenum is essential to all organisms as a constituent of numerous metalloenzymes.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -6163,7 +6314,7 @@
     "page": 352,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 848197
+    "char_offset": 848299
    },
    "dose": null,
    "tags": [
@@ -6196,7 +6347,7 @@
     "page": 352,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 848427
+    "char_offset": 848529
    },
    "dose": null,
    "tags": [
@@ -6225,7 +6376,7 @@
    ],
    "symptoms": [],
    "claim_text": "Molybdenum is essential in trace amounts, but Wallach marks where it turns harmful: toxicity sets in at around 10 mg a day, producing a gout-like disease and interfering with the body's use of copper. It is a reminder in his framework that even a needed mineral has a ceiling — here the danger dose is hundreds of times the roughly 250 mcg the body actually requires each day.",
-   "verbatim": "The average American daily intake in food ranges from 76 to 109 mcg per day - the RDA for Mo is 250 mcg per day.\n\nToxicity occurs at 10 mg per day as a gout-like disease and interference with copper metabolism.",
+   "verbatim": "Toxicity occurs at 10 mg per day as a gout-like disease and interference with copper metabolism.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -6233,7 +6384,7 @@
     "page": 352,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 848427
+    "char_offset": 848643
    },
    "dose": null,
    "tags": [
@@ -6267,7 +6418,7 @@
     "page": 353,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 848989
+    "char_offset": 849091
    },
    "dose": null,
    "tags": [
@@ -6302,7 +6453,7 @@
     "page": 353,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 849226
+    "char_offset": 849328
    },
    "dose": null,
    "tags": [
@@ -6337,7 +6488,7 @@
     "page": 354,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 851022
+    "char_offset": 851124
    },
    "dose": null,
    "tags": [
@@ -6379,7 +6530,7 @@
     "page": 354,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 851516
+    "char_offset": 851618
    },
    "dose": null,
    "tags": [
@@ -6413,7 +6564,7 @@
     "page": 354,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 852583
+    "char_offset": 852685
    },
    "dose": null,
    "tags": [
@@ -6449,7 +6600,7 @@
     "page": 354,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 852770
+    "char_offset": 852872
    },
    "dose": null,
    "tags": [
@@ -6492,7 +6643,7 @@
     "page": 355,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 853632
+    "char_offset": 853734
    },
    "dose": null,
    "tags": [
@@ -6529,7 +6680,7 @@
     "page": 355,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 854112
+    "char_offset": 854214
    },
    "dose": null,
    "tags": [
@@ -6564,7 +6715,7 @@
     "page": 355,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 854291
+    "char_offset": 854393
    },
    "dose": null,
    "tags": [
@@ -6598,7 +6749,7 @@
     "page": 356,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 854840
+    "char_offset": 854942
    },
    "dose": null,
    "tags": [
@@ -6634,7 +6785,7 @@
     "page": 356,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 855758
+    "char_offset": 855860
    },
    "dose": null,
    "tags": [
@@ -6678,7 +6829,7 @@
     "page": 356,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 855415
+    "char_offset": 855517
    },
    "dose": null,
    "tags": [
@@ -6715,7 +6866,7 @@
     "page": 356,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 855870
+    "char_offset": 855972
    },
    "dose": null,
    "tags": [
@@ -6749,7 +6900,7 @@
     "page": 358,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 858017
+    "char_offset": 858121
    },
    "dose": null,
    "tags": [
@@ -6782,7 +6933,7 @@
     "page": 358,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 859022
+    "char_offset": 859126
    },
    "dose": null,
    "tags": [
@@ -6817,7 +6968,7 @@
     "page": 363,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 865334
+    "char_offset": 865438
    },
    "dose": null,
    "tags": [
@@ -6852,7 +7003,7 @@
     "page": 363,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 867191
+    "char_offset": 867295
    },
    "dose": null,
    "tags": [
@@ -6886,7 +7037,7 @@
     "page": 363,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 868195
+    "char_offset": 868299
    },
    "dose": null,
    "tags": [
@@ -6920,7 +7071,7 @@
     "page": 372,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 885235
+    "char_offset": 885339
    },
    "dose": null,
    "tags": [
@@ -6954,7 +7105,7 @@
     "page": 372,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 884590
+    "char_offset": 884694
    },
    "dose": null,
    "tags": [
@@ -6996,7 +7147,7 @@
     "page": 372,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 885531
+    "char_offset": 885635
    },
    "dose": null,
    "tags": [
@@ -7033,7 +7184,7 @@
     "page": 372,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 886243
+    "char_offset": 886347
    },
    "dose": null,
    "tags": [
@@ -7047,6 +7198,40 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-06-25T19:26:36+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000204",
+   "kind": "definition",
+   "essentials": [
+    "phosphorus"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach describes phosphorus as an extremely important essential mineral that nutritionists largely ignore because it is so widely available in food. It is a major structural mineral of bones and teeth and has more functions in the body than any other mineral — serving as a vital constituent of nucleic acids, activating enzymes, driving several steps of the ATP (adenosine triphosphate) energy cycle, and supporting red blood cell metabolism; B-complex vitamins act as coenzymes only when combined with phosphorus.",
+   "verbatim": "Phosphorus is a major structural mineral for bones and teeth, it has more functions in the human than any other mineral including its role as a vital constituent of nucleic acids, activates enzymes, for several steps of the ATP energy cycle; RBC metabolism",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 373,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 887656
+   },
+   "dose": null,
+   "tags": [
+    "phosphorus",
+    "bones",
+    "atp",
+    "nucleic-acids"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-25T19:44:31+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },
@@ -7068,7 +7253,7 @@
     "page": 373,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 887906
+    "char_offset": 888010
    },
    "dose": null,
    "tags": [
@@ -7109,7 +7294,7 @@
     "page": 373,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 888565
+    "char_offset": 888669
    },
    "dose": null,
    "tags": [
@@ -7118,6 +7303,41 @@
     "high-protein-diet",
     "phytate",
     "absorption"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-25T19:44:31+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000207",
+   "kind": "definition",
+   "essentials": [
+    "phosphorus"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach gives the average adult dietary phosphorus intake as 1,000–1,500 mg per day. Absorption depends heavily on form: metallic phosphorus is absorbed at only about 3–5 percent in adults (up to 8–12 percent in infants), chelated forms at 40–50 percent, and colloidal phosphorus up to 98 percent — and optimal absorption of metallic and chelated phosphorus occurs at a calcium-to-phosphorus ratio of 1:1.",
+   "verbatim": "The average adult human dietary intake of P is 1,000 to 1,500 mg/day. In adults and older children, the absorption of metallic P is limited to about three to five percent and as high as eight to 12 percent in infants. Mixed dietary sources of P (chelated forms) may be absorbed at the rate of 40 to 50 %. Optimal absorption of metallic and chelated P occurs when the Ca:P ratio is 1:1. Colloidal P is absorbed up to 98 %.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 373,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 889121
+   },
+   "dose": null,
+   "tags": [
+    "phosphorus",
+    "intake",
+    "absorption",
+    "colloidal",
+    "bioavailability"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -7144,7 +7364,7 @@
     "page": 373,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 889553
+    "char_offset": 889657
    },
    "dose": null,
    "tags": [
@@ -7180,7 +7400,7 @@
     "page": 373,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 889842
+    "char_offset": 889946
    },
    "dose": null,
    "tags": [
@@ -7214,7 +7434,7 @@
     "page": 373,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 890254
+    "char_offset": 890358
    },
    "dose": null,
    "tags": [
@@ -7243,7 +7463,7 @@
    ],
    "symptoms": [],
    "claim_text": "Wallach explains that children with pica — cravings for non-food items such as paint, sand, or dirt — are highly susceptible to lead poisoning (plumbism) because they chew on toys, cribs, window sills, furniture, and paint; a penny-sized chip of lead paint can hold 50–100 mcg of lead, and consuming that much daily for three months will cause lead poisoning.",
-   "verbatim": "Children with cravings (pica) for non-food items (i.e.- paint, sand, dirt, etc.) are very susceptible to lead poisoning (plumbism). Infants and children with pica will chew on their toys, cribs, window sills, furniture and paint - a chip of lead paint the size of a penny can contain as much as 50 to 100 ug of lead (consuming this amount daily over three months will result in lead poisoning).",
+   "verbatim": "Children with cravings (pica) for non-food items (i.e.- paint, sand, dirt, etc.) are very susceptible to lead poisoning (plumbism).",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -7251,7 +7471,7 @@
     "page": 375,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 893030
+    "char_offset": 893134
    },
    "dose": null,
    "tags": [
@@ -7288,7 +7508,7 @@
     "page": 375,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 893398
+    "char_offset": 893502
    },
    "dose": null,
    "tags": [
@@ -7317,7 +7537,7 @@
    ],
    "symptoms": [],
    "claim_text": "Wallach spells out how dangerous high blood-lead levels are in children: above 80 micrograms per deciliter he lists anemia, kidney damage (Fanconi syndrome, in which the kidney spills amino acids, glucose, and phosphate into the urine), peripheral nerve damage, loss of coordination (ataxia), joint pain, and encephalopathy — brain damage and learning disability — with death as the endpoint. He warns that a single penny-sized chip of lead paint can hold 50 to 100 mcg, enough to poison a child who eats it daily for a few months.",
-   "verbatim": "Infants and children with pica will chew on their toys, cribs, window sills, furniture and paint - a chip of lead paint the size of a penny can contain as much as 50 to 100 ug of lead (consuming this amount daily over three months will result in lead poisoning).\n\nThe “normal” blood lead level is below 40 ug/dl - children with blood lead above 60 to 80 ug/dl have symptoms of vomiting, irritability, weight loss, muscular weakness, headache, abdominal pain, insomnia and anorexia. Children with blood levels of lead above 80 ug/dl show anemia, kidney damage (Fanconi syndrome - increased urinary loss of amino acids, glucose and phosphorus), peripheral neuritis, ataxia and muscular incoordination, joint pain and encephalopathy (brain damage, learning disabilities, etc.) with eventual death.",
+   "verbatim": "Children with blood levels of lead above 80 ug/dl show anemia, kidney damage (Fanconi syndrome - increased urinary loss of amino acids, glucose and phosphorus), peripheral neuritis, ataxia and muscular incoordination, joint pain and encephalopathy (brain damage, learning disabilities, etc.) with eventual death.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -7325,7 +7545,7 @@
     "page": 375,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 893162
+    "char_offset": 893748
    },
    "dose": null,
    "tags": [
@@ -7362,7 +7582,7 @@
     "page": 375,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 893958
+    "char_offset": 894062
    },
    "dose": null,
    "tags": [
@@ -7400,7 +7620,7 @@
     "page": 375,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 894314
+    "char_offset": 894418
    },
    "dose": null,
    "tags": [
@@ -7435,7 +7655,7 @@
     "page": 375,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 895294
+    "char_offset": 895398
    },
    "dose": null,
    "tags": [
@@ -7470,7 +7690,7 @@
     "page": 376,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 896667
+    "char_offset": 896771
    },
    "dose": null,
    "tags": [
@@ -7503,7 +7723,7 @@
     "page": 376,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 897234
+    "char_offset": 897338
    },
    "dose": null,
    "tags": [
@@ -7538,7 +7758,7 @@
     "page": 376,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 898364
+    "char_offset": 898468
    },
    "dose": null,
    "tags": [
@@ -7573,7 +7793,7 @@
     "page": 377,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 900257
+    "char_offset": 900361
    },
    "dose": null,
    "tags": [
@@ -7608,7 +7828,7 @@
     "page": 377,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 900429
+    "char_offset": 900533
    },
    "dose": null,
    "tags": [
@@ -7643,7 +7863,7 @@
     "page": 377,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 900585
+    "char_offset": 900689
    },
    "dose": null,
    "tags": [
@@ -7685,7 +7905,7 @@
     "page": 377,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 900929
+    "char_offset": 901033
    },
    "dose": null,
    "tags": [
@@ -7723,7 +7943,7 @@
     "page": 378,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 901388
+    "char_offset": 901492
    },
    "dose": null,
    "tags": [
@@ -7758,7 +7978,7 @@
     "page": 378,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 902475
+    "char_offset": 902579
    },
    "dose": null,
    "tags": [
@@ -7794,7 +8014,7 @@
     "page": 378,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 902737
+    "char_offset": 902841
    },
    "dose": null,
    "tags": [
@@ -7840,7 +8060,7 @@
     "page": 382,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 907083
+    "char_offset": 907187
    },
    "dose": null,
    "tags": [
@@ -7880,7 +8100,7 @@
     "page": 382,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 907309
+    "char_offset": 907413
    },
    "dose": null,
    "tags": [
@@ -7929,7 +8149,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 739946
+    "char_offset": 739993
    },
    "dose": null,
    "tags": [
@@ -7971,7 +8191,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 740258
+    "char_offset": 740305
    },
    "dose": null,
    "tags": [
@@ -8018,7 +8238,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 740484
+    "char_offset": 740531
    },
    "dose": null,
    "tags": [
@@ -8056,7 +8276,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 740776
+    "char_offset": 740823
    },
    "dose": null,
    "tags": [
@@ -8101,7 +8321,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 740898
+    "char_offset": 740945
    },
    "dose": null,
    "tags": [
@@ -8142,7 +8362,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 741124
+    "char_offset": 741171
    },
    "dose": null,
    "tags": [
@@ -8182,7 +8402,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 741435
+    "char_offset": 741482
    },
    "dose": null,
    "tags": [
@@ -8223,7 +8443,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 741622
+    "char_offset": 741669
    },
    "dose": null,
    "tags": [
@@ -8267,7 +8487,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 741767
+    "char_offset": 741814
    },
    "dose": null,
    "tags": [
@@ -8304,7 +8524,7 @@
     "page": 295,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 741998
+    "char_offset": 742045
    },
    "dose": null,
    "tags": [
@@ -8342,7 +8562,7 @@
     "page": 296,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 742191
+    "char_offset": 742238
    },
    "dose": null,
    "tags": [
@@ -8384,7 +8604,7 @@
     "page": 296,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 742271
+    "char_offset": 742318
    },
    "dose": null,
    "tags": [
@@ -8426,7 +8646,7 @@
     "page": 296,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 742389
+    "char_offset": 742436
    },
    "dose": null,
    "tags": [
@@ -8467,7 +8687,7 @@
     "page": 296,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 742613
+    "char_offset": 742660
    },
    "dose": null,
    "tags": [
@@ -8502,7 +8722,7 @@
     "page": 296,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 742785
+    "char_offset": 742832
    },
    "dose": null,
    "tags": [
@@ -8534,7 +8754,7 @@
     "page": 409,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 952890
+    "char_offset": 952994
    },
    "dose": null,
    "tags": [
@@ -8565,7 +8785,7 @@
     "poor_skin"
    ],
    "claim_text": "Silicon (silica) is a trace mineral Wallach links to the body's structural tissues. A deficiency, he says, shows up as dry, brittle hair, brittle finger- and toe-nails, poor skin quality, poor calcium utilization, and arterial disease. He adds that silicon supplementation can increase the collagen in growing bone by 100%, that tissue silicon falls with age in people who don't supplement, and that the silicon in high-fiber diets may be one reason such diets help lower cholesterol. His recommended intake is 200 to 500 mg a day.",
-   "verbatim": "Silicon supplementation increases the\ncollagen in growing bone by 100 %. Tissue\nlevels of Si decrease with aging in\nunsupplemented humans and laboratory\nspecies. Silica deficiency is characterized\nby dry brittle hair, brittle finger and toe nails,\npoor skin quality, poor calcium utilization\nand arterial disease. High fiber diets contain lots of Si which leads many investigators to think that Si helps to lower cholesterol. The recommended intake of Si ranges\nfrom 200 to 500 mg/day.",
+   "verbatim": "Silica deficiency is characterized\nby dry brittle hair, brittle finger and toe nails,\npoor skin quality, poor calcium utilization\nand arterial disease.",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -8573,7 +8793,7 @@
     "page": 409,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 952890
+    "char_offset": 953156
    },
    "dose": null,
    "tags": [
@@ -8605,7 +8825,7 @@
     "page": 409,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 953204
+    "char_offset": 953308
    },
    "dose": {
     "amount": "200-500",
@@ -8645,7 +8865,7 @@
     "page": 410,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 953919
+    "char_offset": 954023
    },
    "dose": null,
    "tags": [
@@ -8680,7 +8900,7 @@
     "page": 410,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 954413
+    "char_offset": 954517
    },
    "dose": null,
    "tags": [
@@ -8717,7 +8937,7 @@
     "page": 410,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 955106
+    "char_offset": 955210
    },
    "dose": null,
    "tags": [
@@ -8752,7 +8972,7 @@
     "page": 411,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 956452
+    "char_offset": 956556
    },
    "dose": null,
    "tags": [
@@ -8787,7 +9007,7 @@
     "page": 411,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 958202
+    "char_offset": 958305
    },
    "dose": null,
    "tags": [
@@ -8822,7 +9042,7 @@
     "page": 411,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 957889
+    "char_offset": 957993
    },
    "dose": null,
    "tags": [
@@ -8856,7 +9076,7 @@
     "page": 412,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 959221
+    "char_offset": 959324
    },
    "dose": null,
    "tags": [
@@ -8891,7 +9111,7 @@
     "page": 412,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 960787
+    "char_offset": 960890
    },
    "dose": null,
    "tags": [
@@ -8925,7 +9145,7 @@
     "page": 412,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 960632
+    "char_offset": 960735
    },
    "dose": null,
    "tags": [
@@ -8969,7 +9189,7 @@
     "page": 412,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 961266
+    "char_offset": 961369
    },
    "dose": null,
    "tags": [
@@ -9004,7 +9224,7 @@
     "page": 413,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 962111
+    "char_offset": 962214
    },
    "dose": null,
    "tags": [
@@ -9039,7 +9259,7 @@
     "page": 413,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 962520
+    "char_offset": 962623
    },
    "dose": null,
    "tags": [
@@ -9074,7 +9294,7 @@
     "page": 413,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 962605
+    "char_offset": 962708
    },
    "dose": null,
    "tags": [
@@ -9109,7 +9329,7 @@
     "page": 413,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 963283
+    "char_offset": 963386
    },
    "dose": null,
    "tags": [
@@ -9151,7 +9371,7 @@
     "page": 413,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 963682
+    "char_offset": 963785
    },
    "dose": null,
    "tags": [
@@ -9193,7 +9413,7 @@
     "page": 417,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 964366
+    "char_offset": 964469
    },
    "dose": null,
    "tags": [
@@ -9236,7 +9456,7 @@
     "page": 417,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 964732
+    "char_offset": 964835
    },
    "dose": null,
    "tags": [
@@ -9270,7 +9490,7 @@
     "page": 418,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 965608
+    "char_offset": 965711
    },
    "dose": null,
    "tags": [
@@ -9279,6 +9499,73 @@
     "carbonic-anhydrase",
     "enzyme-cofactor",
     "zinc-fingers"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-27T03:57:15+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000266",
+   "kind": "mechanism",
+   "essentials": [
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach reports that the adult human body contains 1.4 to 2.3 grams of zinc, with the greatest reserves in the liver, pancreas, kidney, bone, and skeletal muscles, and lesser amounts in the eye, prostate gland, semen, skin, hair, fingernails, and toenails.",
+   "verbatim": "There is 1.4 to 2.3 grams of Zn in the adult human. The liver, pancreas, kidney, bone and skeletal muscles have the greatest reserves of Zn, lesser amounts are found in the eye, prostate gland, semen, skin, hair, fingernails and toenails.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 418,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 965471
+   },
+   "dose": null,
+   "tags": [
+    "zinc",
+    "body-content",
+    "reserves",
+    "distribution"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-06-27T03:57:15+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000267",
+   "kind": "mechanism",
+   "essentials": [
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach notes the late recognition of zinc's essentiality: it was known to be essential for bread mold 100 years ago, for rats 50 years ago, and for humans only 20 years ago.",
+   "verbatim": "Zinc was known to be essential for bread mold 100 years ago, essential for rats 50 years ago and for humans only 20 years ago.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": "Chapter 11",
+    "page": 417,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 965195
+   },
+   "dose": null,
+   "tags": [
+    "zinc",
+    "essentiality",
+    "history"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -9307,7 +9594,7 @@
     "page": 418,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 966379
+    "char_offset": 966482
    },
    "dose": null,
    "tags": [
@@ -9353,7 +9640,7 @@
     "page": 378,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 903319
+    "char_offset": 903423
    },
    "dose": null,
    "tags": [
@@ -9400,7 +9687,7 @@
     "page": 378,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 903759
+    "char_offset": 903863
    },
    "dose": null,
    "tags": [
@@ -9432,7 +9719,7 @@
     "page": 42,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 160199
+    "char_offset": 160212
    },
    "dose": null,
    "tags": [
@@ -9463,7 +9750,7 @@
     "page": 42,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 161014
+    "char_offset": 161027
    },
    "dose": null,
    "tags": [
@@ -9494,7 +9781,7 @@
     "page": 42,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 161198
+    "char_offset": 161211
    },
    "dose": null,
    "tags": [
@@ -9525,7 +9812,7 @@
     "page": 44,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 163361
+    "char_offset": 163374
    },
    "dose": null,
    "tags": [
@@ -9564,7 +9851,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 744242
+    "char_offset": 744291
    },
    "dose": null,
    "tags": [
@@ -9600,7 +9887,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 599198
+    "char_offset": 599232
    },
    "dose": null,
    "tags": [
@@ -9637,7 +9924,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 599570
+    "char_offset": 599604
    },
    "dose": null,
    "tags": [
@@ -9674,7 +9961,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 599880
+    "char_offset": 599914
    },
    "dose": null,
    "tags": [
@@ -9714,7 +10001,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 600077
+    "char_offset": 600111
    },
    "dose": null,
    "tags": [
@@ -9751,7 +10038,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 600296
+    "char_offset": 600330
    },
    "dose": null,
    "tags": [
@@ -9787,7 +10074,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 600518
+    "char_offset": 600552
    },
    "dose": null,
    "tags": [
@@ -9831,7 +10118,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 600888
+    "char_offset": 600922
    },
    "dose": null,
    "tags": [
@@ -9868,7 +10155,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 601057
+    "char_offset": 601091
    },
    "dose": null,
    "tags": [
@@ -9904,7 +10191,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 601621
+    "char_offset": 601655
    },
    "dose": null,
    "tags": [
@@ -9940,7 +10227,7 @@
     "page": 233,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 601783
+    "char_offset": 601817
    },
    "dose": null,
    "tags": [
@@ -9973,7 +10260,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 726073
+    "char_offset": 726118
    },
    "dose": null,
    "tags": [
@@ -10009,7 +10296,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 791394
+    "char_offset": 791472
    },
    "dose": null,
    "tags": [
@@ -10045,7 +10332,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 802433
+    "char_offset": 802531
    },
    "dose": null,
    "tags": [
@@ -10081,7 +10368,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 814247
+    "char_offset": 814349
    },
    "dose": null,
    "tags": [
@@ -10117,7 +10404,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 824788
+    "char_offset": 824890
    },
    "dose": null,
    "tags": [
@@ -10153,7 +10440,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 854470
+    "char_offset": 854572
    },
    "dose": null,
    "tags": [
@@ -10189,7 +10476,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 896819
+    "char_offset": 896923
    },
    "dose": null,
    "tags": [
@@ -10225,7 +10512,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 901532
+    "char_offset": 901636
    },
    "dose": null,
    "tags": [
@@ -10261,7 +10548,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 956596
+    "char_offset": 956700
    },
    "dose": null,
    "tags": [
@@ -10297,7 +10584,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 956774
+    "char_offset": 956878
    },
    "dose": null,
    "tags": [
@@ -10333,7 +10620,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 957546
+    "char_offset": 957650
    },
    "dose": null,
    "tags": [
@@ -10369,7 +10656,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 969913
+    "char_offset": 970016
    },
    "dose": null,
    "tags": [
@@ -10411,7 +10698,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 900929
+    "char_offset": 901033
    },
    "dose": null,
    "tags": [
@@ -10447,7 +10734,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 749621
+    "char_offset": 749676
    },
    "dose": null,
    "tags": [
@@ -10483,7 +10770,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 750900
+    "char_offset": 750964
    },
    "dose": null,
    "tags": [
@@ -10517,7 +10804,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473180
+    "char_offset": 473204
    },
    "dose": null,
    "tags": [
@@ -10553,7 +10840,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473180
+    "char_offset": 473204
    },
    "dose": null,
    "tags": [
@@ -10587,7 +10874,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473180
+    "char_offset": 473204
    },
    "dose": null,
    "tags": [
@@ -10621,7 +10908,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473180
+    "char_offset": 473204
    },
    "dose": null,
    "tags": [
@@ -10655,7 +10942,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 906945
+    "char_offset": 907049
    },
    "dose": null,
    "tags": [
@@ -10689,7 +10976,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473180
+    "char_offset": 473204
    },
    "dose": null,
    "tags": [
@@ -10719,7 +11006,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 90625
+    "char_offset": 90631
    },
    "dose": null,
    "tags": [
@@ -10753,7 +11040,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 205745
+    "char_offset": 205758
    },
    "dose": null,
    "tags": [
@@ -10788,7 +11075,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1123219
+    "char_offset": 1123322
    },
    "dose": null,
    "tags": [
@@ -10825,7 +11112,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 138821
+    "char_offset": 138832
    },
    "dose": null,
    "tags": [
@@ -10856,7 +11143,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 731307
+    "char_offset": 731352
    },
    "dose": null,
    "tags": [
@@ -10891,12 +11178,45 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 734454
+    "char_offset": 734499
    },
    "dose": null,
    "tags": [
     "rare-earths",
     "eggs",
+    "food-topic"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-07-13T19:58:30+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000318",
+   "kind": "toxicity_sign",
+   "essentials": [],
+   "other_substances": [
+    "lead"
+   ],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach warns that canned tuna carries nearly double the lead of fresh tuna. The cause he names is the sealant material used to close the seams of steel and tin cans, which leaches lead into the food — one of several dietary lead sources he catalogs (alongside leaded-gasoline residue in soils, lead paint chips and dust, and lead-glazed decorative pottery mistakenly used as food containers) contributing to the lead burden in the American food chain.",
+   "verbatim": "Another source of lead in our food chain\nis the sealant materials used to close the\nseams in steel or tin canned foods. One\nstudy showed that canned tuna has nearly\ndouble the level of lead as fresh tuna",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 702551
+   },
+   "dose": null,
+   "tags": [
+    "rare-earths",
+    "fish",
     "food-topic"
    ],
    "confidence": "medium",
@@ -10922,7 +11242,7 @@
     "page": 262,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 671562
+    "char_offset": 671599
    },
    "dose": null,
    "tags": [
@@ -10958,7 +11278,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 902282
+    "char_offset": 902386
    },
    "dose": null,
    "tags": [
@@ -10966,6 +11286,39 @@
     "antioxidant",
     "glutathione-peroxidase",
     "oxidation",
+    "mechanism"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-07-25T18:56:42+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000321",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "It's the same oxidation Wallach blames for cellular aging, made visible on the skin. When selenium — the body's main defense against fats going rancid — falls short, lipids peroxidize and leave behind a brown-gold residue called ceroid lipofuscin; on the skin that shows up as the familiar “age spots” or “liver spots.” He treats their arrival in older adults not as harmless cosmetic aging but as an early external sign of selenium deficiency — the visible cousin of the “age pigment” that builds up inside oxygen-starved, selenium-deficient cells. In his framework that makes a liver spot a warning worth heeding, not just a blemish.",
+   "verbatim": "Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 902579
+   },
+   "dose": null,
+   "tags": [
+    "selenium",
+    "age-spots",
+    "liver-spots",
+    "ceroid-lipofuscin",
     "mechanism"
    ],
    "confidence": "high",
@@ -10991,7 +11344,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 430825
+    "char_offset": 430847
    },
    "dose": null,
    "tags": [
@@ -11024,7 +11377,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 431177
+    "char_offset": 431199
    },
    "dose": null,
    "tags": [
@@ -11048,7 +11401,7 @@
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
-   "claim_text": "Wallach leans on Dr. Gerhard Schrauzer, head of chemistry at UC San Diego, who reviewed selenium as “a versatile anticarcinogenic agent” whose protection can't be pinned on the glutathione-peroxidase enzyme alone. In Schrauzer's account, selenium acts as a “redox switch” that throttles the growth factors driving cell division, stimulates cellular respiration (Wallach's shorthand: “more oxygen, less cancer”), blocks tumor viruses and oncogene activation, alters how the body handles carcinogens, and shields DNA from carcinogen-induced damage.",
+   "claim_text": "Wallach leans on Dr. Gerhard Schrauzer, head of chemistry at UC San Diego, who reviewed selenium as “a versatile anticarcinogenic agent” whose protection can't be pinned on the glutathione-peroxidase enzyme alone. In Schrauzer's account, selenium acts as a “redox switch” that throttles the growth factors driving cell division, stimulates cellular respiration (Wallach's shorthand: “more oxygen, less cancer”), blocks tumor viruses and oncogene activation, alters how the body handles carcinogens, and shields DNA from carcinogen-induced damage. For actual use, Wallach names 1,000–3,000 mcg per day as the therapeutic range and stresses that form matters — plant-derived colloidal selenium, he says, is up to 98% absorbable. (Worth flagging: that's a therapy figure, far above his ~200 mcg daily maintenance target, not an everyday supplement dose.)",
    "verbatim": "Selenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.",
    "locator": {
     "book": "rare-earths",
@@ -11057,7 +11410,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 907447
+    "char_offset": 907551
    },
    "dose": null,
    "tags": [
@@ -11090,7 +11443,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 903332
+    "char_offset": 903436
    },
    "dose": null,
    "tags": [
@@ -11123,7 +11476,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 410999
+    "char_offset": 411021
    },
    "dose": null,
    "tags": [
@@ -11158,7 +11511,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1119352
+    "char_offset": 1119455
    },
    "dose": null,
    "tags": [
@@ -11193,7 +11546,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 718256
+    "char_offset": 718299
    },
    "dose": null,
    "tags": [
@@ -11228,7 +11581,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 673777
+    "char_offset": 673814
    },
    "dose": null,
    "tags": [
@@ -11263,7 +11616,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 134981
+    "char_offset": 134988
    },
    "dose": null,
    "tags": [
@@ -11300,7 +11653,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 53778
+    "char_offset": 53780
    },
    "dose": null,
    "tags": [
@@ -11335,7 +11688,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 138122
+    "char_offset": 138133
    },
    "dose": null,
    "tags": [
@@ -11371,7 +11724,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 136898
+    "char_offset": 136909
    },
    "dose": null,
    "tags": [
@@ -11410,7 +11763,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 700185
+    "char_offset": 700228
    },
    "dose": null,
    "tags": [
@@ -11442,7 +11795,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1116078
+    "char_offset": 1116181
    },
    "dose": null,
    "tags": [
@@ -11476,7 +11829,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 913864
+    "char_offset": 913968
    },
    "dose": null,
    "tags": [
@@ -11509,7 +11862,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 694339
+    "char_offset": 694380
    },
    "dose": null,
    "tags": [
@@ -11542,7 +11895,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 658336
+    "char_offset": 658369
    },
    "dose": null,
    "tags": [
@@ -11576,7 +11929,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 92168
+    "char_offset": 92174
    },
    "dose": null,
    "tags": [
@@ -11609,7 +11962,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 204220
+    "char_offset": 204233
    },
    "dose": null,
    "tags": [
@@ -11643,7 +11996,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1119352
+    "char_offset": 1119455
    },
    "dose": null,
    "tags": [
@@ -11670,7 +12023,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach traces calcium's medical use back centuries. Walter Harris published a book on infant diseases in 1689 that emphasized the value of calcium for treating infantile convulsions—the fits that physicians of the day often called epilepsy. Wallach notes that rickets was known to be related to a calcium deficiency as early as 850 B.C., in the days of Homer, showing the link between calcium and bone disease was recognized in antiquity.",
-   "verbatim": "Walter Harris in 1689 published a book\non infant diseases. In his book Harris emphasized the value of calcium for the treatment of infantile convulsions (many physicians of the day referred to these ‘fits’ as\nepilepsy). Rickets was known to be related\nto a calcium deficiency as early as 850 B.C.\nin the days of Homer!!!!",
+   "verbatim": "Walter Harris in 1689 published a book\non infant diseases. In his book Harris emphasized the value of calcium for the treatment of infantile convulsions (many physicians of the day referred to these ‘fits’ as\nepilepsy). Rickets was known to be related\ntoa calcium deficiency as early as 850 B.C.\nin the days of Homer!!!!",
    "locator": {
     "book": "rare-earths",
     "scheme": "chapter_page",
@@ -11678,7 +12031,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 95664
+    "char_offset": 95670
    },
    "dose": null,
    "tags": [
@@ -11712,7 +12065,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 410999
+    "char_offset": 411021
    },
    "dose": null,
    "tags": [
@@ -11747,7 +12100,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 694071
+    "char_offset": 694112
    },
    "dose": null,
    "tags": [
@@ -11780,7 +12133,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 780207
+    "char_offset": 780285
    },
    "dose": null,
    "tags": [
@@ -11813,7 +12166,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 677683
+    "char_offset": 677722
    },
    "dose": null,
    "tags": [
@@ -11846,7 +12199,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 781031
+    "char_offset": 781109
    },
    "dose": null,
    "tags": [
@@ -11879,7 +12232,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 779562
+    "char_offset": 779640
    },
    "dose": null,
    "tags": [
@@ -11912,7 +12265,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 660606
+    "char_offset": 660643
    },
    "dose": null,
    "tags": [
@@ -11946,7 +12299,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 700185
+    "char_offset": 700228
    },
    "dose": null,
    "tags": [
@@ -11980,7 +12333,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 750302
+    "char_offset": 750367
    },
    "dose": null,
    "tags": [
@@ -12013,7 +12366,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1127507
+    "char_offset": 1127610
    },
    "dose": null,
    "tags": [
@@ -12046,7 +12399,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 48811
+    "char_offset": 48813
    },
    "dose": null,
    "tags": [
@@ -12079,7 +12432,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1088826
+    "char_offset": 1088929
    },
    "dose": null,
    "tags": [
@@ -12114,7 +12467,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1091032
+    "char_offset": 1091135
    },
    "dose": null,
    "tags": [
@@ -12147,7 +12500,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 718531
+    "char_offset": 718574
    },
    "dose": null,
    "tags": [
@@ -12213,7 +12566,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 673451
+    "char_offset": 673488
    },
    "dose": null,
    "tags": [
@@ -12246,7 +12599,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 844742
+    "char_offset": 844844
    },
    "dose": null,
    "tags": [
@@ -12279,7 +12632,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 93800
+    "char_offset": 93806
    },
    "dose": null,
    "tags": [
@@ -12312,7 +12665,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 939207
+    "char_offset": 939311
    },
    "dose": null,
    "tags": [
@@ -12346,7 +12699,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1119352
+    "char_offset": 1119455
    },
    "dose": null,
    "tags": [
@@ -12379,7 +12732,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 99127
+    "char_offset": 99134
    },
    "dose": null,
    "tags": [
@@ -12412,7 +12765,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 678701
+    "char_offset": 678740
    },
    "dose": null,
    "tags": [
@@ -12478,7 +12831,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 743435
+    "char_offset": 743484
    },
    "dose": null,
    "tags": [
@@ -12511,7 +12864,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 973058
+    "char_offset": 973161
    },
    "dose": null,
    "tags": [
@@ -12545,7 +12898,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 89697
+    "char_offset": 89703
    },
    "dose": null,
    "tags": [
@@ -12579,7 +12932,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 693677
+    "char_offset": 693718
    },
    "dose": null,
    "tags": [
@@ -12612,7 +12965,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1119352
+    "char_offset": 1119455
    },
    "dose": null,
    "tags": [
@@ -12645,7 +12998,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1127212
+    "char_offset": 1127315
    },
    "dose": null,
    "tags": [
@@ -12679,7 +13032,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 758546
+    "char_offset": 758624
    },
    "dose": null,
    "tags": [
@@ -12713,7 +13066,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 700185
+    "char_offset": 700228
    },
    "dose": null,
    "tags": [
@@ -12747,7 +13100,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 813181
+    "char_offset": 813283
    },
    "dose": null,
    "tags": [
@@ -12780,7 +13133,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 687095
+    "char_offset": 687134
    },
    "dose": null,
    "tags": [
@@ -12814,7 +13167,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 759265
+    "char_offset": 759343
    },
    "dose": null,
    "tags": [
@@ -12847,7 +13200,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 80218
+    "char_offset": 80222
    },
    "dose": null,
    "tags": [
@@ -12881,7 +13234,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 194713
+    "char_offset": 194726
    },
    "dose": null,
    "tags": [
@@ -12915,7 +13268,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 120190
+    "char_offset": 120197
    },
    "dose": null,
    "tags": [
@@ -12949,7 +13302,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 694071
+    "char_offset": 694112
    },
    "dose": null,
    "tags": [
@@ -12981,7 +13334,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 673973
+    "char_offset": 674010
    },
    "dose": null,
    "tags": [
@@ -13013,7 +13366,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 867327
+    "char_offset": 867431
    },
    "dose": null,
    "tags": [
@@ -13048,7 +13401,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 848717
+    "char_offset": 848819
    },
    "dose": null,
    "tags": [
@@ -13082,7 +13435,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 688777
+    "char_offset": 688816
    },
    "dose": null,
    "tags": [
@@ -13118,7 +13471,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 127826
+    "char_offset": 127833
    },
    "dose": null,
    "tags": [
@@ -13155,7 +13508,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 126629
+    "char_offset": 126636
    },
    "dose": null,
    "tags": [
@@ -13195,7 +13548,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 709896
+    "char_offset": 709939
    },
    "dose": null,
    "tags": [
@@ -13232,7 +13585,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 710380
+    "char_offset": 710423
    },
    "dose": null,
    "tags": [
@@ -13269,7 +13622,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 712237
+    "char_offset": 712280
    },
    "dose": null,
    "tags": [
@@ -13302,7 +13655,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 714658
+    "char_offset": 714701
    },
    "dose": null,
    "tags": [
@@ -13336,7 +13689,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 101505
+    "char_offset": 101512
    },
    "dose": null,
    "tags": [
@@ -13370,7 +13723,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 97425
+    "char_offset": 97432
    },
    "dose": null,
    "tags": [
@@ -13404,7 +13757,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 94659
+    "char_offset": 94665
    },
    "dose": null,
    "tags": [
@@ -13438,7 +13791,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 95029
+    "char_offset": 95035
    },
    "dose": null,
    "tags": [
@@ -13473,7 +13826,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 134541
+    "char_offset": 134548
    },
    "dose": null,
    "tags": [
@@ -13507,7 +13860,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 91158
+    "char_offset": 91164
    },
    "dose": null,
    "tags": [
@@ -13527,11 +13880,9 @@
   },
   {
    "id": "WAL-CLM-RARE-000398",
-   "kind": "toxicity_sign",
+   "kind": "mechanism",
    "essentials": [],
-   "other_substances": [
-    "lead"
-   ],
+   "other_substances": [],
    "conditions": [],
    "symptoms": [],
    "claim_text": "In his chapter on toxic metals, Wallach lists canned foods as a hidden dietary source of lead: the sealant used to close the seams of steel and tin cans leaches lead into the food sitting inside. He points to tuna as the clearest example, citing a study in which canned tuna carried nearly double the level of lead found in the same fish sold fresh. He frames this as just one of several everyday routes — alongside leaded-gasoline residue settled on crops, chipping old lead paint, and lead-glazed imported pottery mistakenly used for food — by which lead, which he calls one of the most universally dangerous toxic metals, quietly enters the body.",
@@ -13543,7 +13894,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 702508
+    "char_offset": 702551
    },
    "dose": null,
    "tags": [
@@ -13552,8 +13903,7 @@
     "food-safety",
     "lead-contamination",
     "canned-food",
-    "toxic-metals",
-    "food-topic"
+    "toxic-metals"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -13578,7 +13928,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 126949
+    "char_offset": 126956
    },
    "dose": null,
    "tags": [
@@ -13613,7 +13963,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 292222
+    "char_offset": 292237
    },
    "dose": null,
    "tags": [
@@ -13649,7 +13999,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 1123574
+    "char_offset": 1123677
    },
    "dose": null,
    "tags": [
@@ -13682,7 +14032,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 970612
+    "char_offset": 970715
    },
    "dose": null,
    "tags": [

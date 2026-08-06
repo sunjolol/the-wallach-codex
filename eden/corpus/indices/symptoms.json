@@ -2748,20 +2748,20 @@
     "likely_deficiencies": [
       {
         "essential": "potassium",
-        "claim_id": "WAL-CLM-EPIGEN-000094",
+        "claim_id": "WAL-CLM-IMMORT-000194",
         "confidence": "high",
         "appears_in_books": 1
       },
       {
         "essential": "potassium",
-        "claim_id": "WAL-CLM-IMMORT-000194",
+        "claim_id": "WAL-CLM-RARE-000155",
         "confidence": "high",
         "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "epigenetics",
-      "immortality"
+      "immortality",
+      "rare-earths"
     ]
   },
   "mental_confusion": {
@@ -3030,7 +3030,7 @@
       },
       {
         "essential": "potassium",
-        "claim_id": "WAL-CLM-EPIGEN-000094",
+        "claim_id": "WAL-CLM-RARE-000155",
         "confidence": "high",
         "appears_in_books": 1
       },

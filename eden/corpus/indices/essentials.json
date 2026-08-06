@@ -325,7 +325,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 94,
+    "claim_count": 95,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000053",
@@ -346,6 +346,7 @@
         "WAL-CLM-IMMORT-000085",
         "WAL-CLM-IMMORT-000208",
         "WAL-CLM-IMMORT-000271",
+        "WAL-CLM-RARE-000168",
         "WAL-CLM-RARE-000169",
         "WAL-CLM-RARE-000173",
         "WAL-CLM-RARE-000331"
@@ -665,11 +666,11 @@
         "WAL-CLM-RARE-000208"
       ],
       "definition": [
-        "WAL-CLM-DDDL-000246",
-        "WAL-CLM-RARE-000205"
+        "WAL-CLM-RARE-000204",
+        "WAL-CLM-RARE-000205",
+        "WAL-CLM-RARE-000207"
       ],
       "dose": [
-        "WAL-CLM-DDDL-000249",
         "WAL-CLM-LETS-000061"
       ],
       "interaction": [
@@ -850,12 +851,13 @@
     "display_name": "Potassium",
     "canon_slug": "potassium",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000094",
         "WAL-CLM-IMMORT-000194",
-        "WAL-CLM-LETS-000025"
+        "WAL-CLM-LETS-000025",
+        "WAL-CLM-RARE-000155"
       ],
       "definition": [
         "WAL-CLM-EPIGEN-000463",
@@ -931,12 +933,12 @@
       },
       {
         "sign": "mental_apathy",
-        "claim_id": "WAL-CLM-EPIGEN-000094",
+        "claim_id": "WAL-CLM-IMMORT-000194",
         "confidence": "high"
       },
       {
         "sign": "mental_apathy",
-        "claim_id": "WAL-CLM-IMMORT-000194",
+        "claim_id": "WAL-CLM-RARE-000155",
         "confidence": "high"
       },
       {
@@ -951,7 +953,7 @@
       },
       {
         "sign": "muscular_weakness",
-        "claim_id": "WAL-CLM-EPIGEN-000094",
+        "claim_id": "WAL-CLM-RARE-000155",
         "confidence": "high"
       },
       {
@@ -2281,7 +2283,7 @@
     "display_name": "Iodine",
     "canon_slug": "iodine",
     "category": "mineral",
-    "claim_count": 31,
+    "claim_count": 32,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000025",
@@ -2320,6 +2322,7 @@
         "WAL-CLM-IMMORT-000179",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000145",
+        "WAL-CLM-RARE-000147",
         "WAL-CLM-RARE-000148"
       ],
       "prevalence": [
@@ -3186,9 +3189,6 @@
         "WAL-CLM-RARE-000307"
       ],
       "definition": [
-        "WAL-CLM-DDDL-000139",
-        "WAL-CLM-DDDL-000140",
-        "WAL-CLM-EPIGEN-000192",
         "WAL-CLM-IMMORT-000215"
       ],
       "diagnostic_pattern": [
@@ -3204,12 +3204,15 @@
         "WAL-CLM-RARE-000086"
       ],
       "mechanism": [
+        "WAL-CLM-DDDL-000037",
         "WAL-CLM-DDDL-000038",
         "WAL-CLM-RARE-000010",
         "WAL-CLM-RARE-000046",
         "WAL-CLM-RARE-000094",
         "WAL-CLM-RARE-000192",
-        "WAL-CLM-RARE-000265"
+        "WAL-CLM-RARE-000265",
+        "WAL-CLM-RARE-000266",
+        "WAL-CLM-RARE-000267"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -7868,7 +7871,7 @@
         "WAL-CLM-DDDL-000115"
       ],
       "mechanism": [
-        "WAL-CLM-EPIGEN-000201",
+        "WAL-CLM-DDDL-000064",
         "WAL-CLM-EPIGEN-000398",
         "WAL-CLM-EPIGEN-000399",
         "WAL-CLM-LETS-000488",
@@ -8157,7 +8160,7 @@
         "WAL-CLM-DDDL-000115"
       ],
       "mechanism": [
-        "WAL-CLM-EPIGEN-000201",
+        "WAL-CLM-DDDL-000064",
         "WAL-CLM-EPIGEN-000398",
         "WAL-CLM-EPIGEN-000399",
         "WAL-CLM-RARE-000110"
